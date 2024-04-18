@@ -9,7 +9,7 @@ ms.date: 11/26/2020
 ms.reviewer: saeeda, oldalton
 ms.service: identity-platform
 
-ms.topic: conceptual
+ms.topic: concept-article
 #Customer intent: As a developer using MSAL for iOS/macOS, I want to handle errors and exceptions, so that I can provide appropriate error messages to the user and recover from certain error conditions by making interactive token acquisition requests or deciding whether to continue with only the granted scopes.
 ---
 # Handle errors and exceptions in MSAL for iOS/macOS

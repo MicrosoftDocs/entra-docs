@@ -16,7 +16,7 @@ ms.reviewer: ashishj
 The following table includes links to PowerShell script examples for Microsoft Entra application proxy. These samples require the [Microsoft Graph Beta PowerShell module](/powershell/microsoftgraph/installation) 2.10 or newer, unless otherwise noted.
 
 
-For more information about the cmdlets used in these samples, see [application proxy application management](/powershell/module/azuread/#application_proxy_application_management) and [application proxy connector management](/powershell/module/azuread/#application_proxy_connector_management).
+For more information about the cmdlets used in these samples, see [application proxy application management](/powershell/module/azuread/#application_proxy_application_management) and [private network connector management](/powershell/module/azuread/#application_proxy_connector_management).
 
 | Link | Description |
 |---|---|

@@ -10,6 +10,8 @@ ms.topic: tutorial
 
 ms.date: 02/13/2024
 ms.author: chmutali
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to SAP SuccessFactors to Microsoft Entra ID so that I can streamline the user management process and ensure that users have the appropriate access to SAP SuccessFactors to Microsoft Entra ID.
 ---
 # Tutorial: Configure SAP SuccessFactors to Microsoft Entra user provisioning
 The objective of this tutorial is to show the steps you need to perform to provision worker data from SuccessFactors Employee Central into Microsoft Entra ID, with optional write-back of email address to SuccessFactors. 
@@ -163,7 +165,7 @@ This section provides steps for user account provisioning from SuccessFactors to
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
 
-5. Search for **SuccessFactors to Microsoft Entra user Provisioning**, and add that app from the gallery.
+5. Search for **SuccessFactors to Microsoft Entra user provisioning**, and add that app from the gallery.
 
 6. After the app is added and the app details screen is shown, select **Provisioning**
 
@@ -218,7 +220,7 @@ In this section, you'll configure how user data flows from SuccessFactors to Mic
   
 1. In the **Target Object Actions** field, you can globally filter what actions are performed in Microsoft Entra ID. **Create** and **Update** are most common.
 
-1. In the **Attribute mappings** section, you can define how individual SuccessFactors attributes map to Microsoft Entra ID attributes.
+1. In the **Attribute mappings** section, you can define how individual SuccessFactors attributes map to Microsoft Entra attributes.
 
      >[!NOTE]
      >For the complete list of SuccessFactors attribute supported by the application, please refer to [SuccessFactors Attribute Reference](~/identity/app-provisioning/sap-successfactors-attribute-reference.md)
@@ -227,20 +229,20 @@ In this section, you'll configure how user data flows from SuccessFactors to Mic
 
       * **Mapping Type**
 
-         * **Direct** – Writes the value of the SuccessFactors attribute to the Microsoft Entra ID attribute, with no changes
+         * **Direct** – Writes the value of the SuccessFactors attribute to the Microsoft Entra attribute, with no changes
 
-         * **Constant** - Write a static, constant string value to the Microsoft Entra ID attribute
+         * **Constant** - Write a static, constant string value to the Microsoft Entra attribute
 
-         * **Expression** – Allows you to write a custom value to the Microsoft Entra ID attribute, based on one or more SuccessFactors attributes. [For more info, see this article on expressions](~/identity/app-provisioning/functions-for-customizing-application-data.md).
+         * **Expression** – Allows you to write a custom value to the Microsoft Entra attribute, based on one or more SuccessFactors attributes. [For more info, see this article on expressions](~/identity/app-provisioning/functions-for-customizing-application-data.md).
 
       * **Source attribute** - The user attribute from SuccessFactors
 
       * **Default value** – Optional. If the source attribute has an empty value, the mapping will write this value instead.
             Most common configuration is to leave this blank.
 
-      * **Target attribute** – The user attribute in Mirosoft Entra ID.
+      * **Target attribute** – The user attribute in Mirosoft Microsoft Entra ID.
 
-      * **Match objects using this attribute** – Whether or not this mapping should be used to uniquely identify users between SuccessFactors and Microsoft Entra ID. This value is typically set on the  Worker ID field for SuccessFactors, which is typically mapped to one of the Employee ID attributes in Mirosoft Entra ID.
+      * **Match objects using this attribute** – Whether or not this mapping should be used to uniquely identify users between SuccessFactors and Microsoft Entra ID. This value is typically set on the  Worker ID field for SuccessFactors, which is typically mapped to one of the Employee ID attributes in Mirosoft Microsoft Entra ID.
 
       * **Matching precedence** – Multiple matching attributes can be set. When there are multiple, they are evaluated in the order defined by this field. As soon as a match is found, no further matching attributes are evaluated.
 
@@ -259,7 +261,7 @@ Once your attribute mapping configuration is complete, you can now [enable and l
 Once the SuccessFactors provisioning app configurations have been completed, you can turn on the provisioning service.
 
 > [!TIP]
-> By default when you turn on the provisioning service, it will initiate provisioning operations for all users in scope. If there are errors in the mapping or Workday data issues, then the provisioning job might fail and go into the quarantine state. To avoid this, as a best practice, we recommend configuring **Source Object Scope** filter and testing  your attribute mappings with a few test users before launching the full sync for all users. Once you have verified that the mappings work and are giving you the desired results, then you can either remove the filter or gradually expand it to include more users.
+> By default when you turn on the provisioning service, it will initiate provisioning operations for all users in scope. If there are errors in the mapping or SuccessFactors data issues, then the provisioning job might fail and go into the quarantine state. To avoid this, as a best practice, we recommend configuring **Source Object Scope** filter and testing  your attribute mappings with a few test users before launching the full sync for all users. Once you have verified that the mappings work and are giving you the desired results, then you can either remove the filter or gradually expand it to include more users.
 
 1. In the **Provisioning** tab, set the **Provisioning Status** to **On**.
 
@@ -267,7 +269,7 @@ Once the SuccessFactors provisioning app configurations have been completed, you
 
 3. This operation will start the initial sync, which can take a variable number of hours depending on how many users are in the SuccessFactors tenant. You can check the progress bar to the track the progress of the sync cycle. 
 
-4. At any time, check the **Audit logs** tab in the Azure portal to see what actions the provisioning service has performed. The audit logs lists all individual sync events performed by the provisioning service, such as which users are being read out of Workday and then subsequently added or updated to Microsoft Entra ID. 
+4. At any time, check the **Audit logs** tab in the Azure portal to see what actions the provisioning service has performed. The audit logs lists all individual sync events performed by the provisioning service, such as which users are being read out of SuccessFactors and then subsequently added or updated to Microsoft Entra ID. 
 
 5. Once the initial sync is completed, it will write an audit summary report in the **Provisioning** tab, as shown below.
 

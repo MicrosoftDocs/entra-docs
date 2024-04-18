@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: reference
-ms.date: 09/15/2023
+ms.date: 03/22/2024
 ms.author: kenwith
 ms.reviewer: chmutali
 ---
@@ -21,6 +21,8 @@ ms.reviewer: chmutali
 * [SuccessFactors Writeback](~/identity/saas-apps/sap-successfactors-writeback-tutorial.md)
 
 This article explains how the integration works and how you can customize the provisioning behavior for different HR scenarios. 
+
+Microsoft Entra also supports single-sign on to SuccessFactors. For more information, see [Microsoft Entra single sign-on (SSO) integration with SuccessFactors](~/identity/saas-apps/successfactors-tutorial.md).
 
 ## Establishing connectivity 
 Microsoft Entra provisioning service uses basic authentication to connect to Employee Central OData API endpoints. When setting up the SuccessFactors provisioning app, use the *Tenant URL* parameter in the *Admin Credentials* section to configure the [API data center URL](https://help.sap.com/docs/SAP_SUCCESSFACTORS_PLATFORM/d599f15995d348a1b45ba5603e2aba9b/af2b8d5437494b12be88fe374eba75b6.html). 
@@ -238,7 +240,7 @@ Extending this scenario:
 ### Mapping employment status to account status
 
 By default, the Microsoft Entra SuccessFactors connector uses the `activeEmploymentsCount` field of the `PersonEmpTerminationInfo` object to set account status. You may encounter one of the following issues with this attribute. 
-1. There's a known issue where the connector may disable the account of a terminated worker one day prior to the termination on the last day of work. The issue is documented in [knowledge base article 3047486](https://launchpad.support.sap.com/#/notes/3047486). 
+1. There's a known issue where the connector may disable the account of a terminated worker one day prior to the termination on the last day of work. 
 1. If the `PersonEmpTerminationInfo` object gets set to null, during termination, then AD account disabling doesn't work because the provisioning engine filters out records where the `personEmpTerminationInfoNav` object is set to null.
 
 If you're running into any of these issues or prefer mapping employment status to account status, you can update the mapping to expand the `emplStatus` field and use the employment status code present in the field `emplStatus.externalCode`. Based on [SAP support note 2505526](https://launchpad.support.sap.com/#/notes/2505526), here's a list of employment status codes that you can retrieve in the provisioning app. 

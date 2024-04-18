@@ -5,11 +5,11 @@ author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
 ms.custom: 
-ms.date: 10/30/2019
+ms.date: 04/09/2024
 ms.reviewer: jmprieur
 ms.service: identity-platform
 
-ms.topic: conceptual
+ms.topic: concept-article
 #Customer intent: As an application developer, I want to know how to write a desktop app that calls web APIs by using the Microsoft identity platform.
 ---
 
@@ -109,7 +109,7 @@ Imagine a .NET console application that has the following `appsettings.json` con
   "Authentication": {
     "AzureCloudInstance": "AzurePublic",
     "AadAuthorityAudience": "AzureAdMultipleOrgs",
-    "ClientId": "ebe2ab4d-12b3-4446-8480-5c3828d04c50"
+    "ClientId": "00001111-aaaa-2222-bbbb-3333cccc4444"
   },
 
   "WebAPI": {

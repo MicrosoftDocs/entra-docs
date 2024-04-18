@@ -8,7 +8,7 @@ ms.custom: has-adal-ref
 ms.date: 02/28/2024
 ms.reviewer: saeeda, ddelimarsky
 ms.service: identity-platform
-ms.topic: conceptual
+ms.topic: concept-article
 
 #Customer intent: As an application developer, I want to learn about acquiring and caching tokens so my app can support authentication and authorization.
 ---

@@ -30,6 +30,9 @@ Using Access Reviews for **Service Principals** requires a Microsoft Entra Workl
 - Workload Identities Premium licensing: You can view and acquire licenses on the [Workload Identities blade](https://portal.azure.com/#view/Microsoft_Azure_ManagedServiceIdentity/WorkloadIdentitiesBlade) in the Microsoft Entra admin center.
 
 
+> [!NOTE]
+> Access reviews capture a snapshot of access at the beginning of each review instance. Any changes made during the review process will be reflected in the subsequent review cycle. Essentially, with the commencement of each new recurrence, pertinent data regarding the users, resources under review, and their respective reviewers is retrieved.
+
 ## Create access reviews
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]

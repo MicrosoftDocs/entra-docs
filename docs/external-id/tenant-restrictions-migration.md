@@ -5,7 +5,7 @@ author: gargi-sinha
 manager: martinco
 ms.service: entra-id
 ms.subservice: enterprise-apps
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 02/12/2024
 ms.author: gasinh
 ms.reviewer: jebley

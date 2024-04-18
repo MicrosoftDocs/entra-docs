@@ -12,6 +12,8 @@ ms.subservice: saas-apps
 ms.topic: tutorial
 ms.date: 10/04/2023
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to XM Fax and XM SendSecure so that I can streamline the user management process and ensure that users have the appropriate access to XM Fax and XM SendSecure.
 ---
 
 # Tutorial: Configure XM Fax and XM SendSecure for automatic user provisioning

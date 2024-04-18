@@ -5,14 +5,13 @@ description: Learn how to remove stale devices from your database of registered 
 
 ms.service: entra-id
 ms.subservice: devices
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: how-to
-ms.date: 12/22/2023
+ms.date: 04/11/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
-ms.reviewer: spunukol
+ms.reviewer:
 
 #Customer intent: As an IT admin, I want to understand how I can get rid of stale devices, so that I can I can cleanup my device registration data.
 ---
@@ -34,7 +33,7 @@ Stale devices in Microsoft Entra ID can interfere with the general lifecycle pol
 
 ## Detect stale devices
 
-Because a stale device is defined as a registered device that hasn't been used to access any cloud apps for a specific timeframe, detecting stale devices requires a timestamp-related property. In Microsoft Entra ID, this property is called **ApproximateLastLogonTimestamp** or **activity timestamp**. If the delta between now and the value of the **activity timestamp** exceeds the timeframe you've defined for active devices, a device is considered to be stale. This **activity timestamp** is now in public preview.
+Because a stale device is defined as a registered device that hasn't been used to access any cloud apps for a specific timeframe, detecting stale devices requires a timestamp-related property. In Microsoft Entra ID, this property is called **ApproximateLastSignInDateTime** or **activity timestamp**. If the delta between now and the value of the **activity timestamp** exceeds the timeframe you've defined for active devices, a device is considered to be stale. This **activity timestamp** is now in public preview.
 
 ## How is the value of the activity timestamp managed?  
 
@@ -56,7 +55,7 @@ You have two options to retrieve the value of the activity timestamp:
 
 - The [Get-MgDevice](/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdevice) cmdlet.
 
-    :::image type="content" source="./media/manage-stale-devices/02.png" alt-text="Screenshot showing command-line output. One line is highlighted and lists a time stamp for the ApproximateLastLogonTimeStamp value." border="false":::
+    :::image type="content" source="./media/manage-stale-devices/02.png" alt-text="Screenshot showing command-line output. One line is highlighted and lists a time stamp for the ApproximateLastSignInDateTime value." border="false":::
 
 ## Plan the cleanup of your stale devices
 
@@ -69,9 +68,8 @@ To efficiently clean up stale devices in your environment, you should define a r
 
 To update a device in Microsoft Entra ID, you need an account that has one of the following roles assigned:
 
-- Global Administrator
-- Cloud Device Administrator
-- Intune Service Administrator
+- [Cloud Device Administrator](../role-based-access-control/permissions-reference.md#cloud-device-administrator)
+- [Intune Administrator](../role-based-access-control/permissions-reference.md#intune-administrator)
 
 In your cleanup policy, select accounts that have the required roles assigned. 
 
@@ -208,6 +206,8 @@ When you delete a Microsoft Entra device that was associated with a Windows Auto
 - With Windows Autopilot user-driven deployments without using pre-provisioning, a new Microsoft Entra device will be created, but it won’t be tagged with the ZTDID.
 - With Windows Autopilot self-deploying mode deployments, they'll fail because an associate Microsoft Entra device can’t be found.  (This failure is a security mechanism to make sure that no “imposter” devices try to join Microsoft Entra ID with no credentials.) The failure will indicate a ZTDID mismatch.
 - With Windows Autopilot pre-provisioning deployments, they'll fail because an associated Microsoft Entra device can’t be found. (Behind the scenes, pre-provisioning deployments use the same self-deploying mode process, so they enforce the same security mechanisms.)
+
+Use the [Get-MgDeviceManagementWindowsAutopilotDeviceIdentity](/powershell/module/microsoft.graph.devicemanagement.enrollment/get-mgdevicemanagementwindowsautopilotdeviceidentity) to list of Windows Autopilot devices in your organization and compare it to the list of devices to clean up.
 
 ### How do I know all the type of devices joined?
 

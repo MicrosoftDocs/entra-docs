@@ -64,7 +64,7 @@ Use the Microsoft Graph Explorer to add roles to an enterprise application.
           ],
           "description": "msiam_access",
           "displayName": "msiam_access",
-          "id": "ef7437e6-4f94-4a0a-a110-a439eb2aa8f7",
+          "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
           "isEnabled": true,
           "origin": "Application",
           "value": null
@@ -85,7 +85,7 @@ Use the Microsoft Graph Explorer to add roles to an enterprise application.
           ],
           "description": "msiam_access",
           "displayName": "msiam_access",
-          "id": "ef7437e6-4f94-4a0a-a110-a439eb2aa8f7",
+          "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
           "isEnabled": true,
           "origin": "Application",
           "value": null
@@ -96,7 +96,7 @@ Use the Microsoft Graph Explorer to add roles to an enterprise application.
           ],
           "description": "Administrators Only",
           "displayName": "Admin",
-          "id": "4f8f8640-f081-492d-97a0-caf24e9bc134",
+          "id": "11bb11bb-cc22-dd33-ee44-55ff55ff55ff",
           "isEnabled": true,
           "origin": "ServicePrincipal",
           "value": "Administrator"

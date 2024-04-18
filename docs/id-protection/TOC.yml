@@ -64,8 +64,6 @@
       href: /graph/api/resources/serviceprincipalriskdetection
     - name: riskyServicePrincipal API
       href: /graph/api/resources/riskyserviceprincipal
-  - name: Glossary
-    href: reference-identity-protection-glossary.md
 - name: Resources
   items:
   - name: Azure feedback forum

@@ -25,9 +25,11 @@ To manage access to custom security attributes, you must have:
 > [!IMPORTANT]
 > By default, [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) and other administrator roles do not have permissions to read, define, or assign custom security attributes.
 
-## Step 1: Figure out how to organize your attributes
+<a name='step-1-figure-out-how-to-organize-your-attributes'></a>
 
-Every custom security attribute definition must be part of an attribute set. An attribute set is a way to group and manage related custom security attributes. You'll need to figure out how you want to add attributes sets for your organization. For example, you might want to add attribute sets based on departments, teams, or projects. Your ability to grant access to custom security attributes depends on how you organize your attribute sets.
+## Step 1: Determine how to organize your attributes
+
+Every custom security attribute definition must be part of an attribute set. An attribute set is a way to group and manage related custom security attributes. You'll need to determine how you want to add attributes sets for your organization. For example, you might want to add attribute sets based on departments, teams, or projects. Your ability to grant access to custom security attributes depends on how you organize your attribute sets.
 
 ![Diagram showing an attribute set by department.](./media/custom-security-attributes-manage/attribute-set-department.png)
 
@@ -37,7 +39,7 @@ Scope is the set of resources that the access applies to. For custom security at
 
 ![Diagram showing tenant scope and attribute set scope.](./media/custom-security-attributes-manage/scope-tenant-attribute-set.png)
 
-Microsoft Entra role assignments are an additive model, so your effective permissions are the sum of your role assignments. For example, if you assign a user a role at tenant scope and assign the same user the same role at attribute set scope, the user will still have permissions at tenant scope. 
+Microsoft Entra role assignments are an additive model, so your effective permissions are the sum of your role assignments. For example, if you assign a user a role at tenant scope and assign the same user the same role at attribute set scope, the user will still have permissions at tenant scope.
 
 ## Step 3: Review the available roles
 
@@ -54,7 +56,7 @@ The following table provides a high-level comparison of the custom security attr
 | --- | :---: | :---: | :---: | :---: | :---: |
 | Read attribute sets |  | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 | Read attribute definitions |  | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
-| Read attribute assignments for users and applications (service principals) |  |  | :white_check_mark: |  | :white_check_mark: | 
+| Read attribute assignments for users and applications (service principals) |  |  | :white_check_mark: |  | :white_check_mark: |
 | Add or edit attribute sets |  | :white_check_mark: |  |  |  |
 | Add, edit, or deactivate attribute definitions |  | :white_check_mark: |  |  |  |
 | Assign attributes to users and applications (service principals) |  |  | :white_check_mark: |  |  |
@@ -76,7 +78,7 @@ Managing attributes centrally has the advantage that it can be managed by one or
 
 #### Manage attributes with delegation
 
-An administrator may not know all the situations of how custom security attributes should be defined and assigned. Typically it's users within the respective departments, teams, or projects who know the most about their area. Instead of assigning one or two administrators to manage all custom security attributes, you can instead delegate the management at attribute set scope. This also follows the best practice of least privilege to grant just the permissions other administrators need to do their job and avoid unnecessary access. The following diagram shows how the management of custom security attributes can be delegated to multiple administrators.
+An administrator might not know all the situations of how custom security attributes should be defined and assigned. Typically it's users within the respective departments, teams, or projects who know the most about their area. Instead of assigning one or two administrators to manage all custom security attributes, you can instead delegate the management at attribute set scope. This also follows the best practice of least privilege to grant just the permissions other administrators need to do their job and avoid unnecessary access. The following diagram shows how the management of custom security attributes can be delegated to multiple administrators.
 
 :::image type="content" source="./media/custom-security-attributes-manage/delegate-manage-attributes.png" alt-text="Diagram of custom security attributes managed with delegation." lightbox="./media/custom-security-attributes-manage/delegate-manage-attributes.png":::
 
@@ -101,7 +103,7 @@ Once you have a better understanding of how your attributes will be organized an
 
 ## Step 6: Assign roles
 
-To grant access to the appropriate people, follow these steps to assign one of the custom security attribute roles. 
+To grant access to the appropriate people, follow these steps to assign one of the custom security attribute roles.
 
 ### Assign roles at attribute set scope
 
@@ -242,7 +244,7 @@ To view the custom security attribute audit logs, sign in to the Microsoft Entra
 
 :::image type="content" source="media/custom-security-attributes-manage/audit-logs-custom-security.png" alt-text="Screenshot of audit logs with Custom Security tab selected." lightbox="media/custom-security-attributes-manage/audit-logs-custom-security.png":::
 
-For information about how to get the custom security attribute audit logs using the Microsoft Graph API, see the [customSecurityAttributeAudit resource type](/graph/api/resources/customsecurityattributeaudit). For more information, see [Microsoft Entra audit logs](../identity/monitoring-health/concept-audit-logs.md).
+For information about how to get the custom security attribute audit logs using the Microsoft Graph API, see the [`customSecurityAttributeAudit` resource type](/graph/api/resources/customsecurityattributeaudit). For more information, see [Microsoft Entra audit logs](../identity/monitoring-health/concept-audit-logs.md).
 
 ### Diagnostic settings
 
@@ -257,7 +259,7 @@ The following screenshot shows the diagnostic settings for custom security attri
 
 ## Changes to audit logs behavior
 
-Changes have been made to custom security attribute audit logs for general availability that might impact your daily operations. If you have been using custom security attribute audit logs during preview, here are the actions you must take to ensure your audit log operations aren't disrupted.
+Changes have been made to custom security attribute audit logs for general availability that might affect your daily operations. If you have been using custom security attribute audit logs during preview, here are the actions you must take to ensure your audit log operations aren't disrupted.
 
 - Use new audit logs location
 - Assign Attribute Log roles to view audit logs
@@ -265,7 +267,7 @@ Changes have been made to custom security attribute audit logs for general avail
 
 ### Use new audit logs location
 
-During the preview, custom security attribute audit logs were written to the directory audit logs endpoint. In October 2023, a new endpoint was added exclusively for custom security attribute audit logs. The following screenshot shows the directory audit logs and the new custom security attribute audit logs location. To get the custom security attribute audit logs using the Microsoft Graph API, see the [customSecurityAttributeAudit resource type](/graph/api/resources/customsecurityattributeaudit).
+During the preview, custom security attribute audit logs were written to the directory audit logs endpoint. In October 2023, a new endpoint was added exclusively for custom security attribute audit logs. The following screenshot shows the directory audit logs and the new custom security attribute audit logs location. To get the custom security attribute audit logs using the Microsoft Graph API, see the [`customSecurityAttributeAudit` resource type](/graph/api/resources/customsecurityattributeaudit).
 
 :::image type="content" source="media/custom-security-attributes-manage/audit-logs-directory-custom-security.png" alt-text="Screenshot of audit logs that shows Directory and Custom Security tabs." lightbox="media/custom-security-attributes-manage/audit-logs-directory-custom-security.png":::
 

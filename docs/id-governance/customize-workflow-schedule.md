@@ -17,11 +17,11 @@ When you create workflows by using lifecycle workflows, you can fully customize 
 
 ## Customize the schedule of workflows by using the Microsoft Entra admin center
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
+[!INCLUDE [portal updates](../includes/portal-update.md)]
 
 Workflows that you create within lifecycle workflows follow the same schedule that you define on the **Workflow settings** pane. To adjust the schedule, follow these steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](~/identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
 
 1. Browse to **Identity governance** > **Lifecycle workflows**.
 
@@ -34,7 +34,7 @@ Workflows that you create within lifecycle workflows follow the same schedule th
 
 ## Customize the schedule of workflows by using Microsoft Graph
 
-To schedule workflow settings by using the Microsoft Graph API, see [lifecycleManagementSettings resource type](/graph/api/resources/identitygovernance-lifecyclemanagementsettings).
+To schedule workflow settings by using the Microsoft Graph API, see [`lifecycleManagementSettings` resource type](/graph/api/resources/identitygovernance-lifecyclemanagementsettings).
 
 ## Next steps
 

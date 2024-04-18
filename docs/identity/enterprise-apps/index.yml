@@ -10,7 +10,7 @@ metadata:
   ms.subservice: enterprise-apps
   
   ms.topic: landing-page
-  ms.date: 04/17/2023
+  ms.date: 03/07/2024
   author: CelesteDG
   ms.author: CelesteDG
 
@@ -23,7 +23,7 @@ landingContent:
             url: what-is-application-management.md
       - linkListType: concept
         links:
-          - text: What type of apps does Microsoft Entra ID support?
+          - text: What type of apps does Microsoft Entra support?
             url: ~/identity-platform/v2-app-types.md
           - text: What is single sign-on?
             url: what-is-single-sign-on.md
@@ -61,10 +61,10 @@ landingContent:
             url: ~/id-governance/what-is-provisioning.md
           - text: Configure My Apps
             url: ./myapps-overview.md
-      - linkListType: learn
+      - linkListType: reference
         links:
-          - text: Enable single sign-on
-            url: ./what-is-single-sign-on.md
+          - text: Manage applications using Microsoft Graph API
+            url: https://learn.microsoft.com/graph/api/resources/applications-api-overview?view=graph-rest-1.0
   - title: Secure an app
     linkLists:
       - linkListType: how-to-guide
@@ -103,10 +103,6 @@ landingContent:
             url: configure-permission-classifications.md
           - text: Manage entitlement
             url: ~/id-governance/entitlement-management-scenarios.md
-      - linkListType: learn
-        links:
-          - text: Configure admin consent workflow
-            url: ./configure-admin-consent-workflow.md
   - title: Maintain an app
     linkLists:
       - linkListType: how-to-guide

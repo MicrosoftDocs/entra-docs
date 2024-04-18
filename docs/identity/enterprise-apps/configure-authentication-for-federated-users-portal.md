@@ -66,6 +66,8 @@ We'll use Microsoft Graph to walk through a few scenarios, including:
 
 In the following examples, you create, update, link, and delete HRD policies on application service principals in Microsoft Entra ID.
 
+[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
+
 1. Before you begin, run the Connect command to sign in to Microsoft Entra ID with your admin account:
 
     ```powershell

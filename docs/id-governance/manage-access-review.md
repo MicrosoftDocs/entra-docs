@@ -1,13 +1,13 @@
 ---
 title: Manage access with access reviews
-description: Learn how to manage user and guest access as membership of a group or assignment to an application with Microsoft Entra access reviews
+description: Learn how to manage user and guest access as membership of a group or assignment to an application with Microsoft Entra access reviews.
 author: owinfreyATL
 manager: amycolannino
 editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: conceptual
-ms.date: 06/28/2023
+ms.date: 04/09/2024
 ms.author: owinfrey
 ms.reviewer: mwahl
 ---
@@ -17,7 +17,7 @@ ms.reviewer: mwahl
 With access reviews, you can easily ensure that users or guests have appropriate access. You can ask the users themselves or a decision maker to participate in an access review and recertify (or attest) to users' access. The reviewers can give their input on each user's need for continued access based on suggestions from Microsoft Entra ID. When an access review is finished, you can then make changes and remove access from users who no longer need it.
  
 > [!NOTE]
-> This article discusses conducting access reviews for users and applications. To see information on conducting an access review for multiple resources in access packages see here [Review access of an access package in Microsoft Entra entitlement management](entitlement-management-access-reviews-review-access.md). If you want to review user or service principal access to Microsoft Entra ID or Azure resource roles, see [Start an access review in Microsoft Entra Privileged Identity Management](~/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md).
+> This article discusses conducting access reviews for users and applications. To see information on conducting an access review for multiple resources in access packages see here [Review access of an access package in Microsoft Entra entitlement management](entitlement-management-access-reviews-review-access.md). If you want to review user or service principal access to Microsoft Entra ID or Azure resource roles, see [Start an access review in Microsoft Entra Privileged Identity Management](../id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md).
  
 ## Prerequisites
  
@@ -41,13 +41,13 @@ You can have one or more users as reviewers in an access review.
  
 2. Decide whether to have each user review their own access or to have one or more users review everyone's access.
  
-3. In one of the roles listed above, go to the [Identity Governance page](https://portal.azure.com/#blade/Microsoft_AAD_ERM/DashboardBlade/).
+3. In one of the previously listed roles, go to the [Identity Governance page](https://portal.azure.com/#blade/Microsoft_AAD_ERM/DashboardBlade/).
  
 4. Create the access review. For more information, see [Create an access review of groups or applications](create-access-review.md).
  
 5. When the access review starts, ask the reviewers to give input. By default, they each receive an email from Microsoft Entra ID with a link to the access panel, where they [review access to groups or applications](self-access-review.md).
  
-6. If the reviewers haven't given input, you can ask Microsoft Entra ID to send them a reminder. By default, Microsoft Entra ID automatically sends a reminder halfway to the end date to all reviewers.
+6. If the reviewers hasn't given input, you can ask Microsoft Entra ID to send them a reminder. By default, Microsoft Entra ID automatically sends a reminder halfway to the end date to all reviewers.
  
 7. After the reviewers give input, stop the access review and apply the changes. For more information, see [Complete an access review of groups or applications](complete-access-review.md).
  
@@ -55,7 +55,7 @@ You can have one or more users as reviewers in an access review.
 
 ## Manage guest access with Microsoft Entra access reviews
  
-With Microsoft Entra ID, you can easily enable collaboration across organizational boundaries by using the [Microsoft Entra B2B feature](~/external-id/what-is-b2b.md). Guest users from other tenants can be [invited by administrators](~/external-id/add-users-administrator.md) or by [other users](~/external-id/what-is-b2b.md). This capability also applies to social identities such as Microsoft accounts.
+With Microsoft Entra ID, you can easily enable collaboration across organizational boundaries by using the [Microsoft Entra B2B feature](../external-id/what-is-b2b.md). Guest users from other tenants can be [invited by administrators](../external-id/add-users-administrator.md) or by [other users](../external-id/what-is-b2b.md). This capability also applies to social identities such as Microsoft accounts.
  
  
  

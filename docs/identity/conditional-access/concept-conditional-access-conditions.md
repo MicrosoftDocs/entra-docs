@@ -5,7 +5,7 @@ description: What are conditions in a Microsoft Entra Conditional Access policy?
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 02/27/2024
+ms.date: 02/29/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -22,17 +22,31 @@ Multiple conditions can be combined to create fine-grained and specific Conditio
 
 When users access a sensitive application, an administrator might factor multiple conditions into their access decisions like: 
 
-- Sign-in risk information from Identity Protection
+- Sign-in risk information from ID Protection
 - Network location
 - Device information
 
-## Sign-in risk
-
-Administrators with access to [Identity Protection](~/id-protection/overview-identity-protection.md), can evaluate sign-in risk as part of a Conditional Access policy. Sign-in risk represents the probability that a given authentication request wasn't made by the identity owner. More information about sign-in risk can be found in the articles [What is risk](~/id-protection/concept-identity-protection-risks.md) and [How To: Configure and enable risk policies](~/id-protection/howto-identity-protection-configure-risk-policies.md).
-
 ## User risk 
 
-Administrators with access to [Identity Protection](~/id-protection/overview-identity-protection.md), can evaluate user risk as part of a Conditional Access policy. User risk represents the probability that a given identity or account is compromised. More information about user risk can be found in the articles [What is risk](~/id-protection/concept-identity-protection-risks.md) and [How To: Configure and enable risk policies](~/id-protection/howto-identity-protection-configure-risk-policies.md).
+Administrators with access to [ID Protection](~/id-protection/overview-identity-protection.md), can evaluate user risk as part of a Conditional Access policy. User risk represents the probability that a given identity or account is compromised. More information about user risk can be found in the articles [What is risk](~/id-protection/concept-identity-protection-risks.md) and [How To: Configure and enable risk policies](~/id-protection/howto-identity-protection-configure-risk-policies.md).
+
+## Sign-in risk
+
+Administrators with access to [ID Protection](~/id-protection/overview-identity-protection.md), can evaluate sign-in risk as part of a Conditional Access policy. Sign-in risk represents the probability that a given authentication request wasn't made by the identity owner. More information about sign-in risk can be found in the articles [What is risk](~/id-protection/concept-identity-protection-risks.md) and [How To: Configure and enable risk policies](~/id-protection/howto-identity-protection-configure-risk-policies.md).
+
+## Insider risk (Preview)
+
+Administrators with access to [Microsoft Purview adaptive protection](/purview/insider-risk-management-adaptive-protection) can incorporate risk signals from Microsoft Purview into Conditional Access policy decisions. Insider risk takes into account your data governance, data security, and risk and compliance configurations from Microsoft Purview. These signals are based on contextual factors like:
+
+- User behavior
+- Historical patterns
+- Anomaly detections
+
+This condition allows administrators to use Conditional Access policies to take actions like blocking access, requiring stronger authentication methods, or requiring terms of use acceptance.
+
+This functionality involves incorporating parameters that specifically address potential risks arising from within an organization. By configuring Conditional Access to consider Insider Risk, administrators can tailor access permissions based on contextual factors such as user behavior, historical patterns, and anomaly detection.
+
+For more information, see the article [Configure and enable an insider risk based policy](how-to-policy-insider-risk.md).
 
 ## Device platforms
 
@@ -66,7 +80,7 @@ Administrators can create policies that target specific locations along with oth
 By default, all newly created Conditional Access policies apply to all client app types even if the client apps condition isn’t configured. 
 
 > [!NOTE]
-> The behavior of the client apps condition was updated in August 2020. If you have existing Conditional Access policies, they will remain unchanged. However, if you click on an existing policy, the configure toggle has been removed and the client apps the policy applies to are selected.
+> The behavior of the client apps condition was updated in August 2020. If you have existing Conditional Access policies, they will remain unchanged. However, if you click on an existing policy, the **Configure** toggle has been removed and the client apps the policy applies to are selected.
 
 > [!IMPORTANT]
 > Sign-ins from legacy authentication clients don’t support multifactor authentication (MFA) and don’t pass device state information, so they are blocked by Conditional Access grant controls, like requiring MFA or compliant devices. If you have accounts which must use legacy authentication, you must either exclude those accounts from the policy, or configure the policy to only apply to modern authentication clients.
@@ -203,7 +217,7 @@ By selecting **Other clients**, you can specify a condition that affects apps th
 
 ## Device state (deprecated)
 
-**This feature has been deprecated.** Customers should use the **Filter for devices** condition in the Conditional Access policy, to satisfy scenarios previously achieved using the device state condition.
+**This condition was deprecated.** Customers should use the **Filter for devices** condition in the Conditional Access policy, to satisfy scenarios previously achieved using the device state condition.
 
 > [!IMPORTANT]
 > Device state and filters for devices cannot be used together in Conditional Access policy. Filters for devices provides more granular targeting including support for targeting device state information through the `trustType` and `isCompliant` property.
@@ -212,9 +226,9 @@ By selecting **Other clients**, you can specify a condition that affects apps th
 
 When administrators configure filter for devices as a condition, they can choose to include or exclude devices based on a filter using a rule expression on device properties. The rule expression for filter for devices can be authored using rule builder or rule syntax. This experience is similar to the one used for dynamic membership rules for groups. For more information, see the article [Conditional Access: Filter for devices](concept-condition-filters-for-devices.md).
 
-## Authentication flows
+## Authentication flows (preview)
 
-Authentication flows (preview) control how your organization uses certain authentication and authorization protocols and grants. These flows might provide a seamless experience to devices that might lack local input devices like shared devices or digital signage. Use this control to configure transfer methods like [device code flow or authentication transfer](concept-authentication-flows.md).
+Authentication flows control how your organization uses certain authentication and authorization protocols and grants. These flows might provide a seamless experience to devices that might lack local input devices like shared devices or digital signage. Use this control to configure transfer methods like [device code flow or authentication transfer](concept-authentication-flows.md).
 
 ## Next steps
 

@@ -5,13 +5,15 @@ description: Learn how to automatically provision and deprovision user accounts 
 author: twimmers
 writer: twimmers
 manager: jeedes
-ms.assetid: f666af23-f97f-4df8-8580-6124f47ea840
+ms.assetid: 032bad92-cefe-484d-9110-d412019dd9d4
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 02/26/2024
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to N-able User Provisioning so that I can streamline the user management process and ensure that users have the appropriate access to N-able User Provisioning.
 ---
 
 # Tutorial: Configure N-able User Provisioning for automatic user provisioning

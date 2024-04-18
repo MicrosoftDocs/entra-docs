@@ -11,7 +11,7 @@ ms.topic: tutorial
 #Customer intent: As a React developer, I want to know how to use functional components to add sign in and sign out experiences in my React application.
 ---
 
-# Tutorial: Create components for sign in and sign out in a React single page app
+# Tutorial: Add sign in and sign out functional components in a React single page app
 
 Functional components are the building blocks of React apps. This tutorial demonstrates how functional components can be used to build the sign in and sign out experience in a React single-page app (SPA). The `useMsal` hook is used to retrieve an access token to allow user sign-in.
 

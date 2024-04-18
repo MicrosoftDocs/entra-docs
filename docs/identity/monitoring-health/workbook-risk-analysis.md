@@ -1,22 +1,27 @@
 ---
-
-title: Identity protection risk analysis workbook in Microsoft Entra ID
-description: Learn how to use the identity protection risk analysis workbook.
+title: Identity protection risk analysis workbook
+description: Learn how to use the identity protection risk analysis workbook in Microsoft Entra ID to explore trends and gaps in your risk policies.
 
 author: shlipsey3
 manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 10/03/2023
+ms.date: 03/05/2024
 ms.author: sarahlipsey
 ms.reviewer: chuqiaoshi
+
+#Customer intent: As an IT admin, I need to use the identity protection risk analysis workbook to explore trends and gaps in my risk policies so I can better protect my organization from identity compromise.
 ---
 # Identity protection risk analysis workbook
 
 Microsoft Entra ID Protection detects, remediates, and prevents compromised identities. As an IT administrator, you want to understand risk trends in your organizations and opportunities for better policy configuration. With the Identity Protection Risky Analysis Workbook, you can answer common questions about your Identity Protection implementation.
 
 This article provides you with an overview of the **Identity Protection Risk Analysis** workbook.
+
+## Prerequisites
+
+[!INCLUDE [workbook prerequisites](../../includes/workbook-prerequisites.md)]
 
 ## Description
 
@@ -32,10 +37,13 @@ As an IT administrator, you need to understand trends in identity risks and gaps
 
 ## How to access the workbook
 
-[!INCLUDE [how to access workbooks](~/includes/how-to-access-workbooks.md)]
-3. Select the **Identity Protection Risk Analysis** workbook from the **Usage** section.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) using the appropriate combination of roles.
 
-## Sections
+1. Browse to **Identity** > **Monitoring & health** > **Workbooks**.
+
+1. Select the **Identity Protection Risk Analysis** workbook from the **Usage** section.
+
+## Workbook sections
 
 This workbook has five sections:
 

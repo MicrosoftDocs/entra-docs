@@ -6,13 +6,13 @@ manager: amycolannino
 ms.service: entra-permissions-management
 
 ms.topic: how-to
-ms.date: 06/16/2023
+ms.date: 03/15/2024
 ms.author: jfields
 ---
 
 # Create and view activity alerts and alert triggers
 
-This article describes how you can create and view activity alerts and alert triggers in Permissions Management.
+This article describes how to create and view activity alerts and alert triggers in Permissions Management.
 
 ## Create an activity alert trigger
 
@@ -29,7 +29,6 @@ This article describes how you can create and view activity alerts and alert tri
     - **In**/**Not In**: Select in the value field to view list of all available values. Select the required multiple values.
 
 1. To add another parameter, select the plus sign **(+)**, then select an operator, and then enter a value.
-
 1. To remove a parameter, select the minus sign **(-)**.
 1. To add another activity type, select **Add**, and then enter your parameters.
 1. To save your alert, select **Save**.
@@ -51,7 +50,6 @@ This article describes how you can create and view activity alerts and alert tri
     The **Alerts** table displays information about your alert.
 
     Select the alert name to view the individual activities and further details about the **resources**, **tasks**, and **identities** involved.
-
 
 
 ## View activity alert triggers

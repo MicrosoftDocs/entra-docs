@@ -99,4 +99,4 @@ On the **Response Preview**, scroll to the end to see the part of the JSON file.
 
 - Check out the group's REST API documentation for the [preview writeback property on the settings template](/graph/api/resources/group?view=graph-rest-beta&preserve-view=true).
 - For more information about group writeback operations, see [Microsoft Entra Connect group writeback](~/identity/hybrid/connect/how-to-connect-group-writeback-v2.md).
-- For more information about the `writebackConfiguration` resource, see [writebackConfiguration resource type](/graph/api/resources/writebackconfiguration?view=graph-rest-beta&preserve-view=true).
+- For more information about the `writebackConfiguration` resource, see [`writebackConfiguration` resource type](/graph/api/resources/writebackconfiguration?view=graph-rest-beta&preserve-view=true).

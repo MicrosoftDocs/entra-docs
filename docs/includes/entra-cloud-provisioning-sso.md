@@ -22,6 +22,8 @@ Cloud provisioning works with Single Sign-on.  Currently there is not an option 
 
 ### Step 2: Import the Seamless SSO PowerShell module
 
+[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
+
 1. Download, and install [Azure AD PowerShell](/powershell/azure/active-directory/overview).
 2. Browse to the `Microsoft Azure Active Directory Connect` folder which should be in the extraction folder from Step 1.
 3. Import the Seamless SSO PowerShell module by using this command: `Import-Module .\AzureADSSO.psd1`.

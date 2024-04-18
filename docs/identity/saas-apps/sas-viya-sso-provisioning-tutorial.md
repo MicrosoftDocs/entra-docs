@@ -5,13 +5,15 @@ description: Learn how to automatically provision and deprovision user accounts 
 author: twimmers
 writer: twimmers
 manager: jeedes
-ms.assetid: 80293942-831d-454e-8154-85bf75ef3506
+ms.assetid: 86d5c926-bb8e-483a-b154-42490f1b9db9
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 01/18/2024
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to SAS Viya SSO so that I can streamline the user management process and ensure that users have the appropriate access to SAS Viya SSO.
 ---
 
 # Tutorial: Configure SAS Viya SSO for automatic user provisioning
@@ -42,7 +44,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 
 ## Step 2: Configure SAS Viya SSO to support provisioning with Microsoft Entra ID
 
-Contact SAS Viya SSO support to configure SAS Viya SSO to support provisioning with Microsoft Entra ID.
+To configure SAS Viya SSO to support provisioning with Microsoft Entra ID, please refer to **[How to Configure SCIM](https://go.documentation.sas.com/doc/en/sasadmincdc/default/calids/n1rl3gjjjqmxmfn1hw9ebjjz5778.htm)** in SAS Viya Platform Administration
 
 ## Step 3: Add SAS Viya SSO from the Microsoft Entra application gallery
 
@@ -83,6 +85,14 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Under the **Admin Credentials** section, input your SAS Viya SSO Tenant URL and Secret Token. Click **Test Connection** to ensure Microsoft Entra ID can connect to SAS Viya SSO. If the connection fails, ensure your SAS Viya SSO account has Admin permissions and try again.
 
+   ### Tenant URL
+
+   * To configure the Microsoft Entra provisioning service, you will need your tenant URL.
+
+      Example: 
+
+      *`https://sas.viya.example.com/identities/scim/v2`.
+
  	![Screenshot of Token.](common/provisioning-testconnection-tenanturltoken.png)
 
 1. In the **Notification Email** field, enter the email address of a person who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
@@ -112,7 +122,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |phoneNumbers[type eq "fax"].value|String||
    |externalId|String|&check;|&check;
 
-1. Under the **Mappings** section, select **Synchronize Microsoft Entra ID Groups to SAS Viya SSO**.
+1. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to SAS Viya SSO**.
 
 1. Review the group attributes that are synchronized from Microsoft Entra ID to SAS Viya SSO in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in SAS Viya SSO for update operations. Select the **Save** button to commit any changes.
 

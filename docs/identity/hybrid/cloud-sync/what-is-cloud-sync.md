@@ -54,7 +54,6 @@ The following table provides a comparison between Microsoft Entra Connect and Mi
 | Connect to multiple disconnected on-premises AD forests | |● |
 | Lightweight agent installation model | |● |
 | Multiple active agents for high availability | |● |
-| Connect to LDAP directories|●| | 
 | Support for user objects |● |● |
 | Support for group objects |● |● |
 | Support for contact objects |● |● |

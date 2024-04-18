@@ -136,8 +136,6 @@ In the following sections are recommendations for Azure solutions. For general g
 
 * Define Conditional Access policies for [security information registration](~/identity/conditional-access/howto-conditional-access-policy-registration.md) that reflects a secure root of trust process on-premises (for example, for workstations in physical locations, identifiable by IP addresses, that employees must visit in person for verification).
 
-* Consider managing Conditional Access policies at scale with automation using [MS Graph Conditional Access API](~/identity/conditional-access/howto-conditional-access-apis.md)). For example, you can use the API to configure, manage, and monitor Conditional Access policies consistently across tenants.
-
 * Consider using Conditional Access to restrict workload identities. Create a policy to limit or better control access based on location or other relevant circumstances.
 
 ### Authentication Challenges

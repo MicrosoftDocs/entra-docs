@@ -53,6 +53,18 @@ items:
         href: multilateral-federation-solution-three.md    
       - name: Decision tree
         href: multilateral-federation-decision-tree.md    
+    - name: Microsoft Entra ID guide for independent software developers
+      items:
+      - name: Introduction
+        href: guide-for-independent-software-developers.md
+      - name: Establish applications
+        href: establish-applications.md
+      - name: Authenticate applications and users
+        href: authenticate-applications-and-users.md
+      - name: Authorize applications
+        href: authorize-applications-resources-workloads.md
+      - name: Customize tokens
+        href: customize-tokens.md
     - name: Authentication protocols
       items:
       - name: Overview

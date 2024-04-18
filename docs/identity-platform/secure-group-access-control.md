@@ -9,7 +9,7 @@ ms.date: 01/06/2023
 ms.reviewer:
 ms.service: identity-platform
 
-ms.topic: conceptual
+ms.topic: concept-article
 
 #Customer intent: As an application developer, I want to manage access to my application using groups in Microsoft Entra ID, so that I can control and minimize access to resources.
 ---

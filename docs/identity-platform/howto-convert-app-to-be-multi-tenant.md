@@ -30,7 +30,7 @@ If you want to try using one of our samples, refer to [Build a multitenant SaaS 
 
 ## Prerequisites
 
-- A Microsoft Entra ID tenant. If you don't have one, you can create one in our [Quickstart: Create a new tenant in Microsoft Entra ID](/entra/fundamentals/create-new-tenant)
+- A Microsoft Entra tenant. If you don't have one, you can create one in our [Quickstart: Create a new tenant in Microsoft Entra ID](/entra/fundamentals/create-new-tenant)
 - An application registered in the Microsoft identity platform. If you don't have one, you can create one in our [Quickstart: Register an application with the Microsoft identity platform](quickstart-register-app.md).
 - Familiarity with [Tenancy in Microsoft Entra ID](./single-and-multi-tenant-apps.md).
 - An integrated development environment (IDE) that enables you to edit your application code.
@@ -102,7 +102,7 @@ Your application may have multiple tiers, with each represented by its own regis
 
 #### Multiple tiers in a single tenant
 
-This can be a problem if your logical application consists of two or more application registrations, for example a separate client and resource. How do you get the resource into the customer tenant first? Microsoft Entra ID covers this case by enabling client and resource to be consented in a single step. The user sees the sum total of the permissions requested by both the client and resource on the consent page. To enable this behavior, the resource’s application registration must include the client’s App ID as a `knownClientApplications` in its [application manifest](./reference-app-manifest.md). For example:
+This can be a problem if your logical application consists of two or more application registrations, for example a separate client and resource. How do you get the resource into the external tenant first? Microsoft Entra ID covers this case by enabling client and resource to be consented in a single step. The user sees the sum total of the permissions requested by both the client and resource on the consent page. To enable this behavior, the resource’s application registration must include the client’s App ID as a `knownClientApplications` in its [application manifest](./reference-app-manifest.md). For example:
 
 ```json
 "knownClientApplications": ["12ab34cd-56ef-78gh-90ij11kl12mn"]

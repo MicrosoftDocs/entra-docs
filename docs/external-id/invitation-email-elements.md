@@ -4,7 +4,7 @@ description: Microsoft Entra B2B collaboration invitation email template
 
  
 ms.service: entra-external-id
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 10/06/2023
 
 ms.author: cmulligan

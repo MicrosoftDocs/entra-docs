@@ -11,6 +11,8 @@ ms.topic: landing-page
 ms.date: 01/30/2024
 ms.author: jeedes
 ms.reviewer: celested
+
+# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Directions on Microsoft so that I can control who has access to Directions on Microsoft, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
 # Tutorials for integrating applications with Microsoft Entra ID

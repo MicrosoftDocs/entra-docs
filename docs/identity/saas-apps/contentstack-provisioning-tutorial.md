@@ -12,6 +12,8 @@ ms.subservice: saas-apps
 ms.topic: tutorial
 ms.date: 02/12/2024
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Contentstack so that I can streamline the user management process and ensure that users have the appropriate access to Contentstack.
 ---
 
 # Tutorial: Configure Contentstack for automatic user provisioning
@@ -102,7 +104,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |name.familyName|String||
    |active|Boolean||
 
-1. Under the **Mappings** section, select **Synchronize Microsoft Entra ID Groups to Contentstack**.
+1. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Contentstack**.
 
 1. Review the group attributes that are synchronized from Microsoft Entra ID to Contentstack in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Contentstack for update operations. Select the **Save** button to commit any changes.
 

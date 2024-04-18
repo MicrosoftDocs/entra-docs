@@ -10,18 +10,18 @@ ms.subservice: customers
 ms.custom: devx-track-js
 ms.topic: sample
 ms.date: 08/17/2023
-#Customer intent: As a dev, devops, I want to learn about how to configure a sample vanilla JS SPA to sign in and sign out users with my Microsoft Entra ID for customers tenant
+#Customer intent: As a dev, devops, I want to learn about how to configure a sample vanilla JS SPA to sign in and sign out users with my external tenant
 ---
 
 # Sign in users in a sample vanilla JavaScript single-page application
 
-This how-to guide uses a sample vanilla JavaScript single-page Application (SPA) to demonstrate how to add authentication to a SPA. The SPA enables users to sign in and sign out by using their own Microsoft Entra ID for customers tenant. The sample uses the [Microsoft Authentication Library for JavaScript (MSAL.js)](https://github.com/AzureAD/microsoft-authentication-library-for-js) to handle authentication.
+This how-to guide uses a sample vanilla JavaScript single-page Application (SPA) to demonstrate how to add authentication to a SPA. The SPA enables users to sign in and sign out by using their own external tenant. The sample uses the [Microsoft Authentication Library for JavaScript (MSAL.js)](https://github.com/AzureAD/microsoft-authentication-library-for-js) to handle authentication.
 
 ## Prerequisites
 
 * Although any IDE that supports vanilla JS applications can be used, **Visual Studio Code** is recommended for this guide. It can be downloaded from the [Downloads](https://visualstudio.microsoft.com/downloads) page.
 * [Node.js](https://nodejs.org/en/download/).
-* Microsoft Entra ID for customers tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
+* An external tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
 
 ## Register the SPA in the Microsoft Entra admin center
 
@@ -84,7 +84,7 @@ If you choose to download the `.zip` file, extract the sample app file to a fold
     ```
 
 1. Open a web browser and navigate to `http://localhost:3000/`.
-1. Sign-in with an account registered to the customer tenant.
+1. Sign-in with an account registered to the external tenant.
 1. Once signed in the display name is shown next to the **Sign out** button as shown in the following screenshot.
 1. The SPA will now display a button saying **Request Profile Information**. Select it to display profile data.
 

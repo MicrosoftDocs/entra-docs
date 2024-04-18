@@ -7,7 +7,7 @@ manager: CelesteDG
 ms.service: entra-id
 ms.subservice: enterprise-apps
 
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 12/11/2023
 ms.custom: template-concept, enterprise-apps-article
 ms.author: jomondi

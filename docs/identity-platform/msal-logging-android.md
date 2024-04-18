@@ -9,7 +9,7 @@ ms.date: 01/25/2021
 ms.reviewer: saeeda, negoe
 ms.service: identity-platform
 
-ms.topic: conceptual
+ms.topic: concept-article
 #Customer intent: As an Android developer, I want to enable logging in MSAL for Android using Java, so that I can capture and analyze log messages for troubleshooting and debugging purposes.
 ---
 # Logging in MSAL for Android

@@ -6,7 +6,7 @@ author: omondiatieno
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: enterprise-apps
-ms.topic: conceptual
+ms.topic: concept-article
 
 ms.date: 10/25/2023
 ms.author: jomondi
@@ -49,10 +49,14 @@ Applications are categorized into following migration statuses:
 
 Application readiness is evaluated based on following predefined AD FS application configuration tests. The tests are run automatically and the results are displayed in the AD FS application migration dashboard as a **Migration status**. If the AD FS configuration isn't compatible with a Microsoft Entra configuration, you get specific guidance on how to address the configuration in Microsoft Entra ID.
 
+## AD FS application migration insights status updates
+
+When the application is updated, internal agents sync the updates within a few minutes. However, AD FS migration insights jobs are responsible for evaluating the updates and compute a new migration status. Those jobs are scheduled to run every 24 hours, which means that the data will be computed only once in a day, at around 00:00 Coordinated Universal Time (UTC).
+
 |Result  |Pass/Warning/Fail  |Description  |
 |---------|---------|---------|
 |Test-ADFSRPAdditionalAuthenticationRules <br> At least one nonmigratable rule was detected for AdditionalAuthentication.       | Pass/Warning          | The relying party has rules to prompt for multifactor authentication. To move to Microsoft Entra ID, translate those rules into Conditional Access policies. If you're using an on-premises MFA, we recommend that you move to Microsoft Entra multifactor authentication. [Learn more about Conditional Access](~/identity/authentication/concept-mfa-howitworks.md).        |
-|Test-ADFSRPAdditionalWSFedEndpoint <br> Relying party has AdditionalWSFedEndpoint set to true.       | Pass/Fail          | The relying party in AD FS allows multiple WS-Fed assertion endpoints. Currently, Microsoft Entra only supports one. If you have a scenario where this result is blocking migration, [let us know](https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789).     |
+|Test-ADFSRPAdditionalWSFedEndpoint <br> Relying party has AdditionalWSFedEndpoint set to true.       | Pass/Fail          | The relying party in AD FS allows multiple WS-Fed assertion endpoints. Currently, Microsoft Entra-only supports one. If you have a scenario where this result is blocking migration, [let us know](https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789).     |
 |Test-ADFSRPAllowedAuthenticationClassReferences <br> Relying Party has set AllowedAuthenticationClassReferences.       | Pass/Fail          | This setting in AD FS lets you specify whether the application is configured to only allow certain authentication types. We recommend using Conditional Access to achieve this capability.  If you have a scenario where this result is blocking migration, [let us know](https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789).  [Learn more about Conditional Access](~/identity/authentication/concept-mfa-howitworks.md).         |
 |Test-ADFSRPAlwaysRequireAuthentication <br> AlwaysRequireAuthenticationCheckResult      | Pass/Fail          | This setting in AD FS lets you specify whether the application is configured to ignore SSO cookies and **Always Prompt for Authentication**. In Microsoft Entra ID, you can manage the authentication session using Conditional Access policies to achieve similar behavior. [Learn more about configuring authentication session management with Conditional Access](~/identity/conditional-access/howto-conditional-access-session-lifetime.md).          |
 |Test-ADFSRPAutoUpdateEnabled <br> Relying Party has AutoUpdateEnabled set to true       | Pass/Warning          | This setting in AD FS lets you specify whether AD FS is configured to automatically update the application based on changes within the federation metadata. Microsoft Entra ID doesn't support this today but shouldn't block the migration of the application to Microsoft Entra ID.           |

@@ -22,9 +22,9 @@ When creating Conditional Access policies, administrators have asked for the abi
 
 There are multiple scenarios that organizations can now enable using filter for devices condition. The following scenarios provide examples of how to use this new condition.
 
-- **Restrict access to privileged resources**. For this example, lets say you want to allow access to Windows Azure Service Management API from a user who is assigned a privileged role Global Administrator, has satisfied multifactor authentication and accessing from a device that is [privileged or secure admin workstations](/security/compass/privileged-access-devices) and attested as compliant. For this scenario, organizations would create two Conditional Access policies:
-   - Policy 1: All users with the directory role of Global Administrator, accessing the Windows Azure Service Management API cloud app, and for Access controls, Grant access, but require multifactor authentication and require device to be marked as compliant.
-   - Policy 2: All users with the directory role of Global Administrator, accessing the Windows Azure Service Management API cloud app, excluding a filter for devices using rule expression device.extensionAttribute1 equals SAW and for Access controls, Block. Learn how to [update extensionAttributes on a Microsoft Entra device object](/graph/api/device-update?view=graph-rest-1.0&tabs=http&preserve-view=true).
+- **Restrict access to privileged resources**. For this example, lets say you want to allow access to Windows Azure Service Management API from a user who is assigned a [privileged role](../role-based-access-control/permissions-reference.md), has satisfied multifactor authentication and accessing from a device that is [privileged or secure admin workstations](/security/compass/privileged-access-devices) and attested as compliant. For this scenario, organizations would create two Conditional Access policies:
+   - Policy 1: All users with an administrator role, accessing the Windows Azure Service Management API cloud app, and for Access controls, Grant access, but require multifactor authentication and require device to be marked as compliant.
+   - Policy 2: All users with an administrator, accessing the Windows Azure Service Management API cloud app, excluding a filter for devices using rule expression device.extensionAttribute1 equals SAW and for Access controls, Block. Learn how to [update extensionAttributes on a Microsoft Entra device object](/graph/api/device-update?view=graph-rest-1.0&tabs=http&preserve-view=true).
 - **Block access to organization resources from devices running an unsupported Operating System**. For this example, lets say you want to block access to resources from Windows OS version older than Windows 10. For this scenario, organizations would create the following Conditional Access policy:
    - All users, accessing all cloud apps, excluding a filter for devices using rule expression device.operatingSystem equals Windows and device.operatingSystemVersion startsWith "10.0" and for Access controls, Block.
 - **Do not require multifactor authentication for specific accounts on specific devices**. For this example, lets say you want to not require multifactor authentication when using service accounts on specific devices like Teams phones or Surface Hub devices. For this scenario, organizations would create the following two Conditional Access policies:
@@ -40,14 +40,14 @@ Filter for devices is an optional control when creating a Conditional Access pol
 
 The following steps will help create two Conditional Access policies to support the first scenario under [Common scenarios](#common-scenarios). 
 
-Policy 1: All users with the directory role of Global Administrator, accessing the Windows Azure Service Management API cloud app, and for Access controls, Grant access, but require multifactor authentication and require device to be marked as compliant.
+Policy 1: All users with an administrator role, accessing the Windows Azure Service Management API cloud app, and for Access controls, Grant access, but require multifactor authentication and require device to be marked as compliant.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Protection** > **Conditional Access**.
 1. Select **Create new policy**.
 1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
 1. Under **Assignments**, select **Users or workload identities**.
-   1. Under **Include**, select **Directory roles** and choose **Global Administrator**.
+   1. Under **Include**, select **Directory roles**, then all roles with administrator in the name.
    
       > [!WARNING]
       > Conditional Access policies support built-in roles. Conditional Access policies are not enforced for other role types including [administrative unit-scoped](~/identity/role-based-access-control/admin-units-assign-roles.md) or [custom roles](~/identity/role-based-access-control/custom-create.md).
@@ -59,12 +59,12 @@ Policy 1: All users with the directory role of Global Administrator, accessing t
 1. Confirm your settings and set **Enable policy** to **On**.
 1. Select **Create** to create to enable your policy.
 
-Policy 2: All users with the directory role of Global Administrator, accessing the Windows Azure Service Management API cloud app, excluding a filter for devices using rule expression device.extensionAttribute1 equals SAW and for Access controls, Block.
+Policy 2: All users with the an administrator role, accessing the Windows Azure Service Management API cloud app, excluding a filter for devices using rule expression device.extensionAttribute1 equals SAW and for Access controls, Block.
 
 1. Select **Create new policy**.
 1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
 1. Under **Assignments**, select **Users or workload identities**.
-   1. Under **Include**, select **Directory roles** and choose **Global Administrator**.
+   1. Under **Include**, select **Directory roles**, then all roles with administrator in the name
    
       > [!WARNING]
       > Conditional Access policies support built-in roles. Conditional Access policies are not enforced for other role types including [administrative unit-scoped](~/identity/role-based-access-control/admin-units-assign-roles.md) or [custom roles](~/identity/role-based-access-control/custom-create.md).

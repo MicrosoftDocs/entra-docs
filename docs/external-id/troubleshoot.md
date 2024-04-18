@@ -4,7 +4,7 @@ description: Remedies for common problems with Microsoft Entra B2B collaboration
  
 ms.service: entra-external-id
 ms.topic: troubleshooting
-ms.date: 05/23/2023
+ms.date: 03/26/2024
 tags: active-directory
 ms.author: cmulligan
 author: csmulligan
@@ -16,12 +16,6 @@ ms.collection: M365-identity-device-management
 # Troubleshooting Microsoft Entra B2B collaboration
 
 Here are some remedies for common problems with Microsoft Entra B2B collaboration.
-
-   > [!IMPORTANT]
-   >
-   > - **Starting July 12, 2021**,  if Microsoft Entra B2B customers set up new Google integrations for use with self-service sign-up for their custom or line-of-business applications, authentication with Google identities won’t work until authentications are moved to system web-views. [Learn more](google-federation.md#deprecation-of-web-view-sign-in-support).
-   > - **Starting September 30, 2021**, Google is [deprecating embedded web-view sign-in support](https://developers.googleblog.com/2016/08/modernizing-oauth-interactions-in-native-apps.html). If your apps authenticate users with an embedded web-view and you're using Google federation with [Azure AD B2C](/azure/active-directory-b2c/identity-provider-google) or Microsoft Entra B2B for [external user invitations](google-federation.md) or [self-service sign-up](identity-providers.md), Google Gmail users won't be able to authenticate. [Learn more](google-federation.md#deprecation-of-web-view-sign-in-support).
-   > - The [email one-time passcode](one-time-passcode.md) feature is now turned on by default for all new tenants and for any existing tenants where you haven't explicitly turned it off. When this feature is turned off, the fallback authentication method is to prompt invitees to create a Microsoft account.
 
 ## Guest sign-in fails with error code AADSTS50020
 
@@ -90,7 +84,7 @@ Common errors include:
 
 ### Invitee’s Admin has disallowed EmailVerified Users from being created in their tenant
 
-When inviting users whose organization is using Microsoft Entra ID, but where the specific user’s account doesn't exist (for example, the user doesn't exist in Microsoft Entra contoso.com). The administrator of contoso.com may have a policy in place preventing users from being created. The user must check with their admin to determine if external users are allowed. The external user’s admin may need to allow Email Verified users in their domain (see this [article](/powershell/module/msonline/set-msolcompanysettings) on allowing Email Verified Users).
+When inviting users whose organization is using Microsoft Entra ID, but where the specific user’s account doesn't exist (for example, the user doesn't exist in Microsoft Entra contoso.com). The administrator of contoso.com may have a policy in place preventing users from being created. The user must check with their admin to determine if external users are allowed. The external user’s admin may need to allow Email Verified users in their domain (see this [article](/powershell/module/microsoft.graph.identity.signins/update-mgpolicyauthorizationpolicy) on allowing Email Verified Users).
 
 ![Screenshot of the error stating the tenant doesn't allow email verified users.](media/troubleshoot/allow-email-verified-users.png)
 
@@ -158,6 +152,8 @@ If the identity tenant is a just-in-time (JIT) or viral tenant (meaning it's a s
 
 ## A guest user is unable to use the Azure AD PowerShell V1 module
 
+[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
+
 As of November 18, 2019, guest users in your directory (defined as user accounts where the **userType** property equals **Guest**) are blocked from using the Azure AD PowerShell V1 module. Going forward, a user will need to either be a member user (where **userType** equals **Member**) or use the Azure AD PowerShell V2 module.
 
 ## In an Azure US Government tenant, I can't invite a B2B collaboration guest user
@@ -173,7 +169,7 @@ When you try to collaborate with another Microsoft Entra organization in a separ
 
 ## Invitation is blocked due to disabled Microsoft B2B Cross Cloud Worker application
 
-Rarely, you might see this message: “This action can't be completed because the Microsoft B2B Cross Cloud Worker application has been disabled in the invited user’s tenant. Ask the invited user’s admin to re-enable it, then try again.” This error means that the Microsoft B2B Cross Cloud Worker application has been disabled in the B2B collaboration user’s home tenant. This app is typically enabled, but it might have been disabled by an admin in the user’s home tenant, either through PowerShell or the portal (see [Disable how a user signs in](~/identity/enterprise-apps/disable-user-sign-in-portal.md)). An admin in the user’s home tenant can re-enable the app through PowerShell or the Microsoft Entra admin center. In the admin center, search for “Microsoft B2B Cross Cloud Worker” to find the app, select it, and then choose to re-enable it.
+Rarely, you might see this message: “This action can't be completed because the Microsoft B2B Cross Cloud Worker application has been disabled in the invited user’s tenant. Ask the invited user’s admin to re-enable it, then try again.” This error means that the Microsoft B2B Cross Cloud Worker application has been disabled in the B2B collaboration user’s home tenant. This app is typically enabled, but it might have been disabled by an admin in the user’s home tenant, either through PowerShell or the Microsoft Entra admin center (see [Disable how a user signs in](~/identity/enterprise-apps/disable-user-sign-in-portal.md)). An admin in the user’s home tenant can re-enable the app through PowerShell or the Microsoft Entra admin center. In the admin center, search for “Microsoft B2B Cross Cloud Worker” to find the app, select it, and then choose to re-enable it.
 
 <a name='i-receive-the-error-that-azure-ad-cant-find-the-aad-extensions-app-in-my-tenant'></a>
 
@@ -181,13 +177,20 @@ Rarely, you might see this message: “This action can't be completed because th
 
 When you're using self-service sign-up features, like custom user attributes or user flows, an app called `aad-extensions-app. Do not modify. Used by AAD for storing user data.` is automatically created. It's used by Microsoft Entra External ID to store information about users who sign up and custom attributes collected.
 
-If you accidentally deleted the `aad-extensions-app`, you have 30 days to recover it. You can restore the app using the Azure AD PowerShell module.
+If you accidentally deleted the `aad-extensions-app`, you have 30 days to recover it. You can restore the app using the Microsoft Graph PowerShell module.
 
-1. Launch the Azure AD PowerShell module and run `Connect-AzureAD`.
+1. Launch the Microsoft Graph PowerShell module and run `Connect-MgGraph`.
 1. Sign in as a Global Administrator for the Microsoft Entra tenant that you want to recover the deleted app for.
-1. Run the PowerShell command `Get-AzureADDeletedApplication`.
-1. Find the application in the list where the display name begins with `aad-extensions-app` and copy its `ObjectId` property value.
-1. Run the PowerShell command `Restore-AzureADDeletedApplication -ObjectId {id}`. Replace the `{id}` portion of the command with the `ObjectId` from the previous step.
+1. Run the PowerShell command `Get-MgDirectoryDeletedItem -DirectoryObjectId {id}`. As an example:
+
+```powershell
+Get-MgDirectoryDeletedItem -DirectoryObjectId 'd4142c52-179b-4d31-b5b9-08940873507b'
+Id                                   DeletedDateTime
+--                                   ---------------
+d4142c52-179b-4d31-b5b9-08940873507b 8/30/2021 7:37:37 AM
+```
+
+1. Run the PowerShell command `Restore-MgDirectoryDeletedItem -DirectoryObjectId {id}`. Replace the `{id}` portion of the command with the `DirectoryObjectId` from the previous step.
 
 You should now see the restored app in the Microsoft Entra admin center.
 
@@ -195,10 +198,9 @@ You should now see the restored app in the Microsoft Entra admin center.
 
 Let's say you inadvertently invite a guest user with an email address that matches a user object already in your directory. The guest user object is created, but the email address is added to the `otherMail` property instead of to the `mail` or `proxyAddresses` properties. To avoid this issue, you can search for conflicting user objects in your Microsoft Entra directory by using these PowerShell steps:
 
-1. Open the Azure AD PowerShell module and run `Connect-AzureAD`.
+1. Open the Microsoft Graph PowerShell module and run `Connect-MgGraph`.
 1. Sign in as a Global Administrator for the Microsoft Entra tenant that you want to check for duplicate contact objects in.
-1. Run the PowerShell command `Get-AzureADContact -All $true | ? {$_.ProxyAddresses -match 'user@domain.com'}`.
-1. Run the PowerShell command `Get-AzureADContact -All $true | ? {$_.Mail -match 'user@domain.com'}`.
+1. Run the PowerShell command `Get-MgContact -All | ? {$_.Mail -match 'user@domain.com'}`.
 
 ## External access blocked by policy error on the login screen
 
@@ -208,7 +210,7 @@ When you try to login to your tenant, you might see this error message: "Your ne
 
 You might see this message: "This invitation is blocked by cross-tenant access settings in your organization. Your administrator must configure cross-tenant access settings to allow this invitation." In this case, ask your administrator to check the cross-tenant access settings.  
 
-## Next steps
+## Next step
 
 - [Get support for B2B collaboration](~/fundamentals/how-to-get-support.md)
-- [Use audit logs and access reviews](auditing-and-reporting.md)
+

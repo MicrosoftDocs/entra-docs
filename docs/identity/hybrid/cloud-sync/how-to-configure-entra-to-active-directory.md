@@ -18,14 +18,12 @@ ms.author: billmath
 
 The following document will guide you through configuring cloud sync to synchronize groups to on-premises Active Directory. This configuration document is specific to on-premises Microsoft Entra Cloud Sync's Group Provision to AD. For information on a traditional on-premises to cloud configuration see [Configure and new installation - AD to Microsoft Entra ID](how-to-configure.md).
 
- :::image type="content" source="media/how-to-configure/new-ux-configure-19.png" alt-text="Screenshot of enable preview features." lightbox="media/how-to-configure/new-ux-configure-19.png":::
-
 For more information, see [Govern on-premises application access with groups from the cloud](govern-on-premises-groups.md).
 
 ## Prerequisites
 The following prerequisites are required to implement this scenario.
 
- - Azure AD account with at least a [Hybrid Administrator](../../role-based-access-control/permissions-reference.md#hybrid-identity-administrator) role.
+ - Microsoft Entra account with at least a [Hybrid Administrator](../../role-based-access-control/permissions-reference.md#hybrid-identity-administrator) role.
  - On-premises Active Directory Domain Services environment with Windows Server 2016 operating system or later. 
      - Required for AD Schema attribute  - msDS-ExternalDirectoryObjectId 
  - Provisioning agent with build version [1.1.1370.0](reference-version-history.md#1113700) or later.
@@ -42,7 +40,7 @@ The following prerequisites are required to implement this scenario.
  >
  >These permissions aren't applied to AdminSDHolder objects by default
 
- [Microsoft Entra Provisioning Agent gMSA PowerShell cmdlets](how-to-gmsa-cmdlets.md#grant-permissions-to-a-specific-domain) 
+ [Microsoft Entra provisioning agent gMSA PowerShell cmdlets](how-to-gmsa-cmdlets.md#grant-permissions-to-a-specific-domain) 
 
  - The provisioning agent must be able to communicate with one or more domain controllers on ports TCP/389 (LDAP) and TCP/3268 (Global Catalog).
      - Required for global catalog lookup to filter out invalid membership references
@@ -128,8 +126,10 @@ You can customize the default attribute-mappings according to your business need
 
 :::image type="content" source="media/how-to-configure-entra-to-active-directory/entra-to-ad-6.png" alt-text="Screenshot of the attribute based scoping." lightbox="media/how-to-configure-entra-to-active-directory/entra-to-ad-6.png":::
 
-### Schema for Microsoft Entra ID to AD configurations
-Currently, the AD Schema isn't discoverable and there's fixed set of mappings. The following table provides the default mappings and schema for the Microsoft Entra ID to AD configurations.
+<a name='schema-for-microsoft-entra-id-to-ad-configurations'></a>
+
+### Schema for Microsoft Entra ID to Active Directory configurations
+Currently, the AD Schema isn't discoverable and there's fixed set of mappings. The following table provides the default mappings and schema for the Microsoft Entra ID to Active Directory configurations.
 
 |Target attribute|Source attribute|Mapping type|Notes|
 |-----|-----|-----|-----|
@@ -148,7 +148,7 @@ Be aware that not all of the above mappings are visible in the portal. For more 
 
 
 ### Attribute scope filtering
-Attribute based scope filtering is supported. You can scope groups based on certain attributes. However, be aware that the attribute mapping section for a Microsoft Entra ID to AD configuration is slightly different than the traditional attribute mapping section.
+Attribute based scope filtering is supported. You can scope groups based on certain attributes. However, be aware that the attribute mapping section for a Microsoft Entra ID to Active Directory configuration is slightly different than the traditional attribute mapping section.
 
 :::image type="content" source="media/how-to-configure-entra-to-active-directory/entra-to-ad-6.png" alt-text="Screenshot of the attribute based scoping." lightbox="media/how-to-configure-entra-to-active-directory/entra-to-ad-6.png":::
 

@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: how-to
-ms.date: 02/06/2023
+ms.date: 03/04/2024
 ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
@@ -52,6 +52,8 @@ Follow these steps to assign Microsoft Entra roles using the Microsoft Entra adm
     If you see something different from the following picture, you might have PIM enabled. See the next section.
 
     ![Screenshot of Add assignments pane for selected role.](./media/manage-roles-portal/add-assignments.png)
+
+    [!INCLUDE [rbac-assign-roles-guest-user-note](../../includes/rbac-assign-roles-guest-user-note.md)]
 
 1. Select **Add** to assign the role.
 
@@ -140,7 +142,7 @@ If PIM is enabled, you have additional capabilities, such as making a user eligi
     $roledefinition = Get-MgRoleManagementDirectoryRoleDefinition -Filter "DisplayName eq 'Billing Administrator'"
     ```
 
-1. Use the following command to create a hash table to store all the necessary attributes required to assign the role to the user. The Principal ID will be the user id to which you want to assign the role. In this example, the assignment will be valid only for **10 hours**.
+1. Use the following command to create a hash table to store all the necessary attributes required to assign the role to the user. The Principal ID will be the user ID to which you want to assign the role. In this example, the assignment will be valid only for **10 hours**.
 
     ```powershell
     $params = @{

@@ -1,16 +1,17 @@
 ---
-
-title: Conditional Access gap analyzer workbook in  Microsoft Entra ID
-description: Learn how to use the Conditional Access gap analyzer workbook.
+title: Conditional Access gap analyzer workbook
+description: Learn how to use the Conditional Access gap analyzer workbook in Microsoft Entra ID to ensure resources are properly protected.
 
 author: shlipsey3
 manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 10/03/2023
+ms.date: 03/05/2024
 ms.author: sarahlipsey
 ms.reviewer: sarbar
+
+#Customer intent: As an IT admin, I need to use the Conditional Access gap analyzer workbook to detect gaps in my Conditional Access implementation so I can ensure that my resources are properly protected.
 ---
 
 # Conditional Access gap analyzer workbook
@@ -20,6 +21,9 @@ As an IT administrator, you want to ensure that your Conditional Access policies
 
 This article provides you with an overview of the **Conditional Access gap analyzer** workbook.
 
+## Prerequisites
+
+[!INCLUDE [workbook prerequisites](../../includes/workbook-prerequisites.md)]
 
 ## Description
 
@@ -36,10 +40,13 @@ The Conditional Access gap analyzer workbook helps you to verify that your Condi
 
 ## How to access the workbook
 
-[!INCLUDE [how to access workbooks](~/includes/how-to-access-workbooks.md)]
-3. Select the **Conditional Access Gap Analyzer** workbook from the **Conditional Access** section.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) using the appropriate combination of roles.
 
-## Sections
+1. Browse to **Identity** > **Monitoring & health** > **Workbooks**.
+
+1. Select the **Conditional Access Gap Analyzer** workbook from the **Conditional Access** section.
+
+## Workbook sections
 
 The workbook has four sections:
 

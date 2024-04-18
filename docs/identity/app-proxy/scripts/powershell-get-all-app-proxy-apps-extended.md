@@ -18,9 +18,9 @@ The PowerShell script example lists information about all Microsoft Entra applic
 
 Changing the value of the `$ssoMode` variable enables a filtered output by SSO mode. Further details are documented in the script.
 
-[!INCLUDE [quickstarts-free-trial-note](~/../azure-docs-pr/includes/quickstarts-free-trial-note.md)]
+[!INCLUDE [quickstarts-free-trial-note](~/includes/azure-docs-pr/quickstarts-free-trial-note.md)]
 
-[!INCLUDE [updated-for-az](~/../azure-docs-pr/includes/updated-for-az.md)]
+[!INCLUDE [updated-for-az](~/includes/azure-docs-pr/updated-for-az.md)]
 
 The sample requires the [Microsoft Graph Beta PowerShell module](/powershell/microsoftgraph/installation) 2.10 or newer.
 

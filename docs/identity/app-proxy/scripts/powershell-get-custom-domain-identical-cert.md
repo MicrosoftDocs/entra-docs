@@ -16,9 +16,9 @@ ms.reviewer: ashishj
 
 The PowerShell script example lists all Microsoft Entra application proxy applications published with the identical certificate.
 
-[!INCLUDE [quickstarts-free-trial-note](~/../azure-docs-pr/includes/quickstarts-free-trial-note.md)]
+[!INCLUDE [quickstarts-free-trial-note](~/includes/azure-docs-pr/quickstarts-free-trial-note.md)]
 
-[!INCLUDE [updated-for-az](~/../azure-docs-pr/includes/updated-for-az.md)]
+[!INCLUDE [updated-for-az](~/includes/azure-docs-pr/updated-for-az.md)]
 
 The sample requires the [Microsoft Graph Beta PowerShell module](/powershell/microsoftgraph/installation) 2.10 or newer.
 

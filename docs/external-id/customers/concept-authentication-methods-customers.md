@@ -7,7 +7,7 @@ manager: celestedg
 ms.service: entra-external-id
  
 ms.subservice: customers
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 05/31/2023
 ms.author: mimart
 ms.custom: it-pro
@@ -15,7 +15,7 @@ ms.custom: it-pro
 
 # Authentication methods and identity providers for customers
 
-Microsoft Entra ID for customers offers several options for authenticating users of your applications. You can let customers create an account in your customer directory using their email and either a password or an email one-time passcode. You can also enable sign-in with a social account.
+Microsoft Entra External ID offers several options for authenticating users of your applications. You can let customers create an account in your customer directory using their email and either a password or an email one-time passcode. You can also enable sign-in with a social account.
 
 ## Email and password sign-in
 
@@ -48,13 +48,13 @@ When you [create a sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-
 
 ## Social identity providers: Facebook and Google
 
-For an optimal sign-in experience, federate with social identity providers whenever possible so you can give your customers a seamless sign-up and sign-in experience. In a customer tenant, you can allow a customer to sign up and sign in using their own Facebook or Google account. When a customer signs up for your app using their social account, the social identity provider creates, maintains, and manages identity information while providing authentication services to applications.
+For an optimal sign-in experience, federate with social identity providers whenever possible so you can give your customers a seamless sign-up and sign-in experience. In an external tenant, you can allow a customer to sign up and sign in using their own Facebook or Google account. When a customer signs up for your app using their social account, the social identity provider creates, maintains, and manages identity information while providing authentication services to applications.
 
-When you enable social identity providers, customers can select from the social identity providers options you've made available on the sign-up page. To set up social identity providers in your customer tenant, you create an application at the identity provider and configure credentials. You obtain a client or app ID and a client or app secret, which you can then add to your customer tenant.
+When you enable social identity providers, customers can select from the social identity providers options you've made available on the sign-up page. To set up social identity providers in your external tenant, you create an application at the identity provider and configure credentials. You obtain a client or app ID and a client or app secret, which you can then add to your external tenant.
 
 ### Google sign-in
 
-By setting up federation with Google, you can allow customers to sign in to your applications with their own Gmail accounts. After you've added Google as one of your application's sign-in options, on the sign-in page, users can sign in to Microsoft Entra ID for customers with a Google account.
+By setting up federation with Google, you can allow customers to sign in to your applications with their own Gmail accounts. After you've added Google as one of your application's sign-in options, on the sign-in page, users can sign in to Microsoft Entra External ID with a Google account.
 
 The following screenshots show the sign-in with Google experience. In the sign-in page, users select **Sign-in with Google**. At that point, the user is redirected to the Google identity provider to complete the sign-in.
 
@@ -63,7 +63,7 @@ The following screenshots show the sign-in with Google experience. In the sign-i
 Learn how to [add Google as an identity provider](how-to-google-federation-customers.md).
 ### Facebook sign-in
 
-By setting up federation with Facebook, you can allow invited users to sign in to your applications with their own Facebook accounts. After you've added Facebook as one of your application's sign-in options, on the sign-in page, users can sign-in to Microsoft Entra ID for customers with a Facebook account.
+By setting up federation with Facebook, you can allow invited users to sign in to your applications with their own Facebook accounts. After you've added Facebook as one of your application's sign-in options, on the sign-in page, users can sign-in to Microsoft Entra External ID with a Facebook account.
 
 The following screenshots show the sign-in with Facebook experience. In the sign-in page, users select **Sign-in with Facebook**. Then the user is redirected to the Facebook identity provider to complete the sign-in.
 

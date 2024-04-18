@@ -10,7 +10,7 @@ author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: anjusingh, ludwignick
 ---
-# Conditional Access: Authentication flows
+# Conditional Access: Authentication flows (Preview)
 
 Microsoft Entra ID supports a wide variety of authentication and authorization flows to provide a seamless experience across all application and device types. Some of these authentication flows, are higher risk than others. To provide more control over your security posture, we’re adding the ability to control certain authentication flows to Conditional Access. This control starts with the ability to explicitly target [device code flow](../../identity-platform/v2-oauth2-device-code.md).
 

@@ -226,7 +226,7 @@ You'll now set the Google client ID and client secret. You can use the Microsoft
 
 ## Add Google identity provider to a user flow
 
-At this point, the Google identity provider is set up in your Microsoft Entra ID tenant. Users who redeem invitations from you can use Google to sign in. However, if you've created self-service sign-up user flows, you also need to add Google to your user flow sign-in pages. To add the Google identity provider to a user flow:
+At this point, the Google identity provider is set up in your Microsoft Entra tenant. Users who redeem invitations from you can use Google to sign in. However, if you've created self-service sign-up user flows, you also need to add Google to your user flow sign-in pages. To add the Google identity provider to a user flow:
 
 1. Browse to **Identity** > **External Identities** > **User flows**.
 

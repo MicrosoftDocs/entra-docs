@@ -1,6 +1,6 @@
 ---
 title: Plan your Microsoft Entra Verified ID verification solution 
-description: Learn foundational information to plan and design your verification solution
+description: Learn foundational information to plan and design your verification solution.
 documentationCenter: ''
 author: barclayn
 manager: martinco
@@ -32,7 +32,7 @@ As you plan your verification solution, you must consider what business capabili
 
 As part of your plan for a verification solution, you must enable the interactions between the verifier, the subject, and the issuer. In this article, the terms relying party and verifier are used interchangeably. The following diagram shows the components of your verification architecture.
 
-![Diagram of the components of a verification solution.](media/plan-verification-solution/plan-verification-solution-architecture.png)
+:::image type="content" source="media/plan-verification-solution/plan-verification-solution-architecture.png" alt-text="Diagram of the components of a verification solution.":::
 
 
 ### Microsoft Entra Verified ID service
@@ -43,37 +43,37 @@ In the context of a verifier solution, the Microsoft Entra Verified ID service i
 
 ### Microsoft Entra tenant 
 
-The service requires a Microsoft Entra tenant that provides an Identity and Access Management (IAM) control plane for the Azure resources that are part of the solution. Each Microsoft Entra tenant uses the multitenant Microsoft Entra Verified ID service, and it issues a single DID document representing the verifier. If you have multiple relying parties using your verification service, they all use the same verifier DID. The verifier DID provides pointers to the public key that allows subjects and issuers to validate messages that come from the relying party.
+The service requires a Microsoft Entra tenant that provides an Identity and Access Management (IAM) control plane for the Azure resources that are part of the solution. Each Microsoft Entra tenant uses the multi-tenant Microsoft Entra Verified ID service, and it issues a single DID document representing the verifier. If you have multiple relying parties using your verification service, they all use the same verifier DID. The verifier DID provides pointers to the public key that allows subjects and issuers to validate messages that come from the relying party.
 
 
 ### Azure Key Vault
 
-![Diagram of the components of a verification solution with Azure Key Vault highlighted.](./media/plan-verification-solution/plan-verification-solution-key-vault.png)
+:::image type="content" source="./media/plan-verification-solution/plan-verification-solution-key-vault.png" alt-text="Diagram of the components of a verification solution with Azure Key Vault highlighted.":::
 
 The Azure Key Vault service stores your verifier keys, which are generated when you enable the Microsoft Entra Verified ID issuance service. The keys are used to provide message security. Each verifier has a single key set used for signing, updating, and recovering VCs. This key set is used each time you service a verification request. Microsoft key set currently uses Elliptic Curve Cryptography (ECC) [SECP256k1](https://en.bitcoin.it/wiki/Secp256k1). We're exploring other cryptographic signature schemas that are adopted by the broader DID community.
 
 ### Request Service API
 
-![Diagram of the components of a verification solution with request Service API highlighted.](./media/plan-verification-solution/plan-verification-solution-apis.png)
+:::image type="content" source="./media/plan-verification-solution/plan-verification-solution-apis.png" alt-text="Diagram of the components of a verification solution with request Service API highlighted.":::
 
 Application programming interfaces (APIs) provide developers a method to abstract interactions between components of the solution to execute verification operations. 
 
 ### Trust System 
 
-![Diagram of the components of a verification solution with the trust system highlighted.](./media/plan-verification-solution/plan-verification-solution-ion.png)
+:::image type="content" source="./media/plan-verification-solution/plan-verification-solution-ion.png" alt-text="Diagram of the components of a verification solution with the trust system highlighted.":::
 
 Microsoft Entra Verified ID currently supports [DID Web](https://w3c-ccg.github.io/did-method-web/) as a trust system, where the DID document is hosted on the issuers webserver.
 
 ### Microsoft Authenticator application
 
-![Diagram of the components of a verification solution with Microsoft Authenticator application highlighted.](media/plan-verification-solution/plan-verification-solution-authenticator.png)
+:::image type="content" source="media/plan-verification-solution/plan-verification-solution-authenticator.png" alt-text="Diagram of the components of a verification solution with Microsoft Authenticator application highlighted.":::
 
 Microsoft Authenticator is the mobile application. The Authenticator orchestrates the interactions between the user, the Microsoft Entra Verified ID service and the contract used to issue VCs. It acts as a digital wallet in which the holder of the VC stores the VC, including the private key of the subject of the VC. Authenticator is also the mechanism used to present VCs for verification.
 
 
 ### Relying party (RP) 
 
-![Diagram of the components of a verification solution with Relying party components highlighted.](media/plan-verification-solution/plan-verification-solution-relying-party.png)
+:::image type="content" source="media/plan-verification-solution/plan-verification-solution-relying-party.png" alt-text="Diagram of the components of a verification solution with Relying party components highlighted.":::
 
 #### Web front end
 
@@ -91,7 +91,7 @@ The following are examples of designs to satisfy specific use cases. The first i
 
 Verifiable credentials can be used to enable faster onboarding by replacing some human interactions. VCs can be used to onboard employees, students, citizens, or others to access services. For example, rather than an employee needing to go to a central office to activate an employee badge, they can use a VC to verify their identity to activate a badge that is delivered to them remotely. Rather than a citizen receiving a code they must redeem to access governmental services, they can use a VC to prove their identity and gain access. 
 
-![Diagram showing the account onboarding scenario.](media/plan-verification-solution/plan-verification-solution-onboarding.png)
+:::image type="content" source="media/plan-verification-solution/plan-verification-solution-onboarding.png" alt-text="Diagram showing the account onboarding scenario.":::
 
 #### Other elements 
 
@@ -101,7 +101,7 @@ Verifiable credentials can be used to enable faster onboarding by replacing some
 
 **Target identity systems**: Organization-specific identity repositories that the onboarding portal needs to interact with while onboarding subjects. The systems to integrate are determined based on the kinds of identities you want to onboard with VC validation. Common scenarios of identity verification for onboarding include:
 
-* External Identities that Microsoft Entra ID onboard using APIs to issue business-to-business (B2B) invitations, or entitlement management assignment to packages. 
+* External Identities that Microsoft Entra ID onboards using APIs to issue business-to-business (B2B) invitations, or entitlement management assignment to packages. 
 
 * Employee identities, which in centralized identity systems are already onboarded through human resources (HR) systems. In this case, the identity verification might be integrated as part of existing stages of HR workflows. 
 
@@ -131,7 +131,7 @@ Verifiable credentials can be used to enable faster onboarding by replacing some
 
 Verifiable credentials can be used as other proof to access to sensitive applications inside the organization. For example, VCs can also be used to provide employees with access to line-of-business applications based on achieving specific criteria, such as a certification.
 
-![Diagram of the components of a verification solution with other elements included.](media/plan-verification-solution/plan-verification-solution-inside-trust-boundary-access.png)
+:::image type="content" source="media/plan-verification-solution/plan-verification-solution-inside-trust-boundary-access.png" alt-text="Diagram of the components of a verification solution with other elements included.":::
 
 #### Other elements 
 
@@ -163,7 +163,7 @@ Verifiable credentials can also be used by relying parties that want to grant ac
 
 The decentralized nature of verifiable credentials enables this scenario without establishing federation relationships. 
 
-![Diagram of the components of a verification solution showing that access is taking place from outside of the trust boundary.](media/plan-verification-solution/plan-verification-solution-outside-trust-boundary-access.png)
+:::image type="content" source="media/plan-verification-solution/plan-verification-solution-outside-trust-boundary-access.png" alt-text="Diagram of the components of a verification solution showing that access is taking place from outside of the trust boundary.":::
 
 #### Other elements 
 
@@ -190,9 +190,10 @@ The decentralized nature of verifiable credentials enables this scenario without
 
 Verifiable credentials can be used as an approach to account recovery. For example, when a user needs to recover their account, they might access a website that requires them to present a VC and initiate a Microsoft Entra credential reset by calling MS Graph APIs as shown in the following diagram.
 
-Note: While the scenario we describe in this section is specific to recover Microsoft Entra accounts, this approach can also be used to recover accounts in other systems.
+> [!NOTE]
+> While the scenario we describe in this section is specific to recover Microsoft Entra accounts, this approach can also be used to recover accounts in other systems.
 
-![Diagram of the components of a verification solution showing the account recovery scenario.](media/plan-verification-solution/plan-verification-solution-account-recovery.png)
+:::image type="content" source="media/plan-verification-solution/plan-verification-solution-account-recovery.png" alt-text="Diagram of the components of a verification solution showing the account recovery scenario.":::
 
 #### Other Elements
 

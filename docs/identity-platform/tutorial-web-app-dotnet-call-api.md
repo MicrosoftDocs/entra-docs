@@ -1,6 +1,6 @@
 ---
 title: "Tutorial: Call an API and display the results"
-description: Call an API and display the results.
+description: Learn how to call the Microsoft Graph web API, sign-in, and display the profile information of the logged-in user
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner

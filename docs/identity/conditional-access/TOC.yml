@@ -4,10 +4,6 @@
   items:
   - name: What is Conditional Access?
     href: overview.md
-- name: Quickstarts
-  items:
-  - name: Require terms of use to be accepted
-    href: require-tou.md
 - name: Tutorials
   items:
   - name: Require multifactor authentication
@@ -44,7 +40,9 @@
   - name: Location conditions
     href: location-condition.md
   - name: Authentication flows
-    href: concept-authentication-flows.md
+    href: concept-authentication-flows.md    
+  - name: Authentication transfer
+    href: concept-authentication-transfer.md
   - name: Workload identities
     href: workload-identity.md
   - name: Continuous access evaluation
@@ -88,6 +86,8 @@
       href: howto-conditional-access-policy-risk.md
     - name: Require password change for risky users
       href: howto-conditional-access-policy-risk-user.md
+    - name: Block users with elevated insider risk
+      href: how-to-policy-insider-risk.md
     - name: Require compliant or hybrid joined devices for admins
       href: howto-conditional-access-policy-compliant-device-admin.md
     - name: Block access for unknown or unsupported device platform
@@ -110,6 +110,8 @@
       href: howto-conditional-access-policy-block-access.md
     - name: Require authentication strength for external users
       href: howto-conditional-access-policy-authentication-strength-external.md
+    - name: Require terms of use to be accepted
+      href: require-tou.md
   - name: Microsoft-managed policies
     href: managed-policies.md
   - name: Configure authentication flows
@@ -134,8 +136,6 @@
       href: howto-continuous-access-evaluation-troubleshoot.md
   - name: Approved client app migration
     href: migrate-approved-client-app.md
-  - name: Conditional Access APIs
-    href: howto-conditional-access-apis.md
 - name: Reference
   items:
   - name: Office 365 application

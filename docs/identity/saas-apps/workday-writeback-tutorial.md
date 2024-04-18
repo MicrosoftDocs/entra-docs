@@ -10,6 +10,8 @@ ms.topic: tutorial
 
 ms.date: 11/21/2022
 ms.author: chmutali
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Workday Writeback so that I can streamline the user management process and ensure that users have the appropriate access to Workday Writeback.
 ---
 # Tutorial: Configure attribute writeback from Microsoft Entra ID to Workday
 The objective of this tutorial is to show the steps you need to perform to writeback attributes from Microsoft Entra ID to Workday. The Workday writeback provisioning app supports assigning values to the following Workday attributes:
@@ -140,7 +142,7 @@ If you want to delay the UserID or Email writeback so that it happens on or afte
    The expression above uses the [DateDiff](~/identity/app-provisioning/functions-for-customizing-application-data.md#datediff) function to evaluate the difference between *employeeHireDate* and today's date in UTC obtained using [Now](~/identity/app-provisioning/functions-for-customizing-application-data.md#now) function. If *employeeHireDate* is greater than or equal to today's date, then it updates the UserID. Else it returns an empty value and the [IgnoreFlowIfNullOrEmpty](~/identity/app-provisioning/functions-for-customizing-application-data.md#ignoreflowifnullorempty) function excludes this attribute from Writeback.
 
 > [!IMPORTANT]
-> For the delayed Writeback to work as expected, an operation in on-premises AD or Microsoft Entra ID must trigger a change to the user just a day before the arrival or on the hire date, so that this user's profile is updated and is considered for Writeback. It must be a change, that updates an attribute value on the user profile, where the new attribute value is different from the old attribute value. 
+> For the delayed Writeback to work as expected, an operation in on-premises Active Directory or Microsoft Entra ID must trigger a change to the user just a day before the arrival or on the hire date, so that this user's profile is updated and is considered for Writeback. It must be a change, that updates an attribute value on the user profile, where the new attribute value is different from the old attribute value. 
 
 
 ### Handling phone number with country code and phone number
