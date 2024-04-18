@@ -7,13 +7,12 @@ manager: martinco
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to
-
-ms.date: 12/14/2022
+ms.date: 04/18/2024
 ms.author: gasinh
 ms.collection: M365-identity-device-management
 ms.custom: not-enterprise-apps
 
-#customer intent: As an IT admin, I want to configure F5 BIG-IP Easy Button for header-based and LDAP single sign-on, so that I can secure header and LDAP-based applications using Microsoft Entra ID and improve the overall security posture of the application.
+#customer intent: I'm an IT admin, and I want to configure F5 BIG-IP Easy Button for header-based and LDAP single sign-on (SSO). My goal is to secure header and LDAP-based applications using Microsoft Entra ID and improve the overall application security posture.
 ---
 
 # Tutorial: Configure F5 BIG-IP Easy Button for header-based and LDAP single sign-on
@@ -170,7 +169,7 @@ Use the optional **Security Settings** to specify whether Microsoft Entra ID enc
 
 This section contains properties to manually configure a new BIG-IP SAML application in your Microsoft Entra tenant. Easy Button has application templates for Oracle PeopleSoft, Oracle E-business Suite, Oracle JD Edwards, SAP ERP, and an SHA template for other apps. 
 
-For this scenario, select **F5 BIG-IP APM Azure AD Integration > Add**.
+For this scenario, select **F5 BIG-IP APM Microsoft Entra ID Integration > Add**.
 
 #### Azure Configuration
 
@@ -228,13 +227,13 @@ To select a policy to be applied to the application being published:
 1. In the **Available Policies** list, select a policy.
 2. Select the right arrow and move it to the **Selected Policies** list.
 
->[!NOTE]
->Selected policies have an **Include** or **Exclude** option checked. If both options are checked, the selected policy is not enforced.
+   >[!NOTE]
+   >Selected policies have an **Include** or **Exclude** option checked. If both options are checked, the selected policy is not enforced.
 
    ![Screenshot of excluded policies, under Selected Policies, on Conditional Access Policy.](./media/f5-big-ip-kerberos-easy-button/conditional-access-policy.png)
 
->[!NOTE]
->The policy list is enumerated once, when you initially select this tab. Use the **Refresh** button to manually force the wizard to query your tenant. This button appears when the application is deployed.
+   >[!NOTE]
+   >The policy list is enumerated once, when you initially select this tab. Use the **Refresh** button to manually force the wizard to query your tenant. This button appears when the application is deployed.
 
 ### Virtual Server Properties
 
