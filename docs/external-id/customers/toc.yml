@@ -1,17 +1,17 @@
 items:  
-- name: Microsoft Entra ID for customers documentation  
+- name: External ID for external-facing apps documentation
   href: index.yml  
 - name: Overview  
   expanded: true  
   items:   
-    - name: What is Microsoft Entra ID for customers?  
+    - name: External ID for external-facing apps  
       href: overview-customers-ciam.md 
     - name: Demo overview
       href: overview-solutions-customers.md
     - name: What's new in docs?
       href: whats-new-docs.md
 - name: Quickstarts
-  expanded: true
+  expanded: false
   items: 
     - name: Start a free trial without an Azure subscription
       href: quickstart-trial-setup.md 
@@ -22,7 +22,7 @@ items:
     - name: Use the Visual Studio Code extension
       href: visual-studio-code-extension.md
 - name: Samples
-  expanded: true
+  expanded: false
   items: 
     - name: Overview of CIAM samples
       href: samples-ciam-all.md
@@ -112,7 +112,7 @@ items:
             - name: Node.js - sign in users
               href: sample-cli-app-node-sign-in-users.md
 - name: Tutorials
-  expanded: true
+  expanded: false
   items:  
     - name: Single-page app (SPA)
       items: 
@@ -307,7 +307,7 @@ items:
     - name: Security and governance
       href: concept-security-customers.md
 - name: How-to guides
-  expanded: true
+  expanded: false
   items:
     - name: Authenticate and authorize
       items:
@@ -417,6 +417,8 @@ items:
       href: reference-user-permissions.md
     - name: Group and application roles support
       href: reference-group-app-roles-support.md
+    - name: Data residency
+      href: ~/fundamentals/data-residency.md
     - name: Company branding CSS template reference guide
       href: ~/fundamentals/reference-company-branding-css-template.md
     - name: Help and support options

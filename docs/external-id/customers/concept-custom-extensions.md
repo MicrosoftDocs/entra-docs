@@ -17,7 +17,7 @@ ms.custom: it-pro
 ---
 # Extending authentication flows with your own business logic
 
-Microsoft Entra ID for customers is designed for flexibility. In addition to the built-in authentication events within a sign-up and sign-in user flow, you can add custom authentication extensions at specific points within the authentication flow. A custom authentication extension is essentially an event listener that, when activated, makes an HTTP call to a REST API endpoint where you've defined a workflow action. For example, you could add an [attribute collection](#attribute-collection-start-and-submit-events) workflow to validate the attributes a user enters during sign-up, or you could use a [custom claims provider](#token-issuance-start-event) to add external user data to the token before it's issued.
+Microsoft Entra External ID is designed for flexibility. In addition to the built-in authentication events within a sign-up and sign-in user flow, you can add custom authentication extensions at specific points within the authentication flow. A custom authentication extension is essentially an event listener that, when activated, makes an HTTP call to a REST API endpoint where you've defined a workflow action. For example, you could add an [attribute collection](#attribute-collection-start-and-submit-events) workflow to validate the attributes a user enters during sign-up, or you could use a [custom claims provider](#token-issuance-start-event) to add external user data to the token before it's issued.
 
 There are two components you need to configure: a custom authentication extension and a REST API. The custom authentication extension specifies your REST API endpoint, when the REST API should be called, and the credentials to call the REST API. You can create custom authentication extensions at the following points in the authentication flow:
 
@@ -30,7 +30,7 @@ There are two components you need to configure: a custom authentication extensio
 
 If you have a custom authentication extension configured at one of these points, Microsoft Entra ID makes a call to the REST API you've defined. The request to the REST API contains information about the event, the user profile, authentication request data, and other context information. In turn, the REST API performs the workflow actions.
 
-This article provides an overview of custom authentication extensions in Microsoft Entra ID for customers.
+This article provides an overview of custom authentication extensions in Microsoft Entra External ID.
 
 ## Attribute collection start and submit events
 
@@ -80,4 +80,4 @@ For details, see:
 - [Create a REST API with a token issuance start event](~/identity-platform/custom-extension-tokenissuancestart-setup.md?context=/azure/active-directory/external-identities/customers/context/customers-context).
 - [Configure a custom claims provider for a token issuance event](~/identity-platform/custom-extension-tokenissuancestart-configuration.md?context=/azure/active-directory/external-identities/customers/context/customers-context).
 - Configure [custom authentication extensions for attribute collection start and submit events](~/identity-platform/custom-extension-attribute-collection.md?context=/entra/external-id/customers/context/customers-context) with a sample OpenID Connect application.
-- See the [Microsoft Entra ID for customers Developer Center](https://aka.ms/ciam/dev) for the latest developer content and resources.
+- See the [Microsoft Entra External ID Developer Center](https://aka.ms/ciam/dev) for the latest developer content and resources.
