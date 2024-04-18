@@ -230,12 +230,13 @@ In your code editor, open *app_config.py*, which holds the configuration paramet
 
 ```python
 import os
-AUTHORITY= "https://login.microsoftonline.com/common"
+AUTHORITY= os.getenv("AUTHORITY")
 
 # Application (client) ID of app registration
-CLIENT_ID = "80977fed-1946-4cac-a25a-c8dd1d5636ce" 
+CLIENT_ID = os.getenv("CLIENT_ID")
 # Application's generated client secret: never check this into source control!
-CLIENT_SECRET = "ADO8Q~wEwKnSkg4xfH4Hgq~yp4OYlJR80k9i_anw" 
+CLIENT_SECRET = os.getenv("CLIENT_SECRET")
+ 
 REDIRECT_PATH = "/getAToken"  # Used for forming an absolute URL to your redirect URI.
 
 ENDPOINT = 'https://graph.microsoft.com/v1.0/me'  
