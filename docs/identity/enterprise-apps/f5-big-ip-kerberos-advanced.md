@@ -150,7 +150,7 @@ For this scenario, the application is hosted on server APP-VM-01 and runs in the
 
 ### Create a BIG-IP APM delegation account 
 
-The BIG-IP does not support group Managed Service Accounts (gMSA), therefore create a standard user account for the APM service account.
+The BIG-IP doesn't support group Managed Service Accounts (gMSA), therefore create a standard user account for the APM service account.
 
 1. Enter the following PowerShell command. Replace the **UserPrincipalName** and **SamAccountName** values with your environment values. For better security, use a dedicated service principal name (SPN) that matches the host header of the application.
 
