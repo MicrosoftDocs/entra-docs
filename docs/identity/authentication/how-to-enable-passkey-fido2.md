@@ -21,7 +21,7 @@ For enterprises that use passwords today, passkeys (FIDO2) provide a seamless wa
 
 This article lists requirements and steps to enable passkeys in your organization. After completing these steps, users in your organization can then register and sign in to their Microsoft Entra account using a passkey stored on a FIDO2 security key or in Microsoft Authenticator.
 
-For more information about enabling passkeys in Microsoft Authenticator, see [How to enable Authenticator passkey](how-to-enable-authenticator-passkey.md).
+For more information about enabling passkeys in Microsoft Authenticator, see [How to enable passkeys in Microsoft Authenticator](how-to-enable-authenticator-passkey.md).
 
 For more information about passkey authentication, see [Support for FIDO2 authentication with Microsoft Entra ID](~/identity/authentication/concept-fido2-compatibility.md).
 
@@ -49,7 +49,7 @@ Passkeys are supported across major scenarios on Windows, macOS, Android, and iO
 
 ### Passkey optional settings 
 
-There are some optional settings on the **Configure** tab to help manage how passkeys can be used for sign-in. You can select **Microsoft Authenticator (preview)** if the checkbox is displayed in the admin center. Otherwise, you can add any specific Authenticator Attestation GUID (AAGUID) that you want to restrict.
+There are some optional settings on the **Configure** tab to help manage how passkeys can be used for sign-in. You can select **Microsoft Authenticator (preview)** if the checkbox is displayed in the admin center. This will automatically populate the Authenticator app AAGUIDs for you in the key restriction list.
 
 :::image type="content" border="true" source="media/howto-authentication-passwordless-security-key/optional-settings-with-aaguid.png" alt-text="Screenshot of FIDO2 security key options.":::
 
