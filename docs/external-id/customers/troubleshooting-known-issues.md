@@ -34,7 +34,7 @@ If you're the admin who created the external tenant, and you use the same email 
 
 ## Applications and app registration
 
-### Missing App roles
+### Missing app roles in the admin center
 
 When you navigate to the **App registrations** section in the admin center and open an app, you may notice that **App roles** section is not visible.
 
