@@ -35,7 +35,6 @@ Microsoft Entra provides the controls needed to govern the lifecycle of a SOC us
 [Learn more](https://learn.microsoft.com/entra/identity/multi-tenant-organizations/cross-tenant-synchronization-overview)
   
 **Comparing entitlement management and cross-tenant synchronization**
-
 | Capability    | Cross-tenant synchronization |Entitlement Management|
 | -------- | ------- |------- |
 | Create users  | ● |●|
@@ -110,12 +109,10 @@ Configuring the capabilities described in topology 1 and topology 2 require the 
 * Configuring cross-tenant access settings - Security administrator
 * Configuring cross-tenant sync - Hybrid administrator
 * Configuring Entitlement Management - Identity Governance Administrator
-
-SOC users in Defender rely on both built-in roles such as security reader, security admin, and security operator defender relies and also supports custom roles. 
-
-[Learn more about roles in Microsoft Defender](https://learn.microsoft.com/microsoft-365/security/defender/m365d-permissions?view=o365-worldwide)
+* SOC users in Defender rely on both built-in roles such as security reader, security admin, and security operator defender relies and also supports custom roles. [Learn more about roles in Microsoft Defender](https://learn.microsoft.com/microsoft-365/security/defender/m365d-permissions?view=o365-worldwide)
 
 ## Next steps
 
-- [Plan for multitenant organizations in Microsoft 365 (Preview)](/microsoft-365/enterprise/plan-multi-tenant-org-overview)
 - [What is cross-tenant synchronization?](cross-tenant-synchronization-overview.md)
+- [What is Entitlement Management?](https://learn.microsoft.com/entra/id-governance/entitlement-management-overview)
+- [Multi-tenant management in Defender XDR](https://learn.microsoft.com/microsoft-365/security/defender/mto-overview?view=o365-worldwide)
