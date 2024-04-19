@@ -30,7 +30,7 @@ This document describes integration of authentication methods provided by extern
 
 External authentication methods are implemented on top of Open ID Connect. This implementation requires at least three publicly facing endpoints: 
 
-- An Open ID Connect Discovery endpoint, described in [Discovery of provider metadata via OIDC Discovery](how-to-authentication-external-method-interaction.md#discovery-of-provider-metadata)
+- An Open ID Connect Discovery endpoint, described in [Discovery of provider metadata via OIDC Discovery](#discovery-of-provider-metadata)
 - A valid Open ID Connect authentication endpoint
 - A URL where the public certificates of the provider are published
 
@@ -83,7 +83,7 @@ An app per tenant is also a valid model to support the integration.  If using a 
 
 >[!NOTE]
 >Admin consent for the application is required in the tenant that will use the external authentication method.  If this is not completed then the following error will be seen when attempting to use the external authentication method:
->AADSTS900491: Service principal <your App id> not found.
+>AADSTS900491: Service principal \<your App id> not found.
 
 ### Configure optional claims
 
@@ -627,9 +627,3 @@ EAM  | External authentication method – an authentication method from a provid
 OIDC | Open Id Connect – an authentication protocol based on OAuth 2.0
 600b719b-3766-4dc5-95a6-3c4a8dc31885 | An example of an appid integrated for this feature
 
-
-## Next steps
-
-- [Configure an external authentication method provider](how-to-authentication-external-method-configure.md)
-- [Add an external authentication method provider](how-to-authentication-external-method-add.md)
-- [Entra ID interaction with provider](how-to-authentication-external-method-interaction.md)
