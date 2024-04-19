@@ -35,6 +35,7 @@ Microsoft Entra provides the controls needed to govern the lifecycle of a SOC us
 [Learn more](https://learn.microsoft.com/entra/identity/multi-tenant-organizations/cross-tenant-synchronization-overview)
   
 **Comparing entitlement management and cross-tenant synchronization**
+
 | Capability    | Cross-tenant synchronization |Entitlement Management|
 | -------- | ------- |------- |
 | Create users  | ● |●|
@@ -75,11 +76,12 @@ In topology 2 the target tenant administrator defines the access packages and re
  
 **Steps to configure topology 2**
 1.	In the target tenant, add the source tenant as a [connected organization](https://learn.microsoft.com/entra/id-governance/entitlement-management-organization). This setting allows the target tenant admin to make access packages available to the source tenant. 
-2.	In the target tenant, create an access package that provides the Security Reader, Security Admin, and Security Operator roles. Users from the source tenant will now be eligible to request the access package. 
+2.	In the target tenant, create an access package that provides the Security Reader, Security Admin, and Security Operator roles.
+3.	Users from the source tenant can now request access packages in the target tenant.
 
 **Topologies compared** 
 
-In both topologies, the target tenant can control what resources users have access to. This can be accomplished using a mix of cross-tenant access policies, conditional access, and assignment of apps / roles to users. They differn in who configures and initiates provisioning. In topology 1, the source tenant configures provisioning and pushes users into the target tenants. In topology 2, the target tenant defines which users are eligible to access their tenant. 
+In both topologies, the target tenant can control what resources users have access to. This can be accomplished using a mix of cross-tenant access policies, conditional access, and assignment of apps / roles to users. They differ in who configures and initiates provisioning. In topology 1, the source tenant configures provisioning and pushes users into the target tenants. In topology 2, the target tenant defines which users are eligible to access their tenant. 
 
 ## Deployment considerations
 **Monitoring**
@@ -88,7 +90,7 @@ Actions performed by a SOC analyst are audited in the Microsoft Entra ID tenant 
 
 [Learn more](https://learn.microsoft.com/entra/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs)
 
-Critical actions in Microsoft Defender are audited. 
+Actions performed by a SOC analyst in Microsoft Defender are also audited.  
 
 [Learn more](https://learn.microsoft.com/purview/audit-log-activities)
 
