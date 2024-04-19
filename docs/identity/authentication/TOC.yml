@@ -132,7 +132,7 @@
           href: how-to-sign-in-passkey.md  
         - name: FIDO2 compatibility
           href: concept-fido2-compatibility.md
-        - name: Become a passkey (FIDO2) provider
+        - name: Become a FIDO2 security key provider
           href: concept-fido2-hardware-vendor.md  
       - name: Microsoft Authenticator
         items:
