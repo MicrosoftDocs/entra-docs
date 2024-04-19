@@ -19,9 +19,11 @@ Microsoft Entra ID allows passkeys to be used for passwordless authentication. T
 > [!NOTE]
 > Microsoft Entra ID currently supports device-bound passkeys stored on FIDO2 security keys and in Microsoft Authenticator. Microsoft is committed to securing customers and users with passkeys. We are investing in both synced and device-bound passkeys for work accounts.
 
-## Microsoft app support (preview)
+## Native app support (preview)
 
-Microsoft applications provide native support for FIDO2 authentication in preview for all users who have an authentication broker installed for their operating system. The following tables lists which authentication brokers are supported for different operating systems.
+### Native app support with authentication broker (preview)
+
+Microsoft applications provide native support for FIDO2 authentication in preview for all users who have an authentication broker installed for their operating system. FIDO2 authentication is also supported in preview for third party applications leveraging the authentication broker. The following tables lists which authentication brokers are supported for different operating systems.
 
 | Operating system | Authentication broker           | Supports FIDO2 |
 |------------------|---------------------------------|----------------|
@@ -35,6 +37,10 @@ Microsoft applications provide native support for FIDO2 authentication in previe
 
 If a user installed an authentication broker, they can choose to sign in with a security key when they access an application such as Outlook. They're redirected to sign in with FIDO2, and redirected back to Outlook as a signed in user after successful authentication.
 
+### Microsoft app support without authentication broker
+Signing into Microsoft native apps with FIDO2 authentication when the user does not have an authentication broker is not supported at this time.
+
+### Third party app support without authentication broker
 If the user has yet to install an authentication broker, they can still sign in with a security key when they access MSAL-enabled applications that meet the requirements as listed in [Support for FIDO2 authentication](~/identity-platform/support-fido2-authentication.md).
 
 ## Web browser support
