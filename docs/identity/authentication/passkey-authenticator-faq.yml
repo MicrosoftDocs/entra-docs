@@ -5,7 +5,7 @@ metadata:
   ms.service: entra-id
   ms.subservice: authentication
   ms.topic: faq
-  ms.date: 03/06/2024
+  ms.date: 04/19/2024
   ms.author: justinha
   author: justinha
   manager: amycolannino
@@ -20,7 +20,7 @@ sections:
   - name: General
     questions:
       - question: |
-          Can I use Authenticator as a passkey provider on devices earlier than Android 13 or iOS 16?
+          Can I use Authenticator as a passkey provider on devices earlier than Android 14 or iOS 17?
         answer: |
           Authenticator uses operating system APIs as a passkey provider. These APIs are available only on devices that run Android 14 and iOS 17 or later. As a result, passkeys in Authenticator are only available on devices that run Android 14 or iOS 17 and later.
       - question: |
