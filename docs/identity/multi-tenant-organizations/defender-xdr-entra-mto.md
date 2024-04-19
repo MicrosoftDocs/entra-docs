@@ -19,23 +19,21 @@ Multi-tenant management in [Microsoft Defender XDR](https://learn.microsoft.com/
 Microsoft Entra enables you to govern the access and lifecycle of the SOC teams and threat hunters that secure your organization. In this document we will explore:
 1. The controls you can put in place for SOC teams to securely access resources across tenants. 
 2. Example topologies for how you can implement your lifecycle and access controls.
-3. Deployment considerations.
+3. Deployment considerations (roles, monitoring, APIs).
   
-## Controls 
+## Managing the lifecycle and access of a SOC user 
 Microsoft Entra provides the controls needed to govern the lifecycle of the user and to securely provide access to resources. This section describes some of the tools at your disposal to control both the user lifecycle and resource access. In this document the term source tenant refers to where the SOC users originate / authenticate against. Target tenant refers to the tenant that they are investigating when there is an incident. An organization will likely have several “target” tenants due to mergers and acquisitions, aligning tenants with business units, aligning tenants with geos, etc.
 
 ## Lifecycle control
-**Entitlement management (connected organizations)** – allows the target tenant admin to define collections of resources (ex: apps, roles, and groups) that users from the source tenant can request access to. If the user is approved for the resources they need, but don’t yet have a B2B account, entitlement management will automatically create a B2B account for the user in the target tenant, and even remove those accounts when the user doesn’t have any remaining entitlements in the target tenant. 
+**Entitlement management (connected organizations)** allows the target tenant admin to define collections of resources (ex: apps, roles, and groups) that users from the source tenant can request access to. If the user is approved for the resources they need, but don’t yet have a B2B account, entitlement management will automatically create a B2B account for the user in the target tenant, and even remove those accounts when the user doesn’t have any remaining entitlements in the target tenant. 
 
 [Learn more](https://learn.microsoft.com/entra/id-governance/entitlement-management-organization)
 
-**Cross-tenant synchronization** – allows the source tenant to automate creating, updating, and deleting B2B users across tenants in an organization. 
+**Cross-tenant synchronization** allows the source tenant to automate creating, updating, and deleting B2B users across tenants in an organization. 
 
 [Learn more ](https://learn.microsoft.com/entra/identity/multi-tenant-organizations/cross-tenant-synchronization-overview)
   
 **Comparing entitlement management and cross-tenant synchronization**
-	Entitlement management  connected orgs	Cross-tenant synchronization
-Who controls the settings for provisioning the user accounts?	Target / resource tenant admin	Source / home tenant admin
 
 | Capability    | Cross-tenant synchronization |Entitlement Management|
 | -------- | ------- |------- |
@@ -46,11 +44,14 @@ Who controls the settings for provisioning the user accounts?	Target / resource 
 | Create a full user profile (Directory extensions, manager, department, etc.)    | ● | |
 
 **Access control**
+
 Entitlement management
+
 Privileged accounts require additional monitoring with strong identity governance. To ensure least privilege and reduce the number of accounts that an attacker could target, Microsoft Entra provides just-in-time access capabilities.  
 [Learn more](https://learn.microsoft.com/entra/id-governance/entitlement-management-overview)
 
 **Cross-tenant access policies**
+
 Use External Identities cross-tenant access settings to manage how you collaborate with other Microsoft Entra organizations through B2B collaboration. These settings determine both the level of inbound access users in external Microsoft Entra organizations have to your resources, and the level of outbound access your users have to external organizations. 
 [Learn more](https://learn.microsoft.com/en-us/entra/external-id/cross-tenant-access-overview)
 
@@ -58,9 +59,10 @@ Use External Identities cross-tenant access settings to manage how you collabora
 In this section we will explore how you can use tools such as cross-tenant sync, entitlement management, cross-tenant access policies, and conditional access together. In both topologies, the target tenant has full control over access to resources. They differ in who manages provisioning and deprovisioning.   
 
 ### Topology 1 
-In topology 1, the home tenant configures entitlement management and cross-tenant synchronization in the source tenant to facilitate provisioning accounts into the target tenant. Then, the admin of the target tenant configures access packages in the target tenant to provide access to the necessary roles. 
+In topology 1, the source tenant configures entitlement management and cross-tenant synchronization to provision users into the target tenant. Then, the admin of the target tenant configures access packages to provide access to the necessary roles, group, and apps in the target tenant. 
 
- 
+:::image type="content" source="./media/overview/mto-defender-topology1.png" alt-text="Diagram that shows topology 1. Cross-tenant sync pushes users across tenants and entitlement management gives access to roles." lightbox="./media/overview/mto-defender-topology1.png":::
+
 **Steps to configure topology 1**   
 1.	In the source tenant, configure [cross-tenant synchronization]( https://learn.microsoft.com/entra/identity/multi-tenant-organizations/cross-tenant-synchronization-overview) to push B2B accounts into the target tenant. As users are assigned to the cross-tenant synchronization configuration, they will automatically be provisioned into the target tenant. As they are removed from the configuration, they will automatically be deprovisioned. You can determine what users are in scope either by direct assignment to the cross-tenant synchronization service principal or by assignment of a group to the eservice principal. 
 a.	As part of your attribute mappings, you can add a new mapping of type constant to provision a directory extension attribute on the user to indicate that they are a SOC administrator. Alternatively, if you have an attribute such as department that you can rely on for this step, you can skip creating the extension. This attribute will be used in the target tenant to provide them access to the necessary roles.
@@ -77,6 +79,7 @@ iii.	Users can request a specific timeline: Yes
 ### Topology 2
 In topology 2 the target tenant administrator defines the access packages and resources that the source users can request access to. If the source tenant admins would like to restrict which of their users can access the target tenant, you can use a cross-tenant access policy coupled with an access package to block all access to the target tenant, except for users that are part of a group that is included in an access package in the home tenant. 
 
+:::image type="content" source="./media/overview/mto-defender-topology1.png" alt-text="Diagram that shows topology 2. Entitlement connected organizations enables users to request access to the target tenant and get provisioned to the necessary roles in the target tenant." lightbox="./media/overview/mto-defender-topology1.png":::
  
 **Steps to configure topology 2**
 1.	In the target tenant, add the source tenant as a [connected organization](https://learn.microsoft.com/entra/id-governance/entitlement-management-organization). This setting allows the target tenant admin to make access packages available to the source tenant. 
@@ -93,15 +96,17 @@ In both topologies, the target tenant can control what resources users have acce
 
 ## Deployment considerations
 **Monitoring**
-All actions performed by a SOC analyst   in Entra are audited in the tenant that they are operating in. Organizations can maintain an audit trail of actions performed, generate alerts when specific actions are performed, and analyze actions performed by pushing audit logs into Azure Monitor.
+
+Actions performed by a SOC analyst are audited in the Microsoft Entra ID tenant that they are working in. Organizations can maintain an audit trail of actions performed, generate alerts when specific actions are performed, and analyze actions performed by pushing audit logs into Azure Monitor.
 
 [Learn more](https://learn.microsoft.com/entra/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs)
 
-Critical actions in Microsoft Defender are audited. To understand auditing in Microsoft Defender, see here.
+Critical actions in Microsoft Defender are audited. 
 
 [Learn more](https://learn.microsoft.com/purview/audit-log-activities)
 
 **Scaling deployment with PowerShell / APIs**
+
 Every action performed through the user interface has accompanying MS Graph APIs and PowerShell commandlets, enabling you to deploy your desired policies/configuration across the tenants in your organization. 
 
 | Capability    | Microsoft Graph API |PowerShell|
