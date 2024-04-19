@@ -74,10 +74,10 @@ The following diagram illustrates the front-end preauthentication exchange betwe
 
    ![Diagram of integration architecture.](./media/f5-integration/integration-flow-diagram.png)
 
-1. In the portal, a user selects an application icon, resolving URL to the SAML SP (BIG-IP)
+1. Users select an application icon in the portal, resolving URL to the SAML SP (BIG-IP)
 2. BIG-IP redirects the user to the SAML identity provider (IdP), Microsoft Entra ID, for preauthentication
 3. Microsoft Entra ID processes Conditional Access policies and [session controls](~/identity/conditional-access/concept-conditional-access-session.md) for authorization
-4. The user retuns to BIG-IP, and presents the SAML claims issued by Microsoft Entra ID
+4. Users retun to BIG-IP, and present the SAML claims issued by Microsoft Entra ID
 5. BIG-IP requests session information for [SSO](~/identity/hybrid/connect/how-to-connect-sso.md) and [role-based access control (RBAC)](/azure/role-based-access-control/overview) to the published service
 6. BIG-IP forwards the client request to the back-end service
 
@@ -139,9 +139,9 @@ Advanced configuration tutorials:
 
 - [F5 BIG-IP in Azure deployment walk-through](f5-bigip-deployment-guide.md)
 
-- [Securing F5 BIG-IP SSL-VPN with Microsoft Entra SHA](f5-passwordless-vpn.md)
+- [F5 BIG-IP SSL-VPN with Microsoft Entra SHA](f5-passwordless-vpn.md)
 
-- [Extend Azure AD B2C to protect applications using F5 BIG-IP](/azure/active-directory-b2c/partner-f5)
+- [Azure AD B2C protects applications using F5 BIG-IP](/azure/active-directory-b2c/partner-f5)
 
 - [F5 BIG-IP APM and Microsoft Entra SSO to Kerberos applications](f5-big-ip-kerberos-advanced.md)
 
@@ -192,7 +192,7 @@ Our recommendation is to start with an application that isn't published via a BI
 
 ## Resources
 
-- [The end of passwords, go passwordless](https://www.microsoft.com/security/business/identity/passwordless)
+- [Passwordless strategues](https://www.microsoft.com/security/business/identity/passwordless)
 - [Microsoft Entra ID secure hybrid access](https://azure.microsoft.com//services/active-directory/sso/secure-hybrid-access/)
 - [Microsoft Zero Trust framework to enable remote work](https://www.microsoft.com/security/blog/2020/04/02/announcing-microsoft-zero-trust-assessment-tool/)
-- [Getting started with Microsoft Sentinel](https://azure.microsoft.com/services/azure-sentinel/?&OCID=AID2100131_SEM_XfknpgAAAHoVMTvh:20200922160358:s&msclkid=5e0e022409fc1c94dab85d4e6f4710e3&ef_id=XfknpgAAAHoVMTvh:20200922160358:s&dclid=CJnX6vHU_esCFUq-ZAod1iQF6A)
+- [Microsoft Sentinel](https://azure.microsoft.com/services/azure-sentinel/?&OCID=AID2100131_SEM_XfknpgAAAHoVMTvh:20200922160358:s&msclkid=5e0e022409fc1c94dab85d4e6f4710e3&ef_id=XfknpgAAAHoVMTvh:20200922160358:s&dclid=CJnX6vHU_esCFUq-ZAod1iQF6A)
