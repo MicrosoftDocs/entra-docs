@@ -79,16 +79,6 @@ Follow these steps to sign in to Microsoft Entra ID on another device with a pas
 
 You can use Authenticator on your iOS device to seamlessly sign in with a passkey to other Microsoft apps, such as Microsoft OneDrive, SharePoint, and Outlook. Similar support for Android devices is coming during preview. 
 
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-ios/sign-in-options-passkey.png" alt-text="Screenshot of the passkey option in Microsoft Authenticator for iOS devices.":::
-
-To use SSO for native applications, you need to register the passkey in Authenticator by using the WebAuthN flow where you scan a QR code: 
-
-1. Register Authenticator passkey on your mobile device. 
-1. Sign in to Authenticator. 
-1. Set up passkey on your iOS device by using the available QR code.
-1. Open a Microsoft app, such as Outlook, with the username you created the passkey for.
-1. Now you can access other Microsoft apps on your device, and you'll be automatically authenticated. 
-
 
 ## [**Android**](#tab/Android)
 
