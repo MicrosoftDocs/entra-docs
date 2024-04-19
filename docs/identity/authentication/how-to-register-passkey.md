@@ -19,10 +19,9 @@ ms.collection: M365-identity-device-management
 ---
 # Register a passkey (preview)
 
-This article shows how to register a passkey using a browser and sign-in with a passkey (FIDO2) on an Android or iOS device. 
+This article shows how users can register a security key using the "**Passkey (preview)**" flow. For registration on a mobile device, see [Register a passkey using a mobile device](how-to-register-passkey-mobile).
 
-> [!NOTE]
-> Microsoft Entra ID currently supports device-bound passkeys stored on FIDO2 security keys and in Microsoft Authenticator. Microsoft is committed to securing customers and users with passkeys. We are investing in both synced and device-bound passkeys for work accounts.
+For more information about enabling passkeys in Microsoft Authenticator, see [How to enable passkeys in Microsoft Authenticator](how-to-enable-authenticator-passkey.md).
 
 ## Manual registration 
 
@@ -40,31 +39,37 @@ This article shows how to register a passkey using a browser and sign-in with a 
    > Options displayed vary depending on your browser and device operating system. If the device where you started the registration process supports passkeys, you'll be asked to save the passkey to that device. Select **Use another device** or **More options** to display additional ways for you to save the passkey.
 
       :::image type="content" border="true" source="media/how-to-register-passkey-android-or-ios/choose-where-store-passkey.png" alt-text="Screenshot of the dialog where to save your passkey on your iOS or Android device.":::
-   
-   > [!NOTE]
-   > For quicker sign-in, Android allows you to remember some browsers and Windows devices after scanning the WebAuthn QR code. In such cases, instead of having to scan a QR code each time, the device will appear as a selectable option and you will receive a notification on your mobile device to continue the passkey authentication.
-
-1. If your organization allows saving a passkey to your mobile device: 
-   1. Choose **iPhone**, **iPad**, or **Android** device.
-   1. Open the camera on your device and scan the QR code shown in the screenshot.
-
-      :::image type="content" border="true" source="media/how-to-register-passkey-android-or-ios/camera.png" alt-text="Screenshot of the dialog where to store your passkey on your iOS or Android device.":::
-
-   1. In your camera, select the link to **Use a passkey** or **Save a passkey**.
-
-1. Follow the remaining prompts to connect your device and register your new passkey for your preferred security key or passkey provider. 
-
-   > [!NOTE]
-   > Your organization may limit which security key models or passkey providers you can use. Select the option on your device as allowed by your organization.
 
 1. If your organization allows saving a passkey to a security key:
    1. Choose **Security Key**.
    2. Follow the guidance and insert or connect your security key when requested.
    3. You're prompted to create or enter a PIN for your security key, then perform the required gesture for the key.
+   4. Upon completion, review any additional information from the security dialog, then tap Ok or Continue.
+
+<!---
+
+1. If your organization allows saving a passkey to your mobile device: 
+   1. Choose **iPhone**, **iPad**, or **Android** device.
+   1. Open the camera on your device and scan the QR code shown.
+
+      :::image type="content" border="true" source="media/how-to-register-passkey-android-or-ios/camera.png" alt-text="Screenshot of the dialog where to store your passkey on your iOS or Android device.":::
+
+   1. In your camera, select the link to **Use a passkey** or **Save a passkey**.
   
-1. Upon completion, review any additional information from the security dialog, then tap Ok or Continue.
-1. After you're redirected to security info, you can change the default name for the new sign-in method. 
+   > [!NOTE]
+   > For quicker sign-in, Android allows you to remember some browsers and Windows devices after scanning the WebAuthn QR code. In such cases, instead of having to scan a QR code each time, the device will appear as a selectable option and you will receive a notification on your mobile device to continue the passkey authentication.
+
+   1. Follow the remaining prompts to connect your device and register your new passkey for your preferred passkey provider. 
+
+   > [!NOTE]
+   > Your organization may limit which passkey providers you can use. Select the option on your device as allowed by your organization.
+
+-->
+
+1. After you're redirected to My Security info, you can change the default name for the new sign-in method. 
 1. Tap **Done** to finish registering the new method.
+
+<!---
 
 ## Guided registration
 
@@ -87,7 +92,12 @@ This article shows how to register a passkey using a browser and sign-in with a 
    > [!NOTE]
    > If you've previously set up a passkey on a mobile device and selected the option to remember that device for quicker sign-in, the device name may appear as a selectable option.
 
-1. If your organization allows saving a passkey to your mobile device: 
+1. If your organization allows saving a passkey to a security key:
+   1. Choose **Security Key**.
+   2. Follow the guidance and insert or connect your security key when requested.
+   3. You're prompted to create or enter a PIN for your security key, then perform the required gesture for the key.
+
+1. If your organization allows saving a passkey to your mobile device:
    1. Choose **iPhone**, **iPad**, or **Android** device.
    1. Open the camera on your device and scan the QR code shown in this screenshot.
 
@@ -99,15 +109,12 @@ This article shows how to register a passkey using a browser and sign-in with a 
 
    > [!NOTE]
    > Your organization may limit which security key model or passkey provider you can use. Select the option on your device as allowed by your organization. 
-
-1. If your organization allows saving a passkey to a security key:
-   1. Choose **Security Key**.
-   2. Follow the guidance and insert or connect your security key when requested.
-   3. You're prompted to create or enter a PIN for your security key, then perform the required gesture for the key.
    
 1. Upon completion, review any additional information from the security dialog, then tap **Ok** or **Continue**. 
-1. After you're redirected to security info, you can change the default name for the new sign-in method. 
+1. After you're redirected to My Security info, you can change the default name for the new sign-in method. 
 1. Tap **Done** to finish registering the new method.
+
+-->
 
 ## Next steps
 
