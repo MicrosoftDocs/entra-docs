@@ -38,7 +38,7 @@ If you're the admin who created the external tenant, and you use the same email 
 
 When you navigate to the **App registrations** section in the admin center and open an app, you may notice that **App roles** section is not visible.
 
-**Workaround**: You can query an update the app roles using the Microsoft Graph API. For more information, see [appRole resource type](/graph/api/resources/approle).
+**Workaround**: You can query an update the app roles using the Microsoft Graph API. For more information, see the [appRole resource type](/graph/api/resources/approle).
 
 ## Token version in Web API
 
