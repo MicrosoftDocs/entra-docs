@@ -394,7 +394,7 @@
       "source_path_from_root": "/docs/identity-platform/custom-extension-get-started.md",
       "redirect_url": "/entra/identity-platform/custom-extension-tokenissuancestart-configuration",
       "redirect_document_id": false
-    }
+    },
     {
       "source_path_from_root": "/docs/identity-platform/howto-call-a-web-api-with-postman.md",
       "redirect_url": "/entra/identity-platform/howto-call-a-web-api-with-curl",
