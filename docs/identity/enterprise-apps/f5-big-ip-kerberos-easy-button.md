@@ -190,7 +190,8 @@ For this scenario, select **F5 BIG-IP APM Microsoft Entra ID Integration > Add.*
 
 When a user authenticates to Microsoft Entra ID, it issues a SAML token with a default set of claims and attributes identifying the user. The **User Attributes & Claims** tab shows the default claims to issue for the new application. Use it to configure more claims.
 
-The infrastructure is based on a .com domain suffix used internally and externally. More attributes aren't required to achieve a functional Kerberos Constrained Delecation single sign-on (KCD SSO) implementation. See the [advanced tutorial](./f5-big-ip-kerberos-advanced.md) for multiple domains or user sign-in using an alternate suffix. 
+The infrastructure is based on a .com domain suffix used internally and externally. More attributes aren't required to achieve a functional Kerberos Constrained Delegation single sign-on (KCD SSO) implementation. See the [advanced tutorial](./f5-big-ip-kerberos-advanced.md) for multiple domains or user sign-in using an alternate suffix. 
+
 
    ![Screenshot of User Attributes and Claims.](./media/f5-big-ip-kerberos-easy-button/user-attributes-claims.png)
 

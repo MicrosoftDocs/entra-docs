@@ -192,7 +192,7 @@ Our recommendation is to start with an application that isn't published via a BI
 
 ## Resources
 
-- [Passwordless strategues](https://www.microsoft.com/security/business/identity/passwordless)
+- [Passwordless strategies](https://www.microsoft.com/security/business/identity/passwordless)
 - [Microsoft Entra ID secure hybrid access](https://azure.microsoft.com//services/active-directory/sso/secure-hybrid-access/)
 - [Microsoft Zero Trust framework to enable remote work](https://www.microsoft.com/security/blog/2020/04/02/announcing-microsoft-zero-trust-assessment-tool/)
 - [Microsoft Sentinel](https://azure.microsoft.com/services/azure-sentinel/?&OCID=AID2100131_SEM_XfknpgAAAHoVMTvh:20200922160358:s&msclkid=5e0e022409fc1c94dab85d4e6f4710e3&ef_id=XfknpgAAAHoVMTvh:20200922160358:s&dclid=CJnX6vHU_esCFUq-ZAod1iQF6A)
