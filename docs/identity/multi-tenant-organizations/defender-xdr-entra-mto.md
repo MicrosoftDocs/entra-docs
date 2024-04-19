@@ -21,7 +21,7 @@ Microsoft Entra enables you to govern the access and lifecycle of the SOC teams 
 2. Example topologies for how you can implement your lifecycle and access controls.
 3. Deployment considerations.
   
-# Controls 
+## Controls 
 Microsoft Entra provides the controls needed to govern the lifecycle of the user and to securely provide access to resources. This section describes some of the tools at your disposal to control both the user lifecycle and resource access. In this document the term source tenant refers to where the SOC users originate / authenticate against. Target tenant refers to the tenant that they are investigating when there is an incident. An organization will likely have several “target” tenants due to mergers and acquisitions, aligning tenants with business units, aligning tenants with geos, etc.
 
 ## Lifecycle control
@@ -52,13 +52,12 @@ Privileged accounts require additional monitoring with strong identity governanc
 
 **Cross-tenant access policies**
 Use External Identities cross-tenant access settings to manage how you collaborate with other Microsoft Entra organizations through B2B collaboration. These settings determine both the level of inbound access users in external Microsoft Entra organizations have to your resources, and the level of outbound access your users have to external organizations. 
-
 [Learn more](https://learn.microsoft.com/en-us/entra/external-id/cross-tenant-access-overview)
 
-# Topologies
+## Deployment Topologies
 In this section we will explore how you can use tools such as cross-tenant sync, entitlement management, cross-tenant access policies, and conditional access together. In both topologies, the target tenant has full control over access to resources. They differ in who manages provisioning and deprovisioning.   
 
-## Topology 1 
+### Topology 1 
 In topology 1, the home tenant configures entitlement management and cross-tenant synchronization in the source tenant to facilitate provisioning accounts into the target tenant. Then, the admin of the target tenant configures access packages in the target tenant to provide access to the necessary roles. 
 
  
@@ -75,7 +74,7 @@ ii.	Expiration: X  days
 iii.	Users can request a specific timeline: Yes
 
 
-## Topology 2
+### Topology 2
 In topology 2 the target tenant administrator defines the access packages and resources that the source users can request access to. If the source tenant admins would like to restrict which of their users can access the target tenant, you can use a cross-tenant access policy coupled with an access package to block all access to the target tenant, except for users that are part of a group that is included in an access package in the home tenant. 
 
  
@@ -90,13 +89,7 @@ e.	Resource roles: X, Y, Z
 
 **Topologies compared** 
 
-	Topology 1	Topology  2
-Lifecycle controls	Source pushes identities into the target.
-Source defines when users are removed. 
-	Target defines eligibility for provisioning.  
-Target defines when accounts are removed (days, hours).
-Access controls	Target reviews and approves access to resources. 	Target reviews and approves access to resources 
-	Target controls access to sensitive resources (ex: CA policies).	Target can implement controls (ex: MFA for access to sensitive resources)
+In both topologies, the target tenant can control what resources users have access to. This can be accomplished using a mix of cross-tenant access policies, conditional access, and assignment of apps / roles to users. They differn in who configures and initiates provisioning. In topology 1, the source tenant configures provisioning and pushes users into the target tenants. In topology 2, the target tenant defines which users are eligible to access their tenant. 
 
 ## Deployment considerations
 **Monitoring**
@@ -128,10 +121,6 @@ Configuring the capabilities described in topology 1 and topology 2 require the 
 SOC users in Defender rely on both built-in roles such as security reader, security admin, and security operator defender relies and also supports custom roles. 
 
 [Learn more about roles in Microsoft Defender](https://learn.microsoft.com/microsoft-365/security/defender/m365d-permissions?view=o365-worldwide)
-
-**Limitations**  
-* Cross-tenant sync – known issues
-* EM – Is there a known issues doc? 
 
 ## Next steps
 
