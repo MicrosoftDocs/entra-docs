@@ -24,8 +24,6 @@ Note that the *easiest and fastest way* to add a passkey is to add it directly i
 
 Alternatively, you can add a passkey from your mobile device browser, or through cross-device registration using another device, such as a laptop. Your mobile device needs to run iOS version 17, or Android version 14, or later. 
 
-[!INCLUDE [Passkey roll out](~/includes/entra-authentication-passkey.md)]
-
 ## [**iOS**](#tab/iOS)
 
 ### Register passkey by signing into Authenticator (iOS)

@@ -26,8 +26,6 @@ This article lists steps to enable and enforce passkeys in Authenticator sign-in
 > [!NOTE]
 > Users need to install the latest version of Authenticator for Android or iOS to use a passkey. 
 
-[!INCLUDE [Passkey roll out](~/includes/entra-authentication-passkey.md)]
-
 To use any passkeys (FIDO2) for sign in to web apps and services, you need to use a browser that supports the WC3 WebAuthn standard. 
 
 Supported browsers include Microsoft Edge, Chrome, Firefox, and Safari. For more information, see [Browser support of FIDO2 passwordless authentication](fido2-compatibility.md).

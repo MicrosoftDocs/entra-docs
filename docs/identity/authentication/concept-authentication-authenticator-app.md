@@ -39,7 +39,6 @@ Authenticator is a free passkey solution that lets users do passwordless phishin
 - Users stay up-to-date with latest passkey innovation based upon open WebAuthn standards.
 - Enterprises can layer other capabilities on top of authentication flows such as [FIPS 140 compliance](#fips-140-compliant-for-microsoft-entra-authentication).
 
-[!INCLUDE [Passkey roll out](~/includes/entra-authentication-passkey.md)]
 
 ### Device-bound passkey
 
