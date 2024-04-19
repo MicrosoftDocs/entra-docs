@@ -83,15 +83,7 @@
     - name: System-preferred MFA 
       href: concept-system-preferred-multifactor-authentication.md
     - name: External MFA provider
-      items:
-      - name: Overview  
-        href: concept-authentication-external-method-provider.md
-      - name: Configure an IdP
-        href: how-to-authentication-external-method-configure.md
-      - name: Add method
-        href: how-to-authentication-external-method-add.md
-      - name: Interaction
-        href: how-to-authentication-external-method-interaction.md       
+      href: concept-authentication-external-method-provider.md
     - name: Prompts and session lifetime
       href: concepts-azure-multi-factor-authentication-prompts-session-lifetime.md
     - name: Understanding telephony fraud
