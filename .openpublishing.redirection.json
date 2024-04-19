@@ -386,6 +386,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity-platform/msal-differences-ios-macos.md",
+      "redirect_url": "/entra/msal/objc/",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity-platform/sso-between-adal-msal-apps-macos-ios.md",
       "redirect_url": "/entra/msal/objc/sso-between-adal-msal-apps",
       "redirect_document_id": false
