@@ -63,7 +63,7 @@ There are some optional settings on the **Configure** tab to help manage how pas
 
 **Key Restriction Policy**
 
-- **Enforce key restrictions** should be set to **Yes** only if your organization wants to only allow or disallow certain security key models or passkey providers, which are identified by their Authenticator Attestation GUID (AAGUID). You can work with your security key vendor to determine the AAGUID of a device. If the passkey is already registered, you can find the AAGUID by viewing the authentication method details of the passkey for the user.
+- **Enforce key restrictions** should be set to **Yes** only if your organization wants to only allow or disallow certain security key models or passkey providers, which are identified by their Authenticator Attestation GUID (AAGUID). You can work with your security key vendor to determine the AAGUID of the passkey. If the passkey is already registered, you can find the AAGUID by viewing the authentication method details of the passkey for the user.
 - When **Enforce key restrictions** is set to **Yes**, you can select **Microsoft Authenticator (preview)** if the checkbox is displayed in the admin center. This will automatically populate the Authenticator app AAGUIDs for you in the key restriction list.
 
   >[!WARNING]
