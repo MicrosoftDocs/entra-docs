@@ -12,17 +12,18 @@ ms.custom: it-pro
 #Customer intent: As a dev, devops, or it admin, I want to
 ---
 
-# <Input>
+# Governing access for SOC teams in a multi-tenant environment
 
 Managing multi-tenant environments can add an additional layer of complexity when it comes to keeping up with the ever-evolving security threats facing your enterprise. Navigating across multiple tenants can be time consuming and reduce the overall efficiency of security operation center (SOC) teams.
 Multi-tenant management in Microsoft Defender XDR provides security operation teams with a single, unified view of all the tenants they manage. This view enables teams to quickly investigate incidents and perform advanced hunting across data from multiple tenants, improving their security operations.
 Microsoft Entra enables you to govern the access and lifecycle of the SOC teams and threat hunters that secure your organization. In this document we will explore:
 1. The controls you can put in place for SOC teams to securely access resources across tenants. 
-2.	Example topologies for how you can implement your lifecycle and access controls.
-3.	Deployment considerations.
+2. Example topologies for how you can implement your lifecycle and access controls.
+3. Deployment considerations.
   
 # Controls 
-Microsoft Entra provides the controls needed to govern the lifecycle of the user and to securely provide access to resources. This section describes some of the tools at your disposal to control both the user lifecycle and resource access. In this document the term source tenant refers to where the SOC users originate / authenticate against. Target tenant refers to the tenant that they are investigating when there is an incident. An organization will likely have several “target” tenants due to mergers and acquisitions, aligning tenants with business units, aligning tenants with geos, etc. 
+Microsoft Entra provides the controls needed to govern the lifecycle of the user and to securely provide access to resources. This section describes some of the tools at your disposal to control both the user lifecycle and resource access. In this document the term source tenant refers to where the SOC users originate / authenticate against. Target tenant refers to the tenant that they are investigating when there is an incident. An organization will likely have several “target” tenants due to mergers and acquisitions, aligning tenants with business units, aligning tenants with geos, etc.
+
 ## Lifecycle control
 **Entitlement management (connected organizations)** – allows the target tenant admin to define collections of resources (ex: apps, roles, and groups) that users from the source tenant can request access to. If the user is approved for the resources they need, but don’t yet have a B2B account, entitlement management will automatically create a B2B account for the user in the target tenant, and even remove those accounts when the user doesn’t have any remaining entitlements in the target tenant. 
 Learn more
@@ -33,11 +34,14 @@ Learn more
 **Comparing entitlement management and cross-tenant synchronization**
 	Entitlement management  connected orgs	Cross-tenant synchronization
 Who controls the settings for provisioning the user accounts?	Target / resource tenant admin	Source / home tenant admin
-Create users		
-Update users		
-Delete users		
-Assign access to groups, roles, app		
-Create a full user profile (directory extensions, manager, department, etc.)		
+
+| Month    | Cross-tenant synchronization |Entitlement Management|
+| -------- | ------- |------- |
+| Create users  | ● |●|
+| Update users | ●     | |
+| Delete users    | ● | ● |
+| Assign users to groups, roles, apps |  | ●|
+| Create a full user profile (Directory extensions, manager, department, etc.)    | ● | |
 
 **Access control**
 Entitlement management
