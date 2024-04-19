@@ -23,7 +23,7 @@ Microsoft Entra enables you to govern the access and lifecycle of the SOC teams 
 3. Deployment considerations (roles, monitoring, APIs).
   
 ## Managing the lifecycle and access of a SOC user 
-Microsoft Entra provides the controls needed to govern the lifecycle of the user and to securely provide access to resources. In this document the term source tenant refers to where the SOC users originate and authenticate against. Target tenant refers to the tenant that they are investigating when there is an incident. An organization will likely have several target tenants due to mergers and acquisitions, aligning tenants with business units, aligning tenants with geos, etc.
+Microsoft Entra provides the controls needed to govern the lifecycle of a SOC user and to securely provide access to the resources they need. In this document the term source tenant refers to where the SOC users originate and authenticate against. Target tenant refers to the tenant that they are investigating when there is an incident. An organization will likely have several target tenants due to mergers and acquisitions, aligning tenants with business units, aligning tenants with geos, etc.
 
 ### Lifecycle control
 **Entitlement management (connected organizations)** allows the target tenant admin to define collections of resources (ex: apps, roles, and groups) that users from the source tenant can request access to. If the user is approved for the resources they need, but don’t yet have a B2B account, entitlement management will automatically create a B2B account for the user in the target tenant, and even remove those accounts when the user doesn’t have any remaining entitlements in the target tenant. 
@@ -65,17 +65,9 @@ In topology 1, the source tenant configures entitlement management and cross-ten
 :::image type="content" source="./media/defender-xdr-entra-mto/mto-defender-topology1.png" alt-text="Diagram that shows topology 1. Cross-tenant sync pushes users across tenants and entitlement management gives access to roles." lightbox="./media/defender-xdr-entra-mto/mto-defender-topology1.png":::
 
 **Steps to configure topology 1**   
-1.	In the source tenant, configure [cross-tenant synchronization]( https://learn.microsoft.com/entra/identity/multi-tenant-organizations/cross-tenant-synchronization-overview) to push B2B accounts into the target tenant. As users are assigned to the cross-tenant synchronization configuration, they will automatically be provisioned into the target tenant. As they are removed from the configuration, they will automatically be deprovisioned. You can determine what users are in scope either by direct assignment to the cross-tenant synchronization service principal or by assignment of a group to the eservice principal. 
-a.	As part of your attribute mappings, you can add a new mapping of type constant to provision a directory extension attribute on the user to indicate that they are a SOC administrator. Alternatively, if you have an attribute such as department that you can rely on for this step, you can skip creating the extension. This attribute will be used in the target tenant to provide them access to the necessary roles.
-2.	In the source tenant, create an access package that includes the cross-tenant synchronization service principal as a resource. As users are granted access to the package, they will be assigned to the cross-tenant synchronization service principal. Cross-tenant synchronization automatically provisions the account in the target tenant. Ensure that you setup periodic access reviews of the access package to limit the number of users that are in scope for provisioning. 
-3.	In the target tenant, create access packages to provide the necessary roles for investigating an incident. We recommend one auto-assigned access package to provide the Security Reader role and one role to provide the Security Operator and Security Admin roles. 
-a.	Access package for the security reader role
-i.	Approval settings: Automatically approve access when the user has an attribute indicating they are from the home tenant. This can be a directory extension that is stamped by cross-tenant synchronization.
-b.	Access package for the security operator and security admin roles
-i.	Approval settings:  
-ii.	Expiration: X  days
-iii.	Users can request a specific timeline: Yes
-
+1.	In the source tenant, configure [cross-tenant synchronization]( https://learn.microsoft.com/entra/identity/multi-tenant-organizations/cross-tenant-synchronization-overview) to push B2B accounts into the target tenant. As users are assigned to the cross-tenant synchronization configuration, they will automatically be provisioned into the target tenant. As they are removed from the configuration, they will automatically be deprovisioned. As part of your attribute mappings, you can add a new mapping of type constant to provision a [directory extension](https://learn.microsoft.com/entra/identity/multi-tenant-organizations/cross-tenant-synchronization-directory-extensions) attribute on the user to indicate that they are a SOC administrator. Alternatively, if you have an attribute such as department that you can rely on for this step, you can skip creating the extension. This attribute will be used in the target tenant to provide them access to the necessary roles.
+2.	In the source tenant, create an access package that includes the cross-tenant synchronization service principal as a resource. As users are granted access to the package, they will be assigned to the cross-tenant synchronization service principal. Ensure that you setup periodic access reviews of the access package to limit the number of users that are in scope for provisioning. 
+3.	In the target tenant, create access packages to provide the necessary roles for investigating an incident. We recommend one [auto-assigned](https://learn.microsoft.com/entra/id-governance/entitlement-management-access-package-auto-assignment-policy) access package to provide the Security Reader role and one one request based package for the Security Operator and Security Admin roles. 
 
 ### Topology 2
 In topology 2 the target tenant administrator defines the access packages and resources that the source users can request access to. If the source tenant admins would like to restrict which of their users can access the target tenant, you can use a cross-tenant access policy coupled with an access package to block all access to the target tenant, except for users that are part of a group that is included in an access package in the home tenant. 
@@ -84,12 +76,7 @@ In topology 2 the target tenant administrator defines the access packages and re
  
 **Steps to configure topology 2**
 1.	In the target tenant, add the source tenant as a [connected organization](https://learn.microsoft.com/entra/id-governance/entitlement-management-organization). This setting allows the target tenant admin to make access packages available to the source tenant. 
-2.	In the target tenant, create an access package that provides the Security Reader, Security Admin, and Security Operator roles. 
-a.	Users who can request access: “Specific connected organizations”
-b.	Approval settings:  
-c.	Expiration: X  days
-d.	Users can request a specific timeline: Yes
-e.	Resource roles: X, Y, Z 
+2.	In the target tenant, create an access package that provides the Security Reader, Security Admin, and Security Operator roles. Users from the source tenant will now be eligible to request the access package. 
 
 **Topologies compared** 
 
