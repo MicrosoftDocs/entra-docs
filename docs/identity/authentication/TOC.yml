@@ -236,6 +236,8 @@
       href: how-to-authentication-find-coverage-gaps.md
     - name: Enable per-user MFA
       href: howto-mfa-userstates.md
+    - name: Manage external authentication method
+      href: how-to-authentication-external-method-manage.md
     - name: Configure authentication providers
       href: concept-mfa-authprovider.md
     - name: Use app passwords
