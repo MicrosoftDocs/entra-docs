@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-permissions-management
 
 ms.topic: faq
-ms.date: 08/23/2023
+ms.date: 04/19/2024
 ms.author: jfields
 ---
 
@@ -85,6 +85,10 @@ The Permissions Creep Index (PCI) is a quantitative measure of risk associated w
 ## How can customers use Permissions Management to delete unused or excessive permissions?
 
 Permissions Management allows users to right-size excessive permissions and automate least privilege policy enforcement with just a few clicks. The solution continuously analyzes historical permission usage data for each identity and gives customers the ability to right-size the permissions of that identity to permissions that are only being used for day-to-day operations. All unused and other risky permissions can be automatically removed.
+
+## Why is a user I deleted still visible in the Analytics tab?
+
+Check to see if the user was assigned a *Classic Administrator* role. Classic admin roles don't go away when a user is deleted. To resolve this, go to the [Classic admin page](https://go.microsoft.com/fwlink/?linkid=2268264) and delete that role assignment separately for the user.
 
 ## How can customers grant permissions on-demand with Permissions Management?
 
@@ -183,7 +187,7 @@ Where xx-XX is one of the following available language parameters: 'cs-CZ', 'de-
 
 ## Resources
 
-- [Microsoft Entra (`Azure AD`) blog](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/bg-p/Identity)
+- [Microsoft Entra blog](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/bg-p/Identity)
 - [Permissions Management web page](https://microsoft.com/security/business/identity-access-management/permissions-management)
 - For more information about Microsoft's privacy and security terms, see [Commercial Licensing Terms](https://www.microsoft.com/licensing/terms/product/ForallOnlineServices/all). 
 - For more information about Microsoft's data processing and security terms when you subscribe to a product, see [Microsoft Products and Services Data Protection Addendum (DPA)](https://www.microsoft.com/licensing/docs/view/Microsoft-Products-and-Services-Data-Protection-Addendum-DPA).
