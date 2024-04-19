@@ -60,7 +60,7 @@ As an Application Delivery Controller (ADC) and secure socket layer virtual priv
 
 BIG-IP Local Traffic Manager (LTM) is for secure service publishing, while an Access Policy Manager (APM) extends BIG-IP functions that enable identity federation and single sign-on (SSO).
 
-With integration, you achieve the protocol transition to secure legacy, or non-Microsoft Entra ID integrated services, with controls such as: 
+With integration, you achieve the protocol transition to secure legacy, or other integrated services, with controls such as: 
 
 * [Passwordless authentication](https://www.microsoft.com/security/business/identity/passwordless)
 * [Conditional Access](~/identity/conditional-access/overview.md)
@@ -77,7 +77,7 @@ The following diagram illustrates the front-end preauthentication exchange betwe
 1. Users select an application icon in the portal, resolving URL to the SAML SP (BIG-IP)
 2. BIG-IP redirects the user to the SAML identity provider (IdP), Microsoft Entra ID, for preauthentication
 3. Microsoft Entra ID processes Conditional Access policies and [session controls](~/identity/conditional-access/concept-conditional-access-session.md) for authorization
-4. Users retun to BIG-IP, and present the SAML claims issued by Microsoft Entra ID
+4. Users return to BIG-IP, and present the SAML claims issued by Microsoft Entra ID
 5. BIG-IP requests session information for [SSO](~/identity/hybrid/connect/how-to-connect-sso.md) and [role-based access control (RBAC)](/azure/role-based-access-control/overview) to the published service
 6. BIG-IP forwards the client request to the back-end service
 
@@ -181,7 +181,7 @@ Learn more: [Grant B2B users in Microsoft Entra ID access to your on-premises ap
 
 ## Next steps
 
-You can conduct a proof-of-concept for SHA using your BIG-IP infrastructure, or by [Deploying a BIG-IP Virtual Edition virutal machne into Azure](f5-bigip-deployment-guide.md). To deploy a VM in Azure takes approximately 30 minutes. The result is:
+You can conduct a proof-of-concept for SHA using your BIG-IP infrastructure, or by [Deploying a BIG-IP Virtual Edition virtual machine into Azure](f5-bigip-deployment-guide.md). To deploy a VM in Azure takes approximately 30 minutes. The result is:
 
 - A secured platform to model a pilot for SHA
 - A preproduction instance for testing new BIG-IP system updates and hotfixes
