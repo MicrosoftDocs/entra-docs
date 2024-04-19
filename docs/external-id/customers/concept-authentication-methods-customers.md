@@ -79,9 +79,9 @@ Be aware that when you change sign-in methods, the change affects only new users
 
 ## Microsoft Graph APIs
 
-The following Microsoft Graph API operations are supported for managing identity providers and authentication methods in Microsoft Entra ID for customers:
+The following Microsoft Graph API operations are supported for managing identity providers and authentication methods in Microsoft Entra External ID:
 
-- To identify what identity providers and authentication methods are supported, you call [List availableProviderTypes](/graph/api/identityproviderbase-availableprovidertypes) API.
+- To identify what identity providers and authentication methods are supported, you call the [List availableProviderTypes](/graph/api/identityproviderbase-availableprovidertypes) API.
 - To identify the identity providers and authentication methods that are already configured and enabled in the tenant, you call the [List identityProviders](/graph/api/identitycontainer-list-identityproviders) API.
 - To enable a supported identity provider or authentication method, you call the [Create identityProvider](/graph/api/identitycontainer-post-identityproviders) API.
 
