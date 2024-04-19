@@ -315,11 +315,9 @@ To re-register a passkey for your account, first remove the passkey from Authent
 
 ### Troubleshooting
 
-If the passkey for your account is already registered in Authenticator, you receive the following error: 
+In some cases when you try to register a passkey, it gets stored locally in the Authenticator app but not registered on the authentication server due to different reasons, such as when the passkey provider isn't permitted, or the connection timed out. In those instances, if you attempt to re-register the passkey, you need to first delete the passkey that was created locally in the Authenticator app.
 
-:::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/passkey-android-already-exists.png" alt-text="Screenshot of the passkey that already exists in Microsoft Authenticator for Android devices.":::
-
-To re-register a passkey for your account, first remove the passkey from Authenticator. Click the *Trash* icon, then tap **Delete** to confirm.
+To remove the passkey from Authenticator, click the *Trash* icon, then tap **Delete** to confirm.
 
 :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/passkey-android-delete.png" alt-text="Screenshot of the passkey delete option in Microsoft Authenticator for Android devices.":::
 
