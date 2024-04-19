@@ -42,7 +42,7 @@ This article shows how to register a passkey using a browser and sign-in with a 
       :::image type="content" border="true" source="media/how-to-register-passkey-android-or-ios/choose-where-store-passkey.png" alt-text="Screenshot of the dialog where to save your passkey on your iOS or Android device.":::
    
    > [!NOTE]
-   > If you've previously set up a passkey on a mobile device and selected the option to remember that device for quicker sign-in, the device name may appear as a selectable option.
+   > For quicker sign-in, Android allows you to remember some browsers and Windows devices after scanning the WebAuthn QR code. In such cases, instead of having to scan a QR code each time, the device will appear as a selectable option and you will receive a notification on your mobile device to continue the passkey authentication.
 
 1. If your organization allows saving a passkey to your mobile device: 
    1. Choose **iPhone**, **iPad**, or **Android** device.
