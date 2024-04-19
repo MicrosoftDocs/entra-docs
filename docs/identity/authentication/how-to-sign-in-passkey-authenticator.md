@@ -6,7 +6,7 @@ services: active-directory
 ms.service: entra-id 
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 04/18/2024
+ms.date: 04/19/2024
 
 ms.author: justinha
 author: justinha
@@ -85,8 +85,8 @@ To use SSO for native applications, you need to register the passkey in Authenti
 
 1. Register Authenticator passkey on your mobile device. 
 1. Sign in to Authenticator. 
-1. Setup passkey on you iOS device using the available QR code.
-1. Open a Microsoft app, such as Outlook, using the username you created the passkey for.
+1. Set up passkey on your iOS device by using the available QR code.
+1. Open a Microsoft app, such as Outlook, with the username you created the passkey for.
 1. Now you can access other Microsoft apps on your device, and you'll be automatically authenticated. 
 
 
