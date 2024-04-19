@@ -84,7 +84,7 @@ Follow these steps to test the sign in, call API, and sign out experiences in yo
     :::image type="content" source="./media/python-webapp/sign-in-page.png" alt-text="Screenshot showing the sign-in screen.":::
 1. Your browser will redirect you to provide a password for your account. Enter the password and select **Sign in**.
 
-    At this point, the sign-in flow might vary depending on the security information your organization requires, for example, multi-factor authentication using an authenticator app.
+    At this point, the sign-in flow might vary depending on the security information your organization requires, for example, multifactor authentication using an authenticator app.
 
 1. For **Stay signed in**, you can select either **No** or **Yes**.
 
