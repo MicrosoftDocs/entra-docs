@@ -19,7 +19,7 @@ ms.collection: M365-identity-device-management
 ---
 # Register a passkey (preview)
 
-This article shows how users can register a security key using the "**Passkey (preview)**" flow. For registration on a mobile device, see [Register a passkey using a mobile device](how-to-register-passkey-mobile).
+This article shows how users can register a security key using the **Passkey (preview)** flow. For registration on a mobile device, see [Register a passkey using a mobile device](how-to-register-passkey-mobile.md).
 
 For more information about enabling passkeys in Microsoft Authenticator, see [How to enable passkeys in Microsoft Authenticator](how-to-enable-authenticator-passkey.md).
 
