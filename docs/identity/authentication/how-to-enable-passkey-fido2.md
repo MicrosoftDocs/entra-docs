@@ -131,7 +131,7 @@ To remove a passkey associated with a user account, delete the key from the user
 
     ![Screenshot of View Authentication Method details.](media/howto-authentication-passwordless-deployment/security-key-view-details.png)
 
-## Enforce passkey sign-in (preview)
+## Enforce passkey sign-in
 
 To make users sign in with a passkey when they access a sensitive resource, you can: 
 
