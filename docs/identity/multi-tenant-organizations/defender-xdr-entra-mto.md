@@ -15,7 +15,7 @@ ms.custom: it-pro
 # Governing access for SOC teams in a multi-tenant environment
 
 Managing multi-tenant environments can add an additional layer of complexity when it comes to keeping up with the ever-evolving security threats facing your enterprise. Navigating across multiple tenants can be time consuming and reduce the overall efficiency of security operation center (SOC) teams.
-Multi-tenant management in Microsoft Defender XDR provides security operation teams with a single, unified view of all the tenants they manage. This view enables teams to quickly investigate incidents and perform advanced hunting across data from multiple tenants, improving their security operations.
+Multi-tenant management in [Microsoft Defender XDR](https://learn.microsoft.com/microsoft-365/security/defender/mto-overview?view=o365-worldwide) provides security operation teams with a single, unified view of all the tenants they manage. This view enables teams to quickly investigate incidents and perform advanced hunting across data from multiple tenants, improving their security operations.
 Microsoft Entra enables you to govern the access and lifecycle of the SOC teams and threat hunters that secure your organization. In this document we will explore:
 1. The controls you can put in place for SOC teams to securely access resources across tenants. 
 2. Example topologies for how you can implement your lifecycle and access controls.
@@ -26,16 +26,18 @@ Microsoft Entra provides the controls needed to govern the lifecycle of the user
 
 ## Lifecycle control
 **Entitlement management (connected organizations)** – allows the target tenant admin to define collections of resources (ex: apps, roles, and groups) that users from the source tenant can request access to. If the user is approved for the resources they need, but don’t yet have a B2B account, entitlement management will automatically create a B2B account for the user in the target tenant, and even remove those accounts when the user doesn’t have any remaining entitlements in the target tenant. 
-Learn more
+
+[Learn more](https://learn.microsoft.com/entra/id-governance/entitlement-management-organization)
 
 **Cross-tenant synchronization** – allows the source tenant to automate creating, updating, and deleting B2B users across tenants in an organization. 
-Learn more 
+
+[Learn more ](https://learn.microsoft.com/entra/identity/multi-tenant-organizations/cross-tenant-synchronization-overview)
   
 **Comparing entitlement management and cross-tenant synchronization**
 	Entitlement management  connected orgs	Cross-tenant synchronization
 Who controls the settings for provisioning the user accounts?	Target / resource tenant admin	Source / home tenant admin
 
-| Month    | Cross-tenant synchronization |Entitlement Management|
+| Capability    | Cross-tenant synchronization |Entitlement Management|
 | -------- | ------- |------- |
 | Create users  | ● |●|
 | Update users | ●     | |
@@ -46,11 +48,12 @@ Who controls the settings for provisioning the user accounts?	Target / resource 
 **Access control**
 Entitlement management
 Privileged accounts require additional monitoring with strong identity governance. To ensure least privilege and reduce the number of accounts that an attacker could target, Microsoft Entra provides just-in-time access capabilities.  
-Learn more
+[Learn more](https://learn.microsoft.com/entra/id-governance/entitlement-management-overview)
 
 **Cross-tenant access policies**
 Use External Identities cross-tenant access settings to manage how you collaborate with other Microsoft Entra organizations through B2B collaboration. These settings determine both the level of inbound access users in external Microsoft Entra organizations have to your resources, and the level of outbound access your users have to external organizations. 
-Learn more
+
+[Learn more](https://learn.microsoft.com/en-us/entra/external-id/cross-tenant-access-overview)
 
 # Topologies
 In this section we will explore how you can use tools such as cross-tenant sync, entitlement management, cross-tenant access policies, and conditional access together. In both topologies, the target tenant has full control over access to resources. They differ in who manages provisioning and deprovisioning.   
@@ -77,7 +80,7 @@ In topology 2 the target tenant administrator defines the access packages and re
 
  
 **Steps to configure topology 2**
-1.	In the target tenant, add the source tenant as a connected organization. This setting allows the target tenant admin to make access packages available to the source tenant. 
+1.	In the target tenant, add the source tenant as a [connected organization](https://learn.microsoft.com/entra/id-governance/entitlement-management-organization). This setting allows the target tenant admin to make access packages available to the source tenant. 
 2.	In the target tenant, create an access package that provides the Security Reader, Security Admin, and Security Operator roles. 
 a.	Users who can request access: “Specific connected organizations”
 b.	Approval settings:  
@@ -98,30 +101,33 @@ Access controls	Target reviews and approves access to resources. 	Target reviews
 ## Deployment considerations
 **Monitoring**
 All actions performed by a SOC analyst   in Entra are audited in the tenant that they are operating in. Organizations can maintain an audit trail of actions performed, generate alerts when specific actions are performed, and analyze actions performed by pushing audit logs into Azure Monitor.
-Learn more
+
+[Learn more](https://learn.microsoft.com/entra/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs)
 
 Critical actions in Microsoft Defender are audited. To understand auditing in Microsoft Defender, see here.
- Learn more
+
+[Learn more](https://learn.microsoft.com/purview/audit-log-activities)
 
 **Scaling deployment with PowerShell / APIs**
 Every action performed through the user interface has accompanying MS Graph APIs and PowerShell commandlets, enabling you to deploy your desired policies/configuration across the tenants in your organization. 
 
-Capability	MS Graph API Documentation	PowerShell documentation
-Cross-tenant synchronization	Link
-Link
+| Capability    | Microsoft Graph API |PowerShell|
+| -------- | ------- |------- |
+| Cross-tenant synchronization  | [Link](https://learn.microsoft.com/entra/identity/multi-tenant-organizations/cross-tenant-synchronization-configure-graph?tabs=ms-powershell) |[Link](https://learn.microsoft.com/entra/identity/multi-tenant-organizations/cross-tenant-synchronization-configure-graph?tabs=ms-powershell)|
+| Entitlement management | [Link](https://learn.microsoft.com/graph/tutorial-access-package-api?tabs=http)     | [Link](https://learn.microsoft.com/powershell/microsoftgraph/tutorial-entitlement-management?view=graph-powershell-1.0)|
+| Cross-tenant access policies    | [Link](https://learn.microsoft.com/graph/api/resources/crosstenantaccesspolicy-overview?view=graph-rest-1.0) | [Link](https://learn.microsoft.com/powershell/module/microsoft.graph.identity.signins/new-mgpolicycrosstenantaccesspolicypartner?view=graph-powershell-1.0) |
 
-Entitlement management		Link
+**Role based access control**
 
-Cross-tenant access policies	Link
+Configuring the capabilities described in topology 1 and topology 2 require the following roles:
 
-
-**RBAC**
 * Configuring cross-tenant access settings - Security administrator
 * Configuring cross-tenant sync - Hybrid administrator
-* Configuring Entitlement Management -  
+* Configuring Entitlement Management - Identity Governance Administrator
 
-Accessing defender relies on out of the box roles such as x,y,z and also supports custom roles. To  learn more about roles in defender, see here: 
-https://learn.microsoft.com/en-us/microsoft-365/security/defender/m365d-permissions?view=o365-worldwide
+SOC users in Defender rely on both built-in roles such as security reader, security admin, and security operator defender relies and also supports custom roles. 
+
+[Learn more about roles in Microsoft Defender](https://learn.microsoft.com/microsoft-365/security/defender/m365d-permissions?view=o365-worldwide)
 
 **Limitations**  
 * Cross-tenant sync – known issues
