@@ -119,7 +119,7 @@ Open the following ports to **outbound** traffic.
 If your firewall enforces traffic according to originating users, also open ports 80 and 443 for traffic from Windows services that run as a Network Service.
 
 > [!NOTE]
-> Errors occur when there's a networking issue. Check if the required ports are open. For more information about troubleshooting issues related to connector errors, see [Troubleshoot application proxy problems and error messages](application-proxy-troubleshoot.md#connector-errors).
+> Errors occur when there's a networking issue. Check if the required ports are open. For more information about troubleshooting issues related to connector errors, see [Troubleshoot connectors](../../global-secure-access/troubleshoot-connectors.md).
 
 ### Allow access to URLs
 

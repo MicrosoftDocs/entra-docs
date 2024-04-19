@@ -102,7 +102,7 @@ The *HomeController.cs* file contains the code for the home page of the applicat
     using System.Diagnostics;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
-    using aspnet_webapp.Models;
+    using dotnetcore_webapp.Models;
     ```
 
 1. Additionally, add the `[Authorize]` attribute directly above the `HomeController` class definition.

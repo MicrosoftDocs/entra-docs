@@ -136,8 +136,6 @@ items:
       items:
       - name: Application proxy troubleshooting
         href: application-proxy-troubleshoot.md
-      - name: Connector troubleshooting flowchart
-        href: application-proxy-debug-connectors.md
       - name: Application troubleshooting flowchart
         href: application-proxy-debug-apps.md
       - name: Links on application page not working
@@ -146,8 +144,6 @@ items:
         href: application-proxy-back-end-kerberos-constrained-delegation-how-to.md
       - name: Can't Access this Corporate Application error
         href: application-proxy-sign-in-bad-gateway-timeout-error.md
-      - name: Problem installing the private network connector
-        href: application-proxy-connector-installation-problem.md
       - name: CORS issues in application proxy
         href: application-proxy-understand-cors-issues.md
   - name: Reference
