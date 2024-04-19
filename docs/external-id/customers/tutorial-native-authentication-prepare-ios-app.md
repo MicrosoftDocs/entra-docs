@@ -86,7 +86,7 @@ MSALGlobalConfig.loggerConfig.setLogCallback { logLevel, message, containsPII in
 }
 ```
 
-This outputs all debug logs from MSAL, which can be helpful in diagnosing issues and learning how the native authentication flows work. To learn more about configuring log levels and best practices see [Logging in MSAL for iOS/macOS](../../identity-platform/msal-logging-ios.md?tabs=swift).
+This outputs all debug logs from MSAL, which can be helpful in diagnosing issues and learning how the native authentication flows work. To learn more about configuring log levels and best practices see [Logging in MSAL for iOS/macOS](/entra/msal/objc/logging-ios?tabs=swift).
 
 ## Next steps
 

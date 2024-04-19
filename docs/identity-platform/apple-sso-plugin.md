@@ -367,7 +367,7 @@ For more information, see the [Deploy the Microsoft Enterprise SSO plug-in for A
 
 [MSAL for Apple devices](https://github.com/AzureAD/microsoft-authentication-library-for-objc) versions 1.1.0 and later supports the Microsoft Enterprise SSO plug-in for Apple devices. It's the recommended way to add support for the Microsoft Enterprise SSO plug-in. It ensures you get the full capabilities of the Microsoft identity platform.
 
-If you're building an application for frontline-worker scenarios, see [Shared device mode for iOS devices](msal-ios-shared-devices.md) for setup information.
+If you're building an application for frontline-worker scenarios, see [Shared device mode for iOS devices](/entra/msal/objc/shared-devices-ios) for setup information.
 
 ## Understand how the SSO plug-in works
 
@@ -382,7 +382,7 @@ Native applications can also implement custom operations and communicate directl
 
 [MSAL for Apple devices](https://github.com/AzureAD/microsoft-authentication-library-for-objc) versions 1.1.0 and later supports the Microsoft Enterprise SSO plug-in for Apple devices natively for work and school accounts. 
 
-You don't need any special configuration if you followed [all recommended steps](./quickstart-v2-ios.md) and used the default [redirect URI format](./redirect-uris-ios.md). On devices that have the SSO plug-in, MSAL automatically invokes it for all interactive and silent token requests. It also invokes it for account enumeration and account removal operations. Because MSAL implements a native SSO plug-in protocol that relies on custom operations, this setup provides the smoothest native experience to the end user. 
+You don't need any special configuration if you followed [all recommended steps](./quickstart-v2-ios.md) and used the default [redirect URI format](/entra/msal/objc/redirect-uris-ios). On devices that have the SSO plug-in, MSAL automatically invokes it for all interactive and silent token requests. It also invokes it for account enumeration and account removal operations. Because MSAL implements a native SSO plug-in protocol that relies on custom operations, this setup provides the smoothest native experience to the end user. 
 
 On iOS and iPadOS devices, if the SSO plug-in isn't enabled by MDM but the Microsoft Authenticator app is present on the device, MSAL instead uses the Authenticator app for any interactive token requests. The Microsoft Enterprise SSO plug-in shares SSO with the Authenticator app.
 
@@ -435,7 +435,7 @@ To support device Conditional Access policies in Google Chrome with Secure Encla
 
 ## See also
 
-Learn about [Shared device mode for iOS devices](msal-ios-shared-devices.md).
+Learn about [Shared device mode for iOS devices](/entra/msal/objc/shared-devices-ios).
 
 Learn about [troubleshooting the Microsoft Enterprise SSO Extension](~/identity/devices/troubleshoot-mac-sso-extension-plugin.md).
 
