@@ -6,7 +6,7 @@ manager: martinco
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to
-ms.date: 04/18/2024
+ms.date: 04/19/2024
 ms.author: gasinh
 ms.collection: M365-identity-device-management
 ms.custom: not-enterprise-apps
@@ -18,7 +18,7 @@ ms.custom: not-enterprise-apps
 
 With increases in the threat landscape and the use of multiple mobile devices, organizations are rethinking resource access and governance. Part of modernization programs include assessing your readiness across identities, devices, apps, infrastructure, network, and data. You can learn about the [Zero Trust framework to enable remote work](https://www.microsoft.com/security/blog/2020/04/02/announcing-microsoft-zero-trust-assessment-tool/) and the Zero Trust Assessment tool.
 
-At Microsoft and F5, we realize your digital transformation is a long-term journey, potentially critical resources are exposed until modernized. The goal of F5 BIG-IP and Microsoft Entra ID secure hybrid access (SHA) is to improve remote access to on-premises applications, and strengthen the security posture of vulnerable legacy services.
+Digital transformation is a long-term journey, and potentially critical resources are exposed until modernized. The goal of F5 BIG-IP and Microsoft Entra ID secure hybrid access (SHA) is to improve remote access to on-premises applications, and strengthen the security posture of vulnerable legacy services.
 
 Research estimates that 60%-80% of on-premises applications are legacy, or incapable of being integrated with Microsoft Entra ID. The same study indicates a large proportion of similar systems run on previous versions of SAP, Oracle, SAGE, and other well-known workloads for critical services.
 
@@ -26,11 +26,11 @@ SHA enables organizations to continue using investments in F5 network and applic
 
 ## Benefits
 
-When Microsoft Entra ID pre-authenticates access to BIG-IP published services, there are many benefits:
+When Microsoft Entra ID preauthenticates access to BIG-IP published services, there are many benefits:
 
 - Password-less authentication with:
-  -  [Windows Hello](/windows/security/identity-protection/hello-for-business/)
-  -  [MS Authenticator](https://support.microsoft.com/account-billing/download-and-install-the-microsoft-authenticator-app-351498fc-850a-45da-b7b6-27e523b8702a)
+  -  [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/)
+  -  [Microsoft Authenticator](https://support.microsoft.com/account-billing/download-and-install-the-microsoft-authenticator-app-351498fc-850a-45da-b7b6-27e523b8702a)
   -  [Fast Identity Online (FIDO) keys](~/identity/authentication/howto-authentication-passwordless-security-key.md)
   -  [Certificate-based authentication](~/identity/authentication/concept-certificate-based-authentication.md)
 
@@ -47,7 +47,7 @@ Other benefits include:
 - Entitlement management for governed guest access
   - [Partner collaboration](~/id-governance/entitlement-management-external-users.md)
 - App discovery and control
-  - [Defender for Cloud Apps (CASB)](/defender-cloud-apps/what-is-defender-for-cloud-apps)
+  - [Defender for Cloud Apps](/defender-cloud-apps/what-is-defender-for-cloud-apps)
 - Threat monitoring and analytics with [Microsoft Sentinel](https://azure.microsoft.com/services/azure-sentinel/)
 
 ## Scenario description
@@ -65,19 +65,19 @@ With integration, you achieve the protocol transition to secure legacy, or non-M
 * [Passwordless authentication](https://www.microsoft.com/security/business/identity/passwordless)
 * [Conditional Access](~/identity/conditional-access/overview.md)
 
-In the scenario, a BIG-IP is a reverse proxy that hands off service pre-authentication and authorization to Microsoft Entra ID. The integration is based on a standard federation trust between the APM and Microsoft Entra ID. This scenario is common with SHA. Learn more: [Configure F5 BIG-IP SSL-VPN for Microsoft Entra SSO](f5-passwordless-vpn.md). With SHA you can secure Security Assertion Markup Language (SAML), Open Authorization (OAuth), and OpenID Connect (OIDC) resources. 
+In the scenario, a BIG-IP is a reverse proxy that hands off service preauthentication and authorization to Microsoft Entra ID. The integration is based on a standard federation trust between the APM and Microsoft Entra ID. This scenario is common with SHA. Learn more: [Configure F5 BIG-IP SSL-VPN for Microsoft Entra SSO](f5-passwordless-vpn.md). With SHA you can secure Security Assertion Markup Language (SAML), Open Authorization (OAuth), and OpenID Connect (OIDC) resources. 
 
 > [!NOTE]
 > When used for local and remote access, a BIG-IP can be a choke point for Zero Trust access to services, including software as a service (SaaS) apps.
 
-The following diagram illustrates the front-end pre-authentication exchange between a user, a BIG-IP, and Microsoft Entra ID, in a service provider (SP) initiated flow. It then shows subsequent APM session enrichment, and SSO to individual back-end services.
+The following diagram illustrates the front-end preauthentication exchange between a user, a BIG-IP, and Microsoft Entra ID, in a service provider (SP) initiated flow. It then shows subsequent APM session enrichment, and SSO to individual back-end services.
 
    ![Diagram of integration architecture.](./media/f5-integration/integration-flow-diagram.png)
 
 1. In the portal, a user selects an application icon, resolving URL to the SAML SP (BIG-IP)
-2. BIG-IP redirects the user to the SAML identity provider (IdP), Microsoft Entra ID, for pre-authentication
+2. BIG-IP redirects the user to the SAML identity provider (IdP), Microsoft Entra ID, for preauthentication
 3. Microsoft Entra ID processes Conditional Access policies and [session controls](~/identity/conditional-access/concept-conditional-access-session.md) for authorization
-4. User goes back to BIG-IP, and presents the SAML claims issued by Microsoft Entra ID
+4. The user retuns to BIG-IP, and presents the SAML claims issued by Microsoft Entra ID
 5. BIG-IP requests session information for [SSO](~/identity/hybrid/connect/how-to-connect-sso.md) and [role-based access control (RBAC)](/azure/role-based-access-control/overview) to the published service
 6. BIG-IP forwards the client request to the back-end service
 
@@ -112,7 +112,7 @@ Integrating an F5 BIG-IP with Microsoft Entra ID for SHA has the following prere
 
 - An F5 BIG-IP instance running on:
   - Physical appliance
-  - Hypervisor Virtual Edition such as Microsoft Hyper-V, VMware ESXi, Linux KVM, and Citrix Hypervisor
+  - Hypervisor Virtual Edition such as Microsoft Hyper-V, VMware ESXi, Linux kernel-based virtual machine (KVM), and Citrix Hypervisor
   - Cloud Virtual Edition such as Azure, VMware, KVM, Community Xen, MS Hyper-V, AWS, OpenStack, and Google Cloud
 
 > [!NOTE]
@@ -153,7 +153,7 @@ Advanced configuration tutorials:
 
 The BIG-IP version 13.1 Guided Configuration wizard, minimizes time and effort to implement common BIG-IP publishing scenarios. Its workflow framework provides an intuitive deployment experience, for specific access topologies.
 
-Guided Configuration version 16.x has the Easy Button feature: admins no longer go back and forth between Microsoft Entra ID and a BIG-IP to enable services for SHA. The end-to-end deployment and policy management is handled by the APM Guided Configuration wizard and Microsoft Graph. This integration between BIG-IP APM and Microsoft Entra ID ensures applications support identity federation, SSO, and Microsoft Entra Conditional Access, without the management overhead of doing so for each app. 
+Guided Configuration version 16.x has the Easy Button feature. Administrators don't back and forth between Microsoft Entra ID and a BIG-IP to enable services for SHA. The APM Guided Configuration wizard and Microsoft Graph handle deployment and policy management. This integration between BIG-IP APM and Microsoft Entra ID ensures applications support identity federation, SSO, and Microsoft Entra Conditional Access, without the management overhead of doing so for each app. 
 
 Tutorials for using Easy Button templates, *F5 BIG-IP Easy Button for SSO to*:
 
@@ -175,16 +175,16 @@ Tutorials for using Easy Button templates, *F5 BIG-IP Easy Button for SSO to*:
 
 ## Microsoft Entra B2B guest access
 
-Microsoft Entra B2B guest access to SHA-protected applications is possible, but might require steps not in the tutorials. One example is Kerberos SSO, when a BIG-IP performs kerberos constrained delegation (KCD) to obtain a service ticket from domain controllers. Without a local representation of a local guest user, a domain controller won't honor the request because there's no user. To support this scenario, ensure external identities are flowed down from your Microsoft Entra tenant to the directory used by the application. 
+Microsoft Entra B2B guest access to SHA-protected applications is possible, but might require steps not in the tutorials. One example is Kerberos SSO, when a BIG-IP performs kerberos constrained delegation (KCD) to obtain a service ticket from domain controllers. Without a local representation of a local guest user, a domain controller doesn't honor the request because there's no user. To support this scenario, ensure external identities are flowed down from your Microsoft Entra tenant to the directory used by the application. 
 
 Learn more: [Grant B2B users in Microsoft Entra ID access to your on-premises applications](~/external-id/hybrid-cloud-to-on-premises.md)
 
 ## Next steps
 
-You can conduct a proof-of-concept for SHA using your BIG-IP infrastructure, or by [Deploying a BIG-IP Virtual Edition (VE) VM into Azure](f5-bigip-deployment-guide.md). To deploy a VM in Azure takes approximately 30 minutes, then you'll have:
+You can conduct a proof-of-concept for SHA using your BIG-IP infrastructure, or by [Deploying a BIG-IP Virtual Edition virutal machne into Azure](f5-bigip-deployment-guide.md). To deploy a VM in Azure takes approximately 30 minutes. The result is:
 
 - A secured platform to model a pilot for SHA
-- A pre-production instance for testing new BIG-IP system updates and hotfixes
+- A preproduction instance for testing new BIG-IP system updates and hotfixes
 
 Identify one or two applications to be published with BIG-IP and protected with SHA.
 
