@@ -17,7 +17,7 @@ ms.custom: it-pro
 Managing multi-tenant environments can add an additional layer of complexity when it comes to keeping up with the ever-evolving security threats facing your enterprise. Navigating across multiple tenants can be time consuming and reduce the overall efficiency of security operation center (SOC) teams.
 Multi-tenant management in [Microsoft Defender XDR](https://learn.microsoft.com/microsoft-365/security/defender/mto-overview?view=o365-worldwide) provides security operation teams with a single, unified view of all the tenants they manage. This view enables teams to quickly investigate incidents and perform advanced hunting across data from multiple tenants, improving their security operations.
 
-Microsoft Entra enables you to govern the access and lifecycle of the SOC teams and threat hunters that secure your organization. In this document we will explore:
+[Microsoft Entra Identity Governance](https://learn.microsoft.com/entra/id-governance/identity-governance-overview) enables you to govern the access and lifecycle of the SOC teams and threat hunters that secure your organization. In this document we will explore:
 1. The controls you can put in place for SOC teams to securely access resources across tenants. 
 2. Example topologies for how you can implement your lifecycle and access controls.
 3. Deployment considerations (roles, monitoring, APIs).
