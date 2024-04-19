@@ -115,11 +115,7 @@ Before deploying SSPR, you may opt to determine the number and the average cost 
 
 ### Combined registration for SSPR and Microsoft Entra multifactor authentication
 
-> [!NOTE]
-> Starting on August 15th 2020, all new Microsoft Entra tenants will be automatically enabled for combined registration. Tenants created after this date will be unable to utilize the legacy registration workflows.
-> After Sept. 30th, 2022, all existing Microsoft Entra tenants will be automatically enabled for combined registration.
-
-We recommend that organizations use the [combined registration experience for Microsoft Entra multifactor authentication and self-service password reset (SSPR)](howto-registration-mfa-sspr-combined.md). SSPR allows users to reset their password in a secure way using the same methods they use for Microsoft Entra multifactor authentication. Combined registration is a single step for end users. To make sure you understand the functionality and end-user experience, see the [Combined security information registration concepts](concept-registration-mfa-sspr-combined.md).
+SSPR allows users to reset their password in a secure way using the same methods they use for Microsoft Entra multifactor authentication. [Combined registration](howto-registration-mfa-sspr-combined.md) is a single registration step for end users which enables registration of both MFA and SSPR methods at the same time. To make sure you understand the functionality and end-user experience, see the [Combined security information registration concepts](concept-registration-mfa-sspr-combined.md).
 
 It's critical to inform users about upcoming changes, registration requirements, and any necessary user actions. We provide [communication templates](https://aka.ms/mfatemplates) and [user documentation](https://support.microsoft.com/account-billing/set-up-security-info-from-a-sign-in-page-28180870-c256-4ebf-8bd7-5335571bf9a8) to prepare your users for the new experience and help to ensure a successful rollout. Send users to https://myprofile.microsoft.com to register by selecting the **Security Info** link on that page.
 
