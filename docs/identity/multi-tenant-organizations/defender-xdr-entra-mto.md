@@ -61,7 +61,7 @@ In this section we will explore how you can use tools such as cross-tenant sync,
 ### Topology 1 
 In topology 1, the source tenant configures entitlement management and cross-tenant synchronization to provision users into the target tenant. Then, the admin of the target tenant configures access packages to provide access to the necessary roles, group, and apps in the target tenant. 
 
-:::image type="content" source="./media/overview/mto-defender-topology1.png" alt-text="Diagram that shows topology 1. Cross-tenant sync pushes users across tenants and entitlement management gives access to roles." lightbox="./media/overview/mto-defender-topology1.png":::
+:::image type="content" source="./media/defender-xdr-entra-mto/mto-defender-topology1.png" alt-text="Diagram that shows topology 1. Cross-tenant sync pushes users across tenants and entitlement management gives access to roles." lightbox="./media/defender-xdr-entra-mto/mto-defender-topology1.png":::
 
 **Steps to configure topology 1**   
 1.	In the source tenant, configure [cross-tenant synchronization]( https://learn.microsoft.com/entra/identity/multi-tenant-organizations/cross-tenant-synchronization-overview) to push B2B accounts into the target tenant. As users are assigned to the cross-tenant synchronization configuration, they will automatically be provisioned into the target tenant. As they are removed from the configuration, they will automatically be deprovisioned. You can determine what users are in scope either by direct assignment to the cross-tenant synchronization service principal or by assignment of a group to the eservice principal. 
@@ -79,7 +79,7 @@ iii.	Users can request a specific timeline: Yes
 ### Topology 2
 In topology 2 the target tenant administrator defines the access packages and resources that the source users can request access to. If the source tenant admins would like to restrict which of their users can access the target tenant, you can use a cross-tenant access policy coupled with an access package to block all access to the target tenant, except for users that are part of a group that is included in an access package in the home tenant. 
 
-:::image type="content" source="./media/overview/mto-defender-topology1.png" alt-text="Diagram that shows topology 2. Entitlement connected organizations enables users to request access to the target tenant and get provisioned to the necessary roles in the target tenant." lightbox="./media/overview/mto-defender-topology1.png":::
+:::image type="content" source="./media/defender-xdr-entra-mto/mto-defender-topology1.png" alt-text="Diagram that shows topology 2. Entitlement connected organizations enables users to request access to the target tenant and get provisioned to the necessary roles in the target tenant." lightbox="./media/defender-xdr-entra-mto/mto-defender-topology1.png":::
  
 **Steps to configure topology 2**
 1.	In the target tenant, add the source tenant as a [connected organization](https://learn.microsoft.com/entra/id-governance/entitlement-management-organization). This setting allows the target tenant admin to make access packages available to the source tenant. 
