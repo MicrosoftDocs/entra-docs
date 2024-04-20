@@ -4,7 +4,7 @@ description: Learn about the components of the Microsoft identity platform and h
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.date: 11/10/2023
+ms.date: 03/20/2024
 ms.reviewer: saeeda, dmwendia
 ms.service: identity-platform
 

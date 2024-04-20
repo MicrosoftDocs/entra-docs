@@ -12,6 +12,8 @@ ms.subservice: saas-apps
 ms.topic: tutorial
 ms.date: 08/03/2023
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Tailscale so that I can streamline the user management process and ensure that users have the appropriate access to Tailscale.
 ---
 
 # Tutorial: Configure Tailscale for automatic user provisioning

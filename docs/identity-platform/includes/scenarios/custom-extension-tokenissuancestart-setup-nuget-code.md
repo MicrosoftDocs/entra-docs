@@ -27,8 +27,8 @@ namespace AuthEventTrigger
     public static class Function1
     {
         [FunctionName("onTokenIssuanceStart")]
-        public static async Task<AuthenticationEventResponse> Run(
-        //    [AuthenticationEventsTrigger] TokenIssuanceStartRequest request, ILogger log)
+        public static AuthenticationEventResponse Run(
+        // [AuthenticationEventsTrigger] TokenIssuanceStartRequest request, ILogger log)
         // The AuthenticationEventsTrigger attribute can be used to specify and audience app ID, authority URL and authorized party app id. This is an alternative route to setting up Authorization values instead of Environment variables or EzAuth
             [AuthenticationEventsTrigger(AudienceAppId = "Enter custom authentication extension app ID here",
                                          AuthorityUrl = "Enter authority URI here", 

@@ -17,19 +17,19 @@ ms.topic: concept-article
 
 [Conditional Access](~/identity/conditional-access/overview.md) is the Zero Trust control plane that allows you to target policies for access to all your apps – old or new, private, or public, on-premises, or multicloud. With [Conditional Access authentication context](~/identity/conditional-access/concept-conditional-access-cloud-apps.md#authentication-context), you can apply different policies within those apps.
 
-Conditional Access authentication context (auth context) allows you to apply granular policies to sensitive data and actions instead of just at the app level. You can refine your Zero Trust policies for least privileged access while minimizing user friction and keeping users more productive and your resources more secure. Today, it can be used by applications using [OpenId Connect](https://openid.net/specs/openid-connect-core-1_0.html) for authentication developed by your company to protect sensitive resources, like high-value transactions or viewing employee personal data.
+Conditional Access authentication context (auth context) allows you to apply granular policies to sensitive data and actions instead of just at the app level. You can refine your Zero Trust policies for least privileged access while minimizing user friction and keeping users more productive and your resources more secure. Today, it's used by applications using [OpenId Connect](https://openid.net/specs/openid-connect-core-1_0.html) for authentication developed by your company to protect sensitive resources, like high-value transactions or viewing employee personal data.
 
-Use the Microsoft Entra Conditional Access engine's new auth context feature to trigger a demand for step-up authentication from within your application and services. Developers now have the power to demand enhanced stronger authentication, selectively, like MFA from their end users from within their applications. This feature helps developers build smoother user experiences for most parts of their application, while access to more secure operations and data remains behind stronger authentication controls.
+To trigger a step-up authentication from within your applications and services use Microsoft Entra Conditional Access engine's auth context feature. Developers now have the power to demand enhanced stronger authentication, selectively, like MFA from their end users from within their applications. This feature helps developers build smoother user experiences for most parts of their application, while access to more secure operations and data remains behind stronger authentication controls.
 
 ## Problem statement
 
-The IT administrators and regulators often struggle between balancing prompting their users with additional factors of authentication too frequently and achieving adequate security and policy adherence for applications and services where parts of them contain sensitive data and operations. It can be a choice between a strong policy that impacts users' productivity when they access most data and actions or a policy that isn't strong enough for sensitive resources.
+The IT administrators and regulators often struggle between balancing prompting their users with extra factors of authentication too frequently and achieving adequate security and policy adherence for applications and services where parts of them contain sensitive data and operations. It can be a choice between a strong policy that impacts users' productivity when they access most data and actions or a policy that isn't strong enough for sensitive resources.
 
 So, what if apps were able to mix both, where they can function with a relatively lesser security and less frequent prompts for most users and operations and yet conditionally stepping up the security requirement when the users accessed more sensitive parts?
 
 ## Common scenarios
 
-For example, while users may sign in to SharePoint using multi-factor authentication, accessing site collection in SharePoint containing sensitive documents can require a compliant device and only be accessible from trusted IP ranges.
+For example, while users might sign in to SharePoint using multifactor authentication, accessing site collection in SharePoint containing sensitive documents can require a compliant device and only be accessible from trusted IP ranges.
 
 ## Prerequisites
 
@@ -46,9 +46,9 @@ Once your application is integrated using the supported authentication protocols
 > [!NOTE]
 > A detailed walkthrough of this feature is also available as a recorded session at [Use Conditional Access Auth Context in your app for step\-up authentication](https://www.youtube.com/watch?v=_iO7CfoktTY).
 
-**First**, declare and make the authentication contexts available in your tenant. For more information, see [Configure authentication contexts](~/identity/conditional-access/concept-conditional-access-cloud-apps.md#configure-authentication-contexts).
+**First**, declare and make the authentication contexts available in your tenant. For more information, see [Configure authentication contexts](../identity/conditional-access/concept-conditional-access-cloud-apps.md#configure-authentication-contexts).
 
-Values **C1-C25** are available for use as **Auth Context IDs** in a tenant. Examples of auth context may be:
+Values **C1-C99** are available for use as **Auth Context IDs** in a tenant. Examples of auth context might be:
 
 - **C1** - Require strong authentication
 - **C2** – Require compliant devices
@@ -79,7 +79,7 @@ These steps are the changes that you need to carry in your code base. The steps 
 
 **Third**: Your application, and for this example, we'd assume it's a web API, then needs to evaluate calls against the saved mapping and accordingly raise claim challenges for its client apps. To prepare for this action, the following steps are to be taken:
 
-1. In a sensitive and protected by auth context operation, evaluate the values in the **acrs** claim against the Auth Context ID mappings saved earlier and raise a [Claims Challenge](claims-challenge.md) as provided in the code snippet below.
+1. In a sensitive and protected by auth context operation, evaluate the values in the **acrs** claim against the Auth Context ID mappings saved earlier and raise a [Claims Challenge](claims-challenge.md) as provided in the following code snippet.
 
 1. The following diagram shows the interaction between the user, client app, and the web API.
 
@@ -203,7 +203,7 @@ These steps are the changes that you need to carry in your code base. The steps 
 
 ## Caveats and recommendations
 
-Don't hard-code Auth Context values in your app. Apps should read and apply auth context [using MS Graph calls](/graph/api/resources/authenticationcontextclassreference). This practice is critical for [multi-tenant applications](howto-convert-app-to-be-multi-tenant.md). The Auth Context values will vary between Microsoft Entra tenants and won't be available in Microsoft Entra ID Free edition. For more information on how an app should query, set, and use auth context in their code, see the code sample, [Use the Conditional Access auth context to perform step-up authentication](https://github.com/Azure-Samples/ms-identity-ca-auth-context/blob/main/README.md) as how an app should query, set and use auth context in their code.
+Don't hard-code Auth Context values in your app. Apps should read and apply auth context [using MS Graph calls](/graph/api/resources/authenticationcontextclassreference). This practice is critical for [multi-tenant applications](howto-convert-app-to-be-multi-tenant.md). The Auth Context values vary between Microsoft Entra tenants and won't be available in Microsoft Entra ID Free edition. For more information on how an app should query, set, and use auth context in their code, see the code sample, [Use the Conditional Access auth context to perform step-up authentication](https://github.com/Azure-Samples/ms-identity-ca-auth-context/blob/main/README.md) as how an app should query, set and use auth context in their code.
 
 Don't use auth context where the app itself is going to be a target of Conditional Access policies. The feature works best when parts of the application require the user to meet a higher bar of authentication.
 
@@ -221,7 +221,7 @@ A client can explicitly ask for a token with an Auth Context (ACRS) through the 
 
 ## Expected behavior when an auth context isn't protected by Conditional Access in the tenant
 
-Conditional Access may issue an ACRS in a token's claims when all Conditional Access policy assigned to the ACRS value has been satisfied. If no Conditional Access policy is assigned to an ACRS value the claim may still be issued, because all policy requirements have been satisfied.
+Conditional Access can issue an ACRS in a token's claims when all Conditional Access policy assigned to the ACRS value has been satisfied. If no Conditional Access policy is assigned to an ACRS value the claim might still be issued, because all policy requirements have been satisfied.
 
 ## Summary table for expected behavior when ACRS are explicitly requested
 
@@ -234,7 +234,7 @@ ACRS requested | Policy applied | Control satisfied | ACRS added to claims |
 
 ## Implicit auth context satisfaction by opportunistic evaluation
 
-A resource provider may opt in to the optional 'acrs' claim. Conditional Access will try to add ACRS to the token claims opportunistically in order to avoid round trips to acquire new tokens to Microsoft Entra ID. In that evaluation, Conditional Access will check if the policies protecting Auth Context challenges are already satisfied and will add the ACRS to the token claims if so.
+A resource provider may opt in to the optional 'acrs' claim. Conditional Access tries to add ACRS to the token claims opportunistically in order to avoid round trips to acquire new tokens to Microsoft Entra ID. In that evaluation, Conditional Access checks if the policies protecting Auth Context challenges are already satisfied and adds the ACRS to the token claims if so.
 
 > [!NOTE]
 > Each token type will need to be individually opted-in (ID token, Access token).
@@ -245,7 +245,7 @@ A resource provider may opt in to the optional 'acrs' claim. Conditional Access 
 
 ### Sign-in frequency by interval
 
-Conditional Access will consider "sign-in frequency by interval" as satisfied for opportunistic ACRS evaluation when all the present authentication factors auth instants are within the sign-in frequency interval. In case that the first factor auth instant is stale, or if the second factor (MFA) is present and its auth instant is stale, the sign-in frequency by interval won't be satisfied and the ACRS won't be issued in the token opportunistically.
+Conditional Access considers "sign-in frequency by interval" as satisfied for opportunistic ACRS evaluation when all the present authentication factors auth instants are within the sign-in frequency interval. In case that the first factor auth instant is stale, or if the second factor (MFA) is present and its auth instant is stale, the sign-in frequency by interval won't be satisfied and the ACRS won't be issued in the token opportunistically.
 
 ### Cloud App Security (CAS)
 

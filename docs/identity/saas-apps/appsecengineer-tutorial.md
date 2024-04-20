@@ -10,6 +10,8 @@ ms.subservice: saas-apps
 ms.topic: how-to
 ms.date: 12/20/2023
 ms.author: jeedes
+
+# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and AppSecEngineer so that I can control who has access to AppSecEngineer, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
 # Microsoft Entra SSO integration with AppSecEngineer

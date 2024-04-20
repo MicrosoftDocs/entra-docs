@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: how-to
-ms.date: 02/07/2024
+ms.date: 04/15/2024
 ms.author: sarahlipsey
 ms.reviewer: adelle.dimitui
 
@@ -23,7 +23,7 @@ This article explains how to create a new user, invite an external guest, and de
 
 ## Prerequisites
 
-The required role of least privilege varies based on the type of user you're adding and if you need to assign Microsoft Entra roles at the same time. **Global Administrator** can create users and assign roles, but whenever possible you should use the least privileged role.
+The required role of least privilege varies based on the type of user you're adding and if you need to assign Microsoft Entra roles at the same time. Whenever possible you should use the least privileged role.
 
 | Task | Role |
 | -- | -- |
@@ -162,8 +162,8 @@ If you have an environment with both Microsoft Entra ID (cloud) and Windows Serv
 
 You can delete an existing user using the [Microsoft Entra admin center](https://entra.microsoft.com/).
 
-- You must have a Global Administrator, Privileged Authentication Administrator, or User Administrator role assignment to delete users in your organization.
-- Global Administrators and Privileged Authentication Administrators can delete any users including other administrators.
+- You must have a Privileged Authentication Administrator or User Administrator role assignment to delete users in your organization.
+- Privileged Authentication Administrators can delete any users including other administrators.
 - User Administrators can delete any non-admin users, Helpdesk Administrators, and other User Administrators.
 - For more information, see [Administrator role permissions in Microsoft Entra ID](~/identity/role-based-access-control/permissions-reference.md).
 

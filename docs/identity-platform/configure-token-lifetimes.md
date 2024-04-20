@@ -5,7 +5,7 @@ author: rwike77
 manager: CelesteDG
 ms.author: ryanwi
 ms.custom: 
-ms.date: 11/02/2023
+ms.date: 04/10/2024
 ms.reviewer:
 ms.service: identity-platform
 
@@ -47,7 +47,7 @@ $params = @{
 	"@odata.id" = "https://graph.microsoft.com/v1.0/policies/tokenLifetimePolicies/$tokenLifetimePolicyId"
 }
 
-$applicationObjectId="11111111-1111-1111-1111-111111111111"
+$applicationObjectId="aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb"
 
 New-MgApplicationTokenLifetimePolicyByRef -ApplicationId $applicationObjectId -BodyParameter $params
 
@@ -82,7 +82,7 @@ Content-Type: application/json
 Assign the policy to a service principal.
 
 ```http
-POST https://graph.microsoft.com/v1.0/servicePrincipals/11111111-1111-1111-1111-111111111111/tokenLifetimePolicies/$ref
+POST https://graph.microsoft.com/v1.0/servicePrincipals/00001111-aaaa-2222-bbbb-3333cccc4444/tokenLifetimePolicies/$ref
 Content-Type: application/json
 {
   "@odata.id":"https://graph.microsoft.com/v1.0/policies/tokenLifetimePolicies/22222222-2222-2222-2222-222222222222"
@@ -92,13 +92,13 @@ Content-Type: application/json
 List the policies on the service principal.
 
 ```http
-GET https://graph.microsoft.com/v1.0/servicePrincipals/11111111-1111-1111-1111-111111111111/tokenLifetimePolicies
+GET https://graph.microsoft.com/v1.0/servicePrincipals/00001111-aaaa-2222-bbbb-3333cccc4444/tokenLifetimePolicies
 ```
 
 Remove the policy from the service principal.
 
 ```http
-DELETE https://graph.microsoft.com/v1.0/servicePrincipals/11111111-1111-1111-1111-111111111111/tokenLifetimePolicies/22222222-2222-2222-2222-222222222222/$ref
+DELETE https://graph.microsoft.com/v1.0/servicePrincipals/00001111-aaaa-2222-bbbb-3333cccc4444/tokenLifetimePolicies/22222222-2222-2222-2222-222222222222/$ref
 ```
 
 ## View existing policies in a tenant
@@ -112,7 +112,7 @@ Get-MgPolicyTokenLifetimePolicy
 To see which apps are linked to a specific policy that you identified, run [List appliesTo](/graph/api/tokenlifetimepolicy-list-appliesto) with any of your policy IDs. 
 
 ```powershell
-GET https://graph.microsoft.com/v1.0/policies/tokenLifetimePolicies/4d2f137b-e8a9-46da-a5c3-cc85b2b840a4/appliesTo
+GET https://graph.microsoft.com/v1.0/policies/tokenLifetimePolicies/00aa00aa-bb11-cc22-dd33-44ee44ee44ee/appliesTo
 ```
 
 ## Next steps

@@ -1,6 +1,6 @@
 ---
 title: Add Google as an identity provider
-description: Learn how to add Google as an identity provider for your customer tenant.
+description: Learn how to add Google as an identity provider for your external tenant.
  
 author: msmimart
 manager: celestedg
@@ -25,7 +25,7 @@ By setting up federation with Google, you allow customers to sign in to your app
 
 ## Prerequisites
 
-- A [Microsoft Entra ID for customers tenant](how-to-create-customer-tenant-portal.md).
+- An [external tenant](how-to-create-external-tenant-portal.md).
 - A [sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md).
 
 ## Create a Google application
@@ -48,8 +48,8 @@ To enable sign-in for customers with a Google account, you need to create an app
 1. From the left menu, select **Credentials**
 1. Select **Create credentials**, and then **OAuth client ID**.
 1. Under **Application type**, select **Web application**.
-   1. Enter a suitable **Name** for your application, such as "Microsoft Entra ID for customers."
-   1. In **Valid OAuth redirect URIs**, enter the following URIs. Replace `<tenant-ID>` with your customer Directory (tenant) ID and `<tenant-subdomain>` with your customer Directory (tenant) subdomain. If you don't have your tenant name, [learn how to read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).  
+   1. Enter a suitable **Name** for your application, such as "Microsoft Entra External ID."
+   1. In **Valid OAuth redirect URIs**, enter the following URIs. Replace `<tenant-ID>` with your customer Directory (tenant) ID and `<tenant-subdomain>` with your customer Directory (tenant) subdomain. If you don't have your tenant name, [learn how to read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).  
     - `https://login.microsoftonline.com`
     - `https://login.microsoftonline.com/te/<tenant-ID>/oauth2/authresp`
     - `https://login.microsoftonline.com/te/<tenant-subdomain>.onmicrosoft.com/oauth2/authresp`
@@ -66,7 +66,7 @@ To enable sign-in for customers with a Google account, you need to create an app
 
 <a name='configure-google-federation-in-azure-ad-for-customers'></a>
 
-## Configure Google federation in Microsoft Entra ID for customers
+## Configure Google federation in Microsoft Entra External ID
 
 After you create the Google application, in this step you set the Google client ID and client secret in Microsoft Entra ID. You can use the Microsoft Entra admin center or PowerShell to do so. To configure Google federation in the Microsoft Entra admin center, follow these steps:
 
@@ -97,7 +97,7 @@ To configure Google federation by using PowerShell, follow these steps:
 
 At this point, the Google identity provider has been set up in your Microsoft Entra ID, but it's not yet available in any of the sign-in pages. To add the Google identity provider to a user flow:
 
-1. In your customer tenant, browse to **Identity** > **External Identities** > **User flows**.
+1. In your external tenant, browse to **Identity** > **External Identities** > **User flows**.
 1. Select the user flow where you want to add the Google identity provider.
 
 1. Under Settings, select **Identity providers.**

@@ -12,6 +12,8 @@ ms.subservice: saas-apps
 ms.topic: tutorial
 ms.date: 03/21/2024
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Web Cargo Air so that I can streamline the user management process and ensure that users have the appropriate access to Web Cargo Air.
 ---
 
 # Tutorial: Configure Web Cargo Air for automatic user provisioning

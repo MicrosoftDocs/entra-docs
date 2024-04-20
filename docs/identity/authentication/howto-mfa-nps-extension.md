@@ -6,7 +6,7 @@ description: Learn how to use Microsoft Entra multifactor authentication capabil
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 01/19/2024
+ms.date: 03/27/2024
 
 ms.author: justinha
 author: justinha
@@ -76,15 +76,24 @@ The NPS Extension for Microsoft Entra multifactor authentication is available to
 
 ### Software
 
-Windows Server 2012 or above.
+- Windows Server 2012 or later. Please note that [Windows Server 2012 has reached end of support](/lifecycle/announcements/windows-server-2012-r2-end-of-support).
+
+- .NET Framework 4.7.2 or later is required for the Microsoft Graph PowerShell module.
+
+- PowerShell version 5.1 or later. To check the version of PowerShell, run this command:
+
+   ```powershell
+   PS C:\> $PSVersionTable.PSVersion
+   Major  Minor  Build  Revision
+   -----  -----  -----  --------
+   5      1      16232  1000
+   ```
 
 ### Libraries
 
-You need to manually install the following library:
+- Visual Studio 2017 C++ Redistributable (x64) will be installed by the NPS Extension installer.
 
-- [Visual C++ Redistributable for Visual Studio 2015](https://www.microsoft.com/download/details.aspx?id=48145)
-
-The [Visual C++ Redistributable Packages for Visual Studio 2013 (X64)](https://www.microsoft.com/download/details.aspx?id=40784) library is installed automatically with the extension. Microsoft Graph PowerShell is also installed through a configuration script you run as part of the setup process, if not already present. There's no need to install a module in advance.
+- Microsoft Graph PowerShell is also installed through a configuration script you run as part of the setup process, if not already present. There's no need to install a module in advance.
 
 ### Obtain the directory tenant ID
 
@@ -119,6 +128,16 @@ Additionally, connectivity to the following URLs is required to complete the [se
 * `https://www.powershellgallery.com`
 * `https://go.microsoft.com`
 * `https://aadcdn.msftauthimages.net`
+
+The following table describes the ports and protocols required for the NPS extension. TCP 443 (inbound and outbound) is the only port needed from the NPS Extension server to Entra ID. The RADIUS ports are needed between the access point and the NPS Extension server.
+
+| Protocol | Port | Description|
+| ----- | ----- | ----- |
+| HTTPS | 443 | Enable user authentication against Entra ID (required when installing the extension) |
+| UDP | 1812 | Common port for RADIUS Authentication by NPS |
+| UDP | 1645 | Uncommon port for RADIUS Authentication by NPS |
+| UDP | 1813 | Common port for RADIUS Accounting by NPS |
+| UDP | 1646 | Uncommon port for RADIUS Accounting by NPS |
 
 ## Prepare your environment
 

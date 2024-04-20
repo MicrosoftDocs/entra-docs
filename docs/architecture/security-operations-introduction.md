@@ -61,7 +61,6 @@ Microsoft has many products and services that enable you to customize your IT en
 
 * Windows operating systems
 
-  * [Windows 10 and Windows Server 2016 security auditing and monitoring reference](https://www.microsoft.com/download/details.aspx?id=52630)
   * [Security baseline (FINAL) for Windows 10 v1909 and Windows Server v1909](https://techcommunity.microsoft.com/t5/microsoft-security-baselines/security-baseline-final-for-windows-10-v1909-and-windows-server/ba-p/1023093)
   * [Security baseline for Windows 11](https://techcommunity.microsoft.com/t5/microsoft-security-baselines/windows-11-security-baseline/ba-p/2810772)
   * [Security baseline for Windows Server 2022](https://techcommunity.microsoft.com/t5/microsoft-security-baselines/windows-server-2022-security-baseline/ba-p/2724685)
@@ -155,7 +154,7 @@ As part of an Azure hybrid environment, the following items should be baselined 
 
 * **Password writeback Agent** - Password writeback is a feature enabled with [Microsoft Entra Connect](~/identity/hybrid/whatis-hybrid-identity.md) that allows password changes in the cloud to be written back to an existing on-premises directory in real time. For more information on this feature, see [How does self-service password reset writeback work in Microsoft Entra ID](~/identity/authentication/concept-sspr-writeback.md).
 
-* **Microsoft Entra application proxy Connector** - Lightweight agents that sit on-premises and facilitate the outbound connection to the Application Proxy service. For more information, see [Understand Microsoft Entra application proxy connectors](~/identity/app-proxy/application-proxy-connectors.md).
+* **Microsoft Entra private network connector** - Lightweight agents that sit on-premises and facilitate the outbound connection to the Application Proxy service. For more information, see [Understand Microsoft Entra private network connectors](~/identity/app-proxy/application-proxy-connectors.md).
 
 ## Components of cloud-based authentication
 

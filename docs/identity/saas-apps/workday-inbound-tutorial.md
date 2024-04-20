@@ -9,6 +9,8 @@ ms.subservice: saas-apps
 ms.topic: tutorial
 ms.date: 01/25/2024
 ms.author: chmutali
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Workday to Active Directory so that I can streamline the user management process and ensure that users have the appropriate access to Workday to Active Directory.
 ---
 # Tutorial: Configure Workday for automatic user provisioning
 
@@ -575,7 +577,7 @@ Yes, one Provisioning Agent can be configured to handle multiple AD domains as l
 
   ```powershell
   cd "C:\Program Files\Microsoft Azure AD Connect Provisioning Agent\RegistrationPowershell\Modules\PSModulesFolder"
-  Import-Module "C:\Program Files\Microsoft Azure AD Connect Provisioning Agent\RegistrationPowershell\Modules\PSModulesFolder\AppProxyPSModule.psd1"
+  Import-Module "C:\Program Files\Microsoft Azure AD Connect Provisioning Agent\RegistrationPowershell\Modules\PSModulesFolder\MicrosoftEntraPrivateNetworkConnectorPSModule.psd1"
   Get-PublishedResources -TenantId "[tenant ID]"
   ```
 

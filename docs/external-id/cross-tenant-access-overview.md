@@ -4,7 +4,7 @@ description: Get an overview of cross-tenant access in Microsoft Entra External 
  
 ms.service: entra-external-id
 ms.topic: overview
-ms.date: 01/24/2024
+ms.date: 03/26/2024
 
 ms.author: cmulligan
 author: csmulligan
@@ -75,7 +75,7 @@ To configure this setting using Microsoft Graph, see the [Update crossTenantAcce
 
 For more information, see [Configure cross-tenant synchronization](~/identity/multi-tenant-organizations/cross-tenant-synchronization-configure.md), [Configure cross-tenant access settings for B2B collaboration](cross-tenant-access-settings-b2b-collaboration.md), and [Configure cross-tenant access settings for B2B direct connect](cross-tenant-access-settings-b2b-direct-connect.md).
 
-### Configurable redemption (Preview)
+### Configurable redemption
 
 With configurable redemption, you can customize the order of identity providers that your guest users can sign in with when they accept your invitation. You can enable the feature and specify the redemption order under the **Redemption order** tab.
 
@@ -89,19 +89,28 @@ Primary identity providers are the ones that have federations with other sources
 
 Fallback identity providers can be either Microsoft account (MSA), email one-time passcode, or both. You can't disable both fallback identity providers, but you can disable all primary identity providers and only use fallback identity providers for redemption options. 
 
-### Direct federation for Microsoft Entra ID verified domains (Preview)
 
-SAML/WS-Fed identity provider federation (Direct federation) is now supported for Microsoft Entra ID verified domains. This feature allows you to set up a Direct federation with an external identity provider for a domain that is verified in Microsoft Entra. This feature is currently in public preview.
+Below are known limitations in the feature: 
+
+- If a Microsoft Entra ID user who has an existing single sign-on (SSO) session is authenticating using email one-time passcode (OTP), they'll need to choose **Use another account** and reenter their username to trigger the OTP flow. Otherwise the user will get an error indicating their account doesn’t exist in the resource tenant.
+
+- If your guest users can only use email one time passcode to redeem an invite, they'll currently be blocked from using SharePoint. This is specific to Microsoft Entra ID users redeeming via OTP. All other users are unaffected.
+
+- In scenarios where a user has the same email in both their Microsoft Entra ID and Microsoft accounts, even after the admin has disabled the Microsoft account as a redemption method, the user is prompted to choose between using their Microsoft Entra ID or their Microsoft account. If they choose Microsoft account it will be allowed as a redemption option even if disabled.
+
+### Direct federation for Microsoft Entra ID verified domains
+
+SAML/WS-Fed identity provider federation (Direct federation) is now supported for Microsoft Entra ID verified domains. This feature allows you to set up a Direct federation with an external identity provider for a domain that is verified in Microsoft Entra.
 
 > [!NOTE]
 > Ensure that the domain is not verified in the same tenant in which you are trying to set up the Direct federation configuration.
-Once you have set up a Direct federation, you can configure the tenant’s redemption preference and move SAML/WS-Fed identity provider over Microsoft Entra ID through the new configurable redemption cross-tenant access settings. 
+Once you have set up a Direct federation, you can configure the tenant’s redemption preference and move SAML/WS-Fed identity provider over Microsoft Entra ID through the new configurable redemption cross-tenant access settings.
 
 When the guest user redeems the invite, they'll see a traditional consent screen and will then be redirected to the My Apps page. If you go into the user profile of this Direct federation user in the resource tenant, you'll notice that the user is now redeemed with external federation being the issuer.
 
 :::image type="content" source="media/cross-tenant-access-overview/external-federation-provider.png" alt-text="Screenshot of the direct federation provider under user identities." lightbox="media/cross-tenant-access-overview/external-federation-provider.png":::
 
-### Prevent your B2B users from redeeming an invite using Microsoft accounts (Preview)
+### Prevent your B2B users from redeeming an invite using Microsoft accounts
 
 You can now prevent your B2B guest users from redeeming their invite using Microsoft accounts. This means that any new B2B guest user will use email one-time passcode as their fallback identity provider, and won't be able to redeem an invitation using their existing Microsoft accounts or be asked to create a new Microsoft account. 
 You can do this by disabling Microsoft accounts in the fallback identity providers of your redemption order setting. 

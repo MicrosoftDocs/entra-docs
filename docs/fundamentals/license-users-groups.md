@@ -7,6 +7,7 @@ ms.assetid: f8b932bc-8b4f-42b5-a2d3-f2c076234a78
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: how-to
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.date: 12/01/2023
 ms.author: barclayn
 ms.reviewer: jeffsta

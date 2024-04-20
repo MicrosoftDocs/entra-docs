@@ -17,6 +17,7 @@ Lifecycle Workflows currently support the following tasks:
 |[Generate Temporary Access Pass and send via email to user's manager](../id-governance/lifecycle-workflow-tasks.md#generate-temporary-access-pass-and-send-via-email-to-users-manager)     |  1b555e50-7f65-41d5-b514-5894a026d10d       | Joiner         |
 |[Send email to notify manager of user move](../id-governance/lifecycle-workflow-tasks.md#send-email-to-notify-manager-of-user-move)     |  aab41899-9972-422a-9d97-f626014578b7       | Mover         |
 |[Request user access package assignment](../id-governance/lifecycle-workflow-tasks.md#request-user-access-package-assignment)     |  c1ec1e76-f374-4375-aaa6-0bb6bd4c60be       | Joiner, Mover         |
+|[Assign licenses to users (Preview)](../id-governance/lifecycle-workflow-tasks.md#assign-licenses-to-user-preview)     |  683c87a4-2ad4-420b-97d4-220d90afcd24       | Joiner, Mover         |
 |[Add user to groups](../id-governance/lifecycle-workflow-tasks.md#add-user-to-groups)     |    22085229-5809-45e8-97fd-270d28d66910     | Joiner, Leaver, Mover |
 |[Add user to teams](../id-governance/lifecycle-workflow-tasks.md#add-user-to-teams)      |  e440ed8d-25a1-4618-84ce-091ed5be5594       | Joiner, Leaver, Mover |
 |[Enable user account](../id-governance/lifecycle-workflow-tasks.md#enable-user-account)     |    6fc52c9d-398b-4305-9763-15f42c1676fc     | Joiner, Leaver |
@@ -27,6 +28,7 @@ Lifecycle Workflows currently support the following tasks:
 |[Remove user from teams](../id-governance/lifecycle-workflow-tasks.md#remove-user-from-teams)    |    06aa7acb-01af-4824-8899-b14e5ed788d6     | Leaver        |
 |[Remove user from all teams](../id-governance/lifecycle-workflow-tasks.md#remove-users-from-all-teams)     |    81f7b200-2816-4b3b-8c5d-dc556f07b024     | Leaver        |
 |[Remove access package assignment for user](../id-governance/lifecycle-workflow-tasks.md#remove-access-package-assignment-for-user)     |    4a0b64f2-c7ec-46ba-b117-18f262946c50     | Leaver, Mover        |
+|[Remove selected license assignments from user (Preview)](../id-governance/lifecycle-workflow-tasks.md#remove-selected-license-assignments-from-user-preview)     |    5fc402a8-daaf-4b7b-9203-da868b05fc5f     | Leaver, Mover        |
 |[Remove all access package assignments for user](../id-governance/lifecycle-workflow-tasks.md#remove-all-access-package-assignments-for-user)     |    42ae2956-193d-4f39-be06-691b8ac4fa1d     | Leaver        |
 |[Cancel all pending access package assignment requests for user](../id-governance/lifecycle-workflow-tasks.md#cancel-all-pending-access-package-assignment-requests-for-user)     |    498770d9-bab7-4e4c-b73d-5ded82a1d0b3    | Leaver        |
 |[Remove all license assignments from user](../id-governance/lifecycle-workflow-tasks.md#remove-all-license-assignments-from-user)     | 8fa97d28-3e52-4985-b3a9-a1126f9b8b4e         | Leaver |
@@ -34,3 +36,4 @@ Lifecycle Workflows currently support the following tasks:
 |[Send email to manager before user's last day](../id-governance/lifecycle-workflow-tasks.md#send-email-to-manager-before-users-last-day)    |    52853a3e-f4e5-4eb8-bb24-1ac09a1da935     | Leaver         |
 |[Send email on user's last day](../id-governance/lifecycle-workflow-tasks.md#send-email-on-users-last-day)    |    9c0a1eaf-5bda-4392-9d9e-6e155bb57411     | Leaver         |
 |[Send email to user's manager after their last day](../id-governance/lifecycle-workflow-tasks.md#send-email-to-users-manager-after-their-last-day)    |    6f22ddd4-b3a5-47a4-a846-0d7c201a49ce     | Leaver         |
+

@@ -34,7 +34,7 @@ When you create custom role, include a descriptive name so you can easily rememb
 
 After the role is created in your Microsoft Entra organization, go to the **Privileged Identity Management - Azure resources** page in the Azure portal. Select the resource that the role applies to.
 
-![The "Privileged Identity Management - Azure resources" pane](media/pim-resource-roles-custom-role-policy/aadpim-manage-azure-resource-some-there.png)
+:::image type="content" source="media/pim-resource-roles-custom-role-policy/aadpim-manage-azure-resource-some-there.png" alt-text="Screenshot of Privileged Identity Management resources pane.":::
 
 [Configure Privileged Identity Management role settings](pim-resource-roles-configure-role-settings.md) that should apply to these members of the role.
 

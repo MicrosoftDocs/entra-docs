@@ -5,7 +5,6 @@ description: This article has information about moving your hybrid identity envi
 
 ms.service: entra-id
 ms.subservice: hybrid-connect
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: conceptual
 ms.date: 11/06/2023
 ms.author: billmath
@@ -299,8 +298,6 @@ For most customers, two or three authentication agents are sufficient to provide
     More authentication agents start to download. Install the secondary authentication agent on a domain-joined server.
 
 4. Run the authentication agent installation. During installation, you must enter the credentials of a Global Administrator account.
-
-    ![Microsoft Entra Connect Authentication Agent](media/deploy-cloud-user-authentication/install-azure-ad-connect-installation-agent.png)
 
 5. When the authentication agent is installed, you can return to the PTA health page to check the status of the more agents.
 

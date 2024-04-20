@@ -12,6 +12,8 @@ ms.subservice: saas-apps
 ms.topic: tutorial
 ms.date: 01/11/2024
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Insightly SAML so that I can streamline the user management process and ensure that users have the appropriate access to Insightly SAML.
 ---
 
 # Tutorial: Configure Insightly SAML for automatic user provisioning

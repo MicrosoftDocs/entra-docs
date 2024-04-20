@@ -4,7 +4,7 @@ description: Use cross-tenant collaboration settings to manage how you collabora
  
 ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 03/01/2024
+ms.date: 03/26/2024
 
 ms.author: mimart
 author: msmimart
@@ -182,7 +182,7 @@ The following apps are part of the Microsoft Admin Portals app group:
 - Microsoft Intune Admin Center (80ccca67-54bd-44ab-8625-4b79c4dc7775)
 - Microsoft Purview Compliance Portal (80ccca67-54bd-44ab-8625-4b79c4dc7775)
 
-### Configure redemption order (Preview)
+### Configure redemption order
 
 To customize the order of identity providers that your guest users can use to sign in when they accept your invitation, follow these steps.
 
@@ -243,12 +243,12 @@ You can also customize the redemption order via the Microsoft Graph API.
 
 <a name='samlws-fed-federation-direct-federation-for-azure-ad-verified-domains-preview'></a>
 
-### SAML/WS-Fed federation (Direct federation) for Microsoft Entra ID verified domains (Preview)
+### SAML/WS-Fed federation (Direct federation) for Microsoft Entra ID verified domains
 
 You can now add your enlisted Microsoft Entra ID verified domain to set up the direct federation relationship. First you need to set up the Direct federation configuration in the [admin center](direct-federation.md) or via the [API](/graph/api/resources/samlorwsfedexternaldomainfederation). Make sure that the domain isn't verified in the same tenant. 
 Once the configuration is set up, you can customize the redemption order. The SAML/WS-Fed IdP is added to the redemption order as the last entry. You can move it up in the redemption order to set it above Microsoft Entra identity provider.
 
-### Prevent your B2B users from redeeming an invite using Microsoft accounts (Preview)
+### Prevent your B2B users from redeeming an invite using Microsoft accounts
 
 To prevent your B2B guest users from redeeming their invite using their existing Microsoft accounts or creating a new one to accept the invitation, follow the steps below.
 

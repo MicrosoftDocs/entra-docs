@@ -12,6 +12,8 @@ ms.subservice: saas-apps
 ms.topic: tutorial
 ms.date: 03/24/2023
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Connecter so that I can streamline the user management process and ensure that users have the appropriate access to Connecter.
 ---
 
 # Tutorial: Configure Connecter for automatic user provisioning

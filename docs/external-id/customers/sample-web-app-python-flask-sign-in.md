@@ -10,12 +10,12 @@ ms.subservice: customers
 ms.topic: sample
 ms.date: 03/18/2024
 
-#Customer intent: As a dev, devops, I want to learn about how to configure a sample Python Flask web app to sign in and sign out users with my Microsoft Entra ID for customers tenant
+#Customer intent: As a dev, devops, I want to learn about how to configure a sample Python Flask web app to sign in and sign out users with my external tenant
 ---
 
 # Sign in users in a sample Python Flask web application
 
-In this article, you explore a Python Flask web app that is secured by Microsoft Entra ID for customers. This sample takes you through the sign-in experience for customers authenticating to a Python Flask web app. The sample web app uses the [Microsoft Authentication Library for Python (MSAL Python)](https://github.com/AzureAD/microsoft-authentication-library-for-python) to handle user authentication.
+In this article, you explore a Python Flask web app that is secured by Microsoft Entra External ID. This sample takes you through the sign-in experience for customers authenticating to a Python Flask web app. The sample web app uses the [Microsoft Authentication Library for Python (MSAL Python)](https://github.com/AzureAD/microsoft-authentication-library-for-python) to handle user authentication.
 
 ## Prerequisites
 
@@ -23,7 +23,7 @@ In this article, you explore a Python Flask web app that is secured by Microsoft
 
 - [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 
-- Microsoft Entra ID for customers tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
+- An external tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
 
 ## Register the web app
 
@@ -102,7 +102,7 @@ If you choose to download the *.zip* file, extract the sample app file to a fold
 
     1. `CLIENT_SECRET` which is the app secret value you copied earlier.
 
-    1. `AUTHORITY` which is the URL that identifies a token authority. It should be of the format *https://{subdomain}.ciamlogin.com/{subdomain}.onmicrosoft.com*. Replace *subdomain* with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant subdomain, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
+    1. `AUTHORITY` which is the URL that identifies a token authority. It should be of the format *https://{subdomain}.ciamlogin.com/{subdomain}.onmicrosoft.com*. Replace *subdomain* with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant subdomain, learn how to [read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
 
 1. Confirm that the redirect URI is well configured. The redirect URI you registered earlier should match your configuration. This sample by default sets the redirect URI path to `/getAToken`. This is configured in the *app_config.py* file as *REDIRECT_PATH*.
 
@@ -116,9 +116,9 @@ Run the app to see the sign-in experience at play.
 
 ### How it works
 
-When users select the **Sign in** link, the app initiates an authentication request and redirects users to Microsoft Entra ID for customers. A user then signs in or signs up page on the page that appears. After providing in the required credentials and consenting to required scopes, Microsoft Entra ID for customers redirects the user back to the web app with an authorization code. The web app then uses this authorization code to acquire a token from Microsoft Entra ID for customers.
+When users select the **Sign in** link, the app initiates an authentication request and redirects users to Microsoft Entra External ID. A user then signs in or signs up page on the page that appears. After providing in the required credentials and consenting to required scopes, Microsoft Entra External ID redirects the user back to the web app with an authorization code. The web app then uses this authorization code to acquire a token from Microsoft Entra External ID.
 
-When the users select the **Logout** link, the app clears its session, the redirect the user to Microsoft Entra ID for customers sign-out endpoint to notify it that the user has signed out. The user is then redirected back to the web app.
+When the users select the **Logout** link, the app clears its session, the redirect the user to Microsoft Entra External ID sign-out endpoint to notify it that the user has signed out. The user is then redirected back to the web app.
 
 ## Next steps
 

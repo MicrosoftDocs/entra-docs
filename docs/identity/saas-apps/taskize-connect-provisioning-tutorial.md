@@ -11,6 +11,8 @@ ms.subservice: saas-apps
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Taskize Connect so that I can streamline the user management process and ensure that users have the appropriate access to Taskize Connect.
 ---
 
 # Tutorial: Configure Taskize Connect for automatic user provisioning

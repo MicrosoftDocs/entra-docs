@@ -71,5 +71,5 @@ When setting up App protection policies for shared devices, we recommend using [
 
 We support iOS and Android platforms for shared device mode. For more information, see:
 
-- [Supporting shared device mode for iOS](msal-ios-shared-devices.md)
+- [Supporting shared device mode for iOS](/entra/msal/objc/shared-devices-ios)
 - [Supporting shared device mode for Android](msal-android-shared-devices.md)

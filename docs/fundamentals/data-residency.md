@@ -18,6 +18,9 @@ ms.collection:
 
 Microsoft Entra ID is an Identity as a Service (IDaaS) solution that stores and manages identity and access data in the cloud. You can use the data to enable and manage access to cloud services, achieve mobility scenarios, and secure your organization. An instance of the Microsoft Entra service, called a [tenant](~/identity-platform/developer-glossary.md#tenant), is an isolated set of directory object data that the customer provisions and owns.
 
+> [!NOTE]
+> Microsoft Entra External ID is a customer identity and access management (CIAM) solution that stores and manages data in a separate tenant created for your customer-facing apps and customer directory data. This tenant is called the external tenant. When you create an external tenant, you have the option to select the geographic location for data storage. It’s important to note that the data locations and region availability may differ from those of Microsoft Entra ID, as indicated in this article.
+
 ## Core Store
 
 The Core Store is made up of tenants stored in scale units, each of which contains multiple tenants. Update or retrieval data operations in the Microsoft Entra Core Store relate to a single tenant, based on the user's security token, which achieves tenant isolation. Scale units are assigned to a geo-location. Each geo-location uses two or more Azure regions to store the data. In each Azure region, a scale unit data is replicated in the physical datacenters for resiliency and performance.
@@ -27,19 +30,23 @@ Learn more: [Microsoft Entra Core Store Scale Units](https://www.youtube.com/wat
 Microsoft Entra ID is available in the following clouds:
 
 - Public
-- China
-- US government
+- China*
+- US government*
+
+*\* Not currently available for external tenants.*
 
 In the public cloud, you're prompted to select a location at the time of tenant creation (for example, signing up for Office 365 or Azure, or creating more Microsoft Entra instances through the Azure portal). Microsoft Entra ID maps the selection to a geo-location and a single scale unit in it. Tenant location can't be changed after it's set.
 
 The location selected during tenant creation will map to one of the following geo-locations:
 
-- Australia
+- Australia*
 - Asia/Pacific
 - Europe, Middle East, and Africa (EMEA)
-- Japan
+- Japan*
 - North America
 - Worldwide
+ 
+*\* Not currently available for external tenants.*
 
 Microsoft Entra ID handles Core Store data based on usability, performance, residency or other requirements based on geo-location. Microsoft Entra ID replicates each tenant through its scale unit, across datacenters, based on the following criteria:
 
@@ -55,9 +62,11 @@ Use the following table to see Microsoft Entra cloud solution models based on in
 
 |Model|Locations|Data location|Operations personnel|Put a tenant in this model|
 |---|---|---|---|---|
-|Public geo located|North America, EMEA, Japan, Asia/Pacific|At rest, in the target location. Exceptions by service or feature|Operated by Microsoft. Microsoft datacenter personnel must pass a background check.|Create the tenant in the sign-up experience. Choose the location for data residency.|
+|Public geo located|Australia*, North America, EMEA, Japan*, Asia/Pacific|At rest, in the target location. Exceptions by service or feature|Operated by Microsoft. Microsoft datacenter personnel must pass a background check.|Create the tenant in the sign-up experience. Choose the location for data residency.|
 |Public worldwide|Worldwide|All locations|Operated by Microsoft. Microsoft datacenter personnel must pass a background check.|Tenant creation available via official support channel and subject to Microsoft discretion.|
-|Sovereign or national clouds|US government, China|At rest, in the target location. No exceptions.|Operated by a data custodian (1). Personnel are screened according to requirements.|Each national cloud instance has a sign-up experience.|
+|Sovereign or national clouds|US government*, China*|At rest, in the target location. No exceptions.|Operated by a data custodian (1). Personnel are screened according to requirements.|Each national cloud instance has a sign-up experience.|
+
+*\* Not currently available for external tenants.*
 
 **Table references**:
 
@@ -98,7 +107,6 @@ Learn more: [Microsoft Entra product overview](https://www.microsoft.com/cloud-p
 |Microsoft Entra business-to-business (B2B) collaboration|Microsoft Entra B2B collaboration has no directory data. Users and other directory objects in a B2B relationship, with another tenant, result in user data copied in other tenants, which might have data residency implications.|In geo location|
 |Microsoft Entra ID Protection|Microsoft Entra ID Protection uses real-time user log-in data, with multiple signals from company and industry sources, to feed its machine-learning systems that detect anomalous logins. Personal data is scrubbed from real-time log-in data before it's passed to the machine learning system. The remaining log-in data identifies potentially risky usernames and logins. After analysis, the data goes to Microsoft reporting systems. Risky logins and usernames appear in reporting for Administrators.|In geo location|
 |Managed identities for Azure resources| Managed identities for Azure resources with managed identities systems can authenticate to Azure services, without storing credentials. Rather than use username and password, managed identities authenticate to Azure services with certificates. The service writes certificates it issues in Azure Cosmos DB in the East US region, which fail over to another region, as needed. Azure Cosmos DB geo-redundancy occurs by global data replication. Database replication puts a read-only copy in each region that Microsoft Entra managed identities runs. To learn more, see [Azure services that can use managed identities to access other services](~/identity/managed-identities-azure-resources/managed-identities-status.md). Microsoft isolates each Azure Cosmos DB instance in a Microsoft Entra cloud solution model. </br> The resource provider, such as the virtual machine (VM) host, stores the certificate for authentication, and identity flows, with other Azure services. The service stores its master key to access Azure Cosmos DB in a datacenter secrets management service. Azure Key Vault stores the master encryption keys.|In geo location|
-|Azure Active Directory B2C |[Azure AD B2C](/azure/active-directory-b2c/data-residency) is an identity management service to customize and manage how customers sign up, sign in, and manage their profiles when using applications. B2C uses the Core Store to keep user identity information. The Core Store database follows known storage, replication, deletion, and data-residency rules. B2C uses an Azure Cosmos DB system to store service policies and secrets. Azure Cosmos DB has encryption and replication services on database information. Its encryption key is stored in the secrets storage for Microsoft. Microsoft isolates Azure Cosmos DB instances in a Microsoft Entra cloud solution model.|Customer-selectable geo location|
 
 ## Related resources
 

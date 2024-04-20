@@ -27,14 +27,12 @@ Microsoft provides [security defaults](~/fundamentals/security-defaults.md) that
 ## Prerequisites
 
 - A working Microsoft Entra tenant with Microsoft Entra ID P1, P2, or trial license enabled. If needed, [create one for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-   - Microsoft Entra ID P2 is required to include Identity Protection risk in Conditional Access policies.
-- Administrators who interact with Conditional Access must have one or more of the following role assignments depending on the tasks they're performing. To follow the [Zero Trust principle of least privilege](/security/zero-trust/), consider using [Privileged Identity Management (PIM)](~/id-governance/privileged-identity-management/pim-configure.md) to just-in-time activate privileged role assignments.
+   - Microsoft Entra ID P2 is required to include Microsoft Entra ID Protection risk in Conditional Access policies.
+- Administrators who interact with Conditional Access must have one of the following role assignments depending on the tasks they're performing. To follow the [Zero Trust principle of least privilege](/security/zero-trust/), consider using [Privileged Identity Management (PIM)](~/id-governance/privileged-identity-management/pim-configure.md) to just-in-time activate privileged role assignments.
    - Read Conditional Access policies and configurations 
       - [Security Reader](~/identity/role-based-access-control/permissions-reference.md#security-reader)
-      - [Global Reader](~/identity/role-based-access-control/permissions-reference.md#global-reader)
    - Create or modify Conditional Access policies 
       - [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator)
-      - [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator)
 - A test user (not an administrator) that allows you to verify policies work as expected before deploying to real users. If you need to create a user, see [Quickstart: Add new users to Microsoft Entra ID](~/fundamentals/add-users.md).
 - A group that the test user is a member of. If you need to create a group, see [Create a group and add members in Microsoft Entra ID](~/fundamentals/how-to-manage-groups.md).
 
@@ -90,7 +88,7 @@ Will this policy apply to any application, user action, or authentication contex
    - What locations are included in or excluded from the policy?
 - What client app types are included in or excluded from the policy?
 - Do you need to target specific device attributes? 
-- If using [Identity Protection](~/id-protection/concept-identity-protection-risks.md), do you want to incorporate sign-in or user risk?
+- If using [Microsoft Entra ID Protection](~/id-protection/concept-identity-protection-risks.md), do you want to incorporate sign-in or user risk?
 
 ##### User and sign-in risk
 
@@ -283,5 +281,5 @@ Once you collect the information, see the following resources:
 ## Related content
 
 - [Learn more about Multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md)
-- [Learn more about Identity Protection](~/id-protection/overview-identity-protection.md)
+- [Learn more about Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md)
 - [Manage Conditional Access policies with Microsoft Graph API](/graph/api/resources/conditionalaccesspolicy)

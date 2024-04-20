@@ -15,6 +15,8 @@ ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: Thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to directprint.io so that I can streamline the user management process and ensure that users have the appropriate access to directprint.io.
 ---
 
 # Tutorial: Configure directprint.io for automatic user provisioning

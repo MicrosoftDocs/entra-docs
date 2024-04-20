@@ -129,7 +129,7 @@ The `RequestRegistration` type provides information registration for the issuer.
 
 The following screenshot shows the `clientName` property and the display name of the `authority` (the verifier) in the presentation request.
 
-![Screenshot that shows how to approve the presentation request.](media/presentation-request-api/approve-presentation-request.jpg)
+:::image type="content" source="media/presentation-request-api/approve-presentation-request.jpg" alt-text="Screenshot that shows how to approve the presentation request.":::
 
 ### Callback type
 
@@ -190,7 +190,7 @@ If successful, this method returns a response code (*HTTP 201 Created*), and a c
 ```json
 {
     "requestId": "e4ef27ca-eb8c-4b63-823b-3b95140eac11",
-    "url": "openid://vc/?request_uri=https://verifiedid.did.msidentity.com/v1.0/12345678-0000-0000-0000-000000000000/verifiableCredentials/request/e4ef27ca-eb8c-4b63-823b-3b95140eac11",
+    "url": "openid-vc://?request_uri=https://verifiedid.did.msidentity.com/v1.0/12345678-0000-0000-0000-000000000000/verifiableCredentials/presentationRequests/e4ef27ca-eb8c-4b63-823b-3b95140eac11",
     "expiry": 1633017751,
     "qrCode": "data:image/png;base64,iVBORw0KGgoA<SNIP>"
 }

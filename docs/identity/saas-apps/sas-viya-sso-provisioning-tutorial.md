@@ -12,6 +12,8 @@ ms.subservice: saas-apps
 ms.topic: tutorial
 ms.date: 01/18/2024
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to SAS Viya SSO so that I can streamline the user management process and ensure that users have the appropriate access to SAS Viya SSO.
 ---
 
 # Tutorial: Configure SAS Viya SSO for automatic user provisioning
@@ -42,7 +44,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 
 ## Step 2: Configure SAS Viya SSO to support provisioning with Microsoft Entra ID
 
-Contact SAS Viya SSO support to configure SAS Viya SSO to support provisioning with Microsoft Entra ID.
+To configure SAS Viya SSO to support provisioning with Microsoft Entra ID, please refer to **[How to Configure SCIM](https://go.documentation.sas.com/doc/en/sasadmincdc/default/calids/n1rl3gjjjqmxmfn1hw9ebjjz5778.htm)** in SAS Viya Platform Administration
 
 ## Step 3: Add SAS Viya SSO from the Microsoft Entra application gallery
 
@@ -82,6 +84,14 @@ This section guides you through the steps to configure the Microsoft Entra provi
 	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
 
 1. Under the **Admin Credentials** section, input your SAS Viya SSO Tenant URL and Secret Token. Click **Test Connection** to ensure Microsoft Entra ID can connect to SAS Viya SSO. If the connection fails, ensure your SAS Viya SSO account has Admin permissions and try again.
+
+   ### Tenant URL
+
+   * To configure the Microsoft Entra provisioning service, you will need your tenant URL.
+
+      Example: 
+
+      *`https://sas.viya.example.com/identities/scim/v2`.
 
  	![Screenshot of Token.](common/provisioning-testconnection-tenanturltoken.png)
 

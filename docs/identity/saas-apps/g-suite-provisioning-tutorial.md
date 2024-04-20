@@ -11,6 +11,8 @@ ms.subservice: saas-apps
 ms.topic: tutorial
 ms.date: 02/23/2024
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Google Cloud / G Suite Connector by Microsoft so that I can streamline the user management process and ensure that users have the appropriate access to Google Cloud / G Suite Connector by Microsoft.
 ---
 
 # Tutorial: Configure G Suite for automatic user provisioning

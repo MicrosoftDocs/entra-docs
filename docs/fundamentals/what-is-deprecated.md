@@ -38,6 +38,7 @@ Use the following table to learn about changes including deprecations, retiremen
 |[Azure Multifactor Authentication Server](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/microsoft-entra-change-announcements-march-2023-train/ba-p/2967448)|Retirement|Sep 30, 2024|
 |[Legacy MFA & SSPR policy](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/microsoft-entra-change-announcements-march-2023-train/ba-p/2967448)|Retirement|Sep 30, 2025|
 |['Require approved client app' Conditional Access Grant](https://aka.ms/RetireApprovedClientApp)|Retirement|Mar 31, 2026|
+|[Upcoming changes to device identity key storage for Apple SSO](../identity-platform/apple-sso-plugin.md#upcoming-changes-to-device-identity-key-storage)|Feature change|Q3 2026|
 
 [!INCLUDE [Azure AD PowerShell migration](../includes/aad-powershell-migration-include.md)]
 

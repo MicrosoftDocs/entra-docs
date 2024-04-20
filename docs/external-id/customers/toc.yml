@@ -1,17 +1,17 @@
 items:  
-- name: Microsoft Entra ID for customers documentation  
+- name: External ID for external-facing apps documentation
   href: index.yml  
 - name: Overview  
   expanded: true  
   items:   
-    - name: What is Microsoft Entra ID for customers?  
+    - name: External ID for external-facing apps  
       href: overview-customers-ciam.md 
     - name: Demo overview
       href: overview-solutions-customers.md
     - name: What's new in docs?
       href: whats-new-docs.md
 - name: Quickstarts
-  expanded: true
+  expanded: false
   items: 
     - name: Start a free trial without an Azure subscription
       href: quickstart-trial-setup.md 
@@ -22,7 +22,7 @@ items:
     - name: Use the Visual Studio Code extension
       href: visual-studio-code-extension.md
 - name: Samples
-  expanded: true
+  expanded: false
   items: 
     - name: Overview of CIAM samples
       href: samples-ciam-all.md
@@ -79,8 +79,20 @@ items:
           items:
               - name: Browser delegated
                 items:
-                  - name: Android (.NET MAUI) - sign in users
-                    href: how-to-mobile-app-maui-sample-sign-in.md
+                    - name: Android (.NET MAUI) - sign in users
+                      href: how-to-mobile-app-maui-sample-sign-in.md
+                    - name: Android (Kotlin)
+                      items:
+                        - name: Sign in users
+                          href: sample-mobile-app-android-kotlin-sign-in.md
+                        - name: Sign in users and call an API
+                          href: sample-mobile-app-android-kotlin-sign-in-call-api.md
+                    - name: iOS (Swift)
+                      items:
+                        - name: Sign in users
+                          href: sample-mobile-app-ios-swift-sign-in.md
+                        - name: Sign in users and call an API
+                          href: sample-mobile-app-ios-swift-sign-in-call-api.md
               - name: Native authentication
                 items:
                   - name: Android (Kotlin)
@@ -100,7 +112,7 @@ items:
             - name: Node.js - sign in users
               href: sample-cli-app-node-sign-in-users.md
 - name: Tutorials
-  expanded: true
+  expanded: false
   items:  
     - name: Single-page app (SPA)
       items: 
@@ -124,6 +136,16 @@ items:
                 href: tutorial-single-page-app-react-sign-in-configure-authentication.md
               - name: Sign in and sign out
                 href: tutorial-single-page-app-react-sign-in-sign-out.md
+        - name: Angular
+          items:
+              - name: Prepare tenant
+                href: tutorial-single-page-app-angular-sign-in-prepare-tenant.md
+              - name: Create Angular app
+                href: tutorial-single-page-app-angular-sign-in-prepare-app.md
+              - name: Configure app for authentication
+                href: tutorial-single-page-app-angular-sign-in-configure-authentication.md
+              - name: Sign in and sign out
+                href: tutorial-single-page-app-angular-sign-in-sign-out.md
     - name: Web app
       items: 
         - name: Node/Express.js
@@ -268,7 +290,7 @@ items:
   items: 
     - name: Planning for customer identity and access
       href: concept-planning-your-solution.md
-    - name: Supported features in customer tenants
+    - name: Supported features in external tenants
       href: concept-supported-features-customers.md
     - name: User profile attributes
       href: concept-user-attributes.md
@@ -285,12 +307,12 @@ items:
     - name: Security and governance
       href: concept-security-customers.md
 - name: How-to guides
-  expanded: true
+  expanded: false
   items:
     - name: Authenticate and authorize
       items:
-      - name: Create a customer tenant
-        href: how-to-create-customer-tenant-portal.md
+      - name: Create an external tenant
+        href: how-to-create-external-tenant-portal.md
       - name: Register an app
         href: how-to-register-ciam-app.md
       - name: Add a sign-up and sign-in flow
@@ -395,6 +417,8 @@ items:
       href: reference-user-permissions.md
     - name: Group and application roles support
       href: reference-group-app-roles-support.md
+    - name: Data residency
+      href: ~/fundamentals/data-residency.md
     - name: Company branding CSS template reference guide
       href: ~/fundamentals/reference-company-branding-css-template.md
     - name: Help and support options

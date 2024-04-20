@@ -5,7 +5,7 @@ description: Use this quickstart to learn how Microsoft Entra admins can add B2B
 ms.author: cmulligan
 author: csmulligan
 manager: celestedg
-ms.date: 12/14/2023
+ms.date: 04/02/2024
 ms.topic: quickstart
 ms.service: entra-external-id
 ms.custom: it-pro, mode-ui
@@ -79,7 +79,7 @@ Now sign in as the guest user to see the invitation.
 
     :::image type="content" source="media/quickstart-add-users-portal/quickstart-users-portal-email-small.png" alt-text="Screenshot showing the B2B invitation email.":::
 
-1. In the email body, select **Accept invitation**. A **Review permissions** page opens in the browser.
+1. In the email body, select **Accept invitation**. A **Permission requested by:** page opens in the browser.
 
     :::image type="content" source="media/quickstart-add-users-portal/consent-screen.png" alt-text="Screenshot showing the Review permissions page.":::
 
