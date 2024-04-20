@@ -19,17 +19,19 @@ Microsoft Entra ID allows passkeys to be used for passwordless authentication. T
 > [!NOTE]
 > Microsoft Entra ID currently supports device-bound passkeys stored on FIDO2 security keys and in Microsoft Authenticator. Microsoft is committed to securing customers and users with passkeys. We are investing in both synced and device-bound passkeys for work accounts.
 
-## Native app support (preview)
+## Native application support
 
 ### Native app support with authentication broker (preview)
 
-Microsoft applications provide native support for FIDO2 authentication in preview for all users who have an authentication broker installed for their operating system. FIDO2 authentication is also supported in preview for third party applications leveraging the authentication broker. The following tables lists which authentication brokers are supported for different operating systems.
+Microsoft applications provide native support for FIDO2 authentication in preview for all users who have an authentication broker installed for their operating system. FIDO2 authentication is also supported in preview for third party applications leveraging the authentication broker.
 
-| Operating system | Authentication broker           | Supports FIDO2 |
+The following tables lists which authentication brokers are supported for different operating systems.
+
+| OS | Authentication broker           | Supports FIDO2 |
 |------------------|---------------------------------|----------------|
-| iOS              | Microsoft Authenticator         | &#x2705;       |
-| macOS            | Microsoft Intune Company Portal <sup>1</sup> | &#x2705;       |
-| Android<sup>2</sup> | Authenticator or Company Portal | &#10060;    |
+| **iOS**              | Microsoft Authenticator         | &#x2705;       |
+| **macOS**            | Microsoft Intune Company Portal <sup>1</sup> | &#x2705;       |
+| **Android**<sup>2</sup> | Authenticator or Company Portal | &#10060;    |
 
 <sup>1</sup>On macOS, the [Microsoft Enterprise Single Sign On (SSO) plug-in](~/identity-platform/apple-sso-plugin.md) is required to enable Company Portal as an authentication broker. Devices that run macOS must meet SSO plug-in requirements, including enrollment in mobile device management. For FIDO2 authentication, make sure that you run the latest version of native applications. 
 
@@ -38,9 +40,9 @@ Microsoft applications provide native support for FIDO2 authentication in previe
 If a user installed an authentication broker, they can choose to sign in with a security key when they access an application such as Outlook. They're redirected to sign in with FIDO2, and redirected back to Outlook as a signed in user after successful authentication.
 
 ### Microsoft app support without authentication broker
-Signing into Microsoft native apps with FIDO2 authentication when the user does not have an authentication broker is not supported at this time.
+Signing into Microsoft native apps with FIDO2 authentication when the user does not have an authentication broker on iOS, macOS, and Android is not supported at this time.
 
-### Third party app support without authentication broker
+### Third-party app support without authentication broker
 If the user has yet to install an authentication broker, they can still sign in with a security key when they access MSAL-enabled applications that meet the requirements as listed in [Support for FIDO2 authentication](~/identity-platform/support-fido2-authentication.md).
 
 ## Web browser support
@@ -138,18 +140,6 @@ The following are the minimum browser version requirements on Windows.
 <sup>2</sup>BLE security keys aren't supported on Android by Google.
 
 ## Known issues
-
-### Mobile device might be prioritized over security key
-
-If you're using Chrome or Edge, the browser may prioritize using a passkey stored on a mobile device over a passkey stored on a security key. 
-
-- Beginning with Windows 11 version 23H2, the operating system shows the following prompt during sign-in. Below **More choices**, choose **Security key** and select **Next**.
-
-  :::image type="content" border="true" source="./media/howto-authentication-passwordless-security-key/security-key.png" alt-text="Screenshot of option to choose security key on Windows 11."::: 
-
-- On earlier versions of Windows, the browser may show the QR pairing screen to continue with using a passkey stored on a mobile device. To use a passkey stored on a security key instead, insert your security key and touch it to continue. 
-
-  :::image type="content" border="true" source="./media/howto-authentication-passwordless-security-key/insert-device-bound-passkey.png" alt-text="Screenshot of option to insert a device-bound passkey on Windows 10."::: 
 
 ### PowerShell support
 
