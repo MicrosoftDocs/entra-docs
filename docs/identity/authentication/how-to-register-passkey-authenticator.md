@@ -34,7 +34,7 @@ You can sign in to the Authenticator to create a passkey in the app and get seam
 1. Select **Work or school account**.
 1. Sign in.
 1. You need to complete multifactor authentication (MFA).
-1. Follow the on-screen instructions. On your iOS device, open the **Settings** app.
+1. Follow the on-screen instructions. On your iOS device, open the **Settings** app to enable the Authenticator as a passkey provider.
    1. Open **Passwords** select **Password Options**.
    1. Ensure **Autofill Passwords and and Passkeys** is turned on.
    1. Under Use **Passwords and Passkeys** From select **Authenticator**.
@@ -71,7 +71,7 @@ Alternatively, users can set up a passkey in the Authenticator by navigating to 
 
       :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey-download-auth-app.png" alt-text="Screenshot of the download app option in Microsoft Authenticator for iOS devices.":::
 
-1. Follow the steps to turn on Authenticator in the **Settings app** of your iOS device:
+1. Follow the steps to turn on Authenticator as a passkey provider in the **Settings app** of your iOS device:
       - On your iOS device, open the **Settings app**.
       - Open **Passwords** select **Password Options**.
       - Ensure **Autofill Passwords and and Passkeys** is turned on. 
@@ -117,7 +117,7 @@ You can choose to attempt passkey registration from your computer or another mob
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/choose-device.png" alt-text="Screenshot that lets user choose iOS or Android.":::
 
-1. Follow the steps to turn on Authenticator in the **Settings app** of your iOS device:
+1. Follow the steps to turn on Authenticator as a passkey provider in the **Settings app** of your iOS device:
    - On your iOS device, open the **Settings app**.
    - Open **Passwords** select **Password Options**.
    - Ensure **Autofill Passwords and and Passkeys** is turned on. 
@@ -186,7 +186,7 @@ You can sign in to the Authenticator to create a passkey in the app and get seam
 1. Select **Work or school account**.
 1. Sign in.
 1. You need to complete multifactor authentication (MFA).
-1. Follow the on-screen instructions. On your Android device, open the **Settings app**.
+1. Follow the on-screen instructions. On your Android device, open the **Settings app** to enable the Authenticator as a passkey provider.
    1. Open **Passwords & Accounts**.
    1. **Additional providers** enable **Authenticator**.
    1. Return to **My Security info** and select **Continue**.
@@ -221,7 +221,7 @@ Alternatively, users can set up a passkey in the Authenticator by navigating to 
 
       :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/passkey-download-auth-app.png" alt-text="Screenshot of the download app option in Microsoft Authenticator for Android devices.":::
 
-1. Follow the steps to turn on Authenticator in the **Settings app** on your Android device:
+1. Follow the steps to turn on Authenticator as a passkey provider in the **Settings app** on your Android device:
       - On your Android device, open the **Settings app**.
       - Open **Passwords & Accounts**.
       - Under **Additional providers** enable **Authenticator**. 
@@ -280,7 +280,7 @@ You can choose to attempt passkey registration from your computer or another mob
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/choose-device.png" alt-text="Screenshot that lets user choose iOS or Android. Choose Android.":::
 
-1. Follow the steps to turn on Authenticator in the **Settings app** of your Android device:
+1. Follow the steps to turn on Authenticator as a passkey provider in the **Settings app** of your Android device:
    - On your Android device, open the **Settings app**.
    - Open **Passwords & Accounts**.
    - Under **Additional providers** enable **Authenticator**. 
