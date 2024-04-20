@@ -128,7 +128,9 @@
           href: how-to-register-passkey.md
         - name: Register passkey with a mobile device (preview)
           href: how-to-register-passkey-mobile.md
-        - name: Sign in with passkey compatibility
+        - name: Sign in with passkey (preview)
+          href: how-to-sign-in-passkey.md  
+        - name: Passkey (FIDO2) compatibility matrix
           href: concept-fido2-compatibility.md
         - name: Become a FIDO2 security key vendor
           href: concept-fido2-hardware-vendor.md  
