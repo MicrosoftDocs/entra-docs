@@ -160,6 +160,6 @@ Follow these steps to sign in to Microsoft Entra ID on another device with a pas
 
 ### Single-sign on to native Microsoft applications (Android)
 
-You can not use passkeys in Authenticator on your Android device to sign into other Microsoft apps, such as Microsoft OneDrive, SharePoint, and Outlook. Support for Android devices is coming during preview. 
+You can not use passkeys in Authenticator on your Android device to sign into other Microsoft apps, such as Microsoft OneDrive, SharePoint, and Outlook. Support for Android devices is coming later during preview. 
 
 ---
