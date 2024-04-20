@@ -5,7 +5,7 @@ description: Learn about how to enable passkeys in Microsoft Authenticator for M
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 04/16/2024
+ms.date: 04/20/2024
 
 ms.author: justinha
 author: justinha
@@ -16,7 +16,7 @@ ms.reviewer: mjsantani
 ---
 # Enable passkeys in Microsoft Authenticator (preview)
 
-This article lists steps to enable and enforce use of passkeys in Authenticator for Microsoft Entra ID. First, you update the Authentication methods policy to allow end users to register and sign in with passkeys in Authenticator. Then you can leverage Conditional Access authentication strengths policies to enforce passkey sign-in when users access a sensitive resource.
+This article lists steps to enable and enforce use of passkeys in Authenticator for Microsoft Entra ID. First, you update the Authentication methods policy to allow end users to register and sign in with passkeys in Authenticator. Then you can use Conditional Access authentication strengths policies to enforce passkey sign-in when users access a sensitive resource.
 
 ## Requirements
 
@@ -26,7 +26,7 @@ This article lists steps to enable and enforce use of passkeys in Authenticator 
 > [!NOTE]
 > Users need to install the latest version of Authenticator for Android or iOS to use a passkey. 
 
-To learn more about where you can use passkeys in Authenticator to sign in, please refer to [Support for FIDO2 authentication with Microsoft Entra ID](fido2-compatibility.md).
+To learn more about where you can use passkeys in Authenticator to sign in, see [Support for FIDO2 authentication with Microsoft Entra ID](fido2-compatibility.md).
 
 ## Enable passkeys in Authenticator in the admin center
 
@@ -35,11 +35,11 @@ The **Microsoft Authenticator** policy doesn't give you the option to enable pas
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Protection** > **Authentication methods** > **Authentication method policy**.
 1. Under the method **FIDO2 security key**, select **All users** or **Add groups** to select specific groups. *Only security groups are supported*.
-1. On the **Configure** tab, set the following:
-   1. **Allow self-service set up** to **Yes**
-   2. **Enforce attestation** to **No**
-   3. **Enforce key restrictions** to **Yes**
-   4. **Restrict specific keys** to **Allow**
+1. On the **Configure** tab, set:
+   - **Allow self-service set up** to **Yes**
+   - **Enforce attestation** to **No**
+   - **Enforce key restrictions** to **Yes**
+   - **Restrict specific keys** to **Allow**
    5. Select **Microsoft Authenticator (preview)** if the checkbox is displayed in the admin center. This setting automatically populates the Authenticator app AAGUIDs for you in the key restriction list. Otherwise, you can manually add the following AAGUIDs to enable the Authenticator passkey preview:
 
       - **Authenticator for Android:** de1e552d-db1d-4423-a619-566b625cdc84
@@ -123,12 +123,7 @@ To remove a passkey associated with a user account, delete the key from the user
 
 ## Enforce sign-in with passkeys in Authenticator 
 
-To make users sign in with a passkey when they access a sensitive resource, you must do one of the following: 
-
-- Use the built-in phishing-resistant authentication strength, or
-- Create a custom authentication strength
-
-The following steps explain how to create a Conditional Access policy with a custom authentication strength.
+To make users sign in with a passkey when they access a sensitive resource, use the built-in phishing-resistant authentication strength, or create a custom authentication strength by following these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a Conditional Access Administrator.
 1. Browse to **Protection** > **Authentication methods** > **Authentication strengths**.
