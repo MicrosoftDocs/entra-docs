@@ -5,7 +5,7 @@ description: Web browser and native app support for FIDO2 passwordless authentic
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 03/31/2024
+ms.date: 04/20/2024
 
 author: justinha
 ms.author: justinha
@@ -43,7 +43,7 @@ If a user installed an authentication broker, they can choose to sign in with a 
 Signing into Microsoft native applications with FIDO2 authentication when the user doesn't have an authentication broker on iOS, macOS, and Android isn't supported at this time.
 
 ### Third-party application support without authentication broker
-If the user has yet to install an authentication broker, they can still sign in with a security key when they access MSAL-enabled applications that meet the requirements as listed in [Support for FIDO2 authentication](~/identity-platform/support-fido2-authentication.md).
+If the user has yet to install an authentication broker, they can still sign in with a security key when they access MSAL-enabled applications. For more information about requirements for MSAL-enabled applications, see [Support passwordless authentication with FIDO2 keys in apps you develop](~/identity-platform/support-fido2-authentication.md).
 
 ## Web browser support
 
