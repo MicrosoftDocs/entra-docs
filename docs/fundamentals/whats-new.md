@@ -35,13 +35,13 @@ This page updates monthly, so revisit it regularly. If you're looking for items 
 
 ## April 2024
 
-### General Availability - Multiple Passwordless Phone Sign-in for Android Devices
+### General Availability - Multiple Passwordless Phone Sign-ins for Android Devices
 
 **Type:** New feature    
 **Service category:** Authentications (Logins)    
 **Product capability:** User Authentication    
 
-End users can now enable passwordless phone sign-in for multiple accounts in the Authenticator App on any supported Android device. Consultants, students, and others with multiple accounts in Microsoft Entra can add each account to Microsoft Authenticator and use passwordless phone sign-in for all of them from the same Android device. The Microsoft Entra accounts can be in the same tenant or different tenants. Guest accounts are not supported for multiple account sign-in from one device. For more information, see: [Enable passwordless sign-in with Microsoft Authenticator](../identity/authentication/howto-authentication-passwordless-phone.md).
+End users can now enable passwordless phone sign-ins for multiple accounts in the Authenticator App on any supported Android device. Consultants, students, and others with multiple accounts in Microsoft Entra can add each account to Microsoft Authenticator and use passwordless phone sign-in for all of them from the same Android device. The Microsoft Entra accounts can be in the same tenant or different tenants. Guest accounts aren't supported for multiple account sign-ins from one device. For more information, see: [Enable passwordless sign-in with Microsoft Authenticator](../identity/authentication/howto-authentication-passwordless-phone.md).
 
 ---
 
@@ -51,7 +51,7 @@ End users can now enable passwordless phone sign-in for multiple accounts in the
 **Service category:** Provisioning    
 **Product capability:** Entra Cloud Sync    
 
-Security groups provisioning to Active Directory (aka Group Writeback) is now generally available through Microsoft Entra Cloud Sync in Azure Global and Azure Government clouds. With this new capability, you can easily govern Active Directory based on-premises applications (Kerberos based apps) using Microsoft Entra Governance. For more information, see: [Provision groups to Active Directory using Microsoft Entra Cloud Sync](../identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md).
+Security groups provisioning to Active Directory (also known as Group Writeback) is now generally available through Microsoft Entra Cloud Sync in Azure Global and Azure Government clouds. With this new capability, you can easily govern Active Directory based on-premises applications (Kerberos based apps) using Microsoft Entra Governance. For more information, see: [Provision groups to Active Directory using Microsoft Entra Cloud Sync](../identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md).
 
 ---
 
@@ -61,7 +61,7 @@ Security groups provisioning to Active Directory (aka Group Writeback) is now ge
 **Service category:** Privileged Identity Management    
 **Product capability:** Privileged Identity Management    
 
-PIM is now available on the Azure mobile app in both iOS and Android. Customers can now approve or deny incoming PIM activation requests, in addition to activating Entra ID and Azure resource role assignments, directly from the app on their phone. For more information, see: [Activate PIM roles using the Azure mobile app](../id-governance/privileged-identity-management/pim-resource-roles-activate-your-roles.md#activate-pim-roles-using-the-azure-mobile-app).
+PIM is now available on the Azure mobile app in both iOS and Android. Customers can now approve or deny incoming PIM activation requests, in addition to activating Microsoft Entra ID and Azure resource role assignments, directly from the app on their phone. For more information, see: [Activate PIM roles using the Azure mobile app](../id-governance/privileged-identity-management/pim-resource-roles-activate-your-roles.md#activate-pim-roles-using-the-azure-mobile-app).
 
 ---
 
@@ -71,11 +71,11 @@ PIM is now available on the Azure mobile app in both iOS and Android. Customers 
 **Service category:** Identity Protection    
 **Product capability:** Identity Security & Protection    
 
-Organizations who have enabled password hash synchronization can now allow password changes on-premises to remediate user risk. You can also use this to save hybrid users time and maintain their productivity with automatic self-service remediation in risk-based Conditional Access policies. For more information, see: [Remediate risks and unblock users](../id-protection/howto-identity-protection-remediate-unblock.md).
+Organizations who enabled password hash synchronization can now allow password changes on-premises to remediate user risk. You can also use this to save hybrid users time and maintain their productivity with automatic self-service remediation in risk-based Conditional Access policies. For more information, see: [Remediate risks and unblock users](../id-protection/howto-identity-protection-remediate-unblock.md).
 
 ---
 
-### General Availability - Organizational Branding role for Entra ID Company Branding is now available.
+### General Availability - Organizational Branding role for Microsoft Entra ID Company Branding is now available.
 
 **Type:** New feature   
 **Service category:** Entitlement Management    
@@ -91,7 +91,7 @@ The new Organizational Branding Administrator privileges are limited to branding
 **Service category:** Authentications (Logins)    
 **Product capability:** Extensibility    
 
-Custom authentication extensions allow you to customize the Microsoft Entra authentication experience by integrating with external systems. A custom claims provider is a type of custom authentication extension that calls a REST API to fetch claims from external systems. A custom claims provider maps claims from external systems into tokens and can be assigned to one or many applications in your directory. For more information see: [Custom authentication extensions overview](../identity-platform/custom-extension-overview.md).
+Custom authentication extensions allow you to customize the Microsoft Entra authentication experience by integrating with external systems. A custom claims provider is a type of custom authentication extension that calls a REST API to fetch claims from external systems. A custom claims provider maps claims from external systems into tokens and can be assigned to one or many applications in your directory. For more information, see: [Custom authentication extensions overview](../identity-platform/custom-extension-overview.md).
 
 ---
 
