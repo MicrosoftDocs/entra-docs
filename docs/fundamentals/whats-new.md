@@ -33,6 +33,203 @@ Microsoft Entra ID (previously known as Azure Active Directory) receives improve
 
 This page updates monthly, so revisit it regularly. If you're looking for items older than six months, you can find them in [Archive for What's new in Microsoft Entra ID?](whats-new-archive.md).
 
+## April 2024
+
+### General Availability - Multiple Passwordless Phone Sign-in for Android Devices
+
+**Type:** New feature    
+**Service category:** Authentications (Logins)    
+**Product capability:** User Authentication    
+
+End users can now enable passwordless phone sign-in for multiple accounts in the Authenticator App on any supported Android device. Consultants, students, and others with multiple accounts in Microsoft Entra can add each account to Microsoft Authenticator and use passwordless phone sign-in for all of them from the same Android device. The Microsoft Entra accounts can be in the same tenant or different tenants. Guest accounts are not supported for multiple account sign-in from one device. For more information, see: [Enable passwordless sign-in with Microsoft Authenticator](../identity/authentication/howto-authentication-passwordless-phone.md).
+
+---
+
+### General Availability - Security group provisioning to Active Directory using cloud sync
+
+**Type:** New feature    
+**Service category:** Provisioning    
+**Product capability:** Entra Cloud Sync    
+
+Security groups provisioning to Active Directory (aka Group Writeback) is now generally available through Microsoft Entra Cloud Sync in Azure Global and Azure Government clouds. With this new capability, you can easily govern Active Directory based on-premises applications (Kerberos based apps) using Microsoft Entra Governance. For more information, see: [Provision groups to Active Directory using Microsoft Entra Cloud Sync](../identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md).
+
+---
+
+### General availability - PIM approvals and activations on the Azure mobile app (iOS and Android) are available now
+
+**Type:** New feature    
+**Service category:** Privileged Identity Management    
+**Product capability:** Privileged Identity Management    
+
+PIM is now available on the Azure mobile app in both iOS and Android. Customers can now approve or deny incoming PIM activation requests, in addition to activating Entra ID and Azure resource role assignments, directly from the app on their phone. For more information, see: [Activate PIM roles using the Azure mobile app](../id-governance/privileged-identity-management/pim-resource-roles-activate-your-roles.md#activate-pim-roles-using-the-azure-mobile-app).
+
+---
+
+### General Availability - On-premises password reset remediates user risk
+
+**Type:** New feature    
+**Service category:** Identity Protection    
+**Product capability:** Identity Security & Protection    
+
+Organizations who have enabled password hash synchronization can now allow password changes on-premises to remediate user risk. You can also use this to save hybrid users time and maintain their productivity with automatic self-service remediation in risk-based Conditional Access policies. For more information, see: [Remediate risks and unblock users](../id-protection/howto-identity-protection-remediate-unblock.md).
+
+---
+
+### General Availability - Organizational Branding role for Entra ID Company Branding is now available.
+
+**Type:** New feature   
+**Service category:** Entitlement Management    
+**Product capability:** Access Control    
+
+The new Organizational Branding Administrator privileges are limited to branding, allowing you to adhere to the principle of least privilege by eliminating the need for the Global Administrator role to configure branding. For more information on configuring branding, see: [Add company branding to your organization's sign-in page](../fundamentals/how-to-customize-branding.md).
+
+---
+
+### General Availability - Custom Claims Providers enable token claim augmentation from external data sources
+
+**Type:** New feature    
+**Service category:** Authentications (Logins)    
+**Product capability:** Extensibility    
+
+Custom authentication extensions allow you to customize the Microsoft Entra authentication experience by integrating with external systems. A custom claims provider is a type of custom authentication extension that calls a REST API to fetch claims from external systems. A custom claims provider maps claims from external systems into tokens and can be assigned to one or many applications in your directory. For more information see: [Custom authentication extensions overview](../identity-platform/custom-extension-overview.md).
+
+---
+
+### General Availability of Configurable redemption for Entra External ID B2B collaboration
+
+**Type:** Fixed    
+**Service category:** B2B    
+**Product capability:** B2B/B2C    
+
+Configurable redemption for B2B is now Generally available. Admins can now configure the order of identity providers that their guest users can use to sign in when they accept, the invitation. For more information, see: [Configure redemption order](../external-id/cross-tenant-access-settings-b2b-collaboration.md#configure-redemption-order).
+
+---
+
+### General Availability - Dynamic Groups quota increased to 15,000.
+
+**Type:** Changed feature
+**Service category:** Group Management
+**Product capability:** Directory
+
+Microsoft Entra organizations could previously have a maximum of 5,000 dynamic groups and dynamic administrative units combined. 
+
+We have increased this quota to 15000. For example, you can now have 5,000 dynamic groups and 10,000 dynamic AUs (or any other combination that adds up to 15k). You don't need to do anything to take advantage of this change - it's available right now. For more information, see: [Microsoft Entra service limits and restrictions](../identity/users/directory-service-limits-restrictions.md).
+
+---
+
+### General Availability-Lifecycle Workflows: Export workflow history data to CSV files
+
+**Type:** New feature    
+**Service category:** Lifecycle Workflows    
+**Product capability:** Identity Governance    
+
+In Lifecycle Workflows, IT admins can now export their workflow history data across users, runs, and tasks to CSV files for meeting their organization's reporting and auditing needs.
+
+See [Download workflow history reports](../id-governance/download-workflow-history.md) to learn more.
+
+---
+
+### Public preview - Native Authentication for Microsoft Entra External ID
+
+**Type:** New feature    
+**Service category:** Authentications (Logins)    
+**Product capability:** User Authentication    
+
+Native authentication empowers developers to take complete control over the design of the sign-in experience of their mobile applications. It allows them to craft stunning, pixel-perfect authentication screens that are seamlessly integrated into their apps, rather than relying on browser-based solutions. For more information, see: [Native authentication (preview)](../external-id/customers/concept-native-authentication.md).
+
+---
+
+### Public Preview - Passkeys in Microsoft Authenticator
+
+**Type:** New feature    
+**Service category:** Microsoft Authenticator App    
+**Product capability:** User Authentication    
+
+Users can now create device-bound passkeys in the Microsoft Authenticator to access Entra ID resources. Passkeys in the Authenticator app provide cost-effective, phishing-resistant and seamless authentications to users from their mobile devices. For more information, see https://aka.ms/PasskeyInAuthenticator.
+
+---
+
+### Public Preview - Conditional Access What If API
+
+**Type:** New feature    
+**Service category:** Conditional Access    
+**Product capability:** Access Control    
+
+The Conditional access What If API can be used to programmatically test the impact of conditional access policies on user and workload identity signins.
+
+---
+
+### Public Preview - Configure custom workflows to run tasks when a user's job profile changes
+
+**Type:** New feature    
+**Service category:** Lifecycle Workflows    
+**Product capability:** Identity Governance    
+
+Lifecycle Workflows now supports the ability to trigger workflows based on job change events like changes to an employee's department, job role, or location and see them executed on the workflow schedule. With this feature, customers can leverage new workflow triggers to create custom workflows for executing tasks associated with employees moving within the organization including:
+
+- Trigger workflows when a specified attribute changes
+- Triggering workflows when a user is added or removed from a group's membership
+- Tasks to notify a user's manager about a move
+- Task to assign licenses or remove selected licenses from a user
+
+To learn more, see the [Automate employee mover tasks when they change jobs using the Microsoft Entra admin center](../id-governance/tutorial-mover-custom-workflow-portal.md) tutorial.
+
+---
+
+### General Availability - Microsoft Graph Activity Logs
+
+**Type:** New feature    
+**Service category:** Microsoft Graph    
+**Product capability:** Monitoring & Reporting    
+
+The Microsoft Graph activity logs is now generally available! Microsoft Graph activity logs give you visibility into HTTP requests made to the Microsoft Graph service in your tenant. With rapidly growing security threats, and an increasing number of attacks, this log data source allows you to perform security analysis, threat hunting, and monitor application activity in your tenant. For more information, see: [Access Microsoft Graph activity logs](/graph/microsoft-graph-activity-logs-overview).
+
+---
+
+### General Availability - New provisioning connectors in the Microsoft Entra Application Gallery - April 2024
+
+**Type:** New feature    
+**Service category:** App Provisioning    
+**Product capability:** 3rd Party Integration    
+
+We've added the following new applications in our App gallery with Provisioning support. You can now automate creating, updating, and deleting of user accounts for these newly integrated apps:
+
+[CultureHQ](../identity/saas-apps/culturehq-provisioning-tutorial.md)
+[elia](../identity/saas-apps/elia-provisioning-tutorial.md)
+[GoSkills](../identity/saas-apps/goskills-provisioning-tutorial.md)
+[Island](../identity/saas-apps/island-provisioning-tutorial.md)
+[Jellyfish](../identity/saas-apps/jellyfish-provisioning-tutorial.md)
+
+For more information about how to better secure your organization by using automated user account provisioning, see Automate user provisioning to SaaS applications with Microsoft Entra.
+
+---
+
+### General Availability - Quick Microsoft Entra Verified ID setup
+
+**Type:** New feature
+**Service category:** Verified ID
+**Product capability:** Decentralized Identities
+
+Quick Microsoft Entra Verified ID setup, now generally available, removes several configuration steps an admin needs to complete with a single select on a Get started button. The quick setup takes care of signing keys, registering your decentralized ID, and verifying your domain ownership. It also creates a Verified Workplace Credential for you. For more information, see: [Quick Microsoft Entra Verified ID setup](../verified-id/verifiable-credentials-configure-tenant-quick.md).
+
+---
+
+### General Availability - Self-service password reset Admin policy expansion to include additional roles
+
+**Type:** Changed feature
+**Service category:** Self Service Password Reset
+**Product capability:** Identity Security & Protection
+
+Self-service password reset (SSPR) policy for Admins has expanded to include 3 additional built-in admin roles. These additional roles include: 
+
+- Teams Administrator
+- Teams Communications Administrator
+- Teams Devices Administrator
+
+For more information on Self-service password reset for admins, including the full list of in-scope admin roles, see [Administrator reset policy differences](../identity/authentication/concept-sspr-policy.md#administrator-reset-policy-differences). 
+
+---
+
 ## March 2024
 
 ### Public Preview - Convert external users to internal
