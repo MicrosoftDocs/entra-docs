@@ -161,10 +161,19 @@ You can choose to attempt passkey registration from your computer or another mob
 1. Once the passkey is successfully created on your device, you're directed back to **My Security info**, tap **Done**. 
 1. Name the passkey something memorable to you and select **Done**.
    
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/success.png" alt-text="Screenshot where user can change friendly name of the new sign-in method.":::   
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/success.png" alt-text="Screenshot where user can change friendly name of the new sign-in method.":::
+
+## Deleting your passkey in Authenticator
+To remove the passkey from Authenticator, click the *Trash* icon, then tap **Delete** to confirm.
+
+:::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey-ios-delete.png" alt-text="Screenshot of the passkey delete option in Microsoft Authenticator for iOS devices.":::
+
+> [!NOTE]
+> You also need to delete the passkey from **Security Info**, using a web browser and logging in to [My Security info](https://aka.ms/mysecurityinfo).
 
 ## Troubleshooting
 
+In some cases when you try to register a passkey, it gets stored locally in the Authenticator app but not registered on the authentication server due to different reasons, such as when the passkey provider isn't permitted, or the connection timed out. In those instances, if you attempt to re-register the passkey, you need to first delete the passkey that was created locally in the Authenticator app.
 If the passkey for your account is already registered in Authenticator, you'll see this error: 
 
 :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey-ios-already-exists.png" alt-text="Screenshot of the passkey that already exists in Microsoft Authenticator for iOS devices.":::
