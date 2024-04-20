@@ -55,14 +55,21 @@ Follow these steps to sign in to Microsoft Entra ID on another device with a pas
 
 1. On the other device where you're looking to sign in to Microsoft Entra ID, open your browser and go to `login.microsoftonline.com`.
 
-1. Select **Sign-in options**. 
+1. You can enter your username to sign in: 
 
-    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-ios/sign-in-microsoft.png" alt-text="Screenshot of the sign-in Microsoft in Microsoft Authenticator for iOS devices.":::
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-ios/sign-in-user-name.png" alt-text="Screenshot of the sign-in with username in Microsoft Authenticator for iOS devices.":::
 
-1. Select **Face**, **Fingerprint**, **PIN**, or **Security key**.
+   Or click **Sign-in options** to sign in more conveniently without having to enter a username. 
+
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-ios/sign-in-microsoft.png" alt-text="Screenshot of the sign-in Microsoft in Microsoft Authenticator for iOS devices.":::
+
+   If you chose **Sign-in options**, select **Face**, **Fingerprint**, **PIN**, or **Security key**. Otherwise, skip to next step.
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-ios/sign-in-options.png" alt-text="Screenshot of the sign-in options in Microsoft Authenticator for iOS devices.":::
 
+   > [!NOTE]
+   > If you signed in without a username and multiple passkeys are saved to your device, you're prompted to choose which passkey to use for sign-in. 
+   
 1. To begin cross-device authentication, follow the steps in the operating system or browser prompt. On Windows 11 23H2 or later, select **iPhone, iPad, or Android device**.
 
 1. A QR code should be shown on screen. Now, on your iOS device, open the Camera app and scan the QR code. Select **Sign-in with passkey** when the option appears.
