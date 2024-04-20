@@ -55,6 +55,24 @@ Security groups provisioning to Active Directory (also known as Group Writeback)
 
 ---
 
+### Decommissioning of Group Writeback V2 (Public Preview) in Entra Connect Sync
+
+**Type:** Plan for change   
+**Service category:** Provisioning                     
+**Product capability:**  Microsoft Entra Connect Sync             
+
+The public preview of Group Writeback V2 (GWB) in Entra Connect Sync will no longer be available after June 30, 2024. After this date, Connect Sync will no longer support provisioning cloud security groups to Active Directory.
+
+Another similar functionality is offered in Entra Cloud Sync, called “*Group Provision to AD*”, that maybe used instead of GWB V2 for provisioning cloud security groups to AD. Enhanced functionality in Cloud Sync, along with other new features, are being developed.
+
+Customers who use this preview feature in Connect Sync should [switch their configuration from Connect Sync to Cloud Sync](../identity/hybrid/cloud-sync/migrate-group-writeback.md). Customers can choose to move all their hybrid sync to Cloud Sync (if it supports their needs) or Cloud Sync can be run side-by-side and move only cloud security group provisioning to AD onto Cloud Sync.
+
+Customers who provision Microsoft 365 groups to AD can continue using GWB V1 for this capability.  
+
+Customers can evaluate moving exclusively to Cloud Sync by using this wizard: https://aka.ms/EvaluateSyncOptions
+
+---
+
 ### General availability - PIM approvals and activations on the Azure mobile app (iOS and Android) are available now
 
 **Type:** New feature    
