@@ -203,9 +203,9 @@ You can sign in to the Authenticator to create a passkey in the app and get seam
 
 If you already have an account in the Authenticator app, or you are signed in to the Authenticator app, you still need to go through the above mentioned flow to add a passkey in the app.
 
-[!INCLUDE [Need APIs to support browsers](~/includes/passkeys-with-chrome-browser.md)]
-
 ## Same-device registration from a browser (Android)
+[!INCLUDE [Need APIs to support browsers](~/includes/passkeys-with-chrome-browser.md)]
+<!---
 Alternatively, users can set up a passkey in the Authenticator by navigating to a browser and initiating the flow from My Security info.
 
 1. Using your Android device, open a web browser and sign-in to [My Security info](https://aka.ms/mysecurityinfo).
@@ -268,7 +268,9 @@ Alternatively, users can set up a passkey in the Authenticator by navigating to 
       :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/done.png" alt-text="Screenshot of passkey saved in MySecurityInfo.":::
 
 1. You can now see the passkeys in Authenticator along with your other registered security info options.
-  
+
+-->
+
 ## Cross-device registration (Android)
 You can choose to attempt passkey registration from your computer or another mobile device.
 
