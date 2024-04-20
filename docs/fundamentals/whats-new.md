@@ -107,9 +107,9 @@ Configurable redemption for B2B is now Generally available. Admins can now confi
 
 ### General Availability - Dynamic Groups quota increased to 15,000.
 
-**Type:** Changed feature
-**Service category:** Group Management
-**Product capability:** Directory
+**Type:** Changed feature    
+**Service category:** Group Management    
+**Product capability:** Directory    
 
 Microsoft Entra organizations could previously have a maximum of 5,000 dynamic groups and dynamic administrative units combined. 
 
@@ -117,7 +117,7 @@ We have increased this quota to 15000. For example, you can now have 5,000 dynam
 
 ---
 
-### General Availability-Lifecycle Workflows: Export workflow history data to CSV files
+### General Availability - Lifecycle Workflows: Export workflow history data to CSV files
 
 **Type:** New feature    
 **Service category:** Lifecycle Workflows    
@@ -216,9 +216,9 @@ Quick Microsoft Entra Verified ID setup, now generally available, removes severa
 
 ### General Availability - Self-service password reset Admin policy expansion to include additional roles
 
-**Type:** Changed feature
-**Service category:** Self Service Password Reset
-**Product capability:** Identity Security & Protection
+**Type:** Changed feature    
+**Service category:** Self Service Password Reset    
+**Product capability:** Identity Security & Protection    
 
 Self-service password reset (SSPR) policy for Admins has expanded to include 3 additional built-in admin roles. These additional roles include: 
 
