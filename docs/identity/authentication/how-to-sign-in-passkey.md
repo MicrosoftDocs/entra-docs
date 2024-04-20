@@ -33,7 +33,7 @@ To sign into your work or school account with a security key, follow these steps
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-ios/sign-in-user-name.png" alt-text="Screenshot of the sign-in with username.":::
 
-   If you last used a passkey to authenticate, you will be automatically prompted to authenticate with a passkey. Otherwise, you may click on **Other ways to sign in** and then select **Face**, **fingerprint**, **PIN**, or **security key**.
+   If you most recently used a passkey to sign in, you're automatically prompted to sign in with a passkey. Otherwise, selectr **Other ways to sign in**, and then select **Face**, **fingerprint**, **PIN**, or **security key**.
 
    Alternatively, click **Sign-in options** to sign in more conveniently without having to enter a username. 
 
