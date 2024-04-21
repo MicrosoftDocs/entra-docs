@@ -36,8 +36,8 @@ Before creating the method, you will need the following information from your ex
 
 External authentication methods are managed with the Entra ID Authentication methods policy, just like built-in methods. 
 
-### Create an external authentication method
- 
+### Create an EAM in the admin center
+
 To create an external authentication method using the admin center, you will need the [required information from your external authentication provider](#required-information-from-your-external-authentication-provider). 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
@@ -73,7 +73,25 @@ If the app has permissions then you can also enable the method before saving. Ot
 
 Once the method is enabled, all users in scope will see the method in the method picker for any MFA prompts. If the app from the provider doesn't have consent approved, then any authentications with the external authentication method fails.
 
-## Manage external authentication methods
+### Configure an EAM in the admin center
+
+To manage your external authentication methods in the Microsoft Entra admin center, open the Authentication methods policy. Select the method name to open the configuration options. You can choose which users are included and excluded from using this method. 
+
+:::image type="content" border="true" source="./media/how-to-authentication-external-method-manage/target.png" alt-text="Screenshot of how to scope usage of the external authentication method for specific users.":::
+
+### Delete an EAM in the admin center
+
+## Manage an external authentication method using Microsoft Graph
+
+### Create an EAM using Microsoft Graph
+
+### Get an EAM using Microsoft Graph
+
+### Update an EAM using Microsoft Graph
+
+### Disable an EAM using Microsoft Graph
+
+## User experience
 
 ## Next steps
 
