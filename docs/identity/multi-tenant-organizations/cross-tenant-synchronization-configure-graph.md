@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: multitenant-organizations
 ms.topic: how-to
-ms.date: 02/27/2024
+ms.date: 04/23/2024
 ms.author: rolyon
 ms.custom: it-pro
 

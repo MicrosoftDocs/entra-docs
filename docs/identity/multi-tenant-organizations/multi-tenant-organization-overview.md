@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: multitenant-organizations
 ms.topic: overview
-ms.date: 02/27/2024
+ms.date: 04/23/2024
 ms.author: rolyon
 ms.custom: it-pro
 #Customer intent: As a dev, devops, or it admin, I want to
@@ -150,14 +150,13 @@ Create your multitenant organization using [Microsoft 365 admin center](/microso
 
 - First tenant, soon-to-be owner tenant, creates a multitenant organization.
 - Owner tenant adds one or more joiner tenants.
-- To allow for asynchronous processing, wait a **minimum of 2 hours**.
 
 ### Step 3: Join a multitenant organization
 
 Join a multitenant organization using [Microsoft 365 admin center](/microsoft-365/enterprise/join-leave-multi-tenant-org) or [Microsoft Graph PowerShell](multi-tenant-organization-configure-graph.md?tabs=ms-powershell), or [Microsoft Graph API](multi-tenant-organization-configure-graph.md?tabs=ms-graph):
 
 - Joiner tenants submit a join request to join the multitenant organization of owner tenant.
-- To allow for asynchronous processing, wait **up to 4 hours**.
+- To allow for asynchronous processing, wait **up to 2 hours**.
 
 Your multitenant organization is formed.
 
