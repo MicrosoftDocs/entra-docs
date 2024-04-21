@@ -60,9 +60,9 @@ The constraints and details described in this article have the following scope.
 
 - In [Microsoft Forms](/office365/servicedescriptions/microsoft-forms-service-description), B2B member users might not be able to access forms.
 
-- In [Microsoft Power BI](/power-bi/enterprise/service-admin-azure-ad-b2b#who-can-you-invite), B2B member users might require license assignment in addition to having an untested experience. Power BI preview for B2B members as part of a multitenant organization is expected.
+- In [Microsoft Power BI](/power-bi/enterprise/service-admin-azure-ad-b2b#who-can-you-invite), B2B member users are not yet supported. B2B guest users can continue to access Power BI dashboards.
 
-- In [Microsoft Power Apps](/power-platform/), [Microsoft Dynamics 365](/dynamics365/), and other workloads, B2B member users might require license assignment. Experiences for B2B members are untested.
+- In [Microsoft Power Apps](/power-platform/), [Microsoft Dynamics 365](/dynamics365/), and related workloads, B2B member users may have restricted functionality. For more information, see [Invite users with Microsoft Entra B2B collaboration](/power-platform/admin/invite-users-azure-active-directory-b2b-collaboration).
 
 ## B2B users or B2B members
 
