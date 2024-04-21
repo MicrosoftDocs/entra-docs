@@ -482,11 +482,11 @@ Here's an example of the id_token hint for a guest user in the tenant:
 
 #### Suggested actions for external identity providers
 
-The following are the steps that we suggest the external identity provider to carry out at their end. The list isn't exhaustive and the provider is encouraged to carry out additional validation activities as they see fit. 
+We suggest that external identity providers complete these steps. The list isn't exhaustive, and providers should complete other validation steps as they see fit. 
 
 1. From the request:
-   - Ensure that the redirect_uri is one of the published ones provided in [Entra ID call to the external identity provider](#entra-id-call-to-the-external-identity-provider).
-   - Ensure that the client_id has a value that they assigned to Entra ID, such as *ABCD*.
+   - Ensure that the redirect_uri is published provided in [Entra ID call to the external identity provider](#entra-id-call-to-the-external-identity-provider).
+   - Ensure that the client_id has a value assigned to Entra ID, such as *ABCD*.
    - The provider should first [validate](/entra/identity-platform/id-tokens#validating-an-id_token) the id_token_hint that is presented to it by Entra ID.
 1. From the claims in the id_token_hint:
    - They can (optionally) make a call to [Microsoft Graph](https://graph.microsoft.com/) to fetch additional details about this user. The **oid** and **tid** claims in the id_token_hint will be useful in this regard. See section 0 for details about the claims provided in the id_token_hint.
@@ -495,16 +495,14 @@ The following are the steps that we suggest the external identity provider to ca
 
 ####	Entra ID processing of the provider response
 
-The provider will POST a response back to the **redirect_uri**.
-
-The following parameters should be provided on a successful response:
+The provider will POST a response back to the **redirect_uri**. The following parameters should be provided on a successful response:
 
 Parameter | Value | Description
 ----------|-------|------------
 id_token  |       | The token issued by the external identity provider.
 state     |       | The same state that was passed in the request, if any. Otherwise, this should not be present.
 
-On success, the provider would then issue an id_token for the user. Entra ID would use the published OIDC metadata to verify that the token contains the expected claims as well as do all the other validation of the token that OIDC requires.
+On success, the provider would then issue an id_token for the user. Entra ID uses the published OIDC metadata to verify that the token contains the expected claims, and does any other validation of the token that OIDC requires.
 
 Claim | Value | Description
 ------|-------|------------
@@ -512,7 +510,7 @@ iss   |       | Issuer – must match the issuer from the provider’s discovery
 aud   |       | Audience – the Entra ID client id. See ClientId in [Entra ID call to the external identity provider](#entra-id-call-to-the-external-identity-provider).
 exp   |       | Expiration time – set as usual.
 iat   |       | Issuing time – set as usual.
-sub   |       | Subject – must match the sub from the id_token_hint sent to initiate this request
+sub   |       | Subject – must match the sub from the id_token_hint sent to initiate this request.
 nonce |       | The same nonce that was passed in the request.
 acr   |       | The acr claims for the authentication request. This should match one of the values from the request sent to initiate this request. Only one acr claim should be returned. For the list of claims, see [Supported acr claims](#supported-acr-claims).
 amr   |       | The amr claims for the authentication method used in authentication. Only one method claim should be returned.	For the list of claims, see [Supported amr claims](#supported-amr-claims).
@@ -570,16 +568,16 @@ Entra ID will validate the type mapping based on the following table.
 |vbm |Inherence | Biometric via voiceprint |
 
 
-If no issues are found with the token, then Entra ID should consider MFA having been satisfied and issue a token to the end user. Otherwise, it should fail the end user’s request.
+If no issues are found with the token, then Entra ID considers MFA to be satisfied, and issues a token to the end user. Otherwise, the end user’s request fails.
 
-Failure is indicated by issuing Error Response parameters.
+Failure is indicated by issuing error response parameters.
 
 Parameter | Value | Description
 ----------|-------|-------------
 Error |           | An ASCII error code, such as access_denied or temporarily_unavailable. |
 
 
-Entra ID will consider the request successful if the id_token parameter is present in the response and if the token is valid. Otherwise, the request will be considered unsuccessful and Entra ID will fail the original authentication attempt due to policy requirement as dictated by the conditional access policy.
+Entra ID considers the request successful if the id_token parameter is present in the response, and if the token is valid. Otherwise, the request is considered unsuccessful. Entra ID will fail the original authentication attempt due to requirement of the Conditional Access policy.
 
 Entra ID will abandon the state of the authentication attempt on its end approximately 10 minutes after the redirection has occurred to the provider.
 
@@ -627,3 +625,6 @@ EAM  | External authentication method – an authentication method from a provid
 OIDC | Open Id Connect – an authentication protocol based on OAuth 2.0
 600b719b-3766-4dc5-95a6-3c4a8dc31885 | An example of an appid integrated for this feature
 
+## Next steps
+
+For more information about how to configure an EAM in [Microsoft Entra admin center](https://entra.microsoft.com), see [Manage an external authentication method in Microsoft Entra ID (Preview)](how-to-authentication-external-method-manage.md)
