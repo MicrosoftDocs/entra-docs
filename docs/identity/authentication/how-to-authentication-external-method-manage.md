@@ -81,18 +81,190 @@ To manage your external authentication methods in the Microsoft Entra admin cent
 
 ### Delete an EAM in the admin center
 
+If you no longer want your users to be able to use the external authentication method, you can either:
+
+- Set **Enable** to **Off** to save the method configuration
+- Click **Delete** to remove the method
+
+:::image type="content" border="true" source="./media/how-to-authentication-external-method-manage/delete.png" alt-text="Screenshot of how to delete an external authentication method.":::
+
 ## Manage an external authentication method using Microsoft Graph
+
+The next sections include examples for using Microsoft Graph to manage an EAM. 
 
 ### Create an EAM using Microsoft Graph
 
+To create the external authentication method, you can use Microsoft Graph with the [required information from your external authentication provider](#required-information-from-your-external-authentication-provider), and the display name that you want for the method.  
+
+To update the Authentication methods policy by using Microsoft Graph, you need the `Policy.ReadWrite.AuthenticationMethod` permission. For more information, see [Update authenticationMethodsPolicy](/graph/api/authenticationmethodspolicy-update).
+
+Example post to create the method for all_users:
+
+```json
+POST https://graph.microsoft.com/beta/policies/authenticationMethodsPolicy/authenticationMethodConfigurations
+{
+  "@odata.type": "#microsoft.graph.externalAuthenticationMethodConfiguration",
+  "displayName": "Adatum",
+  "appId": "600b719b-3766-4dc5-95a6-3c4a8dc31885",
+  "openIdConnectSetting": {
+    "clientId": "06a011bd-ec92-4404-80fb-db6d5ada8ee2",
+    "discoveryUrl": "https://adatum.com/.well-known/openid-configuration"
+  }
+}
+
+On success, a 201 will be returned:
+HTTP/1.1 201 CREATED
+{
+    "@odata.context": "https://graph.microsoft.com/beta/$metadata#authenticationMethodConfigurations/$entity",
+    "@odata.type": "#microsoft.graph.externalAuthenticationMethodConfiguration",
+    "id": "7313117c-bddf-4e92-82ea-d44a68019c4d",
+    "state": "disabled",
+    "displayName": "Adatum",
+    "appId": "600b719b-3766-4dc5-95a6-3c4a8dc31885",
+    "excludeTargets": [],
+    "openIdConnectSetting": {
+        "clientId": "06a011bd-ec92-4404-80fb-db6d5ada8ee2",
+        "discoveryUrl": "https://adatum.com/.well-known/openid-configuration"
+    }
+}
+```
+
+Example post to create the method targeting to a specific group:
+
+```json
+POST https://graph.microsoft.com/beta/policies/authenticationMethodsPolicy/authenticationMethodConfigurations
+{
+  "@odata.type": "#microsoft.graph.externalAuthenticationMethodConfiguration",
+  "displayName": "Adatum",
+  "appId": "600b719b-3766-4dc5-95a6-3c4a8dc31885",
+  "openIdConnectSetting": {
+    "clientId": "06a011bd-ec92-4404-80fb-db6d5ada8ee2",
+    "discoveryUrl": "https://adatum.com/.well-known/openid-configuration"
+  },
+  "includeTargets": [
+      {
+          "targetType": "group",
+          "id": "b185b746-e7db-4fa2-bafc-69ecf18850dd",
+          "isRegistrationRequired": false,
+      }
+  ]
+}
+```
+
+On success, a 201 will be returned:
+
+```json
+HTTP/1.1 201 CREATED
+{
+    "@odata.type": "#microsoft.graph.externalAuthenticationMethodConfiguration",
+    "id": "b3107ab7-68c7-4553-a167-48c8e9c24d52",
+    "displayName": "Adatum",
+    "appId": "600b719b-3766-4dc5-95a6-3c4a8dc31885",
+    "openIdConnectSetting": {
+        "clientId": "06a011bd-ec92-4404-80fb-db6d5ada8ee2",
+        "discoveryUrl": "https//adatum.com/.well-known/openid-configuration"
+    },
+    "state": "disabled",
+    "excludeTargets": []
+}
+```
+
 ### Get an EAM using Microsoft Graph
 
+```json
+GET  https://graph.microsoft.com/beta/policies/authenticationMethodsPolicy/authenticationMethodConfigurations/b3107ab7-68c7-4553-a167-48c8e9c24d52
+HTTP/1.1 200 OK
+{
+  "@odata.type": "#microsoft.graph.externalAuthenticationMethodConfiguration",
+  "id": "b3107ab7-68c7-4553-a167-48c8e9c24d52",
+  "displayName": "Adatum",
+  "appId": "fb263304-618c-4ffb-878a-1f4490bdf200",
+  "openIdConnectSetting": {
+      "clientId": "06a011bd-ec92-4404-80fb-db6d5ada8ee2",
+      "discoveryUrl": "https//Adatum.com/.well-known/openid-configuration"
+  },
+  "state": "disabled",
+  "excludeTargets": [],
+  "includeTargets": []
+}
+```
 ### Update an EAM using Microsoft Graph
+
+Changes to the authentication method can be made by using PATCH calls.  You can change the include targets, the method state, or the openIdConnectSetting values. The displayName for the method can't be changed.
+
+```json
+PATCH https://graph.microsoft.com/beta/policies/authenticationMethodsPolicy/authenticationMethodConfigurations/b3107ab7-68c7-4553-a167-48c8e9c24d52
+{
+  "@odata.type": "#microsoft.graph.externalAuthenticationMethodConfiguration",
+  "includeTargets": [
+    {
+        "targetType": "group",
+        "id": "b185b746-e7db-4fa2-bafc-69ecf18850dd",
+        "isRegistrationRequired": false,
+    }
+  ],
+  "state": "enabled"
+}
+
+HTTP/1.1 204 NO CONTENT
+```
+
+Get now returns:
+
+```json
+HTTP/1.1 200 OK
+{
+  "@odata.type": "#microsoft.graph.externalAuthenticationMethodConfiguration",
+  "id": "b3107ab7-68c7-4553-a167-48c8e9c24d52",
+  "displayName": "Adatum",
+  "appId": "fb263304-618c-4ffb-878a-1f4490bdf200",
+  "openIdConnectSetting": {
+      "clientId": "06a011bd-ec92-4404-80fb-db6d5ada8ee2",
+      "discoveryUrl": "https//Adatum.com/.well-known/openid-configuration"
+  },
+  "state": "enabled",
+  "includeTargets": [
+      {
+          "targetType": "group",
+          "id": "b185b746-e7db-4fa2-bafc-69ecf18850dd",
+          "isRegistrationRequired": false,
+      }
+  ],
+  "excludeTargets": []
+}
+```
 
 ### Disable an EAM using Microsoft Graph
 
+If you no longer want your users to be able to use the external authentication method, you can either update the state to disabled as described previously, or you can delete the method. In the following example, the method is deleted by using Microsoft Graph:
+
+```json
+DELETE https://graph.microsoft.com/beta/policies/authenticationMethodsPolicy/authenticationMethodConfigurations/b3107ab7-68c7-4553-a167-48c8e9c24d52
+
+HTTP/1.1 204 NO CONTENT
+```
+
 ## User experience
+
+Users who are enabled for the external authentication method can use it when they sign-in and multifactor authentication is required. 
+
+If the user has other ways to sign in and [system-preferred MFA](/entra/identity/authentication/concept-system-preferred-multifactor-authentication) is enabled, those other methods appear by default order. The user can choose to use a different method, and then select the external authentication method.
+
+:::image type="content" border="true" source="./media/how-to-authentication-external-method-manage/system-preferred.png" alt-text="Screenshot of how to choose an external authentication method when system-preferred MFA is enabled.":::
+
+
+If the user has no other methods enabled, the user can just choose the external authentication method. They're redirected to the external authentication provider to complete authentication.
+
+:::image type="content" border="true" source="./media/how-to-authentication-external-method-manage/sign-in.png" alt-text="Screenshot of how to sign in with an external authentication method.":::
+
+## Using EAM and Conditional Access custom controls in parallel
+
+External authentication methods and custom controls can operate in parallel. Microsoft recommends that admins configure two Conditional Access policies: one with the custom control enforced and the second with the MFA grant required. Use include targets to scope the policy to a test group of users.  
+
+Include users in one of the two policies, but not both. If the user is in scope for both policies, or if you configure a Conditional Access policy that requires both MFA grant and a custom control, the user has to satisfy MFA during sign-in. They also have to satisfy the custom control, and they're redirected to the external provider a second time.
 
 ## Next steps
 
-For more information about how to manage authentication methods, see [Manage authentication methods for Microsoft Entra ID](/entra/identity/authentication/concept-authentication-methods-manage)
+For more information about how to manage authentication methods, see [Manage authentication methods for Microsoft Entra ID](/entra/identity/authentication/concept-authentication-methods-manage).
+
+For external authentication method provider reference, see [Microsoft Entra multifactor authentication external method provider reference (Preview)](concept-authentication-external-method-provider.md).
