@@ -1,6 +1,6 @@
 ---
 title: How to manage an external authentication method in Microsoft Entra ID (Preview)
-description: Learn how to configure an external authentication method provider for Microsoft Entra multifactor authentication
+description: Learn how to manage an external authentication method for Microsoft Entra multifactor authentication
 
 
 ms.service: entra-id

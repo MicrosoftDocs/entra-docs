@@ -155,9 +155,9 @@ HTTP/1.1 201 CREATED
 
 To add the external authentication method, the customer admin will need the values listed previously (**ExternalAuthenticationMethodConfiguration**: Name, AppId, ClientId, and DiscoveryUrl). These values will be updated in the Entra admin center authentication methods policy (**Security** > **Authentication methods** > **Policies**), after selecting to add an external authentication method.
 
-:::image type="content" source="./media/how-to-authentication-external-method-add/add-external-method.png" alt-text="Screenshot of how to add an external authentication method.":::
+:::image type="content" source="./media/how-to-authentication-external-method-manage/add-external-method.png" alt-text="Screenshot of how to add an external authentication method.":::
 
-:::image type="content" source="./media/how-to-authentication-external-method-add/method-properties.png" alt-text="Screenshot of external method properties.":::
+:::image type="content" source="./media/how-to-authentication-external-method-manage/method-properties.png" alt-text="Screenshot of external method properties.":::
 
 ### Grant consent for the provider’s application
 
