@@ -40,7 +40,6 @@ External authentication methods are managed with the Entra ID Authentication met
  
 To create an external authentication method using the admin center, you will need the [required information from your external authentication provider](#required-information-from-your-external-authentication-provider). 
 
-
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Protection** > **Authentication methods** > **Add external method (Preview)**.
 
@@ -58,11 +57,23 @@ To create an external authentication method using the admin center, you will nee
 
    :::image type="content" border="true" source="./media/how-to-authentication-external-method-manage/method-properties.png" alt-text="Screenshot of how to add an external authentication method properties.":::
 
-If you have the required roles to grant consent for the provider’s application (Global Administrator or Privileged Role Administrator) then you can grant consent directly.  If you do not have the role required to grant admin consent, you can still save your authentication method but you will not be able to enable it until admin consent has been granted.
+   You need the Global Administrator or Privileged Role Administrator role to grant admin consent for the provider’s application. If you don't have the role required to grant consent, you can still save your authentication method, but you can't enable it until consent is granted.
 
-After the input of the values from your provider, press the button to request for admin consent to be granted to the application so that it can read the required info from the user to authenticate correctly.  You will be shown a window asking you to login with an account with admin permissions and grant the provider’s application with the required permissions.
+   After you enter the values from your provider, press the button to request for admin consent to be granted to the application so that it can read the required info from the user to authenticate correctly. You're prompted to sign in with an account with admin permissions and grant the provider’s application with the required permissions.
 
-After you login successfully, you should see the following window asking for permissions:
+   After you sign in, click **Accept** to grant admin consent:
+
+   :::image type="content" border="true" source="./media/how-to-authentication-external-method-manage/permissions-requested.png" alt-text="Screenshot of how to grant admin consent.":::
+
+   You can see the permissions the the provider application requests before you grant consent. After you grant admin consent and the change replicates, the page refreshes to show that admin consent was granted.
+
+   :::image type="content" border="true" source="./media/how-to-authentication-external-method-manage/consent-granted.png" alt-text="Screenshot of Authentication methods policy after consent is granted.":::
+
+If the app has permissions then you can also enable the method before saving. Otherwise, you need to save the method in a disabled state, and enable after the app is granted consent.
+
+Once the method is enabled, all users in scope will see the method in the method picker for any MFA prompts. If the app from the provider doesn't have consent approved, then any authentications with the external authentication method fails.
+
+## Manage external authentication methods
 
 ## Next steps
 
