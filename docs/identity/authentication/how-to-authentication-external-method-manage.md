@@ -38,4 +38,32 @@ External authentication methods are managed with the Entra ID Authentication met
 
 ### Create an external authentication method
  
-To create an external authentication method using the admin center, you will need the [required information from your external authentication provider](#required-information-from-your-external-authentication-provider). Open the Authentication methods policy, and select **Add external method**.
+To create an external authentication method using the admin center, you will need the [required information from your external authentication provider](#required-information-from-your-external-authentication-provider). 
+
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
+1. Browse to **Protection** > **Authentication methods** > **Add external method (Preview)**.
+
+   :::image type="content" border="true" source="./media/how-to-authentication-external-method-manage/add-external-method.png" alt-text="Screenshot of how to add an external authentication method in the Microsoft Entra admin center.":::
+
+   Add method properties based on configuration information from your provider. For example:
+   
+   - Name: Adatum
+   - Client ID: 06a011bd-ec92-4404-80fb-db6d5ada8ee2
+   - Discovery Endpoint: `https://adatum.com/.well-known/openid-configuration`
+   - App ID: 2f3d5a67-7441-4f1e-aa92-e77ca6b5a5ca
+
+   >[!IMPORTANT]
+   >The display name can't be changed after the method is created. Display names must be unique.
+
+   :::image type="content" border="true" source="./media/how-to-authentication-external-method-manage/method-properties.png" alt-text="Screenshot of how to add an external authentication method properties.":::
+
+If you have the required roles to grant consent for the provider’s application (Global Administrator or Privileged Role Administrator) then you can grant consent directly.  If you do not have the role required to grant admin consent, you can still save your authentication method but you will not be able to enable it until admin consent has been granted.
+
+After the input of the values from your provider, press the button to request for admin consent to be granted to the application so that it can read the required info from the user to authenticate correctly.  You will be shown a window asking you to login with an account with admin permissions and grant the provider’s application with the required permissions.
+
+After you login successfully, you should see the following window asking for permissions:
+
+## Next steps
+
+For more information about how to manage authentication methods, see [Manage authentication methods for Microsoft Entra ID](/entra/identity/authentication/concept-authentication-methods-manage)
