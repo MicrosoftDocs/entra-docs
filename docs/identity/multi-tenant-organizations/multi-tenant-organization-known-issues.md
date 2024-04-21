@@ -78,11 +78,23 @@ The constraints and details described in this article have the following scope.
 
 - Using Microsoft Entra cross-tenant synchronization to target hybrid identities that have been converted to B2B users has not been tested in source of authority conflicts and is not supported.
 
-## Origin tenant information
+## Origin tenant and origin user references
 
-- As part of a multitenant organization, B2B users receive an additional user property that includes the user's origin tenant information.
+- For supported clouds, multitenant organizations, and targets of cross-tenant synchronization, B2B users have a new user property named `originTenantInfo`.
 
-- B2B user objects have a `originTenantId` property that is either set to null or a valid value when the B2B user object is synchronized or shared in a multitenant organization. If your B2B user object is missing this property, [reset the redemption status for the user](../../external-id/reset-redemption-status.md) and then the user must redeem again to get the property.
+- The originTenantInfo property contains references to a B2B user's Microsoft Entra origin tenant and Microsoft Entra origin user by way of the `originTenantId` and `originId` properties.
+
+- These properties are only populated for B2B users after invitation redemption. They are not populated before invitation redemption, or whenever origin information may be unavailable.
+
+- For supported clouds, such as Microsoft Entra public cloud, all B2B users should have received intra-cloud references to origin tenant and origin user, subject to invitation redemption.
+
+- For multitenant organizations, all B2B users in any multitenant organization tenant receive these properties at time of multitenant organization formation, subject to invitation redemption.
+
+- For target users of cross-tenant synchronization, target users receive these properties at time of synchronization, subject to auto-redemption being enabled.
+
+- Multitenant organization collaboration workloads rely on these origin tenant and origin user references.
+
+- If your B2B user object is missing origin tenant and origin user references, [reset the redemption status](../../external-id/reset-redemption-status.md), and then redeem again to properly populate the origin tenant and origin user references.
 
 ## Cross-tenant synchronization deprovisioning
 
