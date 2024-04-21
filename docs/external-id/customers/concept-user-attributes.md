@@ -11,7 +11,7 @@ ms.date: 03/08/2024
 ms.author: mimart
 ms.custom: it-pro
 
-#Customer intent: As a developer, devops, IT admin, I want to learn about the built-in user profile attributes that I can collect from the user during sign-up, and how Microsoft Entra External ID for customers extends user profile attributes by using custom user attributes. 
+#Customer intent: As a developer, devops, IT admin, I want to learn about the built-in user profile attributes that I can collect from the user during sign-up, and how Microsoft Entra External ID extends user profile attributes by using custom user attributes. 
 ---
 
 # User profile attributes

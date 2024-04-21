@@ -16,7 +16,7 @@ ms.collection: M365-identity-device-management
 #customer intent: As a B2B collaboration administrator, I want to add Facebook as an identity provider for self-service sign-up user flows, so that users can sign in to applications using their Facebook accounts.
 ---
 
-# Add Facebook as an identity provider for External Identities
+# Add Facebook as an identity provider for External ID
 
 > [!TIP]
 > This article describes adding Facebook as an identity provider for B2B collaboration. If your tenant is configured for customer identity and access management, see [Add Facebook as an identity provider](customers/how-to-facebook-federation-customers.md) for customers.

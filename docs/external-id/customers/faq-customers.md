@@ -1,6 +1,6 @@
 ---
 title: Frequently asked questions
-description: Find answers to some of the most frequently asked questions about Microsoft Entra ID for customers. 
+description: Find answers to some of the most frequently asked questions about Microsoft Entra External ID. 
  
 author: msmimart
 manager: celestedg
@@ -13,9 +13,9 @@ ms.author: mimart
 ms.custom: it-pro
 ---
 
-# Microsoft Entra ID for customers frequently asked questions
+# Microsoft Entra External ID frequently asked questions
 
-This article answers frequently asked questions about Microsoft Entra ID for customers. This document offers guidance to help customers better understand Microsoft’s current external identities capabilities and the journey for our next generation platform (Microsoft Entra External ID).
+This article answers frequently asked questions about Microsoft Entra External ID. This document offers guidance to help customers better understand Microsoft’s current external identities capabilities and the journey for our next generation platform (Microsoft Entra External ID).
 
 This FAQ references customer identity and access management (CIAM). CIAM is an industry recognized category that covers solutions that manage identity, authentication, and authorization for external identity use cases (partners, customers, and citizens). Common functionality includes self-service capabilities, adaptive access, single sign-on (SSO), and bring your own identity (BYOI).
 
@@ -31,11 +31,11 @@ No, this isn't a new name for Azure AD B2C. Microsoft Entra External ID builds o
 
 ### What is the release date for Microsoft Entra External ID?  
 
-Microsoft Entra External ID (for customers) entered preview at Microsoft Build 2023. The existing B2B collaboration feature remains unchanged.
+Microsoft Entra External ID for external-facing apps entered preview at Microsoft Build 2023. The existing B2B collaboration feature remains unchanged.
 
 ### What is the pricing for Microsoft Entra External ID?
 
-Microsoft Entra External ID (for customers) is in preview, so no pricing details are available at this time. The pricing for existing B2B collaboration features is unchanged.
+Microsoft Entra External ID for external-facing apps is in preview, so no pricing details are available at this time. The pricing for existing B2B collaboration features is unchanged.
 
 ### How does Microsoft Entra External ID affect B2B collaboration?
 
@@ -51,7 +51,7 @@ We recognize the large investments in building and managing custom policies. We�
 
 ### I’ve heard I can preview the Microsoft Entra External ID platform. Where can I learn more?
 
-You can learn more about the preview and the features we're delivering on the new platform by visiting the Microsoft Entra ID for customers [developer center](https://aka.ms/ciam/dev).
+You can learn more about the preview and the features we're delivering on the new platform by visiting the Microsoft Entra External ID [developer center](https://aka.ms/ciam/dev).
 
 ### As a new customer, which solution is a better fit, Azure AD B2C or Microsoft Entra External ID (preview)?
 
@@ -75,4 +75,4 @@ Microsoft Entra External ID and Azure AD B2C are two separate platforms powered 
 
 ## Next steps
 
-[Learn more about Microsoft Entra ID for customers](index.yml)
+[Learn more about Microsoft Entra External ID](index.yml)

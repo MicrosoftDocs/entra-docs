@@ -54,8 +54,7 @@ Microsoft recommends securing access to any Microsoft admin portals like Microso
 
 After administrators confirm the settings using [report-only mode](howto-conditional-access-insights-reporting.md), they can move the **Enable policy** toggle from **Report-only** to **On**.
 
-## Next steps
+## Related content
 
-[Conditional Access templates](concept-conditional-access-policy-common.md)
-
-[Use report-only mode for Conditional Access to determine the results of new policy decisions.](concept-conditional-access-report-only.md)
+- [Microsoft Entra built-in roles](../role-based-access-control/permissions-reference.md)
+- [Conditional Access templates](concept-conditional-access-policy-common.md)

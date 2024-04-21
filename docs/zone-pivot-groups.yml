@@ -65,8 +65,6 @@ groups:
     title: Visual Studio
   - id: visual-studio-code
     title: Visual Studio Code
-  - id: azure-portal
-    title: Azure portal
 ############ END MICROSOFT IDENTITY PLATFORM
 ########### BEGIN APPLICATION MANAGEMENT
 # Owner(s):      jomondi, celested

@@ -1,5 +1,5 @@
 ---
-title: How to manage user profile information in the Microsoft Entra admin center
+title: How to manage user profile information
 description: Instructions for IT admins to learn how to manage a user's profile and settings in Microsoft Entra ID.
 author: shlipsey3
 manager: amycolannino
@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: how-to
-ms.date: 02/09/2024
+ms.date: 04/16/2024
 ms.author: sarahlipsey
 ms.reviewer: jeffsta
 
@@ -24,13 +24,14 @@ This article covers how to add user profile information, such as a profile pictu
 
 ## Prerequisites
 
-The required role of least privilege varies based on the type of user you're adding and if you need to assign Microsoft Entra roles at the same time. **Global Administrator** can create users and assign roles, but whenever possible you should use the least privileged role.
+The required role of least privilege varies based on the type of user you're adding and if you need to assign Microsoft Entra roles at the same time. Whenever possible you should use the least privileged role.
 
 | Task | Role |
 | -- | -- |
 | Create a new user | User Administrator |
 | Invite an external guest | Guest Inviter |
 | Assign Microsoft Entra roles | Privileged Role Administrator |
+| Manage all user settings | Global Administrator |
 
 ## Add or change profile information
 

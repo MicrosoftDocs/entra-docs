@@ -1,6 +1,6 @@
 ---
 title: Tutorial - Prepare an ASP.NET Core web app for authentication in an external tenant
-description: Learn how to prepare an ASP.NET Core web app for authentication with your Microsoft Entra ID for customers tenant.
+description: Learn how to prepare an ASP.NET Core web app for authentication with your external tenant.
 
 author: cilwerner
 ms.author: cwerner
@@ -11,12 +11,12 @@ ms.subservice: customers
 ms.custom: devx-track-dotnet
 ms.topic: tutorial
 ms.date: 05/23/2023
-#Customer intent: As a dev, DevOps, I want to learn about how to enable authentication in my own ASP.NET web app with Microsoft Entra ID for customers tenant.
+#Customer intent: As a dev, DevOps, I want to learn about how to enable authentication in my own ASP.NET web app with an external tenant.
 ---
 
 # Tutorial: Prepare an ASP.NET Core web app for authentication in an external tenant
 
-This tutorial is part 2 of a series that demonstrates how to build an ASP.NET Core web application and prepare it for authentication using the Microsoft Entra admin center. In [Part 1 of this series](./tutorial-web-app-dotnet-sign-in-prepare-tenant.md), you registered an application and configured user flows in your Microsoft Entra ID for customers tenant. This tutorial demonstrates how to create an ASP.NET Core web app, and configure it for authentication.
+This tutorial is part 2 of a series that demonstrates how to build an ASP.NET Core web application and prepare it for authentication using the Microsoft Entra admin center. In [Part 1 of this series](./tutorial-web-app-dotnet-sign-in-prepare-tenant.md), you registered an application and configured user flows in your external tenant. This tutorial demonstrates how to create an ASP.NET Core web app, and configure it for authentication.
 
 In this tutorial you'll;
 
@@ -102,7 +102,7 @@ The *HomeController.cs* file contains the code for the home page of the applicat
     using System.Diagnostics;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
-    using aspnet_webapp.Models;
+    using dotnetcore_webapp.Models;
     ```
 
 1. Additionally, add the `[Authorize]` attribute directly above the `HomeController` class definition.

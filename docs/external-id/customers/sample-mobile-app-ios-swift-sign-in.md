@@ -1,6 +1,6 @@
 ---
 title: Sign in users in sample iOS (Swift) mobile app 
-description: Learn how to authenticate users in a Microsoft Entra ID for customers tenant using a sample iOS (Swift) application.
+description: Learn how to authenticate users in an external tenant using a sample iOS (Swift) application.
 
 author: henrymbuguakiarie
 manager: mwongerapk
@@ -12,7 +12,7 @@ ms.subservice: customers
 ms.topic: sample
 ms.date: 04/04/2024
 ms.custom: developer
-#Customer intent: As a developer, I want to authenticate users from a sample iOS mobile app so that I can experience how Microsoft Entra ID for customers work.
+#Customer intent: As a developer, I want to authenticate users from a sample iOS mobile app so that I can experience how Microsoft Entra External ID works.
 ---
 
 # Sign in users in sample iOS (Swift) mobile app
@@ -30,7 +30,7 @@ In this article, you do the following tasks:
 ## Prerequisites  
 
 - <a href="https://developer.apple.com/xcode/resources/" target="_blank">Xcode</a>.
-- Microsoft Entra External ID for customers tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
+- An external tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
 
 ## Register an application
 

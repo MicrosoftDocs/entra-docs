@@ -1,6 +1,6 @@
 ---
 title: Custom home page for published apps - Microsoft Entra application proxy
-description: Covers the basics about Microsoft Entra application proxy connectors
+description: Covers the basics about Microsoft Entra private network connectors
 author: kenwith
 manager: amycolannino
 ms.service: entra-id

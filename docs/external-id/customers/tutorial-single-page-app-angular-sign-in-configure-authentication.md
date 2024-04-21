@@ -1,6 +1,6 @@
 ---
 title: "Tutorial: Handle authentication flows in an Angular SPA"
-description: Learn how to configure authentication for an Angular single-page app (SPA) with your Microsoft Entra External ID for customers tenant.
+description: Learn how to configure authentication for an Angular single-page app (SPA) with your external tenant.
 services: active-directory
 author: garrodonnell
 manager: CelesteDG
@@ -11,12 +11,12 @@ ms.subservice: customers
 ms.topic: tutorial
 ms.date: 10/27/2023
 
-#Customer intent: As a developer, I want to learn how to configure an Angular single-page app (SPA) to sign in and sign out users with my Microsoft Entra External ID for customers tenant.
+#Customer intent: As a developer, I want to learn how to configure an Angular single-page app (SPA) to sign in and sign out users with my external tenant.
 ---
 
 # Tutorial: Handle authentication flows in an Angular SPA
 
-This tutorial is part 3 of a series that demonstrates building an Angular single-page app (SPA) and preparing it for authentication. In [Part 2 of this series](./tutorial-single-page-app-angular-sign-in-prepare-app.md), you created an Angular SPA and prepared it for authentication with your Microsoft Entra External ID for customers tenant. In this tutorial, you'll learn how to handle authentication flows in your app by adding Microsoft Authentication Library (MSAL) components.
+This tutorial is part 3 of a series that demonstrates building an Angular single-page app (SPA) and preparing it for authentication. In [Part 2 of this series](./tutorial-single-page-app-angular-sign-in-prepare-app.md), you created an Angular SPA and prepared it for authentication with your external tenant. In this tutorial, you'll learn how to handle authentication flows in your app by adding Microsoft Authentication Library (MSAL) components.
 
 In this tutorial;
 

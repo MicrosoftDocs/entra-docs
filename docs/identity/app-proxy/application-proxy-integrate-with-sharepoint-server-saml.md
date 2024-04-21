@@ -33,7 +33,7 @@ This process requires two Enterprise Applications. One is a SharePoint on premis
 - A Microsoft Office Web Apps Server farm to properly launch Office files from the on premises SharePoint farm.
 - A [custom, verified domain](~/fundamentals/add-custom-domain.md) in the Microsoft Entra tenant. The verified domain must match the SharePoint URL suffix.
 - A Transport Layer Security (TLS) certificate is required. See the details in [custom domain publishing](./how-to-configure-custom-domain.md).
-- An application proxy connector installed and running on a machine within the corporate domain.
+- a private network connector installed and running on a machine within the corporate domain.
 
 The list includes more prerequisites.
 - On-premises Active Directory users must be synchronized with Microsoft Entra Connect, and must be configured to [sign in to Azure](~/identity/hybrid/connect/plan-connect-user-signin.md). 

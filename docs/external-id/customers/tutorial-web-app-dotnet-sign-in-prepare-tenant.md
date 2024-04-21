@@ -1,6 +1,6 @@
 ---
 title: "Tutorial: Prepare your external tenant to authenticate users in an ASP.NET Core web app"
-description: Learn how to configure your Microsoft Entra ID for customers tenant for authentication with an ASP.NET web application
+description: Learn how to configure your external tenant for authentication with an ASP.NET web application
 
 author: cilwerner
 manager: celestedg
@@ -11,12 +11,12 @@ ms.subservice: customers
 ms.custom: devx-track-dotnet
 ms.topic: tutorial
 ms.date: 05/23/2023
-#Customer intent: As a dev, DevOps, I want to learn about how to enable authentication in my own ASP.NET web app with Microsoft Entra ID for customers tenant
+#Customer intent: As a dev, DevOps, I want to learn about how to enable authentication in my own ASP.NET web app with an external tenant
 ---
 
 # Tutorial: Prepare your external tenant to authenticate users in an ASP.NET Core web app
 
-This tutorial series demonstrates how to build an ASP.NET Core web application and prepare it for authentication using the Microsoft Entra admin center. You'll use the [Microsoft Authentication Library for .NET](/entra/msal/dotnet/) and [Microsoft Identity Web](/dotnet/api/microsoft-authentication-library-dotnet/confidentialclient) libraries to authenticate your app with your Microsoft Entra ID for customers tenant. Finally, you'll run the application and test the sign-in and sign-out experiences.
+This tutorial series demonstrates how to build an ASP.NET Core web application and prepare it for authentication using the Microsoft Entra admin center. You'll use the [Microsoft Authentication Library for .NET](/entra/msal/dotnet/) and [Microsoft Identity Web](/dotnet/api/microsoft-authentication-library-dotnet/confidentialclient) libraries to authenticate your app with your external tenant. Finally, you'll run the application and test the sign-in and sign-out experiences.
 
 In this tutorial, you'll;
 
@@ -30,7 +30,7 @@ In this tutorial, you'll;
 
 ## Prerequisites
 
-- A Microsoft Entra ID for customers tenant. If you don't have one, [create a trial tenant](https://aka.ms/ciam-free-trial) or a [tenant with a subscription](./quickstart-tenant-setup.md) before you begin.
+- An external tenant. If you don't have one, [create a trial tenant](https://aka.ms/ciam-free-trial) or a [tenant with a subscription](./quickstart-tenant-setup.md) before you begin.
 - This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
     - Application Administrator
     - Application Developer

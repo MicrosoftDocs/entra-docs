@@ -33,12 +33,12 @@ Native authentication doesn't yet support federated identity providers such as s
 
 ## When to use native authentication
 
-When it comes to implementing authentication for mobile apps on External ID for customers, you have two options: 
+When it comes to implementing authentication for mobile apps on External ID, you have two options: 
 
 - Microsoft-hosted browser-delegated authentication.
 - Fully custom SDK based native authentication. 
 
-The approach you choose depends on your app’s specific requirements. While each app has unique authentication needs, there are some common considerations to keep in mind. Whether you choose native authentication or browser-delegated authentication, Microsoft Entra ID for customers supports both of them.
+The approach you choose depends on your app’s specific requirements. While each app has unique authentication needs, there are some common considerations to keep in mind. Whether you choose native authentication or browser-delegated authentication, Microsoft Entra External ID supports both of them.
 
 The following table compares the two authentication methods to help you decide then right option for your app.
 

@@ -21,9 +21,9 @@ Applications typically receive user role information as claims in a security tok
 
 ## App roles
 
-Microsoft Entra ID for customers allows you to define application roles for your application and assign those roles to users and groups. The roles you assign to a user or group define their level of access to the resources and operations in your application.
+Microsoft Entra External ID allows you to define application roles for your application and assign those roles to users and groups. The roles you assign to a user or group define their level of access to the resources and operations in your application.
 
-When Microsoft Entra ID for customers issues a security token for an authenticated user, it includes the names of the roles you've assigned the user or group in the security token's roles claim. An application that receives that security token in a request can then make authorization decisions based on the values in the roles claim.
+When Microsoft Entra External ID issues a security token for an authenticated user, it includes the names of the roles you've assigned the user or group in the security token's roles claim. An application that receives that security token in a request can then make authorization decisions based on the values in the roles claim.
 
 
 > [!TIP]
@@ -56,7 +56,7 @@ Though you can use app roles or groups for authorization, key differences betwee
 
 [!INCLUDE [ciam-security-group](./includes/access-control/add-security-group.md)]
 
-Microsoft Entra ID for customers can include a user's group membership information in tokens for use within applications. You learn how to add the group claim to tokens in [Assign users and groups to roles](#assign-users-and-groups-to-roles) section.
+Microsoft Entra External ID can include a user's group membership information in tokens for use within applications. You learn how to add the group claim to tokens in [Assign users and groups to roles](#assign-users-and-groups-to-roles) section.
 
 ## Declare roles for an application
 

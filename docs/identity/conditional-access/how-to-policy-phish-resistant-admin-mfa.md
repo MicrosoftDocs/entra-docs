@@ -78,8 +78,8 @@ Organizations can choose to include or exclude roles as they see fit.
 
 After administrators confirm the settings using [report-only mode](howto-conditional-access-insights-reporting.md), they can move the **Enable policy** toggle from **Report-only** to **On**.
 
-## Next steps
 
-[Conditional Access templates](concept-conditional-access-policy-common.md)
+## Related content
 
-[Use report-only mode for Conditional Access to determine the results of new policy decisions.](concept-conditional-access-report-only.md)
+- [Microsoft Entra built-in roles](../role-based-access-control/permissions-reference.md)
+- [Conditional Access templates](concept-conditional-access-policy-common.md)
