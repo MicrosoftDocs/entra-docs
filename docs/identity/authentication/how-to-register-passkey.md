@@ -42,27 +42,27 @@ For more information about enabling passkeys in Microsoft Authenticator, see [Ho
 
 1. If your organization allows saving a passkey to a security key:
    1. Choose **Security Key**.
-   2. Follow the guidance and insert or connect your security key when requested.
-   3. You're prompted to create or enter a PIN for your security key, then perform the required gesture for the key.
-   4. Upon completion, review any additional information from the security dialog, then tap Ok or Continue.
+   1. Follow the guidance and insert or connect your security key when requested.
+   1. You're prompted to create or enter a PIN for your security key, then perform the required gesture for the key.
+   1. Upon completion, review any additional information from the security dialog, then tap Ok or Continue.
 
 <!---
 
-1. If your organization allows saving a passkey to your mobile device: 
-   1. Choose **iPhone**, **iPad**, or **Android** device.
-   1. Open the camera on your device and scan the QR code shown.
+If your organization allows saving a passkey to your mobile device: 
+   Choose **iPhone**, **iPad**, or **Android** device.
+   Open the camera on your device and scan the QR code shown.
 
       :::image type="content" border="true" source="media/how-to-register-passkey-android-or-ios/camera.png" alt-text="Screenshot of the dialog where to store your passkey on your iOS or Android device.":::
 
-   1. In your camera, select the link to **Use a passkey** or **Save a passkey**.
+In your camera, select the link to **Use a passkey** or **Save a passkey**.
   
-   > [!NOTE]
-   > For quicker sign-in, Android allows you to remember some browsers and Windows devices after scanning the WebAuthn QR code. In such cases, instead of having to scan a QR code each time, the device will appear as a selectable option and you will receive a notification on your mobile device to continue the passkey authentication.
+> [!NOTE]
+> For quicker sign-in, Android allows you to remember some browsers and Windows devices after scanning the WebAuthn QR code. In such cases, instead of having to scan a QR code each time, the device will appear as a selectable option and you will receive a notification on your mobile device to continue the passkey authentication.
 
-   1. Follow the remaining prompts to connect your device and register your new passkey for your preferred passkey provider. 
+Follow the remaining prompts to connect your device and register your new passkey for your preferred passkey provider. 
 
-   > [!NOTE]
-   > Your organization may limit which passkey providers you can use. Select the option on your device as allowed by your organization.
+> [!NOTE]
+> Your organization may limit which passkey providers you can use. Select the option on your device as allowed by your organization.
 
 -->
 

@@ -33,7 +33,7 @@ To sign into your work or school account with a security key, follow these steps
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-ios/sign-in-user-name.png" alt-text="Screenshot of the sign-in with username.":::
 
-   If you most recently used a passkey to sign in, you're automatically prompted to sign in with a passkey. Otherwise, selectr **Other ways to sign in**, and then select **Face**, **fingerprint**, **PIN**, or **security key**.
+   If you most recently used a passkey to sign in, you're automatically prompted to sign in with a passkey. Otherwise, select **Other ways to sign in**, and then select **Face**, **fingerprint**, **PIN**, or **security key**.
 
    Alternatively, click **Sign-in options** to sign in more conveniently without having to enter a username. 
 
@@ -47,11 +47,11 @@ To sign into your work or school account with a security key, follow these steps
 
 <!---
 
-    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct/device-opens-security-window.png" alt-text="Screenshot showing that the device opens security window.":::
+  :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct/device-opens-security-window.png" alt-text="Screenshot showing that the device opens security window.":::
 
-1. Depending on how your admin has set up your organization's authentication options, you'll see a screen that looks similar to this one. Select **Next** to continue.
+Depending on how your admin has set up your organization's authentication options, you'll see a screen that looks similar to this one. Select **Next** to continue.
 
-    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct/sign-in-with-passkey.png" alt-text="Screenshot showing that options for signing in with a passkey.":::
+  :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct/sign-in-with-passkey.png" alt-text="Screenshot showing that options for signing in with a passkey.":::
 
 -->
 

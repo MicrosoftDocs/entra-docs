@@ -319,7 +319,7 @@ You can choose to attempt passkey registration from your computer or another mob
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/scan-code.png" alt-text="Screenshot of QR code for Android devices.":::
 
       > [!NOTE]
-> For quicker sign-in, Android allows you to remember some browsers and Windows devices after scanning the WebAuthn QR code. In such cases, instead of having to scan a QR code each time, the device will appear as a selectable option and you will receive a notification on your mobile device to continue the passkey authentication.
+      > For quicker sign-in, Android allows you to remember some browsers and Windows devices after scanning the WebAuthn QR code. In such cases, instead of having to scan a QR code each time, the device will appear as a selectable option and you will receive a notification on your mobile device to continue the passkey authentication.
 
 1. Your Android device should now connect over Bluetooth to the device you started registration with.
 

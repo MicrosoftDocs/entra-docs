@@ -40,7 +40,7 @@ The **Microsoft Authenticator** policy doesn't give you the option to enable pas
    - **Enforce attestation** to **No**
    - **Enforce key restrictions** to **Yes**
    - **Restrict specific keys** to **Allow**
-   5. Select **Microsoft Authenticator (preview)** if the checkbox is displayed in the admin center. This setting automatically populates the Authenticator app AAGUIDs for you in the key restriction list. Otherwise, you can manually add the following AAGUIDs to enable the Authenticator passkey preview:
+   - Select **Microsoft Authenticator (preview)** if the checkbox is displayed in the admin center. This setting automatically populates the Authenticator app AAGUIDs for you in the key restriction list. Otherwise, you can manually add the following AAGUIDs to enable the Authenticator passkey preview:
 
       - **Authenticator for Android:** de1e552d-db1d-4423-a619-566b625cdc84
       - **Authenticator for iOS:** 90a3ccdf-635c-4729-a248-9b709135078f
