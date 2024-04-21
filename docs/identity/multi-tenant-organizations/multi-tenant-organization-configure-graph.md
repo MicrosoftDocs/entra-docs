@@ -481,13 +481,7 @@ You can remove any member tenant, including your own. You can't remove owner ten
 
 ---
 
-## Step 6: Wait
-
-![Icon for the member tenant.](../../media/common/icons/entra-id-purple.png)<br/>**Member tenant**
-
-- To allow for asynchronous processing, wait a **minimum of 2 hours** between creation and joining a multitenant organization.
-
-## Step 7: Sign in to a member tenant
+## Step 6: Sign in to a member tenant
 
 ![Icon for the member tenant.](../../media/common/icons/entra-id-purple.png)<br/>**Member tenant**
 
@@ -527,7 +521,7 @@ The Cairo tenant created a multitenant organization and added the Berlin and Ath
 
 ---
 
-## Step 8: Join the multitenant organization
+## Step 7: Join the multitenant organization
 
 ![Icon for the member tenant.](../../media/common/icons/entra-id-purple.png)<br/>**Member tenant**
 
@@ -586,7 +580,7 @@ The Cairo tenant created a multitenant organization and added the Berlin and Ath
     AdditionalProperties : {[multiTenantOrgLabelType, none]}
     ```
 
-1. To allow for asynchronous processing, wait **up to 4 hours** before joining a multitenant organization is completed.
+1. To allow for asynchronous processing, wait **up to 2 hours** before joining a multitenant organization is completed.
 
 # [Microsoft Graph](#tab/ms-graph)
 
@@ -691,11 +685,11 @@ The Cairo tenant created a multitenant organization and added the Berlin and Ath
     }
     ```
 
-1. To allow for asynchronous processing, wait **up to 4 hours** before joining a multitenant organization is completed.
+1. To allow for asynchronous processing, wait **up to 2 hours** before joining a multitenant organization is completed.
 
 ---
 
-## Step 9: (Optional) Leave the multitenant organization
+## Step 8: (Optional) Leave the multitenant organization
 
 ![Icon for the member tenant.](../../media/common/icons/entra-id-purple.png)<br/>**Member tenant**
 
@@ -723,7 +717,7 @@ If your tenant is the only multitenant organization owner, you must designate a 
 
 ---
 
-## Step 10: (Optional) Delete the multitenant organization
+## Step 9: (Optional) Delete the multitenant organization
 
 ![Icon for the owner tenant.](../../media/common/icons/entra-id.png)<br/>**Owner tenant**
 
