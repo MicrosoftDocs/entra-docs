@@ -1,19 +1,19 @@
 ---
 title: Microsoft Entra multifactor authentication external method provider reference (Preview)
-description: Learn how to configure an external authentication method provider for Microsoft Entra multifactor authentication
+description: Learn how to configure an external authentication method (EAM) provider for Microsoft Entra multifactor authentication
 
 
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 04/19/2024
+ms.date: 04/22/2024
 
 ms.author: justinha
 author: justinha
 manager: amycolannino
 ms.reviewer: gregkmsft, msgustavosa
 
-# Customer intent: As an external identity provider (IdP) for Microsoft Entra ID, I want to learn how to configure an external authentication method for Entra ID tenants.
+# Customer intent: As an external identity provider (IdP) for Microsoft Entra ID, I want to learn how to configure an external authentication method (EAM) for Entra ID tenants.
 
 ---
 # Microsoft Entra multifactor authentication external method provider reference (Preview)
@@ -26,9 +26,9 @@ When a user signs in, that tenant's policies are evaluated. The authentication r
 
 The user’s authentication will be treated as having met the MFA requirement once Entra ID has validated that the first factor completed with Entra ID and the second factor completed with the external provider satisfy the requirement for two or more types of methods from "something you know", "something you have", "something you are."
 
-This document describes integration of authentication methods provided by external authentication providers, called external authentication methods, to satisfy the second factor, in addition to the built-in authentication methods. External authentication methods are added to Entra ID by the tenant admin.
+This document describes integration of authentication methods provided by external authentication providers, called external authentication methods (EAMs), to satisfy the second factor, in addition to the built-in authentication methods. EAMs are added to Entra ID by the tenant admin.
 
-External authentication methods are implemented on top of Open ID Connect. This implementation requires at least three publicly facing endpoints: 
+EAMs are implemented on top of Open ID Connect. This implementation requires at least three publicly facing endpoints: 
 
 - An Open ID Connect Discovery endpoint, described in [Discovery of provider metadata via OIDC Discovery](#discovery-of-provider-metadata)
 - A valid Open ID Connect authentication endpoint
@@ -39,8 +39,8 @@ The flow to satisfy authentication that includes an external method is as follow
 1. User attempts to sign in to an app that is protected by Entra ID, satisfies first factor (such as an Entra ID password).
 1. Entra ID determines that an additional factor needs to be satisfied, for example, by processing Conditional Access policies for the user’s tenant.
 1. User chooses the external auth method as second factor.
-1. Entra ID redirects the user's browser session to the external authentication method URL:
-   1. This URL is discovered from the discovery URL provisioned by the admin when creating the external authentication method.
+1. Entra ID redirects the user's browser session to the EAM URL:
+   1. This URL is discovered from the discovery URL provisioned by the admin when creating the EAM.
    1. The app provides an expired/near-expired token that contains information identifying the user and tenant.
 1. The external authentication provider validates that the token came from Entra ID and checks the contents of the token.
 1. The external authentication provider might optionally make a call to Microsoft Graph to fetch additional information about the user.
@@ -54,7 +54,7 @@ The flow to satisfy authentication that includes an external method is as follow
 
 ## Configure a new external authentication provider with Microsoft Entra ID
 
-An application representing the integration is required for external authentication methods to issue the id_token_hint.  This application can either be created in each tenant that will use the external provider or it can be created as single multi-tenant application that admins enabling the integration will consent for their tenant.  
+An application representing the integration is required for EAMs to issue the id_token_hint.  This application can either be created in each tenant that will use the external provider or it can be created as single multi-tenant application that admins enabling the integration will consent for their tenant.  
 
 Using a multi-tenant application reduces the liklihood of misconfiguration in each tenant and enables providers to make changes to metadata (for example, reply URLs) in one place, rather than requiring each tenant to make changes. To configure as a multi-tenant application, the provider admin must first:
 
@@ -79,10 +79,10 @@ Application ID | This will be used by the external identity provider as their ap
 Home page URL | The provider home page url. This is not used for anything but is required as part of application registration.
 Reply URLs | Valid redirect URLs for the provider. One of these should match the provider host URL that was set for the provider’s Entra ID tenant. One of the reply URLs registered must match the prefix of the authorization_endpoint that Entra ID will retrieve through OIDC discovery for the host url.
 
-An app per tenant is also a valid model to support the integration.  If using a single-tenant app registration than the tenant admin will create an app registration for a single-tenant application with the properties documented above.
+An app per tenant is also a valid model to support the integration. If using a single-tenant app registration than the tenant admin will create an app registration for a single-tenant application with the properties documented above.
 
 >[!NOTE]
->Admin consent for the application is required in the tenant that will use the external authentication method.  If this is not completed then the following error will be seen when attempting to use the external authentication method:
+>Admin consent for the application is required in the tenant that uses the EAM. If this isn't completed, the following error appears when attempting to use the EAM:
 >AADSTS900491: Service principal \<your App id> not found.
 
 ### Configure optional claims
@@ -92,7 +92,7 @@ If a provider needs upn or email claims for discovery, then you can configure th
 >[!NOTE]
 >The preceding steps need to be done for each cloud environment, whether the approach is a multi-tenant app or apps created per-tenant. For the public Azure and Azure US Government clouds, if a multi-tenant app is being used rather than an app per tenant, then a different application which includes AppId is required for each environment.
 
-##  Add an external authentication method to Entra ID
+##  Add an EAM to Entra ID
 
 External identity provider information will be stored in each tenant's authentication methods policy as an authentication method of externalAuthenticationMethodConfiguration type.  Each provider will have one entry in the list object of the policy, and per the authentication method framework, will have state of whether it’s enabled, include groups capable to use the method, and exclude groups that are not allowed to use the method.  
 
@@ -109,15 +109,15 @@ DiscoveryUrl | This is the host url of the external identity provider’s [OIDC 
 
 Each time Entra ID loads a ExternalAuthenticationMethodConfiguration entry, it will verify that the prefix of the **authorization_endpoint** retrieved through OIDC Discovery using the host url matches one of the reply URLs registered to the provider identified by the AppId. This verification ties the AppId to the HostUrl and ensures they go together.
 
-### Add an external authentication method by using Miccrosoft Graph
+### Add an EAM by using Miccrosoft Graph
 
-To add the external authentication method, the customer admin will need the values listed in the previous section  (**ExternalAuthenticationMethodConfiguration**: Name, AppId, ClientId, and DiscoveryUrl) and will call the Microsoft Graph authentication methods policy endpoint to POST a new configuration. Note that the user will need the Policy.ReadWrite.AuthenticationMethod permission to manage this policy.
+To add the EAM, the customer admin will need the values listed in the previous section  (**ExternalAuthenticationMethodConfiguration**: Name, AppId, ClientId, and DiscoveryUrl) and will call the Microsoft Graph authentication methods policy endpoint to POST a new configuration. Note that the user will need the Policy.ReadWrite.AuthenticationMethod permission to manage this policy.
 
 >[!IMPORTANT]
 >The method will be targeted to all users when created unless specific include targets are specified during creation. For more information about how to get group IDs so that you can specify them in the method creation, see [Groups overview](/graph/api/resources/groups-overview).
 
 >[!IMPORTANT]
->Users that are in scope for an external authentication method are considered MFA-capable during the initial preview.  If the user does not have other methods registered to satisfy second factor and the user is unable to use the method, for example because they have not yet registered the with the external provider, then the user will not be able to satisfy sign-ins requiring MFA.  This includes managing the security information for the user, such as registering additional authentication methods.
+>Users that are in scope for an EAM are considered MFA-capable during the initial preview.  If the user does not have other methods registered to satisfy second factor and the user is unable to use the method, for example because they have not yet registered the with the external provider, then the user will not be able to satisfy sign-ins requiring MFA.  This includes managing the security information for the user, such as registering additional authentication methods.
 >
 > Support for registration will be added during the preview.  When it is added, any users that have already been using the method will have to register the method with Entra ID.  If they do not have other methods registered to satisfy MFA, the user will need to register the method on next sign-in.  If the user has other methods, they will need to use MySignIns to register the method so that it is available to them again for satisfying MFA requirements.
 
@@ -151,21 +151,21 @@ HTTP/1.1 201 CREATED
 }
 ```
 
-### Add an external authentication method by using Entra admin center
+### Add an EAM by using Entra admin center
 
-To add the external authentication method, the customer admin will need the values listed previously (**ExternalAuthenticationMethodConfiguration**: Name, AppId, ClientId, and DiscoveryUrl). These values will be updated in the Entra admin center authentication methods policy (**Security** > **Authentication methods** > **Policies**), after selecting to add an external authentication method.
+To add the EAM, the customer admin will need the values listed previously (**ExternalAuthenticationMethodConfiguration**: Name, AppId, ClientId, and DiscoveryUrl). These values will be updated in the Entra admin center authentication methods policy (**Security** > **Authentication methods** > **Policies**), after selecting to add an EAM.
 
-:::image type="content" source="./media/how-to-authentication-external-method-manage/add-external-method.png" alt-text="Screenshot of how to add an external authentication method.":::
+:::image type="content" source="./media/how-to-authentication-external-method-manage/add-external-method.png" alt-text="Screenshot of how to add an EAM.":::
 
 :::image type="content" source="./media/how-to-authentication-external-method-manage/method-properties.png" alt-text="Screenshot of external method properties.":::
 
 ### Grant consent for the provider’s application
 
-The administrator for the tenant must grant consent for the application represented by the AppID to be added to their tenant. This requires either Global Administrator or Privileged Role Administrator permissions. If the external authentication method is being added to the tenant via the Entra admin center, then the admin will be prompted to consent the application as part of adding the method, and will not be enabled until the app has the required permissions in the tenant. If the method is added via API, the admin will need to ensure that the method is not set to enabled until the application has been consented.
+The administrator for the tenant must grant consent for the application represented by the AppID to be added to their tenant. This requires either Global Administrator or Privileged Role Administrator permissions. If the EAM is being added to the tenant via the Entra admin center, then the admin will be prompted to consent the application as part of adding the method, and will not be enabled until the app has the required permissions in the tenant. If the method is added via API, the admin will need to ensure that the method is not set to enabled until the application has been consented.
 
-Providers can also create an experience that adds the multi-tenant application into the customer tenant and enables the admin to grant consent to the app. Admins should complete this step prior to adding the external authentication method in the Entra ID authentication methods policy.
+Providers can also create an experience that adds the multi-tenant application into the customer tenant and enables the admin to grant consent to the app. Admins should complete this step prior to adding the EAM in the Entra ID authentication methods policy.
 
-### Get and update the external authentication method by using Microsoft Graph
+### Get and update the EAM by using Microsoft Graph
 
 Use the following call to get the configuration:
 
@@ -231,8 +231,8 @@ HTTP/1.1 200 OK
 }
 ```
 
-### Delete an external authentication method
-If you no longer want your users to be able to use the external authentication method, you can either update the state to disabled as described previously, or you can delete the method. In the following example, the method is deleted by using Microsoft Graph:
+### Delete an EAM
+If you no longer want your users to be able to use the EAM, you can either update the state to disabled as described previously, or you can delete the method. In the following example, the method is deleted by using Microsoft Graph:
 
 ```json
 DELETE https://graph.microsoft.com/beta/policies/authenticationMethodsPolicy/authenticationMethodConfigurations/b3107ab7-68c7-4553-a167-48c8c2c24d52
@@ -244,7 +244,7 @@ HTTP/1.1 204 NO CONTENT
 
 ### Discovery of provider metadata 
 
-An external identity provider will need to provide an [OIDC Discovery endpoint](http://openid.net/specs/openid-connect-discovery-1_0.html#ProviderConfig). This endpoint will be used to retrieve additional configuration data. The *full* URL, including .*well-known*/*oidc-configuration*, must be included in the Discovery URL configured when creating the external authentication method. The endpoint will return a Provider Metadata [JSON document](http://openid.net/specs/openid-connect-discovery-1_0.html#ProviderMetadata) hosted there. The endpoint must also return the valid content-length header.
+An external identity provider will need to provide an [OIDC Discovery endpoint](http://openid.net/specs/openid-connect-discovery-1_0.html#ProviderConfig). This endpoint will be used to retrieve additional configuration data. The *full* URL, including .*well-known*/*oidc-configuration*, must be included in the Discovery URL configured when creating the EAM. The endpoint will return a Provider Metadata [JSON document](http://openid.net/specs/openid-connect-discovery-1_0.html#ProviderMetadata) hosted there. The endpoint must also return the valid content-length header.
 
 The following table lists the data that should be present in the metadata of the provider. The JSON metadata document may contain additional information in addition to these fields that are required for this extensibility scenario.
 The OIDC document specifying the values for Provider Metadata can be found at [Provider Metadata](http://openid.net/specs/openid-connect-discovery-1_0.html#ProviderMetadata).
@@ -362,7 +362,7 @@ The Authentication request parameters are listed in the following table.
 |scope                           | openid |             |
 |response_type                   | Id_token |The value used for the implicit flow. |
 |response_mode                   | form_post | We’ll use form post to avoid issues with large URLs. We expect all the parameters to be sent in the body of the request.|
-|client_id                       |        | The client id given to Entra ID by the external identity provider, such as "ABCD". For more information, see [External authentication method description]().|
+|client_id                       |        | The client id given to Entra ID by the external identity provider, such as "ABCD". For more information, see [External authentication method description](#add-an-eam-to-entra-id).|
 |redirect_url                    |        | The redirection URI to which the response (id_token_hint) will be sent by the external identity provider.
 See an [example](#example-of-a-redirection-uri) after this table. |
 | nonce |               | A random string generated by Entra ID – can be the session id. If provided, it would need to be returned in the response back to Entra ID. |
@@ -383,9 +383,9 @@ This should have been registered with the provider off-band. The redirect URIs t
 - Azure China 21Vianet: `https://login.partner.microsoftonline.cn/common/federation/externalauthprovider`
 
 
-#### Example of an external authentication method that satisfies MFA
+#### Example of an EAM that satisfies MFA
 
-Here is an example of this (decoded) for an authentication where external authentication method will satisfy MFA.
+Here is an example of this (decoded) for an authentication where EAM will satisfy MFA.
 
 This example helps a provider know what claims Entra ID expects.  
 
@@ -595,22 +595,22 @@ Trace ID: 01c2cd09-8997-45bf-bfe4-18fdf9d1a101
 Timestamp: 2023-07-24 16:51:34Z
 
 
-## Custom controls and external authentication methods
+## Custom controls and EAMs
 
-In Entra ID, external authentication methods and Conditional Access custom controls can operate in parallel while customers prepare for and migrate to external authentication methods.
+In Entra ID, EAMs and Conditional Access custom controls can operate in parallel while customers prepare for and migrate to EAMs.
 
 Customers that are currently using an integration with an external provider via custom controls can continue to use the custom control and any configured Conditional Access policies to manage their authentication requirements for resources. Admins are recommended to create parallel set of Conditional Access policies during this migration period:
 
 - The policies should use the **Require multifactor authentication** grant control instead of the Custom Control grant.  
 
    >[!NOTE]
-   >Grant controls based on authentication strengths, including the built-in MFA strength, will not be satisfied by the external authentication method. Policies should only be configured with **Require multifactor authentication**. Authentication strengths support for external authentication methods will be added later.
+   >Grant controls based on authentication strengths, including the built-in MFA strength, will not be satisfied by the EAM. Policies should only be configured with **Require multifactor authentication**. Authentication strengths support for EAMs will be added later.
 
-- The new policy can be tested first with a subset of users. The test group would be excluded from the policy that requires the custom controls and included in the policy that requires multifactor authentication. Once the admin is comfortable with the policy requiring multifactor authentication and being satisified via the external authentication method, all required users can be included in the policy with the multifactor authentication grant, and the policy configured for custom controls can be moved to "off". 
+- The new policy can be tested first with a subset of users. The test group would be excluded from the policy that requires the custom controls and included in the policy that requires multifactor authentication. Once the admin is comfortable with the policy requiring multifactor authentication and being satisified via the EAM, all required users can be included in the policy with the multifactor authentication grant, and the policy configured for custom controls can be moved to "off". 
 
 ## Integration support
 
-If you have any issues building your external authentication methods integration with Entra ID, the Microsoft Customer Experience Engineering (CxE) ISV team may be able to assist. To engage with the CxE ISV team, submit a [request for assistance](https://aka.ms/EAMProviderSupport).
+If you have any issues building your EAMs integration with Entra ID, the Microsoft Customer Experience Engineering (CxE) ISV team may be able to assist. To engage with the CxE ISV team, submit a [request for assistance](https://aka.ms/EAMProviderSupport).
 
 ## References
 
