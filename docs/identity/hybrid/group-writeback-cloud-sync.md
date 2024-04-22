@@ -18,7 +18,7 @@ With the release of provisioning agent [1.1.1370.0](cloud-sync/reference-version
 
  :::image type="content" source="media/common-scenarios/group-writeback-1.png" alt-text="Diagram of group writeback with cloud sync." lightbox="media/common-scenarios/group-writeback-1.png":::
 
-[!VIDEO https://www.youtube.com/embed/C6XXlSVaIeo]
+[!VIDEO https://aka.ms/GroupProvisiontoADVideo]
 
 [!INCLUDE [deprecation](~/includes/gwb-v2-deprecation.md)]
 
