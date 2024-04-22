@@ -20,7 +20,7 @@ In this guide, you explore a Python Django web app that is secured by Microsoft 
 
 * [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 * [Python 3+](https://www.python.org/).
-* An external tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>..
+* An external tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
 
 ## Register the web app
 
@@ -90,7 +90,7 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 
 ## Configure the sample web app
 
-1. Open your project files on Visual Studio Code or the editor you are using.
+1. Open your project files on Visual Studio Code or the editor you're using.
 
 1. Create an *.env* file in the root folder of the project using *.env.sample* file as a guide.
 
@@ -126,7 +126,7 @@ Run the app to see the sign-in experience at play.
 
 1. On the sign-in page, type your **Email address**, select **Next**, type your **Password**, then select **Sign in**. If you don't have an account, select **No account? Create one** link, which starts the sign-up flow.
 
-1. If you choose the sign-up option, you'll go through the sign-uo flow. Fill in your email, one-time passcode, new password and more account details to complete the whole sign-up flow.
+1. If you choose the sign-up option, you'll go through the sign-uo flow. Fill in your email, one-time passcode, new password, and more account details to complete the whole sign-up flow.
 
 1. After you sign in or sign up, you're redirected back to the web app. You'll see a page that looks similar to the following screenshot:
 

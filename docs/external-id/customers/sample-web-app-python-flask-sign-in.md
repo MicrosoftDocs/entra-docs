@@ -91,16 +91,14 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 
 ## Configure the sample web app
 
-1. Open your project files on Visual Studio Code or the editor you are using.
+1. Open your project files on Visual Studio Code or the editor you're using.
 
 1. Create an *.env* file in the root folder of the project using *.env.sample* file as a guide.
 
 1. In your *.env* file, provide the following environment variables:
 
     - `CLIENT_ID` which is the Application (client) ID of the app you registered earlier.
-
     - `CLIENT_SECRET` which is the app secret value you copied earlier.
-  
     - `AUTHORITY` which is the URL that identifies a token authority. It should be of the format *https://{subdomain}.ciamlogin.com/{subdomain}.onmicrosoft.com*. Replace *subdomain* with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant subdomain, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
 
 1. Confirm that the redirect URI is well configured. The redirect URI you registered earlier should match your configuration. This sample by default sets the redirect URI path to `/getAToken`. This is configured in the *app_config.py* file as *REDIRECT_PATH*.
