@@ -21,7 +21,7 @@ title: |
 introduction: |
   Microsoft Entra ID allows you to create several types of users in your tenant, which provides greater flexibility in how you manage your organization's users.
 
-  This article explains how to create a new user, invite an external guest, and delete a user in your tenant.
+  This article explains how to create a new user, invite an external guest, and delete a user in your workforce tenant. It also explains how to create external users in an external tenant for [Microsoft Entra External ID](~/external-id/customers/overview-customers-ciam.md) scenarios.
 
   [!INCLUDE [GDPR-related guidance](~/../azure-docs-pr/includes/gdpr-hybrid-note.md)]
 
@@ -61,11 +61,11 @@ procedureSection:
       A Microsoft Entra tenant in an *external* configuration is used exclusively for [Microsoft Entra External ID](~/external-id/customers/overview-customers-ciam.md) scenarios. An external tenant can include the following user types.
     steps: 
       - |
-        **Internal user**: These users authenticate internally, and are typically admins with assigned [Microsoft Entra roles](~identity/role-based-access-control/permissions-reference.md) in your external tenant.
+        **Internal user**: These users authenticate internally, and are typically admins with assigned [Microsoft Entra roles](~/identity/role-based-access-control/permissions-reference.md) in your external tenant.
       - |  
         **External user**: These users are consumers and business customers of the apps registered in your external tenant. They have a local account with [default user privileges](~/external-id/customers/reference-user-permissions.md), but authenticate externally. See how to [create a new external user](#create-a-new-external-user).
       - |  
-        **External guest**:  These users sign in with their own external credentials and are typically admins with assigned [Microsoft Entra roles](~identity/role-based-access-control/permissions-reference.md) in your external tenant.
+        **External guest**:  These users sign in with their own external credentials and are typically admins with assigned [Microsoft Entra roles](~/identity/role-based-access-control/permissions-reference.md) in your external tenant.
 
         For more information, see [Default user permissions](~/external-id/customers/reference-user-permissions.md) for external tenants.
   - title: |
