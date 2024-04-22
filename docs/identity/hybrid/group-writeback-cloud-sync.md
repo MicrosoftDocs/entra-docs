@@ -14,14 +14,19 @@ ms.author: billmath
 
 # Group writeback with Microsoft Entra Cloud Sync
 
-With the release of provisioning agent [1.1.1370.0](cloud-sync/reference-version-history.md#1113700), cloud sync now has the ability to perform group writeback. This feature means that cloud sync can provision groups directly to your on-premises Active Directory environment. 
+With the release of provisioning agent [1.1.1370.0](cloud-sync/reference-version-history.md#1113700), cloud sync now has the ability to perform group writeback. This feature means that cloud sync can provision groups directly to your on-premises Active Directory environment.  You can also now use identity governance features to govern access to AD-based applications, such as by including a [group in an entitlement management access package](../../id-governance/entitlement-management-group-writeback.md).
 
  :::image type="content" source="media/common-scenarios/group-writeback-1.png" alt-text="Diagram of group writeback with cloud sync." lightbox="media/common-scenarios/group-writeback-1.png":::
 
- You can also now use identity governance features to govern access to AD-based applications, such as by including a [group in an entitlement management access package](../../id-governance/entitlement-management-group-writeback.md).
+
+
+
+
+
+## Watch the video
+For a great overview of cloud sync group provisioning to Active directory, check out the video below.
 
 > [!VIDEO https://www.youtube.com/embed/C6XXlSVaIeo]
-
 
 [!INCLUDE [deprecation](~/includes/gwb-v2-deprecation.md)]
 
