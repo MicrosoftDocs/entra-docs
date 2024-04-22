@@ -18,14 +18,14 @@ ms.reviewer: gregkmsft, msgustavosa
 ---
 # Manage an external authentication method in Microsoft Entra ID (Preview)
 
-External authentication methods enable users to use an external provider when satisfying multifactor authentication requirements when signing in with Entra ID. External authentication methods enable users to satisfy MFA requirements from Conditional Access policies, Identity Protection sign-in risk policies, Privileged Identity Management (PIM) activation, and when the application itself requires MFA. 
+An external authentication method (EAM) lets users choose an external provider to meet multifactor authentication (MFA) requirements when they sign to Microsoft Entra ID. External authentication methods satisfy MFA requirements from Conditional Access policies, Identity Protection sign-in risk policies, Privileged Identity Management (PIM) activation, and when the application itself requires MFA. 
 
-External authentication methods differ from federation in that the user identity is originated and managed in Entra ID. With federation, the identity is managed in the external identity provider.
+EAMs differ from federation in that the user identity is originated and managed in Entra ID. With federation, the identity is managed in the external identity provider.
 
 :::image type="content" source="./media/concept-authentication-external-method-provider/how-external-method-authentication-works.png" alt-text="Diagram of how external method authentication works.":::
 
 ## Required information from your external authentication provider
-Before creating the method, you will need the following information from your external authentication provider:
+To create an EAM, you need the following information from your external authentication provider:
 
 - An **Application ID** is generally a multitenant application from your provider, which is used as part of the integration. You need to provide admin consent for this application in your tenant.
 - A **Client ID** is an identifier from your provider used as part of the authentication integration to identify Entra ID requesting authentication.  
