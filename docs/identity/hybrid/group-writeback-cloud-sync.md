@@ -18,9 +18,7 @@ With the release of provisioning agent [1.1.1370.0](cloud-sync/reference-version
 
  :::image type="content" source="media/common-scenarios/group-writeback-1.png" alt-text="Diagram of group writeback with cloud sync." lightbox="media/common-scenarios/group-writeback-1.png":::
 
-
-
-
+[!VIDEO https://www.youtube.com/embed/vq9LuCM4YP4]
 
 [!INCLUDE [deprecation](~/includes/gwb-v2-deprecation.md)]
 
@@ -28,7 +26,7 @@ With the release of provisioning agent [1.1.1370.0](cloud-sync/reference-version
 
 [!INCLUDE [pre-requisites](includes/gpad-prereqs.md)]
 
-[!VIDEO https://www.youtube.com/embed/C6XXlSVaIeo]
+
 
 
 ## Supported scenarios for group writeback with Microsoft Entra Cloud Sync
