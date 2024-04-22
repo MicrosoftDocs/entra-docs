@@ -417,6 +417,8 @@ items:
       href: reference-user-permissions.md
     - name: Group and application roles support
       href: reference-group-app-roles-support.md
+    - name: Data residency
+      href: ~/fundamentals/data-residency.md
     - name: Company branding CSS template reference guide
       href: ~/fundamentals/reference-company-branding-css-template.md
     - name: Help and support options

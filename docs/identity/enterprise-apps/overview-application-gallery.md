@@ -60,7 +60,7 @@ On-premises applications are connected to Microsoft Entra ID using Microsoft Ent
 
 - Configure Application Proxy to enable remote access to an on-premises application.
 - Use the documentation to learn more about how to use Application Proxy to secure remote access to on-premises applications.
-- Manage any Application Proxy connectors that you created.
+- Manage any private network connectors that you created.
 
 :::image type="content" source="media/overview-application-gallery/on-premises-applications.png" alt-text="Screenshot showing the on-premises application options on the Microsoft Entra application gallery pane in the Microsoft Entra admin center.":::
 

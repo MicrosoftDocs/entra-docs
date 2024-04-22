@@ -39,7 +39,7 @@ The following options are available to include when creating a Conditional Acces
          - Other external users, or users not represented by the other user type selections
       - One or more tenants can be specified for the selected user type(s), or you can specify all tenants. 
    - Directory roles
-      - Allows administrators to select specific [built-in Microsoft Entra directory roles](~/identity/role-based-access-control/permissions-reference.md) used to determine policy assignment. For example, organizations might create a more restrictive policy on users actively assigned the Global Administrator role. Other role types aren't supported, including administrative unit-scoped roles and custom roles.
+      - Allows administrators to select specific [built-in directory roles](../role-based-access-control/permissions-reference.md) used to determine policy assignment. For example, organizations might create a more restrictive policy on users actively assigned a privileged role. Other role types aren't supported, including administrative unit-scoped roles and custom roles.
          - Conditional Access allows administrators to select some [roles that are listed as deprecated](../role-based-access-control/permissions-reference.md#deprecated-roles). These roles still appear in the underlying API and we allow administrators to apply policy to them.
    - Users and groups
       - Allows targeting of specific sets of users. For example, organizations can select a group that contains all members of the HR department when an HR app is selected as the cloud app. A group can be any type of user group in Microsoft Entra ID, including dynamic or assigned security and distribution groups. Policy is applied to nested users and groups.
@@ -74,7 +74,7 @@ The following options are available to exclude when creating a Conditional Acces
        - Other external users, or users not represented by the other user type selections
     - One or more tenants can be specified for the selected user type(s), or you can specify all tenants.
 - Directory roles
-   - Allows administrators to select specific Microsoft Entra directory roles used to determine assignment. For example, organizations might create a more restrictive policy on users assigned the Global Administrator role.
+   - Allows administrators to select specific Microsoft Entra directory roles used to determine assignment. For example, organizations might create a more restrictive policy on users assigned the [Global Administrator](../role-based-access-control/permissions-reference.md#global-administrator) role.
 - Users and groups
    - Allows targeting of specific sets of users. For example, organizations can select a group that contains all members of the HR department when an HR app is selected as the cloud app. A group can be any type of group in Microsoft Entra ID, including dynamic or assigned security and distribution groups. Policy is applied to nested users and groups.
 

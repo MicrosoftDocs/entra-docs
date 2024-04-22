@@ -1,6 +1,6 @@
 ---
 title: Sign-in risk-based multifactor authentication
-description: Create Conditional Access policies using Identity Protection sign-in risk
+description: Create Conditional Access policies using Microsoft Entra ID Protection sign-in risk
 
 ms.service: entra-id
 ms.subservice: conditional-access
@@ -18,7 +18,7 @@ Most users have a normal behavior that can be tracked, when they fall outside of
 
 A sign-in risk represents the probability that a given authentication request isn't authorized by the identity owner. Organizations with Microsoft Entra ID P2 licenses can create Conditional Access policies incorporating [Microsoft Entra ID Protection sign-in risk detections](~/id-protection/concept-identity-protection-risks.md). 
 
-There are two locations where this policy may be configured, Conditional Access and Identity Protection. Configuration using a Conditional Access policy is the preferred method providing more context including enhanced diagnostic data, report-only mode integration, Graph API support, and the ability to utilize other Conditional Access attributes like sign-in frequency in the policy.
+There are two locations where this policy may be configured, Conditional Access and Microsoft Entra ID Protection. Configuration using a Conditional Access policy is the preferred method providing more context including enhanced diagnostic data, report-only mode integration, Graph API support, and the ability to utilize other Conditional Access attributes like sign-in frequency in the policy.
 
 The Sign-in risk-based policy protects users from registering MFA in risky sessions. If users aren't registered for MFA, their risky sign-ins are blocked, and they see an AADSTS53004 error.
 

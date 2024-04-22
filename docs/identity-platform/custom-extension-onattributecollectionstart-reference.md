@@ -1,5 +1,5 @@
 ---
-title: OnAttributeCollectionStart reference
+title: Custom Extension OnAttributeCollectionStart event reference (preview)
 description: Reference documentation for a custom authentication extension that invokes the OnAttributeCollectionStart event for External ID customer configurations.
 author: msmimart
 manager: CelesteDG
@@ -12,7 +12,7 @@ titleSuffix: Microsoft identity platform
 #customer intent: As a developer creating a custom authentication extension for user sign-up flows, I want to understand the REST API schema for the OnAttributeCollectionStart event, so that I can design and implement my own REST API to handle attribute collection requests and responses before the user enters attributes.
 ---
 
-# Custom Extension for OnAttributeCollectionStart event (preview)
+# Custom Extension for OnAttributeCollectionStart event reference (preview)
 
 **Applies to:** Microsoft Entra External ID customer configurations
 
@@ -52,12 +52,12 @@ POST https://exampleAzureFunction.azureWebsites.net/api/functionName
 
 {
   "type": "microsoft.graph.authenticationEvent.attributeCollectionStart",
-  "source": "/tenants/30000000-0000-0000-0000-000000000003/applications/<resourceAppguid>",
+  "source": "/tenants/aaaabbbb-0000-cccc-1111-dddd2222eeee/applications/<resourceAppguid>",
   "data": {
     "@odata.type": "microsoft.graph.onAttributeCollectionStartCalloutData",
-    "tenantId": "30000000-0000-0000-0000-000000000003",
-    "authenticationEventListenerId": "10000000-0000-0000-0000-000000000001",
-    "customAuthenticationExtensionId": "10000000-0000-0000-0000-000000000002",
+    "tenantId": "aaaabbbb-0000-cccc-1111-dddd2222eeee",
+    "authenticationEventListenerId": "00001111-aaaa-2222-bbbb-3333cccc4444",
+    "customAuthenticationExtensionId": "11112222-bbbb-3333-cccc-4444dddd5555",
     "authenticationContext": {
         "correlationId": "<GUID>",
         "client": {

@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 01/26/2024
+ms.date: 04/15/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
 
@@ -35,7 +35,7 @@ To use this feature, you need:
 
 - An Azure subscription. If you don't have an Azure subscription, you can [sign up for a free trial](https://azure.microsoft.com/free/).
 - A Microsoft Entra ID P1 or P2 tenant.
-- **Global Administrator** or **Security Administrator** access for the Microsoft Entra tenant.
+- **Security Administrator** access for the Microsoft Entra tenant.
 - A **Log Analytics workspace** in your Azure subscription. Learn how to [create a Log Analytics workspace](/azure/azure-monitor/logs/quick-create-workspace).
 - Permission to access data in a Log Analytics workspace. See [Manage access to log data and workspaces in Azure Monitor](/azure/azure-monitor/logs/manage-access) for information on the different permission options and how to configure permissions.
 

@@ -168,12 +168,12 @@ This role also grants the ability to consent for delegated permissions and appli
 > | microsoft.directory/applications/synchronization/standard/read | Read provisioning settings associated with the application object |
 > | microsoft.directory/applicationTemplates/instantiate | Instantiate gallery applications from application templates |
 > | microsoft.directory/auditLogs/allProperties/read | Read all properties on audit logs, excluding custom security attributes audit logs |
-> | microsoft.directory/connectors/create | Create application proxy connectors |
-> | microsoft.directory/connectors/allProperties/read | Read all properties of application proxy connectors |
-> | microsoft.directory/connectorGroups/create | Create application proxy connector groups |
-> | microsoft.directory/connectorGroups/delete | Delete application proxy connector groups |
-> | microsoft.directory/connectorGroups/allProperties/read | Read all properties of application proxy connector groups |
-> | microsoft.directory/connectorGroups/allProperties/update | Update all properties of application proxy connector groups |
+> | microsoft.directory/connectors/create | Create private network connectors |
+> | microsoft.directory/connectors/allProperties/read | Read all properties of private network connectors |
+> | microsoft.directory/connectorGroups/create | Create private network connector groups |
+> | microsoft.directory/connectorGroups/delete | Delete private network connector groups |
+> | microsoft.directory/connectorGroups/allProperties/read | Read all properties of private network connector groups |
+> | microsoft.directory/connectorGroups/allProperties/update | Update all properties of private network connector groups |
 > | microsoft.directory/customAuthenticationExtensions/allProperties/allTasks | Create and manage custom authentication extensions<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/deletedItems.applications/delete | Permanently delete applications, which can no longer be restored |
 > | microsoft.directory/deletedItems.applications/restore | Restore soft deleted applications to original state |
@@ -1095,12 +1095,12 @@ This is a [privileged role](privileged-roles-permissions.md). Users with this ro
 > | microsoft.directory/authorizationPolicy/allProperties/allTasks | Manage all aspects of authorization policy<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/bitlockerKeys/key/read | Read bitlocker metadata and key on devices<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/cloudAppSecurity/allProperties/allTasks | Create and delete all resources, and read and update standard properties in Microsoft Defender for Cloud Apps |
-> | microsoft.directory/connectors/create | Create application proxy connectors |
-> | microsoft.directory/connectors/allProperties/read | Read all properties of application proxy connectors |
-> | microsoft.directory/connectorGroups/create | Create application proxy connector groups |
-> | microsoft.directory/connectorGroups/delete | Delete application proxy connector groups |
-> | microsoft.directory/connectorGroups/allProperties/read | Read all properties of application proxy connector groups |
-> | microsoft.directory/connectorGroups/allProperties/update | Update all properties of application proxy connector groups |
+> | microsoft.directory/connectors/create | Create private network connectors |
+> | microsoft.directory/connectors/allProperties/read | Read all properties of private network connectors |
+> | microsoft.directory/connectorGroups/create | Create private network connector groups |
+> | microsoft.directory/connectorGroups/delete | Delete private network connector groups |
+> | microsoft.directory/connectorGroups/allProperties/read | Read all properties of private network connector groups |
+> | microsoft.directory/connectorGroups/allProperties/update | Update all properties of private network connector groups |
 > | microsoft.directory/contacts/allProperties/allTasks | Create and delete contacts, and read and update all properties |
 > | microsoft.directory/contracts/allProperties/allTasks | Create and delete partner contracts, and read and update all properties |
 > | microsoft.directory/customAuthenticationExtensions/allProperties/allTasks | Create and manage custom authentication extensions<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
@@ -1315,8 +1315,8 @@ Users with this role **cannot** do the following:
 > | microsoft.directory/authorizationPolicy/standard/read | Read standard properties of authorization policy |
 > | microsoft.directory/bitlockerKeys/key/read | Read bitlocker metadata and key on devices<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/cloudAppSecurity/allProperties/read | Read all properties for Defender for Cloud Apps |
-> | microsoft.directory/connectors/allProperties/read | Read all properties of application proxy connectors |
-> | microsoft.directory/connectorGroups/allProperties/read | Read all properties of application proxy connector groups |
+> | microsoft.directory/connectors/allProperties/read | Read all properties of private network connectors |
+> | microsoft.directory/connectorGroups/allProperties/read | Read all properties of private network connector groups |
 > | microsoft.directory/contacts/allProperties/read | Read all properties for contacts |
 > | microsoft.directory/customAuthenticationExtensions/allProperties/read | Read custom authentication extensions |
 > | microsoft.directory/deviceLocalCredentials/standard/read | Read all properties of the backed up local administrator account credentials for Microsoft Entra joined devices, except the password |
@@ -1418,8 +1418,8 @@ Users with this role **cannot** do the following:
 > | microsoft.directory/applications/standard/read | Read standard properties of applications |
 > | microsoft.directory/auditLogs/allProperties/read | Read all properties on audit logs, excluding custom security attributes audit logs |
 > | microsoft.directory/conditionalAccessPolicies/standard/read | Read Conditional Access for policies |
-> | microsoft.directory/connectorGroups/allProperties/read | Read all properties of application proxy connector groups |
-> | microsoft.directory/connectors/allProperties/read | Read all properties of application proxy connectors |
+> | microsoft.directory/connectorGroups/allProperties/read | Read all properties of private network connector groups |
+> | microsoft.directory/connectors/allProperties/read | Read all properties of private network connectors |
 > | microsoft.directory/crossTenantAccessPolicy/default/standard/read | Read basic properties of the default cross-tenant access policy |
 > | microsoft.directory/crossTenantAccessPolicy/partners/standard/read | Read basic properties of cross-tenant access policy for partners |
 > | microsoft.directory/crossTenantAccessPolicy/standard/read | Read basic properties of cross-tenant access policy |

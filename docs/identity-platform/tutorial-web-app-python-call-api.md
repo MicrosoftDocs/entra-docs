@@ -4,7 +4,7 @@ description: Call a protected API and display the results.
 author: Dickson-Mwendia
 manager: CelesteDG
 ms.author: dmwendia
-ms.date:  04/03/2024
+ms.date: 04/18/2024
 ms.service: identity-platform
 
 ms.topic: tutorial
@@ -19,7 +19,7 @@ In this tutorial:
 
 > [!div class="checklist"]
 >
-> * Call a protected downstream API
+> * Add code to call a protected downstream API
 > * Run and test the application
 
 ## Call the API and display the results
@@ -64,7 +64,7 @@ Follow these steps to test the sign in, call API, and sign out experiences in yo
 
 1. Create a virtual environment for the app:
 
-    [!INCLUDE [Virtual environment setup](~/../azure-docs-pr/articles/app-service/includes/quickstart-python/virtual-environment-setup.md)]
+    [!INCLUDE [Virtual environment setup](./includes/python-web-app/virtual-environment-setup.md)]
 
 1. Install the requirements using `pip`:
 
@@ -72,7 +72,7 @@ Follow these steps to test the sign in, call API, and sign out experiences in yo
     pip install -r requirements.txt
     ```
 
-1. Run the app from the command line, specifying the host and port to match the redirect URI:
+1. Run the app from the command line. Ensure your app is running on the same port as the redirect URI you configured earlier.
 
     ```shell
     flask run --host=localhost --port=5000
@@ -88,9 +88,7 @@ Follow these steps to test the sign in, call API, and sign out experiences in yo
 
 1. For **Stay signed in**, you can select either **No** or **Yes**.
 
-1. The application requests permission to maintain access to data you've given it access to, sign you in, and read your profile. Select **Accept**.
-
-    :::image type="content" source="./media/python-webapp/consent.png" alt-text="Screenshot showing the consent request window.":::
+1. The application requests permission to maintain access to data you've given it access to, sign you in, and read your profile. Select **Accept** to consent to these permissions.
 
 1. The following screenshot appears, indicating that you're signed in to the application:
 
@@ -102,7 +100,7 @@ Follow these steps to test the sign in, call API, and sign out experiences in yo
 
 ## Sign out of the app
 
-1. Find the **Logout** link in the top right corner of the page, and select it.
+1. Select **Logout** to sign out of the app.
 1. You're prompted to pick an account to sign out from. Select the account you used to sign in.
 1. A message appears indicating that you signed out. You can now close the browser window.
 

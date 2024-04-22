@@ -14,7 +14,7 @@ titleSuffix: Microsoft identity platform
 #Customer intent: As a developer, I want to learn about custom claims provider so that I can augment tokens with claims from an external identity system or role management system.
 ---
 
-# Custom claims provider (preview)
+# Custom claims provider
 
 This article provides an overview to the Microsoft Entra custom claims provider.
 When a user authenticates to an application, a custom claims provider can be used to add  claims into the token. A custom claims provider is made up of a custom authentication extension that calls an external REST API, to fetch claims from external systems. A custom claims provider can be assigned to one or many applications in your directory.

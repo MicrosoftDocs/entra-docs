@@ -4,7 +4,7 @@ description: Learn how developers can request for permissions through consent in
 author: omondiatieno
 manager: celesteDG
 ms.author: jomondi
-ms.date: 11/01/2022
+ms.date: 04/10/2024
 ms.reviewer: jawoods, ludwignick, phsignor
 ms.service: identity-platform
 
@@ -41,7 +41,7 @@ In an [OpenID Connect or OAuth 2.0](./v2-protocols.md) authorization request, an
 
 ```HTTP
 GET https://login.microsoftonline.com/common/oauth2/v2.0/authorize?
-client_id=535fb089-9ff3-47b6-9bfb-4f1264799865
+client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &response_type=code
 &redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
 &response_mode=query
@@ -133,7 +133,7 @@ To configure the list of statically requested permissions for an application:
 If the admin approves the permissions for your app, the successful response looks like this:
 
 ```HTTP
-GET http://localhost/myapp/permissions?tenant=a8990e1f-ff32-408a-9f8e-78d3b9139b95&state=state=12345&admin_consent=True
+GET http://localhost/myapp/permissions?tenant=aaaabbbb-0000-cccc-1111-dddd2222eeee&state=state=12345&admin_consent=True
 ```
 
 | Parameter | Description |
@@ -168,11 +168,11 @@ Content-Type: application/json
 
 {
     "grant_type": "authorization_code",
-    "client_id": "535fb089-9ff3-47b6-9bfb-4f1264799865",
+    "client_id": "00001111-aaaa-2222-bbbb-3333cccc4444",
     "scope": "https://microsoft.graph.com/Mail.Read https://microsoft.graph.com/mail.send",
     "code": "AwABAAAAvPM1KaPlrEqdFSBzjqfTGBCmLdgfSTLEMPGYuNHSUYBrq...",
     "redirect_uri": "https://localhost/myapp",
-    "client_secret": "zc53fwe80980293klaj9823"  // NOTE: Only required for web apps
+    "client_secret": "A1bC2dE3f..."  // NOTE: Only required for web apps
 }
 ```
 
@@ -180,7 +180,7 @@ You can use the resulting access token in HTTP requests to the resource. It reli
 
 For more information about the OAuth 2.0 protocol and how to get access tokens, see the [Microsoft identity platform endpoint protocol reference](./v2-protocols.md).
 
-## Next steps
+## See also
 
 - [Consent experience](application-consent-experience.md)
 - [ID tokens](id-tokens.md)

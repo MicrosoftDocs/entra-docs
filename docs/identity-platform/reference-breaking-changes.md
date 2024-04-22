@@ -5,7 +5,7 @@ author: rwike77
 manager: CelesteDG
 ms.author: ryanwi
 ms.custom: has-adal-ref
-ms.date: 06/03/2023
+ms.date: 04/10/2024
 ms.reviewer: ludwignick
 ms.service: identity-platform
 
@@ -294,8 +294,8 @@ To remedy this issue, use the Admin Consent experience to create the client appl
 
 #### Example request
 
-`https://login.microsoftonline.com/contoso.com/oauth2/authorize?resource=https://gateway.contoso.com/api&response_type=token&client_id=14c88eee-b3e2-4bb0-9233-f5e3053b3a28&...`
-In this example, the resource tenant (authority) is contoso.com, the resource app is a single-tenant app called `gateway.contoso.com/api` for the Contoso tenant, and the client app is `14c88eee-b3e2-4bb0-9233-f5e3053b3a28`. If the client app has a service principal within Contoso.com, this request can continue. If it doesn't, however, then the request will fail with the error above.
+`https://login.microsoftonline.com/contoso.com/oauth2/authorize?resource=https://gateway.contoso.com/api&response_type=token&client_id=00001111-aaaa-2222-bbbb-3333cccc4444&...`
+In this example, the resource tenant (authority) is contoso.com, the resource app is a single-tenant app called `gateway.contoso.com/api` for the Contoso tenant, and the client app is `00001111-aaaa-2222-bbbb-3333cccc4444`. If the client app has a service principal within Contoso.com, this request can continue. If it doesn't, however, then the request will fail with the error above.
 
 If the Contoso gateway app were a multitenant application, however, then the request would continue regardless of the client app having a service principal within Contoso.com.
 

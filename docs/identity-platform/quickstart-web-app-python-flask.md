@@ -4,7 +4,7 @@ description: In this quickstart, you configure and run a Python Flask web app th
 author: Dickson-Mwendia
 manager: CelesteDG
 ms.author: dmwendia
-ms.date: 04/03/2024
+ms.date: 04/18/2024
 ms.service: identity-platform
 ms.topic: quickstart
 #Customer intent: As a Python web app developer, I want to sign in users and call the Microsoft Graph API using my application.
@@ -12,13 +12,13 @@ ms.topic: quickstart
 
 # Quickstart: Sign in users and call Microsoft Graph from a Python Flask web app
 
-In this quickstart, you download and run a Python Flask web app sample that demonstrates how to authenticate users and call the Microsoft Graph API. Users with a personal Microsoft Account or an account in any Microsoft Entra organization can sign into the application.
+In this quickstart, you download and run a Python Flask web app sample that demonstrates how to authenticate users and call the Microsoft Graph API. Users in your Microsoft Entra organization can sign into the application.
 
 ## Prerequisites
 
 - An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- A Microsoft Entra tenant. For more information on how to get a Microsoft Entra tenant, see [how to get a Microsoft Entra tenant.](./quickstart-create-new-tenant.md)
-- [Python 3.7+](https://www.python.org/downloads/)
+- A Microsoft Entra tenant. For more information, see [how to get a Microsoft Entra tenant.](./quickstart-create-new-tenant.md)
+- [Python 3 +](https://www.python.org/downloads/)
 
 ## Step 1: Register your application
 
@@ -30,7 +30,7 @@ Follow these steps to register your application in the Microsoft Entra admin cen
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="./media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the tenant in which you want to register the application from the **Directories + subscriptions** menu.
 1. Browse to **Identity** > **Applications** > **App registrations** and select **New registration**.
 1. Enter a **Name** for your application, for example *python-webapp*. 
-1. Under **Supported account types**, select **Accounts in any organizational directory and personal Microsoft accounts**.
+1. Under **Supported account types**, select **Accounts in this organizational directory only**.
 1. Under **Redirect URIs**, select **Web** for the platform.
 1. Enter a redirect URI of `http://localhost:5000/getAToken`. You can change this value later.
 1. Select **Register**.
@@ -68,21 +68,21 @@ git clone https://github.com/Azure-Samples/ms-identity-docs-code-python/
 
 1. Open the application you downloaded in an IDE and navigate to root folder of the sample app.
 
-```Console
-cd flask-web-app
-```
+    ```Console
+    cd flask-web-app
+    ```
 1. Create an *.env* file in the root folder of the project using *.env.sample* as a guide.
 
     ```python
     # The following variables are required for the app to run.
-    CLIENT_ID=<>
-    CLIENT_SECRET=<>
-    AUTHORITY=<authority url>
+    CLIENT_ID=<Enter_your_client_id>
+    CLIENT_SECRET=<Enter_your_client_secret>
+    AUTHORITY=<Enter_your_authority_url>
     ```
 
     * Set the value of `CLIENT_ID` to the **Application (client) ID** for the registered application, available on the overview page.
-    * Set the value of `CLIENT_SECRET` to the client secret you created in **Certificates & Secrets** for the registered application.
-    * Set the value of `AUTHORITY` to a `https://login.microsoftonline.com/common` . If you're building a single-tenant application, the authority should include the **Directory (tenant) ID** of your app, available on the overview page.
+    * Set the value of `CLIENT_SECRET` to the client secret you created in the **Certificates & Secrets** for the registered application.
+    * Set the value of `AUTHORITY` to a `https://login.microsoftonline.com/<TENANT_GUID>`. The **Directory (tenant) ID** is available on the app registration overview page.
     
     The environment variables are referenced in *app_config.py*, and are kept in a separate *.env* file to keep them out of source control. The provided *.gitignore* file prevents the *.env* file from being checked in.
 
@@ -91,7 +91,7 @@ cd flask-web-app
 
 1. Create a virtual environment for the app:
 
-    [!INCLUDE [Virtual environment setup](~/../azure-docs-pr/articles/app-service/includes/quickstart-python/virtual-environment-setup.md)]
+    [!INCLUDE [Virtual environment setup](./includes/python-web-app/virtual-environment-setup.md)]
 
 1. Install the requirements using `pip`:
 
@@ -99,7 +99,7 @@ cd flask-web-app
     pip install -r requirements.txt
     ```
 
-1. Run the app from the command line, specifying the host and port to match the redirect URI:
+1. Run the app from the command line. Ensure your app is running on the same port as the redirect URI you configured earlier.
 
     ```Console
     flask run --debug --host=localhost --port=5000

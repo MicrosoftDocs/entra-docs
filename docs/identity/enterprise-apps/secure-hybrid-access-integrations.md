@@ -451,8 +451,6 @@ https://graph.microsoft.com/v1.0/identity/conditionalAccess/policies/
 }
 ```
 
-To create new Microsoft Entra Conditional Access policies, see [Conditional Access: Programmatic access](~/identity/conditional-access/howto-conditional-access-apis.md).
-
 ```https
 #Policy Template for Requiring Compliant Device
 

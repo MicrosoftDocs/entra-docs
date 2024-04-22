@@ -1,6 +1,6 @@
 ---
 title: How to configure connectors for Microsoft Entra Private Access
-description: Learn how to configure Microsoft Entra application proxy connectors for Microsoft Entra Private Access.
+description: Learn how to configure Microsoft Entra private network connectors for Microsoft Entra Private Access.
 author: kenwith
 ms.author: kenwith
 manager: amycolannino
@@ -10,9 +10,9 @@ ms.service: global-secure-access
 ms.subservice: entra-private-access
 ms.reviewer: katabish
 ---
-# How to configure application proxy connectors for Microsoft Entra Private Access
+# How to configure private network connectors for Microsoft Entra Private Access
 
-Connectors are lightweight agents that sit on-premises and facilitate the outbound connection to the Global Secure Access service. Connectors must be installed on a Windows Server that has access to the backend application. You can organize connectors into connector groups, with each group handling traffic to specific applications. To learn more about connectors, see [Understand Microsoft Entra application proxy connectors](/azure/active-directory/app-proxy/application-proxy-connectors).
+Connectors are lightweight agents that sit on a server in a private network and facilitate the outbound connection to the Global Secure Access service. Connectors must be installed on a Windows Server that has access to the backend resources and applications. You can organize connectors into connector groups, with each group handling traffic to specific applications. To learn more about connectors, see [Understand Microsoft Entra private network connectors](concept-connectors.md).
 
 ## Prerequisites
 
@@ -25,11 +25,11 @@ User identities must be synchronized from an on-premises directory or created di
 
 ### Windows server
 
-To use Application Proxy, you need a Windows server running Windows Server 2012 R2 or later. You'll install the Application Proxy connector on the server. This connector server needs to connect to the Application Proxy services in Azure, and the on-premises applications that you plan to publish.
+To use Application Proxy, you need a Windows server running Windows Server 2012 R2 or later. You'll install the private network connector on the server. This connector server needs to connect to the Application Proxy services in Azure, and the on-premises applications that you plan to publish.
 
 * For high availability in your environment, we recommend having more than one Windows server.
 * The minimum .NET version required for the connector is v4.7.1+.
-* For more information, see [application proxy connectors](../identity/app-proxy/application-proxy-connectors.md#requirements-and-deployment)
+* For more information, see [private network connectors](../identity/app-proxy/application-proxy-connectors.md#requirements-and-deployment)
 * For more information, see [Determine which .NET framework versions are installed](/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed).
 
 ### Prepare your on-premises environment
@@ -64,7 +64,7 @@ Allow access to the following URLs:
 You can allow connections to `*.msappproxy.net`, `*.servicebus.windows.net`, and other URLs above if your firewall or proxy lets you configure access rules based on domain suffixes. If not, you need to allow access to the [Azure IP ranges and Service Tags - Public Cloud](https://www.microsoft.com/download/details.aspx?id=56519). The IP ranges are updated each week.
 
 > [!IMPORTANT]
-> Avoid all forms of inline inspection and termination on outbound TLS communications between Microsoft Entra application proxy connectors and Microsoft Entra application proxy Cloud services.
+> Avoid all forms of inline inspection and termination on outbound TLS communications between Microsoft Entra private network connectors and Microsoft Entra application proxy Cloud services.
 
 ## Install and register a connector
 
@@ -115,7 +115,7 @@ To confirm the connector installed and registered correctly:
 
     ![Screenshot of the connector groups and connector group details.](media/how-to-configure-connectors/app-proxy-connectors-status.png)
 
-For more help with installing a connector, see [Problem installing the Application Proxy Connector](/azure/active-directory/app-proxy/application-proxy-connector-installation-problem).
+For more help with installing a connector, see [Problem installing the private network connector](/azure/active-directory/app-proxy/application-proxy-connector-installation-problem).
 
 ### Verify the installation through your Windows server
 
@@ -123,11 +123,11 @@ To confirm the connector installed and registered correctly:
 
 1. Select the **Windows** key and enter `services.msc` to open the Windows Services Manager.
 1. Check to see if the status for the following services **Running**.
-    * *Microsoft Entra application proxy Connector* enables connectivity.
-    * *Microsoft Entra application proxy Connector Updater* is an automated update service.
+    * *Microsoft Entra private network connector* enables connectivity.
+    * *Microsoft Entra private network connector Updater* is an automated update service.
     * The updater checks for new versions of the connector and updates the connector as needed.
 
-    ![Screenshot of the App proxy connector and connector updater services in Windows Services Manager.](media/how-to-configure-connectors/app-proxy-services.png)
+    ![Screenshot of the private network connector and connector updater services in Windows Services Manager.](media/how-to-configure-connectors/app-proxy-services.png)
 
 1. If the status for the services isn't **Running**, right-click to select each service and choose **Start**.
 
@@ -140,7 +140,7 @@ To create as many connector groups as you want:
 1. Give your new connector group a name, then use the dropdown menu to select which connectors belong in this group.
 1. Select **Save**.
 
-To learn more about connector groups, see [Publish applications on separate networks and locations using connector groups](/azure/active-directory/app-proxy/application-proxy-connector-groups).
+To learn more about connector groups, see [Understand Microsoft Entra private network connector groups](concept-connector-groups.md).
 
 [!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
 
