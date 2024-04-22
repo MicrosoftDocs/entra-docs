@@ -310,7 +310,7 @@
         href: beatrust-tutorial.md
       - name: Beekeeper Microsoft Entra Data Connector
         href: beekeeper-azure-ad-data-connector-tutorial.md
-      - name: BeeLine
+      - name: Beeline Enterprise
         href: beeline-tutorial.md
       - name: Benchling
         href: benchling-tutorial.md
