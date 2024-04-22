@@ -63,7 +63,7 @@ A resource directory has one or more resources to share. In this step, you creat
     | **Admin1** | Global administrator, or Identity Governance Administrator. This user can be the user you're currently signed in. |
     | **Requestor1** | User |
 
-4. [Create a Microsoft Entra security group](../fundamentals/how-to-manage-groups.md) named **Marketing resources** with a membership type of **Assigned**. This group is the target resource for entitlement management. The group should be empty of members to start.
+4. [Create a Microsoft Entra security group](~/fundamentals/how-to-manage-groups.yml) named **Marketing resources** with a membership type of **Assigned**. This group is the target resource for entitlement management. The group should be empty of members to start.
 
 
 ## Step 2: Create an access package
