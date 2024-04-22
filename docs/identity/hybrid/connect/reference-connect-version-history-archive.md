@@ -118,7 +118,7 @@ This hotfix build fixes an issue in build 1.5.20.0 if you have cloned the **In f
 - We added the ability to target specific agent from cloud to test for agent connectivity.
 
 ### Fixed issues
-- Release 1.4.18.0 had a bug where the PowerShell cmdlet for DSSO was using the login Windows credentials instead of the admin credentials provided while running ps. As a result of which it wasn't possible to enable DSSO in multiple forests through the Microsoft Entra Connect user interface. 
+- Release 1.4.18.0 had a bug where the PowerShell cmdlet for DSSO was using the login Windows credentials instead of the admin credentials provided while running PowerShell. As a result of which it wasn't possible to enable DSSO in multiple forests through the Microsoft Entra Connect user interface. 
 - A fix was made to enable DSSO simultaneously in all forest through the Microsoft Entra Connect user interface
 
 ## 1.4.32.0

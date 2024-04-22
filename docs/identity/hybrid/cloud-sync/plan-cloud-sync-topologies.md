@@ -26,8 +26,8 @@ For more information, see the following video.
 ## Things to remember about all scenarios and topologies
 The information below should be kept in mind, when selecting a solution.
 
-- Users and groups must be uniquely identified across all forests
-- Matching across forests doesn't occur with cloud sync
+- Users and groups must be uniquely identified across all forests.
+- Matching across forests doesn't occur with cloud sync.
 - The source anchor for objects is chosen automatically.  It uses ms-DS-ConsistencyGuid if present, otherwise ObjectGUID is used.
 - You can't change the attribute that is used for source anchor.
 
@@ -70,8 +70,8 @@ In this scenario, the attributes of a user are contributed to by two disconnecte
 
 An example would be:
 
- - one forest (1) contains most of the attributes
- - a second forest (2) contains a few attributes
+ - One forest (1) contains most of the attributes.
+ - A second forest (2) contains a few attributes.
 
  Since the second forest doesn't have network connectivity to the Microsoft Entra Connect server, the object can't be merged through Microsoft Entra Connect. Cloud sync in the second forest allows the attribute value to be retrieved from the second forest. The value can then be merged with the object in Microsoft Entra ID that is synced by Microsoft Entra Connect.
 

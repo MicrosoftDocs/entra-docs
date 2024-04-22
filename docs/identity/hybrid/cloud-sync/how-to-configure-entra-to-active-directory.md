@@ -34,7 +34,7 @@ To configure provisioning, follow these steps.
 
  6. The **Get started** screen will open. From here, you can continue configuring cloud sync.
 
- :::image type="content" source="media/how-to-configure-entra-to-active-directory/new-config-1.png" alt-text="Screenshot of the configuration sections." lightbox="media/how-to-configure-entra-to-active-directory/new-config-1.png":::
+ :::image type="content" source="media/how-to-configure-entra-to-active-directory/config-1.png" alt-text="Screenshot of the configuration sections." lightbox="media/how-to-configure-entra-to-active-directory/config-1.png":::
 
  7. The configuration is split in to the following 5 sections.
 
@@ -51,7 +51,7 @@ You can scope the agent to synchronize all or specific security groups. You can 
  
  1. On the **Getting started** configuration screen. Click either **Add scoping filters** next to the **Add scoping filters** icon or on the click **Scoping filters** on the left under **Manage**.
 
- :::image type="content" source="media/how-to-configure-entra-to-active-directory/new-config-2.png" alt-text="Screenshot of the scoping filters sections." lightbox="media/how-to-configure-entra-to-active-directory/new-config-2.png":::
+ :::image type="content" source="media/how-to-configure-entra-to-active-directory/config-2.png" alt-text="Screenshot of the scoping filters sections." lightbox="media/how-to-configure-entra-to-active-directory/config-2.png":::
  
  2. Select the scoping filter. The filter can be one of the following:
    - **All security groups**: Scopes the configuration to apply to all cloud security groups.
@@ -70,7 +70,7 @@ You can scope the agent to synchronize all or specific security groups. You can 
 
  ```Switch([displayName],"OU=Default,OU=container,DC=contoso,DC=com","Marketing","OU=Marketing,OU=container,DC=contoso,DC=com","Sales","OU=Sales,OU=container,DC=contoso,DC=com") ```
 
- :::image type="content" source="media/how-to-configure-entra-to-active-directory/new-config-6.png" alt-text="Screenshot of the scoping filters expression." lightbox="media/how-to-configure-entra-to-active-directory/new-config-6.png":::
+ :::image type="content" source="media/how-to-configure-entra-to-active-directory/config-6.png" alt-text="Screenshot of the scoping filters expression." lightbox="media/how-to-configure-entra-to-active-directory/config-6.png":::
 
  5. Attribute based scope filtering is supported. For more information see [Attribute based scope filtering](how-to-attribute-mapping-entra-to-active-directory.md#attribute-scope-filtering) and [Reference for writing expressions for attribute mappings in Microsoft Entra ID](../../app-provisioning/functions-for-customizing-application-data.md).
  4. Once your scoping filters are configured, click **Save**.
@@ -80,7 +80,7 @@ You can scope the agent to synchronize all or specific security groups. You can 
 ## Attribute mapping
 Microsoft Entra Cloud Sync allows you to easily map attributes between your on-premises user/group objects and the objects in Microsoft Entra ID. 
 
- :::image type="content" source="media/how-to-configure-entra-to-active-directory/new-config-3.png" alt-text="Screenshot of the default attribute mappings." lightbox="media/how-to-configure-entra-to-active-directory/new-config-3.png":::
+ :::image type="content" source="media/how-to-configure-entra-to-active-directory/config-3.png" alt-text="Screenshot of the default attribute mappings." lightbox="media/how-to-configure-entra-to-active-directory/config-3.png":::
 
 
 You can customize the default attribute-mappings according to your business needs. So, you can change or delete existing attribute-mappings, or create new attribute-mappings. 
@@ -95,7 +95,7 @@ Microsoft Entra Cloud Sync allows you to extend the directory with extensions an
 ## On-demand provisioning
 Microsoft Entra Cloud Sync allows you to test configuration changes, by applying these changes to a single user or group. 
 
- :::image type="content" source="media/how-to-configure-entra-to-active-directory/new-config-5.png" alt-text="Screenshot of the provisioning on-demand." lightbox="media/how-to-configure-entra-to-active-directory/new-config-5.png":::
+ :::image type="content" source="media/how-to-configure-entra-to-active-directory/config-5.png" alt-text="Screenshot of the provisioning on-demand." lightbox="media/how-to-configure-entra-to-active-directory/config-5.png":::
 
 You can use this to validate and verify that the changes made to the configuration were applied properly and are being correctly synchronized to Microsoft Entra ID. 
 

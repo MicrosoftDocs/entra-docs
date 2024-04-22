@@ -29,7 +29,7 @@ You can use the environment you create in this scenario for testing or for getti
 - The Lola Jacobson and John Smith user accounts reside in the Marketing OU.
 - The Groups OU is where our groups from Microsoft Entra ID are provisioned.
 
-## Create two groups in Microsoft Entra ID.
+## Create two groups in Microsoft Entra ID
 To begin, create two groups in Microsoft Entra ID. One group is Sales and the Other is Marketing.
 
 To create two groups, follow these steps.
@@ -59,7 +59,7 @@ To create two groups, follow these steps.
 >[!NOTE]
 > When adding users to the Marketing group, make note of the group ID on the overview page. This ID is used later to add our newly created property to the group.
 
-## Get your tenant ID.
+## Get your tenant ID
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
 2. Browse to **Identity** > **Overview**.
 3. Note your tenant ID and copy it down for use later.
@@ -108,7 +108,7 @@ To create two groups, follow these steps.
 
 ## Create our extension and cloud sync configuration
 
- 1. Now we create our custom attribute and assign it to the CloudSyncCustomExtensionApp. Replace &lt;id&gt; with your id. Use the object ID of the application.
+ 1. Now we create our custom attribute and assign it to the CloudSyncCustomExtensionApp. Replace &lt;id&gt; with your ID. Use the object ID of the application.
   
    ```powershell
    New-MgApplicationExtensionProperty -Id <id> -Name “SynchGroup” -DataType “Boolean” -TargetObjects “Group”
@@ -140,7 +140,7 @@ To create two groups, follow these steps.
 ## Add new extension property to one of our groups
 For this portion, we're going to be adding our newly created property to one of our existing groups, Marketing. To do this, we use Microsoft Graph Explorer.  You need to make sure that you have consented to Group.ReadWrite.All. You can do this by selecting **Modify permissions**.
 
-1. Navigate to https://developer.microsoft.com/en-us/graph/graph-explorer
+1. Navigate to https://developer.microsoft.com/graph/graph-explorer
 2. Sign-in using your tenant administrator account. This may need to be a global admin account. A global admin account was used in creating this scenario. A hybrid administrator account may be sufficient.
 3. At the top, change the **GET** to **PATCH**
 4. In the address box enter: https://graph.microsoft.com/v1.0/groups/&lt;group id&gt;

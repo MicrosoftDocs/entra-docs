@@ -16,9 +16,9 @@ ms.author: billmath
 
 The following document describes the accidental deletion feature for Microsoft Entra Cloud Sync. The accidental delete feature is designed to protect you from accidental configuration changes and changes to your on-premises directory that would affect many users and groups. This feature allows you to:
 
-- configure the ability to prevent accidental deletes automatically. 
-- Set the # of objects (threshold) beyond which the configuration takes effect 
-- set up a notification email address so they can get an email notification once the sync job in question is put in quarantine for this scenario 
+- Configure the ability to prevent accidental deletes automatically. 
+- Set the # of objects (threshold) beyond which the configuration takes effect.
+- Set up a notification email address so they can get an email notification once the sync job in question is put in quarantine for this scenario.
 
 >[!NOTE]
 >If you have specified accidental delete prevention four group provisioning to Microsoft Entra ID, be aware this only prevents the group from being deleted. This does not prevent members from being deleted. To prevent members from being deleted, you should configure accidental delete prevention on synchronized users.
@@ -80,9 +80,9 @@ The **Allow deletes** action, deletes the objects that triggered the accidental 
 ### Rejecting deletions
 
 If you don't want to allow the deletions, you need to do the following actions:
-- investigate the source of the deletions
-- fix the issue (example, OU was moved out of scope accidentally and you've now readded it back to the scope)
-- Run **Restart sync** on the agent configuration
+- Investigate the source of the deletions.
+- Fix the issue (example, OU was moved out of scope accidentally and you've now readded it back to the scope).
+- Run **Restart sync** on the agent configuration.
 
 ## Next steps 
 

@@ -28,7 +28,7 @@ The following is true with regrad to on-demand provisioning of groups:
 - The on-demand provisioning request API can only accept a single group with up to five members at a time.
 
 
-### Verify a group
+## Verify a group
 To use on-demand provisioning, follow these steps:
 
 >[!NOTE]

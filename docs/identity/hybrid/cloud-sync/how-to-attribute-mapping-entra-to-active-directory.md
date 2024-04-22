@@ -1,5 +1,5 @@
 ---
-title: 'Attribute Mapping - Microsoft Entra ID to Active Directory'
+title: 'Attribute mapping - Microsoft Entra ID to Active Directory'
 description: This article describes how the attribute mapping and how to configure attributes when provisioning from Microsoft Entra ID to Active Directory.
 
 author: billmath
@@ -47,7 +47,7 @@ Multiple target containers can also be configured using an attribute mapping exp
 
  ```Switch([displayName],"OU=Default,OU=container,DC=contoso,DC=com","Marketing","OU=Marketing,OU=container,DC=contoso,DC=com","Sales","OU=Sales,OU=container,DC=contoso,DC=com") ```
 
- :::image type="content" source="media/how-to-configure-entra-to-active-directory/new-config-6.png" alt-text="Screenshot of the scoping filters expression." lightbox="media/how-to-configure-entra-to-active-directory/new-config-6.png":::
+ :::image type="content" source="media/how-to-configure-entra-to-active-directory/config-6.png" alt-text="Screenshot of the scoping filters expression." lightbox="media/how-to-configure-entra-to-active-directory/config-6.png":::
 
 Another example for this is shown below. Imagine you have the following 3 groups and they have the following displayName attribute values:
 
@@ -117,7 +117,7 @@ The following operators are supported:
 |REGEX MATCH|Clause returns "true" if the evaluated attribute matches a regular expression pattern. For example: ([1-9][0-9]) matches any number between 10 and 99 (case sensitive).|
 |VALID CERT MATCH||
 
-### Using REGEX to filter on
+### Using Regular Expressions to filter on
 A more advanced filter might use a REGEX MATCH. This allows you to search an attribute as a string for a substring of that attribute. For instance, lets say that you have several groups and they all have the following descriptions:
 
   Contoso-Sales-US
@@ -153,7 +153,7 @@ To create an attribute based filter use the following steps:
 
 :::image type="content" source="media/how-to-configure-entra-to-active-directory/entra-to-ad-7.png" alt-text="Screenshot of the setting up attribute based scoping." lightbox="media/how-to-configure-entra-to-active-directory/entra-to-ad-7.png":::
 
-For more information, see [attribute mapping](how-to-attribute-mapping.md#add-an-attribute-mapping---microsoft-entra-id-to-ad-preview) and [Reference for writing expressions for attribute mappings in Microsoft Entra ID](../../app-provisioning/functions-for-customizing-application-data.md)..
+For more information, see [attribute mapping](how-to-attribute-mapping.md#add-an-attribute-mapping---microsoft-entra-id-to-ad-preview) and [Reference for writing expressions for attribute mappings in Microsoft Entra ID](../../app-provisioning/functions-for-customizing-application-data.md).
 
 ## Next steps 
 - [Group writeback with Microsoft Entra Cloud Sync ](../group-writeback-cloud-sync.md)
