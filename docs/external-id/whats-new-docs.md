@@ -23,7 +23,7 @@ Welcome to what's new in Microsoft Entra External ID documentation. This article
 - [Troubleshooting Microsoft Entra B2B collaboration](troubleshoot.md) - Microsoft Graph PowerShell updates
 - [B2B direct connect overview](b2b-direct-connect-overview.md) - Updated diagrams
 - [Overview: Cross-tenant access with Microsoft Entra External ID](cross-tenant-access-overview.md) - Updated for configurable redemption order general availability
-- [Configure cross-tenant access settings for B2B collaboration](cross-tenant-access-settings-b2b-collaboration.md) – Updated for configurable redemption order general availability
+- [Configure cross-tenant access settings for B2B collaboration](cross-tenant-access-settings-b2b-collaboration.yml) – Updated for configurable redemption order general availability
 - [Federation with SAML/WS-Fed identity providers for guest users](direct-federation.md) - Updated for configurable redemption order general availability
 - [Overview of Microsoft Entra External ID](external-identities-overview.md) - Updated screenshots
 - [Add Microsoft account (MSA.md) as an identity provider for External ID](microsoft-account.md) - Updated screenshots

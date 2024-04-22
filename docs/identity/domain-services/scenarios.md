@@ -166,7 +166,7 @@ To get started, [Create and configure a Microsoft Entra Domain Services managed 
 [hdinsight]: /azure/hdinsight/domain-joined/apache-domain-joined-configure-using-azure-adds
 [tutorial-create-instance]: tutorial-create-instance.md
 [custom-ou]: create-ou.md
-[create-gpo]: manage-group-policy.md
+[create-gpo]: manage-group-policy.yml
 [sspr]: /azure/active-directory/authentication/overview-authentication#self-service-password-reset
 [compare]: compare-identity-solutions.md
 [azure-ad-connect]: /azure/active-directory/hybrid/connect/whatis-azure-ad-connect

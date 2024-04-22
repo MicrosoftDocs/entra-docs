@@ -32,8 +32,8 @@ Administrators can choose to enforce one or more controls when granting access. 
 - [Require authentication strength](#require-authentication-strength)
 - [Require device to be marked as compliant (Microsoft Intune)](/mem/intune/protect/device-compliance-get-started)
 - [Require Microsoft Entra hybrid joined device](~/identity/devices/concept-hybrid-join.md)
-- [Require approved client app](./howto-policy-approved-app-or-app-protection.md)
-- [Require app protection policy](./howto-policy-approved-app-or-app-protection.md)
+- [Require approved client app](./howto-policy-approved-app-or-app-protection.yml)
+- [Require app protection policy](./howto-policy-approved-app-or-app-protection.yml)
 - [Require password change](#require-password-change)
 
 When administrators choose to combine these options, they can use the following methods:
@@ -134,7 +134,7 @@ The following client apps support this setting. This list isn't exhaustive and i
 - Conditional Access policies that require Microsoft Power BI as an approved client app don't support using Microsoft Entra application proxy to connect the Power BI mobile app to the on-premises Power BI Report Server.
 - WebViews hosted outside of Microsoft Edge don't satisfy the approved client app policy. For example: If an app is trying to load SharePoint in a webview, app protection policies fail.
 
-See [Require approved client apps for cloud app access with Conditional Access](./howto-policy-approved-app-or-app-protection.md) for configuration examples.
+See [Require approved client apps for cloud app access with Conditional Access](./howto-policy-approved-app-or-app-protection.yml) for configuration examples.
 
 ### Require app protection policy
 
@@ -180,7 +180,7 @@ The following client apps support this setting. This list isn't exhaustive and i
 > [!NOTE]
 > Kaizala, Skype for Business, and Visio don't support the **Require app protection policy** grant. If you require these apps to work, use the **Require approved apps** grant exclusively. Using the "or" clause between the two grants will not work for these three applications.
 
-See [Require app protection policy and an approved client app for cloud app access with Conditional Access](./howto-policy-approved-app-or-app-protection.md) for configuration examples.
+See [Require app protection policy and an approved client app for cloud app access with Conditional Access](./howto-policy-approved-app-or-app-protection.yml) for configuration examples.
 
 ### Require password change
 
