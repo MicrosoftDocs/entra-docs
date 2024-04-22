@@ -177,14 +177,9 @@ You trigger an API call each time you view, add, or remove a task. Each time you
 
 The web API endpoint needs to check if the permissions or scopes in the access token, provided by the client app, are valid. If the access token is valid, the endpoint responds to the HTTP request, otherwise, it responds with a `401 Unauthorized` HTTP error. 
 
-## Next steps
+## Related content
 
-Learn how to: 
-
-- [Sign in users and call an API in your own Node.js web application](how-to-web-app-node-sign-in-call-api-overview.md). By completing these steps, you build a web app and web API similar to the sample you've run. 
-
+- [Sign in users and call an API in your own Node.js web application](how-to-web-app-node-sign-in-call-api-overview.md).
 - [Enable password reset](how-to-enable-password-reset-customers.md).
-
 - [Customize the default branding](how-to-customize-branding-customers.md).
-
 - [Configure sign-in with Google](how-to-google-federation-customers.md).

@@ -107,7 +107,6 @@ You've configured the app and it's ready to run.
 To build and run your app, follow these steps:  
  
 1. In the toolbar, select your app from the run configurations menu.
-  
 1. In the target device menu, select the device that you want to run your app on.  
  
    If you don't have any devices configured, you need to either create an Android Virtual Device to use the Android Emulator or connect a physical Android device.  
@@ -119,3 +118,6 @@ To build and run your app, follow these steps:
 ## Related content
 
 - [Sign in users in sample Android (Kotlin) mobile app by using native authentication](how-to-run-native-authentication-sample-android-app.md).
+- [Enable password reset](how-to-enable-password-reset-customers.md).
+- [Customize the default branding](how-to-customize-branding-customers.md).
+- [Configure sign-in with Google](how-to-google-federation-customers.md).

@@ -93,6 +93,9 @@ All the required code snippets have been added, so the application can now be ca
 
 1. Once signed in the display name is shown next to the **Sign out** button.
 
-## Next steps
-> [!div class="nextstepaction"]
-> [Enable self-service password reset](./how-to-enable-password-reset-customers.md)
+## Related content
+
+- [Use our multi-part tutorial series to build this React SPA from scratch](tutorial-single-page-app-react-sign-in-prepare-app.md).
+- [Enable password reset](how-to-enable-password-reset-customers.md).
+- [Customize the default branding](how-to-customize-branding-customers.md).
+- [Configure sign-in with Google](how-to-google-federation-customers.md).

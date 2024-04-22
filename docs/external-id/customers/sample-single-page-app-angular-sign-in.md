@@ -1,6 +1,6 @@
 ---
 title: Sign in users in a sample Angular single-page application.
-description: Learn how to configure a sample Angular Single Page Application (SPA) using Microsoft Entra External ID
+description: Learn how to configure a sample Angular Single Page Application (SPA) using Microsoft Entra External ID.
  
 author: garrodonnell
 manager: celestedg
@@ -95,7 +95,9 @@ All the required code snippets have been added, so the application can now be ca
 
 1. Once you successfully sign-in, the display name is shown next to the **Sign out** button.
 
-## Next steps
+## Related content
 
-> [!div class="nextstepaction"]
-> [Enable self-service password reset](./how-to-enable-password-reset-customers.md)
+- [Use our multi-part tutorial series to build this Angular SPA from scratch](tutorial-single-page-app-angular-sign-in-prepare-app.md).
+- [Enable password reset](how-to-enable-password-reset-customers.md).
+- [Customize the default branding](how-to-customize-branding-customers.md).
+- [Configure sign-in with Google](how-to-google-federation-customers.md).

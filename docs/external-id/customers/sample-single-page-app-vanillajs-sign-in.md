@@ -96,7 +96,9 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 1. A window appears asking which account to sign out of.
 1. Upon successful sign out, a final window appears advising you to close all browser windows.
 
-## Next steps
+## Related content
 
-> [!div class="nextstepaction"]
-> [Enable self-service password reset](./how-to-enable-password-reset-customers.md)
+- [Use our multi-part tutorial series to build this Vanilla JS SPA from scratch](tutorial-single-page-app-vanillajs-prepare-app.md).
+- [Enable password reset](how-to-enable-password-reset-customers.md).
+- [Customize the default branding](how-to-customize-branding-customers.md).
+- [Configure sign-in with Google](how-to-google-federation-customers.md).

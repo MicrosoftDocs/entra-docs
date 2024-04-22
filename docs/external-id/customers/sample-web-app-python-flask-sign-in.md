@@ -119,14 +119,9 @@ When users select the **Sign in** link, the app initiates an authentication requ
 
 When the users select the **Logout** link, the app clears its session, the redirect the user to Microsoft Entra External ID sign-out endpoint to notify it that the user has signed out. The user is then redirected back to the web app.
 
-## Next steps
-
-You may want to:
+## Related content
 
 - [Sign in users in a sample Django web application](./sample-web-app-python-django-sign-in.md)
-
 - [Enable password reset](how-to-enable-password-reset-customers.md)
-
 - [Customize the default branding](how-to-customize-branding-customers.md)
-
 - [Configure sign-in with Google](how-to-google-federation-customers.md)

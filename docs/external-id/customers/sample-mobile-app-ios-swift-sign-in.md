@@ -83,8 +83,10 @@ To build and run your app, follow these steps:
  
 1. To build and run your code, select **Run** from the **Product** menu in Xcode. After a successful build, Xcode will launch the sample app in the Simulator.
 1. Select **Acquire Token Interactively** to request an access token.
-1. If you select **API - Perform GET** to call a protected ASP.NET Core web API, you will get an error. For more information about calling a protected web API, see [Next Step](#next-step) 
+1. If you select **API - Perform GET** to call a protected ASP.NET Core web API, you will get an error. 
 
-## Next Step
+For more information about calling a protected web API, see our [Next teps](#next-steps) 
+
+## Next steps
 
 - [Sign in users and call a protected web API in sample iOS (Swift) app](sample-mobile-app-ios-swift-sign-in-call-api.md).

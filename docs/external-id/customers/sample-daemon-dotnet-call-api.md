@@ -1,6 +1,6 @@
 ---
 title: Call an API in a sample .NET daemon application
-description: Learn how to configure a sample .NET daemon application that calls an API protected with Microsoft Entra External ID
+description: Learn how to configure a sample .NET daemon application that calls an API protected with Microsoft Entra External ID.
 
 author: SHERMANOUKO
 manager: mwongerapk
@@ -75,11 +75,8 @@ To use your app registration in the client web application sample:
 1. Find the placeholder:
 
     - `Enter_the_Application_Id_Here` and replace it with the Application (client) ID of the daemon application you registered earlier.
-     
     - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details). 
-    
     - `Enter_the_Client_Secret_Here` and replace it with the daemon application secret value you copied earlier.
-    
     - `Enter_the_Web_Api_Application_Id_Here` and replace it with the Application (client) ID of the web API you copied earlier.
 
 To use your app registration in the web API sample: 
@@ -89,9 +86,7 @@ To use your app registration in the web API sample:
 1. Find the placeholder:
     
     - `Enter_the_Application_Id_Here` and replace it with the Application (client) ID of the web API you copied. 
-    
     - `Enter_the_Tenant_Id_Here` and replace it with the Directory (tenant) ID you copied earlier.
-    
     - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
 
 ##  Run and test sample daemon application and API 
@@ -109,7 +104,7 @@ To use your app registration in the web API sample:
     dotnet run
     ```
 
-If your daemon application and web API successfully run, you should see something similar to the following JSON array in your console window
+If your daemon application and web API successfully run, you should see something similar to the following JSON array in your console window:
 
 ```bash
 Posting a to-do...
@@ -150,6 +145,9 @@ The daemon application use [OAuth2.0 client credentials grant](~/identity-platfo
 
 On the API side, the web API must verify that the access token has the required permissions (application permissions). The web API rejects access tokens that don't have the required permissions. 
 
-## See also
+## Related content
 
-See the tutorial on how to [build your own .NET daemon app that calls an API](./tutorial-daemon-dotnet-call-api-prepare-tenant.md)
+- [Use our multi-part tutorial series to build this .NET daemon app from scratch](tutorial-daemon-dotnet-call-api-prepare-tenant.md)
+- [Enable password reset](how-to-enable-password-reset-customers.md).
+- [Customize the default branding](how-to-customize-branding-customers.md).
+- [Configure sign-in with Google](how-to-google-federation-customers.md).

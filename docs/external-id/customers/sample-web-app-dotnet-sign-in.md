@@ -98,9 +98,10 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 
 1. To sign-out from the application, select the **Sign out** button.
 
-## Next steps
+## Related content
 
+- [Use our multi-part tutorial series to build this ASP.NET web application from scratch](tutorial-web-app-dotnet-sign-in-prepare-app.md)
 - [Enable password reset](how-to-enable-password-reset-customers.md)
 - [Customize the default branding](how-to-customize-branding-customers.md)
 - [Configure sign-in with Google](how-to-google-federation-customers.md)
-- [Sign in users in your own ASP.NET web application by using an external tenant](tutorial-web-app-dotnet-sign-in-prepare-app.md)
+

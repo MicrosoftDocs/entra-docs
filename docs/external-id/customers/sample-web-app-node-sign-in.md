@@ -131,14 +131,9 @@ When the users select the **Sign out** link, the app clears its session, the red
 
 If you want to build an app similar to the sample you've run, complete the steps in [Sign in users in your own Node.js web application](tutorial-web-app-node-sign-in-prepare-tenant.md) article.
 
-## Next steps
-
-You may want to:
+## Related content
 
 - [Enable password reset](how-to-enable-password-reset-customers.md)
-
 - [Customize the default branding](how-to-customize-branding-customers.md)
-
 - [Configure sign-in with Google](how-to-google-federation-customers.md)
-
 - [Sign in users in your Node.js web application](tutorial-web-app-node-sign-in-prepare-tenant.md)

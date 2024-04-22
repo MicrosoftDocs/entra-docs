@@ -1,6 +1,6 @@
 ---
 title: Authenticate users in an external tenant using a sample Node.js CLI app
-description: Learn how to authenticate users in an external tenant using a sample Node.js CLI application
+description: Learn how to authenticate users in an external tenant using a sample Node.js CLI application.
 
 author: Dickson-Mwendia
 manager: mwongerapk
@@ -100,17 +100,15 @@ You can now test the sample Node.js CLI application.
 
 1. On the sign-in page, type your **Email address**. If you don't have an account, select **No account? Create one**, which starts the sign-up flow.
 
-1. If you choose the sign-up option, after filling in your email, one-time passcode, new password and more account details, you complete the whole sign-up flow. After completing the sign up flow and signing in, you see a page similar to the following screenshot:
+1. If you choose the sign-up option, after filling in your email, one-time passcode, new password, and more account details, you complete the whole sign-up flow. After completing the sign up flow and signing in, you see a page similar to the following screenshot:
 
      :::image type="content" source="media/tutorial-node-cli-app-sign-in/node-cli-app-signed-in-user.png" alt-text="Screenshot showing a signed-in user in a node CLI application.":::
 
 1. Move back to the terminal and see your authentication information including the ID token claims.
 
-## Next steps
+## Related content
 
-Learn how to: 
-
-- [Sign in users in your own Node.js CLI application](tutorial-cli-app-node-sign-in-prepare-tenant.md). By completing these steps, you build a Node.js CLI application similar to the sample you've run. 
+- [Sign in users in your own Node.js CLI application](tutorial-cli-app-node-sign-in-prepare-tenant.md).
 - [Enable password reset](how-to-enable-password-reset-customers.md).
 - [Customize the default branding](how-to-customize-branding-customers.md).
 - [Configure sign-in with Google](how-to-google-federation-customers.md).

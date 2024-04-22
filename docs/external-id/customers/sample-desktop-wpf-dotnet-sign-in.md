@@ -96,6 +96,10 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 
 The main configuration for the public client application is handled within the *App.xaml.cs* file. A `PublicClientApplication` is initialized along with a cache for storing access tokens. The application will first check whether there's a cached token that can be used to sign the user in. If there's no cached token, the user will be prompted to provide credentials and sign-in. Upon signing-out, the cache is cleared of all accounts and all corresponding access tokens.
 
-## Next steps
+## Related content
 
-See the tutorial on how to [build your own WPF desktop app that authenticates users](tutorial-desktop-wpf-dotnet-sign-in-prepare-tenant.md)
+- [Use our multi-part tutorial series to build this WPF desktop app from scratch](tutorial-desktop-wpf-dotnet-sign-in-prepare-tenant.md)
+- [Enable password reset](how-to-enable-password-reset-customers.md).
+- [Customize the default branding](how-to-customize-branding-customers.md).
+- [Configure sign-in with Google](how-to-google-federation-customers.md).
+

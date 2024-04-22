@@ -98,8 +98,10 @@ To build and run your app, follow these steps:
  
 1. Select the **Run** button.
 1. Select **Acquire Token Interactively** to request an access token.
-1. If you select **API - Perform GET** to call a protected ASP.NET Core web API, you will get an error. For more information about calling a protected web API, see [Next Step](#next-step) 
+1. If you select **API - Perform GET** to call a protected ASP.NET Core web API, you will get an error. 
 
-## Next Step
+For more information about calling a protected web API, see our [next steps](#next-steps) 
+
+## Next steps
 
 - [Sign in users and call a protected web API in sample Android (Kotlin) app](sample-mobile-app-android-kotlin-sign-in-call-api.md).
