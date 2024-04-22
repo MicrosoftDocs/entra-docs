@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: conceptual
 ms.tgt_pltfrm: na
-ms.date: 02/09/2024
+ms.date: 04/24/2024
 ms.subservice: hybrid
 ms.author: billmath
 

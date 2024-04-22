@@ -5,7 +5,7 @@ author: billmath
 manager: amycolannino
 ms.service: entra-id
 ms.topic: conceptual
-ms.date: 11/06/2023
+ms.date: 04/24/2024
 ms.subservice: hybrid-cloud-sync
 ms.author: billmath
 ---
