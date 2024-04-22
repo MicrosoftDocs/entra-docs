@@ -35,7 +35,7 @@ This guide uses a sample Windows Presentation Foundation (WPF) application to sh
 
 ## Grant API permissions
 
-Since this app signs-in users, add delegated permissions:
+Since this app signs in users, add delegated permissions:
 
 [!INCLUDE [active-directory-b2c-grant-delegated-permissions](./includes/register-app/grant-api-permission-sign-in.md)] 
 
@@ -83,7 +83,7 @@ To obtain the sample application, you can either clone it from GitHub or downloa
     dotnet run
     ```
 
-1. After you launch the sample you should see a window with a **Sign-In** button. Select the **Sign-In** button.
+1. After you launch the sample, you should see a window with a **Sign-In** button. Select the **Sign-In** button.
 
     :::image type="content" source="./media/sample-wpf-dotnet-sign-in/wpf-sign-in-screen.png" alt-text="Screenshot of sign-in screen for a WPF desktop application.":::
 
