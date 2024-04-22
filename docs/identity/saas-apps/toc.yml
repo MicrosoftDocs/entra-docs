@@ -2931,6 +2931,8 @@
         href: useall-tutorial.md
       - name: UserEcho
         href: userecho-tutorial.md  
+      - name: User Interviews
+        href: user-interviews-tutorial.md
       - name: UserVoice
         href: uservoice-tutorial.md
       - name: UserTesting
