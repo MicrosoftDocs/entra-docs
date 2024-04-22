@@ -169,7 +169,7 @@ In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by 
 
     1. Select **External Authentication Provider** from the drop-down.
 
-    1. Enter the Entra ID **User principal name** in the **External Provider User Name** field.
+    1. Enter the Microsoft Entra ID **User principal name** in the **External Provider User Name** field.
 
 > [!NOTE]
 > Please refer [OneStream Documentation Site](https://docs.onestream.com/) and navigate to **Design and Reference** > **About Managing Users and Groups** > **Creating and Managing Users** for more information.
