@@ -254,8 +254,6 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | Task | Least privileged role | Additional roles |
 > | ---- | --------------------- | ---------------- |
 > | Manage identity providers | [External Identity Provider Administrator](permissions-reference.md#external-identity-provider-administrator) |  |
-> | Manage settings | [Global Administrator](permissions-reference.md#global-administrator) |  |
-> | Manage privacy statement and contact | [Global Administrator](permissions-reference.md#global-administrator) |  |
 > | Read all configuration | [Global Reader](permissions-reference.md#global-reader) |  |
 
 ## Password reset
@@ -365,6 +363,7 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | ---- | --------------------- | ---------------- |
 > | Create Microsoft Entra ID or Azure AD B2C Tenant | [Tenant Creator](permissions-reference.md#tenant-creator) |  |
 > | Update Microsoft Entra tenant properties | [Billing Administrator](permissions-reference.md#billing-administrator) |  |
+> | [Manage privacy statement and contact](/entra/fundamentals/properties-area) | [Billing Administrator](permissions-reference.md#billing-administrator) |  |
 
 ## Users
 
