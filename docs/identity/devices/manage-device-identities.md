@@ -5,7 +5,7 @@ description: This article describes how to use the Microsoft Entra admin center 
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: how-to
-ms.date: 02/23/2024
+ms.date: 04/22/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
