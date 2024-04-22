@@ -107,5 +107,5 @@ You can [enable integration with SharePoint and OneDrive](/sharepoint/sharepoint
 ## Next steps
 
 - [Invitation email](invitation-email-elements.md)
-- [Add B2B collaboration guest users in the admin center](add-users-administrator.md)
+- [Add B2B collaboration guest users in the admin center](add-users-administrator.yml)
 - [B2B direct connect](b2b-direct-connect-overview.md)

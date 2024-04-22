@@ -40,7 +40,7 @@ Now, new members joining the Support team can request access to this access pack
 
 ## Add a Microsoft Entra role as a resource in an access package 
 
-**Prerequisite role:** Global Administrator, Identity Governance Administrator, Catalog owner, or Access package manager
+**Prerequisite role:** Global Administrator
 
 Follow these steps to change the list of incompatible groups or other access packages for an existing access package: 
 

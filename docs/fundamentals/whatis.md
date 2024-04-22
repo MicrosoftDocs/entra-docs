@@ -16,7 +16,7 @@ ms.collection: M365-identity-device-management
 
 # What is Microsoft Entra ID?
 
-Microsoft Entra ID is a cloud-based identity and access management service that enables your employees access external resources. Example resources include Microsoft 365, the Azure portal, and thousands of other SaaS applications. 
+Microsoft Entra ID is a cloud-based identity and access management service that your employees can use to access external resources. Example resources include Microsoft 365, the Azure portal, and thousands of other SaaS applications. 
 
 Microsoft Entra ID also helps them access internal resources like apps on your corporate intranet, and any cloud apps developed for your own organization. To learn how to create a tenant, see [Quickstart: Create a new tenant in Microsoft Entra ID](./create-new-tenant.md).
 
@@ -55,7 +55,7 @@ To enhance your Microsoft Entra implementation, you can also add paid features b
 
 - **"Pay as you go" feature licenses.** You can also get licenses for features such as, Microsoft Entra Business-to-Customer (B2C). B2C can help you provide identity and access management solutions for your customer-facing apps. For more information, see [Azure Active Directory B2C documentation](/azure/active-directory-b2c/).
 
-For more information about associating an Azure subscription to Microsoft Entra ID, see [Associate or add an Azure subscription to Microsoft Entra ID](./how-subscriptions-associated-directory.md). For more information about assigning licenses to your users, see [How to: Assign or remove Microsoft Entra ID licenses](license-users-groups.md).
+For more information about associating an Azure subscription to Microsoft Entra ID, see [Associate or add an Azure subscription to Microsoft Entra ID](./how-subscriptions-associated-directory.yml). For more information about assigning licenses to your users, see [How to: Assign or remove Microsoft Entra ID licenses](license-users-groups.yml).
 
 <a name='which-features-work-in-azure-ad'></a>
 
@@ -107,6 +107,6 @@ To better understand Microsoft Entra ID and its documentation, we recommend revi
 
 - [Sign up for Microsoft Entra ID P1 or P2](./get-started-premium.md)
 
-- [Associate an Azure subscription to your Microsoft Entra ID](./how-subscriptions-associated-directory.md)
+- [Associate an Azure subscription to your Microsoft Entra ID](./how-subscriptions-associated-directory.yml)
 
 - [Microsoft Entra ID P2 feature deployment checklist](./concept-secure-remote-workers.md)
