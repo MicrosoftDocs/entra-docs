@@ -122,17 +122,17 @@
         href: howto-authentication-passwordless-deployment.md
       - name: Passkey (FIDO2) authentication
         items:
-        - name: Enable passkeys for an organization (preview)
+        - name: Enable passkeys for an organization
           href: how-to-enable-passkey-fido2.md
         - name: Register passkey (preview)
           href: how-to-register-passkey.md
-        - name: Register passkey with a mobile device (preview)  
+        - name: Register passkey with a mobile device (preview)
           href: how-to-register-passkey-mobile.md
         - name: Sign in with passkey (preview)
           href: how-to-sign-in-passkey.md  
-        - name: FIDO2 compatibility
+        - name: Passkey (FIDO2) compatibility matrix
           href: concept-fido2-compatibility.md
-        - name: Become a FIDO2 security key provider
+        - name: Become a FIDO2 security key vendor
           href: concept-fido2-hardware-vendor.md  
       - name: Microsoft Authenticator
         items:
