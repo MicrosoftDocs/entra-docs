@@ -34,13 +34,13 @@ To create an EAM, you need the following information from your external authenti
 
 ## Manage an external authentication method in the Microsoft Entra admin center
 
-External authentication methods are managed with the Entra ID Authentication methods policy, just like built-in methods. 
+EAMs are managed with the Entra ID Authentication methods policy, just like built-in methods. 
 
 ### Create an EAM in the admin center
 
-To create an external authentication method using the admin center, you will need the [required information from your external authentication provider](#required-information-from-your-external-authentication-provider). 
+To create an EAM in the admin center, you need the [required information from your external authentication provider](#required-information-from-your-external-authentication-provider). 
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Privilleged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 1. Browse to **Protection** > **Authentication methods** > **Add external method (Preview)**.
 
    :::image type="content" border="true" source="./media/how-to-authentication-external-method-manage/add-external-method.png" alt-text="Screenshot of how to add an external authentication method in the Microsoft Entra admin center.":::
