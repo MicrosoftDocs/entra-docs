@@ -12,7 +12,7 @@ ms.subservice: customers
 ms.topic: sample
 ms.date: 06/23/2023
 ms.custom: developer, devx-track-js
-#Customer intent: As a dev, devops, I want to learn about how to configure a sample web app to sign in and sign out users with my external tenant. 
+#Customer intent: As a dev, devops, I want to learn about how to configure a sample web app to sign in and sign out users with my external tenant.
 ---
 
 # Sign in users and call an API in sample Node.js web application 

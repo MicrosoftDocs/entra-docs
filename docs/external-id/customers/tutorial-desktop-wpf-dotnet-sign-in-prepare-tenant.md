@@ -17,17 +17,18 @@ ms.date: 07/26/2023
 
 This tutorial series demonstrates how to build a .NET Windows Presentation Form (WPF) desktop application and prepare it for authentication using the Microsoft Entra admin center. You'll register the app in the Microsoft Entra admin center, create a .NET WPF desktop app, add sign-in and sign-out components and run the application.
 
-In this tutorial, you'll;
+In this tutorial, you'll
 
 > [!div class="checklist"]
->
-> - Register a WPF desktop application in the Microsoft Entra admin center
-> - Create a sign-in and sign-out user flow in customers tenant.
-> - Associate your WPF desktop app with the user flow.
+> - Do something.
+> - Do something else.
+> - Do even more things.
+> - Do the last thing.
+
 
 ## Prerequisites
 
-* Microsoft Entra  External ID tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">
+* An external tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">
 * This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
     * Application Administrator
     * Application Developer
