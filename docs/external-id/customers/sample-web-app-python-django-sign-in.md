@@ -9,18 +9,18 @@ ms.service: entra-external-id
 ms.subservice: customers
 ms.topic: sample
 ms.date: 03/18/2024
-#Customer intent: As a dev, devops, I want to learn about how to configure a sample Python Django web app to sign in and sign out users with my Microsoft Entra External ID tenant.
+#Customer intent: As a dev, devops, I want to learn about how to configure a sample Python Django web app to sign in and sign out users with my external tenant.
 ---
 
 # Sign in users in a sample Python Django web application
 
-In this article, you explore a Python Django web app that is secured by Microsoft Entra External ID. This sample takes you through the sign-in experience for customers authenticating to a Python Django web app. The sample web app uses the [Microsoft Authentication Library for Python (MSAL Python)](https://github.com/AzureAD/microsoft-authentication-library-for-python) to handle user authentication.
+In this guide, you explore a Python Django web app that is secured by Microsoft Entra External ID. This sample takes you through the sign-in experience for customers authenticating to a Python Django web app. The sample web app uses the [Microsoft Authentication Library for Python (MSAL Python)](https://github.com/AzureAD/microsoft-authentication-library-for-python) to handle user authentication.
 
 ## Prerequisites
 
 * [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 * [Python 3+](https://www.python.org/).
-* Microsoft Entra  External ID tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>..
+* An external tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>..
 
 ## Register the web app
 

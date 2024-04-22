@@ -12,18 +12,18 @@ ms.subservice: customers
 ms.topic: sample
 ms.date: 07/26/2023
 ms.custom: developer, devx-track-dotnet
-#Customer intent: As a dev, devops, I want to learn about how to configure a sample WPF desktop app to sign in and sign out users with my Microsoft Entra External ID tenant.
+#Customer intent: As a dev, devops, I want to learn about how to configure a sample WPF desktop app to sign in and sign out users with my external tenant.
 ---
 
 # Sign in users in a sample WPF desktop application 
 
-This article uses a sample Windows Presentation Foundation (WPF) application to show you how to add authentication to a WPF desktop application. The sample application enables users to sign in and sign out. The sample desktop application uses [Microsoft Authentication Library for .NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet) for .NET to handle authentication.
+This guide uses a sample Windows Presentation Foundation (WPF) application to show you how to add authentication to a WPF desktop application. The sample application enables users to sign in and sign out. The sample desktop application uses [Microsoft Authentication Library for .NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet) for .NET to handle authentication.
 
 ## Prerequisites
 
 * [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 * [.NET 7.0](https://dotnet.microsoft.com/download/dotnet/7.0) or later. 
-* Microsoft Entra  External ID tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
+* An external tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
 
 ## Register the desktop app
 

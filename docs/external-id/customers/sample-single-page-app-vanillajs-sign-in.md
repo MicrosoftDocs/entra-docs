@@ -10,12 +10,12 @@ ms.subservice: customers
 ms.custom: devx-track-js
 ms.topic: sample
 ms.date: 04/10/2024
-#Customer intent: As a dev, devops, I want to learn about how to configure a sample vanilla JS SPA to sign in and sign out users with my Microsoft Entra External ID tenant.
+#Customer intent: As a dev, devops, I want to learn about how to configure a sample vanilla JS SPA to sign in and sign out users with my external tenant. .
 ---
 
 # Sign in users in a sample vanilla JavaScript single-page application
 
-This guide uses a sample vanilla JavaScript (JS) single-page Application (SPA) to demonstrate how to add authentication to a SPA. The SPA enables users to sign in and sign out by using your Microsoft Entra External ID tenant. The sample uses the [Microsoft Authentication Library for JavaScript (MSAL.js)](https://github.com/AzureAD/microsoft-authentication-library-for-js) to handle authentication.
+This guide uses a sample vanilla JavaScript (JS) single-page Application (SPA) to demonstrate how to add authentication to a SPA. The SPA enables users to sign in and sign out by using your external tenant. The sample uses the [Microsoft Authentication Library for JavaScript (MSAL.js)](https://github.com/AzureAD/microsoft-authentication-library-for-js) to handle authentication.
 
 ## Prerequisites
 
@@ -50,7 +50,7 @@ To obtain the sample application, you can either clone it from GitHub or downloa
     git clone https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial.git
     ```
 
-- [Download the sample](https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial/archive/refs/heads/main.zip).Extract it to a file path where the length of the name is fewer than 260 characters. 
+- [Download the sample](https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial/archive/refs/heads/main.zip). Extract it to a file path where the length of the name is fewer than 260 characters. 
 
 ## Install project dependencies
 

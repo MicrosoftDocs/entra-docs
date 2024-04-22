@@ -1,6 +1,6 @@
 ---
-title: Authenticate users in a Microsoft Entra External ID tenant using a sample Node.js CLI app
-description: Learn how to authenticate users in a Microsoft Entra External ID tenant using a sample Node.js CLI application
+title: Authenticate users in an external tenant using a sample Node.js CLI app
+description: Learn how to authenticate users in an external tenant using a sample Node.js CLI application
 
 author: Dickson-Mwendia
 manager: mwongerapk
@@ -12,12 +12,12 @@ ms.subservice: customers
 ms.topic: sample
 ms.date: 08/04/2023
 ms.custom: developer, devx-track-js
-#Customer intent: As a dev, devops, I want to learn how to authenticate users in a Microsoft Entra External ID tenant using a sample Node.js CLI application
+#Customer intent: As a dev, devops, I want to learn how to authenticate users in an external tenant using a sample Node.js CLI application
 ---
 
 # Sign in users in a sample Node.js CLI application. 
 
-This guide uses a sample Node Command Line Interface (CLI) application to sign in users in a Microsoft Entra External ID tenant. The sample application uses the [Microsoft Authentication Library for Node](/javascript/api/%40azure/msal-node/) (MSAL Node) to handle authentication.
+This guide uses a sample Node Command Line Interface (CLI) application to sign in users in an external tenant. The sample application uses the [Microsoft Authentication Library for Node](/javascript/api/%40azure/msal-node/) (MSAL Node) to handle authentication.
 
 In this article, you complete the following tasks:
 
@@ -33,7 +33,7 @@ In this article, you complete the following tasks:
 
 * [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 * [Node.js](https://nodejs.org).
-* Microsoft Entra  External ID tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
+* An external tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
 
 ## Register the Node.js CLI app
 

@@ -1,7 +1,7 @@
 ---
 title: Sign in users and call an API in sample Node.js web application 
 description: Learn how to configure a sample web app to sign in users and call an API.
- 
+
 author: kengaderdus
 manager: mwongerapk
 
@@ -12,12 +12,12 @@ ms.subservice: customers
 ms.topic: sample
 ms.date: 06/23/2023
 ms.custom: developer, devx-track-js
-#Customer intent: As a dev, devops, I want to learn about how to configure a sample web app to sign in and sign out users with my Microsoft Entra external ID tenant
+#Customer intent: As a dev, devops, I want to learn about how to configure a sample web app to sign in and sign out users with my external tenant. 
 ---
 
 # Sign in users and call an API in sample Node.js web application 
 
-This how-to guide uses a sample Node.js web application to show you how to add authentication and authorization. The sample application sign in users to a Node.js web app, which then calls a .NET API. You enable authentication and authorization by using your external tenant details. The sample web application uses [Microsoft Authentication Library (MSAL)](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-node) for Node to handle authentication.
+This guide uses a sample Node.js web application to show you how to add authentication and authorization. The sample application sign in users to a Node.js web app, which then calls a .NET API. You enable authentication and authorization by using your external tenant details. The sample web application uses [Microsoft Authentication Library (MSAL)](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-node) for Node to handle authentication.
 
 In this article, you complete the following tasks:
 
@@ -36,7 +36,7 @@ In this article, you complete the following tasks:
 * [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 * [Node.js](https://nodejs.org).
 * [.NET 7.0](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/install) or later. 
-* Microsoft Entra  External ID tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
+* An external tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
 
 ## Register a web application and a web API
 

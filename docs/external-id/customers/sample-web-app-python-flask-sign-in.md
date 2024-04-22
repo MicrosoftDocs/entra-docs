@@ -20,7 +20,7 @@ In this article, you explore a Python Flask web app that is secured by Microsoft
 
 * [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 * [Python 3+](https://www.python.org/).
-* Microsoft Entra  External ID tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
+* An external tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
 
 ## Register the web app
 

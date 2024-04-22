@@ -1,6 +1,6 @@
 ---
 title: Call an API in a sample Node.js daemon application
-description: Learn how to configure a sample Node.js daemon application that calls an API protected by an Microsoft Entra External ID tenant
+description: Learn how to configure a sample Node.js daemon application that calls an API protected by an external tenant.
 
 author: kengaderdus
 manager: mwongerapk
@@ -12,12 +12,12 @@ ms.subservice: customers
 ms.topic: sample
 ms.date: 06/23/2023
 ms.custom: developer, devx-track-js
-#Customer intent: As a dev, devops, I want to configure a sample Node.js daemon application that calls an API protected by my Microsoft Entra External ID tenant
+#Customer intent: As a dev, devops, I want to configure a sample Node.js daemon application that calls an API protected by my external tenant.
 ---
 
 # Call an API in a sample Node.js daemon application 
 
-This article uses a sample Node.js daemon application to show you how a daemon app acquires a token to call a web API. Microsoft Entra protects the Web API.
+This guide uses a sample Node.js daemon application to show you how a daemon app acquires a token to call a web API. Microsoft Entra protects the Web API.
 
 A daemon application acquires a token on behalf of itself (not on behalf of a user). Users can't interact with a daemon application because it requires its own identity. This type of application requests an access token by using its application identity and presenting its application ID, credential (password or certificate), and application ID URI to External ID.
 
@@ -28,7 +28,7 @@ A daemon app uses the standard [OAuth 2.0 client credentials grant](~/identity-p
 * [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 * [Node.js](https://nodejs.org).
 * [.NET 7.0](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/install) or later. 
-* Microsoft Entra  External ID tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
+* An external tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
 
 ## Register a daemon application and a web API
 
