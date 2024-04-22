@@ -678,6 +678,8 @@
         href: cosgrid-networks-tutorial.md
       - name: Costpoint
         href: costpoint-tutorial.md
+      - name: Couchbase Server - SSO
+        href: couchbase-server-sso-tutorial.md
       - name: Count Me In - Operations Dashboard
         href: count-me-in-operations-dashboard-tutorial.md
       - name: Couchbase Capella - SSO
