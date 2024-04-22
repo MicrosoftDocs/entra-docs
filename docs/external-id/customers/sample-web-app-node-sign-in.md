@@ -94,9 +94,7 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 1. Find the placeholder:
 
     - `Enter_the_Application_Id_Here` and replace it with the Application (client) ID of the app you registered earlier.
-
     - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
-
     - `Enter_the_Client_Secret_Here` and replace it with the app secret value you copied earlier.
 
 ## Run and test sample web app
