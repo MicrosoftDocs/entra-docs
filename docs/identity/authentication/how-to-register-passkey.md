@@ -46,6 +46,9 @@ For more information about enabling passkeys in Microsoft Authenticator, see [Ho
    1. You're prompted to create or enter a PIN for your security key, then perform the required gesture for the key.
    1. Upon completion, review any additional information from the security dialog, then tap Ok or Continue.
 
+1. After you're redirected to My Security info, you can change the default name for the new sign-in method. 
+1. Tap **Done** to finish registering the new method.
+
 <!---
 
 If your organization allows saving a passkey to your mobile device: 
@@ -65,9 +68,6 @@ Follow the remaining prompts to connect your device and register your new passke
 > Your organization may limit which passkey providers you can use. Select the option on your device as allowed by your organization.
 
 -->
-
-1. After you're redirected to My Security info, you can change the default name for the new sign-in method. 
-1. Tap **Done** to finish registering the new method.
 
 <!---
 
