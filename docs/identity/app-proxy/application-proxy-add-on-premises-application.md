@@ -33,7 +33,7 @@ To add an on-premises application to Microsoft Entra ID, you need:
 - An understanding of single sign-on (SSO), see [Understand single sign-on](~/identity/enterprise-apps/what-is-single-sign-on.md).
 
 ## Install and verify the Microsoft Entra private network connector
-Application proxy uses the same connector as Microsoft Entra Private Access. The connector is called Microsoft Entra private network connector. To learn more about connectors, see [Microsoft Entra private network connectors](../../global-secure-access/concept-connectors.md).
+Application proxy uses the same connector as Microsoft Entra Private Access. The connector is called Microsoft Entra private network connector. To learn how to install and verify a connector, see [How to configure connectors](../../global-secure-access/how-to-configure-connectors.md).
 
 ### General remarks
 
@@ -121,11 +121,6 @@ Check the error details for information and suggestions for how to fix the appli
 
 The error message should display in the top-right corner when you create the application. You can also select the notification icon to see the error messages.
 
-### Configure connectors/connector groups
-
-If you're having difficulty configuring your application because of warning about the connectors and connector groups, see instructions on enabling application proxy for details on how to download connectors. If you want to learn more about connectors, see the [connectors documentation](application-proxy-connectors.md).
-
-If your connectors are inactive, they're unable to reach the service. Often because all of the required ports aren't open. To see a list of required ports, see the prerequisites section of the enabling application proxy documentation.
 
 ### Upload certificates for custom domains
 
