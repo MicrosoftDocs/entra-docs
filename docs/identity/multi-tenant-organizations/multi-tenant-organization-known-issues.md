@@ -92,7 +92,7 @@ The constraints and details described in this article have the following scope.
 
 - For target users of cross-tenant synchronization, target users receive these properties at time of synchronization, subject to auto-redemption being enabled.
 
-- Multitenant organization collaboration workloads rely on these origin tenant and origin user references.
+- Multitenant organization collaboration capabilities, like Microsoft Teams and Viva Engage for multitenant organizations, rely on these origin tenant and origin user references.
 
 - If your B2B user object is missing origin tenant and origin user references, [reset the redemption status](../../external-id/reset-redemption-status.md), and then redeem again to properly populate the origin tenant and origin user references.
 
