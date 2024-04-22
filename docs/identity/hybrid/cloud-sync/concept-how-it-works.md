@@ -37,7 +37,7 @@ The following items occur when the cloud provisioning agent is installed.
 - The Installer then starts the Wizard.
 - The Wizard prompts for Microsoft Entra credentials, then authenticates, and retrieve a token.
 - The wizard then asks for the current machine Domain Administrators credentials.
-- Using the domain administrator credentials, the agent general managed service account (GMSA) for this domain is either created or located and reused if it already exists.
+- The agent general managed service account (GMSA) for this domain is either created or located and reused if it already exists.
 - The agent service is now reconfigured to run under the GMSA.
 - The wizard now asks for domain configuration along with the Enterprise Admin (EA)/Domain Admin(DA) Account for each domain you want the agent to service.
 - The GMSA account is then updated with permissions that enable it access to each domain entered during setup.
@@ -63,7 +63,7 @@ Once you've installed the agent and enabled provisioning, the following flow occ
 3.  AD returns the result to the agent and the agent filters this data before sending it to Microsoft Entra ID.  
 4.  Agent returns the SCIM response to Microsoft Entra ID.  These responses are based on the filtering that happened within the agent.  The agent uses scoping to filter the results. 
 5.  The provisioning service writes the changes to Microsoft Entra ID.
-6.  If a delta Sync occurs, as opposed to a full sync, then the cookie/watermark is used. New queries gets changes from that cookie/watermark onwards.
+6.  If a delta Sync occurs, as opposed to a full sync, then the cookie/watermark is used. New queries get changes from that cookie/watermark onwards.
 
 ## Supported scenarios:
 The following scenarios are supported for cloud sync.
