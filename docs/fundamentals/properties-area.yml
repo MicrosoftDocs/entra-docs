@@ -37,7 +37,7 @@ procedureSection:
 
     steps:
       - |
-        Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Billing Administrator](../identity/role-based-access-control/permissions-reference.md#billing-administrator).
+        Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Billing Administrator](../identity/role-based-access-control/permissions-reference.md#billing-administrator).
       - |
         Browse to **Identity** > **Overview** > **Properties**.
 
