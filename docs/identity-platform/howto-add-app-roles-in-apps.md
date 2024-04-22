@@ -73,7 +73,7 @@ If you have not already done so, you'll need to assign yourself as the applicati
 
 ## Assign app roles to applications
 
-Once you've added app roles in your application, you can assign an app role to a client app by using the Microsoft Entra admin center or programmatically by using [Microsoft Graph](/graph/api/user-post-approleassignments). This is not to be confused with [assigning roles to users](~/identity/role-based-access-control/manage-roles-portal.md).
+Once you've added app roles in your application, you can assign an app role to a client app by using the Microsoft Entra admin center or programmatically by using [Microsoft Graph](/graph/api/user-post-approleassignments). This is not to be confused with [assigning roles to users](~/identity/role-based-access-control/manage-roles-portal.yml).
 
 When you assign app roles to an application, you create _application permissions_. Application permissions are typically used by daemon apps or back-end services that need to authenticate and make authorized API call as themselves, without the interaction of a user.
 

@@ -90,7 +90,7 @@ additionalContent:
         # Card
         - title: Cross-tenant access
           summary: Configure cross-tenant access settings for B2B collaboration.
-          url: ./cross-tenant-access-settings-b2b-collaboration.md
+          url: ./cross-tenant-access-settings-b2b-collaboration.yml
         # Card
         - title: Self-service sign-up
           summary: Learn about the self-service sign-up user flow. 

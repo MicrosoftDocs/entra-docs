@@ -92,7 +92,7 @@ The following authentication methods can't be registered as part of combined reg
 
 
 ### Federated user experience  
-For federated domains, MFA may be enforced by Microsoft Entra Conditional Access or by the on-premises federation provider by setting the federatedIdpMfaBehavior. If the federatedIdpMfaBehavior setting is set to enforceMfaByFederatedIdp, the user must authenticate on their federated IdP and can only satisfy the **Federated Multi-Factor** combination of the authentication strength requirement. For more information about the federation settings, see [Plan support for MFA](~/identity/hybrid/connect/migrate-from-federation-to-cloud-authentication.md#plan-support-for-mfa).
+For federated domains, MFA may be enforced by Microsoft Entra Conditional Access or by the on-premises federation provider by setting the federatedIdpMfaBehavior. If the federatedIdpMfaBehavior setting is set to enforceMfaByFederatedIdp, the user must authenticate on their federated IdP and can only satisfy the **Federated Multi-Factor** combination of the authentication strength requirement. For more information about the federation settings, see [Plan support for MFA](../hybrid/connect/migrate-from-federation-to-cloud-authentication.md).
 
 If a user from a federated domain has multifactor authentication settings in scope for Staged Rollout, the user can complete multifactor authentication in the cloud and satisfy any of the **Federated single-factor + something you have** combinations. For more information about staged rollout, see [Enable Staged Rollout](how-to-mfa-server-migration-utility.md#enable-staged-rollout).
 
