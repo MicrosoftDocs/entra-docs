@@ -99,10 +99,10 @@ Learn more: [Plan a Microsoft Entra access reviews deployment](~/id-governance/d
 ## Using entitlement management automation
 
 - [Working with the Microsoft Entra entitlement management API](/graph/api/resources/entitlementmanagement-overview?view=graph-rest-1.0&preserve-view=true)
-- [accessPackage resource type](/graph/api/resources/accesspackage?view=graph-rest-1.0&preserve-view=true)
+- [`accessPackage` resource type](/graph/api/resources/accesspackage?view=graph-rest-1.0&preserve-view=true)
 - [Microsoft Entra access reviews](/graph/api/resources/accessreviewsv2-overview?view=graph-rest-1.0&preserve-view=true)
-- [connectedOrganization resource type](/graph/api/resources/connectedorganization?view=graph-rest-1.0&preserve-view=true)
-- [entitlementManagementSettings resource type](/graph/api/resources/entitlementmanagementsettings?view=graph-rest-1.0&preserve-view=true)
+- [`connectedOrganization` resource type](/graph/api/resources/connectedorganization?view=graph-rest-1.0&preserve-view=true)
+- [`entitlementManagementSettings` resource type](/graph/api/resources/entitlementmanagementsettings?view=graph-rest-1.0&preserve-view=true)
 
 ## External access governance recommendations
 

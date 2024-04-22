@@ -10,9 +10,10 @@ ms.topic: how-to
 ms.subservice: fundamentals
 ms.date: 02/20/2024
 ---
+
 # Approve and manage Microsoft Support access requests (preview)
 
-In many situations, enabling the collection of **Advanced diagnostic information** during the creation of a support access request is sufficient for Microsoft Support to troubleshoot your issue. In some situations though, a separate approval may be needed to allow Microsoft Support to access your identity diagnostic data. For more information on applicable scenarios and the overall workflow, see [What are Microsoft Support access requests?](concept-support-access-requests.md).
+In many situations, enabling the collection of **Advanced diagnostic information** during the creation of a support access request is sufficient for Microsoft Support to troubleshoot your issue. In some situations though, a separate approval might be needed to allow Microsoft Support to access your identity diagnostic data. For more information on applicable scenarios and the overall workflow, see [What are Microsoft Support access requests?](concept-support-access-requests.md).
 
 Microsoft Support access requests (preview) enable you to [give Microsoft Support engineers access to diagnostic data](concept-support-access-requests.md) in your identity service to help solve support requests you submitted to Microsoft. You can use the Microsoft Entra admin center and the Azure portal to manage Microsoft Support access requests.
 
@@ -36,7 +37,7 @@ Only authorized users in your tenant can view and manage Microsoft Support acces
 
 ## Approve or reject a support request
 
-You can approve or reject a support request from the Microsoft Support Access Requests (Preview) section. If you have a pending request, a banner message appears at the top of the page with a link to manage pending requests. 
+You can approve or reject a support request from the Microsoft Support Access Requests (Preview) section. If you have a pending request, a banner message appears at the top of the page with a link to manage pending requests.
 
 :::image type="content" source="media/how-to-manage-support-access-requests/diagnose-solve-problems-banner.png" alt-text="Screenshot of the Diagnose and solve problems page with the banner notification highlighted.":::
 
@@ -54,14 +55,14 @@ When viewing the details of a pending support access request, you can approve or
     - Microsoft Support now has *read-only* access to your identity diagnostic data until your support request is completed.
 - To reject the support access request, select the **Reject** button.
     - Microsoft Support does *not* have access to your identity diagnostic data.
-    - A message appears, indicating this choice may result in slower resolution of your support request.
-    - Your support engineer may ask you for data needed to diagnose the issue, and you must collect and provide that information to your support engineer. 
+    - A message appears, indicating this choice might result in slower resolution of your support request.
+    - Your support engineer might ask you for data needed to diagnose the issue, and you must collect and provide that information to your support engineer.
 
 :::image type="content" source="media/how-to-manage-support-access-requests/pending-request-details.png" alt-text="Screenshot of the Support Access requests details page with the Reject and Approve buttons highlighted.":::
 
 ## Revoke access to an approved support access request
 
-Closing a support request automatically revokes the support engineer's access to your identity diagnostic data. You can manually revoke Microsoft Support's access to identity diagnostic data for the support request *before* your support request is closed. 
+Closing a support request automatically revokes the support engineer's access to your identity diagnostic data. You can manually revoke Microsoft Support's access to identity diagnostic data for the support request *before* your support request is closed.
 
 To revoke access to an approved support access request:
 
@@ -71,7 +72,7 @@ To revoke access to an approved support access request:
 
    :::image type="content" source="media/how-to-manage-support-access-requests/approved-access.png" alt-text="Screenshot of approved requests with links to view details highlighted.":::
 
-1. Select the **Remove access** button to revoke access to an approved support access request. 
+1. Select the **Remove access** button to revoke access to an approved support access request.
 
     :::image type="content" source="media/how-to-manage-support-access-requests/remove-approved-access.png" alt-text="Screenshot of the Support access requests history with the Revoke button highlighted.":::
 
@@ -81,4 +82,4 @@ When your support request is closed, the status of an approved Microsoft Support
 
 - [How to create a support request](how-to-get-support.md)
 - [View Microsoft Support access request logs](how-to-view-support-access-request-logs.md)
-- [Learn how Microsoft uses data for Azure support](https://azure.microsoft.com/support/legal/support-diagnostic-information-collection/)
+- [Learn how Microsoft uses data for Azure Support](https://azure.microsoft.com/support/legal/support-diagnostic-information-collection/)

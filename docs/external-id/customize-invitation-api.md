@@ -2,11 +2,10 @@
 title: B2B collaboration API and customization
 description: Microsoft Entra B2B collaboration supports your cross-company relationships by enabling business partners to selectively access your corporate applications.
 
- 
 ms.service: entra-external-id
-ms.custom: has-azure-ad-ps-ref
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: how-to
-ms.date: 12/18/2023
+ms.date: 02/29/2024
 
 ms.author: cmulligan
 author: csmulligan
@@ -94,7 +93,7 @@ For more information, see: https://developer.microsoft.com/graph/docs/authorizat
 You can use PowerShell to add and invite external users to an organization easily. Create an invitation using the cmdlet:
 
 ```powershell
-New-AzureADMSInvitation
+New-MgInvitation
 ```
 
 You can use the following options:
@@ -106,20 +105,20 @@ You can use the following options:
 
 ### Invitation status
 
-After you send an external user an invitation, you can use the **Get-AzureADUser** cmdlet to see if they've accepted it. The following properties of Get-AzureADUser are populated when an external user is sent an invitation:
+After you send an external user an invitation, you can use the **Get-MgBetaUser** cmdlet to see if they've accepted it. The following properties of Get-MgBetaUser are populated when an external user is sent an invitation:
 
-* **UserState** indicates whether the invitation is **PendingAcceptance** or **Accepted**.
-* **UserStateChangedOn** shows the timestamp for the latest change to the **UserState** property.
+* **externalUserState** indicates whether the invitation is **PendingAcceptance** or **Accepted**.
+* **externalUserStateChangeDateTime** shows the timestamp for the latest change to the **externalUserState** property.
 
-You can use the **Filter** option to filter the results by **UserState**. The example below shows how to filter results to show only users who have a pending invitation. The example also shows the **Format-List** option, which lets you specify the properties to display. 
+You can use the **Filter** option to filter the results by **externalUserState**. The example below shows how to filter results to show only users who have a pending invitation. The example also shows the **Format-List** option, which lets you specify the properties to display. 
  
 
 ```powershell
-Get-AzureADUser -Filter "UserState eq 'PendingAcceptance'" | Format-List -Property DisplayName,UserPrincipalName,UserState,UserStateChangedOn
+Get-MgBetaUser -Filter "externalUserState eq 'PendingAcceptance'" | Format-List -Property DisplayName,UserPrincipalName,externalUserState,externalUserStateChangeDateTime
 ```
 
 > [!NOTE]
-> Make sure you have the latest version of the Azure AD PowerShell module or AzureADPreview PowerShell module. 
+> Make sure you have the latest version of the [Microsoft Graph PowerShell module](/powershell/microsoftgraph/overview) 
 
 ## See also
 

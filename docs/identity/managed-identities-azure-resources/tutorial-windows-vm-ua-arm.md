@@ -27,7 +27,7 @@ You learn how to:
 > * Get an access token using the user-assigned identity and use it to call Azure Resource Manager
 > * Read the properties of a Resource Group
 
-[!INCLUDE [az-powershell-update](~/../azure-docs-pr/includes/updated-for-az.md)]
+[!INCLUDE [az-powershell-update](~/includes/azure-docs-pr/updated-for-az.md)]
 
 ## Prerequisites
 

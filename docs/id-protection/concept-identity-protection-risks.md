@@ -46,7 +46,6 @@ Real-time detections might not show up in reporting for 5 to 10 minutes. Offline
 | Risk detection | Detection type | Type |
 | --- | --- | --- |
 | [Atypical travel](#atypical-travel) | Offline | Premium |
-| [Anomalous Token](#anomalous-token) | Offline | Premium |
 | [Anomalous Token](#anomalous-token) | Real-time or Offline | Premium |
 | [Suspicious browser](#suspicious-browser) | Offline | Premium |
 | [Unfamiliar sign-in properties](#unfamiliar-sign-in-properties) | Real-time | Premium |
@@ -271,9 +270,16 @@ Customers without Microsoft Entra ID P2 licenses receive detections titled "addi
 
 ### Risk levels
 
-ID Protection categorizes risk into three tiers: low, medium, and high. When configuring [ID Protection policies](./concept-identity-protection-policies.md), you can also configure it to trigger upon **No risk** level. No Risk means there's no active indication that the user's identity has been compromised.
+ID Protection categorizes risk into three tiers: low, medium, and high. Risk levels calculated by our machine learning algorithms and represent how confident Microsoft is that one or more of the user's credentials are known by an unauthorized entity. A risk detection with risk level high signifies that Microsoft is highly confident that the account was compromised. Low risk signifies that there are anomalies present in the sign-in or a user’s credential, but we're less confident these anomalies mean the account was compromised.
 
-Microsoft doesn't provide specific details about how risk is calculated. Each level of risk brings higher confidence that the user or sign-in is compromised. For example, something like one instance of unfamiliar sign-in properties for a user might not be as threatening as leaked credentials for another user.
+Many detections can fire at more than one level depending on the number or severity of the anomalies detected. For example, a high risk **Unfamiliar Sign-in Properties** detection for a user carries higher confidence that Microsoft believes the account was compromised than a low or medium risk **Unfamiliar Sign-in Properties** detection. Some detections, like **Leaked Credentials** and **Verified Threat Actor IP** are always delivered as high risk. 
+
+Risk level is important when deciding which detections to prioritize investigation and remediation for. They also play a key role in configuring [Risk-based Conditional Access policies](concept-identity-protection-policies.md) as each policy can be set to trigger for low, medium, high, or no risk detected. 
+
+> [!IMPORTANT] 
+> All "low” risk level detections and users will persist in the product for 6 months, after which they will be automatically aged out to provide a cleaner investigation experience. Medium and high risk levels will persist until remediated or dismissed.
+
+Based on the risk tolerance of your organization, you can create policies that require MFA or password reset when ID Protection detects a certain risk level. These policies might guide the user to self-remediate and resolve the risk or block depending on your tolerances.
 
 ### Password hash synchronization
 
@@ -315,4 +321,4 @@ Location in risk detections is determined using IP address lookup.
 - [Policies available to mitigate risks](concept-identity-protection-policies.md)
 - [Investigate risk](howto-identity-protection-investigate-risk.md)
 - [Remediate and unblock users](howto-identity-protection-remediate-unblock.md)
-- [Security overview](concept-identity-protection-security-overview.md)
+- [Microsoft Entra ID Protection dashboard](id-protection-dashboard.md)

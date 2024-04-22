@@ -20,10 +20,10 @@ Microsoft Entra ID provides a central place to manage device identities and moni
 
 You can access the devices overview by completing these steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Reader](~/identity/role-based-access-control/permissions-reference.md#global-reader).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a user with at least [default user permissions](../../fundamentals/users-default-permissions.md).
 1. Go to **Identity** > **Devices** > **Overview**.
 
-In the devices overview, you can view the number of total devices, stale devices, noncompliant devices, and unmanaged devices. It provides links to Intune, Conditional Access, BitLocker keys, and basic monitoring. 
+In the devices overview, you can view the number of total devices, stale devices, noncompliant devices, and unmanaged devices. It provides links to Intune, Conditional Access, BitLocker keys, and basic monitoring. Other features like Conditional Access and Microsoft Intune require additional role assignments
 
 Device counts on the overview page don't update in real time. Changes should be reflected every few hours.
 
@@ -61,7 +61,7 @@ There are two ways to enable or disable devices:
 - The toolbar, after you drill down for a specific device.
 
 > [!IMPORTANT]
-> - You must be a Global Administrator, Intune Administrator, or Cloud Device Administrator in Microsoft Entra ID to enable or disable a device. 
+> - You must be a Intune Administrator or Cloud Device Administrator to enable or disable a device. 
 > - Disabling a device prevents it from authenticating via Microsoft Entra ID. This prevents it from accessing your Microsoft Entra resources that are protected by device-based Conditional Access and from using Windows Hello for Business credentials.
 > - Disabling a device revokes the Primary Refresh Token (PRT) and any refresh tokens on the device.
 > - Printers can't be enabled or disabled in Microsoft Entra ID.
@@ -74,9 +74,9 @@ There are two ways to delete a device:
 - The toolbar, after you drill down for a specific device.
 
 > [!IMPORTANT]
-> - You must be a Cloud Device Administrator, Intune Administrator, Windows 365 Administrator or Global Administrator in Microsoft Entra ID to delete a device.
-> - Printers can't be deleted in Microsoft Entra ID before they are deleted from Universal Print.
-> - Windows Autopilot devices can't be deleted in Microsoft Entra ID before they are deleted from Intune.
+> - You must be a Cloud Device Administrator, Intune Administrator or Windows 365 Administrator to delete a device.
+> - Printers can't be deleted before they are deleted from Universal Print.
+> - Windows Autopilot devices can't be deleted before they are deleted from Intune.
 > - Deleting a device:
 >    - Prevents it from accessing your Microsoft Entra resources.
 >    - Removes all details attached to the device. For example, BitLocker keys for Windows devices.  
@@ -98,12 +98,11 @@ You can view and copy BitLocker keys to allow users to recover encrypted drives.
 
 To view or copy BitLocker keys, you need to be the owner of the device or have one of these roles:
 
-- Cloud Device Administrator
-- Global Administrator
-- Helpdesk Administrator
-- Intune Service Administrator
-- Security Administrator
-- Security Reader
+- [Cloud Device Administrator](../role-based-access-control/permissions-reference.md#cloud-device-administrator)
+- [Helpdesk Administrator](../role-based-access-control/permissions-reference.md#helpdesk-administrator)
+- [Intune Administrator](../role-based-access-control/permissions-reference.md#intune-administrator)
+- [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator)
+- [Security Reader](../role-based-access-control/permissions-reference.md#security-reader)
   
 > [!NOTE]
 > When devices that utilize [Windows Autopilot](/mem/autopilot/windows-autopilot) are reused, **and there is a new device owner**, that new device owner must contact an administrator to acquire the BitLocker recovery key for that device. Administrative unit scoped administrators will lose access to BitLocker recovery keys after device ownership changes. These scoped administrators will need to contact a non-scoped administrator for the recovery keys. For more information, see the article [Find the primary user of an Intune device](/mem/intune/remote-actions/find-primary-user#change-a-devices-primary-user).
@@ -128,7 +127,7 @@ You can filter the device list by these attributes:
 
 ## Download devices
 
-Global readers, Cloud Device Administrators, Intune Administrators, and Global Administrators can use the **Download devices** option to export a CSV file that lists devices. You can apply filters to determine which devices to list. If you don't apply any filters, all devices are listed. An export task might run for as long as an hour, depending on your selections. If the export task exceeds 1 hour, it fails, and no file is output.
+Cloud Device Administrators and Intune Administrators can use the **Download devices** option to export a CSV file that lists devices. You can apply filters to determine which devices to list. If you don't apply any filters, all devices are listed. An export task might run for as long as an hour, depending on your selections. If the export task exceeds 1 hour, it fails, and no file is output.
 
 The exported list includes these device identity attributes:
 
@@ -147,19 +146,11 @@ The following filters can be applied for the export task:
 
 If you want to manage device identities by using the Microsoft Entra admin center, the devices need to be either [registered or joined](overview.md) to Microsoft Entra ID. As an administrator, you can control the process of registering and joining devices by configuring the following device settings.
 
-You must be assigned one of the following roles to view device settings:
-
-- Global Administrator
-- Global Reader
-- Cloud Device Administrator
-- Intune Administrator
-- Windows 365 Administrator
-- Directory Reviewer
-
 You must be assigned one of the following roles to manage device settings:
 
-- Global Administrator
-- Cloud Device Administrator
+- [Cloud Device Administrator](../role-based-access-control/permissions-reference.md#cloud-device-administrator)
+- [Intune Administrator](../role-based-access-control/permissions-reference.md#intune-administrator)
+- [Windows 365 Administrator](../role-based-access-control/permissions-reference.md#windows-365-administrator)
 
 ![Screenshot that shows device settings related to Microsoft Entra ID.](./media/manage-device-identities/device-settings-azure-portal.png)
 
@@ -181,11 +172,10 @@ You must be assigned one of the following roles to manage device settings:
    > [!NOTE]
    > The **Maximum number of devices** setting applies to devices that are either Microsoft Entra joined or Microsoft Entra registered. This setting doesn't apply to Microsoft Entra hybrid joined devices.
 
-- **Additional local administrators on Microsoft Entra joined devices**: This setting allows you to select the users who are granted local administrator rights on a device. These users are added to the Device Administrators role in Microsoft Entra ID. Global Administrators in Microsoft Entra ID and device owners are granted local administrator rights by default. 
-This option is a premium edition capability available through products like Microsoft Entra ID P1 or P2 and Enterprise Mobility + Security.
+- **Manage Additional local administrators on Microsoft Entra joined devices**: This setting allows you to select the users who are granted local administrator rights on a device. These users are added to the Device Administrators role in Microsoft Entra ID. 
 - **Enable Microsoft Entra Local Administrator Password Solution (LAPS) (preview)**: LAPS is the management of local account passwords on Windows devices. LAPS provides a solution to securely manage and retrieve the built-in local admin password. With cloud version of LAPS, customers can enable storing and rotation of local admin passwords for both Microsoft Entra ID and Microsoft Entra hybrid join devices. To learn how to manage LAPS in Microsoft Entra ID, see [the overview article](howto-manage-local-admin-passwords.md).
 
-- **Restrict non-admin users from recovering the BitLocker key(s) for their owned devices**: Admins can block self-service BitLocker key access to the registered owner of the device. Default users without the BitLocker read permission are unable to view or copy their BitLocker keys for their owned devices. You must be a Global Administrator or Privileged Role Administrator to update this setting. 
+- **Restrict non-admin users from recovering the BitLocker key(s) for their owned devices**: Admins can block self-service BitLocker key access to the registered owner of the device. Default users without the BitLocker read permission are unable to view or copy their BitLocker key(s) for their owned devices. You must be at least a [Privileged Role Administrator](../role-based-access-control/permissions-reference.md#privileged-role-administrator) to update this setting. 
 
 - **Enterprise State Roaming**: For information about this setting, see [the overview article](./enterprise-state-roaming-enable.md).
 

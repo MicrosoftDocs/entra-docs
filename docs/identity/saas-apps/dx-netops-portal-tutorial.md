@@ -12,6 +12,8 @@ ms.topic: how-to
 ms.date: 11/21/2022
 ms.author: jeedes
 
+
+# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and DX NetOps Portal so that I can control who has access to DX NetOps Portal, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
 # Microsoft Entra SSO integration with DX NetOps Portal

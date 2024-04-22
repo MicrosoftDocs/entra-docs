@@ -61,8 +61,8 @@ https://graph.microsoft.com/v1.0/authenticationMethodsPolicy/authenticationMetho
 
 | Relationship | Type | Description |
 |--------------|------|-------------|
-| includeTargets | [microsoftAuthenticatorAuthenticationMethodTarget](/graph/api/resources/passwordlessmicrosoftauthenticatorauthenticationmethodtarget) collection | A collection of users or groups who are enabled to use the authentication method. |
-| featureSettings | [microsoftAuthenticatorFeatureSettings](/graph/api/resources/passwordlessmicrosoftauthenticatorauthenticationmethodtarget) collection | A collection of Microsoft Authenticator features. |
+| includeTargets | [microsoftAuthenticatorAuthenticationMethodTarget](/graph/api/resources/microsoftauthenticatorauthenticationmethod) collection | A collection of users or groups who are enabled to use the authentication method. |
+| featureSettings | [microsoftAuthenticatorFeatureSettings](/graph/api/resources/microsoftauthenticatorauthenticationmethod) collection | A collection of Microsoft Authenticator features. |
  
 #### MicrosoftAuthenticator includeTarget properties
  
@@ -440,7 +440,7 @@ To enable application name or geographic location in the Microsoft Entra admin c
   - Authenticator version 6.2309.6329 or earlier on Android
   - Authenticator version 6.7.16 or earlier on iOS
   
-  To find which users run older versions of Authenticator, use [Microsft Graph APIs](/graph/api/resources/microsoftauthenticatorauthenticationmethod#properties). 
+  To find which users run older versions of Authenticator, use [Microsoft Graph APIs](/graph/api/resources/microsoftauthenticatorauthenticationmethod#properties). 
 
 ## Next steps
 

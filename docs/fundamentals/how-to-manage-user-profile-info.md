@@ -1,5 +1,5 @@
 ---
-title: How to manage user profile information in the Microsoft Entra admin center
+title: How to manage user profile information
 description: Instructions for IT admins to learn how to manage a user's profile and settings in Microsoft Entra ID.
 author: shlipsey3
 manager: amycolannino
@@ -7,30 +7,31 @@ manager: amycolannino
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: how-to
-ms.date: 02/09/2024
+ms.date: 04/16/2024
 ms.author: sarahlipsey
 ms.reviewer: jeffsta
 
 # Customer intent: As an IT admin, I need to understand the information contained in the user profile and settings so that I can properly create and manage users in my organization.
-
 ---
+
 # Add or update a user's profile information and settings in the Microsoft Entra admin center
 
 The user profile is the digital representation of a user's identity that should, where possible, reflect how the user wants to be represented. The user profile appears in several places across the Microsoft suite, including Outlook, Teams, Windows, and others. Identity information that appears across these tools is sourced from the user profile.
 
 A user's profile information and settings can be managed on an individual basis and for all users in your directory. When you look at these settings together, you can see how permissions, restrictions, and other connections work together.
 
-This article covers how to add user profile information, such as a profile picture and job title. You can also choose to allow users to connect their LinkedIn accounts or restrict access to the Microsoft Entra administration portal. Some settings might be managed in more than one area, such as the uploading [Organizational data in Microsoft 365](/viva/organizational-data). 
+This article covers how to add user profile information, such as a profile picture and job title. You can also choose to allow users to connect their LinkedIn accounts or restrict access to the Microsoft Entra administration portal. Some settings might be managed in more than one area, such as the uploading [Organizational data in Microsoft 365](/viva/organizational-data).
 
 ## Prerequisites
 
-The required role of least privilege varies based on the type of user you're adding and if you need to assign Microsoft Entra roles at the same time. **Global Administrator** can create users and assign roles, but whenever possible you should use the least privileged role.
+The required role of least privilege varies based on the type of user you're adding and if you need to assign Microsoft Entra roles at the same time. Whenever possible you should use the least privileged role.
 
 | Task | Role |
 | -- | -- |
 | Create a new user | User Administrator |
 | Invite an external guest | Guest Inviter |
 | Assign Microsoft Entra roles | Privileged Role Administrator |
+| Manage all user settings | Global Administrator |
 
 ## Add or change profile information
 
@@ -70,7 +71,7 @@ If you selected the **Properties** tab option:
 
 ### Profile categories
 
-There are six categories of profile details you might be able to edit. 
+There are six categories of profile details you might be able to edit.
 
 - **Identity:** Add or update identity values for the user. These values include display name, first and last name, and user principal name. Review the [user name guidance](#guidance-on-user-name-properties) before adding or editing user names.
 
@@ -78,7 +79,7 @@ There are six categories of profile details you might be able to edit.
 
 - **Contact info:** Add any relevant contact information for the user.
 
-- **Parental controls:** For organizations like K-12 school districts, the user's age group might need to be provided. *Minors* are 12 and under, *Not adult* are 13-18 years old, and *Adults* are 18 and over. The combination of age group and consent provided by parent options determine the Legal age group classification. The Legal age group classification might limit the user's access and authority.
+- **Parental controls:** For organizations like K-12 school districts, the user's age group might need to be provided. *Minors* are 12 and under, *Not adult* are 13-17 years old, and *Adults* are 18 and over. The combination of age group and consent provided by parent options determine the Legal age group classification. The Legal age group classification might limit the user's access and authority.
 
 - **Settings:** Decide whether the user can sign in to the Microsoft Entra tenant. You can also specify the user's global location.
 
@@ -104,7 +105,7 @@ Use the following tips when adding and editing the name properties of a user:
 - Don't use the **display name** field as an alternative name for the user, which can lead to an inconsistent representation of the user across those products where first and last name are used and those products where display name is used.
 
 > [!NOTE]
-> Data from your organization's HR system can be synced to Microsoft Entra ID using HR driven provisioning. Consider the [user name guidance](#guidance-on-user-name-properties) before syncing the legal name of a user. For more information, see [**What is HR driven provisioning**](../identity/app-provisioning/what-is-hr-driven-provisioning.md).
+> Data from your organization's HR system can be synced to Microsoft Entra ID using HR-driven provisioning. Consider the [user name guidance](#guidance-on-user-name-properties) before syncing the legal name of a user. For more information, see [**What is HR-driven provisioning**](../identity/app-provisioning/what-is-hr-driven-provisioning.md).
 
 ### User name examples
 
@@ -138,7 +139,7 @@ On the user's overview page, select the camera icon in the lower-right corner of
 All your changes are saved for the user.
 
 > [!NOTE]
-> If you're having issues updating a user's profile picture, please ensure that your Office 365 Exchange Online Enterprise App is Enabled for users to sign in.
+> If you're having issues updating a user's profile picture, ensure that your Office 365 Exchange Online Enterprise App is Enabled for users to sign in.
 
 ## Manage settings for all users
 
@@ -153,7 +154,7 @@ The following settings can be managed from **User settings**.
 
 - Allow users to register their own applications
 - Prevent non-admins from creating their own tenants
-  - For more information, see [default user permissions](users-default-permissions.md#restrict-member-users-default-permissions)
+  - For more information, see [Default user permissions](users-default-permissions.md#restrict-member-users-default-permissions)
 - Allow users to create security groups
 - Guest user access restrictions
   - Guest users have the same access as members (most inclusive)

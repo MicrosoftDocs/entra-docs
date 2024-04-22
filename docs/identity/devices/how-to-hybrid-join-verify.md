@@ -96,6 +96,5 @@ Get-MgDevice -All | where {($_.TrustType -eq 'ServerAd') -and ($_.ProfileType -n
 
 ## Next steps
 
-- [Downlevel device enablement](how-to-hybrid-join-downlevel.md)
 - [Configure Microsoft Entra hybrid join](how-to-hybrid-join.md)
 - [Troubleshoot pending device state](/troubleshoot/azure/active-directory/pending-devices)

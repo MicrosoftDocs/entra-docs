@@ -6,7 +6,6 @@ ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 01/29/2023
-
 ms.author: gasinh
 author: gargi-sinha
 manager: martinco
@@ -21,7 +20,7 @@ Microsoft offers the following [three passwordless authentication options](conce
 
 * [Microsoft Authenticator](./concept-authentication-passwordless.md#microsoft-authenticator) - turns any iOS or Android phone into a strong, passwordless credential by allowing users to sign into any platform or browser.
 
-* [FIDO2-compliant security keys](./concept-authentication-passwordless.md#fido2-security-keys) - useful for users who sign in to shared machines like kiosks, in situations where use of phones is restricted, and for highly privileged identities. 
+* [FIDO2-compliant security keys](./concept-authentication-passwordless.md#fido2-security-key-providers) - useful for users who sign in to shared machines like kiosks, in situations where use of phones is restricted, and for highly privileged identities. 
 
 * [Windows Hello for Business](./concept-authentication-passwordless.md#windows-hello-for-business) - best for users on their dedicated Windows computers. 
 
@@ -134,7 +133,7 @@ This method can also be used for easy recovery when the user has lost or forgott
 **MFA server** - End users enabled for multifactor authentication through an organization's on-premises MFA server can create and use a single passwordless phone sign-in credential. If the user attempts to upgrade multiple installations (5 or more) of the Authenticator app with the credential, this change may result in an error.
 
 > [!IMPORTANT]
-> In September 2022, Microsoft announced deprecation of Azure Multi-Factor Authentication Server. Beginning September 30, 2024, Azure Multi-Factor Authentication Server deployments will no longer service multifactor authentication requests, which could cause authentications to fail for your organization. To ensure uninterrupted authentication services and to remain in a supported state, organizations should [migrate their users' authentication data](how-to-migrate-mfa-server-to-mfa-user-authentication.md) to the cloud-based Azure MFA service by using the latest Migration Utility included in the most recent [Azure MFA Server update](https://www.microsoft.com/download/details.aspx?id=55849). For more information, see [Azure MFA Server Migration](how-to-migrate-mfa-server-to-azure-mfa.md).
+> In September 2022, Microsoft announced deprecation of Azure Multi-Factor Authentication Server. Beginning September 30, 2024, Azure Multi-Factor Authentication Server deployments will no longer service multifactor authentication requests, which could cause authentications to fail for your organization. To ensure uninterrupted authentication services and to remain in a supported state, organizations should [migrate their users' authentication data](how-to-migrate-mfa-server-to-mfa-user-authentication.md) to the cloud-based Azure MFA service by using the latest Migration Utility included in the most recent [Azure MFA Server update](~/identity/authentication/howto-mfaserver-deploy-upgrade.md). For more information, see [Azure MFA Server Migration](how-to-migrate-mfa-server-to-azure-mfa.md).
 
 **Device registration** - To use the Authenticator app for passwordless authentication, the device must be registered in the Microsoft Entra tenant and can't be a shared device. A device can only be registered in a single tenant. This limit means that only one work or school account is supported for phone sign-in using the Authenticator app.
 
@@ -327,7 +326,7 @@ Though passwordless authentication is a lightweight feature with minimal impact 
 
 Rolling back requires the administrator to sign in to the [Microsoft Entra admin center](https://entra.microsoft.com), select the desired strong authentication methods, and change the enable option to No. This process turns off the passwordless functionality for all users.
 
-![Passwordless rollback](media/howto-authentication-passwordless-deployment/passwordless-rollback.png)
+:::image type="content" source="media/howto-authentication-passwordless-deployment/passwordless-rollback.png" alt-text="Screenshot of the Polices page in the Microsoft Entra admin center." lightbox="media/howto-authentication-passwordless-deployment/passwordless-rollback.png":::
 
 Users who have already registered FIDO2 security devices are prompted to use the security device at their next sign-in, and then see the following error:
 
@@ -369,7 +368,7 @@ The **Registration** tab shows the number of users capable of passwordless authe
 
 The **Usage** tab shows the sign-ins by authentication method.
 
-![Usage tab to view auth methods](media/howto-authentication-passwordless-deployment/monitoring-usage-tab.png)
+:::image type="content" source="media/howto-authentication-passwordless-deployment/monitoring-usage-tab.png" alt-text="Screenshot of the Activity page to view auth methods." lightbox="media/howto-authentication-passwordless-deployment/monitoring-usage-tab.png":::
 
 For more information, see [track registered authentication methods and usage across the Microsoft Entra organization](howto-authentication-methods-activity.md).
 

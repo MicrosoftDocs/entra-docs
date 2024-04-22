@@ -5,7 +5,7 @@ description: Grant controls in a Microsoft Entra Conditional Access policy.
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 12/12/2023
+ms.date: 03/12/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -63,8 +63,8 @@ Devices must be registered in Microsoft Entra ID before they can be marked as co
 
 The **Require device to be marked as compliant** control:
 
-- Only supports Windows 10+, iOS, Android, and macOS devices registered with Microsoft Entra ID and enrolled with Intune.
-- Microsoft Edge in InPrivate mode is considered a noncompliant device.
+- Only supports Windows 10+, iOS, Android, macOS, and Linux Ubuntu devices registered with Microsoft Entra ID and enrolled with Intune.
+- Microsoft Edge in InPrivate mode on Windows is considered a noncompliant device.
 
 > [!NOTE]
 > On Windows, iOS, Android, macOS, and some third-party web browsers, Microsoft Entra ID identifies the device by using a client certificate that is provisioned when the device is registered with Microsoft Entra ID. When a user first signs in through the browser, the user is prompted to select the certificate. The user must select this certificate before they can continue to use the browser.
@@ -156,6 +156,7 @@ The following client apps support this setting. This list isn't exhaustive and i
 - Microsoft Power Automate
 - Microsoft Launcher
 - Microsoft Lists
+- Microsoft Loop
 - Microsoft Office
 - Microsoft OneDrive
 - Microsoft OneNote

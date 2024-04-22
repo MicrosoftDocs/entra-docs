@@ -9,7 +9,7 @@ ms.date: 08/11/2023
 ms.reviewer: jmprieur, saeeda, sureshja, ludwignick
 ms.service: identity-platform
 
-ms.topic: conceptual
+ms.topic: concept-article
 #Customer intent: As an application developer, I want to understand the sign-in flow of web, desktop, and mobile apps in Microsoft identity platform
 ---
 

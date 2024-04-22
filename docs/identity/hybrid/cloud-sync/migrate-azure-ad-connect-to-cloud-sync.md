@@ -6,7 +6,7 @@ author: billmath
 manager: amycolannino
 ms.service: entra-id
 ms.custom: has-azure-ad-ps-ref
-ms.topic: overview
+ms.topic: how-to
 ms.date: 11/06/2023
 ms.subservice: hybrid-cloud-sync
 ms.author: billmath

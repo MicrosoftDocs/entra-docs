@@ -42,7 +42,7 @@ To use the AD FS application migration:
   - Application Administrator
   - Global Reader (read-only access)
   - Report Reader (read-only access)
-- Microsoft Entra Connect should be installed on the on-premises environments, alongside Microsoft Entra Connect health AD FS health agents.
+- Microsoft Entra Connect should be installed on the on-premises environments, alongside Microsoft Entra Connect Health AD FS health agents.
   - [Microsoft Entra Connect](https://www.microsoft.com/download/details.aspx?id=47594)
   - [Microsoft Entra Connect Heath AD FS agents](https://go.microsoft.com/fwlink/?LinkID=518973)
 
@@ -164,7 +164,7 @@ The assisted AD FS application migration supports the following configurations:
 The AD FS application migration doesn't support the following configurations:
 
 - OIDC (OpenID Connect), OAuth and WS-Fed configurations aren't supported.
-- Auto configuration of Conditional access policies isn't supported, however, user can configure the same after configuration of new application into their tenant.
+- Auto configuration of Conditional Access policies isn't supported, however, user can configure the same after configuration of new application into their tenant.
 - The signing certificate isn't migrated from the AD FS relying party application.
 The following tabs exist in the AD FS application migration wizard:
 
@@ -252,7 +252,7 @@ On application migration completion, you get redirected to the **Ready to config
 
 1. From **Users and groups** pane, all required groups are already assigned to the application.
 
-After reviewing the migrated enterprise application, you can update the application as per your business needs. You can add or update claims, assign more users and groups or configure conditional access policies to enable support for multifactor authentication or other conditional authorization features.
+After reviewing the migrated enterprise application, you can update the application as per your business needs. You can add or update claims, assign more users and groups or configure Conditional Access policies to enable support for multifactor authentication or other conditional authorization features.
 
 ## Rollback
 

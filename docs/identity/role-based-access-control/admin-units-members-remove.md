@@ -11,7 +11,6 @@ ms.date: 06/09/2023
 ms.author: rolyon
 ms.reviewer: anandy
 ms.custom: oldportal, it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
-
 ---
 
 # Remove users, groups, or devices from an administrative unit
@@ -24,7 +23,7 @@ When users, groups, or devices in an administrative unit no longer need access, 
 - Microsoft Entra ID Free licenses for administrative unit members
 - Privileged Role Administrator or Global Administrator
 - Microsoft Graph PowerShell module when using PowerShell
-- Admin consent when using Graph explorer for Microsoft Graph API
+- Admin consent when using Graph Explorer for Microsoft Graph API
 
 For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
 

@@ -2,17 +2,17 @@
 title: Quickstart API-driven inbound provisioning with Postman
 description: Learn how to get started quickly with API-driven inbound provisioning using Postman
 
-author: kenwith
+author: jenniferf-skc
 manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.date: 11/15/2023
-ms.author: kenwith
+ms.date: 02/28/2024
+ms.author: jfields
 ms.reviewer: cmmdesai
 ---
 
-# Quickstart API-driven inbound provisioning with Postman (Public preview)
+# Quickstart API-driven inbound provisioning with Postman
 
 This tutorial describes how you can quickly test [API-driven inbound provisioning](inbound-provisioning-api-concepts.md) with Postman.
 

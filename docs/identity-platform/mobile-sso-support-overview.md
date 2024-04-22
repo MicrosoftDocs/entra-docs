@@ -9,7 +9,7 @@ ms.date: 10/14/2020
 ms.reviewer: janicericketts
 ms.service: identity-platform
 
-ms.topic: conceptual
+ms.topic: concept-article
 #Customer intent: As an app developer, I want to know how to implement an app that supports single sign-on and app protection policies using the Microsoft identity platform and integrating with Microsoft Entra ID.
 ---
 
@@ -40,7 +40,7 @@ The best choice for implementing single sign-on in your application is to use [t
 > [!NOTE]
 > It is possible to configure MSAL to use an embedded web view. This will prevent single sign-on. Use the default behavior (that is, the system web browser) to ensure that SSO will work.
 
-For iOS applications, we have a [quickstart](quickstart-v2-ios.md) that shows you how to set up sign-ins using MSAL, and [guidance for configuring MSAL for various SSO scenarios](single-sign-on-macos-ios.md).
+For iOS applications, we have a [quickstart](quickstart-v2-ios.md) that shows you how to set up sign-ins using MSAL, and [guidance for configuring MSAL for various SSO scenarios](/entra/msal/objc/single-sign-on-macos-ios).
 
 For Android applications, we have a [quickstart](quickstart-v2-android.md) that shows you how to set up sign-ins using MSAL, and guidance for [how to enable cross-app SSO on Android using MSAL](msal-android-single-sign-on.md).
 

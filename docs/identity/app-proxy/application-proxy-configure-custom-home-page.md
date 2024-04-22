@@ -1,14 +1,13 @@
 ---
 title: Custom home page for published apps - Microsoft Entra application proxy
-description: Covers the basics about Microsoft Entra application proxy connectors
-
+description: Covers the basics about Microsoft Entra private network connectors
 author: kenwith
 manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.custom: has-azure-ad-ps-ref
 ms.topic: how-to
-ms.date: 02/07/2024
+ms.date: 02/26/2024
 ms.author: kenwith
 ms.reviewer: harshja
 ---
@@ -104,8 +103,8 @@ You get the ObjectId of the app by searching for the app by its display name or 
 
    ```console
    DisplayName : SharePoint
-   Homepage    : https://sharepoint-iddemo.msappproxy.net/
-   ObjectId    : 8af89bfa-eac6-40b0-8a13-c2c4e3ee22a4
+   Homepage    : https://sharepoint-iddemo.msappproxy.net/
+   ObjectId    : 8af89bfa-eac6-40b0-8a13-c2c4e3ee22a4
    ```
 
    Alternatively, you could just pull the list of all apps, search the list for the app with a specific display name or home page, and copy the app's ObjectId once the app is found.
@@ -158,8 +157,8 @@ Create the home page URL, and update your app with that value. Continue using th
 
    ```console
    DisplayName : SharePoint
-   Homepage    : https://sharepoint-iddemo.msappproxy.net/hybrid/
-   ObjectId    : 8af89bfa-eac6-40b0-8a13-c2c4e3ee22a4
+   Homepage    : https://sharepoint-iddemo.msappproxy.net/hybrid/
+   ObjectId    : 8af89bfa-eac6-40b0-8a13-c2c4e3ee22a4
    ```
 
 1. Restart the app to confirm that the home page appears as the first screen, as expected.

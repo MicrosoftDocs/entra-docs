@@ -434,6 +434,13 @@ View events related to tenant restrictions in Event Viewer.
 1. In Event Viewer, open **Applications and Services Logs**.
 1. Navigate to **Microsoft** > **Windows** > **TenantRestrictions** > **Operational** and look for events.  
 
+## Tenant restrictions and Data plane support (preview)
+Trv2 is enforced by the following resources which will address token infiltration scenarios where a bad actor accesses the resource directly with a infiltrated token or annonymously.
+- Teams
+- SharePoint Online like OneDrive app
+- Exchange Online like Outlook app
+- Office.com / Office Apps
+
 ## Tenant restrictions and Microsoft Teams (preview)
 
 Teams by default has open federation, which means we don't block anyone joining a meeting hosted by an external tenant. For greater control over access to Teams meetings, you can use [Federation Controls](/microsoftteams/trusted-organizations-external-meetings-chat) in Teams to allow or block specific tenants, along with tenant restrictions v2 to block anonymous access to Teams meetings. To enforce tenant restrictions for Teams, you need to configure tenant restrictions v2 in your Microsoft Entra cross-tenant access settings. You also need to set up Federation Controls in the Teams Admin portal and restart Teams. Tenant restrictions implemented on the corporate proxy won't block anonymous access to Teams meetings, SharePoint files, and other resources that don't require authentication.

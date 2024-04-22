@@ -4,7 +4,7 @@ description: How to view personal and organization information in the Account se
 manager: amycolannino
 ms.service: entra-permissions-management 
 
-ms.topic: overview
+ms.topic: how-to
 author: jenniferf-skc
 ms.date: 06/19/2023
 ms.author: jfields

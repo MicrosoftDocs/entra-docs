@@ -1,6 +1,6 @@
 ---
 title: 'Microsoft Entra ID licensing'
-description: This article documents licensing requirements for Microsoft Entra ID features.
+description: This article documents licensing requirements for Microsoft Entra features.
 author: barclayn
 manager: amycolannino
 ms.service: entra
@@ -37,7 +37,7 @@ This article discusses Microsoft Entra services' licensing. It is intended for I
 
 [!INCLUDE [Information about free tier services](../includes/licensing-free-license.md)]
 
-## Microsoft Entra Connect health
+## Microsoft Entra Connect Health
 
 [!INCLUDE [Services available in the P1](../includes/licensing-p1-license.md)]
 

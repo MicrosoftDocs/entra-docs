@@ -9,7 +9,7 @@ ms.date: 10/31/2023
 ms.reviewer:
 ms.service: identity-platform
 
-ms.topic: conceptual
+ms.topic: concept-article
 #Customer intent: As an IT admin, I want to configure the lifetime of access, ID, and SAML tokens for different types of applications, so that I can help mitigate the actions of a malicous actor who has obtained a token.
 ---
 # Configurable token lifetimes in the Microsoft identity platform (preview)
@@ -114,7 +114,7 @@ All timespans used here are formatted according to the C# [TimeSpan](/dotnet/api
 
 ## REST API reference
 
-You can configure token lifetime policies and assign them to apps using Microsoft Graph. For more information, see the [tokenLifetimePolicy resource type](/graph/api/resources/tokenlifetimepolicy) and its associated methods.
+You can configure token lifetime policies and assign them to apps using Microsoft Graph. For more information, see the [`tokenLifetimePolicy` resource type](/graph/api/resources/tokenlifetimepolicy) and its associated methods.
 
 ## Cmdlet reference
 

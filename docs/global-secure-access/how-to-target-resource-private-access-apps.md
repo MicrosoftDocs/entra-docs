@@ -7,8 +7,8 @@ ms.subservice: entra-private-access
 ms.topic: how-to
 ms.date: 07/07/2023
 
-ms.author: sarahlipsey
-author: shlipsey3
+ms.author: kenwith
+author: kenwith
 manager: amycolannino
 ms.reviewer: katabish
 ---

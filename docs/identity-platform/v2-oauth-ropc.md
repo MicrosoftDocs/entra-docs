@@ -5,11 +5,11 @@ author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
 ms.custom:
-ms.date: 08/11/2023
+ms.date: 04/08/2024
 ms.reviewer: ludwignick
 ms.service: identity-platform
 
-ms.topic: conceptual
+ms.topic: concept-article
 #Customer intent: As a developer building an application that requires user authentication, I want to understand how to use the OAuth 2.0 Resource Owner Password Credentials (ROPC) grant in the Microsoft identity platform, so that I can directly handle user passwords and acquire tokens for calling secured web APIs.
 ---
 
@@ -30,8 +30,6 @@ The Microsoft identity platform supports the [OAuth 2.0 Resource Owner Password 
 > * An exception to a hybrid identity federation scenario would be the following: Home Realm Discovery policy with **AllowCloudPasswordValidation** set to TRUE will enable ROPC flow to work for federated users when an on-premises password is synced to the cloud. For more information, see [Enable direct ROPC authentication of federated users for legacy applications](~/identity/enterprise-apps/home-realm-discovery-policy.md#enable-direct-ropc-authentication-of-federated-users-for-legacy-applications).
 > * Passwords with leading or trailing whitespaces are not supported by the ROPC flow.
 
-[!INCLUDE [try-in-postman-link](includes/try-in-postman-link.md)]
-
 ## Protocol diagram
 
 The following diagram shows the ROPC flow.
@@ -49,7 +47,7 @@ POST {tenant}/oauth2/v2.0/token
 Host: login.microsoftonline.com
 Content-Type: application/x-www-form-urlencoded
 
-client_id=535fb089-9ff3-47b6-9bfb-4f1264799865
+client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &scope=user.read%20openid%20profile%20offline_access
 &username=MyUsername@myTenant.com
 &password=SuperS3cret

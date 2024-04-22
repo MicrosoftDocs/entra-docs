@@ -8,7 +8,7 @@ metadata:
   ms.assetid: 9f994aca-6088-40f5-b2cc-c753a4f41da7
   ms.service: entra-id
   ms.tgt_pltfrm: na
-  ms.custom: has-azure-ad-ps-ref
+  ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
   ms.topic: faq
   ms.date: 01/24/2024
   ms.subservice: hybrid-connect
@@ -52,7 +52,7 @@ sections:
           When you use Microsoft Entra Connect to switch the sign-in method from password hash synchronization to Pass-through Authentication, Pass-through Authentication becomes the primary sign-in method for your users in managed domains. All users' password hashes that are previously synchronized by password hash synchronization remain stored on Microsoft Entra ID.
 
       - question: |
-          Can I install a Microsoft Entra application proxy connector on the same server as a Pass-through Authentication Agent?
+          Can I install a Microsoft Entra private network connector on the same server as a Pass-through Authentication Agent?
         answer: |
           Yes. The rebranded versions of the Pass-through Authentication Agent, version 1.5.193.0 or later, support this configuration.
 
@@ -201,9 +201,12 @@ sections:
           - You initially were federated with your Microsoft Entra tenant using AD FS for authentication.
           - You switched to having managed users using PTA as authentication.
           
-          This is because the default behavior of tenants created prior to June 15, 2015 was to block UPN changes. If you need to un-block UPN changes you need to run the following PowerShell cmdlet:  
+          This is because the default behavior of tenants created prior to June 15, 2015 was to block UPN changes. If you need to un-block UPN changes you need to run the following PowerShell cmdlet. Get the ID by using the [Get-MgDirectoryOnPremiseSynchronization](/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdirectoryonpremisesynchronization) cmdlet.  
           
-          `Set-MsolDirSyncFeature -Feature SynchronizeUpnForManagedUsers -Enable $True`
+          ```powershell
+          $params = @{ "SynchronizeUpnForManagedUsersEnabled" = "True" }
+          Update-MgDirectoryOnPremiseSynchronization -OnPremisesDirectorySynchronizationId $SynchronizationId -BodyParameter $params
+          ```
           
           Tenants created after June 15, 2015 have the default behavior of synchronizing UPN changes.   
           

@@ -9,7 +9,7 @@ ms.date: 02/06/2023
 ms.reviewer: saeeda, jmprieur
 ms.service: identity-platform
 
-ms.topic: conceptual
+ms.topic: concept-article
 #Customer intent: As a developer building a multi-tenant web application, I want to understand the supported account types in the Microsoft identity platform, so that I can ensure my application can sign in users from any organization and with their work, school, or personal Microsoft accounts.
 ---
 

@@ -9,7 +9,7 @@ ms.date: 09/09/2020
 ms.reviewer: saeeda, brianmel
 ms.service: identity-platform
 
-ms.topic: conceptual
+ms.topic: concept-article
 #Customer intent: As an application developer, I want to learn about considerations for using Xamarin iOS and MSAL.NET.
 ---
 

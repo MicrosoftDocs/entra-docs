@@ -1,27 +1,26 @@
 ---
 title: PowerShell sample - Move Microsoft Entra application proxy apps to another group
 description: Microsoft Entra application proxy PowerShell example used to move all applications currently assigned to a connector group to a different connector group.
-
 author: kenwith
 manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-proxy
-ms.custom: has-azure-ad-ps-ref
+ms.custom:
 ms.topic: sample
-ms.date: 01/04/2024
+ms.date: 02/27/2024
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
 
 # Move all Microsoft Entra application proxy apps assigned to a connector group to another connector group
 
-This PowerShell script example moves all Microsoft Entra application proxy applications currently assigned to a connector group to a different connector group.
+The PowerShell script example moves all Microsoft Entra application proxy applications currently assigned to a connector group to a different connector group.
 
-[!INCLUDE [quickstarts-free-trial-note](~/../azure-docs-pr/includes/quickstarts-free-trial-note.md)]
+[!INCLUDE [quickstarts-free-trial-note](~/includes/azure-docs-pr/quickstarts-free-trial-note.md)]
 
-[!INCLUDE [updated-for-az](~/../azure-docs-pr/includes/updated-for-az.md)]
+[!INCLUDE [updated-for-az](~/includes/azure-docs-pr/updated-for-az.md)]
 
-This sample requires the [Microsoft Graph Beta PowerShell module](/powershell/microsoftgraph/installation) 2.10 or newer.
+The sample requires the [Microsoft Graph Beta PowerShell module](/powershell/microsoftgraph/installation) 2.10 or newer.
 
 ## Sample script
 
@@ -130,6 +129,5 @@ Write-Host ("")
 
 ## Next steps
 
-For more information on the Microsoft Graph PowerShell module, see [Microsoft Graph PowerShell overview](/powershell/microsoftgraph/overview).
-
-For other PowerShell examples for application proxy, see [Microsoft Entra application proxy PowerShell examples](../application-proxy-powershell-samples.md).
+- [Microsoft Graph PowerShell overview](/powershell/microsoftgraph/overview)
+- [Microsoft Entra application proxy PowerShell examples](../application-proxy-powershell-samples.md)

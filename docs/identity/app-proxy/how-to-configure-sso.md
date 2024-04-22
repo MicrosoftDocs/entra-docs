@@ -30,11 +30,11 @@ For more information on the Pre-Authentication methods, see step 4 of the [app p
    ![Pre-authentication method in Microsoft Entra admin center](./media/application-proxy-config-sso-how-to/app-proxy.png)
 
 ## Configuring single sign-on modes for application proxy Applications
-Configure the specific type of single sign-on. The sign-on methods are classified based on what type of authentication the backend application uses. App Proxy applications support three types of sign-on:
+Configure the specific type of single sign-on. The sign-on methods are classified based on what type of authentication the backend application uses. Application proxy applications support three types of sign-on:
 
 -   **Password-based sign-on:** Password-based sign-on can be used for any application that uses username and password fields to sign on. Configuration steps are in [Configure password Single sign-on for a Microsoft Entra gallery application](~/identity/enterprise-apps/configure-password-single-sign-on-non-gallery-applications.md).
 
--   **Integrated Windows authentication:** For applications using integrated Windows authentication (IWA), single sign-on is enabled through Kerberos Constrained Delegation (KCD). This method gives application proxy connectors permission in Active Directory to impersonate users, and to send and receive tokens on their behalf. Details on configuring KCD can be found in the [Single sign-on with KCD documentation](how-to-configure-sso-with-kcd.md).
+-   **Integrated Windows authentication:** For applications using integrated Windows authentication (IWA), single sign-on is enabled through Kerberos Constrained Delegation (KCD). This method gives private network connectors permission in Active Directory to impersonate users, and to send and receive tokens on their behalf. Details on configuring KCD can be found in the [Single sign-on with KCD documentation](how-to-configure-sso-with-kcd.md).
 
 -   **Header-based sign-on:** Header-based sign-on is used to provide single sign-on capabilities using HTTP headers. To learn more, see [Header-based single sign-on](application-proxy-configure-single-sign-on-with-headers.md).
 

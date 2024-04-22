@@ -12,6 +12,7 @@ author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: sandeo
 ---
+
 # Device identity and desktop virtualization
 
 Administrators commonly deploy virtual desktop infrastructure (VDI) platforms hosting Windows operating systems in their organizations. Administrators deploy VDI to:
@@ -60,7 +61,7 @@ Before configuring device identities in Microsoft Entra ID for your VDI environm
 
 <sup>2</sup> **Windows down-level** devices represent Windows 7, Windows 8.1, Windows Server 2008 R2, Windows Server 2012, and Windows Server 2012 R2. For support information on Windows 7, see [Support for Windows 7 is ending](https://www.microsoft.com/microsoft-365/windows/end-of-windows-7-support). For support information on Windows Server 2008 R2, see [Prepare for Windows Server 2008 end of support](https://www.microsoft.com/cloud-platform/windows-server-2008).
 
-<sup>3</sup> A **Federated** identity infrastructure environment represents an environment with an identity provider such as AD FS or other third-party IDP. In a federated identity infrastructure environment, computers follow the [managed device registration flow](device-registration-how-it-works.md#hybrid-azure-ad-joined-in-managed-environments) based on the [AD Service Connection Point (SCP) settings](hybrid-join-manual.md#configure-a-service-connection-point).
+<sup>3</sup> A **Federated** identity infrastructure environment represents an environment with an identity provider (IdP) such as AD FS or other third-party IdP. In a federated identity infrastructure environment, computers follow the [managed device registration flow](device-registration-how-it-works.md#hybrid-azure-ad-joined-in-managed-environments) based on the [Microsoft Windows Server Active Directory Service Connection Point (SCP) settings](hybrid-join-manual.md#configure-a-service-connection-point).
 
 <sup>4</sup> A **Managed** identity infrastructure environment represents an environment with Microsoft Entra ID as the identity provider deployed with either [password hash sync (PHS)](~/identity/hybrid/connect/whatis-phs.md) or [pass-through authentication (PTA)](~/identity/hybrid/connect/how-to-connect-pta.md) with [seamless single sign-on](~/identity/hybrid/connect/how-to-connect-sso.md).
 
@@ -72,7 +73,7 @@ Before configuring device identities in Microsoft Entra ID for your VDI environm
 
 <sup>8</sup> **Microsoft Entra join support** is only available with Azure Virtual Desktop and Windows 365.
 
-## Microsoft’s guidance
+## Microsoft's guidance
 
 Administrators should reference the following articles, based on their identity infrastructure, to learn how to configure Microsoft Entra hybrid join.
 
@@ -97,10 +98,11 @@ When deploying non-persistent VDI, Microsoft recommends organizations implement 
    - For non-persistent VDI deployments on Windows current and down-level, you should delete devices that have **ApproximateLastLogonTimestamp** of older than 15 days.
 
 > [!NOTE]
-> When using non-persistent VDI, if you want to prevent adding a work or school account ensure the following registry key is set:  
+> When using non-persistent VDI, if you want to prevent adding a work or school account ensure the following registry key is set:
 > `HKLM\SOFTWARE\Policies\Microsoft\Windows\WorkplaceJoin: "BlockAADWorkplaceJoin"=dword:00000001`
 >
-> Ensure you're running Windows 10, version 1803 or higher.  
+> Ensure you're running Windows 10, version 1803 or higher.
+
 >
 > Roaming any data under the path `%localappdata%` is not supported. If you choose to move content under `%localappdata%`, make sure that the content of the following folders and registry keys **never** leaves the device under any condition. For example: Profile migration tools must skip the following folders and keys:
 >

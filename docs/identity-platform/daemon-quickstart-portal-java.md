@@ -9,7 +9,7 @@ ms.custom: scenarios:getting-started, languages:java, devx-track-java, mode-api,
 ms.date: 08/22/2022
 ms.service: identity-platform
 
-ms.topic: conceptual
+ms.topic: concept-article
 #Customer intent: As an application developer, I want to learn how my Java app can get an access token and call an API that's protected by Microsoft identity platform endpoint using client credentials flow.
 ---
 

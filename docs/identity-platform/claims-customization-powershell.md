@@ -40,7 +40,7 @@ When creating a claims-mapping policy, you can also emit a claim from a director
 > [!Note]
 > The [Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/installation) is required to configure claims-mapping policies.
 
-Open a terminal and run the following command to sign in to your Microsoft Entra ID admin account. Run this command each time you start a new session.
+Open a terminal and run the following command to sign in to your Microsoft Entra admin account. Run this command each time you start a new session.
 
 ```PowerShell
 Import-Module Microsoft.Graph.Identity.SignIns

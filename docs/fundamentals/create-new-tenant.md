@@ -1,19 +1,20 @@
 ---
-title: Quickstart - Access & create new tenant
+title: Quickstart - Access and create new tenant
 description: Instructions about how to find Microsoft Entra ID and how to create a new tenant for your organization.
 author: barclayn
 manager: amycolannino
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: quickstart
-ms.date: 11/28/2023
+ms.date: 03/29/2024
 ms.author: barclayn
 ms.custom: it-pro, fasttrack-edit, mode-other
 ms.collection: M365-identity-device-management
 ---
+
 # Quickstart: Create a new tenant in Microsoft Entra ID
 
-You can do all of your administrative tasks using the Microsoft Entra admin center, including creating a new tenant for your organization. 
+You can do all of your administrative tasks using the Microsoft Entra admin center, including creating a new tenant for your organization.
 
 In this quickstart article, you'll learn how to get to the Azure portal and Microsoft Entra ID, and you'll learn how to create a basic tenant for your organization.
 
@@ -23,10 +24,12 @@ If you don't have an Azure subscription, create a [free account](https://azure.m
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-After you sign in to the [Azure portal](https://portal.azure.com), you can create a new tenant for your organization. Your new tenant represents your organization and helps you to manage a specific instance of Microsoft cloud services for your internal and external users.
+After you sign in to the [Azure portal](https://portal.azure.com), you can create a new tenant for your organization. Your new tenant represents your organization and helps you to manage a specific instance of Microsoft Cloud services for your internal and external users.
 
->[!Note]
->If you're unable to create Microsoft Entra ID or Azure AD B2C tenant, review your user settings page to ensure that tenant creation isn't switched off. If tenant creation is switched off, ask your _Global Administrator_ to assign you a _Tenant Creator_ role.
+>[!NOTE]
+>
+> - If you're unable to create a Microsoft Entra ID or Azure AD B2C tenant, review your user settings page to ensure that tenant creation isn't switched off. If tenant creation is switched off, ask your *Global Administrator* to assign you a *Tenant Creator* role.
+> - This article doesn't cover creating an *external* tenant configuration for consumer-facing apps; learn more about using [Microsoft Entra External ID](~/external-id/customers/overview-customers-ciam.md) for your customer identity and access management (CIAM) scenarios.
 
 ### To create a new tenant
 
@@ -35,7 +38,7 @@ After you sign in to the [Azure portal](https://portal.azure.com), you can creat
 1. From the Azure portal menu, select **Microsoft Entra ID**.
 
 1. Navigate to **Identity** > **Overview** > **Manage tenants**.
- 
+
 1. Select **Create**.
 
    :::image type="content" source="media/create-new-tenant/portal.png" alt-text="Screenshot of Microsoft Entra ID - Overview page - Create a tenant.":::
@@ -48,9 +51,9 @@ After you sign in to the [Azure portal](https://portal.azure.com), you can creat
 
    :::image type="content" source="media/create-new-tenant/create-new-tenant.png" alt-text="Screenshot of Microsoft Entra ID - Create a tenant page - configuration tab.":::
 
-   - Type your desired Organization name (for example _Contoso Organization_) into the **Organization name** box.
-   - Type your desired Initial domain name (for example _Contosoorg_) into the **Initial domain name** box.
-   - Select your desired Country/Region or leave the _United States_ option in the **Country or region** box.
+   - Type your desired Organization name (for example *Contoso Organization*) into the **Organization name** box.
+   - Type your desired Initial domain name (for example *Contosoorg*) into the **Initial domain name** box.
+   - Select your desired Country/Region or leave the *United States* option in the **Country or region** box.
 
 1. Select **Next: Review + Create**. Review the information you entered and if the information is correct, select **Create** in the lower left corner.
 
@@ -84,6 +87,6 @@ If you're not going to continue to use this application, you can delete the tena
 
 - Add groups and members, see [Create a basic group and add members](./how-to-manage-groups.md).
 
-- Learn about [Azure role-based access control (Azure RBAC)](/azure/role-based-access-control/overview) and [Conditional Access](~/identity/conditional-access/overview.md) to help manage your organization's application and resource access.
+- Learn about [Azure role-based access control (RBAC)](/azure/role-based-access-control/overview) and [Conditional Access](~/identity/conditional-access/overview.md) to help manage your organization's application and resource access.
 
 - Learn about Microsoft Entra ID, including [basic licensing information, terminology, and associated features](./whatis.md).

@@ -32,7 +32,7 @@ With this preview, we're giving you the ability to create a Conditional Access p
 
 ## Requirements
 
-This preview supports the following configurations for access to resources with Token Protection conditional access policies applied:
+This preview supports the following configurations for access to resources with Token Protection Conditional Access policies applied:
 
 * Windows 10 or newer devices that are Microsoft Entra joined, Microsoft Entra hybrid joined, or Microsoft Entra registered.
 * OneDrive sync client version 22.217 or later

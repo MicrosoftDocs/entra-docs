@@ -5,6 +5,8 @@
     items:
       - name: What's Microsoft Entra Permissions Management?
         href: overview.md       
+      - name: What's new
+        href: whats-new-in-permissions-management.md  
   - name: How-to guides
     expanded: true
     items:
@@ -138,14 +140,12 @@
     - name: Manage rules for authorization systems
       expanded: false
       items:
-      - name: View rules in the Autopilot dashboard
+      - name: View information about rules in the Autopilot dashboard
         href: ui-autopilot.md
       - name: Create a rule
         href: how-to-create-rule.md 
       - name: Generate, view, and apply rule recommendations
         href: how-to-recommendations-rule.md 
-      - name: View notification settings for a rule
-        href: how-to-notifications-rule.md
     - name: Create and view reports 
       expanded: false
       items: 
@@ -181,9 +181,7 @@
       href: error-codes-onboarding.md
   - name: Reference
     expanded: false
-    items:
-    - name: What's new
-      href: whats-new-in-permissions-management.md 
+    items: 
     - name: FAQs
       href: faqs.md
     - name: Glossary

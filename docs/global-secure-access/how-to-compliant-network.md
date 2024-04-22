@@ -1,13 +1,11 @@
 ---
 title: Enable compliant network check with Conditional Access
 description: Learn how to require known compliant network locations in order to connect to your secured resources with Conditional Access.
-
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 02/22/2024
-
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.date: 03/19/2024
+ms.author: kenwith
+author: kenwith
 manager: amycolannino
 ms.reviewer: mamkumar
 ---
@@ -29,17 +27,18 @@ The compliant network is different than [IPv4, IPv6, or geographic locations](..
 
 ## Prerequisites
 
-* Administrators who interact with **Global Secure Access preview** features must have one or more of the following role assignments depending on the tasks they're performing.
-   * The **Global Secure Access Administrator** role to manage the Global Secure Access preview features.
-   * [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) or [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) to create and interact with Conditional Access policies and named locations.
-* The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
-* To use the Microsoft 365 traffic forwarding profile, a Microsoft 365 E3 license is recommended.
+- Administrators who interact with **Global Secure Access preview** features must have one or more of the following role assignments depending on the tasks they're performing.
+   - The **Global Secure Access Administrator** role to manage the Global Secure Access preview features.
+   - [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) or [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) to create and interact with Conditional Access policies and named locations.
+- The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
+- To use the Microsoft 365 traffic forwarding profile, a Microsoft 365 E3 license is recommended.
 
 ### Known limitations
 
-- Organizations can protect other Microsoft Entra integrated apps with Conditional Access policies requiring a compliant network check. During the preview, administrators must choose the individual applications from the app picker instead of choosing *All cloud apps*. **Do not choose *All cloud apps*.**
 - Compliant network check with [continuous access evaluation](../identity/conditional-access/concept-continuous-access-evaluation.md) is now supported for SharePoint Online.
 - Compliant network check is currently not supported for private access apps.
+- The compliant network location condition isn't supported for devices that aren't enrolled in mobile device management (MDM). If you configure a Conditional Access policy using the compliant network location condition, users with devices that aren't yet MDM-enrolled might be affected. Users on these devices might fail the Conditional Access policy check, and be blocked. 
+   - Ensure that you exclude the affected users or devices when using the compliant network location condition.     
 
 ## Enable Global Secure Access signaling for Conditional Access
 

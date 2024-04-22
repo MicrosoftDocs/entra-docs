@@ -6,7 +6,7 @@ author: barclayn
 manager: amycolannino
 ms.service: entra-id
 ms.subservice: users
-ms.topic: overview
+ms.topic: conceptual
 ms.date: 12/04/2023
 ms.author: barclayn
 ms.reviewer: krbain

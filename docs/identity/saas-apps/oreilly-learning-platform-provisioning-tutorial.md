@@ -12,6 +12,8 @@ ms.subservice: saas-apps
 ms.topic: tutorial
 ms.date: 07/26/2023
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to O'Reilly learning platform so that I can streamline the user management process and ensure that users have the appropriate access to O'Reilly learning platform.
 ---
 
 # Tutorial: Configure O'Reilly learning platform for automatic user provisioning

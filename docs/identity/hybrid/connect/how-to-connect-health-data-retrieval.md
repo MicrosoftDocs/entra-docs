@@ -18,7 +18,7 @@ ms.author: billmath
 
 This document describes how to use Microsoft Entra Connect to retrieve data from Microsoft Entra Connect Health.
 
-[!INCLUDE [active-directory-app-provisioning.md](~/../azure-docs-pr/includes/gdpr-intro-sentence.md)]
+[!INCLUDE [active-directory-app-provisioning.md](~/includes/azure-docs-pr/gdpr-intro-sentence.md)]
 
 ## Retrieve all email addresses for users configured for health alerts.
 

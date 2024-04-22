@@ -4,7 +4,7 @@ description: Understand known issues and mitigations for User Principal Name (UP
 
 ms.service: entra-id
 ms.subservice: hybrid-connect
-ms.topic: how-to
+ms.topic: troubleshooting
 ms.date: 05/23/2023
 ms.author: gasinh
 author: gargi-sinha

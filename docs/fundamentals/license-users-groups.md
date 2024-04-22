@@ -7,6 +7,7 @@ ms.assetid: f8b932bc-8b4f-42b5-a2d3-f2c076234a78
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: how-to
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.date: 12/01/2023
 ms.author: barclayn
 ms.reviewer: jeffsta
@@ -26,7 +27,7 @@ There are several Microsoft Entra ID license plans:
 
 For specific information about each license plan and the associated licensing details, see [What license do I need?](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing). To sign up for Microsoft Entra ID P1 or P2 license plans see [here](./get-started-premium.md).
 
-Not all Microsoft services are available in all locations. Before a license can be assigned to a group, you must specify the **Usage location** for all members. You can set this value in Microsoft Entra by going to **Identity** > **Users** > **All users** > *select a user* > **Properties**. 
+Not all Microsoft services are available in all locations. Before a license can be assigned to a group, you must specify the **Usage location** for all members. You can set this value in Microsoft Entra ID by going to **Identity** > **Users** > **All users** > *select a user* > **Properties**. 
 
 When assigning licenses to a group or bulk updates, such as disabling the synchronization status for the organization, any user whose usage location isn't specified inherits the location of the tenant.
 

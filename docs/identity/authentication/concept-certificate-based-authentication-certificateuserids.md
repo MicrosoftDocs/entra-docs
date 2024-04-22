@@ -11,7 +11,7 @@ ms.author: justinha
 author: vimrang
 manager: amycolannino
 ms.reviewer: vranganathan
-ms.custom: has-adal-ref, has-azure-ad-ps-ref
+ms.custom: has-adal-ref
 ---
 
 # Mapping to the certificateUserIds attribute in Microsoft Entra ID
@@ -217,8 +217,6 @@ Before you begin, make sure all user accounts that are synchronized from on-prem
 Follow these steps to configure Microsoft Entra Connect to synchronize userPrincipalName to certificateUserIds:
 
 1. On the Microsoft Entra Connect server, find and start the **Synchronization Rules Editor**.
-
-   :::image type="content" border="true" source="./media/concept-certificate-based-authentication-certificateuserids/sync-rules-editor.png" alt-text="Screenshot of Synchronization Rules Editor.":::
 
 1. Click **Direction**, and click **Outbound**. 
 

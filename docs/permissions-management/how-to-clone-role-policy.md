@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-permissions-management
 
 ms.topic: how-to
-ms.date: 09/14/2023
+ms.date: 03/15/2024
 ms.author: jfields
 ---
 
@@ -27,7 +27,6 @@ This article describes how you can use the **Remediation** dashboard in Microsof
 1. **(AWS Only)** In the **Clone** box, the **Clone Resources** and **Clone Conditions** checkboxes are automatically selected.
     Deselect the boxes if the resources and conditions are different from what is displayed.
 1. Enter a name for each authorization system that was selected in the **Policy Name** boxes, and then select **Next**.
-
 1. If the data collector hasn't been given controller privileges, the following message displays: **Only online/controller-enabled authorization systems can be submitted for cloning.**
 
    To clone this role manually, download the script and JSON file.

@@ -498,7 +498,7 @@ Status: Released to select customers
 
 * Adding Privacy Settings for the General Data Protection Regulation (GDPR).  For more information, see the article [here](reference-connect-user-privacy.md).
 
-[!INCLUDE [Privacy](~/../azure-docs-pr/includes/gdpr-intro-sentence.md)]  
+[!INCLUDE [Privacy](~/includes/azure-docs-pr/gdpr-intro-sentence.md)]  
 
 * application telemetry - admin can switch this class of data on/off at will
 
@@ -821,7 +821,7 @@ Status: July 2017
 ### Pass-through Authentication
 
 #### New features and improvements
-* The name of the agent required for Pass-through Authentication has been changed from *Microsoft Entra application proxy Connector* to *Microsoft Entra Connect Authentication Agent*.
+* The name of the agent required for Pass-through Authentication has been changed from *Microsoft Entra private network connector* to *Microsoft Entra Connect Authentication Agent*.
 
 * Enabling Pass-through Authentication no longer enables Password Hash Synchronization by default.
 
@@ -953,10 +953,10 @@ The issue that arises is that the **Sync all domains and OUs option** is always 
 #### Issues fixed
 
 * Following URLs are new WS-Federation endpoints introduced by Microsoft Entra ID to improve resiliency against authentication outage and will be added to on-premises AD FS replying party trust configuration:
-  * https:\//ests.login.microsoftonline.com/login.srf
-  * https:\//stamp2.login.microsoftonline.com/login.srf
-  * https://ccs.login.microsoftonline.com/login.srf
-  * https://ccs-sdf.login.microsoftonline.com/login.srf
+  * `https://ests.login.microsoftonline.com/login.srf`
+  * `https://stamp2.login.microsoftonline.com/login.srf`
+  * `https://ccs.login.microsoftonline.com/login.srf`
+  * `https://ccs-sdf.login.microsoftonline.com/login.srf`
 
 * Fixed an issue that caused AD FS to generate incorrect claim value for IssuerID. The issue occurs if there are multiple verified domains in the Microsoft Entra tenant and the domain suffix of the userPrincipalName attribute used to generate the IssuerID claim is at least 3-levels deep (for example, johndoe@us.contoso.com). The issue is resolved by updating the regex used by the claim rules.
 
@@ -1086,7 +1086,7 @@ Pass-through Authentication
 * Fixed an issue which causes Microsoft Entra Connect wizard to bypass validation checks on sign-in method selected when Desktop SSO feature is enabled.
 
 Password Reset
-* Fixed an issue which may cause the Azure Microsoft Entra Connect server to not attempt to re-connect if the connection was killed by a firewall or proxy.
+* Fixed an issue which may cause the Microsoft Entra Connect server to not attempt to re-connect if the connection was killed by a firewall or proxy.
 
 **New features/improvements:**
 

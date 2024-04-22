@@ -133,9 +133,8 @@
       href: how-to-assign-app-role-managed-identity-cli.md
   - name: View managed identity activity
     href: how-to-view-managed-identity-activity.md
-  - name: Move a managed identity to a new region
-    href: how-to-managed-identity-regional-move.md
-
+  - name: Relocate a managed identity to another region
+    href: /azure/operational-excellence/relocation-managed-identity?toc=/entra/identity/managed-identities-azure-resources/toc.json
 - name: Reference
   items:
   - name: .NET

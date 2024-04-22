@@ -4,7 +4,7 @@ description: Give partners access to both on-premises and cloud resources with M
 
  
 ms.service: entra-external-id
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 12/18/2023
 ms.author: cmulligan
 author: csmulligan

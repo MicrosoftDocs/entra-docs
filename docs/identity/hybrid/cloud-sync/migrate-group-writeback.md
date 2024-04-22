@@ -30,7 +30,7 @@ The following document describes how to migrate group writeback using Microsoft 
 ## Prerequisites
 The following prerequisites are required to implement this scenario.
 
- - Azure AD account with at least a [Hybrid Administrator](../../role-based-access-control/permissions-reference.md#hybrid-identity-administrator) role.
+ - Microsoft Entra account with at least a [Hybrid Administrator](../../role-based-access-control/permissions-reference.md#hybrid-identity-administrator) role.
  - An on-premises AD account with at least domain administrator permissions - required to access the adminDescription attribute and copy it to the msDS-ExternalDirectoryObjectId attribute
  - On-premises Active Directory Domain Services environment with Windows Server 2016 operating system or later. 
      - Required for AD Schema attribute  - msDS-ExternalDirectoryObjectId 
@@ -49,10 +49,10 @@ The following prerequisites are required to implement this scenario.
  :::image type="content" source="media/migrate-group-writeback/migrate-2.png" alt-text="Screenshot of the msDS-ExternalDirectoryObjectID attribute." lightbox="media/migrate-group-writeback/migrate-2.png":::
 
 ## Step 2 - Place the Microsoft Entra Connect Sync server in staging mode and disable the sync scheduler
- 1. Start the Microsoft Entra Connect Sync(Azure AD Connect) wizard 
+ 1. Start the Microsoft Entra Connect Sync wizard 
  2. Click **Configure**
  3. Select **Configure staging mode** and click **Next**
- 4. Enter Entra ID credentials
+ 4. Enter Microsoft Entra credentials
  5. Place a check in the **Enable staging mode** box and click **Next**
   
   :::image type="content" source="media/migrate-group-writeback/migrate-3.png" alt-text="Screenshot of enabling staging mode." lightbox="media/migrate-group-writeback/migrate-3.png":::
@@ -157,19 +157,18 @@ You'll also need an outbound sync rule with a link type of JoinNoFlow and the sc
     :::image type="content" source="media/migrate-group-writeback/migrate-11.png" alt-text="Screenshot of PowerShell execution." lightbox="media/migrate-group-writeback/migrate-11.png":::
 
 ## Step 6 - Remove the Microsoft Entra Connect Sync server from staging mode
-1. Start the Entra Connect Sync wizard (Azure AD Connect)
+1. Start the Microsoft Entra Connect Sync wizard
 2. Click **Configure**
 3. Select **Configure staging mode** and click **Next**
-4. Enter Entra ID credentials
+4. Enter Microsoft Entra credentials
 5. Remove the check from the **Enable staging mode** box and click **Next**
 6. Click **Configure**
 7. Click **Exit**
 
 ## Step 7 - Configure Microsoft Entra Cloud Sync
-Now that you have successfully removed the groups from the scope of Microsoft Entra Connect Sync, you can seupt and configure Microsoft Entra Cloud Sync to take over synchronization. See [Provision groups to Active Directory using Microsoft Entra Cloud Sync](how-to-configure-entra-to-active-directory.md)
+Now that you have successfully removed the groups from the scope of Microsoft Entra Connect Sync, you can set up and configure Microsoft Entra Cloud Sync to take over synchronization. See [Provision groups to Active Directory using Microsoft Entra Cloud Sync](how-to-configure-entra-to-active-directory.md).
 
 ## Next Steps
 - [Group writeback with Microsoft Entra Cloud Sync (Preview)](../group-writeback-cloud-sync.md)
 - [Provision groups to Active Directory using Microsoft Entra Cloud Sync](how-to-configure-entra-to-active-directory.md)
 - [Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance](govern-on-premises-groups.md)
-

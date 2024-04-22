@@ -1,40 +1,39 @@
 ---
 title: Network topology considerations for Microsoft Entra application proxy
 description: Covers network topology considerations when using Microsoft Entra application proxy.
-
 author: kenwith
 manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: conceptual
-ms.date: 01/25/2024
+ms.date: 02/27/2024
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
 
 # Optimize traffic flow with Microsoft Entra application proxy
 
-This article explains how to optimize traffic flow and network topology considerations when using Microsoft Entra application proxy for publishing and accessing your applications remotely.
+Learn how to optimize traffic flow and network topology considerations when using Microsoft Entra application proxy.
 
 ## Traffic flow
 
 When an application is published through Microsoft Entra application proxy, traffic from the users to the applications flows through three connections:
 
 1. The user connects to the Microsoft Entra application proxy service public endpoint on Azure
-1. The application proxy connector connects to the application proxy service (outbound)
-1. The application proxy connector connects to the target application
+1. The private network connector connects to the application proxy service (outbound)
+1. The private network connector connects to the target application
 
 :::image type="content" source="./media/application-proxy-network-topology/application-proxy-three-hops.png" alt-text="Diagram showing traffic flow from user to target application." lightbox="./media/application-proxy-network-topology/application-proxy-three-hops.png":::
 
 ## Optimize connector groups to use closest application proxy cloud service
 
-When you sign up for a Microsoft Entra tenant, the region of your tenant is determined by the country/region you specify. When you enable application proxy, the **default** application proxy cloud service instances for your tenant are chosen in the same region as your Microsoft Entra tenant, or the closest region to it.
+When you sign up for a Microsoft Entra tenant, the region of your tenant is set with the region you choose. The **default** application proxy cloud service instances use the same, or closest, region as your Microsoft Entra tenant.
 
-For example, if your Microsoft Entra tenant's country or region is the United Kingdom, all your application proxy connectors at **default** will be assigned to use service instances in European data centers. When your users access published applications, their traffic goes through the application proxy cloud service instances in this location.
+For example, if your Microsoft Entra tenant's region is the United Kingdom, all your private network connectors at **default** is assigned to use service instances in European data centers. When your users access published applications, their traffic goes through the application proxy cloud service instances in this location.
 
-If you have connectors installed in regions different from your default region, it may be beneficial to change which region your connector group is optimized for to improve performance accessing these applications. Once a region is specified for a connector group it will connect to application proxy cloud services in the designated region.
+If you have connectors installed in regions different from your default region, it's beneficial to change which region your connector group is optimized for to improve performance accessing these applications. Once a region is specified for a connector group, it connects to application proxy cloud services in the designated region.
 
-In order to optimize the traffic flow and reduce latency to a connector group assign the connector group to the closest region. To assign a region:
+In order to optimize the traffic flow and reduce latency to a connector group, assign the connector group to the closest region. To assign a region:
 
 > [!IMPORTANT]
 > Connectors must be using at least version 1.5.1975.0 to use this capability.
@@ -42,16 +41,18 @@ In order to optimize the traffic flow and reduce latency to a connector group as
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Select your username in the upper-right corner. Verify you're signed in to a directory that uses application proxy. If you need to change directories, select **Switch directory** and choose a directory that uses application proxy.
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Application proxy**.
-1. Select **New Connector Group**, provide a **Name** for the connector group.
-1. Next, under **Advanced Settings** and select the drop-down under Optimize for a specific region and select the region closest to the connectors.
-1. Select **Create**.
-    
+1. Select **New Connector Group** and provide a **Name** for the connector group.
+1. Under **Advanced Settings**, select the drop-down under Optimize for a specific region and select the region closest to the connectors and then select **Save**.
+
     :::image type="content" source="./media/application-proxy-network-topology/geo-routing.png" alt-text="Configure a new connector group." lightbox="./media/application-proxy-network-topology/geo-routing.png":::
 
-1. Once the new connector group is created, you can select which connectors to assign to this connector group. 
-   - You can only move connectors to your connector group if it is in a connector group using the default region. Start with a connector in the **default** connector group. Then move it to the appropriate connector group.
-   - You can only change the region of a connector group if there are **no** connectors assigned to it or apps assigned to it.
-1. Next assign the connector group to your applications. When a user accesses the app, traffic goes to the application proxy cloud service in the region the connector group is optimized for.
+1. Select the connectors to assign to the connector group.
+
+    You can only move connectors to your connector group if it is in a connector group using the default region. Start with a connector in the **default** connector group. Then move it to the appropriate connector group.
+
+    You can only change the region of a connector group if there are **no** connectors assigned to it or apps assigned to it.
+
+1. Assign the connector group to your applications. Traffic goes to the application proxy cloud service in the region of the optimized connector group.
 
 ## Considerations for reducing latency
 
@@ -59,7 +60,7 @@ All proxy solutions introduce latency into your network connection. No matter wh
 
 Organizations typically include server endpoints in their perimeter network. With Microsoft Entra application proxy, however, traffic flows through the proxy service in the cloud while the connectors reside on your corporate network. No perimeter network is required.
 
-The next sections contain additional suggestions to help you reduce latency even further. 
+The next sections contain more suggestions to help you reduce latency even further. 
 
 ### Connector placement
 
@@ -70,25 +71,24 @@ When setting up the application proxy service, ask the following questions:
 - Where is the app located?
 - Where are most users who access the app located?
 - Where is the application proxy instance located?
-- Do you already have a dedicated network connection to Azure datacenters set up, like Azure ExpressRoute or a similar VPN?
+- Do you already have a dedicated network connection to Microsoft data centers set up, like Azure ExpressRoute or a similar VPN?
 
-The connector has to communicate with both Azure and your applications (steps 2 and 3 in the Traffic flow diagram), so the placement of the connector affects the latency of those two connections. When evaluating the placement of the connector, keep in mind the following points:
+The connector must communicate with both Microsoft Entra and your applications. Steps 2 and 3 represent the communication in the traffic flow diagram. The placement of the connector affects the latency of those two connections. When evaluating the placement of the connector, keep in mind these points.
 
-- If you want to use Kerberos constrained delegation (KCD) for single sign-on, then the connector needs a line of sight to a datacenter. Additionally, the connector server needs to be domain joined.  
-- When in doubt, install the connector closer to the application.
+- Confirm "line of site" between the connector and the data center for Kerberos Constrained Delegation (KCD). Additionally, the connector server needs to be domain joined.
+- Install the connector as close to the application as possible.
 
 ### General approach to minimize latency
 
-You can minimize the latency of the end-to-end traffic by optimizing each network connection. Each connection can be optimized by:
+Minimize the latency of end-to-end traffic by optimizing each network connection.
+- Reduce the distance between the two ends of the hop.
+- Choose the right network to traverse. For example, traversing a private network rather than the public internet could be faster, due to dedicated links.
 
-- Reducing the distance between the two ends of the hop.
-- Choosing the right network to traverse. For example, traversing a private network rather than the public Internet may be faster, due to dedicated links.
-
-If you have a dedicated VPN or ExpressRoute link between Azure and your corporate network, you may want to use that.
+Consider using a dedicated VPN or ExpressRoute link between Microsoft and your corporate network.
 
 ## Focus your optimization strategy
 
-There's little that you can do to control the connection between your users and the application proxy service. Users may access your apps from a home network, a coffee shop, or a different country/region. Instead, you can optimize the connections from the application proxy service to the application proxy connectors to the apps. Consider incorporating the following patterns in your environment.
+There's little that you can do to control the connection between your users and the application proxy service. Users access your apps from a home network, a coffee shop, or a different region. Instead, you can optimize the connections from the application proxy service to the private network connectors to the apps. Consider incorporating the following patterns in your environment.
 
 ### Pattern 1: Put the connector close to the application
 
@@ -104,7 +104,7 @@ If you have ExpressRoute set up with Microsoft peering, you can use the faster E
 
 If you have a dedicated VPN or ExpressRoute set up with private peering between Azure and your corporate network, you have another option. In this configuration, the virtual network in Azure is typically considered as an extension of the corporate network. So you can install the connector in the Azure datacenter, and still satisfy the low latency requirements of the connector-to-app connection.
 
-Latency is not compromised because traffic is flowing over a dedicated connection. You also get improved application proxy service-to-connector latency because the connector is installed in an Azure datacenter close to your Microsoft Entra tenant location.
+Latency isn't compromised because traffic is flowing over a dedicated connection. You also get improved application proxy service-to-connector latency because the connector is installed in an Azure datacenter close to your Microsoft Entra tenant location.
 
 :::image type="content" source="./media/application-proxy-network-topology/application-proxy-expressroute-private.png" alt-text="Diagram showing connector installed within an Azure datacenter" lightbox="./media/application-proxy-network-topology/application-proxy-expressroute-private.png":::
 
@@ -112,7 +112,7 @@ Latency is not compromised because traffic is flowing over a dedicated connectio
 
 Although the focus of this article is connector placement, you can also change the placement of the application to get better latency characteristics.
 
-Increasingly, organizations are moving their networks into hosted environments. This enables them to place their apps in a hosted environment that is also part of their corporate network, and still be within the domain. In this case, the patterns discussed in the preceding sections can be applied to the new application location. If you're considering this option, see [Microsoft Entra Domain Services](/entra/identity/domain-services/overview).
+Increasingly, organizations are moving their networks into hosted environments. The move enables them to place their apps in a hosted environment that is also part of their corporate network, and still be within the domain. In this case, the patterns discussed in the preceding sections can be applied to the new application location. If you're considering this option, see [Microsoft Entra Domain Services](/entra/identity/domain-services/overview).
 
 Additionally, consider organizing your connectors using [connector groups](application-proxy-connector-groups.md) to target apps that are in different locations and networks.
 
@@ -123,8 +123,8 @@ In this section, we walk through a few common scenarios. Assume that the Microso
 For these scenarios, we call each connection a "hop" and number them for easier discussion:
 
 - **Hop 1**: User to the application proxy service
-- **Hop 2**: application proxy service to the application proxy connector
-- **Hop 3**: application proxy connector to the target application 
+- **Hop 2**: application proxy service to the private network connector
+- **Hop 3**: private network connector to the target application 
 
 ### Use case 1
 
@@ -132,7 +132,7 @@ For these scenarios, we call each connection a "hop" and number them for easier 
 
 **Recommendation:** Follow pattern 1, explained in the previous section. For improved latency, consider using ExpressRoute, if needed.
 
-This is a simple pattern. You optimize hop 3 by placing the connector near the app. This is also a natural choice, because the connector typically is installed with line of sight to the app and to the datacenter to perform KCD operations.
+Optimize hop 3 by placing the connector near the app. The connector typically is installed with line of sight to the app and to the datacenter to perform KCD operations.
 
 :::image type="content" source="./media/application-proxy-network-topology/application-proxy-pattern1.png" alt-text="Diagram that shows users, proxy, connector, and app are all in the US." lightbox="./media/application-proxy-network-topology/application-proxy-pattern1.png":::
 
@@ -142,7 +142,7 @@ This is a simple pattern. You optimize hop 3 by placing the connector near the a
 
 **Recommendation:** Follow pattern 1, explained in the previous section.
 
-Again, the common pattern is to optimize hop 3, where you place the connector near the app. Hop 3 is not typically expensive, if it is all within the same region. However, hop 1 can be more expensive depending on where the user is, because users across the world must access the application proxy instance in the US. It's worth noting that any proxy solution has similar characteristics regarding users being spread out globally.
+Again, the common pattern is to optimize hop 3, where you place the connector near the app. Hop 3 isn't typically expensive, if it's all within the same region. However, hop 1 can be more expensive depending on where the user is, because users across the world must access the application proxy instance in the US. It's worth noting that any proxy solution has similar characteristics regarding users being spread out globally.
 
 :::image type="content" source="./media/application-proxy-network-topology/application-proxy-pattern2.png" alt-text="Users are spread globally, but everything else is in the US" lightbox="./media/application-proxy-network-topology/application-proxy-pattern2.png":::
 
@@ -154,7 +154,7 @@ Again, the common pattern is to optimize hop 3, where you place the connector ne
 
 First, place the connector as close as possible to the app. Then, the system automatically uses ExpressRoute for hop 2.
 
-If the ExpressRoute link is using Microsoft peering, the traffic between the proxy and the connector flows over that link. Hop 2 has optimized latency.
+If the ExpressRoute link is using Microsoft peering, the traffic between the proxy and the connector flows over that link. Hop 2 uses optimal latency.
 
 :::image type="content" source="./media/application-proxy-network-topology/application-proxy-pattern3.png" alt-text="Diagram showing ExpressRoute between the proxy and connector" lightbox="./media/application-proxy-network-topology/application-proxy-pattern3.png":::
 
@@ -174,15 +174,15 @@ The connector can be placed in the Azure datacenter. Since the connector still h
 
 **Scenario:** The app is in an organization's network in Europe, default tenant region is US, with most users in the Europe.
 
-**Recommendation:** Place the connector near the app. Update the connector group so it is optimized to use Europe application proxy service instances. For steps see, [Optimize connector groups to use closest application proxy cloud service](application-proxy-network-topology.md#optimize-connector-groups-to-use-closest-application-proxy-cloud-service).
+**Recommendation:** Place the connector near the app. Update the connector group to use Europe application proxy service instances. For steps see, [Optimize connector groups to use closest application proxy cloud service](application-proxy-network-topology.md#optimize-connector-groups-to-use-closest-application-proxy-cloud-service).
 
-Because Europe users are accessing an application proxy instance that happens to be in the same region, hop 1 is not expensive. Hop 3 is optimized. Consider using ExpressRoute to optimize hop 2.
+Because Europe users are accessing an application proxy instance that happens to be in the same region, hop 1 isn't expensive. Hop 3 is optimized. Consider using ExpressRoute to optimize hop 2.
 
 ### Use case 6
 
 **Scenario:** The app is in an organization's network in Europe, default tenant region is US, with most users in the US.
 
-**Recommendation:** Place the connector near the app. Update the connector group so it is optimized to use Europe application proxy service instances. For steps see, [Optimize connector groups to use closest application proxy cloud service](application-proxy-network-topology.md#optimize-connector-groups-to-use-closest-application-proxy-cloud-service). Hop 1 can be more expensive since all US users must access the application proxy instance in Europe.
+**Recommendation:** Place the connector near the app. Update the connector group to use Europe application proxy service instances. For steps see, [Optimize connector groups to use closest application proxy cloud service](application-proxy-network-topology.md#optimize-connector-groups-to-use-closest-application-proxy-cloud-service). Hop 1 can be more expensive since all US users must access the application proxy instance in Europe.
 
 You can also consider using one other variant in this situation. If most users in the organization are in the US, then chances are that your network extends to the US as well. Place the connector in the US, continue to use the default US region for your connector groups, and use the dedicated internal corporate network line to the application in Europe. This way hops 2 and 3 are optimized.
 

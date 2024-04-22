@@ -6,7 +6,7 @@ author: gargi-sinha
 manager: martinco
 ms.service: entra-id
 
-ms.topic: how-to
+ms.topic: tutorial
 ms.date: 01/13/2023
 ms.author: gasinh
 ms.subservice: enterprise-apps

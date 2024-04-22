@@ -1,40 +1,40 @@
 ---
-title: Known issues in customer tenants
-description: Learn about known issues in customer tenants.
+title: Known issues in external tenants
+description: Learn about known issues in external tenants.
  
 author: msmimart
 manager: celestedg
 ms.service: entra-external-id
  
 ms.subservice: customers
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 05/31/2023
 ms.author: mimart
 ms.custom: it-pro
 
 ---
 
-# Known issues with Microsoft Entra ID for customers
+# Known issues with Microsoft Entra External ID for external-facing apps
 
-This article describes known issues that you may experience when you use Microsoft Entra ID for customers, and provides help to resolve these issues.
+This article describes known issues that you may experience when you use Microsoft Entra External ID for your external-facing apps, and provides help to resolve these issues.
 
 ## Tenant creation and management
 
 ### Tenant creation fails when you choose an unsupported region
 
-During customer tenant creation, the **Country/Region** dropdown menu lists countries and regions where  Microsoft Entra ID for customers isn't yet available. If you choose Japan or Australia, tenant creation fails.
+During external tenant creation, the **Country/Region** dropdown menu lists countries and regions where  Microsoft Entra External ID isn't yet available. If you choose Japan or Australia, tenant creation fails.
 
 **Cause**: Public preview is currently available in the Americas and Europe, with more regions to follow shortly.
 
 **Workaround**: Select a different region and try again
 
-### Customer trial tenants can't be extended or linked with an existing Azure subscription
+### External trial tenants can't be extended or linked with an existing Azure subscription
 
-Customer trial tenants can't be supported beyond 30 days.
+External trial tenants can't be supported beyond 30 days.
 
 **Workaround**: Take one of the following actions.
 
-- To continue beyond 30 days, if you're an existing Microsoft Entra customer, [create a new customer tenant](how-to-create-customer-tenant-portal.md) with your subscription.
+- To continue beyond 30 days, if you're an existing Microsoft Entra customer, [create a new external tenant](how-to-create-external-tenant-portal.md) with your subscription.
 
 - If you don’t have a Microsoft Entra account, delete the trial tenant and [set up an Azure free account](https://azure.microsoft.com/free/).
 
@@ -48,7 +48,7 @@ When you manually update the autopopulated value for the **Domain name** field, 
 
 ### Using your admin email to create a local customer account prevents you from administering the tenant
 
-If you're the admin who created the customer tenant, and you use the same email address as your admin account to create a local customer account in that same tenant, you can't sign in directly to the tenant with admin privileges.
+If you're the admin who created the external tenant, and you use the same email address as your admin account to create a local customer account in that same tenant, you can't sign in directly to the tenant with admin privileges.
 
 **Cause**: Using your tenant admin email to create a customer account via self-service sign-up creates a second user with the same email address, but with customer-level privileges. When you sign in to the tenant via `https://entra.microsoft.com/<tenantID>` or `<tenantName>.onmicrosoft.com`, the least-privileged account takes precedence, and you're signed in as the customer instead of the admin. You have insufficient privileges to manage the tenant.
 
@@ -57,17 +57,17 @@ If you're the admin who created the customer tenant, and you use the same email 
 - When creating a local customer account, use a different email address than the one used by the admin who created the tenant.
 - If you've already created a customer account with the same email address as the admin, sign out of the admin center, and then use `https://entra.microsoft.com` instead of `https://entra.microsoft.com/<tenantID>` or `<tenantName>.onmicrosoft.com` to sign in with the correct admin account.
 
-### Unable to delete your customer tenant
+### Unable to delete your external tenant
 
-You get the following error when you try to delete a customer tenant:
+You get the following error when you try to delete an external tenant:
 
    `Unable to delete tenant`
 
-**Cause**: This error occurs when you try to delete a customer tenant but you haven't deleted the **b2c-extensions-app**. 
+**Cause**: This error occurs when you try to delete an external tenant but you haven't deleted the **b2c-extensions-app**. 
 
-Custom attributes are also known as directory extension attributes expand the user profile information stored in your customer directory. All extension attributes for your customer tenant are stored in the app named **b2c-extensions-app**.
+Custom attributes are also known as directory extension attributes expand the user profile information stored in your customer directory. All extension attributes for your external tenant are stored in the app named **b2c-extensions-app**.
 
-**Workaround**: When deleting a customer tenant, delete the **b2c-extensions-app**, found in **App registrations** under **All applications**.
+**Workaround**: When deleting an external tenant, delete the **b2c-extensions-app**, found in **App registrations** under **All applications**.
 
 ## Branding
 
@@ -83,7 +83,7 @@ The device code flows display Microsoft branding even when you've configured cus
 
 After you set up a tenant and create a sign-up user flow, you see Microsoft branding instead of neutral branding, along with **Can't access your account?** under the sign-in email box instead of **No account? Create one**.
 
-**Cause**: The sign-in page for a workforce tenant is displaying instead of sign-in for a customer tenant. This issue can occur when you refresh the sign-in page too many times in quick succession.
+**Cause**: The sign-in page for a workforce tenant is displaying instead of sign-in for an external tenant. This issue can occur when you refresh the sign-in page too many times in quick succession.
 
 **Workaround**: Wait a few minutes and then refresh. The customer sign-in page should appear.
 
@@ -123,7 +123,7 @@ Or, when you run the Node.js sample, you see an error containing the following l
 
 ### Error when running a web API
 
-When you create your own web API in a customer tenant (without using the app creation scripts in the web API samples), and then run it and send an access token, you enable logging and see the following error:
+When you create your own web API in an external tenant (without using the app creation scripts in the web API samples), and then run it and send an access token, you enable logging and see the following error:
 
    `IDX20804: Unable to retrieve document from: https://<tenant>.ciamlogin.com/common/discovery/keys`
 
@@ -137,4 +137,4 @@ When you create your own web API in a customer tenant (without using the app cre
 
 ## Next steps
 
-See also [Supported features in Microsoft Entra ID for customers](concept-supported-features-customers.md)
+See also [Supported features in Microsoft Entra External ID](concept-supported-features-customers.md)

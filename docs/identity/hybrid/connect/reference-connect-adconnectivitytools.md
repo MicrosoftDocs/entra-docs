@@ -30,7 +30,7 @@ Confirm-DnsConnectivity [-Forest] <String> [-DCs] <Array> [-ReturnResultAsPSObje
 ### DESCRIPTION
 
 Runs local Dns connectivity tests.
-In order to configure the Active Directory connector, AADConnect server must have both name resolution 
+In order to configure the Active Directory connector, Microsoft Entra Connect server must have both name resolution 
 for the forest it's attempting to connect to as well as to the domain controllers
 associated to this forest.
 
@@ -789,7 +789,7 @@ Accept wildcard characters: False
 #### -AutoCreateConnectorAccount
 
 For Custom-installations:
-    Flag that is $True if the user chose "Create new AD account" on the AD Forest Account window of AADConnect's
+    Flag that is $True if the user chose "Create new AD account" on the AD Forest Account window of Microsoft Entra Connect's
     wizard.
 $False if the user chose "Use existing AD account".
 For Express-installations:

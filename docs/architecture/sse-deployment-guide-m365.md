@@ -1,16 +1,16 @@
 ---
-title: Microsoft Security Service Edge solution deployment guide for Microsoft Entra Internet Access for Microsoft 365 proof of concept
+title: Microsoft's Security Service Edge solution deployment guide for Microsoft Entra Internet Access for Microsoft 365 proof of concept
 description: Deploy and verify Microsoft Entra Internet Access for Microsoft 365
 author: jricketts
 manager: martinco
-ms.service: network-access
+ms.service: global-secure-access
 ms.topic: conceptual
 ms.date: 11/15/2023
 ms.author: jricketts
 ---
-# Microsoft Security Service Edge solution deployment guide for Microsoft Entra Internet Access for Microsoft 365 proof of concept
+# Microsoft's Security Service Edge solution deployment guide for Microsoft Entra Internet Access for Microsoft 365 proof of concept
 
-This Proof of Concept (PoC) Deployment Guide helps you to deploy Microsoft's Security Service Edge (SSE) solution that features [Microsoft Entra Internet Access for Microsoft 365](../global-secure-access/how-to-manage-microsoft-365-profile.md) and Microsoft Entra Private Access.
+This Proof of Concept (PoC) Deployment Guide helps you to deploy Microsoft's Security Service Edge (SSE) solution that features [Microsoft Entra Internet Access for Microsoft 365](../global-secure-access/how-to-manage-microsoft-365-profile.md).
 
 ## Overview
 
@@ -27,17 +27,17 @@ Data exfiltration is a concern for all companies, especially those that operate 
 Microsoft Entra Internet Access for Microsoft 365 can enhance your Data Loss Prevention (DLP) controls by enabling you to:
 
 - protect against token theft by requiring users can only access Microsoft 365 resources if coming through a compliant network.
-- enforce Conditional Access policies on connections to Microsoft Security Service Edge.
+- enforce Conditional Access policies on connections to Microsoft's Security Service Edge.
 - deploy universal tenant restrictions v2, eliminating the need to route all user traffic through customer-managed network proxies.
 - configure tenant restrictions that prevent users from accessing unauthorized external tenants with any third-party identity (for example, personal or issued by an external organization).
 - protect against token infiltration/exfiltration to ensure users can't bypass your tenant restrictions by moving access tokens to and from unmanaged devices or network locations.
 
-This section describes how to enforce compliant network access to Microsoft 365 traffic, protect the connection to the Microsoft Security Service Edge with Conditional Access, and prevent external identities from accessing external tenants on your managed devices and/or networks by using universal tenant restrictions v2. Tenant restrictions only apply to external identities; they don't apply to identities within your own tenant. To control outbound access for your own users' identities, use [cross-tenant access settings](~/external-id/cross-tenant-access-settings-b2b-collaboration.md). Configuring the tenant restrictions policy in Microsoft Entra ID to block access applies to users who get the tenant restrictions header injection. This only includes users who route through customer network proxies that inject the headers, users with deployed Global Secure Access Client, or users on Windows devices with enabled tenant restrictions header injection via the Windows OS setting. When testing, ensure tenant restrictions are enforced by the Global Secure Access service and not via customer network proxies or Windows settings to avoid unintentionally impacting other users. Additionally, you need to enable Conditional Access signaling to enable Global Secure Access options in Conditional Access. 
+This section describes how to enforce compliant network access to Microsoft 365 traffic, protect the connection to the Microsoft's Security Service Edge with Conditional Access, and prevent external identities from accessing external tenants on your managed devices and/or networks by using universal tenant restrictions v2. Tenant restrictions only apply to external identities; they don't apply to identities within your own tenant. To control outbound access for your own users' identities, use [cross-tenant access settings](~/external-id/cross-tenant-access-settings-b2b-collaboration.md). Configuring the tenant restrictions policy in Microsoft Entra ID to block access applies to users who get the tenant restrictions header injection. This only includes users who route through customer network proxies that inject the headers, users with deployed Global Secure Access Client, or users on Windows devices with enabled tenant restrictions header injection via the Windows OS setting. When testing, ensure tenant restrictions are enforced by the Global Secure Access service and not via customer network proxies or Windows settings to avoid unintentionally impacting other users. Additionally, you need to enable Conditional Access signaling to enable Global Secure Access options in Conditional Access. 
 
 1. [Enable Global Secure Access signaling for Conditional Access](../global-secure-access/how-to-compliant-network.md#enable-global-secure-access-signaling-for-conditional-access).
 1. [Enable universal tenant restrictions](../global-secure-access/how-to-universal-tenant-restrictions.md). 
 1. [Configure the tenant restrictions policy in the Microsoft Entra admin center to block access for all external identities and all applications](../external-id/tenant-restrictions-v2.md#step-1-configure-default-tenant-restrictions-v2).
-1. Create a Conditional Access policy that requires a compliant network for access. Configuring the compliant network requirement blocks all access to Office 365 Exchange Online and Office 365 SharePoint Online for your test users, from any location, unless they connect using Microsoft Security Service Edge Solution. Configure your Conditional Access policy as follows:
+1. Create a Conditional Access policy that requires a compliant network for access. Configuring the compliant network requirement blocks all access to Office 365 Exchange Online and Office 365 SharePoint Online for your test users, from any location, unless they connect using Microsoft's Security Service Edge Solution. Configure your Conditional Access policy as follows:
    1. **Users**: Select your test user or a pilot group.
    1. **Target resources**: Select the applications **Office 365 Exchange Online** and **Office 365 SharePoint Online**.
    1. **Conditions**:
@@ -57,9 +57,9 @@ This section describes how to enforce compliant network access to Microsoft 365 
         :::image type="content" source="media/sse-deployment-guide-m365/conditional-access-policy-options.png" alt-text="Screenshot of Conditional Access policy options.":::
         
 1. **Access controls** > **Grant** > Select the controls that you want to enforce such as requiring multifactor authentication.
-1. Attempt to sign-in to SharePoint Online or Exchange Online and verify that you are prompted to authenticate to Global Secure Access. The Global Secure Access Client uses access tokens and refresh tokens to connect to Microsoft Security Service Edge Solution. If you have previously connected the Global Secure Access Client, then you may need to wait for the access token to expire (up to one hour) before the Conditional Access policy that you created is applied.
+1. Attempt to sign-in to SharePoint Online or Exchange Online and verify that you are prompted to authenticate to Global Secure Access. The Global Secure Access Client uses access tokens and refresh tokens to connect to Microsoft's Security Service Edge Solution. If you have previously connected the Global Secure Access Client, then you may need to wait for the access token to expire (up to one hour) before the Conditional Access policy that you created is applied.
 
-:::image type="content" source="media/sse-deployment-guide-m365/global-secure-access-credentials-prompt.png" alt-text="Screenshot of the Global Secure Access credentials prompt window.":::
+   :::image type="content" source="media/sse-deployment-guide-m365/global-secure-access-credentials-prompt.png" alt-text="Screenshot of the Global Secure Access credentials prompt window.":::
 
 1. To verify that your Conditional Access policy was successfully applied, view the sign-in logs for your test user for the **ZTNA Network Access Client - M365** application.
 
@@ -83,13 +83,11 @@ This section describes how to enforce compliant network access to Microsoft 365 
    1. Confirm that access is blocked.
    1. In the sign-in logs, confirm the Conditional Access policy that blocks access outside compliant networks was applied.
    
-      :::image type="content" source="media/sse-deployment-guide-m365/log-in-access-is-blocked.png" alt-text="Screenshot of log-in window after submitting credentials showing You cannot access this right now message.":::
-
       :::image type="content" source="media/sse-deployment-guide-m365/sign-in-logs-failure-inline.png" alt-text="Screenshot of a line in the sign-in logs window showing failure indicator." lightbox="media/sse-deployment-guide-m365/sign-in-logs-failure-expanded.png":::
 
       :::image type="content" source="media/sse-deployment-guide-m365/logs-conditional-access-failure-inline.png" alt-text="Screenshot of sign-in logs window showing Conditional Access tab highlighting a line where Result column is Failure." lightbox="media/sse-deployment-guide-m365/logs-conditional-access-failure-expanded.png":::
 
-1. From your test device with the Global Secure Access Client enabled, attempt to sign in to a different Microsoft Entra ID tenant with an external identity. Confirm that tenant restrictions block access.
+1. From your test device with the Global Secure Access Client enabled, attempt to sign in to a different Microsoft Entra tenant with an external identity. Confirm that tenant restrictions block access.
 
    :::image type="content" source="media/sse-deployment-guide-m365/log-in-access-is-blocked.png" alt-text="Screenshot of log-in window after submitting credentials showing Access is blocked message.":::
 
@@ -140,4 +138,5 @@ To test source IP address restoration, Global Secure Access signaling for Condit
 [!INCLUDE [Public preview important note](~/global-secure-access/includes/public-preview-important-note.md)]
 
 ## Next Steps
-Deploy and verify [Microsoft Entra Private Access](sse-deployment-guide-private-access.md)
+[Deploy and verify Microsoft Entra Private Access](sse-deployment-guide-private-access.md)
+[Deploy and verify Microsoft Entra Internet Access](sse-deployment-guide-internet-access.md)

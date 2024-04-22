@@ -12,6 +12,8 @@ ms.subservice: saas-apps
 ms.topic: tutorial
 ms.date: 08/03/2023
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Vbrick Rev Cloud so that I can streamline the user management process and ensure that users have the appropriate access to Vbrick Rev Cloud.
 ---
 
 # Tutorial: Configure Vbrick Rev Cloud for automatic user provisioning

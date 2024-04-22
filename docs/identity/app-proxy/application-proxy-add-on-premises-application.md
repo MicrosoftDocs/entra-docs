@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: tutorial
-ms.date: 02/22/2024
+ms.date: 02/26/2024
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
@@ -17,7 +17,7 @@ Microsoft Entra ID has an application proxy service that enables users to access
 
 :::image type="content" source="./media/application-proxy-add-on-premises-application/app-proxy-diagram.png" alt-text="Application proxy Overview Diagram" lightbox="./media/application-proxy-add-on-premises-application/app-proxy-diagram.png":::
 
-Connectors are a key part of application proxy. To learn more about connectors, see [Understand Microsoft Entra application proxy connectors](application-proxy-connectors.md).
+Connectors are a key part of application proxy. To learn more about connectors, see [Understand Microsoft Entra private network connectors](application-proxy-connectors.md).
 
 In this tutorial, you:
 - Open ports for outbound traffic and allows access to specific URLs.
@@ -37,7 +37,7 @@ To add an on-premises application to Microsoft Entra ID, you need:
 
 ### Windows server
 
-Application proxy requires Windows Server 2012 R2 or later. You install the application proxy connector on the server. The connector server communicates with the application proxy services in Microsoft Entra ID, and the on-premises applications that you plan to publish.
+Application proxy requires Windows Server 2012 R2 or later. You install the private network connector on the server. The connector server communicates with the application proxy services in Microsoft Entra ID, and the on-premises applications that you plan to publish.
 
 Use more than one Windows server for high availability in your production environment. One Windows server is sufficient for testing.
 
@@ -75,7 +75,7 @@ Use more than one Windows server for high availability in your production enviro
 
 #### Transport Layer Security (TLS) requirements
 
-The Windows connector server must have TLS 1.2 enabled before you install the application proxy connector.
+The Windows connector server must have TLS 1.2 enabled before you install the private network connector.
 
 To enable TLS 1.2:
 
@@ -119,7 +119,7 @@ Open the following ports to **outbound** traffic.
 If your firewall enforces traffic according to originating users, also open ports 80 and 443 for traffic from Windows services that run as a Network Service.
 
 > [!NOTE]
-> Errors occur when there's a networking issue. Check if the required ports are open. For more information about troubleshooting issues related to connector errors, see [Troubleshoot application proxy problems and error messages](application-proxy-troubleshoot.md#connector-errors).
+> Errors occur when there's a networking issue. Check if the required ports are open. For more information about troubleshooting issues related to connector errors, see [Troubleshoot connectors](../../global-secure-access/troubleshoot-connectors.md).
 
 ### Allow access to URLs
 
@@ -135,11 +135,11 @@ Allow access to the following URLs:
 Allow connections to `*.msappproxy.net`, `*.servicebus.windows.net`, and other URLs if your firewall or proxy lets you configure access rules based on domain suffixes. Or, allow access to the [Azure IP ranges and Service Tags - Public Cloud](https://www.microsoft.com/download/details.aspx?id=56519). The IP ranges are updated each week.
 
 > [!IMPORTANT]
-> Avoid all forms of inline inspection and termination on outbound TLS communications between Microsoft Entra application proxy connectors and Microsoft Entra application proxy services.
+> Avoid all forms of inline inspection and termination on outbound TLS communications between Microsoft Entra private network connectors and Microsoft Entra application proxy services.
 
 ### Domain Name System (DNS) for Microsoft Entra application proxy endpoints
 
-Public DNS records for Microsoft Entra application proxy endpoints are chained CNAME records pointing to an A record. Setting up the records this way ensures fault tolerance and flexibility. The Microsoft Entra application proxy connector always accesses host names with the domain suffixes `*.msappproxy.net` or `*.servicebus.windows.net`. However, during the name resolution the CNAME records might contain DNS records with different host names and suffixes. Due to the difference, you must ensure that the device (depending on your setup - connector server, firewall, outbound proxy) can resolve all the records in the chain and allows connection to the resolved IP addresses. Since the DNS records in the chain might be changed from time to time, we can't provide you with any list DNS records.
+Public DNS records for Microsoft Entra application proxy endpoints are chained CNAME records pointing to an A record. Setting up the records this way ensures fault tolerance and flexibility. The Microsoft Entra private network connector always accesses host names with the domain suffixes `*.msappproxy.net` or `*.servicebus.windows.net`. However, during the name resolution the CNAME records might contain DNS records with different host names and suffixes. Due to the difference, you must ensure that the device (depending on your setup - connector server, firewall, outbound proxy) can resolve all the records in the chain and allows connection to the resolved IP addresses. Since the DNS records in the chain might be changed from time to time, we can't provide you with any list DNS records.
 
 ## Install and register a connector
 
@@ -167,7 +167,7 @@ If you install connectors in different regions, you should optimize traffic by s
 
 If your organization uses proxy servers to connect to the internet, you need to configure them for application proxy. For more information, see [Work with existing on-premises proxy servers](application-proxy-configure-connectors-with-proxy-servers.md).
 
-For information about connectors, capacity planning, and how they stay up-to-date, see [Understand Microsoft Entra application proxy connectors](application-proxy-connectors.md).
+For information about connectors, capacity planning, and how they stay up-to-date, see [Understand Microsoft Entra private network connectors](application-proxy-connectors.md).
 
 ## Verify the connector installed and registered correctly
 
@@ -182,9 +182,9 @@ To confirm the connector installed and registered correctly:
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Application proxy**.
 1. Verify the details of the connector. The connectors should be expanded by default. An active green label indicates that your connector can connect to the service. However, even if the label is green, a network issue could still block the connector from receiving messages.
 
-    ![Microsoft Entra application proxy connectors](./media/application-proxy-add-on-premises-application/app-proxy-connectors.png)
+    ![Microsoft Entra private network connectors](./media/application-proxy-add-on-premises-application/app-proxy-connectors.png)
 
-For more help with installing a connector, see [Problem installing the application proxy connector](application-proxy-connector-installation-problem.md).
+For more help with installing a connector, see [Problem installing the private network connector](application-proxy-connector-installation-problem.md).
 
 ### Verify the installation through your Windows server
 
@@ -192,8 +192,8 @@ To confirm the connector installed and registered correctly:
 
 1. Open the Windows Services Manager by clicking the **Windows** key and entering *services.msc*.
 1. Check to see if the status for the following two services is **Running**.
-   - **Microsoft Entra application proxy connector** enables connectivity.
-   - **Microsoft Entra application proxy connector Updater** is an automated update service. The updater checks for new versions of the connector and updates the connector as needed.
+   - **Microsoft Entra private network connector** enables connectivity.
+   - **Microsoft Entra private network connector Updater** is an automated update service. The updater checks for new versions of the connector and updates the connector as needed.
 
 1. If the status for the services isn't **Running**, right-click to select each service and choose **Start**.
 

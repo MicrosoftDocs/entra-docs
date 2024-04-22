@@ -53,6 +53,17 @@ Required permissions | For permissions required to apply an update, see [Microso
 > 
 > If you are not already using the latest release version of Microsoft Entra Connect Sync, you should upgrade your Microsoft Entra Connect Sync software before that date. 
 
+|Version|End of support date|
+|-----|-----|
+|[2.1.20.0](#21200)|6/19/2024 (12 months after release of 2.2.1.0)|
+|[2.2.1.0](#2210)|10/11/2024 (12 months after release of 2.2.8.0)|
+|[2.2.8.0](#2280)|12/12/2024 (12 months after release of 2.3.2.0)|
+|[2.3.2.0](#2320)|2/21/2025 (12 months after release of 2.3.6.0)|
+|[2.3.6.0](#2360)|4/01/2025 (12 months after release of 2.3.8.0|
+|[2.3.8.0](#2380)|TBD|
+
+**All other versions are not supported**
+
 
 If you run a retired version of Microsoft Entra Connect, it might unexpectedly stop working. You also might not have the latest security fixes, performance improvements, troubleshooting and diagnostic tools, and service enhancements. If you require support, we might not be able to provide you with the level of service your organization needs.
 
@@ -72,6 +83,15 @@ Auto-upgrade is meant to push all important updates and critical fixes to you. I
 If you want all the latest features and updates, check this page and install what you need.
 
 To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade](how-to-connect-install-automatic-upgrade.md).
+
+## 2.3.8.0
+
+### Release status
+4/01/2024: Released for download
+
+### Bug Fixes
+- Microsoft Entra Connect Health has been updated to 4.5.2466.0 to address an endpoint discovery issue that could occur in some clouds.
+
 
 ## 2.3.6.0
 
@@ -180,8 +200,8 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
  - We added support for two new attributes: employeeOrgDataCostCenter and employeeOrgDataDivision.
  - We added CertificateUserIds attribute to Microsoft Entra Connector static schema.
  - The Microsoft Entra Connect wizard will now abort if write event logs permission is missing.
- - We updated the AADConnect health endpoints to support the US government clouds.
- - We added new cmdlets “Get-ADSyncToolsDuplicateUsersSourceAnchor and Set-ADSyncToolsDuplicateUsersSourceAnchor“ to fix bulk "source anchor has changed" errors. When a new forest is added to AADConnect with duplicate user objects, the objects are running into bulk "source anchor has changed" errors. This is happening due to the mismatch between msDsConsistencyGuid & ImmutableId. More information about this module and the new cmdlets can be found in [this article](./reference-connect-adsynctools.md).
+ - We updated the Microsoft Entra Connect Health endpoints to support the US government clouds.
+ - We added new cmdlets “Get-ADSyncToolsDuplicateUsersSourceAnchor and Set-ADSyncToolsDuplicateUsersSourceAnchor“ to fix bulk "source anchor has changed" errors. When a new forest is added to Microsoft Entra Connect with duplicate user objects, the objects are running into bulk "source anchor has changed" errors. This is happening due to the mismatch between msDsConsistencyGuid & ImmutableId. More information about this module and the new cmdlets can be found in [this article](./reference-connect-adsynctools.md).
 
 ### Bug fixes
  - We fixed a bug that prevented localDB upgrades in some Locales.
@@ -344,7 +364,7 @@ When you upgrade to this V1.6 build or any newer builds, the group membership li
 - We added a check to enforce autoupgrade for V2.0 to require Windows Server 2016 or newer.
 - We added the Replicating Directory Changes permission in the Set-ADSyncBasicReadPermissions cmdlet.
 - We made a change to prevent UseExistingDatabase and import configuration from being used together because they could contain conflicting configuration settings.
-- We made a change to allow a user with the Application Admin role to change the App Proxy service configuration.
+- We made a change to allow a user with the Application Admin role to change the application proxy service configuration.
 - We removed the (Preview) label from the labels of **Import/Export** settings. This functionality is generally available.
 - We changed some labels that still referred to Company Administrator. We now use the role name Global Administrator.
 - We created new Microsoft Entra Kerberos PowerShell cmdlets (\*-AADKerberosServer) to add a Claims Transform rule to the Microsoft Entra service principal.
@@ -511,7 +531,7 @@ You can use these cmdlets to retrieve the TLS 1.2 enablement status or set it as
 - We addressed an issue where you were allowed to deselect objects and attributes used in sync rules by using the UI and PowerShell. We now show friendly error messages if you try to deselect any attribute or object that's used in any sync rules.
 - We made some updates to the "migrate settings code" to check and fix backward compatibility issues when the script runs on an older version of Microsoft Entra Connect.
 - We fixed a bug that occurred when PHS tried to look up an incomplete object. It didn't use the same algorithm to resolve the DC as it used originally to fetch the passwords. In particular, it ignored affinitized DC information. The Incomplete object lookup should use the same logic to locate the DC in both instances.
-- We fixed a bug where Microsoft Entra Connect can't read Application Proxy items by using Microsoft Graph because of a permissions issue with calling Microsoft Graph directly based on the Microsoft Entra Connect client identifier. To fix this issue, we removed the dependency on Microsoft Graph and instead use Azure AD PowerShell to work with the App Proxy Application objects.
+- We fixed a bug where Microsoft Entra Connect can't read Application Proxy items by using Microsoft Graph because of a permissions issue with calling Microsoft Graph directly based on the Microsoft Entra Connect client identifier. To fix this issue, we removed the dependency on Microsoft Graph and instead use Azure AD PowerShell to work with the application proxy Application objects.
 - We removed the writeback member limit from the Out to AD - Group SOAInAAD Exchange sync rule.
 - We fixed a bug that occurred when you changed connector account permissions. If an object came in scope that hadn't changed since the last delta import, a delta import wouldn't import it. We now display a warning to alert you of the issue.
 - We fixed an accessibility issue where the screen reader wasn't reading the radio button position. We added positional text to the radio button accessibility text field.

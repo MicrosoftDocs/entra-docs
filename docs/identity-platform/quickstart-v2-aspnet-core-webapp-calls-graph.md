@@ -10,7 +10,7 @@ ms.date: 11/22/2021
 ms.reviewer: jmprieur
 ms.service: identity-platform
 
-ms.topic: conceptual
+ms.topic: quickstart
 #Customer intent: As an application developer, I want to download and run a demo ASP.NET Core web app that can sign in users with personal Microsoft accounts (MSA) and work/school accounts from any Microsoft Entra instance, then access their data in Microsoft Graph on their behalf.
 ---
 

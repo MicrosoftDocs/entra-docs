@@ -4,7 +4,7 @@ description: Customize the user claims that are issued in the SAML token for Mic
 
  
 ms.service: entra-external-id
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 08/30/2023
 
 ms.author: cmulligan

@@ -12,13 +12,14 @@ ms.date: 02/20/2024
 
 # Customer intent: As an IT admin, I need to understand how Microsoft Support engineers can access diagnostic data in Microsoft Entra ID so that I can manage access to my tenant's data.
 ---
+
 # What are Microsoft Support access requests (preview)?
 
 Microsoft Support requests are automatically assigned to a support engineer with expertise in solving similar problems. To expedite solution delivery, our support engineers use diagnostic tooling to read [identity diagnostic data](/troubleshoot/azure/active-directory/support-data-collection-diagnostic-logs) for your tenant.
 
 Microsoft Support's access to your identity diagnostic data is granted only with your approval, is read-only, and lasts only as long as we're actively working with you to solve your problem.
 
-For many support requests created in the Microsoft Entra admin center, you can manage the access to your identity diagnostic data by enabling the "Allow collection of advanced diagnostic information" property. If this setting is set to "no" our support engineers must ask *you* to collect the data needed to solve your problem, which could slow down your problem resolution. 
+For many support requests created in the Microsoft Entra admin center, you can manage the access to your identity diagnostic data by enabling the "Allow collection of advanced diagnostic information" property. If this setting is set to "no" our support engineers must ask *you* to collect the data needed to solve your problem, which could slow down your problem resolution.
 
 ## Microsoft Support access requests
 
@@ -32,13 +33,13 @@ A support access request might be needed when a support request is submitted to 
 
 Let's take a closer look at the workflow for this scenario:
 
-- A support request is submitted from a tenant that is different from the tenant where the issue is occurring. 
+- A support request is submitted from a tenant that is different from the tenant where the issue is occurring.
 - A Microsoft Support engineer creates a support access request to access identity diagnostic data for the *resource tenant*.
 - An administrator of *both* tenants approves the Microsoft Support access request.
-- With approval, the support engineer has access to the data only in the approved *resource tenant*. 
+- With approval, the support engineer has access to the data only in the approved *resource tenant*.
 - When the support engineer closes the support request, access to your identity data is automatically revoked.
 
-This cross-tenant scenario is the primary scenario where a support access request is necessary. In these scenarios, Microsoft approved access is visible only in the resource tenant. To preserve cross-tenant privacy, an administrator of the *support request tenant* is unable to see whether an administrator of the *resource tenant* has manually removed this approval. 
+This cross-tenant scenario is the primary scenario where a support access request is necessary. In these scenarios, Microsoft approved access is visible only in the resource tenant. To preserve cross-tenant privacy, an administrator of the *support request tenant* is unable to see whether an administrator of the *resource tenant* has manually removed this approval.
 
 ## Support access role permissions
 
@@ -48,4 +49,4 @@ To manage Microsoft Support access requests, you must be assigned to a role that
 
 - [Approve and manage Microsoft Support access requests](how-to-manage-support-access-requests.md)
 - [View Microsoft Support access request logs](how-to-view-support-access-request-logs.md)
-- [Learn how Microsoft uses data for Azure support](https://azure.microsoft.com/support/legal/support-diagnostic-information-collection/)
+- [Learn how Microsoft uses data for Azure Support](https://azure.microsoft.com/support/legal/support-diagnostic-information-collection/)

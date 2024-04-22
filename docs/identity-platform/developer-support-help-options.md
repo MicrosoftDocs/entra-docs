@@ -8,7 +8,7 @@ ms.custom: has-adal-ref
 ms.date: 05/31/2023
 ms.service: identity-platform
 
-ms.topic: conceptual
+ms.topic: concept-article
 #Customer intent: As a developer seeking assistance with integrating applications with the Microsoft identity platform, I want to explore support options such as creating an Azure support request, posting a question on Microsoft Q&A, and opening a GitHub issue for MSAL libraries, so that I can get the help I need to solve problems and find answers to my questions.
 ---
 
@@ -26,7 +26,7 @@ Explore the range of [Azure support options and choose the plan](https://azure.m
 
 - If you already have an Azure Support Plan, [open a support request here](https://entra.microsoft.com/#view/Microsoft_Azure_Support/NewSupportRequestV3Blade/callerName/ActiveDirectory/issueType/technical).
 
-- If you're using Microsoft Entra ID for customers (preview), the support request feature is currently unavailable in customer tenants. However, you can use the **Give Feedback** link on the **New support request** page to provide feedback. Or, you can switch to your Microsoft Entra workforce tenant and [open a support request](https://entra.microsoft.com/#view/Microsoft_Azure_Support/NewSupportRequestV3Blade/callerName/ActiveDirectory/issueType/technical).
+- If you're using Microsoft Entra ID for customers (preview), the support request feature is currently unavailable in external tenants. However, you can use the **Give Feedback** link on the **New support request** page to provide feedback. Or, you can switch to your Microsoft Entra workforce tenant and [open a support request](https://entra.microsoft.com/#view/Microsoft_Azure_Support/NewSupportRequestV3Blade/callerName/ActiveDirectory/issueType/technical).
 
 - If you're not an Azure customer, you can open a support request with [Microsoft Support for business](https://support.serviceshub.microsoft.com/supportforbusiness).
 

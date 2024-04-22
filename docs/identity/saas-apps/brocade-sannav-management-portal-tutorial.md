@@ -12,6 +12,8 @@ ms.topic: how-to
 ms.date: 10/03/2023
 ms.author: jeedes
 
+
+# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Brocade SANnav Management Portal so that I can control who has access to Brocade SANnav Management Portal, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
 # Microsoft Entra SSO integration with Brocade SANnav Management Portal
@@ -53,7 +55,7 @@ Configure and test Microsoft Entra SSO with Brocade SANnav Management Portal usi
 To configure and test Microsoft Entra SSO with Brocade SANnav Management Portal, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-microsoft-entra-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra ID test user](#create-a-microsoft-entra-id-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **[Create a Microsoft Entra test user](#create-a-microsoft-entra-id-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
     1. **[Create SANnav Group and assign the user to the group](#create-sannav-group-and-assign-the-user-to-the-group)** - to enable B.Simon to use Microsoft Entra single sign-on. Add importing the SANnav Management Portal metadata file.
 1. **[Configure Brocade SANnav Management Portal SSO](#configure-brocade-sannav-management-portal-sso)** - to configure the single sign-on settings on application side. 
     1. **[Create Brocade SANnav Management Portal groups](#create-brocade-sannav-management-portal-groups)** - Assume B. Simon is part of the "SANnav Administrator" group in Microsoft Entra. Add importing the Microsoft Entra metadata.
@@ -101,7 +103,9 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
     ![Screenshot shows the Certificate download link.](common/metadataxml.png "Certificate")
 
-### Create a Microsoft Entra ID test user
+<a name='create-a-microsoft-entra-id-test-user'></a>
+
+### Create a Microsoft Entra test user
 
 In this section, you'll create a test user in the Microsoft Entra admin center called B.Simon.
 

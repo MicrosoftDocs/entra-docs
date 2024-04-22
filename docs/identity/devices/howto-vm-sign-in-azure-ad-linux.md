@@ -1,12 +1,11 @@
 ---
-title: Log in to a Linux virtual machine in Azure by using Microsoft Entra ID and OpenSSH
-description: Learn how to log in to an Azure VM that's running Linux by using Microsoft Entra ID and OpenSSH certificate-based authentication.
-
+title: Sign in to a Linux virtual machine in Azure by using Microsoft Entra ID and OpenSSH
+description: Learn how to sign in to an Azure VM that's running Linux by using Microsoft Entra ID and OpenSSH certificate-based authentication.
 
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: how-to
-ms.date: 01/05/2024
+ms.date: 02/26/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -14,23 +13,27 @@ manager: amycolannino
 ms.reviewer: sandeo
 ms.custom: references_regions, devx-track-azurecli, subject-rbac-steps, devx-track-linux
 ---
-# Log in to a Linux virtual machine in Azure by using Microsoft Entra ID and OpenSSH
 
-To improve the security of Linux virtual machines (VMs) in Azure, you can integrate with Microsoft Entra authentication. You can now use Microsoft Entra ID as a core authentication platform and a certificate authority to SSH into a Linux VM by using Microsoft Entra ID and OpenSSH certificate-based authentication. This functionality allows organizations to manage access to VMs with Azure role-based access control (RBAC) and Conditional Access policies. 
+# Sign in to a Linux virtual machine in Azure by using Microsoft Entra ID and OpenSSH
+
+> [!CAUTION]
+> This article references CentOS, a Linux distribution that is nearing End Of Life (EOL) status. Please consider your use and plan accordingly. For more information, see the [CentOS End Of Life guidance](/azure/virtual-machines/workloads/centos/centos-end-of-life).
+
+To improve the security of Linux virtual machines (VMs) in Azure, you can integrate with Microsoft Entra authentication. You can now use Microsoft Entra ID as a core authentication platform and a certificate authority to SSH into a Linux VM by using Microsoft Entra ID and OpenSSH certificate-based authentication. This functionality allows organizations to manage access to VMs with Azure role-based access control (RBAC) and Conditional Access policies.
 
 This article shows you how to create and configure a Linux VM and log in with Microsoft Entra ID by using OpenSSH certificate-based authentication.
 
-There are many security benefits of using Microsoft Entra ID with OpenSSH certificate-based authentication to log in to Linux VMs in Azure. They include:
+There are many security benefits of using Microsoft Entra ID with OpenSSH certificate-based authentication to sign in to Linux VMs in Azure. They include:
 
-- Use your Microsoft Entra credentials to log in to Azure Linux VMs.
+- Use your Microsoft Entra credentials to sign in to Azure Linux VMs.
 - Get SSH key-based authentication without needing to distribute SSH keys to users or provision SSH public keys on any Azure Linux VMs that you deploy. This experience is much simpler than having to worry about sprawl of stale SSH public keys that could cause unauthorized access.
 - Reduce reliance on local administrator accounts, credential theft, and weak credentials.
 - Help secure Linux VMs by configuring password complexity and password lifetime policies for Microsoft Entra ID.
-- With RBAC, specify who can log in to a VM as a regular user or with administrator privileges. When users join your team, you can update the Azure RBAC policy for the VM to grant access as appropriate. When employees leave your organization and their user accounts are disabled or removed from Microsoft Entra ID, they no longer have access to your resources.
-- With Conditional Access, configure policies to require multifactor authentication or to require that your client device is managed (for example, compliant or Microsoft Entra hybrid joined) before you can use it SSH into Linux VMs. 
+- With RBAC, specify who can sign in to a VM as a regular user or with administrator privileges. When users join your team, you can update the Azure RBAC policy for the VM to grant access as appropriate. When employees leave your organization and their user accounts are disabled or removed from Microsoft Entra ID, they no longer have access to your resources.
+- With Conditional Access, configure policies to require multifactor authentication or to require that your client device is managed (for example, compliant or Microsoft Entra hybrid joined) before you can use it SSH into Linux VMs.
 - Use Azure deploy and audit policies to require Microsoft Entra login for Linux VMs and flag unapproved local accounts.
 
-Login to Linux VMs with Microsoft Entra ID works for customers who use Active Directory Federation Services.
+Sign in to Linux VMs with Microsoft Entra ID works for customers who use Active Directory Federation Services.
 
 ## Supported Linux distributions and Azure regions
 
@@ -40,11 +43,12 @@ The following Linux distributions are currently supported for deployments in a s
 | --- | --- |
 | Common Base Linux Mariner (CBL-Mariner) | CBL-Mariner 1, CBL-Mariner 2 |
 | CentOS | CentOS 7, CentOS 8 |
-| Debian | Debian 9, Debian 10, Debian 11 |
+| Debian | Debian 9, Debian 10, Debian 11, Debian 12 |
 | openSUSE | openSUSE Leap 42.3, openSUSE Leap 15.1+ |
+| Oracle | Oracle Linux 8, Oracle Linux 9 |
 | RedHat Enterprise Linux (RHEL) | RHEL 7.4 to RHEL 7.9, RHEL 8.3+ |
 | SUSE Linux Enterprise Server (SLES) | SLES 12, SLES 15.1+ |
-| Ubuntu Server | Ubuntu Server 16.04 to Ubuntu Server 22.04 |
+| Ubuntu Server | Ubuntu Server 16.04 to Ubuntu Server 22.04, all minor version after Ubuntu 22.04 |
 
 The following Azure regions are currently supported for this feature:
 
@@ -52,7 +56,7 @@ The following Azure regions are currently supported for this feature:
 - Azure Government
 - Microsoft Azure operated by 21Vianet
 
-Use of the SSH extension for Azure CLI on Azure Kubernetes Service (AKS) clusters is not supported. For more information, see [Support policies for AKS](/azure/aks/support-policies).
+Use of the SSH extension for the Azure CLI on Azure Kubernetes Service (AKS) clusters is not supported. For more information, see [Support policies for AKS](/azure/aks/support-policies).
 
 If you choose to install and use the Azure CLI locally, it must be version 2.22.1 or later. Run `az --version` to find the version. If you need to install or upgrade, see [Install the Azure CLI](/cli/azure/install-azure-cli).
 
@@ -101,8 +105,8 @@ Ensure that your VM is configured with the following functionality:
 
 Ensure that your client meets the following requirements:
 
-- SSH client support for OpenSSH-based certificates for authentication. You can use Azure CLI (2.21.1 or later) with OpenSSH (included in Windows 10 version 1803 or later) or Azure Cloud Shell to meet this requirement. 
-- SSH extension for Azure CLI. You can install this extension by using `az extension add --name ssh`. You don't need to install this extension when you're using Azure Cloud Shell, because it comes preinstalled.
+- SSH client support for OpenSSH-based certificates for authentication. You can use the Azure CLI (2.21.1 or later) with OpenSSH (included in Windows 10 version 1803 or later) or Azure Cloud Shell to meet this requirement.
+- SSH extension for the Azure CLI. You can install this extension by using `az extension add --name ssh`. You don't need to install this extension when you're using Azure Cloud Shell, because it comes preinstalled.
 
   If you're using any SSH client other than the Azure CLI or Azure Cloud Shell that supports OpenSSH certificates, you'll still need to use the Azure CLI with the SSH extension to retrieve ephemeral SSH certificates and optionally a configuration file. You can then use the configuration file with your SSH client.
 - TCP connectivity from the client to either the public or private IP address of the VM. (ProxyCommand or SSH forwarding to a machine with connectivity also works.)
@@ -114,7 +118,7 @@ Ensure that your client meets the following requirements:
 
 ## Enable Microsoft Entra login for a Linux VM in Azure
 
-To use Microsoft Entra login for a Linux VM in Azure, you need to first enable the Microsoft Entra login option for your Linux VM. You then configure Azure role assignments for users who are authorized to log in to the VM. Finally, you use the SSH client that supports OpenSSH, such as the Azure CLI or Azure Cloud Shell, to SSH into your Linux VM. 
+To use Microsoft Entra login for a Linux VM in Azure, you need to first enable the Microsoft Entra login option for your Linux VM. You then configure Azure role assignments for users who are authorized to sign in to the VM. Finally, you use the SSH client that supports OpenSSH, such as the Azure CLI or Azure Cloud Shell, to SSH into your Linux VM.
 
 There are two ways to enable Microsoft Entra login for your Linux VM:
 
@@ -125,18 +129,18 @@ There are two ways to enable Microsoft Entra login for your Linux VM:
 
 You can enable Microsoft Entra login for any of the [supported Linux distributions](#supported-linux-distributions-and-azure-regions) by using the Azure portal.
 
-For example, to create an Ubuntu Server 18.04 Long Term Support (LTS) VM in Azure with Microsoft Entra login:
+For example, to create an Ubuntu Server 18.04 long-term support (LTS) VM in Azure with Microsoft Entra login:
 
 1. Sign in to the [Azure portal](https://portal.azure.com) by using an account that has access to create VMs, and then select **+ Create a resource**.
 1. Select **Create** under **Ubuntu Server 18.04 LTS** in the **Popular** view.
-1. On the **Management** tab: 
+1. On the **Management** tab:
    1. Select the **Login with Microsoft Entra ID** checkbox.
    1. Ensure that the **System assigned managed identity** checkbox is selected.
 1. Go through the rest of the experience of creating a virtual machine. You'll have to create an administrator account with username and password or SSH public key.
 
 ### Azure Cloud Shell
 
-Azure Cloud Shell is a free, interactive shell that you can use to run the steps in this article. Common Azure tools are preinstalled and configured in Cloud Shell for you to use with your account. Just select the **Copy** button to copy the code, paste it in Cloud Shell, and then select the Enter key to run it. 
+Azure Cloud Shell is a free, interactive shell that you can use to run the steps in this article. Common Azure tools are preinstalled and configured in Cloud Shell for you to use with your account. Just select the **Copy** button to copy the code, paste it in Cloud Shell, and then select the Enter key to run it.
 
 There are a few ways to open Cloud Shell:
 
@@ -150,7 +154,7 @@ If you choose to install and use the Azure CLI locally, this article requires yo
 1. Create a VM by running [az vm create](/cli/azure/vm?#az-vm-create). Use a supported distribution in a supported region.
 1. Install the Microsoft Entra login VM extension by using [az vm extension set](/cli/azure/vm/extension#az-vm-extension-set).
 
-The following example deploys a VM and then installs the extension to enable Microsoft Entra login for a Linux VM. VM extensions are small applications that provide post-deployment configuration and automation tasks on Azure virtual machines. Customize the example as needed to support your testing requirements.
+The following example deploys a VM and then installs the extension to enable Microsoft Entra login for a Linux VM. VM extensions are small applications that provide post-deployment configuration and automation tasks on Azure Virtual Machines. Customize the example as needed to support your testing requirements.
 
 ```azurecli-interactive
 az group create --name AzureADLinuxVM --location southcentralus
@@ -176,14 +180,14 @@ The `provisioningState` value of `Succeeded` appears when the extension is succe
 
 ## Configure role assignments for the VM
 
-Now that you've created the VM, you need to assign one of the following Azure roles to determine who can log in to the VM. To assign these roles, you must have the [Virtual Machine Data Access Administrator](/azure/role-based-access-control/built-in-roles#virtual-machine-data-access-administrator-preview) role, or any role that includes the `Microsoft.Authorization/roleAssignments/write` action such as the [Role Based Access Control Administrator](/azure/role-based-access-control/built-in-roles#role-based-access-control-administrator-preview) role. However, if you use a different role than Virtual Machine Data Access Administrator, we recommend you [add a condition to reduce the permission to create role assignments](/azure/role-based-access-control/delegate-role-assignments-overview).
+Now that you've created the VM, you need to assign one of the following Azure roles to determine who can sign in to the VM. To assign these roles, you must have the [Virtual Machine Data Access Administrator](/azure/role-based-access-control/built-in-roles#virtual-machine-data-access-administrator-preview) role, or any role that includes the `Microsoft.Authorization/roleAssignments/write` action such as the [Role Based Access Control Administrator](/azure/role-based-access-control/built-in-roles#role-based-access-control-administrator-preview) role. However, if you use a different role than Virtual Machine Data Access Administrator, we recommend you [add a condition to reduce the permission to create role assignments](/azure/role-based-access-control/delegate-role-assignments-overview).
 
-- **Virtual Machine Administrator Login**: Users who have this role assigned can log in to an Azure virtual machine with administrator privileges.
-- **Virtual Machine User Login**: Users who have this role assigned can log in to an Azure virtual machine with regular user privileges.
- 
-To allow a user to log in to a VM over SSH, you must assign the Virtual Machine Administrator Login or Virtual Machine User Login role on the resource group that contains the VM and its associated virtual network, network interface, public IP address, or load balancer resources. 
+- **Virtual Machine Administrator Login:** Users who have this role assigned can sign in to an Azure virtual machine with administrator privileges.
+- **Virtual Machine User Login:** Users who have this role assigned can sign in to an Azure virtual machine with regular user privileges.
 
-An Azure user who has the Owner or Contributor role assigned for a VM doesn't automatically have privileges to Microsoft Entra login to the VM over SSH. There's an intentional (and audited) separation between the set of people who control virtual machines and the set of people who can access virtual machines. 
+To allow a user to sign in to a VM over SSH, you must assign the Virtual Machine Administrator Login or Virtual Machine User Login role on the resource group that contains the VM and its associated virtual network, network interface, public IP address, or load balancer resources.
+
+An Azure user who has the Owner or Contributor role assigned for a VM doesn't automatically have privileges to Microsoft Entra sign in to the VM over SSH. There's an intentional (and audited) separation between the set of people who control virtual machines and the set of people who can access virtual machines.
 
 There are two ways to configure role assignments for a VM:
 
@@ -218,7 +222,7 @@ After a few moments, the security principal is assigned the role at the selected
 
 ### Azure Cloud Shell
 
-The following example uses [az role assignment create](/cli/azure/role/assignment#az-role-assignment-create) to assign the Virtual Machine Administrator Login role to the VM for your current Azure user. You obtain the username of your current Azure account by using [az account show](/cli/azure/account#az-account-show), and you set the scope to the VM created in a previous step by using [az vm show](/cli/azure/vm#az-vm-show). 
+The following example uses [az role assignment create](/cli/azure/role/assignment#az-role-assignment-create) to assign the Virtual Machine Administrator Login role to the VM for your current Azure user. You obtain the username of your current Azure account by using [az account show](/cli/azure/account#az-account-show), and you set the scope to the VM created in a previous step by using [az vm show](/cli/azure/vm#az-vm-show).
 
 You can also assign the scope at a resource group or subscription level. Normal Azure RBAC inheritance permissions apply.
 
@@ -237,11 +241,13 @@ az role assignment create \
 
 For more information on how to use Azure RBAC to manage access to your Azure subscription resources, see [Steps to assign an Azure role](/azure/role-based-access-control/role-assignments-steps).
 
-## Install the SSH extension for Azure CLI
+<a name='install-the-ssh-extension-for-azure-cli'></a>
 
-If you're using Azure Cloud Shell, no other setup is needed because both the minimum required version of the Azure CLI and the SSH extension for Azure CLI are already included in the Cloud Shell environment.
+## Install the SSH extension for the Azure CLI
 
-Run the following command to add the SSH extension for Azure CLI:
+If you're using Azure Cloud Shell, no other setup is needed because both the minimum required version of the Azure CLI and the SSH extension for the Azure CLI are already included in the Cloud Shell environment.
+
+Run the following command to add the SSH extension for the Azure CLI:
 
 ```azurecli
 az extension add --name ssh
@@ -259,7 +265,7 @@ You can enforce Conditional Access policies that are enabled with Microsoft Entr
 
 - Requiring multifactor authentication.
 - Requiring a compliant or Microsoft Entra hybrid joined device for the device running the SSH client.
-- Checking for risks before authorizing access to Linux VMs in Azure. 
+- Checking for risks before authorizing access to Linux VMs in Azure.
 
 The application that appears in the Conditional Access policy is called *Azure Linux VM Sign-In*.
 
@@ -273,19 +279,6 @@ If the Azure Linux VM Sign-In application is missing from Conditional Access, ma
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 1. Remove the filters to see all applications, and search for **Virtual Machine**. If you don't see Microsoft Azure Linux Virtual Machine Sign-In as a result, the service principal is missing from the tenant.
-
-Another way to verify it is via Graph PowerShell:
-
-1. [Install the Graph PowerShell SDK](/powershell/microsoftgraph/installation) if you haven't already done so. 
-1. Enter the command `Connect-MgGraph -Scopes "ServicePrincipalEndpoint.ReadWrite.All","Application.ReadWrite.All"`.
-1. Sign in with a Global Administrator account.
-1. Consent to the prompt that asks for your permission.
-1. Enter the command `Get-MgServicePrincipal -ConsistencyLevel eventual -Search '"DisplayName:Microsoft Azure Linux Virtual Machine Sign-In"'`.
-   
-   If this command results in no output and returns you to the PowerShell prompt, you can create the service principal by using the following Graph PowerShell command: `New-MgServicePrincipal -AppId ce6ff14a-7fdc-4685-bbe0-f6afdfcfa8e0`.
-   
-   Successful output will show that the app ID and the application name Azure Linux VM Sign-In were created.
-1. Sign out of Graph PowerShell by using the following command: `Disconnect-MgGraph`.
 
 <a name='log-in-by-using-an-azure-ad-user-account-to-ssh-into-the-linux-vm'></a>
 
@@ -305,7 +298,7 @@ Then enter `az ssh vm`. The following example automatically resolves the appropr
 az ssh vm -n myVM -g AzureADLinuxVM
 ```
 
-If you're prompted, enter your Microsoft Entra login credentials at the login page, perform multifactor authentication, and/or satisfy device checks. You'll be prompted only if your Azure CLI session doesn't already meet any required Conditional Access criteria. Close the browser window, return to the SSH prompt, and you'll be automatically connected to the VM.
+If you're prompted, enter your Microsoft Entra login credentials at the login page, perform multifactor authentication, and/or satisfy device checks. You'll be prompted only if your the Azure CLI session doesn't already meet any required Conditional Access criteria. Close the browser window, return to the SSH prompt, and you'll be automatically connected to the VM.
 
 You're now signed in to the Linux virtual machine with the role permissions as assigned, such as VM User or VM Administrator. If your user account is assigned the Virtual Machine Administrator Login role, you can use sudo to run commands that require root privileges.
 
@@ -332,7 +325,7 @@ az ssh vm -n myVM -g AzureADLinuxVM
 
 ## Log in by using the Microsoft Entra service principal to SSH into the Linux VM
 
-The Azure CLI supports authenticating with a service principal instead of a user account. Because service principals aren't tied to any particular user, customers can use them to SSH into a VM to support any automation scenarios they might have. The service principal must have VM Administrator or VM User rights assigned. Assign permissions at the subscription or resource group level. 
+The Azure CLI supports authenticating with a service principal instead of a user account. Because service principals aren't tied to any particular user, customers can use them to SSH into a VM to support any automation scenarios they might have. The service principal must have VM Administrator or VM User rights assigned. Assign permissions at the subscription or resource group level.
 
 The following example will assign VM Administrator rights to the service principal at the resource group level. Replace the placeholders for service principal object ID, subscription ID, and resource group name.
 
@@ -341,7 +334,7 @@ az role assignment create \
     --role "Virtual Machine Administrator Login" \
     --assignee-object-id <service-principal-objectid> \
     --assignee-principal-type ServicePrincipal \
-    --scope “/subscriptions/<subscription-id>/resourceGroups/<resourcegroup-name>"
+    --scope "/subscriptions/<subscription-id>/resourceGroups/<resourcegroup-name>"
 ```
 
 Use the following example to authenticate to the Azure CLI by using the service principal. For more information, see the article [Sign in to the Azure CLI with a service principal](/cli/azure/authenticate-azure-cli#sign-in-with-a-service-principal).
@@ -350,7 +343,7 @@ Use the following example to authenticate to the Azure CLI by using the service 
 az login --service-principal -u <sp-app-id> -p <password-or-cert> --tenant <tenant-id>
 ```
 
-When authentication with a service principal is complete, use the normal Azure CLI SSH commands to connect to the VM:
+When authentication with a service principal is complete, use the normal the Azure CLI SSH commands to connect to the VM:
 
 ```azurecli
 az ssh vm -n myVM -g AzureADLinuxVM
@@ -358,7 +351,7 @@ az ssh vm -n myVM -g AzureADLinuxVM
 
 ## Export the SSH configuration for use with SSH clients that support OpenSSH
 
-Login to Azure Linux VMs with Microsoft Entra ID supports exporting the OpenSSH certificate and configuration. That means you can use any SSH clients that support OpenSSH-based certificates to sign in through Microsoft Entra ID. The following example exports the configuration for all IP addresses assigned to the VM:
+Sign in to Azure Linux VMs with Microsoft Entra ID supports exporting the OpenSSH certificate and configuration. That means you can use any SSH clients that support OpenSSH-based certificates to sign in through Microsoft Entra ID. The following example exports the configuration for all IP addresses assigned to the VM:
 
 ```azurecli
 az ssh config --file ~/.ssh/config -n myVM -g AzureADLinuxVM
@@ -394,7 +387,7 @@ Virtual machine scale sets are supported, but the steps are slightly different f
    az vmss extension set --publisher Microsoft.Azure.ActiveDirectory --name AADSSHLoginForLinux --resource-group AzureADLinuxVM --vmss-name myVMSS
    ```
 
-Virtual machine scale sets usually don't have public IP addresses. You must have connectivity to them from another machine that can reach their Azure virtual network. This example shows how to use the private IP of a VM in a virtual machine scale set to connect from a machine in the same virtual network: 
+Virtual machine scale sets usually don't have public IP addresses. You must have connectivity to them from another machine that can reach their Azure virtual network. This example shows how to use the private IP of a VM in a virtual machine scale set to connect from a machine in the same virtual network:
 
 ```azurecli
 az ssh vm --ip 10.11.123.456
@@ -412,6 +405,7 @@ If you're using the previous version of Microsoft Entra login for Linux that was
    ```azurecli
    az vm extension delete -g MyResourceGroup --vm-name MyVm -n AADLoginForLinux
    ```
+
     > [!NOTE]
     > Uninstallation of the extension can fail if there are any Microsoft Entra users currently logged in on the VM. Make sure all users are logged out first.
 1. Enable system-assigned managed identity on your VM:
@@ -434,10 +428,10 @@ If you're using the previous version of Microsoft Entra login for Linux that was
 
 Use Azure Policy to:
 
-- Ensure that Microsoft Entra login is enabled for your new and existing Linux virtual machines. 
-- Assess compliance of your environment at scale on a compliance dashboard. 
+- Ensure that Microsoft Entra login is enabled for your new and existing Linux virtual machines.
+- Assess compliance of your environment at scale on a compliance dashboard.
 
-With this capability, you can use many levels of enforcement. You can flag new and existing Linux VMs within your environment that don't have Microsoft Entra login enabled. You can also use Azure Policy to deploy the Microsoft Entra extension on new Linux VMs that don't have Microsoft Entra login enabled, as well as remediate existing Linux VMs to the same standard. 
+With this capability, you can use many levels of enforcement. You can flag new and existing Linux VMs within your environment that don't have Microsoft Entra login enabled. You can also use Azure Policy to deploy the Microsoft Entra extension on new Linux VMs that don't have Microsoft Entra login enabled, as well as remediate existing Linux VMs to the same standard.
 
 In addition to these capabilities, you can use Azure Policy to detect and flag Linux VMs that have unapproved local accounts created on their machines. To learn more, review [Azure Policy](/azure/governance/policy/overview).
 
@@ -455,7 +449,7 @@ If you see an "Azure role not assigned" error on your SSH prompt, verify that yo
 
 ### Problems deleting the old (AADLoginForLinux) extension
 
-If the uninstallation scripts fail, the extension might get stuck in a transitioning state. When this happens, the extension can leave packages that it's supposed to uninstall during its removal. In such cases, it's better to manually uninstall the old packages and then try to run the `az vm extension delete` command. 
+If the uninstallation scripts fail, the extension might get stuck in a transitioning state. When this happens, the extension can leave packages that it's supposed to uninstall during its removal. In such cases, it's better to manually uninstall the old packages and then try to run the `az vm extension delete` command.
 
 To uninstall old packages:
 
@@ -522,13 +516,15 @@ This error can also happen if the user is in a required Azure RBAC role, but the
 
 ### Connection problems with virtual machine scale sets
 
-VM connections with virtual machine scale sets can fail if the scale set instances are running an old model. 
+VM connections with virtual machine scale sets can fail if the scale set instances are running an old model.
 
 Upgrading scale set instances to the latest model might resolve the problem, especially if an upgrade hasn't been done since the Microsoft Entra Login extension was installed. Upgrading an instance applies a standard scale set configuration to the individual instance.
 
 <a name='allowgroups-or-denygroups-statements-in-sshd_config-cause-the-first-login-to-fail-for-azure-ad-users'></a>
 
-### AllowGroups or DenyGroups statements in sshd_config cause the first login to fail for Microsoft Entra users
+<a name='allowgroups-or-denygroups-statements-in-sshd_config-cause-the-first-login-to-fail-for-microsoft-entra-users'></a>
+
+### AllowGroups or DenyGroups statements in sshd_config cause the first sign in to fail for Microsoft Entra users
 
 If *sshd_config* contains either `AllowGroups` or `DenyGroups` statements, the first login fails for Microsoft Entra users. If the statement was added after users have already had a successful login, they can log in.
 
@@ -536,19 +532,19 @@ One solution is to remove `AllowGroups` and `DenyGroups` statements from *sshd_c
 
 Another solution is to move `AllowGroups` and `DenyGroups` to a `match user` section in *sshd_config*. Make sure the match template excludes Microsoft Entra users.
 
-### Getting Permission Denied when trying to connect from Azure Shell to Linux Red Hat/Oracle/Centos 7.X VM.
+### Getting Permission Denied when trying to connect from Azure Shell to Linux Red Hat/Oracle/CentOS 7.X VM.
 
 The OpenSSH server version in the target VM 7.4 is too old. Version incompatible with OpenSSH client version 8.8. Refer to [RSA SHA256 certificates no longer work](https://bugzilla.mindrot.org/show_bug.cgi?id=3351) for more information.
 
-Workaround:  
+Workaround:
 
 - Adding option `"PubkeyAcceptedKeyTypes= +ssh-rsa-cert-v01@openssh.com"` in the `az ssh vm ` command.
 
 ```azurecli-interactive
 az ssh vm -n myVM -g MyResourceGroup -- -A -o "PubkeyAcceptedKeyTypes= +ssh-rsa-cert-v01@openssh.com"
 ```
-- Adding the option `"PubkeyAcceptedKeyTypes= +ssh-rsa-cert-v01@openssh.com"` in the `/home/<user>/.ssh/config file`.
 
+- Adding the option `"PubkeyAcceptedKeyTypes= +ssh-rsa-cert-v01@openssh.com"` in the `/home/<user>/.ssh/config file`.
 
 Add the `"PubkeyAcceptedKeyTypes +ssh-rsa-cert-v01@openssh.com"` into the client config file.
 

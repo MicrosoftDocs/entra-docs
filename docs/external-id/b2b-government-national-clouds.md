@@ -4,7 +4,7 @@ description: Learn what features are available in Microsoft Entra B2B collaborat
 
  
 ms.service: entra-external-id
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 01/23/2024
 
 ms.author: mimart

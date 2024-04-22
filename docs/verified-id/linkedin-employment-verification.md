@@ -18,10 +18,10 @@ ms.author: barclayn
 
 If your organization wants its employees to get their place of work verified on LinkedIn, you need to follow these few steps:
 
-1. Setup your Microsoft Entra Verified ID service by following the [quick setup instructions](verifiable-credentials-configure-tenant-quick.md).
-1. The quick setup creates the VerifiedEmployee credential type automatically. But if you did setup Verified ID using the [manual setup instructions](verifiable-credentials-configure-tenant.md), then you need to manually [create](how-to-use-quickstart-verifiedemployee.md#create-a-verified-employee-credential) a Verified ID Employee credential.
+1. Set up your Microsoft Entra Verified ID service by following the [quick setup instructions](verifiable-credentials-configure-tenant-quick.md).
+1. The quick setup creates the VerifiedEmployee credential type automatically. But if you did set up Verified ID using the [manual setup instructions](verifiable-credentials-configure-tenant.md), then you need to manually [create](how-to-use-quickstart-verifiedemployee.md#create-a-verified-employee-credential) a Verified ID Employee credential.
 1. Use [MyAccount](verifiable-credentials-configure-tenant-quick.md#myaccount-available-now-to-simplify-issuance-of-workplace-credentials) to issue your VerifiedEmployee credentials.
-1. Configure the LinkedIn company page  with your organization DID (decentralized identity) and URL of the custom Webapp. You cannot self-service the LinkedIn company page.
+1. Configure the LinkedIn company page  with your organization DID (decentralized identity) and URL of the custom Webapp. You can't self-service the LinkedIn company page.
 1. Today, you need to fill in [this form](https://aka.ms/enablelinkedin) and we can enable your organization.
 1. Once you deploy the updated LinkedIn mobile app your employees can get verified.
 
@@ -52,7 +52,7 @@ There are two reasons to deploy the custom webapp for LinkedIn Employment verifi
 >[!NOTE]
 >The web app can be modified to remove claims, for example, you may choose to remove the photo claim.
 
-Installation instructions for the Webapp can be found in the [GitHub repository](https://github.com/Azure-Samples/VerifiedEmployeeIssuance/blob/main/ReadmeFiles/Deployment.md)
+Installation instructions for the Webapp can be found in the [GitHub repository.](https://github.com/Azure-Samples/VerifiedEmployeeIssuance/blob/main/ReadmeFiles/Deployment.md)
 
 ## Architecture overview
 
@@ -71,7 +71,7 @@ Once the administrator configures the company page on LinkedIn, employees can ge
 
 The diagram below shows the dataflow of the entire solution.
 
-   ![Diagram showing a high-level flow.](media/linkedin-employment-verification/linkedin-employee-verification.png)
+   :::image type="content" source="media/linkedin-employment-verification/linkedin-employee-verification.png" alt-text="Diagram showing a high-level flow.":::
 
 ## Frequently asked questions
 

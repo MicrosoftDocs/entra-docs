@@ -32,7 +32,7 @@ In this tutorial, you learn how to:
 
 ## Prerequisites
 
-[!INCLUDE [quickstarts-free-trial-note](~/../azure-docs-pr/includes/quickstarts-free-trial-note.md)]
+[!INCLUDE [quickstarts-free-trial-note](~/includes/azure-docs-pr/quickstarts-free-trial-note.md)]
 
 ## Create and publish a web app on App Service
 

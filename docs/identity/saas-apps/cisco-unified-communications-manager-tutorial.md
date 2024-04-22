@@ -12,6 +12,8 @@ ms.topic: how-to
 ms.date: 12/14/2022
 ms.author: jeedes
 
+
+# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Cisco Unified Communications Manager so that I can control who has access to Cisco Unified Communications Manager, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
 # Microsoft Entra SSO integration with Cisco Unified Communications Manager

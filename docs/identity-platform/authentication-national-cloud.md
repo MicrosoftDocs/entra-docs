@@ -9,7 +9,7 @@ ms.date: 12/11/2023
 ms.reviewer: negoe
 ms.service: identity-platform
 
-ms.topic: conceptual
+ms.topic: concept-article
 #Customer intent: As a developer building an application for a specific national cloud instance, I want to understand the separate environments and endpoints for each national cloud, so that I can register my application correctly and make requests to the appropriate region-specific base URLs.
 ---
 
@@ -31,8 +31,8 @@ As you develop your apps, use the endpoints for the cloud instance where you'll 
 
 There's a separate Azure portal for each one of the national clouds. To integrate applications with the Microsoft identity platform in a national cloud, you're required to register your application separately in each Azure portal that's specific to the environment.
 
-> [!IMPORTANT]
-> Users with a Microsoft Entra ID guest account can’t access Cost management + Billing features to manage EA enrollments.
+> [!NOTE]
+> Users with a Microsoft Entra guest account can’t access Cost management + Billing features to manage EA enrollments.
 
 The following table lists the base URLs for the Microsoft Entra endpoints used to register an application for each national cloud.
 

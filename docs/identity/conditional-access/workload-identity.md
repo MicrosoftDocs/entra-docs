@@ -144,5 +144,4 @@ Sample JSON for location-based configuration using the Microsoft Graph beta endp
 ## Next steps
 
 - [Using the location condition in a Conditional Access policy](location-condition.md)
-- [Conditional Access: Programmatic access](howto-conditional-access-apis.md)
 - [What is Conditional Access report-only mode?](concept-conditional-access-report-only.md)

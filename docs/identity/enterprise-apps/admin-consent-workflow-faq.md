@@ -7,7 +7,7 @@ manager: CelesteDG
 ms.service: entra-id
 ms.subservice: enterprise-apps
 
-ms.topic: reference
+ms.topic: faq
 ms.date: 05/27/2022
 ms.author: jomondi
 ms.reviewer: ergreenl

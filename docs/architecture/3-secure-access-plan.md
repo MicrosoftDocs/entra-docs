@@ -125,7 +125,7 @@ Generally, organizations customize policy, however consider the following parame
 - **Entitlement management access reviews**:
   - [Change lifecycle settings for an access package in entitlement management](~/id-governance/entitlement-management-access-package-lifecycle-policy.md)
   - [Create an access review of an access package in entitlement management](~/id-governance/entitlement-management-access-reviews-create.md)
-  - [Add a connected organization in entitlement management](~/id-governance/entitlement-management-organization.md): group users from a partner and schedule reviews
+  - [Add a connected organization in entitlement management](~/id-governance/entitlement-management-organization.md): Group users from a partner and schedule reviews
 - **Microsoft 365 groups**
   - [Microsoft 365 group expiration policy](/microsoft-365/solutions/microsoft-365-groups-expiration-policy?view=o365-worldwide&preserve-view=true)
 - **Options**:

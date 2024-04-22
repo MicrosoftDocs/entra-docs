@@ -10,9 +10,10 @@ ms.date: 06/16/2023
 ms.author: jricketts
 ms.reviewer: ajburnle
 ---
+
 # Monitoring application sign-in health for resilience
 
-To increase infrastructure resilience, set up monitoring of application sign-in health for your critical applications. You can receive an alert when an impacting incident occurs. This article walks through setting up the App sign-in health workbook to monitor for disruptions to your users' sign-ins.
+To increase infrastructure resilience, set up monitoring of application sign-in health for your critical applications. You can receive an alert when an affecting incident occurs. This article walks through setting up the App sign-in health workbook to monitor for disruptions to your users' sign-ins.
 
 You can configure alerts based on the App sign-in health workbook. This workbook enables administrators to monitor authentication requests for applications in their tenants. It provides these key capabilities:
 
@@ -23,34 +24,34 @@ You can configure alerts based on the App sign-in health workbook. This workbook
 > [!NOTE]
 > See all available workbooks and the prerequisites for using them in [How to use Azure Monitor workbooks for reports](~/identity/monitoring-health/howto-use-workbooks.md).
 
-During an impacting event, two things may happen:
+During an affecting event, two things might happen:
 
 - The number of sign-ins for an application may abruptly drop when users can't sign in.
-- The number of sign-in failures may increase.
+- The number of sign-in failures might increase.
 
 ## Prerequisites
 
 - A Microsoft Entra tenant.
-- A user with global administrator or security administrator role for the Microsoft Entra tenant.
-- A Log Analytics workspace in your Azure subscription to send logs to Azure Monitor logs. Learn how to  [create a Log Analytics workspace](/azure/azure-monitor/logs/quick-create-workspace).
-- Microsoft Entra logs integrated with Azure Monitor logs. Learn how to [Integrate Microsoft Entra sign-in logs with Azure Monitor Stream.](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.md)
+- A user with Global Administrator or Security Administrator role for the Microsoft Entra tenant.
+- A Log Analytics workspace in your Azure subscription to send logs to Azure Monitor logs. Learn how to [create a Log Analytics workspace](/azure/azure-monitor/logs/quick-create-workspace).
+- Microsoft Entra logs integrated with Azure Monitor logs. Learn how to [Integrate Microsoft Entra sign-in logs with Azure Monitor Stream](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.md).
 
-## Configure the App sign-in health workbook 
+## Configure the App sign-in health workbook
 
 To access workbooks in the **Azure portal**, select **Microsoft Entra ID**, select **Workbooks**. The following screenshot shows the Workbooks Gallery in the Azure portal.
 
 :::image type="content" source="./media/monitor-sign-in-health-for-resilience/sign-in-health-workbook.png" alt-text="Screenshot showing the workbooks gallery in the Azure portal.":::
 
-Workbooks appear under **Usage**, **Conditional Access**, and **Troubleshoot**. The App sign in health workbook appears in the **Health** section. After you use a workbook, it may appear in the **Recently modified workbooks** section.
+Workbooks appear under **Usage**, **Conditional Access**, and **Troubleshoot**. The App sign in health workbook appears in the **Health** section. After you use a workbook, it might appear in the **Recently modified workbooks** section.
 
-You can use the App sign-in health workbook to visualize what is happening with your sign-ins. As shown in the following screenshot, the workbook presents two graphs. 
+You can use the App sign-in health workbook to visualize what is happening with your sign-ins. As shown in the following screenshot, the workbook presents two graphs.
 
 :::image type="content" source="./media/monitor-sign-in-health-for-resilience/sign-in-health-graphs.png" alt-text="Screenshot showing sign in health graphs.":::
 
 In the preceding screenshot, there are two graphs:
 
-- **Hourly usage (number of successful users)**. Comparing your current number of successful users to a typical usage period helps you to spot a drop in usage that may require investigation. A drop-in successful usage rate can help detect performance and utilization issues that the failure rate can't detect. For example, when users can't reach your application to attempt to sign in, there's a drop in usage but no failures. See the sample query for this data in the next section of this article. 
-- **Hourly failure rate**. A spike in failure rate may indicate an issue with your authentication mechanisms. Failure rate measures only appear when users can attempt to authenticate. When users can't gain access to make the attempt, there are no failures.
+- **Hourly usage (number of successful users).** Comparing your current number of successful users to a typical usage period helps you to spot a drop in usage that might require investigation. A drop-in successful usage rate can help detect performance and utilization issues that the failure rate can't detect. For example, when users can't reach your application to attempt to sign in, there's a drop in usage but no failures. See the sample query for this data in the next section of this article.
+- **Hourly failure rate.** A spike in failure rate might indicate an issue with your authentication mechanisms. Failure rate measures only appear when users can attempt to authenticate. When users can't gain access to make the attempt, there are no failures.
 
 ## Configure the query and alerts
 
@@ -80,29 +81,29 @@ To configure the underlying query and set alerts, complete the following steps u
 
     :::image type="content" source="./media/monitor-sign-in-health-for-resilience/run-query.png" alt-text="Screenshot showing the run query results.":::
 
-5. Highlight the query. Select **+ New alert rule**. 
- 
+5. Highlight the query. Select **+ New alert rule**.
+
     :::image type="content" source="./media/monitor-sign-in-health-for-resilience/new-alert-rule.png" alt-text="Screenshot showing the new alert rule screen.":::
 
-6. Configure alert conditions. As shown in the following example screenshot, in the **Condition** section, under **Measurement**, select **Table rows** for **Measure**. Select **Count** for **Aggregation type**. Select **2 days** for **Aggregation granularity**. 
+6. Configure alert conditions. As shown in the following example screenshot, in the **Condition** section, under **Measurement**, select **Table rows** for **Measure**. Select **Count** for **Aggregation type**. Select **2 days** for **Aggregation granularity**.
 
     :::image type="content" source="./media/monitor-sign-in-health-for-resilience/configure-alerts.png" alt-text="Screenshot showing configure alerts screen.":::
-    
-    - **Table rows**. You can use the number of rows returned to work with events such as Windows event logs, Syslog, and application exceptions.
-    - **Aggregation type**. Data points applied with Count.
-    - **Aggregation granularity**. This value defines the period that works with **Frequency of evaluation**.
+
+    - **Table rows.** You can use the number of rows returned to work with events such as Windows event logs, Syslog, and application exceptions.
+    - **Aggregation type.** Data points applied with Count.
+    - **Aggregation granularity.** This value defines the period that works with **Frequency of evaluation**.
 
 7. In **Alert Logic**, configure the parameters as shown in the example screenshot.
 
     :::image type="content" source="./media/monitor-sign-in-health-for-resilience/alert-logic.png" alt-text="Screenshot showing alert logic screen.":::
-    
-    - **Threshold value**: 0. This value alerts on any results.
-    - **Frequency of evaluation**: 1 hour. This value sets the evaluation period to once per hour for the previous hour.
+
+    - **Threshold value:** 0. This value alerts on any results.
+    - **Frequency of evaluation:** 1 hour. This value sets the evaluation period to once per hour for the previous hour.
 
 8. In the **Actions** section, configure settings as shown in the example screenshot.
 
     :::image type="content" source="./media/monitor-sign-in-health-for-resilience/create-alert-rule.png" alt-text="Screenshot showing the Create an alert rule screen.":::
-    
+
     - Select **Select action group** and add the group for which you want alert notifications.
     - Under **Customize actions**, select **Email alerts**.
     - Add a **subject line**.
@@ -110,7 +111,7 @@ To configure the underlying query and set alerts, complete the following steps u
 9. In the **Details** section, configure settings as shown in the example screenshot.
 
     :::image type="content" source="./media/monitor-sign-in-health-for-resilience/details-section.png" alt-text="Screenshot showing the Details section.":::
-    
+
     - Add a **Subscription** name and a description.
     - Select the **Resource group** to which you want to add the alert.
     - Select the default **Severity**.
@@ -141,7 +142,7 @@ In the following query, we detect increasing failure rates. As necessary, you ca
 
 ```kusto
 let today = SigninLogs
-| where TimeGenerated > ago(1h) // Query failure rate in the last hour 
+| where TimeGenerated > ago(1h) // Query failure rate in the last hour
 | project TimeGenerated, UserPrincipalName, AppDisplayName, status = case(Status.errorCode == "0", "success", "failure")
 // Optionally filter by a specific application
 //| where AppDisplayName == **APP NAME**
@@ -169,6 +170,7 @@ today
 | where day != time(1.00:00:00) // exclude Mon
 | where abs(failureRate – failureRateYesterday) > 0.5
 ```
+
 ### Kusto query for drop in usage
 
 In the following query, we compare traffic in the last hour to yesterday's traffic at the same time. We exclude Saturday, Sunday, and Monday because we expect large variability in the previous day's traffic at the same time.
@@ -220,4 +222,4 @@ After you set up queries and alerts, create business processes to manage the ale
 
 ## Next steps
 
-[Learn more about workbooks](~/identity/monitoring-health/howto-use-workbooks.md)
+Learn more about [workbooks](~/identity/monitoring-health/howto-use-workbooks.md)

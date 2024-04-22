@@ -7,18 +7,17 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: role-based-access-control
-ms.date: 11/15/2022
+ms.date: 03/13/2024
 ms.author: rolyon
 ms.reviewer: anandy
 ms.custom: oldportal, it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
-
 ---
 
 # Assign Microsoft Entra roles with administrative unit scope
 
-In Microsoft Entra ID, for more granular administrative control, you can assign a Microsoft Entra role with a scope that's limited to one or more administrative units. When a Microsoft Entra role is assigned at the scope of an administrative unit, role permissions apply only when managing members of the administrative unit itself, and do not apply to tenant-wide settings or configurations.
+In Microsoft Entra ID, for more granular administrative control, you can assign a Microsoft Entra role with a scope that's limited to one or more administrative units. When a Microsoft Entra role is assigned at the scope of an administrative unit, role permissions apply only when managing members of the administrative unit itself, and don't apply to tenant-wide settings or configurations.
 
-For example, an administrator who is assigned the Groups Administrator role at the scope of an administrative unit can manage groups that are members of the administrative unit, but they cannot manage other groups in the tenant. They also cannot manage tenant-level settings related to groups, such as expiration or group naming policies.
+For example, an administrator who is assigned the Groups Administrator role at the scope of an administrative unit can manage groups that are members of the administrative unit, but they can't manage other groups in the tenant. They also can't manage tenant-level settings related to groups, such as expiration or group naming policies.
 
 This article describes how to assign Microsoft Entra roles with administrative unit scope.
 
@@ -28,7 +27,7 @@ This article describes how to assign Microsoft Entra roles with administrative u
 - Microsoft Entra ID Free licenses for administrative unit members
 - Privileged Role Administrator or Global Administrator
 - Microsoft Graph PowerShell module when using PowerShell
-- Admin consent when using Graph explorer for Microsoft Graph API
+- Admin consent when using Graph Explorer for Microsoft Graph API
 
 For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
 
@@ -45,31 +44,32 @@ The following Microsoft Entra roles can be assigned with administrative unit sco
 | [License Administrator](permissions-reference.md#license-administrator) | Can assign, remove, and update license assignments within the administrative unit only. |
 | [Password Administrator](permissions-reference.md#password-administrator) | Can reset passwords for non-administrators within the assigned administrative unit only. |
 | [Printer Administrator](permissions-reference.md#printer-administrator) | Can manage printers and printer connectors. For more information, see [Delegate administration of printers in Universal Print](/universal-print/portal/delegated-admin#scoped-admin-vs-tenant-printer-admin). |
+| [Privileged Authentication Administrator](permissions-reference.md#privileged-authentication-administrator) | Can access to view, set and reset authentication method information for any user (admin or non-admin). |
 | [SharePoint Administrator](permissions-reference.md#sharepoint-administrator) | Can manage Microsoft 365 groups in the assigned administrative unit only. For SharePoint sites associated with Microsoft 365 groups in an administrative unit, can also update site properties (site name, URL, and external sharing policy) using the Microsoft 365 admin center. Cannot use the SharePoint admin center or SharePoint APIs to manage sites. |
-| [Teams Administrator](permissions-reference.md#teams-administrator) | Can manage Microsoft 365 groups in the assigned administrative unit only.  Can manage team members in the Microsoft 365 admin center for teams associated with groups in the assigned administrative unit only.  Cannot use the Teams admin center. |
+| [Teams Administrator](permissions-reference.md#teams-administrator) | Can manage Microsoft 365 groups in the assigned administrative unit only. Can manage team members in the Microsoft 365 admin center for teams associated with groups in the assigned administrative unit only. Cannot use the Teams admin center. |
 | [Teams Devices Administrator](permissions-reference.md#teams-devices-administrator) | Can perform management related tasks on Teams certified devices. |
 | [User Administrator](permissions-reference.md#user-administrator) | Can manage all aspects of users and groups, including resetting passwords for limited admins within the assigned administrative unit only. Cannot currently manage users' profile photographs. |
 | [&lt;Custom role&gt;](custom-create.md) | Can perform actions that apply to users, groups, or devices, according to the definition of the custom role. |
 
-Certain role permissions apply only to non-administrator users when assigned with the scope of an administrative unit. In other words, administrative unit scoped [Helpdesk Administrators](permissions-reference.md#helpdesk-administrator) can reset passwords for users in the administrative unit only if those users do not have administrator roles. The following list of permissions are restricted when the target of an action is another administrator:
+Certain role permissions apply only to non-administrator users when assigned with the scope of an administrative unit. In other words, administrative unit scoped [Helpdesk Administrators](permissions-reference.md#helpdesk-administrator) can reset passwords for users in the administrative unit only if those users don't have administrator roles. The following list of permissions are restricted when the target of an action is another administrator:
 
 -	Read and modify user authentication methods, or reset user passwords
--	Modify sensitive user properties such as telephone numbers, alternate email addresses, or OAuth secret keys
+-	Modify sensitive user properties such as telephone numbers, alternate email addresses, or Open Authorization (OAuth) secret keys
 - Delete or restore user accounts
 
 ## Security principals that can be assigned with administrative unit scope
 
 The following security principals can be assigned to a role with an administrative unit scope:
 
-* Users
-* Microsoft Entra role-assignable groups
-* Service principals
+- Users
+- Microsoft Entra role-assignable groups
+- Service principals
 
 ## Service principals and guest users
 
-Service principals and guest users will not be able to use a role assignment scoped to an administrative unit unless they are also assigned corresponding permissions to read the objects. This is because service principals and guest users do not receive directory read permissions by default, which are required to perform administrative actions. To enable a service principal or guest user to use a role assignment scoped to an administrative unit, you must assign the [Directory Readers](permissions-reference.md#directory-readers) role (or another role that includes read permissions) at a tenant scope.
+Service principals and guest users won't be able to use a role assignment scoped to an administrative unit unless they're also assigned corresponding permissions to read the objects. This is because service principals and guest users don't receive directory read permissions by default, which are required to perform administrative actions. To enable a service principal or guest user to use a role assignment scoped to an administrative unit, you must assign the [Directory Readers](permissions-reference.md#directory-readers) role (or another role that includes read permissions) at a tenant scope.
 
-It is not currently possible to assign directory read permissions scoped to an administrative unit. For more information about default permissions for users, see [default user permissions](~/fundamentals/users-default-permissions.md). 
+It isn't currently possible to assign directory read permissions scoped to an administrative unit. For more information about default permissions for users, see [default user permissions](~/fundamentals/users-default-permissions.md). 
 
 ## Assign a role with an administrative unit scope
 
@@ -83,19 +83,19 @@ You can assign a Microsoft Entra role with an administrative unit scope by using
 
 1. Browse to **Identity** > **Roles & admins** > **Admin units**.
 
-1. Select the administrative unit that you want to assign a user role scope to. 
+1. Select the administrative unit that you want to assign a user role scope to.
 
 1. On the left pane, select **Roles and administrators** to list all the available roles.
 
    ![Screenshot of the "Role and administrators" pane for selecting an administrative unit whose role scope you want to assign.](./media/admin-units-assign-roles/select-role-to-scope.png)
 
-1. Select the role to be assigned, and then select **Add assignments**. 
+1. Select the role to be assigned, and then select **Add assignments**.
 
 1. On the **Add assignments** pane, select one or more users to be assigned to the role.
 
    ![Select the role to scope and then select Add assignments](./media/admin-units-assign-roles/select-add-assignment.png)
 
-> [!Note]
+> [!NOTE]
 > To assign a role on an administrative unit by using Microsoft Entra Privileged Identity Management (PIM), see [Assign Microsoft Entra roles in PIM](~/id-governance/privileged-identity-management/pim-how-to-add-role-to-user.md?tabs=new#assign-a-role-with-restricted-scope).
 
 ### PowerShell
@@ -120,7 +120,7 @@ Request
 ```http
 POST /directory/administrativeUnits/{admin-unit-id}/scopedRoleMembers
 ```
-    
+
 Body
 
 ```http
@@ -138,13 +138,13 @@ You can view a list of Microsoft Entra role assignments with administrative unit
 
 ### Microsoft Entra admin center
 
-You can view all the role assignments created with an administrative unit scope in the **Admin units** section of the Microsoft Entra admin center. 
+You can view all the role assignments created with an administrative unit scope in the **Admin units** section of the Microsoft Entra admin center.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
 1. Browse to **Identity** > **Roles & admins** > **Admin units**.
 
-1. Select the administrative unit for the list of role assignments you want to view. 
+1. Select the administrative unit for the list of role assignments you want to view.
 
 1. Select **Roles and administrators**, and then open a role to view the assignments in the administrative unit.
 

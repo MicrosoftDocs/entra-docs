@@ -249,7 +249,6 @@ Now it's time to download and install Microsoft Entra Connect. After it's instal
 1. In **Install required components**, select **Install**.
 1. In **User sign-in**, select **Pass-through authentication** and **Enable single sign-on**, and then select **Next**.
 
-   :::image type="content" source="media/tutorial-passthrough-authentication/pta1.png" alt-text="Screenshot that shows where to select Pass-through authentication.":::
 1. In **Connect to Microsoft Entra ID**, enter the username and password of the Hybrid Identity Administrator account you created earlier, and then select **Next**.
 1. In **Connect your directories**, select **Add directory**. Then select **Create new AD account** and enter the contoso\Administrator username and password. Select **OK**.
 1. Select **Next**.

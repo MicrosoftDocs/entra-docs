@@ -1,13 +1,12 @@
 ---
 title: Claims-aware apps - Microsoft Entra application proxy
-description: How to publish on-premises ASP.NET applications that accept AD FS claims for secure remote access by your users.
-
+description: How to publish on-premises ASP.NET applications that accept Active Directory Federation Services claims for secure remote access by your users.
 author: kenwith
 manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: how-to
-ms.date: 02/06/2024
+ms.date: 02/26/2024
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
@@ -24,9 +23,9 @@ The STS that the claims-aware app redirects to must be available outside of your
 2. Navigate to the application page in the portal and select **Single sign-on**.
 3. If you chose **Microsoft Entra ID** as your **Preauthentication Method**, select **Microsoft Entra single sign-on disabled** as your **Internal Authentication Method**. If you chose **Passthrough** as your **Preauthentication Method**, you don't need to change anything.
 
-## Configure ADFS
+## Configure Active Directory Federation Services
 
-You can configure ADFS for claims-aware apps in one of two ways. The first is by using custom domains. The second is with WS-Federation. 
+You can configure Active Directory Federation Services for claims-aware apps in one of two ways. The first is by using custom domains. The second is with WS-Federation. 
 
 ### Option 1: Custom domains
 
@@ -34,8 +33,8 @@ If all the internal URLs for your applications are fully qualified domain names 
 
 ### Option 2: WS-Federation
 
-1. Open ADFS Management.
-2. Go to **Relying Party Trusts**, right-click on the app you are publishing with application proxy, and choose **Properties**.  
+1. Open Active Directory Federation Services management.
+2. Go to **Relying Party Trusts**, right-click on the app you're publishing with application proxy, and choose **Properties**.  
 
    ![Relying Party Trusts right-click on app name - screenshot](./media/application-proxy-configure-for-claims-aware-applications/appproxyrelyingpartytrust.png)  
 

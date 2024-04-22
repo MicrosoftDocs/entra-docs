@@ -20,7 +20,7 @@ Conditional Access templates provide a convenient method to deploy new policies 
 
 ## Template categories
 
-The 16 Conditional Access policy templates are organized into the following categories:
+Conditional Access policy templates are organized into the following categories:
 
 # [Secure foundation](#tab/secure-foundation)
 
@@ -51,6 +51,7 @@ These policies as a group help support a [Zero Trust architecture](/security/zer
 - [Require approved client apps or app protection policies](howto-policy-approved-app-or-app-protection.md)
 - [Require compliant or Microsoft Entra hybrid joined device or multifactor authentication for all users](howto-conditional-access-policy-compliant-device.md)
 - [Require multifactor authentication for admins accessing Microsoft admin portals](how-to-policy-mfa-admin-portals.md)
+- [Block access for users with insider risk (Preview)](how-to-policy-insider-risk.md) **Requires Microsoft Purview**
 
 # [Remote work](#tab/remote-work)
 

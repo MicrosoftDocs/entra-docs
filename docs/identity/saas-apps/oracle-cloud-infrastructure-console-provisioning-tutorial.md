@@ -11,6 +11,8 @@ ms.subservice: saas-apps
 ms.topic: tutorial
 ms.date: 02/02/2024
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Oracle Cloud Infrastructure Console so that I can streamline the user management process and ensure that users have the appropriate access to Oracle Cloud Infrastructure Console.
 ---
 
 # Tutorial: Configure Oracle Cloud Infrastructure Console for automatic user provisioning
@@ -159,7 +161,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
     ![Screenshot shows the contact information.](./media/oracle-cloud-infratstructure-console-provisioning-tutorial/contact.png "Contact")
 
     > [!NOTE]
-    > The extension attributes "urn:ietf:params:scim:schemas:oracle:idcs:extension:user:User:bypassNotification" and "urn:ietf:params:scim:schemas:oracle:idcs:extension:user:User:isFederatedUser" are the only custom extension attributes supported.
+    > The extension attributes "urn:ietf:params:scim:schemas:oracle:idcs:extension:user:User:bypassNotification" and "urn:ietf:params:scim:schemas:oracle:idcs:extension:user:User:isFederatedUser" are the only custom extension attributes supported in that format. Additional extension attributes should follow the format of urn:ietf:params:scim:schemas:extension:CustomExtensionName:2.0:User:CustomAttribute.
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Oracle Cloud Infrastructure Console**.
 
