@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: conceptual
-ms.date: 11/15/2023
+ms.date: 04/22/2024
 ms.custom: template-concept
 ---
 
@@ -157,17 +157,23 @@ Separating processing of the workflow from the tasks is important because, in a 
 
 ## Workflow Insights (preview)
 
-With Lifecycle workflows, you're also able to view aggregate workflow information across your tenant using **Workflow Insights (preview)**. Workflow Insights allows you to quickly view:
+
+
+With the previous views, you're able to find history about a specific workflow. If you want to view workflow history summaries across multiple workflows, you use **Workflow Insights (preview)**. 
+
+:::image type="content" source="media/lifecycle-workflow-history/workflow-insights-view.png" alt-text="Screenshow of the Workflow Insights page.":::
+
+With Workflow Insights, you're also able to view aggregate workflow information across your tenant. Workflow Insights allows you to quickly view the following information:
 
 |Insight  |Details  |
 |---------|---------|
 |Summary      | Lists a numerical summary of all workflows, tasks, and users processed in the tenant.      |
 |Top workflows     |  Lists the top workflows ran in the tenant within a timespan of either 7, 14, or 30 days. Can be filtered by **Total Processed**, **Successful**, or **Failed**.      |
 |Top Tasks     |  Lists the top tasks ran in the tenant  within a timespan of either 7, 14, or 30 days. Can be filtered by **Total Processed**, **Successful**, or **Failed**.     |
-|Workflow by Category   | Lists the top workflows ran by category in the tenant within a timespan of either 7, 14, or 30 days.      |
+|Workflow by Category   | Provides a percentile of the top workflows ran by category in the tenant within a timespan of either 7, 14, or 30 days.      |
 
 
-For a step by step guide on checking the insights for workflows in your environment, see: [Check Workflow Insights (preview)](lifecycle-workflow-insights.md).
+For a step by step guide on checking the insights for workflows in your tenant, see: [Check Workflow Insights (preview)](lifecycle-workflow-insights.md).
 
 ## Next steps
 
