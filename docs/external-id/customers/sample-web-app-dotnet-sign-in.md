@@ -96,7 +96,7 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 
     :::image type="content" source="media/tutorial-web-app-dotnet-sign-in-sign-in-out/display-aspnet-welcome.png" alt-text="Screenshot of sign in into a ASP.NET web app.":::
 
-1. To sign-out from the application, select the **Sign out** button.
+1. To sign out from the application, select the **Sign out** button.
 
 ## Related content
 

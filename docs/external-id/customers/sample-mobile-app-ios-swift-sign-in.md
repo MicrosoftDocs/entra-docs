@@ -85,7 +85,7 @@ To build and run your app, follow these steps:
 1. Select **Acquire Token Interactively** to request an access token.
 1. If you select **API - Perform GET** to call a protected ASP.NET Core web API, you will get an error. 
 
-For more information about calling a protected web API, see our [Next teps](#next-steps) 
+For more information about calling a protected web API, see our [Next steps](#next-steps) 
 
 ## Next steps
 
