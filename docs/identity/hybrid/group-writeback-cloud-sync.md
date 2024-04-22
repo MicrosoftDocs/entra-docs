@@ -18,17 +18,14 @@ With the release of provisioning agent [1.1.1370.0](cloud-sync/reference-version
 
  :::image type="content" source="media/common-scenarios/group-writeback-1.png" alt-text="Diagram of group writeback with cloud sync." lightbox="media/common-scenarios/group-writeback-1.png":::
 
+[!INCLUDE [deprecation](~/includes/gwb-v2-deprecation.md)]
 
 
-
-
-
-## Watch the video
-For a great overview of cloud sync group provisioning to Active directory, check out the video below.
+## Watch the group provisioning video
+For a great overview of cloud sync group provisioning to Active directory and what it can do for you, check out the video below.
 
 > [!VIDEO https://www.youtube.com/embed/C6XXlSVaIeo]
 
-[!INCLUDE [deprecation](~/includes/gwb-v2-deprecation.md)]
 
 
 
