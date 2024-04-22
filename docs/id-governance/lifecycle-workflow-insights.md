@@ -10,17 +10,17 @@ ms.date: 04/22/2024
 ms.author: owinfrey
 ms.reviewer: krbain
 
-#CustomerIntent: As a system administrator, I want to view insights across my environment so that I know which workflows, or tasks, are being run the most.
+#CustomerIntent: As a system administrator, I want to view insights across my environment so that I know which workflows, or tasks, are being used the most.
 ---
 
 # Check Workflow Insights (preview)
 
-With Workflow Insights, you're able to get a quick view of workflow execution within your environment. With insights you can view information such as:
+With Workflow Insights, you're able to get a quick view of workflow execution within your environment. With Workflow Insights, you can view information such as:
 
 - Numerical summaries of all successful workflows, users processed, and successful tasks that ran in your environment.
 - The top workflows of the past time-span that you define from either 7, 14, or 30 days.
 - The top tasks of the past time-span that you define from either 7, 14, or 30 days.
-- Number of workflow by categories of the past time-span that you define from either 7,14, or 30 days.
+- Number of workflows by categories of the past time-span that you define from either 7, 14, or 30 days.
 
 
 For more information, see: [Workflow Insights (preview)](lifecycle-workflow-history.md#workflow-insights-preview).
@@ -46,13 +46,7 @@ For more information, see: [Workflow Insights (preview)](lifecycle-workflow-hist
 
 1. Along with being able to filter on a time period, for top workflows and tasks, you're also able to filter based on activity.
     :::image type="content" source="media/lifecycle-workflow-insights/timespan-choice.png" alt-text="Screenshot of picking time duration in workflow insights.":::
-1. With the activity filter, you can choose to see all workflows or tasks by choosing **Total Processed**, only those which were **Successful**, or only the ones who **Failed**.     
-
-
-
-
-
-## Check Workflow Insights using Microsoft Graph
+1. With the activity filter, you can choose to see all workflows or tasks by choosing **Total Processed**, only those which were **Successful**, or only the ones who **Failed**.
 
 
 
