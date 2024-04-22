@@ -231,5 +231,5 @@ Now you are ready to use AD authentication on your Linux VM.
 
 <!-- INTERNAL LINKS -->
 [create-azure-ad-tenant]: /azure/active-directory/fundamentals/sign-up-organization.md
-[associate-azure-ad-tenant]: /azure/active-directory/fundamentals/how-subscriptions-associated-directory.md
+[associate-azure-ad-tenant]: /azure/active-directory/fundamentals/how-subscriptions-associated-directory.yml
 [create-azure-ad-ds-instance]: tutorial-create-instance.md

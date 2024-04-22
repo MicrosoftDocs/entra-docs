@@ -116,6 +116,6 @@ Self-service app management requires some initial setup by a Global Administrato
 See the following articles on Microsoft Entra B2B collaboration:
 
 - [What is Microsoft Entra B2B collaboration?](what-is-b2b.md)
-- [How do Microsoft Entra admins add B2B collaboration users?](add-users-administrator.md)
+- [How do Microsoft Entra admins add B2B collaboration users?](add-users-administrator.yml)
 - [B2B collaboration invitation redemption](redemption-experience.md)
 - [External ID pricing](external-identities-pricing.md)
