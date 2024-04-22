@@ -66,13 +66,13 @@ The constraints and details described in this article have the following scope.
 
 ## B2B users or B2B members
 
-- The promotion of B2B guests to B2B members represents a strategic decision by multitenant organizations to consider B2B members as trusted users of the organization. Review the [default permissions](~/fundamentals/users-default-permissions.md) for B2B members.
+- The promotion of B2B guests to B2B members represents a strategic decision by multitenant organizations to consider B2B members as trusted users of the organization. Review the [default permissions](../../fundamentals/users-default-permissions.md) for B2B members.
 
 - To promote B2B guests to B2B members, a source tenant administrator can amend the [attribute mappings](cross-tenant-synchronization-configure.md#step-9-review-attribute-mappings), or a target tenant administrator can [change the userType](../../fundamentals/how-to-manage-user-profile-info.yml#add-or-change-profile-information) if the property is not recurringly synchronized.
 
 - As your organization rolls out the multitenant organization functionality including provisioning of B2B users across multitenant organization tenants, you might want to provision some users as B2B guests, while provision others users as B2B members. To achieve this, you might want to establish two Microsoft Entra cross-tenant synchronization configurations in the source tenant, one with userType attribute mappings configured to B2B guest, and another with userType attribute mappings configured to B2B member, each with [**Apply this mapping** set to **Always**](cross-tenant-synchronization-configure.md#step-9-review-attribute-mappings). By moving a user from one configuration's scope to the other, you can easily control who will be a B2B guest or a B2B member in the target tenant.
 
-- As part of a multitenant organization, [reset redemption for an already redeemed B2B user](~/external-id/reset-redemption-status.md) is currently disabled.
+- As part of a multitenant organization, [reset redemption for an already redeemed B2B user](../../external-id/reset-redemption-status.md) is currently disabled.
 
 - The at-scale provisioning of B2B users might collide with contact objects. The handling or conversion of contact objects is currently not supported.
 
@@ -100,8 +100,8 @@ The constraints and details described in this article have the following scope.
 
 - By default, when provisioning scope is reduced while a synchronization job is running, users fall out of scope and are soft deleted, unless [Target Object Actions for Delete](cross-tenant-synchronization-configure.md#step-8-optional-define-who-is-in-scope-for-provisioning-with-scoping-filters) is disabled. For more information, see [Deprovisioning](cross-tenant-synchronization-overview.md#deprovisioning) and [Define who is in scope for provisioning](cross-tenant-synchronization-configure.md#step-8-optional-define-who-is-in-scope-for-provisioning-with-scoping-filters).
 
-- Currently, [SkipOutOfScopeDeletions](~/identity/app-provisioning/skip-out-of-scope-deletions.md?toc=/entra/identity/multi-tenant-organizations/toc.json&pivots=cross-tenant-synchronization) works for application provisioning jobs, but not for Microsoft Entra cross-tenant synchronization. To avoid soft deletion of users taken out of scope of cross-tenant synchronization, set [Target Object Actions for Delete](cross-tenant-synchronization-configure.md#step-8-optional-define-who-is-in-scope-for-provisioning-with-scoping-filters) to disabled.
+- Currently, [SkipOutOfScopeDeletions](../app-provisioning/skip-out-of-scope-deletions.md?toc=/entra/identity/multi-tenant-organizations/toc.json&pivots=cross-tenant-synchronization) works for application provisioning jobs, but not for Microsoft Entra cross-tenant synchronization. To avoid soft deletion of users taken out of scope of cross-tenant synchronization, set [Target Object Actions for Delete](cross-tenant-synchronization-configure.md#step-8-optional-define-who-is-in-scope-for-provisioning-with-scoping-filters) to disabled.
 
 ## Next steps
 
-- [Known issues for provisioning in Microsoft Entra ID](~/identity/app-provisioning/known-issues.md?toc=/entra/identity/multi-tenant-organizations/toc.json&pivots=cross-tenant-synchronization)
+- [Known issues for provisioning in Microsoft Entra ID](../app-provisioning/known-issues.mdtoc=/entra/identity/multi-tenant-organizations/toc.json&pivots=cross-tenant-synchronization)
