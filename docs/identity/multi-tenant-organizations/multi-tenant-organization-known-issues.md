@@ -104,4 +104,4 @@ The constraints and details described in this article have the following scope.
 
 ## Next steps
 
-- [Known issues for provisioning in Microsoft Entra ID](../app-provisioning/known-issues.mdtoc=/entra/identity/multi-tenant-organizations/toc.json&pivots=cross-tenant-synchronization)
+- [Known issues for provisioning in Microsoft Entra ID](../app-provisioning/known-issues.md?toc=/entra/identity/multi-tenant-organizations/toc.json&pivots=cross-tenant-synchronization)
