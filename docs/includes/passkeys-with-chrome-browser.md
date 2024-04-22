@@ -10,5 +10,4 @@ ms.author: justinha
 ms.custom: include file
 ---
 > [!NOTE]
-> On Android devices, you can't create or authenticate passkeys from browsers, such as Google Chrome or Microsoft Edge. 
-Support to create and authenticate passkeys from browsers depends upon API updates to be made available by the platform. 
+> Passkeys in Authenticator don't work with browsers like Google Chrome or Microsoft Edge on Android devices. Support to create and sign in using Authenticator passkeys from browsers depends upon API updates to be made available by the Android platform.

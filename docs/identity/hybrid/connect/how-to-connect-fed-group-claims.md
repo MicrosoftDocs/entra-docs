@@ -97,7 +97,7 @@ To configure group claims for a gallery or non-gallery SAML application via sing
    | Selection | Description |
    |----------|-------------|
    | **All groups** | Emits security groups and distribution lists and roles. |
-   | **Security groups** | Emits security groups that the user is a member of in the groups claim. |
+   | **Security groups** | Emits security groups that the user is a member of in the groups claim. If the user is assigned directory roles, they're emitted as object ID. |
    | **Directory roles** | If the user is assigned directory roles, they're emitted as a `wids` claim. (The group's claim won't be emitted.) |
    | **Groups assigned to the application** | Emits only the groups that are explicitly assigned to the application and that the user is a member of. Recommended for large organizations due to the group number limit in token. |
 
