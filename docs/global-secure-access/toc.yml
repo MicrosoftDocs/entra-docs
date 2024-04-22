@@ -121,6 +121,11 @@ items:
         href: ~/architecture/sse-deployment-guide-m365.md?toc=/entra/global-secure-access/toc.json&bc=/entra/global-secure-access/breadcrumb/toc.json
       - name: Deploying Microsoft Entra Private Access
         href: ~/architecture/sse-deployment-guide-private-access.md?toc=/entra/global-secure-access/toc.json&bc=/entra/global-secure-access/breadcrumb/toc.json
+  - name: Troubleshoot
+    expanded: false
+    items:
+      - name: Troubleshoot connectors
+        href: troubleshoot-connectors.md
 - name: Reference
   expanded: false
   items:

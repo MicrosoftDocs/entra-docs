@@ -1,6 +1,6 @@
 ---
 title: Understand the Microsoft Entra private network connector
-description: Learn how Microsoft Entra private network connectors work and how they are used by Microsoft Entra Private Access and application proxy.
+description: Learn how Microsoft Entra private network connectors work and how they're used by Microsoft Entra Private Access and application proxy.
 author: kenwith
 ms.author: kenwith
 manager: amycolannino
@@ -15,10 +15,36 @@ Connectors are what make Microsoft Entra Private Access and application proxy po
 
 ## What is a private network connector?
 
-Connectors are lightweight agents that sit in a private network and facilitate the outbound connection to the Microsoft Entra Private Access and application proxy services. Connectors must be installed on a Windows Server that has access to the backend resources. You can organize connectors into connector groups, with each group handling traffic to specific resources. For more information on application proxy and a diagrammatic representation of application proxy architecture, see [Using Microsoft Entra application proxy to publish on-premises apps for remote users](../identity/app-proxy/overview-what-is-app-proxy.md#private-network-connectors).
+Connectors are lightweight agents that sit in a private network and facilitate the outbound connection to the Microsoft Entra Private Access and application proxy services. Connectors must be installed on a Windows Server that has access to the backend resources. You can organize connectors into connector groups, with each group handling traffic to specific resources. For more information on application proxy and a diagrammatic representation of application proxy architecture, see [Using Microsoft Entra application proxy to publish on-premises apps for remote users](../identity/app-proxy/overview-what-is-app-proxy.md).
 
 
 To learn how to configure the Microsoft Entra private network connector, see [How to configure private network connectors for Microsoft Entra Private Access](how-to-configure-connectors.md).
+
+Private network connectors are lightweight agents deployed on-premises that facilitate the outbound connection to the application proxy service in the cloud. The connectors must be installed on a Windows Server that has access to the backend application. Users connect to the application proxy cloud service that routes their traffic to the apps via the connectors.
+
+Setup and registration between a connector and the application proxy service is accomplished as follows:
+
+1. The IT administrator opens ports 80 and 443 to outbound traffic and allows access to several URLs that are needed by the connector, the application proxy service, and Microsoft Entra ID.
+2. The admin signs into the Microsoft Entra admin center and runs an executable to install the connector on an on-premises Windows server.
+3. The connector starts to "listen" to the application proxy service.
+4. The admin adds the on-premises application to Microsoft Entra ID and configures settings such as the URLs users need to connect to their apps.
+
+It's recommended that you always deploy multiple connectors for redundancy and scale. The connectors, in conjunction with the service, take care of all the high availability tasks and can be added or removed dynamically. Each time a new request arrives it's routed to one of the connectors that is available. When a connector is running, it remains active as it connects to the service. If a connector is temporarily unavailable, it doesn't respond to this traffic. Unused connectors are tagged as inactive and removed after 10 days of inactivity.
+
+Connectors also poll the server to find out if there's a newer version of the connector. Although you can do a manual update, connectors will update automatically as long as the private network connector Updater service is running. For tenants with multiple connectors, the automatic updates target one connector at a time in each group to prevent downtime in your environment.
+
+> [!NOTE]
+> You can monitor the [version history page](reference-version-history.md) to stay informed on the latest updates.
+
+Each private network connector is assigned to a [connector group](concept-connector-groups.md). Connectors in the same connector group act as a single unit for high availability and load balancing. You can create new groups, assign connectors to them in the Microsoft Entra admin center, then assign specific connectors to serve specific applications. It's recommended to have at least two connectors in each connector group for high availability.
+
+Connector groups are useful when you need to support the following scenarios:
+
+* Geographical app publishing
+* Application segmentation/isolation
+* Publishing web apps running in the cloud or on-premises
+
+For more information about choosing where to install your connectors and optimizing your network, see [Network topology considerations when using Microsoft Entra application proxy](../identity/app-proxy/application-proxy-network-topology.md).
 
 ## Maintenance
 
@@ -36,7 +62,7 @@ You don't have to manually delete connectors that are unused. When a connector i
 
 ## Automatic updates
 
-Microsoft Entra ID provides automatic updates for all the connectors that you deploy. As long as the private network connector updater service is running, your connectors update with the latest major connector release automatically. If you don’t see the Connector Updater service on your server, you need to reinstall your connector to get updates. To learn more about connector updates, see [application proxy faq](../identity/app-proxy/application-proxy-faq.yml#why-is-my-connector-still-using-an-older-version-and-not-auto-upgraded-to-latest-version-).
+Microsoft Entra ID provides automatic updates for all the connectors that you deploy. As long as the private network connector updater service is running, your connectors update with the latest major connector release automatically. If you don’t see the Connector Updater service on your server, you need to reinstall your connector to get updates.
 
 If you don't want to wait for an automatic update to come to your connector, you can do a manual upgrade. Go to the [connector download page](https://download.msappproxy.net/subscription/d3c8b69d-6bf7-42be-a529-3fe9c2e70c90/connector/download) on the server where your connector is located and select **Download**. This process kicks off an upgrade for the local connector.
 
@@ -73,7 +99,7 @@ The table provides volume and expected latency for different machine specificati
 \* The machine used a custom setting to raise some of the default connection limits beyond .NET recommended settings. We recommend running a test with the default settings before contacting support to get this limit changed for your tenant.
 
 > [!NOTE]
-> There isn't much difference in the maximum TPS between 4, 8, and 16 core machines. The main difference is the expected latency.
+> There's not much difference in the maximum TPS between 4, 8, and 16 core machines. The main difference is the expected latency.
 >
 > The table focuses on the expected performance of a connector based on the type of machine it's installed on. This is separate from the service's throttling limits, see [service limits and restrictions](~/identity/users/directory-service-limits-restrictions.md).
 

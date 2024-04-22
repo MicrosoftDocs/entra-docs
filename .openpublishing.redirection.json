@@ -206,6 +206,16 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity/app-proxy/application-proxy-connector-installation-problem.md",
+      "redirect_url": "/entra/global-secure-access/troubleshoot-connectors",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/app-proxy/application-proxy-debug-connectors.md",
+      "redirect_url": "/entra/global-secure-access/troubleshoot-connectors",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity/app-provisioning/application-provisioning-config-problem.md",
       "redirect_url": "/entra/identity",
       "redirect_document_id": false
@@ -318,6 +328,71 @@
     {
       "source_path_from_root": "/docs/identity/authentication/concept-authentication-operator-assistance.md",
       "redirect_url": "/entra/identity/authentication/concept-mfa-howitworks",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/config-authority.md",
+      "redirect_url": "/entra/msal/objc/configure-authority",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/customize-webviews.md",
+      "redirect_url": "/entra/msal/objc/customize-webviews",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/howto-v2-keychain-objc.md",
+      "redirect_url": "/entra/msal/objc/howto-v2-keychain-objc",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/migrate-objc-adal-msal.md",
+      "redirect_url": "/entra/msal/objc/migrate-objc-adal-msal",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/msal-error-handling-ios.md",
+      "redirect_url": "/entra/msal/objc/error-handling-ios",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/msal-ios-shared-devices.md",
+      "redirect_url": "/entra/msal/objc/shared-devices-ios",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/redirect-uris-ios.md",
+      "redirect_url": "/entra/msal/objc/redirect-uris-ios",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/msal-logging-ios.md",
+      "redirect_url": "/entra/msal/objc/logging-ios",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/request-custom-claims.md",
+      "redirect_url": "/entra/msal/objc/request-custom-claims",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/single-sign-on-macos-ios.md",
+      "redirect_url": "/entra/msal/objc/single-sign-on-macos-ios",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/ssl-issues.md",
+      "redirect_url": "/entra/msal/objc/ssl-issues",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/msal-differences-ios-macos.md",
+      "redirect_url": "/entra/msal/objc/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/sso-between-adal-msal-apps-macos-ios.md",
+      "redirect_url": "/entra/msal/objc/sso-between-adal-msal-apps",
       "redirect_document_id": false
     },
     {

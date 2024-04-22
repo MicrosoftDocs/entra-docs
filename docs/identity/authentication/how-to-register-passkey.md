@@ -6,7 +6,7 @@ services: active-directory
 ms.service: entra-id 
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 03/07/2024
+ms.date: 04/16/2024
 
 ms.author: justinha
 author: justinha
@@ -79,7 +79,7 @@ This article shows how to register a passkey using a browser and sign-in with a 
 1. Tap **Next**, then you’re directed to `login.microsoft.com`.
 1. If you have yet to sign in with multifactor authentication (MFA), you're asked to sign-in.
    1. If you don't have at least one MFA method registered, you're not able to register a passkey. 
-   1. An Authentication Policy Administrator can also issue a [Temporary Access Pass](howto-authentication-temporary-access-pass.md) to allow a user to strongly authenticate and register a passkey.
+   1. An Authentication Policy Administrator can also issue a Temporary Access Pass (TAP) *for multiple use* to allow a user to strongly authenticate and register a passkey. A one-time TAP can't be used for guided registration. For more information, see [Configure Temporary Access Pass to register passwordless authentication methods](/entra/identity/authentication/howto-authentication-temporary-access-pass#limitations).
 
 1. A security dialog opens on your device and asks where you would like to save your passkey. 
 

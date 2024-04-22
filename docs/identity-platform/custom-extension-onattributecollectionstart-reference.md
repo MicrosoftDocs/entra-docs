@@ -1,5 +1,5 @@
 ---
-title: OnAttributeCollectionStart reference
+title: Custom Extension OnAttributeCollectionStart event reference (preview)
 description: Reference documentation for a custom authentication extension that invokes the OnAttributeCollectionStart event for External ID customer configurations.
 author: msmimart
 manager: CelesteDG
@@ -12,7 +12,7 @@ titleSuffix: Microsoft identity platform
 #customer intent: As a developer creating a custom authentication extension for user sign-up flows, I want to understand the REST API schema for the OnAttributeCollectionStart event, so that I can design and implement my own REST API to handle attribute collection requests and responses before the user enters attributes.
 ---
 
-# Custom Extension for OnAttributeCollectionStart event (preview)
+# Custom Extension for OnAttributeCollectionStart event reference (preview)
 
 **Applies to:** Microsoft Entra External ID customer configurations
 

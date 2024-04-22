@@ -166,7 +166,7 @@ You'll also need an outbound sync rule with a link type of JoinNoFlow and the sc
 7. Click **Exit**
 
 ## Step 7 - Configure Microsoft Entra Cloud Sync
-Now that you have successfully removed the groups from the scope of Microsoft Entra Connect Sync, you can seupt and configure Microsoft Entra Cloud Sync to take over synchronization. See [Provision groups to Active Directory using Microsoft Entra Cloud Sync](how-to-configure-entra-to-active-directory.md)
+Now that you have successfully removed the groups from the scope of Microsoft Entra Connect Sync, you can set up and configure Microsoft Entra Cloud Sync to take over synchronization. See [Provision groups to Active Directory using Microsoft Entra Cloud Sync](how-to-configure-entra-to-active-directory.md).
 
 ## Next Steps
 - [Group writeback with Microsoft Entra Cloud Sync ](../group-writeback-cloud-sync.md)

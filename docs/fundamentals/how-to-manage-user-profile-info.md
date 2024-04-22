@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: how-to
-ms.date: 04/15/2024
+ms.date: 04/16/2024
 ms.author: sarahlipsey
 ms.reviewer: jeffsta
 
@@ -31,6 +31,7 @@ The required role of least privilege varies based on the type of user you're add
 | Create a new user | User Administrator |
 | Invite an external guest | Guest Inviter |
 | Assign Microsoft Entra roles | Privileged Role Administrator |
+| Manage all user settings | Global Administrator |
 
 ## Add or change profile information
 
