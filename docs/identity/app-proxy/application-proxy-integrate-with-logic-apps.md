@@ -124,7 +124,7 @@ When a new Enterprise Application is created, a matching App Registration is als
 
     7. Select *Add new parameter*, then check *Authentication*.
 
-    8. From the *Authentication type*, select *Active Directory OAuth*.
+    8. From the *Authentication type*, select *Microsoft Entra ID OAuth*.
 
     9. For the authentication, fill the following details.
 

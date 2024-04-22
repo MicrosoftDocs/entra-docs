@@ -83,7 +83,7 @@ landingContent:
     linkLists:
       - linkListType: how-to-guide
         links:
-          - text: Network traffic dashboard
+          - text: Dashboard
             url: concept-traffic-dashboard.md
           - text: Audit logs
             url: how-to-access-audit-logs.md

@@ -305,4 +305,4 @@ When you remove an organization from your Organizational settings, the default c
 
 ## Next steps
 
-[Configure cross-tenant access settings for B2B collaboration](cross-tenant-access-settings-b2b-collaboration.md)
+[Configure cross-tenant access settings for B2B collaboration](cross-tenant-access-settings-b2b-collaboration.yml)

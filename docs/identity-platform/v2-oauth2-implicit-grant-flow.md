@@ -5,7 +5,7 @@ author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
 ms.custom:
-ms.date: 08/11/2023
+ms.date: 04/08/2024
 ms.reviewer: ludwignick
 ms.service: identity-platform
 
@@ -46,7 +46,7 @@ To initially sign the user into your app, you can send an [OpenID Connect](v2-pr
 // Line breaks for legibility only
 
 https://login.microsoftonline.com/{tenant}/oauth2/v2.0/authorize?
-client_id=535fb089-9ff3-47b6-9bfb-4f1264799865
+client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &response_type=id_token
 &redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
 &scope=openid
@@ -124,8 +124,7 @@ In the normal OpenID Connect/OAuth flow, you would do this by making a request t
 // Line breaks for legibility only
 
 https://login.microsoftonline.com/{tenant}/oauth2/v2.0/authorize?
-client_id=535fb089-9ff3-47b6-9bfb-4f1264799865
-&response_type=token
+client_id=00001111-aaaa-2222-bbbb-3333cccc4444&response_type=token
 &redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
 &scope=https%3A%2F%2Fgraph.microsoft.com%2Fuser.read
 &response_mode=fragment

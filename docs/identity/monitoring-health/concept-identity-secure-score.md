@@ -5,7 +5,7 @@ description: Learn how to use the identity secure score to improve the security 
 ms.service: entra-id
 ms.subservice: monitoring-health
 ms.topic: conceptual
-ms.date: 12/15/2023
+ms.date: 04/15/2024
 
 ms.author: sarahlipsey
 author: shlipsey3
@@ -86,7 +86,6 @@ To access identity secure score, you must be assigned one of the following roles
 
 With read and write access, you can make changes and directly interact with identity secure score.
 
-- Global Administrator
 - Security Administrator
 - Exchange Administrator
 - SharePoint Administrator

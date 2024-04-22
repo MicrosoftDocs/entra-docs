@@ -6,7 +6,7 @@ services: active-directory
 ms.service: entra-id 
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 03/07/2024
+ms.date: 04/19/2024
 
 ms.author: justinha
 author: justinha
@@ -19,14 +19,13 @@ ms.collection: M365-identity-device-management
 ---
 # Register a passkey using a mobile device (preview)
 
-This article shows how to register a passkey using a security key with your iOS or Android device. 
+This article shows how to register a security key with your iOS or Android device using the **"Passkey (Preview)"** flow. 
 
-> [!NOTE]
-> Microsoft Entra ID currently supports device-bound passkeys stored on FIDO2 security keys and in Microsoft Authenticator. Microsoft is committed to securing customers and users with passkeys. We are investing in both synced and device-bound passkeys for work accounts.
+For more information about enabling passkeys in Microsoft Authenticator, see [How to enable passkeys in Microsoft Authenticator](how-to-enable-authenticator-passkey.md).
 
-# [**iOS**](#tab/iOS)
+## [**iOS**](#tab/iOS)
 
-## Register a security key with iOS 
+### Register a security key with iOS 
 
 1. Using your iOS device, open a web browser and sign-in to [My Security info](https://aka.ms/mysecurityinfo).
    
@@ -82,9 +81,9 @@ This article shows how to register a passkey using a security key with your iOS 
 
    :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkey-ios-finish.png" alt-text="Screenshot showing final passkey registration step on iOS.":::
 
-# [**Android**](#tab/Android)
+## [**Android**](#tab/Android)
 
-## Register a security key with Android 
+### Register a security key with Android 
 
 1. Using your Android device, open a web browser and sign-in to [My Security info](https://aka.ms/mysecurityinfo).
    

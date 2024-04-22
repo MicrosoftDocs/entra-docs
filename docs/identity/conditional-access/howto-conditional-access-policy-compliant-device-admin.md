@@ -70,7 +70,7 @@ The following steps will help create a Conditional Access policy to require mult
       - User Administrator
    
       > [!WARNING]
-      > Conditional Access policies support built-in roles. Conditional Access policies are not enforced for other role types including [administrative unit-scoped](~/identity/role-based-access-control/admin-units-assign-roles.md) or [custom roles](~/identity/role-based-access-control/custom-create.md).
+      > Conditional Access policies support built-in roles. Conditional Access policies are not enforced for other role types including [administrative unit-scoped](~/identity/role-based-access-control/admin-units-assign-roles.md) or [custom roles](~/identity/role-based-access-control/custom-create.yml).
 
    1. Under **Exclude**, select **Users and groups** and choose your organization's emergency access or break-glass accounts.
 1. Under **Target resources** > **Cloud apps** > **Include**, select **All cloud apps**.
@@ -94,12 +94,9 @@ On Windows 7, iOS, Android, macOS, and some third-party web browsers, Microsoft 
 
 Organizations that use the [Subscription Activation](/windows/deployment/windows-10-subscription-activation) feature to enable users to “step-up” from one version of Windows to another, may want to exclude the Windows Store for Business, AppID 45a330b1-b1ec-4cc1-9161-9f03992aa49f from their device compliance policy.
 
-## Next steps
 
-[Conditional Access templates](concept-conditional-access-policy-common.md)
+## Related content
 
-[Determine effect using Conditional Access report-only mode](howto-conditional-access-insights-reporting.md)
-
-[Use report-only mode for Conditional Access to determine the results of new policy decisions.](concept-conditional-access-report-only.md)
-
-[Device compliance policies work with Microsoft Entra ID](/mem/intune/protect/device-compliance-get-started#device-compliance-policies-work-with-azure-ad)
+- [Microsoft Entra built-in roles](../role-based-access-control/permissions-reference.md)
+- [Conditional Access templates](concept-conditional-access-policy-common.md)
+- [Device compliance policies work with Microsoft Entra ID](/mem/intune/protect/device-compliance-get-started#device-compliance-policies-work-with-azure-ad)

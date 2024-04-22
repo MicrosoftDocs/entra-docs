@@ -50,4 +50,4 @@ If you have concerns with the new behavior, leave your remarks in the **Feedback
 
 ## Next steps
 
-[Customize your sign-in branding](~/fundamentals/add-custom-domain.md)
+[Customize your sign-in branding](~/fundamentals/add-custom-domain.yml)

@@ -5,7 +5,7 @@ description: Learn about using the Microsoft Authenticator in Microsoft Entra ID
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 04/10/2024
+ms.date: 04/19/2024
 
 ms.author: justinha
 author: justinha
@@ -39,7 +39,6 @@ Authenticator is a free passkey solution that lets users do passwordless phishin
 - Users stay up-to-date with latest passkey innovation based upon open WebAuthn standards.
 - Enterprises can layer other capabilities on top of authentication flows such as [FIPS 140 compliance](#fips-140-compliant-for-microsoft-entra-authentication).
 
-[!INCLUDE [Passkey roll out](~/includes/entra-authentication-passkey.md)]
 
 ### Device-bound passkey
 
@@ -47,7 +46,7 @@ Passkeys in the Authenticator app are device-bound to ensure that they never lea
 
 ### How passkey attestation works with Authenticator
 
-For now, Authenticator passkeys are unattested. Attestation support for passkeys in Authenticator is planned for a future release.
+For now, passkeys in Authenticator are unattested. Attestation support for passkeys in Authenticator is planned for a future release.
 
 ### Back up and restore passkeys in Authenticator
 
@@ -99,11 +98,11 @@ For more information about the FIPS 140 validated cryptographic modules being us
 
 
 >[!NOTE]
->In new updates from the previous version of this article: Microsoft Authenticator is not yet FIPS 140 compliant on Android. Microsoft Authenticator on Android is currently pending FIPS compliance certification to support our customers that may require FIPS validated cryptography.
+>In new updates from the previous version of this article: Microsoft Authenticator isn't yet FIPS 140 compliant on Android. Microsoft Authenticator on Android is currently pending FIPS compliance certification to support our customers that may require FIPS validated cryptography.
 
 
-## Determining Microsoft Authenticator registration type in My Security-Info 
-Users can access [MySecurityInfo](https://aka.ms/mysecurityinfo) (see the URLs in the next section) or by selecting Security info from MyAccount to manage and add more Microsoft Authenticator registrations. Specific icons are used to differentiate whether the Microsoft Authenticator registration is passwordless phone sign-in or MFA. 
+## Determining Microsoft Authenticator registration type in Security info 
+Users can access [My Security info](https://aka.ms/mysecurityinfo) (see the URLs in the next section) or by selecting Security info from MyAccount to manage and add more Microsoft Authenticator registrations. Specific icons are used to differentiate whether the Microsoft Authenticator registration is passwordless phone sign-in or MFA. 
 
 Authenticator registration type | Icon
 ------ | ------
@@ -118,15 +117,15 @@ Cloud | MySecurityInfo URL |
 Azure commercial (includes GCC)   | https://aka.ms/MySecurityInfo 
 Azure for US Government (includes GCC High and DoD) | https://aka.ms/MySecurityInfo-us 
 
-## Updates to the Microsoft Authenticator App
+## Updates to Authenticator
 
-Microsoft continuously updates the Microsoft Authenticator App to maintain a high level of security. To ensure that your users are getting the best experience possible, we recommend having them continuously update their Authenticator App. In the case of critical security updates, app versions that are not up to date may cease to work and may block users from completing their authentications. If a user is using a version of the app that is not supported, they will be prompted to upgrade to the latest version before being able to proceed with authentications.
+Microsoft continuously updates Authenticator to maintain a high level of security. To ensure that your users are getting the best experience possible, we recommend having them continuously update their Authenticator App. In the case of critical security updates, app versions that aren't up to date may cease to work and may block users from completing their authentications. If a user is using a version of the app that is not supported, they will be prompted to upgrade to the latest version before being able to proceed with authentications.
 
-Microsoft will also periodically retire older versions of the Authenticator App to maintain a high security bar for your organization. If a user’s device does not support modern versions of the Microsoft Authenticator App, they will not be able to complete authentications with the app. We recommend having these users use an OATH verification code in the Microsoft Authenticator App to complete two-factor authentication.
+Microsoft will also periodically retire older versions of the Authenticator App to maintain a high security bar for your organization. If a user’s device doesn't support modern versions of the Microsoft Authenticator App, they can't sign with the app. We recommend having these users use an OATH verification code in the Microsoft Authenticator App to complete two-factor authentication.
 
 ## Next steps
 
-- To get started with passkeys, see [Enable Microsoft Authenticator passkey sign in (preview)](how-to-enable-authenticator-passkey.md).
+- To get started with passkeys, see [Enable passkeys in Microsoft Authenticator sign in (preview)](how-to-enable-authenticator-passkey.md).
 
 - For more information about passwordless sign-in, see [Enable passwordless sign-in with the Microsoft Authenticator](howto-authentication-passwordless-phone.md).
 
