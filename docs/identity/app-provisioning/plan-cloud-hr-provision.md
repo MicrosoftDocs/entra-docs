@@ -209,7 +209,7 @@ We recommend the following production configuration:
 
 The cloud HR app to Active Directory user provisioning solution requires the deployment of one or more Microsoft Entra Connect provisioning agents. These agents must be deployed on servers that run Windows Server 2016 or greater. The servers must have a minimum of 4-GB RAM and .NET 4.7.1+ runtime. Ensure that the host server has network access to the target Active Directory domain.
 
-To prepare the on-premises environment, the Microsoft Entra Connect provisioning agent configuration wizard registers the agent with your Microsoft Entra tenant, [opens ports](~/identity/app-proxy/application-proxy-add-on-premises-application.md#open-ports), [allows access to URLs](~/identity/app-proxy/application-proxy-add-on-premises-application.md#allow-access-to-urls), and supports [outbound HTTPS proxy configuration](~/identity/saas-apps/workday-inbound-tutorial.md#how-do-i-configure-the-provisioning-agent-to-use-a-proxy-server-for-outbound-http-communication).
+To prepare the on-premises environment, the Microsoft Entra Connect provisioning agent configuration wizard registers the agent with your Microsoft Entra tenant, [opens ports](../../global-secure-access/how-to-configure-connectors.md), [allows access to URLs](../../global-secure-access/how-to-configure-connectors.md), and supports [outbound HTTPS proxy configuration](~/identity/saas-apps/workday-inbound-tutorial.md#how-do-i-configure-the-provisioning-agent-to-use-a-proxy-server-for-outbound-http-communication).
 
 The provisioning agent configures a [Global Managed Service Account (GMSA)](~/identity/hybrid/cloud-sync/how-to-prerequisites.md#group-managed-service-accounts)
 to communicate with the Active Directory domains.
