@@ -21,7 +21,6 @@ This article describes known issues that you may experience when you use Microso
 ## Tenant creation and management
 
 ### Using your admin email to create a local customer account prevents you from administering the tenant
-<!--This might be fixed too. Have to check with the PMs.-->
 
 If you're the admin who created the external tenant, and you use the same email address as your admin account to create a local customer account in that same tenant, you can't sign in directly to the tenant with admin privileges.
 
@@ -31,14 +30,6 @@ If you're the admin who created the external tenant, and you use the same email 
 
 - When creating a local customer account, use a different email address than the one used by the admin who created the tenant.
 - If you've already created a customer account with the same email address as the admin, sign out of the admin center, and then use `https://entra.microsoft.com` instead of `https://entra.microsoft.com/<tenantID>` or `<tenantName>.onmicrosoft.com` to sign in with the correct admin account.
-
-## Applications and app registration
-
-### Missing app roles in the admin center
-
-When you navigate to the **App registrations** section in the admin center and open an app, you may notice that **App roles** section is not visible.
-
-**Workaround**: You can query an update the app roles using the Microsoft Graph API. For more information, see the [appRole resource type](/graph/api/resources/approle).
 
 ## Token version in Web API
 
@@ -56,6 +47,7 @@ When you create your own web API in an external tenant (without using the app cr
 1. Choose to edit the manifest.
 1. Change the **accessTokenAcceptedVersion** property from null to **2**.
 
-## Next steps
+## Related content
 
-See also [Supported features in Microsoft Entra External ID](concept-supported-features-customers.md)
+See also [Supported features in Microsoft Entra External ID](concept-supported-features-customers.md).
+```
