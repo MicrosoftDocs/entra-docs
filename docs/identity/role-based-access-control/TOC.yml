@@ -51,7 +51,7 @@
   - name: Assign roles
     items:
     - name: Assign roles to users
-      href: manage-roles-portal.md
+      href: manage-roles-portal.yml
     - name: Assign roles to a user at different scopes
       href: assign-roles-different-scopes.md
     - name: Create a role-assignable group
@@ -69,7 +69,7 @@
   - name: Create custom roles
     items: 
     - name: Create a custom role
-      href: custom-create.md
+      href: custom-create.yml
     - name: Create custom roles for enterprise apps
       href: custom-enterprise-apps.md
     - name: Create unlimited app registrations

@@ -10,7 +10,7 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: sample
-ms.date: 06/23/2023
+ms.date: 04/23/2024
 ms.custom: developer, devx-track-dotnet
 #Customer intent: As a dev, devops, I want to learn about how to configure a sample ASP.NET Core web app to sign in and sign out users with my external tenant
 ---
@@ -57,20 +57,21 @@ In this article, you'll register a web application in the Microsoft Entra admin 
 
 ## Clone or download sample web application
 
-To get the web app sample code, you can do either of the following tasks:
+To obtain the sample application, you can either clone it from GitHub or download it as a .zip file.
 
-- [Download the .zip file](https://github.com/Azure-Samples/ms-identity-ciam-dotnet-tutorial/archive/refs/heads/main.zip). Extract the sample app file to a folder where the total length of the path is 260 or fewer characters.
-- Clone the sample web application from GitHub by running the following command:
+- To clone the sample, open a command prompt and navigate to where you wish to create the project, and enter the following command:
 
-    ```powershell
+    ```console
     git clone https://github.com/Azure-Samples/ms-identity-ciam-dotnet-tutorial.git
     ```
+
+- [Download the .zip file](https://github.com/Azure-Samples/ms-identity-ciam-dotnet-tutorial/archive/refs/heads/main.zip). Extract it to a file path where the length of the name is fewer than 260 characters. 
 
 ## Configure the application
 
 1. Navigate to the root folder of the sample you have downloaded and directory that contains the ASP.NET Core sample app:
 
-    ```powershell
+    ```console
     cd 1-Authentication\1-sign-in-aspnet-core-mvc
     ```
 
@@ -83,7 +84,7 @@ To get the web app sample code, you can do either of the following tasks:
 
 1. From your shell or command line, execute the following commands:
 
-    ```powershell
+    ```console
     dotnet run
     ```
 
@@ -95,10 +96,11 @@ To get the web app sample code, you can do either of the following tasks:
 
     :::image type="content" source="media/tutorial-web-app-dotnet-sign-in-sign-in-out/display-aspnet-welcome.png" alt-text="Screenshot of sign in into a ASP.NET Core web app.":::
 
-1. To sign-out from the application, select the **Sign out** button.
+1. To sign out from the application, select the **Sign out** button.
 
-## Next steps
+## See also
 
+- [Use our multi-part tutorial series to build this ASP.NET web application from scratch](tutorial-web-app-dotnet-sign-in-prepare-app.md)
 - [Enable password reset](how-to-enable-password-reset-customers.md)
 - [Customize the default branding](how-to-customize-branding-customers.md)
 - [Configure sign-in with Google](how-to-google-federation-customers.md)
