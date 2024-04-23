@@ -194,7 +194,7 @@ To learn more, see the [Automate employee mover tasks when they change jobs usin
 
 ---
 
-### General Availability - Microsoft Graph Activity Logs
+### General Availability - Microsoft Graph activity logs
 
 **Type:** New feature    
 **Service category:** Microsoft Graph    
