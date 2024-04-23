@@ -44,7 +44,7 @@ Only certain events recorded in the Activity Logs are needed to see application 
 
 1. In the left-hand navigation underneath **Activity**, browse to **Audit logs**.
 
-1. Filter the audit logs by using the information included in the the [Audit logs](#Audit-logs) section to select only the needed logs to view permission activity for your applications.
+1. Filter the audit logs by using the information included in the the [Audit logs](#audit-logs) section to select only the needed logs to view permission activity for your applications.
 
 1. Use **Manage view** on the top command bar to edit the columns shown. Select the **Date** column to view more detailed information per audit log.
 
@@ -63,7 +63,7 @@ To view the activity logs for a resource application:
 
 1. In the left-hand navigation underneath **Activity**, browse to **Audit logs**.
 
-1. Filter the audit logs by using the information included in the the [Audit logs](#Audit-logs) section to select only the needed logs to view permission activity for your applications.
+1. Filter the audit logs by using the information included in the [Audit logs](#audit-logs) section to select only the needed logs to view permission activity for your applications.
 
 1. Use **Manage view** on the top command bar to edit the columns shown. Select the **Date** column to view more detailed information per audit log.
 
@@ -82,5 +82,5 @@ The following table outlines the scenarios and audit values available for the gr
 
 ## Next steps
 
-- [How to access Activity Logs through Microsoft Graph and PowerShell](monitoring-health/howto-analyze-activity-logs-with-microsoft-graph.md)
-- [Microsoft Entra audit log categories and activities](monitoring-health/reference-audit-activities.md)
+- [How to access Activity Logs through Microsoft Graph and PowerShell](~/monitoring-health/howto-analyze-activity-logs-with-microsoft-graph.md)
+- [Microsoft Entra audit log categories and activities](~/monitoring-health/reference-audit-activities.md)
