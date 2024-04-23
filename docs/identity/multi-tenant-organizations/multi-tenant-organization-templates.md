@@ -1,6 +1,6 @@
 ---
-title: Multitenant organization templates
-description: Learn about multitenant organization templates in Microsoft Entra ID.
+title: Multitenant organization optional policy templates
+description: Learn about multitenant organization optional policy templates in Microsoft Entra ID.
 author: rolyon
 manager: amycolannino
 ms.service: entra-id
@@ -12,7 +12,7 @@ ms.custom: it-pro
 #Customer intent: As a dev, devops, or it admin, I want to
 ---
 
-# Multitenant organization templates
+# Multitenant organization optional policy templates
 
 Administrators staying in control of their resources is a guiding principle for multitenant organization collaboration. Cross-tenant access settings are required for each tenant-to-tenant relationship. Tenant administrators explicitly configure cross-tenant access partner configurations and identity synchronization settings for partner tenants inside the multitenant organization.
 
