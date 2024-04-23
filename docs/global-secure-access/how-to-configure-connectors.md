@@ -32,54 +32,6 @@ The Microsoft Entra private network connector requires a server running Windows 
 * For more information, see [private network connectors](../identity/app-proxy/application-proxy-connectors.md#requirements-and-deployment)
 * For more information, see [Determine which .NET framework versions are installed](/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed).
 
-> 
-> **HTTP 2.0**
->
->  If you're installing the connector on *Windows Server 2019* or later, you must disable `HTTP2` protocol support in the `WinHttp` component for *Kerberos Constrained Delegation* to properly work. This is disabled by default in earlier versions of supported operating systems. Adding the following registry key and restarting the server disables it on Windows Server 2019. Note that this is a machine-wide registry key.
->
-> ```
-> Windows Registry Editor Version 5.00
->
-> [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\WinHttp]
-> "EnableDefaultHTTP2"=dword:00000000
-> ```
->
-> The key can be set via PowerShell with the following command:
->
-> ```
-> Set-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\WinHttp\' -Name EnableDefaultHTTP2 -Value 0
-> ```
-
-
-> [!WARNING]
-> If you've deployed Microsoft Entra Password Protection Proxy, do not install Microsoft Entra application proxy and Microsoft Entra Password Protection Proxy together on the same machine. Microsoft Entra application proxy and Microsoft Entra Password Protection Proxy install different versions of the Microsoft Entra Connect Agent Updater service. These different versions are incompatible when installed together on the same machine.
-
-#### Transport Layer Security (TLS) requirements
-
-The Windows connector server must have TLS 1.2 enabled before you install the private network connector.
-
-To enable TLS 1.2:
-
-1. Set registry keys.
-
-   ```
-   Windows Registry Editor Version 5.00
-
-   [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2]
-   [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Client]
-   "DisabledByDefault"=dword:00000000
-   "Enabled"=dword:00000001
-   [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Server]
-   "DisabledByDefault"=dword:00000000
-   "Enabled"=dword:00000001
-   [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework\v4.0.30319]
-   "SchUseStrongCrypto"=dword:00000001
-   ```
-
-1. Restart the server.
-
-> [!NOTE]
-> Microsoft is updating Azure services to use TLS certificates from a different set of Root Certificate Authorities (CAs). This change is being made because the current CA certificates do not comply with one of the CA/Browser Forum Baseline requirements. For more information, see [Azure TLS certificate changes](/azure/security/fundamentals/tls-certificate-changes).
 
 #### Recommendations for the connector server
 
