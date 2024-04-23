@@ -18,7 +18,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Extensions.Logging;
 using Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents.TokenIssuanceStart;
-using Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents.WebJobsAuthenticationEventResponse;
 using Microsoft.Azure.WebJobs.Extensions.WebJobsAuthenticationEvents;
 
 namespace AuthEventTrigger
@@ -27,9 +26,9 @@ namespace AuthEventTrigger
     {
         [FunctionName("onTokenIssuanceStart")]
         public static WebJobsAuthenticationEventResponse Run(
-        // [AuthenticationEventsTrigger] WebJobsTokenIssuanceStartRequest request, ILogger log)
-        // The AuthenticationEventsTrigger attribute can be used to specify and audience app ID, authority URL and authorized party app id. This is an alternative route to setting up Authorization values instead of Environment variables or EzAuth
-            [AuthenticationEventsTrigger(AudienceAppId = "Enter custom authentication extension app ID here",
+        // [WebJobsAuthenticationEventsTriggerAttribute] WebJobsTokenIssuanceStartRequest request, ILogger log)
+        // The WebJobsAuthenticationEventsTriggerAttribute attribute can be used to specify and audience app ID, authority URL and authorized party app id. This is an alternative route to setting up Authorization values instead of Environment variables or EzAuth
+            [WebJobsAuthenticationEventsTriggerAttribute(AudienceAppId = "Enter custom authentication extension app ID here",
                                          AuthorityUrl = "Enter authority URI here", 
                                          AuthorizedPartyAppId = "Enter the Authorized Party App Id here")]WebJobsTokenIssuanceStartRequest request, ILogger log)
         {
