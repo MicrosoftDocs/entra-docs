@@ -208,7 +208,8 @@ Posting a to-do...
 Retrieving to-do's from server...
 To-do data:
 ID: 1
-User ID: f4e54f8b-acec-4ef4-90e9-5bb358c8770b
+User ID: 00001111-aaaa-2222-bbbb-3333cccc4444
+
 Message: Bake bread
 ```
 
