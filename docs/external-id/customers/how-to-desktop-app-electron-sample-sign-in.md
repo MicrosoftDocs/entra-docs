@@ -78,7 +78,8 @@ If you choose to download the `.zip` file, extract the sample app file to a fold
 
     ```powershell
     cd 1-Authentication\3-sign-in-electron\App
-    ```)
+    ```
+ 
 1. Run the following commands to install app dependencies:
 
     ```powershell
@@ -115,12 +116,9 @@ You can now test the sample Electron desktop app. After you run the app, the des
 
     :::image type="content" source="media/how-to-desktop-app-electron-sample-sign-in/desktop-app-electron-view-claims.png" alt-text="Screenshot of view token claims in an electron desktop app.":::
 
-## Next steps
+## See also
 
 - [Enable password reset](how-to-enable-password-reset-customers.md).
-
 - [Customize the default branding](how-to-customize-branding-customers.md).
-
 - [Configure sign-in with Google](how-to-google-federation-customers.md).
-
 - [Explore the Electron desktop app sample code](https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial/tree/main/1-Authentication/3-sign-in-electron#about-the-code).
