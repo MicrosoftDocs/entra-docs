@@ -1074,7 +1074,7 @@ Released: March 2017
 Microsoft Entra Connect Sync
 * Fixed an issue which causes Microsoft Entra Connect wizard to fail if the display name of the Microsoft Entra Connector doesn't contain the initial onmicrosoft.com domain assigned to the Microsoft Entra tenant.
 * Fixed an issue which causes Microsoft Entra Connect wizard to fail while making connection to SQL database when the password of the Sync Service Account contains special characters such as apostrophe, colon and space.
-* Fixed an issue which causes the error "The dimage has an anchor that is different than the image" to occur on a Microsoft Entra Connect server in staging mode, after you have temporarily excluded an on-premises AD object from syncing and then included it again for syncing.
+* Fixed an issue which causes the error "The image has an anchor that is different than the image" to occur on a Microsoft Entra Connect server in staging mode, after you have temporarily excluded an on-premises AD object from syncing and then included it again for syncing.
 * Fixed an issue which causes the error “The object located by DN is a phantom” to occur on a Microsoft Entra Connect server in staging mode, after you have temporarily excluded an on-premises AD object from syncing and then included it again for syncing.
 
 AD FS management
