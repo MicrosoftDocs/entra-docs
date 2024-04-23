@@ -1,6 +1,6 @@
 ---
-title: Constraints and details about multitenant organizations
-description: Learn about constraints and details when you work with multitenant organizations in Microsoft Entra ID.
+title: Limitations in multitenant organizations
+description: Learn about the limitations when you work with multitenant organizations in Microsoft Entra ID.
 author: rolyon
 manager: amycolannino
 ms.service: entra-id
@@ -12,18 +12,18 @@ ms.custom: it-pro
 #Customer intent: As a dev, devops, or it admin, I want to
 ---
 
-# Constraints and details about multitenant organizations
+# Limitations in multitenant organizations
 
-This article describes constraints and details to be aware of when you work with multitenant organization functionality across Microsoft Entra ID and Microsoft 365. To provide feedback about the multitenant organization functionality on UserVoice, see [Microsoft Entra UserVoice](https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789?category_id=360892). We watch UserVoice closely so that we can improve the service.
+This article describes limitations to be aware of when you work with multitenant organization functionality across Microsoft Entra ID and Microsoft 365. To provide feedback about the multitenant organization functionality on UserVoice, see [Microsoft Entra UserVoice](https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789?category_id=360892). We watch UserVoice closely so that we can improve the service.
 
 ## Scope
 
-The constraints and details described in this article have the following scope.
+The limitations described in this article have the following scope.
 
 | Scope | Description |
 | --- | --- |
-| In scope | - Microsoft Entra administrator constraints related to multitenant organizations to support seamless collaboration experiences in new Teams, with reciprocally provisioned B2B members |
-| Related scope | - Microsoft 365 admin center constraints related to multitenant organizations<br/>- Microsoft 365 multitenant organization people search experiences<br/>- Cross-tenant synchronization constraints related to Microsoft 365 |
+| In scope | - Microsoft Entra administrator limitations related to multitenant organizations to support seamless collaboration experiences in new Teams, with reciprocally provisioned B2B members |
+| Related scope | - Microsoft 365 admin center limitations related to multitenant organizations<br/>- Microsoft 365 multitenant organization people search experiences<br/>- Cross-tenant synchronization limitations related to Microsoft 365 |
 | Out of scope | - Cross-tenant synchronization unrelated to Microsoft 365<br/>- End user experiences in new Teams<br/>- End user experiences in Power BI<br/>- Tenant migration or consolidation |
 | Unsupported scenarios | - Seamless collaboration experience across multitenant organizations in classic Teams<br/>- Self-service for multitenant organizations larger than 100 tenants<br/>- Multitenant organizations in Azure Government or Microsoft Azure operated by 21Vianet<br/>- Cross-cloud multitenant organizations |
 
