@@ -82,5 +82,5 @@ The following table outlines the scenarios and audit values available for the gr
 
 ## Next steps
 
-- [How to access Activity Logs through Microsoft Graph and PowerShell](~/monitoring-health/howto-analyze-activity-logs-with-microsoft-graph.md)
-- [Microsoft Entra audit log categories and activities](~/monitoring-health/reference-audit-activities.md)
+- [How to access Activity Logs through Microsoft Graph and PowerShell](../monitoring-health/howto-analyze-activity-logs-with-microsoft-graph.md)
+- [Microsoft Entra audit log categories and activities](../monitoring-health/reference-audit-activities.md)
