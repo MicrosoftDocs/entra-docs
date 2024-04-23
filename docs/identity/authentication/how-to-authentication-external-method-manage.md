@@ -111,8 +111,10 @@ POST https://graph.microsoft.com/beta/policies/authenticationMethodsPolicy/authe
     "discoveryUrl": "https://adatum.com/.well-known/openid-configuration"
   }
 }
-
+```
 On success, a 201 will be returned:
+
+```json
 HTTP/1.1 201 CREATED
 {
     "@odata.context": "https://graph.microsoft.com/beta/$metadata#authenticationMethodConfigurations/$entity",
