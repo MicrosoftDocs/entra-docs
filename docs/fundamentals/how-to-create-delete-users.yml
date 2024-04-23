@@ -168,7 +168,7 @@ procedureSection:
         - The **Authorization info** field is unavailable for external users.
         - Under **Job Information**, the employee and manager-related information is unavailable for external users.
       - |
-        (Optional) Select **Next: Assignments**. Complete the [Assignments](#assignments) tab as described earlier in this article, but note that the **Add group** and **Add role** options are unavailable for external users.
+        (Optional) Select **Next: Assignments**. Complete the [Assignments](#assignments) tab as described earlier in this article, but note that the **Add administrative unit** and **Add role** options are unavailable for external users.
       - |
         Select the **Review + create** button to create the new user.
 
@@ -212,18 +212,6 @@ procedureSection:
 
           :::image type="content" source="media/how-to-create-delete-users/add-group-assignment.png" alt-text="Screenshot of the add group assignment process.":::
 
-        **To assign a role to the new user**:
-
-        1. Select **+ Add role**.
-        1. From the menu that appears, choose up to 20 roles from the list and select the **Select** button.
-        1. Select the **Review + create** button.
-
-        **To add an administrative unit to the new user**:
-
-        1. Select **+ Add administrative unit**.
-        1. From the menu that appears, choose one administrative unit from the list and select the **Select** button.
-        1. Select the **Review + create** button.
-
         ### Review and create
 
         The final tab captures several key details from the user creation process. Review the details and select the **Create** button if everything looks good.
@@ -232,6 +220,10 @@ procedureSection:
       Invite an external user
     summary: |
       The overall process for inviting an external guest user is similar, except for a few details on the **Basics** tab and the email invitation process. You can't assign external users to administrative units. 
+
+      > [!NOTE]
+      > This feature is in preview for external tenants.
+
     steps: 
       - |
         Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
