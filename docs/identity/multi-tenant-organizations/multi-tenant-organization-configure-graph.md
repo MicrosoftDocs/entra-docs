@@ -36,7 +36,7 @@ If you instead want to use the Microsoft 365 admin center to configure a multite
 
 ![Icon for the owner tenant.](../../media/common/icons/entra-id.png)<br/>**Owner tenant**
 
-These steps describe how to use Microsoft Graph Explorer, but you can also use Postman, or another REST API client.
+These steps describe how to use Microsoft Graph Explorer, but you can also use another REST API client.
 
 1. Start [Microsoft Graph Explorer tool](https://aka.ms/ge).
 
@@ -296,7 +296,7 @@ You can remove any member tenant, including your own. You can't remove owner ten
 
 ![Icon for the member tenant.](../../media/common/icons/entra-id-purple.png)<br/>**Member tenant**
 
-The Cairo tenant created a multitenant organization and added the Berlin and Athens tenants. In these steps you sign in to the Berlin tenant and join the multitenant organization created by Cairo.
+The Cairo tenant created a multitenant organization and added the Berlin and Athens tenants. In these steps, you sign in to the Berlin tenant and join the multitenant organization created by Cairo.
 
 1. Start [Microsoft Graph Explorer tool](https://aka.ms/ge).
 
