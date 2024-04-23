@@ -25,9 +25,13 @@ introduction: |
 
   [!INCLUDE [GDPR-related guidance](~/../azure-docs-pr/includes/gdpr-hybrid-note.md)]
 
-  ## Types of users in workforce tenants
+  ## Types of users
 
-  Before you create or invite a new user, take some time to review the types of users, their authentication methods, and their access within your Microsoft Entra workforce tenant. For example, do you need to create an internal guest, an internal user, or an external guest? Does your new user need guest or member privileges? A Microsoft Entra workforce tenant has the following user types:
+  Before you create or invite a new user, take some time to review the types of users, their authentication methods, and their access within your Microsoft Entra workforce tenant. For example, do you need to create an internal guest, an internal user, or an external guest? Does your new user need guest or member privileges? 
+
+  ### Users in workforce tenants
+
+  A Microsoft Entra workforce tenant has the following user types:
 
   - **Internal member**: These users are most likely full-time employees in your organization.
   - **Internal guest**: These users have an account in your tenant, but have guest-level privileges. It's possible they were created within your tenant prior to the availability of B2B collaboration.
@@ -40,7 +44,7 @@ introduction: |
 
   Reviewing the default user permissions may also help you determine the type of user you need to create. For more information, see [Set default user permissions](users-default-permissions.md).
 
-  ## Types of users in external tenants
+  ### Users in external tenants
 
   A Microsoft Entra tenant in an *external* configuration is used exclusively for [Microsoft Entra External ID](~/external-id/customers/overview-customers-ciam.md) scenarios. An external tenant can include the following user types:
 
