@@ -22,7 +22,7 @@ This topic describes how external authentication providers connect to Entra ID, 
 
 Entra ID external authentication methods are the way to allow customers to integrate external authentication providers as a method to satisfy the authentication requirements for the resource/application being requested.  
 
-When a user signs in, that tenant's policies are evaluated. The authentication requirements are determined based on the resource being accessed. Any number of policies may apply to a given sign-in given the parameters of each policy. Those parameters include users and groups, applications, platform, sign-in risk level, and others. Based on the authentication requirements, the user may need use an additional factor that satisfies the MFA requirement.  This factor will need to complement the type of first factor. 
+When a user signs in, that tenant's policies are evaluated. The authentication requirements are determined based on the resource being accessed. Any number of policies may apply to a given sign-in given the parameters of each policy. Those parameters include users and groups, applications, platform, sign-in risk level, and others. Based on the authentication requirements, the user may need to use an additional factor that satisfies the MFA requirement.  This factor will need to complement the type of first factor. 
 
 The user’s authentication will be treated as having met the MFA requirement once Entra ID has validated that the first factor completed with Entra ID and the second factor completed with the external provider satisfy the requirement for two or more types of methods from "something you know", "something you have", "something you are."
 
@@ -56,7 +56,7 @@ The flow to satisfy authentication that includes an external method is as follow
 
 An application representing the integration is required for EAMs to issue the id_token_hint.  This application can either be created in each tenant that will use the external provider or it can be created as single multi-tenant application that admins enabling the integration will consent for their tenant.  
 
-Using a multi-tenant application reduces the liklihood of misconfiguration in each tenant and enables providers to make changes to metadata (for example, reply URLs) in one place, rather than requiring each tenant to make changes. To configure as a multi-tenant application, the provider admin must first:
+Using a multi-tenant application reduces the likelihood of misconfiguration in each tenant and enables providers to make changes to metadata (for example, reply URLs) in one place, rather than requiring each tenant to make changes. To configure as a multi-tenant application, the provider admin must first:
 
 1. Create an Entra ID tenant if they don't have one yet.
 1. Using that tenant, register an application in Entra ID. 
@@ -109,7 +109,7 @@ DiscoveryUrl | This is the host url of the external identity provider’s [OIDC 
 
 Each time Entra ID loads a ExternalAuthenticationMethodConfiguration entry, it will verify that the prefix of the **authorization_endpoint** retrieved through OIDC Discovery using the host url matches one of the reply URLs registered to the provider identified by the AppId. This verification ties the AppId to the HostUrl and ensures they go together.
 
-### Add an EAM by using Miccrosoft Graph
+### Add an EAM by using Microsoft Graph
 
 To add the EAM, the customer admin will need the values listed in the previous section  (**ExternalAuthenticationMethodConfiguration**: Name, AppId, ClientId, and DiscoveryUrl) and will call the Microsoft Graph authentication methods policy endpoint to POST a new configuration. Note that the user will need the Policy.ReadWrite.AuthenticationMethod permission to manage this policy.
 
