@@ -13,7 +13,7 @@ ms.custom: mode-api, devx-track-azurecli, devx-track-linux
 ms.devlang: azurecli
 
 appliesto:
-zone_pivot_groups: zone-pivot-groups.yml
+zone_pivot_groups: identity-mi-methods
 ---
 
 # Configure managed identities on Azure virtual machines (VMs)
