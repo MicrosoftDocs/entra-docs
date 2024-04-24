@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 04/24/2022
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and ScreenSteps so that I can control who has access to ScreenSteps, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -36,9 +36,6 @@ In this tutorial, you configure and test Microsoft Entra single sign-on in a tes
 * ScreenSteps supports **SP** initiated SSO.
 * ScreenSteps supports [Automated user provisioning](screensteps-provisioning-tutorial.md).
 
-> [!NOTE]
-> Identifier of this application is a fixed string value so only one instance can be configured in one tenant.
-
 ## Add ScreenSteps from the gallery
 
 To configure the integration of ScreenSteps into Microsoft Entra ID, you need to add ScreenSteps from the gallery to your list of managed SaaS apps.
@@ -54,16 +51,23 @@ To configure the integration of ScreenSteps into Microsoft Entra ID, you need to
 
 ## Configure and test Microsoft Entra SSO for ScreenSteps
 
-Configure and test Microsoft Entra SSO with ScreenSteps using a test user called **B.Simon**. For SSO to work, you need to establish a link relationship between a Microsoft Entra user and the related user in ScreenSteps.
+Configure and test Microsoft Entra SSO with ScreenSteps using a test user called **B.Simon**.
 
 To configure and test Microsoft Entra SSO with ScreenSteps, perform the following steps:
 
+1. **[Create ScreenSteps SSO](#create-screensteps-sso)** - to create the single sign-on settings on application side.
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
     1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
     1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
-1. **[Configure ScreenSteps SSO](#configure-screensteps-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create ScreenSteps test user](#create-screensteps-test-user)** - to have a counterpart of B.Simon in ScreenSteps that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
+
+<a name='create-screensteps-sso'></a>
+
+## Create ScreenSteps SSO
+
+1. In a different web browser window, log into your ScreenSteps account site as an administrator. This is where you will perform the steps in the how-to instructions.
+1. In a different web browser window, open the ScreenSteps help article [How to Set up Single Sign-on](https://help.screensteps.com/a/1097728-how-to-set-up-single-sign-on). This article will guide you through the steps of setting up ScreenSteps to work with Microsoft Entra ID.
+1. After answering a few questions in the help article you will be asked to "Select how you will set up SSO". Select Microsoft Entra ID and continue on with [Configure Microsoft Entra SSO](#configure-azure-ad-sso).
 
 <a name='configure-azure-ad-sso'></a>
 
@@ -78,21 +82,24 @@ Follow these steps to enable Microsoft Entra SSO.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
-1. On the **Basic SAML Configuration** section, perform the following step:
+1. On the **Basic SAML Configuration** section, perform the following steps:
 
-    In the **Sign-on URL** text box, type a URL using the following pattern:
-    `https://<tenantname>.ScreenSteps.com`
+    a. In the **Identifier (Entity ID)** text box, copy and paste the **Entity ID** value from ScreenSteps.
 
-	> [!NOTE]
-	> This value is not real. Update this value with the actual Sign-On URL, which is explained later in this tutorial.
+    b. In the **Sign-on URL** text box, copy and paste the **SAML Consumer URL** value from ScreenSteps.
+
+1. On the **Set up ScreenSteps** section, copy the appropriate URL(s) as per your requirement.
+
+	![Screenshot shows to copy configuration URLs.](common/copy-configuration-urls.png)
+
+    a. Copy and paste the **Login URL** into the **Remote Login URL** field in ScreenSteps.
+
+    b. Copy and paste the **Logout URL** into the **Logout URL** field in ScreenSteps.
+
 
 1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Certificate (Base64)** from the given options as per your requirement and save it on your computer.
 
 	![The Certificate download link](common/certificatebase64.png)
-
-1. On the **Set up ScreenSteps** section, copy the appropriate URL(s) as per your requirement.
-
-	![Copy configuration URLs](common/copy-configuration-urls.png)
 
 <a name='create-an-azure-ad-test-user'></a>
 
@@ -124,67 +131,17 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 1. If you're expecting any role value in the SAML assertion, in the **Select Role** dialog, select the appropriate role for the user from the list and then click the **Select** button at the bottom of the screen.
 1. In the **Add Assignment** dialog, click the **Assign** button.
 
-## Configure ScreenSteps SSO
-
-1. In a different web browser window, log into your ScreenSteps company site as an administrator.
-
-1. Click **Account Settings**.
-
-    ![Screenshot that shows Account management](./media/screensteps-tutorial/account.png "Account management")
-
-1. Click **Single Sign-on**.
-
-    ![Screenshot that shows "Single Sign-on" selected.](./media/screensteps-tutorial/groups.png "Remote authentication")
-
-1. Click **Create Single Sign-on Endpoint**.
-
-    ![Screenshot that shows Remote authentication](./media/screensteps-tutorial/title.png "Remote authentication")
-
-1. In the **Create Single Sign-on Endpoint** section, perform the following steps:
-
-    ![Screenshot that shows Create an authentication endpoint](./media/screensteps-tutorial/settings.png "Create an authentication endpoint")
-
-	a. In the **Title** textbox, type a title.
-
-	b. From the **Mode** list, select **SAML**.
-
-	c. Click **Create**.
-
-1. **Edit** the new endpoint.
-
-    ![Screenshot that shows to edit endpoint](./media/screensteps-tutorial/certificate.png "Edit endpoint")
-
-1. In the **Edit Single Sign-on Endpoint** section, perform the following steps:
-
-    ![Screenshot that shows Remote authentication endpoint](./media/screensteps-tutorial/authentication.png "Remote authentication endpoint")
-
-    a. Click **Upload new SAML Certificate file**, and then upload the certificate, which you have downloaded previously.
-
-	b. Paste **Login URL** value into the **Remote Login URL** textbox.
-
-	c. Paste **Logout URL** value into the **Log out URL** textbox.
-
-	d. Select a **Group** to assign users to when they are provisioned.
-
-	e. Click **Update**.
-
-	f. Copy the **SAML Consumer URL** to the clipboard and paste in to the **Sign-on URL** textbox in **Basic SAML Configuration** section.
-
-	g. Return to the **Edit Single Sign-on Endpoint**.
-
-	h. Click the **Make default for account** button to use this endpoint for all users who log into ScreenSteps. Alternatively you can click the **Add to Site** button to use this endpoint for specific sites in **ScreenSteps**.
-
-### Create ScreenSteps test user
-
-In this section, you create a user called Britta Simon in ScreenSteps. Work with [ScreenSteps Client support team](https://www.screensteps.com/contact) to add the users in the ScreenSteps platform. Users must be created and activated before you use single sign-on.
-
 ## Test SSO
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to ScreenSteps Sign-on URL where you can initiate the login flow. 
+* Switch to the **Testing and Activation** tab in ScreenSteps.
 
-* Go to ScreenSteps Sign-on URL directly and initiate the login flow from there.
+* Click the **Save & Copy** button to copy the **SAML Test URL** to the clipboard.
+
+* Open an Incognito browser window and paste the URL in.
+
+* Login with the `B.Simon@contoso.com` test user you created in the previous step. You should be granted access to ScreenSteps and `B.Simon@contoso.com` should appear in the list of Users in ScreenSteps.
 
 * You can use Microsoft My Apps. When you click the ScreenSteps tile in the My Apps, this will redirect to ScreenSteps Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
