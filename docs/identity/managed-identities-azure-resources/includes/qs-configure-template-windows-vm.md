@@ -222,4 +222,4 @@ To remove a user-assigned identity from a VM, your account needs the [Virtual Ma
 
 ## Next steps
 
-- [Managed identities for Azure resources overview](~/identity/managed-identities-azure-resources/overview.mdoverview.md).
+- [Managed identities for Azure resources overview](~/identity/managed-identities-azure-resources/overview.md).
