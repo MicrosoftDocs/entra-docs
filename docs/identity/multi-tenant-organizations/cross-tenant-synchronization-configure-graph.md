@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: multitenant-organizations
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 04/23/2024
 ms.author: rolyon
 ms.custom: it-pro
 
@@ -1446,7 +1446,7 @@ You are likely trying to create a policy that already exists, possibly from a pr
     (Get-MgPolicyCrossTenantAccessPolicyPartnerIdentitySynchronization -CrossTenantAccessPolicyConfigurationPartnerTenantId $SourceTenantId).UserSyncInbound
     ```
 
-1. If you have an existing policy, you might need to make an update using Update-MgPolicyCrossTenantAccessPolicyPartnerIdentitySynchronization command to enable user synchronization.
+1. If you have an existing policy, you might need to make an update using [Set-MgPolicyCrossTenantAccessPolicyPartnerIdentitySynchronization](/powershell/module/microsoft.graph.identity.signins/set-mgpolicycrosstenantaccesspolicypartneridentitysynchronization) command to enable user synchronization.
 
     ```powershell
     $Params = @{
@@ -1454,7 +1454,7 @@ You are likely trying to create a policy that already exists, possibly from a pr
             isSyncAllowed = $true
         }
     }
-    Update-MgPolicyCrossTenantAccessPolicyPartnerIdentitySynchronization -CrossTenantAccessPolicyConfigurationPartnerTenantId $SourceTenantId -BodyParameter $Params
+    Set-MgPolicyCrossTenantAccessPolicyPartnerIdentitySynchronization -CrossTenantAccessPolicyConfigurationPartnerTenantId $SourceTenantId -BodyParameter $Params
     ```
 
 # [Microsoft Graph](#tab/ms-graph)
