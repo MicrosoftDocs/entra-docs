@@ -81,14 +81,12 @@ Follow these steps to enable Microsoft Entra SSO.
     | **Identifier** |
     |-------|
     | `https://secure.inlogik.com/<COMPANYNAME>` |
-    | `https://<CUSTOMDOMAIN>/SAMLBASE` |
 
     b. In the **Reply URL** text box, type a URL using one of the following patterns:
 
     | **Reply URL** |
     |-------|
     | `https://secure.inlogik.com/<COMPANYNAME>/saml/acs` |
-    | `https://<CUSTOMDOMAIN>/SAMLBASE/saml/acs` |
 
 5. Click **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
 
@@ -97,7 +95,6 @@ Follow these steps to enable Microsoft Entra SSO.
     | **Sign-on URL** |
     |-----|
     | `https://secure.inlogik.com/<COMPANYNAME>` |
-    | `https://<CUSTOMDOMAIN>/SAMLBASE` |
 
 	> [!NOTE]
 	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign-on URL. Contact [ExpenseMe Pro (by Inlogik) Client support team](https://www.inlogik.com/contact) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
