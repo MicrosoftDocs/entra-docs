@@ -78,24 +78,6 @@ The limitations described in this article have the following scope.
 
 - Using Microsoft Entra cross-tenant synchronization to target hybrid identities that have been converted to B2B users has not been tested in source of authority conflicts and is not supported.
 
-## Origin tenant and origin user references
-
-- For supported clouds, multitenant organizations, and targets of cross-tenant synchronization, B2B users have a new user property named `originTenantInfo`.
-
-- The originTenantInfo property contains references to a B2B user's Microsoft Entra origin tenant and Microsoft Entra origin user by way of the `originTenantId` and `originId` properties.
-
-- These properties are only populated for B2B users after invitation redemption. They are not populated before invitation redemption, or whenever origin information may be unavailable.
-
-- For supported clouds, such as Microsoft Entra public cloud, all B2B users should have received intra-cloud references to origin tenant and origin user, subject to invitation redemption.
-
-- For multitenant organizations, all B2B users in any multitenant organization tenant receive these properties at time of multitenant organization formation, subject to invitation redemption.
-
-- For target users of cross-tenant synchronization, target users receive these properties at time of synchronization, subject to auto-redemption being enabled.
-
-- Multitenant organization collaboration capabilities, like Microsoft Teams and Viva Engage for multitenant organizations, rely on these origin tenant and origin user references.
-
-- If your B2B user object is missing origin tenant and origin user references, [reset the redemption status](../../external-id/reset-redemption-status.md), and then redeem again to properly populate the origin tenant and origin user references.
-
 ## Cross-tenant synchronization deprovisioning
 
 - By default, when provisioning scope is reduced while a synchronization job is running, users fall out of scope and are soft deleted, unless [Target Object Actions for Delete](cross-tenant-synchronization-configure.md#step-8-optional-define-who-is-in-scope-for-provisioning-with-scoping-filters) is disabled. For more information, see [Deprovisioning](cross-tenant-synchronization-overview.md#deprovisioning) and [Define who is in scope for provisioning](cross-tenant-synchronization-configure.md#step-8-optional-define-who-is-in-scope-for-provisioning-with-scoping-filters).
