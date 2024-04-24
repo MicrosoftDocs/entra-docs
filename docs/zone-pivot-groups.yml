@@ -176,12 +176,27 @@ groups:
 # Owner: barclayn
 - id: identity-mi-methods
   title: Managed identities methods
-  prompt: Select an option
+  prompt: Choose an option
   pivots:
   - id: identity-mi-methods-azp
     title: Azure portal
   - id: identity-mi-methods-azcli
     title: Azure CLI
+  - id: identity-mi-methods-powershell
+    title: PowerShell
+  - id: identity-mi-methods-arm
+    title: Resource Manager
+  - id: identity-mi-methods-rest
+    title: REST
+# Owner: barclayn
+- id: identity-configure-mi-methods
+  title: Managed identities for Azure resources
+  prompt: Select an option
+  pivots:
+  - id: identity-mi-methods-azp
+    title: Portal
+  - id: identity-mi-methods-azcli
+    title: CLI
   - id: identity-mi-methods-powershell
     title: PowerShell
   - id: identity-mi-methods-arm

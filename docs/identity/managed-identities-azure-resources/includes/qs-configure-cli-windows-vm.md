@@ -12,7 +12,7 @@ In this article, using the Azure CLI, you learn how to perform the following man
 
 If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/free/) before continuing.
 
-### Prerequisites
+## Prerequisites
 
 - If you're unfamiliar with managed identities for Azure resources, see [What are managed identities for Azure resources?](~/identity/managed-identities-azure-resources/overview.md). To learn about system-assigned and user-assigned managed identity types, see [Managed identity types](~/identity/managed-identities-azure-resources/overview.md#managed-identity-types).
 

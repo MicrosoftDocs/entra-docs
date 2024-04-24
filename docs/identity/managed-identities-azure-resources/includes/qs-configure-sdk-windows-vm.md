@@ -7,7 +7,7 @@ ms.topic: include
 
 In this article, you learn how to enable and remove managed identities for Azure resources for an Azure VM, using an Azure SDK.
 
-### Prerequisites
+## Prerequisites
 
 [!INCLUDE [msi-qs-configure-prereqs](~/includes/entra-msi-qs-configure-prereqs.md)]
 

@@ -7,9 +7,9 @@ ms.topic: include
 
 In this article, using the Azure Resource Manager deployment template, you learn how to perform the following managed identities for Azure resources operations on an Azure VM:
 
-### Prerequisites
+## Prerequisites
 
-- If you're unfamiliar with using Azure Resource Manager deployment template, check out the [overview section](overview.md). **Be sure to review the [difference between a system-assigned and user-assigned managed identity](overview.md#managed-identity-types)**.
+- If you're unfamiliar with using Azure Resource Manager deployment template, check out the [overview section](~/identity/managed-identities-azure-resources/overview.md). **Be sure to review the [difference between a system-assigned and user-assigned managed identity](~/identity/managed-identities-azure-resources/overview.md#managed-identity-types)**.
 - If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/free/) before continuing.
 
 ## Azure Resource Manager templates
@@ -98,7 +98,7 @@ The following example shows you how to remove a system-assigned managed identity
 In this section, you assign a user-assigned managed identity to an Azure VM using Azure Resource Manager template.
 
 > [!NOTE]
-> To create a user-assigned managed identity using an Azure Resource Manager Template, see [Create a user-assigned managed identity](./how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-arm#create-a-user-assigned-managed-identity).
+> To create a user-assigned managed identity using an Azure Resource Manager Template, see [Create a user-assigned managed identity](../how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-arm#create-a-user-assigned-managed-identity).
 
 ### Assign a user-assigned managed identity to an Azure VM
 
@@ -222,4 +222,4 @@ To remove a user-assigned identity from a VM, your account needs the [Virtual Ma
 
 ## Next steps
 
-- [Managed identities for Azure resources overview](overview.md).
+- [Managed identities for Azure resources overview](~/identity/managed-identities-azure-resources/overview.mdoverview.md).
