@@ -15,7 +15,7 @@ summary: |
   These frequently asked questions (FAQs) about Microsoft Entra business-to-business (B2B) collaboration are periodically updated to include new topics.
   
   > [!IMPORTANT]
-  > - **Starting January 4, 2021**, Google is [deprecating WebView sign-in support](https://developers.googleblog.com/2020/08/guidance-for-our-effort-to-block-less-secure-browser-and-apps.html). If you're using Google federation or self-service sign-up with Gmail, you should [test your line-of-business native applications for compatibility](google-federation.md#deprecation-of-web-view-sign-in-support).
+  > - **Starting January 4, 2021**, Google [deprecated WebView sign-in support](https://developers.googleblog.com/2020/08/guidance-for-our-effort-to-block-less-secure-browser-and-apps.html). If you're using Google federation or self-service sign-up with Gmail, you should [test your line-of-business native applications for compatibility](google-federation.md#deprecation-of-web-view-sign-in-support).
   > - The [email one-time passcode](one-time-passcode.md) feature is now turned on by default for all new tenants and for any existing tenants where you haven't explicitly turned it off. When this feature is turned off, the fallback authentication method is to prompt invitees to create a Microsoft account.
 
 sections:
