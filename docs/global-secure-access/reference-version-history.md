@@ -90,7 +90,7 @@ June 20, 2023: Released for download. This version is only available for install
 - Updated partner notices.
 
 ### Fixed issues
-- Silent registration of connector with credentials. For more information, see [Create an unattended installation script for the Microsoft Entra private network connector](../identity/app-proxy/application-proxy-register-connector-powershell.md).
+- Silent registration of connector with credentials. For more information, see [Create an unattended installation script for the Microsoft Entra private network connector](how-to-register-connector-powershell.md).
 - Fixed dropping of `Secure` and `HttpOnly` attributes on the cookies passed by backend servers when there are trailing spaces in these attributes.
 - Fixed services crash when back-end server of an application sets "Set-Cookie" header with empty value.
 
