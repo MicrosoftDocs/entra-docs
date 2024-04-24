@@ -80,7 +80,7 @@ Required: Make Prerequisites the first H2 after the H1.
 [!INCLUDE [Microsoft Entra ID Governance license](../includes/entra-entra-governance-license.md)]
 
 
-To assign a custom security attribute to the scope of a workflow, you must have a custom security attributes set  and defintions created in your tenant. For a guide on adding a custom security attribute set, and setting its definitions, in your tenant, see: [Add or deactivate custom security attribute definitions in Microsoft Entra ID](../fundamentals/custom-security-attributes-add.md). When you have created a custom set attribute and set its definitions you must also assign this attribute to a user. For a guide on this, see: [Assign custom security attributes to a user](../identity/users/users-custom-security-attributes.md#assign-custom-security-attributes-to-a-user).
+To assign a custom security attribute to the scope of a workflow, you must have a custom security attribute set and it's definitions created in your tenant. For a guide on adding a custom security attribute set, and setting its definitions, in your tenant, see: [Add or deactivate custom security attribute definitions in Microsoft Entra ID](../fundamentals/custom-security-attributes-add.md). When you have created a custom set attribute and set its definitions you must also assign this attribute to a user. For a guide on this, see: [Assign custom security attributes to a user](../identity/users/users-custom-security-attributes.md#assign-custom-security-attributes-to-a-user).
 
 ## Add a Custom Security Attribute as the scope of a workflow using the Microsoft Entra admin center
 
