@@ -16,11 +16,11 @@ ms.custom: enterprise-apps
 #customer intent: As an admin, I want to understand how to view the activity logs of what permissions are being granted and revoked for applications in my directory so that I can review permissions granted to apps and remediate risks due to overprivileged apps.
 ---
 
-# View Activity logs for application permissions within your directory
+# View activity logs for application permissions within your directory
 
 Microsoft Entra is a platform that allows you to create and manage applications for your organization. You can grant different permissions to your applications, such as accessing data, or performing actions. However, you might want to review the permissions that are granted to your applications from time to time, to ensure that they are appropriate and secure. 
 
-One way to review permissions granted to your apps is by using Activity Logs, which record the activities and events that occur in your Microsoft Entra applications. Activity Logs help you to monitor the usage and performance of your applications, and to identify any potential issues or risks. By reviewing the Activity Logs, you can see what permissions your applications have and whether they're complying with your policies and expectations.
+One way to review permissions granted to your apps is by using activity logs, which record the activities and events that occur in your Microsoft Entra applications. Activity logs help you to monitor the usage and performance of your applications, and to identify any potential issues or risks. By reviewing the activity logs, you can see what permissions your applications have and whether they're complying with your policies and expectations.
 
 In this article, you will be able to:
 - View activity logs to see API permission granting and removing activity for a specific application.
@@ -44,7 +44,7 @@ Only certain events recorded in the Activity Logs are needed to see application 
 
 1. In the left-hand navigation underneath **Activity**, browse to **Audit logs**.
 
-1. Filter the audit logs by using the information included in the the [Audit logs](#audit-logs) section to select only the needed logs to view permission activity for your applications.
+1. Filter the audit logs by using the information included in the [Audit logs](#audit-logs) section to select only the needed logs to view permission activity for your applications.
 
 1. Use **Manage view** on the top command bar to edit the columns shown. Select the **Date** column to view more detailed information per audit log.
 
