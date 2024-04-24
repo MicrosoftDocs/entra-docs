@@ -6,7 +6,7 @@ author: billmath
 manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 04/24/2024
+ms.date: 04/26/2024
 ms.subservice: hybrid-cloud-sync
 ms.author: billmath
 
@@ -79,7 +79,7 @@ In the Microsoft Entra Connect Synchronization Rules editor, you need to create 
 
     - **Name:** Give the rule a meaningful name
     - **Description:** Add a meaningful description
-    - **Connected System:** Choose the AD connector that you're writing the custom sync rule for
+    - **Connected System:** Choose the Microsoft Entra connector that you're writing the custom sync rule for
     - **Connected System Object Type:** Group
     - **Metaverse Object Type:** Group
     - **Link Type:** Join
@@ -111,7 +111,7 @@ You'll also need an outbound sync rule with a link type of JoinNoFlow and the sc
 
     - **Name:** Give the rule a meaningful name
     - **Description:** Add a meaningful description
-    - **Connected System:** Choose the Microsoft Entra connector that you're writing the custom sync rule for
+    - **Connected System:** Choose the AD connector that you're writing the custom sync rule for
     - **Connected System Object Type:** Group
     - **Metaverse Object Type:** Group
     - **Link Type:** JoinNoFlow
