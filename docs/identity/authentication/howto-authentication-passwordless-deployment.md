@@ -96,14 +96,24 @@ The wizard will use your inputs to craft a step-by-step plan for you to follow.
 ### Platform Credential for macOS
 
 To enable Platform Credential for macOS; 
-- Your Mac must have an operating system of at least macOS 13 Ventura (macOS 14 Sonoma is recommended), and that the configuration steps are done through the [Microsoft Intune admin center](https://intune.microsoft.com/#home).
+- Your Mac must have an operating system of at least macOS 13 Ventura (macOS 14 Sonoma is recommended)
 - The device must be MDM enrolled with SSO extension payload configured to support Platform Single Sign-On (PSSO) with the UserSecureEnclaveKey.
 
 > [!NOTE]
 >
 > There is a known issue that the Authentication Strength blade currently represents both Platform Credential for macOS and Windows Hello For Business with the same Authentication method name, **Windows Hello For Business**. Work is in progress to represent Platform Credential for macOS separately. While configuring custom authentication strength that needs to use Platform Credential for macOS, please use "Windows Hello For Business" until this is fixed.
 
-To enable use of Platform Credential as a phishing resistant passkey , enable FIDO2 security key authentication method in Authentication Methods Policies
+#### Enable Platform Credential for macOS as a passkey
+
+Platform Credential for macOS can be used as phishing resistant passkey, and is only available to users of the Secure Enclave authenticated method. The ability to enable Platform Credential for macOS as a passkey is available on the following browsers:
+
+- Safari 
+- Google Chrome (requires Company Portal version 5.2404.0 or later and the [Chrome extension](https://chromewebstore.google.com/detail/windows-accounts/ppnbnpeolgkicgegkbkbjmhlideopiji))
+
+Enabling Platform Credential for macOS as a passkey is a two-step process that needs to be completed by both the admin and the user. 
+
+1. When setting up the Platform Credential for macOS as an admin, refer to the steps in [Enable passkeys (FIDO2) for your organization](/entra/identity/authentication/how-to-enable-passkey-fido2#enable-passkey-authentication-method).
+1. As an end user, you need to enable this through the **Settings** app on your Mac. Refer to the steps in [Join a Mac device with Microsoft Entra ID using Company Portal](../devices/device-join-microsoft-entra-company-portal.md#enable-platform-credential-for-macos-for-use-as-a-passkey).
 
 ### macOS Platform single sign-on with SmartCard
 

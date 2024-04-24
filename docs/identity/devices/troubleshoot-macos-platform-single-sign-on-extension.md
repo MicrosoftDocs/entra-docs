@@ -150,6 +150,13 @@ If a user has insufficient permissions to complete Microsoft Entra ID join and r
 1. Under **Microsoft Entra ID join and registration settings**, ensure that the **All** option is selected in the toggle menu.
 1. Select **Save** to apply the changes.
 
+### Troubleshoot Passkey issues
+
+Platform Credential as Passkey option is only available if Secure Enclave is configured as the authentication method for Platform SSO. You should check the following:
+
+1. Ensure that your admin has set up your device with Secure Enclave as the authentication method, and has [enabled passkeys (FIDO2) for your organization](/entra/identity/authentication/how-to-enable-passkey-fido2#enable-passkey-authentication-method).
+1. As a user, check that you have enabled Company Portal as a passkey provider in your device settings. Navigate to your **Settings** app, **Passwords** and **Password options**, and ensure that **Company Portal** is enabled.
+
 ## See also
 
 - [Join a Mac device with Microsoft Entra ID during the out of box experience](./device-join-macos-platform-single-sign-on.md)
