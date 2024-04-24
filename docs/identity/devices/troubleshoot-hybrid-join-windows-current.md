@@ -417,7 +417,9 @@ The "Attempt Status" field under the "AzureAdPrt" field provides the status of t
 
 Use Event Viewer to look for the log entries logged by the Microsoft Entra CloudAP plug-in during PRT acquisition. 
 
-1. In Event Viewer, open the Microsoft Entra Operational event logs. They're stored under **Applications and Services Log** > **Microsoft** > **Windows** > **Microsoft Entra ID**. 
+<!-- docutune:disable -->
+1. In Event Viewer, open the Microsoft Entra Operational event logs. They're stored under **Applications and Services Log** > **Microsoft** > **Windows** > **AAD**. 
+<!-- docutune:enable -->
 
    > [!NOTE]
    > The CloudAP plug-in logs error events in the operational logs, and it logs the info events in the analytics logs. The analytics and operational log events are both required to troubleshoot issues. 

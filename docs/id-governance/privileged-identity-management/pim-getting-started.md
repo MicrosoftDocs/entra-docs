@@ -45,7 +45,7 @@ Here are the tasks we recommend for you to prepare Privileged Identity Managemen
 
 1. [Configure Microsoft Entra role settings](pim-how-to-change-default-settings.md).
 1. [Give eligible assignments](pim-how-to-add-role-to-user.md).
-1. [Allow eligible users to activate their Microsoft Entra role just-in-time](pim-how-to-activate-role.md).
+1. [Allow eligible users to activate their Microsoft Entra role just-in-time](pim-how-to-activate-role.yml).
 
 ## Prepare PIM for Azure roles
 
@@ -54,7 +54,7 @@ Here are the tasks we recommend for you to prepare Privileged Identity Managemen
 1. [Discover Azure resources](pim-resource-roles-discover-resources.md)
 1. [Configure Azure role settings](pim-resource-roles-configure-role-settings.md).
 1. [Give eligible assignments](pim-resource-roles-assign-roles.md).
-1. [Allow eligible users to activate their Azure roles just-in-time](pim-resource-roles-activate-your-roles.md).
+1. [Allow eligible users to activate their Azure roles just-in-time](pim-resource-roles-activate-your-roles.yml).
 
 ## Navigate to your tasks
 

@@ -261,7 +261,7 @@ Define a log storage and retention strategy, design, and implementation to facil
 
   Use the Microsoft Graph API to ingest risk events. See [Use the Microsoft Graph identity protection APIs](/graph/api/resources/identityprotection-overview).
 
-  You can stream Microsoft Entra logs to Azure Monitor logs. See [Integrate Microsoft Entra logs with Azure Monitor logs](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.md).
+  You can stream Microsoft Entra logs to Azure Monitor logs. See [Integrate Microsoft Entra logs with Azure Monitor logs](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.yml).
 
 - **Hybrid infrastructure operating system security logs**. All hybrid identity infrastructure operating system logs should be archived and carefully monitored as a tier-0 system, because of the surface-area implications. Include the following elements:
 

@@ -183,6 +183,6 @@ Or, you can specify a tenant by URL to access security information.
 
 To get started, see the tutorials to [enable self-service password reset](tutorial-enable-sspr.md) and [enable Microsoft Entra multifactor authentication](tutorial-enable-azure-mfa.md).
 
-Learn how to [enable combined registration in your tenant](howto-registration-mfa-sspr-combined.md) or [force users to re-register authentication methods](howto-mfa-userdevicesettings.md#manage-user-authentication-options).
+Learn how to [enable combined registration in your tenant](howto-registration-mfa-sspr-combined.md) or [force users to re-register authentication methods](howto-mfa-userdevicesettings.yml).
 
 You can also review the [available methods for Microsoft Entra multifactor authentication and SSPR](concept-authentication-methods.md).
