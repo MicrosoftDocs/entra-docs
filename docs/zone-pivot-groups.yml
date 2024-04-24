@@ -176,7 +176,7 @@ groups:
 # Owner: barclayn
 - id: identity-mi-methods
   title: Managed identities methods
-  prompt: Choose an option
+  prompt: Select an option:
   pivots:
   - id: identity-mi-methods-azp
     title: Azure portal
@@ -188,21 +188,25 @@ groups:
     title: Resource Manager
   - id: identity-mi-methods-rest
     title: REST
+  - id: identity-mi-methods-sdk
+    title: SDK
 # Owner: ryanwi
 - id: identity-wif-mi-methods
   title: Workload identity federation for managed identities methods
   prompt: Choose an option
   pivots:
   - id: identity-wif-mi-methods-azp
-    title: Azure portal
+    title: Portal
   - id: identity-wif-mi-methods-powershell
-    title: Azure PowerShell
+    title: PowerShell
   - id: identity-wif-mi-methods-azcli
-    title: Azure CLI
+    title: CLI
   - id: identity-wif-mi-methods-arm
-    title: Resource Manager
+    title: Template
   - id: identity-wif-mi-methods-rest
     title: REST
+  - id: identity-mi-methods-sdk
+    title: SDK
 # Owner: ryanwi
 - id: identity-wif-apps-methods
   title: Workload identity federation for apps methods

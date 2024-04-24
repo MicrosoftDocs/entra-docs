@@ -1,25 +1,9 @@
 ---
-title: Configure managed identities on Azure VM using REST
-description: Step-by-step instructions for configuring a system and user-assigned managed identities on an Azure VM using CURL to make REST API calls.
-
 author: barclayn
-manager: amycolannino
-ms.service: entra-id
-ms.subservice: managed-identities
-ms.topic: quickstart
-ms.tgt_pltfrm: na
-ms.date: 05/25/2023
 ms.author: barclayn
-
-ms.custom: mode-api, devx-track-azurecli
-ms.devlang: azurecli
+ms.date: 04/24/2024
+ms.topic: include
 ---
-
-# Configure Managed identities for Azure resources on an Azure VM using REST API calls
-
-[!INCLUDE [preview-notice](~/includes/entra-msi-preview-notice.md)]
-
-Managed identities for Azure resources provide Azure services with an automatically managed system identity in Microsoft Entra ID. You can use this identity to authenticate to any service that supports Microsoft Entra authentication, without having credentials in your code. 
 
 In this article, using CURL to make calls to the Azure Resource Manager REST endpoint, you learn how to perform the following managed identities for Azure resources operations on an Azure VM:
 
