@@ -14,7 +14,7 @@ ms.date: 06/05/2023
 
 # Tutorial: Create a .NET MAUI app
 
-This tutorial is part 2 of a series that demonstrates how to create a .NET Multi-platform App UI (.NET MAUI) shell app. In [Part 1 of this series](./tutorial-desktop-app-maui-sign-in-prepare-tenant.md) you registered an application and configured user flows in your Microsoft Entra ID for customers tenant. This tutorial demonstrates how to create a .NET MAUI shell app, add a custom Microsoft Authentication Library (MSAL) client helper to initialize the MSAL SDK, install required libraries and include an image resource.
+This tutorial is part 2 of a series that demonstrates how to create a .NET Multi-platform App UI (.NET MAUI) shell app. In [Part 1 of this series](./tutorial-desktop-app-maui-sign-in-prepare-tenant.md) you registered an application and configured user flows in your external tenant. This tutorial demonstrates how to create a .NET MAUI shell app, add a custom Microsoft Authentication Library (MSAL) client helper to initialize the MSAL SDK, install required libraries and include an image resource.
 
 In this tutorial, you'll:
 
@@ -44,7 +44,7 @@ Wait for the project to be created and its dependencies to be restored.
 
 ## Add MSAL SDK support using MSAL helper classes
 
-MSAL client enables developers to acquire security tokens from Microsoft Entra ID for customers tenant to authenticate and access secured web APIs. In this section, you download files that makes up MSALClient.
+MSAL client enables developers to acquire security tokens from an external tenant to authenticate and access secured web APIs. In this section, you download files that makes up MSALClient.
 
 Download the following files into a folder in your computer:
 

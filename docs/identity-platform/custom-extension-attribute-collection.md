@@ -1,5 +1,5 @@
 ---
-title: Create attribute collection events (preview)
+title: Create a custom authentication extension for attribute collection start and submit events (preview)
 description: Learn how to develop and register a Microsoft Entra custom authentication extensions REST API. The custom authentication extension allows you to add logic to attribute collection.  
 author: msmimart
 manager: CelesteDG
@@ -12,7 +12,7 @@ titleSuffix: Microsoft identity platform
 #customer intent: As a Microsoft Entra External ID customer, I want to extend the user sign-up experience by adding custom actions before and after attribute collection, so that I can customize the attribute collection process and validate user entries.
 ---
 
-# Custom authentication extensions for attribute collection start and submit events (preview)
+# Create a custom authentication extension for attribute collection start and submit events (preview)
 
 **Applies to:** Microsoft Entra External ID customer configurations
 

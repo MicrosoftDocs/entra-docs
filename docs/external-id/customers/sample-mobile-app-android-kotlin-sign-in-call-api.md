@@ -1,6 +1,6 @@
 ---
 title: Sign in users and call a web API in sample Android app 
-description: Learn how to authenticate users in a Microsoft Entra ID for customers tenant using a sample Android (Kotlin) app.
+description: Learn how to authenticate users in an external tenant using a sample Android (Kotlin) app.
 
 author: henrymbuguakiarie
 manager: mwongerapk
@@ -12,7 +12,7 @@ ms.subservice: customers
 ms.topic: sample
 ms.date: 04/04/2024
 ms.custom: developer
-#Customer intent: As a developer, I want to authenticate users and call a protected web API from a sample Android mobile app so that I can experience how Microsoft Entra ID for customers work.
+#Customer intent: As a developer, I want to authenticate users and call a protected web API from a sample Android mobile app so that I can experience how Microsoft Entra External ID works.
 ---
 
 # Sign in users and call a protected web API in sample Android (Kotlin) app
@@ -31,7 +31,7 @@ In this article, you do the following tasks:
 ## Prerequisites  
 
 - <a href="https://developer.android.com/studio" target="_blank">Android Studio</a>.
-- Microsoft Entra External ID for customers tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>. 
+- An external tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>. 
 - An API registration that exposes at least one scope (delegated permissions) and one app role (application permission) such as *ToDoList.Read*. If you haven't already, follow the instructions for [call an API in a sample Android mobile app](sample-native-authentication-android-sample-app-call-web-api.md) to have a functional protected ASP.NET Core web API. Make sure you complete the following steps:
 
     - Register a web API application
@@ -67,12 +67,11 @@ Once you've registered both your client app and web API and you've exposed the A
 
 ## Clone sample Android mobile application  
 
-To obtain the sample application, clone the sample by following these steps:
+To obtain the sample application, you can either clone it from GitHub or download it as a .zip file.
 
-1. Open Terminal and navigate to a directory where you want to keep the code.  
-1. Clone the application from GitHub by running the following command:  
+- To clone the sample, open a command prompt and navigate to where you wish to create the project, and enter the following command:
  
-   ```bash 
+   ```console 
    git clone https://github.com/Azure-Samples/ms-identity-ciam-browser-delegated-android-sample
    ```
  
@@ -108,7 +107,6 @@ You've configured the app and it's ready to run.
 To build and run your app, follow these steps:  
  
 1. In the toolbar, select your app from the run configurations menu.
-  
 1. In the target device menu, select the device that you want to run your app on.  
  
    If you don't have any devices configured, you need to either create an Android Virtual Device to use the Android Emulator or connect a physical Android device.  
@@ -120,3 +118,6 @@ To build and run your app, follow these steps:
 ## Related content
 
 - [Sign in users in sample Android (Kotlin) mobile app by using native authentication](how-to-run-native-authentication-sample-android-app.md).
+- [Enable password reset](how-to-enable-password-reset-customers.md).
+- [Customize the default branding](how-to-customize-branding-customers.md).
+- [Configure sign-in with Google](how-to-google-federation-customers.md).

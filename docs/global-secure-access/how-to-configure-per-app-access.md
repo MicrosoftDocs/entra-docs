@@ -23,7 +23,7 @@ To configure a Global Secure Access app, you must have:
 - The **Global Secure Access Administrator** and **Application Administrator** roles in Microsoft Entra ID
 - The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 
-To manage Microsoft Entra application proxy connector groups, which is required for Global Secure Access apps, you must have:
+To manage Microsoft Entra private network connector groups, which is required for Global Secure Access apps, you must have:
 
 - An **Application Administrator** role in Microsoft Entra ID
 - Microsoft Entra ID P1 or P2 licenses
@@ -42,7 +42,7 @@ To configure Per-App Access, you need to have a connector group with at least on
 
 To summarize, the overall process is as follows:
 
-1. [Create a connector group with at least one active application proxy connector](#create-an-application-proxy-connector-group).
+1. [Create a connector group with at least one active private network connector](#create-a-private-network-connector-group).
     - If you already have a connector group, make sure you're on the latest version.
 
 1. [Create a Global Secure Access app](#create-a-global-secure-access-application).
@@ -53,9 +53,9 @@ To summarize, the overall process is as follows:
 
 1. [Enable Microsoft Entra Private Access](#enable-microsoft-entra-private-access).
 
-## Create an application proxy connector group
+## Create a private network connector group
 
-To configure a Global Secure Access app, you must have a connector group with at least one active application proxy connector.
+To configure a Global Secure Access app, you must have a connector group with at least one active private network connector.
 
 If you don't already have a connector set up, see [Configure connectors](how-to-configure-connectors.md).
 

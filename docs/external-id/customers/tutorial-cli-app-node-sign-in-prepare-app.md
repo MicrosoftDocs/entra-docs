@@ -1,6 +1,6 @@
 ---
 title: "Tutorial: Create a Node.js CLI app for authentication"
-description: Learn how to build a Node.js CLI app that signs in users in a Microsoft Entra ID for customers tenant
+description: Learn how to build a Node.js CLI app that signs in users in an external tenant
  
 author: Dickson-Mwendia
 manager: mwongerapk
@@ -13,12 +13,12 @@ ms.topic: tutorial
 ms.date: 08/04/2023
 ms.custom: developer, devx-track-js
 
-#Customer intent: As a dev, devops, I want to learn how to build a Node.js CLI application that signs in users in a Microsoft Entra ID for customers tenant.
+#Customer intent: As a dev, devops, I want to learn how to build a Node.js CLI application that signs in users in an external tenant.
 ---
 
 # Tutorial: Prepare a Node.js CLI application for authentication
 
-This tutorial is part 2 of a series that demonstrates building a Node.js command line interface (CLI) app and preparing it for authentication using the Microsoft Entra admin center. In [part 1 of this series](./tutorial-cli-app-node-sign-in-prepare-tenant.md), you registered an application and configured user flows in your Microsoft Entra ID for customers tenant. The client application you build uses the [OAuth 2.0 Authorization Code Flow](~/identity-platform/v2-oauth2-auth-code-flow.md) with Proof Key for Code Exchange (PKCE) for secure user authentication.
+This tutorial is part 2 of a series that demonstrates building a Node.js command line interface (CLI) app and preparing it for authentication using the Microsoft Entra admin center. In [part 1 of this series](./tutorial-cli-app-node-sign-in-prepare-tenant.md), you registered an application and configured user flows in your external tenant. The client application you build uses the [OAuth 2.0 Authorization Code Flow](~/identity-platform/v2-oauth2-auth-code-flow.md) with Proof Key for Code Exchange (PKCE) for secure user authentication.
 
 In this tutorial: 
 

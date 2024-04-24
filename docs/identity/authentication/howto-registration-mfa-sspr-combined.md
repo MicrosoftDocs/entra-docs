@@ -62,4 +62,4 @@ If you need help, see [troubleshoot combined security info registration](howto-r
 
 Review how you can [enable self-service password reset](tutorial-enable-sspr.md) and [enable Microsoft Entra multifactor authentication](tutorial-enable-azure-mfa.md) in your tenant.
 
-If needed, learn how to [force users to re-register authentication methods](howto-mfa-userdevicesettings.md#manage-user-authentication-options).
+If needed, learn how to [force users to re-register authentication methods](howto-mfa-userdevicesettings.yml).

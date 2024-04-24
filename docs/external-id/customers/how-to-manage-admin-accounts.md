@@ -1,6 +1,6 @@
 ---
 title: Add and manage admin accounts
-description: Learn how to add and manage admin accounts in your external tenant with Microsoft Entra ID for customers.
+description: Learn how to add and manage admin accounts in your external tenant with Microsoft Entra External ID.
  
 author: msmimart
 manager: celestedg
@@ -15,12 +15,12 @@ ms.custom: it-pro
 ---
 # Add and manage admin accounts
 
-In Microsoft Entra ID for customers, an external tenant represents your directory of consumer and guest accounts. With an administrator role, work and guest accounts can manage the tenant.
+In Microsoft Entra External ID, an external tenant represents your directory of consumer and guest accounts. With an administrator role, work and guest accounts can manage the tenant.
 
 ## Prerequisites
 
 - If you haven't already created your own Microsoft Entra external tenant, create one now. <!--(how-to-create-external-tenant-portal.md)-->
-- Understand user accounts in Microsoft Entra ID for customers.
+- Understand user accounts in Microsoft Entra External ID.
 - Understand user roles to control resource access.
 
 ## Add an admin account
@@ -112,7 +112,7 @@ To delete an existing user, you must have a *Global Administrator* role assignme
 1. Select the user you want to delete.
 1. Select **Delete**, and then **Yes** to confirm the deletion.
 
-The user is deleted and no longer appears on the **All users** page. The user can be seen on the **Deleted users** page for the next 30 days and can be restored during that time. For more information about restoring a user, see [Restore or remove a recently deleted user using Microsoft Entra ID](~/fundamentals/users-restore.md).
+The user is deleted and no longer appears on the **All users** page. The user can be seen on the **Deleted users** page for the next 30 days and can be restored during that time. For more information about restoring a user, see [Restore or remove a recently deleted user using Microsoft Entra ID](~/fundamentals/users-restore.yml).
 
 ## Protect administrative accounts
 

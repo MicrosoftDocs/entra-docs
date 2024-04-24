@@ -1,6 +1,6 @@
 ---
 title: Sign in users in sample iOS (Swift) mobile app 
-description: Learn how to authenticate users in a Microsoft Entra ID for customers tenant using a sample iOS (Swift) application.
+description: Learn how to authenticate users in an external tenant using a sample iOS (Swift) application.
 
 author: henrymbuguakiarie
 manager: mwongerapk
@@ -12,7 +12,7 @@ ms.subservice: customers
 ms.topic: sample
 ms.date: 04/04/2024
 ms.custom: developer
-#Customer intent: As a developer, I want to authenticate users from a sample iOS mobile app so that I can experience how Microsoft Entra ID for customers work.
+#Customer intent: As a developer, I want to authenticate users from a sample iOS mobile app so that I can experience how Microsoft Entra External ID works.
 ---
 
 # Sign in users in sample iOS (Swift) mobile app
@@ -30,7 +30,7 @@ In this article, you do the following tasks:
 ## Prerequisites  
 
 - <a href="https://developer.apple.com/xcode/resources/" target="_blank">Xcode</a>.
-- Microsoft Entra External ID for customers tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
+- An external tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
 
 ## Register an application
 
@@ -52,12 +52,11 @@ Configure delegated permission to Microsoft Graph to enable your client applicat
 
 ## Clone sample iOS mobile application
 
-To obtain the sample application, clone the sample by following these steps:
+To obtain the sample application, you can either clone it from GitHub or download it as a .zip file.
 
-1. Open Terminal and navigate to a directory where you want to keep the code.  
-1. Clone the application from GitHub by running the following command:  
+- To clone the sample, open a command prompt and navigate to where you wish to create the project, and enter the following command:
 
-   ```bash 
+   ```console 
    git clone https://github.com/Azure-Samples/ms-identity-ciam-browser-delegated-ios-sample.git
    ```
 
@@ -84,8 +83,10 @@ To build and run your app, follow these steps:
  
 1. To build and run your code, select **Run** from the **Product** menu in Xcode. After a successful build, Xcode will launch the sample app in the Simulator.
 1. Select **Acquire Token Interactively** to request an access token.
-1. If you select **API - Perform GET** to call a protected ASP.NET Core web API, you will get an error. For more information about calling a protected web API, see [Next Step](#next-step) 
+1. If you select **API - Perform GET** to call a protected ASP.NET Core web API, you will get an error. 
 
-## Next Step
+For more information about calling a protected web API, see our [Next steps](#next-steps) 
+
+## Next steps
 
 - [Sign in users and call a protected web API in sample iOS (Swift) app](sample-mobile-app-ios-swift-sign-in-call-api.md).

@@ -1,17 +1,17 @@
 items:  
-- name: Microsoft Entra ID for customers documentation  
+- name: External ID for external-facing apps documentation
   href: index.yml  
 - name: Overview  
   expanded: true  
   items:   
-    - name: What is Microsoft Entra ID for customers?  
+    - name: External ID for external-facing apps  
       href: overview-customers-ciam.md 
     - name: Demo overview
       href: overview-solutions-customers.md
     - name: What's new in docs?
       href: whats-new-docs.md
 - name: Quickstarts
-  expanded: true
+  expanded: false
   items: 
     - name: Start a free trial without an Azure subscription
       href: quickstart-trial-setup.md 
@@ -22,7 +22,7 @@ items:
     - name: Use the Visual Studio Code extension
       href: visual-studio-code-extension.md
 - name: Samples
-  expanded: true
+  expanded: false
   items: 
     - name: Overview of CIAM samples
       href: samples-ciam-all.md
@@ -50,7 +50,7 @@ items:
                   href: sample-web-app-node-sign-in.md
                 - name: Sign in users and call an API
                   href: sample-web-app-node-sign-in-call-api.md
-            - name: ASP.NET
+            - name: ASP.NET Core
               items:
                 - name: Sign in users
                   href: sample-web-app-dotnet-sign-in.md
@@ -112,7 +112,7 @@ items:
             - name: Node.js - sign in users
               href: sample-cli-app-node-sign-in-users.md
 - name: Tutorials
-  expanded: true
+  expanded: false
   items:  
     - name: Single-page app (SPA)
       items: 
@@ -156,11 +156,11 @@ items:
                   href: tutorial-web-app-node-sign-in-prepare-app.md
                 - name: Add sign-in and sign-out
                   href: tutorial-web-app-node-sign-in-sign-out.md
-        - name: ASP.NET
+        - name: ASP.NET Core
           items:
               - name: Prepare tenant
                 href: tutorial-web-app-dotnet-sign-in-prepare-tenant.md
-              - name: Create ASP.NET app
+              - name: Create ASP.NET Core app
                 href: tutorial-web-app-dotnet-sign-in-prepare-app.md
               - name: Sign in and sign out
                 href: tutorial-web-app-dotnet-sign-in-sign-out.md
@@ -172,7 +172,7 @@ items:
                 href: tutorial-web-app-python-flask-sign-in-sign-out.md
     - name: Web API
       items: 
-        - name: Protect ASP.NET API
+        - name: Protect ASP.NET Core API
           items:
             - name: Build a protected API 
               href: tutorial-protect-web-api-dotnet-core-build-app.md
@@ -317,7 +317,7 @@ items:
     - name: Security and governance
       href: concept-security-customers.md
 - name: How-to guides
-  expanded: true
+  expanded: false
   items:
     - name: Authenticate and authorize
       items:
@@ -417,8 +417,6 @@ items:
           href: troubleshooting-known-issues.md
     - name: Management APIs
       items:
-        - name: Microsoft Graph
-          href: microsoft-graph-operations.md
         - name: Tenant management operations
           href: azure-rest-api-operations-tenant-management.md 
 - name: Reference
@@ -427,6 +425,8 @@ items:
       href: reference-user-permissions.md
     - name: Group and application roles support
       href: reference-group-app-roles-support.md
+    - name: Data residency
+      href: ~/fundamentals/data-residency.md
     - name: Company branding CSS template reference guide
       href: ~/fundamentals/reference-company-branding-css-template.md
     - name: Help and support options

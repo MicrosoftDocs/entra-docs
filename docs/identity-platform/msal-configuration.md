@@ -5,7 +5,7 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: 
-ms.date: 09/12/2019
+ms.date: 04/10/2024
 ms.reviewer: shoatman, negoe
 ms.service: identity-platform
 
@@ -114,7 +114,7 @@ The list of authorities that are known and trusted by you. In addition to the au
 | Property | Data Type  | Required | Notes |
 |-----------|-------------|------------|-------|
 | `type` | String | Yes | Specifies the audience your app wants to target. Possible values: `AzureADandPersonalMicrosoftAccount`, `PersonalMicrosoftAccount`, `AzureADMultipleOrgs`, `AzureADMyOrg` |
-| `tenant_id` | String | Yes | Required only when `"type":"AzureADMyOrg"`. Optional for other `type` values. This can be a tenant domain such as `contoso.com`, or a tenant ID such as `72f988bf-86f1-41af-91ab-2d7cd011db46` |
+| `tenant_id` | String | Yes | Required only when `"type":"AzureADMyOrg"`. Optional for other `type` values. This can be a tenant domain such as `contoso.com`, or a tenant ID such as `00001111-aaaa-2222-bbbb-3333cccc4444` |
 
 ### authorization_user_agent
 
@@ -324,7 +324,7 @@ The following example illustrates a basic configuration that specifies the clien
 
 ```javascript
 {
-  "client_id" : "4b0db8c2-9f26-4417-8bde-3f0e3656f8e0",
+  "client_id" : "00001111-aaaa-2222-bbbb-3333cccc4444",
   "redirect_uri" : "msauth://com.microsoft.identity.client.sample.local/1wIqXSqBj7w%2Bh11ZifsnqwgyKrY%3D",
   "broker_redirect_uri_registered": true,
   "authorities" : [

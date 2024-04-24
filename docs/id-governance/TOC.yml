@@ -266,7 +266,7 @@
           href: customize-workflow-email.md
         - name: Check the status of a workflow
           href: check-status-workflow.md
-        - name: Download workflow history reports (Preview)
+        - name: Download workflow history reports
           href: download-workflow-history.md  
         - name: Check execution user scope
           href: check-workflow-execution-scope.md  

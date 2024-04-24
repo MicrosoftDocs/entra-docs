@@ -8,7 +8,7 @@ brand: azure
 
 metadata:
   title: Microsoft Entra External ID documentation
-  description: Learn how to use Microsoft Entra External ID for customers to manage how partners and customers sign in to your applications.
+  description: Learn how to use Microsoft Entra External ID to manage how partners and customers sign in to your applications.
    
   ms.service: entra-external-id
   ms.subservice:
@@ -43,7 +43,7 @@ highlightedContent:
 additionalContent:
   # Supports up to 4 subsections
   sections:
-    - title: Microsoft Entra External ID for customers (CIAM)
+    - title: Microsoft Entra External ID for external-facing apps
       items:
         # Card
         - title: Overview
@@ -69,7 +69,7 @@ additionalContent:
         - title: Customize the sign-in look and feel
           summary: Learn about how to personalize the end-user experience.
           url: ./customers/concept-branding-customers.md        
-    - title: Microsoft Entra External ID for partners (B2B)
+    - title: Microsoft Entra External ID for business guests (B2B)
       items:      
         # Card
         - title: Overview
@@ -90,12 +90,12 @@ additionalContent:
         # Card
         - title: Cross-tenant access
           summary: Configure cross-tenant access settings for B2B collaboration.
-          url: ./cross-tenant-access-settings-b2b-collaboration.md
+          url: ./cross-tenant-access-settings-b2b-collaboration.yml
         # Card
         - title: Self-service sign-up
           summary: Learn about the self-service sign-up user flow. 
           url: ./self-service-sign-up-overview.md 
-    - title: Quickstarts by app type in the external tenant 
+    - title: Quickstarts by app type in the external tenant
       items:
         # Card
         - title: Single-page app (SPA)

@@ -26,7 +26,7 @@ Some federal agencies have deployed modern credentials such as FIDO2 security ke
 
 Learn more:
 
-* [FIDO2 security keys](~/identity/authentication/concept-authentication-passwordless.md#fido2-security-keys)
+* [FIDO2 security keys](~/identity/authentication/concept-authentication-passwordless.md#fido2-security-key-providers)
 * [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/hello-overview)
 * [Overview of Microsoft Entra certificate-based authentication](~/identity/authentication/concept-certificate-based-authentication.md)
 
@@ -37,7 +37,7 @@ Some agencies are modernizing their authentication credentials. There are multip
 ### Modern approaches
 
 * **FIDO2 security keys** are, according to the Cybersecurity & Infrastructure Security Agency (CISA) the gold standard of multifactor authentication
-  * See, [Passwordless authentication options for Microsoft Entra ID, FIDO2 security keys](~/identity/authentication/concept-authentication-passwordless.md#fido2-security-keys)
+  * See, [Passwordless authentication options for Microsoft Entra ID, FIDO2 security keys](~/identity/authentication/concept-authentication-passwordless.md#fido2-security-key-providers)
   * Go to cisa.gov for [More than a Password](https://www.cisa.gov/mfa)
 * **Microsoft Entra certificate authentication** without dependency on a federated identity provider. 
   * This solution includes smart card implementations: Common Access Card (CAC), Personal Identity Verification (PIV), and derived PIV credentials for mobile devices or security keys

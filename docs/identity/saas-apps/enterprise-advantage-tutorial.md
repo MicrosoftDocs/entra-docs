@@ -72,16 +72,30 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
    ![Screenshot shows how to edit Basic SAML Configuration.](common/edit-urls.png "Basic Configuration")
 
-1. On the **Basic SAML Configuration** section, the application is preconfigured and the necessary URLs are already prepopulated with Microsoft Entra. The user needs to save the configuration by clicking the **Save** button.
+1. On the **Basic SAML Configuration** section, perform the following steps:
 
-1. Perform the following step, if you wish to configure the application in **SP** initiated mode:
-
-    In the **Sign-on URL** text box, type a url using one of the following patterns:
+    a. In the **Identifier** text box, type one of the following URLs:
 
     | Environment | URL |
     |-------------|----|
-    | Production| ` https://sso.screeningxchange.com/<CustomerLink> ` |
-    | Staging | ` https://sso.screeningxchange.com/<CustomerLink> ` |
+    | Production| `https://sso.screeningxchange.com/` |
+    | Staging | `https://ssotest.screeningxchange.com/` |
+
+    b. In the **Reply URL** text box, type one of the following URLs:
+
+    | Environment | URL |
+    |-------------|----|
+    | Production| `https://sso.screeningxchange.com/sp/SAML2/POST` |
+    | Staging | `https://ssotest.screeningxchange.com/sp/SAML2/POST` |
+    
+1. Perform the following step, if you wish to configure the application in **SP** initiated mode:
+
+    In the **Sign-on URL** text box, type a URL using one of the following patterns:
+
+    | Environment | URL |
+    |-------------|----|
+    | Production| `https://sso.screeningxchange.com/<CustomerLink>` |
+    | Staging | `https://ssotest.screeningxchange.com/<CustomerLink>` |
     
 	> [!NOTE]
 	> The Sign-on URL value is not real. Update the value with the Sign on URL. Contact [Enterprise Advantage support team](mailto:globaladvantagesupport@fadv.com) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.

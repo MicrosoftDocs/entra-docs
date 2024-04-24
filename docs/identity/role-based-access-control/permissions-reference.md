@@ -20,7 +20,7 @@ ms.custom: generated, it-pro, fasttrack-edit
 
 In Microsoft Entra ID, if another administrator or non-administrator needs to manage Microsoft Entra resources, you assign them a Microsoft Entra role that provides the permissions they need. For example, you can assign roles to allow adding or changing users, resetting user passwords, managing user licenses, or managing domain names.
 
-This article lists the Microsoft Entra built-in roles you can assign to allow management of Microsoft Entra resources. For information about how to assign roles, see [Assign Microsoft Entra roles to users](manage-roles-portal.md). If you are looking for roles to manage Azure resources, see [Azure built-in roles](/azure/role-based-access-control/built-in-roles).
+This article lists the Microsoft Entra built-in roles you can assign to allow management of Microsoft Entra resources. For information about how to assign roles, see [Assign Microsoft Entra roles to users](manage-roles-portal.yml). If you are looking for roles to manage Azure resources, see [Azure built-in roles](/azure/role-based-access-control/built-in-roles).
 
 ## All roles
 
@@ -93,6 +93,7 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [Network Administrator](#network-administrator) | Can manage network locations and review enterprise network design insights for Microsoft 365 Software as a Service applications. | d37c8bed-0711-4417-ba38-b4abe66ce4c2 |
 > | [Office Apps Administrator](#office-apps-administrator) | Can manage Office apps cloud services, including policy and settings management, and manage the ability to select, unselect and publish 'what's new' feature content to end-user's devices. | 2b745bdf-0803-4d80-aa65-822c4493daac |
 > | [Organizational Branding Administrator](#organizational-branding-administrator) | Manage all aspects of organizational branding in a tenant. | 92ed04bf-c94a-4b82-9729-b799a7a4c178 |
+> | [Organizational Messages Approver](#organizational-messages-approver) | Review, approve, or reject new organizational messages for delivery in the Microsoft 365 admin center before they are sent to users. | e48398e2-f4bb-4074-8f31-4586725e205b |
 > | [Organizational Messages Writer](#organizational-messages-writer) | Write, publish, manage, and review the organizational messages for end-users through Microsoft product surfaces. | 507f53e4-4e52-4077-abd3-d2e1558b6ea2 |
 > | [Partner Tier1 Support](#partner-tier1-support) | Do not use - not intended for general use.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 4ba39ca4-527c-499a-b93d-d9b492c50246 |
 > | [Partner Tier2 Support](#partner-tier2-support) | Do not use - not intended for general use.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | e00e864a-17c5-4a4b-9c06-f5b95a8d5bd8 |
@@ -167,12 +168,12 @@ This role also grants the ability to consent for delegated permissions and appli
 > | microsoft.directory/applications/synchronization/standard/read | Read provisioning settings associated with the application object |
 > | microsoft.directory/applicationTemplates/instantiate | Instantiate gallery applications from application templates |
 > | microsoft.directory/auditLogs/allProperties/read | Read all properties on audit logs, excluding custom security attributes audit logs |
-> | microsoft.directory/connectors/create | Create application proxy connectors |
-> | microsoft.directory/connectors/allProperties/read | Read all properties of application proxy connectors |
-> | microsoft.directory/connectorGroups/create | Create application proxy connector groups |
-> | microsoft.directory/connectorGroups/delete | Delete application proxy connector groups |
-> | microsoft.directory/connectorGroups/allProperties/read | Read all properties of application proxy connector groups |
-> | microsoft.directory/connectorGroups/allProperties/update | Update all properties of application proxy connector groups |
+> | microsoft.directory/connectors/create | Create private network connectors |
+> | microsoft.directory/connectors/allProperties/read | Read all properties of private network connectors |
+> | microsoft.directory/connectorGroups/create | Create private network connector groups |
+> | microsoft.directory/connectorGroups/delete | Delete private network connector groups |
+> | microsoft.directory/connectorGroups/allProperties/read | Read all properties of private network connector groups |
+> | microsoft.directory/connectorGroups/allProperties/update | Update all properties of private network connector groups |
 > | microsoft.directory/customAuthenticationExtensions/allProperties/allTasks | Create and manage custom authentication extensions<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/deletedItems.applications/delete | Permanently delete applications, which can no longer be restored |
 > | microsoft.directory/deletedItems.applications/restore | Restore soft deleted applications to original state |
@@ -1094,12 +1095,12 @@ This is a [privileged role](privileged-roles-permissions.md). Users with this ro
 > | microsoft.directory/authorizationPolicy/allProperties/allTasks | Manage all aspects of authorization policy<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/bitlockerKeys/key/read | Read bitlocker metadata and key on devices<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/cloudAppSecurity/allProperties/allTasks | Create and delete all resources, and read and update standard properties in Microsoft Defender for Cloud Apps |
-> | microsoft.directory/connectors/create | Create application proxy connectors |
-> | microsoft.directory/connectors/allProperties/read | Read all properties of application proxy connectors |
-> | microsoft.directory/connectorGroups/create | Create application proxy connector groups |
-> | microsoft.directory/connectorGroups/delete | Delete application proxy connector groups |
-> | microsoft.directory/connectorGroups/allProperties/read | Read all properties of application proxy connector groups |
-> | microsoft.directory/connectorGroups/allProperties/update | Update all properties of application proxy connector groups |
+> | microsoft.directory/connectors/create | Create private network connectors |
+> | microsoft.directory/connectors/allProperties/read | Read all properties of private network connectors |
+> | microsoft.directory/connectorGroups/create | Create private network connector groups |
+> | microsoft.directory/connectorGroups/delete | Delete private network connector groups |
+> | microsoft.directory/connectorGroups/allProperties/read | Read all properties of private network connector groups |
+> | microsoft.directory/connectorGroups/allProperties/update | Update all properties of private network connector groups |
 > | microsoft.directory/contacts/allProperties/allTasks | Create and delete contacts, and read and update all properties |
 > | microsoft.directory/contracts/allProperties/allTasks | Create and delete partner contracts, and read and update all properties |
 > | microsoft.directory/customAuthenticationExtensions/allProperties/allTasks | Create and manage custom authentication extensions<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
@@ -1314,8 +1315,8 @@ Users with this role **cannot** do the following:
 > | microsoft.directory/authorizationPolicy/standard/read | Read standard properties of authorization policy |
 > | microsoft.directory/bitlockerKeys/key/read | Read bitlocker metadata and key on devices<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/cloudAppSecurity/allProperties/read | Read all properties for Defender for Cloud Apps |
-> | microsoft.directory/connectors/allProperties/read | Read all properties of application proxy connectors |
-> | microsoft.directory/connectorGroups/allProperties/read | Read all properties of application proxy connector groups |
+> | microsoft.directory/connectors/allProperties/read | Read all properties of private network connectors |
+> | microsoft.directory/connectorGroups/allProperties/read | Read all properties of private network connector groups |
 > | microsoft.directory/contacts/allProperties/read | Read all properties for contacts |
 > | microsoft.directory/customAuthenticationExtensions/allProperties/read | Read custom authentication extensions |
 > | microsoft.directory/deviceLocalCredentials/standard/read | Read all properties of the backed up local administrator account credentials for Microsoft Entra joined devices, except the password |
@@ -1417,8 +1418,8 @@ Users with this role **cannot** do the following:
 > | microsoft.directory/applications/standard/read | Read standard properties of applications |
 > | microsoft.directory/auditLogs/allProperties/read | Read all properties on audit logs, excluding custom security attributes audit logs |
 > | microsoft.directory/conditionalAccessPolicies/standard/read | Read Conditional Access for policies |
-> | microsoft.directory/connectorGroups/allProperties/read | Read all properties of application proxy connector groups |
-> | microsoft.directory/connectors/allProperties/read | Read all properties of application proxy connectors |
+> | microsoft.directory/connectorGroups/allProperties/read | Read all properties of private network connector groups |
+> | microsoft.directory/connectors/allProperties/read | Read all properties of private network connectors |
 > | microsoft.directory/crossTenantAccessPolicy/default/standard/read | Read basic properties of the default cross-tenant access policy |
 > | microsoft.directory/crossTenantAccessPolicy/partners/standard/read | Read basic properties of cross-tenant access policy for partners |
 > | microsoft.directory/crossTenantAccessPolicy/standard/read | Read basic properties of cross-tenant access policy |
@@ -1949,6 +1950,21 @@ Assign the Organizational Branding Administrator role to users who need to do th
 > | Actions | Description |
 > | --- | --- |
 > | microsoft.directory/loginOrganizationBranding/allProperties/allTasks | Create and delete loginTenantBranding, and read and update all properties |
+
+## Organizational Messages Approver
+
+Assign the Organizational Messages Approver role to users who need to do the following tasks:
+
+- Review, approve, or reject new organizational messages for delivery in the Microsoft 365 admin center before they are sent to users using the Microsoft 365 Organizational Messages platform
+- Read all aspects of organizational messages
+- Read basic properties on all resources in the Microsoft 365 admin center
+
+> [!div class="mx-tableFixed"]
+> | Actions | Description |
+> | --- | --- |
+> | microsoft.office365.organizationalMessages/allEntities/allProperties/read | Read all aspects of Microsoft 365 Organizational Messages |
+> | microsoft.office365.organizationalMessages/allEntities/allProperties/update | Approve or reject new organizational messages for delivery in the Microsoft 365 admin center |
+> | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
 
 ## Organizational Messages Writer
 

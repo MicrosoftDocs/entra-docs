@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 ms.workload: identity
 ms.topic: how-to
-ms.date: 02/28/2024
+ms.date: 03/27/2024
 ms.author: jeedes
 
 
@@ -123,7 +123,31 @@ In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by 
 
 ## Configure Onyxia SSO
 
-To configure single sign-on on **Onyxia** side, you need to send the downloaded **Certificate (Base64)** and appropriate copied URLs from Microsoft Entra admin center to [Onyxia support team](mailto:support@onyxia.io). They set this setting to have the SAML SSO connection set properly on both sides.
+1. Log in to Onyxia company site as an administrator.
+
+1. Go to **Settings** and click **Account Settings**.
+
+    ![Screenshot shows navigation to the settings.](./media/onyxia-tutorial/navigate.png "Settings")
+
+1. Navigate to **SSO** section and click **+ Add New Connection**.
+
+    ![Screenshot shows to add new connection.](./media/onyxia-tutorial/connection.png "Add")
+
+1. In the **SSO Configuration** section, perform the following steps:
+
+    ![Screenshot shows the configuration.](./media/onyxia-tutorial/configure.png "Configure")
+
+    1. In the **Domain Name** text box, enter a valid Domain name.
+
+    1. In the **SSO URL** textbox, paste the **Login URL** which you have copied from the Microsoft Entra admin center.
+
+    1. Open the downloaded **Certificate (Base64)** into Notepad and paste the content into the **Public Certificate** textbox.
+
+    1. Copy the **ACS URL** and paste it in the **Reply URL** textbox in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
+
+    1. Copy the **SP Entity ID** and paste it in the **Identifier (Entity ID)** textbox in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
+
+    1. Click **+ Create**.
 
 ### Create Onyxia test user
 

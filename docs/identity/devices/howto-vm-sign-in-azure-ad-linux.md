@@ -16,6 +16,9 @@ ms.custom: references_regions, devx-track-azurecli, subject-rbac-steps, devx-tra
 
 # Sign in to a Linux virtual machine in Azure by using Microsoft Entra ID and OpenSSH
 
+> [!CAUTION]
+> This article references CentOS, a Linux distribution that is nearing End Of Life (EOL) status. Please consider your use and plan accordingly. For more information, see the [CentOS End Of Life guidance](/azure/virtual-machines/workloads/centos/centos-end-of-life).
+
 To improve the security of Linux virtual machines (VMs) in Azure, you can integrate with Microsoft Entra authentication. You can now use Microsoft Entra ID as a core authentication platform and a certificate authority to SSH into a Linux VM by using Microsoft Entra ID and OpenSSH certificate-based authentication. This functionality allows organizations to manage access to VMs with Azure role-based access control (RBAC) and Conditional Access policies.
 
 This article shows you how to create and configure a Linux VM and log in with Microsoft Entra ID by using OpenSSH certificate-based authentication.
@@ -276,19 +279,6 @@ If the Azure Linux VM Sign-In application is missing from Conditional Access, ma
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 1. Remove the filters to see all applications, and search for **Virtual Machine**. If you don't see Microsoft Azure Linux Virtual Machine Sign-In as a result, the service principal is missing from the tenant.
-
-Another way to verify it is via Graph PowerShell:
-
-1. [Install the Graph PowerShell SDK](/powershell/microsoftgraph/installation) if you haven't already done so.
-1. Enter the command `Connect-MgGraph -Scopes "ServicePrincipalEndpoint.ReadWrite.All","Application.ReadWrite.All"`.
-1. Sign in with a Global Administrator account.
-1. Consent to the prompt that asks for your permission.
-1. Enter the command `Get-MgServicePrincipal -ConsistencyLevel eventual -Search '"DisplayName:Microsoft Azure Linux Virtual Machine Sign-In"'`.
-
-   If this command results in no output and returns you to the PowerShell prompt, you can create the service principal by using the following Graph PowerShell command: `New-MgServicePrincipal -AppId ce6ff14a-7fdc-4685-bbe0-f6afdfcfa8e0`.
-
-   Successful output will show that the app ID and the application name Azure Linux VM Sign-In were created.
-1. Sign out of Graph PowerShell by using the following command: `Disconnect-MgGraph`.
 
 <a name='log-in-by-using-an-azure-ad-user-account-to-ssh-into-the-linux-vm'></a>
 

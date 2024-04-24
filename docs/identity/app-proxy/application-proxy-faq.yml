@@ -44,7 +44,7 @@ sections:
       - question: |
          Why is the "Enable application proxy button grayed out?
         answer: |
-              Make sure you have at least a Microsoft Entra ID P1 or P2 license and a Microsoft Entra application proxy connector installed. After you successfully install your first connector, the Microsoft Entra application proxy service is enabled automatically.
+              Make sure you have at least a Microsoft Entra ID P1 or P2 license and a Microsoft Entra private network connector installed. After you successfully install your first connector, the Microsoft Entra application proxy service is enabled automatically.
 
   - name: Connector configuration
     questions:
@@ -53,7 +53,7 @@ sections:
         answer: |
               This may be due to either the updater service not working correctly or if there are no new updates available that the service can install.
           
-              The updater service is healthy if it’s running and there are no errors recorded in the event log (Applications and Services logs -> Microsoft -> AadApplicationProxy -> Updater -> Admin). 
+              The updater service is healthy if it’s running and there are no errors recorded in the event log (Applications and Services logs -> Microsoft -> Microsoft Entra private network -> Updater -> Admin). 
           
               > [!IMPORTANT]
               > Only major versions are released for auto-upgrade. We recommend updating your connector manually only if it's necessary. For example, you cannot wait for a major release, because you must fix a known problem or you want to use a new feature. For more information on new releases, the type of the release (download, auto-upgrade), bug fixes and new features see, [Microsoft Entra application proxy: Version release history](./application-proxy-release-version-history.md).
@@ -61,16 +61,16 @@ sections:
               To manually upgrade a connector:
           
               - Download the latest version of the connector. (You can find it under application proxy on the Microsoft Entra admin center. You can also find the link at [Microsoft Entra application proxy: Version release history](./application-proxy-release-version-history.md).
-              - The installer restarts the Microsoft Entra application proxy connector services. In some cases, a reboot of the server might be required if the installer cannot replace all files. Therefore we recommend closing all applications (i.e. Event Viewer) before you start the upgrade.
+              - The installer restarts the Microsoft Entra private network connector services. In some cases, a reboot of the server might be required if the installer cannot replace all files. Therefore we recommend closing all applications (i.e. Event Viewer) before you start the upgrade.
               - Run the installer. The upgrade process is quick and does not require providing any credentials and the connector is not re-registered.
           
       - question: |
-         Can application proxy connector services run in a different user context than the default?
+         Ca private network connector services run in a different user context than the default?
         answer: |
           No, this scenario isn't supported. The default settings are:
           
-          - Microsoft Entra application proxy connector - WAPCSvc - Network Service
-          - Microsoft Entra application proxy connector Updater - WAPCUpdaterSvc - NT Authority\System
+          - Microsoft Entra private network connector - WAPCSvc - Network Service
+          - Microsoft Entra private network connector Updater - WAPCUpdaterSvc - NT Authority\System
           
       - question: |
          Can a guest user with the Global Administrator or the Application Administrator role register the connector for the (guest) tenant?
@@ -80,12 +80,12 @@ sections:
       - question: |
          My back-end application is hosted on multiple web servers and requires user session persistence (stickiness). How can I achieve session persistence?
         answer: |
-              For recommendations, see [High availability and load balancing of your application proxy connectors and applications](./application-proxy-high-availability-load-balancing.md).
+              For recommendations, see [High availability and load balancing of your private network connectors and applications](./application-proxy-high-availability-load-balancing.md).
           
       - question: |
          Is TLS termination (TLS/HTTPS inspection or acceleration) on traffic from the connector servers to Azure supported?
         answer: |
-              The application proxy connector performs certificate-based authentication to Azure. TLS Termination (TLS/HTTPS inspection or acceleration) breaks this authentication method and isn't supported. Traffic from the connector to Azure must bypass any devices that are performing TLS Termination.  
+              The private network connector performs certificate-based authentication to Azure. TLS Termination (TLS/HTTPS inspection or acceleration) breaks this authentication method and isn't supported. Traffic from the connector to Azure must bypass any devices that are performing TLS Termination.  
 
       - question: |
          Is TLS 1.2 required for all connections?
@@ -103,16 +103,16 @@ sections:
               There's no reason to. Any Global Administrator or application administrator account works. The credentials entered during installation aren't used after the registration process. Instead, a certificate is issued to the connector, which is used for authentication from that point on.
 
       - question: |
-         How can I monitor the performance of the Microsoft Entra application proxy connector?
+         How can I monitor the performance of the Microsoft Entra private network connector?
         answer: |
           There are Performance Monitor counters that are installed along with the connector. To view them:  
           
           1. Select **Start**, type "Perfmon", and press ENTER.
           2. Select **Performance Monitor** and click the green **+** icon.
-          3. Add the **Microsoft Entra application proxy connector** counters you want to monitor.
+          3. Add the **Microsoft Entra private network connector** counters you want to monitor.
           
       - question: |
-         Does the Microsoft Entra application proxy connector have to be on the same subnet as the resource?
+         Does the Microsoft Entra private network connector have to be on the same subnet as the resource?
         answer: |
               The connector isn't required to be on the same subnet. However, it needs name resolution (DNS, hosts file) to the resource and the necessary network connectivity (routing to the resource, ports open on the resource, etc.). For recommendations, see [Network topology considerations when using Microsoft Entra application proxy](application-proxy-network-topology.md).
           
@@ -379,4 +379,4 @@ sections:
           
           2. Publish the HTTPS URL through a wildcard application. Publish the HTTP applications separately using these application proxy PowerShell cmdlets:
              - [Application proxy application management](/powershell/module/azuread/?preserve-view=true#application_proxy_application_management)
-             - [Application proxy connector management](/powershell/module/azuread/?preserve-view=true#application_proxy_connector_management)
+             - [private network connector management](/powershell/module/azuread/?preserve-view=true#application_proxy_connector_management)

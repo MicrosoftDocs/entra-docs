@@ -1,6 +1,6 @@
 ---
-title: "What's new in Microsoft Entra ID for customers"
-description: "New and updated documentation for the Microsoft Entra ID for customers documentation."
+title: "What's new in Microsoft Entra External ID for external-facing apps"
+description: "New and updated documentation for the Microsoft Entra External ID documentation for external-facing apps."
 ms.date: 04/03/2024
 ms.service: entra-external-id
 ms.subservice: customers
@@ -11,9 +11,9 @@ author: csmulligan
 manager: CelesteDG
 ---
 
-# Microsoft Entra ID for customers: What's new
+# Microsoft Entra External ID for external-facing apps: What's new
 
-Welcome to what's new in Microsoft Entra ID for customers documentation. This article lists new docs that have been added and those that have had significant updates in the last three months. 
+Welcome to what's new in Microsoft Entra External ID documentation. This article lists new docs that have been added and those that have had significant updates in the last three months. 
 
 ## March 2024
 
@@ -25,13 +25,13 @@ Welcome to what's new in Microsoft Entra ID for customers documentation. This ar
 ### Updated articles
 
 - [Add Facebook as an identity provider](how-to-facebook-federation-customers.md) - App creation steps updated
-- [Supported features in Microsoft Entra ID for customers](concept-supported-features-customers.md) - Updated user types and identity providers for clarity, removed device code flow samples
+- [Supported features in Microsoft Entra External ID](concept-supported-features-customers.md) - Updated user types and identity providers for clarity, removed device code flow samples
 - [Add user attributes to token claims](how-to-add-attributes-to-token.md) - Updated screenshots
 - [Collect custom user attributes during sign-up](how-to-define-custom-attributes.md) - Updated screenshots
 - [Add multifactor authentication (MFA) to a customer-facing app](how-to-multifactor-authentication-customers.md) - Updated screenshots
 - [Add your application to the user flow](how-to-user-flow-add-application.md) - Updated screenshots
 - [Create a sign-up and sign-in user flow for customers](how-to-user-flow-sign-up-sign-in-customers.md) - Updated screenshots
-- [Quickstart: Get started with Microsoft Entra ID for customers](quickstart-trial-setup.md) - Updated screenshots
+- [Quickstart: Get started with Microsoft Entra External ID](quickstart-trial-setup.md) - Updated screenshots
 - [Samples for customer identity and access management (CIAM)](samples-ciam-all.md) - Added links to native authentication public preview articles
 
 ## February 2024
@@ -43,7 +43,7 @@ Welcome to what's new in Microsoft Entra ID for customers documentation. This ar
 
 ### Updated articles
 
-- [Supported features in Microsoft Entra ID for customers (preview)](concept-supported-features-customers.md) - OpenID Connect and OAuth2 updates
+- [Supported features in Microsoft Entra External ID (preview)](concept-supported-features-customers.md) - OpenID Connect and OAuth2 updates
 - [Create a customer identity and access management (CIAM) tenant (preview)](how-to-create-external-tenant-portal.md) - Built-in role update
 
 
@@ -55,7 +55,7 @@ Welcome to what's new in Microsoft Entra ID for customers documentation. This ar
 - [Tutorial: Prepare your external tenant to sign in user in .NET WPF application](tutorial-desktop-wpf-dotnet-sign-in-prepare-tenant.md) - Minor updates
 - [Tutorial: Prepare an ASP.NET Core web app for authentication in an external tenant](tutorial-web-app-dotnet-sign-in-prepare-app.md) - Minor updates
 - [Tutorial: Add sign-in and sign-out to an ASP.NET Core web application for an external tenant](tutorial-web-app-dotnet-sign-in-sign-out.md) - Minor updates
-- [Security and governance in Microsoft Entra ID for customers](concept-security-customers.md) - Added intro to Conditional Access
+- [Security and governance in Microsoft Entra External ID](concept-security-customers.md) - Added intro to Conditional Access
 - [Using role-based access control for applications](how-to-use-app-roles-customers.md) - Added link to the Woodgrove live demo
 - [Overview of the Woodgrove Groceries demo](overview-solutions-customers.md) - Added link to the Woodgrove live demo
 - [Call a web API in a Node.js web application](how-to-web-app-node-sign-in-call-api-call-api.md) - Rewrote the call an API section

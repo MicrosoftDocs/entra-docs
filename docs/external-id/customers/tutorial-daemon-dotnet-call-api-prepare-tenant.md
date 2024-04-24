@@ -1,6 +1,6 @@
 ---
 title: "Tutorial: Prepare your external tenant to authorize a .NET daemon app"
-description: Learn about how to prepare your Microsoft Entra ID for customers tenant to acquire an access token using client credentials flow in your .NET daemon application
+description: Learn about how to prepare your external tenant to acquire an access token using client credentials flow in your .NET daemon application
  a
 author: SHERMANOUKO
 manager: mwongerapk
@@ -15,7 +15,7 @@ ms.date: 07/28/2023
 
 # Tutorial: Prepare your external tenant to authorize a .NET daemon application
 
-In this tutorial series, you'll learn how to build a .NET daemon app that calls your own custom protected web API using Microsoft Entra ID for customers. You'll register an app in Microsoft Entra ID and authenticate your app with your Microsoft Entra ID for customers tenant. Finally, you'll run the app and test the sign-in and sign-out experiences.
+In this tutorial series, you'll learn how to build a .NET daemon app that calls your own custom protected web API using Microsoft Entra External ID. You'll register an app in Microsoft Entra ID and authenticate your app with your external tenant. Finally, you'll run the app and test the sign-in and sign-out experiences.
 
 > [!div class="checklist"]
 >

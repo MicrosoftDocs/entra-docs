@@ -8,7 +8,7 @@ ms.service: entra-external-id
 
 ms.subservice: customers
 ms.topic: concept-article
-ms.date:  03/20/2023
+ms.date:  04/24/2024
 ms.author: cmulligan
 ms.custom: it-pro
 
@@ -16,7 +16,7 @@ ms.custom: it-pro
 ---
 # Get started guide features
 
-After completing the [get started guide](/entra/external-id/customers/quickstart-get-started-guide), you can recreate, edit, and customize the initial configuration to meet your company’s needs. This helps you become familiar with the features and functions of Microsoft Entra ID for customers, better understand how to use them, and appreciate the value they provide. During this process, you may even discover new features that you want to use. 
+After completing the [get started guide](/entra/external-id/customers/quickstart-get-started-guide), you can recreate, edit, and customize the initial configuration to meet your company’s needs. This helps you become familiar with the features and functions of Microsoft Entra External ID, better understand how to use them, and appreciate the value they provide. During this process, you may even discover new features that you want to use. 
 
 The get started guide set up the below features for you automatically. This article explains these features and guide you on how to configure them manually.
 
@@ -26,7 +26,7 @@ The get started guide set up the below features for you automatically. This arti
 
 :::image type="content" source="media/concept-guide-explained/trial-creation.png" alt-text="Flowchart that shows the trial tenant creation step in the guide.":::
 
-An external tenant is the first resource you need to create to get started with Microsoft Entra ID for customers. If you have an Azure subscription, you can create your new tenant in the Microsoft Entra admin center by following [these steps](how-to-create-external-tenant-portal.md). 
+An external tenant is the first resource you need to create to get started with Microsoft Entra External ID. If you have an Azure subscription, you can create your new tenant in the Microsoft Entra admin center by following [these steps](how-to-create-external-tenant-portal.md). 
 
 If you don’t have an Azure subscription, you can sign up for a [free trial](quickstart-trial-setup.md#sign-up-to-your-external-tenant-free-trial). The trial gives you access to a tenant for 30 days. During the free trial period, you have access to all product features, with few exceptions. For more information, see the [Start a free trial without Azure subscription](quickstart-trial-setup.md). 
 
@@ -34,7 +34,7 @@ If you don’t have an Azure subscription, you can sign up for a [free trial](qu
 
 :::image type="content" source="media/concept-guide-explained/app-registration.png" alt-text="Flowchart that shows the app registration step in the guide.":::
 
-To enable your application to sign in with Microsoft Entra ID for customers, you need to register your app with Microsoft Entra ID for customers. The get started guide creates this trusted relationship between the sample app and your tenant. It not only registers the app but also creates an endpoint, the redirect URI, and adds basic delegated permissions to the app for you to test the sign-in process.
+To enable your application to sign in with Microsoft Entra External ID, you need to register your app with Microsoft Entra External ID. The get started guide creates this trusted relationship between the sample app and your tenant. It not only registers the app but also creates an endpoint, the redirect URI, and adds basic delegated permissions to the app for you to test the sign-in process.
 
 If you register your app manually, you can also grant API permission if your app needs to call an API. Based on your app type, you have to choose the right registration process. You can find more information on how to register your app [here](how-to-register-ciam-app.md#choose-your-app-type).
 
@@ -79,5 +79,5 @@ You can find the comprehensive list of app samples and guides [here](samples-cia
 
 The **Code sample guide** links will point to the relevant sample articles and will guide you through the process of registering your app, creating a user flow, associating your app with the user flow, and running your project to sign in. In some cases, it will also guide you on how to call an API.
 
-For more information on configuring your app for authentication, see the **Build and integrate guide** links. These tutorials will assist you in building and integrating your own apps with Microsoft Entra ID for customers. You can also add [custom authentication extensions](concept-custom-extensions.md) at specific points within the authentication flow. 
+For more information on configuring your app for authentication, see the **Build and integrate guide** links. These tutorials will assist you in building and integrating your own apps with Microsoft Entra External ID. You can also add [custom authentication extensions](concept-custom-extensions.md) at specific points within the authentication flow. 
 

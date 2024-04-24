@@ -87,7 +87,7 @@ landingContent:
           - text: Monitoring options and considerations
             url: concept-log-monitoring-integration-options-considerations.md
           - text: Integrate activity logs with Azure Monitor logs
-            url: howto-integrate-activity-logs-with-azure-monitor-logs.md        
+            url: howto-integrate-activity-logs-with-azure-monitor-logs.yml        
           - text: Analyze activity logs in Azure Monitor logs
             url: howto-analyze-activity-logs-log-analytics.md 
           - text: Stream logs to an event hub

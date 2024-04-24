@@ -12,12 +12,12 @@ ms.subservice: customers
 ms.topic: tutorial
 ms.date: 07/27/2023
 ms.custom: developer, devx-track-js
-#Customer intent: As a dev, devops, I want to learn about how to enable authentication in my own Node.js web app with Microsoft Entra ID for customers tenant
+#Customer intent: As a dev, devops, I want to learn about how to enable authentication in my own Node.js web app with an external tenant
 ---
 
 # Tutorial: Prepare a Node.js web application for authentication
 
-This tutorial is part 2 of a series that demonstrates building a Node.js web app and preparing it for authentication using the Microsoft Entra admin center. In [part 1 of this series](tutorial-web-app-node-sign-in-prepare-tenant.md) you registered an application and configured user flows in your Microsoft Entra ID for customers tenant. In this tutorial, you create a Node.js(Express) project and organize all the folders and files you require. You enable sign-in to the application you prepare here. This Node.js(Express) web application's views use [Handlebars](https://handlebarsjs.com).
+This tutorial is part 2 of a series that demonstrates building a Node.js web app and preparing it for authentication using the Microsoft Entra admin center. In [part 1 of this series](tutorial-web-app-node-sign-in-prepare-tenant.md) you registered an application and configured user flows in your external tenant. In this tutorial, you create a Node.js(Express) project and organize all the folders and files you require. You enable sign-in to the application you prepare here. This Node.js(Express) web application's views use [Handlebars](https://handlebarsjs.com).
 
 In this tutorial you'll;
 
@@ -114,7 +114,7 @@ npm install express dotenv hbs express-session axios cookie-parser http-errors m
         </table>
         <a href="/">Go back</a>
     ```
-    We use this view to display ID token claims that Microsoft Entra ID for customers returns to this app after a user successfully signs in.  
+    We use this view to display ID token claims that Microsoft Entra External ID returns to this app after a user successfully signs in.  
 
 1. In your code editor, open *views/error.hbs* file, then add the following code:
 

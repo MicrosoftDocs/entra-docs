@@ -11,7 +11,7 @@ ms.date: 03/08/2024
 ms.author: mimart
 ms.custom: it-pro
 
-#Customer intent: As a developer, devops, IT admin, I want to learn about the built-in user profile attributes that I can collect from the user during sign-up, and how Microsoft Entra External ID for customers extends user profile attributes by using custom user attributes. 
+#Customer intent: As a developer, devops, IT admin, I want to learn about the built-in user profile attributes that I can collect from the user during sign-up, and how Microsoft Entra External ID extends user profile attributes by using custom user attributes. 
 ---
 
 # User profile attributes
@@ -96,6 +96,10 @@ For example, if the client ID of the *b2c-extensions-app* is `2588a-bcdwh-tfeehj
 - *Loyalty Number* then the custom attribute is named as`extension_2588abcdwhtfeehjjeeqwertc_loyaltyNumber`. You remove the space and use camel case to separate the words.
 
 Use the [Find the application ID for the extensions app](how-to-define-custom-attributes.md) article to learn how to find the application ID for the *b2c-extensions-app* registered in your external tenant.
+
+## Microsoft Graph APIs
+
+User attributes are referred to as *user flow attributes* in Microsoft Graph. Use the [identityUserFlowAttribute resource type](/graph/api/resources/identityuserflowattribute) and its associated methods to manage both built-in and custom user flow attributes.
 
 ## Related content
 

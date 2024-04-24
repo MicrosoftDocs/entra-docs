@@ -10,11 +10,10 @@ ms.date: 11/28/2023
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
-ms.reviewer: ravenn
+ms.reviewer:
 
 #Customer intent: As an IT admin, I want to manage the local administrators group assignment during a Microsoft Entra join, so that I can control who can manage Microsoft Entra joined devices
 ---
-
 # How to manage the local administrators group on Microsoft Entra joined devices
 
 To manage a Windows device, you need to be a member of the local administrators group. As part of the Microsoft Entra join process, Microsoft Entra ID updates the membership of this group on a device. You can customize the membership update to satisfy your business requirements. A membership update is, for example, helpful if you want to enable your helpdesk staff to do tasks requiring administrator rights on a device.
@@ -23,10 +22,9 @@ This article explains how the local administrators membership update works and h
 
 ## How it works
 
-At the time of Microsoft Entra join, we add the following security principals to the local administrators group on the device:
+At the time of Microsoft Entra join, the following security principals are added to the local administrators group on the device:
 
-- The Microsoft Entra Global Administrator role
-- The Microsoft Entra Joined Device Local Administrator role
+- The [Microsoft Entra Joined Device Local Administrator](../role-based-access-control/permissions-reference.md#microsoft-entra-joined-device-local-administrator) and the [Global Administrator](../role-based-access-control/permissions-reference.md#global-administrator) roles
 - The user performing the Microsoft Entra join
 
 > [!NOTE]
@@ -38,8 +36,10 @@ By adding Microsoft Entra roles to the local administrators group, you can updat
 
 To view and update the membership of the [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) role, see:
 
-- [View all members of an administrator role in Microsoft Entra ID](~/identity/role-based-access-control/manage-roles-portal.md)
-- [Assign a user to administrator roles in Microsoft Entra ID](~/fundamentals/how-subscriptions-associated-directory.md)
+- [View all members of an administrator role in Microsoft Entra ID](~/identity/role-based-access-control/manage-roles-portal.yml)
+- [Assign a user to administrator roles in Microsoft Entra ID](~/fundamentals/how-subscriptions-associated-directory.yml)
+- [View all members of an administrator role in Microsoft Entra ID](~/identity/role-based-access-control/manage-roles-portal.yml)
+- [Assign a user to administrator roles in Microsoft Entra ID](~/fundamentals/how-subscriptions-associated-directory.yml)
 
 ## Manage the Microsoft Entra Joined Device Local Administrator role
 
@@ -69,7 +69,7 @@ Users aren't directly listed in the local administrator group, the permissions a
 
 ## Manage administrator privileges using Microsoft Entra groups (preview)
 
-Starting with Windows 10 version 20H2, you can use Microsoft Entra groups to manage administrator privileges on Microsoft Entra joined devices with the [Local Users and Groups](/windows/client-management/mdm/policy-csp-localusersandgroups) mobile device management (MDM) policy. This policy allows you to assign individual users or Microsoft Entra groups to the local administrators group on a Microsoft Entra joined device, providing you with the granularity to configure distinct administrators for different groups of devices.
+You can use Microsoft Entra groups to manage administrator privileges on Microsoft Entra joined devices with the [Local Users and Groups](/windows/client-management/mdm/policy-csp-localusersandgroups) mobile device management (MDM) policy. This policy allows you to assign individual users or Microsoft Entra groups to the local administrators group on a Microsoft Entra joined device, providing you with the granularity to configure distinct administrators for different groups of devices.
 
 Organizations can use Intune to manage these policies using [Custom OMA-URI Settings](/mem/intune/configuration/custom-settings-windows-10) or [Account protection policy](/mem/intune/protect/endpoint-security-account-protection-policy). A few considerations for using this policy:
 
@@ -88,8 +88,7 @@ Organizations can use Intune to manage these policies using [Custom OMA-URI Sett
 
 By default, Microsoft Entra ID adds the user performing the Microsoft Entra join to the administrator group on the device. If you want to prevent regular users from becoming local administrators, you have the following options:
 
-- [Windows Autopilot](/autopilot/windows-autopilot) -
-Windows Autopilot provides you with an option to prevent primary user performing the join from becoming a local administrator by [creating an Autopilot profile](/autopilot/enrollment-autopilot#create-an-autopilot-deployment-profile).
+- [Windows Autopilot](/autopilot/windows-autopilot) - Windows Autopilot provides you with an option to prevent primary user performing the join from becoming a local administrator by [creating an Autopilot profile](/autopilot/enrollment-autopilot#create-an-autopilot-deployment-profile).
 - [Bulk enrollment](/mem/intune/enrollment/windows-bulk-enroll) - a Microsoft Entra join that is performed in the context of a bulk enrollment happens in the context of an autocreated user. Users signing in after a device has been joined aren't added to the administrators group.
 
 ## Manually elevate a user on a device
