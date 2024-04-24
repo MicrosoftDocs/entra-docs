@@ -93,6 +93,10 @@ Setting up your device using secure enclave method enables you to use the result
     :::image type="content" source="media/device-join-macos-platform-single-sign-on-out-of-box/psso-registration-required-popup.png" alt-text="Screenshot of a desktop screen with a registration required popup in the top right of the screen.":::
 
 1. A prompt appears to enter your local account password. Enter your password and select **Ok**.
+1. Once your account is unlocked, select the account to sign in to, enter your sign-in credentials and select **Next**.
+1. MFA is required as part of this sign in flow. Open your **Authenticator app** (recommended) or use your other MFA methods you have registered, and enter the number displayed on the screen to finish registration.
+
+    :::image type="content" source="media/device-join-macos-platform-single-sign-on-out-of-box/psso-2fa-challenge.png" alt-text="Screenshot of a two-factor authentication window, prompting the user to open the Authenticator app.":::
 
 1. If your local password differs to your Microsoft Entra ID password, an **Authentication Required** popup appears on the top right of the screen. Hover over the banner and select **Sign-in**.
 1. When a **Microsoft Entra** window appears, enter your Microsoft Entra ID password and select **Sign In**. 
