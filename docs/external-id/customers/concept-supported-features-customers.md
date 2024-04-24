@@ -52,13 +52,13 @@ Although workforce tenants and external tenants are built on the same underlying
 
 ## Application registration
 
- The following table compares the features available for [Application registration](./how-to-register-ciam-app.md) in each type of tenant.
+The following table compares the features available for [Application registration](./how-to-register-ciam-app.md) in each type of tenant.
 
 |Feature  |Workforce tenant  | External tenant |
 |---------|---------|---------|
 |   **Protocol**     |   SAML relying parties, OpenID Connect, and OAuth2    |   OpenID Connect and OAuth2    |
 | **Supported account types**| The following [account types](~/identity-platform/quickstart-register-app.md#register-an-application): <ul><li>Accounts in this organizational directory only (Single tenant)</li><li>Accounts in any organizational directory (Any Microsoft Entra tenant - Multitenant)</li><li>Accounts in any organizational directory (Any Microsoft Entra tenant - Multitenant) and personal Microsoft accounts (e.g. Skype, Xbox)</li><li>Personal Microsoft accounts only</li></ul> | For customer-facing applications, always use *Accounts in this organizational directory only (Single tenant)*. |
-| **Platform** | The following [platforms](~/identity-platform/quickstart-register-app.md#configure-platform-settings): <ul><li>Public client/native (mobile & desktop)</li><li>Web</li><li>Single page application (SPA)</li><ul>| Same as workforce. |li><li>Web</li><li>Single page application (SPA)</li><ul>| Same as workforce. |
+| **Platform** | The following [platforms](~/identity-platform/quickstart-register-app.md#configure-platform-settings): <ul><li>Public client/native (mobile & desktop)</li><li>Web</li><li>Single page application (SPA)| Same as workforce. |
 | **Authentication** > **Redirect URIs**| The URIs Microsoft Entra ID accepts as destinations when returning authentication responses (tokens) after successfully authenticating or signing out users. | Same as workforce.|
 | **Authentication** > **Front-channel logout URL**| This URL is where Microsoft Entra ID sends a request to have the application clear the user's session data. The Front-channel logout URL is required for single sign-out to work correctly.| Same as workforce.|
 | **Authentication** > **Implicit grant and hybrid flows**| Request a token directly from the authorization endpoint. | Same as workforce.|
@@ -70,7 +70,6 @@ Although workforce tenants and external tenants are built on the same underlying
 | **Owners** | Application owners can view and edit the application registration. Additionally, any user (who might not be listed) with administrative privileges to manage any application (for example, Global Administrator, Cloud App Administrator, etc.) can view and edit the application registration. | Same as workforce. |
 | **Roles and administrators** | [Administrative roles](~/identity/role-based-access-control/permissions-reference.md) are used for granting access for privileged actions in Microsoft Entra ID. | Only the [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator) role can be used for customer-facing applications. This role grants the ability to create and manage all aspects of application registrations and enterprise applications.  |
 |**Assigning users and groups to an app**| When user assignment is required, only those users you assign to the application (either through direct user assignment or based on group membership) are able to sign in. For more information, see [manage users and groups assignment to an application](~/identity/enterprise-apps/assign-user-or-group-access-portal.md)| Not available |
-
 
 ## OpenID Connect and OAuth2 flows
 
@@ -121,8 +120,8 @@ The following table compares the features available for user management in each 
 |Feature  |Workforce tenant  | External tenant |
 |---------|---------|---------|
 |**Types of accounts** | <ul><li>Internal members, for example employees and admins.</li><li>External users who are [invited](../what-is-b2b.md) or use self-service sign-up. | <ul><li>Internal users in your organization, for example employees and admins.</li><li>External consumers and business customers who use self-service sign-up or are created by admins.</li><li>External users who are invited.</li></ul>|
-| **Manage user profile info** | Programmatically and by [using the Microsoft Entra admin center](~/fundamentals/how-to-manage-user-profile-info.md). |Same as workforce.|
-| **Reset a user's password** | Administrators can [reset a user's password](~/fundamentals/users-reset-password-azure-portal.md) if the password is forgotten, if the user gets locked out of a device, or if the user never received a password. |Same as workforce.|
+| **Manage user profile info** | Programmatically and by [using the Microsoft Entra admin center](~/fundamentals/how-to-manage-user-profile-info.yml). |Same as workforce.|
+| **Reset a user's password** | Administrators can [reset a user's password](~/fundamentals/users-reset-password-azure-portal.yml) if the password is forgotten, if the user gets locked out of a device, or if the user never received a password. |Same as workforce.|
 |**Restore or remove a recently deleted user**|After you delete a user, the account remains in a suspended state for 30 days. During that 30-day window, the user account can be restored, along with all its properties.|Same as workforce.|
 |**Disable accounts**| Prevent the new user from being able to sign in. |Same as workforce.|
 
