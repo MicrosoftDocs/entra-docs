@@ -38,7 +38,6 @@ For example: "Migrate data from regular tables to ledger tables" or "Create a ne
 -->
 
 # Add a Custom Security Attribute as the scope of a workflow 
-TODO: Add your heading
 
 <!-- 2. Introductory paragraph ----------------------------------------------------------
 
@@ -54,7 +53,13 @@ Example: In this article, you will migrate your user databases from IBM Db2 to S
 
 -->
 
-TODO: Add your introductory paragraph
+Workflows created with Lifecycle workflows can run for users on schedule based on a custom security attribute. Using a custom security attribute as the scope of your workflow allows you to narrow who the workflow runs for by increasing customization of supported user properties. Examples of these properties include:
+
+- Pay grade
+- Certification status
+- Cost Center
+
+For more information about Custom Security Attributes, see: [What are custom security attributes in Microsoft Entra ID?](../fundamentals/custom-security-attributes-overview.md).
 
 <!---Avoid notes, tips, and important boxes. Readers tend to skip over them. Better to put that info directly into the article text.
 
@@ -72,59 +77,28 @@ Required: Make Prerequisites the first H2 after the H1.
 
 ## Prerequisites
 
-TODO: List the prerequisites
+[!INCLUDE [Microsoft Entra ID Governance license](../includes/entra-entra-governance-license.md)]
 
-<!-- 4. Task H2s ------------------------------------------------------------------------------
 
-Required: Multiple procedures should be organized in H2 level sections. A section contains a major grouping of steps that help users complete a task. Each section is represented as an H2 in the article.
-
-For portal-based procedures, minimize bullets and numbering.
-
-* Each H2 should be a major step in the task.
-* Phrase each H2 title as "<verb> * <noun>" to describe what they'll do in the step.
-* Don't start with a gerund.
-* Don't number the H2s.
-* Begin each H2 with a brief explanation for context.
-* Provide a ordered list of procedural steps.
-* Provide a code block, diagram, or screenshot if appropriate
-* An image, code block, or other graphical element comes after numbered step it illustrates.
-* If necessary, optional groups of steps can be added into a section.
-* If necessary, alternative groups of steps can be added into a section.
-
--->
+To assign a custom security attribute to the scope of a workflow, you must have a custom security attributes set  and defintions created in your tenant. For a guide on adding a custom security attribute set, and setting its definitions, in your tenant, see: [Add or deactivate custom security attribute definitions in Microsoft Entra ID](../fundamentals/custom-security-attributes-add.md). When you have created a custom set attribute and set its definitions you must also assign this attribute to a user. For a guide on this, see: [Assign custom security attributes to a user](../identity/users/users-custom-security-attributes.md#assign-custom-security-attributes-to-a-user).
 
 ## Add a Custom Security Attribute as the scope of a workflow using the Microsoft Entra admin center
 
-TODO: Add introduction sentence(s)
-[Include a sentence or two to explain only what is needed to complete the procedure.]
-TODO: Add ordered list of procedure steps
-1. Step 1
-1. Step 2
-1. Step 3
+Workflows can be created with, or edited to include, a Custom Security Attribute as a scope. The following steps will walk you through editing an existing workflow to add a Custom Security Attribute as the scope. For a guide on creating a workflow from scratch with which you could use a Custom security attribute as a scope, see: [Create a lifecycle workflow](../id-governance/create-lifecycle-workflow.md). To edit a workflow to include a Custom Security Attribute within it's scope, you complete the following steps.
 
-## "\<verb\> * \<noun\>"
-TODO: Add introduction sentence(s)
-[Include a sentence or two to explain only what is needed to complete the procedure.]
-TODO: Add ordered list of procedure steps
-1. Step 1
-1. Step 2
-1. Step 3
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
 
-## "\<verb\> * \<noun\>"
-TODO: Add introduction sentence(s)
-[Include a sentence or two to explain only what is needed to complete the procedure.]
-TODO: Add ordered list of procedure steps
-1. Step 1
-1. Step 2
-1. Step 3
+1. Browse to **Identity governance** > **Lifecycle workflows** > **Workflows**.
 
-<!-- 5. Next step/Related content------------------------------------------------------------------------
+1. On the workflows page select the workflow which you want to use a custom security attribute as part of the scope for.
 
-Optional: You have two options for manually curated links in this pattern: Next step and Related content. You don't have to use either, but don't use both.
-  - For Next step, provide one link to the next step in a sequence. Use the blue box format
-  - For Related content provide 1-3 links. Include some context so the customer can determine why they would click the link. Add a context sentence for the following links.
+1. On the specific workflow page select **Execution conditions**. 
 
--->
+1. On the execution conditions page, select **Scope details**.  
+
+1. On the scope details page you select **Add expression**, and from the drop down list locate your custom security attributes.
+    :::image type="content" source="media/manage-workflow-csa-scope/csa-scope-list.png" alt-text="Screenshot of a list of CSA on the scope screen.":::
+1. After choosing the custom security attribute you want to use, Select **Save**.
 
 ## Next step
 
@@ -132,16 +106,4 @@ TODO: Add your next step link(s)
 
 > [!div class="nextstepaction"]
 > [Write concepts](article-concept.md)
-
-<!-- OR -->
-
-## Related content
-
-TODO: Add your next step link(s)
-
-- [Write concepts](article-concept.md)
-
-<!--
-Remove all the comments in this template before you sign-off or merge to the main branch.
--->
 
