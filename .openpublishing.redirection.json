@@ -580,6 +580,36 @@
       "source_path_from_root": "/docs/external-id/customers/microsoft-graph-operations.md",
       "redirect_url": "/entra/external-id/customers/concept-supported-features-customers",
       "redirect_document_id": false
+    },
+    {            
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/qs-configure-portal-windows-vm.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-configure-managed-identities",
+      "redirect_document_id": false
+    },
+    {            
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/qs-configure-cli-windows-vm.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-configure-managed-identities",
+      "redirect_document_id": false
+    },
+    {            
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/qs-configure-powershell-windows-vm.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-configure-managed-identities",
+      "redirect_document_id": false
+    },
+    {            
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/qs-configure-template-windows-vm.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-configure-managed-identities",
+      "redirect_document_id": false
+    },
+    {            
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/qs-configure-rest-vm.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-configure-managed-identities",
+      "redirect_document_id": false
+    },
+    {            
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/qs-configure-sdk-windows-vm.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-configure-managed-identities",
+      "redirect_document_id": false
     }
   ]
 }

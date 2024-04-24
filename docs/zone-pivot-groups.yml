@@ -176,7 +176,7 @@ groups:
 # Owner: barclayn
 - id: identity-mi-methods
   title: Managed identities methods
-  prompt: Select an option:
+  prompt: Select an option
   pivots:
   - id: identity-mi-methods-azp
     title: Azure portal
@@ -205,8 +205,6 @@ groups:
     title: Template
   - id: identity-wif-mi-methods-rest
     title: REST
-  - id: identity-mi-methods-sdk
-    title: SDK
 # Owner: ryanwi
 - id: identity-wif-apps-methods
   title: Workload identity federation for apps methods
