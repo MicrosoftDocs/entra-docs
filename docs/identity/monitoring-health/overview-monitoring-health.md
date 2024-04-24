@@ -76,7 +76,7 @@ Reviewing Microsoft Entra activity logs is the first step in maintaining and imp
 Monitoring Microsoft Entra activity logs requires routing the log data to a monitoring and analysis solution. Endpoints include Azure Monitor logs, Microsoft Sentinel, or a third-party solution third-party Security Information and Event Management (SIEM) tool.
 
 - [Stream logs to an event hub to integrate with third-party SIEM tools.](howto-stream-logs-to-event-hub.md)
-- [Integrate logs with Azure Monitor logs.](./howto-integrate-activity-logs-with-azure-monitor-logs.md)
+- [Integrate logs with Azure Monitor logs.](./howto-integrate-activity-logs-with-azure-monitor-logs.yml)
 - [Analyze logs with Azure Monitor logs and Log Analytics.](howto-analyze-activity-logs-log-analytics.md)
 
 

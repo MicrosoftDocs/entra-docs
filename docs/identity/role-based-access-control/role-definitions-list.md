@@ -97,5 +97,5 @@ Follow these instructions to list Microsoft Entra roles using the Microsoft Grap
 ## Next steps
 
 * [List Microsoft Entra role assignments](view-assignments.md).
-* [Assign Microsoft Entra roles to users](manage-roles-portal.md).
+* [Assign Microsoft Entra roles to users](manage-roles-portal.yml).
 * [Microsoft Entra built-in roles](permissions-reference.md).

@@ -50,7 +50,7 @@ items:
                   href: sample-web-app-node-sign-in.md
                 - name: Sign in users and call an API
                   href: sample-web-app-node-sign-in-call-api.md
-            - name: ASP.NET
+            - name: ASP.NET Core
               items:
                 - name: Sign in users
                   href: sample-web-app-dotnet-sign-in.md
@@ -156,11 +156,11 @@ items:
                   href: tutorial-web-app-node-sign-in-prepare-app.md
                 - name: Add sign-in and sign-out
                   href: tutorial-web-app-node-sign-in-sign-out.md
-        - name: ASP.NET
+        - name: ASP.NET Core
           items:
               - name: Prepare tenant
                 href: tutorial-web-app-dotnet-sign-in-prepare-tenant.md
-              - name: Create ASP.NET app
+              - name: Create ASP.NET Core app
                 href: tutorial-web-app-dotnet-sign-in-prepare-app.md
               - name: Sign in and sign out
                 href: tutorial-web-app-dotnet-sign-in-sign-out.md
@@ -172,7 +172,7 @@ items:
                 href: tutorial-web-app-python-flask-sign-in-sign-out.md
     - name: Web API
       items: 
-        - name: Protect ASP.NET API
+        - name: Protect ASP.NET Core API
           items:
             - name: Build a protected API 
               href: tutorial-protect-web-api-dotnet-core-build-app.md
@@ -407,8 +407,6 @@ items:
           href: troubleshooting-known-issues.md
     - name: Management APIs
       items:
-        - name: Microsoft Graph
-          href: microsoft-graph-operations.md
         - name: Tenant management operations
           href: azure-rest-api-operations-tenant-management.md 
 - name: Reference

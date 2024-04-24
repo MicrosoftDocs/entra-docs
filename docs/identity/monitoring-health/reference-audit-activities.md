@@ -1301,8 +1301,7 @@ Many of the activities in this group are associated with background processes re
 
 |Audit Category|Activity|
 |---|---|
-|GroupManagement|ApprovalNotification_Create
-|
+|GroupManagement|ApprovalNotification_Create|
 |GroupManagement|Autorenew group|
 |GroupManagement|Approval_Act|
 |GroupManagement|Approval_Get|
