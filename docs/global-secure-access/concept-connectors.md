@@ -186,4 +186,4 @@ A common issue is that connectors appear as inactive in a connector group. A fir
 - [Understand Microsoft Entra private network connector groups](concept-connector-groups.md)
 - [Work with existing on-premises proxy servers](../identity/app-proxy/application-proxy-configure-connectors-with-proxy-servers.md)
 - [Troubleshoot application proxy and connector errors](../identity/app-proxy/application-proxy-troubleshoot.md)
-- [How to silently install the Microsoft Entra private network connector](../identity/app-proxy/application-proxy-register-connector-powershell.md)
+- [How to silently install the Microsoft Entra private network connector](how-to-register-connector-powershell.md)

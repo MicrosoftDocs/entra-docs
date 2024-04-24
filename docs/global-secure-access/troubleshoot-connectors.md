@@ -89,7 +89,7 @@ Import-module MicrosoftEntraPrivateNetworkConnectorPSModule
 Register-MicrosoftEntraPrivateNetworkConnector
 ```
 
-To learn more about the `Register-MicrosoftEntraPrivateNetworkConnector` command, see [Create an unattended installation script for the Microsoft Entra private network connector](../identity/app-proxy/application-proxy-register-connector-powershell.md).
+To learn more about the `Register-MicrosoftEntraPrivateNetworkConnector` command, see [Create an unattended installation script for the Microsoft Entra private network connector](how-to-register-connector-powershell.md).
 
 ## Verify admin is used to install the connector
 
