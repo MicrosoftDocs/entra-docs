@@ -177,7 +177,17 @@ The Conditional access What If API can be used to programmatically test the impa
 
 ---
 
-### Public Preview - Configure custom workflows to run tasks when a user's job profile changes
+### General Availability - Maximum workflows limit in Lifecycle workflows is now 100
+
+**Type:** Changed feature    
+**Service category:** Lifecycle Workflows        
+**Product capability:** Identity Governance        
+
+The maximum number of workflows that can be configured in Lifecycle workflows has increased. Now IT admins can create up to 100 workflows in Lifecycle workflows. For more information, see: [Microsoft Entra ID Governance service limits](../id-governance/governance-service-limits.md).
+
+---
+
+### Public Preview - Configure custom workflows to run mover tasks when a user's job profile changes
 
 **Type:** New feature    
 **Service category:** Lifecycle Workflows    
