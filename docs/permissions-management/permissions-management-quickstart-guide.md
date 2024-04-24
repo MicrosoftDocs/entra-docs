@@ -25,8 +25,11 @@ Before you begin, you need access to these tools for the onboarding process:
 
 - Access to a local BASH shell with the Azure CLI or Azure Cloud Shell using BASH environment (Azure CLI is included). 
 - Access to AWS, Azure, and GCP consoles.
-- A user must have the *Global Administrator* role assignment to create a new app registration in Microsoft Entra tenant is required for AWS and GCP onboarding. 
-
+- A user must have at least the *Billing Administrator* role assignment to activate a trial or purchase a license.
+- A user must have the *Application Administrator* role assignment to create a new app registration in Microsoft Entra tenant is required for AWS and GCP onboarding.
+- A user must have the *Permissions Management Administrator* role in your Microsoft Entra admin center tenant to access Permissions Management as an admin. 
+> [!NOTE]
+> We recommend you use Privileged Identity Management (PIM) to provide your admins with just-in-time (JIT) access to the role, rather than permanently assigning it.
 
 ## Step 1: Set-up Permissions Management
 
@@ -38,7 +41,7 @@ If the above points are met, continue with:
 
 [Enable Microsoft Entra Permissions Management in your organization](onboard-enable-tenant.md)
 
-Ensure you're a Global Administrator. Learn more about [Permissions Management roles and permissions](product-roles-permissions.md). 
+Ensure you're at least Billing Administrator. Learn more about [Permissions Management roles and permissions](product-roles-permissions.md). 
 
 :::image type="content" source="media/permissions-management-quickstart-guide/entra-id-roles-sync-azure-environment.png" alt-text="A diagram showing where Microsoft Entra intersect with Azure roles in the Microsoft Entra tenant." lightbox="media/permissions-management-quickstart-guide/entra-id-roles-sync-azure-environment.png":::
  
@@ -91,33 +94,6 @@ To configure data collection:
 > [!NOTE]
 > The data collection process takes some time and occurs in approximately 4-5 hour intervals in most cases. The time frame depends on the size of the authorization system you have and how much data is available for collection.
 
-
-### Onboard Amazon Web Services (AWS)
-Since Permissions Management is hosted on Microsoft Entra, there are more steps to take to onboard your AWS environment.  
-
-To connect AWS to Permissions Management, you must create a Microsoft Entra application in the Microsoft Entra admin center tenant where Permissions Management is enabled. This Microsoft Entra application is used to set up an OIDC connection to your AWS environment.
-
-*OpenID Connect (OIDC) is an interoperable authentication protocol based on the OAuth 2.0 family of specifications.*
-
-:::image type="content" source="media/permissions-management-quickstart-guide/entra-id-tenant-amazon-web-service-connection.png" alt-text="A diagram showing the connection between Microsoft Entra ID and an AWS cloud environment." lightbox="media/permissions-management-quickstart-guide/entra-id-tenant-amazon-web-service-connection.png":::
-
-
-### Prerequisites 
-
-A user must have *Global Administrator* or *Permissions Management Administrator* role assignments to create a new app registration in Microsoft Entra ID. 
-
-Account IDs and roles for: 
-- AWS OIDC account: An AWS member account designated by you to create and host the OIDC connection through an OIDC IdP
-- AWS Logging account (optional but recommended) 
-- AWS Management account (optional but recommended)  
-- AWS member accounts monitored and managed by Permissions Management (for manual mode) 
-
-To use **Automatic** or **Select** data collection modes, you must connect your AWS Management account.  
-
-During this step, you can enable the controller by entering the name of the S3 bucket with AWS CloudTrail activity logs (found on AWS Trails). 
-
-To onboard your AWS environment and configure data collection, see [Onboard an Amazon Web Services (AWS) account](onboard-aws.md).
-
 ### Onboard Microsoft Azure
 When you enabled Permissions Management in the Microsoft Entra tenant, an enterprise application for CIEM was created. To onboard your Azure environment, you grant permissions to this application for Permissions management.
 
@@ -136,6 +112,32 @@ When you enabled Permissions Management in the Microsoft Entra tenant, an enterp
 
 To onboard your Azure environment and configure data collection, see [Onboard a Microsoft Azure subscription](onboard-azure.md).
 
+
+### Onboard Amazon Web Services (AWS)
+Since Permissions Management is hosted on Microsoft Entra, there are more steps to take to onboard your AWS environment.  
+
+To connect AWS to Permissions Management, you must create a Microsoft Entra application in the Microsoft Entra admin center tenant where Permissions Management is enabled. This Microsoft Entra application is used to set up an OIDC connection to your AWS environment.
+
+*OpenID Connect (OIDC) is an interoperable authentication protocol based on the OAuth 2.0 family of specifications.*
+
+:::image type="content" source="media/permissions-management-quickstart-guide/entra-id-tenant-amazon-web-service-connection.png" alt-text="A diagram showing the connection between Microsoft Entra ID and an AWS cloud environment." lightbox="media/permissions-management-quickstart-guide/entra-id-tenant-amazon-web-service-connection.png":::
+
+
+### Prerequisites 
+
+A user must have *Application Administrator* role assignment to create a new app registration in Microsoft Entra ID. 
+
+Account IDs and roles for: 
+- AWS OIDC account: An AWS member account designated by you to create and host the OIDC connection through an OIDC IdP
+- AWS Logging account (optional but recommended) 
+- AWS Management account (optional but recommended)  
+- AWS member accounts monitored and managed by Permissions Management (for manual mode) 
+
+To use **Automatic** or **Select** data collection modes, you must connect your AWS Management account.  
+
+During this step, you can enable the controller by entering the name of the S3 bucket with AWS CloudTrail activity logs (found on AWS Trails). 
+
+To onboard your AWS environment and configure data collection, see [Onboard an Amazon Web Services (AWS) account](onboard-aws.md).
 
 ### Onboard Google Cloud Platform (GCP)
 Because Permissions Management is hosted on Microsoft Azure, there are additional steps to take to onboard your GCP environment.
