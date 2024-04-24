@@ -141,7 +141,7 @@ Usually, connector deployment is straightforward and requires no special configu
 
 However, there are some unique conditions that should be considered:
 
-- Outbound traffic requires specific ports to be open. To learn more, see [Tutorial: Add an on-premises application for remote access through application proxy in Microsoft Entra ID](../identity/app-proxy/application-proxy-add-on-premises-application.md#prepare-your-on-premises-environment).
+- Outbound traffic requires specific ports to be open. To learn more, see [configure connectors](concept-connectors.md).
 - FIPS-compliant machines might require a configuration change to allow the connector processes to generate and store a certificate.
 - Outbound forward proxies could break the two-way certificate authentication and cause communication to fail.
 
@@ -153,7 +153,7 @@ The certificates used are specific to the service. They're created during the in
 
 After the first successful certificate renewal, the Microsoft Entra private network connector service (Network Service) has no permission to remove the old certificate from the local machine store. If the certificate expires or isn't used by the service, you can delete it safely.
 
-To avoid problems with certificate renewal, ensure that the network communication from the connector towards the [documented destinations](../identity/app-proxy/application-proxy-add-on-premises-application.md#prepare-your-on-premises-environment) is enabled.
+To avoid problems with certificate renewal, ensure that the network communication from the connector towards the [documented destinations](concept-connectors.md) is enabled.
 
 If a connector isn't connected to the service for several months, its certificates could be outdated. In this case, uninstall and reinstall the connector to trigger registration. You can run the following PowerShell commands:
 
