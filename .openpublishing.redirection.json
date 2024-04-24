@@ -221,7 +221,7 @@
       "redirect_document_id": false
     },
     {
-      "source_path_from_root": "/docs/identity/app-proxy/application-proxy-register-connector-powershell.md.md",
+      "source_path_from_root": "/docs/identity/app-proxy/application-proxy-register-connector-powershell.md",
       "redirect_url": "/entra/global-secure-access/how-to-register-connector-powershell",
       "redirect_document_id": false
     },

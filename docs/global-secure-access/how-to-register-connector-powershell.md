@@ -21,7 +21,7 @@ Unattended installation is useful when you want to:
 * Integrate the connector installation and registration as part of another procedure.
 * Create a standard server image that contains the connector bits but isn't registered.
 
-For the [private network connector](application-proxy-connectors.md) to work, you must register it with Microsoft Entra ID. Registration is done in the user interface when you install the connector, but you can use PowerShell to automate the process.
+For the [private network connector](concept-connectors.md) to work, you must register it with Microsoft Entra ID. Registration is done in the user interface when you install the connector, but you can use PowerShell to automate the process.
 
 There are two steps for an unattended installation. First, install the connector. Second, register the connector with Microsoft Entra ID.
 
