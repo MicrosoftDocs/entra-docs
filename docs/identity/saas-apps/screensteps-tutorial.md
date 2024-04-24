@@ -65,7 +65,7 @@ To configure and test Microsoft Entra SSO with ScreenSteps, perform the followin
 
 ## Create ScreenSteps SSO
 
-1. In a different web browser window, log into your ScreenSteps account site as an administrator. This is where you will perform the steps in the how-to instructions.
+1. In a different web browser window, log in to your ScreenSteps account site as an administrator. This is where you will perform the steps in the how-to instructions.
 1. In a different web browser window, open the ScreenSteps help article [How to Set up Single Sign-on](https://help.screensteps.com/a/1097728-how-to-set-up-single-sign-on). This article will guide you through the steps of setting up ScreenSteps to work with Microsoft Entra ID.
 1. After answering a few questions in the help article you will be asked to "Select how you will set up SSO". Select Microsoft Entra ID and continue on with [Configure Microsoft Entra SSO](#configure-azure-ad-sso).
 
