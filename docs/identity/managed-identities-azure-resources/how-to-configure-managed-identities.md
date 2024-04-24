@@ -40,8 +40,8 @@ Managed identities for Azure resources provide Azure services with an automatica
 
 ::: zone pivot="identity-mi-methods-rest"
 [!INCLUDE [qs-configure-rest-vm](includes/qs-configure-rest-vm.md)]
-::: 
+::: zone-end
 
 ::: zone pivot="identity-mi-methods-sdk"
 [!INCLUDE [qs-configure-sdk-windows-vm](includes/qs-configure-sdk-windows-vm.md)]
-::: zone-endzone-end
+::: zone-end

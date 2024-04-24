@@ -12,11 +12,9 @@ In this article, using CURL to make calls to the Azure Resource Manager REST end
 
 If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/free/) before continuing.
 
-## Prerequisites
+### Prerequisites
 
-- If you're unfamiliar with managed identities for Azure resources, see [What are managed identities for Azure resources?](overview.md). To learn about system-assigned and user-assigned managed identity types, see [Managed identity types](overview.md#managed-identity-types).
-
-[!INCLUDE [azure-cli-prepare-your-environment-no-header.md](~/../docs/reusable-content/azure-cli/azure-cli-prepare-your-environment-no-header.md)]
+- If you're unfamiliar with managed identities for Azure resources, see [What are managed identities for Azure resources?](~/identity/managed-identities-azure-resources/overview.md). To learn about system-assigned and user-assigned managed identity types, see [Managed identity types](~/identity/managed-identities-azure-resources/overview.md)[azure-cli-prepare-your-environment-no-header.md](~/../docs/reusable-content/azure-cli/azure-cli-prepare-your-environment-no-header.md)
 
 ## System-assigned managed identity
 
@@ -298,7 +296,7 @@ To assign a user-assigned identity to a VM, your account needs the [Virtual Mach
    az account get-access-token
    ``` 
 
-4. Create a user-assigned managed identity using the instructions found here: [Create a user-assigned managed identity](./how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-rest#create-a-user-assigned-managed-identity).
+4. Create a user-assigned managed identity using the instructions found here: [Create a user-assigned managed identity](../how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-rest#create-a-user-assigned-managed-identity).
 
 5. Create a VM using CURL to call the Azure Resource Manager REST endpoint. The following example creates a VM named *myVM* in the resource group *myResourceGroup* with a user-assigned managed identity `ID1`, as identified in the request body by the value `"identity":{"type":"UserAssigned"}`. Replace `<ACCESS TOKEN>` with the value you received in the previous step when you requested a Bearer access token and the `<SUBSCRIPTION ID>` value as appropriate for your environment.
  
@@ -473,7 +471,7 @@ To assign a user-assigned identity to a VM, your account needs the [Virtual Mach
    az account get-access-token
    ```
 
-2. Create a user-assigned managed identity using the instructions found here, [Create a user-assigned managed identity](./how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-rest#create-a-user-assigned-managed-identity).
+2. Create a user-assigned managed identity using the instructions found here, [Create a user-assigned managed identity](../how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-rest#create-a-user-assigned-managed-identity).
 
 3. To ensure you don't delete existing user or system-assigned managed identities that are assigned to the VM, you need to list the identity types assigned to the VM by using the following CURL command. If you have managed identities assigned to the virtual machine scale set, they are listed under in the `identity` value.
 
@@ -786,4 +784,4 @@ PATCH https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroup
 
 For information on how to create, list, or delete user-assigned managed identities using REST see:
 
-- [Create, list, or delete a user-assigned managed identities using REST API calls](./how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-rest)
+- [Create, list, or delete a user-assigned managed identities using REST API calls](../how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-rest)
