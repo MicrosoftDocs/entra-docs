@@ -39,7 +39,7 @@ landingContent:
         links:
           - text: Microsoft 365 admin center
             url: /microsoft-365/enterprise/set-up-multi-tenant-org
-          - text: Microsoft Graph API
+          - text: PowerShell or Microsoft Graph API
             url: multi-tenant-organization-configure-graph.md
 
   # Card
