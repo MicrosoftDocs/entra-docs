@@ -1,12 +1,11 @@
 ---
 title: Silent install Microsoft Entra private network connector
-description: Covers how to perform an unattended installation of Microsoft Entra private network connector to provide secure remote access to your on-premises apps.
+description: Covers how to perform an unattended installation of the Microsoft Entra private network connector.
 author: kenwith
 manager: amycolannino
-ms.service: entra-id
-ms.subservice: app-proxy
+ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 02/15/2024
+ms.date: 04/24/2024
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
@@ -55,11 +54,12 @@ There are two methods you can use to register the connector:
    $SecurePassword = $PlainPassword | ConvertTo-SecureString -AsPlainText -Force
    $cred = New-Object –TypeName System.Management.Automation.PSCredential –ArgumentList $User, $SecurePassword
    ```
-2. Go to `C:\Program Files\Microsoft Entra private network connector` and run the following script using the `$cred` object that you created:
+1. Go to `C:\Program Files\Microsoft Entra private network connector` and run the following script using the `$cred` object that you created:
 
    ```powershell
    .\RegisterConnector.ps1 -modulePath "C:\Program Files\Microsoft Entra private network connector\Modules\" -moduleName "MicrosoftEntraPrivateNetworkConnectorPSModule" -Authenticationmode Credentials -Usercredentials $cred -Feature ApplicationProxy -TenantId $TenantId
    ```
+1. The script contains sensitive credential information. Store the script in a secure location.
 
 ### Register the connector using a token created offline
 1. Create an offline token using the `AuthenticationContext` class using the values in this code snippet or PowerShell cmdlets:
@@ -133,7 +133,6 @@ There are two methods you can use to register the connector:
    ```
 
    **Using PowerShell:**
-
    ```powershell
    # Load MSAL (Tested with version 4.7.1) 
 
@@ -180,20 +179,16 @@ There are two methods you can use to register the connector:
 
    } 
    ```
-
-2. Once you have the token, create a `SecureString` using the token:
-
+1. Once you have the token, create a `SecureString` using the token:
    ```powershell
    $SecureToken = $Token | ConvertTo-SecureString -AsPlainText -Force
    ```
-
-3. Run the following Windows PowerShell command, replacing `<tenant GUID>` with your directory ID:
+1. Run the following Windows PowerShell command, replacing `<tenant GUID>` with your directory ID:
 
    ```powershell
    .\RegisterConnector.ps1 -modulePath "C:\Program Files\Microsoft Entra private network connector\Modules\" -moduleName "MicrosoftEntraPrivateNetworkConnectorPSModule" -Authenticationmode Token -Token $SecureToken -TenantId <tenant GUID> -Feature ApplicationProxy
    ```
+1. Store the script or code in a secure location as it contains sensitive credential information.
 
 ## Next steps
-- [Publish applications using your own domain name](how-to-configure-custom-domain.md)
-- [Enable single-sign on](how-to-configure-sso-with-kcd.md)
-- [Troubleshoot issues you're having with application proxy](application-proxy-troubleshoot.md)
+- [What is Global Secure Access?](overview-what-is-global-secure-access.md)
