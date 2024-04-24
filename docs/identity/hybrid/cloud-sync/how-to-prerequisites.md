@@ -39,7 +39,7 @@ A group Managed Service Account is a managed domain account that provides automa
 
 ### Custom gMSA account
 
-If you are creating a custom gMSA account, you need to ensure that the account has the following permissions.
+If you are creating a custom gMSA account, you need to ensure that the account has the following permissions on the root of each Active Directory domain and propagate to all child objects.
 
 |Type |Name |Access |Applies To|
 |-----|-----|-----|-----|
