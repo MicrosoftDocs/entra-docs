@@ -77,11 +77,14 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     a. In the **Identifier (Entity ID)** text box, type a value using the following pattern:
     `<your_couchbase_entityID>`
 
-    b. In the **Sign on URL** text box, type a URL using the following pattern:
+    b. In the **Reply URL** text box, type a URL using the following pattern:
+    `https://<your_couchbase_server>/saml/consume`
+
+    c. In the **Sign on URL** text box, type a URL using the following pattern:
     `https://<your_couchbase_server>/<ID>`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier and Sign on URL. Contact [Couchbase Server - SSO support team](mailto:support@couchbase.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
+	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [Couchbase Server - SSO support team](mailto:support@couchbase.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
 
 1. Couchbase Server - SSO application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
