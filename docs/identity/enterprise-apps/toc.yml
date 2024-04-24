@@ -161,6 +161,8 @@ items:
           href: manage-application-permissions.md
         - name: Restore revoked permissions
           href: restore-permissions.md
+        - name: Review permission audit logs
+        - href: app-perms-audit-logs.md
       - name: Manage user assignment
         href: assign-user-or-group-access-portal.md
       - name: Assign custom security attributes
