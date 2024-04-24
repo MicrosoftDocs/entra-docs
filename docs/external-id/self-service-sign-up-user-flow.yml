@@ -6,7 +6,7 @@ metadata:
   author: msmimart
   ms.author: mimart
   manager: CelesteDG
-  ms.date: 02/05/2024
+  ms.date: 04/24/2024
   ms.service: entra-external-id
   ms.topic: how-to
   ms.collection: M365-identity-device-management
@@ -131,18 +131,6 @@ procedureSection:
         Select the application from the list. Or use the search box to find the application, and then select it.
       - |  
         Choose **Select**.
-        
-      
-        Now that the application is associated with the user flow, your B2B
-        guests will be directed to this user flow for authentication whenever
-        they access the application. They can use:
-
-        - The
-          [redemption link](invitation-email-elements.md#accept-invitation-button-or-link-and-redirect-url)
-          in their invitation
-        - A
-          [direct link](redemption-experience.md#redemption-process-through-a-direct-link)
-          to the application
 
 relatedContent:
   - text: Add Google to your list of social identity providers
