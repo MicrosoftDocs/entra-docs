@@ -25,7 +25,7 @@ When the value is the user UPN, sign-in pages often prompt users to enter an ema
 
 * Employee name change
 * Employee move
-* Rebranding changes to the suffix
+* Rebranding changes that affect the suffix
 * Merger and/or acquisition changes
 
 ### UPN changes
@@ -81,7 +81,7 @@ To test bulk UPN changes, create a tested roll-back plan to revert UPNs. For the
 
 Learn more about [Microsoft Entra deployment plans](~/architecture/deployment-plans.md).
 
-We recommend you create a procedure to change UPNs for individual users that includes documentation about known issues and workarounds. See the following sections for more information. 
+We recommend you create a procedure to change UPNs for individual users. Include documentation about known issues and workarounds. For more information, see the following sections. 
 
 ## SaaS and LoB apps issues
 
@@ -98,7 +98,7 @@ User UPN changes can break the relationship between the Microsoft Entra user and
 
 ### Workarounds: automated provisioning
 
-In supported cloud applications, to create, maintain, and remove user identities, use automated app provisioning in Microsoft Entra ID. To update UPNs on the applicationon, configure automated user provisioning on your applications. Test applications to validate successful UPN changes. To enable automatic user provisioning, developers can add System for Cross-domain Identity Management (SCIM) support to applications. 
+In supported cloud applications, to create, maintain, and remove user identities, use automated app provisioning in Microsoft Entra ID. To update UPNs on the application, configure automated user provisioning on your applications. Test applications to validate successful UPN changes. To enable automatic user provisioning, developers can add System for Cross-domain Identity Management (SCIM) support to applications. 
 
 Learn more:
 
@@ -131,7 +131,7 @@ Users might experience SSO issues with applications that depend on Microsoft Ent
 4. Verify with [Get-MgUser](/powershell/module/microsoft.graph.users/get-mguser) in Microsoft Graph PowerShell
 
    >[!NOTE]
-   > After users sign in with a new UPN, references to the old UPN might appear on the **Access work or school** Windows setting.
+   > After users sign in with a new UPN, references to the previous UPN might appear on the **Access work or school** Windows setting.
 
    ![Screenshot of User-1 and Other-user domains, on the sign-in screen.](./media/howto-troubleshoot-upn-changes/other-user.png)
 
@@ -145,7 +145,7 @@ Learn more about [Microsoft Entra hybrid joined devices](~/identity/devices/conc
 
 ### Known issues: Windows 10 Microsoft Entra hybrid joined devices
 
-Windows 10 Microsoft Entra hybrid joined devices experience unexpected restarts and access issues. If users sign in to Windows before the new UPN synchronizes with Microsoft Entra ID, or they use a Windows session, they might experience SSO issues with apps that use Microsoft Entra ID for authentication. This situation occurs if Conditional Access is configured to enforce use of hybrid joined devices to access resources. In addition, the following message can force a restart after one minute:
+Windows 10 Microsoft Entra hybrid joined devices experience unexpected restarts and access issues. If users sign in to Windows before the new UPN synchronizes with Microsoft Entra ID, they might experience SSO issues with apps that use Microsoft Entra ID for authentication. This scenario can occur if users are in a Windows session. This situation occurs if Conditional Access is configured to enforce use of hybrid joined devices to access resources. In addition, the following message can force a restart after one minute:
 
 *Your PC will automatically restart in one minute. Windows ran into a problem and needs to restart. You should close this message now and save your work.*
 
@@ -164,7 +164,7 @@ To unjoin a device from Microsoft Entra ID, run the following command at a comma
    >If you use Windows Hello for Business, users re-enroll for Windows Hello for Business. 
 
    >[!TIP]
-   >Windows 7 and 8.1 devices are not affected by this issue.
+   >Windows 7 and 8.1 devices aren't affected by this issue.
 
 ## Mobile Application Management app protection policies
 
@@ -175,7 +175,7 @@ If your organization uses Mobile Application Management (MAM) to protect corpora
 Learn more: 
 
 * [App protection policies overview](/mem/intune/apps/app-protection-policy)
-* [Frequently asked questions about MAM and app protection](/mem/intune/apps/mam-faq)
+* [FAQs about MAM and app protection](/mem/intune/apps/mam-faq)
 
 ### Workaround
 
@@ -193,7 +193,7 @@ Authenticator app has four main functions:
 
 * **Multifactor authentication** with push notification or verification code
 * **Authentication broker** on iOS and Android devices for SSO on applications using brokered authentication
-  * [Enable cross-app SSO on Android using MSAL](~/identity-platform/msal-android-single-sign-on.md)
+  * [Enable cross-app SSO on Android using Microsoft Authentication Library (MSAL)](~/identity-platform/msal-android-single-sign-on.md)
 * **Device registration** or workplace join, to Microsoft Entra ID, which is a requirement for Intune App Protection and Device Enrolment/Management
 * **Phone sign in**, which requires MFA and device registration
 
@@ -201,7 +201,7 @@ Authenticator app has four main functions:
 
 ### Multifactor authentication with Android devices
 
-Use Authenticator for out-of-band verification. Multifactor authentication pushes a notification to Authenticator on the user device, instead of an automated call or SMS to the user. 
+Use Authenticator for out-of-band verification. Multifactor authentication pushes a notification to Authenticator on the user device, instead of an automated call or short-message service (SMS) to the user. 
 
 1. The user selects **Approve**, enters a PIN, or enters a biometric.
 2. The user selects **Authenticate**.
@@ -212,7 +212,7 @@ Learn [how it works: Microsoft Entra multifactor authentication](~/identity/auth
 
 When you change user UPN, the old UPN appears on the user account. Notification might not be received. Instead, use verification codes.
 
-See a list of [common questions about Authenticator](https://prod.support.services.microsoft.com/account-billing/common-questions-about-the-microsoft-authenticator-app-12d283d1-bcef-4875-9ae5-ac360e2945dd)
+See a list of [common questions about Authenticator](https://prod.support.services.microsoft.com/account-billing/common-questions-about-the-microsoft-authenticator-app-12d283d1-bcef-4875-9ae5-ac360e2945dd).
 
 ### Workaround
 
@@ -240,7 +240,7 @@ Learn more:
 
 ### Known issues: user prompts
 
-Due to a mismatch between the `login_hint` passed by the application and the UPN on the broker, the user experiences more authentication prompts that use broker-assisted sign-in.
+Due to a mismatch between the `login_hint` passed by the application, and the UPN on the broker, the user experiences more authentication prompts with broker-assisted sign-in.
 
 ### Workaround
 
@@ -272,13 +272,13 @@ Users can't use phone sign-in because they didn't receive notification. If the u
 
 ### Workaround
 
-On the account enabled for phone sign-in, on the drop-down menu the user selects **Disable phone sign-in**. 
+On the account enabled for phone sign-in, on the drop-down menu, the user selects **Disable phone sign-in**. 
 
 ## Security key (FIDO2) issues
 
 ### Known issues: Account selection
 
-When multiple users are registered on the same key, account selection appears where the old UPN appears. Sign-in with security keys isn't affected by UPN changes.  
+When multiple users are registered on the same key, account selection appears where the old UPN appears. UPN changes don't affect sign-in with security keys.  
 
 ### Workaround
 
