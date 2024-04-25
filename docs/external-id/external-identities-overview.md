@@ -61,7 +61,7 @@ Currently, B2B direct connect enables the Teams Connect shared channels feature,
 
 - External users can access the Teams shared channel without having to switch organizations or sign in with a different account. From within Teams, the external user can access files and apps through the Files tab. The user’s access is determined by the shared channel’s policies.
 
-You use [cross-tenant access settings](cross-tenant-access-settings-b2b-collaboration.md) to manage trust relationships with other Microsoft Entra organizations and define inbound and outbound policies for B2B direct connect.
+You use [cross-tenant access settings](cross-tenant-access-settings-b2b-collaboration.yml) to manage trust relationships with other Microsoft Entra organizations and define inbound and outbound policies for B2B direct connect.
 
 For details about the resources, files, and applications that are available to the B2B direct connect user via the Teams shared channel refer to [Chat, teams, channels, & apps in Microsoft Teams](/microsoftteams/deploy-chat-teams-channels-microsoft-teams-landing-page).
 

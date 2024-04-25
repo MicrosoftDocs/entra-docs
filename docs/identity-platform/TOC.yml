@@ -501,7 +501,7 @@
             - name: Customize claims using PowerShell
               href: claims-customization-powershell.md
             - name: Set an access token lifetime policy
-              href: configure-token-lifetimes.md    
+              href: configure-token-lifetimes.yml    
             - name: Configure app multi-instancing
               href: configure-app-multi-instancing.md
         - name: Custom claims provider

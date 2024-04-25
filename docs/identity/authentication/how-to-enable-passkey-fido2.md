@@ -15,7 +15,7 @@ ms.reviewer: calui, tilarso
 # Customer intent: As a Microsoft Entra Administrator, I want to learn how to enable and enforce passkeys sign in for end users.
 
 ---
-# Enable passkeys for your organization (preview)
+# Enable passkeys (FIDO2) for your organization
 
 For enterprises that use passwords today, passkeys (FIDO2) provide a seamless way for workers to authenticate without entering a username or password. Passkeys provide improved productivity for workers, and have better security.
 
@@ -36,7 +36,7 @@ For more information about passkey authentication, see [Support for FIDO2 authen
 
 Passkeys are supported across major scenarios on Windows, macOS, Android, and iOS. For more information on supported scenarios, see [Support for FIDO2 authentication in Microsoft Entra ID](fido2-compatibility.md).
 
-## Enable passkey (FIDO2) authentication method 
+## Enable passkey authentication method 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Protection** > **Authentication methods** > **Authentication method policy**.
@@ -49,7 +49,7 @@ Passkeys are supported across major scenarios on Windows, macOS, Android, and iO
 
 ### Passkey optional settings 
 
-There are some optional settings on the **Configure** tab to help manage how passkeys can be used for sign-in. You can select **Microsoft Authenticator (preview)** if the checkbox is displayed in the admin center. This will automatically populate the Authenticator app AAGUIDs for you in the key restriction list.
+There are some optional settings on the **Configure** tab to help manage how passkeys can be used for sign-in.
 
 :::image type="content" border="true" source="media/howto-authentication-passwordless-security-key/optional-settings-with-aaguid.png" alt-text="Screenshot of FIDO2 security key options.":::
 
@@ -63,7 +63,8 @@ There are some optional settings on the **Configure** tab to help manage how pas
 
 **Key Restriction Policy**
 
-- **Enforce key restrictions** should be set to **Yes** only if your organization wants to only allow or disallow certain security key models or passkey providers, which are identified by their Authenticator Attestation GUID (AAGUID). You can work with your security key vendor or passkey provider to determine the AAGUID of a device. If the passkey is already registered, you can find the AAGUID by viewing the authentication method details of the passkey for the user. 
+- **Enforce key restrictions** should be set to **Yes** only if your organization wants to only allow or disallow certain security key models or passkey providers, which are identified by their Authenticator Attestation GUID (AAGUID). You can work with your security key vendor to determine the AAGUID of the passkey. If the passkey is already registered, you can find the AAGUID by viewing the authentication method details of the passkey for the user.
+- When **Enforce key restrictions** is set to **Yes**, you can select **Microsoft Authenticator (preview)** if the checkbox is displayed in the admin center. This will automatically populate the Authenticator app AAGUIDs for you in the key restriction list.
 
   >[!WARNING]
   >Key restrictions set the usability of specific models or providers for both registration and authentication. If you change key restrictions and remove an AAGUID that you previously allowed, users who previously registered an allowed method can no longer use it for sign-in. 
@@ -130,7 +131,7 @@ To remove a passkey associated with a user account, delete the key from the user
 
     ![Screenshot of View Authentication Method details.](media/howto-authentication-passwordless-deployment/security-key-view-details.png)
 
-## Enforce passkey sign-in (preview)
+## Enforce passkey sign-in
 
 To make users sign in with a passkey when they access a sensitive resource, you can: 
 

@@ -152,6 +152,8 @@
         href: amazon-web-service-tutorial.md#how-to-configure-role-provisioning-in-aws-single-account-access
       - name: AMMS
         href: amms-tutorial.md
+      - name: Amplified
+        href: amplified-tutorial.md
       - name: Amplitude
         href: amplitude-tutorial.md
       - name: Anaplan
@@ -310,7 +312,7 @@
         href: beatrust-tutorial.md
       - name: Beekeeper Microsoft Entra Data Connector
         href: beekeeper-azure-ad-data-connector-tutorial.md
-      - name: BeeLine
+      - name: Beeline Enterprise
         href: beeline-tutorial.md
       - name: Benchling
         href: benchling-tutorial.md
@@ -414,6 +416,8 @@
         href: brushup-tutorial.md        
       - name: bswift
         href: bswift-tutorial.md
+      - name: Bugcrowd
+        href: bugcrowd-tutorial.md
       - name: Bugsnag
         href: bugsnag-tutorial.md
       - name: BullseyeTDP
@@ -678,6 +682,8 @@
         href: cosgrid-networks-tutorial.md
       - name: Costpoint
         href: costpoint-tutorial.md
+      - name: Couchbase Server - SSO
+        href: couchbase-server-sso-tutorial.md
       - name: Count Me In - Operations Dashboard
         href: count-me-in-operations-dashboard-tutorial.md
       - name: Couchbase Capella - SSO
@@ -1535,8 +1541,8 @@
         href: kantegassoforjira-tutorial.md
       - name: Kao Navi
         href: kao-navi-tutorial.md
-      - name: Karlsgate Identity Exchange (KIE)
-        href: karlsgate-identity-exchange-tutorial.md
+      - name: Karlsgate Identity Exchange (KIE) SSO Add-on
+        href: karlsgate-identity-exchange-kie-sso-add-on-tutorial.md
       - name: Keepabl
         href: keepabl-tutorial.md  
       - name: Keeper Password Manager
@@ -2689,6 +2695,8 @@
         href: swit-tutorial.md  
       - name: Symantec Web Security Service (WSS)
         href: symantec-tutorial.md
+      - name: Symantec ZTNA
+        href: symantec-ztna-tutorial.md
       - name: SynchroNet CLICK
         href: synchronet-click-tutorial.md
       - name: Syncplicity
@@ -2925,6 +2933,8 @@
         href: useall-tutorial.md
       - name: UserEcho
         href: userecho-tutorial.md  
+      - name: User Interviews
+        href: user-interviews-tutorial.md
       - name: UserVoice
         href: uservoice-tutorial.md
       - name: UserTesting
