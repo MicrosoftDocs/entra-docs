@@ -53,7 +53,7 @@ Use these steps to initiate the sign-up flow:
         .build() 
     ``` 
      
-    The method names in the `UserAttribute.Builder` class are same as the the programmable names of the user attributes that they build. Learn more about [Android SDK attribute builder](concept-native-authentication-user-attribute-builder.md?tabs=android-kotlin).
+    The method names in the `UserAttribute.Builder` class are same as the programmable names of the user attributes that they build. Learn more about [Android SDK attribute builder](concept-native-authentication-user-attribute-builder.md?tabs=android-kotlin).
         
 
 1. To start the sign-up flow, use the following code snippet: 
@@ -108,7 +108,7 @@ Use these steps to initiate the sign-up flow:
 
 ## Handle sign-up errors  
  
-- If `actionResult is SignUpError`, the Android SDK provides utility methods to enable you analyze the specific errors further: 
+- If `actionResult is SignUpError`, the Android SDK provides utility methods to enable you to analyze the specific errors further: 
     - `isUserAlreadyExists()`
     - `isInvalidAttributes()`
     - `isInvalidPassword()`
