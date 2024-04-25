@@ -30,7 +30,7 @@ Alternatively, you can add a passkey from your mobile device browser, or through
 You can sign in to the Authenticator to create a passkey in the app and get seamless Single Sign-on across Microsoft native apps. This is the recommended and preferred flow to setup a passkey in the app. 
 
 1. Open Authenticator.
-1. Tap the **+** button.
+1. Tap the **Add Account** or **+** button.
 1. Select **Work or school account**.
 1. Sign in.
 1. You need to complete multifactor authentication (MFA).
@@ -38,6 +38,7 @@ You can sign in to the Authenticator to create a passkey in the app and get seam
    1. Open **Passwords** select **Password Options**.
    1. Ensure **Autofill Passwords and and Passkeys** is turned on.
    1. Under Use **Passwords and Passkeys** From select **Authenticator**.
+   1. Return to **Authenticator app** and select **Continue**.
 1. Authenticator sets up passkey, passwordless, and/or MFA for sign-in according to your work or school account policies.
 
 If you already have an account in the Authenticator app, or you are signed in to the Authenticator app, you still need to go through the above mentioned flow to add a passkey in the app.
@@ -188,14 +189,14 @@ To remove the passkey from Authenticator, click the *Trash* icon, then tap **Del
 You can sign in to the Authenticator to create a passkey in the app and get seamless Single Sign-on across Microsoft native apps. This is the recommended and preferred flow to setup a passkey in the app. 
 
 1. Open Authenticator.
-1. Tap the **+** button.
+1. Tap the **Add account** or **+** button.
 1. Select **Work or school account**.
 1. Sign in.
 1. You need to complete multifactor authentication (MFA).
 1. Follow the on-screen instructions. On your Android device, open the **Settings app** to enable the Authenticator as a passkey provider.
    1. Open **Passwords & Accounts**.
-   1. **Additional providers** enable **Authenticator**.
-   1. Return to **My Security info** and select **Continue**.
+   1. Under **Additional providers** enable **Authenticator**.
+   1. Return to **Authenticator app** and select **Done**.
 1. Authenticator sets up passkey, passwordless, and/or MFA for sign-in according to your work or school account policies.
 
 If you already have an account in the Authenticator app, or you are signed in to the Authenticator app, you still need to go through the above mentioned flow to add a passkey in the app.
