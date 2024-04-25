@@ -84,7 +84,7 @@ The following premium detections are visible only to Microsoft Entra ID P2 custo
 
 #### Activity from anonymous IP address 
 
-Calculated offline. This detection is discovered using information provided by Microsoft Defender for Cloud Apps. This detection identifies that users were active from an IP address that has been identified as an anonymous proxy IP address. 
+Calculated offline. This detection is discovered using information provided by [Microsoft Defender for Cloud Apps](/defender-cloud-apps/anomaly-detection-policy#activity-from-anonymous-ip-addresses). This detection identifies that users were active from an IP address that has been identified as an anonymous proxy IP address. 
 
 #### Anomalous token 
 
@@ -104,7 +104,7 @@ The algorithm ignores obvious "false positives" contributing to the impossible t
 
 #### Impossible travel 
 
-Calculated offline. This detection is discovered using information provided by Microsoft Defender for Cloud Apps. This detection identifies user activities (is a single or multiple sessions) originating from geographically distant locations within a time period shorter than the time it takes to travel from the first location to the second. This risk might indicate that a different user is using the same credentials. 
+Calculated offline. This detection is discovered using information provided by [Microsoft Defender for Cloud Apps](/defender-cloud-apps/anomaly-detection-policy#impossible-travel). This detection identifies user activities (is a single or multiple sessions) originating from geographically distant locations within a time period shorter than the time it takes to travel from the first location to the second. This risk might indicate that a different user is using the same credentials. 
 
 #### Malicious IP address 
 
@@ -112,11 +112,11 @@ Calculated offline. This detection indicates sign-in from a malicious IP address
 
 #### Mass access to sensitive files 
 
-Calculated offline. This detection is discovered using information provided by Microsoft Defender for Cloud Apps. This detection looks at your environment and triggers alerts when users access multiple files from Microsoft SharePoint or Microsoft OneDrive. An alert is triggered only if the number of accessed files is uncommon for the user and the files might contain sensitive information. 
+Calculated offline. This detection is discovered using information provided by [Microsoft Defender for Cloud Apps](/defender-cloud-apps/investigate-anomaly-alerts#unusual-file-access-by-user). This detection looks at your environment and triggers alerts when users access multiple files from Microsoft SharePoint or Microsoft OneDrive. An alert is triggered only if the number of accessed files is uncommon for the user and the files might contain sensitive information. 
 
 #### New country 
 
-Calculated offline. This detection is discovered using information provided by Microsoft Defender for Cloud Apps. This detection considers past activity locations to determine new and infrequent locations. The anomaly detection engine stores information about previous locations used by users in the organization. 
+Calculated offline. This detection is discovered using information provided by [Microsoft Defender for Cloud Apps](/defender-cloud-apps/anomaly-detection-policy#activity-from-infrequent-country). This detection considers past activity locations to determine new and infrequent locations. The anomaly detection engine stores information about previous locations used by users in the organization. 
 
 #### Password spray 
 
@@ -128,11 +128,11 @@ Calculated offline. Suspicious browser detection indicates anomalous behavior ba
 
 #### Suspicious inbox forwarding 
 
-Calculated offline. This detection is discovered using information provided by Microsoft Defender for Cloud Apps. This detection looks for suspicious email forwarding rules, for example, if a user created an inbox rule that forwards a copy of all emails to an external address. 
+Calculated offline. This detection is discovered using information provided by [Microsoft Defender for Cloud Apps](/defender-cloud-apps/anomaly-detection-policy#suspicious-inbox-forwarding). This detection looks for suspicious email forwarding rules, for example, if a user created an inbox rule that forwards a copy of all emails to an external address. 
 
 #### Suspicious inbox manipulation rules 
 
-Calculated offline. This detection is discovered using information provided by Microsoft Defender for Cloud Apps. This detection looks at your environment and triggers alerts when suspicious rules that delete or move messages or folders are set on a user's inbox. This detection might indicate: a user's account is compromised, messages are being intentionally hidden, and the mailbox is being used to distribute spam or malware in your organization. 
+Calculated offline. This detection is discovered using information provided by [Microsoft Defender for Cloud Apps](/defender-cloud-apps/anomaly-detection-policy#suspicious-inbox-manipulation-rules). This detection looks at your environment and triggers alerts when suspicious rules that delete or move messages or folders are set on a user's inbox. This detection might indicate: a user's account is compromised, messages are being intentionally hidden, and the mailbox is being used to distribute spam or malware in your organization. 
 
 #### Token issuer anomaly 
 
@@ -168,7 +168,7 @@ Calculated offline. This risk detection is reported when abnormal Graph traffic 
 
 #### Suspicious sending patterns 
 
-Calculated offline. This risk detection type is discovered using information provided by Microsoft Defender for Office (MDO). This alert is generated when someone in your organization has sent suspicious email and is either at risk of being restricted from sending email or has already been restricted from sending email. This detection moves users to medium risk and only fires in organizations that have deployed MDO. This detection is low-volume and is seen infrequently in most organizations. 
+Calculated offline. This risk detection type is discovered using information provided by [Microsoft Defender for Office 365 (MDO)](/defender-office-365/air-about). This alert is generated when someone in your organization has sent suspicious email and is either at risk of being restricted from sending email or has already been restricted from sending email. This detection moves users to medium risk and only fires in organizations that have deployed MDO. This detection is low-volume and is seen infrequently in most organizations. 
 
 #### User reported suspicious activity 
 
@@ -176,7 +176,7 @@ Calculated offline. This risk detection is reported when a user denies a multifa
 
 ## Nonpremium detections 
 
-Customers without Microsoft Entra ID P2 licenses receive detections titled "additional risk detected" without the detailed information regarding the detection that customers with P2 licenses do. View license requirements at What is Microsoft Entra ID Protection? - Microsoft Entra ID Protection | Microsoft Learn. 
+Customers without Microsoft Entra ID P2 licenses receive detections titled "additional risk detected" without the detailed information regarding the detection that customers with P2 licenses do. For more information, see the [license requirements](overview-identity-protection.md#license-requirements). 
 
 ### Nonpremium sign-in risk detections 
 
