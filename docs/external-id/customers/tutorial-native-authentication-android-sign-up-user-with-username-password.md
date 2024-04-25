@@ -96,7 +96,7 @@ In this tutorial, you learn how to:
  
 If `actionResult is SignUpError`, the SDK provides utility method for further analyzing the specific type of error returned: 
 
-- If `actionResult is SignUpError`, MSAL Android SDK provides utility methods to enable you analyze the specific errors further: 
+- If `actionResult is SignUpError`, MSAL Android SDK provides utility methods to enable you to analyze the specific errors further: 
     - `isUserAlreadyExists()`
     - `isInvalidPassword()`
     - `isInvalidAttributes()`
