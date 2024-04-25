@@ -58,8 +58,6 @@ Here are the scenarios and mechanisms to give risk feedback to Microsoft Entra I
 
 Feedback on user risk detections in ID Protection is processed offline and might take some time to update. The **risk processing state** column provides the current state of feedback processing.
 
-![Screenshot showing the risk processing state for risky user report.](./media/howto-identity-protection-risk-feedback/risky-users-provide-feedback.png)
-
 ## Related content
 
 - [Microsoft Entra ID Protection risk detections reference](./concept-identity-protection-risks.md)

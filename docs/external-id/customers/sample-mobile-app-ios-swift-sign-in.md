@@ -52,12 +52,11 @@ Configure delegated permission to Microsoft Graph to enable your client applicat
 
 ## Clone sample iOS mobile application
 
-To obtain the sample application, clone the sample by following these steps:
+To obtain the sample application, you can either clone it from GitHub or download it as a .zip file.
 
-1. Open Terminal and navigate to a directory where you want to keep the code.  
-1. Clone the application from GitHub by running the following command:  
+- To clone the sample, open a command prompt and navigate to where you wish to create the project, and enter the following command:
 
-   ```bash 
+   ```console 
    git clone https://github.com/Azure-Samples/ms-identity-ciam-browser-delegated-ios-sample.git
    ```
 
@@ -84,8 +83,10 @@ To build and run your app, follow these steps:
  
 1. To build and run your code, select **Run** from the **Product** menu in Xcode. After a successful build, Xcode will launch the sample app in the Simulator.
 1. Select **Acquire Token Interactively** to request an access token.
-1. If you select **API - Perform GET** to call a protected ASP.NET Core web API, you will get an error. For more information about calling a protected web API, see [Next Step](#next-step) 
+1. If you select **API - Perform GET** to call a protected ASP.NET Core web API, you will get an error. 
 
-## Next Step
+For more information about calling a protected web API, see our [Next steps](#next-steps) 
+
+## Next steps
 
 - [Sign in users and call a protected web API in sample iOS (Swift) app](sample-mobile-app-ios-swift-sign-in-call-api.md).

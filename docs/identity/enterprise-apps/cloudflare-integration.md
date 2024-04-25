@@ -11,7 +11,7 @@ ms.topic: how-to
 ms.date: 05/02/2023
 ms.author: gasinh
 ms.collection: M365-identity-device-management
-ms.custom: not-enterprise-apps, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom: not-enterprise-apps
 
 #customer intent:As an administrator configuring access policies in Cloudflare Access, I want to learn how to integrate Cloudflare with Microsoft Entra ID, so that I can enforce organizational policies and provide secure access to self-hosted, SaaS, or nonweb applications.
 ---
@@ -76,20 +76,19 @@ Use the instructions in the following three sections to register Cloudflare with
 
 See the [team domain](https://developers.cloudflare.com/cloudflare-one/glossary#team-domain) definition in the Cloudflare Glossary.
 
-   ![Screenshot of options and selections for Register an application.](./media/cloudflare-integration/register-application.png)
+   :::image type="content" source="./media/cloudflare-integration/register-application.png" alt-text="Screenshot of options and selections for Register an application.":::
 
 ### Certificates & secrets
 
 1. On the **Cloudflare Access** screen, under **Essentials**, copy and save the Application (Client) ID and the Directory (Tenant) ID.
 
-   [![Screenshot of the Cloudflare Access screen.](./media/cloudflare-integration/cloudflare-access.png)](./media/cloudflare-integration/cloudflare-access.png#lightbox)
-
+   :::image type="content" source="./media/cloudflare-integration/cloudflare-access.png" alt-text="Screenshot of the Cloudflare Access screen." lightbox="./media/cloudflare-integration/cloudflare-access.png":::
 
 
 
 2. In the left menu, under **Manage**, select **Certificates & secrets**.
 
-   ![Screenshot of the certificates and secrets screen.](./media/cloudflare-integration/add-client-secret.png)
+   :::image type="content" source="./media/cloudflare-integration/add-client-secret.png" alt-text="Screenshot of the certificates and secrets screen.":::
 
 3. Under **Client secrets**, select **+ New client secret**.
 4. In **Description**, enter the Client Secret.
@@ -97,7 +96,7 @@ See the [team domain](https://developers.cloudflare.com/cloudflare-one/glossary#
 6. Select **Add**.
 7. Under **Client secrets**, from the **Value** field, copy the value. Consider the value an application password. The example value appears, Azure values appear in the Cloudflare Access configuration.
 
-   ![Screenshot of Client secrets input.](./media/cloudflare-integration/cloudflare-access-configuration.png)
+   :::image type="content" source="./media/cloudflare-integration/cloudflare-access-configuration.png" alt-text="Screenshot of Client secrets input.":::
 
 ### Permissions
 
@@ -105,7 +104,7 @@ See the [team domain](https://developers.cloudflare.com/cloudflare-one/glossary#
 2. Select **+ Add a permission**.
 3. Under **Select an API**, select **Microsoft Graph**.
 
-   ![Screenshot of the Microsoft Graph option under Request API permissions.](./media/cloudflare-integration/microsoft-graph.png)
+   :::image type="content" source="./media/cloudflare-integration/microsoft-graph.png" alt-text="Screenshot of the Microsoft Graph option under Request API permissions.":::
 
 4. Select **Delegated permissions** for the following permissions:
 
@@ -120,13 +119,12 @@ See the [team domain](https://developers.cloudflare.com/cloudflare-one/glossary#
 
 5. Under **Manage**, select **+ Add permissions**.
 
-   [![Screenshot options and selections for Request API permissions.](./media/cloudflare-integration/request-api-permissions.png)](./media/cloudflare-integration/request-api-permissions.png#lightbox)
-
+   :::image type="content" source="./media/cloudflare-integration/request-api-permissions.png" alt-text="Screenshot options and selections for Request API permissions." lightbox="./media/cloudflare-integration/request-api-permissions.png":::
 
 
 6. Select **Grant Admin Consent for ...**.
 
-   [![Screenshot of configured permissions under API permissions.](./media/cloudflare-integration/grant-admin-consent.png)](./media/cloudflare-integration/grant-admin-consent.png#lightbox)
+   :::image type="content" source="./media/cloudflare-integration/grant-admin-consent.png" alt-text="Screenshot of configured permissions under API permissions." lightbox="./media/cloudflare-integration/grant-admin-consent.png":::
 
 
 
