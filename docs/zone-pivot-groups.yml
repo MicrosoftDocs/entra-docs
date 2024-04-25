@@ -61,10 +61,10 @@ groups:
   title: custom-auth-extension
   prompt: Make a selection
   pivots:
-  - id: visual-studio
-    title: Visual Studio
-  - id: visual-studio-code
-    title: Visual Studio Code
+  - id: nuget-library
+    title: NuGet Library (preview)
+  - id: azure-portal
+    title: Azure portal
 ############ END MICROSOFT IDENTITY PLATFORM
 ########### BEGIN APPLICATION MANAGEMENT
 # Owner(s):      jomondi, celested
