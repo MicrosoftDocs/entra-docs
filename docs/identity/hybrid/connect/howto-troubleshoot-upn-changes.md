@@ -32,19 +32,19 @@ When the value is the user UPN, sign-in pages often prompt users to enter an ema
 
 We recommend you change user UPN when their primary email address changes. See the following examples of prefix and suffix changes. 
 
-|Prefix|Change|
-|---|---|
-|**BSimon**@contoso.com|**BJohnson**@contoso.com|
-|**Bsimon**@contoso.com|**Britta.Simon**@contoso.com|
+Prefix changes:
 
-|Suffix|Change|
-|---|---|
-|Britta.Simon@**contoso.com**|Britta.Simon@**contosolabs.com**|
-|Britta.Simon@corp.**contoso.com**|Britta.Simon@**labs.contoso.com** |
+* From **BSimon**@contoso.com to **BJohnson**@contoso.com
+* From **Bsimon**@contoso.com to **Britta.Simon**@contoso.com
+
+Suffix changes:
+
+* From Britta.Simon@**contoso.com** to Britta.Simon@**contosolabs.com**
+* From Britta.Simon@corp.**contoso.com** to Britta.Simon@**labs.contoso.com**
 
 
-> [!IMPORTANT]
-> During initial synchronization from Active Directory to Microsoft Entra ID, ensure user emails and UPNs are identical.
+   > [!IMPORTANT]
+   > During initial synchronization from Active Directory to Microsoft Entra ID, ensure user emails and UPNs are identical.
 
 ### UPNs in Active Directory
 
