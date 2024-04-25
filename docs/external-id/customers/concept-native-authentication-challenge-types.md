@@ -7,7 +7,7 @@ ms.author: kengaderdus
 ms.service: entra-external-id 
 ms.subservice: customers
 ms.topic: concept-article
-ms.date: 02/29/2024
+ms.date: 04/29/2024
 
 #Customer intent: As a dev, devops, I want to learn about native authentication challenge types, so that I can use them to notify Microsoft Entra about the authentication methods that my app supports.
 ---

@@ -7,7 +7,7 @@ ms.author: kengaderdus
 ms.service: entra-external-id 
 ms.subservice: customers
 ms.topic: concept-article
-ms.date: 02/29/2024
+ms.date: 04/29/2024
 
 #Customer intent: As a dev, devops, I want to learn how to use native authentication SDK attribute builder to build attribute variables for both built-in and custom attributes, so that I can use them in my app.
 ---
