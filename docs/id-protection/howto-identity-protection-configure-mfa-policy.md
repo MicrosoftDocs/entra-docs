@@ -14,25 +14,21 @@ ms.reviewer:
 ---
 # How To: Configure the multifactor authentication registration policy
 
-Microsoft helps you manage the roll-out of multifactor authentication (MFA) by configuring the Microsoft Entra ID Protection policy to require MFA registration no matter what modern authentication app you're signing in to.
+Microsoft helps you manage the deployment of multifactor authentication (MFA) by configuring the Microsoft Entra ID Protection policy to require MFA registration no matter what modern authentication app you're signing in to. Multifactor authentication provides a means to verify who you are using more than just a username and password. It provides a second layer of security to user sign-ins. In order for users to be able to respond to MFA prompts, they must first register authentication methods, like the Microsoft Authenticator app.
 
-## What is the Microsoft Entra multifactor authentication registration policy?
+We recommend that you require multifactor authentication for all user sign-ins. Based on our studies, your account is more than 99.9% less likely to be compromised if you use MFA.
 
-Microsoft Entra multifactor authentication provides a means to verify who you are using more than just a username and password. It provides a second layer of security to user sign-ins. In order for users to be able to respond to MFA prompts, they must first register authentication methods, like the Microsoft Authenticator app.
-
-We recommend that you require multifactor authentication for all user sign-ins because based on our studies, your account is more than 99.9% less likely to be compromised if you use MFA.
-
-For more information, see the article [What is Microsoft Entra multifactor authentication?](~/identity/authentication/howto-mfa-getstarted.md)
+For more information, see the article [Common Conditional Access policy: Require MFA for all users](../identity/conditional-access/howto-conditional-access-policy-all-users-mfa.md).
 
 ## Policy configuration
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator)
-1. Browse to **Protection** > **Identity Protection** > **MFA registration policy**.
-   1. Under **Assignments** > **Users**
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
+1. Browse to **Protection** > **Identity Protection** > **Multifactor authentication registration policy**.
+   1. Under **Assignments** > **Users**.
       1. Under **Include**, select **All users** or **Select individuals and groups** if limiting your rollout.
       1. Under **Exclude**, select **Users and groups** and choose your organization's emergency access or break-glass accounts. 
-1. **Enforce Policy** - **On**
-1. **Save**
+1. Set **Policy enforcement** to **Enabled**.
+1. Select **Save**.
 
 ## User experience
 
