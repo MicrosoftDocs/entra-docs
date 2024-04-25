@@ -48,32 +48,33 @@ Detections that are triggered during real-time will take up to 5-10 minutes to s
 | --- | --- | --- | --- |
 | **Sign-in risk detections** | | | |
 | [Activity from anonymous IP address](#activity-from-anonymous-ip-address) | Offline | Premium | riskyIPAddress |
+| [Additional risk detected (sign-in)](#additional-risk-detected-sign-in) | Real-time or Offline | Nonpremium | generic = Premium detection classification for non-P2 tenants |
 | [Admin confirmed user compromised](#admin-confirmed-user-compromised) | Offline | Nonpremium | adminConfirmedUserCompromised |
 | [Anomalous Token](#anomalous-token) | Real-time or Offline | Premium | anomalousToken | 
 | [Anonymous IP address](#anonymous-ip-address) | Real-time | Nonpremium | anonymizedIPAddress |
-| Attacker in the Middle | Offline | Premium | attackerinTheMiddle |
-| Atypical travel | Offline | Premium | unlikelyTravel |
-| Impossible travel | Offline | Premium | mcasImpossibleTravel |
-| Malicious IP address | Offline | Premium | maliciousIPAddress |
-| Mass Access to Sensitive Files | Offline | Premium | mcasFinSuspiciousFileAccess |
-| New country | Offline | Premium | newCountry |
-| Password spray | Offline | Premium | passwordSpray |
-| Suspicious browser | Offline | Premium | suspiciousBrowser |
-| Suspicious inbox forwarding | Offline | Premium | suspiciousInboxForwarding |
-| Suspicious inbox manipulation rules | Offline | Premium | mcasSuspiciousInboxManipulationRules |
-| Token issuer anomaly | Offline | Premium | tokenIssuerAnomaly |
-| Unfamiliar sign-in properties | Real-time | Premium | unfamiliarFeatures |
-| Verified threat actor IP | Real-time | Premium | nationStateIP |
+| [Attacker in the Middle](#attacker-in-the-middle) | Offline | Premium | attackerinTheMiddle |
+| [Atypical travel](#atypical-travel) | Offline | Premium | unlikelyTravel |
+| [Impossible travel](#impossible-travel) | Offline | Premium | mcasImpossibleTravel |
+| [Malicious IP address](#malicious-ip-address) | Offline | Premium | maliciousIPAddress |
+| [Mass Access to Sensitive Files](#mass-access-to-sensitive-files) | Offline | Premium | mcasFinSuspiciousFileAccess |
+| [Microsoft Entra threat intelligence (sign-in)](#microsoft-entra-threat-intelligence-sign-in) | Real-time or Offline | Nonpremium | investigationsThreatIntelligence |
+| [New country](#new-country) | Offline | Premium | newCountry |
+| [Password spray](#password-spray) | Offline | Premium | passwordSpray |
+| [Suspicious browser](#suspicious-browser) | Offline | Premium | suspiciousBrowser |
+| [Suspicious inbox forwarding](#suspicious-inbox-forwarding) | Offline | Premium | suspiciousInboxForwarding |
+| [Suspicious inbox manipulation rules](#suspicious-inbox-manipulation-rules) | Offline | Premium | mcasSuspiciousInboxManipulationRules |
+| [Token issuer anomaly](#token-issuer-anomaly) | Offline | Premium | tokenIssuerAnomaly |
+| [Unfamiliar sign-in properties](#unfamiliar-sign-in-properties) | Real-time | Premium | unfamiliarFeatures |
+| [Verified threat actor IP](#verified-threat-actor-ip) | Real-time | Premium | nationStateIP |
 | **User risk detections** | | | |
-| Anomalous user activity | Offline | Premium | anomalousUserActivity |
-| Leaked credentials | Offline | Nonpremium | leakedCredentials |
-| Possible attempt to access Primary Refresh Token (PRT) | Offline | Premium | attemptedPrtAccess |
-| Suspicious API Traffic | Offline | Premium | suspiciousAPITraffic |
-| Suspicious sending patterns | Offline | Premium | suspiciousSendingPatterns |
-| User reported suspicious activity | Offline | Premium | userReportedSuspiciousActivity |
-| **User or sign-in detections** | | | |
-| Additional risk detected | Real-time or Offline | Nonpremium | generic = Premium detection classification for non-P2 tenants |
-| Microsoft Entra threat intelligence | Real-time or Offline | Nonpremium | investigationsThreatIntelligence |
+| [Additional risk detected (user)](#additional-risk-detected-user) | Real-time or Offline | Nonpremium | generic = Premium detection classification for non-P2 tenants |
+| [Anomalous user activity](#anomalous-user-activity) | Offline | Premium | anomalousUserActivity |
+| [Leaked credentials](#leaked-credentials) | Offline | Nonpremium | leakedCredentials |
+| [Microsoft Entra threat intelligence (user)](#microsoft-entra-threat-intelligence-user) | Real-time or Offline | Nonpremium | investigationsThreatIntelligence |
+| [Possible attempt to access Primary Refresh Token (PRT)](#possible-attempt-to-access-primary-refresh-token-prt) | Offline | Premium | attemptedPrtAccess |
+| [Suspicious API Traffic](#suspicious-api-traffic) | Offline | Premium | suspiciousAPITraffic |
+| [Suspicious sending patterns](#suspicious-sending-patterns) | Offline | Premium | suspiciousSendingPatterns |
+| [User reported suspicious activity](#user-reported-suspicious-activity) | Offline | Premium | userReportedSuspiciousActivity |
 
 ## Premium detections 
 
