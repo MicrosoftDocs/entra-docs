@@ -5,7 +5,7 @@ description: Learn about how to enable passkeys in Microsoft Authenticator for M
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 04/20/2024
+ms.date: 04/25/2024
 
 ms.author: justinha
 author: justinha
