@@ -89,6 +89,9 @@ A two-gate policy applies in the following circumstances:
   * Service support administrator
   * SharePoint administrator
   * Skype for Business administrator
+  * Teams Administrator
+  * Teams Communications Administrator
+  * Teams Devices Administrator
   * User administrator
 
 * If 30 days have elapsed in a trial subscription; or
