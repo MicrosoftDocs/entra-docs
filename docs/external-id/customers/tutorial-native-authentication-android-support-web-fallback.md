@@ -33,7 +33,7 @@ In this tutorial, you learn how to:
  
 ## Web fallback
 
-Use web fallback mechanism for scenarios where native authentication isn't sufficient to complete the user authentication flow. 
+Use [web fallback mechanism](concept-native-authentication-web-fallback.md) for scenarios where native authentication isn't sufficient to complete the user authentication flow. 
  
 When you initialize the Android SDK, you specify the challenge types your mobile application supports, such as *oob* and *password*. 
 

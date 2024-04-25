@@ -105,9 +105,6 @@ Use these steps to initiate the sign-up flow:
                 )
         }
         ```
-### User attributes submission scenarios 
-
-<TODO>
 
 ## Handle sign-up errors  
  
