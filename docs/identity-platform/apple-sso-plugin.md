@@ -67,7 +67,7 @@ To use the Microsoft Enterprise SSO plug-in for Apple devices:
 
   (**) You only need to allow sovereign cloud domains if you rely on those in your environment.
 
-  (***) Maintaining communications with the ECS Experimentation Configuration Service ensures that Microsoft can respond to a severe bug in a timely manner.
+  (***) Maintaining communications with the Experimentation Configuration Service (ECS) ensures that Microsoft can respond to a severe bug in a timely manner.
 
   The Microsoft Enterprise SSO plug-in relies on Apple's [enterprise SSO](https://developer.apple.com/documentation/authenticationservices) framework. Apple's enterprise SSO framework ensures that only an approved SSO plug-in can work for each identity provider by utilizing a technology called [associated domains](https://developer.apple.com/documentation/xcode/supporting-associated-domains). To verify the identity of the SSO plug-in, each Apple device will send a network request to an endpoint owned by the identity provider and read information about approved SSO plug-ins. In addition to reaching out directly to the identity provider, Apple has also implemented another caching for this information.
 
