@@ -82,6 +82,18 @@ Setting up your device using secure enclave method enables you to use the result
 
 ### [Smart Card](#tab/smart-card)
 
+### Pair the smart card with your local account
+
+Before you can register your device with a smart card, you need to pair the smart card with your local account. Open the **Terminal** app and run the following commands to find the public key hash of the smart card certificate and pair it with your local account, then check it was successful. This needs to be run using `sudo`. 
+
+```console
+sc_auth identities
+sudo sc_auth pair -h <HASH> -u <USERNAME>
+sc_auth list
+```
+
+### Register your device with the smart card
+
 1. Navigate to the **Registration Required** popup at the top right of the screen. Hover over the popup and select **Register**. If your smart card is paired with your local account, you'll see a prompt to enter the smart card pin
 
     :::image type="content" source="media/device-join-macos-platform-single-sign-on-out-of-box/smartcard-paired-registration-prompt.png" alt-text="Screenshot of the Platform SSO registration prompting the user to enter their smart card pin.":::
