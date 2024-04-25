@@ -1,5 +1,5 @@
 ---
-title: Check Workflow Insights in your environment (preview)
+title: Check Workflow Insights (preview)
 description: Learn how to check workflow insights within your Microsoft Entra tenant.
 author: owinfreyATL
 manager: amycolannino

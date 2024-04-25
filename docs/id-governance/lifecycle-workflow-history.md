@@ -157,8 +157,6 @@ Separating processing of the workflow from the tasks is important because, in a 
 
 ## Workflow Insights (preview)
 
-
-
 With the previous views, you're able to find history about a specific workflow. If you want to view workflow history summaries across multiple workflows, you use **Workflow Insights (preview)**. 
 
 :::image type="content" source="media/lifecycle-workflow-history/workflow-insights-view.png" alt-text="Screenshow of the Workflow Insights page.":::
