@@ -50,7 +50,7 @@ We recommend you change user UPN when their primary email address changes. See t
 
 In Active Directory, the default UPN suffix is the DNS where you created the user account. In most cases, register this domain name as the enterprise domain. If you create the user account in the contoso.com domain, the default UPN is: username@contoso.com. Add more UPN suffixes with Active Directory domains and trusts. For example, if you add labs.contoso.com and change the user UPNs and email to reflect that, the result is: username@labs.contoso.com.
 
-You can [add your custom domain name to your tenant](~/fundamentals/add-custom-domain.md).
+You can [add your custom domain name to your tenant](/entra/fundamentals/add-custom-domain).
 
    >[!IMPORTANT]
    > If you change the suffix in Active Directory, add and verify a matching custom domain name in Microsoft Entra ID. 
