@@ -77,6 +77,8 @@ To create an Azure Function app, follow these steps:
 1. Provide a name for the project, such as *AuthEventsTrigger*.
 1. Accept **Company.Function** as the namespace, with **AccessRights** set to *Function*. 
 
+---
+
 ### Install NuGet packages and build the project
 
 After creating the project, you'll need to install the required NuGet packages and build the project.
@@ -95,6 +97,8 @@ After creating the project, you'll need to install the required NuGet packages a
     ```console
     dotnet add package Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents --prerelease
     ```
+
+---
 
 ### Add the sample code
 
@@ -134,6 +138,8 @@ The project has been created and the sample code has been added. Now we build an
 1. In the top menu, select **Run** > **Start Debugging** or press **F5** to run the function.
 1. In the terminal, copy the **Function url** that appears. This can be used when setting up a custom authentication extension.
 
+---
+
 ## Deploy the function and publish to Azure 
 
 The function needs to be deployed to Azure using our IDE. Check that you're correctly signed in to your Azure account so the function can be published.
@@ -161,8 +167,6 @@ The function needs to be deployed to Azure using our IDE. Check that you're corr
 1. Wait a few moments for your function app to be deployed. Once the window closes, select **Finish**.
 1. A new **Publish** pane opens. At the top, select **Publish**. Wait a few minutes for your function app to be deployed and show up in the Azure portal.
 
-[!INCLUDE [environment-variables](./includes/scenarios/custom-extension-tokenissuancestart-setup-env-portal.md)]
-
 ### [Visual Studio Code](#tab/visual-studio-code)
 
 1. Select the **Azure** extension icon. In **Resources**, select the **+** icon to **Create a resource**.
@@ -172,7 +176,10 @@ The function needs to be deployed to Azure using our IDE. Check that you're corr
 1. Select a location for the function app, such as *East US*.
 1. Wait a few minutes for your function app to be deployed and show up in the Azure portal.
 
+---
+
 [!INCLUDE [environment-variables](./includes/scenarios/custom-extension-tokenissuancestart-setup-env-portal.md)]
+
 ::: zone-end
 
 ::: zone pivot="azure-portal"
