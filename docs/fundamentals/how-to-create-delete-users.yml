@@ -143,7 +143,7 @@ procedureSection:
       Create a new external user
     summary: |
       > [!IMPORTANT]
-      > These steps apply to [Microsoft Entra External ID](~/external-id/customers/overview-customers-ciam.md) external tenants.
+      > These steps apply to [Microsoft Entra External ID](~/external-id/customers/overview-customers-ciam.md) external tenants only.
 
     steps: 
       - |
@@ -178,7 +178,7 @@ procedureSection:
       The overall process for inviting an external guest user is similar, except for a few details on the **Basics** tab and the email invitation process. You can't assign external users to administrative units. 
 
       > [!NOTE]
-      > This feature is in preview for external tenants.
+      > This feature applies to both workforce and external tenants, but is currently in preview for external tenants.
 
     steps: 
       - |
