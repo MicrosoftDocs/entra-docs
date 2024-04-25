@@ -236,11 +236,23 @@ For more information about how to better secure your organization by using autom
 
 ### General Availability - Quick Microsoft Entra Verified ID setup
 
-**Type:** New feature
-**Service category:** Verified ID
-**Product capability:** Decentralized Identities
+**Type:** New feature    
+**Service category:** Verified ID    
+**Product capability:** Decentralized Identities    
 
 Quick Microsoft Entra Verified ID setup, now generally available, removes several configuration steps an admin needs to complete with a single select on a Get started button. The quick setup takes care of signing keys, registering your decentralized ID, and verifying your domain ownership. It also creates a Verified Workplace Credential for you. For more information, see: [Quick Microsoft Entra Verified ID setup](../verified-id/verifiable-credentials-configure-tenant-quick.md).
+
+---
+
+### Public Preview - Assign Microsoft Entra roles using Entitlement Management
+
+**Type:** New feature    
+**Service category:** Entitlement Management    
+**Product capability:** Entitlement Management    
+
+By assigning Microsoft Entra roles to employees, and guests, using Entitlement Management, you can look at a user's entitlements to quickly determine which roles are assigned to that user. When you include a Microsoft Entra role as a resource in an access package, you can also specify whether that role assignment is “eligible” or “active”.
+
+Assigning Microsoft Entra roles through access packages helps to efficiently manage role assignments at scale and improves the role. For more information, see: [Assign Microsoft Entra roles (Preview)](../id-governance/entitlement-management-roles.md).
 
 ---
 
