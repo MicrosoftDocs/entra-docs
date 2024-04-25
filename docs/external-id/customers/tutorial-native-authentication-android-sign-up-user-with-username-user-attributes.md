@@ -50,7 +50,7 @@ Use these steps to initiate the sign-up flow:
             //... 
     ``` 
      
-    The method names in the `UserAttribute.Builder` class are same as the the programmable names of the user attributes that they build. Learn more about [Android SDK attribute builder](concept-native-authentication-user-attribute-builder.md?tabs=android-kotlin).
+    The method names in the `UserAttribute.Builder` class are same as the programmable names of the user attributes that they build. Learn more about [Android SDK attribute builder](concept-native-authentication-user-attribute-builder.md?tabs=android-kotlin).
 
 - Use `signUp(username, attributes)` method to start sign-up with username and attributes flow: 
  
@@ -78,7 +78,7 @@ Use these steps to initiate the sign-up flow:
 - `signUp(username, attributes)` method can also return:
     - `SignUpResult.Complete` to denote that  sign-up flow is successful.
     - `SignUpResult.CodeRequired` to denote that the app needs to submit an email one-time passcode.
-    - `SignUpResult.AttributesRequired` to indicate that the app needs to submit one or more required attributes before Microsoft Entra creates an account. These are the attributes that the administrator configured as mandatory in the Microsoft Entra admin center. Microsoft Entra does not explicitly request for optional user attributes.
+    - `SignUpResult.AttributesRequired` to indicate that the app needs to submit one or more required attributes before Microsoft Entra creates an account. These attributes were configured by the administrator as mandatory in the Microsoft Entra admin center. Microsoft Entra doesn't explicitly request for optional user attributes.
     - `SignUpError` to denote that an error has occurred. 
 
 - The `SignUpResult.AttributesRequired` result contains a `requiredAttributes` parameter. `requiredAttributes` is a list of `RequiredUserAttribute` objects that contains details about the user attributes that the app needs to submit. To handle `actionResult is SignUpResult.AttributesRequired`, use the following code snippet: 
@@ -100,7 +100,7 @@ Use these steps to initiate the sign-up flow:
 
 ## Handle sign-up errors  
 
-- In the case of `actionResult is SignUpError`, MSAL Android SDK provides utility methods to enable you analyze the specific errors further: 
+- If `actionResult is SignUpError`, MSAL Android SDK provides utility methods to enable you to analyze the specific errors further: 
 
     - `isUserAlreadyExists()`
     - `isInvalidAttributes()`

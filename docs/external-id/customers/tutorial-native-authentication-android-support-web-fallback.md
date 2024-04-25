@@ -37,7 +37,7 @@ Use [web fallback mechanism](concept-native-authentication-web-fallback.md) for 
  
 When you initialize the Android SDK, you specify the challenge types your mobile application supports, such as *oob* and *password*. 
 
-If your client app can't support a challenge type that Microsoft Entra requires, Microsoft Entra's response indicates that the client app needs to continue with the authentication flow in the browser. For example, you initialize the SDK with just *oob* challenge type, but in the Microsoft Entra admin center you configure the app with an email with password authentication method. 
+If your client app can't support a challenge type that Microsoft Entra requires, Microsoft Entra's response indicates that the client app needs to continue with the authentication flow in the browser. For example, you initialize the SDK with *oob* challenge type, but in the Microsoft Entra admin center you configure the app with an email with password authentication method. 
 
 In this case, the utility method `isBrowserRequired()` returns true.
  
@@ -76,7 +76,7 @@ Let's look at an example flow that returns `isBrowserRequired()`, and how you ca
  
 1. In the Microsoft Entra admin center, [configure your user flow](how-to-user-flow-sign-up-sign-in-customers.md) to use **Email with password** as the authentication method.    
  
-1. Start a sign-up flow by using the SDK's `signUp(username)` method. You get a `SignUpError` that passes the `isBrowserRequired()` check as Microsoft Entra expects *password* and *oob* challenge type, but you just configured your SDK with just *oob*.  
+1. Start a sign-up flow by using the SDK's `signUp(username)` method. You get a `SignUpError` that passes the `isBrowserRequired()` check as Microsoft Entra expects *password* and *oob* challenge type, but you configured your SDK with only *oob*.  
 
 1. To check and handle the `isBrowserRequired()`, use the following code snippet: 
  
@@ -99,9 +99,9 @@ To do so, use the following steps:
 
 <!--We'll update these instructions once we author the Android tutorials for the browser-delegated authentication flow --> 
 
-1. Use the steps in [Register a redirect URI in Microsoft Entra admin center](../../identity-platform/tutorial-v2-android.md#register-your-application-with-microsoft-entra-id) to add a redirect URI to the app that you registered earlier. 
+1. To add a redirect URI to the app that you registered earlier, use the steps in [Register a redirect URI in Microsoft Entra admin center](../../identity-platform/tutorial-v2-android.md#register-your-application-with-microsoft-entra-id).
 
-1. Use the steps in [Configure the redirect URI in SDK's configuration](../../identity-platform/tutorial-v2-android.md#configure-your-application) to update your client app's configuration file. 
+1. To update your client app's configuration file, use the steps in [Configure the redirect URI in SDK's configuration](../../identity-platform/tutorial-v2-android.md#configure-your-application).
   
 1. Use the following code snippet to acquire a token by using the `acquireToken()` method:
 
@@ -122,10 +122,10 @@ To do so, use the following steps:
     } 
     ```
 
-Security tokens, that's ID token, access token and refresh token, you get through native authentication flow are same as those that you get the through browser-delegated flow.
+Security tokens, that's ID token, access token and refresh token, you get through native authentication flow are same as the token you get via browser-delegated flow.
 
 ## Related content 
 
-- [How to run the iOS sample app](how-to-run-native-authentication-sample-ios-app.md)
-- [Native authentication API reference with email one-time passcode](../../identity-platform/reference-native-authentication-email-otp.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json).
+- Learn [How to run the iOS sample app](how-to-run-native-authentication-sample-ios-app.md)
+- Explore [Native authentication API reference with email one-time passcode](../../identity-platform/reference-native-authentication-email-otp.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json).
 - Learn about [challenge types](concept-native-authentication-challenge-types.md).

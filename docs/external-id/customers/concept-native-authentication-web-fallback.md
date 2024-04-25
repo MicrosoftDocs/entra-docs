@@ -14,7 +14,7 @@ ms.author: kengaderdus
 
 # Native authentication web fallback
 
-Web fallback allows a client app that uses native authentication to use browser-delegated authentication as a fallback mechanism to improve resilience. This scenario happens when native authentication isn't sufficient to complete the authentication flow, for example when the authorization server requires capabilities that the client can't provide.
+Web fallback allows a client app that uses native authentication to use browser-delegated authentication as a fallback mechanism to improve resilience. This scenario happens when native authentication isn't sufficient to complete the authentication flow. For example, if the authorization server requires capabilities that the client can't provide.
 
 All client apps that use native authentications needs to support web fallback.
 
@@ -31,9 +31,9 @@ This flow shows how web fallback can happen:
 Let's look at an example when it's possible for Microsoft Entra to indicate that the client needs to use browser-delegated authentication:
 
 - In the Microsoft Entra admin center, an administrator configures an app to use email with password authentication method. 
-- This configuration means Microsoft Entra requires the client app to have the ability to collect an email (username) and password from user.The client app communicates this ability to Microsoft Entra by sending *password* challenge type. Learn more about challenge types in [Native authentication challenge types](concept-native-authentication-challenge-types.md) article.
+- This configuration means Microsoft Entra requires the client app to have the ability to collect an email (username) and password from user. The client app communicates this ability to Microsoft Entra by sending *password* challenge type. Learn more about challenge types in [Native authentication challenge types](concept-native-authentication-challenge-types.md) article.
 - The client app should also validate the email by submitting a one-time passcode that the server sends to the user's email. The client app communicates this ability to Microsoft Entra by sending *oob* challenge type. Learn more about challenge types in [Native authentication challenge types](concept-native-authentication-challenge-types.md) article  
-- If the client app doesn't send both *oob* and *password* challenge types, Microsoft Entra interprets it as the client app's inability to to fulfill the set requirement. In this case, Microsoft Entra returns an error that indicates the client needs to use browser-delegated authentication.
+- If the client app doesn't send both *oob* and *password* challenge types, Microsoft Entra interprets it as the client app's inability to fulfill the set requirement. In this case, Microsoft Entra returns an error that indicates the client needs to use browser-delegated authentication.
 
 ## Support web fallback 
 
@@ -45,4 +45,4 @@ Learn how to support web fallback in [native Android apps](tutorial-native-authe
 
 - [Native authentication challenge types](concept-native-authentication-challenge-types.md)
 - [Tutorial: Support web fallback in Android app](tutorial-native-authentication-android-support-web-fallback.md)
-- [Tutorial: Support web fallback in iOS app](tutorial-native-authentication-ios-support-web-fallback)
+- [Tutorial: Support web fallback in iOS app](tutorial-native-authentication-ios-support-web-fallback.md)

@@ -3,14 +3,14 @@ author: kengaderdus
 ms.service: entra-external-id
 ms.subservice: customers
 ms.topic: include
-ms.date: 03/20/2024
+ms.date: 04/29/2024
 ms.author: kengaderdus
 ms.manager: mwongerapk
 ---
 
 1. Locate, then open *auth_config_native_auth.json*.
 
-1. In the JSON object, locate the `challenge_types` setting, then add *password* challenge type. Your JSON object should look similar to the following:
+1. In the JSON object, locate the `challenge_types` setting, then add *password* challenge type. Your JSON object should look similar to the following code snippet:
 
     ```json
         { 
@@ -28,4 +28,4 @@ ms.manager: mwongerapk
         }
     ```
 
-  The challenge types is a list of values, which the app uses to notify Microsoft Entra about the authentication method that it supports. Learn more [challenge types](../../concept-native-authentication-challenge-types.md).
+  The challenge types are a list of values, which the app uses to notify Microsoft Entra about the authentication method that it supports. Learn more [challenge types](../../concept-native-authentication-challenge-types.md).
