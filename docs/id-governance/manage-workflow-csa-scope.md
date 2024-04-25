@@ -39,41 +39,13 @@ For example: "Migrate data from regular tables to ledger tables" or "Create a ne
 
 # Add a Custom Security Attribute as the scope of a workflow 
 
-<!-- 2. Introductory paragraph ----------------------------------------------------------
-
-Required: Lead with a light intro that describes, in customer-friendly language, what the customer will do. Answer the fundamental “why would I want to do this?” question. Keep it short.
-
-Readers should have a clear idea of what they will do in this article after reading the introduction.
-
-* Introduction immediately follows the H1 text.
-* Introduction section should be between 1-3 paragraphs.
-* Don't use a bulleted list of article H2 sections.
-
-Example: In this article, you will migrate your user databases from IBM Db2 to SQL Server by using SQL Server Migration Assistant (SSMA) for Db2.
-
--->
-
-Workflows created with Lifecycle workflows can run for users on schedule based on a custom security attribute. Using a custom security attribute as the scope of your workflow allows you to narrow who the workflow runs for by increasing customization of supported user properties. Examples of these properties include:
+Workflows created with Lifecycle workflows can run for users on schedule based on a custom security attribute. Using a custom security attribute to narrow the scope of your workflow gives you greater control over who the workflow runs for by increasing customization of supported user properties. Examples of these properties include:
 
 - Pay grade
 - Certification status
 - Cost Center
 
-For more information about Custom Security Attributes, see: [What are custom security attributes in Microsoft Entra ID?](../fundamentals/custom-security-attributes-overview.md).
-
-<!---Avoid notes, tips, and important boxes. Readers tend to skip over them. Better to put that info directly into the article text.
-
--->
-
-<!-- 3. Prerequisites --------------------------------------------------------------------
-
-Required: Make Prerequisites the first H2 after the H1. 
-
-* Provide a bulleted list of items that the user needs.
-* Omit any preliminary text to the list.
-* If there aren't any prerequisites, list "None" in plain text, not as a bulleted item.
-
--->
+For more information about Custom Security Attributes, and their use cases, see: [What are custom security attributes in Microsoft Entra ID?](../fundamentals/custom-security-attributes-overview.md).
 
 ## Prerequisites
 
@@ -87,10 +59,11 @@ To assign a custom security attribute to the scope of a workflow, you must have 
 Workflows can be created with, or edited to include, a Custom Security Attribute as a scope. The following steps will walk you through editing an existing workflow to add a Custom Security Attribute as the scope. For a guide on creating a workflow from scratch with which you could use a Custom security attribute as a scope, see: [Create a lifecycle workflow](../id-governance/create-lifecycle-workflow.md). To edit a workflow to include a Custom Security Attribute within it's scope, you complete the following steps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
-
+    > [!NOTE]
+    > The prerequisite steps of creating, defining, and assigning a custom security attribute must be completed before using the [Attribute Assignment Administrator](../identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator) role. The Lifecycle Workflows Administrator role alone cannot create, update, or assign custom security attributes.
 1. Browse to **Identity governance** > **Lifecycle workflows** > **Workflows**.
 
-1. On the workflows page select the workflow which you want to use a custom security attribute as part of the scope for.
+1. On the Workflows page select the workflow which you want to use a custom security attribute as part of the scope for.
 
 1. On the specific workflow page select **Execution conditions**. 
 
@@ -98,12 +71,10 @@ Workflows can be created with, or edited to include, a Custom Security Attribute
 
 1. On the scope details page you select **Add expression**, and from the drop down list locate your custom security attributes.
     :::image type="content" source="media/manage-workflow-csa-scope/csa-scope-list.png" alt-text="Screenshot of a list of CSA on the scope screen.":::
-1. After choosing the custom security attribute you want to use, Select **Save**.
+1. After you select the custom security attribute you want to use, Select **Save**.
 
 ## Next step
 
-TODO: Add your next step link(s)
-
 > [!div class="nextstepaction"]
-> [Write concepts](article-concept.md)
+> [Manage workflow versions](manage-workflow-tasks.md)
 
