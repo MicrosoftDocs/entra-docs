@@ -61,14 +61,6 @@ To configure and test Microsoft Entra SSO with ScreenSteps, perform the followin
     1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
-<a name='create-screensteps-sso'></a>
-
-## Create ScreenSteps SSO
-
-1. In a different web browser window, log in to your ScreenSteps account site as an administrator. This is where you will perform the steps in the how-to instructions.
-1. In a different web browser window, open the ScreenSteps help article [How to Set up Single Sign-on](https://help.screensteps.com/a/1097728-how-to-set-up-single-sign-on). This article will guide you through the steps of setting up ScreenSteps to work with Microsoft Entra ID.
-1. After answering a few questions in the help article you will be asked to "Select how you will set up SSO". Select Microsoft Entra ID and continue on with [Configure Microsoft Entra SSO](#configure-azure-ad-sso).
-
 <a name='configure-azure-ad-sso'></a>
 
 ## Configure Microsoft Entra SSO
@@ -130,6 +122,12 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then click the **Select** button at the bottom of the screen.
 1. If you're expecting any role value in the SAML assertion, in the **Select Role** dialog, select the appropriate role for the user from the list and then click the **Select** button at the bottom of the screen.
 1. In the **Add Assignment** dialog, click the **Assign** button.
+
+## Configure ScreenSteps SSO
+
+1. In a different web browser window, log in to your ScreenSteps account site as an administrator. This is where you will perform the steps in the how-to instructions.
+1. In a different web browser window, open the ScreenSteps help article [How to Set up Single Sign-on](https://help.screensteps.com/a/1097728-how-to-set-up-single-sign-on). This article will guide you through the steps of setting up ScreenSteps to work with Microsoft Entra ID.
+1. After answering a few questions in the help article you will be asked to "Select how you will set up SSO". Select Microsoft Entra ID and continue on with [Configure Microsoft Entra SSO](#configure-azure-ad-sso).
 
 ## Test SSO
 
