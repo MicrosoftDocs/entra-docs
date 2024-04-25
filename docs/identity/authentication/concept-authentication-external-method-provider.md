@@ -8,7 +8,7 @@ ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 04/25/2024
 
-ms.author: gregkmsft
+ms.author: gkinasewitz
 author: justinha
 manager: amycolannino
 ms.reviewer: gkinasewitz, gustavosa
