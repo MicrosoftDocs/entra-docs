@@ -44,12 +44,13 @@ Detections that are triggered during real-time will take up to 5-10 minutes to s
 
 ## Risk detections mapped to riskEventType 
 
-| Sign-in risk detections | Detection type | Type | riskEventType |
+| Risk detection  | Detection type | Type | riskEventType |
 | --- | --- | --- | --- |
-| Activity from anonymous IP address | Offline | Premium | riskyIPAddress |
-| Admin confirmed user compromised | Offline | Nonpremium | adminConfirmedUserCompromised |
-| Anomalous Token | Real-time or Offline | Premium | anomalousToken | 
-| Anonymous IP address | Real-time | Nonpremium | anonymizedIPAddress |
+| **Sign-in risk detections** | | | |
+| [Activity from anonymous IP address](#activity-from-anonymous-ip-address) | Offline | Premium | riskyIPAddress |
+| [Admin confirmed user compromised](#admin-confirmed-user-compromised) | Offline | Nonpremium | adminConfirmedUserCompromised |
+| [Anomalous Token](#anomalous-token) | Real-time or Offline | Premium | anomalousToken | 
+| [Anonymous IP address](#anonymous-ip-address) | Real-time | Nonpremium | anonymizedIPAddress |
 | Attacker in the Middle | Offline | Premium | attackerinTheMiddle |
 | Atypical travel | Offline | Premium | unlikelyTravel |
 | Impossible travel | Offline | Premium | mcasImpossibleTravel |
@@ -63,20 +64,14 @@ Detections that are triggered during real-time will take up to 5-10 minutes to s
 | Token issuer anomaly | Offline | Premium | tokenIssuerAnomaly |
 | Unfamiliar sign-in properties | Real-time | Premium | unfamiliarFeatures |
 | Verified threat actor IP | Real-time | Premium | nationStateIP |
-
- 
-| User risk detections | Detection type | Type | riskEventType |
-| --- | --- | --- | --- |
+| **User risk detections** | | | |
 | Anomalous user activity | Offline | Premium | anomalousUserActivity |
 | Leaked credentials | Offline | Nonpremium | leakedCredentials |
 | Possible attempt to access Primary Refresh Token (PRT) | Offline | Premium | attemptedPrtAccess |
 | Suspicious API Traffic | Offline | Premium | suspiciousAPITraffic |
 | Suspicious sending patterns | Offline | Premium | suspiciousSendingPatterns |
 | User reported suspicious activity | Offline | Premium | userReportedSuspiciousActivity |
-
- 
-| User or sign-in detections | Detection type | Type | riskEventType |
-| --- | --- | --- | --- |
+| **User or sign-in detections** | | | |
 | Additional risk detected | Real-time or Offline | Nonpremium | generic = Premium detection classification for non-P2 tenants |
 | Microsoft Entra threat intelligence | Real-time or Offline | Nonpremium | investigationsThreatIntelligence |
 
