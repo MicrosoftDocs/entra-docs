@@ -20,7 +20,7 @@ using Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents;
 
 namespace AuthEventTrigger
 {
-    public static class Function1
+    public static class AuthEventTrigger
     {
         [FunctionName("onTokenIssuanceStart")]
         public static WebJobsAuthenticationEventResponse Run(
@@ -49,11 +49,11 @@ namespace AuthEventTrigger
                     // If the request fails, such as in token validation, output the failed request status, such as in token validation or response validation.
                     log.LogInformation(request.StatusMessage);
                 }
-                return await request.Completed();
+                return request.Completed();
             }
             catch (Exception ex) 
             { 
-                return await request.Failed(ex);
+                return request.Failed(ex);
             }
         }
     }

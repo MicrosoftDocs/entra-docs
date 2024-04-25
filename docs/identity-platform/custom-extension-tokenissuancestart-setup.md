@@ -61,6 +61,7 @@ To create an Azure Function app, follow these steps:
 1. Select a location for the project. Select **Next**.
 1. Select **.NET 6.0 (Long Term Support)** as the target framework. 
 1. Select *Http trigger* as the **Function** type, and that **Authorization level** is set to *Function*. Select **Create**.
+1. In the **Solution Explorer**, rename the *Function1.cs* file to *AuthEventsTrigger.cs*.
 
 ### [Visual Studio Code](#tab/visual-studio-code)
 
