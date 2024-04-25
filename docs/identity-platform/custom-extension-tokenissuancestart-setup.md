@@ -100,7 +100,7 @@ After creating the project, you'll need to install the required NuGet packages a
 
 The function API is the source of extra claims for your token. For the purposes of this article, we're hardcoding the values for the sample app. In production, fetch information about the user from external data store.
 
-In your *Function1.cs* file, replace the entire contents of the file with the following code:
+In your *Function1.cs* <!--TODO--> file, replace the entire contents of the file with the following code:
 
 [!INCLUDE [nuget-code](./includes/scenarios/custom-extension-tokenissuancestart-setup-nuget-code.md)]
 
@@ -174,23 +174,6 @@ The function needs to be deployed to Azure using our IDE. Check that you're corr
 
 [!INCLUDE [environment-variables](./includes/scenarios/custom-extension-tokenissuancestart-setup-env-portal.md)]
 ::: zone-end
-
-<!--::: zone pivot="visual-studio-code"-->
-
-## Create and build the Azure Function app
-
-## Create the Azure Function app
-
-### Install NuGet packages and build the project
-
-### Add the sample code
-
-### Build and run the project
-
-
-## Deploy the function and publish to Azure 
-
-<!--::: zone-end-->
 
 ::: zone pivot="azure-portal"
 

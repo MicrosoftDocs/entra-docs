@@ -13,12 +13,10 @@ ms.custom:
 
 ```csharp
 using System;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Extensions.Logging;
 using Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents.TokenIssuanceStart;
-using Microsoft.Azure.WebJobs.Extensions.WebJobsAuthenticationEvents;
+using Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents;
 
 namespace AuthEventTrigger
 {
@@ -35,7 +33,7 @@ namespace AuthEventTrigger
             try
             {
                 // Checks if the request is successful and did the token validation pass
-                if (request.RequestStatus == RequestStatusType.Successful)
+                if (request.RequestStatus == WebJobsAuthenticationEventsRequestStatusType.Successful)
                 {
                     // Fetches information about the user from external data store
                     // Add new claims to the token's response
