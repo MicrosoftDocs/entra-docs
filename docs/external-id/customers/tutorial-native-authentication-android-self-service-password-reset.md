@@ -38,7 +38,7 @@ In this tutorial, you learn how to:
 To add SSPR flow to your Android application, you need a password reset user interface:  
  
 - An input text field to collect user's email address (username).
-- AAn input text field to collect one-time passcode.
+- An input text field to collect one-time passcode.
 - An input text field to collect new password.
  
 When users forget their passwords, they need a form to input their usernames (email addresses) to start password reset flow. The user selects the **Forget Password** button or link.
