@@ -110,7 +110,7 @@ Use these steps to initiate the sign-up flow:
 
 - These errors indicate that the previous operation was unsuccessful, and so a reference to a new state isn't available. 
  
-- The utility method `isInvalidAttributes()` indicates that one or more attributes that the app submitted failed validation. It contains an `invalidAttributes` parameter,  which is a list of all attributes that teh apps submitted, but failed validation. To handle the error of invalid attributes, use the following code snippet: 
+- The utility method `isInvalidAttributes()` indicates that one or more attributes that the app submitted failed validation. It contains an `invalidAttributes` parameter,  which is a list of all attributes that the apps submitted, but failed validation. To handle the error of invalid attributes, use the following code snippet: 
  
     ```kotlin 
     val actionResult = authClient.signUp(
