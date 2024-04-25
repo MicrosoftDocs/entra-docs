@@ -127,7 +127,7 @@ This section explains how the SAP SuccessFactors connector processes pre-hire re
 Let's say there is a pre-hire with employeeId "1234" in SuccessFactors Employee Central with start date on 1-June-2023. Let's further assume that this pre-hire record was first created either in Employee Central or in the Onboarding module on 15-May-2023. When the provisioning service first observes this record on 15-May-2023 (either as part of full sync or incremental sync), this record is still in pre-hire state. Due to this, SuccessFactors does not send the provisioning service all attributes (example: userNav/username) associated with the user. Only bare minimum data about the user such as `companyName`, `personIdExternal`, `firstname`, `lastname` and `startDate` is available. To process pre-hires successfully, the following pre-requisites must be met: 
 
 1) The `personIdExternal` attribute must be set as the primary matching identifier (joining property). If you configure a different attribute (example: userName) as the joining property then the provisioning service will not be able to retrieve the pre-hire information. 
-2) The `startDate` attribute must be available and it's JSONPath must be set to either `$.employmentNav.results[0].startDate` or `$.employmentNav.results[-1:].startDate`.
+2) The `startDate` attribute must be available and its JSONPath must be set to either `$.employmentNav.results[0].startDate` or `$.employmentNav.results[-1:].startDate`.
 3) The pre-hire record must be in one of the following states in Employee Central: 'active' (t), 'inactive' (f), or 'active_external_suite' (e). For details about these states refer to the [SAP support note 2736579](https://launchpad.support.sap.com/#/notes/0002736579).
 
 > [!NOTE] 
