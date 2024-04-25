@@ -142,7 +142,7 @@ This flowchart walks you through the steps for debugging some of the more common
 |10 | If issues persist, debug applications. | [Debug application proxy application issues](../identity/app-proxy/application-proxy-debug-apps.md). |
 
 ## Frequently asked questions
-Why is my connector still using an older version and not auto-upgraded to latest version?
+**Why is my connector still using an older version and not auto-upgraded to latest version?**
 
 This may be due to either the updater service not working correctly or if there are no new updates available that the service can install.
 
@@ -157,38 +157,37 @@ To manually upgrade a connector:
 - The installer restarts the Microsoft Entra private network connector services. In some cases, a reboot of the server might be required if the installer cannot replace all files. Therefore we recommend closing all applications (i.e. Event Viewer) before you start the upgrade.
 - Run the installer. The upgrade process is quick and does not require providing any credentials and the connector is not re-registered.
     
-
-Can private network connector services run in a different user context than the default?
+**Can private network connector services run in a different user context than the default?**
 
 No, this scenario isn't supported. The default settings are:
 - Microsoft Entra private network connector - WAPCSvc - Network Service
 - Microsoft Entra private network connector Updater - WAPCUpdaterSvc - NT Authority\System
     
-Can a guest user with the Global Administrator or the Application Administrator role register the connector for the (guest) tenant?
+**Can a guest user with the Global Administrator or the Application Administrator role register the connector for the (guest) tenant?**
 
 No, currently, this isn't possible. The registration attempt is always made on the user's home tenant.
 
-My back-end application is hosted on multiple web servers and requires user session persistence (stickiness). How can I achieve session persistence?
+**My back-end application is hosted on multiple web servers and requires user session persistence (stickiness). How can I achieve session persistence?**
 
 For recommendations, see [High availability and load balancing of your private network connectors and applications](../identity/app-proxy//application-proxy-high-availability-load-balancing.md).
     
-Is TLS termination (TLS/HTTPS inspection or acceleration) on traffic from the connector servers to Azure supported?
+**Is TLS termination (TLS/HTTPS inspection or acceleration) on traffic from the connector servers to Azure supported?**
 
 The private network connector performs certificate-based authentication to Azure. TLS Termination (TLS/HTTPS inspection or acceleration) breaks this authentication method and isn't supported. Traffic from the connector to Azure must bypass any devices that are performing TLS Termination.  
 
-Is TLS 1.2 required for all connections?
+**Is TLS 1.2 required for all connections?**
 
 Yes. To provide the best-in-class encryption to our customers, the application proxy service limits access to only TLS 1.2 protocols. These changes were gradually rolled out and effective since August 31, 2019. Make sure that all your client-server and browser-server combinations are updated to use TLS 1.2 to maintain connection to application proxy service. These include clients your users are using to access applications published through application proxy. See Preparing for [TLS 1.2 in Office 365](/purview/prepare-tls-1.2-in-office-365) for useful references and resources.
     
-Can I place a forward proxy device between the connector server(s) and the back-end application server?
+**Can I place a forward proxy device between the connector server(s) and the back-end application server?**
 
 Yes, this scenario is supported starting from the connector version 1.5.1526.0. See [Work with existing on-premises proxy servers](../identity/app-proxy/application-proxy-configure-connectors-with-proxy-servers.md).
     
-Should I create a dedicated account to register the connector with Microsoft Entra application proxy?
+**Should I create a dedicated account to register the connector with Microsoft Entra application proxy?**
 
 There's no reason to. Any Global Administrator or application administrator account works. The credentials entered during installation aren't used after the registration process. Instead, a certificate is issued to the connector, which is used for authentication from that point on.
 
-How can I monitor the performance of the Microsoft Entra private network connector?
+**How can I monitor the performance of the Microsoft Entra private network connector?**
 
 There are Performance Monitor counters that are installed along with the connector. To view them:  
     
@@ -196,11 +195,11 @@ There are Performance Monitor counters that are installed along with the connect
 2. Select **Performance Monitor** and click the green **+** icon.
 3. Add the **Microsoft Entra private network connector** counters you want to monitor.
     
-Does the Microsoft Entra private network connector have to be on the same subnet as the resource?
+**Does the Microsoft Entra private network connector have to be on the same subnet as the resource?**
 
 The connector isn't required to be on the same subnet. However, it needs name resolution (DNS, hosts file) to the resource and the necessary network connectivity (routing to the resource, ports open on the resource, etc.). For recommendations, see [Network topology considerations when using Microsoft Entra application proxy](../identity/app-proxy/application-proxy-network-topology.md).
     
-Why is the connector still showing in Microsoft Entra admin center after I uninstalled the connector from the Server?
+**Why is the connector still showing in Microsoft Entra admin center after I uninstalled the connector from the Server?**
 
 When a connector is running, it remains active as it connects to the service. Uninstalled or unused connectors are tagged as inactive and are removed after 10 days of inactivity from the portal. There is no way to remove the Inactive connector manually from the Microsoft Entra admin center.
 
