@@ -149,11 +149,11 @@ This may be due to either the updater service not working correctly or if there 
 The updater service is healthy if it’s running and there are no errors recorded in the event log (Applications and Services logs -> Microsoft -> Microsoft Entra private network -> Updater -> Admin). 
 
 > [!IMPORTANT]
-> Only major versions are released for auto-upgrade. We recommend updating your connector manually only if it's necessary. For example, you cannot wait for a major release, because you must fix a known problem or you want to use a new feature. For more information on new releases, the type of the release (download, auto-upgrade), bug fixes and new features see, [Microsoft Entra application proxy: Version release history](./application-proxy-release-version-history.md).
+> Only major versions are released for auto-upgrade. We recommend updating your connector manually only if it's necessary. For example, you cannot wait for a major release, because you must fix a known problem or you want to use a new feature. For more information on new releases, the type of the release (download, auto-upgrade), bug fixes and new features see, [Microsoft Entra private network connector: Version release history](reference-version-history.md).
 
 To manually upgrade a connector:
 
-- Download the latest version of the connector. (You can find it under application proxy on the Microsoft Entra admin center. You can also find the link at [Microsoft Entra application proxy: Version release history](./application-proxy-release-version-history.md).
+- Download the latest version of the connector. (You can find it under application proxy on the Microsoft Entra admin center.
 - The installer restarts the Microsoft Entra private network connector services. In some cases, a reboot of the server might be required if the installer cannot replace all files. Therefore we recommend closing all applications (i.e. Event Viewer) before you start the upgrade.
 - Run the installer. The upgrade process is quick and does not require providing any credentials and the connector is not re-registered.
     
@@ -170,7 +170,7 @@ No, currently, this isn't possible. The registration attempt is always made on t
 
 My back-end application is hosted on multiple web servers and requires user session persistence (stickiness). How can I achieve session persistence?
 
-For recommendations, see [High availability and load balancing of your private network connectors and applications](./application-proxy-high-availability-load-balancing.md).
+For recommendations, see [High availability and load balancing of your private network connectors and applications](../identity/app-proxy//application-proxy-high-availability-load-balancing.md).
     
 Is TLS termination (TLS/HTTPS inspection or acceleration) on traffic from the connector servers to Azure supported?
 
@@ -182,7 +182,7 @@ Yes. To provide the best-in-class encryption to our customers, the application p
     
 Can I place a forward proxy device between the connector server(s) and the back-end application server?
 
-Yes, this scenario is supported starting from the connector version 1.5.1526.0. See [Work with existing on-premises proxy servers](./application-proxy-configure-connectors-with-proxy-servers.md).
+Yes, this scenario is supported starting from the connector version 1.5.1526.0. See [Work with existing on-premises proxy servers](../identity/app-proxy/application-proxy-configure-connectors-with-proxy-servers.md).
     
 Should I create a dedicated account to register the connector with Microsoft Entra application proxy?
 
@@ -198,7 +198,7 @@ There are Performance Monitor counters that are installed along with the connect
     
 Does the Microsoft Entra private network connector have to be on the same subnet as the resource?
 
-The connector isn't required to be on the same subnet. However, it needs name resolution (DNS, hosts file) to the resource and the necessary network connectivity (routing to the resource, ports open on the resource, etc.). For recommendations, see [Network topology considerations when using Microsoft Entra application proxy](application-proxy-network-topology.md).
+The connector isn't required to be on the same subnet. However, it needs name resolution (DNS, hosts file) to the resource and the necessary network connectivity (routing to the resource, ports open on the resource, etc.). For recommendations, see [Network topology considerations when using Microsoft Entra application proxy](../identity/app-proxy/application-proxy-network-topology.md).
     
 Why is the connector still showing in Microsoft Entra admin center after I uninstalled the connector from the Server?
 
