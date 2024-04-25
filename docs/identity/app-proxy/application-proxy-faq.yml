@@ -50,8 +50,8 @@ sections:
       - question: |
          Does application proxy use the same connector as Microsoft Entra Private Access?
         answer: |
-              Yes, Microsoft Entra private network connector is used by both application proxy and Microsoft Entra Private Access. To learn more about the connector, see [Microsoft Entra private network connector](../../global-secure-access/concept-connector.md).
-              To troubleshoot connector configuration, see [troubleshoot connectors](troubleshoot-connectors.md).
+              Yes, Microsoft Entra private network connector is used by both application proxy and Microsoft Entra Private Access. To learn more about the connector, see [Microsoft Entra private network connector](../../global-secure-access/concept-connectors.md).
+              To troubleshoot connector configuration, see [troubleshoot connectors](../../global-secure-access/troubleshoot-connectors.md).
           
   - name: Application configuration
     questions:
