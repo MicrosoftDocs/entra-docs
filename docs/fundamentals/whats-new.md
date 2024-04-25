@@ -35,13 +35,15 @@ This page updates monthly, so revisit it regularly. If you're looking for items 
 
 ## April 2024
 
-### General Availability - Multiple Passwordless Phone Sign-ins for Android Devices
+### Public Preview - FIDO2 authentication in Android web browsers
 
 **Type:** New feature    
 **Service category:** Authentications (Logins)    
 **Product capability:** User Authentication    
 
-End users can now enable passwordless phone sign-ins for multiple accounts in the Authenticator App on any supported Android device. Consultants, students, and others with multiple accounts in Microsoft Entra can add each account to Microsoft Authenticator and use passwordless phone sign-in for all of them from the same Android device. The Microsoft Entra accounts can be in the same tenant or different tenants. Guest accounts aren't supported for multiple account sign-ins from one device. For more information, see: [Enable passwordless sign-in with Microsoft Authenticator](../identity/authentication/howto-authentication-passwordless-phone.md).
+Users can now sign in with a FIDO2 security key in both Chrome, and Microsoft Edge, on Android. This change is applicable to all users who are in scope for the FIDO2 authentication method. FIDO2 registration in Android web browsers isn't available yet.
+
+For more information, see: [Support for FIDO2 authentication with Microsoft Entra ID](../identity/authentication/concept-fido2-compatibility.md).
 
 ---
 
