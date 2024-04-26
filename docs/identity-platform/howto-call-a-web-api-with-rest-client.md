@@ -4,7 +4,7 @@ description: Learn how to call a protected ASP.NET Core web API using the Micros
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.date: 04/12/2024
+ms.date: 04/26/2024
 ms.service: identity-platform
 
 ms.topic: how-to
@@ -153,6 +153,8 @@ Follow these steps to configure a client secret:
 
 1. Select **Add**.
 1. Be sure to record the **Value** of the client secret. This secret value is **never displayed again** after you leave this page.
+
+For more information about how to securely store your client secret see, [Best practices for secrets management in Key Vault](/azure/key-vault/secrets/secrets-best-practices#configuration-and-storing).
 
 #### Add permissions to access your web API
 
