@@ -225,7 +225,7 @@ To remove the passkey from Authenticator, click the *Trash* icon, then tap **Del
 
 ### Same device registration using direct sign in to Authenticator (Android)
 
-You can sign in to Authenticator to create a passkey in the app and get seamless Single Sign-on across Microsoft native apps. This is the recommended and preferred flow to setup a passkey in the app. 
+You can sign in to Authenticator to create a passkey in the app and get seamless Single Sign-on across Microsoft native apps. This is the recommended and preferred flow to setup a passkey in the app. If you already have an account in the Authenticator app, or you are signed in to the Authenticator app, you still need to go through the above mentioned flow to add a passkey in the app.
 
 1. Open Authenticator.
 1. Tap the **Add account** or **+** button.
@@ -258,13 +258,13 @@ You can sign in to Authenticator to create a passkey in the app and get seamless
 
    :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-android/enable-authenticator-android.png" alt-text="Screenshot of enabling Authenticator as a provider using Microsoft Authenticator for Android devices.":::
 
-1. Return to **Authenticator app** and select **Done**.
+1. Return to **Authenticator app** and select **Continue**.
+ 
+   :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-android/passkey-done-android.png" alt-text="Screenshot of selecting Continue to complete using Microsoft Authenticator for Android devices.":::
 
 1. Authenticator sets up passkey, passwordless, and/or MFA for sign-in according to your work or school account policies.
 
    :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-android/passkey-added-android.png" alt-text="Screenshot of Use Passwords and Passkeys from using Microsoft Authenticator for Android devices.":::
-
-If you already have an account in the Authenticator app, or you are signed in to the Authenticator app, you still need to go through the above mentioned flow to add a passkey in the app.
 
 ## Same-device registration from a browser (Android)
 
