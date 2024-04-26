@@ -192,7 +192,7 @@ You may also notice the **User.Read** permission for the Microsoft Graph API. Th
 
 1. An output similar to the following will appear. Record the port number in the `https://localhost:{port}` URL.
 
-   ```bash
+   ```Console
    ...
    info: Microsoft.Hosting.Lifetime[14]
          Now listening on: https://localhost:{port}
