@@ -22,12 +22,12 @@ User risk detections might flag a legitimate user account as at risk, when a pot
 
 ID Protection categorizes risk level into three tiers: low, medium, and high. These risk levels are calculated by our machine learning algorithms and represent how confident Microsoft is that one or more of the user's credentials are known by an unauthorized entity. 
 
-- A risk detection with risk level **High** signifies that Microsoft is highly confident that the account has been compromised. 
-- A risk detection with risk level **Low** signifies that there are anomalies present in the sign-in or a user’s credential, but we're less confident that these anomalies mean the account has been compromised.   
+- A risk detection with risk level **High** signifies that Microsoft is highly confident that the account is compromised. 
+- A risk detection with risk level **Low** signifies that there are anomalies present in the sign-in or a user’s credential, but we're less confident that these anomalies mean the account is compromised.   
 
-Many detections can fire at more than one of our risk levels depending on the number or severity of the anomalies detected. For example, [Unfamiliar sign-in properties](#unfamiliar-sign-in-properties) may fire at high, medium, or low based on the confidence in the signals. Some detections, like [Leaked Credentials](#leaked-credentials) and [Verified Threat Actor IP](#verified-threat-actor-ip) are always delivered as **High** risk. 
+Many detections can fire at more than one of our risk levels depending on the number or severity of the anomalies detected. For example, [Unfamiliar sign-in properties](#unfamiliar-sign-in-properties) might fire at high, medium, or low based on the confidence in the signals. Some detections, like [Leaked Credentials](#leaked-credentials) and [Verified Threat Actor IP](#verified-threat-actor-ip) are always delivered as **High** risk. 
 
-This risk level is important when deciding which detections to prioritize, investigate, and remediate. They also play a key role in [configuring risk based Conditional Access policies](howto-identity-protection-configure-risk-policies.md) as each policy can be set to trigger for low, medium, high, or no risk detected. Based on the risk tolerance of your organization, you can create policies that require MFA or password reset when ID Protection detects a certain risk level for one of your users and guides the user to self-remediate to resolve the risk. 
+This risk level is important when deciding which detections to prioritize, investigate, and remediate. They also play a key role in [configuring risk based Conditional Access policies](howto-identity-protection-configure-risk-policies.md) as each policy can be set to trigger for low, medium, high, or no risk detected. Based on the risk tolerance of your organization, you can create policies that require MFA or password reset when ID Protection detects a certain risk level for one of your users. These policies can guide the user to self-remediate to resolve the risk.
 
 ## !ID PROTECTION TEAM! SHOULD I MENTION OUR RECOMMENDATION OF LEVELS HERE? OR CHANGE THE LINK TO THE POLICY DOC TO POINT TO THE [RECOMMENDATION SECTION](howto-identity-protection-configure-risk-policies.md#choosing-acceptable-risk-levels) IN IT?
 
