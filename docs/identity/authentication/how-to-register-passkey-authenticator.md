@@ -39,6 +39,8 @@ You can sign in to the Authenticator to create a passkey in the app and get seam
 
 1. Open Authenticator.
 1. Tap the **Add Account** or **+** button.
+   > [!NOTE]
+   > If you already have an account in the Authenticator, you need to still tap on the **+** button to sign in and register a passkey for that same account.
 1. Select **Work or school account**.
 1. Sign in.
 1. You need to complete multifactor authentication (MFA).
@@ -198,6 +200,8 @@ You can sign in to the Authenticator to create a passkey in the app and get seam
 
 1. Open Authenticator.
 1. Tap the **Add account** or **+** button.
+   > [!NOTE]
+   > If you already have an account in the Authenticator, you need to still tap on the **+** button to sign in and register a passkey for that same account.
 1. Select **Work or school account**.
 1. Sign in.
 1. You need to complete multifactor authentication (MFA).
