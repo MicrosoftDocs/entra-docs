@@ -35,23 +35,21 @@ Alternatively, you can add a passkey from your mobile device browser, or through
 ## [**iOS**](#tab/iOS)
 
 ### Same-device registration by signing into Authenticator (iOS)
-You can sign in to the Authenticator to create a passkey in the app and get seamless Single Sign-on across Microsoft native apps. This is the recommended and preferred flow to setup a passkey in the app. 
+You can sign in to the Authenticator to create a passkey in the app and get seamless Single Sign-on across Microsoft native apps. This is the recommended and preferred flow to setup a passkey in Authenticator. If you're signed in or already have an account in Authenticator, you still need to complete these steps to add a passkey in the app.
 
 1. Open Authenticator.
 1. Tap the **Add Account** or **+** button.
    > [!NOTE]
-   > If you already have an account in the Authenticator, you need to still tap on the **+** button to sign in and register a passkey for that same account.
+   > If you already have an account in Authenticator, you still need to tap on the **+** button to sign in and register a passkey for that same account.
 1. Select **Work or school account**.
 1. Sign in.
 1. You need to complete multifactor authentication (MFA).
-1. Follow the on-screen instructions. On your iOS device, open the **Settings** app to enable the Authenticator as a passkey provider.
+1. Follow the on-screen instructions. On your iOS device, open the **Settings** app to enable Authenticator as a passkey provider.
    1. Open **Passwords** select **Password Options**.
    1. Ensure **Autofill Passwords and and Passkeys** is turned on.
    1. Under Use **Passwords and Passkeys** From select **Authenticator**.
    1. Return to **Authenticator app** and select **Continue**.
 1. Authenticator sets up passkey, passwordless, and/or MFA for sign-in according to your work or school account policies.
-
-If you already have an account in the Authenticator app, or you are signed in to the Authenticator app, you still need to go through the above mentioned flow to add a passkey in the app.
 
 ### Same-device registration from a browser (iOS)
 Alternatively, users can set up a passkey in the Authenticator by navigating to a browser and initiating the flow from My Security info.
