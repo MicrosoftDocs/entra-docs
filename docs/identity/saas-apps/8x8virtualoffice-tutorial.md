@@ -168,9 +168,7 @@ Create a user called Britta Simon in 8x8 Admin Console. Users must be created in
 
 #### SP initiated:
 
-* Click on **Test this application**, this will redirect to 8x8 Sign on URL where you can initiate the login flow.  
-
-* Go to 8x8 Sign-on URL directly and initiate the login flow from there.
+* Go to the 8x8 [Sign-on URL](https://sso.8x8.com) directly and initiate the login flow from there.
 
 #### IDP initiated:
 
