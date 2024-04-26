@@ -14,7 +14,7 @@ ms.author: billmath
 
 # Prerequisites for Microsoft Entra Cloud Sync
 
-This article provides guidance on how to choose and use Microsoft Entra Cloud Sync as your identity solution.
+This article provides guidance on using Microsoft Entra Cloud Sync as your identity solution.
 
 ## Cloud provisioning agent requirements
 
