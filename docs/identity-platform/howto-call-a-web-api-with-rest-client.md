@@ -259,7 +259,7 @@ You may also notice the **User.Read** permission for the Microsoft Graph API. Th
 
 #### Get an access token and send a request to the web API
 
-1. Once these values are entered, select the **Fetch Tokens** button. This launches an Insomnia browser window where you authenticate with your user credentials. Be sure to allow pop ups from the Insomnia application in the browser.
+1. Once these values are entered, select **Fetch Tokens**. This launches an Insomnia browser window where you authenticate with your user credentials. Be sure to allow pop ups from the Insomnia application in the browser.
 1. After authenticating, select **Send** to send the request to the protected web API endpoint.
 
 With a valid access token included in the request, the expected response is 200 OK with output similar to:
