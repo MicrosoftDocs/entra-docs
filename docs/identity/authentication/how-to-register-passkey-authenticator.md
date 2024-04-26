@@ -24,6 +24,14 @@ This article shows how to register a passkey using Microsoft Authenticator on yo
 
 Alternatively, you can add a passkey from your mobile device browser, or through cross-device registration using another device, such as a laptop. Your mobile device needs to run iOS version 17, or Android version 14, or later. 
 
+| Scenario | iOS | Android |
+|------------------|---------------------------------|----------------|
+| **Same-device registration by signing into Authenticator**              | &#x2705;          | &#x2705;       |
+| **Same-device registration in a browser**            | &#x2705; | &#10060;<sup>1</sup>     |
+| **Cross-device registration**  | &#x2705;  | &#x2705;    |
+
+<sup>1</sup> Support for same-device registration in a browser on Android is coming soon.
+
 ## [**iOS**](#tab/iOS)
 
 ### Same-device registration by signing into Authenticator (iOS)
