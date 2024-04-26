@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: how-to
-ms.date: 05/31/2023
+ms.date: 04/26/2024
 ms.custom: template-how-to
 ---
 
@@ -54,10 +54,10 @@ To edit the execution conditions of a workflow using the Microsoft Entra admin c
 1. On this screen, you're presented with **Trigger details**. Here we have a trigger type and attribute details. In the template you can edit the attribute details to define when a workflow is run in relation to the attribute value measured in days. This attribute value can be from 0 to 60 days.
     
 
-1. Select the **Scope** tab.
+1. Select the **Scope details** tab.
     :::image type="content" source="media/manage-workflow-tasks/execution-conditions-scope.png" alt-text="Screenshot of the execution scope page of a workflow." lightbox="media/manage-workflow-tasks/execution-conditions-scope.png":::
 
-1. On this screen you can define rules for who the workflow runs. In the template **Scope type** is set as Rule-Based, and you define the rule using expressions on user properties. For more information on supported user properties. see: [supported queries on user properties](/graph/aad-advanced-queries#user-properties).
+1. On this screen you can define rules for who the workflow runs. if the trigger **Scope type** is set as Rule-Based you  can define the rule using expressions on user properties. For more information on supported user properties. see: [supported queries on user properties](/graph/aad-advanced-queries#user-properties). If the trigger scope type is group-based, you are able to select which group is the scope of the workflow.
 
 1. After making changes, select **save** to capture changes to the execution conditions.
 
