@@ -179,7 +179,7 @@ You may also notice the **User.Read** permission for the Microsoft Graph API. Th
    git clone https://github.com/Azure-Samples/ms-identity-docs-code-dotnet.git
    ```
 
-1. Navigate to `ms-identity-docs-code-dotnet/web-api` folder and open `appsettings.json`, replace the `{APPLICATION_CLIENT_ID}` and `{DIRECTORY_TENANT_ID}` with:
+1. Navigate to `ms-identity-docs-code-dotnet/web-api` and open `appsettings.json`, replace the `{APPLICATION_CLIENT_ID}` and `{DIRECTORY_TENANT_ID}` with the following values:
 
    - `{APPLICATION_CLIENT_ID}` is the web API **Application (client) ID** on the app's **Overview** pane.
    - `{DIRECTORY_TENANT_ID}` is the web API **Directory (tenant) ID** on the app's **Overview** pane.
