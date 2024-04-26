@@ -40,7 +40,7 @@ Detections that are triggered during real-time will take up to 5-10 minutes to s
 >    - Completing multifactor authentication
 >    - Secure password change. 
 > 
-> Our system will dismiss the risk state and a risk detail of “AI confirmed sign-in safe” will show and no longer contribute to the user’s overall risk. 
+> Our system will dismiss the risk state and a risk detail of **AI confirmed sign-in safe** will show and no longer contribute to the user’s overall risk. 
 
 ## Risk detections mapped to riskEventType 
 
