@@ -49,6 +49,10 @@ Workflows can be created with, or edited to include, a custom security attribute
     :::image type="content" source="media/manage-workflow-custom-security-attribute/custom-attribute-list.png" alt-text="Screenshot of a list of custom security attributes on the scope screen.":::
 1. After setting the value for the custom security attribute, select **Save**.
 
+## add a custom security attribute to the scope of the workflow using Microsoft Graph
+
+As adding a custom  security attribute to the scope of a workflow updates the execution conditions of a workflow, you'd be creating a new version of the workflow. To create a new version of a workflow via API using Microsoft Graph, see: [workflow: createNewVersion](/graph/api/identitygovernance-workflow-createnewversion).
+
 ## Next step
 
 > [!div class="nextstepaction"]
