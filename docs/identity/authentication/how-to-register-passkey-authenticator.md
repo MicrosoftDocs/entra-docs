@@ -73,9 +73,9 @@ You can sign in to Authenticator to create a passkey in the app and get seamless
 
    :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/select-authenticator-ios.png" alt-text="Screenshot of Use Passwords and Passkeys from using Microsoft Authenticator for iOS devices.":::
 
-1.	Authenticator sets up passkey, passwordless, and/or MFA for sign in according to your work or school account policies. 
+1. Authenticator sets up passkey, passwordless, and/or MFA for sign in according to your work or school account policies. 
 
-   :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/passkey-added-ios.png" alt-text="Screenshot of setting up passkey, passwordless, and/or MFA for sign in using Microsoft Authenticator for iOS devices.":::
+    :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/passkey-added-ios.png" alt-text="Screenshot of setting up passkey, passwordless, and/or MFA for sign in using Microsoft Authenticator for iOS devices.":::
 
 1. Tap **Continue** to complete the registration process. 
 
