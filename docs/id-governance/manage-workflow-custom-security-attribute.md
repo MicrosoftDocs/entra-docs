@@ -46,7 +46,7 @@ Workflows can be created with, or edited to include, a custom security attribute
 1. On the execution conditions page, select **Scope details**.  
 
 1. On the scope details page you select **Add expression**, and from the drop-down list locate your custom security attributes, and then set its value.
-    :::image type="content" source="media/manage-workflow-custom-security-attribute/csa-scope-list.png" alt-text="Screenshot of a list of custom security attributes on the scope screen.":::
+    :::image type="content" source="media/manage-workflow-csa-scope/csa-scope-list.png" alt-text="Screenshot of a list of custom security attributes on the scope screen.":::
 1. After setting the value for the custom security attribute, select **Save**.
 
 ## Next step
