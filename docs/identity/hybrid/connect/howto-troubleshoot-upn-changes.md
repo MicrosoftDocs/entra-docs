@@ -19,7 +19,7 @@ The User Principal Name (UPN) attribute is an internet communication standard fo
    > [!NOTE]
    >This article assumes the UPN is the user identifier. The article addresses UPN-change planning, and recovery from issues that might result from changes. We recommend developers use the user objectID as the immutable identifier, rather than UPN or email addresses.
 
-## UPN and their changes
+## Reasons for UPN changes
 
 When the value is the user UPN, sign-in pages often prompt users to enter an email address. Therefore, when the user's primary email address changes, change the user UPN. Generally, a user's primary email address changes for the following reasons:
 
@@ -28,16 +28,16 @@ When the value is the user UPN, sign-in pages often prompt users to enter an ema
 * Rebranding changes that affect the suffix
 * Merger and/or acquisition changes
 
-### UPN changes
+### UPN prefix and suffix changes
 
 We recommend you change user UPN when their primary email address changes. During initial synchronization from Active Directory to Microsoft Entra ID, ensure user emails and UPNs are identical. See the following example prefix and suffix changes. 
 
-Prefix changes:
+Prefix change examples:
 
 * From **BSimon**@contoso.com to **BJohnson**@contoso.com
 * From **Bsimon**@contoso.com to **Britta.Simon**@contoso.com
 
-Suffix changes:
+Suffix change examples:
 
 * From Britta.Simon@**contoso.com** to Britta.Simon@**contosolabs.com**
 * From Britta.Simon@corp.**contoso.com** to Britta.Simon@**labs.contoso.com**
