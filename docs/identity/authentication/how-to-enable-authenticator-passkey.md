@@ -49,7 +49,7 @@ The **Microsoft Authenticator** policy doesn't give you the option to enable pas
    :::image type="content" border="true" source="media/how-to-enable-authenticator-passkey/optional-settings.png" alt-text="Screenshot showing Microsoft Authenticator enabled for passkey."lightbox="media/how-to-enable-authenticator-passkey/optional-settings.png":::
 
   >[!WARNING]
-  >Key restrictions set the usability of specific passkeys for both registration and authentication. If you change key restrictions and remove an AAGUID that you previously allowed, users who previously registered an allowed method can no longer use it for sign-in. If your organization does not currently enforce key restrictions and already has active passkey usage, you should collect the AAGUIDs of the key being used today and add them to the Allow list, along with the Authenticator AAGUIDs, to enable the preview. This can be done with an automated script that analyzes logs such as registration details and sign-in logs.
+  >Key restrictions set the usability of specific passkeys for both registration and authentication. If you change key restrictions and remove an AAGUID that you previously allowed, users who previously registered an allowed method can no longer use it for sign-in. If your organization doesn't currently enforce key restrictions and already has active passkey usage, you should collect the AAGUIDs of the keys being used today. Add them to the Allow list, along with the Authenticator AAGUIDs, to enable this preview. This task can be done with an automated script that analyzes logs such as registration details and sign-in logs.
 
 The following list describes other optional settings:
 
