@@ -14,7 +14,12 @@ ms.reviewer: jsimmons, andresc
 
 # Plan and troubleshoot User Principal Name changes in Microsoft Entra ID
 
-The User Principal Name (UPN) attribute is an internet communication standard for user accounts. A UPN consists of a prefix (user account name) and a suffix (DNS domain name). The prefix joins the suffix using the "\@" symbol. For example, someone@example.com. During planning, ensure the UPN is unique among security principal objects in a directory forest. 
+The User Principal Name (UPN) attribute is an internet communication standard for user accounts. A UPN consists of: 
+
+* **Prefix**: User account name
+* **Suffix**: Domain name server (DNS) domain name 
+
+The prefix joins the suffix using the "\@" symbol. For example, someone@example.com. During planning, ensure the UPN is unique among security principal objects in a directory forest. 
 
    > [!NOTE]
    >This article assumes the UPN is the user identifier. The article addresses UPN-change planning, and recovery from issues that might result from changes. We recommend developers use the user objectID as the immutable identifier, rather than UPN or email addresses.
@@ -207,7 +212,7 @@ Learn [how it works: Microsoft Entra multifactor authentication](~/identity/auth
 
 ### Known issues: Notification not received
 
-When you change user UPN, the old UPN appears on the user account. Notification might not be received. Instead, use verification codes.
+When you change user UPN, the previous UPN appears on the user account. Notification might not be received. Instead, use verification codes.
 
 See a list of [common questions about Authenticator](https://prod.support.services.microsoft.com/account-billing/common-questions-about-the-microsoft-authenticator-app-12d283d1-bcef-4875-9ae5-ac360e2945dd).
 
@@ -253,11 +258,11 @@ Authenticator registers the device in Microsoft Entra ID, which allows the devic
 
 ### Known issues: new account appears
 
-If you change UPN, a new account with the new UPN appears on the Authenticator. The account with the old UPN remains. Also, the old UPN appears on Device Registration in app settings. There's no change in functionality of Device Registration or dependant scenarios.
+If you change UPN, a new account with the new UPN appears on the Authenticator. The account with the previous UPN remains. Also, the previous UPN appears on Device Registration in app settings. There's no change in functionality of Device Registration or dependant scenarios.
 
 ### Workaround
 
-To remove references to the old UPN on Authenticator, the user removes the old and new accounts Authenticator. The user re-registers for MFA, and rejoins the device.
+To remove references to the previous UPN on Authenticator, the user removes the previous and new accounts Authenticator. The user re-registers for MFA, and rejoins the device.
 
 ### Phone sign-in
 
@@ -275,11 +280,11 @@ On the account enabled for phone sign-in, on the drop-down menu, the user select
 
 ### Known issues: Account selection
 
-When multiple users are registered on the same key, account selection appears where the old UPN appears. UPN changes don't affect sign-in with security keys.  
+When multiple users are registered on the same key, account selection appears where the previous UPN appears. UPN changes don't affect sign-in with security keys.  
 
 ### Workaround
 
-To remove references to old UPNs, users reset the security key and re-register.
+To remove references to previous UPNs, users reset the security key and re-register.
 
 You can [enable passwordless security key sign-in, known issue, UPN changes](~/identity/authentication/howto-authentication-passwordless-security-key.md#known-issues).
 
@@ -296,7 +301,7 @@ Use Teams Meeting Notes to take and share notes.
 
 ### Known issues: inaccessible notes
 
-When a user UPN changes, meeting notes created with the old UPN are not accessible with Microsoft Teams or the Meeting Notes URL.   
+When a user UPN changes, meeting notes created with the previous UPN are not accessible with Microsoft Teams or the Meeting Notes URL.   
 
 ### Workaround
 
