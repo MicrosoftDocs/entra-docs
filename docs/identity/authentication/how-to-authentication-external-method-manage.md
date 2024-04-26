@@ -8,8 +8,8 @@ ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 04/22/2024
 
-ms.author: gkinasewitz
-author: justinha
+ms.author: justinha
+author: gregkmsft
 manager: amycolannino
 ms.reviewer: gkinasewitz, gustavosa
 
@@ -65,11 +65,14 @@ Before you create an EAM in the admin center, make sure you have [metadata to co
 
    :::image type="content" border="true" source="./media/how-to-authentication-external-method-manage/permissions-requested.png" alt-text="Screenshot of how to grant admin consent.":::
 
-   You can see the permissions the the provider application requests before you grant consent. After you grant admin consent and the change replicates, the page refreshes to show that admin consent was granted.
+   You can see the permissions that the provider application requests before you grant consent. After you grant admin consent and the change replicates, the page refreshes to show that admin consent was granted.
 
    :::image type="content" border="true" source="./media/how-to-authentication-external-method-manage/consent-granted.png" alt-text="Screenshot of Authentication methods policy after consent is granted.":::
 
-If the app has permissions then you can also enable the method before saving. Otherwise, you need to save the method in a disabled state, and enable after the app is granted consent.
+If the app has permissions, then you can also enable the method before saving. Otherwise, you need to save the method in a disabled state, and enable after the app is granted consent.
+
+Note with the error message that users will get if the SP no longer has permission or was deleted. and call out that authentications will fail / the method is in a non-usable state if that happens.
+
 
 Once the method is enabled, all users in scope will see the method in the method picker for any MFA prompts. If the app from the provider doesn't have consent approved, then any authentications with the EAM fails.
 
@@ -96,7 +99,10 @@ To manage the Authentication methods policy by using Microsoft Graph, you need t
 
 Users who are enabled for the EAM can use it when they sign-in and multifactor authentication is required. 
 
-If the user has other ways to sign in and [system-preferred MFA](/entra/identity/authentication/concept-system-preferred-multifactor-authentication) is enabled, those other methods appear by default order. The user can choose to use a different method, and then select the EAM.
+>[!NOTE]
+>We're actively working to support system-preferred MFA with EAMs.
+
+If the user has other ways to sign in and [system-preferred MFA](/entra/identity/authentication/concept-system-preferred-multifactor-authentication) is enabled, those other methods appear by default order. The user can choose to use a different method, and then select the EAM. For example, a user with Authenticator enabled as another method will be prompted for number matching.
 
 :::image type="content" border="true" source="./media/how-to-authentication-external-method-manage/system-preferred.png" alt-text="Screenshot of how to choose an EAM when system-preferred MFA is enabled.":::
 
