@@ -36,7 +36,7 @@ Workflows can be created with, or edited to include, a custom security attribute
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
     > [!NOTE]
-    > The [prerequisite](../id-governance/manage-workflow-csa-scope.md#prerequisites) steps of creating, defining, and assigning a custom security attribute must be completed before using the [Attribute Assignment Administrator](../identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator) role. The Lifecycle Workflows Administrator role alone cannot create, update, or assign custom security attributes.
+    > The [prerequisite](../id-governance/manage-workflow-custom-security-attribute.md#prerequisites) steps of creating, defining, and assigning a custom security attribute must be completed before using the [Attribute Assignment Administrator](../identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator) role. The Lifecycle Workflows Administrator role alone cannot create, update, or assign custom security attributes.
 1. Browse to **Identity governance** > **Lifecycle workflows** > **Workflows**.
 
 1. On the Workflows page, select the workflow that you want to use a custom security attribute as part of the scope for.
