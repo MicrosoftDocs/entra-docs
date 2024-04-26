@@ -1,5 +1,5 @@
 ---
-title: Create a REST API with a token issuance start event for Azure Functions using NuGet libraries (preview)
+title: Create a REST API with a token issuance start event for Azure Functions
 description: Learn how to use the Authentication events trigger for Azure Functions library to create a trigger function that uses the token issuance start event.  
 author: cilwerner
 manager: CelesteDG
@@ -14,7 +14,7 @@ zone_pivot_groups: custom-auth-extension
 #Customer intent: As a developer, I want to create an Azure Function app with a token issuance start event using the Azure Functions client library for .NET, and deploy it to the Azure portal, or create the app directly on the Azure portal.
 ---
 
-# Create a REST API with a token issuance start event for Azure Functions (preview)
+# Create a REST API with a token issuance start event for Azure Functions
 
 ::: zone pivot="nuget-library" 
 
@@ -28,6 +28,10 @@ This article describes how to create a REST API with a [token issuance start eve
 - One of the following IDEs and configurations:
     - Visual Studio with [Azure Development workload for Visual Studio](/dotnet/azure/configure-visual-studio) configured.
     - Visual Studio Code, with the [Azure Functions](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions) extension enabled.
+
+> [!NOTE]
+>
+> The [Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents](https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/entra/Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents) NuGet library is currently in preview. Steps in this article are subject to change. For general availability implementation of implementing a token issuance start event, you can do so using the [Azure portal](#create-the-azure-function-app).
     
 ::: zone-end
 
@@ -49,7 +53,7 @@ This article describes how to create a REST API with a [token issuance start eve
 
 In this step, you create an HTTP trigger function API using your IDE, install the required NuGet packages and copy in the sample code. You build the project and run the function locally to extract the function URL.
 
-### Create the Azure Function app
+### Create the application
 
 To create an Azure Function app, follow these steps:
 
