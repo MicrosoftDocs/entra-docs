@@ -30,7 +30,7 @@ When the value is the user UPN, sign-in pages often prompt users to enter an ema
 
 * Employee name change
 * Employee move
-* Rebranding changes that affect the suffix
+* Restructuring changes that affect the suffix
 * Merger and/or acquisition changes
 
 ### UPN prefix and suffix changes
@@ -149,7 +149,7 @@ Learn more about [Microsoft Entra hybrid joined devices](~/identity/devices/conc
 
 Windows 10 Microsoft Entra hybrid joined devices experience unexpected restarts and access issues. If users sign in to Windows before the new UPN synchronizes with Microsoft Entra ID, they might experience SSO issues with apps that use Microsoft Entra ID for authentication. This scenario can occur if users are in a Windows session. This situation occurs if Conditional Access is configured to enforce use of hybrid joined devices to access resources. In addition, the following message can force a restart after one minute:
 
-*Your PC will automatically restart in one minute. Windows ran into a problem and needs to restart. You should close this message now and save your work.*
+*Your PC automatically restarts in one minute. Windows ran into a problem and needs to restart. You should close this message now and save your work.*
 
 This issue was fixed in the Windows 10 May-2020 update.
 
@@ -301,7 +301,7 @@ Use Teams Meeting Notes to take and share notes.
 
 ### Known issues: inaccessible notes
 
-When a user UPN changes, meeting notes created with the previous UPN are not accessible with Microsoft Teams or the Meeting Notes URL.   
+When a user UPN changes, meeting notes created with the previous UPN aren't accessible with Microsoft Teams or the Meeting Notes URL.   
 
 ### Workaround
 
