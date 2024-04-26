@@ -221,7 +221,7 @@ You may also notice the **User.Read** permission for the Microsoft Graph API. Th
 
    1. Open a new terminal and execute the following command to start the app on the `https` profile:
 
-      ```bash
+      ```Console
       dotnet run -launch-profile https`
       ```
 
