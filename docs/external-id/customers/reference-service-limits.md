@@ -14,21 +14,19 @@ ms.custom: it-pro
 
 #Customer intent: As an IT admin, I want to know about the service limits and restrictions in my external tenant.
 ---
-<!-- Based on https://learn.microsoft.com/en-us/entra/identity/users/directory-service-limits-restrictions and https://learn.microsoft.com/en-us/azure/active-directory-b2c/service-limits?pivots=b2c-custom-policy and https://microsoft.sharepoint.com/:w:/t/aad/CPIM/EVlzWDYaozFBg-K8W2epuhoBN7rBryTH99MQTNmws_Oqyg?e=2F8Zf0 -->
-# Microsoft Entra External ID service limits and restrictions
+# Service limits and restrictions
 
-This article contains the usage constraints and other service limits for the Microsoft Entra ID for external configuration tenants, Microsoft’s new customer identity and access management (CIAM) solution. If you’re looking for the full set of Microsoft Entra ID service limits, see [Microsoft Entra service limits and restrictions](/entra/identity/users/directory-service-limits-restrictions).
+This article outlines the service limits and usage constraints of Microsoft Entra External ID for external tenants, which is Microsoft’s latest customer identity and access management (CIAM) solution. If you’re looking for the full set of Microsoft Entra ID service limits, see [Microsoft Entra service limits and restrictions](/entra/identity/users/directory-service-limits-restrictions).
 
 ## User/consumption related limits
 
 The number of users able to authenticate through an external tenant is gated through request limits. The following table illustrates the request limits for your tenant.
 
-<!-- Maximum requests per IP per external tenant has to be added. -->
 
 |Category |Limit    |
 |---------|---------|
-|Maximum requests per IP per external tenant       |  |  
-|Maximum requests per external tenant     |1000 per second          |
+|Maximum requests per IP per external tenant       |20 per second  |  
+|Maximum requests per external tenant     |200 per second          |
 |Maximum requests per external trial tenant     |20 per second          |
 
 ## Endpoint request usage
