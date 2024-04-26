@@ -18,9 +18,9 @@ ms.reviewer: gkinasewitz, gustavosa
 ---
 # Microsoft Entra multifactor authentication external method provider reference (Preview)
 
-This topic describes how external authentication providers connect to Entra ID, and how tenant admins can manage authentication requirements for their tenant to be satisfied by external provider authentication for a second factor. 
+This topic describes how external authentication providers connect to Entra ID. 
 
-Entra ID external authentication methods are the way to allow customers to integrate external authentication providers as a method to satisfy the authentication requirements for the resource/application being requested.  
+Entra ID external authentication methods are the way to allow organizations to integrate external authentication providers as a method to satisfy the second factor of multifactor authentication requirements for the resource/application being requested.  
 
 When a user signs in, that tenant's policies are evaluated. The authentication requirements are determined based on the resource being accessed. Any number of policies may apply to a given sign-in given the parameters of each policy. Those parameters include users and groups, applications, platform, sign-in risk level, and others. Based on the authentication requirements, the user may need to use an additional factor that satisfies the MFA requirement.  This factor will need to complement the type of first factor. 
 
@@ -87,16 +87,16 @@ An app per tenant is also a valid model to support the integration. If using a s
 
 ### Configure optional claims
 
-If a provider needs upn or email claims for discovery, then you can configure these [optional claims for id_token](/entra/identity-platform/optional-claims).
+If a provider needs additional claims, then these can be configured via [optional claims for id_token](/entra/identity-platform/optional-claims).
 
 >[!NOTE]
 >The preceding steps need to be done for each cloud environment, whether the approach is a multi-tenant app or apps created per-tenant. For the public Azure and Azure US Government clouds, if a multi-tenant app is being used rather than an app per tenant, then a different application which includes AppId is required for each environment.
 
 ##  Add an EAM to Entra ID
 
-External identity provider information will be stored in each tenant's authentication methods policy as an authentication method of externalAuthenticationMethodConfiguration type.  Each provider will have one entry in the list object of the policy, and per the authentication method framework, will have state of whether it’s enabled, include groups capable to use the method, and exclude groups that are not allowed to use the method.  
+External identity provider information will be stored in each tenant's authentication methods policy as an authentication method of externalAuthenticationMethodConfiguration type.  Each provider will have one entry in the list object of the policy, and per the authentication method framework, will have state of whether it’s enabled, include groups capable to use the method, and exclude groups that are not allowed to use the method.
 
-This authentication method will eventually be able to be included in authentication strengths, and then admins can use those authentication strengths as part of defining a Conditional Access policy requirement; this functionality will be added in the future.
+Admins will set the MFA requirement for users sign-ins by creating a Conditional Access policy and using the Require MFA Grant. External authentication methods are not currently supported with Authentication Strengths based policies.
 
 The **ExternalAuthenticationMethodConfiguration** entry has the following members:
 
@@ -513,7 +513,7 @@ iat   |       | Issuing time – set as usual.
 sub   |       | Subject – must match the sub from the id_token_hint sent to initiate this request.
 nonce |       | The same nonce that was passed in the request.
 acr   |       | The acr claims for the authentication request. This should match one of the values from the request sent to initiate this request. Only one acr claim should be returned. For the list of claims, see [Supported acr claims](#supported-acr-claims).
-amr   |       | The amr claims for the authentication method used in authentication. Only one method claim should be returned.	For the list of claims, see [Supported amr claims](#supported-amr-claims).
+amr   |       | The amr claims for the authentication method used in authentication. This should be returned as an array and only one method claim should be returned.	For the list of claims, see [Supported amr claims](#supported-amr-claims).
 
 
 ##### Supported acr claims
@@ -535,15 +535,15 @@ Claim | Notes
 ------|------
 face | Biometric via facial recognition
 fido | FIDO2 was used
-fpt   | Biometric via fingerprint
-hwk   | Proof of possession of hardware-secured key
-iris  | Biometric via iris scan
+fpt | Biometric via fingerprint
+hwk | Proof of possession of hardware-secured key
+iris | Biometric via iris scan
 otp | One time password
 pop | Proof of possession
 retina | Biometric of retina scan
 sc | Smart card
 sms | Confirmation by sms to registered number
-swk	 | Confirmation of presence of a software secured key
+swk | Confirmation of presence of a software secured key
 tel | Confirmation by telephone 
 vbm | Biometric via voiceprint
 
@@ -553,10 +553,10 @@ Entra ID will validate the type mapping based on the following table.
 
 | Claim Method | Type | Notes |
 |--------------|------|-------|
-|face          |Inherence | Biometric via facial recognition |
+|face |Inherence | Biometric via facial recognition |
 |fido |Possession | FIDO2 was used. Some implementations may also require biometric but as possession is the primary security attribute, that is the method type that is mapped.|
 |fpt |Inherence | Biometric via fingerprint |
-|hwk  | Possession | Proof of possession of hardware-secured key |
+|hwk | Possession | Proof of possession of hardware-secured key |
 |iris | Inherence  | Biometric via iris scan |
 |otp | Possession | One-time password |
 |pop | Possession | Proof of possession |
