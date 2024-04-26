@@ -116,7 +116,7 @@ Follow these steps to create the web app registration:
 
 1. Select **Home** to return to the home page. Browse to **Identity** > **Applications** > **App registrations**.
 1. Select **New registration**.
-1. Enter a **Name** for the application, such as `web-app-calls-web-api`.
+1. Enter a **Name** for the application, such as **web-app-calls-web-api**.
 1. For **Supported account types**, select **Accounts in this organizational directory only**. For information on different account types, select the **Help me choose** option.
 1. Under **Redirect URI (optional)**, select **Web**, and then enter `http://localhost` in the URL text box.
 1. Select **Register**.
