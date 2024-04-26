@@ -22,6 +22,7 @@ This article lists steps to enable and enforce use of passkeys in Authenticator 
 
 - [Microsoft Entra multifactor authentication (MFA)](howto-mfa-getstarted.md)
 - Android 14 and later or iOS 17 and later
+- An active internet connection on any device that is part of the passkey registration/authentication process
 
 > [!NOTE]
 > Users need to install the latest version of Authenticator for Android or iOS to use a passkey. 
