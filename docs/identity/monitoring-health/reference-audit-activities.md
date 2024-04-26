@@ -646,7 +646,6 @@ Logs captured in the Core Directory service cover a wide variety of scenarios. C
 |Agreement|Delete agreement|
 |Agreement|Hard delete agreement|
 |Agreement|Update agreement|
-|ApplicationManagement|Add a deletion-marked app role assignment grant to service principal as part of link removal|
 |ApplicationManagement|Add app role assignment to service principal|
 |ApplicationManagement|Add application|
 |ApplicationManagement|Add delegated permission grant|
@@ -762,7 +761,6 @@ Logs captured in the Core Directory service cover a wide variety of scenarios. C
 |ExternalUserProfile|Hard Delete ExternalUserProfile|
 |ExternalUserProfile|Restore ExternalUserProfile|
 |ExternalUserProfile|Update ExternalUserProfile|
-|GroupManagement|Add a deletion-marked app role assignment grant to group as part of link removal|
 |GroupManagement|Add app role assignment to group|
 |GroupManagement|Add group|
 |GroupManagement|Add member to group|
@@ -847,7 +845,6 @@ Logs captured in the Core Directory service cover a wide variety of scenarios. C
 |RoleManagement|Update role|
 |RoleManagement|Update role definition|
 |SourceOfAuthorityPolicy|Add SOA policy|
-|UserManagement|Add a deletion-marked app role assignment grant to group as part of link removal|
 |UserManagement|Add app role assignment to group|
 |UserManagement|Add user|
 |UserManagement|Add users strong authentication phone app detail|
@@ -1301,8 +1298,7 @@ Many of the activities in this group are associated with background processes re
 
 |Audit Category|Activity|
 |---|---|
-|GroupManagement|ApprovalNotification_Create
-|
+|GroupManagement|ApprovalNotification_Create|
 |GroupManagement|Autorenew group|
 |GroupManagement|Approval_Act|
 |GroupManagement|Approval_Get|

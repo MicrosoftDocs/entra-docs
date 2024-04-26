@@ -25,7 +25,7 @@ Setting up an endpoint, such as an event hub or storage account, might require d
 
 To help decide which log routing option is best for you, see [How to access activity logs](howto-access-activity-logs.md). The overall process and requirements for each endpoint type are covered in the following articles:
 
-- [Send logs to a Log Analytics workspace to integrate with Azure Monitor logs](howto-integrate-activity-logs-with-azure-monitor-logs.md)
+- [Send logs to a Log Analytics workspace to integrate with Azure Monitor logs](howto-integrate-activity-logs-with-azure-monitor-logs.yml)
 - [Archive logs to a storage account](howto-archive-logs-to-storage-account.md)
 - [Stream logs to an event hub](howto-stream-logs-to-event-hub.md)
 - [Send to a partner solution](/azure/partner-solutions/overview)

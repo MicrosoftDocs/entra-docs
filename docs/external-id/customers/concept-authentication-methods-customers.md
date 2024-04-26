@@ -75,7 +75,15 @@ Learn how to [add Facebook as an identity provider](how-to-facebook-federation-c
 
 At any time, you can update the sign-in options you've selected for an app. For example, you can add social identity providers or change the local account sign-in method.
 
-Be aware that when you change sign-in methods, the change affects only new users. Existing users will continue to sign in using their original method. For example, suppose you start out with the email and password sign-in method, and then change to email with one-time passcode. New users will sign in using a one-time passcode, but any users who have already signed up with an email and password will continue to be prompted for their email and password.  
+Be aware that when you change sign-in methods, the change affects only new users. Existing users will continue to sign in using their original method. For example, suppose you start out with the email and password sign-in method, and then change to email with one-time passcode. New users will sign in using a one-time passcode, but any users who have already signed up with an email and password will continue to be prompted for their email and password. 
+
+## Microsoft Graph APIs
+
+The following Microsoft Graph API operations are supported for managing identity providers and authentication methods in Microsoft Entra External ID:
+
+- To identify what identity providers and authentication methods are supported, you call the [List availableProviderTypes](/graph/api/identityproviderbase-availableprovidertypes) API.
+- To identify the identity providers and authentication methods that are already configured and enabled in the tenant, you call the [List identityProviders](/graph/api/identitycontainer-list-identityproviders) API.
+- To enable a supported identity provider or authentication method, you call the [Create identityProvider](/graph/api/identitycontainer-post-identityproviders) API.
 
 ## Next steps
 

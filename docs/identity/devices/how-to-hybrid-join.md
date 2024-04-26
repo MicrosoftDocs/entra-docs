@@ -141,6 +141,6 @@ If you experience issues with completing Microsoft Entra hybrid join for domain-
 
 ## Related content
 
-- [Microsoft Entra hybrid join verification](how-to-hybrid-join-verify.md)
+- [Microsoft Entra hybrid join verification](how-to-hybrid-join-verify.yml)
 - [Use Conditional Access to require compliant or Microsoft Entra hybrid joined device](../conditional-access/howto-conditional-access-policy-compliant-device.md)
 - [Planning a Windows Hello for Business Deployment](/windows/security/identity-protection/hello-for-business/hello-planning-guide)
