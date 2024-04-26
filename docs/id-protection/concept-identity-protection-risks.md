@@ -207,7 +207,7 @@ Calculated in real-time or offline. This detection indicates that one of the pre
 
 #### Leaked credentials 
 
-Calculated offline. This risk detection type indicates that the user's valid credentials have been leaked. When cybercriminals compromise valid passwords of legitimate users, they often share these gathered credentials. This sharing is typically done by posting publicly on the dark web, paste sites, or by trading and selling the credentials on the black market. When the Microsoft leaked credentials service acquires user credentials from the dark web, paste sites, or other sources, they're checked against Microsoft Entra users' current valid credentials to find valid matches. For more information about leaked credentials, see Common questions. 
+Calculated offline. This risk detection type indicates that the user's valid credentials have been leaked. When cybercriminals compromise valid passwords of legitimate users, they often share these gathered credentials. This sharing is typically done by posting publicly on the dark web, paste sites, or by trading and selling the credentials on the black market. When the Microsoft leaked credentials service acquires user credentials from the dark web, paste sites, or other sources, they're checked against Microsoft Entra users' current valid credentials to find valid matches. For more information about leaked credentials, see [common questions](#common-leaked-credentials-questions). 
 
 #### Microsoft Entra threat intelligence (user) 
 
@@ -227,7 +227,9 @@ Risk detections like leaked credentials require the presence of password hashes 
 
 Disabled user accounts can be re-enabled. If the credentials of a disabled account are compromised, and the account gets re-enabled, bad actors might use those credentials to gain access. ID Protection generates risk detections for suspicious activities against disabled user accounts to alert customers about potential account compromise. If an account is no longer in use and wont be re-enabled, customers should consider deleting it to prevent compromise. No risk detections are generated for deleted accounts. 
 
-### Where does Microsoft find leaked credentials? 
+### Common leaked credentials questions
+
+#### Where does Microsoft find leaked credentials? 
 
 Microsoft finds leaked credentials in various places, including: 
 
@@ -235,18 +237,18 @@ Microsoft finds leaked credentials in various places, including:
 - Law enforcement agencies. 
 - Other groups at Microsoft doing dark web research. 
 
-### Why am I not seeing any leaked credentials? 
+#### Why am I not seeing any leaked credentials? 
 
 Leaked credentials are processed anytime Microsoft finds a new, publicly available batch. Because of the sensitive nature, the leaked credentials are deleted shortly after processing. Only new leaked credentials found after you enable password hash synchronization (PHS) are processed against your tenant. Verifying against previously found credential pairs isn't done. 
 
-### I haven't seen any leaked credential risk events for quite some time 
+#### I haven't seen any leaked credential risk events for quite some time 
 
 If you haven't seen any leaked credential risk events, it is because of the following reasons: 
 
 - You don't have PHS enabled for your tenant. 
 - Microsoft has not found any leaked credential pairs that match your users. 
 
-### How often does Microsoft process new credentials? 
+#### How often does Microsoft process new credentials? 
 
 Credentials are processed immediately after they have been found, normally in multiple batches per day. 
 
