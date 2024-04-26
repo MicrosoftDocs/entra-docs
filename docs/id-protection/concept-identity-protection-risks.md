@@ -16,14 +16,14 @@ ms.reviewer:
 
 Microsoft Entra ID Protection provides organizations with information to suspicious activity in their tenant and allows them to respond quickly to prevent further risk occurring. Risk detections are a powerful resource that can include any suspicious or anomalous activity related to a user account in the directory. ID Protection risk detections can be linked to an individual user or sign-in event and contribute to the overall user risk score found in the [Risky Users report](howto-identity-protection-investigate-risk.md#risky-users). 
 
-User risk detections might flag a legitimate user account as at risk, when a potential threat actor gains access to an account by compromising their credentials or when they detect some type of anomalous user activity. Sign-in risk detections represent the probability that a given authentication request isn't the authorized by the owner of the account. Having the ability to identify risk at the user and sign-in level is critical for customers to be empowered to secure their tenant. 
+User risk detections might flag a legitimate user account as at risk, when a potential threat actor gains access to an account by compromising their credentials or when they detect some type of anomalous user activity. Sign-in risk detections represent the probability that a given authentication request isn't the authorized by the owner of the account. Having the ability to identify risk at the user and sign-in level is critical for customers to be empowered to secure their tenant.
 
-## Risk levels 
+## Risk levels
 
 ID Protection categorizes risk level into three tiers: low, medium, and high. These risk levels are calculated by our machine learning algorithms and represent how confident Microsoft is that one or more of the user's credentials are known by an unauthorized entity. 
 
 - A risk detection with risk level **High** signifies that Microsoft is highly confident that the account is compromised. 
-- A risk detection with risk level **Low** signifies that there are anomalies present in the sign-in or a user’s credential, but we're less confident that these anomalies mean the account is compromised.   
+- A risk detection with risk level **Low** signifies that there are anomalies present in the sign-in or a user’s credential, but we're less confident that these anomalies mean the account is compromised.
 
 Many detections can fire at more than one of our risk levels depending on the number or severity of the anomalies detected. For example, [Unfamiliar sign-in properties](#unfamiliar-sign-in-properties) might fire at high, medium, or low based on the confidence in the signals. Some detections, like [Leaked Credentials](#leaked-credentials) and [Verified Threat Actor IP](#verified-threat-actor-ip) are always delivered as **High** risk. 
 
@@ -33,7 +33,7 @@ This risk level is important when deciding which detections to prioritize, inves
 
 ## Real-time and offline detections 
 
-ID Protection utilizes a technique that increases precision on User and Sign-in risk detections by calculating risk during a real-time sign-in or offline after authentication. Detecting risk in real-time at sign-in gives the advantage of identifying risk early so that customers can quickly investigate the potential compromise. On detections that calculate risk offline, this can provide more insight as to how the threat actor gained access to the account and the impact on the legitimate user. Some detections can be triggered both offline and during sign-in, which increases confidence in being precise on the compromise. 
+ID Protection utilizes techniques to increase the precision of user and sign-in risk detections by calculating some risks during a real-time sign-in or offline after authentication. Detecting risk in real-time at sign-in gives the advantage of identifying risk early so that customers can quickly investigate the potential compromise. On detections that calculate risk offline, this can provide more insight as to how the threat actor gained access to the account and the impact on the legitimate user. Some detections can be triggered both offline and during sign-in, which increases confidence in being precise on the compromise. 
 
 Detections that are triggered during real-time will take up to 5-10 minutes to surface the details in the Reporting blade. Offline detections take up to 48 hours to surface in the Reporting blade as it takes time to evaluate properties of the potential risk. 
 
