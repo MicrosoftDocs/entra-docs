@@ -31,18 +31,7 @@ You need the following to use Microsoft Entra Cloud Sync:
 
 ## Group Managed Service Accounts
 
-<<<<<<< HEAD
 A group Managed Service Account is a managed domain account that provides automatic password management, simplified service principal name (SPN) management, the ability to delegate the management to other administrators, and also extends this functionality over multiple servers. Microsoft Entra Cloud Sync supports and uses a gMSA for running the agent. You'll be prompted for administrative credentials during setup, in order to create this account. The account appears as `domain\provAgentgMSA$`. For more information on a gMSA, see [group Managed Service Accounts](/windows-server/security/group-managed-service-accounts/group-managed-service-accounts-overview).
-=======
-A Group Managed Service Account (gMSA) is a managed domain account that offers the following benefits:
-
-- Automatic password management
-- Simplified Service Principal Name (SPN) management
-- Delegation of management
-- Functionality across multiple servers
-
-Microsoft Entra Cloud Sync supports and uses a gMSA for running the agent. You're prompted for administrative credentials during setup, in order to create this account. The account appears as `domain\provAgentgMSA$`. For more information on a gMSA, see [group Managed Service Accounts](/windows-server/security/group-managed-service-accounts/group-managed-service-accounts-overview).
->>>>>>> ea1b15b96f44ec46d76b996ee54d5ee4fde228ee
 
 ### Prerequisites for gMSA
 
@@ -53,11 +42,7 @@ Microsoft Entra Cloud Sync supports and uses a gMSA for running the agent. You'r
 
 ### Custom gMSA account
 
-<<<<<<< HEAD
 If you're creating a custom gMSA account, you need to ensure that the account has the following permissions.
-=======
-If you're creating a custom gMSA account, you need to ensure that the account has the following permissions on the root of each Active Directory domain and propagate to all child objects.
->>>>>>> ea1b15b96f44ec46d76b996ee54d5ee4fde228ee
 
 |Type |Name |Access |Applies To|
 |-----|-----|-----|-----|
@@ -92,13 +77,9 @@ Run the [IdFix tool](/microsoft-365/enterprise/set-up-directory-synchronization)
 > [!NOTE]
 > Installing the cloud provisioning agent on Windows Server Core isn't supported.
 
-<<<<<<< HEAD
 [!INCLUDE [pre-requisites](../includes/gpad-prereqs.md)]
 
 ## More requirements
-=======
-### .NET Framework requirements
->>>>>>> ea1b15b96f44ec46d76b996ee54d5ee4fde228ee
 
 - Minimum [Microsoft .NET Framework 4.7.1](https://dotnet.microsoft.com/download/dotnet-framework/net471)
 
@@ -173,11 +154,7 @@ If there's a firewall between your servers and Microsoft Entra ID, configure the
 
 ## NTLM requirement
 
-<<<<<<< HEAD
 You shouldn't enable NTLM on the Windows Server that is running the Microsoft Entra provisioning agent and if it is enabled you should make sure you disable it.
-=======
-You shouldn't enable NTLM on the Windows Server that is running the Microsoft Entra provisioning agent and if it's enabled you should make sure you disable it.
->>>>>>> ea1b15b96f44ec46d76b996ee54d5ee4fde228ee
 
 ## Known limitations
 
@@ -186,29 +163,16 @@ The following are known limitations:
 ### Delta Synchronization
 
 - Group scope filtering for delta sync doesn't support more than 50,000 members.
-<<<<<<< HEAD
 - When you delete a group that's used as part of a group scoping filter, users who are members of the group, don't get deleted.
 - When you rename the OU or group that's in scope, delta sync won't remove the users.
 
 ### Provisioning Logs
 
 - Provisioning logs don't clearly differentiate between create and update operations. You may see a create operation for an update and an update operation for a create.
-=======
-- When you delete a group that is part of a scoping filter, users who are members of the group, don't get deleted.
-- When you rename the OU (organizational unit) or group that's in scope, delta sync doesn't remove the users.
-
-### Provisioning Logs
-
-- Provisioning logs don't clearly differentiate between create and update operations. You may see a create operation for an update and an update operation for a creation.
->>>>>>> ea1b15b96f44ec46d76b996ee54d5ee4fde228ee
 
 ### Group renaming or OU renaming
 
-<<<<<<< HEAD
 - If you rename a group or OU in AD that's in scope for a given configuration, the cloud sync job won't be able to recognize the name change in AD. The job won't go into quarantine and remains healthy.
-=======
-- If you rename a group or OU in AD that's in scope for a given configuration, the cloud sync job isn't able to recognize this update. The job doesn't go into quarantine and remains healthy.
->>>>>>> ea1b15b96f44ec46d76b996ee54d5ee4fde228ee
 
 ### Scoping filter
 
