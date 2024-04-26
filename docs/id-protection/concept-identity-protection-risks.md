@@ -27,11 +27,9 @@ ID Protection categorizes risk level into three tiers: low, medium, and high. Th
 
 Many detections can fire at more than one of our risk levels depending on the number or severity of the anomalies detected. For example, [Unfamiliar sign-in properties](#unfamiliar-sign-in-properties) might fire at high, medium, or low based on the confidence in the signals. Some detections, like [Leaked Credentials](#leaked-credentials) and [Verified Threat Actor IP](#verified-threat-actor-ip) are always delivered as **High** risk. 
 
-This risk level is important when deciding which detections to prioritize, investigate, and remediate. They also play a key role in [configuring risk based Conditional Access policies](howto-identity-protection-configure-risk-policies.md) as each policy can be set to trigger for low, medium, high, or no risk detected. Based on the risk tolerance of your organization, you can create policies that require MFA or password reset when ID Protection detects a certain risk level for one of your users. These policies can guide the user to self-remediate to resolve the risk.
+This risk level is important when deciding which detections to prioritize, investigate, and remediate. They also play a key role in [configuring risk based Conditional Access policies](howto-identity-protection-configure-risk-policies.md#choosing-acceptable-risk-levels) as each policy can be set to trigger for low, medium, high, or no risk detected. Based on the risk tolerance of your organization, you can create policies that require MFA or password reset when ID Protection detects a certain risk level for one of your users. These policies can guide the user to self-remediate to resolve the risk.
 
-## !ID PROTECTION TEAM! SHOULD I MENTION OUR RECOMMENDATION OF LEVELS HERE? OR CHANGE THE LINK TO THE POLICY DOC TO POINT TO THE [RECOMMENDATION SECTION](howto-identity-protection-configure-risk-policies.md#choosing-acceptable-risk-levels) IN IT?
-
-## Real-time and offline detections 
+## Real-time and offline detections
 
 ID Protection utilizes techniques to increase the precision of user and sign-in risk detections by calculating some risks during a real-time sign-in or offline after authentication. Detecting risk in real-time at sign-in gives the advantage of identifying risk early so that customers can quickly investigate the potential compromise. On detections that calculate risk offline, this can provide more insight as to how the threat actor gained access to the account and the impact on the legitimate user. Some detections can be triggered both offline and during sign-in, which increases confidence in being precise on the compromise. 
 
@@ -40,12 +38,12 @@ Detections that are triggered during real-time will take up to 5-10 minutes to s
 > [!NOTE]
 > Our system might detect that the risk event that contributed to the risk user risk score was either: 
 > 
-> - A false positive 
-> - The user risk was remediated by policy by either: 
+> - A false positive
+> - The user risk was [remediated by policy](howto-identity-protection-remediate-unblock.md) by either: 
 >    - Completing multifactor authentication
->    - Secure password change. 
+>    - Secure password change
 > 
-> Our system will dismiss the risk state and a risk detail of **AI confirmed sign-in safe** will show and no longer contribute to the user’s overall risk. 
+> Our system will dismiss the risk state and a risk detail of **AI confirmed sign-in safe** will show and no longer contribute to the user’s overall risk.
 
 ## Risk detections mapped to riskEventType 
 
