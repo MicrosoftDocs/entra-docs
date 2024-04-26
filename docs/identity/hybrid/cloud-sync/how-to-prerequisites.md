@@ -21,14 +21,21 @@ This article provides guidance on how to choose and use Microsoft Entra Cloud Sy
 You need the following to use Microsoft Entra Cloud Sync:
 
 - Domain Administrator or Enterprise Administrator credentials to create the Microsoft Entra Connect cloud sync gMSA (group managed service account) to run the agent service.
-- A hybrid identity administrator account for your Microsoft Entra tenant that is not a guest user.
+- A hybrid identity administrator account for your Microsoft Entra tenant that isn't a guest user.
 - An on-premises server for the provisioning agent with Windows 2016 or later. This server should be a tier 0 server based on the [Active Directory administrative tier model](/security/privileged-access-workstations/privileged-access-access-model). Installing the agent on a domain controller is supported.
 - High availability refers to the Microsoft Entra Cloud Sync's ability to operate continuously without failure for a long time. By having multiple active agents installed and running, Microsoft Entra Cloud Sync can continue to function even if one agent should fail. Microsoft recommends having 3 active agents installed for high availability.
 - On-premises firewall configurations.
 
 ## Group Managed Service Accounts
 
-A group Managed Service Account is a managed domain account that provides automatic password management, simplified service principal name (SPN) management, the ability to delegate the management to other administrators, and also extends this functionality over multiple servers. Microsoft Entra Cloud Sync supports and uses a gMSA for running the agent. You will be prompted for administrative credentials during setup, in order to create this account. The account will appear as `domain\provAgentgMSA$`. For more information on a gMSA, see [group Managed Service Accounts](/windows-server/security/group-managed-service-accounts/group-managed-service-accounts-overview).
+A Group Managed Service Account (gMSA) is a managed domain account that offers the following benefits:
+
+- Automatic password management
+- Simplified Service Principal Name (SPN) management
+- Delegation of management
+- Functionality across multiple servers
+
+Microsoft Entra Cloud Sync supports and uses a gMSA for running the agent. You're prompted for administrative credentials during setup, in order to create this account. The account appears as `domain\provAgentgMSA$`. For more information on a gMSA, see [group Managed Service Accounts](/windows-server/security/group-managed-service-accounts/group-managed-service-accounts-overview).
 
 ### Prerequisites for gMSA
 
@@ -39,7 +46,7 @@ A group Managed Service Account is a managed domain account that provides automa
 
 ### Custom gMSA account
 
-If you are creating a custom gMSA account, you need to ensure that the account has the following permissions on the root of each Active Directory domain and propagate to all child objects.
+If you're creating a custom gMSA account, you need to ensure that the account has the following permissions on the root of each Active Directory domain and propagate to all child objects.
 
 |Type |Name |Access |Applies To|
 |-----|-----|-----|-----|
@@ -69,12 +76,12 @@ Run the [IdFix tool](/microsoft-365/enterprise/set-up-directory-synchronization)
 
 1. Identify a domain-joined host server running Windows Server 2016 or greater with a minimum of 4-GB RAM and .NET 4.7.1+ runtime.
 2. The PowerShell execution policy on the local server must be set to Undefined or RemoteSigned.
-3. If there's a firewall between your servers and Microsoft Entra ID, see [Firewall and proxy requirements](#firewall-and-proxy-requirements) below.
+3. If there's a firewall between your servers and Microsoft Entra ID, see [Firewall and proxy requirements](#firewall-and-proxy-requirements).
 
 > [!NOTE]
-> Installing the cloud provisioning agent on Windows Server Core is not supported.
+> Installing the cloud provisioning agent on Windows Server Core isn't supported.
 
-### Additional requirements
+### .NET Framework requirements
 
 - Minimum [Microsoft .NET Framework 4.7.1](https://dotnet.microsoft.com/download/dotnet-framework/net471)
 
@@ -111,7 +118,7 @@ If there's a firewall between your servers and Microsoft Entra ID, configure the
 
 - Ensure that agents can make *outbound* requests to Microsoft Entra ID over the following ports:
 
-   | Port number | How it's used |
+   | Port number | Description |
    | --- | --- |
    | **80** | Downloads the certificate revocation lists (CRLs) while validating the TLS/SSL certificate. |
    | **443** | Handles all outbound communication with the service. |
@@ -123,7 +130,7 @@ If there's a firewall between your servers and Microsoft Entra ID, configure the
 #### [Public Cloud](#tab/public-cloud)
 
 
-  |URL |How it's used|
+  | URL | Description |
   |-----|-----|
   |`*.msappproxy.net`</br>`*.servicebus.windows.net`|The agent uses these URLs to communicate with the Microsoft Entra cloud service. |
   |`*.microsoftonline.com`</br>`*.microsoft.com`</br>`*.msappproxy.com`</br>`*.windowsazure.com`|The agent uses these URLs to communicate with the Microsoft Entra cloud service. |
@@ -134,7 +141,7 @@ If there's a firewall between your servers and Microsoft Entra ID, configure the
 
 #### [U.S. Government Cloud](#tab/us-government-cloud)
 
- |URL |How it's used|
+ | URL | Description |
  |-----|-----|
  |`*.msappproxy.us`</br>`*.servicebus.usgovcloudapi.net`|The agent uses these URLs to communicate with the Microsoft Entra cloud service. |
  |`mscrl.microsoft.us:80` </br>`crl.microsoft.us:80` </br>`ocsp.msocsp.us:80` </br>`www.microsoft.us:80`| The agent uses these URLs to verify certificates.|
@@ -143,13 +150,13 @@ If there's a firewall between your servers and Microsoft Entra ID, configure the
 
 
 
-- If you are unable to add connections, allow access to the [Azure datacenter IP ranges](https://www.microsoft.com/download/details.aspx?id=41653), which are updated weekly.
+- If you're unable to add connections, allow access to the [Azure datacenter IP ranges](https://www.microsoft.com/download/details.aspx?id=41653), which are updated weekly.
 
 ---
 
 ## NTLM requirement
 
-You should not enable NTLM on the Windows Server that is running the Microsoft Entra provisioning agent and if it is enabled you should make sure you disable it.
+You shouldn't enable NTLM on the Windows Server that is running the Microsoft Entra provisioning agent and if it's enabled you should make sure you disable it.
 
 ## Known limitations
 
@@ -157,17 +164,17 @@ The following are known limitations:
 
 ### Delta Synchronization
 
-- Group scope filtering for delta sync does not support more than 50,000 members.
-- When you delete a group that's used as part of a group scoping filter, users who are members of the group, don't get deleted.
-- When you rename the OU or group that's in scope, delta sync will not remove the users.
+- Group scope filtering for delta sync doesn't support more than 50,000 members.
+- When you delete a group that is part of a scoping filter, users who are members of the group, don't get deleted.
+- When you rename the OU (organizational unit) or group that's in scope, delta sync doesn't remove the users.
 
 ### Provisioning Logs
 
-- Provisioning logs do not clearly differentiate between create and update operations. You may see a create operation for an update and an update operation for a create.
+- Provisioning logs don't clearly differentiate between create and update operations. You may see a create operation for an update and an update operation for a creation.
 
 ### Group re-naming or OU re-naming
 
-- If you rename a group or OU in AD that's in scope for a given configuration, the cloud sync job will not be able to recognize the name change in AD. The job won't go into quarantine and will remain healthy.
+- If you rename a group or OU in AD that's in scope for a given configuration, the cloud sync job isn't able to recognize this update. The job doesn't go into quarantine and remains healthy.
 
 ### Scoping filter
 
@@ -178,7 +185,7 @@ When using OU scoping filter
 
 ### Password Hash Sync
 
-- Using password hash sync with InetOrgPerson is not supported.
+- Using password hash sync with InetOrgPerson isn't supported.
 
 ## Next steps
 
