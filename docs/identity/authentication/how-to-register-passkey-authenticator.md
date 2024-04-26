@@ -258,7 +258,7 @@ You can sign in to Authenticator to create a passkey in the app and get seamless
 
    :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-android/enable-authenticator-android.png" alt-text="Screenshot of enabling Authenticator as a provider using Microsoft Authenticator for Android devices.":::
 
-1. Return to **Authenticator app** and select **Continue**.
+1. Return to **Authenticator app** and select **Done**.
  
    :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-android/passkey-done-android.png" alt-text="Screenshot of selecting Continue to complete using Microsoft Authenticator for Android devices.":::
 
