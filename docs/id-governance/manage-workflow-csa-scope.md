@@ -1,6 +1,6 @@
 ---
 title: Add a custom security attribute to the scope of a workflow
-description: Learn how to add a custom security attribute as the scope of a workflow with lifecycle workflows.
+description: Learn how to add a custom security attribute to the scope of a workflow with Lifecycle workflows.
 author: owinfreyATL
 manager: amycolannino
 ms.service: entra-id-governance
