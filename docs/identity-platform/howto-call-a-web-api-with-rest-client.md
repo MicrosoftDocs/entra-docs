@@ -186,7 +186,7 @@ You may also notice the **User.Read** permission for the Microsoft Graph API. Th
 
 1. Execute the following command to start the app:
 
-   ```bash
+   ```Console
    dotnet run
    ```
 
