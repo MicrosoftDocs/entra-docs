@@ -6,7 +6,7 @@ description: Learn how to configure an external authentication method (EAM) prov
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 04/26/2024
+ms.date: 04/27/2024
 
 ms.author: justinha
 author: gregkmsft
@@ -18,37 +18,38 @@ ms.reviewer: gkinasewitz, gustavosa
 ---
 # Microsoft Entra multifactor authentication external method provider reference (Preview)
 
-This topic describes how external authentication providers connect to Entra ID. 
+This topic describes how an external authentication provider connect to Microsoft Entra multifactor authentication (MFA). An external authentication provider can integrate with Entra ID tenants as an external authentication method (EAM). An EAM can satisfy the second factor of an MFA requirement for access to a resource or application.  
 
-Entra ID external authentication methods are the way to allow organizations to integrate external authentication providers as a method to satisfy the second factor of multifactor authentication requirements for the resource/application being requested.  
+When a user signs in, that tenant policies are evaluated. The authentication requirements are determined based on the resource that the user tries to access. Multiple policies may apply to the sign-in, depending on their parameters. Those parameters include users and groups, applications, platform, sign-in risk level, and more. Based on the authentication requirements, the user may need to sign in with another factor to meet the MFA requirement. The second factor needs to complement the type of first factor. 
 
-When a user signs in, that tenant's policies are evaluated. The authentication requirements are determined based on the resource being accessed. Any number of policies may apply to a given sign-in given the parameters of each policy. Those parameters include users and groups, applications, platform, sign-in risk level, and others. Based on the authentication requirements, the user may need to use an additional factor that satisfies the MFA requirement.  This factor will need to complement the type of first factor. 
+EAMs are added to Entra ID by the tenant admin. If a tenant requires an EAM for MFA, the sign-in is considered to meet the MFA requirement after Entra ID validates both:
 
-The user’s authentication will be treated as having met the MFA requirement once Entra ID has validated that the first factor completed with Entra ID and the second factor completed with the external provider satisfy the requirement for two or more types of methods from "something you know", "something you have", "something you are."
+- The first factor completed with Entra ID <!---completed with a built-in method in Entra ID?--->
+- The second factor completed with the EAM
 
-This document describes integration of authentication methods provided by external authentication providers, called external authentication methods (EAMs), to satisfy the second factor, in addition to the built-in authentication methods. EAMs are added to Entra ID by the tenant admin.
+That combination satisfies the MFA requirement for two or more types of methods from *something you know*, *something you have*, and *something you are*.
 
-EAMs are implemented on top of Open ID Connect. This implementation requires at least three publicly facing endpoints: 
+EAMs are implemented on top of Open ID Connect (OIDC). This implementation requires at least three publicly facing endpoints: 
 
-- An Open ID Connect Discovery endpoint, described in [Discovery of provider metadata via OIDC Discovery](#discovery-of-provider-metadata)
-- A valid Open ID Connect authentication endpoint
+- An OIDC Discovery endpoint, as described in [Discovery of provider metadata](#discovery-of-provider-metadata)
+- A valid OIDC authentication endpoint
 - A URL where the public certificates of the provider are published
 
-The flow to satisfy authentication that includes an external method is as follows:
+Let's look closer at the flow to satisfy authentication that includes an EAM:
 
-1. User attempts to sign in to an app that is protected by Entra ID, satisfies first factor (such as an Entra ID password).
-1. Entra ID determines that an additional factor needs to be satisfied, for example, by processing Conditional Access policies for the user’s tenant.
-1. User chooses the external auth method as second factor.
+1. The user tries to sign in to an application that's protected by Entra ID by satisfying a first factor, like a password.
+1. Entra ID determines that another factor needs to be satisfied. For example, a Conditional Access policy requires MFA.
+1. The user chooses the EAM as a second factor.
 1. Entra ID redirects the user's browser session to the EAM URL:
-   1. This URL is discovered from the discovery URL provisioned by the admin when creating the EAM.
-   1. The app provides an expired/near-expired token that contains information identifying the user and tenant.
-1. The external authentication provider validates that the token came from Entra ID and checks the contents of the token.
+   1. This URL is discovered from the discovery URL provisioned by an admin when they created the EAM.
+   1. The application provides an expired or nearly expired token that contains information tp identify the user and tenant.
+1. The external authentication provider validates that the token came from Entra ID, and checks the contents of the token.
 1. The external authentication provider might optionally make a call to Microsoft Graph to fetch additional information about the user.
 1. The external authentication provider performs any actions it deems necessary, such as authenticating the user with some credential.
 1. The external authentication provider redirects the user back to Entra ID with a valid token, including all required claims.
-1. Entra ID validates that the token's signature came from the configured external authentication provider and then checks the contents of the token.
+1. Entra ID validates that the token's signature came from the configured external authentication provider, and then checks the contents of the token.
 1. Entra ID validates the token against the requirements.
-1. If the validation succeeds, the user has satisfied the requirement. The user might have to satisfy additional policy requirements, authentication succeeds satisfying MFA.
+1. If the validation succeeds, the user satisfied the MFA requirement. The user might also have to meet other policy requirements.
 
 :::image type="content" source="./media/concept-authentication-external-method-provider/how-external-method-authentication-works.png" alt-text="Diagram of how external method authentication works.":::
 
@@ -61,12 +62,12 @@ Using a multi-tenant application reduces the likelihood of misconfiguration in e
 1. Create an Entra ID tenant if they don't have one yet.
 1. Using that tenant, register an application in Entra ID. 
 1. Set the app’s Supported Account types to: Accounts in any organizational directory (Any Microsoft Entra ID tenant - Multitenant). 
-1. Add the delegated permission openid and profile of Microsoft.Graph to the app.
+1. Add the delegated permission openid and profile of Microsoft.Graph to the application.
 1. Do not publish any scopes in this application. 
 1. Add the external identity provider’s valid authorization_endpoint URLs to that application as Reply URLs. 
    
    >[!NOTE]
-   >The authorization_endpoint provided in the provider’s discovery document should be added as a redirect url in the app registration. 
+   >The authorization_endpoint provided in the provider’s discovery document should be added as a redirect url in the application registration. 
    >Otherwise, you get the following error:
    >*ENTRA IDSTS50161: Failed to validate authorization url of external claims provider!*
 
@@ -79,7 +80,7 @@ Application ID | This will be used by the external identity provider as their ap
 Home page URL | The provider home page url. This is not used for anything but is required as part of application registration.
 Reply URLs | Valid redirect URLs for the provider. One of these should match the provider host URL that was set for the provider’s Entra ID tenant. One of the reply URLs registered must match the prefix of the authorization_endpoint that Entra ID will retrieve through OIDC discovery for the host url.
 
-An app per tenant is also a valid model to support the integration. If using a single-tenant app registration than the tenant admin will create an app registration for a single-tenant application with the properties documented above.
+An application for each tenant is also a valid model to support the integration. If you use a single-tenant registration, than the tenant admin will create an application registration for a single-tenant application with the properties in the preceding table.
 
 >[!NOTE]
 >Admin consent for the application is required in the tenant that uses the EAM. If this isn't completed, the following error appears when attempting to use the EAM:
@@ -90,11 +91,11 @@ An app per tenant is also a valid model to support the integration. If using a s
 If a provider needs additional claims, then these can be configured via [optional claims for id_token](/entra/identity-platform/optional-claims).
 
 >[!NOTE]
->The preceding steps need to be done for each cloud environment, whether the approach is a multi-tenant app or apps created per-tenant. For the public Azure and Azure US Government clouds, if a multi-tenant app is being used rather than an app per tenant, then a different application which includes AppId is required for each environment.
+>The preceding steps need to be done for each cloud environment, whether the application is multi-tenant or created per-tenant. For public Azure and Azure for US Government, if a multi-tenant application is used, then a different application which includes AppId is required for each environment.
 
 ##  Add an EAM to Entra ID
 
-External identity provider information will be stored in each tenant's authentication methods policy as an authentication method of externalAuthenticationMethodConfiguration type.  Each provider will have one entry in the list object of the policy, and per the authentication method framework, will have state of whether it’s enabled, include groups capable to use the method, and exclude groups that are not allowed to use the method.
+External identity provider information will be stored in each tenant's authentication methods policy as an authentication method of externalAuthenticationMethodConfiguration type. Each provider will have one entry in the list object of the policy, and per the authentication method framework, will have state of whether it’s enabled, include groups capable to use the method, and exclude groups that are not allowed to use the method.
 
 Admins will set the MFA requirement for users sign-ins by creating a Conditional Access policy and using the Require MFA Grant. External authentication methods aren't currently supported with Authentication Strengths based policies.
 
