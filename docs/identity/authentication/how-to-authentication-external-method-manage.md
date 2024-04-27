@@ -71,7 +71,7 @@ Before you create an EAM in the admin center, make sure you have the [metadata t
 
 If the application has permissions, then you can also enable the method before saving. Otherwise, you need to save the method in a disabled state, and enable after the application is granted consent.
 
-Once the method is enabled, all users in scope can choose the method for any MFA prompts. If the application from the provider doesn't have consent approved, then any authentications with the method fails.
+Once the method is enabled, all users in scope can choose the method for any MFA prompts. If the application from the provider doesn't have consent approved, then any sign-in with the method fails.
 
 If the application is deleted or no longer has permission, users see an error and sign-in fails. The method can't be used.
 <!---screenshot of error--->
