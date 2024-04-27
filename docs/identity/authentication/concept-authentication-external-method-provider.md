@@ -108,26 +108,26 @@ For more information about how to add an external authentication method in the M
 
 ## Entra ID interaction with provider
 
-The next sections include examples for Entra ID interaction with a provider.
+The next sections explain provider requirements and include examples for Entra ID interaction with a provider.
 
 ### Discovery of provider metadata 
 
-An external identity provider will need to provide an [OIDC Discovery endpoint](http://openid.net/specs/openid-connect-discovery-1_0.html#ProviderConfig). This endpoint will be used to retrieve additional configuration data. The *full* URL, including .*well-known*/*oidc-configuration*, must be included in the Discovery URL configured when creating the EAM. The endpoint will return a Provider Metadata [JSON document](http://openid.net/specs/openid-connect-discovery-1_0.html#ProviderMetadata) hosted there. The endpoint must also return the valid content-length header.
+An external identity provider needs to provide an [OIDC Discovery endpoint](http://openid.net/specs/openid-connect-discovery-1_0.html#ProviderConfig). This endpoint is used to get more configuration data. The *full* URL, including .*well-known*/*oidc-configuration*, must be included in the Discovery URL configured when the EAM is created. The endpoint returns a Provider Metadata [JSON document](http://openid.net/specs/openid-connect-discovery-1_0.html#ProviderMetadata) hosted there. The endpoint must also return the valid content-length header.
 
-The following table lists the data that should be present in the metadata of the provider. The JSON metadata document may contain additional information in addition to these fields that are required for this extensibility scenario.
-The OIDC document specifying the values for Provider Metadata can be found at [Provider Metadata](http://openid.net/specs/openid-connect-discovery-1_0.html#ProviderMetadata).
+The following table lists the data that should be present in the metadata of the provider. These values are required for this extensibility scenario. The JSON metadata document may contain more information. 
+For the OIDC document with the values for Provider Metadata, see [Provider Metadata](http://openid.net/specs/openid-connect-discovery-1_0.html#ProviderMetadata).
 
 
 Metadata value	       | Value  | Comments
 -----------------------|--------|----------
-Issuer                 |        | This URL should match both the host url used for discovery and the iss claim in the tokens issued by the provider’s service.
-authorization_endpoint |        | The endpoint that Entra ID will communicate with for authorization. This endpoint must be present as one of the reply Urls for the allowed apps.
-jwks_uri               |        | This tells us where Entra ID can find the public keys needed to verify the signatures issued by the provider. <br>NOTE: The JWK x5c parameter must be present to provide X.509 representations of keys provided.
-scopes_supported       | openid | Other values may be included as well but not required.
-response_types_supported | id_token | Other values may be included as well but not required.
+Issuer                 |        | This URL should match both the host URL used for discovery and the iss claim in the tokens issued by the provider’s service.
+authorization_endpoint |        | The endpoint that Entra ID communicates with for authorization. This endpoint must be present as one of the reply URLs for the allowed applications.
+jwks_uri               |        | This tells us where Entra ID can find the public keys needed to verify the signatures issued by the provider. <br>>[!NOTE] The JWK **x5c** parameter must be present to provide X.509 representations of keys provided.
+scopes_supported       | openid | Other values may also be included but aren't required.
+response_types_supported | id_token | Other values may also be included but aren't required.
 subject_types_supported	 |  |
 id_token_signing_alg_values_supported | | Microsoft supports RS256
-claim_types_supported | normal | This property is optional but if present, it should include the normal value; other values may be included as well.
+claim_types_supported | normal | This property is optional but if present, it should include the normal value; other values may also be included.
 
 
 ```json
@@ -181,36 +181,36 @@ http://customcaserver.azurewebsites.net/.well-known/jwks
 >[!NOTE]
 >The JWK **x5c** parameter must be present to provide X.509 representations of keys provided.
 
-#### Provider’s metadata caching
+#### Provider metadata caching
 
-To prevent Entra ID from making a discovery call each time it talks to an external identity provider, Entra ID will cache the provider’s metadata returned, including the keys, for performance reasons. 
+To improve performance, Entra ID caches metadata returned by the provider, including the keys. Provider metadata caching prevents a discovery call each time Entra ID talks to an external identity provider.
 
-This cache is refreshed every 24 hrs (1 day). The suggested flow for the provider to roll over their keys is as follows: 
+This cache is refreshed every 24 hrs (1 day). Here's how we suggest a provider roll over their keys: 
 
 1. Publish the **Existing Cert** and **New Cert** in the "jwks_uri".
-1. Keep signing with **Existing Cert**, until Entra ID cache is refreshed/expired/updated (every 2 days).
+1. Keep signing with **Existing Cert** until Entra ID cache is refreshed,expired, or updated (every 2 days).
 1. Switch to signing with **New Cert**.
 
 We don't publish schedules for key rollovers. The dependent service must be prepared to handle both immediate and periodic rollovers. We suggest using a dedicated library built for this purpose, like [azure-activedirectory-identitymodel-extensions-for-dotnet](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet). For more information, see [Signing key rollover in Entra ID](/azure/active-directory/develop/active-directory-signing-key-rollover).
 
 #### Discovery of Entra ID metadata
 
-Equivalent to Entra ID using the discovery process to retrieve the public keys necessary to verify the signatures of the tokens issued by providers, those providers also need to retrieve the public keys of Entra ID for validating the tokens issued by Entra ID.
+Providers also need to retrieve the public keys of Entra ID to validate the tokens issued by Entra ID.
 
-Entra ID’s metadata discovery endpoints:
+Entra ID metadata discovery endpoints:
 
 - Public Azure: `https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration`
 - Azure for US Government: `https://login.microsoftonline.us/common/v2.0/.well-known/openid-configuration`
 - Microsoft Azure operated by 21Vianet (Azure in China): `https://login.partner.microsoftonline.cn/common/v2.0/.well-known/openid-configuration`
 
 
-Using the public key identifier from the token ([the “kid” from JWS](https://tools.ietf.org/html/rfc7515#section-4.1.4)), one can determine which of the keys retrieved from the jwks_uri property should be used for validating the Entra ID token signature.
+Using the public key identifier from the token ([the “kid” from JWS](https://tools.ietf.org/html/rfc7515#section-4.1.4)), one can determine which of the keys retrieved from the jwks_uri property should be used to validate the Entra ID token signature.
 
 #### Validating tokens issued by Entra ID
 
 For information about how to validate the tokens issued by Entra ID, see [Validating and ID token](/entra/identity-platform/id-tokens#validating-an-id_token). There are no special steps for the consumers of our discovery metadata. 
 
-Microsoft’s [token validation library](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/wiki) has all the details on the specifics of token validation that have either been documented or can be ascertained from browsing the source code. For a sample, see [Azure Samples](https://github.com/Azure-Samples/active-directory-dotnet-webapi-manual-jwt-validation).
+Microsoft’s [token validation library](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/wiki) has all the details on the specifics of token validation that are documented, or they can be ascertained from browsing the source code. For a sample, see [Azure Samples](https://github.com/Azure-Samples/active-directory-dotnet-webapi-manual-jwt-validation).
 
 Once validation succeeds, you can work with the claims payload to get details of the user and the tenant they belong to.
 
