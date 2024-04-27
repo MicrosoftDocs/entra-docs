@@ -32,7 +32,7 @@ This article discusses known issues to be aware of when you work with app provis
 
 ### Updating proxyAddresses
 
-ProxyAddresses is a [read-only property in Microsoft Graph](https://learn.microsoft.com/graph/api/resources/user?view=graph-rest-1.0#mail-and-proxyaddresses-properties&preserve-view=true). It can be included as a source attribute in your mappings, but cannot be set as a target attribute. 
+ProxyAddresses is a [read-only property in Microsoft Graph](https://learn.microsoft.com/graph/api/resources/user?view=graph-rest-1.0&preserve-view=true#mail-and-proxyaddresses-properties). It can be included as a source attribute in your mappings, but cannot be set as a target attribute. 
 
 ### Microsoft Teams
 
