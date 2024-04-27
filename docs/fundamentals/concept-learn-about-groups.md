@@ -52,7 +52,7 @@ This option also lets you give people outside of your organization access to the
 
 ### Membership types:
 
-- **Assigned:** Lets you add specific users as members of a group and have unique permissions.
+- **Assigned:** Lets you add specific users as members of a group and have unique permissions. **User Administrator** and **Global Administrator** role owners can manage all Assigned groups' members.
 - **Dynamic user:** Lets you use dynamic membership rules to automatically add and remove members. If a member's attributes change, the system looks at your dynamic group rules for the directory to see whether the member meets the rule requirements (is added), or no longer meets the rules requirements (is removed).
 - **Dynamic device:** Lets you use dynamic group rules to automatically add and remove devices. If a device's attributes change, the system looks at your dynamic group rules for the directory to see whether the device meets the rule requirements (is added), or no longer meets the rules requirements (is removed).
 
