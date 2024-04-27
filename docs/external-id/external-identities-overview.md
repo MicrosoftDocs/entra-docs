@@ -96,7 +96,7 @@ The following table gives a detailed comparison of the scenarios you can enable 
 | **Branding**  | Host/inviting organization's brand is used.  | For sign-in screens, the user’s home organization brand is used. In the shared channel, the resource organization's brand is used. | Fully customizable branding per application or organization.   |
 | **More information** |  [Documentation](what-is-b2b.md)            |   [Documentation](b2b-direct-connect-overview.md)     | [Product page](https://azure.microsoft.com/services/active-directory-b2c/), [Documentation](/azure/active-directory-b2c/)       |
 
-Based on your organization’s requirements you might use cross-tenant synchronization in multitenant organizations. For more information about this new feature, see the [multitenant organization documentation](~/identity/multi-tenant-organizations/index.yml) and the [feature comparison](~/identity/multi-tenant-organizations/overview.md#compare-multi-tenant-capabilities). 
+Based on your organization’s requirements you might use cross-tenant synchronization in multitenant organizations. For more information about this new feature, see the [multitenant organization documentation](../identity/multi-tenant-organizations/index.yml) and the [feature comparison](../identity/multi-tenant-organizations/overview.md#compare-multitenant-capabilities). 
 
 ## Managing External ID features
 
@@ -189,7 +189,7 @@ If you offer a Software as a Service (SaaS) application to many organizations, y
 
 ### Multitenant organizations
 
-A multitenant organization is an organization that has more than one instance of Microsoft Entra ID. There are various reasons for [multi-tenancy](~/identity/multi-tenant-organizations/overview.md#what-is-a-multi-tenant-organization), like using multiple clouds or having multiple geographical boundaries. Multitenant organizations use a one-way synchronization service in Microsoft Entra ID, called [cross-tenant synchronization](~/identity/multi-tenant-organizations/cross-tenant-synchronization-overview.md). Cross-tenant synchronization enables seamless collaboration for a multitenant organization. It improves user experience and ensures that users can access resources, without receiving an invitation email and having to accept a consent prompt in each tenant.
+A multitenant organization is an organization that has more than one instance of Microsoft Entra ID. There are various reasons for [multi-tenancy](../identity/multi-tenant-organizations/overview.md#what-is-the-multitenant-organization-scenario), like using multiple clouds or having multiple geographical boundaries. Multitenant organizations use a one-way synchronization service in Microsoft Entra ID, called [cross-tenant synchronization](../identity/multi-tenant-organizations/cross-tenant-synchronization-overview.md). Cross-tenant synchronization enables seamless collaboration for a multitenant organization. It improves user experience and ensures that users can access resources, without receiving an invitation email and having to accept a consent prompt in each tenant.
 
 ## Next steps
 
