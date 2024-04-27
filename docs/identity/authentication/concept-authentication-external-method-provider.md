@@ -27,7 +27,7 @@ EAMs are added to Entra ID by the tenant admin. If a tenant requires an EAM for 
 - The first factor completed with Entra ID <!---completed with a built-in method in Entra ID?--->
 - The second factor completed with the EAM
 
-That combination satisfies the MFA requirement for two or more types of methods from *something you know*, *something you have*, and *something you are*.
+That validates the MFA requirement for two or more types of methods from *something you know*, *something you have*, and *something you are*.
 
 EAMs are implemented on top of Open ID Connect (OIDC). This implementation requires at least three publicly facing endpoints: 
 
@@ -35,9 +35,9 @@ EAMs are implemented on top of Open ID Connect (OIDC). This implementation requi
 - A valid OIDC authentication endpoint
 - A URL where the public certificates of the provider are published
 
-Let's look closer at the flow to satisfy authentication that includes an EAM:
+Let's look closer at how sign-in works with an EAM:
 
-1. The user tries to sign in to an application that's protected by Entra ID by satisfying a first factor, like a password.
+1. The user tries to sign in with a first factor, like a password, to an application protected by Entra ID.
 1. Entra ID determines that another factor needs to be satisfied. For example, a Conditional Access policy requires MFA.
 1. The user chooses the EAM as a second factor.
 1. Entra ID redirects the user's browser session to the EAM URL:
@@ -55,15 +55,20 @@ Let's look closer at the flow to satisfy authentication that includes an EAM:
 
 ## Configure a new external authentication provider with Microsoft Entra ID
 
-An application representing the integration is required for EAMs to issue the id_token_hint.  This application can either be created in each tenant that will use the external provider or it can be created as single multi-tenant application that admins enabling the integration will consent for their tenant.  
+An application representing the integration is required for EAMs to issue the id_token_hint. The application can be created in two ways:
 
-Using a multi-tenant application reduces the likelihood of misconfiguration in each tenant and enables providers to make changes to metadata (for example, reply URLs) in one place, rather than requiring each tenant to make changes. To configure as a multi-tenant application, the provider admin must first:
+- Created in each tenant that will use the external provider. 
+- Created as one multi-tenant application. Privliged Role Administrators need to grant consent to enable the integration for their tenant.  
+
+A multi-tenant application reduces the chance of misconfiguration in each tenant. It also lets providers make changes to metadata like reply URLs in one place, rather than require each tenant to make the changes. 
+
+To configure a multi-tenant application, the provider admin must first:
 
 1. Create an Entra ID tenant if they don't have one yet.
 1. Using that tenant, register an application in Entra ID. 
-1. Set the app’s Supported Account types to: Accounts in any organizational directory (Any Microsoft Entra ID tenant - Multitenant). 
+1. Set the Supported Account types of the application to: Accounts in any organizational directory (Any Microsoft Entra ID tenant - Multitenant). 
 1. Add the delegated permission openid and profile of Microsoft.Graph to the application.
-1. Do not publish any scopes in this application. 
+1. Don't publish any scopes in this application. 
 1. Add the external identity provider’s valid authorization_endpoint URLs to that application as Reply URLs. 
    
    >[!NOTE]
@@ -71,33 +76,33 @@ Using a multi-tenant application reduces the likelihood of misconfiguration in e
    >Otherwise, you get the following error:
    >*ENTRA IDSTS50161: Failed to validate authorization url of external claims provider!*
 
-The application registration process will result in the creation of an application with several properties. The following properties are required for our scenario.
+The application registration process creates an application with several properties. These properties are required for our scenario.
 
 Property | Description
 ---------|------------
-Object Id | This can be used with Microsoft Graph to query the application info. <br>The provider could use this id to retrieve and edit the application information programmatically.
-Application ID | This will be used by the external identity provider as their app’s ClientId.
-Home page URL | The provider home page url. This is not used for anything but is required as part of application registration.
-Reply URLs | Valid redirect URLs for the provider. One of these should match the provider host URL that was set for the provider’s Entra ID tenant. One of the reply URLs registered must match the prefix of the authorization_endpoint that Entra ID will retrieve through OIDC discovery for the host url.
+Object Id | This can be used with Microsoft Graph to query the application info. <br>The provider could use this id to programmatically retrieve and edit the application information.
+Application ID | This will be used by the external identity provider as the ClientId of their application.
+Home page URL | The provider home page url. This isn't used for anything, but is required as part of application registration.
+Reply URLs | Valid redirect URLs for the provider. One of these should match the provider host URL that was set for the provider’s Entra ID tenant. One of the reply URLs registered must match the prefix of the authorization_endpoint that Entra ID retrieves through OIDC discovery for the host url.
 
 An application for each tenant is also a valid model to support the integration. If you use a single-tenant registration, than the tenant admin will create an application registration for a single-tenant application with the properties in the preceding table.
 
 >[!NOTE]
->Admin consent for the application is required in the tenant that uses the EAM. If this isn't completed, the following error appears when attempting to use the EAM:
+>Admin consent for the application is required in the tenant that uses the EAM. If consent isn't granted, the following error appears when an admin tries to use the EAM:
 >AADSTS900491: Service principal \<your App id> not found.
 
 ### Configure optional claims
 
-If a provider needs additional claims, then these can be configured via [optional claims for id_token](/entra/identity-platform/optional-claims).
+If a provider needs more claims, they can configured them with [optional claims for id_token](/entra/identity-platform/optional-claims).
 
 >[!NOTE]
->The preceding steps need to be done for each cloud environment, whether the application is multi-tenant or created per-tenant. For public Azure and Azure for US Government, if a multi-tenant application is used, then a different application which includes AppId is required for each environment.
+>Optional claims need to be configured for each cloud environment, whether the application is multi-tenant or created for each tenant. For public Azure and Azure for US Government, if a multi-tenant application is used, then a different application that includes AppId is required for each environment.
 
 ##  Add an EAM to Entra ID
 
-External identity provider information will be stored in each tenant's authentication methods policy as an authentication method of externalAuthenticationMethodConfiguration type. Each provider will have one entry in the list object of the policy, and per the authentication method framework, will have state of whether it’s enabled, include groups capable to use the method, and exclude groups that are not allowed to use the method.
+External identity provider information is stored in each tenant's Authentication methods policy as an authentication method of externalAuthenticationMethodConfiguration type. Each provider has one entry in the list object of the policy. For the authentication method framework, each entry states whether it’s enabled, the include groups capable to use the method, and the exclude groups that aren't allowed to use the method.
 
-Admins will set the MFA requirement for users sign-ins by creating a Conditional Access policy and using the Require MFA Grant. External authentication methods aren't currently supported with Authentication Strengths based policies.
+Conditional Access Policy Administrators can create a policy with the Require MFA Grant to set the MFA requirement for user sign-in. External authentication methods aren't currently supported with authentication strengths.
 
 For more information about how to add an external authentication method in the Microsoft Entra admin center, see [Manage an external authentication method in Microsoft Entra ID (Preview)](how-to-authentication-external-method-manage.md).
 
