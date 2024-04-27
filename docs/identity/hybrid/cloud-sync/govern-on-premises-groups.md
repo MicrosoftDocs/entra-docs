@@ -5,12 +5,12 @@ author: billmath
 manager: amycolannino
 ms.service: entra-id
 ms.topic: conceptual
-ms.date: 11/06/2023
+ms.date: 04/26/2024
 ms.subservice: hybrid-cloud-sync
 ms.author: billmath
 ---
 
-# Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance (Preview)
+# Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance
 
 [!INCLUDE [deprecation](~/includes/gwb-v2-deprecation.md)]
 
@@ -146,6 +146,6 @@ If you're using Microsoft Entra Connect group writeback v2, you'll need to move 
 
 
 ## Next Steps
-- [Group writeback with Microsoft Entra Cloud Sync (Preview)](../group-writeback-cloud-sync.md)
+- [Group writeback with Microsoft Entra Cloud Sync ](../group-writeback-cloud-sync.md)
 - [Group provisioning to Active Directory using Microsoft Entra Cloud Sync](how-to-configure-entra-to-active-directory.md)
 - [Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync migration](migrate-group-writeback.md)
