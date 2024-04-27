@@ -6,7 +6,7 @@ description: Learn how to manage an external authentication method (EAM) for Mic
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 04/26/2024
+ms.date: 04/27/2024
 
 ms.author: justinha
 author: gregkmsft
@@ -29,7 +29,7 @@ To create an EAM, you need the following information from your external authenti
 
 - An **Application ID** is generally a multitenant application from your provider, which is used as part of the integration. You need to provide admin consent for this application in your tenant.
 - A **Client ID** is an identifier from your provider used as part of the authentication integration to identify Entra ID requesting authentication.  
-- A **Discovery URL** is the OIDC discovery endpoint for the external authentication provider. 
+- A **Discovery URL** is the OpenID Connect (OIDC) discovery endpoint for the external authentication provider. 
  
 
 ## Manage an EAM in the Microsoft Entra admin center
@@ -38,9 +38,9 @@ EAMs are managed with the Entra ID Authentication methods policy, just like buil
 
 ### Create an EAM in the admin center
 
-Before you create an EAM in the admin center, make sure you have [metadata to configure an EAM](#required-metadata-to-configure-an-eam). 
+Before you create an EAM in the admin center, make sure you have the [metadata to configure an EAM](#required-metadata-to-configure-an-eam). 
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Privilleged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 1. Browse to **Protection** > **Authentication methods** > **Add external method (Preview)**.
 
    :::image type="content" border="true" source="./media/how-to-authentication-external-method-manage/add-external-method.png" alt-text="Screenshot of how to add an EAM in the Microsoft Entra admin center.":::
@@ -69,12 +69,12 @@ Before you create an EAM in the admin center, make sure you have [metadata to co
 
    :::image type="content" border="true" source="./media/how-to-authentication-external-method-manage/consent-granted.png" alt-text="Screenshot of Authentication methods policy after consent is granted.":::
 
-If the app has permissions, then you can also enable the method before saving. Otherwise, you need to save the method in a disabled state, and enable after the app is granted consent.
+If the application has permissions, then you can also enable the method before saving. Otherwise, you need to save the method in a disabled state, and enable after the application is granted consent.
 
-Note with the error message that users will get if the SP no longer has permission or was deleted. and call out that authentications will fail / the method is in a non-usable state if that happens.
+Once the method is enabled, all users in scope can choose the method for any MFA prompts. If the application from the provider doesn't have consent approved, then any authentications with the method fails.
 
-
-Once the method is enabled, all users in scope will see the method in the method picker for any MFA prompts. If the app from the provider doesn't have consent approved, then any authentications with the EAM fails.
+If the application is deleted or no longer has permission, users see an error and sign-in fails. The method can't be used.
+<!---screenshot of error--->
 
 ### Configure an EAM in the admin center
 
@@ -102,20 +102,23 @@ Users who are enabled for the EAM can use it when they sign-in and multifactor a
 >[!NOTE]
 >We're actively working to support system-preferred MFA with EAMs.
 
-If the user has other ways to sign in and [system-preferred MFA](/entra/identity/authentication/concept-system-preferred-multifactor-authentication) is enabled, those other methods appear by default order. The user can choose to use a different method, and then select the EAM. For example, a user with Authenticator enabled as another method will be prompted for number matching.
+If the user has other ways to sign in and [system-preferred MFA](/entra/identity/authentication/concept-system-preferred-multifactor-authentication) is enabled, those other methods appear by default order. The user can choose to use a different method, and then select the EAM. For example, if the user has Authenticator enabled as another method, they get prompted for [number matching](/entra/identity/authentication/how-to-mfa-number-match).
 
 :::image type="content" border="true" source="./media/how-to-authentication-external-method-manage/system-preferred.png" alt-text="Screenshot of how to choose an EAM when system-preferred MFA is enabled.":::
 
 
-If the user has no other methods enabled, the user can just choose the EAM. They're redirected to the external authentication provider to complete authentication.
+If the user has no other methods enabled, they can just choose the EAM. They're redirected to the external authentication provider to complete authentication.
 
 :::image type="content" border="true" source="./media/how-to-authentication-external-method-manage/sign-in.png" alt-text="Screenshot of how to sign in with an EAM.":::
 
 ## Using EAM and Conditional Access custom controls in parallel
 
-EAMs and custom controls can operate in parallel. Microsoft recommends that admins configure two Conditional Access policies: one with the custom control enforced and the second with the MFA grant required. Use include targets to scope the policy to a test group of users.  
+EAMs and custom controls can operate in parallel. Microsoft recommends that admins configure two Conditional Access policies: 
 
-Include users in one of the two policies, but not both. If the user is in scope for both policies, or if you configure a Conditional Access policy that requires both MFA grant and a custom control, the user has to satisfy MFA during sign-in. They also have to satisfy the custom control, and they're redirected to the external provider a second time.
+- One policy to enforce the custom control 
+- Another policy with the MFA grant required
+
+Include a test group of users for each policy, but not both. If a user is included in both policies, or any policy with both conditions, the user has to satisfy MFA during sign-in. They also have to satisfy the custom control, which makes them redirected to the external provider a second time.
 
 ## Next steps
 
