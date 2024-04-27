@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: multitenant-organizations
 ms.topic: overview
-ms.date: 04/23/2024
+ms.date: 04/30/2024
 ms.author: rolyon
 ms.custom: it-pro
 #Customer intent: As a dev, devops, or it admin, I want to
@@ -14,23 +14,25 @@ ms.custom: it-pro
 
 # What is a multitenant organization in Microsoft Entra ID?
 
-Multitenant organization is a feature in Microsoft Entra ID and Microsoft 365 that enables you to form a tenant group within your organization. Each pair of tenants in the group is governed by cross-tenant access settings that you can use to configure B2B or cross-tenant synchronization.
+Multitenant organization is a feature in Microsoft Entra ID and Microsoft 365 that enables you to define a boundary around the Microsoft Entra tenants that your organization owns. In the directory, it takes the form of a tenant group representing your organization. Each pair of tenants in the group is governed by cross-tenant access settings that you can use to configure B2B collaboration.
 
 ## Why use multitenant organization?
 
 Here are the primary goals of multitenant organization:
 
-- Define a group of tenants belonging to your organization
+- Define a boundary around the tenants belonging to your organization
 - Collaborate across your tenants in new Microsoft Teams
-- Enable search and discovery of user profiles across your tenants through Microsoft 365 people search
+- Collaborate across your tenants in Microsoft Viva Engage
 
 ## Who should use it?
 
 Organizations that own multiple Microsoft Entra tenants and want to streamline intra-organization cross-tenant collaboration in Microsoft 365.
 
-The multitenant organization capability is built on the assumption of reciprocal provisioning of B2B member users across multitenant organization tenants.
+The multitenant organization capability in Microsoft Teams is built on the assumption of reciprocal provisioning of external member users across multitenant organization tenants.
 
-As such, the multitenant organization capability assumes the simultaneous use of Microsoft Entra cross-tenant synchronization or an alternative bulk provisioning engine for [external identities](~/external-id/user-properties.md).
+The multitenant organization capability in Viva Engage  is built on the assumption of centralized provisioning of external member users into a hub tenant.
+
+As such, the multitenant organization capability is best deployed with the use of a bulk provisioning engine for [B2B collaboration users](../../external-id/user-properties.md), for example with [cross-tenant synchronization](./cross-tenant-synchronization-overview.md).
 
 ## Benefits
 
@@ -39,11 +41,12 @@ Here are the primary benefits of a multitenant organization:
 - Differentiate in-organization and out-of-organization external users
 
     In Microsoft Entra ID, external users originating from within a multitenant organization can be differentiated from external users originating from outside the multitenant organization. This differentiation facilitates the application of different policies for in-organization and out-of-organization external users.
+
 - Improved collaborative experience in Microsoft Teams
 
     In new Microsoft Teams, multitenant organization users can expect an improved collaborative experience across tenants with chat, calling, and meeting start notifications from all connected tenants across the multitenant organization. Tenant switching is more seamless and faster. For more information, see [Announcing more seamless collaboration in Microsoft Teams for multitenant organizations](https://techcommunity.microsoft.com/t5/microsoft-teams-blog/announcing-more-seamless-collaboration-in-microsoft-teams-for/ba-p/3901092) and [Microsoft Teams: Advantages of the new architecture](https://techcommunity.microsoft.com/t5/microsoft-teams-blog/microsoft-teams-advantages-of-the-new-architecture/ba-p/3775704).
 
-- Improved people search experience across tenants
+- Improved collaborative experience in Viva Engage
 
     Across Microsoft 365 services, the multitenant organization people search experience is a collaboration feature that enables search and discovery of people across multiple tenants. Once enabled, users are able to search and discover synced user profiles in a tenant's global address list and view their corresponding people cards. For more information, see [Microsoft 365 multitenant organization people search](/microsoft-365/enterprise/multi-tenant-people-search).
 
@@ -121,7 +124,7 @@ The multitenant organization capability has been designed with the following con
 
 | Resource | Limit | Notes |
 | --- | :---: | --- |
-| Maximum number of active tenants, including the owner tenant | 100 | The owner tenant can add more than 100 pending tenants, but they won't be able to join the multitenant organization if the limit is exceeded. This limit is applied at the time a pending tenant joins a multitenant organization. This limit is specific to the number of tenants in a multitenant organization. It does not apply to cross-tenant synchronization by itself. To increase this limit, submit a support request in the Microsoft Entra or Microsoft 365 admin center.<br/>In the Microsoft Graph APIs, the default limit of 100 tenants is only enforced at the time of joining. In Microsoft 365 admin center, the default limit is enforced at multitenant organization creation time and at time of joining. |
+| Maximum number of active tenants, including the owner tenant | 100 | The owner tenant can add more than 100 pending tenants, but they won't be able to join the multitenant organization if the limit is exceeded. This limit is applied at the time a pending tenant joins a multitenant organization. This limit is specific to the number of tenants in a multitenant organization. It doesn't apply to cross-tenant synchronization by itself. To increase this limit, submit a support request in the Microsoft Entra or Microsoft 365 admin center.<br/>In the Microsoft Graph APIs, the default limit of 100 tenants is only enforced at the time of joining. In Microsoft 365 admin center, the default limit is enforced at multitenant organization creation time and at time of joining. |
 
 ## External user segmentation
 
