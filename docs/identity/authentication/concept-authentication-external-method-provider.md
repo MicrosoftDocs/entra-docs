@@ -33,9 +33,9 @@ EAMs are added to Entra ID by the tenant admin. If a tenant requires an EAM for 
 
 That validation meets the MFA requirement for two or more types of methods from:
 
-- Something you know
-- Something you have
-- Something you are
+- Something you know (knowledge)
+- Something you have (posession)
+- Something you are (inherence)
 
 EAMs are implemented on top of Open ID Connect (OIDC). This implementation requires at least three publicly facing endpoints: 
 
@@ -136,7 +136,7 @@ Metadata value	       | Value  | Comments
 -----------------------|--------|----------
 Issuer                 |        | This URL should match both the host URL used for discovery and the iss claim in the tokens issued by the provider’s service.
 authorization_endpoint |        | The endpoint that Entra ID communicates with for authorization. This endpoint must be present as one of the reply URLs for the allowed applications.
-jwks_uri               |        | Where Entra ID can find the public keys needed to verify the signatures issued by the provider. <br>[!NOTE]<br>The JSON WEb Key (JWK) **x5c** parameter must be present to provide X.509 representations of keys provided.
+jwks_uri               |        | Where Entra ID can find the public keys needed to verify the signatures issued by the provider. <br>[!NOTE]<br>The JSON Web Key (JWK) **x5c** parameter must be present to provide X.509 representations of keys provided.
 scopes_supported       | openid | Other values may also be included but aren't required.
 response_types_supported | id_token | Other values may also be included but aren't required.
 subject_types_supported	 |  |
@@ -199,7 +199,7 @@ http://customcaserver.azurewebsites.net/.well-known/jwks
 
 To improve performance, Entra ID caches metadata returned by the provider, including the keys. Provider metadata caching prevents a discovery call each time Entra ID talks to an external identity provider.
 
-This cache is refreshed every 24 hrs (1 day). Here's how we suggest a provider rollover their keys: 
+This cache is refreshed every 24 hrs (one day). Here's how we suggest a provider rollover their keys: 
 
 1. Publish the **Existing Cert** and **New Cert** in the "jwks_uri".
 1. Keep signing with **Existing Cert** until Entra ID cache is refreshed, expired, or updated (every 2 days).
@@ -383,7 +383,7 @@ The provider needs to POST a response back to the **redirect_uri**. The followin
 Parameter | Value | Description
 ----------|-------|------------
 id_token  |       | The token issued by the external identity provider.
-state     |       | The same state that was passed in the request, if any. Otherwise, this should not be present.
+state     |       | The same state that was passed in the request, if any. Otherwise, this value shouldn't be present.
 
 On success, the provider would then issue an id_token for the user. Entra ID uses the published OIDC metadata to verify that the token contains the expected claims, and does any other validation of the token that OIDC requires.
 
@@ -395,8 +395,8 @@ exp   |       | Expiration time – set as usual.
 iat   |       | Issuing time – set as usual.
 sub   |       | Subject – must match the sub from the id_token_hint sent to initiate this request.
 nonce |       | The same nonce that was passed in the request.
-acr   |       | The acr claims for the authentication request. This should match one of the values from the request sent to initiate this request. Only one acr claim should be returned. For the list of claims, see [Supported acr claims](#supported-acr-claims).
-amr   |       | The amr claims for the authentication method used in authentication. This should be returned as an array and only one method claim should be returned.	For the list of claims, see [Supported amr claims](#supported-amr-claims).
+acr   |       | The acr claims for the authentication request. This value should match one of the values from the request sent to initiate this request. Only one acr claim should be returned. For the list of claims, see [Supported acr claims](#supported-acr-claims).
+amr   |       | The amr claims for the authentication method used in authentication. This value should be returned as an array, and only one method claim should be returned.	For the list of claims, see [Supported amr claims](#supported-amr-claims).
 
 
 ##### Supported acr claims
@@ -430,7 +430,7 @@ swk | Confirmation of presence of a software-secured key
 tel | Confirmation by telephone 
 vbm | Biometric with voiceprint
 
-Because Entra ID requires MFA to be satisfied to issue a token with MFA claims, only methods with a different type (something you have (possession), something you know (knowledge), something you are (inherence)), can be used to satisfy the second factor.
+Entra ID requires MFA to be satisfied to issue a token with MFA claims. As a result, only methods with a different type can satisfy the second factor requirement. As mentioned earlier, the different method types that can be used to satisfy the second factor are knowledge, possession, and inherence.
 
 Entra ID validates the type mapping based on the following table.
 
@@ -445,7 +445,7 @@ Entra ID validates the type mapping based on the following table.
 |pop | Possession | Proof of possession |
 |retina | Inherence | Biometric of retina scan |
 |sc | Possession | Smart card |
-|sms |Possession | Confirmation by SMS to registered number|
+|sms |Possession | Confirmation by text to registered number|
 |swk | Possession | Proof of presence of a software-secured key
 |tel |Possession | Confirmation by telephone |
 |vbm |Inherence | Biometric with voiceprint |
@@ -462,7 +462,7 @@ Error |           | An ASCII error code, such as access_denied or temporarily_un
 
 Entra ID considers the request successful if the id_token parameter is present in the response, and if the token is valid. Otherwise, the request is considered unsuccessful. Entra ID fails the original authentication attempt due to requirement of the Conditional Access policy.
 
-Entra ID abandons the state of the authentication attempt on its end approximately 10 minutes after the redirection has occurred to the provider.
+Entra ID abandons the state of the authentication attempt on its end about 10 minutes after the redirection to the provider.
 
 ## Entra ID error response handling
 
