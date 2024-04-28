@@ -5,7 +5,7 @@ description: Learn how to enable passwordless security key sign-in to on-premise
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 04/10/2024
+ms.date: 04/28/2024
 
 ms.author: justinha
 author: justinha
@@ -35,7 +35,7 @@ A Microsoft Entra Kerberos server object is created in your on-premises Active D
 
 ## Prerequisites
 
-Before you begin the procedures in this article, your organization must complete the instructions in [Enable passwordless security key sign-in to Windows 10 devices](howto-authentication-passwordless-security-key.md).
+Before you begin the procedures in this article, your organization must complete the instructions in [Enable passkeys (FIDO2) for your organization](howto-authentication-passwordless-security-key.md).
 
 You must also meet the following system requirements:
 
