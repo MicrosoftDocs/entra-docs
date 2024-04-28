@@ -22,7 +22,7 @@ The following Microsoft Entra MFA settings are available:
 | Feature | Description |
 | ------- | ----------- |
 | [Account lockout (MFA Server only)](#account-lockout-mfa-server-only) | Temporarily lock accounts from using Microsoft Entra MFA if there are too many denied authentication attempts in a row. This feature applies only to users who use MFA Server to enter a PIN to authenticate. |
-| [Block/unblock users](#block-and-unblock-users) | Block specific users from being able to receive Microsoft Entra MFA requests. Any authentication attempts for blocked users are automatically denied. The user isn't challenged with MFA for 90 days from the time they are blocked |
+| [Block/unblock users](#block-and-unblock-users) | Block specific users from being able to receive Microsoft Entra MFA requests. Any authentication attempts for blocked users are automatically denied. The user isn't challenged with MFA for 90 days from the time they're blocked |
 | [Fraud alert](#fraud-alert) | Configure settings that allow users to report fraudulent verification requests. |
 | [Report suspicious activity](#report-suspicious-activity) | Configure settings that allow users to report fraudulent verification requests. |
 | [Notifications](#notifications) | Enable notifications of events from MFA Server. |
