@@ -34,7 +34,7 @@ EAMs are added to Entra ID by the tenant admin. If a tenant requires an EAM for 
 That validation meets the MFA requirement for two or more types of methods from:
 
 - Something you know (knowledge)
-- Something you have (posession)
+- Something you have (possession)
 - Something you are (inherence)
 
 EAMs are implemented on top of Open ID Connect (OIDC). This implementation requires at least three publicly facing endpoints: 
@@ -104,7 +104,7 @@ An application for each tenant is also a valid model to support the integration.
 A provider can configure more claims by using [optional claims for id_token](/entra/identity-platform/optional-claims).
 
 >[!NOTE]
->Regardless of how the application is created, the provider needs to configure optional claims for each cloud environment. If a multitenant application is used for public Azure and Azure for US Government, each cloud environment requires a different application and application ID.
+>Regardless of how the application is created, the provider needs to configure optional claims for each cloud environment. If a multitenant application is used for global Azure and Azure for US Government, each cloud environment requires a different application and application ID.
 
 ##  Add an EAM to Entra ID
 
@@ -216,9 +216,9 @@ Providers also need to retrieve the public keys of Entra ID to validate the toke
 
 Entra ID metadata discovery endpoints:
 
-- Public Azure: `https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration`
+- Global Azure: `https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration`
 - Azure for US Government: `https://login.microsoftonline.us/common/v2.0/.well-known/openid-configuration`
-- Microsoft Azure operated by 21Vianet (Azure in China): `https://login.partner.microsoftonline.cn/common/v2.0/.well-known/openid-configuration`
+- Microsoft Azure operated by 21Vianet: `https://login.partner.microsoftonline.cn/common/v2.0/.well-known/openid-configuration`
 
 
 Using the public key identifier from the token ([the "kid" from JSON Web Signature (JWS)](https://tools.ietf.org/html/rfc7515#section-4.1.4)), one can determine which of the keys retrieved from the jwks_uri property should be used to validate the Entra ID token signature.
@@ -263,9 +263,9 @@ value="https://login.microsoftonline.com/common/federation/externalauthprovider"
 
 The redirect Uniform Resource Identifiers (URIs) should be registered with the provider off-band. The redirect URIs that can be sent are:
 
-- Public Azure: `https://login.microsoftonline.com/common/federation/externalauthprovider`
+- Global Azure: `https://login.microsoftonline.com/common/federation/externalauthprovider`
 - Azure for US Government: `https://login.microsoftonline.us/common/federation/externalauthprovider`
-- Microsoft Azure operated by 21Vianet (Azure in China): `https://login.partner.microsoftonline.cn/common/federation/externalauthprovider`
+- Microsoft Azure operated by 21Vianet: `https://login.partner.microsoftonline.cn/common/federation/externalauthprovider`
 
 
 #### Example of an EAM that satisfies MFA
@@ -440,7 +440,7 @@ Entra ID validates the type mapping based on the following table.
 | Claim Method | Type | Notes |
 |--------------|------|-------|
 |face |Inherence | Biometric with facial recognition |
-|fido |Possession | FIDO2 was used. Some implementations may also require biometric, but as possession is the primary security attribute, that's the method type that's mapped.|
+|fido |Possession | FIDO2 was used. Some implementations may also require biometric, but possession method type is mapped because it's the primary security attribute.|
 |fpt |Inherence | Biometric with fingerprint |
 |hwk | Possession | Proof of possession of hardware-secured key |
 |iris | Inherence  | Biometric with iris scan |
