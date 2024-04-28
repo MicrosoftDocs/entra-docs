@@ -83,7 +83,7 @@ To learn more about how each authentication method works, see the following sepa
 
 * [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/hello-overview)
 * [Microsoft Authenticator app](concept-authentication-authenticator-app.md)
-* [Passkey (FIDO2)](concept-authentication-passwordless.md#fido2-security-key-providers)
+* [Passkey (FIDO2)](concept-authentication-passwordless.md)
 * [Certificate-based authentication](concept-certificate-based-authentication.md)
 * [OATH hardware tokens (preview)](concept-authentication-oath-tokens.md#oath-hardware-tokens-preview)
 * [OATH software tokens](concept-authentication-oath-tokens.md#oath-software-tokens)

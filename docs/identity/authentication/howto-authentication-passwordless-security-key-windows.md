@@ -22,7 +22,7 @@ This document focuses on enabling FIDO2 security key based passwordless authenti
 | --- | --- | --- |
 | [Microsoft Entra multifactor authentication](howto-mfa-getstarted.md) | X | X |
 | [Combined security information registration](concept-registration-mfa-sspr-combined.md) | X | X |
-| Compatible [FIDO2 security keys](concept-authentication-passwordless.md#fido2-security-key-providers) | X | X |
+| Compatible [FIDO2 security keys](concept-authentication-passwordless.md) | X | X |
 | WebAuthN requires Windows 10 version 1903 or higher | X | X |
 | [Microsoft Entra joined devices](~/identity/devices/concept-directory-join.md) require Windows 10 version 1909 or higher | X |   |
 | [Microsoft Entra hybrid joined devices](~/identity/devices/concept-hybrid-join.md) require Windows 10 version 2004 or higher |   | X |

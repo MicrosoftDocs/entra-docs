@@ -235,7 +235,7 @@ This command outputs the properties of the Microsoft Entra Kerberos server. You 
 | CloudDomainDnsName | The *DomainDnsName* from the Microsoft Entra object. Must match the *DomainDnsName* from the second line of the table. |
 | CloudKeyVersion | The *KeyVersion* from the Microsoft Entra object. Must match the *KeyVersion* from the fifth line of the table. |
 | CloudKeyUpdatedOn | The *KeyUpdatedOn* from the Microsoft Entra object. Must match the *KeyUpdatedOn* from the sixth line of the table. |
-| | |
+
 
 <a name='rotate-the-azure-ad-kerberos-server-key'></a>
 
@@ -303,7 +303,7 @@ We are working on this capability for the general availability (GA) release of t
 
 ### Where can I go to find compliant security keys?
 
-For information about compliant security keys, see [FIDO2 security keys](concept-authentication-passwordless.md#fido2-security-key-providers).
+For information about compliant security keys, see [FIDO2 security keys](concept-authentication-passwordless.md).
 
 ### What can I do if I lose my security key?
 
