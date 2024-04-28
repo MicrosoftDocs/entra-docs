@@ -157,21 +157,74 @@ Separating processing of the workflow from the tasks is important because, in a 
 
 ## Workflow Insights (preview)
 
-With the previous views, you're able to find history about a specific workflow. If you want to view workflow history summaries across multiple workflows, you use **Workflow Insights (preview)**. 
+With the previous views, you're able to find history of specific workflows. If you want to view workflow history information across all workflows in your tenant, you use **Workflow Insights (preview)**. 
 
-:::image type="content" source="media/lifecycle-workflow-history/workflow-insights-view.png" alt-text="Screenshow of the Workflow Insights page.":::
+:::image type="content" source="media/lifecycle-workflow-history/workflow-insights-view.png" alt-text="Screenshot of the Workflow Insights page.":::
 
 With Workflow Insights, you're also able to view aggregate workflow information across your tenant. Workflow Insights allows you to quickly view the following information:
 
-|Insight  |Details  |
+- Summary
+- Top Workflows
+- Top Tasks
+- Workflow by Category
+
+More details about insights found in these sections are discussed in the following sections of this article. For a step by step guide on checking the insights for workflows in your tenant, see: [Check Workflow Insights (preview)](lifecycle-workflow-insights.md).
+
+
+### Workflow Insights summary
+
+The Workflow Insights summary provides a numerical view of successful workflows, users, and tasks processed within a tenant.
+
+:::image type="content" source="media/lifecycle-workflow-history/workflow-insights-summary.png" alt-text="Screenshot of a workflow insights summary.":::
+
+This summary can be filtered to show information from either the past, 7, 14, or 30 days.
+
+### Top Workflow Insights summary
+
+The Top Workflows Insights summary lists the top workflows ran in the tenant for a timespan that can be 7, 14, or 30 days. The top workflows can also be filtered in order by total processed, successful runs, or failed runs.
+
+:::image type="content" source="media/lifecycle-workflow-history/workflow-insights-workflows.png" alt-text="Screenshot of top workflows processed insight summary.":::
+
+When you view the top workflow insights summary, the following information is shown:
+
+
+|Detail  |Information  |
 |---------|---------|
-|Summary      | Lists a numerical summary of all workflows, tasks, and users processed in the tenant.      |
-|Top workflows     |  Lists the top workflows ran in the tenant within a timespan of either 7, 14, or 30 days. Can be filtered by **Total Processed**, **Successful**, or **Failed**.      |
-|Top Tasks     |  Lists the top tasks ran in the tenant  within a timespan of either 7, 14, or 30 days. Can be filtered by **Total Processed**, **Successful**, or **Failed**.     |
-|Workflow by Category   | Provides a percentile of the top workflows ran by category in the tenant within a timespan of either 7, 14, or 30 days.      |
+|Workflow     | The name of the workflow.        |
+|Total Processed     |  The total runs of the workflow.       |
+|Successful     |  The successful runs for the workflow       |
+|Failed     |   The failed runs for the workflow      |
+|Category     | The workflow's category.        |
+|Total Users     |  The total number of users processed by the workflow.       |
+|Successful Users     |  The number of successful users processed by the workflow.       |
+|Failed Users     |  The number of failed users processed by the workflow.       |
 
 
-For a step by step guide on checking the insights for workflows in your tenant, see: [Check Workflow Insights (preview)](lifecycle-workflow-insights.md).
+### Top Tasks Insights summary
+
+The Top Tasks Insights summary lists the top tasks ran in the tenant for a timespan that can be 7, 14, or 30 days. The top tasks can also be filtered in order by total processed, successful runs, or failed runs.
+
+:::image type="content" source="media/lifecycle-workflow-history/workflow-insights-tasks.png" alt-text="Screenshot of workflow insights top tasks summary.":::
+
+When you view the top tasks insights summary, the following information is shown:
+
+
+|Detail  |Information  |
+|---------|---------|
+|Task     | The name of the task.        |
+|Total Processed     |  The total runs of the task.       |
+|Successful     |  The successful runs for the task       |
+|Failed     |   The failed runs for the task.      |
+|Total Users     |  The total number of users processed by the task.       |
+|Successful Users     |  The number of successful users processed by the task.       |
+|Failed Users     |  The number of failed users processed by the task.       |
+
+### Workflow Category Insights summary
+
+The Workflow Category Insights summary lists the top workflows run by category using a percentage for a timespan that can be 7, 14, or 30 days.
+
+:::image type="content" source="media/lifecycle-workflow-history/workflow-insights-category.png" alt-text="Screenshot of a workflow insights by category summary.":::
+
 
 ## Next steps
 
