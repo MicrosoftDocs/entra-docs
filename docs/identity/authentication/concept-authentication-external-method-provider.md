@@ -6,7 +6,7 @@ description: Learn how to configure an external authentication method (EAM) prov
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 04/27/2024
+ms.date: 04/28/2024
 
 ms.author: justinha
 author: gregkmsft
