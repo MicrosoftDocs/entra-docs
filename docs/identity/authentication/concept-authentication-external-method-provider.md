@@ -57,7 +57,7 @@ Let's look closer at how sign-in works with an EAM:
 1. The external authentication provider redirects the user back to Entra ID with a valid token, including all required claims.
 1. Entra ID validates that the token's signature came from the configured external authentication provider, and then checks the contents of the token.
 1. Entra ID validates the token against the requirements.
-1. If the validation succeeds, the user satisfied the MFA requirement. The user might also have to meet other policy requirements.
+1. The user satisfied the MFA requirement if the validation succeeds. The user might also have to meet other policy requirements.
 
 :::image type="content" source="./media/concept-authentication-external-method-provider/how-external-method-authentication-works.png" alt-text="Diagram of how external method authentication works.":::
 
@@ -73,7 +73,7 @@ A multitenant application reduces the chance of misconfiguration in each tenant.
 To configure a multitenant application, the provider admin must first:
 
 1. Create an Entra ID tenant if they don't have one yet.
-1. Using that tenant, register an application in Entra ID. 
+1. Register an application in their tenant. 
 1. Set the Supported Account types of the application to: Accounts in any organizational directory (Any Microsoft Entra ID tenant - Multitenant). 
 1. Add the delegated permission `openid` and profile of Microsoft Graph to the application.
 1. Don't publish any scopes in this application. 
@@ -126,9 +126,12 @@ The next sections explain provider requirements and include examples for Entra I
 
 ### Discovery of provider metadata 
 
-An external identity provider needs to provide an [OIDC Discovery endpoint](http://openid.net/specs/openid-connect-discovery-1_0.html#ProviderConfig). This endpoint is used to get more configuration data. The *full* URL, including .*well-known*/*oidc-configuration*, must be included in the Discovery URL configured when the EAM is created. The endpoint returns a Provider Metadata [JSON document](http://openid.net/specs/openid-connect-discovery-1_0.html#ProviderMetadata) hosted there. The endpoint must also return the valid content-length header.
+An external identity provider needs to provide an [OIDC Discovery endpoint](http://openid.net/specs/openid-connect-discovery-1_0.html#ProviderConfig). This endpoint is used to get more configuration data. The *full* URL, including .*well-known*/*oidc-configuration*, must be included in the Discovery URL configured when the EAM is created. 
+
+The endpoint returns a Provider Metadata [JSON document](http://openid.net/specs/openid-connect-discovery-1_0.html#ProviderMetadata) hosted there. The endpoint must also return the valid content-length header.
 
 The following table lists the data that should be present in the metadata of the provider. These values are required for this extensibility scenario. The JSON metadata document may contain more information. 
+
 For the OIDC document with the values for Provider Metadata, see [Provider Metadata](http://openid.net/specs/openid-connect-discovery-1_0.html#ProviderMetadata).
 
 
