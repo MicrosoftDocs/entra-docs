@@ -6,7 +6,7 @@ description: Learn how to configure settings for Microsoft Entra multifactor aut
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 04/26/2024
+ms.date: 04/27/2024
 
 ms.author: justinha
 author: justinha
@@ -34,7 +34,6 @@ The following Microsoft Entra multifactor authentication settings are available:
 
 ## Account lockout (MFA Server only)
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 >[!NOTE]
 >Account lockout only affects users who sign in by using MFA Server on-premises. 
@@ -57,13 +56,11 @@ To configure account lockout settings, complete these steps:
 
 ## Block and unblock users
 
-If a user's device is lost or stolen, you can block Microsoft Entra multifactor authentication attempts for the associated account. Any Microsoft Entra multifactor authentication attempts for blocked users are automatically denied. Users remain blocked for 90 days from the time that they're blocked. For a video that explains how to do this, see [how to block and unblock users in your tenant](https://www.youtube.com/watch?v=WdeE1On4S1o).
+If a user's device is lost or stolen, you can block Microsoft Entra multifactor authentication attempts for the associated account. Any Microsoft Entra multifactor authentication attempts for blocked users are automatically denied. Users remain blocked for 90 days from the time that they're blocked. 
 
 ### Block a user
 
 To block a user, complete the following steps. 
-
-[Watch a short video that describes this process.](https://www.youtube.com/watch?v=WdeE1On4S1o&feature=youtu.be)
 
 1. Browse to **Protection** > **Multifactor authentication** > **Block/unblock users**.
 1. Select **Add** to block a user.
