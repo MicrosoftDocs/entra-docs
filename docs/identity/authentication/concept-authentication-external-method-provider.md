@@ -45,7 +45,7 @@ EAMs are implemented on top of Open ID Connect (OIDC). This implementation requi
 
 Let's look closer at how sign-in works with an EAM:
 
-1. The user tries to sign in with a first factor, like a password, to an application protected by Entra ID.
+1. Let's suppose a user tries to sign in with a first factor, like a password, to an application protected by Entra ID.
 1. Entra ID determines that another factor needs to be satisfied. For example, a Conditional Access policy requires MFA.
 1. The user chooses the EAM as a second factor.
 1. Entra ID redirects the user's browser session to the EAM URL:
@@ -66,11 +66,11 @@ Let's look closer at how sign-in works with an EAM:
 An application representing the integration is required for EAMs to issue the id_token_hint. The application can be created in two ways:
 
 - Created in each tenant that uses the external provider. 
-- Created as one multi-tenant application. Privileged Role Administrators need to grant consent to enable the integration for their tenant.  
+- Created as one multitenant application. Privileged Role Administrators need to grant consent to enable the integration for their tenant.  
 
-A multi-tenant application reduces the chance of misconfiguration in each tenant. It also lets providers make changes to metadata like reply URLs in one place, rather than require each tenant to make the changes. 
+A multitenant application reduces the chance of misconfiguration in each tenant. It also lets providers make changes to metadata like reply URLs in one place, rather than require each tenant to make the changes. 
 
-To configure a multi-tenant application, the provider admin must first:
+To configure a multitenant application, the provider admin must first:
 
 1. Create an Entra ID tenant if they don't have one yet.
 1. Using that tenant, register an application in Entra ID. 
@@ -88,7 +88,7 @@ The application registration process creates an application with several propert
 
 Property | Description
 ---------|------------
-Object Id | The provider can use the object ID with Microsoft Graph to query the application information. <br>The provider can use the object ID to programmatically retrieve and edit the application information.
+Object ID | The provider can use the object ID with Microsoft Graph to query the application information. <br>The provider can use the object ID to programmatically retrieve and edit the application information.
 Application ID | The provider can use the application ID as the ClientId of their application.
 Home page URL | The provider home page URL isn't used for anything, but is required as part of application registration.
 Reply URLs | Valid redirect URLs for the provider. One should match the provider host URL that was set for the provider’s Entra ID tenant. One of the reply URLs registered must match the prefix of the authorization_endpoint that Entra ID retrieves through OIDC discovery for the host url.
@@ -104,7 +104,7 @@ An application for each tenant is also a valid model to support the integration.
 A provider can configure more claims by using [optional claims for id_token](/entra/identity-platform/optional-claims).
 
 >[!NOTE]
->Regardless of how the application is created, the provider needs to configure optional claims for each cloud environment. If a multi-tenant application is used for public Azure and Azure for US Government, each cloud environment requires a different application and application ID.
+>Regardless of how the application is created, the provider needs to configure optional claims for each cloud environment. If a multitenant application is used for public Azure and Azure for US Government, each cloud environment requires a different application and application ID.
 
 ##  Add an EAM to Entra ID
 
@@ -267,7 +267,7 @@ The redirect URIs should be registered with the provider off-band. The redirect 
 
 #### Example of an EAM that satisfies MFA
 
-Here is an example of an authentication where an EAM satisfies MFA. This example helps a provider know what claims Entra ID expects.  
+Here's an example of an authentication where an EAM satisfies MFA. This example helps a provider know what claims Entra ID expects.  
 
 The combination of the `acr` and `amr` values are used by Entra ID to validate:
 
@@ -297,11 +297,11 @@ This section describes the required content of the token passed as id_token_hint
 |-------|------|-------------|
 |iss    |      | Identifies the security token service (STS) that constructs and returns the token, and the Entra ID tenant in which the user authenticated. Your app should use the GUID portion of the claim to restrict the set of tenants that can sign in to the app, if applicable. Issuer should match the issuer URL from the OIDC discovery JSON metadata for the tenant where the user signed in.|
 | aud   |        | The audience should be set to the external identity provider’s client ID for Entra ID.|
-|exp    |        | The expiration time is set to expire a short time after the issuing time, sufficient to avoid time skew issues. Because this token is not meant for authentication, there's no reason for its validity to outlast the request by much. |
+|exp    |        | The expiration time is set to expire a short time after the issuing time, sufficient to avoid time skew issues. Because this token isn't meant for authentication, there's no reason for its validity to outlast the request by much. |
 |iat    |        | Set issuing time as usual.|
 |tid    |        | The tenant ID is for advertising the tenant to the provider. It represents the Entra ID tenant that the user is from. |
 |oid    |        | The immutable identifier for an object in the Microsoft identity platform. In this case, it's a user account. It can also be used to perform authorization checks safely, and as a key in database tables. This ID uniquely identifies the user across applications. Two different applications that sign in the same user receive the same value in the oid claim. Thus, oid can be used in queries to Microsoft online services, such as Microsoft Graph. |
-| preferred_username |        | Provides a human readable value that identifies the subject of the token. This value is not guaranteed to be unique within a tenant, and is meant only for display purposes. |
+| preferred_username |        | Provides a human readable value that identifies the subject of the token. This value isn't guaranteed to be unique within a tenant, and is meant only for display purposes. |
 | sub  |            | Subject identifier for the end user at the Issuer. The principal about which the token asserts information, such as the user of an application. This value is immutable and can't be reassigned or reused. It can be used to perform authorization checks safely, such as when the token is used to access a resource, and can be used as a key in database tables. Because the subject is always present in the tokens that Entra ID issues, we recommend using this value in a general-purpose authorization system. The subject is, however, a pairwise identifier; it's unique to a particular application ID. *Therefore, if a single user signs in to two different applications using two different client IDs, those applications receive two different values for the subject claim*. This result may or may not be desired, depending on your architecture and privacy requirements. See also the **oid** claim (which does remain the same across apps within a tenant).| 
 
 To prevent the token for being used for anything else other than a hint, it's issued as expired. The token is signed, and can be verified using the published Entra ID discovery metadata.
@@ -315,7 +315,7 @@ Microsoft recommends associating accounts on the provider side with the account 
 
 #### Example of an id_token_hint
 
-An example of an id_token_hint for a directory member is provided below.
+Here's an example of an id_token_hint for a directory member:
 
 ```json
 {
@@ -466,9 +466,9 @@ Entra ID abandons the state of the authentication attempt on its end about 10 mi
 
 ## Entra ID error response handling
 
-Microsoft Azure services use a correlationId to correlate calls across various internal and external systems. It serves as a common identifier of the whole operation or flow that potentially involves multiple HTTP calls. When an error occurs during any of the operations, the response contains a field named Correlation Id.
+Microsoft Azure services use a correlationId to correlate calls across various internal and external systems. It serves as a common identifier of the whole operation or flow that potentially involves multiple HTTP calls. When an error occurs during any of the operations, the response contains a field named Correlation ID.
 
-When you reach out to Microsoft support or a similar service, provide the value of this CorrelationId as it helps to access the telemetry and logs faster.
+When you reach out to Microsoft support or a similar service, provide the value of this Correlation ID as it helps to access the telemetry and logs faster.
 
 For example:
 
