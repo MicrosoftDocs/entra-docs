@@ -6,7 +6,7 @@ description: Learn how to configure settings for Microsoft Entra multifactor aut
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 04/27/2024
+ms.date: 04/28/2024
 
 ms.author: justinha
 author: justinha
@@ -15,18 +15,18 @@ ms.reviewer: jupetter
 ---
 # Configure Microsoft Entra multifactor authentication settings
 
-To customize the end-user experience for Microsoft Entra multifactor authentication, you can configure options for settings like account lockout thresholds or fraud alerts and notifications. 
+To customize the end-user experience for Microsoft Entra multifactor authentication (MFA), you can configure options for settings like account lockout thresholds or fraud alerts and notifications. 
  
-The following Microsoft Entra multifactor authentication settings are available:
+The following Microsoft Entra MFA settings are available:
 
 | Feature | Description |
 | ------- | ----------- |
-| [Account lockout (MFA Server only)](#account-lockout-mfa-server-only) | Temporarily lock accounts from using Microsoft Entra multifactor authentication if there are too many denied authentication attempts in a row. This feature applies only to users who use MFA Server to enter a PIN to authenticate. |
-| [Block/unblock users](#block-and-unblock-users) | Block specific users from being able to receive Microsoft Entra multifactor authentication requests. Any authentication attempts for blocked users are automatically denied. Users remain blocked for 90 days from the time that they're blocked or until they're manually unblocked. |
+| [Account lockout (MFA Server only)](#account-lockout-mfa-server-only) | Temporarily lock accounts from using Microsoft Entra MFA if there are too many denied authentication attempts in a row. This feature applies only to users who use MFA Server to enter a PIN to authenticate. |
+| [Block/unblock users](#block-and-unblock-users) | Block specific users from being able to receive Microsoft Entra MFA requests. Any authentication attempts for blocked users are automatically denied. The user isn't challenged with MFA for 90 days from the time they're blocked |
 | [Fraud alert](#fraud-alert) | Configure settings that allow users to report fraudulent verification requests. |
 | [Report suspicious activity](#report-suspicious-activity) | Configure settings that allow users to report fraudulent verification requests. |
 | [Notifications](#notifications) | Enable notifications of events from MFA Server. |
-| [OATH tokens](concept-authentication-oath-tokens.md) | Used in cloud-based Microsoft Entra multifactor authentication environments to manage OATH tokens for users. |
+| [OATH tokens](concept-authentication-oath-tokens.md) | Used in cloud-based Microsoft Entra MFA environments to manage OATH tokens for users. |
 | [Phone call settings](#phone-call-settings) | Configure settings related to phone calls and greetings for cloud and on-premises environments. |
 | Providers | This will show any existing authentication providers that you've associated with your account. Adding new providers is disabled as of September 1, 2018. |
 
@@ -56,7 +56,7 @@ To configure account lockout settings, complete these steps:
 
 ## Block and unblock users
 
-If a user's device is lost or stolen, you can block Microsoft Entra multifactor authentication attempts for the associated account. Any Microsoft Entra multifactor authentication attempts for blocked users are automatically denied. Users remain blocked for 90 days from the time that they're blocked. 
+If a user's device is lost or stolen, you can block Microsoft Entra MFA attempts for the associated account. Any Microsoft Entra MFA attempts for blocked users are automatically denied. The user isn't challenged with MFA for 90 days from the time they're blocked.
 
 ### Block a user
 
