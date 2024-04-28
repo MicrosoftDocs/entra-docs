@@ -311,7 +311,7 @@ To prevent the token for being used for anything else other than a hint, it's is
 If a provider needs optional claims from Entra ID then you can configure these optional claims for id_token. For more information, see [Optional claims](/azure/active-directory/develop/optional-claims).
 
 #### Recommended use of claims
-Microsoft recommends associating accounts on the provider side with the account in Azure AD via the oid and tid claims.  These two claims are guaranteed to be unique for the account in the tenant. 
+Microsoft recommends associating accounts on the provider side with the account in Azure AD by using the oid and tid claims. These two claims are guaranteed to be unique for the account in the tenant. 
 
 #### Example of an id_token_hint
 
@@ -416,11 +416,11 @@ inherence| Authentication must take place with inherence based factor.
 
 Claim | Notes
 ------|------
-face | Biometric via facial recognition
+face | Biometric with facial recognition
 fido | FIDO2 was used
-fpt | Biometric via fingerprint
+fpt | Biometric with fingerprint
 hwk | Proof of possession of hardware-secured key
-iris | Biometric via iris scan
+iris | Biometric with iris scan
 otp | One time password
 pop | Proof of possession
 retina | Biometric of retina scan
@@ -428,7 +428,7 @@ sc | Smart card
 sms | Confirmation by sms to registered number
 swk | Confirmation of presence of a software secured key
 tel | Confirmation by telephone 
-vbm | Biometric via voiceprint
+vbm | Biometric with voiceprint
 
 Because Entra ID requires MFA to be satisfied to issue a token with MFA claims, only methods with a different type (something you have (possession), something you know (knowledge), something you are (inherence)), can be used to satisfy the second factor.
 
@@ -436,11 +436,11 @@ Entra ID validates the type mapping based on the following table.
 
 | Claim Method | Type | Notes |
 |--------------|------|-------|
-|face |Inherence | Biometric via facial recognition |
+|face |Inherence | Biometric with facial recognition |
 |fido |Possession | FIDO2 was used. Some implementations may also require biometric but as possession is the primary security attribute, that is the method type that is mapped.|
-|fpt |Inherence | Biometric via fingerprint |
+|fpt |Inherence | Biometric with fingerprint |
 |hwk | Possession | Proof of possession of hardware-secured key |
-|iris | Inherence  | Biometric via iris scan |
+|iris | Inherence  | Biometric with iris scan |
 |otp | Possession | One-time password |
 |pop | Possession | Proof of possession |
 |retina | Inherence | Biometric of retina scan |
@@ -448,7 +448,7 @@ Entra ID validates the type mapping based on the following table.
 |sms |Possession | Confirmation by SMS to registered number|
 |swk | Possession | Proof of presence of a software secured key
 |tel |Possession | Confirmation by telephone |
-|vbm |Inherence | Biometric via voiceprint |
+|vbm |Inherence | Biometric with voiceprint |
 
 
 If no issues are found with the token, then Entra ID considers MFA to be satisfied, and issues a token to the end user. Otherwise, the end user’s request fails.
@@ -482,9 +482,9 @@ Timestamp: 2023-07-24 16:51:34Z
 
 In Entra ID, EAMs and Conditional Access custom controls can operate in parallel while customers prepare for and migrate to EAMs.
 
-Customers that are currently using an integration with an external provider via custom controls can continue to use the custom control and any configured Conditional Access policies to manage their authentication requirements for resources. Admins are recommended to create parallel set of Conditional Access policies during this migration period:
+Customers who currently use an integration with an external provider by using custom controls can continue to use them, and any Conditional Access policies they configured to manage access. Admins are recommended to create a parallel set of Conditional Access policies during the migration period:
 
-- The policies should use the **Require multifactor authentication** grant control instead of the Custom Control grant.  
+- The policies should use the **Require multifactor authentication** grant control instead of the custom control grant.  
 
    >[!NOTE]
    >Grant controls based on authentication strengths, including the built-in MFA strength, aren't satisfied by the EAM. Policies should only be configured with **Require multifactor authentication**. We're actively working to support EAMs with authentication strengths.
