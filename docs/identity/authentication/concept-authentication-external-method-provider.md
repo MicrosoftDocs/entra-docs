@@ -199,10 +199,10 @@ http://customcaserver.azurewebsites.net/.well-known/jwks
 
 To improve performance, Entra ID caches metadata returned by the provider, including the keys. Provider metadata caching prevents a discovery call each time Entra ID talks to an external identity provider.
 
-This cache is refreshed every 24 hrs (1 day). Here's how we suggest a provider roll over their keys: 
+This cache is refreshed every 24 hrs (1 day). Here's how we suggest a provider rollover their keys: 
 
 1. Publish the **Existing Cert** and **New Cert** in the "jwks_uri".
-1. Keep signing with **Existing Cert** until Entra ID cache is refreshed,expired, or updated (every 2 days).
+1. Keep signing with **Existing Cert** until Entra ID cache is refreshed, expired, or updated (every 2 days).
 1. Switch to signing with **New Cert**.
 
 We don't publish schedules for key rollovers. The dependent service must be prepared to handle both immediate and periodic rollovers. We suggest using a dedicated library built for this purpose, like [azure-activedirectory-identitymodel-extensions-for-dotnet](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet). For more information, see [Signing key rollover in Entra ID](/azure/active-directory/develop/active-directory-signing-key-rollover).
@@ -426,7 +426,7 @@ pop | Proof of possession
 retina | Biometric of retina scan
 sc | Smart card
 sms | Confirmation by text to registered number
-swk | Confirmation of presence of a software secured key
+swk | Confirmation of presence of a software-secured key
 tel | Confirmation by telephone 
 vbm | Biometric with voiceprint
 
@@ -437,7 +437,7 @@ Entra ID validates the type mapping based on the following table.
 | Claim Method | Type | Notes |
 |--------------|------|-------|
 |face |Inherence | Biometric with facial recognition |
-|fido |Possession | FIDO2 was used. Some implementations may also require biometric but as possession is the primary security attribute, that is the method type that is mapped.|
+|fido |Possession | FIDO2 was used. Some implementations may also require biometric, but as possession is the primary security attribute, that's the method type that's mapped.|
 |fpt |Inherence | Biometric with fingerprint |
 |hwk | Possession | Proof of possession of hardware-secured key |
 |iris | Inherence  | Biometric with iris scan |
@@ -446,7 +446,7 @@ Entra ID validates the type mapping based on the following table.
 |retina | Inherence | Biometric of retina scan |
 |sc | Possession | Smart card |
 |sms |Possession | Confirmation by SMS to registered number|
-|swk | Possession | Proof of presence of a software secured key
+|swk | Possession | Proof of presence of a software-secured key
 |tel |Possession | Confirmation by telephone |
 |vbm |Inherence | Biometric with voiceprint |
 
@@ -466,7 +466,7 @@ Entra ID abandons the state of the authentication attempt on its end approximate
 
 ## Entra ID error response handling
 
-Services in Microsoft Azure platform use a correlationId to correlate calls across various internal and external systems. It serves as a common identifier of the whole operation (or flow) potentially involving multiple HTTP calls. When an error occurs during any of the operations, the response contains a field named Correlation Id.
+Microsoft Azure services use a correlationId to correlate calls across various internal and external systems. It serves as a common identifier of the whole operation or flow that potentially involves multiple HTTP calls. When an error occurs during any of the operations, the response contains a field named Correlation Id.
 
 When you reach out to Microsoft support or a similar service, provide the value of this CorrelationId as it helps to access the telemetry and logs faster.
 
