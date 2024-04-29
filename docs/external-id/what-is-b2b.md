@@ -94,7 +94,7 @@ Bring your external partners on board in ways customized to your organization's 
 
 ## Integrate with Identity providers
 
-Microsoft Entra External ID supports external identity providers like Facebook, Microsoft accounts, Google, or enterprise identity providers. You can set up federation with identity providers. This way your external users can sign in with their existing social or enterprise accounts instead of creating a new account just for your application. Learn more about [identity providers for External Identities](identity-providers.md).
+Microsoft Entra External ID supports external identity providers like Facebook, Microsoft accounts, Google, or enterprise identity providers. You can set up federation with identity providers. This way your external users can sign in with their existing social or enterprise accounts instead of creating a new account just for your application. Learn more about [identity providers for External ID](identity-providers.md).
 
 :::image type="content" source="media/what-is-b2b/identity-providers.png" alt-text="Screenshot showing the Identity providers page.":::
 
@@ -107,5 +107,5 @@ You can [enable integration with SharePoint and OneDrive](/sharepoint/sharepoint
 ## Next steps
 
 - [Invitation email](invitation-email-elements.md)
-- [Add B2B collaboration guest users in the admin center](add-users-administrator.md)
+- [Add B2B collaboration guest users in the admin center](add-users-administrator.yml)
 - [B2B direct connect](b2b-direct-connect-overview.md)

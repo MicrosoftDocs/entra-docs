@@ -29,7 +29,7 @@ For licensing and pricing information related to B2B direct connect users, refer
 
 ## Managing cross-tenant access for B2B direct connect
 
-Microsoft Entra organizations can manage their trust relationships with other Microsoft Entra organizations by defining inbound and outbound [cross-tenant access settings](cross-tenant-access-settings-b2b-collaboration.md). Cross-tenant access settings give you granular control over how other organizations collaborate with you (inbound access) and how your users collaborate with other organizations (outbound access).
+Microsoft Entra organizations can manage their trust relationships with other Microsoft Entra organizations by defining inbound and outbound [cross-tenant access settings](cross-tenant-access-settings-b2b-collaboration.yml). Cross-tenant access settings give you granular control over how other organizations collaborate with you (inbound access) and how your users collaborate with other organizations (outbound access).
 
 - **Inbound access settings** control whether users from external organizations can access resources in your organization. You can apply these settings to everyone, or you can specify individual users, groups, and applications.
 
@@ -110,7 +110,7 @@ In the resource organization, the Teams shared channel owner can search within T
 
 ## B2B direct connect vs. B2B collaboration
 
-B2B collaboration and B2B direct connect are two different approaches to sharing with users outside of your organization. You can find a [feature-to-feature comparison](external-identities-overview.md#comparing-external-identities-feature-sets) in the External Identities overview, where we discuss some key differences in how users are managed, and how they access resources.
+B2B collaboration and B2B direct connect are two different approaches to sharing with users outside of your organization. You can find a [feature-to-feature comparison](external-identities-overview.md#comparing-external-identities-feature-sets) in the External ID overview, where we discuss some key differences in how users are managed, and how they access resources.
 
 ### User access and management
 
@@ -182,7 +182,7 @@ When B2B direct connect is enabled with an external organization, users in the e
 
 ### Inbound access
 
-We strongly recommend you add both your global privacy contact and your organization's privacy statement so your internal employees and external guests can review your policies. Follow the steps to [add your organization's privacy info](~/fundamentals/properties-area.md).  
+We strongly recommend you add both your global privacy contact and your organization's privacy statement so your internal employees and external guests can review your policies. Follow the steps to [add your organization's privacy info](~/fundamentals/properties-area.yml).  
 
 ### Restricting access to users and groups
 
@@ -190,5 +190,5 @@ You might want to consider using cross-tenant access settings to restrict B2B di
 
 ## Next steps
 
-- [Configure cross-tenant access settings](cross-tenant-access-settings-b2b-collaboration.md)
+- [Configure cross-tenant access settings](cross-tenant-access-settings-b2b-collaboration.yml)
 - See the Microsoft Teams documentation for details about [data loss prevention](/purview/), [retention policies](/microsoftteams/retention-policies), and [eDiscovery](/purview/ediscovery-teams-investigation).

@@ -4,7 +4,6 @@ description: In this tutorial, you learn how to prepare an Android device to run
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.date: 10/24/2023
 ms.reviewer: negoe
 ms.service: identity-platform

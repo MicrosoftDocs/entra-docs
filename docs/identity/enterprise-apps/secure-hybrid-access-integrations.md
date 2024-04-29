@@ -49,7 +49,7 @@ See the following sections for technical considerations and recommendations.
 
 ## Publishing applications to Azure Marketplace
 
-Azure Marketplace is a trusted source of applications for IT admins. Applications are compatible with Microsoft Entra ID and support SSO, automate user provisioning, and integrate into customer tenants with automated app registration.
+Azure Marketplace is a trusted source of applications for IT admins. Applications are compatible with Microsoft Entra ID and support SSO, automate user provisioning, and integrate into external tenants with automated app registration.
 
 You can pre-integrate your application with Microsoft Entra ID to support SSO and automated provisioning. See, [Submit a request to publish your application in Microsoft Entra application gallery](~/identity/enterprise-apps/v2-howto-app-gallery-listing.md). 
 
@@ -149,7 +149,7 @@ Use the following information to implement application registrations, connect le
 
 #### Add apps in Azure Marketplace
 
-Some applications your customers use are in the [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps). You can create a solution that adds applications to the customer tenant. Use the following example with Microsoft Graph API to search Azure Marketplace for a template. 
+Some applications your customers use are in the [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps). You can create a solution that adds applications to the external tenant. Use the following example with Microsoft Graph API to search Azure Marketplace for a template. 
 
 > [!NOTE]
 > In Application Templates API, the display name is case-sensitive.
@@ -451,8 +451,6 @@ https://graph.microsoft.com/v1.0/identity/conditionalAccess/policies/
 }
 ```
 
-To create new Microsoft Entra Conditional Access policies, see [Conditional Access: Programmatic access](~/identity/conditional-access/howto-conditional-access-apis.md).
-
 ```https
 #Policy Template for Requiring Compliant Device
 
@@ -508,7 +506,7 @@ To create new Microsoft Entra Conditional Access policies, see [Conditional Acce
 
 ### Automate admin consent
 
-If the customer is adding applications from your solution to Microsoft Entra ID, you can automate administrator consent with Microsoft Graph. You need the application service principal object ID you created in API calls, and the Microsoft Graph service principal object ID from the customer tenant.
+If the customer is adding applications from your solution to Microsoft Entra ID, you can automate administrator consent with Microsoft Graph. You need the application service principal object ID you created in API calls, and the Microsoft Graph service principal object ID from the external tenant.
 
 Get the Microsoft Graph service principal object ID by making the following API call:
 

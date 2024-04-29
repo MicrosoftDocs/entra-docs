@@ -73,7 +73,7 @@ Organizations might store data for longer periods by changing the diagnostic set
 
 ## Required roles
 
-Identity Protection requires users be a Security Reader, Security Operator, Security Administrator, Global Reader, or Global Administrator in order to access.
+Identity Protection requires users be assigned one or more of the following roles in order to access.
 
 | Role | Can do | Can't do |
 | --- | --- | --- |
@@ -81,7 +81,7 @@ Identity Protection requires users be a Security Reader, Security Operator, Secu
 | [Security Operator](~/identity/role-based-access-control/permissions-reference.md#security-operator) | View all Identity Protection reports and Overview <br><br> Dismiss user risk, confirm safe sign-in, confirm compromise | Configure or change policies <br><br> Reset password for a user <br><br> Configure alerts |
 | [Security Reader](~/identity/role-based-access-control/permissions-reference.md#security-reader) | View all Identity Protection reports and Overview | Configure or change policies <br><br> Reset password for a user <br><br> Configure alerts <br><br> Give feedback on detections |
 | [Global Reader](~/identity/role-based-access-control/permissions-reference.md#global-reader) | Read-only access to Identity Protection |   |
-| [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) | Full access to Identity Protection |   |
+| [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator) | Reset user passwords |   |
 
 Currently, the Security Operator role can't access the Risky sign-ins report.
 

@@ -54,7 +54,7 @@ Explicit group authorization in AD FS:
 
 To map this rule to Microsoft Entra ID:
 
-1. In the [Microsoft Entra admin center](https://entra.microsoft.com/#home), [create a user group](~/fundamentals/how-to-manage-groups.md) that corresponds to the group of users from AD FS.
+1. In the [Microsoft Entra admin center](https://entra.microsoft.com/#home), [create a user group](~/fundamentals/how-to-manage-groups.yml) that corresponds to the group of users from AD FS.
 1. Assign app permissions to the group:
 
    :::image type="content" source="media/migrate-adfs-represent-security-policies/allow-a-group-explicitly-2.png" alt-text="Screenshot shows how to add an assignment to the app.":::
@@ -187,7 +187,7 @@ Your existing external users can be set up in these two ways in AD FS:
 As you progress with your migration, you can take advantage of the benefits that [Microsoft Entra B2B](~/external-id/what-is-b2b.md) offers by migrating these users to use their own corporate identity when such an identity is available. This streamlines the process of signing in for those users, as they're often signed in with their own corporate sign-in. Your organization's administration is easier as well, by not having to manage accounts for external users.
 
 - **Federated external Identities**—If you're currently federating with an external organization, you have a few approaches to take:
-  - [Add Microsoft Entra B2B collaboration users in the Microsoft Entra admin center](~/external-id/add-users-administrator.md). You can proactively send B2B collaboration invitations from the Microsoft Entra administrative portal to the partner organization for individual members to continue using the apps and assets they're used to.
+  - [Add Microsoft Entra B2B collaboration users in the Microsoft Entra admin center](~/external-id/add-users-administrator.yml). You can proactively send B2B collaboration invitations from the Microsoft Entra administrative portal to the partner organization for individual members to continue using the apps and assets they're used to.
   - [Create a self-service B2B sign-up workflow](~/external-id/self-service-portal.md) that generates a request for individual users at your partner organization using the B2B invitation API.
 
 No matter how your existing external users are configured, they likely have permissions that are associated with their account, either in group membership or specific permissions. Evaluate whether these permissions need to be migrated or cleaned up.

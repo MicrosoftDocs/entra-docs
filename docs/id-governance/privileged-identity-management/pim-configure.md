@@ -116,7 +116,7 @@ The following screenshot shows how members activate their role to a limited time
 
 If the role requires [approval](pim-resource-roles-approval-workflow.md) to activate, a notification appears in the upper right corner of the user's browser informing them the request is pending approval. If an approval isn't required, the member can start using the role.
 
-For more information, check out the following articles: [Activate Microsoft Entra roles](pim-how-to-activate-role.md), [Activate my Azure resource roles](pim-resource-roles-activate-your-roles.md), and [Activate my PIM for Groups roles](groups-activate-roles.md)
+For more information, check out the following articles: [Activate Microsoft Entra roles](pim-how-to-activate-role.yml), [Activate my Azure resource roles](pim-resource-roles-activate-your-roles.yml), and [Activate my PIM for Groups roles](groups-activate-roles.md)
 
 ### Approve or deny
 

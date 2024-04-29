@@ -38,7 +38,7 @@ ms.custom:
     ![Add button](./media/openidoauth-tutorial/addbutton.png)
 
     > [!NOTE]
-    > Here the tenant admin should select the sign-up button and provide the consent to the application. The application is then added to the customer tenant, where you can do the configurations. There's no need to add the application explicitly.
+    > Here the tenant admin should select the sign-up button and provide the consent to the application. The application is then added to the external tenant, where you can do the configurations. There's no need to add the application explicitly.
 
 5. You're redirected to the Application Login page or Microsoft Entra ID page for sign-in credentials.
 

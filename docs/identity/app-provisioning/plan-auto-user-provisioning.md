@@ -20,6 +20,8 @@ Microsoft Entra automatic user provisioning simplifies this process by securely 
 
 See [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md) to better understand the functionality.
 
+In addition to provisioning into SaaS applications, Microsoft Entra automatic user provisioning also supports provisioning into many on-premises and private cloud applications.  For more information, see [Microsoft Entra on-premises application identity provisioning architecture](on-premises-application-provisioning-architecture.md).
+
 ## Learn
 
 User provisioning creates a foundation for ongoing identity governance and enhances the quality of business processes that rely on authoritative identity data.

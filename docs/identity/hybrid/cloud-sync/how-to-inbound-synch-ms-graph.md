@@ -7,7 +7,7 @@ manager: amycolannino
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.service: entra-id
 ms.topic: conceptual
-ms.date: 11/06/2023
+ms.date: 04/26/2024
 ms.subservice: hybrid-cloud-sync
 ms.author: billmath
 
@@ -41,10 +41,14 @@ Use these [Microsoft Graph PowerShell](/powershell/microsoftgraph/) commands to 
 
 ```powershell
 Connect-MgGraph -Scopes "DeviceManagementConfiguration.ReadWrite.All" ('-Environment <AzureEnvironment>')
-Update-MgOrganization -OrganizationId "<ID>" -OnPremisesSyncEnabled
+$organizationId = (Get-MgOrganization).Id
+$params = @{
+	onPremisesSyncEnabled = $true
+}
+Update-MgBetaOrganization -OrganizationId $organizationId -BodyParameter $params
 ```
 
-The first of those two commands require Microsoft Entra credentials. These cmdlets implicitly identify the tenant and enable it for synchronization. You can use the [Get-MgOrganization](/powershell/module/microsoft.graph.identity.directorymanagement/get-mgorganization) to get your ID.
+This cmdlet enables synchronization for a tenant. It uses the [Get-MgOrganization](/powershell/module/microsoft.graph.identity.directorymanagement/get-mgorganization) to get the organization's ID.
 
 ## Create service principals
 

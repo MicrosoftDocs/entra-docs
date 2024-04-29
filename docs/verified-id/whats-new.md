@@ -18,6 +18,11 @@ ms.author: barclayn
 
 This article lists the latest features, improvements, and changes in the Microsoft Entra Verified ID service.
 
+## March 2024
+
+- Starting February 2024, Verified ID [supports NIST compliant P-256 curve](verifiable-credentials-standards.md#supported-algorithms).
+- [Wallet Library 1.0.1](using-wallet-library.md#prerequisites) supports P-256.
+
 ## February 2024
 
 - New concept article on [Verified helpdesk](helpdesk-with-verified-id.md) on how to identity of callers seeking help using Entra Verified ID.

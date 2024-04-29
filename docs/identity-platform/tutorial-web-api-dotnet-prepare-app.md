@@ -61,7 +61,7 @@ Use the following tabs to create an ASP.NET Core project within an IDE.
 1. Under **Web and Console** in the left navigation bar, select **App**.
 1. Under **ASP.NET Core**, select **API** and ensure **C#** is selected in the drop down menu, then select **Continue**.
 1. Accept the default for the **Target Framework** and **Advanced**, then select **Continue**.
-1. Enter a name for the **Project name**, this will be reflected in **Solution Name**. Provide a similar name to the one registered on the Azure portal, such as *NewAPI1*.
+1. Enter a name for the **Project name**, this will be reflected in **Solution Name**. Provide a similar name to the one registered on the Microsoft Entra admin center, such as *NewAPI1*.
 1. Accept the default location for the project or choose a different location, and then select **Create**.
 
 >[!NOTE]

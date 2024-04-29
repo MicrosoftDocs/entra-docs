@@ -6,7 +6,6 @@ ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 02/28/2023
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 
 ms.author: justinha
 author: justinha
@@ -15,7 +14,7 @@ manager: amycolannino
 ---
 # What authentication and verification methods are available in Microsoft Entra ID?
 
-Microsoft recommends passwordless authentication methods such as Windows Hello, FIDO2 security keys, and the Microsoft Authenticator app because they provide the most secure sign-in experience. Although a user can sign-in using other common methods such as a username and password, passwords should be replaced with more secure authentication methods.
+Microsoft recommends passwordless authentication methods such as Windows Hello, Passkeys (FIDO2), and the Microsoft Authenticator app because they provide the most secure sign-in experience. Although a user can sign-in using other common methods such as a username and password, passwords should be replaced with more secure authentication methods.
 
 :::image type="content" border="true" source="media/concept-authentication-methods/authentication-methods.png" alt-text="Illustration of the strengths and preferred authentication methods in Microsoft Entra ID." :::
 
@@ -36,7 +35,7 @@ The following table outlines the security considerations for the available authe
 | Windows Hello for Business     | High     | High      | High         |
 | Microsoft Authenticator        | High     | High      | High         |
 | Authenticator Lite             | High     | High      | High         |
-| FIDO2 security key             | High     | High      | High         |
+| Passkey (FIDO2)                | High     | High      | High         |
 | Certificate-based authentication | High | High | High       |
 | OATH hardware tokens (preview) | Medium   | Medium    | High         |
 | OATH software tokens           | Medium   | Medium    | High         |
@@ -65,7 +64,7 @@ The following table outlines when an authentication method can be used during a 
 | Microsoft Authenticator (Push) | No                     | MFA and SSPR              |
 | Microsoft Authenticator (Passwordless) | Yes            | No\*                        |
 | Authenticator Lite             | No                     | MFA                       |
-| FIDO2 security key             | Yes                    | MFA                       |
+| Passkey (FIDO2)                | Yes                    | MFA                       |
 | Certificate-based authentication | Yes                  | MFA                        |
 | OATH hardware tokens (preview) | No                     | MFA and SSPR              |
 | OATH software tokens           | No                     | MFA and SSPR              |
@@ -74,7 +73,7 @@ The following table outlines when an authentication method can be used during a 
 | Voice call                     | No                     | MFA and SSPR              |
 | Password                       | Yes                    | No                        |
 
-> \* Windows Hello for Business, by itself, does not serve as a step-up MFA credential. For example, an MFA Challenge from Sign-in Frequency or SAML Request containing forceAuthn=true. Windows Hello for Business can serve as a step-up MFA credential by being used in FIDO2 authentication. This requires users to be enabled for FIDO2 authentication to work successfully.
+> \* Windows Hello for Business, by itself, does not serve as a step-up MFA credential. For example, an MFA Challenge from Sign-in Frequency or SAML Request containing forceAuthn=true. Windows Hello for Business can serve as a step-up MFA credential by being used in FIDO2 authentication. This requires users to be registered for FIDO2 authentication to work successfully.
 
 > \* Passwordless sign-in can be used for secondary authentication only if certificate-based authentication (CBA) is used for primary authentication. For more information, see [Microsoft Entra certificate-based authentication technical deep dive](/entra/identity/authentication/concept-certificate-based-authentication-technical-deep-dive#mfa-with-single-factor-certificate-based-authentication-preview).
 
@@ -84,7 +83,7 @@ To learn more about how each authentication method works, see the following sepa
 
 * [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/hello-overview)
 * [Microsoft Authenticator app](concept-authentication-authenticator-app.md)
-* [FIDO2 security key](concept-authentication-passwordless.md#fido2-security-keys)
+* [Passkey (FIDO2)](concept-authentication-passwordless.md#fido2-security-key-providers)
 * [Certificate-based authentication](concept-certificate-based-authentication.md)
 * [OATH hardware tokens (preview)](concept-authentication-oath-tokens.md#oath-hardware-tokens-preview)
 * [OATH software tokens](concept-authentication-oath-tokens.md#oath-software-tokens)
