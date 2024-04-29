@@ -6,21 +6,21 @@ description: Learn how to manage an external authentication method (EAM) for Mic
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 04/28/2024
+ms.date: 04/29/2024
 
 ms.author: justinha
 author: gregkmsft
 manager: amycolannino
 ms.reviewer: gkinasewitz, gustavosa
 
-# Customer intent: As an authentication administrator, I want learn how to manage an external authentication method (EAM) for Entra ID.
+# Customer intent: As an authentication administrator, I want learn how to manage an external authentication method (EAM) for Microsoft Entra ID.
 
 ---
 # Manage an external authentication method in Microsoft Entra ID (Preview)
 
 An external authentication method (EAM) lets users choose an external provider to meet multifactor authentication (MFA) requirements when they sign to Microsoft Entra ID. An EAM can satisfy MFA requirements from Conditional Access policies, Identity Protection sign-in risk policies, Privileged Identity Management (PIM) activation, and when the application itself requires MFA. 
 
-EAMs differ from federation in that the user identity is originated and managed in Entra ID. With federation, the identity is managed in the external identity provider.
+EAMs differ from federation in that the user identity is originated and managed in Microsoft Entra ID. With federation, the identity is managed in the external identity provider.
 
 :::image type="content" source="./media/concept-authentication-external-method-provider/how-external-method-authentication-works.png" alt-text="Diagram of how external method authentication works.":::
 
@@ -28,13 +28,13 @@ EAMs differ from federation in that the user identity is originated and managed 
 To create an EAM, you need the following information from your external authentication provider:
 
 - An **Application ID** is generally a multitenant application from your provider, which is used as part of the integration. You need to provide admin consent for this application in your tenant.
-- A **Client ID** is an identifier from your provider used as part of the authentication integration to identify Entra ID requesting authentication.  
+- A **Client ID** is an identifier from your provider used as part of the authentication integration to identify Microsoft Entra ID requesting authentication.  
 - A **Discovery URL** is the OpenID Connect (OIDC) discovery endpoint for the external authentication provider. 
  
 
 ## Manage an EAM in the Microsoft Entra admin center
 
-EAMs are managed with the Entra ID Authentication methods policy, just like built-in methods. 
+EAMs are managed with the Microsoft Entra ID Authentication methods policy, just like built-in methods. 
 
 ### Create an EAM in the admin center
 
