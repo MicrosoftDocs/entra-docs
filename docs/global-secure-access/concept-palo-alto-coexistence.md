@@ -36,7 +36,7 @@ In Microsoft Entra, you enable the Microsoft 365 traffic forwarding profile and 
 
 Enable the Microsoft 365 traffic forwarding profile for your Microsoft Entra tenant. For more information about enabling and disabling profiles, see [Global Secure Access (preview) traffic forwarding profiles](concept-traffic-forwarding.md).
 
-Install and configure the Global Secure Access Client on end-user devices. For more information about clients, see [Global Secure Access clients](concept-clients.md). To learn how to install the Windows client, see [Global Secure Access client for Windows](how-to-install-windows-client.md).
+Install and configure the Global Secure Access client on end-user devices. For more information about clients, see [Global Secure Access clients](concept-clients.md). To learn how to install the Windows client, see [Global Secure Access client for Windows](how-to-install-windows-client.md).
 
 ## Palo Alto Networks configuration
 
@@ -47,7 +47,11 @@ Bypass Microsoft Entra service Fully Qualified Domain Name (FQDN) and Internet P
 1. Navigate to **Workflows** > **Prisma Access Setup** > **GlobalProtect** > **GlobalProtect App**. Select **Push Config** and select **Push** on the top right side of your screen. 
 1. Verify that the configuration pushed to the Global Protect client. Navigate to **Manage** > **Operations** > **Push Status**. 
 
-For the most basic setup, add a local user to the Global Protect from Palo Alto Networks’ Strata Cloud Manager. To learn more about the Palo Alto Networks client, see [https://docs.paloaltonetworks.com/globalprotect/6-2/globalprotect-app-user-guide/globalprotect-app-for-windows](https://docs.paloaltonetworks.com/globalprotect/6-2/globalprotect-app-user-guide/globalprotect-app-for-windows).
+Install the Palo Alto Networks Global Protect client. For more information on installing the Palo Alto Networks Global Protect client, see [https://docs.paloaltonetworks.com/globalprotect/6-2/globalprotect-app-user-guide/globalprotect-app-for-windows](https://docs.paloaltonetworks.com/globalprotect/6-2/globalprotect-app-user-guide/globalprotect-app-for-windows).
+
+To set up the Global Protect client there are a lot of options like tying in Entra ID to create your accounts. To learn more about the options, see [Tutorial: Microsoft Entra single sign-on (SSO) integration with Palo Alto Networks - GlobalProtect](..//identity/saas-apps/palo-alto-networks-globalprotect-tutorial.md).
+
+For the most basic setup, add a local user to the Global Protect from Palo Alto Networks’ Strata Cloud Manager. 
 
 1. Browse to **Manage** > **Configuration** > **NGFW and Prisma Access**.  
 1. Select **Configuration Scope** > **Global Protect** and then select **Identity Services** > **Local Users & Groups** > **Local Users**. Add a user and password for testing. 
