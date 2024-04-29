@@ -20,7 +20,7 @@ Microsoft offers the following [five passwordless authentication options](concep
 
 * [Microsoft Authenticator](./concept-authentication-passwordless.md#microsoft-authenticator) - turns any iOS or Android phone into a strong, passwordless credential by allowing users to sign into any platform or browser.
 
-* [FIDO2-compliant security keys](./concept-authentication-passwordless.md#fido2-security-key-providers) - useful for users who sign in to shared machines like kiosks, in situations where use of phones is restricted, and for highly privileged identities. 
+* [FIDO2-compliant security keys](./concept-authentication-passwordless.md) - useful for users who sign in to shared machines like kiosks, in situations where use of phones is restricted, and for highly privileged identities. 
 
 * [Windows Hello for Business](./concept-authentication-passwordless.md#windows-hello-for-business) - best for users on their dedicated Windows computers. 
 

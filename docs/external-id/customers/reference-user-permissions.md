@@ -35,4 +35,4 @@ The following table describes the default permissions assigned to a user in an e
 | **Area** | **Customer user permissions** |
 | ------------ | --------- |
 | Users and contacts | - Read and update their own profile through the app profile management experience  <br>- Change their own password <br>- Sign in with a local or social account |
-| Applications | - Access customer-facing applications <br>- Revoke consent to applications |
+| Applications | - Access applications <br>- Revoke consent to applications |
