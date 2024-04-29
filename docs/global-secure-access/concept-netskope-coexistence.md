@@ -32,7 +32,7 @@ In Microsoft Entra, you enable the Microsoft 365 traffic forwarding profile and 
 > [!NOTE]
 > The clients must be installed on a Windows 10 or Windows 11 Entra joined device.
 
-## Microsoft Entra Internet Access and Microsoft Entra Private Access configuration
+## Microsoft Entra Internet Access for Microsoft 365 configuration
 
 Enable the Microsoft 365 traffic forwarding profile for your Microsoft Entra tenant. For more information about enabling and disabling profiles, see [Global Secure Access (preview) traffic forwarding profiles](concept-traffic-forwarding.md).
 
