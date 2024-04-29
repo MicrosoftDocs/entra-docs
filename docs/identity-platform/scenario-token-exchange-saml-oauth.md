@@ -9,7 +9,7 @@ ms.date: 12/08/2020
 ms.reviewer: jmprieur
 ms.service: identity-platform
 
-ms.topic: conceptual
+ms.topic: concept-article
 #Customer intent:As a developer working with a SAML app that needs to call the Graph API, I want to understand how to add OIDC/OAuth functionality to my app, so that I can authenticate and use the Graph API seamlessly.
 ---
 

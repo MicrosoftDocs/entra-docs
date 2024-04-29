@@ -1,6 +1,6 @@
 ---
 title: Run a workflow on-demand
-description: This article guides a user to running a workflow on demand using Lifecycle Workflows
+description: This article guides a user to running a workflow on demand using Lifecycle Workflows.
 author: OWinfreyATL
 ms.author: owinfrey
 manager: amycolannino
@@ -24,7 +24,7 @@ Use the following steps to run a workflow on-demand:
 >[!NOTE]
 >To be run on demand, the  workflow must be enabled.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](~/identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
 
 1. Browse to **Identity governance** > **Lifecycle workflows** > **workflows**.
 

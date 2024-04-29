@@ -21,7 +21,7 @@ ms.custom: devx-track-azurepowershell, devx-track-azurecli
 [!INCLUDE [preview-notice](~/includes/entra-msi-preview-notice.md)]  
 This article provides PowerShell and CLI script examples for sign-in using managed identities for Azure resources service principal, and guidance on important topics such as error handling.
 
-[!INCLUDE [az-powershell-update](~/../azure-docs-pr/includes/updated-for-az.md)]
+[!INCLUDE [az-powershell-update](~/includes/azure-docs-pr/updated-for-az.md)]
 
 ## Prerequisites
 

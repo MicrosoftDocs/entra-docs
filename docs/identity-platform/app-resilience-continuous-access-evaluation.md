@@ -8,7 +8,7 @@ ms.date: 01/03/2023
 ms.reviewer: jricketts
 ms.service: identity-platform
 
-ms.topic: conceptual
+ms.topic: concept-article
 #Customer intent: As an application developer, I want to learn how to use Continuous Access Evaluation for building resiliency through long-lived, refreshable tokens that can be revoked based on critical events and policy evaluation.
 ---
 # How to use Continuous Access Evaluation enabled APIs in your applications

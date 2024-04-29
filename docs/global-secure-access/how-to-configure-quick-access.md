@@ -1,11 +1,11 @@
 ---
 title: How to configure Quick Access for Global Secure Access
 description: Learn how to specify the internal resources to secure with Microsoft Entra Private Access using a Quick Access app.
-author: shlipsey3
-ms.author: sarahlipsey
+author: kenwith
+ms.author: kenwith
 manager: amycolannino
 ms.topic: how-to
-ms.date: 02/13/2024
+ms.date: 03/05/2024
 ms.service: global-secure-access
 ms.subservice: entra-private-access
 ms.reviewer: katabish
@@ -19,29 +19,30 @@ With Global Secure Access, you can define specific fully qualified domain names 
 
 To configure Quick Access, you must have:
 
-- The **Global Secure Access Administrator** and **Application Administrator** roles in Microsoft Entra ID
+- The **Global Secure Access Administrator** and **Application Administrator** roles in Microsoft Entra ID.
 - The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 
-To manage App Proxy connector groups, which is required for Quick Access, you must have:
+To manage Microsoft Entra private network connector groups, which is required for Quick Access, you must have:
 
 - An **Application Administrator** role in Microsoft Entra ID
 - Microsoft Entra ID P1 or P2 licenses
 
 ### Known limitations
+Avoid overlapping app segments between Quick Access and per-app access.
 
-- Avoid overlapping app segments between Quick Access and per-app access.
-- Tunneling traffic to Private Access destinations by IP address is supported only for IP ranges outside of the end-user device local subnet.
-- At this time, Private access traffic can only be acquired with the Global Secure Access Client. Remote networks can't be assigned to the Private access traffic forwarding profile.
+Tunneling traffic to Private Access destinations by IP address is supported only for IP ranges outside of the end-user device local subnet.
+
+At this time, Private access traffic can only be acquired with the Global Secure Access client. Remote networks can't be assigned to the Private access traffic forwarding profile.
 
 ## High level steps
 
 Configuring your Quick Access settings is a major component to utilizing Microsoft Entra Private Access. When you configure Quick Access for the first time, Private Access creates a new enterprise application. The properties of this new app are automatically configured to work with Private Access.
 
-To configure Quick Access, you need to have a connector group with at least one active [Microsoft Entra application proxy](/azure/active-directory/app-proxy/application-proxy) connector. The connector group handles the traffic to this new application. Once you have Quick Access and an App proxy connector group configured, you need to grant access to the app.
+To configure Quick Access, you need to have a connector group with at least one active [Microsoft Entra application proxy](/azure/active-directory/app-proxy/application-proxy) connector. The connector group handles the traffic to this new application. Once you have Quick Access and an private network connector group configured, you need to grant access to the app.
 
 To summarize, the overall process is as follows:
 
-1. [Create a connector group with at least one active App proxy connector](#create-an-app-proxy-connector-group).
+1. [Create a connector group with at least one active private network connector](#create-a-private-network-connector-group).
     - If you already have a connector group, make sure you're on the latest version.
 
 1. [Configure Quick Access](#configure-quick-access).
@@ -52,9 +53,9 @@ To summarize, the overall process is as follows:
 
 1. [Enable the Private access traffic forwarding profile](#enable-microsoft-entra-private-access).
 
-## Create an App Proxy connector group
+## Create a private network connector group
 
-To configure Quick Access, you must have a connector group with at least one active App Proxy connector.
+To configure Quick Access, you must have a connector group with at least one active private network connector.
 
 If you don't already have a connector group set up, see [Configure connectors for Quick Access](how-to-configure-connectors.md).
 
@@ -100,11 +101,11 @@ You can add fully qualified domain names (FQDN), IP addresses, and IP address ra
         - Provide the ports that you want to include.
     - **Fully qualified domain name** (including wildcard FQDNs):
         - Domain name that specifies the exact location of a computer or a host in the Domain Name System (DNS).
-        - Provide the ports that you want to include.
-        - NetBIOS is not supported. For example, use `contoso.local/app1` instead of `contoso/app1.`
+        - Provide the ports to include.
+        - NetBIOS isn't supported. For example, use `contoso.local/app1` instead of `contoso/app1`.
     - **IP address range (CIDR)**:
-        - Classless Inter-Domain Routing is a way of representing a range of IP addresses in which an IP address is followed by a suffix indicating the number of network bits in the subnet mask.
-        - For example 192.0.2.0/24 indicates that the first 24 bits of the IP address represent the network address, while the remaining 8 bits represents the host address.
+        - Classless Inter-Domain Routing (CIDR) represents a range of IP addresses. An IP address is followed by a suffix indicating the number of network bits in the subnet mask.
+        - For example, 192.0.2.0/24 indicates that the first 24 bits of the IP address represent the network address, while the remaining 8 bits represents the host address.
         - Provide the starting address, network mask, and ports.
     - **IP address range (IP to IP)**:
         - Range of IP addresses from start IP (such as 192.0.2.1) to end IP (such as 192.0.2.10).

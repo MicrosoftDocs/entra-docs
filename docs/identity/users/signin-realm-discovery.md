@@ -6,7 +6,7 @@ author: barclayn
 manager: amycolannino
 ms.service: entra-id
 ms.subservice: users
-ms.topic: overview
+ms.topic: conceptual
 ms.date: 11/21/2023
 ms.author: barclayn
 ms.reviewer: kexia
@@ -50,4 +50,4 @@ If you have concerns with the new behavior, leave your remarks in the **Feedback
 
 ## Next steps
 
-[Customize your sign-in branding](~/fundamentals/add-custom-domain.md)
+[Customize your sign-in branding](~/fundamentals/add-custom-domain.yml)

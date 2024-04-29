@@ -9,6 +9,8 @@ ms.subservice: saas-apps
 ms.topic: tutorial
 ms.date: 01/25/2024
 ms.author: chmutali
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Workday to Active Directory so that I can streamline the user management process and ensure that users have the appropriate access to Workday to Active Directory.
 ---
 # Tutorial: Configure Workday for automatic user provisioning
 
@@ -560,7 +562,7 @@ Replace the variables [proxy-server] and [proxy-port] with your proxy server nam
 
 #### How do I ensure that the Provisioning Agent is able to communicate with the Microsoft Entra tenant and no firewalls are blocking ports required by the agent?
 
-You can also check whether all of the [required ports](~/identity/app-proxy/application-proxy-add-on-premises-application.md#open-ports) are open.
+You can also check whether all of the [required ports](../../global-secure-access/how-to-configure-connectors.md) are open.
 
 #### Can one Provisioning Agent be configured to provision multiple AD domains?
 
@@ -575,7 +577,7 @@ Yes, one Provisioning Agent can be configured to handle multiple AD domains as l
 
   ```powershell
   cd "C:\Program Files\Microsoft Azure AD Connect Provisioning Agent\RegistrationPowershell\Modules\PSModulesFolder"
-  Import-Module "C:\Program Files\Microsoft Azure AD Connect Provisioning Agent\RegistrationPowershell\Modules\PSModulesFolder\AppProxyPSModule.psd1"
+  Import-Module "C:\Program Files\Microsoft Azure AD Connect Provisioning Agent\RegistrationPowershell\Modules\PSModulesFolder\MicrosoftEntraPrivateNetworkConnectorPSModule.psd1"
   Get-PublishedResources -TenantId "[tenant ID]"
   ```
 
@@ -1065,7 +1067,7 @@ The Workday provisioning solution for Active Directory requires a provisioning a
 
 The Microsoft Entra provisioning service falls into the **data processor** category of GDPR classification. As a data processor pipeline, the service provides data processing services to key partners and end consumers. Microsoft Entra provisioning service does not generate user data and has no independent control over what personal data is collected and how it is used. Data retrieval, aggregation, analysis, and reporting in Microsoft Entra provisioning service are based on existing enterprise data.
 
-[!INCLUDE [GDPR-related guidance](~/../azure-docs-pr/includes/gdpr-hybrid-note.md)]
+[!INCLUDE [GDPR-related guidance](~/includes/azure-docs-pr/gdpr-hybrid-note.md)]
 
 With respect to data retention, the Microsoft Entra provisioning service does not generate reports, perform analytics, or provide insights beyond 30 days. Therefore, Microsoft Entra provisioning service does not store, process, or retain any data beyond 30 days. This design is compliant with the GDPR regulations, Microsoft privacy compliance regulations, and Microsoft Entra data retention policies.
 

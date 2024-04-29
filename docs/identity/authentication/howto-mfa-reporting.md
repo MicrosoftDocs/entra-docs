@@ -39,8 +39,8 @@ The sign-ins report provides you with information about the usage of managed app
 To view the sign-in activity report in the [Microsoft Entra admin center](https://entra.microsoft.com), complete the following steps. You can also query data using the [reporting API](~/identity/monitoring-health/howto-configure-prerequisites-for-reporting-api.md).
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
-1. Browse to **Identity** > then choose **Users** from the menu on the left-hand side.
-1. Under *Activity* from the menu on the left-hand side, select **Sign-ins**.
+1. Browse to **Identity** > then choose **Users** > **All users** from the menu on the left-hand side.
+1. From the menu on the left-hand side, select **Sign-in logs**.
 1. A list of sign-in events is shown, including the status. You can select an event to view more details.
 
     The **Conditional Access** tab of the event details shows you which policy triggered the MFA prompt.

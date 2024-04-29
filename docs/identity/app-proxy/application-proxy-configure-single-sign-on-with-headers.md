@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: conceptual
-ms.date: 02/13/2024
+ms.date: 02/26/2024
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
@@ -17,12 +17,12 @@ Microsoft Entra application proxy natively supports single sign-on (SSO) access 
 
 * **Simplify remote access to your on-premises apps** - Application proxy simplifies your existing remote access architecture. You replace Virtual Private Network (VPN) access to these apps. You remove dependencies on on-premises identity solutions for authentication. You streamline the experience for users and they don't notice anything different when they use corporate applications. Users can work from anywhere on any device.  
 
-* **No extra software or changes to your apps** - You use your existing application proxy connectors. No extra software is required.
+* **No extra software or changes to your apps** - You use your existing private network connectors. No extra software is required.
 
 * **Wide list of attributes and transformations available** - All header values available are based on standard claims that are issued by Microsoft Entra ID. All attributes and transformations available for [configuring claims for Security Assertion Markup Language (SAML) or OpenID Connect (OIDC) applications](~/identity-platform/saml-claims-customization.md#attributes) are also available as header values. 
 
 ## Prerequisites
-Enable application proxy and install a connector that has direct network access to your applications. To learn more, see [Add an on-premises application for remote access through application proxy](application-proxy-add-on-premises-application.md#add-an-on-premises-app-to-azure-ad).
+Enable application proxy and install a connector that has direct network access to your applications. To learn more, see [Add an on-premises application for remote access through application proxy](application-proxy-add-on-premises-application.md).
 
 ## Supported capabilities
 
@@ -52,7 +52,7 @@ The table lists common capabilities required for header-based authentication app
 
 ## Publish the application with application proxy
 
-1. Publish your application according to the instructions described in [Publish applications with application proxy](application-proxy-add-on-premises-application.md#add-an-on-premises-app-to-azure-ad).  
+1. Publish your application according to the instructions described in [Publish applications with application proxy](application-proxy-add-on-premises-application.md).  
     - The internal URL value determines the scope of the application. You configure the internal URL value at the root path of the application, and all sub paths underneath the root receive the same header and application configuration. 
     - Create a new application to set a different header configuration or user assignment for a more granular path than the application you configured. In the new application, configure the internal URL with the specific path you require and then configure the specific headers needed for this URL. Application proxy always matches your configuration settings to the most granular path set for an application. 
 
@@ -62,7 +62,7 @@ The table lists common capabilities required for header-based authentication app
 5. Verify that you can connect to the application. Even though you can connect, you can't access the app yet since the headers aren't configured. 
 
 ## Configure single sign-on 
-Before you get started with single sign-on for header-based applications, install an application proxy connector. The connector must be able to access to the target applications. To learn more, see [Tutorial: Microsoft Entra application proxy](application-proxy-add-on-premises-application.md). 
+Before you get started with single sign-on for header-based applications, install a private network connector. The connector must be able to access to the target applications. To learn more, see [Tutorial: Microsoft Entra application proxy](application-proxy-add-on-premises-application.md). 
 
 1. After your application appears in the list of enterprise applications, select it, and select **Single sign-on**. 
 2. Set the single sign-on mode to **Header-based**. 

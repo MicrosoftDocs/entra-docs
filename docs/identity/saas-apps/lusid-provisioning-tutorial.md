@@ -12,6 +12,8 @@ ms.subservice: saas-apps
 ms.topic: tutorial
 ms.date: 06/05/2023
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to LUSID so that I can streamline the user management process and ensure that users have the appropriate access to LUSID.
 ---
 
 # Tutorial: Configure LUSID for automatic user provisioning

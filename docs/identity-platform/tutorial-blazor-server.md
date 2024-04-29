@@ -16,7 +16,7 @@ ms.topic: tutorial
 
 In this tutorial, you build a Blazor Server app that signs in users and gets data from Microsoft Graph by using the Microsoft identity platform and registering your app in Microsoft Entra ID.
 
-We also have a tutorial for [Blazor WASM](tutorial-blazor-webassembly.md).
+We also have a quickstart for [Blazor WASM](quickstart-single-page-app-blazor-wasm-sign-in.md).
 
 In this tutorial:
 

@@ -9,7 +9,7 @@ ms.date: 11/22/2023
 ms.reviewer: sureshja, jesakowi
 ms.service: identity-platform
 
-ms.topic: conceptual
+ms.topic: concept-article
 #Customer intent: As an application developer, I want to learn about best practices so I can integrate my application with the Microsoft identity platform.
 ---
 

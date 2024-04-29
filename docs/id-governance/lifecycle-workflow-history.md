@@ -158,9 +158,9 @@ Separating processing of the workflow from the tasks is important because, in a 
 
 ## Next steps
 
-- [userProcessingResult resource type](/graph/api/resources/identitygovernance-userprocessingresult?view=graph-rest-beta&preserve-view=true)
-- [taskReport resource type](/graph/api/resources/identitygovernance-taskreport?view=graph-rest-beta&preserve-view=true)
-- [run resource type](/graph/api/resources/identitygovernance-run?view=graph-rest-beta&preserve-view=true)
-- [taskProcessingResult resource type](/graph/api/resources/identitygovernance-taskprocessingresult?view=graph-rest-beta&preserve-view=true)
+- [`userProcessingResult` resource type](/graph/api/resources/identitygovernance-userprocessingresult?view=graph-rest-beta&preserve-view=true)
+- [`taskReport` resource type](/graph/api/resources/identitygovernance-taskreport?view=graph-rest-beta&preserve-view=true)
+- [`run` resource type](/graph/api/resources/identitygovernance-run?view=graph-rest-beta&preserve-view=true)
+- [`taskProcessingResult` resource type](/graph/api/resources/identitygovernance-taskprocessingresult?view=graph-rest-beta&preserve-view=true)
 - [Understanding Lifecycle Workflows](understanding-lifecycle-workflows.md)
 - [Lifecycle Workflow templates](lifecycle-workflow-templates.md)

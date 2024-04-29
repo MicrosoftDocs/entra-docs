@@ -5,7 +5,7 @@ ms.service: entra-id
 ms.subservice: authentication
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: how-to
-ms.date: 01/24/2024
+ms.date: 04/10/2024
 ms.author: justinha
 author: justinha
 manager: amycolannino
@@ -39,7 +39,7 @@ Methods include:
 
 - [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/hello-overview)
 - [Microsoft Authenticator app](concept-authentication-authenticator-app.md)
-- [FIDO2 security key](concept-authentication-passwordless.md#fido2-security-keys)
+- [FIDO2 security key](concept-authentication-passwordless.md)
 - [OATH hardware tokens (preview)](concept-authentication-oath-tokens.md#oath-hardware-tokens-preview)
 - [OATH software tokens](concept-authentication-oath-tokens.md#oath-software-tokens)
 - [SMS verification](concept-authentication-phone-options.md#mobile-phone-verification)
@@ -174,7 +174,7 @@ If your organization is federated with Microsoft Entra ID, you can [configure Mi
 
 ### RADIUS clients and Microsoft Entra multifactor authentication
 
-For applications that are using RADIUS authentication, we recommend moving client applications to modern protocols such as SAML, OpenID Connect, or OAuth on Microsoft Entra ID. If the application cannot be updated, then you can deploy [Network Policy Server (NPS) with the Azure MFA extension](howto-mfa-nps-extension.md). The network policy server (NPS) extension acts as an adapter between RADIUS-based applications and Microsoft Entra multifactor authentication to provide a second factor of authentication.
+For applications that are using RADIUS authentication, we recommend moving client applications to modern protocols such as SAML, OpenID Connect, or OAuth on Microsoft Entra ID. If the application cannot be updated, then you can deploy [Network Policy Server (NPS) extension](howto-mfa-nps-extension.md). The network policy server (NPS) extension acts as an adapter between RADIUS-based applications and Microsoft Entra multifactor authentication to provide a second factor of authentication.
 
 #### Common integrations
 

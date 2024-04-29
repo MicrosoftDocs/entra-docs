@@ -5,16 +5,16 @@ author: billmath
 manager: amycolannino
 ms.service: entra-id
 ms.topic: conceptual
-ms.date: 11/06/2023
+ms.date: 04/26/2024
 ms.subservice: hybrid-cloud-sync
 ms.author: billmath
 ---
 
-# Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance (Preview)
+# Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance
 
 [!INCLUDE [deprecation](~/includes/gwb-v2-deprecation.md)]
 
-**Scenario:** Manage on-premises applications with Active Directory groups that are provisioned from and managed in the cloud. Microsoft Entra cloud sync allows you to fully govern application assignments in AD while taking advantage of Microsoft Entra ID Governance features to control and remediate any access related requests.
+**Scenario:** Manage on-premises applications with Active Directory groups that are provisioned from and managed in the cloud. Microsoft Entra Cloud Sync allows you to fully govern application assignments in AD while taking advantage of Microsoft Entra ID Governance features to control and remediate any access related requests.
 
 With the release of provisioning agent [1.1.1370.0](reference-version-history.md#1113700), cloud sync now has the ability to provision groups directly to your on-premises Active Directory environment. You can use identity governance features to govern access to AD-based applications, such as by including a [group in an entitlement management access package](../../../id-governance/entitlement-management-group-writeback.md).
 
@@ -23,7 +23,7 @@ With the release of provisioning agent [1.1.1370.0](reference-version-history.md
 ## Prerequisites
 The following prerequisites are required to implement this scenario.
 
- - Azure AD account with at least a [Hybrid Administrator](../../role-based-access-control/permissions-reference.md#hybrid-identity-administrator) role.
+ - Microsoft Entra account with at least a [Hybrid Administrator](../../role-based-access-control/permissions-reference.md#hybrid-identity-administrator) role.
  - On-premises Active Directory Domain Services environment with Windows Server 2016 operating system or later. 
    - Required for AD Schema attribute - msDS-ExternalDirectoryObjectId. 
  - Provisioning agent with build version [1.1.1367.0](reference-version-history.md#1113700) or later.
@@ -40,13 +40,13 @@ The following prerequisites are required to implement this scenario.
  >
  >These permissions aren't applied to AdminSDHolder objects by default
 
- [Microsoft Entra Provisioning Agent gMSA PowerShell cmdlets](how-to-gmsa-cmdlets.md#grant-permissions-to-a-specific-domain) 
+ [Microsoft Entra provisioning agent gMSA PowerShell cmdlets](how-to-gmsa-cmdlets.md#grant-permissions-to-a-specific-domain) 
 
  - The provisioning agent must be able to communicate with one or more domain controllers on ports TCP/389 (LDAP) and TCP/3268 (Global Catalog).
      - Required for global catalog lookup to filter out invalid membership references.
- - Mircorosft Entra Connect with build version [2.2.8.0](../connect/reference-connect-version-history.md#2280) or later.
+ - Microsoft Entra Connect with build version [2.2.8.0](../connect/reference-connect-version-history.md#2280) or later.
      - Required to support on-premises user membership synchronized using Microsoft Entra Connect.
-     - Required to synchronize AD:user:objectGUID to AAD:user:onPremisesObjectIdentifier.
+     - Required to synchronize AD:user:objectGUID to Microsoft Entra ID:user:onPremisesObjectIdentifier.
 
 ## Supported groups
 For this scenario, only the following groups are supported:
@@ -64,7 +64,7 @@ The following sections discuss the scenarios that are supported with cloud sync 
 
 ## Configuring supported scenarios
 
-If you want to control whether a user is able to connect to an AD application that uses Windows authentication, you can use the application proxy and a Microsoft Entra ID security group.
+If you want to control whether a user is able to connect to an Active Directory application that uses Windows authentication, you can use the application proxy and a Microsoft Entra security group.
 If an application checks a user's AD group memberships, via Kerberos or LDAP, then you can use cloud sync group provisioning to ensure an AD user has those group memberships prior to the user accessing the applications. 
 
 
@@ -106,10 +106,10 @@ You can now govern access to the AD application through this new access package.
 In this scenario option, you add a new AD security group as a nested group member of an existing group. This scenario is applicable to deployments for applications that have a hardcoded dependency on a particular group account name, SID, or distinguished name.
 
 Nesting that group into the applications existing AD group will allow:
- - Microsoft Entra ID users, who are assigned by a governance feature, and subsequently access the app, 
+ - Microsoft Entra users, who are assigned by a governance feature, and subsequently access the app, 
  to have an appropriate Kerberos ticket. This ticket will contain the existing groups SID. This nesting is allowed by AD group nesting rules. 
 
- If the app uses LDAP and follows nested group membership, the app will see the Microsoft Entra ID users as having the existing group as one of their memberships.
+ If the app uses LDAP and follows nested group membership, the app will see the Microsoft Entra users as having the existing group as one of their memberships.
 
 #### Determine eligibility of existing group
  1. Launch Active Directory Users and Computers, and record the distinguished name, type and scope of the existing AD group used by the application. 
@@ -139,11 +139,13 @@ You'll then be able to govern access to the AD application through this new acce
 
 A user who is a member of the new AD group, and is on a Windows PC already logged into an AD domain, might have an existing ticket issued by an AD domain controller that doesn't include the new AD group membership. This is because the ticket might have been issued prior to the cloud sync group provisioning adding them to the new AD group. The user won't be able to present the ticket for access to the application, and so must wait for the ticket to expire and a new ticket issued, or purge their tickets, log out and log back into the domain. See the [klist](/windows-server/administration/windows-commands/klist) command for more details.
 
-## Existing Azure AD Connect group writeback v2 customers
-If you're using Azure AD Connect group writeback v2, you'll need to move to cloud sync provisioning to AD before you can take advantage of cloud sync group provisioning. See [Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync](migrate-group-writeback.md)
+<a name='existing-azure-ad-connect-group-writeback-v2-customers'></a>
+
+## Existing Microsoft Entra Connect group writeback v2 customers
+If you're using Microsoft Entra Connect group writeback v2, you'll need to move to cloud sync provisioning to AD before you can take advantage of cloud sync group provisioning. See [Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync](migrate-group-writeback.md)
 
 
 ## Next Steps
-- [Group writeback with Microsoft Entra Cloud Sync (Preview)](../group-writeback-cloud-sync.md)
+- [Group writeback with Microsoft Entra Cloud Sync ](../group-writeback-cloud-sync.md)
 - [Group provisioning to Active Directory using Microsoft Entra Cloud Sync](how-to-configure-entra-to-active-directory.md)
 - [Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync migration](migrate-group-writeback.md)

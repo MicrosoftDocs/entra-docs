@@ -127,14 +127,8 @@ The following instructions help you create a tenant app registration to authoriz
 3. Navigate to **Access > Guided Configuration**.
 4. Select **Microsoft Integration**.
 5. Select **Microsoft Entra Application**.
-
-   ![Screenshot of the Microsoft Entra Application option under Guided Configuration.](./media/f5-big-ip-easy-button-ldap/easy-button-template.png)
-
 6. Review the configuration sequence.
 7. Select **Next**
-
-   ![Screenshot of a configuration sequence.](./media/f5-big-ip-easy-button-ldap/config-steps.png)
-
 8. Follow the configuration sequence.
 
    ![Screenshot of configuration sequence under Microsoft Entra Application Configuration.](./media/f5-big-ip-easy-button-ldap/config-steps-flow.png#lightbox)
@@ -189,15 +183,10 @@ The Easy Button has templates for Oracle PeopleSoft, Oracle E-Business Suite, Or
 1. Select **JD Edwards Protected by F5 BIG-IP**.
 2. Select **Add**. 
 
-   ![Screenshot of the JD Edwards Protected by F5 BIG-IP option under Azure Configuration.](./media/f5-big-ip-easy-button-oracle-jde/azure-configuration-add-big-ip-application.png)
-
 #### Azure Configuration
 
 1. Enter **Display Name** for the app BIG-IP creates in the tenant. The name appears on an icon in [My Apps](https://myapplications.microsoft.com/).
 2. (Optional) For **Sign On URL** enter the PeopleSoft application public FQDN.
-
-    ![Screenshot of Display Name and Sign On URL options under Azure Configuration.](./media/f5-big-ip-easy-button-oracle-jde/azure-configuration-add-display-info.png)
-
 3. Next to the **Signing Key** and **Signing Certificate**, select **refresh**. This action locates the certificate you imported.
 4. For **Signing Key Passphrase**, enter the certificate password.
 5. (Optional) For **Signing Option**, select an option. This selection ensures BIG-IP accepts tokens and claims signed by Microsoft Entra ID.
@@ -220,8 +209,6 @@ If needed, include other Microsoft Entra attributes. The Oracle JDE scenario req
 #### Additional User Attributes
 
 The **Additional User Attributes** tab supports distributed systems that require attributes are stored in other directories for session augmentation. Attributes from an LDAP source are injected as more SSO headers to control access based on roles, Partner IDs, etc.  
-
-   ![Screenshot of options and selections for Additional User Attributes.](./media/f5-big-ip-easy-button-header/additional-user-attributes.png)
 
    >[!NOTE] 
    >This feature has no correlation to Microsoft Entra ID; it's another attribute source.

@@ -5,13 +5,15 @@ description: Learn how to automatically provision and deprovision user accounts 
 author: twimmers
 writer: twimmers
 manager: jeedes
-ms.assetid: 80293942-831d-454e-8154-85bf75ef3506
+ms.assetid: 0d373a1b-9373-48b4-bcb1-a87d6868b2fa
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 01/18/2024
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Egnyte so that I can streamline the user management process and ensure that users have the appropriate access to Egnyte.
 ---
 
 # Tutorial: Configure Egnyte for automatic user provisioning
@@ -105,9 +107,9 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |name.familyName|String||
    |userType|String||
 
-1. Under the **Mappings** section, select **Synchronize Azure Active Directory Groups to Egnyte**.
+1. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Egnyte**.
 
-1. Review the group attributes that are synchronized from Azure AD to Egnyte in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Egnyte for update operations. Select the **Save** button to commit any changes.
+1. Review the group attributes that are synchronized from Microsoft Entra ID to Egnyte in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Egnyte for update operations. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|Required by Egnyte
    |---|---|---|---|

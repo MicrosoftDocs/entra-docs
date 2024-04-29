@@ -5,7 +5,7 @@ description: How does self-service password reset work
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 09/14/2023
+ms.date: 03/13/2024
 
 ms.author: justinha
 author: justinha
@@ -162,13 +162,7 @@ If this option is set to **Yes**, users resetting their password receive an emai
 
 ### Notify all admins when other admins reset their passwords
 
-If this option is set to **Yes**, then other administrators receive an email to their primary email address stored in Microsoft Entra ID. The email notifies them that another administrator has changed their password by using SSPR.
-
-Consider the following example scenario:
-
-* There are four administrators in an environment.
-* Administrator *A* resets their password by using SSPR.
-* Administrators *B*, *C*, and *D* receive an email alerting them of the password reset.
+If this option is set to **Yes**, then Global Administrators receive an email to their primary email address stored in Microsoft Entra ID. The email notifies them that another administrator has changed their password by using SSPR.
 
 > [!NOTE]
 > Email notifications from the SSPR service will be sent from the following addresses based on the Azure cloud you are working with: 
@@ -178,19 +172,13 @@ Consider the following example scenario:
 >
 > If you observe issues in receiving notifications, please check your spam settings. 
 
-Only Password Administrators, User Administrators, and Global Administrators can receive the password reset request notification emails, in that order of priority:
-
-- If your organization has all the three types of administrators, then only Password Administrators receive the notification emails. 
-- If your organization only has User Administrators and Global Administrators, then only User Administrators receive the notification emails. 
-- If your organization only has Global Administrators, then only Global Administrators receive the notification emails.
-
 If you want custom administrators to receive the notification emails, use SSPR customizations and [set up a custom helpdesk link or email](/entra/identity/authentication/tutorial-enable-sspr#set-up-notifications-and-customizations).
 
 ## On-premises integration
 
 If you have a hybrid environment, you can configure Microsoft Entra Connect to write password change events back from Microsoft Entra ID to an on-premises directory.
 
-![Validating password writeback is enabled and working][Writeback]
+![Validating password writeback is enabled for Microsoft Entra ID to an On-premises integration][Writeback]
 
 Microsoft Entra ID checks your current hybrid connectivity and provides one of the following messages in the Microsoft Entra admin center:
 

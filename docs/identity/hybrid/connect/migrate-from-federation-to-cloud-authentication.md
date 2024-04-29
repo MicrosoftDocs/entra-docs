@@ -5,7 +5,6 @@ description: This article has information about moving your hybrid identity envi
 
 ms.service: entra-id
 ms.subservice: hybrid-connect
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: conceptual
 ms.date: 11/06/2023
 ms.author: billmath
@@ -15,7 +14,7 @@ manager: amycolannino
 ---
 # Migrate from federation to cloud authentication  
 
-In this article, you learn how to deploy cloud user authentication with either Microsoft Entra ID [Password hash synchronization (PHS)](whatis-phs.md) or [Pass-through authentication (PTA)](how-to-connect-pta.md). While we present the use case for moving from [Active Directory Federation Services (AD FS)](whatis-fed.md) to cloud authentication methods, the guidance substantially applies to other on premises systems as well.
+In this article, you learn how to deploy cloud user authentication with either Microsoft Entra [Password hash synchronization (PHS)](whatis-phs.md) or [Pass-through authentication (PTA)](how-to-connect-pta.md). While we present the use case for moving from [Active Directory Federation Services (AD FS)](whatis-fed.md) to cloud authentication methods, the guidance substantially applies to other on premises systems as well.
 
 Before you continue, we suggest that you review our guide on [choosing the right authentication method](choose-ad-authn.md) and compare methods most suitable for your organization.
 
@@ -29,7 +28,7 @@ Staged rollout is a great way to selectively test groups of users with cloud aut
 
 Refer to the staged rollout implementation plan to understand the [supported](how-to-connect-staged-rollout.md#supported-scenarios) and [unsupported scenarios](how-to-connect-staged-rollout.md#unsupported-scenarios). We recommend using staged rollout to test before cutting over domains.
 
-To learn how to configure staged rollout, see the [staged rollout interactive guide](https://mslearn.cloudguides.com/guides/Test%20migration%20to%20cloud%20authentication%20using%20staged%20rollout%20in%20Azure%20AD) migration to cloud authentication using staged rollout in Microsoft Entra ID).
+
 
 ## Migration process flow
 
@@ -163,7 +162,7 @@ This section includes prework before you switch your sign-in method and convert 
 
 Create groups for staged rollout and also for Conditional Access policies if you decide to add them.
 
-We recommend you use a group mastered in Microsoft Entra ID, also known as a cloud-only group. You can use Microsoft Entra security groups or Microsoft 365 Groups for both moving users to MFA and for Conditional Access policies. For more information, see [creating a Microsoft Entra security group](~/fundamentals/how-to-manage-groups.md), and this [overview of Microsoft 365 Groups for administrators](/microsoft-365/admin/create-groups/office-365-groups).
+We recommend you use a group mastered in Microsoft Entra ID, also known as a cloud-only group. You can use Microsoft Entra security groups or Microsoft 365 Groups for both moving users to MFA and for Conditional Access policies. For more information, see [creating a Microsoft Entra security group](~/fundamentals/how-to-manage-groups.yml), and this [overview of Microsoft 365 Groups for administrators](/microsoft-365/admin/create-groups/office-365-groups).
 
 The members in a group are automatically enabled for staged rollout. Nested and dynamic groups aren't supported for staged rollout.
 
@@ -299,8 +298,6 @@ For most customers, two or three authentication agents are sufficient to provide
     More authentication agents start to download. Install the secondary authentication agent on a domain-joined server.
 
 4. Run the authentication agent installation. During installation, you must enter the credentials of a Global Administrator account.
-
-    ![Microsoft Entra Connect Authentication Agent](media/deploy-cloud-user-authentication/install-azure-ad-connect-installation-agent.png)
 
 5. When the authentication agent is installed, you can return to the PTA health page to check the status of the more agents.
 

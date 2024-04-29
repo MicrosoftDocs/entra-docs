@@ -70,6 +70,6 @@ landingContent:
           - text: Require trusted location for MFA registration
             url: howto-conditional-access-policy-registration.md
           - text: Block access by location
-            url: howto-conditional-access-policy-location.md
+            url: howto-conditional-access-policy-location.yml
           - text: Require compliant device
             url: howto-conditional-access-policy-compliant-device.md

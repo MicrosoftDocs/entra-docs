@@ -5,7 +5,7 @@ description: Learn how to troubleshoot system errors with roles in Microsoft Ent
 author: billmath
 manager: amycolannino
 ms.service: entra-id-governance
-ms.topic: how-to
+ms.topic: troubleshooting
 ms.subservice: privileged-identity-management
 ms.date: 10/07/2021
 ms.author: billmath

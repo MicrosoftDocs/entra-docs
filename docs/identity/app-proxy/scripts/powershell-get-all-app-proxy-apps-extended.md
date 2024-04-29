@@ -1,29 +1,28 @@
 ---
 title: PowerShell sample - List extended info for Microsoft Entra application proxy apps
 description: PowerShell example that lists all Microsoft Entra application proxy applications along with the application ID (AppId), name (DisplayName), external URL (ExternalUrl), internal URL (InternalUrl), and authentication type (ExternalAuthenticationType).
-
 author: kenwith
 manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-proxy
-ms.custom: has-azure-ad-ps-ref
+ms.custom: 
 ms.topic: sample
-ms.date: 01/04/2024
+ms.date: 02/27/2024
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
 
-# Get all Application Proxy apps and list extended information
+# Get all application proxy apps and list extended information
 
-This PowerShell script example lists information about all Microsoft Entra application proxy applications, including the application ID (AppId), name (DisplayName), external URL (ExternalUrl), internal URL (InternalUrl), authentication type (ExternalAuthenticationType), SSO mode and further settings.
+The PowerShell script example lists information about all Microsoft Entra application proxy applications, including the application ID (AppId), name (DisplayName), external URL (ExternalUrl), internal URL (InternalUrl), authentication type (ExternalAuthenticationType), single sign-on (SSO) mode and further settings.
 
-Changing the value of the $ssoMode variable enables a filtered output by SSO mode. Further details are documented in the script.
+Changing the value of the `$ssoMode` variable enables a filtered output by SSO mode. Further details are documented in the script.
 
-[!INCLUDE [quickstarts-free-trial-note](~/../azure-docs-pr/includes/quickstarts-free-trial-note.md)]
+[!INCLUDE [quickstarts-free-trial-note](~/includes/azure-docs-pr/quickstarts-free-trial-note.md)]
 
-[!INCLUDE [updated-for-az](~/../azure-docs-pr/includes/updated-for-az.md)]
+[!INCLUDE [updated-for-az](~/includes/azure-docs-pr/updated-for-az.md)]
 
-This sample requires the [Microsoft Graph Beta PowerShell module](/powershell/microsoftgraph/installation) 2.10 or newer.
+The sample requires the [Microsoft Graph Beta PowerShell module](/powershell/microsoftgraph/installation) 2.10 or newer.
 
 ## Sample script
 
@@ -170,6 +169,5 @@ Write-Host "To disconnect from Microsoft Graph, please use the Disconnect-MgGrap
 
 ## Next steps
 
-For more information on the Microsoft Graph PowerShell module, see [Microsoft Graph PowerShell overview](/powershell/microsoftgraph/overview).
-
-For other PowerShell examples for Application Proxy, see [Microsoft Entra application proxy PowerShell examples](../application-proxy-powershell-samples.md).
+- [Microsoft Graph PowerShell overview](/powershell/microsoftgraph/overview)
+- [Microsoft Entra application proxy PowerShell examples](../application-proxy-powershell-samples.md)

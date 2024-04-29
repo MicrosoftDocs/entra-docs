@@ -9,7 +9,7 @@ ms.date: 9/18/2019
 ms.reviewer: rapong, iambmelt
 ms.service: identity-platform
 
-ms.topic: conceptual
+ms.topic: concept-article
 #Customer intent: As an application developer, I want to learn about specific considerations when using Azure AD B2C and MSAL.Android so I can decide if this platform meets my application development needs and requirements.
 ---
 

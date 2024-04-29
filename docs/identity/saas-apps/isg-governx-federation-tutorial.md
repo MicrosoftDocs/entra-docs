@@ -12,6 +12,8 @@ ms.topic: how-to
 ms.date: 06/16/2023
 ms.author: jeedes
 
+
+# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and ISG GovernX Federation so that I can control who has access to ISG GovernX Federation, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
 # Microsoft Entra SSO integration with ISG GovernX Federation

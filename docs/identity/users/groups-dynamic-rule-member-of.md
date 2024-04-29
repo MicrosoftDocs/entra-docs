@@ -6,7 +6,7 @@ author: billmath
 manager: amycolannino
 ms.service: entra-id
 ms.subservice: users
-ms.topic: overview
+ms.topic: conceptual
 ms.date: 07/15/2022
 ms.author: billmath
 ms.reviewer: krbain

@@ -6,7 +6,7 @@ author: omondiatieno
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: enterprise-apps
-ms.topic: conceptual
+ms.topic: concept-article
 
 ms.date: 01/02/2023
 ms.author: jomondi
@@ -56,7 +56,9 @@ Starting April 2023, organizations who use auto-acceleration or smart links migh
 
 The identifier at the top of the dialog, `kelly@contoso.com`, represents the identifier used to sign-in. The tenant domain listed in the dialog's header and subheader shows the domain of the account's home tenant.
 
-While the Domain Confirmation Dialog doesn't need to be shown for every instance of auto-acceleration or smart links, the Domain Confirmation Dialog means auto-acceleration, and smart links can no longer proceed seamlessly when shown. If your organization clears cookies due to browser policies or otherwise, you might experience the domain confirmation dialog more frequently. Finally, given Microsoft Entra manages the auto-acceleration sign-in flow end-to-end, the introduction of the Domain Confirmation Dialog shouldn't result in any application breakages.
+While the Domain Confirmation Dialog doesn't need to be shown for every instance of auto-acceleration or smart links, the Domain Confirmation Dialog means auto-acceleration, and smart links can no longer proceed seamlessly when shown. If your organization clears cookies due to browser policies or otherwise, you might experience the domain confirmation dialog more frequently. Finally, given Microsoft Entra ID manages the auto-acceleration sign-in flow end-to-end, the introduction of the Domain Confirmation Dialog shouldn't result in any application breakages.
+
+Furthermore, you can suppress the Domain Confirmation Dialog by configuring a [Tenant Restrictions v2](~/external-id/tenant-restrictions-v2.md) (TRv2) policy. A TRv2 policy achieves the same security posture as the Domain Confirmation Dialog and thus, when a TRv2 policy header is present in the request, the Domain Confirmation Dialog is suppressed. 
 
 ## Domain hints
 

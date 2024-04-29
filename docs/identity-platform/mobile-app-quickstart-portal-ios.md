@@ -10,7 +10,7 @@ ms.date: 02/15/2022
 ms.reviewer: jmprieur, saeeda
 ms.service: identity-platform
 
-ms.topic: conceptual
+ms.topic: concept-article
 #Customer intent: As an application developer, I want to learn how to sign in users and call Microsoft Graph from my iOS or macOS application.
 ---
 

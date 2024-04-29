@@ -6,7 +6,7 @@ manager: amycolannino
 ms.author: rolyon
 ms.service: entra
 ms.subservice: fundamentals
-ms.topic: how-to
+ms.topic: troubleshooting
 ms.date: 11/15/2023
 ms.collection: M365-identity-device-management
 ---
@@ -77,7 +77,7 @@ Add and assign custom security attributes to users or enterprise applications. F
 
 **Cause**
 
-You can only activate and deactivate custom security attribute definitions. Deletion of custom security attributes isn't supported. Deactivated definitions don't count towards the tenant wide 500 definition limit.
+You can only activate and deactivate custom security attribute definitions. Deletion of custom security attributes isn't supported. Deactivated definitions don't count toward the tenant wide 500 definition limit.
 
 **Solution**
 
@@ -93,7 +93,7 @@ PIM currently doesn't support adding an eligible Microsoft Entra role assignment
 
 ## Symptom - Insufficient privileges to complete the operation
 
-When you try to use [Graph Explorer](/graph/graph-explorer/graph-explorer-overview) to call Microsoft Graph APIs for custom security attributes, you see a message similar to the following:
+When you try to use [Graph Explorer](/graph/graph-explorer/graph-explorer-overview) to call Microsoft Graph API for custom security attributes, you see a message similar to the following:
 
 ```
 Forbidden - 403. You need to consent to the permissions on the Modify permissions (Preview) tab
@@ -139,7 +139,7 @@ Use the [Invoke-MgGraphRequest](/powershell/microsoftgraph/authentication-comman
 
 ## Symptom - Request_UnsupportedQuery error
 
-When you try to call Microsoft Graph APIs for custom security attributes, you see a message similar to the following:
+When you try to call Microsoft Graph API for custom security attributes, you see a message similar to the following:
 
 ```
 Bad Request - 400

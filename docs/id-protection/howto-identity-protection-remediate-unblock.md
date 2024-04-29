@@ -23,7 +23,7 @@ After completing your [investigation](howto-identity-protection-investigate-risk
 
 All active risk detections contribute to the calculation of the user's risk level. The user risk level is an indicator (low, medium, high) of the probability that the user's account has been compromised. As an administrator, after thorough investigation of the risky users and the corresponding risky sign-ins and detections, you want to remediate the risky users so that they're no longer at risk and won't be blocked.
 
-Microsoft Entra ID Protection marks some risk detections and the corresponding risky sign-ins as dismissed with risk state **Dismissed** and risk detail **Azure AD Identity Protection assessed sign-in safe**. It takes this action, because those events were no longer determined to be risky.
+Microsoft Entra ID Protection marks some risk detections and the corresponding risky sign-ins as dismissed with risk state **Dismissed** and risk detail **Microsoft Entra ID Protection assessed sign-in safe**. It takes this action, because those events were no longer determined to be risky.
 
 Administrators have the following options to remediate:
 
@@ -46,7 +46,7 @@ The prerequisites for users before risk-based policies can be applied to allow s
 
 If a risk-based policy is applied to a user during sign-in before the above prerequisites are met, then the user is blocked. This block action is because they aren't able to perform the required access control, and admin intervention is required to unblock the user.
 
-Risk-based policies are configured based on risk levels and only apply if the risk level of the sign-in or user matches the configured level. Some detections might not raise risk to the level where the policy applies, and administrators need to handle those risky users manually. Administrators can determine that extra measures are necessary like [blocking access from locations](~/identity/conditional-access/howto-conditional-access-policy-location.md) or lowering the acceptable risk in their policies.
+Risk-based policies are configured based on risk levels and only apply if the risk level of the sign-in or user matches the configured level. Some detections might not raise risk to the level where the policy applies, and administrators need to handle those risky users manually. Administrators can determine that extra measures are necessary like [blocking access from locations](~/identity/conditional-access/howto-conditional-access-policy-location.yml) or lowering the acceptable risk in their policies.
 
 ### Self-remediation with self-service password reset
 
@@ -75,7 +75,7 @@ Organizations who have enabled [password hash synchronization](~/identity/hybrid
 
 This configuration provides organizations two new capabilities:
 
-- Risky hybrid users can self-remediate without administrators intervention. When a password is changed on-premises, user risk is now automatically remediated within Entra ID Protection, resetting the current user risk state.
+- Risky hybrid users can self-remediate without administrators intervention. When a password is changed on-premises, user risk is now automatically remediated within Microsoft Entra ID Protection, resetting the current user risk state.
 - Organizations can proactively deploy [user risk policies that require password changes](howto-identity-protection-configure-risk-policies.md#user-risk-policy-in-conditional-access) to confidently protect their hybrid users. This option strengthens your organization's security posture and simplifies security management by ensuring that user risks are promptly addressed, even in complex hybrid environments.
 
 :::image type="content" source="media/howto-identity-protection-remediate-unblock/allow-on-premises-password-reset-user-risk.png" alt-text="Screenshot showing the location of the Allow on-premises password change to reset user risk checkbox." lightbox="media/howto-identity-protection-remediate-unblock/allow-on-premises-password-reset-user-risk.png":::
@@ -94,7 +94,7 @@ To configure this setting
 
 If after investigation and confirming that the user account isn't at risk of being compromised, then you can choose to dismiss the risky user.
 
-To Dismiss user risk in the [Microsoft Entra admin center](https://entra.microsoft.com), browse to **Protection** > **Identity Protection** > **Risky users**, select the affected user, and select **Dismiss user(s) risk**.
+To Dismiss user risk as at least a [Security Operator](~/identity/role-based-access-control/permissions-reference.md#security-operator) in the [Microsoft Entra admin center](https://entra.microsoft.com), browse to **Protection** > **Identity Protection** > **Risky users**, select the affected user, and select **Dismiss user(s) risk**.
 
 When you select **Dismiss user risk**, the user is no longer at risk, and all the risky sign-ins of this user and corresponding risk detections are dismissed as well.
 

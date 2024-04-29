@@ -9,7 +9,7 @@ ms.date: 08/11/2023
 ms.reviewer: saeeda
 ms.service: identity-platform
 
-ms.topic: conceptual
+ms.topic: concept-article
 #Customer intent: As an application developer, I want to learn about the types of client applications so I can decide if this platform meets my app development needs.
 ---
 
@@ -150,7 +150,7 @@ To help in debugging and authentication failure troubleshooting scenarios, the M
         - [Logging in MSAL.js](msal-logging-js.md)
     :::column-end:::
     :::column:::
-        - [Logging in MSAL for iOS/macOS](msal-logging-ios.md)
+        - [Logging in MSAL for iOS/macOS](/entra/msal/objc/logging-ios)
         - [Logging in MSAL for Java](/entra/msal/java/advanced/msal-logging-java)
         - [Logging in MSAL for Python](/entra/msal/python/advanced/msal-logging-python)
     :::column-end:::

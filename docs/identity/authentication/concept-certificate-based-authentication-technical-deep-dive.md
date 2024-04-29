@@ -223,7 +223,7 @@ Mapping types based on user names and email addresses are considered low-affinit
 
 ### Define Affinity binding at the tenant level and override with custom rules (Preview)
 
-With this feature an Authentication Policy Administrator can configure whether a user can be authenticated by using low-affinity or high-affinity username binding mapping. You can set **Required affinity binding** for the tenant, which applies to all users. You can also override the tenant-wide default value by creating custom rules based or Issuer and Policy OID, or Policy OID, or Issuer.
+With this feature an Authentication Policy Administrator can configure whether a user can be authenticated by using low-affinity or high-affinity username binding mapping. You can set **Required affinity binding** for the tenant, which applies to all users. You can also override the tenant-wide default value by creating custom rules based on Issuer and Policy OID, or Policy OID, or Issuer.
 
 <a name='how-microsoft-entra-id-resolves-multiple-username-policy-binding-rules'></a>
 
@@ -297,7 +297,7 @@ User account CertificateUserIds values:\
 Now, when either user presents the same certificate at sign-in the user will successfully sign-in because their account matches a unique value on that certificate. One account will be authenticated into using Issuer+SerialNumber and the other using SKI binding.
 
 >[!Note]
-> The number of accounts that can be used in this manner is limited by the number of username bindings configured on the tenant. If the organization is using only High Affinity bindings the number of accounts supported will be limited to 3. If the organization is also utilizing low affinity bindings then this number increases to 7 accounts (1 PrincipalName, 1 RFC822Name, 1 SubjectKeyIdentifier, 1 SHA1PublicKey, 1 Issuer+Subject, 1 Issuer+SerialNumber, 1 Subject). If the organization implements multiple unique RFC822Names on the certificate then each of these could be utilized for a separate account thus increasing the number beyond 7.
+> The number of accounts that can be used in this manner is limited by the number of username bindings configured on the tenant. If the organization is using only High Affinity bindings the number of accounts supported will be limited to 3. If the organization is also utilizing low affinity bindings then this number increases to 7 accounts (1 PrincipalName, 1 RFC822Name, 1 SubjectKeyIdentifier, 1 SHA1PublicKey, 1 Issuer+Subject, 1 Issuer+SerialNumber, 1 Subject).
 
 **Hybrid Synchronized accounts**
 For synchronized accounts the approach will be different. While the tenant admin can map unique values to each user account that will be utilizing the certificate, the common practice of populating all values to each account in Entra ID would make this difficult. Instead, Azure AD Connect should filter the desired values per account to unique values populated into the account in Entra ID. The uniqueness rule applies within the boundary of a single directory/tenant (i.e. Tenant admin can map the certificate for use in another directory/tenant as well, as long as the values remain unique per account too). Further, the organization may have multiple AD forests contributing users into a single Entra ID tenant. In this case Azure AD Connect will apply the filter to each of these AD forests with the same goal to populate only a desired unique value to the cloud account. 
@@ -525,11 +525,7 @@ To reset the MRU method, the user needs to cancel the certificate picker, select
 
 An external identity can't perform multifactor authentication to the resource tenant with Microsoft Entra CBA. Instead, have the user perform MFA using CBA in the home tenant, and set up cross tenant settings for the resource tenant to trust MFA from the home tenant.
 
-For more information about how to enable **Trust multifactor authentication from Microsoft Entra tenants**, see [Configure B2B collaboration cross-tenant access](../../external-id/cross-tenant-access-settings-b2b-collaboration.md#to-change-inbound-trust-settings-for-mfa-and-device-claims).
-
-## Known issues
-
-- On iOS clients, there's a double prompt issue as part of the Microsoft Entra CBA flow where the user needs to select **Use the certificate or smart card** twice. We're aware of the UX experience issue and working on fixing this for a seamless UX experience.
+For more information about how to enable **Trust multifactor authentication from Microsoft Entra tenants**, see [Configure B2B collaboration cross-tenant access](../../external-id/cross-tenant-access-settings-b2b-collaboration.yml).
 
 ## Next steps
 

@@ -14,7 +14,7 @@ ms.date: 06/05/2023
 
 # Tutorial: Create a .NET MAUI shell app
 
-This tutorial is part 2 of a series that demonstrates how to create a .NET Multi-platform App UI (.NET MAUI) shell app and prepare it for authentication using the Microsoft Entra admin center. In [part 1 of this series](./tutorial-mobile-app-maui-sign-in-prepare-tenant.md), you registered an application and configured user flows in your Microsoft Entra ID for customers tenant. In this tutorial, you'll add a custom Microsoft Authentication Library (MSAL) client helper to initialize the MSAL SDK, install required libraries and include an image resource.
+This tutorial is part 2 of a series that demonstrates how to create a .NET Multi-platform App UI (.NET MAUI) shell app and prepare it for authentication using the Microsoft Entra admin center. In [Part 1 of this series](./tutorial-mobile-app-maui-sign-in-prepare-tenant.md), you registered an application and configured user flows in your external tenant. In this tutorial, you'll add a custom Microsoft Authentication Library (MSAL) client helper to initialize the MSAL SDK, install required libraries and include an image resource.
 
 In this tutorial, you'll;
 
@@ -27,7 +27,7 @@ In this tutorial, you'll;
 
 ## Prerequisites
 
-- [Tutorial: Register and configure .NET MAUI mobile app in a customer tenant](./tutorial-mobile-app-maui-sign-in-prepare-tenant.md)
+- [Tutorial: Register and configure .NET MAUI mobile app in an external tenant](./tutorial-mobile-app-maui-sign-in-prepare-tenant.md)
 - [.NET 7.0 SDK](https://dotnet.microsoft.com/download/dotnet/7.0)
 - [Visual Studio 2022](https://aka.ms/vsdownloads) with the MAUI workload installed:
   - [Instructions for Windows](/dotnet/maui/get-started/installation?tabs=vswin)
@@ -36,15 +36,15 @@ In this tutorial, you'll;
 ## Create .NET MAUI shell app
 
 1. In the start window of Visual Studio 2022, select **Create a new project**.
-1. In the **Create a new project** window, select **MAUI** in the All project types drop-down, select the **.NET MAUI App** template, and select **Next**.
-1. In the **Configure your new project** window, **Project name** must be set to _SignInMaui_. Update the **Solution name**  to _sign-in-maui_ and select **Next**.
+1. In the **Create a new project** window, select **MAUI** in the All project types dropdown list, select the **.NET MAUI App** template, and select **Next**.
+1. In the **Configure your new project** window, **Project name** must be set to *SignInMaui*. Update the **Solution name**  to *sign-in-maui* and select **Next**.
 1. In the **Additional information** window, choose **.NET 7.0** and select **Create**.
 
 Wait for the project to be created and its dependencies to be restored.
 
 ## Add MSAL SDK support using MSAL helper classes
 
-MSAL client enables developers to acquire security tokens from Microsoft Entra ID for customers tenant to authenticate and access secured web APIs. In this section, you download files that makes up MSALClient.
+MSAL client enables developers to acquire security tokens from an external tenant to authenticate and access secured web APIs. In this section, you download files that makes up MSALClient.
 
 Download the following files into a folder in your computer:
 
@@ -63,7 +63,7 @@ Download the following files into a folder in your computer:
 
 ### Move the MSALClient files with Visual Studio
 
-1. In the **Solution Explorer** pane, right-click on the **SignInMaui** project and select **Add** > **New Folder**. Name the folder _MSALClient_.
+1. In the **Solution Explorer** pane, right-click on the **SignInMaui** project and select **Add** > **New Folder**. Name the folder *MSALClient*.
 1. Right-click on **MSALClient** folder, select **Add** > **Existing Item...**.
 1. Navigate to the folder that contains the downloaded MSALClient files that you downloaded earlier.
 1. Select all of the MSALClient files you downloaded, then select **Add**
@@ -72,18 +72,18 @@ Download the following files into a folder in your computer:
 
 You need to install the following packages:
 
-- _Microsoft.Identity.Client_ - This package contains the binaries of the Microsoft Authentication Library for .NET (MSAL.NET).
-- _Microsoft.Extensions.Configuration.Json_ - This package contains JSON configuration provider implementation for Microsoft.Extensions.Configuration.
-- _Microsoft.Extensions.Configuration.Binder_ - This package contains functionality to bind an object to data in configuration providers for Microsoft.Extensions.Configuration.
-- _Microsoft.Extensions.Configuration.Abstractions_ - This package contains abstractions of key-value pair based configuration.
-- _Microsoft.Identity.Client.Extensions.Msal_ - This package contains extensions to Microsoft Authentication Library for .NET (MSAL.NET).
+- *Microsoft.Identity.Client* - This package contains the binaries of the Microsoft Authentication Library for .NET (MSAL.NET).
+- *Microsoft.Extensions.Configuration.Json* - This package contains JSON configuration provider implementation for Microsoft.Extensions.Configuration.
+- *Microsoft.Extensions.Configuration.Binder* - This package contains functionality to bind an object to data in configuration providers for Microsoft.Extensions.Configuration.
+- *Microsoft.Extensions.Configuration.Abstractions* - This package contains abstractions of key-value pair-based configuration.
+- *Microsoft.Identity.Client.Extensions.Msal* - This package contains extensions to Microsoft Authentication Library for .NET (MSAL.NET).
 
 ### NuGet Package Manager
 
-To use the **NuGet Package Manager** to install the _Microsoft.Identity.Client_ package in Visual Studio, follow these steps:
+To use the **NuGet Package Manager** to install the *Microsoft.Identity.Client* package in Visual Studio, follow these steps:
 
 1. Select **Tools** > **NuGet Package Manager** > **Manage NuGet Packages for Solution...**.
-1. From the **Browse** tab, search for _Microsoft.Identity.Client_.
+1. From the **Browse** tab, search for *Microsoft.Identity.Client*.
 1. Select **Microsoft.Identity.Client** in the list.
 1. Select **SignInMaui** in the **Project** list pane.
 1. Select **Install**.
@@ -111,4 +111,4 @@ Download the following image:
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Part 3: Tutorial: Sign in users in .NET MAUI shell app using a customer tenant](tutorial-mobile-app-maui-sign-in-sign-out.md)
+> [Part 3: Tutorial: Sign in users in .NET MAUI shell app using an external tenant](tutorial-mobile-app-maui-sign-in-sign-out.md)

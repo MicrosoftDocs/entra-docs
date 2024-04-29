@@ -20,7 +20,7 @@ Errors can occur when identity data is synced from Windows Server Active Directo
  This article assumes you're familiar with the underlying [design concepts of Microsoft Entra ID and Microsoft Entra Connect](plan-connect-design-concepts.md).
 
 >[!IMPORTANT]
->This article attempts to address the most common synchronization errors.  Unfortunately, covering every scenario in one document is not possible.  For more information including in-depth troubleshooting steps, see [End-to-end troubleshooting of Microsoft Entra Connect objects and attributes](/troubleshoot/azure/active-directory/troubleshoot-aad-connect-objects-attributes) and the [User Provisioning and Synchronization](/troubleshoot/azure/active-directory/welcome-azure-ad) section under the Microsoft Entra troubleshooting documentation.
+>This article attempts to address the most common synchronization errors.  Unfortunately, covering every scenario in one document isn't possible.  For more information including in-depth troubleshooting steps, see [End-to-end troubleshooting of Microsoft Entra Connect objects and attributes](/troubleshoot/azure/active-directory/troubleshoot-aad-connect-objects-attributes) and the [User Provisioning and Synchronization](/troubleshoot/azure/active-directory/welcome-azure-ad) section under the Microsoft Entra troubleshooting documentation.
 
 With the latest version of Microsoft Entra Connect \(August 2016 or higher\), a Synchronization Errors Report is available in the [Microsoft Entra admin center](https://entra.microsoft.com) as part of Microsoft Entra Connect Health for sync.
 
@@ -41,15 +41,39 @@ Errors during export to Microsoft Entra ID indicate that an operation like add, 
 
 This section discusses data mismatch errors.
 
+### InvalidHardMatch
+
+#### Description
+
+An InvalidHardMatch error occurs during synchronization when there’s an attempt to [hard match](./how-to-connect-install-existing-tenant.md#hard-match-vs-soft-match) objects present in Microsoft Entra ID with a new incoming object that have the same sourceAnchor value, but *BlockCloudObjectTakeoverThroughHardMatchEnabled* feature is enabled on the tenant.
+
+#### Example scenarios for an InvalidHardMatch error
+
+* DirSync is re-enabled on the tenant and objects with the same sourceAnchor are synchronized again, however *BlockCloudObjectTakeoverThroughHardMatchEnabled* feature is enabled and prevents the hard match to occur.
+* User was excluded from sync scope and restored from Microsoft Entra ID Recycle Bin. Later, the user is re-added to sync scope and tries to take over the object already present in Microsoft Entra ID based on the same sourceAnchor value, however *BlockCloudObjectTakeoverThroughHardMatchEnabled* feature is enabled and prevents the hard match from occurring.
+
+#### Example case
+
+1. Bob Smith is a synced user in Microsoft Entra ID from the on-premises Active Directory of contoso.com.
+1. By default, the SourceAnchor value of **"abcdefghijklmnopqrstuv=="** is calculated by Microsoft Entra Connect by using Bob Smith's **MsDs-ConsistencyGUID** attribute (or ObjectGUID depending on the configuration) from on-premises Active Directory. This attribute value is the **immutableId** for Bob Smith in Microsoft Entra ID.
+1. Admin removes Bob Smith from sync scope and Microsoft Entra Connect exports a deletion of the object.
+1. Bob Smith's object becomes soft-deleted in Microsoft Entra ID and its DirSyncEnabled attribute is switched to False. This process however doesn't convert the object to cloud managed, it’s still considered an object synchronized from on-premises Active Directory. The DirSyncEnabled value is False to indicate that it’s currently out of sync scope and is available to be matched again.
+1. Admin re-adds Bob Smith into sync scope and Microsoft Entra Connect re-synchronizes the object.
+1. Normally, a hard match takes over the object present in Microsoft Entra ID based on the same SourceAnchor and switches DirSyncEnabled attribute back to 'True’, however, when *BlockCloudObjectTakeoverThroughHardMatchEnabled* is enabled, this operation isn't allowed and an InvalidHardMatch is thrown.
+
+#### Fix the InvalidHardMatch error
+
+We advise customers to enable *BlockCloudObjectTakeoverThroughHardMatchEnabled* unless they need it to take over existent accounts in Microsoft Entra ID.
+
+If you need to clear an **InvalidHardtMatch** error and match the account successfully, you can enable hard match again as descripted in [Hard-match vs Soft-match](./how-to-connect-install-existing-tenant.md#hard-match-vs-soft-match).
+
 ### InvalidSoftMatch
 
 #### Description
 
-* When Microsoft Entra Connect \(sync engine\) instructs Microsoft Entra ID to add or update objects, Microsoft Entra ID matches the incoming object by using the **sourceAnchor** attribute and matching it to the **immutableId** attribute of objects in Microsoft Entra ID. This match is called a *hard match*.
-* When Microsoft Entra ID *doesn't find* any object that matches the **immutableId** attribute with the **sourceAnchor** attribute of the incoming object, before Microsoft Entra ID provisions a new object, it falls back to use the **proxyAddresses** and **userPrincipalName** attributes to find a match. This match is called a *soft match*. The soft match matches objects already present in Microsoft Entra ID (that are sourced in Microsoft Entra ID) with the new objects being added or updated during synchronization that represent the same entity (like users and groups) on-premises.
-* The InvalidSoftMatch error occurs when the hard match doesn't find any matching object *and* the soft match finds a matching object, but that object has a different **immutableId** value than the incoming object's **sourceAnchor** attribute. This mismatch suggests that the matching object was synced with another object from on-premises Active Directory.
+* The InvalidSoftMatch error occurs when the hard match doesn't find any matching object *and* the [soft match](./how-to-connect-install-existing-tenant.md#hard-match-vs-soft-match) finds a matching object, but that object has a different **immutableId** value than the incoming object's **sourceAnchor**. This mismatch suggests that the matching object was synced from another object from on-premises Active Directory.
 
-In other words, for the soft match to work, the object to be soft-matched with shouldn't have any value for the **immutableId** attribute. If any object with the **immutableId** attribute set with a value fails the hard match but satisfies the soft-match criteria, the operation results in an InvalidSoftMatch synchronization error.
+For the soft match to work, the object to be soft-matched with shouldn't have any value for the **immutableId** attribute. The operation results in an InvalidSoftMatch synchronization error when the object with the **immutableId** attribute set with a value, fails the hard match but satisfies the soft match criteria.
 
 Microsoft Entra schema doesn't allow two or more objects to have the same value of the following attributes. This list isn't exhaustive:
 
@@ -57,10 +81,11 @@ Microsoft Entra schema doesn't allow two or more objects to have the same value 
 * userPrincipalName
 * onPremisesSecurityIdentifier
 * objectId
+* immutableId
 
-[Microsoft Entra attribute duplicate attribute resiliency](how-to-connect-syncservice-duplicate-attribute-resiliency.md) is also being rolled out as the default behavior of Microsoft Entra ID. This feature reduces the number of synchronization errors seen by Microsoft Entra Connect and other sync clients. It makes Microsoft Entra more resilient in the way it handles duplicated **proxyAddresses** and **userPrincipalName** attributes present in on-premises Active Directory environments. 
+Microsoft Entra attribute duplicate attribute resiliency](how-to-connect-syncservice-duplicate-attribute-resiliency.md) is also being rolled out as the default behavior of Microsoft Entra ID. This feature reduces the number of synchronization errors seen by Microsoft Entra Connect and other sync clients. It makes Microsoft Entra more resilient in the way it handles duplicated **proxyAddresses** and **userPrincipalName** attributes present in on-premises Active Directory environments. 
 
-This feature doesn't fix the duplication errors, so the data still needs to be fixed. But it allows provisioning of new objects that are otherwise blocked from being provisioned because of duplicated values in Microsoft Entra ID. This capability will also reduce the number of synchronization errors returned to the synchronization client.
+This feature doesn't fix the duplication errors, so the data still needs to be fixed. But it allows provisioning of new objects that are otherwise blocked from being provisioned because of duplicated values in Microsoft Entra ID. This capability also reduces the number of synchronization errors returned to the synchronization client.
 
 > [!NOTE]
 > If Microsoft Entra attribute duplicate attribute resiliency is enabled for your tenant, you won't see the InvalidSoftMatch synchronization errors seen during provisioning of new objects.
@@ -74,7 +99,7 @@ This feature doesn't fix the duplication errors, so the data still needs to be f
 - An object was added in on-premises Active Directory with the same value for the **userPrincipalName** attribute as that of an account in Microsoft Entra ID. The object isn't getting provisioned in Microsoft Entra ID.
 - A synced account was moved from Forest A to Forest B. Microsoft Entra Connect (sync engine) was using the **objectGUID** attribute to compute the **sourceAnchor** attribute. After the forest move, the value of the **sourceAnchor** attribute is different. The new object from Forest B fails to sync with the existing object in Microsoft Entra ID.
 - A synced object was accidentally deleted from on-premises Active Directory and a new object was created in Active Directory for the same entity (such as user) without deleting the account in Microsoft Entra ID. The new account fails to sync with the existing Microsoft Entra object.
-- Microsoft Entra Connect was uninstalled and reinstalled. During the reinstallation, a different attribute was chosen as the **sourceAnchor** attribute. All the objects that had previously synced stopped syncing with the InvalidSoftMatch error.
+- Microsoft Entra Connect was uninstalled and reinstalled. During the reinstallation, a different attribute was chosen as the **sourceAnchor** attribute. All the previously synced objects stop syncing with the InvalidSoftMatch error.
 
 #### Example case
 
@@ -87,7 +112,7 @@ This feature doesn't fix the duplication errors, so the data still needs to be f
    * smtp: bob\@contoso.com
 1. A new user, Bob Taylor, is added to the on-premises Active Directory.
 1. Bob Taylor's user principal name is set as bobt\@contoso.com.
-1. The **sourceAnchor** attribute of **"abcdefghijkl0123456789=="** is calculated by Microsoft Entra Connect by using Bob Taylor's **objectGUID** attribute from on-premises Active Directory. Bob Taylor's object has *not* synced to Microsoft Entra ID yet.
+1. The **sourceAnchor** attribute of **"abcdefghijkl0123456789=="** is calculated by Microsoft Entra Connect by using Bob Taylor's **objectGUID** attribute from on-premises Active Directory.
 1. Bob Taylor has the following values for the **proxyAddresses** attribute:
    * smtp: bobt@contoso.com
    * smtp: bob.taylor@contoso.com
@@ -102,7 +127,7 @@ This feature doesn't fix the duplication errors, so the data still needs to be f
 The most common reason for the InvalidSoftMatch error is two objects with different **sourceAnchor** \(**immutableId**\) attributes that have the same value for the **proxyAddresses** or **userPrincipalName** attributes, which are used during the soft-match process on Microsoft Entra ID. To fix the InvalidSoftMatch error:
 
 1. Identify the duplicated **proxyAddresses**, **userPrincipalName**, or other attribute value that's causing the error. Also identify which two or more objects are involved in the conflict. The report generated by [Microsoft Entra Connect Health for sync](./how-to-connect-health-sync.md) can help you identify the two objects.
-1. Identify which object should continue to have the duplicated value and which object should not.
+1. Identify which object should continue to have the duplicated value and which object shouldn't.
 1. Remove the duplicated value from the object that should *not* have that value. Make the change in the directory from where the object is sourced. In some cases, you might need to delete one of the objects in conflict.
 1. If you made the change in on-premises Active Directory, let Microsoft Entra Connect Sync the change.
 
@@ -138,7 +163,7 @@ A mail-enabled security group is created in Microsoft 365. The admin adds a new 
 The most common reason for the ObjectTypeMismatch error is that two objects of different type, like user, group, or contact, have the same value for the **proxyAddresses** attribute. To fix the ObjectTypeMismatch error:
 
 1. Identify the duplicated **proxyAddresses** (or other attribute) value that's causing the error. Also identify which two or more objects are involved in the conflict. The report generated by [Microsoft Entra Connect Health for sync](./how-to-connect-health-sync.md) can help you identify the two objects.
-1. Identify which object should continue to have the duplicated value and which object should not.
+1. Identify which object should continue to have the duplicated value and which object shouldn't.
 1. Remove the duplicated value from the object that should *not* have that value. Make the change in the directory where the object is sourced from. In some cases, you might need to delete one of the objects in conflict.
 1. If you made the change in the on-premises AD, let Microsoft Entra Connect Sync the change. The sync error report in Microsoft Entra Connect Health for sync is updated every 30 minutes. The report includes the errors from the latest synchronization attempt.
 
@@ -186,7 +211,7 @@ A duplicate value is assigned to an already synced object, which conflicts with 
 The most common reason for the AttributeValueMustBeUnique error is that two objects with different **sourceAnchor** \(**immutableId**\) attributes have the same value for the **proxyAddresses** or **userPrincipalName** attributes. To fix the AttributeValueMustBeUnique error:
 
 1. Identify the duplicated **proxyAddresses**, **userPrincipalName**, or other attribute value that's causing the error. Also identify which two or more objects are involved in the conflict. The report generated by [Microsoft Entra Connect Health for sync](./how-to-connect-health-sync.md) can help you identify the two objects.
-1. Identify which object should continue to have the duplicated value and which object should not.
+1. Identify which object should continue to have the duplicated value and which object shouldn't.
 1. Remove the duplicated value from the object that should *not* have that value. Make the change in the directory from where the object is sourced. In some cases, you might need to delete one of the objects in conflict.
 1. If you made the change in on-premises Active Directory, let Microsoft Entra Connect Sync the change for the error to get fixed.
 
@@ -202,7 +227,7 @@ This section discusses data validation failures.
 
 #### Description
 
-Microsoft Entra ID enforces various restrictions on the data itself before allowing that data to be written into the directory. These restrictions are to ensure that end users get the best possible experiences while using the applications that depend on this data.
+Microsoft Entra ID enforces various restrictions on the data itself before allowing that data to be written into the directory. These restrictions are to ensure that end users get the best possible experience while using the applications that depend on this data.
 
 #### Scenarios
 
@@ -221,39 +246,39 @@ Ensure that the **userPrincipalName** attribute has supported characters and the
 
 ## Deletion access violation and password access violation errors
 
-Microsoft Entra ID protects cloud-only objects from being updated through Microsoft Entra Connect. While it isn't possible to update these objects through Microsoft Entra Connect, calls can be made directly to the AADConnect cloud-side back end to attempt to change cloud-only objects. When doing so, the following errors can be returned:
+Microsoft Entra ID protects cloud-only objects from being updated through Microsoft Entra Connect. While it isn't possible to update these objects through Microsoft Entra Connect, calls can be made directly to Microsoft Entra back-end to attempt to change cloud-only objects. When doing so, the following errors can be returned:
 
 * This synchronization operation, Delete, isn't valid. Contact Technical Support (Error Type 114).
 * Unable to process this update because one or more cloud-only users' credential update is included in the current request.
 * Deleting a cloud-only object isn't supported. Contact Microsoft Customer Support.
-* The password change request can't be executed because it contains changes to one or more cloud-only user objects, which isn't supported. Contact Microsoft Customer Support.
+* The password change request can't be executed because it contains changes to one or more cloud-only user objects, which aren't supported. Contact Microsoft Customer Support.
 
-### Resolve Error Type 114
+### Resolve DeletingCloudOnlyObjectNotAllowed (Error Type 114)
 
-This section discussess potential causes and solutions to resolving Error Type 114. 
+This section discusses potential causes and solutions to resolving the error DeletingCloudOnlyObjectNotAllowed (Error Type 114).
 
 > [!WARNING]
-> Microsoft recommends that customers set up a break glass account before logging in to Microsft Entra Connect. For more info, see [Manage emergency access accounts in Microsoft Entra ID](~/identity/role-based-access-control/security-emergency-access.md).
+> Microsoft recommends that customers set up a break glass account before logging in to Microsoft Entra Connect. For more info, see [Manage emergency access accounts in Microsoft Entra ID](~/identity/role-based-access-control/security-emergency-access.md).
 
 #### Description
 
-This is a scenario when a customer wants to migrate from hybrid to cloud-only. The admin initiates a call to Entra Connect in attempt to move users out of scope, but Entra Connect returns the Error Type 114: "This synchronization operation, Delete, isn't valid. Contact Technical Support."
+This is a scenario when a customer wants to migrate from hybrid to cloud-only. The admin initiates a call to Microsoft Entra Connect in attempt to move users out of scope, but Microsoft Entra Connect returns the error DeletingCloudOnlyObjectNotAllowed (or Error Type 114): "This synchronization operation, Delete, isn't valid. Contact Technical Support."
 
 Possible causes of this error include: 
 
-- The call to Entra Connect has no UPN, a new or unique GUID, or other required information.
-- AAD Connect is trying to export data, but it has `DirSync Enabled` set to False.
-- AAD Sync is trying to delete a restored user or other object. This is usually because a user or other object reference has been moved to an unsynced organizational unit (OU) or Lost & Found app. 
+- The call from Microsoft Entra Connect has no UPN, a new or unique GUID, or other required information.
+- Microsoft Entra Connect is trying to export data, but it has `DirSyncEnabled` set to False.
+- Microsoft Entra Connect is trying to delete a restored user or other object. This is usually because a user or other object reference has been moved out of sync scope or to Lost & Found container. 
 
 #### Possible scenarios
 
-The AADConnect client is failing to delete users during migration from hybrid to cloud only, resulting in Error Type 114. 
+The Microsoft Entra Connect client is failing to delete users during migration from hybrid to cloud only, resulting in Error Type 114. 
 
-Potential reasons for users to not be deleted include: 
+Potential reasons for users not to be deleted include: 
 
 - The rule created by the customer to move users out of scope is based on the `Admin` attribute. 
-- Error Type 114 is being returned during the synchronization (AAD Sync) operation, resulting in a failure to delete users.
-- AAD Sync fails for specific features, resulting in users not being deleted accordingly.
+- Error Type 114 is being returned during the synchronization (Azure AD Sync) operation, resulting in a failure to delete users.
+- Synchronization fails for specific features, resulting in users not being deleted accordingly.
 
 #### Error example 
 
@@ -276,13 +301,14 @@ Dn CN={783456306961654236304B58786A66746377643748773D3D}
 To resolve this issue:
 
 1. Identify the problem object reference. 
-1. Use PowerShell to move the cloud account to the *Azure Recycle Bin*:
-   - Run `Start-ADSyncSyncCyle -PolicyType Delta` which should successfully import the data.
+1. Use PowerShell to soft-delete the cloud account:
+1. Run `Start-ADSyncSyncCycle -PolicyType Delta` which should successfully import the account deletion.
 1. Confirm that the deletion was successful.
 1. Restore the user from the Recycle Bin.
-1. Run `Start-ADSyncSyncCyle -PolicyType Delta` on the server to confirm the error does not occur again.
+1. Run `Start-ADSyncSyncCycle -PolicyType Delta` on the server to confirm the error doesn't occur again.
 
-If the steps above do not work, your case may be eligible for an Incident Reponse (IR) escalation. For more info, see [Security incident management overview](/compliance/assurance/assurance-incident-management)
+> [!WARNING]
+> When a user is excluded from sync scope the object becomes soft-deleted in Microsoft Entra ID and its DirSyncEnabled attribute is switched to False. This process however doesn't convert the object to cloud managed, as it still contains attributes and values synchronized from on-premises Active Directory that can't be managed in the cloud. The DirSyncEnabled value is False to indicate that it’s currently out of sync scope and is available to be matched again.
 
 ## LargeObject or ExceededAllowedLength
 

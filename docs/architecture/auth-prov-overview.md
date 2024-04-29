@@ -20,20 +20,18 @@ Microsoft Entra ID enables integration with many synchronization protocols. The 
 
 The following table presents Microsoft Entra integration with synchronization patterns and their capabilities. Select the name of a pattern to see
 
-* A detailed description
+- A detailed description
 
-* When to use it
+- When to use it
 
-* Architectural diagram
+- Architectural diagram
 
-* Explanation of system components
+- Explanation of system components
 
-* Links for how to implement the integration
-
-
+- Links for how to implement the integration
 
 | Synchronization pattern| Directory synchronization| User provisioning |
 | - | - | - |
 | [Directory synchronization](sync-directory.md)| ![check mark](./media/authentication-patterns/check.png)|  |
 | [LDAP Synchronization](sync-ldap.md)| ![check mark](./media/authentication-patterns/check.png)|  |
-| [SCIM synchronization](sync-scim.md)| ![check mark](./media/authentication-patterns/check.png)| ![check mark](./media/authentication-patterns/check.png) |
+| [System for Cross-Domain Identity Management (SCIM) synchronization](sync-scim.md)| ![check mark](./media/authentication-patterns/check.png)| ![check mark](./media/authentication-patterns/check.png) |

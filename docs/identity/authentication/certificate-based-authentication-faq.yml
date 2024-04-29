@@ -62,6 +62,19 @@ sections:
           No, CDP supports only HTTP URLs.
 
       - question: |
+          How do I find the CRL for a Certificate Authority or how do I troubleshoot the error AADSTS2205015: The Certificate Revocation List (CRL) failed signature validation?
+        answer: |
+          Please download the CRL and compare the CA certificate and the CRL information to validate the crlDistributionPoint value is valid for the CA you want to add. You can configure the CRL to the corresponding CA by matching CA's Issuer SKI to the AKI of the CRL (CA Issuer SKI == CRL AKI)
+          The following table and graphic show how to map information from the CA certificate to the attributes of the downloaded CRL.
+
+          | CA Certificate Info |= |Downloaded CRL Info|
+          |----|:-:|----|
+          |Subject |=|Issuer |
+          |Subject Key Identifier |=|Authority Key Identifier (KeyID) |
+
+          :::image type="content" border="false" source="./media/how-to-certificate-based-authentication/certificate-crl-compare.png" alt-text="Screenshot comparing CA Certificate with CRL Information.":::
+      
+      - question: |
           How do I validate the Certificate Authority configuration?
         answer: |
           It's important to ensure that the Certificate Authority configuration in the trust store result is Microsoft Entra ID ability to both validate the certificate authority trust chain and successfully acquire the certificate 

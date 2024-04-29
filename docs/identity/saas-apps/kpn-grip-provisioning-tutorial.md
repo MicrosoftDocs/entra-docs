@@ -14,6 +14,8 @@ ms.subservice: saas-apps
 ms.topic: article
 ms.date: 11/21/2022
 ms.author: Thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to KPN Grip so that I can streamline the user management process and ensure that users have the appropriate access to KPN Grip.
 ---
 
 # Tutorial: Configure KPN Grip for automatic user provisioning

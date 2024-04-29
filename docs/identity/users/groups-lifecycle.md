@@ -51,7 +51,7 @@ In the preceding scenarios, the group is automatically renewed around 35 days be
 Now consider an expiration policy that was set so that a group expires after 30 days of inactivity. To keep from sending an expiration email the day that group expiration is enabled (because there's no record activity yet), Microsoft Entra first waits five days. Then:
 
 - If there's activity in those five days, the expiration policy works as expected.
-- If there's no activity within five days, Microsoft Entra sends an expiration or renewal email.
+- If there's no activity within five days, Microsoft Entra ID sends an expiration or renewal email.
 - If the group was inactive for five days, an email was sent, and then the group was active, Microsoft Entra autorenews it and starts the expiration period again.
 
 ### Activities that automatically renew group expiration
@@ -210,7 +210,7 @@ You can use the following cmdlets to configure the policy in more detail. For mo
 For more information on Microsoft Entra groups, see:
 
 - [Existing groups](~/fundamentals/groups-view-azure-portal.md)
-- [Manage settings of a group](~/fundamentals/how-to-manage-groups.md)
-- [Manage members of a group](~/fundamentals/how-to-manage-groups.md)
-- [Manage memberships of a group](~/fundamentals/how-to-manage-groups.md)
+- [Manage settings of a group](~/fundamentals/how-to-manage-groups.yml)
+- [Manage members of a group](~/fundamentals/how-to-manage-groups.yml)
+- [Manage memberships of a group](~/fundamentals/how-to-manage-groups.yml)
 - [Manage dynamic rules for users in a group](groups-dynamic-membership.md)

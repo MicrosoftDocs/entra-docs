@@ -29,7 +29,7 @@ Helping our customers design and architect new solutions is core to the Microsof
 - Don't crop, flip, or rotate icons.
 - Don't distort or change the icon shape in any way.
 - Don't use Microsoft product icons to represent your product or service.
-- Don't use Microsoft product icons in marketing communications.
+- Don't use Microsoft product icons in Marketing communications.
 
 ## Icon updates
 
@@ -40,10 +40,10 @@ Helping our customers design and architect new solutions is core to the Microsof
 
 ## Icon terms
 
-Microsoft permits the use of these icons in architectural diagrams, training materials, or documentation. You may copy, distribute, and display the icons only for the permitted use unless granted explicit permission by Microsoft. Microsoft reserves all other rights.
+Microsoft permits the use of these icons in architectural diagrams, training materials, or documentation. You might copy, distribute, and display the icons only for the permitted use unless granted explicit permission by Microsoft. Microsoft reserves all other rights.
 
  > [!div class="button"]
- > [I agree to the above terms. Download icons.](https://download.microsoft.com/download/3/1/a/31a56038-856a-4489-88e4-ee5a1c4352be/Microsoft%20Entra%20architecture%20icons%20-%20Oct%202023.zip?wt.mc_id=microsoftentraicons_downloadmicrosoftentraicons_content_cnl_csasci)
+ > [I agree to the above terms. Download icons](https://download.microsoft.com/download/3/1/a/31a56038-856a-4489-88e4-ee5a1c4352be/Microsoft%20Entra%20architecture%20icons%20-%20Oct%202023.zip?wt.mc_id=microsoftentraicons_downloadmicrosoftentraicons_content_cnl_csasci).
 
 ## More icon sets from Microsoft
 

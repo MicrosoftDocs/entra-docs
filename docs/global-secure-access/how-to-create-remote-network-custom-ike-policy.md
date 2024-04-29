@@ -1,12 +1,14 @@
 ---
-title: How to create a remote network with a custom IKE policy for Global Secure Access (preview)
-description: Learn how to create a remote network with a custom IKE policy for Global Secure Access (preview).
-author: shlipsey3
-ms.author: sarahlipsey
+title: How to create a remote network with a custom IKE policy
+description: Learn how to set up the bidirectional communication tunnel between Global Secure Access (preview) and your router.
+author: kenwith
+ms.author: kenwith
 manager: amycolannino
 ms.topic: how-to
-ms.date: 10/05/2023
+ms.date: 03/22/2024
 ms.service: global-secure-access
+
+# Customer intent: As an IT admin, I need to be able to create a custom IKE policy to set up the communication tunnel with Global Secure Access.
 ---
 # Create a remote network with a custom IKE policy for Global Secure Access (preview)
 
@@ -57,9 +59,10 @@ There are several details to enter on the General tab. Pay close attention to th
     - **Local BGP address**: Enter a BGP IP address that is *not* part of your on-premises network where your CPE resides.
         - For example, if your on-premises network is 10.1.0.0/16, then you can use 10.2.0.4 as your Local BGP address.
         - This address is entered as the *peer* BGP​​ IP address on your CPE.
+        - Refer to the [valid BGP addresses](reference-remote-network-configurations.md#valid-bgp-addresses) list for reserved values that can't be used.
     - **Link ASN**: Provide the autonomous system number (ASN) of the CPE.
         - A BGP-enabled connection between two network gateways requires that they have different ASNs.
-        - For more information, see the **Valid ASNs** section of the [Remote network configurations](reference-remote-network-configurations.md#valid-autonomous-system-number-asn) article.
+    - Refer to the [valid ASN values](reference-remote-network-configurations.md#valid-asn) list for reserved values that can't be used.
     - **Redundancy**: Select either *No redundancy* or *Zone redundancy* for your IPSec tunnel.
     - **Zone redundant local BGP address**: This optional field shows up only when you select **Zone redundancy**.
         - Enter a BGP IP address that is *not* part of your on-premises network where your CPE resides *and* is different from **Local BGP address**.

@@ -4,8 +4,8 @@ description: This article describes how to troubleshoot problems that might aris
 author: billmath
 ms.author: billmath
 manager: amycolannino
-ms.date: 11/06/2023
-ms.topic: how-to
+ms.date: 04/26/2024
+ms.topic: troubleshooting
 ms.service: entra-id
 ms.subservice: hybrid-cloud-sync
 ---
@@ -37,7 +37,7 @@ To verify that Azure detects the agent, and that the agent is healthy, follow th
 
 ### Verify the required open ports
 
-Verify that the Microsoft Entra Provisioning Agent is able to communicate successfully with Azure datacenters. If there's a firewall in the path, make sure that the following ports to outbound traffic are open:
+Verify that the Microsoft Entra provisioning agent is able to communicate successfully with Azure datacenters. If there's a firewall in the path, make sure that the following ports to outbound traffic are open:
 
 | Port number | How it's used |
 | ----------- | ------------------------------------------------------------ |
@@ -60,13 +60,13 @@ Allow access to the following URLs:
 You can allow connections to `*.msappproxy.net`, `*.servicebus.windows.net`, and other of the preceding URLs, if your firewall or proxy lets you configure access rules based on domain suffixes. If not, you need to allow access to the [Azure IP ranges and service tags - public cloud](https://www.microsoft.com/download/details.aspx?id=56519). The IP ranges are updated each week.
 
 > [!IMPORTANT]
-> Avoid all forms of inline inspection and termination on outbound TLS communications between Microsoft Entra application proxy connectors and Microsoft Entra application proxy cloud services.
+> Avoid all forms of inline inspection and termination on outbound TLS communications between Microsoft Entra private network connectors and Microsoft Entra application proxy cloud services.
 
 <a name='dns-name-resolution-for-azure-ad-application-proxy-endpoints'></a>
 
 ### DNS name resolution for Microsoft Entra application proxy endpoints
 
-Public DNS records for Microsoft Entra application proxy endpoints are chained CNAME records, pointing to an A record. This ensures fault tolerance and flexibility. It’s guaranteed that the Microsoft Entra application proxy connector always accesses host names with the domain suffixes `*.msappproxy.net` or `*.servicebus.windows.net`.
+Public DNS records for Microsoft Entra application proxy endpoints are chained CNAME records, pointing to an A record. This ensures fault tolerance and flexibility. It’s guaranteed that the Microsoft Entra private network connector always accesses host names with the domain suffixes `*.msappproxy.net` or `*.servicebus.windows.net`.
 
 However, during the name resolution, the CNAME records might contain DNS records with different host names and suffixes. Due to this, you must ensure that the device can resolve all the records in the chain, and allows connection to the resolved IP addresses. Because the DNS records in the chain might be changed from time to time, we can't provide you with any list DNS records.
 
@@ -171,9 +171,11 @@ By default, the scoping rules exclude the following objects from being synchroni
 
 Additional restrictions can be present in the [synchronization schema](concept-attributes.md).
 
-#### Microsoft Entra ID object deletion threshold
+<a name='microsoft-entra-id-object-deletion-threshold'></a>
 
-If you have an implementation topology with Microsoft Entra Connect and Microsoft Entra Cloud Sync, both exporting to the same Microsoft Entra ID Tenant, or if you completely moved from using Microsoft Entra Connect to Microsoft Entra Cloud Sync, you might get the following export error message when you're deleting or moving multiple objects out of the defined scope:
+#### Microsoft Entra object deletion threshold
+
+If you have an implementation topology with Microsoft Entra Connect and Microsoft Entra Cloud Sync, both exporting to the same Microsoft Entra tenant, or if you completely moved from using Microsoft Entra Connect to Microsoft Entra Cloud Sync, you might get the following export error message when you're deleting or moving multiple objects out of the defined scope:
 
 ![Screenshot that shows the export error.](media/how-to-troubleshoot/log-4.png)
 
@@ -184,7 +186,7 @@ If you don't have a Microsoft Entra Connect server installed from which you coul
 Disable-AADCloudSyncToolsDirSyncAccidentalDeletionPrevention -tenantId "340ab039-c6b1-48a5-9ba7-28fe88f83980"
 ```
 
-During the next provisioning cycle, the objects that were marked for deletion should be deleted from the Azure AD directory successfully.
+During the next provisioning cycle, the objects that were marked for deletion should be deleted from the Microsoft Entra directory successfully.
 
 ## Provisioning quarantined problems
 

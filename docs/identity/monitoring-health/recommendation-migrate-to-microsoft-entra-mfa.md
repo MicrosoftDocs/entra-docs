@@ -4,7 +4,7 @@ description: Learn about the Microsoft Entra recommendation to migrate to Micros
 author: shlipsey3
 manager: amycolannino
 ms.service: entra-id
-ms.topic: reference
+ms.topic: how-to
 ms.subservice: monitoring-health
 ms.date: 01/19/2024
 ms.author: sarahlipsey

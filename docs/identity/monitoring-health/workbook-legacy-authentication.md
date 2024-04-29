@@ -1,16 +1,17 @@
 ---
-
-title: Sign-ins using legacy authentication workbook in Microsoft Entra ID
-description: Learn how to use the sign-ins using legacy authentication workbook.
+title: Sign-ins using legacy authentication workbook
+description: Learn how to use the sign-ins using legacy authentication workbook in Microsoft Entra ID to identify apps using legacy methods.
 
 author: shlipsey3
 manager: amycolannino
 ms.service: entra-id
-ms.topic: reference
+ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 10/03/2023
+ms.date: 03/05/2024
 ms.author: sarahlipsey
 ms.reviewer: besiler
+
+#Customer intent: As an IT admin, I need to use the sign-ins using legacy authentication workbook to determine whether it's safe to turn off legacy authentication in my tenant so I can improve the security of my Microsoft Entra tenant and experience of my users.
 ---
 
 # Sign-ins using legacy authentication workbook
@@ -18,6 +19,10 @@ ms.reviewer: besiler
 Have you ever wondered how you can determine whether it's safe to turn off legacy authentication in your tenant? The sign-ins using legacy authentication workbook helps you to answer this question.
 
 This article gives you an overview of the **Sign-ins using legacy authentication** workbook.
+
+## Prerequisites
+
+[!INCLUDE [workbook prerequisites](../../includes/workbook-prerequisites.md)]
 
 ## Description
 
@@ -45,10 +50,13 @@ The **Sign-ins using legacy authentication** workbook lets you see all legacy au
 
 ## How to access the workbook
 
-[!INCLUDE [how to access workbooks](~/includes/how-to-access-workbooks.md)]
-3. Select the **Sign-ins using legacy authentication** workbook from the **Usage** section.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) using the appropriate combination of roles.
 
-## Sections
+1. Browse to **Identity** > **Monitoring & health** > **Workbooks**.
+
+1. Select the **Sign-ins using legacy authentication** workbook from the **Usage** section.
+
+## Workbook sections
 
 With this workbook, you can distinguish between interactive and non-interactive sign-ins. This workbook highlights which legacy authentication protocols are used throughout your tenant. 
 

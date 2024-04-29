@@ -30,7 +30,7 @@ Your code can use a managed identity to request access tokens for services that 
 
 The following diagram shows how managed service identities work with Azure virtual machines (VMs):
 
-[![Diagram that shows how managed service identities are associated with Azure virtual machines, get an access token, and invoked a protected Microsoft Entra resource.](media/how-managed-identities-work-vm/data-flow.png)](media/how-managed-identities-work-vm/data-flow.png#lightbox)
+:::image type="content" source="media/how-managed-identities-work-vm/data-flow.png" alt-text="Diagram that shows how managed service identities are associated with Azure virtual machines, get an access token, and invoked a protected Microsoft Entra resource.":::
 
 The following table shows the differences between the system-assigned and user-assigned managed identities:
 
@@ -82,7 +82,7 @@ The following table shows the differences between the system-assigned and user-a
     - The resource parameter specifies the service to which the token is sent. To authenticate to Azure Resource Manager, use `resource=https://management.azure.com/`.
     - The `client_id` parameter specifies the identity for which the token is requested. This value is required for disambiguation when more than one user-assigned identity is on a single VM. You can find the **Client ID** in the Managed Identity **Overview**:
 
-        [![Screenshot that shows how to copy the managed identity client ID.](./media/how-managed-identities-work-vm/managed-identity-client-id.png)](./media/how-managed-identities-work-vm/managed-identity-client-id.png#lightbox)
+        :::image type="content" source="./media/how-managed-identities-work-vm/managed-identity-client-id.png" alt-text="Screenshot that shows how to copy the managed identity client ID.":::
 
     - The API version parameter specifies the Azure Instance Metadata Service version. Use `api-version=2018-02-01` or higher.
 

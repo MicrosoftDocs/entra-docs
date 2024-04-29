@@ -7,7 +7,7 @@ manager: CelesteDG
 ms.service: entra-id
 ms.subservice: enterprise-apps
 
-ms.topic: reference
+ms.topic: faq
 ms.date: 03/03/2023
 ms.author: jomondi
 ms.reviewer: sureshja, saumadan
@@ -26,7 +26,7 @@ You can export all app registrations with expiring secrets, certificates and the
 
 ## Where can I find the information about soon to expire certificates renewal steps?
 
-You can find the steps [here](./tutorial-manage-certificates-for-federated-single-sign-on.md#renew-a-certificate-that-will-soon-expire).
+You can find the steps [here](./tutorial-manage-certificates-for-federated-single-sign-on.md#renew-a-certificate-that-is-set-to-expire-soon).
 
 <a name='how-can-i-customize-the-expiration-date-for-the-certificates-issued-by-azure-ad'></a>
 

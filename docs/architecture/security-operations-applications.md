@@ -170,7 +170,7 @@ There are several flows in the  OAuth 2.0 protocol. The recommended flow for an 
 
 The only scenario where ROPC is suggested is for automated application testing. See [Run automated integration tests](~/identity-platform/test-automate-integration-testing.md) for details.  
 
-Device code flow is another OAuth 2.0 protocol flow for input-constrained devices and isn't used in all environments. When device code flow appears in the environment, and isn't used in an input constrained device scenario. More investigation is warranted for a misconfigured application or potentially something malicious.
+Device code flow is another OAuth 2.0 protocol flow for input-constrained devices and isn't used in all environments. When device code flow appears in the environment, and isn't used in an input constrained device scenario. More investigation is warranted for a misconfigured application or potentially something malicious. Device code flow can also be blocked or allowed in Conditional Access. See [Conditional Access authentication flows](../identity/conditional-access/concept-authentication-flows.md#device-code-flow) for details.
 
 Monitor application authentication using the following formation:
 

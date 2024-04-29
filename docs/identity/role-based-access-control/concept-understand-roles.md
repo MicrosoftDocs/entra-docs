@@ -6,7 +6,7 @@ author: rolyon
 manager: amycolannino
 ms.service: entra-id
 ms.subservice: role-based-access-control
-ms.topic: overview
+ms.topic: conceptual
 ms.date: 04/22/2022
 ms.author: rolyon
 ms.reviewer: vincesm
@@ -70,5 +70,5 @@ Service-specific roles | Azure DevOps Administrator<br>Azure Information Protect
 ## Next steps
 
 - [Overview of Microsoft Entra role-based access control](custom-overview.md)
-- [Create and assign a custom role in Microsoft Entra ID](custom-create.md)
+- [Create and assign a custom role in Microsoft Entra ID](custom-create.yml)
 - [List role assignments](view-assignments.md)

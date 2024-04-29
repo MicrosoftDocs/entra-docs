@@ -1,23 +1,26 @@
 ---
-
-title: Authentication prompts analysis workbook in Microsoft Entra ID
-description: Learn how to use the authentication prompts analysis workbook.
+title: Authentication prompts analysis workbook
+description: Learn how to use the authentication prompts analysis workbook in Microsoft Entra ID to investigate users getting too many MFA prompts.
 
 author: shlipsey3
 manager: amycolannino
 ms.service: entra-id
-ms.topic: reference
+ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 10/03/2023
+ms.date: 03/05/2024
 ms.author: sarahlipsey
 ms.reviewer: sarbar
+
+#Customer intent: As an IT admin, I need to use the Authentication prompts analysis workbook to investigate why users are getting too many authentication prompts so I can improve their experience and make sure MFA is working properly.
 ---
 
 # Authentication prompts analysis workbook
 
-As an IT Pro, you want the right information about authentication prompts in your environment so that you can detect unexpected prompts and investigate further. Providing you with this type of information is the goal of the **Authentication Prompts Analysis** workbook. 
+As an IT Pro, you want the right information about authentication prompts in your environment so you can detect unexpected prompts and investigate further. Providing you with this type of information is the goal of the **Authentication Prompts Analysis** workbook. 
 
-This article provides you with an overview of **Authentication Prompts Analysis** workbook.
+## Prerequisites
+
+[!INCLUDE [workbook prerequisites](../../includes/workbook-prerequisites.md)]
 
 ## Description
 
@@ -25,7 +28,7 @@ This article provides you with an overview of **Authentication Prompts Analysis*
 
 Have you recently heard of complaints from your users about getting too many authentication prompts?
 
-Overprompting users can affect your user's productivity and often leads users getting phished for MFA. To be clear, MFA is essential! We aren't talking about if you should require MFA but how frequently you should prompt your users.
+Overprompting users can affect your user's productivity and often leads users getting phished for MFA. To be clear, MFA is essential! We aren't talking about *if* you should require MFA but *how frequently you should prompt your users*.
 
 Typically, this scenario is caused by:
 
@@ -44,10 +47,13 @@ You can use this workbook in the following scenarios:
 
 ## How to access the workbook
 
-[!INCLUDE [how to access workbooks](~/includes/how-to-access-workbooks.md)]
-3. Select the **Authentication Prompts Analysis** workbook from the **Usage** section.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) using the appropriate combination of roles.
 
-## Sections
+1. Browse to **Identity** > **Monitoring & health** > **Workbooks**.
+
+1. Select the **Authentication Prompts Analysis** workbook from the **Usage** section.
+
+## Workbook sections
 
 This workbook breaks down authentication prompts by: 
 

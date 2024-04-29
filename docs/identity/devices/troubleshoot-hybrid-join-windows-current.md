@@ -5,7 +5,7 @@ description: This article helps you troubleshoot Microsoft Entra hybrid joined W
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: troubleshooting
-ms.date: 01/30/2024
+ms.date: 02/26/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -417,7 +417,9 @@ The "Attempt Status" field under the "AzureAdPrt" field provides the status of t
 
 Use Event Viewer to look for the log entries logged by the Microsoft Entra CloudAP plug-in during PRT acquisition. 
 
-1. In Event Viewer, open the Microsoft Entra Operational event logs. They're stored under **Applications and Services Log** > **Microsoft** > **Windows** > **Microsoft Entra ID**. 
+<!-- docutune:disable -->
+1. In Event Viewer, open the Microsoft Entra Operational event logs. They're stored under **Applications and Services Log** > **Microsoft** > **Windows** > **AAD**. 
+<!-- docutune:enable -->
 
    > [!NOTE]
    > The CloudAP plug-in logs error events in the operational logs, and it logs the info events in the analytics logs. The analytics and operational log events are both required to troubleshoot issues. 
@@ -443,7 +445,7 @@ Use Event Viewer to look for the log entries logged by the Microsoft Entra Cloud
 | **AAD_CLOUDAP_E_HTTP_CERTIFICATE_URI_IS_EMPTY** (-1073445748/ 0xc004848C) | The MEX endpoint is incorrectly configured. The MEX response doesn't contain any certificate endpoint URLs. | <li>Ensure that the network proxy isn't interfering with and modifying the server response.<li>Fix the MEX configuration in the identity provider to return valid certificate URLs in response. |
 | **WC_E_DTDPROHIBITED** (-1072894385/ 0xc00cee4f) | The XML response, from the WS-Trust endpoint, included a Document Type Definition (DTD). A DTD isn't expected in XML responses, and parsing the response fails if a DTD is included.<br>**Note**: WS-Trust is required for federated authentication. | <li>Fix the configuration in the identity provider to avoid sending a DTD in the XML response.<li>Event 1022 (Microsoft Entra analytics logs) contains the URL that's being accessed that's returning an XML response with a DTD. |
 
-**Common server error codes:**
+#### Common server error codes
 
 | Error code | Reason | Resolution |
 | --- | --- | --- |
@@ -451,7 +453,7 @@ Use Event Viewer to look for the log entries logged by the Microsoft Entra Cloud
 | **AADSTS50034: The user account `Account` does not exist in the `tenant id` directory** | Microsoft Entra ID is unable to find the user account in the tenant. | <li>Ensure that the user is typing the correct UPN.<li>Ensure that the on-premises user account is being synced with Microsoft Entra ID.<li>Event 1144 (Microsoft Entra analytics logs) contains the UPN provided. |
 | **AADSTS50126: Error validating credentials due to invalid username or password.** | <li>The username and password entered by the user in the Windows LoginUI are incorrect.<li>If the tenant has password hash sync enabled, the device is hybrid-joined, and the user just changed the password, it's likely that the new password hasn't synced with Microsoft Entra ID. | To acquire a fresh PRT with the new credentials, wait for the Microsoft Entra password sync to finish. |
 
-**Common network error codes**:
+#### Common network error codes
 
 | Error code | Reason | Resolution |
 | --- | --- | --- |
@@ -459,7 +461,7 @@ Use Event Viewer to look for the log entries logged by the Microsoft Entra Cloud
 
 ### Step 4: Collect logs
 
-**Regular logs**
+#### Regular logs
 
 1. Go to https://aka.ms/icesdptool to automatically download a *.cab* file containing the Diagnostic tool.
 1. Run the tool and repro your scenario.
@@ -468,7 +470,7 @@ Use Event Viewer to look for the log entries logged by the Microsoft Entra Cloud
 1. Finally, open the folder where all the collected logs are stored, such as *%LOCALAPPDATA%\ElevatedDiagnostics\numbers*.
 1. Contact Support with contents of the latest *.cab* file.
 
-**Network traces**
+#### Network traces
 
 > [!NOTE]
 > When you're collecting network traces, it's important to *not* use Fiddler during repro.
@@ -478,12 +480,11 @@ Use Event Viewer to look for the log entries logged by the Microsoft Entra Cloud
 1. Run `netsh trace stop`.
 1. Share the *nettrace.cab* file with Support.
 
----
-
 ## Known issues
-- If you're connected to a mobile hotspot or an external Wi-Fi network and you go to **Settings** > **Accounts** > **Access Work or School**, Microsoft Entra hybrid joined devices might show two different accounts, one for Microsoft Entra ID and one for on-premises AD. This UI issue doesn't affect functionality.
 
-## Next steps
+If you're connected to a mobile hotspot or an external Wi-Fi network and you go to **Settings** > **Accounts** > **Access Work or School**, Microsoft Entra hybrid joined devices might show two different accounts, one for Microsoft Entra ID and one for on-premises AD. This UI issue doesn't affect functionality.
+
+## Related content
 
 - [Troubleshoot devices by using the `dsregcmd` command](troubleshoot-device-dsregcmd.md).
 - Go to the [Microsoft Error Lookup Tool](/windows/win32/debug/system-error-code-lookup-tool).

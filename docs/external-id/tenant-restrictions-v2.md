@@ -361,7 +361,7 @@ For non-Windows platforms, you can break and inspect traffic to add the tenant r
 
 - [Conditional Access: Only allow use of managed/compliant devices](/mem/intune/protect/conditional-access-intune-common-ways-use#device-based-conditional-access)
 - [Conditional Access: Manage access for guest/external users](/microsoft-365/security/office-365-security/identity-access-policies-guest-access)
-- [B2B Collaboration: Restrict outbound rules by Cross-tenant access for the same tenants listed in the parameter "Restrict-Access-To-Tenants"](~/external-id/cross-tenant-access-settings-b2b-collaboration.md)
+- [B2B Collaboration: Restrict outbound rules by Cross-tenant access for the same tenants listed in the parameter "Restrict-Access-To-Tenants"](~/external-id/cross-tenant-access-settings-b2b-collaboration.yml)
 - [B2B Collaboration: Restrict invitations to B2B users to the same domains listed in the "Restrict-Access-To-Tenants" parameter](~/external-id/allow-deny-list.md)
 - [Application management: Restrict how users consent to applications](~/identity/enterprise-apps/configure-user-consent.md)
 - [Intune: Apply App Policy through Intune to restrict usage of managed apps to only the UPN of the account that enrolled the device](/mem/intune/apps/app-configuration-policies-use-android) (under **Allow only configured organization accounts in apps**)
@@ -433,6 +433,13 @@ View events related to tenant restrictions in Event Viewer.
 
 1. In Event Viewer, open **Applications and Services Logs**.
 1. Navigate to **Microsoft** > **Windows** > **TenantRestrictions** > **Operational** and look for events.  
+
+## Tenant restrictions and Data plane support (preview)
+Trv2 is enforced by the following resources which will address token infiltration scenarios where a bad actor accesses the resource directly with a infiltrated token or annonymously.
+- Teams
+- SharePoint Online like OneDrive app
+- Exchange Online like Outlook app
+- Office.com / Office Apps
 
 ## Tenant restrictions and Microsoft Teams (preview)
 

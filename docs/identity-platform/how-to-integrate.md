@@ -9,7 +9,7 @@ ms.date: 10/01/2020
 ms.reviewer: jmprieur
 ms.service: identity-platform
 
-ms.topic: conceptual
+ms.topic: concept-article
 #Customer intent: As a developer, I want to integrate my application with the Microsoft identity platform, so that I can provide my users with a streamlined sign-in experience and conform to IT policies.
 ---
 

@@ -12,6 +12,8 @@ ms.subservice: saas-apps
 ms.topic: tutorial
 ms.date: 03/31/2023
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to uniFlow Online so that I can streamline the user management process and ensure that users have the appropriate access to uniFlow Online.
 ---
 
 # Tutorial: Configure uniFlow Online for automatic user provisioning

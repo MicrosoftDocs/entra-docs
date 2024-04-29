@@ -6,7 +6,7 @@ description: Learn how admins can create custom authentication strengths with ad
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/12/2024
+ms.date: 03/25/2024
 
 ms.author: justinha
 author: inbarckms
@@ -80,7 +80,7 @@ The next sections show how to configure advanced options for CBA by using the Mi
 To create a new Conditional Access authentication strength policy with certificate combinationConfiguration:
 
 ```json
-POST  /beta/identity/conditionalAccess/authenticationStrengths/policies
+POST  /beta/identity/conditionalAccess/authenticationStrength/policies
 {
     "displayName": "CBA Restriction",
     "description": "CBA Restriction with both IssuerSki and OIDs",

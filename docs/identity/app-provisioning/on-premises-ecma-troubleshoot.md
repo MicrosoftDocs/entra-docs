@@ -5,7 +5,7 @@ description: Describes how to troubleshoot various issues you might encounter wh
 author: billmath
 manager: amycolannino
 ms.service: entra-id
-ms.topic: overview
+ms.topic: troubleshooting
 ms.date: 02/13/2024
 ms.subservice: hybrid
 ms.author: billmath

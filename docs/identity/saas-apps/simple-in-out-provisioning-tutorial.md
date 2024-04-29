@@ -12,6 +12,8 @@ ms.subservice: saas-apps
 ms.topic: tutorial
 ms.date: 10/27/2023
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Simple In/Out so that I can streamline the user management process and ensure that users have the appropriate access to Simple In/Out.
 ---
 
 # Tutorial: Configure Simple In/Out for automatic user provisioning
@@ -53,7 +55,7 @@ Any one of your Simple In/Out administrator-level users can configure Single Sig
 1. Click **Reveal** on your Recovery Key and store this entire key in a safe place. **IMPORTANT!** If you are ever locked out of your Microsoft accounts and need to disconnect SSO without access, you'll be required to relay the Recovery Key to Simple In/Out technical support.
 1. Click **Reveal** on your Bearer Token and make note of it. You'll need this for Step 5.6.
 
-* When a new user is provisioned from Azure Entra to Simple In/Out, Simple In/Out will set that user's role to the default role for your organization. This role will govern the user's permissions inside Simple In/Out. For existing users that may be converted to SSO, Simple In/Out will maintain their existing role.
+* When a new user is provisioned from Microsoft Entra ID to Simple In/Out, Simple In/Out will set that user's role to the default role for your organization. This role will govern the user's permissions inside Simple In/Out. For existing users that may be converted to SSO, Simple In/Out will maintain their existing role.
 
 * After users are provisioned to Simple In/Out, any administrator-level user can edit a user's role. This is done by clicking on a user on the Simple In/Out board, then clicking the **Edit User** button that appears in the user's profile dialog.
 
