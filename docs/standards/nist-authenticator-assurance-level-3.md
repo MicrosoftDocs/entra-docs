@@ -79,7 +79,7 @@ Authenticators are required to be:
 
 FIDO 2 security keys, smart cards, and Windows Hello for Business can help you meet these requirements.
 
-* FIDO2 key providers are in FIPS certification. We recommend you review the list of [supported FIDO2 key vendors](~/identity/authentication/concept-authentication-passwordless.md#fido2-security-key-providers). Consult with your provider for current FIPS validation status.
+* FIDO2 key providers are in FIPS certification. We recommend you review the list of [supported FIDO2 key vendors](~/identity/authentication/concept-authentication-passwordless.md). Consult with your provider for current FIPS validation status.
 
 * Smart cards are a proven technology. Multiple vendor products meet FIPS requirements.
 

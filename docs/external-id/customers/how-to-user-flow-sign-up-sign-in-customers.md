@@ -1,6 +1,6 @@
 ---
 title: Create a sign-up and sign-in user flow
-description: Learn how to create a sign-up and sign-in user flow for your customer-facing app. The user flow determines sign-in experience for my customer users.
+description: Learn how to create a sign-up and sign-in user flow for your consumer and business customer apps. The user flow determines sign-in experience for my customer users.
  
 author: msmimart
 manager: celestedg

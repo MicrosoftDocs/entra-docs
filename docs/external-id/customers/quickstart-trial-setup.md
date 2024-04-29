@@ -14,9 +14,9 @@ ms.custom: it-pro
 
 #Customer intent: As a dev, devops, or IT admin, I want to set up the external tenant free trial.
 ---
-# Quickstart: Get started with Microsoft Entra External ID for external-facing apps (preview)
+# Quickstart: Get started with Microsoft Entra External ID in external tenants (preview)
 
-Get started with Microsoft Entra External ID for external-facing apps (Preview), which lets you create secure, customized sign-in experiences for your customer-facing apps and services. With these built-in external configuration features, Microsoft Entra External ID can serve as the identity provider and access management service for your customers.
+Get started with Microsoft External ID for consumer and business customer apps (Preview), which lets you create secure, customized sign-in experiences for your apps and services. With these built-in external configuration features, Microsoft Entra External ID can serve as the identity provider and access management service for your customers.
 
 In this quickstart, you'll learn how to set up an external tenant free trial. If you're a developer using Visual Studio Code, you can also set up a free trial through the Microsoft Entra External ID extension ([learn more](visual-studio-code-extension.md)). If you already have an Azure subscription, you can create a tenant with external configurations in the Microsoft Entra admin center. For more information about how to create a tenant, see [Set up a tenant](quickstart-tenant-setup.md).
 
