@@ -1,13 +1,8 @@
 items:  
-- name: External ID for external-facing apps documentation
-  href: index.yml  
-- name: Overview  
-  expanded: true  
+- name: Overview
   items:   
-    - name: External ID for external-facing apps  
-      href: overview-customers-ciam.md 
-    - name: Demo overview
-      href: overview-solutions-customers.md
+    - name: External ID in external tenants
+      href: overview-customers-ciam.md
     - name: What's new in docs?
       href: whats-new-docs.md
 - name: Quickstarts
@@ -290,10 +285,12 @@ items:
               href: tutorial-cli-app-node-sign-in-sign-out.md
 - name: Concepts
   items: 
-    - name: Planning for customer identity and access
+    - name: Planning guide
       href: concept-planning-your-solution.md
     - name: Supported features in external tenants
       href: concept-supported-features-customers.md
+    - name: Woodgrove demo overview
+      href: overview-solutions-customers.md
     - name: User profile attributes
       href: concept-user-attributes.md
     - name: Authentication methods and identity providers
@@ -312,7 +309,7 @@ items:
       href: concept-branding-customers.md
     - name: Get started guide features explained
       href: concept-guide-explained.md
-    - name: Add your own business logic
+    - name: Adding your own business logic
       href: concept-custom-extensions.md
     - name: Security and governance
       href: concept-security-customers.md
@@ -421,6 +418,8 @@ items:
           href: azure-rest-api-operations-tenant-management.md 
 - name: Reference
   items:
+    - name: What's new in docs?
+      href: whats-new-docs.md
     - name: Default user permissions
       href: reference-user-permissions.md
     - name: Group and application roles support
