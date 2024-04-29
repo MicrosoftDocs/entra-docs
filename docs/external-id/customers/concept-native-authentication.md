@@ -7,7 +7,7 @@ manager: celestedg
 ms.service: entra-external-id 
 ms.subservice: customers
 ms.topic: concept-article
-ms.date:  03/08/2024
+ms.date:  04/08/2024
 ms.author: cmulligan
 
 #Customer intent: As a developer, devops, I want to learn more how to host the user interface (UI) within the client app by using native authentication so that I can take greater control over the UI and experience of my customer apps.
@@ -26,7 +26,7 @@ While browser-delegated authentication offers benefits such as reduced attack ve
 
 Currently, native authentication supports local account identity provider for two authentications methods: 
 
-- Email with one-time passcode sign-in (OTP).
+- Email with one-time passcode (OTP) sign-in.
 - Email and password sign-in with support for self-service password reset (SSPR). 
 
 Native authentication doesn't yet support federated identity providers such as social or enterprise identities. 
@@ -68,7 +68,7 @@ The following table shows the availability of features for browser-delegated and
 
 ## How to use native authentication
 
-You can build your customer-facing apps that use native authentication by using our native authentication APIs or the Microsoft Authentication Library (MSAL) SDK for Android and iOS. Whenever possible, we recommend using MSAL to add native authentication to your apps. 
+You can build apps that use native authentication by using our native authentication APIs or the Microsoft Authentication Library (MSAL) SDK for Android and iOS. Whenever possible, we recommend using MSAL to add native authentication to your apps. 
 
 For more information on native authentication samples and tutorials, see the following table.
 

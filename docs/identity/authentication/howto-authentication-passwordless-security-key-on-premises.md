@@ -5,7 +5,7 @@ description: Learn how to enable passwordless security key sign-in to on-premise
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 04/10/2024
+ms.date: 04/28/2024
 
 ms.author: justinha
 author: justinha
@@ -35,7 +35,7 @@ A Microsoft Entra Kerberos server object is created in your on-premises Active D
 
 ## Prerequisites
 
-Before you begin the procedures in this article, your organization must complete the instructions in [Enable passwordless security key sign-in to Windows 10 devices](howto-authentication-passwordless-security-key.md).
+Before you begin the procedures in this article, your organization must complete the instructions in [Enable passkeys (FIDO2) for your organization](howto-authentication-passwordless-security-key.md).
 
 You must also meet the following system requirements:
 
@@ -235,7 +235,7 @@ This command outputs the properties of the Microsoft Entra Kerberos server. You 
 | CloudDomainDnsName | The *DomainDnsName* from the Microsoft Entra object. Must match the *DomainDnsName* from the second line of the table. |
 | CloudKeyVersion | The *KeyVersion* from the Microsoft Entra object. Must match the *KeyVersion* from the fifth line of the table. |
 | CloudKeyUpdatedOn | The *KeyUpdatedOn* from the Microsoft Entra object. Must match the *KeyUpdatedOn* from the sixth line of the table. |
-| | |
+
 
 <a name='rotate-the-azure-ad-kerberos-server-key'></a>
 
@@ -303,7 +303,7 @@ We are working on this capability for the general availability (GA) release of t
 
 ### Where can I go to find compliant security keys?
 
-For information about compliant security keys, see [FIDO2 security keys](concept-authentication-passwordless.md#fido2-security-key-providers).
+For information about compliant security keys, see [FIDO2 security keys](concept-authentication-passwordless.md).
 
 ### What can I do if I lose my security key?
 
