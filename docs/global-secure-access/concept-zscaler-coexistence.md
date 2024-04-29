@@ -29,12 +29,12 @@ This document contains steps to deploy the two solutions side by side. Specifica
 
 Two configurations are covered in this article. 
 
-In the first configuration, you enable the Microsoft 365 and Internet Access traffic forwarding profiles. You disable the Private Access traffic forwarding profile. The Global Secure Access client captures Microsoft 365 and Internet traffic. The Zscaler client captures Private Access traffic.
+In the first configuration, you enable the Microsoft 365 and Internet Access traffic forwarding profiles in the Microsoft Entra admin center. You disable the Private Access traffic forwarding profile in the Microsoft Entra admin center. The Global Secure Access client captures Microsoft 365 and Internet traffic. The Zscaler client captures Private Access traffic.
 
 > [!NOTE]
-> The client must be installed on a Windows 10 or Windows 11 Entra joined device.
+> The clients must be installed on a Windows 10 or Windows 11 Entra joined device.
 
-In the second configuration, you enable the Microsoft 365 forwarding profile and disable the Internet Access and Private Access traffic forwarding profiles. The Global Secure Access client captures Microsoft 365 traffic. The Zscaler client captures Internet Access traffic.
+In the second configuration, you enable the Microsoft 365 forwarding profile and disable the Internet Access and Private Access traffic forwarding profiles in the Microsoft Entra admin center. The Global Secure Access client captures Microsoft 365 traffic. The Zscaler client captures Internet Access traffic.
 
 > [!NOTE]
 > The clients must be installed on Windows 10 or Windows 11 Entra joined device or a macOS Monterey device registered to Entra with Intune Company Portal. 
@@ -45,7 +45,7 @@ Configure the traffic forwarding profiles for your Microsoft Entra tenant. For m
 
 For the first configuration, enable the Microsoft 365 and Internet Access traffic forwarding profiles. For the second configuration, enable the Microsoft 365 traffic forwarding profile only.
 
-Install and configure the Global Secure Access Client on end-user devices. For more information about clients, see [Global Secure Access clients](concept-clients.md).
+Install and configure the Global Secure Access Client on end-user devices. For more information about clients, see [Global Secure Access clients](concept-clients.md). To learn how to install the Windows client, see [Global Secure Access client for Windows](how-to-install-windows-client.md).
 
 ## Zscaler configuration 1
 
@@ -62,8 +62,6 @@ Configure Zscaler application segments. For more information on Zscaler applicat
 1. Navigate to **Resource Management** > **Application Management** > **Application Segments** > **Add Application Segment**.
 1. Add Name, IP/FQDN of your private application, ports, and Segment Group.
 1. Create an access policy to allow access to your private application (By default, ZPA blocks access to applications and segment groups for users until you configure policy rules that explicitly allow access). Navigate to **Policy** > **Access Policy** > **Add Rule**.
-
-### Install Zscaler client and add forwarding and app profiles
 
 Download Zscaler client from the Zscaler Client Connector App Store in the Zscaler Client Connector Portal.
 1. Navigate to **ZPA admin portal** > **Client Connector** > **Administration** > **Client Connector App Store** > **New Releases** > **General Availability**.
