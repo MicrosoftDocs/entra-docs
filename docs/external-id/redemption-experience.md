@@ -107,6 +107,8 @@ When a guest signs in to a resource in a partner organization for the first time
 
 1. The guest reviews the **Review permissions** page describing the inviting organization's privacy statement. A user must **Accept** the use of their information in accordance to the inviting organization's privacy policies to continue.
 
+    By agreeing to this consent prompt, you acknowledge that certain elements of your account will be shared. These include your name, photo, and email address, as well as directory identifiers which may be used by the other organization to better manage your account, and to improve your cross-organization experience. 
+
    :::image type="content" source="media/redemption-experience/new-review-permissions.png" alt-text="Screenshot showing the Review permissions page.":::
 
    > [!NOTE]

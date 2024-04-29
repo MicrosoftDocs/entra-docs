@@ -562,7 +562,7 @@ Replace the variables [proxy-server] and [proxy-port] with your proxy server nam
 
 #### How do I ensure that the Provisioning Agent is able to communicate with the Microsoft Entra tenant and no firewalls are blocking ports required by the agent?
 
-You can also check whether all of the [required ports](~/identity/app-proxy/application-proxy-add-on-premises-application.md#open-ports) are open.
+You can also check whether all of the [required ports](../../global-secure-access/how-to-configure-connectors.md) are open.
 
 #### Can one Provisioning Agent be configured to provision multiple AD domains?
 
