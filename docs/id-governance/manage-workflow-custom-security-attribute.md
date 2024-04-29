@@ -13,7 +13,7 @@ ms.reviewer: krbain
 #CustomerIntent: As an administrator, I want to be able to add custom security attributes of a user to the scope of a workflow so that I have greater control over which users specific workflows will run for.
 ---
 
-# Add a Custom Security Attribute to the scope of a workflow 
+# Add a custom security attribute to the scope of a workflow 
 
 Workflows created with Lifecycle workflows can run for users on schedule based on custom security attributes. Using custom security attributes to narrow the scope of your workflow gives you greater control over who the workflow runs for by increasing customization of supported user properties. Examples of these properties include:
 

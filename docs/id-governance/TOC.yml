@@ -260,6 +260,8 @@
           href: manage-workflow-properties.md
         - name: Manage workflow versions
           href: manage-workflow-tasks.md
+        - name: Adding custom security attribute to the scope
+          href: manage-workflow-custom-security-attribute.md  
         - name: Run a workflow on-demand
           href: on-demand-workflow.md
         - name: Customize emails
