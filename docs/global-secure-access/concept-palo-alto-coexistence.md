@@ -8,7 +8,7 @@ ms.topic: conceptual
 ms.date: 04/29/2024
 ms.service: global-secure-access
 ms.subservice: entra-private-access 
-ms.reviewer: 
+ms.reviewer: shkhalid
 ---
 
 # Learn about Security Service Edge (SSE) coexistence with Microsoft and Palo Alto Networks

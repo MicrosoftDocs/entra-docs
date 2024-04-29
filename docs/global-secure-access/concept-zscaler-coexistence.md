@@ -5,10 +5,10 @@ author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: conceptual
-ms.date: 03/25/2024
+ms.date: 04/29/2024
 ms.service: global-secure-access
 ms.subservice: entra-private-access 
-ms.reviewer: 
+ms.reviewer: shkhalid
 ---
 
 # Learn about Security Service Edge (SSE) coexistence with Microsoft and Zscaler
@@ -78,7 +78,7 @@ Add Forwarding Profile from the Client Connector Portal.
 Add App Profile from the Client Connector Portal.
 1. Navigate to **ZPA admin portal** > **Client Connector** > **App Profile** > **Platform** > **Windows** > **Add Windows Policy**. 
 1. Add **Name**, set **Rule Order** such as **1**, select **Enable**, select **User(s)** to apply this policy, and select the **Forwarding Profile**. For example, select **PF Driver Tunnel**.
-1. Scroll down and add these Microsoft SSE Service Internet Protocol (IP) and Fully Qualified Domain Names (FQDNs) in  
+1. Scroll down and add these Microsoft SSE service Internet Protocol (IP) addresses and Fully Qualified Domain Names (FQDNs) in  
 “HOSTNAME OR IP ADDRESS BYPASS FOR VPN GATEWAY” field. IPs: `150.171.19.0/24`, `150.171.20.0/24`, `13.107.232.0/24`, `13.107.233.0/24`, `150.171.15.0/24`, `150.171.18.0/24`, `151.206.0.0/16`, `6.6.0.0/16`. FQDNs: `internet.edgediagnostic.globalsecureaccess.microsoft.com`, `m365.edgediagnostic.globalsecureaccess.microsoft.com`, `private.edgediagnostic.globalsecureaccess.microsoft.com`, `aps.globalsecureaccess.microsoft.com`, `<tenantid>.internet.client.globalsecureaccess.microsoft.com`, `<tenantid>.m365.client.globalsecureaccess.microsoft.com`, `<tenantid>.private.client.globalsecureaccess.microsoft.com`.
  
 After the client is installed, users are prompted to sign in. After users sign in, the connection icon turns blue and by right clicking the icon and opening Zscaler client will show the Authentication status as Authenticated and Service Status as ON. 
@@ -87,7 +87,7 @@ Open the system tray to check that Global Secure Access and Zscaler clients are 
 
 Verify configurations for clients.
 1. Right-click on **Global Secure Access Client** > **Advanced Diagnostics** > **Forwarding Profile** and verify that Microsoft 365 and Internet Access rules are applied to this client. 
-1. Navigate to **Advanced Diagnostics** > **Health Check** and ensure no checks are failing. IPV4 preferred check can be ignored. You can resolve the error by creating a registry key. For more information about the registry key and installing the client, see [Global Secure Access client for Windows (preview)](how-to-install-windows-client.md).
+1. Navigate to **Advanced Diagnostics** > **Health Check** and ensure no checks are failing.
 1. Right-click on **Zscaler Client** > **Open Zscaler** > **More**. Verify **App Policy** matches configurations in the earlier steps. Validate that it's up to date or update it.
 1. Navigate to **Zscaler Client** > **Private Access**. Verify **Service Status** is `ON` and **Authentication Status** is `Authenticated`.   
 
@@ -108,8 +108,6 @@ Configure Zscaler Internet Access. To learn more about configuring Zscaler, see 
 
 Configure user authentication and provisioning methods such as Security Assertion Markup Language (SAML) for authentication and System for Cross-domain Identity Management (SCIM) for provisioning.
 
-### Install Zscaler client and add forwarding and app profiles
-
 Download Zscaler client from the Zscaler Client Connector App Store in the Zscaler Client Connector Portal.
 1. Navigate to **ZPA admin portal** > **Client Connector** > **Administration** > **Client Connector App Store** > **New Releases** > **General Availability**.
 1. Select Platform as Windows or macOS and download the EXE or MSI package.
@@ -125,7 +123,7 @@ Add App Profile from the Client Connector Portal.
 1. Navigate to **ZPA admin portal** > **Client Connector** > **App Profile** > **Platform** > **Windows** (or macOS) > **Add Windows Policy** (or macOS). 
 1. Add **Name**, set **Rule Order** such as **1**, select **Enable**, select **User(s)** to apply this policy, and select the **Forwarding Profile**. For example, select **ZIA Tunnel 2.0**.
 1. Scroll down and add these Microsoft SSE Service IPs and FQDNs in  
-*HOSTNAME OR IP ADDRESS BYPASS FOR VPN GATEWAY* field. IPs: `150.171.19.0/24`, `150.171.20.0/24`, `13.107.232.0/24`, `13.107.233.0/24`, `150.171.15.0/24`, `150.171.18.0/24`, `151.206.0.0/16`, `6.6.0.0/16`. FQDNs: `internet.edgediagnostic.globalsecureaccess.microsoft.com`, `m365.edgediagnostic.globalsecureaccess.microsoft.com`, `private.edgediagnostic.globalsecureaccess.microsoft.com`, `aps.globalsecureaccess.microsoft.com`, `<tenantid>.internet.client.globalsecureaccess.microsoft.com`, `<tenantid>.m365.client.globalsecureaccess.microsoft.com`, `<tenantid>.private.client.globalsecureaccess.microsoft.com`.
+**HOSTNAME OR IP ADDRESS BYPASS FOR VPN GATEWAY** field. IPs: `150.171.19.0/24`, `150.171.20.0/24`, `13.107.232.0/24`, `13.107.233.0/24`, `150.171.15.0/24`, `150.171.18.0/24`, `151.206.0.0/16`, `6.6.0.0/16`. FQDNs: `internet.edgediagnostic.globalsecureaccess.microsoft.com`, `m365.edgediagnostic.globalsecureaccess.microsoft.com`, `private.edgediagnostic.globalsecureaccess.microsoft.com`, `aps.globalsecureaccess.microsoft.com`, `<tenantid>.internet.client.globalsecureaccess.microsoft.com`, `<tenantid>.m365.client.globalsecureaccess.microsoft.com`, `<tenantid>.private.client.globalsecureaccess.microsoft.com`.
  
 After the client is installed, users are prompted to sign in. After users sign in, the connection icon turns blue and by right clicking the icon and opening Zscaler client will show the Authentication status as Authenticated and Service Status as ON. 
 
