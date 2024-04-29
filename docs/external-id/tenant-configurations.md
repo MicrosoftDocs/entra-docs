@@ -23,7 +23,7 @@ A *tenant* is a dedicated and trusted instance of Microsoft Entra ID that contai
 
 Each tenant configuration represents a different scenario for working with users outside of your organization.
 
-:::image type="content" source="media/tenant-configurations/tenant-configurations.png" alt-text="Diagram showing External ID tenant configurations." lightbox="media/tenant-configurations/tenant-configurations.png border="true":::
+:::image type="content" source="media/tenant-configurations/tenant-configurations.png" alt-text="Diagram showing External ID tenant configurations." lightbox="media/tenant-configurations/tenant-configurations.png":::
 
 ## Workforce tenants
 
