@@ -11,7 +11,7 @@ ms.date: 04/15/2024
 ms.author: sarahlipsey
 ms.reviewer: dhanyahk
 ---
-# Microsoft Entra audit log categories and activitiesFF
+# Microsoft Entra audit log categories and activities
 
 Microsoft Entra audit logs collect all traceable activities within your Microsoft Entra tenant. Audit logs can be used to determine who made a change to service, user, group, or other item.
 
