@@ -23,7 +23,7 @@ A *tenant* is a dedicated and trusted instance of Microsoft Entra ID that contai
 
 Each tenant configuration represents a different scenario for working with users outside of your organization.
 
-:::image type="content" source="media/tenant-configurations/tenant-configurations.png" alt-text="Diagram showing External ID tenant configurations." border="true":::
+:::image type="content" source="media/tenant-configurations/tenant-configurations.png" alt-text="Diagram showing External ID tenant configurations." lightbox="media/tenant-configurations/tenant-configurations.png.png border="true":::
 
 ## Workforce tenants
 
@@ -35,7 +35,7 @@ You can create additional workforce tenants in either the Microsoft Entra admin 
 
 ## External tenants
 
-When you want to use External ID to add customer identity and access management (CIAM) to your [external-facing apps](customers/overview-customers-ciam.md) and manage external users, your create a new tenant in an *external* configuration. This tenant is distinct and separate from your workforce tenant. It follows the standard Microsoft Entra tenant model, but it's configured for customer scenarios.
+When you want to use External ID to add customer identity and access management (CIAM) to your [external-facing apps](customers/overview-customers-ciam.md) and manage external users, you create a new tenant in an *external* configuration. This tenant is distinct and separate from your workforce tenant. It follows the standard Microsoft Entra tenant model, but it's configured for customer scenarios.
 
 The external tenant is where you'll register your external-facing apps, create sign-up and sign-in user flows, and manage the users of your apps. The consumers and business customers who sign up for your apps are added to the tenant directory, but with [limited default permissions](customers/reference-user-permissions.md).
 
@@ -51,7 +51,7 @@ You can create external tenants in a couple of ways:
 
 - If you don't already have a Microsoft Entra tenant and want to try out External ID features in an external tenant, we recommend using the get started experience to start a free trial.
 
-When you create an tenant, you can set your correct geographic location and your domain name.
+When you create a tenant, you can set your correct geographic location and your domain name.
 
 > [!NOTE]
 > If you currently use Azure AD B2C, the new workforce and customer tenant model doesn't affect your existing Azure AD B2C tenants.

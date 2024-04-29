@@ -19,7 +19,7 @@ ms.collection: M365-identity-device-management
 
 Microsoft Entra External ID combines powerful solutions for working with people outside of your organization. With External ID capabilities, you can allow external identities to securely access your apps and resources. Whether you’re working with external partners, consumers, or business customers, users can bring their own identities. These identities can range from corporate or government-issued accounts to social identity providers like Google or Facebook.
 
-:::image type="content" source="media/external-identities-overview/external-identities-overview.png" alt-text="External ID overview diagram." border="true":::
+:::image type="content" source="media/external-identities-overview/external-identities-overview.png" alt-text="Diagram showing an overview of External ID." border="true":::
 
 These scenarios fall within the scope of Microsoft Entra External ID:
 
