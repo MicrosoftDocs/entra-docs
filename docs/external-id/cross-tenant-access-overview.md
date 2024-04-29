@@ -4,7 +4,7 @@ description: Get an overview of cross-tenant access in Microsoft Entra External 
  
 ms.service: entra-external-id
 ms.topic: overview
-ms.date: 03/26/2024
+ms.date: 04/29/2024
 
 ms.author: cmulligan
 author: csmulligan
@@ -270,13 +270,13 @@ Several tools are available to help you identify the access your users and partn
 
 ### Cross-tenant sign-in activity PowerShell script
 
-To review user sign-in activity associated with external tenants, use the [cross-tenant user sign-in activity](https://aka.ms/cross-tenant-signins-ps) PowerShell script. For example, to view all available sign-in events for inbound activity (external users accessing resources in the local tenant) and outbound activity (local users accessing resources in an external tenant), run the following command:
+To review user sign-in activity associated with external organizations, use the [cross-tenant user sign-in activity](https://aka.ms/cross-tenant-signins-ps) PowerShell script. For example, to view all available sign-in events for inbound activity (external users accessing resources in the local tenant) and outbound activity (local users accessing resources in an external organization), run the following command:
 
 ```powershell
 Get-MSIDCrossTenantAccessActivity -SummaryStats -ResolveTenantId
 ```
 
-The output is a summary of all available sign-in events for inbound and outbound activity, listed by external tenant ID and external tenant name.
+The output is a summary of all available sign-in events for inbound and outbound activity, listed by external organization ID and external organization name.
 
 ### Sign-in logs PowerShell script
 
@@ -295,7 +295,7 @@ Group-Object ResourceTenantId,AppDisplayName,UserPrincipalName |
 Select-Object count,@{n='Ext TenantID/App User Pair';e={$_.name}}
 ```
 
-The output is a list of outbound sign-ins initiated by your users to apps in external tenants.
+The output is a list of outbound sign-ins initiated by your users to apps in external organizations.
 
 ### Azure Monitor
 
