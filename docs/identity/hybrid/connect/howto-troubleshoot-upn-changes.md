@@ -98,7 +98,7 @@ Learn more:
 
 User UPN changes can break the relationship between the Microsoft Entra user and the user profile on the application. If the application uses JIT provisioning, it can create a new user profile. Then, the application Administrator makes manual changes to fix the relationship.
 
-### Workarounds: automated provisioning
+**Workarounds: Automated provisioning**
 
 In supported cloud applications, to create, maintain, and remove user identities, use automated app provisioning in Microsoft Entra ID. To update UPNs on the application, configure automated user provisioning on your applications. Test applications to validate successful UPN changes. To enable automatic user provisioning, developers can add System for Cross-domain Identity Management (SCIM) support to applications. 
 
@@ -121,16 +121,16 @@ Regardless of size or industry, organizations can deploy Microsoft Entra joined 
 
 Learn more about [Microsoft Entra joined devices](~/identity/devices/concept-directory-join.md).
 
-### Known issues: SSO
+**Known issues: SSO**
 
 Users might experience SSO issues with applications that depend on Microsoft Entra ID for authentication. This issue was fixed in the Windows 10 May-2020 update.
 
-### Workaround
+**Workaround**
 
 1. Allow time for the UPN change to sync to Microsoft Entra ID.
 2. Verify the new UPN appears in the [Microsoft Entra admin center](https://entra.microsoft.com).
 3. Tell users to select **Other user** to sign in with a new UPN.
-4. Verify with [Get-MgUser](/powershell/module/microsoft.graph.users/get-mguser) in Microsoft Graph PowerShell
+4. Verify with [Get-MgUser](/powershell/module/microsoft.graph.users/get-mguser) in Microsoft Graph PowerShell.
 
    >[!NOTE]
    > After users sign in with a new UPN, references to the previous UPN might appear on the **Access work or school** Windows setting.
@@ -145,7 +145,7 @@ Microsoft Entra hybrid joined devices are joined to Active Directory and Microso
  
 Learn more about [Microsoft Entra hybrid joined devices](~/identity/devices/concept-hybrid-join.md).
 
-### Known issues: Windows 10 Microsoft Entra hybrid joined devices
+**Known issues: Windows 10 Microsoft Entra hybrid joined devices**
 
 Windows 10 Microsoft Entra hybrid joined devices experience unexpected restarts and access issues. If users sign in to Windows before the new UPN synchronizes with Microsoft Entra ID, they might experience SSO issues with apps that use Microsoft Entra ID for authentication. This scenario can occur if users are in a Windows session. This situation occurs if Conditional Access is configured to enforce use of hybrid joined devices to access resources. In addition, the following message can force a restart after one minute:
 
@@ -153,9 +153,9 @@ Windows 10 Microsoft Entra hybrid joined devices experience unexpected restarts 
 
 This issue was fixed in the Windows 10 May-2020 update.
 
-### Workaround
+**Workaround**
 
-1. Unjoin the device from Microsoft Entra ID
+1. Unjoin the device from Microsoft Entra ID.
 2. Restart. 
 3. The device joins Microsoft Entra ID.
 4. To sign in, the user selects **Other user**. 
@@ -170,7 +170,7 @@ To unjoin a device from Microsoft Entra ID, run the following command at a comma
 
 ## Mobile Application Management app protection policies
 
-### Known issues: broken connections
+### Known issues: Broken connections
 
 If your organization uses Mobile Application Management (MAM) to protect corporate data, MAM app protection policies aren't resilient during UPN changes. This issue can break the connection between MAM enrollments and active users in MAM integrated applications. This scenario can leave data unprotected.
 
@@ -179,9 +179,9 @@ Learn more:
 * [App protection policies overview](/mem/intune/apps/app-protection-policy)
 * [FAQs about MAM and app protection](/mem/intune/apps/mam-faq)
 
-### Workaround
+**Workaround**
 
-After UPN changes, the Administrator wipes data from affected devices to forces users to reauthenticate and reenroll with new UPNs.
+After UPN changes, the Administrator wipes data from affected devices to force users to reauthenticate and reenroll with new UPNs.
 
 Learn [how to wipe only corporate data from Intune-managed apps](/mem/intune/apps/apps-selective-wipe).
 
@@ -208,15 +208,15 @@ Use Authenticator for out-of-band verification. Multifactor authentication pushe
 1. The user selects **Approve**, enters a PIN, or enters a biometric.
 2. The user selects **Authenticate**.
 
-Learn [how it works: Microsoft Entra multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md)
+Learn [how it works: Microsoft Entra multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md).
 
-### Known issues: Notification not received
+**Known issues: Notification not received**
 
 When you change user UPN, the previous UPN appears on the user account. Notification might not be received. Instead, use verification codes.
 
 See a list of [common questions about Authenticator](https://prod.support.services.microsoft.com/account-billing/common-questions-about-the-microsoft-authenticator-app-12d283d1-bcef-4875-9ae5-ac360e2945dd).
 
-### Workaround
+**Workaround**
 
 1. If notification appears, instruct the user to dismiss it.
 2. Open Authenticator.
@@ -240,11 +240,11 @@ Learn more:
 * [Microsoft Entra Conditional Access documentation](~/identity/conditional-access/index.yml)
 * [Use Authenticator or Intune Company Portal on Xamarin applications](~/identity-platform/msal-net-use-brokers-with-xamarin-apps.md).
 
-### Known issues: user prompts
+**Known issues: user prompts**
 
 Due to a mismatch between the `login_hint` passed by the application, and the UPN on the broker, the user experiences more authentication prompts with broker-assisted sign-in.
 
-### Workaround
+**Workaround**
 
 The user manually removes the account from Authenticator and starts a new sign-in from a broker-assisted application. After initial authentication, the account is added.
 
@@ -256,23 +256,23 @@ Authenticator registers the device in Microsoft Entra ID, which allows the devic
 * Intune device enrollment
 * Phone sign-in
 
-### Known issues: new account appears
+**Known issues: New account appears**
 
 If you change UPN, a new account with the new UPN appears on the Authenticator. The account with the previous UPN remains. Also, the previous UPN appears on Device Registration in app settings. There's no change in functionality of Device Registration or dependant scenarios.
 
-### Workaround
+**Workaround**
 
-To remove references to the previous UPN on Authenticator, the user removes the previous and new accounts Authenticator. The user re-registers for MFA, and rejoins the device.
+To remove references to the previous UPN on Authenticator, the user removes the previous and new accounts from Authenticator. The user re-registers for MFA, and rejoins the device.
 
 ### Phone sign-in
 
 Use phone sign-in to sign in to Microsoft Entra ID without a password. With Authenticator, the user registers for MFA and then enables phone sign-in. The device registers with Microsoft Entra ID.
 
-### Known issues: No notification
+**Known issues: No notification**
 
 Users can't use phone sign-in because they didn't receive notification. If the user selects **Check for Notifications**, an error appears.
 
-### Workaround
+**Workaround**
 
 On the account enabled for phone sign-in, on the drop-down menu, the user selects **Disable phone sign-in**. 
 
@@ -282,7 +282,7 @@ On the account enabled for phone sign-in, on the drop-down menu, the user select
 
 When multiple users are registered on the same key, account selection appears where the previous UPN appears. UPN changes don't affect sign-in with security keys.  
 
-### Workaround
+**Workaround**
 
 To remove references to previous UPNs, users reset the security key and re-register.
 
@@ -299,11 +299,11 @@ Learn [how UPN changes affect the OneDrive URL and OneDrive features](/sharepoin
 
 Use Teams Meeting Notes to take and share notes.  
 
-### Known issues: inaccessible notes
+### Known issues: Inaccessible notes
 
 When a user UPN changes, meeting notes created with the previous UPN aren't accessible with Microsoft Teams or the Meeting Notes URL.   
 
-### Workaround
+**Workaround**
 
 After the UPN change, users can download notes from OneDrive. 
 
