@@ -299,7 +299,7 @@ Learn [how UPN changes affect the OneDrive URL and OneDrive features](/sharepoin
 
 Use Teams Meeting Notes to take and share notes.  
 
-### Known issues: Inaccessible notes
+**Known issues: Inaccessible notes**
 
 When a user UPN changes, meeting notes created with the previous UPN aren't accessible with Microsoft Teams or the Meeting Notes URL.   
 
