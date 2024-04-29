@@ -45,6 +45,37 @@ External ID premium features are available as add-ons. These premium features do
 
 No, External ID add-ons don't have a free tier. However, while the ID Governance premium feature for External ID is in preview, there is no charge for the add-on.
 
+### Does External ID have phone authentication via SMS?
+
+Yes, this feature is currently available in workforce configurations. Once it is supported in external configurations, it will be offered as an add-on for External ID. We will release pricing details soon.
+
+## About External ID
+
+### What is Microsoft Entra External ID?
+
+Microsoft Entra External ID is our next generation CIAM platform. It represents an evolutionary step in unifying secure and engaging experiences across all external identities including customers, partners, citizens, and others, within a single, integrated platform.
+
+### Is Microsoft Entra External ID a new name for Azure AD B2C?
+
+No, it's not a new name for Azure AD B2C. Microsoft Entra External ID is our next generation CIAM solution that combines CIAM use cases and B2B collaboration features into one unified platform.
+
+### I notice some name changes, both in the admin center and on the website
+
+Yes, we rebranded some items in the admin center and in our messaging to best match our vision for External ID. The following table summarizes the changes.
+
+|Previous name                | New name                                |
+|-----------------------------|-----------------------------------------|
+|Azure AD External Identities | Azure AD B2C                            |
+|Azure AD B2B                 | Now part of Microsoft Entra External ID |
+|Azure AD for customers       | Microsoft Entra External ID             |
+|Azure AD B2B collaboration   | External ID B2B collaboration           |
+|Azure AD B2B direct connect  | External ID B2B direct connect          |
+|Customer tenant              | External tenant                         |
+
+### How can I get started with External ID?
+
+We're currently offering a [free 30 day trial](https://aka.ms/ExternalIDConsumerApps) to start securing your external-facing applications.
+
 ## Azure AD B2C and Azure AD External Identities  
 
 ### What's happening to Azure AD B2C and Azure AD External Identities?
