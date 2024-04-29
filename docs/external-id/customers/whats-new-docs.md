@@ -1,6 +1,6 @@
 ---
-title: "What's new in Microsoft Entra External ID for external-facing apps"
-description: "New and updated documentation for the Microsoft Entra External ID documentation for external-facing apps."
+title: "What's new in Microsoft Entra External ID in external tenants"
+description: "New and updated documentation for Microsoft Entra External ID in external tenants."
 ms.date: 04/03/2024
 ms.service: entra-external-id
 ms.subservice: customers
@@ -11,9 +11,9 @@ author: csmulligan
 manager: CelesteDG
 ---
 
-# Microsoft Entra External ID for external-facing apps: What's new
+# Microsoft Entra External ID in external tenants: What's new
 
-Welcome to what's new in Microsoft Entra External ID documentation. This article lists new docs that have been added and those that have had significant updates in the last three months. 
+Welcome to what's new in documentation for Microsoft Entra External ID in external tenants. This article lists new docs that have been added and those that have had significant updates in the last three months. 
 
 ## March 2024
 
@@ -28,7 +28,7 @@ Welcome to what's new in Microsoft Entra External ID documentation. This article
 - [Supported features in Microsoft Entra External ID](concept-supported-features-customers.md) - Updated user types and identity providers for clarity, removed device code flow samples
 - [Add user attributes to token claims](how-to-add-attributes-to-token.md) - Updated screenshots
 - [Collect custom user attributes during sign-up](how-to-define-custom-attributes.md) - Updated screenshots
-- [Add multifactor authentication (MFA) to a customer-facing app](how-to-multifactor-authentication-customers.md) - Updated screenshots
+- [Add multifactor authentication (MFA) to an app](how-to-multifactor-authentication-customers.md) - Updated screenshots
 - [Add your application to the user flow](how-to-user-flow-add-application.md) - Updated screenshots
 - [Create a sign-up and sign-in user flow for customers](how-to-user-flow-sign-up-sign-in-customers.md) - Updated screenshots
 - [Quickstart: Get started with Microsoft Entra External ID](quickstart-trial-setup.md) - Updated screenshots
