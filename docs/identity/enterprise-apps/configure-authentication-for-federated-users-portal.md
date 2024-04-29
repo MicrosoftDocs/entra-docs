@@ -235,7 +235,7 @@ Note the **ObjectID** of the policy that you want to list assignments for.
 
 1. Get the ObjectID
 
-Use the previous example to get the **ObjectID** of the policy, and that of the application service principal from which you want to remove it.
+   Use the previous example to get the **ObjectID** of the policy, and that of the application service principal from which you want to remove it.
 
 1. Remove the policy assignment from the application service principal
 
