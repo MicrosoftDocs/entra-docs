@@ -14,7 +14,7 @@ ms.topic: how-to
 
 # Single-page application: App registration
 
-To register a single-page application (SPA) in the Microsoft identity platform, complete the following steps. The registration steps differ between MSAL.js 1.0, which supports the implicit grant flow, and MSAL.js 2.0, which supports the authorization code flow with PKCE.
+To register a single-page application (SPA) in the Microsoft identity platform, complete the following steps. The registration steps differ between MSAL.js 1.0, which supports the implicit grant flow, and MSAL.js 2.0, which supports the authorization code flow with Proof of Key for Code Exchange (PKCE).
 
 ## Create the app registration
 
@@ -36,7 +36,7 @@ Next, configure the app registration with a **Redirect URI** to specify where th
 
 ## Redirect URI: [MSAL.js 2.0 with auth code flow](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-browser)
 
-Follow these steps to add a redirect URI for an app that uses MSAL.js 2.0 or later. MSAL.js 2.0+ supports the authorization code flow with PKCE and CORS in response to [browser third party cookie restrictions](reference-third-party-cookies-spas.md). The implicit grant flow is not supported in MSAL.js 2.0+.
+Follow these steps to add a redirect URI for an app that uses MSAL.js 2.0 or later. MSAL.js 2.0+ supports the authorization code flow with PKCE and Cross-Origin Resource Sharing (CORS) in response to [browser third party cookie restrictions](reference-third-party-cookies-spas.md). The implicit grant flow isn't supported in MSAL.js 2.0+.
 
 1. In the Microsoft Entra admin center, select the app registration you created in [Create the app registration](#create-the-app-registration).
 1. Under **Manage**, select **Authentication** > **Add a platform**.
@@ -44,15 +44,15 @@ Follow these steps to add a redirect URI for an app that uses MSAL.js 2.0 or lat
 1. Under **Redirect URIs**, enter a [redirect URI](reply-url.md). Do **NOT** select either checkbox under **Implicit grant and hybrid flows**.
 1. Select **Configure** to finish adding the redirect URI.
 
-You've now completed the registration of your SPA and configured a redirect URI to which the client will be redirected and any security tokens will be sent. By configuring your redirect URI using the **Single-page application** tile in the **Add a platform** pane, your application registration is configured to support the authorization code flow with PKCE and CORS.
+Your SPA is now registered with a redirect URI. By configuring your redirect URI using the **Single-page application** tile in the **Add a platform** pane, your application registration supports the authorization code flow with PKCE and CORS.
 
 Follow the [tutorial](tutorial-v2-javascript-auth-code.md) for further guidance.
 
 ## Redirect URI: [MSAL.js 1.0 with implicit flow](/javascript/api/overview/msal-overview)
 
-Follow these steps to add a redirect URI for a single-page app that uses MSAL.js 1.3 or earlier and the implicit grant flow. Applications that use MSAL.js 1.3 or earlier do not support the auth code flow.
+Follow these steps to add a redirect URI for a single-page app that uses MSAL.js 1.3 or earlier and the implicit grant flow. Applications that use MSAL.js 1.3 or earlier don't support the authorization code flow.
 
-1. In the Microsoft Entra admin center, select the app registration you created earlier in [Create the app registration](#create-the-app-registration).
+1. In the Microsoft Entra admin center, select the app registration you created in [Create the app registration](#create-the-app-registration).
 1. Under **Manage**, select **Authentication** > **Add a platform**.
 1. Under **Web applications**, select **Single-page application** tile.
 1. Under **Redirect URIs**, enter a [redirect URI](reply-url.md).
@@ -61,7 +61,7 @@ Follow these steps to add a redirect URI for a single-page app that uses MSAL.js
     - If your application also needs to call a protected web API, select **Access tokens**. For more information about these token types, see [ID tokens](id-tokens.md) and [Access tokens](access-tokens.md).
 1. Select **Configure** to finish adding the redirect URI.
 
-You've now completed the registration of your SPA and configured a redirect URI to which the client will be redirected and any security tokens will be sent. By selecting one or both of **ID tokens** and **Access tokens**, you've enabled the implicit grant flow.
+Your SPA is now registered with a redirect URI. By selecting one or both of **ID tokens** and **Access tokens**, your application registration supports the implicit grant flow.
 
 ## Note about authorization flows
 
