@@ -27,6 +27,21 @@ In this document, we use the following default values. Feel free to configure th
 - Resource group name: GlobalSecureAccess_Documentation
 - Region: South Central US
 
+## Set up a virtual WAN in the Azure portal
+### Create a virtual WAN
+Create a virtual wide area network to connect to your resources in Azure. For more information about Virtual WAN, see the Virtual WAN Overview.
+1.	From the Azure portal, in the Search resources bar, type Virtual WAN in the search box and select Enter.
+2.	Select Virtual WANs from the results. On the Virtual WANs page, select + Create to open the Create WAN page.
+3.	On the Create WAN page, on the Basics tab, fill in the fields. Modify the example values to apply to your environment.
+    - Subscription: Select the subscription that you want to use.
+    - Resource group: Create new or use existing.
+    - Resource group location: Choose a resource location from the dropdown. A WAN is a global resource and doesn't live in a particular region. However, you must select a region to manage and locate the WAN resource that you create.
+    - Name: Type the Name that you want to call your virtual WAN.
+    - Type: Basic or Standard. Select Standard. If you select Basic, understand that Basic virtual WANs can only contain Basic hubs. Basic hubs can only be used for site-to-site connections.
+4.	After you finish filling out the fields, at the bottom of the page, select Review + create.
+ 
+[filename: create-vwan.png]
+5.	Once validation passes, click Create to create the virtual WAN.
 
 
 ## Next steps
