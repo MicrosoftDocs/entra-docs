@@ -94,27 +94,19 @@ We recognize the large investments in building and managing custom policies. We 
 
 ### What's the difference between external and workforce tenants?
 
-Both are Microsoft Entra tenants, but with different default configurations. [Learn more about the tenant configurations](concept-tenant-configurations.md).  
+Both are Microsoft Entra tenants, but with different default configurations. [Learn more about the tenant configurations](../tenant-configurations.md).  
 
 ### Are there custom policies in External ID?
 
 Our next-generation CIAM platform is designed to accommodate equivalent capabilities without the need for complex custom policies.  
 
-### What multifactor authentication (MFA) methods does External ID support?  
-
-External ID currently supports email MFA and Phone SMS MFA for high trust scenarios in which an identity is invited. Support for low trust scenarios where users sign up will be released later this year. [Learn more](concept-authentication-methods-customers.md).
-
 ### What identity providers does External ID support?
 
- External ID supports various identity providers, including Microsoft Entra accounts (via invite), Facebook, Google, and SAML/WS-Fed identity provider federation. Identity providers are based on the tenant configuration and the whether the external user is invited or uses self-service sign-up. [Learn more about identity providers](identity-providers.md), and refer to our [supported feature comparison](concept-supported-features-customers.md#compare-workforce-and-external-tenant-capabilities).
+ External ID supports various identity providers, including Microsoft Entra accounts (via invite), Facebook, Google, and SAML/WS-Fed identity provider federation. Identity providers are based on the tenant configuration and the whether the external user is invited or uses self-service sign-up. [Learn more about identity providers](identity-providers.md) in External ID, and refer to our [supported feature comparison](concept-supported-features-customers.md#compare-workforce-and-external-tenant-capabilities).
 
-### Does External ID offer verifiable credentials as an authentication method?
+### Where can I find a list of External ID features?
 
-Yes, our [Microsoft Entra Verified ID documentation](~/verified-id/index.yml) covers how to add verifiable credentials as an authentication method.  
-
-### Is passwordless authentication supported?
-
-Passwordless authentication is currently supported in workforce configurations. It's also supported in external configurations for email-based authentication only. [Learn more](~/identity/authentication/concept-authentication-passwordless.md#supported-scenarios-1)
+For a detailed list of the External ID features and capabilities available in [workforce and external tenants](../tenant-configurations.md), see [Supported features in workforce and external tenants](concept-supported-features-customers.md#compare-workforce-and-external-tenant-capabilities).
 
 <!--
 ### Will External ID be available in all regions worldwide?
