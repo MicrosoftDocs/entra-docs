@@ -81,7 +81,7 @@ Customers can evaluate moving exclusively to Cloud Sync by using this wizard: ht
 **Service category:** Privileged Identity Management    
 **Product capability:** Privileged Identity Management    
 
-PIM is now available on the Azure mobile app in both iOS and Android. Customers can now approve or deny incoming PIM activation requests, in addition to activating Microsoft Entra ID and Azure resource role assignments, directly from the app on their phone. For more information, see: [Activate PIM roles using the Azure mobile app](../id-governance/privileged-identity-management/pim-resource-roles-activate-your-roles.md).
+PIM is now available on the Azure mobile app in both iOS and Android. Customers can now approve or deny incoming PIM activation requests, in addition to activating Microsoft Entra ID and Azure resource role assignments, directly from the app on their phone. For more information, see: [Activate PIM roles using the Azure mobile app](/entra/id-governance/privileged-identity-management/pim-resource-roles-activate-your-roles).
 
 ---
 
