@@ -46,6 +46,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/fundamentals/what-is-deprecated.md",
+      "redirect_url": "/entra/fundamentals/whats-new",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/fundamentals/add-users.md",
       "redirect_url": "/entra/fundamentals/how-to-create-delete-users",
       "redirect_document_id": false
