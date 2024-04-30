@@ -95,16 +95,6 @@ Organizations who enabled password hash synchronization can now allow password c
 
 ---
 
-### General Availability - Organizational Branding role for Microsoft Entra ID Company Branding is now available.
-
-**Type:** New feature   
-**Service category:** Entitlement Management    
-**Product capability:** Access Control    
-
-The new Organizational Branding Administrator privileges are limited to branding, allowing you to adhere to the principle of least privilege by eliminating the need for the Global Administrator role to configure branding. For more information on configuring branding, see: [Add company branding to your organization's sign-in page](../fundamentals/how-to-customize-branding.md).
-
----
-
 ### General Availability - Custom Claims Providers enable token claim augmentation from external data sources
 
 **Type:** New feature    
@@ -112,16 +102,6 @@ The new Organizational Branding Administrator privileges are limited to branding
 **Product capability:** Extensibility    
 
 Custom authentication extensions allow you to customize the Microsoft Entra authentication experience by integrating with external systems. A custom claims provider is a type of custom authentication extension that calls a REST API to fetch claims from external systems. A custom claims provider maps claims from external systems into tokens and can be assigned to one or many applications in your directory. For more information, see: [Custom authentication extensions overview](../identity-platform/custom-extension-overview.md).
-
----
-
-### General Availability of Configurable redemption for Entra External ID B2B collaboration
-
-**Type:** Fixed    
-**Service category:** B2B    
-**Product capability:** B2B/B2C    
-
-Configurable redemption for B2B is now Generally available. Admins can now configure the order of identity providers that their guest users can use to sign in when they accept, the invitation. For more information, see: [Configure redemption order](../external-id/cross-tenant-access-settings-b2b-collaboration.md#configure-redemption-order).
 
 ---
 
