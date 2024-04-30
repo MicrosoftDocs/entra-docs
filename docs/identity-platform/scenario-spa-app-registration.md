@@ -50,7 +50,7 @@ Follow the [tutorial](tutorial-v2-javascript-auth-code.md) for further guidance.
 
 ## Redirect URI: [MSAL.js 1.0 with implicit flow](/javascript/api/overview/msal-overview)
 
-Follow these steps to add a redirect URI for a single-page app that uses MSAL.js 1.3 or earlier and the implicit grant flow. Applications that use MSAL.js 1.3 or earlier don't support the authorization code flow.
+Follow these steps to add a redirect URI for a SPA that uses MSAL.js 1.3 or earlier and the implicit grant flow. Applications that use MSAL.js 1.3 or earlier don't support the authorization code flow.
 
 1. In the Microsoft Entra admin center, select the app registration you created in [Create the app registration](#create-the-app-registration).
 1. Under **Manage**, select **Authentication** > **Add a platform**.
