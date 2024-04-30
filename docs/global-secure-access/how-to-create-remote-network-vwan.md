@@ -44,6 +44,7 @@ Create a virtual wide area network to connect to your resources in Azure. For mo
 1.	Once validation passes, click Create to create the virtual WAN.
 
 This is a sentence.
+
 This is another sentence.
 
 ## Next steps
