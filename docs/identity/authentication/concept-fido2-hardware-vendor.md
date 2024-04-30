@@ -16,7 +16,7 @@ FIDO2 security keys enable phishing-resistant authentication. They can replace w
 In Microsoft Entra ID authentication methods policy, admins have the option to enforce attestation for FIDO2 security keys. When **Enforce attestation** is set to **Yes**, Microsoft requires additional metadata from FIDO2 security keys that are being registered with the tenant. As a vendor, your FIDO2 security key will be usable when attestation is enforced, if the following requirements are met.
 
 >[!NOTE]
->Entra ID does not support third-party passkey providers on computers and mobile devices yet.
+>Entra ID does not support third-party passkey providers on desktop and mobile devices yet.
 
 ## Attestation requirements
 
@@ -24,7 +24,7 @@ Microsoft relies on the FIDO metadata service (MDS) to determine security key co
 
 During FIDO2 registration, Microsoft Entra ID requires security keys to provide an attestation statement. For vendors, the expected attestation format is 'packed', as defined by [the FIDO standard](https://www.w3.org/TR/webauthn-2/#sctn-packed-attestation).
 
-The specific requirements vary based on how an administartor configures the FIDO2 authentication methods policy.
+The specific requirements vary based on how an administrator configures the FIDO2 authentication methods policy.
 
 | Enforce attestation set to Yes | Enforce attestation set to No |
 |--------------------------------|-------------------------------|
