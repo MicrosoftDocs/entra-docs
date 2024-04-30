@@ -4,7 +4,7 @@ description: Get an overview of cross-tenant access in Microsoft Entra External 
  
 ms.service: entra-external-id
 ms.topic: overview
-ms.date: 03/26/2024
+ms.date: 04/29/2024
 
 ms.author: cmulligan
 author: csmulligan
@@ -17,7 +17,7 @@ ms.collection: M365-identity-device-management
 
 # Overview: Cross-tenant access with Microsoft Entra External ID
 
-Microsoft Entra organizations can use External ID cross-tenant access settings to manage how they collaborate with other Microsoft Entra organizations and other Microsoft Azure clouds through B2B collaboration and [B2B direct connect](cross-tenant-access-settings-b2b-direct-connect.md). [Cross-tenant access settings](cross-tenant-access-settings-b2b-collaboration.md) give you granular control over how external Microsoft Entra organizations collaborate with you (inbound access) and how your users collaborate with external Microsoft Entra organizations (outbound access). These settings also let you trust multifactor authentication (MFA) and device claims ([compliant claims and Microsoft Entra hybrid joined claims](~/identity/conditional-access/howto-conditional-access-policy-compliant-device.md)) from other Microsoft Entra organizations.
+Microsoft Entra organizations can use External ID cross-tenant access settings to manage how they collaborate with other Microsoft Entra organizations and other Microsoft Azure clouds through B2B collaboration and [B2B direct connect](cross-tenant-access-settings-b2b-direct-connect.md). [Cross-tenant access settings](cross-tenant-access-settings-b2b-collaboration.yml) give you granular control over how external Microsoft Entra organizations collaborate with you (inbound access) and how your users collaborate with external Microsoft Entra organizations (outbound access). These settings also let you trust multifactor authentication (MFA) and device claims ([compliant claims and Microsoft Entra hybrid joined claims](~/identity/conditional-access/howto-conditional-access-policy-compliant-device.md)) from other Microsoft Entra organizations.
 
 This article describes cross-tenant access settings, which are used to manage B2B collaboration and B2B direct connect with external Microsoft Entra organizations, including across Microsoft clouds. More settings are available for B2B collaboration with non-Microsoft Entra identities (for example, social identities or non-IT managed external accounts). These [external collaboration settings](external-collaboration-settings-configure.md) include options for restricting guest user access, specifying who can invite guests, and allowing or blocking domains.
 
@@ -73,7 +73,7 @@ You can configure organization-specific settings by adding an organization and m
 
 To configure this setting using Microsoft Graph, see the [Update crossTenantAccessPolicyConfigurationPartner](/graph/api/crosstenantaccesspolicyconfigurationpartner-update) API. For information about building your own onboarding experience, see [B2B collaboration invitation manager](external-identities-overview.md#azure-ad-microsoft-graph-api-for-b2b-collaboration).
 
-For more information, see [Configure cross-tenant synchronization](~/identity/multi-tenant-organizations/cross-tenant-synchronization-configure.md), [Configure cross-tenant access settings for B2B collaboration](cross-tenant-access-settings-b2b-collaboration.md), and [Configure cross-tenant access settings for B2B direct connect](cross-tenant-access-settings-b2b-direct-connect.md).
+For more information, see [Configure cross-tenant synchronization](~/identity/multi-tenant-organizations/cross-tenant-synchronization-configure.md), [Configure cross-tenant access settings for B2B collaboration](cross-tenant-access-settings-b2b-collaboration.yml), and [Configure cross-tenant access settings for B2B direct connect](cross-tenant-access-settings-b2b-direct-connect.md).
 
 ### Configurable redemption
 
@@ -194,8 +194,8 @@ To collaborate with a partner tenant in a different Microsoft Azure cloud, both 
 
 ## Custom roles for managing cross-tenant access settings
 
-Cross-tenant access settings can be managed with custom roles defined by your organization. This enables you to [define your own finely-scoped roles](~/identity/role-based-access-control/custom-create.md) to manage cross-tenant access settings instead of using one of the built-in roles for management.
-Your organization can define custom roles to manage cross-tenant access settings. This allows you to create [your own finely-scoped roles](~/identity/role-based-access-control/custom-create.md) to manage cross-tenant access settings instead of using built-in roles for management.
+Cross-tenant access settings can be managed with custom roles defined by your organization. This enables you to [define your own finely-scoped roles](~/identity/role-based-access-control/custom-create.yml) to manage cross-tenant access settings instead of using one of the built-in roles for management.
+Your organization can define custom roles to manage cross-tenant access settings. This allows you to create [your own finely-scoped roles](~/identity/role-based-access-control/custom-create.yml) to manage cross-tenant access settings instead of using built-in roles for management.
 ### Recommended custom roles
 
 #### Cross-tenant access administrator
@@ -270,13 +270,13 @@ Several tools are available to help you identify the access your users and partn
 
 ### Cross-tenant sign-in activity PowerShell script
 
-To review user sign-in activity associated with external tenants, use the [cross-tenant user sign-in activity](https://aka.ms/cross-tenant-signins-ps) PowerShell script. For example, to view all available sign-in events for inbound activity (external users accessing resources in the local tenant) and outbound activity (local users accessing resources in an external tenant), run the following command:
+To review user sign-in activity associated with external organizations, use the [cross-tenant user sign-in activity](https://aka.ms/cross-tenant-signins-ps) PowerShell script. For example, to view all available sign-in events for inbound activity (external users accessing resources in the local tenant) and outbound activity (local users accessing resources in an external organization), run the following command:
 
 ```powershell
 Get-MSIDCrossTenantAccessActivity -SummaryStats -ResolveTenantId
 ```
 
-The output is a summary of all available sign-in events for inbound and outbound activity, listed by external tenant ID and external tenant name.
+The output is a summary of all available sign-in events for inbound and outbound activity, listed by external organization ID and external organization name.
 
 ### Sign-in logs PowerShell script
 
@@ -295,7 +295,7 @@ Group-Object ResourceTenantId,AppDisplayName,UserPrincipalName |
 Select-Object count,@{n='Ext TenantID/App User Pair';e={$_.name}}
 ```
 
-The output is a list of outbound sign-ins initiated by your users to apps in external tenants.
+The output is a list of outbound sign-ins initiated by your users to apps in external organizations.
 
 ### Azure Monitor
 
@@ -313,5 +313,5 @@ The Microsoft Entra audit logs capture all activity around cross-tenant access s
 
 ## Next steps
 
-[Configure cross-tenant access settings for B2B collaboration](cross-tenant-access-settings-b2b-collaboration.md)
+[Configure cross-tenant access settings for B2B collaboration](cross-tenant-access-settings-b2b-collaboration.yml)
 [Configure cross-tenant access settings for B2B direct connect](cross-tenant-access-settings-b2b-direct-connect.md)

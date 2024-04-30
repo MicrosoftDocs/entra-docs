@@ -1,6 +1,6 @@
 ---
 title: Create a sign-up and sign-in user flow
-description: Learn how to create a sign-up and sign-in user flow for your customer-facing app. The user flow determines sign-in experience for my customer users.
+description: Learn how to create a sign-up and sign-in user flow for your consumer and business customer apps. The user flow determines sign-in experience for my customer users.
  
 author: msmimart
 manager: celestedg
@@ -83,7 +83,7 @@ Follow these steps to create a user flow a customer can use to sign in or sign u
 
 ## Disable sign-up in a sign-up and sign-in user flow
 
-If you want your customer users to only sign in and not sign up, you can disable sign-up experience in your user flow by using [Microsoft Graph API](microsoft-graph-operations.md). You need to know the ID of the user flow whose sign-up you want to disable. You can't read the user flow ID from the Microsoft Entra admin center, but you can retrieve it via Microsoft Graph API if you know the app associated with it.
+If you want your customer users to only sign in and not sign up, you can disable the sign-up experience in your user flow by using the [Update authenticationEventsFlow API in Microsoft Graph](/graph/api/authenticationeventsflow-update), and updating the **onInteractiveAuthFlowStart** property > **isSignUpAllowed** property to `false`. You need to know the ID of the user flow whose sign-up you want to disable. You can't read the user flow ID from the Microsoft Entra admin center, but you can retrieve it via Microsoft Graph API if you know the app associated with it.
 
 1. Read the application ID associated with the user flow:
     1. Browse to **Identity > External Identities > User flows**.

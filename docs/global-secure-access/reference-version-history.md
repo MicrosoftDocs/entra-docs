@@ -11,7 +11,7 @@ ms.reviewer: ashishj
 ---
 
 # Microsoft Entra private network connector: version release history
-This article lists the versions and features of the Microsoft Entra private network connector. The Microsoft Entra ID team regularly updates the private network connector with new features and functionality. Microsoft Entra private network connectors are [updated automatically when a new major version is released](../identity/app-proxy/application-proxy-faq.yml#why-is-my-connector-still-using-an-older-version-and-not-auto-upgraded-to-latest-version-).
+This article lists the versions and features of the Microsoft Entra private network connector. The Microsoft Entra ID team regularly updates the private network connector with new features and functionality. Microsoft Entra private network connectors are updated automatically when a new major version is released.
 
 > [!IMPORTANT]
 > Microsoft Entra application proxy and Microsoft Entra Private Access use the private network connector.
@@ -90,7 +90,7 @@ June 20, 2023: Released for download. This version is only available for install
 - Updated partner notices.
 
 ### Fixed issues
-- Silent registration of connector with credentials. For more information, see [Create an unattended installation script for the Microsoft Entra private network connector](../identity/app-proxy/application-proxy-register-connector-powershell.md).
+- Silent registration of connector with credentials. For more information, see [Create an unattended installation script for the Microsoft Entra private network connector](how-to-register-connector-powershell.md).
 - Fixed dropping of `Secure` and `HttpOnly` attributes on the cookies passed by backend servers when there are trailing spaces in these attributes.
 - Fixed services crash when back-end server of an application sets "Set-Cookie" header with empty value.
 

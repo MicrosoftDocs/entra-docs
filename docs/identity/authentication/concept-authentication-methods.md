@@ -73,7 +73,7 @@ The following table outlines when an authentication method can be used during a 
 | Voice call                     | No                     | MFA and SSPR              |
 | Password                       | Yes                    | No                        |
 
-> \* Windows Hello for Business, by itself, does not serve as a step-up MFA credential. For example, an MFA Challenge from Sign-in Frequency or SAML Request containing forceAuthn=true. Windows Hello for Business can serve as a step-up MFA credential by being used in FIDO2 authentication. This requires users to be enabled for FIDO2 authentication to work successfully.
+> \* Windows Hello for Business, by itself, does not serve as a step-up MFA credential. For example, an MFA Challenge from Sign-in Frequency or SAML Request containing forceAuthn=true. Windows Hello for Business can serve as a step-up MFA credential by being used in FIDO2 authentication. This requires users to be registered for FIDO2 authentication to work successfully.
 
 > \* Passwordless sign-in can be used for secondary authentication only if certificate-based authentication (CBA) is used for primary authentication. For more information, see [Microsoft Entra certificate-based authentication technical deep dive](/entra/identity/authentication/concept-certificate-based-authentication-technical-deep-dive#mfa-with-single-factor-certificate-based-authentication-preview).
 
@@ -83,7 +83,7 @@ To learn more about how each authentication method works, see the following sepa
 
 * [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/hello-overview)
 * [Microsoft Authenticator app](concept-authentication-authenticator-app.md)
-* [Passkey (FIDO2)](concept-authentication-passwordless.md#fido2-security-key-providers)
+* [Passkey (FIDO2)](concept-authentication-passwordless.md)
 * [Certificate-based authentication](concept-certificate-based-authentication.md)
 * [OATH hardware tokens (preview)](concept-authentication-oath-tokens.md#oath-hardware-tokens-preview)
 * [OATH software tokens](concept-authentication-oath-tokens.md#oath-software-tokens)

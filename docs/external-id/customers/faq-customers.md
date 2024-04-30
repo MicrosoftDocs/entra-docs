@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: faq
-ms.date: 05/23/2023
+ms.date: 04/29/2024
 ms.author: mimart
 ms.custom: it-pro
 ---
@@ -31,11 +31,11 @@ No, this isn't a new name for Azure AD B2C. Microsoft Entra External ID builds o
 
 ### What is the release date for Microsoft Entra External ID?  
 
-Microsoft Entra External ID for external-facing apps entered preview at Microsoft Build 2023. The existing B2B collaboration feature remains unchanged.
+The external tenant capabilities in Microsoft Entra External ID entered preview at Microsoft Build 2023. The existing B2B collaboration feature remains unchanged.
 
 ### What is the pricing for Microsoft Entra External ID?
 
-Microsoft Entra External ID for external-facing apps is in preview, so no pricing details are available at this time. The pricing for existing B2B collaboration features is unchanged.
+The external tenant capabilities in Microsoft Entra External ID are in preview, so no pricing details are available at this time. The pricing for existing B2B collaboration features is unchanged.
 
 ### How does Microsoft Entra External ID affect B2B collaboration?
 
@@ -57,7 +57,7 @@ You can learn more about the preview and the features we're delivering on the ne
 
 Opt for the current Azure AD B2C product if:
 
-- You have an immediate need to deploy a production ready build for customer-facing apps.
+- You have an immediate need to deploy a production ready build for apps for consumers or business customers.
   
    > [!NOTE]
    > Keep in mind that the next generation Microsoft Entra External ID platform represents the future of CIAM for Microsoft, and rapid innovation, new features and capabilities will be focused on this platform. By choosing the next generation platform from the start, you will receive the benefits of rapid innovation and a future-proof architecture.
