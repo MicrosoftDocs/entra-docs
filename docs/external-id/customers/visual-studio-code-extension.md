@@ -11,7 +11,7 @@ ms.date: 02/28/2024
 ms.author: mimart
 ms.custom: it-pro
 
-# Customer intent: As a dev, devops, or it admin, I want to create an external tenant and configure a customized, branded sign-in experience for my external-facing apps from within Visual Studio Code.
+# Customer intent: As a dev, devops, or it admin, I want to create an external tenant and configure a customized, branded sign-in experience for my apps from within Visual Studio Code.
 ---
 
 # Quickstart: Get started with the Microsoft Entra External ID extension for Visual Studio Code

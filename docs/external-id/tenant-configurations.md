@@ -19,7 +19,7 @@ ms.custom: it-pro
 A *tenant* is a dedicated and trusted instance of Microsoft Entra ID that contains an organization's resources, including registered apps and a directory of users. There are two ways to configure a tenant, depending on how the organization intends to use the tenant and the resources they want to manage:
 
 - A **workforce** tenant configuration is for your employees, internal business apps, and other organizational resources.
-- An **external** tenant configuration is used exclusively for External ID scenarios where you want to publish external-facing apps and manage the consumers or business customers who use them.  (learn more about [External ID for consumer apps](~/external-id/customers/overview-customers-ciam.md))
+- An **external** tenant configuration is used exclusively for External ID scenarios where you want to publish apps to consumers or business customers (learn more about [External ID in external tenants](~/external-id/customers/overview-customers-ciam.md))
 
 Each tenant configuration represents a different scenario for working with users outside of your organization.
 
@@ -35,15 +35,15 @@ You can create additional workforce tenants in either the Microsoft Entra admin 
 
 ## External tenants
 
-When you want to use External ID to add customer identity and access management (CIAM) to your [external-facing apps](customers/overview-customers-ciam.md) and manage external users, you create a new tenant in an *external* configuration. This tenant is distinct and separate from your workforce tenant. It follows the standard Microsoft Entra tenant model, but it's configured for customer scenarios.
+When you want to use External ID to add customer identity and access management (CIAM) to your apps, you create a new tenant in an *external* configuration. This tenant is distinct and separate from your workforce tenant. It follows the standard Microsoft Entra tenant model, but it's configured for your consumer and business customer scenarios.
 
-The external tenant is where you'll register your external-facing apps, create sign-up and sign-in user flows, and manage the users of your apps. The consumers and business customers who sign up for your apps are added to the tenant directory, but with [limited default permissions](customers/reference-user-permissions.md).
+The external tenant is where you'll register your apps, create sign-up and sign-in user flows, and manage the users of your apps. The consumers and business customers who sign up for your apps are added to the tenant directory, but with [limited default permissions](customers/reference-user-permissions.md).
 
 [!INCLUDE [preview-alert](customers/includes/preview-alert/preview-alert-ciam.md)]
 
 ## When do I need to create an external tenant?
 
-If you plan to use External ID for external-facing apps for consumers or business customers, the first resource you need to create is a new tenant with an external tenant configuration.
+If you plan to use External ID for apps for consumers or business customers, the first resource you need to create is a new tenant with an external tenant configuration.
 
 You can create external tenants in a couple of ways:
 
