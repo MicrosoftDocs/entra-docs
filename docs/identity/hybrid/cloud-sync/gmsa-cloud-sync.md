@@ -1,0 +1,160 @@
+---
+title: 'Using a group managed service account with Microsoft Entra Cloud Sync '
+description: This document details using a gMSA account with cloud sync
+
+author: billmath
+manager: amycolannino
+ms.service: entra-id
+ms.topic: how-to
+ms.date: 11/06/2023
+ms.subservice: hybrid-connect
+ms.author: billmath
+
+
+ms.custom:
+---
+
+
+
+
+# Group Managed Service Accounts
+
+A group Managed Service Account is a managed domain account that provides automatic password management, simplified service principal name (SPN) management, the ability to delegate the management to other administrators, and also extends this functionality over multiple servers. Microsoft Entra Cloud Sync supports and uses a gMSA for running the agent. You'll be prompted for administrative credentials during setup, in order to create this account. The account appears as `domain\provAgentgMSA$`. For more information on a gMSA, see [group Managed Service Accounts](/windows-server/security/group-managed-service-accounts/group-managed-service-accounts-overview).
+
+### Prerequisites for gMSA
+
+1. The Active Directory schema in the gMSA domain's forest needs to be updated to Windows Server 2012 or later.
+2. [PowerShell RSAT modules](/windows-server/remote/remote-server-administration-tools) on a domain controller.
+3. At least one domain controller in the domain must be running Windows Server 2012 or later.
+4. A domain joined server where the agent is being installed needs to be either Windows Server 2016 or later.
+
+### Custom gMSA account
+
+If you're creating a custom gMSA account, you need to ensure that the account has the following permissions.  These are the default permissions that are created on the account if it is created automatically during installation.
+
+|Type |Name |Access |Applies To|
+|-----|-----|-----|-----|
+|Allow |&lt;gmsa account&gt;|Read all properties |Descendant device objects|
+|Allow |&lt;gmsa account&gt;|Read all properties |Descendant InetOrgPerson objects|
+|Allow |&lt;gmsa account&gt;|Read all properties |Descendant Computer objects|
+|Allow |&lt;gmsa account&gt;|Read all properties |Descendant foreignSecurityPrincipal objects|
+|Allow |&lt;gmsa account&gt;|Full control |Descendant Group objects|
+|Allow |&lt;gmsa account&gt;|Read all properties |Descendant User objects|
+|Allow |&lt;gmsa account&gt;|Read all properties |Descendant Contact objects|
+|Allow |&lt;gmsa account&gt;|Create/delete User objects|This object and all descendant objects|
+
+For steps on how to upgrade an existing agent to use a gMSA account see [group Managed Service Accounts](how-to-install.md#group-managed-service-accounts).
+
+For more information on how to prepare your Active Directory for group Managed Service Account, see [group Managed Service Accounts Overview](/windows-server/security/group-managed-service-accounts/group-managed-service-accounts-overview).
+
+
+## Restricting Permissions
+To restrict Active Directory permissions set by default on the cloud provisioning agent account, you can use the following cmdlet. This will increase the security of the service account by disabling permission inheritance and removing all existing permissions, except SELF and Full Control for administrators. See [Using Set-AADCloudSyncRestrictedPermission](how-to-gmsa-cmdlets.md#using-set-aadcloudsyncrestrictedpermissions) below for examples on restricting the permissions.
+
+
+### Supported permission types
+The Set-AADCloudSyncRestrictedPermission cmdlet supports the following permission types.
+
+|Permission type|Description|
+|-----|-----|
+|BasicRead| See [BasicRead](#basicread) permissions.|
+|MS-DS-Consistency-Guid|See [MS-DS-Consistency-Guid](#ms-ds-consistency-guid) permissions.|
+|PasswordHashSync|See [PasswordHashSync](#password-hash-sync) permissions.|
+|PasswordWriteBack|See [PasswordWriteBack](#password-writeback) permissions.|
+|HybridExchangePermissions|See [HybridExchangePermissions](#exchange-hybrid-deployment) permissions.|
+|ExchangeMailPublicFolderPermissions| See [ExchangeMailPublicFolderPermissions](#exchange-mail-public-folders) permissions.|
+|UserGroupCreateDelete|See [UserGroupCreateDelete](#usergroupcreatedelete) permissions.|
+|All| Applies all the above permissions|
+
+
+#### BasicRead
+This permissionType sets the following permissions:
+
+
+|Type |Name |Access |Applies To| 
+|-----|-----|-----|-----|
+|Allow |&lt;gmsa account&gt;|Read all properties |Descendant device objects| 
+|Allow |&lt;gmsa account&gt;|Read all properties |Descendant InetOrgPerson objects| 
+|Allow |&lt;gmsa account&gt;|Read all properties |Descendant Computer objects| 
+|Allow |&lt;gmsa account&gt;|Read all properties |Descendant foreignSecurityPrincipal objects| 
+|Allow |&lt;gmsa account&gt;|Read all properties |Descendant Group objects| 
+|Allow |&lt;gmsa account&gt;|Read all properties |Descendant User objects| 
+|Allow |&lt;gmsa account&gt;|Read all properties |Descendant Contact objects| 
+|Allow|&lt;gmsa account&gt;|Replicating Directory Changes|This object only (Domain root)|
+
+#### MS-DS-Consistency-Guid
+This permissionType sets the following permissions:
+
+|Type |Name |Access |Applies To|
+|-----|-----|-----|-----| 
+|Allow|&lt;gmsa account&gt;|Write property mS-DS-ConsistencyGuid|Descendant user objects|
+|Allow|&lt;gmsa account&gt;|Write property mS-DS-ConsistencyGuid|Descendant group objects|
+
+If the associated forest is hosted in a Windows Server 2016 environment, it includes the following permissions for NGC keys and STK keys.
+
+|Type |Name |Access |Applies To|
+|-----|-----|-----|-----| 
+|Allow|&lt;gmsa account&gt;|Write property msDS-KeyCredentialLink|Descendant user objects|
+|Allow|&lt;gmsa account&gt;|Write property msDS-KeyCredentialLink|Descendant device objects|
+
+
+
+#### Password Hash Sync
+This permissionType sets the following permissions:
+
+|Type |Name |Access |Applies To|
+|-----|-----|-----|-----| 
+|Allow |&lt;gmsa account&gt;|Replicating Directory Changes |This object only (Domain root)| 
+|Allow |&lt;gmsa account&gt;|Replicating Directory Changes All |This object only (Domain root)| 
+  
+#### Password Writeback 
+This permissionType sets the following permissions:
+
+|Type |Name |Access |Applies To|
+|-----|-----|-----|-----| 
+|Allow |&lt;gmsa account&gt;|Reset Password |Descendant User objects| 
+|Allow |&lt;gmsa account&gt;|Write property lockoutTime |Descendant User objects| 
+|Allow |&lt;gmsa account&gt;|Write property pwdLastSet |Descendant User objects| 
+|Allow |&lt;gmsa account&gt;|Unexpired Password|This object only (Domain root)| 
+
+#### Group Writeback 
+This permissionType sets the following permissions:
+
+|Type |Name |Access |Applies To|
+|-----|-----|-----|-----| 
+|Allow |&lt;gmsa account&gt;|Generic Read/Write |All attributes of object type group and subobjects| 
+|Allow |&lt;gmsa account&gt;|Create/Delete child object |All attributes of object type group and subobjects| 
+|Allow |&lt;gmsa account&gt;|Delete/Delete tree objects|All attributes of object type group and subobjects|
+
+#### Exchange Hybrid Deployment 
+This permissionType sets the following permissions:
+
+|Type |Name |Access |Applies To|
+|-----|-----|-----|-----| 
+|Allow |&lt;gmsa account&gt;|Read/Write all properties |Descendant User objects| 
+|Allow |&lt;gmsa account&gt;|Read/Write all properties |Descendant InetOrgPerson objects| 
+|Allow |&lt;gmsa account&gt;|Read/Write all properties |Descendant Group objects| 
+|Allow |&lt;gmsa account&gt;|Read/Write all properties |Descendant Contact objects| 
+
+#### Exchange Mail Public Folders
+This permissionType sets the following permissions:
+
+|Type |Name |Access |Applies To|
+|-----|-----|-----|-----| 
+|Allow |&lt;gmsa account&gt;|Read all properties |Descendant PublicFolder objects| 
+
+#### UserGroupCreateDelete
+This permissionType sets the following permissions:
+
+|Type |Name |Access |Applies To|
+|-----|-----|-----|-----| 
+|Allow |&lt;gmsa account&gt;|Generic write |All attributes of object type group and subobjects| 
+|Allow |&lt;gmsa account&gt;|Create/Delete child object|All attributes of object type group and subobjects| 
+|Allow |&lt;gmsa account&gt;|Generic write |All attributes of object type user and subobjects| 
+|Allow |&lt;gmsa account&gt;|Create/Delete child object|All attributes of object type user and subobjects| 
+
+
+## Next Steps
+
+- [Understand group Managed Service Accounts](/windows-server/security/group-managed-service-accounts/group-managed-service-accounts-overview)
+- [How to configure gMSA with PowerShell](how-to-gmsa-cmdlets.md)

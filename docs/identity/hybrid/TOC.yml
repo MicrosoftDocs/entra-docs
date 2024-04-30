@@ -172,6 +172,8 @@
       href: cloud-sync/how-to-accidental-deletes.md
     - name: Agent registry options
       href: cloud-sync/how-to-manage-registry-options.md
+    - name: Cloud sync gMSA 
+      href: cloud-sync/gmsa-cloud-sync.md
     - name: Agent gMSA PowerShell cmdlets
       href: cloud-sync/how-to-gmsa-cmdlets.md
     - name: How to map usertype with cloud sync

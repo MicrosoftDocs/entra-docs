@@ -57,7 +57,7 @@ If you're creating a custom gMSA account, you need to ensure that the account ha
 
 For steps on how to upgrade an existing agent to use a gMSA account see [group Managed Service Accounts](how-to-install.md#group-managed-service-accounts).
 
-For more information on how to prepare your Active Directory for group Managed Service Account, see [group Managed Service Accounts Overview](/windows-server/security/group-managed-service-accounts/group-managed-service-accounts-overview).
+For more information on how to prepare your Active Directory for group Managed Service Account, see [group Managed Service Accounts Overview](/windows-server/security/group-managed-service-accounts/group-managed-service-accounts-overview) and [Group managed service accounts with cloud sync](gmsa-cloud-sync.md).
 
 ## In the Microsoft Entra admin center
 
