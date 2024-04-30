@@ -3,17 +3,15 @@
 title: PowerShell and Microsoft Graph examples for group licensing
 description: PowerShell + Graph examples and scenarios for Microsoft Entra group-based licensing
 services: active-directory
-keywords: Azure AD licensing
 author: barclayn
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: enterprise-users
 ms.topic: how-to
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.date: 12/02/2020
 ms.author: barclayn
 ms.reviewer: sumitp
-ms.collection: M365-identity-device-management
 ---
 
 # PowerShell and Microsoft Graph examples for group-based licensing in Microsoft Entra ID
