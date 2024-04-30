@@ -1,6 +1,6 @@
 ---
 title: 'Tutorial: Configure TeamViewer for automatic user provisioning with Microsoft Entra ID'
-description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to TeamViewer.
+description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to TeamViewer.
 
 author: twimmers
 writer: twimmers
@@ -48,7 +48,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 
 ## Step 2: Configure TeamViewer to support provisioning with Microsoft Entra ID
 
-1. Login to [TeamViewer Management Console](https://login.teamviewer.com). Navigate to **Admin settings**.
+1. Log in to [TeamViewer Management Console](https://login.teamviewer.com). Navigate to **Admin settings**.
 1. In the Authentication section, click **Apps and token**.
 1. Click Profile **settings**.
 1. Click **Add app or token**.
@@ -85,7 +85,7 @@ Add TeamViewer from the Microsoft Entra application gallery to start managing pr
 
 The Microsoft Entra provisioning service allows you to scope who will be provisioned based on assignment to the application and or based on attributes of the user. If you choose to scope who will be provisioned to your app based on assignment, you can use the following [steps](~/identity/enterprise-apps/assign-user-or-group-access-portal.md) to assign users to the application. If you choose to scope who will be provisioned based solely on attributes of the user, you can use a scoping filter as described [here](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md). 
 
-* Start small. Test with a small set of users before rolling out to everyone. When scope for provisioning is set to assigned users, you can control this by assigning one or two usersto the app. When scope is set to all users, you can specify an [attribute based scoping filter](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+* Start small. Test with a small set of users before rolling out to everyone. When scope for provisioning is set to assigned users, you can control this by assigning one or two users to the app. When scope is set to all users, you can specify an [attribute based scoping filter](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 * If you need additional roles, you can [update the application manifest](~/identity-platform/howto-add-app-roles-in-apps.md) to add new roles.
 
