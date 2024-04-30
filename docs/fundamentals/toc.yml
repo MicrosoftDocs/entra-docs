@@ -120,8 +120,6 @@ items:
       href: whats-new.md
     - name: What's deprecated in Microsoft Entra ID?
       href: what-is-deprecated.md
-    - name: What's new in sovereign clouds?
-      href: whats-new-sovereign-clouds.md  
     - name: Archive for What's new? in Microsoft Entra ID
       href: whats-new-archive.md
   - name: Frequently asked questions
