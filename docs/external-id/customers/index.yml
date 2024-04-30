@@ -5,7 +5,7 @@ summary: Microsoft Entra External ID is a customer identity access management (C
 
 metadata: 
    title: Microsoft Entra External ID in external tenants documentation
-   description: Microsoft Entra External ID is a customer identity access management (CIAM) solution that lets you create secure, customized sign-in experiences for your apps and services.
+   description: Microsoft Entra External ID is a customer identity access management (CIAM) solution that lets you create secure, customized sign-in experiences for your external-facing apps and services.
    ms.service: entra-external-id
    ms.subservice: customers
     
