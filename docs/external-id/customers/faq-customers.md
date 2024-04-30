@@ -74,7 +74,7 @@ Yes, we rebranded some items in the admin center and in our messaging to best ma
 
 ### How can I get started with External ID?
 
-We're currently offering a [free 30 day trial](https://aka.ms/ExternalIDConsumerApps) to start securing your external-facing applications.
+Get started with securing your consumer and business customer apps by [creating an external tenant](quickstart-tenant-setup.md) in the Microsoft Entra admin center.
 
 ## Azure AD B2C and Azure AD External Identities  
 
@@ -119,9 +119,9 @@ Currently, External ID supports public clouds only.
 
 ### I'm a developer, where can I get started with External ID?
 
-You can find the latest resources and information for developers in our [Developer Center](https://aka.ms/ciam/dev). 
+You can find the latest resources and information for developers in our [Developer Center](https://aka.ms/ciam/dev).
 
-- Create a 30-day free trial and follow a guide to set up your tenant and run your first sample in three easy steps.
+- [Create an external tenant](quickstart-tenant-setup.md) and follow a guide to set up your tenant and run your first sample.
 - Use our tutorials to learn how to build and integrate your consumer and business customer apps with External ID.
 - Sign up for [Identity blog](https://devblogs.microsoft.com/identity/tag/external-id/) email updates to keep up with the latest news and insights.
 - Follow us on [YouTube](https://www.youtube.com/playlist?list=PL3ZTgFEc7Lythpts59O9KOVuEDLWJLLmA) for video overviews, tutorials, and deep dives.
