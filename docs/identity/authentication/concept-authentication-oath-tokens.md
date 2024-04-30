@@ -101,4 +101,4 @@ OATH hardware token | <img width="63" alt="Hardware OATH token" src="media/conce
 ## Next steps
 
 Learn more about configuring authentication methods using the [Microsoft Graph REST API](/graph/api/resources/authenticationmethods-overview).
-Learn about [FIDO2 security key providers](concept-authentication-passwordless.md#fido2-security-key-providers) that are compatible with passwordless authentication.
+Learn about [FIDO2 security key providers](concept-authentication-passwordless.md) that are compatible with passwordless authentication.

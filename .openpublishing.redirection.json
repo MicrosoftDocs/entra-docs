@@ -37,7 +37,17 @@
     },
     {
       "source_path_from_root": "/docs/fundamentals/whats-new-sovereign-clouds-archive.md",
-      "redirect_url": "/entra/fundamentals/whats-new-sovereign-clouds",
+      "redirect_url": "/entra/fundamentals/whats-new",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/fundamentals/whats-new-sovereign-clouds.md",
+      "redirect_url": "/entra/fundamentals/whats-new",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/fundamentals/what-is-deprecated.md",
+      "redirect_url": "/entra/fundamentals/whats-new",
       "redirect_document_id": false
     },
     {
@@ -108,6 +118,11 @@
     {
       "source_path_from_root": "/docs/identity/saas-apps/neotalogicstudio-tutorial.md",
       "redirect_url": "/entra/identity/saas-apps/neota-tutorial",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/karlsgate-identity-exchange-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/karlsgate-identity-exchange-kie-sso-add-on-tutorial",
       "redirect_document_id": false
     },
     {
@@ -213,6 +228,11 @@
     {
       "source_path_from_root": "/docs/identity/app-proxy/application-proxy-debug-connectors.md",
       "redirect_url": "/entra/global-secure-access/troubleshoot-connectors",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/app-proxy/application-proxy-register-connector-powershell.md",
+      "redirect_url": "/entra/global-secure-access/how-to-register-connector-powershell",
       "redirect_document_id": false
     },
     {
@@ -561,14 +581,19 @@
       "redirect_url": "/entra/identity/managed-identities-azure-resources/tutorial-vm-managed-identities-cosmos",
       "redirect_document_id": false
     },
-    {      
+    {
       "source_path_from_root": "/docs/identity/authentication/concept-authentication-windows-hello-for-business.md",
       "redirect_url": "/windows/security/identity-protection/hello-for-business",
       "redirect_document_id": false
     },
-    {            
+    {
       "source_path_from_root": "/docs/external-id/customers/how-to-create-customer-tenant-portal.md",
       "redirect_url": "/entra/external-id/customers/how-to-create-external-tenant-portal",
+      "redirect_document_id": false
+    },
+    {            
+      "source_path_from_root": "/docs/external-id/customers/microsoft-graph-operations.md",
+      "redirect_url": "/entra/external-id/customers/concept-supported-features-customers",
       "redirect_document_id": false
     }
   ]

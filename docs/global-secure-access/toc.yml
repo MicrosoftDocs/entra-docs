@@ -84,6 +84,8 @@ items:
         href: concept-private-access.md
       - name: Configure connectors
         href: how-to-configure-connectors.md
+      - name: Register connector - silent Install
+        href: how-to-register-connector-powershell.md
       - name: Configure Quick Access
         href: how-to-configure-quick-access.md 
       - name: Configure Per-app Access

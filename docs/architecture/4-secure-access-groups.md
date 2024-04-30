@@ -121,8 +121,8 @@ Use Microsoft Entra security groups to assign:
 
 Learn more:
 
-- [Manage Microsoft Entra groups and group membership](~/fundamentals/how-to-manage-groups.md)
-- [Microsoft Entra version 2 cmdlets for group management](~/identity/users/groups-settings-v2-cmdlets.md).
+* [Manage Microsoft Entra groups and group membership](~/fundamentals/how-to-manage-groups.yml)
+* [Microsoft Entra version 2 cmdlets for group management](~/identity/users/groups-settings-v2-cmdlets.md). 
 
 > [!NOTE]
 > Use security groups to assign up to 1,500 applications.

@@ -6,6 +6,7 @@ ms.service: entra-id
 ms.subservice: authentication
 author: justinha
 ms.author: justinha
+ms.reviewer: calui
 ms.topic: conceptual
 ---
 

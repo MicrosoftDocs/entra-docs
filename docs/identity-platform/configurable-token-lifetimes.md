@@ -20,7 +20,7 @@ In Microsoft Entra ID, a policy object represents a set of rules that are enforc
 
 You can designate a policy as the default policy for your organization. The policy is applied to any application in the organization, as long as it isn't overridden by a policy with a higher priority. You also can assign a policy to specific applications. The order of priority varies by policy type.
 
-For examples, read [examples of how to configure token lifetimes](configure-token-lifetimes.md).
+For examples, read [examples of how to configure token lifetimes](configure-token-lifetimes.yml).
 
 > [!NOTE]
 > Configurable token lifetime policy only applies to mobile and desktop clients that access SharePoint Online and OneDrive for Business resources, and does not apply to web browser sessions.
@@ -72,7 +72,7 @@ A token lifetime policy is a type of policy object that contains token lifetime 
 
 Reducing the Access Token Lifetime property mitigates the risk of an access token or ID token being used by a malicious actor for an extended period of time. (These tokens cannot be revoked.) The trade-off is that performance is adversely affected, because the tokens have to be replaced more often.
 
-For an example, see [Create a policy for web sign-in](configure-token-lifetimes.md).
+For an example, see [Create a policy for web sign-in](configure-token-lifetimes.yml).
 
 Access, ID, and SAML2 token configuration are affected by the following properties and their respectively set values:
 
@@ -99,7 +99,7 @@ Refresh and session token configuration are affected by the following properties
 
 Non-persistent session tokens have a Max Inactive Time of 24 hours whereas persistent session tokens have a Max Inactive Time of 90 days. Anytime the SSO session token is used within its validity period, the validity period is extended another 24 hours or 90 days. If the SSO session token isn't used within its Max Inactive Time period, it's considered expired and will no longer be accepted. Any changes to this default period should be changed using [Conditional Access](~/identity/conditional-access/howto-conditional-access-session-lifetime.md).
 
-You can use PowerShell to find the policies that will be affected by the retirement.  Use the [PowerShell cmdlets](configure-token-lifetimes.md#get-started) to see the all policies created in your organization, or to find which apps are linked to a specific policy.
+You can use PowerShell to find the policies that will be affected by the retirement.  Use the [PowerShell cmdlets](configure-token-lifetimes.yml) to see the all policies created in your organization, or to find which apps are linked to a specific policy.
 
 ## Policy evaluation and prioritization
 You can create and then assign a token lifetime policy to a specific application and to your organization. Multiple policies might apply to a specific application. The token lifetime policy that takes effect follows these rules:
@@ -142,4 +142,4 @@ You can use the following cmdlets for application policies.</br></br>
 
 ## Next steps
 
-To learn more, read [examples of how to configure token lifetimes](configure-token-lifetimes.md).
+To learn more, read [examples of how to configure token lifetimes](configure-token-lifetimes.yml).
