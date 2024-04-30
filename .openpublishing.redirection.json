@@ -37,7 +37,12 @@
     },
     {
       "source_path_from_root": "/docs/fundamentals/whats-new-sovereign-clouds-archive.md",
-      "redirect_url": "/entra/fundamentals/whats-new-sovereign-clouds",
+      "redirect_url": "/entra/fundamentals/whats-new",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/fundamentals/whats-new-sovereign-clouds.md",
+      "redirect_url": "/entra/fundamentals/whats-new",
       "redirect_document_id": false
     },
     {
