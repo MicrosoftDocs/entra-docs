@@ -61,7 +61,6 @@ Audit log activities and categories change periodically. The tables are updated 
 |UserManagement|Bulk invite users - finished (bulk)|
 |UserManagement|Bulk restore deleted users - finished (bulk)|
 |UserManagement|Download users - finished (bulk)|
-|UserManagement|Bulk create users - finished (bulk)|
 |UserManagement|started (bulk)|
 
 
@@ -359,7 +358,6 @@ This set of audit logs is related to [B2C](/azure/active-directory-b2c/overview)
 |Authorization|Create custom identity provider|
 |Authorization|Create custom policy|
 |Authorization|Create customAuthenticationExtension|
-|Authorization|Create identity provider|
 |Authorization|Create or update a B2C directory resource|
 |Authorization|Create or update a B2C directory tenant and resource|
 |Authorization|Create or update a CIAM directory tenant and resource|
@@ -380,7 +378,6 @@ This set of audit logs is related to [B2C](/azure/active-directory-b2c/overview)
 |Authorization|Delete authenticationEventsFlow|
 |Authorization|Delete custom policy|
 |Authorization|Delete customAuthenticationExtension|
-|Authorization|Delete identity provider|
 |Authorization|Delete localized resource|
 |Authorization|Delete policy key|
 |Authorization|Delete user attribute|
@@ -421,9 +418,7 @@ This set of audit logs is related to [B2C](/azure/active-directory-b2c/overview)
 |Authorization|Get custom policy metadata|
 |Authorization|Get customAuthenticationExtension|
 |Authorization|Get customAuthenticationExtensions|
-|Authorization|Get identity provider|
 |Authorization|Get identity provider types|
-|Authorization|Get identity providers|
 |Authorization|Get list of tenants|
 |Authorization|Get localized resource|
 |Authorization|Get operation status for an async operation|
@@ -529,7 +524,6 @@ This set of audit logs is related to [B2C](/azure/active-directory-b2c/overview)
 |ResourceManagement|Create Identity Provider|
 |ResourceManagement|Create custom identity provider|
 |ResourceManagement|Create custom policy|
-|ResourceManagement|Create identity provider|
 |ResourceManagement|Create or update a B2C directory resource|
 |ResourceManagement|Create or update a B2C directory tenant and resource|
 |ResourceManagement|Create or update a CIAM directory tenant and resource|
@@ -545,7 +539,6 @@ This set of audit logs is related to [B2C](/azure/active-directory-b2c/overview)
 |ResourceManagement|Delete Guest Usages resource|
 |ResourceManagement|Delete Identity Provider|
 |ResourceManagement|Delete custom policy|
-|ResourceManagement|Delete identity provider|
 |ResourceManagement|Delete localized resource|
 |ResourceManagement|Delete policy key|
 |ResourceManagement|Delete user attribute|
@@ -720,7 +713,6 @@ Logs captured in the Core Directory service cover a wide variety of scenarios. C
 |DirectoryManagement|Add unverified domain|
 |DirectoryManagement|Add verified domain|
 |DirectoryManagement|Create Company|
-|DirectoryManagement|Create company|
 |DirectoryManagement|Create company settings|
 |DirectoryManagement|Delete company allowed data location|
 |DirectoryManagement|Delete company settings|
@@ -1001,8 +993,6 @@ If you're using Microsoft Entra Internet Access or Microsoft Entra Private Acces
 |Other|ConfirmServicePrincipalCompromised|
 |Other|DismissServicePrincipal|
 |Other|DismissUser|
-|Other|confirmServicePrincipalCompromised|
-|Other|dismissServicePrincipal|
 
 ## Invited users
 

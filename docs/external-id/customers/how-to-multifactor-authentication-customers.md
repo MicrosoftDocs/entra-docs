@@ -1,6 +1,6 @@
 ---
 title: Add multifactor authentication (MFA) to a customer app
-description: Learn how to add multifactor authentication (MFA) to your customer-facing (CIAM) application. For example, add email one-time passcode as a second authentication factor to your CIAM sign-up and sign-in user flows.
+description: Learn how to add multifactor authentication (MFA) to your consumer and business customer (CIAM) application. For example, add email one-time passcode as a second authentication factor to your CIAM sign-up and sign-in user flows.
  
 author: msmimart
 manager: celestedg
@@ -12,12 +12,12 @@ ms.date: 01/11/2024
 ms.author: mimart
 ms.custom: it-pro
 
-#Customer intent: As a dev, devops, or it admin, I want to add multifactor authentication to my customer-facing app.
+#Customer intent: As a dev, devops, or it admin, I want to add multifactor authentication to my custoconsumer and business customer app.
 ---
 
-# Add multifactor authentication (MFA) to a customer-facing app
+# Add multifactor authentication (MFA) to an app
 
-[Multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md) (MFA) adds a layer of security to your customer-facing applications. With MFA, customers who sign in with a username and password are prompted for a one-time passcode as a second verification method. This article describes how to enforce MFA for your customers by creating a Microsoft Entra Conditional Access policy and adding MFA to your sign-up and sign-in user flow.
+[Multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md) (MFA) adds a layer of security to your applications. With MFA, customers who sign in with a username and password are prompted for a one-time passcode as a second verification method. This article describes how to enforce MFA for your customers by creating a Microsoft Entra Conditional Access policy and adding MFA to your sign-up and sign-in user flow.
 
 
 > [!TIP]
