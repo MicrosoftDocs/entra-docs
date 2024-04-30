@@ -1,0 +1,130 @@
+{
+  "docsets_to_publish": [
+    {
+      "docset_name": "entra-docs",
+      "build_source_folder": "docs",
+      "build_output_subfolder": "entra-docs",
+      "locale": "en-us",
+      "monikers": [],
+      "moniker_ranges": [],
+      "open_to_public_contributors": true,
+      "type_mapping": {
+        "Conceptual": "Content"
+      },
+      "build_entry_point": "docs",
+      "template_folder": "_themes"
+    }
+  ],
+  "notification_subscribers": [],
+  "sync_notification_subscribers": [
+    "celested@microsoft.com",
+    "rolyon@microsoft.com"
+  ],
+  "branches_to_filter": [],
+  "git_repository_url_open_to_public_contributors": "https://github.com/MicrosoftDocs/entra-docs",
+  "git_repository_branch_open_to_public_contributors": "main",
+  "need_preview_pull_request": true,
+  "dependent_repositories": [
+    {
+      "path_to_root": "_themes",
+      "url": "https://github.com/Microsoft/templates.docs.msft",
+      "branch": "main",
+      "branch_mapping": {}
+    },
+    {
+      "path_to_root": "_themes.pdf",
+      "url": "https://github.com/Microsoft/templates.docs.msft.pdf",
+      "branch": "main",
+      "branch_mapping": {}
+    },
+    {
+      "path_to_root": "azure-docs-pr",
+      "url": "https://github.com/MicrosoftDocs/azure-docs-pr",
+      "branch": "main",
+      "branch_mapping": {}
+    },
+    {
+      "path_to_root": "microsoft-graph",
+      "url": "https://github.com/MicrosoftGraph/microsoft-graph-docs",
+      "branch": "main",
+      "branch_mapping": {}
+    },
+    {
+      "path_to_root": "docs/reusable-content",
+      "url": "https://github.com/MicrosoftDocs/reusable-content",
+      "branch": "main",
+      "branch_mapping": {}
+    },
+    {
+      "path_to_root": "ms-identity-docs-code-dotnet",
+      "url": "https://github.com/Azure-Samples/ms-identity-docs-code-dotnet",
+      "branch": "main",
+      "branch_mapping": {}
+    },
+    {
+      "path_to_root": "ms-identity-docs-code-python",
+      "url": "https://github.com/Azure-Samples/ms-identity-docs-code-python",
+      "branch": "main",
+      "branch_mapping": {}
+    },
+    {
+      "path_to_root": "ms-identity-javascript-react-docs",
+      "url": "https://github.com/Azure-Samples/ms-identity-javascript-react-docs",
+      "branch": "main",
+      "branch_mapping": {}
+    },
+    {
+      "path_to_root": "ms-identity-docs-code-javascript",
+      "url": "https://github.com/Azure-Samples/ms-identity-docs-code-javascript",
+      "branch": "main",
+      "branch_mapping": {}
+    },
+    {
+      "path_to_root": "ms-identity-ciam-dotnet-tutorial",
+      "url": "https://github.com/Azure-Samples/ms-identity-ciam-dotnet-tutorial",
+      "branch": "main",
+      "branch_mapping": {}
+    },
+    {
+      "path_to_root": "ms-identity-javascript-v2",
+      "url": "https://github.com/Azure-Samples/ms-identity-javascript-v2",
+      "branch": "master",
+      "branch_mapping": {}
+    },
+    {
+      "path_to_root": "ms-identity-python-webapp-quickstart",
+      "url": "https://github.com/Azure-Samples/ms-identity-python-webapp",
+      "branch": "0.7.0",
+      "branch_mapping": {}
+    },
+    {
+      "path_to_root": "ms-identity-python-webapp-tutorial",
+      "url": "https://github.com/Azure-Samples/ms-identity-python-webapp",
+      "branch": "0.6.0",
+      "branch_mapping": {}
+    },
+    {
+      "path_to_root": "ms-identity-node",
+      "url": "https://github.com/Azure-Samples/ms-identity-node",
+      "branch": "main",
+      "branch_mapping": {}
+    },
+    {
+      "path_to_root": "ms-identity-javascript-nodejs-desktop",
+      "url": "https://github.com/Azure-Samples/ms-identity-javascript-nodejs-desktop",
+      "branch": "main",
+      "branch_mapping": {}
+    },
+    {
+      "path_to_root": "powershell_scripts",
+      "url": "https://github.com/Azure/azure-docs-powershell-samples",
+      "branch": "master",
+      "branch_mapping": {}
+    }
+  ],
+  "branch_target_mapping": {},
+  "targets": {},
+  "redirection_files": [
+    ".openpublishing.redirection.json"
+  ]
+}

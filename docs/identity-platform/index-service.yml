@@ -1,0 +1,69 @@
+### YamlMime:Landing
+
+title: Back-end service, daemon, and script authentication documentation
+summary: >
+  Learn how to access protected web APIs in daemons, services, and non-interactive scripts with
+  our quickstarts, tutorials, and in-depth how-to guides.
+
+metadata:
+  author: Dickson-Mwendia
+  manager: CelesteDG
+  ms.author: dmwendia
+  ms.date: 02/02/2024
+  ms.service: identity-platform  
+  ms.topic: landing-page
+
+landingContent:
+
+## ROW 1 ################################################### ROW 1 ##
+  - title: "Get started"
+    linkLists:
+      - linkListType: quickstart
+        links:
+          - text: ASP.NET Core
+            url: quickstart-daemon-dotnet-acquire-token.md
+          - text: Java
+            url: quickstart-daemon-app-java-acquire-token.md
+          - text: Node.js
+            url: quickstart-console-app-nodejs-acquire-token.md
+          - text: Python
+            url: quickstart-daemon-app-python-acquire-token.md
+  - title: "Learn by building"
+    linkLists:
+      - linkListType: tutorial
+        links:
+          - text: ASP.NET
+            url: tutorial-v2-aspnet-daemon-web-app.md
+          - text: Node.js
+            url: tutorial-v2-nodejs-console.md
+  - title: "Scenario in depth"
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Service, daemon, or script that calls web APIs
+            url: scenario-daemon-overview.md
+## ROW 2 ################################################### ROW 2 ##
+  # - title: $CARD_TITLE
+  #   linkLists:
+  #     - linkListType: get-started
+  #       links:
+  #         - text: $ARTICLE_TITLE
+  #           url: index.yml
+  #         - text: $ARTICLE_TITLE
+  #           url: index.yml
+  # - title: $CARD_TITLE
+  #   linkLists:
+  #   - linkListType: get-started
+  #     links:
+  #         - text: $ARTICLE_TITLE
+  #           url: index.yml
+  #         - text: $ARTICLE_TITLE
+  #           url: index.yml
+  # - title: $CARD_TITLE
+  #   linkLists:
+  #     - linkListType: get-started
+  #       links:
+  #         - text: $ARTICLE_TITLE
+  #           url: index.yml
+  #         - text: $ARTICLE_TITLE
+  #           url: index.yml

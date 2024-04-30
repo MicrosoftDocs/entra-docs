@@ -1,0 +1,18 @@
+items:
+- name: Microsoft Entra
+  tocHref: /entra/
+  topicHref: /entra/index
+  items:
+  - name: Microsoft Entra ID
+    tocHref: /entra/identity/
+    topicHref: /entra/identity/index
+    items:
+    - name: Application proxy
+      tocHref: /graph/
+      topicHref: /entra/identity/app-proxy/
+    - name: Application proxy
+      tocHref: /entra/identity/domain-services/
+      topicHref: /entra/identity/app-proxy/
+    - name: Application proxy
+      tocHref: /entra/identity-platform/
+      topicHref: /entra/identity/app-proxy/

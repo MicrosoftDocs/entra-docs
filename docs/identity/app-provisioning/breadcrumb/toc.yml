@@ -1,0 +1,12 @@
+items:
+- name: Microsoft Entra
+  tocHref: /entra/
+  topicHref: /entra/index/
+  items:
+  - name: Microsoft Entra ID
+    tocHref: /entra/identity/
+    topicHref: /entra/identity/index
+    items:
+    - name: Application provisioning
+      tocHref: /entra/identity/monitoring-health/
+      topicHref: /entra/identity/app-provisioning/

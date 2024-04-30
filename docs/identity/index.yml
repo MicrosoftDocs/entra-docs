@@ -1,0 +1,100 @@
+### YamlMime:Hub
+
+title: Microsoft Entra ID documentation
+summary: Use Microsoft Entra ID to manage user identities and control access to your apps, data, and resources.
+brand: azure ## Used for color theming of icons and hero area
+
+metadata:
+  title: Microsoft Entra ID documentation
+  description: Microsoft Entra ID is Microsoft's multitenant, cloud-based directory, and identity management service that combines core directory services, application access management, and identity protection into a single solution.
+  ms.service: entra-id
+  ms.topic: hub-page
+  author: rolyon
+  ms.author: rolyon
+  manager: amycolannino
+  ms.date: 03/22/2024
+
+productDirectory:
+  title: Getting started
+  items:
+    - title: What is Microsoft Entra ID?
+      imageSrc: ./media/index/entra-id.svg
+      summary: "Manage user identities and control access to your apps, data, and resources."
+      url: ../fundamentals/whatis.md
+    - title: Authentication
+      imageSrc: ./media/index/authentication.svg
+      summary: "Configure sign-in methods and security features like self-service password reset and multifactor authentication."
+      url: ./authentication/overview-authentication.md
+    - title: Application management
+      imageSrc: ./media/index/enterprise-applications.svg
+      summary: "Develop, add, or connect an app to Microsoft Entra ID and manage access."
+      url: ./enterprise-apps/what-is-application-management.md
+    - title: Role-based access control
+      imageSrc: ./media/index/role-based-access-control.svg
+      summary: "Manage administrator permissions and apply the principle of least privilege using Microsoft Entra role-based access control."
+      url: ./role-based-access-control/custom-overview.md
+    - title: User management
+      imageSrc: ./media/index/users.svg
+      summary: "Manage users and groups, assign licenses, and manage domain names."
+      url: ./users/directory-overview-user-model.md
+    - title: Conditional Access
+      imageSrc: ./media/index/conditional-access.svg
+      summary: "Control access to resources by enforcing policies based on user, location, device, and more."
+      url: ./conditional-access/overview.md
+    - title: Device identity
+      imageSrc: ./media/index/devices.svg
+      summary: "Register and join devices to Microsoft Entra ID for device management and Condition Access."
+      url: ./devices/overview.md
+    - title: Hybrid identity
+      imageSrc: ./media/index/hybrid-identity.svg
+      summary: "Create a user identity that can access both on-premises and cloud resources."
+      url: ./hybrid/whatis-hybrid-identity.md
+    - title: Application provisioning
+      imageSrc: ./media/index/application-provisioning.svg
+      summary: "Create and manage user identities in applications by provisioning from Microsoft Entra ID."
+      url: ./app-provisioning/user-provisioning.md
+    - title: Application proxy
+      imageSrc: ./media/index/enterprise-applications.svg
+      summary: "Provide secure remote access and cloud scale security to your private applications."
+      url: ./app-proxy/overview-what-is-app-proxy.md
+    - title: Managed identities for Azure resources
+      imageSrc: ./media/index/managed-identities.svg
+      summary: "Create an application identity that can connect to resources using Microsoft Entra authentication."
+      url: ./managed-identities-azure-resources/overview.md
+    - title: Application integration
+      imageSrc: ./media/index/enterprise-applications.svg
+      summary: "Integrate cloud-enabled, software as a service (SaaS) apps with Microsoft Entra ID."
+      url: ./saas-apps/tutorial-list.md
+    - title: Monitoring and health
+      imageSrc: ./media/index/monitoring-health.svg
+      summary: "Use logs and reports to determine usage of your apps and services, detect risks, and troubleshoot issues.."
+      url: ./monitoring-health/overview-monitoring-health.md
+    - title: Multitenant organizations
+      imageSrc: ./media/index/multitenant-organizations.svg
+      summary: "Collaborate across tenants within your organization."
+      url: ./multi-tenant-organizations/overview.md
+    - title: Domain services
+      imageSrc: ./media/index/domain-services.svg
+      summary: "Move legacy apps to managed domains in the cloud while preserving user accounts, groups, and access."
+      url: ./domain-services/overview.md
+    - title: Azure Active Directory B2C
+      imageSrc: ./media/index/azure-ad-b2c.svg
+      summary: "Business to consumers identity and access management for your app."
+      url: /azure/active-directory-b2c/
+
+additionalContent:
+  sections:
+    - title: Resources
+      items:
+        - title: "Microsoft Entra ID training"
+          summary: "Learn more about Microsoft Entra ID with step-by-step guidance."
+          url: /training/browse/?resource_type=module&expanded=entra&products=entra-id
+        - title: "What's new in Microsoft Entra ID"
+          summary: "Learn about recent developments in Microsoft Entra ID."
+          url: ../fundamentals/whats-new.md
+        - title: "New name for Azure AD"
+          summary: "Learn more about the new name, what the change means, and how it affects you."
+          url: ../fundamentals/new-name.md
+        - title: "Secure your organization's identities"
+          summary: "Security recommendation to protect your identities."
+          url: ../fundamentals/concept-secure-remote-workers.md

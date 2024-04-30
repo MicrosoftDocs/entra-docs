@@ -1,0 +1,69 @@
+### YamlMime:Hub
+
+## FRONT MATTER START
+title: Microsoft Entra External ID documentation # < 60 chars
+summary: >
+  With Microsoft Entra External ID, you can secure all the external identities you work with. Collaborate on your workforce apps and resources with business guests, or secure external user access to your customer and consumer facing apps. 
+brand: azure
+
+metadata:
+  title: Microsoft Entra External ID documentation
+  description: Learn how to use Microsoft Entra External ID for all your external identities scenarios, including B2B collaboration for your workforce, and identity and access management for your consumer apps.
+   
+  ms.service: entra-external-id
+  ms.subservice:
+
+  ms.topic: hub-page
+  ms.collection: collection
+  author: csmulligan
+  ms.author: cmulligan
+  ms.date: 04/29/2024
+
+## FRONT MATTER END
+
+## BAND 1 - HIGHLIGHTED CONTENT START #############################################################################################################################
+highlightedContent:
+# itemType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
+  items:
+    # Card
+    - title: What is Microsoft Entra External ID? 
+      itemType: overview
+      url: ./external-identities-overview.md
+    # Card
+    - title: "Try the Woodgrove Groceries demo"
+      itemType: get-started
+      url: https://woodgrovedemo.com/      
+    # Card
+    - title: "Free trial: Set up an external tenant in minutes"
+      itemType: quickstart
+      url: https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl
+
+productDirectory:
+  title: Get started
+  items:
+    - title: Protect your consumer and business customer identities
+      imageSrc: ./media/index/external-identities-icon.png
+      summary: "As an IT professional, learn how to use External ID as your customer identity and access management (CIAM) solution."
+      url: ./customers/overview-customers-ciam.md
+    - title: Collaborate with business guests
+      imageSrc: ./media/index/b2b-icon.png
+      summary: "Learn how your workforce can work securely with business guests using B2B collaboration."
+      url: what-is-b2b.md
+    - title: Build consumer and business customer apps for External ID
+      imageSrc: ./media/index/identity-platform-icon.png
+      summary: "As a developer, use our tutorials to learn how to integrate your consumer and business customer apps with External ID."
+      url: customers/samples-ciam-all.md?tabs=apptype
+
+additionalContent:
+  sections:
+    - title: Resources
+      items:
+        - title: "Microsoft Entra External ID Developer Center"
+          summary: "Explore code samples, videos, and community links."
+          url: https://aka.ms/ciam/dev
+        - title: "Microsoft Entra identity platform blogs"
+          summary: "Read our blog posts for the latest product updates."
+          url: https://devblogs.microsoft.com/identity/
+        - title: "Microsoft Entra External ID video series"
+          summary: "Learn more through our overview and how-to videos."
+          url: https://www.youtube.com/playlist?list=PL3ZTgFEc7Lythpts59O9KOVuEDLWJLLmA

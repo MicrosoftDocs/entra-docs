@@ -1,0 +1,24 @@
+{
+    "$schema": "https://whatsnewapi.azurewebsites.net/schema",
+    "docSetProductName": "Microsoft Entra External ID",
+    "rootDirectory": "docs/external-id/",
+    "docLinkSettings": {
+        "linkFormat": "relative",
+        "relativeLinkPrefix": "/entra/external-id"
+    },
+    "inclusionCriteria": {
+        "omitPullRequestTitles" : false,
+        "minAdditionsToFile" : 10,
+        "maxFilesChanged": 50,
+        "labels": [
+            "label:active-directory/svc",
+            "label:B2B/subsvc"
+        ]
+    },
+    "areas": [
+        {
+            "names": [ "."],
+            "heading": "Microsoft Entra External ID"
+        }
+    ]
+}

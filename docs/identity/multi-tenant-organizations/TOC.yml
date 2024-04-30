@@ -1,0 +1,64 @@
+- name: Multitenant organizations documentation
+  href: index.yml
+- name: Overview
+  expanded: true
+  items:
+  - name: Multitenant organization capabilities
+    href: overview.md
+  - name: What is a multitenant organization?
+    href: multi-tenant-organization-overview.md
+  - name: What is cross-tenant synchronization?
+    href: cross-tenant-synchronization-overview.md
+- name: Concepts
+  expanded: true
+  items:
+  - name: Multitenant organizations
+    items:
+    - name: Identity provisioning for Microsoft 365
+      href: multi-tenant-organization-microsoft-365.md
+    - name: Optional policy templates
+      href: multi-tenant-organization-templates.md
+    - name: Limitations
+      href: multi-tenant-organization-known-issues.md
+  - name: Cross-tenant synchronization
+    items:
+    - name: Topologies for cross-tenant synchronization
+      href: cross-tenant-synchronization-topology.md
+    - name: Governance and cross-tenant synchronization
+      href: cross-tenant-synchronization-governance.md
+    - name: Known issues
+      href: ../app-provisioning/known-issues.md?toc=/entra/identity/multi-tenant-organizations/toc.json&bc=/entra/identity/multi-tenant-organizations/breadcrumb/toc.json?pivots=cross-tenant-synchronization
+- name: How-to guides
+  expanded: true
+  items:
+  - name: Multitenant organization
+    expanded: true
+    items:
+    - name: Configure a multitenant organization
+      href: multi-tenant-organization-configure-graph.md
+    - name: Configure policy templates
+      href: multi-tenant-organization-configure-templates.md
+  - name: Cross-tenant synchronization
+    expanded: true
+    items:
+    - name: Configure cross-tenant synchronization
+      items:
+      - name: Admin center
+        href: cross-tenant-synchronization-configure.md
+      - name: PowerShell or Graph API
+        href: cross-tenant-synchronization-configure-graph.md
+    - name: Scoping users or groups to be provisioned
+      href: ../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md?toc=/entra/identity/multi-tenant-organizations/toc.json&bc=/entra/identity/multi-tenant-organizations/breadcrumb/toc.json?pivots=cross-tenant-synchronization
+    - name: Enable accidental deletions prevention
+      href: ../app-provisioning/accidental-deletions.md?toc=/entra/identity/multi-tenant-organizations/toc.json&bc=/entra/identity/multi-tenant-organizations/breadcrumb/toc.json?pivots=cross-tenant-synchronization
+    - name: Provision on-demand
+      href: ../app-provisioning/provision-on-demand.md?toc=/entra/identity/multi-tenant-organizations/toc.json&bc=/entra/identity/multi-tenant-organizations/breadcrumb/toc.json?pivots=cross-tenant-synchronization
+    - name: Provisioning logs
+      href: ../monitoring-health/concept-provisioning-logs.md?toc=/entra/identity/multi-tenant-organizations/toc.json&bc=/entra/identity/multi-tenant-organizations/breadcrumb/toc.json?pivots=cross-tenant-synchronization
+    - name: Map directory extensions
+      href: cross-tenant-synchronization-directory-extensions.md
+- name: Reference
+  expanded: true
+  items:
+  - name: Function reference for writing expressions for attribute mappings
+    href: ../app-provisioning/functions-for-customizing-application-data.md?toc/entra/identity/multi-tenant-organizations/toc.json&bc=/entra/identity/multi-tenant-organizations/breadcrumb/toc.json

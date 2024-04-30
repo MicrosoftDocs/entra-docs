@@ -1,0 +1,11 @@
+- name: Entra
+  tocHref: /entra/
+  topicHref: /entra/index
+  items:
+  - name: Microsoft Entra ID
+    tocHref: /entra/identity/
+    topicHref: /entra/identity/index
+    items:
+    - name: Multitenant organizations
+      tocHref: /graph/
+      topicHref: /entra/identity/multi-tenant-organizations/
