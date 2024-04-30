@@ -111,8 +111,8 @@ items:
         href: provisioning-workbook.md  
     - name: SAP provisioning scenarios
       items:
-      - name: Plan deploying with SAP source and target apps
-        href: plan-sap-source-and-target.md
+      - name: Identity lifecycle with SAP source and targets
+        href: plan-sap-user-source-and-target.md
     - name: Workday provisioning scenarios
       items:
       - name: Retrieve pronoun information
