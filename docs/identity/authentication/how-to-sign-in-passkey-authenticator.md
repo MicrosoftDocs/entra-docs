@@ -19,6 +19,15 @@ ms.collection: M365-identity-device-management
 
 This article covers the sign-in experience when using passkeys in Microsoft Authenticator with Microsoft Entra ID. For more information about the availability of Microsoft Entra ID passkey (FIDO2) authentication across native applications, web browsers, and operating systems, see [Support for FIDO2 authentication with Microsoft Entra ID](concept-fido2-compatibility.md).
 
+| Scenario | iOS | Android |
+|------------------|---------------------------------|----------------|
+| **Same-device authentication in a browser**              | &#x2705;          | &#10060;<sup>2</sup>       |
+| **Same-device authentication in native Microsoft applications**<sup>1</sup>            | &#x2705; | &#10060;<sup>2</sup>     |
+| **Cross-device authentication**  | &#x2705;  | &#x2705;    |
+
+<sup>1</sup> For native app sign-in (preview), the user must have an authentication broker installed. Microsoft Authenticator is an authentication broker.
+
+<sup>2</sup> Support for same-device Android scenarios is coming soon.
 
 ## [**iOS**](#tab/iOS)
 

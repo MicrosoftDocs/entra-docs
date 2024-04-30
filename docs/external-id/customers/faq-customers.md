@@ -102,11 +102,11 @@ Our next-generation CIAM platform is designed to accommodate equivalent capabili
 
 ### What identity providers does External ID support?
 
- External ID supports various identity providers, including Microsoft Entra accounts (via invite), Facebook, Google, and SAML/WS-Fed identity provider federation. Identity providers are based on the tenant configuration and the whether the external user is invited or uses self-service sign-up. [Learn more about identity providers](identity-providers.md) in External ID, and refer to our [supported feature comparison](concept-supported-features-customers.md#compare-workforce-and-external-tenant-capabilities).
+ External ID supports various identity providers, including Microsoft Entra accounts (via invite), Facebook, Google, and SAML/WS-Fed identity provider federation. Identity providers are based on the tenant configuration and the whether the external user is invited or uses self-service sign-up. [Learn more about identity providers](../identity-providers.md) in External ID, and refer to our [supported feature comparison](concept-supported-features-customers.md#compare-workforce-and-external-tenant-capabilities).
 
 ### Where can I find a list of External ID features?
 
-For a detailed list of the External ID features and capabilities available in [workforce and external tenants](../tenant-configurations.md), see [Supported features in workforce and external tenants](concept-supported-features-customers.md#compare-workforce-and-external-tenant-capabilities).
+For a detailed list of the External ID features and capabilities, see [Supported features in workforce and external tenants](concept-supported-features-customers.md#compare-workforce-and-external-tenant-capabilities).
 
 <!--
 ### Will External ID be available in all regions worldwide?
@@ -134,7 +134,7 @@ In addition to those resources, we have some developer-focused features in publi
 
 ### How do I add authentication with External ID to my app code?
 
-We have a single, unified [Microsoft Authentication Library](https://learn.microsoft.com/azure/active-directory/develop/msal-overview) (MSAL) where the same application code works for workforce and customer scenarios. In three steps, you can sign up or sign in a user:
+We have a single, unified [Microsoft Authentication Library](~/identity-platform/msal-overview.md) (MSAL) where the same application code works for workforce and customer scenarios. In three steps, you can sign up or sign in a user:
 
 1. Configure MSAL to use to your tenant and application
 1. Create a sign-in function that calls MSAL to start the web-based sign in flow

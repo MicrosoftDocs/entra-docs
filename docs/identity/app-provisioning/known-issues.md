@@ -30,6 +30,10 @@ This article discusses known issues to be aware of when you work with app provis
 - Synchronizing contacts and converting contacts to B2B users
 - Synchronizing meeting rooms across tenants
 
+### Updating proxyAddresses
+
+ProxyAddresses is a [read-only property in Microsoft Graph](https://learn.microsoft.com/graph/api/resources/user?view=graph-rest-1.0&preserve-view=true#mail-and-proxyaddresses-properties). It can be included as a source attribute in your mappings, but cannot be set as a target attribute. 
+
 ### Microsoft Teams
 
 External / B2B users of type `member` created by cross-tenant synchronization can be added to a shared channel in Microsoft Teams. However, external member users created outside of cross-tenant sync cannot be added to a Teams shared channel.  
@@ -39,6 +43,7 @@ External / B2B users of type `member` created by cross-tenant synchronization ca
 An external user from the source (home) tenant can't be provisioned into another tenant. Internal guest users from the source tenant can't be provisioned into another tenant. Only internal member users from the source tenant can be provisioned into the target tenant. For more information, see [Properties of a Microsoft Entra B2B collaboration user](~/external-id/user-properties.md).
 
 In addition, users that are enabled for SMS sign-in cannot be synchronized through cross-tenant synchronization.
+
 
 ### Updating the showInAddressList property fails
 
