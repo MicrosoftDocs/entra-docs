@@ -63,7 +63,7 @@ The Set-AADCloudSyncRestrictedPermission cmdlet supports the following permissio
 |PasswordWriteBack|See [PasswordWriteBack](#password-writeback) permissions.|
 |HybridExchangePermissions|See [HybridExchangePermissions](#exchange-hybrid-deployment) permissions.|
 |ExchangeMailPublicFolderPermissions| See [ExchangeMailPublicFolderPermissions](#exchange-mail-public-folders) permissions.|
-|UserGroupCreateDelete|See [UserGroupCreateDelete](#usergroupcreatedelete) permissions.|
+|UserGroupCreateDelete|See [UserGroupCreateDelete](#usergroupcreatedelete-cloudhr) permissions.|
 |All| Applies all the above permissions|
 
 
@@ -143,7 +143,7 @@ This permissionType sets the following permissions:
 |-----|-----|-----|-----| 
 |Allow |&lt;gmsa account&gt;|Read all properties |Descendant PublicFolder objects| 
 
-#### UserGroupCreateDelete
+#### UserGroupCreateDelete (CloudHR)
 This permissionType sets the following permissions:
 
 |Type |Name |Access |Applies To|
