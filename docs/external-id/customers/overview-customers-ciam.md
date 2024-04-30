@@ -1,6 +1,6 @@
 ---
 title: Overview - External ID in external tenants
-description: Learn about customer identity access management (CIAM), a solution that lets you create secure, customized sign-in experiences for your external-facing apps and services.
+description: Learn about customer identity access management (CIAM), a solution that lets you create secure, customized sign-in experiences for your apps and services.
  
 author: msmimart
 manager: celestedg
@@ -12,12 +12,12 @@ ms.date: 04/29/2024
 ms.author: mimart
 ms.custom: it-pro
 
-#Customer intent: As a dev, devops, or it admin, I want to learn about identity solutions for external-facing apps
+#Customer intent: As a dev, devops, or it admin, I want to learn about identity solutions for apps for consumers and business customers.
 ---
 
 # Overview: Secure your apps using External ID in an external tenant
 
-Microsoft Entra External ID includes Microsoft's customer identity and access management (CIAM) solution. For organizations and businesses that want to make their apps available to consumers, External ID makes it easy to add CIAM features like self-service registration, personalized sign-in experiences, and customer account management. Because these CIAM capabilities are built into Microsoft Entra ID, you also benefit from platform features like enhanced security, compliance, and scalability.
+Microsoft Entra External ID includes Microsoft's customer identity and access management (CIAM) solution. For organizations and businesses that want to make their apps available to consumers and business customers, External ID makes it easy to add CIAM features like self-service registration, personalized sign-in experiences, and customer account management. Because these CIAM capabilities are built into Microsoft Entra ID, you also benefit from platform features like enhanced security, compliance, and scalability.
 
 :::image type="content" source="media/overview-customers-ciam/overview-ciam.png" alt-text="Diagram showing an overview customer identity and access management." border="true":::
 
@@ -25,7 +25,7 @@ Microsoft Entra External ID includes Microsoft's customer identity and access ma
 
 ## Create a dedicated external tenant
 
-When getting started with External ID for your external-facing apps, you first create a tenant for your apps, resources, and directory of customer accounts.
+When getting started with External ID for your consumer and business customer apps, you first create a tenant for your apps, resources, and directory of customer accounts.
 
 If you've worked with Microsoft Entra ID, you're already familiar with using a Microsoft Entra tenant that contains your employee directory, internal apps, and other organizational resources. With External ID, you create a distinct tenant that follows the standard Microsoft Entra tenant model but is configured for external scenarios. This external tenant contains:
 
@@ -50,7 +50,8 @@ There are two types of user accounts you can manage in your external tenant:
 - **Admin account**: Users with work accounts can manage resources in a tenant, and with an administrator role, can also manage tenants. Users with work accounts can create new consumer accounts, reset passwords, block/unblock accounts, and set permissions or assign an account to a security group.
 
 Learn more about managing [customer accounts](how-to-manage-customer-accounts.md) and [admin accounts](how-to-manage-admin-accounts.md) in your external tenant.
-## Add customized sign-in to your external-facing apps
+
+## Add customized sign-in
 
 External ID is intended for businesses that want to make applications available to their customers using the Microsoft Entra platform for identity and access.
 
@@ -64,7 +65,7 @@ External ID is intended for businesses that want to make applications available 
 
 - **Integrate multiple app languages and platforms.** With Microsoft Entra, you can quickly set up and deliver secure, branded authentication flows for multiple app types, platforms, and languages.
 
-- **Use native authentication for your apps.** Create seamless authentication experiences for external-facing mobile and desktop applications using the preview Microsoft Authentication Library (MSAL) for iOS and Android. 
+- **Use native authentication for your apps.** Create seamless authentication experiences for mobile and desktop applications using the preview Microsoft Authentication Library (MSAL) for iOS and Android. 
 
 - **Provide self-service account management.** Customers can register for your online services by themselves, manage their profile, delete their account, enroll in a multifactor authentication (MFA) method, or reset their password with no admin or help desk assistance.
 
@@ -110,7 +111,7 @@ Learn more about the [application user activity dashboards](how-to-user-insights
 
 If you're a new customer, you might be wondering which solution is a better fit, [Azure AD B2C](/azure/active-directory-b2c/) or Microsoft Entra External ID (preview). Opt for the current Azure AD B2C product if:
 
-- You have an immediate need to deploy a production ready build for external-facing apps.
+- You have an immediate need to deploy a production ready build.
   
    > [!NOTE]
    > Keep in mind that the next generation Microsoft Entra External ID platform represents the future of CIAM for Microsoft, and rapid innovation, new features and capabilities will be focused on this platform. By choosing the next generation platform from the start, you will receive the benefits of rapid innovation and a future-proof architecture.

@@ -12,7 +12,7 @@ author: msmimart
 manager: celestedg
 
 ms.collection: M365-identity-device-management
-#customer intent: As a developer creating external-facing apps, I want to understand the capabilities of Microsoft Entra External ID, so that I can securely manage my customers' identity experiences and allow them to use their own credentials to sign in.
+#customer intent: As a developer creating apps for consumers and business customers, I want to understand the capabilities of Microsoft Entra External ID, so that I can securely manage my customers' identity experiences and allow them to use their own credentials to sign in.
 ---
 
 # Introduction to Microsoft Entra External ID
@@ -29,9 +29,9 @@ These scenarios fall within the scope of Microsoft Entra External ID:
 
 Microsoft Entra External ID is a flexible solution for both consumer-oriented app developers needing authentication and CIAM, and businesses seeking secure B2B collaboration.
 
-## Secure your external-facing apps
+## Secure your apps for consumers and business customers
 
-Organizations and developers can use [External ID in an external tenant](customers/overview-customers-ciam.md) as their CIAM solution when publishing their external-facing applications to consumers. You can create a separate Microsoft Entra tenant in an *external* configuration, which allows you to manage your consumer apps and user accounts separately from your workforce. Within this tenant, you can easily configure custom-branded sign-up experiences and user management features:
+Organizations and developers can use [External ID in an external tenant](customers/overview-customers-ciam.md) as their CIAM solution when publishing their apps to consumers and business customers. You can create a separate Microsoft Entra tenant in an *external* configuration, which allows you to manage your apps and user accounts separately from your workforce. Within this tenant, you can easily configure custom-branded sign-up experiences and user management features:
 
 - Set up self-service registration flows that define the series of sign-up steps customers follow and the sign-in methods they can use, such as email and password, one-time passcodes, or social accounts from Google or Facebook.
 
@@ -66,7 +66,7 @@ You can use [cross-tenant access settings](cross-tenant-access-overview.md) to m
 A *tenant* is a dedicated and trusted instance of Microsoft Entra ID that contains an organization's resources, including registered apps and a directory of users. There are two ways to configure a tenant, depending on how the organization intends to use the tenant and the resources they want to manage:
 
 - A **workforce** tenant configuration is a standard Microsoft Entra tenant that contains your employees, internal business apps, and other organizational resources. In a workforce tenant, your internal users can collaborate with external business partners and guests using B2B collaboration.
-- An **external** tenant configuration is used exclusively for apps you want to publish to consumers or business customers. This distinct tenant follows the standard Microsoft Entra tenant model, but is configured for consumer scenarios. It contains your external-facing app registrations and a directory of consumer or customer accounts.
+- An **external** tenant configuration is used exclusively for apps you want to publish to consumers or business customers. This distinct tenant follows the standard Microsoft Entra tenant model, but is configured for consumer scenarios. It contains your app registrations and a directory of consumer or customer accounts.
 
 For details, see [Workforce and external tenant configurations in Microsoft Entra External ID](tenant-configurations.md).
 

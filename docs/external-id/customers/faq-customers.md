@@ -57,7 +57,7 @@ You can learn more about the preview and the features we're delivering on the ne
 
 Opt for the current Azure AD B2C product if:
 
-- You have an immediate need to deploy a production ready build for external-facing apps.
+- You have an immediate need to deploy a production ready build for apps for consumers or business customers.
   
    > [!NOTE]
    > Keep in mind that the next generation Microsoft Entra External ID platform represents the future of CIAM for Microsoft, and rapid innovation, new features and capabilities will be focused on this platform. By choosing the next generation platform from the start, you will receive the benefits of rapid innovation and a future-proof architecture.
