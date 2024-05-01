@@ -26,7 +26,7 @@ This month, we made updates to our table of contents to make navigation easier f
 
 ### Updated articles
 
-- [Supported features in workforce and external tenants](/entra/external-id/customers/concept-supported-features-customers) - Supported features for external tenants updated
+- [Features supported in workforce and external tenants](/entra/external-id/customers/concept-supported-features-customers) - Supported features for external tenants updated
 - [Overview: Secure your apps using External ID in an external tenant](/entra/external-id/customers/overview-customers-ciam) - Image and terminology updates
 - [Microsoft Entra External ID frequently asked questions](/entra/external-id/customers/faq-customers) - Updated pricing information
 - [Default user permissions in external tenants](/entra/external-id/customers/reference-user-permissions) - Updated user types
@@ -47,7 +47,7 @@ This month, we made updates to our table of contents to make navigation easier f
 - [Add multifactor authentication (MFA) to an app](how-to-multifactor-authentication-customers.md) - Updated screenshots
 - [Add your application to the user flow](how-to-user-flow-add-application.md) - Updated screenshots
 - [Create a sign-up and sign-in user flow for customers](how-to-user-flow-sign-up-sign-in-customers.md) - Updated screenshots
-- [Quickstart: Get started with Microsoft Entra External ID](quickstart-trial-setup.md) - Updated screenshots
+- [Get started with Microsoft Entra External ID](quickstart-trial-setup.md) - Updated screenshots
 - [Samples for customer identity and access management (CIAM)](samples-ciam-all.md) - Added links to native authentication public preview articles
 
 ## February 2024
