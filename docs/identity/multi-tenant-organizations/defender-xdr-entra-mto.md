@@ -29,7 +29,7 @@ Microsoft Entra provides the controls needed to govern the lifecycle of a SOC us
 
 ### Lifecycle control
 
-**Entitlement management, through access packages and connected organizations** allows the target tenant administrator to define collections of resources (ex: apps, roles, and groups) that users from the source tenant can request access to. If the user is approved for the resources they need, but don’t yet have a B2B account, entitlement management will automatically create a B2B account for the user in the target tenant, and even remove those accounts when the user doesn’t have any remaining entitlements in the target tenant. 
+**Entitlement management, through access packages and connected organizations** allows the target tenant administrator to define collections of resources (ex: app app roles, directory roles, and groups) that users from the source tenant can request access to. If the user is approved for the resources they need, but don’t yet have a B2B account, entitlement management will automatically create a B2B account for the user in the target tenant, and even remove those accounts when the user doesn’t have any remaining entitlements in the target tenant. 
 
 [Learn more](../../id-governance/entitlement-management-organization.md)
 
@@ -44,7 +44,7 @@ Microsoft Entra provides the controls needed to govern the lifecycle of a SOC us
 | Create users in the target tenant | ● | ● |
 | Update users in the target tenant when their attributes change in the source tenant |  | ● |
 | Delete users | ● | ● |
-| Assign users to groups, roles, apps | ● |  |
+| Assign users to groups, directory roles, app roles | ● |  |
 | Attributes of the user in the target tenant | Minimal, supplied by user themself at request time | Synchronized from the source tenant |
 
 ### Access control
@@ -52,7 +52,7 @@ You can use entitlement management and cross-tenant access policies to control a
 
 **Entitlement management**
 
-Assigning Microsoft Entra roles through entitlement management access packages helps to efficiently manage role assignments at scale and improves the role assignment lifecycle. It provides a flexible request and approval process for gaining access to roles, apps, and groups while also enabling automatic assignment to resources based on user attributes. 
+Assigning Microsoft Entra roles through entitlement management access packages helps to efficiently manage role assignments at scale and improves the role assignment lifecycle. It provides a flexible request and approval process for gaining access to directory roles, app roles, and groups while also enabling automatic assignment to resources based on user attributes. 
 
 [Learn more](../../id-governance/entitlement-management-overview.md)
 
@@ -68,7 +68,7 @@ This section describes how you can use tools such as cross-tenant synchronizatio
 
 ### Topology 1
 
-In topology 1, the source tenant configures entitlement management and cross-tenant synchronization to provision users into the target tenant. Then, the administrator of the target tenant configures access packages to provide access to the necessary roles, group, and apps in the target tenant. 
+In topology 1, the source tenant configures entitlement management and cross-tenant synchronization to provision users into the target tenant. Then, the administrator of the target tenant configures access packages to provide access to the necessary directory roles, group, and app roles in the target tenant. 
 
 :::image type="content" source="./media/defender-xdr-entra-mto/mto-defender-topology1.png" alt-text="Diagram that shows topology 1. Cross-tenant synchronization pushes users across tenants and entitlement management gives access to roles." lightbox="./media/defender-xdr-entra-mto/mto-defender-topology1.png":::
 
@@ -86,6 +86,8 @@ In topology 1, the source tenant configures entitlement management and cross-ten
 
     We recommend one [autoassigned](../../id-governance/entitlement-management-access-package-auto-assignment-policy.md) access package to provide the Security Reader role and one request based package for the Security Operator and Security Administrator roles. 
 
+Once you have completed the setup, SOC users can navigate to myaccess.microsoft.com to request time-limited access to the necessary access packages in the source tenant. Once approved, they will automatically be provisioned into the target tenant(s) with the security reader role. They can then request additional access in any tenants where they need the Security Operator or Security Administrator roles. Once their access period is over or they're removed as part of an acccess review, they will be deprovisioned from all the target tenants they don't need access to anymore. 
+
 ### Topology 2
 
 In topology 2 the target tenant administrator defines the access packages and resources that the source users can request access to. If the source tenant administrator would like to restrict which of their users can access the target tenant, you can use a cross-tenant access policy coupled with an access package to block all access to the target tenant, except for users that are part of a group that is included in an access package in the home tenant. 
@@ -101,6 +103,8 @@ In topology 2 the target tenant administrator defines the access packages and re
 1. In the target tenant, create an access package that provides the Security Reader, Security Administrator, and Security Operator roles.
 
 1. Users from the source tenant can now request access packages in the target tenant.
+
+Once you have completed the setup, SOC users can navigate to myaccess.microsoft.com to request time-limited access to the necessary roles in each tenant. 
 
 **Topologies compared** 
 
