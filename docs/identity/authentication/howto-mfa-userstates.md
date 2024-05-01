@@ -86,6 +86,6 @@ After you enable users, notify them via email. Tell the users that a prompt is d
 
 To configure Microsoft Entra multifactor authentication settings, see  [Configure Microsoft Entra multifactor authentication settings](howto-mfa-mfasettings.md).
 
-To manage user settings for Microsoft Entra multifactor authentication, see [Manage user settings with Microsoft Entra multifactor authentication](howto-mfa-userdevicesettings.md).
+To manage user settings for Microsoft Entra multifactor authentication, see [Manage user settings with Microsoft Entra multifactor authentication](howto-mfa-userdevicesettings.yml).
 
 To understand why a user was prompted or not prompted to perform MFA, see [Microsoft Entra multifactor authentication reports](howto-mfa-reporting.md).

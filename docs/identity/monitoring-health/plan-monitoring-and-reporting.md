@@ -118,7 +118,7 @@ Learn more:
 
 #### Stream logs to storage and SIEM tools
 
-* [Integrate Microsoft Entra logs with Azure Monitor logs](./howto-integrate-activity-logs-with-azure-monitor-logs.md).
+* [Integrate Microsoft Entra logs with Azure Monitor logs](./howto-integrate-activity-logs-with-azure-monitor-logs.yml).
 * [Analyze Microsoft Entra activity logs with Azure Monitor logs](~/identity/monitoring-health/howto-analyze-activity-logs-log-analytics.md).
 * Learn how to [stream logs to an event hub](./howto-stream-logs-to-event-hub.md).
 * Learn how to [Archive Microsoft Entra logs to an Azure Storage account](./howto-archive-logs-to-storage-account.md).

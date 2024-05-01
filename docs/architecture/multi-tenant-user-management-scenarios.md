@@ -40,7 +40,7 @@ Here are the most widely used ways to invite end users to access tenant resource
 - [**Application-based invitations.**](~/external-id/what-is-b2b.md) Microsoft applications (such as Teams and SharePoint) can enable external user invitations. Configure B2B invitation settings in both Microsoft Entra B2B and in the relevant applications.
 - [**MyApps.**](~/identity/enterprise-apps/myapps-overview.md) Users can invite and assign external users to applications using MyApps. The user account must have [application self-service sign up](~/identity/enterprise-apps/manage-self-service-access.md) approver permissions. Group owners can invite external users to their groups.
 - [**Entitlement management.**](~/id-governance/entitlement-management-overview.md) Enable admins or resource owners to create access packages with resources, allowed external organizations, external user expiration, and access policies. Publish access packages to enable external user self-service sign-up for resource access.
-- [**Azure portal.**](~/external-id/add-users-administrator.md) End users with the [Guest Inviter role](~/external-id/external-collaboration-settings-configure.md) can sign in to the Azure portal and invite external users from the **Users** menu in Microsoft Entra ID.
+- [**Azure portal.**](~/external-id/add-users-administrator.yml) End users with the [Guest Inviter role](~/external-id/external-collaboration-settings-configure.md) can sign in to the Azure portal and invite external users from the **Users** menu in Microsoft Entra ID.
 - [**Programmatic (PowerShell, Graph API).**](~/external-id/customize-invitation-api.md) End users with the [Guest Inviter role](~/external-id/external-collaboration-settings-configure.md) can use PowerShell or Graph API to invite external users.
 
 ### Redeeming invitations
@@ -56,7 +56,7 @@ Invited users can also try to directly access the resource, referred to as just-
 
 During JIT redemption, the following considerations might apply.
 
-- If administrators haven't [suppressed consent prompts](~/external-id/cross-tenant-access-settings-b2b-collaboration.md), the user must consent before accessing the resource.
+- If administrators haven't [suppressed consent prompts](~/external-id/cross-tenant-access-settings-b2b-collaboration.yml), the user must consent before accessing the resource.
 - You can allow or block invitations to external users from specific organizations by using an [allowlist or a blocklist](~/external-id/allow-deny-list.md).
 
 For more information, see [Microsoft Entra B2B collaboration invitation redemption](~/external-id/redemption-experience.md).

@@ -34,7 +34,7 @@ Archiving Microsoft Entra audit logs requires you to have Azure Monitor in an Az
 
 1. Check if there's already a setting to send the audit logs to that workspace.
 
-1. If there isn't already a setting, select **Add diagnostic setting**. Use the instructions in [Integrate Microsoft Entra logs with Azure Monitor logs](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.md) to send the Microsoft Entra audit log to the Azure Monitor workspace.
+1. If there isn't already a setting, select **Add diagnostic setting**. Use the instructions in [Integrate Microsoft Entra logs with Azure Monitor logs](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.yml) to send the Microsoft Entra audit log to the Azure Monitor workspace.
 
     ![Diagnostics settings pane](./media/entitlement-management-logs-and-reporting/audit-log-diagnostics-settings.png)
 

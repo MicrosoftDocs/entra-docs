@@ -15,7 +15,7 @@ ms.collection: M365-identity-device-management
 ---
 # What are the default user permissions in Microsoft Entra ID?
 
-In Microsoft Entra ID, all users are granted a set of default permissions. A user's access consists of the type of user, their [role assignments](../identity/role-based-access-control/permissions-reference.md), and their ownership of individual objects. 
+In Microsoft Entra ID, all users are granted a set of default permissions. A user's access consists of the type of user, their [role assignments](./how-subscriptions-associated-directory.yml), and their ownership of individual objects. 
 
 This article describes those default permissions and compares the member and guest user defaults. The default user permissions can be changed only in user settings in Microsoft Entra ID.
 
@@ -96,9 +96,9 @@ An owner can also add or remove other owners. Unlike Global Administrators, owne
 
 When a user creates a group, they're automatically added as an owner for that group. As an owner, they can manage properties of the group (such as the name) and manage group membership. 
 
-An owner can also add or remove other owners. Unlike Global Administrators and User Administrators, owners can manage only the groups that they own. 
+An owner can also add or remove other owners. Unlike Global Administrators and User Administrators, owners can manage only the groups that they own and they can add or remove group members only if the group's membership type is **Assigned**. 
 
-To assign a group owner, see [Managing owners for a group](./how-to-manage-groups.md).
+To assign a group owner, see [Managing owners for a group](./how-to-manage-groups.yml).
 
 ### Ownership permissions
 
@@ -175,7 +175,7 @@ Users can perform the following actions on owned groups.
 ## Next steps
 
 * To learn more about the **Guest user access restrictions** setting, see [Restrict guest access permissions in Microsoft Entra ID](~/identity/users/users-restrict-guest-permissions.md).
-* To learn more about how to assign Microsoft Entra administrator roles, see [Assign a user to administrator roles in Microsoft Entra ID](./how-subscriptions-associated-directory.md).
+* To learn more about how to assign Microsoft Entra administrator roles, see [Assign a user to administrator roles in Microsoft Entra ID](./how-subscriptions-associated-directory.yml).
 * To learn more about how resource access is controlled in Microsoft Azure, see [Understanding resource access in Azure](/azure/role-based-access-control/rbac-and-directory-admin-roles).
-* For more information on how Microsoft Entra ID relates to your Azure subscription, see [How Azure subscriptions are associated with Microsoft Entra ID](./how-subscriptions-associated-directory.md).
+* For more information on how Microsoft Entra ID relates to your Azure subscription, see [How Azure subscriptions are associated with Microsoft Entra ID](./how-subscriptions-associated-directory.yml).
 * [Manage users](./add-users.md).

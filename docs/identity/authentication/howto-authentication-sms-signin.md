@@ -151,7 +151,7 @@ If you receive an error when you try to set a phone number for a user account in
 
 <!-- INTERNAL LINKS -->
 [create-azure-ad-tenant]: ~/fundamentals/sign-up-organization.md
-[associate-azure-ad-tenant]: ~/fundamentals/how-subscriptions-associated-directory.md
+[associate-azure-ad-tenant]: ~/fundamentals/how-subscriptions-associated-directory.yml
 [concepts-passwordless]: concept-authentication-passwordless.md
 [tutorial-azure-mfa]: tutorial-enable-azure-mfa.md
 [tutorial-sspr]: tutorial-enable-sspr.md

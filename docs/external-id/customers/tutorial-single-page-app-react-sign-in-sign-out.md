@@ -133,4 +133,6 @@ All the required code snippets have been added, so the application can now be te
 
 ## See also
 
-> [Enable self-service password reset](./how-to-enable-password-reset-customers.md)
+> - [Enable self-service password reset](./how-to-enable-password-reset-customers.md)
+> - [Customize the default branding](/entra/external-id/customers/how-to-customize-branding-customers)
+> - [Configure sign-in with Google](/entra/external-id/customers/how-to-google-federation-customers)
