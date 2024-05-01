@@ -20,7 +20,7 @@ Remote networks, such as a branch office, rely on customer premises equipment (C
 To keep everyone connected, you need to ensure the health of the IPSec tunnel and the Border Gateway Protocol (BGP) route advertisement. This long-running tunnel and routing information are the keys to your remote network health.
 
 - Access logs in the Microsoft Entra admin center or the Microsoft Graph API
-- Integrate logs with Log Analytics
+- Export logs to Log Analytics or a Security Information and Events Management (SIEM) tool
 - Analyze logs using an Azure Workbook for Microsoft Entra
 - Download logs for long-term storage
 
@@ -85,23 +85,24 @@ GET https://graph.microsoft.com/beta/networkAccess/logs/remotenetworks
 
 Integrating logs with a SIEM tool like Log Analytics is configured through diagnostic settings in Microsoft Entra ID. This process is covered in detail in the [Configure Microsoft Entra diagnostic settings for activity logs](../identity/monitoring-health/howto-configure-diagnostic-settings.md) article.
 
-To configure diagnostic settings you need:
+To configure diagnostic settings, you need:
 
-- [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) access.
+- [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) access.
 - A [Log Analytics workspace](/azure/azure-monitor/logs/quick-create-workspace).
 
-The basic process to configure diagnostic settings are as follows:
+The basic steps to configure diagnostic settings are as follows:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator).
 
 1. Browse to **Identity** > **Monitoring & health** > **Diagnostic settings**. 
 
 1. Any existing diagnostic settings appear in the table. Select **edit settings** to change an existing setting, or select **Add diagnostic setting** to create a new setting.
-    ![Screenshot of the Microsoft Entra diagnostic settings page.](media/how-to-remote-network-health-logs/diagnostic-settings-log-analytics-workspace.png)
 
 1. Provide a name.
 
 1. Select the `RemoteNetworkHealthLogs` (and any other logs) you want to include.
+
+    ![Screenshot of the Microsoft Entra diagnostic settings page.](media/how-to-remote-network-health-logs/diagnostic-settings-remote-network-logs.png)
 
 1. Select the destinations you want to send the logs to.
 
@@ -114,7 +115,7 @@ The basic process to configure diagnostic settings are as follows:
 
 Once your logs are integrated with Log Analytics, you can visualize the data with an Azure Workbook for Microsoft Entra. This process is covered in the next section.
 
-You can also integrate logs with Microsoft Sentinel for security analytics and threat intelligence. For more information, follow the [Onboard Microsoft Sentinel](https://learn.microsoft.com/en-us/azure/sentinel/quickstart-onboard) Quickstart.
+You can also integrate logs with Microsoft Sentinel for security analytics and threat intelligence. For more information, follow the [Onboard Microsoft Sentinel](/azure/sentinel/quickstart-onboard) Quickstart.
 
 ## Analyze logs with a Workbook
 
@@ -133,7 +134,7 @@ To view your remote network health logs with Workbooks:
 
 ## Download logs
 
-A **Download** button is available on all logs, both within Global Secure Access and Microsoft Entra Monitoring and helath. You can download logs as a JSON or CSV file. For more information, see [How to download logs](~/identity/monitoring-health/howto-download-logs.md).
+A **Download** button is available on all logs, both within Global Secure Access and Microsoft Entra Monitoring and health. You can download logs as a JSON or CSV file. For more information, see [How to download logs](~/identity/monitoring-health/howto-download-logs.md).
 
 To narrow down the results of the logs, select **Add filter**. You can filter by:
 
@@ -141,7 +142,7 @@ To narrow down the results of the logs, select **Add filter**. You can filter by
 - Remote network ID
 - Source IP
 - Destination IP
-- BDP routes advertised count
+- BGP routes advertised count
 
 The following table describes each of the fields in the Remote network health logs.
 
@@ -152,9 +153,9 @@ The following table describes each of the fields in the Remote network health lo
 | Destination IP Address | The IP address of the Microsoft Entra gateway.</br> The Source IP/Destination IP address pair is unique for each IPsec tunnel. |
 | Status | **Tunnel connected:** This event is generated when an IPsec tunnel is successfully established.</br> **Tunnel disconnected:** This event is generated when an IPsec tunnel is disconnected.</br> **BGP connected:** This event is generated when a BGP connectivity is successfully established.</br> **BGP disconnected:** This event is generated when a BGP connectivity goes down.</br> **Remote network alive:** This periodic statistic is generated every 15 minutes for all the active tunnels. |
 | Description | Optional description of the event. |
-| BGP Routes Advertised Count | Optional count of BGP routes advertised over the IPsec tunnel.</br> This value is 0 for Tunnel connected, Tunnel disconnected, BGP connected and BGP disconnected events. |
-| Sent Bytes | Optional number of bytes sent from source to destination over a tunnel during the last 15 minutes.</br> This value is 0 for Tunnel connected, Tunnel disconnected, BGP connected and BGP disconnected events. |
-| Received Bytes | Optional number of bytes received by source from destination over a tunnel during the last 15 minutes.</br> This value is 0 for Tunnel connected, Tunnel disconnected, BGP connected and BGP disconnected events. |
+| BGP Routes Advertised Count | Optional count of BGP routes advertised over the IPsec tunnel.</br> This value is 0 for Tunnel connected, Tunnel disconnected, BGP connected, and BGP disconnected events. |
+| Sent Bytes | Optional number of bytes sent from source to destination over a tunnel during the last 15 minutes.</br> This value is 0 for Tunnel connected, Tunnel disconnected, BGP connected, and BGP disconnected events. |
+| Received Bytes | Optional number of bytes received by source from destination over a tunnel during the last 15 minutes.</br> This value is 0 for Tunnel connected, Tunnel disconnected, BGP connected, and BGP disconnected events. |
 | Remote network ID | ID of the remote network the tunnel is associated with. |
 
 ## Next steps
