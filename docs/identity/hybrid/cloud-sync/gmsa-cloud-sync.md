@@ -115,7 +115,7 @@ For steps on how to upgrade an existing agent to use a gMSA account see [group M
 For more information on how to prepare your Active Directory for group Managed Service Account, see [group Managed Service Accounts Overview](/windows-server/security/group-managed-service-accounts/group-managed-service-accounts-overview).
 
 ### Apply a subset of permissions
-You can apply only a subset of the permissions using the Set-AADCloudSyncPermission cmdlet.
+You can apply only a subset of the permissions using the Set-AADCloudSyncPermission cmdlet.  This can be done in scenarios where you only want the gMSA to perform a specific function.
 
  See [Using Set-AADCloudSyncPermission](how-to-gmsa-cmdlets.md#using-set-aadcloudsyncpermissions) below for examples on setting specific permissions.
 
