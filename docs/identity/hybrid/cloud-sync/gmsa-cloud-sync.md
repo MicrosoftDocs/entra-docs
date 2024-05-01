@@ -146,9 +146,9 @@ Basic read is seperate from the ALL permissions set by the installer because it 
 
 However it **doesn't** set the basic read permissions  for the following objects:
 
-    - Device
-    - Computer
-    - ForeignSecurityPrincipal objects.
+ - Device
+ - Computer
+ - ForeignSecurityPrincipal objects.
 
 If you require read permissions to these objects, you should use the cmdlet to set the BasicRead permissionType.  BasicRead sets the following permissions:
 
