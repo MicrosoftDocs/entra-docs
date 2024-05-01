@@ -19,12 +19,18 @@ Remote networks, such as a branch office, rely on customer premises equipment (C
 
 To keep everyone connected, you need to ensure the health of the IPSec tunnel and the Border Gateway Protocol (BGP) route advertisement. This long-running tunnel and routing information are the keys to your remote network health.
 
+- Access logs in the Microsoft Entra admin center or the Microsoft Graph API
+- Integrate logs with Log Analytics
+- Analyze logs using an Azure Workbook for Microsoft Entra
+- Download logs for long-term storage
+
 ## Prerequisites
 
-To view the Remote network health logs, you need:
+To view the remote network health logs in the Microsoft Entra admin center, you need:
 
-- One of the following roles: Global Reader, Global Secure Access Administrator, or Security Administrator.
-- The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
+- One of the following roles: [Global Secure Access Administrator](../identity/role-based-access-control/permissions-reference.md#global-secure-access-administrator), or [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator).
+- The Global Secure Access preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
+- Separate roles are required for accessing the logs with the Microsoft Graph API and integrating with Log Analytics and Azure Workbooks.
 
 ## How to access the logs
 
@@ -34,7 +40,7 @@ To view the **Remote network health logs**, you can use either the Microsoft Ent
 
 To view Remote network health logs in Microsoft Entra admin center:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Reader](/azure/active-directory/roles/permissions-reference#global-reader).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Secure Access Administrator](../identity/role-based-access-control/permissions-reference.md#global-secure-access-administrator).
 1. Browse to **Global Secure Access (preview)** > **Monitor** > **Remote network health logs**.
 
     ![Screenshot of the Remote network health logs.](media/how-to-remote-network-health-logs/remote-network-health-logs.png)
@@ -42,6 +48,15 @@ To view Remote network health logs in Microsoft Entra admin center:
 ### [Microsoft Graph API](#tab/microsoft-graph-api)
 
 Global Secure Access remote network health logs can be viewed and managed using Microsoft Graph on the `/beta` endpoint.
+
+You need one of the following permissions to access the logs with the Microsoft Graph API:
+
+- Directory.ReadWrite.All
+- NetworkAccess.Read.All
+- NetworkAccess.ReadWrite.All
+- NetworkAccess-Reports.Read.All
+
+To access remote network health logs with Microsoft Graph API:
 
 1. Sign in to [Graph Explorer](https://aka.ms/ge).
 1. Select GET as the HTTP method.
@@ -66,9 +81,57 @@ GET https://graph.microsoft.com/beta/networkAccess/logs/remotenetworks
 
 ---
 
-## How to analyze the logs
+## Configure diagnostic settings for log integration
 
-Logs can be downloaded for long-term storage. You can download logs as a JSON or CSV file. For more information, see [How to download logs](~/identity/monitoring-health/howto-download-logs.md).
+Integrating logs with a SIEM tool like Log Analytics is configured through diagnostic settings in Microsoft Entra ID. This process is covered in detail in the [Configure Microsoft Entra diagnostic settings for activity logs](../identity/monitoring-health/howto-configure-diagnostic-settings.md) article.
+
+To configure diagnostic settings you need:
+
+- [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) access.
+- A [Log Analytics workspace](/azure/azure-monitor/logs/quick-create-workspace).
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator).
+
+1. Browse to **Identity** > **Monitoring & health** > **Diagnostic settings**. 
+
+1. Any existing diagnostic settings appear in the table. Select **edit settings** to change an existing setting, or select **Add diagnostic setting** to create a new setting.
+    ![Screenshot of the Microsoft Entra diagnostic settings page.](media/how-to-remote-network-health-logs/diagnostic-settings-log-analytics-workspace.png)
+
+1. Provide a name.
+
+1. Select the `RemoteNetworkHealthLogs` (and any other logs) you want to include.
+
+1. Select the destinations you want to send the logs to.
+
+1. Select the subscription and the destination from the dropdown menus that appear.
+
+1. Select the **Save** button.
+
+> [!NOTE]
+> It might take up to three days for the logs to start appearing in the destination.
+
+Once your logs are integrated with Log Analytics, you can visualize the data with an Azure Workbook for Microsoft Entra. This process is covered in the next section.
+
+You can also further integrate logs with Microsoft Sentinel. Follow the [Onboard Microsoft Sentinel](https://learn.microsoft.com/en-us/azure/sentinel/quickstart-onboard) Quickstart.
+
+## Analyze logs with a Workbook
+
+[Azure Workbooks for Microsoft Entra](../identity/monitoring-health/overview-workbooks.md) provide a visual representation of your data. Once you've configured a Log Analytics workspace and diagnostic settings to integrate your logs with Log Analytics, you can use a Workbook to analyze the data through these powerful tools. This process is covered in detail in the [How to use Identity Workbooks](../identity/monitoring-health/howto-use-workbooks.md) article.
+
+[!INCLUDE [workbook prerequisites](../includes/workbook-prerequisites.md)]
+
+To view your remote network health logs with Workbooks:
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Secure Access Administrator](../identity/role-based-access-control/permissions-reference.md#global-secure-access-administrator).
+1. Browse to **Global Secure Access (preview)** > **Monitor** > **Workbooks**.
+1. Select the **Empty** workbook or select the **+ New** button.
+1. Select the **Advanced Editor** button from the top of the page. A JSON editor opens.
+
+  ![Screenshot of the Advanced Editor button on the new workbook page.](media/how-to-remote-network-health-logs/advanced-editor-button.png)
+
+## Download logs
+
+You can download logs as a JSON or CSV file. For more information, see [How to download logs](~/identity/monitoring-health/howto-download-logs.md).
 
 To narrow down the results of the logs, select **Add filter**. You can filter by:
 
