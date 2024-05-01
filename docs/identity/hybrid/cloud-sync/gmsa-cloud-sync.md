@@ -115,7 +115,7 @@ For steps on how to upgrade an existing agent to use a gMSA account see [group M
 For more information on how to prepare your Active Directory for group Managed Service Account, see [group Managed Service Accounts Overview](/windows-server/security/group-managed-service-accounts/group-managed-service-accounts-overview).
 
 ### Apply a subset of permissions
-To set Active Directory permissions for cloud provisioning agent, you can use the following [Set-AADCloudSyncPermission](how-to-gmsa-cmdlets.md#using-set-aadcloudsyncpermissions) cmdlet.  This cmdlet allows you to set more granular permissions on the gMSA.  You can use it to apply only a subset of the permissions.  This can be done in scenarios where you only want the gMSA to perform a specific function.
+To set gMSA permissions on an account, you can use the following [Set-AADCloudSyncPermission](how-to-gmsa-cmdlets.md#using-set-aadcloudsyncpermissions) PowerShell cmdlet.  This cmdlet allows you to set more granular permissions on the gMSA.  You can use it to apply only a subset of the permissions.  This can be done in scenarios where you only want the gMSA to perform a specific function.
 
 See [Set-AADCloudSyncPermission](how-to-gmsa-cmdlets.md#using-set-aadcloudsyncpermissions) below for examples on setting specific permissions.
 
