@@ -54,7 +54,7 @@ The Windows Hello for Business [planning guide](/windows/security/identity-prote
 
 ## Platform Credential for macOS
 
-Platform Credential for macOS is a new capability on macOS that is enabled using the Microsoft Enterprise Single Sign-on Extension (SSOe). It provisions a secure enclave backed hardware-bound cryptographic key that is used for SSO across apps that use Microsoft Entra ID for authentication. The user’s local account password is not affected and is required to log on to the Mac.
+Platform Credential for macOS is a new capability on macOS that is enabled using the Microsoft Enterprise single sign-on Extension (SSOe). It provisions a secure enclave backed hardware-bound cryptographic key that is used for SSO across apps that use Microsoft Entra ID for authentication. The user’s local account password is not affected and is required to log on to the Mac.
 
 ![Screenshot showing an example of a pop up window prompting user to register their macOS account with their identity provider using Platform single sign-on.](./media/concept-authentication-passwordless/macos-platform-sso.png)
 
@@ -73,9 +73,9 @@ Platform Credential for macOS can also be used as a phishing resistant Passkey f
 
 Refer to [macOS Platform SSO](../devices/macos-psso.md) for more information on how to configure and deploy Platform Credential for macOS.
 
-## Platform Single Sign-On for macOS with SmartCard
+## Platform single sign-on for macOS with SmartCard
 
-Platform Single Sign-On (PSSO) for macOS allows users to go passwordless using the SmartCard authentication method. The user signs in to the machine using an external smart card, or smart card-compatible hard token (eg. Yubikey). Once the device is unlocked, the smart card is used with Microsoft Entra ID to grant SSO across apps that use Microsoft Entra ID for authentication.
+Platform single sign-on (PSSO) for macOS allows users to go passwordless using the SmartCard authentication method. The user signs in to the machine using an external smart card, or smart card-compatible hard token (eg. Yubikey). Once the device is unlocked, the smart card is used with Microsoft Entra ID to grant SSO across apps that use Microsoft Entra ID for authentication.
 
 To enable it, an administrator needs to configure PSSO through Microsoft Intune or other supported MDM. 
 

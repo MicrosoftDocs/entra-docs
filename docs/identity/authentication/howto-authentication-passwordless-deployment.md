@@ -24,9 +24,9 @@ Microsoft offers the following [five passwordless authentication options](concep
 
 * [Windows Hello for Business](./concept-authentication-passwordless.md#windows-hello-for-business) - best for users on their dedicated Windows computers. 
 
-* [Platform Credential for macOS](./concept-authentication-passwordless.md#platform-credential-for-macos) - a new capability on macOS that is enabled using the Microsoft Enterprise Single Sign-on Extension (SSOe).
+* [Platform Credential for macOS](./concept-authentication-passwordless.md#platform-credential-for-macos) - a new capability on macOS that is enabled using the Microsoft Enterprise single sign-on extension (SSOe).
 
-* [macOS Platform single sign-on with SmartCard](./concept-authentication-passwordless.md#platform-single-sign-on-for-macos-with-smartcard) - a new capability on macOS for smart card based authentication that is enabled using the Microsoft Enterprise Single Sign-on Extension (SSOe).
+* [macOS Platform single sign-on with SmartCard](./concept-authentication-passwordless.md#platform-single-sign-on-for-macos-with-smartcard) - a new capability on macOS for smart card based authentication that is enabled using the Microsoft Enterprise single sign-on extension (SSOe).
 
 > [!NOTE]
 > To create an offline version of this plan with all links, use your browsers print to pdf functionality.
@@ -43,7 +43,7 @@ The following table lists the passwordless authentication methods by device type
 
 | Device types| Passwordless authentication method |
 | - | - |
-| Dedicated non-windows devices| <li> ***Microsoft Authenticator*** <li> Security keys <li> ***macOS Platform Single Sign-On with smart card*** <li> ***Platform Credential for macOS*** |
+| Dedicated non-windows devices| <li> ***Microsoft Authenticator*** <li> Security keys <li> ***macOS Platform single sign-on with smart card*** <li> ***Platform Credential for macOS*** |
 | Dedicated Windows 10 computers (version 1703 and later)| <li> ***Windows Hello for Business*** <li> Security keys |
 | Dedicated Windows 10 computers (before version 1703)| <li> ***Windows Hello for Business*** <li> Microsoft Authenticator app |
 | Shared devices: tablets, and mobile devices| <li> ***Microsoft Authenticator*** <li> One-time password sign-in |
@@ -97,7 +97,7 @@ The wizard will use your inputs to craft a step-by-step plan for you to follow.
 
 To enable Platform Credential for macOS; 
 - Your Mac must have an operating system of at least macOS 13 Ventura (macOS 14 Sonoma is recommended)
-- The device must be MDM enrolled with SSO extension payload configured to support Platform Single Sign-On (PSSO) with the UserSecureEnclaveKey.
+- The device must be MDM enrolled with SSO extension payload configured to support Platform single sign-on (PSSO) with the UserSecureEnclaveKey.
 
 > [!NOTE]
 >

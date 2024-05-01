@@ -30,7 +30,7 @@ Powered by the [Microsoft Enterprise SSO plug in Apple devices](../../identity-p
 * Saves customer organizations money by removing the need for security keys.
 * Advances Zero Trust objectives using integration with the Secure Enclave.
 
-To enable it, an administrator needs to configure PSSO through Microsoft Intune or other supported MDM. Depending on the setup, the end-user can setup their device with PSSO via secure enclave, smart card or password based authentication method.
+To enable it, an administrator needs to configure PSSO through Microsoft Intune or other supported MDM. Depending on the how the device is configured, the end-user can set up their device with PSSO via secure enclave, smart card or password based authentication method.
 
 ## Requirements
 
