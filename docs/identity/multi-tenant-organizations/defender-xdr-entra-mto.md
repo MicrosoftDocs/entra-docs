@@ -49,6 +49,7 @@ Microsoft Entra provides the controls needed to govern the lifecycle of a SOC us
 
 ### Access control
 You can use entitlement management and cross-tenant access policies to control access to resources across tenants. Entitlement management will assign the right users to the right resources, while cross-tenant access policies and conditional access together perform the necessary run-time checks to ensure the right users are accessing the right resources. 
+
 **Entitlement management**
 
 Assigning Microsoft Entra roles through entitlement management access packages helps to efficiently manage role assignments at scale and improves the role assignment lifecycle. It provides a flexible request and approval process for gaining access to roles, apps, and groups while also enabling automatic assignment to resources based on user attributes. 
@@ -121,7 +122,7 @@ Actions performed by a SOC analyst in Microsoft Defender are also audited.
 
 **Scaling deployment with PowerShell / APIs**
 
-Every action performed through the user interface has accompanying Microsoft Graph APIs and PowerShell commandlets, enabling you to deploy your desired policies/configuration across the tenants in your organization. 
+Every step that is configured through the user interface in Microsoft Entra has accompanying Microsoft Graph APIs and PowerShell commandlets, enabling you to deploy your desired policies/configuration across the tenants in your organization. 
 
 | Capability | Microsoft Graph API | PowerShell |
 | -------- | :-------: | :-------: |
@@ -136,7 +137,7 @@ Configuring the capabilities described in topology 1 and topology 2 require the 
 - Configuring cross-tenant access settings - Security Administrator
 - Configuring cross-tenant synchronization - Hybrid Identity Administrator
 - Configuring entitlement management - Identity Governance Administrator
-- SOC users in Defender rely on both built-in roles such as Security Reader, Security Administrator, and Security Operator. Defender relies and also supports custom roles. [Learn more about roles in Microsoft Defender](/microsoft-365/security/defender/m365d-permissions)
+- [Microsoft Defender](/microsoft-365/security/defender/m365d-permissions) supports both built-in roles such as Security Reader, Security Administrator, and Security Operator and custom roles. 
 
 ## Next steps
 
