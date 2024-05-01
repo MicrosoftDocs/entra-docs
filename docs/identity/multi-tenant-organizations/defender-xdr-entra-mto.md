@@ -14,7 +14,7 @@ ms.custom: it-pro
 
 # Governing access for SOC teams in a multitenant environment
 
-Managing multitenant environments can add an additional layer of complexity when it comes to keeping up with the ever-evolving security threats facing your enterprise. Navigating across multiple tenants can be time consuming and reduce the overall efficiency of security operation center (SOC) teams.
+Managing multitenant environments can add another layer of complexity when it comes to keeping up with the ever-evolving security threats facing your enterprise. Navigating across multiple tenants can be time consuming and reduce the overall efficiency of security operation center (SOC) teams.
 Multitenant management in [Microsoft Defender XDR](/microsoft-365/security/defender/mto-overview) provides security operation teams with a single, unified view of all the tenants they manage. This view enables teams to quickly investigate incidents and perform advanced hunting across data from multiple tenants, improving their security operations.
 
 [Microsoft Entra ID Governance](../../id-governance/identity-governance-overview.md) enables you to govern the access and lifecycle of the users who are members of the SOC teams and threat hunter teams. This document explores:
@@ -25,12 +25,11 @@ Multitenant management in [Microsoft Defender XDR](/microsoft-365/security/defen
   
 ## Managing the lifecycle and access of a SOC user
 
-Microsoft Entra provides the controls needed to govern the lifecycle of a SOC user and to securely provide access to the resources they need. In this document, the term source tenant refers to where the SOC users originate and authenticate against. Target tenant refers to the tenant that they are investigating when there is an incident. An organization will likely have several target tenants due to mergers and acquisitions, aligning tenants with business units, and aligning tenants with geos.
+Microsoft Entra provides the controls needed to govern the lifecycle of a SOC user and to securely provide access to the resources they need. In this document, the term source tenant refers to where the SOC users originate and authenticate against. Target tenant refers to the tenant that they're investigating when there's an incident. Organization have multiple target tenants due to mergers and acquisitions, aligning tenants with business units, and aligning tenants with geos.
 
 ### Lifecycle control
 
-**Entitlement management, through access packages and connected organizations** allows the target tenant administrator to define collections of resources (ex: app app roles, directory roles, and groups) that users from the source tenant can request access to. If the user is approved for the resources they need, but don’t yet have a B2B account, entitlement management will automatically create a B2B account for the user in the target tenant, and even remove those accounts when the user doesn’t have any remaining entitlements in the target tenant. 
-
+**Entitlement management, through access packages and connected organizations** allows the target tenant administrator to define collections of resources (ex: app roles, directory roles, and groups) that users from the source tenant can request access to. If the user is approved for the resources they need, but don’t yet have a B2B account, entitlement management will automatically create a B2B account for the user in the target tenant. When they don't have any remaining entitlements in the target tenant, their B2B account wil automatically be removed.  
 [Learn more](../../id-governance/entitlement-management-organization.md)
 
 **Cross-tenant synchronization** allows the source tenant to automate creating, updating, and deleting B2B users across tenants in an organization. 
@@ -76,17 +75,17 @@ In topology 1, the source tenant configures entitlement management and cross-ten
 
 1. In the source tenant, configure [cross-tenant synchronization](cross-tenant-synchronization-overview.md) to provision internal accounts in the source tenant as external accounts in the target tenant.
 
-    As users are assigned to the cross-tenant synchronization service principal, they will automatically be provisioned into the target tenant. As they are removed from the configuration, they will automatically be deprovisioned. As part of your attribute mappings, you can add a new mapping of type constant to provision a [directory extension](cross-tenant-synchronization-directory-extensions.md) attribute on the user to indicate that they are a SOC administrator. Alternatively, if you have an attribute such as department that you can rely on for this step, you can skip creating the extension. This attribute will be used in the target tenant to provide them access to the necessary roles.
+    As users are assigned to the cross-tenant synchronization service principal, they'll automatically be provisioned into the target tenant. As they're removed from the configuration, they'll automatically be deprovisioned. As part of your attribute mappings, you can add a new mapping of type constant to provision a [directory extension](cross-tenant-synchronization-directory-extensions.md) attribute on the user to indicate that they're a SOC administrator. Alternatively, if you have an attribute such as department that you can rely on for this step, you can skip creating the extension. This attribute will be used in the target tenant to provide them with access to the necessary roles.
 
 1. In the source tenant, create an access package that includes the cross-tenant synchronization service principal as a resource.
 
-    As users are granted access to the package, they will be assigned to the cross-tenant synchronization service principal. Ensure that you set up periodic access reviews of the access package or time-limit the assignments to ensure that only the users that need access to the target tenant continue to have access. 
+    As users are granted access to the package, they'll be assigned to the cross-tenant synchronization service principal. Ensure that you set up periodic access reviews of the access package or time-limit the assignments to ensure that only the users that need access to the target tenant continue to have access. 
 
 1. In the target tenant, [create access packages](../../id-governance/entitlement-management-access-package-create.md) to provide the necessary roles for investigating an incident.
 
     We recommend one [autoassigned](../../id-governance/entitlement-management-access-package-auto-assignment-policy.md) access package to provide the Security Reader role and one request based package for the Security Operator and Security Administrator roles. 
 
-Once you have completed the setup, SOC users can navigate to myaccess.microsoft.com to request time-limited access to the necessary access packages in the source tenant. Once approved, they will automatically be provisioned into the target tenant(s) with the security reader role. They can then request additional access in any tenants where they need the Security Operator or Security Administrator roles. Once their access period is over or they're removed as part of an acccess review, they will be deprovisioned from all the target tenants they don't need access to anymore. 
+Once you have completed the setup, SOC users can navigate to myaccess.microsoft.com to request time-limited access to the necessary access packages in the source tenant. Once approved, they'll automatically be provisioned into the target tenant(s) with the security reader role. They can then request additional access in any tenants where they need the Security Operator or Security Administrator roles. Once their access period is over or they're removed as part of an access review, they'll be deprovisioned from all the target tenants they don't need access to anymore. 
 
 ### Topology 2
 
@@ -116,7 +115,7 @@ If a user needs access to several tenants at one time, topology 1 makes it easy 
 
 **Monitoring**
 
-Actions performed by a SOC analyst in Microsoft Entra are audited in the Microsoft Entra tenant that they are working in. Organizations can maintain an audit trail of actions performed, generate alerts when specific actions are performed, and analyze actions performed by pushing audit logs into Azure Monitor.
+Actions performed by a SOC analyst in Microsoft Entra are audited in the Microsoft Entra tenant that they're working in. Organizations can maintain an audit trail of actions performed, generate alerts when specific actions are performed, and analyze actions performed by pushing audit logs into Azure Monitor.
 
 [Learn more](../monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.md)
 
