@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: multitenant-organizations
 ms.topic: overview
-ms.date: 04/18/2024
+ms.date: 05/01/2024
 ms.author: rolyon
 ms.custom: it-pro
 #Customer intent: As a dev, devops, or it admin, I want to
@@ -63,7 +63,7 @@ External identities cross-tenant access settings manage how you collaborate with
 
 ## Deployment topologies
 
-This section describes how you can use tools such as cross-tenant synchronization, entitlement management, cross-tenant access policies, and conditional access together. In both topologies, the target tenant has full control over access to resources. They differ in who manages provisioning and deprovisioning.   
+This section describes how you can use tools such as cross-tenant synchronization, entitlement management, cross-tenant access policies, and conditional access together. In both topologies, the target tenant admin has full control over access to resources in the target tenant. They differ in who initiates provisioning and deprovisioning.   
 
 ### Topology 1
 
