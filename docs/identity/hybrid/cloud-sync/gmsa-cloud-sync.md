@@ -137,7 +137,20 @@ The [Set-AADCloudSyncPermission](how-to-gmsa-cmdlets.md#using-set-aadcloudsyncpe
 
 
 #### Basic Read
-Basic read is seperate from the ALL permissions set by the installer because it is not acutally specifically set.  Through setting of the other permissions, the gMSA account will have these permissions applied to it.  For consistency, the individual permissions are provided here to clarify what the BasicRead permssionType sets.
+Basic read is seperate from the ALL permissions set by the installer because it is not specifically set.  By Setting the other permissions, the gMSA account will get the basic read permissions on the following objects:
+
+ - User
+ - InetOrgPerson
+ - Group
+ - Contact
+
+However it **doesn't** set the basic read permissions  for the following objects:
+
+    - Device
+    - Computer
+    - ForeignSecurityPrincipal objects.
+
+If you require read permissions to these objects, you should use the cmdlet to set the BasicRead permissionType.  BasicRead sets the following permissions:
 
 |Type |Name |Access |Applies To| 
 |-----|-----|-----|-----|
