@@ -91,7 +91,7 @@ If the associated forest is hosted in a Windows Server 2016 environment, it incl
 |Allow |&lt;gmsa account&gt;|Reset Password |Descendant User objects| 
 |Allow |&lt;gmsa account&gt;|Write property lockoutTime |Descendant User objects| 
 |Allow |&lt;gmsa account&gt;|Write property pwdLastSet |Descendant User objects| 
-|Allow |&lt;gmsa account&gt;|Unexpired Password|This object only (Domain root)| 
+|Allow |&lt;gmsa account&gt;|Unexpire Password|This object only (Domain root)| 
 
 #### Group Writeback 
 
