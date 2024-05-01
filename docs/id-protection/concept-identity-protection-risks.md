@@ -1,11 +1,11 @@
 ---
 title: What are risks in Microsoft Entra ID Protection
-description: Explaining risk in Microsoft Entra ID Protection
+description: Explaining risk detections in Microsoft Entra ID Protection
 
 ms.service: entra-id-protection
 
 ms.topic: conceptual
-ms.date: 04/25/2024
+ms.date: 05/01/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -20,7 +20,7 @@ User risk detections might flag a legitimate user account as at risk, when a pot
 
 ## Risk levels
 
-ID Protection categorizes risk level into three tiers: low, medium, and high. These risk levels are calculated by our machine learning algorithms and represent how confident Microsoft is that one or more of the user's credentials are known by an unauthorized entity. 
+ID Protection categorizes risk level into three tiers: low, medium, and high. Risk levels are calculated using our machine learning algorithms and represent how confident Microsoft is that one or more of the user's credentials are known by an unauthorized entity. 
 
 - A risk detection with risk level **High** signifies that Microsoft is highly confident that the account is compromised. 
 - A risk detection with risk level **Low** signifies that there are anomalies present in the sign-in or a user’s credential, but we're less confident that these anomalies mean the account is compromised.
@@ -31,9 +31,9 @@ This risk level is important when deciding which detections to prioritize, inves
 
 ## Real-time and offline detections
 
-ID Protection utilizes techniques to increase the precision of user and sign-in risk detections by calculating some risks during a real-time sign-in or offline after authentication. Detecting risk in real-time at sign-in gives the advantage of identifying risk early so that customers can quickly investigate the potential compromise. On detections that calculate risk offline, this can provide more insight as to how the threat actor gained access to the account and the impact on the legitimate user. Some detections can be triggered both offline and during sign-in, which increases confidence in being precise on the compromise. 
+ID Protection utilizes techniques to increase the precision of user and sign-in risk detections by calculating some risks in real-time or offline after authentication. Detecting risk in real-time at sign-in gives the advantage of identifying risk early so that customers can quickly investigate the potential compromise. On detections that calculate risk offline, they can provide more insight as to how the threat actor gained access to the account and the impact on the legitimate user. Some detections can be triggered both offline and during sign-in, which increases confidence in being precise on the compromise. 
 
-Detections that are triggered during real-time will take up to 5-10 minutes to surface the details in the Reporting blade. Offline detections take up to 48 hours to surface in the Reporting blade as it takes time to evaluate properties of the potential risk. 
+Detections that are triggered during real-time take 5-10 minutes to surface the details in the reports. Offline detections take up to 48 hours to surface in the reports as it takes time to evaluate properties of the potential risk. 
 
 > [!NOTE]
 > Our system might detect that the risk event that contributed to the risk user risk score was either: 
@@ -87,7 +87,7 @@ The following premium detections are visible only to Microsoft Entra ID P2 custo
 
 #### Activity from anonymous IP address 
 
-Calculated offline. This detection is discovered using information provided by [Microsoft Defender for Cloud Apps](/defender-cloud-apps/anomaly-detection-policy#activity-from-anonymous-ip-addresses). This detection identifies that users were active from an IP address that has been identified as an anonymous proxy IP address. 
+Calculated offline. This detection is discovered using information provided by [Microsoft Defender for Cloud Apps](/defender-cloud-apps/anomaly-detection-policy#activity-from-anonymous-ip-addresses). This detection identifies that users were active from an IP address identified as an anonymous proxy IP address. 
 
 #### Anomalous token 
 
@@ -97,7 +97,7 @@ Note: Anomalous token is tuned to incur more noise than other detections at the 
 
 #### Attacker in the Middle 
 
-Calculated offline - Also known as Adversary in the Middle, this high-precision detection is triggered when an active token theft threat has been identified in a session compromised through stolen credentials. The user is raised to High risk for manual investigation by the admin. 
+Calculated offline - Also known as Adversary in the Middle, this high-precision detection is triggered when an active token theft threat is identified in a session compromised through stolen credentials. The user is raised to High risk for manual investigation by the admin. 
 
 #### Atypical travel 
 
@@ -123,7 +123,7 @@ Calculated offline. This detection is discovered using information provided by�
 
 #### Password spray 
 
-Calculated offline. A password spray attack is where multiple usernames are attacked using common passwords in a unified brute force manner to gain unauthorized access. This risk detection is triggered when a password spray attack has been successfully performed. For example, the attacker is successfully authenticated, in the detected instance. 
+Calculated offline. A password spray attack is where multiple usernames are attacked using common passwords in a unified brute force manner to gain unauthorized access. This risk detection is triggered when a password spray attack is performed. For example, the attacker is successfully authenticated, in the detected instance. 
 
 #### Suspicious browser	 
 
@@ -163,15 +163,15 @@ Calculated offline. This risk detection baselines normal administrative user beh
 
 #### Possible attempt to access Primary Refresh Token (PRT) 
 
-Calculated offline. This risk detection type is discovered using information provided by Microsoft Defender for Endpoint (MDE). A Primary Refresh Token (PRT) is a key artifact of Microsoft Entra authentication on Windows 10, Windows Server 2016, and later versions, iOS, and Android devices. A PRT is a JSON Web Token (JWT) that's specially issued to Microsoft first-party token brokers to enable single sign-on (SSO) across the applications used on those devices. Attackers can attempt to access this resource to move laterally into an organization or perform credential theft. This detection moves users to high risk and only fires in organizations that have deployed MDE. This detection is high risk and we recommend prompt remediation of these users. It's seen infrequently in most organizations due to its low volume.  
+Calculated offline. This risk detection type is discovered using information provided by Microsoft Defender for Endpoint (MDE). A Primary Refresh Token (PRT) is a key artifact of Microsoft Entra authentication on Windows 10, Windows Server 2016, and later versions, iOS, and Android devices. A PRT is a JSON Web Token (JWT) issued to Microsoft first-party token brokers to enable single sign-on (SSO) across the applications used on those devices. Attackers can attempt to access this resource to move laterally into an organization or perform credential theft. This detection moves users to high risk and only fires in organizations that deploy MDE. This detection is high risk and we recommend prompt remediation of these users. It appears infrequently in most organizations due to its low volume.  
 
 #### Suspicious API traffic 
 
-Calculated offline. This risk detection is reported when abnormal Graph traffic or directory enumeration is observed by a user. Suspicious API traffic might suggest that a user is compromised and is conducting reconnaissance in their environment. 
+Calculated offline. This risk detection is reported when abnormal GraphAPI traffic or directory enumeration is observed. Suspicious API traffic might suggest that a user is compromised and is conducting reconnaissance in their environment. 
 
 #### Suspicious sending patterns 
 
-Calculated offline. This risk detection type is discovered using information provided by [Microsoft Defender for Office 365 (MDO)](/defender-office-365/air-about). This alert is generated when someone in your organization has sent suspicious email and is either at risk of being restricted from sending email or has already been restricted from sending email. This detection moves users to medium risk and only fires in organizations that have deployed MDO. This detection is low-volume and is seen infrequently in most organizations. 
+Calculated offline. This risk detection type is discovered using information provided by [Microsoft Defender for Office 365 (MDO)](/defender-office-365/air-about). This alert is generated when someone in your organization sent suspicious email and is either at risk of being or is restricted from sending email. This detection moves users to medium risk and only fires in organizations that deploy MDO. This detection is low-volume and is seen infrequently in most organizations. 
 
 #### User reported suspicious activity 
 
@@ -189,7 +189,7 @@ Calculated in real-time or offline. This detection indicates that one of the pre
 
 #### Admin confirmed user compromised 
 
-Calculated offline. This detection indicates an admin has selected 'Confirm user compromised' in the Risky users UI or using riskyUsers API. To see which admin has confirmed this user compromised, check the user's risk history (via UI or API). 
+Calculated offline. This detection indicates an admin selected **Confirm user compromised** in the risky users UI or using riskyUsers API. To see which admin confirmed this user compromised, check the user's risk history (via UI or API). 
 
 #### Anonymous IP address 
 
@@ -207,7 +207,7 @@ Calculated in real-time or offline. This detection indicates that one of the pre
 
 #### Leaked credentials 
 
-Calculated offline. This risk detection type indicates that the user's valid credentials have been leaked. When cybercriminals compromise valid passwords of legitimate users, they often share these gathered credentials. This sharing is typically done by posting publicly on the dark web, paste sites, or by trading and selling the credentials on the black market. When the Microsoft leaked credentials service acquires user credentials from the dark web, paste sites, or other sources, they're checked against Microsoft Entra users' current valid credentials to find valid matches. For more information about leaked credentials, see [common questions](#common-leaked-credentials-questions). 
+Calculated offline. This risk detection type indicates that the user's valid credentials leaked. When cybercriminals compromise valid passwords of legitimate users, they often share these gathered credentials. This sharing is typically done by posting publicly on the dark web, paste sites, or by trading and selling the credentials on the black market. When the Microsoft leaked credentials service acquires user credentials from the dark web, paste sites, or other sources, they're checked against Microsoft Entra users' current valid credentials to find valid matches. For more information about leaked credentials, see [common questions](#common-leaked-credentials-questions). 
 
 #### Microsoft Entra threat intelligence (user) 
 
@@ -219,13 +219,13 @@ Calculated offline. This risk detection type indicates user activity that is unu
 
 ID Protection generates risk detections only when the correct credentials are used. If incorrect credentials are used on a sign-in, it doesn't represent risk of credential compromise. 
 
-### Is Password hash synchronization required? 
+### Is password hash synchronization required? 
 
 Risk detections like leaked credentials require the presence of password hashes for detection to occur. For more information about password hash synchronization, see the article, Implement password hash synchronization with Microsoft Entra Connect Sync. 
 
-### Why are there risk detections generated for disabled user accounts? 
+### Why are risk detections generated for disabled accounts? 
 
-Disabled user accounts can be re-enabled. If the credentials of a disabled account are compromised, and the account gets re-enabled, bad actors might use those credentials to gain access. ID Protection generates risk detections for suspicious activities against disabled user accounts to alert customers about potential account compromise. If an account is no longer in use and wont be re-enabled, customers should consider deleting it to prevent compromise. No risk detections are generated for deleted accounts. 
+User accounts in a disabled state can be re-enabled. If the credentials of a disabled account are compromised, and the account gets re-enabled, bad actors might use those credentials to gain access. ID Protection generates risk detections for suspicious activities against these disabled accounts to alert customers about potential account compromise. If an account is no longer in use and wont be re-enabled, customers should consider deleting it to prevent compromise. No risk detections are generated for deleted accounts. 
 
 ### Common leaked credentials questions
 
@@ -241,17 +241,22 @@ Microsoft finds leaked credentials in various places, including:
 
 Leaked credentials are processed anytime Microsoft finds a new, publicly available batch. Because of the sensitive nature, the leaked credentials are deleted shortly after processing. Only new leaked credentials found after you enable password hash synchronization (PHS) are processed against your tenant. Verifying against previously found credential pairs isn't done. 
 
-#### I haven't seen any leaked credential risk events for quite some time 
+#### I don't see any leaked credential risk events
 
-If you haven't seen any leaked credential risk events, it is because of the following reasons: 
+If you don't see any leaked credential risk events, it is because of the following reasons: 
 
 - You don't have PHS enabled for your tenant. 
-- Microsoft has not found any leaked credential pairs that match your users. 
+- Microsoft didn't find any leaked credential pairs that match your users. 
 
 #### How often does Microsoft process new credentials? 
 
-Credentials are processed immediately after they have been found, normally in multiple batches per day. 
+Credentials are processed immediately after they're found, normally in multiple batches per day. 
 
 ### Locations 
 
 Location in risk detections is determined using IP address lookup. 
+
+## Related content
+
+- [Learn about risk-based access policies](concept-identity-protection-policies.md)
+- [Learn how to investigate risk](howto-identity-protection-investigate-risk.md)
