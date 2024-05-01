@@ -73,15 +73,15 @@ In topology 1, the source tenant configures entitlement management and cross-ten
 
 **Steps to configure topology 1**
 
-1. In the source tenant, configure [cross-tenant synchronization](cross-tenant-synchronization-overview.md) to push B2B accounts into the target tenant.
+1. In the source tenant, configure [cross-tenant synchronization](cross-tenant-synchronization-overview.md) to provision internal accounts in the source tenant as external accounts in the target tenant.
 
-    As users are assigned to the cross-tenant synchronization configuration, they will automatically be provisioned into the target tenant. As they are removed from the configuration, they will automatically be deprovisioned. As part of your attribute mappings, you can add a new mapping of type constant to provision a [directory extension](cross-tenant-synchronization-directory-extensions.md) attribute on the user to indicate that they are a SOC administrator. Alternatively, if you have an attribute such as department that you can rely on for this step, you can skip creating the extension. This attribute will be used in the target tenant to provide them access to the necessary roles.
+    As users are assigned to the cross-tenant synchronization service principal, they will automatically be provisioned into the target tenant. As they are removed from the configuration, they will automatically be deprovisioned. As part of your attribute mappings, you can add a new mapping of type constant to provision a [directory extension](cross-tenant-synchronization-directory-extensions.md) attribute on the user to indicate that they are a SOC administrator. Alternatively, if you have an attribute such as department that you can rely on for this step, you can skip creating the extension. This attribute will be used in the target tenant to provide them access to the necessary roles.
 
 1. In the source tenant, create an access package that includes the cross-tenant synchronization service principal as a resource.
 
-    As users are granted access to the package, they will be assigned to the cross-tenant synchronization service principal. Ensure that you set up periodic access reviews of the access package to limit the number of users that are in scope for provisioning. 
+    As users are granted access to the package, they will be assigned to the cross-tenant synchronization service principal. Ensure that you set up periodic access reviews of the access package or time-limit the assignments to ensure that only the users that need access to the target tenant continue to have access. 
 
-1. In the target tenant, create access packages to provide the necessary roles for investigating an incident.
+1. In the target tenant, [create access packages](../../id-governance/entitlement-management-access-package-create.md) to provide the necessary roles for investigating an incident.
 
     We recommend one [autoassigned](../../id-governance/entitlement-management-access-package-auto-assignment-policy.md) access package to provide the Security Reader role and one request based package for the Security Operator and Security Administrator roles. 
 
