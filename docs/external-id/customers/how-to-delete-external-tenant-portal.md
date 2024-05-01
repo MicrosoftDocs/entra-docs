@@ -16,19 +16,19 @@ ms.custom: it-pro
 ---
 # Delete an external tenant
 
-You can't delete an external tenant until it passes several checks. These checks reduce the risk that deleting an external tenant negatively affects user access. For example, if the organization associated with a subscription is unintentionally deleted, users can't access the Azure resources for that subscription. 
+You can't delete an external tenant until it passes several checks. These checks reduce the risk that deleting an external tenant negatively affects user access. For example, if the tenant associated with a subscription is unintentionally deleted, users can't access the Azure resources for that subscription. 
 
 Check the following conditions:
 
-* No users are in the external tenant, except one global administrator who will delete the organization. You must delete any other users before you can delete the organization. 
-* No applications are in the organization. Make sure that you remove all applications including the **b2c-extensions-app**. You must delete all apps listed under **App registrations** in the **All applications** section before proceeding with the deletion of the tenant. 
+* No users are in the external tenant, except one global administrator who will delete the tenant. You must delete any other users before you can delete the tenant. 
+* No applications are in the tenant. Make sure that you remove all applications including the **b2c-extensions-app**. You must delete all apps listed under **App registrations** in the **All applications** section before proceeding with the deletion of the tenant. 
 
 ## Prerequisites
 
 - A Microsoft Entra External ID external tenant that you want to delete.
 - An Azure account that's been assigned at least the [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) role.
 
-## Delete the organization
+## Delete the external tenant
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com). 
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your external tenant from the **Directories + subscriptions** menu.
