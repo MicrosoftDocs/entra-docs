@@ -3,7 +3,7 @@ title: Create a remote network using Azure vWAN
 description: Create a virtual wide area network to connect to your resources in Azure.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 04/29/2024
+ms.date: 04/30/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -29,8 +29,8 @@ In this document, we use the following default values. Feel free to configure th
 
 ## Set up a virtual WAN in the Azure portal
 ### Create a virtual WAN
-Create a virtual wide area network to connect to your resources in Azure. For more information about Virtual WAN, see the Virtual WAN Overview.
-1.	From the Azure portal, in the Search resources bar, type Virtual WAN in the search box and select Enter.
+Create a virtual wide area network to connect to your resources in Azure. For more information about Virtual WAN, see the [Virtual WAN Overview](https://learn.microsoft.com/en-us/azure/virtual-wan/virtual-wan-about).
+1.	From the Azure portal, in the **Search resources** bar, type **Virtual WAN** in the search box and select **Enter**.
 1.	Select Virtual WANs from the results. On the Virtual WANs page, select + Create to open the Create WAN page.
 1.	On the Create WAN page, on the Basics tab, fill in the fields. Modify the example values to apply to your environment.
     - Subscription: Select the subscription that you want to use.
@@ -38,9 +38,10 @@ Create a virtual wide area network to connect to your resources in Azure. For mo
     - Resource group location: Choose a resource location from the dropdown. A WAN is a global resource and doesn't live in a particular region. However, you must select a region to manage and locate the WAN resource that you create.
     - Name: Type the Name that you want to call your virtual WAN.
     - Type: Basic or Standard. Select Standard. If you select Basic, understand that Basic virtual WANs can only contain Basic hubs. Basic hubs can only be used for site-to-site connections.
-1.	After you finish filling out the fields, at the bottom of the page, select Review + create.
+1.	After you finish filling out the fields, at the bottom of the page, select **Review + create**.
  
-:::image type="Create vWAN" source="{C:\Users\jayrusso\git\entra-docs-pr\docs\global-secure-access\media\how-to-create-remote-network-vwan\create-vwan.png}" alt-text="{Create WAN page with completed fields}":::
+:::image type="content" source="media/how-to-create-remote-network-vwan/create-vwan.png" alt-text="Screenshot of the Create WAN page with completed fields." lightbox="media/how-to-create-remote-network-vwan/create-vwan-expanded.png":::
+
 [filename: create-vwan.png] 
 1.	Once validation passes, click Create to create the virtual WAN.
 
