@@ -40,6 +40,7 @@ Create a virtual wide area network to connect to your resources in Azure. For mo
     - Type: Basic or Standard. Select Standard. If you select Basic, understand that Basic virtual WANs can only contain Basic hubs. Basic hubs can only be used for site-to-site connections.
 1.	After you finish filling out the fields, at the bottom of the page, select Review + create.
  
+:::image type="Create vWAN" source="{C:\Users\jayrusso\git\entra-docs-pr\docs\global-secure-access\media\how-to-create-remote-network-vwan\create-vwan.png}" alt-text="{Create WAN page with completed fields}":::
 [filename: create-vwan.png] 
 1.	Once validation passes, click Create to create the virtual WAN.
 
