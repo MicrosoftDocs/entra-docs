@@ -37,7 +37,7 @@ This tutorial describes the steps you need to perform in both Splashtop and Micr
 The scenario outlined in this tutorial assumes that you already have the following prerequisites:
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md) 
-* A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (for example, Application Administrator, Cloud Application administrator, Application Owner, or Global Administrator). 
+* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications). 
 * A Splashtop team with SSO supported. Fill out this [contact form](https://marketing.splashtop.com/acton/fs/blocks/showLandingPage/a/3744/p/p-0095/t/page/fm/0) to trial or subscribe to the SSO feature.
 
 ## Step 1: Plan your provisioning deployment
