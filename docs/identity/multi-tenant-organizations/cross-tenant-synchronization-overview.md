@@ -64,8 +64,8 @@ The following table shows the parts of cross-tenant synchronization and which te
 
 | Tenant | Cross-tenant<br/>access settings | Automatic redemption | Sync settings<br/>configuration | Users in scope |
 | :---: | :---: | :---: | :---: | :---: |
-| ![Icon for the source tenant.](./media/common/icon-tenant-source.png)<br/>Source tenant |  | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| ![Icon for the target tenant.](./media/common/icon-tenant-target.png)<br/>Target tenant | :heavy_check_mark: | :heavy_check_mark: |  |  |
+| ![Icon for the source tenant.](../../media/common/icons/entra-id-purple.png)<br/>Source tenant |  | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| ![Icon for the target tenant.](../../media/common/icons/entra-id.png)<br/>Target tenant | :heavy_check_mark: | :heavy_check_mark: |  |  |
 
 ## Cross-tenant synchronization setting
 

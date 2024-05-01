@@ -4,7 +4,7 @@ description: Use cross-tenant access settings to manage how you collaborate with
  
 ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 01/23/2024
+ms.date: 04/29/2024
 
 ms.author: mimart
 author: msmimart
@@ -43,7 +43,7 @@ Learn more about using cross-tenant access settings to [manage B2B direct connec
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
- Default cross-tenant access settings apply to all external tenants for which you haven't created organization-specific customized settings. If you want to modify the Microsoft Entra ID-provided default settings, follow these steps.
+Default cross-tenant access settings apply to all external organizations for which you haven't created organization-specific customized settings. If you want to modify the Microsoft Entra ID-provided default settings, follow these steps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
 1. Browse to **Identity** > **External Identities** > **Cross-tenant access settings**.

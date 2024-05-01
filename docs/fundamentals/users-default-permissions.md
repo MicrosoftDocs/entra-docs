@@ -96,7 +96,7 @@ An owner can also add or remove other owners. Unlike Global Administrators, owne
 
 When a user creates a group, they're automatically added as an owner for that group. As an owner, they can manage properties of the group (such as the name) and manage group membership. 
 
-An owner can also add or remove other owners. Unlike Global Administrators and User Administrators, owners can manage only the groups that they own. 
+An owner can also add or remove other owners. Unlike Global Administrators and User Administrators, owners can manage only the groups that they own and they can add or remove group members only if the group's membership type is **Assigned**. 
 
 To assign a group owner, see [Managing owners for a group](./how-to-manage-groups.yml).
 

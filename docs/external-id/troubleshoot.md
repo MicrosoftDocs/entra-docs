@@ -184,7 +184,7 @@ If you accidentally deleted the `aad-extensions-app`, you have 30 days to recove
 1. Run the PowerShell command `Get-MgDirectoryDeletedItem -DirectoryObjectId {id}`. As an example:
 
 ```powershell
-Get-MgDirectoryDeletedItem -DirectoryObjectId 'd4142c52-179b-4d31-b5b9-08940873507b'
+Get-MgDirectoryDeletedItem -DirectoryObjectId '00aa00aa-bb11-cc22-dd33-44ee44ee44ee'
 Id                                   DeletedDateTime
 --                                   ---------------
 d4142c52-179b-4d31-b5b9-08940873507b 8/30/2021 7:37:37 AM
