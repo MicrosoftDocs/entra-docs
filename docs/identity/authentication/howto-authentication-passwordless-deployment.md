@@ -101,7 +101,7 @@ To enable Platform Credential for macOS;
 
 > [!NOTE]
 >
-> There is a known issue that the Authentication Strength blade currently represents both Platform Credential for macOS and Windows Hello For Business with the same Authentication method name, **Windows Hello For Business**. Work is in progress to represent Platform Credential for macOS separately. While configuring custom authentication strength that needs to use Platform Credential for macOS, please use "Windows Hello For Business" until this is fixed.
+> There is a known issue that the Authentication Strength blade currently represents both Platform Credential for macOS and Windows Hello For Business with the same Authentication method name, **Windows Hello For Business**. Work is in progress to represent Platform Credential for macOS separately. While configuring custom authentication strength that needs to use Platform Credential for macOS, you can use "Windows Hello For Business" until this is fixed.
 
 #### Enable Platform Credential for macOS as a passkey
 
