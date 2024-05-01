@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: how-to
-ms.date: 02/13/2024
+ms.date: 05/01/2024
 ms.service: global-secure-access
 ms.reviewer: katabish
 
@@ -32,7 +32,7 @@ To view the remote network health logs in the Microsoft Entra admin center, you 
 - The Global Secure Access preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 - Separate roles are required for accessing the logs with the Microsoft Graph API and integrating with Log Analytics and Azure Workbooks.
 
-## How to access the logs
+## View the logs
 
 To view the **Remote network health logs**, you can use either the Microsoft Entra admin center or the Microsoft Graph API.
 
@@ -81,7 +81,7 @@ GET https://graph.microsoft.com/beta/networkAccess/logs/remotenetworks
 
 ---
 
-## Configure diagnostic settings for log integration
+## Configure diagnostic settings to export logs
 
 Integrating logs with a SIEM tool like Log Analytics is configured through diagnostic settings in Microsoft Entra ID. This process is covered in detail in the [Configure Microsoft Entra diagnostic settings for activity logs](../identity/monitoring-health/howto-configure-diagnostic-settings.md) article.
 
@@ -89,6 +89,8 @@ To configure diagnostic settings you need:
 
 - [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) access.
 - A [Log Analytics workspace](/azure/azure-monitor/logs/quick-create-workspace).
+
+The basic process to configure diagnostic settings are as follows:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator).
 
@@ -112,7 +114,7 @@ To configure diagnostic settings you need:
 
 Once your logs are integrated with Log Analytics, you can visualize the data with an Azure Workbook for Microsoft Entra. This process is covered in the next section.
 
-You can also further integrate logs with Microsoft Sentinel. Follow the [Onboard Microsoft Sentinel](https://learn.microsoft.com/en-us/azure/sentinel/quickstart-onboard) Quickstart.
+You can also integrate logs with Microsoft Sentinel for security analytics and threat intelligence. For more information, follow the [Onboard Microsoft Sentinel](https://learn.microsoft.com/en-us/azure/sentinel/quickstart-onboard) Quickstart.
 
 ## Analyze logs with a Workbook
 
@@ -131,7 +133,7 @@ To view your remote network health logs with Workbooks:
 
 ## Download logs
 
-You can download logs as a JSON or CSV file. For more information, see [How to download logs](~/identity/monitoring-health/howto-download-logs.md).
+A **Download** button is available on all logs, both within Global Secure Access and Microsoft Entra Monitoring and helath. You can download logs as a JSON or CSV file. For more information, see [How to download logs](~/identity/monitoring-health/howto-download-logs.md).
 
 To narrow down the results of the logs, select **Add filter**. You can filter by:
 
