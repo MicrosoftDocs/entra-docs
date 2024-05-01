@@ -26,7 +26,7 @@ This month, we made updates to our table of contents to make navigation easier f
 
 ### Updated articles
 
-- [Features supported in workforce and external tenants](/entra/external-id/customers/concept-supported-features-customers) - Supported features for external tenants updated
+- [Supported features in workforce and external tenants](/entra/external-id/customers/concept-supported-features-customers) - Supported features for external tenants updated
 - [Overview: Secure your apps using External ID in an external tenant](/entra/external-id/customers/overview-customers-ciam) - Image and terminology updates
 - [Microsoft Entra External ID frequently asked questions](/entra/external-id/customers/faq-customers) - Updated pricing information
 - [Default user permissions in external tenants](/entra/external-id/customers/reference-user-permissions) - Updated user types
