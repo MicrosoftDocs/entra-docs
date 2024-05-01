@@ -48,7 +48,7 @@ Microsoft Entra provides the controls needed to govern the lifecycle of a SOC us
 | Attributes of the user in the target tenant | Minimal, supplied by user themself at request time | Synchronized from the source tenant |
 
 ### Access control
-
+You can use entitlement management and cross-tenant access policies to control access to resources across tenants. Entitlement management will assign the right users to the right resources, while cross-tenant access policies and conditional access together perform the necessary run-time checks to ensure the right users are accessing the right resources. 
 **Entitlement management**
 
 Assigning Microsoft Entra roles through entitlement management access packages helps to efficiently manage role assignments at scale and improves the role assignment lifecycle. It provides a flexible request and approval process for gaining access to roles, apps, and groups while also enabling automatic assignment to resources based on user attributes. 
@@ -109,7 +109,7 @@ In both topologies, the target tenant can control what resources users have acce
 
 **Monitoring**
 
-Actions performed by a SOC analyst are audited in the Microsoft Entra tenant that they are working in. Organizations can maintain an audit trail of actions performed, generate alerts when specific actions are performed, and analyze actions performed by pushing audit logs into Azure Monitor.
+Actions performed by a SOC analyst in Microsoft Entra are audited in the Microsoft Entra tenant that they are working in. Organizations can maintain an audit trail of actions performed, generate alerts when specific actions are performed, and analyze actions performed by pushing audit logs into Azure Monitor.
 
 [Learn more](../monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.md)
 
