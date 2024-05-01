@@ -8,8 +8,6 @@ items:
 - name: Quickstarts
   expanded: false
   items: 
-    - name: Start a free trial without an Azure subscription
-      href: quickstart-trial-setup.md 
     - name: Create a tenant with an Azure subscription
       href: quickstart-tenant-setup.md
     - name: Get started guide walkthrough
@@ -285,6 +283,8 @@ items:
               href: tutorial-cli-app-node-sign-in-sign-out.md
 - name: Concepts
   items: 
+    - name: Frequently asked questions (FAQ)
+      href: faq-customers.md
     - name: Planning guide
       href: concept-planning-your-solution.md
     - name: Supported features in external tenants
@@ -468,5 +468,5 @@ items:
             href: /javascript/api/@azure/msal-node/
 - name: Resources
   items:
-    - name: Frequently asked questions (FAQ)
-      href: faq-customers.md
+    - name: Start a free trial without an Azure subscription
+      href: quickstart-trial-setup.md 
