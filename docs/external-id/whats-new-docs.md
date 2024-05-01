@@ -1,7 +1,7 @@
 ---
 title: What's new in Microsoft Entra External ID
 description: New and updated documentation for the Microsoft Entra External ID.
-ms.date: 04/03/2024
+ms.date: 05/01/2024
 ms.service: entra-external-id
 ms.topic: whats-new
 
@@ -14,6 +14,19 @@ manager: CelesteDG
 # Microsoft Entra External ID: What's new
 
 Welcome to what's new in Microsoft Entra External ID documentation. This article lists new docs that have been added and those that have had significant updates in the last three months. To learn what's new with the Microsoft Entra ID service, see [What's new in Microsoft Entra ID](~/fundamentals/whats-new.md).
+
+## April 2024
+
+This month, we have made updates to our table of contents to make navigation easier for you.
+
+### New article
+
+- [Workforce and external tenant configurations in Microsoft Entra External ID](/entra/external-id/tenant-configurations)
+
+### Updated articles
+
+- [Microsoft Entra B2B collaboration FAQs](/entra/external-id/faq) - Conditional Access policy updates
+- [Overview: Cross-tenant access with Microsoft Entra External ID](/entra/external-id/cross-tenant-access-overview) - Email one-time passcode updates
 
 ## March 2024
 
@@ -33,18 +46,10 @@ Welcome to what's new in Microsoft Entra External ID documentation. This article
 - [Language customization in Microsoft Entra External ID](user-flow-customize-language.md) - Updated screenshots
 - [B2B collaboration overview](what-is-b2b.md) - Updated screenshots
 
-
 ## February 2024
 
 ### Updated article
 
 - [Add Facebook as an identity provider for External ID](facebook-federation.md) - Microsoft Graph PowerShell updates
 - [Microsoft Entra B2B collaboration code and PowerShell samples](code-samples.md) - Microsoft Graph PowerShell updates
-
-## January 2024
-
-### Updated article
-
-- [B2B collaboration overview](what-is-b2b.md) - Editorial updates
-
 
