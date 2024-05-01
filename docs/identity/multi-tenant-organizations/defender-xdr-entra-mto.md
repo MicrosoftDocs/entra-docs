@@ -105,6 +105,8 @@ In topology 2 the target tenant administrator defines the access packages and re
 
 In both topologies, the target tenant can control what resources users have access to. This can be accomplished using a mix of cross-tenant access policies, conditional access, and assignment of apps and roles to users. They differ in who configures and initiates provisioning. In topology 1, the source tenant configures provisioning and pushes users into the target tenants. In topology 2, the target tenant defines which users are eligible to access their tenant. 
 
+If a user needs access to several tenants at one time, topology 1 makes it easy for them to request access to an access package in one tenant and automatically get provisioned into several tenants. If the target tenant wants to ensure full control over who is provisioned into their tenant and perform the necessary approvals in their tenant, topology 2 will best meet their needs. 
+
 ## Deployment considerations
 
 **Monitoring**
