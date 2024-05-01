@@ -20,6 +20,8 @@
     href: cross-tenant-synchronization-topology.md
   - name: Governance and cross-tenant synchronization
     href: cross-tenant-synchronization-governance.md
+  - name: Secure and govern SOC access in an MTO
+    href: defender-xdr-entra-mto.md
 - name: How-to guides
   expanded: true
   items:
