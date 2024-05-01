@@ -21,7 +21,7 @@ You can't delete an external tenant until it passes several checks. These checks
 Check the following conditions:
 
 * No users are in the external tenant, except one global administrator who will delete the organization. You must delete any other users before you can delete the organization. 
-* No applications are in the organization. You must remove any applications before you can delete the organization. Make sure that you also deleted the **b2c-extensions-app**. You must delete the **b2c-extensions-app** in **App registrations** under **All applications** before you can proceed with deleting the organization.
+* No applications are in the organization. Make sure that you remove all applications including the **b2c-extensions-app**. You must delete all apps listed under **App registrations** in the **All applications** section before proceeding with the deletion of the tenant. 
 
 ## Prerequisites
 
