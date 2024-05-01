@@ -16,7 +16,7 @@ ms.topic: concept-article
 
 Before you can get tokens to access APIs in your application, you need an authenticated user context. 
 
-To authenticate a user, you can use a [Pop-up window](#sign-in-with-a-pop-up-window) and/or a [Redirect](#sign-in-with-redirect) sign in method.
+To authenticate a user, you can use a [Pop-up window](#sign-in-with-a-pop-up-window) and/or a [Redirect](#sign-in-with-a-redirect) sign in method.
 
 If your application has access to an authenticated user context or ID token, you can skip the sign in step, and directly acquire tokens. For details, see [Single sign-on (SSO) with user hint](msal-js-sso.md#with-user-hint).
 
@@ -272,7 +272,7 @@ function App() {
 
 ---
 
-## Sign in with redirect
+## Sign in with a redirect
 
 # [JavaScript (MSAL.js v2)](#tab/javascript2)
 
@@ -466,7 +466,7 @@ If a user chooses not to sign out using the recommendations, the following are o
 
 * Microsoft's OpenID Connect's [Front Channel Logout](https://openid.net/specs/openid-connect-frontchannel-1_0.html) for federated sign out. You can use this option when an app shares a sign in state with a new app, but manages its own session tokens/cookies. There are some limitations to this implementation where content is blocked, for example when browsers block third-party cookies. 
 
-* [Pop-up window](#sign-out-with-a-pop-up-window) and/or a [Redirect](#sign-out-with-redirect) for local app sign out. The pop-up and redirect methods end the user's session at the endpoint and for the local app. But, these methods might not immediately clear the session for other federated applications if front-channel communication is blocked.
+* [Pop-up window](#sign-out-with-a-pop-up-window) and/or a [Redirect](#sign-out-with-a-redirect) for local app sign out. The pop-up and redirect methods end the user's session at the endpoint and for the local app. But, these methods might not immediately clear the session for other federated applications if front-channel communication is blocked.
 
 ## Sign out with a pop-up window
 
