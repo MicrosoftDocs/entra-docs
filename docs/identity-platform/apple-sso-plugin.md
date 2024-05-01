@@ -433,7 +433,10 @@ The list below contains some common scenarios that will be impacted by these cha
 This is not an exhaustive list and we do advise both consumers and vendors of applications to test their software for compatibility with this new datastore.
 
 #### Registered/Enrolled Device Conditional Access Policy Support in Chrome
-To support device Conditional Access policies in Google Chrome with Secure Enclave based storage enabled, you will need to have the [Windows Accounts](https://chromewebstore.google.com/detail/windows-accounts/ppnbnpeolgkicgegkbkbjmhlideopiji) extension installed and enabled.
+To support device Conditional Access policies in Google Chrome with Secure Enclave based storage enabled, you will need to have the [Microsoft Single Sign On](https://chromewebstore.google.com/detail/windows-accounts/ppnbnpeolgkicgegkbkbjmhlideopiji) extension installed and enabled.
+
+1. This is required for Mac devices that enable Platform SSO and for devices that have opted-in to Secure Enclave backed device identity (https://learn.microsoft.com/en-us/entra/identity-platform/apple-sso-plugin#registeredenrolled-device-conditional-access-policy-support-in-chrome).
+2. Admins can deploy it to their devices automatically with MDM [ [1](https://support.google.com/chrome/a/answer/7550274?hl=en&sjid=4022223857702261083-NA&visit_id=638501952721573309-4083424910&ref_topic=7650028&rd=1), [2](https://chromeenterprise.google/policies/?policy=ExtensionInstallForcelist) ].
 
 
 ## See also
