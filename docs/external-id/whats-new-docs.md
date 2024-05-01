@@ -40,7 +40,7 @@ This month, we have made updates to our table of contents to make navigation eas
 - [Federation with SAML/WS-Fed identity providers for guest users](direct-federation.md) - Updated for configurable redemption order general availability
 - [Overview of Microsoft Entra External ID](external-identities-overview.md) - Updated screenshots
 - [Add Microsoft account (MSA.md) as an identity provider for External ID](microsoft-account.md) - Updated screenshots
-- [Email one-time passcode authentication](one-time-passcode.md) - Updated screenshots that have references to Azure AD
+- [Email one-time passcode authentication](one-time-passcode.md) - Updated screenshots that have old references
 - [Microsoft Entra B2B collaboration invitation redemption](redemption-experience.md) - Updated content for configurable redemption order general availability
 - [Set up tenant restrictions v2](tenant-restrictions-v2.md) - Updated screenshots
 - [Language customization in Microsoft Entra External ID](user-flow-customize-language.md) - Updated screenshots

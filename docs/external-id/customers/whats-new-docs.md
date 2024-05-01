@@ -17,7 +17,7 @@ Welcome to what's new in documentation for Microsoft Entra External ID in extern
 
 ## April 2024
 
-This month, we have made updates to our table of contents to make navigation easier for you. Additionally, we have revised the terminology used to describe the external tenant in Microsoft Entra External ID
+This month, we made updates to our table of contents to make navigation easier for you. Additionally, we revised the terminology used to describe the external tenant in Microsoft Entra External ID.
 
 ### New articles
 
