@@ -32,18 +32,6 @@ A group Managed Service Account is a managed domain account that provides automa
 ### Permissions set on a gMSA account (ALL permissions)
 When the installer creates the gMSA account, it sets **ALL** of the permissions on the account.  The following tables detail these permissions
 
-#### Basic Read
-
-|Type |Name |Access |Applies To| 
-|-----|-----|-----|-----|
-|Allow |&lt;gmsa account&gt;|Read all properties |Descendant device objects| 
-|Allow |&lt;gmsa account&gt;|Read all properties |Descendant InetOrgPerson objects| 
-|Allow |&lt;gmsa account&gt;|Read all properties |Descendant Computer objects| 
-|Allow |&lt;gmsa account&gt;|Read all properties |Descendant foreignSecurityPrincipal objects| 
-|Allow |&lt;gmsa account&gt;|Read all properties |Descendant Group objects| 
-|Allow |&lt;gmsa account&gt;|Read all properties |Descendant User objects| 
-|Allow |&lt;gmsa account&gt;|Read all properties |Descendant Contact objects| 
-|Allow|&lt;gmsa account&gt;|Replicating Directory Changes|This object only (Domain root)|
 
 #### MS-DS-Consistency-Guid
 
@@ -144,6 +132,23 @@ The Set-AADCloudSyncPermission cmdlet supports the following permission types.
 |ExchangeMailPublicFolderPermissions| See [ExchangeMailPublicFolderPermissions](#exchange-mail-public-folders) permissions.|
 |UserGroupCreateDelete|See [UserGroupCreateDelete](#usergroupcreatedelete-cloudhr) permissions.|
 |All| Applies all the above permissions|
+
+
+
+
+#### Basic Read
+Basic read is seperate from the ALL permissions set by the installer because it is not acutally specifically set.  Through setting of the other permissions, the gMSA account will have these permissions applied to it.  For consistency, the individual permissions are provided here to clarify what the BasicRead permssionType sets.
+
+|Type |Name |Access |Applies To| 
+|-----|-----|-----|-----|
+|Allow |&lt;gmsa account&gt;|Read all properties |Descendant device objects| 
+|Allow |&lt;gmsa account&gt;|Read all properties |Descendant InetOrgPerson objects| 
+|Allow |&lt;gmsa account&gt;|Read all properties |Descendant Computer objects| 
+|Allow |&lt;gmsa account&gt;|Read all properties |Descendant foreignSecurityPrincipal objects| 
+|Allow |&lt;gmsa account&gt;|Read all properties |Descendant Group objects| 
+|Allow |&lt;gmsa account&gt;|Read all properties |Descendant User objects| 
+|Allow |&lt;gmsa account&gt;|Read all properties |Descendant Contact objects| 
+|Allow|&lt;gmsa account&gt;|Replicating Directory Changes|This object only (Domain root)|
 
 
 ## Next Steps
