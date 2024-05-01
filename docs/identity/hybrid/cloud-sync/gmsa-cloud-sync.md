@@ -28,26 +28,8 @@ A group Managed Service Account is a managed domain account that provides automa
 3. At least one domain controller in the domain must be running Windows Server 2012 or later.
 4. A domain joined server where the agent is being installed needs to be either Windows Server 2016 or later.
 
-### Custom gMSA account
 
-If you're creating a custom gMSA account, you need to ensure that the account has the following permissions.  These are the default permissions that are created on the account if it is created automatically during installation.
-
-|Type |Name |Access |Applies To|
-|-----|-----|-----|-----|
-|Allow |&lt;gmsa account&gt;|Read all properties |Descendant device objects|
-|Allow |&lt;gmsa account&gt;|Read all properties |Descendant InetOrgPerson objects|
-|Allow |&lt;gmsa account&gt;|Read all properties |Descendant Computer objects|
-|Allow |&lt;gmsa account&gt;|Read all properties |Descendant foreignSecurityPrincipal objects|
-|Allow |&lt;gmsa account&gt;|Full control |Descendant Group objects|
-|Allow |&lt;gmsa account&gt;|Read all properties |Descendant User objects|
-|Allow |&lt;gmsa account&gt;|Read all properties |Descendant Contact objects|
-|Allow |&lt;gmsa account&gt;|Create/delete User objects|This object and all descendant objects|
-
-For steps on how to upgrade an existing agent to use a gMSA account see [group Managed Service Accounts](how-to-install.md#group-managed-service-accounts).
-
-For more information on how to prepare your Active Directory for group Managed Service Account, see [group Managed Service Accounts Overview](/windows-server/security/group-managed-service-accounts/group-managed-service-accounts-overview).
-
-### Permissions set on a custom gMSA account (ALL permissions)
+### Permissions set on a gMSA account (ALL permissions)
 When the installer creates the gMSA account, it sets **ALL** of the permissions on the account.  The following tables detail these permissions
 
 #### Basic Read
@@ -125,14 +107,32 @@ If the associated forest is hosted in a Windows Server 2016 environment, it incl
 |Allow |&lt;gmsa account&gt;|Generic write |All attributes of object type user and subobjects| 
 |Allow |&lt;gmsa account&gt;|Create/Delete child object|All attributes of object type user and subobjects| 
 
+### Using a custom gMSA account
 
-## Apply a subset of permissions
+If you're creating a custom gMSA account, you need to ensure that the account has the following permissions.  The installer **doesn't** set the permissions if a custom gMSA account is specified.  These permissions reflect the **ALL** permissions set by the installer. 
+
+|Type |Name |Access |Applies To|
+|-----|-----|-----|-----|
+|Allow |&lt;gmsa account&gt;|Read all properties |Descendant device objects|
+|Allow |&lt;gmsa account&gt;|Read all properties |Descendant InetOrgPerson objects|
+|Allow |&lt;gmsa account&gt;|Read all properties |Descendant Computer objects|
+|Allow |&lt;gmsa account&gt;|Read all properties |Descendant foreignSecurityPrincipal objects|
+|Allow |&lt;gmsa account&gt;|Full control |Descendant Group objects|
+|Allow |&lt;gmsa account&gt;|Read all properties |Descendant User objects|
+|Allow |&lt;gmsa account&gt;|Read all properties |Descendant Contact objects|
+|Allow |&lt;gmsa account&gt;|Create/delete User objects|This object and all descendant objects|
+
+For steps on how to upgrade an existing agent to use a gMSA account see [group Managed Service Accounts](how-to-install.md#group-managed-service-accounts).
+
+For more information on how to prepare your Active Directory for group Managed Service Account, see [group Managed Service Accounts Overview](/windows-server/security/group-managed-service-accounts/group-managed-service-accounts-overview).
+
+### Apply a subset of permissions
 You can apply only a subset of the permissions using the Set-AADCloudSyncPermission cmdlet.
 
  See [Using Set-AADCloudSyncPermission](how-to-gmsa-cmdlets.md#using-set-aadcloudsyncpermissions) below for examples on setting specific permissions.
 
 
-### Supported permission types
+#### Supported permission types
 The Set-AADCloudSyncPermission cmdlet supports the following permission types.
 
 |Permission type|Description|
