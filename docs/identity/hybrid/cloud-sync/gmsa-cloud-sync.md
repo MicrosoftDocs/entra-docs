@@ -47,29 +47,10 @@ For steps on how to upgrade an existing agent to use a gMSA account see [group M
 
 For more information on how to prepare your Active Directory for group Managed Service Account, see [group Managed Service Accounts Overview](/windows-server/security/group-managed-service-accounts/group-managed-service-accounts-overview).
 
+### Permissions set on a custom gMSA account (ALL permissions)
+When the installer creates the gMSA account, it sets **ALL** of the permissions on the account.  The following tables detail these permissions
 
-## Restricting Permissions
-To restrict Active Directory permissions set by default on the cloud provisioning agent account, you can use the following cmdlet. This will increase the security of the service account by disabling permission inheritance and removing all existing permissions, except SELF and Full Control for administrators. See [Using Set-AADCloudSyncRestrictedPermission](how-to-gmsa-cmdlets.md#using-set-aadcloudsyncrestrictedpermissions) below for examples on restricting the permissions.
-
-
-### Supported permission types
-The Set-AADCloudSyncRestrictedPermission cmdlet supports the following permission types.
-
-|Permission type|Description|
-|-----|-----|
-|BasicRead| See [BasicRead](#basicread) permissions.|
-|MS-DS-Consistency-Guid|See [MS-DS-Consistency-Guid](#ms-ds-consistency-guid) permissions.|
-|PasswordHashSync|See [PasswordHashSync](#password-hash-sync) permissions.|
-|PasswordWriteBack|See [PasswordWriteBack](#password-writeback) permissions.|
-|HybridExchangePermissions|See [HybridExchangePermissions](#exchange-hybrid-deployment) permissions.|
-|ExchangeMailPublicFolderPermissions| See [ExchangeMailPublicFolderPermissions](#exchange-mail-public-folders) permissions.|
-|UserGroupCreateDelete|See [UserGroupCreateDelete](#usergroupcreatedelete-cloudhr) permissions.|
-|All| Applies all the above permissions|
-
-
-#### BasicRead
-This permissionType sets the following permissions:
-
+#### Basic Read
 
 |Type |Name |Access |Applies To| 
 |-----|-----|-----|-----|
@@ -83,7 +64,6 @@ This permissionType sets the following permissions:
 |Allow|&lt;gmsa account&gt;|Replicating Directory Changes|This object only (Domain root)|
 
 #### MS-DS-Consistency-Guid
-This permissionType sets the following permissions:
 
 |Type |Name |Access |Applies To|
 |-----|-----|-----|-----| 
@@ -97,10 +77,7 @@ If the associated forest is hosted in a Windows Server 2016 environment, it incl
 |Allow|&lt;gmsa account&gt;|Write property msDS-KeyCredentialLink|Descendant user objects|
 |Allow|&lt;gmsa account&gt;|Write property msDS-KeyCredentialLink|Descendant device objects|
 
-
-
 #### Password Hash Sync
-This permissionType sets the following permissions:
 
 |Type |Name |Access |Applies To|
 |-----|-----|-----|-----| 
@@ -108,7 +85,6 @@ This permissionType sets the following permissions:
 |Allow |&lt;gmsa account&gt;|Replicating Directory Changes All |This object only (Domain root)| 
   
 #### Password Writeback 
-This permissionType sets the following permissions:
 
 |Type |Name |Access |Applies To|
 |-----|-----|-----|-----| 
@@ -118,7 +94,6 @@ This permissionType sets the following permissions:
 |Allow |&lt;gmsa account&gt;|Unexpired Password|This object only (Domain root)| 
 
 #### Group Writeback 
-This permissionType sets the following permissions:
 
 |Type |Name |Access |Applies To|
 |-----|-----|-----|-----| 
@@ -127,7 +102,6 @@ This permissionType sets the following permissions:
 |Allow |&lt;gmsa account&gt;|Delete/Delete tree objects|All attributes of object type group and subobjects|
 
 #### Exchange Hybrid Deployment 
-This permissionType sets the following permissions:
 
 |Type |Name |Access |Applies To|
 |-----|-----|-----|-----| 
@@ -137,14 +111,12 @@ This permissionType sets the following permissions:
 |Allow |&lt;gmsa account&gt;|Read/Write all properties |Descendant Contact objects| 
 
 #### Exchange Mail Public Folders
-This permissionType sets the following permissions:
 
 |Type |Name |Access |Applies To|
 |-----|-----|-----|-----| 
 |Allow |&lt;gmsa account&gt;|Read all properties |Descendant PublicFolder objects| 
 
 #### UserGroupCreateDelete (CloudHR)
-This permissionType sets the following permissions:
 
 |Type |Name |Access |Applies To|
 |-----|-----|-----|-----| 
@@ -152,6 +124,26 @@ This permissionType sets the following permissions:
 |Allow |&lt;gmsa account&gt;|Create/Delete child object|All attributes of object type group and subobjects| 
 |Allow |&lt;gmsa account&gt;|Generic write |All attributes of object type user and subobjects| 
 |Allow |&lt;gmsa account&gt;|Create/Delete child object|All attributes of object type user and subobjects| 
+
+
+## Apply a subset of permissions
+You can apply only a subset of the permissions using the Set-AADCloudSyncPermission cmdlet.
+
+ See [Using Set-AADCloudSyncPermission](how-to-gmsa-cmdlets.md#using-set-aadcloudsyncpermissions) below for examples on setting specific permissions.
+
+
+### Supported permission types
+The Set-AADCloudSyncPermission cmdlet supports the following permission types.
+
+|Permission type|Description|
+|-----|-----|
+|BasicRead| See [BasicRead](#basic-read) permissions.|
+|PasswordHashSync|See [PasswordHashSync](#password-hash-sync) permissions.|
+|PasswordWriteBack|See [PasswordWriteBack](#password-writeback) permissions.|
+|HybridExchangePermissions|See [HybridExchangePermissions](#exchange-hybrid-deployment) permissions.|
+|ExchangeMailPublicFolderPermissions| See [ExchangeMailPublicFolderPermissions](#exchange-mail-public-folders) permissions.|
+|UserGroupCreateDelete|See [UserGroupCreateDelete](#usergroupcreatedelete-cloudhr) permissions.|
+|All| Applies all the above permissions|
 
 
 ## Next Steps
