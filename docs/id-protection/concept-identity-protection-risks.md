@@ -254,7 +254,7 @@ Credentials are processed immediately after they're found, normally in multiple 
 
 ### Locations 
 
-Location in risk detections is determined using IP address lookup. 
+Location in risk detections is determined using IP address lookup. Sign-ins from trusted [named locations](../identity/conditional-access/location-condition.md#trusted-locations) improve the accuracy of Microsoft Entra ID Protection's risk calculation, lowering a user's sign-in risk when they authenticate from a location marked as trusted.
 
 ## Related content
 
