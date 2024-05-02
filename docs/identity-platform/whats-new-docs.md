@@ -16,6 +16,10 @@ ms.topic: whats-new
 
 Welcome to what's new in the Microsoft identity platform documentation. This article lists new articles that were added or had significant updates in the last three months.
 
+## April 2024
+
+No new or updated articles.
+
 ## March 2024
 
 ### New articles
@@ -39,14 +43,3 @@ Welcome to what's new in the Microsoft identity platform documentation. This art
 - [Microsoft identity platform app types and authentication flows](authentication-flows-app-scenarios.md) - Update to enhance the article's technical accuracy
 - [Overview of the Microsoft Authentication Library (MSAL)](msal-overview.md) - Update to enhance the article's technical accuracy
 - [Use Microsoft Authenticator or Intune Company Portal on Xamarin applications](msal-net-use-brokers-with-xamarin-apps.md) - Removing the android signature digest for the latest android version
-
-## January 2024
-
-### New articles
-
-- [Customize claims emitted in tokens for a specific app in a tenant using PowerShell](claims-customization-powershell.md) - Adding claims customization using PowerShell page
-
-### Updated articles
-
-- [Microsoft identity platform and OAuth 2.0 On-Behalf-Of flow](v2-oauth2-on-behalf-of-flow.md) - Adding clarity to the article
-- [Quickstart: Protect an ASP.NET Core web API with the Microsoft identity platform](quickstart-web-api-aspnet-core-protect-api.md) - Updated the article with the new code sample.
