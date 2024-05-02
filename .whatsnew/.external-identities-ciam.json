@@ -12,7 +12,7 @@
         "maxFilesChanged": 50,
         "labels": [
             "label:active-directory/svc",
-            "label:ciam/subsvc"
+            "label:customers/subsvc"
         ]
     },
     "areas": [
