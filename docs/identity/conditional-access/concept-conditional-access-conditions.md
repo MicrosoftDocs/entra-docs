@@ -142,12 +142,16 @@ These browsers support device authentication, allowing the device to be identifi
 > [Firefox 91+](https://support.mozilla.org/kb/windows-sso) is supported for device-based Conditional Access, but "Allow Windows single sign-on for Microsoft, work, and school accounts" needs to be enabled.
 >
 > [Chrome 111+](https://chromeenterprise.google/policies/#CloudAPAuthEnabled) is supported for device-based Conditional Access, but "CloudApAuthEnabled" needs to be enabled.
+>
+> macOS devices using the Enterprise SSO plugin require the [Microsoft Single Sign On](https://chromewebstore.google.com/detail/windows-accounts/ppnbnpeolgkicgegkbkbjmhlideopiji) extension to support SSO and device CA.
 
 #### Why do I see a certificate prompt in the browser
 
 On Windows 7, iOS, Android, and macOS devices are identified using a client certificate. This certificate is provisioned when the device is registered. When a user first signs in through the browser the user is prompted to select the certificate. The user must select this certificate before using the browser.
 
 #### Chrome support
+
+##### Windows
 
 For Chrome support in **Windows 10 Creators Update (version 1703)** or later, install the [Microsoft Single Sign On](https://chrome.google.com/webstore/detail/windows-accounts/ppnbnpeolgkicgegkbkbjmhlideopiji) extension or enable Chrome's [CloudAPAuthEnabled](https://chromeenterprise.google/policies/#CloudAPAuthEnabled). These configurations are required when a Conditional Access policy requires device-specific details for Windows platforms specifically.
 
@@ -171,6 +175,12 @@ For Chrome support in **Windows 8.1 and 7**, create the following registry key:
 - Name: `1`
 - Type: `REG_SZ (String)`
 - Data: `{"pattern":"https://device.login.microsoftonline.com","filter":{"ISSUER":{"CN":"MS-Organization-Access"}}}`
+
+##### macOS
+
+macOS devices using the Enterprise SSO plugin require the [Microsoft Single Sign On](https://chromewebstore.google.com/detail/windows-accounts/ppnbnpeolgkicgegkbkbjmhlideopiji) extension to support SSO and device CA.
+
+For MDM based deployments of Google Chrome and extension management, please refer to [Set up Chrome browser on Mac](https://support.google.com/chrome/a/answer/7550274?hl=en&sjid=4022223857702261083-NA) and [ExtensionInstallForcelist](https://chromeenterprise.google/policies/?policy=ExtensionInstallForcelist).
 
 ### Supported mobile applications and desktop clients
 
