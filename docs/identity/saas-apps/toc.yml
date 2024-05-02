@@ -3181,6 +3181,8 @@
         href: zonka-feedback-tutorial.md
       - name: Zoom
         href: zoom-tutorial.md
+      - name: Zscaler(OIDC)
+        href: zscaler-tutorial.md
       - name: Zscaler Internet Access ZSNet
         href: zscaler-internet-access-zsnet-tutorial.md
       - name: Zscaler B2B User Portal
