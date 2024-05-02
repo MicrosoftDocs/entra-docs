@@ -47,7 +47,7 @@ Detections triggered in real-time take 5-10 minutes to surface details in the re
 
 ## Risk detections mapped to riskEventType 
 
-| Risk detection  | Detection type | Type | riskEventType |
+| Risk detection | Detection type | Type | riskEventType |
 | --- | --- | --- | --- |
 | **Sign-in risk detections** | | | |
 | [Activity from anonymous IP address](#activity-from-anonymous-ip-address) | Offline | Premium | riskyIPAddress |
@@ -93,11 +93,11 @@ Calculated offline. This detection is discovered using information provided by�
 
 Calculated in real-time or offline. This detection indicates abnormal characteristics in the token, such as an unusual lifetime or a token played from an unfamiliar location. This detection covers Session Tokens and Refresh Tokens. 
 
-Note: Anomalous token is tuned to incur more noise than other detections at the same risk level. This tradeoff is chosen to increase the likelihood of detecting replayed tokens that might otherwise go unnoticed. There's a higher than normal chance that some of the sessions flagged by this detection are false positives. We recommend investigating the sessions flagged by this detection in the context of other sign-ins from the user. If the location, application, IP address, User Agent, or other characteristics are unexpected for the user, the tenant admin should consider this risk as an indicator of potential token replay. 
+Anomalous token is tuned to incur more noise than other detections at the same risk level. This tradeoff is chosen to increase the likelihood of detecting replayed tokens that might otherwise go unnoticed. There's a higher than normal chance that some of the sessions flagged by this detection are false positives. We recommend investigating the sessions flagged by this detection in the context of other sign-ins from the user. If the location, application, IP address, User Agent, or other characteristics are unexpected for the user, the tenant admin should consider this risk as an indicator of potential token replay. 
 
 #### Attacker in the Middle 
 
-Calculated offline - Also known as Adversary in the Middle, this high-precision detection is triggered when an active token theft threat is identified in a session compromised through stolen credentials. The user is raised to High risk for manual investigation by the admin. 
+Calculated offline. Also known as Adversary in the Middle, this high-precision detection is triggered when an active token theft threat is identified in a session compromised through stolen credentials. The user is raised to High risk for manual investigation by the admin. 
 
 #### Atypical travel 
 
@@ -107,7 +107,7 @@ The algorithm ignores obvious "false positives" contributing to the impossible t
 
 #### Impossible travel 
 
-Calculated offline. This detection is discovered using information provided by [Microsoft Defender for Cloud Apps](/defender-cloud-apps/anomaly-detection-policy#impossible-travel). This detection identifies user activities (is a single or multiple sessions) originating from geographically distant locations within a time period shorter than the time it takes to travel from the first location to the second. This risk might indicate that a different user is using the same credentials. 
+Calculated offline. This detection is discovered using information provided by [Microsoft Defender for Cloud Apps](/defender-cloud-apps/anomaly-detection-policy#impossible-travel). This detection identifies user activities (in a single or multiple sessions) originating from geographically distant locations within a time period shorter than the time it takes to travel from the first location to the second. This risk might indicate that a different user is using the same credentials. 
 
 #### Malicious IP address 
 
@@ -115,7 +115,7 @@ Calculated offline. This detection indicates sign-in from a malicious IP address
 
 #### Mass access to sensitive files 
 
-Calculated offline. This detection is discovered using information provided by [Microsoft Defender for Cloud Apps](/defender-cloud-apps/investigate-anomaly-alerts#unusual-file-access-by-user). This detection looks at your environment and triggers alerts when users access multiple files from Microsoft SharePoint or Microsoft OneDrive. An alert is triggered only if the number of accessed files is uncommon for the user and the files might contain sensitive information. 
+Calculated offline. This detection is discovered using information provided by [Microsoft Defender for Cloud Apps](/defender-cloud-apps/investigate-anomaly-alerts#unusual-file-access-by-user). This detection looks at your environment and triggers alerts when users access multiple files from Microsoft SharePoint Online or Microsoft OneDrive. An alert is triggered only if the number of accessed files is uncommon for the user and the files might contain sensitive information. 
 
 #### New country 
 
@@ -143,17 +143,17 @@ Calculated offline. This risk detection indicates the SAML token issuer for the 
 
 #### Unfamiliar sign-in properties 
 
-Calculated in real-time. This risk detection type considers past sign-in history to look for anomalous sign-ins. The system stores information about previous sign-ins, and triggers a risk detection when a sign-in occurs with properties that are unfamiliar to the user. These properties can include IP, ASN, location, device, browser, and tenant IP subnet. Newly created users are in "learning mode" period where the unfamiliar sign-in properties risk detection is turned off while our algorithms learn the user's behavior. The learning mode duration is dynamic and depends on how much time it takes the algorithm to gather enough information about the user's sign-in patterns. The minimum duration is five days. A user can go back into learning mode after a long period of inactivity. 
+Calculated in real-time. This risk detection type considers past sign-in history to look for anomalous sign-ins. The system stores information about previous sign-ins, and triggers a risk detection when a sign-in occurs with properties that are unfamiliar to the user. These properties can include IP, ASN, location, device, browser, and tenant IP subnet. Newly created users are in a "learning mode" period where the unfamiliar sign-in properties risk detection is turned off while our algorithms learn the user's behavior. The learning mode duration is dynamic and depends on how much time it takes the algorithm to gather enough information about the user's sign-in patterns. The minimum duration is five days. A user can go back into learning mode after a long period of inactivity. 
 
 We also run this detection for basic authentication (or legacy protocols). Because these protocols don't have modern properties such as client ID, there's limited data to reduce false positives. We recommend our customers to move to modern authentication. 
 
 Unfamiliar sign-in properties can be detected on both interactive and non-interactive sign-ins. When this detection is detected on non-interactive sign-ins, it deserves increased scrutiny due to the risk of token replay attacks. 
 
-Selecting an unfamiliar sign-in properties risk allows you to see Additional Info showing you more detail about why this risk triggered. The following screenshot shows an example of these details. 
+Selecting an unfamiliar sign-in properties risk allows you to see additional info showing more detail about why this risk triggered.
 
 #### Verified threat actor IP 
 
-Calculated in real-time. This risk detection type indicates sign-in activity that is consistent with known IP addresses associated with nation state actors or cyber crime groups, based on Microsoft Threat Intelligence Center (MSTIC). 
+Calculated in real-time. This risk detection type indicates sign-in activity that is consistent with known IP addresses associated with nation state actors or cyber crime groups, based on data from the Microsoft Threat Intelligence Center (MSTIC). 
 
 ### Premium user risk detections 
 
@@ -167,7 +167,7 @@ Calculated offline. This risk detection type is discovered using information pro
 
 #### Suspicious API traffic 
 
-Calculated offline. This risk detection is reported when abnormal GraphAPI traffic or directory enumeration is observed. Suspicious API traffic might suggest that a user is compromised and is conducting reconnaissance in their environment. 
+Calculated offline. This risk detection is reported when abnormal GraphAPI traffic or directory enumeration is observed. Suspicious API traffic might suggest that a user is compromised and conducting reconnaissance in the environment. 
 
 #### Suspicious sending patterns 
 
@@ -179,13 +179,13 @@ Calculated offline. This risk detection is reported when a user denies a multifa
 
 ## Nonpremium detections 
 
-Customers without Microsoft Entra ID P2 licenses receive detections titled "additional risk detected" without the detailed information regarding the detection that customers with P2 licenses do. For more information, see the [license requirements](overview-identity-protection.md#license-requirements). 
+Customers without Microsoft Entra ID P2 licenses receive detections titled **Additional risk detected** without the detailed information regarding the detection that customers with P2 licenses do. For more information, see the [license requirements](overview-identity-protection.md#license-requirements). 
 
 ### Nonpremium sign-in risk detections 
 
 #### Additional risk detected (sign-in) 
 
-Calculated in real-time or offline. This detection indicates that one of the premium detections was detected. Since the premium detections are visible only to Microsoft Entra ID P2 customers, they're titled "additional risk detected" for customers without Microsoft Entra ID P2 licenses. 
+Calculated in real-time or offline. This detection indicates that one of the premium detections was detected. Since the premium detections are visible only to Microsoft Entra ID P2 customers, they're titled **Additional risk detected** for customers without Microsoft Entra ID P2 licenses. 
 
 #### Admin confirmed user compromised 
 
@@ -203,7 +203,7 @@ Calculated in real-time or offline. This risk detection type indicates user acti
 
 #### Additional risk detected (user) 
 
-Calculated in real-time or offline. This detection indicates that one of the premium detections was detected. Since the premium detections are visible only to Microsoft Entra ID P2 customers, they're titled "additional risk detected" for customers without Microsoft Entra ID P2 licenses. 
+Calculated in real-time or offline. This detection indicates that one of the premium detections was detected. Since the premium detections are visible only to Microsoft Entra ID P2 customers, they're titled **Additional risk detected** for customers without Microsoft Entra ID P2 licenses. 
 
 #### Leaked credentials 
 
@@ -221,7 +221,7 @@ ID Protection generates risk detections only when the correct credentials are us
 
 ### Is password hash synchronization required? 
 
-Risk detections like leaked credentials require the presence of password hashes for detection to occur. For more information about password hash synchronization, see the article, Implement password hash synchronization with Microsoft Entra Connect Sync. 
+Risk detections like leaked credentials require the presence of password hashes for detection to occur. For more information about password hash synchronization, see the article, [Implement password hash synchronization with Microsoft Entra Connect Sync](../identity/hybrid/connect/how-to-connect-password-hash-synchronization.md). 
 
 ### Why are risk detections generated for disabled accounts? 
 
@@ -239,7 +239,7 @@ Microsoft finds leaked credentials in various places, including:
 
 #### Why am I not seeing any leaked credentials? 
 
-Leaked credentials are processed anytime Microsoft finds a new, publicly available batch. Because of the sensitive nature, the leaked credentials are deleted shortly after processing. Only new leaked credentials found after you enable password hash synchronization (PHS) are processed against your tenant. Verifying against previously found credential pairs isn't done. 
+Leaked credentials are processed anytime Microsoft finds a new, publicly available batch. Because of the sensitive nature, the leaked credentials are deleted shortly after processing. Only new leaked credentials found **after** you enable password hash synchronization (PHS) are processed against your tenant. Verifying against previously found credential pairs isn't done. 
 
 #### I don't see any leaked credential risk events
 
