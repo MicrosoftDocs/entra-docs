@@ -10,7 +10,7 @@ ms.date: 05/01/2024
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
-ms.reviewer: 
+ms.reviewer: cokoopma, jaedwards
 ---
 # What are risk detections?
 

@@ -11,9 +11,7 @@ ms.date: 01/24/2023
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
-ms.reviewer: chuqiaoshi, etbasser
-
-
+ms.reviewer: cokoopma
 ---
 # How To: Export risk data
 

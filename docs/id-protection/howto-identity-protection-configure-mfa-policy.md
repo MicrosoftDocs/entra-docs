@@ -10,7 +10,7 @@ ms.date: 04/26/2024
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
-ms.reviewer: 
+ms.reviewer: etbasser
 ---
 # How To: Configure the multifactor authentication registration policy
 

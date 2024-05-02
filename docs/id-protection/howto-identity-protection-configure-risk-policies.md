@@ -10,11 +10,11 @@ ms.date: 02/05/2024
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
-ms.reviewer: chuqiaoshi
+ms.reviewer: cokoopma
 ---
 # Configure and enable risk policies
 
-As we learned in the previous article, [Risk-based access policies](concept-identity-protection-policies.md), there are two types of risk policies in Microsoft Entra Conditional Access you can set up. You can use these policies to automate the response to risks allowing users to self-remediate when risk is detected:
+As we learned in the article, [Risk-based access policies](concept-identity-protection-policies.md), there are two types of risk policies in Microsoft Entra Conditional Access you can set up. You can use these policies to automate the response to risks allowing users to self-remediate when risk is detected:
 
 - Sign-in risk policy
 - User risk policy
@@ -73,7 +73,7 @@ Organizations can choose to deploy risk-based policies in Conditional Access usi
 
 Before organizations enable these policies, they should take action to [investigate](howto-identity-protection-investigate-risk.md) and [remediate](howto-identity-protection-remediate-unblock.md) any active risks.
 
-## Policy exclusions
+### Policy exclusions
 
 [!INCLUDE [active-directory-policy-exclusions](../includes/entra-policy-exclude-user.md)]
 
@@ -91,4 +91,3 @@ Before organizations enable these policies, they should take action to [investig
 - [What is risk](concept-identity-protection-risks.md)
 - [Investigate risk detections](howto-identity-protection-investigate-risk.md)
 - [Simulate risk detections](howto-identity-protection-simulate-risk.md)
-- [Require reauthentication every time](~/identity/conditional-access/concept-session-lifetime.md#require-reauthentication-every-time)
