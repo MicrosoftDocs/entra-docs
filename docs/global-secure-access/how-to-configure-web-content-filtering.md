@@ -39,6 +39,7 @@ There are several steps to configuring web content filtering. Take note of where
 1. [Create a web content filtering policy.](#create-a-web-content-filtering-policy)
 1. [Create a security profile.](#create-a-security-profile)
 1. [Link the security profile to a Conditional Access policy.](#create-and-link-conditional-access-policy)
+1. [Assign users or groups to the traffic forwarding profile.](#user-and-group-assignments)
 
 ## Enable internet traffic forwarding
 
@@ -89,6 +90,23 @@ Create a Conditional Access policy for end users or groups and deliver your secu
 1. Select **Select**.
 1. In the **Enable policy** section, ensure **On** is selected.
 1. Select **Create**.
+
+## User and group assignments
+You can scope the Internet Access profile to specific users and groups.
+
+If the traffic profile is disabled then, when you enable it, you see that there are zero users and zero groups assigned. This default behavior lets you slowly roll out the feature in a controlled manner.
+
+To scope the traffic profile to a specific user or group:
+1. Select the **View** link next to **0 Users, 0 Groups assigned**.
+1. Select the link **0 Users, 0 Groups assigned** to select specific users or groups. Alternatively, select the toggle to assign the traffic profile to all users.
+1. Select **Add user/group**.
+1. Select a user or group for the traffic forwarding profile and then select **Assign**.
+
+> [!NOTE]
+> - Group-based assignment requires Microsoft Entra ID P1 or P2 license.
+> - Group-based assignment is supported for Security groups and Microsoft 365 groups whose `SecurityEnabled` setting is set to `True`.
+> - Nested group membership isn't supported. 
+> - Multiple sessions/users logging into the same device is not supported.
 
 ## Verify end user policy enforcement
 

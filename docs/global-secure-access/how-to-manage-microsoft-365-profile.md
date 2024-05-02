@@ -94,8 +94,6 @@ Traffic profiles can be assigned to remote networks, so that the network traffic
     - If you're editing the remote network assignments, select the **Add/edit assignments** button.
 1. Select a remote network from the list and select **Add**.
 
-[!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
-
 ## User and group assignments
 You can scope the Microsoft 365 profile to specific users and groups.
 
@@ -113,6 +111,7 @@ To scope the traffic profile to a specific user or group:
 > - Nested group membership isn't supported. 
 > - Multiple sessions/users logging into the same device is not supported.
 
+[!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
 
 ## Next steps
 
