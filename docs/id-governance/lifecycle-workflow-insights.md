@@ -79,9 +79,18 @@ When you view the top tasks insights summary, the following information is shown
 
 ## Workflow Category Insights summary
 
-The Workflow Category Insights summary lists the top workflows run by category using a percentage for a timespan that can be 7, 14, or 30 days.
+The Workflow Category Insights summary lists the top workflows run by category using a percentage for a timespan that can be 7, 14, or 30 days. The category can also be filtered by total processed, successful workflows, or failed workflows.
 
 :::image type="content" source="media/lifecycle-workflow-insights/workflow-insights-category.png" alt-text="Screenshot of workflow insights by category summary.":::
+
+When you view the workflows run by category insights summary, the following information is shown:
+
+
+|Detail  |Information  |
+|---------|---------|
+|Joiner     | The percentage of workflows that have the category of *Joiner*. If the filter is set as successful, the percentage of Joiner is the number of Joiner workflows by percentage that were successful during the filtered time span.      |
+|Mover        |  The percentage of workflows that have the category of *Mover*. If the filer is set as total, the percentage of Mover is the number of mover workflows by percentage that were processed during the filtered time span.      |
+|Leaver     |   The percentage of workflows that have the category of *Leaver*. If the filter is set as failed, the percentage of Leaver is the number of Leaver workflows by percentage that failed during the filtered time span.      |
 
 
 ## Next steps
