@@ -158,7 +158,7 @@ To automatically enable the CloudAPAuthEnabled policy in Chrome, create the foll
  - Value: `0x00000001`
  - PropertyType: `DWORD`
 
-To automatically deploy the Microsoft Single Sign On extension to Chrome browsers, create the following registry key:
+To automatically deploy the Microsoft Single Sign On extension to Chrome browsers, create the following registry key using the [ExtensionInstallForcelist](https://chromeenterprise.google/policies/?policy=ExtensionInstallForcelist) policy in Chrome:
 
 - Path: `HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome\ExtensionInstallForcelist`
 - Name: `1`
