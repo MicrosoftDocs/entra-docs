@@ -23,7 +23,7 @@ With Workflow Insights, you're able to get a quick view of workflow execution wi
 - Number of workflows by categories of the past time-span that you define from either 7, 14, or 30 days.
 
 
-For more information, see: [Workflow Insights (preview)](lifecycle-workflow-history.md#workflow-insights-preview).
+For more information, see: [Workflow Insights (preview)](lifecycle-workflow-insights.md).
 
 ## Prerequisites
 

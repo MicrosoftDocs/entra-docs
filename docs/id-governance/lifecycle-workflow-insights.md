@@ -26,10 +26,10 @@ With Workflow Insights, you're also able to view aggregate workflow information 
 - Top Tasks
 - Workflow by Category
 
-More details about insights found in these sections are discussed in the following sections of this article. For a step by step guide on checking the insights for workflows in your tenant, see: [Check Workflow Insights (preview)](lifecycle-workflow-insights.md).
+More details about insights found in these sections are discussed in the following sections of this article. For a step by step guide on checking the insights for workflows in your tenant, see: [Check Workflow Insights (preview)](manage-workflow-insights.md).
 
 
-### Workflow Insights summary
+## Workflow Insights summary
 
 The Workflow Insights summary provides a numerical view of successful workflows, users, and tasks processed within a tenant.
 
@@ -37,7 +37,7 @@ The Workflow Insights summary provides a numerical view of successful workflows,
 
 This summary can be filtered to show information from either the past, 7, 14, or 30 days.
 
-### Top Workflow Insights summary
+## Top Workflow Insights summary
 
 The Top Workflows Insights summary lists the top workflows ran in the tenant for a timespan that can be 7, 14, or 30 days. The top workflows can also be filtered in order by total processed, successful runs, or failed runs.
 
@@ -58,7 +58,7 @@ When you view the top workflow insights summary, the following information is sh
 |Failed Users     |  The number of failed users processed by the workflow.       |
 
 
-### Top Tasks Insights summary
+## Top Tasks Insights summary
 
 The Top Tasks Insights summary lists the top tasks ran in the tenant for a timespan that can be 7, 14, or 30 days. The top tasks can also be filtered in order by total processed, successful runs, or failed runs.
 
@@ -77,7 +77,7 @@ When you view the top tasks insights summary, the following information is shown
 |Successful Users     |  The number of successful users processed by the task.       |
 |Failed Users     |  The number of failed users processed by the task.       |
 
-### Workflow Category Insights summary
+## Workflow Category Insights summary
 
 The Workflow Category Insights summary lists the top workflows run by category using a percentage for a timespan that can be 7, 14, or 30 days.
 
