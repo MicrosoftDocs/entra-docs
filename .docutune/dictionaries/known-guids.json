@@ -201,7 +201,7 @@
   "Azure Stack HCI Device Management Role": "865ae368-6a45-4bd1-8fbf-0d5151f56fc1",
   "Azure Stack HCI VM Contributor": "874d1c73-6003-4e60-a13a-cb31ea190a85",
   "Azure Stack HCI VM Reader": "4b3fe76c-f777-4d24-a2d7-b027b0f7b273",
-  "Azure Stack Registration Owner": "6f12a6df-dd06-4f3e-bcb1-ce8be600526a"
+  "Azure Stack Registration Owner": "6f12a6df-dd06-4f3e-bcb1-ce8be600526a",
   "AzureML Compute Operator": "e503ece1-11d0-4e8e-8e2c-7a6c3bf38815",
   "AzureML Data Scientist": "f6c7c914-8db3-469d-8ca1-694a8f32e121",
   "AzureSupportCenter": "37182072-3c9c-4f6a-a4b3-b3f91cacffce",
