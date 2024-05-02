@@ -5,7 +5,7 @@ author: SHERMANOUKO
 manager: CelesteDG
 ms.author: shermanouko
 ms.custom: has-adal-ref
-ms.date: 01/15/2024
+ms.date: 05/05/2024
 ms.reviewer: dmwendia
 ms.service: identity-platform
 
@@ -51,11 +51,38 @@ If there are no apps using ADAL, the workbook will display a view as shown below
     
 :::image type="content" source="media/howto-get-list-of-all-auth-library-apps/no-auth-library-apps.png" alt-text="Screenshot of sign-ins workbook when no app is using Active Directory Authentication Library.":::
 
-## Step 4: Update your code
+## Step 4: Dive deep to analyze application usage and authentication data
+To thoroughly assess the impact of ADAL applications within your tenant, it's crucial to analyze more detailed data beyond mere identification. 
 
-After identifying your apps that use ADAL, migrate them to MSAL depending on your application type as illustrated below.
+- **Application Id**: Unique identifier for each application.
+- **App Display Name**: The name of the application, which helps in easily identifying the app across the organization.
+- **SigninCount**: Number of sign-ins per application. 
+- **ADAL Version**: Specific version of ADAL used by the application.
+- **IP Address of the Client**: Shows the origin of the sign-in attempts. 
+- **Location**: Provides the city, state, country/region and  from where the sign-in request was made.
+- **SignIns by Device** : Shares the details of the OS of the device including the specific version. 
+
+To access this enhanced data view, apply custom filters and queries within the workbook. This information not only aids in identifying critical applications but also helps in planning the migration strategy by prioritizing applications based on their usage and exposure level.
+
+
+## Step 5: Update your code
+
+Once you've identified the applications using ADAL, proceed with updating them to MSAL. The migration process varies based on the type of application you are working with. Follow the  guidelines provided below for each application type.
 
 [!INCLUDE [application type](includes/adal-msal-migration.md)]
+
+### Step 5: Monitor to validate sucessful migration
+With the detailed data from Step 4, you can effectively prioritize and manage the migration process of your applications to MSAL. Here’s how you can use this data to investigate sign-in scenarios and ensure a smooth transition:
+
+- **Prioritization**: Applications with a high `SigninCount` and older `ADAL Version` should be prioritized as they represent higher usage and potentially higher risk. Migrate these applications first to minimize the most significant risks to your organization.
+- **Security Analysis**: Use the `IP Address` to detect sign-in patterns. For example, if sign-ins request is made from a user or an organization owned service to identify the source of the call. 
+- **Compatibility Checks**: Before migrating, assess the `ADAL Version` used by the application. Some versions might have known issues with specific MSAL features. Understanding these nuances will help in planning a migration that minimizes functionality disruptions.
+- **Testing Scenarios**: After updating to MSAL, monitor to compare pre-and post-migration behavior. This comparison helps verify that the migration was successful and that the application behaves as expected in the new environment.
+
+By leveraging the detailed data from the Sign-ins workbook, your organization can strategically plan and execute the migration from ADAL to MSAL, ensuring minimal disruption and maintaining robust security protocols.
+
+
+
 
 ## Next steps
 
