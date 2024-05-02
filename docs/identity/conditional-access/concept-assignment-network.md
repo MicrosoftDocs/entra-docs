@@ -174,7 +174,7 @@ A policy that uses the location condition to block access is considered restrict
 
 ## Related content
 
-- [Configure an example Conditional Access policy using location](howto-conditional-access-policy-location.md).
+- [Configure an example Conditional Access policy using location](howto-conditional-access-policy-location.yml).
 
 <!--- 
 ## Define locations
