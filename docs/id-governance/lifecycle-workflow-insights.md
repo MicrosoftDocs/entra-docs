@@ -15,7 +15,7 @@ ms.reviewer: krbain
 
 # Workflow Insights (preview)
 
-With the previous views, you're able to find history of specific workflows. If you want to view workflow history information across all workflows in your tenant, you use **Workflow Insights (preview)**. 
+Workflows created using Lifecycle Workflows allow for the automation of lifecycle task for users no matter where they fall in the Joiner-Mover-Leaver (JML) model of their identity lifecycle in your organization. Making sure workflows are processed correctly is an important part of an organization's lifecycle management process. With Lifecycle workflow's Workflow Insights feature, you're able to see aggregate information about all workflows across your tenant.
 
 :::image type="content" source="media/lifecycle-workflow-insights/workflow-insights-view.png" alt-text="Screenshot of the Workflow Insights page.":::
 
@@ -81,7 +81,7 @@ When you view the top tasks insights summary, the following information is shown
 
 The Workflow Category Insights summary lists the top workflows run by category using a percentage for a timespan that can be 7, 14, or 30 days.
 
-:::image type="content" source="media/lifecycle-workflow-insights/workflow-insights-category.png" alt-text="Screenshot of a workflow insights by category summary.":::
+:::image type="content" source="media/lifecycle-workflow-insights/workflow-insights-category.png" alt-text="Screenshot of workflow insights by category summary.":::
 
 
 ## Next steps
