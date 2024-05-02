@@ -82,11 +82,76 @@ To create a remote network in the Microsoft Entra admin center, you’ll need to
 1.	On the Virtual Hub page, select the **VPN Gateway** link.
 :::image type="content" source="media/how-to-create-remote-network-vwan/vwan-create-new-hub-access-hub-hub-1-vpn-gateway.png" alt-text="Screenshot of the VPN (Site to site) page, with the the VPN Gateway link visible." lightbox="media/how-to-create-remote-network-vwan/vwan-create-new-hub-access-hub-hub-1-vpn-gateway-expanded.png":::
  
-1.	On the VPN Gateway page, select **JSON View**.
+1. On the VPN Gateway page, select **JSON View**.
+1. Copy the JSON text into a file for reference in upcoming steps. Make note of the **autonomous system number (ASN)**, device **IP address**, and the device **border gateway protocol (BGP) address** to use in the Entra admin center in next step.
+
+> [!TIP]
+> You cannot change the ASN value. 
 
 ## Create a remote network in the Microsoft Entra admin center
+In this step, use the network information from the VPN gateway to create a remote network in the Microsoft Entra admin center. The first step is to provide the name and location of your remote network. This tab is required.
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
+1. Navigate to **Global Secure Access (preview)** > **Connect** > **Remote networks**.
+1. Select the **Create remote network** button and provide the details.
+    - **Name**
+    - **Region**
+1. Proceed to the **Connectivity** tab, where you add the device links for the remote network.
+1. Click **+ Add a link**.
+1. Complete the fields on the the **General** tab in the **Add a link** form, using the VPN gateway's *Instance0* configuration from the previous step:
+    - **Link name**: Name of your Customer Premises Equipment (CPE).
+    - **Device type**: Choose a device option from the dropdown list.
+    - **IP address**: Public IP address of your device.
+    - **Peer BGP address**: Enter the BGP IP address of your CPE.
+        - This address is entered as the *local* BGP IP address on the CPE.
+    - **Local BGP address**: Enter a BGP IP address that *isn't* part of your on-premises network where your CPE resides.
+        - For example, if your on-premises network is 10.1.0.0/16, then you can use 10.2.0.4 as your Local BGP address.
+        - This address is entered as the *peer* BGP​​ IP address on your CPE.
+    - **Link ASN**: Provide the autonomous system number (ASN) of the CPE.
+        - A BGP-enabled connection between two network gateways requires that they have different Autonomous System Number (ASN).
+        - For more information, see the **Valid ASNs** section of the [Remote network configurations](reference-remote-network-configurations.md#valid-asn) article.
+    - **Redundancy**: Select either *No redundancy* or *Zone redundancy* for your IPSec tunnel.
+    - **Zone redundant local BGP address**: This optional field shows up only when you select **Zone redundancy**.
+        - Enter a BGP IP address that isn't* part of your on-premises network where your CPE resides and is different from the **Local BGP address**.
+    - **Bandwidth capacity (Mbps)**: Specify tunnel bandwidth. Available options are 250, 500, 750, and 1,000 Mbps.
+
+> [!TIP]
+> The details required to complete this tab can be complex, so this process is covered in detail in the [How to manage remote network device links](how-to-manage-remote-network-device-links.md).
+
+1. Select the **Next** button to view the **Details** tab. Keep the default settings.
+1. Select the **Next** button to view the **Security** tab. 
+1. Enter the **Preshared key (PSK)**. The same secret key must be used on your CPE.
+1. Select the **Save** button.
+
+Repeat the above steps to create another device link with VPN gateway's *Instance1* configuration. 
+
+1. Proceed to the **Traffic profiles** tab to select the traffic profile to link to the remote network. 
+1. Select **Microsoft 365 traffic profile**.
+1. Select **Review + create**.
+1. Select **Create remote network**.
+
+Navigate to the Remote network page to view the details of the new remote network. There should be one **Region** and two **Links**. 
+1. Under **Connetivity details**, select the **View configuration** link.
+1. Copy the Remote network configuration text into a file for reference in upcoming steps. Make note of the **Endpoint**, **ASN**, and **BGP address** for each of the links.
+
+## Create a VPN site using the Microsoft gateway
+
+### Create a VPN site
+1. Sign in the the virtual hub created above.
+1. Navigate to **Connectivity** > **VPN (Site to site)**.
+1. Select **+ Create new VPN site**.
+1. On the **Create VPN site** page, complete the fields on the **Basics** tab.
+1. Proceed to the **Links** tab and enter the Microsoft gateway configuration from JSON blob at View Configuration of Entra admin center.
+1. Select **Review + create**.
+1. Select **Create**.
+
+### Create a site-to-site connection
 
 
+## Validate the VPN connection
+In this step...
+
+## Test security features with Azure virtual Desktop (AVD)
 
 ## Next steps
 
