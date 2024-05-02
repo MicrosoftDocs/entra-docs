@@ -7,9 +7,6 @@
     }
   ],
   "MetadataDelimiter": "\"",
-  "Include": [
-    "docs/identity/multi-tenant-organizations"
-  ],
   "Exclude": [],
   "RemoveTermSets": [
     "*au-administrative-unit*",
