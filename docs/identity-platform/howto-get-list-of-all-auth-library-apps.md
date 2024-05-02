@@ -5,7 +5,7 @@ author: SHERMANOUKO
 manager: CelesteDG
 ms.author: shermanouko
 ms.custom: has-adal-ref
-ms.date: 05/05/2024
+ms.date: 05/01/2024
 ms.reviewer: dmwendia
 ms.service: identity-platform
 
@@ -66,7 +66,7 @@ To thoroughly assess the impact of ADAL applications within your tenant, it's cr
 - **App Display Name**: The name of the application, which helps in easily identifying the app across the organization.
 - **SigninCount**: Number of sign-ins per application. 
 - **ADAL Version**: Specific version of ADAL used by the application.
-- **IP Address of the Client**: Shows the origin of the sign-in attempts. 
+- **IP Address**: Displays the client's IP address from which the sign-in attempt originated.
 - **Location**: Provides the city, state, country/region and  from where the sign-in request was made.
 - **SignIns by Device** : Shares the details of the OS of the device including the specific version. 
 
