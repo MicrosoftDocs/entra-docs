@@ -438,7 +438,7 @@ To support device Conditional Access policies in Google Chrome with Secure Encla
 This is required for Mac devices that enable Platform SSO and for devices that have opted-in to Secure Enclave backed device identity (https://learn.microsoft.com/en-us/entra/identity-platform/apple-sso-plugin#registeredenrolled-device-conditional-access-policy-support-in-chrome).
 
 > [!NOTE]
-> Admins can deploy it to their devices automatically with MDM [ [1](https://support.google.com/chrome/a/answer/7550274?hl=en&sjid=4022223857702261083-NA&visit_id=638501952721573309-4083424910&ref_topic=7650028&rd=1), [2](https://chromeenterprise.google/policies/?policy=ExtensionInstallForcelist) ].
+> For MDM based deployments of Google Chrome and extension management, please refer to [Set up Chrome browser on Mac](https://support.google.com/chrome/a/answer/7550274?hl=en&sjid=4022223857702261083-NA) and [ExtensionInstallForcelist](https://chromeenterprise.google/policies/?policy=ExtensionInstallForcelist).
 
 
 ## See also
