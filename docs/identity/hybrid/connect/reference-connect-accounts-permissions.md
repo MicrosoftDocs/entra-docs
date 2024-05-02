@@ -267,7 +267,7 @@ An account in Microsoft Entra ID is created for the sync service to use. You can
 
 The name of the server the account is used on can be identified in the second part of the username. In the preceding figure, the server name is DC1. If you have staging servers, each server has its own account.
 
-A server account is created with a long, complex password that doesn't expire. The account is granted a special Directory Synchronization Accounts role that has permissions to perform only directory synchronization tasks. This special built-in role can't be granted outside of the Microsoft Entra Connect wizard. The [Microsoft Entra admin center](https://entra.microsoft.com) shows this account with the User role.
+A service account is created with a long, complex password that doesn't expire. The account is granted the special "Directory Synchronization Accounts" role that has permissions to perform only directory synchronization tasks. This special built-in role shouldn't be granted outside of the Microsoft Entra Connect wizard. The [Microsoft Entra admin center](https://entra.microsoft.com) shows this account with the User role.
 
 Microsoft Entra ID has a limit of 20 sync service accounts.
 
