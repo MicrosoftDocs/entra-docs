@@ -127,5 +127,5 @@ Check out the invitation API reference in [https://developer.microsoft.com/graph
 ## Next steps
 
 - [What is Microsoft Entra B2B collaboration?](what-is-b2b.md)
-- [Add and invite guest users](add-users-administrator.md)
+- [Add and invite guest users](add-users-administrator.yml)
 - [The elements of the B2B collaboration invitation email](invitation-email-elements.md)

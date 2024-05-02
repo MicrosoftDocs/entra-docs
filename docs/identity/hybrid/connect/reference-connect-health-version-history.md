@@ -25,6 +25,20 @@ The Microsoft Entra team regularly updates Microsoft Entra Connect Health with n
 Microsoft Entra Connect Health for Sync is integrated with Microsoft Entra Connect installation. Read more about [Microsoft Entra Connect release history](./reference-connect-version-history.md)
 For feature feedback, vote at [Connect Health User Voice channel](https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789)
 
+## January - March 2024
+**Agent Updates**
+
+Microsoft Entra Connect Health ADDS Agents (versions 4.5.x - 4.5.2462)
+- New version of the Microsoft Entra Connect Health ADDS agent that uses an updated architecture.
+  - Updated installer package
+  - Migration to MSAL authentication library
+  - New pre-requisite checks
+  - Improved logging
+
+Microsoft Entra Connect Health ADFS Agents (versions 4.5.x - 4.5.2462)
+  - Bug fixes
+  - Additional logging
+
 ## May / June 2023
 **Agent Updates**
 

@@ -16,7 +16,7 @@ ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 
 # Add Facebook as an identity provider
 
-By setting up federation with Facebook, you can allow customers to sign in to your applications with their own Facebook accounts. After you've added Facebook as one of your application's sign-in options, on the sign-in page, customers can sign-in to Microsoft Entra ID for customers with a Facebook account. (Learn more about [authentication methods and identity providers for customers](concept-authentication-methods-customers.md).)
+By setting up federation with Facebook, you can allow customers to sign in to your applications with their own Facebook accounts. After you've added Facebook as one of your application's sign-in options, on the sign-in page, customers can sign-in to Microsoft Entra External ID with a Facebook account. (Learn more about [authentication methods and identity providers for customers](concept-authentication-methods-customers.md).)
 
 > [!TIP]
 > [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=Social)
@@ -66,7 +66,7 @@ If you don't already have a Facebook account, sign up at [https://www.facebook.c
 19. Select **Go back** at the top of the page.
 20. At this point, only Facebook application owners can sign in. Because you registered the app, you can sign in with your Facebook account. To make your Facebook application available to your users, from the menu, select **Go live**. Follow all of the steps listed to complete all requirements. You'll likely need to complete data handling questions and the business verification to verify your identity as a business entity or organization. For more information, see [Meta App Development](https://developers.facebook.com/docs/development/release).
 
-## Configure Facebook federation in Microsoft Entra ID for customers
+## Configure Facebook federation in Microsoft Entra External ID
 
 After you create the Facebook application, in this step you set the Facebook client ID and client secret in Microsoft Entra ID. You can use the Microsoft Entra admin center or PowerShell to do so. To configure Facebook federation in the Microsoft Entra admin center, follow these steps:
 

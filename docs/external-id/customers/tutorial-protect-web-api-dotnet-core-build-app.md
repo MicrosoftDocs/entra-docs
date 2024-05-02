@@ -1,6 +1,6 @@
 ---
 title: "Tutorial: Secure an ASP.NET web API registered in an external tenant"
-description: Learn how to secure a ASP.NET web API registered in the Microsoft Entra External ID for customers tenant
+description: Learn how to secure a ASP.NET web API registered in the external tenant
 
 author: SHERMANOUKO
 manager: mwongerapk
@@ -12,12 +12,12 @@ ms.subservice: customers
 ms.topic: tutorial
 ms.date: 07/27/2023
 ms.custom: developer, devx-track-dotnet
-#Customer intent: As a dev, I want to secure my ASP.NET Core web API registered in the Microsoft Entra ID for customers tenant.
+#Customer intent: As a dev, I want to secure my ASP.NET Core web API registered in the external tenant.
 ---
 
 # Tutorial: Secure an ASP.NET Core web API registered in an external tenant
 
-This tutorial series demonstrates how to secure a registered web API in the Microsoft Entra External ID for customers tenant. In this tutorial, you'll build an ASP.NET Core web API that publishes both delegated permissions (scopes) and application permissions (app roles).
+This tutorial series demonstrates how to secure a registered web API in the external tenant. In this tutorial, you'll build an ASP.NET Core web API that publishes both delegated permissions (scopes) and application permissions (app roles).
 
 In this tutorial;
 

@@ -1,20 +1,13 @@
 items:  
-- name: Microsoft Entra ID for customers documentation  
-  href: index.yml  
-- name: Overview  
-  expanded: true  
+- name: Overview
   items:   
-    - name: What is Microsoft Entra ID for customers?  
-      href: overview-customers-ciam.md 
-    - name: Demo overview
-      href: overview-solutions-customers.md
+    - name: External ID in external tenants
+      href: overview-customers-ciam.md
     - name: What's new in docs?
       href: whats-new-docs.md
 - name: Quickstarts
-  expanded: true
+  expanded: false
   items: 
-    - name: Start a free trial without an Azure subscription
-      href: quickstart-trial-setup.md 
     - name: Create a tenant with an Azure subscription
       href: quickstart-tenant-setup.md
     - name: Get started guide walkthrough
@@ -22,7 +15,7 @@ items:
     - name: Use the Visual Studio Code extension
       href: visual-studio-code-extension.md
 - name: Samples
-  expanded: true
+  expanded: false
   items: 
     - name: Overview of CIAM samples
       href: samples-ciam-all.md
@@ -50,7 +43,7 @@ items:
                   href: sample-web-app-node-sign-in.md
                 - name: Sign in users and call an API
                   href: sample-web-app-node-sign-in-call-api.md
-            - name: ASP.NET
+            - name: ASP.NET Core
               items:
                 - name: Sign in users
                   href: sample-web-app-dotnet-sign-in.md
@@ -77,7 +70,7 @@ items:
               href: sample-desktop-wpf-dotnet-sign-in.md
         - name: Mobile app
           items:
-              - name: Browser delegated
+              - name: Browser-delegated authentication
                 items:
                     - name: Android (.NET MAUI) - sign in users
                       href: how-to-mobile-app-maui-sample-sign-in.md
@@ -112,7 +105,7 @@ items:
             - name: Node.js - sign in users
               href: sample-cli-app-node-sign-in-users.md
 - name: Tutorials
-  expanded: true
+  expanded: false
   items:  
     - name: Single-page app (SPA)
       items: 
@@ -156,11 +149,11 @@ items:
                   href: tutorial-web-app-node-sign-in-prepare-app.md
                 - name: Add sign-in and sign-out
                   href: tutorial-web-app-node-sign-in-sign-out.md
-        - name: ASP.NET
+        - name: ASP.NET Core
           items:
               - name: Prepare tenant
                 href: tutorial-web-app-dotnet-sign-in-prepare-tenant.md
-              - name: Create ASP.NET app
+              - name: Create ASP.NET Core app
                 href: tutorial-web-app-dotnet-sign-in-prepare-app.md
               - name: Sign in and sign out
                 href: tutorial-web-app-dotnet-sign-in-sign-out.md
@@ -172,7 +165,7 @@ items:
                 href: tutorial-web-app-python-flask-sign-in-sign-out.md
     - name: Web API
       items: 
-        - name: Protect ASP.NET API
+        - name: Protect ASP.NET Core API
           items:
             - name: Build a protected API 
               href: tutorial-protect-web-api-dotnet-core-build-app.md
@@ -214,7 +207,7 @@ items:
               displayName: Windows Presentation Form
     - name: Mobile
       items:
-        - name: Browser delegated
+        - name: Browser-delegated authentication
           items:
             - name: .NET MAUI
               items:
@@ -228,30 +221,32 @@ items:
                   href: tutorial-mobile-maui-role-based-access-control.md
         - name: Native authentication
           items:
-            - name: Android app
+            - name: Android
               items:
                 - name: Prepare Android app
                   href: tutorial-native-authentication-prepare-android-app.md
-                - name: Sign up
-                  href: tutorial-native-authentication-android-sign-up.md
-                - name: Sign in and sign out
-                  href: tutorial-native-authentication-android-sign-in-sign-out.md
-                - name: Additional scenarios
+                - name: Email and OTP code
                   items:
-                    - name: Register user with username and attributes
+                    - name: Sign up
+                      href: tutorial-native-authentication-android-sign-up.md
+                    - name: Sign in and sign out
+                      href: tutorial-native-authentication-android-sign-in-sign-out.md
+                    - name: Sign up with user attributes
                       href: tutorial-native-authentication-android-sign-up-user-with-username-user-attributes.md
-                    - name: Register user with username, password and attributes
-                      href: tutorial-native-authentication-android-sign-up-user-with-username-password-user-attributes.md
-                    - name: Register user with username and password
+                - name: Email and password
+                  items:
+                    - name: Sign up
                       href: tutorial-native-authentication-android-sign-up-user-with-username-password.md
-                    - name: Sign in user with username and password
+                    - name: Sign up and submit user attributes
+                      href: tutorial-native-authentication-android-sign-up-user-with-username-password-user-attributes.md
+                    - name: Sign in and sign out
                       href: tutorial-native-authentication-android-sign-in-user-with-username-password.md
                     - name: Self-service password reset
                       href: tutorial-native-authentication-android-self-service-password-reset.md
-                    - name: Sign in after sign-up
-                      href: tutorial-native-authentication-android-sign-in-after-sign-up.md
-                    - name: Support web fallback
-                      href: tutorial-native-authentication-android-support-web-fallback.md
+                - name: Auto-sign in after sign-up
+                  href: tutorial-native-authentication-android-sign-in-after-sign-up.md
+                - name: Support web fallback
+                  href: tutorial-native-authentication-android-support-web-fallback.md
             - name: iOS app
               items:
                 - name: Prepare iOS app
@@ -288,26 +283,38 @@ items:
               href: tutorial-cli-app-node-sign-in-sign-out.md
 - name: Concepts
   items: 
-    - name: Planning for customer identity and access
+    - name: Frequently asked questions (FAQ)
+      href: faq-customers.md
+    - name: Planning guide
       href: concept-planning-your-solution.md
     - name: Supported features in external tenants
       href: concept-supported-features-customers.md
+    - name: Woodgrove demo overview
+      href: overview-solutions-customers.md
     - name: User profile attributes
       href: concept-user-attributes.md
     - name: Authentication methods and identity providers
       href: concept-authentication-methods-customers.md
     - name: Native authentication
-      href: concept-native-authentication.md
+      items:
+        - name: Native authentication
+          href: concept-native-authentication.md
+        - name: Native authentication challenge types
+          href: concept-native-authentication-challenge-types.md
+        - name: Native authentication web fallback
+          href: concept-native-authentication-web-fallback.md
+        - name: Native authentication user attribute builder
+          href: concept-native-authentication-user-attribute-builder.md
     - name: Customizing the sign-in look and feel
       href: concept-branding-customers.md
     - name: Get started guide features explained
       href: concept-guide-explained.md
-    - name: Add your own business logic
+    - name: Adding your own business logic
       href: concept-custom-extensions.md
     - name: Security and governance
       href: concept-security-customers.md
 - name: How-to guides
-  expanded: true
+  expanded: false
   items:
     - name: Authenticate and authorize
       items:
@@ -407,16 +414,18 @@ items:
           href: troubleshooting-known-issues.md
     - name: Management APIs
       items:
-        - name: Microsoft Graph
-          href: microsoft-graph-operations.md
         - name: Tenant management operations
           href: azure-rest-api-operations-tenant-management.md 
 - name: Reference
   items:
     - name: Default user permissions
       href: reference-user-permissions.md
+    - name: Service limits and restrictions
+      href: reference-service-limits.md
     - name: Group and application roles support
       href: reference-group-app-roles-support.md
+    - name: Data residency
+      href: ~/fundamentals/data-residency.md
     - name: Company branding CSS template reference guide
       href: ~/fundamentals/reference-company-branding-css-template.md
     - name: Help and support options
@@ -431,7 +440,7 @@ items:
            - name: Native authentication with email OTP
              displayName: Native authentication with email and one-time password or passcode          
              href: /entra/identity-platform/reference-native-authentication-email-otp?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json
-           - name: Native authentication with email & password
+           - name: Native authentication with email and password
              href: /entra/identity-platform/reference-native-authentication-email-password?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json
         - name: SDK reference
           items: 
@@ -459,5 +468,5 @@ items:
             href: /javascript/api/@azure/msal-node/
 - name: Resources
   items:
-    - name: Frequently asked questions (FAQ)
-      href: faq-customers.md
+    - name: Start a free trial without an Azure subscription
+      href: quickstart-trial-setup.md 

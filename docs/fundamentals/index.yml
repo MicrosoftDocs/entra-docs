@@ -52,7 +52,7 @@ landingContent:
           - text: Sign up for Microsoft Entra ID as an organization
             url: sign-up-organization.md
           - text: Add your custom domain name 
-            url: add-custom-domain.md
+            url: add-custom-domain.yml
 
   # Card
   - title: Manage groups in Microsoft Entra ID
@@ -64,7 +64,7 @@ landingContent:
       - linkListType: how-to-guide
         links:
           - text: Manage groups and group membership
-            url: how-to-manage-groups.md
+            url: how-to-manage-groups.yml
 
 
    # Card
@@ -73,8 +73,8 @@ landingContent:
       - linkListType: how-to-guide
         links:
           - text: Create or delete users
-            url: how-to-create-delete-users.md
+            url: how-to-create-delete-users.yml
           - text: Assign roles to users
-            url: ./how-subscriptions-associated-directory.md
+            url: ./how-subscriptions-associated-directory.yml
           - text: Assign licenses to users
-            url: license-users-groups.md
+            url: license-users-groups.yml

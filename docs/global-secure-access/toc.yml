@@ -15,6 +15,10 @@ items:
   items: 
   - name: Global Secure Access clients
     href: concept-clients.md
+  - name: Private network connector
+    href: concept-connectors.md
+  - name: Private network connector groups
+    href: concept-connector-groups.md
 - name: How-to guides
   expanded: true
   items:
@@ -80,6 +84,8 @@ items:
         href: concept-private-access.md
       - name: Configure connectors
         href: how-to-configure-connectors.md
+      - name: Register connector - silent Install
+        href: how-to-register-connector-powershell.md
       - name: Configure Quick Access
         href: how-to-configure-quick-access.md 
       - name: Configure Per-app Access
@@ -117,6 +123,11 @@ items:
         href: ~/architecture/sse-deployment-guide-m365.md?toc=/entra/global-secure-access/toc.json&bc=/entra/global-secure-access/breadcrumb/toc.json
       - name: Deploying Microsoft Entra Private Access
         href: ~/architecture/sse-deployment-guide-private-access.md?toc=/entra/global-secure-access/toc.json&bc=/entra/global-secure-access/breadcrumb/toc.json
+  - name: Troubleshoot
+    expanded: false
+    items:
+      - name: Troubleshoot connectors
+        href: troubleshoot-connectors.md
 - name: Reference
   expanded: false
   items:
@@ -132,3 +143,5 @@ items:
     href: /graph/api/resources/networkaccess-global-secure-access-api-overview
   - name: FAQs
     href: resource-faq.yml
+  - name: Version History
+    href: reference-version-history.md

@@ -1,6 +1,6 @@
 ---
 title: Prepare your iOS app for native authentication
-description: Learn how to prepare your iOS app for native authentication using Microsoft Entra External ID for customers.
+description: Learn how to prepare your iOS app for native authentication using Microsoft Entra External ID.
 
 author: henrymbuguakiarie
 manager: mwongerapk
@@ -12,7 +12,7 @@ ms.subservice: customers
 ms.topic: tutorial
 ms.date: 04/02/2024
 ms.custom: developer, devx-track-dotnet
-#Customer intent: As a dev, devops, I want to learn about how to configure prepare your iOS app for native authentication using Microsoft Entra External ID for customers.
+#Customer intent: As a dev, devops, I want to learn about how to configure prepare your iOS app for native authentication using Microsoft Entra External ID.
 ---
 
 # Tutorial: Prepare your iOS app for native authentication
@@ -86,7 +86,7 @@ MSALGlobalConfig.loggerConfig.setLogCallback { logLevel, message, containsPII in
 }
 ```
 
-This outputs all debug logs from MSAL, which can be helpful in diagnosing issues and learning how the native authentication flows work. To learn more about configuring log levels and best practices see [Logging in MSAL for iOS/macOS](../../identity-platform/msal-logging-ios.md?tabs=swift).
+This outputs all debug logs from MSAL, which can be helpful in diagnosing issues and learning how the native authentication flows work. To learn more about configuring log levels and best practices see [Logging in MSAL for iOS/macOS](/entra/msal/objc/logging-ios?tabs=swift).
 
 ## Next steps
 

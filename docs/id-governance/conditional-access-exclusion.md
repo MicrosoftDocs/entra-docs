@@ -153,8 +153,6 @@ Now that you have everything in place, group, Conditional Access policy, and acc
 
 1. Select **Audit logs** to see the actions that were taken during this review.
 
-    ![Access reviews audit logs listing actions](./media/conditional-access-exclusion/access-reviews-audit-logs.png)
-
 As an IT administrator, you know that managing exclusion groups to your policies is sometimes inevitable. However, maintaining these groups, reviewing them regularly by the business owner or the users themselves, and auditing these changes can be made easier with access reviews.
 
 ## Next steps

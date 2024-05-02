@@ -15,7 +15,7 @@ ms.custom: it-pro
 
 # Authentication methods and identity providers for customers
 
-Microsoft Entra ID for customers offers several options for authenticating users of your applications. You can let customers create an account in your customer directory using their email and either a password or an email one-time passcode. You can also enable sign-in with a social account.
+Microsoft Entra External ID offers several options for authenticating users of your applications. You can let customers create an account in your customer directory using their email and either a password or an email one-time passcode. You can also enable sign-in with a social account.
 
 ## Email and password sign-in
 
@@ -54,7 +54,7 @@ When you enable social identity providers, customers can select from the social 
 
 ### Google sign-in
 
-By setting up federation with Google, you can allow customers to sign in to your applications with their own Gmail accounts. After you've added Google as one of your application's sign-in options, on the sign-in page, users can sign in to Microsoft Entra ID for customers with a Google account.
+By setting up federation with Google, you can allow customers to sign in to your applications with their own Gmail accounts. After you've added Google as one of your application's sign-in options, on the sign-in page, users can sign in to Microsoft Entra External ID with a Google account.
 
 The following screenshots show the sign-in with Google experience. In the sign-in page, users select **Sign-in with Google**. At that point, the user is redirected to the Google identity provider to complete the sign-in.
 
@@ -63,7 +63,7 @@ The following screenshots show the sign-in with Google experience. In the sign-i
 Learn how to [add Google as an identity provider](how-to-google-federation-customers.md).
 ### Facebook sign-in
 
-By setting up federation with Facebook, you can allow invited users to sign in to your applications with their own Facebook accounts. After you've added Facebook as one of your application's sign-in options, on the sign-in page, users can sign-in to Microsoft Entra ID for customers with a Facebook account.
+By setting up federation with Facebook, you can allow invited users to sign in to your applications with their own Facebook accounts. After you've added Facebook as one of your application's sign-in options, on the sign-in page, users can sign-in to Microsoft Entra External ID with a Facebook account.
 
 The following screenshots show the sign-in with Facebook experience. In the sign-in page, users select **Sign-in with Facebook**. Then the user is redirected to the Facebook identity provider to complete the sign-in.
 
@@ -75,7 +75,15 @@ Learn how to [add Facebook as an identity provider](how-to-facebook-federation-c
 
 At any time, you can update the sign-in options you've selected for an app. For example, you can add social identity providers or change the local account sign-in method.
 
-Be aware that when you change sign-in methods, the change affects only new users. Existing users will continue to sign in using their original method. For example, suppose you start out with the email and password sign-in method, and then change to email with one-time passcode. New users will sign in using a one-time passcode, but any users who have already signed up with an email and password will continue to be prompted for their email and password.  
+Be aware that when you change sign-in methods, the change affects only new users. Existing users will continue to sign in using their original method. For example, suppose you start out with the email and password sign-in method, and then change to email with one-time passcode. New users will sign in using a one-time passcode, but any users who have already signed up with an email and password will continue to be prompted for their email and password. 
+
+## Microsoft Graph APIs
+
+The following Microsoft Graph API operations are supported for managing identity providers and authentication methods in Microsoft Entra External ID:
+
+- To identify what identity providers and authentication methods are supported, you call the [List availableProviderTypes](/graph/api/identityproviderbase-availableprovidertypes) API.
+- To identify the identity providers and authentication methods that are already configured and enabled in the tenant, you call the [List identityProviders](/graph/api/identitycontainer-list-identityproviders) API.
+- To enable a supported identity provider or authentication method, you call the [Create identityProvider](/graph/api/identitycontainer-post-identityproviders) API.
 
 ## Next steps
 

@@ -6,7 +6,7 @@ author: billmath
 manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 11/06/2023
+ms.date: 04/26/2024
 ms.subservice: hybrid-cloud-sync
 ms.author: billmath
 
@@ -79,7 +79,7 @@ In the Microsoft Entra Connect Synchronization Rules editor, you need to create 
 
     - **Name:** Give the rule a meaningful name
     - **Description:** Add a meaningful description
-    - **Connected System:** Choose the AD connector that you're writing the custom sync rule for
+    - **Connected System:** Choose the Microsoft Entra connector that you're writing the custom sync rule for
     - **Connected System Object Type:** Group
     - **Metaverse Object Type:** Group
     - **Link Type:** Join
@@ -111,7 +111,7 @@ You'll also need an outbound sync rule with a link type of JoinNoFlow and the sc
 
     - **Name:** Give the rule a meaningful name
     - **Description:** Add a meaningful description
-    - **Connected System:** Choose the Microsoft Entra connector that you're writing the custom sync rule for
+    - **Connected System:** Choose the AD connector that you're writing the custom sync rule for
     - **Connected System Object Type:** Group
     - **Metaverse Object Type:** Group
     - **Link Type:** JoinNoFlow
@@ -166,9 +166,9 @@ You'll also need an outbound sync rule with a link type of JoinNoFlow and the sc
 7. Click **Exit**
 
 ## Step 7 - Configure Microsoft Entra Cloud Sync
-Now that you have successfully removed the groups from the scope of Microsoft Entra Connect Sync, you can seupt and configure Microsoft Entra Cloud Sync to take over synchronization. See [Provision groups to Active Directory using Microsoft Entra Cloud Sync](how-to-configure-entra-to-active-directory.md)
+Now that you have successfully removed the groups from the scope of Microsoft Entra Connect Sync, you can set up and configure Microsoft Entra Cloud Sync to take over synchronization. See [Provision groups to Active Directory using Microsoft Entra Cloud Sync](how-to-configure-entra-to-active-directory.md).
 
 ## Next Steps
-- [Group writeback with Microsoft Entra Cloud Sync (Preview)](../group-writeback-cloud-sync.md)
+- [Group writeback with Microsoft Entra Cloud Sync ](../group-writeback-cloud-sync.md)
 - [Provision groups to Active Directory using Microsoft Entra Cloud Sync](how-to-configure-entra-to-active-directory.md)
 - [Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance](govern-on-premises-groups.md)

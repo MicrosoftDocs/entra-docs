@@ -1,6 +1,6 @@
 ---
 title: Tutorial - Add sign-in and sign-out to an ASP.NET Core web application for an external tenant
-description: Learn how to configure an ASP.NET Core web application to sign in and sign out users with your Microsoft Entra ID for customers tenant.
+description: Learn how to configure an ASP.NET Core web application to sign in and sign out users with your external tenant.
  
 author: cilwerner
 ms.author: cwerner
@@ -9,7 +9,7 @@ ms.service: entra-external-id
 ms.subservice: customers
 ms.topic: tutorial
 ms.date: 05/23/2023
-#Customer intent: As a dev, devops, I want to learn about how to enable authentication in my own ASP.NET Core web app with Microsoft Entra ID for customers tenant.
+#Customer intent: As a dev, devops, I want to learn about how to enable authentication in my own ASP.NET Core web app with external tenant.
 ---
 
 # Tutorial: Add sign-in and sign-out to an ASP.NET Core web application for an external tenant

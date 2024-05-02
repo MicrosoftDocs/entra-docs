@@ -121,7 +121,7 @@ Your group is created and the site and group settings associated with the select
 
 After you enable this feature, the "classic" classifications for groups appear only on existing groups and sites. You should use them for new groups only if you create groups in apps that don't support sensitivity labels. Your admin can convert them to sensitivity labels later, if needed. Classic classifications are the old classifications you set up by defining values for the `ClassificationList` setting in Azure AD PowerShell. When this feature is enabled, those classifications aren't applied to groups.
 
-[!INCLUDE [Azure AD PowerShell migration](../../includes/aad-powershell-migration-include.md)]
+[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
 
 ## Troubleshooting issues
 
@@ -170,5 +170,5 @@ If you must make a change, use a [PowerShell script](https://github.com/microsof
 
 - [Use sensitivity labels to protect content in Microsoft Teams, Microsoft 365 groups, and SharePoint sites](/purview/sensitivity-labels-teams-groups-sites)
 - [Update groups after label policy change manually with Azure AD PowerShell script](https://github.com/microsoftgraph/powershell-aad-samples/blob/master/ReassignSensitivityLabelToO365Groups.ps1)
-- [Edit your group settings](~/fundamentals/how-to-manage-groups.md)
+- [Edit your group settings](~/fundamentals/how-to-manage-groups.yml)
 - [Manage groups using PowerShell commands](~/identity/users/groups-settings-v2-cmdlets.md)

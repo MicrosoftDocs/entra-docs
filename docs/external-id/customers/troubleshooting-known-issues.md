@@ -14,23 +14,23 @@ ms.custom: it-pro
 
 ---
 
-# Known issues with Microsoft Entra ID for customers
+# Known issues with Microsoft Entra External ID in external tenants
 
-This article describes known issues that you may experience when you use Microsoft Entra ID for customers, and provides help to resolve these issues.
+This article describes known issues that you may experience when you use Microsoft Entra External ID in external tenants, and provides help to resolve these issues.
 
 ## Tenant creation and management
 
 ### Tenant creation fails when you choose an unsupported region
 
-During external tenant creation, the **Country/Region** dropdown menu lists countries and regions where  Microsoft Entra ID for customers isn't yet available. If you choose Japan or Australia, tenant creation fails.
+During external tenant creation, the **Country/Region** dropdown menu lists countries and regions where  Microsoft Entra External ID isn't yet available. If you choose Japan or Australia, tenant creation fails.
 
 **Cause**: Public preview is currently available in the Americas and Europe, with more regions to follow shortly.
 
 **Workaround**: Select a different region and try again
 
-### Customer trial tenants can't be extended or linked with an existing Azure subscription
+### External trial tenants can't be extended or linked with an existing Azure subscription
 
-Customer trial tenants can't be supported beyond 30 days.
+External trial tenants can't be supported beyond 30 days.
 
 **Workaround**: Take one of the following actions.
 
@@ -137,4 +137,4 @@ When you create your own web API in an external tenant (without using the app cr
 
 ## Next steps
 
-See also [Supported features in Microsoft Entra ID for customers](concept-supported-features-customers.md)
+See also [Supported features in Microsoft Entra External ID](concept-supported-features-customers.md)

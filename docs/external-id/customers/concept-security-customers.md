@@ -14,7 +14,7 @@ ms.custom: it-pro
 
 ---
 
-# Security and governance in Microsoft Entra ID for customers
+# Security and governance in Microsoft Entra External ID
 
 The integration of customer capabilities into Microsoft Entra ID means that your customer scenarios benefit from the advanced security and governance features available in Microsoft Entra ID. Your customers are able to self-service register for your applications using their preferred authentication methods, including social accounts through identity providers like Google and Facebook. And you can use features like multifactor authentication, Conditional Access, and Identity Protection to mitigate threats and detect risks.
 
@@ -34,7 +34,7 @@ Conditional Access policies are enforced after the user has completed first-fact
 
 ## Multifactor authentication
 
-Microsoft Entra multifactor authentication helps safeguard access to data and applications while maintaining simplicity for your users. Microsoft Entra ID for customers integrates directly with Microsoft Entra multifactor authentication so you can add security to your sign-up and sign-in experiences by requiring a second form of authentication. You can fine-tune multifactor authentication depending on the extent of security you want to apply to your apps. Consider the following scenarios:
+Microsoft Entra multifactor authentication helps safeguard access to data and applications while maintaining simplicity for your users. Microsoft Entra External ID integrates directly with Microsoft Entra multifactor authentication so you can add security to your sign-up and sign-in experiences by requiring a second form of authentication. You can fine-tune multifactor authentication depending on the extent of security you want to apply to your apps. Consider the following scenarios:
 
 - You offer a single app to customers and you want to enable multifactor authentication for an extra layer of security. You can enable MFA in a Conditional Access policy that's targeted to all users and your app.
 
@@ -51,7 +51,7 @@ Microsoft Entra [Identity Protection](~/id-protection/overview-identity-protecti
 
 - Export risk detection data to other tools.
 
-Identity Protection comes with risk reports that can be used to investigate identity risks in external tenants. For details, see [Investigate risk with Identity Protection in Microsoft Entra ID for customers](how-to-identity-protection-customers.md).
+Identity Protection comes with risk reports that can be used to investigate identity risks in external tenants. For details, see [Investigate risk with Identity Protection in Microsoft Entra External ID](how-to-identity-protection-customers.md).
 
 ## Analyze user authentication trends for your apps
 

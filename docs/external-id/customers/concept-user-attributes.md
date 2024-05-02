@@ -1,8 +1,8 @@
 ---
 title: User profile attributes
 description: User profile attributes that you can collect from the user during sign-up, and how to extend user profile attributes by using custom user attributes. 
-author: msmimart
-manager: celestedg
+author: kengaderdus
+manager: mwongerapk
 ms.service: entra-external-id
  
 ms.subservice: customers
@@ -11,7 +11,7 @@ ms.date: 03/08/2024
 ms.author: mimart
 ms.custom: it-pro
 
-#Customer intent: As a developer, devops, IT admin, I want to learn about the built-in user profile attributes that I can collect from the user during sign-up, and how Microsoft Entra External ID for customers extends user profile attributes by using custom user attributes. 
+#Customer intent: As a developer, devops, IT admin, I want to learn about the built-in user profile attributes that I can collect from the user during sign-up, and how Microsoft Entra External ID extends user profile attributes by using custom user attributes. 
 ---
 
 # User profile attributes
@@ -32,7 +32,7 @@ This table summarizes the built-in user attributes you can collect during the si
 <!---kengaderdus added this section to be used by devs who reference user profile attributes programmatically such those who use native authentication API-->
 
 - *Label in Microsoft Entra admin center* is the name of the user attribute as it appears in the Microsoft Entra admin center. 
-- *Programmable name* is the name of the user attribute as used in the [user resource](/graph/api/resources/user/#properties) of then Microsoft Graph API. You use this name when you want to use this user attribute programmatically, such as in [native authentication](../../identity-platform/reference-native-authentication-overview.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json).
+- *Programmable name* is the name of the user attribute as used in the [user resource](/graph/api/resources/user/#properties) of the Microsoft Graph API. You use this name when you want to use this user attribute programmatically, such as in [native authentication](../../identity-platform/reference-native-authentication-overview.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json).
 - *Data type* is the user attribute's data type.
 
 |  Label in Microsoft Entra admin center| Programmable name |     Data type   |  Remarks    |
@@ -50,7 +50,7 @@ This table summarizes the built-in user attributes you can collect during the si
 
 ## Custom user attributes
 
-If your customer-facing app requires more information than the built-in user attributes provide, you can add your own attributes. We refer to these attributes as *custom user attributes*.
+If your app requires more information than the built-in user attributes provide, you can add your own attributes. We refer to these attributes as *custom user attributes*.
 
 To define a custom user attribute, you first create the attribute at the tenant level so it can be used in any user flow in the tenant. Then you assign the attribute to your sign-up user flow and configure how you want it to appear on the sign-up page.
 
@@ -97,8 +97,14 @@ For example, if the client ID of the *b2c-extensions-app* is `2588a-bcdwh-tfeehj
 
 Use the [Find the application ID for the extensions app](how-to-define-custom-attributes.md) article to learn how to find the application ID for the *b2c-extensions-app* registered in your external tenant.
 
-## Next steps
+## Microsoft Graph APIs
+
+User attributes are referred to as *user flow attributes* in Microsoft Graph. Use the [identityUserFlowAttribute resource type](/graph/api/resources/identityuserflowattribute) and its associated methods to manage both built-in and custom user flow attributes.
+
+## Related content
 
 - [Add attributes to the ID token returned to your application](how-to-add-attributes-to-token.md).
 
 - [Learn more about creating a sign-up and sign-in user flow for customers](how-to-user-flow-sign-up-sign-in-customers.md).
+
+- [Native authentication MSAL Android SDK attribute builder](concept-native-authentication-user-attribute-builder.md).
