@@ -15,7 +15,11 @@ ms.topic: how-to
 
 # Get a complete list of apps using ADAL in your tenant
 
-Azure Active Directory Authentication Library (ADAL) has been deprecated. While existing apps that use ADAL continue to work, Microsoft will no longer release security fixes on ADAL. Use the [Microsoft Authentication Library (MSAL)](/entra/msal/) to avoid putting your app's security at risk. If you have existing applications that use ADAL, be sure to [migrate them to MSAL](~/identity-platform/msal-migration.md). This article provides guidance on how to use Azure Monitor workbooks to obtain a list of all apps that use ADAL in your tenant.
+This article provides guidance on how to use Azure Monitor workbooks to obtain a list of all apps that use ADAL in your tenant.
+
+Azure Active Directory Authentication Library (ADAL) has been deprecated. While existing applications using ADAL are still operational, Microsoft will **no longer release new features and security fixes on ADAL**. We strongly recommend using the [Microsoft Authentication Library (MSAL)](/entra/msal/) to avoid putting your app's security at risk. If you have existing applications that use ADAL, be sure to [migrate them to MSAL](~/identity-platform/msal-migration.md). 
+
+
 
 ## Sign-ins workbook
 
@@ -69,13 +73,13 @@ To thoroughly assess the impact of ADAL applications within your tenant, it's cr
 To access this enhanced data view, apply custom filters and queries within the workbook. This information not only aids in identifying critical applications but also helps in planning the migration strategy by prioritizing applications based on their usage and exposure level.
 
 
-## Step 5: Update your code
+## Step 5: Update your ADAL application
 
 Once you've identified the applications using ADAL, proceed with updating them to MSAL. The migration process varies based on the type of application you are working with. Follow the  guidelines provided below for each application type.
 
 [!INCLUDE [application type](includes/adal-msal-migration.md)]
 
-### Step 5: Monitor to validate sucessful migration
+## Step 6: Monitor to validate sucessful migration
 With the detailed data from Step 4, you can effectively prioritize and manage the migration process of your applications to MSAL. Here’s how you can use this data to investigate sign-in scenarios and ensure a smooth transition:
 
 - **Prioritization**: Applications with a high `SigninCount` and older `ADAL Version` should be prioritized as they represent higher usage and potentially higher risk. Migrate these applications first to minimize the most significant risks to your organization.
@@ -84,8 +88,6 @@ With the detailed data from Step 4, you can effectively prioritize and manage th
 - **Testing Scenarios**: After updating to MSAL, monitor to compare pre-and post-migration behavior. This comparison helps verify that the migration was successful and that the application behaves as expected in the new environment.
 
 By leveraging the detailed data from the Sign-ins workbook, your organization can strategically plan and execute the migration from ADAL to MSAL, ensuring minimal disruption and maintaining robust security protocols.
-
-
 
 
 ## Next steps

@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 09/21/2023
+ms.date: 05/01/2024
 ms.author: sarahlipsey
 ms.reviewer: jamesmantu
 ---
@@ -20,17 +20,18 @@ This article covers the recommendation to migrate from the Azure Active Director
 
 ## Description
 
-ADAL is currently slated for end-of-support on June 30, 2023. We recommend that customers migrate to Microsoft Authentication Libraries (MSAL), which replaces ADAL. 
+Azure Active Directory Authentication Library (ADAL) has been deprecated. While existing applications using ADAL are still operational, Microsoft will **no longer release new features and security fixes on ADAL**. We strongly recommend using the [Microsoft Authentication Library (MSAL)](/entra/msal/) to avoid putting your app's security at risk. If you have existing applications that use ADAL, be sure to [migrate them to MSAL](~/identity-platform/msal-migration.md). 
 
-This recommendation shows up if your tenant has applications that still use ADAL. The service marks any application in your tenant that makes a token request from the ADAL as an ADAL application. Applications that use both ADAL and MSAL are marked as ADAL applications.
+This recommendation is triggered for tenants with applications using ADAL (Azure Active Directory Authentication Library). It labels any application that requests a token via ADAL as an "ADAL application," including those using both ADAL and MSAL (Microsoft Authentication Library).
 
-When an application is identified as an ADAL application, each day the recommendation looks back 30 days for any new ADAL requests from applications within the tenant. If an ADAL recommendation doesn't send any new ADAL requests for 30 days, the recommendation is marked as completed. When all applications are completed, the recommendation status changes to completed. If a new ADAL request is detected for an application that was completed, the status changes back to active.
+## How it works
+
+The system checks daily for new ADAL token requests over the past 30 days. If an application makes no new requests for 30 days, its recommendation status is marked as completed. The overall recommendation status updates to "completed" once all applications meet this criterion. If a new ADAL request is detected for a previously completed application, its status reverts to "active."
 
 ## Value 
 
-MSAL is designed to enable a secure solution without developers having to worry about the implementation details. MSAL simplifies how tokens are acquired, managed, cached, and refreshed. MSAL also uses best practices for resilience. For more information on migrating to MSAL, see [Migrate applications to MSAL](~/identity-platform/msal-migration.md).
+MSAL is designed to enable a secure solution without developers having to worry about the implementation details. MSAL simplifies how tokens are acquired, managed, cached, and refreshed. MSAL also uses best practices for resilience. For more information on MSAL supported scenarios, see [Migrate applications to MSAL](~/identity-platform/msal-migration.md#why-switch-to-msal).
 
-Existing apps that use ADAL will continue to work after the end-of-support date.
 
 ## Action plan
 
@@ -93,6 +94,8 @@ You can run the following set of commands in Windows PowerShell. These commands 
 1. Update the code for your apps using the instructions in [How to migrate to MSAL](~/identity-platform/msal-migration.md#how-to-migrate-to-msal).
 
 ---
+## Get details ADAL applications data insights
+The ADAL recommendation is designed to raise awareness and alert you about all applications using ADAL within your tenant. For a more detailed analysis and deeper investigation of ADAL app authentication data, you can enable the [Microsoft Entra Sign-ins workbook](~/identity-platform/howto-get-list-of-all-auth-library-apps.md) in your tenant. This tool supports the transition by providing comprehensive authentication insights.
 
 
 ## Frequently asked questions
@@ -103,14 +106,6 @@ Review the following common questions as you work with the ADAL to MSAL recommen
 
 To reduce false positives, the service uses a 30 day window for ADAL requests. This way, the service can go several days without an ADAL request and not be falsely marked as completed. 
 
-### How were ADAL applications identified before the recommendation was released?
-
-The [Microsoft Entra sign-ins workbook](~/identity-platform/howto-get-list-of-all-auth-library-apps.md) was an alternative method to identify these apps. The workbook is still available to you, but using the workbook requires streaming sign-in logs to Azure Monitor first. The ADAL to MSAL recommendation works out of the box. Plus, the sign-ins workbook doesn't capture Service Principal sign-ins, while the recommendation does.
-
-### Why is the number of ADAL applications different in the workbook and the recommendation?
-
-Because the recommendation captures Service Principal sign-ins and the workbook doesn't, the recommendation may show more ADAL applications.
-
 ### How do I identify the owner of an application in my tenant?
 
 You can locate owner from the recommendation details. Select the resource, which takes you to the application details. Select **Owners** from the navigation menu.
@@ -118,6 +113,21 @@ You can locate owner from the recommendation details. Select the resource, which
 ### Can the status change from *completed* to *active*?
 
 Yes. If an application was marked as completed - so no ADAL requests were made during the 30 day window - that application would be marked as complete. If the service detects a new ADAL request, the status changes back to *active*.
+
+### How can I integrate  Microsoft Entra Sign-ins workbook?
+You can find the detailed steps here [Microsoft Entra Sign-ins workbook](~/identity-platform/howto-get-list-of-all-auth-library-apps.md) 
+
+
+### Why is the number of ADAL applications different in the Sign-ins workbook and the recommendation?
+
+
+- **Aggregated Data  vs. Transactional Data:** The recommendation aggregates data over the last 30 days, providing a summarized view of application activities. Conversely, the Sign-ins workbook details each sign-in request transactionally, allowing for a more detailed analysis.
+
+- **Time Frame Flexibility:** The Sign-ins workbook data can be filtered from as recently as the last 30 minutes to up to 30 days. This flexibility in selecting the time frame can lead to variations in the application count, potentially skewing the results.
+
+- **Access to Historical Data:** Viewing data older than 7 days in the Sign-ins workbook requires a Microsoft Entra ID P1 or P2 tenant subscription. This requirement affects the volume of historical data accessible compared to the aggregated data in the recommendation.
+
+
 
 ## Next steps
 
