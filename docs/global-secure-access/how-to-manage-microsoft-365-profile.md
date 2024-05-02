@@ -107,7 +107,6 @@ To scope the traffic profile to a specific user or group:
 1. Select **Add user/group**.
 1. Select a user or group for the traffic forwarding profile and then select **Assign**.
 
-
 > [!NOTE]
 > - Group-based assignment requires Microsoft Entra ID P1 or P2 license.
 > - Group-based assignment is supported for Security groups and Microsoft 365 groups whose `SecurityEnabled` setting is set to `True`.
