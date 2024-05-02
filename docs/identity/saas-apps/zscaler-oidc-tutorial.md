@@ -5,8 +5,8 @@ services: active-directory
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: celested
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 ms.workload: identity
 ms.topic: tutorial
 ms.date: 02/28/2024
@@ -117,15 +117,15 @@ Below are the configuration steps to complete the OIDC federation setup:
 
 3. Go to **External Identities** in the **Administration**.
 
-    ![Screenshot of showing oidc setup at new auth method.](./media/zscaler-oidc-tutorial/external-identities.png)
+    ![Screenshot of showing External Identities.](./media/zscaler-oidc-tutorial/external-identities.png)
 
 1. In the External Identities, go to **Secondary Identity Providers** and click **+ Add Secondary Idp**.
 
-    ![Screenshot of showing oidc setup at new auth method.](./media/zscaler-oidc-tutorial/add-secondary.png)
+    ![Screenshot of showing Add Secondary Idp.](./media/zscaler-oidc-tutorial/add-secondary.png)
 
 1. In the **BASIC** section, perform the following steps in the **GENERAL** tab:
 
-    ![Screenshot of showing oidc setup at new auth method.](./media/zscaler-oidc-tutorial/basic-configuration.png)
+    ![Screenshot of showing GENERAL tab.](./media/zscaler-oidc-tutorial/basic-configuration.png)
 
     a. In the **Name** field, enter the name for identification.
 
@@ -137,7 +137,7 @@ Below are the configuration steps to complete the OIDC federation setup:
 
 1. In the **BASIC** section, perform the following steps in the **OIDC CONFIGURATION** tab:
 
-    ![Screenshot of showing oidc setup at new auth method.](./media/zscaler-oidc-tutorial/oidc-configuration.png)
+    ![Screenshot of showing oidc configuration tab.](./media/zscaler-oidc-tutorial/oidc-configuration.png)
 
     a. Paste the **Open ID Connect metadata document** value in the **Metadata URL** field, which you have copied from Entra page and click **FETCH**, the values will auto populated.
 
@@ -153,5 +153,5 @@ Below are the configuration steps to complete the OIDC federation setup:
 
 1. In the **PROVISIONING** section, enable the JIT provisioning and click **Update**.
 
-    ![Screenshot of showing oidc setup at new auth method.](./media/zscaler-oidc-tutorial/provisioning.png)
+    ![Screenshot of showing PROVISIONING.](./media/zscaler-oidc-tutorial/provisioning.png)
 
