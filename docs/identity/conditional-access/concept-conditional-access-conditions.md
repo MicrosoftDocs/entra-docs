@@ -178,7 +178,7 @@ For Chrome support in **Windows 8.1 and 7**, create the following registry key:
 
 ##### macOS
 
-macOS devices using the Enterprise SSO plugin require the [Microsoft Single Sign On](https://chromewebstore.google.com/detail/windows-accounts/ppnbnpeolgkicgegkbkbjmhlideopiji) extension to support SSO and device CA.
+macOS devices using the Enterprise SSO plugin require the [Microsoft Single Sign On](https://chromewebstore.google.com/detail/windows-accounts/ppnbnpeolgkicgegkbkbjmhlideopiji) extension to support SSO and device CA in Google Chrome.
 
 For MDM based deployments of Google Chrome and extension management, please refer to [Set up Chrome browser on Mac](https://support.google.com/chrome/a/answer/7550274?hl=en&sjid=4022223857702261083-NA) and [ExtensionInstallForcelist](https://chromeenterprise.google/policies/?policy=ExtensionInstallForcelist).
 
