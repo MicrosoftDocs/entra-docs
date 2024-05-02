@@ -55,7 +55,6 @@ Detections triggered in real-time take 5-10 minutes to surface details in the re
 | [Admin confirmed user compromised](#admin-confirmed-user-compromised) | Offline | Nonpremium | adminConfirmedUserCompromised |
 | [Anomalous Token](#anomalous-token) | Real-time or Offline | Premium | anomalousToken | 
 | [Anonymous IP address](#anonymous-ip-address) | Real-time | Nonpremium | anonymizedIPAddress |
-| [Attacker in the Middle](#attacker-in-the-middle) | Offline | Premium | attackerinTheMiddle |
 | [Atypical travel](#atypical-travel) | Offline | Premium | unlikelyTravel |
 | [Impossible travel](#impossible-travel) | Offline | Premium | mcasImpossibleTravel |
 | [Malicious IP address](#malicious-ip-address) | Offline | Premium | maliciousIPAddress |
@@ -72,6 +71,7 @@ Detections triggered in real-time take 5-10 minutes to surface details in the re
 | **User risk detections** | | | |
 | [Additional risk detected (user)](#additional-risk-detected-user) | Real-time or Offline | Nonpremium | generic = Premium detection classification for non-P2 tenants |
 | [Anomalous user activity](#anomalous-user-activity) | Offline | Premium | anomalousUserActivity |
+| [Attacker in the Middle](#attacker-in-the-middle) | Offline | Premium | attackerinTheMiddle |
 | [Leaked credentials](#leaked-credentials) | Offline | Nonpremium | leakedCredentials |
 | [Microsoft Entra threat intelligence (user)](#microsoft-entra-threat-intelligence-user) | Real-time or Offline | Nonpremium | investigationsThreatIntelligence |
 | [Possible attempt to access Primary Refresh Token (PRT)](#possible-attempt-to-access-primary-refresh-token-prt) | Offline | Premium | attemptedPrtAccess |
@@ -94,10 +94,6 @@ Calculated offline. This detection is discovered using information provided byâ€
 Calculated in real-time or offline. This detection indicates abnormal characteristics in the token, such as an unusual lifetime or a token played from an unfamiliar location. This detection covers Session Tokens and Refresh Tokens. 
 
 Anomalous token is tuned to incur more noise than other detections at the same risk level. This tradeoff is chosen to increase the likelihood of detecting replayed tokens that might otherwise go unnoticed. There's a higher than normal chance that some of the sessions flagged by this detection are false positives. We recommend investigating the sessions flagged by this detection in the context of other sign-ins from the user. If the location, application, IP address, User Agent, or other characteristics are unexpected for the user, the tenant admin should consider this risk as an indicator of potential token replay. 
-
-#### Attacker in the Middle 
-
-Calculated offline. Also known as Adversary in the Middle, this high-precision detection is triggered when an active token theft threat is identified in a session compromised through stolen credentials. The user is raised to High risk for manual investigation by the admin. 
 
 #### Atypical travel 
 
@@ -160,6 +156,10 @@ Calculated in real-time. This risk detection type indicates sign-in activity tha
 #### Anomalous user activity 
 
 Calculated offline. This risk detection baselines normal administrative user behavior in Microsoft Entra ID, and spots anomalous patterns of behavior like suspicious changes to the directory. The detection is triggered against the administrator making the change or the object that was changed. 
+
+#### Attacker in the Middle 
+
+Calculated offline. Also known as Adversary in the Middle, this high precision detection is triggered when an active token theft threat is identified in a session compromised through stolen credentials. The Microsoft Security Research team uses Microsoft 365 Defender to capture the identified risk and raises the user to **High** risk. We recommend the tenant admin to manually investigate the user when this detection is triggered to ensure the risk is cleared.
 
 #### Possible attempt to access Primary Refresh Token (PRT) 
 
