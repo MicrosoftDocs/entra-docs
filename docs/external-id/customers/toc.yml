@@ -420,6 +420,8 @@ items:
   items:
     - name: Default user permissions
       href: reference-user-permissions.md
+    - name: Service limits and restrictions
+      href: reference-service-limits.md
     - name: Group and application roles support
       href: reference-group-app-roles-support.md
     - name: Data residency
