@@ -134,7 +134,7 @@ This setting works with all browsers. However, to satisfy a device policy, like 
 These browsers support device authentication, allowing the device to be identified and validated against a policy. The device check fails if the browser is running in private mode or if cookies are disabled. 
 
 > [!NOTE]
-> Edge 85+ requires the user to be signed in to the browser to properly pass device identity. Otherwise, it behaves like Chrome without the single sign on. This sign-in might not occur automatically in a hybrid device join scenario.
+> Edge 85+ requires the user to be signed in to the browser to properly pass device identity. Otherwise, it behaves like Chrome without the [Microsoft Single Sign On extension](https://chromewebstore.google.com/detail/windows-accounts/ppnbnpeolgkicgegkbkbjmhlideopiji). This sign-in might not occur automatically in a hybrid device join scenario.
 >  
 > Safari is supported for device-based Conditional Access on a managed device, but it can not satisfy the **Require approved client app** or **Require app protection policy** conditions. A managed browser like Microsoft Edge will satisfy approved client app and app protection policy requirements.
 > On iOS with 3rd party MDM solution only Microsoft Edge browser supports device policy.
