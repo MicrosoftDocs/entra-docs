@@ -5,7 +5,7 @@ description: Learn about the options you have close active risk detections.
 ms.service: entra-id-protection
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 05/02/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -172,7 +172,7 @@ ID Protection now surfaces session details in the Risk Detection Details pane fo
 - Sign-in request ID
 - Sign-in correlation ID
 
-If you have [user risk-based Conditional Access policies](howto-identity-protection-configure-risk-policies.md#user-risk-policy-in-conditional-access) configured and one of these detections that denotes suspicious token activity is fired on a user, the end user will be required to perform secure password change and reauthenticate their account with multifactor authentication to clear the risk.
+If you have [user risk-based Conditional Access policies](howto-identity-protection-configure-risk-policies.md#user-risk-policy-in-conditional-access) configured and one of these detections that denotes suspicious token activity is fired on a user, the end user is required to perform secure password change and reauthenticate their account with multifactor authentication to clear the risk.
 
 ## PowerShell preview
 

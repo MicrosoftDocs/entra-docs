@@ -5,7 +5,7 @@ description: Learn how to configure the Microsoft Entra ID Protection multifacto
 ms.service: entra-id-protection
 
 ms.topic: how-to
-ms.date: 04/26/2024
+ms.date: 05/02/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo

@@ -6,7 +6,7 @@ description: Learn how to investigate using long-term data in Microsoft Entra ID
 ms.service: entra-id-protection
 
 ms.topic: how-to
-ms.date: 01/24/2023
+ms.date: 05/02/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
