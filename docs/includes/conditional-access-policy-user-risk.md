@@ -3,7 +3,7 @@ author: joflore
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: include
-ms.date: 03/25/2024
+ms.date: 05/02/2024
 ms.author: joflore
 ---
 
@@ -20,7 +20,7 @@ ms.author: joflore
    1. Under **Configure user risk levels needed for policy to be enforced**, select **High**. [This guidance is based on Microsoft recommendations and might be different for each organization](../id-protection/howto-identity-protection-configure-risk-policies.md#choosing-acceptable-risk-levels)
    1. Select **Done**.
 1. Under **Access controls** > **Grant**.
-   1. Select **Grant access**, **Require multifactor authentication** and **Require password change**.
+   1. Select **Grant access**, **Require multifactor authentication**, and **Require password change**.
    1. Select **Select**.
 1. Under **Session**.
    1. Select **Sign-in frequency**.

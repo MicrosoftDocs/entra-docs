@@ -1,16 +1,16 @@
 ---
 title: Sign-in risk-based multifactor authentication
-description: Create Conditional Access policies using Microsoft Entra ID Protection sign-in risk
+description: Create Conditional Access policies using Microsoft Entra ID Protection sign-in risk.
 
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 05/02/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
-ms.reviewer: calebb, lhuangnorth
+ms.reviewer: lhuangnorth, cokoopma
 ---
 # Common Conditional Access policy: Sign-in risk-based multifactor authentication
 
