@@ -1,5 +1,5 @@
 ---
-title: Secure and govern SOC access in a multitenant organization with Microsoft Defender XDR and Microsoft Entra ID Governance
+title: Secure and govern security operations center (SOC) access in a multitenant organization with Microsoft Defender XDR and Microsoft Entra ID Governance
 description: Learn how to provide security operations analysts access to resources across tenants.
 author: rolyon
 manager: amycolannino
@@ -12,18 +12,18 @@ ms.custom: it-pro
 #Customer intent: As a dev, devops, or it admin, I want to
 ---
 
-# Governing access for SOC teams in a multitenant environment
+# Govern access for security operations center (SOC) teams in a multitenant environment
 
 Managing multitenant environments can add another layer of complexity when it comes to keeping up with the ever-evolving security threats facing your enterprise. Navigating across multiple tenants can be time consuming and reduce the overall efficiency of security operation center (SOC) teams.
 Multitenant management in [Microsoft Defender XDR](/microsoft-365/security/defender/mto-overview) provides security operation teams with a single, unified view of all the tenants they manage. This view enables teams to quickly investigate incidents and perform advanced hunting across data from multiple tenants, improving their security operations.
 
 [Microsoft Entra ID Governance](../../id-governance/identity-governance-overview.md) enables you to govern the access and lifecycle of the users who are members of the SOC teams and threat hunter teams. This document explores:
 
-1. The controls you can put in place for SOC teams to securely access resources across tenants. 
-1. Example topologies for how you can implement your lifecycle and access controls.
-1. Deployment considerations (roles, monitoring, APIs).
+- The controls you can put in place for SOC teams to securely access resources across tenants. 
+- Example topologies for how you can implement your lifecycle and access controls.
+- Deployment considerations (roles, monitoring, APIs).
   
-## Managing the lifecycle and access of a SOC user
+## Manage the lifecycle and access of a SOC user
 
 Microsoft Entra provides the controls needed to govern the lifecycle of a SOC user and to securely provide access to the resources they need. In this document, the term source tenant refers to where the SOC users originate and authenticate against. Target tenant refers to the tenant that they're investigating when there's an incident. Organizations have multiple target tenants due to mergers and acquisitions, aligning tenants with business units, and aligning tenants with geos.
 
