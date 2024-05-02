@@ -46,9 +46,10 @@ For more information, see: [Workflow Insights (preview)](lifecycle-workflow-insi
 
 1. Along with being able to filter on a time period, for top workflows and tasks, you're also able to filter based on activity.
     :::image type="content" source="media/manage-workflow-insights/timespan-choice.png" alt-text="Screenshot of picking time duration in workflow insights.":::
-1. With the activity filter, you can choose to see all workflows or tasks by choosing **Total Processed**, only those which were **Successful**, or only the ones who **Failed**.
+1. With the activity filter, you can choose to see the top processed workflows or tasks by choosing **Total Processed**, only those which were **Successful**, or only the ones who **Failed**.
 
-
+1. Under **Workflow Runs by Category** you're able to filter workflows by category. You can filter to see percentage  of workflows **Total Processed**, **Successful** workflow by category, or **Failed** workflow by category.
+    :::image type="content" source="media/manage-workflow-insights/workflow-filter-category.png" alt-text="Screenshot of workflows by category insights.":::
 
 ## Next step
 
