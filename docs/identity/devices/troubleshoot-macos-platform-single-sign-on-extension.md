@@ -40,16 +40,14 @@ On macOS 14 Sonoma, if there are problems with your device registration, you can
 You can also deregister the device completely by doing the following steps.
 
 1. Open the **Company Portal** app and navigate to **Preferences**.
-1. To unregister the device, select **Unregister**.
-1. Alternatively, to sign out your work account on the device, select **Sign out**. This is done silently and there's no confirmation that your device is deregistered.
+1. To deregister the device, select **Deregister**.
 
 ### [macOS 13](#tab/macOS13)
 
 On macOS 13 Ventura, if there are problems with your device PSSO registration, or you need to deregister your device, use Company Portal and remove the device from your organization.
 
 1. Open the **Company Portal** app and navigate to **Preferences**.
-1. To unregister the device, select **Unregister**.
-1. Alternatively, to sign out your work account on the device, select **Sign out**. This is done silently and there's no confirmation that your device is deregistered.
+1. To Deregister the device, select **Deregister**.
 
 If you deregistered your device as a result of an error, and need to re-register it, refer to [Join a Mac device with Microsoft Entra ID during the out of box experience](./device-join-macos-platform-single-sign-on.md) or [Join a Mac device with Microsoft Entra ID using Company Portal](./device-join-microsoft-entra-company-portal.md).
 
@@ -151,6 +149,13 @@ If a user has insufficient permissions to complete Microsoft Entra ID join and r
 1. In the Microsoft Intune admin center, navigate to **Devices** > **Device Settings**.
 1. Under **Microsoft Entra ID join and registration settings**, ensure that the **All** option is selected in the toggle menu.
 1. Select **Save** to apply the changes.
+
+### Troubleshoot Passkey issues
+
+Platform Credential as Passkey option is only available if Secure Enclave is configured as the authentication method for Platform SSO. You should check the following:
+
+1. Ensure that your admin has set up your device with Secure Enclave as the authentication method, and has [enabled passkeys (FIDO2) for your organization](/entra/identity/authentication/how-to-enable-passkey-fido2#enable-passkey-authentication-method).
+1. As a user, check that you have enabled Company Portal as a passkey provider in your device settings. Navigate to your **Settings** app, **Passwords** and **Password options**, and ensure that **Company Portal** is enabled.
 
 ## See also
 

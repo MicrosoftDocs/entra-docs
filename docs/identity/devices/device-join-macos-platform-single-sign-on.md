@@ -20,12 +20,12 @@ Mac users can join their new device to Microsoft Entra ID during the first-run o
 
 ## Prerequisites
 
-- A minimum requirement of macOS 13 Ventura (macOS 14 Sonoma is recommended) 
+- A recommended minimum version of macOS 14 Sonoma. While macOS 13 Ventura is supported, we strongly recommend using macOS 14 Sonoma for the best experience.
 - [Automated Device Enrollment (ADE)](https://support.apple.com/HT204142) enrolled device. Check with your administrator if you're unsure if your device is enrolled with this requirement.
-- [Microsoft Intune Company Portal](/mem/intune/apps/apps-company-portal-macos) version 5.2401.2 or later
+- [Microsoft Intune Company Portal](/mem/intune/apps/apps-company-portal-macos) version 5.2404.0 or later
 - A Mac device enrolled in mobile device management (MDM) with Microsoft Intune.
 - [Microsoft Authenticator](https://support.microsoft.com/account-billing/how-to-use-the-microsoft-authenticator-app-9783c865-0308-42fb-a519-8cf666fe0acc) (recommended): The user must be registered for some form of Microsoft Entra ID multifactor authentication (MFA) on their mobile device to complete device registration.
-- A smart card loaded with a certificate for authentication with Microsoft Entra (smart card setup only).
+- For smart card setup, [certificate based authentication](/entra/identity/authentication/how-to-certificate-based-authentication) configured and enabled. A smart card loaded with a certificate for authentication with Microsoft Entra and the smart card paired with local account.
 
 ## Set up your macOS device
 
@@ -55,7 +55,8 @@ It's recommended for your system administrator to have the Mac enrolled using se
 
     :::image type="content" source="media/device-join-macos-platform-single-sign-on-out-of-box/macos-14-microsoft-entra-registration-required.png" alt-text="Screenshot of a Microsoft Entra registration prompt that appears on macOS 14 after the registration required notification is selected.":::
 
-1. Once your account is unlocked with touch ID or password, select the account to sign in to, enter your sign-in credentials and select **Next**.
+1. A prompt appears to enter your local account password. Enter your password and select **Ok**.
+1. Once your account is unlocked, select the account to sign in to, enter your sign-in credentials and select **Next**.
 1. MFA is required as part of this sign in flow. Open your **Authenticator app** (recommended) or use your other MFA methods you have registered, and enter the number displayed on the screen to finish registration.
 
     :::image type="content" source="media/device-join-macos-platform-single-sign-on-out-of-box/psso-2fa-challenge.png" alt-text="Screenshot of a two-factor authentication window, prompting the user to open the Authenticator app.":::
@@ -73,6 +74,18 @@ Setting up your device using secure enclave method enables you to use the result
 
 ### [Smart Card](#tab/smart-card)
 
+### Pair the smart card with your local account
+
+Before you can register your device with a smart card, you need to pair the smart card with your local account. Open the **Terminal** app and run the following commands to find the public key hash of the smart card certificate and pair it with your local account, then check it was successful. This needs to be run using `sudo`. 
+
+```console
+sc_auth identities
+sudo sc_auth pair -h <HASH> -u <USERNAME>
+sc_auth list
+```
+
+### Register your device with the smart card
+
 1. Navigate to the **Registration Required** popup at the top right of the screen. Hover over the popup and select **Register**. If your smart card is paired with your local account, you'll see a prompt to enter the smart card pin
 
     :::image type="content" source="media/device-join-macos-platform-single-sign-on-out-of-box/smartcard-paired-registration-prompt.png" alt-text="Screenshot of the Platform SSO registration prompting the user to enter their smart card pin.":::
@@ -87,19 +100,15 @@ Setting up your device using secure enclave method enables you to use the result
 
 ### [Password](#tab/password)
 
-1. Navigate to the **Registration Required** popup at the top right of the screen. Hover over the popup and select **Register**. 
-    - For macOS 13 Ventura users, you'll see a prompt to register your device with Microsoft Entra ID. Enter your sign-in credentials and select **Next**. 
+1. Navigate to the **Registration Required** popup at the top right of the screen. Hover over the popup and select **Register**.
 
     :::image type="content" source="media/device-join-macos-platform-single-sign-on-out-of-box/psso-registration-required-popup.png" alt-text="Screenshot of a desktop screen with a registration required popup in the top right of the screen.":::
 
-1. You're prompted to register your device with Microsoft Entra ID. Enter your sign-in credentials and select **Next**.
-    1. Your administrator may have configured MFA for the device registration flow. If so, open your **Authenticator** app on your mobile device and complete the MFA flow.
+1. A prompt appears to enter your local account password. Enter your password and select **Ok**.
+1. Once your account is unlocked, select the account to sign in to, enter your sign-in credentials and select **Next**.
+1. MFA is required as part of this sign in flow. Open your **Authenticator app** (recommended) or use your other MFA methods you have registered, and enter the number displayed on the screen to finish registration.
 
-    :::image type="content" source="media/device-join-macos-platform-single-sign-on-out-of-box/psso-register-device-prompt.png" alt-text="Screenshot of the registration window prompting sign in with Microsoft.":::
-
-1. When a **Single Sign-On** window appears, enter your local account password and select **OK**. If you're on macOS 14, <!--you'll be prompted to unlock your local account before this.-->
-
-    :::image type="content" source="media/device-join-macos-platform-single-sign-on-out-of-box/psso-enter-local-password.png" alt-text="Screenshot of a single sign-on window prompting the user to enter their local account password.":::
+    :::image type="content" source="media/device-join-macos-platform-single-sign-on-out-of-box/psso-2fa-challenge.png" alt-text="Screenshot of a two-factor authentication window, prompting the user to open the Authenticator app.":::
 
 1. If your local password differs to your Microsoft Entra ID password, an **Authentication Required** popup appears on the top right of the screen. Hover over the banner and select **Sign-in**.
 1. When a **Microsoft Entra** window appears, enter your Microsoft Entra ID password and select **Sign In**. 

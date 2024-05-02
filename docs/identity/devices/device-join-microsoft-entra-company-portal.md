@@ -20,16 +20,15 @@ In this tutorial, you will learn how to register a Mac device with macOS Platfor
 
 ## Prerequisites
 
-- A minimum requirement of macOS 13 Ventura
-- Microsoft Intune [Company Portal app](/mem/intune/apps/apps-company-portal-macos) version 5.2401.2 or later
+- A recommended minimum version of macOS 14 Sonoma. While macOS 13 Ventura is supported, we strongly recommend using macOS 14 Sonoma for the best experience.
+- Microsoft Intune [Company Portal app](/mem/intune/apps/apps-company-portal-macos) version 5.2404.0 or later
 - A configured the SSO extension MDM payload with PSSO settings in Intune by an administrator
 - [Microsoft Authenticator](https://support.microsoft.com/account-billing/how-to-use-the-microsoft-authenticator-app-9783c865-0308-42fb-a519-8cf666fe0acc) (recommended), the user must be registered for some form of Microsoft Entra ID multifactor authentication (MFA) to complete device registration.
+- For smart card setup, [certificate based authentication](/entra/identity/authentication/how-to-certificate-based-authentication) configured and enabled. A smart card loaded with a certificate for authentication with Microsoft Entra and the smart card paired with local account.
 
 ## Intune MDM and Microsoft Entra Join using Company Portal
 
 To register a Mac device with PSSO, you must first enroll your device in Microsoft Intune using the Company Portal app. Once enrolled, you can use secure enclave, smart card, or password to register your device with PSSO.
-
-### [Secure Enclave](#tab/secure-enclave)
 
 1. Open the **Company Portal** app and select **Sign in**.
 1. Enter your Microsoft Entra ID credentials and select **Next**.
@@ -53,83 +52,11 @@ To register a Mac device with PSSO, you must first enroll your device in Microso
 
     :::image type="content" source="media/device-registration-macos-platform-single-sign-on/pssoe-profiles-enroll.png" alt-text="Screenshot of the profiles window requesting a password to enroll you into an MDM service.":::
 
-1. You'll see a notification in **Company Portal** that the installation is complete. Select **Done**. A **Registration Required** notification appears in the top right of the screen. Hover over the notification and select **Register**.
-
-    :::image type="content" source="media/device-registration-macos-platform-single-sign-on/pssoe-registration-required-notification.png" alt-text="Screenshot of the Registration Required notification.":::
-
-1. The Platform SSO window appears to enable your macOS account to be registered with your identity provider. You can unlock the device with Touch ID or local account password depending on the device setup. We strongly recommend setting up Touch ID.
-
-    :::image type="content" source="media/device-registration-macos-platform-single-sign-on/pssoe-register-window.png" alt-text="Screenshot of the Platform SSO notification requesting to use password or Touch ID.":::
-
-### [Smart Card](#tab/smart-card)
-
-1. Open the **Company Portal** app and select **Sign in**.
-1. Enter your Microsoft Entra ID credentials and select **Next**.
-    1. Your administrator may have configured MFA for the device registration flow. If so, open your **Authenticator** app on your mobile device and complete the MFA flow.
-
-    :::image type="content" source="media/device-join-macos-platform-single-sign-on-out-of-box/psso-register-device-prompt.png" alt-text="Screenshot of the registration window prompting sign in with Microsoft.":::
-
-1. When prompted to **Choose a way to sign in**, select **Use a certificate or smart card**. Select the certificate to use and select **Choose**.
-
-    :::image type="content" source="media/device-registration-macos-platform-single-sign-on/platform-single-sign-on-certificate-selection.png" alt-text="Screenshot of the window showing the prompt to choose a certificate.":::
-
-1. Enter the smart card pin in the **Company Portal** window and select **OK**. 
-1. You're prompted to **Set up {Company} access**. The placeholder "Company" is different depending on your setup. Select **Begin**, then on the next screen, select **Continue**.
-
-    :::image type="content" source="media/device-registration-macos-platform-single-sign-on/pssoe-company-portal-set-up-access.png" alt-text="Screenshot of the Company portal access setup window.":::
-
-1. You're presented with steps to install the management profile, which should be set up by an administrator using Microsoft Intune. Select **Download profile**.
-
-    :::image type="content" source="media/device-registration-macos-platform-single-sign-on/pssoe-company-portal-install-management-profile.png" alt-text="Screenshot of a Company Portal window requesting the user to download the management profile.":::
-
-1. Open **Settings** > **Privacy & Security** > **Profiles** if it doesn't automatically appear. Select **Management Profile**, then select **Install** to get access to company resources.
-
-    :::image type="content" source="media/device-registration-macos-platform-single-sign-on/pssoe-settings-profiles-install-management-profile.png" alt-text="Screenshot the prompt to install the management profile in settings.":::
-
-1. Enter your local device password in the **Profiles** window that appears and select **Enroll**.
-1. A **Registration Required** notification appears in the top right of the screen. Hover over the notification and select **Register**.
-
-    :::image type="content" source="media/device-registration-macos-platform-single-sign-on/pssoe-registration-required-notification.png" alt-text="Screenshot of the Registration Required notification.":::
-
-1. Enter the smart card pin in the **Platform SSO** window and select **OK**. Repeat this step if prompted to enter the smart card pin again. 
-
-    :::image type="content" source="media/device-registration-macos-platform-single-sign-on/platform-single-sign-on-enter-pin.png" alt-text="Screenshot of the Platform SSO pin entry window.":::
-
-1. You can now unlock the device with the smart card pin. You'll need to use the local password to log in after a reboot to unlock the keychain access.
-
-### [Password](#tab/password)
-
-1. Open the **Company Portal** app and select **Sign in**.
-1. Enter your Microsoft Entra ID credentials and select **Next**.
-1. You're prompted to **Set up {Company} access**. The placeholder "Company" will be different depending on your setup. Select **Begin**, then on the next screen, select **Continue**.
-
-    :::image type="content" source="media/device-registration-macos-platform-single-sign-on/pssoe-company-portal-set-up-access.png" alt-text="Screenshot of the Company portal access setup window.":::
-
-1. You're presented with steps to install the management profile, which has already been set up by an administrator using Microsoft Intune. Select **Download profile**.
-
-    :::image type="content" source="media/device-registration-macos-platform-single-sign-on/pssoe-company-portal-install-management-profile.png" alt-text="Screenshot of a Company Portal window requesting the user to download the management profile.":::
-
-1. A **Registration Required** notification appears in the top right of the screen. Hover over the notification and select **Register**.
-
-    :::image type="content" source="media/device-registration-macos-platform-single-sign-on/pssoe-registration-required-popup-password-flow.png" alt-text="Screenshot of the Registration Required notification.":::
-
-1. The Platform SSO window appears to enable your macOS account to be registered with your identity provider. Enter your local account password and select **OK**.
-
-    :::image type="content" source="media/device-registration-macos-platform-single-sign-on/pssoe-registration-local-password-prompt.png" alt-text="Screenshot of the Platform SSO password prompt.":::
-
-1. You're prompted to register your device with Microsoft Entra ID. Enter your sign-in credentials and select **Sign in**.
-1. An **Authentication Required** notification appears in the top right of the screen. Hover over the notification and select **Sign in**.
-1. In the **Microsoft Entra** window, enter your Microsoft Entra ID password and select **Sign in**. Once entered, there's a notification that your password has been successfully synced with your Microsoft Entra account.
-
-    :::image type="content" source="media/device-registration-macos-platform-single-sign-on/pssoe-entra-password-entry.png" alt-text="Screenshot of the Microsoft Entra sign in window.":::
-
-1. Your device will now show as being in compliance in Company Portal. 
-
----
+1. You'll see a notification in **Company Portal** that the installation is complete. Select **Done**.
 
 ## Platform SSO registration
 
-Now that the device is in compliance with Company Portal, you need to register your device with PSSO. Use the tabs to register your device with PSSO using secure enclave, smart card, or password.
+Now that the device is in compliance with Company Portal, you need to register your device with PSSO. A **Registration Required** popup appears at the top right of the screen following successful completion of [Intune MDM and Microsoft Entra Join using Company Portal](#intune-mdm-and-microsoft-entra-join-using-company-portal). Use the tabs to register your device with PSSO using secure enclave, smart card, or password.
 
 ### [Secure Enclave](#tab/secure-enclave)
 
@@ -154,6 +81,18 @@ Setting up your device using secure enclave method enables you to use the result
     :::image type="content" source="media/device-join-macos-platform-single-sign-on-out-of-box/password-options-enable-passkeys.png" alt-text="Screenshot of the Password Options window indicating that the use of passwords and passkeys from Company Portal has been enabled by a switch.":::
 
 ### [Smart Card](#tab/smart-card)
+
+### Pair the smart card with your local account
+
+Before you can register your device with a smart card, you need to pair the smart card with your local account. Open the **Terminal** app and run the following commands to find the public key hash of the smart card certificate and pair it with your local account, then check it was successful. This needs to be run using `sudo`. 
+
+```console
+sc_auth identities
+sudo sc_auth pair -h <HASH> -u <USERNAME>
+sc_auth list
+```
+
+### Register your device with the smart card
 
 1. Navigate to the **Registration Required** popup at the top right of the screen. Hover over the popup and select **Register**. If your smart card is paired with your local account, you'll see a prompt to enter the smart card pin
 
