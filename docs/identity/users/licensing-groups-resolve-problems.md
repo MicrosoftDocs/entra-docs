@@ -127,9 +127,9 @@ Microsoft Entra ID attempts to assign all specified licenses in the group to eac
 
 It's important to note that when assigning licenses to a group, if there are not enough available licenses, or an issue occurs like service plans that can't be assigned at the same time, the assignment to the group might not be completed. An example is if there aren't enough licenses for all, or if there are conflicts with other services that are enabled for the user.
 
-One potential work around for this conflict is to [create dynamic groups](~/identity/users/groups-dynamic-rule-member-of.md). You could create dynamic groups to assign licenses, such as Exchange Online,  and then use a second dynamic group with the same membership rules to apply prerequisite licenses. You can then assign those additional licenses after the initial group has applied the Exchange Online license to the users.
+One potential work around for this conflict is to [create dynamic groups](~/identity/users/groups-dynamic-rule-member-of.md). You could create dynamic groups to assign licenses, such as Exchange Online, and then use a second dynamic group with the same membership rules to apply prerequisite licenses. You can then assign those additional licenses after the initial group has applied the Exchange Online license to the users.
 
-If you encounter any licensing errors, they're recorded on the user object and reported via the Azure portal for resolution. For more information, see [Microsoft Graph PowerShell group-based licensing examples](~identity/users/licensing-powershell-graph-examples.md).
+If you encounter any licensing errors, they're recorded on the user object and reported via the Azure portal for resolution. For more information, see [Microsoft Graph PowerShell group-based licensing examples](~/identity/users/licensing-powershell-graph-examples.md).
 
 ## When a licensed group is deleted
 
