@@ -82,22 +82,6 @@ Our guide will walk you through the process of setting up a user and configuring
 
 This link will take you to the [guide](quickstart-get-started-guide.md), where you can customize your tenant in three easy steps.
 
-## Clean up resources
-
-If you're not going to continue to use this tenant, you can delete it using the following steps:
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com). 
-1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your external tenant from the **Directories + subscriptions** menu.
-1. Browse to **Identity** > **Overview** > **Manage tenants**.
-1. Select the tenant you want to delete, and then select **Delete**.
-
-    :::image type="content" source="media/how-to-create-external-tenant-portal/delete-tenant.png" alt-text="Screenshot that shows how to delete the tenant.":::
-
-1. You might need to complete required actions before you can delete the tenant. For example, you might need to delete all user flows in the tenant. If you're ready to delete the tenant, select **Delete**.
-
-The tenant and its associated information are deleted.
-
-
-## Next steps
-
-To learn more about the set-up guide and how to customize your tenant, see the [Get started guide](quickstart-get-started-guide.md) article.
+## Related content
+- To learn more about the set-up guide and how to customize your tenant, see the [Get started guide](quickstart-get-started-guide.md) article.
+- To learn how to delete your tenant, see the [Delete an external tenant](how-to-delete-external-tenant-portal.md) article. 
