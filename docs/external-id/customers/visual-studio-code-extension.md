@@ -14,7 +14,7 @@ ms.custom: it-pro
 # Customer intent: As a dev, devops, or it admin, I want to create an external tenant and configure a customized, branded sign-in experience for my apps from within Visual Studio Code.
 ---
 
-# Quickstart: Get started with the Microsoft Entra External ID extension for Visual Studio Code
+# Quickstart: Get started with the Microsoft Entra External ID extension for Visual Studio Code (preview)
 
 Integrating authentication into your consumer and business customer applications is essential for securing resources and customer data. The Microsoft Entra External ID extension for Visual Studio Code lets you quickly add authentication to applications  for customer identity and access management (CIAM) scenarios. Using the application samples provided, you can see how to set up a customized, branded sign-in experience for external users of your application without leaving the development environment.
 

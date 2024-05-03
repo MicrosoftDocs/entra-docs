@@ -14,9 +14,9 @@ ms.custom: it-pro
 
 ---
 
-# Known issues with Microsoft Entra External ID in external tenants
+# Known issues with Microsoft Entra External ID for external-facing apps
 
-This article describes known issues that you may experience when you use Microsoft Entra External ID in external tenants, and provides help to resolve these issues.
+This article describes known issues that you may experience when you use Microsoft Entra External ID for your external-facing apps, and provides help to resolve these issues.
 
 ## Tenant creation and management
 
