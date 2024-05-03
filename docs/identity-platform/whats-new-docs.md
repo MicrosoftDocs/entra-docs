@@ -5,7 +5,7 @@ author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
 ms.custom: has-adal-ref
-ms.date: 04/02/2024
+ms.date: 05/03/2024
 ms.service: identity-platform
 
 ms.topic: whats-new
@@ -15,6 +15,24 @@ ms.topic: whats-new
 # Microsoft identity platform docs: What's new
 
 Welcome to what's new in the Microsoft identity platform documentation. This article lists new articles that were added or had significant updates in the last three months.
+
+## April 2024
+
+### New articles
+
+- [Quickstart: .NET console app that accesses a protected web API](quickstart-daemon-dotnet-acquire-token.md) - Quickstart daemon console update
+- [Quickstart: Sign in users and call Microsoft Graph from a Python Flask web app](quickstart-web-app-python-flask.md) - Build MSAL Python content - Sign in with Microsoft to a Python web app
+- [Tutorial: Register a Python web app with the Microsoft identity platform](tutorial-web-app-python-register-app.md) - Build MSAL Python content - Register an application
+- [Prepare a Python web app for authentication](tutorial-web-app-python-prepare-app.md) - Build MSAL Python content - Prepare Python web app
+- [Tutorial: Add sign in to a Python Flask web app](tutorial-web-app-python-sign-in-users.md) - Build MSAL Python content - Add sign in to the web app
+- [Tutorial: Call a protected API and display the results](tutorial-web-app-python-call-api.md) - Build MSAL Python content - Call a protected web API
+
+### Updated articles
+
+- [Acquire tokens to call a web API using a daemon application](scenario-daemon-acquire-token.md) - Quickstart daemon console update
+- [Claims challenges, claims requests and client capabilities](claims-challenge.md) - Remove remaining sensitive GUIDs from identity platform docs
+- [Microsoft Entra authentication and authorization error codes](reference-error-codes.md) - Remove remaining sensitive GUIDs from identity platform docs
+- [Microsoft Enterprise SSO plug-in for Apple devices](apple-sso-plugin.md) - [macOS] Upcoming changes to Enterprise SSO device identity
 
 ## March 2024
 
@@ -39,14 +57,3 @@ Welcome to what's new in the Microsoft identity platform documentation. This art
 - [Microsoft identity platform app types and authentication flows](authentication-flows-app-scenarios.md) - Update to enhance the article's technical accuracy
 - [Overview of the Microsoft Authentication Library (MSAL)](msal-overview.md) - Update to enhance the article's technical accuracy
 - [Use Microsoft Authenticator or Intune Company Portal on Xamarin applications](msal-net-use-brokers-with-xamarin-apps.md) - Removing the android signature digest for the latest android version
-
-## January 2024
-
-### New articles
-
-- [Customize claims emitted in tokens for a specific app in a tenant using PowerShell](claims-customization-powershell.md) - Adding claims customization using PowerShell page
-
-### Updated articles
-
-- [Microsoft identity platform and OAuth 2.0 On-Behalf-Of flow](v2-oauth2-on-behalf-of-flow.md) - Adding clarity to the article
-- [Quickstart: Protect an ASP.NET Core web API with the Microsoft identity platform](quickstart-web-api-aspnet-core-protect-api.md) - Updated the article with the new code sample.
