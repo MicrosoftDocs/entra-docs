@@ -49,7 +49,9 @@ Make sure you have active custom security attributes in your tenant as deactivat
 
 The red icon indicates that this custom security attribute is no longer active, so the rule is invalid. As the rule is invalid, the workflow will not be processed. You should remove the deactivated custom security attribute expression from the workflow's rule.
 
+### My user is assigned a custom security attribute that’s part of the workflow trigger, why didn’t the workflow run for this user?
 
+Lifecycle workflows checks that the user is assigned the custom security attribute that matches the specified value, including case-sensitivity. So check that the custom security attribute value matches exactly.
 
 ## Next steps
 
