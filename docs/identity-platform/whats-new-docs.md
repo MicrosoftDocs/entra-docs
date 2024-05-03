@@ -5,7 +5,7 @@ author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
 ms.custom: has-adal-ref
-ms.date: 04/02/2024
+ms.date: 05/03/2024
 ms.service: identity-platform
 
 ms.topic: whats-new
@@ -18,7 +18,21 @@ Welcome to what's new in the Microsoft identity platform documentation. This art
 
 ## April 2024
 
-No new or updated articles.
+### New articles
+
+- [Prepare a Python web app for authentication](tutorial-web-app-python-prepare-app.md)
+- [Quickstart: .NET console app that accesses a protected web API](quickstart-daemon-dotnet-acquire-token.md)
+- [Quickstart: Sign in users and call Microsoft Graph from a Python Flask web app](quickstart-web-app-python-flask.md)
+- [Tutorial: Register a Python web app with the Microsoft identity platform](tutorial-web-app-python-register-app.md)
+- [Tutorial: Add sign in to a Python Flask web app](tutorial-web-app-python-sign-in-users.md)
+- [Tutorial: Call a protected API and display the results](tutorial-web-app-python-call-api.md)
+
+### Updated articles
+
+- [Acquire tokens to call a web API using a daemon application](scenario-daemon-acquire-token.md) - Quickstart daemon console update
+- [Claims challenges, claims requests and client capabilities](claims-challenge.md) - Remove remaining sensitive GUIDs from identity platform docs
+- [Microsoft Entra authentication and authorization error codes](reference-error-codes.md) - Remove remaining sensitive GUIDs from identity platform docs
+- [Microsoft Enterprise SSO plug-in for Apple devices](apple-sso-plugin.md) - [macOS] Upcoming changes to Enterprise SSO device identity
 
 ## March 2024
 
