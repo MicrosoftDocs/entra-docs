@@ -82,15 +82,15 @@ Follow these steps to enable Microsoft Entra SSO.
     b. In the **Reply URL** text box, type a URL using the following pattern:
     `https://secure.inlogik.com/<COMPANYNAME>/saml/acs`
 
-5. Click **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
+1. Perform the following step, if you wish to configure the application in **SP** initiated mode:
 
-    In the **Sign-on URL** text box, type a URL using the following pattern:
+    In the **Sign-on URL (Optional)** text box, type a URL using the following pattern:
     `https://secure.inlogik.com/<COMPANYNAME>`
 
 	> [!NOTE]
 	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign-on URL. Contact [ExpenseMe Pro (by Inlogik) support team](https://www.inlogik.com/contact) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-6. On the **Set up Single Sign-On with SAML** page, In the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
+1. On the **Set up Single Sign-On with SAML** page, In the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
 
 	![Screenshot shows the Certificate download link.](common/copy-metadataurl.png "Certificate")
 
