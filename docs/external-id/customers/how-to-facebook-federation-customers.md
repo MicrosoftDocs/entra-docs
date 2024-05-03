@@ -14,7 +14,7 @@ ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 #Customer intent: As a dev, devops, or it admin, I want to
 ---
 
-# Add Facebook as an identity provider
+# Add Facebook as an identity provider (preview)
 
 By setting up federation with Facebook, you can allow customers to sign in to your applications with their own Facebook accounts. After you've added Facebook as one of your application's sign-in options, on the sign-in page, customers can sign-in to Microsoft Entra External ID with a Facebook account. (Learn more about [authentication methods and identity providers for customers](concept-authentication-methods-customers.md).)
 

@@ -15,9 +15,9 @@ metadata:
 
   ms.topic: hub-page
   ms.collection: collection
-  author: csmulligan
-  ms.author: cmulligan
-  ms.date: 04/29/2024
+  author: msmimart
+  ms.author: mimart
+  ms.date: 04/30/2024
 
 ## FRONT MATTER END
 
@@ -34,9 +34,9 @@ highlightedContent:
       itemType: get-started
       url: https://woodgrovedemo.com/      
     # Card
-    - title: "Free trial: Set up an external tenant in minutes"
+    - title: "Set up an external tenant in minutes"
       itemType: quickstart
-      url: https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl
+      url: ./customers/quickstart-tenant-setup.md
 
 productDirectory:
   title: Get started
