@@ -3,7 +3,7 @@ title: Create a remote network using Azure vWAN
 description: Create a virtual wide area network to connect to your resources in Azure.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 04/30/2024
+ms.date: 05/03/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -12,14 +12,15 @@ ms.reviewer: absinh
 ---
 # Create a remote network using Azure vWAN
 
-Organizations might want to extend the capabilities of Microsoft Entra Internet Access to entire networks, not just individual devices where they can [install the Global Secure Access Client](how-to-install-windows-client.md). This article shows how to extend these capabilities to an Azure virtual network hosted in the cloud. Similar principles might apply to a customer's on-premises network equipment.
+In this article, we'll explain how to simulate remote network connectivity using a remote virtual wide-area network (vWAN). If you want to simulate remote network connectivity using an Azure virtual network gateway, see the article, [Create a remote network using Azure virtual networks](/entra/global-secure-access/how-to-simulate-remote-network).
 
 ## Prerequisites
 
 To complete the steps in this process, you must have the following prerequisites in place:
-- An Azure subscription and permission to create resources in the Azure portal.
+- An Azure subscription and permission to create resources in the [Azure portal](https://portal.azure.com).
 - A basic understanding of virtual wide area networks (vWAN).
-- A Microsoft Entra tenant with the Global Secure Access Administrator role assigned.
+- A basic understanding of [site-to-site VPN connections](/azure/vpn-gateway/tutorial-site-to-site-portal).
+- A Microsoft Entra tenant with the [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator) role assigned.
 - A basic understanding of Azure virtual desktops or Azure virtual machines.
 
 In this document, we use the following default values. Feel free to configure these settings according to your own requirements.
@@ -45,7 +46,7 @@ Create a virtual wide area network to connect to your resources in Azure. For mo
 
 1.	Once validation passes, click **Create** to create the virtual WAN.
 
-### Create a virtual hub (VPN gateway)
+### Create a virtual hub with a VPN gateway
 The next step is to create a virtual hub with a site-to-site virtual private network (VPN) gateway. To do so, create a virtual hub:
 1.	Within the new vWAN, under **Connectivity**, select **Hubs**.
 1.	Select **+ New Hub**.
@@ -60,17 +61,13 @@ The next step is to create a virtual hub with a site-to-site virtual private net
 1.	Proceed to the **Site to site** tab and complete the following fields:
     - Select **Yes** to create a Site-to-site VPN.
     - **AS Number**: The AS Number field can't be edited.
-    - **Gateway scale units**: Select the Gateway scale units value from the dropdown. The scale unit lets you pick the aggregate throughput of the VPN gateway being created in the virtual hub to connect sites to.
-
-    If you pick 1 scale unit = 500 Mbps, it implies that two instances for redundancy will be created, each having a maximum throughput of 500 Mbps. For example, if you had five branches, each doing 10 Mbps at the branch, you'll need an aggregate of 50 Mbps at the head end. Planning for aggregate capacity of the Azure VPN gateway should be done after assessing the capacity needed to support the number of branches to the hub.
-
-    - **Routing preference**: Azure routing preference lets you choose how your traffic routes between Azure and the internet. You can choose to route traffic either via the Microsoft network, or via the ISP network (public internet). These options are also referred to as cold potato routing and hot potato routing, respectively.
-
-    The public IP address in Virtual WAN is assigned by the service, based on the routing option selected. For more information about routing preference via Microsoft network or ISP, see the [Routing preference](/azure/virtual-network/ip-services/routing-preference-overview) article.
+    - **Gateway scale units**: Select the value to align with the aggregate throughput of the VPN gateway being created in the virtual hub.
+    - **Routing preference**: Choose how your traffic routes between Azure and the internet. For more information about routing preference via Microsoft network or ISP, see the [Routing preference](/azure/virtual-network/ip-services/routing-preference-overview) article.
 :::image type="content" source="media/how-to-create-remote-network-vwan/vwan-create-new-hub-site-to-site.png" alt-text="Screenshot of the Create virtual hub page, on the Site to site tab, with completed fields." lightbox="media/how-to-create-remote-network-vwan/vwan-create-new-hub-site-to-site-expanded.png"::: 
 
-1.	Leave the remaining tab options set to their defaults; select **Review + create** to validate.
-1.	Select **Create** to create the hub and gateway. *This can take up to 30 minutes*. After 30 minutes, **Refresh** to view the hub on the **Hubs** page. Select **Go to resource** to navigate to the resource.
+1.	Leave the remaining tab options set to their defaults and select **Review + create** to validate.
+1.	Select **Create** to create the hub and gateway. *This can take up to 30 minutes*. 
+1. After 30 minutes, **Refresh** to view the hub on the **Hubs** page, and then select **Go to resource** to navigate to the resource.
 
 When you create a new hub, you may notice a Warning message in the portal referring to the router version. This sometimes occurs when the router is provisioning. Once the router is fully provisioned, the message will no longer appear.
 
@@ -115,8 +112,7 @@ In this step, use the network information from the VPN gateway to create a remot
         - Enter a BGP IP address that isn't* part of your on-premises network where your CPE resides and is different from the **Local BGP address**.
     - **Bandwidth capacity (Mbps)**: Specify tunnel bandwidth. Available options are 250, 500, 750, and 1,000 Mbps.
 
-> [!TIP]
-> The details required to complete this tab can be complex, so this process is covered in detail in the [How to manage remote network device links](how-to-manage-remote-network-device-links.md).
+For more information about links, see the article, [How to manage remote network device links](how-to-manage-remote-network-device-links.md).
 
 1. Select the **Next** button to view the **Details** tab. Keep the default settings.
 1. Select the **Next** button to view the **Security** tab. 
