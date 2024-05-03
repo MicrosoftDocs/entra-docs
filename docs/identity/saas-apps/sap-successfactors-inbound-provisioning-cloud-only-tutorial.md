@@ -240,9 +240,9 @@ In this section, you'll configure how user data flows from SuccessFactors to Mic
       * **Default value** – Optional. If the source attribute has an empty value, the mapping will write this value instead.
             Most common configuration is to leave this blank.
 
-      * **Target attribute** – The user attribute in Mirosoft Microsoft Entra ID.
+      * **Target attribute** – The user attribute in Microsoft Entra ID.
 
-      * **Match objects using this attribute** – Whether or not this mapping should be used to uniquely identify users between SuccessFactors and Microsoft Entra ID. This value is typically set on the  Worker ID field for SuccessFactors, which is typically mapped to one of the Employee ID attributes in Mirosoft Microsoft Entra ID.
+      * **Match objects using this attribute** – Whether or not this mapping should be used to uniquely identify users between SuccessFactors and Microsoft Entra ID. This value is typically set on the  Worker ID field for SuccessFactors, which is typically mapped to one of the Employee ID attributes in Microsoft Entra ID.
 
       * **Matching precedence** – Multiple matching attributes can be set. When there are multiple, they are evaluated in the order defined by this field. As soon as a match is found, no further matching attributes are evaluated.
 
