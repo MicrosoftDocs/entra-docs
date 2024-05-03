@@ -385,19 +385,19 @@ items:
             - name: Add logic to attribute collection
               items:
                 - name: Create attribute collection start and submit events
-                  href: ~/identity-platform/custom-extension-attribute-collection.md?context=/entra/external-id/customers/context/customers-context
+                  href: ~/identity-platform/custom-extension-attribute-collection.md?context=/entra/external-id/context/external-id-context.json
                 - name: OnAttributeCollectionStart event reference
-                  href: ~/identity-platform/custom-extension-OnAttributeCollectionStart-reference.md?context=/entra/external-id/customers/context/customers-context
+                  href: ~/identity-platform/custom-extension-OnAttributeCollectionStart-reference.md?context=/entra/external-id/context/external-id-context.json
                 - name: OnAttributeCollectionSubmit event reference
-                  href: ~/identity-platform/custom-extension-OnAttributeCollectionSubmit-reference.md?context=/entra/external-id/customers/context/customers-context
+                  href: ~/identity-platform/custom-extension-OnAttributeCollectionSubmit-reference.md?context=/external-id/context/external-id-context.json
             - name: Add claims from external systems
               items:
                 - name: About custom authentication extensions
-                  href: ~/identity-platform/custom-extension-overview.md?context=/entra/external-id/customers/context/customers-context
+                  href: ~/identity-platform/custom-extension-overview.md?context=/entra/external-id/context/external-id-context.json
                 - name: Token issuance start event
-                  href: ~/identity-platform/custom-extension-get-started.md?context=/entra/external-id/customers/context/customers-context
+                  href: ~/identity-platform/custom-extension-get-started.md?context=/entra/external-id/context/external-id-context.json
                 - name: Troubleshoot your custom claims provider API
-                  href: ~/identity-platform/custom-extension-troubleshoot.md?context=/entra/external-id/customers/context/customers-context
+                  href: ~/identity-platform/custom-extension-troubleshoot.md?context=/entra/external-id/context/external-id-context.json
     - name: Secure
       items:
       - name: Multifactor authentication
