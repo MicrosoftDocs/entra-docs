@@ -15,7 +15,7 @@ items:
     - name: Use the Visual Studio Code extension
       href: visual-studio-code-extension.md
     - name: Enable built-in authentication
-      href: /azure/app-service/scenario-secure-app-authentication-app-service?tabs=external-configuration.md?context=/entra/external-id/customers/context/customers-context
+      href: /azure/app-service/scenario-secure-app-authentication-app-service?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
 - name: Samples
   expanded: false
   items: 
