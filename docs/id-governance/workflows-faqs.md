@@ -45,6 +45,12 @@ We currently don’t support the ability to create new tasks outside of the set 
 
 Make sure you have active custom security attributes in your tenant as deactivated custom security attributes won't appear in the list. You also need the [Attribute Assignment Administrator](../identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator) or [Attribute Assignment Reader](../identity/role-based-access-control/permissions-reference.md#attribute-assignment-reader) roles in order for custom security attributes to be visible.
 
+### What does it mean when it says “This rule contains invalid properties.” and there’s a red x icon on the rule expression for an existing workflow?
+
+The red icon indicates that this custom security attribute is no longer active, so the rule is invalid. As the rule is invalid, the workflow will not be processed. You should remove the deactivated custom security attribute expression from the workflow's rule.
+
+
+
 ## Next steps
 
 - [What are Lifecycle workflows?](what-are-lifecycle-workflows.md)
