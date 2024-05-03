@@ -1,18 +1,16 @@
 ---
 title: Convert external users to internal users (Preview)
 description: You can convert users from external to internal without the need to recreate them.
-services: active-directory 
 author: barclayn
 ms.author: barclayn
 manager: amycolannino
-ms.date: 03/11/2024
+ms.date: 04/29/2024
 ms.topic: how-to
-ms.service: active-directory
-ms.subservice: enterprise-users
+ms.service: entra-id
+ms.subservice: users
 ms.workload: identity
 ms.custom: 
 ms.reviewer: yuank
-
 ---
 
 # Convert external users to internal users (Preview)
@@ -22,11 +20,11 @@ Enterprises going through reorganizations, mergers, and acquisitions may be forc
 - **Internal users** are users who authenticate with the local tenant.
 - **External users** are users who authenticate via a method not managed by the host organization, such as another organization's Microsoft Entra ID, Google federation, or Microsoft account. Many external users have a ***userType*** of 'guest', but there's no formal relation between ***userType**** and how a user signs in. External users who have a ***userType*** of 'member', could also be eligible for conversion.
 
-External user conversion can be performed using MS Graph API or the Microsoft Entra ID Portal.
+External user conversion can be performed using Microsoft Graph API or the Microsoft Entra ID Portal.
 
 ## Converting external users
 
-It is important to note that a userType of member vs guest doesn't indicate where a user authenticates. Member vs guest only defines the level of permissions the user has in the current tenant. Customers can update the user type for their users, but that alone doesn't change the users' external vs internal state.
+It is important to note that a userType of member vs guest doesn't indicate where a user authenticates. Member vs guest only defines the level of permissions the user has in the current tenant. You can update the user type for your users, but that alone doesn't change the users' external vs internal state.
 
 ### Cloud user conversion
 
@@ -34,7 +32,7 @@ When a cloud user is converted from external to internal, administrators must sp
 
 ### Synced user conversion
 
-For on-premises synced users the administrator is unable to specify the UPN because on-premiss synced users are managed on-premises. 
+In this document, when we say 'Synced user', we mean users synced from on-premises. As these accounts are managed at the source, administrators are unable to specify the UPN for these users.
 
 - Synced users where the tenant uses federated authentication
   - If Password Hash Sync (PHS) is enabled, administrators are blocked from setting a new password during conversion. 
@@ -76,3 +74,4 @@ You can convert external users to internal using the Microsoft Entra admin cente
 ## Related content
 
 - [User management enhancements](users-search-enhanced.md)
+- [user: convertExternalToInternalMemberUser Microsoft Graph API](/graph/api/user-convertexternaltointernalmemberuser)

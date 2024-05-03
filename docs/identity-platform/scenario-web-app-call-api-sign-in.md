@@ -4,8 +4,7 @@ description: Learn how to remove an account from the token cache on sign-out
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.custom: 
-ms.date: 05/08/2023
+ms.date: 03/20/2024
 ms.reviewer: jmprieur
 ms.service: identity-platform
 

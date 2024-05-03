@@ -12,6 +12,7 @@ author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: sandeo
 ---
+
 # Microsoft Entra hybrid join targeted deployment
 
 You can validate your [planning and prerequisites](hybrid-join-plan.md) for hybrid Microsoft Entra joining devices using a targeted deployment before enabling it across the entire organization. This article explains how to accomplish a targeted deployment of Microsoft Entra hybrid join.
@@ -27,17 +28,19 @@ For devices running Windows 10, the minimum supported version is Windows 10 (ver
 
 To do a targeted deployment of Microsoft Entra hybrid join on Windows current devices, you need to:
 
-1. [Clear the Service Connection Point (SCP) entry from Active Directory (AD) if it exists.](#clear-the-scp-from-ad)
-1. [Configure client-side registry setting for SCP on your domain-joined computers using a Group Policy Object (GPO).](#configure-client-side-registry-setting-for-scp)
-1. If you're using Active Directory Federation Services (AD FS), you must also [configure the client-side registry setting for SCP on your AD FS server using a GPO.](#configure-ad-fs-settings)
+1. [Clear the Service Connection Point (SCP) entry from Windows Server Active Directory if it exists](#clear-the-scp-from-ad).
+1. [Configure client-side registry setting for SCP on your domain-joined computers using a Group Policy Object (GPO)](#configure-client-side-registry-setting-for-scp).
+1. If you're using Active Directory Federation Services (AD FS), you must also [configure the client-side registry setting for SCP on your AD FS server using a GPO](#configure-ad-fs-settings).
 1. You might need to [customize synchronization options](~/identity/hybrid/connect/how-to-connect-post-installation.md#additional-tasks-available-in-azure-ad-connect) in Microsoft Entra Connect to enable device synchronization.
 
 > [!TIP]
 > The SCP might be configured locally in the registry of the device in certain situations. If the device finds a value in the registry it uses that configuration, otherwise it queries the directory for the SCP and attempts to hybrid join.
 
-### Clear the SCP from AD
+<a name='clear-the-scp-from-ad'></a>
 
-Use the Active Directory Services Interfaces Editor (ADSI Edit) to modify the SCP objects in AD.
+### Clear the SCP from Microsoft Windows Server Active Directory
+
+Use the Active Directory Services Interfaces Editor (ADSI Edit) to modify the SCP objects in Microsoft Windows Server Active Directory.
 
 1. Launch the **ADSI Edit** desktop application from and administrative workstation or a domain controller as an Enterprise Administrator.
 1. Connect to the **Configuration Naming Context** of your domain.
@@ -49,7 +52,7 @@ Use the Active Directory Services Interfaces Editor (ADSI Edit) to modify the SC
 
 ### Configure client-side registry setting for SCP
 
-Use the following example to create a Group Policy Object (GPO) to deploy a registry setting configuring an SCP entry in the registry of your devices. 
+Use the following example to create a Group Policy Object (GPO) to deploy a registry setting configuring an SCP entry in the registry of your devices.
 
 1. Open a Group Policy Management console and create a new Group Policy Object in your domain.
    1. Provide your newly created GPO a name (for example, ClientSideSCP).
@@ -61,7 +64,7 @@ Use the following example to create a Group Policy Object (GPO) to deploy a regi
       1. Key Path: **SOFTWARE\Microsoft\Windows\CurrentVersion\CDJ\AAD**.
       1. Value name: **TenantId**.
       1. Value type: **REG_SZ**.
-      1. Value data: The GUID or **Tenant ID** of your Microsoft Entra tenant, which can be found in **Identity** > **Overview** > **Properties** > **Tenant ID**.
+      1. Value data: The globally unique identifier (GUID) or **Tenant ID** of your Microsoft Entra tenant, which can be found in **Identity** > **Overview** > **Properties** > **Tenant ID**.
    1. Select **OK**.
 1. Right-click on the Registry and select **New** > **Registry Item**.
    1. On the **General** tab, configure the following.
@@ -73,7 +76,7 @@ Use the following example to create a Group Policy Object (GPO) to deploy a regi
       1. Value data: Your verified **domain name** if you're using federated environment such as AD FS. Your verified **domain name** or your onmicrosoft.com domain name, for example `contoso.onmicrosoft.com` if you're using managed environment.
    1. Select **OK**.
 1. Close the editor for the newly created GPO.
-1. Link the newly created GPO to the correct OU containing domain-joined computers that belong to your controlled rollout population.
+1. Link the newly created GPO to the correct organizational unit (OU) containing domain-joined computers that belong to your controlled rollout population.
 
 ### Configure AD FS settings
 
@@ -86,14 +89,14 @@ If your Microsoft Entra ID is federated with AD FS, you first need to configure 
 
 To register Windows down-level devices, organizations must install [Microsoft Workplace Join for non-Windows 10 computers](https://www.microsoft.com/download/details.aspx?id=53554) available on the Microsoft Download Center.
 
-You can deploy the package by using a software distribution system like [Microsoft Configuration Manager](/mem/configmgr/). The package supports the standard silent installation options with the quiet parameter. The current branch of Configuration Manager offers benefits over earlier versions, like the ability to track completed registrations.
+You can deploy the package by using a software distribution system like [Microsoft Configuration Manager](/mem/configmgr/). The package supports the standard silent installation options with the quiet parameter. The current branch of Configuration Manager offers benefits over earlier versions, like the ability to track completed registrations.
 
 The installer creates a scheduled task on the system that runs in the user context. The task is triggered when the user signs in to Windows. The task silently joins the device with Microsoft Entra ID with the user credentials after authenticating with Microsoft Entra ID.
 
 To control the device registration, you should deploy the Windows Installer package to your selected group of Windows down-level devices.
 
 > [!NOTE]
-> If a SCP is not configured in AD, then you should follow the same approach as described to [Configure client-side registry setting for SCP](#configure-client-side-registry-setting-for-scp)) on your domain-joined computers using a Group Policy Object (GPO).
+> If a SCP is not configured in Microsoft Windows Server Active Directory, then you should follow the same approach as described to [Configure client-side registry setting for SCP](#configure-client-side-registry-setting-for-scp)) on your domain-joined computers using a Group Policy Object (GPO).
 
 ## Why a device might be in a pending state
 

@@ -1,6 +1,6 @@
 ---
 title: User risk-based password change
-description: Create Conditional Access policies using Identity Protection user risk
+description: Create Conditional Access policies using Microsoft Entra ID Protection user risk
 
 ms.service: entra-id
 ms.subservice: conditional-access
@@ -16,7 +16,7 @@ ms.reviewer: calebb, lhuangnorth
 
 Microsoft works with researchers, law enforcement, various security teams at Microsoft, and other trusted sources to find leaked username and password pairs. Organizations with Microsoft Entra ID P2 licenses can create Conditional Access policies incorporating [Microsoft Entra ID Protection user risk detections](~/id-protection/concept-identity-protection-risks.md). 
 
-There are two locations where this policy may be configured, Conditional Access and Identity Protection. Configuration using a Conditional Access policy is the preferred method providing more context including enhanced diagnostic data, report-only mode integration, Graph API support, and the ability to utilize other Conditional Access attributes like sign-in frequency in the policy.
+There are two locations where this policy may be configured, Conditional Access and Microsoft Entra ID Protection. Configuration using a Conditional Access policy is the preferred method providing more context including enhanced diagnostic data, report-only mode integration, Graph API support, and the ability to utilize other Conditional Access attributes like sign-in frequency in the policy.
 
 ## Template deployment
 

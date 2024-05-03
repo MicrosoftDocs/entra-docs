@@ -47,7 +47,7 @@ If you're configuring inbound user provisioning to on-premises Active Directory,
      [![Screenshot of create app.](media/inbound-provisioning-api-configure-app/provisioning-create-inbound-provisioning-app.png)](media/inbound-provisioning-api-configure-app/provisioning-create-inbound-provisioning-app.png#lightbox)
 
      > [!NOTE]
-     > If you plan to ingest data from multiple sources, each with their own sync rules, you can create multiple apps and give each app a descriptive name; for example, Provision-Employees-From-CSV-to-AD or Provision-Contractors-From-SQL-to-AD.
+     > If you plan to ingest data from multiple sources, each with their own sync rules, you can create multiple apps and give each app a descriptive name, such as `Provision-Employees-From-CSV-to-AD` or `Provision-Contractors-From-SQL-to-AD`.
 6. Once the application creation is successful, go to the Provisioning blade and click on **Get started**.
      [![Screenshot of Get started button.](media/inbound-provisioning-api-configure-app/provisioning-overview-get-started.png)](media/inbound-provisioning-api-configure-app/provisioning-overview-get-started.png#lightbox)
 7. Switch the Provisioning Mode from Manual to **Automatic**.

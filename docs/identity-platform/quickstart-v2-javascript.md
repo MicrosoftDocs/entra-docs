@@ -5,7 +5,7 @@ author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
 ms.custom: scenarios:getting-started, languages:JavaScript, devx-track-js, mode-api
-ms.date: 04/11/2019
+ms.date: 04/09/2024
 ms.service: identity-platform
 
 ms.topic: quickstart
@@ -189,7 +189,7 @@ The quickstart code also shows how to initialize the MSAL library:
   // Config object to be passed to Msal on creation
   const msalConfig = {
     auth: {
-      clientId: "75d84e7a-40bx-f0a2-91b9-0c82d4c556aa", // this is a fake id
+      clientId: "00001111-aaaa-2222-bbbb-3333cccc4444", // this is a fake id
       authority: "https://login.microsoftonline.com/common",
       redirectUri: "http://localhost:3000/",
     },
@@ -297,4 +297,4 @@ myMSALObj.acquireTokenPopup(requestObj)
 For a more detailed step-by-step guide on building the application for this quickstart, see:
 
 > [!div class="nextstepaction"]
-> [Tutorial: Sign in users and call the Microsoft Graph API from a JavaScript single-page application (SPA)](tutorial-v2-javascript-spa.md)
+> [Tutorial: Sign in users and call Microsoft Graph](./tutorial-v2-javascript-auth-code.md)

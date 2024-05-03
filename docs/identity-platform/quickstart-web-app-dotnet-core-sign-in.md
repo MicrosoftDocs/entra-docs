@@ -1,10 +1,10 @@
 ---
-title: "Quickstart: Sign in users and call the Microsoft Graph API from an ASP.NET Core web app"
+title: "Quickstart: Sign in to a web app & call an API - ASP.NET Core"
 description: Learn how an ASP.NET Core web app uses Microsoft.Identity.Web to implement Microsoft sign-in using OpenID Connect and call Microsoft Graph
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.custom: "devx-track-csharp,  scenarios:getting-started, languages:aspnet-core, has-azure-ad-ps-ref, azure-ad-ref-level-one-done"
+ms.custom: "devx-track-csharp,  scenarios:getting-started, languages:aspnet-core"
 ms.date: 01/18/2024
 ms.reviewer: jmprieur
 ms.service: identity-platform

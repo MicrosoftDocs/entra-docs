@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to
 
-ms.date: 06/21/2023
+ms.date: 03/19/2024
 ms.author: jomondi
 ms.reviewer: sureshja
 zone_pivot_groups: enterprise-apps-all
@@ -21,7 +21,7 @@ ms.custom: enterprise-apps, has-azure-ad-ps-ref
 
 In this article, you learn how to delete an enterprise application that was added to your Microsoft Entra tenant.
 
-When you delete and enterprise application, it's held in a suspended state in the recycle bin for 30 days. During the 30 days, you can [Restore the application](restore-application.md). Deleted items are automatically hard deleted after the 30-day period. For more information on frequently asked questions about deletion and recovery of applications, see [Deleting and recovering applications FAQs](delete-recover-faq.yml).
+When you delete and enterprise application, it remains in a suspended state in the recycle bin for 30 days. During the 30 days, you can [Restore the application](restore-application.md). Deleted items are automatically hard deleted after the 30-day period. For more information on frequently asked questions about deletion and recovery of applications, see [Deleting and recovering applications FAQs](delete-recover-faq.yml).
 
 ## Prerequisites
 
@@ -51,8 +51,7 @@ To delete an enterprise application, you need:
 
 ## Delete an enterprise application using Azure AD PowerShell
 
-> [!IMPORTANT]
-> Make sure you're using the Azure AD PowerShell module. This is important if you've installed both the [Azure AD PowerShell module](/powershell/module/azuread/?preserve-view=true&view=azureadps-2.0) and the AzureADPreview module.
+Make sure you're using the Azure AD PowerShell module. This is important if you've installed both the [Azure AD PowerShell module](/powershell/module/azuread/?preserve-view=true&view=azureadps-2.0) and the AzureADPreview module.
 
 1. Run the following commands:
 
@@ -89,7 +88,7 @@ To delete an enterprise application, you need:
 1. Connect to Microsoft Graph PowerShell and sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator):
 
    ```powershell
-   Connect-MgGraph -Scopes 'Application.Read.All'
+   Connect-MgGraph -Scopes 'Application.ReadWrite.All'
    ```
 
 1. Get the list of enterprise applications in your tenant.

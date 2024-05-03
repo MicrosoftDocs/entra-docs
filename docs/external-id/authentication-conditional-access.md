@@ -6,7 +6,7 @@ description: Learn how to enforce multifactor authentication policies for Micros
 ms.service: entra-external-id
 ms.custom: has-azure-ad-ps-ref
 ms.topic: concept-article
-ms.date: 02/05/2024
+ms.date: 04/30/2024
 
 ms.author: mimart
 author: msmimart
@@ -19,7 +19,7 @@ ms.collection: M365-identity-device-management
 # Authentication and Conditional Access for External ID
 
 > [!TIP]
-> This article applies to B2B collaboration and B2B direct connect. If your tenant is configured for customer identity and access management, see [Security and governance in Microsoft Entra ID for customers](customers/concept-security-customers.md).
+> This article applies to B2B collaboration and B2B direct connect. If your tenant is configured for customer identity and access management, see [Security and governance in Microsoft Entra External ID](customers/concept-security-customers.md).
 
 When an external user accesses resources in your organization, the authentication flow is determined by the collaboration method (B2B collaboration or B2B direct connect), user's identity provider (an external Microsoft Entra tenant, social identity provider, etc.), Conditional Access policies, and the [cross-tenant access settings](cross-tenant-access-overview.md) configured both in the user's home tenant and the tenant hosting resources.
 
@@ -97,7 +97,7 @@ When configuring a Conditional Access policy, you have granular control over the
 
 Learn more about [Conditional Access user assignments](~/identity/conditional-access/concept-conditional-access-users-groups.md).
 
-### Comparing External Identities Conditional Access policies
+### Comparing External ID Conditional Access policies
 
 The following table gives a detailed comparison of the security policy and compliance options in Microsoft Entra External ID. Security policy and compliance are managed by the host/inviting organization under Conditional Access policies.
 
@@ -105,8 +105,8 @@ The following table gives a detailed comparison of the security policy and compl
 | :------------ | :-------------- | :----- |
 |**Grant controls—Block access**   |   Supported       |   Supported      |
 |**Grant controls - Require multifactor authentication**     |  Supported        |   Supported, requires configuring your [inbound trust settings](cross-tenant-access-settings-b2b-direct-connect.md#to-change-inbound-trust-settings-for-mfa-and-device-state) to accept MFA claims from the external organization       |
-|**Grant controls - Require compliant device**     | Supported, requires configuring your [inbound trust settings](cross-tenant-access-settings-b2b-collaboration.md#to-change-inbound-trust-settings-for-mfa-and-device-claims) to accept compliant device claims from the external organization.      | Supported, requires configuring your [inbound trust settings](cross-tenant-access-settings-b2b-direct-connect.md#to-change-inbound-trust-settings-for-mfa-and-device-state) to accept compliant device claims from the external organization.         |
-|**Grant controls - Require Microsoft Entra hybrid joined device**   |  Supported, requires configuring your [inbound trust settings](cross-tenant-access-settings-b2b-collaboration.md#to-change-inbound-trust-settings-for-mfa-and-device-claims) to accept Microsoft Entra hybrid joined device claims from the external organization  |   Supported, requires configuring your [inbound trust settings](cross-tenant-access-settings-b2b-direct-connect.md#to-change-inbound-trust-settings-for-mfa-and-device-state) to accept Microsoft Entra hybrid joined device claims from the external organization       |
+|**Grant controls - Require compliant device**     | Supported, requires configuring your [inbound trust settings](cross-tenant-access-settings-b2b-collaboration.yml#to-change-inbound-trust-settings-for-mfa-and-device-claims) to accept compliant device claims from the external organization.      | Supported, requires configuring your [inbound trust settings](cross-tenant-access-settings-b2b-direct-connect.md#to-change-inbound-trust-settings-for-mfa-and-device-state) to accept compliant device claims from the external organization.         |
+|**Grant controls - Require Microsoft Entra hybrid joined device**   |  Supported, requires configuring your [inbound trust settings](cross-tenant-access-settings-b2b-collaboration.yml#to-change-inbound-trust-settings-for-mfa-and-device-claims) to accept Microsoft Entra hybrid joined device claims from the external organization  |   Supported, requires configuring your [inbound trust settings](cross-tenant-access-settings-b2b-direct-connect.md#to-change-inbound-trust-settings-for-mfa-and-device-state) to accept Microsoft Entra hybrid joined device claims from the external organization       |
 |**Grant controls - Require approved client app**    | Not supported         |   Not supported       |
 |**Grant controls - Require app protection policy**     |  Not supported        |  Not supported        |
 |**Grant controls - Require password change**     |  Not supported        |    Not supported      |
@@ -130,7 +130,7 @@ If MFA trust isn't enabled, the user experience is different for B2B collaborati
 
 - **B2B direct connect users**: If the resource organization doesn't enable MFA trust with the user's home tenant, the user is blocked from accessing resources. If you want to allow B2B direct connect with an external organization and your Conditional Access policies require MFA, you *must* configure your inbound trust settings to accept MFA claims from the organization.
 
-Learn more about how to [configure inbound trust settings for MFA](cross-tenant-access-settings-b2b-collaboration.md#to-change-inbound-trust-settings-for-mfa-and-device-claims).
+Learn more about how to [configure inbound trust settings for MFA](cross-tenant-access-settings-b2b-collaboration.yml#to-change-inbound-trust-settings-for-mfa-and-device-claims).
 
 ### MFA for non-Azure AD external users
 
@@ -154,6 +154,8 @@ Fabrikam must have sufficient premium Microsoft Entra ID licenses that support M
 #### Microsoft Entra multifactor authentication reset (proof up) for B2B collaboration users
 
 The following PowerShell cmdlets are available to *proof up* or request MFA registration from B2B collaboration users.
+
+[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
 
 1. Connect to Microsoft Entra ID:
 
@@ -197,7 +199,7 @@ You can use one of these built-in strengths or create a custom authentication st
 > [!NOTE]
 > Currently, you can only apply authentication strength policies to external users who authenticate with Microsoft Entra ID. For email one-time passcode, SAML/WS-Fed, and Google federation users, use the MFA grant control to require MFA.
 
-When you apply an authentication strength policy to external Microsoft Entra users, the policy works together with [MFA trust settings](cross-tenant-access-settings-b2b-collaboration.md#to-change-inbound-trust-settings-for-mfa-and-device-claims) in your cross-tenant access settings to determine where and how the external user must perform MFA. A Microsoft Entra user first authenticates using their own account in their home Microsoft Entra tenant. Then when this user tries to access your resource, Microsoft Entra ID applies the authentication strength Conditional Access policy and checks to see if you enabled MFA trust.
+When you apply an authentication strength policy to external Microsoft Entra users, the policy works together with [MFA trust settings](cross-tenant-access-settings-b2b-collaboration.yml#to-change-inbound-trust-settings-for-mfa-and-device-claims) in your cross-tenant access settings to determine where and how the external user must perform MFA. A Microsoft Entra user first authenticates using their own account in their home Microsoft Entra tenant. Then when this user tries to access your resource, Microsoft Entra ID applies the authentication strength Conditional Access policy and checks to see if you enabled MFA trust.
 
 In external user scenarios, the authentication methods that are acceptable for fulfilling authentication strength vary, depending on whether the user is completing MFA in their home tenant or the resource tenant. The following table indicates the acceptable methods in each tenant. If a resource tenant opts to trust claims from external Microsoft Entra organizations, only those claims listed in the “Home tenant” column are accepted by the resource tenant for MFA fulfillment. If the resource tenant disabled MFA trust, the external user must complete MFA in the resource tenant using one of the methods listed in the “Resource tenant” column.
 
@@ -208,7 +210,7 @@ In external user scenarios, the authentication methods that are acceptable for f
 |SMS as second factor                         | &#x2705;        | &#x2705; |
 |Voice call                                   | &#x2705;        | &#x2705; |
 |Microsoft Authenticator push notification    | &#x2705;        | &#x2705; |
-|Microsoft Authenticator phone sign-in        | &#x2705;        | &#x2705; |
+|Microsoft Authenticator phone sign-in        | &#x2705;        |          |
 |OATH software token                          | &#x2705;        | &#x2705; |
 |OATH hardware token                          | &#x2705;        |          |
 |FIDO2 security key                           | &#x2705;        |          |
@@ -221,7 +223,7 @@ To configure a Conditional Access policy that applies authentication strength re
 
 #### User experience for external Microsoft Entra users
 
-Authentication strength policies work together with [MFA trust settings](cross-tenant-access-settings-b2b-collaboration.md#to-change-inbound-trust-settings-for-mfa-and-device-claims) in your cross-tenant access settings to determine where and how the external user must perform MFA.  
+Authentication strength policies work together with [MFA trust settings](cross-tenant-access-settings-b2b-collaboration.yml#to-change-inbound-trust-settings-for-mfa-and-device-claims) in your cross-tenant access settings to determine where and how the external user must perform MFA.  
 
 First, a Microsoft Entra user authenticates with their own account in their home tenant. Then when this user tries to access your resource, Microsoft Entra ID applies the authentication strength Conditional Access policy and checks to see if you've enabled MFA trust.
 

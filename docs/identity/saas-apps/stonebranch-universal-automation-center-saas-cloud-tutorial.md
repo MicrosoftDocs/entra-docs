@@ -5,13 +5,15 @@ services: active-directory
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: CelesteDG
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 ms.workload: identity
 ms.topic: how-to
 ms.date: 02/27/2024
 ms.author: jeedes
 
+
+# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Stonebranch Universal Automation Center (SaaS Cloud) so that I can control who has access to Stonebranch Universal Automation Center (SaaS Cloud), enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
 # Microsoft Entra SSO integration with Stonebranch Universal Automation Center (SaaS Cloud)

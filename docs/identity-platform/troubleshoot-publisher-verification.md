@@ -5,7 +5,7 @@ author: rwike77
 manager: CelesteDG
 ms.author: ryanwi
 ms.custom: 
-ms.date: 08/17/2023
+ms.date: 04/10/2024
 ms.reviewer:
 ms.service: identity-platform
 
@@ -66,7 +66,7 @@ Here are examples of some useful requests:
 Request
 
 ```
-POST /applications/0cd04273-0d11-4e62-9eb3-5c3971a7cbec/setVerifiedPublisher 
+POST /applications/00001111-aaaa-2222-bbbb-3333cccc4444/setVerifiedPublisher 
 
 { 
 
@@ -86,7 +86,7 @@ Response
 
 Request:  
 ```
-POST /applications/0cd04273-0d11-4e62-9eb3-5c3971a7cbec/unsetVerifiedPublisher 
+POST /applications/00001111-aaaa-2222-bbbb-3333cccc4444/unsetVerifiedPublisher 
 ```
  
 Response 
@@ -96,12 +96,12 @@ Response
 ### Get Verified Publisher info from Application 
  
 ```
-GET https://graph.microsoft.com/v1.0/applications/0cd04273-0d11-4e62-9eb3-5c3971a7cbec 
+GET https://graph.microsoft.com/v1.0/applications/00001111-aaaa-2222-bbbb-3333cccc4444 
 
 HTTP/1.1 200 OK 
 
 { 
-    "id": "0cd04273-0d11-4e62-9eb3-5c3971a7cbec", 
+    "id": "00001111-aaaa-2222-bbbb-3333cccc4444", 
 
     ... 
 
@@ -115,12 +115,12 @@ HTTP/1.1 200 OK
 
 ### Get Verified Publisher info from Service Principal 
 ```
-GET https://graph.microsoft.com/v1.0/servicePrincipals/010422a7-4d77-4f40-9335-b81ef5c23dd4 
+GET https://graph.microsoft.com/v1.0/servicePrincipals/11112222-bbbb-3333-cccc-4444dddd5555
 
 HTTP/1.1 200 OK 
 
 { 
-    "id": "010422a7-4d77-4f40-9335-b81ef5c22dd4", 
+    "id": "11112222-bbbb-3333-cccc-4444dddd5555", 
 
     ... 
 
@@ -247,7 +247,7 @@ Follow the directions [here](./howto-configure-publisher-domain.md) to set a Pub
 
 The target application's Publisher Domain (`publisherDomain`) either doesn't match the domain used to perform email verification in Partner Center (`pcDomain`) or has not been verified. Ensure these domains match and have been verified then try again. 
     
-Occurs when neither the app's [Publisher Domain](howto-configure-publisher-domain.md) nor one of the [custom domains](~/fundamentals/add-custom-domain.md) added to the Microsoft Entra tenant match the domain used to perform email verification in Partner Center or has not been verified.
+Occurs when neither the app's [Publisher Domain](howto-configure-publisher-domain.md) nor one of the [custom domains](~/fundamentals/add-custom-domain.yml) added to the Microsoft Entra tenant match the domain used to perform email verification in Partner Center or has not been verified.
 
 See [requirements](publisher-verification-overview.md) for a list of allowed domain or sub-domain matches. 
 

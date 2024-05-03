@@ -12,7 +12,7 @@ ms.subservice: customers
 ms.topic: tutorial
 ms.date: 07/27/2023
 ms.custom: developer, devx-track-js
-#Customer intent: As a dev, devops, I want to learn about how to enable authentication in my own Node.js web app with Microsoft Entra ID for customers tenant
+#Customer intent: As a dev, devops, I want to learn about how to enable authentication in my own Node.js web app with an external tenant
 ---
 
 # Tutorial: Add add sign-in and sign-out in your Node.js web application
@@ -78,7 +78,7 @@ In your *authConfig.js* file, replace:
 
 - `Enter_the_Application_Id_Here` with the Application (client) ID of the app you registered earlier.
 
-- `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
+- `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
  
 - `Enter_the_Client_Secret_Here` with the app secret value you copied earlier.
 

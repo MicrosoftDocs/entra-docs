@@ -91,7 +91,7 @@ You can block access to tenants (blocklist). Set the default policy to **Allow**
 
 To control external organizations users access, configure outbound access policies similarly to inbound access: allowlist and blocklist. Configure default and organization-specific policies.
 
-Learn more: [Configure cross-tenant access settings for B2B collaboration](~/external-id/cross-tenant-access-settings-b2b-collaboration.md)
+Learn more: [Configure cross-tenant access settings for B2B collaboration](~/external-id/cross-tenant-access-settings-b2b-collaboration.yml)
 
 > [!NOTE]
 > Cross-tenant access settings apply to Microsoft Entra tenants. To control access for partners not using Microsoft Entra ID, use external collaboration settings.

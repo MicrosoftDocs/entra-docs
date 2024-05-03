@@ -13,12 +13,10 @@ ms.topic: tutorial
 
 # Tutorial: Create and configure an ASP.NET Core project for authentication
 
-After registration is complete, a ASP.NET Core project can be created using an integrated development environment (IDE). This tutorial demonstrates how to create an ASP.NET Core project using an IDE and configure for authentication and authorization.
-
-In this tutorial:
+In this tutorial, you learn how to create an ASP.NET Core project using an IDE and configure it for authentication and authorization. This tutorial is the second part of a series that demonstrates how to secure a web API using the Microsoft identity platform. In the [previous article](web-api-tutorial-01-register-app.md), you registered an application in your Microsoft Entra ID tenant. In this article, you;
 
 > [!div class="checklist"]
-> * Create an **ASP.NET Core Empty**
+> * Create an **ASP.NET Core Empty** project in your IDE
 > * Configure the settings for the application
 > * Identify and install the required NuGet packages
 
@@ -63,7 +61,7 @@ Use the following tabs to create an ASP.NET Core project within an IDE.
 1. Under **Web and Console** in the left navigation bar, select **App**.
 1. Under **ASP.NET Core**, select **API** and ensure **C#** is selected in the drop down menu, then select **Continue**.
 1. Accept the default for the **Target Framework** and **Advanced**, then select **Continue**.
-1. Enter a name for the **Project name**, this will be reflected in **Solution Name**. Provide a similar name to the one registered on the Azure portal, such as *NewAPI1*.
+1. Enter a name for the **Project name**, this will be reflected in **Solution Name**. Provide a similar name to the one registered on the Microsoft Entra admin center, such as *NewAPI1*.
 1. Accept the default location for the project or choose a different location, and then select **Create**.
 
 >[!NOTE]

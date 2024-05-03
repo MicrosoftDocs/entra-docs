@@ -4,10 +4,6 @@
   items:
   - name: What is Conditional Access?
     href: overview.md
-- name: Quickstarts
-  items:
-  - name: Require terms of use to be accepted
-    href: require-tou.md
 - name: Tutorials
   items:
   - name: Require multifactor authentication
@@ -97,7 +93,7 @@
     - name: Block access for unknown or unsupported device platform
       href: howto-policy-unknown-unsupported-device.md
     - name: Require approved app or app protection policy
-      href: howto-policy-approved-app-or-app-protection.md
+      href: howto-policy-approved-app-or-app-protection.yml
     - name: Require app protection policy for Windows
       href: how-to-app-protection-policy-windows.md
     - name: No persistent browser session
@@ -109,11 +105,13 @@
     - name: Require MFA for Intune enrollment
       href: /mem/intune/enrollment/multi-factor-authentication?context=/entra/identity/conditional-access/context/conditional-access-context.json
     - name: Block access by location
-      href: howto-conditional-access-policy-location.md
+      href: howto-conditional-access-policy-location.yml
     - name: Block access
       href: howto-conditional-access-policy-block-access.md
     - name: Require authentication strength for external users
       href: howto-conditional-access-policy-authentication-strength-external.md
+    - name: Require terms of use to be accepted
+      href: require-tou.md
   - name: Microsoft-managed policies
     href: managed-policies.md
   - name: Configure authentication flows
@@ -138,8 +136,6 @@
       href: howto-continuous-access-evaluation-troubleshoot.md
   - name: Approved client app migration
     href: migrate-approved-client-app.md
-  - name: Conditional Access APIs
-    href: howto-conditional-access-apis.md
 - name: Reference
   items:
   - name: Office 365 application

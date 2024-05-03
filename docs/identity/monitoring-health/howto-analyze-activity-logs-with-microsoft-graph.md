@@ -46,7 +46,7 @@ With all the prerequisites configured, you can run activity log queries in Micro
     - GET `https://graph.microsoft.com/v1.0/auditLogs/signIns`
     - GET `https://graph.microsoft.com/v1.0/auditLogs/provisioning`
 
-    ![Screenshot of an activity log GET query in Microsoft Graph.](media/howto-configure-prerequisites-for-reporting-api/graph-sample-get-query.png)
+    ![Screenshot of an activity log GET query in Microsoft Graph.](media/howto-analyze-activity-logs-with-microsoft-graph/graph-sample-get-query.png)
 
 ### Fine-tune your queries
 

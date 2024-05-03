@@ -37,39 +37,39 @@ A Service SAS provides the ability to grant limited access to objects in a stora
 - You also need a Windows Virtual machine that has system assigned managed identities enabled.
   - If you need to create  a virtual machine for this tutorial, you can follow the article titled [Create a virtual machine with system-assigned identity enabled](./qs-configure-portal-windows-vm.md#system-assigned-managed-identity)
 
-[!INCLUDE [updated-for-az.md](~/../azure-docs-pr/includes/updated-for-az.md)]
+[!INCLUDE [updated-for-az.md](~/includes/azure-docs-pr/updated-for-az.md)]
 
 ## Create a storage account 
 
 If you don't already have one, you will now create a storage account. You can also skip this step and grant your VM's system-assigned managed identity access to the SAS credential of an existing storage account. 
 
-1. Click the **+/Create new service** button found on the upper left-hand corner of the Azure portal.
-2. Click **Storage**, then **Storage Account**, and a new "Create storage account" panel will display.
-3. Enter a name for the storage account, which you will use later.  
+1. Select the **+/Create new service** button found on the upper left-hand corner of the Azure portal.
+2. Select **Storage**, then **Storage Account**, and a new "Create storage account" panel will display.
+3. Enter a name for the storage account, which you are using for this tutorial.  
 4. **Deployment model** and **Account kind** should be set to "Resource Manager" and "General purpose", respectively. 
 5. Ensure the **Subscription** and **Resource Group** match the ones you specified when you created your VM in the previous step.
-6. Click **Create**.
+6. Select **Create**.
 
-    ![Create new storage account](./media/msi-tutorial-linux-vm-access-storage/msi-storage-create.png)
+    :::image type="content" source="./media/msi-tutorial-linux-vm-access-storage/msi-storage-create.png" alt-text="Screenshot showing how to create new storage account.":::
 
 ## Create a blob container in the storage account
 
 Later we will upload and download a file to the new storage account. Because files require blob storage, we need to create a blob container in which to store the file.
 
 1. Navigate back to your newly created storage account.
-2. Click the **Containers** link in the left panel, under "Blob service."
-3. Click **+ Container** on the top of the page, and a "New container" panel slides out.
-4. Give the container a name, select an access level, then click **OK**. The name you specified will be used later in the tutorial. 
+2. Select the **Containers** link in the left panel, under "Blob service."
+3. Select **+ Container** on the top of the page, and a "New container" panel slides out.
+4. Give the container a name, select an access level, then Select **OK**. The name you specified will be used later in the tutorial. 
 
-    ![Create storage container](./media/msi-tutorial-linux-vm-access-storage/create-blob-container.png)
+    :::image type="content" source="./media/msi-tutorial-linux-vm-access-storage/create-blob-container.png" alt-text="Screenshot showing how to create a storage container.":::
 
 ## Grant your VM's system-assigned managed identity access to use a storage SAS 
 
-Azure Storage does not natively support Microsoft Entra authentication.  However, you can use a managed identity to retrieve a storage SAS from Resource Manager, then use the SAS to access storage.  In this step, you grant your VM's system-assigned managed identity access to your storage account SAS.   
+Azure Storage doesn't natively support Microsoft Entra authentication.  However, you can use a managed identity to retrieve a storage SAS from Resource Manager, then use the SAS to access storage.  In this step, you grant your VM's system-assigned managed identity access to your storage account SAS.   
 
 1. Navigate back to your newly created storage account.   
-1. Click **Access control (IAM)**.
-1. Click **Add** > **Add role assignment** to open the Add role assignment page.
+1. Select **Access control (IAM)**.
+1. Select **Add** > **Add role assignment** to open the Add role assignment page.
 1. Assign the following role. For detailed steps, see [Assign Azure roles using the Azure portal](/azure/role-based-access-control/role-assignments-portal).
     
     | Setting | Value |
@@ -79,15 +79,15 @@ Azure Storage does not natively support Microsoft Entra authentication.  However
     | System-assigned | Virtual Machine |
     | Select | &lt;your Windows virtual machine&gt; |
 
-    ![Screenshot that shows the page for adding a role assignment.](../../media/common/add-role-assignment-page.png)
+    :::image type="content" source="../../media/common/add-role-assignment-page.png" alt-text="Screenshot that shows the page for adding a role assignment.":::
 
 ## Get an access token using the VM's identity and use it to call Azure Resource Manager 
 
-For the remainder of the tutorial, we will work from your VM.
+For the remainder of the tutorial, we'll work from your VM.
 
-You will need to use the Azure Resource Manager PowerShell cmdlets in this portion.  If you don’t have it installed, [download the latest version](/powershell/azure/) before continuing.
+You'll need to use the Azure Resource Manager PowerShell cmdlets in this portion.  If you don’t have it installed, [download the latest version](/powershell/azure/) before continuing.
 
-1. In the Azure portal, navigate to **Virtual Machines**, go to your Windows virtual machine, then from the **Overview** page click **Connect** at the top.
+1. In the Azure portal, navigate to **Virtual Machines**, go to your Windows virtual machine, then from the **Overview** page Select **Connect** at the top.
 2. Enter in your **Username** and **Password** for which you added when you created the Windows VM. 
 3. Now that you have created a **Remote Desktop Connection** with the virtual machine.
 4. Open PowerShell in the remote session and use Invoke-WebRequest to get an Azure Resource Manager token from the local managed identity for Azure resources endpoint.
@@ -114,7 +114,7 @@ You will need to use the Azure Resource Manager PowerShell cmdlets in this porti
 
 Now use PowerShell to call Resource Manager using the access token we retrieved in the previous section, to create a storage SAS credential. Once we have the SAS credential, we can call storage operations.
 
-For this request we'll use the follow HTTP request parameters to create the SAS credential:
+For this request we use the following HTTP request parameters to create the SAS credential:
 
 ```JSON
 {
@@ -148,7 +148,7 @@ $sasContent = $sasResponse.Content | ConvertFrom-Json
 $sasCred = $sasContent.serviceSasToken
 ```
 
-If you inspect the SAS cred you'll see something like this:
+If you inspect the SAS cred you see something like this:
 
 ```powershell
 PS C:\> $sasCred

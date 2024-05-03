@@ -53,7 +53,7 @@ To enable the system-assigned managed identity on a virtual machine scale set th
 
 3. Under **System assigned**, **Status**, select **On** and then click **Save**:
 
-   ![Screenshot shows "Identity (preview)" page with "System assigned" selected, the Status "On", and the "Save" button highlighted.](./media/msi-qs-configure-portal-windows-vmss/create-windows-vmss-portal-configuration-blade.png) 
+   ![Screenshot shows "Identity (preview)" page with "System assigned" selected, the Status "On", and the "Save" button highlighted.](./media/msi-qs-configure-portal-windows-vmss/create-windows-vmss-portal-configuration-blade.png)  
 
 ### Remove system-assigned managed identity from a virtual machine scale set
 
@@ -65,7 +65,7 @@ If you have a virtual machine scale set that no longer needs a system-assigned m
 
 3. Under **System assigned**, **Status**, select **Off** and then click **Save**:
 
-   ![Configuration page screenshot](./media/msi-qs-configure-portal-windows-vmss/disable-windows-vmss-portal-configuration-blade.png)
+   :::image type="content" source="./media/msi-qs-configure-portal-windows-vmss/disable-windows-vmss-portal-configuration-blade.png" alt-text="Screenshot showign the configuration page.":::
 
 ## User-assigned managed identity
 
@@ -82,18 +82,18 @@ Currently, the Azure portal does not support assigning a user-assigned managed i
 1. Sign in to the [Azure portal](https://portal.azure.com) using an account associated with the Azure subscription that contains the virtual machine scale set.
 2. Navigate to the desired virtual machine scale set and click **Identity**, **User assigned** and then **\+Add**.
 
-   ![Screenshot that shows the "Identity" page with "User assigned" selected and the "Add" button highlighted.](./media/msi-qs-configure-portal-windows-vm/add-user-assigned-identity-vmss-screenshot1.png)
+      ![Add user-assigned identity to VMSS](./media/msi-qs-configure-portal-windows-vm/add-user-assigned-identity-vm-screenshot2.png)
 
 3. Click the user-assigned identity you want to add to the virtual machine scale set and then click **Add**.
    
-   ![Add user-assigned identity to VMSS](./media/msi-qs-configure-portal-windows-vm/add-user-assigned-identity-vm-screenshot2.png)
+   :::image type="content" source="./media/msi-qs-configure-portal-windows-vm/add-user-assigned-identity-vm-screenshot2.png" alt-text="Screenshot showing how to add a user-assigned identity to VMSS.":::
 
 ### Remove a user-assigned managed identity from a virtual machine scale set
 
 1. Sign in to the [Azure portal](https://portal.azure.com) using an account associated with the Azure subscription that contains the VM.
 2. Navigate to the desired virtual machine scale set and click **Identity**, **User assigned**, the name of the user-assigned managed identity you want to delete and then click **Remove** (click **Yes** in the confirmation pane).
 
-   ![Remove user-assigned identity from a VMSS](./media/msi-qs-configure-portal-windows-vm/remove-user-assigned-identity-vmss-screenshot.png)
+   :::image type="content" source="./media/msi-qs-configure-portal-windows-vm/remove-user-assigned-identity-vmss-screenshot.png" alt-text="A screenshot showing how to remove user-assigned identity from a VMSS.":::
 
 
 ## Next steps

@@ -8,7 +8,7 @@ author: jricketts
 ms.author: jricketts
 manager: martinco
 ms.reviewer: martinco
-ms.date: 01/25/2024
+ms.date: 03/19/2024
 ms.custom: it-pro
 ---
 
@@ -83,7 +83,7 @@ Learn more on [Microsoft Azure platform is HITRUST CSF certified](https://azure.
 
 ## Access control categories and recommendations
 
-The following table has the access control category for identity and access management (IAM), and Microsoft Entra recommendations to help meet the control category requirements. Details are from the HITRUST [MyCSF v11](https://hitrustalliance.net/product-tool/mycsf/), which refers to the HIPAA security rule, added to the corresponding control.   
+The following table has the access control category for identity and access management (IAM), and Microsoft Entra recommendations to help meet the control category requirements. Details are from the HITRUST [MyCSF v11](https://hitrustalliance.net/mycsf), which refers to the HIPAA security rule, added to the corresponding control.   
 
 | HITRUST control, objective, and HSR | Microsoft Entra guidance and recommendation |
 | - | - |

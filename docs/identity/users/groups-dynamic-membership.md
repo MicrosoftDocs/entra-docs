@@ -453,7 +453,7 @@ The following device attributes can be used.
 These articles provide additional information on groups in Microsoft Entra ID.
 
 - [See existing groups](~/fundamentals/groups-view-azure-portal.md)
-- [Create a new group and adding members](~/fundamentals/how-to-manage-groups.md)
-- [Manage settings of a group](~/fundamentals/how-to-manage-groups.md)
-- [Manage memberships of a group](~/fundamentals/how-to-manage-groups.md)
+- [Create a new group and adding members](~/fundamentals/how-to-manage-groups.yml)
+- [Manage settings of a group](~/fundamentals/how-to-manage-groups.yml)
+- [Manage memberships of a group](~/fundamentals/how-to-manage-groups.yml)
 - [Manage dynamic rules for users in a group](groups-create-rule.md)

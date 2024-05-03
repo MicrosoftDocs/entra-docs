@@ -1,6 +1,6 @@
 ---
-title: How to configure Global Secure Access (preview) Web content filtering
-description: Learn how to configure Web content filtering in Microsoft Entra Internet Access (preview).
+title: How to configure Global Secure Access (preview) web content filtering
+description: Learn how to configure web content filtering in Microsoft Entra Internet Access (preview).
 author: kenwith    
 ms.author: kenwith
 manager: amycolannino
@@ -11,11 +11,11 @@ ms.subservice: entra-internet-access
 ms.reviewer: frankgomulka
 ---
 
-# How to configure Global Secure Access (preview) Web content filtering
+# How to configure Global Secure Access (preview) web content filtering
 
 Web content filtering empowers you to implement granular Internet access controls for your organization based on website categorization.
 
-Microsoft Entra Internet Access's first Secure Web Gateway (SWG) features include Web content filtering based on domain names. Microsoft integrates granular filtering policies with Microsoft Entra ID and Microsoft Entra Conditional Access, which results in filtering policies that are user-aware, context-aware, and easy to manage. 
+Microsoft Entra Internet Access's first Secure Web Gateway (SWG) features include web content filtering based on domain names. Microsoft integrates granular filtering policies with Microsoft Entra ID and Microsoft Entra Conditional Access, which results in filtering policies that are user-aware, context-aware, and easy to manage. 
 
 The web filtering feature is currently limited to user- and context-aware Fully Qualified Domain Name (FQDN)-based web category filtering and FQDN filtering.
 
@@ -29,14 +29,14 @@ The web filtering feature is currently limited to user- and context-aware Fully 
 - You must disable Domain Name System (DNS) over HTTPS (Secure DNS) to tunnel network traffic. Use the rules of the fully qualified domain names (FQDNs) in the traffic forwarding profile. For more information, see [Configure the DNS client to support DoH](/windows-server/networking/dns/doh-client-support#configure-the-dns-client-to-support-doh).
 - Disable built-in DNS client on Chrome and Microsoft Edge.
 - User Datagram Protocol (UDP) traffic isn't supported in the current preview. If you plan to tunnel Exchange Online traffic, disable the QUIC protocol (443 UDP). For more information, see [Block QUIC when tunneling Exchange Online traffic](how-to-install-windows-client.md#block-quic-when-tunneling-exchange-online-traffic).
-- Review Web content filtering concepts. For more information, see [Web content filtering](concept-internet-access.md).
+- Review web content filtering concepts. For more information, see [web content filtering](concept-internet-access.md).
 
 ## High level steps
 
 There are several steps to configuring web content filtering. Take note of where you need to configure a Conditional Access policy.
 
 1. [Enable internet traffic forwarding.](#enable-internet-traffic-forwarding)
-1. [Create a Web content filtering policy.](#create-a-web-content-filtering-policy)
+1. [Create a web content filtering policy.](#create-a-web-content-filtering-policy)
 1. [Create a security profile.](#create-a-security-profile)
 1. [Link the security profile to a Conditional Access policy.](#create-and-link-conditional-access-policy)
 
@@ -48,9 +48,9 @@ To enable the Microsoft Entra Internet Access forwarding profile to forward user
 1. Browse to **Global Secure Access** > **Connect** > **Traffic forwarding**.
 1. Enable the **Internet access profile**. Internet traffic starts forwarding from all client devices to Microsoft's Security Service Edge (SSE) proxy, where you configure granular security policies.
 
-## Create a Web content filtering policy
+## Create a web content filtering policy
 
-1. Browse to **Global Secure Access** > **Secure** > **Web content filtering policy**.
+1. Browse to **Global Secure Access** > **Secure** > **web content filtering policy**.
 1. Select **Create policy**.
 1. Enter a name and description for the policy and select **Next**.
 1. Select **Add rule**.
@@ -71,7 +71,7 @@ In this step, you create a security profile to group filtering policies. Then yo
 1. Select **Create profile**.
 1. Enter a name and description for the policy and select **Next**.
 1. Select **Link a policy** and then select **Existing policy**.
-1. Select the Web content filtering policy you already created and select **Add**.
+1. Select the web content filtering policy you already created and select **Add**.
 1. Select **Next** to review the security profile and associated policy.
 1. Select **Create a profile**.
 1. Select **Refresh** to refresh the profiles page and view the new profile.

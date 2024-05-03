@@ -49,7 +49,7 @@ If you don’t have an Azure subscription, create a [free account](https://azure
 To complete the scenario in this tutorial, you need:
 
 - **Access to Microsoft Entra ID P1 or P2 edition**, which includes Conditional Access policy capabilities. To enforce MFA, you need to create a Microsoft Entra Conditional Access policy. MFA policies are always enforced at your organization, regardless of whether the partner has MFA capabilities.
-- **A valid external email account** that you can add to your tenant directory as a guest user and use to sign in. If you don't know how to create a guest account, see [Add a B2B guest user in the Microsoft Entra admin center](add-users-administrator.md).
+- **A valid external email account** that you can add to your tenant directory as a guest user and use to sign in. If you don't know how to create a guest account, see [Add a B2B guest user in the Microsoft Entra admin center](add-users-administrator.yml).
 
 <a name='create-a-test-guest-user-in-azure-ad'></a>
 
@@ -153,4 +153,4 @@ When no longer needed, remove the test user and the test Conditional Access poli
 
 ## Next steps
 
-In this tutorial, you’ve created a Conditional Access policy that requires guest users to use MFA when signing in to one of your cloud apps. To learn more about adding guest users for collaboration, see [Add Microsoft Entra B2B collaboration users in the Azure portal](add-users-administrator.md).
+In this tutorial, you’ve created a Conditional Access policy that requires guest users to use MFA when signing in to one of your cloud apps. To learn more about adding guest users for collaboration, see [Add Microsoft Entra B2B collaboration users in the Azure portal](add-users-administrator.yml).

@@ -5,7 +5,7 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: scenarios:getting-started, has-adal-ref
-ms.date: 02/09/2024
+ms.date: 03/20/2024
 ms.reviewer: jmprieur
 ms.service: identity-platform
 

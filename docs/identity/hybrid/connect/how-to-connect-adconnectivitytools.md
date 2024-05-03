@@ -33,7 +33,7 @@ On the **Connect your directories** page, in the Microsoft Entra Connect Wizard,
 - Both UDP 389 and a TCP port (or ports) are closed
 - DNS couldn't be resolved for the provided Forest and\or its associated Domain Controllers
 
-Whenever any of these issues are found, a related error message is displayed in the AADConnect Wizard:
+Whenever any of these issues are found, a related error message is displayed in the Microsoft Entra Connect Wizard:
 
 
 ![Error](media/how-to-connect-adconnectivitytools/error1.png)

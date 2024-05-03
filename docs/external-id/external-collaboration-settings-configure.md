@@ -24,11 +24,11 @@ External collaboration settings let you specify what roles in your organization 
 
 - **Specify who can invite guests**: By default, all users in your organization, including B2B collaboration guest users, can invite external users to B2B collaboration. If you want to limit the ability to send invitations, you can turn invitations on or off for everyone, or limit invitations to certain roles.
 
-- **Enable guest self-service sign-up via user flows**: For applications you build, you can create user flows that allow a user to sign up for an app and create a new guest account. You can enable the feature in your external collaboration settings, and then [add a self-service sign-up user flow to your app](self-service-sign-up-user-flow.md).
+- **Enable guest self-service sign-up via user flows**: For applications you build, you can create user flows that allow a user to sign up for an app and create a new guest account. You can enable the feature in your external collaboration settings, and then [add a self-service sign-up user flow to your app](self-service-sign-up-user-flow.yml).
 
 - **Allow or block domains**: You can use collaboration restrictions to allow or deny invitations to the domains you specify. For details, see [Allow or block domains](allow-deny-list.md).
 
-For B2B collaboration with other Microsoft Entra organizations, you should also review your [cross-tenant access settings](cross-tenant-access-settings-b2b-collaboration.md) to ensure your inbound and outbound B2B collaboration and scope access to specific users, groups, and applications.
+For B2B collaboration with other Microsoft Entra organizations, you should also review your [cross-tenant access settings](cross-tenant-access-settings-b2b-collaboration.yml) to ensure your inbound and outbound B2B collaboration and scope access to specific users, groups, and applications.
 
 For B2B collaboration end-users who perform cross-tenant sign-ins, their home tenant branding appears, even if there isn't custom branding specified. In the following example, the company branding for Woodgrove Groceries appears on the left. The example on the right displays the default branding for the user's home tenant.
 
@@ -61,7 +61,7 @@ For B2B collaboration end-users who perform cross-tenant sign-ins, their home te
    - **Only users assigned to specific admin roles can invite guest users**: To allow only those users with administrator roles to invite guests, select this radio button. The administrator roles include [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator), [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator), and [Guest Inviter](~/identity/role-based-access-control/permissions-reference.md#guest-inviter).
    - **No one in the organization can invite guest users including admins (most restrictive)**: To deny everyone in the organization from inviting guests, select this radio button.
 
-1. Under **Enable guest self-service sign up via user flows**, select **Yes** if you want to be able to create user flows that let users sign up for apps. For more information about this setting, see [Add a self-service sign-up user flow to an app](self-service-sign-up-user-flow.md).
+1. Under **Enable guest self-service sign up via user flows**, select **Yes** if you want to be able to create user flows that let users sign up for apps. For more information about this setting, see [Add a self-service sign-up user flow to an app](self-service-sign-up-user-flow.yml).
 
     ![Screenshot showing Self-service sign up via user flows setting.](./media/external-collaboration-settings-configure/self-service-sign-up-setting.png)
 
@@ -71,7 +71,7 @@ For B2B collaboration end-users who perform cross-tenant sign-ins, their home te
    - **No**: Users can't leave your organization themselves. They see a message guiding them to contact your admin or privacy contact to request removal from your organization.
 
    > [!IMPORTANT]
-   > You can configure **External user leave settings** only if you have [added your privacy information](~/fundamentals/properties-area.md) to your Microsoft Entra tenant. Otherwise, this setting will be unavailable.
+   > You can configure **External user leave settings** only if you have [added your privacy information](~/fundamentals/properties-area.yml) to your Microsoft Entra tenant. Otherwise, this setting will be unavailable.
 
    ![Screenshot showing External user leave settings in the portal.](media/external-collaboration-settings-configure/external-user-leave-settings.png)
 
@@ -119,5 +119,5 @@ When a B2B user signs into a resource tenant to collaborate, a sign-in log is ge
 See the following articles on Microsoft Entra B2B collaboration:
 
 - [What is Microsoft Entra B2B collaboration?](what-is-b2b.md)
-- [Adding a B2B collaboration user to a role](./add-users-administrator.md)
+- [Adding a B2B collaboration user to a role](./add-users-administrator.yml)
 

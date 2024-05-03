@@ -10,6 +10,8 @@ ms.subservice: saas-apps
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: jeedes
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to GoToMeeting so that I can streamline the user management process and ensure that users have the appropriate access to GoToMeeting.
 ---
 # Tutorial: Configure GoToMeeting for automatic user provisioning
 

@@ -5,7 +5,7 @@ description: Conditional Access is the Zero Trust policy engine at the heart of 
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: overview
-ms.date: 11/09/2023
+ms.date: 03/19/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -102,7 +102,7 @@ Conditional Access policies on the **Policies** page can be filtered by administ
 
 Customers with [Microsoft 365 Business Premium licenses](/office365/servicedescriptions/office-365-service-descriptions-technet-library) also have access to Conditional Access features.
 
-Risk-based policies require access to [Identity Protection](~/id-protection/overview-identity-protection.md), which requires P2 licenses.
+Risk-based policies require access to [Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md), which requires P2 licenses.
 
 Other products and features that interact with Conditional Access policies require appropriate licensing for those products and features.
 
