@@ -14,6 +14,8 @@ items:
       href: quickstart-get-started-guide.md
     - name: Use the Visual Studio Code extension
       href: visual-studio-code-extension.md
+    - name: Enable built-in authentication
+      href: /azure/app-service/scenario-secure-app-authentication-app-service?tabs=external-configuration.md?context=/entra/external-id/customers/context/customers-context
 - name: Samples
   expanded: false
   items: 
