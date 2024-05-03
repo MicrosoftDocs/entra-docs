@@ -56,7 +56,7 @@ To enable self-service password reset, you need to enable the email one-time pas
    
    1. Browse to **Identity** > **Protection** > **Authentication methods**. 
 
-   1. Under **Policies** > **Method** select **Email OTP (preview)**.
+   1. Under **Policies** > **Method** select **Email OTP **.
    
       :::image type="content" source="media/how-to-enable-password-reset-customers/authentication-methods.png" alt-text="Screenshot that shows authentication methods.":::
    

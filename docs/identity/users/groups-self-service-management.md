@@ -21,7 +21,7 @@ You can enable users to create and manage their own security groups or Microsoft
 
 You can allow users to create security groups, which are used to manage access to shared resources. Users can create security groups in the Azure portal by using Azure Active Directory (Azure AD) PowerShell or from the [MyApps Groups Access Panel](https://account.activedirectory.windowsazure.com/r#/groups).  
 
-[!INCLUDE [Azure AD PowerShell migration](../../includes/aad-powershell-migration-include.md)]
+[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
 
 Only the group's owners can update membership, but you can provide group owners with the ability to approve or deny membership requests from the MyApps Groups Access Panel. Security groups created by self-service through the MyApps Groups Access Panel are available to join for all users, whether owner-approved or autoapproved. In the MyApps Groups Access Panel, you can change membership options when you create the group.
 
