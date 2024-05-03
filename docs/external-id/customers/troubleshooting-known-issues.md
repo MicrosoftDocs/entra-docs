@@ -24,7 +24,7 @@ This article describes known issues that you may experience when you use Microso
 
 During external tenant creation, the **Country/Region** dropdown menu lists countries and regions where  Microsoft Entra External ID isn't yet available. If you choose Japan or Australia, tenant creation fails.
 
-**Cause**: Public preview is currently available in the Americas and Europe, with more regions to follow shortly.
+**Cause**: External tenant creation is currently available in the Americas and Europe, with more regions to follow shortly. 
 
 **Workaround**: Select a different region and try again
 

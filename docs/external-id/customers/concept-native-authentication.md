@@ -20,7 +20,7 @@ The standard mobile app sign-in process, which relies on browser-delegated authe
 
 While browser-delegated authentication offers benefits such as reduced attack vectors and support for single sign-on (SSO), they have limited UI customization options and a poor user experience.
 
-[!INCLUDE [preview-alert](../customers/includes/preview-alert/preview-alert-ciam.md)]
+
 
 ## Available authentication methods
 

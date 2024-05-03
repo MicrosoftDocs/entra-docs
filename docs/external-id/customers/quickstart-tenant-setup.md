@@ -14,7 +14,7 @@ ms.custom: it-pro
 
 #Customer intent: As a dev, devops, or IT admin, I want to create a tenant with external configurations.
 ---
-# Quickstart: Create a tenant (preview)
+# Quickstart: Create a tenant 
 
 Microsoft Entra External ID offers a customer identity access management (CIAM) solution that lets you create secure, customized sign-in experiences for your apps and services. You'll need to create a tenant with external configurations in the Microsoft Entra admin center to get started. Once the tenant with external configurations is created, you can access it in both the Microsoft Entra admin center and the Azure portal.
 
@@ -25,7 +25,7 @@ In this quickstart, you'll learn how to create a tenant with external configurat
 - An Azure subscription. 
 - An Azure account that's been assigned at least the [Contributor](/azure/role-based-access-control/built-in-roles#contributor) role scoped to the subscription or to a resource group within the subscription.
 
-[!INCLUDE [preview-alert](../customers/includes/preview-alert/preview-alert-ciam.md)]
+
 
 ## Create a new tenant with external configurations 
 
