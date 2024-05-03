@@ -50,4 +50,4 @@ When you create your own web API in an external tenant (without using the app cr
 ## Related content
 
 See also [Supported features in Microsoft Entra External ID](concept-supported-features-customers.md).
-```
+
