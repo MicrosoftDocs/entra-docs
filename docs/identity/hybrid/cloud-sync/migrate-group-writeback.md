@@ -27,6 +27,8 @@ The following document describes how to migrate group writeback using Microsoft 
 >
 >Mail-enabled groups and DLs written back using Microsoft Entra Connect group writeback V1 or V2 aren't supported.
 
+For more information, see the [Provisioning to Active Directory with Microsoft Entra Cloud Sync FAQ](reference-provision-to-active-directory-faq.yml).
+
 ## Prerequisites
 The following prerequisites are required to implement this scenario.
 
@@ -194,3 +196,5 @@ Now that you have successfully removed the groups from the scope of Microsoft En
 - [Provision groups to Active Directory using Microsoft Entra Cloud Sync](how-to-configure-entra-to-active-directory.md)
 
 - [Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance](govern-on-premises-groups.md)
+- [Provisioning to Active Directory with Microsoft Entra Cloud Sync FAQ](reference-provision-to-active-directory-faq.yml)
+
