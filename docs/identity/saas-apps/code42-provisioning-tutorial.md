@@ -37,7 +37,7 @@ This tutorial describes the steps you need to perform in both Code42 and Microso
 The scenario outlined in this tutorial assumes that you already have the following prerequisites:
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md)
-* A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (for example, Application Administrator, Cloud Application administrator, Application Owner, or Global Administrator).
+* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
 * A Code42 tenant with Identity Management enabled.
 * A Code42 user account with [Customer Cloud Admin](https://support.code42.com/hc/en-us/articles/14827655905943-Roles-reference#Customer_Cloud_Admin) permission.
 

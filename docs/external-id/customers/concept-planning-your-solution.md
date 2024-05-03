@@ -14,11 +14,11 @@ ms.custom: it-pro
 
 ---
 
-# Planning for customer identity and access management (preview)
+# Planning for customer identity and access management 
 
 Microsoft Entra External ID is a customizable, extensible solution for adding customer identity and access management (CIAM) to your app. Because it's built on the Microsoft Entra platform, you benefit from consistency in app integration, tenant management, and operations across your workforce and customer scenarios. When designing your configuration, it's important to understand the components of an external tenant and the Microsoft Entra features that are available for your customer scenarios.
 
-[!INCLUDE [preview-alert](../customers/includes/preview-alert/preview-alert-ciam.md)]
+
 
 This article provides a general framework for integrating your app and configuring Microsoft Entra External ID. It describes the capabilities available in an external tenant and outlines the important planning considerations for each step in your integration.
 
@@ -42,7 +42,7 @@ This article describes each of these steps and outlines important planning consi
 
 :::image type="content" source="media/concept-planning-your-solution/overview-setup-step-1.png" alt-text="Diagram showing step 1 in the setup flow.":::
 
-An external tenant is the first resource you need to create to get started with Microsoft Entra External ID. Your external tenant is where you register your customer-facing application. It also contains a directory where you manage customer identities and access, separate from your workforce tenant.
+An external tenant is the first resource you need to create to get started with Microsoft Entra External ID. Your external tenant is where you register your application. It also contains a directory where you manage customer identities and access, separate from your workforce tenant.
 
 When you create an external tenant, you can set your correct geographic location and your domain name. If you currently use Azure AD B2C, the new workforce and external tenant model doesn't affect your existing Azure AD B2C tenants.
 

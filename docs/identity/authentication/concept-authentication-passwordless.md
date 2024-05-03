@@ -103,61 +103,7 @@ The following process is used when a user signs in with a FIDO2 security key:
 8. Microsoft Entra ID verifies the signed nonce using the FIDO2 public key.
 9. Microsoft Entra ID returns PRT to enable access to on-premises resources.
 
-### FIDO2 security key providers
-
-The following providers offer FIDO2 security keys of different form factors that are known to be compatible with the passwordless experience. We encourage you to evaluate the security properties of these keys by contacting the vendor and the [FIDO Alliance](https://fidoalliance.org/).
-
-| Provider | Biometric | USB | NFC | BLE |
-|:-|:-:|:-:|:-:|:-:|
-| [AuthenTrend](https://authentrend.com/about-us/#pg-35-3) | ![y] | ![y]| ![y]| ![y]|
-| [ACS](https://www.acs.com.hk/) | ![n] | ![y]| ![y]| ![n]|
-| [ATOS](https://atos.net/en/solutions/cyber-security/iot-and-ot-security/smart-card-solution-cardos-for-iot) | ![n] | ![y]| ![y]| ![n]|
-| [Ciright](https://www.cyberonecard.com/) | ![n] | ![n]| ![y]| ![n]|
-| [Composecure](https://www.composecure.com/arculus) | ![n] | ![n]| ![y]| ![n]|
-| [Crayonic](https://www.crayonic.com/keyvault) | ![y] | ![n]| ![y]| ![y]|
-| [Cryptnox](https://cryptnox.com/) | ![n] | ![y]| ![y]| ![n]|
-| [Ensurity](https://www.ensurity.com) | ![y] | ![y]| ![n]| ![n]|
-| [Excelsecu](https://www.excelsecu.com/productdetail/esecufido2secu.html) | ![y] | ![y]| ![y]| ![y]|
-| [Feitian](https://shop.ftsafe.us/pages/microsoft) | ![y] | ![y]| ![y]| ![y]|
-| [Fortinet](https://www.fortinet.com/) | ![n] | ![y]| ![n]| ![n]|
-| [Giesecke + Devrient (G+D)](https://www.gi-de.com/en/identities/enterprise-security/hardware-based-authentication) | ![y] | ![y]| ![y]| ![y]|
-| [Google](https://store.google.com/us/product/titan_security_key) | ![n] | ![y]| ![y]| ![n]|
-| [GoTrustID Inc.](https://www.gotrustid.com/idem-key) | ![n] | ![y]| ![y]| ![y]|
-| [HID](https://www.hidglobal.com/products/crescendo-key) | ![n] | ![y]| ![y]| ![n]|
-| [HIDEEZ](https://hideez.com/products/hideez-key-4) | ![n] | ![y]| ![y]| ![y]|
-| [Hypersecu](https://www.hypersecu.com/hyperfido) | ![n] | ![y]| ![n]| ![n]|
-| [Hypr](https://www.hypr.com/true-passwordless-mfa) | ![y] | ![y]| ![n]| ![y]|
-| [Identiv](https://www.identiv.com/products/logical-access-control/utrust-fido2-security-keys/nfc) | ![n] | ![y]| ![y]| ![n]|
-| [IDmelon Technologies Inc.](https://www.idmelon.com/#idmelon) | ![y] | ![y]| ![y]| ![y]|
-| [Kensington](https://www.kensington.com/solutions/product-category/why-biometrics/) | ![y] | ![y]| ![n]| ![n]|
-| [KONA I](https://www.konai.com/main) | ![y] | ![n]| ![y]| ![y]|
-| [NeoWave](https://neowave.fr/en/products/fido-range/) | ![n] | ![y]| ![y]| ![n]|
-| [Nymi](https://www.nymi.com/nymi-band) | ![y] | ![n]| ![y]| ![n]|
-| [Octatco](https://octatco.com/) | ![y] | ![y]| ![n]| ![n]|
-| [OneSpan Inc.](https://www.onespan.com/products/fido) | ![n] | ![y]| ![n]| ![y]|
-| [PONE Biometrics](https://ponebiometrics.com/) | ![y] | ![n]| ![n]| ![y]|
-| [Precision Biometric](https://www.innait.com/product/fido/) | ![n] | ![y]| ![n]| ![n]|
-| [RSA](https://www.rsa.com/products/securid/) | ![n] | ![y]| ![n]| ![n]|
-| [Sentry](https://sentryenterprises.com/) | ![n] | ![n]| ![y]| ![n]|
-| [SmartDisplayer](https://www.smartdisplayer.com/fido) | ![y] | ![y]| ![y]| ![y]|
-| [Swissbit](https://www.swissbit.com/en/products/ishield-key/) | ![n] | ![y]| ![y]| ![n]|
-| [Thales Group](https://cpl.thalesgroup.com/access-management/authenticators/fido-devices) | ![y] | ![y]| ![y]| ![n]|
-| [Thetis](https://thetis.io/collections/fido2) | ![y] | ![y]| ![y]| ![y]|
-| [Token2 Switzerland](https://www.token2.swiss/shop/product/token2-t2f2-alu-fido2-u2f-and-totp-security-key) | ![y] | ![y]| ![y]| ![n]|
-| [Token Ring](https://www.tokenring.com/) | ![y] | ![n]| ![y]| ![n]|
-| [TrustKey Solutions](https://www.trustkeysolutions.com/en/sub/product.form) | ![y] | ![y]| ![n]| ![n]|
-| [VinCSS](https://passwordless.vincss.net) | ![n] | ![y]| ![n]| ![n]|
-| [WiSECURE Technologies](https://wisecure-tech.com/en-us/zero-trust/fido/authtron) | ![n] | ![y]| ![n]| ![n]|
-| [Yubico](https://www.yubico.com/solutions/passwordless/) | ![y] | ![y]| ![y]| ![n]|
-
-<!--Image references-->
-[y]: ./media/fido2-compatibility/yes.png
-[n]: ./media/fido2-compatibility/no.png
-
-> [!NOTE]
-> If you purchase and plan to use NFC-based security keys, you need a supported NFC reader for the security key. The NFC reader isn't an Azure requirement or limitation. Check with the vendor for your NFC-based security key for a list of supported NFC readers.
-
-If you're a vendor and want to get your device on this list of supported devices, check out our guidance on how to [become a Microsoft-compatible FIDO2 security key vendor](concept-fido2-hardware-vendor.md).
+For a list FIDO2 security key providers, see [Become a Microsoft-compatible FIDO2 security key vendor](concept-fido2-hardware-vendor.md).
 
 To get started with FIDO2 security keys, complete the following how-to:
 

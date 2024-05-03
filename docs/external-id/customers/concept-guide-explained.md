@@ -8,7 +8,7 @@ ms.service: entra-external-id
 
 ms.subservice: customers
 ms.topic: concept-article
-ms.date:  03/20/2023
+ms.date:  04/24/2024
 ms.author: cmulligan
 ms.custom: it-pro
 
@@ -42,11 +42,11 @@ If you register your app manually, you can also grant API permission if your app
 
 :::image type="content" source="media/concept-guide-explained/user-flow.png" alt-text="Flowchart that shows the user flow step in the guide.":::
 
-The get started guide automatically creates the user flow for you. A user flow defines the authentication methods a customer can use to sign in to your application and the information they need to provide during sign-up. You can configure the existing user flow or create a new one. If you want the same sign-in experience for all of your customer-facing apps, you can add multiple apps to the same user flow. However, only one sign-in experience is needed for an application, so you can add each application to just one user flow.
+The get started guide automatically creates the user flow for you. A user flow defines the authentication methods a customer can use to sign in to your application and the information they need to provide during sign-up. You can configure the existing user flow or create a new one. If you want the same sign-in experience for all of your apps, you can add multiple apps to the same user flow. However, only one sign-in experience is needed for an application, so you can add each application to just one user flow.
 
 You can find more information on how to create a user flow [here](how-to-user-flow-sign-up-sign-in-customers.md) and how to add an application to the user flow [here](how-to-user-flow-add-application.md). Once you have created the user flow, you can test your sign-up and sign-in experience with the [Run user flow feature](how-to-test-user-flows.md).
 
-If your customer-facing app requires more information than the built-in user attributes provide, you can add your own attributes. We refer to these attributes as custom user attributes. You can create custom user attributes manually and add them to your user flow. You can find more information on how to create custom attributes [here](how-to-define-custom-attributes.md#create-custom-user-attributes).
+If your app requires more information than the built-in user attributes provide, you can add your own attributes. We refer to these attributes as custom user attributes. You can create custom user attributes manually and add them to your user flow. You can find more information on how to create custom attributes [here](how-to-define-custom-attributes.md#create-custom-user-attributes).
 
 ## Branding
 

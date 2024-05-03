@@ -70,5 +70,5 @@ Service-specific roles | Azure DevOps Administrator<br>Azure Information Protect
 ## Next steps
 
 - [Overview of Microsoft Entra role-based access control](custom-overview.md)
-- [Create and assign a custom role in Microsoft Entra ID](custom-create.md)
+- [Create and assign a custom role in Microsoft Entra ID](custom-create.yml)
 - [List role assignments](view-assignments.md)

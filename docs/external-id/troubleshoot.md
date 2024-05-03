@@ -33,7 +33,7 @@ The organization hosting the Teams shared channel must enable the trust setting 
 
 ## An error similar to "Failure to update policy due to object limit" appears while configuring cross-tenant access settings
 
-As you configure [cross-tenant access settings](cross-tenant-access-settings-b2b-collaboration.md), if you receive an error that says “Failure to update policy due to object limit,” you've reached the policy object limit of 25 KB. We're working toward increasing this limit. If you need to be able to calculate how close the current policy is to this limit, do the following:
+As you configure [cross-tenant access settings](cross-tenant-access-settings-b2b-collaboration.yml), if you receive an error that says “Failure to update policy due to object limit,” you've reached the policy object limit of 25 KB. We're working toward increasing this limit. If you need to be able to calculate how close the current policy is to this limit, do the following:
 
 1. Open Microsoft Graph Explorer and run the following:  
 
@@ -55,7 +55,7 @@ if ($size -le $maxSize) { return “valid” }; else { return “invalid” }
 
 ## Users can no longer read email encrypted with Microsoft Rights Management Service (OME))
 
-As you configure [cross-tenant access settings](cross-tenant-access-settings-b2b-collaboration.md), if you block access to all apps by default, users will be unable to read emails encrypted with Microsoft Rights Management Service (also known as OME). To avoid this issue, we recommend configuring your outbound settings to allow your users to access this app ID: 00000012-0000-0000-c000-000000000000. If this is the only application you allow, access to all other apps will be blocked by default.
+As you configure [cross-tenant access settings](cross-tenant-access-settings-b2b-collaboration.yml), if you block access to all apps by default, users will be unable to read emails encrypted with Microsoft Rights Management Service (also known as OME). To avoid this issue, we recommend configuring your outbound settings to allow your users to access this app ID: 00000012-0000-0000-c000-000000000000. If this is the only application you allow, access to all other apps will be blocked by default.
 
 ## I’ve added an external user but don't see them in my Global Address Book or in the people picker
 
@@ -184,7 +184,7 @@ If you accidentally deleted the `aad-extensions-app`, you have 30 days to recove
 1. Run the PowerShell command `Get-MgDirectoryDeletedItem -DirectoryObjectId {id}`. As an example:
 
 ```powershell
-Get-MgDirectoryDeletedItem -DirectoryObjectId 'd4142c52-179b-4d31-b5b9-08940873507b'
+Get-MgDirectoryDeletedItem -DirectoryObjectId '00aa00aa-bb11-cc22-dd33-44ee44ee44ee'
 Id                                   DeletedDateTime
 --                                   ---------------
 d4142c52-179b-4d31-b5b9-08940873507b 8/30/2021 7:37:37 AM

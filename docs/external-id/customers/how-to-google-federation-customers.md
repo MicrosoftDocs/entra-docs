@@ -14,7 +14,7 @@ ms.custom: it-pro, has-azure-ad-ps-ref
 #Customer intent: As a dev, devops, or it admin, I want to
 ---
 
-# Add Google as an identity provider
+# Add Google as an identity provider (preview)
 
 By setting up federation with Google, you allow customers to sign in to your applications with their own Google accounts. After you add Google as one of your user flow's sign-in options, customers can sign up and sign in to your application with a Google account. (Learn more about [authentication methods and identity providers for customers](concept-authentication-methods-customers.md).)
 
@@ -83,14 +83,24 @@ After you create the Google application, in this step you set the Google client 
 
 To configure Google federation by using PowerShell, follow these steps:
 
-1. Install the latest version of the Azure AD PowerShell for Graph module ([AzureADPreview](https://www.powershellgallery.com/packages/AzureADPreview)).
-1. Run the following command: `Connect-AzureAD`
+1. Install the latest version of the [Microsoft Graph PowerShell for Graph module](/powershell/microsoftgraph/installation).
+1. Run the following command: `Connect-MgGraph`
 1. At the sign-in prompt, sign in with the managed Global Administrator account.
 1. Run the following command:
-    
-    `New-AzureADMSIdentityProvider -Type Google -Name Google -ClientId <client ID> -ClientSecret <client secret>`
 
-    Use the client ID and client secret from the app you created in [Create a Google application](#create-a-google-application) step.
+   ```powershell
+   Import-Module Microsoft.Graph.Identity.SignIns
+   $params = @{
+   "@odata.type" = "microsoft.graph.socialIdentityProvider"
+   displayName = "Login with Amazon"
+   identityProviderType = "Amazon"
+   clientId = "00001111-aaaa-2222-bbbb-3333cccc4444"
+   clientSecret = "000000000000"
+   }
+   New-MgIdentityProvider -BodyParameter $params
+   ```
+
+Use the client ID and client secret from the app you created in [Create a Google application](#create-a-google-application) step.
 
 
 ## Add Google identity provider to a user flow
