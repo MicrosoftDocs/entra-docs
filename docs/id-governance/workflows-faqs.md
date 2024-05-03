@@ -47,11 +47,16 @@ Make sure you have active custom security attributes in your tenant as deactivat
 
 ### What does it mean when it says “This rule contains invalid properties.” and there’s a red x icon on the rule expression for an existing workflow?
 
-The red icon indicates that this custom security attribute is no longer active, so the rule is invalid. As the rule is invalid, the workflow will not be processed. You should remove the deactivated custom security attribute expression from the workflow's rule.
+The red icon indicates that this custom security attribute is no longer active, so the rule is invalid. As the rule is invalid, the workflow won't be processed. You should remove the deactivated custom security attribute expression from the workflow's rule.
 
 ### My user is assigned a custom security attribute that’s part of the workflow trigger, why didn’t the workflow run for this user?
 
 Lifecycle workflows checks that the user is assigned the custom security attribute that matches the specified value, including case-sensitivity. So check that the custom security attribute value matches exactly.
+
+### How does Lifecycle workflows handle custom security attributes with multiple values?
+
+If a user is assigned a custom security attribute that has multiple values, and one of the values matches the value in the 
+specified in rule expressions, the user matches the scope.
 
 ## Next steps
 
