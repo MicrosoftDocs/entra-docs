@@ -22,10 +22,10 @@ Welcome to what's new in the Microsoft identity platform documentation. This art
 
 - [Quickstart: .NET console app that accesses a protected web API](quickstart-daemon-dotnet-acquire-token.md) - Quickstart daemon console update
 - [Quickstart: Sign in users and call Microsoft Graph from a Python Flask web app](quickstart-web-app-python-flask.md) - Build MSAL Python content - Sign in with Microsoft to a Python web app
-- [Tutorial: Register a Python web app with the Microsoft identity platform](tutorial-web-app-python-register-app.md) - Build MSAL Python content - Sign in with Microsoft to a Python web app
-- [Prepare a Python web app for authentication](tutorial-web-app-python-prepare-app.md) - Build MSAL Python content - Sign in with Microsoft to a Python web app
-- [Tutorial: Add sign in to a Python Flask web app](tutorial-web-app-python-sign-in-users.md) - Build MSAL Python content - Sign in with Microsoft to a Python web app
-- [Tutorial: Call a protected API and display the results](tutorial-web-app-python-call-api.md) - Build MSAL Python content - Sign in with Microsoft to a Python web app
+- [Tutorial: Register a Python web app with the Microsoft identity platform](tutorial-web-app-python-register-app.md) - Build MSAL Python content - Register an application
+- [Prepare a Python web app for authentication](tutorial-web-app-python-prepare-app.md) - Build MSAL Python content - Prepare Python web app
+- [Tutorial: Add sign in to a Python Flask web app](tutorial-web-app-python-sign-in-users.md) - Build MSAL Python content - Add sign in to the web app
+- [Tutorial: Call a protected API and display the results](tutorial-web-app-python-call-api.md) - Build MSAL Python content - Call a protected web API
 
 ### Updated articles
 
