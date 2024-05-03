@@ -23,7 +23,7 @@ This article provides an overview of the sponsor feature and explains how to use
 
 ## Sponsors field on the user object
 
-The **Sponsors** field on the user object refers to the person or group who manages and monitors the lifecycle of the user, ensuring they have access to the appropriate resources 
+The **Sponsors** field on the user object refers to the person or group who manages and monitors the lifecycle of the user, ensuring they have access to the appropriate resources. 
 Being a sponsor doesn't grant administrative powers for the sponsor user or the group, but it can be used for approval processes in Entitlement Management. You can also use it for custom solutions, but it doesn't provide any other built-in directory powers.
 
 :::image type="content" source="media/b2b-sponsors/single-sponsor.png" alt-text="Screenshot of the sponsors' name.":::
@@ -41,7 +41,7 @@ When a sponsor leaves the organization, as part of the offboarding process the t
 The Microsoft Entra B2B collaboration sponsor feature serves as a foundation for other scenarios that aim to provide a full governance lifecycle for external partners. These scenarios aren't part of the sponsor feature but rely on it for managing guest users:
 
 - Administrators can transfer sponsorship to another user or group, if the guest user starts working on a different project.
-- When requesting new access packages, sponsors can be added as approvers to provide additional support in Entitlement Management, which can help reduce the workload on existing reviewers.
+- When requesting new access packages, sponsors can be added as approvers to provide extra support in Entitlement Management, which can help reduce the workload on existing reviewers.
 
 ## Add sponsors when inviting a new guest user 
 
