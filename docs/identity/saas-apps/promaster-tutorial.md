@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 05/03/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and ProMaster (by Inlogik) so that I can control who has access to ProMaster (by Inlogik), enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -72,39 +72,27 @@ Follow these steps to enable Microsoft Entra SSO.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
 
-   ![Edit Basic SAML Configuration](common/edit-urls.png)
+   ![Screenshot shows to edit Basic SAML Configuration.](common/edit-urls.png)
 
 1. On the **Basic SAML Configuration** section, if you wish to configure the application in **IDP** initiated mode, perform the following steps:
 
-    a. In the **Identifier** text box, type a URL using one of the following patterns:
+    a. In the **Identifier** text box, type a URL using the following pattern:
+    `https://secure.inlogik.com/<COMPANYNAME>`
 
-    | **Identifier** |
-    |-------|
-    | `https://secure.inlogik.com/<COMPANYNAME>` |
-    | `https://<CUSTOMDOMAIN>/SAMLBASE` |
-
-    b. In the **Reply URL** text box, type a URL using one of the following patterns:
-
-    | **Reply URL** |
-    |-------|
-    | `https://secure.inlogik.com/<COMPANYNAME>/saml/acs` |
-    | `https://<CUSTOMDOMAIN>/SAMLBASE/saml/acs` |
+    b. In the **Reply URL** text box, type a URL using the following pattern:
+    `https://secure.inlogik.com/<COMPANYNAME>/saml/acs`
 
 5. Click **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
 
-    In the **Sign-on URL** text box, type a URL using one of the following patterns:
-
-    | **Sign-on URL** |
-    |-----|
-    | `https://secure.inlogik.com/<COMPANYNAME>` |
-    | `https://<CUSTOMDOMAIN>/SAMLBASE` |
+    In the **Sign-on URL** text box, type a URL using the following pattern:
+    `https://secure.inlogik.com/<COMPANYNAME>`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign-on URL. Contact [ExpenseMe Pro (by Inlogik) Client support team](https://www.inlogik.com/contact) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign-on URL. Contact [ExpenseMe Pro (by Inlogik) support team](https://www.inlogik.com/contact) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 6. On the **Set up Single Sign-On with SAML** page, In the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
 
-	![The Certificate download link](common/copy-metadataurl.png)
+	![Screenshot shows the Certificate download link.](common/copy-metadataurl.png "Certificate")
 
 <a name='create-an-azure-ad-test-user'></a>
 
