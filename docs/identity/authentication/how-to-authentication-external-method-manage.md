@@ -31,6 +31,9 @@ To create an EAM, you need the following information from your external authenti
 - A **Client ID** is an identifier from your provider used as part of the authentication integration to identify Microsoft Entra ID requesting authentication.  
 - A **Discovery URL** is the OpenID Connect (OIDC) discovery endpoint for the external authentication provider. 
  
+   >[!NOTE]
+   >Please refer to the following documentation to setup the App registration:
+   >[Configure a new external authentication provider with Microsoft Entra ID](concept-authentication-external-method-provider#configure-a-new-external-authentication-provider-with-microsoft-entra-id)
 
 ## Manage an EAM in the Microsoft Entra admin center
 
