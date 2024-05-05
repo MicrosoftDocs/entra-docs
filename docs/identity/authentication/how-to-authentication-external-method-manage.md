@@ -33,7 +33,7 @@ To create an EAM, you need the following information from your external authenti
  
    >[!NOTE]
    >Please refer to the following documentation to setup the App registration:
-   >[Configure a new external authentication provider with Microsoft Entra ID](concept-authentication-external-method-provider#configure-a-new-external-authentication-provider-with-microsoft-entra-id)
+   >[Configure a new external authentication provider with Microsoft Entra ID](concept-authentication-external-method-provider.md#configure-a-new-external-authentication-provider-with-microsoft-entra-id)
 
 ## Manage an EAM in the Microsoft Entra admin center
 
