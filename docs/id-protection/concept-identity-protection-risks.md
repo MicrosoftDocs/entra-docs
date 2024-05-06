@@ -5,7 +5,7 @@ description: Explaining risk detections in Microsoft Entra ID Protection
 ms.service: entra-id-protection
 
 ms.topic: conceptual
-ms.date: 05/02/2024
+ms.date: 05/06/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
