@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 05/06/2024
 ms.author: jeedes
 
 
@@ -31,6 +31,8 @@ To get started, you need the following items:
 * A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
 * Veza single sign-on (SSO) enabled subscription.
 * Along with Cloud Application Administrator, Application Administrator can also add or manage applications in Microsoft Entra ID. For more information, see [Azure built-in roles](~/identity/role-based-access-control/permissions-reference.md).
+* Your Veza **Veza Single sign-on URL (ACS)** and **Veza Audience URI (SP Entity ID)**. You can get these by logging in to Veza as an administrator. Go to **Administration** > **Sign-in Settings**, find the **Enable SAML** section and click **Configure**. Copy the values from the configuration wizard.
+* Your Veza **Single Logout URL** and **Veza Signing Certificate**, also shown on the configuration wizard. These are required to enable single log out (SLO).
 
 ## Scenario description
 
@@ -80,39 +82,22 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. On the **Basic SAML Configuration** section, perform the following steps:
 
-	a. In the **Identifier** text box, type a value using one of the following patterns:
+	a. In the **Identifier** text box,enter the Veza Audience URI (Entity ID), for example:
+     `https://<customer>.vezacloud.com/auth/saml/metadata`:
 
-    | **Identifier** |
-    |-------------|
-    `urn:auth0:<Cookie-auth0-instance-name>:saml-<customer-name>-cookie-connection` |
-    `urn:auth0:<Veza-auth0-instance-name>:saml-<customer-name>-cookie-connection` |
+    b. In the **Reply URL** text box, enter the Veza Single sign-on URL (ACS), for example:
+    `https://<customer>.vezacloud.com/auth/saml/acs`.
 
-    b. In the **Reply URL** text box, type a URL using one of the following patterns:
+    c. In the **Sign-on URL** text box, enter the URL where users log in to your Veza website, for example:
+    `https://<instancename>.veza.com/login`. This is required for **SP** initiated sign-on.
 
-    | **Reply URL** |
-    |---------|
-    | `https://<instancename>.veza.com` |
-    | `https://<instancename>.cookie.ai` |
-
-1. Click **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
-	
-    In the **Sign-on URL** text box, type a URL using one of the following patterns:
-
-    | **Sign-on URL** |
-    |-----------|
-    | `https://<instancename>.cookie.ai/login/callback?connection=saml-<customer-name>-cookie-connection` |
-    | `https://<instancename>.veza.com/ login/callback?connection=saml-<customer-name>-veza-connection` |
-
-    > [!NOTE]
-	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [Veza Client support team](mailto:support@veza.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
-
-1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
+1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 
     ![Screenshot shows the Certificate download link.](common/certificatebase64.png "Certificate")
 
-1. On the **Set up Veza** section, copy the appropriate URL(s) based on your requirement.
+1. On the **Set up Veza** section, copy the **Login URL**, **Microsoft Entra ID Identifier**, and **Logout URL**. You will use these to configure SAML on Veza.
 
-	![Screenshot shows to copy configuration appropriate URL.](common/copy-configuration-urls.png "Metadata")  
+	![Screenshot shows to copy configuration appropriate URL.](common/copy-configuration-urls.png "Metadata") 
 
 <a name='create-an-azure-ad-test-user'></a>
 
@@ -124,7 +109,7 @@ In this section, you'll create a test user called B.Simon.
 1. Browse to **Identity** > **Users** > **All users**.
 1. Select **New user** > **Create new user**, at the top of the screen.
 1. In the **User** properties, follow these steps:
-   1. In the **Display name** field, enter `B.Simon`.  
+   1. In the **Display name** field, enter `B.Simon`.
    1. In the **User principal name** field, enter the username@companydomain.extension. For example, `B.Simon@contoso.com`.
    1. Select the **Show password** check box, and then write down the value that's displayed in the **Password** box.
    1. Select **Review + create**.
@@ -148,7 +133,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 1. Log in to your Veza company site as an administrator.
 
-1. Go to **Administration** > **Sign-in Settings**, toggle **Enable MFA** button and choose to configure SSO.
+1. Go to **Administration** > **Sign-in Settings**. Under **Enable SAML**, click **configure** to set up SAML.
 
     ![Screenshot that shows the Configuration Settings.](./media/veza-tutorial/settings.png "Configuration")
 
@@ -160,11 +145,13 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
     b. Open the downloaded **Certificate (Base64)** and upload the file into the **X509 Signing Certificate** by clicking **Choose File** option.
 
-    c. In the **Sign Out Url** textbox, paste the **Logout URL** value, which you've copied.
+    c. Toggle **Enable Request Algorithm** and select RSA-SHA-256 and SHA-256 as the **Sign Request Algorithm**. For the **Request Protocol Binding**, use **HTTP-POST**.
 
-    d. Toggle **Enable Request Signing** button and select RSA-SHA-256 and SHA-256 as the **Sign Request Algorithm**.
+    d. To enable IdP-initiated login, toggle **Enable IDP initiated login**. In the **Issuer ID** field, paste the **Microsoft Entra Identifier** URL from Entra.
 
-    e. Click **Save** on the Veza SSO configuration and toggle the option to **Enable SSO**.
+    e. In the **Sign Out URL** textbox, paste the **Logout URL** value, copied from Entra.
+
+    f. Click **Save** on the Veza SSO configuration and toggle the option to **Enable SAML**.
 
 ### Create Veza test user
 
@@ -172,17 +159,17 @@ In this section, a user called B.Simon is created in Veza. Veza supports just-in
 
 ## Test SSO 
 
-In this section, you test your Microsoft Entra single sign-on configuration with following options. 
+In this section, you test your Microsoft Entra single sign-on configuration with following options.
 
 #### SP initiated:
 
-* Click on **Test this application**, this will redirect to Veza Sign-On URL where you can initiate the login flow.  
+* Click on **Test this application**, this will redirect to Veza Sign-On URL where you can initiate the login flow. 
 
 * Go to Veza Sign-On URL directly and initiate the login flow from there.
 
 #### IDP initiated:
 
-* Click on **Test this application**, and you should be automatically signed in to the Veza for which you set up the SSO. 
+* Click on **Test this application**, and you should be automatically signed in to the Veza tenant for which you enabled SSO.
 
 You can also use Microsoft My Apps to test the application in any mode. When you click the Veza tile in the My Apps, if configured in SP mode you would be redirected to the application Sign-On page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Veza for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
