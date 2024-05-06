@@ -6,7 +6,7 @@ description: Learn how to configure settings for Microsoft Entra multifactor aut
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 04/28/2024
+ms.date: 05/03/2024
 
 ms.author: justinha
 author: justinha
@@ -110,7 +110,7 @@ To enable **Report suspicious activity** from the Authentication methods **Setti
 1. Browse to **Protection** > **Authentication Methods** > **Settings**. 
 1. Set **Report suspicious activity** to **Enabled**. The feature remains disabled if you choose **Microsoft managed**. For more information about Microsoft managed values, see [Protecting authentication methods in Microsoft Entra ID](concept-authentication-default-enablement.md).
 1. Select **All users** or a specific group. 
-1. Select a **Reporting code**.
+1. If you also upload custom greetings for your tenant, select a **Reporting code**. The reporting code is the number that users enter into their phone to report suspicious activity. The reporting code is only applicable if custom greetings are also uploaded by an [Authentication Policy Administrator](/entra/identity/role-based-access-control/permissions-reference#authentication-policy-administrator). Otherwise, the default code is 0, regardless of any value specified in the policy.
 1. Click **Save**. 
 
 >[!NOTE]
