@@ -11,6 +11,7 @@ ms.author: owinfrey
 ms.reviewer: krbain
 ms.custom: template-tutorial
 ---
+
 # Lifecycle workflows - FAQs
 
 In this article, you find questions to commonly asked questions about [Lifecycle Workflows](what-are-lifecycle-workflows.md). Check back to this page frequently as changes happen often, and answers are continually being added.

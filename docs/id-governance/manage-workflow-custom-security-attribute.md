@@ -64,7 +64,7 @@ When you're using a custom security attribute to scope a workflow, you can view 
 1. On the version information page, under **Configure**, you should see the custom security attribute as the rule.
     :::image type="content" source="media/manage-workflow-custom-security-attribute/custom-attribute-scope.png" alt-text="Screenshot of custom security attribute as scope.":::
 > [!NOTE]
-> If you attempt to view the details of a workflow while not having the [Attribute Assignment Administrator](../identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator) or [Attribute Assignment Reader](../identity/role-based-access-control/permissions-reference.md#attribute-assignment-reader) roles set the custom security attribute details will be hidden.
+> If you attempt to view the details of a workflow while not having the [Attribute Assignment Administrator](../identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator) or [Attribute Assignment Reader](../identity/role-based-access-control/permissions-reference.md#attribute-assignment-reader) roles set the custom security attribute details will be hidden. For more information about this behavior, see: [Why can’t I see any custom security attributes in the Property list?](../id-governance/workflows-faqs.md#why-cant-i-see-any-custom-security-attributes-in-the-property-list).
 
 ## Next step
 
