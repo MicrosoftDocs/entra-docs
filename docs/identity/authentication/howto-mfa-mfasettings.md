@@ -314,7 +314,7 @@ The trusted IPs feature of Microsoft Entra multifactor authentication also bypas
 > [!NOTE]
 > The trusted IPs can include private IP ranges only when you use MFA Server. For cloud-based Microsoft Entra multifactor authentication, you can use only public IP address ranges.
 >
-> IPv6 ranges are supported only in the [Named locations](~/identity/conditional-access/location-condition.md) interface.
+> IPv6 ranges are supported in [named locations](../conditional-access/concept-assignment-network.md#ipv4-and-ipv6-address-ranges).
 
 If your organization uses the NPS extension to provide MFA to on-premises applications, the source IP address will always appear to be the NPS server that the authentication attempt flows through.
 

@@ -69,11 +69,7 @@ We don't support selecting macOS or Linux device platforms when selecting **Requ
 
 ## Locations
 
-When administrators configure location as a condition, they can choose to include or exclude locations. These named locations might include the public IPv4 or IPv6 network information, country/region, unknown areas that don't map to specific countries/regions, and [Global Secure Access' compliant network](/entra/global-secure-access/how-to-compliant-network).
-
-When including **any location**, this option includes any IP address on the internet not just configured named locations. When administrators select **any location**, they can choose to exclude **all trusted** or **selected locations**.
-
-Administrators can create policies that target specific locations along with other conditions. More information about locations can be found in the article [What is the location condition in Microsoft Entra Conditional Access](location-condition.md).
+[The locations condition moved.](concept-assignment-network.md)
 
 ## Client apps
 
