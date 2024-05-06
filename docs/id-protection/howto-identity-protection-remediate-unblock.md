@@ -18,7 +18,7 @@ After completing your [investigation](howto-identity-protection-investigate-risk
 
 ## Risk remediation
 
-All active risk detections contribute to the calculation of the user's risk level. The user risk level is an indicator (low, medium, high) of the probability that the user's account is compromised. After investigating risky users and the corresponding risky sign-ins and detections, you should remediate the risky users so that they're no longer at risk and blocked from access.
+All active risk detections contribute to the calculation of the user's risk level. The user risk level is an indicator (low, medium, high) of the probability that the user's account is compromised. After investigating risky users and the corresponding risky sign-ins and detections, you should [remediate the risky users](howto-identity-protection-remediate-unblock.md) so that they're no longer at risk and blocked from access.
 
 Microsoft Entra ID Protection marks some risk detections and the corresponding risky sign-ins as dismissed with risk state **Dismissed** and risk detail **Microsoft Entra ID Protection assessed sign-in safe**. It takes this action, because those events were no longer determined to be risky.
 
