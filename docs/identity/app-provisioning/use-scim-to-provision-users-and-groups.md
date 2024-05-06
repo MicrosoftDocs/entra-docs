@@ -1408,7 +1408,10 @@ The provisioning service supports the [authorization code grant](https://tools.i
 > [!NOTE]
 > OAuth v1 is not supported due to exposure of the client secret. OAuth v2 is supported.  
 
-It's recommended, but not required, that you support multiple secrets for easy renewal without downtime.
+When using the OAuth Code Grant flow, it's required that you support either of the below, 
+1. Single client ID and Client Secret pair with support for secrets rotation: Multiple secrets are supported at the same time for easy renewal/rotation without downtime.
+2. If secret rotation is not supported then each customer will have to submit their own client ID and Client Secret when setting up a provisioning instance. A single app wide client ID/Client Secret pair is not supported.
+
 
 #### How to set up OAuth code grant flow
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
