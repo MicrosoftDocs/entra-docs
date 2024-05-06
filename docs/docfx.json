@@ -139,11 +139,6 @@
         "verified-id/*.yml": "Microsoft Entra Verified ID",
         "workload-id/*.md": "Microsoft Entra Workload ID",
         "workload-id/*.yml": "Microsoft Entra Workload ID"
-      },
-      "no-loc": {
-        "includes/policy/**/*.md": "[audit, deny, modify, disabled, auditifnotexists, deployifnotexists]",
-        "includes/policy/**/*.yml": "[audit, deny, modify, disabled, auditifnotexists, deployifnotexists]"
-
       }
     }, 
     "template": [
