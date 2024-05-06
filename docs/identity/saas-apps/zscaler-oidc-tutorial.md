@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 02/28/2024
+ms.date: 05/06/2024
 ms.author: jeedes
 ---
 
@@ -52,7 +52,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
     1. Click **Go to application**.
 
-        ![Screenshot of showing the identity configuration.](common/go-to-application.png)
+        ![Screenshot showing the identity configuration.](common/go-to-application.png)
 
     1. Copy **Application (client) ID** and use it later in the Zscaler side configuration.
 
@@ -60,24 +60,24 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
     1. Under **Endpoints** tab, copy **OpenID Connect metadata document** link and use it later in the Zscaler side configuration.
 
-        ![Screenshot of showing the endpoints on tab.](common/endpoints.png)
+        ![Screenshot showing the endpoints on tab.](common/endpoints.png)
 
 1. Navigate to **Authentication** tab on the left menu and perform the following steps:
 
     1. In the **Redirect URIs** textbox, paste the **Redirect URI** value, which you have copied from Zscaler side.
 
-        ![Screenshot of showing the redirect values.](common/authentication.png)
+        ![Screenshot showing the redirect values.](common/authentication.png)
 
 1. Navigate to **Certificates & secrets** on the left menu and perform the following steps:
 
     1. Go to **Client secrets** tab and click **+New client secret**.
     1. Enter a valid **Description** in the textbox and select **Expires** days from the drop-down as per your requirement and click **Add**.
 
-        ![Screenshot of showing the client secrets value.](common/client-secret.png)
+        ![Screenshot showing the client secrets value.](common/client-secret.png)
 
     1. Once you add a client secret, **Value** will be generated. Copy the value and use it later in the Zscaler side configuration.
 
-        ![Screenshot of showing how to add a client secret.](common/client.png)
+        ![Screenshot showing how to add a client secret.](common/client.png)
 
 ### Create a Microsoft Entra test user
 
@@ -113,19 +113,19 @@ Below are the configuration steps to complete the OIDC federation setup:
 
 2. Select **ZSLogin Administration** as Microsoft Partner Tenant. 
 
-    ![Screenshot of showing federation setup.](./media/zscaler-oidc-tutorial/admin.png)
+    ![Screenshot showing federation setup.](./media/zscaler-oidc-tutorial/admin.png)
 
 3. Go to **External Identities** in the **Administration**.
 
-    ![Screenshot of showing External Identities.](./media/zscaler-oidc-tutorial/external-identities.png)
+    ![Screenshot showing External Identities.](./media/zscaler-oidc-tutorial/external-identities.png)
 
-1. In the External Identities, go to **Secondary Identity Providers** and click **+ Add Secondary Idp**.
+1. In the External Identities, go to **Secondary Identity Providers** and click **+ Add Secondary IdP**.
 
-    ![Screenshot of showing Add Secondary Idp.](./media/zscaler-oidc-tutorial/add-secondary.png)
+    ![Screenshot showing Add Secondary Idp.](./media/zscaler-oidc-tutorial/add-secondary.png)
 
 1. In the **BASIC** section, perform the following steps in the **GENERAL** tab:
 
-    ![Screenshot of showing GENERAL tab.](./media/zscaler-oidc-tutorial/basic-configuration.png)
+    ![Screenshot showing GENERAL tab.](./media/zscaler-oidc-tutorial/basic-configuration.png)
 
     a. In the **Name** field, enter the name for identification.
 
@@ -137,9 +137,9 @@ Below are the configuration steps to complete the OIDC federation setup:
 
 1. In the **BASIC** section, perform the following steps in the **OIDC CONFIGURATION** tab:
 
-    ![Screenshot of showing oidc configuration tab.](./media/zscaler-oidc-tutorial/oidc-configuration.png)
+    ![Screenshot showing oidc configuration tab.](./media/zscaler-oidc-tutorial/oidc-configuration.png)
 
-    a. Paste the **Open ID Connect metadata document** value in the **Metadata URL** field, which you have copied from Entra page and click **FETCH**, the values will auto populated.
+    a. Paste the **Open ID Connect metadata document** value in the **Metadata URL** field, which you have copied from Entra page and click **FETCH**. The values will auto-populate.
 
     b. Copy the **Redirect URI** value, which is generated once you click the FETCH button and use it later in the Entra side configuration.
 
@@ -153,5 +153,5 @@ Below are the configuration steps to complete the OIDC federation setup:
 
 1. In the **PROVISIONING** section, enable the JIT provisioning and click **Update**.
 
-    ![Screenshot of showing PROVISIONING.](./media/zscaler-oidc-tutorial/provisioning.png)
+    ![Screenshot showing PROVISIONING.](./media/zscaler-oidc-tutorial/provisioning.png)
 
