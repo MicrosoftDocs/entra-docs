@@ -28,8 +28,8 @@ The compliant network is different than [IPv4, IPv6, or geographic locations](..
 ## Prerequisites
 
 - Administrators who interact with **Global Secure Access preview** features must have one or more of the following role assignments depending on the tasks they're performing.
-   - The **Global Secure Access Administrator** role to manage the Global Secure Access preview features.
-   - [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) or [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) to create and interact with Conditional Access policies and named locations.
+   - The [Global Secure Access Administrator role](/azure/active-directory/roles/permissions-reference) role to manage the Global Secure Access preview features.
+   - [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) to create and interact with Conditional Access policies and named locations.
 - The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 - To use the Microsoft 365 traffic forwarding profile, a Microsoft 365 E3 license is recommended.
 

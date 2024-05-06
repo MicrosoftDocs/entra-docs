@@ -74,7 +74,7 @@ You can also define how many days a user can postpone, or "snooze," the nudge. I
 
 To enable a registration campaign in the Microsoft Entra admin center, complete the following steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator) or [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Protection** > **Authentication methods** > **Registration campaign** and click **Edit**.
 1. For **State**:
 

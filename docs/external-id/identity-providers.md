@@ -42,7 +42,7 @@ External ID offers various identity providers.
    > [!NOTE]
    > Federated SAML/WS-Fed IdPs can't be used in your self-service sign-up user flows.
 
-To configure federation with Google, Facebook, or a SAML/Ws-Fed identity provider, you need to be an [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator) or a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) in your Microsoft Entra tenant.
+To configure federation with Google, Facebook, or a SAML/Ws-Fed identity provider, you need to be at least an [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator) in your Microsoft Entra tenant.
 
 ## Adding social identity providers
 
