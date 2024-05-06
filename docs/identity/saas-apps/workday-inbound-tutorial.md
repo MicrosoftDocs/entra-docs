@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: tutorial
-ms.date: 01/25/2024
+ms.date: 05/06/2024
 ms.author: chmutali
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Workday to Active Directory so that I can streamline the user management process and ensure that users have the appropriate access to Workday to Active Directory.
@@ -416,9 +416,9 @@ Once the Workday provisioning app configurations have been completed and you hav
 
 1. This operation will start the initial sync, which can take a variable number of hours depending on how many users are in the Workday tenant. You can check the progress bar to the track the progress of the sync cycle. 
 
-1. At any time, check the **Audit logs** tab in the Azure portal to see what actions the provisioning service has performed. The audit logs lists all individual sync events performed by the provisioning service, such as which users are being read out of Workday and then subsequently added or updated to Active Directory. Refer to the Troubleshooting section for instructions on how to review the audit logs and fix provisioning errors.
+1. At any time, check the **Provisioning** tab in the Azure portal to see what actions the provisioning service has performed. The provisioning logs lists all individual sync events performed by the provisioning service, such as which users are being read out of Workday and then subsequently added or updated to Active Directory. Refer to the Troubleshooting section for instructions on how to review the provisioning logs and fix provisioning errors.
 
-1. Once the initial sync is completed, it will write an audit summary report in the **Provisioning** tab, as shown below.
+1. Once the initial sync is completed, it writes an audit summary report in the **Provisioning** tab, as shown below.
    > [!div class="mx-imgBorder"]
    > ![Provisioning progress bar](./media/sap-successfactors-inbound-provisioning/workday-sync.png)
 
@@ -470,7 +470,7 @@ No, the solution does not maintain a cache of user profiles. The Microsoft Entra
 
 #### Does the solution support assigning on-premises AD groups to the user?
 
-This functionality is not supported currently. Recommended workaround is to deploy a PowerShell script that queries the Microsoft Graph API endpoint for [audit log data](/graph/api/resources/azure-ad-auditlog-overview) and use that to trigger scenarios such as group assignment. This PowerShell script can be attached to a task scheduler and deployed on the same box running the provisioning agent.  
+This functionality is not supported currently. Recommended workaround is to deploy a PowerShell script that queries the Microsoft Graph API endpoint for [provisioning log data](/graph/api/resources/azure-ad-auditlog-overview) and use that to trigger scenarios such as group assignment. This PowerShell script can be attached to a task scheduler and deployed on the same box running the provisioning agent.  
 
 #### Which Workday APIs does the solution use to query and update Workday worker profiles?
 
@@ -732,13 +732,13 @@ Use the function [NormalizeDiacritics](~/identity/app-provisioning/functions-for
 
 ## Troubleshooting tips
 
-This section provides specific guidance on how to troubleshoot provisioning issues with your Workday integration using the Microsoft Entra audit logs and Windows Server Event Viewer logs. It builds on top of the generic troubleshooting steps and concepts captured in the [Tutorial: Reporting on automatic user account provisioning](~/identity/app-provisioning/check-status-user-account-provisioning.md)
+This section provides specific guidance on how to troubleshoot provisioning issues with your Workday integration using the Microsoft Entra provisioning logs and Windows Server Event Viewer logs. It builds on top of the generic troubleshooting steps and concepts captured in the [Tutorial: Reporting on automatic user account provisioning](~/identity/app-provisioning/check-status-user-account-provisioning.md)
 
 This section covers the following aspects of troubleshooting:
 
 * [Configure provisioning agent to emit Event Viewer logs](#configure-provisioning-agent-to-emit-event-viewer-logs)
 * [Setting up Windows Event Viewer for agent troubleshooting](#setting-up-windows-event-viewer-for-agent-troubleshooting)
-* [Setting up Azure portal Audit Logs for service troubleshooting](#setting-up-azure-portal-audit-logs-for-service-troubleshooting)
+* [Setting up Azure portal Provisioning Logs for service troubleshooting](#setting-up-azure-portal-audit-logs-for-service-troubleshooting)
 * [Understanding logs for AD User Account create operations](#understanding-logs-for-ad-user-account-create-operations)
 * [Understanding logs for Manager update operations](#understanding-logs-for-manager-update-operations)
 * [Resolving commonly encountered errors](#resolving-commonly-encountered-errors)
@@ -787,26 +787,26 @@ This section covers the following aspects of troubleshooting:
 
 1. Click **OK** and sort the result view by **Date and Time** column.
 
-### Setting up Azure portal Audit Logs for service troubleshooting
+### Setting up Azure portal Provisioning Logs for service troubleshooting
 
-1. Launch the [Azure portal](https://portal.azure.com), and navigate to the **Audit logs** section of your Workday provisioning application.
-1. Use the **Columns** button on the Audit Logs page to display only the following columns in the view (Date, Activity, Status, Status Reason). This configuration ensures that you focus only on data that is relevant for troubleshooting.
+1. Launch the [Azure portal](https://portal.azure.com), and navigate to the **Provisioning** section of your Workday provisioning application.
+1. Use the **Columns** button on the Provisioning Logs page to display only the following columns in the view (Date, Activity, Status, Status Reason). This configuration ensures that you focus only on data that is relevant for troubleshooting.
 
-   ![Audit log columns](media/workday-inbound-tutorial/wd_audit_logs_00.png)
+   ![Provisioning log columns](media/workday-inbound-tutorial/wd_audit_logs_00.png)
 
 1. Use the **Target** and **Date Range** query parameters to filter the view. 
    * Set the **Target** query parameter to the "Worker ID" or "Employee ID" of the Workday worker object.
    * Set the **Date Range** to an appropriate time period over which you want to investigate for errors or issues with the provisioning.
 
-   ![Audit log filters](media/workday-inbound-tutorial/wd_audit_logs_01.png)
+   ![Provisioning log filters](media/workday-inbound-tutorial/wd_audit_logs_01.png)
 
 ### Understanding logs for AD User Account create operations
 
-When a new hire in Workday is detected (let's say with Employee ID *21023*), the Microsoft Entra provisioning service attempts to create a new AD user account for the worker and in the process creates 4 audit log records as described below:
+When a new hire in Workday is detected (let's say with Employee ID *21023*), the Microsoft Entra provisioning service attempts to create a new AD user account for the worker and in the process creates 4 provisioning log records as described below:
 
-  [![Audit log create ops](media/workday-inbound-tutorial/wd_audit_logs_02.png)](media/workday-inbound-tutorial/wd_audit_logs_02.png#lightbox)
+  [![Provisioning log create ops](media/workday-inbound-tutorial/wd_audit_logs_02.png)](media/workday-inbound-tutorial/wd_audit_logs_02.png#lightbox)
 
-When you click on any of the audit log records, the **Activity Details** page opens up. Here is what the **Activity Details** page displays for each log record type.
+When you click on any of the provisioning log records, the **Activity Details** page opens up. Here is what the **Activity Details** page displays for each log record type.
 
 * **Workday Import** record: This log record displays the worker information fetched from Workday. Use information in the *Additional Details* section of the log record to troubleshoot issues with fetching data from Workday. An example record is shown below along with pointers on how to interpret each field.
 
@@ -870,7 +870,7 @@ When you click on any of the audit log records, the **Activity Details** page op
 
 ### Understanding logs for manager update operations
 
-The manager attribute is a reference attribute in AD. The provisioning service does not set the manager attribute as part of the user creation operation. Rather the manager attribute is set as part of an *update* operation after AD account is created for the user. Expanding the example above, let's say a new hire with Employee ID "21451" is activated in Workday and the new hire's manager (*21023*) already has an AD account. In this scenario, searching the Audit logs for user 21451 shows up 5 entries.
+The manager attribute is a reference attribute in AD. The provisioning service does not set the manager attribute as part of the user creation operation. Rather the manager attribute is set as part of an *update* operation after AD account is created for the user. Expanding the example above, let's say a new hire with Employee ID "21451" is activated in Workday and the new hire's manager (*21023*) already has an AD account. In this scenario, searching the Provisioning logs for user 21451 shows up 5 entries.
 
   [![Manager Update](media/workday-inbound-tutorial/wd_audit_logs_03.png)](media/workday-inbound-tutorial/wd_audit_logs_03.png#lightbox)
 
@@ -920,16 +920,16 @@ If the provisioning service is unable to connect to Workday or Active Directory,
 
 |#|Error Scenario |Probable Causes|Recommended Resolution|
 |--|---|---|---|
-|1.| Export operation failures in the audit log with the message *Error: OperationsError-SvcErr: An operation error occurred. No superior reference has been configured for the directory service. The directory service is therefore unable to issue referrals to objects outside this forest.* | This error usually shows up if the *Active Directory Container* OU is not set correctly or if there are issues with the Expression Mapping used for *parentDistinguishedName*. | Check the *Active Directory Container* OU parameter for typos. If you are using *parentDistinguishedName* in the attribute mapping ensure that it always evaluates to a known container within the AD domain. Check the *Export* event in the audit logs to see the generated value. |
-|2.| Export operation failures in the audit log with error code: *SystemForCrossDomainIdentityManagementBadResponse* and message *Error: ConstraintViolation-AtrErr: A value in the request is invalid. A value for the attribute was not in the acceptable range of values. \nError Details: CONSTRAINT_ATT_TYPE - company*. | While this error is specific to the *company* attribute, you may see this error for other attributes like *CN* as well. This error appears due to AD enforced schema constraint. By default, the attributes like *company* and *CN* in AD have an upper limit of 64 characters. If the value coming from Workday is more than 64 characters, then you will see this error message. | Check the *Export* event in the audit logs to see the value for the attribute reported in the error message. Consider truncating the value coming from Workday using the [Mid](~/identity/app-provisioning/functions-for-customizing-application-data.md#mid) function or changing the mappings to an AD attribute that does not have similar length constraints.  |
+|1.| Export operation failures in the provisioning log with the message *Error: OperationsError-SvcErr: An operation error occurred. No superior reference has been configured for the directory service. The directory service is therefore unable to issue referrals to objects outside this forest.* | This error usually shows up if the *Active Directory Container* OU is not set correctly or if there are issues with the Expression Mapping used for *parentDistinguishedName*. | Check the *Active Directory Container* OU parameter for typos. If you are using *parentDistinguishedName* in the attribute mapping ensure that it always evaluates to a known container within the AD domain. Check the *Export* event in the provisioning logs to see the generated value. |
+|2.| Export operation failures in the provisioning log with error code: *SystemForCrossDomainIdentityManagementBadResponse* and message *Error: ConstraintViolation-AtrErr: A value in the request is invalid. A value for the attribute was not in the acceptable range of values. \nError Details: CONSTRAINT_ATT_TYPE - company*. | While this error is specific to the *company* attribute, you may see this error for other attributes like *CN* as well. This error appears due to AD enforced schema constraint. By default, the attributes like *company* and *CN* in AD have an upper limit of 64 characters. If the value coming from Workday is more than 64 characters, then you will see this error message. | Check the *Export* event in the provisioning logs to see the value for the attribute reported in the error message. Consider truncating the value coming from Workday using the [Mid](~/identity/app-provisioning/functions-for-customizing-application-data.md#mid) function or changing the mappings to an AD attribute that does not have similar length constraints.  |
 
 #### AD user account update errors
 
-During the AD user account update process, the provisioning service reads information from both Workday and AD, runs the attribute mapping rules and determines if any change needs to take effect. Accordingly an update event is triggered. If any of these steps encounters a failure, it is logged in the audit logs. Use the table below to troubleshoot common update errors.
+During the AD user account update process, the provisioning service reads information from both Workday and AD, runs the attribute mapping rules and determines if any change needs to take effect. Accordingly an update event is triggered. If any of these steps encounters a failure, it is logged in the provisioning logs. Use the table below to troubleshoot common update errors.
 
 |#|Error Scenario |Probable Causes|Recommended Resolution|
 |--|---|---|---|
-|1.| Synchronization rule action failures in the audit log with the message *EventName = EntrySynchronizationError and ErrorCode = EndpointUnavailable*. | This error shows up if the provisioning service is unable to retrieve user profile data from Active Directory due to a processing error encountered by the on-premises provisioning agent. | Check the Provisioning Agent Event Viewer logs for error events that indicate issues with the read operation (Filter by Event ID #2). |
+|1.| Synchronization rule action failures in the provisioning log with the message *EventName = EntrySynchronizationError and ErrorCode = EndpointUnavailable*. | This error shows up if the provisioning service is unable to retrieve user profile data from Active Directory due to a processing error encountered by the on-premises provisioning agent. | Check the Provisioning Agent Event Viewer logs for error events that indicate issues with the read operation (Filter by Event ID #2). |
 |2.| The manager attribute in AD does not get updated for certain users in AD. | The most likely cause of this error is if you are using scoping rules and the user's manager is not part of the scope. You may also run into this issue if the manager's matching ID attribute (e.g. EmployeeID) is not found in the target AD domain or not set to the correct value. | Review the scoping filter and add the manager user in scope. Check the manager's profile in AD to make sure that there is a value for the matching ID attribute. |
 
 ## Managing your configuration

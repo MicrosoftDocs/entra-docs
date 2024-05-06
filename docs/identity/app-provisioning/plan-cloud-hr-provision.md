@@ -68,7 +68,7 @@ This capability of HR-driven IT provisioning offers the following significant bu
 
 - **Increase productivity:** You can now automate the assignment of user accounts and Microsoft 365 licenses and provide access to key groups. Automating assignments gives new hires immediate access to their job tools and increases productivity.
 - **Manage risk:** Automate changes based on employee status or group membership to increase security. This automation ensures that user identities and access to key apps update automatically. For example, an update in the HR app when a user transitions or leaves the organization flows in automatically.
-- **Address compliance and governance:** Microsoft Entra ID supports native audit logs for user provisioning requests performed by apps of both source and target systems. With auditing, you can track who has access to the apps from a single screen.
+- **Address compliance and governance:** Microsoft Entra ID supports native provisioning logs for user provisioning requests performed by apps of both source and target systems. With auditing, you can track who has access to the apps from a single screen.
 - **Manage cost:** Automatic provisioning reduces costs by avoiding inefficiencies and human error associated with manual provisioning. It reduces the need for custom-developed user provisioning solutions built over time by using legacy and outdated platforms.
 
 ### Licensing
@@ -473,7 +473,7 @@ It's common for a security review to be required as part of the deployment of a 
 The cloud HR user provisioning implementation might fail to work as desired in the production environment. If so, the following rollback steps can assist you in reverting to a previous known good state.
 
 1. Review the [provisioning logs](~/identity/app-provisioning/check-status-user-account-provisioning.md#provisioning-logs) to determine what incorrect operations were performed on the affected users or groups. For more information on the provisioning summary report and logs, see [Manage cloud HR app user provisioning](#manage-your-configuration).
-2. The last known good state of the users or groups affected can be determined through the provisioning audit logs or by reviewing the target systems (Microsoft Entra ID or Active Directory).
+2. The last known good state of the users or groups affected can be determined through the provisioning provisioning logs or by reviewing the target systems (Microsoft Entra ID or Active Directory).
 3. Work with the app owner to update the users or groups affected directly in the app by using the last known good state values.
 
 ## Deploy the cloud HR app
@@ -486,7 +486,7 @@ Choose the cloud HR app that aligns to your solution requirements.
 
 ## Manage your configuration
 
-Microsoft Entra ID can provide more insights into your organization's user provisioning usage and operational health through audit logs and reports.
+Microsoft Entra ID can provide more insights into your organization's user provisioning usage and operational health through provisioning logs and reports.
 
 ### Gain insights from reports and logs
 
@@ -500,7 +500,7 @@ To review these events and all other activities performed by the provisioning se
 
 #### Azure Monitor logs
 
-All activities performed by the provisioning service are recorded in the Microsoft Entra audit logs. You can route Microsoft Entra audit logs to Azure Monitor logs for further analysis. With Azure Monitor logs (also known as Log Analytics workspace), you can query data to find events, analyze trends, and perform correlation across various data sources. Watch this [video](https://youtu.be/MP5IaCTwkQg) to learn the benefits of using Azure Monitor logs for Microsoft Entra logs in practical user scenarios.
+All activities performed by the provisioning service are recorded in the Microsoft Entra provisioning logs. You can route Microsoft Entra provisioning logs to Azure Monitor logs for further analysis. With Azure Monitor logs (also known as Log Analytics workspace), you can query data to find events, analyze trends, and perform correlation across various data sources. Watch this [video](https://youtu.be/MP5IaCTwkQg) to learn the benefits of using Azure Monitor logs for Microsoft Entra logs in practical user scenarios.
 
 Install the [log analytics views for Microsoft Entra activity logs](/azure/azure-monitor/visualize/workbooks-view-designer-conversion-overview) to get access to [prebuilt reports](https://github.com/AzureAD/Deployment-Plans/tree/master/Log%20Analytics%20Views) around provisioning events in your environment.
 
