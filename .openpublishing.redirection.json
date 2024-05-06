@@ -286,6 +286,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity/devices/enroll-macos-admin.md",
+      "redirect_url": "/mem/intune/configuration/platform-sso-macos",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity-platform/msal-v1-app-scopes.md",
       "redirect_url": "/entra/identity-platform/msal-acquire-cache-tokens",
       "redirect_document_id": false
