@@ -17,10 +17,12 @@
     href: concept-conditional-access-policies.md
   - name: Assignments
     items: 
-     - name: Users and groups
+     - name: Users, groups, and roles
        href: concept-conditional-access-users-groups.md
      - name: Target resources
        href: concept-conditional-access-cloud-apps.md
+     - name: Network
+       href: concept-assignment-network.md
      - name: Conditions
        href: concept-conditional-access-conditions.md
   - name: Access controls
@@ -37,8 +39,6 @@
     href: concept-filter-for-applications.md
   - name: Token protection
     href: concept-token-protection.md
-  - name: Location conditions
-    href: location-condition.md
   - name: Authentication flows
     href: concept-authentication-flows.md    
   - name: Authentication transfer
