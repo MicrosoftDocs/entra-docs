@@ -42,6 +42,8 @@ Workflows can be created with, or edited, to include a custom security attribute
 
 1. On the scope details page, select **Add expression**, and from the drop-down list locate your custom security attributes, and then set its value.
     :::image type="content" source="media/manage-workflow-custom-security-attribute/custom-attribute-list.png" alt-text="Screenshot of a list of custom security attributes on the scope screen.":::
+    > [!NOTE]
+    > Deactivated Custom Security Attributes will not appear in this list.
 1. After setting the value for the custom security attribute, select **Save**.
 
 ## Add a custom security attribute to the scope of the workflow using Microsoft Graph
