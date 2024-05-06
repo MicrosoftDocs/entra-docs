@@ -395,7 +395,7 @@ items:
                 - name: About custom authentication extensions
                   href: ~/identity-platform/custom-extension-overview.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Token issuance start event
-                  href: ~/identity-platform/custom-extension-get-started.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                  href: ~/identity-platform/custom-extension-tokenissuancestart-configuration.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Troubleshoot your custom claims provider API
                   href: ~/identity-platform/custom-extension-troubleshoot.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
     - name: Secure
