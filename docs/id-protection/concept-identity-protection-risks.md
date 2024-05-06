@@ -20,7 +20,7 @@ User risk detections might flag a legitimate user account as at risk, when a pot
 
 ## Risk levels
 
-ID Protection categorizes risk level into three tiers: low, medium, and high. Risk levels are calculated using our machine learning algorithms and represent how confident Microsoft is that one or more of the user's credentials are known by an unauthorized entity. 
+ID Protection categorizes risk into three tiers: low, medium, and high. Risk levels calculated by our machine learning algorithms and represent how confident Microsoft is that one or more of the user's credentials are known by an unauthorized entity.
 
 - A risk detection with risk level **High** signifies that Microsoft is highly confident that the account is compromised. 
 - A risk detection with risk level **Low** signifies that there are anomalies present in the sign-in or a userâ€™s credential, but we're less confident that these anomalies mean the account is compromised.
@@ -28,6 +28,11 @@ ID Protection categorizes risk level into three tiers: low, medium, and high. Ri
 Many detections can fire at more than one of our risk levels depending on the number or severity of the anomalies detected. For example, [Unfamiliar sign-in properties](#unfamiliar-sign-in-properties) might fire at high, medium, or low based on the confidence in the signals. Some detections, like [Leaked Credentials](#leaked-credentials) and [Verified Threat Actor IP](#verified-threat-actor-ip) are always delivered as high risk. 
 
 This risk level is important when deciding which detections to prioritize, investigate, and remediate. They also play a key role in [configuring risk based Conditional Access policies](howto-identity-protection-configure-risk-policies.md#choosing-acceptable-risk-levels) as each policy can be set to trigger for low, medium, high, or no risk detected. Based on the risk tolerance of your organization, you can create policies that require MFA or password reset when ID Protection detects a certain risk level for one of your users. These policies can guide the user to self-remediate to resolve the risk.
+
+> [!IMPORTANT] 
+> All "low" risk level detections and users will persist in the product for 6 months, after which they will be automatically aged out to provide a cleaner investigation experience. Medium and high risk levels will persist until remediated or dismissed. 
+> 
+> Based on the risk tolerance of your organization, you can create policies that require MFA or password reset when ID Protection detects a certain risk level. These policies might guide the user to self-remediate and resolve the risk or block depending on your tolerances. 
 
 ## Real-time and offline detections
 
@@ -93,7 +98,7 @@ Calculated offline. This detection is discovered using information provided byâ€
 
 Calculated in real-time or offline. This detection indicates abnormal characteristics in the token, such as an unusual lifetime or a token played from an unfamiliar location. This detection covers Session Tokens and Refresh Tokens. 
 
-Anomalous token is tuned to incur more noise than other detections at the same risk level. This tradeoff is chosen to increase the likelihood of detecting replayed tokens that might otherwise go unnoticed. There's a higher than normal chance that some of the sessions flagged by this detection are false positives. We recommend investigating the sessions flagged by this detection in the context of other sign-ins from the user. If the location, application, IP address, User Agent, or other characteristics are unexpected for the user, the tenant admin should consider this risk as an indicator of potential token replay. 
+Anomalous token is tuned to incur more noise than other detections at the same risk level. This tradeoff is chosen to increase the likelihood of detecting replayed tokens that might otherwise go unnoticed. There's a higher than normal chance that some of the sessions flagged by this detection are false positives. We recommend investigating the sessions flagged by this detection in the context of other sign-ins from the user. If the location, application, IP address, User Agent, or other characteristics are unexpected for the user, the administrator should consider this risk as an indicator of potential token replay. 
 
 #### Atypical travel 
 
@@ -159,7 +164,7 @@ Calculated offline. This risk detection baselines normal administrative user beh
 
 #### Attacker in the Middle 
 
-Calculated offline. Also known as Adversary in the Middle, this high precision detection is triggered when an active token theft threat is identified in a session compromised through stolen credentials. The Microsoft Security Research team uses Microsoft 365 Defender to capture the identified risk and raises the user to **High** risk. We recommend the tenant admin to manually investigate the user when this detection is triggered to ensure the risk is cleared.
+Calculated offline. Also known as Adversary in the Middle, this high precision detection is triggered when an authentication session is linked to a malicious reverse proxy. In this kind of attack, the adversary can intercept the user's credentials, including tokens issued to the user. The Microsoft Security Research team leverages Microsoft 365 Defender to capture the identified risk and raises the user to **High** risk. We recommend administrators manually investigate the user when this detection is triggered to ensure the risk is cleared. Clearing this risk might require secure password reset or revocation of existing sessions.
 
 #### Possible attempt to access Primary Refresh Token (PRT) 
 
@@ -189,7 +194,7 @@ Calculated in real-time or offline. This detection indicates that one of the pre
 
 #### Admin confirmed user compromised 
 
-Calculated offline. This detection indicates an admin selected **Confirm user compromised** in the risky users UI or using riskyUsers API. To see which admin confirmed this user compromised, check the user's risk history (via UI or API). 
+Calculated offline. This detection indicates an administrator selected **Confirm user compromised** in the risky users UI or using riskyUsers API. To see which administrator confirmed this user compromised, check the user's risk history (via UI or API). 
 
 #### Anonymous IP address 
 
