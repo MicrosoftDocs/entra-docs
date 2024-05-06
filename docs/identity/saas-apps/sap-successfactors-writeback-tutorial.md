@@ -256,13 +256,13 @@ This section provides steps for
 
 ### Part 2: Configure attribute mappings
 
-In this section, you'll configure how user data flows from SuccessFactors to Active Directory.
+In this section, you configure how user data flows from SuccessFactors to Active Directory.
 
 1. On the Provisioning tab under **Mappings**, click **Provision Microsoft Entra users**.
 
 1. In the **Source Object Scope** field, you can select which sets of  users in Microsoft Entra ID should be considered for write-back, by defining a set of attribute-based filters. The default scope is **all users in Microsoft Entra ID**. 
    > [!TIP]
-   > When you're configuring the provisioning app for the first time, you'll need to test and verify your attribute mappings and expressions to make sure that it's giving you the desired result. Microsoft recommends using the scoping filters under **Source Object Scope** to test your mappings with a few test users from Microsoft Entra ID. Once you have verified that the mappings work, then you can either remove the filter or gradually expand it to include more users.
+   > When you're configuring the provisioning app for the first time, you need to test and verify your attribute mappings and expressions to make sure that it's giving you the desired result. Microsoft recommends using the scoping filters under **Source Object Scope** to test your mappings with a few test users from Microsoft Entra ID. Once you have verified that the mappings work, then you can either remove the filter or gradually expand it to include more users.
 
 1. The **Target Object Actions** field only supports the **Update** operation.
 

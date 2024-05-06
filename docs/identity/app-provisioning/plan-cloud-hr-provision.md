@@ -522,7 +522,7 @@ To troubleshoot any issues that might turn up during provisioning, see the follo
 - [No users are being provisioned to a Microsoft Entra Gallery application](application-provisioning-config-problem-no-users-provisioned.md)
 - [Wrong set of users are being provisioned to a Microsoft Entra Gallery application](~/identity/enterprise-apps/add-application-portal-assign-users.md)
 - [Setting up Windows Event Viewer for agent troubleshooting](~/identity/saas-apps/workday-inbound-tutorial.md#setting-up-windows-event-viewer-for-agent-troubleshooting)
-- [Setting up Audit Logs for service troubleshooting](~/identity/saas-apps/workday-inbound-tutorial.md#setting-up-azure-portal-audit-logs-for-service-troubleshooting)
+- [Setting up Provisioning Logs for service troubleshooting](~/identity/saas-apps/workday-inbound-tutorial.md#setting-up-azure-portal-provisioning-logs-for-service-troubleshooting)
 - [Understanding logs for AD User Account create operations](~/identity/saas-apps/workday-inbound-tutorial.md#understanding-logs-for-ad-user-account-create-operations)
 - [Understanding logs for Manager update operations](~/identity/saas-apps/workday-inbound-tutorial.md#understanding-logs-for-manager-update-operations)
 - [Resolving commonly encountered errors](~/identity/saas-apps/workday-inbound-tutorial.md#resolving-commonly-encountered-errors)
