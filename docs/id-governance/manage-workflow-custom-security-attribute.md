@@ -10,7 +10,7 @@ ms.date: 05/02/2024
 ms.author: owinfrey
 ms.reviewer: krbain
 
-#CustomerIntent: As an administrator, I want to be able to add custom security attributes of a user to the scope of a workflow so that I have greater control over which users specific workflows will run for.
+#CustomerIntent: As an administrator, I want to be able to use custom security attributes of a user as part of the scope of a workflow so that I have greater control over which users specific workflows will run for.
 ---
 
 # Use custom security attributes to scope a workflow
