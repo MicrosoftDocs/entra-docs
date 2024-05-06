@@ -411,11 +411,11 @@ Follows these steps to delete a configuration on the **Configurations** page.
 
 1. In the source tenant, browse to **Identity** > **External Identities** > **Cross-tenant synchronization**.
 
-1. On the **Configurations** page, add a check mark next to the configuration you want to delete.
+2. On the **Configurations** page, add a check mark next to the configuration you want to delete.
 
-1. Select **Delete** and then **OK** to delete the configuration.
+3. Select **Delete** and then **OK** to delete the configuration.
 
-    :::image type="content" source="./media/cross-tenant-synchronization-configure/configurations-delete.png" alt-text="Screenshot of the Configurations page showing how to delete a configuration." lightbox="./media/cross-tenant-synchronization-configure/configurations-delete.png":::
+     :::image type="content" source="./media/cross-tenant-synchronization-configure/configurations-delete.png" alt-text="Screenshot of the Configurations page showing how to delete a configuration." lightbox="./media/cross-tenant-synchronization-configure/configurations-delete.png":::
 
 #### Symptom - Test connection fails with AzureDirectoryB2BManagementPolicyCheckFailure
 
@@ -427,7 +427,9 @@ Error code: AzureDirectoryB2BManagementPolicyCheckFailure
 Details: Policy permitting auto-redemption of invitations not configured.
 ```
 
-:::image type="content" source="./media/cross-tenant-synchronization-configure/provisioning-test-connection-error.png" alt-text="Screenshot that shows the error when test connection fails with AzureDirectoryB2BManagementPolicyCheckFailure." lightbox="./media/cross-tenant-synchronization-configure/provisioning-test-connection-error.png":::
+
+  :::image type="content" source="./media/cross-tenant-synchronization-configure/provisioning-test-connection-error.png" alt-text="Screenshot that shows the error when test connection fails with AzureDirectoryB2BManagementPolicyCheckFailure." lightbox="./media/cross-tenant-synchronization-configure/provisioning-test-connection-error.png":::
+
 
 **Cause**
 
@@ -441,7 +443,7 @@ Follow the steps in [Step 3: Automatically redeem invitations in the target tena
 
 When configuring cross-tenant synchronization, the **Automatic redemption** check box is disabled.
 
-:::image type="content" source="./media/cross-tenant-synchronization-configure/consent-prompt-setting-disabled.png" alt-text="Screenshot that shows the Automatic redemption check box as disabled." lightbox="./media/cross-tenant-synchronization-configure/consent-prompt-setting-disabled.png":::
+   :::image type="content" source="./media/cross-tenant-synchronization-configure/consent-prompt-setting-disabled.png" alt-text="Screenshot that shows the Automatic redemption check box as disabled." lightbox="./media/cross-tenant-synchronization-configure/consent-prompt-setting-disabled.png":::
 
 **Cause**
 
@@ -518,6 +520,7 @@ Users in scope fail to provision. The provisioning logs details include the foll
 
 ```
 Guest invitations not allowed for your company. Contact your company administrator for more details.
+
 ```
 
 **Cause**
