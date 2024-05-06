@@ -361,6 +361,8 @@ items:
                   - name: Use role-based access control
                     href: how-to-web-app-role-based-access-control.md 
                     displayName: rbac, roles, roles claim, groups claim
+      - name: Delete an external tenant
+        href: how-to-delete-external-tenant-portal.md
     - name: Customize
       items:
         - name: Customize branding
@@ -420,6 +422,8 @@ items:
   items:
     - name: Default user permissions
       href: reference-user-permissions.md
+    - name: Service limits and restrictions
+      href: reference-service-limits.md
     - name: Group and application roles support
       href: reference-group-app-roles-support.md
     - name: Data residency

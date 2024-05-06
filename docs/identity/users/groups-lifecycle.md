@@ -33,7 +33,7 @@ Currently, you can configure only one expiration policy for all Microsoft 365 gr
 
 For information on how to download and install Microsoft Graph PowerShell cmdlets, see [Install the Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/installation).
 
-[!INCLUDE [Azure AD PowerShell migration](../../includes/aad-powershell-migration-include.md)]
+[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
 
 ## Activity-based automatic renewal
 
