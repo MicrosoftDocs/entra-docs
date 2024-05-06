@@ -220,7 +220,7 @@ This section illustrates how to integrate Microsoft Entra ID with SAP SuccessFac
 1. **Wait for the initial sync from the system of record is complete.** If you are synching from SAP SuccessFactors to Windows Server AD, or to Microsoft Entra ID, then once the initial sync to that directory is completed, Microsoft Entra will update the audit summary report in the **Provisioning** tab of the SAP SuccessFactors application in the Microsoft Entra admin center, as shown below.
 
    > [!div class="mx-imgBorder"]
-   > ![Provisioning progress bar](../saas-apps/media/sap-successfactors-inbound-provisioning/prov-progress-bar-stats.png)
+   > ![A screenshot that shows the provisioning progress bar.](../saas-apps/media/sap-successfactors-inbound-provisioning/prov-progress-bar-stats.png)
 
 1. **If provisioning into Windows Server AD, wait for the new users created in Windows Server AD, or those updated in Windows Server AD, to be synchronized from Windows Server AD to Microsoft Entra ID.** Wait until changes for the users in Windows Server AD have made their way to Microsoft Entra ID, so that the Microsoft Entra ID representation of the users has the complete set of users and their attributes from Windows Server AD. If you are using Microsoft Entra Connect cloud sync, you can monitor the `steadyStateLastAchievedTime` of the synchronization status by retrieving the [synchronization job](/graph/api/synchronization-synchronization-list-jobs?view=graph-rest-1.0&preserve-view=true&tabs=powershell#example) of the service principal representing cloud sync. If you do not have the service principal ID, see [view the synchronization schema](~/identity/hybrid/cloud-sync/concept-attributes.md#view-the-synchronization-schema).
 
@@ -345,11 +345,11 @@ If you configured Microsoft Entra ID to [send audit events to Azure Monitor](../
 
 * If you are using Microsoft Entra entitlement management, the workbook named *Access Package Activity* displays each event related to a particular access package.
 
-    ![View access package events](../../id-governance/media/entitlement-management-logs-and-reporting/view-events-access-package.png)
+    ![A screenshot that shows the access package events.](../../id-governance/media/entitlement-management-logs-and-reporting/view-events-access-package.png)
 
 * To see if there have been changes to application role assignments for an application that weren't created due to access package assignments, then you can select the workbook named *Application role assignment activity*. If you select to omit entitlement activity, then only changes to application roles that weren't made by entitlement management are shown. For example, you would see a row if a global administrator had directly assigned a user to an application role.
 
-    ![View app role assignments](../../id-governance/media/entitlement-management-access-package-incompatible/workbook-ara.png)
+    ![A screenshot that shows the app role assignments.](../../id-governance/media/entitlement-management-access-package-incompatible/workbook-ara.png)
 
 ### Monitoring outbound provisioning
 
