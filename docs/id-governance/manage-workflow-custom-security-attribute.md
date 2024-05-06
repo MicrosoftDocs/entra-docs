@@ -52,7 +52,7 @@ As adding a custom security attribute to the scope of a workflow updates its exe
 
 ## View custom security attribute used as a scope of the workflow
 
-After you have scoped a workflow using a custom security attribute, you can view this information within the workflow audit logs. To view these details, you'd do the following steps:
+After you've scoped a workflow using a custom security attribute, you can view this information within the workflow audit logs. To view these details, you'd do the following steps:
 
 
 1.  Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator) and [Attribute Assignment Administrator](../identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator).
@@ -65,7 +65,7 @@ After you have scoped a workflow using a custom security attribute, you can view
 
 1. On the version information page, under **Configure**, you should see the custom security attribute as the rule.
     :::image type="content" source="media/manage-workflow-custom-security-attribute/custom-attribute-scope.png" alt-text="Screenshot of custom security attribute as scope.":::
-1. Depending on which roles you have set, will depend on if you can see the full details of the custom security attributes being used. If you attempt to view custom security attribute information while not having the [Attribute Assignment Administrator](../identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator) or [Attribute Assignment Reader](../identity/role-based-access-control/permissions-reference.md#attribute-assignment-reader) roles set, you'll see that the information is hidden.
+1. Depending on your roles determines if you can see the full details of the custom security attributes being used. If you attempt to view custom security attribute information while not having the [Attribute Assignment Administrator](../identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator) or [Attribute Assignment Reader](../identity/role-based-access-control/permissions-reference.md#attribute-assignment-reader) roles set, you'll see that the information is hidden.
     :::image type="content" source="media/manage-workflow-custom-security-attribute/attribute-information-hidden.png" alt-text="Screenshot of hidden attribute information.":::
 
 > [!NOTE]
