@@ -135,7 +135,7 @@ The following table lists **includeTargets** properties.
 | Name | Possible values | Description |
 |------|-----------------|-------------|
 | targetType| "user"<br>"group" | The kind of entity targeted. |
-| Id | A guid identifier | The ID of the user or group targeted. |
+| ID | A guid identifier | The ID of the user or group targeted. |
 | targetedAuthenticationMethod | "microsoftAuthenticator" | The authentication method user is prompted to register. The only permissible value is "microsoftAuthenticator". |
 
 The following table lists **excludeTargets** properties.
@@ -143,7 +143,7 @@ The following table lists **excludeTargets** properties.
 | Name       | Possible values   | Description                           |
 |------------|-------------------|---------------------------------------|
 | targetType | "user"<br>"group" | The kind of entity targeted.          |
-| Id         | A string          | The ID of the user or group targeted. |
+| ID         | A string          | The ID of the user or group targeted. |
 
 ### Examples
 
