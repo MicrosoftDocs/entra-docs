@@ -107,7 +107,7 @@ sections:
       - question: |
           Can I move a managed domain?
         answer: |
-          After you create a Domain Services managed domain, you can't move it to a different subscription, resource group, or region. As a workaround, you can [delete the managed domain](delete-aadds.md) by using PowerShell or the Microsoft Entra admin center and re-create it with your desired setup. No restore operations can be provided while the managed domain is re-created.
+          After you create a Domain Services managed domain, you can't move it to a different subscription, resource group, or region. To change the region, a possible workaround would be deploying a new replica set in the region that you want to migrate to. Once that completes, delete the replica set in the region you don't want any more. As a workaround for the rest of the settings, you can [delete the managed domain](delete-aadds.md) by using PowerShell or the Microsoft Entra admin center and re-create it with your desired setup. No restore operations can be provided while the managed domain is re-created.
 
       - question: |
           Can I rename an existing Microsoft Entra Domain Services domain name?
