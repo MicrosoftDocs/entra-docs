@@ -35,7 +35,7 @@ The Microsoft Enterprise SSO plug-in for Apple devices offers the following bene
 >[!NOTE]
 > On May 2024, [Microsoft announced that Platform SSO for macOS devices is available in public preview for Microsoft Entra ID.](https://techcommunity.microsoft.com/t5/microsoft-entra-blog/platform-sso-for-macos-now-in-public-preview/ba-p/4051574).
 >
-> For more information, see [macOS Platform Single Sign-on overview (preview)](https://learn.microsoft.com/en-us/entra/identity/devices/macos-psso). 
+> For more information, see [macOS Platform Single Sign-on overview (preview)](/entra/identity/devices/macos-psso). 
 
 
 ## Requirements
