@@ -5,7 +5,7 @@ description: What are conditions in a Microsoft Entra Conditional Access policy?
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 02/29/2024
+ms.date: 05/06/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -137,7 +137,7 @@ This setting works with all browsers. However, to satisfy a device policy, like 
 These browsers support device authentication, allowing the device to be identified and validated against a policy. The device check fails if the browser is running in private mode or if cookies are disabled. 
 
 > [!NOTE]
-> Edge 85+ requires the user to be signed in to the browser to properly pass device identity. Otherwise, it behaves like Chrome without the accounts extension. This sign-in might not occur automatically in a hybrid device join scenario.
+> Edge 85+ requires the user to be signed in to the browser to properly pass device identity. Otherwise, it behaves like Chrome without the [Microsoft Single Sign On extension](https://chromewebstore.google.com/detail/windows-accounts/ppnbnpeolgkicgegkbkbjmhlideopiji). This sign-in might not occur automatically in a hybrid device join scenario.
 >  
 > Safari is supported for device-based Conditional Access on a managed device, but it can not satisfy the **Require approved client app** or **Require app protection policy** conditions. A managed browser like Microsoft Edge will satisfy approved client app and app protection policy requirements.
 > On iOS with 3rd party MDM solution only Microsoft Edge browser supports device policy.
@@ -145,6 +145,8 @@ These browsers support device authentication, allowing the device to be identifi
 > [Firefox 91+](https://support.mozilla.org/kb/windows-sso) is supported for device-based Conditional Access, but "Allow Windows single sign-on for Microsoft, work, and school accounts" needs to be enabled.
 >
 > [Chrome 111+](https://chromeenterprise.google/policies/#CloudAPAuthEnabled) is supported for device-based Conditional Access, but "CloudApAuthEnabled" needs to be enabled.
+>
+> macOS devices using the Enterprise SSO plugin require the [Microsoft Single Sign On](https://chromewebstore.google.com/detail/windows-accounts/ppnbnpeolgkicgegkbkbjmhlideopiji) extension to support SSO and device-based Conditional Access in Google Chrome.
 
 #### Why do I see a certificate prompt in the browser
 
@@ -152,7 +154,9 @@ On Windows 7, iOS, Android, and macOS devices are identified using a client cert
 
 #### Chrome support
 
-For Chrome support in **Windows 10 Creators Update (version 1703)** or later, install the [Windows Accounts](https://chrome.google.com/webstore/detail/windows-accounts/ppnbnpeolgkicgegkbkbjmhlideopiji) extension or enable Chrome's [CloudAPAuthEnabled](https://chromeenterprise.google/policies/#CloudAPAuthEnabled). These configurations are required when a Conditional Access policy requires device-specific details for Windows platforms specifically.
+##### Windows
+
+For Chrome support in **Windows 10 Creators Update (version 1703)** or later, install the [Microsoft Single Sign On](https://chrome.google.com/webstore/detail/windows-accounts/ppnbnpeolgkicgegkbkbjmhlideopiji) extension or enable Chrome's [CloudAPAuthEnabled](https://chromeenterprise.google/policies/#CloudAPAuthEnabled). These configurations are required when a Conditional Access policy requires device-specific details for Windows platforms specifically.
 
 To automatically enable the CloudAPAuthEnabled policy in Chrome, create the following registry key:
 
@@ -161,7 +165,7 @@ To automatically enable the CloudAPAuthEnabled policy in Chrome, create the foll
  - Value: `0x00000001`
  - PropertyType: `DWORD`
 
-To automatically deploy the Windows Account extension to Chrome browsers, create the following registry key:
+To automatically deploy the Microsoft Single Sign On extension to Chrome browsers, create the following registry key using the [ExtensionInstallForcelist](https://chromeenterprise.google/policies/?policy=ExtensionInstallForcelist) policy in Chrome:
 
 - Path: `HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome\ExtensionInstallForcelist`
 - Name: `1`
@@ -174,6 +178,12 @@ For Chrome support in **Windows 8.1 and 7**, create the following registry key:
 - Name: `1`
 - Type: `REG_SZ (String)`
 - Data: `{"pattern":"https://device.login.microsoftonline.com","filter":{"ISSUER":{"CN":"MS-Organization-Access"}}}`
+
+##### macOS
+
+macOS devices using the Enterprise SSO plugin require the [Microsoft Single Sign On](https://chromewebstore.google.com/detail/windows-accounts/ppnbnpeolgkicgegkbkbjmhlideopiji) extension to support SSO and device-based Conditional Access in Google Chrome.
+
+For MDM based deployments of Google Chrome and extension management, refer to [Set up Chrome browser on Mac](https://support.google.com/chrome/a/answer/7550274?hl=en&sjid=4022223857702261083-NA) and [ExtensionInstallForcelist](https://chromeenterprise.google/policies/?policy=ExtensionInstallForcelist).
 
 ### Supported mobile applications and desktop clients
 
