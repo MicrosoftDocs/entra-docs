@@ -60,7 +60,7 @@ If you need to abandon the encryption key, use the following procedures to accom
 
 2. [Provide the password of the AD DS Connector account](#provide-the-password-of-the-ad-ds-connector-account)
 
-3. [Reinitialize the password of the ADSync service account](#reinitialize-the-password-of-the-adsync-service-account)
+3. [Reinitialize the password of the ADSync service account](#reinitialize-the-password-of-the-entra-id-connector-account)
 
 4. [Start the Synchronization Service](#start-the-synchronization-service)
 
