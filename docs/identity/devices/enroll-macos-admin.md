@@ -6,8 +6,8 @@ ms.service: entra-id
 ms.subservice: devices
 ms.topic: tutorial
 ms.date: 12/13/2023
-ms.author: owenrichards
-author: OwenRichards1
+ms.author: cwerner
+author: cilwerner
 manager: CelesteDG
 ms.reviewer: brianmel
 #Customer intent: As an admin, I want to know how to deploy macOS Platform Single Sign-on (PSSO) for a Mac device using the Microsoft Intune admin center.
