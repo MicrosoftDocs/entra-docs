@@ -62,9 +62,9 @@ groups:
   prompt: Make a selection
   pivots:
   - id: nuget-library
-    title: Authentication events trigger for Azure Functions (preview)
+    title: WebJobs Authentication Events trigger (preview)
   - id: azure-portal
-    title: Azure Functions
+    title: Azure Functions HTTP trigger
 ############ END MICROSOFT IDENTITY PLATFORM
 ########### BEGIN APPLICATION MANAGEMENT
 # Owner(s):      jomondi, celested

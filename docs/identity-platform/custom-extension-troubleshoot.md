@@ -131,7 +131,7 @@ To test your API directly using your preferred API testing tool, follow these st
 
 > [!NOTE]
 >
-> If you used the [Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents](https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/entra/Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents) NuGet package, turn off token validation for testing purposes. Open *local.settings.json* and add the following parameter
+> If you used the [Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents](https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/entra/Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents) NuGet package, turn off token validation for testing purposes. Open *local.settings.json* and add the following parameter;
 >
 > ```json
 > "AuthenticationEvents__BypassTokenValidation": true

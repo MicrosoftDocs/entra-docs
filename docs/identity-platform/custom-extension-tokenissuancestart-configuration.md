@@ -20,7 +20,7 @@ This article describes how to configure a custom claims provider for a [token is
 ## Prerequisites
 
 - An Azure subscription with the ability to create Azure Functions. If you don't have an existing Azure account, sign up for a [free trial](https://azure.microsoft.com/free/dotnet/) or use your [Visual Studio Subscription](https://visualstudio.microsoft.com/subscriptions/) benefits when you [create an account](https://account.windowsazure.com/Home/Index).
-- An Azure Function app with an HTTP trigger function configured for a token issuance start event. If you don't have one, follow the steps in [create a token issuance start event HTTP trigger function](./custom-extension-tokenissuancestart-setup.md).
+- A HTTP trigger function configured for a token issuance event deployed to Azure Functions. If you don't have one, follow the steps in [create a REST API for a token issuance start event in Azure Functions](./custom-extension-tokenissuancestart-setup.md).
 - A basic understanding of the concepts covered in [Custom authentication extensions overview](custom-extension-overview.md).
 - A Microsoft Entra ID tenant. You can use either a customer or workforce tenant for this how-to guide.
     - For external tenants, use a [sign-up and sign-in user flow](~/external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md).
@@ -55,7 +55,7 @@ You'll now configure a custom authentication extension, which will be used by Mi
     - apiVersion
     - correlationId
 1. Select **Next**, then **Create**, which registers the custom authentication extension and the associated application registration.
-1. Note the **App ID** under **API Authentication**, which is needed for [setting environment variables](./custom-extension-tokenissuancestart-setup.md#set-up-environment-variables-for-your-azure-function-optional) in your Azure Function app.
+1. Note the **App ID** under **API Authentication**, which is needed for [setting environment variables](./custom-extension-tokenissuancestart-setup.md#set-up-environment-variables-for-your-azure-function) in your Azure Function app.
 
 # [Microsoft Graph](#tab/microsoft-graph)
 

@@ -18,7 +18,7 @@ zone_pivot_groups: custom-auth-extension
 
 ::: zone pivot="azure-portal"
 
-This article describes how to create a REST API with a [token issuance start event](custom-claims-provider-overview.md#token-issuance-start-event-listener) using Azure Functions in the Azure portal. You create an Azure Function app and an HTTP trigger function, and edit this function to return extra claims for your token. 
+This article describes how to create a REST API with a [token issuance start event](custom-claims-provider-overview.md#token-issuance-start-event-listener) using Azure Functions in the Azure portal. You create an Azure Function app and an HTTP trigger function which can return extra claims for your token. 
 
 ## Prerequisites
 
@@ -30,7 +30,7 @@ This article describes how to create a REST API with a [token issuance start eve
 
 ::: zone pivot="nuget-library" 
 
-This article describes how to create a REST API for a [token issuance start event](custom-claims-provider-overview.md#token-issuance-start-event-listener) using the [Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents](https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/entra/Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents) NuGet library and set it up for authentication. You create an HTTP trigger function in Visual Studio or Visual Studio Code, and configure it for authentication. and deploy it to the Azure portal, where it can be accessed through Azure Functions.
+This article describes how to create a REST API for a [token issuance start event](custom-claims-provider-overview.md#token-issuance-start-event-listener) using the [Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents](https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/entra/Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents) NuGet library and set it up for authentication. You create an HTTP trigger function in Visual Studio or Visual Studio Code, configure it for authentication, and deploy it to the Azure portal, where it can be accessed through Azure Functions.
 
 ## Prerequisites
 
@@ -233,19 +233,17 @@ In your *Function1.cs* <!--TODO--> file, replace the entire contents of the file
 
 For local development and testing purposes, open *local.settings.json* and add the following code; 
 
-    ```json
-    {
-      "IsEncrypted": false,
-      "Values": {
-        "AzureWebJobsStorage": "",
-        "AzureWebJobsSecretStorageType": "files",
-        "FUNCTIONS_WORKER_RUNTIME": "dotnet",
-        "AuthenticationEvents__BypassTokenValidation" : true
-      }
-    }
-    ```
-
-
+```json
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "",
+    "AzureWebJobsSecretStorageType": "files",
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet",
+    "AuthenticationEvents__BypassTokenValidation" : true
+  }
+}
+```
 
 ### Build and run the project locally
 
