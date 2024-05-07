@@ -2643,6 +2643,8 @@
         href: springerlink-tutorial.md
       - name: Sprinklr
         href: sprinklr-tutorial.md
+      - name: Spyglass (OIDC)
+        href: spyglass-tutorial.md
       - name: SSOGEN Microsoft Entra SSO Gateway for Oracle E Business Suite EBS, PeopleSoft, and JDE
         href: ssogen-tutorial.md
       - name: SSO for Jama Connect®
