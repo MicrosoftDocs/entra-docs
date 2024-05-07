@@ -99,7 +99,7 @@ procedureSection:
   - title: |
       Remove members or owners of a group
     summary: |
-      Members and owners can removed from existing groups. The process is the same for members and owners. You'll need the **Groups Administrator** or **User Administrator** role to remove members and owners.
+      Members and owners can be removed from existing groups. The process is the same for members and owners. You'll need the **Groups Administrator** or **User Administrator** role to remove members and owners.
     steps: 
       - |
         Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
