@@ -28,11 +28,8 @@ introduction: |
 
 prerequisites:
   summary: |
-    You must have one of the following roles to restore and permanently delete users.
-  dependencies:    
-    - Global Administrator
-    - Partner Tier1 Support
-    - Partner Tier2 Support
+    You must have at least the following role to restore and permanently delete users.
+  dependencies:
     - User Administrator
 
 procedureSection:
