@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Prepare a Python Flask web application for authentication in a customer tenant'
+title: 'Tutorial: Prepare a Python Flask web application for authentication in an external tenant'
 description: Learn how to create a Python Flask web app project, then prepare it for authentication
 author: SHERMANOUKO
 manager: mwongerapk
@@ -10,12 +10,12 @@ ms.subservice: customers
 ms.topic: tutorial
 ms.date: 03/19/2024
 
-#Customer intent: As a dev, devops, I want to learn about how to enable authentication in my Python Flask web app with Microsoft Entra ID for customers tenant
+#Customer intent: As a dev, devops, I want to learn about how to enable authentication in my Python Flask web app with an external tenant
 ---
 
 # Tutorial: Prepare a Python Flask web application for authentication
 
-This is the second tutorial in a tutorial series that guides you on securing a Python Flask Web app using Microsoft Entra ID for customers. In [part 1 of this series](./tutorial-web-app-python-flask-prepare-tenant.md), you registered an application and configured user flows in your Microsoft Entra ID for customers tenant.
+This is the second tutorial in a tutorial series that guides you on securing a Python Flask Web app using Microsoft Entra External ID. In [part 1 of this series](./tutorial-web-app-python-flask-prepare-tenant.md), you registered an application and configured user flows in your external tenant.
 
 In this tutorial, you'll;
 
@@ -23,12 +23,12 @@ In this tutorial, you'll;
 >
 > - Create a Python Flask project
 > - Install the required dependencies
-> - Configure your Flask web app to use Microsoft Entra ID for customers for authentication
+> - Configure your Flask web app to use Microsoft Entra External ID for authentication
 > - Test the sign-in and sign-out experience in your Flask web app
 
 ## Prerequisites
 
-- [Tutorial: Prepare your customer tenant to sign in users in a Python Flask web app](./tutorial-web-app-python-flask-prepare-tenant.md)
+- [Tutorial: Prepare your external tenant to sign in users in a Python Flask web app](./tutorial-web-app-python-flask-prepare-tenant.md)
 - [Python 3+](https://www.python.org/).
 - [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 
@@ -155,7 +155,7 @@ At this stage, you create your web app endpoints and add the business logic to y
 
 1. Add the required endpoints to your Flask app. The web app uses the authorization code flow to sign in the user. Add these endpoints to your *app.py* file:
 
-    - `/login`: This endpoint initiates the sign-in process. It initiates the user sign-in process by redirecting the user to the Microsoft Entra ID for customers sign-in page. The user is prompted to sign in and consent to the scopes you specify.
+    - `/login`: This endpoint initiates the sign-in process. It initiates the user sign-in process by redirecting the user to the Microsoft Entra External ID sign-in page. The user is prompted to sign in and consent to the scopes you specify.
     
         ```python
         @app.route("/login")
@@ -166,7 +166,7 @@ At this stage, you create your web app endpoints and add the business logic to y
             ))
         ```
 
-    - `/{REDIRECT_PATH}`: This endpoint processes that the response from Microsoft Entra ID for customers after the user signs in. This is the endpoint that receives the access token and completes the sign-in process. The exact value of the `REDIRECT_PATH` is defined in the *app_config.py* file.
+    - `/{REDIRECT_PATH}`: This endpoint processes that the response from Microsoft Entra External ID after the user signs in. This is the endpoint that receives the access token and completes the sign-in process. The exact value of the `REDIRECT_PATH` is defined in the *app_config.py* file.
     
         ```python
         @app.route(app_config.REDIRECT_PATH)
@@ -177,7 +177,7 @@ At this stage, you create your web app endpoints and add the business logic to y
             return redirect(url_for("index"))
         ```
         
-    - `/logout`: This endpoint signs the user out of the web app. The user is redirected to a Microsoft Entra ID for customers endpoint to sign out. If multiple accounts are present, the user is prompted to choose the account to sign out of. The user will then be redirected back to the web app homepage.
+    - `/logout`: This endpoint signs the user out of the web app. The user is redirected to a Microsoft Entra External ID endpoint to sign out. If multiple accounts are present, the user is prompted to choose the account to sign out of. The user will then be redirected back to the web app homepage.
 
         ```python
         @app.route("/logout")

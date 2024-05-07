@@ -74,7 +74,7 @@
     - name: Manage Domain Services
       items:
         - name: Administer Group Policy
-          href: manage-group-policy.md
+          href: manage-group-policy.yml
         - name: Manage DNS
           href: manage-dns.md
         - name: Check health status

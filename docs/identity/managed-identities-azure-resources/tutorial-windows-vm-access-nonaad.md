@@ -43,12 +43,12 @@ This section shows how to grant your VM access to a secret stored in a Key Vault
 
 First, we need to create a Key Vault and grant our VM’s system-assigned managed identity access to the Key Vault.
 
-1. Sign in to the [Azure portal]portal](https://portal.azure.com/)
-1. At the top of the left navigation bar, select **Create a resource**  
+1. Sign in to the [Azure portal]portal](https://portal.azure.com/).
+1. At the top of the left navigation bar, select **Create a resource**.
 1. In the **Search the Marketplace** box type in **Key Vault** and hit **Enter**.
 1. Select **Key Vault** from the results.
-1. Select **Create**
-1. Provide a **Name** for the new Key Vault.
+1. Select **Create**.
+1. Provide a **Name** for the new key vault.
 
     :::image type="content" source="./media/msi-tutorial-windows-vm-access-nonaad/create-key-vault.png" alt-text="Create a Key vault screen.":::
 

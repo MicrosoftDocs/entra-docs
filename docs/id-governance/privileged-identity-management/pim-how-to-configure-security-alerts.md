@@ -21,7 +21,7 @@ Privileged Identity Management (PIM) generates alerts when there's suspicious or
 >[!NOTE]
 >One event in Privileged Identity Management can generate email notifications to multiple recipients – assignees, approvers, or administrators. The maximum number of notifications sent per one event is 1000. If the number of recipients exceeds 1000 – only the first 1000 recipients will receive an email notification. This does not prevent other assignees, administrators, or approvers from using their permissions in Microsoft Entra ID and Privileged Identity Management.
 
-![Screenshot that shows the alerts page with a list of alerts and their severity.](./media/pim-how-to-configure-security-alerts/view-alerts.png)
+:::image type="content" source="./media/pim-how-to-configure-security-alerts/view-alerts.png" alt-text="Screenshot that shows the alerts page with a list of alerts and their severity.":::
 
 ## License requirements
 
@@ -136,11 +136,11 @@ Follow these steps to configure security alerts for Microsoft Entra roles in Pri
 
 1. Browse to **Identity governance** > **Privileged Identity Management** > **Microsoft Entra roles** > **Alerts** > **Setting**. For information about how to add the Privileged Identity Management tile to your dashboard, see [Start using Privileged Identity Management](pim-getting-started.md).
 
-    ![Screenshots of alerts page with the settings highlighted.](media/pim-how-to-configure-security-alerts/alert-settings.png)
+    :::image type="content" source="media/pim-how-to-configure-security-alerts/alert-settings.png" alt-text="Screenshot of the alerts page with the settings highlighted.":::
 
 1. Customize settings on the different alerts to work with your environment and security goals.
 
-    ![Screenshots of the alert setting page.](media/pim-how-to-configure-security-alerts/security-alert-settings.png)
+    :::image type="content" source="media/pim-how-to-configure-security-alerts/security-alert-settings.png" alt-text="Screenshot of the alert setting page.":::
 
 ## Next steps
 

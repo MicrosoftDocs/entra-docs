@@ -138,7 +138,7 @@ Sometimes a group of resources should be isolated from other resources for secur
 
 Configuration settings in Microsoft Entra ID can affect any resource in the Microsoft Entra tenant through targeted, or tenant-wide management actions. Examples of tenant-wide settings include:
 
-* **External identities**: Global administrators for the tenant identify and control the external identities that can be provisioned in the tenant.
+* **External identities**: Administrators identify and control the external identities that can be provisioned in the tenant.
 
   * Whether to allow external identities in the tenant.
 
@@ -146,7 +146,7 @@ Configuration settings in Microsoft Entra ID can affect any resource in the Micr
 
   * Whether users can invite users from other tenants.
 
-* **Named Locations**: Global administrators can create named locations, which can then be used to
+* **Named Locations**: Administrators can create named locations, which can then be used to
 
   * Block sign-ins from specific locations.
 
@@ -154,11 +154,7 @@ Configuration settings in Microsoft Entra ID can affect any resource in the Micr
 
   * Bypass security requirements
 
->[!NOTE]
->Using [Named Locations](~/identity/conditional-access/location-condition.md) can present some challenges to your [zero-trust journey](https://www.microsoft.com/security/business/zero-trust). Verify that using Named Locations fits into your security strategy and principles.
-Allowed authentication methods: Global administrators set the authentication methods allowed for the tenant.
-
-* **Self-service options**. Global Administrators set self-service options such as self-service-password reset and create Microsoft 365 groups at the tenant level.
+* **Self-service options**. Administrators set self-service options such as self-service-password reset and create Microsoft 365 groups at the tenant level.
 
 The implementation of some tenant-wide configurations can be scoped as long as they don't get overridden by global administration policies. For example:
 
@@ -170,7 +166,7 @@ The implementation of some tenant-wide configurations can be scoped as long as t
 
 ### Common reasons for configuration isolation
 
-Configurations, controlled by Global Administrators, affect resources. While some tenant-wide configuration can be scoped with policies to not apply or partially apply to a specific resource, others can't. If a resource has configuration needs that are unique, isolate it in a separate tenant. Examples of configuration isolation scenarios include:
+Configurations, controlled by administrators, affect resources. While some tenant-wide configuration can be scoped with policies to not apply or partially apply to a specific resource, others can't. If a resource has configuration needs that are unique, isolate it in a separate tenant. Examples of configuration isolation scenarios include:
 
 * Resources having requirements that conflict with existing tenant-wide security or collaboration postures. (for example allowed authentication types, device management policies, ability to self-service, identity proofing for external identities, etc.).
 

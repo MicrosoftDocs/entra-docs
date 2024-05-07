@@ -27,7 +27,7 @@ Multi-factor Out-of-band <br> (something you have + something you know/are) | Mi
 |Single-factor crypto software <br> (something you have)|Single-factor software certificate <br> Microsoft Entra joined <sup>2</sup> with software TPM <br> Microsoft Entra hybrid joined <sup>2</sup> with software TPM  <br> Compliant mobile device |
 |Single-factor crypto hardware <br> (something you have) | Microsoft Entra joined <sup>2</sup> with hardware TPM <br> Microsoft Entra hybrid joined <sup>2</sup> with hardware TPM|
 |Multi-factor crypto software <br> (something you have + something you know/are) | Multi-factor Software Certificate (PIN Protected) <br> Windows Hello for Business with software TPM |
-|Multi-factor crypto hardware <br> (something you have + something you know/are) |Hardware protected certificate (smartcard/security key/TPM) <br> Windows Hello for Business with hardware TPM <br> FIDO 2 security key|
+|Multi-factor crypto hardware <br> (something you have + something you know/are) |Hardware protected certificate (smartcard/security key/TPM) <br> Windows Hello for Business with hardware TPM <br> FIDO 2 security key <br> Platform credentials for macOS|
 
 <sup>1</sup> 30-second or 60-second OATH-TOTP SHA-1 token
 

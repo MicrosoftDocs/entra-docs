@@ -136,8 +136,6 @@ In the following sections are recommendations for Azure solutions. For general g
 
 * Define Conditional Access policies for [security information registration](~/identity/conditional-access/howto-conditional-access-policy-registration.md) that reflects a secure root of trust process on-premises (for example, for workstations in physical locations, identifiable by IP addresses, that employees must visit in person for verification).
 
-* Consider managing Conditional Access policies at scale with automation using [MS Graph Conditional Access API](~/identity/conditional-access/howto-conditional-access-apis.md)). For example, you can use the API to configure, manage, and monitor Conditional Access policies consistently across tenants.
-
 * Consider using Conditional Access to restrict workload identities. Create a policy to limit or better control access based on location or other relevant circumstances.
 
 ### Authentication Challenges
@@ -381,7 +379,7 @@ All hybrid identity infrastructure OS logs should be archived and carefully moni
 
 The following scenarios must be explicitly monitored and investigated:
 
-* **Suspicious activity** - All [Microsoft Entra risk events](~/id-protection/overview-identity-protection.md) should be monitored for suspicious activity. All tenants should define the network [named locations](~/identity/conditional-access/location-condition.md) to avoid noisy detections on location-based signals. [Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md) is natively integrated with Azure Security Center. It's recommended that any risk detection investigation includes all the environments the identity is provisioned (for example, if a human identity has an active risk detection in the corporate tenant, the team operating the customer facing tenant should also investigate the activity of the corresponding account in that environment).
+* **Suspicious activity** - All [Microsoft Entra risk events](~/id-protection/overview-identity-protection.md) should be monitored for suspicious activity. All tenants should define the network [named locations](../identity/conditional-access/concept-assignment-network.md) to avoid noisy detections on location-based signals. [Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md) is natively integrated with Azure Security Center. It's recommended that any risk detection investigation includes all the environments the identity is provisioned (for example, if a human identity has an active risk detection in the corporate tenant, the team operating the customer facing tenant should also investigate the activity of the corresponding account in that environment).
 
 * **User entity behavioral analytics (UEBA) alerts** - UEBA should be used to get insightful information based on anomaly detection. [Microsoft Microsoft 365 Defender for Cloud Apps](https://www.microsoft.com/security/business/siem-and-xdr/microsoft-defender-cloud-apps) provides [UEBA in the cloud](/defender-cloud-apps/tutorial-ueba). Customers can integrate [on-premises UEBA from Microsoft Microsoft 365 Defender for Identity](/microsoft-365/security/defender/microsoft-365-security-center-mdi). MCAS reads signals from Microsoft Entra ID Protection.
 

@@ -5,14 +5,13 @@ description: How users can set up Microsoft Entra join during OOBE.
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: tutorial
-ms.date: 08/31/2022
+ms.date: 04/25/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
-ms.reviewer: ravenn
+ms.reviewer: 
 ---
-
 # Microsoft Entra join a new Windows device during the out of box experience
 
 Windows 11 users can join new Windows devices to Microsoft Entra ID during the first-run out-of-box experience (OOBE). This functionality enables you to distribute shrink-wrapped devices to your employees or students.
@@ -53,9 +52,9 @@ For more information about the out-of-box experience, see the support article [J
 
 To verify whether a device is joined to your Microsoft Entra ID, review the **Access work or school** dialog on your Windows device found in **Settings** > **Accounts**. The dialog should indicate that you're connected to Microsoft Entra ID, and provides information about areas managed by your IT staff.
 
-:::image type="content" source="media/device-join-out-of-box/windows-11-access-work-or-school.png" alt-text="Screenshot of Windows 11 Settings app showing current connection to Azure AD.":::
+:::image type="content" source="media/device-join-out-of-box/windows-11-access-work-or-school.png" alt-text="Screenshot of Windows 11 Settings app showing current connection.":::
 
-## Next steps
+## Related content
 
 - For more information about managing devices, see [Managing device identities](manage-device-identities.md).
 - [What is Microsoft Intune?](/mem/intune/fundamentals/what-is-intune)

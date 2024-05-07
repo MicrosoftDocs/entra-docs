@@ -27,6 +27,187 @@ The What's new in Microsoft Entra ID? Release notes provide information about:
 
 ---
 
+## October 2023
+
+### Public Preview - Managing and Changing Passwords in My Security Info 
+
+**Type:** New feature   
+**Service category:** My Profile/Account                     
+**Product capability:** End User Experiences            
+
+My Sign Ins ([My Sign-Ins (microsoft.com)](https://mysignins.microsoft.com/)) now supports end users managing and changing their passwords. Users are able to manage passwords in My Security Info and change their password inline. If a user authenticates with a password and an MFA credential, they're able to are able to change their password without entering their existing password.
+
+For more information, see: [Combined security information registration for Microsoft Entra overview](~/identity/authentication/concept-registration-mfa-sspr-combined.md).
+
+---
+
+### Public Preview - Govern AD on-premises applications (Kerberos based) using Microsoft Entra Governance
+
+**Type:** New feature   
+**Service category:** Provisioning                     
+**Product capability:** Microsoft Entra Cloud Sync            
+
+Security groups provisioning to AD (also known as Group Writeback) is now publicly available through Microsoft Entra Cloud Sync. With this new capability, you can easily govern AD based on-premises applications (Kerberos based apps) using Microsoft Entra Governance.
+
+For more information, see: [Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance](~/identity/hybrid/cloud-sync/govern-on-premises-groups.md)
+
+---
+
+### Public Preview - Microsoft Entra Permissions Management: Permissions Analytics Report PDF for multiple authorization systems
+
+**Type:** Changed feature   
+**Service category:**                      
+**Product capability:** Permissions Management            
+
+The Permissions Analytics Report (PAR) lists findings relating to permissions risks across identities and resources in Permissions Management. The PAR is an integral part of the risk assessment process where customers discover areas of highest risk in their cloud infrastructure. This report can be directly viewed in the Permissions Management UI, downloaded in Excel (XSLX) format, and exported as a PDF. The report is available for all supported cloud environments: Amazon Web Services (AWS), Microsoft Azure, and Google Cloud Platform (GCP).  
+
+The PAR PDF has been redesigned to enhance usability, align with the product UX redesign effort, and address various customer feature requests. [You can download the PAR PDF for up to 10 authorization systems](~/permissions-management/product-permissions-analytics-reports.md).
+
+---
+
+### General Availability - Enhanced Devices List Management Experience
+
+**Type:** Changed feature   
+**Service category:** Device Access Management                     
+**Product capability:** End User Experiences            
+
+Several changes have been made to the **All Devices** list since announcing public preview, including:
+
+- Prioritized consistency and accessibility across the different components
+- Modernized the list and addressed top customer feedback
+    - Added infinite scrolling, column reordering, and the ability to select all devices
+    - Added filters for OS Version and Autopilot devices
+- Created more connections between Microsoft Entra and Intune
+    - Added links to Intune in Compliant and MDM columns
+    - Added Security Settings Management column
+
+For more information, see: [View and filter your devices](~/identity/devices/manage-device-identities.md#view-and-filter-your-devices).
+
+---
+
+### General Availability - Windows MAM
+
+**Type:** New feature   
+**Service category:** Conditional Access                     
+**Product capability:** Access Control            
+
+Windows MAM is the first step toward Microsoft management capabilities for unmanaged Windows devices. This functionality comes at a critical time when we need to ensure the Windows platform is on par with the simplicity and privacy promise we offer end users today on the mobile platforms. End users can access company resources without needing the whole device to be MDM managed.
+
+For more information, see: [Require an app protection policy on Windows devices](~/identity/conditional-access/how-to-app-protection-policy-windows.md).
+
+---
+
+### General Availability - Microsoft Security email update and Resources for Azure AD rename to Microsoft Entra ID 
+
+**Type:** Plan for change   
+**Service category:** Other                     
+**Product capability:** End User Experiences            
+
+Microsoft Entra ID is the new name for Azure Active Directory (Azure AD). The rename and new product icon are now being deployed across experiences from Microsoft. Most updates are complete by mid-November of this year. As previously announced, this is just a new name, with no impact on deployments or daily work. There are no changes to capabilities, licensing, terms of service, or support.
+
+From October 15 to November 15, Azure AD emails previously sent from azure-noreply@microsoft.com will start being sent from MSSecurity-noreply@microsoft.com. You might need to update your Outlook rules to match this.  
+
+Additionally, we'll update email content to remove all references of Azure AD where relevant, and include an informational banner that announces this change.
+
+Here are some resources to guide you rename your own product experiences or content where necessary:
+
+- [How to: Rename Azure AD](how-to-rename-azure-ad.yml)
+- [New name for Azure Active Directory](new-name.md)
+
+---
+
+### General Availability - End users will no longer be able to add password SSO apps in My Apps  
+
+**Type:** Deprecated   
+**Service category:** My Apps                     
+**Product capability:** End User Experiences            
+
+Effective November 15, 2023, end users will no longer be able to add password SSO Apps to their gallery in My Apps. However, admins can still add password SSO apps following [these instructions](~/identity/enterprise-apps/configure-password-single-sign-on-non-gallery-applications.md). Password SSO apps previously added by end users remain available in My Apps.
+
+For more information, see: [Discover applications](~/identity/enterprise-apps/myapps-overview.md#discover-applications).
+
+---
+
+### General Availability - Restrict Microsoft Entra ID Tenant Creation To Only Paid Subscription  
+
+**Type:** Changed feature   
+**Service category:** Managed identities for Azure resources                    
+**Product capability:** End User Experiences            
+
+The ability to create new tenants from the Microsoft Entra admin center allows users in your organization to create test and demo tenants from your Microsoft Entra ID tenant, [Learn more about creating tenants](/microsoft-365/education/deploy/intro-azure-active-directory). When used incorrectly this feature can allow the creation of tenants that aren't managed or viewable by your organization. We recommend that you restrict this capability so that only trusted admins can use this feature, [Learn more about restricting member users' default permissions](users-default-permissions.md#restrict-member-users-default-permissions). We also recommend you use the Microsoft Entra audit log to monitor for the Directory Management: Create Company event that signals a new tenant has been created by a user in your organization.  
+
+To further protect your organization, Microsoft is now limiting this functionality to only paid customers. Customers on trial subscriptions are unable to create additional tenants from the Microsoft Entra admin center. Customers in this situation who need a new trial tenant can sign up for a [Free Azure Account](https://azure.microsoft.com/free/).
+
+---
+
+### General Availability - Users can't modify GPS location when using location based access control
+
+**Type:** Plan for change   
+**Service category:** Conditional Access                     
+**Product capability:** User Authentication            
+
+In an ever-evolving security landscape, the Microsoft Authenticator is updating its security baseline for Location Based Access Control (LBAC) conditional access policies to disallow authentications where the user might be using a different location than the actual GPS location of the mobile device. Today, it's possible for users to modify the location reported by the device on iOS and Android devices. The Authenticator app starts to deny LBAC authentications where we detect that the user isn't using the actual location of the mobile device where the Authenticator is installed.
+
+In the November 2023 release of the Authenticator app, users who are modifying the location of their device sees a denial message in the app when doing an LBAC authentication. To ensure that users aren’t using older app versions to continue authenticating with a modified location, beginning January 2024, any users that are on Android Authenticator 6.2309.6329 version or prior and iOS Authenticator version 6.7.16 or prior will be blocked from using LBAC. To determine which users are using older versions of the Authenticator app, you can use [our MSGraph APIs](/graph/api/resources/microsoftauthenticatorauthenticationmethod).
+
+---
+
+### Public Preview - Overview page in My Access portal
+
+**Type:** New feature   
+**Service category:** Entitlement Management                     
+**Product capability:** Identity Governance            
+
+Today, when users navigate to myaccess.microsoft.com, they land on a list of available access packages in their organization. The new Overview page provides a more relevant place for users to land. The Overview page points them to the tasks they need to complete and helps familiarize users with how to complete tasks in My Access.  
+
+Admins can enable/disable the Overview page preview by signing into the Microsoft Entra admin center and navigating to Entitlement management > Settings > Opt-in Preview Features and locating My Access overview page in the table.
+
+For more information, see: [My Access Overview page (preview)](~/id-governance/my-access-portal-overview.md#overview-page-preview).
+
+---
+
+### Public Preview - New provisioning connectors in the Microsoft Entra Application Gallery - October 2023
+
+**Type:** New feature   
+**Service category:** App Provisioning               
+**Product capability:** 3rd Party Integration    
+      
+
+We've added the following new applications in our App gallery with Provisioning support. You can now automate creating, updating, and deleting of user accounts for these newly integrated apps:
+
+- [Amazon Business](~/identity/saas-apps/amazon-business-provisioning-tutorial.md)
+- [Bustle B2B Transport Systems](~/identity/saas-apps/bustle-b2b-transport-systems-provisioning-tutorial.md)
+- [Canva](~/identity/saas-apps/canva-provisioning-tutorial.md)
+- [Cybozu](~/identity/saas-apps/cybozu-provisioning-tutorial.md)
+- [Forcepoint Cloud Security Gateway - User Authentication](~/identity/saas-apps/forcepoint-cloud-security-gateway-provisioning-tutorial.md)
+- [Hypervault](~/identity/saas-apps/hypervault-provisioning-tutorial.md)
+- [Oneflow](~/identity/saas-apps/oneflow-provisioning-tutorial.md)
+
+For more information about how to better secure your organization by using automated user account provisioning, see: [What is app provisioning in Microsoft Entra ID?](~/identity/app-provisioning/user-provisioning.md).
+
+---
+
+### Public Preview - Microsoft Graph Activity Logs
+
+**Type:** New feature   
+**Service category:** Microsoft Graph                     
+**Product capability:** Monitoring & Reporting            
+
+The MicrosoftGraphActivityLogs provides administrators full visibility into all HTTP requests accessing your tenant’s resources through the Microsoft Graph API. These logs can be used to find activity from compromised accounts, identify anomalous behavior, or investigate application activity. For more information, see: [Access Microsoft Graph activity logs (preview)](/graph/microsoft-graph-activity-logs-overview).
+
+---
+
+### Public Preview - Microsoft Entra Verified ID quick setup
+
+**Type:** New feature   
+**Service category:** Other                     
+**Product capability:** Identity Governance            
+
+Quick Microsoft Entra Verified ID setup, available in preview, removes several configuration steps an admin needs to complete with a single select on a Get started button. The quick setup takes care of signing keys, registering your decentralized ID, and verifying your domain ownership. It also creates a Verified Workplace Credential for you. For more information, see: [Quick Microsoft Entra Verified ID setup](~/verified-id/verifiable-credentials-configure-tenant-quick.md).
+
+---
+
+
 ## September 2023
 
 ### Public Preview - Changes to FIDO2 authentication methods and Windows Hello for Business
@@ -416,7 +597,7 @@ We have increased the number of properties admins are able to define when creati
 **Service category:** User Management                                  
 **Product capability:** User Management                   
 
-The All Users list now features an infinite scroll, and admins can now modify more properties in the User Profile. For more information, see: [How to create, invite, and delete users](~/fundamentals/how-to-create-delete-users.md).
+The All Users list now features an infinite scroll, and admins can now modify more properties in the User Profile. For more information, see: [How to create, invite, and delete users](~/fundamentals/how-to-create-delete-users.yml).
 
 ---
 
@@ -780,13 +961,13 @@ The Azure Active Directory Insights tab in Microsoft Entra Permissions Managemen
 
 ---
 
-### Public Preview - In portal guide to configure multi-factor authentication
+### Public Preview - In portal guide to configure multifactor authentication
 
 **Type:** New feature   
 **Service category:** MFA                           
 **Product capability:** Identity Security & Protection              
 
-The in portal guide to configure multi-factor authentication helps you get started with Azure Active Directory's MFA capabilities. You can find this guide under the Tutorials tab in the Azure AD Overview. 
+The in portal guide to configure multifactor authentication helps you get started with Azure Active Directory's MFA capabilities. You can find this guide under the Tutorials tab in the Azure AD Overview. 
 
 ---
 
@@ -796,7 +977,7 @@ The in portal guide to configure multi-factor authentication helps you get start
 **Service category:** Microsoft Authenticator App                           
 **Product capability:** User Authentication                
 
-Authenticator Lite (in Outlook) is an authentication solution for users that haven't yet downloaded the Microsoft Authenticator app. Users are prompted in Outlook on their mobile device to register for multi-factor authentication. After they enter their password at sign-in, they'll have the option to send a push notification to their Android or iOS device.
+Authenticator Lite (in Outlook) is an authentication solution for users that haven't yet downloaded the Microsoft Authenticator app. Users are prompted in Outlook on their mobile device to register for multifactor authentication. After they enter their password at sign-in, they'll have the option to send a push notification to their Android or iOS device.
 
 Due to the security enhancement this feature provides users, the Microsoft managed value of this feature will be changed from ‘*disabled*’ to ‘*enabled*’ on June 9. We’ve made some changes to the feature configuration, so if you made an update before GA, May 17, please validate that the feature is in the correct state for your tenant prior to June 9. If you don't wish for this feature to be enabled on June 9, move the state to ‘*disabled*’, or set users to include and exclude groups.  
 
@@ -811,7 +992,7 @@ For more information, see: [How to enable Microsoft Authenticator Lite for Outlo
 **Service category:** Provisioning                          
 **Product capability:** Outbound to On-premises Applications               
 
-The Azure AD on-premises application provisioning feature now supports both the [PowerShell](~/identity/app-provisioning/on-premises-powershell-connector.md) and [web services](~/identity/app-provisioning/on-premises-web-services-connector.md) connectors. you can now provision users into a flat file using the PowerShell connector or an app such as SAP ECC using the web services connector. For more information, see: [Provisioning users into applications using PowerShell](~/identity/app-provisioning/on-premises-powershell-connector.md).
+The Azure AD on-premises application provisioning feature now supports both the [PowerShell](~/identity/app-provisioning/on-premises-powershell-connector.md) and [web services](~/identity/app-provisioning/on-premises-web-services-connector.md) connectors. You can now provision users into a flat file using the PowerShell connector or an app such as SAP ECC using the web services connector. For more information, see: [Provisioning users into applications using PowerShell](~/identity/app-provisioning/on-premises-powershell-connector.md).
 
 ---
 
@@ -916,7 +1097,7 @@ To address this challenge, we're introducing a new system-preferred authenticati
 **Service category:** User Management                     
 **Product capability:** User Management            
 
-We have increased the number of properties that admins are able to define when creating and inviting a user in the Entra admin portal. This brings our UX to parity with our Create User APIs. Additionally, admins can now add users to a group or administrative unit, and assign roles. For more information, see:  [How to create, invite, and delete users](~/fundamentals/how-to-create-delete-users.md).
+We have increased the number of properties that admins are able to define when creating and inviting a user in the Entra admin portal. This brings our UX to parity with our Create User APIs. Additionally, admins can now add users to a group or administrative unit, and assign roles. For more information, see:  [How to create, invite, and delete users](~/fundamentals/how-to-create-delete-users.yml).
 
 ---
 
@@ -968,7 +1149,7 @@ Authenticator Lite is an additional surface for Azure Active Directory users to 
 **Service category:** MFA                       
 **Product capability:** Identity Security & Protection             
 
-As part of ongoing service improvements, we're making updates to the per-user MFA admin configuration experience to align with the look and feel of Azure. This change doesn't include any changes to the core functionality and will only include visual improvements.  For more information, see: [Enable per-user Azure AD Multi-Factor Authentication to secure sign-in events](~/identity/authentication/howto-mfa-userstates.md).
+As part of ongoing service improvements, we're making updates to the per-user MFA admin configuration experience to align with the look and feel of Azure. This change doesn't include any changes to the core functionality and will only include visual improvements.  For more information, see: [Enable per-user Azure AD Multifactor Authentication to secure sign-in events](~/identity/authentication/howto-mfa-userstates.md).
 
 ---
 
@@ -1213,7 +1394,7 @@ No functionalities are removed. The new PDF viewer adds functionality and the li
 Privileged Identity Management (PIM) role activation has been expanded to the Billing and AD extensions in the Azure portal. Shortcuts have been added to Subscriptions (billing) and Access Control (AD) to allow users to activate PIM roles directly from these settings. From the Subscriptions settings, select **View eligible subscriptions** in the horizontal command menu to check your eligible, active, and expired assignments. From there, you can activate an eligible assignment in the same pane. In Access control (IAM) for a resource, you can now select **View my access** to see your currently active and eligible role assignments and activate directly. By integrating PIM capabilities into different Azure portal blades, this new feature allows users to gain temporary access to view or edit subscriptions and resources more easily.
 
 
-For more information Microsoft cloud settings, see: [Activate my Azure resource roles in Privileged Identity Management](~/id-governance/privileged-identity-management/pim-resource-roles-activate-your-roles.md).
+For more information Microsoft cloud settings, see: [Activate my Azure resource roles in Privileged Identity Management](~/id-governance/privileged-identity-management/pim-resource-roles-activate-your-roles.yml).
 
 ---
 

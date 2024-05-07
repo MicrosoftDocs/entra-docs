@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: overview
-ms.date: 01/23/2023
+ms.date: 03/29/2024
 ms.author: barclayn
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
@@ -16,7 +16,7 @@ ms.collection: M365-identity-device-management
 
 # What is Microsoft Entra ID?
 
-Microsoft Entra ID is a cloud-based identity and access management service that enables your employees access external resources. Example resources include Microsoft 365, the Azure portal, and thousands of other SaaS applications. 
+Microsoft Entra ID is a cloud-based identity and access management service that your employees can use to access external resources. Example resources include Microsoft 365, the Azure portal, and thousands of other SaaS applications. 
 
 Microsoft Entra ID also helps them access internal resources like apps on your corporate intranet, and any cloud apps developed for your own organization. To learn how to create a tenant, see [Quickstart: Create a new tenant in Microsoft Entra ID](./create-new-tenant.md).
 
@@ -55,7 +55,7 @@ To enhance your Microsoft Entra implementation, you can also add paid features b
 
 - **"Pay as you go" feature licenses.** You can also get licenses for features such as, Microsoft Entra Business-to-Customer (B2C). B2C can help you provide identity and access management solutions for your customer-facing apps. For more information, see [Azure Active Directory B2C documentation](/azure/active-directory-b2c/).
 
-For more information about associating an Azure subscription to Microsoft Entra ID, see [Associate or add an Azure subscription to Microsoft Entra ID](./how-subscriptions-associated-directory.md). For more information about assigning licenses to your users, see [How to: Assign or remove Microsoft Entra ID licenses](license-users-groups.md).
+For more information about associating an Azure subscription to Microsoft Entra ID, see [Associate or add an Azure subscription to Microsoft Entra ID](./how-subscriptions-associated-directory.yml). For more information about assigning licenses to your users, see [How to: Assign or remove Microsoft Entra ID licenses](license-users-groups.yml).
 
 <a name='which-features-work-in-azure-ad'></a>
 
@@ -96,7 +96,7 @@ To better understand Microsoft Entra ID and its documentation, we recommend revi
 |Owner|This role helps you manage all Azure resources, including access. This role is built on a newer authorization system called Azure role-based access control (Azure RBAC) that provides fine-grained access management to Azure resources. For more information, see [Azure roles, Microsoft Entra roles, and classic subscription administrator roles](/azure/role-based-access-control/rbac-and-directory-admin-roles).|
 |Microsoft Entra Global Administrator|This administrator role is automatically assigned to whomever created the Microsoft Entra tenant. You can have multiple Global Administrators, but only Global Administrators can assign administrator roles (including assigning other Global Administrators) to users. For more information about the various administrator roles, see [Administrator role permissions in Microsoft Entra ID](~/identity/role-based-access-control/permissions-reference.md).|
 |Azure subscription| Used to pay for Azure cloud services. You can have many subscriptions and they're linked to a credit card.|
-|Azure tenant| A dedicated and trusted instance of Microsoft Entra ID. The tenant is automatically created when your organization signs up for a Microsoft cloud service subscription. These subscriptions include Microsoft Azure, Microsoft Intune, or Microsoft 365. An Azure tenant represents a single organization.|
+|Tenant| A dedicated and trusted instance of Microsoft Entra ID. The tenant is automatically created when your organization signs up for a Microsoft cloud service subscription. These subscriptions include Microsoft Azure, Microsoft Intune, or Microsoft 365. This tenant represents a single organization and is intended for managing your employees, business apps, and other internal resources. For this reason, it's considered a workforce tenant configuration. By contrast, you can create a tenant in an *external* configuration, which is used in customer identity and access management (CIAM) solutions for your consumer-facing apps (learn more about [Microsoft Entra External ID](~/external-id/customers/overview-customers-ciam.md)).|
 |Single tenant| Azure tenants that access other services in a dedicated environment are considered single tenant.|
 |Multi-tenant| Azure tenants that access other services in a shared environment, across multiple organizations, are considered multi-tenant.|
 |Microsoft Entra directory|Each Azure tenant has a dedicated and trusted Microsoft Entra directory. The Microsoft Entra directory includes the tenant's users, groups, and apps and is used to perform identity and access management functions for tenant resources.|
@@ -107,6 +107,6 @@ To better understand Microsoft Entra ID and its documentation, we recommend revi
 
 - [Sign up for Microsoft Entra ID P1 or P2](./get-started-premium.md)
 
-- [Associate an Azure subscription to your Microsoft Entra ID](./how-subscriptions-associated-directory.md)
+- [Associate an Azure subscription to your Microsoft Entra ID](./how-subscriptions-associated-directory.yml)
 
 - [Microsoft Entra ID P2 feature deployment checklist](./concept-secure-remote-workers.md)

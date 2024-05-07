@@ -7,9 +7,6 @@
     }
   ],
   "MetadataDelimiter": "\"",
-  "Include": [
-    "docs/identity/devices"
-  ],
   "Exclude": [],
   "RemoveTermSets": [
     "*au-administrative-unit*",
@@ -21,9 +18,13 @@
     "*single-backtick*",
     "*incorrect-backtick-spacing*",
     "*-caution-*",
+    "*cloudsimple*",
     "*-crm-*",
     "*-crud-*",
+    "*-mdm-*",
     "*-mvc-*",
+    "*-mvp-*",
+    "*september-october-november*",
     "product-azure-app-service",
     "invalid-product-microsoft-visual-studio-vs"
   ],

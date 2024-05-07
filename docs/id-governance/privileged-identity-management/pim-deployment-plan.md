@@ -184,7 +184,7 @@ Follow the instructions in the links below:
 
 1. [Give eligible assignments](pim-how-to-add-role-to-user.md).
 
-1. [Allow eligible users to activate their Microsoft Entra role just-in-time](pim-how-to-activate-role.md)
+1. [Allow eligible users to activate their Microsoft Entra role just-in-time](pim-how-to-activate-role.yml)
 
 When role nears its expiration, use [PIM to extend or renew the roles](pim-resource-roles-renew-extend.md). Both user-initiated actions require an approval from a Global administrator or Privileged role administrator.
 
@@ -254,7 +254,7 @@ Follow the instructions in the links below:
 
 1.[Give eligible assignments](pim-resource-roles-assign-roles.md)
 
-2.[Allow eligible users to activate their Azure roles just-in-time](pim-resource-roles-activate-your-roles.md)
+2.[Allow eligible users to activate their Azure roles just-in-time](pim-resource-roles-activate-your-roles.yml)
 
 When privileged role assignment nears its expiration, [use PIM to extend or renew the roles](pim-resource-roles-renew-extend.md). Both user-initiated actions require an approval from the resource owner or User Access administrator. 
 
@@ -305,7 +305,7 @@ You can [assign eligibility to members or owners of the PIM for Groups.](groups-
 >[!NOTE] 
 >You can assign the group to one or more Microsoft Entra ID and Azure resource roles in the same way as you assign roles to users. A maximum of 500 role-assignable groups can be created in a single Microsoft Entra organization (tenant).
 
-![Diagram of assign eligibility for PIM for Groups.](media/pim-deployment-plan/pim-for-groups.png)
+:::image type="content" source="media/pim-deployment-plan/pim-for-groups.png" alt-text="Diagram of assign eligibility for PIM for Groups.":::
 
 
 When group assignment nears its expiration, use [PIM to extend or renew the group assignment](groups-renew-extend.md). This operation requires group owner approval.

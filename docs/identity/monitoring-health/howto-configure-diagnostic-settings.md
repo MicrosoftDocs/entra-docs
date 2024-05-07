@@ -76,7 +76,7 @@ When you select a destination, more fields appear. Select the appropriate subscr
 
 For details on configuring diagnostic settings for a specific destination, see the following articles:
 
-- [Integrate logs with Azure monitor logs](howto-integrate-activity-logs-with-azure-monitor-logs.md)
+- [Integrate logs with Azure monitor logs](howto-integrate-activity-logs-with-azure-monitor-logs.yml)
 - [Stream logs to an event hub](howto-stream-logs-to-event-hub.md)
 - [Archive logs to an Azure storage account](howto-archive-logs-to-storage-account.md)
 

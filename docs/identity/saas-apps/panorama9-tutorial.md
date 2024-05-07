@@ -83,7 +83,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://www.panorama9.com/saml20/<TENANT_NAME>`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Sign on URL and Identifier. Contact [Panorama9 Client support team](https://support.panorama9.com/en) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values are not real. Update these values with the actual Sign on URL and Identifier. Contact the Panorama9 Client support team `https://support.panorama9.com` to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 5. In the **SAML Signing Certificate** section, click **Edit** button to open **SAML Signing Certificate** dialog.
 

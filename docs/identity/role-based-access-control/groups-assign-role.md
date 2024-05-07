@@ -91,7 +91,7 @@ $roleAssignment = New-MgRoleManagementDirectoryRoleAssignment -DirectoryScopeId 
 
 # [Azure AD PowerShell](#tab/aad-powershell)
 
-[!INCLUDE [aad-powershell-migration-include](~/includes/aad-powershell-migration-include.md)]
+[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
 
 ### Create a role-assignable group
 

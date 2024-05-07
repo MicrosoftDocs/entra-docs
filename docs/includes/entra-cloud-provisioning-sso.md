@@ -2,7 +2,7 @@
 author: billmath
 ms.service: entra-id
 ms.subservice: hybrid-connect
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom: has-azure-ad-ps-ref
 ms.topic: include
 ms.date: 10/16/2019
 ms.author: billmath
