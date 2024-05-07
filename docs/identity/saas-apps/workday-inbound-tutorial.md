@@ -99,7 +99,7 @@ A common requirement of all the Workday provisioning connectors is that they req
 * [Activating security policy changes](#activating-security-policy-changes)
 
 > [!NOTE]
-> It is possible to bypass this procedure and instead use a Workday global administrator account as the system integration account. This may work fine for demos, but is not recommended for production deployments.
+> It is possible to bypass this procedure and instead use a Workday administrator account as the system integration account. This may work fine for demos, but is not recommended for production deployments.
 
 ### Creating an integration system user
 
