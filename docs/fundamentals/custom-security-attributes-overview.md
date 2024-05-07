@@ -154,7 +154,7 @@ Here are some of the limits and constraints for custom security attributes.
 > | Attribute sets per tenant | 500 |  |
 > | Attribute set name length | 32 | Unicode characters and case insensitive |
 > | Attribute set description length | 128 | Unicode characters |
-> | Attribute name length | 32 | Unicode characters and case insensitive |
+> | Attribute name length | 32 | Unicode characters and case insensitive. However, the combination of attribute set and attribute name is case sensitive in order to form a unique attribute for your tenant. |
 > | Attribute description length | 128 | Unicode characters |
 > | Predefined values |  | Unicode characters and case sensitive |
 > | Predefined values per attribute definition | 100 |  |
