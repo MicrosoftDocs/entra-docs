@@ -35,7 +35,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md) 
 * One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
 * An [Appaegis Cloud](https://www.appaegis.com) account with Professional level of subscription. 
-* An Appaegis Cloud user account with **Global Administrator** permissions.
+* An Appaegis Cloud user account with administrator permissions.
 
 
 ## Step 1: Plan your provisioning deployment

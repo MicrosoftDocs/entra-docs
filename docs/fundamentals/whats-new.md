@@ -149,16 +149,6 @@ Users can now create device-bound passkeys in the Microsoft Authenticator to acc
 
 ---
 
-### Public Preview - Conditional Access What If API
-
-**Type:** New feature    
-**Service category:** Conditional Access    
-**Product capability:** Access Control    
-
-The Conditional access What If API can be used to programmatically test the impact of conditional access policies on user and workload identity signins.
-
----
-
 ### General Availability - Maximum workflows limit in Lifecycle workflows is now 100
 
 **Type:** Changed feature    

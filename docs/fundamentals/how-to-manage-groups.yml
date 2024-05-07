@@ -29,7 +29,7 @@ procedureSection:
     summary: |
       [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-      You can create a basic group and add your members at the same time using the Microsoft Entra admin center. Microsoft Entra roles that can manage groups include **Groups Administrator**, **User Administrator**, **Privileged Role Administrator**, or **Global Administrator**. Review the [appropriate Microsoft Entra roles for managing groups](~/identity/role-based-access-control/delegate-by-task.md#groups)
+      You can create a basic group and add your members at the same time using the Microsoft Entra admin center. You must have at least the **Groups Administrator** or **User Administrator** role assigned to create groups. Review the [appropriate Microsoft Entra roles for managing groups](~/identity/role-based-access-control/delegate-by-task.md#groups)
 
       To create a basic group and add members:
     steps: 
@@ -56,7 +56,7 @@ procedureSection:
       - |
         Switch the **Microsoft Entra roles can be assigned to the group** setting to yes to use this group to assign Microsoft Entra roles to members.
         - This option is only available with P1 or P2 licenses.
-        - You must have the **Privileged Role Administrator** or **Global Administrator** role.
+        - You must have at least the **Privileged Role Administrator** role.
         - Enabling this option automatically selects **Assigned** as the Membership type.
         - The ability to add roles while creating the group is added to the process.
         - [Learn more about role-assignable groups](~/identity/role-based-access-control/groups-create-eligible.md).
@@ -99,7 +99,7 @@ procedureSection:
   - title: |
       Remove members or owners of a group
     summary: |
-      Members and owners can removed from existing groups. The process is the same for members and owners. You'll need the **Groups Administrator** or **User Administrator** role to remove members and owners.
+      Members and owners can be removed from existing groups. The process is the same for members and owners. You'll need the **Groups Administrator** or **User Administrator** role to remove members and owners.
     steps: 
       - |
         Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).

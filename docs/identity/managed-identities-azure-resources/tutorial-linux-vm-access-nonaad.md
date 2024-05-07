@@ -102,17 +102,16 @@ To complete these steps, you need an SSH client.  If you are using Windows, you
 
 1. In the portal, navigate to your Linux VM and in the **Overview**, select **Connect**. 
 2. **Connect** to the VM with the SSH client of your choice. 
-3. In the terminal window, use CURL to make a request to the local managed identities for Azure resources endpoint to get an access token for Azure Key Vault.  
+3. In the terminal window, use CURL to make a request to the local managed identities for Azure resources endpoint to get an access token for Azure Key Vault.
  
- 
-    The CURL request for the access token is below.  
+    The CURL request for the access token is below.
     
     ```bash
-    curl 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https%3A%2F%2Fvault.azure.net' -H Metadata:true  
+    curl 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https%3A%2F%2Fvault.azure.net' -H Metadata:true
     ```
     The response includes the access token you need to access Resource Manager. 
     
-    Response:  
+    Response:
     
     ```bash
     {"access_token":"eyJ0eXAi...",
