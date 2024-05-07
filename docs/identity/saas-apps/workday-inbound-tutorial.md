@@ -787,7 +787,7 @@ This section covers the following aspects of troubleshooting:
 
 1. Click **OK** and sort the result view by **Date and Time** column.
 
-### Setting up Microsoft Entra admin center Provisioning Logs for service troubleshooting
+### Setting up Entra admin center Provisioning Logs for service troubleshooting
 
 1. Launch the [Microsoft Entra admin center](https://entra.microsoft.com), and navigate to the **Provisioning** section of your Workday provisioning application.
 1. Use the **Columns** button on the Provisioning Logs page to display only the following columns in the view (Date, Activity, Status, Status Reason). This configuration ensures that you focus only on data that is relevant for troubleshooting.
