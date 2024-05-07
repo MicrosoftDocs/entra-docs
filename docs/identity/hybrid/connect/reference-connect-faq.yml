@@ -104,13 +104,14 @@ sections:
           - Ensure that if you're using a virtual server that resources required are dedicated
           - Ensure that you have the disk and disk configuration meet Best Practices for SQL Server
           - Install and configure Microsoft Entra Connect Health for monitoring
-          - Use the Delete Threshold that is built into Microsoft Entra Connect.
+          - Use the Delete Threshold that is built into Microsoft Entra Connect
           - Carefully review release updates to be prepared for all changes and new attributes that may be added
           - Backup everything
               - Backup Keys
               - Backup Synchronization Rules
               - Backup Server Configuration
               - Backup SQL Database
+          - Avoid using Azure Backup for the ADSync database as it may lead to deadlocks and potentially cause the run profile to freeze
           - Ensure that there are no 3rd party backup agents that are backing up SQL without the SQL VSS Writer (common in virtual servers with 3rd party snapshots)
           - Limit the amount of custom synchronization rules that are used as they add complexity
           - Treat Microsoft Entra Connect Servers as Tier 0 Servers
@@ -122,7 +123,7 @@ sections:
           - Staging servers aren't meant to be a High Availability solution, but you can have multiple staging servers
           - Introducing a "Lag" Staging Servers could mitigate some potential downtime in case of error
           - Test and Validate all upgrades on the Staging Server first
-          - Always validate exports before switching over to the staging server.  Leverage the staging server for Full Imports and Full Synchronizations to reduce business impact
+          - Always validate exports before switching over to the staging server. Leverage the staging server for Full Imports and Full Synchronizations to reduce business impact
           - Keep version consistency between Microsoft Entra Connect Servers as much as possible 
           
       - question: |
