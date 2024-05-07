@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 05/06/2024
+ms.date: 05/07/2024
 ms.author: jeedes
 
 
@@ -31,8 +31,6 @@ To get started, you need the following items:
 * A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
 * Veza single sign-on (SSO) enabled subscription.
 * Along with Cloud Application Administrator, Application Administrator can also add or manage applications in Microsoft Entra ID. For more information, see [Azure built-in roles](~/identity/role-based-access-control/permissions-reference.md).
-* Your Veza **Veza Single sign-on URL (ACS)** and **Veza Audience URI (SP Entity ID)**. You can get these by logging in to Veza as an administrator. Go to **Administration** > **Sign-in Settings**, find the **Enable SAML** section and click **Configure**. Copy the values from the configuration wizard.
-* Your Veza **Single Logout URL** and **Veza Signing Certificate**, also shown on the configuration wizard. These are required to enable single log out (SLO).
 
 ## Scenario description
 
@@ -50,7 +48,7 @@ To configure the integration of Veza into Microsoft Entra ID, you need to add Ve
 1. In the **Add from the gallery** section, type **Veza** in the search box.
 1. Select **Veza** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-veza'></a>
 
@@ -82,14 +80,16 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. On the **Basic SAML Configuration** section, perform the following steps:
 
-	a. In the **Identifier** text box,enter the Veza Audience URI (Entity ID), for example:
-     `https://<customer>.vezacloud.com/auth/saml/metadata`:
+	a. In the **Identifier** text box, type a URL using the following pattern:
+    `https://<customer>.vezacloud.com/auth/saml/metadata`.
 
-    b. In the **Reply URL** text box, enter the Veza Single sign-on URL (ACS), for example:
+    b. In the **Reply URL** text box, type a URL using the following pattern:
     `https://<customer>.vezacloud.com/auth/saml/acs`.
 
-    c. In the **Sign-on URL** text box, enter the URL where users log in to your Veza website, for example:
-    `https://<instancename>.veza.com/login`. This is required for **SP** initiated sign-on.
+1. If you wish to configure the application in **SP** initiated mode, then perform the following step:
+
+    In the **Sign-on URL** text box, type a URL using the following pattern:
+    `https://<instancename>.veza.com/login`.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 
