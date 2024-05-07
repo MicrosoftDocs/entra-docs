@@ -73,7 +73,7 @@ sections:
         answer: |
           Yes, the following steps provide general guidance on how to do this move. For more information, see [Move Microsoft Entra Connect database from SQL Server Express to remote SQL Server](how-to-connect-install-move-db.md)
           1. Back up the LocalDB ADSync database.
-          The simplest way to make this back up is to use SQL Server Management Studio installed on the same machine as Microsoft Entra Connect. Connect to *(LocalDb).\ADSync*, and then back up the ADSync database.
+          The simplest way to make this backup is to use SQL Server Management Studio installed on the same machine as Microsoft Entra Connect. Connect to *(LocalDb).\ADSync*, and then back up the ADSync database.
           
           2. Restore the ADSync database to your remote SQL Server instance.
           
