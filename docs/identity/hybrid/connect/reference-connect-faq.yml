@@ -80,24 +80,24 @@ sections:
           3. Install Microsoft Entra Connect against the existing [remote SQL database](how-to-connect-install-existing-database.md).
              The article demonstrates how to migrate to using a local SQL database. If you're migrating to using a remote SQL database, in step 5 of the process you must also enter an existing service account that the Windows ADSync service uses. This sync engine service account is described here:
              
-                **Use an existing service account**: By default, Microsoft Entra Connect uses a virtual service account for the synchronization services to use. For remote SQL Server instance or web proxy with authentication, it's required to use a managed service account or a service account in the domain. In those cases, enter the account to use. Make sure that users who are running the installation are system administrators in SQL so that login credentials for the service account can be created. For more information, see [Microsoft Entra Connect accounts and permissions](reference-connect-accounts-permissions.md#adsync-service-account). 
+                **Use an existing service account**: By default, Microsoft Entra Connect uses a virtual service account for the synchronization services to use. For remote SQL Server instance or web proxy with authentication, use a managed service account or a service account in the domain. In those cases, enter the account to use. Make sure that users who are running the installation are system administrators in SQL so that login credentials for the service account can be created. For more information, see [Microsoft Entra Connect accounts and permissions](reference-connect-accounts-permissions.md#adsync-service-account). 
              
-                With the latest build, provisioning the database can now be performed out of band by the SQL administrator and then installed by the Microsoft Entra Connect administrator with database owner rights. For more information, see [Install Microsoft Entra Connect by using SQL delegated administrator permissions](how-to-connect-install-sql-delegation.md).
+                With the latest build, the SQL administrator can provision the database and grant the Microsoft Entra Connect administrator with database owner rights to install the product. For more information, see [Install Microsoft Entra Connect by using SQL delegated administrator permissions](how-to-connect-install-sql-delegation.md).
           
           To keep things simple, we recommend the users who install Microsoft Entra Connectto have system administrator rights in SQL. However, with recent builds you can now use delegated SQL administrators, as described in [Install Microsoft Entra Connect using SQL delegated administrator permissions](how-to-connect-install-sql-delegation.md).
           
       - question: |
           What are some of the best practices from the field?  
         answer: |
-          The following is an informational document that presents some of the best practices that engineering, support and our consultants have developed over the years.  This is presented in a bullet list that can be quickly referenced.  Although this list attempts to be comprehensive, there may be additional best practices that might not have made it on the list yet.
+          The following is an informational document that presents some of the best practices that engineering, support and our consultants have developed over the years.  This is presented in a bullet list that can be quickly referenced.  Although this list attempts to be comprehensive, there may be other best practices that might be added to the list in the future.
           
           - If using Full SQL then it should remain local vs. remote
               - Fewer hops
               - Easier to troubleshoot
               - Less complexity
               - Need to designate resources to SQL and allow overhead for Microsoft Entra Connect and OS
-          - Bypass Proxy if at all possible, if you're unable to bypass the proxy then you need to ensure that the timeout value is greater than 5 minutes.
-          - If proxy is required then you must add the proxy to the machine.config file
+          - Bypass the web proxy if possible, otherwise ensure that the web proxy timeout value is greater than 5 minutes.
+          - If a web proxy is required, then you must add the web proxy configuration to the machine.config file
           - Be aware of local SQL jobs and maintenance and how they'll impact Microsoft Entra Connect - particularly re-indexing
           - Ensure that DNS can resolve names externally
           - Ensure that [server specifications](how-to-connect-install-prerequisites.md#hardware-requirements-for-azure-ad-connect) are per recommendation whether you're using physical or virtual servers
