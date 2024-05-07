@@ -1,7 +1,7 @@
 ### YamlMime:FAQ
 metadata:
   title: 'Microsoft Entra Connect FAQ -'
-  description: This article answers frequently asked questions about Microsoft Entra Connect.  
+  description: This article answers frequently asked questions about Microsoft Entra Connect. 
   author: billmath
   manager: amycolannino
   ms.assetid: 4e47a087-ebcd-4b63-9574-0c31907a39a3
@@ -22,9 +22,9 @@ sections:
       - question: |
           How can I harden my Microsoft Entra Connect server to decrease the security attack surface?
         answer: |
-          Microsoft recommends hardening your Microsoft Entra Connect server to decrease the security attack surface for this critical component of your IT environment.  Following these recommendations decreases the security risks to your organization.
+          Microsoft recommends hardening your Microsoft Entra Connect server to decrease the security attack surface for this critical component of your IT environment. Following these recommendations decreases the security risks to your organization.
           
-          * Deploy Microsoft Entra Connect on a domain joined server and restrict administrative access to domain administrators or other tightly controlled security groups
+          * Deploy Microsoft Entra Connect on a domain joined server and restrict administrative access to domain administrators or other tightly controlled security groups.
           
           To learn more, see: 
           
@@ -89,47 +89,47 @@ sections:
       - question: |
           What are some of the best practices from the field?  
         answer: |
-          The following is an informational document that presents some of the best practices that engineering, support and our consultants have developed over the years.  This is presented in a bullet list that can be quickly referenced.  Although this list attempts to be comprehensive, there may be other best practices that might be added to the list in the future.
+          The following is an informational document that presents some of the best practices that engineering, support, and our consultants have developed over the years. This is presented in a bullet list that can be quickly referenced. Although this list attempts to be comprehensive, there may be other best practices that might be added to the list in the future.
           
-          - If using Full SQL then it should remain local vs. remote
+          - If using Full SQL then it should remain local vs. remote:
               - Fewer hops
               - Easier to troubleshoot
               - Less complexity
-              - Need to designate resources to SQL and allow overhead for Microsoft Entra Connect and OS
+              - Need to designate resources to SQL and allow overhead for Microsoft Entra Connect and OS.
           - Bypass the web proxy if possible, otherwise ensure that the web proxy timeout value is greater than 5 minutes.
-          - If a web proxy is required, then you must add the web proxy configuration to the machine.config file
-          - Be aware of local SQL jobs and maintenance and how they'll impact Microsoft Entra Connect - particularly re-indexing
-          - Ensure that DNS can resolve names externally
-          - Ensure that [server specifications](how-to-connect-install-prerequisites.md#hardware-requirements-for-azure-ad-connect) are per recommendation whether you're using physical or virtual servers
-          - Ensure that if you're using a virtual server that resources required are dedicated
-          - Ensure that you have the disk and disk configuration meet Best Practices for SQL Server
-          - Install and configure Microsoft Entra Connect Health for monitoring
-          - Use the export deletion threshold that is built into Microsoft Entra Connect to prevent accidental deletes
-          - Carefully review release updates to be prepared for all changes and new attributes that may be added
-          - Backup everything
+          - If a web proxy is required, then you must add the web proxy configuration to the machine.config file.
+          - Be aware of local SQL jobs and maintenance and how they'll impact Microsoft Entra Connect - particularly re-indexing.
+          - Ensure that DNS can resolve names externally.
+          - Ensure that [server specifications](how-to-connect-install-prerequisites.md#hardware-requirements-for-azure-ad-connect) are per recommendation whether you're using physical or virtual servers.
+          - Ensure that if you're using a virtual server that resources required are dedicated.
+          - Ensure that you have the disk and disk configuration meet Best Practices for SQL Server.
+          - Install and configure Microsoft Entra Connect Health for monitoring.
+          - Use the export deletion threshold that is built into Microsoft Entra Connect to prevent accidental deletes.
+          - Carefully review release updates to be prepared for all changes and new attributes that may be added.
+          - Backup everything:
               - Backup Keys
               - Backup Synchronization Rules
               - Backup Server Configuration
               - Backup SQL Database
-          - Avoid using Azure Backup for the ADSync database as it may lead to deadlocks and potentially cause the run profile to freeze
-          - Ensure that there are no 3rd party backup agents that are backing up SQL without the SQL VSS Writer (common in virtual servers with 3rd party snapshots)
-          - Limit the number of custom synchronization rules that are used as they add complexity
-          - Treat Microsoft Entra Connect Servers as Tier 0 Servers
-          - Be leery of modifying  cloud synchronization rules without great understanding of the impact and the right business drivers
-          - Make sure that the correct URLs and Firewall ports are open for support of Microsoft Entra Connect and Microsoft Entra Connect Health
-          - Leverage the cloud filtered attribute to troubleshoot and prevent phantom objects
-          - With the Staging Server ensure that you're using the Microsoft Entra Connect Configuration Documenter tool for consistency between servers
-          - Staging Servers should be in separate datacenters (Physical Locations
-          - Staging servers aren't meant to be a High Availability solution, but you can have multiple staging servers
-          - Introducing a "Lag" Staging Servers could mitigate some potential downtime in case of an issue
-          - Test and Validate all upgrades on the Staging Server first
-          - Always validate exports before switching over to the staging server. Leverage the staging server for Full Imports and Full Synchronizations to reduce business impact
-          - Keep version consistency between Microsoft Entra Connect Servers as much as possible 
+          - Avoid using Azure Backup for the ADSync database as it may lead to deadlocks and potentially cause the run profile to freeze.
+          - Ensure that there are no 3rd party backup agents that are backing up SQL without the SQL VSS Writer (common in virtual servers with 3rd party snapshots).
+          - Limit the number of custom synchronization rules that are used as they add complexity.
+          - Treat Microsoft Entra Connect Servers as Tier 0 Servers.
+          - Be leery of modifying  cloud synchronization rules without great understanding of the impact and the right business drivers.
+          - Make sure that the correct URLs and Firewall ports are open for support of Microsoft Entra Connect and Microsoft Entra Connect Health.
+          - Leverage the cloud filtered attribute to troubleshoot and prevent phantom objects.
+          - With the Staging Server ensure that you're using the Microsoft Entra Connect Configuration Documenter tool for consistency between servers.
+          - Staging Servers should be in separate datacenters (Physical Locations.
+          - Staging servers aren't meant to be a High Availability solution, but you can have multiple staging servers.
+          - Introducing a "Lag" Staging Servers could mitigate some potential downtime in case of an issue.
+          - Test and Validate all upgrades on the Staging Server first.
+          - Always validate exports before switching over to the staging server. Leverage the staging server for Full Imports and Full Synchronizations to reduce business impact.
+          - Keep version consistency between Microsoft Entra Connect Servers as much as possible.
           
       - question: |
           Can I allow Microsoft Entra Connect to create the Microsoft Entra Connector account on Workgroup machine?
         answer: |
-          No, in order to allow Microsoft Entra Connect to auto-create the Microsoft Entra Connector account, the machine must be domain-joined.  
+          No, in order to allow Microsoft Entra Connect to auto-create the Microsoft Entra Connector account, the machine must be domain-joined.
 
   - name: Network
     questions:
@@ -185,7 +185,7 @@ sections:
       - question: |
           Are Next Generation Cryptographic (NGC) sync rules supported on a FIPS-enabled machine?  
         answer: |
-          No.  They aren't supported.
+          No. They aren't supported.
           
       - question: |
           If I disabled a synced device in the [Microsoft Entra admin center](https://entra.microsoft.com), why it's re-enabled?
@@ -384,4 +384,4 @@ sections:
       - question: |
           Why am I seeing Events 6311 and 6401 occur after Sync Step Errors?
         answer: |
-          The events 6311 - **The server encountered an unexpected error while performing a callback** and 6401 - **The management agent controller encountered an unexpected error** - are always logged after a synchronization step error. To resolve these errors, you need to clean up the synchronization step errors.  For more information, see [Troubleshooting errors during synchronization](tshoot-connect-sync-errors.md) and [Troubleshoot object synchronization with Microsoft Entra Connect Sync](tshoot-connect-objectsync.md)
+          The events 6311 - **The server encountered an unexpected error while performing a callback** and 6401 - **The management agent controller encountered an unexpected error** - are always logged after a synchronization step error. To resolve these errors, you need to clean up the synchronization step errors. For more information, see [Troubleshooting errors during synchronization](tshoot-connect-sync-errors.md) and [Troubleshoot object synchronization with Microsoft Entra Connect Sync](tshoot-connect-objectsync.md)
