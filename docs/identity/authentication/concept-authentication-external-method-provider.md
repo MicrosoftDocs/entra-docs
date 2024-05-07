@@ -75,7 +75,7 @@ To configure a multitenant application, the provider admin must first:
 1. Create an Microsoft Entra ID tenant if they don't have one yet.
 1. Register an application in their tenant. 
 1. Set the Supported Account types of the application to: Accounts in any organizational directory (Any Microsoft Entra ID tenant - Multitenant). 
-1. Add the delegated permission `openid` and profile of Microsoft Graph to the application.
+1. Add the delegated permission `openid` and `profile` of Microsoft Graph to the application.
 1. Don't publish any scopes in this application. 
 1. Add the external identity provider’s valid authorization_endpoint URLs to that application as Reply URLs. 
    
