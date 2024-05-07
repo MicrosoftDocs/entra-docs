@@ -25,7 +25,8 @@ namespace AuthEventTrigger
         [FunctionName("onTokenIssuanceStart")]
         public static WebJobsAuthenticationEventResponse Run(
         // [WebJobsAuthenticationEventsTriggerAttribute] WebJobsTokenIssuanceStartRequest request, ILogger log)
-        // The WebJobsAuthenticationEventsTriggerAttribute attribute can be used to specify and audience app ID, authority URL and authorized party app id. This is an alternative route to setting up Authorization values instead of Environment variables or EzAuth
+        // The WebJobsAuthenticationEventsTriggerAttribute attribute can be used to specify and audience app ID, authority URL and authorized party app id. 
+        // This is an alternative route to setting up Authorization values instead of Environment variables or EzAuth
             [WebJobsAuthenticationEventsTriggerAttribute(AudienceAppId = "Enter custom authentication extension app ID here",
                                          AuthorityUrl = "Enter authority URI here", 
                                          AuthorizedPartyAppId = "Enter the Authorized Party App Id here")]WebJobsTokenIssuanceStartRequest request, ILogger log)
@@ -38,11 +39,11 @@ namespace AuthEventTrigger
                     // Fetches information about the user from external data store
                     // Add new claims to the token's response
                     request.Response.Actions.Add(new WebJobsProvideClaimsForToken(
-                                                  new WebjobsAuthenticationEventsTokenClaim("dateOfBirth", "01/01/2000"),
-                                                  new WebjobsAuthenticationEventsTokenClaim("customRoles", "Writer", "Editor"),
-                                                  new WebjobsAuthenticationEventsTokenClaim("apiVersion", "1.0.0"),
-                                                  new WebjobsAuthenticationEventsTokenClaim("correlationId", request.Data.AuthenticationContext.CorrelationId.ToString())
-                                             ));
+                                    new WebjobsAuthenticationEventsTokenClaim("dateOfBirth", "01/01/2000"),
+                                    new WebjobsAuthenticationEventsTokenClaim("customRoles", "Writer", "Editor"),
+                                    new WebjobsAuthenticationEventsTokenClaim("apiVersion", "1.0.0"),
+                                    new WebjobsAuthenticationEventsTokenClaim("correlationId", request.Data.AuthenticationContext.CorrelationId.ToString())
+                                    ));
                 }
                 else
                 {

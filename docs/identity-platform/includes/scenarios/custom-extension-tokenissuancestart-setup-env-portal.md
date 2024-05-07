@@ -11,7 +11,7 @@ ms.reviewer: stsoneff
 ms.custom:
 ---
 
-## Set up environment variables for your Azure Function (optional)
+## Set up environment variables for your Azure Function
 
 You can set up environment variables for your Azure Functions instead of using the `AuthenticationEventsTrigger` attribute to implement the built-in [Azure App service authentication and authorization](/azure/app-service/overview-authentication-authorization). These environment variables can be hardcoded in the attribute or set up in the Azure portal, but not both.
 
@@ -38,7 +38,7 @@ public async static Task<AuthenticationEventResponse> Run(
    | ---- | ----- | 
    | *AuthenticationEvents__AudienceAppId* | *Custom authentication extension app ID* |
    | *AuthenticationEvents__AuthorityUrl* | &#8226; Workforce tenant `https://login.microsoftonline.com/<tenantID>` <br> &#8226; external tenant `https://<mydomain>.ciamlogin.com` | 
-   | *AuthenticationEvents__AuthorizedPartyAppId* | `99045fe1-7639-4a75-9d4a-577b6ca3810f` or another authorized party (Optional) | 
+   | *AuthenticationEvents__AuthorizedPartyAppId* | `99045fe1-7639-4a75-9d4a-577b6ca3810f` or another authorized party | 
 
 1. Select **Save** to save the application settings.
 
