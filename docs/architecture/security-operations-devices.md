@@ -145,7 +145,7 @@ AuditLogs
 
 ## Device administrator roles
 
-The [Microsoft Entra Joined Device Local Administrator](../role-based-access-control/permissions-reference.md#microsoft-entra-joined-device-local-administrator) and the [Global Administrator](../role-based-access-control/permissions-reference.md#global-administrator) roles automatically get local administrator rights on all Microsoft Entra joined devices. It’s important to monitor who has these rights to keep your environment safe.
+The [Microsoft Entra Joined Device Local Administrator](../identity/role-based-access-control/permissions-reference.md#microsoft-entra-joined-device-local-administrator) and the [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator) roles automatically get local administrator rights on all Microsoft Entra joined devices. It’s important to monitor who has these rights to keep your environment safe.
 
 | What to monitor| Risk Level| Where| Filter/sub-filter| Notes |
 | - |- |- |- |- |

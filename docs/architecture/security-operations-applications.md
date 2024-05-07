@@ -110,7 +110,7 @@ Many applications use credentials to authenticate in Microsoft Entra ID. Any oth
 
 ## Application permissions
 
-Like an administrator account, applications can be assigned privileged roles. Apps can be assigned any Microsoft Entra roles, such as [User Administrator](../role-based-access-control/permissions-reference.md#user-administrator), or Azure RBAC roles such as [Billing Reader](/azure/role-based-access-control/built-in-roles/management-and-governance#billing-reader). Because they can run without a user, and as a background service, closely monitor when an application is granted privileged roles or permissions.
+Like an administrator account, applications can be assigned privileged roles. Apps can be assigned any Microsoft Entra roles, such as [User Administrator](../identity/role-based-access-control/permissions-reference.md#user-administrator), or Azure RBAC roles such as [Billing Reader](/azure/role-based-access-control/built-in-roles/management-and-governance#billing-reader). Because they can run without a user, and as a background service, closely monitor when an application is granted privileged roles or permissions.
 
 ### Service principal assigned to a role
 
