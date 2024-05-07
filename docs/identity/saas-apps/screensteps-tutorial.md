@@ -45,7 +45,7 @@ To configure the integration of ScreenSteps into Microsoft Entra ID, you need to
 1. In the **Add from the gallery** section, type **ScreenSteps** in the search box.
 1. Select **ScreenSteps** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-screensteps'></a>
 
@@ -72,26 +72,19 @@ Follow these steps to enable Microsoft Entra SSO.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
 
-   ![Edit Basic SAML Configuration](common/edit-urls.png)
+   ![Screenshot shows to edit Basic SAML Configuration.](common/edit-urls.png)
 
 1. On the **Basic SAML Configuration** section, perform the following steps:
 
-    a. In the **Identifier (Entity ID)** text box, copy and paste the **Entity ID** value from ScreenSteps.
+    In the **Sign-on URL** text box, type a URL using the following pattern:
+    `https://<tenantname>.ScreenSteps.com`
 
-    b. In the **Sign-on URL** text box, copy and paste the **SAML Consumer URL** value from ScreenSteps.
-
-1. On the **Set up ScreenSteps** section, copy the appropriate URL(s) as per your requirement.
-
-	![Screenshot shows to copy configuration URLs.](common/copy-configuration-urls.png)
-
-    a. Copy and paste the **Login URL** into the **Remote Login URL** field in ScreenSteps.
-
-    b. Copy and paste the **Logout URL** into the **Logout URL** field in ScreenSteps.
-
+    > [!NOTE]
+	> This value is not real. Update this value with the actual Sign-On URL, which is explained later in this tutorial.
 
 1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Certificate (Base64)** from the given options as per your requirement and save it on your computer.
 
-	![The Certificate download link](common/certificatebase64.png)
+	![Screenshot shows the Certificate download link.](common/certificatebase64.png "Certificate")
 
 <a name='create-an-azure-ad-test-user'></a>
 
@@ -125,9 +118,29 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 ## Configure ScreenSteps SSO
 
-1. In a different web browser window, log in to your ScreenSteps account site as an administrator. This is where you will perform the steps in the how-to instructions.
-1. In a different web browser window, open the ScreenSteps help article [How to Set up Single Sign-on](https://help.screensteps.com/a/1097728-how-to-set-up-single-sign-on). This article will guide you through the steps of setting up ScreenSteps to work with Microsoft Entra ID.
-1. After answering a few questions in the help article you will be asked to "Select how you will set up SSO". Select Microsoft Entra ID and continue on with [Configure Microsoft Entra SSO](#configure-azure-ad-sso).
+1. Log in to MyGeotab company site as an administrator.
+
+1. Go to **Account Settings** > **Site Access**.
+
+    ![Screenshot that shows the path.](./media/screensteps-tutorial/path.png "path")
+
+1. Click the pencil icon in the **Content Management and Admin Centers** and select **SAML** as identity provider from the drop down.
+
+    ![Screenshot that shows Configuration.](./media/screensteps-tutorial/configure.png "Configuration")
+
+    a. In the **Remote Login URL** field, paste the **Login URL** which you copied from the Microsoft Entra admin center.
+
+    b. In the **Logout URL** field, paste the **Logout URL** which you copied from the Microsoft Entra admin center.
+
+    c. Copy **SAML Consumer URL** value, paste this value into the **Sign-on URL** text box in the **Basic SAML Configuration** section in Microsoft Entra admin center.
+
+    d. Copy **Entity ID** value, paste this value into the **Identifier (Entity ID)** text box in the **Basic SAML Configuration** section in Microsoft Entra admin center.
+
+    e. Click **Save**.
+
+### Create ScreenSteps test user
+
+In this section, you create a user called Britta Simon in ScreenSteps. Work with [ScreenSteps Client support team](https://www.screensteps.com/contact) to add the users in the ScreenSteps platform. Users must be created and activated before you use single sign-on.
 
 ## Test SSO
 
