@@ -62,16 +62,10 @@
       "learn_banner_products": {
         "docs/**/*.md": [
           "entra"
-        ],
-        "docs/**/*.yml": [
-          "entra"
         ]
       },
       "featureFlags": {
         "docs/**/*.md": [
-          "show_learn_banner"
-        ],
-        "docs/**/*.yml": [
           "show_learn_banner"
         ]
       },
@@ -106,7 +100,6 @@
         "workload-id/**/*.yml": "CelesteDG"
       },
       "titleSuffix": {
-        "*.yml": "Microsoft Entra",
         "*.md": "Microsoft Entra",
         "architecture/*.md": "Microsoft Entra",
         "architecture/*.yml": "Microsoft Entra",
@@ -139,6 +132,9 @@
         "verified-id/*.yml": "Microsoft Entra Verified ID",
         "workload-id/*.md": "Microsoft Entra Workload ID",
         "workload-id/*.yml": "Microsoft Entra Workload ID"
+      },
+      "no-loc": {
+        "includes/policy/**/*.md": "[audit, deny, modify, disabled, auditifnotexists, deployifnotexists]"
       }
     }, 
     "template": [
