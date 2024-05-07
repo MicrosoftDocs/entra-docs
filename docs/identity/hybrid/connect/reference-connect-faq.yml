@@ -22,7 +22,7 @@ sections:
       - question: |
           How can I harden my Microsoft Entra Connect server to decrease the security attack surface?
         answer: |
-          Microsoft recommends hardening your Microsoft Entra Connect server to decrease the security attack surface for this critical component of your IT environment.  Following the recommendations below will decrease the security risks to your organization.
+          Microsoft recommends hardening your Microsoft Entra Connect server to decrease the security attack surface for this critical component of your IT environment.  Following this recommendations decreases the security risks to your organization.
           
           * Deploy Microsoft Entra Connect on a domain joined server and restrict administrative access to domain administrators or other tightly controlled security groups
           
@@ -37,7 +37,7 @@ sections:
           * [Reducing the Active Directory attack surface](/windows-server/identity/ad-ds/plan/security-best-practices/reducing-the-active-directory-attack-surface)
           
       - question: |
-          Will installation work if the Microsoft Entra Global Administrator has two-factor authentication (2FA) enabled?  
+          Does the installation work if the Microsoft Entra Global Administrator has two-factor authentication (2FA) enabled?
         answer: |
           As of the February 2016 builds, this scenario is supported.
 
@@ -71,14 +71,14 @@ sections:
       - question: |
           Can I move the Microsoft Entra Connect database from the local database to a remote SQL Server instance?   
         answer: |
-          Yes, the following steps provide general guidance on how to do this. We're currently working on a more detailed document.
+          Yes, the following steps provide general guidance on how to do this move. For more information see [Move Microsoft Entra Connect database from SQL Server Express to remote SQL Server](how-to-connect-install-move-db.md)
           1. Back up the LocalDB ADSync database.
           The simplest way to do this is to use SQL Server Management Studio installed on the same machine as Microsoft Entra Connect. Connect to *(LocalDb).\ADSync*, and then back up the ADSync database.
           
           2. Restore the ADSync database to your remote SQL Server instance.
           
           3. Install Microsoft Entra Connect against the existing [remote SQL database](how-to-connect-install-existing-database.md).
-             The article demonstrates how to migrate to using a local SQL database. If you're migrating to using a remote SQL database, in step 5 of the process you must also enter an existing service account that the Windows Sync service will run as. This sync engine service account is described here:
+             The article demonstrates how to migrate to using a local SQL database. If you're migrating to using a remote SQL database, in step 5 of the process you must also enter an existing service account that the Windows ADSync service will use. This sync engine service account is described here:
              
                 **Use an existing service account**: By default, Microsoft Entra Connect uses a virtual service account for the synchronization services to use. If you use a remote SQL Server instance or use a proxy that requires authentication, use a managed service account or a service account in the domain, and know the password. In those cases, enter the account to use. Make sure that users who are running the installation are system administrators in SQL so that login credentials for the service account can be created. For more information, see [Microsoft Entra Connect accounts and permissions](reference-connect-accounts-permissions.md#adsync-service-account). 
              
