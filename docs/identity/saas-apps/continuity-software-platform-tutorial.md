@@ -5,8 +5,8 @@ services: active-directory
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: celested
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 ms.workload: identity
 ms.topic: tutorial
 ms.date: 05/07/2024
