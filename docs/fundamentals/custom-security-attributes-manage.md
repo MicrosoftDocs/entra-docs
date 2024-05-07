@@ -43,7 +43,7 @@ Microsoft Entra role assignments are an additive model, so your effective permis
 
 ## Step 3: Review the available roles
 
-You need to determine who needs access to work with custom security attributes in your organization. To help you manage access to custom security attributes, there are four Microsoft Entra built-in roles. By default, [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator) and other administrator roles don't have permissions to read, define, or assign custom security attributes. If necessary, someone assigned at least the [Privileged Role Administrator](../identity/role-based-access-control/permissions-reference#privileged-role-administrator) role can assign these roles.
+You need to determine who needs access to work with custom security attributes in your organization. To help you manage access to custom security attributes, there are four Microsoft Entra built-in roles. By default, [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator) and other administrator roles don't have permissions to read, define, or assign custom security attributes. If necessary, someone assigned at least the [Privileged Role Administrator](../identity/role-based-access-control/permissions-reference.md#privileged-role-administrator) role can assign these roles.
 
 - [Attribute Definition Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-definition-administrator)
 - [Attribute Assignment Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator)
