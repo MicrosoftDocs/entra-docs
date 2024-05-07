@@ -416,7 +416,7 @@ Once the Workday provisioning app configurations have been completed and you hav
 
 1. This operation starts the initial sync, which can take a variable number of hours depending on how many users are in the Workday tenant. You can check the progress bar to the track the progress of the sync cycle. 
 
-1. At any time, check the **Provisioning** tab in the Azure portal to see what actions the provisioning service has performed. The provisioning logs lists all individual sync events performed by the provisioning service, such as which users are being read out of Workday and then subsequently added or updated to Active Directory. Refer to the Troubleshooting section for instructions on how to review the provisioning logs and fix provisioning errors.
+1. At any time, check the **Provisioning** tab in the Entra admin center to see what actions the provisioning service has performed. The provisioning logs lists all individual sync events performed by the provisioning service, such as which users are being read out of Workday and then subsequently added or updated to Active Directory. Refer to the Troubleshooting section for instructions on how to review the provisioning logs and fix provisioning errors.
 
 1. Once the initial sync is completed, it writes an audit summary report in the **Provisioning** tab, as shown below.
    > [!div class="mx-imgBorder"]
@@ -493,7 +493,7 @@ Yes, this configuration is supported. Here are the high level steps to configure
 * Deploy provisioning agent #1 and register it with Microsoft Entra tenant #1.
 * Deploy provisioning agent #2 and register it with Microsoft Entra tenant #2.
 * Based on the "Child Domains" that each Provisioning Agent manages, configure each agent with the domain(s). One agent can handle multiple domains.
-* In Azure portal, setup the Workday to AD User Provisioning App in each tenant and configure it with the respective domains.
+* In Entra admin center, setup the Workday to AD User Provisioning App in each tenant and configure it with the respective domains.
 
 <a name='how-do-i-suggest-improvements-or-request-new-features-related-to-workday-and-azure-ad-integration'></a>
 
@@ -522,7 +522,7 @@ Refer to [Microsoft Entra Connect Provisioning Agent: Version release history](~
 * Look for the version corresponding to the entry **Microsoft Entra Connect Provisioning Agent**
 
   >[!div class="mx-imgBorder"]
-  >![Azure portal](./media/workday-inbound-tutorial/pa_version.png)
+  >![Entra admin center](./media/workday-inbound-tutorial/pa_version.png)
 
 #### Does Microsoft automatically push Provisioning Agent updates?
 
@@ -738,7 +738,7 @@ This section covers the following aspects of troubleshooting:
 
 * [Configure provisioning agent to emit Event Viewer logs](#configure-provisioning-agent-to-emit-event-viewer-logs)
 * [Setting up Windows Event Viewer for agent troubleshooting](#setting-up-windows-event-viewer-for-agent-troubleshooting)
-* [Setting up Azure portal Provisioning Logs for service troubleshooting](#setting-up-azure-portal-provisioning-logs-for-service-troubleshooting)
+* [Setting up Entra admin center Provisioning Logs for service troubleshooting](#setting-up-entra-admin-center-provisioning-logs-for-service-troubleshooting)
 * [Understanding logs for AD User Account create operations](#understanding-logs-for-ad-user-account-create-operations)
 * [Understanding logs for Manager update operations](#understanding-logs-for-manager-update-operations)
 * [Resolving commonly encountered errors](#resolving-commonly-encountered-errors)
@@ -787,9 +787,9 @@ This section covers the following aspects of troubleshooting:
 
 1. Click **OK** and sort the result view by **Date and Time** column.
 
-### Setting up Azure portal Provisioning Logs for service troubleshooting
+### Setting up Entra admin center Provisioning Logs for service troubleshooting
 
-1. Launch the [Azure portal](https://portal.azure.com), and navigate to the **Provisioning** section of your Workday provisioning application.
+1. Launch the [Entra admin center](https://entra.microsoft.com), and navigate to the **Provisioning** section of your Workday provisioning application.
 1. Use the **Columns** button on the Provisioning Logs page to display only the following columns in the view (Date, Activity, Status, Status Reason). This configuration ensures that you focus only on data that is relevant for troubleshooting.
 
    ![Provisioning log columns](media/workday-inbound-tutorial/wd_audit_logs_00.png)
@@ -1017,11 +1017,11 @@ To do this change, you must use [Workday Studio](https://community.workday.com/s
 
 18. If the last item in the copied expression is a node (example: "/wd: Birth_Date"), then append **/text()** at the end of the expression. This is not necessary if the last item is an attribute (example: "/@wd: type").
 
-19. The result should be something like `wd:Worker/wd:Worker_Data/wd:Personal_Data/wd:Birth_Date/text()`. This value is what you copy and enter into the Azure portal.
+19. The result should be something like `wd:Worker/wd:Worker_Data/wd:Personal_Data/wd:Birth_Date/text()`. This value is what you copy and enter into the Entra admin center.
 
 **To add your custom Workday user attribute to your provisioning configuration:**
 
-1. Launch the [Azure portal](https://portal.azure.com), and navigate to the Provisioning section of your Workday provisioning application, as described earlier in this tutorial.
+1. Launch the [Entra admin center](https://entra.microsoft.com), and navigate to the Provisioning section of your Workday provisioning application, as described earlier in this tutorial.
 
 2. Set **Provisioning Status** to **Off**, and select **Save**. This step helps ensure your changes take effect only when you are ready.
 

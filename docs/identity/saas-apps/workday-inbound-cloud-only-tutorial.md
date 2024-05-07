@@ -196,7 +196,7 @@ Once the Workday provisioning app configurations have been completed, you can tu
 
 3. This operation starts the initial sync, which can take a variable number of hours depending on how many users are in the Workday tenant. You can check the progress bar to the track the progress of the sync cycle. 
 
-4. At any time, check the **Provisioning** tab in the Azure portal to see what actions the provisioning service has performed. The provisioning logs lists all individual sync events performed by the provisioning service, such as which users are being read out of Workday and then subsequently added or updated to Microsoft Entra ID. 
+4. At any time, check the **Provisioning** tab in the Entra admin center to see what actions the provisioning service has performed. The provisioning logs lists all individual sync events performed by the provisioning service, such as which users are being read out of Workday and then subsequently added or updated to Microsoft Entra ID. 
 
 5. Once the initial sync is completed, it will write an audit summary report in the **Provisioning** tab, as shown below.
 

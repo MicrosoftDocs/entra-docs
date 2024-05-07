@@ -82,7 +82,7 @@ In this section, you configure how writeback attributes flow from Microsoft Entr
 4. Typically you map the Microsoft Entra ID *userPrincipalName* attribute to Workday *UserID* attribute and map the Microsoft Entra ID *mail* attribute to the Workday *EmailAddress* attribute. 
 
      >[!div class="mx-imgBorder"]
-     >![Azure portal](./media/workday-inbound-tutorial/workday-writeback-mapping.png)
+     >![Entra admin center](./media/workday-inbound-tutorial/workday-writeback-mapping.png)
 
 5. Use the following guidance to map phone number attribute values from Microsoft Entra ID to Workday. See [Writeback expression mapping examples](#writeback-expression-mapping-examples) to configure the right expression mapping for each attribute. 
 
@@ -307,7 +307,7 @@ Once the Workday provisioning app configurations are complete, you can turn on t
 
 3. This operation starts the initial sync, which can take a variable number of hours depending on how many users are in the source directory. You can check the progress bar to the track the progress of the sync cycle. 
 
-4. At any time, check the **Provisioning logs** tab in the Azure portal to see what actions the provisioning service performs. The audit logs lists all individual sync events performed by the provisioning service, such as which users are imported from the source and exported to the target application.  
+4. At any time, check the **Provisioning logs** tab in the Entra admin center to see what actions the provisioning service performs. The audit logs lists all individual sync events performed by the provisioning service, such as which users are imported from the source and exported to the target application.  
 
 5. Once the initial sync is completed, it writes a summary report in the **Provisioning** tab.
 

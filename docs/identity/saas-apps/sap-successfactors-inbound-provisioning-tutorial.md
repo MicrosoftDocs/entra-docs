@@ -209,7 +209,7 @@ In this step, we establish connectivity with SuccessFactors and Active Directory
 
    * Click the **Test Connection** button. If the connection test succeeds, click the **Save** button at  the top. If it fails, double-check that the SuccessFactors credentials and the AD credentials configured on the agent setup are valid.
      >[!div class="mx-imgBorder"]
-     >![Azure portal](./media/sap-successfactors-inbound-provisioning/sf2ad-provisioning-creds.png)
+     >![Entra admin center](./media/sap-successfactors-inbound-provisioning/sf2ad-provisioning-creds.png)
 
    * Once the credentials are saved successfully, the **Mappings** section displays the default mapping **Synchronize SuccessFactors Users to On Premises Active Directory**
 
@@ -291,7 +291,7 @@ Once the SuccessFactors provisioning app configurations are complete and you hav
 
 1. This operation starts the initial sync, which can take a variable number of hours depending on how many users are in the SuccessFactors tenant. You can check the progress bar to the track the progress of the sync cycle. 
 
-1. At any time, check the **Provisioning** tab in the Azure portal to see what actions the provisioning service has performed. The provisioning logs lists all individual sync events performed by the provisioning service, such as which users are being read out of SuccessFactors and then subsequently added or updated to Active Directory. 
+1. At any time, check the **Provisioning** tab in the Entra admin center to see what actions the provisioning service has performed. The provisioning logs lists all individual sync events performed by the provisioning service, such as which users are being read out of SuccessFactors and then subsequently added or updated to Active Directory. 
 
 1. Once the initial sync is completed, it writes an audit summary report in the **Provisioning** tab, as shown below.
 

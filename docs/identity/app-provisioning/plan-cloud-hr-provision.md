@@ -332,7 +332,7 @@ In large organizations, it isn't uncommon to have multiple HR systems. During bu
 
 ## Plan scoping filters and attribute mapping
 
-When you enable provisioning from the cloud HR app to Active Directory or Microsoft Entra ID, the Azure portal controls the attribute values through attribute mapping.
+When you enable provisioning from the cloud HR app to Active Directory or Microsoft Entra ID, the Entra admin center controls the attribute values through attribute mapping.
 
 ### Define scoping filters
 

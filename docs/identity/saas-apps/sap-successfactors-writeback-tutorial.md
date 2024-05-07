@@ -250,7 +250,7 @@ This section provides steps for
 
    * Click the **Test Connection** button. If the connection test succeeds, click the **Save** button at  the top. If it fails, double-check that the SuccessFactors credentials and URL are valid.
     >[!div class="mx-imgBorder"]
-    >![Azure portal](./media/sap-successfactors-inbound-provisioning/sfwb-provisioning-creds.png)
+    >![Entra admin center](./media/sap-successfactors-inbound-provisioning/sfwb-provisioning-creds.png)
 
    * Once the credentials are saved successfully, the **Mappings** section displays the default mapping. Refresh the page, if the attribute mappings are not visible.  
 
@@ -299,7 +299,7 @@ In this section, you configure how user data flows from SuccessFactors to Active
 1. Click on **Edit attribute list for SuccessFactors**. 
 
    > [!NOTE] 
-   > If the **Edit attribute list for SuccessFactors** option does not show in the Azure portal, use the URL *https://portal.azure.com/?Microsoft_AAD_IAM_forceSchemaEditorEnabled=true* to access the page. 
+   > If the **Edit attribute list for SuccessFactors** option does not show in the Entra admin center, use the URL *https://portal.azure.com/?Microsoft_AAD_IAM_forceSchemaEditorEnabled=true* to access the page. 
 
 1. The **API expression** column in this view displays the JSON Path expressions used by the connector. 
 1. Update the JSON Path expressions for business phone and cell phone to use the ID value (*businessPhoneType* and *cellPhoneType*) corresponding to your environment. 
@@ -332,7 +332,7 @@ Once the SuccessFactors provisioning app configurations are complete, you can tu
 
 1. This operation starts the initial sync, which can take a variable number of hours depending on how many users are in the Microsoft Entra tenant and the scope defined for the operation. You can check the progress bar to the track the progress of the sync cycle. 
 
-1. At any time, check the **Provisioning logs** tab in the Azure portal to see what actions the provisioning service has performed. The provisioning logs lists all individual sync events performed by the provisioning service. 
+1. At any time, check the **Provisioning logs** tab in the Entra admin center to see what actions the provisioning service has performed. The provisioning logs lists all individual sync events performed by the provisioning service. 
 
 1. Once the initial sync is completed, it writes an audit summary report in the **Provisioning** tab, as shown below.
 
