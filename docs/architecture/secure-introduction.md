@@ -41,7 +41,7 @@ To distinguish between human and non-human identities, different terms are emerg
 
 For more information on workload identities, see [What are workload identities](~/workload-id/workload-identities-overview.md).
 
-The Microsoft Entra tenant is an identity security boundary that is under the control of global administrators. Within this security boundary, administration of subscriptions, management groups, and resource groups can be delegated to segment administrative control of Azure resources. While not directly interacting, these groupings are dependent on tenant-wide configurations of policies and settings. And those settings and configurations are under the control of the Microsoft Entra Global Administrators.
+The Microsoft Entra tenant is an identity security boundary that is under the control of administrators. Within this security boundary, administration of subscriptions, management groups, and resource groups can be delegated to segment administrative control of Azure resources. While not directly interacting, these groupings are dependent on tenant-wide configurations of policies and settings. And those settings and configurations are under the control of the Microsoft Entra Global Administrators.
 
 Microsoft Entra ID is used to grant objects representing identities access to applications and Azure resources. In that sense both Azure resources and applications trusting Microsoft Entra ID are resources that can be managed with Microsoft Entra ID. In the following diagram, The Microsoft Entra tenant boundary shows the Microsoft Entra identity objects and the configuration tools. Below the directory are the resources that use the identity objects for identity and access management. Following best practices, the environment is set up with a test environment to test the proper operation of IAM.
 
@@ -156,7 +156,7 @@ Configuration settings in Microsoft Entra ID can affect any resource in the Micr
 
 * **Self-service options**. Administrators set self-service options such as self-service-password reset and create Microsoft 365 groups at the tenant level.
 
-The implementation of some tenant-wide configurations can be scoped as long as they don't get overridden by global administration policies. For example:
+The implementation of some tenant-wide configurations can be scoped as long as they don't get overridden by global policies. For example:
 
 * If the tenant is configured to allow external identities, a resource administrator can still exclude those identities from accessing a resource.
 
@@ -255,7 +255,7 @@ Who should have the ability to administer the environment and its resources? The
 
 Given the interdependence between a Microsoft Entra tenant and its resources, it's critical to understand the security and operational risks of compromise or error. If you're operating in a federated environment with synchronized accounts, an on-premises compromise can lead to a Microsoft Entra ID compromise.
 
-* **Identity compromise** - Within the boundary of a tenant, any identity can be assigned any role, given the one providing access has sufficient privileges. While the effect of compromised non-privileged identities is largely contained, compromised administrators can have broad implications. For example, if a Microsoft Entra Global Administrator account is compromised, Azure resources can become compromised. To mitigate risk of identity compromise, or bad actors, implement [tiered administration](/security/privileged-access-workstations/privileged-access-access-model) and ensure that you follow principles of least privilege for [Microsoft Entra Administrator Roles](~/identity/role-based-access-control/delegate-by-task.md). Similarly, ensure that you create Conditional Access policies that specifically exclude test accounts and test service principals from accessing resources outside of the test applications. For more information on privileged access strategy, see [Privileged access: Strategy](/security/privileged-access-workstations/privileged-access-strategy).
+* **Identity compromise** - Within the boundary of a tenant, any identity can be assigned any role, given the one providing access has sufficient privileges. While the effect of compromised non-privileged identities is largely contained, compromised administrators can have broad implications. For example, if a Microsoft Entra Global Administrator account is compromised, Azure resources can become compromised. To mitigate risk of identity compromise, or bad actors, implement [tiered administration](/security/privileged-access-workstations/privileged-access-access-model) and ensure that you follow principles of least privilege for [Microsoft Entra Administrator Roles](../identity/role-based-access-control/delegate-by-task.md). Similarly, ensure that you create Conditional Access policies that specifically exclude test accounts and test service principals from accessing resources outside of the test applications. For more information on privileged access strategy, see [Privileged access: Strategy](/security/privileged-access-workstations/privileged-access-strategy).
 
 * **Federated environment compromise**
 
