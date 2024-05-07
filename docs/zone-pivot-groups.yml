@@ -61,10 +61,10 @@ groups:
   title: custom-auth-extension
   prompt: Make a selection
   pivots:
-  - id: nuget-library
-    title: WebJobs Authentication Events trigger (preview)
   - id: azure-portal
     title: Azure Functions HTTP trigger
+  - id: nuget-library
+    title: WebJobs Authentication Events trigger (preview)
 ############ END MICROSOFT IDENTITY PLATFORM
 ########### BEGIN APPLICATION MANAGEMENT
 # Owner(s):      jomondi, celested

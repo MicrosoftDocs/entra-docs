@@ -229,25 +229,100 @@ In your *Function1.cs* <!--TODO--> file, replace the entire contents of the file
 [!INCLUDE [nuget-code](./includes/scenarios/custom-extension-tokenissuancestart-setup-nuget-code.md)]
 
 
-### Prepare for local testing
+### Test the function 
 
-For local development and testing purposes, open *local.settings.json* and add the following code; 
+1. For local development and testing purposes, open *local.settings.json* and add the following code; 
 
-```json
-{
-  "IsEncrypted": false,
-  "Values": {
-    "AzureWebJobsStorage": "",
-    "AzureWebJobsSecretStorageType": "files",
-    "FUNCTIONS_WORKER_RUNTIME": "dotnet",
-    "AuthenticationEvents__BypassTokenValidation" : true
-  }
-}
-```
+    ```json
+    {
+      "IsEncrypted": false,
+      "Values": {
+        "AzureWebJobsStorage": "",
+        "AzureWebJobsSecretStorageType": "files",
+        "FUNCTIONS_WORKER_RUNTIME": "dotnet",
+        "AuthenticationEvents__BypassTokenValidation" : true
+      }
+    }
+    ```
+
+1. Using your preferred API testing tool, in the **Body**, select **Raw** and then select **JSON**.
+1. Paste the following JSON that imitates the request Microsoft Entra ID sends to your REST API.
+
+    ```json
+    {
+        "type": "microsoft.graph.authenticationEvent.tokenIssuanceStart",
+        "source": "/tenants/<Your tenant GUID>/applications/<Your Test Application App Id>",
+        "data": {
+            "@odata.type": "microsoft.graph.onTokenIssuanceStartCalloutData",
+            "tenantId": "<Your tenant GUID>",
+            "authenticationEventListenerId": "<GUID>",
+            "customAuthenticationExtensionId": "<Your custom authentication extension ID>",
+            "authenticationContext": {
+                "correlationId": "<Enter correlation ID here>",
+                "client": {
+                    "ip": "127.0.0.1",
+                    "locale": "en-us",
+                    "market": "en-us"
+                },
+                "protocol": "OAUTH2.0",
+                "clientServicePrincipal": {
+                    "id": "<Your Test Applications servicePrincipal objectId>",
+                    "appId": "<Your Test Application App Id>",
+                    "appDisplayName": "My Test application",
+                    "displayName": "My Test application"
+                },
+                "resourceServicePrincipal": {
+                    "id": "<Your Test Applications servicePrincipal objectId>",
+                    "appId": "<Your Test Application App Id>",
+                    "appDisplayName": "My Test application",
+                    "displayName": "My Test application"
+                },
+                "user": {
+                    "companyName": "Casey Jensen",
+                    "createdDateTime": "2023-08-16T00:00:00Z",
+                    "displayName": "Casey Jensen",
+                    "givenName": "Casey",
+                    "id": "90847c2a-e29d-4d2f-9f54-c5b4d3f26471", // Client ID representing the Microsoft Entra authentication events service
+                    "mail": "casey@contoso.com",
+                    "onPremisesSamAccountName": "Casey Jensen",
+                    "onPremisesSecurityIdentifier": "<Enter Security Identifier>",
+                    "onPremisesUserPrincipalName": "Casey Jensen",
+                    "preferredLanguage": "en-us",
+                    "surname": "Jensen",
+                    "userPrincipalName": "casey@contoso.com",
+                    "userType": "Member"
+                }
+            }
+        }
+    }
+    ```
+
+1. Select **Send**, and you should receive a JSON response similar to the following:
+
+    ```json
+    {
+        "data": {
+            "@odata.type": "microsoft.graph.onTokenIssuanceStartResponseData",
+            "actions": [
+                {
+                    "@odata.type": "microsoft.graph.tokenIssuanceStart.provideClaimsForToken",
+                    "claims": {
+                        "customClaim1": "customClaimValue1",
+                        "customClaim2": [
+                            "customClaimString1",
+                            "customClaimString2" 
+                        ]
+                    }
+                }
+    
+            ]
+        }
+    }
+    ```
 
 ### Build and run the project locally
 
-The project has been created and the sample code has been added. Now we build and run the project locally to extract the function URL.
+The project has been created, the sample code has been added and tested locally. Using your IDE, we need to build and run the project locally to extract the function URL.
 
 ### [Visual Studio](#tab/visual-studio)
 
