@@ -656,6 +656,8 @@
         href: contentsquare-sso-tutorial.md
       - name: Contentstack
         href: contentstack-tutorial.md
+      - name: Continuity Software Platform (OIDC)
+        href: continuity-software-platform-tutorial.md
       - name: ContractSafe Saml2 SSO
         href: contractsafe-saml2-sso-tutorial.md
       - name: ContractS CLM
