@@ -12,11 +12,9 @@ ms.topic: concept-article
 #Customer intent: As an application developer, I want to know how to write a single-page application by using the Microsoft identity platform.
 ---
 
-# Single-page application: sign in and sign out
+# Single-page application: sign-in and sign-out
 
-Before you can get tokens to access APIs in your application, you need an authenticated user context. 
-
-To authenticate a user, you can use a [Pop-up window](#sign-in-with-a-pop-up-window) and/or a [Redirect](#sign-in-with-a-redirect) sign in method.
+Before you can get tokens to access APIs in your application, you need an authenticated user context. To authenticate a user, you can use a [Pop-up window](#sign-in-with-a-pop-up-window) and/or a [Redirect](#sign-in-with-a-redirect) sign in method.
 
 If your application has access to an authenticated user context or ID token, you can skip the sign in step, and directly acquire tokens. For details, see [Single sign-on (SSO) with user hint](msal-js-sso.md#with-user-hint).
 
@@ -54,34 +52,6 @@ myMsal
   .then(function (loginResponse) {
     accountId = loginResponse.account.homeAccountId;
     // Display signed-in user content, call API, etc.
-  })
-  .catch(function (error) {
-    //login failure
-    console.log(error);
-  });
-```
-
-# [JavaScript (MSAL.js v1)](#tab/javascript1)
-
-```javascript
-const config = {
-  auth: {
-    clientId: "your_app_id",
-    redirectUri: "your_app_redirect_uri", //defaults to application start page
-    postLogoutRedirectUri: "your_app_logout_redirect_uri",
-  },
-};
-
-const loginRequest = {
-  scopes: ["User.ReadWrite"],
-};
-
-const myMsal = new UserAgentApplication(config);
-
-myMsal
-  .loginPopup(loginRequest)
-  .then(function (loginResponse) {
-    //login success
   })
   .catch(function (error) {
     //login failure
@@ -152,56 +122,9 @@ import { MsalModule } from "@azure/msal-angular";
 export class AppModule {}
 ```
 
-# [Angular (MSAL.js v1)](#tab/angular1)
-
-To invoke a sign in experience for a specific route, import `@angular/router` and add `MsalGuard` to the route definition.
-
-```javascript
-// In app-routing.module.ts
-import { NgModule } from "@angular/core";
-import { Routes, RouterModule } from "@angular/router";
-import { ProfileComponent } from "./profile/profile.component";
-import { MsalGuard } from "@azure/msal-angular";
-import { HomeComponent } from "./home/home.component";
-const routes: Routes = [
-  {
-    path: "profile",
-    component: ProfileComponent,
-    canActivate: [MsalGuard],
-  },
-  {
-    path: "",
-    component: HomeComponent,
-  },
-];
-@NgModule({
-  imports: [RouterModule.forRoot(routes, { useHash: false })],
-  exports: [RouterModule],
-})
-export class AppRoutingModule {}
-```
-
-For a pop-up window experience, enable the `popUp` configuration option. You can also pass the scopes that require consent.
-
-```javascript
-// In app.module.ts
-@NgModule({
-    imports: [
-        MsalModule.forRoot({
-            auth: {
-                clientId: 'your_app_id',
-            }
-        }, {
-            popUp: true,
-            consentScopes: ["User.ReadWrite"]
-        })
-    ]
-})
-```
-
 # [React](#tab/react)
 
-To invoke a sign in experience when a user isn't already signed in, use the `MsalAuthenticationTemplate` function from `@azure/msal-react`.
+To invoke a sign in experience when a user isn't already signed in, use the `MsalAuthenticationTemplate` function from `@azure/msal-react`. The MSAL React wrapper protects specific components by wrapping them in the `MsalAuthenticationTemplate` component.
 
 ```javascript
 import { InteractionType } from "@azure/msal-browser";
@@ -315,34 +238,6 @@ function handleResponse(response) {
 myMsal.handleRedirectPromise().then(handleResponse);
 ```
 
-# [JavaScript (MSAL.js v1)](#tab/javascript1)
-
-To process and access returned tokens, first register the response and error callbacks using the `authCallback` function, then initiate sign in using `loginRequest` method. 
-
-```javascript
-const config = {
-  auth: {
-    clientId: "your_app_id",
-    redirectUri: "your_app_redirect_uri", //defaults to application start page
-    postLogoutRedirectUri: "your_app_logout_redirect_uri",
-  },
-};
-
-const loginRequest = {
-  scopes: ["User.ReadWrite"],
-};
-
-const myMsal = new UserAgentApplication(config);
-
-function authCallback(error, response) {
-  //handle redirect response
-}
-
-myMsal.handleRedirectCallback(authCallback);
-
-myMsal.loginRedirect(loginRequest);
-```
-
 # [Angular (MSAL.js v2)](#tab/angular2)
 
 To enable a redirect experience, set the `interactionType` configuration to `InteractionType.Redirect` in the `MsalGuardConfiguration`, and then bootstrap `MsalRedirectComponent` to handle redirects.
@@ -377,8 +272,6 @@ import { MsalModule, MsalRedirectComponent } from "@azure/msal-angular";
 })
 export class AppModule {}
 ```
-
-# [Angular (MSAL.js v1)](#tab/angular1)
 
 # [React](#tab/react)
 
@@ -496,10 +389,6 @@ const logoutRequest = {
 await myMsal.logoutPopup(logoutRequest);
 ```
 
-# [JavaScript (MSAL.js v1)](#tab/javascript1)
-
-Sign out with a pop-up window isn't supported in MSAL.js v1.
-
 # [Angular (MSAL.js v2)](#tab/angular2)
 
 ```javascript
@@ -522,10 +411,6 @@ logout() {
     });
 }
 ```
-
-# [Angular (MSAL.js v1)](#tab/angular1)
-
-Sign out with a pop-up window isn't supported in MSAL Angular v1.
 
 # [React](#tab/react)
 
@@ -602,22 +487,6 @@ const logoutRequest = {
 myMsal.logoutRedirect(logoutRequest);
 ```
 
-# [JavaScript (MSAL.js v1)](#tab/javascript1)
-
-```javascript
-const config = {
-  auth: {
-    clientId: "your_app_id",
-    redirectUri: "your_app_redirect_uri", //defaults to application start page
-    postLogoutRedirectUri: "your_app_logout_redirect_uri",
-  },
-};
-
-const myMsal = new UserAgentApplication(config);
-
-myMsal.logout();
-```
-
 # [Angular (MSAL.js v2)](#tab/angular2)
 
 ```javascript
@@ -637,24 +506,6 @@ myMsal.logout();
 logout() {
     this.authService.logoutRedirect();
 }
-```
-
-# [Angular (MSAL.js v1)](#tab/angular1)
-
-```javascript
-//In app.module.ts
-@NgModule({
-    imports: [
-        MsalModule.forRoot({
-            auth: {
-                clientId: 'your_app_id',
-                postLogoutRedirectUri: "your_app_logout_redirect_uri"
-            }
-        })
-    ]
-})
-// In app.component.ts
-this.authService.logout();
 ```
 
 # [React](#tab/react)
