@@ -38,9 +38,9 @@ sections:
   - name: Activity logs
     questions:
       - question: |
-          Do I need to be a Global Administrator to see the activity logs in the Microsoft Entra admin center?
+          What role do I need to see the activity logs in the Microsoft Entra admin center?
         answer: |
-          No. The [least privilege role](../../identity/role-based-access-control/delegate-by-task.md) to view audit and sign-in logs is **Reports Reader**. Other roles include **Security Reader** and **Security Administrator**.
+          The [least privilege role](../../identity/role-based-access-control/delegate-by-task.md) to view audit and sign-in logs is **Reports Reader**. Other roles include **Security Reader** and **Security Administrator**.
 
       - question: |
           What logs can I integrate with Azure Monitor?
