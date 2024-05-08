@@ -106,7 +106,7 @@ In most cases, the **incremental cycle** completes in 30 minutes. However, when 
 Provisioning configuration changes are logged in the audit logs. Users with the necessary permissions, such as application administrator and reports reader, can access logs through the audit logs UI, API, and through PowerShell. You can use the activity filter in the audit logs to identify the following actions.
 
 > [!Note]
-> For actions that the provisioning service performs such as creating users, updating users, and deleting users we recommend using the [provisioning logs](howto-analyze-provisioning-logs). For monitoring changes to your provisioning configuration, we recommend using the [audit logs](concept-audit-logs). 
+> For actions that the provisioning service performs such as creating users, updating users, and deleting users we recommend using the [provisioning logs](howto-analyze-provisioning-logs.md). For monitoring changes to your provisioning configuration, we recommend using the [audit logs](concept-audit-logs.md). 
 
 | Action | Activity (filter the logs on this property)| 
 | -------- | -------- | 
