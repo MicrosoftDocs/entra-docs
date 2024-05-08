@@ -54,13 +54,13 @@ As adding a custom security attribute to the scope of a workflow updates its exe
 
 After you've scoped a workflow using a custom security attribute, you can view this information within the workflow audit logs. To view these details, you'd do the following steps:
 
-
 1.  Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator) and [Attribute Assignment Administrator](../identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator).
 
 1. Browse to **Identity governance** > **Lifecycle workflows** > **Workflows**.
 
 1.  On the workflows page, select **Audit Logs**.
-
+    > [!TIP]
+    > Custom security attribute information of a workflow is also viewable, with proper permissions, from a specific workflow's version page.
 1. Select an event where a custom security attribute was used to scope a workflow during creation, or added to an updated workflow and select **Modified properties**.
 
 1. On the version information page, under **Configure**, you should see the custom security attribute as the rule.
