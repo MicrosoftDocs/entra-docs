@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: how-to
-ms.date: 05/02/2024
+ms.date: 05/08/2024
 ms.author: owinfrey
 ms.reviewer: krbain
 
