@@ -234,15 +234,6 @@ If you choose to use tenant ID instead of tenant name, be sure to update the ide
 https://login.contoso.com/11111111-1111-1111-1111-111111111111/oauth2/authresp 
 ```
 
-## (Optional) Azure Front Door advanced configuration
-
-You can use Azure Front Door advanced configuration, such as Azure Web Application Firewall (WAF). Azure WAF provides centralized protection of your web applications from common exploits and vulnerabilities.
-
-When using custom domains, consider the following points:
-
-- The WAF policy must be the same tier as the Azure Front Door profile. For more information about how to create a WAF policy to use with Azure Front Door, see [Configure WAF policy](/azure/frontdoor/how-to-configure-endpoints).
-- The WAF managed rules feature isn't officially supported as it can cause false positives and prevent legitimate requests from passing through, so only use WAF custom rules if they meet your needs.
-
 ## Troubleshooting
 
 - **Page not found message.** When you try to sign in with the custom URL domain, you get an HTTP 404 error message. This issue could be related to the DNS configuration or the Azure Front Door backend configuration. Try the following steps:
