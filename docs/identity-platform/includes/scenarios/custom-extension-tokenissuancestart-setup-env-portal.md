@@ -41,7 +41,3 @@ public async static Task<AuthenticationEventResponse> Run(
    | *AuthenticationEvents__AuthorizedPartyAppId* | `99045fe1-7639-4a75-9d4a-577b6ca3810f` or another authorized party | 
 
 1. Select **Save** to save the application settings.
-
-    > [!TIP]
-    >
-    > The *AuthenticationEvents__AuthorizedPartyAppId* environment variable is optional and can be used for development purposes. It is not strictly required for this scenario.

@@ -18,9 +18,9 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents.TokenIssuanceStart;
 using Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents;
 
-namespace AuthEventTrigger
+namespace AuthEventsTrigger
 {
-    public static class AuthEventTrigger
+    public static class AuthEventsTrigger
     {
         [FunctionName("onTokenIssuanceStart")]
         public static WebJobsAuthenticationEventResponse Run(
@@ -40,10 +40,10 @@ namespace AuthEventTrigger
                     // Fetches information about the user from external data store
                     // Add new claims to the token's response
                     request.Response.Actions.Add(new WebJobsProvideClaimsForToken(
-                        new WebjobsAuthenticationEventsTokenClaim("dateOfBirth", "01/01/2000"),
-                        new WebjobsAuthenticationEventsTokenClaim("customRoles", "Writer", "Editor"),
-                        new WebjobsAuthenticationEventsTokenClaim("apiVersion", "1.0.0"),
-                        new WebjobsAuthenticationEventsTokenClaim("correlationId", request.Data.AuthenticationContext.CorrelationId.ToString())
+                        new WebJobsAuthenticationEventsTokenClaim("dateOfBirth", "01/01/2000"),
+                        new WebJobsAuthenticationEventsTokenClaim("customRoles", "Writer", "Editor"),
+                        new WebJobsAuthenticationEventsTokenClaim("apiVersion", "1.0.0"),
+                        new WebJobsAuthenticationEventsTokenClaim("correlationId", request.Data.AuthenticationContext.CorrelationId.ToString())
                         ));
                 }
                 else

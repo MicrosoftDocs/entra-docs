@@ -30,7 +30,7 @@ This article describes how to create a REST API with a [token issuance start eve
 
 ::: zone pivot="nuget-library" 
 
-This article describes how to create a REST API for a [token issuance start event](custom-claims-provider-overview.md#token-issuance-start-event-listener) using the [Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents](https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/entra/Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents) NuGet library and set it up for authentication. You create an HTTP trigger function in Visual Studio or Visual Studio Code, configure it for authentication, and deploy it to the Azure portal, where it can be accessed through Azure Functions.
+This article describes how to create a REST API for a [token issuance start event](custom-claims-provider-overview.md#token-issuance-start-event-listener) using the [Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents](https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/entra/Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents) NuGet library and set it up for authentication. You'll create an HTTP trigger function in Visual Studio or Visual Studio Code, configure it for authentication, and deploy it to the Azure portal, where it can be accessed through Azure Functions. You'll then test the function locally using your preferred API testing tool.
 
 ## Prerequisites
 
@@ -180,7 +180,7 @@ To create an Azure Function app, follow these steps:
 1. Select a location for the project. Select **Next**.
 1. Select **.NET 6.0 (Long Term Support)** as the target framework. 
 1. Select *Http trigger* as the **Function** type, and that **Authorization level** is set to *Function*. Select **Create**.
-1. In the **Solution Explorer**, rename the *Function1.cs* file to *AuthEventsTrigger.cs*.
+1. In the **Solution Explorer**, rename the *Function1.cs* file to *AuthEventsTrigger.cs*, and accept the rename change suggestion.
 
 ### [Visual Studio Code](#tab/visual-studio-code)
 
@@ -206,7 +206,7 @@ After creating the project, you'll need to install the required NuGet packages a
 ### [Visual Studio](#tab/visual-studio)
 
 1. In the top menu of Visual Studio, select **Project**, then **Manage NuGet packages**.
-1. Select the **Browse** tab, then search for and select *Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents*. In the right pane, Select **Install**.
+1. Select the **Browse** tab, then search for and select *Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents* in the right pane. Select **Install**.
 1. Apply and accept the changes in the popups that appear.
 
 ### [Visual Studio Code](#tab/visual-studio-code)
@@ -229,9 +229,66 @@ In your *AuthEventsTrigger.cs* file, replace the entire contents of the file wit
 [!INCLUDE [nuget-code](./includes/scenarios/custom-extension-tokenissuancestart-setup-nuget-code.md)]
 
 
+### Build and run the project locally
+
+The project has been created, and the sample code has been added. Using your IDE, we need to build and run the project locally to extract the function URL.
+
+### [Visual Studio](#tab/visual-studio)
+
+1. Navigate to **Build** in the top menu, and select **Build Solution**.
+1. Press **F5** or select *AuthEventsTrigger* from the top menu to run the function. 
+1. Copy the **Function url** from the terminal that popups up when running the function. This can be used when setting up a custom authentication extension.
+
+### [Visual Studio Code](#tab/visual-studio-code)
+
+1. In the top menu, select **Run** > **Start Debugging** or press **F5** to run the function.
+1. In the terminal, copy the **Function url** that appears. This can be used when setting up a custom authentication extension.
+
+---
+
+## Deploy the function and publish to Azure 
+
+The function needs to be deployed to Azure using our IDE. Check that you're correctly signed in to your Azure account so the function can be published.
+
+### [Visual Studio](#tab/visual-studio)
+
+1. In the Solution Explorer, right-click on the project and select **Publish**. 
+1. In **Target**, select **Azure**, then select **Next**.
+1. Select **Azure Function App (Windows)** for the **Specific Target**, select **Azure Function App (Windows)**, then select **Next**.
+1. In the **Function instance**, use the **Subscription name** dropdown to select the subscription under which the new function app will be created in.
+1. Select where you want to publish the new function app, and select **Create New**.
+1. On the **Function App (Windows)** page, use the function app settings as specified in the following table, then select **Create**.
+ 
+    |   Setting    | Suggested value  | Description |
+    | ------------ | ---------------- | ----------- |
+    | **Name** | Globally unique name | A name that identifies the new function app. Valid characters are `a-z` (case insensitive), `0-9`, and `-`. |
+    | **Subscription** | Your subscription | The subscription under which the new function app is created. |
+    | **[Resource Group](/azure/azure-resource-manager/management/overview)** |  *myResourceGroup* | Select an existing resource group, or name the new one in which you'll create your function app. |
+    | **Plan type** | Consumption (Serverless) | Hosting plan that defines how resources are allocated to your function app.  |
+    | **Location** | Preferred region | Select a [region](https://azure.microsoft.com/regions/) that's near you or near other services that your functions can access. |
+    | **Azure Storage** | Your storage account | An Azure storage account is required by the Functions runtime. Select New to configure a general-purpose storage account. |
+    | **Application Insights** | *Default* | A feature of Azure Monitor. This is autoselected, select the one you wish to use or configure a new one. |
+    
+
+1. Wait a few moments for your function app to be deployed. Once the window closes, select **Finish**.
+1. A new **Publish** pane opens. At the top, select **Publish**. Wait a few minutes for your function app to be deployed and show up in the Azure portal.
+
+### [Visual Studio Code](#tab/visual-studio-code)
+
+1. Select the **Azure** extension icon. In **Resources**, select the **+** icon to **Create a resource**.
+1. Select **Create Function App in Azure**. Use the following settings for setting up your function app.
+1. Give the function app a name, such as *AuthEventsTriggerNuGet*, and press **Enter**.
+1. Select the **.NET 6 (LTS) In-Process** runtime stack. 
+1. Select a location for the function app, such as *East US*.
+1. Wait a few minutes for your function app to be deployed and show up in the Azure portal.
+
+---
+
+[!INCLUDE [environment-variables](./includes/scenarios/custom-extension-tokenissuancestart-setup-env-portal.md)]
+
 ### Test the function 
 
-1. For local development and testing purposes, open *local.settings.json* and add the following code; 
+1. For local development and testing purposes, open *local.settings.json* and replace the code with the following JSON: 
 
     ```json
     {
@@ -320,64 +377,7 @@ In your *AuthEventsTrigger.cs* file, replace the entire contents of the file wit
     }
     ```
 
-### Build and run the project locally
-
-The project has been created, the sample code has been added and tested locally. Using your IDE, we need to build and run the project locally to extract the function URL.
-
-### [Visual Studio](#tab/visual-studio)
-
-1. Navigate to **Build** in the top menu, and select **Build Solution**.
-1. Press **F5** or select *AuthEventsTrigger* from the top menu to run the function. 
-1. Copy the **Function url** from the terminal that popups up when running the function. This can be used when setting up a custom authentication extension.
-
-### [Visual Studio Code](#tab/visual-studio-code)
-
-1. In the top menu, select **Run** > **Start Debugging** or press **F5** to run the function.
-1. In the terminal, copy the **Function url** that appears. This can be used when setting up a custom authentication extension.
-
----
-
 Once you've tested the function locally, you should remove the `AuthenticationEvents__BypassTokenValidation` value from the *local.settings.json* file. This is only used for local testing and should not be used in production.
-
-## Deploy the function and publish to Azure 
-
-The function needs to be deployed to Azure using our IDE. Check that you're correctly signed in to your Azure account so the function can be published.
-
-### [Visual Studio](#tab/visual-studio)
-
-1. In the Solution Explorer, right-click on the project and select **Publish**. 
-1. In **Target**, select **Azure**, then select **Next**.
-1. Select **Azure Function App (Windows)** for the **Specific Target**, select **Azure Function App (Windows)**, then select **Next**.
-1. In the **Function instance**, use the **Subscription name** dropdown to select the subscription under which the new function app will be created in.
-1. Select where you want to publish the new function app, and select **Create New**.
-1. On the **Function App (Windows)** page, use the function app settings as specified in the following table, then select **Create**.
- 
-    |   Setting    | Suggested value  | Description |
-    | ------------ | ---------------- | ----------- |
-    | **Name** | Globally unique name | A name that identifies the new function app. Valid characters are `a-z` (case insensitive), `0-9`, and `-`. |
-    | **Subscription** | Your subscription | The subscription under which the new function app is created. |
-    | **[Resource Group](/azure/azure-resource-manager/management/overview)** |  *myResourceGroup* | Select an existing resource group, or name the new one in which you'll create your function app. |
-    | **Plan type** | Consumption (Serverless) | Hosting plan that defines how resources are allocated to your function app.  |
-    | **Location** | Preferred region | Select a [region](https://azure.microsoft.com/regions/) that's near you or near other services that your functions can access. |
-    | **Azure Storage** | Your storage account | An Azure storage account is required by the Functions runtime. Select New to configure a general-purpose storage account. |
-    | **Application Insights** | *Default* | A feature of Azure Monitor. This is autoselected, select the one you wish to use or configure a new one. |
-    
-
-1. Wait a few moments for your function app to be deployed. Once the window closes, select **Finish**.
-1. A new **Publish** pane opens. At the top, select **Publish**. Wait a few minutes for your function app to be deployed and show up in the Azure portal.
-
-### [Visual Studio Code](#tab/visual-studio-code)
-
-1. Select the **Azure** extension icon. In **Resources**, select the **+** icon to **Create a resource**.
-1. Select **Create Function App in Azure**. Use the following settings for setting up your function app.
-1. Give the function app a name, such as *AuthEventsTriggerNuGet*, and press **Enter**.
-1. Select the **.NET 6 (LTS) In-Process** runtime stack. 
-1. Select a location for the function app, such as *East US*.
-1. Wait a few minutes for your function app to be deployed and show up in the Azure portal.
-
----
-
-[!INCLUDE [environment-variables](./includes/scenarios/custom-extension-tokenissuancestart-setup-env-portal.md)]
 
 ::: zone-end
 
