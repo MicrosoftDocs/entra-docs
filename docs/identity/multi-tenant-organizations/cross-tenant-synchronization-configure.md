@@ -544,7 +544,7 @@ This error indicates the Guest invite settings in the target tenant are configur
 Change the Guest invite settings in the target tenant to a less restrictive setting. For more information, see [Configure external collaboration settings](../../external-id/external-collaboration-settings-configure.md).
 
 ##### Symptom - UPN property does not update in certain invitation scenarios
-<br>
+
 
 This happens when the source tenant user objects UPN and Mail property values are not the same, for example Mail == user.mail@domain.com and UPN == user.upn@otherdomain.com. When the source user is first invited through mail address, the target tenant guest user is created with a UPN prefix using the source mail value property, based on the example above would be *user.mail_domain.com#EXT#@contoso.onmicrosoft.com.*
 
@@ -554,7 +554,7 @@ Then the source object is put in scope of Cross-Tenant Sync and the expectation 
 **Cause**
 
 
-The issue was that the **B2B user which was manually invited into the target tenant didn't accept or redeem the invitation**, so it's in pending acceptance. When a user is invited through an email, an object is created with the guest user type and the set of attributes inherited from the mail, so the UPN is pointing to the mail value of the source user. If later you decide to add the user to the scope for Cross tenant sync, we tried to join the source user with a B2B user in target tenant by searching based on the altSecId, which it could not find it because the user was not yet redeemed. That's why cross tenant sync consider this object as a new user ADD scenario, and we don't update the existing UPN value. In brief the steps taken to cause the issue are:
+The issue was that the **B2B user which was manually invited into the target tenant didn't accept or redeem the invitation**, so it's in pending acceptance. When a user is invited through an email, an object is created with the guest user type and the set of attributes inherited from the mail, so the UPN is pointing to the mail value of the source user. If later you decide to add the user to the scope for Cross tenant sync, we tried to join the source user with a B2B user in target tenant by searching based on the alternativeSecurityIdentifier attribute, which it could not find it because the user was not yet redeemed. That's why cross tenant sync consider this object as a new user ADD scenario, and we don't update the existing UPN value. In brief the steps taken to cause the issue are:
 
 <br>
 
