@@ -64,7 +64,13 @@ In Domain Services, the forest only contains one domain. On-premises AD DS fores
 
 By default, a managed domain synchronizes all objects from Microsoft Entra ID, including any user accounts created in an on-premises AD DS environment. User accounts can directly authenticate against the managed domain, such as to sign in to a domain-joined VM. This approach works when the password hashes can be synchronized and users aren't using exclusive sign-in methods like smart card authentication.
 
-In a Domain Services, you can also create a one-way forest *trust* to let users sign in from their on-premises AD DS. With this approach, the user objects and password hashes aren't synchronized to Domain Services. The user objects and credentials only exist in the on-premises AD DS. This approach lets enterprises host resources and application platforms in Azure that depend on classic authentication such LDAPS, Kerberos, or NTLM, but any authentication issues or concerns are removed.
+In Domain Services, you can also create a forest *trust* with another domain to allow users to access resources. Depending on your access requirements, you can create the forest trust in different directions. 
+
+Trust direction | User access
+----------------|------------
+Two-way | Allows users in both the managed domain and the on-premises domain to access resources in either domain. 
+One-way outgoing | Allows users in the on-premises domain to access resources in the managed domain, but not vice versa. 
+One-way incoming | Allows users in the managed domain to access resources in the on-premises domain. 
 
 <a name='azure-ad-ds-skus'></a>
 
