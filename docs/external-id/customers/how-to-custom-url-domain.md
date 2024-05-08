@@ -167,20 +167,25 @@ To create a CNAME record for your custom domain:
 The **default-route** routes the traffic from the client to Azure Front Door. Then, Azure Front Door uses your configuration to send the traffic to the external tenant. To enable the default-route, follow these steps.
 
 1. Select **Front Door manager**.
+
 1. To enable the **default-route**, first expand an endpoint from the list of endpoints in the Front Door manager. Then, select the **default-route**.
 
-   :::image type="content" source="media/how-to-custom-url-domain/front-door-default-route.png" alt-text="Screenshot showing the default-route in Front Door manager.":::
-
 1. Select the **Enabled route** checkbox.
+
 1. Select **Update** to save the changes.
 
 ## Test your custom URL domains
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
+
 1. Choose your *external* tenant: Select the **Settings** icon in the top menu, and then switch to your external tenant.
+
 1. Under **External Identities**, select **User flows**.
+
 1. Select a user flow, and then select **Run user flow**.
+
 1. For **Application**, select the web application named *webapp1* that you previously registered. The **Reply URL** should show `https://jwt.ms`.
+
 1. Copy the URL under **Run user flow endpoint**.
 
    :::image type="content" source="media/how-to-custom-url-domain/run-user-flow.png" alt-text="Screenshot showing the run user flow option.":::
