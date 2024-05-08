@@ -11,6 +11,8 @@ ms.subservice: saas-apps
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Zscaler Private Access so that I can streamline the user management process and ensure that users have the appropriate access to Zscaler Private Access.
 ---
 
 # Tutorial: Configure Zscaler Private Access (ZPA) for automatic user provisioning

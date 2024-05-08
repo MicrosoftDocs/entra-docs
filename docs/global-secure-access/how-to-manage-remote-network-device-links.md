@@ -1,19 +1,19 @@
 ---
-title: How to add device links to remote networks for Global Secure Access (preview)
-description: Learn how to add and delete device links to remote networks for Global Secure Access (preview).
+title: How to add device links to remote networks
+description: Learn how to add and delete customer premises equipment device links to remote networks for Global Secure Access (preview).
 author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: how-to
-ms.date: 03/04/2024
+ms.date: 03/22/2024
 ms.service: global-secure-access
+
+# Customer intent: As an IT admin, I need to manage the router devices that connect to the Global Secure Access service so my customers can connect to the service.
 ---
 
 # Add and delete remote networks device links
 
-You can create device links when you create a new remote network or add them after the remote network is created.
-
-This article explains how to add and delete device links for remote networks for Global Secure Access.
+Customer premises equipment, such as routers, are added to the remote network. You can create device links when you create a new remote network or add them after the remote network is created. This article explains how to add and delete device links for remote networks for Global Secure Access.
 
 ## Prerequisites
 
@@ -24,6 +24,8 @@ To configure remote networks, you must have:
 - The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 
 ## Add a device link
+
+You can add a device link from the Microsoft Entra admin center or using the Microsoft Graph API.
 
 ### [Microsoft Entra admin center](#tab/microsoft-entra-admin-center)
 
@@ -60,7 +62,7 @@ There are several details to enter on the General tab. Pay close attention to th
         - This address is entered as the *peer* BGP​​ IP address on your CPE.
     - **Link ASN**: Provide the autonomous system number (ASN) of the CPE.
         - A BGP-enabled connection between two network gateways requires that they have different Autonomous System Number (ASN).
-        - For more information, see the **Valid ASNs** section of the [Remote network configurations](reference-remote-network-configurations.md#valid-autonomous-system-number-asn) article.
+        - For more information, see the **Valid ASNs** section of the [Remote network configurations](reference-remote-network-configurations.md#valid-asn) article.
     - **Redundancy**: Select either *No redundancy* or *Zone redundancy* for your IPSec tunnel.
     - **Zone redundant local BGP address**: This optional field shows up only when you select **Zone redundancy**.
         - Enter a BGP IP address that isn't* part of your on-premises network where your CPE resides and is different from the **Local BGP address**.
@@ -162,6 +164,3 @@ You can delete device links through the Microsoft Entra admin center and using t
 ---
 
 [!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
-
-## Next steps
-- [List remote networks](how-to-list-remote-networks.md)

@@ -3,7 +3,7 @@ title: The Global Secure Access client for Windows (preview)
 description: Install the Global Secure Access client for Windows.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 03/04/2024
+ms.date: 04/08/2024
 ms.author: kenwith
 author: kenwith
 manager: amycolannino
@@ -158,17 +158,17 @@ Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Google\Chrome" -Name "BuiltInDns
 
 ### Proxy configuration example
 
-Example proxy PAC file containing exclusions:  
+Example proxy PAC file containing exclusions:
 
 ```
-function FindProxyForURL(url, host) {  // basic function; do not change
-   if (isPlainHostName(host) ||    
-      dnsDomainIs(host, ".contoso.com") || //tunneled  
-      dnsDomainIs(host, ".fabrikam.com")) // tunneled  
-      return "DIRECT";                    // If true, sets "DIRECT" connection  
-      else                                   // for all other destinations  
-      return "PROXY 10.1.0.10:8080";  // transfer the traffic to the proxy. 
-}  
+function FindProxyForURL(url, host) {  // basic function; do not change
+   if (isPlainHostName(host) ||
+      dnsDomainIs(host, ".contoso.com") || //tunneled
+      dnsDomainIs(host, ".fabrikam.com"))  // tunneled
+      return "DIRECT";                     // If true, sets "DIRECT" connection
+      else                                 // for all other destinations  
+      return "PROXY 10.1.0.10:8080";  // transfer the traffic to the proxy. 
+}
 ```
 
 Organizations must then create a system variable named `grpc_proxy` with a value like `http://10.1.0.10:8080` that matches your proxy server's configuration on end-user machines to allow the Global Secure Access client services to use the proxy by configuring the following.
@@ -181,7 +181,7 @@ Since UDP traffic isn't supported in the current preview, organizations that pla
 New-NetFirewallRule -DisplayName "Block QUIC for Exchange Online" -Direction Outbound -Action Block -Protocol UDP -RemoteAddress 13.107.6.152/31,13.107.18.10/31,13.107.128.0/22,23.103.160.0/20,40.96.0.0/13,40.104.0.0/15,52.96.0.0/14,131.253.33.215/32,132.245.0.0/16,150.171.32.0/22,204.79.197.215/32,6.6.0.0/16 -RemotePort 443 
 ```
 
-This list of IPv4 addresses is based on the [Office 365 URLs and IP address ranges](/microsoft-365/enterprise/urls-and-ip-address-ranges#exchange-online) and the IPv4 block used by the Global Secure Access client.
+This list of IPv4 addresses is based on the [Office 365 URLs and IP address ranges](/microsoft-365/enterprise/urls-and-ip-address-ranges#exchange-online) and the IPv4 block used by the Global Secure Access client. For Global Secure Access service address information, see [points of presence and service addresses](reference-points-of-presence.md).
 
 [!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
 

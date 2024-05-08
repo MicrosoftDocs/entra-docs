@@ -10,7 +10,7 @@ metadata:
   ms.service: entra-id
   ms.subservice: domain-services
   ms.topic: faq
-  ms.date: 03/11/2024
+  ms.date: 04/25/2024
   ms.author: justinha
 title: Frequently asked questions (FAQs) about Microsoft Entra Domain Services
 summary: This page answers frequently asked questions about Microsoft Entra Domain Services.
@@ -101,9 +101,13 @@ sections:
           Yes, you can create a two-way trust. You can also create a one-way outgoing trust or one-way incoming trust to support different scenarios for users authentication and access. For more information, see [Create a forest trust](tutorial-create-forest-trust.md). 
 
       - question: |
+          Does Domain Services support external trust creation with an on-premises child domains?
+        answer: |
+          Domain Services currently only supports forest trust, and doesn't support external domain trusts.
+      - question: |
           Can I move a managed domain?
         answer: |
-          After you create a Microsoft Entra Domain Services managed domain, you can't move it to a different subscription, resource group, or region. As a workaround, you can [delete the managed domain](delete-aadds.md) by using PowerShell or the Microsoft Entra admin center and re-create it with your desired setup. No restore operations can be provided while the managed domain is re-created.
+          After you create a Domain Services managed domain, you can't move it to a different subscription, resource group, or region. To change the region, a possible workaround would be deploying a new replica set in the region that you want to migrate to. Once that completes, delete the replica set in the region you don't want any more. As a workaround for the rest of the settings, you can [delete the managed domain](delete-aadds.md) by using PowerShell or the Microsoft Entra admin center and re-create it with your desired setup. No restore operations can be provided while the managed domain is re-created.
 
       - question: |
           Can I rename an existing Microsoft Entra Domain Services domain name?
@@ -192,6 +196,12 @@ sections:
           How are Windows Updates applied in Microsoft Entra Domain Services?
         answer: |
           Domain controllers in a managed domain automatically apply required Windows updates. There's nothing for you to configure or administer here. Make sure you don't create network security group rules that block outbound traffic to Windows Updates. For your own VMs joined to the managed domain, you are responsible for configuring and applying any required OS and application updates.
+      - question: | 
+          Where does Microsoft Entra Domain Services store customer data?
+        answer: |
+          Microsoft Entra Domain Services stores customer data. 
+          By default, customer data stays within the region where the service instance is deployed. 
+          Customers can use replica sets to store data in other regions. 
       - question: |
          How is patching performed on domain controllers that are part of a managed domain?
         answer: |

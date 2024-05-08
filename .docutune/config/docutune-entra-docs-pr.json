@@ -7,10 +7,7 @@
     }
   ],
   "MetadataDelimiter": "\"",
-  "Include": [],
-  "Exclude": [
-    "docs/architecture/"
-  ],
+  "Exclude": [],
   "RemoveTermSets": [
     "*au-administrative-unit*",
     "*guest-user*",
@@ -21,9 +18,13 @@
     "*single-backtick*",
     "*incorrect-backtick-spacing*",
     "*-caution-*",
+    "*cloudsimple*",
     "*-crm-*",
     "*-crud-*",
+    "*-mdm-*",
     "*-mvc-*",
+    "*-mvp-*",
+    "*september-october-november*",
     "product-azure-app-service",
     "invalid-product-microsoft-visual-studio-vs"
   ],

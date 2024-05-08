@@ -15,7 +15,7 @@ ms.custom: it-pro
 # Privileged roles and permissions in Microsoft Entra ID (preview)
 
 > [!IMPORTANT]
-> Privileged roles and permissions are currently in PREVIEW.
+> The label for privileged roles and permissions is currently in PREVIEW.
 > See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
 
 Microsoft Entra ID has roles and permissions that are identified as privileged. These roles and permissions can be used to delegate management of directory resources to other users, modify credentials, authentication or authorization policies, or access restricted data. Privileged role assignments can lead to elevation of privilege if not used in a secure and intended manner. This article describes privileged roles and permissions and best practices for how to use.

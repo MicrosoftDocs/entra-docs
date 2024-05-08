@@ -27,6 +27,8 @@
       href:  get-started.md
     - name:  Prerequisites
       href:  prerequisites.md
+    - name: Topologies and scenarios for cloud sync
+      href: cloud-sync/plan-cloud-sync-topologies.md  
   - name: Managing your deployment
     items: 
     - name:  Install your sync tool
@@ -47,7 +49,7 @@
     items: 
     - name:  Provision users on-demand
       href:  on-demand-provision.md
-    - name:  Group writeback
+    - name:  Provision to AD - Group writeback
       href:  group-writeback-cloud-sync.md
     - name:  Scheduling imports
       href:  connect/how-to-connect-sync-feature-scheduler.md
@@ -81,12 +83,26 @@
       href:  connect/how-to-connect-sync-change-the-configuration.md
     - name:  Attributes synchronized to AD
       href:  connect/reference-connect-sync-attributes-synchronized.md
-  - name: Provision to AD using Microsoft Entra Cloud Sync
+  - name: Provision Active Directory to Microsoft Entra ID
     items: 
+    - name: Integrate a single AD forest  with a single Microsoft Entra tenant
+      href: cloud-sync/tutorial-single-forest.md
+    - name: Integrate an existing forest and a new forest with a single Microsoft Entra tenant
+      href: cloud-sync/tutorial-existing-forest.md
+  - name: Provision Microsoft Entra ID to Active Directory
+    items: 
+    - name:  Provision groups to Active Directory
+      href:  cloud-sync/tutorial-group-provisioning.md
+    - name:  Using directory extensions with provisioning groups to AD
+      href:  cloud-sync/tutorial-directory-extension-group-provisioning.md
     - name:  Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance
       href:  cloud-sync/govern-on-premises-groups.md
-    - name:  Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync
-      href:  cloud-sync/migrate-group-writeback.md
+  - name: Migration scenarios for cloud sync
+    items: 
+    - name: Migrate to Microsoft Entra Cloud Sync from Connect sync
+      href: cloud-sync/tutorial-pilot-aadc-aadccp.md
+    - name: Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync
+      href: cloud-sync/migrate-group-writeback.md
 
 
 - name: Cloud sync reference
@@ -95,16 +111,6 @@
     href: cloud-sync/what-is-cloud-sync.md
   - name: What is the provisioning agent?
     href: cloud-sync/what-is-provisioning-agent.md
-  - name: Tutorials
-    items:
-    - name: Integrate a single AD forest  with a single Microsoft Entra tenant
-      href: cloud-sync/tutorial-single-forest.md
-    - name: Integrate an existing forest and a new forest with a single Microsoft Entra tenant
-      href: cloud-sync/tutorial-existing-forest.md
-    - name: Pilot cloud sync for an existing synced AD forest 
-      href: cloud-sync/tutorial-pilot-aadc-aadccp.md
-    - name:  Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance
-      href:  cloud-sync/govern-on-premises-groups.md
   - name: Concepts
     items:
     - name: How it works
@@ -125,30 +131,39 @@
         href: cloud-sync/how-to-install.md
       - name: Install the provisioning agent using CLI and PowerShell
         href: cloud-sync/how-to-install-pshell.md
-      - name: Configuration - AD to Microsoft Entra ID
-        href: cloud-sync/how-to-configure.md
-      - name: Provision groups to AD using Microsoft Entra Cloud Sync
-        href: cloud-sync/how-to-configure-entra-to-active-directory.md
-      - name: On-demand provisioning
-        href: cloud-sync/how-to-on-demand-provision.md
-      - name: Attribute mapping
-        href: cloud-sync/how-to-attribute-mapping.md 
-      - name: Use Single Sign-On
-        href: cloud-sync/how-to-sso.md
-      - name: Directory extensions and custom attributes
-        href: cloud-sync/custom-attribute-mapping.md
-      - name: Exchange hybrid
-        href: cloud-sync/exchange-hybrid.md
+      - name: Provision Active Directory to Entra ID
+        items:
+        - name: Provision AD to Microsoft Entra ID - Configuration
+          href: cloud-sync/how-to-configure.md
+        - name: Attribute mapping - AD to Microsoft Entra ID
+          href: cloud-sync/how-to-attribute-mapping.md 
+        - name: Directory extensions and custom attributes - AD to Microsoft Entra ID
+          href: cloud-sync/custom-attribute-mapping.md
+        - name: On-demand provisioning - AD to Microsoft Entra ID
+          href: cloud-sync/how-to-on-demand-provision.md
+        - name: Use Single Sign-On
+          href: cloud-sync/how-to-sso.md
+        - name: Exchange hybrid
+          href: cloud-sync/exchange-hybrid.md
+      - name: Provision Entra ID to Active Directory
+        items:  
+        - name: Provision Microsoft Entra ID to AD - Configuration
+          href: cloud-sync/how-to-configure-entra-to-active-directory.md
+        - name: Scoping filter and Attribute mapping - Microsoft Entra ID to AD
+          href: cloud-sync/how-to-attribute-mapping-entra-to-active-directory.md 
+        - name: Directory extensions and custom attributes - Microsoft Entra ID to AD
+          href: cloud-sync/custom-attribute-mapping-entra-to-active-directory.md
+        - name: On-demand provisioning - Microsoft Entra ID to AD
+          href: cloud-sync/how-to-on-demand-provision-entra-to-active-directory.md
+
     - name: Migration
       items:
       - name:  Migrate your sync tool
         href:  cloud-sync/migrate-azure-ad-connect-to-cloud-sync.md
       - name:  Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync
         href:  cloud-sync/migrate-group-writeback.md
-    - name: Plan and design
-      items:
-      - name: Topologies and scenarios for cloud sync
-        href: cloud-sync/plan-cloud-sync-topologies.md  
+
+
   - name: Manage 
     items:
     - name: Agent automatic upgrade
@@ -185,6 +200,8 @@
       href: cloud-sync/reference-version-history.md
     - name: Cloud sync FAQ
       href: cloud-sync/reference-cloud-sync-faq.yml
+    - name: Provision to Active Directory FAQ
+      href: cloud-sync/reference-provision-to-active-directory-faq.yml
     - name: AADCloudSyncTools PowerShell module
       href: cloud-sync/reference-powershell.md
     - name: Attributes that are synchronized
@@ -534,8 +551,6 @@
       href: connect/reference-connect-user-privacy.md
     - name: Microsoft Entra Connect Health user privacy
       href: connect/reference-connect-health-user-privacy.md
-    - name: DirSync Deprecation
-      href: connect/reference-connect-dirsync-deprecated.md
     - name: Attributes synchronized
       href: connect/reference-connect-sync-attributes-synchronized.md
     - name: Functions Reference

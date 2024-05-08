@@ -11,12 +11,12 @@ ms.date: 02/28/2024
 ms.author: mimart
 ms.custom: it-pro
 
-# Customer intent: As a dev, devops, or it admin, I want to create an external tenant and configure a customized, branded sign-in experience for my external-facing apps from within Visual Studio Code.
+# Customer intent: As a dev, devops, or it admin, I want to create an external tenant and configure a customized, branded sign-in experience for my apps from within Visual Studio Code.
 ---
 
-# Quickstart: Get started with the Microsoft Entra External ID extension for Visual Studio Code
+# Quickstart: Get started with the Microsoft Entra External ID extension for Visual Studio Code (preview)
 
-Integrating authentication into your customer-facing applications is essential for securing resources and customer data. The Microsoft Entra External ID extension for Visual Studio Code lets you quickly add authentication to applications  for customer identity and access management (CIAM) scenarios. Using the application samples provided, you can see how to set up a customized, branded sign-in experience for external users of your application without leaving the development environment.
+Integrating authentication into your consumer and business customer applications is essential for securing resources and customer data. The Microsoft Entra External ID extension for Visual Studio Code lets you quickly add authentication to applications  for customer identity and access management (CIAM) scenarios. Using the application samples provided, you can see how to set up a customized, branded sign-in experience for external users of your application without leaving the development environment.
 
 :::image type="content" source="media/visual-studio-code-extension/extension-overview.png" alt-text="Screenshot showing an overview of the extension.":::
 
@@ -42,7 +42,7 @@ You can also open the extension from Visual Studio Code **Welcome** page: Select
 
 ## Get started with your External ID setup
 
-The Microsoft Entra External ID extension creates a tenant in an external configuration, which contains your customer-facing app and directory of external users. You can add this new tenant to your existing Azure subscription. Or if you don’t have an Azure subscription, create a trial tenant that doesn't require one ([learn more](quickstart-trial-setup.md)).
+The Microsoft Entra External ID extension creates a tenant in an external configuration, which contains your app and directory of external users. You can add this new tenant to your existing Azure subscription. Or if you don’t have an Azure subscription, create a trial tenant that doesn't require one ([learn more](quickstart-trial-setup.md)).
 
 - On the Get Started with Microsoft Entra External ID welcome page, choose an option:
 

@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: quickstart
-ms.date: 11/28/2023
+ms.date: 03/29/2024
 ms.author: barclayn
 ms.custom: it-pro, fasttrack-edit, mode-other
 ms.collection: M365-identity-device-management
@@ -27,7 +27,9 @@ If you don't have an Azure subscription, create a [free account](https://azure.m
 After you sign in to the [Azure portal](https://portal.azure.com), you can create a new tenant for your organization. Your new tenant represents your organization and helps you to manage a specific instance of Microsoft Cloud services for your internal and external users.
 
 >[!NOTE]
-> If you're unable to create Microsoft Entra ID or Azure AD B2C tenant, review your user settings page to ensure that tenant creation isn't switched off. If tenant creation is switched off, ask your *Global Administrator* to assign you a *Tenant Creator* role.
+>
+> - If you're unable to create a Microsoft Entra ID or Azure AD B2C tenant, review your user settings page to ensure that tenant creation isn't switched off. If it is not enabled you must be assigned at least the [Tenant Creator](../identity/role-based-access-control/permissions-reference.md#tenant-creator) role.
+> - This article doesn't cover creating an *external* tenant configuration for consumer-facing apps; learn more about using [Microsoft Entra External ID](~/external-id/customers/overview-customers-ciam.md) for your customer identity and access management (CIAM) scenarios.
 
 ### To create a new tenant
 
@@ -64,7 +66,7 @@ When you create a new Microsoft Entra tenant, you become the first user of that 
 By default, you're also listed as the [technical contact](/microsoft-365/admin/manage/change-address-contact-and-more#what-do-these-fields-mean) for the tenant. Technical contact information is something you can change in [**Properties**](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Properties).
 
 > [!WARNING]
-> Ensure your directory has at least two accounts with Global Administrator privileges assigned to them. This will help in the case that one Global Administrator is locked out. For more detail see the article, [Manage emergency access accounts in Microsoft Entra ID](~/identity/role-based-access-control/security-emergency-access.md).
+> Ensure your directory has at least two accounts with Global Administrator privileges assigned to them. This will help in the case that one is locked out. For more detail see the article, [Manage emergency access accounts in Microsoft Entra ID](~/identity/role-based-access-control/security-emergency-access.md).
 
 ## Clean up resources
 
@@ -79,11 +81,11 @@ If you're not going to continue to use this application, you can delete the tena
 
 ## Next steps
 
-- Change or add other domain names, see [How to add a custom domain name to Microsoft Entra ID](add-custom-domain.md).
+- Change or add other domain names, see [How to add a custom domain name to Microsoft Entra ID](add-custom-domain.yml).
 
 - Add users, see [Add or delete a new user](./add-users.md)
 
-- Add groups and members, see [Create a basic group and add members](./how-to-manage-groups.md).
+- Add groups and members, see [Create a basic group and add members](./how-to-manage-groups.yml).
 
 - Learn about [Azure role-based access control (RBAC)](/azure/role-based-access-control/overview) and [Conditional Access](~/identity/conditional-access/overview.md) to help manage your organization's application and resource access.
 

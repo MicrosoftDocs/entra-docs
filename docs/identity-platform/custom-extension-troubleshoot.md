@@ -5,7 +5,7 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: 
-ms.date: 03/06/2023
+ms.date: 04/10/2024
 ms.reviewer: JasSuri
 ms.service: identity-platform
 
@@ -15,7 +15,7 @@ titleSuffix: Microsoft identity platform
 #Customer intent: As a developer integrating external systems with Microsoft Entra ID, I want to troubleshoot issues with my custom claims provider API, so that I can identify and resolve any errors or performance problems affecting the authentication experience.
 ---
 
-# Troubleshoot your custom claims provider API (preview)
+# Troubleshoot your custom claims provider API
 
 Authentication events and [custom claims providers](custom-claims-provider-overview.md) allow you to customize the Microsoft Entra authentication experience by integrating with external systems.  For example, you can create a custom claims provider API and configure an [OpenID Connect app](./custom-extension-tokenissuancestart-configuration.md) or [SAML app](custom-extension-configure-saml-app.md) to receive tokens with claims from an external store.
 
@@ -87,7 +87,7 @@ Use the following table to diagnose an error code.
 
 Your REST API is protected by a Microsoft Entra access token. You can test your API by;
 - Obtaining an access token with an [application registration](custom-extension-tokenissuancestart-configuration.md#12-grant-admin-consent) associated with the custom authentiction extensions
-- Test your API locally using Postman. 
+- Test your API locally using an API testing tool. 
 
 # [Obtain an access token](#tab/obtain-an-access-token)
 
@@ -103,8 +103,8 @@ After you acquire an access token, pass it the HTTP `Authorization` header. To o
     1. Select an expiration for the secret or specify a custom lifetime.
     1. Select **Add**.
     1. Record the **secret's value** for use in your client application code. This secret value is never displayed again after you leave this page.
-1. From the menu, select **Expose an API** and copy the value of the **Application ID URI**. For example, `api://contoso.azurewebsites.net/11111111-0000-0000-0000-000000000000`.
-1. Open Postman and create a new HTTP query.
+1. From the menu, select **Expose an API** and copy the value of the **Application ID URI**. For example, `api://contoso.azurewebsites.net/00001111-aaaa-2222-bbbb-3333cccc4444`.
+1. Open your preferred API testing tool and create a new HTTP query.
 1. Change the **HTTP method** to `POST`.
 1. Enter the following URL. Replace the `{tenantID}` with your tenant ID.
 
@@ -119,15 +119,15 @@ After you acquire an access token, pass it the HTTP `Authorization` header. To o
     |`grant_type`| `client_credentials`|
     |`client_id`| The **Client ID** of your application.|
     |`client_secret`|The **Client Secret** of your application.|
-    |`scope`| The **Application ID URI** of your application, then add `.default`. For example, `api://contoso.azurewebsites.net/11111111-0000-0000-0000-000000000000/.default`|
+    |`scope`| The **Application ID URI** of your application, then add `.default`. For example, `api://contoso.azurewebsites.net/00001111-aaaa-2222-bbbb-3333cccc4444/.default`|
 
 1. Run the HTTP query and copy the `access_token` into the <https://jwt.ms> web app.
 1. Compare the `iss` with the issuer name you [configured in your API](custom-extension-tokenissuancestart-configuration.md#step-4-protect-your-azure-function).
 1. Compare the `aud` with the client ID you [configured in your API](custom-extension-tokenissuancestart-configuration.md#step-4-protect-your-azure-function).
 
-# [Postman](#tab/postman)
+# [API testing tools](#tab/api-testing-tools)
 
-To test your API directly from Postman, follow these steps:
+To test your API directly using your preferred API testing tool, follow these steps:
 
 > [!NOTE]
 >
@@ -137,13 +137,12 @@ To test your API directly from Postman, follow these steps:
 > "AuthenticationEvents__BypassTokenValidation": true
 > ```
 >
-> Once you've finished testing, ensure that you remove the parameter.
+> Once you've finished testing, ensure that you remove it.
 
 1. In your REST API, disable the `appid` or `azp` [claim validation](custom-extension-overview.md#protect-your-rest-api). Check out how to [edit the function API](custom-extension-tokenissuancestart-setup.md) you created earlier.
-1. In Postman, create new HTTP request.
-1. Set the **HTTP method** to `POST`.
+1. Create new HTTP request and set the **HTTP method** to `POST`.
 1. In the **Body**, select **Raw** and then select **JSON**.
-1. Pase the following JSON that imitates the request Microsoft Entra ID sends to your REST API.
+1. Paste the following JSON that imitates the request Microsoft Entra ID sends to your REST API.
 
     ```json
     {
@@ -162,7 +161,6 @@ To test your API directly from Postman, follow these steps:
                     "market": "en-us"
                 },
                 "protocol": "OAUTH2.0",
-                "requesttype": "SignIn",
                 "clientServicePrincipal": {
                     "id": "<Your Test Applications servicePrincipal objectId>",
                     "appId": "<Your Test Application App Id>",
@@ -176,17 +174,18 @@ To test your API directly from Postman, follow these steps:
                     "displayName": "My Test application"
                 },
                 "user": {
+                    "companyName": "Casey Jensen",
                     "createdDateTime": "2023-08-16T00:00:00Z",
-                    "displayName": "John Smith",
-                    "givenName": "John",
-                    "id": "90847c2a-e29d-4d2f-9f54-c5b4d3f26471",
-                    "mail": "john@contoso.com",
-                    "onPremisesSamAccountName": "johnsmith",
-                    "onPremisesSecurityIdentifier": "Enter Security Identifier",
-                    "onPremisesUserPrincipalName": "John Smith",
+                    "displayName": "Casey Jensen",
+                    "givenName": "Casey",
+                    "id": "90847c2a-e29d-4d2f-9f54-c5b4d3f26471", // Client ID representing the Microsoft Entra authentication events service
+                    "mail": "casey@contoso.com",
+                    "onPremisesSamAccountName": "Casey Jensen",
+                    "onPremisesSecurityIdentifier": "<Enter Security Identifier>",
+                    "onPremisesUserPrincipalName": "Casey Jensen",
                     "preferredLanguage": "en-us",
-                    "surname": "Smith",
-                    "userPrincipalName": "john@contoso.com",
+                    "surname": "Jensen",
+                    "userPrincipalName": "casey@contoso.com",
                     "userType": "Member"
                 }
             }
@@ -230,7 +229,7 @@ One of the most common issues is that your custom claims provider API doesn't re
 1. If your API accesses any downstream APIs, cache the access token used to call these APIs, so a new token doesn't have to be acquired on every execution.
 1. Performance issues are often related to downstream services. Add logging, which records the process time to call to any downstream services.
 1. If you use a cloud provider to host your API, use a hosting plan that keeps the API always "warm". For Azure Functions, it can be either [the Premium plan or Dedicated plan](/azure/azure-functions/functions-scale).
-1. [Run automated integration tests](test-automate-integration-testing.md) for your authentications. You can also use Postman or other tools to test just your API performance.
+1. [Run automated integration tests](test-automate-integration-testing.md) for your authentications. You can also use API testing tools to test just your API performance.
 
 ## See also
 

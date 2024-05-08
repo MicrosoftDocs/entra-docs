@@ -14,7 +14,7 @@ ms.date: 07/17/2023
 
 # Tutorial: Use role-based access control in your .NET MAUI
 
-This tutorial demonstrates how to add app roles to .NET Multi-platform App UI (.NET MAUI) and receive them in the ID token.
+This tutorial demonstrates how to add app roles to.NET Multi-platform App UI (.NET MAUI) and receive them in the ID token.
 
 In this tutorial, you learn how to:
 
@@ -25,7 +25,7 @@ In this tutorial, you learn how to:
 ## Prerequisites
 
 - [Tutorial: Sign in users in .NET MAUI shell app](tutorial-desktop-app-maui-sign-in-sign-out.md)
-- [Using role-based access control for applications](how-to-use-app-roles-customers.md)
+- [Using role-based access control (RBAC) for applications](how-to-use-app-roles-customers.md)
 
 ## Receive groups and roles claims in .NET MAUI
 
@@ -33,7 +33,7 @@ Once you configure your customer's tenant, you can retrieve your roles and group
 
 The .NET MAUI needs to check for the app roles claims in the ID token to implement authorization in the client side.
 
-In this tutorial series, you created a .NET MAUI app where you developed the [_ClaimsView.xaml.cs_](tutorial-desktop-app-maui-sign-in-sign-out.md#handle-the-claimsview-data) to handle `ClaimsView` data. In this file, we inspect the contents of ID tokens. The value of the roles claim is checked in the following code snippet:
+In this tutorial series, you created a .NET MAUI app where you developed the [*ClaimsView.xaml.cs*](tutorial-desktop-app-maui-sign-in-sign-out.md#handle-the-claimsview-data) to handle `ClaimsView` data. In this file, we inspect the contents of ID tokens. The value of the roles claim is checked in the following code snippet:
 
 To access the role claim, you can modify the code snippet as follows:
 
@@ -58,7 +58,7 @@ else
 Claims.ItemsSource = IdTokenClaims;
 ```
 
-> [!NOTE] 
+> [!NOTE]
 > To read the ID token, you must install the `System.IdentityModel.Tokens.Jwt` package.
 
 If you assign a user to multiple roles, the roles string contains all roles separated by a comma, such as `Orders.Manager, Store.Manager,...`. Make sure you build your application to handle the following conditions:

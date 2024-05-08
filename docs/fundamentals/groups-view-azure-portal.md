@@ -5,29 +5,29 @@ author: barclayn
 manager: amycolannino
 ms.service: entra
 ms.subservice: fundamentals
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: quickstart
-ms.date: 11/29/2023
+ms.date: 03/23/2024
 ms.author: barclayn
 ms.reviewer: krbain
 ---
 
 # Quickstart: Create a group with members and view all groups and members
 
-You can view your organization's existing groups and group members using the Microsoft Entra Admin Center. Groups are used to manage users that all need the same access and permissions for potentially restricted apps and services.
-
 In this quickstart, you'll set up a new group and assign members to the group. Then you'll view your organization's group and assigned members. Throughout this guide, you'll create a user and group that you can use in other quickstarts and tutorials.
 
-If you don't have an Azure subscription, create a [free account](https://azure.microsoft.com/free/) before you begin.
+You can view your organization's existing groups and group members using the Microsoft Entra admin center. Groups are used to manage users that all need the same access and permissions for potentially restricted apps and services.
 
 ## Prerequisites
 
 Before you begin, you'll need to:
 
+- Have an Azure subscription. If you don't have one, create a [free account](https://azure.microsoft.com/free/).
 - Create a Microsoft Entra tenant. For more information, see [Access the portal and create a new tenant](./create-new-tenant.md).
 
 ## Create a new group
 
-Create a new group, named *MDM policy - West*. For more information about creating a group, see [How to create a basic group and add members](./how-to-manage-groups.md).
+Create a new group, named _MDM policy - West_. For more information about creating a group, see [How to create a basic group and add members](./how-to-manage-groups.yml).
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
@@ -63,7 +63,7 @@ A user must exist before being added as a group member, so you'll need to create
 
 ## Add a group member
 
-Now that you have a group and a user, you can add *Alain Charon* as a member to the *MDM policy - West* group. For more information about adding group members, see the [Manage groups](how-to-manage-groups.md) article.
+Now that you have a group and a user, you can add _Alain Charon_ as a member to the _MDM policy - West_ group. For more information about adding group members, see the [Manage groups](how-to-manage-groups.yml) article.
 
 1. Browse to **Identity** > **Groups** > **All groups**.
 1. Select the **MDM policy - West** group created earlier.
@@ -131,4 +131,4 @@ The group you just created is used in other articles in this documentation. If y
 Advance to the next article to learn how to associate a subscription to your directory.
 
 > [!div class="nextstepaction"]
-> [Associate an Azure subscription](./how-subscriptions-associated-directory.md)
+> [Associate an Azure subscription](./how-subscriptions-associated-directory.yml)

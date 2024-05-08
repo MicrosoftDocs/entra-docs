@@ -9,7 +9,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
-ms.date: 11/16/2023
+ms.date: 04/29/2024
 ms.author: barclayn
 ms.reviewer: sumitp
 ms.custom: it-pro
@@ -40,6 +40,9 @@ In this example, the Microsoft Entra organization contains a security group call
    :::image type="content" source="./media/licensing-groups-assign/licenses-all-products-assign.png" alt-text="Screenshot of selecting products to assign licenses.":::
   
 1. On the **Assign license** page, select **Users and groups** to open a list of users and groups.
+  
+   > [!NOTE]
+   > When assigning more than one product license to a group, Microsoft Entra ID attempts to assign all licenses that are specified in the group to each user. In some cases, Microsoft can't assign one of the licenses because of a business logic error. For more information, see [More than one product license assigned to a group](~/identity/users/licensing-groups-resolve-problems.md#more-than-one-product-license-assigned-to-a-group).
 
 1. Select a user or group, and then use the **Select** button at the bottom of the page to confirm your selection.
 

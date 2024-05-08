@@ -102,7 +102,7 @@ Integrating Microsoft Entra logs with Azure Monitor logs provides a centralized 
 1. Browse to **Identity** > **Monitoring & health** > **Diagnostic settings**.
 1. Choose the logs you want to stream, select the **Send to Log Analytics workspace** option, and complete the fields.
 1. Browse to **Identity** > **Monitoring & health** > **Log Analytics** and begin querying the data.
-    - [Integrate Microsoft Entra logs with Azure Monitor logs](howto-integrate-activity-logs-with-azure-monitor-logs.md)
+    - [Integrate Microsoft Entra logs with Azure Monitor logs](howto-integrate-activity-logs-with-azure-monitor-logs.yml)
     - [Learn how to query using Log Analytics](howto-analyze-activity-logs-log-analytics.md)
 
 ## Monitor events with Microsoft Sentinel
@@ -182,7 +182,7 @@ The right solution for your long-term storage depends on your budget and what yo
   
 [Azure Storage](/azure/storage/common/storage-introduction) is the right solution if you aren't planning on querying your data often. For more information, see [Archive directory logs to a storage account](./howto-archive-logs-to-storage-account.md).
 
-If you plan to query the logs often to run reports or perform analysis on the stored logs, you should [integrate your data with Azure Monitor logs](howto-integrate-activity-logs-with-azure-monitor-logs.md).
+If you plan to query the logs often to run reports or perform analysis on the stored logs, you should [integrate your data with Azure Monitor logs](howto-integrate-activity-logs-with-azure-monitor-logs.yml).
 
 If your budget is tight, and you need a cheap method to create a long-term backup of your activity logs, you can [manually download your logs](howto-download-logs.md). The user interface of the activity logs in the portal provides you with an option to download the data as **JSON** or **CSV**. One trade off of the manual download is that it requires more manual interaction. If you're looking for a more professional solution, use either Azure Storage or Azure Monitor.
 
@@ -217,4 +217,4 @@ Use the following basic steps to archive or download your activity logs.
 
 - [Stream logs to an event hub](howto-stream-logs-to-event-hub.md)
 - [Archive logs to a storage account](howto-archive-logs-to-storage-account.md)
-- [Integrate logs with Azure Monitor logs](howto-integrate-activity-logs-with-azure-monitor-logs.md)
+- [Integrate logs with Azure Monitor logs](howto-integrate-activity-logs-with-azure-monitor-logs.yml)

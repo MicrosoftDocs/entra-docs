@@ -4,7 +4,7 @@ description: Definitions of terms commonly found in Microsoft identity platform 
 author: rwike77
 manager: CelesteDG
 ms.author: ryanwi
-ms.date: 03/15/2023
+ms.date: 03/20/2024
 ms.reviewer:
 ms.service: identity-platform
 
@@ -255,7 +255,7 @@ Many of the terms in this glossary are related to the OAuth 2.0 and OpenID Conne
 [Graph-App-Resource]: /graph/api/resources/application
 [Graph-Sp-Resource]: /graph/api/resources/serviceprincipal
 [Graph-User-Resource]: /graph/api/resources/user
-[AAD-How-Subscriptions-Assoc]:~/fundamentals/how-subscriptions-associated-directory.md
+[AAD-How-Subscriptions-Assoc]:~/fundamentals/how-subscriptions-associated-directory.yml
 [AAD-How-To-Integrate]: ./how-to-integrate.md
 [AAD-How-To-Tenant]:quickstart-create-new-tenant.md
 [AAD-Integrating-Apps]:./quickstart-register-app.md

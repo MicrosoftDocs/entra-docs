@@ -34,7 +34,7 @@ See the following two sections for licensing and credentials prerequisites.
 
 There are licensing requirements if you switch from Okta sign-on to Conditional Access. The process requires a Microsoft Entra ID P1 license to enable registration for Microsoft Entra multifactor authentication.
 
-Learn more: [Assign or remove licenses in the Microsoft Entra admin center](~/fundamentals/license-users-groups.md)
+Learn more: [Assign or remove licenses in the Microsoft Entra admin center](~/fundamentals/license-users-groups.yml)
 
 ### Enterprise Administrator credentials
 
@@ -73,7 +73,7 @@ The following screenshot is conditions and actions for the four rules, on the Si
 Configure Conditional Access policies to match Okta conditions. However, in some scenarios, you might need more setup:
 
 * Okta network locations to named locations in Microsoft Entra ID 
-  *  [Using the location condition in a Conditional Access policy](~/identity/conditional-access/location-condition.md)
+  *  [Using the location condition in a Conditional Access policy](../conditional-access/concept-assignment-network.md)
 * Okta device trust to device-based Conditional Access (two options to evaluate user devices):
   * See the following section, **Microsoft Entra hybrid join configuration** to synchronize Windows devices, such as Windows 10, Windows Server 2016 and 2019, to Microsoft Entra ID
   * See the following section, **Configure device compliance**

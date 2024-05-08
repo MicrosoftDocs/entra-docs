@@ -5,7 +5,7 @@ author: cilwerner
 manager: CelesteDG
 ms.service: identity-platform
 ms.topic: include
-ms.date: 02/27/2024
+ms.date: 04/10/2024
 ms.author: cwerner
 ms.reviewer: stsoneff
 ms.custom:
@@ -17,22 +17,20 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Extensions.Logging;
-using Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents.TokenIssuanceStart.Actions;
 using Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents.TokenIssuanceStart;
-using Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents.Framework;
-using Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents;
+using Microsoft.Azure.WebJobs.Extensions.WebJobsAuthenticationEvents;
 
 namespace AuthEventTrigger
 {
     public static class Function1
     {
         [FunctionName("onTokenIssuanceStart")]
-        public static async Task<AuthenticationEventResponse> Run(
-        //    [AuthenticationEventsTrigger] TokenIssuanceStartRequest request, ILogger log)
-        // The AuthenticationEventsTrigger attribute can be used to specify and audience app ID, authority URL and authorized party app id. This is an alternative route to setting up Authorization values instead of Environment variables or EzAuth
-            [AuthenticationEventsTrigger(AudienceAppId = "Enter custom authentication extension app ID here",
+        public static WebJobsAuthenticationEventResponse Run(
+        // [WebJobsAuthenticationEventsTriggerAttribute] WebJobsTokenIssuanceStartRequest request, ILogger log)
+        // The WebJobsAuthenticationEventsTriggerAttribute attribute can be used to specify and audience app ID, authority URL and authorized party app id. This is an alternative route to setting up Authorization values instead of Environment variables or EzAuth
+            [WebJobsAuthenticationEventsTriggerAttribute(AudienceAppId = "Enter custom authentication extension app ID here",
                                          AuthorityUrl = "Enter authority URI here", 
-                                         AuthorizedPartyAppId = "Enter the Authorized Party App Id here")]TokenIssuanceStartRequest request, ILogger log)
+                                         AuthorizedPartyAppId = "Enter the Authorized Party App Id here")]WebJobsTokenIssuanceStartRequest request, ILogger log)
         {
             try
             {
@@ -41,11 +39,11 @@ namespace AuthEventTrigger
                 {
                     // Fetches information about the user from external data store
                     // Add new claims to the token's response
-                    request.Response.Actions.Add(new ProvideClaimsForToken(
-                                                  new TokenClaim("dateOfBirth", "01/01/2000"),
-                                                  new TokenClaim("customRoles", "Writer", "Editor"),
-                                                  new TokenClaim("apiVersion", "1.0.0"),
-                                                  new TokenClaim("correlationId", request.Data.AuthenticationContext.CorrelationId.ToString())
+                    request.Response.Actions.Add(new WebJobsProvideClaimsForToken(
+                                                  new WebjobsAuthenticationEventsTokenClaim("dateOfBirth", "01/01/2000"),
+                                                  new WebjobsAuthenticationEventsTokenClaim("customRoles", "Writer", "Editor"),
+                                                  new WebjobsAuthenticationEventsTokenClaim("apiVersion", "1.0.0"),
+                                                  new WebjobsAuthenticationEventsTokenClaim("correlationId", request.Data.AuthenticationContext.CorrelationId.ToString())
                                              ));
                 }
                 else

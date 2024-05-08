@@ -53,6 +53,17 @@ Required permissions | For permissions required to apply an update, see [Microso
 > 
 > If you are not already using the latest release version of Microsoft Entra Connect Sync, you should upgrade your Microsoft Entra Connect Sync software before that date. 
 
+|Version|End of support date|
+|-----|-----|
+|[2.1.20.0](#21200)|6/19/2024 (12 months after release of 2.2.1.0)|
+|[2.2.1.0](#2210)|10/11/2024 (12 months after release of 2.2.8.0)|
+|[2.2.8.0](#2280)|12/12/2024 (12 months after release of 2.3.2.0)|
+|[2.3.2.0](#2320)|2/21/2025 (12 months after release of 2.3.6.0)|
+|[2.3.6.0](#2360)|4/01/2025 (12 months after release of 2.3.8.0|
+|[2.3.8.0](#2380)|TBD|
+
+**All other versions are not supported**
+
 
 If you run a retired version of Microsoft Entra Connect, it might unexpectedly stop working. You also might not have the latest security fixes, performance improvements, troubleshooting and diagnostic tools, and service enhancements. If you require support, we might not be able to provide you with the level of service your organization needs.
 
@@ -72,6 +83,15 @@ Auto-upgrade is meant to push all important updates and critical fixes to you. I
 If you want all the latest features and updates, check this page and install what you need.
 
 To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade](how-to-connect-install-automatic-upgrade.md).
+
+## 2.3.8.0
+
+### Release status
+4/01/2024: Released for download
+
+### Bug Fixes
+- Microsoft Entra Connect Health has been updated to 4.5.2466.0 to address an endpoint discovery issue that could occur in some clouds.
+
 
 ## 2.3.6.0
 
@@ -345,7 +365,7 @@ When you upgrade to this V1.6 build or any newer builds, the group membership li
 - We added the Replicating Directory Changes permission in the Set-ADSyncBasicReadPermissions cmdlet.
 - We made a change to prevent UseExistingDatabase and import configuration from being used together because they could contain conflicting configuration settings.
 - We made a change to allow a user with the Application Admin role to change the application proxy service configuration.
-- We removed the (Preview) label from the labels of **Import/Export** settings. This functionality is generally available.
+- We removed the  label from the labels of **Import/Export** settings. This functionality is generally available.
 - We changed some labels that still referred to Company Administrator. We now use the role name Global Administrator.
 - We created new Microsoft Entra Kerberos PowerShell cmdlets (\*-AADKerberosServer) to add a Claims Transform rule to the Microsoft Entra service principal.
 

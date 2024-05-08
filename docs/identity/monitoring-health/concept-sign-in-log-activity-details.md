@@ -143,7 +143,7 @@ The following scenarios are important to consider when you're reviewing sign-in 
   - `none` - A sign-in event that didn't cross a Microsoft Entra tenant's boundaries.
   - `b2bCollaboration`- A cross tenant sign-in performed by a guest user using B2B Collaboration.
   - `b2bDirectConnect` - A cross tenant sign-in performed by a B2B.
-  - `microsoftSupport`- A cross tenant sign-in performed by a Microsoft support agent in a Microsoft customer tenant.
+  - `microsoftSupport`- A cross tenant sign-in performed by a Microsoft support agent in a Microsoft external tenant.
   - `serviceProvider` - A cross-tenant sign-in performed by a Cloud Service Provider (CSP) or similar admin on behalf of that CSP's customer in a tenant.
   - `unknownFutureValue` - A sentinel value used by MS Graph to help clients handle changes in enum lists. For more information, see [Best practices for working with Microsoft Graph](/graph/best-practices-concept).
 

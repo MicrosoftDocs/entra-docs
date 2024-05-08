@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 03/19/2024
+ms.date: 03/25/2024
 ms.author: justinha
 
 #Customer intent: As an identity administrator, I want to create a one-way outbound forest from a Microsoft Entra Domain Services forest to an on-premises Active Directory Domain Services forest to provide authentication and resource access between forests.
@@ -17,16 +17,18 @@ ms.author: justinha
 
 # Tutorial: Create a two-way forest trust in Microsoft Entra Domain Services with an on-premises domain 
 
-You can create a trust between Microsoft Entra Domain Services and on-premises AD DS environments. This trust relationship lets users, applications, and computers authenticate against an on-premises domain from the Domain Services managed domain. A forest trust can help users access resources in scenarios such as:
+You can create a forest trust between Microsoft Entra Domain Services and on-premises AD DS environments. The forest trust relationship lets users, applications, and computers authenticate against an on-premises domain from the Domain Services managed domain. A forest trust can help users access resources in scenarios such as:
 
 - Environments where you can't synchronize password hashes, or where users exclusively sign in using smart cards and don't know their password.
 - Hybrid scenarios that require access to on-premises domains.
 
-You can choose from three possible directions when you create a trust in Domain Services: 
+You can choose from three possible directions when you create a forest trust, depending on how users need to access resources. Domain Services only supports forest trusts. An external trust to a child domian on-premises isn't supported. 
 
-- **Two-way**: Allows users in both the managed domain and the on-premises domain to access resources in either domain. 
-- **One-way outgoing**: Allows users in the on-premises domain to access resources in the managed domain, but not vice versa. 
-- **One-way incoming**: Allows users in the managed domain to access resources in the on-premises domain. 
+Trust direction | User access
+----------------|------------
+Two-way | Allows users in both the managed domain and the on-premises domain to access resources in either domain. 
+One-way outgoing | Allows users in the on-premises domain to access resources in the managed domain, but not vice versa. 
+One-way incoming | Allows users in the managed domain to access resources in the on-premises domain. 
 
 ![Diagram of forest trust between Domain Services and an on-premises domain.](./media/tutorial-create-forest-trust/forest-trust-relationship.png)
 
@@ -35,7 +37,7 @@ In this tutorial, you learn how to:
 > [!div class="checklist"]
 > * Configure DNS in an on-premises AD DS domain to support Domain Services connectivity
 > * Create a two-way forest trust between the managed domain and the on-premises domain
-> * Test and validate the trust relationship for authentication and resource access
+> * Test and validate the forest trust relationship for authentication and resource access
 
 If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) before you begin.
 
@@ -66,6 +68,7 @@ The virtual network that hosts the Domain Services forest needs a VPN or Express
 
 Before you configure a forest trust in Domain Services, make sure your networking between Azure and on-premises environment meets the following requirements:
 
+* Make sure firewall ports allow traffic that is necessary to create and use a trust. For more information about which ports need to be open to use a trust, see [Configure firewall settings for AD DS trusts](/troubleshoot/windows-server/active-directory/config-firewall-for-ad-domains-and-trusts).
 * Use private IP addresses. Don't rely on DHCP with dynamic IP address assignment.
 * Avoid overlapping IP address spaces to allow virtual network peering and routing to successfully communicate between Azure and on-premises.
 * An Azure virtual network needs a gateway subnet to configure an [Azure site-to-site (S2S) VPN][vpn-gateway] or [ExpressRoute][expressroute] connection.

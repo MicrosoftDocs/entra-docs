@@ -7,7 +7,6 @@ ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 02/10/2024
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 
 ms.author: justinha
 author: justinha

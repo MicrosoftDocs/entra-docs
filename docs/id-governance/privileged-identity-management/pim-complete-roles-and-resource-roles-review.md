@@ -36,7 +36,7 @@ Once the review has been created, follow the steps in this article to complete t
 
 On the detail page, the following options are available for managing the review of **Azure resources** and **Microsoft Entra roles**:
 
-![Options for managing a review in Azure resources - Stop, Reset, Apply, Delete screenshot.](media/pim-complete-azure-ad-roles-and-resource-roles-review/rbac-access-review-menu.png)
+:::image type="content" source="media/pim-complete-azure-ad-roles-and-resource-roles-review/rbac-access-review-menu.png" alt-text="Options for managing a review in Azure resources - Stop, Reset, Apply, Delete screenshot.":::
 
 ### Stop an access review
 

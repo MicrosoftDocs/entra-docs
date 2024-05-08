@@ -19,7 +19,7 @@ Group-based licensing in Microsoft Entra ID, part of Microsoft Entra, is availab
 
 In this article, we go over some examples using Microsoft Graph PowerShell.
 
-[!INCLUDE [Azure AD PowerShell migration](../../includes/aad-powershell-migration-include.md)]
+[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
 
 > [!NOTE]
 > As the Azure AD Graph APIs are being retired, we are also retiring the license assignment operation in the MSOnline and Azure AD PowerShell modules. We recommend that you update existing applications to access the license assignment APIs from the [Microsoft Graph](/graph/api/user-assignlicense) endpoint and update your scripts to use the [Microsoft Graph PowerShell](/powershell/microsoftgraph/migration-steps) module to reduce the impact on operations. Other operations in the MSOnline and Azure AD PowerShell modules won’t be impacted. 
@@ -63,8 +63,7 @@ Set-MgGroupLicense -GroupId $groupId -BodyParameter $params
 
 
 ```powershell
-Get-MgGroup -GroupId 99c4216a-56de-42c4-a4ac-1111cd8c7c41 -Property "AssignedLicenses" |
-    Select-Object -ExpandProperty AssignedLicenses.SkuId 
+Get-MgGroup -GroupId 99c4216a-56de-42c4-a4ac-1111cd8c7c41 -Property "AssignedLicenses" | Select-Object -ExpandProperty AssignedLicenses
 
 ```
 

@@ -34,7 +34,7 @@ Resource audit gives you a view of all activity associated with your Microsoft E
 
 1. Filter the history using a predefined date or custom range.
 
-    ![Microsoft Entra role audit list with filters](media/azure-pim-resource-rbac/rbac-resource-audit.png)
+    :::image type="content" source="media/azure-pim-resource-rbac/rbac-resource-audit.png" alt-text="Screenshot showing the Microsoft Entra role audit list with filters.":::
 
 ## View my audit
 
@@ -50,7 +50,7 @@ My audit enables you to view your personal role activity.
 
 1. Filter the history using a predefined date or custom range.
 
-    ![Audit list for the current user](media/azure-pim-resource-rbac/my-audit-time.png)
+    :::image type="content" source="media/azure-pim-resource-rbac/my-audit-time.png" alt-text="Screenshot showing the Audit list page for the current user.":::
 
 ## Next steps
 

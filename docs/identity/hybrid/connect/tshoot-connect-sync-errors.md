@@ -302,10 +302,10 @@ To resolve this issue:
 
 1. Identify the problem object reference. 
 1. Use PowerShell to soft-delete the cloud account:
-1. Run `Start-ADSyncSyncCyle -PolicyType Delta` which should successfully import the account deletion.
+1. Run `Start-ADSyncSyncCycle -PolicyType Delta` which should successfully import the account deletion.
 1. Confirm that the deletion was successful.
 1. Restore the user from the Recycle Bin.
-1. Run `Start-ADSyncSyncCyle -PolicyType Delta` on the server to confirm the error doesn't occur again.
+1. Run `Start-ADSyncSyncCycle -PolicyType Delta` on the server to confirm the error doesn't occur again.
 
 > [!WARNING]
 > When a user is excluded from sync scope the object becomes soft-deleted in Microsoft Entra ID and its DirSyncEnabled attribute is switched to False. This process however doesn't convert the object to cloud managed, as it still contains attributes and values synchronized from on-premises Active Directory that can't be managed in the cloud. The DirSyncEnabled value is False to indicate that it’s currently out of sync scope and is available to be matched again.

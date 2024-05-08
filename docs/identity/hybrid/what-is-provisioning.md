@@ -5,7 +5,6 @@ description: Describes overview of identity provisioning.
 author: billmath
 manager: amycolannino
 ms.service: entra-id
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: overview
 ms.date: 11/06/2023
 ms.subservice: hybrid

@@ -4,7 +4,6 @@ description: Learn how to customize user display and experience options for Micr
 
 ms.service: entra-id
 ms.subservice: authentication
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: how-to
 ms.date: 09/14/2023
 
