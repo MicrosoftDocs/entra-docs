@@ -37,9 +37,9 @@ You can also use Microsoft Graph to programmatically monitor the status of provi
 
 ## Use provisioning logs to check a user's provisioning status
 
-To see the provisioning status for a selected user, consult the [Provisioning logs (preview)](~/identity/monitoring-health/concept-provisioning-logs.md?context=azure/active-directory/manage-apps/context/manage-apps-context) in Microsoft Entra ID. All operations run by the user provisioning service are recorded in the Microsoft Entra provisioning logs. The logs include read and write operations made to the source and target systems. Associated user data related to read and write operations is also logged.
+To see the provisioning status for a selected user, consult the [Provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md?context=azure/active-directory/manage-apps/context/manage-apps-context) in Microsoft Entra ID. All operations run by the user provisioning service are recorded in the Microsoft Entra provisioning logs. The logs include read and write operations made to the source and target systems. Associated user data related to read and write operations is also logged.
 
-You can access the provisioning logs in the Microsoft Entra admin center by selecting **Identity** > **Applications** > **Enterprise applications** > **Provisioning logs** in the **Activity** section. You can search the provisioning data based on the name of the user or the identifier in either the source system or the target system. For details, see [Provisioning logs (preview)](~/identity/monitoring-health/concept-provisioning-logs.md?context=azure/active-directory/manage-apps/context/manage-apps-context). 
+You can access the provisioning logs in the Microsoft Entra admin center by selecting **Identity** > **Applications** > **Enterprise applications** > **Provisioning logs** in the **Activity** section. You can search the provisioning data based on the name of the user or the identifier in either the source system or the target system. For details, see [Provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md?context=azure/active-directory/manage-apps/context/manage-apps-context). 
 
 The provisioning logs record all the operations performed by the provisioning service, including:
 
@@ -103,9 +103,12 @@ In most cases, the **incremental cycle** completes in 30 minutes. However, when 
 4. Add scoping filters to further limit the number of users and groups in scope for provisioning.
 
 ## Audit changes to your provisioning configuration
-Provisioning configuration changes are logged in the audit logs. Users with the necessary permissions, such as application administrator and directory reader, can access logs through the audit logs UI, API, and through PowerShell. The following events are currently logged: 
+Provisioning configuration changes are logged in the audit logs. Users with the necessary permissions, such as application administrator and reports reader, can access logs through the audit logs UI, API, and through PowerShell. You can use the activity filter in the audit logs to identify the following actions.
 
-| Action | Activity type | 
+> [!Note]
+> For actions that the provisioning service performs such as creating users, updating users, and deleting users we recommend using the [provisioning logs](howto-analyze-provisioning-logs). For monitoring changes to your provisioning configuration, we recommend using the [audit logs](concept-audit-logs). 
+
+| Action | Activity (filter the logs on this property)| 
 | -------- | -------- | 
 | Update credentials (ex: add a new bearer token) |  Update provisioning setting or credentials |  
 | Change settings on your provisioning job (ex: notification email, sync all vs. sync assigned users and groups, accidental deletions prevention)|  Update provisioning setting or credentials| 
