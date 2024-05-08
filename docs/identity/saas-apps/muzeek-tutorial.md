@@ -54,19 +54,20 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
     ![Screenshot showing the identity configuration.](common/go-to-application.png)
 
-    b. Copy **Application (client) ID** and use it later in the Muzeek side configuration.
+    b. Copy **Application (client) ID** and **Directory (tenant) ID**, use it later in the Muzeek side configuration.
 
-    ![Screenshot of application client values.](common/application-id.png)
+    ![Screenshot of application client values.](./media/muzeek-tutorial/application-id.png)
 
 1. Navigate to **Authentication** tab on the left menu and perform the following steps:
 
-    a. In the **Redirect URIs** textbox, paste the **Redirect URI** value using the following URL: `https://muzeek.com/i/api/sso/entra/callback`
-
-    ![Screenshot showing the redirect values.](./media/muzeek-tutorial/authentication.png)
-
-    b. Enable the **Access tokens (used for implicit flows)** and **ID tokens (used for implicit and hybrid flows)**, click **Save**.
+    a. Enable the **Access tokens (used for implicit flows)** and **ID tokens (used for implicit and hybrid flows)**
 
     ![Screenshot showing the Access tokens.](./media/muzeek-tutorial/access-token.png)
+
+    b. click **Save**.
+
+    >[!NOTE]
+    > The **Redirect URIs** value is auto populate, you don't need to perform any manual configuration here.
 
 1. Navigate to **Certificates & secrets** on the left menu and perform the following steps:
 
@@ -118,6 +119,9 @@ Below are the configuration steps to complete the OIDC federation setup:
     a. Go to the **Integrations** tab.
 
     b. In the **ENTRA Domain** field, enter the domain URL value using the following pattern: `https://login.microsoftonline.com/<Tenant_ID>/oauth2/v2.0/authorize`
+
+    > [!NOTE]
+    > The domain URL value is not real, replace the **Tenant_ID** value with actual **Directory (tenant) ID**, which you have copied from Entra side.
 
     c. In the **ENTRA Client ID** field, paste the **Application ID** value, which you have copied from Entra page. 
 
