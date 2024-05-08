@@ -58,7 +58,7 @@ In order to eligible for an automatic upgrade, you must not meet any one of the 
 
 | Result Message | Description |
 | --- | --- |
-|UpgradeNotSupportedCustomizedSyncRules|You have added your own custom rules to the configuration.|
+|UpgradeNotSupportedCustomizedSyncRules|You have added your own custom rules to the configuration. <br/>**Note:** After version 2.2.1.0, this condition no longer prevents auto upgrade.|
 |UpgradeNotSupportedInvalidPersistedState|The installation is not an Express settings or a DirSync upgrade.|
 |UpgradeNotSupportedNonLocalDbInstall|You are not using a SQL Server Express LocalDB database.|
 |UpgradeNotSupportedLocalDbSizeExceeded|Local DB size is greater than or equal to 8 GB|
