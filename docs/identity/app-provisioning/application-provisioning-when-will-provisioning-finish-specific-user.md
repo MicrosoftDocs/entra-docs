@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.date: 09/15/2023
+ms.date: 05/08/2024
 ms.author: kenwith
 ms.reviewer: arvinh
 ---
@@ -101,6 +101,20 @@ In most cases, the **incremental cycle** completes in 30 minutes. However, when 
 2. Minimize the number of users and groups in scope for provisioning.
 3. Create multiple provisioning jobs targeting the same system. When doing this, each sync job will operate independently, reducing the time to process changes. Please make sure that the scope of users is distinct between these provisioning jobs to avoid changes from one job impacting another. 
 4. Add scoping filters to further limit the number of users and groups in scope for provisioning.
+
+## Audit changes to your provisioning configuration
+Provisioning configuration changes are logged in the audit logs. Users with the necessary permissions, such as application administrator and directory reader, can access logs through the audit logs UI, API, and through PowerShell. The following events are currently logged: 
+
+| Action | Activity type | 
+| -------- | -------- | 
+| Update credentials (ex: add a new bearer token) |  Update provisioning setting or credentials |  
+| Change settings on your provisioning job (ex: notification email, sync all vs. sync assigned users and groups, accidental deletions prevention)|  Update provisioning setting or credentials| 
+| Start provisioning | Enable/start provisioning configuration | 
+| Stop provisioning |  Disable/pause provisioning configuration | 
+| Restart provisioning |  Enable/restart provisioning configuration |  
+| Update attribute mappings or scoping rules |  Update attribute mappings or scope  | 
+
+
 
 ## Next steps
 [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](user-provisioning.md)
