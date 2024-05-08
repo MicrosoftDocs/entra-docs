@@ -42,7 +42,7 @@ prerequisites:
     - |
       A Microsoft Entra ID P1 or P2 tenant.
     - |
-      **Global Administrator** or **Security Administrator** access for the Microsoft Entra tenant.
+      At least the **Security Administrator** role in the Microsoft Entra tenant.
     - |
       A **Log Analytics workspace** in your Azure subscription. Learn how to [create a Log Analytics workspace](/azure/azure-monitor/logs/quick-create-workspace).
     - |
