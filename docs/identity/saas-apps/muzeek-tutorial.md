@@ -60,7 +60,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 1. Navigate to **Authentication** tab on the left menu and perform the following steps:
 
-    a. In the **Redirect URIs** textbox, paste the **Redirect URI** value using the following pattern: `https://muzeek.com/i/api/sso/entra/callback`
+    a. In the **Redirect URIs** textbox, paste the **Redirect URI** value using the following URL: `https://muzeek.com/i/api/sso/entra/callback`
 
     ![Screenshot showing the redirect values.](./media/muzeek-tutorial/authentication.png)
 
