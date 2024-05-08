@@ -166,7 +166,7 @@ If a user has the [Microsoft Single Sign On](https://chromewebstore.google.com/d
 1. Download the latest version of the Company Portal installer from [https://go.microsoft.com/fwlink/?linkid=853070](https://go.microsoft.com/fwlink/?linkid=853070)
 1. Freshly install Company Portal using the downloaded **CompanyPortal-Installer.pkg**
 
-Validate that the issue has been resolved by checking for the **existence of this file**: ~/Library/Application\ Support/Google/Chrome/NativeMessagingHosts/com.microsoft.browsercore.json
+Validate that the issue has been resolved by checking for the **existence of this file**: `~/Library/Application\ Support/Google/Chrome/NativeMessagingHosts/com.microsoft.browsercore.json`
 
     ```console
     ls ~/Library/Application\ Support/Google/Chrome/NativeMessagingHosts/com.microsoft.browsercore.json
