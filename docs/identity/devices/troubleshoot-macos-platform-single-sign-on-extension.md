@@ -168,9 +168,9 @@ If a user has the [Microsoft Single Sign On](https://chromewebstore.google.com/d
 
 Validate that the issue has been resolved by checking for the **existence of this file**: `~/Library/Application\ Support/Google/Chrome/NativeMessagingHosts/com.microsoft.browsercore.json`
 
-    ```console
-    ls ~/Library/Application\ Support/Google/Chrome/NativeMessagingHosts/com.microsoft.browsercore.json
-    ```
+```console
+ls ~/Library/Application\ Support/Google/Chrome/NativeMessagingHosts/com.microsoft.browsercore.json
+```
 
 > [!IMPORTANT]
 > **Note: This issue is due to a bug with how Company Portal is installed or updated under certain circumstances. This issue will be resolved in a future update to Company Portal.
