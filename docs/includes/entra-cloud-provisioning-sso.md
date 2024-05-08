@@ -30,7 +30,7 @@ Cloud provisioning works with Single Sign-on.  Currently there is not an option 
 
 ### Step 3: Get the list of Active Directory forests on which Seamless SSO has been enabled
 
-1. Run PowerShell as an administrator. In PowerShell, call `New-AzureADSSOAuthenticationContext`. When prompted, enter your tenant's global administrator credentials.
+1. Run PowerShell as an administrator. In PowerShell, call `New-AzureADSSOAuthenticationContext`. When prompted, enter the credentials of a [Hybrid Identity Administrator](/entra/identity/role-based-access-control/permissions-reference#hybrid-identity-administrator).
 2. Call `Get-AzureADSSOStatus`. This command provides you with the list of Active Directory forests (look at the "Domains" list) on which this feature has been enabled.
 
 ### Step 4: Enable Seamless SSO for each Active Directory forest

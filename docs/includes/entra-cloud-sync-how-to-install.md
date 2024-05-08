@@ -40,7 +40,7 @@ ms.custom: include file
  >[!NOTE]
  >If you are installing the provisioning agent for use with [on-premsise app provisioning](~/identity/app-provisioning/on-premises-application-provisioning-architecture.md) then select On-premises application provisioning (Microsoft Entra ID to application).
 
- 10. Sign in with your Microsoft Entra Global Administrator or Hybrid Identity Administrator account.  If you have Internet Explorer enhanced security enabled, it will block the sign-in.  If so, close the installation, [disable Internet Explorer enhanced security](/troubleshoot/developer/browsers/security-privacy/enhanced-security-configuration-faq), and restart the **Microsoft Entra Connect Provisioning Agent Package**  installation.
+ 10. Sign in with an account with at least the [Hybrid Identity Administrator](/entra/identity/role-based-access-control/permissions-reference#hybrid-identity-administrator) role.  If you have Internet Explorer enhanced security enabled, it will block the sign-in.  If so, close the installation, [disable Internet Explorer enhanced security](/troubleshoot/developer/browsers/security-privacy/enhanced-security-configuration-faq), and restart the **Microsoft Entra Connect Provisioning Agent Package**  installation.
 
  :::image type="content" source="media/entra-cloud-sync-how-to-install/azure-ad-cloud-sync-sign-in-to-azure.png" alt-text="Screenshot of the Connect Microsoft Entra ID screen."  lightbox="media/entra-cloud-sync-how-to-install/azure-ad-cloud-sync-sign-in-to-azure.png":::
 
