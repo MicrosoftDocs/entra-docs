@@ -60,6 +60,9 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
     c. Generate the **Issuer URL** using the following  pattern : `https://login.microsoftonline.com/<Tenant_ID>/oauth2`
 
+    >[!NOTE]
+    > The **Issuer URL** value is not real. Replace <Tenant_ID> with actual tenant id value in the Issuer URL pattern.
+
 1. Navigate to **Certificates & secrets** on the left menu and perform the following steps:
 
     a. Go to **Client secrets** tab and click **+New client secret**.
