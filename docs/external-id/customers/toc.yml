@@ -309,6 +309,8 @@ items:
           href: concept-native-authentication-user-attribute-builder.md
     - name: Customizing the sign-in look and feel
       href: concept-branding-customers.md
+    - name: Custom URL domains
+      href: concept-custom-url-domain.md
     - name: Get started guide features explained
       href: concept-guide-explained.md
     - name: Adding your own business logic
@@ -380,6 +382,8 @@ items:
               displayName: custom attributes
             - name: Add attributes to the token
               href: how-to-add-attributes-to-token.md
+        - name: Use custom URL domains
+          href: how-to-custom-url-domain.md
         - name: Advanced extensions
           items:
             - name: Add logic to attribute collection
