@@ -52,6 +52,6 @@ Configure delegated permission to Microsoft Graph to enable your client applicat
 
 ## Next steps
 
-[Tutorial: Prepare your iOS app for authentication](tutorial-mobile-app-android-kotlin-prepare-app.md)
+[Tutorial: Prepare your iOS app for authentication](tutorial-mobile-app-ios-swift-prepare-app.md)
 
 

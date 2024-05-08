@@ -111,7 +111,7 @@ The MSAL authentication SDK is used for integrating authentication into your app
 
     - `Enter_the_Application_Id_Here` and replace it with the **Application (client) ID** of the app you registered earlier.
     - `Enter_the_Redirect_URI_Here` and replace it with the value of *kRedirectUri* in the MSAL configuration file you downloaded earlier when you added the platform redirect URL.
-    - `Enter_the_Protected_API_Scopes_Here` and replace it with the scopes recorded in [Delegated permission to Microsoft Graph](#delegated-permission-to-microsoft-graph). If you haven't recorded any scopes, you can leave this scope list empty.
+    - `Enter_the_Protected_API_Scopes_Here` and replace it with the scopes recorded earlier. If you haven't recorded any scopes, you can leave this scope list empty.
     - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't know your tenant subdomain, learn how to [read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
 
 ## Next steps
