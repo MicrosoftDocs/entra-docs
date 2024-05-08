@@ -52,7 +52,7 @@ As adding a custom security attribute to the scope of a workflow updates its exe
 
 ## View custom security attribute used as a scope of the workflow
 
-After you've scoped a workflow using a custom security attribute, you can view this information within the workflow audit logs. To view these details, you'd do the following steps:
+After you scoped a workflow using a custom security attribute, you can view this information within the workflow audit logs. To view these details, you'd do the following steps:
 
 1.  Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator) and [Attribute Assignment Administrator](../identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator).
 
