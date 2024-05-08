@@ -1,6 +1,6 @@
 ---
 title: Register an iOS (Swift) mobile app in External ID tenant
-description: The tutorials provide a step-by-step guide on how to register and configure an iOS mobile app in External ID tenant .
+description: The tutorials provide a step-by-step guide on how to register and configure an iOS mobile app in External ID tenant.
 
 author: henrymbuguakiarie
 manager: mwongerapk
@@ -17,7 +17,7 @@ ms.custom: developer
 
 # Tutorial: Register and configure iOS (Swift) mobile app
 
-This tutorial series demonstrates how to build an iOS (Swift) mobile app that authenticates using an external tenant. You'll register an app within the customer's tenant, create the an iOS (Swift) app, and you implement the sign-in and sign-out code to enable secure authentication.
+This tutorial series demonstrates how to build an iOS (Swift) mobile app that authenticates using an external tenant. You register an app within the customer's tenant, create the an iOS (Swift) app, and you implement the sign-in and sign-out code to enable secure authentication.
 
 In this tutorial, you'll;
 
