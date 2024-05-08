@@ -543,33 +543,36 @@ This error indicates the Guest invite settings in the target tenant are configur
 
 Change the Guest invite settings in the target tenant to a less restrictive setting. For more information, see [Configure external collaboration settings](../../external-id/external-collaboration-settings-configure.md).
 
-##### Symptom - UPN property does not update in certain invitation scenarios
+##### Symptom - User Principal Name does not update for existing B2B users in pending acceptance state
 
 
-This happens when the source tenant user objects UPN and Mail property values are not the same, for example Mail == user.mail@domain.com and UPN == user.upn@otherdomain.com. When the source user is first invited through mail address, the target tenant guest user is created with a UPN prefix using the source mail value property, based on the example above would be *user.mail_domain.com#EXT#@contoso.onmicrosoft.com.*
+When a user is first invited through manual B2B invitation, the invitation is sent to the source user mail address. As a result the guest user in the target tenant is created with a UPN prefix using the source mail value property. There are environments where the source user object properties, UPN and Mail, have different values, for example Mail == user.mail@domain.com and UPN == user.upn@otherdomain.com. For example, in this case the guest user in the target tenant will be created with the UPN as  *user.mail_domain.com#EXT#@contoso.onmicrosoft.com.*
 
-Then the source object is put in scope of Cross-Tenant Sync and the expectation would be that besides other properties, the UPN prefix of the target guest user **would be updated to match the UPN of the source user** (in this scenario the value would be: *user.upn_otherdomain.com#EXT#@contoso.onmicrosoft.com*). However, that's not happening during incremental sync cycles, and the change is ignored. 
+The issue raises when then the source object is put in scope for cross-tenant sync and the expectation is that besides other properties, the UPN prefix of the target guest user **would be updated to match the UPN of the source user** (in this scenario the value would be: *user.upn_otherdomain.com#EXT#@contoso.onmicrosoft.com*). However, that's not happening during incremental sync cycles, and the change is ignored.
 <br>
 
 **Cause**
 
+This issue happens when the **B2B user which was manually invited into the target tenant didn't accept or redeem the invitation**, so its state is in pending acceptance. When a user is invited through an email, an object is created with a set of attributes that are populated from the mail, one of them is the UPN, which is pointing to the mail value of the source user. If later you decide to add the user to the scope for cross-tenant sync, the system will try to join the source user with a B2B user in target tenant based on the alternativeSecurityIdentifier attribute, which the previously created user does not have a alternativeSecurityIdentifier property populated because the invitation was not redeemed. So, the system will consider this to be a new user object and will not update the UPN value. The user principal name is not updated in the following scenarios: 
 
-The issue was that the **B2B user which was manually invited into the target tenant didn't accept or redeem the invitation**, so it's in pending acceptance. When a user is invited through an email, an object is created with the guest user type and the set of attributes inherited from the mail, so the UPN is pointing to the mail value of the source user. If later you decide to add the user to the scope for Cross tenant sync, we tried to join the source user with a B2B user in target tenant by searching based on the alternativeSecurityIdentifier attribute, which it could not find it because the user was not yet redeemed. That's why cross tenant sync consider this object as a new user ADD scenario, and we don't update the existing UPN value. In brief the steps taken to cause the issue are:
+1.	The UPN and mail are different for a user when was manually invited. 
+1.	The user was invited prior to enabling cross-tenant sync.
+1.	The user never accepted the invitation, so they are in “pending acceptance state”. 
+1.	The user is brought into scope for cross-tenant sync. 
 
-<br>
-
-1. B2B user is invited via invitation manager, but the user never accepts the invitation.
-1. The user is added in the scope for Cross Tenant Sync and the invitation manager searches the user using various properties, including mail and UPN. 
-1. The invitation manager finds a result of the source user in the target tenant based on the mail value of source property. 
-1. The invitation manager returns the details of this B2B user to Cross Tenant Sync during the flow process.
-1. The invitation is auto redeemed because with Cross Tenant Sync, auto redemption is turned on.
-1. Then as part of the initial ADD operation, we drop the UPN update, because in Cross Tenant Sync the invitation of the user is based on the UPN property. Hence the UPN property never got updated because the search is done based on an existing account that is created with the email property value as the UPN.
 
 **Solution**
 
-To resolve the issue, run provision on demand for any affected object which will get the entire object and update the target user. Alternatively, restarting provisioning should also get all the information from the source objects and update the properties in the target, including the UPN.
+To resolve the issue, run on-demand provisioning for the impacted user(s) to update the UPN. You can also restart provisioning to update the UPN for all impacted users. Please note that this triggers an initial cycle, which can take a long time for large tenants. To get a list of manual invited users in pending acceptance state, you can use a script, please see the below sample.
 
+```powershell
 
+Connect-MgGraph -Scopes "User.Read.All"
+$users = Get-MgUser -Filter "userType eq 'Guest' and externalUserState eq 'PendingAcceptance'" 
+$users | Format-Table DisplayName, UserPrincipalName | Out-File -FilePath "C:\Temp\GuestUsersPendingtest.txt"
+
+```
+Then you can use use [provisionOnDemand with Powershell](https://learn.microsoft.com/en-us/graph/api/synchronization-synchronizationjob-provisionondemand?view=graph-rest-1.0&tabs=powershell#request) for each user. The rate limit for this API is 5 requests per 10 seconds. The known limitations for on-demand provisioning are listed [here](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/provision-on-demand?pivots=cross-tenant-synchronization#known-limitations) 
 
 ## Next steps
 
