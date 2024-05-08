@@ -157,6 +157,24 @@ Platform Credential as Passkey option is only available if Secure Enclave is con
 1. Ensure that your admin has set up your device with Secure Enclave as the authentication method, and has [enabled passkeys (FIDO2) for your organization](/entra/identity/authentication/how-to-enable-passkey-fido2#enable-passkey-authentication-method).
 1. As a user, check that you have enabled Company Portal as a passkey provider in your device settings. Navigate to your **Settings** app, **Passwords** and **Password options**, and ensure that **Company Portal** is enabled.
 
+### Troubleshoot Google Chrome SSO issues
+
+If a user has the [Microsoft Single Sign On](https://chromewebstore.google.com/detail/microsoft-single-sign-on/ppnbnpeolgkicgegkbkbjmhlideopiji?pli=1) extension for Google Chrome installed then their Chrome browser should be able communicate with the Microsoft SSO broker for both a SSO user experience and to work with device-based Conditional Access policies. If users are not able to pass device-based Conditional Access policies in Google Chrome then there may be an issue with how the Company Portal application was installed, which can prevent Chrome from communicating with the SSO broker. You should take the following steps to remediate this issue:
+
+1. Open the **Applications** folder on the Mac
+1. Right click the **Company Portal** application and choose **Move to Trash**
+1. Download the latest version of the Company Portal installer from [https://go.microsoft.com/fwlink/?linkid=853070](https://go.microsoft.com/fwlink/?linkid=853070)
+1. Freshly install Company Portal using the downloaded **CompanyPortal-Installer.pkg**
+
+Validate that the issue has been resolved by checking for the **existence of this file**: `~/Library/Application\ Support/Google/Chrome/NativeMessagingHosts/com.microsoft.browsercore.json`
+
+```console
+ls ~/Library/Application\ Support/Google/Chrome/NativeMessagingHosts/com.microsoft.browsercore.json
+```
+
+> [!IMPORTANT]
+> **Note: This issue is due to a bug with how Company Portal is installed or updated under certain circumstances. This issue will be resolved in a future update to Company Portal.
+
 ## See also
 
 - [Join a Mac device with Microsoft Entra ID during the out of box experience](./device-join-macos-platform-single-sign-on.md)
