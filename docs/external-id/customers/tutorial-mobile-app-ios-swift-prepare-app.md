@@ -105,7 +105,7 @@ The MSAL authentication SDK is used for integrating authentication into your app
     }
     ```
     
-    This Swift configuration code defines a class named `Configuration` that inherits from `NSObject` and is marked with `@objcMembers`. It includes static constants for various configuration parameters related to an authentication setup. These parameters include the _tenant subdomain_, _client ID_, _redirect URI_, _protected API endpoint_, and _scopes_.
+    This Swift configuration code defines a class named `Configuration` that inherits from `NSObject` and is marked with `@objcMembers`. It includes static constants for various configuration parameters related to an authentication setup. These parameters include the _tenant subdomain_, _client ID_, _redirect URI_, _protected API endpoint_, and _scopes_. These configuration constants should be updated with appropriate values specific to the application's setup.
 
     Find the placeholder:
 
