@@ -108,7 +108,7 @@ Provisioning configuration changes are logged in the audit logs. Users with the 
 > [!Note]
 > For actions that the provisioning service performs such as creating users, updating users, and deleting users we recommend using the [provisioning logs](~/identity/monitoring-health/howto-analyze-provisioning-logs.md). For monitoring changes to your provisioning configuration, we recommend using the [audit logs](~/identity/monitoring-health/concept-audit-logs.md). 
 
-![Audit logs](./media/application-provisioning-when-will-provisioning-finish-specific-user/audit-logs.png)
+![Audit logs](./media/app-provisioning/media/check-status-user-account-provisioning/audit-logs.png)
 
 | Action | Activity (filter the logs on this property)| 
 | -------- | -------- | 
