@@ -60,14 +60,6 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
     c. Generate the **Issuer URL** using the following  pattern : `https://login.microsoftonline.com/<Tenant_ID>/oauth2`
 
-1. Navigate to **Authentication** tab on the left menu and perform the following steps:
-
-    a. In the **Redirect URIs** textbox, paste the Spyglass website URL value.
-
-    ![Screenshot of showing the redirect values.](./media/spyglass-tutorial/authentication.png)
-
-    b. Click **Configure**.
-
 1. Navigate to **Certificates & secrets** on the left menu and perform the following steps:
 
     a. Go to **Client secrets** tab and click **+New client secret**.
@@ -78,6 +70,9 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     c. Once you add a client secret, **Value** will be generated. Copy the value and use it later in the Spyglass side configuration.
 
     ![Screenshot of showing how to add a client secret.](common/client.png)
+
+>[!NOTE]
+> In the **Authentication** section, the **Redirect URIs** value is auto populate, you don't need to perform any manual configuration here.
 
 ### Create a Microsoft Entra test user
 
