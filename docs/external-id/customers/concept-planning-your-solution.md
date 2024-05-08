@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: concept-article
-ms.date: 11/27/2023
+ms.date: 05/09/2024
 ms.author: mimart
 ms.custom: it-pro
 
