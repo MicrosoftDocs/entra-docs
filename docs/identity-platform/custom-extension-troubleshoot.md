@@ -127,34 +127,39 @@ After you acquire an access token, pass it the HTTP `Authorization` header. To o
 
 # [API testing tools](#tab/api-testing-tools)
 
-To test your API directly using your preferred API testing tool, follow these steps:
+1. For local development and testing purposes, open *local.settings.json* and replace the code with the following JSON: 
 
-> [!NOTE]
->
-> If you used the [Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents](https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/entra/Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents) NuGet package, turn off token validation for testing purposes. Open *local.settings.json* and add the following parameter;
->
-> ```json
-> "AuthenticationEvents__BypassTokenValidation": true
-> ```
->
-> Once you've finished testing, ensure that you remove it.
+    ```json
+    {
+      "IsEncrypted": false,
+      "Values": {
+        "AzureWebJobsStorage": "",
+        "AzureWebJobsSecretStorageType": "files",
+        "FUNCTIONS_WORKER_RUNTIME": "dotnet",
+        "AuthenticationEvents__BypassTokenValidation" : true
+      }
+    }
+    ```
 
-1. In your REST API, disable the `appid` or `azp` [claim validation](custom-extension-overview.md#protect-your-rest-api). Check out how to [edit the function API](custom-extension-tokenissuancestart-setup.md) you created earlier.
-1. Create new HTTP request and set the **HTTP method** to `POST`.
-1. In the **Body**, select **Raw** and then select **JSON**.
+    > [!NOTE]
+    >
+    > If you used the [Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents](https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/entra/Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents) NuGet package, turn off token validation for testing purposes. Once you've finished testing, ensure that you remove it.
+
+1. Using your preferred API testing tool, create a new HTTP request and set the **HTTP method** to `POST`.
+1. In the **Body**, select **Raw** and then select **JSON**.:
 1. Paste the following JSON that imitates the request Microsoft Entra ID sends to your REST API.
 
     ```json
     {
         "type": "microsoft.graph.authenticationEvent.tokenIssuanceStart",
-        "source": "/tenants/<Your tenant GUID>/applications/<Your Test Application App Id>",
+        "source": "/tenants/aaaabbbb-0000-cccc-1111-dddd2222eeee/applications/00001111-aaaa-2222-bbbb-3333cccc4444",
         "data": {
             "@odata.type": "microsoft.graph.onTokenIssuanceStartCalloutData",
-            "tenantId": "<Your tenant GUID>",
-            "authenticationEventListenerId": "<GUID>",
-            "customAuthenticationExtensionId": "<Your custom authentication extension ID>",
+            "tenantId": "aaaabbbb-0000-cccc-1111-dddd2222eeee",
+            "authenticationEventListenerId": "11112222-bbbb-3333-cccc-4444dddd5555",
+            "customAuthenticationExtensionId": "22223333-cccc-4444-dddd-5555eeee6666",
             "authenticationContext": {
-                "correlationId": "<Enter correlation ID here>",
+                "correlationId": "aaaa0000-bb11-2222-33cc-444444dddddd>",
                 "client": {
                     "ip": "127.0.0.1",
                     "locale": "en-us",
@@ -162,14 +167,14 @@ To test your API directly using your preferred API testing tool, follow these st
                 },
                 "protocol": "OAUTH2.0",
                 "clientServicePrincipal": {
-                    "id": "<Your Test Applications servicePrincipal objectId>",
-                    "appId": "<Your Test Application App Id>",
+                    "id": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
+                    "appId": "00001111-aaaa-2222-bbbb-3333cccc4444",
                     "appDisplayName": "My Test application",
                     "displayName": "My Test application"
                 },
                 "resourceServicePrincipal": {
-                    "id": "<Your Test Applications servicePrincipal objectId>",
-                    "appId": "<Your Test Application App Id>",
+                    "id": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
+                    "appId": "00001111-aaaa-2222-bbbb-3333cccc4444",
                     "appDisplayName": "My Test application",
                     "displayName": "My Test application"
                 },
@@ -178,7 +183,7 @@ To test your API directly using your preferred API testing tool, follow these st
                     "createdDateTime": "2023-08-16T00:00:00Z",
                     "displayName": "Casey Jensen",
                     "givenName": "Casey",
-                    "id": "90847c2a-e29d-4d2f-9f54-c5b4d3f26471", // Client ID representing the Microsoft Entra authentication events service
+                    "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
                     "mail": "casey@contoso.com",
                     "onPremisesSamAccountName": "Casey Jensen",
                     "onPremisesSecurityIdentifier": "<Enter Security Identifier>",
