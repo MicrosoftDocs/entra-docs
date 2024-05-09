@@ -24,8 +24,7 @@ In this tutorial, you'll:
 
 > [!div class="checklist"]
 >
-> - Sign in user.
-> - Sign out user.
+> - Call a protected web API.
 
 ## Prerequisites
 
