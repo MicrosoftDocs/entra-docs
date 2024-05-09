@@ -67,7 +67,7 @@ To access remote network health logs with Microsoft Graph API:
 GET https://graph.microsoft.com/beta/networkAccess/logs/remotenetworks
 ```
 
-**Response:**
+**Response (truncated):**
 
 ```json
 {
@@ -75,6 +75,30 @@ GET https://graph.microsoft.com/beta/networkAccess/logs/remotenetworks
   "@odata.nextLink": "https://graph.microsoft.com/beta/networkAccess/logs/remotenetworks?$skiptoken=a0850fa33aecaf5fc7240fdd13929d25cc2ffbaa9e985c2fd3787a9283ba28c0",
   "@microsoft.graph.tips": "Use $select to choose only the properties your app needs, as this can lead to performance improvements. For example: GET networkAccess/logs/remoteNetworks?$select=bgpRoutesAdvertisedCount,createdDateTime",
   "value": [
+    {
+     "id": "fa4e82a0-679b-4648-abdc-e94c4963fd91",
+     "remoteNetworkId": "bdd517bd-f167-4bba-b8db-05dce535bff5",
+     "createdDateTime": "2024-05-09T20:53:48.3925141Z",
+     "sourceIp": "20.x.x.x",
+     "destinationIp": "20.x.x.x",
+     "description": null,
+     "bgpRoutesAdvertisedCount": 0,
+     "status": "remoteNetworkAlive",
+     "sentBytes": 74156,
+     "receivedBytes": 76554
+     },
+     {
+     "id": "55258f4c-8e42-4463-ab83-7c7d64f7a69e",
+     "remoteNetworkId": "341c01f2-b8a2-405a-91cb-a6032316ac27",
+     "createdDateTime": "2024-05-09T20:54:55.1969876Z",
+     "sourceIp": "16.x.x.x",
+     "destinationIp": "20.x.x.x",
+     "description": null,
+     "bgpRoutesAdvertisedCount": 25,
+     "status": "remoteNetworkAlive",
+     "sentBytes": 573962,
+     "receivedBytes": 365794
+     }
   ]
 }
 ```
@@ -113,9 +137,13 @@ The basic steps to configure diagnostic settings are as follows:
 > [!NOTE]
 > It might take up to three days for the logs to start appearing in the destination.
 
-Once your logs are integrated with Log Analytics, you can visualize the data with an Azure Workbook for Microsoft Entra. This process is covered in the next section.
+Once your logs are routed to Log Analytics, you can take advantage of the following features:
 
-You can also integrate logs with Microsoft Sentinel for security analytics and threat intelligence. For more information, follow the [Onboard Microsoft Sentinel](/azure/sentinel/quickstart-onboard) Quickstart.
+- Create alert rules to get notified for things like a BGP tunnel failure.
+    - For more information, see [Create an alert rule](/azure/azure-monitor/alerts/alerts-create-activity-log-alert-rule).
+- Visualize the data with an Azure Workbook for Microsoft Entra (covered in the next section).
+- Integrate logs with Microsoft Sentinel for security analytics and threat intelligence.
+    - For more information, follow the [Onboard Microsoft Sentinel](/azure/sentinel/quickstart-onboard) Quickstart.
 
 ## Analyze logs with a Workbook
 
