@@ -1835,6 +1835,8 @@
         href: ms-azure-sso-access-for-ethidex-compliance-office-tutorial.md
       - name: Mural Identity
         href: mural-identity-tutorial.md  
+      - name: Muzeek
+        href: muzeek-tutorial.md
       - name: MVISION Cloud Microsoft Entra SSO Configuration
         href: skyhighnetworks-tutorial.md
       - name: myAOS
