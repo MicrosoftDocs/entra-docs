@@ -132,7 +132,7 @@ In this step, you automatically redeem invitations in the source tenant.
 
 1. Select **Configurations**.
 
-3. At the top of the page, select **New configuration**.
+1. At the top of the page, select **New configuration**.
 
 1. Provide a name for the configuration and select **Create**.
 
@@ -401,13 +401,11 @@ Even though users are being provisioned in the target tenant, they still might b
 
 1. Under **External user leave settings**, choose whether to allow external users to leave your organization themselves.
 
-
 This setting also applies to B2B collaboration and B2B direct connect, so if you set **External user leave settings** to **No**, B2B collaboration users and B2B direct connect users can't leave your organization themselves. For more information, see [Leave an organization as an external user](../../external-id/leave-the-organization.md#more-information-for-administrators).
 
 ## Troubleshooting tips
 
 #### Delete a configuration
-
 
 Follows these steps to delete a configuration on the **Configurations** page.
 
@@ -419,10 +417,9 @@ Follows these steps to delete a configuration on the **Configurations** page.
 
     :::image type="content" source="./media/cross-tenant-synchronization-configure/configurations-delete.png" alt-text="Screenshot of the Configurations page showing how to delete a configuration." lightbox="./media/cross-tenant-synchronization-configure/configurations-delete.png":::
 
-#### Common scenarios and their solutions
+## Common scenarios and solutionss
 
-##### Symptom - Test connection fails with AzureDirectoryB2BManagementPolicyCheckFailure
-
+#### Symptom - Test connection fails with AzureDirectoryB2BManagementPolicyCheckFailure
 
 When configuring cross-tenant synchronization in the source tenant and you test the connection, it fails with the following error message:
 
@@ -430,7 +427,6 @@ When configuring cross-tenant synchronization in the source tenant and you test 
 You appear to have entered invalid credentials. Please confirm you are using the correct information for an administrative account.
 Error code: AzureDirectoryB2BManagementPolicyCheckFailure
 Details: Policy permitting auto-redemption of invitations not configured.
- 
 ```
 
 :::image type="content" source="./media/cross-tenant-synchronization-configure/provisioning-test-connection-error.png" alt-text="Screenshot that shows the error when test connection fails with AzureDirectoryB2BManagementPolicyCheckFailure." lightbox="./media/cross-tenant-synchronization-configure/provisioning-test-connection-error.png":::
@@ -443,12 +439,11 @@ This error indicates the policy to automatically redeem invitations in both the 
 
 Follow the steps in [Step 3: Automatically redeem invitations in the target tenant](#step-3-automatically-redeem-invitations-in-the-target-tenant) and [Step 4: Automatically redeem invitations in the source tenant](#step-4-automatically-redeem-invitations-in-the-source-tenant). 
 
-##### Symptom - Automatic redemption check box is disabled
-
+#### Symptom - Automatic redemption check box is disabled
 
 When configuring cross-tenant synchronization, the **Automatic redemption** check box is disabled.
 
-   :::image type="content" source="./media/cross-tenant-synchronization-configure/consent-prompt-setting-disabled.png" alt-text="Screenshot that shows the Automatic redemption check box as disabled." lightbox="./media/cross-tenant-synchronization-configure/consent-prompt-setting-disabled.png":::
+:::image type="content" source="./media/cross-tenant-synchronization-configure/consent-prompt-setting-disabled.png" alt-text="Screenshot that shows the Automatic redemption check box as disabled." lightbox="./media/cross-tenant-synchronization-configure/consent-prompt-setting-disabled.png":::
 
 **Cause**
 
@@ -458,24 +453,19 @@ Your tenant doesn't have a Microsoft Entra ID P1 or P2 license.
 
 You must have Microsoft Entra ID P1 or P2 to configure trust settings.
 
-
-##### Symptom - Recently deleted user in the target tenant is not restored
-
+#### Symptom - Recently deleted user in the target tenant is not restored
 
 After soft deleting a synchronized user in the target tenant, the user isn't restored during the next synchronization cycle. If you try to soft delete a user with on-demand provisioning and then restore the user, it can result in duplicate users.
-
 
 **Cause**
 
 Restoring a previously soft-deleted user in the target tenant isn't supported.
 
-
 **Solution**
 
 Manually restore the soft-deleted user in the target tenant. For more information, see [Restore or remove a recently deleted user using Microsoft Entra ID](../../fundamentals/users-restore.yml).
 
-
-##### Symptom - Users are skipped because SMS sign-in is enabled on the user
+#### Symptom - Users are skipped because SMS sign-in is enabled on the user
 Users are skipped from synchronization. The scoping step includes the following filter with status false: "Filter external users.alternativeSecurityIds EQUALS 'None'"
 
 **Cause**
@@ -502,7 +492,7 @@ $phoneAuthenticationMethodId = "3179e48a-750b-4051-897c-87b9720928f7"
 
 #### Get the User Details
 
-$userId = "objectid_of_the_user_in_Azure_AD"
+$userId = "objectid_of_the_user_in_Entra_ID"
 
 #### validate the value for SmsSignInState
 
@@ -524,32 +514,27 @@ $smssignin = Get-MgUserAuthenticationPhoneMethod -UserId $userId
 ##### End the script
 ```
 
-##### Symptom - Users fail to provision with error "AzureActiveDirectoryForbidden"
-
+#### Symptom - Users fail to provision with error AzureActiveDirectoryForbidden
 
 Users in scope fail to provision. The provisioning logs details include the following error message:
 
 ```
 Guest invitations not allowed for your company. Contact your company administrator for more details.
-
 ```
 
 **Cause**
 
 This error indicates the Guest invite settings in the target tenant are configured with the most restrictive setting: "No one in the organization can invite guest users including admins (most restrictive)".
 
-
 **Solution**
 
 Change the Guest invite settings in the target tenant to a less restrictive setting. For more information, see [Configure external collaboration settings](../../external-id/external-collaboration-settings-configure.md).
 
-##### Symptom - User Principal Name does not update for existing B2B users in pending acceptance state
-
+#### Symptom - User Principal Name does not update for existing B2B users in pending acceptance state
 
 When a user is first invited through manual B2B invitation, the invitation is sent to the source user mail address. As a result the guest user in the target tenant is created with a UPN prefix using the source mail value property. There are environments where the source user object properties, UPN and Mail, have different values, for example Mail == user.mail@domain.com and UPN == user.upn@otherdomain.com. For example, in this case the guest user in the target tenant will be created with the UPN as  *user.mail_domain.com#EXT#@contoso.onmicrosoft.com.*
 
 The issue raises when then the source object is put in scope for cross-tenant sync and the expectation is that besides other properties, the UPN prefix of the target guest user **would be updated to match the UPN of the source user** (in this scenario the value would be: *user.upn_otherdomain.com#EXT#@contoso.onmicrosoft.com*). However, that's not happening during incremental sync cycles, and the change is ignored.
-<br>
 
 **Cause**
 
@@ -560,19 +545,17 @@ This issue happens when the **B2B user which was manually invited into the targe
 1.	The user never accepted the invitation, so they are in “pending acceptance state”. 
 1.	The user is brought into scope for cross-tenant sync. 
 
-
 **Solution**
 
 To resolve the issue, run on-demand provisioning for the impacted user(s) to update the UPN. You can also restart provisioning to update the UPN for all impacted users. Please note that this triggers an initial cycle, which can take a long time for large tenants. To get a list of manual invited users in pending acceptance state, you can use a script, please see the below sample.
 
 ```powershell
-
 Connect-MgGraph -Scopes "User.Read.All"
 $users = Get-MgUser -Filter "userType eq 'Guest' and externalUserState eq 'PendingAcceptance'" 
 $users | Select-Object DisplayName, UserPrincipalName | Export-Csv "C:\Temp\GuestUsersPending.csv"
-
 ```
-Then you can use [provisionOnDemand with Powershell](https://learn.microsoft.com/en-us/graph/api/synchronization-synchronizationjob-provisionondemand?view=graph-rest-1.0&tabs=powershell#request) for each user. The rate limit for this API is 5 requests per 10 seconds. The known limitations for on-demand provisioning are listed [here](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/provision-on-demand?pivots=cross-tenant-synchronization#known-limitations) 
+
+Then you can use [provisionOnDemand with Powershell](/graph/api/synchronization-synchronizationjob-provisionondemand?tabs=powershell#request) for each user. The rate limit for this API is 5 requests per 10 seconds. For more information, see [known limitations for on-demand provisioning](/entra/identity/app-provisioning/provision-on-demand?pivots=cross-tenant-synchronization#known-limitations) 
 
 ## Next steps
 
