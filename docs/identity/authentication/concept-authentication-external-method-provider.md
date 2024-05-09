@@ -232,7 +232,7 @@ Microsoft’s [token validation library](https://github.com/AzureAD/azure-active
 Once validation succeeds, you can work with the claims payload to get details of the user, and their tenant.
 
 >[!NOTE]
->It is very important to validate the id_token_hint value fully. You must ensure that the identity token is from a known Microsoft Entra ID tenant and only use the data from this JWT token for the MFA validation processing.
+>It is very important to validate the id_token_hint value fully, including the signature. You must ensure that the identity token is from a known Microsoft Entra ID tenant. The claims from the JWT token must be used for the MFA validation processing.
 
 ### Microsoft Entra ID call to the external identity provider
 
