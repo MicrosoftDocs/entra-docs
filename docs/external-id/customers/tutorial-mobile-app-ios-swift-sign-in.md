@@ -90,7 +90,7 @@ You have two main options for signing in users using Microsoft Authentication Li
     
     The code initiates the process of acquiring tokens silently. It first attempts to load the current account. If a current account is found, it proceeds to acquire the token silently using that account. If no current account is found, it updates the logging to indicate that no token is found and suggests trying to acquire a token interactively first. 
 
-    In code code above we are calling two function, `loadCurrentAccount` and `acquireTokenSilently`. The `loadCurrentAccount` function should have the following code:
+    In code above we're calling two function, `loadCurrentAccount` and `acquireTokenSilently`. The `loadCurrentAccount` function should have the following code:
 
     ```swift
     func loadCurrentAccount(completion: AccountCompletion? = nil) {
@@ -142,7 +142,7 @@ You have two main options for signing in users using Microsoft Authentication Li
     ```
     
     
-    The code uses MSAL for iOS to load the current account. It checks for errors and updates the logging accordingly. If a current account is found, it updates it and attempts to acquire tokens silently. If a previous account exists, it logs the sign-out. If no accounts are found, it clears the access token. Finally, it executes a completion block if provided. The `acquireTokenSilently` function should contain the following code:
+    The code uses MSAL for iOS to load the current account. It checks for errors and updates the logging accordingly. If a current account is found, it updates it and attempts to acquire tokens silently. If a previous account exists, it logs the sign out. If no accounts are found, it clears the access token. Finally, it executes a completion block if provided. The `acquireTokenSilently` function should contain the following code:
 
     ```swift
     func acquireTokenSilently(_ account : MSALAccount) {
@@ -204,7 +204,7 @@ You have two main options for signing in users using Microsoft Authentication Li
 
     ```
     
-    This function uses MSAL for iOS to silently acquire a token for an existing account. After verifying the `applicationContext`, it logs the token acquisition process. Using `MSALSilentTokenParameters`, it defines the necessary parameters. Then, it attempts to acquire the token silently. In case of errors, it checks for user interaction requirements, initiating an interactive process if needed. Upon success, it updates the `accessToken` property and logs the refreshed token, concluding by enabling the sign-out button.
+    This function uses MSAL for iOS to silently acquire a token for an existing account. After verifying the `applicationContext`, it logs the token acquisition process. Using `MSALSilentTokenParameters`, it defines the necessary parameters. Then, it attempts to acquire the token silently. If there's errors, it checks for user interaction requirements, initiating an interactive process if needed. Upon success, it updates the `accessToken` property and logs the refreshed token, concluding by enabling the sign out button.
 
 ## Sign out user
 
@@ -256,8 +256,8 @@ To sign out a user from your iOS (Swift) app using MSAL for iOS, use the followi
     }
 ```
 
-The code verifies the existence of the `applicationContext`, `currentAccount`, and `webViewParamaters`. Then, it logs the sign-out process. The code removes all tokens from the cache for the provided account. Depending on the current device mode, it determines whether to sign out from the browser. Upon completion, it updates the logging text accordingly. If an error occurs during the sign-out process, it logs the error message. Upon successful sign-out, it updates the access token to an empty string and clears the current account.
+The code verifies the existence of the `applicationContext`, `currentAccount`, and `webViewParamaters`. Then, it logs the sign out process. The code removes all tokens from the cache for the provided account. Depending on the current device mode, it determines whether to sign out from the browser. Upon completion, it updates the logging text accordingly. If an error occurs during the sign out process, it logs the error message. Upon successful sign out, it updates the access token to an empty string and clears the current account.
 
 ## Next steps
 
-[Tutorial: Sign in user and call a protected web API in iOS (Swift) app](tutorial-mobile-app-ios-swift-sign-in-call-api.md)
+[Tutorial: Sign in user and call a protected web API in iOS (Swift) app](tutorial-mobile-app-ios-swift-sign-in-call-api.md).

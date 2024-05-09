@@ -17,7 +17,7 @@ ms.custom: developer
 
 # Tutorial: Prepare your iOS (Swift) app for authentication
 
-This tutorial demonstrate how to add Microsoft Authentication Library (MSAL) for iOS and macOS to your iOS Swift app.
+This tutorial demonstrates how to add Microsoft Authentication Library (MSAL) for iOS and macOS to your iOS Swift app.
 
 In this tutorial, you'll;
 
@@ -34,7 +34,7 @@ In this tutorial, you'll;
     - Add a platform redirect URL.
     - Enable public client flow.
     - Delegated permission to Microsoft Graph.
-- iOS (Swift) project
+- iOS (Swift) project.
 
 ## Add the MSAL framework to an iOS (Swift) app
 
@@ -64,7 +64,7 @@ The MSAL authentication SDK is used for integrating authentication into your app
         }
     ``` 
 
-1. Add the following code that creates `initMSAL()` which initialize MSAL:
+1. Add the following code that creates `initMSAL()` function, which initializes MSAL:
 
     ```swift
         func initMSAL() throws {

@@ -89,7 +89,7 @@ To call a protected web API from your iOS app, use the following code:
 
 The code specifies the API endpoint, ensuring its validity. Then, it constructs a request object, setting the Authorization header with the access token obtained. After logging the initiation of the request, it performs the request asynchronously using `URLSession`. 
 
-Upon completion, it checks for any errors during the request. If an error occurs, it logs the corresponding message. Next, it verifies the success of the HTTP response, ensuring it falls within the range of 200 to 299 status codes. Subsequently, it deserializes the received JSON data. Finally, it updates the logging text, indicating successful access to the API along with relevant HTTP response details.
+Upon completion, it checks for any errors during the request. If an error occurs, it logs the corresponding message. Next, it verifies the success of the HTTP response, ensuring it falls within the range of 200 to 299 status codes. After, it deserializes the received JSON data. Finally, it updates the logging text, indicating successful access to the API along with relevant HTTP response details.
 
 ## Related content
 

@@ -17,7 +17,7 @@ ms.custom: developer
 
 # Tutorial: Register and configure iOS (Swift) mobile app
 
-This tutorial series demonstrates how to build an iOS (Swift) mobile app that authenticates using an external tenant. You register an app within the customer's tenant, create the an iOS (Swift) app, and you implement the sign-in and sign-out code to enable secure authentication.
+This tutorial series demonstrates how to build an iOS (Swift) mobile app that authenticates using an external tenant. You register an app within the customer's tenant, create an iOS (Swift) app, and you implement the sign-in and sign-out code to enable secure authentication.
 
 In this tutorial, you'll;
 
@@ -52,6 +52,6 @@ Configure delegated permission to Microsoft Graph to enable your client applicat
 
 ## Next steps
 
-[Tutorial: Prepare your iOS app for authentication](tutorial-mobile-app-ios-swift-prepare-app.md)
+[Tutorial: Prepare your iOS app for authentication](tutorial-mobile-app-ios-swift-prepare-app.md).
 
 
