@@ -3,7 +3,7 @@ title: Create a remote network using Azure vWAN
 description: Create a virtual wide area network to connect to your resources in Azure.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 05/03/2024
+ms.date: 05/09/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -33,7 +33,7 @@ To set up a virtual WAN, you'll need to complete three sub-steps: create a virtu
 
 ### Create a virtual WAN
 Create a virtual wide area network to connect to your resources in Azure. For more information about Virtual WAN, see the [Virtual WAN Overview](/azure/virtual-wan/virtual-wan-about).
-1.	From the Azure portal, in the **Search resources** bar, type **Virtual WAN** in the search box and select **Enter**.
+1.	From the Microsoft Azure portal, in the **Search resources** bar, type **Virtual WAN** in the search box and select **Enter**.
 1.	Select **Virtual WANs** from the results. On the Virtual WANs page, select **+ Create** to open the **Create WAN** page.
 1.	On the **Create WAN** page, on the **Basics** tab, fill in the fields. Modify the example values to apply to your environment.
     - **Subscription**: Select the subscription that you want to use.
@@ -41,13 +41,13 @@ Create a virtual wide area network to connect to your resources in Azure. For mo
     - **Resource group location**: Choose a resource location from the dropdown. A WAN is a global resource and doesn't live in a particular region. However, you must select a region to manage and locate the WAN resource that you create.
     - **Name**: Type the Name that you want to call your virtual WAN.
     - **Type**: Basic or Standard. Select **Standard**. If you select Basic, understand that Basic virtual WANs can only contain Basic hubs. Basic hubs can only be used for site-to-site connections.
-1.	After you finish filling out the fields, at the bottom of the page, select **Review + create**.
+1.	After filling out the fields, at the bottom of the page, select **Review + create**.
  :::image type="content" source="media/how-to-create-remote-network-vwan/create-vwan.png" alt-text="Screenshot of the Create WAN page with completed fields." lightbox="media/how-to-create-remote-network-vwan/create-vwan-expanded.png"::: 
 
 1.	Once validation passes, click **Create** to create the virtual WAN.
 
 ### Create a virtual hub with a VPN gateway
-The next step is to create a virtual hub with a site-to-site virtual private network (VPN) gateway. To do so, create a virtual hub:
+Next, create a virtual hub with a site-to-site virtual private network (VPN) gateway:
 1.	Within the new vWAN, under **Connectivity**, select **Hubs**.
 1.	Select **+ New Hub**.
 1.	On the **Create virtual hub** page, on the **Basics** tab, fill in the fields according to your environment.
@@ -59,17 +59,15 @@ The next step is to create a virtual hub with a site-to-site virtual private net
 :::image type="content" source="media/how-to-create-remote-network-vwan/vwan-create-new-hub-basics.png" alt-text="Screenshot of the Create virtual hub page, on the Basics tab, with completed fields." lightbox="media/how-to-create-remote-network-vwan/vwan-create-new-hub-basics-expanded.png"::: 
 
 1.	Proceed to the **Site to site** tab and complete the following fields:
-    - Select **Yes** to create a Site-to-site VPN.
+    - Select **Yes** to create a Site-to-site (VPN gateway).
     - **AS Number**: The AS Number field can't be edited.
     - **Gateway scale units**: Select the value to align with the aggregate throughput of the VPN gateway being created in the virtual hub.
     - **Routing preference**: Choose how your traffic routes between Azure and the internet. For more information about routing preference via Microsoft network or ISP, see the [Routing preference](/azure/virtual-network/ip-services/routing-preference-overview) article.
 :::image type="content" source="media/how-to-create-remote-network-vwan/vwan-create-new-hub-site-to-site.png" alt-text="Screenshot of the Create virtual hub page, on the Site to site tab, with completed fields." lightbox="media/how-to-create-remote-network-vwan/vwan-create-new-hub-site-to-site-expanded.png"::: 
 
-1.	Leave the remaining tab options set to their defaults and select **Review + create** to validate.
-1.	Select **Create** to create the hub and gateway. *This can take up to 30 minutes*. 
+1. Leave the remaining tab options set to their defaults and select **Review + create** to validate.
+1. Select **Create** to create the hub and gateway. *This can take up to 30 minutes*. 
 1. After 30 minutes, **Refresh** to view the hub on the **Hubs** page, and then select **Go to resource** to navigate to the resource.
-
-When you create a new hub, you may notice a Warning message in the portal referring to the router version. This sometimes occurs when the router is provisioning. Once the router is fully provisioned, the message will no longer appear.
 
 ### Obtain VPN gateway information
 To create a remote network in the Microsoft Entra admin center, you’ll need to view and record the VPN gateway information for the virtual hub you created in the previous step.
@@ -99,14 +97,9 @@ In this step, use the network information from the VPN gateway to create a remot
     - **Link name**: Name of your Customer Premises Equipment (CPE).
     - **Device type**: Choose a device option from the dropdown list.
     - **IP address**: Public IP address of your device.
-    - **Peer BGP address**: Enter the BGP IP address of your CPE.
-        - This address is entered as the *local* BGP IP address on the CPE.
     - **Local BGP address**: Enter a BGP IP address that *isn't* part of your on-premises network where your CPE resides.
-        - For example, if your on-premises network is 10.1.0.0/16, then you can use 10.2.0.4 as your Local BGP address.
-        - This address is entered as the *peer* BGP​​ IP address on your CPE.
+    - **Peer BGP address**: Enter the BGP IP address of your CPE.
     - **Link ASN**: Provide the autonomous system number (ASN) of the CPE.
-        - A BGP-enabled connection between two network gateways requires that they have different Autonomous System Number (ASN).
-        - For more information, see the **Valid ASNs** section of the [Remote network configurations](reference-remote-network-configurations.md#valid-asn) article.
     - **Redundancy**: Select either *No redundancy* or *Zone redundancy* for your IPSec tunnel.
     - **Zone redundant local BGP address**: This optional field shows up only when you select **Zone redundancy**.
         - Enter a BGP IP address that isn't* part of your on-premises network where your CPE resides and is different from the **Local BGP address**.
@@ -119,7 +112,7 @@ For more information about links, see the article, [How to manage remote network
 1. Enter the **Preshared key (PSK)**. The same secret key must be used on your CPE.
 1. Select the **Save** button.
 
-Repeat the above steps to create another device link with VPN gateway's *Instance1* configuration. 
+Repeat the above steps to create a second device link with VPN gateway's *Instance1* configuration. 
 
 1. Proceed to the **Traffic profiles** tab to select the traffic profile to link to the remote network. 
 1. Select **Microsoft 365 traffic profile**.
@@ -133,16 +126,26 @@ Navigate to the Remote network page to view the details of the new remote networ
 ## Create a VPN site using the Microsoft gateway
 
 ### Create a VPN site
-1. Sign in the the virtual hub created above.
+1. In the Microsoft Azure Portal, sign in the the virtual hub created above.
 1. Navigate to **Connectivity** > **VPN (Site to site)**.
 1. Select **+ Create new VPN site**.
 1. On the **Create VPN site** page, complete the fields on the **Basics** tab.
-1. Proceed to the **Links** tab and enter the Microsoft gateway configuration from JSON blob at View Configuration of Entra admin center.
+1. Proceed to the **Links** tab. For each link, enter the Microsoft gateway configuration from the Remote network configuration noted in the above "view details" step:
+    - **Link name**
+    - **Link speed**
+    - **Link provider name**
+    - **Link IP address / FQDN**: Use the Endpoint address.
+    - **Link BGP address**: Use the BGP address.
+    - **Link ASN**: Use the ASN.
+:::image type="content" source="media/how-to-create-remote-network-vwan/create-vwan-create-new-vpn-site-links_enhanced.png" alt-text="Screenshot of the Create VPN page, on the Links tab, with completed fields." lightbox="media/how-to-create-remote-network-vwan/create-vwan-create-new-vpn-site-links-expanded.png"::: 
+
 1. Select **Review + create**.
 1. Select **Create**.
 
 ### Create a site-to-site connection
-
+Next, remove the default hub association:
+1. Navigate to **Connectivity** > **VPN (Site to site)**.
+1. By default, the **Hub association : Connected to this hub** filter is applied. Select the **X** to remove this filter.
 
 ## Validate the VPN connection
 In this step...
