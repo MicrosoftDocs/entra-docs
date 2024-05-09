@@ -35,7 +35,7 @@ Because this configuration is widely used with the *Workday to Active Directory 
 ## Step 2: Sign into Microsoft Graph Explorer
 
 1. Launch [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer)
-1. Click on the "Sign-In with Microsoft" button and sign-in using Microsoft Entra Global Administrator or App Admin credentials.
+1. Click on the "Sign-In with Microsoft" button and sign-in as a user with at least the [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) role.
 
     ![Screenshot of Microsoft Graph Explorer Sign-in.](./media/skip-out-of-scope-deletions/wd_export_02.png)
 

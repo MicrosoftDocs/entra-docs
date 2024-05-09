@@ -87,22 +87,9 @@ Administrators have increased access to your environment. Because of the power t
 
 After registration is finished, the following administrator roles will be required to do multifactor authentication every time they sign in:
 
-- Global Administrator
-- Application Administrator
-- Authentication Administrator
+[!INCLUDE [conditional-access-admin-roles](../includes/conditional-access-admin-roles.md)]
 - Authentication Policy Administrator
-- Billing Administrator
-- Cloud Application Administrator
-- Conditional Access Administrator
-- Exchange Administrator
-- Helpdesk Administrator
 - Identity Governance Administrator
-- Password Administrator
-- Privileged Authentication Administrator
-- Privileged Role Administrator
-- Security Administrator
-- SharePoint Administrator
-- User Administrator
 
 ### Require users to do multifactor authentication when necessary
 

@@ -75,7 +75,7 @@ Follow these steps if you want to allow users not in your directory to request t
 
     If the organization that you want to collaborate with isn't in the list, you can ask your administrator to add it as a connected organization. For more information, see [Add a connected organization](~/id-governance/entitlement-management-organization.md).
 
-1. If you selected **All connected organizations**, then you should confirm with your global administrator the list of connected organizations that are currently configured and planned to be in scope.
+1. If you selected **All connected organizations**, then you should confirm the list of connected organizations that are currently configured and planned to be in scope.
 
 1. If you selected **All users**, then you will need to configure approvals in the approvals section, as this scope would allow any identity on the Internet to request access.
 
