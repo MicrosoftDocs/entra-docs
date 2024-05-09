@@ -20,7 +20,7 @@ The Microsoft Entra provisioning service supports a [SCIM 2.0](https://techcommu
 ## Prerequisites
 - A Microsoft Entra tenant with Microsoft Entra ID P1 or Premium P2 (or EMS E3 or E5). [!INCLUDE [active-directory-p1-license.md](~/includes/entra-p1-license.md)]
 - Administrator role for installing the agent. This task is a one-time effort and should be an Azure account that's at least a Hybrid Identity Administrator. 
-- Administrator role for configuring the application in the cloud at least a Application Administrator, Cloud Application Administrator, or a custom role with permissions.
+- Administrators must be at least an Application Administrator, Cloud Application Administrator, or a custom role with permissions.
 - A computer with at least 3 GB of RAM, to host a provisioning agent. The computer should have Windows Server 2016 or a later version of Windows Server, with connectivity to the target application, and with outbound connectivity to login.microsoftonline.com, other Microsoft Online Services and Azure domains. An example is a Windows Server 2016 virtual machine hosted in Azure IaaS or behind a proxy.
 - Ensure your [SCIM](https://techcommunity.microsoft.com/t5/security-compliance-and-identity/provisioning-with-scim-getting-started/ba-p/880010) implementation meets the [Microsoft Entra SCIM requirements](use-scim-to-provision-users-and-groups.md).  Microsoft Entra ID offers open-source [reference code](https://github.com/AzureAD/SCIMReferenceCode/wiki) that developers can use to bootstrap their SCIM implementation, as described in [Tutorial: Develop a sample SCIM endpoint in Microsoft Entra ID](use-scim-to-build-users-and-groups-endpoints.md).
 - Support the /schemas endpoint to reduce configuration required in the Azure portal.
