@@ -52,7 +52,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
     a. Click **Go to application**.
 
-    ![Screenshot showing the identity configuration.](common/go-to-application.png)
+    [![Screenshot showing the identity configuration.](common/go-to-application.png)](common/go-to-application.png#lightbox)
 
     b. Copy **Application (client) ID** and **Directory (tenant) ID**, use it later in the Muzeek side configuration.
 
@@ -62,7 +62,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
     a. Enable the **Access tokens (used for implicit flows)** and **ID tokens (used for implicit and hybrid flows)**
 
-    ![Screenshot showing the Access tokens.](./media/muzeek-tutorial/access-token.png)
+    [![Screenshot showing the Access tokens.](./media/muzeek-tutorial/access-token.png)](./media/muzeek-tutorial/access-token.png#lightbox)
 
     b. click **Save**.
 
@@ -74,11 +74,11 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     1. Go to **Client secrets** tab and click **+New client secret**.
     1. Enter a valid **Description** in the textbox and select **Expires** days from the drop-down as per your requirement and click **Add**.
 
-        ![Screenshot showing the client secrets value.](common/client-secret.png)
+        [![Screenshot showing the client secrets value.](common/client-secret.png)](common/client-secret.png#lightbox)
 
     1. Once you add a client secret, **Value** will be generated. Copy the value and use it later in the Muzeek side configuration.
 
-        ![Screenshot showing how to add a client secret.](common/client.png)
+        [![Screenshot showing how to add a client secret.](common/client.png)](common/client.png#lightbox)
 
 ### Create a Microsoft Entra test user
 
@@ -114,7 +114,7 @@ Below are the configuration steps to complete the OIDC federation setup:
 
 1. Click **Settings** icon at the bottom of the page and perform of the below steps.
 
-    ![Screenshot showing Muzeek configuration.](./media/Muzeek-tutorial/configuration.png)
+    [![Screenshot showing Muzeek configuration.](./media/Muzeek-tutorial/configuration.png)](./media/Muzeek-tutorial/configuration.png#lightbox)
 
     a. Go to the **Integrations** tab.
 
