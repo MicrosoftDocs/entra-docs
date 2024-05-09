@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: how-to
-ms.date: 05/01/2024
+ms.date: 05/09/2024
 ms.service: global-secure-access
 ms.reviewer: katabish
 
@@ -15,9 +15,9 @@ ms.reviewer: katabish
 
 # What are remote network health logs?
 
-Remote networks, such as a branch office, rely on customer premises equipment (CPE) to connect users in those locations to the online resources and services they need. Users expect that CPE to function so they can do their work.
+Remote networks, such as a branch office, rely on customer premises equipment (CPE) to connect users in those locations to the online resources and services they need. Users expect that CPE to function so they can do their work. To keep everyone connected, you need to ensure the health of the IPSec tunnel and the Border Gateway Protocol (BGP) route advertisement. This long-running tunnel and routing information are the keys to your remote network health.
 
-To keep everyone connected, you need to ensure the health of the IPSec tunnel and the Border Gateway Protocol (BGP) route advertisement. This long-running tunnel and routing information are the keys to your remote network health.
+This article describes several methods for accessing and analyzing the remote network health logs.
 
 - Access logs in the Microsoft Entra admin center or the Microsoft Graph API
 - Export logs to Log Analytics or a Security Information and Events Management (SIEM) tool
@@ -119,18 +119,13 @@ You can also integrate logs with Microsoft Sentinel for security analytics and t
 
 ## Analyze logs with a Workbook
 
-[Azure Workbooks for Microsoft Entra](../identity/monitoring-health/overview-workbooks.md) provide a visual representation of your data. Once you've configured a Log Analytics workspace and diagnostic settings to integrate your logs with Log Analytics, you can use a Workbook to analyze the data through these powerful tools. This process is covered in detail in the [How to use Identity Workbooks](../identity/monitoring-health/howto-use-workbooks.md) article.
+[Azure Workbooks for Microsoft Entra](../identity/monitoring-health/overview-workbooks.md) provide a visual representation of your data. Once you've configured a Log Analytics workspace and diagnostic settings to integrate your logs with Log Analytics, you can use a Workbook to analyze the data through these powerful tools.
 
-[!INCLUDE [workbook prerequisites](../includes/workbook-prerequisites.md)]
+Check out these helpful resources for workbooks:
 
-To view your remote network health logs with Workbooks:
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Secure Access Administrator](../identity/role-based-access-control/permissions-reference.md#global-secure-access-administrator).
-1. Browse to **Global Secure Access (preview)** > **Monitor** > **Workbooks**.
-1. Select the **Empty** workbook or select the **+ New** button.
-1. Select the **Advanced Editor** button from the top of the page. A JSON editor opens.
-
-  ![Screenshot of the Advanced Editor button on the new workbook page.](media/how-to-remote-network-health-logs/advanced-editor-button.png)
+- [Create an Azure workbook](/azure/azure-monitor/visualize/workbooks-create-workbook.md)
+- [How to use Identity Workbooks](../identity/monitoring-health/howto-use-workbooks.md) 
+- [Create a workbook alert](/azure/azure-monitor/alerts/tutorial-log-alert.md)
 
 ## Download logs
 
