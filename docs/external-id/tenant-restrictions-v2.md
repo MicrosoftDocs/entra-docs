@@ -155,7 +155,7 @@ When your users need access to external organizations and apps, we recommend ena
 To configure tenant restrictions, you need:
 
 - Microsoft Entra ID P1 or P2
-- Account with a role of Global Administrator or Security Administrator
+- Account with a role of at least Security Administrator
 - Windows devices running Windows 10, Windows 11 with the latest updates
 
 ## Configure server-side tenant restrictions v2 cloud policy

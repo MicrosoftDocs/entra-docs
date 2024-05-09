@@ -37,7 +37,7 @@ Learn more about using cross-tenant access settings to [manage B2B direct connec
 - Identify any Microsoft Entra organizations that need customized settings.
 - Contact organizations with which you want to set up B2B direct connect. Because B2B direct connect is established through mutual trust, both you and the other organization need to enable B2B direct connect with each other in your cross-tenant access settings.
 - Obtain any required information from external organizations. If you want to apply access settings to specific users, groups, or applications within an external organization, you need to obtain these IDs from the organization before you can configure access settings.
-- To configure cross-tenant access settings in the Microsoft Entra admin center, you need an account with a Global Administrator or Security Administrator role. Teams administrators can read cross-tenant access settings, but they can't update these settings.
+- To configure cross-tenant access settings in the Microsoft Entra admin center, you need an account with at least the [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator) role. Teams administrators can read cross-tenant access settings, but they can't update these settings.
 
 ## Configure default settings
 
