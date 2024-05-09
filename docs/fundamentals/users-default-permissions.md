@@ -84,13 +84,13 @@ Permission | Setting explanation
 
 When a user registers an application, they're automatically added as an owner for the application. As an owner, they can manage the metadata of the application, such as the name and permissions that the app requests. They can also manage the tenant-specific configuration of the application, such as the single sign-on (SSO) configuration and user assignments. 
 
-An owner can also add or remove other owners. Unlike Global Administrators, owners can manage only the applications that they own.
+An owner can also add or remove other owners. Unlike those assigned at least the Application Administrator role, owners can manage only the applications that they own.
 
 ### Enterprise application owner permissions
 
 When a user adds a new enterprise application, they're automatically added as an owner. As an owner, they can manage the tenant-specific configuration of the application, such as the SSO configuration, provisioning, and user assignments. 
 
-An owner can also add or remove other owners. Unlike Global Administrators, owners can manage only the applications that they own.
+An owner can also add or remove other owners. Unlike those assigned at least the Application Administrator role, owners can manage only the applications that they own.
 
 ### Group owner permissions
 
