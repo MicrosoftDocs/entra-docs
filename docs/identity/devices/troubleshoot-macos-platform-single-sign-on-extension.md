@@ -172,8 +172,32 @@ Validate that the issue has been resolved by checking for the **existence of thi
 ls ~/Library/Application\ Support/Google/Chrome/NativeMessagingHosts/com.microsoft.browsercore.json
 ```
 
+Alternatively, you can deploy the following script via your MDM or other automation tools to copy the JSON file to the correct location. This script should be run in the the user's context for each user who experiences the Chrome SSO issue:
+
+```zsh
+# Copy over Browser Core json file to the right location
+# If the folder doesn't exist, create it
+
+# For Google Chrome (user-specific, default path)
+
+if [ ! -d ~/Library/Application\ Support/Google/Chrome/NativeMessagingHosts ]; then
+  mkdir ~/Library/Application\ Support/Google/Chrome/NativeMessagingHosts
+fi
+
+cp /Applications/Company\ Portal.app/Contents/Resources/com.microsoft.browsercore.json ~/Library/Application\ Support/Google/Chrome/NativeMessagingHosts/
+
+# For Edge (user-specific, default path, not channel specific)
+# See: https://learn.microsoft.com/en-us/microsoft-edge/extensions-chromium/developer-guide/native-messaging?tabs=v3%2Cmacos
+
+if [ ! -d ~/Library/Application\ Support/Microsoft\ Edge/NativeMessagingHosts ]; then
+  mkdir ~/Library/Application\ Support/Microsoft\ Edge/NativeMessagingHosts
+fi
+
+cp /Applications/Company\ Portal.app/Contents/Resources/com.microsoft.browsercore.json ~/Library/Application\ Support/Microsoft\ Edge/NativeMessagingHosts/
+```
+
 > [!IMPORTANT]
-> **Note: This issue is due to a bug with how Company Portal is installed or updated under certain circumstances. This issue will be resolved in a future update to Company Portal.
+> **Note: This issue is due to a bug with how Company Portal is installed or updated under certain circumstances. This issue will be resolved in a future update to Company Portal.**
 
 ## See also
 
