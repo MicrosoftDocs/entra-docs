@@ -67,12 +67,12 @@ Set up Quick Access for broader access to your network using Microsoft Entra Pri
 
 ![Diagram of the Quick Access traffic flow for private resources.](media/how-to-get-started-with-global-secure-access/private-access-diagram-quick-access.png)
 
-1. [Configure a Microsoft Entra application proxy connector and connector group](how-to-configure-connectors.md).
+1. [Configure a Microsoft Entra private network connector and connector group](how-to-configure-connectors.md).
 1. [Configure Quick Access to your private resources](how-to-configure-quick-access.md).
 1. [Enable the Private Access traffic forwarding profile](how-to-manage-private-access-profile.md).
 1. [Install and configure the Global Secure Access Client on end-user devices](how-to-install-windows-client.md).
 
-After you complete these four steps, users with the Global Secure Access client installed on a Windows device can connect to your primary resources, through a Quick Access app and application proxy connector. 
+After you complete these four steps, users with the Global Secure Access client installed on a Windows device can connect to your primary resources, through a Quick Access app and private network connector. 
 
 ### Configure Global Secure Access apps for per-app access to private resources
 
@@ -80,12 +80,12 @@ Create specific private apps for granular segmented access to private access res
 
 ![Diagram of the Global Secure Access app traffic flow for private resources.](media/how-to-get-started-with-global-secure-access/private-access-diagram-global-secure-access.png)
 
-1. [Configure an application proxy connector and connector group](how-to-configure-connectors.md).
+1. [Configure an private network connector and connector group](how-to-configure-connectors.md).
 1. [Create a private Global Secure Access application](how-to-configure-per-app-access.md).
 1. [Enable the Private Access traffic forwarding profile](how-to-manage-private-access-profile.md).
 1. [Install and configure the Global Secure Access Client on end-user devices](how-to-install-windows-client.md).
 
-After you complete these steps, users with the Global Secure Access client installed on a Windows device can connect to your private resources through a Global Secure Access app and application proxy connector.
+After you complete these steps, users with the Global Secure Access client installed on a Windows device can connect to your private resources through a Global Secure Access app and private network connector.
 
 Optionally:
 
@@ -98,4 +98,4 @@ Optionally:
 
 To get started with Microsoft Entra Internet Access, start by [enabling the Microsoft 365 traffic forwarding profile](how-to-manage-microsoft-365-profile.md).
 
-To get started with Microsoft Entra Private Access, start by [configuring an application proxy connector group for the Quick Access app](how-to-configure-connectors.md).
+To get started with Microsoft Entra Private Access, start by [configuring an private network connector group for the Quick Access app](how-to-configure-connectors.md).

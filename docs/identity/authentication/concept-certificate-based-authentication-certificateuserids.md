@@ -11,7 +11,7 @@ ms.author: justinha
 author: vimrang
 manager: amycolannino
 ms.reviewer: vranganathan
-ms.custom: has-adal-ref, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom: has-adal-ref
 ---
 
 # Mapping to the certificateUserIds attribute in Microsoft Entra ID
@@ -154,12 +154,12 @@ For this configuration, you can use [Microsoft Graph PowerShell](/powershell/mic
    ```powershell
      #Create a new variable to prepare the change. Ensure that you list any existing values you want to keep as this operation will overwrite the existing value
      $params = @{
-           authorizationInfo = @{
-                 certificateUserIds = @(
-                 "X509:<SKI>eec6b88788d2770a01e01775ce71f1125cd6ad0f", 
-                 "X509:<PN>user@contoso.com"
-                 )
-           }
+           authorizationInfo = @{
+                 certificateUserIds = @(
+                 "X509:<SKI>eec6b88788d2770a01e01775ce71f1125cd6ad0f", 
+                 "X509:<PN>user@contoso.com"
+                 )
+           }
      }
    ```
 1. Update the certificateUserIds attribute.

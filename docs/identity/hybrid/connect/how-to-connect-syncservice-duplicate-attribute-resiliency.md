@@ -8,7 +8,7 @@ manager: amycolannino
 ms.assetid: 537a92b7-7a84-4c89-88b0-9bce0eacd931
 ms.service: entra-id
 ms.tgt_pltfrm: na
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom: has-azure-ad-ps-ref
 ms.topic: how-to
 ms.date: 11/06/2023
 ms.subservice: hybrid-connect

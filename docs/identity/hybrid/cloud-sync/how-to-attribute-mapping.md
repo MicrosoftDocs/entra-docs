@@ -6,18 +6,18 @@ author: billmath
 manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 11/06/2023
+ms.date: 04/26/2024
 ms.subservice: hybrid-cloud-sync
 ms.author: billmath
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 
 ---
 
-# Attribute mapping in Microsoft Entra Cloud Sync
-
+# Attribute mapping - Active Directory to Microsoft Entra ID
 You can use the cloud sync attribute mapping feature to map attributes between your on-premises user or group objects and the objects in Microsoft Entra ID. 
 
  :::image type="content" source="media/how-to-attribute-mapping/new-ux-mapping-1.png" alt-text="Screenshot of new UX screen attribute mapping." lightbox="media/how-to-attribute-mapping/new-ux-mapping-1.png":::
+
+ The following document guides you through attribute scoping with Microsoft Entra Cloud Sync for provisioning from Active Directory to Microsoft Entra ID.  If you're looking for information on attribute mapping from Microsoft Entra ID to AD, see [ Attribute mapping - Microsoft Entra ID to Active Directory](how-to-attribute-mapping-entra-to-active-directory.md).
 
 You can customize (change, delete, or create) the default attribute mappings according to your business needs. For a list of attributes that are synchronized, see [Attributes synchronized to Microsoft Entra ID](../connect/reference-connect-sync-attributes-synchronized.md).
 
@@ -37,14 +37,14 @@ With attribute mapping, you control how attributes are populated in Microsoft En
 Along with these basic types, custom attribute mappings support the concept of an optional *default* value assignment. The default value assignment ensures that a target attribute is populated with a value if Microsoft Entra ID or the target object doesn't have a value. The most common configuration is to leave this blank.
 
 ## Schema updates and mappings
-Cloud sync will occasionally update the schema and the list of default attributes that are [synchronized](../connect/reference-connect-sync-attributes-synchronized.md).  These default attribute mappings will be available for new installations but won't automatically be added to existing installations.  To add these mappings you can follow the steps below.
+Cloud sync occasionally updates the schema and the list of default attributes that are [synchronized](../connect/reference-connect-sync-attributes-synchronized.md).  These default attribute mappings  are available for new installations but won't automatically be added to existing installations.  To add these mappings, you can follow the steps below.
 
 
-  1. Click on “add attribute mapping”
+  1. Click on **add attribute mapping**
   2. Select the Target attribute dropdown
   3. You should see the new attributes that are available here.
 
-The following is a list of new mappings that were added.
+The list of new mappings that were added.
 
 Attribute Added | Mapping Type | Added with Agent Version
 | ----- | -----| -----|
@@ -56,7 +56,7 @@ For more information on how to map UserType, see [Map UserType with cloud sync](
 
 ## Understand properties of attribute mappings
 
-Along with the type property, attribute mappings support certain attributes.  These attributes will depend on the type of mapping you have selected.  The following sections describe the supported attribute mappings for each of the individual types.  The following type of attribute mapping is available.
+Along with the type property, attribute mappings support certain attributes.  These attributes depend on the type of mapping you have selected.  The following sections describe the supported attribute mappings for each of the individual types.  The following type of attribute mapping is available.
 - Direct
 - Constant
 - Expression
@@ -66,7 +66,7 @@ The following are the attributes supported by a direct mapping:
 
 - **Source attribute**: The user attribute from the source system (example: Active Directory).
 - **Target attribute**: The user attribute in the target system (example: Microsoft Entra ID).
-- **Default value if null (optional)**: The value that will be passed to the target system if the source attribute is null. This value will be provisioned only when a user is created. It won't be provisioned when you're updating an existing user.  
+- **Default value if null (optional)**: The value that is passed to the target system if the source attribute is null. This value  are provisioned only when a user is created. It won't be provisioned when you're updating an existing user.  
 - **Apply this mapping**:
   - **Always**: Apply this mapping on both user-creation and update actions.
   - **Only during creation**: Apply this mapping only on user-creation actions.
@@ -85,8 +85,8 @@ The following are the attributes supported by a constant mapping:
 ### Expression mapping attributes
 The following are the attributes supported by an expression mapping:
 
-- **Expression**: This is the expression that is going to be applied to the target attribute.  For more information, see [Expression Builder](how-to-expression-builder.md) and [Writing expressions for attribute mappings in Microsoft Entra ID](reference-expressions.md).
--  **Default value if null (optional)**: The value that will be passed to the target system if the source attribute is null. This value will be provisioned only when a user is created. It won't be provisioned when you're updating an existing user. 
+- **Expression**: This expression is the expression that is going to be applied to the target attribute.  For more information, see [Expression Builder](how-to-expression-builder.md) and [Writing expressions for attribute mappings in Microsoft Entra ID](reference-expressions.md).
+-  **Default value if null (optional)**: The value that is passed to the target system if the source attribute is null. This value  are provisioned only when a user is created. It won't be provisioned when you're updating an existing user. 
 - **Target attribute**: The user attribute in the target system (example: Microsoft Entra ID).
  
 - **Apply this mapping**:
@@ -111,12 +111,12 @@ Use the following steps for configuring attribute mapping with a [AD to Microsof
      - **Expression**: The target attribute is populated based on the result of a script-like expression. 
      - **None**: The target attribute is left unmodified. 
     
- 8. Depending on what you have selected in the previous step, different options will be available for filling in.  
+ 8. Depending on what you have selected in the previous step, different options  are available for filling in.  
  9. Select when to apply this mapping, and then select **Apply**.
  :::image type="content" source="media/how-to-attribute-mapping/new-ux-mapping-4.png" alt-text="Screenshot of saving an attribute mapping." lightbox="media/how-to-attribute-mapping/new-ux-mapping-4.png":::
 
  10. Back on the **Attribute mappings** screen, you should see your new attribute mapping.
- 11. Select **Save schema**.  You'll be notified that once you save the schema, a synchronization will occur.  Click **OK**.
+ 11. Select **Save schema**.  You'll be notified that once you save the schema, a synchronization occurs.  Click **OK**.
  :::image type="content" source="media/how-to-attribute-mapping/new-ux-mapping-5.png" alt-text="Screenshot of saving schema." lightbox="media/how-to-attribute-mapping/new-ux-mapping-5.png":::
 
  12. Once the save is successful you'll see a notification on the right.
@@ -125,7 +125,7 @@ Use the following steps for configuring attribute mapping with a [AD to Microsof
 
 <a name='add-an-attribute-mapping---microsoft-entra-id-to-ad-preview'></a>
 
-## Add an attribute mapping - Microsoft Entra ID to Active Directory (Preview)
+## Add an attribute mapping - Microsoft Entra ID to Active Directory 
 Use the following steps for configuring attribute mapping with a [Microsoft Entra ID to Active Directory configuration](how-to-configure-entra-to-active-directory.md).
 
 [!INCLUDE [sign in](../../../includes/cloud-sync-sign-in.md)]
@@ -136,16 +136,16 @@ Use the following steps for configuring attribute mapping with a [Microsoft Entr
 
  :::image type="content" source="media/how-to-attribute-mapping/entra-to-ad-1.png" alt-text="Screenshot of adding an attribute mapping for Microsoft Entra ID to Active Directory." lightbox="media/how-to-attribute-mapping/entra-to-ad-1.png":::
 
- 7. Select the mapping type. This can be one of the following:
+ 7. Select the mapping type. The mapping type can be one of the following:
      - **Direct**: The target attribute is populated with the value of an attribute of the linked object in Active Directory.
      - **Constant**: The target attribute is populated with a specific string that you specify.
      - **Expression**: The target attribute is populated based on the result of a script-like expression. 
      - **None**: The target attribute is left unmodified. 
     
- 8. Depending on what you have selected in the previous step, different options will be available for filling in.  
+ 8. Depending on what you have selected in the previous step, different options  are available for filling in.  
  9. Select when to apply this mapping, and then select **Apply**.
  10. Back on the **Attribute mappings** screen, you should see your new attribute mapping.
- 11. Select **Save schema**.  You'll be notified that once you save the schema, a synchronization will occur.  Click **OK**.
+ 11. Select **Save schema**.  You'll be notified that once you save the schema, a synchronization occurs.  Click **OK**.
  12. Once the save is successful you'll see a notification on the right.
 
 ## Test your attribute mapping
@@ -172,7 +172,7 @@ To test your attribute mapping, you can use [on-demand provisioning](how-to-on-d
 
 ## Next steps
 
-- [What is Microsoft Entra Cloud Sync?](what-is-cloud-sync.md)
-- [Writing expressions for attribute mappings](reference-expressions.md)
-- [How to use expression builder with cloud sync](how-to-expression-builder.md)
+- [Microsoft Entra Cloud Sync?](what-is-cloud-sync.md)
+- [Expressions for attribute mappings](reference-expressions.md)
+- [Expression builder with cloud sync](how-to-expression-builder.md)
 - [Attributes synchronized to Microsoft Entra ID](../connect/reference-connect-sync-attributes-synchronized.md)

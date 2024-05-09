@@ -1,6 +1,6 @@
 ---
-title: "Tutorial: Prepare your customer tenant to authorize a .NET daemon app"
-description: Learn about how to prepare your Microsoft Entra ID for customers tenant to acquire an access token using client credentials flow in your .NET daemon application
+title: "Tutorial: Prepare your external tenant to authorize a .NET daemon app"
+description: Learn about how to prepare your external tenant to acquire an access token using client credentials flow in your .NET daemon application
  a
 author: SHERMANOUKO
 manager: mwongerapk
@@ -13,9 +13,9 @@ ms.topic: tutorial
 ms.date: 07/28/2023
 ---
 
-# Tutorial: Prepare your customer tenant to authorize a .NET daemon application
+# Tutorial: Prepare your external tenant to authorize a .NET daemon application
 
-In this tutorial series, you'll learn how to build a .NET daemon app that calls your own custom protected web API using Microsoft Entra ID for customers. You'll register an app in Microsoft Entra ID and authenticate your app with your Microsoft Entra ID for customers tenant. Finally, you'll run the app and test the sign-in and sign-out experiences.
+In this tutorial series, you'll learn how to build a .NET daemon app that calls your own custom protected web API using Microsoft Entra External ID. You'll register an app in Microsoft Entra ID and authenticate your app with your external tenant. Finally, you'll run the app and test the sign-in and sign-out experiences.
 
 > [!div class="checklist"]
 >
@@ -25,11 +25,11 @@ In this tutorial series, you'll learn how to build a .NET daemon app that calls 
 
 ## Prerequisites
 
-* A Microsoft Entra ID for customer tenant. If you don't have one, [create a trial tenant](https://aka.ms/ciam-free-trial) or a [tenant with a subscription](./quickstart-tenant-setup.md) before you begin.
-* This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
-    * Application Administrator
-    * Application Developer
-    * Cloud application administrator
+- A Microsoft Entra ID for external tenant. If you don't have one, [create a trial tenant](https://aka.ms/ciam-free-trial) or a [tenant with a subscription](./quickstart-tenant-setup.md) before you begin.
+- This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
+    - Application Administrator
+    - Application Developer
+    - Cloud Application Administrator
 
 ## Register a web API application
 
@@ -60,7 +60,7 @@ In this tutorial series, you'll learn how to build a .NET daemon app that calls 
 The next step after this tutorial is to build a daemon app that calls your web API. Ensure you have the following details:
 
 - The Application (client) ID of the client daemon app that you registered.
-- The Directory (tenant) subdomain where you registered your daemon app. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
+- The Directory (tenant) subdomain where you registered your daemon app. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
 - The application secret value for the daemon app you created.
 - The Application (client) ID of the web API app you registered.
 

@@ -1,5 +1,4 @@
 ---
-
 title: How to troubleshoot sign-in errors
 description: Learn how to troubleshoot sign-in errors using Microsoft Entra reports in the Microsoft Entra admin center
 author: shlipsey3
@@ -7,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: troubleshooting
 ms.subservice: monitoring-health
-ms.date: 12/15/2023
+ms.date: 04/15/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
 
@@ -30,7 +29,7 @@ In addition, the sign-in logs can also help you troubleshoot sign-in failures fo
 You need:
 
 - A Microsoft Entra tenant with a P1 or P2 license.
-- A user with the **Reports Reader**, **Security Reader**, **Security Administrator**, or **Global Administrator** role for the tenant.
+- A user with the **Reports Reader**, **Security Reader**, or **Security Administrator** role for the tenant.
 - In addition, any user can access their own sign-ins from https://mysignins.microsoft.com.
 
 ## Gather sign-in details

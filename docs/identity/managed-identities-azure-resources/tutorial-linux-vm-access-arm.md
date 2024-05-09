@@ -50,7 +50,7 @@ When you use managed identities for Azure resources, your code can get access to
 1. For the **Manage identity** dropdown, select **Virtual Machine**.
 1. Finally, in **Select** choose your Windows Virtual Machine in the dropdown and select **Save**.
 
-    ![Alt image text](media/msi-tutorial-linux-vm-access-arm/msi-permission-linux.png)
+    :::image type="content" source="media/msi-tutorial-linux-vm-access-arm/msi-permission-linux.png" alt-text="Screenshot showing adding the reader role to the managed identity.":::
 
 ## Get an access token using the VM's system-assigned managed identity and use it to call Resource Manager
 
@@ -90,7 +90,7 @@ Response:
 You can use this access token to access Azure Resource Manager, for example to read the details of the Resource Group to which you previously granted this VM access. Replace the values of `<SUBSCRIPTION-ID>`, `<RESOURCE-GROUP>`, and `<ACCESS-TOKEN>` with the ones you created earlier.
 
 > [!NOTE]
-> The URL is case-sensitive, so ensure if you are using the exact same case as you used earlier when you named the Resource Group, and the uppercase “G” in “resourceGroup”.  
+> The URL is case-sensitive, so ensure if you are using the exact same case as you used earlier when you named the Resource Group, and the uppercase “G” in “resourceGroup”.
 
 ```bash
 curl https://management.azure.com/subscriptions/<SUBSCRIPTION-ID>/resourceGroups/<RESOURCE-GROUP>?api-version=2016-09-01 -H "Authorization: Bearer <ACCESS-TOKEN>" 

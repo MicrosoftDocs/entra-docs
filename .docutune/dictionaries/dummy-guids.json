@@ -1,0 +1,18 @@
+{
+  "applicationId": [ "00001111-aaaa-2222-bbbb-3333cccc4444" ],
+  "certificateId": [ "0a0a0a0a-1111-bbbb-2222-3c3c3c3c3c3c" ],
+  "clientId": [ "00001111-aaaa-2222-bbbb-3333cccc4444" ],
+  "clientSecretValue": [ "A1b-C2d_E3f.H4i,J5k?L6m!N7o-P8q_R9s.T0u" ],
+  "clientSecretValueAlphanumeric": [ "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u..." ],
+  "correlationId": [ "aaaa0000-bb11-2222-33cc-444444dddddd" ],
+  "directoryId": [ "aaaabbbb-0000-cccc-1111-dddd2222eeee" ],
+  "objectId": [ "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb" ],
+  "organizationId": [ "00aa00aa-bb11-cc22-dd33-44ee44ee44ee" ],
+  "policyId": [ "1aaaaaa1-2bb2-3cc3-4dd4-5eeeeeeeeee5" ],
+  "secretId": [ "aaaaaaaa-0b0b-1c1c-2d2d-333333333333" ],
+  "signatureHash": [ "aB1cD2=eF3gH4+iJ5kL6-mN7oP8q" ],
+  "subscriptionId": [ "aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e" ],
+  "tenantId": [ "aaaabbbb-0000-cccc-1111-dddd2222eeee" ],
+  "thumbprint": [ "00AA11BB22CC33DD44EE55FF66EE77DD88CC99" ],
+  "traceId": [ "0000aaaa-11bb-cccc-dd22-eeeeee333333" ]
+}

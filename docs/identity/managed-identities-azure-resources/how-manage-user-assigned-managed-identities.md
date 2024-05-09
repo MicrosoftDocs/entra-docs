@@ -83,7 +83,7 @@ In some environments, administrators choose to limit who can manage user-assigne
 1. Select **Access control (IAM)**.
 1. Choose **Add role assignment**.
 
-   ![Screenshot that shows the user-assigned managed identity access control screen](media/how-manage-user-assigned-managed-identities/role-assign.png)
+   :::image type="content" source="media/how-manage-user-assigned-managed-identities/role-assign.png" alt-text="Screenshot that shows the user-assigned managed identity access control screen.":::
 
 1. In the **Add role assignment** pane, choose the role to assign and choose **Next**.
 1. Choose who should have the role assigned.

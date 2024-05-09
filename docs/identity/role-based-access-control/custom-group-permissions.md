@@ -22,7 +22,7 @@ Group management permissions can be used in custom role definitions in Microsoft
 - Read audit logs
 - Manage a specific type of group
 
-This article lists the permissions you can use in your custom roles for different group management scenarios. For information about how to create custom roles, see [Create and assign a custom role in Microsoft Entra ID](custom-create.md).
+This article lists the permissions you can use in your custom roles for different group management scenarios. For information about how to create custom roles, see [Create and assign a custom role in Microsoft Entra ID](custom-create.yml).
 
 ## License requirements
 
@@ -142,5 +142,5 @@ The following permissions are available to delete groups.
 
 ## Next steps
 
-- [Create and assign a custom role in Microsoft Entra ID](custom-create.md)
+- [Create and assign a custom role in Microsoft Entra ID](custom-create.yml)
 - [List Microsoft Entra role assignments](view-assignments.md)

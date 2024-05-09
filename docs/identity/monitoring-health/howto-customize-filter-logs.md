@@ -230,6 +230,6 @@ In addition to the filters of the default view, you can set the following filter
 
 ## Next steps
 
-- [Analyze a sing-in error](quickstart-analyze-sign-in.md)
+- [Analyze a sign-in error](quickstart-analyze-sign-in.md)
 - [Troubleshoot sign-in errors](howto-troubleshoot-sign-in-errors.md)
 - [Explore all audit log categories and activities](reference-audit-activities.md)

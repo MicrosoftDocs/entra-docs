@@ -1,5 +1,5 @@
 ---
-title: Call a web API from a daemon app
+title: How to call a downstream web API from a daemon app
 description: Learn how to build a daemon app that calls a web API.
 author: Dickson-Mwendia
 manager: CelesteDG
@@ -13,7 +13,7 @@ ms.topic: concept-article
 #Customer intent: As an application developer, I want to know how to write a daemon app that can call web APIs by using the Microsoft identity platform.
 ---
 
-# Daemon app that calls web APIs - call a web API from the app
+# How to call a downstream web API from a daemon app
 
 .NET daemon apps can call a web API. .NET daemon apps can also call several preapproved web APIs.
 

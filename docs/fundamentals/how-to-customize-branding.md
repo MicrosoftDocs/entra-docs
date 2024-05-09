@@ -19,7 +19,7 @@ When users authenticate into your corporate intranet or web-based applications, 
 The default sign-in experience is the global look and feel that applies across all sign-ins to your tenant. Before you customize any settings, the default Microsoft branding appears in your sign-in pages. You can customize this default experience with a custom background image or color, favicon, layout, header, and footer. You can also upload a custom CSS file.
 
 > [!NOTE]
-> Instructions for how to manage the **'Stay signed in prompt?'** can be found in the **[Manage the 'Stay signed in?' prompt](how-to-manage-stay-signed-in-prompt.md)** article.
+> Instructions for how to manage the **'Stay signed in prompt?'** can be found in the **[Manage the 'Stay signed in?' prompt](how-to-manage-stay-signed-in-prompt.yml)** article.
 
 ## Prerequisites
 
@@ -187,7 +187,7 @@ Microsoft Entra ID supports right-to-left functionality for languages such as Ar
 
 ## User experience
 
-There are some scenarios you to consider when you customize the sign-in pages for your organization's tenant-specific applications.
+There are some scenarios for you to consider when you customize the sign-in pages for your organization's tenant-specific applications.
 
 ### Software as a Service (SaaS) and multitenant applications
 
@@ -217,5 +217,5 @@ In the following example, the company branding for Woodgrove Groceries appears o
 ## Next steps
 
 - [View the CSS template reference guide](reference-company-branding-css-template.md)
-- Learn more about [default user permissions in Microsoft Entra ID](~/fundamentals/users-default-permissions.md)
-- [Manage the 'stay signed in' prompt](how-to-manage-stay-signed-in-prompt.md)
+- [Learn more about default user permissions in Microsoft Entra ID](~/fundamentals/users-default-permissions.md)
+- [Manage the 'stay signed in' prompt](how-to-manage-stay-signed-in-prompt.yml)
