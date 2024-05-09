@@ -37,7 +37,7 @@ If you are provisioning to an on-premises application, then you will also need t
 ### Sign in to Microsoft Graph Explorer (recommended), Postman, or any other API client you use
 
 1. Start [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer).
-1. Select the "Sign-In with Microsoft" button and sign in with a user wit the [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator) role.
+1. Select the "Sign-In with Microsoft" button and sign in with a user with the [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator) role.
 1. Upon successful sign-in, you'll see the user account details in the left-hand pane.
 
 ### Retrieve the gallery application template identifier
