@@ -413,11 +413,11 @@ Follows these steps to delete a configuration on the **Configurations** page.
 
 1. On the **Configurations** page, add a check mark next to the configuration you want to delete.
 
-3. Select **Delete** and then **OK** to delete the configuration.
+1. Select **Delete** and then **OK** to delete the configuration.
 
     :::image type="content" source="./media/cross-tenant-synchronization-configure/configurations-delete.png" alt-text="Screenshot of the Configurations page showing how to delete a configuration." lightbox="./media/cross-tenant-synchronization-configure/configurations-delete.png":::
 
-## Common scenarios and solutionss
+## Common scenarios and solutions
 
 #### Symptom - Test connection fails with AzureDirectoryB2BManagementPolicyCheckFailure
 
