@@ -129,7 +129,7 @@ Check out these helpful resources for workbooks:
 
 ## Download logs
 
-A **Download** button is available on all logs, both within Global Secure Access and Microsoft Entra Monitoring and health. You can download logs as a JSON or CSV file. For more information, see [How to download logs](/identity/monitoring-health/howto-download-logs.md).
+A **Download** button is available on all logs, both within Global Secure Access and Microsoft Entra Monitoring and health. You can download logs as a JSON or CSV file. For more information, see [How to download logs](../identity/monitoring-health/howto-download-logs.md).
 
 To narrow down the results of the logs, select **Add filter**. You can filter by:
 
