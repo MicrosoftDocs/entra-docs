@@ -30,7 +30,7 @@ ms.custom: it-pro
 - A Microsoft Entra external tenant (if you don't have a tenant, you can start a <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">free trial</a>.
 - A [sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md).
 - An app that's registered in your external tenant, added to the sign-up and sign-in user flow, and updated to point to the user flow for authentication.
-- An account with Conditional Access Administrator, Security Administrator, or Global Administrator privileges to configure Conditional Access policies and MFA.
+- An account with at least the Security Administrator role to configure Conditional Access policies and MFA.
 
 > [!NOTE]
 > If you want to enable MFA, set your local account authentication method to **Email with password**. If you set your local account option to **Email with one-time passcode**, customers who use this method won't be able to sign in because the one-time passcode is already their first-factor sign-in method and can't be used as a second factor. Currently, one-time passcode is the only method available for MFA in external tenants.
@@ -39,7 +39,7 @@ ms.custom: it-pro
 
 Create a Conditional Access policy in your external tenant that prompts users for MFA when they sign up or sign in to your app. (For more information, see [Common Conditional Access policy: Require MFA for all users](~/identity/conditional-access/howto-conditional-access-policy-all-users-mfa.md)).
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a Conditional Access Administrator, Security Administrator, or Global Administrator.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator).
 
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your external tenant from the **Directories + subscriptions** menu.
 
@@ -83,7 +83,7 @@ Create a Conditional Access policy in your external tenant that prompts users fo
 
 Enable the email one-time passcode authentication method in your external tenant for all users.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator).
 
 1. Browse to **Identity** > **Protection** > **Authentication methods**.
 

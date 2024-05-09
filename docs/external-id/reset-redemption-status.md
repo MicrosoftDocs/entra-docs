@@ -35,7 +35,6 @@ To reset a user's redemption status, you'll need one of the following roles:
 
 - [Helpdesk Administrator](~/identity/role-based-access-control/permissions-reference.md#helpdesk-administrator) (least privileged)
 - [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator)
-- [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator)
 
 ## Use the Microsoft Entra admin center to reset redemption status
 
