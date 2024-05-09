@@ -8,7 +8,7 @@ ms.date: 07/07/2023
 ms.author: kenwith
 author: kenwith
 manager: amycolannino
-ms.reviewer: mamkumar
+ms.reviewer: alexpav
 ---
 # Apply Conditional Access policies to the Microsoft 365 traffic profile
 
