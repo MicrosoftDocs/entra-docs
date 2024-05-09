@@ -3,11 +3,11 @@ title: Enable source IP restoration with the Global Secure Access preview
 description: Learn how to enable source IP restoration to ensure the source IP matches in downstream resources.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 03/14/2024
+ms.date: 05/09/2024
 ms.author: kenwith
 author: kenwith
 manager: amycolannino
-ms.reviewer: mamkumar
+ms.reviewer: alexpav
 ---
 # Source IP restoration
 
