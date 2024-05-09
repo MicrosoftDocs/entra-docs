@@ -106,7 +106,7 @@ As part of an auditing process, you typically review which users are assigned to
 
 To delete an existing user, you must have at least the [User Administrator](/entra/identity/role-based-access-control/permissions-reference#user-administrator) role assignment. [Privileged Authentication Administrators](/entra/identity/role-based-access-control/permissions-reference#privileged-authentication-administrator) can delete any user, including other admins. *User Administrators* can delete any non-admin user.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Authentication Administrators](/entra/identity/role-based-access-control/permissions-reference#privileged-role-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Authentication Administrators](/entra/identity/role-based-access-control/permissions-reference#privileged-authentication-administrator).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your external tenant from the **Directories + subscriptions** menu.
 1. Browse to **Identity** > **Users** > **All users**.
 1. Select the user you want to delete.
