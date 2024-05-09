@@ -30,7 +30,7 @@ This article describes how to create a REST API with a [token issuance start eve
 
 ::: zone pivot="nuget-library" 
 
-This article describes how to create a REST API for a [token issuance start event](custom-claims-provider-overview.md#token-issuance-start-event-listener) using the [Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents](https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/entra/Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents) NuGet library and set it up for authentication. You'll create an HTTP trigger function in Visual Studio or Visual Studio Code, configure it for authentication, and deploy it to the Azure portal, where it can be accessed through Azure Functions. You'll then test the function locally using your preferred API testing tool.
+This article describes how to create a REST API for a [token issuance start event](custom-claims-provider-overview.md#token-issuance-start-event-listener) using the [Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents](https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/entra/Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents) NuGet library and set it up for authentication. You'll create an HTTP trigger function in Visual Studio or Visual Studio Code, configure it for authentication, and deploy it to the Azure portal, where it can be accessed through Azure Functions.
 
 ## Prerequisites
 
@@ -166,7 +166,7 @@ The code reads the incoming JSON object and Microsoft Entra ID sends the [JSON o
 
 ## Create and build the Azure Function app
 
-In this step, you create an HTTP trigger function API using your IDE, install the required NuGet packages and copy in the sample code. You build the project and run the function locally to extract the function URL.
+In this step, you create an HTTP trigger function API using your IDE, install the required NuGet packages and copy in the sample code. You build the project and run the function to extract the local function URL.
 
 ### Create the application
 
@@ -230,7 +230,7 @@ In your *AuthEventsTrigger.cs* file, replace the entire contents of the file wit
 
 ### Build and run the project locally
 
-The project has been created, and the sample code has been added. Using your IDE, we need to build and run the project locally to extract the function URL.
+The project has been created, and the sample code has been added. Using your IDE, we need to build and run the project locally to extract the local function URL.
 
 ### [Visual Studio](#tab/visual-studio)
 
@@ -283,7 +283,49 @@ The function needs to be deployed to Azure using our IDE. Check that you're corr
 
 ---
 
-[!INCLUDE [environment-variables](./includes/scenarios/custom-extension-tokenissuancestart-setup-env-portal.md)]
+## Configure authentication for your Azure Function
+
+There are three ways to set up authentication for your Azure Function: 
+
+- [Set up authentication in the Azure portal using environment variables](#set-up-authentication-in-the-azure-portal-using-environment-variables)
+- [Azure App service authentication and authorization](/azure/app-service/overview-authentication-authorization)
+- [Set up authentication in your code using `WebJobsAuthenticationEventsTriggerAttribute`](#set-up-authentication-in-your-code-using-webjobsauthenticationeventstriggerattribute)
+
+
+<!--By default, the code has been set up for the . For a better experience, it's recommended to set up environment variables for your Azure Function. These environment variables can be hardcoded in the attribute or set up in the Azure portal, but not both.-->
+
+   | Name | Value |
+   | ---- | ----- | 
+   | *AuthenticationEvents__AudienceAppId* | *Custom authentication extension app ID* |
+   | *AuthenticationEvents__AuthorityUrl* | &#8226; Workforce tenant `https://login.microsoftonline.com/<tenantID>` <br> &#8226; external tenant `https://<mydomain>.ciamlogin.com` | 
+   | *AuthenticationEvents__AuthorizedPartyAppId* | `99045fe1-7639-4a75-9d4a-577b6ca3810f` or another authorized party | 
+
+### Set up authentication in your code using `WebJobsAuthenticationEventsTriggerAttribute`
+
+Modify the `WebJobsAuthenticationEventsTriggerAttribute` include the `AuthorityUrl`, `AudienceAppId` and `AuthorizedPartyAppId` properties, as shown in the below snippet.
+
+```csharp
+    [FunctionName("onTokenIssuanceStart")]
+    public static WebJobsAuthenticationEventResponse Run(
+        [WebJobsAuthenticationEventsTriggerAttribute(
+            AudienceAppId = "Enter custom authentication extension app ID here",
+            AuthorityUrl = "Enter authority URI here", 
+            AuthorizedPartyAppId = "Enter the Authorized Party App Id here")]WebJobsTokenIssuanceStartRequest request, ILogger log)
+```
+
+### Set up authentication in the Azure portal using environment variables
+
+1. Sign in to the [Azure portal](https://portal.azure.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-developer) or [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
+1. Navigate to the function app you created, and under **Settings**, select **Configuration**.
+1. Under **Application settings**, select **New application setting** and add the following environment variables and associated values.  
+
+   | Name | Value |
+   | ---- | ----- | 
+   | *AuthenticationEvents__AudienceAppId* | *Custom authentication extension app ID* |
+   | *AuthenticationEvents__AuthorityUrl* | &#8226; Workforce tenant `https://login.microsoftonline.com/<tenantID>` <br> &#8226; external tenant `https://<mydomain>.ciamlogin.com` | 
+   | *AuthenticationEvents__AuthorizedPartyAppId* | `99045fe1-7639-4a75-9d4a-577b6ca3810f` or another authorized party | 
+
+1. Select **Save** to save the application settings.
 
 ### Test the function 
 
