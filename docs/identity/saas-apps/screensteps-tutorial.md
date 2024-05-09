@@ -51,7 +51,7 @@ Alternatively, you can also use the [Enterprise App Configuration Wizard](https:
 
 ## Configure and test Microsoft Entra SSO for ScreenSteps
 
-Configure and test Microsoft Entra SSO with ScreenSteps using a test user called **B.Simon**.
+Configure and test Microsoft Entra SSO with ScreenSteps using a test user called **B.Simon**. For SSO to work, you need to establish a link relationship between a Microsoft Entra user and the related user in ScreenSteps.
 
 To configure and test Microsoft Entra SSO with ScreenSteps, perform the following steps:
 
@@ -87,6 +87,10 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	![Screenshot shows the Certificate download link.](common/certificatebase64.png "Certificate")
 
+1. On the **Set up ScreenSteps** section, copy the appropriate URL(s) as per your requirement.
+
+	![Screenshot shows to copy configuration URLs.](common/copy-configuration-urls.png)
+
 <a name='create-an-azure-ad-test-user'></a>
 
 ### Create a Microsoft Entra test user
@@ -119,7 +123,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 ## Configure ScreenSteps SSO
 
-1. Log in to MyGeotab company site as an administrator.
+1. Log in to ScreenSteps company site as an administrator.
 
 1. Go to **Account Settings** > **Site Access**.
 
