@@ -17,7 +17,7 @@ ms.custom: developer
 
 # Tutorial: Prepare your iOS (Swift) app for authentication
 
-This tutorial demonstrates how to add Microsoft Authentication Library (MSAL) for iOS and macOS to your iOS Swift app.
+This is the second tutorial in the tutorial series that demonstrates how to add Microsoft Authentication Library (MSAL) for iOS and macOS to your iOS Swift app.
 
 In this tutorial, you'll;
 
@@ -48,11 +48,13 @@ The MSAL authentication SDK is used for integrating authentication into your app
 ## Create SDK instance
 
 1. Import the MSAL library into your view controller by adding `import MSAL` at the top of your `ViewController` class.
-1. Add a `applicationContext` member variable to your ViewController class by adding the following code just before the `viewDidLoad()` function:
+1. Add an `applicationContext` member variable to your ViewController class by adding the following code just before the `viewDidLoad()` function:
     
     ```swift
     var applicationContext : MSALPublicClientApplication?
     ```
+
+    The code declares a variable named `applicationContext` of type `MSALPublicClientApplication`, which is used for managing Microsoft Authentication Library (MSAL) instances in iOS applications.
 
 1. Add the following code to the view `viewDidLoad()` function:
 
@@ -63,6 +65,7 @@ The MSAL authentication SDK is used for integrating authentication into your app
             self.updateLogging(text: "Unable to create Application Context \(error)")
         }
     ``` 
+    The code attempts to initialize MSAL, handling any errors that occur during the process. If an error occurs, it updates the logging with the details of the error.
 
 1. Add the following code that creates `initMSAL()` function, which initializes MSAL:
 
@@ -85,7 +88,7 @@ The MSAL authentication SDK is used for integrating authentication into your app
     
     This code initializes the MSAL for iOS. It first attempts to create a URL for the authority using the provided _Configuration.kAuthority_ string. If successful, it creates an MSAL authority object based on that URL. Then, it configures the `MSALPublicClientApplication` with the given client ID, redirect URI, and authority. If all configurations are set up correctly, it initializes the application context with the configured `MSALPublicClientApplication`. If any errors occur during the process, it throws an error.
 
-1. Create `Configuration.swift` file and the following configurations:
+1. Create _Configuration.swift_ file and add the following configurations:
 
     ```swift
     import Foundation

@@ -17,15 +17,16 @@ ms.custom: developer
 
 # Tutorial: Register and configure iOS (Swift) mobile app
 
-This tutorial series demonstrates how to build an iOS (Swift) mobile app that authenticates using an external tenant. You register an app within the customer's tenant, create an iOS (Swift) app, and you implement the sign-in and sign-out code to enable secure authentication.
+This tutorial series demonstrates how to build an iOS (Swift) mobile app that authenticates using an external tenant. You register an app within the customer's tenant, create an iOS (Swift) app, and you implement the sign-in, sign-out and call a protected web API.
 
 In this tutorial, you'll;
 
 > [!div class="checklist"]
 >
-> - Register an iOS (Swift) mobile app in customers tenant.
-> - Create a sign-in and sign-out user flow in customers tenant.
-> - Associate your .NET MAUI mobile app with the user flow.
+> - Register an application in customers tenant.
+> - Add a Platform redirect URL
+> - Enable public client flow.
+> - Add delegated permission to Microsoft Graph
 
 ## Prerequisites  
 

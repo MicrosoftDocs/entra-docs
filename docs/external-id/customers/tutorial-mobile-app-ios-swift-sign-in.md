@@ -142,7 +142,9 @@ You have two main options for signing in users using Microsoft Authentication Li
     ```
     
     
-    The code uses MSAL for iOS to load the current account. It checks for errors and updates the logging accordingly. If a current account is found, it updates it and attempts to acquire tokens silently. If a previous account exists, it logs the sign out. If no accounts are found, it clears the access token. Finally, it executes a completion block if provided. The `acquireTokenSilently` function should contain the following code:
+    The code uses MSAL for iOS to load the current account. It checks for errors and updates the logging accordingly. If a current account is found, it updates it and attempts to acquire tokens silently. If a previous account exists, it logs the sign out. If no accounts are found, it clears the access token. Finally, it executes a completion block if provided. 
+
+    The `acquireTokenSilently` function should contain the following code:
 
     ```swift
     func acquireTokenSilently(_ account : MSALAccount) {
@@ -260,4 +262,4 @@ The code verifies the existence of the `applicationContext`, `currentAccount`, a
 
 ## Next steps
 
-[Tutorial: Sign in user and call a protected web API in iOS (Swift) app](tutorial-mobile-app-ios-swift-sign-in-call-api.md).
+[Tutorial: Call a protected web API in iOS (Swift) app](tutorial-mobile-app-ios-swift-sign-in-call-api.md).
