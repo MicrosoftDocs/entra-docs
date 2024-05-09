@@ -5,7 +5,7 @@ description: Registration and management of passkey with Authenticator on iOS in
 ms.service: entra-id 
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 04/25/2024
+ms.date: 05/09/2024
 
 ms.author: justinha
 author: justinha
@@ -69,7 +69,7 @@ You can sign in to Authenticator to create a passkey in the app and get seamless
 
    :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/autofill-passwords-ios.png" alt-text="Screenshot of Autofill Passwords and Passkeys is turned on using Microsoft Authenticator for iOS devices.":::
 
-1. In the **Use Passwords and Passkeys From** option, ensure that **Authenticator** is checked.
+1. In the **Use Passwords and Passkeys From** option, select **Authenticator**.
 
    :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/select-authenticator-ios.png" alt-text="Screenshot of Use Passwords and Passkeys from using Microsoft Authenticator for iOS devices.":::
 
@@ -103,17 +103,17 @@ Alternatively, users can set up a passkey in the Authenticator by navigating to 
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey-ios-2fa-authorization.png" alt-text="Screenshot of the two-factor authentication requirement to set up a passkey.":::
 
-   After  you sign-in with MFA, continue through the rest of the passkey setup.
+   After you sign-in with MFA, continue through the rest of the passkey setup.
 
 1. If necessary, download Microsoft Authenticator and tap **Next**.
 
       :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey-download-auth-app.png" alt-text="Screenshot of the download app option in Microsoft Authenticator for iOS devices.":::
 
-1. Follow the steps to turn on Authenticator as a passkey provider in the **Settings app** of your iOS device:
-      - On your iOS device, open the **Settings app**.
-      - Open **Passwords** select **Password Options**.
+1. Follow the steps to turn on Authenticator as a passkey provider in the **Settings** of your iOS device:
+      - On your iOS device, open **Settings**.
+      - Open **Passwords**, and select **Password Options**.
       - Ensure **Autofill Passwords and and Passkeys** is turned on. 
-      - Under **Use Passwords and Passkeys From** select **Authenticator**. 
+      - Under **Use Passwords and Passkeys From**, select **Authenticator**. 
       - Return to **My Security info** and select **Continue**. 
 
       :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey-turn-on-support.png" alt-text="Screenshot of the turn-on passkey support option in Microsoft Authenticator for iOS devices.":::
