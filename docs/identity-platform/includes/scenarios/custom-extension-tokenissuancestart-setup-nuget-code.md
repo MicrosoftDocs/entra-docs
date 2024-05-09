@@ -24,13 +24,13 @@ namespace AuthEventsTrigger
     {
         [FunctionName("onTokenIssuanceStart")]
         public static WebJobsAuthenticationEventResponse Run(
-        // [WebJobsAuthenticationEventsTriggerAttribute] WebJobsTokenIssuanceStartRequest request, ILogger log)
+        [WebJobsAuthenticationEventsTriggerAttribute] WebJobsTokenIssuanceStartRequest request, ILogger log)
         // The WebJobsAuthenticationEventsTriggerAttribute attribute can be used to specify audience app ID, 
         // authority URL and authorized party app id. 
         // This is an alternative route to setting up Authorization values instead of Environment variables or EzAuth
-            [WebJobsAuthenticationEventsTriggerAttribute(AudienceAppId = "Enter custom authentication extension app ID here",
-                    AuthorityUrl = "Enter authority URI here", 
-                    AuthorizedPartyAppId = "Enter the Authorized Party App Id here")]WebJobsTokenIssuanceStartRequest request, ILogger log)
+        //    [WebJobsAuthenticationEventsTriggerAttribute(AudienceAppId = "Enter custom authentication extension app ID here",
+        //            AuthorityUrl = "Enter authority URI here", 
+        //            AuthorizedPartyAppId = "Enter the Authorized Party App Id here")]WebJobsTokenIssuanceStartRequest request, ILogger log)
         {
             try
             {

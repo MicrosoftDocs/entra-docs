@@ -222,12 +222,11 @@ After creating the project, you'll need to install the required NuGet packages a
 
 ### Add the sample code
 
-The function API is the source of extra claims for your token. For the purposes of this article, we're hardcoding the values for the sample app. In production, fetch information about the user from external data store.
+The function API is the source of extra claims for your token. For the purposes of this article, we're hardcoding the values for the sample app. In production, you can fetch information about the user from external data store.
 
 In your *AuthEventsTrigger.cs* file, replace the entire contents of the file with the following code:
 
 [!INCLUDE [nuget-code](./includes/scenarios/custom-extension-tokenissuancestart-setup-nuget-code.md)]
-
 
 ### Build and run the project locally
 

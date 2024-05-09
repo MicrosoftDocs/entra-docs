@@ -11,21 +11,21 @@ ms.reviewer: stsoneff
 ms.custom:
 ---
 
-## Set up environment variables for your Azure Function
+## Configure authentication for your Azure Function
 
 You can set up environment variables for your Azure Functions instead of using the `AuthenticationEventsTrigger` attribute to implement the built-in [Azure App service authentication and authorization](/azure/app-service/overview-authentication-authorization). These environment variables can be hardcoded in the attribute or set up in the Azure portal, but not both.
 
 ### Set up environment variables in your code
 
-Modify the `AuthenticationEventsTrigger` include the `AuthorityUrl`, `AudienceAppId` and `AuthorizedPartyAppId` (optional) properties, as shown in the below snippet.
+Modify the `WebJobsAuthenticationEventsTriggerAttribute` include the `AuthorityUrl`, `AudienceAppId` and `AuthorizedPartyAppId` properties, as shown in the below snippet.
 
 ```csharp
 [FunctionName("onTokenIssuanceStart")]
-public async static Task<AuthenticationEventResponse> Run(
-    [AuthenticationEventsTrigger(
-    AudienceAppId = "Enter custom authentication extension app ID here",
-    AuthorityUrl = "Enter authority URI here", // The .well-known/openid-configuration endpoint is appended to the AuthorityUrl in the SDK
-    AuthorizedPartyAppId = "Enter the Authorized Party App Id here")] TokenIssuanceStartRequest request, ILogger log) 
+        public static WebJobsAuthenticationEventResponse Run(
+        // [WebJobsAuthenticationEventsTriggerAttribute] WebJobsTokenIssuanceStartRequest request, ILogger log)
+        [WebJobsAuthenticationEventsTriggerAttribute(AudienceAppId = "Enter custom authentication extension app ID here",
+            AuthorityUrl = "Enter authority URI here", 
+            AuthorizedPartyAppId = "Enter the Authorized Party App Id here")]WebJobsTokenIssuanceStartRequest request, ILogger log)
 ```
 
 ### Set up environment variables in the Azure portal
