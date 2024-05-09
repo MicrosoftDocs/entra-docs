@@ -1,6 +1,6 @@
 ---
 title: 'Tutorial: Configure Zello for automatic user provisioning with Microsoft Entra ID'
-description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Zello.
+description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Zello.
 
 author: twimmers
 writer: twimmers
@@ -18,7 +18,7 @@ ms.author: thwimmer
 
 # Tutorial: Configure Zello for automatic user provisioning
 
-This tutorial describes the steps you need to perform in both Zello and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users to [Zello](https://zello.com/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
+This tutorial describes the steps you need to perform in both Zello and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and deprovisions users to [Zello](https://zello.com/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
 ## Supported capabilities
 > [!div class="checklist"]
@@ -49,7 +49,7 @@ Contact Zello support to configure Zello to support provisioning with Microsoft 
 
 ## Step 3: Add Zello from the Microsoft Entra application gallery
 
-Add Zello from the Microsoft Entra application gallery to start managing provisioning to Zello. If you have previously setup Zello for SSO you can use the same application. However it's recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+Add Zello from the Microsoft Entra application gallery to start managing provisioning to Zello. If you have previously setup Zello for SSO, you can use the same application. However it's recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
 ## Step 4: Define who will be in scope for provisioning 
 
