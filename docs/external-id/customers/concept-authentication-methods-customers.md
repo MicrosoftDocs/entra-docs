@@ -15,9 +15,9 @@ ms.custom: it-pro
 
 # Authentication methods and identity providers in external tenants
 
-With Microsoft Entra External ID, you can create secure, customized sign-in experiences for your consumer and business customer-facing apps. In an external tenant, there are several ways for your users to sign up for your app. They can create an account in your customer directory using an email and either a password or an email one-time passcode. Or, if you enable sign-in with Facebook and Google, they can sign in with a social account they already have. You can also add a layer of security to your consumer and business customer-facing applications by enforcing multifactor authentication (MFA). With MFA, each time a user signs in they're required to provide an email one-time passcode.
+With Microsoft Entra External ID, you can create secure, customized sign-in experiences for your consumer- and business customer-facing apps. In an external tenant, there are several ways for users to sign up for your app. They can create an account using their email and either a password or a one-time passcode. Or, if you enable sign-in with Facebook and Google, they can sign in with their own social account. You can also add a layer of security by enforcing multifactor authentication (MFA) so that each time a user signs in, they're required to provide a one-time passcode for verification.
 
-This article describes these authentication methods and identity providers for external tenants.
+This article describes the authentication methods and identity providers available in external tenants.
 
 ## Email and password sign-in
 
@@ -43,7 +43,7 @@ Email with one-time passcode is an option in your local account identity provide
 
    :::image type="content" source="media/concept-authentication-methods-customers/email-passcode-sign-in.png" alt-text="Screenshots of the email with one-time passcode sign-in screens." border="false":::
 
-> [!NOTE]
+> [!IMPORTANT]
 > If you want to enable [multifactor authentication (MFA)](how-to-multifactor-authentication-customers.md), set your local account authentication method to **Email with password**. If you set your local account option to **Email with one-time passcode**, customers who use this method won't be able to sign in because the one-time passcode is already their first-factor sign-in method and can't be used as a second factor. Currently, other verification methods aren't available for customer scenarios.
 
 When you [create a sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md#create-and-customize-a-user-flow), **Email one-time passcode** is one of the local account options.
