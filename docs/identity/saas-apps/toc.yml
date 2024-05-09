@@ -656,6 +656,8 @@
         href: contentsquare-sso-tutorial.md
       - name: Contentstack
         href: contentstack-tutorial.md
+      - name: Continuity Software Platform (OIDC)
+        href: continuity-software-platform-tutorial.md
       - name: ContractSafe Saml2 SSO
         href: contractsafe-saml2-sso-tutorial.md
       - name: ContractS CLM
@@ -2643,6 +2645,8 @@
         href: springerlink-tutorial.md
       - name: Sprinklr
         href: sprinklr-tutorial.md
+      - name: Spyglass (OIDC)
+        href: spyglass-tutorial.md
       - name: SSOGEN Microsoft Entra SSO Gateway for Oracle E Business Suite EBS, PeopleSoft, and JDE
         href: ssogen-tutorial.md
       - name: SSO for Jama Connect®
@@ -3181,6 +3185,8 @@
         href: zonka-feedback-tutorial.md
       - name: Zoom
         href: zoom-tutorial.md
+      - name: Zscaler(OIDC)
+        href: zscaler-oidc-tutorial.md
       - name: Zscaler Internet Access ZSNet
         href: zscaler-internet-access-zsnet-tutorial.md
       - name: Zscaler B2B User Portal
@@ -3530,6 +3536,8 @@
         href: keeper-password-manager-digitalvault-provisioning-tutorial.md
       - name: Keepabl
         href: keepabl-provisioning-tutorial.md
+      - name: Keystone
+        href: keystone-provisioning-tutorial.md
       - name: Kintone
         href: kintone-provisioning-tutorial.md
       - name: Kisi Physical Security
@@ -3550,6 +3558,8 @@
         href: lanschool-air-provisioning-tutorial.md
       - name: LawVu
         href: lawvu-provisioning-tutorial.md
+      - name: Lexonis TalentScape
+        href: lexonis-talentscape-provisioning-tutorial.md
       - name: LimbleCMMS
         href: limblecmms-provisioning-tutorial.md
       - name: LinkedIn Elevate
@@ -3676,6 +3686,8 @@
         href: proware-provisioning-tutorial.md
       - name: Puzzel
         href: puzzel-provisioning-tutorial.md
+      - name: Quarem
+        href: quarem-provisioning-tutorial.md
       - name: Real Links
         href: real-links-provisioning-tutorial.md
       - name: Recnice

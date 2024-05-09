@@ -101,7 +101,7 @@ Some administrator roles are exempted from these policies, across all group work
 
 Install the Microsoft Graph cmdlets as described in [Install the Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/installation).
 
-[!INCLUDE [Azure AD PowerShell migration](../../includes/aad-powershell-migration-include.md)]
+[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
 
 1. Open the Windows PowerShell app as an administrator.
 1. Install the Microsoft Graph cmdlets.

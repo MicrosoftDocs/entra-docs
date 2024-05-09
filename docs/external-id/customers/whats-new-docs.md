@@ -35,7 +35,7 @@ This month, we made updates to our table of contents to make navigation easier f
 
 ### New articles
 
-- [Native authentication (preview)](concept-native-authentication.md)
+- [Native authentication ](concept-native-authentication.md)
 - [Get started guide features](concept-guide-explained.md)
 
 ### Updated articles
@@ -59,8 +59,8 @@ This month, we made updates to our table of contents to make navigation easier f
 
 ### Updated articles
 
-- [Supported features in Microsoft Entra External ID (preview)](concept-supported-features-customers.md) - OpenID Connect and OAuth2 updates
-- [Create a customer identity and access management (CIAM) tenant (preview)](how-to-create-external-tenant-portal.md) - Built-in role update
+- [Supported features in Microsoft Entra External ID ](concept-supported-features-customers.md) - OpenID Connect and OAuth2 updates
+- [Create a customer identity and access management (CIAM) tenant ](how-to-create-external-tenant-portal.md) - Built-in role update
 
 
 

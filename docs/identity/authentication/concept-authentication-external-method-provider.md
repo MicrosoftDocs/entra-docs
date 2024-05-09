@@ -6,7 +6,7 @@ description: Learn how to configure an external authentication method (EAM) prov
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 04/29/2024
+ms.date: 05/03/2024
 
 ms.author: justinha
 author: gregkmsft
@@ -18,7 +18,7 @@ ms.reviewer: gkinasewitz, gustavosa
 ---
 # Microsoft Entra multifactor authentication external method provider reference (Preview)
 
-This topic describes how an external authentication provider connects to Microsoft Entra multifactor authentication (MFA). An external authentication provider can integrate with Microsoft Entra ID tenants as an external authentication method (EAM). An EAM can satisfy the second factor of an MFA requirement for access to a resource or application.  
+This topic describes how an external authentication provider connects to Microsoft Entra multifactor authentication (MFA). An external authentication provider can integrate with Microsoft Entra ID tenants as an external authentication method (EAM). An EAM can satisfy the second factor of an MFA requirement for access to a resource or application. EAMs require at least a Microsoft Entra ID P1 license. 
 
 When a user signs in, that tenant policies are evaluated. The authentication requirements are determined based on the resource that the user tries to access. 
 
@@ -75,7 +75,7 @@ To configure a multitenant application, the provider admin must first:
 1. Create an Microsoft Entra ID tenant if they don't have one yet.
 1. Register an application in their tenant. 
 1. Set the Supported Account types of the application to: Accounts in any organizational directory (Any Microsoft Entra ID tenant - Multitenant). 
-1. Add the delegated permission `openid` and profile of Microsoft Graph to the application.
+1. Add the delegated permission `openid` and `profile` of Microsoft Graph to the application.
 1. Don't publish any scopes in this application. 
 1. Add the external identity provider’s valid authorization_endpoint URLs to that application as Reply URLs. 
    

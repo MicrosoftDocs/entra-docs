@@ -67,9 +67,9 @@ procedureSection:
       - |
         Under **Target resources** > **Cloud apps** > **Include**, select **All cloud apps**.
       - |  
-        Under **Conditions** > **Location**.
+        Under **Network**.
           1. Set **Configure** to **Yes**
-          1. Under **Include**, select **Selected locations**
+          1. Under **Include**, select **Selected networks and locations**
           1. Select the blocked location you created for your organization.
           1. Click **Select**.
       - |    

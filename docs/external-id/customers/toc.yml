@@ -14,6 +14,8 @@ items:
       href: quickstart-get-started-guide.md
     - name: Use the Visual Studio Code extension
       href: visual-studio-code-extension.md
+    - name: Enable built-in authentication
+      href: /azure/app-service/scenario-secure-app-authentication-app-service?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
 - name: Samples
   expanded: false
   items: 
@@ -221,7 +223,7 @@ items:
                   href: tutorial-mobile-maui-role-based-access-control.md
         - name: Native authentication
           items:
-            - name: Android
+            - name: Android (Kotlin)
               items:
                 - name: Prepare Android app
                   href: tutorial-native-authentication-prepare-android-app.md
@@ -247,7 +249,7 @@ items:
                   href: tutorial-native-authentication-android-sign-in-after-sign-up.md
                 - name: Support web fallback
                   href: tutorial-native-authentication-android-support-web-fallback.md
-            - name: iOS app
+            - name: iOS (Swift)
               items:
                 - name: Prepare iOS app
                   href: tutorial-native-authentication-prepare-ios-app.md
@@ -307,6 +309,8 @@ items:
           href: concept-native-authentication-user-attribute-builder.md
     - name: Customizing the sign-in look and feel
       href: concept-branding-customers.md
+    - name: Custom URL domains
+      href: concept-custom-url-domain.md
     - name: Get started guide features explained
       href: concept-guide-explained.md
     - name: Adding your own business logic
@@ -361,6 +365,8 @@ items:
                   - name: Use role-based access control
                     href: how-to-web-app-role-based-access-control.md 
                     displayName: rbac, roles, roles claim, groups claim
+      - name: Delete an external tenant
+        href: how-to-delete-external-tenant-portal.md
     - name: Customize
       items:
         - name: Customize branding
@@ -376,24 +382,26 @@ items:
               displayName: custom attributes
             - name: Add attributes to the token
               href: how-to-add-attributes-to-token.md
+        - name: Use custom URL domains
+          href: how-to-custom-url-domain.md
         - name: Advanced extensions
           items:
             - name: Add logic to attribute collection
               items:
                 - name: Create attribute collection start and submit events
-                  href: ~/identity-platform/custom-extension-attribute-collection.md?context=/entra/external-id/customers/context/customers-context
+                  href: ~/identity-platform/custom-extension-attribute-collection.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: OnAttributeCollectionStart event reference
-                  href: ~/identity-platform/custom-extension-OnAttributeCollectionStart-reference.md?context=/entra/external-id/customers/context/customers-context
+                  href: ~/identity-platform/custom-extension-OnAttributeCollectionStart-reference.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: OnAttributeCollectionSubmit event reference
-                  href: ~/identity-platform/custom-extension-OnAttributeCollectionSubmit-reference.md?context=/entra/external-id/customers/context/customers-context
+                  href: ~/identity-platform/custom-extension-OnAttributeCollectionSubmit-reference.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
             - name: Add claims from external systems
               items:
                 - name: About custom authentication extensions
-                  href: ~/identity-platform/custom-extension-overview.md?context=/entra/external-id/customers/context/customers-context
+                  href: ~/identity-platform/custom-extension-overview.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Token issuance start event
-                  href: ~/identity-platform/custom-extension-get-started.md?context=/entra/external-id/customers/context/customers-context
+                  href: ~/identity-platform/custom-extension-tokenissuancestart-configuration.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Troubleshoot your custom claims provider API
-                  href: ~/identity-platform/custom-extension-troubleshoot.md?context=/entra/external-id/customers/context/customers-context
+                  href: ~/identity-platform/custom-extension-troubleshoot.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
     - name: Secure
       items:
       - name: Multifactor authentication
@@ -429,19 +437,19 @@ items:
     - name: Company branding CSS template reference guide
       href: ~/fundamentals/reference-company-branding-css-template.md
     - name: Help and support options
-      href: ~/identity-platform/developer-support-help-options.md?context=/entra/external-id/customers/context/customers-context
+      href: ~/identity-platform/developer-support-help-options.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
     - name: Native authentication
       items:
         - name: API reference
           items: 
            - name: Native authentication APIs
              displayName: Native authentication, Native authentication API   
-             href: /entra/identity-platform/reference-native-authentication-overview?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json
+             href: /entra/identity-platform/reference-native-authentication-overview?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
            - name: Native authentication with email OTP
              displayName: Native authentication with email and one-time password or passcode          
-             href: /entra/identity-platform/reference-native-authentication-email-otp?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json
+             href: /entra/identity-platform/reference-native-authentication-email-otp?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
            - name: Native authentication with email and password
-             href: /entra/identity-platform/reference-native-authentication-email-password?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json
+             href: /entra/identity-platform/reference-native-authentication-email-password?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
         - name: SDK reference
           items: 
            - name: MSAL iOS and macOS

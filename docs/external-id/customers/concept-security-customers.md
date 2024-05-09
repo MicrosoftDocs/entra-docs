@@ -55,7 +55,7 @@ Identity Protection comes with risk reports that can be used to investigate iden
 
 ## Analyze user authentication trends for your apps
 
-The Application user activity (Preview) feature under Usage & insights provides data analytics on user activity for registered applications in your tenant. You can use this feature to view, query, and analyze user requests and authentication trends. It can help you track changes, access patterns, and potential security breaches.
+The Application user activity  feature under Usage & insights provides data analytics on user activity for registered applications in your tenant. You can use this feature to view, query, and analyze user requests and authentication trends. It can help you track changes, access patterns, and potential security breaches.
 
 For details see [application user activity dashboards](how-to-user-insights.md). 
 
