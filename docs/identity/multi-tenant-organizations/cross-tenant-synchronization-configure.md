@@ -569,10 +569,10 @@ To resolve the issue, run on-demand provisioning for the impacted user(s) to upd
 
 Connect-MgGraph -Scopes "User.Read.All"
 $users = Get-MgUser -Filter "userType eq 'Guest' and externalUserState eq 'PendingAcceptance'" 
-$users | Format-Table DisplayName, UserPrincipalName | Out-File -FilePath "C:\Temp\GuestUsersPendingtest.txt"
+$users | Select-Object DisplayName, UserPrincipalName | Export-Csv "C:\Temp\GuestUsersPending.csv"
 
 ```
-Then you can use use [provisionOnDemand with Powershell](https://learn.microsoft.com/en-us/graph/api/synchronization-synchronizationjob-provisionondemand?view=graph-rest-1.0&tabs=powershell#request) for each user. The rate limit for this API is 5 requests per 10 seconds. The known limitations for on-demand provisioning are listed [here](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/provision-on-demand?pivots=cross-tenant-synchronization#known-limitations) 
+Then you can use [provisionOnDemand with Powershell](https://learn.microsoft.com/en-us/graph/api/synchronization-synchronizationjob-provisionondemand?view=graph-rest-1.0&tabs=powershell#request) for each user. The rate limit for this API is 5 requests per 10 seconds. The known limitations for on-demand provisioning are listed [here](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/provision-on-demand?pivots=cross-tenant-synchronization#known-limitations) 
 
 ## Next steps
 
