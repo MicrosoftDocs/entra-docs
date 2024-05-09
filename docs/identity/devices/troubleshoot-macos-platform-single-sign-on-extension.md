@@ -175,6 +175,7 @@ ls ~/Library/Application\ Support/Google/Chrome/NativeMessagingHosts/com.microso
 Alternatively, you can deploy the following script via your MDM or other automation tools to copy the JSON file to the correct location. This script should be run in the the user's context for each user who experiences the Chrome SSO issue:
 
 ```zsh
+#!/usr/bin/env zsh
 # Copy over Browser Core json file to the right location
 # If the folder doesn't exist, create it
 
