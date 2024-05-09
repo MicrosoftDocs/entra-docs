@@ -10,7 +10,7 @@ ms.service: entra-external-id
 
 ms.subservice: customers
 ms.topic: sample
-ms.date: 05/07/2024
+ms.date: 05/09/2024
 ms.custom: developer
 #Customer intent: As a developer, I want to prepare iOS (Swift) app for authentication using Microsoft Entra External ID.
 ---
