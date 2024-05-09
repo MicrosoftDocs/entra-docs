@@ -3556,6 +3556,8 @@
         href: lanschool-air-provisioning-tutorial.md
       - name: LawVu
         href: lawvu-provisioning-tutorial.md
+      - name: Lexonis TalentScape
+        href: lexonis-talentscape-provisioning-tutorial.md
       - name: LimbleCMMS
         href: limblecmms-provisioning-tutorial.md
       - name: LinkedIn Elevate
