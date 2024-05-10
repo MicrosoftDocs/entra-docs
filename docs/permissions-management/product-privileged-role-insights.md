@@ -12,7 +12,7 @@ ms.author: jfields
 
 # View privileged role assignments in your organization
 
-The **Microsoft Entra Insights** tab shows you who is assigned to privileged roles in your organization. You can review a list of identities assigned to a privileged role and learn more about each identity.
+The **Microsoft Entra Insights** tab shows you who is assigned to [privileged roles](/entra/identity/role-based-access-control/permissions-reference) in your organization. You can review a list of identities assigned to a privileged role and learn more about each identity.
 
 [!INCLUDE [emergency-access-accounts](../includes/definitions/emergency-access-accounts.md)]
 
@@ -27,8 +27,8 @@ To view information on the Microsoft Entra Insights tab, you must have Permissio
 ## View information in the Microsoft Entra Insights tab
 
 1. From the Permissions Management home page, select the **Microsoft Entra Insights** tab.
-2. Select **Review global administrators** to review the list of Global administrator role assignments.
-3. Select **Review highly privileged roles** or **Review service principals** to review information on principal role assignments for the following roles: *Application administrator*, *Cloud Application administrator*, *Exchange administrator*, *Intune administrator*, *Privileged role administrator*, *SharePoint administrator*, *Security administrator*, *User administrator*. 
+2. Select **Review Global Administrators** to review the list of Global Administrator role assignments.
+3. Select **Review highly privileged roles** or **Review service principals** to review information on principal role assignments for the following roles: *Application Administrator*, *Cloud Application Administrator*, *Exchange Administrator*, *Intune Administrator*, *Privileged Role Administrator*, *SharePoint Administrator*, *Security Administrator*, *User Administrator*. 
 
 
 ## Next steps
