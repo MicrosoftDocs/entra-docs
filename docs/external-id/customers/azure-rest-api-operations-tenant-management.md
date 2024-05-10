@@ -16,6 +16,9 @@ ms.custom: developer
 ---
 
 # Manage an external tenant with Azure REST API
+
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
 You can manage your external tenant using the Azure REST API. The management of resources related to tenant management supports the following API operations. Each link in the following sections targets the corresponding page within the Microsoft Graph API reference for that operation.
 
 ## Tenant Management operations

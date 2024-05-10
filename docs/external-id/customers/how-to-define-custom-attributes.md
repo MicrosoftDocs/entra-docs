@@ -17,6 +17,8 @@ ms.custom: it-pro
 
 # Collect custom user attributes during sign-up  
 
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
 If your app requires more information than the built-in user attributes provide, you can add your own attributes. We refer to these attributes as *custom user attributes*.
 
 To define a custom user attribute, you first create the attribute at the tenant level so it can be used in any user flow in the tenant. Then you assign the attribute to your sign-up user flow and configure how you want it to appear on the sign-up page.

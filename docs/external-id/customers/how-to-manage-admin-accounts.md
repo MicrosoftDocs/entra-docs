@@ -15,6 +15,8 @@ ms.custom: it-pro
 ---
 # Add and manage admin accounts
 
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
 In Microsoft Entra External ID, an external tenant represents your directory of consumer and guest accounts. With an administrator role, work and guest accounts can manage the tenant.
 
 ## Prerequisites

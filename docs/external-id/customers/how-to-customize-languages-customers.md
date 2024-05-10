@@ -16,6 +16,8 @@ ms.custom: it-pro
 ---
 # Customize the language of the authentication experience
 
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
 You can create a personalized sign-in experience for users who sign in using a specific browser language by customizing the branding elements for that browser language. This customization overrides any configurations made to the default branding. If you don't make any changes to the elements, the default elements are displayed.
 
 ## Prerequisites
