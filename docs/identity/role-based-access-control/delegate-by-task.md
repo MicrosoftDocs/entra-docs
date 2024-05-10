@@ -1,15 +1,13 @@
 ---
 title: Least privileged roles by task
 description: Least privileged roles to delegate for tasks in Microsoft Entra ID
-
 author: rolyon
 manager: amycolannino
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: reference
-ms.date: 03/28/2024
+ms.date: 05/10/2024
 ms.author: rolyon
-ms.reviewer: vincesm
 ms.custom: it-pro
 
 #Customer intent: As a Microsoft Entra administrator, I want to know which role has the least privilege for a given task to make my Microsoft Entra organization more secure.
@@ -50,7 +48,9 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | Create, read, update, and delete sign-up user flow | [External ID User Flow Administrator](permissions-reference.md#external-id-user-flow-administrator) |  |
 > | Create, read, update, and delete user attributes | [External ID User Flow Attribute Administrator](permissions-reference.md#external-id-user-flow-attribute-administrator) |  |
 > | Create, read, update, and delete users | [User Administrator](permissions-reference.md#user-administrator) |  |
-> | Configure B2B external collaboration settings | [Global Administrator](permissions-reference.md#global-administrator) |  |
+> | [Configure B2B external collaboration settings - Guest user access](../../external-id/external-collaboration-settings-configure.md) | [Privileged Role Administrator](permissions-reference.md#privileged-role-administrator) |  |
+> | [Configure B2B external collaboration settings - Guest invite settings](../../external-id/external-collaboration-settings-configure.md) | [Guest Inviter](permissions-reference.md#guest-inviter) | [External ID User Flow Administrator](permissions-reference.md#external-id-user-flow-administrator) |
+> | [Configure B2B external collaboration settings - External user leave settings](../../external-id/external-collaboration-settings-configure.md) | [External Identity Provider Administrator](permissions-reference.md#external-identity-provider-administrator) |  |
 > | Read all configuration | [Global Reader](permissions-reference.md#global-reader) |  |
 > | [Read B2C audit logs](/azure/active-directory-b2c/faq) | [Global Reader](permissions-reference.md#global-reader) |  |
 
