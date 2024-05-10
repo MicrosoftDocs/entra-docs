@@ -144,7 +144,7 @@ If you start with a policy that has only one required authentication method for 
 | 1 | 2 | **Unable** to reset or unlock |
 | 2 or more | 2 | **Able** to reset or unlock |
 
-Changing the available authentication methods may also cause problems for users. If you change which authentication methods are availalable, users without the minimum amount of data available can't use SSPR.
+Changing the available authentication methods may also cause problems for users. If you change which authentication methods are available, users without the minimum amount of data available can't use SSPR.
 
 Consider the following example scenario:
 
