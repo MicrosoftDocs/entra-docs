@@ -1,15 +1,13 @@
 ---
 title: Least privileged roles by task
 description: Least privileged roles to delegate for tasks in Microsoft Entra ID
-
 author: rolyon
 manager: amycolannino
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: reference
-ms.date: 03/28/2024
+ms.date: 05/10/2024
 ms.author: rolyon
-ms.reviewer: vincesm
 ms.custom: it-pro
 
 #Customer intent: As a Microsoft Entra administrator, I want to know which role has the least privilege for a given task to make my Microsoft Entra organization more secure.
