@@ -48,7 +48,8 @@ The following table compares the general features and capabilities available in 
 
 ## Identity providers and authentication methods
 
- The following table compares [identity providers](../identity-providers.md) and methods for primary authentication and multifactor authentication (MFA) in workforce and external tenants.
+ The following table compares the [identity providers](../identity-providers.md) and methods available for primary authentication and multifactor authentication (MFA) in workforce and external tenants.
+
 
 |Feature  |Workforce tenant  | External tenant |
 |---------|---------|---------|

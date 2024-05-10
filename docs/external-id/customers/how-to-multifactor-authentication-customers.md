@@ -19,6 +19,9 @@ ms.custom: it-pro
 
 In a Microsoft Entra External ID external tenant, you can add a layer of security to your consumer- and business customer-facing applications by enforcing multifactor authentication (MFA). With MFA, each time a user signs in, they're required to provide an email one-time passcode. This article describes how to enforce MFA for your customers by creating a Microsoft Entra Conditional Access policy and adding MFA to your sign-up and sign-in user flow.
 
+> [!IMPORTANT]
+> If you want to enable MFA, set your local account authentication method to **Email with password**. If you set your local account option to **Email with one-time passcode**, customers who use this method won't be able to sign in because the one-time passcode is already their first-factor sign-in method and can't be used as a second factor. Currently, one-time passcode is the only method available for MFA in external tenants.
+
 > [!TIP]
 > [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=MFA)
 > 
@@ -27,12 +30,9 @@ In a Microsoft Entra External ID external tenant, you can add a layer of securit
 ## Prerequisites
 
 - A Microsoft Entra external tenant (if you don't have a tenant, you can start a <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">free trial</a>.
-- A [sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md).
+- A [sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md) with the local account authentication method set to **Email with password**.
 - An app that's registered in your external tenant, added to the sign-up and sign-in user flow, and updated to point to the user flow for authentication.
 - An account with at least the Security Administrator role to configure Conditional Access policies and MFA.
-
-> [!IMPORTANT]
-> If you want to enable MFA, set your local account authentication method to **Email with password**. If you set your local account option to **Email with one-time passcode**, customers who use this method won't be able to sign in because the one-time passcode is already their first-factor sign-in method and can't be used as a second factor. Currently, one-time passcode is the only method available for MFA in external tenants.
 
 ## Create a Conditional Access policy
 
