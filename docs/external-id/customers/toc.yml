@@ -221,6 +221,16 @@ items:
                   href: tutorial-mobile-app-maui-sign-in-sign-out.md
                 - name: Use role-based access control
                   href: tutorial-mobile-maui-role-based-access-control.md
+            - name: Android
+              items:
+                - name: Prepare tenant
+                  href: tutorial-mobile-app-android-kotlin-prepare-tenant.md
+                - name: Prepare app
+                  href: tutorial-mobile-app-android-kotlin-prepare-app.md
+                - name: Sign in users
+                  href: tutorial-mobile-app-android-kotlin-sign-in.md
+                - name: Call an API
+                  href: tutorial-mobile-app-android-kotlin-sign-in-call-api.md
         - name: Native authentication
           items:
             - name: Android
