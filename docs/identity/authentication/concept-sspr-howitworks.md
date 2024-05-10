@@ -5,7 +5,7 @@ description: How does self-service password reset work
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 03/13/2024
+ms.date: 05/10/2024
 
 ms.author: justinha
 author: justinha
@@ -77,6 +77,8 @@ When you don't require registration, users aren't prompted during sign-in, but t
 
 ![Registration options for SSPR in the Microsoft Entra admin center][Registration]
 
+:::image type="content" border="true" source="media/concept-sspr-howitworks/registration.png" alt-text="Screenshot of password reset registration for Microsoft Entra ID.":::
+
 > [!NOTE]
 > Users can dismiss the SSPR registration portal by selecting **cancel** or by closing the window. However, they're prompted to register each time they sign in until they complete their registration.
 >
@@ -106,7 +108,7 @@ Users can only reset their password if they have registered an authentication me
 > [!WARNING]
 > Accounts assigned Azure *administrator* roles are required to use methods as defined in the section [Administrator reset policy differences](concept-sspr-policy.md#administrator-reset-policy-differences).
 
-![Authentication methods selection in the Microsoft Entra admin center][Authentication]
+:::image type="content" border="true" source="media/concept-sspr-howitworks/authentication-methods.png" alt-text="Screenshot of the Authentication methods policy for Microsoft Entra ID.":::
 
 ### Number of authentication methods required
 
@@ -167,7 +169,7 @@ If this option is set to **Yes**, then Global Administrators receive an email to
 > [!NOTE]
 > Email notifications from the SSPR service will be sent from the following addresses based on the Azure cloud you are working with: 
 > - Public: msonlineservicesteam@microsoft.com, msonlineservicesteam@microsoftonline.com
-> - Azure China 21Vianet: msonlineservicesteam@oe.21vianet.com, 21Vianetonlineservicesteam@21vianet.com
+> - Microsoft Azure operated by 21Vianet (Azure in China): msonlineservicesteam@oe.21vianet.com, 21Vianetonlineservicesteam@21vianet.com
 > - Azure for US Government: msonlineservicesteam@azureadnotifications.us, msonlineservicesteam@microsoftonline.us
 >
 > If you observe issues in receiving notifications, please check your spam settings. 
@@ -176,9 +178,10 @@ If you want custom administrators to receive the notification emails, use SSPR c
 
 ## On-premises integration
 
-If you have a hybrid environment, you can configure Microsoft Entra Connect to write password change events back from Microsoft Entra ID to an on-premises directory.
+If you have a hybrid environment, you can configure Microsoft Entra Connect cloud sync to write password change events back from Microsoft Entra ID to an on-premises directory.
 
-![Validating password writeback is enabled for Microsoft Entra ID to an On-premises integration][Writeback]
+:::image type="content" border="true" source="media/concept-sspr-howitworks/password-writeback-enabled.png" alt-text="Screenshot of password writeback enabled for Microsoft Entra ID to an on-premises integration.":::
+
 
 Microsoft Entra ID checks your current hybrid connectivity and provides one of the following messages in the Microsoft Entra admin center:
 
