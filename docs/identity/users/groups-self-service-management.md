@@ -31,7 +31,7 @@ Groups created in | Security group default behavior | Microsoft 365 group defaul
 ------------------ | ------------------------------- | ---------------------------------
 [Microsoft Graph PowerShell](/entra/identity/users/groups-settings-v2-cmdlets) | Only owners can add members.<br>Visible but not available to join in MyApp Groups Access Panel. | Open to join for all users.
 [Azure portal](https://portal.azure.com) | Only owners can add members.<br>Visible but not available to join in MyApps Groups Access Panel.<br>Owner isn't assigned automatically at group creation. | Open to join for all users.
-[MyApps Groups Access Panel](https://myaccount.microsoft.com/groups) | Users can request access to join groups here.<br>Membership options can be changed when a group is created. | Open to join for all users.<br>Membership options can be changed when a group is created.
+[MyApps Groups Access Panel](https://myaccount.microsoft.com/groups) | Users can manage groups and request access to join groups here.<br>Membership options can be changed when a group is created. | Open to join for all users.<br>Membership options can be changed when a group is created.
 
 ## Self-service group management scenarios
 
