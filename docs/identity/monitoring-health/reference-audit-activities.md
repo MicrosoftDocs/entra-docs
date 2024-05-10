@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: reference
 ms.subservice: monitoring-health
-ms.date: 04/15/2024
+ms.date: 05/09/2024
 ms.author: sarahlipsey
 ms.reviewer: dhanyahk
 ---
@@ -110,24 +110,24 @@ With [Microsoft Entra ID Governance access reviews](~/id-governance/manage-user-
 
 ## Account provisioning
 
-Each time an account is provisioned in your Microsoft Entra tenant, a log for that account is captured. Automated provisioning, such as with [Microsoft Entra Connect cloud sync](~/identity/hybrid/cloud-sync/what-is-cloud-sync.md), is found in this log. The Account provisioning service only has one audit category in the logs.
+Each time an account is provisioned in your Microsoft Entra tenant, a log for that account is captured. Configuration changes for application provisioning, HR provisioning, cross-tenant synchronization, and [Microsoft Entra Connect cloud sync](~/identity/hybrid/cloud-sync/what-is-cloud-sync.md), are found in this log. The provisioning service only has one audit category in the logs. For actions that the provisioning service performs such as creating users, updating users, and deleting users we recommend using the [provisioning logs](~/identity/monitoring-health/howto-analyze-provisioning-logs.md). For monitoring changes to your provisioning configuration, we recommend using the [audit logs](~/identity/monitoring-health/concept-audit-logs.md).
 
-|Audit Category|Activity|
-|---|---|
-|ProvisioningManagement|Add provisioning configuration|
-|ProvisioningManagement|Delete provisioning configuration|
-|ProvisioningManagement|Disable/pause provisioning configuration|
-|ProvisioningManagement|Enable/restart provisioning configuration|
-|ProvisioningManagement|Enable/start provisioning configuration|
-|ProvisioningManagement|Export|
-|ProvisioningManagement|Import|
-|ProvisioningManagement|Other|
-|ProvisioningManagement|Process escrow|
-|ProvisioningManagement|Quarantine|
-|ProvisioningManagement|Synchronization rule action|
-|ProvisioningManagement|Update attribute mappings or scope|
-|ProvisioningManagement|Update provisioning setting or credentials|
-|ProvisioningManagement|User Provisioning|
+|Audit Category|Activity|Description| 
+|---|---|---|
+|ProvisioningManagement|Add provisioning configuration|A new provisioning configuration has been created.|
+|ProvisioningManagement|Delete provisioning configuration|The provisioning configuration has been deleted.|
+|ProvisioningManagement|Disable/pause provisioning configuration|The provisioning job has been disabled / paused.|
+|ProvisioningManagement|Enable/restart provisioning configuration|The provisioning job as been restarted.|
+|ProvisioningManagement|Enable/start provisioning configuration|The provisioning job has been started.|
+|ProvisioningManagement|Export|The provisioning job has exported a change to the target system (ex: create a user).|
+|ProvisioningManagement|Import|The provisioning service has imported the object from the source system (ex: import the user properties in Entra).|
+|ProvisioningManagement|Other||
+|ProvisioningManagement|Process escrow||
+|ProvisioningManagement|Quarantine|There provisioning job is executing at a reduced frequency due to issues such as a lack of connectivity to the target application. [Learn more](~/identity/app-provisioning/application-provisioning-quarantine-status.md)|
+|ProvisioningManagement|Synchronization rule action||
+|ProvisioningManagement|Update attribute mappings or scope|The attribute mappings or scoping rules for the provisioning job have been updated.|
+|ProvisioningManagement|Update provisioning setting or credentials|The settings on your provisioning job (ex: notification email change, sync all vs. sync assigned users and groups, accidental deletions prevention) have been updated. The credentials for your provisioning job (ex: add a new bearer token) have been updated.|
+|ProvisioningManagement|User Provisioning|The schema for the provisioning job has been restarted.|
 
 ## Application proxy
 
