@@ -5,7 +5,7 @@ description: Learn how to troubleshoot common problems and resolution steps for 
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: troubleshooting
-ms.date: 09/13/2023
+ms.date: 05/10/2024
 
 ms.author: justinha
 author: justinha
@@ -127,6 +127,7 @@ Use the following information to understand the problem and what needs to be cor
 | UserNotProperlyConfigured = 14 | We're sorry, you can't reset your password at this time because necessary information is missing from your account. There is no further action you can take to resolve this situation. Contact you admin and ask them to reset your password for you. After you have access to your account again, you need to register the necessary information.<br /><br />To register information, follow the steps in the [Register for self-service password reset](https://support.microsoft.com/account-billing/register-the-password-reset-verification-method-for-a-work-or-school-account-47a55d4a-05b0-4f67-9a63-f39a43dbe20a) article. | SSPR_0014: Additional security info is needed to reset your password. To proceed, contact your admin and ask them to reset your password. After you have access to your account, you can register additional security info at https://aka.ms/ssprsetup. Your admin can add additional security info to your account by following the steps in [Set and read authentication data for password reset](howto-sspr-authenticationdata.md). |
 | OnPremisesAdminActionRequired = 29 | We're sorry, we can't reset your password at this time because of a problem with your organization's password reset configuration. There is no further action you can take to resolve this situation. Contact your admin and ask them to investigate. <br /><br />Or<br /><br />We cannot reset your password at this time because of a problem with your organization's password reset configuration. There is no further action you can take to resolve this issue. Contact your admin and ask them to investigate.<br /><br />To learn more about the potential problem, see [Troubleshoot password writeback](troubleshoot-sspr-writeback.md). | SSPR_0029: We are unable to reset your password due to an error in your on-premises configuration. Contact your admin and ask them to investigate. |
 | OnPremisesConnectivityError = 30 | We're sorry, we can't reset your password at this time because of connectivity issues to your organization. There is no action to take right now, but the problem might be resolved if you try again later. If the problem persists, contact your admin and ask them to investigate.<br /><br />To learn more about connectivity issues, see [Troubleshoot password writeback connectivity](troubleshoot-sspr-writeback.md). | SSPR_0030: We can't reset your password due to a poor connection with your on-premises environment. Contact your admin and ask them to investigate.|
+| OnPremisesSuccessCloudFailure | We've reset your password successfully, but you'll have to wait a few minutes before the changes are committed to the cloud.  After these changes are committed, you'll be able to use your new password wherever you sign in with a work or school account. | Password reset was successful on-premises, but there was an error while writing to the cloud. The error might be caused by a timeout, or a cloud password policy, throttling, or other reasons. |
 
 <a name='azure-ad-forums'></a>
 
