@@ -16,6 +16,9 @@ ms.collection: M365-identity-device-management
 
 # Configure Microsoft cloud settings for B2B collaboration
 
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
+
 When Microsoft Entra organizations in separate Microsoft Azure clouds need to collaborate, they can use Microsoft cloud settings to enable Microsoft Entra B2B collaboration. B2B collaboration is available between the following global and sovereign Microsoft Azure clouds:
 
 - Microsoft Azure commercial cloud and Microsoft Azure Government
