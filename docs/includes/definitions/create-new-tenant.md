@@ -15,7 +15,7 @@ ms.custom: Identity-Managed-Definition
 
 1. Select **Create**.
 
-   :::image type="content" source="/media/create-new-tenant/portal.png" alt-text="Screenshot of Microsoft Entra ID - Overview page - Create a tenant.":::
+   :::image type="content" source="media/create-new-tenant/portal.png" alt-text="Screenshot of Microsoft Entra ID - Overview page - Create a tenant.":::
 
 1. On the Basics tab, select the type of tenant you want to create, either **Microsoft Entra ID** or **Microsoft Entra ID (B2C)**.
 
@@ -23,7 +23,7 @@ ms.custom: Identity-Managed-Definition
 
 1. On the Configuration tab, enter the following information:
 
-   :::image type="content" source="/media/create-new-tenant/create-new-tenant.png" alt-text="Screenshot of Microsoft Entra ID - Create a tenant page - configuration tab.":::
+   :::image type="content" source="media/create-new-tenant/create-new-tenant.png" alt-text="Screenshot of Microsoft Entra ID - Create a tenant page - configuration tab.":::
 
    - Type your desired Organization name (for example *Contoso Organization*) into the **Organization name** box.
    - Type your desired Initial domain name (for example *Contosoorg*) into the **Initial domain name** box.
