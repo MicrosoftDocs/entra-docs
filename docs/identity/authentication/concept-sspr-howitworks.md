@@ -118,7 +118,7 @@ If a user doesn't register the minimum number of required methods, they see an e
 
 #### Mobile app and SSPR
 
-When using a mobile app as a method for password reset, like Microsoft Authenticator, the following considerations apply if an organization has not [migrated to the centralized Authentication methods policy](how-to-authentication-methods-manage.md):
+When using a mobile app as a method for password reset, like Microsoft Authenticator, the following considerations apply if an organization hasn't [migrated to the centralized Authentication methods policy](how-to-authentication-methods-manage.md):
 
 * When administrators require one method be used to reset a password, verification code is the only option available.
 * When administrators require two methods be used to reset a password, users are able to use notification **OR** verification code in addition to any other enabled methods.
@@ -209,11 +209,11 @@ SSPR performs the equivalent of an admin-initiated password reset in Active Dire
 
 Password reset and change are fully supported on all business-to-business (B2B) configurations. B2B user password reset is supported in the following three cases:
 
-* **Users from a partner organization with an existing Microsoft Entra tenant**: If the organization you partner with has an existing Microsoft Entra tenant, we respect whatever password reset policies are enabled on that tenant. For password reset to work, the partner organization just needs to make sure that Microsoft Entra SSPR is enabled. There is no additional charge for Microsoft 365 customers.
-* **Users who sign up through** self-service sign-up: If the organization you partner with used the [self-service sign-up](~/identity/users/directory-self-service-signup.md) feature to get into a tenant, we let them reset the password with the email they registered.
+* **Users from a partner organization with an existing Microsoft Entra tenant**: If your partner has a Microsoft Entra tenant, we respect whatever password reset policies are enabled on that tenant. For password reset to work, the partner organization just needs to make sure that Microsoft Entra SSPR is enabled. There's no other charge for Microsoft 365 customers.
+* **Users who sign up through** self-service sign-up: If your partner used the [self-service sign-up](~/identity/users/directory-self-service-signup.md) feature to get into a tenant, we let them reset the password with the email they registered.
 * **B2B users**: Any new B2B users created by using the new [Microsoft Entra B2B capabilities](~/external-id/what-is-b2b.md) can also reset their passwords with the email they registered during the invite process.
 
-To test this scenario, go to `https://passwordreset.microsoftonline.com` with one of these partner users. If they define an alternate email or authentication email, password reset works as expected.
+To test this scenario, go to `https://passwordreset.microsoftonline.com` with one of these partner users. If the user defined an alternate email or authentication email, password reset works as expected.
 
 > [!NOTE]
 > Microsoft accounts that are granted guest access to your Microsoft Entra tenant, such as those from Hotmail.com, Outlook.com, or other personal email addresses, can't use Microsoft Entra SSPR. For more information, see [When you can't sign in to your Microsoft account](https://support.microsoft.com/help/12429/microsoft-account-sign-in-cant).
