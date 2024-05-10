@@ -110,7 +110,7 @@ With [Microsoft Entra ID Governance access reviews](~/id-governance/manage-user-
 
 ## Account provisioning
 
-Each time an account is provisioned in your Microsoft Entra tenant, a log for that account is captured. Configuration changes for application provisioning, HR provisioning, cross-tenant synchronization, and [Microsoft Entra Connect cloud sync](~/identity/hybrid/cloud-sync/what-is-cloud-sync.md), are found in this log. The provisioning service only has one audit category in the logs. For actions that the provisioning service performs such as creating users, updating users, and deleting users we recommend using the [provisioning logs](~/identity/monitoring-health/howto-analyze-provisioning-logs.md). For monitoring changes to your provisioning configuration, we recommend using the [audit logs](~/identity/monitoring-health/concept-audit-logs.md).
+Configuration changes for application provisioning, HR provisioning, cross-tenant synchronization, and [Microsoft Entra Connect cloud sync](~/identity/hybrid/cloud-sync/what-is-cloud-sync.md), are found in this log. The provisioning service only has one audit category in the logs. For actions that the provisioning service performs such as creating users, updating users, and deleting users we recommend using the [provisioning logs](~/identity/monitoring-health/howto-analyze-provisioning-logs.md). For monitoring changes to your provisioning configuration, we recommend using the [audit logs](~/identity/monitoring-health/concept-audit-logs.md).
 
 |Audit Category|Activity|Description| 
 |---|---|---|
