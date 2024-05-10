@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-permissions-management
 
 ms.topic: how-to
-ms.date: 12/20/2023
+ms.date: 05/10/2024
 ms.author: jfields
 ---
 
@@ -15,7 +15,7 @@ ms.author: jfields
 This article describes how to onboard a Google Cloud Platform (GCP) project in Microsoft Entra Permissions Management.
 
 > [!NOTE]
-> You must have the Global Administrator role assignment to perform the tasks in this article.
+> You must have the [Permissions Management Administrator](../identity/role-based-access-control/delegate-by-task.md/#permissions-management) role assignment to perform the tasks in this article.
 
 ## Explanation
 

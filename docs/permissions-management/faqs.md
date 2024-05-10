@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-permissions-management
 
 ms.topic: faq
-ms.date: 04/19/2024
+ms.date: 05/10/2024
 ms.author: jfields
 ---
 
@@ -117,7 +117,7 @@ Integration with ITMS tools, such as ServiceNow, is in the future roadmap.
 
 ## How is Permissions Management being deployed?
 
-Customers with Global Administrator role have first to onboard Permissions Management on their Microsoft Entra tenant, and then onboard their AWS accounts, GCP projects, and Azure subscriptions. More details about onboarding can be found in our product documentation.
+Customers assigned the [Permissions Management Administrator](../identity/role-based-access-control/delegate-by-task.md/#permissions-management) role must first onboard Permissions Management to their Microsoft Entra tenant, and then onboard their AWS accounts, GCP projects, and Azure subscriptions. More details about onboarding can be found in our [product documentation](onboard-enable-tenant.md).
 
 ## How long does it take to deploy Permissions Management?
 
