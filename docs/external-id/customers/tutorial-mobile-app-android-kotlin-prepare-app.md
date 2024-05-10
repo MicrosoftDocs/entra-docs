@@ -10,7 +10,7 @@ ms.service: entra-external-id
 
 ms.subservice: customers
 ms.topic: tutorial
-ms.date: 05/09/2024
+ms.date: 05/10/2024
 ms.custom: developer
 #Customer intent: As a developer, I want to learn how to prepare Android (Kotlin) app for authentication using Microsoft Entra External ID.
 ---
