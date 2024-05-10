@@ -98,7 +98,3 @@ Finally, it executes the request synchronously using OkHttp's `newCall()` method
 - [Sign in users and call a protected web API in sample Android (Kotlin) app](sample-mobile-app-android-kotlin-sign-in-call-api.md)
 - [Sign in users in sample Android (Kotlin) mobile app by using native authentication](how-to-run-native-authentication-sample-android-app.md)
 - [Tutorial: Prepare your Android mobile app for native authentication](tutorial-native-authentication-prepare-android-app.md)
-
-
-
-
