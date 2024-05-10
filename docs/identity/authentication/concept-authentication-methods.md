@@ -62,20 +62,22 @@ The following table outlines when an authentication method can be used during a 
 |--------------------------------|:----------------------:|:-------------------------:|
 | Windows Hello for Business     | Yes                    | MFA\*                     |
 | Microsoft Authenticator (Push) | No                     | MFA and SSPR              |
-| Microsoft Authenticator (Passwordless) | Yes            | No\*                        |
+| Microsoft Authenticator (Passwordless) | Yes            | No\*                      |
 | Authenticator Lite             | No                     | MFA                       |
 | Passkey (FIDO2)                | Yes                    | MFA                       |
-| Certificate-based authentication | Yes                  | MFA                        |
+| Certificate-based authentication | Yes                  | MFA                       |
 | OATH hardware tokens (preview) | No                     | MFA and SSPR              |
 | OATH software tokens           | No                     | MFA and SSPR              |
 | Temporary Access Pass (TAP)    | Yes                    | MFA                       |
 | SMS                            | Yes                    | MFA and SSPR              |
-| Voice call                     | No                     | MFA and SSPR              |
+| Voice call                     | No                     | MFA and SSPR\*            |
 | Password                       | Yes                    | No                        |
 
 > \* Windows Hello for Business, by itself, does not serve as a step-up MFA credential. For example, an MFA Challenge from Sign-in Frequency or SAML Request containing forceAuthn=true. Windows Hello for Business can serve as a step-up MFA credential by being used in FIDO2 authentication. This requires users to be registered for FIDO2 authentication to work successfully.
 
 > \* Passwordless sign-in can be used for secondary authentication only if certificate-based authentication (CBA) is used for primary authentication. For more information, see [Microsoft Entra certificate-based authentication technical deep dive](/entra/identity/authentication/concept-certificate-based-authentication-technical-deep-dive#mfa-with-single-factor-certificate-based-authentication-preview).
+
+> \* Primary and office phone methods can be used for voice call MFA and SSPR. However, alternate phone methods can only be used for voice call MFA, and are not available for SSPR.
 
 All of these authentication methods can be configured in the Microsoft Entra admin center, and increasingly using the [Microsoft Graph REST API](/graph/api/resources/authenticationmethods-overview).
 
