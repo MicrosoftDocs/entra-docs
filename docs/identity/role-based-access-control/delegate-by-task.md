@@ -51,6 +51,7 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | [Configure B2B external collaboration settings - Guest user access](../../external-id/external-collaboration-settings-configure.md) | [Privileged Role Administrator](permissions-reference.md#privileged-role-administrator) |  |
 > | [Configure B2B external collaboration settings - Guest invite settings](../../external-id/external-collaboration-settings-configure.md) | [Guest Inviter](permissions-reference.md#guest-inviter) | [External ID User Flow Administrator](permissions-reference.md#external-id-user-flow-administrator) |
 > | [Configure B2B external collaboration settings - External user leave settings](../../external-id/external-collaboration-settings-configure.md) | [External Identity Provider Administrator](permissions-reference.md#external-identity-provider-administrator) |  |
+> | [Configure B2B external collaboration settings - Collaboration restrictions](../../external-id/external-collaboration-settings-configure.md) | [Global Administrator](permissions-reference.md#global-administrator) |  |
 > | Read all configuration | [Global Reader](permissions-reference.md#global-reader) |  |
 > | [Read B2C audit logs](/azure/active-directory-b2c/faq) | [Global Reader](permissions-reference.md#global-reader) |  |
 
