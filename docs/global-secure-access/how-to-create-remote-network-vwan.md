@@ -137,7 +137,7 @@ Navigate to the Remote network page to view the details of the new remote networ
     - **Link IP address / FQDN**: Use the Endpoint address.
     - **Link BGP address**: Use the BGP address.
     - **Link ASN**: Use the ASN.
-:::image type="content" source="media/how-to-create-remote-network-vwan/create-vwan-create-new-vpn-site-links_enhanced.png" alt-text="Screenshot of the Create VPN page, on the Links tab, with completed fields." lightbox="media/how-to-create-remote-network-vwan/create-vwan-create-new-vpn-site-links-expanded.png"::: 
+:::image type="content" source="media/how-to-create-remote-network-vwan/create-vwan-create-new-vpn-site-links-enhanced.png" alt-text="Screenshot of the Create VPN page, on the Links tab, with completed fields." lightbox="media/how-to-create-remote-network-vwan/create-vwan-create-new-vpn-site-links_expanded.png"::: 
 
 1. Select **Review + create**.
 1. Select **Create**.
