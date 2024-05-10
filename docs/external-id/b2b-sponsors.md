@@ -16,6 +16,8 @@ ms.collection: M365-identity-device-management
 ---
 # Sponsors field for B2B users
 
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
+
 To ensure proper governance of B2B users in their directory, organizations need to have a system in place for tracking who oversees each guest user. Currently, [Entitlement Management](/entra/id-governance/entitlement-management-overview) provides this capability for guests within specified domains, but it doesn't extend to guests outside of these domains.
 By implementing the sponsor feature, you can identify a responsible individual or group for each guest user. This allows you to track who invited the guest user and to help with accountability.
 
