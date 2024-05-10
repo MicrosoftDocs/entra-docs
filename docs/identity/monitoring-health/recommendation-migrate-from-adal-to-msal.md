@@ -37,10 +37,10 @@ MSAL is designed to enable a secure solution without developers having to worry 
 
 ## Action plan
 
-To identify and get details of all applications in your tenant that are currently using ADAL, you can use Sign-In Workbook. To get the list of all apps programmatically, you can also use Microsoft Graph API or the Microsoft Graph PowerShell SDK.
+To identify and get details of all applications in your tenant that are currently using ADAL, you can use Sign-ins Workbook. To get the list of all apps programmatically, you can also use Microsoft Graph API or the Microsoft Graph PowerShell SDK.
 
-### [Sign-In Workbook](#tab/Sign-In-Workbook)
-The Sign-ins Workbook in the Azure portal consolidates logs from various types of sign-in events, including interactive, non-interactive, and service principal sign-ins. This aggregation offers detailed insights into the usage of ADAL applications across your tenant to help you fully understand and manage migration of your ADAL applications.  For a more detailed analysis and deeper investigation of ADAL app authentication data, you can enable the [Microsoft Entra Sign-ins workbook](~/identity-platform/howto-get-list-of-all-auth-library-apps.md) in your tenant. This tool supports the migration by providing comprehensive sign-in data insights.
+### [Sign-ins Workbook](#tab/Sign-ins-Workbook)
+The Sign-ins Workbook in the Azure portal consolidates logs from various types of sign-in events, including interactive, non-interactive, and service principal sign-ins. This aggregation offers detailed insights into the usage of ADAL applications across your tenant to help you fully understand and manage migration of your ADAL applications.  For a more detailed analysis and deeper investigation of ADAL app sign-in data, you can enable the [Microsoft Entra Sign-ins workbook](~/identity-platform/howto-get-list-of-all-auth-library-apps.md) in your tenant. This tool supports the migration by providing comprehensive sign-in data insights.
 
 
 ### [Microsoft Graph API](#tab/Microsoft-Graph-API)
@@ -69,8 +69,7 @@ The following response provides the details of the impacted resources using ADAL
     "displayName": "sample-adal-app",
     "owner": null,
     "rank": 1,
-    "portalUrl": "
-df.onecloud.azure-test.net/#view/Microsoft_AAD_RegisteredApps/ApplicationMenuBlade/~/Branding/appId/{0}"
+    "portalUrl": "df.onecloud.azure-test.net/#view/Microsoft_AAD_RegisteredApps/ApplicationMenuBlade/~/Branding/appId/{0}",
     "apiUrl": null,
     "status": "completedBySystem",
     "additionalDetails": [
@@ -133,7 +132,7 @@ You can find the detailed steps here [Microsoft Entra Sign-ins workbook](~/ident
 
 ## Next steps
 
-- [Learn how to enable Sign-In Workbook in your tenant](~/identity-platform/howto-get-list-of-all-auth-library-apps.md)
+- [Learn how to enable Sign-ins Workbook in your tenant](~/identity-platform/howto-get-list-of-all-auth-library-apps.md)
 - [Review the Microsoft Entra recommendations overview](overview-recommendations.md)
 - [Learn how to use Microsoft Entra recommendations](howto-use-recommendations.md)
 - [Explore the Microsoft Graph API properties for recommendations](/graph/api/resources/recommendation)

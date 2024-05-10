@@ -31,13 +31,13 @@ Below, we provide comprehensive instructions on accessing the workbook and subse
 
 ## Step 1: Send Microsoft Entra sign-in events to Azure Monitor
 
-Microsoft Entra ID doesn't send sign-in events to Azure Monitor by default, which the Sign-ins workbook in Azure Monitor requires.
+Microsoft Entra ID doesn't send sign-in events to Azure Monitor by default, which the Sign-ins Workbook in Azure Monitor requires.
 
 Configure AD to send sign-in events to Azure Monitor by following the steps in [Integrate your Microsoft Entra sign-in and audit logs with Azure Monitor](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.yml). In the **Diagnostic settings** configuration step, select the **SignInLogs** check box.
 
 No sign-in event that occurred *before* you configure Microsoft Entra ID to send the events to Azure Monitor will appear in the Sign-ins workbook.
 
-## Step 2: Access sign-ins workbook in Azure portal
+## Step 2: Access Sign-ins workbook in Azure portal
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
@@ -68,7 +68,7 @@ To thoroughly assess the impact of ADAL applications within your tenant, it's cr
 - **ADAL Version**: Specific version of ADAL used by the application.
 - **IP Address**: Displays the client's IP address from which the sign-in attempt originated.
 - **Location**: Provides the city, state, country/region and  from where the sign-in request was made.
-- **SignIns by Device** : Shares the details of the OS of the device including the specific version. 
+- **Sign-in by Device** : Shares the details of the OS of the device including the specific version. 
 
 To access this enhanced data view, apply custom filters and queries within the workbook. This information not only aids in identifying critical applications but also helps in planning the migration strategy by prioritizing applications based on their usage and exposure level.
 
