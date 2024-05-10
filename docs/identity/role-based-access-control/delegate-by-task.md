@@ -50,7 +50,9 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | Create, read, update, and delete sign-up user flow | [External ID User Flow Administrator](permissions-reference.md#external-id-user-flow-administrator) |  |
 > | Create, read, update, and delete user attributes | [External ID User Flow Attribute Administrator](permissions-reference.md#external-id-user-flow-attribute-administrator) |  |
 > | Create, read, update, and delete users | [User Administrator](permissions-reference.md#user-administrator) |  |
-> | Configure B2B external collaboration settings | [Global Administrator](permissions-reference.md#global-administrator) |  |
+> | Configure B2B external collaboration settings - Guest user access | [Privileged Role Administrator](permissions-reference.md#privileged-role-administrator) |  |
+> | Configure B2B external collaboration settings - Guest invite settings | [Guest Inviter](permissions-reference.md#guest-inviter) | [External ID User Flow Administrator](permissions-reference.md#external-id-user-flow-administrator) |
+> | Configure B2B external collaboration settings - External user leave settings | [External Identity Provider Administrator](permissions-reference.md#external-identity-provider-administrator) |  |
 > | Read all configuration | [Global Reader](permissions-reference.md#global-reader) |  |
 > | [Read B2C audit logs](/azure/active-directory-b2c/faq) | [Global Reader](permissions-reference.md#global-reader) |  |
 
