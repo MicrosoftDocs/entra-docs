@@ -111,6 +111,8 @@ You have two main options for signing in users using Microsoft Authentication Li
     
     In the `onError` method, it logs authentication failure along with the exception details. In the `onCancel` method, it logs when the user cancels the authentication process.
 
+    Make sure you include the import statements. Android Studio should include the import statements for you automatically.
+
 1. To sign in user silently, use the following code:
 
     ```kotlin
@@ -181,6 +183,8 @@ You have two main options for signing in users using Microsoft Authentication Li
 
     In the `onError` method, it logs authentication failure, handles different types of exceptions, such as `MsalClientException` and `MsalServiceException`, and suggests retrying with interactive authentication if needed.
 
+    Make sure you include the import statements. Android Studio should include the import statements for you automatically.
+
 
 ## Sign out
 
@@ -218,6 +222,8 @@ The code defines a sign-out callback for a single account in the public client a
 
 In the `onSignOut` method, it nullifies the current account and updates the user interface accordingly. In the `onError` method, it logs any errors that occur during the sign-out process and updates the text log with the corresponding exception message.
 
+Make sure you include the import statements. Android Studio should include the import statements for you automatically.
+
 ## Next steps
 
-[](tutorial-mobile-app-android-kotlin-sign-in-call-api.md)
+[Tutorial: Call a protected web API in Android (Kotlin) app](tutorial-mobile-app-android-kotlin-sign-in-call-api.md)
