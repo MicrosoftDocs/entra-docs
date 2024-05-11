@@ -141,7 +141,6 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | Consent to applications accessing own data | [Default user role](~/fundamentals/users-default-permissions.md) |  |
 > | Create enterprise application | [Cloud Application Administrator](permissions-reference.md#cloud-application-administrator) | [Application Administrator](permissions-reference.md#application-administrator) |
 > | Manage Application Proxy | [Application Administrator](permissions-reference.md#application-administrator) |  |
-> | Manage user settings | [Global Administrator](permissions-reference.md#global-administrator) |  |
 > | Read access review of a group or of an app | [Security Reader](permissions-reference.md#security-reader) | [Security Administrator](permissions-reference.md#security-administrator)<br/>[User Administrator](permissions-reference.md#user-administrator) |
 > | Read all configuration | [Default user role](~/fundamentals/users-default-permissions.md) |  |
 > | Update enterprise application assignments | [Enterprise application owner](~/fundamentals/users-default-permissions.md#object-ownership) | [Cloud Application Administrator](permissions-reference.md#cloud-application-administrator)<br/>[Application Administrator](permissions-reference.md#application-administrator)<br/>[User Administrator](permissions-reference.md#user-administrator) |
@@ -403,7 +402,10 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | Update User Principal Name for limited admins | [User Administrator](permissions-reference.md#user-administrator) |  |
 > | Update User Principal Name property on privileged admins | [Privileged Authentication Administrator](permissions-reference.md#privileged-authentication-administrator) |  |
 > | Update user settings - Default user role permissions | [Privileged Role Administrator](permissions-reference.md#privileged-role-administrator) |  |
-> | Update user settings - Guest user access | [Privileged Role Administrator](permissions-reference.md#privileged-role-administrator) |  |
+> | [Update user settings - Guest user access](../users/users-restrict-guest-permissions.md) | [Privileged Role Administrator](permissions-reference.md#privileged-role-administrator) |  |
+> | Update user settings - Administration center | [Global Administrator](permissions-reference.md#global-administrator) |  |
+> | [Update user settings - LinkedIn account connections](../users/linkedin-integration.md) | [Global Administrator](permissions-reference.md#global-administrator) |  |
+> | [Update user settings - Show keep user signed in](../../fundamentals/how-to-manage-stay-signed-in-prompt.yml) | [Global Administrator](permissions-reference.md#global-administrator) |  |
 > | Update Authentication methods | [Authentication Administrator](permissions-reference.md#authentication-administrator) | [Privileged Authentication Administrator](permissions-reference.md#privileged-authentication-administrator) |
 
 ## Support
