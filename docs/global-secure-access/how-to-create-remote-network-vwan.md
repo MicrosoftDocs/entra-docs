@@ -143,11 +143,21 @@ Navigate to the Remote network page to view the details of the new remote networ
 1. Select **Create**.
 
 ### Create a site-to-site connection
-Next, remove the default hub association:
+In this step, associate the VPN site from the previous step with the hub. Next, remove the default hub association:
 1. Navigate to **Connectivity** > **VPN (Site to site)**.
-1. By default, the **Hub association : Connected to this hub** filter is applied. Select the **X** to remove this filter.
+1. Select the **X** to remove the default **Hub association : Connected to this hub** filter so the VPN site appears on the list of available VPN sites.
+:::image type="content" source="media/how-to-create-remote-network-vwan/clear-hub-association-filter.png" alt-text="Screenshot of the VPN (Site to site) page with the X highlighted for the hub association filter." lightbox="media/how-to-create-remote-network-vwan/clear-hub-association-filter-expanded.png":::
 
-## Validate the VPN connection
+1. Select the VPN site from the list and select **Connect VPN sites**.
+1. In the Connect sites form, type the same **Pre-shared key (PSK)** used for the Entra admin center.
+1. Select **Connect**.
+1. After about 30 minutes, the VPN site will update to show that the **Connection provisioning status** has succeeded and the **Connectivity status** is connected.
+:::image type="content" source="media/how-to-create-remote-network-vwan/provisioning-status-succeeded.png" alt-text="Screenshot of the VPN (Site to site) page showing the green checkmarks that indicate that the Connection provisioning has succeeded and the Connectivity is connected." lightbox="media/how-to-create-remote-network-vwan/provisioning-status-succeeded-expanded.png":::
+
+### Check BGP connectivity and learned routes in Microsoft Azure portal
+In this step...
+
+### Check connectivity in Microsoft Entra admin center
 In this step...
 
 ## Test security features with Azure virtual Desktop (AVD)
