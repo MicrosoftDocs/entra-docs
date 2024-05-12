@@ -114,7 +114,7 @@ Alternatively, users can set up a passkey in the Authenticator by navigating to 
       - Open **Passwords**, and select **Password Options**.
       - Ensure **Autofill Passwords and and Passkeys** is turned on. 
       - Under **Use Passwords and Passkeys From**, select **Authenticator**. 
-      - Return to **My Security info** and select **Continue**. 
+      - Return to [My Security info](https://aka.ms/mysecurityinfo) and select **Continue**. 
 
       :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey-turn-on-support.png" alt-text="Screenshot of the turn-on passkey support option in Microsoft Authenticator for iOS devices.":::
 
@@ -126,7 +126,7 @@ Alternatively, users can set up a passkey in the Authenticator by navigating to 
 
       :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey-create-passkey.png" alt-text="Screenshot of the save passkey option in Microsoft Authenticator for iOS devices.":::
 
-1. Once the passkey is successfully created on your device, you're directed back to **My Security info**. 
+1. Once the passkey is successfully created on your device, you're directed back to [My Security info](https://aka.ms/mysecurityinfo). 
 1. Name the passkey something memorable to you, and select **Done**. 
 
       :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey-ios-success.png" alt-text="Screenshot of the successful creation of a passkey in Microsoft Authenticator for iOS devices.":::
@@ -179,7 +179,7 @@ You can also save a passkey in Authenticator from your computer or another mobil
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/choose-where-to-save.png" alt-text="Screenshot that lets user choose where to save their passkey.":::
 
    > [!NOTE]
-   > Options displayed vary depending on your browser and device operating system. If the device where you started the registration process supports passkeys, you'll be asked to save the passkey to that device. Select **Use another device** or **More options** to display additional ways for you to save the passkey.
+   > Options displayed vary depending on your browser and device operating system. If the device where you started the registration process supports passkeys, you're asked to save the passkey to that device. Select **Use another device** or **More options** to see other ways you can save the passkey.
 
 1. Use the system camera app to scan the QR code, then tap **Save a passkey**.
 
@@ -196,7 +196,7 @@ You can also save a passkey in Authenticator from your computer or another mobil
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey-create-passkey.png" alt-text="Screenshot of save passkey in Microsoft Authenticator for iOS devices.":::
 
-1. Once the passkey is successfully created on your device, you're directed back to **My Security info**, tap **Done**. 
+1. Once the passkey is successfully created on your device, you're directed back to [My Security info](https://aka.ms/mysecurityinfo), tap **Done**. 
 1. Name the passkey something memorable to you and select **Done**.
    
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/success.png" alt-text="Screenshot where user can change friendly name of the new sign-in method.":::
@@ -212,7 +212,7 @@ To remove the passkey from Authenticator, click the *Trash* icon, then tap **Del
 
 ## Troubleshooting
 
-In some cases when you try to register a passkey, it gets stored locally in the Authenticator app but not registered on the authentication server. For example, the passkey provider might not be permitted, or the connection might time out. If you see an error that the passkey already exists when you try to register, you need to first delete the passkey that was created locally in the Authenticator app before you can retry registration.
+In some cases when you try to register a passkey, it gets stored locally in the Authenticator app but not registered on the authentication server. For example, the passkey provider might not be permitted, or the connection might time out. If you try to register a passkey and see an error that the passkey already exists, delete the passkey that was created locally in the Authenticator app, and retry registration.
 
 To remove the passkey from Authenticator, click the *Trash* icon, then tap **Delete** to confirm.
 
@@ -238,7 +238,7 @@ You can sign in to Authenticator to create a passkey in the app and get seamless
 
    :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-android/work-school-account-android.png" alt-text="Screenshot of choosing Work or School Account using Microsoft Authenticator for Android devices.":::
 
-1. Tap Sign in.
+1. Tap **Sign in**.
 
    :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-android/tap-sign-in-android.png" alt-text="Screenshot of tapping the Sign in option using Microsoft Authenticator for Android devices.":::
 
@@ -298,7 +298,7 @@ Alternatively, users can set up a passkey in the Authenticator by navigating to 
       - On your Android device, open the **Settings app**.
       - Open **Passwords & Accounts**.
       - Under **Additional providers** enable **Authenticator**. 
-      - Return to **My Security info** and select **Continue**.
+      - Return to [My Security info](https://aka.ms/mysecurityinfo) and select **Continue**.
   
         :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/passkey-android-add-support.png" alt-text="Screenshot of the turn-on passkey support option in Microsoft Authenticator for Android devices.":::
          
@@ -327,7 +327,7 @@ Alternatively, users can set up a passkey in the Authenticator by navigating to 
 
       :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/passkey-android-success.png" alt-text="Screenshot of successfully creating of a passkey in Microsoft Authenticator for Android devices.":::
 
-1. Once the passkey is successfully created on your device, you're directed back to **My Security info**.
+1. Once the passkey is successfully created on your device, you're directed back to [My Security info](https://aka.ms/mysecurityinfo).
 
       :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/done.png" alt-text="Screenshot of passkey saved in MySecurityInfo.":::
 
@@ -339,12 +339,12 @@ Alternatively, users can set up a passkey in the Authenticator by navigating to 
 
 You can choose to attempt passkey registration from your computer or another mobile device.
 
-1. Open a web browser and sign in to [My Security info](https://mysignins.microsoft.com/security-info).
-1. Tap **+ Add sign-in method** > **Choose a method** > **Passkey in Microsoft Authenticator (preview)** > **Add**.
+1. Open a web browser and sign in to [My Security info](https://aka.ms/mysecurityinfo).
+1. Tap **+ Add sign-in method** > choose **Passkey in Microsoft Authenticator (preview)** > **Add**.
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/add-passkey-authenticator.png" alt-text="Screenshot of how to add passkey in Microsoft Authenticator as a sign-in method for Android devices.":::
 
-1. Sign in with multifactor authentication (MFA) before you can add a passkey, then tap **Next**.   
+1. Sign in with multifactor authentication (MFA), then tap **Next**.   
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/set-up-passkey.png" alt-text="Screenshot that notifies user to sign in with a second factor before they add a passkey for Android devices.":::
 
@@ -356,31 +356,31 @@ You can choose to attempt passkey registration from your computer or another mob
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/choose-device.png" alt-text="Screenshot that lets user choose iOS or Android. Choose Android.":::
 
-1. Follow the steps to turn on Authenticator as a passkey provider in the **Settings app** of your Android device:
-   - On your Android device, open the **Settings app**.
+1. Follow the steps to turn on Authenticator as a passkey provider in **Settings** on your Android device:
+   - On your Android device, open **Settings**.
    - Open **Passwords & Accounts**.
    - Under **Additional providers** enable **Authenticator**. 
-   - Return to **My Security info** and select **Continue**.
+   - Return to [My Security info](https://aka.ms/mysecurityinfo) and select **Continue**.
          
    > [!NOTE]
-   > Enabling passkey providers on Android may vary based on the make and model of your device. Search for passkey on your device settings or consult your device manufacturer for guidance.
+   > The steps to turn on a passkey provider on Android can vary on different devices. Search for passkey on your device settings or check your device help.
 
       :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/turn-on-passkey-android.png" alt-text="Screenshot that notifies user to turn on Authenticator in Settings app on their Android device.":::
 
-1. Open the system camera app on your mobile device. Alternatively, you can use the camera in the Authenticator as well by navigating to "Add work or school account" -> "Scan QR Code".  
+1. Open the system camera app on your mobile device, or tap **Add work or school account** > **Scan QR Code** to use the camera in the Authenticator.  
 
-1. When ready, read the reminder that you must save the passkey in Authenticator and tap **Next** to continue. 
+1. When ready, read the reminder that you must save the passkey in Authenticator, and tap **Next** to continue. 
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/scan.png" alt-text="Screenshot that notifies user to save another way for Android devices.":::
    
 1. A security dialog opens on your device.
    
-1. Tap **iPhone, iPad, or Android device** and tap **Next**.   
+1. Tap **iPhone, iPad, or Android device**, and tap **Next**.   
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/choose-where-to-save.png" alt-text="Screenshot that lets user choose where to save their passkey for Android devices.":::
 
    > [!NOTE]
-   > Options displayed vary depending on your browser and device operating system. If the device where you started the registration process supports passkeys, you'll be asked to save the passkey to that device. Select **Use another device** or **More options** to display additional ways for you to save the passkey.
+   > Options displayed vary depending on your browser and device operating system. If the device where you started the registration process supports passkeys, you're asked to save the passkey to that device. Select **Use another device** or **More options** to see other ways you can save the passkey.
 
 1. Use the camera you have opened to scan the QR code, and then tap **Use passkey**.
 
@@ -394,11 +394,11 @@ You can choose to attempt passkey registration from your computer or another mob
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/device-connected.png" alt-text="Screenshot that notifies user that device is connected for Android devices.":::
    
    > [!NOTE]
-   > Bluetooth and an internet connection are required for this step and must both be enabled on your mobile and remote device. 
+   > Bluetooth and an internet connection are required for this step and both must be enabled on your mobile and remote device. 
 
 1. Your device opens a security window. Save the passkey to Authenticator following the prompts on your device.
    
-1. Once the passkey is successfully created on your device, you're directed back to **My Security info**.
+1. Once the passkey is successfully created on your device, you're directed back to [My Security info](https://aka.ms/mysecurityinfo).
    
 1. Name the passkey something memorable to you and select **Done**. 
 
@@ -415,7 +415,7 @@ To remove the passkey from Authenticator, click the *Trash* icon, then tap **Del
 
 ### Troubleshooting
 
-In some cases when you try to register a passkey, it gets stored locally in the Authenticator app but not registered on the authentication server. For example, the passkey provider might not be permitted, or the connection might time out. If you see an error that the passkey already exists, you need to first delete the passkey that was created locally in the Authenticator app before you can retry registration.
+In some cases when you try to register a passkey, it gets stored locally in the Authenticator app but not registered on the authentication server. For example, the passkey provider might not be permitted, or the connection might time out. If you try to register a passkey and see an error that the passkey already exists, delete the passkey that was created locally in Authenticator, and retry registration.
 
 To remove the passkey from Authenticator, click the *Trash* icon, then tap **Delete** to confirm.
 
