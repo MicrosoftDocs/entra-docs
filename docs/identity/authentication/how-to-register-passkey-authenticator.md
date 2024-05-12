@@ -49,7 +49,7 @@ For seamless single sign-on (SSO) across Microsoft native apps, you can sign in 
 
    :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/work-school-account-ios.png" alt-text="Screenshot of choosing Work or School Account using Microsoft Authenticator for iOS devices.":::
  
-1. Tap Sign in.
+1. Tap **Sign in**.
  
    :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/tap-sign-in-ios.png" alt-text="Screenshot of tapping the Sign in option using Microsoft Authenticator for iOS devices.":::
 
@@ -201,25 +201,20 @@ You can also save a passkey in Authenticator from your computer or another mobil
    
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/success.png" alt-text="Screenshot where user can change friendly name of the new sign-in method.":::
 
-## Deleting your passkey in Authenticator
+## Delete your passkey in Authenticator for iOS
 
 To remove the passkey from Authenticator, click the *Trash* icon, then tap **Delete** to confirm.
 
-:::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey-ios-delete.png" alt-text="Screenshot of the passkey delete option in Microsoft Authenticator for iOS devices.":::
+:::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/passkey-android-delete.png" alt-text="Screenshot of the passkey delete option in Microsoft Authenticator for Android devices.":::
 
 > [!NOTE]
-> You also need to delete the passkey from **Security Info**, using a web browser and logging in to [My Security info](https://aka.ms/mysecurityinfo).
+> You also need to delete the passkey from [My Security info](https://aka.ms/mysecurityinfo). 
 
-## Troubleshooting
+### Troubleshooting
 
-In some cases when you try to register a passkey, it gets stored locally in the Authenticator app but not registered on the authentication server. For example, the passkey provider might not be permitted, or the connection might time out. If you try to register a passkey and see an error that the passkey already exists, delete the passkey that was created locally in the Authenticator app, and retry registration.
+In some cases when you try to register a passkey, it gets stored locally in the Authenticator app but not registered on the authentication server. For example, the passkey provider might not be permitted, or the connection might time out. If you try to register a passkey and see an error that the passkey already exists, [delete the passkey](#delete-your-passkey-in-authenticator-for-ios) that was created locally in Authenticator, and retry registration.
 
-To remove the passkey from Authenticator, click the *Trash* icon, then tap **Delete** to confirm.
-
-:::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey-ios-delete.png" alt-text="Screenshot of the passkey delete option in Microsoft Authenticator for iOS devices.":::
-
-> [!NOTE]
-> You also need to delete the passkey from [My Security info](https://aka.ms/mysecurityinfo).  
+:::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/passkey-android-delete.png" alt-text="Screenshot of the passkey delete option in Microsoft Authenticator for Android devices."::: 
 
 ## [**Android**](#tab/Android)
 
@@ -250,7 +245,7 @@ For seamless single sign-on (SSO) across Microsoft native apps, you can sign in 
 
    :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-android/passkey-provider-android.png" alt-text="Screenshot of Open Settings and follow the on-screen instructions using Microsoft Authenticator for Android devices."::: 
  
-1. Open **Passwords and accounts** .
+1. Open **Passwords and accounts**.
  
    :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-android/password-options-android.png" alt-text="Screenshot of select Passwords and Password Options using Microsoft Authenticator for Android devices.":::
 
@@ -262,7 +257,7 @@ For seamless single sign-on (SSO) across Microsoft native apps, you can sign in 
  
    :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-android/passkey-done-android.png" alt-text="Screenshot of selecting Continue to complete using Microsoft Authenticator for Android devices.":::
 
-1. Authenticator sets up passkey, passwordless, and/or MFA for sign-in according to your work or school account policies.
+1. Authenticator sets up passkey, passwordless, and MFA for sign-in according to your work or school account policies.
 
    :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-android/passkey-added-android.png" alt-text="Screenshot of Use Passwords and Passkeys from using Microsoft Authenticator for Android devices.":::
 
@@ -337,7 +332,7 @@ Alternatively, users can set up a passkey in the Authenticator by navigating to 
 
 ## Cross-device registration (Android)
 
-You can choose to attempt passkey registration from your computer or another mobile device.
+You can also save a passkey in Authenticator from your computer or another mobile device. This registration option requires Bluetooth and an internet connection for both devices.
 
 1. Open a web browser and sign in to [My Security info](https://aka.ms/mysecurityinfo).
 1. Tap **+ Add sign-in method** > choose **Passkey in Microsoft Authenticator (preview)** > **Add**.
@@ -404,24 +399,19 @@ You can choose to attempt passkey registration from your computer or another mob
 
     :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/success.png" alt-text="Screenshot of the successful creation of a passkey in Microsoft Authenticator for Android devices.":::
 
-## Deleting your passkey in Authenticator
+## Delete your passkey in Authenticator for Android
 
 To remove the passkey from Authenticator, click the *Trash* icon, then tap **Delete** to confirm.
 
 :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/passkey-android-delete.png" alt-text="Screenshot of the passkey delete option in Microsoft Authenticator for Android devices.":::
 
 > [!NOTE]
-> You also need to delete the passkey from **Security Info**, using a web browser and logging in to [My Security info](https://aka.ms/mysecurityinfo). 
+> You also need to delete the passkey from [My Security info](https://aka.ms/mysecurityinfo). 
 
 ### Troubleshooting
 
-In some cases when you try to register a passkey, it gets stored locally in the Authenticator app but not registered on the authentication server. For example, the passkey provider might not be permitted, or the connection might time out. If you try to register a passkey and see an error that the passkey already exists, delete the passkey that was created locally in Authenticator, and retry registration.
-
-To remove the passkey from Authenticator, click the *Trash* icon, then tap **Delete** to confirm.
+In some cases when you try to register a passkey, it gets stored locally in the Authenticator app but not registered on the authentication server. For example, the passkey provider might not be permitted, or the connection might time out. If you try to register a passkey and see an error that the passkey already exists, [delete the passkey](#delete-your-passkey-in-authenticator-for-android) that was created locally in Authenticator, and retry registration.
 
 :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/passkey-android-delete.png" alt-text="Screenshot of the passkey delete option in Microsoft Authenticator for Android devices.":::
-
-> [!NOTE]
-> You also need to delete the passkey from [My Security info](https://aka.ms/mysecurityinfo).  
 
 ---
