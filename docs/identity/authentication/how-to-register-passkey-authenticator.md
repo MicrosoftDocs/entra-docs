@@ -126,7 +126,7 @@ Alternatively, users can set up a passkey in the Authenticator by navigating to 
 
       :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey-create-passkey.png" alt-text="Screenshot of the save passkey option in Microsoft Authenticator for iOS devices.":::
 
-1. Once the passkey is successfully created on your device, you're directed back to **My Security info**, then tap **Done**. 
+1. Once the passkey is successfully created on your device, you're directed back to **My Security info**. 
 1. Name the passkey something memorable to you, and select **Done**. 
 
       :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey-ios-success.png" alt-text="Screenshot of the successful creation of a passkey in Microsoft Authenticator for iOS devices.":::
