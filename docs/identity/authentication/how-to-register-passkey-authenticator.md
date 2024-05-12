@@ -36,7 +36,7 @@ Alternatively, you can add a passkey from your mobile device browser, or through
 
 ### Same device registration using direct sign in to Authenticator (iOS)
 
-You can sign in to Authenticator to create a passkey in the app and get seamless Single Sign-on across Microsoft native apps. This is the recommended and preferred flow to setup a passkey in Authenticator. If you're signed in or already have an account in Authenticator, you still need to complete these steps to add a passkey in the app.
+For seamless single sign-on (SSO) across Microsoft native apps, you can sign in to Authenticator to create a passkey. This is the recommended and preferred flow to setup a passkey in Authenticator. You need to complete these steps even if you're signed in, or you already have an account in Authenticator.
 
 1. Open Authenticator.
 1. Tap the **Add Account** or **+** button.
@@ -225,7 +225,7 @@ To remove the passkey from Authenticator, click the *Trash* icon, then tap **Del
 
 ### Same device registration using direct sign in to Authenticator (Android)
 
-You can sign in to Authenticator to create a passkey in the app and get seamless Single Sign-on across Microsoft native apps. This is the recommended and preferred flow to setup a passkey in the app. If you already have an account in the Authenticator app, or you are signed in to the Authenticator app, you still need to go through the above mentioned flow to add a passkey in the app.
+For seamless single sign-on (SSO) across Microsoft native apps, you can sign in to Authenticator to create a passkey. This is the recommended and preferred flow to setup a passkey in Authenticator. You need to complete these steps even if you're signed in, or you already have an account in Authenticator.
 
 1. Open Authenticator.
 1. Tap the **Add account** or **+** button.
