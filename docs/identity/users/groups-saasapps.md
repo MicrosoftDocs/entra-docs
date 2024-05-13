@@ -31,7 +31,7 @@ With Microsoft Entra ID, you can save time by managing the membership of the mar
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Go to **Applications** > **Enterprise applications** to open **All applications** in the Application Gallery.
 
    :::image type="content" source="./media/domains-manage/enterprise-apps.png" alt-text="Screenshot that shows the Application Gallery.":::
