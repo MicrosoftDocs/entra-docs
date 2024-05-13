@@ -78,7 +78,7 @@ For more information about working with extensions, see [Add custom data to reso
 
 1. **Check permissions**
 
-    Check that you are assigned the [Attribute Definition Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-definition-administrator) or [Attribute Assignment Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator) roles. If not, check with your administrator to assign you the appropriate role at tenant scope or attribute set scope. By default, [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) and other administrator roles do not have permissions to read, define, or assign custom security attributes. If necessary, a Global Administrator can assign these roles to themselves.
+    Check that you are assigned the [Attribute Definition Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-definition-administrator) or [Attribute Assignment Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator) roles. If necessary, someone with at least the [Privileged Role Administrator](/entra/identity/role-based-access-control/permissions-reference#privileged-role-administrator) role can assign these roles.
 
     ![Diagram showing checking permissions to add custom security attributes in Microsoft Entra ID.](./media/custom-security-attributes-overview/attributes-permissions.png)
 
@@ -178,8 +178,7 @@ Microsoft Entra ID provides built-in roles to work with custom security attribut
 > | [Attribute Log Reader](~/identity/role-based-access-control/permissions-reference.md#attribute-log-reader) | Read audit logs for custom security attributes |
 > | [Attribute Log Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-log-administrator) | Read audit logs for custom security attributes<br/>Configure diagnostic settings for custom security attributes |
 
-> [!IMPORTANT]
-> By default, [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) and other administrator roles do not have permissions to read, define, or assign custom security attributes.
+[!INCLUDE [security-attributes-roles](../includes/security-attributes-roles.md)]
 
 <a name='microsoft-graph-apis'></a>
 

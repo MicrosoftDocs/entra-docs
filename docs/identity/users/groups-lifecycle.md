@@ -75,14 +75,14 @@ The following roles can configure and use expiration for Microsoft 365 groups in
 
 Role | Permissions
 -------- | --------
-Global administrator, Group administrator, or User administrator | Can create, read, update, or delete the Microsoft 365 groups expiration policy settings<br>Can renew any Microsoft 365 group
+Groups Administrator, or User Administrator | Can create, read, update, or delete the Microsoft 365 groups expiration policy settings<br>Can renew any Microsoft 365 group
 User | Can renew a Microsoft 365 group that they own<br>Can restore a Microsoft 365 group that they own<br>Can read the expiration policy settings
 
 For more information on permissions to restore a deleted group, see [Restore a deleted Microsoft 365 group in Microsoft Entra ID](groups-restore-deleted.md).
 
 ## Set group expiration
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 1. Select **Microsoft Entra ID**.
 1. Select **Groups** > **All groups**, and then select **Expiration** to open the expiration settings.
   
