@@ -39,7 +39,7 @@ Alternatively, you can add a passkey from your mobile device browser, or through
 For seamless single sign-on (SSO) across Microsoft native apps, you can sign in to Authenticator to create a passkey. These steps are the recommended way to set up a passkey in Authenticator. You need to complete these steps even if you're signed in, or you already have an account in Authenticator.
 
 1. Open Authenticator.
-1. Tap the **Add Account** or **+** button.
+1. Tap **Add account** or the **+** button.
    > [!NOTE]
    > If you already have an account in Authenticator, you still need to tap on the **+** button to sign in and register a passkey for that same account.
 
@@ -73,7 +73,7 @@ For seamless single sign-on (SSO) across Microsoft native apps, you can sign in 
 
    :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/select-authenticator-ios.png" alt-text="Screenshot of Use Passwords and Passkeys from using Microsoft Authenticator for iOS devices.":::
 
-1. Authenticator sets up passkey, passwordless, and MFA for sign in according to your work or school account policies. 
+1. Authenticator sets up passkey, passwordless, and MFA for sign-in according to your work or school account policies. 
 
     :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/passkey-added-ios.png" alt-text="Screenshot of setting up passkey, passwordless, and/or MFA for sign in using Microsoft Authenticator for iOS devices.":::
 
@@ -223,7 +223,7 @@ In some cases when you try to register a passkey, it gets stored locally in the 
 For seamless single sign-on (SSO) across Microsoft native apps, you can sign in to Authenticator to create a passkey. These steps are the recommended way to set up a passkey in Authenticator. You need to complete these steps even if you're signed in, or you already have an account in Authenticator.
 
 1. Open Authenticator.
-1. Tap the **Add account** or **+** button.
+1. Tap **Add account** or the **+** button.
    > [!NOTE]
    > If you already have an account in the Authenticator, you need to still tap on the **+** button to sign in and register a passkey for that same account.
 
@@ -257,7 +257,7 @@ For seamless single sign-on (SSO) across Microsoft native apps, you can sign in 
  
    :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-android/passkey-done-android.png" alt-text="Screenshot of selecting Continue to complete using Microsoft Authenticator for Android devices.":::
 
-1. Authenticator sets up passkey, passwordless, and MFA for sign in according to your work or school account policies.
+1. Authenticator sets up passkey, passwordless, and MFA for sign-in according to your work or school account policies.
 
    :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-android/passkey-added-android.png" alt-text="Screenshot of Use Passwords and Passkeys from using Microsoft Authenticator for Android devices.":::
 
