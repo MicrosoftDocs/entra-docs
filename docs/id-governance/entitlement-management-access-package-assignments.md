@@ -278,7 +278,7 @@ if ($assignment -ne $null) {
 
 In the Microsoft Entra Lifecycle Workflows feature, you can add a [Remove access package assignment for user](lifecycle-workflow-tasks.md#remove-access-package-assignment-for-user) task to an offboarding workflow. That task can specify an access package the user might be assigned to. When the workflow runs for a user, then their access package assignment will be removed automatically.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a Global Administrator.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a Global Administrator.
 
 1. Browse to **Identity governance** > **Lifecycle workflows** > **Workflows**.
 
