@@ -15,6 +15,8 @@ ms.collection: M365-identity-device-management
 
 # Troubleshooting Microsoft Entra B2B collaboration
 
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
+
 Here are some remedies for common problems with Microsoft Entra B2B collaboration.
 
 ## Guest sign-in fails with error code AADSTS50020
