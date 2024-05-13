@@ -89,4 +89,4 @@ After an hour or more, Global Secure Access client might disconnect and `tunneli
 
 ## Next steps
 
-- [Configure Quick Access](how-to-configure-quick-access.md)
+- [What is Global Secure Access?](overview-what-is-global-secure-access.md)

@@ -107,18 +107,18 @@ Configure Zscaler Internet Access. To learn more about configuring Zscaler, see 
 Configure user authentication and provisioning methods such as Security Assertion Markup Language (SAML) for authentication and System for Cross-domain Identity Management (SCIM) for provisioning.
 
 Download Zscaler client from the Zscaler Client Connector App Store in the Zscaler Client Connector Portal.
-1. Navigate to **ZPA admin portal** > **Client Connector** > **Administration** > **Client Connector App Store** > **New Releases** > **General Availability**.
+1. Navigate to **ZIA admin portal** > **Policy** > **Zscaler Client Connector Portal** > **Administration** > **Client Connector App Store** > **New Releases** > **General Availability**.
 1. Select Platform as Windows or macOS and download the EXE or MSI package.
 1. Enable build.
 
 Add Forwarding Profile from the Client Connector Portal.
-1. Navigate to **ZPA admin portal** > **Client Connector** > **Administration** > **Forwarding Profile** > **Add Forwarding Profile**. 
+1. Navigate to **ZIA admin portal** > **Policy** > **Zscaler Client Connector Portal** > **Administration** > **Forwarding Profile** > **Add Forwarding Profile**. 
 1. Add a **Profile Name** such as `ZIA Tunnel 2.0`.
 1. Select **Packet Filter Based** in **Tunnel Driver Type**.
 1. Select forwarding profile action as **Tunnel**, and select tunnel version. For example, `Z-Tunnel 2.0`.
 
 Add App Profile from the Client Connector Portal.
-1. Navigate to **ZPA admin portal** > **Client Connector** > **App Profile** > **Platform** > **Windows** (or macOS) > **Add Windows Policy** (or macOS). 
+1. Navigate to **ZIA admin portal** > **Policy** > **Zscaler Client Connector Portal** > **Administration** > **App Profiles** > **Platforms** > **Windows** (or macOS) > **Add Windows Policy** (or macOS).
 1. Add **Name**, set **Rule Order** such as **1**, select **Enable**, select **User(s)** to apply this policy, and select the **Forwarding Profile**. For example, select **ZIA Tunnel 2.0**.
 1. Scroll down and add these Microsoft SSE Service IPs and FQDNs in  
 **HOSTNAME OR IP ADDRESS BYPASS FOR VPN GATEWAY** field. IPs: `150.171.19.0/24`, `150.171.20.0/24`, `13.107.232.0/24`, `13.107.233.0/24`, `150.171.15.0/24`, `150.171.18.0/24`, `151.206.0.0/16`, `6.6.0.0/16`. FQDNs: `internet.edgediagnostic.globalsecureaccess.microsoft.com`, `m365.edgediagnostic.globalsecureaccess.microsoft.com`, `private.edgediagnostic.globalsecureaccess.microsoft.com`, `aps.globalsecureaccess.microsoft.com`, `<tenantid>.internet.client.globalsecureaccess.microsoft.com`, `<tenantid>.m365.client.globalsecureaccess.microsoft.com`, `<tenantid>.private.client.globalsecureaccess.microsoft.com`.
@@ -150,4 +150,4 @@ Verify configurations for clients.
 
 ## Next steps
 
-- [Configure Quick Access](how-to-configure-quick-access.md)
+- [What is Global Secure Access?](overview-what-is-global-secure-access.md)

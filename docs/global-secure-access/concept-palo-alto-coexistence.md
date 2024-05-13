@@ -83,4 +83,4 @@ The Global Secure Access client is disconnected for a few minutes before it full
 
 ## Next steps
 
-- [Configure Quick Access](how-to-configure-quick-access.md)
+-[What is Global Secure Access?](overview-what-is-global-secure-access.md)
