@@ -23,7 +23,7 @@ Release date: May 13th, 2024
  - Miscellaneous supportability improvements.
  - Improved handling of Active Directory Provider initialization issues.
  - Fixed a bug with removing attributes.
- - Improved Group Writeback error handling.
+ - Improved group writeback error handling.
 
 ## 1.1.1373.0
 
