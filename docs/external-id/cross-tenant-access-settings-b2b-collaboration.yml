@@ -198,7 +198,7 @@ procedureSection:
 
       To customize the order of identity providers that your guest users can use to sign in when they accept your invitation, follow these steps.
 
-      1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) using a Global Administrator or Security Administrator account. Then open the **Identity** service on the left hand side.
+      1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) as at least a [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator). Then open the **Identity** service on the left hand side.
 
       2. Select **External Identities** > **Cross-tenant access settings**.
 
@@ -216,7 +216,7 @@ procedureSection:
 
       1. Open the [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer).
 
-      2. Sign in with a Global Administrator or Security Administrator account to your resource tenant.
+      2. Sign in as at least a [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator) to your resource tenant.
 
       3. Run the following query to get the current redemption order:
 
@@ -264,7 +264,7 @@ procedureSection:
 
       To prevent your B2B guest users from redeeming their invite using their existing Microsoft accounts or creating a new one to accept the invitation, follow the steps below.
 
-      1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) using a Global Administrator or Security Administrator account. Then open the **Identity** service on the left hand side.
+      1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) as at least a [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator). Then open the **Identity** service on the left hand side.
 
       2. Select **External Identities** > **Cross-tenant access settings**.
 
