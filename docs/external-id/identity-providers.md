@@ -14,7 +14,7 @@ ms.collection: M365-identity-device-management
 #customer intent: As a B2B collaboration administrator, I want to configure and enable multiple identity providers (such as Microsoft Entra ID, Microsoft accounts, email one-time passcode, Google, Facebook, and SAML/WS-Fed) for external users, so that they can easily sign in and access our apps and resources.
 ---
 
-# Identity Providers for External ID
+# Identity Providers for External ID in workforce tenants
 
 > [!TIP]
 > This article applies to B2B collaboration identity providers. If your tenant is configured for customer identity and access management, see [Authentication methods and identity providers for customers](customers/concept-authentication-methods-customers.md).
