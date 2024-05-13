@@ -22,7 +22,7 @@ sections:
       - question: |
           Why am I unable to create an administrative unit?
         answer: |
-          Only a *Global Administrator* or *Privileged Role Administrator* can create an administrative unit in Microsoft Entra ID. Check to ensure that the user who's trying to create the administrative unit is assigned either the *Global Administrator* or *Privileged Role Administrator* role.
+          You must be assigned at least the [Privileged Role Administrator](permissions-reference.md#privileged-role-administrator) role to create an administrative unit in Microsoft Entra ID. Check to ensure that the user who's trying to create the administrative unit is assigned the *Privileged Role Administrator* role.
 
       - question: |
           I added a group to an administrative unit. Why are the group members still not showing up there?
@@ -95,7 +95,7 @@ sections:
           To add a single user, add an appropriate expression with the `OR` query operator to the dynamic membership rule.
 
       - question: |
-          I am a Global Administrator, but I can't add or remove members for an administrative unit.
+          I am a Privileged Role Administrator, but I can't add or remove members for an administrative unit.
         answer: |
           When an administrative unit has been configured for dynamic membership, you must edit the dynamic membership rules to change membership.
 

@@ -223,8 +223,8 @@ These steps should be performed at regular intervals and for key changes:
 ## Next steps
 
 - [Securing privileged access for hybrid and cloud deployments in Microsoft Entra ID](security-planning.md)
-- [Add users using Microsoft Entra ID](~/fundamentals/add-users.md) and [assign the new user to the Global Administrator role](~/fundamentals/how-subscriptions-associated-directory.yml)
+- [Add users using Microsoft Entra ID](~/fundamentals/add-users.md) and [assign roles to the new user](~/fundamentals/how-subscriptions-associated-directory.yml)
 - [Sign up for Microsoft Entra ID P1 or P2](~/fundamentals/get-started-premium.md), if you haven’t signed up already
 - [How to require two-step verification for a user](~/identity/authentication/howto-mfa-userstates.md)
-- [Configure additional protections for Global Administrators in Microsoft 365](/microsoft-365/enterprise/protect-your-global-administrator-accounts), if you are using Microsoft 365
-- [Start an access review of Global Administrators](~/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md) and [transition existing Global Administrators to more specific administrator roles](permissions-reference.md)
+- [Configure additional protections for privileged roles in Microsoft 365](/microsoft-365/enterprise/protect-your-global-administrator-accounts), if you are using Microsoft 365
+- [Start an access review of privileged roles](~/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md) and [transition existing privileged roles to more specific administrator roles](permissions-reference.md)
