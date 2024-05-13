@@ -1,6 +1,6 @@
 ---
 title: Assign Microsoft Entra admin roles with Microsoft Graph API
-description: Assign and remove Microsoft Entra administrator roles with Graph API in Microsoft Entra ID
+description: Assign and remove Microsoft Entra administrator roles with Graph API in Microsoft Entra ID.
 
 author: rolyon
 manager: amycolannino
