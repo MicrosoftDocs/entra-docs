@@ -33,13 +33,13 @@ The limitations described in this article have the following scope.
 
 - Therefore, prior to multitenant organization creation, the usage of the cross-tenant access settings template for identity synchronization is encouraged, with `userSyncInbound` set to true.
 
-- Similarly, prior to multitenant organization creation, the usage of the cross-tenant access settings template for partner configurations is encouraged with automaticUserConsentSettings.inboundAllowed and .outboundAllowed set to true.
+- Similarly, prior to multitenant organization creation, the usage of the cross-tenant access settings template for partner configurations is encouraged with `automaticUserConsentSettings.inboundAllowed` and `automaticUserConsentSettings.outboundAllowed` set to true.
 
 ## Creating the multitenant organization using the Microsoft 365 admin center
 
 - After creating a multitenant organization in Microsoft 365 admin center, you'll see Microsoft admin center created cross-tenant synchronization configurations with the names `MTO_Sync_<TenantID>`. Refrain from editing or changing the name if you want Microsoft 365 admin center to recognize the configurations as created and managed by Microsoft 365 admin center.
 
-- Synchronization jobs created with Microsoft Entra ID will not appear in Microsoft 365 admin center. Microsoft 365 admin center will indicate an **Outbound sync status** of **Not configured**. This is expected behavior. There's no supported pattern for Microsoft 365 admin center to take control of cross-tenant synchronization jobs created in Microsoft Entra admin center.
+- Synchronization jobs created with Microsoft Entra ID won't appear in Microsoft 365 admin center. Microsoft 365 admin center will indicate an **Outbound sync status** of **Not configured**. This is expected behavior. There's no supported pattern for Microsoft 365 admin center to take control of cross-tenant synchronization jobs created in Microsoft Entra admin center.
 
 ## Join requests
 
@@ -57,7 +57,7 @@ The limitations described in this article have the following scope.
 
 - The at-scale provisioning of B2B users might collide with contact objects. The handling or conversion of contact objects is currently not supported.
 
-- Using cross-tenant synchronization to target hybrid identities that have been converted to B2B users is not currently supported.
+- Using cross-tenant synchronization to target hybrid identities that have been converted to B2B users isn't currently supported.
 
 ## Sharing users using the Microsoft 365 admin center
 
@@ -73,7 +73,7 @@ The limitations described in this article have the following scope.
 
 - As your organization rolls out the multitenant organization functionality including provisioning of B2B users across multitenant organization tenants, you might want to provision some users as B2B guests, while provisioning other users as B2B members.
 
-- To promote B2B guests to B2B members, a host tenant administrator can change the [userType](../../fundamentals/how-to-manage-user-profile-info.yml#add-or-change-profile-information), assuming the property is not recurringly synchronized.
+- To promote B2B guests to B2B members, a host tenant administrator can change the [userType](../../fundamentals/how-to-manage-user-profile-info.yml#add-or-change-profile-information), assuming the property isn't recurringly synchronized.
 
 ## B2B guests or B2B members managed using cross-tenant synchronization
 
@@ -81,7 +81,7 @@ The limitations described in this article have the following scope.
 
 - You might want to establish two Microsoft Entra cross-tenant synchronization configurations in the source tenant, one with userType attribute mappings configured to B2B guest, and another with userType attribute mappings configured to B2B member, each with [**Apply this mapping** set to **Always**](cross-tenant-synchronization-configure.md#step-9-review-attribute-mappings).
 
-- By moving a user from one configuration's scope to the other, you can easily control who will be a B2B guest or a B2B member in the target tenant. Using this approach, you may also want to disable [Target Object Actions for Delete](cross-tenant-synchronization-configure.md#step-8-optional-define-who-is-in-scope-for-provisioning-with-scoping-filters).
+- By moving a user from one configuration's scope to the other, you can easily control who will be a B2B guest or a B2B member in the target tenant. Using this approach, you might also want to disable [Target Object Actions for Delete](cross-tenant-synchronization-configure.md#step-8-optional-define-who-is-in-scope-for-provisioning-with-scoping-filters).
 
 ## Global address list managed in the host tenant
 
@@ -89,11 +89,11 @@ The limitations described in this article have the following scope.
 
 - Updating the [showInAddressList](/graph/api/resources/user#properties) property on the user object will also update the hide recipients from address lists setting in Microsoft Exchange Online.
 
-- The [hide recipients from address lists](/exchange/address-books/address-lists/manage-address-lists#hide-recipients-from-address-lists) setting, if configured to differ from the [showInAddressList](/graph/api/resources/user#properties) property, will take precedence in determining address list visibility.
+- The [hide recipients from address lists](/exchange/address-books/address-lists/manage-address-lists#hide-recipients-from-address-lists) setting, if configured to differ from the [showInAddressList](/graph/api/resources/user#properties) property, takes precedence in determining address list visibility.
 
-- If the [hide recipients](/exchange/address-books/address-lists/manage-address-lists#hide-recipients-from-address-lists) setting is not configurable in [Exchange admin center](/exchange/address-books/address-lists/manage-address-lists#use-the-new-eac-to-hide-recipients-from-address-lists) due to user type Guest, it may be configured in PowerShell using the [HiddenFromAddressListsEnabled](/powershell/module/exchange/set-mailuser#-hiddenfromaddresslistsenabled) property.
+- If the [hide recipients](/exchange/address-books/address-lists/manage-address-lists#hide-recipients-from-address-lists) setting isn't configurable in [Exchange admin center](/exchange/address-books/address-lists/manage-address-lists#use-the-new-eac-to-hide-recipients-from-address-lists) due to user type Guest, it can be configured in PowerShell using the [HiddenFromAddressListsEnabled](/powershell/module/exchange/set-mailuser#-hiddenfromaddresslistsenabled) property.
 
-- For more information see, [Add guests to the global address list](/microsoft-365/solutions/per-group-guest-access#add-guests-to-the-global-address-list).
+- For more information, see [Add guests to the global address list](/microsoft-365/solutions/per-group-guest-access#add-guests-to-the-global-address-list).
 
 ## Global address list managed using cross-tenant synchronization
 
@@ -108,17 +108,17 @@ The limitations described in this article have the following scope.
 
 - In [Microsoft Power BI](/power-bi/enterprise/service-admin-azure-ad-b2b#who-can-you-invite), B2B member support is currently in preview. B2B guest users can continue to access Power BI dashboards.
 
-- In [Microsoft Power Apps](/power-platform/), [Microsoft Dynamics 365](/dynamics365/), and related workloads, B2B member users may have restricted functionality. For more information, see [Invite users with Microsoft Entra B2B collaboration](/power-platform/admin/invite-users-azure-active-directory-b2b-collaboration).
+- In [Microsoft Power Apps](/power-platform/), [Microsoft Dynamics 365](/dynamics365/), and related workloads, B2B member users might have restricted functionality. For more information, see [Invite users with Microsoft Entra B2B collaboration](/power-platform/admin/invite-users-azure-active-directory-b2b-collaboration).
 
-- In Microsoft Purview, multitenant organization capabilities are not yet supported. Learn more about existing functionalities for [external users and labeled content](/purview/sensitivity-labels-office-apps#support-for-external-users-and-labeled-content) and about [external collaboration using sensitivity labels](https://techcommunity.microsoft.com/t5/security-compliance-and-identity/secure-external-collaboration-using-sensitivity-labels/ba-p/1680498).
+- In Microsoft Purview, multitenant organization capabilities aren't yet supported. Learn more about existing functionalities for [external users and labeled content](/purview/sensitivity-labels-office-apps#support-for-external-users-and-labeled-content) and about [external collaboration using sensitivity labels](https://techcommunity.microsoft.com/t5/security-compliance-and-identity/secure-external-collaboration-using-sensitivity-labels/ba-p/1680498).
 
-- In Microsoft Intune, multitenant organization capabilities are not yet supported. Learn more about existing functionalities to [trust compliant device claims from external organizations](../../external-id/cross-tenant-access-settings-b2b-collaboration.yml#to-change-inbound-trust-settings-for-mfa-and-device-claims).
+- In Microsoft Intune, multitenant organization capabilities aren't yet supported. Learn more about existing functionalities to [trust compliant device claims from external organizations](../../external-id/cross-tenant-access-settings-b2b-collaboration.yml#to-change-inbound-trust-settings-for-mfa-and-device-claims).
 
 ## B2B users or B2B members
 
 - The promotion of B2B guests to B2B members represents a strategic decision by multitenant organizations to consider B2B members as trusted users of the organization. Review the [default permissions](../../fundamentals/users-default-permissions.md) for B2B members.
 
-- To promote B2B guests to B2B members, a source tenant administrator can amend the [attribute mappings](cross-tenant-synchronization-configure.md#step-9-review-attribute-mappings), or a target tenant administrator can [change the userType](../../fundamentals/how-to-manage-user-profile-info.yml#add-or-change-profile-information) if the property is not recurringly synchronized.
+- To promote B2B guests to B2B members, a source tenant administrator can amend the [attribute mappings](cross-tenant-synchronization-configure.md#step-9-review-attribute-mappings), or a target tenant administrator can [change the userType](../../fundamentals/how-to-manage-user-profile-info.yml#add-or-change-profile-information) if the property isn't recurringly synchronized.
 
 - As your organization rolls out the multitenant organization functionality including provisioning of B2B users across multitenant organization tenants, you might want to provision some users as B2B guests, while provision others users as B2B members. To achieve this, you might want to establish two cross-tenant synchronization configurations in the source tenant, one with userType attribute mappings configured to B2B guest, and another with userType attribute mappings configured to B2B member, each with [**Apply this mapping** set to **Always**](cross-tenant-synchronization-configure.md#step-9-review-attribute-mappings). By moving a user from one configuration's scope to the other, you can easily control who will be a B2B guest or a B2B member in the target tenant.
 
@@ -126,7 +126,7 @@ The limitations described in this article have the following scope.
 
 - The at-scale provisioning of B2B users might collide with contact objects. The handling or conversion of contact objects is currently not supported.
 
-- Using cross-tenant synchronization to target hybrid identities that have been converted to B2B users has not been tested in source of authority conflicts and is not supported.
+- Using cross-tenant synchronization to target hybrid identities that have been converted to B2B users hasn't been tested in source of authority conflicts and isn't supported.
 
 ## Cross-tenant synchronization deprovisioning
 
