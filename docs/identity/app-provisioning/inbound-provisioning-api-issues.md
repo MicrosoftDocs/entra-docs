@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: troubleshooting
-ms.date: 02/28/2024
+ms.date: 05/06/2024
 ms.author: jfields
 ms.reviewer: chmutali
 ---
@@ -22,7 +22,7 @@ This document covers commonly encountered errors and issues with inbound provisi
 ### Invalid data format 
 
 **Issue description**
-* You're getting the error message 'Invalid Data Format" with HTTP 400 (Bad Request) response code.
+* You're getting the error message ```Invalid Data Format``` with HTTP 400 (Bad Request) response code.
 
 **Probable causes**
 1. You're sending a valid bulk request as per the provisioning [/bulkUpload](/graph/api/synchronization-synchronizationjob-post-bulkupload) API specs, but you have not set the HTTP Request Header 'Content-Type' to `application/scim+json`. 

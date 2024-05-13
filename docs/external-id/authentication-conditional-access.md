@@ -6,7 +6,7 @@ description: Learn how to enforce multifactor authentication policies for Micros
 ms.service: entra-external-id
 ms.custom: has-azure-ad-ps-ref
 ms.topic: concept-article
-ms.date: 04/30/2024
+ms.date: 05/03/2024
 
 ms.author: mimart
 author: msmimart
@@ -215,7 +215,7 @@ In external user scenarios, the authentication methods that are acceptable for f
 |OATH hardware token                          | &#x2705;        |          |
 |FIDO2 security key                           | &#x2705;        |          |
 |Windows Hello for Business                   | &#x2705;        |          |
-
+|Certificate-based authentication             | &#x2705;        |          |
 
 To configure a Conditional Access policy that applies authentication strength requirements to external users or guests, see [Conditional Access: Require an authentication strength for external users](~/identity/conditional-access/howto-conditional-access-policy-authentication-strength-external.md).
 

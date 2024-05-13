@@ -3,11 +3,11 @@ title: Enable source IP restoration with the Global Secure Access preview
 description: Learn how to enable source IP restoration to ensure the source IP matches in downstream resources.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 03/14/2024
+ms.date: 05/09/2024
 ms.author: kenwith
 author: kenwith
 manager: amycolannino
-ms.reviewer: mamkumar
+ms.reviewer: alexpav
 ---
 # Source IP restoration
 
@@ -22,8 +22,8 @@ Source IP restoration in Global Secure Access (preview) allows backward compatib
 ## Prerequisites
 
 * Administrators who interact with **Global Secure Access preview** features must have both of the following role assignments depending on the tasks they're performing.
-   * The **Global Secure Access Administrator** role to manage the Global Secure Access preview features.
-   * [Conditional Access Administrator](/azure/active-directory/roles/permissions-reference#conditional-access-administrator) or [Security Administrator](/azure/active-directory/roles/permissions-reference#security-administrator) to create and interact with Conditional Access policies and named locations.
+   * The [Global Secure Access Administrator role](/azure/active-directory/roles/permissions-reference) role to manage the Global Secure Access preview features.
+   * The [Conditional Access Administrator](/azure/active-directory/roles/permissions-reference#conditional-access-administrator) to create and interact with Conditional Access policies.
 * The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 
 ### Known limitations

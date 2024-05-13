@@ -82,7 +82,7 @@ To unblock users, administrators can add specific IP addresses to a trusted name
 > [!NOTE]
 > Before adding an IP address as a trusted named location, confirm that the IP address does in fact belong to the intended organization.
 
-For more information about named locations, see the article [Using the location condition](location-condition.md#named-locations).
+For more information about named locations, see the article [Using the location condition](concept-assignment-network.md).
  
 ## Related content
 
