@@ -140,15 +140,17 @@ If you offer a Software as a Service (SaaS) application to many organizations, y
 
 ### Multitenant organizations
 
-A multitenant organization is an organization that has more than one instance of Microsoft Entra ID. There are various reasons for [multi-tenancy](~/identity/multi-tenant-organizations/overview.md#what-is-a-multi-tenant-organization). For example, your organization might span multiple clouds or geographical boundaries.
+A multitenant organization is an organization that has more than one instance of Microsoft Entra ID. There are various reasons for [multi-tenancy](../identity/multi-tenant-organizations/overview.md#what-is-a-multi-tenant-organization). For example, your organization might span multiple clouds or geographical boundaries.
 
-Multitenant organizations use a one-way synchronization service in Microsoft Entra ID, called [cross-tenant synchronization](~/identity/multi-tenant-organizations/cross-tenant-synchronization-overview.md). Cross-tenant synchronization enables seamless collaboration for a multitenant organization. It improves user experience and ensures that users can access resources, without receiving an invitation email and having to accept a consent prompt in each tenant.
+The [multitenant organization](../identity/multi-tenant-organizations/multi-tenant-organization-overview.md) capability enables seamless collaboration across Microsoft 365. It improves employee collaboration experiences across your organization of multiple tenants in applications such as Microsoft Teams and Microsoft Viva Engage.
 
-Cross-tenant synchronization settings are configured under the **Organization-specific access settings**. To learn more about multitenant organizations and cross-tenant synchronization see the [multitenant organizations documentation](~/identity/multi-tenant-organizations/index.yml) and the [feature comparison](~/identity/multi-tenant-organizations/overview.md#compare-multi-tenant-capabilities).
+The [cross-tenant synchronization](../identity/multi-tenant-organizations/cross-tenant-synchronization-overview.md) capability is a one-way synchronization service that ensures users can access resources, without receiving an invitation email and having to accept a consent prompt in each tenant.
+
+To learn more about multitenant organizations and cross-tenant synchronization, see the [multitenant organizations documentation](../identity/multi-tenant-organizations/index.yml) and the [feature comparison](../identity/multi-tenant-organizations/overview.md#compare-multitenant-capabilities).
 
 ## Next steps
 
 - [What is Microsoft Entra B2B collaboration?](what-is-b2b.md)
 - [What is Microsoft Entra B2B direct connect?](b2b-direct-connect-overview.md)
 - [About Azure AD B2C](/azure/active-directory-b2c/overview)
-- [About Microsoft Entra multitenant organizations](~/identity/multi-tenant-organizations/overview.md)
+- [About Microsoft Entra multitenant organizations](../identity/multi-tenant-organizations/overview.md)
