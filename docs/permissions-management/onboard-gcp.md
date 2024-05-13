@@ -45,7 +45,7 @@ There are several moving parts across GCP and Azure, which should be configured 
 
 1. On the **Permissions Management Onboarding - Microsoft Entra OIDC App Creation** page, enter the **OIDC Azure App Name**.
 
-    This app is used to set up an OpenID Connect (OIDC) connection to your GCP project. OIDC is an interoperable authentication protocol based on the OAuth 2.0 family of specifications. The scripts generated creates the app of this specified name in your Microsoft Entra tenant with the right configuration.
+    This app is used to set up an OpenID Connect (OIDC) connection to your GCP project. OIDC is an interoperable authentication protocol based on the OAuth 2.0 family of specifications. The scripts generated create the app of this specified name in your Microsoft Entra tenant with the right configuration.
 
 1. To create the app registration, copy the script and run it in your command-line app.
 
