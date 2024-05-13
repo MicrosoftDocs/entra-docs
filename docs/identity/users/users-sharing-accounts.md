@@ -22,14 +22,14 @@ In Microsoft Entra ID, part of Microsoft Entra, sometimes organizations need to 
 * When accessing applications that require a unique sign in and password for each user, whether on-premises apps or consumer cloud services (for example, corporate social media accounts).
 * When creating multi-user environments. You might have a single, local account that has elevated privileges and is used to do core setup, administration, and recovery activities. For example, an Application Administrator account for Microsoft 365 or the root account in Salesforce.
 
-Traditionally, these accounts are shared by distributing the credentials (username and password) to the right individuals or storing them in a shared location where multiple trusted agents can access them.
+Traditionally, these accounts are shared by distributing the credentials (username and password) to the right individuals, or storing them in a shared location where multiple trusted agents can access them.
 
 The traditional sharing model has several drawbacks:
 
 * Enabling access to new applications requires you to distribute credentials to everyone that needs access.
 * Each shared application might require its own unique set of shared credentials, requiring users to remember multiple sets of credentials. When users have to remember many credentials, the risk increases that they resort to risky practices. (for example, writing down passwords).
 * You can't tell who has access to an application.
-* You can't tell who has *accessed* an application.
+* You can't tell who *accessed* an application.
 * When you want to remove access to an application, you have to update the credentials and redistribute them to everyone that needs access to that application.
 
 <a name='azure-active-directory-account-sharing'></a>
@@ -42,7 +42,7 @@ The Microsoft Entra administrator configures which applications a user can acces
 
 Users sign in once with their organizational account. This account is the same one they regularly use to access their desktop or email. They can discover and access only those applications that they're assigned to. With shared accounts, this list of applications can include any number of shared credentials. The end-user doesn't need to remember or write down the various accounts they might be using.
 
-Shared accounts not only increase oversight and improve usability, they also enhance your security. Users with permissions to use the credentials don't see the shared password, but rather get permissions to use the password as part of an orchestrated authentication flow. Further, some password SSO applications give you the option of using Microsoft Entra ID to periodically rollover (update) passwords. The system uses large, complex passwords, which increase account security. The administrator can easily grant or revoke access to an application, knows who has access to the account, and who has accessed it in the past.
+Shared accounts not only increase oversight and improve usability, they also enhance your security. Users with permissions to use the credentials don't see the shared password, but rather get permissions to use the password as part of an orchestrated authentication flow. Further, some password SSO applications give you the option of using Microsoft Entra ID to periodically rollover (update) passwords. The system uses large, complex passwords, which increase account security. The administrator can easily grant or revoke access to an application, knows who has access to the account, and who accessed it in the past.
 
 Microsoft Entra ID supports shared accounts for any Enterprise Mobility Suite (EMS) or Microsoft Entra ID P1 or P2 license plan, across all types of password single sign-on applications. You can share accounts for any of thousands of preintegrated applications in the application gallery and can add your own password-authenticating application with [custom SSO apps](~/identity/enterprise-apps/what-is-single-sign-on.md).
 
@@ -65,7 +65,7 @@ To use Microsoft Entra ID to share an account, you need to:
 * Configure the application for password single sign-on (SSO)
 * Use [group-based assignment](groups-saasapps.md) and select the option to enter a shared credential
 
-You can also make your shared account more secure with multifactor authentication (MFA) (learn more about [securing applications with Microsoft Entra ID](~/identity/authentication/concept-mfa-howitworks.md)) and you can delegate the ability to manage who has access to the application using [Microsoft Entra self-service](groups-self-service-management.md) group management.
+You can also make your shared account more secure with multifactor authentication (MFA) (learn more about [securing applications with Microsoft Entra ID](~/identity/authentication/concept-mfa-howitworks.md)). You can delegate the ability to manage who has access to the application using [Microsoft Entra self-service](groups-self-service-management.md) group management.
 
 ## Next steps
 
