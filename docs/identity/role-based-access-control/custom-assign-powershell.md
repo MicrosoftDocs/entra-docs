@@ -22,7 +22,7 @@ For more information about Microsoft Entra roles, see [Microsoft Entra built-in
 ## Prerequisites
 
 - Microsoft Entra ID P1 or P2 license
-- Privileged Role Administrator or Global Administrator
+- Privileged Role Administrator
 - Microsoft Graph PowerShell module when using PowerShell
 
 For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
