@@ -45,7 +45,7 @@ The Microsoft Entra B2B collaboration sponsor feature serves as a foundation for
 
 ## Add sponsors when inviting a new guest user 
 
-You can add up to five sponsors when inviting a new guest user. If you don’t specify a sponsor, the inviter will be added as a sponsor. To invite a guest user, you need to have the Global Administrator role or a limited administrator directory role such as Guest Inviter or User Administrator. 
+You can add up to five sponsors when inviting a new guest user. If you don’t specify a sponsor, the inviter will be added as a sponsor. To invite a guest user, you need to have at least the [Guest Inviter](/entra/identity/role-based-access-control/permissions-reference#guest-inviter) or [User Administrator](/entra/identity/role-based-access-control/permissions-reference#user-administrator) role. 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
