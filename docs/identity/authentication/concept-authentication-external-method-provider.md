@@ -231,6 +231,9 @@ Microsoft’s [token validation library](https://github.com/AzureAD/azure-active
 
 Once validation succeeds, you can work with the claims payload to get details of the user, and their tenant.
 
+>[!NOTE]
+>It is important to validate the id_token_hint to ensure the id_token_hint is from a Microsoft tenant and represents your integration. The id_token_hint should be fully validated, particularly the signature, issuer, audience as well as the other claim values. 
+
 ### Microsoft Entra ID call to the external identity provider
 
 Microsoft Entra ID uses the [OIDC implicit flow](http://openid.net/specs/openid-connect-core-1_0.html#ImplicitFlowAuth) to communicate with the external identity provider. Using this flow, communication with the provider is done exclusively by using the provider's authorization endpoint. To let the provider know the user for whom Microsoft Entra ID is making the request, Microsoft Entra ID passes a token in through the [id_token_hint](http://openid.net/specs/openid-connect-core-1_0.html#AuthRequest) parameter.
