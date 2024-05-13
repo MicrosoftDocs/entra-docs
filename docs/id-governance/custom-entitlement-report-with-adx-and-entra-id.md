@@ -35,3 +35,38 @@ By the end of this tutorial, you will have built skills to develop customized vi
 - PowerShell must be set to allow for User.Read.All, Group.Read.All, Application.Read.All, and Directory.Read.All. See Microsoft Graph permissions reference for additional information. 
 - Ensure you have write access to the directory where you will install the required MS Graph PowerShell modules and where the exported Entra data will be saved.  
 - Determine what data you want to include in your reports. The scripts in this article provide samples with specific data from users, groups, and applications from Entra. These samples are meant to illustrate the types of reports you can generate with this approach, but your specific reporting needs may vary and require different or additional data.  
+
+## Step 1: Setup Azure Data Explorer 
+
+If you haven’t previously used Azure Data Explorer, you will need to set this up first. You can create a free cluster without an Azure subscription or credit card or a full cluster which requires an Azure subscription. See [Quickstart: Create an Azure Data Explorer cluster and database](/azure/data-explorer/create-cluster-and-database) to get started. 
+
+## Step 2: Connect to MS Graph and Extract Entra data with PowerShell 
+
+Install MS Graph Powershell modules and Connect to MS Graph 
+
+ 1. Install the required MS Graph modules. The following modules are required for this tutorial: Microsoft.Graph.Users, Microsoft.Graph.Groups, Microsoft.Graph.Applications, Microsoft.Graph.DirectoryObjects 
+
+     ```
+         $modules = @('Microsoft.Graph.Users', 'Microsoft.Graph.Groups', 'Microsoft.Graph.Applications', 'Microsoft.Graph.DirectoryObjects') 
+
+         foreach ($module in $modules) { 
+
+         Install-Module -Name $module -Scope CurrentUser -AllowClobber -Force
+         } 
+     ```    
+ 2. Import the modules: 
+ 
+     ```
+         $modules = @('Microsoft.Graph.Users', 'Microsoft.Graph.Groups', 'Microsoft.Graph.Applications', 'Microsoft.Graph.DirectoryObjects') 
+
+         foreach ($module in $modules) { 
+
+         Import-Module -Name $module 
+
+         }  
+     ``` 
+ 3. Connect to Microsoft Graph
+  
+     ```
+     Connect-MgGraph -Scopes "User.Read.All", "Group.Read.All", "Application.Read.All", "Directory.Read.All"   
+     ``` 
