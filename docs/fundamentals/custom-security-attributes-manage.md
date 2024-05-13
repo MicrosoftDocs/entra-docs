@@ -52,7 +52,7 @@ You need to determine who needs access to work with custom security attributes i
 The following table provides a high-level comparison of the custom security attributes roles.
 
 | Permission | Attribute Definition Admin | Attribute Assignment Admin | Attribute Definition Reader | Attribute Assignment Reader |
-| --- | :---: | :---: | :---: | :---: | :---: |
+| --- | :---: | :---: | :---: | :---: |
 | Read attribute sets | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 | Read attribute definitions | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 | Read attribute assignments for users and applications (service principals) |  | :white_check_mark: |  | :white_check_mark: |
