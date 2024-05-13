@@ -242,6 +242,8 @@
         href: askyourteam-tutorial.md
       - name: Asset Bank
         href: assetbank-tutorial.md
+      - name: Asset Infinity
+        href: asset-infinity-tutorial.md
       - name: Asset Planner
         href: asset-planner-tutorial.md  
       - name: Assent SSO
@@ -1835,6 +1837,8 @@
         href: ms-azure-sso-access-for-ethidex-compliance-office-tutorial.md
       - name: Mural Identity
         href: mural-identity-tutorial.md  
+      - name: Muzeek
+        href: muzeek-tutorial.md
       - name: MVISION Cloud Microsoft Entra SSO Configuration
         href: skyhighnetworks-tutorial.md
       - name: myAOS
@@ -3888,6 +3892,8 @@
         href: yellowbox-provisioning-tutorial.md
       - name: Zapier
         href: zapier-provisioning-tutorial.md 
+      - name: Zello
+        href: zello-provisioning-tutorial.md
       - name: Zendesk
         href: zendesk-provisioning-tutorial.md
       - name: Zenya

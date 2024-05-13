@@ -2545,6 +2545,8 @@ Assign the SharePoint Embedded Administrator role to users who need to do the fo
 - Assign security and compliance policies on SharePoint Embedded containers
 - Apply security and compliance policies on SharePoint Embedded containers in a tenant
 
+[Learn more](/sharepoint/dev/embedded/concepts/admin-exp/cta)
+
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |

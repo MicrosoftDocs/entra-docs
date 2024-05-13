@@ -73,7 +73,7 @@ After an app is configured for self-service, application owners can invite guest
 
 ## Prerequisites
 
-Self-service app management requires some initial setup by a Global Administrator and a Microsoft Entra administrator. As part of this setup, you'll configure the app for self-service and assign a group to the app that the application owner can manage. You can also configure the group to allow anyone to request membership but require a group owner's approval. (Learn more about [self-service group management](~/identity/users/groups-self-service-management.md).) 
+Self-service app management requires some initial setup by a Microsoft Entra administrator. As part of this setup, you'll configure the app for self-service and assign a group to the app that the application owner can manage. You can also configure the group to allow anyone to request membership but require a group owner's approval. (Learn more about [self-service group management](~/identity/users/groups-self-service-management.md).) 
 
 > [!NOTE]
 > You cannot add guest users to a dynamic group or to a group that is synced with on-premises Active Directory.

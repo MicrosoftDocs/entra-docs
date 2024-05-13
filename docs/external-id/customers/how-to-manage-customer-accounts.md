@@ -19,7 +19,7 @@ ms.custom: it-pro
 
 There might be scenarios in which you want to manually create customer accounts in your Microsoft Entra external tenant. Although customer accounts are most commonly created when users sign up to use one of your applications, you can create them programmatically and by using the Microsoft Entra admin center. This article focuses on the Microsoft Entra admin center method of user creation and deletion.
 
-To add or delete users, your account must be assigned the *User Administrator* or *Global Administrator* role.
+To add or delete users, your account must be assigned at least the [User Administrator](/entra/identity/role-based-access-control/permissions-reference#user-administrator) role.
 
 ## Prerequisites
 
@@ -31,7 +31,7 @@ To add or delete users, your account must be assigned the *User Administrator* o
 
 ## Create a customer account
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) with Global Administrator or Privileged Role Administrator permissions.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](/entra/identity/role-based-access-control/permissions-reference#user-administrator).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your external tenant from the **Directories + subscriptions** menu.
 1. Browse to **Identity** > **Users** > **All users**.
 1. Select **New user** > **Create new user**. 
@@ -52,7 +52,7 @@ As an administrator, you can reset a user's password, if the user forgets their 
 
 To reset a customer's password:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) with Global Administrator or Privileged Role Administrator permissions.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](/entra/identity/role-based-access-control/permissions-reference#user-administrator).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your external tenant from the **Directories + subscriptions** menu.
 1. Browse to **Identity** > **Users** > **All users**.
 1. Search for and select the user that needs the reset, and then select **Reset Password**.
@@ -61,7 +61,7 @@ To reset a customer's password:
 
 ## Delete a customer account
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) with Global Administrator or Privileged Role Administrator permissions.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](/entra/identity/role-based-access-control/permissions-reference#user-administrator).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your external tenant from the **Directories + subscriptions** menu.
 1. Browse to **Identity** > **Users** > **All users**.
 1. Search for and select the user to delete.
