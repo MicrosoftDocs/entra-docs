@@ -16,7 +16,7 @@ ms.reviewer: mwahl
 
 Access to groups and applications for employees and guests changes over time. To reduce the risk associated with stale access assignments, administrators can use Microsoft Entra ID to create access reviews for group members or application access.
 
-Microsoft 365 and Security group owners can also use Microsoft Entra ID to create access reviews for group members as long as a user in the Global Administrator or Identity Governance Administrator role enables the setting via the **Access Reviews Settings** pane. For more information about these scenarios, see [Manage access reviews](manage-access-review.md).
+Microsoft 365 and Security group owners can also use Microsoft Entra ID to create access reviews for group members as long as a user with at least the Identity Governance Administrator role enables the setting via the **Access Reviews Settings** pane. For more information about these scenarios, see [Manage access reviews](manage-access-review.md).
 
 Watch a short video that talks about enabling access reviews.
 

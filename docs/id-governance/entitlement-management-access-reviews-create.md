@@ -18,10 +18,9 @@ To reduce the risk of stale access, you should enable periodic reviews of users 
 
 To enable reviews of access packages, you must meet the prerequisites for creating an access package:
 - Microsoft Entra ID P2 or Microsoft Entra ID Governance
-- Global administrator, Identity Governance administrator, Catalog owner, or Access package manager
+- Be using at least the Identity Governance administrator role, or be the Catalog owner or Access package manager
 
 For more information, see [License requirements](entitlement-management-overview.md#license-requirements).
-
 
 ## Create an access review of an access package
 
