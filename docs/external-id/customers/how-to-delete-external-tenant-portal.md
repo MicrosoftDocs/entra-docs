@@ -21,8 +21,8 @@ You can't delete an external tenant until it passes several checks. These checks
 ## Prerequisites
 
 - A Microsoft Entra External ID external tenant that you want to delete.
-- There are no users are in the external tenant, except one [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) who will delete the tenant. You must delete any other users before you can delete the tenant.
-- There are no applications are in the tenant. Make sure that you remove all applications including the **b2c-extensions-app**. You must delete all apps listed under **App registrations** in the **All applications** section before proceeding with the deletion. 
+- There are no users in the external tenant, except one [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) who will delete the tenant. You must delete any other users before you can delete the tenant.
+- There are no applications in the tenant. Make sure that you remove all applications including the **b2c-extensions-app**. You must delete all apps listed under **App registrations** in the **All applications** section before proceeding with the deletion. 
 
 ## Delete the external tenant
 
