@@ -5,7 +5,7 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: subject-rbac-steps, devx-track-arm-template
-ms.date: 05/12/2023
+ms.date: 05/12/2024
 ms.service: identity-platform
 
 ms.topic: how-to
@@ -14,7 +14,7 @@ ms.topic: how-to
 
 # Create a Microsoft Entra application and service principal that can access resources
 
-In this article, you'll learn how to create a Microsoft Entra application and service principal that can be used with the role-based access control. When you register a new application in Microsoft Entra ID, a service principal is automatically created for the app registration. The service principal is the app's identity in the Microsoft Entra tenant. Access to resources is restricted by the roles assigned to the service principal, giving you control over which resources can be accessed and at which level. For security reasons, it's always recommended to use service principals with automated tools rather than allowing them to sign in with a user identity.
+In this article, you'll learn how to create a Microsoft Entra application and service principal that can be used with role-based access control (RBAC). When you register a new application in Microsoft Entra ID, a service principal is automatically created for the app registration. The service principal is the app's identity in the Microsoft Entra tenant. Access to resources is restricted by the roles assigned to the service principal, giving you control over which resources can be accessed and at which level. For security reasons, it's always recommended to use service principals with automated tools rather than allowing them to sign in with a user identity.
 
 In this article, you'll create a single tenant application in the Azure portal. This example is applicable for line-of-business applications used within one organization. You can also [use Azure PowerShell](howto-authenticate-service-principal-powershell.md) or the [Azure CLI](/cli/azure/create-an-azure-service-principal-azure-cli) to create a service principal.
 
@@ -28,12 +28,7 @@ For more information on the relationship between app registration, application o
 To register an application in your Microsoft Entra tenant, you need:
 
 - A Microsoft Entra user account. If you don't already have one, you can [create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-
-## Permissions required for registering an app
-
-You must have sufficient permissions to register an application with your Microsoft Entra tenant, and assign to the application a role in your Azure subscription. To complete these tasks, you require `Application.ReadWrite.All`permission.
-
-<a name='register-an-application-with-azure-ad-and-create-a-service-principal'></a>
+- Sufficient permissions to register an application with your Microsoft Entra tenant, and assign to the application a role in your Azure subscription. To complete these tasks, you require `Application.ReadWrite.All`permission.
 
 ## Register an application with Microsoft Entra ID and create a service principal
 
@@ -41,14 +36,12 @@ You must have sufficient permissions to register an application with your Micros
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 1. Browse to **Identity** > **Applications** > **App registrations** then select **New registration**.
-1. Name the application, for example "example-app". 
+1. Name the application, for example *example-app*. 
 1. Select a supported account type, which determines who can use the application. 
 1. Under **Redirect URI**, select **Web** for the type of application you want to create. Enter the URI where the access token is sent to.
 1. Select **Register**.
 
-   :::image type="content" source="media/howto-create-service-principal-portal/create-app.png" alt-text="Type a name for your application.":::
-
-You've created your Microsoft Entra application and service principal.
+   :::image type="content" source="media/howto-create-service-principal-portal/create-app.png" alt-text="Screenshot showing the application registration page.":::
 
 ## Assign a role to the application
 
@@ -66,7 +59,7 @@ You can set the scope at the level of the subscription, resource group, or resou
 1. Select **Select members**. By default, Microsoft Entra applications aren't displayed in the available options. To find your application, Search for it by its name. 
 1. Select the **Select** button, then select **Review + assign**.
 
-    :::image type="content" source="media/howto-create-service-principal-portal/add-role-assignment.png" alt-text="Screenshot showing role assignment.":::
+    :::image type="content" source="media/howto-create-service-principal-portal/add-role-assignment.png" alt-text="Screenshot showing role assignment, and highlighting how to add members.":::
  
 Your service principal is set up. You can start using it to run your scripts or apps. To manage your service principal (permissions, user consented permissions, see which users have consented, review permissions, see sign in information, and more), go to **Enterprise applications**.
 
@@ -95,7 +88,7 @@ To upload the certificate file:
 
 After registering the certificate with your application in the application registration portal, enable the [confidential client application](authentication-flows-app-scenarios.md#single-page-public-client-and-confidential-client-applications) code to use the certificate.
 
-### Option 2: Testing only- create and upload a self-signed certificate
+### Option 2: Testing only: Create and upload a self-signed certificate
 
 Optionally, you can create a self-signed certificate for *testing purposes only*. To create a self-signed certificate, open Windows PowerShell and run [New-SelfSignedCertificate](/powershell/module/pki/new-selfsignedcertificate) with the following parameters to create the certificate in the user certificate store on your computer:
 
@@ -131,7 +124,7 @@ If you choose not to use a certificate, you can create a new client secret.
 
 Once you've saved the client secret, the value of the client secret is displayed. This is only displayed once, so copy this value and store it where your application can retrieve it, usually where your application keeps values like `clientId`, or `authoruty` in the source code. You'll provide the secret value along with with the application's client ID to sign in as the application.
 
-   :::image type="content" source="media/howto-create-service-principal-portal/copy-secret.png" alt-text="Screenshot showing the client secret.":::
+   :::image type="content" source="media/howto-create-service-principal-portal/copy-secret.png" alt-text="Screenshot showing the client secret value.":::
 
 ## Configure access policies on resources
 
@@ -147,7 +140,7 @@ To configure access policies:
 
     ![Add access policy](./media/howto-create-service-principal-portal/add-access-policy.png)
 
-## Next steps
+## Related content
 
 - Learn how to use [Azure PowerShell](howto-authenticate-service-principal-powershell.md) or [Azure CLI](/cli/azure/azure-cli-sp-tutorial-1) to create a service principal.
 - To learn about specifying security policies, see [Azure role-based access control (Azure RBAC)](/azure/role-based-access-control/role-assignments-portal).

@@ -5,17 +5,17 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: 
-ms.date: 01/27/2022
+ms.date: 05/13/2024
 ms.reviewer: jmprieur
 ms.service: identity-platform
 
-ms.topic: concept-article
+ms.topic: how-to
 #Customer intent: As an application developer, I want to know how to write a protected web API using the Microsoft identity platform for developers.
 ---
 
 # Protected web API: App registration
 
-This article explains the specifics of app registration for a protected web API.
+This article explains how to register an application for a protected web API.
 
 For the common steps to register an app, see [Quickstart: Register an application with the Microsoft identity platform](quickstart-register-app.md).
 
@@ -111,11 +111,11 @@ To increase security by restricting token issuance only to client apps that have
 1. Set **Assignment required?** to **Yes**.
 1. Select **Save**.
 
-Microsoft Entra ID will now check for app role assignments of client applications that request access tokens for your web API. If a client app hasn't been assigned any app roles, Microsoft Entra ID returns an error message to the client similar to _invalid_client: AADSTS501051: Application \<application name\> isn't assigned to a role for the \<web API\>_.
+Microsoft Entra ID will now check for app role assignments of client applications that request access tokens for your web API. If a client app hasn't been assigned any app roles, Microsoft Entra ID returns an error message to the client similar to `_invalid_client: AADSTS501051: Application \<application name\> isn't assigned to a role for the \<web API\>_`.
 
 > [!WARNING]
 > **DO NOT use AADSTS error codes** or their message strings as literals in your application's code. The "AADSTS" error codes and the error message strings returned by Microsoft Entra ID are _not immutable_, and may be changed by Microsoft at any time and without your knowledge. If you make branching decisions in your code based on the values of either the AADSTS codes or their message strings, you put your application's functionality and stability at risk.
 
-## Next steps
+## Next step
 
 The next article in this series is [App code configuration](scenario-protected-web-api-app-configuration.md).

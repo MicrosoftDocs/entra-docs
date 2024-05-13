@@ -1,11 +1,11 @@
 ---
-title: Customize app JSON Web Token (JWT) claims (Preview)
+title: Customize app JSON Web Token (JWT) claims
 description: Learn how to customize the claims issued by Microsoft identity platform in the JSON web token (JWT) token for enterprise applications.
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: curation-claims, devx-track-dotnet
-ms.date: 05/01/2023
+ms.date: 05/13/2024
 ms.reviewer: rahulnagraj, alamaral
 ms.service: identity-platform
 
@@ -15,7 +15,7 @@ ms.topic: how-to
 
 # Customize claims issued in the JSON web token (JWT) for enterprise applications
 
-The Microsoft identity platform supports [single sign-on (SSO)](~/identity/enterprise-apps/what-is-single-sign-on.md) with most preintegrated applications in the Microsoft Entra application gallery and custom applications. When a user authenticates to an application through the Microsoft identity platform using the OIDC protocol, the Microsoft identity platform sends a token to the application. The application validates and uses the token to sign the user in instead of prompting for a username and password.
+The Microsoft identity platform supports [single sign-on (SSO)](~/identity/enterprise-apps/what-is-single-sign-on.md) with most pre-integrated applications in the Microsoft Entra application gallery and custom applications. When a user authenticates to an application through the Microsoft identity platform using the OIDC protocol, it sends a token to the application. The application validates and uses the token to sign the user in instead of prompting for a username and password.
 
 These JSON Web tokens (JWT) used by OIDC and OAuth applications contain pieces of information about the user known as *claims*. A claim is information that an identity provider states about a user inside the token they issue for that user. In an [OIDC response](v2-protocols-oidc.md), claims data is typically contained in the ID Token issued by the identity provider in the form of a JWT.
 
@@ -185,6 +185,7 @@ As another example, consider when Britta Simon tries to sign in using the follow
 As a final example, consider what happens if Britta has no `user.othermail` configured or it's empty. The claim falls back to `user.extensionattribute1` ignoring the condition entry in both cases.
 
 ## Security considerations
+
 Applications that receive tokens rely on claim values that can't be tampered with. When you modify the token contents through claims customization, these assumptions may no longer be correct. Applications must explicitly acknowledge that tokens have been modified to protect themselves from customizations created by malicious actors. Protect from inappropriate customizations in one the following ways:
 
 - [Configure a custom signing key](#configure-a-custom-signing-key)
@@ -193,6 +194,7 @@ Applications that receive tokens rely on claim values that can't be tampered wit
 Without this, Microsoft Entra ID returns an [AADSTS50146 error code](./reference-error-codes.md#aadsts-error-codes).
 
 ## Configure a custom signing key
+
 For multi-tenant apps, a custom signing key should be used. Don't set `acceptMappedClaims` in the app manifest. when setting up an app in the Azure portal, you get an app registration object and a service principal in your tenant. That app is using the Azure global sign-in key, which can't be used for customizing claims in tokens. To get custom claims in tokens, create a custom sign-in key from a certificate and add it to service principal. For testing purposes, you can use a self-signed certificate. After you configure the custom signing key, your application code needs to validate the token signing key.
 
 Add the following information to the service principal:
@@ -209,7 +211,7 @@ Extract the private and public key base-64 encoded from the PFX file export of y
 
 The following example shows the format of the HTTP PATCH request to add a custom signing key to a service principal. The "key" value in the `keyCredentials` property is shortened for readability. The value is base-64 encoded. For the private key, the property usage is `Sign`. For the public key, the property usage is `Verify`.
 
-```
+```JSON
 PATCH https://graph.microsoft.com/v1.0/servicePrincipals/f47a6776-bca7-4f2e-bc6c-eec59d058e3e
 
 Content-type: servicePrincipals/json
@@ -218,31 +220,31 @@ Authorization: Bearer {token}
 {
     "keyCredentials":[
         {
-            "customKeyIdentifier": "lY85bR8r6yWTW6jnciNEONwlVhDyiQjdVLgPDnkI5mA=", 
+            "customKeyIdentifier": "Abababababababa121212121212121=", 
             "endDateTime": "2021-04-22T22:10:13Z",
-            "keyId": "4c266507-3e74-4b91-aeba-18a25b450f6e",
+            "keyId": "11111111-1111-1111-1111-111111111111",
             "startDateTime": "2020-04-22T21:50:13Z",
             "type": "X509CertAndPassword",
             "usage": "Sign",
-            "key":"MIIKIAIBAz.....HBgUrDgMCERE20nuTptI9MEFCh2Ih2jaaLZBZGeZBRFVNXeZmAAgIH0A==",
+            "key":"MIIKIAIBAz...eZmAAgIH0A==",
             "displayName": "CN=contoso"
         },
         {
-            "customKeyIdentifier": "lY85bR8r6yWTW6jnciNEONwlVhDyiQjdVLgPDnkI5mA=",
+            "customKeyIdentifier": "Abababababababa121212121212121=",
             "endDateTime": "2021-04-22T22:10:13Z",
-            "keyId": "e35a7d11-fef0-49ad-9f3e-aacbe0a42c42",
+            "keyId": "22222222-2222-2222-2222-222222222222",
             "startDateTime": "2020-04-22T21:50:13Z",
             "type": "AsymmetricX509Cert",
             "usage": "Verify",
-            "key": "MIIDJzCCAg+gAw......CTxQvJ/zN3bafeesMSueR83hlCSyg==",
+            "key": "MIIDJzCCAg+gAw......83hlCSyg==",
             "displayName": "CN=contoso"
         }
 
     ],
     "passwordCredentials": [
         {
-            "customKeyIdentifier": "lY85bR8r6yWTW6jnciNEONwlVhDyiQjdVLgPDnkI5mA=",
-            "keyId": "4c266507-3e74-4b91-aeba-18a25b450f6e",
+            "customKeyIdentifier": "Abababababababa121212121212121=",
+            "keyId": "33333333-3333-3333-3333-333333333333",
             "endDateTime": "2022-01-27T19:40:33Z",
             "startDateTime": "2020-04-20T19:40:33Z",
             "secretText": "mypassword"
@@ -252,11 +254,12 @@ Authorization: Bearer {token}
 ```
 
 ## Configure a custom signing key using PowerShell
+
 Use PowerShell to [instantiate an MSAL Public Client Application](/entra/msal/dotnet/getting-started/initializing-client-applications#initializing-a-public-client-application-from-code) and use the [Authorization Code Grant](v2-oauth2-auth-code-flow.md) flow to obtain a delegated permission access token for Microsoft Graph. Use the access token to call Microsoft Graph and configure a custom signing key for the service principal. After you configure the custom signing key, your application code needs to [validate the token signing key](#validate-token-signing-key).
 
 To run this script, you need:
 
-- The object ID of your application's service principal, found in the Overview blade of your application's entry in Enterprise Applications in the Azure portal.
+- The object ID of your application's service principal, found in the **Overview** blade of your application's entry in Enterprise Applications in the Azure portal.
 - An app registration to sign in a user and get an access token to call Microsoft Graph. Get the application (client) ID of this app in the Overview blade of the application's entry in App registrations in the Azure portal. The app registration should have the following configuration:
   - A redirect URI of "http://localhost" listed in the **Mobile and desktop applications** platform configuration.
   - In **API permissions**, Microsoft Graph delegated permissions **Application.ReadWrite.All** and **User.Read** (make sure you grant Admin consent to these permissions).
@@ -265,14 +268,14 @@ To run this script, you need:
   - Application Administrator
   - Global Administrator
 - A certificate to configure as a custom signing key for our application. You can either create a self-signed certificate or obtain one from your trusted certificate authority. The following certificate components are used in the script:
-  - public key (typically a .cer file)
-  - private key in PKCS#12 format (in .pfx file)
-  - password for the private key (pfx file)
+  - public key (typically a *.cer* file)
+  - private key in PKCS#12 format (in *.pfx* file)
+  - password for the private key (*.pfx* file)
  
 > [!IMPORTANT]
 > The private key must be in PKCS#12 format since Microsoft Entra ID doesn't support other format types. Using the wrong format can result in the error "Invalid certificate: Key value is invalid certificate" when using Microsoft Graph to PATCH the service principal with a `keyCredentials` containing the certificate information.
 
-```
+```powershell
 $fqdn="fourthcoffeetest.onmicrosoft.com" # this is used for the 'issued to' and 'issued by' field of the certificate
 $pwd="mypassword" # password for exporting the certificate private key
 $location="C:\\temp" # path to folder where both the pfx and cer file will be written to
@@ -453,13 +456,15 @@ else
 ```
 
 ## Validate token signing key
+
 Apps that have claims mapping enabled must validate their token signing keys by appending `appid={client_id}` to their [OpenID Connect metadata requests](v2-protocols-oidc.md#fetch-the-openid-configuration-document). The following example shows the format of the OpenID Connect metadata document you should use:
 
-```
+```http
 https://login.microsoftonline.com/{tenant}/v2.0/.well-known/openid-configuration?appid={client-id}
 ```
 
 ## Update the application manifest
+
 For single tenant apps, you can set the `acceptMappedClaims` property to `true` in the [application manifest](reference-app-manifest.md). As documented on the [`apiApplication` resource type](/graph/api/resources/apiapplication?view=graph-rest-1.0&preserve-view=true#properties). Setting the property allows an application to use claims mapping without specifying a custom signing key.
 
 >[!WARNING]
@@ -475,6 +480,6 @@ Configure advanced claims options for OIDC applications to expose the same claim
 
 Configure advanced claim options by checking the box under **Advanced Claims Options** in the **Manage claims** blade.
 
-## Next steps
+## Related content
 
-* Learn more about the [claims and tokens used in Microsoft Entra ID](security-tokens.md).
+* [Claims and tokens used in Microsoft Entra ID](security-tokens.md).
