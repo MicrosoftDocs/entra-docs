@@ -15,7 +15,7 @@ ms.author: jfields
 This article describes how to onboard a Microsoft Azure subscription or subscriptions on Permissions Management. Onboarding a subscription creates a new authorization system to represent the Azure subscription in Permissions Management.
 
 > [!NOTE]
-> You must have [Permissions Management Administrator](../identity/role-based-access-control/delegate-by-task.md#permissions-management) permissions to perform the tasks in this article.
+> You must be a [Permissions Management Administrator](../identity/role-based-access-control/delegate-by-task.md#permissions-management) to perform the tasks in this article.
 
 ## Explanation
 
