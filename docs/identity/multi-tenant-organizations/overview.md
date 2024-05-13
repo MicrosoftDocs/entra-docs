@@ -62,7 +62,7 @@ The following set of multitenant capabilities support the needs of multitenant o
 
 - **Cross-tenant synchronization** - Provides a synchronization service that automates creating, updating, and deleting B2B collaboration users across your organization of multiple tenants. The service can be used to scope Microsoft 365 people search in target tenants. The service is governed by cross-tenant synchronization settings under cross-tenant access settings.
 
-- **Microsoft 365 multitenant people search** - Collaboration with B2B collaboration users. If shown in address list, B2B collaboration users are available as contacts in Outlook. If elevated to user type Member, B2B collaboration member users are available in most Microsoft 365 office applications. 
+- **Microsoft 365 multitenant people search** - Collaboration with B2B collaboration users. If shown in address list, B2B collaboration users are available as contacts in Outlook. If elevated to user type Member, B2B collaboration member users are available in most Microsoft 365 applications. 
 
 - **Multitenant organization** - Defines a boundary around the Microsoft Entra tenants that your organization owns, facilitated by an invite-and-accept flow. In conjunction with B2B member provisioning, enables seamless collaboration experiences in Microsoft Teams and Microsoft 365 applications like Microsoft Viva Engage. Cross-tenant access settings provide a flag for your multitenant organization tenants.
 
@@ -129,7 +129,7 @@ For more information, see [What is cross-tenant synchronization?](./cross-tenant
 
 B2B collaboration users can now be enabled for collaboration in Microsoft 365, beyond the well-known [B2B collaboration guest user](../../external-id/what-is-b2b.md) experience.
 
-Multitenant organization people search is a collaboration feature that enables search and discovery of people across multiple tenants.  If shown in address list, B2B collaboration users are available as contacts in Outlook. In addition to being shown in address list, if further elevated to user type Member, B2B collaboration member users are available in most Microsoft 365 office applications.
+Multitenant organization people search is a collaboration feature that enables search and discovery of people across multiple tenants.  If shown in address list, B2B collaboration users are available as contacts in Outlook. In addition to being shown in address list, if further elevated to user type Member, B2B collaboration member users are available in most Microsoft 365 applications.
 
 Here are the primary benefits of using Microsoft 365 people search across multiple tenants:
 
@@ -138,8 +138,8 @@ Here are the primary benefits of using Microsoft 365 people search across multip
 
 Here are the primary constraints of using Microsoft 365 people search across multiple tenants:
 
-- For collaboration in most M365 office applications, a B2B collaboration user should be shown in address lists as well as be set to user type Member.
-- For additional address list constraints, see [global address list limitations in multitenant organizations](multi-tenant-organization-known-issues.md#global-address-list).
+- For collaboration in most Microsoft 365 applications, a B2B collaboration user should be shown in address lists as well as be set to user type Member.
+- For additional address list constraints, see [global address list limitations in multitenant organizations](multi-tenant-organization-known-issues.md#global-address-list-managed-in-the-host-tenant).
 
 For more information, see [Microsoft 365 multitenant people search](/microsoft-365/enterprise/multi-tenant-people-search).
 
