@@ -36,7 +36,7 @@ This tutorial describes the steps you need to perform in both Bizagi Studio for 
 The scenario outlined in this tutorial assumes that you already have the following:
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md). 
-* A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning. Examples include application administrator, cloud application administrator, application owner, or global administrator. 
+* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
 * Bizagi Studio for Digital Process Automation version 11.2.4.2X or later.
 
 ## Plan your provisioning deployment

@@ -147,7 +147,7 @@ If users who access the applications originate in on-premises Active Directory, 
 
 1. Open the Microsoft Entra Connect wizard, choose Tasks, and then choose **Customize synchronization options**.
 
-2. Sign in as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+2. Sign in as a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
 
 3. On the **Optional Features** page, select **Directory extension attribute sync**.
 

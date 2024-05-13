@@ -233,7 +233,7 @@ Find the application ID (client ID) of the multi-tenant application and share it
 
 The following steps are performed by the customer in the customer's tenant *Tenant2*. The customer can use the Azure portal, Azure PowerShell, or Azure CLI.
 
-The user executing the steps must be an administrator with a privileged role such as [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator), [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator), or [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+The user executing the steps must be an administrator with at least the [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) or [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator) role.
 
 # [Portal](#tab/azure-portal)
 

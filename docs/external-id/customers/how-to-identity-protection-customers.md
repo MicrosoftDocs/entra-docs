@@ -1,6 +1,6 @@
 ---
 title: Identity Protection for a customer app
-description: Learn how to add Identity Protection to your customer-facing (CIAM) application to provide ongoing risk detection.
+description: Learn how to add Identity Protection to your consumer and business customer (CIAM) application to provide ongoing risk detection.
  
 author: msmimart
 manager: celestedg

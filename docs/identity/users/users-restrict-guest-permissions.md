@@ -61,7 +61,7 @@ POST https://graph.microsoft.com/beta/policies/authorizationPolicy/authorization
 Response should be Success 204.
 
 
-[!INCLUDE [Azure AD PowerShell migration](../../includes/aad-powershell-migration-include.md)]
+[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
 
 ### Updating the existing value
 

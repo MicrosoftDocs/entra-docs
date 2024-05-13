@@ -39,7 +39,7 @@ Methods include:
 
 - [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/hello-overview)
 - [Microsoft Authenticator app](concept-authentication-authenticator-app.md)
-- [FIDO2 security key](concept-authentication-passwordless.md#fido2-security-key-providers)
+- [FIDO2 security key](concept-authentication-passwordless.md)
 - [OATH hardware tokens (preview)](concept-authentication-oath-tokens.md#oath-hardware-tokens-preview)
 - [OATH software tokens](concept-authentication-oath-tokens.md#oath-software-tokens)
 - [SMS verification](concept-authentication-phone-options.md#mobile-phone-verification)
@@ -98,7 +98,7 @@ Common use cases to require Microsoft Entra multifactor authentication include:
 
 ### Named locations
 
-To manage your Conditional Access policies, the location condition of a Conditional Access policy enables you to tie access controls settings to the network locations of your users. We recommend using [Named Locations](~/identity/conditional-access/location-condition.md) so that you can create logical groupings of IP address ranges or countries and regions. This creates a policy for all apps that blocks sign-in from that named location. Be sure to exempt your administrators from this policy.
+To manage your Conditional Access policies, the location condition of a Conditional Access policy enables you to tie access controls settings to the network locations of your users. We recommend using [Named Locations](../conditional-access/concept-assignment-network.md) so that you can create logical groupings of IP address ranges or countries and regions. This creates a policy for all apps that blocks sign-in from that named location. Be sure to exempt your administrators from this policy.
 
 ### Risk-based policies
 

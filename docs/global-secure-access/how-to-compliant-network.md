@@ -3,11 +3,11 @@ title: Enable compliant network check with Conditional Access
 description: Learn how to require known compliant network locations in order to connect to your secured resources with Conditional Access.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 03/19/2024
+ms.date: 05/09/2024
 ms.author: kenwith
 author: kenwith
 manager: amycolannino
-ms.reviewer: mamkumar
+ms.reviewer: smistry
 ---
 # Enable compliant network check with Conditional Access
 
@@ -23,13 +23,13 @@ This compliant network check is specific to each tenant.
   - For example: Contoso can protect their services like Exchange Online and SharePoint Online behind their compliant network check to ensure only Contoso users can access these resources.
   - If another organization like Fabrikam was using a compliant network check, they wouldn't pass Contoso's compliant network check.
 
-The compliant network is different than [IPv4, IPv6, or geographic locations](../identity/conditional-access/location-condition.md) you might configure in Microsoft Entra ID. No administrator upkeep is required.
+The compliant network is different than [IPv4, IPv6, or geographic locations](../identity/conditional-access/concept-assignment-network.md) you might configure in Microsoft Entra. No administrator upkeep is required.
 
 ## Prerequisites
 
 - Administrators who interact with **Global Secure Access preview** features must have one or more of the following role assignments depending on the tasks they're performing.
-   - The **Global Secure Access Administrator** role to manage the Global Secure Access preview features.
-   - [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) or [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) to create and interact with Conditional Access policies and named locations.
+   - The [Global Secure Access Administrator role](/azure/active-directory/roles/permissions-reference) role to manage the Global Secure Access preview features.
+   - [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) to create and interact with Conditional Access policies and named locations.
 - The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 - To use the Microsoft 365 traffic forwarding profile, a Microsoft 365 E3 license is recommended.
 

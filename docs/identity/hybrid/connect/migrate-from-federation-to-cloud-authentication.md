@@ -28,8 +28,6 @@ Staged rollout is a great way to selectively test groups of users with cloud aut
 
 Refer to the staged rollout implementation plan to understand the [supported](how-to-connect-staged-rollout.md#supported-scenarios) and [unsupported scenarios](how-to-connect-staged-rollout.md#unsupported-scenarios). We recommend using staged rollout to test before cutting over domains.
 
-<!-- To learn how to configure staged rollout, see the [staged rollout interactive guide](`https://mslearn.cloudguides.com/guides/Test%20migration%20to%20cloud%20authentication%20using%20staged%20rollout%20in%20Azure%20AD`) migration to cloud authentication using staged rollout in Microsoft Entra ID). 
-
 ## Migration process flow
 
 ![Process flow for migrating to cloud auth](media/deploy-cloud-user-authentication/process-flow-migration.png)
@@ -53,7 +51,7 @@ Install [Microsoft Entra Connect](https://www.microsoft.com/download/details.asp
 To find your current federation settings, run [Get-MgDomainFederationConfiguration](/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdomainfederationconfiguration?view=graph-powershell-1.0&viewFallbackFrom=graph-powershell-beta&preserve-view=true).
 
 ```powershell
-Get-MgDomainFederationConfiguration –DomainID yourdomain.com
+Get-MgDomainFederationConfiguration - DomainID yourdomain.com
 ```
 
 Verify any settings that might have been customized for your federation design and deployment documentation. Specifically, look for customizations in **PreferredAuthenticationProtocol**, **federatedIdpMfaBehavior**, **SupportsMfa** (if **federatedIdpMfaBehavior** isn't set), and **PromptLoginBehavior**.

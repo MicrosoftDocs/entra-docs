@@ -20,7 +20,7 @@ The standard mobile app sign-in process, which relies on browser-delegated authe
 
 While browser-delegated authentication offers benefits such as reduced attack vectors and support for single sign-on (SSO), they have limited UI customization options and a poor user experience.
 
-[!INCLUDE [preview-alert](../customers/includes/preview-alert/preview-alert-ciam.md)]
+
 
 ## Available authentication methods
 
@@ -68,7 +68,7 @@ The following table shows the availability of features for browser-delegated and
 
 ## How to use native authentication
 
-You can build your customer-facing apps that use native authentication by using our native authentication APIs or the Microsoft Authentication Library (MSAL) SDK for Android and iOS. Whenever possible, we recommend using MSAL to add native authentication to your apps. 
+You can build apps that use native authentication by using our native authentication APIs or the Microsoft Authentication Library (MSAL) SDK for Android and iOS. Whenever possible, we recommend using MSAL to add native authentication to your apps. 
 
 For more information on native authentication samples and tutorials, see the following table.
 

@@ -22,7 +22,7 @@ The sign-in logs in Microsoft Entra ID give you the information that you need to
 
 ## Prerequisites
 
-To see applied Conditional Access policies in the sign-in logs, administrators must have permissions to view *both* the logs and the policies. The least privileged built-in role that grants *both* permissions is *Security Reader*. As a best practice, your Global Administrator should add the Security Reader role to the related administrator accounts.
+To see applied Conditional Access policies in the sign-in logs, administrators must have permissions to view *both* the logs and the policies. The least privileged built-in role that grants *both* permissions is *Security Reader*. As a best practice, you should add the Security Reader role to the related administrator accounts.
 
 The following built-in roles grant permissions to *read Conditional Access policies*:
 

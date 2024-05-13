@@ -68,7 +68,7 @@ LAPS is available to all customers with Microsoft Entra ID Free or higher licens
 
 ### Required roles or permission
 
-Other than the built-in Microsoft Entra roles of Cloud Device Administrator, Intune Administrator, and Global Administrator that are granted *device.LocalCredentials.Read.All*, you can use [Microsoft Entra custom roles](../role-based-access-control/custom-create.yml) or administrative units to authorize local administrator password recovery. For example,
+Other than the built-in Microsoft Entra roles like [Cloud Device Administrator](../role-based-access-control/permissions-reference.md#cloud-device-administrator) and [Intune Administrator](../role-based-access-control/permissions-reference.md#intune-administrator) that are granted *device.LocalCredentials.Read.All*, you can use [Microsoft Entra custom roles](../role-based-access-control/custom-create.yml) or administrative units to authorize local administrator password recovery. For example:
 
 - Custom roles must be assigned the *microsoft.directory/deviceLocalCredentials/password/read* permission to authorize local administrator password recovery. You can create a custom role and grant permissions using the [Microsoft Entra admin center](https://entra.microsoft.com), [Microsoft Graph API](../role-based-access-control/custom-create.yml#create-a-role-with-the-microsoft-graph-api) or [PowerShell](../role-based-access-control/custom-create.yml#create-a-role-using-powershell). Once you create a custom role, you can assign it to users.
 

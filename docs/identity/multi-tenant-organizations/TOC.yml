@@ -28,6 +28,8 @@
       href: cross-tenant-synchronization-topology.md
     - name: Governance and cross-tenant synchronization
       href: cross-tenant-synchronization-governance.md
+    - name: Secure and govern security operations center access in a multitenant organization
+      href: defender-xdr-microsoft-entra-mto.md
     - name: Known issues
       href: ../app-provisioning/known-issues.md?toc=/entra/identity/multi-tenant-organizations/toc.json&bc=/entra/identity/multi-tenant-organizations/breadcrumb/toc.json?pivots=cross-tenant-synchronization
 - name: How-to guides

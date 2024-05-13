@@ -252,11 +252,11 @@ Read [publishing native and mobile client apps](./application-proxy-configure-na
 
 ### Use Conditional Access to strengthen security
 
-Application security requires an advanced set of security capabilities that can protect from and respond to complex threats on-premises and in the cloud. Attackers most often gain corporate network access through weak, default, or stolen user credentials.  Microsoft identity-driven security reduces use of stolen credentials by managing and protecting both privileged and non-privileged identities.
+Application security requires an advanced set of security capabilities that can protect from and respond to complex threats on-premises and in the cloud. Use Conditional Access policies to control access to your applications based on a number of conditions like location, risk, device type, device compliance, and more. For examples of policies you might deploy, see the article [Conditional Access templates](../conditional-access/concept-conditional-access-policy-common.md).
 
 The following capabilities can be used to support Microsoft Entra application proxy:
 
-* User and location-based Conditional Access: Keep sensitive data protected by limiting user access based on geo-location or an IP address with [location-based Conditional Access policies](~/identity/conditional-access/location-condition.md).
+* User and location-based Conditional Access: Keep sensitive data protected by limiting user access based on geo-location or an IP address with [location-based Conditional Access policies](~/identity/conditional-access/concept-assignment-network.md).
 
 * Device-based Conditional Access: Ensure only enrolled, approved, and compliant devices can access corporate data with [device-based Conditional Access](~/identity/conditional-access/concept-conditional-access-grant.md).
 

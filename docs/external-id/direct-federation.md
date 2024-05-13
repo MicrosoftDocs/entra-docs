@@ -108,7 +108,7 @@ Currently, the Microsoft Entra SAML/WS-Fed federation feature doesn't support se
 
 **What permissions are required to configure a SAML/Ws-Fed identity provider?**
 
-You need to be an [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator) or a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) in your Microsoft Entra tenant to configure a SAML/Ws-Fed identity provider.
+You need to be at least an [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator) to configure a SAML/Ws-Fed identity provider.
 
 ## Step 1: Determine if the partner needs to update their DNS text records
 
