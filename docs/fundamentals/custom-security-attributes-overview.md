@@ -7,7 +7,7 @@ ms.author: rolyon
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: conceptual
-ms.date: 11/15/2023
+ms.date: 05/14/2024
 ms.collection: M365-identity-device-management
 ---
 
@@ -152,9 +152,9 @@ Here are some of the limits and constraints for custom security attributes.
 > | --- | :---: | --- |
 > | Attribute definitions per tenant | 500 | Applies only to active attributes in the tenant |
 > | Attribute sets per tenant | 500 |  |
-> | Attribute set name length | 32 | Unicode characters and case insensitive |
+> | Attribute set name length | 32 | Unicode characters and case sensitive |
 > | Attribute set description length | 128 | Unicode characters |
-> | Attribute name length | 32 | Unicode characters and case insensitive |
+> | Attribute name length | 32 | Unicode characters and case sensitive |
 > | Attribute description length | 128 | Unicode characters |
 > | Predefined values |  | Unicode characters and case sensitive |
 > | Predefined values per attribute definition | 100 |  |
