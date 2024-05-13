@@ -140,7 +140,7 @@ If you offer a Software as a Service (SaaS) application to many organizations, y
 
 ### Multitenant organizations
 
-A multitenant organization is an organization that has more than one instance of Microsoft Entra ID. There are various reasons for [multi-tenancy](../identity/multi-tenant-organizations/overview.md#what-is-a-multi-tenant-organization). For example, your organization might span multiple clouds or geographical boundaries.
+A multitenant organization is an organization that has more than one instance of Microsoft Entra ID. There are various reasons for [multi-tenancy](../identity/multi-tenant-organizations/overview.md). For example, your organization might span multiple clouds or geographical boundaries.
 
 The [multitenant organization](../identity/multi-tenant-organizations/multi-tenant-organization-overview.md) capability enables seamless collaboration across Microsoft 365. It improves employee collaboration experiences across your organization of multiple tenants in applications such as Microsoft Teams and Microsoft Viva Engage.
 
