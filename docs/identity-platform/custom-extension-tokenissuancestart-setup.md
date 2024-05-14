@@ -288,17 +288,23 @@ The function needs to be deployed to Azure using our IDE. Check that you're corr
 There are three ways to set up authentication for your Azure Function: 
 
 - [Set up authentication in the Azure portal using environment variables](#set-up-authentication-in-the-azure-portal-using-environment-variables)
-- [Azure App service authentication and authorization](/azure/app-service/overview-authentication-authorization)
 - [Set up authentication in your code using `WebJobsAuthenticationEventsTriggerAttribute`](#set-up-authentication-in-your-code-using-webjobsauthenticationeventstriggerattribute)
+- [Azure App service authentication and authorization](/azure/app-service/overview-authentication-authorization)
 
-
-<!--By default, the code has been set up for the . For a better experience, it's recommended to set up environment variables for your Azure Function. These environment variables can be hardcoded in the attribute or set up in the Azure portal, but not both.-->
+By default, the code has been set up for authentication in the Azure portal using environment variables. Use the tabs below to select your preferred method of implementing environment variables, or alternatively, refer to the built-in [Azure App service authentication and authorization](/azure/app-service/overview-authentication-authorization). For setting up environment variables, use the following values:
 
    | Name | Value |
    | ---- | ----- | 
    | *AuthenticationEvents__AudienceAppId* | *Custom authentication extension app ID* |
    | *AuthenticationEvents__AuthorityUrl* | &#8226; Workforce tenant `https://login.microsoftonline.com/<tenantID>` <br> &#8226; external tenant `https://<mydomain>.ciamlogin.com` | 
    | *AuthenticationEvents__AuthorizedPartyAppId* | `99045fe1-7639-4a75-9d4a-577b6ca3810f` or another authorized party | 
+
+### Set up authentication in the Azure portal using environment variables
+
+1. Sign in to the [Azure portal](https://portal.azure.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-developer) or [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
+1. Navigate to the function app you created, and under **Settings**, select **Configuration**.
+1. Under **Application settings**, select **New application setting** and add the environment variables from the table and their associated values.  
+1. Select **Save** to save the application settings.
 
 ### Set up authentication in your code using `WebJobsAuthenticationEventsTriggerAttribute`
 
@@ -312,20 +318,6 @@ Modify the `WebJobsAuthenticationEventsTriggerAttribute` include the `AuthorityU
             AuthorityUrl = "Enter authority URI here", 
             AuthorizedPartyAppId = "Enter the Authorized Party App Id here")]WebJobsTokenIssuanceStartRequest request, ILogger log)
 ```
-
-### Set up authentication in the Azure portal using environment variables
-
-1. Sign in to the [Azure portal](https://portal.azure.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-developer) or [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
-1. Navigate to the function app you created, and under **Settings**, select **Configuration**.
-1. Under **Application settings**, select **New application setting** and add the following environment variables and associated values.  
-
-   | Name | Value |
-   | ---- | ----- | 
-   | *AuthenticationEvents__AudienceAppId* | *Custom authentication extension app ID* |
-   | *AuthenticationEvents__AuthorityUrl* | &#8226; Workforce tenant `https://login.microsoftonline.com/<tenantID>` <br> &#8226; external tenant `https://<mydomain>.ciamlogin.com` | 
-   | *AuthenticationEvents__AuthorizedPartyAppId* | `99045fe1-7639-4a75-9d4a-577b6ca3810f` or another authorized party | 
-
-1. Select **Save** to save the application settings.
 
 ::: zone-end
 
