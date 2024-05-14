@@ -98,7 +98,7 @@ This data set will enable us to perform a broad set of queries around who was gi
 
 In these PowerShell scripts, we will export selected properties from the Entra objects to JSON files. The data from these exported properties will then be used to generate custom reports in Azure Data Explorer. The specific properties below were included in these example since we will be using this data to illustrate the types of reports you can create in Azure Data Explorer. Since your specific reporting needs will likely vary from what is shown below, you should include the specific properties in these scripts that you are interested in viewing in your reports, however you can follow the same pattern shown below to help build your scripts. 
 
-We have also included a hard-coded “snapshot date” below which identifies the data in the JSON file with a specific date and will allow us to keep track of similar data sets over time in Azure Data Explorer. The snapshot date is also useful for comparing changes in data between two snapshot dates. 
+We have also included a hard-coded**snapshot date** below which identifies the data in the JSON file with a specific date and will allow us to keep track of similar data sets over time in Azure Data Explorer. The snapshot date is also useful for comparing changes in data between two snapshot dates. 
 
 Get Entra user data 
 
@@ -348,4 +348,94 @@ Generate a JSON file of all app role assignments in the tenant.
         } 
 
         $result | ConvertTo-Json -Depth 10 | Out-File "AppRoleAssignments.json" 
+     ``` 
+
+## Step 2: Ingest JSON file data into Azure Data Explorer 
+
+In Step 2, we will import the newly created JSON files for further analysis. If you haven’t yet setup Azure Data Explorer, please see Step 1 above. 
+
+Azure Data Explorer is a powerful data analysis tool that is highly scalable and flexible providing an ideal environment for generating customized user access reports. ADX uses the Kusto Query Language (KQL). 
+
+Once you have setup a database, follow these steps to get your exported data into ADX. 
+
+ 1. Right-click on the database name and choose **Get Data** 
+ 2. Choose **New Table** and enter the name of the JSON file you are importing, For example, if you are importing EntraUsers.json, name the table **EntraUsers**. After the first import, the table will already exist, and you can simply select it as the target table for the import. 
+ 3. Select the JSON file. 
+ 4. ADX will automatically detect the schema and provide a preview. Click **Finish** to create the table and import the data. 
+ 5. Follow steps 1-4 for each of the JSON files that you generated in Step 1. 
+
+## Step 3: Use ADX to build custom reports 
+
+With the data now available in ADX, you are ready to begin creating customized reports based on your business requirements. The following queries provide examples of common reports, but you can customize these reports to suit your needs and create additional reports. 
+
+### Example 1: Generate app role assignments for direct and group assignments for a specific snapshot date 
+
+This report provides a view of who had what access and when to the target app and can be used for security audits, compliance verification, and understanding access patterns within the organization. 
+
+This query targets a specific application within Entra AD and analyzes the role assignments as of a certain date. The query retrieves both direct and group-based role assignments, merging this data with user details from the EntraUsers table and role information from the AppRoles table.  
+
+     ``` 
+        // Define constants 
+
+        let targetServicePrincipalId = " 67865322-94b5-4205-9dc8-974dc569bfad"; // Target Service Principal ID 
+
+        let targetSnapshotDate = datetime("2024-01-13"); // Target Snapshot Date for the data 
+
+        // Extract role assignments for the target Service Principal and Snapshot Date 
+
+        let roleAssignments = AppRoleAssignments 
+
+            | where ResourceId == targetServicePrincipalId and startofday(SnapshotDate) == targetSnapshotDate 
+
+            | extend AppRoleIdStr = tostring(AppRoleId); // Convert AppRoleId to string for easier comparison 
+
+        // Prepare user data from EntraUsers table 
+
+        let users = EntraUsers 
+
+            | project ObjectID, UserPrincipalName, DisplayName, ObjectIDStr = tostring(ObjectID); // Include ObjectID as string for joining 
+
+        // Prepare role data from AppRoles table 
+
+        let roles = AppRoles 
+
+            | mvexpand AppRoles // Expand AppRoles to handle multiple roles 
+
+            | extend RoleName = AppRoles.DisplayName, RoleId = tostring(AppRoles.Id) // Extract Role Name and ID 
+
+            | project RoleId, RoleName; 
+
+        // Process direct assignments 
+
+        let directAssignments = roleAssignments 
+
+            | join kind=inner users on $left.PrincipalId == $right.ObjectID // Join with EntraUsers on PrincipalId 
+
+            | join kind=inner roles on $left.AppRoleIdStr == $right.RoleId // Join with roles to get Role Names 
+
+            | project UserPrincipalName, DisplayName, CreatedDateTime, RoleName, AssignmentType = "Direct", SnapshotDate; 
+
+        // Process group-based assignments 
+
+        let groupAssignments = roleAssignments 
+
+            | join kind=inner EntraGroupMembership on $left.PrincipalId == $right.GroupId // Join with Group Membership 
+
+            | mvexpand Members // Expand group members 
+
+            | extend MembersStr = tostring(Members) // Convert member ID to string 
+
+            | distinct MembersStr, CreatedDateTime, AppRoleIdStr, SnapshotDate // Get distinct values 
+
+            | join kind=inner users on $left.MembersStr == $right.ObjectIDStr // Join with EntraUsers for user details 
+
+            | join kind=inner roles on $left.AppRoleIdStr == $right.RoleId // Join with roles for role names 
+
+            | project UserPrincipalName, DisplayName, CreatedDateTime, RoleName, AssignmentType = "Group", SnapshotDate; 
+
+        // Combine results from direct and group-based assignments 
+
+        directAssignments 
+
+        | union groupAssignments 
      ``` 
