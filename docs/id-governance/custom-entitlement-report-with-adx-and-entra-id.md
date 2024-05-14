@@ -28,9 +28,9 @@ By the end of this tutorial, you will have built skills to develop customized vi
 ## Prerequisites
 
 - Ensure you have the required permissions. You will need the right permissions to export the type of Entra data you would like to work with and permissions to save exported JSON files. 
- - User data: Global Administrator, Privileged Role Administrator, User Administrator 
- - Groups data: Global Administrator, Privileged Role Administrator, Group Administrator 
- - Applications/App Role Assignments: Global Administrator, Privileged Role Administrator, Application Administrator, Cloud Application Administrator 
+     - User data: Global Administrator, Privileged Role Administrator, User Administrator 
+     - Groups data: Global Administrator, Privileged Role Administrator, Group Administrator 
+     - Applications/App Role Assignments: Global Administrator, Privileged Role Administrator, Application Administrator, Cloud Application Administrator 
 
 - PowerShell must be set to allow for User.Read.All, Group.Read.All, Application.Read.All, and Directory.Read.All. See Microsoft Graph permissions reference for additional information. 
 - Ensure you have write access to the directory where you will install the required MS Graph PowerShell modules and where the exported Entra data will be saved.  
