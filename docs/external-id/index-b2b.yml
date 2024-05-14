@@ -90,7 +90,7 @@ landingContent:
         links:
           - text: Multitenant organization capabilities
             url: /entra/identity/multi-tenant-organizations/overview
-          - text: What is a multitenant organization in Microsoft Entra ID?
+          - text: What is a multitenant organization?
             url: /entra/identity/multi-tenant-organizations/multi-tenant-organization-overview
           - text: What is cross-tenant synchronization?
             url: /entra/identity/multi-tenant-organizations/cross-tenant-synchronization-overview
