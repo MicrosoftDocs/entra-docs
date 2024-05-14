@@ -350,7 +350,7 @@ Generate a JSON file of all app role assignments in the tenant.
         $result | ConvertTo-Json -Depth 10 | Out-File "AppRoleAssignments.json" 
      ``` 
 
-## Step 2: Ingest JSON file data into Azure Data Explorer 
+## Step 2: Import JSON file data into Azure Data Explorer 
 
 In Step 2, we will import the newly created JSON files for further analysis. If you haven’t yet setup Azure Data Explorer, please see Step 1 above. 
 
@@ -439,3 +439,152 @@ This query targets a specific application within Entra AD and analyzes the role 
 
         | union groupAssignments 
      ``` 
+### Example 2: Build Basic Auditor Report with Entra data showing who had access to an app between these two dates 
+
+This report provides a view of who had what access to the target app between two dates and can be used for security audits, compliance verification, and understanding access patterns within the organization. 
+
+This query targets a specific application within Entra ID and analyzes the role assignments between two dates. The query retrieves direct role assignments from the AppRoleAssignments table and merges this data with user details from the EntraUsers table and role information from the AppRoles table. 
+
+     ``` 
+        // Set the date range and service principal ID for the query 
+
+        let startDate = datetime('2024-01-01'); 
+
+        let endDate = datetime('2024-03-14'); 
+
+        let servicePrincipalId = "67865322-94b5-4205-9dc8-974dc569bfad"; 
+
+        // Query AppRoleAssignments for the specified service principal within the date range 
+
+        AppRoleAssignments  
+
+        | where ResourceId == servicePrincipalId and  
+
+                todatetime(CreatedDateTime) between (startDate .. endDate) 
+
+        // Extend AppRoleId to a string for joining 
+
+        | extend AppRoleIdStr = tostring(AppRoleId) 
+
+        // Project the necessary fields for the join with EntraUsers and AppRoles 
+
+        | project PrincipalId, AppRoleIdStr, CreatedDateTime 
+
+        // Join with EntraUsers to get user details 
+
+        | join kind=inner (EntraUsers | project UserPrincipalName, DisplayName, ObjectID) on $left.PrincipalId == $right.ObjectID 
+
+        // Join with AppRoles to get the role display names 
+
+        | join kind=inner ( 
+
+            AppRoles | mvexpand AppRoles | project RoleIdStr = tostring(AppRoles.Id), RoleDisplayName = tostring(AppRoles.DisplayName) 
+
+        ) on $left.AppRoleIdStr == $right.RoleIdStr 
+
+        // Final projection of the report with the current date and time 
+
+        | project UserPrincipalName, DisplayName, RoleDisplayName, CreatedDateTime, ReportDate = now() 
+     ``` 
+
+### Example 3: Get added users to an app between two data snapshot dates  
+
+This report provides a view of which users were given an app role assignment to the target application between two dates. This reports can be used to track changes in app access over time.  
+
+This query targets a specific application within Entra ID and changes to the role assignments between a start and end date.  
+
+ 
+     ``` 
+        let earlierDate = datetime("2024-03-01"); // Update this to your specific earlier date 
+
+        AppRoleAssignments 
+
+        | where SnapshotDate < datetime("2024-03-14") and ResourceId == "67865322-94b5-4205-9dc8-974dc569bfad" 
+
+        | project PrincipalId, AppRoleId2 = tostring(AppRoleId), CreatedDateTime 
+
+        | join kind=anti ( 
+
+            AppRoleAssignments 
+
+            | where SnapshotDate < earlierDate and ResourceId == "67865322-94b5-4205-9dc8-974dc569bfad" 
+
+            | project PrincipalId, AppRoleId1 = tostring(AppRoleId) 
+
+        ) on PrincipalId 
+
+        | join kind=inner (EntraUsers) on $left.PrincipalId == $right.ObjectID 
+
+        | join kind=inner (AppRoles  
+
+                           | mvexpand AppRoles  
+
+                           | project AppRoleId=tostring(AppRoles.Id), RoleDisplayName=tostring(AppRoles.DisplayName) 
+
+                          ) on $left.AppRoleId2 == $right.AppRoleId 
+
+        | project UserPrincipalName, DisplayName, RoleDisplayName, CreatedDateTime, PrincipalId, Change = "Added" 
+     ``` 
+### Example 4: Combine App Assignments from an Entra and a second source (e.g., SQL export) to create a report of all users (Entra assignments and local assignments) who had access to Salesforce between two dates 
+ 
+
+This report illustrates how you can combine data from two separate systems to create custom reports in ADX. It aggregates data about users, their roles, and other attributes from two systems into a unified format for analysis or reporting. 
+
+     ``` 
+        // Define the date range and service principal ID for the query 
+
+        let startDate = datetime("2023-06-01"); 
+
+        let endDate = datetime("2024-03-13"); 
+
+        let servicePrincipalId = "67865322-94b5-4205-9dc8-974dc569bfad"; 
+
+        // Pre-process AppRoleAssignments with specific filters and projections 
+
+        let processedAppRoleAssignments = AppRoleAssignments  
+
+            | where ResourceId == servicePrincipalId and todatetime(CreatedDateTime) between (startDate .. endDate) 
+
+            | extend AppRoleId = tostring(AppRoleId) 
+
+            | project PrincipalId, AppRoleId, CreatedDateTime, ResourceDisplayName; // Exclude DeletedDateTime and keep ResourceDisplayName 
+
+        // Pre-process AppRoles to get RoleDisplayName for each role 
+
+        let processedAppRoles = AppRoles  
+
+            | mvexpand AppRoles  
+
+            | project AppRoleId = tostring(AppRoles.Id), RoleDisplayName = tostring(AppRoles.DisplayName); 
+
+        // Main query: Process EntraUsers by joining with processed role assignments and roles 
+
+        EntraUsers 
+
+            | join kind=inner processedAppRoleAssignments on $left.ObjectID == $right.PrincipalId // Join with role assignments 
+
+            | join kind=inner processedAppRoles on $left.AppRoleId == $right.AppRoleId // Join with roles to get display names 
+
+            // Summarize to get the latest record for each unique combination of user and role attributes 
+
+            | summarize arg_max(AccountEnabled, *) by UserPrincipalName, DisplayName, tostring(EmployeeId), Department, JobTitle, ResourceDisplayName, RoleDisplayName, CreatedDateTime 
+
+            // Final projection of relevant fields including source indicator and report date 
+
+            | project UserPrincipalName, DisplayName, EmployeeId=tostring(EmployeeId), Department, JobTitle, AccountEnabled=tostring(AccountEnabled), ResourceDisplayName, RoleDisplayName, CreatedDateTime, Source="EntraUsers", ReportDate = now() 
+
+        // Union with processed salesforceAssignments to create a combined report 
+
+        | union ( 
+
+            salesforceAssignments 
+
+            // Project fields from salesforceAssignments to align with the EntraUsers data structure 
+
+            | project UserPrincipalName = UserName, DisplayName = Name, EmployeeId = tostring(EmployeeId), Department, JobTitle, AccountEnabled = "N/A", ResourceDisplayName = AppName, RoleDisplayName = Role, CreatedDateTime, Source = "salesforceAssignments", ReportDate = now() 
+
+        ) 
+     ``` 
+## Next steps
+
+- [What is Microsoft Entra entitlement management?](entitlement-management-overview.md)
