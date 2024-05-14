@@ -19,13 +19,13 @@ ms.collection: M365-identity-device-management
 ---
 # Register a passkey using a mobile device (preview)
 
-This article shows how to register a security key with your iOS or Android device using the **"Passkey (Preview)"** flow. 
+This article shows how to register a security key with your iOS or Android device using the Passkey (Preview) flow. 
 
 For more information about enabling passkeys in Microsoft Authenticator, see [How to enable passkeys in Microsoft Authenticator](how-to-enable-authenticator-passkey.md).
 
 ## [**iOS**](#tab/iOS)
 
-### Register a security key with iOS 
+### Register a passkey with iOS 
 
 1. Using your iOS device, open a web browser and sign-in to [My Security info](https://aka.ms/mysecurityinfo).
    
@@ -77,7 +77,7 @@ For more information about enabling passkeys in Microsoft Authenticator, see [Ho
     
 1. Upon completion, you're redirected back to [My Security info](https://aka.ms/mysecurityinfo) and asked to rename your passkey. 
     
-1. Name the passkey something memorable to you and select **Done**. 
+1. Name the passkey something memorable to you, then select **Done**. 
 
    :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkey-ios-finish.png" alt-text="Screenshot showing final passkey registration step on iOS.":::
 
@@ -112,11 +112,11 @@ For more information about enabling passkeys in Microsoft Authenticator, see [Ho
 1. Select **Save another way**.
 
    > [!NOTE]
-   > Options displayed vary depending on the manufacturer and Android OS version of your device. For example this option may appear as **Use a different device**. 
+   > Options displayed vary depending on the manufacturer and Android OS version of your device. For example, this option may appear as **Use a different device**. 
 
    :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkey-android-save-another-way.png" alt-text="Screenshot of passkey selection on android device.":::
 
-1. Multiple options may be displayed, depending on the number of Google accounts or passkey managers enabled on your device. Select **Another device** to continue. 
+1. You may see various options, depending on the number of Google accounts or passkey managers enabled on your device. Select **Another device** to continue. 
 
    :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkey-android-more-options.png" alt-text="Screenshot of passkey more options on Android device.":::
 
@@ -136,11 +136,11 @@ For more information about enabling passkeys in Microsoft Authenticator, see [Ho
 
    :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkey-android-confirm-pin.png" alt-text="Screenshot of prompt to provide PIN or biometric.":::
 
-1. You maybe asked to confirm your PIN or biometric again before proceeding. 
+1. You may be asked to confirm your PIN or biometric again before proceeding. 
 
 1. Upon completion, you're redirected back to [My Security info](https://aka.ms/mysecurityinfo) and asked to rename your passkey. 
     
-1. Name the passkey something memorable to you and select **Done**. 
+1. Name the passkey something memorable to you, then select **Done**. 
 
    :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkey-android-finish.png" alt-text="Screenshot showing final passkey registration step on Android.":::
 
