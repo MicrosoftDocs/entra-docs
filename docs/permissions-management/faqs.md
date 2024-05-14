@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-permissions-management
 
 ms.topic: faq
-ms.date: 04/19/2024
+ms.date: 05/13/2024
 ms.author: jfields
 ---
 
@@ -117,7 +117,7 @@ Integration with ITMS tools, such as ServiceNow, is in the future roadmap.
 
 ## How is Permissions Management being deployed?
 
-Customers with Global Administrator role have first to onboard Permissions Management on their Microsoft Entra tenant, and then onboard their AWS accounts, GCP projects, and Azure subscriptions. More details about onboarding can be found in our product documentation.
+Customers assigned the [Permissions Management Administrator](../identity/role-based-access-control/delegate-by-task.md#permissions-management) role must first onboard Permissions Management to their Microsoft Entra tenant, and then onboard their AWS accounts, GCP projects, and Azure subscriptions. More details about onboarding can be found in our [product documentation](onboard-enable-tenant.md).
 
 ## How long does it take to deploy Permissions Management?
 
@@ -141,7 +141,7 @@ If a customer initiates a free Permissions Management 45-day trial and does not 
 
 If a customer decides to discontinue licensing the service, all previously collected data is deleted within 30 days of license termination.
 
-Customers can also remove, export or modify specific data if a Global Administrator using the Permissions Management service files an official Data Subject Request. To file a request:
+Customers can also remove, export or modify specific data if a [Permissions Management Administrator](../identity/role-based-access-control/delegate-by-task.md#permissions-management) using the Permissions Management service files an official Data Subject Request. To file a request:
 
 If you're an enterprise customer, you can contact your Microsoft representative, account team, or tenant admin to file a high-priority IcM support ticket requesting a Data Subject Request. Do not include details or any personally identifiable information in the IcM request. We'll reach out to you for these details only after an IcM is filed.
 
