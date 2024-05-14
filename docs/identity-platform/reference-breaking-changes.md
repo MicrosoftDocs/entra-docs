@@ -28,6 +28,26 @@ Check this article regularly to learn about:
 > [!TIP]
 > To be notified of updates to this page, add this URL to your RSS feed reader:<br/>`https://learn.microsoft.com/api/search/rss?search=%22Azure+Active+Directory+breaking+changes+reference%22&locale=en-us`
 
+## June 2024
+
+### Applications must be registered in a directory
+
+**Effective date**: June 2024
+
+**Endpoints impacted**: v2.0 and v1.0
+
+**Protocol impacted**: All flows
+
+**Change**
+
+Previously, when registering an application using the [Entra app registrations experience](https://aka.ms/ra/prod), if the user was signed in with their personal Microsoft account, they could choose to only associate the application with their personal account.  That means the application would not be associated with or contained in any directory (also referred to as 'tenant').  However, starting June 2024, all applications must be registered in a directory.   This could be an existing organization that 
+
+Benefits
+
+If you don't 
+
+This will not affect any existing applications, including existing applications that are only associated with a personal account.  
+
 ## October 2023
 
 ### Updated RemoteConnect UX Prompt
