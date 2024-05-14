@@ -85,6 +85,9 @@ The following table lists the administrative configuration limits in the Microso
 |Number of policies per external tenant |200          |
 |Maximum policy file size      |1,024 KB          |
 |Number of API connectors per tenant     |20         |
+|Number of custom authentication extensions     |100         |
+|Number of event listener policies    |249         |
+
 
 <!-- Reviewed by SME in the word doc. The numbers are correct.
 
