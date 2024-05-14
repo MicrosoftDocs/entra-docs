@@ -71,7 +71,7 @@ Install MS Graph Powershell modules and Connect to MS Graph
      Connect-MgGraph -Scopes "User.Read.All", "Group.Read.All", "Application.Read.All", "Directory.Read.All"   
 ``` 
 
-     This command will prompt you to sign in with your MS Graph credentials. Select Required Permissions: After signing in, you may need to consent to the required permissions if it's your first time connecting or if new permissions are required. 
+ This command will prompt you to sign in with your MS Graph credentials. Select Required Permissions: After signing in, you may need to consent to the required permissions if it's your first time connecting or if new permissions are required. 
 
     
 
