@@ -70,3 +70,240 @@ Install MS Graph Powershell modules and Connect to MS Graph
      ```
      Connect-MgGraph -Scopes "User.Read.All", "Group.Read.All", "Application.Read.All", "Directory.Read.All"   
      ``` 
+
+     This command will prompt you to sign in with your MS Graph credentials. Select Required Permissions: After signing in, you may need to consent to the required permissions if it's your first time connecting or if new permissions are required. 
+
+    
+
+### PowerShell Queries to extract data needed to build custom reports in ADX 
+
+The following queries extract Entra data from MS Graph using PowerShell and export the data to JSON files which will be imported into Azure Data Explorer in Step 2. There may be multiple scenarios for generating reports with this type of data: 
+
+ - An auditor would like to see a report that lists the group members for 10 groups, organized by the members’ department. 
+ - An auditor would like to see a report of all users who had access to an application between two dates. 
+ - An admin would like to view all users added to an application from Microsoft Entra ID and a SQL database. 
+
+These types of reports are not built-in to Microsoft Entra ID, but you can create these reports yourself by extracting data from Entra and combining them using custom queries in Azure Data Explorer. 
+
+For this tutorial, we will extract Entra data from several areas: 
+
+ - User information such as display name, UPN, and job details 
+ - Group information 
+ - Application and role assignments 
+
+This data set will enable us to perform a broad set of queries around who was given access to an application, role information, and the associated timeframe. Note that these are sample queries, and your data and specific requirements may vary from what is shown here. 
+
+>[!NOTE]
+> Larger tenants may experience throttling / 429 errors that will be handled by the MS Graph module. 
+
+In these PowerShell scripts, we will export selected properties from the Entra objects to JSON files. The data from these exported properties will then be used to generate custom reports in Azure Data Explorer. The specific properties below were included in these example since we will be using this data to illustrate the types of reports you can create in Azure Data Explorer. Since your specific reporting needs will likely vary from what is shown below, you should include the specific properties in these scripts that you are interested in viewing in your reports, however you can follow the same pattern shown below to help build your scripts. 
+
+We have also included a hard-coded “snapshot date” below which identifies the data in the JSON file with a specific date and will allow us to keep track of similar data sets over time in Azure Data Explorer. The snapshot date is also useful for comparing changes in data between two snapshot dates. 
+
+Get Entra user data 
+
+This script will export selected properties from the Entra user object to a JSON file. We will import this data into Azure Data Explorer in Step 3. 
+
+              
+     ```
+        function Export-EntraUsersToJson { 
+
+            # Define a hash table for property mappings 
+
+            $propertyMappings = @{ 
+
+                "Id" = "ObjectID" 
+
+                "DisplayName" = "DisplayName" 
+
+                "UserPrincipalName" = "UserPrincipalName" 
+
+                "EmployeeId" = "EmployeeId" 
+
+                "UserType" = "UserType" 
+
+                "CreatedDateTime" = "CreatedDateTime" 
+
+                "JobTitle" = "JobTitle" 
+
+                "Department" = "Department" 
+
+                "AccountEnabled" = "AccountEnabled" 
+
+                # Add custom properties as needed 
+
+                "custom_extension" = "CustomExtension" 
+
+            } 
+
+            # Retrieve users with specified properties and create custom objects directly 
+
+            $users = Get-MgUser -Select ($propertyMappings.Keys) -All | ForEach-Object { 
+
+                $userObject = @{} 
+
+                foreach ($key in $propertyMappings.Keys) { 
+
+                    if ($key -eq "CreatedDateTime") { 
+
+                        # Convert date string directly to DateTime and format it 
+
+                        $date = [datetime]::Parse($_.$key) 
+
+                        $userObject[$propertyMappings[$key]] = $date.ToString("yyyy-MM-dd") 
+
+                    } else { 
+
+                        $userObject[$propertyMappings[$key]] = $_.$key 
+
+                    } 
+
+                } 
+
+                # Additional properties or transformations 
+
+                $userObject["SnapshotDate"] = "2024-01-11" 
+
+                [pscustomobject]$userObject 
+
+            } 
+
+            # Convert the user data to JSON and save it to a file 
+
+            $users | ConvertTo-Json -Depth 2 | Set-Content ".\EntraUsers.json" 
+
+        } 
+
+        # Execute the function 
+
+        Export-EntraUsersToJson 
+     ```
+### Get Group data 
+
+Generate a JSON file with group names and IDs that will be used to create custom views in ADX. The sample will include all groups, but additional filtering can be included if needed. If you are filtering to only include certain groups, you may want to include logic in your script to check for nested groups.  
+     ```
+        # Get all groups and select Id and DisplayName 
+
+        $groups = Get-MgGroup -All | Select-Object Id,DisplayName 
+
+        # Export the groups to a JSON file 
+
+        $groups | ConvertTo-Json | Set-Content ".\EntraGroups.json" 
+     ```
+### Get Group Membership data 
+
+Generate a JSON file with group membership which will be used to create custom views in ADX. 
+     ```
+        # Retrieve all groups from Microsoft Entra (Azure AD) 
+
+        $groups = Get-MgGroup -All 
+
+        # Initialize an array to store results 
+
+        $results = @() 
+
+        # Iterate over each group 
+
+        foreach ($group in $groups) { 
+
+            # Extract the group ID 
+
+            $groupId = $group.Id 
+
+            # Get members of the current group and select their IDs 
+
+            $members = Get-MgGroupMember -GroupId $groupId | Select-Object -ExpandProperty Id 
+
+            # Add a custom object with group ID and member IDs to the results array 
+
+            $results += [PSCustomObject]@{ 
+
+                GroupId = $groupId 
+
+                Members = $members 
+
+            } 
+
+            # Pause for a short time to avoid rate limits 
+
+            Start-Sleep -Milliseconds 200 
+
+        } 
+
+        # Convert the results array to JSON format and save it to a file 
+
+        $results | ConvertTo-Json | Set-Content "EntraGroupMembership.json" 
+     ``` 
+
+### Get Application and Service Principal data 
+
+Generates JSON file with all applications and the corresponding service principals in the tenant. We will import this data into ADX in Step 3 which will allow us to generate custom reports related to applications based on this data. 
+     ``` 
+        # Fetch applications and their corresponding service principals, then export to JSON 
+
+        Get-MgApplication -All | ForEach-Object { 
+
+            $app = $_ 
+
+            $sp = Get-MgServicePrincipal -Filter "appId eq '$($app.AppId)'" 
+
+            [pscustomobject]@{ 
+
+                Name               = $app.DisplayName 
+
+                ApplicationId      = $app.AppId 
+
+                ServicePrincipalId = $sp.Id 
+
+            } 
+
+        } | ConvertTo-Json -Depth 10 | Set-Content "Applications.json" 
+     ``` 
+### Get AppRole data 
+
+Generate a JSON file of all appRoles for enterprise apps in Entra. Once imported to ADX, we will utilize this data to generate reports involving app role assignments for users. 
+     ``` 
+        # Get a list of all applications, handle pagination manually if necessary 
+
+        $apps = Get-MgApplication -All 
+
+        # Loop through each application to gather the desired information 
+
+        $results = foreach ($app in $apps) { 
+
+            # Get the service principal for the application using its appId 
+
+            $spFilter = "appId eq '$($app.AppId)'" 
+
+            $sp = Get-MgServicePrincipal -Filter $spFilter | Select-Object -First 1 
+
+            # Process AppRoles, if any, for the application 
+
+            $appRoles = if ($app.AppRoles) { 
+
+                $app.AppRoles | Where-Object { $_.AllowedMemberTypes -contains "User" } | 
+
+                Select-Object Id, Value, DisplayName 
+
+            } 
+
+            # Construct a custom object with application and service principal details 
+
+            [PSCustomObject]@{ 
+
+                ApplicationId       = $app.AppId 
+
+                DisplayName         = $app.DisplayName 
+
+                ServicePrincipalId  = $sp.Id 
+
+                AppRoles            = $appRoles 
+
+            } 
+
+        } 
+
+        # Export the results to a JSON file 
+
+        $results | ConvertTo-Json -Depth 4 | Out-File 'AppRoles.json' 
+     ``` 
