@@ -24,8 +24,7 @@ To assign or remove custom security attributes for a user in your Microsoft Entr
 - Microsoft.Graph module when using [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation)
 - [AzureADPreview](https://www.powershellgallery.com/packages/AzureADPreview) version 2.0.2.138 or later when using Azure AD PowerShell
 
-> [!IMPORTANT]
-> By default, [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) and other administrator roles do not have permissions to read, define, or assign custom security attributes.
+[!INCLUDE [security-attributes-roles](../../includes/security-attributes-roles.md)]
     
 ## Assign custom security attributes to a user
 

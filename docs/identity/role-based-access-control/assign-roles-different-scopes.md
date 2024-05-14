@@ -18,7 +18,7 @@ In Microsoft Entra ID, you typically assign Microsoft Entra roles so that they a
 
 ## Prerequisites
 
-- Privileged Role Administrator or Global Administrator.
+- Privileged Role Administrator.
 - Microsoft Graph PowerShell SDK installed when using PowerShell.
 - Admin consent when using Graph Explorer for Microsoft Graph API.
 
