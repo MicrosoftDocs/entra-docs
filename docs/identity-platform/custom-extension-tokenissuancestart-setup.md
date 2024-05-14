@@ -295,7 +295,7 @@ By default, the code has been set up for authentication in the Azure portal usin
 
    | Name | Value |
    | ---- | ----- | 
-   | *AuthenticationEvents__AudienceAppId* | *Custom authentication extension app ID* |
+   | *AuthenticationEvents__AudienceAppId* | *Custom authentication extension app ID* which is set up in [Configure a custom claim provider for a token issuance event](./custom-extension-tokenissuancestart-configuration.md) |
    | *AuthenticationEvents__AuthorityUrl* | &#8226; Workforce tenant `https://login.microsoftonline.com/<tenantID>` <br> &#8226; external tenant `https://<mydomain>.ciamlogin.com` | 
    | *AuthenticationEvents__AuthorizedPartyAppId* | `99045fe1-7639-4a75-9d4a-577b6ca3810f` or another authorized party | 
 

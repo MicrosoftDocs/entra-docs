@@ -55,7 +55,7 @@ You'll now configure a custom authentication extension, which will be used by Mi
     - apiVersion
     - correlationId
 1. Select **Next**, then **Create**, which registers the custom authentication extension and the associated application registration.
-1. Note the **App ID** under **API Authentication**, which is needed for [setting environment variables](./custom-extension-tokenissuancestart-setup.md#set-up-environment-variables-for-your-azure-function) in your Azure Function app.
+1. Note the **App ID** under **API Authentication**, which is needed to [configure authentication for your Azure Function](./custom-extension-tokenissuancestart-setup.md#configure-authentication-for-your-azure-function) in your Azure Function app.
 
 # [Microsoft Graph](#tab/microsoft-graph)
 
