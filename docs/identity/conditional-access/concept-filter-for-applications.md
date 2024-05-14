@@ -34,7 +34,7 @@ Custom security attributes are security sensitive and can only be managed by del
 
 Assign the appropriate role to the users who manage or report on these attributes at the directory scope. For detailed steps, see [Assign a role](../role-based-access-control/manage-roles-portal.yml#assign-a-role).
 
-[!INCLUDE [security-attributes-roles](../includes/security-attributes-roles.md)]
+[!INCLUDE [security-attributes-roles](../../includes/security-attributes-roles.md)]
 
 ## Create custom security attributes
 
