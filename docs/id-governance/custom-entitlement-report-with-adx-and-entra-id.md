@@ -307,3 +307,45 @@ Generate a JSON file of all appRoles for enterprise apps in Entra. Once imported
 
         $results | ConvertTo-Json -Depth 4 | Out-File 'AppRoles.json' 
      ``` 
+### Get AppRole Assignment data 
+
+Generate a JSON file of all app role assignments in the tenant. 
+     ``` 
+        $users = Get-MgUser -All 
+
+        $result = @() 
+
+        foreach ($user in $users) { 
+
+            Get-MgUserAppRoleAssignment -UserId $user.Id | ForEach-Object { 
+
+                # Use the same date formatting approach 
+
+                $createdDateTime = $_.CreatedDateTime -replace "\\/Date\((\d+)\)\\/", '$1' 
+
+                # Convert the milliseconds timestamp to a readable date format if needed 
+
+                $result += [PSCustomObject]@{ 
+
+                    AppRoleId            = $_.AppRoleId 
+
+                    CreatedDateTime      = $createdDateTime 
+
+                    PrincipalDisplayName = $_.PrincipalDisplayName 
+
+                    PrincipalId          = $_.PrincipalId 
+
+                    ResourceDisplayName  = $_.ResourceDisplayName 
+
+                    ResourceId           = $_.ResourceId 
+
+                    SnapshotDate         = "2024-03-13"  # Hard-coded date 
+
+                } 
+
+            } 
+
+        } 
+
+        $result | ConvertTo-Json -Depth 10 | Out-File "AppRoleAssignments.json" 
+     ``` 
