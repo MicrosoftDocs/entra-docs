@@ -41,7 +41,7 @@ For more information, see [Prerequisites to use PowerShell or Graph Explorer](pr
 
     The page includes links to relevant documentation to help guide you through managing roles.
 
-    ![Screenshot that shows the "Global Administrator - Description" page.](./media/role-definitions-list/role-description-updated.png)
+    ![Screenshot that shows the "Conditional Access Administrator - Description" page.](./media/role-definitions-list/role-description-updated.png)
 
 ## PowerShell
 
