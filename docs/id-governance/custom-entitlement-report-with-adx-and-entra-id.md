@@ -136,7 +136,7 @@ This script will export selected properties from the Entra user object to a JSON
 
         } 
 
-        # Retrieve users with specified properties and create custom objects directly 
+      /// Retrieve users with specified properties and create custom objects directly 
 
         $users = Get-MgUser -Select ($propertyMappings.Keys) -All | ForEach-Object { 
 
