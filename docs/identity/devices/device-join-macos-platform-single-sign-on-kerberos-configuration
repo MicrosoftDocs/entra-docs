@@ -1,32 +1,29 @@
 ---
-title: Join a Mac device with Microsoft Entra ID during the out of box experience with macOS PSSO (preview)
-description: How users can set up a Microsoft Entra with a new Mac device with macOS Platform Single Sign-on
+title: Enable Kerberos SSO to On-Premises Active Directory and Entra ID Kerberos Resources in Platform SSO
+description: How administrators can set up macOS Platform Single Sign-on to support Kerberos authentication to on-premises Active Directory and Entra ID kerberos-integrated resources.
 
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: tutorial
-ms.date: 09/26/2023
+ms.date: 05/13/2024
 
-ms.author: cwerner
-author: cilwerner
-manager: CelesteDG
+ms.author: miepping
+author: miepping
+manager: 
 ms.reviewer: brianmel
 #Customer intent: As a user I want to understand how to set up a Mac device with macOS Platform Single Sign-on (PSSO) during the out of box experience. I want to know the difference betwwen setting up with secure enclave, smart card or password based authentication methods.
 ---
 
-# Join a Mac device with Microsoft Entra ID during the out of box experience with macOS PSSO (preview)
+# Enable Kerberos SSO to On-Premises Active Directory and Entra ID Kerberos Resources in Platform SSO
 
 Mac users can join their new device to Microsoft Entra ID during the first-run out-of-box experience (OOBE). The macOS Platform single sign-on (PSSO) is a capability on macOS that is enabled using the [Microsoft Enterprise Single Sign-on Extension](../../identity-platform/apple-sso-plugin.md). PSSO allows users to sign in to a Mac device using a hardware-bound key, smart card or their Microsoft Entra ID password. This tutorial shows you how to set up a Mac device during the OOBE to use PSSO using Automated Device Enrollment.
 
 ## Prerequisites
 
-- A recommended minimum version of macOS 14 Sonoma. While macOS 13 Ventura is supported, we strongly recommend using macOS 14 Sonoma for the best experience.
-- [Automated Device Enrollment (ADE)](https://support.apple.com/HT204142) enrolled device. Check with your administrator if you're unsure if your device is enrolled with this requirement.
+- A minimum version of **macOS 14.5 Sonoma**. Earlier versions of macOS will not support kerberos SSO combined with Platform SSO or are known to have bugs.
 - [Microsoft Intune Company Portal](/mem/intune/apps/apps-company-portal-macos) version 5.2404.0 or later
 - A Mac device enrolled in mobile device management (MDM) with Microsoft Intune.
 - A configured SSO extension MDM payload with PSSO settings in Intune by an administrator
-- [Microsoft Authenticator](https://support.microsoft.com/account-billing/how-to-use-the-microsoft-authenticator-app-9783c865-0308-42fb-a519-8cf666fe0acc) (recommended): The user must be registered for some form of Microsoft Entra ID multifactor authentication (MFA) on their mobile device to complete device registration.
-- For smart card setup, [certificate based authentication](/entra/identity/authentication/how-to-certificate-based-authentication) configured and enabled. A smart card loaded with a certificate for authentication with Microsoft Entra and the smart card paired with local account.
 
 ## Set up your macOS device
 
