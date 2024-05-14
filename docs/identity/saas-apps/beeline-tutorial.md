@@ -140,7 +140,7 @@ In this section, you'll gather SSO configuration settings and send them to the [
 
 1. In the **Set up Beeline Enterprise** section, copy the **Login URL** and **Logout URL**.
 
-	![Screenshot shows the URLs.](common/saml-urls.png)
+	![Screenshot shows the URLs.](media/beeline-tutorial/saml-urls.png)
 
 1. Send the Certificate, Login URL and Logout URL to the [Beeline Enterprise support team](mailto:support@beeline.com). They will configure single sign-on on the **Beeline Enterprise** side.
 
