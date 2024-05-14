@@ -105,78 +105,78 @@ Get Entra user data
 This script will export selected properties from the Entra user object to a JSON file. We will import this data into Azure Data Explorer in Step 3. 
 
               
-     ```
-        function Export-EntraUsersToJson { 
+     ```json
+    function Export-EntraUsersToJson { 
 
-            # Define a hash table for property mappings 
+        # Define a hash table for property mappings 
 
-            $propertyMappings = @{ 
+        $propertyMappings = @{ 
 
-                "Id" = "ObjectID" 
+            "Id" = "ObjectID" 
 
-                "DisplayName" = "DisplayName" 
+            "DisplayName" = "DisplayName" 
 
-                "UserPrincipalName" = "UserPrincipalName" 
+            "UserPrincipalName" = "UserPrincipalName" 
 
-                "EmployeeId" = "EmployeeId" 
+            "EmployeeId" = "EmployeeId" 
 
-                "UserType" = "UserType" 
+            "UserType" = "UserType" 
 
-                "CreatedDateTime" = "CreatedDateTime" 
+            "CreatedDateTime" = "CreatedDateTime" 
 
-                "JobTitle" = "JobTitle" 
+            "JobTitle" = "JobTitle" 
 
-                "Department" = "Department" 
+            "Department" = "Department" 
 
-                "AccountEnabled" = "AccountEnabled" 
+            "AccountEnabled" = "AccountEnabled" 
 
-                # Add custom properties as needed 
+            # Add custom properties as needed 
 
-                "custom_extension" = "CustomExtension" 
-
-            } 
-
-            # Retrieve users with specified properties and create custom objects directly 
-
-            $users = Get-MgUser -Select ($propertyMappings.Keys) -All | ForEach-Object { 
-
-                $userObject = @{} 
-
-                foreach ($key in $propertyMappings.Keys) { 
-
-                    if ($key -eq "CreatedDateTime") { 
-
-                        # Convert date string directly to DateTime and format it 
-
-                        $date = [datetime]::Parse($_.$key) 
-
-                        $userObject[$propertyMappings[$key]] = $date.ToString("yyyy-MM-dd") 
-
-                    } else { 
-
-                        $userObject[$propertyMappings[$key]] = $_.$key 
-
-                    } 
-
-                } 
-
-                # Additional properties or transformations 
-
-                $userObject["SnapshotDate"] = "2024-01-11" 
-
-                [pscustomobject]$userObject 
-
-            } 
-
-            # Convert the user data to JSON and save it to a file 
-
-            $users | ConvertTo-Json -Depth 2 | Set-Content ".\EntraUsers.json" 
+            "custom_extension" = "CustomExtension" 
 
         } 
 
-        # Execute the function 
+        # Retrieve users with specified properties and create custom objects directly 
 
-        Export-EntraUsersToJson 
+        $users = Get-MgUser -Select ($propertyMappings.Keys) -All | ForEach-Object { 
+
+            $userObject = @{} 
+
+            foreach ($key in $propertyMappings.Keys) { 
+
+                if ($key -eq "CreatedDateTime") { 
+
+                    # Convert date string directly to DateTime and format it 
+
+                    $date = [datetime]::Parse($_.$key) 
+
+                    $userObject[$propertyMappings[$key]] = $date.ToString("yyyy-MM-dd") 
+
+                } else { 
+
+                    $userObject[$propertyMappings[$key]] = $_.$key 
+
+                } 
+
+            } 
+
+            # Additional properties or transformations 
+
+            $userObject["SnapshotDate"] = "2024-01-11" 
+
+            [pscustomobject]$userObject 
+
+        } 
+
+        # Convert the user data to JSON and save it to a file 
+
+        $users | ConvertTo-Json -Depth 2 | Set-Content ".\EntraUsers.json" 
+
+    } 
+
+    # Execute the function 
+
+    Export-EntraUsersToJson 
      ```
 ### Get Group data 
 
