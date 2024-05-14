@@ -31,7 +31,7 @@ procedureSection:
   - title: |
       Assign roles
     summary: |
-      There are two main steps to the role assignment process. First you'll select the role to assign. Then you'll adjust the role settings and duration. Eligible roles are assigned to a user but must be elevated Just-In-Time by the user through Privileged Identity Management (PIM). For more information about how to use PIM, see [Privileged Identity Management](~/id-governance/privileged-identity-management/index.yml).
+      There are two main steps to the role assignment process. First you select the role to assign. Then you adjust the role settings and duration. Eligible roles are assigned to a user but must be elevated Just-In-Time by the user through Privileged Identity Management (PIM). For more information about how to use PIM, see [Privileged Identity Management](~/id-governance/privileged-identity-management/index.yml).
 
       [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
@@ -75,7 +75,7 @@ procedureSection:
       - |
         Search for and select the user getting their role updated.
       - |
-        Select **Assigned roles** from the side menu and select either **Eligible assignments** or **Active assignments**.
+        Select **Assigned roles** from the side menu, then select either **Eligible assignments** or **Active assignments**.
       - |       
         Select the the **Update** link for the role that needs to be changed.
 
