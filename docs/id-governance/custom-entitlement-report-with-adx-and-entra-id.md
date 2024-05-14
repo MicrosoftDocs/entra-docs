@@ -46,17 +46,17 @@ Install MS Graph Powershell modules and Connect to MS Graph
 
  1. Install the required MS Graph modules. The following modules are required for this tutorial: Microsoft.Graph.Users, Microsoft.Graph.Groups, Microsoft.Graph.Applications, Microsoft.Graph.DirectoryObjects 
 
-     ```
+```json
          $modules = @('Microsoft.Graph.Users', 'Microsoft.Graph.Groups', 'Microsoft.Graph.Applications', 'Microsoft.Graph.DirectoryObjects') 
 
          foreach ($module in $modules) { 
 
          Install-Module -Name $module -Scope CurrentUser -AllowClobber -Force
          } 
-     ```    
+```    
  2. Import the modules: 
  
-     ```
+ ```json
          $modules = @('Microsoft.Graph.Users', 'Microsoft.Graph.Groups', 'Microsoft.Graph.Applications', 'Microsoft.Graph.DirectoryObjects') 
 
          foreach ($module in $modules) { 
@@ -64,12 +64,12 @@ Install MS Graph Powershell modules and Connect to MS Graph
          Import-Module -Name $module 
 
          }  
-     ``` 
+``` 
  3. Connect to Microsoft Graph
   
-     ```
+```json
      Connect-MgGraph -Scopes "User.Read.All", "Group.Read.All", "Application.Read.All", "Directory.Read.All"   
-     ``` 
+``` 
 
      This command will prompt you to sign in with your MS Graph credentials. Select Required Permissions: After signing in, you may need to consent to the required permissions if it's your first time connecting or if new permissions are required. 
 
@@ -105,7 +105,7 @@ Get Entra user data
 This script will export selected properties from the Entra user object to a JSON file. We will import this data into Azure Data Explorer in Step 3. 
 
               
-     ```json
+```json
     function Export-EntraUsersToJson { 
 
         # Define a hash table for property mappings 
@@ -177,11 +177,11 @@ This script will export selected properties from the Entra user object to a JSON
     # Execute the function 
 
     Export-EntraUsersToJson 
-     ```
+```
 ### Get Group data 
 
 Generate a JSON file with group names and IDs that will be used to create custom views in ADX. The sample will include all groups, but additional filtering can be included if needed. If you are filtering to only include certain groups, you may want to include logic in your script to check for nested groups.  
-     ```
+```json
         # Get all groups and select Id and DisplayName 
 
         $groups = Get-MgGroup -All | Select-Object Id,DisplayName 
@@ -189,11 +189,11 @@ Generate a JSON file with group names and IDs that will be used to create custom
         # Export the groups to a JSON file 
 
         $groups | ConvertTo-Json | Set-Content ".\EntraGroups.json" 
-     ```
+```
 ### Get Group Membership data 
 
 Generate a JSON file with group membership which will be used to create custom views in ADX. 
-     ```
+```json
         # Retrieve all groups from Microsoft Entra (Azure AD) 
 
         $groups = Get-MgGroup -All 
@@ -233,12 +233,12 @@ Generate a JSON file with group membership which will be used to create custom v
         # Convert the results array to JSON format and save it to a file 
 
         $results | ConvertTo-Json | Set-Content "EntraGroupMembership.json" 
-     ``` 
+``` 
 
 ### Get Application and Service Principal data 
 
 Generates JSON file with all applications and the corresponding service principals in the tenant. We will import this data into ADX in Step 3 which will allow us to generate custom reports related to applications based on this data. 
-     ``` 
+```json 
         # Fetch applications and their corresponding service principals, then export to JSON 
 
         Get-MgApplication -All | ForEach-Object { 
@@ -258,11 +258,11 @@ Generates JSON file with all applications and the corresponding service principa
             } 
 
         } | ConvertTo-Json -Depth 10 | Set-Content "Applications.json" 
-     ``` 
+``` 
 ### Get AppRole data 
 
 Generate a JSON file of all appRoles for enterprise apps in Entra. Once imported to ADX, we will utilize this data to generate reports involving app role assignments for users. 
-     ``` 
+```json 
         # Get a list of all applications, handle pagination manually if necessary 
 
         $apps = Get-MgApplication -All 
@@ -306,11 +306,11 @@ Generate a JSON file of all appRoles for enterprise apps in Entra. Once imported
         # Export the results to a JSON file 
 
         $results | ConvertTo-Json -Depth 4 | Out-File 'AppRoles.json' 
-     ``` 
+``` 
 ### Get AppRole Assignment data 
 
 Generate a JSON file of all app role assignments in the tenant. 
-     ``` 
+```json 
         $users = Get-MgUser -All 
 
         $result = @() 
@@ -348,7 +348,7 @@ Generate a JSON file of all app role assignments in the tenant.
         } 
 
         $result | ConvertTo-Json -Depth 10 | Out-File "AppRoleAssignments.json" 
-     ``` 
+``` 
 
 ## Step 2: Import JSON file data into Azure Data Explorer 
 
@@ -374,7 +374,7 @@ This report provides a view of who had what access and when to the target app an
 
 This query targets a specific application within Entra AD and analyzes the role assignments as of a certain date. The query retrieves both direct and group-based role assignments, merging this data with user details from the EntraUsers table and role information from the AppRoles table.  
 
-     ``` 
+```json 
         // Define constants 
 
         let targetServicePrincipalId = " 67865322-94b5-4205-9dc8-974dc569bfad"; // Target Service Principal ID 
@@ -438,14 +438,14 @@ This query targets a specific application within Entra AD and analyzes the role 
         directAssignments 
 
         | union groupAssignments 
-     ``` 
+``` 
 ### Example 2: Build Basic Auditor Report with Entra data showing who had access to an app between these two dates 
 
 This report provides a view of who had what access to the target app between two dates and can be used for security audits, compliance verification, and understanding access patterns within the organization. 
 
 This query targets a specific application within Entra ID and analyzes the role assignments between two dates. The query retrieves direct role assignments from the AppRoleAssignments table and merges this data with user details from the EntraUsers table and role information from the AppRoles table. 
 
-     ``` 
+```json 
         // Set the date range and service principal ID for the query 
 
         let startDate = datetime('2024-01-01'); 
@@ -485,7 +485,7 @@ This query targets a specific application within Entra ID and analyzes the role 
         // Final projection of the report with the current date and time 
 
         | project UserPrincipalName, DisplayName, RoleDisplayName, CreatedDateTime, ReportDate = now() 
-     ``` 
+``` 
 
 ### Example 3: Get added users to an app between two data snapshot dates  
 
@@ -494,7 +494,7 @@ This report provides a view of which users were given an app role assignment to 
 This query targets a specific application within Entra ID and changes to the role assignments between a start and end date.  
 
  
-     ``` 
+```json 
         let earlierDate = datetime("2024-03-01"); // Update this to your specific earlier date 
 
         AppRoleAssignments 
@@ -524,13 +524,13 @@ This query targets a specific application within Entra ID and changes to the rol
                           ) on $left.AppRoleId2 == $right.AppRoleId 
 
         | project UserPrincipalName, DisplayName, RoleDisplayName, CreatedDateTime, PrincipalId, Change = "Added" 
-     ``` 
+``` 
 ### Example 4: Combine App Assignments from an Entra and a second source (e.g., SQL export) to create a report of all users (Entra assignments and local assignments) who had access to Salesforce between two dates 
  
 
 This report illustrates how you can combine data from two separate systems to create custom reports in ADX. It aggregates data about users, their roles, and other attributes from two systems into a unified format for analysis or reporting. 
 
-     ``` 
+```json 
         // Define the date range and service principal ID for the query 
 
         let startDate = datetime("2023-06-01"); 
@@ -584,7 +584,7 @@ This report illustrates how you can combine data from two separate systems to cr
             | project UserPrincipalName = UserName, DisplayName = Name, EmployeeId = tostring(EmployeeId), Department, JobTitle, AccountEnabled = "N/A", ResourceDisplayName = AppName, RoleDisplayName = Role, CreatedDateTime, Source = "salesforceAssignments", ReportDate = now() 
 
         ) 
-     ``` 
+``` 
 ## Next steps
 
 - [What is Microsoft Entra entitlement management?](entitlement-management-overview.md)
