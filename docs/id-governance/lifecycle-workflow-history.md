@@ -7,14 +7,14 @@ manager: amycolannino
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: conceptual
-ms.date: 11/15/2023
+ms.date: 04/22/2024
 ms.custom: template-concept
 ---
 
 
 # Lifecycle Workflows history
 
-Workflows created using Lifecycle Workflows allow for the automation of lifecycle task for users no matter where they fall in the Joiner-Mover-Leaver (JML) model of their identity lifecycle in your organization. Making sure workflows are processed correctly is an important part of an organization's lifecycle management process. Workflows that aren't processed correctly can lead to many issues in terms of security and compliance. With Lifecycle Workflow's history features, you can specify which workflow events you want to view a history of based on users, runs, or task summaries. This reporting feature allows you to quickly see what ran for who, and rather or not it was successful. Along with the summaries in these specific areas, you're also able to view detailed information about each specific event recorded in their respective section. You are also able to [download these reports as CSV files](download-workflow-history.md). In this article, you'll learn the difference between the three different type of history summaries, and details, you can query with Lifecycle Workflows. You'll also learn when you would use each when getting more information about how your workflows were utilized for users in your organization. For detailed information about every action Lifecycle Workflows takes, see: [Auditing Lifecycle Workflows](lifecycle-workflow-audits.md).
+Workflows created using Lifecycle Workflows allow for the automation of lifecycle task for users no matter where they fall in the Joiner-Mover-Leaver (JML) model of their identity lifecycle in your organization. Making sure workflows are processed correctly is an important part of an organization's lifecycle management process. Workflows that aren't processed correctly can lead to many issues in terms of security and compliance. With Lifecycle Workflow's history features, you can specify which workflow events you want to view a history of based on users, runs, or task summaries. This reporting feature allows you to quickly see what ran for who, and rather or not it was successful. Along with the summaries in these specific areas, you're also able to view detailed information about each specific event recorded in their respective section. You're also able to [download these reports as CSV files](download-workflow-history.md). In this article, you learn when you would use each of these features when getting more information about how workflows were utilized for users in your organization. For aggregate workflow information across your tenant, see: [Lifecycle workflow Insights (preview)](lifecycle-workflow-insights.md). For detailed information about every action Lifecycle Workflows takes, see: [Auditing Lifecycle Workflows](lifecycle-workflow-audits.md).
 
 ## Lifecycle Workflow History Summaries
 
@@ -29,7 +29,7 @@ Summaries allow you to quickly gain details about how a workflow ran for itself,
 
 ## Users Summary information
 
-User summaries allow you to view workflow information through the lens of users it has processed.
+User summaries allow you to view workflow information through the lens of users processed.
 
 :::image type="content" source="media/lifecycle-workflow-history/users-summary-concept.png" alt-text="Screenshot of a workflow user summary.":::
 
@@ -70,10 +70,9 @@ When you view the status of user processing history, the status values correspon
 For a complete guide on getting user processed summary information, see: [User workflow history using the Microsoft Entra admin center](check-status-workflow.md#user-workflow-history-using-the-microsoft-entra-admin-center).
 
 
-
 ## Runs Summary
 
-Runs summaries allow you to view workflow information through the lens of its run history
+Runs summaries allow you to view workflow information through the lens of its run history.
 
 :::image type="content" source="media/lifecycle-workflow-history/runs-status-concept.png" alt-text="Screenshot of a workflow runs summary.":::
 
@@ -156,11 +155,12 @@ When you view the status of task history, the status values correspond to the fo
 
 Separating processing of the workflow from the tasks is important because, in a workflow, processing a user certain tasks could be successful, while others could fail. Whether or not a task runs after a failed task in a workflow depends on parameters such as enabling continue On Error, and their placement within the workflow. For more information, see [Common task parameters](lifecycle-workflow-tasks.md#common-task-parameters).
 
+
 ## Next steps
 
-- [`userProcessingResult` resource type](/graph/api/resources/identitygovernance-userprocessingresult?view=graph-rest-beta&preserve-view=true)
-- [`taskReport` resource type](/graph/api/resources/identitygovernance-taskreport?view=graph-rest-beta&preserve-view=true)
-- [`run` resource type](/graph/api/resources/identitygovernance-run?view=graph-rest-beta&preserve-view=true)
-- [`taskProcessingResult` resource type](/graph/api/resources/identitygovernance-taskprocessingresult?view=graph-rest-beta&preserve-view=true)
+- [userProcessingResult resource type](/graph/api/resources/identitygovernance-userprocessingresult?view=graph-rest-beta&preserve-view=true)
+- [taskReport resource type](/graph/api/resources/identitygovernance-taskreport?view=graph-rest-beta&preserve-view=true)
+- [run resource type](/graph/api/resources/identitygovernance-run?view=graph-rest-beta&preserve-view=true)
+- [taskProcessingResult resource type](/graph/api/resources/identitygovernance-taskprocessingresult?view=graph-rest-beta&preserve-view=true)
 - [Understanding Lifecycle Workflows](understanding-lifecycle-workflows.md)
 - [Lifecycle Workflow templates](lifecycle-workflow-templates.md)
