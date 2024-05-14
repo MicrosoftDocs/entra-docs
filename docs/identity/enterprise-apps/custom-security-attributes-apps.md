@@ -27,8 +27,7 @@ To assign or remove custom security attributes for an application in your Micros
 - [Attribute Assignment Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator)
 - Make sure you have existing custom security attributes. To learn how to create a security attribute, see [Add or deactivate custom security attributes in Microsoft Entra ID](~/fundamentals/custom-security-attributes-add.md).
 
-> [!IMPORTANT]
-> By default, [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) and other administrator roles don't have permissions to read, define, or assign custom security attributes.
+[!INCLUDE [security-attributes-roles](../../includes/security-attributes-roles.md)]
 
 ## Assign, update, list, or remove  custom attributes for an application
 
