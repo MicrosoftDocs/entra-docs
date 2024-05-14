@@ -89,42 +89,6 @@ Your REST API is protected by a Microsoft Entra access token. You can test your 
 - Obtaining an access token with an [application registration](custom-extension-tokenissuancestart-configuration.md#12-grant-admin-consent) associated with the custom authentiction extensions
 - Test your API locally using an API testing tool. 
 
-# [Obtain an access token](#tab/obtain-an-access-token)
-
-After you acquire an access token, pass it the HTTP `Authorization` header. To obtain an access token, follow these steps:
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Application registrations**.
-1. Select the *Azure Functions authentication events API* app registration, previously configured in [configure a custom claim provider for a token issuance event](custom-extension-tokenissuancestart-configuration.md#step-1-register-a-custom-authentication-extension).
-1. Copy the [application ID](custom-extension-tokenissuancestart-configuration.md#12-grant-admin-consent).
-1. If you haven't created an app secret, follow these steps:
-    1. Select **Certificates & secrets** > **Client secrets** > **New client secret**.
-    1. Add a description for your client secret.
-    1. Select an expiration for the secret or specify a custom lifetime.
-    1. Select **Add**.
-    1. Record the **secret's value** for use in your client application code. This secret value is never displayed again after you leave this page.
-1. From the menu, select **Expose an API** and copy the value of the **Application ID URI**. For example, `api://contoso.azurewebsites.net/00001111-aaaa-2222-bbbb-3333cccc4444`.
-1. Open your preferred API testing tool and create a new HTTP query.
-1. Change the **HTTP method** to `POST`.
-1. Enter the following URL. Replace the `{tenantID}` with your tenant ID.
-
-    ```http
-    https://login.microsoftonline.com/{tenantID}/oauth2/v2.0/token
-    ```
-
-1. Under the **Body**, select **form-data** and add the following keys:
-
-    |Key  |Value  |
-    |---------|---------|
-    |`grant_type`| `client_credentials`|
-    |`client_id`| The **Client ID** of your application.|
-    |`client_secret`|The **Client Secret** of your application.|
-    |`scope`| The **Application ID URI** of your application, then add `.default`. For example, `api://contoso.azurewebsites.net/00001111-aaaa-2222-bbbb-3333cccc4444/.default`|
-
-1. Run the HTTP query and copy the `access_token` into the <https://jwt.ms> web app.
-1. Compare the `iss` with the issuer name you [configured in your API](custom-extension-tokenissuancestart-configuration.md#step-4-protect-your-azure-function).
-1. Compare the `aud` with the client ID you [configured in your API](custom-extension-tokenissuancestart-configuration.md#step-4-protect-your-azure-function).
-
 # [API testing tools](#tab/api-testing-tools)
 
 1. For local development and testing purposes, open *local.settings.json* and replace the code with the following JSON: 
@@ -136,18 +100,18 @@ After you acquire an access token, pass it the HTTP `Authorization` header. To o
         "AzureWebJobsStorage": "",
         "AzureWebJobsSecretStorageType": "files",
         "FUNCTIONS_WORKER_RUNTIME": "dotnet",
-        "AuthenticationEvents__BypassTokenValidation" : true
+        "AuthenticationEvents__BypassTokenValidation" : false
       }
     }
     ```
 
     > [!NOTE]
     >
-    > If you used the [Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents](https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/entra/Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents) NuGet package, turn off token validation for testing purposes. Once you've finished testing, ensure that you remove it.
+    > If you used the [Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents](https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/entra/Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents) NuGet package, be sure to set `"AuthenticationEvents__BypassTokenValidation" : true` for local testing purposes.
+    >
 
 1. Using your preferred API testing tool, create a new HTTP request and set the **HTTP method** to `POST`.
-1. In the **Body**, select **Raw** and then select **JSON**.:
-1. Paste the following JSON that imitates the request Microsoft Entra ID sends to your REST API.
+1. Use the following JSON Body that imitates the request Microsoft Entra ID sends to your REST API..
 
     ```json
     {
@@ -224,6 +188,42 @@ After you acquire an access token, pass it the HTTP `Authorization` header. To o
         }
     }
     ```
+
+# [Obtain an access token](#tab/obtain-an-access-token)
+
+After you acquire an access token, pass it the HTTP `Authorization` header. To obtain an access token, follow these steps:
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
+1. Browse to **Identity** > **Applications** > **Application registrations**.
+1. Select the *Azure Functions authentication events API* app registration, previously configured in [configure a custom claim provider for a token issuance event](custom-extension-tokenissuancestart-configuration.md#step-1-register-a-custom-authentication-extension).
+1. Copy the [application ID](custom-extension-tokenissuancestart-configuration.md#12-grant-admin-consent).
+1. If you haven't created an app secret, follow these steps:
+    1. Select **Certificates & secrets** > **Client secrets** > **New client secret**.
+    1. Add a description for your client secret.
+    1. Select an expiration for the secret or specify a custom lifetime.
+    1. Select **Add**.
+    1. Record the **secret's value** for use in your client application code. This secret value is never displayed again after you leave this page.
+1. From the menu, select **Expose an API** and copy the value of the **Application ID URI**. For example, `api://contoso.azurewebsites.net/00001111-aaaa-2222-bbbb-3333cccc4444`.
+1. Open your preferred API testing tool and create a new HTTP query.
+1. Change the **HTTP method** to `POST`.
+1. Enter the following URL. Replace the `{tenantID}` with your tenant ID.
+
+    ```http
+    https://login.microsoftonline.com/{tenantID}/oauth2/v2.0/token
+    ```
+
+1. Under the **Body**, select **form-data** and add the following keys:
+
+    |Key  |Value  |
+    |---------|---------|
+    |`grant_type`| `client_credentials`|
+    |`client_id`| The **Client ID** of your application.|
+    |`client_secret`|The **Client Secret** of your application.|
+    |`scope`| The **Application ID URI** of your application, then add `.default`. For example, `api://contoso.azurewebsites.net/00001111-aaaa-2222-bbbb-3333cccc4444/.default`|
+
+1. Run the HTTP query and copy the `access_token` into the <https://jwt.ms> web app.
+1. Compare the `iss` with the issuer name you [configured in your API](custom-extension-tokenissuancestart-configuration.md#step-4-protect-your-azure-function).
+1. Compare the `aud` with the client ID you [configured in your API](custom-extension-tokenissuancestart-configuration.md#step-4-protect-your-azure-function).
 
 ---
 

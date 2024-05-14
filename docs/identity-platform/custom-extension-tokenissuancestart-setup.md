@@ -245,6 +245,8 @@ The project has been created, and the sample code has been added. Using your IDE
 
 ---
 
+You can now deploy the function and publish it to Azure or you can test the function locally using an [API testing tool](./custom-extension-troubleshoot.md#api-testing-tools).
+
 ## Deploy the function and publish to Azure 
 
 The function needs to be deployed to Azure using our IDE. Check that you're correctly signed in to your Azure account so the function can be published.
@@ -287,7 +289,7 @@ The function needs to be deployed to Azure using our IDE. Check that you're corr
 
 There are three ways to set up authentication for your Azure Function: 
 
-- [Set up authentication in the Azure portal using environment variables](#set-up-authentication-in-the-azure-portal-using-environment-variables)
+- [Set up authentication in the Azure portal using environment variables](#set-up-authentication-in-the-azure-portal-using-environment-variables) (recommended)
 - [Set up authentication in your code using `WebJobsAuthenticationEventsTriggerAttribute`](#set-up-authentication-in-your-code-using-webjobsauthenticationeventstriggerattribute)
 - [Azure App service authentication and authorization](/azure/app-service/overview-authentication-authorization)
 
@@ -296,8 +298,10 @@ By default, the code has been set up for authentication in the Azure portal usin
    | Name | Value |
    | ---- | ----- | 
    | *AuthenticationEvents__AudienceAppId* | *Custom authentication extension app ID* which is set up in [Configure a custom claim provider for a token issuance event](./custom-extension-tokenissuancestart-configuration.md) |
-   | *AuthenticationEvents__AuthorityUrl* | &#8226; Workforce tenant `https://login.microsoftonline.com/<tenantID>` <br> &#8226; external tenant `https://<mydomain>.ciamlogin.com` | 
+   | *AuthenticationEvents__AuthorityUrl* | &#8226; Workforce tenant `https://login.microsoftonline.com/<tenantID>` <br> &#8226; External tenant `https://<mydomain>.ciamlogin.com` | 
    | *AuthenticationEvents__AuthorizedPartyAppId* | `99045fe1-7639-4a75-9d4a-577b6ca3810f` or another authorized party | 
+
+### [Set up authentication in Azure portal](#tab/azure-portal)
 
 ### Set up authentication in the Azure portal using environment variables
 
@@ -305,6 +309,8 @@ By default, the code has been set up for authentication in the Azure portal usin
 1. Navigate to the function app you created, and under **Settings**, select **Configuration**.
 1. Under **Application settings**, select **New application setting** and add the environment variables from the table and their associated values.  
 1. Select **Save** to save the application settings.
+
+### [Set up authentication in your code](#tab/nuget-library)
 
 ### Set up authentication in your code using `WebJobsAuthenticationEventsTriggerAttribute`
 
@@ -318,6 +324,8 @@ Modify the `WebJobsAuthenticationEventsTriggerAttribute` include the `AuthorityU
             AuthorityUrl = "Enter authority URI here", 
             AuthorizedPartyAppId = "Enter the Authorized Party App Id here")]WebJobsTokenIssuanceStartRequest request, ILogger log)
 ```
+
+---
 
 ::: zone-end
 

@@ -43,7 +43,7 @@ You'll now configure a custom authentication extension, which will be used by Mi
 1. In **Basics**, select the **TokenIssuanceStart** event type and select **Next**.
 1. In **Endpoint Configuration**, fill in the following properties:
     - **Name** - A name for your custom authentication extension. For example, *Token issuance event*.
-    - **Target Url** - The `{Function_Url}` of your Azure Function URL. Navigate to the **Overview** page of your Azure Function app, then select the function you created. In the function **Overview** page, select **Get Function Url** and use the copy icon to copy the URL.
+    - **Target Url** - The `{Function_Url}` of your Azure Function URL. Navigate to the **Overview** page of your Azure Function app, then select the function you created. In the function **Overview** page, select **Get Function Url** and use the copy icon to copy the **customauthenticationextension_extension (System key)** URL.
     - **Description** - A description for your custom authentication extensions.
 1. Select **Next**.
 1. In **API Authentication**, select the **Create new app registration** option to create an app registration that represents your *function app*.  
