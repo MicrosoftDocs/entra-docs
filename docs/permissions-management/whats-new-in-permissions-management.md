@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-permissions-management
 
 ms.topic: whats-new
-ms.date: 02/16/2023
+ms.date: 05/14/2024
 ms.author: jfields
 ---
 
@@ -14,7 +14,18 @@ ms.author: jfields
 
 This article provides the latest Public Preview and General Availability of features in Microsoft Entra Permissions Management. 
 
-## March 2023
+## May 2024
+
+### General availability - Support for PIM-enabled Groups 
+**Type:** Changed feature   
+**Service category:**                      
+**Product capability:** Permissions Management  
+
+Privileged Identity Management (PIM) for Groups in Microsoft Entra ID allows Permissions Management admins to grant users just-in-time membership and ownership of a security group or a Microsoft 365 group. Nested groups are also supported. For example, if a user is an active member of Group A, and Group A is an eligible member of Group B, the user can activate their membership in Group B. PIM provides a powerful mechanism to manage access and enhance security by granting just-in-time access to critical resources. 
+
+Microsoft Entra Permissions Management adds the support to read the just-in-time membership along with existing support for direct group membership. It also solves the challenge of having visibility into who has access to what resource with eligible and direct role assignments. This feature enables the complete visibility into RBAC permissions assigned to the identities in different ways and the potential impact on Permissions Creep Index (PCI). A complete list of RBAC role assignments is provisioned directly, via the group membership or by an eligible group member, and can be seen per identity under the Analytics tab. 
+
+## March 2024
 
 ### Public Preview - Support for PIM-enabled Groups 
 **Type:** Changed feature   
