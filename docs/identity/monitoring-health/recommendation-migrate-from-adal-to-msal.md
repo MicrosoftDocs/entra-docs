@@ -117,7 +117,7 @@ You can locate owner from the recommendation details. Select the resource, which
 Yes. If an application was marked as completed - so no ADAL requests were made during the 30 day window - that application would be marked as complete. If the service detects a new ADAL request, the status changes back to *active*.
 
 ### How can I integrate  Microsoft Entra Sign-ins workbook?
-You can find the detailed steps here [Microsoft Entra Sign-ins workbook](~/identity-platform/howto-get-list-of-all-auth-library-apps.md) 
+You can find the detailed steps in the [Microsoft Entra Sign-ins workbook](~/identity-platform/howto-get-list-of-all-auth-library-apps.md). 
 
 
 ### Why is the number of ADAL applications different in the Sign-ins workbook and the recommendation?
