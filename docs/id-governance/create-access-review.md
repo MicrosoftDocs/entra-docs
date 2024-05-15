@@ -318,6 +318,9 @@ After one or more access reviews have started, you might want to modify or updat
 
    ![Screenshot that shows reminding reviewers.](./media/create-access-review/reminder-setting.png)
 
+> [!NOTE]
+> You can use the [accessReviewInstance](/graph/api/resources/accessreviewinstance) API call to see the list of all reviewers notified via email for an access review.
+
 ## Next steps
 
 - [Complete an access review of groups or applications](complete-access-review.md)
