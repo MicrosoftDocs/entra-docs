@@ -16,6 +16,9 @@ ms.custom: it-pro
 ---
 # Customize the language of the authentication experience
 
+> [!TIP]
+> This article applies to user flows in external tenants. For information about workforce tenants, see [Language customization in Microsoft Entra External ID](../user-flow-customize-language.md).
+
 You can create a personalized sign-in experience for users who sign in using a specific browser language by customizing the branding elements for that browser language. This customization overrides any configurations made to the default branding. If you don't make any changes to the elements, the default elements are displayed.
 
 ## Prerequisites

@@ -18,7 +18,7 @@ ms.custom:
 # Language customization in Microsoft Entra External ID
 
 > [!TIP]
-> This article applies to B2B collaboration user flows in workforce tenant. For information about external tenants, see [Customize the language of the authentication experience](customers/how-to-customize-languages-customers.md).
+> This article applies to B2B collaboration user flows in workforce tenants. For information about external tenants, see [Customize the language of the authentication experience](customers/how-to-customize-languages-customers.md).
 
 Language customization in Microsoft Entra External ID allows your user flow to accommodate different languages to suit your user's needs. Microsoft provides the translations for [36 languages](#supported-languages). In this article, you learn how to customize the attribute names on the [attribute collection page](self-service-sign-up-user-flow.yml#select-the-layout-of-the-attribute-collection-form), even if your experience is provided for only a single language.
 
