@@ -46,7 +46,7 @@ If you can't find an answer to your problem by searching Microsoft Q&A, submit a
 | ----------------------------------------------------------| ---------------------------------------------------------------------------------------------|
 | Microsoft Entra External ID / External Identities              | [Microsoft Entra External ID](https://aka.ms/microsoftentraexternalid)              |
 | Microsoft Entra B2B / External Identities                        | [Microsoft Entra External ID](/answers/tags/438/entra-external-id)   |
-| Azure AD B2C                                              | [Microsoft Entra External ID](/tags/438/entra-external-id)   |
+| Azure AD B2C                                              | [Microsoft Entra External ID](/answers/tags/438/entra-external-id)   |
 | All other Microsoft Entra areas                    | [Microsoft Entra ID](/answers/tags/49/azure-active-directory)                             |
 | Azure RBAC                                                | [Azure Role-Based access control](/answers/tags/189/azure-rbac)                              |
 | Azure Key Vault                                           | [Azure Key Vault](/answers/tags/5/azure-key-vault)                                           |
