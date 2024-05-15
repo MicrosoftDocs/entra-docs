@@ -319,7 +319,7 @@ After one or more access reviews have started, you might want to modify or updat
    ![Screenshot that shows reminding reviewers.](./media/create-access-review/reminder-setting.png)
 
 > [!NOTE]
-> You can use the [accessReviewInstance](/graph/api/resources/accessreviewinstance) API call to see the list of all reviewers notified via email for an access review.
+> The [contactedReviewers](/graph/api/accessreviewinstance-list-contactedreviewers) gives the list of everyone notified, or would have been notified if email notifications were enabled, at the start or during the review period that they were asked to complete the review with an associated time stamp.
 
 ## Next steps
 
