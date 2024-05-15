@@ -1,17 +1,13 @@
 ---
 title: Resilience through developer best practices using Azure AD B2C
 description: Resilience through developer best practices in Customer Identity and Access Management using Azure AD B2C
-services: active-directory 
-ms.service: active-directory
-ms.subservice: fundamentals 
-ms.workload: identity
+ms.service: entra
+ms.subservice: architecture
 ms.topic: how-to
 author: gargi-sinha
 ms.author: gasinh
 manager: martinco
 ms.date: 12/01/2022
-ms.custom: it-pro
-ms.collection: M365-identity-device-management
 ---
 
 # Resilience through developer best practices
@@ -59,7 +55,7 @@ Your business requirements and desired end-user experience will dictate your fre
 
 ### How to extend token lifetimes
 
-- **Web applications**: For web applications where the authentication token is validated at the beginning of sign-in, the application depends on the session cookie to continue to extend the session validity. Enable users to remain signed in by implementing rolling session times that will continue to renew sessions based on user activity. If there's a long-term token issuance outage, these session times can be further increased as a onetime configuration on the application. Keep the lifetime of the session to the maximum allowed.
+- **Web applications**: For web applications where the authentication token is validated at the beginning of sign-in, the application depends on the session cookie to continue to extend the session validity. Enable users to remain signed in by implementing rolling session times that will continue to renew sessions based on user activity. If there's a long-term token issuance outage, these session times can be further increased as a one-time configuration on the application. Keep the lifetime of the session to the maximum allowed.
 - **SPAs**: A SPA may depend on access tokens to make calls to the APIs. A SPA traditionally uses the implicit flow that doesn't result in a refresh token. The SPA can use a hidden `iframe` to perform new token requests against the authorization endpoint if the browser still has an active session with the Azure AD B2C. For SPAs, there are a few options available to allow the user to continue to use the application.
   - Extend the access token's validity duration to meet your business requirements.
   - Build your application to use an API gateway as the authentication proxy. In this configuration, the SPA loads without any authentication and the API calls are made to the API gateway. The API gateway sends the user through a sign-in process using an [authorization code grant](https://oauth.net/2/grant-types/authorization-code/) based on a policy and authenticates the user. Then the authentication session between the API gateway and the client is maintained using an authentication cookie. The API gateway services the APIs using the token that is obtained by the API gateway (or some other direct authentication method such as certificates, client credentials, or API keys).

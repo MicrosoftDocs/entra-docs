@@ -5,12 +5,14 @@ description: Learn how to configure single sign-on between Microsoft Entra ID an
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: celested
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 11/01/2023
 ms.author: jeedes
+
+# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and AWS Single-Account Access so that I can control who has access to AWS Single-Account Access, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
 # Tutorial: Microsoft Entra SSO integration with AWS Single-Account Access
@@ -38,7 +40,7 @@ Use the information below to make a decision between using the AWS Single Sign-O
 |:--- |:---:|:---:|
 |Conditional Access| Supports a single Conditional Access policy for all AWS accounts. | Supports a single Conditional Access policy for all accounts or custom policies per account|
 | CLI access | Supported | Supported|
-| Privileged  Identity Management | [Public preview](./aws-single-sign-on-provisioning-tutorial.md#just-in-time-jit-application-access-with-pim-for-groups-preview) | Not yet supported |
+| Privileged  Identity Management | [Supported](./aws-single-sign-on-provisioning-tutorial.md#just-in-time-jit-application-access-with-pim-for-groups) | Not supported |
 | Centralize account management | Centralize account management in AWS. | Centralize account management in Microsoft Entra ID (will likely require a Microsoft Entra enterprise application per account). |
 | SAML certificate| Single certificate| Separate certificates per app / account | 
 

@@ -2,22 +2,18 @@
 title: How to run a registration campaign to set up Microsoft Authenticator
 description: Learn how to move your organization away from less secure authentication methods to Microsoft Authenticator
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
-ms.custom: ignite-2022
 ms.topic: conceptual
-ms.date: 11/26/2023
+ms.date: 02/05/2024
 
 ms.author: justinha
 author: mjsantani
 manager: amycolannino
-
-ms.collection: M365-identity-device-management
 #Customer intent: As an identity administrator, I want to encourage users to use the Microsoft Authenticator app in Microsoft Entra ID to improve and secure user sign-in events.
 ---
 
-# How to run a registration campaign to set up Microsoft Authenticator - Microsoft Authenticator
+# How to run a registration campaign to set up Microsoft Authenticator
 
 You can nudge users to set up Microsoft Authenticator during sign-in. Users go through their regular sign-in, perform multifactor authentication as usual, and then get prompted to set up Microsoft Authenticator. You can include or exclude users or groups to control who gets nudged to set up the app. This allows targeted campaigns to move users from less secure authentication methods to Authenticator.  
 
@@ -36,49 +32,49 @@ You can also define how many days a user can postpone, or "snooze," the nudge. I
 
 ## User experience
 
-1. First, the user needs to successfully authenticate by using Microsoft Entra multifactor authentication (MFA). 
+1. First, you need to successfully authenticate using Microsoft Entra multifactor authentication (MFA). 
 
-1. If the user is enabled for Authenticator push notifications and doesn't have it already set up, they get prompted to set up Authenticator to improve their sign-in experience. Note that users might also be prompted to set up other security features, such as . 
+1. If you've enabled for Authenticator push notifications and don't have it already set up, you'll get prompted to set up Authenticator to improve your sign-in experience. 
 
    >[!NOTE]
-   >Other security features, such as self-service password reset or security defaults, might also prompt users for setup.  
+   >Other security features, such as passwordless passkey, self-service password reset or security defaults, might also prompt you for setup. 
 
-   ![Screenshot of multifactor authentication.](./media/how-to-mfa-registration-campaign/user-prompt.png)
+    :::image type="content" source="./media/how-to-mfa-registration-campaign/user-prompt.png" alt-text="Screenshot of multifactor authentication."::: 
 
-1. User taps **Next** and steps through the Authenticator app setup. 
-   1. First download the app.  
-   ![Screenshot of download for Microsoft Authenticator.](media/how-to-mfa-registration-campaign/user-downloads-microsoft-authenticator.png)
+1. Tap **Next** and step through the Authenticator app setup. 
+1. First download the app.  
+
+    :::image type="content" source="./media/how-to-mfa-registration-campaign/user-downloads-microsoft-authenticator.png" alt-text="Screenshot of download for Microsoft Authenticator."::: 
 
    1. See how to set up the Authenticator app. 
-   
-      ![Screenshot of Microsoft Authenticator.](./media/how-to-nudge-authenticator-app/setup.png)
+
+      :::image type="content" source="./media/how-to-mfa-registration-campaign/setup.png" alt-text="Screenshot of Microsoft Authenticator.":::
 
    1. Scan the QR Code. 
 
-      ![Screenshot of QR Code.](./media/how-to-nudge-authenticator-app/scan.png)
+      :::image type="content" source="./media/how-to-mfa-registration-campaign/scan.png" alt-text="Screenshot of QR Code.":::
 
-   1. Approve the test notification.
+   1. Verify your identity.
 
-      ![Screenshot of test notification.](./media/how-to-nudge-authenticator-app/test.png)
+      :::image type="content" source="./media/how-to-mfa-registration-campaign/approved.png" alt-text="Screenshot of Verify your identity screen."::: 
 
-   1. Notification approved.
+   1. Approve the test notification on your device.
 
-      ![Screenshot of confirmation of approval.](./media/how-to-nudge-authenticator-app/approved.png)
+      :::image type="content" source="./media/how-to-mfa-registration-campaign/test.png" alt-text="Screenshot of test notification."::: 
 
-   1. Authenticator app is now successfully set up as the user's default sign-in method.
+   1. Authenticator app is now successfully set up.
+   
+      :::image type="content" source="./media/how-to-mfa-registration-campaign/finish.png" alt-text="Screenshot of installation complete.":::
 
-      ![Screenshot of installation complete.](./media/how-to-nudge-authenticator-app/finish.png)
+1. If you don't want to install the Authenticator app, you can tap **Skip for now** to snooze the prompt for up to 14 days, which can be set by an admin. Users with free and trial subscriptions can snooze the prompt up to three times.
 
-1. If a user wishes to not install the Authenticator app, they can tap **Skip for now** to snooze the prompt for up to 14 days, which can be set by an admin. Users with free and trial subscriptions can snooze the prompt up to three times.
-
-   ![Screenshot of snooze option.](media/how-to-mfa-registration-campaign/snooze.png)
-
+    :::image type="content" source="./media/how-to-mfa-registration-campaign/snooze.png" alt-text="Screenshot of snooze option.":::
 
 ## Enable the registration campaign policy using the Microsoft Entra admin center
 
 To enable a registration campaign in the Microsoft Entra admin center, complete the following steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator) or [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Protection** > **Authentication methods** > **Registration campaign** and click **Edit**.
 1. For **State**:
 
@@ -106,14 +102,23 @@ To configure the policy using Graph Explorer:
    To open the Permissions panel:
 
    ![Screenshot of Graph Explorer.](./media/how-to-nudge-authenticator-app/permissions.png)
+   
+1. Retrieve the Authentication methods policy: 
 
-1. Retrieve the Authentication methods policy: `GET https://graph.microsoft.com/beta/policies/authenticationmethodspolicy`
+   ```json
+   GET https://graph.microsoft.com/v1.0/policies/authenticationmethodspolicy
+   ```
 
 1. Update the registrationEnforcement and authenticationMethodsRegistrationCampaign section of the policy to enable the nudge on a user or group.
 
    ![Screenshot of the API response.](media/how-to-mfa-registration-campaign/response.png)
+   
+   To update the policy, perform a PATCH on the Authentication Methods Policy with only the updated registrationEnforcement section: 
 
-To update the policy, perform a PATCH on the Authentication Methods Policy with only the updated registrationEnforcement section: `PATCH https://graph.microsoft.com/beta/policies/authenticationmethodspolicy`
+   ```json
+   PATCH https://graph.microsoft.com/v1.0/policies/authenticationmethodspolicy
+   ```
+
 
 The following table lists **authenticationMethodsRegistrationCampaign** properties.
 
@@ -130,7 +135,7 @@ The following table lists **includeTargets** properties.
 | Name | Possible values | Description |
 |------|-----------------|-------------|
 | targetType| "user"<br>"group" | The kind of entity targeted. |
-| Id | A guid identifier | The ID of the user or group targeted. |
+| ID | A guid identifier | The ID of the user or group targeted. |
 | targetedAuthenticationMethod | "microsoftAuthenticator" | The authentication method user is prompted to register. The only permissible value is "microsoftAuthenticator". |
 
 The following table lists **excludeTargets** properties.
@@ -138,7 +143,7 @@ The following table lists **excludeTargets** properties.
 | Name       | Possible values   | Description                           |
 |------------|-------------------|---------------------------------------|
 | targetType | "user"<br>"group" | The kind of entity targeted.          |
-| Id         | A string          | The ID of the user or group targeted. |
+| ID         | A string          | The ID of the user or group targeted. |
 
 ### Examples
 
@@ -243,7 +248,7 @@ Here are a few sample JSONs you can use to get started!
 1. When you tap the specific user, you’ll see their **Object ID**, which is the user’s GUID.
 
    ![User object ID](./media/how-to-nudge-authenticator-app/object-id.png)
-
+   
 ### Identify the GUIDs of groups to insert in the JSONs
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
@@ -252,7 +257,7 @@ Here are a few sample JSONs you can use to get started!
 1. Tap the group and get the **Object ID**.
 
    ![Nudge group](./media/how-to-nudge-authenticator-app/group.png)
-
+   
 <!---comment out PS until ready>
 
 ### PowerShell
@@ -279,9 +284,9 @@ The nudge won't appear on mobile devices that run Android or iOS.
 
 No, the registration campaign is available only for users using Microsoft Entra multifactor authentication. 
 
-**Can users be nudged within an application?** 
+**Can users be nudged within an application?**
 
-The registration campaign is available only on browsers and not on applications.
+Yes, we support embedded browser views in certain applications. We don't nudge users in out of the box experiences or in browser views embedded in Windows settings.
 
 **Can users be nudged on a mobile device?** 
 
@@ -350,4 +355,3 @@ No, there are no such plans.
 ## Next steps
 
 [Enable passwordless sign-in with Microsoft Authenticator](howto-authentication-passwordless-phone.md)
-

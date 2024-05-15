@@ -1,22 +1,19 @@
 ---
 title: 'Microsoft Entra Connect Sync:  Changing the AD DS account password'
 description: This topic document describes how to update Microsoft Entra Connect after the password of the AD DS account is changed.
-services: active-directory
+
 keywords: AD DS account, Active Directory account, password
-documentationcenter: ''
 author: billmath
 manager: amycolannino
-editor: ''
 ms.assetid: 76b19162-8b16-4960-9e22-bd64e6675ecc
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
 
-ms.collection: M365-identity-device-management
+
 ---
 # Changing the AD DS connector account password
 The AD DS connector account refers to the user account used by Microsoft Entra Connect to communicate with on-premises Active Directory. If you change the password of the AD DS connector account in AD, you must update Microsoft Entra Connect Synchronization Service with the new password. Otherwise, the Synchronization can no longer synchronize correctly with the on-premises Active Directory and you will encounter the following errors:

@@ -5,16 +5,16 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: 
-ms.date: 03/06/2023
+ms.date: 02/06/2024
 ms.reviewer: jassuri
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: reference
 titleSuffix: Microsoft identity platform
 #Customer intent: As a developer, I want to learn about custom authentication extensions so that I can augment tokens with claims from an external identity system or role management system.
 ---
 
-# Custom claims providers
+# Custom claims provider reference
 
 In this reference article, you can learn about the REST API schema and claims mapping policy structure for custom claim provider events.
 
@@ -26,7 +26,7 @@ The custom claims provider token issuance event allows you to enrich or customiz
 
 To set up and, integrate a custom extension with your application requires multiple components to be connected. The following diagram shows a high level view of the configuration points, and relationships that are created to implement a custom extension.
 
-:::image type="content" border="false" source="media/custom-extension-get-started/token-issuance-start-config.png" alt-text="Screenshot that shows the components to configure in Microsoft Entra ID to set up and integrate a custom claims provider." lightbox="media/custom-extension-get-started/token-issuance-start-config.png":::
+:::image type="content" border="false" source="media/custom-extension-tokenissuancestart-configuration/token-issuance-start-config.png" alt-text="Screenshot that shows the components to configure in Microsoft Entra ID to set up and integrate a custom claims provider." lightbox="media/custom-extension-tokenissuancestart-configuration/token-issuance-start-config.png":::
 
 - You should have a **REST API endpoint** publicly available. In this diagram, it represented by Azure Function. The REST API generates and returns custom claims to the custom extension. It's associated with a Microsoft Entra application registration.
 - You require to configure a **custom extension** in Microsoft Entra ID, which is configured to connect to your API.
@@ -45,7 +45,7 @@ The REST API returns an HTTP response to Microsoft Entra ID containing the attri
 
 To develop your own REST API for the token issuance start event, use the following REST API data contract. The schema describes the contract to design the request and response handler.
 
-Your custom extension in Microsoft Entra ID makes an HTTP call to your REST API with a JSON payload. The JSON payload contains user profile data, authentication context attributes, and information about the application the user wants to sign-in. The JSON attributes can be used to perform extra logic by your API. The request to your API is in the following format:
+Your custom extension in Microsoft Entra ID makes an HTTP call to your REST API with a JSON payload. The JSON payload contains user profile data, authentication context attributes, and information about the application the user wants to sign-in. The `id` value in the following JSON is a Microsoft application that represents the Microsoft Entra authentication events service. The JSON attributes can be used to perform extra logic by your API. The request to your API is in the following format:
 
 ```http
 POST https://your-api.com/endpoint
@@ -79,14 +79,18 @@ POST https://your-api.com/endpoint
                 "displayName": "My Test application"
             },
             "user": {
+                "companyName": "Casey Jensen"
                 "createdDateTime": "2016-03-01T15:23:40Z",
-                "displayName": "Bob",
-                "givenName": "Bob Smith",
-                "id": "90847c2a-e29d-4d2f-9f54-c5b4d3f26471",
-                "mail": "bob@contoso.com",
+                "displayName": "Casey Jensen",
+                "givenName": "Casey",
+                "id": "90847c2a-e29d-4d2f-9f54-c5b4d3f26471", // Client ID representing the Microsoft Entra authentication events service
+                "mail": "casey@contoso.com",
+                "onPremisesSamAccountName": "caseyjensen",
+                "onPremisesSecurityIdentifier": "<Enter Security Identifier>",
+                "onPremisesUserPrincipalName": "Casey Jensen",
                 "preferredLanguage": "en-us",
-                "surname": "Smith",
-                "userPrincipalName": "bob@contoso.com",
+                "surname": "Jensen",
+                "userPrincipalName": "casey@contoso.com",
                 "userType": "Member"
             }
         }
@@ -123,7 +127,7 @@ When a B2B user from Fabrikam organization authenticates to Contoso's organizati
     "companyName": "Fabrikam",
     "createdDateTime": "2022-07-15T00:00:00Z",
     "displayName": "John Wright",
-    "id": "12345678-0000-0000-0000-000000000000",
+    "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
     "mail": "johnwright@fabrikam.com",
     "preferredDataLocation": "EUR",
     "userPrincipalName": "johnwright_fabrikam.com#EXT#@contoso.onmicrosoft.com",
@@ -194,9 +198,10 @@ Once you create your claims mapping policy, the next step is to upload it to you
 > [!IMPORTANT]
 > The **definition** element should be an array with a single string value. The string should be the stringified and escaped version of your claims mapping policy. You can use tools like [https://jsontostring.com/](https://jsontostring.com/) to stringify your claims mapping policy.
 
-## Next steps
+## See also
 
-- To learn how to [create and register a custom extension and API endpoint](custom-extension-get-started.md).
-- To learn how to customize the claims emitted in tokens for a specific application in their tenant using PowerShell, see [How to: Customize claims emitted in tokens for a specific app in a tenant](./saml-claims-customization.md)
-- To learn how to customize claims issued in the SAML token through the Azure portal, see [How to: Customize claims issued in the SAML token for enterprise applications](./saml-claims-customization.md)
-- To learn more about extension attributes, see [Using directory extension attributes in claims](./schema-extensions.md).
+- [Create a REST API with a token issuance start event](custom-extension-tokenissuancestart-setup.md)
+- [Configure a custom claims provider for a token issuance event](custom-extension-tokenissuancestart-configuration.md).
+- [How to: Customize claims emitted in tokens for a specific app in a tenant](./saml-claims-customization.md)
+- [How to: Customize claims issued in the SAML token for enterprise applications](./saml-claims-customization.md)
+- [Using directory extension attributes in claims](./schema-extensions.md).

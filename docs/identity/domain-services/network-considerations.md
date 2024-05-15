@@ -1,18 +1,15 @@
 ---
 title: Network planning and connections for Microsoft Entra Domain Services | Microsoft Docs
 description: Learn about some of the virtual network design considerations and resources used for connectivity when you run Microsoft Entra Domain Services.
-services: active-directory-ds
 author: justinha
 manager: amycolannino
 
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: domain-services
-ms.workload: identity
 ms.topic: conceptual
-ms.date: 09/15/2023
+ms.date: 05/07/2024
 ms.author: justinha
 ms.reviewer: xyuan
-
 ---
 # Virtual network design considerations and configuration options for Microsoft Entra Domain Services
 
@@ -153,7 +150,9 @@ If needed, you can [create the required network security group and rules using A
 
 ### Outbound connectivity
 
-For Outbound connectivity, you can either keep **AllowVnetOutbound** and **AllowInternetOutBound** or restrict Outbound traffic by using ServiceTags listed in the following table. The ServiceTag for AzureUpdateDelivery must be added via [PowerShell](powershell-create-instance.md). Make sure no other NSG with higher priority denies the Outbound connectivity. If Outbound connectivity is denied, replication won't work between replica sets. 
+For Outbound connectivity, you can either keep **AllowVnetOutbound** and **AllowInternetOutBound** or restrict Outbound traffic by using ServiceTags listed in the following table. The ServiceTag for AzureUpdateDelivery must be added via [PowerShell](powershell-create-instance.md). If you use [Log Analytics](/azure/azure-monitor/logs/logs-data-export), add **EventHub** to outbound destinations.
+
+Make sure no other NSG with higher priority denies the Outbound connectivity. If Outbound connectivity is denied, replication won't work between replica sets. 
 
 
 | Outbound port number | Protocol | Source | Destination   | Action | Required | Purpose |

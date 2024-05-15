@@ -5,12 +5,14 @@ description: Learn how to configure Microsoft Entra ID to automatically provisio
 author: twimmers
 writer: twimmers
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Ideo so that I can streamline the user management process and ensure that users have the appropriate access to Ideo.
 ---
 
 # Tutorial: Configure IDEO for automatic user provisioning
@@ -30,7 +32,7 @@ The objective of this tutorial is to demonstrate the steps to be performed in ID
 The scenario outlined in this tutorial assumes that you already have the following prerequisites:
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md).
-* A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (e.g. Application Administrator, Cloud Application administrator, Application Owner, or Global Administrator).
+* A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (like [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications)).
 * [A IDEO tenant](https://www.saasworthy.com/product/shape-space/pricing)
 * A user account on IDEO | Shape with Admin permissions.
 

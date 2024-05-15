@@ -5,12 +5,14 @@ description: Learn how to configure single sign-on between Microsoft Entra ID an
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: celested
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 01/23/2023
+ms.date: 02/23/2024
 ms.author: jeedes
+
+# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Atlassian Cloud so that I can control who has access to Atlassian Cloud, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 # Tutorial: Microsoft Entra SSO integration with Atlassian Cloud
 
@@ -161,6 +163,21 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Click **Stop and save SAML** button.
    
    ![Screenshot shows the image of saving configuration.](./media/atlassian-cloud-tutorial/continue.png "Save configuration")
+
+1. To enforce SAML single sign-on in an authentication policy, perform the following steps.
+
+   a.	From the **Atlassian Admin** Portal, select **Security** tab and click **Authentication policies**.
+
+   b.	Select **Edit** for the policy you want to enforce. 
+
+   c.	In **Settings**, enable the **Enforce single sign-on** to their managed users for the successful SAML redirection. 
+
+   d.	Click **Update**. 
+
+      ![Screenshot showing Authentication policies.](./media/atlassian-cloud-tutorial/policy.png) 
+
+   > [!NOTE]
+   > The admins can test the SAML configuration by only enabling enforced SSO for a subset of users first on a separate authentication policy, and then enabling the policy for all users if there are no issues.
 
 <a name='create-an-azure-ad-test-user'></a>
 

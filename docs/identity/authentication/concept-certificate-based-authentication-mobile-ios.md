@@ -2,8 +2,7 @@
 title: Microsoft Entra certificate-based authentication on Apple devices
 description: Learn about Microsoft Entra certificate-based authentication on Apple devices that run macOS or iOS
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 02/09/2023
@@ -12,8 +11,6 @@ ms.author: justinha
 author: justinha
 manager: amycolannino
 ms.reviewer: vimrang
-
-ms.collection: M365-identity-device-management
 ms.custom: has-adal-ref
 ---
 # Microsoft Entra certificate-based authentication on iOS and macOS
@@ -183,9 +180,10 @@ CBA support for YubiKey is available in the latest Microsoft Authentication Libr
 |:-------------------|:------------------------------:|
 | YubiKey            |              &#x2705;          | 
 
-## Known issue
+## Known issues
 
-On iOS, users with certificate-based authentication will see a "double prompt", where they must click the option to use certificate-based authentication twice. We're working to fix the issue to create a seamless user experience.
+- On iOS, users with certificate-based authentication will see a "double prompt", where they must click the option to use certificate-based authentication twice.
+- On iOS, users with Microsoft Authenticator App will also see hourly login prompt to authenticate with CBA if there's an Authentication Strength policy enforcing CBA, or if they use CBA as the second factor.
 
 ## Next steps
 

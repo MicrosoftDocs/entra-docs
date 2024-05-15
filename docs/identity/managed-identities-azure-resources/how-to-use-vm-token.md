@@ -1,21 +1,18 @@
 ---
 title: Use managed identities on a virtual machine to acquire access token
 description: Step-by-step instructions and examples for using managed identities for Azure resources on virtual machines to acquire an OAuth access token.
-services: active-directory
-documentationcenter: 
+
 author: barclayn
 manager: amycolannino
-editor: 
 
-ms.service: active-directory
-ms.subservice: msi
+ms.service: entra-id
+ms.subservice: managed-identities
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.custom: devx-track-dotnet, devx-track-extended-java
-ms.workload: identity
 ms.date: 05/15/2023
 ms.author: barclayn
-ms.collection: M365-identity-device-management
+
 ---
 
 # How to use managed identities for Azure resources on an Azure VM to acquire an access token 

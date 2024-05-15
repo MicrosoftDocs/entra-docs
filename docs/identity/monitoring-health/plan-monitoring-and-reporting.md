@@ -1,18 +1,16 @@
 ---
-
 title: Plan reports & monitoring deployment
 description: Describes how to plan and execute implementation of reporting and monitoring.
-services: active-directory
+
 author: shlipsey3
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: conceptual
-ms.workload: identity
-ms.subservice: report-monitor
+ms.subservice: monitoring-health
 ms.date: 10/04/2023
 ms.author: sarahlipsey
-ms.reviewer: plenzke 
-# Customer intent: For a Microsoft Entra administrator to monitor logs and report on access 
+ms.reviewer: plenzke
+# Customer intent: For a Microsoft Entra administrator to monitor logs and report on access
 ---
 
 # Microsoft Entra monitoring and health deployment dependencies
@@ -46,7 +44,7 @@ You'll need a Microsoft Entra ID P1 or P2 license to access the Microsoft Entra 
 
 For detailed feature and licensing information, see the [Microsoft Entra pricing guide](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
 
-To deploy Microsoft Entra monitoring and health, you'll need a user who is a Global Administrator or Security Administrator for the Microsoft Entra tenant.
+To deploy Microsoft Entra monitoring and health, you'll need a user who is a Security Administrator for the Microsoft Entra tenant.
 
 * [Azure Monitor data platform](/azure/azure-monitor/data-platform)
 * [Azure Monitor naming and terminology changes](/azure/azure-monitor/overview)
@@ -71,7 +69,6 @@ Microsoft Entra roles enable you to delegate the ability to configure and view M
 
 The following roles can read Microsoft Entra reports:
 
-* Global Administrator
 * Security Administrator
 * Security Reader
 * Reports Reader
@@ -121,7 +118,7 @@ Learn more:
 
 #### Stream logs to storage and SIEM tools
 
-* [Integrate Microsoft Entra logs with Azure Monitor logs](./howto-integrate-activity-logs-with-azure-monitor-logs.md).
+* [Integrate Microsoft Entra logs with Azure Monitor logs](./howto-integrate-activity-logs-with-azure-monitor-logs.yml).
 * [Analyze Microsoft Entra activity logs with Azure Monitor logs](~/identity/monitoring-health/howto-analyze-activity-logs-log-analytics.md).
 * Learn how to [stream logs to an event hub](./howto-stream-logs-to-event-hub.md).
 * Learn how to [Archive Microsoft Entra logs to an Azure Storage account](./howto-archive-logs-to-storage-account.md).

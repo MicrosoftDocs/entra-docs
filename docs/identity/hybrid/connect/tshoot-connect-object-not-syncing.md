@@ -1,22 +1,17 @@
 ---
 title: Troubleshoot an object that is not syncing with Microsoft Entra ID'
 description: Troubleshoot an object that is not syncing with Microsoft Entra ID.
-services: active-directory
-documentationcenter: ''
+
 author: billmath
 manager: amycolannino
-editor: ''
-
-ms.assetid:
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: troubleshooting
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
-ms.collection: M365-identity-device-management
+
 ---
 # Troubleshoot an object that is not synchronizing with Microsoft Entra ID
 

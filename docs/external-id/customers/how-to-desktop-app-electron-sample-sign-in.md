@@ -6,14 +6,14 @@ author: kengaderdus
 manager: mwongerapk
 
 ms.author: kengaderdus
-ms.service: active-directory
+ms.service: entra-external-id
  
-ms.subservice: ciam
+ms.subservice: customers
 ms.topic: how-to
 ms.date: 05/22/2023
 ms.custom: developer
 
-#Customer intent: As a dev, devops, I want to learn about how to configure a sample Electron desktop app to sign in and sign out users with my Microsoft Entra ID for customers tenant
+#Customer intent: As a dev, devops, I want to learn about how to configure a sample Electron desktop app to sign in and sign out users with my external tenant.
 ---
 
 # Sign in users in a sample Electron desktop application
@@ -28,7 +28,7 @@ In this article, you do the following tasks:
 
 - Associate your web application with the user flow. 
 
-- Update a sample Electron desktop application using your own Microsoft Entra ID for customers tenant details.
+- Update a sample Electron desktop application using your own external tenant details.
 
 - Run and test the sample desktop application.
 
@@ -38,7 +38,7 @@ In this article, you do the following tasks:
 
 - [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 
-- Microsoft Entra ID for customers tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
+- An external tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
 <!--Awaiting this link http://developer.microsoft.com/identity/customers to go live on Developer hub-->
 
 ## Register desktop app
@@ -79,6 +79,7 @@ If you choose to download the `.zip` file, extract the sample app file to a fold
     ```powershell
     cd 1-Authentication\3-sign-in-electron\App
     ```
+ 
 1. Run the following commands to install app dependencies:
 
     ```powershell
@@ -93,7 +94,7 @@ If you choose to download the `.zip` file, extract the sample app file to a fold
  
     1. `Enter_the_Application_Id_Here` and replace it with the Application (client) ID of the app you registered earlier.
 
-    1. `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
+    1. `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
 
 ## Run and test sample web app
 
@@ -115,12 +116,9 @@ You can now test the sample Electron desktop app. After you run the app, the des
 
     :::image type="content" source="media/how-to-desktop-app-electron-sample-sign-in/desktop-app-electron-view-claims.png" alt-text="Screenshot of view token claims in an electron desktop app.":::
 
-## Next steps
+## See also
 
 - [Enable password reset](how-to-enable-password-reset-customers.md).
-
 - [Customize the default branding](how-to-customize-branding-customers.md).
-
 - [Configure sign-in with Google](how-to-google-federation-customers.md).
-
 - [Explore the Electron desktop app sample code](https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial/tree/main/1-Authentication/3-sign-in-electron#about-the-code).

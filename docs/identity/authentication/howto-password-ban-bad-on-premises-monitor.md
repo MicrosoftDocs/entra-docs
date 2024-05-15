@@ -2,8 +2,7 @@
 title: Monitor on-premises Microsoft Entra Password Protection
 description: Learn how to monitor and review logs for Microsoft Entra Password Protection for an on-premises Active Directory Domain Services environment
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 01/29/2023
@@ -13,7 +12,7 @@ author: justinha
 manager: amycolannino
 ms.reviewer: jsimmons
 
-ms.collection: M365-identity-device-management 
+
 ms.custom:
 ---
 # Monitor and review logs for on-premises Microsoft Entra Password Protection environments

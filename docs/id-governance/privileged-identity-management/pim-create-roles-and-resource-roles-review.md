@@ -1,19 +1,16 @@
 ---
 title: Create an access review of Azure resource and Microsoft Entra roles in PIM
 description: Learn how to create an access review of Azure resource and Microsoft Entra roles in Privileged Identity Management (PIM).
-services: active-directory
-documentationcenter: ''
+
 author: barclayn
 manager: amycolannino
-editor: ''
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id-governance
 ms.topic: how-to
-ms.subservice: pim
+ms.subservice: privileged-identity-management
 ms.date: 09/12/2023
 ms.author: barclayn
 ms.custom: pim
-ms.collection: M365-identity-device-management
+
 ---
 
 # Create an access review of Azure resource and Microsoft Entra roles in PIM
@@ -32,6 +29,9 @@ Using Access Reviews for **Service Principals** requires a Microsoft Entra Workl
 
 - Workload Identities Premium licensing: You can view and acquire licenses on the [Workload Identities blade](https://portal.azure.com/#view/Microsoft_Azure_ManagedServiceIdentity/WorkloadIdentitiesBlade) in the Microsoft Entra admin center.
 
+
+> [!NOTE]
+> Access reviews capture a snapshot of access at the beginning of each review instance. Any changes made during the review process will be reflected in the subsequent review cycle. Essentially, with the commencement of each new recurrence, pertinent data regarding the users, resources under review, and their respective reviewers is retrieved.
 
 ## Create access reviews
 
@@ -69,7 +69,7 @@ Using Access Reviews for **Service Principals** requires a Microsoft Entra Workl
 
     :::image type="content" source="./media/pim-create-azure-ad-roles-and-resource-roles-review/users.png" alt-text="Users scope to review role membership of screenshot.":::
 
-11. Or, you can create access reviews only for inactive users (preview). In the *Users scope* section, set the **Inactive users (on tenant level) only** to **true**. If the toggle is set to *true*, the scope of the review will focus on inactive users only. Then, specify **Days inactive**  with a number of days inactive up to 730 days (two years). Users inactive for the specified number of days will be the only users in the review.
+11. Or, you can create access reviews only for inactive users. In the *Users scope* section, set the **Inactive users (on tenant level) only** to **true**. If the toggle is set to *true*, the scope of the review will focus on inactive users only. Then, specify **Days inactive**  with a number of days inactive up to 730 days (two years). Users inactive for the specified number of days will be the only users in the review.
  
 12. Under **Review role membership**, select the privileged Azure resource or Microsoft Entra roles to review.
 

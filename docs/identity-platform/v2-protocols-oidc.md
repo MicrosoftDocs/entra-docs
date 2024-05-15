@@ -5,12 +5,12 @@ author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
 ms.custom: 
-ms.date: 09/13/2023
+ms.date: 04/08/2024
 ms.reviewer: ludwignick
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: reference
-#Customer intent:
+#Customer intent: As a developer integrating authentication into my application, I want to understand how to enable ID tokens for my application registered with the Microsoft identity platform, so that I can verify the identity of the user and obtain other information about them.
 ---
 
 # OpenID Connect on the Microsoft identity platform
@@ -24,8 +24,6 @@ The full specification for OIDC is available on the OpenID Foundation's website 
 The following diagram shows the basic OpenID Connect sign-in flow. The steps in the flow are described in more detail in later sections of the article.
 
 ![Swim-lane diagram showing the OpenID Connect protocol's sign-in flow.](./media/v2-protocols-oidc/convergence-scenarios-webapp.svg)
-
-[!INCLUDE [try-in-postman-link](includes/try-in-postman-link.md)]
 
 ## Enable ID tokens
 
@@ -71,7 +69,7 @@ The value of `{tenant}` varies based on the application's sign-in audience as sh
 | `common` |Users with both a personal Microsoft account and a work or school account from Microsoft Entra ID can sign in to the application. |
 | `organizations` |Only users with work or school accounts from Microsoft Entra ID can sign in to the application. |
 | `consumers` |Only users with a personal Microsoft account can sign in to the application. |
-| `8eaef023-2b34-4da1-9baa-8bc8c9d6a490` or `contoso.onmicrosoft.com` | Only users from a specific Microsoft Entra tenant (directory members with a work or school account or directory guests with a personal Microsoft account) can sign in to the application. <br/><br/>The value can be the domain name of the Microsoft Entra tenant or the tenant ID in GUID format. You can also use the consumer tenant GUID, `9188040d-6c67-4c5b-b112-36a304b66dad`, in place of `consumers`.  |
+| `Directory (tenant) ID` or `contoso.onmicrosoft.com` | Only users from a specific Microsoft Entra tenant (directory members with a work or school account or directory guests with a personal Microsoft account) can sign in to the application. <br/><br/>The value can be the domain name of the Microsoft Entra tenant or the tenant ID in GUID format. |
 
 > [!TIP]
 > Note that when using the `common` or `consumers` authority for personal Microsoft accounts, the consuming resource application must be configured to support such type of accounts in accordance with [signInAudience](./supported-accounts-validation.md).
@@ -125,7 +123,7 @@ Example sign-in request (line breaks included only for readability):
 
 ```HTTP
 GET https://login.microsoftonline.com/{tenant}/oauth2/v2.0/authorize?
-client_id=535fb089-9ff3-47b6-9bfb-4f1264799865
+client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &response_type=id_token
 &redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
 &response_mode=form_post
@@ -243,7 +241,7 @@ To get an access token for the OIDC UserInfo endpoint, modify the sign-in reques
 // Line breaks are for legibility only.
 
 GET https://login.microsoftonline.com/{tenant}/oauth2/v2.0/authorize?
-client_id=535fb089-9ff3-47b6-9bfb-4f1264799865        // Your app registration's Application (client) ID
+client_id=00001111-aaaa-2222-bbbb-3333cccc4444        // Your app registration's Application (client) ID
 &response_type=id_token%20token                       // Requests both an ID token and access token
 &redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F       // Your application's redirect URI (URL-encoded)
 &response_mode=form_post                              // 'form_post' or 'fragment'
@@ -258,7 +256,7 @@ You can use the [authorization code flow](v2-oauth2-auth-code-flow.md), the [dev
 <!--
 > [!TIP]
 > Click the following link to execute this request. After you sign in, your browser is redirected to `https://localhost/myapp/`, with an ID token and a token in the address bar. Note that this request uses `response_mode=fragment` for demonstration purposes only - for a webapp we recommend using `form_post` for additional security where possible. 
-> <a href="https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=535fb089-9ff3-47b6-9bfb-4f1264799865&response_type=id_token%20token&redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F&response_mode=fragment&scope=openid+profile+email&state=12345&nonce=678910" target="_blank">https://login.microsoftonline.com/common/oauth2/v2.0/authorize...</a>
+> <a href="https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=00001111-aaaa-2222-bbbb-3333cccc4444&response_type=id_token%20token&redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F&response_mode=fragment&scope=openid+profile+email&state=12345&nonce=678910" target="_blank">https://login.microsoftonline.com/common/oauth2/v2.0/authorize...</a>
 -->
 
 ### Successful token response

@@ -1,21 +1,18 @@
 ---
 title: The Microsoft Entra Connect Sync Service Manager Metaverse Search| Microsoft Docs'
 description: Understand the Metaverse Search tab in the Synchronization Service Manager for Microsoft Entra Connect.
-services: active-directory
-documentationcenter: ''
+
 author: billmath
 manager: amycolannino
-editor: ''
 ms.assetid: 20234dd4-3328-4817-b7ff-268f953d376d
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
 
-ms.collection: M365-identity-device-management
+
 ---
 # Sync Service Manager Metaverse Search
 

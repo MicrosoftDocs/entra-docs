@@ -2,8 +2,7 @@
 title: Require compliant, hybrid joined devices, or MFA
 description: Create a custom Conditional Access policy to require compliant, hybrid joined devices, or multifactor authentication
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
 ms.date: 07/18/2023
@@ -12,8 +11,6 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: calebb, lhuangnorth
-
-ms.collection: M365-identity-device-management
 ---
 # Common Conditional Access policy: Require a compliant device, Microsoft Entra hybrid joined device, or multifactor authentication for all users
 
@@ -64,7 +61,31 @@ On Windows 7, iOS, Android, macOS, and some third-party web browsers, Microsoft 
 
 #### Subscription activation
 
-Organizations that use the [Subscription Activation](/windows/deployment/windows-10-subscription-activation) feature to enable users to “step-up” from one version of Windows to another, may want to exclude the Windows Store for Business, AppID 45a330b1-b1ec-4cc1-9161-9f03992aa49f from their Conditional Access policy.
+Organizations that use the Subscription Activation feature to enable users to "step-up" from one version of Windows to another and use Conditional Access policies to control access need to exclude one of the following cloud apps from their Conditional Access policies using **Select Excluded Cloud Apps**:
+
+- [Universal Store Service APIs and Web Application, AppID 45a330b1-b1ec-4cc1-9161-9f03992aa49f](/troubleshoot/azure/active-directory/verify-first-party-apps-sign-in#application-ids-of-commonly-used-microsoft-applications).
+
+- [Windows Store for Business, AppID 45a330b1-b1ec-4cc1-9161-9f03992aa49f](/troubleshoot/azure/active-directory/verify-first-party-apps-sign-in#application-ids-of-commonly-used-microsoft-applications).
+
+Although the app ID is the same in both instances, the name of the cloud app depends on the tenant.
+
+For more information about configuring exclusions in Conditional Access policies, see [Application exclusions](/azure/active-directory/conditional-access/howto-conditional-access-policy-all-users-mfa#application-exclusions).
+
+<!-- 8605089 -->
+
+When a device has been offline for an extended period of time, the device might not reactivate automatically if this Conditional Access exclusion isn't in place. Setting this Conditional Access exclusion ensures that Subscription Activation continues to work seamlessly.
+
+Starting with Windows 11, version 23H2 with [KB5034848](https://support.microsoft.com/help/5034848) or later, users are prompted for authentication with a toast notification when Subscription Activation needs to reactivate. The toast notification will show the following message:
+
+> **Your account requires authentication**
+>
+> **Please sign in to your work or school account to verify your information.**
+
+Additionally, in the [**Activation**](ms-settings:activation) pane, the following message might appear:
+
+> **Please sign in to your work or school account to verify your information.**
+
+The prompt for authentication usually occurs when a device has been offline for an extended period of time. This change eliminates the need for an exclusion in the Conditional Access policy for Windows 11, version 23H2 with [KB5034848](https://support.microsoft.com/help/5034848) or later. A Conditional Access policy can still be used with Windows 11, version 23H2 with [KB5034848](https://support.microsoft.com/help/5034848) or later if the prompt for user authentication via a toast notification isn't desired.
 
 ## Next steps
 

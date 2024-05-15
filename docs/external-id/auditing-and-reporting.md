@@ -3,17 +3,15 @@ title: Auditing and reporting a B2B collaboration user
 description: Guest user properties are configurable in Microsoft Entra B2B collaboration
 
  
-ms.service: active-directory
-ms.subservice: B2B
+ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 12/18/2023
+ms.date: 01/04/2024
 
 ms.author: cmulligan
 author: csmulligan
 manager: celestedg
-ms.custom: "it-pro, seo-update-azuread-jan"
+ms.custom: it-pro
 ms.collection: M365-identity-device-management
-
 # Customer intent: As an IT admin managing B2B collaboration users, I want to audit and report on guest user activities, so that I can ensure the security and compliance of my organization's resources.
 ---
 
@@ -35,9 +33,9 @@ You can dive into each of these events to get the details. For example, let's lo
 
 You can also export these logs from Microsoft Entra ID and use the reporting tool of your choice to get customized reports.
 
-## Sponsors field for B2B users (preview) 
+## Sponsors field for B2B users 
 
-You can also manage and track your guest users in the organization using the sponsors feature (preview). The **Sponsors** field on the user account displays who is responsible for the guest user. A sponsor can be a user or a group. To learn more about the sponsors feature (preview), see [Add sponsors to a guest user](b2b-sponsors.md).
+You can also manage and track your guest users in the organization using the sponsors feature. The **Sponsors** field on the user account displays who is responsible for the guest user. A sponsor can be a user or a group. To learn more about the sponsors feature, see [Add sponsors to a guest user](b2b-sponsors.md).
 
 ### Next steps
 

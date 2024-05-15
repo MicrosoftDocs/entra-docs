@@ -1,24 +1,22 @@
 ---
-title: PowerShell V2 examples for managing groups 
+title: PowerShell V2 examples for managing groups
 description: This page provides PowerShell examples to help you manage your groups in Microsoft Entra ID
 keywords: Azure AD, Azure Active Directory, PowerShell, Groups, Group management
-services: active-directory
+
 author: barclayn
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: enterprise-users
+ms.service: entra-id
+ms.subservice: users
 ms.topic: how-to
-ms.date: 06/24/2022
+ms.date: 05/10/2024
 ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro, has-azure-ad-ps-ref
-ms.collection: M365-identity-device-management
 ---
 # Microsoft Entra version 2 cmdlets for group management
 
 > [!div class="op_single_selector"]
-> - [Azure portal](~/fundamentals/how-to-manage-groups.md?context=azure/active-directory/users-groups-roles/context/ugr-context)
+> - [Azure portal](~/fundamentals/how-to-manage-groups.yml?context=azure/active-directory/users-groups-roles/context/ugr-context)
 > - [PowerShell](~/identity/users/groups-settings-v2-cmdlets.md)
 >
 >
@@ -346,15 +344,13 @@ When a group is created, certain endpoints allow the end user to specify a mailN
 * ssl-admin
 * webmaster
 
-## Group writeback to on-premises (preview)
+## Group writeback to on-premises
 
-Today, many groups are still managed in on-premises Active Directory. To answer requests to sync cloud groups back to on-premises, Microsoft 365 groups writeback feature for Microsoft Entra ID is now available for preview.
+Today, many groups are still managed in on-premises Active Directory. To answer requests to sync cloud groups back to on-premises the provisioning to active directory feature for groups is now available.
 
-Microsoft 365 groups are created and managed in the cloud. The writeback capability allows you to write back Microsoft 365 groups as distribution groups to an Active Directory forest with Exchange installed. Users with on-premises Exchange mailboxes can then send and receive emails from these groups. The group writeback feature doesn't support Microsoft Entra security groups or distribution groups.
+[!INCLUDE [deprecation](~/includes/gwb-v2-deprecation.md)]
 
-For more details, please refer to documentation for the [Microsoft Entra Connect Sync service](~/identity/hybrid/connect/how-to-connect-syncservice-features.md).
 
-Microsoft 365 group writeback is a public preview feature of Microsoft Entra ID and is available with any paid Microsoft Entra ID license plan. For more information about previews, see [Universal License Terms For Online Services](https://www.microsoft.com/licensing/terms/product/ForOnlineServices/all).
 
 ## Next steps
 

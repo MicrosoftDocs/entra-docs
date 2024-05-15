@@ -6,12 +6,14 @@ author: twimmers
 writer: twimmers
 manager: jeedes
 ms.assetid: 4e0d2a0b-2d22-4b21-8b29-64413549c5a5
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 08/03/2023
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Litmos so that I can streamline the user management process and ensure that users have the appropriate access to Litmos.
 ---
 
 # Tutorial: Configure SAP Litmos for automatic user provisioning
@@ -32,7 +34,7 @@ This tutorial describes the steps you need to perform in both SAP Litmos and Mic
 The scenario outlined in this tutorial assumes that you already have the following prerequisites:
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md). 
-* A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (for example, Application Administrator, Cloud Application administrator, Application Owner, or Global Administrator).
+* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
 * An SAP Litmos tenant.
 * A user account in SAP Litmos with Admin permissions.
 

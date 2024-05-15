@@ -1,20 +1,18 @@
 ---
 title: Tutorial`:` Use a managed identity to access Azure Storage via access key - Linux
 description: A tutorial that walks you through the process of using a Linux VM system-assigned managed identity to access Azure Storage via an access key.
-services: active-directory
-documentationcenter: ''
+
 author: barclayn
 manager: amycolannino
 editor: daveba
 ms.custom: subject-rbac-steps, devx-track-arm-template
-ms.service: active-directory
-ms.subservice: msi
+ms.service: entra-id
+ms.subservice: managed-identities
 ms.topic: tutorial
 ms.tgt_pltfrm: na
-ms.workload: identity
-ms.date: 01/11/2022
+ms.date: 03/26/2024
 ms.author: barclayn
-ms.collection: M365-identity-device-management
+
 ---
 
 
@@ -34,31 +32,31 @@ This tutorial shows you how to use a system-assigned managed identity for a Linu
 
 ## Create a storage account 
 
-If you don't already have one, you will now create a storage account.  You can also skip this step and grant your VM system-assigned managed identity access to the keys of an existing storage account. 
+If you don't have an existing storage account that you want to use in this tutorial you need to create one. You can also skip this step and grant your VM system-assigned managed identity access to the keys of an existing storage account. 
 
-1. Click the **+/Create new service** button found on the upper left-hand corner of the Azure portal.
-2. Click **Storage**, then **Storage Account**, and a new "Create storage account" panel will display.
-3. Enter a **Name** for the storage account, which you will use later.  
+1. Select the **+/Create new service** button found on the upper left-hand corner of the Azure portal.
+2. Select **Storage**, then **Storage Account**, and a new "Create storage account" panel will display.
+3. Enter a **Name** for the storage account.  
 4. **Deployment model** and **Account kind** should be set to "Resource Manager" and "General purpose", respectively. 
 5. Ensure the **Subscription** and **Resource Group** match the ones you specified when you created your VM in the previous step.
-6. Click **Create**.
+6. Select **Create**.
 
-    ![Create new storage account](./media/msi-tutorial-linux-vm-access-storage/msi-storage-create.png)
+    :::image type="content" source="./media/msi-tutorial-linux-vm-access-storage/msi-storage-create.png" alt-text="Screenshot showing new storage account creation.":::
 
 ## Create a blob container in the storage account
 
 Later we will upload and download a file to the new storage account. Because files require blob storage, we need to create a blob container in which to store the file.
 
 1. Navigate back to your newly created storage account.
-2. Click the **Containers** link in the left, under "Blob service."
-3. Click **+ Container** on the top of the page, and a "New container" panel slides out.
-4. Give the container a name, select an access level, then click **OK**. The name you specified will be used later in the tutorial. 
+2. Select the **Containers** link in the left, under "Blob service."
+3. Select **+ Container** on the top of the page, and a "New container" panel slides out.
+4. Give the container a name, select an access level, then select **OK**. The name you specified will be used later in the tutorial. 
 
-    ![Create storage container](./media/msi-tutorial-linux-vm-access-storage/create-blob-container.png)
+    :::image type="content" source="./media/msi-tutorial-linux-vm-access-storage/create-blob-container.png" alt-text="Screenshot showing the creation of a storage container.":::
 
 ## Grant your VM's system-assigned managed identity access to use storage account access keys
 
-Azure Storage does not natively support Microsoft Entra authentication.  However, you can use your VM's system-assigned managed identity to retrieve a storage SAS from Resource Manager, then use the SAS to access storage.  In this step, you grant your VM's system-assigned managed identity access to your storage account SAS. Grant access by assigning the [Storage Account Contributor](/azure/role-based-access-control/built-in-roles#storage-account-contributor) role to the managed-identity at the scope of the resource group that contains your storage account.
+Azure Storage doesn't natively support Microsoft Entra authentication.  However, you can use your VM's system-assigned managed identity to retrieve a storage SAS from Resource Manager, then use the SAS to access storage.  In this step, you grant your VM's system-assigned managed identity access to your storage account SAS. Grant access by assigning the [Storage Account Contributor](/azure/role-based-access-control/built-in-roles#storage-account-contributor) role to the managed-identity at the scope of the resource group that contains your storage account.
  
 For detailed steps, see [Assign Azure roles using the Azure portal](/azure/role-based-access-control/role-assignments-portal).
 
@@ -68,13 +66,13 @@ For detailed steps, see [Assign Azure roles using the Azure portal](/azure/role-
 
 ## Get an access token using the VM's identity and use it to call Azure Resource Manager
 
-For the remainder of the tutorial, we will work from the VM we created earlier.
+For the remainder of the tutorial, we work from the VM we created earlier.
 
-To complete these steps, you will need an SSH client. If you are using Windows, you can use the SSH client in the [Windows Subsystem for Linux](/windows/wsl/install). If you need assistance configuring your SSH client's keys, see [How to Use SSH keys with Windows on Azure](/azure/virtual-machines/linux/ssh-from-windows), or [How to create and use an SSH public and private key pair for Linux VMs in Azure](/azure/virtual-machines/linux/mac-create-ssh-keys).
+To complete these steps, you need an SSH client. If you are using Windows, you can use the SSH client in the [Windows Subsystem for Linux](/windows/wsl/install). If you need assistance configuring your SSH client's keys, see [How to Use SSH keys with Windows on Azure](/azure/virtual-machines/linux/ssh-from-windows), or [How to create and use an SSH public and private key pair for Linux VMs in Azure](/azure/virtual-machines/linux/mac-create-ssh-keys).
 
-1. In the Azure portal, navigate to **Virtual Machines**, go to your Linux virtual machine, then from the **Overview** page click **Connect** at the top. Copy the string to connect to your VM. 
+1. In the Azure portal, navigate to **Virtual Machines**, select your Linux virtual machine, then from the **Overview** page select **Connect** at the top. Copy the string to connect to your VM. 
 2. Connect to your VM using your SSH client.  
-3. Next, you will be prompted to enter in your **Password** you added when creating the **Linux VM**. You should then be successfully signed in.  
+3. Next, you need to enter the **Password** you added when creating the **Linux VM**.  
 4. Use CURL to get an access token for Azure Resource Manager.  
 
     The CURL request and response for the access token is below:
@@ -122,7 +120,7 @@ Create a sample blob file to upload to your blob storage container. On a Linux V
 echo "This is a test file." > test.txt
 ```
 
-Next, authenticate with the CLI `az storage` command using the storage access key, and upload the file to the blob container. For this step, you will need to [install the latest Azure CLI](/cli/azure/install-azure-cli) on your VM, if you haven't already.
+Next, authenticate with the CLI `az storage` command using the storage access key, and upload the file to the blob container. For this step, you need to [install the latest Azure CLI](/cli/azure/install-azure-cli) on your VM, if you haven't already.
  
 
 ```azurecli

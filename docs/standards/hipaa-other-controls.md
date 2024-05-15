@@ -1,10 +1,8 @@
 ---
 title: Configure Microsoft Entra HIPAA additional safeguards
 description: Guidance on how to configure Microsoft Entra HIPAA additional control safeguards
-services: active-directory 
-ms.service: active-directory
-ms.subservice: fundamentals
-ms.workload: identity
+ms.service: entra
+ms.subservice: standards
 ms.topic: how-to
 author: janicericketts
 ms.author: jricketts
@@ -12,7 +10,6 @@ manager: martinco
 ms.reviewer: martinco
 ms.date: 04/13/2023
 ms.custom: it-pro
-ms.collection: M365-identity-device-management
 ---
 
 # Other safeguard guidance 
@@ -71,7 +68,7 @@ Ensure that users and devices that access ePHI data are authorized. You must ens
 |Enable multifactor authentication | [Microsoft Entra multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md) protects identities by adding an extra layer of security. The extra layer provides an effective way to prevent unauthorized access. MFA enables the requirement of more validation of sign in credentials during the authentication process. Setting up the [Authenticator app](https://support.microsoft.com/account-billing/set-up-an-authenticator-app-as-a-two-step-verification-method-2db39828-15e1-4614-b825-6e2b524e7c95) provides one-click verification, or you can configure [Microsoft Entra passwordless configuration](~/identity/authentication/concept-authentication-passwordless.md). |
 | Enable Conditional Access policies | [Conditional Access](~/identity/conditional-access/concept-conditional-access-policies.md) policies help to restrict access to only approved applications. Microsoft Entra analyses signals from either the user, device, or the location to automate decisions and enforce organizational policies for access to resources and data. |
 | Set up device based Conditional Access Policy | [Conditional Access with Microsoft Intune](/mem/intune/protect/conditional-access) for device management and Microsoft Entra policies can use device status to either grant deny access to your services and data. By deploying device compliance policies, it determines if it meets security requirements to make decisions to either allow access to the resources or deny them. |
-| Use role-based access control (RBAC) | [RBAC in Microsoft Entra ID](~/identity/role-based-access-control/custom-overview.md) provides security on an enterprise level, with separation of duties. Adjust and review permissions to protect confidentiality, privacy and access management to resources and sensitive data, with the systems.</br>Microsoft Entra ID provides support for [built-in roles](~/identity/role-based-access-control/permissions-reference.md), which is a fixed set of permissions that can't be modified. You can also create your own [custom roles](~/identity/role-based-access-control/custom-create.md) where you can add a preset list. |
+| Use role-based access control (RBAC) | [RBAC in Microsoft Entra ID](~/identity/role-based-access-control/custom-overview.md) provides security on an enterprise level, with separation of duties. Adjust and review permissions to protect confidentiality, privacy and access management to resources and sensitive data, with the systems.</br>Microsoft Entra ID provides support for [built-in roles](~/identity/role-based-access-control/permissions-reference.md), which is a fixed set of permissions that can't be modified. You can also create your own [custom roles](~/identity/role-based-access-control/custom-create.yml) where you can add a preset list. |
 
 ## Transmission security safeguard guidance
 
@@ -118,7 +115,7 @@ Establish policies and procedures to protect data exchange that contains PHI dat
 
 | Recommendation | Action |
 | - | - |
- | Assess the state of on-premises applications | [Microsoft Entra application proxy](~/identity/app-proxy/what-is-application-proxy.md) implementation publishes on-premises web applications externally and in a secure manner.</br>Microsoft Entra application proxy enables you to securely publish an external URL endpoint into Azure. |
+ | Assess the state of on-premises applications | [Microsoft Entra application proxy](~/identity/app-proxy/overview-what-is-app-proxy.md) implementation publishes on-premises web applications externally and in a secure manner.</br>Microsoft Entra application proxy enables you to securely publish an external URL endpoint into Azure. |
 | Enable multifactor authentication | [Microsoft Entra multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md) protects identities by adding a layer of security. Adding more layers of security is an effective way to prevent unauthorized access. MFA enables the requirement of more validation of sign in credentials during the authentication process. You can configure the [Authenticator](https://support.microsoft.com/account-billing/set-up-an-authenticator-app-as-a-two-step-verification-method-2db39828-15e1-4614-b825-6e2b524e7c95) app to provide one-click verification or passwordless authentication. |
 | Enable Conditional Access policies for application access | [Conditional Access](~/identity/conditional-access/concept-conditional-access-policies.md) policies helps to restrict access to approved applications. Microsoft Entra analyses signals from either the user, device, or the location to automate decisions and enforce organizational policies for access to resources and data. |
 | Review Exchange Online Protection (EOP) policies | [Exchange Online spam and malware protection](/office365/servicedescriptions/exchange-online-protection-service-description/exchange-online-protection-feature-details?tabs=Anti-spam-and-anti-malware-protection) provides built-in malware and spam filtering. EOP protects inbound and outbound messages and is enabled by default. EOP services also provide anti-spoofing, quarantining messages, and the ability to report messages in Outlook. </br>The policies can be customized to fit company-wide settings, these take precedence over the default policies. |
@@ -139,3 +136,5 @@ Establish policies and procedures to protect data exchange that contains PHI dat
 * [Audit Controls Safeguard guidance](hipaa-audit-controls.md)
 
 * [Other Safeguard guidance](hipaa-other-controls.md)
+
+* [Configure HITRUST controls](hipaa-hitrust-controls.md)

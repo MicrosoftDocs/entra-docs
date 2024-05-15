@@ -5,12 +5,14 @@ description: Learn how to configure single sign-on between Microsoft Entra ID an
 author: dhivyagana
 manager: CelesteDG
 ms.reviewer: celested
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: dhivyag
+
+# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and JIRA SAML SSO by Microsoft so that I can control who has access to JIRA SAML SSO by Microsoft, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
 # Tutorial: Microsoft Entra SSO integration with JIRA SAML SSO by Microsoft
@@ -258,9 +260,9 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 	> To enable the default login form for admin login on login page when force azure login is enabled, add the query parameter in the browser URL.
 	> `https://<domain:port>/login.jsp?force_azure_login=false`
 
-	k. **Enable Use of Application Proxy** checkbox, if you have configured your on-premises atlassian application in an App Proxy setup.
+	k. **Enable Use of Application Proxy** checkbox, if you have configured your on-premises atlassian application in an application proxy setup.
 
-	* For App proxy setup , follow the steps on the [Microsoft Entra application proxy Documentation](~/identity/app-proxy/what-is-application-proxy.md).
+	* For App proxy setup , follow the steps on the [Microsoft Entra application proxy Documentation](~/identity/app-proxy/overview-what-is-app-proxy.md).
 
 	l. Click **Save** button to save the settings.
 

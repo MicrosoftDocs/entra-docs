@@ -6,12 +6,14 @@ author: twimmers
 writer: twimmers
 manager: jeedes
 ms.assetid: be3af02b-da77-4a88-bec3-e634e2af38b3
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 08/16/2023
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Servicely so that I can streamline the user management process and ensure that users have the appropriate access to Servicely.
 ---
 
 # Tutorial: Configure Servicely for automatic user provisioning
@@ -31,8 +33,8 @@ This tutorial describes the steps you need to perform in both Servicely and Micr
 The scenario outlined in this tutorial assumes that you already have the following prerequisites:
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md). 
-* A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (for example, Application Administrator, Cloud Application administrator, Application Owner, or Global Administrator).
-* An Servicely tenant.
+* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
+* A Servicely tenant.
 * A user account in Servicely with Admin permissions.
 
 ## Step 1: Plan your provisioning deployment

@@ -4,9 +4,9 @@ description: Learn about how to manage applications in the My Apps portal.
 
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
-ms.topic: conceptual
+ms.service: entra-id
+ms.subservice: enterprise-apps
+ms.topic: concept-article
 
 ms.date: 10/18/2023
 ms.author: jomondi
@@ -91,7 +91,7 @@ To integrate these applications, define a mechanism to deploy the extension at s
 - User-driven download and configuration for Chrome, Microsoft Edge, or IE
 - Configuration Manager for Internet Explorer
 
-The extension allows users to launch any application from its search bar, find access to recently used applications, and have a link to the My Apps portal. For applications that use password-based SSO or accessed by using Microsoft Entra application proxy, use Microsoft Edge mobile. For other applications, any mobile browser can be used. Be sure to enable password-based SSO in the mobile settings, which can be off by default. For example, **Settings > Privacy and Security > Microsoft Entra Password SSO**.
+For applications that use password-based SSO or accessed by using Microsoft Entra application proxy, use Microsoft Edge mobile. For other applications, any mobile browser can be used. Be sure to enable password-based SSO in the mobile settings, which can be off by default. For example, **Settings > Privacy and Security > Microsoft Entra Password SSO**.
 
 To download and install the extension:
 
@@ -147,6 +147,9 @@ Users can also customize their experience by:
 Applications can be hidden from the My Apps portal by a user or administrator. A hidden application can still be accessed from other locations, such as the Microsoft 365 portal. Only 950 applications to which a user has access can be accessed through the My Apps portal.
 
 For more information, see [Create collections on the My Apps portal](access-panel-collections.md).
+
+> [!IMPORTANT]
+>In case there is domain federation and for the user to be redirected to an external federation endpoint for authentication, the request to My Apps must contain a domain hint URL parameter such as "domain_hint=example.com".
 
 ## Next steps
 

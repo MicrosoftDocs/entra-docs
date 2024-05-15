@@ -2,9 +2,7 @@
 title: Microsoft Entra Conditional Access for workload identities 
 description: Protecting workload identities with Conditional Access policies
 
-services: active-directory
-ms.service: active-directory
-ms.subservice: workload-identities
+ms.service: entra-workload-id
 ms.topic: how-to
 ms.date: 11/09/2023
 
@@ -12,8 +10,6 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: swethar
-
-ms.collection: M365-identity-device-management
 ---
 # Conditional Access for workload identities
 
@@ -147,6 +143,5 @@ Sample JSON for location-based configuration using the Microsoft Graph beta endp
 
 ## Next steps
 
-- [Using the location condition in a Conditional Access policy](location-condition.md)
-- [Conditional Access: Programmatic access](howto-conditional-access-apis.md)
+- [Using network location in a Conditional Access policy](concept-assignment-network.md)
 - [What is Conditional Access report-only mode?](concept-conditional-access-report-only.md)

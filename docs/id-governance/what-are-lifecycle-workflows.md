@@ -1,16 +1,13 @@
 ---
 title: What are lifecycle workflows?
 description: Get an overview of the lifecycle workflow feature of Microsoft Entra ID.
-services: active-directory
 author: owinfreyATL
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id-governance
+ms.subservice: lifecycle-workflows
 ms.topic: overview
 ms.date: 06/22/2023
-ms.subservice: compliance
 ms.author: owinfrey
-ms.collection: M365-identity-device-management
 ---
 
 # What are lifecycle workflows?
@@ -71,11 +68,11 @@ You can use lifecycle workflows to address any of the following conditions:
 
 ## License requirements
 
-[!INCLUDE [Microsoft Entra ID Governance license](~/includes/entra-entra-governance-license.md)]
+[!INCLUDE [Microsoft Entra ID Governance license](../includes/entra-entra-governance-license.md)]
 
 With Lifecycle Workflows, you can:
 
-- Create, manage, and delete workflows up to the total limit of 50 workflows.
+- Create, manage, and delete workflows up to the total limit of 100 workflows.
 - Trigger on-demand and scheduled workflow execution.
 - Manage and configure existing tasks to create workflows that are specific to your needs.
 - Create up to 100 custom task extensions to be used in your workflows.

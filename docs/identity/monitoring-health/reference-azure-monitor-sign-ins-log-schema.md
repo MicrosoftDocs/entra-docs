@@ -1,13 +1,12 @@
 ---
 title: Sign-in log schema in Azure Monitor
 description: Describe the Microsoft Entra sign-in log schema for use in Azure Monitor
-services: active-directory
+
 author: shlipsey3
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: reference
-ms.workload: identity
-ms.subservice: report-monitor
+ms.subservice: monitoring-health
 ms.date: 10/31/2022
 ms.author: sarahlipsey
 ms.reviewer: besiler

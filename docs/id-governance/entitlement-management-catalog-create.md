@@ -1,24 +1,16 @@
 ---
 title: Create and manage a catalog of resources in entitlement management
 description: Learn how to create a new container of resources and access packages in entitlement management.
-services: active-directory
-documentationCenter: ''
 author: owinfreyatl
 manager: amycolannino
 editor: HANKI
-ms.service: active-directory
-ms.workload: identity
-ms.tgt_pltfrm: na
+ms.service: entra-id-governance
+ms.subservice: entitlement-management
 ms.topic: how-to
-ms.subservice: compliance
 ms.date: 05/31/2023
 ms.author: owinfrey
 ms.reviewer: hanki
-ms.collection: M365-identity-device-management
-
-
 #Customer intent: As an administrator, I want detailed information about the options available for creating and managing a catalog so that I can most effectively use catalogs in my organization.
-
 ---
 # Create and manage a catalog of resources in entitlement management
 
@@ -35,7 +27,7 @@ A catalog is a container of resources and access packages. You create a catalog 
 
 To create a catalog:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
 1. Browse to **Identity governance** > **Entitlement management** > **Catalogs**.
 
@@ -78,7 +70,7 @@ To include resources in an access package, the resources must exist in a catalog
 
 * Groups can be cloud-created Microsoft 365 Groups or cloud-created Microsoft Entra security groups.
 
-  * Groups that originate in an on-premises Active Directory can't be assigned as resources because their owner or member attributes can't be changed in Microsoft Entra ID. To give a user access to an application that uses AD security group memberships, create a new security group in Microsoft Entra ID, configure [group writeback to AD](~/identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md), and [enable that group to be written to AD](entitlement-management-group-writeback.md), so that the cloud-created group can be used by an AD-based application.
+  * Groups that originate in an on-premises Active Directory can't be assigned as resources because their owner or member attributes can't be changed in Microsoft Entra ID. To give a user access to an application that uses AD security group memberships, create a new security group in Microsoft Entra ID, configure [group writeback to AD](../identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md), and [enable that group to be written to AD](entitlement-management-group-writeback.md), so that the cloud-created group can be used by an AD-based application.
 
   * Groups that originate in Exchange Online as Distribution groups can't be modified in Microsoft Entra ID either, so cannot be added to catalogs.
 
@@ -95,7 +87,7 @@ To include resources in an access package, the resources must exist in a catalog
 
 To add resources to a catalog:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
 1. Browse to **Identity governance** > **Entitlement management** > **Catalogs**.
 
@@ -135,7 +127,7 @@ To require attributes for access requests:
 1. Select the attribute type:
 
     1. **Built-in** includes Microsoft Entra user profile attributes.
-    1. **Directory schema extension** provides a way to store more data in Microsoft Entra ID on user objects and other directory objects. This includes groups, tenant details, and service principals. Only extension attributes on user objects can be used to send out claims to applications.
+    1. **Directory schema extension** provides a way to store more data in Microsoft Entra users. You can extend the schema by [creating an extension attribute](../identity/app-provisioning/user-provisioning-sync-attributes-for-mapping.md#create-an-extension-attribute-in-a-tenant-with-cloud-only-users). These extension attributes on user objects can be used to send out claims to applications during provisioning or single-sign on.
 1. If you chose **Built-in**, select an attribute from the dropdown list. If you chose **Directory schema extension**, enter the attribute name in the text box.
 
     > [!NOTE]
@@ -214,7 +206,7 @@ You can remove resources from a catalog. A resource can be removed from a catalo
 
 To remove resources from a catalog:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
 1. Browse to **Identity governance** > **Entitlement management** > **Catalogs**.
 
@@ -228,7 +220,7 @@ To remove resources from a catalog:
 
 ## Add more catalog owners
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
+[!INCLUDE [portal updates](../includes/portal-update.md)]
 
 The user who created a catalog becomes the first catalog owner. To delegate management of a catalog, add users to the catalog owner role. Adding more catalog owners helps to share the catalog management responsibilities.
 
@@ -236,7 +228,7 @@ The user who created a catalog becomes the first catalog owner. To delegate mana
 
 To assign a user to the catalog owner role:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
 1. Browse to **Identity governance** > **Entitlement management** > **Catalogs**.
 
@@ -258,7 +250,7 @@ You can edit the name and description for a catalog. Users see this information 
 
 To edit a catalog:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
 1. Browse to **Identity governance** > **Entitlement management** > **Catalogs**.
 
@@ -280,7 +272,7 @@ You can delete a catalog, but only if it doesn't have any access packages.
 
 To delete a catalog:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
 1. Browse to **Identity governance** > **Entitlement management** > **Catalogs**.
 

@@ -1,19 +1,14 @@
 ---
 title: Assign Azure resource roles in Privileged Identity Management
 description: Learn how to assign Azure resource roles in Privileged Identity Management (PIM).
-services: active-directory
-documentationcenter: ''
 author: barclayn
-manager: amycolannino
-ms.service: active-directory
-ms.topic: how-to
-ms.tgt_pltfrm: na
-ms.workload: identity
-ms.subservice: pim
-ms.date: 09/13/2023
 ms.author: barclayn
-ms.custom: pim
-ms.collection: M365-identity-device-management
+manager: amycolannino
+ms.service: entra-id-governance
+ms.topic: how-to
+ms.date: 01/22/2024
+ms.subservice: privileged-identity-management
+
 ---
 
 # Assign Azure resource roles in Privileged Identity Management
@@ -56,28 +51,28 @@ Follow these steps to make a user eligible for an Azure resource role.
 
 1. Browse to **Identity governance** > **Privileged Identity Management** > **Azure resources**.
 
-1. Select the **Resource type** you want to manage. For example, such as **Resource**, or **Resource group**.  Then select the resource you want to manage to open its overview page.
+1. Select the **resource type** you want to manage. Start at either the **Management group** dropdown or the **Subscriptions** dropdown, and then further select **Resource groups** or **Resources** as needed. Click the Select button for the resource you want to manage to open its overview page.
 
-    ![Screenshot that shows how to select Azure resources.](./media/pim-resource-roles-assign-roles/resources-list.png)
+    :::image type="content" source="./media/pim-resource-roles-assign-roles/resources-list.png" alt-text="Screenshot that shows how to select Azure resources.":::
 
 1. Under **Manage**, select **Roles** to see the list of roles for Azure resources.
 
 1. Select **Add assignments** to open the **Add assignments** pane.
 
-    ![Screenshot of Azure resources roles.](./media/pim-resource-roles-assign-roles/resources-roles.png)
+    :::image type="content" source="./media/pim-resource-roles-assign-roles/resources-roles.png" alt-text="Screenshot of Azure resources roles.":::
 
 1. Select a **Role** you want to assign.
 1. Select **No member selected** link to open the **Select a member or group** pane.
 
-    ![Screenshot of the new assignment pane.](./media/pim-resource-roles-assign-roles/resources-select-role.png)
+    :::image type="content" source="./media/pim-resource-roles-assign-roles/resources-select-role.png" alt-text="Screenshot of the new assignment pane.":::
 
 1. Select a member or group you want to assign to the role and then choose **Select**.
 
-    ![Screenshots that demonstrates how to select a member or group pane](./media/pim-resource-roles-assign-roles/resources-select-member-or-group.png)
+    :::image type="content" source="./media/pim-resource-roles-assign-roles/resources-select-member-or-group.png" alt-text="Screenshot that demonstrates how to select a member or group pane.":::
 
 1. On the **Settings** tab, in the **Assignment type** list, select **Eligible** or **Active**.
 
-    ![Screenshot of add assignments settings pane.](./media/pim-resource-roles-assign-roles/resources-membership-settings-type.png)
+    :::image type="content" source="./media/pim-resource-roles-assign-roles/resources-membership-settings-type.png" alt-text="Screenshot of add assignments settings pane.":::
 
     Microsoft Entra PIM for Azure resources provides two distinct assignment types:
 
@@ -89,17 +84,17 @@ Follow these steps to make a user eligible for an Azure resource role.
 
 1. If the role has been defined with actions that permit assignments to that role with conditions, then you can select **Add condition** to add a condition based on the principal user and resource attributes that are part of the assignment.
 
-    ![Screenshot of the new assignment conditions pane.](./media/pim-resource-roles-assign-roles/new-assignment-conditions.png)
+    :::image type="content" source="./media/pim-resource-roles-assign-roles/new-assignment-conditions.png" alt-text="Screenshot of the new assignment conditions pane.":::
     
     Conditions can be entered in the expression builder. 
 
-    ![Screenshot of the new assignment condition built from an expression.](./media/pim-resource-roles-assign-roles/new-assignment-condition-expression.png)
+    :::image type="content" source="./media/pim-resource-roles-assign-roles/new-assignment-condition-expression.png" alt-text="Screenshot of the new assignment condition built from an expression.":::
 
 1. When finished, select **Assign**.
 
 1. After the new role assignment is created, a status notification is displayed.
 
-    ![Screenshot of a new assignment notification.](./media/pim-resource-roles-assign-roles/resources-new-assignment-notification.png)
+    :::image type="content" source="./media/pim-resource-roles-assign-roles/resources-new-assignment-notification.png" alt-text="Screenshot of a new assignment notification.":::
 
 ## Assign a role using ARM API
 
@@ -201,13 +196,13 @@ Follow these steps to update or remove an existing role assignment.
 
 1. Select **Azure resources**.
 
-1. Select the **Resource type** you want to manage. For example, such as **Resource**, or **Resource group**.  Then select the resource you want to manage to open its overview page.
+1. Select the **resource type** you want to manage. Start at either the **Management group** dropdown or the **Subscriptions** dropdown, and then further select **Resource groups** or **Resources** as needed. Click the Select button for the resource you want to manage to open its overview page.
 
-    ![Screenshot that shows how to select Azure resources to update.](./media/pim-resource-roles-assign-roles/resources-list.png)
+    :::image type="content" source="./media/pim-resource-roles-assign-roles/resources-list.png" alt-text="Screenshot that shows how to select Azure resources to update.":::
 
 1. Under **Manage**, select **Roles** to list the roles for Azure resources. The following screenshot lists the roles of an Azure Storage account. Select the role that you want to update or remove.
 
-    ![Screenshot that shows the roles of an Azure Storage account.](./media/pim-resource-roles-assign-roles/resources-update-select-role.png)
+    :::image type="content" source="./media/pim-resource-roles-assign-roles/resources-update-select-role.png" alt-text="Screenshot that shows the roles of an Azure Storage account.":::
 
 1. Find the role assignment on the **Eligible roles** or **Active roles** tabs.
 

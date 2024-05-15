@@ -1,15 +1,13 @@
 ---
 title: Enable Microsoft Entra self-service password reset
 description: In this tutorial, you learn how to enable Microsoft Entra self-service password reset for a group of users and test the password reset process.
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: tutorial
-ms.date: 01/30/2023
+ms.date: 04/29/2024
 ms.author: justinha
 author: justinha
 ms.reviewer: tilarso
-ms.collection: M365-identity-device-management
 # Customer intent: As a Microsoft Entra Administrator, I want to learn how to enable and use self-service password reset so that my end-users can unlock their accounts or reset their passwords through a web browser.
 ---
 
@@ -41,14 +39,12 @@ You can also follow along in a related video: [How to enable and configure SSPR 
 
 To finish this tutorial, you need the following resources and privileges:
 
-* A working Microsoft Entra tenant with at least a Microsoft Entra ID Free or trial license enabled. In the Free tier, SSPR only works for cloud users in Microsoft Entra ID. Password change is supported in the Free tier, but password reset is not. 
-    * For later tutorials in this series, you'll need a Microsoft Entra ID P1 or trial license for on-premises password writeback.
-    * If needed, [create an Azure account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* A working Microsoft Entra tenant with at least a Microsoft Entra ID P1 license is required for password reset. For more information about license requirements for password change and password reset in Entra ID, see [Licensing requirements for Microsoft Entra self-service password reset](concept-sspr-licensing.md).
 * An account with *Global Administrator* or *Authentication Policy Administrator* privileges.
 * A non-administrator user with a password you know, like *testuser*. You'll test the end-user SSPR experience using this account in this tutorial.
     * If you need to create a user, see [Quickstart: Add new users to Microsoft Entra ID](~/fundamentals/add-users.md).
 * A group that the non-administrator user is a member of, likes *SSPR-Test-Group*. You'll enable SSPR for this group in this tutorial.
-    * If you need to create a group, see [Create a basic group and add members using Microsoft Entra ID](~/fundamentals/how-to-manage-groups.md).
+    * If you need to create a group, see [Create a basic group and add members using Microsoft Entra ID](~/fundamentals/how-to-manage-groups.yml).
 
 ## Enable self-service password reset
 

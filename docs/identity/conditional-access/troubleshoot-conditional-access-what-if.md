@@ -2,7 +2,7 @@
 title: Troubleshoot Conditional Access using the What If tool
 description: Where to find what Conditional Access policies were applied and why
 
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: troubleshooting
 ms.date: 01/03/2024

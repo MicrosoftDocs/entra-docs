@@ -1,8 +1,8 @@
 ---
 title: Tutorial - Quick setup of your tenant for Microsoft Entra Verified ID
 description: In this tutorial, you learn how to quickly configure your tenant to support the Verified ID service. 
-ms.service: decentralized-identity
-ms.subservice: verifiable-credentials
+ms.service: entra-verified-id
+
 author: barclayn
 manager: amycolannino
 ms.author: barclayn
@@ -15,7 +15,7 @@ ms.date: 10/06/2023
 # Quick Microsoft Entra Verified ID setup
 
   
-Quick Verified ID setup, available in preview, removes several configuration steps an admin needs to complete with a single click on a `Get started` button. The quick setup  takes care of signing keys, registering your decentralized ID and verify your domain ownership. It also creates a Verified Workplace Credential for you.
+Quick Verified ID setup removes several configuration steps an admin needs to complete with a single click on a `Get started` button. The quick setup  takes care of signing keys, registering your decentralized ID and verify your domain ownership. It also creates a Verified Workplace Credential for you.
 
 In this tutorial, you learn how to use the quick setup to configure your Microsoft Entra tenant to use the verifiable credentials service.
 
@@ -28,11 +28,23 @@ Specifically, you learn how to:
 ## Prerequisites
 
 - Ensure that you have the [global administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) or the [authentication policy administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator) permission for the directory you want to configure. If you're not the global administrator, you need the [application administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) permission to complete the app registration including granting admin consent.
-- Ensure that you have a [custom domain registered](~/identity/users/domains-manage.md) for the Microsoft Entra tenant. If you don't have one registered, the setup defaults to the manual setup experience.
+- Ensure that you have a [custom domain registered](~/identity/users/domains-manage.md) for the Microsoft Entra tenant. If you don't have one registered, the setup defaults to the advanced setup experience.
+
+## How Quick Verified ID setup works
+
+- A shared signing key, managed by Microsoft, is used across multiple tenants within a given region. It's no longer required to deploy Azure Key Vault.
+- There is a 2 RPS per tenant limit for issuance and verifications. 
+- Since it's a shared key, the validityInterval of issued credentials is limited to a maximum of six months.
+- The [custom domain registered](~/identity/users/domains-manage.md) for your Microsoft Entra tenant is used for domain verification. It's no longer required to upload your DID configuration JSON to verify your domain. If you don't have a custom domain registered for your tenant, you can't set up Verified ID using the quick setup method.
+- If you have customized your [tenant's branding](~/fundamentals/how-to-customize-branding.md#before-you-begin), the VerifiedEmployee default credential will pick up logo and background color from there. If you haven't or prefer other values, you can edit this after setup is complete.
+- The Decentralized identifier (DID) gets a name like `did:web:verifiedid.entra.microsoft.com:tenantid:authority-id` and the DID document is discoverable following [did:web specification](https://w3c-ccg.github.io/did-method-web/#create-register).
+
+> [!NOTE]
+> If how the quick setup works doesn't meet your requirements, use the [Advanced setup](verifiable-credentials-configure-tenant.md).
 
 ## Set up Verified ID
 
-If you have a custom domain registered for your Microsoft Entra tenant, you see this `Get started` option. If you don't have a custom domain registered, either register it before setting up Verified ID or continue using the [manual setup](verifiable-credentials-configure-tenant.md).
+If you have a custom domain registered for your Microsoft Entra tenant, you see this `Get started` option. If you don't have a custom domain registered, either register it before setting up Verified ID or continue using the [advanced setup](verifiable-credentials-configure-tenant.md).
 
 :::image type="content" source="media/verifiable-credentials-configure-tenant-quick/verifiable-credentials-getting-started.png" alt-text="Screenshot that shows how to set up Verifiable Credentials.":::
 
@@ -55,7 +67,7 @@ When the setup process is complete, you see a default workplace credential avail
 :::image type="content" source="media/verifiable-credentials-configure-tenant-quick/verifiable-credentials-setup-complete.png" alt-text="Screenshot that shows how to set up is completed.":::
 
 ## MyAccount available now to simplify issuance of Workplace Credentials
-Issuing Verified Workplace Credentials is now available via [myaccount.microsoft.com](https://myaccount.microsoft.com/). Users can sign in to myaccount using their Microsoft Entra ID credentials and issue themselves a Verified Workplace Credential via the `Get my Verified ID` option.  
+Issuing Verified Workplace Credentials is now available via [myaccount.microsoft.com](https://myaccount.microsoft.com/). Users can sign in to myaccount using their Microsoft Entra credentials and issue themselves a Verified Workplace Credential via the `Get my Verified ID` option.  
 
 :::image type="content" source="media/verifiable-credentials-configure-tenant-quick/verifiable-credentials-my-account-issue.png" alt-text="Screenshot that shows issuance via myaccount.":::
 
@@ -63,16 +75,12 @@ As an admin, you can either remove the option in MyAccount and create your custo
 
 :::image type="content" source="media/verifiable-credentials-configure-tenant-quick/verifiable-credentials-setup-groups.png" alt-text="Screenshot that shows controlling issuance via myaccount.":::
 
-## How Quick Verified ID setup works
-
-- A shared signing key, managed by Microsoft, is used across multiple tenants within a given region. It's no longer required to deploy Azure Key Vault. Since it's a shared key, the validityInterval of issued credentials is limited to six months.
-- The [custom domain registered](~/identity/users/domains-manage.md) for your Microsoft Entra tenant is used for domain verification. It's no longer required to upload your DID configuration JSON to verify your domain. If you don't have a custom domain registered for your tenant, you can't set up Verified ID using the quick setup method.
-- If you have customized your [tenant's branding](~/fundamentals/how-to-customize-branding.md#before-you-begin), the VerifiedEmployee default credential will pick up logo and background color from there. If you haven't or prefer other values, you can edit this after setup is complete.
-- The Decentralized identifier (DID) gets a name like `did:web:verifiedid.entra.microsoft.com:tenantid:authority-id` and the DID document is discoverable following [did:web specification](https://w3c-ccg.github.io/did-method-web/#create-register).
+> [!NOTE]
+> When you have made a configuration change for issuing credentials through My Account, expect some minutes of delay before the change takes effect.
 
 ## Register an application in Microsoft Entra ID
 
-If you're planning to use custom credentials or set up your own application for issuing or verification Verified ID, you need to register an application and grant the appropriate permissions for it. Follow this section in the manual setup to [register an application](verifiable-credentials-configure-tenant.md#register-an-application-in-microsoft-entra-id)
+If you're planning to use custom credentials or set up your own application for issuing or verification Verified ID, you need to register an application and grant the appropriate permissions for it. Follow this section in the advanced setup to [register an application](verifiable-credentials-configure-tenant.md#register-an-application-in-microsoft-entra-id)
 
 ## Next steps
 

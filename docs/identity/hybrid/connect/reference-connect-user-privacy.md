@@ -1,24 +1,21 @@
 ---
 title: 'Microsoft Entra Connect and user privacy'
 description: This document describes how to obtain GDPR compliancy with Microsoft Entra Connect.
-services: active-directory
-documentationcenter: ''
+
 author: billmath
 manager: amycolannino
-editor: ''
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: reference
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
-ms.collection: M365-identity-device-management
+
 ---
 
 # User privacy and Microsoft Entra Connect 
 
-[!INCLUDE [Privacy](~/../azure-docs-pr/includes/gdpr-intro-sentence.md)]
+[!INCLUDE [Privacy](~/includes/azure-docs-pr/gdpr-intro-sentence.md)]
 
 >[!NOTE] 
 >This article deals with Microsoft Entra Connect and user privacy.  For information on Microsoft Entra Connect Health and user privacy see the article [here](reference-connect-health-user-privacy.md).

@@ -3,13 +3,12 @@ title: 'Microsoft Entra Connect: ADConnectivityTools PowerShell Reference'
 description: This document provides reference information for the ADConnectivityTools.psm1 PowerShell module.
 author: billmath
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
 ms.topic: reference
-ms.collection: M365-identity-device-management 
+
 ms.custom:
 ---
 # Microsoft Entra Connect:  ADConnectivityTools PowerShell Reference
@@ -31,7 +30,7 @@ Confirm-DnsConnectivity [-Forest] <String> [-DCs] <Array> [-ReturnResultAsPSObje
 ### DESCRIPTION
 
 Runs local Dns connectivity tests.
-In order to configure the Active Directory connector, AADConnect server must have both name resolution 
+In order to configure the Active Directory connector, Microsoft Entra Connect server must have both name resolution 
 for the forest it's attempting to connect to as well as to the domain controllers
 associated to this forest.
 
@@ -790,7 +789,7 @@ Accept wildcard characters: False
 #### -AutoCreateConnectorAccount
 
 For Custom-installations:
-    Flag that is $True if the user chose "Create new AD account" on the AD Forest Account window of AADConnect's
+    Flag that is $True if the user chose "Create new AD account" on the AD Forest Account window of Microsoft Entra Connect's
     wizard.
 $False if the user chose "Use existing AD account".
 For Express-installations:
@@ -898,7 +897,7 @@ Accept wildcard characters: False
 
 #### -LogFileLocation
 
-Specifies a the location of a log file that will contain the output of this function.
+Specifies the location of a log file that will contain the output of this function.
 
 ```yml
 Type: String

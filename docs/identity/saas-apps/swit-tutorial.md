@@ -5,13 +5,15 @@ description: Learn how to configure single sign-on between Microsoft Entra ID an
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: CelesteDG
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 04/01/2024
 ms.author: jeedes
 
+
+# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Swit so that I can control who has access to Swit, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
 # Tutorial: Microsoft Entra SSO integration with Swit
@@ -49,7 +51,7 @@ To configure the integration of Swit into Microsoft Entra ID, you need to add Sw
 1. In the **Add from the gallery** section, type **Swit** in the search box.
 1. Select **Swit** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-swit'></a>
 
@@ -97,20 +99,21 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	![image](common/default-attributes.png)
 
-1. In addition to above, Swit application expects few more attributes to be passed back in SAML response which are shown below. These attributes are also pre populated but you can review them as per your requirements.
+    > [!Note]
+    >  From the above list of default attributes, please replace givenname with **firstname**, surname with **lastname**, name with **username** and delete **emailaddress** claim as per requirements of the Swit application.
+
+1. Below are the optional claims, which can be mapped to the user and passed back in the SAML response based on your requirements.
 	
 	| Name |  Source Attribute|
 	| -------------- | --------- |
-	| firstName | user.givenname |
-	| lastName | user.surname |
-    | email | user.mail |
-    | username | user.displayname |
+    | language | user.preferredlanguage |
+    | tel | user.telephonenumber |
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 
 	![The Certificate download link](common/certificatebase64.png)
 
-1. On the **Set up Swit** section, copy the appropriate URL(s) based on your requirement.
+1. On the **Set up Swit** section, copy the appropriate URLs based on your requirement.
 
 	![Copy configuration URLs](common/copy-configuration-urls.png)
 
@@ -156,9 +159,9 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
     a. Select **Enable single sign-on with SAML** button.
 
-    b. In the **SAML 2.0 Endpoint (HTTP)** textbox, paste the **Login URL** value which you copied previously.
+    b. In the **SAML 2.0 Endpoint (HTTP)** textbox, paste the **Login URL** value, which you copied previously.
 
-    c. In the **Identity Provider Issuer (Entity ID)** textbox, paste the **Microsoft Entra Identifier** value which you copied previously.
+    c. In the **Identity Provider Issuer (Entity ID)** textbox, paste the **Microsoft Entra Identifier** value, which you copied previously.
 
     d. Open the downloaded **Certificate (Base64)** into Notepad and paste the content into the **Public Certificate** textbox.
 
@@ -168,7 +171,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 ### Create Swit test user
 
-1. In a different web browser window, log into your Swit company site as an administrator.
+1. In a different web browser window, log in to your Swit company site as an administrator.
 
 1. Go to **Admin console** > **Members&teams** and click **Invitations**.
 

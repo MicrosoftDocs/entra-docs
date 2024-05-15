@@ -2,7 +2,7 @@
 title: Session controls in Conditional Access policy
 description: What are session controls in a Microsoft Entra Conditional Access policy
 
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
 ms.date: 01/09/2024
@@ -22,7 +22,11 @@ Within a Conditional Access policy, an administrator can make use of session con
 
 Organizations can use this control to require Microsoft Entra ID to pass device information to the selected cloud apps. The device information allows cloud apps to know if a connection is from a compliant or domain-joined device and update the session experience.  When selected, the cloud app uses the device information to provide users with a limited or full experience. Limited when the device isn't managed or compliant and full when the device is managed and compliant.
 
-For a list of supported applications and how to configure policies, see the article [Idle session timeout for Microsoft 365](/microsoft-365/admin/manage/idle-session-timeout-web-apps#details-about-idle-session-timeout).
+For a list of supported applications and how to configure policies, see the following articles: 
+
+- [Idle session timeout for Microsoft 365](/microsoft-365/admin/manage/idle-session-timeout-web-apps#details-about-idle-session-timeout).
+- [Enabling limited access with SharePoint Online](/sharepoint/control-access-from-unmanaged-devices)
+- [Enabling limited access with Exchange Online](/microsoft-365/security/office-365-security/secure-email-recommended-policies#limit-access-to-exchange-online-from-outlook-on-the-web)
 
 ## Conditional Access application control
 
@@ -55,13 +59,13 @@ Sign-in frequency setting works with apps that implement OAUTH2 or OIDC protocol
 - Dynamics CRM Online
 - Azure portal
 
-For more information, see the article [Configure authentication session management with Conditional Access](howto-conditional-access-session-lifetime.md#user-sign-in-frequency).
+For more information, see the article [Configure authentication session management with Conditional Access](concept-session-lifetime.md#user-sign-in-frequency).
 
 ## Persistent browser session
 
 A persistent browser session allows users to remain signed in after closing and reopening their browser window.
 
-For more information, see the article [Configure authentication session management with Conditional Access](howto-conditional-access-session-lifetime.md#persistence-of-browsing-sessions).
+For more information, see the article [Configure authentication session management with Conditional Access](concept-session-lifetime.md#persistence-of-browsing-sessions).
 
 ## Customize continuous access evaluation
 

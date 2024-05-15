@@ -1,19 +1,17 @@
 ---
 title: 'Customize an installation of Microsoft Entra Connect'
 description: This article explains the custom installation options for Microsoft Entra Connect. Use these instructions to install Active Directory through Microsoft Entra Connect.
-services: active-directory
+
 keywords: what is Azure AD Connect, install Active Directory, required components for Azure AD
-documentationcenter: ''
 author: billmath
 manager: amycolannino
 ms.assetid: 6d42fb79-d9cf-48da-8445-f482c4c536af
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id
 ms.topic: how-to
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
-ms.collection: M365-identity-device-management
+
 ---
 
 # Custom installation of Microsoft Entra Connect
@@ -71,7 +69,7 @@ On the **Connect to Microsoft Entra ID** page, enter a Hybrid Identity Administr
 You might want to use an account in the default *onmicrosoft.com* domain, which comes with your Microsoft Entra tenant. This account is used only to create a service account in Microsoft Entra ID. It's not used after the installation finishes.
  
 >[!NOTE]
->A best practice is to avoid using on-premises synced accounts for Microsoft Entra role assignments. If the on premises account is compromised, this can be used to compromise your Microsoft Entra resources as well.  For a complete list of best practices refer to [Best practices for Microsoft Entra roles](~/identity/role-based-access-control/best-practices.md)
+>A best practice is to avoid using on-premises synced accounts for Microsoft Entra role assignments. If the on-premises account is compromised, this can be used to compromise your Microsoft Entra resources as well.  For a complete list of best practices refer to [Best practices for Microsoft Entra roles](~/identity/role-based-access-control/best-practices.md)
  
 ![Screenshot showing the "Connect to Microsoft Entra ID" page.](./media/how-to-connect-install-custom/connectaad.png)
 
@@ -114,7 +112,7 @@ On the **Microsoft Entra sign-in configuration** page, review the user principal
 
 ![Screenshot showing unverified domains on the "Microsoft Entra sign-in configuration" page.](./media/how-to-connect-install-custom/aadsigninconfig2.png)  
 
-Review every domain that's marked as **Not Added** or **Not Verified**. Make sure that the domains you use have been verified in Microsoft Entra ID. After you verify your domains, select the circular refresh icon. For more information, see [Add and verify the domain](~/fundamentals/add-custom-domain.md).
+Review every domain that's marked as **Not Added** or **Not Verified**. Make sure that the domains you use have been verified in Microsoft Entra ID. After you verify your domains, select the circular refresh icon. For more information, see [Add and verify the domain](~/fundamentals/add-custom-domain.yml).
 
 Users use the *userPrincipalName* attribute when they sign in to Microsoft Entra ID and Microsoft 365. Microsoft Entra ID should verify the domains, also known as the UPN-suffix, before users are synchronized. Microsoft recommends that you keep the default attribute userPrincipalName. 
 
@@ -349,7 +347,7 @@ On this page, you can configure only a single domain in the initial installation
 <a name='verify-the-azure-ad-domain-selected-for-federation'></a>
 
 ### Verify the Microsoft Entra domain selected for federation
-When you select the domain that you want to federate, Microsoft Entra Connect provides information that you can use to verify an unverified domain. For more information, see [Add and verify the domain](~/fundamentals/add-custom-domain.md).
+When you select the domain that you want to federate, Microsoft Entra Connect provides information that you can use to verify an unverified domain. For more information, see [Add and verify the domain](~/fundamentals/add-custom-domain.yml).
 
 ![Screenshot showing the "Microsoft Entra Domain" page, including information you can use to verify the domain.](./media/how-to-connect-install-custom/verifyfeddomain.png)
 

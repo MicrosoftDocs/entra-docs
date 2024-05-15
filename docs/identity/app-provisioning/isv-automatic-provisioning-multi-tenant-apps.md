@@ -1,13 +1,12 @@
 ---
 title: Enable automatic user provisioning for multi-tenant applications in Microsoft Entra ID
 description: A guide for independent software vendors for enabling automated provisioning in Microsoft Entra ID
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: reference
-ms.workload: identity
 ms.date: 09/15/2023
 ms.author: kenwith
 ms.reviewer: zhchia, arvinh

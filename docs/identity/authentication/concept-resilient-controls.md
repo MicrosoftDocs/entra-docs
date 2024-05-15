@@ -1,18 +1,15 @@
 ---
 title: Create a resilient access control management strategy
 description: This document provides guidance on strategies an organization should adopt to provide resilience to reduce the risk of lockout during unforeseen disruptions
-services: active-directory
 author: martincoetzer
 manager: travisgr
 tags: azuread
 ms.custom: has-azure-ad-ps-ref
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.workload: identity
 ms.date: 01/29/2023
 ms.author: martinco
-ms.collection: M365-identity-device-management
 ---
 # Create a resilient access control management strategy with Microsoft Entra ID
 
@@ -281,7 +278,7 @@ Undo the changes you made as part of the activated contingency plan once the ser
 
 * [Microsoft Entra authentication Documentation](./howto-mfaserver-iis.md)
 * [Manage emergency-access administrative accounts in Microsoft Entra ID](~/identity/role-based-access-control/security-emergency-access.md)
-* [Configure named locations in Microsoft Entra ID](~/identity/conditional-access/location-condition.md)
+* [Configure named locations in Microsoft Entra ID](../conditional-access/concept-assignment-network.md)
   * [Set-MsolDomainFederationSettings](/powershell/module/msonline/set-msoldomainfederationsettings)
 * [How to configure Microsoft Entra hybrid joined devices](~/identity/devices/hybrid-join-plan.md)
 * [Windows Hello for Business Deployment Guide](/windows/security/identity-protection/hello-for-business/hello-deployment-guide)

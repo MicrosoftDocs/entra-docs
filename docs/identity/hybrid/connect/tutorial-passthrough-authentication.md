@@ -1,17 +1,16 @@
 ---
 title: 'Tutorial: Use pass-through authentication for hybrid identity in a single Active Directory forest'
 description: Learn how to set up a hybrid identity environment by using pass-through authentication to integrate a Windows Server Active Directory forest with Microsoft Entra ID.
-services: active-directory
+
 author: billmath
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id
 ms.topic: tutorial
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
 
-ms.collection: M365-identity-device-management
+
 ---
 
 # Tutorial: Use pass-through authentication for hybrid identity in a single Active Directory forest
@@ -39,7 +38,7 @@ In this tutorial, you learn how to:
 - An Azure subscription. If you don't have an Azure subscription, create a [free account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) before you begin.
 - An [external network adapter](/virtualization/hyper-v-on-windows/quick-start/connect-to-network), so the virtual machine can connect to the internet.
 - A copy of Windows Server 2016.
-- A [custom domain](~/fundamentals/add-custom-domain.md) that can be verified.
+- A [custom domain](~/fundamentals/add-custom-domain.yml) that can be verified.
 
 > [!NOTE]
 > This tutorial uses PowerShell scripts to quickly create the tutorial environment. Each script uses variables that are declared at the beginning of the script. Be sure to change the variables to reflect your environment.
@@ -232,7 +231,7 @@ To add a custom domain name to a directory:
    :::image type="content" source="media/tutorial-passthrough-authentication/custom2.png" alt-text="Screenshot that shows where you get TXT or MX information.":::
    Adding this information to your domain registrar allows Azure to verify your domain. Domain verification might take up to 24 hours.
 
-   For more information, see the [add a custom domain](~/fundamentals/add-custom-domain.md) documentation.
+   For more information, see the [add a custom domain](~/fundamentals/add-custom-domain.yml) documentation.
 1. To ensure that the domain is verified, select **Verify**.
 
    :::image type="content" source="media/tutorial-passthrough-authentication/custom3.png" alt-text="Screenshot that shows a success message after you select Verify.":::
@@ -250,7 +249,6 @@ Now it's time to download and install Microsoft Entra Connect. After it's instal
 1. In **Install required components**, select **Install**.
 1. In **User sign-in**, select **Pass-through authentication** and **Enable single sign-on**, and then select **Next**.
 
-   :::image type="content" source="media/tutorial-passthrough-authentication/pta1.png" alt-text="Screenshot that shows where to select Pass-through authentication.":::
 1. In **Connect to Microsoft Entra ID**, enter the username and password of the Hybrid Identity Administrator account you created earlier, and then select **Next**.
 1. In **Connect your directories**, select **Add directory**. Then select **Create new AD account** and enter the contoso\Administrator username and password. Select **OK**.
 1. Select **Next**.

@@ -1,20 +1,21 @@
 ---
 title: Join a CentOS VM to Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to configure and join a CentOS Linux virtual machine to a Microsoft Entra Domain Services managed domain.
-services: active-directory-ds
 author: justinha
 manager: amycolannino
 
 ms.assetid: 16100caa-f209-4cb0-86d3-9e218aeb51c6
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: domain-services
-ms.workload: identity
 ms.custom: devx-track-linux
 ms.topic: how-to
 ms.date: 09/23/2023
 ms.author: justinha
 ---
 # Join a CentOS Linux virtual machine to a Microsoft Entra Domain Services managed domain
+
+> [!CAUTION]
+> This article references CentOS, a Linux distribution that is nearing End Of Life (EOL) status. Please consider your use and plan accordingly. For more information, see the [CentOS End Of Life guidance](/azure/virtual-machines/workloads/centos/centos-end-of-life).
 
 To let users sign in to virtual machines (VMs) in Azure using a single set of credentials, you can join VMs to a Microsoft Entra Domain Services managed domain. When you join a VM to a Domain Services managed domain, user accounts and credentials from the domain can be used to sign in and manage servers. Group memberships from the managed domain are also applied to let you control access to files or services on the VM.
 

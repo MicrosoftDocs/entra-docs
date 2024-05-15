@@ -1,17 +1,14 @@
 ---
 title: What is a cross-tenant synchronization in Microsoft Entra ID?
 description: Learn about cross-tenant synchronization in Microsoft Entra ID.
-services: active-directory
 author: rolyon
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: multi-tenant-organizations
+ms.service: entra-id
+ms.subservice: multitenant-organizations
 ms.topic: overview
 ms.date: 01/03/2024
 ms.author: rolyon
 ms.custom: it-pro
-
 #Customer intent: As a dev, devops, or it admin, I want to
 ---
 
@@ -67,8 +64,8 @@ The following table shows the parts of cross-tenant synchronization and which te
 
 | Tenant | Cross-tenant<br/>access settings | Automatic redemption | Sync settings<br/>configuration | Users in scope |
 | :---: | :---: | :---: | :---: | :---: |
-| ![Icon for the source tenant.](./media/common/icon-tenant-source.png)<br/>Source tenant |  | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| ![Icon for the target tenant.](./media/common/icon-tenant-target.png)<br/>Target tenant | :heavy_check_mark: | :heavy_check_mark: |  |  |
+| ![Icon for the source tenant.](../../media/common/icons/entra-id-purple.png)<br/>Source tenant |  | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| ![Icon for the target tenant.](../../media/common/icons/entra-id.png)<br/>Target tenant | :heavy_check_mark: | :heavy_check_mark: |  |  |
 
 ## Cross-tenant synchronization setting
 
@@ -289,7 +286,7 @@ Does cross-tenant synchronization support deprovisioning users?
 Does cross-tenant synchronization support restoring users? 
 
 - If the user in the source tenant is restored, reassigned to the app, meets the scoping condition again within 30 days of soft deletion, it will be restored in the target tenant.
-- IT admins can also manually [restore](~/fundamentals/users-restore.md) the user directly in the target tenant.
+- IT admins can also manually [restore](~/fundamentals/users-restore.yml) the user directly in the target tenant.
 
 How can I deprovision all the users that are currently in scope of cross-tenant synchronization? 
 

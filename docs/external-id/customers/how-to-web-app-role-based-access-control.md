@@ -6,19 +6,20 @@ author: kengaderdus
 manager: mwongerapk
 
 ms.author: kengaderdus
-ms.service: active-directory
+ms.service: entra-external-id
  
-ms.subservice: ciam
+ms.subservice: customers
 ms.topic: how-to
-ms.date: 06/16/2023
+ms.date: 01/27/2024
 ms.custom: developer, devx-track-js
+#Customer intent: As a dev, devops or IT admin, I want to learn Learn how to use roles and groups present in a security token so that I can to control access to various resources in my Node.js web application.
 ---
 
 # Use role-based access control in your Node.js web application
 
-Role-based access control (RBAC) is a mechanism to enforce authorization in applications. Microsoft Entra ID for customers allows you to define application roles for your application and assign those roles to users and groups. The roles you assign to a user or group define their level of access to the resources and operations in your application. When External ID for customers issues a security token for an authenticated user, it includes the names of the roles you've assigned the user or group in the security token's roles claim. 
+Role-based access control (RBAC) is a mechanism to enforce authorization in applications. Microsoft Entra External ID allows you to define application roles for your application and assign those roles to users and groups. The roles you assign to a user or group define their level of access to the resources and operations in your application. When External ID issues a security token for an authenticated user, it includes the names of the roles you've assigned the user or group in the security token's roles claim.
 
-You can also configure your External ID for customers tenant to return the group memberships of the user. Developers can then use security groups to implement RBAC in their applications, where the memberships of the user in specific groups are interpreted as their role memberships. 
+You can also configure your external tenant to return the group memberships of the user. Developers can then use security groups to implement RBAC in their applications, where the memberships of the user in specific groups are interpreted as their role memberships.
 
 Once you assign users and groups to roles, the *roles* claim is emitted in your security token. However, to emit the *groups* membership claim in security tokens, you need additional configuration in your customer's tenant.
 
@@ -91,7 +92,7 @@ The groups claim value is the group's *objectId*. If a user is a member of multi
 
 ## Handle groups overage
 
-To ensure that the size of the security token doesn’t exceed the HTTP header size limit, External ID for customers limits the number of object IDs that it includes in the *groups* claim. The overage limit is **150 for SAML tokens and 200 for JWT tokens**. It's possible to exceed this limit if a user belongs to many groups, and you request for all the groups. 
+To ensure that the size of the security token doesn’t exceed the HTTP header size limit, External ID limits the number of object IDs that it includes in the *groups* claim. The overage limit is **150 for SAML tokens and 200 for JWT tokens**. It's possible to exceed this limit if a user belongs to many groups, and you request for all the groups. 
 
 ### Detect group overage in your source code 
 
@@ -115,7 +116,7 @@ In your service app (API app), you can also protect the API endpoints. After you
 
 ## Do I use App Roles or Groups?
 
-In this article, you have learned that you can use *App Roles* or *Groups* to implement RBAC in your application. The preferred approach is to use app roles as app roles provide more granular control when managing access/permissions at the application level. For more information on how to choose an approach, see [Choose an approach](~/identity-platform/custom-rbac-for-developers.md#choose-an-approach).   
+In this article, you have learned that you can use *App Roles* or *Groups* to implement RBAC in your application. The preferred approach is to use app roles as it provides more granular control when managing access/permissions at the application level. For more information on how to choose an approach, see [Choose an approach](~/identity-platform/custom-rbac-for-developers.md#choose-an-approach).   
 
 ## Next steps
 

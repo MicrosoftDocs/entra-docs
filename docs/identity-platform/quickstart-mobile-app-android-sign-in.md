@@ -5,9 +5,9 @@ author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
 ms.custom: scenarios:getting-started, "languages:Android", has-adal-ref, mode-api
-ms.date: 05/24/2023
-ms.service: active-directory
-ms.subservice: develop
+ms.date: 02/29/2024
+ms.service: identity-platform
+
 ms.topic: quickstart
 #Customer intent: As an application developer, I want to learn how Android native apps can call protected APIs that require login and access tokens using the Microsoft identity platform.
 ---
@@ -72,35 +72,26 @@ MSAL ([com.microsoft.identity.client](https://javadoc.io/doc/com.microsoft.ident
 ```java
 dependencies {
     ...
-    implementation 'com.microsoft.identity.client:msal:4.5.0'
+    implementation 'com.microsoft.identity.client:msal:5.1.0'
+    implementation 'com.android.volley:volley:1.2.1'
     ...
 }
 ```
 
 This instructs Gradle to download and build MSAL from maven central.
 
-You must also add references to maven to the **allprojects** > **repositories** portion of the **build.gradle (Module: app)** like so:
+You must also add references to maven to the **allprojects** > **repositories** portion of the **settings.gradle (Module: app)** under **dependencyResolutionManagement**:
 
 ```java
-allprojects {
-    repositories {
-        mavenCentral()
-        google()
-        mavenLocal()
-        maven {
-            url 'https://pkgs.dev.azure.com/MicrosoftDeviceSDK/DuoSDK-Public/_packaging/Duo-SDK-Feed/maven/v1'
-        }
-        maven {
-            name "vsts-maven-adal-android"
-            url "https://identitydivision.pkgs.visualstudio.com/_packaging/AndroidADAL/maven/v1"
-            credentials {
-                username System.getenv("ENV_VSTS_MVN_ANDROIDADAL_USERNAME") != null ? System.getenv("ENV_VSTS_MVN_ANDROIDADAL_USERNAME") : project.findProperty("vstsUsername")
-                password System.getenv("ENV_VSTS_MVN_ANDROIDADAL_ACCESSTOKEN") != null ? System.getenv("ENV_VSTS_MVN_ANDROIDADAL_ACCESSTOKEN") : project.findProperty("vstsMavenAccessToken")
-            }
-        }
-        jcenter()
-    }
+dependencyResolutionManagement {
+...
+maven 
+{
+ url 'https://pkgs.dev.azure.com/MicrosoftDeviceSDK/DuoSDK-Public/_packaging/Duo-SDK-Feed/maven/v1'
 }
+... 
+}
+
 ```
 
 ### MSAL imports
@@ -278,8 +269,8 @@ Note the presence of `"account_mode" : "SINGLE"`, which configures this app to u
 
 ```json
 {
-  "client_id": "0984a7b6-bc13-4141-8b0d-8f767e136bb7",
-  "authorization_user_agent": "DEFAULT",
+  "client_id": "00001111-aaaa-2222-bbbb-3333cccc4444",
+  "authorization_user_agent": "WEBVIEW",
   "redirect_uri": "msauth://com.azuresamples.msalandroidapp/1wIqXSqBj7w%2Bh11ZifsnqwgyKrY%3D",
   "account_mode": "SINGLE",
   "broker_redirect_uri_registered": true,
@@ -434,8 +425,8 @@ Unlike the [auth_config_single_account.json](#auth_config_single_accountjson) co
 
 ```json
 {
-  "client_id": "0984a7b6-bc13-4141-8b0d-8f767e136bb7",
-  "authorization_user_agent": "DEFAULT",
+  "client_id": "00001111-aaaa-2222-bbbb-3333cccc4444",
+  "authorization_user_agent": "WEBVIEW",
   "redirect_uri": "msauth://com.azuresamples.msalandroidapp/1wIqXSqBj7w%2Bh11ZifsnqwgyKrY%3D",
   "account_mode": "MULTIPLE",
   "broker_redirect_uri_registered": true,

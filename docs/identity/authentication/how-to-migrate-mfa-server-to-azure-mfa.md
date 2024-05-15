@@ -2,8 +2,8 @@
 title: Migrate from MFA Server to Microsoft Entra multifactor authentication
 description: Step-by-step guidance to migrate from MFA Server on-premises to Microsoft Entra multifactor authentication
 
-services: multi-factor-authentication
-ms.service: active-directory
+
+ms.service: entra-id
 ms.subservice: authentication
 ms.custom: has-azure-ad-ps-ref
 ms.topic: how-to
@@ -13,8 +13,6 @@ ms.author: justinha
 author: Gargi-Sinha
 manager: martinco
 ms.reviewer: michmcla
-
-ms.collection: M365-identity-device-management
 ---
 # Migrate from MFA Server to Microsoft Entra multifactor authentication
 
@@ -155,7 +153,7 @@ Others might include:
 
 - [Adding new NPS infrastructure](/windows-server/networking/technologies/nps/nps-top)
 - [NPS deployment best practices](https://www.youtube.com/watch?v=qV9wddunpCY)
-- [Microsoft Entra multifactor authentication NPS extension health check script](/samples/azure-samples/azure-mfa-nps-extension-health-check/azure-mfa-nps-extension-health-check/)
+- [Microsoft Entra multifactor authentication NPS extension health check script](https://github.com/Azure-Samples/azure-mfa-nps-extension-health-check)
 - [Integrating existing NPS infrastructure with Microsoft Entra multifactor authentication](howto-mfa-nps-extension-vpn.md)
 
 ## Next steps

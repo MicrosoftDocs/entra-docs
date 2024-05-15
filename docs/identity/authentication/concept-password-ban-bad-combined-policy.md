@@ -2,10 +2,9 @@
 title: Combined password policy and check for weak passwords in Microsoft Entra ID
 description: Learn about the combined password policy and check for weak passwords in Microsoft Entra ID
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
-ms.custom: has-azure-ad-ps-ref
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: conceptual
 ms.date: 10/16/2023
 
@@ -13,8 +12,6 @@ ms.author: justinha
 author: justinha
 manager: amycolannino
 ms.reviewer: tilarso
-
-ms.collection: M365-identity-device-management
 ---
 # Combined password policy and check for weak passwords in Microsoft Entra ID
 
@@ -42,7 +39,7 @@ The following Microsoft Entra password policy requirements apply for all passwor
 
 ## Password expiration policies
 
-Password expiration policies are unchanged but they're included in this topic for completeness. A *Global Administrator* or *User Administrator* can use the [Azure AD module for PowerShell](/powershell/module/azuread/) to set user passwords not to expire.
+Password expiration policies are unchanged but they're included in this topic for completeness. A *Global Administrator* or *User Administrator* can use the [Microsoft Graph PowerShell cmdlets](/powershell/microsoftgraph/) to set user passwords not to expire.
 
 > [!NOTE]
 > By default, only passwords for user accounts that aren't synchronized through Microsoft Entra Connect can be configured to not expire. For more information about directory synchronization, see [Connect AD with Microsoft Entra ID](~/identity/hybrid/connect/how-to-connect-password-hash-synchronization.md#password-expiration-policy).
@@ -53,8 +50,8 @@ The following expiration requirements apply to other providers that use Microsof
 
 | Property | Requirements |
 | --- | --- |
-| Password expiry duration (Maximum password age) |Default value: **90** days.<br>The value is configurable by using the `Set-MsolPasswordPolicy` cmdlet from the Azure AD PowerShell module. |
-| Password expiry (Let passwords never expire) |Default value: **false** (indicates that password's have an expiration date).<br>The value can be configured for individual user accounts by using the `Set-MsolUser` cmdlet.|
+| Password expiry duration (Maximum password age) |Default value: **90** days.<br>The value is configurable by using the [Update-MgDomain](/powershell/module/microsoft.graph.identity.directorymanagement/update-mgdomain) cmdlet from the Microsoft Graph PowerShell module. |
+| Password expiry (Let passwords never expire) |Default value: **false** (indicates that password's have an expiration date).<br>The value can be configured for individual user accounts by using the [Update-MgUser](/powershell/module/microsoft.graph.users/update-mguser) cmdlet.|
 
 ## Next steps
 

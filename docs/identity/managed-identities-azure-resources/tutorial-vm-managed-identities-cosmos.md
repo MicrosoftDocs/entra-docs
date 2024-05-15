@@ -1,21 +1,23 @@
 ---
 title: Use managed identities from a virtual machine to access Azure Cosmos DB
-description: Learn how to use managed identities with Windows VMs using the Azure portal, CLI, PowerShell, Azure Resource Manager template  
+description: Learn how to use managed identities with Windows VMs using the Azure portal, CLI, PowerShell, Azure Resource Manager template
 author: barclayn
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: msi
-ms.workload: integration
+ms.service: entra-id
+ms.subservice: managed-identities
 ms.topic: tutorial
 ms.date: 03/31/2023
 ms.author: barclayn
-ms.custom: ep-miar, ignite-2022, devx-track-azurepowershell, devx-track-azurecli, devx-track-arm-template, devx-track-linux
+ms.custom: ep-miar, devx-track-azurepowershell, devx-track-azurecli, devx-track-arm-template, devx-track-linux
 ms.tool: azure-cli, azure-powershell
 ms.devlang: azurecli
 #Customer intent: As an administrator, I want to know how to access Azure Cosmos DB from a virtual machine using a managed identity
 ---
 
 # How to use managed identities to connect to Azure Cosmos DB from an Azure virtual machine
+
+> [!CAUTION]
+> This article references CentOS, a Linux distribution that is nearing End Of Life (EOL) status. Please consider your use and plan accordingly. For more information, see the [CentOS End Of Life guidance](/azure/virtual-machines/workloads/centos/centos-end-of-life).
 
 In this article, we set up a virtual machine to use managed identities to connect to Azure Cosmos DB. [Azure Cosmos DB](/azure/cosmos-db/introduction) is a fully managed NoSQL database for modern app development. [Managed identities for Azure resources](overview.md) allow your applications to authenticate when accessing services that support Microsoft Entra authentication using an identity managed by Azure.
 

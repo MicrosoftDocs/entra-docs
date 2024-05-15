@@ -5,8 +5,8 @@ description: Debug SAML-based single sign-on to applications in Microsoft Entra 
 ms.author: alamaral
 author: AllisonAm
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: troubleshooting
 
 ms.date: 06/15/2023
@@ -97,4 +97,4 @@ To resolve the error, follow these steps, or watch this [short video about how t
 
 ## Next steps
 
-Now that single sign-on is working to your application, you could [Automate user provisioning and deprovisioning to SaaS applications](~/identity/app-provisioning/user-provisioning.md) or [get started with Conditional Access](~/identity/conditional-access/howto-policy-approved-app-or-app-protection.md).
+Now that single sign-on is working to your application, you could [Automate user provisioning and deprovisioning to SaaS applications](~/identity/app-provisioning/user-provisioning.md) or [get started with Conditional Access](~/identity/conditional-access/howto-policy-approved-app-or-app-protection.yml).

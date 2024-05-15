@@ -1,13 +1,10 @@
 ---
 title: Phase 1 Implement the Microsoft Entra Permissions Management framework to manage at scale
 description: Learn about folder structure, security groups, delegated permissions, lifecycle management, and Permissions Creep Index thresholds
-services: active-directory
 author: jricketts
 manager: martinco
-tags: azuread
-ms.service: active-directory
+ms.service: entra
 ms.topic: conceptual
-ms.workload: identity
 ms.date: 10/23/2023
 ms.author: jricketts
 ---
@@ -41,17 +38,19 @@ An effective folder structure makes it easier to delegate permissions at scale, 
 
 To help streamline your environment, see [create folders to organize your authorization systems](~/permissions-management/how-to-create-folders.md).
 
-### Create Microsoft Entra ID security groups to delegate permissions
+<a name='create-microsoft-entra-id-security-groups-to-delegate-permissions'></a>
 
-Microsoft Entra Permissions Management has a group-based access system that uses Microsoft Entra ID security groups to grant permissions to different authorization systems. To delegate permissions, your IAM team creates Microsoft Entra ID security groups that map to authorization system owners, and Permissions Management responsibilities you define. Ensure users with shared ownership and responsibilities in the product are in the same security group.
+### Create Microsoft Entra security groups to delegate permissions
+
+Microsoft Entra Permissions Management has a group-based access system that uses Microsoft Entra security groups to grant permissions to different authorization systems. To delegate permissions, your IAM team creates Microsoft Entra security groups that map to authorization system owners, and Permissions Management responsibilities you define. Ensure users with shared ownership and responsibilities in the product are in the same security group.
 
 We recommend you use [PIM for Groups](~/id-governance/privileged-identity-management/concept-pim-for-groups.md). This provides JIT access to Permissions Management to users and aligns with Zero Trust JIT and just-enough-access principles.
 
-To create Microsoft Entra ID security groups, see [manage groups and group membership](~/fundamentals/how-to-manage-groups.md).
+To create Microsoft Entra security groups, see [manage groups and group membership](../fundamentals/how-to-manage-groups.yml).
 
 ### Assign permissions in Microsoft Entra Permissions Management
 
-After Microsoft Entra ID security groups are created, a Permissions Management Administrator grants security groups needed permissions.
+After Microsoft Entra security groups are created, a Permissions Management Administrator grants security groups needed permissions.
 
 At a minimum, ensure security groups are granted **Viewer** permissions for the authorization systems they are responsible for. Use **Controller** permissions for security groups with members that perform remediation actions. [Learn more about Microsoft Entra Permissions Management roles and permission levels](~/permissions-management/product-roles-permissions.md).
 

@@ -2,8 +2,7 @@
 title: Enable Microsoft Entra password writeback
 description: In this tutorial, you learn how to enable Microsoft Entra self-service password reset writeback using Microsoft Entra Connect to synchronize changes back to an on-premises Active Directory Domain Services environment.
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: tutorial
 ms.date: 09/13/2023
@@ -11,11 +10,7 @@ ms.date: 09/13/2023
 ms.author: justinha
 author: justinha
 ms.reviewer: tilarso
-
-ms.collection: M365-identity-device-management
-ms.custom: contperf-fy20q4
 adobe-target: true
-
 # Customer intent: As a Microsoft Entra Administrator, I want to learn how to enable and use password writeback so that when end-users reset their password through a web browser their updated password is synchronized back to my on-premises AD environment.
 ---
 # Tutorial: Enable Microsoft Entra self-service password reset writeback to an on-premises environment
@@ -117,9 +112,6 @@ To enable SSPR writeback, first enable the writeback option in Microsoft Entra C
 1. On the **Connect to Microsoft Entra ID** page, enter a Global Administrator credential for your Azure tenant, and then select **Next**.
 1. On the **Connect directories** and **Domain/OU** filtering pages, select **Next**.
 1. On the **Optional features** page, select the box next to **Password writeback** and select **Next**.
-
-    ![Configure Microsoft Entra Connect for password writeback](media/tutorial-enable-sspr-writeback/enable-password-writeback.png)
-
 1. On the **Directory extensions** page, select **Next**.
 1. On the **Ready to configure** page, select **Configure** and wait for the process to finish.
 1. When you see the configuration finish, select **Exit**.
@@ -137,10 +129,6 @@ To enable password writeback in SSPR, complete the following steps:
 1. Check the option for **Write back passwords to your on-premises directory** .
 1. (optional) If Microsoft Entra Connect provisioning agents are detected, you can additionally check the option for **Write back passwords with Microsoft Entra Connect cloud sync**.   
 3. Check the option for **Allow users to unlock accounts without resetting their password** to *Yes*.
-
-   > [!div class="mx-imgBorder"]
-   > ![Screenshot of how to manage settings password writeback.](media/tutorial-enable-sspr-writeback/manage-settings.png)
-
 1. When ready, select **Save**.
 
 ## Clean up resources

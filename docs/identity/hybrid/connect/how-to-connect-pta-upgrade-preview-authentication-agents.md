@@ -1,21 +1,18 @@
 ---
 title: Microsoft Entra Connect - Pass-through Authentication - Upgrade auth agents
 description: This article describes how to upgrade your Microsoft Entra pass-through authentication configuration.
-services: active-directory
+
 keywords: Azure AD Connect Pass-through Authentication, install Active Directory, required components for Azure AD, SSO, Single Sign-on
-documentationcenter: ''
 author: billmath
 manager: amycolannino
 ms.assetid: 9f994aca-6088-40f5-b2cc-c753a4f41da7
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
-ms.custom: seohack1
-ms.collection: M365-identity-device-management
+
 ---
 
 # Microsoft Entra pass-through authentication: Upgrade preview Authentication Agents
@@ -47,7 +44,7 @@ To check the versions of your Authentication Agents, on each server identified i
 
 1. Go to **Control Panel -> Programs -> Programs and Features** on the on-premises server.
 2. If there's an entry for "**Microsoft Entra Connect Authentication Agent**", you don't need to take any action on this server.
-3. If there's an entry for "**Microsoft Entra application proxy Connector**", you need to manually upgrade on this server.
+3. If there's an entry for "**Microsoft Entra private network connector**", you need to manually upgrade on this server.
 
 ![Preview version of Authentication Agent](./media/how-to-connect-pta-upgrade-preview-authentication-agents/pta6.png)
 

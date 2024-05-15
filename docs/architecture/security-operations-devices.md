@@ -1,17 +1,13 @@
 ---
 title: Microsoft Entra security operations for devices
 description: Learn to establish baselines, and monitor and report on devices to identity potential security risks with devices.
-services: active-directory
 author: janicericketts
 manager: martinco
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: fundamentals
+ms.service: entra
+ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 09/06/2022
 ms.author: jricketts
-ms.custom: "it-pro, seodec18"
-ms.collection: M365-identity-device-management
 ---
 
 # Microsoft Entra security operations for devices
@@ -149,7 +145,7 @@ AuditLogs
 
 ## Device administrator roles
 
-Global administrators and cloud Device Administrators automatically get local administrator rights on all Microsoft Entra joined devices. It’s important to monitor who has these rights to keep your environment safe.
+The [Microsoft Entra Joined Device Local Administrator](../identity/role-based-access-control/permissions-reference.md#microsoft-entra-joined-device-local-administrator) and the [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator) roles automatically get local administrator rights on all Microsoft Entra joined devices. It’s important to monitor who has these rights to keep your environment safe.
 
 | What to monitor| Risk Level| Where| Filter/sub-filter| Notes |
 | - |- |- |- |- |

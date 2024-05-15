@@ -1,16 +1,15 @@
 ---
 title: 'What is Microsoft Entra Cloud Sync?'
 description: Describes Microsoft Entra Cloud Sync.
-services: active-directory
+
 author: billmath
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id
 ms.topic: overview
-ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.date: 04/26/2024
+ms.subservice: hybrid-cloud-sync
 ms.author: billmath
-ms.collection: M365-identity-device-management
+
 ---
 
 # What is Microsoft Entra Cloud Sync?
@@ -24,7 +23,8 @@ Microsoft Entra Cloud Sync is a new offering from Microsoft designed to meet and
 - Multiple provisioning agents can be used to simplify high availability deployments, particularly critical for organizations relying upon password hash synchronization from AD to Microsoft Entra ID.
 - Support for large groups with up to 50,000 members. It's recommended to use only the OU scoping filter when synchronizing large groups.
 
-![What is Microsoft Entra Connect](media/what-is-cloud-sync/architecture-1.png)
+
+ :::image type="content" source="media/what-is-cloud-sync/architecture-2.png" alt-text="Diagram of basic cloud sync." lightbox="media//what-is-cloud-sync/architecture-2.png":::
 
 <a name='how-is-azure-ad-connect-cloud-sync-different-from-azure-ad-connect-sync'></a>
 
@@ -55,7 +55,6 @@ The following table provides a comparison between Microsoft Entra Connect and Mi
 | Connect to multiple disconnected on-premises AD forests | |● |
 | Lightweight agent installation model | |● |
 | Multiple active agents for high availability | |● |
-| Connect to LDAP directories|●| | 
 | Support for user objects |● |● |
 | Support for group objects |● |● |
 | Support for contact objects |● |● |
@@ -77,7 +76,7 @@ The following table provides a comparison between Microsoft Entra Connect and Mi
 | Allow advanced customization for attribute flows |● | |
 | Support for password writeback |● |● |
 | Support for device writeback|● |Customers should use [Cloud Kerberos trust](/windows/security/identity-protection/hello-for-business/hello-hybrid-cloud-kerberos-trust?tabs=intune) for this moving forward|
-| Support for group writeback|● | |
+| Support for group writeback|● |●|
 | Support for merging user attributes from multiple domains|● | |
 | Microsoft Entra Domain Services support|● | |
 | [Exchange hybrid writeback](exchange-hybrid.md) |● |● |
@@ -88,6 +87,9 @@ The following table provides a comparison between Microsoft Entra Connect and Mi
 | Cross domain references|● |● |
 | On-demand provisioning| |● |
 | Support for US Government|● |● |
+
+> [!NOTE]
+> For information about synchronizing to Microsoft Entra tenants operated by 21 Vianet, the version of Microsoft 365 specific to China, see [Microsoft 365 operated by 21Vianet](/office365/servicedescriptions/office-365-platform-service-description/microsoft-365-operated-by-21vianet) and [Topologies for Microsoft Entra Connect](~/identity/hybrid/connect/plan-connect-topologies.md).
 
 ## Next steps 
 

@@ -4,11 +4,11 @@ description: Definitions of terms commonly found in Microsoft identity platform 
 author: rwike77
 manager: CelesteDG
 ms.author: ryanwi
-ms.date: 03/15/2023
+ms.date: 03/20/2024
 ms.reviewer:
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: reference
+ms.service: identity-platform
+
+ms.topic: glossary
 #Customer intent: As a developer integrating with the Microsoft identity platform, I want to understand the terminology and concepts related to authentication and authorization, so that I can effectively implement secure access to protected resources in my application.
 ---
 
@@ -225,7 +225,7 @@ A type of [client application](#client-application) that downloads code from a w
 
 ## User principal
 
-Similar to the way a service principal object is used to represent an application instance, a user principal object is another type of security principal, which represents a user. The Microsoft Graph [User resource type][Graph-User-Resource] defines the schema for a user object, including user-related properties like first and last name, user principal name, directory role membership, etc. This provides the user identity configuration for Microsoft Entra ID to establish a user principal at run-time. The user principal is used to represent an authenticated user for single sign-on, recording [consent](#consent) delegation, making access control decisions, etc.
+Similar to the way a service principal object is used to represent an application instance, a user principal object is another type of security principal, which represents a user. The Microsoft Graph [`User` resource type][Graph-User-Resource] defines the schema for a user object, including user-related properties like first and last name, user principal name, directory role membership, etc. This provides the user identity configuration for Microsoft Entra ID to establish a user principal at run-time. The user principal is used to represent an authenticated user for single sign-on, recording [consent](#consent) delegation, making access control decisions, etc.
 
 ## Web client
 
@@ -255,7 +255,7 @@ Many of the terms in this glossary are related to the OAuth 2.0 and OpenID Conne
 [Graph-App-Resource]: /graph/api/resources/application
 [Graph-Sp-Resource]: /graph/api/resources/serviceprincipal
 [Graph-User-Resource]: /graph/api/resources/user
-[AAD-How-Subscriptions-Assoc]:~/fundamentals/how-subscriptions-associated-directory.md
+[AAD-How-Subscriptions-Assoc]:~/fundamentals/how-subscriptions-associated-directory.yml
 [AAD-How-To-Integrate]: ./how-to-integrate.md
 [AAD-How-To-Tenant]:quickstart-create-new-tenant.md
 [AAD-Integrating-Apps]:./quickstart-register-app.md

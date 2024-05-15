@@ -1,9 +1,8 @@
 ---
 title: Monitor and troubleshoot sign-ins with continuous access evaluation in Microsoft Entra ID
-description: Troubleshoot and respond to changes in user state faster with continuous access evaluation in Microsoft Entra ID
+description: Troubleshoot and respond to changes in user state faster with continuous access evaluation in Microsoft Entra ID.
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: troubleshooting
 ms.date: 04/03/2023
@@ -12,8 +11,6 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: vmahtani
-
-ms.collection: M365-identity-device-management
 ---
 # Monitor and troubleshoot continuous access evaluation
 
@@ -23,7 +20,7 @@ Administrators can monitor and troubleshoot sign in events where [continuous acc
 
 Administrators can monitor user sign-ins where continuous access evaluation (CAE) is applied. This information is found in the Microsoft Entra sign-in logs:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Reader](../role-based-access-control/permissions-reference.md#security-reader).
 1. Browse to **Identity** > **Monitoring & health** > **Sign-in logs**. 
 1. Apply the **Is CAE Token** filter. 
 
@@ -31,11 +28,11 @@ Administrators can monitor user sign-ins where continuous access evaluation (CAE
 
 From here, admins are presented with information about their user’s sign-in events. Select any sign-in to see details about the session, like which Conditional Access policies applied and if CAE enabled. 
 
-There are multiple sign-in requests for each authentication. Some are on the interactive tab, while others are on the non-interactive tab. CAE is only marked true for one of the requests, it can be on the interactive tab or non-interactive tab. Admins must check both tabs to confirm whether the user's authentication is CAE enabled or not. 
+There are multiple sign-in requests for each authentication. Some are on the interactive tab, while others are on the non-interactive tab. CAE is only marked true for one of the requests it can be on the interactive tab or non-interactive tab. Admins must check both tabs to confirm whether the user's authentication is CAE enabled or not. 
 
 ### Searching for specific sign-in attempts
 
-Sign in logs contain information on success and failure events. Use filters to narrow your search. For example, if a user signed in to Teams, use the Application filter and set it to Teams. Admins may need to check the sign-ins from both interactive and non-interactive tabs to locate the specific sign-in. To further narrow the search, admins may apply multiple filters.
+Sign-in logs contain information on success and failure events. Use filters to narrow your search. For example, if a user signed in to Teams, use the Application filter and set it to Teams. Admins might need to check the sign-ins from both interactive and non-interactive tabs to locate the specific sign-in. To further narrow the search, admins might apply multiple filters.
 
 ## Continuous access evaluation workbooks
 
@@ -43,9 +40,9 @@ The continuous access evaluation insights workbook allows administrators to view
 
 ### Accessing the CAE workbook template
 
-Log Analytics integration must be completed before workbooks are displayed. For more information about how to stream Microsoft Entra sign-in logs to a Log Analytics workspace, see the article [Integrate Microsoft Entra logs with Azure Monitor logs](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.md).
+Log Analytics integration must be completed before workbooks are displayed. For more information about how to stream Microsoft Entra sign-in logs to a Log Analytics workspace, see the article [Integrate Microsoft Entra logs with Azure Monitor logs](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.yml).
  
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Reader](../role-based-access-control/permissions-reference.md#security-reader). 
 1. Browse to **Identity** > **Monitoring & health** > **Workbooks**.
 1. Under **Public Templates**, search for **Continuous access evaluation insights**.
 
@@ -63,11 +60,11 @@ This workbook table sheds light on these scenarios by displaying the respective 
 
 The continuous access evaluation insights per sign-in page in the workbook connects multiple requests from the sign-in logs and displays a single request where a CAE token was issued. 
 
-This workbook can come in handy, for example,  when: A user opens Outlook on their desktop and attempts to access resources inside of Exchange Online. This sign-in action may map to multiple interactive and non-interactive sign-in requests in the logs making issues hard to diagnose.
+This workbook can come in handy, for example,  when: A user opens Outlook on their desktop and attempts to access resources inside of Exchange Online. This sign-in action might map to multiple interactive and non-interactive sign-in requests in the logs making issues hard to diagnose.
 
 ## IP address configuration
 
-Your identity provider and resource providers may see different IP addresses. This mismatch may happen because of the following examples:
+Your identity provider and resource providers might see different IP addresses. This mismatch might happen because of the following examples:
 
 - Your network implements split tunneling.
 - Your resource provider is using an IPv6 address and Microsoft Entra ID is using an IPv4 address.
@@ -85,10 +82,10 @@ To unblock users, administrators can add specific IP addresses to a trusted name
 > [!NOTE]
 > Before adding an IP address as a trusted named location, confirm that the IP address does in fact belong to the intended organization.
 
-For more information about named locations, see the article [Using the location condition](location-condition.md#named-locations)
+For more information about named locations, see the article [Using the location condition](concept-assignment-network.md).
  
-## Next steps
+## Related content
 
-- [Integrate Microsoft Entra logs with Azure Monitor logs](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.md)
+- [Integrate Microsoft Entra logs with Azure Monitor logs](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.yml)
 - [Using the location condition](location-condition.md#named-locations)
 - [Continuous access evaluation](concept-continuous-access-evaluation.md)

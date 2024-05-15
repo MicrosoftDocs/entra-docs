@@ -1,17 +1,15 @@
 ---
 title: Clean up unmanaged Microsoft Entra accounts
 description: Clean up unmanaged accounts using email one-time password and PowerShell modules in Microsoft Entra ID
-services: active-directory 
+
 author: gargi-sinha
 ms.author: gasinh
 manager: martinco
 ms.date: 05/02/2023
 ms.topic: how-to
-ms.service: active-directory
-ms.subservice: enterprise-users
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: users
 ms.custom: it-pro
-ms.collection: M365-identity-device-management
 ---
 
 # Clean up unmanaged Microsoft Entra accounts

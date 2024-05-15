@@ -5,12 +5,14 @@ description: Learn how to configure Microsoft Entra ID to automatically provisio
 author: twimmers
 writer: twimmers
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Druva so that I can streamline the user management process and ensure that users have the appropriate access to Druva.
 ---
 
 # Tutorial: Configure Druva for automatic user provisioning
@@ -18,7 +20,7 @@ ms.author: thwimmer
 The objective of this tutorial is to demonstrate the steps to be performed in Druva and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to Druva.
 
 > [!NOTE]
-> This tutorial describes a connector built on top of the Microsoft Entra user Provisioning Service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
+> This tutorial describes a connector built on top of the Microsoft Entra user provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 >
 
 ## Prerequisites

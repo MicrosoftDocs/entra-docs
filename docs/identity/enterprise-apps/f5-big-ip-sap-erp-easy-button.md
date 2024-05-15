@@ -4,8 +4,8 @@ description: Learn to secure SAP ERP using Microsoft Entra ID with F5 BIG-IP Eas
 
 author: gargi-sinha
 manager: martinco
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: how-to
 
 ms.date: 05/02/2023
@@ -124,14 +124,8 @@ Register the Easy Button client in Microsoft Entra ID, then it's allowed to esta
 3. From a browser, sign-in to the F5 BIG-IP management console.
 4. Navigate to **Access > Guided Configuration > Microsoft Integration**.
 5. Select **Microsoft Entra Application**.
-
-  ![Screenshot of the Microsoft Entra Application option on Guided Configuration.](./media/f5-big-ip-easy-button-ldap/easy-button-template.png)
-
 6. Review the configuration list.
 7. Select **Next**.
-
-  ![Screenshot of the configuration list and the Next button.](./media/f5-big-ip-easy-button-ldap/config-steps.png)
-
 8. Follow the configuration sequence under **Microsoft Entra Application Configuration**.
 
   ![Screenshot of configuration sequence.](./media/f5-big-ip-easy-button-ldap/config-steps-flow.png#lightbox)
@@ -226,8 +220,6 @@ Learn more: [Tutorial: Configure F5 BIG-IP Access Policy Manager for Kerberos au
 #### Additional User Attributes
 
 The **Additional User Attributes** tab supports distributed systems requiring attributes stored in other directories, for session augmentation. Thus, attributes from an LDAP source are injected as more SSO headers to control role-based access, Partner IDs, etc.
-
-   ![Screenshot of the Additional User Attributes tab.](./media/f5-big-ip-easy-button-header/additional-user-attributes.png)
 
    >[!NOTE] 
    >This feature has no correlation to Microsoft Entra ID but is another attribute source.

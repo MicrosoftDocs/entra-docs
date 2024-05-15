@@ -1,20 +1,16 @@
 ---
 title: What is Privileged Identity Management?
 description: Provides an overview of Microsoft Entra Privileged Identity Management (PIM).
-services: active-directory
-documentationcenter: ''
+
 author: barclayn
 manager: amycolannino
-editor: ''
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: pim
+ms.service: entra-id-governance
+ms.subservice: privileged-identity-management
 ms.topic: overview
 ms.date: 10/26/2023
 ms.author: barclayn
 ms.reviewer: ilyal
-ms.custom: pim,azuread-video-2020,contperf-fy21q3-portal, content-engagement
-ms.collection: M365-identity-device-management
+ms.custom: pim, azuread-video-2020, content-engagement
 ---
 
 # What is Microsoft Entra Privileged Identity Management?
@@ -45,7 +41,7 @@ Privileged Identity Management provides time-based and approval-based role activ
 - Provide **just-in-time** privileged access to Microsoft Entra ID and Azure resources
 - Assign **time-bound** access to resources using start and end dates
 - Require **approval** to activate privileged roles
-- Enforce **multi-factor authentication** to activate any role
+- Enforce **multifactor authentication** to activate any role
 - Use **justification** to understand why users activate
 - Get **notifications** when privileged roles are activated
 - Conduct **access reviews** to ensure users still need roles
@@ -56,7 +52,7 @@ Privileged Identity Management provides time-based and approval-based role activ
 
 Once you set up Privileged Identity Management, you'll see **Tasks**, **Manage**, and **Activity** options in the left navigation menu. As an administrator, you can choose between options such as managing **Microsoft Entra roles**, managing **Azure resource** roles, or PIM for Groups. When you choose what you want to manage, you see the appropriate set of options for that option.
 
-![Screenshot of Privileged Identity Management in the Azure portal.](./media/pim-configure/pim-quickstart.png)
+:::image type="content" source="./media/pim-configure/pim-quickstart.png" alt-text="Screenshot of Privileged Identity Management in the Azure portal.":::
 
 ## Who can do what?
 
@@ -72,7 +68,7 @@ To better understand Privileged Identity Management and its documentation, you s
 | --- | --- | --- |
 | eligible | Type | A role assignment that requires a user to perform one or more actions to use the role. If a user has been made eligible for a role, that means they can activate the role when they need to perform privileged tasks. There's no difference in the access given to someone with a permanent versus an eligible role assignment. The only difference is that some people don't need that access all the time. |
 | active | Type | A role assignment that doesn't require a user to perform any action to use the role. Users assigned as active have the privileges assigned to the role. |
-| activate |  | The process of performing one or more actions to use a role that a user is eligible for. Actions might include performing a multi-factor authentication (MFA) check, providing a business justification, or requesting approval from designated approvers. |
+| activate |  | The process of performing one or more actions to use a role that a user is eligible for. Actions might include performing a multifactor authentication (MFA) check, providing a business justification, or requesting approval from designated approvers. |
 | assigned | State | A user that has an active role assignment. |
 | activated | State | A user that has an eligible role assignment, performed the actions to activate the role, and is now active. Once activated, the user can use the role for a preconfigured period of time before they need to activate again. |
 | permanent eligible | Duration | A role assignment where a user is always eligible to activate the role. |
@@ -90,7 +86,7 @@ PIM keeps you informed by sending you and other participants [email notification
 
 The following screenshot shows an email message sent by PIM. The email informs Patti that Alex updated a role assignment for Emily.
 
-![Screenshot shows an email message sent by Privileged Identity Management.](./media/pim-configure/pim-email.png)
+:::image type="content" source="./media/pim-configure/pim-email.png" alt-text="Screenshot shows an email message sent by Privileged Identity Management.":::
 
 ### Assign
 
@@ -105,7 +101,7 @@ The assignment process starts by assigning roles to members. To grant access to 
 
 The following screenshot shows how administrator assigns a role to members.
 
-![Screenshot of Privileged Identity Management role assignment.](./media/pim-configure/role-assignment.png)
+:::image type="content" source="./media/pim-configure/role-assignment.png" alt-text="Screenshot of Privileged Identity Management role assignment.":::
 
 
 For more information, check out the following articles: [Assign Microsoft Entra roles](pim-how-to-add-role-to-user.md), [Assign Azure resource roles](pim-resource-roles-assign-roles.md), and [Assign eligibility for a PIM for Groups](groups-assign-member-owner.md)
@@ -116,11 +112,11 @@ If users have been made eligible for a role, then they must activate the role as
 
 The following screenshot shows how members activate their role to a limited time.
 
-![Screenshot of Privileged Identity Management role activation.](./media/pim-configure/role-activation.png)
+:::image type="content" source="./media/pim-configure/role-activation.png" alt-text="Screenshot of Privileged Identity Management role activation.":::
 
 If the role requires [approval](pim-resource-roles-approval-workflow.md) to activate, a notification appears in the upper right corner of the user's browser informing them the request is pending approval. If an approval isn't required, the member can start using the role.
 
-For more information, check out the following articles: [Activate Microsoft Entra roles](pim-how-to-activate-role.md), [Activate my Azure resource roles](pim-resource-roles-activate-your-roles.md), and [Activate my PIM for Groups roles](groups-activate-roles.md)
+For more information, check out the following articles: [Activate Microsoft Entra roles](pim-how-to-activate-role.yml), [Activate my Azure resource roles](pim-resource-roles-activate-your-roles.yml), and [Activate my PIM for Groups roles](groups-activate-roles.md)
 
 ### Approve or deny
 
@@ -160,6 +156,12 @@ Privileged Identity Management supports the following scenarios:
 - Request activation of a role that requires approval
 - View the status of your request to activate
 - Complete your task in Microsoft Entra ID if activation was approved
+
+## Microsoft Graph APIs
+
+You can use Privileged Identity Management programmatically through the following Microsoft Graph APIs:
+- [PIM for Microsoft Entra roles APIs](/graph/api/resources/privilegedidentitymanagementv3-overview)
+- [PIM for groups APIs](/graph/api/resources/privilegedidentitymanagement-for-groups-api-overview)
 
 ## Next steps
 

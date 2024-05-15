@@ -2,27 +2,24 @@
 title: FAQs for hybrid FIDO2 security key deployment
 description: Learn about some frequently asked questions for passwordless hybrid FIDO2 security key sign-in using Microsoft Entra ID
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
-ms.topic: troubleshooting
+ms.topic: faq
 ms.date: 09/15/2023
 
 ms.author: justinha
 author: justinha
 manager: amycolannino
 ms.reviewer: aakapo
-
-ms.collection: M365-identity-device-management
 ---
 # Deployment frequently asked questions (FAQs) for hybrid FIDO2 security keys in Microsoft Entra ID
 
-This article covers deployment frequently asked questions (FAQs) for Microsoft Entra hybrid joined devices and passwordless sign-in to on-prem resources. With this passwordless feature, you can enable Microsoft Entra authentication on Windows 10 devices for Microsoft Entra hybrid joined devices using FIDO2 security keys. Users can sign into Windows on their devices with modern credentials like FIDO2 keys and access traditional Active Directory Domain Services (AD DS) based resources with a seamless single sign-on (SSO) experience to their on-prem resources.
+This article covers deployment frequently asked questions (FAQs) for Microsoft Entra hybrid joined devices and passwordless sign-in to on-premises resources. With this passwordless feature, you can enable Microsoft Entra authentication on Windows 10 devices for Microsoft Entra hybrid joined devices using FIDO2 security keys. Users can sign into Windows on their devices with modern credentials like FIDO2 keys and access traditional Active Directory Domain Services (AD DS) based resources with a seamless single sign-on (SSO) experience to their on-premises resources.
 
 The following scenarios for users in a hybrid environment are supported:
 
-* Sign in to Microsoft Entra hybrid joined devices using FIDO2 security keys and get SSO access to on-prem resources.
-* Sign in to Microsoft Entra joined devices using FIDO2 security keys and get SSO access to on-prem resources.
+* Sign in to Microsoft Entra hybrid joined devices using FIDO2 security keys and get SSO access to on-premises resources.
+* Sign in to Microsoft Entra joined devices using FIDO2 security keys and get SSO access to on-premises resources.
 
 To get started with FIDO2 security keys and hybrid access to on-premises resources, see the following articles:
 
@@ -32,20 +29,20 @@ To get started with FIDO2 security keys and hybrid access to on-premises resourc
 
 ## Security keys
 
-* [My organization requires two factor authentication to access resources. What can I do to support this requirement?](#my-organization-requires-multi-factor-authentication-to-access-resources-what-can-i-do-to-support-this-requirement)
+* [My organization requires two factor authentication to access resources. What can I do to support this requirement?](#my-organization-requires-multifactor-authentication-to-access-resources-what-can-i-do-to-support-this-requirement)
 * [Where can I find compliant FIDO2 security keys?](#where-can-i-find-compliant-fido2-security-keys)
 * [What do I do if I lose my security key?](#what-if-i-lose-my-security-key)
 * [How is the data protected on the FIDO2 security key?](#how-is-the-data-protected-on-the-fido2-security-key)
 * [How does the registering of FIDO2 security keys work?](#how-does-the-registering-of-fido2-security-keys-work)
 * [Is there a way for admins to provision the keys for the users directly?](#is-there-a-way-for-admins-to-provision-the-keys-for-the-users-directly)
 
-### My organization requires multi-factor authentication to access resources. What can I do to support this requirement?
+### My organization requires multifactor authentication to access resources. What can I do to support this requirement?
 
-FIDO2 Security keys come in a variety of form factors. Contact the device manufacturer of interest to discuss how their devices can be enabled with a PIN or biometric as a second factor. For a list of supported providers, see [FIDO2 security keys providers](concept-authentication-passwordless.md#fido2-security-key-providers).
+FIDO2 Security keys come in a variety of form factors. Contact the device manufacturer of interest to discuss how their devices can be enabled with a PIN or biometric as a second factor. For a list of supported providers, see [FIDO2 security keys providers](concept-authentication-passwordless.md).
 
 ### Where can I find compliant FIDO2 security keys?
 
-For a list of supported providers, see [FIDO2 security keys providers](concept-authentication-passwordless.md#fido2-security-key-providers).
+For a list of supported providers, see [FIDO2 security keys providers](concept-authentication-passwordless.md).
 
 ### What if I lose my security key?
 
@@ -63,9 +60,9 @@ For more information how to register and use FIDO2 security keys, see [Enable pa
 
 No, not at this time.
 
-### Why I am getting "NotAllowedError" in the browser, when registering FIDO2 keys?
+### Why am I getting "NotAllowedError" in the browser, when registering FIDO2 keys?
 
-You will receive "NotAllowedError" from fido2 key registration page. This typically happens when user is in private (Incognito) window or using remote desktop where FIDO2 Private key access is not possible.
+You'll receive "NotAllowedError" from fido2 key registration page. This typically happens when an error occurs while Windows attempts a CTAP2 authenticatorMakeCredential operation against the security key. You'll see more details in the Microsoft-Windows-WebAuthN/Operational event log. 
 
 ## Prerequisites
 
@@ -172,7 +169,7 @@ To unblock the accounts, use **Active Directory Users and Computers** to modify 
 
 * [How is Microsoft Entra Kerberos linked to my on-premises Active Directory Domain Services environment?](#how-is-azure-ad-kerberos-linked-to-my-on-premises-active-directory-domain-services-environment)
 * [Where can I view these Kerberos server objects that are created in AD and published in Microsoft Entra ID?](#where-can-i-view-these-kerberos-server-objects-that-are-created-in-ad-ds-and-published-in-azure-ad)
-* [Why can't we have the public key registered to on-premises AD DS so there is no dependency on the internet?](#why-cant-we-have-the-public-key-registered-to-on-premises-ad-ds-so-there-is-no-dependency-on-the-internet)
+* [Why can't we have the public key registered to on-premises AD DS so there's no dependency on the internet?](#why-cant-we-have-the-public-key-registered-to-on-premises-ad-ds-so-theres-no-dependency-on-the-internet)
 * [How are the keys rotated on the Kerberos server object?](#how-are-the-keys-rotated-on-the-kerberos-server-object)
 * [Why do we need Microsoft Entra Connect? Does it write any info back to AD DS from Microsoft Entra ID?](#why-do-we-need-azure-ad-connect-does-it-write-any-info-back-to-ad-ds-from-azure-ad)
 * [What does the HTTP request/response look like when requesting PRT+ partial TGT?](#what-does-the-http-requestresponse-look-like-when-requesting-prt-partial-tgt)
@@ -215,7 +212,7 @@ To view all objects, use the Microsoft Entra Kerberos server PowerShell cmdlets 
 
 For more information, including instructions on how to view the objects, see [create a Kerberos Server object](howto-authentication-passwordless-security-key-on-premises.md#create-a-kerberos-server-object).
 
-### Why can't we have the public key registered to on-premises AD DS so there is no dependency on the internet?
+### Why can't we have the public key registered to on-premises AD DS so there's no dependency on the internet?
 
 We received feedback around the complexity of deployment model for Windows Hello for Business, so wanted to simplify the deployment model without having to use certificates and PKI (FIDO2 doesn't use certificates).
 

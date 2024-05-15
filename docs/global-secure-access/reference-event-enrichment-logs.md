@@ -5,9 +5,8 @@ author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: reference
-ms.date: 11/01/2023
-ms.service: network-access
-ms.custom: 
+ms.date: 03/04/2024
+ms.service: global-secure-access
 ---
 
 # Event enrichment in Microsoft 365 enriched logs

@@ -1,10 +1,10 @@
 ---
 title: "What's new in Microsoft Entra application management"
 description: "New and updated documentation for the Microsoft Entra application management."
-ms.date: 01/08/2024
-ms.service: active-directory
-ms.subservice: app-mgmt
-ms.topic: reference
+ms.date: 05/03/2024
+ms.service: entra-id
+ms.subservice: enterprise-apps
+ms.topic: whats-new
 
 ms.author: jomondi
 author: omondiatieno
@@ -17,41 +17,37 @@ manager: CelesteDG
 
 Welcome to what's new in Microsoft Entra application management documentation. This article lists new docs that have been added and those that have had significant updates in the last three months. To learn what's new with the application management service, see [What's new in Azure AD](~/fundamentals/whats-new.md).
 
-## December
-
-### Updated articles
-
-- [Configure permission classifications](configure-permission-classifications.md) - Add least privilege role for PowerShell and Microsoft Graph content
-- [Configure group and team owner consent to applications](configure-user-consent-groups.md) - Add least privilege role for PowerShell and Microsoft Graph content
-- [Manage custom security attributes for an application](custom-security-attributes-apps.md) - Add least privilege role for PowerShell and Microsoft Graph content
-- [Delete an enterprise application](delete-application-portal.md) - Add least privilege role for PowerShell and Microsoft Graph content
-- [Disable user sign-in for an application](disable-user-sign-in-portal.md) - Add least privilege role for PowerShell and Microsoft Graph content
-- [Restore an enterprise application in Microsoft Entra ID](restore-application.md) - Add least privilege role for PowerShell and Microsoft Graph content
-- [Grant consent on behalf of a single user by using PowerShell](grant-consent-single-user.md) - Update to enhance the article's technical accuracy
-- [Grant tenant-wide admin consent to an application](grant-admin-consent.md) - Update to enhance the article's technical accuracy
-- [Represent AD FS security policies in Microsoft Entra ID: Mappings and examples](migrate-adfs-represent-security-policies.md) - Update to enhance the article's technical accuracy
-- [Plan application migration to Microsoft Entra ID](migrate-adfs-apps-phases-overview.md) - Update to enhance the article's technical accuracy
-- [Phase 2: Classify apps and plan pilot](migrate-adfs-classify-apps-plan-pilot.md) - Update to enhance the article's technical accuracy
-- [What is application management in Microsoft Entra ID?](what-is-application-management.md) - Update to enhance the article's technical accuracy
-- [Restrict access to a tenant](tenant-restrictions.md) - Update to enhance the article's technical accuracy
-- [Manage users and groups assignment to an application](assign-user-or-group-access-portal.md) - Update to enhance the article's technical accuracy
-- [Overview of admin consent workflow](admin-consent-workflow-overview.md) - Update to enhance the article's technical accuracy
-- [Overview of the Microsoft Entra application gallery](overview-application-gallery.md) - Update to enhance the article's technical accuracy
-- [Protect against consent phishing](protect-against-consent-phishing.md) - Update to enhance the article's technical accuracy
-
-## November
+## April 2024
 
 ### New articles
 
-- [Tutorial: Configure Datawiza to enable Microsoft Entra multifactor authentication and single sign-on to Oracle Hyperion EPM](datawiza-mfa-sso-oracle-hyperion-epm.md) - New how-to guide for Datawiza integration with Microsoft Entra ID.
-
-## October
-
-### New articles
-
-- [AD FS application migration (preview) overview](migrate-ad-fs-application-overview.md) - New overview article for AD FS application migration.
-- [AD FS application migration (preview) guide](migrate-ad-fs-application-howto.md) - New how-to guide for AD FS application migration.
+-  [View activity logs for application permissions](app-perms-audit-logs.md) - A new article on how to view the activity logs of what permissions are being granted for applications in your directory.
 
 ### Updated articles
 
-- [Tutorial: Migrate Okta federation to Microsoft Entra ID-managed authentication](migrate-okta-federation.md) - Updated PowerShell examples to Microsoft Graph PowerShell.
+Reviewed the following articles to improve technical accuracy and clarity:
+
+- [Configure sign-in behavior using Home Realm Discovery](configure-authentication-for-federated-users-portal.md)
+- [Home Realm Discovery for an application](home-realm-discovery-policy.md)
+- [Configure F5 BIG-IP Access Policy Manager for form-based SSO](f5-big-ip-forms-advanced.md)
+- [Tutorial: Configure F5 BIG-IP Access Policy Manager for header-based single sign-on](f5-big-ip-header-advanced.md)
+- [Tutorial: Configure F5 BIG-IP Easy Button for header-based SSO](f5-big-ip-headers-easy-button.md)
+- [Tutorial: Configure F5 BIG-IP Access Policy Manager for Kerberos authentication](f5-big-ip-kerberos-advanced.md)
+- [Tutorial: Configure F5 BIG-IP Easy Button for Kerberos single sign-on](f5-big-ip-kerberos-easy-button.md)
+- [Tutorial: Configure F5 BIG-IP Easy Button for header-based and LDAP single sign-on](f5-big-ip-ldap-header-easybutton.md)
+- [Integrate F5 BIG-IP with Microsoft Entra ID](f5-integration.md)
+- [Tutorial: Configure F5 BIG-IP SSL-VPN for Microsoft Entra SSO](f5-passwordless-vpn.md)
+- [Create an enterprise application from a multitenant application in Microsoft Entra ID](create-service-principal-cross-tenant.md)
+- [Tutorial: Migrate Okta sync provisioning to Microsoft Entra Connect synchronization](migrate-okta-sync-provisioning.md)
+- [Tutorial: Configure Secure Hybrid Access with Microsoft Entra ID and Silverfort](silverfort-integration.md)
+
+## March 2024
+
+No new or updated articles.
+
+## February 2024
+
+### Updated articles
+
+- [Manage certificates for federated single sign-on](tutorial-manage-certificates-for-federated-single-sign-on.md) - Update to enhance the article's technical accuracy
+- [Troubleshoot SAML-based single sign-on](troubleshoot-saml-based-sso.md) - Update to enhance the article's technical accuracy

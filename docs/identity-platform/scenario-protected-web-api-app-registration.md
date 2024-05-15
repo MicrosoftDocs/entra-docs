@@ -7,9 +7,9 @@ ms.author: cwerner
 ms.custom: 
 ms.date: 01/27/2022
 ms.reviewer: jmprieur
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: conceptual
+ms.service: identity-platform
+
+ms.topic: concept-article
 #Customer intent: As an application developer, I want to know how to write a protected web API using the Microsoft identity platform for developers.
 ---
 
@@ -32,7 +32,7 @@ After you create the application, you can determine or change the accepted token
 
 1. In the Azure portal, select your app and then select **Manifest**.
 1. Find the property **accessTokenAcceptedVersion** in the manifest.
-1. The value specifies to Microsoft Entra ID which token version the web API accepts.
+1. The value specifies to Microsoft Entra which token version the web API accepts.
    - If the value is 2, the web API accepts v2.0 tokens.
    - If the value is **null**, the web API accepts v1.0 tokens.
 1. If you changed the token version, select **Save**.

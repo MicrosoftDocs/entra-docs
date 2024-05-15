@@ -1,19 +1,15 @@
 ---
 title: Review your access to groups & apps in access reviews
 description: Learn how to review your own access to groups or applications in access reviews.
-services: active-directory
 author: owinfreyATL
 manager: amycolannino
 editor: markwahl-msft
-ms.service: active-directory
-ms.workload: identity
-ms.tgt_pltfrm: na
+ms.service: entra-id-governance
+ms.subservice: access-reviews
 ms.topic: how-to
-ms.subservice: compliance
-ms.date: 06/28/2023
+ms.date: 04/09/2024
 ms.author: owinfrey
 ms.reviewer: mwahl
-ms.collection: M365-identity-device-management
 ---
 
 # Review access for yourself to groups or applications in access reviews
@@ -95,7 +91,7 @@ You can try the new experience with the updated user interface in My Access a co
 
     ![Pending access reviews list for apps and groups with the new experience available banner displayed during the preview](./media/review-your-access/banner-your-access.png)
 
-4. Continue in the section **Perform the access review**
+4. Continue in the section **Perform the access review**.
 
 ### Email
 
@@ -108,7 +104,7 @@ You can try the new experience with the updated user interface in My Access a co
 
 2. Select the **Review access** link to open the access review.
 
-3. Continue in the section **Perform the access review**
+3. Continue in the section **Perform the access review**.
 
 >[!NOTE]
 >If clicking start review takes you to **My Apps** follow the steps listed in the section above titled **My Apps Portal**.

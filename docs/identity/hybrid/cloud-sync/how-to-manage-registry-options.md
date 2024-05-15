@@ -1,25 +1,22 @@
 ---
 title: 'Microsoft Entra Connect cloud provisioning agent: Manage registry options'
 description: This article describes how to manage registry options in the Microsoft Entra Connect cloud provisioning agent.
-services: active-directory
-documentationcenter: ''
+
 author: billmath
 manager: amycolannino
-editor: ''
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: how-to
 ms.tgt_pltfrm: na
-ms.workload: identity
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-cloud-sync
 ms.reviewer: chmutali
 ms.author: billmath
 
-ms.collection: M365-identity-device-management
+
 ---
 # Manage agent registry options
 
-This section describes registry options that you can set to control the runtime processing behavior of the Microsoft Entra Provisioning Agent. 
+This section describes registry options that you can set to control the runtime processing behavior of the Microsoft Entra provisioning agent. 
 
 ## Configure LDAP connection timeout
 When performing LDAP operations on configured Active Directory domain controllers, by default, the provisioning agent uses the default connection timeout value of 30 seconds. If your domain controller takes more time to respond, then you may see the following error message in the agent log file: 
@@ -30,7 +27,7 @@ System.DirectoryServices.Protocols.LdapException: The operation was aborted beca
 
 LDAP search operations can take longer if the search attribute is not indexed. As a first step, if you get the above error, first check if the search/lookup attribute is [indexed](/windows/win32/ad/indexed-attributes). If the search attributes are indexed and the error persists, you can increase the LDAP connection timeout using the following steps: 
 
-1. Log on as Administrator on the Windows server running the Microsoft Entra Provisioning Agent.
+1. Log on as Administrator on the Windows server running the Microsoft Entra provisioning agent.
 1. Use the *Run* menu item to open the registry editor (regedit.exe) 
 1. Locate the key folder **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Azure AD Connect Agents\Azure AD Connect Provisioning Agent**
 1. Right-click and select "New -> String Value"
@@ -43,14 +40,14 @@ LDAP search operations can take longer if the search attribute is not indexed. A
 1. If you have deployed multiple provisioning agents, apply this registry change to all agents for consistency. 
 
 ## Configure referral chasing
-By default, the Microsoft Entra Provisioning Agent does not chase [referrals](/windows/win32/ad/referrals). 
+By default, the Microsoft Entra provisioning agent does not chase [referrals](/windows/win32/ad/referrals). 
 You may want to enable referral chasing, to support certain HR inbound provisioning scenarios such as: 
 * Checking uniqueness of UPN across multiple domains
 * Resolving cross-domain manager references
 
 Use the following steps to turn on referral chasing:
 
-1. Log on as Administrator on the Windows server running the Microsoft Entra Provisioning Agent.
+1. Log on as Administrator on the Windows server running the Microsoft Entra provisioning agent.
 1. Use the *Run* menu item to open the registry editor (regedit.exe) 
 1. Locate the key folder **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Azure AD Connect Agents\Azure AD Connect Provisioning Agent**
 1. Right-click and select "New -> String Value"

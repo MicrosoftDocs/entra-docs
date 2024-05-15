@@ -131,6 +131,8 @@
           href: quickstart-single-page-app-angular-sign-in.md
         - name: JavaScript
           href: quickstart-single-page-app-javascript-sign-in.md
+        - name: Blazor WebAssembly
+          href: quickstart-single-page-app-blazor-wasm-sign-in.md
     - name: Tutorials
       items:
         - name: React
@@ -147,8 +149,6 @@
           href: tutorial-v2-angular-auth-code.md
         - name: JavaScript
           href: tutorial-v2-javascript-auth-code.md
-        - name: Blazor WebAssembly
-          href: tutorial-blazor-webassembly.md
     - name: Samples
       displayName: code samples, example code, code snippets
       href: sample-v2-code.md#single-page-applications
@@ -156,8 +156,6 @@
       items:
         - name: SPA that signs in users and calls web API
           items:
-            - name: Overview
-              href: scenario-spa-overview.md
             - name: App registration
               href: scenario-spa-app-registration.md
             - name: Code configuration
@@ -168,8 +166,6 @@
               href: scenario-spa-acquire-token.md
             - name: Call a web API
               href: scenario-spa-call-api.md
-            - name: Move to production
-              href: scenario-spa-production.md
 - name: Web app
   items:
     - name: Web app authentication
@@ -179,16 +175,18 @@
         - name: ASP.NET 
           href: quickstart-web-app-aspnet-sign-in.md
         - name: ASP.NET Core
-          href: quickstart-web-app-aspnet-core-sign-in.md
+          href: quickstart-web-app-dotnet-core-sign-in.md
         - name: Node.js - MSAL
           href: quickstart-web-app-nodejs-msal-sign-in.md
         - name: Java
           href: quickstart-web-app-java-sign-in.md
         - name: Python
-          href: quickstart-web-app-python-sign-in.md
+          items:
+            - name: Flask
+              href: quickstart-web-app-python-flask.md
     - name: Tutorials
       items:
-        - name: ASP.NET
+        - name: ASP.NET Core
           items:
           - name: Register your app
             href: tutorial-web-app-dotnet-register-app.md
@@ -198,6 +196,16 @@
             href: tutorial-web-app-dotnet-sign-in-users.md
           - name: Get user data from web API
             href: tutorial-web-app-dotnet-call-api.md
+        - name: Python Flask
+          items:
+          - name: Register your app
+            href: tutorial-web-app-python-register-app.md
+          - name: Prepare your app
+            href: tutorial-web-app-python-prepare-app.md
+          - name: Sign in users
+            href: tutorial-web-app-python-sign-in-users.md
+          - name: Get user data from web API
+            href: tutorial-web-app-python-call-api.md
         - name: Node.js
           href: tutorial-v2-nodejs-webapp-msal.md
         - name: Spring
@@ -223,20 +231,14 @@
       items:
         - name: Web app that signs in users
           items:
-            - name: Overview
-              href: scenario-web-app-sign-user-overview.md
             - name: App registration
               href: scenario-web-app-sign-user-app-registration.md
             - name: Code configuration
               href: scenario-web-app-sign-user-app-configuration.md
             - name: Sign-in and sign-out
               href: scenario-web-app-sign-user-sign-in.md
-            - name: Move to production
-              href: scenario-web-app-sign-user-production.md
         - name: Web app that calls an API
           items:
-            - name: Overview
-              href: scenario-web-app-call-api-overview.md
             - name: App registration
               href: scenario-web-app-call-api-app-registration.md
             - name: Code configuration
@@ -247,8 +249,6 @@
               href: scenario-web-app-call-api-acquire-token.md
             - name: Call a web API
               href: scenario-web-app-call-api-call-api.md
-            - name: Move to production
-              href: scenario-web-app-call-api-production.md
         - name: Deploy and setup App Service auth in a pipeline
           href: deploy-web-app-authentication-pipeline.md
 - name: Web API
@@ -263,39 +263,31 @@
           href: quickstart-web-api-aspnet-core-protect-api.md
     - name: Tutorials
       items:
-        - name: ASP.NET
+        - name: ASP.NET Core
           items: 
-          - name: 1 - Register the API
-            href: web-api-tutorial-01-register-app.md
-          - name: 2 - Create and configure project 
-            href: web-api-tutorial-02-prepare-api.md
-          - name: 3 - Protect API endpoint
-            href: web-api-tutorial-03-protect-endpoint.md
+          - name: Register the API
+            href: tutorial-web-api-dotnet-register-app.md
+          - name: Create and configure project 
+            href: tutorial-web-api-dotnet-prepare-app.md
+          - name: Protect API endpoint
+            href: tutorial-web-api-dotnet-protect-endpoint.md
     - name: Samples
       displayName: code samples, example code, code snippets
       href: sample-v2-code.md#web-api
     - name: How-to
       items:
-        - name: Call a Web API with Postman
-          href: howto-call-a-web-api-with-postman.md
         - name: Call a Web API with cURL
           href: howto-call-a-web-api-with-curl.md
         - name: Protected web API
           items:
-            - name: Overview
-              href: scenario-protected-web-api-overview.md
             - name: App registration
               href: scenario-protected-web-api-app-registration.md
             - name: Code configuration
               href: scenario-protected-web-api-app-configuration.md
             - name: Verification of scopes or app roles
               href: scenario-protected-web-api-verification-scope-app-roles.md
-            - name: Move to production
-              href: scenario-protected-web-api-production.md
         - name: Web API that calls an API
           items:
-            - name: Overview
-              href: scenario-web-api-call-api-overview.md
             - name: App registration
               href: scenario-web-api-call-api-app-registration.md
             - name: Code configuration
@@ -304,8 +296,6 @@
               href: scenario-web-api-call-api-acquire-token.md
             - name: Call a web API
               href: scenario-web-api-call-api-call-api.md
-            - name: Move to production
-              href: scenario-web-api-call-api-production.md
 - name: Desktop
   items:
     - name: Desktop app authentication
@@ -426,8 +416,8 @@
       href: index-service.yml
     - name: Quickstart
       items:
-        - name: .NET Core
-          href: quickstart-console-app-netcore-acquire-token.md
+        - name: .NET
+          href: quickstart-daemon-dotnet-acquire-token.md
         - name: Java
           href: quickstart-daemon-app-java-acquire-token.md
         - name: Node.js
@@ -436,7 +426,7 @@
           href: quickstart-daemon-app-python-acquire-token.md
     - name: Tutorials
       items:
-        - name: ASP.NET
+        - name: .NET
           href: tutorial-v2-aspnet-daemon-web-app.md
         - name: Node.js
           href: tutorial-v2-nodejs-console.md
@@ -504,20 +494,24 @@
               href: optional-claims.md
             - name: Configure role claim
               href: enterprise-app-role-management.md
-            - name: Customize JWT claims
+            - name: Customize JWT claims using admin center
               href: jwt-claims-customization.md
-            - name: Customize SAML claims
+            - name: Customize SAML claims using admin center
               href: saml-claims-customization.md
+            - name: Customize claims using PowerShell
+              href: claims-customization-powershell.md
             - name: Set an access token lifetime policy
-              href: configure-token-lifetimes.md    
+              href: configure-token-lifetimes.yml    
             - name: Configure app multi-instancing
               href: configure-app-multi-instancing.md
         - name: Custom claims provider
           items:
             - name: Token issuance start event
               items:
-                - name: Create and register a custom claims provider API
-                  href: custom-extension-get-started.md
+                - name: Create a token issuance start event in a REST API
+                  href: custom-extension-tokenissuancestart-setup.md
+                - name: Configure a custom claims provider token issuance event
+                  href: custom-extension-tokenissuancestart-configuration.md
                 - name: Configure a SAML app to call a custom claims provider
                   href: custom-extension-configure-saml-app.md
                 - name: Troubleshoot your custom claims provider API
@@ -682,41 +676,7 @@
             - name: Migrate from ADAL to MSAL Android
               href: migrate-android-adal-msal.md
         - name: MSAL iOS and macOS
-          items:
-            - name: Library initialization
-              items:
-                - name: MSAL for iOS and macOS differences
-                  href: msal-differences-ios-macos.md
-                - name: Redirect URI configuration
-                  href: redirect-uris-ios.md
-                - name: Customize browsers and WebViews
-                  href: customize-webviews.md
-                - name: Shared device mode for iOS devices
-                  displayName: firstline worker, frontline worker, flw
-                  href: msal-ios-shared-devices.md
-                - name: Integrate with Azure AD B2C
-                  href: config-authority.md#b2c
-            - name: Authentication and single sign-on (SSO)
-              items:
-                - name: Configure keychain
-                  href: howto-v2-keychain-objc.md
-                - name: SSO between MSAL apps
-                  href: single-sign-on-macos-ios.md
-                - name: SSO between ADAL and MSAL apps
-                  href: sso-between-adal-msal-apps-macos-ios.md
-                - name: Request custom claims
-                  href: request-custom-claims.md
-            - name: Logging and error handling
-              items:
-                - name: Logging in MSAL for iOS/macOS
-                  href: msal-logging-ios.md
-                - name: Handle errors and exceptions in MSAL for iOS/macOS
-                  displayName: handling, catch
-                  href: msal-error-handling-ios.md
-                - name: Troubleshoot SSL issues (MSAL iOS/macOS)
-                  href: ssl-issues.md
-            - name: Migrate to MSAL.iOS / macOS
-              href: migrate-objc-adal-msal.md
+          href: /entra/msal/objc/
         - name: MSAL Java
           href: /entra/msal/java/
         - name: MSAL.js
@@ -760,10 +720,8 @@
           displayName: ASP.NET Core, Xamarin
           href: /entra/msal/dotnet
         - name: Microsoft.Identity.Web (MSAL wrapper)
-          displayName: auth, library, .NET Core, msal
+          displayName: auth, library, .NET, msal
           href: /entra/msal/dotnet/microsoft-identity-web/
-        - name: Application configuration
-          href: msal-client-application-configuration.md
         - name: MSAL Node
           displayName: Node.js
           items:
@@ -847,6 +805,10 @@
       href: /graph/api/resources/azure-ad-overview
     - name: Custom claims provider reference
       href: custom-claims-provider-reference.md
+    - name: MSA Server side API reference 
+      href: reference-msa-server-side-api.md
+    - name: Microsoft Entra ID WAM API reference
+      href: reference-entra-id-wam-api.md
     - name: Attribute collection start custom extension reference
       href: custom-extension-OnAttributeCollectionStart-reference.md
     - name: Attribute collection submit custom extension reference

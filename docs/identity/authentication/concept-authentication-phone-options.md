@@ -2,17 +2,14 @@
 title: Phone authentication methods
 description: Learn about using phone authentication methods in Microsoft Entra ID to help improve and secure sign-in events
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 11/14/2023
+ms.date: 04/01/2024
 
 ms.author: justinha
 author: justinha
 manager: amycolannino
-
-ms.collection: M365-identity-device-management
 
 # Customer intent: As an identity administrator, I want to understand how to use phone authentication methods in Microsoft Entra ID to improve and secure user sign-in events.
 ---
@@ -52,7 +49,7 @@ Android users can enable RCS on their devices. RCS offers encryption and other i
 
 :::image type="content" source="media/concept-authentication-methods/brand.png" alt-text="Screenshot of Microsoft branding in RCS messages.":::
 
-Some users with phone numbers that have country codes belonging to India or Indonesia may receive their verification codes in WhatsApp. Like RCS, these messages are similar to SMS, but have more Microsoft branding and a verified checkmark. Only users that have WhatsApp receive verification codes through this channel. To check if a user has WhatsApp, we silently try to deliver them a message in the app by using the phone number they registered for text message verification. If users don't have any internet connectivity or they uninstall WhatsApp, they receive SMS verification codes. The phone number associated with Microsoft's WhatsApp Business Agent is: *+1 (217) 302 1989*.
+Some users with phone numbers that have country codes belonging to Indonesia may receive their verification codes in WhatsApp. Like RCS, these messages are similar to SMS, but have more Microsoft branding and a verified checkmark. Only users that have WhatsApp receive verification codes through this channel. To check if a user has WhatsApp, we silently try to deliver them a message in the app by using the phone number they registered for text message verification. If users don't have any internet connectivity or they uninstall WhatsApp, they receive SMS verification codes. The phone number associated with Microsoft's WhatsApp Business Agent is: *+1 (217) 302 1989*.
 
 :::image type="content" border="true" source="media/concept-authentication-methods/code.png" alt-text="Screenshot of confirmation.":::
 

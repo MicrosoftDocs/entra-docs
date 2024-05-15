@@ -7,9 +7,8 @@ summary: Microsoft Entra ID provides user management services so that you can as
 metadata:
   title: Microsoft Entra users, groups, licenses, and domains documentation
   description: Learn how to use groups, domain names, and licenses to manage user authentication in your Microsoft Entra organization.
-  services: active-directory
-  ms.service: active-directory
-  ms.subservice: enterprise-users
+  ms.service: entra-id
+  ms.subservice: users
   manager: amycolannino
   ms.topic: landing-page
   ms.date: 04/18/2021
@@ -46,7 +45,7 @@ landingContent:
           - text: Set expiration policy for groups
             url: groups-quickstart-expiration.md
           - text: Assign licenses to users
-            url: ~/fundamentals/license-users-groups.md?context=/azure/active-directory/enterprise-users/context/ugr-context
+            url: ~/fundamentals/license-users-groups.yml?context=/azure/active-directory/enterprise-users/context/ugr-context
 
   # Card
   - title: Manage Microsoft Entra domain names
@@ -54,7 +53,7 @@ landingContent:
       - linkListType: how-to-guide
         links:
           - text: Add your custom domain name
-            url: ~/fundamentals/add-custom-domain.md?context=/azure/active-directory/enterprise-users/context/ugr-context
+            url: ~/fundamentals/add-custom-domain.yml?context=/azure/active-directory/enterprise-users/context/ugr-context
           - text: Managing custom domain names
             url: domains-manage.md
 
@@ -75,6 +74,6 @@ landingContent:
       - linkListType: how-to-guide
         links:
           - text: Add a custom domain name
-            url: ~/fundamentals/add-custom-domain.md?context=/azure/active-directory/enterprise-users/context/ugr-context
+            url: ~/fundamentals/add-custom-domain.yml?context=/azure/active-directory/enterprise-users/context/ugr-context
           - text: Managing custom domain names
             url: domains-manage.md

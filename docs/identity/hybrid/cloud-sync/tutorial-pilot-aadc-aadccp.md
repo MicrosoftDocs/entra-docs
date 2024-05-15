@@ -1,16 +1,15 @@
 ---
 title: Tutorial - Migrate to Microsoft Entra Cloud Sync for an existing synced AD forest
 description: Learn how to pilot cloud sync for a test Active Directory forest that is already synced using Microsoft Entra Connect Sync.
-services: active-directory
+
 author: billmath
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id
 ms.topic: tutorial
-ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.date: 04/26/2024
+ms.subservice: hybrid-cloud-sync
 ms.author: billmath
-ms.collection: M365-identity-device-management
+
 ---
 
 
@@ -145,7 +144,7 @@ Same steps need to be followed for all object types (user, group and contact).
 
 <a name='install-the-azure-ad-connect-provisioning-agent'></a>
 
-## Install the Microsoft Entra Provisioning Agent
+## Install the Microsoft Entra provisioning agent
 
 If you're using the  [Basic AD and Azure environment](tutorial-basic-ad-azure.md) tutorial, it would be CP1. To install the agent, follow these steps: 
 
@@ -169,8 +168,6 @@ Use the following steps to configure provisioning:
  :::image type="content" source="media/how-to-configure/new-ux-configure-2.png" alt-text="Screenshot of a new configuration." lightbox="media/how-to-configure/new-ux-configure-2.png":::
 
  5.  The **Get started** screen will open.  
-
-  :::image type="content" source="media/how-to-configure/new-ux-configure-3.png" alt-text="Screenshot of the getting started screen." lightbox="media/how-to-configure/new-ux-configure-3.png":::
 
  6.  On the **Get started** screen, click either **Add scoping filters** next to the **Add scoping filters** icon or on the click **Scoping filters** on the left under **Manage**.
 

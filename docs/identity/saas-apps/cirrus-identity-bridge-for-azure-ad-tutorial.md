@@ -5,13 +5,15 @@ description: Learn how to configure single sign-on between Microsoft Entra ID an
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: CelesteDG
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: jeedes
 
+
+# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Cirrus Identity Bridge for Microsoft Entra ID so that I can control who has access to Cirrus Identity Bridge for Microsoft Entra ID, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
 # Tutorial: Microsoft Entra single sign-on (SSO) integration with Cirrus Identity Bridge for Microsoft Entra ID
@@ -51,7 +53,7 @@ To use the Microsoft Graph API integration, you must grant the Cirrus Identity B
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 1. Edit the URL `https://login.microsoftonline.com/$TENANT_ID/adminconsent?client_id=ea71bc49-6159-422d-84d5-6c29d7287974&state=12345&redirect_uri=https://admin.cirrusidentity.com/azure-registration` replacing **$TENANT_ID** with the value for your Microsoft Entra tenant.
-1. Paste the URL into the browser where you are signed in as a Global Administrator.
+1. Paste the URL into the browser where you are signed in.
 1. You will be asked to consent to grant access.
 1. When successful, there should be a new application called Cirrus Bridge API. 
 1. Advise the Cirrus Identity contract representative you are working with that you have successfully granted API access to the Cirrus Identity Bridge for Microsoft Entra ID.
@@ -95,7 +97,7 @@ To configure and test Microsoft Entra SSO with Cirrus Identity Bridge for Micros
     1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
     1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Cirrus Identity Bridge for Microsoft Entra SSO](#configure-cirrus-identity-bridge-for-azure-ad-sso)** - to configure the single sign-on settings on application side.
-    1. **[Setup Cirrus Identity Bridge for Microsoft Entra ID testing](#setup-cirrus-identity-bridge-for-azure-ad-testing)** - to have a counterpart of B.Simon in Cirrus Identity Bridge for Microsoft Entra ID that is linked to the Microsoft Entra representation of user.
+    1. **[Setup Cirrus Identity Bridge for Microsoft Entra testing](#setup-cirrus-identity-bridge-for-azure-ad-testing)** - to have a counterpart of B.Simon in Cirrus Identity Bridge for Microsoft Entra ID that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -191,9 +193,11 @@ More documentation on configuring the Cirrus Bridge is available [from Cirrus Id
 
 <a name='setup-cirrus-identity-bridge-for-azure-ad-testing'></a>
 
-### Setup Cirrus Identity Bridge for Microsoft Entra ID testing
+<a name='setup-cirrus-identity-bridge-for-microsoft-entra-id-testing'></a>
 
-In this section, you verify a user called Britta Simon can be used for testing. The [Cirrus Identity Bridge for Microsoft Entra ID support team](https://www.cirrusidentity.com/resources/service-desk) will provide a testing URL to verify Britta Simon is ready to use with the Cirrus Identity Bridge for Microsoft Entra platform. The test user Britta Simon will need to also be added to any applications using the Cirrus Identity Bridge for Microsoft Entra ID as a method to authenticate (for example, applications in multilateral federation metadata). 
+### Setup Cirrus Identity Bridge for Microsoft Entra testing
+
+In this section, you verify a user called Britta Simon can be used for testing. The [Cirrus Identity Bridge for Microsoft Entra support team](https://www.cirrusidentity.com/resources/service-desk) will provide a testing URL to verify Britta Simon is ready to use with the Cirrus Identity Bridge for Microsoft Entra platform. The test user Britta Simon will need to also be added to any applications using the Cirrus Identity Bridge for Microsoft Entra ID as a method to authenticate (for example, applications in multilateral federation metadata). 
 
 ## Test SSO 
 

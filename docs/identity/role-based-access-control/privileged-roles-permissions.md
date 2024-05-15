@@ -1,14 +1,13 @@
 ---
 title: Privileged roles and permissions in Microsoft Entra ID (preview) - Microsoft Entra ID
 description: Privileged roles and permissions in Microsoft Entra ID.
-services: active-directory
+
 author: rolyon
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: roles
+ms.service: entra-id
+ms.subservice: role-based-access-control
 ms.topic: conceptual
-ms.date: 09/14/2023
+ms.date: 01/16/2024
 ms.author: rolyon
 ms.custom: it-pro
 ---
@@ -16,7 +15,7 @@ ms.custom: it-pro
 # Privileged roles and permissions in Microsoft Entra ID (preview)
 
 > [!IMPORTANT]
-> Privileged roles and permissions are currently in PREVIEW.
+> The label for privileged roles and permissions is currently in PREVIEW.
 > See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
 
 Microsoft Entra ID has roles and permissions that are identified as privileged. These roles and permissions can be used to delegate management of directory resources to other users, modify credentials, authentication or authorization policies, or access restricted data. Privileged role assignments can lead to elevation of privilege if not used in a secure and intended manner. This article describes privileged roles and permissions and best practices for how to use.
@@ -441,7 +440,7 @@ For example:
 
 ## Who can reset passwords
 
-In the following table, the columns list the roles that can reset passwords and invalidate refresh tokens. The rows list the roles for which their password can be reset.
+In the following table, the columns list the roles that can reset passwords and invalidate refresh tokens. The rows list the roles for which their password can be reset. For example, a Password Administrator can reset the password for Directory Readers, Guest Inviter, Password Administrator, and users with no administrator role. If a user is assigned any other role, the Password Administrator cannot reset their password.
 
 The following table is for roles assigned at the scope of a tenant. For roles assigned at the scope of an administrative unit, [further restrictions apply](admin-units-assign-roles.md#roles-that-can-be-assigned-with-administrative-unit-scope).
 

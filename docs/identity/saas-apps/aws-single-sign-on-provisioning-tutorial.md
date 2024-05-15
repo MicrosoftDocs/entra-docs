@@ -8,13 +8,15 @@ writer: twimmers
 manager: jeedes
 
 ms.assetid: 54a9f704-7877-4ade-81af-b8d3f7fb9255
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.tgt_pltfrm: na
 ms.topic: tutorial
-ms.date: 11/28/2023
+ms.date: 02/23/2024
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to AWS IAM Identity Center so that I can streamline the user management process and ensure that users have the appropriate access to AWS IAM Identity Center.
 ---
 
 # Tutorial: Configure AWS IAM Identity Center for automatic user provisioning
@@ -35,7 +37,7 @@ This tutorial describes the steps you need to perform in both AWS IAM Identity C
 The scenario outlined in this tutorial assumes that you already have the following prerequisites:
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md) 
-* A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (for example, Application Administrator, Cloud Application administrator, Application Owner, or Global Administrator). 
+* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications). 
 * A SAML connection from your Microsoft Entra account to AWS IAM Identity Center, as described in Tutorial
 
 ## Step 1: Plan your provisioning deployment
@@ -173,7 +175,7 @@ Once you configure provisioning, use the following resources to monitor your dep
 2. Check the [progress bar](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md) to see the status of the provisioning cycle and how close it is to completion
 3. If the provisioning configuration seems to be in an unhealthy state, the application goes into quarantine. Learn more about quarantine states [here](~/identity/app-provisioning/application-provisioning-quarantine-status.md).
 
-## Just-in-time (JIT) application access with PIM for groups (preview)
+## Just-in-time (JIT) application access with PIM for groups 
 With PIM for Groups, you can provide just-in-time access to groups in Amazon Web Services and reduce the number of users that have permanent access to privileged groups in AWS. 
 
 **Configure your enterprise application for SSO and provisioning**
@@ -194,9 +196,16 @@ With PIM for Groups, you can provide just-in-time access to groups in Amazon Web
 Now any end user that was made eligible for the group in PIM can get JIT access to the group in AWS by [activating their group membership](/azure/active-directory/privileged-identity-management/groups-activate-roles#activate-a-role).
 
 **Key considerations**
-* The group membership is generally updated within 2 - 10 minutes of requesting access to the group. Please wait before attempting to sign-in to AWS. If the user is unable to access the necessary group in AWS, please review the troubleshooting tips below, PIM logs, and provisioning logs to ensure that the group membership was updated successfully. Depending on how the target application has been architected, it may take additional time for the group membership to take effect in the application.
+* How long does it take to have a user provisioned to the application?: 
+  * When a user is added to a group in Microsoft Entra ID outside of activating their group membership using Microsoft Entra ID Privileged Identity Management (PIM):
+    * The group membership is provisioned in the application during the next synchronization cycle. The synchronization cycle runs every 40 minutes. 
+  * When a user activates their group membership in Microsoft Entra ID PIM: 
+    * The group membership is provisioned in 2 – 10 minutes. When there is a high rate of requests at one time, requests are throttled at a rate of five requests per 10 seconds.  
+    * For the first five users within a 10-second period activating their group membership for a specific application, group membership is provisioned in the application within 2-10 minutes. 
+    * For the sixth user and above within a 10-second period activating their group membership for a specific application, group membership is provisioned to the application in the next synchronization cycle. The synchronization cycle runs every 40 minutes. The throttling limits are per enterprise application. 
+* If the user is unable to access the necessary group in AWS, please review the troubleshooting tips below, PIM logs, and provisioning logs to ensure that the group membership was updated successfully. Depending on how the target application has been architected, it may take additional time for the group membership to take effect in the application.
+* You can create alerts for failures using [Azure Monitor](/entra/identity/app-provisioning/application-provisioning-log-analytics). 
 * Deactivation is done during the regular incremental cycle. It isn't processed immediately through on-demand provisioning.
-* The just-in-time integration between PIM and on-demand provisioning supports 5 activation requests every 10 seconds per AWS application.
   
 >[!VIDEO https://www.youtube.com/embed/aXp2CUFe7vk]
 

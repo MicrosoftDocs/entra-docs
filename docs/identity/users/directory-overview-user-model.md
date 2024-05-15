@@ -8,14 +8,11 @@ ms.author: barclayn
 ms.reviewer: krbain
 ms.date: 09/12/2022
 ms.topic: overview
-ms.service: active-directory
-ms.subservice: enterprise-users
-ms.workload: identity
-services: active-directory
-ms.custom: "it-pro;seo-update-azuread-jan"
-
-#Customer intent: As a new Microsoft Entra identity administrator, user management is at the core of my work so I need to understand the user management tools such as groups, administrator roles, and licenses to manage users.
+ms.service: entra-id
+ms.subservice: users
+ms.custom: it-pro
 ms.collection: M365-identity-device-management
+#Customer intent: As a new Microsoft Entra identity administrator, user management is at the core of my work so I need to understand the user management tools such as groups, administrator roles, and licenses to manage users.
 ---
 # What is enterprise user management?
 
@@ -36,7 +33,7 @@ You can use [dynamic groups](groups-create-rule.md) in Microsoft Entra ID to exp
 
 ## Assign licenses to groups
 
-Managing user license assignments individually is time consuming and error prone. If you [assign licenses to groups](~/fundamentals/license-users-groups.md?context=azure/active-directory/users-groups-roles/context/ugr-context) instead, you experience easier large-scale license management.
+Managing user license assignments individually is time consuming and error prone. If you [assign licenses to groups](~/fundamentals/license-users-groups.yml?context=azure/active-directory/users-groups-roles/context/ugr-context) instead, you experience easier large-scale license management.
 
 Microsoft Entra users who join a licensed group are automatically assigned the appropriate licenses. When users leave the group, Microsoft Entra ID removes their license assignments. Without Microsoft Entra groups, you'd have to write a PowerShell script or use Graph API to bulk add or remove user licenses for users joining or leaving the organization.
 
@@ -70,4 +67,5 @@ Microsoft Entra ID also gives you specific control of the data that flows betwee
 
 If you're a beginning Microsoft Entra administrator, get the basics down in [Microsoft Entra Fundamentals](~/fundamentals/index.yml).
 
-Or you can start [creating groups](~/fundamentals/how-to-manage-groups.md?context=azure/active-directory/users-groups-roles/context/ugr-context), [assigning licenses](~/fundamentals/license-users-groups.md?context=azure/active-directory/users-groups-roles/context/ugr-context), [assigning app access](~/identity/enterprise-apps/assign-user-or-group-access-portal.md?context=azure/active-directory/users-groups-roles/context/ugr-context) or [assigning administrator roles](~/identity/role-based-access-control/permissions-reference.md).
+Or you can start [creating groups](~/fundamentals/how-to-manage-groups.yml?context=azure/active-directory/users-groups-roles/context/ugr-context), [assigning licenses](~/fundamentals/license-users-groups.yml?context=azure/active-directory/users-groups-roles/context/ugr-context), [assigning app access](~/identity/enterprise-apps/assign-user-or-group-access-portal.md?context=azure/active-directory/users-groups-roles/context/ugr-context) or [assigning administrator roles](~/identity/role-based-access-control/permissions-reference.md).
+

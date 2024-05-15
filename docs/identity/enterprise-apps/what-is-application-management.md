@@ -3,8 +3,8 @@ title: What is application management?
 description: An overview of managing the lifecycle of an application in Microsoft Entra ID.
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: overview
 ms.date: 12/19/2023
 ms.author: jomondi
@@ -47,7 +47,7 @@ If you want to make your application available through the gallery, you can [sub
 
 ### On-premises applications
 
-If you want to continue using an on-premises application, but take advantage of what Microsoft Entra ID offers, connect it with Microsoft Entra ID using [Microsoft Entra application proxy](~/identity/app-proxy/application-proxy.md). Application Proxy can be implemented when you want to publish on-premises applications externally. Remote users who need access to internal applications can then access them in a secure manner.
+If you want to continue using an on-premises application, but take advantage of what Microsoft Entra ID offers, connect it with Microsoft Entra ID using [Microsoft Entra application proxy](/entra/identity/app-proxy). Application Proxy can be implemented when you want to publish on-premises applications externally. Remote users who need access to internal applications can then access them in a secure manner.
 
 ## Manage access
 

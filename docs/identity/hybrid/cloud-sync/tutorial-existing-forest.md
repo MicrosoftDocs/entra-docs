@@ -1,16 +1,15 @@
 ---
 title: Tutorial - Integrate an existing forest and a new forest with a single Microsoft Entra tenant using Microsoft Entra Cloud Sync.
 description: Learn how to add cloud sync to an existing hybrid identity environment.
-services: active-directory
+
 author: billmath
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id
 ms.topic: tutorial
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-cloud-sync
 ms.author: billmath
-ms.collection: M365-identity-device-management
+
 ---
 
 # Integrate an existing forest and a new forest with a single Microsoft Entra tenant
@@ -29,7 +28,7 @@ In this scenario, there's an existing forest synced using Microsoft Entra Connec
 ### In the Microsoft Entra admin center
 
 1. Create a cloud-only Global Administrator account on your Microsoft Entra tenant. This way, you can manage the configuration of your tenant should your on-premises services fail or become unavailable. Learn about [adding a cloud-only Global Administrator account](~/fundamentals/add-users.md). Completing this step is critical to ensure that you don't get locked out of your tenant.
-2. Add one or more [custom domain names](~/fundamentals/add-custom-domain.md) to your Microsoft Entra tenant. Your users can sign in with one of these domain names.
+2. Add one or more [custom domain names](~/fundamentals/add-custom-domain.yml) to your Microsoft Entra tenant. Your users can sign in with one of these domain names.
 
 ### In your on-premises environment
 
@@ -51,7 +50,7 @@ In this scenario, there's an existing forest synced using Microsoft Entra Connec
 
 <a name='install-the-azure-ad-connect-provisioning-agent'></a>
 
-## Install the Microsoft Entra Provisioning Agent
+## Install the Microsoft Entra provisioning agent
 
 If you're using the  [Basic AD and Azure environment](tutorial-basic-ad-azure.md) tutorial, it would be DC1. To install the agent, follow these steps: 
 

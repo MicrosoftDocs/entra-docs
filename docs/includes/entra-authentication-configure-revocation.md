@@ -1,9 +1,9 @@
 ---
 author: justinha
-ms.service: active-directory
+ms.service: entra-id
 ms.custom: has-azure-ad-ps-ref
 ms.topic: include
-ms.date: 02/08/2022
+ms.date: 01/23/2024
 ms.author: justinha
 ---
 
@@ -13,15 +13,16 @@ If a more instant revocation is required (for example, if a user loses a device)
 
 To ensure that the revocation persists, you must set the **Effective Date** of the CRL to a date after the value set by **StsRefreshTokenValidFrom** and ensure the certificate in question is in the CRL.
 
+[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
+
 The following steps outline the process for updating and invalidating the authorization token by setting the **StsRefreshTokenValidFrom** field.
 
-1. Connect with admin credentials to the MSOL service:
+1. Connect to PowerShell:
 
    ```powershell
-           $msolcred = get-credential
-            connect-msolservice -credential $msolcred
+   Connect-MgGraph
    ```
-
+   
 2. Retrieve the current StsRefreshTokensValidFrom value for a user:
 
    ```powershell

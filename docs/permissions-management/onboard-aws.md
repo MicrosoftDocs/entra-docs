@@ -1,14 +1,12 @@
 ---
 title:  Onboard an Amazon Web Services (AWS) account to Permissions Management
 description: How to onboard an Amazon Web Services (AWS) account to Permissions Management.
-services: active-directory
 author: jenniferf-skc
 manager: amycolannino
-ms.service: active-directory 
-ms.subservice: ciem
-ms.workload: identity
+ms.service: entra-permissions-management
+
 ms.topic: how-to
-ms.date: 12/20/2023
+ms.date: 05/13/2024
 ms.author: jfields
 ---
 
@@ -17,7 +15,7 @@ ms.author: jfields
 This article describes how to onboard an Amazon Web Services (AWS) account in Microsoft Entra Permissions Management.
 
 > [!NOTE]
-> You must have Global Administrator permissions to perform the tasks in this article.
+> You must be a [Permissions Management Administrator](../identity/role-based-access-control/delegate-by-task.md#permissions-management) to perform the tasks in this article.
 
 ## Explanation
 
@@ -206,7 +204,5 @@ This option detects all AWS accounts that are accessible through OIDC role acces
 
 ## Next steps
 
-- For information on how to onboard a Microsoft Azure subscription, see [Onboard a Microsoft Azure subscription](onboard-azure.md).
-- For information on how to onboard a Google Cloud Platform (GCP) project, see [Onboard a Google Cloud Platform (GCP) project](onboard-gcp.md).
 - For information on how to enable or disable the controller after onboarding is complete, see [Enable or disable the controller](onboard-enable-controller-after-onboarding.md).
 - For information on how to add an account/subscription/project after onboarding is complete, see [Add an account/subscription/project after onboarding is complete](onboard-add-account-after-onboarding.md).

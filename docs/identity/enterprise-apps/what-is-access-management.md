@@ -4,10 +4,10 @@ description: Describes how Microsoft Entra ID enables organizations to specify t
 
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 07/18/2023
 ms.author: jomondi
 ms.reviewer: ergreenl
@@ -36,10 +36,10 @@ Microsoft Entra application assignment focuses on two primary assignment modes:
 
 * **Individual assignment** An IT admin with directory Global Administrator permissions can select individual user accounts and grant them access to the application.
 
-* **Group-based assignment (requires Microsoft Entra ID P1 or P2)** An IT admin with directory Global Administrator permissions can assign a group to the application. Specific users' access is determined by whether they are members of the group at the time they try to access the application. In other words, an administrator can effectively create an assignment rule stating "any current member of the assigned group has access to the application". Using this assignment option, administrators can benefit from any of Microsoft Entra group management options, including [attribute-based dynamic groups](~/fundamentals/how-to-manage-groups.md), external system groups (for example, on-premises Active Directory or Workday), or Administrator-managed or self-service-managed groups. A single group can be easily assigned to multiple apps, making sure that applications with assignment affinity can share assignment rules, reducing the overall management complexity.
+* **Group-based assignment (requires Microsoft Entra ID P1 or P2)** An IT admin with directory Global Administrator permissions can assign a group to the application. Specific users' access is determined by whether they are members of the group at the time they try to access the application. In other words, an administrator can effectively create an assignment rule stating "any current member of the assigned group has access to the application". Using this assignment option, administrators can benefit from any of Microsoft Entra group management options, including [attribute-based dynamic groups](~/fundamentals/how-to-manage-groups.yml), external system groups (for example, on-premises Active Directory or Workday), or Administrator-managed or self-service-managed groups. A single group can be easily assigned to multiple apps, making sure that applications with assignment affinity can share assignment rules, reducing the overall management complexity.
 
   >[!NOTE]
-  >[Nested group](~/fundamentals/how-to-manage-groups.md) memberships aren't supported for group-based assignment to applications at this time.
+  >[Nested group](~/fundamentals/how-to-manage-groups.yml) memberships aren't supported for group-based assignment to applications at this time.
 
 Using these two assignment modes, administrators can achieve any desirable assignment management approach.
 
@@ -81,14 +81,14 @@ Consider an application like Salesforce. In many organizations, Salesforce is pr
 
 With Microsoft Entra ID, applications like Salesforce can be pre-configured for single sign-on (SSO) and automated provisioning. Once the application is configured, an Administrator can take the one-time action to create and assign the appropriate groups. In this example, an administrator could execute the following assignments:
 
-* [Dynamic groups](~/fundamentals/how-to-manage-groups.md) can be defined to automatically represent all members of the marketing and sales teams using attributes like department or role:
+* [Dynamic groups](~/fundamentals/how-to-manage-groups.yml) can be defined to automatically represent all members of the marketing and sales teams using attributes like department or role:
   
   * All members of marketing groups would be assigned to the "marketing" role in Salesforce
   * All members of sales team groups would be assigned to the "sales" role in Salesforce. A further refinement could use multiple groups that represent regional sales teams assigned to different Salesforce roles.
 
 * To enable the exception mechanism, a self-service group could be created for each role. For example, the "Salesforce marketing exception" group can be created as a self-service group. The group can be assigned to the Salesforce marketing role and the marketing leadership team can be made owner. Members of the marketing leadership team could add or remove users, set a join policy, or even approve or deny individual users' requests to join. This mechanism is supported through an information worker appropriate experience that does not require specialized training for owners or members.
 
-In this case, all assigned users would be automatically provisioned to Salesforce. As they are added to different groups their role assignment would be updated in Salesforce. Users can discover and access Salesforce through My Apps, Office web clients, or by navigating to their organizational Salesforce sign in page. Administrators can easily view usage and assignment status using Microsoft Entra reporting.
+In this case, all assigned users would be automatically provisioned to Salesforce. As they are added to different groups their role assignment would be updated in Salesforce. Users can discover and access Salesforce through My Apps, Office web clients, or by navigating to their organizational Salesforce sign in page. Administrators can easily view usage and assignment status using Microsoft Entra ID reporting.
 
 Administrators can employ [Microsoft Entra Conditional Access](~/identity/conditional-access/concept-conditional-access-users-groups.md) to set access policies for specific roles. These policies can include whether access is permitted outside the corporate environment and even multifactor authentication or device requirements to achieve access in various cases.
 

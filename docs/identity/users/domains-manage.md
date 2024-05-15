@@ -1,14 +1,12 @@
 ---
 title: Add and verify custom domain names
 description: Management concepts and how-tos for managing a domain name in Microsoft Entra ID
-services: active-directory
-documentationcenter: ''
+
 author: barclayn
 manager: amycolannino
 
-ms.service: active-directory
-ms.subservice: enterprise-users
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: users
 ms.topic: how-to
 ms.date: 03/31/2023
 ms.author: barclayn
@@ -16,7 +14,6 @@ ms.reviewer: sumitp
 
 ms.custom: it-pro
 
-ms.collection: M365-identity-device-management
 ---
 # Managing custom domain names in your Microsoft Entra ID
 
@@ -88,6 +85,7 @@ The following actions are performed as part of the **ForceDelete** operation:
 * Renames the UPN, EmailAddress, and ProxyAddress of users with references to the custom domain name to the initial default domain name.
 * Renames the EmailAddress of groups with references to the custom domain name to the initial default domain name.
 * Renames the identifierUris of applications with references to the custom domain name to the initial default domain name.
+* Disables user accounts impacted by the ForceDelete option in the Azure/Microsoft Entra admin center and optionally when using the Graph API.
 
 An error is returned when:
 
@@ -104,7 +102,7 @@ Keep your domain names current with your Registrar, and verify TXT records for a
 * If you can't reactivate or regain control of your domain name immediately, you should delete it from your Microsoft Entra tenant. Don't read/re-verify until you are able to resolve ownership of the domain name and verify the full TXT record for correctness.
 
 >[!NOTE]
-> Microsoft will not allow a domain name to be verified with more than Microsoft Entra tenant. Once you delete a domain name from your tenant, you will not be able to re-add/re-verify it with your Microsoft Entra tenant if it is subsequently added and verified with another Microsoft Entra tenant.
+> Microsoft will not allow a domain name to be verified with more than one Microsoft Entra tenant. Once you delete a domain name from your tenant, you will not be able to re-add/re-verify it with your Microsoft Entra tenant if it is subsequently added and verified with another Microsoft Entra tenant.
 
 ## Frequently asked questions
 
@@ -130,10 +128,10 @@ If you find that any of the conditions haven’t been met, manually clean up the
 Most management tasks for domain names in Microsoft Entra ID can also be completed using Microsoft PowerShell, or programmatically using the Microsoft Graph API.
 
 * [Using PowerShell to manage domain names in Microsoft Entra ID](/powershell/module/azuread/?preserve-view=true#domains)
-* [Domain resource type](/graph/api/resources/domain)
+* [`Domain` resource type](/graph/api/resources/domain)
 
 ## Next steps
 
-* [Add custom domain names](~/fundamentals/add-custom-domain.md?context=azure/active-directory/users-groups-roles/context/ugr-context)
+* [Add custom domain names](~/fundamentals/add-custom-domain.yml?context=azure/active-directory/users-groups-roles/context/ugr-context)
 * [Remove Exchange mail-enabled security groups in Exchange Admin Center on a custom domain name in Microsoft Entra ID](/exchange/recipients/mail-enabled-security-groups?preserve-view=true#Remove%20mail-enabled%20security%20groups)
 * [ForceDelete a custom domain name with Microsoft Graph API](/graph/api/domain-forcedelete)

@@ -1,24 +1,16 @@
 ---
 title: Manage connected organizations in entitlement management
 description: Learn how to allow people outside your organization to request access packages so that you can collaborate on projects.
-services: active-directory
-documentationCenter: ''
 author: owinfreyatl
 manager: amycolannino
 editor: markwahl-msft
-ms.service: active-directory
-ms.workload: identity
-ms.tgt_pltfrm: na
+ms.service: entra-id-governance
+ms.subservice: entitlement-management
 ms.topic: how-to
-ms.subservice: compliance
 ms.date: 05/31/2023
 ms.author: owinfrey
 ms.reviewer: mwahl
-ms.collection: M365-identity-device-management
-
-
 #Customer intent: As an administrator, I want to allow users in certain partner organizations to request access packages so that our organizations can collaborate on projects.
-
 ---
 
 # Manage connected organizations in entitlement management
@@ -54,7 +46,7 @@ In this case, you can configure two connected organizations, then one access pac
 1. In a catalog that allows external users to request, create an access package.
 1. In that access package, create an access package assignment policy for **users not yet in your directory**. In that policy, select the option **Specific connected organizations** and specify the two connected organizations. This will allow users from each organization, with an identity source that matches one of the connected organizations, to request the access package.
 1. When external users with a user principal name that has a domain of *contoso.com* request the access package, they will authenticate using email. This email domain will match the Contoso-connected organization and the user will be allowed to request the package. After they request, [how access works for external users](entitlement-management-external-users.md?#how-access-works-for-external-users) describes how the B2B user is then invited and access is assigned for the external user.
-1. In addition, external users that are using an organizational account from the Graphic Design Institute tenant would match the Graphic Design Institute-connected organization and be allowed to request the access package. And, because Graphic Design Institute uses Microsoft Entra ID, any users with a principal name that matches another [verified domain](~/fundamentals/add-custom-domain.md#verify-your-custom-domain-name) that's added to the Graphic Design Institute tenant, such as *graphicdesigninstitute.example*, would also be able to request access packages by using the same policy.
+1. In addition, external users that are using an organizational account from the Graphic Design Institute tenant would match the Graphic Design Institute-connected organization and be allowed to request the access package. And, because Graphic Design Institute uses Microsoft Entra ID, any users with a principal name that matches another [verified domain](~/fundamentals/add-custom-domain.yml#verify-your-custom-domain-name) that's added to the Graphic Design Institute tenant, such as *graphicdesigninstitute.example*, would also be able to request access packages by using the same policy.
 
 [ ![Diagram of connected organizations in example and their relationships with an assignment policy and with a tenant.](./media/entitlement-management-organization/connected-organization-example.png) ](./media/entitlement-management-organization/connected-organization-example-expanded.png#lightbox)
 
@@ -125,7 +117,7 @@ To add an external Microsoft Entra directory or domain as a connected organizati
 
 1. Select the **Sponsors** tab, and then add optional sponsors for this connected organization.
 
-    Sponsors are internal or external users already in your directory that are the point of contact for the relationship with this connected organization. Internal sponsors are member users in your directory. External sponsors are guest users from the connected organization that were previously invited and are already in your directory. Sponsors can be utilized as approvers when users in this connected organization request access to this access package. For information about how to invite a guest user to your directory, see [Add Microsoft Entra B2B collaboration users](~/external-id/add-users-administrator.md).
+    Sponsors are internal or external users already in your directory that are the point of contact for the relationship with this connected organization. Internal sponsors are member users in your directory. External sponsors are guest users from the connected organization that were previously invited and are already in your directory. Sponsors can be utilized as approvers when users in this connected organization request access to this access package. For information about how to invite a guest user to your directory, see [Add Microsoft Entra B2B collaboration users](~/external-id/add-users-administrator.yml).
 
     When you select **Add/Remove**, a pane opens in which you can choose internal or external sponsors. The pane displays an unfiltered list of users and groups in your directory.
 

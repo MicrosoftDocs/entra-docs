@@ -1,18 +1,17 @@
 ---
 title: Create custom roles to manage enterprise apps in Microsoft Entra ID
 description: Create and assign custom Microsoft Entra roles for enterprise apps access in Microsoft Entra ID
-services: active-directory
+
 author: rolyon
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: roles
+ms.service: entra-id
+ms.subservice: role-based-access-control
 ms.topic: how-to
 ms.date: 02/04/2022
 ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
-ms.collection: M365-identity-device-management
+
 ---
 
 # Create custom roles to manage enterprise apps in Microsoft Entra ID
@@ -22,7 +21,7 @@ This article explains how to create a custom role with permissions to manage ent
 ## Prerequisites
 
 - Microsoft Entra ID P1 or P2 license
-- Privileged Role Administrator or Global Administrator
+- Privileged Role Administrator
 - Microsoft Graph PowerShell SDK installed when using PowerShell
 - Admin consent when using Graph explorer for Microsoft Graph API
 
@@ -83,7 +82,7 @@ Granting the update permission is done in two steps:
 
 1. Select **Add assignment**, select the desired user, and then click **Select** to add role assignment to the user.
 
-    ![Add a assignment for the custom role to the user](./media/custom-enterprise-apps/assign-user-to-role.png)
+    ![Add an assignment for the custom role to the user](./media/custom-enterprise-apps/assign-user-to-role.png)
 
 #### Assignment tips
 
@@ -95,7 +94,7 @@ Granting the update permission is done in two steps:
 
 ## PowerShell
 
-For more detail, see [Create and assign a custom role in Microsoft Entra ID](custom-create.md) and [Assign custom roles with resource scope using PowerShell](custom-assign-powershell.md).
+For more detail, see [Create and assign a custom role in Microsoft Entra ID](custom-create.yml) and [Assign custom roles with resource scope using PowerShell](custom-assign-powershell.md).
 
 ### Create a custom role
 
@@ -137,7 +136,7 @@ $roleAssignment = New-MgRoleManagementDirectoryRoleAssignment -DirectoryScopeId 
 
 ## Microsoft Graph API
 
-Use the [Create unifiedRoleDefinition](/graph/api/rbacapplication-post-roledefinitions) API to create a custom role. For more information, see [Create and assign a custom role in Microsoft Entra ID](custom-create.md) and [Assign custom admin roles using the Microsoft Graph API](custom-assign-graph.md).
+Use the [Create unifiedRoleDefinition](/graph/api/rbacapplication-post-roledefinitions) API to create a custom role. For more information, see [Create and assign a custom role in Microsoft Entra ID](custom-create.yml) and [Assign custom admin roles using the Microsoft Graph API](custom-assign-graph.md).
 
 ```http
 POST https://graph.microsoft.com/v1.0/roleManagement/directory/roleDefinitions

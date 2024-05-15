@@ -2,8 +2,10 @@
 author: OwenRichards1
 ms.author: owenrichards
 ms.date: 10/22/2020
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+manager: CelesteDG 
+ms.topic: include
+
 ms.topic: include
 # Purpose:
 # Ingested by Microsoft identity platform articles in /articles/active-directory/develop/* that document public preview features.

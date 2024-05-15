@@ -6,10 +6,10 @@ manager: CelesteDG
 ms.author: ryanwi
 ms.custom: 
 ms.date: 01/10/2024
-ms.reviewer: xurobert
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: conceptual
+ms.reviewer:
+ms.service: identity-platform
+
+ms.topic: concept-article
 #Customer intent: As a developer integrating my app with the Microsoft identity platform, I want to learn about the publisher verification process, so that my organization can be identified as authentic by Microsoft and my app can gain increased transparency, improved branding, and smoother enterprise adoption.
 ---
 
@@ -46,7 +46,7 @@ Publisher verification for an app has the following benefits:
 
 App developers must meet a few requirements to complete the publisher verification process. Many Microsoft partners will have already satisfied these requirements.
 
-- The developer must have an Partner One ID for a valid [Microsoft Cloud Partner Program](https://partner.microsoft.com/membership) account that has completed the [verification](/partner-center/verification-responses) process. The CPP account must be the [partner global account (PGA)](/partner-center/account-structure#the-top-level-is-the-partner-global-account-pga) for the developer's organization.
+- The developer must have a Partner One ID for a valid [Microsoft Cloud Partner Program](https://partner.microsoft.com/membership) account that has completed the [verification](/partner-center/verification-responses) process. The CPP account must be the [partner global account (PGA)](/partner-center/account-structure#the-top-level-is-the-partner-global-account-pga) for the developer's organization.
 
   > [!NOTE]
   > The CPP account you use for publisher verification can't be your partner location Partner One ID. Currently, location Partner One IDs aren't supported for the publisher verification process.
@@ -57,7 +57,7 @@ App developers must meet a few requirements to complete the publisher verificati
 
 - The app must be registered in a Microsoft Entra tenant and have a [publisher domain](howto-configure-publisher-domain.md) set. The feature is not supported in Azure AD B2C tenant.
 
-- The domain of the email address that's used during CPP account verification must either match the publisher domain that's set for the app or be a DNS-verified [custom domain](~/fundamentals/add-custom-domain.md) that's added to the Microsoft Entra tenant. (**NOTE**__: the app's publisher domain can't be *.onmicrosoft.com to be publisher verified) 
+- The domain of the email address that's used during CPP account verification must either match the publisher domain that's set for the app or be a DNS-verified [custom domain](~/fundamentals/add-custom-domain.yml) that's added to the Microsoft Entra tenant. (**NOTE**__: the app's publisher domain can't be *.onmicrosoft.com to be publisher verified) 
 
 - The user who initiates verification must be authorized to make changes both to the app registration in Microsoft Entra ID and to the CPP account in Partner Center.  The user who initiates the verification must have one of the required roles in both Microsoft Entra ID and Partner Center.
 

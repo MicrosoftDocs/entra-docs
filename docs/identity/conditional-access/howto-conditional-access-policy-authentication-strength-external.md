@@ -2,8 +2,7 @@
 title: Conditional Access - Authentication strength for external users
 description: Create a custom Conditional Access policy with authentication strength to require specific multifactor authentication (MFA) methods for external users.
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
 ms.date: 07/18/2023
@@ -11,8 +10,6 @@ ms.date: 07/18/2023
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
-
-ms.collection: M365-identity-device-management
 ---
 # Conditional Access: Require an authentication strength for external users
 
@@ -33,7 +30,7 @@ In external user scenarios, the MFA authentication methods that a resource tenan
 
 ## Configure cross-tenant access settings to trust MFA
 
-Authentication strength policies work together with [MFA trust settings](~/external-id/cross-tenant-access-settings-b2b-collaboration.md#to-change-inbound-trust-settings-for-mfa-and-device-claims) in your cross-tenant access settings to determine where and how the external user must perform MFA. A Microsoft Entra user first authenticates with their own account in their home tenant. Then when this user tries to access your resource, Microsoft Entra ID applies the authentication strength Conditional Access policy and checks to see if you've enabled MFA trust.
+Authentication strength policies work together with [MFA trust settings](~/external-id/cross-tenant-access-settings-b2b-collaboration.yml#to-change-inbound-trust-settings-for-mfa-and-device-claims) in your cross-tenant access settings to determine where and how the external user must perform MFA. A Microsoft Entra user first authenticates with their own account in their home tenant. Then when this user tries to access your resource, Microsoft Entra ID applies the authentication strength Conditional Access policy and checks to see if you've enabled MFA trust.
 
 - **If MFA trust is enabled**, Microsoft Entra ID checks the user's authentication session for a claim indicating that MFA has been fulfilled in the user's home tenant.
 - **If MFA trust is disabled**, the resource tenant presents the user with a challenge to complete MFA in the resource tenant using an acceptable authentication method.

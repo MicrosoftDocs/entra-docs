@@ -1,21 +1,18 @@
 ---
-title: Tutorial`:` Use a managed identity to access Azure Storage - Linux
+title: "Tutorial: Use a managed identity to access Azure Storage - Linux"
 description: A tutorial that walks you through the process of using a Linux VM system-assigned managed identity to access Azure Storage.
-services: active-directory
-documentationcenter: 
+
 author: barclayn
 manager: amycolannino
-editor: 
 ms.custom: subject-rbac-steps
-ms.service: active-directory
-ms.subservice: msi
+ms.service: entra-id
+ms.subservice: managed-identities
 ms.topic: tutorial
 ms.tgt_pltfrm: na
-ms.workload: identity
 ms.date: 03/30/2023
 ms.author: barclayn
 
-ms.collection: M365-identity-device-management
+
 ---
 # Tutorial: Use a Linux VM system-assigned managed identity to access Azure Storage 
 
@@ -49,7 +46,7 @@ In this section, you create a storage account.
 5. Ensure the **Subscription** and **Resource Group** match the ones you specified when you created your VM in the previous step.
 6. Select **Create**.
 
-    ![Create new storage account](./media/msi-tutorial-linux-vm-access-storage/msi-storage-create.png)
+    :::image type="content" source="./media/msi-tutorial-linux-vm-access-storage/msi-storage-create.png" alt-text="Screenshot showing the new storage account creation screen.":::
 
 ## Create a blob container and upload a file to the storage account
 
@@ -60,14 +57,14 @@ Files require blob storage so you need to create a blob container in which to st
 3. Select **+ Container** on the top of the page.
 4. Under **New container**, enter a name for the container and under **Public access level** keep the default value.
 
-    ![Create storage container](./media/msi-tutorial-linux-vm-access-storage/create-blob-container.png)
+    :::image type="content" source="./media/msi-tutorial-linux-vm-access-storage/create-blob-container.png" alt-text="Screenshot showing the storage container creation screen.":::
 
 5. Using an editor of your choice, create a file titled *hello world.txt* on your local machine.  Open the file and add the text (without the quotes) "Hello world! :)" and then save it. 
 
 6. Upload the file to the newly created container by clicking on the container name, then **Upload**
 7. In the **Upload blob** pane, under **Files**, select the folder icon and browse to the file **hello_world.txt** on your local machine, select the file, then select **Upload**.
 
-    ![Upload text file](./media/msi-tutorial-linux-vm-access-storage/upload-text-file.png)
+    :::image type="content" source="./media/msi-tutorial-linux-vm-access-storage/upload-text-file.png" alt-text="Screenshot showing the upload text file section.":::
 
 ## Grant your VM access to an Azure Storage container 
 

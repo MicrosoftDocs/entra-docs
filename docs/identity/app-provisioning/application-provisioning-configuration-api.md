@@ -1,13 +1,12 @@
 ---
 title: Configure provisioning using Microsoft Graph APIs
 description: Learn how to save time by using the Microsoft Graph APIs to automate the configuration of automatic provisioning.
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: conceptual
-ms.workload: identity
 ms.date: 09/15/2023
 ms.author: kenwith
 ms.reviewer: arvinh
@@ -15,7 +14,10 @@ ms.reviewer: arvinh
 
 # Configure provisioning using Microsoft Graph APIs
 
-The Microsoft Entra admin center is a convenient way to configure provisioning for individual apps one at a time. But if you're creating several—or even hundreds—of instances of an application, it can be easier to automate app creation and configuration with the Microsoft Graph APIs. This article outlines how to automate provisioning configuration through APIs. This method is commonly used for applications like [Amazon Web Services](~/identity/saas-apps/amazon-web-service-tutorial.md#configure-azure-ad-sso).
+The Microsoft Entra admin center is a convenient way to configure provisioning for individual apps one at a time. But if you're creating several—or even hundreds—of instances of an application, or migrating application configuration from one environment to another, it can be easier to automate app creation and configuration with the Microsoft Graph APIs. This article outlines how to automate provisioning configuration through APIs. This method is commonly used for applications like [Amazon Web Services](~/identity/saas-apps/amazon-web-service-tutorial.md#configure-azure-ad-sso).
+
+This article illustrates the process with APIs in the [Microsoft Graph beta endpoint](/graph/api/overview?view=graph-rest-beta&preserve-view=true) and Microsoft Graph Explorer; similar APIs are also available in the [Microsoft Graph v1.0 endpoint](/graph/api/overview?view=graph-rest-1.0&preserve-view=true). For an example of configuring provisioning with Graph v1.0 and PowerShell, see steps 6-13 of [Configure cross-tenant synchronization using PowerShell or Microsoft Graph API](~/identity/multi-tenant-organizations/cross-tenant-synchronization-configure-graph.md?tabs=ms-powershell).
+
 
 **Overview of steps for using Microsoft Graph APIs to automate provisioning configuration**
 
@@ -28,12 +30,14 @@ The Microsoft Entra admin center is a convenient way to configure provisioning f
 |[Step 4. Start provisioning job](#step-4-start-the-provisioning-job)     |Start the job         |
 |[Step 5. Monitor provisioning](#step-5-monitor-provisioning)     |Check the status of the provisioning job <br> Retrieve the provisioning logs         |
 
+If you are provisioning to an on-premises application, then you will also need to install and configure the provisioning agent, and assign the provisioning agent to the application.
+
 ## Step 1: Create the gallery application
 
 ### Sign in to Microsoft Graph Explorer (recommended), Postman, or any other API client you use
 
 1. Start [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer).
-1. Select the "Sign-In with Microsoft" button and sign in using Microsoft Entra Global Administrator or App Admin credentials.
+1. Select the "Sign-In with Microsoft" button and sign in with a user with the [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator) role.
 1. Upon successful sign-in, you'll see the user account details in the left-hand pane.
 
 ### Retrieve the gallery application template identifier
@@ -89,7 +93,7 @@ Use the template ID retrieved for your application in the last step to [create a
 
 
 ```msgraph-interactive
-POST https://graph.microsoft.com/beta/applicationTemplates/{id}/instantiate
+POST https://graph.microsoft.com/beta/applicationTemplates/{applicationTemplateId}/instantiate
 Content-type: application/json
 
 {
@@ -140,7 +144,7 @@ Content-type: application/json
 
 ### Retrieve the template for the provisioning connector
 
-Applications in the gallery that are enabled for provisioning have templates to streamline configuration. Use the request below to [retrieve the template for the provisioning configuration](/graph/api/synchronization-synchronization-list-templates?preserve-view=true&tabs=http&view=graph-rest-beta). Note that you will need to provide the ID. The ID refers to the preceding resource, which in this case is the servicePrincipal resource. 
+Applications in the gallery that are enabled for provisioning have templates to streamline configuration. Use the request below to [retrieve the template for the provisioning configuration](/graph/api/synchronization-synchronization-list-templates?preserve-view=true&tabs=http&view=graph-rest-beta). Note that you will need to provide the ID. The ID is that of the servicePrincipal resource, created in the preceding step.
 
 #### Request
 
@@ -217,7 +221,7 @@ Test the connection with the third-party application. The following example is f
 
 #### Request
 ```msgraph-interactive
-POST https://graph.microsoft.com/beta/servicePrincipals/{id}/synchronization/jobs/{id}/validateCredentials
+POST https://graph.microsoft.com/beta/servicePrincipals/{id}/synchronization/jobs/{jobId}/validateCredentials
 
 { 
     "credentials": [ 
@@ -237,7 +241,7 @@ HTTP/1.1 204 No Content
 
 ### Save your credentials
 
-Configuring provisioning requires establishing a trust between Microsoft Entra ID and the application. Authorize access to the third-party application. The following example is for an application that requires a client secret and a secret token. Each application has its own requirements. Review the [API documentation](/graph/api/synchronization-synchronizationjob-validatecredentials?tabs=http&view=graph-rest-beta&preserve-view=true) to see the available options. 
+Configuring provisioning requires establishing a trust between Microsoft Entra ID and the application to authorize Microsoft Entra to have the ability to call the third-party application. The following example is specific to an application that requires a client secret and a secret token. Each application has its own requirements. Review the [API documentation](/graph/api/synchronization-synchronizationjob-validatecredentials?tabs=http&view=graph-rest-beta&preserve-view=true) to see the available options. 
 
 #### Request
 ```msgraph-interactive
@@ -281,11 +285,11 @@ HTTP/1.1 204 No Content
 
 ### Monitor the provisioning job status
 
-Now that the provisioning job is running, use the following command to track the progress of the current provisioning cycle as well as statistics to date such as the number of users and groups that have been created in the target system. 
+Now that the provisioning job is running, use the following command to track the progress. Each [synchronization job](/graph/api/resources/synchronization-synchronizationjob) in the response includes the [status](/graph/api/resources/synchronization-synchronizationstatus) of the current provisioning cycle as well as statistics to date such as the number of users and groups that have been created in the target system.
 
 #### Request
 ```msgraph-interactive
-GET https://graph.microsoft.com/beta/servicePrincipals/{id}/synchronization/jobs/{jobId}/
+GET https://graph.microsoft.com/beta/servicePrincipals/{id}/synchronization/jobs
 ```
 
 #### Response
@@ -293,6 +297,7 @@ GET https://graph.microsoft.com/beta/servicePrincipals/{id}/synchronization/jobs
 HTTP/1.1 200 OK
 Content-type: application/json
 
+{ "value": [
 {
     "id": "{jobId}",
     "templateId": "aws",
@@ -321,6 +326,8 @@ Content-type: application/json
           "value": "500"
       }
     ]
+}
+]
 }
 ```
 
@@ -372,7 +379,9 @@ Content-type: application/json
     ]
 }
 ```
+
 ## See also
 
 - [Review the synchronization Microsoft Graph documentation](/graph/api/resources/synchronization-overview?view=graph-rest-beta&preserve-view=true)
 - [Integrating a custom SCIM app with Microsoft Entra ID](./use-scim-to-provision-users-and-groups.md)
+- [Configure cross-tenant synchronization using PowerShell or Microsoft Graph API](~/identity/multi-tenant-organizations/cross-tenant-synchronization-configure-graph.md?tabs=ms-powershell)

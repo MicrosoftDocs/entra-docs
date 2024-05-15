@@ -1,18 +1,16 @@
 ---
 title: How to customize a synchronization rule in Microsoft Entra Connect'
 description: Learn how to use the synchronization rule editor to edit or create a new synchronization rule.
-services: active-directory
-documentationcenter: ''
+
 author: billmath
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
-ms.collection: M365-identity-device-management
+
 ---
 
 # How to customize a synchronization rule

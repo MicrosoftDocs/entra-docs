@@ -1,23 +1,23 @@
 ---
-title: Tutorial - Add sign-in and sign-out to a Vanilla JavaScript single-page app (SPA) for a customer tenant
-description: Learn how to configure a Vanilla JavaScript single-page app (SPA) to sign in and sign out users with your Microsoft Entra ID for customers tenant.
+title: "Tutorial: Add sign-in and sign-out to a Vanilla JavaScript SPA for an external tenant"
+description: Learn how to configure a Vanilla JavaScript single-page app (SPA) to sign in and sign out users with your external tenant.
  
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.service: active-directory
-ms.subservice: ciam
+ms.service: entra-external-id
+ms.subservice: customers
 ms.custom: devx-track-js
 ms.topic: tutorial
 ms.date: 08/02/2023
-#Customer intent: As a developer, I want to learn how to configure Vanilla JavaScript single-page app (SPA) to sign in and sign out users with my Microsoft Entra ID for customers tenant.
+#Customer intent: As a developer, I want to learn how to configure Vanilla JavaScript single-page app (SPA) to sign in and sign out users with my external tenant.
 ---
 
-# Tutorial: Add sign-in and sign-out to a Vanilla JavaScript single-page app for a customer tenant
+# Tutorial: Add sign-in and sign-out to a Vanilla JavaScript SPA for an external tenant
 
-In the [previous article](tutorial-single-page-app-vanillajs-configure-authentication.md), you edited the popup and redirection files that handle the sign-in page response. This tutorial demonstrates how to build a responsive user interface (UI) that contains a **Sign-In** and **Sign-Out** button and run the project to test the sign-in and sign-out functionality.
+This tutorial is the final part of a series that demonstrates building a Vanilla JS single-page application (SPA) and preparing it for authentication using the Microsoft Entra admin center. In [part 3 of this series](tutorial-single-page-app-vanillajs-configure-authentication.md), you created a Vanilla JS in Visual Studio Code and configured it for authentication. This final step shows you how to add sign-in and sign-out functionality to the app.
 
-In this tutorial;
+In this tutorial, you'll;
 
 > [!div class="checklist"]
 > * Add code to the *index.html* file to create the user interface
@@ -26,7 +26,7 @@ In this tutorial;
 
 ## Prerequisites
 
-* Completion of the prerequisites and steps in [Create components for authentication and authorization](tutorial-single-page-app-vanillajs-configure-authentication.md).
+* [Tutorial: Prepare your external tenant to authenticate users in a Vanilla JavaScript SPA](tutorial-single-page-app-vanillajs-prepare-tenant.md).
 
 ## Add code to the *index.html* file
 
@@ -435,8 +435,8 @@ Now that all the required code snippets have been added, the application can be 
     ```
 1. Open a new private browser, and enter the application URI into the browser, `http://localhost:3000/`.
 1. Select **No account? Create one**, which starts the sign-up flow.
-1. In the **Create account** window, enter the email address registered to your Microsoft Entra ID for customers tenant, which starts the sign-up flow as a user for your application.
-1. After entering a one-time passcode from the customer tenant, enter a new password and more account details, this sign-up flow is completed.
+1. In the **Create account** window, enter the email address registered to your external tenant, which starts the sign-up flow as a user for your application.
+1. After entering a one-time passcode from the external tenant, enter a new password and more account details, this sign-up flow is completed.
 
     1. If a window appears prompting you to **Stay signed in**, choose either **Yes** or **No**.
 
@@ -450,6 +450,6 @@ Now that all the required code snippets have been added, the application can be 
 1. A window appears asking which account to sign out of.
 1. Upon successful sign out, a final window appears advising you to close all browser windows.
 
-## Next steps
+## See also
 
 - [Enable self-service password reset](./how-to-enable-password-reset-customers.md) 

@@ -1,19 +1,18 @@
 ---
 title: Frequently asked questions (FAQs) about API-driven inbound provisioning
 description: Learn more about the capabilities and integration scenarios supported by API-driven inbound provisioning.
-services: active-directory
-author: kenwith
+
+author: jenniferf-skc
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-provisioning
-ms.workload: identity
-ms.topic: reference
-ms.date: 01/10/2024
-ms.author: kenwith
+ms.topic: faq
+ms.date: 02/28/2024
+ms.author: jfields
 ms.reviewer: chmutali
 ---
 
-# Frequently asked questions about API-driven inbound provisioning (Pubic preview)
+# Frequently asked questions about API-driven inbound provisioning
 
 This article answers frequently asked questions (FAQs) about API-driven inbound provisioning.
 
@@ -49,8 +48,6 @@ Yes, the provisioning API supports on-premises AD domains as a target.
 ## How do we get the /bulkUpload API endpoint for our provisioning app?
 
 The /bulkUpload API is available only for apps of the type: "API-driven inbound provisioning to Microsoft Entra ID" and "API-driven inbound provisioning to on-premises Active Directory". You can retrieve the unique API endpoint for each provisioning app from the Provisioning blade home page.  In **Statistics to date** > **View technical information**,copy the **Provisioning API Endpoint** URL. 
-
-  :::image type="content" source="media/inbound-provisioning-api-configure-app/provisioning-api-endpoint.png" alt-text="Screenshot of Provisioning API endpoint." lightbox="media/inbound-provisioning-api-configure-app/provisioning-api-endpoint.png":::
 
 It has the format:
 ```http

@@ -1,10 +1,9 @@
 ---
 title: Revoke user access in an emergency in Microsoft Entra ID
 description: How to revoke all access for a user in Microsoft Entra ID
-services: active-directory 
-ms.service: active-directory
-ms.subservice: enterprise-users
-ms.workload: identity
+
+ms.service: entra-id
+ms.subservice: users
 ms.topic: how-to
 author: barclayn
 ms.author: barclayn
@@ -12,7 +11,6 @@ manager: amycolannino
 ms.reviewer: krbain
 ms.date: 11/21/2023
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
-ms.collection: M365-identity-device-management
 ---
 
 # Revoke user access in Microsoft Entra ID
@@ -105,7 +103,7 @@ As an administrator in Microsoft Entra ID, open PowerShell, run `Connect-MgGraph
 > For information on specific roles that can perform these steps review [Microsoft Entra built-in roles](~/identity/role-based-access-control/permissions-reference.md)
 
 
-[!INCLUDE [Azure AD PowerShell migration](../../includes/aad-powershell-migration-include.md)]
+[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
 
 ## When access is revoked
 
@@ -136,5 +134,5 @@ Once admins have taken the above steps, the user can't gain new tokens for any a
 ## Next steps
 
 - [Secure access practices for Microsoft Entra administrators](~/identity/role-based-access-control/security-planning.md)
-- [Add or update user profile information](~/fundamentals/how-to-manage-user-profile-info.md)
+- [Add or update user profile information](~/fundamentals/how-to-manage-user-profile-info.yml)
 - [Remove or Delete a former employee](/microsoft-365/admin/add-users/remove-former-employee)

@@ -5,12 +5,14 @@ description: Learn how to configure single sign-on between Microsoft Entra ID an
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: celested
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: jeedes
+
+# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Origami so that I can control who has access to Origami, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 # Tutorial: Microsoft Entra integration with Origami
 
@@ -177,7 +179,7 @@ In this section, you create a user called Britta Simon in Origami.
 
     f. Click **Save**.
    
-    ![Screenshot that shows the the "Save" button selected.](./media/origami-tutorial/save.png)
+    ![Screenshot that shows the "Save" button selected.](./media/origami-tutorial/save.png)
 
 6. Assign **User Roles** and **Client Access** to the user. 
    

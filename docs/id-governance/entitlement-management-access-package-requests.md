@@ -1,24 +1,14 @@
 ---
 title: View and remove requests for an access package in entitlement management - Microsoft Entra
 description: Learn how to view requests and remove for an access package in entitlement management.
-services: active-directory
-documentationCenter: ''
 author: owinfreyatl
 manager: amycolannino
-editor: 
-ms.service: active-directory
-ms.workload: identity
-ms.tgt_pltfrm: na
+ms.service: entra-id-governance
+ms.subservice: entitlement-management
 ms.topic: how-to
-ms.subservice: compliance
 ms.date: 05/31/2023
 ms.author: owinfrey
-ms.reviewer: 
-ms.collection: M365-identity-device-management
-
-
 #Customer intent: As an access package manager, I want detailed information about requests for access packages so that I can view the status and troubleshoot any issues.
-
 ---
 # View and remove requests for an access package in entitlement management
 
@@ -26,11 +16,11 @@ In entitlement management, you can see who has requested access packages, the po
 
 ## View requests
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
+[!INCLUDE [portal updates](../includes/portal-update.md)]
 
 **Prerequisite role:** Global Administrator, Identity Governance Administrator, Catalog owner, Access package manager or Access package assignment manager
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
 1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
 
@@ -55,7 +45,7 @@ Microsoft Graph will return the results in pages, and will continue to return a 
 
 You can also remove a completed request that is no longer needed. To remove a request:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
 1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
 

@@ -1,12 +1,13 @@
 ---
 title: How to configure Per-app Access using Global Secure Access applications
 description: Learn how to configure per-app access to your private, internal resources using Global Secure Access applications for Microsoft Entra Private Access.
-author: shlipsey3
-ms.author: sarahlipsey
+author: kenwith
+ms.author: kenwith
 manager: amycolannino
 ms.topic: how-to
-ms.date: 11/02/2023
-ms.service: network-access
+ms.date: 02/13/2024
+ms.service: global-secure-access
+ms.subservice: entra-private-access
 ms.reviewer: katabish
 ---
 # How to configure Per-app Access using Global Secure Access applications
@@ -22,7 +23,7 @@ To configure a Global Secure Access app, you must have:
 - The **Global Secure Access Administrator** and **Application Administrator** roles in Microsoft Entra ID
 - The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 
-To manage App Proxy connector groups, which is required for Global Secure Access apps, you must have:
+To manage Microsoft Entra private network connector groups, which is required for Global Secure Access apps, you must have:
 
 - An **Application Administrator** role in Microsoft Entra ID
 - Microsoft Entra ID P1 or P2 licenses
@@ -41,7 +42,7 @@ To configure Per-App Access, you need to have a connector group with at least on
 
 To summarize, the overall process is as follows:
 
-1. [Create a connector group with at least one active App Proxy connector](#create-an-app-proxy-connector-group).
+1. [Create a connector group with at least one active private network connector](#create-a-private-network-connector-group).
     - If you already have a connector group, make sure you're on the latest version.
 
 1. [Create a Global Secure Access app](#create-a-global-secure-access-application).
@@ -52,9 +53,9 @@ To summarize, the overall process is as follows:
 
 1. [Enable Microsoft Entra Private Access](#enable-microsoft-entra-private-access).
 
-## Create an App Proxy connector group
+## Create a private network connector group
 
-To configure a Global Secure Access app, you must have a connector group with at least one active App Proxy connector.
+To configure a Global Secure Access app, you must have a connector group with at least one active private network connector.
 
 If you don't already have a connector set up, see [Configure connectors](how-to-configure-connectors.md).
 
@@ -84,7 +85,7 @@ To create a new app, you provide a name, select a connector group, and then add 
 
 The **Add application segment** process is where you define the FQDNs and IP addresses that you want to include in the traffic for the Global Secure Access app. You can add sites when you create the app and return to add more or edit them later.
 
-You can add fully qualified domain names (FQDN), IP addresses, and IP address ranges.
+You can add fully qualified domain names (FQDN), IP addresses, and IP address ranges. Within each application segment, you can add multiple ports and port ranges.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 1. Browse to **Global Secure Access (preview)** > **Applications** > **Enterprise applications**.
@@ -104,6 +105,7 @@ You can add fully qualified domain names (FQDN), IP addresses, and IP address ra
     - **Fully qualified domain name** (including wildcard FQDNs):
         - Domain name that specifies the exact location of a computer or a host in the Domain Name System (DNS).
         - Provide the ports that you want to include.
+        - NetBIOS is not supported. For example, use `contoso.local/app1` instead of `contoso/app1.`
     - **IP address range (CIDR)**:
         - Classless Inter-Domain Routing is a way of representing a range of IP addresses in which an IP address is followed by a suffix indicating the number of network bits in the subnet mask.
         - For example 192.0.2.0/24 indicates that the first 24 bits of the IP address represent the network address, while the remaining 8 bits represents the host address.
@@ -112,7 +114,15 @@ You can add fully qualified domain names (FQDN), IP addresses, and IP address ra
         - Range of IP addresses from start IP (such as 192.0.2.1) to end IP (such as 192.0.2.10).
         - Provide the IP address start, end, and ports.
 
-1. Enter the port. The following table provides the most commonly used ports and their associated networking protocols:
+1. Enter the ports and select the **Apply** button.
+    - Separate multiple ports with a comma.
+    - Specify port ranges with a hyphen.
+    - Spaces between values are removed when you apply the changes.
+    - For example, `400-500, 80, 443`.
+
+    ![Screenshot of the create app segment panel with multiple ports added.](media/how-to-configure-per-app-access/app-segment-multiple-ports.png)
+
+    The following table provides the most commonly used ports and their associated networking protocols:
 
     | Port | Protocol |
     | --- | --- |

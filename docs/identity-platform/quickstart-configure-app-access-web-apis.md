@@ -6,9 +6,9 @@ manager: CelesteDG
 ms.author: cwerner
 ms.custom: mode-api
 ms.date: 06/29/2023
-ms.reviewer: lenalepa, aragra, sureshja
-ms.service: active-directory
-ms.subservice: develop
+ms.reviewer: sureshja
+ms.service: identity-platform
+
 ms.topic: quickstart
 #Customer intent: As an application developer, I want to know how to configure my web API's app registration with permissions client applications can use to obtain scoped access to the API.
 ---

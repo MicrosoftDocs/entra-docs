@@ -5,12 +5,14 @@ description: Learn how to configure single sign-on between Microsoft Entra ID an
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: celested
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 12/21/2022
 ms.author: jeedes
+
+# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Amazon Business so that I can control who has access to Amazon Business, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
 # Tutorial: Integrate Amazon Business with Microsoft Entra ID
@@ -187,7 +189,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
     >[!NOTE]
     > If you do not assign the users in the Microsoft Entra ID, you get the following error.
 
-    ![Screenshot shows a error message that you can’t be signed in.](media/amazon-business-tutorial/assign-user.png)
+    ![Screenshot shows an error message that you can’t be signed in.](media/amazon-business-tutorial/assign-user.png)
 
 <a name='assign-the-azure-ad-security-group-in-the-azure-portal'></a>
 

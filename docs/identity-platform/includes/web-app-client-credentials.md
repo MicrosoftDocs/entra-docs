@@ -5,8 +5,8 @@ description: Include file with a common configuration in web apps and web APIs c
 author: jmprieur
 manager: CelesteDG
 
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 
 ms.topic: include
 ms.date: 05/08/2023

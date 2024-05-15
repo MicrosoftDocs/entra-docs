@@ -3,8 +3,7 @@ title: Passwordless sign-in with Microsoft Authenticator
 description: Enable passwordless sign-in to Microsoft Entra ID using Microsoft Authenticator
 
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.custom: has-azure-ad-ps-ref
 ms.topic: how-to
@@ -15,8 +14,6 @@ ms.author: justinha
 author: justinha
 manager: amycolannino
 ms.reviewer: jogro
-
-ms.collection: M365-identity-device-management
 ---
 # Enable passwordless sign-in with Microsoft Authenticator 
 
@@ -133,6 +130,12 @@ After the user has utilized passwordless phone sign-in, the app continues to gui
 
 :::image type="content" border="true" source="./media/howto-authentication-passwordless-phone/number.png" alt-text="Screenshot that shows an example of a browser sign-in using the Microsoft Authenticator app.":::
 
+#### Temporary Access Pass
+If the tenant administrator has enabled Self-Service Password Reset (SSPR) and a user is setting up passwordless sign-in with the Authenticator app for the first time using a Temporary Access Password, the following steps should be followed:
+
+1. The user should open a browser on a mobile device or desktop and navigate to the [mySecurity](https://aka.ms/mysecurityinfo) info page.
+2. The user must register the Authenticator App as their sign-in method. This action links the user's account to the app.
+3. The user should then return to their mobile device and activate passwordless sign-in through the Authenticator App.
 
 ## Management
 

@@ -1,19 +1,21 @@
 ---
-title: 'Tutorial: App Proxy configuration for Microsoft Entra SAML SSO for Confluence'
-description: Learn App Proxy configuration for Microsoft Entra SAML SSO for Confluence.
+title: 'Tutorial: Application proxy configuration for Microsoft Entra SAML SSO for Confluence'
+description: Learn application proxy configuration for Microsoft Entra SAML SSO for Confluence.
 
 author: dhivyagana
 manager: CelesteDG
 ms.reviewer: celested
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: dhivyag
+
+# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Application proxy configuration for Confluence SAML SSO so that I can control who has access to Application proxy configuration for Confluence SAML SSO, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: App Proxy configuration for Microsoft Entra SAML SSO for Confluence
+# Tutorial: Application proxy configuration for Microsoft Entra SAML SSO for Confluence
 
 This article helps to configure Microsoft Entra SAML SSO for your on-premises Confluence application using Application Proxy.
 
@@ -50,7 +52,7 @@ As of now, following versions of Confluence are supported:
 ## Scenario description
 
 In this tutorial, you configure and test Microsoft Entra SSO for on-premises confluence setup using application proxy mode.
-1. Download and Install Microsoft Entra application proxy connector.
+1. Download and Install Microsoft Entra private network connector.
 1. Add Application Proxy in Microsoft Entra ID.
 1. Add a Confluence SAML SSO app in Microsoft Entra ID.
 1. Configure SSO for SAML SSO Confluence Application in Microsoft Entra ID.
@@ -60,7 +62,7 @@ In this tutorial, you configure and test Microsoft Entra SSO for on-premises con
 1. Assigning the test user for the Microsoft Confluence plugin in your Confluence Server.
 1. Test the SSO.
 
-## Download and Install the App Proxy Connector Service
+## Download and Install the private network connector Service
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Application proxy**.
@@ -149,7 +151,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then click the **Select** button at the bottom of the screen.
 1. In the **Add Assignment** dialog, click the **Assign** button. 
 
-1. Verify the App Proxy setup by checking if the configured test user is able to SSO using the external URL mentioned in the on-premises application.
+1. Verify the application proxy setup by checking if the configured test user is able to SSO using the external URL mentioned in the on-premises application.
 
 > [!NOTE]
 > Complete the setup of the JIRA SAML SSO by Microsoft application by following [this](./jiramicrosoft-tutorial.md) tutorial.

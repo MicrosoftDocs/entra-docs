@@ -1,18 +1,17 @@
 ---
 title: Troubleshoot inbound provisioning API
 description: Learn how to troubleshoot issues with the inbound provisioning API.
-author: kenwith
+author: jenniferf-skc
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: troubleshooting
-ms.workload: identity
-ms.date: 11/15/2023
-ms.author: kenwith
+ms.date: 05/06/2024
+ms.author: jfields
 ms.reviewer: chmutali
 ---
 
-# Troubleshoot inbound provisioning API issues (Public preview)
+# Troubleshoot inbound provisioning API issues
 
 ## Introduction
 
@@ -23,7 +22,7 @@ This document covers commonly encountered errors and issues with inbound provisi
 ### Invalid data format 
 
 **Issue description**
-* You're getting the error message 'Invalid Data Format" with HTTP 400 (Bad Request) response code.
+* You're getting the error message ```Invalid Data Format``` with HTTP 400 (Bad Request) response code.
 
 **Probable causes**
 1. You're sending a valid bulk request as per the provisioning [/bulkUpload](/graph/api/synchronization-synchronizationjob-post-bulkupload) API specs, but you have not set the HTTP Request Header 'Content-Type' to `application/scim+json`. 

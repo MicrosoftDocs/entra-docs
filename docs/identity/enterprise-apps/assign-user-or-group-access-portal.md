@@ -4,8 +4,8 @@ description: Learn how to assign and unassign users, and groups, for an app usin
 
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 
 ms.topic: how-to
 ms.date: 12/18/2023
@@ -23,7 +23,7 @@ This article shows you how to assign users and groups to an enterprise applicati
 
 When you assign a group to an application, only users in the group have access. The assignment doesn't cascade to nested groups.
 
-Group-based assignment requires Microsoft Entra ID P1 or P2 edition. Group-based assignment is supported for Security groups and Microsoft 365 groups whose `SecurityEnabled` setting is set to `True` only. Nested group memberships aren't currently supported. For more licensing requirements for the features discussed in this article, see the [Microsoft Entra pricing page](https://azure.microsoft.com/pricing/details/active-directory).
+Group-based assignment requires Microsoft Entra ID P1 or P2 edition. Group-based assignment is supported for Security groups, Microsoft 365 groups, and Distribution groups whose `SecurityEnabled` setting is set to `True` only. Nested group memberships aren't currently supported. For more licensing requirements for the features discussed in this article, see the [Microsoft Entra pricing page](https://azure.microsoft.com/pricing/details/active-directory).
 
 For greater control, certain types of enterprise applications can be configured to require user assignment. For more information on requiring user assignment for an app, see [Manage access to an application](what-is-access-management.md#requiring-user-assignment-for-an-app).
 

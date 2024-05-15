@@ -6,12 +6,14 @@ author: twimmers
 writer: twimmers
 manager: jeedes
 ms.assetid: 338f2546-2e46-4c9e-b4e9-69146f3afaf8
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 09/21/2023
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Cybozu so that I can streamline the user management process and ensure that users have the appropriate access to Cybozu.
 ---
 
 # Tutorial: Configure Cybozu for automatic user provisioning
@@ -31,7 +33,7 @@ This tutorial describes the steps you need to perform in both Cybozu and Microso
 The scenario outlined in this tutorial assumes that you already have the following prerequisites:
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md) 
-* A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (for example, Application Administrator, Cloud Application administrator, Application Owner, or Global Administrator).
+* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
 * A user account in Cybozu with Admin permissions.
 
 ## Step 1: Plan your provisioning deployment

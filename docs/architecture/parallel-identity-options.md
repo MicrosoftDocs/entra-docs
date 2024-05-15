@@ -1,17 +1,13 @@
 ---
 title: 'Parallel and combined identity infrastructure options'
 description: This article describes the various options available for organizations to run multiple tenants and multicloud scenarios
-services: active-directory
 author: martincoetzer
 manager: travisgr
-ms.service: active-directory
-ms.workload: identity
-ms.tgt_pltfrm: na
+ms.service: entra
 ms.topic: conceptual
 ms.date: 08/17/2022
-ms.subservice: hybrid
+ms.subservice: architecture
 ms.author: martinco
-ms.collection: M365-identity-device-management
 ---
 
 # Parallel and combined identity infrastructure options

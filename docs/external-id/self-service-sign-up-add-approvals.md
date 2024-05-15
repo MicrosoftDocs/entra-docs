@@ -1,11 +1,10 @@
 ---
 title: Add custom approvals to self-service sign-up flows
-description: Add API connectors for custom approval workflows in External Identities self-service sign-up
+description: Add API connectors for custom approval workflows in External ID self-service sign-up
  
-ms.service: active-directory
-ms.subservice: B2B
+ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 01/09/2023
+ms.date: 02/05/2024
 
 ms.author: mimart
 author: msmimart
@@ -13,7 +12,7 @@ manager: celestedg
 ms.custom: "it-pro"
 ms.collection: M365-identity-device-management
 
-# Customer intent: As a tenant administrator, I want to add API connectors for custom approval workflows in self-service sign-up.
+#customer intent: As an IT admin managing guest user accounts in my Microsoft Entra tenant, I want to add a custom approval workflow to the self-service sign-up process, so that I can control which guest user accounts are created and manage the approval process.
 ---
 
 # Add a custom approval workflow to self-service sign-up
@@ -259,7 +258,7 @@ The `userMessage` in the response is displayed to the user, for example:
 
 ## User account creation after manual approval
 
-After obtaining manual approval, the custom approval system creates a [user](/graph/azuread-users-concept-overview) account by using [Microsoft Graph](/graph/use-the-api). The way your approval system provisions the user account depends on the identity provider that was used by the user.
+After the custom approval system obtains manual approval, it creates a [user](/graph/azuread-users-concept-overview) account by using [Microsoft Graph](/graph/use-the-api). The way your approval system provisions the user account depends on the identity provider that was used by the user.
 
 ### For a federated Google or Facebook user and email one-time passcode
 
@@ -386,7 +385,7 @@ Content-type: application/json
 
 ## Next steps
 
-- [Add a self-service sign-up user flow](self-service-sign-up-user-flow.md)
+- [Add a self-service sign-up user flow](self-service-sign-up-user-flow.yml)
 - [Add an API connector](self-service-sign-up-add-api-connector.md)
 - [Secure your API connector](self-service-sign-up-secure-api-connector.md)
 - [self-service sign-up for guest users with manual approval sample](code-samples-self-service-sign-up.md#custom-approval-workflows).

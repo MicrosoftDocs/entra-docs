@@ -1,14 +1,14 @@
 ---
 title: Troubleshoot insufficient access rights error
 description: Learn how to troubleshoot InsufficientAccessRights error when provisioning to on-premises Active Directory.
-author: kenwith
+author: jenniferf-skc
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: troubleshooting
 ms.workload: identity
-ms.date: 09/15/2023
-ms.author: kenwith
+ms.date: 02/27/2024
+ms.author: jfields
 ms.reviewer: chmutali
 ---
 
@@ -32,10 +32,11 @@ The user has insufficient access rights.
 The provisioning logs displays the error code: `HybridSynchronizationActiveDirectoryInsufficientAccessRights`.
 
 ## Cause
+
 The Provisioning Agent GMSA account ```provAgentgMSA$``` by default has read/write permission to all user objects in the domain. There are two possible causes that might lead to the above error.
 
 - Cause-1: The user object is part of an OU that doesn't inherit domain-level permissions.
-- Cause-2: The user object belongs to a [protected Active Directory group](https://go.microsoft.com/fwlink/?linkid=2240442). By design, user objects are governed by permissions associated with a special container called [```AdminSDHolder```](https://go.microsoft.com/fwlink/?linkid=2240377). This explains why the ```provAgentgMSA$``` account is unable to update these accounts belonging to protected Active Directory groups. You may try to override and explicitly provide the ```provAgentgMSA$``` account write access to user accounts, which won't work. In order to secure privileged user accounts from a misuse of delegated permissions, there's a background process called [SDProp](https://go.microsoft.com/fwlink/?linkid=2240378)  that runs every 60 minutes and ensures that users belonging to a protected group are always managed by permissions defined on the ```AdminSDHolder``` container. Even the approach of adding the ```provAgentgMSA$``` account to the Domain Admin group won't work.
+- Cause-2: The user object belongs to a [protected Active Directory group](https://go.microsoft.com/fwlink/?linkid=2240442). By design, user objects are governed by permissions that are associated with a special container called [```AdminSDHolder```](https://go.microsoft.com/fwlink/?linkid=2240377). This explains why the ```provAgentgMSA$``` account is unable to update these accounts belonging to protected Active Directory groups. You may try to override and explicitly provide the ```provAgentgMSA$``` account write access to user accounts, but that won't work. In order to secure privileged user accounts from a misuse of delegated permissions, there's a background process called [SDProp](https://go.microsoft.com/fwlink/?linkid=2240378)  that runs every 60 minutes and ensures that users belonging to a protected group are always managed by permissions defined on the ```AdminSDHolder``` container. Even the approach of adding the ```provAgentgMSA$``` account to the Domain Admin group won't work.
 
 
 ## Resolution
@@ -45,7 +46,7 @@ To check if Cause-1 is the source of the problem:
 1. Open the **Active Directory Users and Computers Management Console**.
 2. Select the OU associated with the user.
 3. Right click and navigate to **Properties -> Security -> Advanced**.
-    If the **Enable Inheritance** button is shown, then it's confirmed that Cause-1 is the source of the problem.  
+    If the **Enable Inheritance** button is shown, it confirms that Cause-1 is the source of the problem.  
 4. Click on **Enable Inheritance** so that domain level permissions are applicable to this OU.
      >[!NOTE]
      >Please remember to verify the whole hierarchy from domain level down to the OU holding the affected accounts. All Parent OUs/Containers must have inheritance enabled so the permissions applied at the domain level may cascade down to the final object.
@@ -53,7 +54,7 @@ To check if Cause-1 is the source of the problem:
 If Cause-1 is not the source of the problem, then potentially Cause-2 is the source of the problem. There are two possible resolution options.
 
 **Option 1: Remove affected user from protected AD group**
-To find the list of users that are governed by this ```AdminSDHolder``` permission, Cx can invoke the following command:
+To find the list of users governed by this ```AdminSDHolder``` permission, Cx can invoke the following command:
 
 ```Get-AdObject -filter {AdminCount -gt 0}```
 
@@ -64,6 +65,7 @@ Reference articles:
 *Option 1 might not always work*
 
 There's a process called The Security Descriptor Propagation (SDPROP) process that runs every hour on the domain controller holding the PDC emulator FSMO role. It's this process that sets the ```AdminCount``` attribute to 1. The main function of SDPROP is to protect highly privileged Active Directory accounts, ensuring that they can't be deleted or have rights modified, accidentally or intentionally, by users or processes with less privilege.
+There's a process called The Security Descriptor Propagation (SDPROP) process that runs every hour on the domain controller holding the PDC emulator FSMO role. It's this process that sets the ```AdminCount``` attribute to 1. The main function of SDPROP is to protect highly privileged Active Directory accounts. The SDPROP process ensures that accounts can't be deleted or have rights accidentally or intentionally modified by users or processes with less privilege.
 
 Reference articles that explain the reason in detail:
 
@@ -93,11 +95,11 @@ This article on [AdminSDHolder issues with Microsoft Entra Connect](https://c7so
 
 **Option 3: Assign full control to provAgentgMSA account**
 
-Assign **Full Control** permissions to the ```provAgentGMSA``` account. We recommend this step if there are failures with a moving a user object from one container OU to another when these users don't belong to a protected user group.
+Assign **Full Control** permissions to the ```provAgentGMSA``` account. We recommend this step if there are issues with moving a user object from one container OU to another when the user object doesn't belong to a protected user group.
 
 In this scenario, ask Cx to complete the following steps and retest the move operation.
 1.    Log in to AD domain controller as admin.
-2.    Open PowerShell command-line with run-as admin
+2.    Open PowerShell command-line with ```run``` as admin.
 3.    At the PowerShell prompt, run the following [DSACLS](https://go.microsoft.com/fwlink/?linkid=2240600) command that grants **Generic All/Full Control** to the provisioning agent GMSA account.
 ```dsacls "dc=contoso,dc=com" /I:T /G "CN=provAgentgMSA,CN=Managed Service Accounts,DC=contoso,DC=com:GA"```
 

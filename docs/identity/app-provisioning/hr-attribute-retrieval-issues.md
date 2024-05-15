@@ -1,16 +1,17 @@
 ---
 title: Troubleshoot attribute retrieval issues with HR provisioning
 description: Learn how to troubleshoot attribute retrieval issues with HR provisioning
-author: kenwith
+author: jenniferf-skc
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: troubleshooting
 ms.workload: identity
-ms.date: 09/15/2023
-ms.author: kenwith
+ms.date: 02/27/2024
+ms.author: jfields
 ms.reviewer: chmutali
 ---
+
 # Troubleshoot HR attribute retrieval issues
 
 ## Issue fetching Workday attributes
@@ -18,25 +19,25 @@ ms.reviewer: chmutali
 
 | **Applies to** |
 |--|
-| * Workday to on-premises Active Directory user provisioning <br> * Workday to Microsoft Entra user provisioning |
+| * Workday to on-premises Active Directory user provisioning <br> * Workday to Microsoft Entra ID user provisioning |
 | **Issue Description** | 
-| You have just configured the Workday inbound provisioning app and successfully connected to the Workday tenant URL. You ran a test sync and you observed that the provisioning app is not retrieving certain attributes from Workday. Only some attributes are read and provisioned to the target. |
+| You configured the Workday inbound provisioning app and successfully connected to the Workday tenant URL. You ran a test sync and you observed that the provisioning app isn't retrieving certain attributes from Workday. Only some attributes are read and provisioned to the target. |
 | **Probable Cause** | 
 | By default, the Workday provisioning app ships with attribute mapping and XPATH definitions that work with Workday Web Services (WWS) v21.1. When configuring connectivity to Workday in the provisioning app, if you explicitly specified the WWS API version (example: `https://wd3-impl-services1.workday.com/ccx/service/contoso4/Human_Resources/v34.0`), then you may run into this issue, because of the mismatch between WWS API version and the XPATH definitions.  |
 | **Resolution Options** | 
-| * *Option 1*: Remove the WWS API version information from the URL and use the default WWS API version v21.1 <br> * *Option 2*: Manually update the XPATH API expressions so it is compatible with your preferred WWS API version. Update the **XPATH API expressions** under **Attribute Mapping -> Advanced Options -> Edit attribute list for Workday** referring to the section [Workday attribute reference](~/identity/app-provisioning/workday-attribute-reference.md#xpath-values-for-workday-web-services-wws-api-v30)  |
+| * *Option 1*: Remove the WWS API version information from the URL and use the default WWS API version v21.1 <br> * *Option 2*: Manually update the XPATH API expressions so it's compatible with your preferred WWS API version. Update the **XPATH API expressions** under **Attribute Mapping -> Advanced Options -> Edit attribute list for Workday** referring to the section [Workday attribute reference](~/identity/app-provisioning/workday-attribute-reference.md#xpath-values-for-workday-web-services-wws-api-v30)  |
 
 ## Issue fetching Workday calculated fields
 
 | **Applies to** |
 |--|
-| * Workday to on-premises Active Directory user provisioning <br> * Workday to Microsoft Entra user provisioning |
+| * Workday to on-premises Active Directory user provisioning <br> * Workday to Microsoft Entra ID user provisioning |
 | **Issue Description** | 
-| You have just configured the Workday inbound provisioning app and successfully connected to the Workday tenant URL. You have an integration system configured in Workday and you have configured XPATHs that point to attributes in the Workday Integration System. However, the Microsoft Entra provisioning app isn't fetching values associated with these integration system attributes or calculated fields. |
+| You configured the Workday inbound provisioning app and successfully connected to the Workday tenant URL. You have an integration system configured in Workday and you have configured XPATHs that point to attributes in the Workday Integration System. However, the Microsoft Entra provisioning app isn't fetching values associated with these integration system attributes or calculated fields. |
 | **Cause** | 
 | This is a known limitation. The Workday provisioning app currently doesn't support fetching calculated fields/integration system attributes using the *Field_And_Parameter_Criteria_Data* Get_Workers request filter.  |
 | **Resolution Options** | 
-| You could consider a workaround of either using Workday Provisioning groups or Workday Custom ID field. See details below. |
+| Consider a workaround of either using Workday Provisioning groups or the Workday Custom ID field. |
 
 **Suggested workarounds**
  * **Option 1: Using Workday Provisioning Groups**: Check if the calculated field value can be represented as a provisioning group in Workday. Using the same logic that is used for the calculated field, your Workday Admin may be able to assign a Provisioning Group to the user. Reference Workday doc that requires Workday login: [Set Up Account Provisioning Groups](https://doc.workday.com/reader/3DMnG~27o049IYFWETFtTQ/keT9jI30zCzj4Nu9pJfGeQ). Once configured, this Provisioning Group assignment can be [retrieved in the provisioning job](~/identity/app-provisioning/workday-integration-reference.md#example-3-retrieving-provisioning-group-assignments) and used in attribute mappings and scoping filter. 

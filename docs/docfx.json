@@ -60,14 +60,12 @@
         "identity-platform/*.md": "/entra/identity-platform/developer-support-help-options"
       },
       "learn_banner_products": {
-        "docs/**/*.md": [
-          "entra"
-        ]
+        "docs/**/*.md": "entra",
+        "docs/**/*.yml": "entra"
       },
       "featureFlags": {
-        "docs/**/*.md": [
-          "show_learn_banner"
-        ]
+        "docs/**/*.md": "show_learn_banner",
+        "docs/**/*.yml": "show_learn_banner"
       },
       "manager": {
         "architecture/*.md": "martincoetzer",
@@ -120,6 +118,8 @@
         "identity/*.yml": "Microsoft Entra ID",
         "identity/**/*.md": "Microsoft Entra ID",
         "identity/**/*.yml": "Microsoft Entra ID",
+        "identity/managed-identities-azure-resources/**/*.md": "Managed identities for Azure resources",
+        "identity/managed-identities-azure-resources/**/*.yml": "Managed identities for Azure resources",
         "identity-platform/*.md": "Microsoft identity platform",
         "identity-platform/*.yml": "Microsoft identity platform",
         "permissions-management/*.md": "Microsoft Entra Permissions Management",

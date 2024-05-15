@@ -4,10 +4,11 @@ description: How to use the Microsoft Authentication Library (MSAL) for Android 
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.date: 01/18/2023
+ms,reviewer: negoe
+ms.date: 02/26/2024
 ms.devlang: java
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.tgt_pltfrm: android
 ms.topic: how-to
 #Customer intent: As an Android app developer, I want to enable cross-app single sign-on (SSO) using MSAL, so that users can enter their credentials once and have them automatically work across applications, providing a seamless user experience.
@@ -70,7 +71,7 @@ If a device doesn't already have a broker app installed, MSAL instructs the user
 
 #### When a broker is installed
 
-When a broker is installed on a device, all subsequent interactive token requests (calls to `acquireToken()`) are handled by the broker rather than locally by MSAL. Any SSO state previously available to MSAL isn't available to the broker. As a result, the user will need to authenticate again, or select an account from the existing list of accounts known to the device.
+When a broker is installed on a device, all subsequent interactive token requests (calls to `acquireToken()`) are handled by the broker rather than locally by MSAL. Any SSO state previously available to MSAL isn't available to the broker. As a result, the user needs to authenticate again, or select an account from the existing list of accounts known to the device.
 
 Installing a broker doesn't require the user to sign in again. Only when the user needs to resolve an `MsalUiRequiredException` will the next request go to the broker. `MsalUiRequiredException` can be thrown for several reasons, and needs to be resolved interactively. For example:
 
@@ -82,7 +83,7 @@ Installing a broker doesn't require the user to sign in again. Only when the use
 
 #### When a broker is uninstalled
 
-If there's only one broker hosting app installed, and it's removed, then the user will need to sign in again. Uninstalling the active broker removes the account and associated tokens from the device.
+If there's only one broker hosting app installed, and it's removed, then the user needs to sign in again. Uninstalling the active broker removes the account and associated tokens from the device.
 
 If Intune Company Portal is installed and is operating as the active broker, and Microsoft Authenticator is also installed, then if the Intune Company Portal (active broker) is uninstalled the user will need to sign in again. Once they sign in again, the Microsoft Authenticator app becomes the active broker.
 
@@ -139,7 +140,7 @@ MSAL communicates with the broker in two ways:
 - Broker bound service
 - Android AccountManager
 
-MSAL first uses the broker-bound service because calling this service doesn't require any Android permissions. If binding to the bound service fails, MSAL will use the Android AccountManager API. MSAL only does so if your app has already been granted the `"READ_CONTACTS"` permission.
+MSAL first uses the broker-bound service because calling this service doesn't require any Android permissions. If binding to the bound service fails, MSAL uses the Android AccountManager API. MSAL only does so if your app has already been granted the `"READ_CONTACTS"` permission.
 
 If you get an `MsalClientException` with error code `"BROKER_BIND_FAILURE"`, then there are two options:
 
@@ -157,26 +158,27 @@ You can remove the account from settings if you want to repeat the test.
 
 ## SSO through system browser
 
-Android applications have the option to use the WebView, system browser, or Chrome Custom Tabs for authentication user experience. If the application isn't using brokered authentication, it will need to use the system browser rather than the native webview in order to achieve SSO.
+Android applications have the option to use the `WEBVIEW`, system browser, or Chrome Custom Tabs for authentication user experience. If the application isn't using brokered authentication, it needs to use the system browser rather than the native webview in order to achieve SSO.
 
 ### Authorization agents
 
-Choosing a specific strategy for authorization agents is optional and represents additional functionality apps can customize. Most apps will use the MSAL defaults (see [Understand the Android MSAL configuration file](msal-configuration.md) to see the various defaults).
+Choosing a specific strategy for authorization agents is important and represents additional functionality apps can customize. We recommend using 'WEBVIEW'. To know more about other confguration values (see [Understand the Android MSAL configuration file](msal-configuration.md).
 
-MSAL supports authorization using a `WebView`, or the system browser. The image below shows how it looks using the `WebView`, or the system browser with CustomTabs or without CustomTabs:
+MSAL supports authorization using a `WEBVIEW`, or the system browser. The image below shows how it looks using the `WEBVIEW`, or the system browser with CustomTabs or without CustomTabs:
 
 ![MSAL login examples](./media/authorization-agents/sign-in-ui.jpg)
 
 ### SSO implications
 
-By default, applications integrated with MSAL use the system browser's Custom Tabs to authorize. Unlike WebViews, Custom Tabs share a cookie jar with the default system browser enabling fewer sign-ins with web or other native apps that have integrated with Custom Tabs.
 
-If the application uses a `WebView` strategy without integrating Microsoft Authenticator or Company Portal support into their app, users won't have a single sign-on experience across the device or between native apps and web apps.
+If the application uses a `WEBVIEW` strategy without integrating with brokered auth into their app, users won't have a single sign-on experience across the device or between native apps and web apps.
+
+Appplications can be integrated with MSAL to use the `BROWSER` to authorize. Unlike WEBVIEW, `BROWSER` share a cookie jar with the default system browser enabling fewer sign-ins with web or other native apps that have integrated with Custom Tabs.
 
 If the application uses MSAL with a broker like Microsoft Authenticator or Intune Company Portal, then users can have SSO experience across applications if they have an active sign-in with one of the apps.
 
 > [!NOTE]
-> MSAL with broker utilizes WebViews instead of Custom Tabs. As a result, the Single Sign-On (SSO) state is not extended to other apps that use Custom Tabs.
+> MSAL with broker utilizes WebView and provides Single Sign-On (SSO) for all the applications consuming MSAL library and participating in brokered auth. The SSO state from broker is not extended to other apps which do not use MSAL.
 
 ### WebView
 
@@ -186,13 +188,13 @@ To use the in-app WebView, put the following line in the app configuration JSON 
 "authorization_user_agent" : "WEBVIEW"
 ```
 
-When using the in-app `WebView`, the user signs in directly to the app. The tokens are kept inside the sandbox of the app and aren't available outside the app's cookie jar. As a result, the user can't have SSO experience across applications unless the apps integrate with the Authenticator or Company Portal.
+When using the in-app `WEBVIEW`, the user signs in directly to the app. The tokens are kept inside the sandbox of the app and aren't available outside the app's cookie jar. As a result, the user can't have SSO experience across applications unless the apps integrate with the Authenticator or Company Portal.
 
-However, `WebView` does provide the capability to customize the look and feel for sign-in UI. See [Android WebViews](https://developer.android.com/reference/android/webkit/WebView) for more about how to do this customization.
+However, `WEBVIEW` does provide the capability to customize the look and feel for sign-in UI. See [Android WebViews](https://developer.android.com/reference/android/webkit/WebView) for more about how to do this customization.
 
-### Default browser plus custom tabs
+### Browser
 
-By default, MSAL uses the browser and a [custom tabs](https://developer.chrome.com/multidevice/android/customtabs) strategy. You can explicitly indicate this strategy to prevent changes in future releases to `DEFAULT` by using the following JSON configuration in the custom configuration file:
+We recommend using WEBVIEW, though we provide option to use browser and a [custom tabs](https://developer.chrome.com/multidevice/android/customtabs) strategy. You can explicitly indicate this strategy  by using the following JSON configuration in the custom configuration file:
 
 ```json
 "authorization_user_agent" : "BROWSER"
@@ -204,7 +206,7 @@ Use this approach to provide SSO experience through the device's browser. MSAL u
 
 Because it's impossible for MSAL to specify the exact browser package to use on each of the broad array of Android phones, MSAL implements a browser selection heuristic that tries to provide the best cross-device SSO.
 
-MSAL primarily retrieves the default browser from the package manager and checks if it is in a tested list of safe browsers. If not, MSAL falls back on using the Webview rather than launching another non-default browser from the safe list. The default browser will be chosen regardless of whether it supports custom tabs. If the browser supports Custom Tabs, MSAL will launch the Custom Tab. Custom Tabs have a look and feel closer to an in-app `WebView` and allow basic UI customization. See [Custom Tabs in Android](https://developer.chrome.com/multidevice/android/customtabs) to learn more.
+MSAL primarily retrieves the default browser from the package manager and checks if it is in a tested list of safe browsers. If not, MSAL falls back on using the Webview rather than launching another non-default browser from the safe list. The default browser is chosen regardless of whether it supports custom tabs. If the browser supports Custom Tabs, MSAL launches the Custom Tab. Custom Tabs have a look and feel closer to an in-app `WebView` and allow basic UI customization. See [Custom Tabs in Android](https://developer.chrome.com/multidevice/android/customtabs) to learn more.
 
 If there are no browser packages on the device, MSAL uses the in-app `WebView`. If the device default setting isn't changed, the same browser should be launched for each sign-in to ensure SSO experience.
 

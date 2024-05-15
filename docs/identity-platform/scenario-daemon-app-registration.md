@@ -1,25 +1,25 @@
 ---
-title: Register daemon apps that call web APIs
+title: How to register a daemon app that calls web APIs
 description: Learn how to build a daemon app that calls web APIs - app registration
 author: Dickson-Mwendia
 manager: CelesteDG
 ms.author: dmwendia
 ms.custom: 
-ms.date: 12/01/2021
+ms.date: 02/01/2024
 ms.reviewer: jmprieur
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: conceptual
+ms.service: identity-platform
+
+ms.topic: concept-article
 #Customer intent: As an application developer, I want to know how to write a daemon app that can call web APIs by using the Microsoft identity platform for developers.
 ---
 
-# Daemon app that calls web APIs - app registration
+# How to register a daemon app that calls web APIs
 
 For a daemon application, here's what you need to know when you register the app.
 
 ## Supported account types
 
-Daemon applications make sense only in Microsoft Entra tenants. So when you create the application, choose one of the following options:
+When creating the application in your in Microsoft Entra tenant, choose one of the following options for your app registration:
 
 - **Accounts in this organizational directory only**. This choice is the most common one because daemon applications are written by line-of-business (LOB) developers.
 - **Accounts in any organizational directory**. You'll make this choice if you're an Independent Software Vendor (ISV) providing a utility tool to your customers. You'll need your customers' tenant admins to approve it.

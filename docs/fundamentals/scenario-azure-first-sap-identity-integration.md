@@ -1,18 +1,15 @@
 ---
 title: Scenario - Using Microsoft Entra ID to secure access to SAP platforms and applications
-description: A guide for architects and IT administrators on how to secure access to SAP platforms and applications 
-services: active-directory
+description: A guide for architects and IT administrators on how to secure access to SAP platforms and applications
 author: xstof
 manager: alberts
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra
 ms.subservice: fundamentals
 ms.topic: conceptual
 ms.date: 08/26/2021
 ms.author: christoc
-ms.reviewer: 
 ms.custom:
-ms.collection: 
+ms.collection:
 ---
 
 # Scenario - Using Microsoft Entra ID to secure access to SAP platforms and applications
@@ -24,10 +21,10 @@ This document provides advice on the **technical design and configuration** of S
 | Abbreviation                                                                                                          | Description                                                                                                                                                                                                   |
 | --------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [BTP](https://www.sap.com/products/business-technology-platform.html)                                                 | SAP Business Technology Platform. The whole of SAP's technology offering. Most of the SAP technologies discussed here are part of BTP. The products formally known as SAP Cloud Platform are part of SAP BTP. |
-| [IAS](https://help.sap.com/viewer/6d6d63354d1242d185ab4830fc04feb1/Cloud/en-US)                                       | SAP Cloud Identity Services - Identity Authentication Service. The multi-tenant cloud Identity Provider service provided by SAP. IAS helps users authenticate to their own SAP service instances.           |
+| [IAS](https://help.sap.com/viewer/6d6d63354d1242d185ab4830fc04feb1/Cloud/en-US)                                       | SAP Cloud Identity Services - Identity Authentication Service. The multitenant cloud Identity Provider service provided by SAP. IAS helps users authenticate to their own SAP service instances.           |
 | [IDS](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/d6a8db70bdde459f92f2837349f95090.html) | SAP ID Service. An instance of IAS used by SAP to authenticate customers and partners to SAP-operated PaaS and SaaS services.                                                                                 |
 | [IPS](https://help.sap.com/viewer/f48e822d6d484fa5ade7dda78b64d9f5/Cloud/en-US/2d2685d469a54a56b886105a06ccdae6.html) | SAP Cloud Identity Services - Identity Provisioning Service.  IPS helps to synchronize identities between different stores / target systems.                                                           |
-| [XSUAA](https://blogs.sap.com/2019/01/07/uaa-xsuaa-platform-uaa-cfuaa-what-is-it-all-about/)                          | Extended Services for Cloud Foundry User Account and Authentication.  XSUAA is a multi-tenant OAuth authorization server within the SAP BTP.                                                                   |
+| [XSUAA](https://blogs.sap.com/2019/01/07/uaa-xsuaa-platform-uaa-cfuaa-what-is-it-all-about/)                          | Extended Services for Cloud Foundry User Account and Authentication.  XSUAA is a multitenant OAuth authorization server within the SAP BTP.                                                                   |
 | [CF](https://www.cloudfoundry.org/)                                                                                   | Cloud Foundry. Cloud Foundry is the environment on which SAP built their multicloud offering for BTP (AWS, Azure, GCP, Alibaba).                                                                                      |
 | [Fiori](https://www.sap.com/products/fiori.html)                                                              | The web-based user experience of SAP (as opposed to the desktop-based experience).                                                                                                                            |
 
@@ -253,7 +250,7 @@ As discussed before, we recommend setting up a trust configuration in BTP toward
 
 ![Rolling over SAML Signing Certs](./media/scenario-azure-first-sap-identity-integration/sap-rollover-saml-signing-certs.png)
 
-SAP has example implementations for [client certificate notifications](https://blogs.sap.com/2017/12/06/sap-cloud-platform-integration-automated-notification-of-keystore-entries-reaching-expiry/) with SAP Cloud Integration and [near-expiry handling](https://blogs.sap.com/2019/03/01/sap-cloud-platform-integration-automated-notification-for-client-certificates-reaching-expiry/). Find another example focusing on the SAP BTP trust store and Azure Key Vault [here](https://blogs.sap.com/2022/12/02/automatic-sap-btp-trust-store-certificate-renewal-with-azure-key-vault-or-how-to-stop-thinking-about-expiry-dates-once-and-for-all/). This could be adapted with Azure Integration Services or PowerAutomate. However, they would need to be adapted to work with server certificates. Such approach requires a custom implementation.
+SAP has example implementations for [client certificate notifications](https://blogs.sap.com/2017/12/06/sap-cloud-platform-integration-automated-notification-of-keystore-entries-reaching-expiry/) with SAP Cloud Integration and [near-expiry handling](https://blogs.sap.com/2019/03/01/sap-cloud-platform-integration-automated-notification-for-client-certificates-reaching-expiry/). This could be adapted with Azure Integration Services or PowerAutomate. However, they would need to be adapted to work with server certificates. Such approach requires a custom implementation.
 
 #### Why this recommendation?
 

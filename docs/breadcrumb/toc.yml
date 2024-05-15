@@ -13,13 +13,12 @@ items:
     - name: Global Secure Access
       tocHref: /entra/global-secure-access/
       topicHref: /entra/global-secure-access/
-    - name: Microsoft Entra External ID
+    - name: External ID
       tocHref: /entra/external-id/
       topicHref: /entra/external-id/
-      items:
-      - name: Microsoft Entra External ID for customers
-        tocHref: /entra/external-id/customers/
-        topicHref: /entra/external-id/customers
+    - name: External ID
+      tocHref: /entra/external-id/customers/
+      topicHref: /entra/external-id/
     - name: Fundamentals
       tocHref: /entra/fundamentals/
       topicHref: /entra/fundamentals/
@@ -51,7 +50,7 @@ items:
       - name: Hybrid
         tocHref: /entra/identity/hybrid/
         topicHref: /entra/identity/hybrid/
-      - name: Managed identities
+      - name: Managed identities for Azure resources
         tocHref: /entra/identity/managed-identities-azure-resources/
         topicHref: /entra/identity/managed-identities-azure-resources/
       - name: Monitoring and health

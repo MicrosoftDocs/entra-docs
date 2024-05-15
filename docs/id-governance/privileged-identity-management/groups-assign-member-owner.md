@@ -1,20 +1,17 @@
 ---
 title: Assign eligibility for a group in Privileged Identity Management
 description: Learn how to assign eligibility for a group in Privileged Identity Management.
-services: active-directory
-documentationcenter: ''
+
 author: barclayn
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id-governance
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: identity
-ms.subservice: pim
+ms.subservice: privileged-identity-management
 ms.date: 09/12/2023
 ms.author: barclayn
 ms.reviewer: ilyal
 ms.custom: pim
-ms.collection: M365-identity-device-management
+
 ---
 
 # Assign eligibility for a group in Privileged Identity Management
@@ -27,7 +24,7 @@ When a membership or ownership is assigned, the assignment:
 - Can't be removed within five minutes of it being assigned
 
 >[!NOTE]
->Every user who is eligible for membership in or ownership of a PIM for Groups must have a Microsoft Entra Premium P2 or Microsoft Entra ID Governance license. For more information, see [License requirements to use Privileged Identity Management](~/id-governance/licensing-fundamentals.md).
+>Every user who is eligible for membership in or ownership of a PIM for Groups must have a Microsoft Entra ID P2 or Microsoft Entra ID Governance license. For more information, see [License requirements to use Privileged Identity Management](~/id-governance/licensing-fundamentals.md).
 
 ## Assign an owner or member of a group
 

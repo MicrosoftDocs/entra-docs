@@ -4,8 +4,8 @@ description: Troubleshoot common problems faced when signing in to first-party M
 
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 
 ms.topic: troubleshooting
 ms.date: 09/07/2023

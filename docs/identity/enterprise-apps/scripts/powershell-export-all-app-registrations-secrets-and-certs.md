@@ -4,12 +4,12 @@ description: PowerShell example that exports all secrets and certificates for th
 
 author: mifarca
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 
 ms.custom:
 ms.topic: sample
-ms.date: 07/11/2023
+ms.date: 01/15/2024
 ms.author: jomondi
 ms.reviewer: mifarca
 ---
@@ -18,7 +18,7 @@ ms.reviewer: mifarca
 
 This PowerShell script example exports all secrets and certificates for the specified app registrations from your directory into a CSV file.
 
-[!INCLUDE [quickstarts-free-trial-note](~/../azure-docs-pr/includes/quickstarts-free-trial-note.md)]
+[!INCLUDE [quickstarts-free-trial-note](~/includes/azure-docs-pr/quickstarts-free-trial-note.md)]
 
 This sample requires the [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation) SDK module.
 
@@ -55,7 +55,7 @@ pecuniary loss) arising out of the use of or inability to use the sample or docu
 Microsoft has been advised of the possibility of such damages.
 #################################################################################>
 
-Connect-MgGraph -Scopes 'Application.ReadWrite.All'
+Connect-MgGraph -Scopes 'Application.Read.All'
 
 $Messages = @{
     DurationNotice = @{

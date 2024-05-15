@@ -5,9 +5,9 @@ author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: how-to
-ms.date: 06/09/2023
-ms.service: network-access
-ms.custom: 
+ms.date: 02/29/2024
+ms.service: global-secure-access
+
 ---
 # Assign a remote network to a traffic forwarding profile for Global Secure Access (preview)
 
@@ -58,14 +58,14 @@ A traffic forwarding profile can be assigned using Microsoft Graph on the `/beta
 1. Open a web browser and navigate to the Graph Explorer at https://aka.ms/ge.
 1. Select **GET** as the HTTP method from the dropdown. 
 1. Select the API version to **beta**. 
-1. Enter the query:
+1. Enter the query.
     ```
     GET https://graph.microsoft.com/beta/networkaccess/forwardingprofiles 
     ```
 1. Select **Run query**. 
 1. Find the ID of the desired traffic forwarding profile. 
 1. Select PATCH as the HTTP method from the dropdown. 
-1. Enter the query:
+1. Enter the query.
     ```
         PATCH https://graph.microsoft.com/beta/networkaccess/branches/d2b05c5-1e2e-4f1d-ba5a-1a678382ef16/forwardingProfiles
         {

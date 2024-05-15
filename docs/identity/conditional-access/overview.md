@@ -2,10 +2,10 @@
 title: What is Conditional Access in Microsoft Entra ID?
 description: Conditional Access is the Zero Trust policy engine at the heart of the new identity-driven control plane.
 
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: overview
-ms.date: 11/09/2023
+ms.date: 03/19/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -14,13 +14,9 @@ ms.reviewer: kvenkit
 ---
 # What is Conditional Access?
 
-The modern security perimeter extends beyond an organization's network perimeter to include user and device identity. Organizations now use identity-driven signals as part of their access control decisions.
+The modern security perimeter extends beyond an organization's network perimeter to include user and device identity. Organizations now use identity-driven signals as part of their access control decisions. Microsoft Entra Conditional Access brings signals together, to make decisions, and enforce organizational policies. Conditional Access is Microsoft's [Zero Trust policy engine](/security/zero-trust/deploy/identity) taking signals from various sources into account when enforcing policy decisions.
 
-> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE4MwZs]
-
-Microsoft Entra Conditional Access brings signals together, to make decisions, and enforce organizational policies. Conditional Access is Microsoft's [Zero Trust policy engine](/security/zero-trust/deploy/identity) taking signals from various sources into account when enforcing policy decisions.
-
-:::image type="content" source="media/overview/conditional-access-signal-decision-enforcement.png" alt-text="Diagram showing concept of Conditional Access signals plus decision to enforce organizational policy.":::
+:::image type="content" source="media/common-conditional-access-media/conditional-access-signal-decision-enforcement.png" alt-text="Diagram showing concept of Conditional Access signals plus decision to enforce organizational policy." lightbox="media/common-conditional-access-media/conditional-access-signal-decision-enforcement.png":::
 
 Conditional Access policies at their simplest are if-then statements; **if** a user wants to access a resource, **then** they must complete an action. For example: If a user wants to access an application or service like Microsoft 365, then they must perform multifactor authentication to gain access.
 
@@ -106,7 +102,7 @@ Conditional Access policies on the **Policies** page can be filtered by administ
 
 Customers with [Microsoft 365 Business Premium licenses](/office365/servicedescriptions/office-365-service-descriptions-technet-library) also have access to Conditional Access features.
 
-Risk-based policies require access to [Identity Protection](~/id-protection/overview-identity-protection.md), which requires P2 licenses.
+Risk-based policies require access to [Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md), which requires P2 licenses.
 
 Other products and features that interact with Conditional Access policies require appropriate licensing for those products and features.
 

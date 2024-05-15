@@ -8,9 +8,9 @@ ms.custom: devx-track-java, has-adal-ref
 ms.date: 09/14/2019
 ms.devlang: java
 ms.reviewer: shoatman
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: conceptual
+ms.service: identity-platform
+
+ms.topic: concept-article
 #Customer intent: As an Android developer, I want to understand the concept of accounts in the Microsoft identity platform when using MSAL for Android so that I can properly manage and authenticate users across multiple organizations and systems of record.
 ---
 
@@ -63,7 +63,7 @@ In the above diagram:
   - A tenant profile for `tom@live.com` exists in each of these tenants.
 - Information about Tom and Bob in other tenants may differ from that in the system of record. They may differ by attributes such as Job title, Office Location, and so on. They may be members of groups and/or roles within each organization (Microsoft Entra tenant). We refer to this information as bob@contoso.com tenant profile.
 
-In the diagram, bob@contoso.com and tom@live.com have access to resources in different Microsoft Entra tenants. For more information, see [Add Microsoft Entra B2B collaboration users in the Azure portal](~/external-id/add-users-administrator.md).
+In the diagram, bob@contoso.com and tom@live.com have access to resources in different Microsoft Entra tenants. For more information, see [Add Microsoft Entra B2B collaboration users in the Azure portal](~/external-id/add-users-administrator.yml).
 
 ## Accounts and single sign-on (SSO)
 

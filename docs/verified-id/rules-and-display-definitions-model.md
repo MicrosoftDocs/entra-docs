@@ -4,9 +4,9 @@ description: Rules and Display Definition Reference
 documentationCenter: ''
 author: barclayn
 manager: amycolannino
-ms.service: decentralized-identity
+ms.service: entra-verified-id
 ms.topic: how-to
-ms.subservice: verifiable-credentials
+
 ms.date: 06/16/2022
 ms.author: barclayn
 
@@ -155,6 +155,9 @@ When you want the user to enter information themselves. This type is also called
 | -------- | -------- | -------- |
 |`uri`| string (url) | url of the logo. |
 |`description` | string | the description of the logo |
+
+> [!NOTE]
+> Microsoft recommends that you use widely supported image formats, such as .PNG, .JPG, or .BMP, to reduce file format errors.
 
 ### displayConsent type
 

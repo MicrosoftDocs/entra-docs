@@ -1,18 +1,14 @@
 ---
-title: Best practices to secure with Microsoft Entra ID 
+title: Best practices to secure with Microsoft Entra ID
 description: Best practices we recommend you follow to secure your isolated environments in Microsoft Entra ID.
-services: active-directory
 author: gargi-sinha
 manager: martinco
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: fundamentals
+ms.service: entra
+ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 7/5/2022
 ms.author: gasinh
 ms.reviewer: ajburnle
-ms.custom: "it-pro"
-ms.collection: M365-identity-device-management
 ---
 
 # Best practices for all isolation architectures
@@ -59,13 +55,13 @@ Cloud-only accounts are the simplest way to provision human identities in a Micr
 
 ### Outsourcing high risk roles
 
-To mitigate inside threats, it's possible to outsource access to the global administrator, and privileged role administrator roles to be managed service provider using Azure B2B collaboration or delegating access through a CSP partner or lighthouse. This access can be controlled by in-house staff via approval flows in Azure Privileged Identity Management (PIM). This approach can greatly reduce inside threats. This is an approach that you can use to meet compliance demands for customers that have concerns.
+To mitigate inside threats, it's possible to outsource access to [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator) and [Privileged Role Administrator](../identity/role-based-access-control/permissions-reference.md#privileged-role-administrator) roles to be managed service provider using Azure B2B collaboration or delegating access through a CSP partner or lighthouse. This access can be controlled by in-house staff via approval flows in Azure Privileged Identity Management (PIM). This approach can greatly reduce inside threats. This is an approach that you can use to meet compliance demands for customers that have concerns.
 
 ## Nonhuman identity provisioning
 
 ### Emergency access accounts
 
-Provision [emergency access accounts](~/identity/role-based-access-control/security-emergency-access.md) for "break glass" scenarios where normal administrative accounts can't be used in the event you're accidentally locked out of your Microsoft Entra organization. For on-premises environments using federation systems such as Active Directory Federation Services (AD FS) for authentication, maintain alternate cloud-only credentials for your global administrators to ensure service delivery during an on-premises infrastructure outage.
+Provision [emergency access accounts](~/identity/role-based-access-control/security-emergency-access.md) for "break glass" scenarios where normal administrative accounts can't be used in the event you're accidentally locked out of your Microsoft Entra organization. For on-premises environments using federation systems such as Active Directory Federation Services (AD FS) for authentication, maintain alternate cloud-only credentials for these emergency access accounts to ensure service delivery during an on-premises infrastructure outage.
 
 ### Azure managed identities
 
@@ -140,8 +136,6 @@ In the following sections are recommendations for Azure solutions. For general g
 
 * Define Conditional Access policies for [security information registration](~/identity/conditional-access/howto-conditional-access-policy-registration.md) that reflects a secure root of trust process on-premises (for example, for workstations in physical locations, identifiable by IP addresses, that employees must visit in person for verification).
 
-* Consider managing Conditional Access policies at scale with automation using [MS Graph Conditional Access API](~/identity/conditional-access/howto-conditional-access-apis.md)). For example, you can use the API to configure, manage, and monitor Conditional Access policies consistently across tenants.
-
 * Consider using Conditional Access to restrict workload identities. Create a policy to limit or better control access based on location or other relevant circumstances.
 
 ### Authentication Challenges
@@ -206,7 +200,7 @@ Some approaches you can use for [using secure devices as part of your privileged
 
   * Directory data residency requirements
 
-  * Global Administrators who will manage it
+  * Who will manage it
 
   * Training and understanding of common security requirements.
 
@@ -328,7 +322,7 @@ The following are additional operational considerations for Microsoft Entra ID, 
 
 ### Inventory and visibility
 
-**Azure subscription discovery** - For each discovered tenant, a Microsoft Entra Global Administrator can [elevate access](/azure/role-based-access-control/elevate-access-global-admin) to gain visibility of all subscriptions in the environment. This elevation will assign the global administrator the User Access Administrator built-in role at the root management group.
+**Azure subscription discovery** - For each discovered tenant, a Microsoft Entra Global Administrator can [elevate access](/azure/role-based-access-control/elevate-access-global-admin) to gain visibility of all subscriptions in the environment. This elevation will assign them the [User Access Administrator](/azure/role-based-access-control/built-in-roles/general#user-access-administrator) built-in role at the root management group.
 
 >[!NOTE]
 >This action is highly privileged and might give the admin access to subscriptions that hold extremely sensitive information if that data has not been properly isolated.
@@ -385,7 +379,7 @@ All hybrid identity infrastructure OS logs should be archived and carefully moni
 
 The following scenarios must be explicitly monitored and investigated:
 
-* **Suspicious activity** - All [Microsoft Entra risk events](~/id-protection/overview-identity-protection.md) should be monitored for suspicious activity. All tenants should define the network [named locations](~/identity/conditional-access/location-condition.md) to avoid noisy detections on location-based signals. [Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md) is natively integrated with Azure Security Center. It's recommended that any risk detection investigation includes all the environments the identity is provisioned (for example, if a human identity has an active risk detection in the corporate tenant, the team operating the customer facing tenant should also investigate the activity of the corresponding account in that environment).
+* **Suspicious activity** - All [Microsoft Entra risk events](~/id-protection/overview-identity-protection.md) should be monitored for suspicious activity. All tenants should define the network [named locations](../identity/conditional-access/concept-assignment-network.md) to avoid noisy detections on location-based signals. [Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md) is natively integrated with Azure Security Center. It's recommended that any risk detection investigation includes all the environments the identity is provisioned (for example, if a human identity has an active risk detection in the corporate tenant, the team operating the customer facing tenant should also investigate the activity of the corresponding account in that environment).
 
 * **User entity behavioral analytics (UEBA) alerts** - UEBA should be used to get insightful information based on anomaly detection. [Microsoft Microsoft 365 Defender for Cloud Apps](https://www.microsoft.com/security/business/siem-and-xdr/microsoft-defender-cloud-apps) provides [UEBA in the cloud](/defender-cloud-apps/tutorial-ueba). Customers can integrate [on-premises UEBA from Microsoft Microsoft 365 Defender for Identity](/microsoft-365/security/defender/microsoft-365-security-center-mdi). MCAS reads signals from Microsoft Entra ID Protection.
 
@@ -449,7 +443,7 @@ The following scenarios must be explicitly monitored and investigated:
 
   * New custom roles created
 
-* **Custom separation of duties rules** - If your organizations established any separation of duties rules (for example, a holder of a Global Administrator tenant GA can't be owner/contributor of subscriptions), use Microsoft Entra Entitlement Management incompatible access packages to enforce separation of duties, and create alerts or configure periodic reviews to detect violations by administrators.
+* **Custom separation of duties rules** - If your organizations established any separation of duties rules, use Microsoft Entra Entitlement Management incompatible access packages to enforce separation of duties, and create alerts or configure periodic reviews to detect violations by administrators.
 
 **Other monitoring considerations** - Azure subscriptions that contain resources used for Log Management should be considered as critical infrastructure (Tier 0) and locked down to the Security Operations team of the corresponding environment. Consider using tools such as Azure Policy to enforce additional controls to these subscriptions.
 

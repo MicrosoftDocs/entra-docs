@@ -5,12 +5,12 @@ author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
 ms.custom:
-ms.date: 08/11/2023
+ms.date: 04/08/2024
 ms.reviewer: ludwignick
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: conceptual
-#Customer intent:
+ms.service: identity-platform
+
+ms.topic: concept-article
+#Customer intent: As a developer integrating authentication into my application, I want to understand the limitations of the OAuth 2.0 implicit grant flow and why it is no longer recommended, so that I can choose a more suitable authentication method like the authorization code flow.
 ---
 
 # Microsoft identity platform and OAuth 2.0 implicit grant flow
@@ -18,8 +18,6 @@ ms.topic: conceptual
 The Microsoft identity platform supports the OAuth 2.0 implicit grant flow as described in the [OAuth 2.0 Specification](https://tools.ietf.org/html/rfc6749#section-4.2). The defining characteristic of the implicit grant is that tokens (ID tokens or access tokens) are returned directly from the /authorize endpoint instead of the /token endpoint. This is often used as part of the [authorization code flow](v2-oauth2-auth-code-flow.md), in what is called the "hybrid flow" - retrieving the ID token on the /authorize request along with an authorization code.
 
 [!INCLUDE [suggest-msal-from-protocols](includes/suggest-msal-from-protocols.md)]
-
-[!INCLUDE [try-in-postman-link](includes/try-in-postman-link.md)]
 
 ## Prefer the auth code flow
 
@@ -48,7 +46,7 @@ To initially sign the user into your app, you can send an [OpenID Connect](v2-pr
 // Line breaks for legibility only
 
 https://login.microsoftonline.com/{tenant}/oauth2/v2.0/authorize?
-client_id=535fb089-9ff3-47b6-9bfb-4f1264799865
+client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &response_type=id_token
 &redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
 &scope=openid
@@ -126,8 +124,7 @@ In the normal OpenID Connect/OAuth flow, you would do this by making a request t
 // Line breaks for legibility only
 
 https://login.microsoftonline.com/{tenant}/oauth2/v2.0/authorize?
-client_id=535fb089-9ff3-47b6-9bfb-4f1264799865
-&response_type=token
+client_id=00001111-aaaa-2222-bbbb-3333cccc4444&response_type=token
 &redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
 &scope=https%3A%2F%2Fgraph.microsoft.com%2Fuser.read
 &response_mode=fragment

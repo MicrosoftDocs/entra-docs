@@ -3,16 +3,16 @@ title: Federation with a SAML/WS-Fed identity provider (IdP) for B2B
 description: Directly federate with a SAML or WS-Fed identity provider so guests can sign in to your Microsoft Entra apps
 
  
-ms.service: active-directory
-ms.subservice: B2B
+ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 11/07/2023
+ms.date: 03/26/2024
 
 ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.collection: M365-identity-device-management
+#customer intent: As an IT admin setting up federation with SAML/WS-Fed identity providers, I want to configure the required attributes and claims for the SAML 2.0 or WS-Fed protocol, so that guest users can sign in to my Microsoft Entra tenant using their own organizational account.
 ---
 
 # Federation with SAML/WS-Fed identity providers for guest users
@@ -25,7 +25,7 @@ This article describes how to set up federation with any organization whose iden
 
 > [!IMPORTANT]
 >
->- You can now set up SAML/WS-Fed IdP federation with Microsoft Entra ID verified domains and [configure the invitation redemption order (preview)](cross-tenant-access-overview.md#configurable-redemption-preview) to make sure that when invited users sign in, they redeem their invitations using the federated IdP instead of Microsoft Entra ID. **Redemption order** settings (preview) are available in your cross-tenant access settings for inbound B2B collaboration.
+>- You can now set up SAML/WS-Fed IdP federation with Microsoft Entra ID verified domains and [configure the invitation redemption order](cross-tenant-access-overview.md#configurable-redemption) to make sure that when invited users sign in, they redeem their invitations using the federated IdP instead of Microsoft Entra ID. **Redemption order** settings are available in your cross-tenant access settings for inbound B2B collaboration.
 >- We no longer support an allowlist of IdPs for new SAML/WS-Fed IdP federations. When you're setting up a new external federation, refer to [Step 1: Determine if the partner needs to update their DNS text records](#step-1-determine-if-the-partner-needs-to-update-their-dns-text-records).
 >- In the SAML request sent by Microsoft Entra ID for external federations, the Issuer URL is a tenanted endpoint. For any new federations, we recommend that all our partners set the audience of the SAML or WS-Fed based IdP to a tenanted endpoint. Refer to the [SAML 2.0](#required-saml-20-attributes-and-claims) and [WS-Fed](#required-ws-fed-attributes-and-claims) required attributes and claims sections. Any existing federations configured with the global endpoint will continue to work, but new federations will stop working if your external IdP is expecting a global issuer URL in the SAML request.
 > - We've removed the single domain limitation. You can now associate multiple domains with an individual federation configuration.
@@ -36,7 +36,8 @@ This article describes how to set up federation with any organization whose iden
 After you set up federation with an organization's SAML/WS-Fed IdP:
 
 - If the domain you're federating with isn't a Microsoft Entra ID verified domain, any new guest users you invite will be authenticated using that SAML/WS-Fed IdP.
-- If the domain is Microsoft Entra ID verified, you also need to [configure the **Redemption order** settings (preview)](cross-tenant-access-settings-b2b-collaboration.md) in your cross-tenant access settings for inbound B2B collaboration to prioritize redemption with the federated IdP. Then any new guest users you invited will be authenticated using that SAML/WS-Fed IdP.
+
+- If the domain is Microsoft Entra ID verified, you also need to [configure the **Redemption order** settings (preview)](cross-tenant-access-settings-b2b-collaboration.yml) in your cross-tenant access settings for inbound B2B collaboration to prioritize redemption with the federated IdP. Then any new guest users you invited will be authenticated using that SAML/WS-Fed IdP.
 
 It’s important to note that setting up federation doesn’t change the authentication method for guest users who have already redeemed an invitation from you. Here are some examples:
 
@@ -54,7 +55,7 @@ With SAML/WS-Fed IdP federation, guest users sign into your Microsoft Entra tena
 
 ## Sign-in endpoints
 
-SAML/WS-Fed IdP federation guest users can now sign in to your multi-tenant or Microsoft first-party apps by using a [common endpoint](redemption-experience.md#redemption-process-and-sign-in-through-a-common-endpoint) (in other words, a general app URL that doesn't include your tenant context). During the sign-in process, the guest user chooses **Sign-in options**, and then selects **Sign in to an organization**. The user then types the name of your organization and continues signing in using their own credentials.
+SAML/WS-Fed IdP federation guest users can now sign in to your multitenant or Microsoft first-party apps by using a [common endpoint](redemption-experience.md#redemption-process-and-sign-in-through-a-common-endpoint) (in other words, a general app URL that doesn't include your tenant context). During the sign-in process, the guest user chooses **Sign-in options**, and then selects **Sign in to an organization**. The user then types the name of your organization and continues signing in using their own credentials.
 
 SAML/WS-Fed IdP federation guest users can also use application endpoints that include your tenant information, for example:
 
@@ -68,13 +69,14 @@ You can also give guest users a direct link to an application or resource by inc
 
 **Can I set up SAML/WS-Fed IdP federation with Microsoft Entra ID verified domains?**
 
-Yes, you can now set up SAML/WS-Fed IdP federation with other Microsoft Entra ID verified domains. This includes verified domains where the tenant has undergone an [admin takeover](~/identity/users/domains-admin-takeover.md). If the domain you're federating with is Microsoft Entra ID verified, you also need to [configure the **Redemption order** settings (preview)](cross-tenant-access-settings-b2b-collaboration.md) in your cross-tenant access settings for inbound B2B collaboration to make sure that when invited users sign in, they redeem their invitations using the federated IdP instead of Microsoft Entra ID.
+Yes, you can now set up SAML/WS-Fed IdP federation with other Microsoft Entra ID verified domains. This includes verified domains where the tenant has undergone an [admin takeover](~/identity/users/domains-admin-takeover.md). If the domain you're federating with is Microsoft Entra ID verified, you also need to [configure the **Redemption order** settings (preview)](cross-tenant-access-settings-b2b-collaboration.yml) in your cross-tenant access settings for inbound B2B collaboration to make sure that when invited users sign in, they redeem their invitations using the federated IdP instead of Microsoft Entra ID.
 
-Currently, redemption order settings aren't supported across clouds. If the domain you're federating with is Microsoft Entra ID verified in a different Microsoft cloud, Microsoft Entra ID redemption always take precedence.
+
+Currently, redemption order settings aren't supported across clouds. If the domain you're federating with is Microsoft Entra ID verified in a different Microsoft cloud, Microsoft Entra redemption always takes precedence.
 
 **Can I set up SAML/WS-Fed IdP federation with a domain for which an unmanaged (email-verified) tenant exists?**
  
-Yes, you can set up SAML/WS-Fed IdP federation with domains that aren't DNS-verified in Microsoft Entra ID, including unmanaged (email-verified or "viral") Microsoft Entra ID tenants. Such tenants are created when a user redeems a B2B invitation or performs self-service sign-up for Microsoft Entra ID using a domain that doesn’t currently exist.
+Yes, you can set up SAML/WS-Fed IdP federation with domains that aren't DNS-verified in Microsoft Entra ID, including unmanaged (email-verified or "viral") Microsoft Entra tenants. Such tenants are created when a user redeems a B2B invitation or performs self-service sign-up for Microsoft Entra ID using a domain that doesn’t currently exist.
 
 **How many federation relationships can I create?**
 
@@ -98,7 +100,7 @@ No, the [email one-time passcode](one-time-passcode.md) feature should be used i
 
 **Once SAML/WS-Fed IdP federation is configured with an organization, does each guest need to be sent and redeem an individual invitation?**
 
-Setting up SAML/WS-Fed IdP federation doesn’t change the authentication method for guest users who have already redeemed an invitation from you. You can update a guest user’s authentication method by [resetting their redemption status](reset-redemption-status.md).
+When inviting new guests, you still need to send invitations or provide direct links so the guests can complete the redemption steps. For existing guests, you don't necessarily need to send new invitations. Existing guests will continue using the authentication method they used before federation was set up. If you want these guests to start using federation for authentication, you can [reset their redemption status](reset-redemption-status.md). Then the next time they access your app or use the link in your invitation, they'll repeat the redemption process and start using federation as their authentication method.
 
 **Is there a way to send a signed request to the SAML identity provider?**
 
@@ -106,7 +108,7 @@ Currently, the Microsoft Entra SAML/WS-Fed federation feature doesn't support se
 
 **What permissions are required to configure a SAML/Ws-Fed identity provider?**
 
-You need to be an [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator) or a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) in your Microsoft Entra tenant to configure a SAML/Ws-Fed identity provider.
+You need to be at least an [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator) to configure a SAML/Ws-Fed identity provider.
 
 ## Step 1: Determine if the partner needs to update their DNS text records
 
@@ -247,16 +249,16 @@ You can use the Microsoft Graph API [samlOrWsFedExternalDomainFederation](/graph
 
 <a name='step-4-test-samlws-fed-idp-federation-in-azure-ad'></a>
 
-## Step 4: Configure the redemption order (preview) for Microsoft Entra ID verified domains
+## Step 4: Configure the redemption order for Microsoft Entra ID verified domains
 
-If the domain is Microsoft Entra ID verified, [configure the **Redemption order** settings](cross-tenant-access-settings-b2b-collaboration.md#configure-redemption-order-preview) in your cross-tenant access settings for inbound B2B collaboration. Move **SAML/WS-Fed identity providers** to the top of the **Primary identity providers** list to prioritize redemption with the federated IdP.
+If the domain is Microsoft Entra ID verified, [configure the **Redemption order** settings](cross-tenant-access-settings-b2b-collaboration.yml) in your cross-tenant access settings for inbound B2B collaboration. Move **SAML/WS-Fed identity providers** to the top of the **Primary identity providers** list to prioritize redemption with the federated IdP.
 
 > [!NOTE]
 > The Microsoft Entra admin center settings for the configurable redemption feature are currently rolling out to customers. Until the settings are available in the admin center, you can configure the invitation redemption order using the Microsoft Graph REST API (beta version). See [Example 2: Update default invitation redemption configuration](/graph/api/crosstenantaccesspolicyconfigurationdefault-update?view=graph-rest-beta&tabs=http#example-2-update-default-invitation-redemption-configuration&preserve-view=true) in the Microsoft Graph reference documentation.
 
 ## Step 5: Test SAML/WS-Fed IdP federation in Microsoft Entra ID
 
-Now test your federation setup by inviting a new B2B guest user. For details, see [Add Microsoft Entra B2B collaboration users in the Microsoft Entra admin center](add-users-administrator.md).
+Now test your federation setup by inviting a new B2B guest user. For details, see [Add Microsoft Entra B2B collaboration users in the Microsoft Entra admin center](add-users-administrator.yml).
  
 ## How do I update the certificate or configuration details?
 

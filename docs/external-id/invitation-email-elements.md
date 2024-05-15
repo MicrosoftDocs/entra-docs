@@ -3,17 +3,15 @@ title: Elements of the B2B invitation email
 description: Microsoft Entra B2B collaboration invitation email template
 
  
-ms.service: active-directory
-ms.subservice: B2B
-ms.topic: conceptual
+ms.service: entra-external-id
+ms.topic: concept-article
 ms.date: 10/06/2023
 
 ms.author: cmulligan
 author: csmulligan
 manager: celestedg
-ms.custom: "it-pro, seo-update-azuread-jan"
+ms.custom: it-pro
 ms.collection: M365-identity-device-management
-
 # Customer intent: As a B2B collaboration user, I want to understand the elements of the invitation email, so that I can effectively invite partners to join my organization and provide them with the necessary information to make an informed decision.
 ---
 
@@ -53,7 +51,7 @@ The email starts with a brief warning to the user about phishing, alerting them 
 
 ### Inviter's information and invitation message
 
-The email includes the name and primary domain associated with the organization sending the invitation. This information should help the invitee make an informed decision about accepting the invitation. The inviter can include a message as part of their invitation to the [directory, group, or app](add-users-administrator.md), or when they [use the invitation API](customize-invitation-api.md). The message is highlighted in the main section of the email. The inviter’s name and profile image are also included if they’ve set one. The message itself is a text area, so for security reasons, it doesn't process HTML tags.
+The email includes the name and primary domain associated with the organization sending the invitation. This information should help the invitee make an informed decision about accepting the invitation. The inviter can include a message as part of their invitation to the [directory, group, or app](add-users-administrator.yml), or when they [use the invitation API](customize-invitation-api.md). The message is highlighted in the main section of the email. The inviter’s name and profile image are also included if they’ve set one. The message itself is a text area, so for security reasons, it doesn't process HTML tags.
 
 ![Image of the invitation message in the email](media/invitation-email-elements/invitation-message-inviters-info.png)
 
@@ -65,7 +63,7 @@ The next section of the email contains information about where the invitee will 
 
 ### Footer section
 
-The footer contains more information about the invitation being sent. There's always an option for the invitee to block future invitations. If the organization has [set a privacy statement](~/fundamentals/properties-area.md), the link to the statement is displayed here.  Otherwise, a note indicates the organization hasn't set a privacy statement.
+The footer contains more information about the invitation being sent. There's always an option for the invitee to block future invitations. If the organization has [set a privacy statement](~/fundamentals/properties-area.yml), the link to the statement is displayed here.  Otherwise, a note indicates the organization hasn't set a privacy statement.
 
 ![Image of the footer section in the email](media/invitation-email-elements/footer-section.png)
 

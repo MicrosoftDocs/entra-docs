@@ -1,25 +1,22 @@
 ---
 title: 'Microsoft Entra Cloud Sync new agent configuration'
 description: This article describes how to install cloud sync.
-services: active-directory
+
 author: billmath
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id
 ms.topic: how-to
-ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.date: 04/26/2024
+ms.subservice: hybrid-cloud-sync
 ms.author: billmath
-ms.collection: M365-identity-device-management
+
 ---
 
-# Create a new configuration for Microsoft Entra Cloud Sync
+# Provision Active Directory to Microsoft Entra ID - Configuration
 
-The following document will guide you through configuring Microsoft Entra Cloud Sync.  
+The following document will guide you through configuring Microsoft Entra Cloud Sync for provisioning from Active Directory to Microsoft Entra ID. If you are looking for information on provisioning from Microsoft Entra ID to AD, see [ Configure - Provisioning Active Directory to Microsoft Entra ID using Microsoft Entra Cloud Sync](how-to-configure-entra-to-active-directory.md)
 
-The following documentation demonstrates the new guided user experience for Microsoft Entra Cloud Sync.  If you are not seeing the images below, you need to select the **Preview features** at the top.  You can select this again to revert back to the old experience.
-
- :::image type="content" source="media/how-to-configure/new-ux-configure-19.png" alt-text="Screenshot of enable preview features." lightbox="media/how-to-configure/new-ux-configure-19.png":::
+The following documentation demonstrates the new guided user experience for Microsoft Entra Cloud Sync.
 
 For additional information and an example of how to configure cloud sync, see the video below.
 
@@ -32,19 +29,19 @@ To configure provisioning, follow these steps.
 
  [!INCLUDE [sign in](~/includes/cloud-sync-sign-in.md)]
  
- :::image type="content" source="media/how-to-on-demand-provision/new-ux-1.png" alt-text="Screenshot of new UX screen." lightbox="media/how-to-on-demand-provision/new-ux-1.png":::
  
  3. Select **New configuration**.
- :::image type="content" source="media/how-to-configure/new-ux-configure-1.png" alt-text="Screenshot of adding a configuration." lightbox="media/how-to-configure/new-ux-configure-1.png":::
- 4. On the configuration screen, select your domain and whether to enable password hash sync.  Click **Create**.  
+ 4. Select **AD to Microsoft Entra ID sync**.
+ :::image type="content" source="media/how-to-configure/configure-1.png" alt-text="Screenshot of adding a configuration." lightbox="media/how-to-configure/configure-1.png":::
+ 5. On the configuration screen, select your domain and whether to enable password hash sync.  Click **Create**.  
  
  :::image type="content" source="media/how-to-configure/new-ux-configure-2.png" alt-text="Screenshot of a new configuration." lightbox="media/how-to-configure/new-ux-configure-2.png":::
 
- 5.  The **Get started** screen will open.  From here, you can continue configuring cloud sync.
+ 6.  The **Get started** screen will open.  From here, you can continue configuring cloud sync.
 
   :::image type="content" source="media/how-to-configure/new-ux-configure-3.png" alt-text="Screenshot of the getting started screen." lightbox="media/how-to-configure/new-ux-configure-3.png":::
 
- 6. The configuration is split in to the following 5 sections.
+ 7. The configuration is split in to the following 5 sections.
 
 |Section|Description|
 |-----|-----|

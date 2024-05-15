@@ -1,16 +1,14 @@
 ---
 title: How to apply Conditional Access policies to the Microsoft 365 traffic profile
 description: Learn how to apply Conditional Access policies to the Microsoft 365 traffic profile.
-
-ms.service: network-access
-ms.subservice: 
+ms.service: global-secure-access
+ms.subservice: entra-internet-access
 ms.topic: how-to
 ms.date: 07/07/2023
-
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: kenwith
+author: kenwith
 manager: amycolannino
-ms.reviewer: mamkumar
+ms.reviewer: alexpav
 ---
 # Apply Conditional Access policies to the Microsoft 365 traffic profile
 
@@ -21,8 +19,8 @@ This article describes how to apply Conditional Access policies to your Microsof
 ## Prerequisites
 
 * Administrators who interact with **Global Secure Access preview** features must have one or more of the following role assignments depending on the tasks they're performing.
-   * [Global Secure Access Administrator role](/azure/active-directory/roles/permissions-reference)
-   * [Conditional Access Administrator](/azure/active-directory/roles/permissions-reference#conditional-access-administrator) or [Security Administrator](/azure/active-directory/roles/permissions-reference#security-administrator) to create and interact with Conditional Access policies.
+   * The [Global Secure Access Administrator role](/azure/active-directory/roles/permissions-reference) role to manage the Global Secure Access preview features.
+   * The [Conditional Access Administrator](/azure/active-directory/roles/permissions-reference#conditional-access-administrator) role to create and interact with Conditional Access policies.
 * The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 * To use the Microsoft 365 traffic forwarding profile, a Microsoft 365 E3 license is recommended.
 

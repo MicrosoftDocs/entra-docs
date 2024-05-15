@@ -4,9 +4,9 @@ description: Learn how to issue and verify by using the Request Service REST API
 documentationCenter: ''
 author: barclayn
 manager: amycolannino
-ms.service: decentralized-identity
+ms.service: entra-verified-id
 ms.topic: how-to
-ms.subservice: verifiable-credentials
+
 ms.date: 06/16/2022
 ms.author: barclayn
 
@@ -21,7 +21,7 @@ Microsoft Entra Verified ID includes the Request Service REST API. This API allo
 
 Your application needs to include a valid access token with the required permissions so that it can access the Request Service REST API. Access tokens issued by the Microsoft identity platform contain information (scopes) that the Request Service REST API uses to validate the caller. An access token ensures that the caller has the proper permissions to perform the operation they're requesting.
 
-To get an access token, your app must be registered with the Microsoft identity platform and be authorized by an administrator for access to the Request Service REST API. If you haven't registered the *verifiable-credentials-app* application, see [how to register the app](verifiable-credentials-configure-tenant.md#register-an-application-in-azure-ad) and then [generate an application secret](verifiable-credentials-configure-issuer.md#configure-the-verifiable-credentials-app).
+To get an access token, your app must be registered with the Microsoft identity platform and be authorized by an administrator for access to the Request Service REST API. If you haven't registered the *verifiable-credentials-app* application, see [how to register the app](verifiable-credentials-configure-tenant.md) and then [generate an application secret](verifiable-credentials-configure-issuer.md).
 
 ### Get an access token
 
@@ -468,7 +468,7 @@ Presentation request with [claims constraints](presentation-request-api.md#const
 
 # [With FaceCheck](#tab/facecheck)
 
-Presentation request with FaceCheck:
+Presentation request with FaceCheck. When using FaceCheck, the `includeReceipt` must be false as receipt is not supported then.
 
 ```JSON
 {
@@ -519,7 +519,7 @@ The request payload contains the [issuance](issuance-request-api.md#callback-eve
 
 The following diagram describes the call your app makes to the Request Service REST API and the callbacks to your application.
 
-![Diagram that shows the call to the API and the callback events.](media/get-started-request-api/callback-events.png)
+:::image type="content" source="media/get-started-request-api/callback-events.png" alt-text="Diagram that shows the call to the API and the callback events.":::
 
 Configure your endpoint to listen to incoming HTTP POST requests. The following code snippet demonstrates how to handle the issuance callback HTTP request and how to update the UI accordingly:
 

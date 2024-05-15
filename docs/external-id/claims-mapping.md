@@ -3,9 +3,8 @@ title: B2B collaboration user claims mapping
 description: Customize the user claims that are issued in the SAML token for Microsoft Entra B2B users.
 
  
-ms.service: active-directory
-ms.subservice: B2B
-ms.topic: conceptual
+ms.service: entra-external-id
+ms.topic: concept-article
 ms.date: 08/30/2023
 
 ms.author: cmulligan
@@ -37,9 +36,7 @@ For information about how to add and edit claims, see [Customizing claims issued
 
 ## UPN claims behavior for B2B users
 
-If you need to issue the UPN value as an application token claim, the actual claim mapping may behave differently for B2B users. If the B2B user authenticates with an external Microsoft Entra identity and you issue user.userprincipalname as the source attribute, Microsoft Entra ID instead issues the mail attribute.  
-
-For example, let’s say you invite an external user whose email is `james@contoso.com` and whose identity exists in an external Microsoft Entra tenant. James’ UPN in the inviting tenant is created from the invited email and the inviting tenant's original default domain. So, let’s say James’ UPN becomes `James_contoso.com#EXT#@fabrikam.onmicrosoft.com`. For the SAML application that issues user.userprincipalname as the NameID, the value passed for James is `james@contoso.com`.  
+If you need to issue the UPN value as an application token claim, the actual claim mapping may behave differently for B2B users. If the B2B user authenticates with an external Microsoft Entra identity and you issue user.userprincipalname as the source attribute, Microsoft Entra ID issues the UPN attribute from the home tenant for this user.  
 
 All [other external identity types](redemption-experience.md#invitation-redemption-flow) such as SAML/WS-Fed, Google, Email OTP issues the UPN value rather than the email value when you issue user.userprincipalname as a claim. If you want the actual UPN to be issued in the token claim for all B2B users, you can set user.localuserprincipalname as the source attribute instead. 
 

@@ -7,8 +7,8 @@ ms.author: henrymbugua
 ms.custom: 
 ms.date: 06/16/2020
 ms.reviewer: jmprieur
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: how-to
 #Customer intent: As an application developer, I want to know how to write a mobile app that calls web APIs using the Microsoft identity platform.
 ---
@@ -112,8 +112,8 @@ For more information, see [Xamarin iOS considerations](msal-net-xamarin-ios-cons
 These tasks are necessary when you use MSAL for iOS and macOS:
 
 * [Implement the `openURL` callback](#brokered-authentication-for-msal-for-ios-and-macos)
-* [Enable keychain access groups](howto-v2-keychain-objc.md)
-* [Customize browsers and WebViews](customize-webviews.md)
+* [Enable keychain access groups](/entra/msal/objc/howto-v2-keychain-objc)
+* [Customize browsers and WebViews](/entra/msal/objc/customize-webviews)
 
 ## Tasks for Xamarin.Android
 

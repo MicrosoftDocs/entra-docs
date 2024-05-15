@@ -1,18 +1,16 @@
 ---
 title: Secure Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to disable weak ciphers, old protocols, and NTLM password hash synchronization for a Microsoft Entra Domain Services managed domain.
-services: active-directory-ds
 author: justinha
 manager: amycolannino
 
 ms.assetid: 6b4665b5-4324-42ab-82c5-d36c01192c2a
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: domain-services
-ms.workload: identity
 ms.topic: how-to
 ms.date: 09/23/2023
-ms.author: justinha 
-ms.custom: has-azure-ad-ps-ref
+ms.author: justinha
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
 # Harden a Microsoft Entra Domain Services managed domain
 
@@ -72,7 +70,7 @@ While disabling NTLM password synchronization will improve security, many applic
 
 If needed, [install and configure Azure PowerShell](/powershell/azure/install-azure-powershell). Make sure that you sign in to your Azure subscription using the [Connect-AzAccount][Connect-AzAccount] cmdlet. 
 
-Also if needed, [install and configure Azure AD PowerShell](/powershell/azure/active-directory/install-adv2). Make sure that you sign in to your Microsoft Entra tenant using the [Connect-AzureAD][Connect-AzureAD] cmdlet.
+Also if needed, [install the Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/installation). Make sure that you sign in to your Microsoft Entra tenant using the [Connect-MgGraph][Connect-MgGraph] cmdlet.
 
 To disable weak cipher suites and NTLM credential hash synchronization, sign in to your Azure account, then get the Domain Services resource using the [Get-AzResource][Get-AzResource] cmdlet:
 
@@ -126,4 +124,4 @@ To learn more about the synchronization process, see [How objects and credential
 [Get-AzResource]: /powershell/module/az.resources/get-azresource
 [Set-AzResource]: /powershell/module/az.resources/set-azresource
 [Connect-AzAccount]: /powershell/module/Az.Accounts/Connect-AzAccount
-[Connect-AzureAD]: /powershell/module/AzureAD/Connect-AzureAD
+[Connect-MgGraph]: /powershell/microsoftgraph/authentication-commands#using-connect-mggraph

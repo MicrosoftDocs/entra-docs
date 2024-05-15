@@ -5,8 +5,8 @@ author: omondiatieno
 manager: CelesteDG
 ms.author: jomondi
 ms.reviewer: ergreenl
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: tutorial
 ms.date: 07/18/2022
 ms.custom: enterprise-apps

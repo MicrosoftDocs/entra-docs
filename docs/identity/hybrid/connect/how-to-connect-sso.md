@@ -1,20 +1,18 @@
 ---
 title: 'Microsoft Entra Connect: Seamless single sign-on'
 description: This topic describes Microsoft Entra seamless single sign-on and how it allows you to provide true single sign-on for corporate desktop users inside your corporate network.
-services: active-directory
+
 keywords: what is Azure AD Connect, install Active Directory, required components for Azure AD, SSO, Single Sign-on
-documentationcenter: ''
 author: billmath
 manager: amycolannino
 ms.assetid: 9f994aca-6088-40f5-b2cc-c753a4f41da7
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
-ms.collection: M365-identity-device-management
+
 ---
 # Microsoft Entra seamless single sign-on
 

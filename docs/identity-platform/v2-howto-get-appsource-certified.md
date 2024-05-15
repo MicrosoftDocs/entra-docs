@@ -7,8 +7,8 @@ ms.author: ryanwi
 ms.custom:
 ms.date: 07/23/2020
 ms.reviewer: jeedes
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: how-to
 #Customer intent: As a developer, I want to understand the requirements for listing a standalone SaaS application on Microsoft AppSource, so that I business users can discover, try, and manage my line-of-business SaaS application.
 ---

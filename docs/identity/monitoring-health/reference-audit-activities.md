@@ -1,31 +1,28 @@
 ---
-
 title: Microsoft Entra audit log activity reference
 description: Get an overview of the audit activities that can be logged in your audit logs in Microsoft Entra ID.
-services: active-directory
+
 author: shlipsey3
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: reference
-ms.workload: identity
-ms.subservice: report-monitor
-ms.date: 09/14/2023
+ms.subservice: monitoring-health
+ms.date: 04/15/2024
 ms.author: sarahlipsey
 ms.reviewer: dhanyahk
-
 ---
 # Microsoft Entra audit log categories and activities
 
 Microsoft Entra audit logs collect all traceable activities within your Microsoft Entra tenant. Audit logs can be used to determine who made a change to service, user, group, or other item.
 
-This article provides a comprehensive list of the audit categories and their related activities. Use the "In this article" section to jump to a specific audit category. 
+This article provides a comprehensive list of the audit categories and their related activities. To jump to a specific audit category, use the "In this article" section. 
 
-Audit log activities and categories change periodically. The tables are updated regularly, but may not be in sync with what is available in Microsoft Entra ID. Provide us with feedback if you think there's a missing audit category or activity.
+Audit log activities and categories change periodically. The tables are updated regularly, but might not be in sync with what is available in Microsoft Entra ID. Provide us with feedback if you think there's a missing audit category or activity.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](~/identity/role-based-access-control/permissions-reference.md#reports-reader).
 1. Browse to **Identity** > **Monitoring & health** > **Audit logs**.
 1. Adjust the filters accordingly.
-1. Select a row from the resulting table to view the details.
+1. To view the details, select a row from the resulting table.
 
 <a name='aad-management-ux'></a>
 
@@ -58,13 +55,12 @@ Audit log activities and categories change periodically. The tables are updated 
 |Policy|Clear block on user|
 |Policy|Remove bypassed user|
 |Policy|Update Sign-In Risk Policy|
-|Policy|Update User RIsk and MFA Registration Policy|
+|Policy|Update User Risk and MFA Registration Policy|
 |UserManagement|Bulk create users - finished (bulk)|
 |UserManagement|Bulk delete users - finished (bulk)|
 |UserManagement|Bulk invite users - finished (bulk)|
 |UserManagement|Bulk restore deleted users - finished (bulk)|
 |UserManagement|Download users - finished (bulk)|
-|UserManagement|Bulk create users - finished (bulk)|
 |UserManagement|started (bulk)|
 
 
@@ -135,7 +131,7 @@ Each time an account is provisioned in your Microsoft Entra tenant, a log for th
 
 ## Application proxy
 
-If you're utilizing [Application Proxy](~/identity/app-proxy/what-is-application-proxy.md) to provide your users with remote access to internal apps, the Application Proxy audit logs can help you keep track of changes to available applications or [Connector groups](~/identity/app-proxy/application-proxy-connector-groups.md).
+If you're utilizing [Application Proxy](~/identity/app-proxy/overview-what-is-app-proxy.md) to provide your users with remote access to internal apps, the Application Proxy audit logs can help you keep track of changes to available applications or [Connector groups](~/identity/app-proxy/application-proxy-connector-groups.md).
 
 |Audit Category|Activity|
 |---|---|
@@ -167,6 +163,10 @@ If you're utilizing [Application Proxy](~/identity/app-proxy/what-is-application
 ## Authentication Methods
 
 The Audit logs for Authentication Methods can be used to make sure that your users have registered their mobile device properly to enable multifactor authentication.
+
+Audit events related to GDPR and data protection are also found in this service and are found in the `DirectoryManagement` category. These events include strings like `MFA.CosmosDB.mfa-prd-cust-rpt-eu.activations` and `DSR Export: MFA.PostgreSQL.bypassed_users_creations`. 
+
+[!INCLUDE [GDPR-related guidance](~/includes/azure-docs-pr/gdpr-dsr-and-stp-note.md)] 
 
 |Audit Category|Activity|
 |---|---|
@@ -202,13 +202,70 @@ The Audit logs for Authentication Methods can be used to make sure that your use
 |ApplicationManagement|POST Tenant.RemoveBlockedUser|
 |ApplicationManagement|POST Tenant.RemoveBypassedUser|
 |ApplicationManagement|Update Hardware Oath Token|
-|UserManagement|User deleted security info|
-|UserManagement|User registered security info|
-|UserManagement|User updated security info|
+|DirectoryManagement|DELETE Subscription.DeleteProviders|
+|DirectoryManagement|DELETE Tenant.DeleteAgentStatuses|
+|DirectoryManagement|DELETE Tenant.DeleteCaches|
+|DirectoryManagement|DELETE Tenant.DeleteGreetings|
+|DirectoryManagement|DSR Delete: MFA.CosmosDB.mfa-prd-cust-rpt-au.activations|
+|DirectoryManagement|DSR Delete: MFA.CosmosDB.mfa-prd-cust-rpt-au.authentications|
+|DirectoryManagement|DSR Delete: MFA.CosmosDB.mfa-prd-cust-rpt-cn.activations|
+|DirectoryManagement|DSR Delete: MFA.CosmosDB.mfa-prd-cust-rpt-cn.authentications|
+|DirectoryManagement|DSR Delete: MFA.CosmosDB.mfa-prd-cust-rpt-eu.activations|
+|DirectoryManagement|DSR Delete: MFA.CosmosDB.mfa-prd-cust-rpt-eu.authentications|
+|DirectoryManagement|DSR Delete: MFA.CosmosDB.mfa-prd-cust-rpt-ff.activations|
+|DirectoryManagement|DSR Delete: MFA.CosmosDB.mfa-prd-cust-rpt-ff.authentications|
+|DirectoryManagement|DSR Delete: MFA.CosmosDB.mfa-prd-cust-rpt-ge.activations|
+|DirectoryManagement|DSR Delete: MFA.CosmosDB.mfa-prd-cust-rpt-ge.authentications|
+|DirectoryManagement|DSR Delete: MFA.CosmosDB.mfa-prd-cust-rpt-gv.activations|
+|DirectoryManagement|DSR Delete: MFA.CosmosDB.mfa-prd-cust-rpt-gv.authentications|
+|DirectoryManagement|DSR Delete: MFA.CosmosDB.mfa-prd-cust-rpt-ww.activations|
+|DirectoryManagement|DSR Delete: MFA.CosmosDB.mfa-prd-cust-rpt-ww.authentications|
+|DirectoryManagement|DSR Delete: MFA.PostgreSQL.blocked_users|
+|DirectoryManagement|DSR Delete: MFA.PostgreSQL.blocked_users_completions|
+|DirectoryManagement|DSR Delete: MFA.PostgreSQL.blocked_creations|
+|DirectoryManagement|DSR Delete: MFA.PostgreSQL.bypassed_users_completions|
+|DirectoryManagement|DSR Delete: MFA.PostgreSQL.bypassed_users_creations|
+|DirectoryManagement|DSR Delete: MFA.PostgreSQL.change_request_statuses|
+|DirectoryManagement|DSR Delete: MFA.PostgreSQL.change_request|
+|DirectoryManagement|DSR Export: MFA.CosmosDB.mfa-prd-cust-rpt-au.activations|
+|DirectoryManagement|DSR Export: MFA.CosmosDB.mfa-prd-cust-rpt-au.authentications|
+|DirectoryManagement|DSR Export: MFA.CosmosDB.mfa-prd-cust-rpt-cn.activations|
+|DirectoryManagement|DSR Export: MFA.CosmosDB.mfa-prd-cust-rpt-cn.authentications|
+|DirectoryManagement|DSR Export: MFA.CosmosDB.mfa-prd-cust-rpt-eu.activations|
+|DirectoryManagement|DSR Export: MFA.CosmosDB.mfa-prd-cust-rpt-eu.authentications|
+|DirectoryManagement|DSR Export: MFA.CosmosDB.mfa-prd-cust-rpt-ff.activations|
+|DirectoryManagement|DSR Export: MFA.CosmosDB.mfa-prd-cust-rpt-ff.authentications|
+|DirectoryManagement|DSR Export: MFA.CosmosDB.mfa-prd-cust-rpt-ge.activations|
+|DirectoryManagement|DSR Export: MFA.CosmosDB.mfa-prd-cust-rpt-ge.authentications|
+|DirectoryManagement|DSR Export: MFA.CosmosDB.mfa-prd-cust-rpt-gv.activations|
+|DirectoryManagement|DSR Export: MFA.CosmosDB.mfa-prd-cust-rpt-gv.authentications|
+|DirectoryManagement|DSR Export: MFA.CosmosDB.mfa-prd-cust-rpt-ww.activations|
+|DirectoryManagement|DSR Export: MFA.CosmosDB.mfa-prd-cust-rpt-ww.authentications|
+|DirectoryManagement|DSR Export: MFA.PostgreSQL.blocked_users|
+|DirectoryManagement|DSR Export: MFA.PostgreSQL.blocked_users_completions|
+|DirectoryManagement|DSR Export: MFA.PostgreSQL.blocked_creations|
+|DirectoryManagement|DSR Export: MFA.PostgreSQL.bypassed_users_completions|
+|DirectoryManagement|DSR Export: MFA.PostgreSQL.bypassed_users_creations|
+|DirectoryManagement|DSR Export: MFA.PostgreSQL.change_request_statuses|
+|DirectoryManagement|DSR Export: MFA.PostgreSQL.change_request|
+|DirectoryManagement|PATCH Tenant.Patch|
+|DirectoryManagement|PATCH Tenant.PatchCaches|
+|DirectoryManagement|POST SoundFile.Post|
+|DirectoryManagement|POST Subscription.CreateProvider|
+|DirectoryManagement|POST Subscription.CreateSubscription|
+|DirectoryManagement|POST Tenant.CreateBlockedUser|
+|DirectoryManagement|POST Tenant.CreateBypassedUser|
+|DirectoryManagement|POST Tenant.CreateCacheConfig|
+|DirectoryManagement|POST Tenant.CreateGreeting|
+|DirectoryManagement|POST Tenant.CreateTenant|
+|DirectoryManagement|POST Tenant.GenerateNewActivationCredentials|
+|DirectoryManagement|POST Tenant.RemoveBlockedUser|
+|DirectoryManagement|POST TenantRemoveBypassedUser|
 |UserManagement|Admin deleted security info|
 |UserManagement|Admin registered security info|
 |UserManagement|Admin started password reset|
 |UserManagement|Admin updated security info|
+|UserManagement|Get passkey creation options|
 |UserManagement|User canceled security info registration|
 |UserManagement|User changed default security info|
 |UserManagement|User deleted security info|
@@ -218,6 +275,7 @@ The Audit logs for Authentication Methods can be used to make sure that your use
 |UserManagement|User started password change|
 |UserManagement|user started password reset|
 |UserManagement|User started security info registration|
+|UserManagement|User updated security info|
 
 <a name='azure-ad-recommendations'></a>
 
@@ -293,14 +351,13 @@ This set of audit logs is related to [B2C](/azure/active-directory-b2c/overview)
 |Authentication|Verify phone number|
 |Authorization|Add v2 application permissions|
 |Authorization|Check whether the resource name is available|
-|Authorization|Create Api connector|
+|Authorization|Create API connector|
 |Authorization|Create Identity Provider|
 |Authorization|Create authenticationEventListener|
 |Authorization|Create authenticationEventsFlow|
 |Authorization|Create custom identity provider|
 |Authorization|Create custom policy|
 |Authorization|Create customAuthenticationExtension|
-|Authorization|Create identity provider|
 |Authorization|Create or update a B2C directory resource|
 |Authorization|Create or update a B2C directory tenant and resource|
 |Authorization|Create or update a CIAM directory tenant and resource|
@@ -311,7 +368,7 @@ This set of audit logs is related to [B2C](/azure/active-directory-b2c/overview)
 |Authorization|Create user attribute|
 |Authorization|Create user flow|
 |Authorization|Create v2 application|
-|Authorization|Delete Api connector|
+|Authorization|Delete API connector|
 |Authorization|Delete B2C Tenant where the caller is an administrator|
 |Authorization|Delete B2C directory resource|
 |Authorization|Delete CIAM directory resource|
@@ -321,7 +378,6 @@ This set of audit logs is related to [B2C](/azure/active-directory-b2c/overview)
 |Authorization|Delete authenticationEventsFlow|
 |Authorization|Delete custom policy|
 |Authorization|Delete customAuthenticationExtension|
-|Authorization|Delete identity provider|
 |Authorization|Delete localized resource|
 |Authorization|Delete policy key|
 |Authorization|Delete user attribute|
@@ -329,8 +385,8 @@ This set of audit logs is related to [B2C](/azure/active-directory-b2c/overview)
 |Authorization|Delete v2 application|
 |Authorization|Delete v2 application permission grant|
 |Authorization|Generate key|
-|Authorization|Get Api connector|
-|Authorization|Get Api connectors|
+|Authorization|Get API connector|
+|Authorization|Get API connectors|
 |Authorization|Get B2C Tenants where the caller is an administrator|
 |Authorization|Get B2C directory resource|
 |Authorization|Get B2C directory resources in a resource group|
@@ -362,9 +418,7 @@ This set of audit logs is related to [B2C](/azure/active-directory-b2c/overview)
 |Authorization|Get custom policy metadata|
 |Authorization|Get customAuthenticationExtension|
 |Authorization|Get customAuthenticationExtensions|
-|Authorization|Get identity provider|
 |Authorization|Get identity provider types|
-|Authorization|Get identity providers|
 |Authorization|Get list of tenants|
 |Authorization|Get localized resource|
 |Authorization|Get operation status for an async operation|
@@ -392,7 +446,7 @@ This set of audit logs is related to [B2C](/azure/active-directory-b2c/overview)
 |Authorization|Restore policy key|
 |Authorization|Retrieve v2 application permissions grants|
 |Authorization|Retrieve v2 application service principals|
-|Authorization|Update Api connector|
+|Authorization|Update API connector|
 |Authorization|Update Identity Provider|
 |Authorization|Update OnAttributeCollectionStartCustomExtension|
 |Authorization|Update OnAttributeCollectionSubmitCustomExtension|
@@ -466,11 +520,10 @@ This set of audit logs is related to [B2C](/azure/active-directory-b2c/overview)
 |PolicyManagement|Update customAuthenticationExtension|
 |PolicyManagement|Validate customExtension authenticationConfiguration|
 |ResourceManagement|Check whether the resource name is available|
-|ResourceManagement|Create Api connector|
+|ResourceManagement|Create API connector|
 |ResourceManagement|Create Identity Provider|
 |ResourceManagement|Create custom identity provider|
 |ResourceManagement|Create custom policy|
-|ResourceManagement|Create identity provider|
 |ResourceManagement|Create or update a B2C directory resource|
 |ResourceManagement|Create or update a B2C directory tenant and resource|
 |ResourceManagement|Create or update a CIAM directory tenant and resource|
@@ -479,21 +532,20 @@ This set of audit logs is related to [B2C](/azure/active-directory-b2c/overview)
 |ResourceManagement|Create policy key|
 |ResourceManagement|Create user attribute|
 |ResourceManagement|Create user flow|
-|ResourceManagement|Delete Api connector|
+|ResourceManagement|Delete API connector|
 |ResourceManagement|Delete B2C Tenant where the caller is an administrator|
 |ResourceManagement|Delete B2C directory resource|
 |ResourceManagement|Delete CIAM directory resource|
 |ResourceManagement|Delete Guest Usages resource|
 |ResourceManagement|Delete Identity Provider|
 |ResourceManagement|Delete custom policy|
-|ResourceManagement|Delete identity provider|
 |ResourceManagement|Delete localized resource|
 |ResourceManagement|Delete policy key|
 |ResourceManagement|Delete user attribute|
 |ResourceManagement|Delete user flow|
 |ResourceManagement|Generate key|
-|ResourceManagement|Get Api connector|
-|ResourceManagement|Get Api connectors|
+|ResourceManagement|Get API connector|
+|ResourceManagement|Get API connectors|
 |ResourceManagement|Get B2C Tenant where the caller is an administrator|
 |ResourceManagement|Get B2C directory resource|
 |ResourceManagement|Get B2C directory resources in a resource group|
@@ -532,7 +584,7 @@ This set of audit logs is related to [B2C](/azure/active-directory-b2c/overview)
 |ResourceManagement|Get user flow|
 |ResourceManagement|Get user flows|
 |ResourceManagement|Move resources|
-|ResourceManagement|Update Api connector|
+|ResourceManagement|Update API connector|
 |ResourceManagement|Identity Provider|
 |ResourceManagement|Update B2C directory resource|
 |ResourceManagement|Update CIAM directory resource|
@@ -587,7 +639,6 @@ Logs captured in the Core Directory service cover a wide variety of scenarios. C
 |Agreement|Delete agreement|
 |Agreement|Hard delete agreement|
 |Agreement|Update agreement|
-|ApplicationManagement|Add a deletion-marked app role assignment grant to service principal as part of link removal|
 |ApplicationManagement|Add app role assignment to service principal|
 |ApplicationManagement|Add application|
 |ApplicationManagement|Add delegated permission grant|
@@ -662,7 +713,6 @@ Logs captured in the Core Directory service cover a wide variety of scenarios. C
 |DirectoryManagement|Add unverified domain|
 |DirectoryManagement|Add verified domain|
 |DirectoryManagement|Create Company|
-|DirectoryManagement|Create company|
 |DirectoryManagement|Create company settings|
 |DirectoryManagement|Delete company allowed data location|
 |DirectoryManagement|Delete company settings|
@@ -703,7 +753,6 @@ Logs captured in the Core Directory service cover a wide variety of scenarios. C
 |ExternalUserProfile|Hard Delete ExternalUserProfile|
 |ExternalUserProfile|Restore ExternalUserProfile|
 |ExternalUserProfile|Update ExternalUserProfile|
-|GroupManagement|Add a deletion-marked app role assignment grant to group as part of link removal|
 |GroupManagement|Add app role assignment to group|
 |GroupManagement|Add group|
 |GroupManagement|Add member to group|
@@ -743,10 +792,10 @@ Logs captured in the Core Directory service cover a wide variety of scenarios. C
 |MultiTenantOrg|Create a MultiTenantOrg|
 |MultiTenantOrg|Hard Delete MultiTenantOrg|
 |MultiTenantOrg|Update a MultiTenantOrg|
-|MultiTenantOrgIdentitySyncPolicyUpdate|Reset a multi tenant org identity sync policy template|
-|MultiTenantOrgIdentitySyncPolicyUpdate|Update a multi tenant org identity sync policy template|
-|MultiTenantOrgPartnerConfigurationTemplate|Reset a multi tenant org partner configuration template|
-|MultiTenantOrgPartnerConfigurationTemplate|Update a multi tenant org partner configuration template|
+|MultiTenantOrgIdentitySyncPolicyUpdate|Reset a multitenant org identity sync policy template|
+|MultiTenantOrgIdentitySyncPolicyUpdate|Update a multitenant org identity sync policy template|
+|MultiTenantOrgPartnerConfigurationTemplate|Reset a multitenant org partner configuration template|
+|MultiTenantOrgPartnerConfigurationTemplate|Update a multitenant org partner configuration template|
 |MultiTenantOrgTenant|Add MultiTenantOrg tenant|
 |MultiTenantOrgTenant|Delete MultiTenantOrg tenant|
 |MultiTenantOrgTenant|Hard Delete MultiTenantOrg tenant|
@@ -788,7 +837,6 @@ Logs captured in the Core Directory service cover a wide variety of scenarios. C
 |RoleManagement|Update role|
 |RoleManagement|Update role definition|
 |SourceOfAuthorityPolicy|Add SOA policy|
-|UserManagement|Add a deletion-marked app role assignment grant to group as part of link removal|
 |UserManagement|Add app role assignment to group|
 |UserManagement|Add user|
 |UserManagement|Add users strong authentication phone app detail|
@@ -841,7 +889,7 @@ If you need to manage [Microsoft Entra ID and Microsoft Entra hybrid joined devi
 
 ## Entitlement Management
 
-If you're using Entitlement Management to streamline how you assign members of Microsoft Entra security groups, grant licenses for Microsoft 365, or provide access to applications, you can use these logs to monitor changes to those settings. [Access reviews](#access-reviews) and [Lifecycle workflows](#lifecycle-workflows) have separate logs.
+Use these logs to monitor changes to Entitlement Management settings. Entitlement Management can be used to streamline how you assign members of Microsoft Entra security groups, grant licenses for Microsoft 365, or provide access to applications. [Access reviews](#access-reviews) and [Lifecycle workflows](#lifecycle-workflows) have separate logs.
 
 |Audit Category|Activity|
 |---|---|
@@ -945,8 +993,6 @@ If you're using Microsoft Entra Internet Access or Microsoft Entra Private Acces
 |Other|ConfirmServicePrincipalCompromised|
 |Other|DismissServicePrincipal|
 |Other|DismissUser|
-|Other|confirmServicePrincipalCompromised|
-|Other|dismissServicePrincipal|
 
 ## Invited users
 
@@ -1033,7 +1079,7 @@ Use the [MyApps](~/identity/enterprise-apps/myapps-overview.md) audit logs to id
 
 ## Privileged Identity Management (PIM)
 
-Many of the activities captured in the PIM audit logs are similar, so take note of details like *renew*, *timebound*, and *permanent*. PIM activities can generate many logs in a 24 hour period, so utilize the filters to narrow things down. For more information on the audit capabilities within the PIM service, see [View audit history for Microsoft Entra roles in PIM](~/id-governance/privileged-identity-management/pim-how-to-use-audit-log.md)
+Many of the activities captured in the PIM audit logs are similar, so take note of details like *renew*, *timebound*, and *permanent*. PIM activities can generate many logs in a 24 hour period, so utilize the filters to narrow things down. For more information on the audit capabilities within the PIM service, see [View audit history for Microsoft Entra roles in PIM](~/id-governance/privileged-identity-management/pim-how-to-use-audit-log.md).
 
 |Audit Category|Activity|
 |---|---|
@@ -1092,7 +1138,7 @@ Many of the activities captured in the PIM audit logs are similar, so take note 
 |GroupManagement|Remove permanent eligible role assignment|
 |GroupManagement|Remove request|
 |GroupManagement|Resource updated|
-|GroupManagement|Restore eligible member from role in PIM comleted|
+|GroupManagement|Restore eligible member from role in PIM completed|
 |GroupManagement|Restore member from role|
 |GroupManagement|Restore member from role in PIM completed|
 |GroupManagement|Restore permanent direct role assignment|
@@ -1238,10 +1284,11 @@ Many of the activities captured in the PIM audit logs are similar, so take note 
 
 Users in your tenant can manage many aspects of their group memberships on their own. Use the Self-service group management logs to help troubleshoot issues with these scenarios.
 
+Many of the activities in this group are associated with background processes related to a user's activity. For example, you might see multiple `Features_GetFeaturesAsync` instances in your logs when a user accesses the MyApps or MyGroups portal. This activity doesn't indicate if the user made any changes. Other activities such as `GroupsODataV4_Get` often occur in groups for similar user actions.
+
 |Audit Category|Activity|
 |---|---|
-|GroupManagement|ApprovalNotification_Create
-|
+|GroupManagement|ApprovalNotification_Create|
 |GroupManagement|Autorenew group|
 |GroupManagement|Approval_Act|
 |GroupManagement|Approval_Get|
@@ -1249,7 +1296,6 @@ Users in your tenant can manage many aspects of their group memberships on their
 |GroupManagement|Approvals_ActOnApproval|
 |GroupManagement|Approvals_Post|
 |GroupManagement|Approve a pending request to join a group|
-|GroupManagement|Autorenew group|
 |GroupManagement|Cancel a pending request to join a group|
 |GroupManagement|Create lifecycle management policy|
 |GroupManagement|Delete a pending request to join a group|
@@ -1361,5 +1407,5 @@ The Self-service password management logs provide insight into changes made to p
 ## Next steps
 
 - [Microsoft Entra monitoring and health overview](overview-monitoring-health.md).
-- [Audit logs report](concept-audit-logs.md). 
+- [Audit logs report](concept-audit-logs.md)
 - [Programmatic access to Microsoft Entra reports](./howto-configure-prerequisites-for-reporting-api.md)

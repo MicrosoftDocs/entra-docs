@@ -1,20 +1,18 @@
 ---
 title: 'Microsoft Entra pass-through authentication - Quickstart'
 description: This article describes how to get started with Microsoft Entra pass-through authentication.
-services: active-directory
+
 keywords: Azure AD Connect Pass-through Authentication, install Active Directory, required components for Azure AD, SSO, Single Sign-on
-documentationcenter: ''
 author: billmath
 manager: amycolannino
 ms.assetid: 9f994aca-6088-40f5-b2cc-c753a4f41da7
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
-ms.collection: M365-identity-device-management
+
 ---
 
 # Microsoft Entra pass-through authentication: Quickstart
@@ -44,7 +42,7 @@ Ensure that the following prerequisites are in place.
 ### In the Microsoft Entra admin center
 
 1. Create a cloud-only Hybrid Identity Administrator account or a Hybrid Identity administrator account on your Microsoft Entra tenant. This way, you can manage the configuration of your tenant should your on-premises services fail or become unavailable. Learn about [adding a cloud-only Hybrid Identity Administrator account](~/fundamentals/add-users.md). Completing this step is critical to ensure that you don't get locked out of your tenant.
-2. Add one or more [custom domain names](~/fundamentals/add-custom-domain.md) to your Microsoft Entra tenant. Your users can sign in with one of these domain names.
+2. Add one or more [custom domain names](~/fundamentals/add-custom-domain.yml) to your Microsoft Entra tenant. Your users can sign in with one of these domain names.
 
 ### In your on-premises environment
 

@@ -1,18 +1,16 @@
 ---
 title: Bulk delete users in Microsoft Entra ID
-description: Delete users in bulk in Microsoft Entra ID 
-services: active-directory 
+description: Delete users in bulk in Microsoft Entra ID
+
 author: barclayn
 ms.author: barclayn
 manager: amycolannino
 ms.date: 11/21/2023
 ms.topic: how-to
-ms.service: active-directory
-ms.subservice: enterprise-users
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: users
 ms.custom: it-pro
 ms.reviewer: jeffsta
-ms.collection: M365-identity-device-management
 ---
 
 # Bulk delete users in Microsoft Entra ID
@@ -23,7 +21,7 @@ Using the admin center in Microsoft Entra ID, part of Microsoft Entra, you can r
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Select Microsoft Entra ID.
 1. Select **Users** > **All users** > **Bulk operations** > **Bulk delete**.
 

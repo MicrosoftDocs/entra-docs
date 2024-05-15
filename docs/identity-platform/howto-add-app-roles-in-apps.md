@@ -6,9 +6,9 @@ manager: CelesteDG
 ms.author: cwerner
 ms.custom:
 ms.date: 09/25/2023
-ms.reviewer: kkrishna, jmprieur
-ms.service: active-directory
-ms.subservice: develop
+ms.reviewer: jmprieur
+ms.service: identity-platform
+
 ms.topic: how-to
 #Customer intent: As a developer, I want to add app roles to my application using RBAC, so I can assign users and groups to those roles.
 ---
@@ -73,7 +73,7 @@ If you have not already done so, you'll need to assign yourself as the applicati
 
 ## Assign app roles to applications
 
-Once you've added app roles in your application, you can assign an app role to a client app by using the Microsoft Entra admin center or programmatically by using [Microsoft Graph](/graph/api/user-post-approleassignments). This is not to be confused with [assigning roles to users](~/identity/role-based-access-control/manage-roles-portal.md).
+Once you've added app roles in your application, you can assign an app role to a client app by using the Microsoft Entra admin center or programmatically by using [Microsoft Graph](/graph/api/user-post-approleassignments). This is not to be confused with [assigning roles to users](~/identity/role-based-access-control/manage-roles-portal.yml).
 
 When you assign app roles to an application, you create _application permissions_. Application permissions are typically used by daemon apps or back-end services that need to authenticate and make authorized API call as themselves, without the interaction of a user.
 
@@ -149,7 +149,7 @@ Confirm that the users and groups you added appear in the **Users and groups** l
 Learn more about app roles with the following resources.
 
 - Code samples on GitHub
-  - [Add authorization using app roles & roles claims to an ASP\.NET Core web app](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/blob/master/5-WebApp-AuthZ/5-1-Roles/README.md)
+  - [Add authorization using app roles & roles claims to an ASP.NET Core web app](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/blob/master/5-WebApp-AuthZ/5-1-Roles/README.md)
 - Reference documentation
   - [Microsoft Entra app manifest](./reference-app-manifest.md)
 - Video: [Implement authorization in your applications with Microsoft identity platform](https://www.youtube.com/watch?v=LRoc-na27l0) (1:01:15)

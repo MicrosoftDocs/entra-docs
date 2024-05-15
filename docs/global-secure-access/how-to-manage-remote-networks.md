@@ -5,9 +5,8 @@ author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: how-to
-ms.date: 10/05/2023
-ms.service: network-access
-ms.custom: 
+ms.date: 03/04/2024
+ms.service: global-secure-access
 ---
 # Manage remote networks
 
@@ -17,7 +16,7 @@ This article explains how to manage your existing remote networks for Global Sec
 
 ## Prerequisites
 
-- A **Global Secure Access Administrator** role in Microsoft Entra ID
+- A **Global Secure Access Administrator** role in Microsoft Entra ID.
 - The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 - To use the Microsoft 365 traffic forwarding profile, a Microsoft 365 E3 license is recommended.
 
@@ -39,11 +38,11 @@ To update the details of your remote networks:
 
     ![Screenshot of the remote networks list.](./media/how-to-manage-remote-networks/remote-network-list.png)
 
-There are three sections with details you can edit:
+There are three sections with details you can edit. **Basics**, **Links**, and **Traffic profiles**.
 
 #### Basics
 
-From this page, you can delete the selected remote network. You can only change the name of a remote network after it's created. Select the pencil icon to edit the name of the remote network.
+The basics page provides a way to delete a selected remote network. You change the name of a remote network after you create it. Select the pencil icon to edit the name of the remote network.
 
 ![Screenshot of the basics tab with the pencil icon highlighted.](./media/how-to-manage-remote-networks/remote-network-basics.png)
 
@@ -68,7 +67,7 @@ To edit the details of a remote network:
 1. Sign in to [Graph Explorer](https://aka.ms/ge).
 1. Select **PATCH** as the HTTP method from the dropdown.
 1. Select the API version to **BETA**.
-1. Enter the query:
+1. Enter the query.
 
 ```http
     PATCH https://graph.microsoft.com/beta/networkaccess/connectivity/branches/8d2b05c5-1e2e-4f1d-ba5a-1a678382ef16
@@ -101,7 +100,7 @@ You can delete remote networks in the Microsoft Entra admin center or using the 
 1. Sign in to [Graph Explorer](https://aka.ms/ge).
 1. Select **PATCH** as the HTTP method from the dropdown.
 1. Select the API version to **beta**.
-1. Enter the query:
+1. Enter the query.
 
  ```http
     DELETE https://graph.microsoft.com/beta/networkaccess/connectivity/branches/97e2a6ea-c6c4-4bbe-83ca-add9b18b1c6b 

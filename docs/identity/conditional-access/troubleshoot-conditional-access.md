@@ -1,19 +1,16 @@
 ---
 title: Troubleshooting sign-in problems with Conditional Access
-description: This article describes what to do when your Conditional Access policies result in unexpected outcomes
+description: This article describes what to do when your Conditional Access policies result in unexpected outcomes.
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: troubleshooting
-ms.date: 03/31/2023
+ms.date: 02/26/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
-ms.reviewer: calebb
-
-ms.collection: M365-identity-device-management
+ms.reviewer: kvenkit
 ---
 # Troubleshooting sign-in problems with Conditional Access
 
@@ -38,7 +35,7 @@ Organizations should avoid the following configurations:
 
 ## Conditional Access sign-in interrupt
 
-The first way is to review the error message that appears. For problems signing in when using a web browser, the error page itself has detailed information. This information alone may describe what the problem is and that may suggest a solution.
+The first way is to review the error message that appears. For problems signing in when using a web browser, the error page itself has detailed information. This information alone might describe what the problem is and can suggest a solution.
 
 ![Screenshot showing a sign in error where a compliant device is required.](./media/troubleshoot-conditional-access/image1.png)
 
@@ -59,7 +56,7 @@ To find out which Conditional Access policy or policies applied and why do the f
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Identity** > **Monitoring & health** > **Sign-in logs**.
 1. Find the event for the sign-in to review. Add or remove filters and columns to filter out unnecessary information.
-   1. Add filters to narrow the scope:
+   1. Narrow the scope by adding filters like:
       1. **Correlation ID** when you have a specific event to investigate.
       1. **Conditional Access** to see policy failure and success. Scope your filter to show only failures to limit results.
       1. **Username** to see information related to specific users.
@@ -67,8 +64,8 @@ To find out which Conditional Access policy or policies applied and why do the f
 
    ![Screenshot showing selecting the Conditional Access filter in the sign-in log.](./media/troubleshoot-conditional-access/image3.png)
 
-1. Once the sign-in event that corresponds to the user's sign-in failure has been found select the **Conditional Access** tab. The Conditional Access tab shows the specific policy or policies that resulted in the sign-in interruption.
-   1. Information in the **Troubleshooting and support** tab may provide a clear reason as to why a sign-in failed such as a device that didn't meet compliance requirements.
+1. Once the sign-in event that corresponds to the user's sign-in failure is found select the **Conditional Access** tab. The Conditional Access tab shows the specific policy or policies that resulted in the sign-in interruption.
+   1. Information in the **Troubleshooting and support** tab might provide a clear reason as to why a sign-in failed such as a device that didn't meet compliance requirements.
    1. To investigate further, drill down into the configuration of the policies by clicking on the **Policy Name**. Clicking the **Policy Name** shows the policy configuration user interface for the selected policy for review and editing.
    1. The **client user** and **device details** that were used for the Conditional Access policy assessment are also available in the **Basic Info**, **Location**, **Device Info**, **Authentication Details**, and **Additional Details** tabs of the sign-in event.
 
@@ -76,7 +73,7 @@ To find out which Conditional Access policy or policies applied and why do the f
 
 Selecting the ellipsis on the right side of the policy in a sign-in event brings up policy details. This option gives administrators additional information about why a policy was successfully applied or not.
 
-:::image type="content" source="media/troubleshoot-conditional-access/activity-details-sign-ins.png" alt-text="Screenshot showing Conditional Access Policy details click thru to see why policy applied or not." lightbox="media/troubleshoot-conditional-access/policy-details.png":::
+:::image type="content" source="media/troubleshoot-conditional-access/activity-details-sign-ins.png" alt-text="Screenshot showing Conditional Access Policy details to see why policy applied or not." lightbox="media/troubleshoot-conditional-access/activity-details-sign-ins.png":::
 
 The left side provides details collected at sign-in and the right side provides details of whether those details satisfy the requirements of the applied Conditional Access policies. Conditional Access policies only apply when all conditions are satisfied or not configured.
 
@@ -104,7 +101,7 @@ To determine the service dependency, check the sign-in log for the application a
 
 :::image type="content" source="media/troubleshoot-conditional-access/service-dependency-example-sign-in.png" alt-text="Screenshot that shows an example sign-in log showing an Application calling a Resource. This scenario is also known as a service dependency." lightbox="media/troubleshoot-conditional-access/service-dependency-example-sign-in.png":::
 
-## What to do if you're locked out?
+## What to do if you're locked out
 
 If you're locked out of the due to an incorrect setting in a Conditional Access policy:
 

@@ -1,12 +1,11 @@
 ---
 title: 'Tutorial: Configure Workplace from Meta for automatic user provisioning with Microsoft Entra ID'
 description: Learn the steps you need to do in both Workplace from Meta and Microsoft Entra ID to configure automatic user provisioning.
-services: active-directory
+
 author: twimmers
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: saas-apps
 ms.topic: tutorial
 ms.date: 11/21/2023
 ms.author: thwimmer
@@ -30,7 +29,7 @@ This tutorial describes the steps you need to do in both Workplace from Meta and
 The scenario outlined in this tutorial assumes that you already have the following prerequisites:
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md) 
-* A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (for example, Application Administrator, Cloud Application administrator, Application Owner, or Global Administrator)
+* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
 * A Workplace from Meta single-sign on enabled subscription
 
 > [!NOTE]

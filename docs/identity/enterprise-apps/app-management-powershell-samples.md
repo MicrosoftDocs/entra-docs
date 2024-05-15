@@ -4,8 +4,8 @@ description: These PowerShell samples are used for apps you manage in your Micro
 
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 
 ms.topic: sample
 ms.date: 07/12/2023

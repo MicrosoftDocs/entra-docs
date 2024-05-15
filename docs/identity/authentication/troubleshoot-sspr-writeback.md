@@ -2,18 +2,15 @@
 title: Troubleshoot self-service password reset writeback
 description: Learn how to troubleshoot common problems and resolution steps for self-service password reset writeback in Microsoft Entra ID
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: troubleshooting
-ms.date: 10/05/2023
+ms.date: 04/29/2024
 
 ms.author: justinha
 author: justinha
 manager: amycolannino
 ms.reviewer: tilarso
-
-ms.collection: M365-identity-device-management
 ---
 # Troubleshoot self-service password reset writeback in Microsoft Entra ID
 
@@ -35,23 +32,28 @@ If you have problems with password writeback for Microsoft Entra Connect, review
 
 The most common point of failure is that firewall or proxy ports, or idle timeouts are incorrectly configured.
 
-For Azure AD Connect version *1.1.443.0* and above, *outbound HTTPS* access is required to the following addresses:
+For Microsoft Entra Connect version *1.1.443.0* and above, *outbound HTTPS* access is required to the following addresses:
 
 * *\*.passwordreset.microsoftonline.com*
 * *\*.servicebus.windows.net*
 
-Azure [GOV endpoints](/azure/azure-government/compare-azure-government-global-azure#guidance-for-developers):
+[Azure for US Government endpoints](/azure/azure-government/compare-azure-government-global-azure#guidance-for-developers):
 
 * *\*.passwordreset.microsoftonline.us*
 * *\*.servicebus.usgovcloudapi.net*
 
+Azure China 21Vianet endpoints:
+
+* *ssprdedicatedsbmcprodcne.servicebus.chinacloudapi.cn*
+* *ssprdedicatedsbmcprodcnn.servicebus.chinacloudapi.cn*
+
 If you need more granularity, see the [list of Microsoft Azure IP Ranges and Service Tags for Public Cloud](https://www.microsoft.com/download/details.aspx?id=56519).
 
-For Azure GOV, see the [list of Microsoft Azure IP Ranges and Service Tags for US Government Cloud](https://www.microsoft.com/download/details.aspx?id=57063).
+For Azure for US Government, see the [list of Microsoft Azure IP Ranges and Service Tags for Azure for US Government Cloud](https://www.microsoft.com/download/details.aspx?id=57063).
 
 These files are updated weekly.
 
-To determine if access to a URL and port are restricted in an environment, run the following cmdlet:
+To determine if access to a URL and port are restricted in an environment such as public Azure cloud, run the following cmdlet:
 
 ```powershell
 Test-NetConnection -ComputerName ssprdedicatedsbprodscu.servicebus.windows.net -Port 443
@@ -229,6 +231,27 @@ A best practice when you troubleshoot problems with password writeback is to ins
 | 33007| ADUserIncorrectPassword| This event indicates that the user specified an incorrect current password when performing a password change operation. Specify the correct current password and try again.|
 | 33008| ADPasswordPolicyError| This event occurs when the password writeback service attempts to set a password on your local directory that doesn't meet the password age, history, complexity, or filtering requirements of the domain. <br> <br> If you have a minimum password age and have recently changed the password within that window of time, you're not able to change the password again until it reaches the specified age in your domain. For testing purposes, the minimum age should be set to 0. <br> <br> If you have password history requirements enabled, then you must select a password that has not been used in the last *N* times, where *N* is the password history setting. If you do select a password that has been used in the last *N* times, then you see a failure in this case. For testing purposes, the password history should be set to 0. <br> <br> If you have password complexity requirements, all of them are enforced when the user attempts to change or reset a password. <br> <br> If you have password filters enabled and a user selects a password that doesn't meet the filtering criteria, then the reset or change operation fails.|
 | 33009| ADConfigurationError| This event indicates there was a problem writing a password back to your on-premises directory because of a configuration issue with Active Directory. Check the Microsoft Entra Connect machine's application event log for messages from the ADSync service for more information on which error occurred.|
+
+## Organizational unit characters reserved from password writeback
+
+The following table lists reserved characters that prevent password writeback. If these characters appear in your on-premises organizational unit (OU) strucure, password writeback may fail with event ID 33001.
+
+| Reserved character  | Description | Hex value |
+|---------------------|-------------|-----------|
+|                    | space or # character at the beginning of a string |  |
+|                    | space character at the end of a string |  |
+| ,                   | comma               | 0x2C |
+|\+                  | plus sign           | 0x2B  |
+|"                   | quotation mark      | 0x22  |
+|\                   | backslash           | 0x5C  |
+|<                   | left angle bracket  | 0x3C  |
+|\>                  | right angle bracket | 0x3E  |
+|;                   | semicolon           | 0x3B  |
+|LF                  | line feed           | 0x0A  |
+|CR                  | carriage return     | 0x0D  |
+|=                   | equal sign          | 0x3D  |
+|/                   | foward slash        | 0x2F  |
+
 
 <a name='azure-ad-forums'></a>
 

@@ -1,14 +1,15 @@
 ---
 author: kengaderdus
-ms.service: active-directory
-ms.subservice: ciam
+ms.service: entra-external-id
+ms.subservice: customers
 ms.topic: include
 ms.date: 07/12/2023
 ms.author: kengaderdus
+ms.manager: mwongerapk
 ---
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a Conditional Access Administrator, Security Administrator, or Global Administrator.
-1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="~/external-id/customers/media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your customer tenant from the **Directories + subscriptions** menu. 
+1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="~/external-id/customers/media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your external tenant from the **Directories + subscriptions** menu. 
 1. Browse to **Identity** >**Applications** > **App registrations**.
 1. Select the application you want to define app roles in.
 1. Select **App roles**, and then select **Create app role**.

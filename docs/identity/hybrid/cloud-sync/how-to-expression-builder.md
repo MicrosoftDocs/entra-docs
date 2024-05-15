@@ -1,16 +1,15 @@
 ---
 title: 'Use the expression builder with Microsoft Entra Cloud Sync'
 description: This article describes how to use the expression builder with cloud sync.
-services: active-directory
+
 author: billmath
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id
 ms.topic: how-to
-ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.date: 04/26/2024
+ms.subservice: hybrid-cloud-sync
 ms.author: billmath
-ms.collection: M365-identity-device-management
+
 ---
 
 # Expression builder with cloud sync
@@ -20,11 +19,11 @@ The expression builder is a new function in Azure located under cloud sync. It h
 To access the expression builder:
 
  [!INCLUDE [sign in](~/includes/cloud-sync-sign-in.md)]
- 2. Under **Configuration**, select your configuration.
- 3. Under **Manage attributes**, select **Click to edit mappings**.
- 4. On the **Edit attribute mappings** pane, select **Add attribute mapping**.
- 5. Under **Mapping type**, select **Expression**.
- 6. Select **Try the expression builder (Preview)**.
+ 3. Under **Configuration**, select your configuration.
+ 4. Under **Manage attributes**, select **Click to edit mappings**.
+ 5. On the **Edit attribute mappings** pane, select **Add attribute mapping**.
+ 6. Under **Mapping type**, select **Expression**.
+ 7. Select **Try the expression builder **.
  
     ![Screenshot that shows using expression builder.](media/how-to-expression-builder/expression-1.png)
 

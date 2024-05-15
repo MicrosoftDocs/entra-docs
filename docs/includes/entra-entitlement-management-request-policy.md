@@ -1,10 +1,10 @@
 ---
 title: include file
 description: include file
-services: active-directory
+
 author: owinfreyATL
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: include
 ms.date: 02/27/2023
 ms.author: owinfrey
@@ -75,7 +75,7 @@ Follow these steps if you want to allow users not in your directory to request t
 
     If the organization that you want to collaborate with isn't in the list, you can ask your administrator to add it as a connected organization. For more information, see [Add a connected organization](~/id-governance/entitlement-management-organization.md).
 
-1. If you selected **All connected organizations**, then you should confirm with your global administrator the list of connected organizations that are currently configured and planned to be in scope.
+1. If you selected **All connected organizations**, then you should confirm the list of connected organizations that are currently configured and planned to be in scope.
 
 1. If you selected **All users**, then you will need to configure approvals in the approvals section, as this scope would allow any identity on the Internet to request access.
 
@@ -143,11 +143,11 @@ Use the following steps to add approvers after you select the number of stages.
 
 1. If you selected **Manager** as the first approver, select **Add fallback** to select one or more users or groups in your directory to be a fallback approver. Fallback approvers receive the request if entitlement management can't find the manager for the user who's requesting access.
 
-    Entitlement management finds the manager by using the **Manager** attribute. The attribute is in the user's profile in Microsoft Entra ID. For more information, see [Add or update a user's profile information and settings](~/fundamentals/how-to-manage-user-profile-info.md).
+    Entitlement management finds the manager by using the **Manager** attribute. The attribute is in the user's profile in Microsoft Entra ID. For more information, see [Add or update a user's profile information and settings](~/fundamentals/how-to-manage-user-profile-info.yml).
 
 1. If you selected **Sponsors** as the first approver, select **Add fallback** to select one or more users or groups in your directory to be a fallback approver. Fallback approvers receive the request if entitlement management can't find the sponsor for the user who's requesting access.
 
-    Entitlement management finds sponsors by using the **Sponsors** attribute. The attribute is in the user's profile in Microsoft Entra ID. For more information, see [Add or update a user's profile information and settings](~/fundamentals/how-to-manage-user-profile-info.md).
+    Entitlement management finds sponsors by using the **Sponsors** attribute. The attribute is in the user's profile in Microsoft Entra ID. For more information, see [Add or update a user's profile information and settings](~/fundamentals/how-to-manage-user-profile-info.yml).
 
 1. If you selected **Choose specific approvers**, select **Add approvers** to select one or more users or groups in your directory to be approvers.
 

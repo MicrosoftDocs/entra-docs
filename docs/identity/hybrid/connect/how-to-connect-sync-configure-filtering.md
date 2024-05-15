@@ -1,20 +1,17 @@
 ---
 title: 'Microsoft Entra Connect Sync: Configure filtering'
 description: Explains how to configure filtering in Microsoft Entra Connect Sync.
-services: active-directory
-documentationcenter: ''
+
 author: billmath
 manager: amycolannino
-editor: ''
 ms.assetid: 880facf6-1192-40e9-8181-544c0759d506
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
-ms.collection: M365-identity-device-management
+
 ---
 
 # Microsoft Entra Connect Sync: Configure filtering

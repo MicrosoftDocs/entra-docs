@@ -5,10 +5,10 @@ author: rwike77
 manager: CelesteDG
 ms.author: ryanwi
 ms.custom: 
-ms.date: 04/13/2023
+ms.date: 04/10/2024
 ms.reviewer: sureshja
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: reference
 #Customer intent: As an application developer, I want to configure the attributes of an application in the Microsoft Entra admin center or programmatically, so that I can update the application object and define permissions and roles for the app.
 ---
@@ -17,7 +17,7 @@ ms.topic: reference
 
 The application manifest contains a definition of all the attributes of an application object in the Microsoft identity platform. It also serves as a mechanism for updating the application object. For more info on the Application entity and its schema, see the [Graph API Application entity documentation](/graph/api/resources/application).
 
-You can configure an app's attributes through the Microsoft Entra admin center or programmatically using [Microsoft Graph API](/graph/api/resources/application) or [Microsoft Graph PowerShell SDK](/powershell/module/microsoft.graph.applications/?view=graph-powershell-1.0&preserve-view=true). However, there are some scenarios where you'll need to edit the app manifest to configure an app's attribute. These scenarios include:
+You can configure an app's attributes through the Microsoft Entra admin center or programmatically using [Microsoft Graph API](/graph/api/resources/application) or [Microsoft Graph PowerShell SDK](/powershell/module/microsoft.graph.applications/?view=graph-powershell-1.0&preserve-view=true). However, there are some scenarios where you need to edit the app manifest to configure an app's attribute. These scenarios include:
 
 * If you registered the app as Microsoft Entra multi-tenant and personal Microsoft accounts, you can't change the supported Microsoft accounts in the UI. Instead, you must use the application manifest editor to change the supported account type.
 * To define permissions and roles that your app supports, you must modify the application manifest.
@@ -41,12 +41,12 @@ This section describes the attributes found in the application manifest.
 | :--- | :--- |
 | id | String |
 
-The unique identifier for the app in the directory. This ID is not the identifier used to identify the app in any protocol transaction. It's used for the referencing the object in directory queries.
+The unique identifier for the app in the directory. This ID is not the identifier used to identify the app in any protocol transaction. Use it for the referencing the object in directory queries.
 
 Example:
 
 ```json
-    "id": "f7f9acfc-ae0c-4d6c-b489-0a81dc1652dd",
+    "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
 ```
 
 ### acceptMappedClaims attribute
@@ -55,7 +55,7 @@ Example:
 | :--- | :--- |
 | acceptMappedClaims | Nullable Boolean |
 
-As documented on the [apiApplication resource type](/graph/api/resources/apiapplication#properties), this allows an application to use [claims mapping](./saml-claims-customization.md) without specifying a custom signing key.  Applications that receive tokens rely on the fact that the claim values are authoritatively issued by Microsoft Entra ID and cannot be tampered with. However, when you modify the token contents through claims-mapping policies, these assumptions may no longer be correct. Applications must explicitly acknowledge that tokens have been modified by the creator of the claims-mapping policy to protect themselves from claims-mapping policies created by malicious actors.
+As documented on the [`apiApplication` resource type](/graph/api/resources/apiapplication#properties), this allows an application to use [claims mapping](./saml-claims-customization.md) without specifying a custom signing key.  Applications that receive tokens rely on the fact that the claim values are authoritatively issued by Microsoft Entra ID and cannot be tampered with. However, when you modify the token contents through claims-mapping policies, these assumptions may no longer be correct. Applications must explicitly acknowledge that tokens have been modified by the creator of the claims-mapping policy to protect themselves from claims-mapping policies created by malicious actors.
 
 > [!WARNING]
 > Do not set `acceptMappedClaims` property to `true` for multi-tenant apps, which can allow malicious actors to create claims-mapping policies for your app.
@@ -92,14 +92,14 @@ Example:
 | :--- | :--- |
 | addIns | Collection |
 
-Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the `addIns` property for its "FileHandler" functionality. This parameter  will let services like Microsoft 365 call the application in the context of a document the user is working on.
+Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the `addIns` property for its "FileHandler" functionality. This parameter lets services like Microsoft 365 call the application in the context of a document the user is working on.
 
 Example:
 
 ```json
     "addIns": [
        {
-        "id": "968A844F-7A47-430C-9163-07AE7C31D407",
+        "id": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
         "type":" FileHandler",
         "properties": [
            {
@@ -117,7 +117,7 @@ Example:
 | :--- | :--- |
 | allowPublicClient | Boolean |
 
-Specifies the fallback application type. Microsoft Entra ID infers the application type from the replyUrlsWithType by default. There are certain scenarios where Microsoft Entra ID can't determine the client app type. For example, one such scenario is the [ROPC](https://tools.ietf.org/html/rfc6749#section-4.3) flow where HTTP request happens without a URL redirection). In those cases, Microsoft Entra ID will interpret the application type based on the value of this property. If this value is set to true the fallback application type is set as public client, such as an installed app running on a mobile device. The default value is false which means the fallback application type is confidential client such as web app.
+Specifies the fallback application type. Microsoft Entra ID infers the application type from the replyUrlsWithType by default. There are certain scenarios where Microsoft Entra ID can't determine the client app type. For example, one such scenario is the [ROPC](https://tools.ietf.org/html/rfc6749#section-4.3) flow where HTTP request happens without a URL redirection). In those cases, Microsoft Entra ID interprets the application type based on the value of this property. If this value is set to true the fallback application type is set as public client, such as an installed app running on a mobile device. The default value is false, which means the fallback application type is confidential client such as web app.
 
 Example:
 
@@ -136,7 +136,7 @@ Specifies the unique identifier for the app that is assigned to an app by Micros
 Example:
 
 ```json
-    "appId": "601790de-b632-4f57-9523-ee7cb6ceba95",
+    "appId": "00001111-aaaa-2222-bbbb-3333cccc4444",
 ```
 
 ### appRoles attribute
@@ -157,7 +157,7 @@ Example:
            ],
            "description": "Read-only access to device information",
            "displayName": "Read Only",
-           "id": "601790de-b632-4f57-9523-ee7cb6ceba95",
+           "id": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
            "isEnabled": true,
            "value": "ReadOnly"
         }
@@ -215,7 +215,7 @@ Example:
 | :--- | :--- |
 | identifierUris | String Array |
 
-User-defined URI(s) that uniquely identify a web app within its Microsoft Entra tenant or verified customer owned domain.
+User-defined URIs that uniquely identify a web app within its Microsoft Entra tenant or verified customer owned domain.
 When an application is used as a resource app, the identifierUri value is used to uniquely identify and access the resource.
 
 [!INCLUDE [active-directory-identifierUri](~/includes/entra-identifier-uri-patterns.md)]
@@ -223,7 +223,7 @@ When an application is used as a resource app, the identifierUri value is used t
 Example:
 
 ```json
-    "identifierUris": "https://contoso.onmicrosoft.com/fc4d2d73-d05a-4a9b-85a8-4f2b3a5f38ed",
+    "identifierUris": "https://contoso.onmicrosoft.com/00001111-aaaa-2222-bbbb-3333cccc4444",
 ```
 
 ### informationalUrls attribute
@@ -275,12 +275,12 @@ Example:
 | :--- | :--- |
 | knownClientApplications | String Array |
 
-Used for bundling consent if you have a solution that contains two parts: a client app and a custom web API app. If you enter the appID of the client app into this value, the user will only have to consent once to the client app. Microsoft Entra ID will know that consenting to the client means implicitly consenting to the web API. It will automatically provision service principals for both the client and web API at the same time. Both the client and the web API app must be registered in the same tenant.
+Used for bundling consent if you have a solution that contains two parts: a client app and a custom web API app. If you enter the appID of the client app into this value, the user will only have to consent once to the client app. Microsoft Entra ID will know that consenting to the client means implicitly consenting to the web API. It automatically provisions service principals for both the client and web API at the same time. Both the client and the web API app must be registered in the same tenant.
 
 Example:
 
 ```json
-    "knownClientApplications": ["f7f9acfc-ae0c-4d6c-b489-0a81dc1652dd"],
+    "knownClientApplications": ["00001111-aaaa-2222-bbbb-3333cccc4444"],
 ```
 
 ### logoUrl attribute
@@ -384,7 +384,7 @@ Example:
 | :--- | :--- |
 | oauth2RequiredPostResponse | Boolean |
 
-Specifies whether, as part of OAuth 2.0 token requests, Microsoft Entra ID will allow POST requests, as opposed to GET requests. The default is false, which specifies that only GET requests will be allowed.
+Specifies whether, as part of OAuth 2.0 token requests, Microsoft Entra ID will allow POST requests, as opposed to GET requests. The default is false, which specifies that only GET requests are allowed.
 
 Example:
 
@@ -440,16 +440,16 @@ Example:
 | :--- | :--- |
 | preAuthorizedApplications | Collection |
 
-Lists applications and requested permissions for implicit consent. Requires an admin to have provided consent to the application. preAuthorizedApplications do not require the user to consent to the requested permissions. Permissions listed in preAuthorizedApplications do not require user consent. However, any additional requested permissions not listed in preAuthorizedApplications require user consent.
+Lists applications and requested permissions for implicit consent. Requires an admin to provide consent to the application. preAuthorizedApplications do not require the user to consent to the requested permissions. Permissions listed in preAuthorizedApplications do not require user consent. However, any additional requested permissions not listed in preAuthorizedApplications require user consent.
 
 Example:
 
 ```json
     "preAuthorizedApplications": [
        {
-          "appId": "abcdefg2-000a-1111-a0e5-812ed8dd72e8",
+          "appId": "00001111-aaaa-2222-bbbb-3333cccc4444",
           "permissionIds": [
-             "8748f7db-21fe-4c83-8ab5-53033933c8f1"
+             "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb"
             ]
         }
     ],

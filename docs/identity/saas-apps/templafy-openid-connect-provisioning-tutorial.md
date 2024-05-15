@@ -6,12 +6,14 @@ author: twimmers
 writer: twimmers
 manager: CelesteDG
 ms.assetid: 8cbb387a-e3fb-4588-bb87-bf4f88144361
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Templafy OpenID Connect so that I can streamline the user management process and ensure that users have the appropriate access to Templafy OpenID Connect.
 ---
 
 # Tutorial: Configure Templafy OpenID Connect for automatic user provisioning
@@ -19,7 +21,7 @@ ms.author: thwimmer
 The objective of this tutorial is to demonstrate the steps to be performed in Templafy OpenID Connect and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to Templafy OpenID Connect.
 
 > [!NOTE]
-> This tutorial describes a connector built on top of the Microsoft Entra user Provisioning Service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
+> This tutorial describes a connector built on top of the Microsoft Entra user provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 >
 
 ## Prerequisites

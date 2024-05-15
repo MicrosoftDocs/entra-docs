@@ -1,10 +1,8 @@
 ---
 title: Configure Microsoft Entra ID to meet FedRAMP High Impact level
 description: Overview of how you can meet a FedRAMP High Impact level for your organization by using Microsoft Entra ID.
-services: active-directory 
-ms.service: active-directory
-ms.subservice: fundamentals
-ms.workload: identity
+ms.service: entra
+ms.subservice: standards
 ms.topic: how-to
 author: gargi-sinha
 ms.author: gasinh
@@ -12,7 +10,6 @@ manager: martinco
 ms.reviewer: martinco
 ms.date: 03/09/2023
 ms.custom: it-pro
-ms.collection: M365-identity-device-management
 ---
 
 

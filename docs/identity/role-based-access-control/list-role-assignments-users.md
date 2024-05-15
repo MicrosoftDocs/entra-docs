@@ -1,18 +1,17 @@
 ---
 title: List Microsoft Entra role assignments for a user
 description: Learn how to list Microsoft Entra roles assignments of a user
-services: active-directory
+
 author: rolyon
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: roles
+ms.service: entra-id
+ms.subservice: role-based-access-control
 ms.topic: how-to
 ms.date: 02/04/2022
 ms.author: rolyon
 ms.custom: it-pro
 
-ms.collection: M365-identity-device-management
+
 ---
 # List Microsoft Entra role assignments for a user
 
@@ -92,5 +91,5 @@ Follow these steps to list Microsoft Entra roles assigned to a user using the Mi
 ## Next steps
 
 * [List Microsoft Entra role assignments](view-assignments.md).
-* [Assign Microsoft Entra roles to users](manage-roles-portal.md).
+* [Assign Microsoft Entra roles to users](manage-roles-portal.yml).
 * [Assign Microsoft Entra roles to groups](groups-assign-role.md)

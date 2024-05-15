@@ -4,9 +4,9 @@ description: Enable Microsoft Entra multifactor authentication and single sign-o
 
 author: gargi-sinha
 manager: martinco
-ms.service: active-directory
-ms.subservice: app-mgmt
-ms.topic: how-to
+ms.service: entra-id
+ms.subservice: enterprise-apps
+ms.topic: tutorial
 
 ms.date: 11/01/2023
 ms.author: gasinh
@@ -35,7 +35,7 @@ Benefits of integrating applications with Microsoft Entra ID by using DAP:
 
 This scenario focuses on Oracle Hyperion EPM integration using HTTP authorization headers to manage access to protected content.
 
-Due to the absence of modern protocol support in legacy applications, a direct integration with Microsoft Entra ID SSO is challenging. Datawiza Access Proxy (DAP) bridges the gap between the legacy application and the modern identity control plane, through protocol transitioning. DAP lowers integration overhead, saves engineering time, and improves application security.
+Due to the absence of modern protocol support in legacy applications, a direct integration with Microsoft Entra SSO is challenging. Datawiza Access Proxy (DAP) bridges the gap between the legacy application and the modern identity control plane, through protocol transitioning. DAP lowers integration overhead, saves engineering time, and improves application security.
 
 ## Scenario architecture
 
@@ -54,7 +54,7 @@ Ensure the following prerequisites are met:
 
 * An Azure subscription
   * If you don't have one, you can get an [Azure free account](https://azure.microsoft.com/free)
-* A Microsoft Entra ID tenant linked to the Azure subscription
+* A Microsoft Entra tenant linked to the Azure subscription
   * See, [Quickstart: Create a new tenant in Microsoft Entra ID](../../fundamentals/create-new-tenant.md)
 * Docker and Docker Compose
   * Go to docs.docker.com to [Get Docker](https://docs.docker.com/get-docker) and [Install Docker Compose](https://docs.docker.com/compose/install)
@@ -91,7 +91,7 @@ To integrate Oracle Hyperion EMP with Microsoft Entra ID:
 15. On the **Configure IdP** dialog, enter relevant information. 
 
    >[!NOTE]
-   >Use Datawiza Cloud Management Console (DCMC) [One Click Integration](https://docs.datawiza.com/tutorial/web-app-azure-one-click.html) to help complete configuration. DCMC calls the Microsoft Graph API to create an application registration on your behalf, in your Microsoft Entra ID tenant.
+   >Use Datawiza Cloud Management Console (DCMC) [One Click Integration](https://docs.datawiza.com/tutorial/web-app-azure-one-click.html) to help complete configuration. DCMC calls the Microsoft Graph API to create an application registration on your behalf, in your Microsoft Entra tenant.
 
 16. Select **Create**.
 17. The DAP deployment page appears.
@@ -117,7 +117,7 @@ The following instructions enable Oracle Hyperion EPM application to recognize t
    ![Screenshot shows the Attribute Pass tab.](./media/datawiza-mfa-sso-oracle-hyperion-epm/attribute-pass-tab.png)
 
    >[!NOTE]
-   >This configuration uses the Microsoft Entra ID user principal name for the sign in username, which is used by Oracle Hyperion. For another user identity, go to the **Mappings** tab.
+   >This configuration uses the Microsoft Entra user principal name for the sign in username, which is used by Oracle Hyperion. For another user identity, go to the **Mappings** tab.
 
    ![Screenshot shows the user principal name.](./media/datawiza-mfa-sso-oracle-hyperion-epm/user-principal-name.png)
 
@@ -197,7 +197,7 @@ Use the following instructions to enable SSO in the Oracle Hyperion environment.
 
 ## Test an Oracle Hyperion EMP application
 
-To confirm Oracle Hyperion application access, a prompt appears to use a Microsoft Entra ID account for sign-in. Credentials are checked and the Oracle Hyperion EPM home page appears.
+To confirm Oracle Hyperion application access, a prompt appears to use a Microsoft Entra account for sign-in. Credentials are checked and the Oracle Hyperion EPM home page appears.
 
 
 ## Next steps

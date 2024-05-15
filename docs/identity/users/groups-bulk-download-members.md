@@ -1,18 +1,16 @@
 ---
 title: Bulk download group membership list - Azure portal
-description: Add users in bulk in the Azure admin center. 
-services: active-directory 
+description: Add users in bulk in the Azure admin center.
+
 author: barclayn
 ms.author: barclayn
 manager: amycolannino
 ms.date: 09/06/2023
 ms.topic: how-to
-ms.service: active-directory
-ms.subservice: enterprise-users
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: users
 ms.custom: it-pro
 ms.reviewer: yuan.karppanen
-ms.collection: M365-identity-device-management
 ---
 
 # Bulk download members of a group in Microsoft Entra ID
@@ -21,7 +19,7 @@ You can bulk download the members of a group in your organization to a comma-sep
 
 ## Bulk download group membership
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
 1. Select **Microsoft Entra ID**.
 1. Select **Groups** > **All groups**.
 1. Open the group whose membership you want to download, and then select **Members**.

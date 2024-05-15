@@ -2,8 +2,7 @@
 title: Enable combined security information registration
 description: Learn how to simplify the end-user experience with combined Microsoft Entra multifactor authentication and self-service password reset registration.
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 09/14/2023
@@ -12,8 +11,6 @@ ms.author: justinha
 author: justinha
 manager: amycolannino
 ms.reviewer: tilarso
-
-ms.collection: M365-identity-device-management
 ---
 # Enable combined security information registration in Microsoft Entra ID
 
@@ -32,7 +29,7 @@ To secure when and how users register for Microsoft Entra multifactor authentica
 >
 > You can create an MFA registration policy by using [Microsoft Entra ID Protection - Configure MFA Policy](~/id-protection/howto-identity-protection-configure-mfa-policy.md).
 
-For more information about creating trusted locations in Conditional Access, see [What is the location condition in Microsoft Entra Conditional Access?](~/identity/conditional-access/location-condition.md#named-locations)
+For more information about creating trusted locations in Conditional Access, see [What is the location condition in Microsoft Entra Conditional Access?](../conditional-access/concept-assignment-network.md#trusted-locations)
 
 ### Create a policy to require registration from a trusted location
 
@@ -61,8 +58,8 @@ Complete the following steps to create a policy that applies to all selected use
 
 ## Next steps
 
-If you need help, see [troubleshoot combined security info registration](howto-registration-mfa-sspr-combined-troubleshoot.md) or learn [What is the location condition in Microsoft Entra Conditional Access?](~/identity/conditional-access/location-condition.md)
+If you need help, see [troubleshoot combined security info registration](howto-registration-mfa-sspr-combined-troubleshoot.md) or learn [What is the location condition in Microsoft Entra Conditional Access?](../conditional-access/concept-assignment-network.md)
 
 Review how you can [enable self-service password reset](tutorial-enable-sspr.md) and [enable Microsoft Entra multifactor authentication](tutorial-enable-azure-mfa.md) in your tenant.
 
-If needed, learn how to [force users to re-register authentication methods](howto-mfa-userdevicesettings.md#manage-user-authentication-options).
+If needed, learn how to [force users to re-register authentication methods](howto-mfa-userdevicesettings.yml).

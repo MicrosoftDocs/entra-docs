@@ -1,32 +1,27 @@
 ---
 title: Complete an access review of groups & applications
 description: Learn how to complete an access review of group members or application access in Microsoft Entra access reviews.
-services: active-directory
-documentationcenter: ''
 author: owinfreyATL
 manager: amycolannino
 editor: markwahl-msft
-ms.service: active-directory
-ms.workload: identity
-ms.tgt_pltfrm: na
+ms.service: entra-id-governance
+ms.subservice: access-reviews
 ms.topic: how-to
-ms.subservice: compliance
 ms.date: 06/28/2023
 ms.author: owinfrey
 ms.reviewer: mwahl
-ms.collection: M365-identity-device-management
 ---
  
 # Complete an access review of groups and applications in access reviews
  
 As an administrator, you [create an access review of groups or applications](create-access-review.md) and reviewers [perform the access review](perform-access-review.md). This article describes how to see the results of the access review and apply them.
  
-[!INCLUDE [GDPR-related guidance](~/../azure-docs-pr/includes/gdpr-intro-sentence.md)]
+[!INCLUDE [GDPR-related guidance](~/includes/azure-docs-pr/gdpr-intro-sentence.md)]
  
 ## Prerequisites
  
 - Microsoft Entra ID P2 or Microsoft Entra ID Governance
-- Global administrator, User administrator, or Identity Governance administrator to manage access of reviews on groups and applications. Users who have the Global Administrator role or the Privileged Role Administrator role can manage reviews of role-assignable groups, see [Use Microsoft Entra groups to manage role assignments](~/identity/role-based-access-control/groups-concept.md)
+- Global administrator, User administrator, or Identity Governance administrator to manage access of reviews on groups and applications. Users who have the Global Administrator role or the Privileged Role Administrator role can manage reviews of role-assignable groups, see [Use Microsoft Entra groups to manage role assignments](../identity/role-based-access-control/groups-concept.md)
 - Security readers have read access.
  
 For more information, see [License requirements](access-reviews-overview.md#license-requirements).
@@ -34,11 +29,11 @@ For more information, see [License requirements](access-reviews-overview.md#lice
  
 ## View the status of an access review
  
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
+[!INCLUDE [portal updates](../includes/portal-update.md)]
 
 You can track the progress of access reviews as they're completed.
  
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
 1. Browse to **Identity governance** > **Access Reviews**.
  
@@ -130,7 +125,7 @@ Manually or automatically applying results doesn't have an effect on a group tha
  
 On review creation, the creator can choose between two options for denied guest users in an access review. 
  - Denied guest users can have their access to the resource removed. This is the default.
- - The denied guest user can be blocked from signing in for 30 days, then deleted from the tenant. During the 30-day period the guest user is able to be restored access to the tenant by an administrator. After the 30-day period is completed, if the guest user hasn't had access to the resource granted to them again, they'll be removed from the tenant permanently. In addition, using the Microsoft Entra admin center, a Global Administrator can explicitly [permanently delete a recently deleted user](~/fundamentals/users-restore.md) before that time period is reached. Once a user has been permanently deleted, the data about that guest user will be removed from active access reviews. Audit information about deleted users remains in the audit log.
+ - The denied guest user can be blocked from signing in for 30 days, then deleted from the tenant. During the 30-day period the guest user is able to be restored access to the tenant by an administrator. After the 30-day period is completed, if the guest user hasn't had access to the resource granted to them again, they'll be removed from the tenant permanently. In addition, using the Microsoft Entra admin center, a Global Administrator can explicitly [permanently delete a recently deleted user](~/fundamentals/users-restore.yml) before that time period is reached. Once a user has been permanently deleted, the data about that guest user will be removed from active access reviews. Audit information about deleted users remains in the audit log.
  
 ### Actions taken on denied B2B direct connect users
 
@@ -140,4 +135,4 @@ Denied B2B direct connect users and teams lose access to all shared channels in 
  
 - [Manage access reviews](manage-access-review.md) 
 - [Create an access review of groups or applications](create-access-review.md)
-- [Create an access review of users in a Microsoft Entra administrative role](~/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md)
+- [Create an access review of users in a Microsoft Entra administrative role](../id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md)

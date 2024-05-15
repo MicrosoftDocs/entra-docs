@@ -1,17 +1,12 @@
 ---
 title: Best practice recommendations for managed system identities
 description: Recommendations on when to use user-assigned versus system-assigned managed identities
-services: active-directory
-documentationcenter: 
+
 author: barclayn
 manager: amycolannino
-editor: 
-ms.service: active-directory
-ms.subservice: msi
-ms.devlang: 
+ms.service: entra-id
+ms.subservice: managed-identities
 ms.topic: conceptual
-ms.tgt_pltfrm: 
-ms.workload: identity
 ms.date: 11/09/2021
 ms.author: barclayn
 ---

@@ -1,3 +1,4 @@
+items:
 - name: Standards documentation
   href: index.yml
 - name: Overview
@@ -53,7 +54,7 @@
     href: memo-22-09-meet-identity-requirements.md
   - name: Enterprise-wide identity system
     href: memo-22-09-enterprise-wide-identity-management-system.md
-  - name: Multi-factor authentication
+  - name: Multifactor authentication
     href: memo-22-09-multi-factor-authentication.md
   - name: Authorization
     href: memo-22-09-authorization.md
@@ -70,6 +71,11 @@
     href: hipaa-audit-controls.md
   - name: Additional Controls Safeguard compliance
     href: hipaa-other-controls.md
+- name: Configure HITRUST controls
+  expanded: true
+  items:
+  - name: Configure HITRUST controls
+    href: hipaa-hitrust-controls.md
 - name: Microsoft Entra ID and PCI-DSS compliance
   expanded: true
   items:

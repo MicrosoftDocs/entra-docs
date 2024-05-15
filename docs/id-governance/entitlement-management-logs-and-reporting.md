@@ -1,25 +1,15 @@
 ---
 title: Archive & report with Azure Monitor - entitlement management
 description: Learn how to archive logs and create reports with Azure Monitor in entitlement management.
-services: active-directory
-documentationCenter: ''
 author: owinfreyatl
 manager: amycolannino
-editor: 
-ms.service: active-directory
-ms.workload: identity
-ms.tgt_pltfrm: na
+ms.service: entra-id-governance
+ms.subservice: entitlement-management
 ms.topic: how-to
-ms.subservice: compliance
 ms.date: 05/31/2023
 ms.author: owinfrey
-ms.reviewer: 
-ms.collection: M365-identity-device-management 
 ms.custom: devx-track-azurepowershell
-
-
 #Customer intent: As an administrator, I want to extend data retention in entitlement management past the default period by using Azure Monitor.
-
 ---
 # Archive logs and reporting on entitlement management in Azure Monitor
 
@@ -44,7 +34,7 @@ Archiving Microsoft Entra audit logs requires you to have Azure Monitor in an Az
 
 1. Check if there's already a setting to send the audit logs to that workspace.
 
-1. If there isn't already a setting, select **Add diagnostic setting**. Use the instructions in [Integrate Microsoft Entra logs with Azure Monitor logs](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.md) to send the Microsoft Entra audit log to the Azure Monitor workspace.
+1. If there isn't already a setting, select **Add diagnostic setting**. Use the instructions in [Integrate Microsoft Entra logs with Azure Monitor logs](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.yml) to send the Microsoft Entra audit log to the Azure Monitor workspace.
 
     ![Diagnostics settings pane](./media/entitlement-management-logs-and-reporting/audit-log-diagnostics-settings.png)
 

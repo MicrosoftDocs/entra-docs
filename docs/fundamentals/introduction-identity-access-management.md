@@ -1,12 +1,11 @@
 ---
 title: What is identity and access management (IAM)?
 description:  Learn what identity and access management (IAM) is, why it's important, and how it works.  Learn about authentication and authorization, single sign-on (SSO), and multi-factor authentication (MFA). Learn about SAML, Open ID Connect (OIDC), and OAuth 2.0 and other authentication and authorization standards, tokens, and more.
-services: active-directory
 author: rwike77
 manager: CelesteDG
 
-ms.service: active-directory
-ms.subservice: develop
+ms.service: entra
+ms.subservice: fundamentals
 ms.topic: conceptual
 ms.date: 01/20/2024
 ms.author: ryanwi

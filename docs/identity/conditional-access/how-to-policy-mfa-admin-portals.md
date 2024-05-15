@@ -2,8 +2,7 @@
 title: Require multifactor authentication for Microsoft admin portals
 description: Create a Conditional Access policy requiring multifactor authentication for admins accessing Microsoft admin portals.
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
 ms.date: 07/18/2023
@@ -12,8 +11,6 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: lhuangnorth
-
-ms.collection: M365-identity-device-management
 ---
 # Common Conditional Access policy: Require multifactor authentication for admins accessing Microsoft admin portals
 
@@ -47,7 +44,7 @@ Microsoft recommends securing access to any Microsoft admin portals like Microso
       - User Administrator
    
       > [!WARNING]
-      > Conditional Access policies support built-in roles. Conditional Access policies are not enforced for other role types including [administrative unit-scoped](~/identity/role-based-access-control/admin-units-assign-roles.md) or [custom roles](~/identity/role-based-access-control/custom-create.md).
+      > Conditional Access policies support built-in roles. Conditional Access policies are not enforced for other role types including [administrative unit-scoped](~/identity/role-based-access-control/admin-units-assign-roles.md) or [custom roles](~/identity/role-based-access-control/custom-create.yml).
 
    1. Under **Exclude**, select **Users and groups** and choose your organization's emergency access or break-glass accounts.
 1. Under **Target resources** > **Cloud apps** > **Include**, **Select apps**, select **Microsoft Admin Portals**.
@@ -57,8 +54,7 @@ Microsoft recommends securing access to any Microsoft admin portals like Microso
 
 After administrators confirm the settings using [report-only mode](howto-conditional-access-insights-reporting.md), they can move the **Enable policy** toggle from **Report-only** to **On**.
 
-## Next steps
+## Related content
 
-[Conditional Access templates](concept-conditional-access-policy-common.md)
-
-[Use report-only mode for Conditional Access to determine the results of new policy decisions.](concept-conditional-access-report-only.md)
+- [Microsoft Entra built-in roles](../role-based-access-control/permissions-reference.md)
+- [Conditional Access templates](concept-conditional-access-policy-common.md)

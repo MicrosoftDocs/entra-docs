@@ -1,16 +1,15 @@
 ---
 title: Deployment considerations for Microsoft Entra multifactor authentication
 description: Learn about deployment considerations and strategy for successful implementation of Microsoft Entra multifactor authentication
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: how-to
-ms.date: 09/13/2023
+ms.date: 04/10/2024
 ms.author: justinha
 author: justinha
 manager: amycolannino
 ms.reviewer: jpettere
-ms.collection: M365-identity-device-management
 ---
 # Plan a Microsoft Entra multifactor authentication deployment 
 
@@ -28,7 +27,7 @@ Before you begin your deployment, ensure you meet the following prerequisites fo
 |----------|--------------|
 |**Cloud-only** identity environment with modern authentication | **No prerequisite tasks** |
 |**Hybrid identity** scenarios | Deploy [Microsoft Entra Connect](~/identity/hybrid/whatis-hybrid-identity.md) and synchronize user identities between the on-premises Active Directory Domain Services (AD DS) and Microsoft Entra ID. |
-| **On-premises legacy applications** published for cloud access| Deploy [Microsoft Entra application proxy](~/identity/app-proxy/application-proxy-deployment-plan.md) |
+| **On-premises legacy applications** published for cloud access| Deploy [Microsoft Entra application proxy](~/identity/app-proxy/conceptual-deployment-plan.md) |
 
 ## Choose authentication methods for MFA
 
@@ -40,7 +39,7 @@ Methods include:
 
 - [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/hello-overview)
 - [Microsoft Authenticator app](concept-authentication-authenticator-app.md)
-- [FIDO2 security key (preview)](concept-authentication-passwordless.md#fido2-security-keys)
+- [FIDO2 security key](concept-authentication-passwordless.md)
 - [OATH hardware tokens (preview)](concept-authentication-oath-tokens.md#oath-hardware-tokens-preview)
 - [OATH software tokens](concept-authentication-oath-tokens.md#oath-software-tokens)
 - [SMS verification](concept-authentication-phone-options.md#mobile-phone-verification)
@@ -55,7 +54,7 @@ To learn more about the strength and security of these methods and how they work
 - [What authentication and verification methods are available in Microsoft Entra ID?](concept-authentication-methods.md)
 - [Video: Choose the right authentication methods to keep your organization safe](https://youtu.be/LB2yj4HSptc)
 
-You can use this [PowerShell script](/samples/azure-samples/azure-mfa-authentication-method-analysis/azure-mfa-authentication-method-analysis/) to analyze users' MFA configurations and suggest the appropriate MFA authentication method. 
+You can use this [PowerShell script](https://github.com/Azure-Samples/azure-mfa-authentication-method-analysis) to analyze users' MFA configurations and suggest the appropriate MFA authentication method. 
 
 For the best flexibility and usability, use the Microsoft Authenticator app. This authentication method provides the best user experience and multiple modes, such as passwordless, MFA push notifications, and OATH codes. The Microsoft Authenticator app also meets the National Institute of Standards and Technology (NIST) [Authenticator Assurance Level 2 requirements](~/standards/nist-authenticator-assurance-level-2.md).
 
@@ -99,7 +98,7 @@ Common use cases to require Microsoft Entra multifactor authentication include:
 
 ### Named locations
 
-To manage your Conditional Access policies, the location condition of a Conditional Access policy enables you to tie access controls settings to the network locations of your users. We recommend using [Named Locations](~/identity/conditional-access/location-condition.md) so that you can create logical groupings of IP address ranges or countries and regions. This creates a policy for all apps that blocks sign-in from that named location. Be sure to exempt your administrators from this policy.
+To manage your Conditional Access policies, the location condition of a Conditional Access policy enables you to tie access controls settings to the network locations of your users. We recommend using [Named Locations](../conditional-access/concept-assignment-network.md) so that you can create logical groupings of IP address ranges or countries and regions. This creates a policy for all apps that blocks sign-in from that named location. Be sure to exempt your administrators from this policy.
 
 ### Risk-based policies
 
@@ -175,7 +174,7 @@ If your organization is federated with Microsoft Entra ID, you can [configure Mi
 
 ### RADIUS clients and Microsoft Entra multifactor authentication
 
-For applications that are using RADIUS authentication, we recommend moving client applications to modern protocols such as SAML, OpenID Connect, or OAuth on Microsoft Entra ID. If the application cannot be updated, then you can deploy [Network Policy Server (NPS) with the Azure MFA extension](howto-mfa-nps-extension.md). The network policy server (NPS) extension acts as an adapter between RADIUS-based applications and Microsoft Entra multifactor authentication to provide a second factor of authentication.
+For applications that are using RADIUS authentication, we recommend moving client applications to modern protocols such as SAML, OpenID Connect, or OAuth on Microsoft Entra ID. If the application cannot be updated, then you can deploy [Network Policy Server (NPS) extension](howto-mfa-nps-extension.md). The network policy server (NPS) extension acts as an adapter between RADIUS-based applications and Microsoft Entra multifactor authentication to provide a second factor of authentication.
 
 #### Common integrations
 

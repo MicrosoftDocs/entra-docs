@@ -7,8 +7,8 @@ ms.author: cwerner
 ms.custom: 
 ms.date: 06/21/2023
 ms.reviewer: arcrowe
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: how-to
 #Customer intent: As an application developer, I want to know how to restore or permanently delete my recently deleted application from the Microsoft identity platform.
 ---
@@ -25,16 +25,16 @@ Neither you nor Microsoft customer support can restore a permanently deleted app
 
 You must have one of the following roles to permanently delete applications.
 
-- Global administrator
-- Application administrator
-- Cloud application administrator
-- Hybrid identity administrator
-- Application owner
+- Global Administrator
+- Application Administrator
+- Cloud Application Administrator
+- Hybrid Identity Administrator
+- Application Owner
 
 You must have one of the following roles to restore applications.
 
-- Global administrator
-- Application owner
+- Global Administrator
+- Application Owner
 
 ## View your deleted applications
 

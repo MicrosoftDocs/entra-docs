@@ -1,18 +1,17 @@
 ---
 title: 'Tutorial: Use password hash sync for hybrid identity in a single Active Directory forest'
 description: Learn how to set up a hybrid identity environment by using password hash sync to integrate a Windows Server Active Directory forest with Microsoft Entra ID.
-services: active-directory
+
 author: billmath
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
 
-ms.collection: M365-identity-device-management
+
 ---
 
 # Tutorial: Use password hash sync for hybrid identity in a single Active Directory forest
@@ -226,7 +225,6 @@ Now it's time to download and install Microsoft Entra Connect. After it's instal
 1. In **Welcome**, select the checkbox to agree to the licensing terms and select **Continue**.
 1. In **Express settings**, select **Use express settings**.
 
-   :::image type="content" source="media/tutorial-password-hash-sync/express1.png" alt-text="Screenshot that shows the Express settings screen and the Use express settings button.":::
 1. In **Connect to Microsoft Entra ID**, enter the username and password for the Hybrid Identity Administrator account for Microsoft Entra ID. Select **Next**.  
 1. In **Connect to AD DS**, enter the username and password for an enterprise admin account. Select **Next**.  
 1. In **Ready to configure**, select **Install**.

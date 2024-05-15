@@ -1,21 +1,18 @@
 ---
-title: Multitenant organization scenario and Microsoft Entra capabilities
+title: Multitenant organization capabilities in Microsoft Entra ID
 description: Learn about the multitenant organization scenario and capabilities in Microsoft Entra ID.
-services: active-directory
 author: rolyon
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: multi-tenant-organizations
+ms.service: entra-id
+ms.subservice: multitenant-organizations
 ms.topic: overview
-ms.date: 08/22/2023
+ms.date: 04/23/2024
 ms.author: rolyon
 ms.custom: it-pro
-
 #Customer intent: As a dev, devops, or it admin, I want to
 ---
 
-# Multitenant organization scenario and Microsoft Entra capabilities
+# Multitenant organization capabilities in Microsoft Entra ID
 
 This article provides an overview of the multitenant organization scenario and the related capabilities in Microsoft Entra ID.
 
@@ -97,11 +94,7 @@ Here are the primary constraints with using cross-tenant synchronization across 
 
 For more information, see [What is cross-tenant synchronization?](./cross-tenant-synchronization-overview.md).
 
-## Multitenant organization (Preview)
-
-> [!IMPORTANT]
-> Multitenant organization is currently in PREVIEW.
-> See the [Product Terms](https://aka.ms/EntraPreviewsTermsOfUse) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
+## Multitenant organization
 
 [Multitenant organization](./multi-tenant-organization-overview.md) is a feature in Microsoft Entra ID and Microsoft 365 that enables you to form a tenant group within your organization. Each pair of tenants in the group is governed by cross-tenant access settings that you can use to configure B2B or cross-tenant synchronization.
 

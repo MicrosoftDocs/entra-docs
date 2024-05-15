@@ -1,19 +1,16 @@
 ---
 title: Rules for dynamically populated groups membership
 description: How to create membership rules to automatically populate groups, and a rule reference.
-services: active-directory
-documentationcenter: ''
+
 author: barclayn
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: enterprise-users
-ms.workload: identity
-ms.topic: overview
+ms.service: entra-id
+ms.subservice: users
+ms.topic: conceptual
 ms.date: 12/04/2023
 ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro
-ms.collection: M365-identity-device-management
 ---
 
 # Dynamic membership rules for groups in Microsoft Entra ID
@@ -456,7 +453,7 @@ The following device attributes can be used.
 These articles provide additional information on groups in Microsoft Entra ID.
 
 - [See existing groups](~/fundamentals/groups-view-azure-portal.md)
-- [Create a new group and adding members](~/fundamentals/how-to-manage-groups.md)
-- [Manage settings of a group](~/fundamentals/how-to-manage-groups.md)
-- [Manage memberships of a group](~/fundamentals/how-to-manage-groups.md)
+- [Create a new group and adding members](~/fundamentals/how-to-manage-groups.yml)
+- [Manage settings of a group](~/fundamentals/how-to-manage-groups.yml)
+- [Manage memberships of a group](~/fundamentals/how-to-manage-groups.yml)
 - [Manage dynamic rules for users in a group](groups-create-rule.md)

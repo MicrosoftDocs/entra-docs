@@ -3,10 +3,9 @@ title: B2B direct connect Microsoft Entra overview
 description: Microsoft Entra B2B direct connect lets users from other Microsoft Entra tenants seamlessly sign in to your shared resources via Teams shared channels. There's no need for a guest user object in your Microsoft Entra directory.
 
  
-ms.service: active-directory
-ms.subservice: B2B
-ms.topic: conceptual
-ms.date: 12/19/2023
+ms.service: entra-external-id
+ms.topic: concept-article
+ms.date: 04/29/2024
 
 ms.author: cmulligan
 author: csmulligan
@@ -20,7 +19,7 @@ ms.collection: M365-identity-device-management
 
 B2B direct connect is a feature of Microsoft Entra External ID that lets you set up a mutual trust relationship with another Microsoft Entra organization for seamless collaboration. This feature currently works with Microsoft Teams shared channels. With B2B direct connect, users from both organizations can work together using their home credentials and a shared channel in Teams, without having to be added to each other’s organizations as guests. Use B2B direct connect to share resources with external Microsoft Entra organizations. Or use it to share resources across multiple Microsoft Entra tenants within your own organization.
 
-![Diagram illustrating B2B direct connect](media/b2b-direct-connect-overview/b2b-direct-connect-overview.png)
+:::image type="content" source="media/b2b-direct-connect-overview/b2b-direct-connect-overview.png" alt-text="Diagram illustrating B2B direct connect.":::
 
 B2B direct connect requires a mutual trust relationship between two Microsoft Entra organizations to allow access to each other's resources. Both the resource organization and the external organization need to mutually enable B2B direct connect in their cross-tenant access settings. When the trust is established, the B2B direct connect user has single sign-on access to resources outside their organization using credentials from their home Microsoft Entra organization.
 
@@ -30,7 +29,7 @@ For licensing and pricing information related to B2B direct connect users, refer
 
 ## Managing cross-tenant access for B2B direct connect
 
-Microsoft Entra organizations can manage their trust relationships with other Microsoft Entra organizations by defining inbound and outbound [cross-tenant access settings](cross-tenant-access-settings-b2b-collaboration.md). Cross-tenant access settings give you granular control over how other organizations collaborate with you (inbound access) and how your users collaborate with other organizations (outbound access).
+Microsoft Entra organizations can manage their trust relationships with other Microsoft Entra organizations by defining inbound and outbound [cross-tenant access settings](cross-tenant-access-settings-b2b-collaboration.yml). Cross-tenant access settings give you granular control over how other organizations collaborate with you (inbound access) and how your users collaborate with other organizations (outbound access).
 
 - **Inbound access settings** control whether users from external organizations can access resources in your organization. You can apply these settings to everyone, or you can specify individual users, groups, and applications.
 
@@ -54,7 +53,7 @@ You can configure organization-specific settings by adding the organization and 
 
 In this example, Contoso wants to block B2B direct connect with all external organizations by default, but allow B2B direct connect for all users, groups, and apps in Fabrikam.
 
-![Example of blocking B2B direct connect by default but allowing an org](media/b2b-direct-connect-overview/b2b-direct-connect-example.png)
+:::image type="content" source="media/b2b-direct-connect-overview/b2b-direct-connect-example.png" alt-text="Example of blocking B2B direct connect by default but allowing an org.":::
 
 Contoso sets the following **Default settings** for cross-tenant access:
 
@@ -109,10 +108,6 @@ Currently, B2B direct connect enables the Teams Connect shared channels feature.
 
 In the resource organization, the Teams shared channel owner can search within Teams for users from an external organization and add them to the shared channel. After they're added, the B2B direct connect users can access the shared channel from within their home instance of Teams, where they collaborate using features such as chat, calls, file-sharing, and app-sharing.  For details, see [Overview of teams and channels in Microsoft Teams](/microsoftteams/teams-channels-overview). For details about the resources, files, and applications that are available to the B2B direct connect user via the Teams shared channel refer to [Chat, teams, channels, & apps in Microsoft Teams](/microsoftteams/deploy-chat-teams-channels-microsoft-teams-landing-page).
 
-## B2B direct connect vs. B2B collaboration
-
-B2B collaboration and B2B direct connect are two different approaches to sharing with users outside of your organization. You can find a [feature-to-feature comparison](external-identities-overview.md#comparing-external-identities-feature-sets) in the External Identities overview, where we discuss some key differences in how users are managed, and how they access resources.
-
 ### User access and management
 
 B2B direct connect users collaborate via a mutual connection between two organizations, whereas B2B collaboration users are invited to an organization and managed via a user object.
@@ -145,7 +140,7 @@ Microsoft Entra ID includes information about cross-tenant access and B2B direct
 
 - **Microsoft Entra audit logs**: Microsoft Entra audit logs show when inbound and outbound policies are created, updated, or deleted.  
 
-   ![Screenshot showing an audit log](media/b2b-direct-connect-overview/audit-log.png)
+   :::image type="content" source="media/b2b-direct-connect-overview/audit-log.png" alt-text="Screenshot showing an audit log.":::
 
 - **Microsoft Entra sign-in logs** Microsoft Entra sign-in logs are available in both the home organization and the resource organization. Once B2B direct connect is enabled, sign-in logs will begin including user object IDs for B2B direct connect users from other tenants. The information reported in each organization varies, for example:
 
@@ -155,7 +150,7 @@ Microsoft Entra ID includes information about cross-tenant access and B2B direct
 
   - In the resource organization, the logs include conditionalAccessPolicies in the Conditional Access tab.  
 
-   [ ![Screenshot showing a sign-in log](media/b2b-direct-connect-overview/sign-in-logs.png) ](media/b2b-direct-connect-overview/sign-in-logs.png#lightbox)
+   :::image type="content" source="media/b2b-direct-connect-overview/sign-in-logs.png" alt-text="Screenshot showing a sign-in log." lightbox="media/b2b-direct-connect-overview/sign-in-logs.png":::
 
 - **Microsoft Entra access reviews**: With Microsoft Entra access reviews, a tenant admin can ensure that external guest users don’t have access to your apps and resources longer than is necessary by configuring a one-time or recurring access review of the external users. [Learn more about access reviews](~/id-governance/access-reviews-overview.md).
 
@@ -183,7 +178,7 @@ When B2B direct connect is enabled with an external organization, users in the e
 
 ### Inbound access
 
-We strongly recommend you add both your global privacy contact and your organization's privacy statement so your internal employees and external guests can review your policies. Follow the steps to [add your organization's privacy info](~/fundamentals/properties-area.md).  
+We strongly recommend you add both your global privacy contact and your organization's privacy statement so your internal employees and external guests can review your policies. Follow the steps to [add your organization's privacy info](~/fundamentals/properties-area.yml).  
 
 ### Restricting access to users and groups
 
@@ -191,5 +186,5 @@ You might want to consider using cross-tenant access settings to restrict B2B di
 
 ## Next steps
 
-- [Configure cross-tenant access settings](cross-tenant-access-settings-b2b-collaboration.md)
+- [Configure cross-tenant access settings](cross-tenant-access-settings-b2b-collaboration.yml)
 - See the Microsoft Teams documentation for details about [data loss prevention](/purview/), [retention policies](/microsoftteams/retention-policies), and [eDiscovery](/purview/ediscovery-teams-investigation).

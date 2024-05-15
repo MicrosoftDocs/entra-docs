@@ -21,9 +21,9 @@ items:
         href: use-scim-to-build-users-and-groups-endpoints.md
       - name: Validate a SCIM endpoint
         href: scim-validator-tutorial.md
-    - name: On-prem app provisioning tutorials
+    - name: On premises app provisioning tutorials
       items:
-      - name: Provisioning to On-premises SCIM-enabled apps
+      - name: Provisioning to on premises SCIM-enabled apps
         href: on-premises-scim-provisioning.md
       - name: Provisioning to SQL based apps
         href: on-premises-sql-connector-configure.md
@@ -70,7 +70,7 @@ items:
        href: plan-cloud-hr-provision.md
      - name: Understand logging with Azure Monitor
        href: application-provisioning-log-analytics.md
-     - name: On-premises application provisioning architecture
+     - name: On premises application provisioning architecture
        href: on-premises-application-provisioning-architecture.md 
      - name: Understand expression builder
        href: expression-builder.md
@@ -93,6 +93,8 @@ items:
         href: define-conditional-rules-for-provisioning-user-accounts.md
       - name: Skip deletion for out-of-scope users
         href: skip-out-of-scope-deletions.md
+      - name: Manage application unmatched users
+        href: application-provisioning-application-unmatched-users.md
     - name: Provision on-demand
       href: provision-on-demand.md
     - name: Monitor and report on provisioning
@@ -107,6 +109,10 @@ items:
         href: ~/identity/monitoring-health/concept-provisioning-logs.md?toc=/entra/identity/app-provisioning/toc.json&bc=/entra/identity/app-provisioning/breadcrumb/TOC.json
       - name: Provisioning insights workbook
         href: provisioning-workbook.md  
+    - name: SAP provisioning scenarios
+      items:
+      - name: Identity lifecycle with SAP source and targets
+        href: plan-sap-user-source-and-target.md
     - name: Workday provisioning scenarios
       items:
       - name: Retrieve pronoun information
@@ -115,8 +121,8 @@ items:
       items:
       - name: Known issues
         href: known-issues.md  
-      - name: Troubleshoot configuration problems
-        href: application-provisioning-config-problem.md
+      - name: Troubleshoot problems
+        href: troubleshoot.md
       - name: Quarantine status
         href: application-provisioning-quarantine-status.md
       - name: Users aren't provisioned 

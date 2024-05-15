@@ -1,10 +1,11 @@
 ---
 author: kengaderdus
-ms.service: active-directory
-ms.subservice: ciam
+ms.service: entra-external-id
+ms.subservice: customers
 ms.topic: include
 ms.date: 04/06/2023
 ms.author: kengaderdus
+ms.manager: mwongerapk
 ---
 
 1. From the **App registrations** page, select the application that you created (such as *ciam-client-app*) to open its **Overview** page.

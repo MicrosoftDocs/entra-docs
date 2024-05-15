@@ -1,18 +1,15 @@
 ---
 title: Common deployment scenarios for Microsoft Entra Domain Services | Microsoft Docs
 description: Learn about some of the common scenarios and use-cases for Microsoft Entra Domain Services to provide value and meet business needs.
-services: active-directory-ds
 author: justinha
 manager: amycolannino
 
 ms.assetid: c5216ec9-4c4f-4b7e-830b-9d70cf176b20
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: domain-services
-ms.workload: identity
 ms.topic: conceptual
 ms.date: 09/23/2023
 ms.author: justinha
-
 ---
 # Common use-cases and scenarios for Microsoft Entra Domain Services
 
@@ -169,7 +166,7 @@ To get started, [Create and configure a Microsoft Entra Domain Services managed 
 [hdinsight]: /azure/hdinsight/domain-joined/apache-domain-joined-configure-using-azure-adds
 [tutorial-create-instance]: tutorial-create-instance.md
 [custom-ou]: create-ou.md
-[create-gpo]: manage-group-policy.md
+[create-gpo]: manage-group-policy.yml
 [sspr]: /azure/active-directory/authentication/overview-authentication#self-service-password-reset
 [compare]: compare-identity-solutions.md
 [azure-ad-connect]: /azure/active-directory/hybrid/connect/whatis-azure-ad-connect

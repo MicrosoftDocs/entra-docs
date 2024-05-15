@@ -1,16 +1,13 @@
 ---
 title: Global Secure Access (preview) and universal tenant restrictions
 description: Learn about how Global Secure Access (preview) secures access to your corporate network by restricting access to external tenants.
-
-ms.service: network-access
-ms.subservice: 
+ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 07/27/2023
-
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.date: 05/09/2024
+ms.author: kenwith
+author: kenwith
 manager: amycolannino
-ms.reviewer: mamkumar
+ms.reviewer: alexpav
 ---
 # Universal tenant restrictions
 
@@ -26,25 +23,20 @@ The following table explains the steps taken at each point in the previous diagr
 | --- | --- |
 | **1** | Contoso configures a **tenant restrictions v2** policy in their cross-tenant access settings to block all external accounts and external apps. Contoso enforces the policy using Global Secure Access universal tenant restrictions. |
 | **2** | A user with a Contoso-managed device tries to access a Microsoft Entra integrated app with an unsanctioned external identity. |
-| **3** | When the traffic reaches Microsoft's Security Service Edge, an HTTP header is added to the request. The header contains Contoso's tenant ID and the tenant restrictions policy ID. |
-| **4** | *Authentication plane protection:* Microsoft Entra ID uses the header in the authentication request to look up the tenant restrictions policy. Contoso's policy blocks unsanctioned external accounts from accessing external tenants. |
-| **5** | *Data plane protection:* If the user again tries to access an external unsanctioned application by copying an authentication response token they obtained outside of Contoso's network and pasting it into the device, they're blocked. The resource provider checks that the claim in the token and the header in the packet match. Any mismatch in the token and header triggers reauthentication and blocks access. |
+| **3** | *Authentication plane protection:* Using Microsoft Entra ID, Contoso's policy blocks unsanctioned external accounts from accessing external tenants. | 
+| **4** | *Data plane protection:* If the user again tries to access an external unsanctioned application by copying an authentication response token they obtained outside of Contoso's network and pasting it into the device, they're blocked. The token mismatch triggers reauthentication and blocks access. For SharePoint Online, any attempt at anonymously accessing resources, and for Microsoft Teams, any attempt at anonymously joining calls, will be blocked. | 
 
 Universal tenant restrictions help to prevent data exfiltration across browsers, devices, and networks in the following ways:
 
-- It injects the following attributes into the header of outbound HTTP traffic at the client level in both the authentication control and data path to Microsoft 365 endpoints:
-    - Cloud ID of the device tenant
-    - Tenant ID of the device tenant
-    - Tenant restrictions v2 policy ID of the device tenant
-- It enables Microsoft Entra ID, Microsoft Accounts, and Microsoft 365 applications to interpret this special HTTP header enabling lookup and enforcement of the associated tenant restrictions v2 policy. This lookup enables consistent policy application. 
+- It enables Microsoft Entra ID, Microsoft Accounts, and Microsoft 365 applications to look up and enforce the associated tenant restrictions v2 policy. This lookup enables consistent policy application. 
 - Works with all Microsoft Entra integrated third-party apps at the auth plane during sign in.
 - Works with Exchange, SharePoint, and Microsoft Graph for data plane protection.
 
 ## Prerequisites
 
 * Administrators who interact with **Global Secure Access preview** features must have one or more of the following role assignments depending on the tasks they're performing.
-   * The **Global Secure Access Administrator** role to manage the Global Secure Access preview features
-   * [Conditional Access Administrator](/azure/active-directory/roles/permissions-reference#conditional-access-administrator) or [Security Administrator](/azure/active-directory/roles/permissions-reference#security-administrator) to create and interact with Conditional Access policies and named locations.
+   * The [Global Secure Access Administrator role](/azure/active-directory/roles/permissions-reference) role to manage the Global Secure Access preview features.
+   * The [Conditional Access Administrator](/azure/active-directory/roles/permissions-reference#conditional-access-administrator) to create and interact with Conditional Access policies.
 * The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 
 ### Known limitations
@@ -54,12 +46,6 @@ Universal tenant restrictions help to prevent data exfiltration across browsers,
     - For example, you work for Contoso and you have allow listed Fabrikam as a partner tenant. You may see the error message for the Fabrikam tenant's Microsoft Entra admin center.
         - If you received the "access denied" error message for this URL: `https://entra.microsoft.com/` then add the feature flag as follows: `https://entra.microsoft.com/?feature.msaljs%253Dtrue%2526exp.msaljsexp%253Dtrue#home`
 
-
-Outlook uses the QUIC protocol for some communications. We don't currently support the QUIC protocol. Organizations can use a firewall policy to block QUIC and fallback to non-QUIC protocol. The following PowerShell command creates a firewall rule to block this protocol.
-
-```PowerShell
-@New-NetFirewallRule -DisplayName "Block QUIC for Exchange Online" -Direction Outbound -Action Block -Protocol UDP -RemoteAddress 13.107.6.152/31,13.107.18.10/31,13.107.128.0/22,23.103.160.0/20,40.96.0.0/13,40.104.0.0/15,52.96.0.0/14,131.253.33.215/32,132.245.0.0/16,150.171.32.0/22,204.79.197.215/32,6.6.0.0/16 -RemotePort 443 
-```
 ## Configure tenant restrictions v2 policy 
 
 Before an organization can use universal tenant restrictions, they must configure both the default tenant restrictions and tenant restrictions for any specific partners.

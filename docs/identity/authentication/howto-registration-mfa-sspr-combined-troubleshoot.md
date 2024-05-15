@@ -2,8 +2,7 @@
 title: Troubleshoot combined registration
 description: Troubleshoot Microsoft Entra multifactor authentication and self-service password reset combined registration
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.custom: has-azure-ad-ps-ref
 ms.topic: troubleshooting
@@ -13,8 +12,6 @@ ms.author: justinha
 author: justinha
 manager: amycolannino
 ms.reviewer: tilarso
-
-ms.collection: M365-identity-device-management
 ---
 # Troubleshooting combined security information registration
 
@@ -60,6 +57,8 @@ If you, as an admin, want to reset a user's multifactor authentication settings,
 The steps that follow will help you roll back a user or group of users.
 
 #### Prerequisites
+
+[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
 
 1. Install the appropriate Azure AD PowerShell modules. In a PowerShell window, run these commands to install the modules:
 

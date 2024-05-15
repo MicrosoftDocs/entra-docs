@@ -1,12 +1,10 @@
 ---
 title: Active Directory authentication non domain joined Linux Virtual Machines
 description: Active Directory authentication non domain joined Linux Virtual Machines.
-services: active-directory-ds
 author: DevOpsStyle
 
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: domain-services
-ms.workload: identity
 ms.custom: devx-track-linux
 ms.topic: how-to
 ms.date: 01/29/2023
@@ -14,6 +12,9 @@ ms.author: tommasosacco
 ---
 
 # Active Directory authentication non domain joined Linux Virtual Machines
+
+> [!CAUTION]
+> This article references CentOS, a Linux distribution that is nearing End Of Life (EOL) status. Please consider your use and plan accordingly. For more information, see the [CentOS End Of Life guidance](/azure/virtual-machines/workloads/centos/centos-end-of-life).
 
 Currently Linux distribution can work as member of Active Directory domains, which gives them access to the AD authentication system. To take advantage of AD authentication in some cases, we can avoid the AD join. To let users sign in on Azure Linux VM with Active Directory account you have different choices. One possibility is to Join in Active Directory the VM. Another possibility is to base the authentication flow through LDAP to your Active Directory without Join the VM on AD. This article shows you how to authenticate with AD credential on your Linux system (CentosOS) based on LDAP.
 
@@ -230,5 +231,5 @@ Now you are ready to use AD authentication on your Linux VM.
 
 <!-- INTERNAL LINKS -->
 [create-azure-ad-tenant]: /azure/active-directory/fundamentals/sign-up-organization.md
-[associate-azure-ad-tenant]: /azure/active-directory/fundamentals/how-subscriptions-associated-directory.md
+[associate-azure-ad-tenant]: /azure/active-directory/fundamentals/how-subscriptions-associated-directory.yml
 [create-azure-ad-ds-instance]: tutorial-create-instance.md

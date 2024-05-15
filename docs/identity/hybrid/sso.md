@@ -1,19 +1,16 @@
 ---
 title: 'Get started with single sign-on'
 description: This article describes how you can configure the synchronization tools to use single sign-on.
-services: active-directory
-documentationcenter: ''
+
 author: billmath
 manager: amycolannino
-editor: ''
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: conceptual
 ms.tgt_pltfrm: na
-ms.workload: identity
 ms.date: 11/06/2023
 ms.subservice: hybrid
 ms.author: billmath
-ms.collection: M365-identity-device-management
+
 ---
 
 # Get started with single sign-on

@@ -6,12 +6,14 @@ author: twimmers
 writer: twimmers
 manager: jeedes
 ms.assetid: 99921da0-e7e2-4f30-90c1-d84722d2afbd
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 12/18/2023
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Personify Inc so that I can streamline the user management process and ensure that users have the appropriate access to Personify Inc.
 ---
 
 # Tutorial: Configure Personify Inc for automatic user provisioning
@@ -31,7 +33,7 @@ This tutorial describes the steps you need to perform in both Personify Inc and 
 The scenario outlined in this tutorial assumes that you already have the following prerequisites:
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md) 
-* A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (for example, Application Administrator, Cloud Application administrator, Application Owner, or Global Administrator).
+* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
 * A user account in Personify Inc with Admin permissions.
 
 ## Step 1: Plan your provisioning deployment
@@ -40,7 +42,8 @@ The scenario outlined in this tutorial assumes that you already have the followi
 * Determine what data to [map between Microsoft Entra ID and Personify Inc](~/identity/app-provisioning/customize-application-attributes.md).
 
 ## Step 2: Configure Personify Inc to support provisioning with Microsoft Entra ID
-Contact Personify Inc support to configure Personify Inc to support provisioning with Microsoft Entra ID.
+
+Visit [Personify Inc support](https://support.personifyinc.com/s/article/tutorial-azure-active-directory-single-sign-on-sso-integration-with-personify-inc?language=en_US#list-tenant-urls) to configure Personify Inc to support provisioning with Microsoft Entra ID
 
 ## Step 3: Add Personify Inc from the Microsoft Entra application gallery
 
@@ -100,10 +103,10 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |active|Boolean||&check;
    |displayName|String||
    |title|String||
-   |emails[type eq "work"].value|String||
+   |emails[type eq "work"].value|String||&check;
    |preferredLanguage|String||
-   |name.givenName|String||
-   |name.familyName|String||
+   |name.givenName|String||&check;
+   |name.familyName|String||&check;
    |name.formatted|String||
    |addresses[type eq "work"].formatted|String||
    |addresses[type eq "work"].streetAddress|String||
@@ -114,7 +117,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |phoneNumbers[type eq "work"].value|String||
    |phoneNumbers[type eq "mobile"].value|String||
    |phoneNumbers[type eq "fax"].value|String||
-   |externalId|String||
+   |externalId|String|&check;|
    |name.honorificPrefix|String||
    |name.honorificSuffix|String||
    |nickName|String||

@@ -1,14 +1,13 @@
 ---
 title: Plan cloud HR application to Microsoft Entra user provisioning
-description: This article describes the deployment process of integrating cloud HR systems, such as Workday and SuccessFactors, with Microsoft Entra ID. Integrating Microsoft Entra ID with your cloud HR system results in a complete identity lifecycle management system. 
-services: active-directory
+description: This article describes the deployment process of integrating cloud HR systems, such as Workday and SuccessFactors, with Microsoft Entra ID. Integrating Microsoft Entra ID with your cloud HR system results in a complete identity lifecycle management system.
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: conceptual
-ms.workload: identity
-ms.date: 09/15/2023
+ms.date: 04/15/2024
 ms.author: kenwith
 ms.reviewer: arvinh
 ---
@@ -17,9 +16,9 @@ ms.reviewer: arvinh
 
 Historically, IT staff has relied on manual methods to create, update, and delete employees. They've used methods such as uploading CSV files or custom scripts to sync employee data. These provisioning processes are error prone, insecure, and hard to manage.
 
-To manage the identity lifecycles of employees, vendors, or contingent workers, [Microsoft Entra user provisioning service](~/identity/app-provisioning/user-provisioning.md) offers integration with cloud-based human resources (HR) applications. Examples of applications include Workday or SuccessFactors.
+To manage the identity lifecycle of employees, vendors, or contingent workers, [Microsoft Entra user provisioning service](~/identity/app-provisioning/user-provisioning.md) offers integration with cloud-based human resources (HR) applications. Examples of applications include Workday and SuccessFactors.
 
-Microsoft Entra ID uses this integration to enable the following cloud HR application (app) workflows:
+Microsoft Entra ID uses this integration to enable the following cloud HR application (app) processes:
 
 - **Provision users to Active Directory:** Provision selected sets of users from a cloud HR app into one or more Active Directory domains.
 - **Provision cloud-only users to Microsoft Entra ID:** In scenarios where Active Directory isn't used, provision users directly from the cloud HR app to Microsoft Entra ID.
@@ -30,7 +29,7 @@ The following video provides guidance on planning your HR-driven provisioning in
 > [!VIDEO https://www.youtube-nocookie.com/embed/HsdBt40xEHs]
 
 > [!NOTE]
-> This deployment plan shows you how to deploy your cloud HR app workflows with Microsoft Entra user provisioning. For information on how to deploy automatic user provisioning to software as a service (SaaS) apps, see [Plan an automatic user provisioning deployment](./plan-auto-user-provisioning.md).
+> This deployment plan shows you how to deploy your cloud HR app with Microsoft Entra user provisioning. For information on how to deploy automatic user provisioning to software as a service (SaaS) apps, see [Plan an automatic user provisioning deployment](./plan-auto-user-provisioning.md).
 
 ## Enabled HR scenarios
 
@@ -69,14 +68,16 @@ This capability of HR-driven IT provisioning offers the following significant bu
 
 - **Increase productivity:** You can now automate the assignment of user accounts and Microsoft 365 licenses and provide access to key groups. Automating assignments gives new hires immediate access to their job tools and increases productivity.
 - **Manage risk:** Automate changes based on employee status or group membership to increase security. This automation ensures that user identities and access to key apps update automatically. For example, an update in the HR app when a user transitions or leaves the organization flows in automatically.
-- **Address compliance and governance:** Microsoft Entra ID supports native audit logs for user provisioning requests performed by apps of both source and target systems. With auditing, you can track who has access to the apps from a single screen.
+- **Address compliance and governance:** Microsoft Entra ID supports native provisioning logs for user provisioning requests performed by apps of both source and target systems. With auditing, you can track who has access to the apps from a single screen.
 - **Manage cost:** Automatic provisioning reduces costs by avoiding inefficiencies and human error associated with manual provisioning. It reduces the need for custom-developed user provisioning solutions built over time by using legacy and outdated platforms.
 
 ### Licensing
 
 To configure the cloud HR app to Microsoft Entra user provisioning integration, you require a valid [Microsoft Entra ID P1 or P2 license](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing) and a license for the cloud HR app, such as Workday or SuccessFactors.
 
-You also need a valid Microsoft Entra ID P1 or higher subscription license for every user that is sourced from the cloud HR app and provisioned to either Active Directory or Microsoft Entra ID. Any improper number of licenses owned in the cloud HR app might lead to errors during user provisioning.
+You also need a valid Microsoft Entra ID P1 or higher subscription license for every user that is sourced from the cloud HR app and provisioned to either Active Directory or Microsoft Entra ID.
+
+Use of [Lifecycle Workflows](~/id-governance/what-are-lifecycle-workflows.md) and other Microsoft Entra ID Governance features in the provisioning process requires a [Microsoft Entra ID Governance license](~/id-governance/licensing-fundamentals.md).
 
 ### Prerequisites
 
@@ -108,9 +109,9 @@ The following example describes the end-to-end user provisioning solution archit
 
 ![Workflow diagram](media/plan-cloud-hr-provision/plan-cloudhr-provisioning-img1.png)
 
-#### Description of workflow
+#### Description of the provisioning process
 
-The following key steps are indicated in the diagram:  
+The following key steps are indicated in the diagram:
 
 1. **HR team** performs the transactions in the cloud HR app tenant.
 2. **Microsoft Entra provisioning service** runs the scheduled cycles from the cloud HR app tenant and identifies changes to process for sync with Active Directory.
@@ -142,7 +143,7 @@ Run the initial configuration in a [pilot environment](~/architecture/deployment
 
 ## Select cloud HR provisioning connector apps
 
-To facilitate Microsoft Entra provisioning workflows between the cloud HR app and Active Directory, you can add multiple provisioning connector apps from the Microsoft Entra app gallery:
+To facilitate Microsoft Entra provisioning from the cloud HR app into Active Directory, you can add multiple provisioning connector apps from the Microsoft Entra app gallery:
 
 - **Cloud HR app to Active Directory user provisioning**: This provisioning connector app facilitates user account provisioning from the cloud HR app to a single Active Directory domain. If you have multiple domains, you can add one instance of this app from the Microsoft Entra app gallery for each Active Directory domain you need to provision to.
 - **Cloud HR app to Microsoft Entra user provisioning**: Microsoft Entra Connect is the tool used to synchronize Active Directory on premises users to Microsoft Entra ID. The Cloud HR app to Microsoft Entra user provisioning is a connector you use to provision cloud-only users from the cloud HR app to a single Microsoft Entra tenant.
@@ -208,7 +209,7 @@ We recommend the following production configuration:
 
 The cloud HR app to Active Directory user provisioning solution requires the deployment of one or more Microsoft Entra Connect provisioning agents. These agents must be deployed on servers that run Windows Server 2016 or greater. The servers must have a minimum of 4-GB RAM and .NET 4.7.1+ runtime. Ensure that the host server has network access to the target Active Directory domain.
 
-To prepare the on-premises environment, the Microsoft Entra Connect provisioning agent configuration wizard registers the agent with your Microsoft Entra tenant, [opens ports](~/identity/app-proxy/application-proxy-add-on-premises-application.md#open-ports), [allows access to URLs](~/identity/app-proxy/application-proxy-add-on-premises-application.md#allow-access-to-urls), and supports [outbound HTTPS proxy configuration](~/identity/saas-apps/workday-inbound-tutorial.md#how-do-i-configure-the-provisioning-agent-to-use-a-proxy-server-for-outbound-http-communication).
+To prepare the on-premises environment, the Microsoft Entra Connect provisioning agent configuration wizard registers the agent with your Microsoft Entra tenant, [opens ports](../../global-secure-access/how-to-configure-connectors.md), [allows access to URLs](../../global-secure-access/how-to-configure-connectors.md), and supports [outbound HTTPS proxy configuration](~/identity/saas-apps/workday-inbound-tutorial.md#how-do-i-configure-the-provisioning-agent-to-use-a-proxy-server-for-outbound-http-communication).
 
 The provisioning agent configures a [Global Managed Service Account (GMSA)](~/identity/hybrid/cloud-sync/how-to-prerequisites.md#group-managed-service-accounts)
 to communicate with the Active Directory domains.
@@ -331,7 +332,7 @@ In large organizations, it isn't uncommon to have multiple HR systems. During bu
 
 ## Plan scoping filters and attribute mapping
 
-When you enable provisioning from the cloud HR app to Active Directory or Microsoft Entra ID, the Azure portal controls the attribute values through attribute mapping.
+When you enable provisioning from the cloud HR app to Active Directory or Microsoft Entra ID, the Entra admin center controls the attribute values through attribute mapping.
 
 ### Define scoping filters
 
@@ -472,7 +473,7 @@ It's common for a security review to be required as part of the deployment of a 
 The cloud HR user provisioning implementation might fail to work as desired in the production environment. If so, the following rollback steps can assist you in reverting to a previous known good state.
 
 1. Review the [provisioning logs](~/identity/app-provisioning/check-status-user-account-provisioning.md#provisioning-logs) to determine what incorrect operations were performed on the affected users or groups. For more information on the provisioning summary report and logs, see [Manage cloud HR app user provisioning](#manage-your-configuration).
-2. The last known good state of the users or groups affected can be determined through the provisioning audit logs or by reviewing the target systems (Microsoft Entra ID or Active Directory).
+2. The last known good state of the users or groups affected can be determined through the provisioning logs or by reviewing the target systems (Microsoft Entra ID or Active Directory).
 3. Work with the app owner to update the users or groups affected directly in the app by using the last known good state values.
 
 ## Deploy the cloud HR app
@@ -485,7 +486,7 @@ Choose the cloud HR app that aligns to your solution requirements.
 
 ## Manage your configuration
 
-Microsoft Entra ID can provide more insights into your organization's user provisioning usage and operational health through audit logs and reports.
+Microsoft Entra ID can provide more insights into your organization's user provisioning usage and operational health through provisioning logs and reports.
 
 ### Gain insights from reports and logs
 
@@ -499,7 +500,7 @@ To review these events and all other activities performed by the provisioning se
 
 #### Azure Monitor logs
 
-All activities performed by the provisioning service are recorded in the Microsoft Entra audit logs. You can route Microsoft Entra audit logs to Azure Monitor logs for further analysis. With Azure Monitor logs (also known as Log Analytics workspace), you can query data to find events, analyze trends, and perform correlation across various data sources. Watch this [video](https://youtu.be/MP5IaCTwkQg) to learn the benefits of using Azure Monitor logs for Microsoft Entra logs in practical user scenarios.
+All activities performed by the provisioning service are recorded in the Microsoft Entra provisioning logs. You can route Microsoft Entra provisioning logs to Azure Monitor logs for further analysis. With Azure Monitor logs (also known as Log Analytics workspace), you can query data to find events, analyze trends, and perform correlation across various data sources. Watch this [video](https://youtu.be/MP5IaCTwkQg) to learn the benefits of using Azure Monitor logs for Microsoft Entra logs in practical user scenarios.
 
 Install the [log analytics views for Microsoft Entra activity logs](/azure/azure-monitor/visualize/workbooks-view-designer-conversion-overview) to get access to [prebuilt reports](https://github.com/AzureAD/Deployment-Plans/tree/master/Log%20Analytics%20Views) around provisioning events in your environment.
 
@@ -521,7 +522,7 @@ To troubleshoot any issues that might turn up during provisioning, see the follo
 - [No users are being provisioned to a Microsoft Entra Gallery application](application-provisioning-config-problem-no-users-provisioned.md)
 - [Wrong set of users are being provisioned to a Microsoft Entra Gallery application](~/identity/enterprise-apps/add-application-portal-assign-users.md)
 - [Setting up Windows Event Viewer for agent troubleshooting](~/identity/saas-apps/workday-inbound-tutorial.md#setting-up-windows-event-viewer-for-agent-troubleshooting)
-- [Setting up Audit Logs for service troubleshooting](~/identity/saas-apps/workday-inbound-tutorial.md#setting-up-azure-portal-audit-logs-for-service-troubleshooting)
+- [Setting up Entra admin center Provisioning Logs for service troubleshooting](~/identity/saas-apps/workday-inbound-tutorial.md#setting-up-entra-admin-center-provisioning-logs-for-service-troubleshooting)
 - [Understanding logs for AD User Account create operations](~/identity/saas-apps/workday-inbound-tutorial.md#understanding-logs-for-ad-user-account-create-operations)
 - [Understanding logs for Manager update operations](~/identity/saas-apps/workday-inbound-tutorial.md#understanding-logs-for-manager-update-operations)
 - [Resolving commonly encountered errors](~/identity/saas-apps/workday-inbound-tutorial.md#resolving-commonly-encountered-errors)

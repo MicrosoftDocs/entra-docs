@@ -6,10 +6,10 @@ author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
 ms.custom: scenarios:getting-started, languages:JavaScript, devx-track-js, mode-other
-ms.date: 11/12/2021
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: conceptual
+ms.date: 02/27/2024
+ms.service: identity-platform
+
+ms.topic: quickstart
 #Customer intent: As an app developer, I want to learn how to get access tokens and refresh tokens by using the Microsoft identity platform so that my JavaScript app can sign in users of personal accounts, work accounts, and school accounts.
 ---
 
@@ -47,7 +47,7 @@ ms.topic: conceptual
 > Run the project with a web server by using Node.js
 > 
 > > [!div class="nextstepaction"]
-> > [Download the code sample](https://github.com/Azure-Samples/ms-identity-javascript-v2/archive/master.zip)
+> > [Download the code sample](https://github.com/Azure-Samples/ms-identity-javascript-v2/archive/refs/heads/master.zip)
 > 
 > > [!div class="sxs-lookup"]
 > > > [!NOTE]

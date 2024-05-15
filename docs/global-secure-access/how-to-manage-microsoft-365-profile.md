@@ -1,13 +1,13 @@
 ---
 title: How to enable and manage the Microsoft 365 profile
 description: Learn how to enable and manage the Microsoft 365 traffic forwarding profile for Global Secure Access (preview).
-author: shlipsey3
-ms.author: sarahlipsey
+author: kenwith
+ms.author: kenwith
 manager: amycolannino
 ms.topic: how-to
 ms.date: 12/01/2023
-ms.service: network-access
-
+ms.service: global-secure-access
+ms.subservie: entra-internet-access
 ---
 # How to enable and manage the Microsoft 365 traffic forwarding profile
 

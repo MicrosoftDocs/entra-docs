@@ -4,8 +4,8 @@ description: How to troubleshoot when a user sees a consent prompt for an applic
 
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 
 ms.topic: troubleshooting
 ms.date: 09/07/2022
@@ -80,7 +80,6 @@ Determining whether an individual user can consent to an application can be conf
 
 ## Next steps
 
-- [Apps, permissions, and consent in Azure Active Directory (v1.0 endpoint)](~/identity-platform/quickstart-register-app.md)
 
 - [Scopes, permissions, and consent in the Microsoft identity platform (v2.0 endpoint)](~/identity-platform/permissions-consent-overview.md)
 

@@ -3,10 +3,10 @@ title: Usage and insights report
 description: Learn about the information you can explore using the Usage and insights report in Microsoft Entra ID.
 author: shlipsey3
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: conceptual
-ms.subservice: report-monitor
-ms.date: 12/15/2023
+ms.subservice: monitoring-health
+ms.date: 04/15/2024
 ms.author: sarahlipsey
 ms.reviewer: madansr7
 
@@ -28,7 +28,7 @@ To access the data from Usage and insights you must have:
 
 * A Microsoft Entra tenant
 * A Microsoft Entra ID P1 or P2 license to view the sign-in data
-* A user in the Reports Reader, Security Reader, Security Administrator, or Global Administrator role.
+* A user in the Reports Reader, Security Reader, or Security Administrator role.
 
 ## Access Usage and insights
 

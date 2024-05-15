@@ -4,11 +4,11 @@ description: Delete an enterprise application in Microsoft Entra ID.
 
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: how-to
 
-ms.date: 06/21/2023
+ms.date: 03/19/2024
 ms.author: jomondi
 ms.reviewer: sureshja
 zone_pivot_groups: enterprise-apps-all
@@ -21,7 +21,7 @@ ms.custom: enterprise-apps, has-azure-ad-ps-ref
 
 In this article, you learn how to delete an enterprise application that was added to your Microsoft Entra tenant.
 
-When you delete and enterprise application, it's held in a suspended state in the recycle bin for 30 days. During the 30 days, you can [Restore the application](restore-application.md). Deleted items are automatically hard deleted after the 30-day period. For more information on frequently asked questions about deletion and recovery of applications, see [Deleting and recovering applications FAQs](delete-recover-faq.yml).
+When you delete and enterprise application, it remains in a suspended state in the recycle bin for 30 days. During the 30 days, you can [Restore the application](restore-application.md). Deleted items are automatically hard deleted after the 30-day period. For more information on frequently asked questions about deletion and recovery of applications, see [Deleting and recovering applications FAQs](delete-recover-faq.yml).
 
 ## Prerequisites
 
@@ -51,8 +51,7 @@ To delete an enterprise application, you need:
 
 ## Delete an enterprise application using Azure AD PowerShell
 
-> [!IMPORTANT]
-> Make sure you're using the Azure AD PowerShell module. This is important if you've installed both the [Azure AD PowerShell module](/powershell/module/azuread/?preserve-view=true&view=azureadps-2.0) and the AzureADPreview module.
+Make sure you're using the Azure AD PowerShell module. This is important if you've installed both the [Azure AD PowerShell module](/powershell/module/azuread/?preserve-view=true&view=azureadps-2.0) and the AzureADPreview module.
 
 1. Run the following commands:
 
@@ -89,7 +88,7 @@ To delete an enterprise application, you need:
 1. Connect to Microsoft Graph PowerShell and sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator):
 
    ```powershell
-   Connect-MgGraph -Scopes 'Application.Read.All'
+   Connect-MgGraph -Scopes 'Application.ReadWrite.All'
    ```
 
 1. Get the list of enterprise applications in your tenant.
@@ -116,58 +115,16 @@ To delete an enterprise application using [Graph Explorer](https://developer.mic
 
 1. To get the list of service principals in your tenant, run the following query.
 
-   # [HTTP](#tab/http)
    ```http
    GET https://graph.microsoft.com/v1.0/servicePrincipals
    ```
 
-   # [C#](#tab/csharp)
-   [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/v1.0/includes/snippets/csharp/list-serviceprincipal-csharp-snippets.md)]
-
-   # [JavaScript](#tab/javascript)
-   [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/v1.0/includes/snippets/javascript/list-serviceprincipal-javascript-snippets.md)]
-
-   # [Java](#tab/java)
-   [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/v1.0/includes/snippets/java/list-serviceprincipal-java-snippets.md)]
-
-   # [Go](#tab/go)
-   [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/v1.0/includes/snippets/go/list-serviceprincipal-go-snippets.md)]
-
-   # [PowerShell](#tab/powershell)
-   [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/v1.0/includes/snippets/powershell/list-serviceprincipal-powershell-snippets.md)]
-
-   # [PHP](#tab/php)
-   [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/v1.0/includes/snippets/php/list-serviceprincipal-php-snippets.md)]
-
-   ---
-
 2. Record the ID of the enterprise app you want to delete.
 3. Delete the enterprise application.
 
-   # [HTTP](#tab/http)
    ```http
    DELETE https://graph.microsoft.com/v1.0/servicePrincipals/{servicePrincipal-id}
    ```
-
-   # [C#](#tab/csharp)
-   [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/v1.0/includes/snippets/csharp/delete-serviceprincipal-csharp-snippets.md)]
-
-   # [JavaScript](#tab/javascript)
-   [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/v1.0/includes/snippets/javascript/delete-serviceprincipal-javascript-snippets.md)]
-
-   # [Java](#tab/java)
-   [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/v1.0/includes/snippets/java/delete-serviceprincipal-java-snippets.md)]
-
-   # [Go](#tab/go)
-   [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/v1.0/includes/snippets/go/delete-serviceprincipal-go-snippets.md)]
-
-   # [PowerShell](#tab/powershell)
-   [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/v1.0/includes/snippets/powershell/delete-serviceprincipal-powershell-snippets.md)]
-
-   # [PHP](#tab/php)
-   [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/v1.0/includes/snippets/php/delete-serviceprincipal-php-snippets.md)]
-
-   ---
 
 :::zone-end
 

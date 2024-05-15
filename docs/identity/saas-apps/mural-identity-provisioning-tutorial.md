@@ -6,12 +6,14 @@ author: twimmers
 writer: twimmers
 manager: jeedes
 ms.assetid: 0b932dbd-b5c9-40e3-baeb-a7c7424e1bfd
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to MURAL Identity so that I can streamline the user management process and ensure that users have the appropriate access to MURAL Identity.
 ---
 
 # Tutorial: Configure MURAL Identity for automatic user provisioning
@@ -32,7 +34,7 @@ This tutorial describes the steps you need to perform in both MURAL Identity and
 The scenario outlined in this tutorial assumes that you already have the following prerequisites:
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md). 
-* A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (for example, Application Administrator, Cloud Application administrator, Application Owner, or Global Administrator). 
+* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications). 
 * SCIM provisioning is only available for MURAL’s Enterprise plan. Before you configure SCIM provisioning, please reach out to a member of the MURAL Customer Success Team to enable the feature.
 * SAML based SSO must be properly set up before configuring automated provisioning. The instructions on how to set up SSO through Microsoft Entra ID for MURAL can be found [here](mural-identity-tutorial.md).
 

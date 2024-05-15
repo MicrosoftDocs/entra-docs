@@ -1,28 +1,26 @@
 ---
-title: View rules in the Autopilot dashboard in Permissions Management
-description: How to view rules in the Autopilot dashboard in Permissions Management.
-services: active-directory
+title: View information about rules in the Autopilot dashboard in Permissions Management
+description: How to view information about rules in the Autopilot dashboard in Permissions Management.
 author: jenniferf-skc
 manager: amycolannino
-ms.service: active-directory 
-ms.subservice: ciem
-ms.workload: identity
-ms.topic: overview
-ms.date: 02/16/2023
+ms.service: entra-permissions-management
+
+ms.topic: how-to
+ms.date: 03/14/2024
 ms.author: jfields
 ---
 
-# View rules in the Autopilot dashboard
+# View information about rules in the Autopilot dashboard
 
-The **Autopilot** dashboard in Permissions Management provides a table of information about Autopilot rules for administrators. Creating Autopilot rules allows you to automate right-sizing policies so you can automatically remove unused roles and permissions assigned to identities in your authorization system.
+The **Autopilot** dashboard in Permissions Management provides a table of information about Autopilot rules for administrators. Creating Autopilot rules allows you to automate right-sizing policies so you can automatically remove unused roles and permissions assigned to identities in your authorization system. From the Autopilot dashboard, you can view information on all current rules, including names, rule type, rule notification settings, and more. 
 
 
 > [!NOTE]
-> Only users with the **Administrator** role can view and make changes on this tab.
+> Only users with **Administrator** permissions can view and make changes on the Autopilot tab.
 
 ## View a list of rules
 
-1. In the Permissions Management home page, select the **Autopilot** tab.
+1. From the Permissions Management home page, select the **Autopilot** tab.
 1. In the **Autopilot** dashboard, from the **Authorization system types** dropdown, select the authorization system types you want: Amazon Web Services (**AWS**), Microsoft **Azure**, or Google Cloud Platform (**GCP**).
 1. From the **Authorization System** dropdown, in the **List** and **Folders** box, select the account and folder names that you want.
 1. Select **Apply**.
@@ -37,6 +35,19 @@ The **Autopilot** dashboard in Permissions Management provides a table of inform
     - **Created By**: The email address of the user who created the rule.
     - **Last Modified**: The date and time the rule was last modified.
     - **Subscription**: Provides an **On** or **Off** subscription that allows you to receive email notifications when recommendations are generated, applied, or unapplied.
+
+## View notification settings for a rule
+
+1. From the Permissions Management home page, select the **Autopilot** tab.
+1. In the **Autopilot** dashboard, from the **Authorization system types** dropdown, select Amazon Web Services (**AWS**), Microsoft **Azure**, or Google Cloud Platform (**GCP**).
+1. From the **Authorization System** dropdown, in the **List** and **Folders** box, select the account and folder names that you want, and then select **Apply**.
+1. In the **Autopilot** dashboard, select a rule.
+1. In the far right of the row, select the ellipses **(...)**
+1. To view notification settings for a rule, select **Notification Settings**.
+
+    Permissions Management displays a list of subscribed users. These users are signed up to receive notifications for the selected rule.
+
+1. To close the **Notification Settings** box, select **Close**.
 
 ## View other available options for rules
 
@@ -59,9 +70,7 @@ You can also select:
 - **New Rule**: Select to create a new rule. For more information, see [Create a rule](how-to-create-rule.md).
 
 
-
 ## Next steps
 
 - For information about creating rules, see [Create a rule](how-to-create-rule.md).
 - For information about generating, viewing, and applying rule recommendations for rules, see [Generate, view, and apply rule recommendations for rules](how-to-recommendations-rule.md).
-- For information about notification settings for rules, see [View notification settings for a rule](how-to-notifications-rule.md).

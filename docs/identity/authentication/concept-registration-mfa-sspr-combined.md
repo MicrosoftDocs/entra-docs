@@ -2,18 +2,15 @@
 title: Combined registration for SSPR and Microsoft Entra multifactor authentication
 description: Learn about the combined registration experience for Microsoft Entra ID to let users register for both Microsoft Entra multifactor authentication and self-service password reset
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 10/17/2023
+ms.date: 03/25/2024
 
 ms.author: justinha
 author: justinha
 manager: amycolannino
 ms.reviewer: tilarso
-
-ms.collection: M365-identity-device-management
 ---
 # Combined security information registration for Microsoft Entra overview
 
@@ -48,7 +45,7 @@ Combined registration supports the authentication methods and actions in the fol
 | Security questions | Yes | No | Yes |
 | Passwords | No | Yes | No |
 | App passwords* | Yes | No | Yes |
-| FIDO2 security keys*| Yes | No | Yes |
+| Passkey (FIDO2)*| Yes | No | Yes |
 
 > [!NOTE]
 > If you enable Microsoft Authenticator for passwordless authentication mode in the Authentication methods policy, users need to also enable passwordless sign-in in the Authenticator app.
@@ -59,7 +56,7 @@ Combined registration supports the authentication methods and actions in the fol
 >
 > App passwords are available only to users who have been enforced for per-user MFA. App passwords aren't available to users who are enabled for Microsoft Entra multifactor authentication by a Conditional Access policy.
 >
-> FIDO2 security keys, can only be added in *Manage mode* on [https://aka.ms/mysecurityinfo](https://aka.ms/mysecurityinfo).
+> Passkey (FIDO2), can only be added in *Manage mode* on [https://aka.ms/mysecurityinfo](https://aka.ms/mysecurityinfo).
 
 Users can set one of the following options as the default multifactor authentication method. 
 
@@ -123,9 +120,8 @@ Users can access manage mode by going to [Security info](https://aka.ms/mysecuri
 
 ## Key usage scenarios
 
-### Update a password in MySignIns (preview)
-A user navigates to [Security info](https://aka.ms/mysecurityinfo). After signing in, the user can update their password. For more information about different authentication methods that you can require by using Conditional Access policies, see [How to secure the registration of security info](~/identity/conditional-access/howto-conditional-access-policy-registration.md). When finished, the user has the new password updated on the Security info page.
-
+### Change a password in MySignIns
+A user navigates to [Security info](https://aka.ms/mysecurityinfo). After signing in, the user can change their password. If the user authenticates with a password and a multifactor authentication method, they will be able to use the enhanced user experience to change their password without entering their existing password. When finished, the user has the new password updated on the Security info page. Authentication methods such as Temporary Access Pass (TAP) aren't supported for password change unless the user knows their existing password.
 
 ### Protect Security info registration with Conditional Access
 To secure when and how users register for Microsoft Entra multifactor authentication and self-service password reset, you can use user actions in Conditional Access policy. This functionality may be enabled in organizations that want users to register for Microsoft Entra multifactor authentication and SSPR from a central location, such as a trusted network location during HR onboarding. Learn more on how to configure [common Conditional Access policies for securing security info registration.](~/identity/conditional-access/howto-conditional-access-policy-registration.md)
@@ -187,6 +183,6 @@ Or, you can specify a tenant by URL to access security information.
 
 To get started, see the tutorials to [enable self-service password reset](tutorial-enable-sspr.md) and [enable Microsoft Entra multifactor authentication](tutorial-enable-azure-mfa.md).
 
-Learn how to [enable combined registration in your tenant](howto-registration-mfa-sspr-combined.md) or [force users to re-register authentication methods](howto-mfa-userdevicesettings.md#manage-user-authentication-options).
+Learn how to [enable combined registration in your tenant](howto-registration-mfa-sspr-combined.md) or [force users to re-register authentication methods](howto-mfa-userdevicesettings.yml).
 
 You can also review the [available methods for Microsoft Entra multifactor authentication and SSPR](concept-authentication-methods.md).

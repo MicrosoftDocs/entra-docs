@@ -1,18 +1,16 @@
 ---
 title: Restore a deleted Microsoft 365 group
 description: Learn how to restore a deleted group, view restorable groups, and permanently delete a group in Microsoft Entra ID.
-services: active-directory
+
 author: barclayn
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: enterprise-users
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: users
 ms.topic: quickstart
 ms.date: 11/15/2023
 ms.author: barclayn
 ms.reviewer: krbain
-ms.custom: it-pro, seo-update-azuread-jan, mode-other, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
-ms.collection: M365-identity-device-management
+ms.custom: it-pro, mode-other, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
 # Restore a deleted Microsoft 365 group in Microsoft Entra ID
 
@@ -87,7 +85,7 @@ To verify that you successfully restored a Microsoft 365 group, run the `Get-MgB
 For more information on Microsoft Entra groups:
 
 * [See existing groups](~/fundamentals/groups-view-azure-portal.md)
-* [Manage settings of a group](~/fundamentals/how-to-manage-groups.md)
-* [Manage members of a group](~/fundamentals/how-to-manage-groups.md)
-* [Manage memberships of a group](~/fundamentals/how-to-manage-groups.md)
+* [Manage settings of a group](~/fundamentals/how-to-manage-groups.yml)
+* [Manage members of a group](~/fundamentals/how-to-manage-groups.yml)
+* [Manage memberships of a group](~/fundamentals/how-to-manage-groups.yml)
 * [Manage dynamic rules for users in a group](groups-dynamic-membership.md)

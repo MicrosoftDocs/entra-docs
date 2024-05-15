@@ -4,9 +4,9 @@ description: Learn how to plan a migration of IAM from Active Directory to Micro
 documentationCenter: ''
 author: janicericketts
 manager: martinco
-ms.service: active-directory
+ms.service: entra
 ms.topic: how-to
-ms.subservice: fundamentals
+ms.subservice: architecture
 ms.date: 07/27/2023
 ms.author: jricketts
 ms.custom: references_regions
