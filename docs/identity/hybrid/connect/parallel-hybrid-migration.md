@@ -38,13 +38,18 @@ This scenario provides a solution using existing Microsoft toolset to set up Hyb
 
 
 
+## Parallel Hybrid Migration 
+The following outlines the steps for the multi-organizational on-premises Exchange mailbox migration with Microsoft Entra Connect using a parallel hybrid environment.   Each step must be completed on each tenant that you are migrating to.
 
-## Microsoft Entra Connect
+### Step 1 - Microsoft Entra Connect
 
-1.  On each of the virtual machines that were created, download and install Microsoft Entra Connect
-2.  
+1.  On each of the virtual machines that were created, download Microsoft Entra Connect.
+2.  Install Microsoft Entra Connect using custom settings  
+3.  Scope to the source on-prem Organizational Unit to the OU that corresponds to the tenant you are synchronizing Micrsofot Entra Connect with.
+4. Enable “Exchange Hybrid deployment” and “Password hash synchronization”
+5. Start the synchronization proces
 
-## Hybrid Configuration Wizard
+### Step 2 - Hybrid Configuration Wizard
 Once you have configured the Microsoft Entra Connect servers, use the following steps to download and configure the Exchange Hybrid Configuration Wizard.
 
 1.  On each of the virtual machines, [download](https://aka.ms/hybridwizard) and install the [Hybrid Configuration Wizard](/exchange/hybrid-deployment/deploy-hybrid).
@@ -52,6 +57,22 @@ Once you have configured the Microsoft Entra Connect servers, use the following 
 
  :::image type="content" source="media/parallel-hybrid-migration/minimal-hybrid-1.png" alt-text="Screenshot of minimal hybrid." lightbox="media/parallel-hybrid-migration/minimal-hybrid-1.png":::
 
- Fpr additional infomation on Exchange Hybrid see [Exchange hybrid deployments](/exchange/exchange-hybrid)
+ For additional infomation on Exchange Hybrid see [Exchange hybrid deployments](/exchange/exchange-hybrid)
 
-## Exchange Admininstrative Center
+### Step 3 - Exchange Admininstrative Center
+
+1. In Exchange Admin Center, go to Migration and select the users to be migrated.
+2. Complete migration batches after mailboxes are fully transferred
+ 
+ >[!NOTE]
+ > An endpoint should be created at the last step of the Hybrid Configuration Wizard and should be 
+ available to create migration batch in the Exchange Admin Center. If not, create an endpoint manually.
+
+>[!NOTE]
+> Once user provisioning is completed by Microsoft Entra Connect, all users in the organization should be available as MailUser in the Exchange Admin Center and can be selected when creating migration batches.
+
+### Setp 4 - Uninstall Hybrid Configuration Wizard and Microsoft Entra Connect
+Once you have complete the migration, you can uninstll tthe HCW and Microsoft Entra Connect on the virtual server.  At this point you can remove the server from the domain and turn it off.
+
+### Step 5 - Repeat for each tenant
+Once you have completed the steps for migration, repeat the steps for all of your remaining tenants.
