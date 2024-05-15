@@ -8,12 +8,15 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: concept-article
-ms.date: 05/09/2024
+ms.date: 05/15/2024
 ms.author: mimart
 ms.custom: it-pro
 ---
 
 # Authentication methods and identity providers in external tenants
+
+> [!TIP]
+> This article applies to External ID in external tenants. For information about workforce tenants, see [Identity providers for External ID in workforce tenants](../identity-providers.md).
 
 With Microsoft Entra External ID, you can create secure, customized sign-in experiences for your consumer- and business customer-facing apps. In an external tenant, there are several ways for users to sign up for your app. They can create an account using their email and either a password or a one-time passcode. Or, if you enable sign-in with Facebook and Google, they can sign in with their own social account. You can also add a layer of security by enforcing multifactor authentication (MFA) so that each time a user signs in, they're required to provide a one-time passcode for verification.
 
