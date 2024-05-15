@@ -9,10 +9,10 @@ items:
     items:
     - name: External ID in external tenants
       tocHref: /entra/external-id/customers/
-      topicHref: /entra/external-id/customers/index
+      topicHref: /entra/external-id/index
     - name: External ID in external tenants
       tocHref: /entra/identity-platform/
-      topicHref: /entra/external-id/customers/index
+      topicHref: /entra/external-id/index
     - name: External ID in external tenants
       tocHref: /entra/fundamentals/
-      topicHref: /entra/external-id/customers/index
+      topicHref: /entra/external-id/index
