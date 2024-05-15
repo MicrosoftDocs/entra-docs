@@ -9,7 +9,7 @@ ms.topic: how-to
 ms.workload: identity
 ms.date: 03/19/2024
 ms.author: owenrichards
-ms.reviewer: 
+ms.reviewer: asteen
 ms.custom: 
 #Customer intent: As a customer, I intend to understand the Microsoft Account (MSA) Server Side API, their parameters, and how to use them in the development of applications that integrate with Microsoft accounts.
 ---

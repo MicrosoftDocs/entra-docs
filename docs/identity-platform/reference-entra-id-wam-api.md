@@ -8,7 +8,7 @@ ms.service: identity-platform
 ms.topic: how-to
 ms.date: 03/19/2024
 ms.author: owenrichards
-ms.reviewer: 
+ms.reviewer: asteen
 ms.custom: 
 #Customer intent: As a customer, I intend to understand the Microsoft Entra ID Windows Account Manager (WAM) API, its parameters, and how to use them in the development of Windows applications that integrate with Microsoft Entra ID or Microsoft accounts.
 ---
