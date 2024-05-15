@@ -71,6 +71,17 @@ You have two main options for signing in users using Microsoft Authentication Li
     
     Afterwards, it calls the `acquireToken` method on the application context with the defined parameters. In the completion handler, it checks for any errors. If an error is encountered, it updates the logging with the error message. If successful, it retrieves the access token from the result, updates the logging with the token, and updates the current account.
 
+    Once your app acquires an access token, you can retrieve the claims associated with the current account. To do so, use the following code snippet:
+    
+    ```swift
+    func onSignInCompleted(result: MSAL.MSALNativeAuthUserAccountResult) {
+       let claims = result.account.accountClaims
+       let preferredUsername = claims?["preferred_username"] as? String
+    }
+    ```
+    
+    The code snippet handles the completion of a sign-in process using MSAL. It retrieves the claims associated with the user's account and then extracts the preferred username from these claims, storing it in the variable `preferredUsername`.
+
 1. To sign in user silently, use the following code:
 
     ```swift
