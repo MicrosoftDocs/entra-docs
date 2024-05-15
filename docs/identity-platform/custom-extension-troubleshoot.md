@@ -91,7 +91,7 @@ Your REST API is protected by a Microsoft Entra access token. You can test your 
 
 # [API testing tools](#tab/api-testing-tools)
 
-1. For local development and testing purposes, open *local.settings.json* and replace the code with the following JSON: 
+1. For local development and testing purposes, open _local.settings.json_ and replace the code with the following JSON: 
 
     ```json
     {
