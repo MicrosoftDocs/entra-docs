@@ -18,7 +18,7 @@ This article provides an overview of the multitenant organization scenario and t
 
 ## What is the multitenant organization scenario?
 
-A *multitenant organization* is an organization that has more than one instance of Microsoft Entra ID. Here are the primary reasons why an organization might have multiple tenants:
+The multitenant organization scenario occurs when an organization has more than one tenant instance of Microsoft Entra ID. Here are the primary reasons why an organization might have multiple tenants:
 
 - **Conglomerates:** Organizations with multiple subsidiaries or business units that operate independently.
 - **Mergers and acquisitions:** Organizations that merge or acquire companies.

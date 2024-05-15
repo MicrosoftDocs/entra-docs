@@ -27,6 +27,12 @@ The limitations described in this article have the following scope.
 | Out of scope | - Cross-tenant synchronization unrelated to Microsoft 365<br/>- End user experiences in new Teams<br/>- End user experiences in Viva Engage<br/>- Tenant migration or consolidation |
 | Unsupported scenarios | - Multitenant organizations across education tenants involving student scenarios<br/>- Multitenant organizations in Microsoft 365 Government<br/>- Seamless collaboration experience across multitenant organizations in classic Teams<br/>- Self-service for multitenant organizations larger than 100 tenants<br/>- Multitenant organizations in Azure Government or Microsoft Azure operated by 21Vianet<br/>- Cross-cloud multitenant organizations |
 
+## Create or join a multitenant organization using the Microsoft 365 admin center
+
+- After creating a multitenant organization in Microsoft 365 admin center, you'll see Microsoft admin center created cross-tenant synchronization configurations with the names `MTO_Sync_<TenantID>`. Refrain from editing or changing the name if you want Microsoft 365 admin center to recognize the configurations as created and managed by Microsoft 365 admin center.
+
+- Synchronization jobs created with Microsoft Entra ID won't appear in Microsoft 365 admin center. Microsoft 365 admin center will indicate an **Outbound sync status** of **Not configured**. This is expected behavior. There's no supported pattern for Microsoft 365 admin center to take control of cross-tenant synchronization jobs created in Microsoft Entra admin center.
+
 ## Cross-tenant access settings
 
 - Cross-tenant synchronization in Microsoft Entra ID doesn't support establishing a cross-tenant synchronization configuration before the tenant in question allows inbound synchronization in their cross-tenant access settings for identity synchronization.
@@ -35,19 +41,20 @@ The limitations described in this article have the following scope.
 
 - Similarly, prior to multitenant organization creation, the usage of the cross-tenant access settings template for partner configurations is encouraged with `automaticUserConsentSettings.inboundAllowed` and `automaticUserConsentSettings.outboundAllowed` set to true.
 
-## Creating the multitenant organization using the Microsoft 365 admin center
-
-- After creating a multitenant organization in Microsoft 365 admin center, you'll see Microsoft admin center created cross-tenant synchronization configurations with the names `MTO_Sync_<TenantID>`. Refrain from editing or changing the name if you want Microsoft 365 admin center to recognize the configurations as created and managed by Microsoft 365 admin center.
-
-- Synchronization jobs created with Microsoft Entra ID won't appear in Microsoft 365 admin center. Microsoft 365 admin center will indicate an **Outbound sync status** of **Not configured**. This is expected behavior. There's no supported pattern for Microsoft 365 admin center to take control of cross-tenant synchronization jobs created in Microsoft Entra admin center.
-
 ## Join requests
 
 - There are multiple reasons why a join request might fail. If the Microsoft 365 admin center doesn't indicate why a join request isn't succeeding, try examining the join request response by using the Microsoft Graph APIs or Microsoft Graph Explorer.
 
 - If you followed the correct sequence to create a multitenant organization and add a tenant to the multitenant organization, and the added tenant's join request keeps failing, submit a support request in the Microsoft Entra or Microsoft 365 admin center.
 
-## Cross-tenant synchronization
+## Options to provision your external member users
+
+- If you haven't previously used Microsoft Entra cross-tenant synchronization, and you intend to establish a [collaborating user set](multi-tenant-organization-microsoft-365.md#collaborating-user-set) topology where the same set of users is shared to all multitenant organization tenants, you might want to use the Microsoft 365 admin center share users functionality.
+- If you're already using Microsoft Entra cross-tenant synchronization, for various [multi-hub multi-spoke topologies](cross-tenant-synchronization-topology.md), you don't need to use the Microsoft 365 admin center share users functionality. Instead, you might want to continue using your existing Microsoft Entra cross-tenant synchronization jobs.
+- If you already have your own at-scale user provisioning engine, you can utilize the new multitenant organization benefits while continuing to use your own engine to manage the lifecycle of your employees.
+- If you need to create individual external member users in a host tenant rather than creating them through a provisioning engine from a source tenant, see [How to create, invite, and delete users](../../fundamentals/how-to-create-delete-users.yml#users-in-workforce-tenants).
+
+## Cross-tenant synchronization in Microsoft Entra admin center
 
 - For enterprise organizations with complex identity configurations, we recommend you use cross-tenant synchronization in Microsoft Entra admin center.
 
@@ -59,7 +66,7 @@ The limitations described in this article have the following scope.
 
 - Using cross-tenant synchronization to target hybrid identities that have been converted to B2B users isn't currently supported.
 
-## Sharing users using the Microsoft 365 admin center
+## Synchronize users in Microsoft 365 admin center
 
 - For smaller multitenant organizations, we recommend using Microsoft 365 admin center to [synchronize users into multiple tenants](/microsoft-365/enterprise/sync-users-multi-tenant-orgs) of your multitenant organization.
 
