@@ -346,7 +346,7 @@ When a group is created, certain endpoints allow the end user to specify a mailN
 
 ## Group writeback to on-premises
 
-Today, many groups are still managed in on-premises Active Directory. To answer requests to sync cloud groups back to on-premises, Microsoft 365 groups writeback feature for Microsoft Entra ID is now available for preview.
+Today, many groups are still managed in on-premises Active Directory. To answer requests to sync cloud groups back to on-premises the provisioning to active directory feature for groups is now available.
 
 [!INCLUDE [deprecation](~/includes/gwb-v2-deprecation.md)]
 
