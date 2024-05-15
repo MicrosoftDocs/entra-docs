@@ -51,7 +51,7 @@ If you use Intune as your MDM of choice then the configuration profile settings 
 
 ## Intune MDM and Microsoft Entra Join using Company Portal
 
-To register a Mac device with PSSO, you must first enroll your device in your MDM. If you are using Microsoft Intune then make sure the Company Portal app is installed. If you are using another MDM then make sure the device is enrolled in that MDM and you have deployed Company Portal to the device. Once enrolled, you can use your user account to register your device with PSSO. For shared devices the first user to do the setup will typically be an administrator or technician - this user will have local administrative rights unless there is alternative local admin account created.
+To register a Mac device with PSSO, you must first enroll your device in your MDM. If you are using Microsoft Intune then make sure the Company Portal app is installed. If you are using another MDM then make sure the device is enrolled in that MDM and you have deployed Company Portal to the device. Once enrolled, you can use your user account to register your device with PSSO. For shared devices, the first user to do the setup will typically be an administrator or technician - this user will have local administrative rights unless there is alternative local admin account created.
 
 1. Open the **Company Portal** app and select **Sign in**.
 1. Enter your Microsoft Entra ID credentials and select **Next**.
