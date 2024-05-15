@@ -32,7 +32,7 @@ In this tutorial, you'll:
 
 ## Sign in user
 
-You have two main options for signing in users using Microsoft Authentication Library (MSAL) for iOS: acquiring tokens interactively or silently.
+You have two main options for signing in users using Microsoft Authentication Library (MSAL) for Android: acquiring tokens interactively or silently.
 
 1. To sign in user interactively, use the following code:
 
@@ -184,10 +184,9 @@ You have two main options for signing in users using Microsoft Authentication Li
 
     Make sure you include the import statements. Android Studio should include the import statements for you automatically.
 
-
 ## Sign out
 
-To sign out a user from your Android (Kotlin) app using MSAL for iOS, use the following code:
+To sign out a user from your Android (Kotlin) app using MSAL for Android, use the following code:
 
 ```kotlin
 private fun removeAccount() {

@@ -30,7 +30,6 @@ In this tutorial, you'll;
 
 ## Prerequisites  
 
-- <a href="https://developer.android.com/studio" target="_blank">Android Studio</a>.
 - An external tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>. 
 
 ## Register an application

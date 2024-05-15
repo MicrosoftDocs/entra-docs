@@ -17,7 +17,7 @@ ms.custom: developer
 
 # Tutorial: Prepare your Android (Kotlin) app for authentication
 
-This is the second tutorial in the tutorial series that demonstrates how to add Microsoft Authentication Library (MSAL) for Android to your Android (Kotlin) app.
+This is the second tutorial in the tutorial series that demonstrates how to add Microsoft Authentication Library (MSAL) for Android to your Android (Kotlin) app. MSAL enables Android applications to authenticate users with Microsoft Entra.
 
 In this tutorial, you'll:
 
