@@ -220,7 +220,7 @@ This script below illustrates creating a policy for direct assignment to an acce
 ```powershell
 Connect-MgGraph -Scopes "EntitlementManagement.ReadWrite.All"
 
-$apid = "cdd5f06b-752a-4c9f-97a6-82f4eda6c76d"
+$apid = "00001111-aaaa-2222-bbbb-3333cccc4444"
 
 $params = @{
     displayName = "New Policy"
