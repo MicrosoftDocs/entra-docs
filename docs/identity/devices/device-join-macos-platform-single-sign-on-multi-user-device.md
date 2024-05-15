@@ -130,7 +130,7 @@ Next you should validate that the device is ready for other users in the tenant 
 
 3. Enter a user's Entra ID User Principal Name and password.
 
-:::image type="content" source="media/device-registration-macos-platform-single-sign-on/psso-new-user-login-upn.png" alt-text="Screenshot of the macOS login screen":::
+:::image type="content" source="media/device-registration-macos-platform-single-sign-on/psso-new-user-login-upn.png" alt-text="Screenshot of the macOS login box where a user has entered their credentials":::
 
 4. If the User Principal Name and password were correct then the user will be logged in. The user will be directed to go through several Setup Assistant dialog screens by default and then they will land on the macOS desktop.
 
