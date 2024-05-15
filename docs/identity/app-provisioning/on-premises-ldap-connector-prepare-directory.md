@@ -157,7 +157,7 @@ Get-WindowsFeature | Where installed >>$featureLogPath
 This file is used to automate and create an instance of AD LDS.  You will edit this file to match your environment; in particular, change `APP3` to the hostname of your server.
 
 >[!IMPORTANT]
-> This script uses the local administrator for the AD LDS service account and has its password hard-coded in the answers.  This action is for **testing only** and should never be used in a production environment.
+> This script uses the local administrator for the AD LDS service account. You will be prompted for the password during installation.
 >
 > If you are installing AD LDS on a domain controller and not a member or standalone server, you will need to change the LocalLDAPPortToListenOn and LocalSSLPortToListonOn to something other than the well-known ports for LDAP and LDAP over SSL.  For example, LocalLDAPPortToListenOn=51300 and LocalSSLPortToListenOn=51301.
 
@@ -171,7 +171,7 @@ This file is used to automate and create an instance of AD LDS.  You will edit t
  DataFilesPath=C:\Program Files\Microsoft ADAM\AD-APP-LDAP\data
  LogFilesPath=C:\Program Files\Microsoft ADAM\AD-APP-LDAP\data
  ServiceAccount=APP3\Administrator
- ServicePassword=Pa$$Word1
+ ServicePassword=\*
  AddPermissionsToServiceAccount=Yes
  Administrator=APP3\Administrator
  ImportLDIFFiles="MS-User.LDF"
