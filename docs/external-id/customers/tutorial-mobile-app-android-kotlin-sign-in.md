@@ -113,23 +113,24 @@ You have two main options for signing in users using Microsoft Authentication Li
     Once your app acquires an ID token, you can retrieve the claims associated with the current account. To do so, use the following code snippet:
 
     ```kotlin
-    val idToken = authenticationResult.account.idToken
+    private fun getAuthInteractiveCallback(): AuthenticationCallback {
+        return object : AuthenticationCallback {
     
-    // Function to decode the ID token
-
-    fun decodeIdToken(idToken: String): Map<String, Any> {
-    val parts = idToken.split(".")
-        val decodedPayload = String(Base64.decode(parts[1], Base64.URL_SAFE), Charsets.UTF_8)
-        return Gson().fromJson(decodedPayload, Map::class.java) as Map<String, Any>
+            override fun onSuccess(authenticationResult: IAuthenticationResult) {
+                CoroutineScope(Dispatchers.Main).launch {
+                    val accessToken = authenticationResult.accessToken
+                    val claims = authenticationResult.account.claims?.get("aud")
+                }
+            }
+    
+            override fun onError(exception: MsalException) {}
+    
+            override fun onCancel() {}
+        }
     }
-
-    val idTokenClaims = decodeIdToken(idToken)
-
-    val userEmail = idTokenClaims["email"] as? String
-
     ```
 
-    The code snippet retrieves the ID token from the authentication result, then decodes it to extract the claims. It splits the token into its parts, decodes the payload, and parses it into a map using Gson. Finally, it retrieves the user's email from the decoded claims.
+    The code defines a function `getAuthInteractiveCallback()` that returns an `AuthenticationCallback`. When authentication succeeds, it retrieves the access token and reads the claims associated with the authenticated account. Specifically, it extracts the audience claim ("aud") from the account's claims. 
 
     Make sure you include the import statements. Android Studio should include the import statements for you automatically.
 
