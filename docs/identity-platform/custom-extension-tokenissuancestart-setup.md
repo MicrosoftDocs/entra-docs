@@ -303,12 +303,16 @@ By default, the code has been set up for authentication in the Azure portal usin
 
 ### [Set up authentication in Azure portal](#tab/azure-portal)
 
+### Set up authentication in the Azure portal using environment variables
+
 1. Sign in to the [Azure portal](https://portal.azure.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-developer) or [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
 1. Navigate to the function app you created, and under **Settings**, select **Configuration**.
 1. Under **Application settings**, select **New application setting** and add the environment variables from the table and their associated values.  
 1. Select **Save** to save the application settings.
 
-### [Set up authentication in your code](#tab/modify-code)
+### [Set up authentication in your code](#tab/nuget-library)
+
+### Set up authentication in your code using `WebJobsAuthenticationEventsTriggerAttribute`
 
 1. Open the *AuthEventsTrigger.cs* file in your IDE.
 1. Modify the `WebJobsAuthenticationEventsTriggerAttribute` include the `AuthorityUrl`, `AudienceAppId` and `AuthorizedPartyAppId` properties, as shown in the below snippet.
