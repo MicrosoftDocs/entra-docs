@@ -99,17 +99,17 @@ Follow these steps to enable Microsoft Entra SSO.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
-1. On the **Basic SAML Configuration** section, if you have **Service Provider metadata file** and wish to configure in **IDP** intiated mode, perform the following steps:
+1. On the **Basic SAML Configuration** section, if you have **Service Provider metadata file** and wish to configure in **IDP** initiated mode, perform the following steps:
 
 	a. Click **Upload metadata file**.
 
 	b. Click on **folder logo** to select the metadata file which you have downloaded from SAP and click **Upload**.
 
-	![choose metadata file](common/browse-upload-metadata.png)
+	![Screenshot showing choose metadata file](common/browse-upload-metadata.png)
 
 	c. After the metadata file is successfully uploaded, the **Identifier** and **Reply URL** values get auto populated in Basic SAML Configuration section.
 
-	![Screenshot of URLs.](common/idp-intiated.png)
+	![Screenshot showing URLs.](common/idp-intiated.png)
 
 	> [!Note]
 	> If the **Identifier** and **Reply URL** values do not get auto polulated, then fill in the values manually according to your requirement.
@@ -124,7 +124,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. SAP Cloud Identity Services application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
-	![Screenshot of attributes.](common/default-attributes.png)
+	![Screenshot showing attributes.](common/default-attributes.png)
 
 1. In addition to above, SAP Cloud Identity Services application expects few more attributes to be passed back in SAML response, which are shown below. These attributes are also pre populated but you can review them as per your requirements.
 
@@ -178,21 +178,21 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 1. Under **Applications and Resources**, choose the **Tenant Settings** tile.
 
-    ![Screenshot shows of tenant settings.](./media/sap-hana-cloud-platform-identity-authentication-tutorial/tenant-settings.png)
+    ![Screenshot showing tenant settings.](./media/sap-hana-cloud-platform-identity-authentication-tutorial/tenant-settings.png)
 
 1. In the **Single Sign-On** tab, go to **SAML 2.0 Configuration**, click **Download Metadata File** button to download the metadata and use it later in the Entra side configuration.
 
-    ![Screenshot shows of download metadata button.](./media/sap-hana-cloud-platform-identity-authentication-tutorial/download-metadata.png)
+    ![Screenshot showing download metadata button.](./media/sap-hana-cloud-platform-identity-authentication-tutorial/download-metadata.png)
 
 1. Under **Identity Providers**, choose the **Corporate Identity Providers** tile.
 
 1. Click **+ Create** to create  identity provider.
 
-    ![Screenshot shows of Identity Provider.](./media/sap-hana-cloud-platform-identity-authentication-tutorial/create-identity-provider.png)
+    ![Screenshot showing Identity Provider.](./media/sap-hana-cloud-platform-identity-authentication-tutorial/create-identity-provider.png)
 
-1. Perform the following steps on **Create Identity Provider** dailog box.
+1. Perform the following steps on **Create Identity Provider** dialog box.
 
-    ![Screenshot shows of create Identity Provider.](./media/sap-hana-cloud-platform-identity-authentication-tutorial/identity-provider.png)
+    ![Screenshot showing create Identity Provider.](./media/sap-hana-cloud-platform-identity-authentication-tutorial/identity-provider.png)
 
     a. Give a valid name in **Display Name**.
 
@@ -200,9 +200,9 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
     c. Click **Create**.
 
-1. Go to **Trust -> SAML 2.0 Configuration** and click on **Browse** to upload the **Metadata XML** file which you have downlaoded from the Entra configuration.
+1. Go to **Trust -> SAML 2.0 Configuration** and click on **Browse** to upload the **Metadata XML** file which you have downloaded from the Entra configuration.
 
-    ![Screenshot shows the configuration of Identity Provider.](./media/sap-hana-cloud-platform-identity-authentication-tutorial/saml-configuration.png)
+    ![Screenshot showing configuration of Identity Provider.](./media/sap-hana-cloud-platform-identity-authentication-tutorial/saml-configuration.png)
 
 1. Click **Save**.
 
@@ -210,7 +210,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 4. In the Entra side, on the **SAP Cloud Identity Services** application integration page, select **Linked Sign-on**.
 
-	![Configure Linked Sign-On](./media/sap-hana-cloud-platform-identity-authentication-tutorial/linked-sign-on.png)
+	![Screenshot showing Configure Linked Sign-On](./media/sap-hana-cloud-platform-identity-authentication-tutorial/linked-sign-on.png)
 
 5. Save the configuration.
 6. For more information, please read the documentation about SAP Cloud Identity Services at [Integration with Microsoft Entra ID](https://developers.sap.com/tutorials/cp-ias-azure-ad.html).
@@ -239,13 +239,13 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * Click on **Test this application**, this will redirect to SAP Cloud Identity Services Sign on URL where you can initiate the login flow.
 
-* Go to SAP Cloud Identity Services Sign-on URL directly and initiate the login flow from there.
+* Go to SAP Cloud Identity Services Sign on URL directly and initiate the login flow from there.
 
 #### IDP initiated:
 
 * Click on **Test this application**, and you should be automatically signed in to the SAP Cloud Identity Services for which you set up the SSO
 
-You can also use Microsoft My Apps to test the application in any mode. When you click the SAP Cloud Identity Services tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the SAP Cloud Identity Services for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+You can also use Microsoft My Apps to test the application in any mode. When you click the SAP Cloud Identity Services tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the SAP Cloud Identity Services for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Next steps
 
