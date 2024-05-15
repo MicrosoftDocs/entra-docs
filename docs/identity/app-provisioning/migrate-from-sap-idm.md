@@ -134,7 +134,7 @@ If you have other systems of record sources besides SuccessFactors or SAP HCM, y
 
   :::image type="content" source="media/inbound-provisioning-api-concepts/api-workflow-scenarios.png" alt-text="Diagram showing API workflow scenarios." lightbox="media/inbound-provisioning-api-concepts/api-workflow-scenarios.png":::
 
-### Provision for SAP systems
+### Provision to SAP systems
 
 Most organizations with SAP IDM will have been using it to provision users into SAP ECC, SAP IAS, SAP S/4HANA, or other SAP applications. Microsoft Entra has connectors to SAP ECC, SAP Cloud Identity Services, and SAP SuccessFactors. Provisioning into SAP S/4HANA or other applications is a two step process. Once you have users in Microsoft Entra ID, you can provision those users from Microsoft Entra ID to SAP Cloud Identity Services or SAP ECC, to enable them to sign in to SAP applications. SAP Cloud Identity Services then provisions the users originating from Microsoft Entra ID that are in the SAP Cloud Identity Directory into the downstream SAP applications, including [`SAP S/4HANA Cloud`](https://help.sap.com/docs/identity-provisioning/identity-provisioning/target-sap-s-4hana-cloud) and [`SAP S/4HANA On-premise`](https://help.sap.com/docs/identity-provisioning/identity-provisioning/target-sap-s-4hana-on-premise).
 
@@ -148,7 +148,7 @@ For step-by-step guidance on the identity lifecycle with SAP applications as the
 
 Once you have configured provisioning for users into your SAP applications, you should enable SSO for them. Microsoft Entra ID can serve as the identity provider and authentication authority for your SAP applications. Microsoft Entra ID can integrate with [SAP NetWeaver using SAML or OAuth](~/identity/saas-apps/sap-netweaver-tutorial.md). For more information on how to configure single sign-on to SAP SaaS and modern apps, see [enable SSO](~/id-governance/sap.md#enable-sso).
 
-### Provision for non-SAP systems
+### Provision to non-SAP systems
 
 Organizations may also be using SAP IDM to provision users to [non-SAP systems](https://help.sap.com/docs/SAP_IDENTITY_MANAGEMENT/d376345fb4e94928a70036ddf91d690b/2f8af286449c4453a8514ba598938581.html), including Windows Server AD, and other databases, directories, and applications. You can migrate these scenarios to Microsoft Entra ID to have Microsoft Entra ID provision its copy of those users into those repositories.
 
@@ -200,7 +200,7 @@ Microsoft Entra includes built-in reports, as well as workbooks that surface in 
 * You can export data from Microsoft Entra admin center for use in generating your own reports. For example, you can [download a list of users and their attributes](~/identity/users/users-bulk-download.md) or [download logs](~/identity/monitoring-health/howto-download-logs.md) from the Microsoft Entra Admin Center.
 * You can query Microsoft Graph to obtain data for use in a report. For example, you can [retrieve a list of inactive user accounts in Microsoft Entra ID](~/identity/monitoring-health/howto-manage-inactive-user-accounts.md).
 * You can use the PowerShell cmdlets atop Microsoft Graph APIs to export and restructure content suitable for reporting. For example, if you are using Microsoft Entra entitlement management access packages, you can retrieve [a list of assignments to an access package in PowerShell](~/id-governance/entitlement-management-access-package-assignments.md#view-assignments-with-powershell)
-* You can use workbooks and custom queries and reports on audit, sign-in, and provisioning logs that have been sent to Azure Monitor. For example, you can [Archive logs and reporting on entitlement management in Azure Monitor](~/id-governance/entitlement-management-logs-and-reporting.md).
+* You can get alerts, and use workbooks, custom queries and reports on audit, sign-in, and provisioning logs that have been sent to Azure Monitor. For example, you can [Archive logs and reporting on entitlement management in Azure Monitor](~/id-governance/entitlement-management-logs-and-reporting.md).
 
 ### Migrate exchanging identity information across organizational boundaries
 
