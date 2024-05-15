@@ -14,13 +14,13 @@ ms.custom: it-pro
 
 ---
 
-# Samples for customer identity and access management (CIAM) in Microsoft Entra External ID
+# Samples for External ID developers
 
 Microsoft maintains code samples that demonstrate how to integrate various application types with Microsoft Entra External ID. We provide instructions for downloading and using samples or building your own app based on common authentication and authorization scenarios, development languages, and platforms. Included are instructions for building the project (if applicable) and running the sample application. Within the sample code, comments help you understand how these libraries are used in the application to perform authentication and authorization in an external tenant.
 
 ## Samples and guides
 
-Use the tabs to sort samples either by app type or your preferred language/platform.
+Use the tabs to sort samples either by app type or your preferred language or platform.
 
 # [**By app type**](#tab/apptype)
 
