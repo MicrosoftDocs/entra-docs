@@ -45,9 +45,13 @@ This scenario provides a solution using existing Microsoft toolset to set up Hyb
 2.  
 
 ## Hybrid Configuration Wizard
+Once you have configured the Microsoft Entra Connect servers, use the following steps to download and configure the Exchange Hybrid Configuration Wizard.
+
 1.  On each of the virtual machines, [download](https://aka.ms/hybridwizard) and install the [Hybrid Configuration Wizard](/exchange/hybrid-deployment/deploy-hybrid).
 2.  On the installation select [Minimal Hybrid](/exchange/mailbox-migration/use-minimal-hybrid-to-quickly-migrate).
 
- :::image type="content" source="media/parallel-hybrid-migration/minimal-hybrid-1.png" alt-text="Diagram of the parallel hybrid migration scenario." lightbox="media/parallel-hybrid-migration/minimal-hybrid-1.png":::
+ :::image type="content" source="media/parallel-hybrid-migration/minimal-hybrid-1.png" alt-text="Screenshot of minimal hybrid." lightbox="media/parallel-hybrid-migration/minimal-hybrid-1.png":::
+
+ Fpr additional infomation on Exchange Hybrid see [Exchange hybrid deployments](/exchange/exchange-hybrid)
 
 ## Exchange Admininstrative Center
