@@ -2773,6 +2773,8 @@
         href: teamviewer-tutorial.md
       - name: Teamwork.com
         href: teamwork-tutorial.md
+      - name: TechSafe Entra ID SSO
+        href: techsafe-tutorial.md
       - name: Templafy SAML2
         href: templafy-tutorial.md
       - name: TencentCloud IDaaS
