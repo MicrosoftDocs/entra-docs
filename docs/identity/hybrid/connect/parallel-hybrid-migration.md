@@ -25,3 +25,29 @@ This poses some challenges in migrating mailboxes from on-premises to cloud usin
 This scenario provides a solution using existing Microsoft toolset to set up Hybrid configurations and subsequent mailbox migrations. 
 
  :::image type="content" source="media/parallel-hybrid-migration/parallel-hybrid-1.png" alt-text="Diagram of the parallel hybrid migration scenario." lightbox="media/parallel-hybrid-migration/parallel-hybrid-1.png":::
+
+## Pre-requisites
+- For each tenant you are migrating to, there needs to be one Micorosft Entra Connect server.
+- You should create virtual machines for each of the Microsoft Entra Connect servers and they need to be domain joined.
+- Users in your on-premises Active Directory, should be seperated in their own organizational unit (OU).
+- Each Microsoft Entra Connect Server will have its synchronization rules scoped to individual OUs.
+- All of the migrating tenants primary domains must be added and verified in M365
+- You should be familiar with [Exchnage hybrid deployments](/exchange/exchange-hybrid)
+- Make sure that you meet the [pre-requisites for the Hybrid Configuration Wizard](/exchange/hybrid-deployment-prerequisites).
+
+
+
+
+
+## Microsoft Entra Connect
+
+1.  On each of the virtual machines that were created, download and install Microsoft Entra Connect
+2.  
+
+## Hybrid Configuration Wizard
+1.  On each of the virtual machines, [download](https://aka.ms/hybridwizard) and install the [Hybrid Configuration Wizard](/exchange/hybrid-deployment/deploy-hybrid).
+2.  On the installation select [Minimal Hybrid](/exchange/mailbox-migration/use-minimal-hybrid-to-quickly-migrate).
+
+ :::image type="content" source="media/parallel-hybrid-migration/minimal-hybrid-1.png" alt-text="Diagram of the parallel hybrid migration scenario." lightbox="media/parallel-hybrid-migration/minimal-hybrid-1.png":::
+
+## Exchange Admininstrative Center
