@@ -146,7 +146,7 @@ The following example walks you through setting up a custom synchronization rule
 
 > [!NOTE]
 >- **msDS-cloudExtensionAttribute1** is an example source.
->- **Starting with [Microsoft Entra Connect 2.0.3.0](../identity/hybrid/connect/reference-connect-version-history.md#functional-changes-10), `employeeHireDate` is added to the default 'Out to Microsoft Entra ID' rule, so steps 10-16 are not required.**
+>- **Starting with [Microsoft Entra Connect 2.0.3.0](../identity/hybrid/connect/reference-connect-version-history.md#functional-changes-10), `employeeHireDate` is added to the default 'Out to Microsoft Entra ID' rule, so steps 1-9 are not required.**
 >- **Starting with [Microsoft Entra Connect 2.1.19.0](../identity/hybrid/connect/reference-connect-version-history.md#functional-changes-1), `employeeLeaveDateTime` is added to the default 'Out to Microsoft Entra ID' rule, so steps 10-16 aren't required.**
 
 For more information, see [How to customize a synchronization rule](../identity/hybrid/connect/how-to-connect-create-custom-sync-rule.md) and [Make a change to the default configuration.](../identity/hybrid/connect/how-to-connect-sync-change-the-configuration.md)
