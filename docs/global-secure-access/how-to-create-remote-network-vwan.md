@@ -152,15 +152,79 @@ In this step, associate the VPN site from the previous step with the hub. Next, 
 1. In the Connect sites form, type the same **Pre-shared key (PSK)** used for the Entra admin center.
 1. Select **Connect**.
 1. After about 30 minutes, the VPN site will update to show that the **Connection provisioning status** has succeeded and the **Connectivity status** is connected.
-:::image type="content" source="media/how-to-create-remote-network-vwan/provisioning-status-succeeded.png" alt-text="Screenshot of the VPN (Site to site) page showing the green checkmarks that indicate that the Connection provisioning has succeeded and the Connectivity is connected." lightbox="media/how-to-create-remote-network-vwan/provisioning-status-succeeded-expanded.png":::
+:::image type="content" source="media/how-to-create-remote-network-vwan/provisioning-status-succeeded.png" alt-text="Screenshot of the VPN (Site to site) page showing green checkmarks that indicate that Connection provisioning has succeeded and Connectivity is connected." lightbox="media/how-to-create-remote-network-vwan/provisioning-status-succeeded-expanded.png":::
 
 ### Check BGP connectivity and learned routes in Microsoft Azure portal
-In this step...
+In this step, use the BGP Dashboard to check the list of learned routes that the site-to-site gateway has learned.
+1. Navigate to **Connectivity** > **VPN (Site to site)**.
+1. Select the VPN site created above.
+1. Select **BGP Dashboard**.
+
+The BGP dashboard lists the **BGP Peers** (VPN gateways and VPN site), which should have a **Status** of **Connected**.
+1. To view the list of learned routes, select **Routes the site-to-site gateway is learning**.
+
+The list of **Learned Routes** shows that the site-to-site gateway has learned the M365 routes listed in the M365 traffic profile.
+:::image type="content" source="media/how-to-create-remote-network-vwan/BGP-peers-learned-routes.png" alt-text="Screenshot of the Learned Routes page with the learned M365 routes highlighted." lightbox="media/how-to-create-remote-network-vwan/BGP-peers-learned-routes-expanded.png":::
+
+The image below shows the traffic profile **Policies & rules** for the Microsoft 365 profile, which should should match the routes learned from the site-to-site gateway.
+:::image type="content" source="media/how-to-create-remote-network-vwan/traffic-profile-match.png" alt-text="Screenshot of the Microsoft 365 traffic forwarding profiles, showing the matching learned routes." lightbox="media/how-to-create-remote-network-vwan/traffic-profile-match-expanded.png":::
 
 ### Check connectivity in Microsoft Entra admin center
-In this step...
+View the Remote netowk health logs to validate connectivity in the Microsoft Entra admin center.
+1. In Microsoft Entra admin center, navigate to **Global Secure Access (Preview)** > **Monitor** > **Remote network health logs**.
+1. Select **Add Filter**. 
+1. Select **Source IP** and type the source IP address for the VPN gateway's Instance0 or Instance1 IP address. Select **Apply**.
+1. The connectivity should be **"Remote network alive"**.
 
 ## Test security features with Azure virtual Desktop (AVD)
+This step uses Azure Virtual Desktop (AVD) to test tenant restrictions on the virtual netork.
+
+### Create a virtual network
+1. In the Azure portal, search for and select **Virtual networks**.
+1. On the **Virtual networks** page, select **+ Create**.
+1. Complete the **Basics** tab and select **Next** to proceed to the **Security** tab.
+1. In the **Azure Bastion** section, select **Enable Bastion**, type the **Azure Bastion host name**, and select the **Azure Bastion public IP address**.
+1. Select **Next** to proceed to the **IP Addresses tab** tab. Don’t use an overlapping address space. For example, if the virtual hub created above uses the address space 10.0.0.0/16, create this virtual network with the address space 10.2.0.0/16.
+1. Select **Review + create**. When validation passes, select **Create**.
+
+### Add a virtual network connection to the virtual WAN
+1. Open the virtual WAN created above and navigate to **Connectivity** > **Virtual network connections**.
+1. Select **+ Add connection**.
+1. Complete the **Add connection** form, using the virtual hub and virtual network created in previous sections. Leave the remaining fields set to their default values.
+1. Select **Create**. 
+
+### Create an Azure virtual Desktop
+1. In the Azure portal, search for and select **Azure Virtual desktop**.
+1. On the **Azure Virtual Desktop** page, select **Create a host pool**.
+1. Complete the **Basics** tab with the following:
+    * The **Host pool name**.
+    * **Preferred app group type**: Desktop 
+    * **Host pool type**: Pooled
+    * **Load balancing algorithm**: Breadth-first
+    * **Max session limit**: 2
+1. Select **Next: Virtual Machines**.
+1. Complete the **Next: Virtual Machines** tab with the following:
+    * **Add virtual machines**: Yes 
+    * The desired **Resource group**. 
+    * Name prefix: avd 
+    * Virtual machine type: Azure virtual machine 
+    * Virtual machine location: East US 
+    * Availability options: No infrastructure redundancy required 
+    * Security type: Trusted launch virtual machine 
+    * Enable secure boot: Yes 
+    * Enable vTPM: Yes 
+    * Image: Windows 11 Enterprise multi-session + Microsoft 365 apps version 22H2 
+    * Virtual machine size: Standard D2s v3, 2 vCPU's, 8 GiB memory 
+    * Number of VMs: 1 
+    * Select the virtual network created in previous step. 
+    * Domain to join: Microsoft Entra ID 
+    * Enter the admin account credentials. 
+1. Leave other options to default and select **Review + create**.
+
+### Test the tenant restriction
+
+### Test source IP restoration
+
 
 ## Next steps
 
