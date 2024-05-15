@@ -110,6 +110,27 @@ You have two main options for signing in users using Microsoft Authentication Li
     
     In the `onError` method, it logs authentication failure along with the exception details. In the `onCancel` method, it logs when the user cancels the authentication process.
 
+    Once your app acquires an ID token, you can retrieve the claims associated with the current account. To do so, use the following code snippet:
+
+    ```kotlin
+    val idToken = authenticationResult.account.idToken
+    
+    // Function to decode the ID token
+
+    fun decodeIdToken(idToken: String): Map<String, Any> {
+    val parts = idToken.split(".")
+        val decodedPayload = String(Base64.decode(parts[1], Base64.URL_SAFE), Charsets.UTF_8)
+        return Gson().fromJson(decodedPayload, Map::class.java) as Map<String, Any>
+    }
+
+    val idTokenClaims = decodeIdToken(idToken)
+
+    val userEmail = idTokenClaims["email"] as? String
+
+    ```
+
+    The code snippet retrieves the ID token from the authentication result, then decodes it to extract the claims. It splits the token into its parts, decodes the payload, and parses it into a map using Gson. Finally, it retrieves the user's email from the decoded claims.
+
     Make sure you include the import statements. Android Studio should include the import statements for you automatically.
 
 1. To sign in user silently, use the following code:
