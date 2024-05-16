@@ -30,7 +30,7 @@ Updating permissions for your app isn't only a security best practice, but also 
 To update an app's requested permissions, you need:
 
 - A Microsoft Entra user account. If you don't already have one, [create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- One of the following roles: Global Administrator, Application Administrator, Cloud Application Administrator. An application owner who isn't an administrator is able to update an app's requested permissions.
+- One of the following roles: Application Administrator, Cloud Application Administrator. An application owner who isn't an administrator is able to update an app's requested permissions.
 
 ## Scenarios for updating permissions
 
