@@ -178,8 +178,8 @@ You should have two Kerberos tickets, one for your on-premises AD with the ticke
 
 Validate your configuration is working by testing with appropriate Kerberos-capable resources:
 
-1. Test on-premises Active Directory functionality by accessing an on-premises AD-integrated file server using Finder or a web application using Safari.
-2. Test Entra ID Kerberos functionality by accessing an Azure Files share enabled for Entra ID cloud kerberos. Refer to [this guide](/azure/storage/files/storage-files-identity-auth-hybrid-identities-enable) if you need to configure a cloud file share in Azure Files.
+1. Test on-premises Active Directory functionality by accessing an on-premises AD-integrated file server using Finder or a web application using Safari. The user should be able to access the file share without being challenged for interactive credentials.
+2. Test Entra ID Kerberos functionality by accessing an Azure Files share enabled for Entra ID cloud kerberos. The user should be able to access the file share without being challenged for interactive credentials. Refer to [this guide](/azure/storage/files/storage-files-identity-auth-hybrid-identities-enable) if you need to configure a cloud file share in Azure Files.
 
 ## See also
 
