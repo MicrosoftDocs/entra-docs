@@ -133,7 +133,7 @@ The following examples show how to assign a custom security attribute role to a 
 
 ```powershell
 $roleDefinitionId = "58a13ea3-c632-46ae-9ee0-9c0d43cd7f3d"
-$principalId = "f8ca5a85-489a-49a0-b555-0a6d81e56f0d"
+$principalId = "aaaaaaaa-bbbb-cccc-1111-222222222222"
 $directoryScopeId = "/attributeSets/Engineering"
 $roleAssignment = New-MgRoleManagementDirectoryRoleAssignment -RoleDefinitionId $roleDefinitionId -PrincipalId $principalId -DirectoryScopeId $directoryScopeId
 ```
@@ -149,7 +149,7 @@ Content-type: application/json
 {
     "@odata.type": "#microsoft.graph.unifiedRoleAssignment",
     "roleDefinitionId": "58a13ea3-c632-46ae-9ee0-9c0d43cd7f3d",
-    "principalId": "f8ca5a85-489a-49a0-b555-0a6d81e56f0d",
+    "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
     "directoryScopeId": "/attributeSets/Engineering"
 }
 ```
@@ -160,7 +160,7 @@ Content-type: application/json
 
 ```powershell
 $roleDefinitionId = "58a13ea3-c632-46ae-9ee0-9c0d43cd7f3d"
-$principalId = "f8ca5a85-489a-49a0-b555-0a6d81e56f0d"
+$principalId = "aaaaaaaa-bbbb-cccc-1111-222222222222"
 $directoryScope = "/attributeSets/Engineering"
 $roleAssignment = New-AzureADMSRoleAssignment -RoleDefinitionId $roleDefinitionId -PrincipalId $principalId -DirectoryScopeId $directoryScope
 ```
@@ -187,7 +187,7 @@ The following examples show how to assign a custom security attribute role to a 
 
 ```powershell
 $roleDefinitionId = "58a13ea3-c632-46ae-9ee0-9c0d43cd7f3d"
-$principalId = "f8ca5a85-489a-49a0-b555-0a6d81e56f0d"
+$principalId = "aaaaaaaa-bbbb-cccc-1111-222222222222"
 $directoryScopeId = "/"
 $roleAssignment = New-MgRoleManagementDirectoryRoleAssignment -RoleDefinitionId $roleDefinitionId -PrincipalId $principalId -DirectoryScopeId $directoryScopeId
 ```
@@ -203,7 +203,7 @@ Content-type: application/json
 {
     "@odata.type": "#microsoft.graph.unifiedRoleAssignment",
     "roleDefinitionId": "58a13ea3-c632-46ae-9ee0-9c0d43cd7f3d",
-    "principalId": "f8ca5a85-489a-49a0-b555-0a6d81e56f0d",
+    "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
     "directoryScopeId": "/"
 }
 ```
@@ -214,7 +214,7 @@ Content-type: application/json
 
 ```powershell
 $roleDefinitionId = "58a13ea3-c632-46ae-9ee0-9c0d43cd7f3d"
-$principalId = "f8ca5a85-489a-49a0-b555-0a6d81e56f0d"
+$principalId = "aaaaaaaa-bbbb-cccc-1111-222222222222"
 $directoryScope = "/"
 $roleAssignment = New-AzureADMSRoleAssignment -RoleDefinitionId $roleDefinitionId -PrincipalId $principalId -DirectoryScopeId $directoryScope
 ```
