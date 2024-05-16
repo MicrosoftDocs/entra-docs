@@ -172,7 +172,7 @@ For more information, see [What is a multitenant organization in Microsoft Entra
 
 Following the creation of a multitenant organization, Microsoft offers two methods to provision employees into neighboring multitenant organization tenants at scale. 
  
-- For enterprise organizations of complex identity landscapes, we recommend using [cross-tenant synchronization in Microsoft Entra ID](./cross-tenant-synchronization-overview.md). Cross-tenant synchronization is highly configurable and allows the provisioning of any multi-hub multi-spoke identity landscape.
+- For enterprise organizations with complex identity topologies, we recommend using [cross-tenant synchronization in Microsoft Entra ID](./cross-tenant-synchronization-overview.md). Cross-tenant synchronization is highly configurable and allows the provisioning of any multi-hub multi-spoke identity topology.
 - For smaller multitenant organizations where employees are to be provisioned into all tenants, we recommend staying in Microsoft 365 admin center to [simultaneously synchronize users into multiple tenants](/microsoft-365/enterprise/sync-users-multi-tenant-orgs) of your multitenant organization.
 - If you already have your own at-scale user provisioning engine, you can enjoy the new multitenant organization benefits while continuing to use your own engine to manage the lifecycle of your employees.
 
@@ -185,8 +185,8 @@ Here are the primary benefits of using Microsoft 365 admin center to create your
 
 Here are the primary constraints with using Microsoft 365 admin center to create your multitenant organization and/or provision employees.:
 
-- Microsoft 365 admin center will pre-configure cross-tenant synchronization jobs, but will not start them unless users are shared using Microsoft 365 admin center.
-- Complex identity landscapes, such as multi-hub, multi-spoke systems, are better provisioned using cross-tenant synchronization.
+- Microsoft 365 admin center will pre-configure but not start cross-tenant synchronization jobs, even if you intend to use cross-tenant synchronization in Microsoft Entra admin center.
+- Complex identity topologies, such as multi-hub, multi-spoke systems, are better provisioned using cross-tenant synchronization in Microsoft Entra admin portal.
 
 For more information, see [Microsoft 365 multitenant collaboration](/microsoft-365/enterprise/plan-multi-tenant-org-overview).
 
