@@ -28,7 +28,7 @@ You can migrate federation to Microsoft Entra ID in a staged manner to ensure a 
 
 - An Office 365 tenant federated to Okta for SSO
 - A Microsoft Entra Connect server or Microsoft Entra Connect cloud provisioning agents configured for user provisioning to Microsoft Entra ID
-- One of the following roles: Global Administrator, Application Administrator, Cloud Application Administrator, or Hybrid Identity Administrator.
+- One of the following roles: Application Administrator, Cloud Application Administrator, or Hybrid Identity Administrator.
 
 <a name='configure-azure-ad-connect-for-authentication'></a>
 
@@ -69,9 +69,9 @@ For this tutorial, you configure password hash synchronization and seamless SSO.
 
    ![Screenshot of the Microsoft Entra Connect app with the page for changing user sign-in.](media/migrate-okta-federation/change-user-signin.png)
 
-5. Enter the credentials of the Global Administrator of the Microsoft Entra Connect server.
+5. Enter the credentials of the Hybrid Identity Administrator of the Microsoft Entra Connect server.
 
-   ![Screenshot of the Microsoft Entra Connect app that shows where to enter Global Administrator credentials.](media/migrate-okta-federation/global-admin-credentials.png)
+   ![Screenshot of the Microsoft Entra Connect app that shows where to enter Hybrid Identity Administrator credentials.](media/migrate-okta-federation/global-admin-credentials.png)
 
 6. The server is configured for federation with Okta. Change the selection to **Password Hash Synchronization**. 
 7. Select **Enable single sign-on**.
@@ -274,7 +274,7 @@ Learn more: [Configure your company branding](~/fundamentals/how-to-customize-br
 
 When your organization is comfortable with the managed authentication experience, you can defederate your domain from Okta. To begin, use the following commands to connect to Microsoft Graph PowerShell. If you don't have the Microsoft Graph PowerShell module, download it by entering `Install-Module Microsoft.Graph`.
 
-1. In PowerShell, sign in to Microsoft Entra ID by using a Global Administrator account.
+1. In PowerShell, sign in to Microsoft Entra ID by using a Hybrid Identity Administrator account.
    ```powershell
     Connect-MgGraph -Scopes "Domain.ReadWrite.All", "Directory.AccessAsUser.All"
     ```

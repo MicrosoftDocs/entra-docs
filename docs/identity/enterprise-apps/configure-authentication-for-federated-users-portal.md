@@ -36,7 +36,7 @@ For federated users with cloud-enabled credentials, such as SMS sign-in or FIDO 
 To configure HRD policy for an application in Microsoft Entra ID, you need:
 
 - An Azure account with an active subscription. If you don't already have one, you can [create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- One of the following roles: Global Administrator, or owner of the service principal.
+- One of the following roles: Application Administrator, Cloud Application Administrator or owner of the service principal.
 
 :::zone pivot="powershell-hrd"
 - The latest Azure AD PowerShell cmdlet preview.
