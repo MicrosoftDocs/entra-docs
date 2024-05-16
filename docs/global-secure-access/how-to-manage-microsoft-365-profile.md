@@ -95,21 +95,7 @@ Traffic profiles can be assigned to remote networks, so that the network traffic
 1. Select a remote network from the list and select **Add**.
 
 ## User and group assignments
-You can scope the Microsoft 365 profile to specific users and groups.
-
-If the traffic profile is disabled then, when you enable it, you see that there are zero users and zero groups assigned. This default behavior lets you slowly roll out the feature in a controlled manner.
-
-To scope the traffic profile to a specific user or group:
-1. Select the **View** link next to **0 Users, 0 Groups assigned**.
-1. Select the link **0 Users, 0 Groups assigned** to select specific users or groups. Alternatively, select the toggle to assign the traffic profile to all users.
-1. Select **Add user/group**.
-1. Select a user or group for the traffic forwarding profile and then select **Assign**.
-
-> [!NOTE]
-> - Group-based assignment requires Microsoft Entra ID P1 or P2 license.
-> - Group-based assignment is supported for Security groups and Microsoft 365 groups whose `SecurityEnabled` setting is set to `True`.
-> - Nested group membership isn't supported. 
-> - Multiple sessions/users logging into the same device is not supported.
+You can scope the Microsoft 365 profile to specific users and groups. To learn more about user and group assignment, see [How to assign and manage users and groups with traffic forwarding profiles](how-to-manage-users-groups-assignment.md).
 
 [!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
 
