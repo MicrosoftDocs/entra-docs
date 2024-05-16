@@ -183,7 +183,7 @@ There are two different states for connected organizations in entitlement manage
 
 - A **configured** connected organization is a fully functional connected organization that allows users within that organization access to access packages. When an admin creates a new connected organization in the Microsoft Entra admin center, it is in the **configured** state by default since the administrator created and wants to use this connected organization. Additionally, when a connected org is created programmatically via the API, the default state should be **configured** unless set to another state explicitly.
 
-    Configured connected organizations shows up in the pickers for connected organizations and will be in scope for any policies that target “all configured connected organizations”.
+    Configured connected organizations show up in the pickers for connected organizations and will be in scope for any policies that target “all configured connected organizations”.
 
 - A **proposed** connected organization is a connected organization that has been automatically created, but hasn't had an administrator create or approve the organization. When a user signs up for an access package outside of a configured connected organization, any automatically created connected organizations are in the **proposed** state since no administrator in the tenant set-up that partnership.
     
