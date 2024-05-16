@@ -60,4 +60,4 @@ Group-based assignment is supported for Security groups and Microsoft 365 groups
 Nested group memberships are not supported. A user must be a direct member of the group assigned to the profile. 
 
 ## Next steps
-- [What is Global Secure Access?](overview-what-is-global-secure-access.md)
+- [Learn about Global Secure Access clients](concept-clients.md)
