@@ -61,12 +61,6 @@ Conditional Access policies for Private Access are configured at the application
 
 For more information, see [Apply Conditional Access policies to Private Access apps](how-to-target-resource-private-access-apps.md).
 
-### Edit an existing Conditional Access policy
-
-1. Select the **View** link for **Linked Conditional Access policies**.
-1. Select a policy from the list. The details of the policy open in Conditional Access. 
-
-
 ## User and group assignments
 You can scope the Private Access profile to specific users and groups. To learn more about user and group assignment, see [How to assign and manage users and groups with traffic forwarding profiles](how-to-manage-users-groups-assignment.md).
 
