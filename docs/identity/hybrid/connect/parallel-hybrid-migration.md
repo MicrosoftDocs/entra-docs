@@ -32,7 +32,7 @@ This scenario provides a solution using existing Microsoft toolset to set up Hyb
 - Users in your on-premises Active Directory, should be seperated in their own organizational unit (OU).
 - Each Microsoft Entra Connect Server will have its synchronization rules scoped to individual OUs.
 - All of the migrating tenants primary domains must be added and verified in M365
-- You should be familiar with [Exchnage hybrid deployments](/exchange/exchange-hybrid)
+- You should be familiar with [Exchange hybrid deployments](/exchange/exchange-hybrid)
 - Make sure that you meet the [Microsoft Entra Connect pre-requisites](how-to-connect-install-prerequisites.md).
 - Make sure that you meet the [pre-requisites for the Hybrid Configuration Wizard](/exchange/hybrid-deployment-prerequisites).
 
@@ -50,7 +50,7 @@ The following outlines the steps for the multi-organizational on-premises Exchan
 4. Enable **Exchange Hybrid deployment** and **Password hash synchronization**
 
  :::image type="content" source="media/parallel-hybrid-migration/features-1.png" alt-text="Screenshot of optional features." lightbox="media/parallel-hybrid-migration/features-1.png":::
- 
+
 5. Follow the [post installation tasks](how-to-connect-post-installation.md) for Microsoft Entra Connect.
 6. Verify all of the users have been synchronized to the target tenant.  
 
