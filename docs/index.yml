@@ -10,7 +10,25 @@ metadata:
   ms.topic: hub-page
   author: CelesteDG
   ms.author: celested
-  ms.date: 03/23/2024
+  ms.date: 05/16/2024
+
+## BAND 1 - HIGHLIGHTED CONTENT ##############################################
+highlightedContent:
+  items:
+    - title: What is Microsoft Entra ID?
+      itemType: overview
+      url: /entra/identity-platform/v2-overview
+    - title: Identity fundamentals
+      url: /entra/fundamentals/identity-fundamental-concepts
+      itemType: concept
+    - title: Create a new workforce tenant
+      url: /entra/fundamentals/create-new-tenant
+      itemType: quickstart
+    - title: What is Microsoft Entra External ID?
+      url: /entra/external-id/external-identities-overview
+      itemType: overview
+
+## BAND 1 - HIGHLIGHTED CONTENT END ##########################################
 
 productDirectory:
   title: Get started
@@ -28,7 +46,7 @@ productDirectory:
       summary: "Protect, monitor, and audit access to critical assets while ensuring employee productivity."
       url: /entra/id-governance/
     - title: Microsoft Entra External ID
-      imageSrc: ./media/index/placeholder-icon.png
+      imageSrc: ./media/index/external-id-color.png
       summary: "Secure and manage any external user, including customers and partners, in your organization."
       url: /entra/external-id/
     - title: Microsoft Entra Internet Access
@@ -59,9 +77,9 @@ conceptualContent:
     ## CARD 1 ######################
     - title: Fundamentals
       links:
-        - text: What is Microsoft Entra ID?
-          url: /entra/fundamentals/whatis
-          itemType: overview
+        - text: New name for Azure AD
+          url: /entra/fundamentals/new-name
+          itemType: concept
         - text: Access the admin center and create a tenant
           url: /entra/fundamentals/create-new-tenant
           itemType: quickstart
