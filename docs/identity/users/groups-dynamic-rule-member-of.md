@@ -25,7 +25,7 @@ With this preview, admins can configure dynamic groups with the `memberOf` attri
 
 ## Prerequisites
 
-Only administrators in the Global Administrator, Intune Administrator, or User Administrator role can use the `memberOf` attribute to create a Microsoft Entra dynamic group. You must have a Microsoft Entra ID P1 or P2 license for the Microsoft Entra tenant.
+You must be at least a [User Administrator](/entra/identity/role-based-access-control/permissions-reference#user-administrator) to use the `memberOf` attribute to create a Microsoft Entra dynamic group. You must have a Microsoft Entra ID P1 or P2 license for the Microsoft Entra tenant.
 
 ## Preview limitations
 

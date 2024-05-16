@@ -24,7 +24,7 @@ In this article, you learn how to review and take action on admin consent reques
 To review and take action on admin consent requests, you need:
 
 - An Azure account. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- A Global Administrator or a designated reviewer with the appropriate role to [review admin consent requests](grant-admin-consent.md#prerequisites).
+- An administrator role or a designated reviewer with the appropriate role to [review admin consent requests](grant-admin-consent.md#prerequisites).
 
 ## Review and take action on admin consent requests
 

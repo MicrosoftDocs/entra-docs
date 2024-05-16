@@ -95,12 +95,7 @@ Another aspect of privileged account management that should be implemented is in
 
 ### Emergency access accounts
 
-Organizations must create [emergency accounts](~/identity/role-based-access-control/security-emergency-access.md) to be prepared to manage Microsoft Entra ID for cases such as authentication outages like:
-
-- Outage components of authentication infrastructures (AD FS, On-premises AD, MFA service)
-- Administrative staff turnover
-
-To prevent being inadvertently locked out of your tenant because you can't sign in or activate an existing individual user's account as an administrator, you should create two or more emergency accounts and ensure they're implemented and aligned with [Microsoft's best practices](~/identity/role-based-access-control/security-planning.md) and [break glass procedures](~/identity/role-based-access-control/security-planning.md#break-glass-what-to-do-in-an-emergency).
+[!INCLUDE [emergency-access-accounts](../includes/definitions/emergency-access-accounts.md)]
 
 ### Privileged access to Azure EA portal
 
