@@ -49,7 +49,7 @@ You can create and assign a dynamic group of users based on user attributes. You
 
 Profiles are fetched on behalf of the Microsoft Entra user logged into the device​, not the user logged into the client​. 
 
-If there is no Microsoft Entra user logged in, then profile is fetched only if it is assigned to all users. For example, if you are logged into the device as a localadmin.
+If there is no Microsoft Entra user logged in, then profile is fetched only if it is assigned to all users. For example, if you are logged into the device as a local admin.
 
 Simultaneous multiple user logins on the same device is not supported. 
 
