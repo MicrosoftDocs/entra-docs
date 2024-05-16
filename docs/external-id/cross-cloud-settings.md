@@ -21,7 +21,10 @@ When Microsoft Entra organizations in separate Microsoft Azure clouds need to co
 - Microsoft Azure commercial cloud and Microsoft Azure Government
 - Microsoft Azure commercial cloud and Microsoft Azure operated by 21Vianet
 
-To set up B2B collaboration between partner organizations in different Microsoft Azure clouds, each partner mutually agrees to configure B2B collaboration with each other. In each organization, an admin completes the following steps:
+> [!IMPORTANT]
+> To set up B2B collaboration between partner organizations in different Microsoft Azure clouds, each partner must agree to configure B2B collaboration with each other.
+
+In each organization, an admin completes the following steps:
 
 1. Configures their Microsoft cloud settings to enable collaboration with the partner's cloud.
 
