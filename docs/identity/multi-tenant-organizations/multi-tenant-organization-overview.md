@@ -58,20 +58,20 @@ Here are the primary benefits of a multitenant organization:
     - [Set up Viva Engage for a multitenant organization](/Viva/engage/mto-setup)
     - [Multitenant organization capabilities now available](https://techcommunity.microsoft.com/t5/microsoft-365-blog/multi-tenant-organization-capabilities-now-available-in/ba-p/4122812)
 
-## Who are multitenant organization members?
+## Who are multitenant organization member users?
 
-By defining a multitenant organization, as well as pivoting on the Microsoft Entra user property of userType, [external users](~/external-id/user-properties.md) (B2B collaboration users) are segmented as follows:
+When you define a multitenant organization, external users (B2B collaboration users) are segmented in the following ways based on the userType property:
 
-- External members originating from within a multitenant organization
-- External guests originating from within a multitenant organization
-- External members originating from outside of your organization
-- External guests originating from outside of your organization
+- External members that originate from within a multitenant organization
+- External guests that originate from within a multitenant organization
+- External members that originate from outside of your organization
+- External guests that originate from outside of your organization
 
-This segmentation of external users, due to the definition of a multitenant organization, enables administrators to better differentiate in-organization from out-of-organization external users.
+This segmentation of external users, enables you to better differentiate in-organization from out-of-organization external users in a multitenant organization.
 
-External members originating from within a multitenant organization are called multitenant organization members.
+External members that originate from within a multitenant organization are sometimes called multitenant organization member users.
 
-Multitenant collaboration capabilities in Microsoft 365 aim to provide a seamless collaboration experience across tenant boundaries when collaborating with multitenant organization member users.
+Multitenant collaboration capabilities in Microsoft 365 help provide a seamless collaboration experience across tenant boundaries when collaborating with multitenant organization member users.
 
 ## How does a multitenant organization work?
 
