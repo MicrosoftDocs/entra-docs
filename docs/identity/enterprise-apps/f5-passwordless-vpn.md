@@ -232,8 +232,6 @@ A BIG-IP connection profile is required to configure VPN client-type settings th
 
     ![Screenshot of Profile Name and Parent Name entries in Create New Connectivity Profile.](media/f5-passwordless-vpn/create-connectivity-profile.png)
 
-For more information on client support, see the F5 article, [F5 Access and BIG-IP Edge Client](https://techdocs.f5.com/kb/en-us/bigip-edge-apps.html).
-
 ## Access profile configuration
 
 An access policy enables the service for SAML authentication.
