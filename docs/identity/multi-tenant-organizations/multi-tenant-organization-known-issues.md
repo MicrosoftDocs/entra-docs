@@ -92,7 +92,7 @@ The limitations described in this article have the following scope.
 
 ## Global address list managed in the host tenant
 
-- The [showInAddressList](/graph/api/resources/user#properties) property of a B2B user can be updated with global administrator privileges in Graph Explorer or Microsoft Graph PowerShell.
+- The [showInAddressList](/graph/api/resources/user#properties) property of a B2B user can be updated with [User Administrator](../role-based-access-control/permissions-reference.md#user-administrator) privileges in Graph Explorer or Microsoft Graph PowerShell.
 
 - Updating the [showInAddressList](/graph/api/resources/user#properties) property on the user object will also update the hide recipients from address lists setting in Microsoft Exchange Online.
 
