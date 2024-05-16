@@ -28,12 +28,12 @@ The AD FS application activity report in the [Microsoft Entra admin center](http
 * **Prioritize applications for migration.** Get the number of unique users who have signed in to the application in the past 1, 7, or 30 days to help determine the criticality or risk of migrating the application.
 * **Run migration tests and fix issues.** The reporting service automatically runs tests to determine if an application is ready to migrate. The results are displayed in the AD FS application activity report as a migration status. If the AD FS configuration is not compatible with a Microsoft Entra configuration, you get specific guidance on how to address the configuration in Microsoft Entra ID.
 
-The AD FS application activity data is available to users who are assigned any of these admin roles: global administrator, reports reader, security reader, application administrator, or cloud application administrator.
+The AD FS application activity data is available to users who are assigned any of these admin roles: Reports Reader, Security Reader, Application Administrator, or Cloud Application Administrator.
 
 ## Prerequisites
 
 - Your organization must be currently using AD FS to access applications.
-- One of the following roles: Global Administrator, Cloud Application Administrator, Application Administrator, Global Reader, or owner of the service principal.
+- One of the following roles: Cloud Application Administrator, Application Administrator, Global Reader, or owner of the service principal.
 - Microsoft Entra Connect Health must be enabled in your Microsoft Entra tenant.
 - The Microsoft Entra Connect Health for AD FS agent must be installed.
 - [Learn more about Microsoft Entra Connect Health](~/identity/hybrid/connect/how-to-connect-health-adfs.md).
