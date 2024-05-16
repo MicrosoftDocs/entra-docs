@@ -32,11 +32,14 @@ This article describes how to create one or more access reviews for group member
 
 - Microsoft Entra ID P2 or Microsoft Entra ID Governance licenses.  
 - Creating a review on inactive users, or with [user-to-group affiliation](review-recommendations-access-reviews.md#user-to-group-affiliation) recommendations, requires a Microsoft Entra ID Governance license.
-- Global administrator or Identity Governance administrator to create reviews on groups or applications.
+- Global Administrator or Identity Governance Administrator to create reviews on groups or applications.
 - Users must be in the Global administrator role or the Privileged Role administrator role to create reviews on role-assignable groups. For more information, see [Use Microsoft Entra groups to manage role assignments](../identity/role-based-access-control/groups-concept.md).
 - Microsoft 365 and Security group owner.
 
 For more information, see [License requirements](access-reviews-overview.md#license-requirements).
+
+> [!NOTE]
+> Following least privilege access, we recommend using the Identity Governance Administrator role.
 
 If you're reviewing access to an application, then before creating the review, see the article on how to [prepare for an access review of users' access to an application](access-reviews-application-preparation.md) to ensure the application is integrated with Microsoft Entra ID in your tenant.
 

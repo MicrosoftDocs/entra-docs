@@ -20,6 +20,9 @@ To review users' active access package assignments, the creator of a review must
 - Microsoft Entra ID P2 or Microsoft Entra ID Governance
 - Be using at least the Identity Governance Administrator role
 
+> [!NOTE]
+> Following least privilege access, we recommend using the Identity Governance Administrator role.
+
 For more information, see [License requirements](entitlement-management-overview.md#license-requirements).
 
 >[!NOTE]
