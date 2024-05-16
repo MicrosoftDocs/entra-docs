@@ -17,11 +17,11 @@ highlightedContent:
   items:
     - title: What is Microsoft Entra ID?
       itemType: overview
-      url: /entra/identity-platform/v2-overview
+      url: /entra/fundamentals/whatis
     - title: Identity fundamentals
       url: /entra/fundamentals/identity-fundamental-concepts
       itemType: concept
-    - title: Create a new workforce tenant
+    - title: Create a new tenant
       url: /entra/fundamentals/create-new-tenant
       itemType: quickstart
     - title: What is Microsoft Entra External ID?
