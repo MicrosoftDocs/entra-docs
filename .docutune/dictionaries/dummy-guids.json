@@ -1,18 +1,79 @@
 {
-  "applicationId": [ "00001111-aaaa-2222-bbbb-3333cccc4444" ],
-  "certificateId": [ "0a0a0a0a-1111-bbbb-2222-3c3c3c3c3c3c" ],
-  "clientId": [ "00001111-aaaa-2222-bbbb-3333cccc4444" ],
-  "clientSecretValue": [ "A1b-C2d_E3f.H4i,J5k?L6m!N7o-P8q_R9s.T0u" ],
-  "clientSecretValueAlphanumeric": [ "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u..." ],
-  "correlationId": [ "aaaa0000-bb11-2222-33cc-444444dddddd" ],
-  "directoryId": [ "aaaabbbb-0000-cccc-1111-dddd2222eeee" ],
-  "objectId": [ "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb" ],
-  "organizationId": [ "00aa00aa-bb11-cc22-dd33-44ee44ee44ee" ],
-  "policyId": [ "1aaaaaa1-2bb2-3cc3-4dd4-5eeeeeeeeee5" ],
-  "secretId": [ "aaaaaaaa-0b0b-1c1c-2d2d-333333333333" ],
-  "signatureHash": [ "aB1cD2=eF3gH4+iJ5kL6-mN7oP8q" ],
-  "subscriptionId": [ "aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e" ],
-  "tenantId": [ "aaaabbbb-0000-cccc-1111-dddd2222eeee" ],
-  "thumbprint": [ "00AA11BB22CC33DD44EE55FF66EE77DD88CC99" ],
-  "traceId": [ "0000aaaa-11bb-cccc-dd22-eeeeee333333" ]
+  "applicationId": [
+    "00001111-aaaa-2222-bbbb-3333cccc4444",
+    "11112222-bbbb-3333-cccc-4444dddd5555",
+    "22223333-cccc-4444-dddd-5555eeee6666"
+  ],
+  "appId": [
+    "00001111-aaaa-2222-bbbb-3333cccc4444",
+    "11112222-bbbb-3333-cccc-4444dddd5555",
+    "22223333-cccc-4444-dddd-5555eeee6666"
+  ],
+  "certificateId": [
+    "0a0a0a0a-1111-bbbb-2222-3c3c3c3c3c3c"
+  ],
+  "clientId": [
+    "00001111-aaaa-2222-bbbb-3333cccc4444",
+    "11112222-bbbb-3333-cccc-4444dddd5555",
+    "22223333-cccc-4444-dddd-5555eeee6666"
+  ],
+  "clientSecret": [
+    "A1b-C2d_E3f.H4i,J5k?L6m!N7o-P8q_R9s.T0u"
+  ],
+  "clientSecretValue": [
+    "A1b-C2d_E3f.H4i,J5k?L6m!N7o-P8q_R9s.T0u"
+  ],
+  "clientSecretValueAlphanumeric": [
+    "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u..."
+  ],
+  "correlationId": [
+    "aaaa0000-bb11-2222-33cc-444444dddddd",
+    "bbbb1111-cc22-3333-44dd-555555eeeeee",
+    "cccc2222-dd33-4444-55ee-666666ffffff"
+  ],
+  "directoryId": [
+    "aaaabbbb-0000-cccc-1111-dddd2222eeee",
+    "bbbbcccc-1111-dddd-2222-eeee3333ffff",
+    "ccccdddd-2222-eeee-3333-ffff4444aaaa"
+  ],
+  "entityId": [
+    "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
+    "11bb11bb-cc22-dd33-ee44-55ff55ff55ff",
+    "22cc22cc-dd33-ee44-ff55-66aa66aa66aa"
+  ],
+  "objectId": [
+    "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
+    "bbbbbbbb-1111-2222-3333-cccccccccccc",
+    "cccccccc-2222-3333-4444-dddddddddddd"
+  ],
+  "organizationId": [
+    "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
+    "11bb11bb-cc22-dd33-ee44-55ff55ff55ff",
+    "22cc22cc-dd33-ee44-ff55-66aa66aa66aa"
+  ],
+  "policyId": [
+    "1aaaaaa1-2bb2-3cc3-4dd4-5eeeeeeeeee5"
+  ],
+  "secretId": [
+    "aaaaaaaa-0b0b-1c1c-2d2d-333333333333"
+  ],
+  "signatureHash": [
+    "aB1cD2=eF3gH4+iJ5kL6-mN7oP8q"
+  ],
+  "subscriptionId": [
+    "aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e"
+  ],
+  "tenantId": [
+    "aaaabbbb-0000-cccc-1111-dddd2222eeee",
+    "bbbbcccc-1111-dddd-2222-eeee3333ffff",
+    "ccccdddd-2222-eeee-3333-ffff4444aaaa"
+  ],
+  "thumbprint": [
+    "00AA11BB22CC33DD44EE55FF66EE77DD88CC99"
+  ],
+  "traceId": [
+    "0000aaaa-11bb-cccc-dd22-eeeeee333333",
+    "1111bbbb-22cc-dddd-ee33-ffffff444444",
+    "2222cccc-33dd-eeee-ff44-aaaaaa555555"
+  ]
 }

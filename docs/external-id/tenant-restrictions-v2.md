@@ -332,7 +332,7 @@ Universal tenant restrictions v2 as part of [Microsoft Entra Global Secure Acces
 
 ### Option 2: Set up tenant restrictions v2 on your corporate proxy
 
-Tenant restrictions v2 policies can't be directly enforced on non-Windows 10, Windows 11, or Windows Server 2022 devices, such as Mac computers, mobile devices, unsupported Windows applications, and Chrome browsers. To ensure sign-ins are restricted on all devices and apps in your corporate network, configure your corporate proxy to enforce tenant restrictions v2. Although configuring tenant restrictions on your corporate proxy doesn't provide data plane protection, it does provide authentication plane protection.
+To ensure sign-ins are restricted on all devices and apps in your corporate network, configure your corporate proxy to enforce tenant restrictions v2. Although configuring tenant restrictions on your corporate proxy doesn't provide data plane protection, it does provide authentication plane protection.
 
 > [!IMPORTANT]
 > If you've previously set up tenant restrictions, you'll need to stop sending `restrict-msa` to login.live.com. Otherwise, the new settings will conflict with your existing instructions to the MSA login service.
