@@ -15,7 +15,7 @@ Lifecycle Workflows currently support the following tasks:
 | [Send welcome email to new hire](../id-governance/lifecycle-workflow-tasks.md#send-welcome-email-to-new-hire)     |   70b29d51-b59a-4773-9280-8841dfd3f2ea      | Joiner         |
 | [Send onboarding reminder email](../id-governance/lifecycle-workflow-tasks.md#send-onboarding-reminder-email)   |   3C860712-2D37-42A4-928F-5C93935D26A1     | Joiner         |
 | [Generate Temporary Access Pass and send via email to user's manager](../id-governance/lifecycle-workflow-tasks.md#generate-temporary-access-pass-and-send-via-email-to-users-manager)     |  1b555e50-7f65-41d5-b514-5894a026d10d       | Joiner         |
-|[ Send email to notify manager of user move]     |  aab41899-9972-422a-9d97-f626014578b7       | Mover         |
+|[Send email to notify manager of user move](../id-governance/lifecycle-workflow-tasks.md#send-email-to-notify-manager-of-user-move)     |  aab41899-9972-422a-9d97-f626014578b7       | Mover         |
 | [Request user access package assignment]     |  c1ec1e76-f374-4375-aaa6-0bb6bd4c60be       | Joiner, Mover         |
 | [Add user to groups]     |    22085229-5809-45e8-97fd-270d28d66910     | Joiner, Leaver, Mover
 | [Add user to teams]      |  e440ed8d-25a1-4618-84ce-091ed5be5594       | Joiner, Leaver, Mover
