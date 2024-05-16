@@ -22,7 +22,7 @@ Lifecycle Workflows currently support the following tasks:
 |[Enable user account](../id-governance/lifecycle-workflow-tasks.md#enable-user-account)     |    6fc52c9d-398b-4305-9763-15f42c1676fc     | Joiner, Leaver
 | [Run a custom task extension](../id-governance/lifecycle-workflow-tasks.md#run-a-custom-task-extension)    |    4262b724-8dba-4fad-afc3-43fcbb497a0e    | Joiner, Leaver, Mover
 | [Disable user account](../id-governance/lifecycle-workflow-tasks.md#disable-user-account)     |   1dfdfcc7-52fa-4c2e-bf3a-e3919cc12950      | Leaver
-| [Remove user from selected group]     |   1953a66c-751c-45e5-8bfe-01462c70da3c      | Joiner, Leaver, Mover
+| [Remove user from selected groups](../id-governance/lifecycle-workflow-tasks.md#remove-user-from-selected-groups)     |   1953a66c-751c-45e5-8bfe-01462c70da3c      | Joiner, Leaver, Mover
 | [Remove users from all groups]     |    b3a31406-2a15-4c9a-b25b-a658fa5f07fc     | Leaver
 | [Remove user from teams]    |    06aa7acb-01af-4824-8899-b14e5ed788d6     | Leaver        |
 | [Remove user from all teams]     |    81f7b200-2816-4b3b-8c5d-dc556f07b024     | Leaver        |
