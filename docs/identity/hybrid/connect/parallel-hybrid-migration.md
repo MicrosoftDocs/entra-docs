@@ -44,11 +44,11 @@ The following outlines the steps for the multi-organizational on-premises Exchan
 1. On each of the [virtual machines](/windows-server/virtualization/hyper-v/get-started/create-a-virtual-machine-in-hyper-v?tabs=hyper-v-manager) that were created, [download](https://www.microsoft.com/en-us/download/details.aspx?id=47594) Microsoft Entra Connect.
 2. Install Microsoft Entra Connect using [custom settings](how-to-connect-install-custom.md). 
 3. Scope to the source [on-prem Organizational Unit](how-to-connect-sync-configure-filtering.md#organizational-unitbased-filtering) to the OU that corresponds to the tenant you are synchronizing Micrsofot Entra Connect with.
-     
-     :::image type="content" source="media/parallel-hybrid-migration/scope-1.png" alt-text="Screenshot of scoping OU." lightbox="media/parallel-hybrid-migration/scope-1.png":::
+ :::image type="content" source="media/parallel-hybrid-migration/scope-1.png" alt-text="Screenshot of scoping OU." lightbox="media/parallel-hybrid-migration/scope-1.png":::
+
 4. Enable **Exchange Hybrid deployment** and **Password hash synchronization**
- 
-     :::image type="content" source="media/parallel-hybrid-migration/features-1.png" alt-text="Screenshot of optional features." lightbox="media/parallel-hybrid-migration/features-1.png":::
+ :::image type="content" source="media/parallel-hybrid-migration/features-1.png" alt-text="Screenshot of optional features." lightbox="media/parallel-hybrid-migration/features-1.png":::
+
 5. Follow the [post installation tasks](how-to-connect-post-installation.md) for Microsoft Entra Connect.
 6. Verify all of the users have been synchronized to the target tenant.  
 
