@@ -36,6 +36,9 @@ In this tutorial, you configure and test Microsoft Entra SSO in a test environme
 
 * TechSafe Entra ID SSO supports only **SP** initiated SSO.
 
+> [!NOTE]
+> Identifier of this application is a fixed string value so only one instance can be configured in one tenant.
+
 ## Add TechSafe Entra ID SSO from the gallery
 
 To configure the integration of TechSafe Entra ID SSO into Microsoft Entra ID, you need to add TechSafe Entra ID SSO from the gallery to your list of managed SaaS apps.
@@ -74,13 +77,13 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 1. On the **Basic SAML Configuration** section, perform the following steps:
 
     a. In the **Identifier (Entity ID)** text box, type a URL using the following pattern:
-    `https://portal.TechSafe Entra ID SSO.nz/saml2/sso`
+    `https://portalsso.techsafe.nz/saml2/sso`
 
     b. In the **Reply URL** text box, type the URL:
     ` https://portal.techsafe.nz/saml/module.php/saml/sp/saml2-acs.php/techsafe-sp `
 
     c. In the **Sign on URL** text box, type a URL using the following pattern:
-    `https://portal.TechSafe Entra ID SSO.nz`
+    `https://portalsso.techsafe.nz`
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 
