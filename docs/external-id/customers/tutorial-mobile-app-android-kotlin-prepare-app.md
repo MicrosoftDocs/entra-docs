@@ -82,7 +82,6 @@ Use these steps to create configuration file:
       "authorization_user_agent" : "DEFAULT",
       "redirect_uri" : "Enter_the_Redirect_Uri_Here",
       "account_mode" : "SINGLE",
-      "broker_redirect_uri_registered": true,
       "authorities" : [
         {
           "type": "CIAM",
@@ -92,7 +91,7 @@ Use these steps to create configuration file:
     }
     ```
 
-    The JSON configuration file specifies various settings for an Android application. It includes the client ID, authorization user agent, redirect URI, account mode, and indicates if the broker redirect URI is registered. Additionally, it defines an authority for authentication, specifying the type and authority URL.    
+    The JSON configuration file specifies various settings for an Android application. It includes the client ID, authorization user agent, redirect URI, and account mode. Additionally, it defines an authority for authentication, specifying the type and authority URL.    
 
     Replace the following placeholders with your tenant values that you obtained from the Microsoft Entra admin center:
 
@@ -106,7 +105,7 @@ Use these steps to create configuration file:
     ```xml
     <data
         android:host="ENTER_YOUR_PROJECT_PACKAGE_NAME_HERE"
-        android:path="/ENTER_YOUR_SIGNATURE_HASH_HERE="
+        android:path="/ENTER_YOUR_SIGNATURE_HASH_HERE"
         android:scheme="msauth" />
     ```
     

@@ -40,59 +40,75 @@ In this tutorial, you'll:
 
 ## Call an API
 
-To call a protected web API from your Android app, use the following code:
+1. To call a web API from an Android application to access external data or services, begin by creating a companion object in your `MainActivity` class. The companion object should include the following code:
 
-```kotlin
-private fun accessWebApi() {
-    CoroutineScope(Dispatchers.Main).launch {
-        binding.txtLog.text = ""
-        try {
-            if (WEB_API_BASE_URL.isBlank()) {
-                Toast.makeText(this@MainActivity, getString(R.string.message_web_base_url), Toast.LENGTH_LONG).show()
-                return@launch
-            }
-            val apiResponse = withContext(Dispatchers.IO) {
-                ApiClient.performGetApiRequest(WEB_API_BASE_URL, accessToken)
-            }
-            binding.txtLog.text = getString(R.string.log_web_api_response)  + apiResponse.toString()
-        } catch (exception: Exception) {
-            Log.d(TAG, "Exception while accessing web API: $exception")
+    ```kotlin
+    companion object {
+        private val TAG = MainActivity::class.java.simpleName
+        private const val WEB_API_BASE_URL = "" // Developers should set the respective URL of their web API here
+        private const val scopes = "" // Developers should append the respective scopes of their web API with Delegated permission to Microsoft Graph here.
+    }
+    ```
+    
+    The code snippet, within the companion object of the `MainActivity` class, constants are defined. TAG represents the simple name of the `MainActivity` class for logging purposes. `WEB_API_BASE_URL` is an empty string, where developers should set the respective URL of their web API. `scopes` is also an empty string, where developers should append the respective scopes of their web API. 
 
-            binding.txtLog.text = getString(R.string.exception_web_api) + exception
+
+1. To handle the process of accessing a web API, use the following code:
+
+    ```kotlin
+    private fun accessWebApi() {
+        CoroutineScope(Dispatchers.Main).launch {
+            binding.txtLog.text = ""
+            try {
+                if (WEB_API_BASE_URL.isBlank()) {
+                    Toast.makeText(this@MainActivity, getString(R.string.message_web_base_url), Toast.LENGTH_LONG).show()
+                    return@launch
+                }
+                val apiResponse = withContext(Dispatchers.IO) {
+                    ApiClient.performGetApiRequest(WEB_API_BASE_URL, accessToken)
+                }
+                binding.txtLog.text = getString(R.string.log_web_api_response)  + apiResponse.toString()
+            } catch (exception: Exception) {
+                Log.d(TAG, "Exception while accessing web API: $exception")
+    
+                binding.txtLog.text = getString(R.string.exception_web_api) + exception
+            }
         }
     }
-}
-```
-
-The code launches a coroutine in the main dispatcher. It begins by clearing the text log. Then, it checks if the web API base URL is blank; if so, it displays a toast message and returns. Next, it performs a GET request to the web API using the provided access token in a background thread. 
-
-After receiving the API response, it updates the text log with the response content. If any exception occurs during this process, it logs the exception and updates the text log with the corresponding error message.
-
-In the code, where we specify our callback, we use a function called `performGetApiRequest()`. The function  should have the following code:
-
-```kotlin
-object ApiClient {
-    private val client = OkHttpClient()
-
-    fun performGetApiRequest(WEB_API_BASE_URL: String, accessToken: String?): Response {
-        val fullUrl = "$WEB_API_BASE_URL/api/todolist"
-
-        val requestBuilder = Request.Builder()
-                .url(fullUrl)
-                .addHeader("Authorization", "Bearer $accessToken")
-                .get()
-
-        val request = requestBuilder.build()
-
-        client.newCall(request).execute().use { response -> return response }
+    ```
+    
+    The code launches a coroutine in the main dispatcher. It begins by clearing the text log. Then, it checks if the web API base URL is blank; if so, it displays a toast message and returns. Next, it performs a GET request to the web API using the provided access token in a background thread. 
+    
+    After receiving the API response, it updates the text log with the response content. If any exception occurs during this process, it logs the exception and updates the text log with the corresponding error message.
+    
+    In the code, where we specify our callback, we use a function called `performGetApiRequest()`. The function  should have the following code:
+    
+    ```kotlin
+    object ApiClient {
+        private val client = OkHttpClient()
+    
+        fun performGetApiRequest(WEB_API_BASE_URL: String, accessToken: String?): Response {
+            val fullUrl = "$WEB_API_BASE_URL/api/todolist"
+    
+            val requestBuilder = Request.Builder()
+                    .url(fullUrl)
+                    .addHeader("Authorization", "Bearer $accessToken")
+                    .get()
+    
+            val request = requestBuilder.build()
+    
+            client.newCall(request).execute().use { response -> return response }
+        }
     }
-}
-```
-
-The code facilitates making `GET` requests to a web API. The main method is `performGetApiRequest()`, which takes the web API base URL and an access token as parameters. Inside this method, it constructs a full URL by appending `/api/todolist` to the base URL. Then, it builds an HTTP request with the appropriate headers, including the authorization header with the access token. 
-
-Finally, it executes the request synchronously using OkHttp's `newCall()` method and returns the response. The `ApiClient` object maintains an instance of `OkHttpClient` to handle HTTP requests.
-
+    ```
+    
+    The code facilitates making `GET` requests to a web API. The main method is `performGetApiRequest()`, which takes the web API base URL and an access token as parameters. Inside this method, it constructs a full URL by appending `/api/todolist` to the base URL. Then, it builds an HTTP request with the appropriate headers, including the authorization header with the access token. 
+    
+    Finally, it executes the request synchronously using OkHttp's `newCall()` method and returns the response. The `ApiClient` object maintains an instance of `OkHttpClient` to handle HTTP requests. 
+    To use `OkHttpClient`, you need to add the dependency `implementation 'com.squareup.okhttp3:okhttp:4.9.0'` to your Android Gradle file.
+    
+    Make sure you include the import statements. Android Studio should include the import statements for you automatically.
+    
 ## Related content
 
 - [Sign in users and call a protected web API in sample Android (Kotlin) app](sample-mobile-app-android-kotlin-sign-in-call-api.md)

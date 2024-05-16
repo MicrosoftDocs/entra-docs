@@ -62,16 +62,17 @@ You have two main options for signing in users using Microsoft Authentication Li
     Next, it extracts scopes from text input and converts them to lowercase before splitting them into an array. Using these scopes, it builds parameters for acquiring a token, including starting the authorization process from the current activity and specifying a callback. Finally, it calls `acquireToken()` on the authentication client with the constructed parameters to initiate the token acquisition process.
 
     
-    In the code, where we specify our callback, we use a function called `getAuthInteractiveCallback()`. The function  should have the following code:
+    In the code, where we specify our callback, we use a function called `getAuthInteractiveCallback()`. The function should have the following code:
 
     ```kotlin
-        private fun getAuthInteractiveCallback(): AuthenticationCallback {
+    private fun getAuthInteractiveCallback(): AuthenticationCallback {
         return object : AuthenticationCallback {
 
             override fun onSuccess(authenticationResult: IAuthenticationResult) {
                 /* Successfully got a token, use it to call a protected resource - Web API */
                 Log.d(TAG, "Successfully authenticated")
                 Log.d(TAG, "ID Token: " + authenticationResult.account.claims?.get("id_token"))
+                Log.d(TAG, "Claims: " + authenticationResult.account.claims
 
                 /* Reload account asynchronously to get the up-to-date list. */
                 CoroutineScope(Dispatchers.Main).launch {
@@ -104,33 +105,11 @@ You have two main options for signing in users using Microsoft Authentication Li
     }
     ```
     
-    The code defines a function `getAuthInteractiveCallback()` that returns an `AuthenticationCallback` object. Within this object, there are three overridden methods: `onSuccess`, `onError`, and `onCancel`.
+    The code snippet defines a function, getAuthInteractiveCallback, which returns an instance of `AuthenticationCallback`. Within this function, an anonymous class implementing the `AuthenticationCallback` interface is created.
 
-    In the `onSuccess` method, it logs a successful authentication message, retrieves the ID token from the authentication result, updates the access token asynchronously, calls `getAccount()` to reload the account list, and updates the text log accordingly.
-    
-    In the `onError` method, it logs authentication failure along with the exception details. In the `onCancel` method, it logs when the user cancels the authentication process.
+    When authentication succeeds (`onSuccess`), it logs the successful authentication, retrieves the ID token and claims, updates the access token asynchronously using `CoroutineScope`, and updates the UI with the new access token. The code retrieves the ID token from the `authenticationResult` and logs it. Claims in the token contain information about the user, such as their name, email, or other profile information. You can retrieve the claims associated with the current account by accessing `authenticationResult.account.claims`.
 
-    Once your app acquires an ID token, you can retrieve the claims associated with the current account. To do so, use the following code snippet:
-
-    ```kotlin
-    private fun getAuthInteractiveCallback(): AuthenticationCallback {
-        return object : AuthenticationCallback {
-    
-            override fun onSuccess(authenticationResult: IAuthenticationResult) {
-                CoroutineScope(Dispatchers.Main).launch {
-                    val accessToken = authenticationResult.accessToken
-                    val claims = authenticationResult.account.claims?.get("aud")
-                }
-            }
-    
-            override fun onError(exception: MsalException) {}
-    
-            override fun onCancel() {}
-        }
-    }
-    ```
-
-    The code defines a function `getAuthInteractiveCallback()` that returns an `AuthenticationCallback`. When authentication succeeds, it retrieves the access token and reads the claims associated with the authenticated account. Specifically, it extracts the audience claim ("aud") from the account's claims. 
+    In case of an authentication error (`onError`), it logs the error, clears the access token, updates the UI with the error message, and provides more specific handling for `MsalClientException` and `MsalServiceException`. If the user cancels the authentication (`onCancel`), it logs the cancellation.
 
     Make sure you include the import statements. Android Studio should include the import statements for you automatically.
 
@@ -163,7 +142,7 @@ You have two main options for signing in users using Microsoft Authentication Li
 
     Using these scopes, it constructs parameters for acquiring a token silently, specifying the account, authority, scopes, and callback. Finally, it asynchronously triggers `acquireTokenSilentAsync()` on the authentication client with the constructed parameters, starting the silent token acquisition process.
 
-    In the code, where we specify our callback, we use a function called `getAuthSilentCallback()`. The function  should have the following code:
+    In the code, where we specify our callback, we use a function called `getAuthSilentCallback()`. The function should have the following code:
 
     ```kotlin
     private fun getAuthSilentCallback(): SilentAuthenticationCallback {
@@ -221,7 +200,7 @@ private fun removeAccount() {
 
 The code removes an account from the application. It clears the displayed user name and text log. Then, it triggers the sign-out process using the authentication client, specifying a sign-out callback to handle the completion of the sign-out operation.
 
-In the code, where we specify our callback, we use a function called `signOutCallback()`. The function  should have the following code:
+In the code, where we specify our callback, we use a function called `signOutCallback()`. The function should have the following code:
 
 ```kotlin
 private fun signOutCallback(): ISingleAccountPublicClientApplication.SignOutCallback {
