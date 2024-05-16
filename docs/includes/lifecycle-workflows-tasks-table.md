@@ -24,7 +24,7 @@ Lifecycle Workflows currently support the following tasks:
 | [Disable user account](../id-governance/lifecycle-workflow-tasks.md#disable-user-account)     |   1dfdfcc7-52fa-4c2e-bf3a-e3919cc12950      | Leaver
 | [Remove user from selected groups](../id-governance/lifecycle-workflow-tasks.md#remove-user-from-selected-groups)     |   1953a66c-751c-45e5-8bfe-01462c70da3c      | Joiner, Leaver, Mover
 | [Remove users from all groups](../id-governance/lifecycle-workflow-tasks.md#remove-users-from-all-groups)     |    b3a31406-2a15-4c9a-b25b-a658fa5f07fc     | Leaver
-| [Remove user from teams](../id-governance/lifecycle-workflow-tasks.md)    |    06aa7acb-01af-4824-8899-b14e5ed788d6     | Leaver        |
+| [Remove user from teams](../id-governance/lifecycle-workflow-tasks.md#remove-user-from-teams)    |    06aa7acb-01af-4824-8899-b14e5ed788d6     | Leaver        |
 | [Remove user from all teams](../id-governance/lifecycle-workflow-tasks.md#remove-users-from-all-teams)     |    81f7b200-2816-4b3b-8c5d-dc556f07b024     | Leaver        |
 | [Remove access package assignment for user]     |    4a0b64f2-c7ec-46ba-b117-18f262946c50     | Leaver, Mover        |
 | [Remove all access package assignments for user]     |    42ae2956-193d-4f39-be06-691b8ac4fa1d     | Leaver        |
