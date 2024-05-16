@@ -10,8 +10,6 @@ items:
     href: tenant-configurations.md
   - name: Supported features
     href: customers/concept-supported-features-customers.md
-  - name: Samples
-    href: customers/samples-ciam-all.md
 - name: External ID in external tenants
   href: customers/toc.yml
   expanded: true

@@ -153,7 +153,7 @@ Content-type: application/json
         "didDocumentStatus": "published"
     },
     "keyVaultMetadata": {
-        "subscriptionId": "b593ade1-e353-43ab-9fb8-cccf669478d0",
+        "subscriptionId": "aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e",
         "resourceGroup": "verifiablecredentials",
         "resourceName": "vccontosokv",
         "resourceUrl": "https://vccontosokv.vault.azure.net/"
@@ -246,7 +246,7 @@ Content-type: application/json
                 "didDocumentStatus": "published"
             },
             "keyVaultMetadata": {
-                "subscriptionId": "b593ade1-e353-43ab-9fb8-cccf669478d0",
+                "subscriptionId": "aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e",
                 "resourceGroup": "verifiablecredentials",
                 "resourceName": "vccontosokv",
                 "resourceUrl": "https://vccontosokv.vault.azure.net/"
@@ -271,7 +271,7 @@ Content-type: application/json
                 "didDocumentStatus": "published"
             },
             "keyVaultMetadata": {
-                "subscriptionId": "b593ade1-e353-43ab-9fb8-cccf669478d0",
+                "subscriptionId": "aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e",
                 "resourceGroup": "verifiablecredentials",
                 "resourceName": "vccontosokv",
                 "resourceUrl": "https://vccontosokv.vault.azure.net/"
@@ -315,7 +315,7 @@ Example message:
   "didMethod": "web",
   "keyVaultMetadata":
   {
-    "subscriptionId":"b593ade1-e353-43ab-9fb8-cccf669478d0",
+    "subscriptionId":"aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e",
     "resourceGroup":"verifiablecredentials",
     "resourceName":"vccontosokv",
     "resourceUrl": "https://vccontosokv.vault.azure.net/"
@@ -347,7 +347,7 @@ Example message for did:web:
         "didDocumentStatus": "published"
     },
     "keyVaultMetadata": {
-        "subscriptionId": "1853e356-bc86-4e54-8bb8-6db4e5eacdbd",
+        "subscriptionId": "bbbb1b1b-cc2c-dd3d-ee4e-ffffff5f5f5f",
         "resourceGroup": "verifiablecredentials",
         "resourceName": "vcwingtipskv",
         "resourceUrl": "https://vcwingtipskv.vault.azure.net/"
@@ -381,7 +381,7 @@ Content-type: application/json
         "didDocumentStatus": "submitted"
     },
     "keyVaultMetadata": {
-        "subscriptionId": "b593ade1-e353-43ab-9fb8-cccf669478d0",
+        "subscriptionId": "aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e",
         "resourceGroup": "verifiablecredentials",
         "resourceName": "vccontosokv",
         "resourceUrl": "https://vccontosokv.vault.azure.net/"
@@ -698,7 +698,7 @@ Content-type: application/json
         "didDocumentStatus": "outOfSync"
     },
     "keyVaultMetadata": {
-        "subscriptionId": "1853e356-bc86-4e54-8bb8-6db4e5eacdbd",
+        "subscriptionId": "bbbb1b1b-cc2c-dd3d-ee4e-ffffff5f5f5f",
         "resourceGroup": "verifiablecredentials",
         "resourceName": "vcwingtipskv",
         "resourceUrl": "https://vcwingtipskv.vault.azure.net/"
@@ -752,7 +752,7 @@ Content-type: application/json
         "didDocumentStatus": "published"
     },
     "keyVaultMetadata": {
-        "subscriptionId": "1853e356-bc86-4e54-8bb8-6db4e5eacdbd",
+        "subscriptionId": "bbbb1b1b-cc2c-dd3d-ee4e-ffffff5f5f5f",
         "resourceGroup": "verifiablecredentials",
         "resourceName": "vcwingtipskv",
         "resourceUrl": "https://vcwingtipskv.vault.azure.net/"
@@ -925,7 +925,7 @@ example:
     "attestations": {
         "idTokens": [
             {
-                "clientId": "2f670d73-624a-41fe-a139-6f1f8f2d2e47",
+                "clientId": "00001111-aaaa-2222-bbbb-3333cccc4444",
                 "configuration": "https://bankofwoodgrove.b2clogin.com/bankofwoodgrove.onmicrosoft.com/v2.0/.well-known/openid-configuration?p=B2C_1_si",
                 "redirectUri": "vcclient://openid/",
                 "scope": "openid",
