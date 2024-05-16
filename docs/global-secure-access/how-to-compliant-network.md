@@ -91,7 +91,7 @@ The following example shows this type of policy. In addition, token theft replay
 
 ### User exclusions
 
-[!INCLUDE [conditional-access-recommended-exclusions](includes/conditional-access-recommended-exclusions.md)]
+[!INCLUDE [entra-policy-exclude-user](../includes/entra-policy-exclude-user.md)]
 
 ## Try your compliant network policy
 

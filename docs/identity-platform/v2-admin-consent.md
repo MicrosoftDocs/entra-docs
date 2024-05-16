@@ -29,7 +29,7 @@ When you're ready to request permissions from your organization's admin, you can
 
 ```none
 https://login.microsoftonline.com/{tenant}/v2.0/adminconsent
-        ?client_id=535fb089-9ff3-47b6-9bfb-4f1264799865
+        ?client_id=00001111-aaaa-2222-bbbb-3333cccc4444
         &scope=https://graph.microsoft.com/Calendars.Read https://graph.microsoft.com/Mail.Send
         &redirect_uri=http://localhost/myapp/permissions
         &state=12345
@@ -52,7 +52,7 @@ If the admin approves the permissions for your app, the successful response look
 ```none
 http://localhost/myapp/permissions
     ?admin_consent=True
-    &tenant=fa00d692-e9c7-4460-a743-29f2956fd429
+    &tenant=aaaabbbb-0000-cccc-1111-dddd2222eeee
     &scope=https://graph.microsoft.com/Calendars.Read https://graph.microsoft.com/Mail.Send
     &state=12345
 ```

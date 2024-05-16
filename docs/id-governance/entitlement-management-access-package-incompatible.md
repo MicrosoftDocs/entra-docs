@@ -73,8 +73,8 @@ This script below illustrates using the `v1.0` profile of Graph to create a rela
 ```powershell
 Connect-MgGraph -Scopes "EntitlementManagement.ReadWrite.All"
 
-$apid = "5925c3f7-ed14-4157-99d9-64353604697a"
-$otherapid = "cdd5f06b-752a-4c9f-97a6-82f4eda6c76d"
+$apid = "00001111-aaaa-2222-bbbb-3333cccc4444"
+$otherapid = "11112222-bbbb-3333-cccc-4444dddd5555"
 
 $params = @{
    "@odata.id" = "https://graph.microsoft.com/v1.0/identityGovernance/entitlementManagement/accessPackages/" + $otherapid

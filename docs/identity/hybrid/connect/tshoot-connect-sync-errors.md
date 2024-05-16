@@ -257,8 +257,7 @@ Microsoft Entra ID protects cloud-only objects from being updated through Micros
 
 This section discusses potential causes and solutions to resolving the error DeletingCloudOnlyObjectNotAllowed (Error Type 114).
 
-> [!WARNING]
-> Microsoft recommends that customers set up a break glass account before logging in to Microsoft Entra Connect. For more info, see [Manage emergency access accounts in Microsoft Entra ID](~/identity/role-based-access-control/security-emergency-access.md).
+[!INCLUDE [emergency-access-accounts](../../../includes/definitions/emergency-access-accounts.md)]
 
 #### Description
 
