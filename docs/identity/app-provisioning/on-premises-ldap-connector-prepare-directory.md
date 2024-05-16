@@ -18,7 +18,7 @@ The following documentation provides tutorial information demonstrating how to p
 
 ## Prepare the LDAP directory
 
-If you do not already have a directory server, the following information is provided to help create a test AD LDS environment.  This setup uses PowerShell and the ADAMInstall.exe with an answers file.  This document does not cover in-depth information on AD LDS.  For more information, see [Active Directory Lightweight Directory Services](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831593(v=ws.11)).
+If you don't already have a directory server, the following information is provided to help create a test AD LDS environment.  This setup uses PowerShell and the ADAMInstall.exe with an answers file.  This document doesn't cover in-depth information on AD LDS.  For more information, see [Active Directory Lightweight Directory Services](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831593(v=ws.11)).
 
 If you already have AD LDS or another directory server, you can skip this content, and continue at the [Tutorial: ECMA Connector Host generic LDAP connector](on-premises-ldap-connector-configure.md) for installing and configuring the ECMA connector host.
 
@@ -30,7 +30,7 @@ Use the PowerShell script from [Appendix A](#appendix-a---install-ad-lds-powersh
   4. Imports the certificate to the trusted root of the local machine.
   5. Installs the AD LDS role on our virtual machine.
 
-On the Windows Server virtual machine where you are using to test the LDAP connector, edit the script to match your computer name, and then run the script using Windows PowerShell with administrative privileges.
+On the Windows Server virtual machine where you're using to test the LDAP connector, edit the script to match your computer name, and then run the script using Windows PowerShell with administrative privileges.
 
 ### Create an instance of AD LDS
 Now that the role has been installed, you need to create an instance of AD LDS.  To create an instance, you can use the answer file provided below.  This file will install the instance quietly without using the UI.
@@ -51,7 +51,7 @@ The use the PowerShell script from [Appendix C](#appendix-c---populate-ad-lds-po
   1. Enables the service account.
   1. Adds the service account to the AD LDS Administrators role.
 
-On the Windows Server virtual machine, you are using to test the LDAP connector run the script using Windows PowerShell with administrative privileges.  
+On the Windows Server virtual machine, you're using to test the LDAP connector run the script using Windows PowerShell with administrative privileges.  
 
 ### Grant the NETWORK SERVICE read permissions to the SSL certificate
 In order to enable SSL to work, you need to grant the NETWORK SERVICE read permissions to our newly created certificate.  To grant permissions, use the following steps.
@@ -87,7 +87,7 @@ Now that we have configured the certificate and granted the network service acco
    [![Screenshot that shows the Ldp tool bind success.](~/includes/media/app-provisioning-ldap/ldp-5.png)](~/includes/media/app-provisioning-ldap/ldp-5.png#lightbox)</br>
 
 ### Disable the local password policy
-Currently, the LDAP connector provisions users with a blank password.  This provisioning will not satisfy the local password policy on our server so we are going to disable it for testing purposes.  To disable password complexity, on a non-domain-joined server, use the following steps.
+Currently, the LDAP connector provisions users with a blank password.  This provisioning won't satisfy the local password policy on our server so we're going to disable it for testing purposes.  To disable password complexity, on a non-domain-joined server, use the following steps.
 
 >[!IMPORTANT]
 >Because on-going password sync is not a feature of on-premises LDAP provisioning, Microsoft recommends that AD LDS is used specifically with federated applications, when used in conjunction with AD DS, or when updating existing users in an instance of AD LDS.
@@ -154,12 +154,12 @@ Get-WindowsFeature | Where installed >>$featureLogPath
  ```
 
 ## Appendix B - Answer file
-This file is used to automate and create an instance of AD LDS.  You will edit this file to match your environment; in particular, change `APP3` to the hostname of your server.
+This file is used to automate and create an instance of AD LDS.  You'll edit this file to match your environment; in particular, change `APP3` to the hostname of your server.
 
 >[!IMPORTANT]
-> This script uses the local administrator for the AD LDS service account. You will be prompted for the password during installation.
+> This script uses the local administrator for the AD LDS service account. You'll be prompted for the password during installation.
 >
-> If you are installing AD LDS on a domain controller and not a member or standalone server, you will need to change the LocalLDAPPortToListenOn and LocalSSLPortToListonOn to something other than the well-known ports for LDAP and LDAP over SSL.  For example, LocalLDAPPortToListenOn=51300 and LocalSSLPortToListenOn=51301.
+> If you're installing AD LDS on a domain controller and not a member or standalone server, you'll need to change the LocalLDAPPortToListenOn and LocalSSLPortToListonOn to something other than the well-known ports for LDAP and LDAP over SSL.  For example, LocalLDAPPortToListenOn=51300 and LocalSSLPortToListenOn=51301.
 
 ```
  [ADAMInstall]
