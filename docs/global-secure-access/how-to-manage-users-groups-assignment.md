@@ -10,7 +10,7 @@ ms.service: global-secure-access
 ---
 # How to assign users and groups to traffic forwarding profiles
 
-Assign specific users and groups to a traffic forwarding profile. User or group assignment limits the scope of the traffic forwarding profile so you have a mechanism to rollout the profile safely and at a controlled pace.
+Assign specific users and groups to a traffic forwarding profile. User or group assignment limits the scope of the traffic forwarding profile so you have a mechanism to roll out the profile safely and at a controlled pace.
 
 ## Prerequisites
 - Group-based assignment requires Microsoft Entra ID P1 or P2 license.
@@ -49,15 +49,15 @@ You can create and assign a dynamic group of users based on user attributes. You
 
 Profiles are fetched on behalf of the Microsoft Entra user logged into the device​, not the user logged into the client​. 
 
-If there is no Microsoft Entra user logged in, then profile is fetched only if it is assigned to all users. For example, if you are logged into the device as a local admin.
+If there's no Microsoft Entra user logged in, then profile is fetched only if it's assigned to all users. For example, if you're logged into the device as a local admin.
 
-Simultaneous multiple user logins on the same device is not supported. 
+Simultaneous multiple user login on the same device isn't supported. 
 
 ## Notes on group assignment
 
 Group-based assignment is supported for Security groups and Microsoft 365 groups whose `SecurityEnabled` setting is set to `True`.
 
-Nested group memberships are not supported. A user must be a direct member of the group assigned to the profile. 
+Nested group memberships aren't supported. A user must be a direct member of the group assigned to the profile. 
 
 ## Next steps
 - [Learn about Global Secure Access clients](concept-clients.md)
