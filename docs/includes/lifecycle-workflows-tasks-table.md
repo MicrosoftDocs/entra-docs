@@ -26,7 +26,7 @@ Lifecycle Workflows currently support the following tasks:
 | [Remove users from all groups](../id-governance/lifecycle-workflow-tasks.md#remove-users-from-all-groups)     |    b3a31406-2a15-4c9a-b25b-a658fa5f07fc     | Leaver
 | [Remove user from teams](../id-governance/lifecycle-workflow-tasks.md#remove-user-from-teams)    |    06aa7acb-01af-4824-8899-b14e5ed788d6     | Leaver        |
 | [Remove user from all teams](../id-governance/lifecycle-workflow-tasks.md#remove-users-from-all-teams)     |    81f7b200-2816-4b3b-8c5d-dc556f07b024     | Leaver        |
-| [Remove access package assignment for user]     |    4a0b64f2-c7ec-46ba-b117-18f262946c50     | Leaver, Mover        |
+| [Remove access package assignment for user](../id-governance/lifecycle-workflow-tasks.md#remove-access-package-assignment-for-user)     |    4a0b64f2-c7ec-46ba-b117-18f262946c50     | Leaver, Mover        |
 | [Remove all access package assignments for user]     |    42ae2956-193d-4f39-be06-691b8ac4fa1d     | Leaver        |
 | [Cancel all pending access package assignment requests for user]     |    498770d9-bab7-4e4c-b73d-5ded82a1d0b3    | Leaver        |
 | [Remove all license assignments from user]     | 8fa97d28-3e52-4985-b3a9-a1126f9b8b4e         | Leaver
