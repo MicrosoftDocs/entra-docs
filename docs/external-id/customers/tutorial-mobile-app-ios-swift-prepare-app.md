@@ -101,7 +101,7 @@ The MSAL authentication SDK is used for integrating authentication into your app
         static let kClientID = "Enter_the_Application_Id_Here"
         static let kRedirectUri = "Enter_the_Redirect_URI_Here"
         static let kProtectedAPIEndpoint = "Enter_the_Protected_API_Full_URL_Here"
-        static let kScopes: [String] = ["Enter_the_Protected_API_Scopes_Here"]
+        static let kScopes = ["Enter_the_Protected_API_Scopes_Here"]
         
         static let kAuthority = "https://\(kTenantSubdomain).ciamlogin.com"
     
