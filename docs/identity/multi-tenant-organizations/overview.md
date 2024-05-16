@@ -184,7 +184,7 @@ Here are the primary benefits of using Microsoft 365 admin center to create your
 - Microsoft 365 admin center will pre-configure your tenants for inbound user synchronization, though usage of cross-tenant synchronization remains optional.
 - Microsoft 365 admin center allows easy provisioning of employees into multiple tenants of your multitenant organization.
 
-Here are the primary constraints with using Microsoft 365 admin center to create your multitenant organization and/or provision employees.:
+Here are the primary constraints with using Microsoft 365 admin center to create your multitenant organization and/or provision employees:
 
 - Microsoft 365 admin center will pre-configure but not start cross-tenant synchronization jobs, even if you intend to use cross-tenant synchronization in Microsoft Entra admin center.
 - Complex identity topologies, such as multi-hub, multi-spoke systems, are better provisioned using cross-tenant synchronization in Microsoft Entra admin portal.
