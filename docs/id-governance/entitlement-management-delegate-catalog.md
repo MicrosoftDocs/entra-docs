@@ -15,7 +15,10 @@ ms.reviewer: mwahl
 
 # Delegate access governance to catalog creators in entitlement management
 
-A catalog is a container of resources and access packages. You create a catalog when you want to group related resources and access packages. By default, a Global administrator or an Identity governance administrator can [create a catalog](entitlement-management-catalog-create.md), and can add additional users as catalog owners.
+A catalog is a container of resources and access packages. You create a catalog when you want to group related resources and access packages. By default, a Global Administrator or an Identity Governance Administrator can [create a catalog](entitlement-management-catalog-create.md), and can add additional users as catalog owners.
+
+> [!NOTE]
+> Following least privilege access, it is recommended to use the Identity Governance Administrator role when possible in entitlement management.
 
 There are three ways an organization can delegate with catalogs:
 
@@ -32,8 +35,6 @@ If you have existing catalogs to delegate, then continue at the [create and mana
 [!INCLUDE [portal updates](../includes/portal-update.md)]
 
 Follow these steps to assign a user to the catalog creator role.
-
-**Prerequisite role:** Global Administrator or Identity Governance Administrator
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
@@ -52,8 +53,6 @@ Follow these steps to assign a user to the catalog creator role.
 ## Allow delegated roles to access the Microsoft Entra admin center
 
 To allow delegated roles, such as catalog creators and access package managers, to access the Microsoft Entra admin center to manage access packages, you should check the administration portal setting.
-
-**Prerequisite role:** Global Administrator or Identity Governance Administrator
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
