@@ -33,14 +33,15 @@ This scenario provides a solution using existing Microsoft toolset to set up Hyb
 - Each Microsoft Entra Connect Server will have its synchronization rules scoped to individual OUs.
 - All of the migrating tenants primary domains must be added and verified in M365
 - You should be familiar with [Exchnage hybrid deployments](/exchange/exchange-hybrid)
+- Make sure that you meet the [Microsoft Entra Connect pre-requisites](how-to-connect-install-prerequisites.md).
 - Make sure that you meet the [pre-requisites for the Hybrid Configuration Wizard](/exchange/hybrid-deployment-prerequisites).
 
 ## Parallel Hybrid Migration 
-The following outlines the steps for the multi-organizational on-premises Exchange mailbox migration with Microsoft Entra Connect using a parallel hybrid environment.  Each step must be completed on each tenant that you are migrating to.
+The following outlines the steps for the multi-organizational on-premises Exchange mailbox migration with Microsoft Entra Connect using a parallel hybrid environment.  Each step must be completed for each tenant that you are migrating to.
 
 ### Step 1 - Microsoft Entra Connect
 
-1. On each of the virtual machines that were created, [download](https://www.microsoft.com/en-us/download/details.aspx?id=47594) Microsoft Entra Connect.
+1. On each of the [virtual machines](/windows-server/virtualization/hyper-v/get-started/create-a-virtual-machine-in-hyper-v?tabs=hyper-v-manager) that were created, [download](https://www.microsoft.com/en-us/download/details.aspx?id=47594) Microsoft Entra Connect.
 2. Install Microsoft Entra Connect using [custom settings](how-to-connect-install-custom.md). 
 3. Scope to the source [on-prem Organizational Unit](how-to-connect-sync-configure-filtering.md#organizational-unitbased-filtering) to the OU that corresponds to the tenant you are synchronizing Micrsofot Entra Connect with.
      
