@@ -66,8 +66,6 @@ For a demonstration of how to add a connected organization, watch the following 
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-**Prerequisite role**: *Global Administrator* or  *Identity Governance Administrator*
-
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
 1. Browse to **Identity governance** > **Entitlement management** > **Connected organizations**.
@@ -77,8 +75,6 @@ For a demonstration of how to add a connected organization, watch the following 
 ## Add a connected organization
 
 To add an external Microsoft Entra directory or domain as a connected organization, follow the instructions in this section.
-
-**Prerequisite role**: *Global Administrator* or *Identity Governance Administrator*
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
@@ -131,8 +127,6 @@ To add an external Microsoft Entra directory or domain as a connected organizati
 
 If the connected organization changes to a different domain, the organization's name changes, or you want to change the sponsors, you can update the connected organization by following the instructions in this section.
 
-**Prerequisite role**: *Global Administrator* or *Identity Governance Administrator*
-
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
 1. Browse to **Identity governance** > **Entitlement management** > **Connected organizations**.
@@ -149,8 +143,6 @@ If the connected organization changes to a different domain, the organization's 
 ## Delete a connected organization
 
 If you no longer have a relationship with an external Microsoft Entra directory or domain, or do not wish to have a proposed connected organization any longer, you can delete the connected organization.
-
-**Prerequisite role**: *Global Administrator* or *Identity Governance Administrator*
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
