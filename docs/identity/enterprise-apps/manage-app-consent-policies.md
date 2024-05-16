@@ -34,7 +34,6 @@ App consent policies where the ID begins with "microsoft-" are built-in policies
 ## Prerequisites
 
 - A user or service with one of the following roles:
-  - Global Administrator directory role
   - Privileged Role Administrator directory role
   - A custom directory role with the necessary [permissions to manage app consent policies](~/identity/role-based-access-control/custom-consent-permissions.md#managing-app-consent-policies)
   - The Microsoft Graph app role (application permission) `Policy.ReadWrite.PermissionGrant` when connecting as an app or a service

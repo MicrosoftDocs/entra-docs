@@ -85,7 +85,7 @@ The issuance request payload contains information about your verifiable credenti
     "clientName": "Verifiable Credential Expert Sample"
   },
   "type": "VerifiedCredentialExpert",
-  "manifest": "https://verifiedid.did.msidentity.com/v1.0/tenants/12345678-0000-0000-0000-000000000000/verifiableCredentials/contracts/MTIzNDU2NzgtMDAwMC0wMDAwLTAwMDAtMDAwMDAwMDAwMDAwdmVyaWZpZWRjcmVkZW50aWFsZXhwZXJ0/manifest",
+  "manifest": "https://verifiedid.did.msidentity.com/v1.0/tenants/aaaabbbb-0000-cccc-1111-dddd2222eeee/verifiableCredentials/contracts/MTIzNDU2NzgtMDAwMC0wMDAwLTAwMDAtMDAwMDAwMDAwMDAwdmVyaWZpZWRjcmVkZW50aWFsZXhwZXJ0/manifest",
   "pin": {
     "value": "3539",
     "length": 4

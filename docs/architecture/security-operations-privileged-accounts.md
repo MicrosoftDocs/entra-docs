@@ -78,11 +78,9 @@ This article provides details on setting baselines and auditing sign-in and usag
 
 ## Emergency access accounts
 
-It's important that you prevent being accidentally locked out of your Microsoft Entra tenant. You can mitigate the effect of an accidental lockout by creating emergency access accounts in your organization. Emergency access accounts are also known as *break-glass accounts*, as in "break glass in case of emergency" messages found on physical security equipment like fire alarms.
+It's important that you prevent being accidentally locked out of your Microsoft Entra tenant. 
 
-Emergency access accounts are highly privileged, and they aren't assigned to specific individuals. Emergency access accounts are limited to emergency or break-glass scenarios where normal privileged accounts can't be used. An example is when a Conditional Access policy is misconfigured and locks out all normal administrative accounts. Restrict emergency account use to only the times when it's absolutely necessary.
-
-For guidance on what to do in an emergency, see [Secure access practices for administrators in Microsoft Entra ID](~/identity/role-based-access-control/security-planning.md).
+[!INCLUDE [emergency-access-accounts](../includes/definitions/emergency-access-accounts.md)]
 
 Send a high-priority alert every time an emergency access account is used.
 

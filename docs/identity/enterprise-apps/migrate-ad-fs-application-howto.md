@@ -37,7 +37,6 @@ To use the AD FS application migration:
 - Your organization must be currently using AD FS to access applications.
 - You have a Microsoft Entra ID P1 or P2 license.
 - You should have one of the following roles assigned,
-  - Global Administrator
   - Cloud Application Administrator
   - Application Administrator
   - Global Reader (read-only access)

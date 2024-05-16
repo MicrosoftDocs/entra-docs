@@ -42,8 +42,7 @@ After you sign in to the [Azure portal](https://portal.azure.com), you can creat
 
 By default, you're also listed as the [technical contact](/microsoft-365/admin/manage/change-address-contact-and-more#what-do-these-fields-mean) for the tenant. Technical contact information is something you can change in [**Properties**](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Properties).
 
-> [!WARNING]
-> Ensure your directory has at least two accounts with Global Administrator privileges assigned to them. This will help in the case that one is locked out. For more detail see the article, [Manage emergency access accounts in Microsoft Entra ID](~/identity/role-based-access-control/security-emergency-access.md).
+[!INCLUDE [emergency-access-accounts](../includes/definitions/emergency-access-accounts.md)]
 
 ## Clean up resources
 
