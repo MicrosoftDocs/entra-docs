@@ -43,7 +43,7 @@ To revert the traffic profile for all users:
 
 ## Automatic assignment using user attributes 
 
-You can create and assign a dynamic group of users based on user attributes. You use dynamic groups to automatically assign users who satisfy the criteria to the profile. To learn more about automatic assignment using user attributes, see [Create or update a dynamic group in Microsoft Entra ID](../dentity/users/groups-create-rule.md).
+You can create and assign a dynamic group of users based on user attributes. You use dynamic groups to automatically assign users who satisfy the criteria to the profile. To learn more about automatic assignment using user attributes, see [Create or update a dynamic group in Microsoft Entra ID](../identity/users/groups-create-rule.md).
 
 ## Notes on user identity
 
