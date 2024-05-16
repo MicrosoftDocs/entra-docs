@@ -16,122 +16,170 @@ ms.reviewer: brianmel
 
 # Enable Kerberos SSO to On-Premises Active Directory and Entra ID Kerberos Resources in Platform SSO
 
-Mac users can join their new device to Microsoft Entra ID during the first-run out-of-box experience (OOBE). The macOS Platform single sign-on (PSSO) is a capability on macOS that is enabled using the [Microsoft Enterprise Single Sign-on Extension](../../identity-platform/apple-sso-plugin.md). PSSO allows users to sign in to a Mac device using a hardware-bound key, smart card or their Microsoft Entra ID password. This tutorial shows you how to set up a Mac device during the OOBE to use PSSO using Automated Device Enrollment.
+Mac users can join their new device to Microsoft Entra ID during the first-run out-of-box experience (OOBE). The macOS Platform single sign-on (PSSO) is a capability on macOS that is enabled using the [Microsoft Enterprise Single Sign-on Extension](../../identity-platform/apple-sso-plugin.md). PSSO allows users to sign in to a Mac device using a hardware-bound key, smart card or their Microsoft Entra ID password.
+
+This tutorial shows you how to configure Platform SSO to support Kerberos-based SSO to on-premises and cloud resources, in addition to SSO to Entra ID. This is an optional capability within Platform SSO, but it is recommended if users still need to access on-premises Active Directory resources that use Kerberos for authentication.
 
 ## Prerequisites
 
-- A minimum version of **macOS 14.5 Sonoma**. Earlier versions of macOS will not support kerberos SSO combined with Platform SSO or are known to have bugs.
+- A minimum version of **macOS 14.5 Sonoma**. Earlier versions of macOS will not support Kerberos SSO combined with Platform SSO or are known to have bugs.
 - [Microsoft Intune Company Portal](/mem/intune/apps/apps-company-portal-macos) version 5.2404.0 or later
 - A Mac device enrolled in mobile device management (MDM) with Microsoft Intune.
-- A configured SSO extension MDM payload with PSSO settings in Intune by an administrator
+- A configured SSO extension MDM payload with Platform SSO settings in Intune by an administrator, already deployed to the device. Refer to the [Platform SSO documentation](./macos-psso.md) or [Intune deployment guide](/mem/intune/configuration/platform-sso-macos) if Intune is your MDM.
 
 ## Set up your macOS device
 
-1. Upon seeing the "Hello" screen when opening your Mac for the first time, follow the steps to select your country or region, and configure network settings as required.
-1. You're prompted to download a **Remote Management** profile, which allows the configuration setup in Microsoft Intune to be applied to your device. Select **Continue**, and enter your Microsoft Entra ID credentials when prompted to approve the management profile download.
+Refer to the [Entra ID macOS Platform SSO documentation](./macos-psso.md) to learn how to configure and deploy Platform SSO. This must be performed regardless of whether you choose to deploy Kerberos SSO using this guide.
 
-    :::image type="content" source="media/device-join-macos-platform-single-sign-on-out-of-box/psso-remote-management.png" alt-text="Screenshot of remote management window.":::
+## Kerberos SSO MDM Profile Configuration
 
-1. Enter the code sent to your **Authenticator app** (recommended) or use another MFA method.
-1. To create a user account, fill in your full name, account name, and create a local account password. Select **Continue** and your home screen appears.
+You must configure a Kerberos SSO MDM profile. It is recommended to use the following settings. Make sure that you replace all references to **contoso.com** and **Contoso** with the proper values for your environment:
 
-    :::image type="content" source="media/device-join-macos-platform-single-sign-on-out-of-box/psso-local-account.png" alt-text="Screenshot of the window used to create a computer account, where the user enters their name, account name and local password.":::
+| Configuration Key | Recommended Value | Note |
+|-|-|-|
+| preferredKDCs | <string>kkdcp://login.microsoftonline.com/contoso.com/kerberos</string> | Replace the **contoso.com** value with the value of one of your tenant domains or your tenant's GUID |
+| Hosts | <string>contoso.com</string> | Replace **contoso.com** with your on-premises domain/forest name |
+| Hosts | <string>*.contoso.com</string> | Replace **contoso.com** with your on-premises domain/forest name. Keep the preceding `*.` characters before your domain/forest name |
+| PayloadOrganization | <string>Contoso</string> | Replace **Contoso** with the name of your organization |
 
-## Registration with Automated Device Enrollment
-
-There are three authentication methods for PSSO registration:
-
-- **Secure Enclave**: User logs on to their device which has a secure enclave backed cryptographic key used for SSO across apps that use Microsoft Entra ID for authentication. It can also be referred to as Platform Credential for macOS.
-- **Smart card**: User logs into the machine using an external smart card or smart card compatible hard token
-- **Password**: User logs on to their local device with a local account, updated to use their Microsoft Entra ID password
-
-It's recommended for your system administrator to have the Mac enrolled using secure enclave or smart card. These new passwordless features are supported only by PSSO. Check which authentication method has been set up by your administrator before continuing.
-
-### [Secure Enclave](#tab/secure-enclave)
-
-1. Navigate to the **Registration Required** popup at the top right of the screen. Hover over the popup and select **Register**. For macOS 14 Sonoma users, you'll see a prompt to register your device with Microsoft Entra. This prompt doesn't appear for macOS 13 Ventura.
-
-    :::image type="content" source="media/device-join-macos-platform-single-sign-on-out-of-box/macos-14-microsoft-entra-registration-required.png" alt-text="Screenshot of a Microsoft Entra registration prompt that appears on macOS 14 after the registration required notification is selected.":::
-
-1. A prompt appears to enter your local account password. Enter your password and select **Ok**.
-1. Once your account is unlocked, select the account to sign in to, enter your sign-in credentials and select **Next**.
-1. MFA is required as part of this sign in flow. Open your **Authenticator app** (recommended) or use your other MFA methods you have registered, and enter the number displayed on the screen to finish registration.
-
-    :::image type="content" source="media/device-join-macos-platform-single-sign-on-out-of-box/psso-2fa-challenge.png" alt-text="Screenshot of a two-factor authentication window, prompting the user to open the Authenticator app.":::
-
-1. When the MFA flow completes and the loading screen disappears, your device should be registered with PSSO. You can now use PSSO to access Microsoft app resources.
-
-### Enable Platform Credential for macOS for use as a passkey
-
-Setting up your device using secure enclave method enables you to use the resulting credential saved to the Mac as a passkey in the browser. To enable it;
-
-1. Open the **Settings** app, and navigate to **Passwords** > **Password options**.
-1. Under **Password Options**, find **Use passwords and passkeys from** and enable **Company Portal** through the toggle switch.
-
-    :::image type="content" source="media/device-join-macos-platform-single-sign-on-out-of-box/password-options-enable-passkeys.png" alt-text="Screenshot of the Password Options window indicating that the use of passwords and passkeys from Company Portal has been enabled by a switch.":::
-
-### [Smart Card](#tab/smart-card)
-
-### Pair the smart card with your local account
-
-Before you can register your device with a smart card, you need to pair the smart card with your local account. Open the **Terminal** app and run the following commands to find the public key hash of the smart card certificate and pair it with your local account, then check it was successful. This needs to be run using `sudo`. 
-
-```console
-sc_auth identities
-sudo sc_auth pair -h <HASH> -u <USERNAME>
-sc_auth list
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>PayloadContent</key>
+    <array>
+        <dict>
+            <key>ExtensionData</key>
+            <dict>
+                <key>allowPasswordChange</key>
+                <true/>
+                <key>allowPlatformSSOAuthFallback</key>
+                <true/>
+                <key>performKerberosOnly</key>
+                <true/>
+                <key>pwReqComplexity</key>
+                <true/>
+                <key>syncLocalPassword</key>
+                <true/>
+                <key>usePlatformSSOTGT</key>
+                <true/>
+                <key>preferredKDCs</key>                         
+                <array>
+                <string>kkdcp://login.microsoftonline.com/contoso.com/kerberos</string>
+                </array>
+            </dict>
+            <key>ExtensionIdentifier</key>
+            <string>com.apple.AppSSOKerberos.KerberosExtension</string>
+            <key>Hosts</key>
+            <array>
+                <string>contoso.com</string>
+                <string>*.contoso.com</string>
+                <string>windows.net</string>
+                <string>*.windows.net</string>
+                <string>KERBEROS.MICROSOFTONLINE.COM</string>
+                <string>MICROSOFTONLINE.COM</string>
+                <string>*.MICROSOFTONLINE.COM</string>
+            </array>
+            <key>PayloadDisplayName</key>
+            <string>Single Sign-On Extensions Payload</string>
+            <key>PayloadIdentifier</key>
+            <string>985C1EDE-75A4-4248-B972-12E3E6A1E94C</string>
+            <key>PayloadType</key>
+            <string>com.apple.extensiblesso</string>
+            <key>PayloadUUID</key>
+            <string>985C1EDE-75A4-4248-B972-12E3E6A1E94C</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>Realm</key>
+            <string>KERBEROS.MICROSOFTONLINE.COM</string>
+            <key>TeamIdentifier</key>
+            <string>apple</string>
+            <key>Type</key>
+            <string>Credential</string>
+            <key>URLs</key>
+            <array/>
+        </dict>
+    </array>
+    <key>PayloadDescription</key>
+    <string></string>
+    <key>PayloadDisplayName</key>
+    <string>Kerberos SSO Extension for macOS</string>
+    <key>PayloadEnabled</key>
+    <true/>
+    <key>PayloadIdentifier</key>
+    <string>A05AE53E-FC8E-472F-9821-FD21CBEC04C8</string>
+    <key>PayloadOrganization</key>
+    <string>Contoso</string>
+    <key>PayloadRemovalDisallowed</key>
+    <true/>
+    <key>PayloadScope</key>
+    <string>System</string>
+    <key>PayloadType</key>
+    <string>Configuration</string>
+    <key>PayloadUUID</key>
+    <string>A05AE53E-FC8E-472F-9821-FD21CBEC04C8</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+</dict>
+</plist>
 ```
 
-### Register your device with the smart card
+Once you have updated the configuration to use the proper values for your environment, save the configuration using a text editor as a mobileconfig file, such as kerberos.mobileconfig
 
-1. Navigate to the **Registration Required** popup at the top right of the screen. Hover over the popup and select **Register**. If your smart card is paired with your local account, you'll see a prompt to enter the smart card pin
+### Intune Configuration Steps
 
-    :::image type="content" source="media/device-join-macos-platform-single-sign-on-out-of-box/smartcard-paired-registration-prompt.png" alt-text="Screenshot of the Platform SSO registration prompting the user to enter their smart card pin.":::
+If you use Intune as your MDM you can perform the following steps to deploy the profile. Make sure you follow the [previous instructions](#kerberos-sso-mdm-profile-configuration) about replacing **contoso.com** values with the proper values for your organization.
 
-1. Your administrator may have configured MFA for the device registration flow. If so, open your **Authenticator** app on your mobile device and complete the MFA flow.
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Select **Devices** > **Configuration** > **Create** > **New policy**.
+3. Enter the following properties:
 
-    :::image type="content" source="media/device-join-macos-platform-single-sign-on-out-of-box/psso-register-device-prompt.png" alt-text="Screenshot of the registration window prompting sign in with Microsoft.":::
+    - **Platform**: Select **macOS**.
+    - **Profile type**: Select **Templates**.
 
-1. If the certificate is not already paired with the local account, the user will see a prompt to use the smart card. Select **Smart card**.
-1. You're prompted to enter the pin for your smart card. Enter your pin and select **Enter pin for the smart card**. When the correct pin is entered, PSSO registration with smart card authentication is complete.
-1. You can now use PSSO to access Microsoft app resources, and unlock the device with the smart card pin. You'll need to use the local password to log in after a reboot to unlock the keychain access.
+4. Choose the **Custom** template
+5. Select **Create**.
+6. In **Basics**, enter the following properties:
 
-### [Password](#tab/password)
+    - **Name**: Enter a descriptive name for the policy. Name your policies so you can easily identify them later. For example, name the policy **macOS - Platform SSO Kerberos**.
+    - **Description**: Enter a description for the policy. This setting is optional, but recommended.
 
-1. Navigate to the **Registration Required** popup at the top right of the screen. Hover over the popup and select **Register**.
+7. Select **Next**.
+8. Enter a name in the **Custom configuration profile name** box.
+9. Choose a **Deployment channel**. Device channel is recommended.
+10. Click the folder icon to upload your **Configuration profile file**. Choose the kerberos.mobileconfig file you [saved previously](#kerberos-sso-mdm-profile-configuration) after customizing the template.
+11. Select **Next**.
+12. In **Scope tags** (optional), assign a tag to filter the profile to specific IT groups, such as `US-NC IT Team` or `JohnGlenn_ITDepartment`. For more information about scope tags, see [Use RBAC roles and scope tags for distributed IT](/mem/intune/fundamentals/scope-tags).
 
-    :::image type="content" source="media/device-join-macos-platform-single-sign-on-out-of-box/psso-registration-required-popup.png" alt-text="Screenshot of a desktop screen with a registration required popup in the top right of the screen.":::
+    Select **Next**.
 
-1. A prompt appears to enter your local account password. Enter your password and select **Ok**.
-1. Once your account is unlocked, select the account to sign in to, enter your sign-in credentials and select **Next**.
-1. MFA is required as part of this sign in flow. Open your **Authenticator app** (recommended) or use your other MFA methods you have registered, and enter the number displayed on the screen to finish registration.
+13. In **Assignments**, select the users or user groups that will receive your profile. Platform SSO policies are user-based policies. Don't assign the platform SSO policy to devices.
 
-    :::image type="content" source="media/device-join-macos-platform-single-sign-on-out-of-box/psso-2fa-challenge.png" alt-text="Screenshot of a two-factor authentication window, prompting the user to open the Authenticator app.":::
+    For more information on assigning profiles, see [Assign user and device profiles](/mem/intune/configuration/device-profile-assign).
 
-1. If your local password differs to your Microsoft Entra ID password, an **Authentication Required** popup appears on the top right of the screen. Hover over the banner and select **Sign-in**.
-1. When a **Microsoft Entra** window appears, enter your Microsoft Entra ID password and select **Sign In**. 
+    Select **Next**.
 
-    :::image type="content" source="media/device-join-macos-platform-single-sign-on-out-of-box/psso-entra-account-password-prompt.png" alt-text="Screenshot of a Microsoft Entra sign in window.":::
+14. In **Review + create**, review your settings. When you select **Create**, your changes are saved, and the profile is assigned. The policy is also shown in the profiles list.
 
-1. After unlocking the Mac, you can now use PSSO to access Microsoft app resources. From this point on, your old password doesn't work because PSSO is enabled for your device.
+The next time the device checks for configuration updates, the settings you configured are applied.
 
----
+## Testing Kerberos SSO
 
-## Check your device registration status
+Once the profile has been assigned to the device you can check that your device has Kerberos tickets by running the following command in the Terminal app:
 
-Once you've completed the steps above, it's a good idea to check your device registration status.
+> ```console
+> app-sso platform -s
+> ```
 
-1. To check that registration has completed successfully, navigate to **Settings** and select **Users & Groups**. 
-1. Select **Edit** next to **Network Account Server** and check that **Platform SSO** is listed as **Registered**.
-1. To verify the method used for authentication, navigate to your username in the **Users & Groups** window and select the **Information** icon. Check the method listed, which should be **Secure enclave**, **Smart Card**, or **Password**.
+You should have two Kerberos tickets, one for your on-premises AD with the ticketKeyPath value of **tgt_ad** and one for your Entra ID tenant with the ticketKeyPath value of **tgt_cloud**. The output should resemble the following:
 
-    > [!NOTE]
-    >
-    > You can also use the **Terminal** app to check the registration status. Run the following command to check the status of your device registration. You should see in the bottom of the output that SSO tokens are retrieved. For macOS 13 Ventura users, this command is required to check the registration status.
-    >
-    > ```console
-    > app-sso platform -s
-    > ```
+:::image type="content" source="media/device-registration-macos-platform-single-sign-on/psso-kerberos-terminal-output.png" alt-text="Screenshot of the output of app-sso platform -s in the macOS Terminal app.":::
+
+Validate your configuration is working by testing with appropriate Kerberos-capable resources:
+
+1. Test on-premises Active Directory functionality by accessing an on-premises AD-integrated file server using Finder or a web application using Safari.
+2. Test Entra ID Kerberos functionality by accessing an Azure Files share enabled for Entra ID cloud kerberos. Refer to [this guide](/azure/storage/files/storage-files-identity-auth-hybrid-identities-enable) if you need to configure a cloud file share in Azure Files.
 
 ## See also
 
