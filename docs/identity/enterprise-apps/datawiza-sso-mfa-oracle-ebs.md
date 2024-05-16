@@ -44,7 +44,7 @@ To complete the steps in this article, you need:
 
 * An Azure subscription. If you don't have one, you can get an [Azure free account](https://azure.microsoft.com/free/).
 * A Microsoft Entra tenant linked to the Azure subscription.
-* A [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) role.
+* A [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) role.
 * Docker and Docker Compose, to run DAP. For more information, see [Get Docker](https://docs.docker.com/get-docker/) and [Docker Compose Overview](https://docs.docker.com/compose/install/).
 * User identities synchronized from an on-premises directory to Microsoft Entra ID, or created in Microsoft Entra ID and flowed back to your on-premises directory. For more information, see [Microsoft Entra Connect Sync: Understand and customize synchronization](~/identity/hybrid/connect/how-to-connect-sync-whatis.md).
 * An Oracle EBS environment.
@@ -151,7 +151,7 @@ Configuration on the management console is complete. You're prompted to deploy D
 
 To provide more security for sign-ins, you can enable multifactor authentication in the Microsoft Entra admin center:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 2. Browse to **Identity** > **Overview** > **Properties** tab.
 3. Under **Security defaults**, select **Manage security defaults**.
 4. On the **Security defaults** pane, toggle the dropdown menu to select **Enabled**.

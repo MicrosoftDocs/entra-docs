@@ -50,7 +50,7 @@ Prior experience or knowledge of F5 BIG-IP isn't necessary, however, you need:
 - A Microsoft Entra subscription
   -  If you don't have one, you can get an [Azure free account](https://azure.microsoft.com/trial/get-started-active-directory/)
 - User identities [synchronized from their on-premises directory](~/identity/hybrid/connect/how-to-connect-sync-whatis.md) to Microsoft Entra ID
-- One of the following roles: Global Administrator, Cloud Application Administrator, or Application Administrator
+- One of the following roles: Cloud Application Administrator, or Application Administrator
 - BIG-IP infrastructure with client traffic routing to and from the BIG-IP 
   - Or [deploy a BIG-IP Virtual Edition into Azure](f5-bigip-deployment-guide.md)
 - A record for the BIG-IP published VPN service in a public domain name server (DNS)
@@ -231,8 +231,6 @@ A BIG-IP connection profile is required to configure VPN client-type settings th
 4. Set the parent profile to **/Common/connectivity**, for example, Contoso_VPN_Profile.
 
     ![Screenshot of Profile Name and Parent Name entries in Create New Connectivity Profile.](media/f5-passwordless-vpn/create-connectivity-profile.png)
-
-For more information on client support, see the F5 article, [F5 Access and BIG-IP Edge Client](https://techdocs.f5.com/kb/en-us/bigip-edge-apps.html).
 
 ## Access profile configuration
 

@@ -48,7 +48,7 @@ Once a user has entered a username at the sign-in page, they can use their manag
 To disable auto-acceleration sign-in for an application in Microsoft Entra ID, you need:
 
 - An Azure account with an active subscription. If you don't already have one, you can [create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- One of the following roles: Global Administrator, or owner of the service principal.
+- One of the following roles: Cloud Application Administrator, Application Administrator, or owner of the service principal.
 ::: zone pivot="powershell-hrd"
 - [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview) module.
 ::: zone-end

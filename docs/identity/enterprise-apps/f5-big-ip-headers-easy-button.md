@@ -65,7 +65,7 @@ For the scenario you need:
 
 * An Azure subscription
   * If you don't have one, get an [Azure free account](https://azure.microsoft.com/free/)
-* One of the following roles: Global Administrator, Cloud Application Administrator, or Application Administrator
+* One of the following roles: Cloud Application Administrator, or Application Administrator
 * A BIG-IP or deploy a BIG-IP Virtual Edition (VE) in Azure
   * See, [Deploy F5 BIG-IP Virtual Edition Virtual Machine in Azure](./f5-bigip-deployment-guide.md)
 * Any of the following F5 BIG-IP licenses:

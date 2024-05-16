@@ -31,7 +31,7 @@ If you have verified that the application isn't in your tenant, proceed with any
 To add an enterprise application to your Microsoft Entra tenant, you need:
 
 - A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- One of the following roles: Global Administrator, Cloud Application Administrator, or Application Administrator.
+- One of the following roles: Cloud Application Administrator, or Application Administrator.
 - The client ID (also called appId in Microsoft Graph) of the multitenant application.
 
 
@@ -55,7 +55,7 @@ Where:
 
 :::zone pivot="msgraph-powershell"
 
-1. Run `connect-MgGraph -Scopes "Application.ReadWrite.All"` and sign in with a Global Administrator user account.
+1. Run `connect-MgGraph -Scopes "Application.ReadWrite.All"` and sign in with at least a Cloud Application Administrator role.
 1. Run the following command to create the enterprise application:
 
    ```powershell
