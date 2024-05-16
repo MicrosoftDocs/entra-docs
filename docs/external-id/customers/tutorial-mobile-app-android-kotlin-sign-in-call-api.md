@@ -37,7 +37,6 @@ In this tutorial, you'll:
     - Clone or download sample web API
     - Configure and run sample web API
 
-
 ## Call an API
 
 1. To call a web API from an Android application to access external data or services, begin by creating a companion object in your `MainActivity` class. The companion object should include the following code:
