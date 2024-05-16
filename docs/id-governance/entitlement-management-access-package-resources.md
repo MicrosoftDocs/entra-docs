@@ -24,10 +24,9 @@ This video provides an overview of how to change an access package.
 
 If you need to add resources to an access package, you should check whether the resources you need are available in the access package's catalog. If you're an access package manager, you can't add resources to a catalog, even if you own them. You're restricted to using the resources available in the catalog.
 
-**Prerequisite role:** Global administrator, Identity Governance administrator, Catalog owner, or Access package manager
-
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
-
+    > [!TIP]
+    > Other least privilege roles that can complete this task include the Catalog owner and the Access package manager.
 1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
 
 1. On the **Access packages** page, open the access package you want to check to ensure that its catalog has the necessary resources.
@@ -75,10 +74,9 @@ If you want the users who had a resource role membership to also be assigned to 
 
 ## Add resource roles
 
-**Prerequisite role:** Global Administrator, Identity Governance Administrator, Catalog owner, or Access package manager
-
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
-
+    > [!TIP]
+    > Other least privilege roles that can complete this task include the Catalog owner and the Access package manager.
 1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
 
 1. On the **Access packages** page, open the access package you want to add resource roles to.
@@ -285,10 +283,9 @@ New-MgEntitlementManagementAccessPackageResourceRoleScope -AccessPackageId $apid
 
 ## Remove resource roles
 
-**Prerequisite role:** Global Administrator, Identity Governance Administrator, Catalog owner, or Access package manager
-
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
-
+    > [!TIP]
+    > Other least privilege roles that can complete this task include the Catalog owner and the Access package manager.
 1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
 
 1. On the **Access packages** page, open the access package you want to remove resource roles for.
