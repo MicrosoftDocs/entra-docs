@@ -15,6 +15,8 @@ items:
 - name: Samples
   expanded: false
   items:
+  - name: List of guides for samples
+    href: samples-ciam-all.md
   - name: Single-page app
     items:
       - name: JavaScript

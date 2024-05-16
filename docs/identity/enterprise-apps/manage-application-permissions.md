@@ -29,7 +29,7 @@ The steps in this article apply to all applications that were added to your Micr
 To review permissions granted to applications, you need:
 
 - An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- One of the following roles: Global Administrator, Cloud Application Administrator, Application Administrator.
+- One of the following roles: Cloud Application Administrator, Application Administrator.
 - A Service principal owner who isn't an administrator is able to invalidate refresh tokens.
 
 ## Restoring permissions
