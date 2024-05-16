@@ -18,7 +18,7 @@ Lifecycle Workflows currently support the following tasks:
 |[Send email to notify manager of user move](../id-governance/lifecycle-workflow-tasks.md#send-email-to-notify-manager-of-user-move)     |  aab41899-9972-422a-9d97-f626014578b7       | Mover         |
 | [Request user access package assignment](../id-governance/lifecycle-workflow-tasks.md#request-user-access-package-assignment)     |  c1ec1e76-f374-4375-aaa6-0bb6bd4c60be       | Joiner, Mover         |
 | [Add user to groups](../id-governance/lifecycle-workflow-tasks.md#add-user-to-groups)     |    22085229-5809-45e8-97fd-270d28d66910     | Joiner, Leaver, Mover
-| [Add user to teams]      |  e440ed8d-25a1-4618-84ce-091ed5be5594       | Joiner, Leaver, Mover
+| [Add user to teams](../id-governance/lifecycle-workflow-tasks.md#add-user-to-teams)      |  e440ed8d-25a1-4618-84ce-091ed5be5594       | Joiner, Leaver, Mover
 |[ Enable user account]     |    6fc52c9d-398b-4305-9763-15f42c1676fc     | Joiner, Leaver
 | [Run a custom task extension]    |    4262b724-8dba-4fad-afc3-43fcbb497a0e    | Joiner, Leaver, Mover
 | [Disable user account]     |   1dfdfcc7-52fa-4c2e-bf3a-e3919cc12950      | Leaver
