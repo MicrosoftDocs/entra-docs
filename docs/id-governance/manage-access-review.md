@@ -34,7 +34,7 @@ First, you must be assigned one of the following roles:
 - (Preview) Microsoft 365 or Microsoft Entra Security Group owner of the group to be reviewed 
 
 > [!NOTE]
-> Following least privilege access, recommend using Identity Governance Administrator or User Administrator for these tasks.
+> Following least privilege access, we recommend using Identity Governance Administrator or User Administrator for these tasks.
 
 Then, go to the [Identity Governance page](https://portal.azure.com/#blade/Microsoft_AAD_ERM/DashboardBlade/) to ensure that access reviews is ready for your organization.
 
