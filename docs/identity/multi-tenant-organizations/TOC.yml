@@ -13,6 +13,7 @@
   expanded: true
   items:
   - name: Multitenant organizations
+    expanded: true
     items:
     - name: Identity provisioning for Microsoft 365
       href: multi-tenant-organization-microsoft-365.md
@@ -21,6 +22,7 @@
     - name: Limitations
       href: multi-tenant-organization-known-issues.md
   - name: Cross-tenant synchronization
+    expanded: true
     items:
     - name: Topologies for cross-tenant synchronization
       href: cross-tenant-synchronization-topology.md
