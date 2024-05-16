@@ -44,17 +44,39 @@ The MSAL authentication SDK is used for integrating authentication into your app
 1. Select **Add Package Dependencies...** from the **File** menu.
 1. Enter `https://github.com/AzureAD/microsoft-authentication-library-for-objc` as the Package URL and choose **Add Package**
 
+### Update the Bundle Identifier
+
+In Apple ecosystem, a Bundle Identifier is a unique identifier for an appliation. To update the Bundle Identifier in your project, follow these steps:
+
+1. Open the project settings. In the **Identity** section, enter the **Bundle Identifier**.
+1. Right-click **Info.plist** and select **Open As** > **Source Code**.
+1. Under the dict root node, replace `Enter_the_bundle_Id_Here` with the ***Bundle Id*** that you used in the portal. Notice the `msauth.` prefix in the string.
+
+   ```xml
+   <key>CFBundleURLTypes</key>
+   <array>
+      <dict>
+         <key>CFBundleURLSchemes</key>
+         <array>
+            <string>msauth.Enter_the_Bundle_Id_Here</string>
+         </array>
+      </dict>
+   </array>
+   ```
 
 ## Create SDK instance
+
+To create MSAL instance in your project, follow these steps:
 
 1. Import the MSAL library into your view controller by adding `import MSAL` at the top of your `ViewController` class.
 1. Add an `applicationContext` member variable to your ViewController class by adding the following code just before the `viewDidLoad()` function:
     
     ```swift
     var applicationContext : MSALPublicClientApplication?
+    var webViewParamaters : MSALWebviewParameters?
     ```
 
-    The code declares a variable named `applicationContext` of type `MSALPublicClientApplication`, which is used for managing Microsoft Authentication Library (MSAL) instances in iOS applications.
+    The code declares two variables: `applicationContext`, which stores an instance of `MSALPublicClientApplication`, and `webViewParameters`, which stores an instance of `MSALWebviewParameters`. `MSALPublicClientApplication` is a class provided by the MSAL for handling public client applications. The `MSALWebviewParameters` is a class provided by MSAL that defines parameters for configuring the web view used during the authentication process.
 
 1. Add the following code to the view `viewDidLoad()` function:
 
@@ -94,7 +116,7 @@ The MSAL authentication SDK is used for integrating authentication into your app
     import Foundation
 
     @objcMembers
-    class Configuration: NSObject {
+    class Configuration {
         static let kTenantSubdomain = "Enter_the_Tenant_Subdomain_Here"
         
         // Update the below to your client ID you received in the portal.
@@ -108,7 +130,7 @@ The MSAL authentication SDK is used for integrating authentication into your app
     }
     ```
     
-    This Swift configuration code defines a class named `Configuration` that inherits from `NSObject` and is marked with `@objcMembers`. It includes static constants for various configuration parameters related to an authentication setup. These parameters include the _tenant subdomain_, _client ID_, _redirect URI_, _protected API endpoint_, and _scopes_. These configuration constants should be updated with appropriate values specific to the application's setup.
+    This Swift configuration code defines a class named `Configuration` and is marked with `@objcMembers`. It includes static constants for various configuration parameters related to an authentication setup. These parameters include the _tenant subdomain_, _client ID_, _redirect URI_, _protected API endpoint_, and _scopes_. These configuration constants should be updated with appropriate values specific to the application's setup.
 
     Find the placeholder:
 

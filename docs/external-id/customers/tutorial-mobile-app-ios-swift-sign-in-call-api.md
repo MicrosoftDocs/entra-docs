@@ -68,7 +68,7 @@ To call a protected web API from your iOS app, use the following code:
             guard let httpResponse = response as? HTTPURLResponse,
                   (200...299).contains(httpResponse.statusCode)
             else {
-                print("Unsuccessful response found when accessing the API")
+                self.updateLogging(text: "Couldn't get API result: \(error)")
                 return
             }
             
