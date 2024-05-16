@@ -85,7 +85,7 @@ Once you have completed the steps for migration, repeat the steps for all of you
 
 ## Next Steps
 
-- [What is hybrid identity?](whatis-hybrid-identity.md)
+- [What is hybrid identity?](../whatis-hybrid-identity.md)
 - [What is password hash synchronization?](whatis-phs.md)
 - [What is the Exchange Hybrid Configuration Wizard?](/exchange/hybrid-deployment/deploy-hybrid)
 - [What is the Exchange Admin Center?](/exchange/exchange-admin-center)
