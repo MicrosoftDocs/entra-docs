@@ -258,7 +258,7 @@ $rrs = Get-MgEntitlementManagementCatalogResource -AccessPackageCatalogId $catal
 Then, assign the resource role from that resource to the access package.  For example, if you wished to include the first resource role of the resource returned earlier as a resource role of an access package, you would use a script similar to the following.
 
 ```powershell
-$apid = "cdd5f06b-752a-4c9f-97a6-82f4eda6c76d"
+$apid = "00001111-aaaa-2222-bbbb-3333cccc4444"
 
 $rparams = @{
     role = @{

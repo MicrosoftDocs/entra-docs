@@ -30,7 +30,7 @@ Updating permissions for your app isn't only a security best practice, but also 
 To update an app's requested permissions, you need:
 
 - A Microsoft Entra user account. If you don't already have one, [create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- One of the following roles: Global Administrator, Application Administrator, Cloud Application Administrator. An application owner who isn't an administrator is able to update an app's requested permissions.
+- One of the following roles: Application Administrator, Cloud Application Administrator. An application owner who isn't an administrator is able to update an app's requested permissions.
 
 ## Scenarios for updating permissions
 
@@ -93,7 +93,7 @@ To complete the following steps of adding permissions, you need the following re
    The following example calls the [Update application](/graph/api/application-update) API to add the required Microsoft Graph permissions to an app registration identified by object ID `aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb`. This example uses `Analytics.Read` and `Application.Read.All` delegated permission and application permission. Microsoft Graph is identified as a ServicePrincipal object with `00000003-0000-0000-c000-000000000000` as its globally unique `AppId`.
 
    ```http
-   PATCH https://graph.microsoft.com/v1.0/applications/581088ba-83c5-4975-b8af-11d2d7a76e98
+   PATCH https://graph.microsoft.com/v1.0/applications/aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb
    Content-Type: application/json
     {
         "requiredResourceAccess": [

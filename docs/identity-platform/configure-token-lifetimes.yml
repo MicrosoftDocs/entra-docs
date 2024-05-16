@@ -52,7 +52,7 @@ procedureSection:
         "@odata.id" = "https://graph.microsoft.com/v1.0/policies/tokenLifetimePolicies/$tokenLifetimePolicyId"
       }
 
-      $applicationObjectId="11111111-1111-1111-1111-111111111111"
+      $applicationObjectId="aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb"
 
       New-MgApplicationTokenLifetimePolicyByRef -ApplicationId $applicationObjectId -BodyParameter $params
 
