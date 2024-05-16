@@ -12,9 +12,6 @@ ms.service: global-secure-access
 
 Assign specific users and groups to a traffic forwarding profile. User or group assignment limits the scope of the traffic forwarding profile so you have a mechanism to roll out the profile safely and at a controlled pace.
 
-## Prerequisites
-- Group-based assignment requires Microsoft Entra ID P1 or P2 license.
-
 ## Assign to specific users or user groups 
 To scope the traffic profile to a specific user or group:
 
