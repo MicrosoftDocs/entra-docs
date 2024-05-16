@@ -84,7 +84,7 @@ Next, you create an app registration in Microsoft Entra ID, so that Microsoft En
 
 **Prerequisite role**: Global Administrator or other administrator who can consent applications to application permissions
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator). 
 
 1. Browse to > **Identity** > **Applications** > **App registrations**.
 
