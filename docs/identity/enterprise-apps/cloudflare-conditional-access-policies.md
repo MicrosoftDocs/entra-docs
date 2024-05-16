@@ -26,7 +26,7 @@ Learn more: [What is Conditional Access?](~/identity/conditional-access/overview
   * If you don't have one, get an [Azure free account](https://azure.microsoft.com/free/)
 * A Microsoft Entra tenant linked to the Microsoft Entra subscription
   * See, [Quickstart: Create a new tenant in Microsoft Entra ID](~/fundamentals/create-new-tenant.md)
-* One of the following roles: Global Administrator, Cloud Application Administrator, or Application Administrator.
+* One of the following roles: Cloud Application Administrator, or Application Administrator.
 * Configured users in the Microsoft Entra subscription  
 * A Cloudflare account
   * Go to `dash.cloudflare.com` to [Get started with Cloudflare](https://dash.cloudflare.com/sign-up)

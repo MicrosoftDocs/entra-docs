@@ -32,7 +32,7 @@ For greater control, certain types of enterprise applications can be configured 
 To assign users to an enterprise application, you need:
 
 - A Microsoft Entra account with an active subscription. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- One of the following roles: Global Administrator, Cloud Application Administrator, Application Administrator, or owner of the service principal.
+- One of the following roles: Cloud Application Administrator, Application Administrator, or owner of the service principal.
 - Microsoft Entra ID P1 or P2 for group-based assignment. For more licensing requirements for the features discussed in this article, see the [Microsoft Entra pricing page](https://azure.microsoft.com/pricing/details/active-directory).
 
 :::zone pivot="portal"
