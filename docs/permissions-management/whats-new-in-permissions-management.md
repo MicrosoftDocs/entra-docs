@@ -6,15 +6,27 @@ manager: amycolannino
 ms.service: entra-permissions-management
 
 ms.topic: whats-new
-ms.date: 05/14/2024
+ms.date: 05/16/2024
 ms.author: jfields
 ---
 
 # What's new in Microsoft Entra Permissions Management
 
-This article provides the latest Public Preview and General Availability of features in Microsoft Entra Permissions Management. 
+This article provides the latest Public Preview and General Availability information of features in Microsoft Entra Permissions Management. 
 
 ## May 2024
+
+### General availability - Microsoft Entra Permissions Management integration for Microsoft Defender for Cloud
+**Type:** Changed feature   
+**Service category:**                      
+**Product capability:** Permissions Management  
+
+Deploying applications and infrastructure across multiple clouds has become the norm. Ensuring the security of cloud applications and infrastructure requires integrating identity and permission insights into the overall security strategy. This objective is achieved through the integration of Microsoft Entra Permissions Management with Microsoft Defender for Cloud. 
+
+Permissions Management capabilities are available to integrate into the Defender for Cloud CSPM plan. Adding the capabilities of [Permissions Management to Defender for Cloud](permissions-management-for-defender-for-cloud) strengthens the prevention of security breaches that might occur due to excessive permissions or misconfigurations in the cloud environment. By continuously monitoring and managing cloud entitlements, Permissions Management helps to reduce the attack surface, detect potential threats, and maintain compliance with regulatory standards. These added features make Permissions Management an essential tool to integrate into the capabilities of Defender for Cloud for securing cloud-native applications and protecting sensitive data in the cloud. 
+
+For instructions on how to enable Permissions Management in your Defender for Cloud environment, see [Enable Permissions Management in Microsoft Defender for Cloud](https://go.microsoft.com/fwlink/?linkid=2252561)
+
 
 ### General availability - Support for PIM-enabled Groups 
 **Type:** Changed feature   
