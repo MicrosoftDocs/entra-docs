@@ -18,7 +18,7 @@ Entitlement management simplifies how enterprises manage access to groups, appli
 
 To review users' active access package assignments, the creator of a review must satisfy these prerequisites:
 - Microsoft Entra ID P2 or Microsoft Entra ID Governance
-- Be using at least the Identity Governance Administrator role
+- Global Administrator or Identity Governance Administrator role
 
 > [!NOTE]
 > Following least privilege access, we recommend using the Identity Governance Administrator role.
