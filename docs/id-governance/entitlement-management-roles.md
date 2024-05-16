@@ -40,11 +40,9 @@ Now, new members joining the Support team can request access to this access pack
 
 ## Add a Microsoft Entra role as a resource in an access package 
 
-**Prerequisite role:** Global Administrator
-
 Follow these steps to change the list of incompatible groups or other access packages for an existing access package: 
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 
 1. Browse to **Identity governance** > **Entitlement management** > **Access packages**.
 
