@@ -230,10 +230,7 @@ When you create an access review on a Team with shared channels, your reviewers 
 >[!NOTE]
 > Currently, B2B direct connect users and teams are only included in single-stage reviews. If multi-stage reviews are enabled, the B2B direct connect users and teams won't be included in the access review.
 
-B2B direct connect users and teams are included in access reviews of the Teams-enabled Microsoft 365 group that the shared channels are a part of. To create the review, you must be a:
-- Global Administrator
-- User administrator 
-- Identity Governance Administrator
+B2B direct connect users and teams are included in access reviews of the Teams-enabled Microsoft 365 group that the shared channels are a part of. To create the review, you must have at least the role of User Administrator or Identity Governance Administrator.
 
 Use the following instructions to create an access review on a team with shared channels:
 
@@ -269,8 +266,6 @@ Use the following instructions to create an access review on a team with shared 
 ## Allow group owners to create and manage access reviews of their groups
 
 [!INCLUDE [portal updates](../includes/portal-update.md)]
-
-The prerequisite role is a Global Administrator or Identity Governance Administrator.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
