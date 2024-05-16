@@ -111,10 +111,9 @@ You can only reprocess a request that has a status of **Delivery failed** or **P
 
 You can only cancel a pending request that hasn't yet been delivered or whose delivery has failed.The **cancel** button would be grayed out otherwise.
 
-**Prerequisite role:** Global administrator, Identity Governance administrator, Catalog owner, Access package manager or Access package assignment manager
-
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
-
+    > [!TIP]
+    > Other least privilege roles that can complete this task include the Catalog owner, Access package manager, and Access package assignment manager.
 1. Browse to **Identity governance** > **Entitlement management** > **Access packages** to open an access package.
 
 1. Select **Requests**.
