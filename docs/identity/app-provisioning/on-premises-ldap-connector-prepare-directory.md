@@ -74,10 +74,10 @@ Now that we have configured the certificate and granted the network service acco
  [![Screenshot that shows the Ldp tool location.](~/includes/media/app-provisioning-ldap/ldp-1.png)](~/includes/media/app-provisioning-ldap/ldp-1.png#lightbox)</br>
  3. At the top of ldp.exe, select **Connection** and **Connect**.
  4. Enter the following information and click **OK**.
- - Server: APP3
- - Port: 636
- - Place a check in the SSL box
- [![Screenshot that shows the Ldp tool connection configuration.](~/includes/media/app-provisioning-ldap/ldp-2.png)](~/includes/media/app-provisioning-ldap/ldp-2.png#lightbox)</br>
+    - Server: APP3
+    - Port: 636
+    - Place a check in the SSL box
+    [![Screenshot that shows the Ldp tool connection configuration.](~/includes/media/app-provisioning-ldap/ldp-2.png)](~/includes/media/app-provisioning-ldap/ldp-2.png#lightbox)
  5. You should see a response similar to the screenshot below.
  [![Screenshot that shows the Ldp tool connection configuration success.](~/includes/media/app-provisioning-ldap/ldp-3.png)](~/includes/media/app-provisioning-ldap/ldp-3.png#lightbox)</br>
  6. At the top, under **Connection** select **Bind**.
