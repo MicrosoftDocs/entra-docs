@@ -10,7 +10,7 @@ ms.service: entra-external-id
 
 ms.subservice: customers
 ms.topic: tutorial
-ms.date: 30/05/2024
+ms.date: 05/30/2024
 ms.custom: developer, devx-track-dotnet
 
 #Customer intent: As a dev, devops, I want to add sign-up with email one-time passcode or email and password, and collect user attributes in your Android mobile app using native authentication.

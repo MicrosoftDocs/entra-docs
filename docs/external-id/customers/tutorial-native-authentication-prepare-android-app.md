@@ -10,7 +10,7 @@ ms.service: entra-external-id
 
 ms.subservice: customers
 ms.topic: tutorial
-ms.date: 30/05/2024
+ms.date: 05/30/2024
 ms.custom: developer
 #Customer intent: As a dev, devops, I want to add Microsoft Authentication Library (MSAL) native authentication SDK to my Android mobile app so that I can sign-in users.
 ---
