@@ -43,7 +43,7 @@ The Microsoft Entra ID Windows Account Manager (WAM) is a set of APIs that enabl
 | `IsFeatureSupported` | `CrossCloudB2B`, <br/> `redirect_uri`, <br/> `TokenBinding`. | Used to check if a feature is supported in the current flow. |
 | `prompt` | Either `no_select` or `select_account` | The prompt parameter controls the behavior of the prompt window. `no_select` means no prompt behavior control is appended to the prompt window. `select_account` displays the account picker. The parameter is passed to the login service to control account selection behavior. |
 | `minimum_token_lifetime` | Time in milliseconds. | This is the time before which a fresh token needs to be requested and cache token needs to be discarded |
-| `telemetry` | `MATS` | Returns additional telemetry about the request |
+| `telemetry` | `MATS` | Returns telemetry about the request |
 | `enclave` | `sw` indicates software keys, <br/> `hw` indicates hardware keys, <br/> `kg` indicates keyguard keys. <br/> | The `enclave` parameter specifies the type of keys to be used. |
 | `token_type` | `pop` indicates proof of possession tokens <br/> `shr` indicates signed HTTP request tokens | The `token_type` parameter specifies the type of tokens to be used. |
 | `req_cnf` |       | The `req_cnf` parameter is used when the `token_type` is `pop`. This field contains information about the key that the client would like to bind to the access token for proof-of-possession. |
