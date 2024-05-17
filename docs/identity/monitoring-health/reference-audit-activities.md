@@ -122,9 +122,9 @@ Configuration changes for application provisioning, HR provisioning, cross-tenan
 |ProvisioningManagement|Export|The provisioning job has exported a change to the target system (ex: create a user).|
 |ProvisioningManagement|Import|The provisioning service has imported the object from the source system (ex: import the user properties in Entra).|
 |ProvisioningManagement|Other||
-|ProvisioningManagement|Process escrow||
+|ProvisioningManagement|Process escrow|The provisioning service was unable to export a change to the target application and is retrying the operation.|
 |ProvisioningManagement|Quarantine|There provisioning job is executing at a reduced frequency due to issues such as a lack of connectivity to the target application. [Learn more](~/identity/app-provisioning/application-provisioning-quarantine-status.md)|
-|ProvisioningManagement|Synchronization rule action||
+|ProvisioningManagement|Synchronization rule action|The provisioning service evaluated the object and did not export a change to the target system. This even is most often emitted when a user is skipped due to being out of scope for provisioning.|
 |ProvisioningManagement|Update attribute mappings or scope|The attribute mappings or scoping rules for the provisioning job have been updated.|
 |ProvisioningManagement|Update provisioning setting or credentials|The settings on your provisioning job (ex: notification email change, sync all vs. sync assigned users and groups, accidental deletions prevention) have been updated. The credentials for your provisioning job (ex: add a new bearer token) have been updated.|
 |ProvisioningManagement|User Provisioning|The schema for the provisioning job has been restarted.|
