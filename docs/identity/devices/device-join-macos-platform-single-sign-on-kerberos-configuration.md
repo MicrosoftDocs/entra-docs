@@ -172,7 +172,7 @@ Once the profile has been assigned to the device you can check that your device 
 > app-sso platform -s
 > ```
 
-You should have two Kerberos tickets, one for your on-premises AD with the ticketKeyPath value of **tgt_ad** and one for your Entra ID tenant with the ticketKeyPath value of **tgt_cloud**. The output should resemble the following:
+You should have two Kerberos tickets, one for your on-premises AD with the `ticketKeyPath` value of **tgt_ad** and one for your Entra ID tenant with the `ticketKeyPath` value of **tgt_cloud**. The output should resemble the following:
 
 :::image type="content" source="media/device-registration-macos-platform-single-sign-on/psso-kerberos-terminal-output.png" alt-text="Screenshot of the output of app-sso platform -s in the macOS Terminal app.":::
 
