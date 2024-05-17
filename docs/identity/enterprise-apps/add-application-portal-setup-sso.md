@@ -72,8 +72,6 @@ To register a user account with the application:
 1. Open a new browser window and browse to the sign-in URL for the application. For the **Microsoft Entra SAML Toolkit** application, the address is `https://samltoolkit.azurewebsites.net`.
 1. Select **Register** in the upper right corner of the page.
 
-    :::image type="content" source="media/add-application-portal-setup-sso/toolkit-register.png" alt-text="Screenshot showing where to register a user account in the Microsoft Entra SAML Toolkit application.":::
-
 1. For **Email**, enter the email address of the user that can access the application. Ensure that the user account is already assigned to the application.
 1. Enter a **Password** and confirm it.
 1. Select **Register**.
