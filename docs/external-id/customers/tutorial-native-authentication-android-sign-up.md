@@ -1,6 +1,6 @@
 ---
 title: Add sign-up in an Android app using native authentication
-description: Learn how to add sign-up using email one-time passcode or email and password, and collect user attributes in your Android mobile app using native authentication
+description: Learn how to add sign-up using email one-time passcode or email and password, and collect user attributes in your Android mobile app using native authentication.
 
 author: henrymbuguakiarie
 manager: mwongerapk
@@ -31,14 +31,14 @@ In this tutorial, you learn how to:
 
 ## Prerequisites
  
-- Complete the steps in [Tutorial: Prepare your Android app for native authentication](tutorial-native-authentication-prepare-android-app.md).
-- If you want to collect user attributes during sign-up, configure those user attributes when you [create your sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md).
+- Complete the steps in [Tutorial: Prepare your Android app for native authentication](tutorial-native-authentication-prepare-android-app.md) article.
+- If you want to collect user attributes during sign-up, configure the user attributes when you [create your sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md).
  
 ## Sign up a user
 
 To sign up a user using the email one-time passcode or username (email) and password, you collect an email from the user, then send an email containing an email one-time passcode to the user. The user enters a valid email one-time passcode to validate their username.
 
-To sign up a user you need to: 
+To sign up a user, you need to: 
 
 1. Create a user interface (UI) to: 
 
@@ -97,7 +97,7 @@ Whether you sign up a user using email one-time passcode or username (email) and
         }
     ```
 
-- The MSAL Android SDK provides a utility class `UserAttribute.Builder` to create user attributes. For example, to submit *city* and *country*, use the following code snippet to build the `userAttributes` variable: 
+- The Android SDK provides a utility class `UserAttribute.Builder` to create user attributes. For example, to submit *city* and *country*, use the following code snippet to build the `userAttributes` variable: 
 
     ```kotlin
          val userAttributes = UserAttributes.Builder 
@@ -229,7 +229,7 @@ To handle errors for the  `submitCode()` method, use the following code snippet:
 
 Make sure you include the import statements. Android Studio should include the import statements for you automatically. 
 
-You've completed all the necessary steps to successfully sign up a user into your app. Build and run your application. If all good, you should be able to successfully sign up the user by using email one-time passcode or email and password.. 
+You've completed all the necessary steps to successfully sign up a user into your app. Build and run your application. If all good, you should be able to successfully sign up the user by using email one-time passcode or email and password. 
 
 ## Optional: Sign in after a sign-up flow
 
