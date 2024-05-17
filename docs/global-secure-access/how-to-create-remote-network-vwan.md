@@ -3,7 +3,7 @@ title: Create a remote network using Azure vWAN
 description: Create a virtual wide area network to connect to your resources in Azure.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 05/09/2024
+ms.date: 05/16/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -184,13 +184,15 @@ This step uses Azure Virtual Desktop (AVD) to test tenant restrictions on the vi
 1. On the **Virtual networks** page, select **+ Create**.
 1. Complete the **Basics** tab and select **Next** to proceed to the **Security** tab.
 1. In the **Azure Bastion** section, select **Enable Bastion**, type the **Azure Bastion host name**, and select the **Azure Bastion public IP address**.
-1. Select **Next** to proceed to the **IP Addresses tab** tab. Don’t use an overlapping address space. For example, if the virtual hub created above uses the address space 10.0.0.0/16, create this virtual network with the address space 10.2.0.0/16.
+1. Select **Next** to proceed to the **IP Addresses tab** tab. Configure the address space of the virtual network with one or more IPv4 or IPv6 address ranges.
+> [!TIP]
+> Don’t use an overlapping address space. For example, if the virtual hub created above uses the address space 10.0.0.0/16, create this virtual network with the address space 10.2.0.0/16.
 1. Select **Review + create**. When validation passes, select **Create**.
 
 ### Add a virtual network connection to the virtual WAN
 1. Open the virtual WAN created above and navigate to **Connectivity** > **Virtual network connections**.
 1. Select **+ Add connection**.
-1. Complete the **Add connection** form, using the virtual hub and virtual network created in previous sections. Leave the remaining fields set to their default values.
+1. Complete the **Add connection** form, using the virtual **Hub** and **Virtual network** created in previous sections. Leave the remaining fields set to their default values.
 1. Select **Create**. 
 
 ### Create an Azure virtual Desktop
@@ -198,6 +200,7 @@ This step uses Azure Virtual Desktop (AVD) to test tenant restrictions on the vi
 1. On the **Azure Virtual Desktop** page, select **Create a host pool**.
 1. Complete the **Basics** tab with the following:
     * The **Host pool name**.
+    * The **Location** of where the Azure Virtual Desktop object is located.  
     * **Preferred app group type**: Desktop 
     * **Host pool type**: Pooled
     * **Load balancing algorithm**: Breadth-first
@@ -206,25 +209,53 @@ This step uses Azure Virtual Desktop (AVD) to test tenant restrictions on the vi
 1. Complete the **Next: Virtual Machines** tab with the following:
     * **Add virtual machines**: Yes 
     * The desired **Resource group**. 
-    * Name prefix: avd 
-    * Virtual machine type: Azure virtual machine 
-    * Virtual machine location: East US 
-    * Availability options: No infrastructure redundancy required 
-    * Security type: Trusted launch virtual machine 
-    * Enable secure boot: Yes 
-    * Enable vTPM: Yes 
-    * Image: Windows 11 Enterprise multi-session + Microsoft 365 apps version 22H2 
-    * Virtual machine size: Standard D2s v3, 2 vCPU's, 8 GiB memory 
-    * Number of VMs: 1 
+    * **Name prefix**: avd 
+    * **Virtual machine type**: Azure virtual machine 
+    * **Virtual machine location**: East US 
+    * **Availability options**: No infrastructure redundancy required 
+    * **Security type**: Trusted launch virtual machine 
+    * **Enable secure boot**: Yes 
+    * **Enable vTPM**: Yes 
+    * **Image**: Windows 11 Enterprise multi-session + Microsoft 365 apps version 22H2 
+    * **Virtual machine size**: Standard D2s v3, 2 vCPU's, 8 GiB memory 
+    * **Number of VMs**: 1 
     * Select the virtual network created in previous step. 
-    * Domain to join: Microsoft Entra ID 
+    * **Domain to join**: Microsoft Entra ID 
     * Enter the admin account credentials. 
 1. Leave other options to default and select **Review + create**.
+1. When validation passes, select **Create**.
+1. After about 30 minutes, the host pool will update to show that the deployment is complete.
+1. Navigate to Microsoft Azure **Home** and select **Virtual machines**.
+1. Select the virtual machine created above.
+1. Select **Connect** > **Connect via Bastion**.
+1. Select **Deploy Bastion**. The system will take about 30 minutes to provision the Bastion host.
+1. After the Bastion is deployed, enter the same admin credentials used to create the Azure Virtual Desktop. 
+1. Select **Connect**. The virtual desktop launches.
 
 ### Test the tenant restriction
+Before testing, enable tenant restrictions on the virtual network.
+1. In Microsoft Entra admin center, navigate to **Global Secure Access (Preview)** > **Global settings** > **Session management**.
+1. Toggle **Enable tagging to enforce tenant restrictions on your network** to on.
+1. Select **Save**.
+1. To modify the cross-tenant access policy by navigating to **Identity** > **External identities** > **Cross-tenant access settings**. For more information about cross-tenant access, see the article, [Cross-tenant access overview](../external-id/cross-tenant-access-overview.md).
+1. Keep the default settings, which prevent users from logging in with external accounts on managed devices. 
+
+To test:
+1. Log in to the Azure Virtual Desktop virtual machine created in the previous steps.
+1. Go to www.office.com and log in with an internal organization ID. This test should pass successfully.
+1. Repeat the above step, but with an external account. This test should fail due to blocked access.
 
 ### Test source IP restoration
+Before testing, enable conditional access.
+1. In Microsoft Entra admin center, navigate to **Global Secure Access (Preview)** > **Global settings** > **Session management**.
+1. Select the **Adaptive Access** tab.
+1. Toggle **Enable Global Secure Access signaling in Conditional Access** to on.
+1. Select **Save**.
 
+To test:
+1. Log in to the Azure Virtual Desktop virtual machine created in the previous steps.
+1. Go to www.office.com and log in with an internal organization ID. This test should pass successfully.
+1. Repeat the above step, but with an external account. This test should fail due to blocked access.
 
 ## Next steps
 
