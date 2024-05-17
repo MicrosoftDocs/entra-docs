@@ -145,7 +145,7 @@ To complete federating the VPN service with Microsoft Entra ID, create the BIG-I
     ![Screenshot of Name and Entity entries.](media/f5-passwordless-vpn/create-new-saml-sp.png)
 
    >[!NOTE]
-  >If the entity ID isn't an exact match of the hostname of the published URL, configure SP **Name** settings, or perform this action if it isn't in hostname URL format. If entity ID is `urn:ssl-vpn:contosoonline`, provide the external scheme and hostname of the application being published.
+   >If the entity ID isn't an exact match of the hostname of the published URL, configure SP **Name** settings, or perform this action if it isn't in hostname URL format. If entity ID is `urn:ssl-vpn:contosoonline`, provide the external scheme and hostname of the application being published.
 
 5. Scroll down to select the new **SAML SP object**.
 6. Select **Bind/UnBind IDP Connectors**.
