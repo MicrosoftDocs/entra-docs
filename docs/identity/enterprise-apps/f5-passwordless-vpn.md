@@ -261,9 +261,6 @@ An access policy enables the service for SAML authentication.
 14. For the Successful branch of SAML auth, select **+** .
 15. From the Assignment tab, select **Advanced Resource Assign**.
 16. Select **Add Item**.
-
-    ![Screenshot of the plus button on Access Policy.](media/f5-passwordless-vpn/advance-resource-assign.png)
-
 17. In the pop-up, select **New Entry**
 18. Select **Add/Delete**.
 19. In the window, select **Network Access**.
