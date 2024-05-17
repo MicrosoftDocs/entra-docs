@@ -120,7 +120,7 @@ Otherwise, if the application integration also requires one or more groups to be
 
 Once you've identified the resources, the application and optionally one or more groups, based on the integration pattern, and who the reviewers should be, then you can configure Microsoft Entra ID to start the reviews.
 
-1. For this step, you need to be in the `Global administrator` or `Identity Governance administrator` role.
+1. For this step, you should be in the `Identity Governance Administrator` role.
 1. In patterns A and C, you create one access review, selecting the application.  Follow the instructions in the guide for [creating an access review of groups or applications](create-access-review.md), to create the review of the application's role assignments.
 1. If your application is integrated with pattern B, use the same [guide](create-access-review.md) to create additional access reviews for each of the groups.
 

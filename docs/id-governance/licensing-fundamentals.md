@@ -40,7 +40,7 @@ The [product names and service plan identifiers for licensing](../identity/users
 
 To check if the prerequisite products for a Microsoft Entra ID Governance product are present in a tenant, you can use the Microsoft Entra admin center or the Microsoft 365 admin center to view the list of products.
 
-1. Sign into the [Microsoft Entra admin center](https://entra.microsoft.com) as a global administrator.
+1. Sign into the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator).
 
 1. In the **Identity** menu, expand **Billing** and select **Licenses**.
 
@@ -52,7 +52,7 @@ To check if the prerequisite products for a Microsoft Entra ID Governance produc
 
 A global administrator in a tenant that has an appropriate prerequisite product, such as Microsoft Entra ID P1, already purchased, and isn't already using or has previously trialed Microsoft Entra ID Governance, can request a trial of Microsoft Entra ID Governance in their tenant.
 
-1. Sign in to the [Microsoft 365 admin center](https://admin.microsoft.com/AdminPortal/Home) as a global administrator.
+1. Sign in to the [Microsoft 365 admin center](https://admin.microsoft.com/AdminPortal/Home) as a [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator)
 
 1. In the **Billing** menu, select **Purchase services**.
 

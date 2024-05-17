@@ -16,7 +16,7 @@ ms.reviewer: mwahl
 
 Access to groups and applications for employees and guests changes over time. To reduce the risk associated with stale access assignments, administrators can use Microsoft Entra ID to create access reviews for group members or application access.
 
-Microsoft 365 and Security group owners can also use Microsoft Entra ID to create access reviews for group members as long as a user in the Global Administrator or Identity Governance Administrator role enables the setting via the **Access Reviews Settings** pane. For more information about these scenarios, see [Manage access reviews](manage-access-review.md).
+Microsoft 365 and Security group owners can also use Microsoft Entra ID to create access reviews for group members as long as a user with at least the Identity Governance Administrator role enables the setting via the **Access Reviews Settings** pane. For more information about these scenarios, see [Manage access reviews](manage-access-review.md).
 
 Watch a short video that talks about enabling access reviews.
 
@@ -32,11 +32,14 @@ This article describes how to create one or more access reviews for group member
 
 - Microsoft Entra ID P2 or Microsoft Entra ID Governance licenses.  
 - Creating a review on inactive users, or with [user-to-group affiliation](review-recommendations-access-reviews.md#user-to-group-affiliation) recommendations, requires a Microsoft Entra ID Governance license.
-- Global administrator or Identity Governance administrator to create reviews on groups or applications.
+- Global Administrator or Identity Governance Administrator to create reviews on groups or applications.
 - Users must be in the Global administrator role or the Privileged Role administrator role to create reviews on role-assignable groups. For more information, see [Use Microsoft Entra groups to manage role assignments](../identity/role-based-access-control/groups-concept.md).
 - Microsoft 365 and Security group owner.
 
 For more information, see [License requirements](access-reviews-overview.md#license-requirements).
+
+> [!NOTE]
+> Following least privilege access, we recommend using the Identity Governance Administrator role.
 
 If you're reviewing access to an application, then before creating the review, see the article on how to [prepare for an access review of users' access to an application](access-reviews-application-preparation.md) to ensure the application is integrated with Microsoft Entra ID in your tenant.
 
@@ -230,10 +233,7 @@ When you create an access review on a Team with shared channels, your reviewers 
 >[!NOTE]
 > Currently, B2B direct connect users and teams are only included in single-stage reviews. If multi-stage reviews are enabled, the B2B direct connect users and teams won't be included in the access review.
 
-B2B direct connect users and teams are included in access reviews of the Teams-enabled Microsoft 365 group that the shared channels are a part of. To create the review, you must be a:
-- Global Administrator
-- User administrator 
-- Identity Governance Administrator
+B2B direct connect users and teams are included in access reviews of the Teams-enabled Microsoft 365 group that the shared channels are a part of. To create the review, you must have at least the role of User Administrator or Identity Governance Administrator.
 
 Use the following instructions to create an access review on a team with shared channels:
 
@@ -269,8 +269,6 @@ Use the following instructions to create an access review on a team with shared 
 ## Allow group owners to create and manage access reviews of their groups
 
 [!INCLUDE [portal updates](../includes/portal-update.md)]
-
-The prerequisite role is a Global Administrator or Identity Governance Administrator.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
