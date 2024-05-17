@@ -41,6 +41,7 @@ There are several steps to configuring web content filtering. Take note of where
 1. [Create a web content filtering policy.](#create-a-web-content-filtering-policy)
 1. [Create a security profile.](#create-a-security-profile)
 1. [Link the security profile to a Conditional Access policy.](#create-and-link-conditional-access-policy)
+1. [Assign users or groups to the traffic forwarding profile.](#user-and-group-assignments)
 
 ## Enable internet traffic forwarding
 
@@ -91,6 +92,9 @@ Create a Conditional Access policy for end users or groups and deliver your secu
 1. Select **Select**.
 1. In the **Enable policy** section, ensure **On** is selected.
 1. Select **Create**.
+
+## User and group assignments
+You can scope the Internet Access profile to specific users and groups. To learn more about user and group assignment, see [How to assign and manage users and groups with traffic forwarding profiles](how-to-manage-users-groups-assignment.md).
 
 ## Verify end user policy enforcement
 

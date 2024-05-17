@@ -77,6 +77,8 @@ items:
         href: how-to-manage-microsoft-365-profile.md
       - name: Manage the Private Access profile
         href: how-to-manage-private-access-profile.md
+      - name: Assign users and groups to a profile
+        href: how-to-manage-users-groups-assignment.md
   - name: Private Access
     expanded: false
     items:
