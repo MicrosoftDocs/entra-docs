@@ -84,7 +84,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://mycurricula.com/auth/saml/<UNIQUEID>`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier and Reply URL. Contact [Curricula SAML Client support team](mailto:engineering@getcurricula.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values are not real. Update these values with the actual Identifier and Reply URL. Contact [Curricula SAML Client support team](mailto:support@huntresslabs.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. Click **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
 
@@ -131,11 +131,11 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 ## Configure Curricula SAML SSO
 
-To configure single sign-on on **Curricula SAML** side, you need to send the downloaded **Certificate (Base64)** and appropriate copied URLs from the application configuration to [Curricula SAML support team](mailto:engineering@getcurricula.com). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **Curricula SAML** side, you need to send the downloaded **Certificate (Base64)** and appropriate copied URLs from the application configuration to [Curricula SAML support team](mailto:support@huntresslabs.com). They set this setting to have the SAML SSO connection set properly on both sides.
 
 ### Create Curricula SAML test user
 
-In this section, you create a user called Britta Simon in Curricula SAML. Work with [Curricula SAML support team](mailto:engineering@getcurricula.com) to add the users in the Curricula SAML platform. Users must be created and activated before you use single sign-on.
+In this section, you create a user called Britta Simon in Curricula SAML. Work with [Curricula SAML support team](mailto:support@huntresslabs.com) to add the users in the Curricula SAML platform. Users must be created and activated before you use single sign-on.
 
 ## Test SSO
 
