@@ -125,7 +125,7 @@ You must configure a Kerberos SSO MDM profile. It is recommended to use the foll
 </plist>
 ```
 
-Once you have updated the configuration to use the proper values for your environment, save the configuration using a text editor as a mobileconfig file, such as kerberos.mobileconfig
+Once you have updated the configuration to use the proper values for your environment, save the configuration using a text editor with the `.mobileconfig` file extension (e.g., `kerberos.mobileconfig`).
 
 ### Intune Configuration Steps
 
