@@ -67,7 +67,7 @@ The `error` field has several possible values - review the protocol documentatio
 | `invalid_client` | Client authentication failed.  | The client credentials aren't valid. To fix, the Application Administrator updates the credentials.   |
 | `unsupported_grant_type` | The authorization server doesn't support the authorization grant type. | Change the grant type in the request. This type of error should occur only during development and be detected during initial testing. |
 | `invalid_resource` | The target resource is invalid because it doesn't exist, Microsoft Entra ID can't find it, or it's not correctly configured. | This indicates the resource, if it exists, hasn't been configured in the tenant. The application can prompt the user with instruction for installing the application and adding it to Microsoft Entra ID.  During development, this usually indicates an incorrectly set up test tenant or a typo in the name of the scope being requested. |
-| `interaction_required` | The request requires user interaction. For example, an another authentication step is required. | Retry the request with the same resource, interactively, so that the user can complete any challenges required.  |
+| `interaction_required` | The request requires user interaction. For example, another authentication step is required. | Retry the request with the same resource, interactively, so that the user can complete any challenges required.  |
 | `temporarily_unavailable` | The server is temporarily too busy to handle the request. | Retry the request. The client application might explain to the user that its response is delayed because of a temporary condition. |
 
 ## AADSTS error codes
