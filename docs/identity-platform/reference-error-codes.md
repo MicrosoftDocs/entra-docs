@@ -5,7 +5,7 @@ author: rwike77
 manager: CelesteDG
 ms.author: ryanwi
 ms.custom: 
-ms.date: 04/10/2024
+ms.date: 04/24/2024
 ms.reviewer: ludwignick
 ms.service: identity-platform
 
@@ -378,6 +378,7 @@ The `error` field has several possible values - review the protocol documentatio
 | AADSTS7000112 | UnauthorizedClientApplicationDisabled - The application is disabled. |
 | AADSTS7000114| Application 'appIdentifier' isn't allowed to make application on-behalf-of calls.|
 | AADSTS7500529 | The value ‘SAMLId-Guid’ isn't a valid SAML ID - Microsoft Entra ID uses this attribute to populate the InResponseTo attribute of the returned response. ID must not begin with a number, so a common strategy is to prepend a string like "ID" to the string representation of a GUID. For example, id6c1c178c166d486687be4aaf5e482730 is a valid ID. |
+| AADSTS9002341 | V2Error: `invalid_grant` - The user is required to permit single sign-On (SSO). This error occurs when the user has not granted the necessary permissions for the application to perform SSO. The user should be redirected to the consent screen to grant the necessary permissions. Refer to [this announcement](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/upcoming-changes-to-windows-single-sign-on/ba-p/4008151) for more information."|
 
 ## Next steps
 
