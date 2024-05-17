@@ -8,7 +8,7 @@ ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.workload: identity
 ms.topic: conceptual 
-ms.date: 04/10/2024
+ms.date: 05/17/2024
 ms.custom: template-concept 
 
 #CustomerIntent: As an IT administrator, I want to learn about managing synced on-premises users with Lifecycle workflows so that I can use workflows to manage these users in my environment.
@@ -16,34 +16,42 @@ ms.custom: template-concept
 
 # Managing synced on-premises users with lifecycle workflows
 
-Lifecycle workflows allow you to create workflows that can be triggered for users based on where they fall in the joiner, mover, or leaver(JML) lifecycle within your organization. With these workflows, you can also streamline the process of managing cloud-based, and synced on-premises users in your environment via tasks. For example, you're able to enable synced on-premises user accounts, onboard users while also sending required information to their manager, automatically add users to groups or teams when their job role changes, disable accounts when users are no longer active, and even delete the user account. These capabilities work either out of the box, or with some configuration. In this article, you learn what is needed to use lifecycle workflow tasks on synced on-premises users in your environment.
+Lifecycle Workflows supports governing the identity lifecycle for user accounts which are synchronized from on-premises Active Directory Domain Services (AD-DS) to Microsoft Entra. For Lifecycle Workflows it is essential that a user account exists in Microsoft Entra but how the account was created or how lifecycle relevant changes are being made to the account plays a minor role when it comes to processing workflows and associated tasks for the user account. The support includes accounts and changes made via paths such as [HR driven provisioning](../identity/app-provisioning/what-is-hr-driven-provisioning.md), Microsoft Graph APIs, the Microsoft Entra Admin Portal as well as changes synchronized by Microsoft Entra Connect and MicrosoftCloud Sync.
+
+In this article, you learn what needs to be considered if you want to use Lifecycle Workflows for user accounts which are synchronized from on-premises Active Directory Domain Services (AD-DS) to Microsoft Entra, referred to as ‘*synced on-premises users*’.
 
 
-## Synced on-premises user capabilities compatibility with workflow triggers
+## Workflow execution conditions with synced on-premises users
 
-In lifecycle workflows, a workflow runs based on if a user meets its execution conditions. Each execution condition must have a trigger, which defines when a user meets the execution condition of a workflow, and a scope, which defines which users for who the workflow runs. The trigger you set for an execution condition depends on the user situation for which you want the workflow to run.
+Lifecycle Workflows are processed for user accounts when they meet the workflows execution conditions. Executing conditions are composed of a trigger and scope. The trigger describes the event that occurs for a user account. The scope allows to further define for whom the workflow will start when the event occurs.
 
-The following table shows what is required to use each workflow trigger with synced on-premises users:
+### Workflow triggers
+
+The following table shows what should be considered for each workflow trigger when used with synced on-premises users:
 
 |Workflow Trigger  | Requirements  |
 |---------|---------|
-|Attribute changes (preview)     | No further configuration needed as long as attributes are synced. For information on synced attributes, see: [Attribute mapping in Microsoft Entra Cloud Sync](../identity/hybrid/cloud-sync/how-to-attribute-mapping.md) and [Microsoft Entra Connect Sync: Directory extensions](../identity/hybrid/connect/how-to-connect-sync-feature-directory-extensions.md).       |
-|Group membership based  (preview)   | Group needs to have a presence in Microsoft Entra ID. If the group is synced in, there might be a delay, as processing starts once the change is synced into Microsoft Entra ID.       |
+|Attribute changes (preview)     | No further configuration needed as long as attributes are synced. For information on synced attributes, see: [Attribute mapping in Microsoft Entra Cloud Sync](../identity/hybrid/cloud-sync/how-to-attribute-mapping.md) and [Microsoft Entra Connect Sync: Directory extensions](../identity/hybrid/connect/how-to-connect-sync-feature-directory-extensions.md). When a change is made in on-premises Active Directory, the synchronization via Microsoft Entra Cloud Sync or Microsoft Entra Connect Sync needs to occur before changes can be picked up from Lifecycle Workflows.      |
+|Group membership based  (preview)   | As any type of group is supported, no further configuration is required. If the group originates from on-premises Active Directory, it must be synchronized to Microsoft Entra. The Microsoft Entra Cloud Sync, or Microsoft Entra Connect Sync, synchronization needs to occur before changes can be picked up from Lifecycle Workflows.       |
 |On-demand     |   No further configuration needed.      |
 |Time based    |  **employeeHireDate**, **employeeLeaveDateTime**: These attributes must be synced before being used. For more information on this process, see: [How to synchronize attributes for Lifecycle workflows](./how-to-lifecycle-workflow-sync-attributes.md).<br></br>**createdDateTime**: No further requirements needed. This date is the day the user account is synced to Microsoft Entra ID, not when they were created within Active Directory.       |
 
+### Workflow scoping
 
-## Synced on-premises users and workflow capabilities
+For user attributes leveraged within the workflow scoping capabilities, no further configuration is needed if the selected attributes are already synchronized. For information on synchronized attributes, see: [Attribute mapping in Microsoft Entra Cloud Sync](../identity/hybrid/cloud-sync/how-to-attribute-mapping.md) and [Microsoft Entra Connect Sync: Directory extensions](../identity/hybrid/connect/how-to-connect-sync-feature-directory-extensions.md). When a change is made in on-premises Active Directory, the synchronization via Microsoft Entra Cloud Sync or Microsoft Entra Connect Sync needs to occur before changes can be picked up from Lifecycle Workflows.
 
-All Lifecycle workflow tasks work for both cloud, and synced on-premises, users out of the box except for limitations listed on specific tasks further in this article. For more information on all Lifecycle Workflow tasks, see: [Lifecycle Workflow built-in tasks](lifecycle-workflow-tasks.md).
 
-### Group tasks
+## Workflow tasks and synced on-premises capabilities
 
-The group membership trigger works with on-premises Active Directory to Microsoft Entra ID synced groups. To control access to on-premises Active directory group-based applications and resources, you need to enable group writeback. For more information, see: [Microsoft Entra Cloud Sync group writeback](~/identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md) and [using group writeback with entitlement management](../id-governance/entitlement-management-group-writeback.md).
+All Lifecycle workflow tasks work for both cloud, and synced on-premises, users out of the box except for limitations listed on specific tasks further in this article. For more information on all Lifecycle Workflow tasks, see:  [Lifecycle Workflow built-in tasks](lifecycle-workflow-tasks.md).
+
+### Tasks to govern group memberships
+
+The Lifecycle Workflows tasks to govern group memberships cannot be used for groups that are synchronized from on-premises Active Directory to Microsoft Entra. However, Microsoft Entra ID Governance can be used to [govern on-premises Active Directory (Kerberos) application access](../identity/hybrid/cloud-sync/govern-on-premises-groups.md) with groups from the cloud, which are supported within Lifecycle Workflows.
 
 ## User account tasks (preview)
 
-Tasks related to enabling, disabling, and deleting user accounts work with synced on-premises users as long as you have satisfied the following prerequisites in your environment:
+Additional configuration is required for the Lifecycle Workflow tasks to enable, disable and delete user accounts to work with synced on-premises users. The following prerequisites must be completed before you can configure the tasks to perform actions in on-premises Active Directory.
 
 - You must have the [Microsoft Entra provisioning agent](../identity/hybrid/cloud-sync/what-is-provisioning-agent.md) installed in your environment. For prerequisites on installing the Microsoft Entra provisioning agent, see: [Cloud provisioning agent requirements](../identity/hybrid/cloud-sync/how-to-prerequisites.md#cloud-provisioning-agent-requirements). For a step by step guide on installing the Microsoft Entra Provisioning agent, see: [Install the Microsoft Entra Provisioning Agent](../identity/hybrid/cloud-sync/how-to-install.md). During installation, choose “**HR-driven provisioning / Microsoft Entra Connect Sync**” as “**extension configuration**”. You aren't required to add any other configuration for the provisioning agent, such as the cloud sync configuration, and you can install the provisioning agent even if you're also currently using Microsoft Entra Connect Sync for your user synchronization.
 
