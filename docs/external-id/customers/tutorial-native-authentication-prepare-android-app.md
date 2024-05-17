@@ -102,10 +102,10 @@ Use these steps to create configuration file:
 
     The challenge types are a list of values, which the app uses to notify Microsoft Entra about the authentication method that it supports. 
     
-    - For sign-up flow with email one-time password, use `["oob"]`.
-    - For sign-up flow with email and password, use `["oob","password"]`.
-    - For sign-in flow with email one-time password, use `["oob"]`.
-    - For sign-in flow with email and password, use `["oob","password"]`.
+    - For sign-up flow with email one-time passcode, use `["oob"]`.
+    - For sign-up flow with email and passcode, use `["oob","password"]`.
+    - For sign-in flow with email one-time passcode, use `["oob"]`.
+    - For sign-in flow with email and passcode, use `["oob","password"]`.
 
     Learn more [challenge types](concept-native-authentication-challenge-types.md).  
 
