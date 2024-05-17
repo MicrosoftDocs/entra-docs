@@ -86,7 +86,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 	> [!NOTE]
 	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. You will get these values while configuring Docker SSO. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
 
-1. Docker application expects an email address as **Unique User Identifier** and it also supports **Givenname** and **Surname** to sync users full name into Docker app.  The following screenshot shows the list of default attributes.
+1. Docker application expects an email address as **Unique User Identifier** and it also supports **Given name** and **Surname** to sync users full name into Docker app.  The following screenshot shows the list of default attributes.
 
     ![Screenshot shows the image of the attributes.](common/default-attributes.png "Image")
 
@@ -171,9 +171,9 @@ In this section, a user called Britta Simon is created in Docker. Docker support
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
  
-* Click on **Test this application** in Microsoft Entra admin center. This will redirect to Docker Sign-on URL where you can initiate the login flow.
+* Click on **Test this application** in Microsoft Entra admin center. This will redirect to Docker Sign on URL where you can initiate the login flow.
  
-* Go to Docker Sign-on URL directly and initiate the login flow from there.
+* Go to Docker Sign on URL directly and initiate the login flow from there.
  
 * You can use Microsoft My Apps. When you click the Docker tile in the My Apps, this will redirect to Docker Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
