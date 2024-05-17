@@ -14,7 +14,7 @@ ms.reviewer: brianmel
 #Customer intent: As a user I want to understand how to set up a Mac device with macOS Platform Single Sign-on (PSSO) during the out of box experience. I want to know the difference betwwen setting up with secure enclave, smart card or password based authentication methods.
 ---
 
-# Enable Kerberos SSO to On-Premises Active Directory and Entra ID Kerberos Resources in Platform SSO
+# Enable Kerberos SSO to on-premises Active Directory and Entra ID Kerberos resources in Platform SSO
 
 Mac users can join their new device to Microsoft Entra ID during the first-run out-of-box experience (OOBE). The macOS Platform single sign-on (PSSO) is a capability on macOS that is enabled using the [Microsoft Enterprise Single Sign-on Extension](../../identity-platform/apple-sso-plugin.md). PSSO allows users to sign in to a Mac device using a hardware-bound key, smart card or their Microsoft Entra ID password.
 
@@ -31,16 +31,16 @@ This tutorial shows you how to configure Platform SSO to support Kerberos-based 
 
 Refer to the [Entra ID macOS Platform SSO documentation](./macos-psso.md) to learn how to configure and deploy Platform SSO. This must be performed regardless of whether you choose to deploy Kerberos SSO using this guide.
 
-## Kerberos SSO MDM Profile Configuration
+## Kerberos SSO MDM profile configuration
 
 You must configure a Kerberos SSO MDM profile. It is recommended to use the following settings. Make sure that you replace all references to **contoso.com** and **Contoso** with the proper values for your environment:
 
 | Configuration Key | Recommended Value | Note |
 |-|-|-|
-| preferredKDCs | <string>kkdcp://login.microsoftonline.com/contoso.com/kerberos</string> | Replace the **contoso.com** value with the value of one of your tenant domains or your tenant's GUID |
-| Hosts | <string>contoso.com</string> | Replace **contoso.com** with your on-premises domain/forest name |
-| Hosts | <string>*.contoso.com</string> | Replace **contoso.com** with your on-premises domain/forest name. Keep the preceding `*.` characters before your domain/forest name |
-| PayloadOrganization | <string>Contoso</string> | Replace **Contoso** with the name of your organization |
+| `preferredKDCs` | `<string>kkdcp://login.microsoftonline.com/contoso.com/kerberos</string>` | Replace the **contoso.com** value with the value of one of your tenant domains or your tenant's GUID |
+| `Hosts` | `<string>contoso.com</string>` | Replace **contoso.com** with your on-premises domain/forest name |
+| `Hosts` | `<string>*.contoso.com</string>` | Replace **contoso.com** with your on-premises domain/forest name. Keep the preceding `*.` characters before your domain/forest name |
+| `PayloadOrganization` | `<string>Contoso</string>` | Replace **Contoso** with the name of your organization |
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -127,7 +127,7 @@ You must configure a Kerberos SSO MDM profile. It is recommended to use the foll
 
 Once you have updated the configuration to use the proper values for your environment, save the configuration using a text editor with the `.mobileconfig` file extension (e.g., `kerberos.mobileconfig`).
 
-### Intune Configuration Steps
+### Intune configuration steps
 
 If you use Intune as your MDM you can perform the following steps to deploy the profile. Make sure you follow the [previous instructions](#kerberos-sso-mdm-profile-configuration) about replacing **contoso.com** values with the proper values for your organization.
 
