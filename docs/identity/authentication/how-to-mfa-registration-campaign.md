@@ -74,7 +74,7 @@ You can also define how many days a user can postpone, or "snooze," the nudge. I
 
 To enable a registration campaign in the Microsoft Entra admin center, complete the following steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator) or [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Protection** > **Authentication methods** > **Registration campaign** and click **Edit**.
 1. For **State**:
 
@@ -135,7 +135,7 @@ The following table lists **includeTargets** properties.
 | Name | Possible values | Description |
 |------|-----------------|-------------|
 | targetType| "user"<br>"group" | The kind of entity targeted. |
-| Id | A guid identifier | The ID of the user or group targeted. |
+| ID | A guid identifier | The ID of the user or group targeted. |
 | targetedAuthenticationMethod | "microsoftAuthenticator" | The authentication method user is prompted to register. The only permissible value is "microsoftAuthenticator". |
 
 The following table lists **excludeTargets** properties.
@@ -143,7 +143,7 @@ The following table lists **excludeTargets** properties.
 | Name       | Possible values   | Description                           |
 |------------|-------------------|---------------------------------------|
 | targetType | "user"<br>"group" | The kind of entity targeted.          |
-| Id         | A string          | The ID of the user or group targeted. |
+| ID         | A string          | The ID of the user or group targeted. |
 
 ### Examples
 

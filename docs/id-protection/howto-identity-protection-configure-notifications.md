@@ -39,8 +39,6 @@ To prevent an overload of e-mails, you only receive one email within a 5-second 
 
 If your organization enabled self-remediation as described in the article, [User experiences with Microsoft Entra ID Protection](concept-identity-protection-user-experience.md) there's a chance that the user might remediate their risk before you have the opportunity to investigate. You can see risky users and risky sign-ins that were already remediated by adding **Remediated** to the **Risk state** filter in either the **Risky users** or **Risky sign-ins** reports.
 
-![A screenshot showing a sample users at risk detected email.](./media/howto-identity-protection-configure-notifications/01.png)
-
 ### Configure users at risk detected alerts
 
 As an administrator, you can set:

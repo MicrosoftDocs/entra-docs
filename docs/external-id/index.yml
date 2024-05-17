@@ -3,21 +3,21 @@
 ## FRONT MATTER START
 title: Microsoft Entra External ID documentation # < 60 chars
 summary: >
-  With Microsoft Entra External ID, formerly known as Azure Active Directory (Azure AD) External Identities, you can collaborate with partners and guests (B2B) or add customer identity and access (CIAM) management to your customer-facing apps. 
+  With Microsoft Entra External ID, you can secure all the external identities you work with. Collaborate on your workforce apps and resources with business guests, or secure external user access to your customer and consumer facing apps. 
 brand: azure
 
 metadata:
   title: Microsoft Entra External ID documentation
-  description: Learn how to use Microsoft Entra External ID to manage how partners and customers sign in to your applications.
+  description: Learn how to use Microsoft Entra External ID for all your external identities scenarios, including B2B collaboration for your workforce, and identity and access management for your consumer apps.
    
   ms.service: entra-external-id
   ms.subservice:
 
   ms.topic: hub-page
   ms.collection: collection
-  author: csmulligan
-  ms.author: cmulligan
-  ms.date: 02/28/2024
+  author: msmimart
+  ms.author: mimart
+  ms.date: 04/30/2024
 
 ## FRONT MATTER END
 
@@ -26,99 +26,44 @@ highlightedContent:
 # itemType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
   items:
     # Card
-    - title: CIAM - Get started 
+    - title: What is Microsoft Entra External ID? 
       itemType: overview
-      url: ./customers/index.yml
+      url: ./external-identities-overview.md
     # Card
-    - title: B2B - Get started 
-      itemType: overview
-      url: ./index-b2b.yml      
+    - title: "Try the Woodgrove Groceries demo"
+      itemType: get-started
+      url: https://woodgrovedemo.com/      
     # Card
-    - title: What is Azure AD B2C (business-to-consumer) identity?
-      itemType: overview
-      url: /azure/active-directory-b2c/
-## BAND 1 - HIGHLIGHTED CONTENT END ##########################################################################################################################
+    - title: "Set up an external tenant in minutes"
+      itemType: quickstart
+      url: ./customers/quickstart-tenant-setup.md
 
-## BAND 2 - ADDITIONAL CONTENT START ####################################################################################################################################################
+productDirectory:
+  title: Get started
+  items:
+    - title: Protect your consumer and business customer identities
+      imageSrc: ./media/index/external-identities-icon.png
+      summary: "As an IT professional, learn how to use External ID as your customer identity and access management (CIAM) solution."
+      url: ./customers/overview-customers-ciam.md
+    - title: Build consumer and business customer apps for External ID
+      imageSrc: ./media/index/identity-platform-icon.png
+      summary: "As a developer, use our tutorials to learn how to integrate your consumer and business customer apps with External ID."
+      url: customers/samples-ciam-all.md?tabs=apptype
+    - title: Collaborate with business guests
+      imageSrc: ./media/index/b2b-icon.png
+      summary: "Learn how your workforce can work securely with business guests using B2B collaboration."
+      url: what-is-b2b.md
+
 additionalContent:
-  # Supports up to 4 subsections
   sections:
-    - title: Microsoft Entra External ID for external-facing apps
+    - title: Resources
       items:
-        # Card
-        - title: Overview
-          summary: Learn basic external tenant concepts and processes.
-          url: ./customers/overview-customers-ciam.md
-        # Card
-        - title: 30-day free trial
-          summary: Set up your external tenant free trial.
-          url: ./customers/quickstart-trial-setup.md
-        # Card
-        - title: Planning for customer identity and access management 
-          summary: Plan your external tenant journey.
-          url: ./customers/concept-planning-your-solution.md
-          # Card
-        - title: Code samples for external tenants
-          summary: Learn about our code samples for customer identity and access management (CIAM) in Microsoft Entra External ID.
-          url: ./customers/samples-ciam-all.md
-          # Card
-        - title: Authentication methods and identity providers
-          summary: Learn about several options for authenticating users of your applications. 
-          url: ./customers/concept-authentication-methods-customers.md
-          # Card
-        - title: Customize the sign-in look and feel
-          summary: Learn about how to personalize the end-user experience.
-          url: ./customers/concept-branding-customers.md        
-    - title: Microsoft Entra External ID for business guests (B2B)
-      items:      
-        # Card
-        - title: Overview
-          summary: Learn basic B2B concepts and processes.
-          url: ./external-identities-overview.md
-        # Card
-        - title: What is Microsoft Entra B2B collaboration?
-          summary: Learn about the Microsoft Entra B2B collaboration feature.
-          url: ./what-is-b2b.md      
-        # Card
-        - title: What is Microsoft Entra B2B direct connect?
-          summary: Learn about the Microsoft Entra B2B direct connect feature.
-          url: ./b2b-direct-connect-overview.md   
-        # Card
-        - title: External user properties in Microsoft Entra External ID
-          summary: Learn about the properties of a Microsoft Entra B2B collaboration user.
-          url: ./user-properties.md 
-        # Card
-        - title: Cross-tenant access
-          summary: Configure cross-tenant access settings for B2B collaboration.
-          url: ./cross-tenant-access-settings-b2b-collaboration.yml
-        # Card
-        - title: Self-service sign-up
-          summary: Learn about the self-service sign-up user flow. 
-          url: ./self-service-sign-up-overview.md 
-    - title: Quickstarts by app type in the external tenant
-      items:
-        # Card
-        - title: Single-page app (SPA)
-          summary: A web app whose code is downloaded and run in the browser itself. 
-          url: ./customers/sample-single-page-app-vanillajs-sign-in.md  
-        # Card
-        - title: Web app
-          summary: A "classic" web app that runs on a server.
-          url: ./customers/sample-web-app-node-sign-in.md
-        # Card
-        - title: Web API
-          summary: Web API that is called from a web app or from a web client.
-          url: ./customers/tutorial-protect-web-api-dotnet-core-build-app.md          
-          # Card
-        - title: Daemon app
-          summary: Daemon or server app that runs without a user interface.
-          url: ./customers/sample-daemon-node-call-api.md
-        # Card
-        - title: Desktop app
-          summary: App with a native user interface that runs on a desktop, laptop or notebook.
-          url: ./customers/how-to-desktop-app-electron-sample-sign-in.md   
-          # Card
-        - title: Mobile app
-          summary: App with a native user interface that runs on a mobile device.
-          url: ~/identity-platform/index-mobile.yml           
-## BAND 2 - ADDITIONAL CONTENT END ##########################################################################################################################
+        - title: "Microsoft Entra External ID Developer Center"
+          summary: "Explore code samples, videos, and community links."
+          url: https://aka.ms/ciam/dev
+        - title: "Microsoft Entra identity platform blogs"
+          summary: "Read our blog posts for the latest product updates."
+          url: https://devblogs.microsoft.com/identity/
+        - title: "Microsoft Entra External ID video series"
+          summary: "Learn more through our overview and how-to videos."
+          url: https://www.youtube.com/playlist?list=PL3ZTgFEc7Lythpts59O9KOVuEDLWJLLmA

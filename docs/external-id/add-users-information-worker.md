@@ -1,10 +1,10 @@
 ---
 
 title: Add B2B collaboration users as an information worker
-description: B2B collaboration allows information workers and app owners to add guest users to Microsoft Entra ID for access
+description: B2B collaboration allows information workers and app owners to add guest users to Microsoft Entra ID for access.
 ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 06/30/2023
+ms.date: 04/24/2024
 ms.author: cmulligan
 author: csmulligan
 manager: celestedg
@@ -71,7 +71,7 @@ After an app is configured for self-service, application owners can invite guest
 
 ## Prerequisites
 
-Self-service app management requires some initial setup by a Global Administrator and a Microsoft Entra administrator. As part of this setup, you'll configure the app for self-service and assign a group to the app that the application owner can manage. You can also configure the group to allow anyone to request membership but require a group owner's approval. (Learn more about [self-service group management](~/identity/users/groups-self-service-management.md).) 
+Self-service app management requires some initial setup by a Microsoft Entra administrator. As part of this setup, you'll configure the app for self-service and assign a group to the app that the application owner can manage. You can also configure the group to allow anyone to request membership but require a group owner's approval. (Learn more about [self-service group management](~/identity/users/groups-self-service-management.md).) 
 
 > [!NOTE]
 > You cannot add guest users to a dynamic group or to a group that is synced with on-premises Active Directory.
@@ -96,7 +96,7 @@ Self-service app management requires some initial setup by a Global Administrato
 7. Under **Membership type**, select **Assigned**.
 8. Select **Create**, and close the **Group** page.
 9. On the **Groups - All groups** page, open the group. 
-10. Under **Manage**, select **Owners** > **Add owners**. Search for the user who should manage access to the application. Select the user, and then click **Select**.
+10. Under **Manage**, select **Owners** > **Add owners**. Search for the user who should manage access to the application. Select the user, and then select **Select**.
 
 ### Configure the app for self-service and assign the group to the app
 
@@ -109,7 +109,7 @@ Self-service app management requires some initial setup by a Global Administrato
     > [!NOTE]
     > For the setting **To which group should assigned users be added?** select the group you created in the previous section.
 7. Under **Manage**, select **Users and groups**, and verify that the self-service group you created appears in the list.
-8. To add the app to the group owner's Access Panel, select **Add user** > **Users and groups**. Search for the group owner and select the user, click **Select**, and then click **Assign** to add the user to the app.
+8. To add the app to the group owner's Access Panel, select **Add user** > **Users and groups**. Search for the group owner and select the user, select **Select**, and then select **Assign** to add the user to the app.
 
 ## Next steps
 

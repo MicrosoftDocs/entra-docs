@@ -56,7 +56,7 @@ GET https://graph.microsoft.com/v1.0/roleManagement/directory/roleAssignmentSche
             "approvalId": "9f2b5ddb-a50e-44a1-a6f4-f616322262ea", 
             "customData": null, 
             "action": "SelfActivate", 
-            "principalId": "d96ea738-3b95-4ae7-9e19-78a083066d5b", 
+            "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222", 
             "roleDefinitionId": "88d8e3e3-8f55-4a1e-953a-9b9898b8876b", 
             "directoryScopeId": "/", 
             "appScopeId": null, 

@@ -5,7 +5,7 @@ metadata:
   ms.service: entra-id
   ms.subservice: authentication
   ms.topic: faq
-  ms.date: 04/19/2024
+  ms.date: 04/25/2024
   ms.author: justinha
   author: justinha
   manager: amycolannino
@@ -35,4 +35,9 @@ sections:
           Can I use Authenticator app camera to scan the WebAuthn QR code for registration and authentication?
         answer: |
           You can use the Authenticator camera on Android to register and authenticate with passkeys. This option is useful if your organization hasn't pushed the system camera app to Android Work Profile. This capability isn't supported in the Authenticator app on iOS at this time.  
-
+      - question: |
+          Can I use passkeys in Authenticator without an internet connection?
+        answer: |
+          You can't use passkeys without an internet connection. 
+          For same-device scenarios, the mobile device that contains the passkey must be connected to the internet. 
+          For cross-device scenarios, both the device with the passkey and the secondary device you are authenticating on must be connected to the internet.  

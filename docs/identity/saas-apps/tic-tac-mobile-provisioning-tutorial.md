@@ -36,7 +36,7 @@ This tutorial describes the steps you need to perform in both Tic-Tac Mobile and
 The scenario outlined in this tutorial assumes that you already have the following prerequisites:
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md).
-* A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning. Examples are Application administrator, Cloud Application administrator, Application owner, or Global administrator.
+* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
 * A [Tic-Tac Mobile](https://www.tictacmobile.com/) account with a super admin role.
 
 

@@ -35,7 +35,7 @@ introduction: |
   > application protection policies. For a list of some common client apps, see
   > [App protection policy requirement](concept-conditional-access-grant.md#require-app-protection-policy).
   > If your application is not listed there, contact the application developer.
-  > In order to require approved client apps for iOS and Android devices, these
+  > In order to require approved client apps or to enforce app protection policies for iOS and Android devices, these
   > devices must first register in Microsoft Entra ID.
 
   > [!NOTE]

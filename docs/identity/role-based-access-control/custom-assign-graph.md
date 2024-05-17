@@ -1,6 +1,6 @@
 ---
 title: Assign Microsoft Entra admin roles with Microsoft Graph API
-description: Assign and remove Microsoft Entra administrator roles with Graph API in Microsoft Entra ID
+description: Assign and remove Microsoft Entra administrator roles with Graph API in Microsoft Entra ID.
 
 author: rolyon
 manager: amycolannino
@@ -20,7 +20,7 @@ You can automate how you assign roles to user accounts using the Microsoft Graph
 ## Prerequisites
 
 - Microsoft Entra ID P1 or P2 license
-- Privileged Role Administrator or Global Administrator
+- Privileged Role Administrator
 - Admin consent when using Graph Explorer for Microsoft Graph API
 
 For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).

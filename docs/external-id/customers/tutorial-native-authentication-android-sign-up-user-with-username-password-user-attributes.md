@@ -1,6 +1,6 @@
 ---
-title: Sign up user with username, password, and user attributes
-description: Learn how to Sign up user with username, password, and user attributes.
+title: Sign up user with username and password, and collect user attributes
+description: Learn how to sign up user with username, password, and user attributes in an Android mobile app by using native authentication.
 
 author: henrymbuguakiarie
 manager: mwongerapk
@@ -12,48 +12,51 @@ ms.subservice: customers
 ms.topic: tutorial
 ms.date: 02/23/2024
 ms.custom: developer
-#Customer intent: As a dev, devops, I want to learn how to Sign up user with username, password and user attributes.
+#Customer intent: As a dev, devops, I want to sign up user with username, password and user attributes in an Android mobile app by using native authentication.
 ---
 
-# Tutorial: Sign up user with username, password, and user attributes  
+# Tutorial: Sign up user with username and password, and collect user attributes  
  
-This tutorial aims to demonstrate how to sign up a user with a username, password, and user attributes (**City and Country/Region**), and use one-time passcode for validation of the user's email address.  
+This tutorial demonstrates how to sign up a user with a username (email address), password, and user attributes. It uses one-time passcode to validate the user's email address.
  
-In this tutorial, you learn how to:  
- 
-- Sign up using username, password, and user attributes.  
-- Handle errors.  
+In this tutorial, you learn how to:
+
+> [!div class="checklist"]
+>
+> - Sign up using username, password, and user attributes.  
+> - Handle errors.  
  
 ## Prerequisites  
  
-- An Android project. 
-- [Sign in users in sample Android (Kotlin) mobile app by using native authentication](how-to-run-native-authentication-sample-android-app.md). Ensure that when creating the user flow, you select **Email with password** in the **Identity providers** section, and choose **Country/Region** and **City** under **User attributes** section.
-- [Tutorial: Add sign in and sign out with email one-time passcode](tutorial-native-authentication-android-sign-in-sign-out.md). 
+- An Android project. If you don't have an Android project, create it.
+- [Sign in users in sample Android (Kotlin) mobile app by using native authentication](how-to-run-native-authentication-sample-android-app.md). This article shows you how to run a sample Android that you configure by using your tenant settings. When you create your user flow, make sure you select **Email with password** option in the **Identity providers** section. Under the **User attributes** section, specify the information you want to collect from the user by selecting **Country/Region** and **City**. 
+- Complete the steps in [Tutorial: Prepare your Android mobile app for native authentication](tutorial-native-authentication-prepare-android-app.md). This article shows you how to prepare your Android project or app for native authentication. 
+
+## Update configuration file
+
+[!INCLUDE [update-auth-config-native-auth-file-add-password-challenge-type](./includes/native-auth/update-auth-config-native-auth-file-android-kotlin.md)]
  
-## Sign up user using username, password, and user attributes  
+## Sign up user using username, password, and user attributes
  
-To sign up user using username (email address), password, and user attributes, we need to verify the email through email one-time passcode.  
+To sign up user using username (email address), password, and user attributes, we verify the user's email address through email OTP. Also, the password that the app collects from the user need to meet [Microsoft Entra's password policies](/entra/identity/authentication/concept-password-ban-bad-combined-policy). 
  
-The MSAL Android SDK provides a utility class `UserAttribute.Builder` to create user attributes.  
+The Android SDK provides a utility class `UserAttribute.Builder` to prepare the user attributes.  
+
+Use these steps to initiate the sign-up flow:
  
-1. To include a user attribute, use the `UserAttribute.Builder` utility class as shown in the following code snippet:  
+1. To include the attributes that you collect from the user, use the Android SDK's utility class, `UserAttribute.Builder` as shown in the following code snippet:  
  
     ```kotlin 
     val userAttributes = UserAttributes.Builder 
         .country(country) 
         .city(city) 
         .build() 
-     
-    CoroutineScope(Dispatchers.Main).launch { 
-        val actionResult = authClient.signUp( 
-            username = emailAddress, 
-            password = password, 
-            attributes = userAttributes 
-        ) 
-    } 
     ``` 
- 
-1. To continue with the flow, the `signUp()` method returns `SignUpResult.CodeRequired`, which will provide access to `submitCode()` and `resendCode()`. To submit the code that the user supplied us with, use the following code snippet:  
+     
+    The method names in the `UserAttribute.Builder` class are same as the programmable names of the user attributes that they build. Learn more about [Android SDK attribute builder](concept-native-authentication-user-attribute-builder.md?tabs=android-kotlin).
+        
+
+1. To start the sign-up flow, use the following code snippet: 
  
     ```kotlin 
     CoroutineScope(Dispatchers.Main).launch { 
@@ -73,52 +76,65 @@ The MSAL Android SDK provides a utility class `UserAttribute.Builder` to create 
         } 
     } 
     ``` 
- 
-## Handle errors  
- 
-The `signUp()` action return results denoted by a dedicated results class `SignUpResult`. These can be of type: 
-- `SignUpResult.Complete`
-- `SignUpResult.CodeRequired`
-- `SignUpResult.AttributesRequired`
-- `SignUpError`
+     
+    - The `signUp()` method takes the user attributes, username (email address) and password as parameters.
+    
+    - In most common scenario, the `signUp(username,password,attributes)` returns a result, `SignUpResult.CodeRequired`, which indicates that app should submit the email one-time passcode sent to the user's emails address.
+    
+    - The `SignUpResult.CodeRequired` object contains a new state reference, which we can retrieve through `actionResult.nextState`.
+    
+    - The new state gives us access to two new methods:
+        - `submitCode(code)` submits the email one-time passcode that the app collects from the user.
+        - `resendCode()` resends the email one-time passcode if the user doesn't receive the code. 
+    
+    - The `signUp()` method can also return `SignUpResult.AttributesRequired` to indicate that the app needs to submit one or more required attributes before Microsoft Entra creates an account. These are the attributes that the administrator configured as mandatory in the Microsoft Entra admin center. The `signUp()` method can't return `SignUpResult.AttributesRequired` if the administrator doesn't specify a mandatory user attribute. Microsoft Entra doesn't explicitly request for optional user attributes. 
+    
+    - The `SignUpResult.AttributesRequired` result contains a `requiredAttributes` parameter. `requiredAttributes` is a list of `RequiredUserAttribute` objects that contains details about the user attributes that the app needs to submit. To handle `actionResult is SignUpResult.AttributesRequired`, use the following code snippet: 
 
-In the case of `SignUpError`, the SDK provides utility methods  for further analyzing the specific type of error returned: 
-- `isUserAlreadyExists()`
-- `isInvalidAttributes()`
-- `isInvalidUsername()`
-- `isBrowserRequired()`
-- `isAuthNotSupported()`
+        ```kotlin
+        val actionResult = authClient.signUp(
+            username = email,
+            attributes = attributes
+        )
+        if (actionResult is SignUpResult.AttributesRequired) {
+                val requiredAttributes = actionResult.requiredAttributes 
+                // Handle "attributes required" result 
+                val nextState = actionResult.nextState
+                nextState.submitAttributes(
+                    attributes = moreAttributes
+                )
+        }
+        ```
 
-Errors such as these indicate that the previous operation was unsuccessful, and because of that they don't include a reference to a new state. 
+## Handle sign-up errors  
  
-The utility method `isInvalidAttributes()` returns true when one or more attributes that were sent failed input validation. It contains an `invalidAttributes` parameter, which is a list of all attributes that were sent by the developer that failed input validation.  
+- If `actionResult is SignUpError`, the Android SDK provides utility methods to enable you to analyze the specific errors further: 
+    - `isUserAlreadyExists()`
+    - `isInvalidAttributes()`
+    - `isInvalidPassword()`
+    - `isInvalidUsername()`
+    - `isBrowserRequired()`
+    - `isAuthNotSupported()`
+
+- These errors indicate that the previous operation was unsuccessful, and so a reference to a new state isn't available.
+
+- The utility method `isInvalidAttributes()` indicates that one or more attributes that the app submitted failed validation. It contains an `invalidAttributes` parameter, which is a list of all attributes that the apps submitted, but failed validation. To handle the error of invalid attributes, use the following code snippet:  
  
-The result `SignUpResult.AttributesRequired` indicates that the server requires one or more attributes to be sent, before the user account can be created. This happens when one or more attributes is set as mandatory in the tenant configuration. This result contains a `requiredAttributes` parameter, which is a list of `RequiredUserAttribute` objects, which outline details about the user attributes that the API requires.  
- 
-To handle `isInvalidAttributes` and `AttributesRequired`, use the following code snippet:  
- 
-```kotlin 
-val actionResult = authClient.signUp( 
-    username = email, 
-    attributes = attributes 
-) 
- 
-if (actionResult is SignUpError && actionResult.isInvalidAttributes()) {
-    val invalidAttributes = actionResult.invalidAttributes 
-    // Handle "invalid attributes" error 
-    authClient.signUp( 
-        username = email, 
-        attributes = resubmittedAttributes 
-    ) 
-} else if (actionResult is SignUpResult.AttributesRequired) { 
-    val requiredAttributes = actionResult.requiredAttributes 
-    // Handle "attributes required" result 
-    val nextState = actionResult.nextState 
-    nextState.submitAttributes( 
-        attributes = moreAttributes 
-    ) 
-} 
-``` 
+    ```kotlin 
+        val actionResult = authClient.signUp(
+            username = email,
+            attributes = attributes
+        )
+        if (actionResult is SignUpError && actionResult.isInvalidAttributes()) {
+            val invalidAttributes = actionResult.invalidAttributes
+            // Handle "invalid attributes" error
+            authClient.signUp(
+                username = emailAddress,
+                attributes = resubmittedAttributes
+            )
+        } 
+        //...
+    ``` 
   
 ## Next steps  
   

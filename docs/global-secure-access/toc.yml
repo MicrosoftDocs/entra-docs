@@ -19,6 +19,8 @@ items:
     href: concept-connectors.md
   - name: Private network connector groups
     href: concept-connector-groups.md
+  - name: About remote network connectivity
+    href: concept-remote-network-connectivity.md
 - name: How-to guides
   expanded: true
   items:
@@ -32,8 +34,6 @@ items:
   - name: Remote networks
     expanded: false
     items:
-      - name: About remote network connectivity
-        href: concept-remote-network-connectivity.md
       - name: Create a remote network
         href: how-to-create-remote-networks.md
       - name: Create remote network with custom IKE policy
@@ -84,6 +84,8 @@ items:
         href: concept-private-access.md
       - name: Configure connectors
         href: how-to-configure-connectors.md
+      - name: Register connector - silent Install
+        href: how-to-register-connector-powershell.md
       - name: Configure Quick Access
         href: how-to-configure-quick-access.md 
       - name: Configure Per-app Access

@@ -34,7 +34,7 @@ For more information on the Microsoft Entra automatic user provisioning service,
 ## Prerequisites
 
 - A Microsoft Entra user account with an active subscription. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- One of the following roles: Global Administrator, Cloud Application Administrator, Application Administrator, or owner of the service principal.
+- One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
 - A [ServiceNow instance](https://www.servicenow.com) of Calgary or higher.
 - A [ServiceNow Express instance](https://www.servicenow.com) of Helsinki or higher.
 - A user account in ServiceNow with the admin role.

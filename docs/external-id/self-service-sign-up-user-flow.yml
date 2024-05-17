@@ -6,7 +6,7 @@ metadata:
   author: msmimart
   ms.author: mimart
   manager: CelesteDG
-  ms.date: 02/05/2024
+  ms.date: 05/15/2024
   ms.service: entra-external-id
   ms.topic: how-to
   ms.collection: M365-identity-device-management
@@ -20,7 +20,7 @@ title: |
   Add a self-service sign-up user flow to an app
 introduction: |
   > [!TIP]
-  > This article applies to B2B collaboration user flows. If your tenant is configured for customer identity and access management, see [Create a sign-up and sign-in user flow for customers](customers/how-to-user-flow-sign-up-sign-in-customers.md).
+  > This article applies to B2B collaboration user flows in workforce tenants. For information about external tenants, see [Create a sign-up and sign-in user flow](customers/how-to-user-flow-sign-up-sign-in-customers.md).
 
   For applications you build, you can create user flows that allow a user to sign up for an app and create a new guest account. A self-service sign-up user flow defines the series of steps the user follows during sign-up, the [identity providers](identity-providers.md) you allow them to use, and the user attributes you want to collect. You can associate one or more applications with a single user flow.
 
@@ -131,18 +131,6 @@ procedureSection:
         Select the application from the list. Or use the search box to find the application, and then select it.
       - |  
         Choose **Select**.
-        
-      
-        Now that the application is associated with the user flow, your B2B
-        guests will be directed to this user flow for authentication whenever
-        they access the application. They can use:
-
-        - The
-          [redemption link](invitation-email-elements.md#accept-invitation-button-or-link-and-redirect-url)
-          in their invitation
-        - A
-          [direct link](redemption-experience.md#redemption-process-through-a-direct-link)
-          to the application
 
 relatedContent:
   - text: Add Google to your list of social identity providers
