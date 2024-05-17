@@ -101,7 +101,7 @@ There are three main ways that a user can get access to a Microsoft-published ap
 * For applications in the Microsoft 365 or other paid suites, users are granted access through **license assignment** either directly to their user account, or through a group using our group-based license assignment capability.
 * For applications that Microsoft or a third party publishes freely for anyone to use, users may be granted access through [user consent](configure-user-consent.md). The users sign in to the application with their Microsoft Entra work or school account and allow it to have access to some limited set of data on their account.
 
-* For applications that Microsoft or a third party publishes freely for anyone to use, users may also be granted access through [administrator consent](manage-consent-requests.md). This means that an administrator has determined the application may be used by everyone in the organization, so they sign in to the application with a Global Administrator account and grant access to everyone in the organization.
+* For applications that Microsoft or a third party publishes freely for anyone to use, users may also be granted access through [administrator consent](manage-consent-requests.md). This means that an administrator has determined the application may be used by everyone in the organization, so they sign in to the application with a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator) role and grant access to everyone in the organization.
 
 Some applications combine these methods. For example, certain Microsoft applications are part of a Microsoft 365 subscription, but still require consent.
 
