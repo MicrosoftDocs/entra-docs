@@ -225,8 +225,10 @@ items:
                   items:
                     - name: Sign up
                       href: tutorial-native-authentication-android-sign-up.md
+                      displayName: email OTP, email one-time passcode, email and password
                     - name: Sign in and sign out
                       href: tutorial-native-authentication-android-sign-in-sign-out.md
+                      displayName: email OTP, email one-time passcode, email and password
                     - name: Sign up with user attributes
                       href: tutorial-native-authentication-android-sign-up-user-with-username-user-attributes.md
                 - name: Email and password
