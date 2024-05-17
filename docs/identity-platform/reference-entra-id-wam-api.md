@@ -21,7 +21,7 @@ The Microsoft Entra ID Windows Account Manager (WAM) is a set of APIs that enabl
 
 | Parameter | Value | Notes |
 | --------- | ----- | ----- |
-| `authority` | Either `organizations` or a specific token issuer URL. <br/> For example, `https://login.partner.microsoftonline.cn` is the token issuer URL for the Mooncake cloud environment. | The `authority` parameter specifies the identity provider and the cloud environment for your API. |
+| `authority` | Either `organizations` or a specific token issuer URL. <br/> For example, `https://login.partner.microsoftonline.cn` is the token issuer URL for the cloud environment. | The `authority` parameter specifies the identity provider and the cloud environment for your API. |
 | `resource` | The URL for which the developer is acquiring a token, such as `https://www.sharepoint.com` | The `resource` parameter specifies the target URL for which the authentication token is being obtained. |
 | `redirect_uri` | The location where the authorization server sends the user once the app has been successfully authorized and granted an authorization code or access token. | **Note**: This parameter is not supported for Universal Windows Platform (UWP) applications. The caller must have Medium Integrity Level permissions. See [Redirect URI (reply URL) restrictions and limitations](reply-url.md)  |
 | `correlationId` | A unique GUID generated for each request that can be used to join requests across data sources | **Note**: The `correlationId` is a legacy parameter. It has been replaced with a property in the WAM API itself. See [WebTokenRequest.CorrelationId Property (Windows.Security.Authentication.Web.Core)](/uwp/api/windows.security.authentication.web.core.webtokenrequest.correlationid) - Windows UWP applications |
