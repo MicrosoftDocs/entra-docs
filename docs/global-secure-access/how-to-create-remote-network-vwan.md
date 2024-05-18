@@ -3,7 +3,7 @@ title: Create a remote network using Azure vWAN
 description: Create a virtual wide area network to connect to your resources in Azure.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 05/16/2024
+ms.date: 05/17/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -235,7 +235,7 @@ This step uses Azure Virtual Desktop (AVD) to test tenant restrictions on the vi
 ### Test the tenant restriction
 Before testing, enable tenant restrictions on the virtual network.
 1. In Microsoft Entra admin center, navigate to **Global Secure Access (Preview)** > **Global settings** > **Session management**.
-1. Toggle **Enable tagging to enforce tenant restrictions on your network** to on.
+1. Set the **Enable tagging to enforce tenant restrictions on your network** toggle to on.
 1. Select **Save**.
 1. To modify the cross-tenant access policy by navigating to **Identity** > **External identities** > **Cross-tenant access settings**. For more information about cross-tenant access, see the article, [Cross-tenant access overview](../external-id/cross-tenant-access-overview.md).
 1. Keep the default settings, which prevent users from logging in with external accounts on managed devices. 
@@ -243,19 +243,27 @@ Before testing, enable tenant restrictions on the virtual network.
 To test:
 1. Log in to the Azure Virtual Desktop virtual machine created in the previous steps.
 1. Go to www.office.com and log in with an internal organization ID. This test should pass successfully.
-1. Repeat the above step, but with an external account. This test should fail due to blocked access.
+1. Repeat the above step, but with an *external account*. This test should fail due to blocked access.
 
 ### Test source IP restoration
 Before testing, enable conditional access.
 1. In Microsoft Entra admin center, navigate to **Global Secure Access (Preview)** > **Global settings** > **Session management**.
 1. Select the **Adaptive Access** tab.
-1. Toggle **Enable Global Secure Access signaling in Conditional Access** to on.
-1. Select **Save**.
+1. Set the **Enable Global Secure Access signaling in Conditional Access** toggle to on.
+1. Select **Save**. For more information about source IP restoration, see the article, [Source IP restoration](/how-to-source-ip-restoration.md).
 
-To test:
+To test (option 1):
 1. Log in to the Azure Virtual Desktop virtual machine created in the previous steps.
 1. Go to www.office.com and log in with an internal organization ID. This test should pass successfully.
 1. Repeat the above step, but with an external account. This test should fail due to blocked access.
+
+To test (option 2):
+1. In Microsoft Entra admin center, navigate to **Global Secure Access (Preview)** > **Monitor** > **Remote network health logs**.
+1. Select **Add Filter**. 
+1. Select **Source IP** and type the VPN gateway public IP address. Select **Apply**.
+:::image type="content" source="media/how-to-create-remote-network-vwan/test-option-one.png" alt-text="Screenshot of the Remote network health logs page with the Add filter menu open ready to type the Source IP." lightbox="media/how-to-create-remote-network-vwan/test-option-one-expanded.png":::
+
+The system restores the branch office's customer premises equipment (CPE) IP address. Becasue the VPN gateway represents the CPE, the health logs show the public IP address of the VPN gateway, not the proxy's IP address.
 
 ## Next steps
 
