@@ -66,7 +66,7 @@ The Microsoft Graph Bicep Provider allows you to author, deploy, and manage a li
 - Existing Azure customers can now use familiar tools to deploy Azure resources and the Microsoft Entra resources they depend on, such as applications and service principals, using Infrastructure-as-Code (IaC) and DevOps practices.
 - It also opens the door for existing Microsoft Entra customers to use Bicep templates and IaC practices to deploy and manage their tenant's Entra resources.
 
-For more information, see: [Bicep templates for Microsoft Graph documentation](/graph/templates/overview-bicep-templates-for-graph).
+For more information, see: Bicep templates for Microsoft Graph resources
 
 ---
 
@@ -116,7 +116,7 @@ Due to popular demand and increased confidence in the stability of the propertie
 **Service category:** Other    
 **Product capability:** Developer Experience    
 
-Starting August 2024, new Microsoft Entra applications created using any interface (including the Microsoft Entra admin center, Azure portal, Powershell/CLI, or the Microsoft Graph application API) will have the default value of the 'requestedAccessTokenVersion' property in the app registration set to '2'; this is a change from the previous default of 'null' (meaning '1').  This means that new resource applications receive v2 access tokens instead of v1 by default.  This improves the security of apps. For more information on differences between token versions, see: [Access tokens in the Microsoft identity platform](/identity-platform/access-tokens.md) and [Access token claims reference](../identity-platform/access-token-claims-reference).
+Starting August 2024, new Microsoft Entra applications created using any interface (including the Microsoft Entra admin center, Azure portal, Powershell/CLI, or the Microsoft Graph application API) will have the default value of the 'requestedAccessTokenVersion' property in the app registration set to '2'; this is a change from the previous default of 'null' (meaning '1').  This means that new resource applications receive v2 access tokens instead of v1 by default.  This improves the security of apps. For more information on differences between token versions, see: [Access tokens in the Microsoft identity platform](../identity-platform/access-tokens.md) and [Access token claims reference](../identity-platform/access-token-claims-reference.md).
 
 ---
 
@@ -140,7 +140,7 @@ We've added the following new applications in our App gallery with Provisioning 
 
 - [ClearView Trade](../identity/saas-apps/clearview-trade-provisioning-tutorial.md)
 
-For more information about how to better secure your organization by using automated user account provisioning, see: [What is app provisioning in Microsoft Entra ID?](/identity/app-provisioning/user-provisioning).
+For more information about how to better secure your organization by using automated user account provisioning, see: [What is app provisioning in Microsoft Entra ID?](../identity/app-provisioning/user-provisioning.md).
 
 ---
 
@@ -150,7 +150,7 @@ For more information about how to better secure your organization by using autom
 **Service category:** Roles    
 **Product capability:** AuthZ/Access Delegation    
 
-Administrative units now support scoped delegation of the Privileged Authentication Administrator role. This allows delegation of the ability to manage authentication of other administrators if those administrators' user accounts are part of the administrative unit. Privileged Authentication Administrator is a highly privileged role and should only be assigned when necessary; for delegating management of authentication for non-administrator user accounts, the Authentication Administrator role is recommended instead. For more information, see: [Assign Microsoft Entra roles with administrative unit scope](../identity/role-based-access-control/admin-units-assign-roles).
+Administrative units now support scoped delegation of the Privileged Authentication Administrator role. This allows delegation of the ability to manage authentication of other administrators if those administrators' user accounts are part of the administrative unit. Privileged Authentication Administrator is a highly privileged role and should only be assigned when necessary; for delegating management of authentication for non-administrator user accounts, the Authentication Administrator role is recommended instead. For more information, see: [Assign Microsoft Entra roles with administrative unit scope](../identity/role-based-access-control/admin-units-assign-roles.md).
 
 ---
 
