@@ -237,7 +237,7 @@ Before testing, enable tenant restrictions on the virtual network.
 1. In Microsoft Entra admin center, navigate to **Global Secure Access (Preview)** > **Global settings** > **Session management**.
 1. Set the **Enable tagging to enforce tenant restrictions on your network** toggle to on.
 1. Select **Save**.
-1. To modify the cross-tenant access policy by navigating to **Identity** > **External identities** > **Cross-tenant access settings**. For more information about cross-tenant access, see the article, [Cross-tenant access overview](../external-id/cross-tenant-access-overview.md).
+1. To modify the cross-tenant access policy by navigating to **Identity** > **External identities** > **Cross-tenant access settings**. For more information, see the article, [Cross-tenant access overview](../external-id/cross-tenant-access-overview.md).
 1. Keep the default settings, which prevent users from logging in with external accounts on managed devices. 
 
 To test:
@@ -250,7 +250,7 @@ Before testing, enable conditional access.
 1. In Microsoft Entra admin center, navigate to **Global Secure Access (Preview)** > **Global settings** > **Session management**.
 1. Select the **Adaptive Access** tab.
 1. Set the **Enable Global Secure Access signaling in Conditional Access** toggle to on.
-1. Select **Save**. For more information about source IP restoration, see the article, [Source IP restoration](how-to-source-ip-restoration.md).
+1. Select **Save**. For more information, see the article, [Source IP restoration](how-to-source-ip-restoration.md).
 
 To test (option 1):
 1. Log in to the Azure Virtual Desktop virtual machine created in the previous steps.
