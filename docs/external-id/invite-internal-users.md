@@ -6,7 +6,7 @@ description: If you have internal user accounts for partners, distributors, supp
 ms.service: entra-external-id
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: how-to
-ms.date: 20/05/2024
+ms.date: 05/20/2024
 
 ms.author: cmulligan
 author: csmulligan
