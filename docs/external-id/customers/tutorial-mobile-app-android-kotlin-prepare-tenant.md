@@ -17,7 +17,7 @@ ms.custom: developer
 
 # Tutorial: Register and configure Android (Kotlin) mobile app
 
-This tutorial series demonstrates how to build an Android (Kotlin) mobile app that authenticates using an external tenant. You register an app within the customer's tenant, create an Android (Kotlin) app, and you implement the sign-in, sign-out and call a protected web API.
+This tutorial series demonstrates how to build an Android (Kotlin) mobile app that authenticates using an external tenant. You register an app within the customer's tenant, create an Android (Kotlin) app, and you implement the sign-in, sign-out, and call a protected web API.
 
 In this tutorial, you'll;
 
@@ -46,7 +46,7 @@ In this tutorial, you'll;
 
 ## Delegated permission to Microsoft Graph
 
-Configure delegated permission to Microsoft Graph to enable your client application to perform operations on behalf of the logged-in user, for example reading their email or modifying their profile. By default, users of your client app are asked when they sign in to consent to the delegated permissions you've configured for it.
+Configure delegated permission to Microsoft Graph to enable your client application to perform operations on behalf of the logged-in user, for example reading their email or modifying their profile. By default, your client app asks users to consent to the delegated permissions you configured when they sign in.
  
 [!INCLUDE [Grant API permissions](../customers/includes/register-app/grant-native-authentication-api-permission.md)]
 

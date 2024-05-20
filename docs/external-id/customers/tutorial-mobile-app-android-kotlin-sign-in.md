@@ -225,4 +225,4 @@ Make sure you include the import statements. Android Studio should include the i
 
 ## Next steps
 
-[Tutorial: Call a protected web API in Android (Kotlin) app](tutorial-mobile-app-android-kotlin-sign-in-call-api.md)
+[Tutorial: Call a protected web API in Android (Kotlin) app](tutorial-mobile-app-android-kotlin-sign-in-call-api.md).
