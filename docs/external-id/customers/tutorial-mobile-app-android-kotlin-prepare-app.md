@@ -28,14 +28,14 @@ In this tutorial, you'll:
 
 ## Prerequisites
 
-- [Androd Studio](https://developer.android.com/studio)
+- [Android Studio](https://developer.android.com/studio)
 - If you haven't already, follow the instructions in [Tutorial: Register and configure Android (Kotlin) mobile app](tutorial-mobile-app-android-kotlin-prepare-tenant.md) and register an app in your external tenant.
 - An Android project. If you don't have an Android project, create it.
 
 
-## Add MSAL dependecies
+## Add MSAL dependencies
 
-To add MSAL dependecies in your Android project, follow these steps:
+To add MSAL dependencies in your Android project, follow these steps:
 
 1. Open your project in Android Studio or create a new project.
 1. Open your application's `build.gradle` and add the following dependencies:
@@ -116,7 +116,7 @@ Use these steps to create configuration file:
 
 ## Create MSAL SDK instance
 
-To intialize MSAL SDK instance, use the following code:
+To initialize MSAL SDK instance, use the following code:
 
 ```kotlin
 private suspend fun initClient(): ISingleAccountPublicClientApplication = withContext(Dispatchers.IO) {
