@@ -85,8 +85,8 @@ These samples and how-to guides demonstrate how to write a public client mobile 
 > [!div class="mx-tdCol2BreakAll"]
 > | Language/<br/>Platform | Code sample guide | Build and integrate guide |
 > | ----------- | ----------- |----------- |
-> |Android (Kotlin) | &#8226; [Sign in users](how-to-run-native-authentication-sample-android-app.md) | &#8226; [Sign in users](tutorial-native-authentication-prepare-android-app.md)|
-> |iOS (Swift) | &#8226; [Sign in users](how-to-run-native-authentication-sample-ios-app.md) | &#8226; [Sign in users](tutorial-native-authentication-prepare-ios-app.md)|
+> |Android (Kotlin) | &#8226; [Sign in users](how-to-run-native-authentication-sample-android-app.md)<br/> &#8226; [Sign in users and call an API in a sample Android mobile app by using native authentication](sample-native-authentication-android-sample-app-call-web-api.md) | &#8226; [Sign in users](tutorial-native-authentication-prepare-android-app.md)|
+> |iOS (Swift) | &#8226; [Sign in users](how-to-run-native-authentication-sample-ios-app.md)<br/> &#8226; [Sign in users and call an API in sample iOS mobile app by using native authentication](sample-native-authentication-ios-sample-app-call-web-api.md) | &#8226; [Sign in users](tutorial-native-authentication-prepare-ios-app.md)|
 
 ### Daemon
 
@@ -114,7 +114,7 @@ These samples and how-to guides demonstrate how to write a daemon application th
 > | App type | Code sample guide | Build and integrate guide |
 > | ----------- | ----------- |----------- |
 > |Browser-delegated authentication | &#8226; [Sign in users](sample-mobile-app-android-kotlin-sign-in.md)<br/> &#8226; [Sign in users and call an API](sample-mobile-app-android-kotlin-sign-in-call-api.md) | --- |
-> |Mobile native authentication | &#8226; [Sign in users](how-to-run-native-authentication-sample-android-app.md) | &#8226; [Sign in users](tutorial-native-authentication-prepare-android-app.md)|
+> |Mobile native authentication | &#8226; [Sign in users](how-to-run-native-authentication-sample-android-app.md)<br/> &#8226; [Sign in users and call an API in a sample Android mobile app by using native authentication](sample-native-authentication-android-sample-app-call-web-api.md) | &#8226; [Sign in users](tutorial-native-authentication-prepare-android-app.md)|
 
 
 ### ASP.NET Core
@@ -153,7 +153,7 @@ These samples and how-to guides demonstrate how to write a daemon application th
 > | App type | Code sample guide | Build and integrate guide |
 > | ----------- | ----------- |----------- |
 > |Browser-delegated authentication |  &#8226; [Sign in users](sample-mobile-app-ios-swift-sign-in.md)<br/> &#8226; [Sign in users and call an API](sample-mobile-app-ios-swift-sign-in-call-api.md) | --- |
-> |Mobile native authentication | &#8226; [Sign in users](how-to-run-native-authentication-sample-ios-app.md) | &#8226; [Sign in users](tutorial-native-authentication-prepare-ios-app.md)|
+> |Mobile native authentication | &#8226; [Sign in users](how-to-run-native-authentication-sample-ios-app.md)<br/> &#8226; [Sign in users and call an API in sample iOS mobile app by using native authentication](sample-native-authentication-ios-sample-app-call-web-api.md) | &#8226; [Sign in users](tutorial-native-authentication-prepare-ios-app.md)|
 
 ### JavaScript, Vanilla
 
