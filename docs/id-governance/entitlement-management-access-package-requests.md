@@ -18,10 +18,9 @@ In entitlement management, you can see who has requested access packages, the po
 
 [!INCLUDE [portal updates](../includes/portal-update.md)]
 
-**Prerequisite role:** Global Administrator, Identity Governance Administrator, Catalog owner, Access package manager or Access package assignment manager
-
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
-
+    > [!TIP]
+    > Other least privilege roles that can complete this task include the Catalog owner, the Access package manager, and the Access package assignment manager.
 1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
 
 1. On the **Access packages** page open the access package you want to view requests of.

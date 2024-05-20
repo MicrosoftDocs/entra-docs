@@ -26,7 +26,7 @@ Learn how to hide enterprise applications in Microsoft Entra ID. When an applica
 To hide an application from the My Apps portal and Microsoft 365 launcher, you need:
 
 - An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- One of the following roles: Global Administrator, Cloud Application Administrator, Application Administrator.
+- One of the following roles: Cloud Application Administrator, Application Administrator.
 - Global administrator is required to hide all Microsoft 365 applications.
 
 ## Hide an application from the end user

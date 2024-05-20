@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: how-to
-ms.date: 12/01/2023
+ms.date: 05/02/2024
 ms.service: global-secure-access
 ms.subservie: entra-internet-access
 ---
@@ -93,6 +93,9 @@ Traffic profiles can be assigned to remote networks, so that the network traffic
 1. Select the **Add assignments** button for the profile.
     - If you're editing the remote network assignments, select the **Add/edit assignments** button.
 1. Select a remote network from the list and select **Add**.
+
+## User and group assignments
+You can scope the Microsoft 365 profile to specific users and groups. To learn more about user and group assignment, see [How to assign and manage users and groups with traffic forwarding profiles](how-to-manage-users-groups-assignment.md).
 
 [!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
 
