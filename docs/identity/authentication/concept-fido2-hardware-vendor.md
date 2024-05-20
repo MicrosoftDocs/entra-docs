@@ -39,7 +39,7 @@ Additionally, if attestation is enforced, the following requirements apply:
 - Your product metadata needs to be uploaded to the FIDO Alliance backend MDS, and you need to verify your metadata is in the MDS. The metadata must indicate that your authenticator supports: 
   - FIDO 2.0 or FIDO 2.1. Entra ID doesn't support single factor UAF/U2F. 
   - User verification or client PIN - Entra ID requires user verification with biometrics or PIN for all FIDO2 authentication attempts.
-  - Resident keys - The private key is stored on the security key.
+  - Resident keys (or discoverable credentials) - These are required for using a security key to sign in to Entra ID without entering a username.
   - Hash-Based Message Authenticator Codes (HMAC) secret extension or pseudocode - This is required for using a security key to unlock Windows in offline scenarios.
 
 ## Timelines
