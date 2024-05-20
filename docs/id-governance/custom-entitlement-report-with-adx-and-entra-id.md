@@ -9,7 +9,7 @@ ms.date: 01/05/2023
 ms.author: billmath
 ---
 
-# Tutorial: Customized entitlement reports in Azure Data Explorer (ADX) using data from Microsoft Entra ID.
+# Tutorial: Customized entitlement reports in Azure Data Explorer (ADX) using data from Microsoft Entra ID
 
 In this tutorial, you will learn how to create customized entitlement reports in Azure Data Explorer (ADX) using data from Microsoft Entra ID. This tutorial complements other reporting options such as [Archive & report with Azure Monitor and entitlement management](entitlement-management-logs-and-reporting.md) which focuses on exporting audit log data for longer retention and analysis. By comparison, exporting Entra ID data to Azure Data Explorer provides greater flexibility for creating custom reports by allowing data aggregation from multiple sources with massive scalability, and flexible schema and retention policies. 
 
@@ -17,11 +17,10 @@ This report illustrates how to show configuration, users and access rights expor
 
 You will take the following steps to create these reports: 
 
- 1. Set up Azure Data Explorer in an Azure subscription. 
- 2. Extract data from Microsoft Entra and third-party databases or applications using PowerShell scripts and MS Graph. 
- 3. Ingest the data into Azure Data Explorer, a fast and scalable data analytics service. 
- 4. (Optional) Extract data from other applications and inject that data into Azure Data Explorer. 
- 5. Build a custom query using Kusto Query Language. 
+ 1. [Set up Azure Data Explorer](#step-1-setup-azure-data-explorer) in an Azure subscription. 
+ 2. [Extract data from Microsoft Entra](#step-2-connect-to-ms-graph-and-extract-entra-data-with-powershell) and third-party databases or applications using PowerShell scripts and MS Graph. 
+ 3. [Import the data into Azure Data Explorer](#step-3-import-json-file-data-into-azure-data-explorer), a fast and scalable data analytics service. 
+ 4. [Build a custom query](#step-4-use-adx-to-build-custom-reports) using Kusto Query Language. 
 
 By the end of this tutorial, you will have built skills to develop customized views of the access rights and permissions of users across different applications using Microsoft supported tools. 
 
@@ -32,7 +31,7 @@ By the end of this tutorial, you will have built skills to develop customized vi
      - Groups data: Global Administrator, Privileged Role Administrator, Group Administrator 
      - Applications/App Role Assignments: Global Administrator, Privileged Role Administrator, Application Administrator, Cloud Application Administrator 
 
-- PowerShell must be set to allow for User.Read.All, Group.Read.All, Application.Read.All, and Directory.Read.All. See Microsoft Graph permissions reference for additional information. 
+- PowerShell must be set to allow for User.Read.All, Group.Read.All, Application.Read.All, and Directory.Read.All. See [Microsoft Graph permissions reference](/graph/permissions-reference) for additional information. 
 - Ensure you have write access to the directory where you will install the required MS Graph PowerShell modules and where the exported Entra data will be saved.  
 - Determine what data you want to include in your reports. The scripts in this article provide samples with specific data from users, groups, and applications from Entra. These samples are meant to illustrate the types of reports you can generate with this approach, but your specific reporting needs may vary and require different or additional data.  
 
@@ -77,7 +76,7 @@ Install MS Graph Powershell modules and Connect to MS Graph
 
 ### PowerShell Queries to extract data needed to build custom reports in ADX 
 
-The following queries extract Entra data from MS Graph using PowerShell and export the data to JSON files which will be imported into Azure Data Explorer in Step 2. There may be multiple scenarios for generating reports with this type of data: 
+The following queries extract Entra data from MS Graph using PowerShell and export the data to JSON files which will be imported into Azure Data Explorer in Step 3. There may be multiple scenarios for generating reports with this type of data: 
 
  - An auditor would like to see a report that lists the group members for 10 groups, organized by the members’ department. 
  - An auditor would like to see a report of all users who had access to an application between two dates. 
@@ -98,7 +97,7 @@ This data set will enable us to perform a broad set of queries around who was gi
 
 In these PowerShell scripts, we will export selected properties from the Entra objects to JSON files. The data from these exported properties will then be used to generate custom reports in Azure Data Explorer. The specific properties below were included in these example since we will be using this data to illustrate the types of reports you can create in Azure Data Explorer. Since your specific reporting needs will likely vary from what is shown below, you should include the specific properties in these scripts that you are interested in viewing in your reports, however you can follow the same pattern shown below to help build your scripts. 
 
-We have also included a hard-coded**snapshot date** below which identifies the data in the JSON file with a specific date and will allow us to keep track of similar data sets over time in Azure Data Explorer. The snapshot date is also useful for comparing changes in data between two snapshot dates. 
+We have also included a hard-coded **snapshot date** below which identifies the data in the JSON file with a specific date and will allow us to keep track of similar data sets over time in Azure Data Explorer. The snapshot date is also useful for comparing changes in data between two snapshot dates. 
 
 ### Get Entra user data 
 
@@ -350,9 +349,9 @@ Generate a JSON file of all app role assignments in the tenant.
         $result | ConvertTo-Json -Depth 10 | Out-File "AppRoleAssignments.json" 
 ``` 
 
-## Step 2: Import JSON file data into Azure Data Explorer 
+## Step 3: Import JSON file data into Azure Data Explorer 
 
-In Step 2, we will import the newly created JSON files for further analysis. If you haven’t yet setup Azure Data Explorer, please see Step 1 above. 
+In Step 3, we will import the newly created JSON files for further analysis. If you haven’t yet setup Azure Data Explorer, please see Step 1 above. 
 
 Azure Data Explorer is a powerful data analysis tool that is highly scalable and flexible providing an ideal environment for generating customized user access reports. ADX uses the Kusto Query Language (KQL). 
 
@@ -364,7 +363,7 @@ Once you have setup a database, follow these steps to get your exported data int
  4. ADX will automatically detect the schema and provide a preview. Click **Finish** to create the table and import the data. 
  5. Follow steps 1-4 for each of the JSON files that you generated in Step 1. 
 
-## Step 3: Use ADX to build custom reports 
+## Step 4: Use ADX to build custom reports 
 
 With the data now available in ADX, you are ready to begin creating customized reports based on your business requirements. The following queries provide examples of common reports, but you can customize these reports to suit your needs and create additional reports. 
 
@@ -377,7 +376,7 @@ This query targets a specific application within Entra AD and analyzes the role 
 ```json 
         /// Define constants 
 
-        let targetServicePrincipalId = " 67865322-94b5-4205-9dc8-974dc569bfad"; /// Target Service Principal ID 
+        let targetServicePrincipalId = "<your-service-principal-id>";  /// Target Service Principal ID 
 
         let targetSnapshotDate = datetime("2024-01-13"); /// Target Snapshot Date for the data 
 
