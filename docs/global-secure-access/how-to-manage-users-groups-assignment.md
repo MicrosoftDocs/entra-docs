@@ -10,14 +10,16 @@ ms.service: global-secure-access
 ---
 # How to assign users and groups to traffic forwarding profiles
 
-Assign specific users and groups to a traffic forwarding profile. User or group assignment limits the scope of the traffic forwarding profile so you have a mechanism to roll out the profile safely and at a controlled pace.
+With the Global Secure Access traffic forwarding features, you can assign specific users and groups to a traffic forwarding profile. User or group assignment limits the scope of the traffic forwarding profile so you have a mechanism to roll out the profile safely and at a controlled pace.
+
+This article describes how to assign specific users and groups to a traffic forwarding profile.
 
 ## Prerequisites
 
 To assign a traffic forwarding profile to specific users and groups, you must have:
 
-- A [**Global Secure Access Administrator**](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator) role in Microsoft Entra ID to view the traffic forwarding profile.
-- An [**Application Administrator**](../identity/role-based-access-control/permissions-reference.md#application-administrator) role to assign the traffic profile to the selected users and groups.
+- A [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator) role in Microsoft Entra ID to view the traffic forwarding profile.
+- An [Application Administrator](../identity/role-based-access-control/permissions-reference.md#application-administrator) role to assign the traffic profile to the selected users and groups.
 - The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 - The minimum required Global Secure Access client version is 1.7.376.0. Clients below this version won't receive the traffic forwarding profile when assigned to the user.
 
@@ -52,15 +54,15 @@ Global Secure Access traffic forwarding profiles default to all users being assi
 1. Select the **Assign** button.
 
 > [!NOTE]
-> When you enable a traffic forwarding profile, zero users and groups are assigned by default. This default setting lets you slowly roll out the feature in a controlled manner.
+> When you enable a traffic forwarding profile, all users and groups are assigned by default. This default setting lets you slowly roll out the feature in a controlled manner.
 
-### Automatic assignment using user attributes
+### Automatic assignment through user attributes
 
 You can create and assign a dynamic group of users to the profile who satisfy specific criteria. To learn more about automatic assignment using user attributes, see [Create or update a dynamic group in Microsoft Entra ID](../identity/users/groups-create-rule.md).
 
 ## Assign the traffic profile to all users
 
-Once you assign a traffic forwarding profile to a specific user or group, you can quickly change the setting to scope the traffic profile to all users and back again to a specific group. Any users and groups assigned to that traffic forwarding profile are retained so you don't need to add them again. 
+Once you assign a traffic forwarding profile to a specific user or group, you can quickly change the setting to scope the traffic profile to all users. If you change it back again to a specific group, any users and groups initially assigned to that traffic forwarding profile are retained so you don't need to add them again. 
 
 1. Browse to **Global Secure Access** > **Connect** > **Traffic forwarding**.
 
