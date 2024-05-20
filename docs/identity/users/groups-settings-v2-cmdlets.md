@@ -8,7 +8,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
-ms.date: 05/10/2024
+ms.date: 05/20/2024
 ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro, has-azure-ad-ps-ref
@@ -135,6 +135,26 @@ You can search for a specific group using the -filter parameter. This parameter 
 
 > [!NOTE]
 > The MgGroup PowerShell cmdlets implement the OData query standard. For more information, see **$filter** in [OData system query options using the OData endpoint](/previous-versions/dynamicscrm-2015/developers-guide/gg309461(v=crm.7)#BKMK_filter).
+
+Here you have an example that shows how to pull all groups that don't have an expiration policy applied
+
+```powershell
+Connect-MgGraph -Scopes 'Group.Read.All'
+Get-MgGroup -ConsistencyLevel eventual -Count groupCount -Filter "NOT (expirationDateTime+ge+1900-01-01T00:00:00Z)" | Format-List Id
+```
+
+This one does the same, but also exports it to CSV -
+
+```powershell
+Connect-MgGraph -Scopes 'Group.Read.All'
+Get-MgGroup -ConsistencyLevel eventual -Count groupCount -Filter "NOT (expirationDateTime+ge+1900-01-01T00:00:00Z)" | Format-List Id |Export-Csv -Path {path} -NoTypeInformation
+```
+
+This last example shows you how to retrieve only groups that belong to Teams
+
+```powershell
+Get-MgGroup -ConsistencyLevel eventual -Count groupCount -Filter "NOT (expirationDateTime+ge+1900-01-01T00:00:00Z) and resourceProvisioningOptions/any(p:p eq 'Team')" | Format-List Id, expirationDateTime, resourceProvisioningOptions
+```
 
 ## Create groups
 
