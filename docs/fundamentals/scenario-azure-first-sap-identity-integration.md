@@ -14,18 +14,16 @@ ms.collection:
 
 # Scenario - Using Microsoft Entra ID to secure access to SAP platforms and applications
 
-This document provides advice on the **technical design and configuration** of SAP platforms and applications when using Microsoft Entra ID as the primary user authentication service. Learn more about the initial setup for authentication in the [Microsoft Entra single sign-on (SSO) integration with SAP Cloud Identity Services tutorial](~/identity/saas-apps/sap-hana-cloud-platform-identity-authentication-tutorial.md).  For more information on provisioning and other scenarios, see [plan deploying Microsoft Entra for user provisioning with SAP source and target applications](~/identity/app-provisioning/plan-sap-user-source-and-target.md) and [manage access to your SAP applications](~/id-governance/sap.md).
+This document provides advice on the **technical design and configuration** of SAP platforms and applications when using Microsoft Entra ID as the primary user authentication service for [SAP Cloud Identity Services](https://help.sap.com/docs/cloud-identity-services/cloud-identity-services/landing-page). SAP Cloud Identity Services include Identity Authentication, Identity Provisioning, Identity Directory and Authorization Management. Learn more about the initial setup for authentication in the [Microsoft Entra single sign-on (SSO) integration with SAP Cloud Identity Services tutorial](~/identity/saas-apps/sap-hana-cloud-platform-identity-authentication-tutorial.md). For more information on provisioning and other scenarios, see [plan deploying Microsoft Entra for user provisioning with SAP source and target applications](~/identity/app-provisioning/plan-sap-user-source-and-target.md) and [manage access to your SAP applications](~/id-governance/sap.md).
 
 ## Terminology used in this guide
 
 | Abbreviation                                                                                                          | Description                                                                                                                                                                                                   |
 | --------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [BTP](https://www.sap.com/products/technology-platform.html)                                                 |  SAP Business Technology Platform is an innovation platform optimized for SAP applications in the cloud. Most of the SAP technologies discussed here are part of BTP. The products formally known as SAP Cloud Platform are part of SAP BTP. |
-| [IAS](https://help.sap.com/viewer/6d6d63354d1242d185ab4830fc04feb1/Cloud/en-US)                                       | SAP Cloud Identity Services - Identity Authentication Service. The multitenant cloud Identity Provider service provided by SAP. IAS helps users authenticate to their own SAP service instances.           |
-| [IDS](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/d6a8db70bdde459f92f2837349f95090.html) | SAP ID Service. An instance of IAS used by SAP to authenticate customers and partners to SAP-operated PaaS and SaaS services.                                                                                 |
-| [IPS](https://help.sap.com/viewer/f48e822d6d484fa5ade7dda78b64d9f5/Cloud/en-US/2d2685d469a54a56b886105a06ccdae6.html) | SAP Cloud Identity Services - Identity Provisioning Service.  IPS helps to synchronize identities between different stores / target systems.                                                           |
-| [XSUAA](https://blogs.sap.com/2019/01/07/uaa-xsuaa-platform-uaa-cfuaa-what-is-it-all-about/)                          | Extended Services for Cloud Foundry User Account and Authentication.  XSUAA is a multitenant OAuth authorization server within the SAP BTP.                                                                   |
-| [CF](https://www.cloudfoundry.org/)                                                                                   | Cloud Foundry. Cloud Foundry is the environment on which SAP built their multicloud offering for BTP (AWS, Azure, GCP, Alibaba).                                                                                      |
+| [IAS](https://pages.community.sap.com/topics/cloud-identity-services/identity-authentication)                                       | SAP Cloud Identity Services - Identity Authentication, a component of SAP Cloud Identity Services, is a cloud service for authentication, single sign-on and user management in SAP cloud and on-premises applications. IAS helps users authenticate to their own SAP BTP service instances, as a proxy that integrates with Microsoft Entra single-sign on.           |
+| [IPS](https://pages.community.sap.com/topics/cloud-identity-services/identity-provisioning) | SAP Cloud Identity Services - Identity Provisioning, a component of SAP Cloud Identity Services, is a cloud service that helps you provision identities and their authorization to SAP cloud and on-premises application.                                                           |
+| [XSUAA](https://blogs.sap.com/2019/01/07/uaa-xsuaa-platform-uaa-cfuaa-what-is-it-all-about/)                          | Extended Services for Cloud Foundry User Account and Authentication. [Cloud Foundry](https://www.cloudfoundry.org/), a platform as a service (PaaS) that can be deployed on different infrastructures, is the environment on which SAP built SAP Business Technology Platform.  XSUAA is a multitenant OAuth authorization server that is the central infrastructure component of the Cloud Foundry environment for business user authentication and authorization within the SAP BTP.                                                                  |
 | [Fiori](https://www.sap.com/products/fiori.html)                                                              | The web-based user experience of SAP (as opposed to the desktop-based experience).                                                                                                                            |
 
 ## Overview
@@ -49,7 +47,7 @@ Based on these assumptions, we focus mostly on the products and services present
 > Most of the guidance here applies to [Azure Active Directory B2C](/azure/active-directory-b2c/overview) as well, but there are some important differences. See [Using Azure AD B2C as the Identity Provider](#using-azure-ad-b2c-as-the-identity-provider) for more information.
 
 > [!WARNING]
-> Be aware of the SAP SAML assertion limits and impact of the length of SAP Cloud Foundry role collection names and amount of collections proxied by groups in SAP Cloud Identity Service. See SAP note [2732890](https://launchpad.support.sap.com/?sap-support-cross-site-visitor-id=b73c7292f9a46d52#/notes/2732890) for more information. Exceeded limits result in authorization issues.
+> Be aware of the SAP SAML assertion limits and impact of the length of SAP Cloud Foundry role collection names and amount of collections proxied by groups in SAP Cloud Identity Service. See SAP note [2732890](https://launchpad.support.sap.com/?sap-support-cross-site-visitor-id=b73c7292f9a46d52#/notes/2732890) in SAP for Me for more information. Exceeded limits result in authorization issues.
 
 ## Recommendations
 
@@ -68,7 +66,7 @@ Based on these assumptions, we focus mostly on the products and services present
 
 Your applications in BTP can use identity providers through [Trust Configurations](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/cb1bc8f1bd5c482e891063960d7acd78.html) to authenticate users by using the SAML 2.0 protocol between BTP/XSUAA and the identity provider.  Note that only SAML 2.0 is supported, even though the OpenID Connect protocol is used between the application itself and BTP/XSUAA (not relevant in this context).
 
-In BTP, you can choose to set up a trust configuration towards SAP ID Service (which is the default) but when your authoritative user directory is Microsoft Entra ID, you can set up **federation** so that users can sign in with their existing Microsoft Entra accounts.
+In BTP, you can choose to set up a trust configuration towards SAP Cloud Identity Services - Identity Authentication (which is the default) but when your authoritative user directory is Microsoft Entra ID, you can set up **federation** so that users can sign in with their existing Microsoft Entra accounts.
 
 On top of federation, you can optionally also set up **user provisioning** so that Microsoft Entra users are provisioned upfront in BTP. However, there's no native support for this (only for Microsoft Entra ID -> SAP Identity Authentication Service); an integrated solution with native support would be the BTP Identity Provisioning Service. Provisioning user accounts upfront could be useful for authorization purposes (for example, to add users to roles). Depending on requirements however, you can also achieve this with Microsoft Entra groups (see below) which could mean you don't need user provisioning at all.
 
@@ -77,7 +75,7 @@ When setting up the federation relationship, there are multiple options:
 - You can choose to federate towards Microsoft Entra ID directly from BTP/XSUAA.
 - You can choose to federate with IAS which in turn is set up to federate with Microsoft Entra ID as a Corporate Identity Provider (also known as "SAML Proxying").
 
-For SAP SaaS applications IAS is provisioned and pre-configured for easy onboarding of end users.  (Examples of this include SuccessFactors, Marketing Cloud, Cloud4Customer, Sales Cloud and others.) This scenario is less complex, because IAS is directly connected with the target app and not proxied to XSUAA. In any case, the same rules apply for this setup as for Microsoft Entra ID with IAS in general.
+For SAP SaaS applications IAS is provisioned and pre-configured for easy onboarding of end users.  (Examples of this include SuccessFactors, Marketing Cloud, Cloud for Customer, Sales Cloud, and others.) This scenario is less complex, because IAS is directly connected with the target app and not proxied to XSUAA. In any case, the same rules apply for this setup as for Microsoft Entra ID with IAS in general.
 
 #### What are we recommending?
 
@@ -283,4 +281,6 @@ Regardless of where the authorization information comes from, it can then be emi
 ## Next Steps
 
 - Learn more about the initial setup in [this tutorial](~/identity/saas-apps/sap-hana-cloud-platform-identity-authentication-tutorial.md)
+- [plan deploying Microsoft Entra for user provisioning with SAP source and target applications](~/identity/app-provisioning/plan-sap-user-source-and-target.md) and
+- [manage access to your SAP applications](~/id-governance/sap.md)
 - Discover additional [SAP integration scenarios with Microsoft Entra ID](/azure/sap/workloads/integration-get-started#microsoft-entra-id-formerly-azure-ad) and beyond
