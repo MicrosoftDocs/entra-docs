@@ -74,7 +74,7 @@ These samples and how-to guides demonstrate how to write a public client mobile 
 > | Language/<br/>Platform | Code sample guide | Build and integrate guide |
 > | ----------- | ----------- |----------- |
 > | ASP.NET Core MAUI | &#8226; [Sign in users](how-to-mobile-app-maui-sample-sign-in.md) | &#8226; [Sign in users](tutorial-mobile-app-maui-sign-in-prepare-tenant.md)|
-> | Android (Kotlin) | &#8226; [Sign in users](sample-mobile-app-android-kotlin-sign-in.md)<br/> &#8226; [Sign in users and call an API](mobile-app-android-kotlin-sign-in-call-api.md) | --- |
+> | Android (Kotlin) | &#8226; [Sign in users](sample-mobile-app-android-kotlin-sign-in.md)<br/> &#8226; [Sign in users and call an API](sample-mobile-app-android-kotlin-sign-in-call-api.md) | --- |
 > | iOS (Swift) | &#8226; [Sign in users](sample-mobile-app-ios-swift-sign-in.md)<br/> &#8226; [Sign in users and call an API](sample-mobile-app-ios-swift-sign-in-call-api.md) | --- |
 
 
@@ -113,7 +113,7 @@ These samples and how-to guides demonstrate how to write a daemon application th
 > [!div class="mx-tdCol2BreakAll"]
 > | App type | Code sample guide | Build and integrate guide |
 > | ----------- | ----------- |----------- |
-> |Browser-delegated authentication | &#8226; [Sign in users](sample-mobile-app-android-kotlin-sign-in.md)<br/> &#8226; [Sign in users and call an API](mobile-app-android-kotlin-sign-in-call-api.md) | --- |
+> |Browser-delegated authentication | &#8226; [Sign in users](sample-mobile-app-android-kotlin-sign-in.md)<br/> &#8226; [Sign in users and call an API](sample-mobile-app-android-kotlin-sign-in-call-api.md) | --- |
 > |Mobile native authentication | &#8226; [Sign in users](how-to-run-native-authentication-sample-android-app.md) | &#8226; [Sign in users](tutorial-native-authentication-prepare-android-app.md)|
 
 
