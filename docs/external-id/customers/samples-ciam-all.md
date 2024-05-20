@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: sample
-ms.date: 03/07/2024
+ms.date: 05/20/2024
 ms.author: mimart
 ms.custom: it-pro
 
@@ -74,6 +74,9 @@ These samples and how-to guides demonstrate how to write a public client mobile 
 > | Language/<br/>Platform | Code sample guide | Build and integrate guide |
 > | ----------- | ----------- |----------- |
 > | ASP.NET Core MAUI | &#8226; [Sign in users](how-to-mobile-app-maui-sample-sign-in.md) | &#8226; [Sign in users](tutorial-mobile-app-maui-sign-in-prepare-tenant.md)|
+> | Android (Kotlin) | &#8226; [Sign in users](sample-mobile-app-android-kotlin-sign-in.md)<br/> &#8226; [Sign in users and call an API](mobile-app-android-kotlin-sign-in-call-api) | --- |
+> | iOS (Swift) | &#8226; [Sign in users](sample-mobile-app-ios-swift-sign-in.md)<br/> &#8226; [Sign in users and call an API](sample-mobile-app-ios-swift-sign-in-call-api.md) | --- |
+
 
 ### Mobile: Native authentication
 
@@ -110,7 +113,9 @@ These samples and how-to guides demonstrate how to write a daemon application th
 > [!div class="mx-tdCol2BreakAll"]
 > | App type | Code sample guide | Build and integrate guide |
 > | ----------- | ----------- |----------- |
+> |Browser-delegated authentication | &#8226; [Sign in users](sample-mobile-app-android-kotlin-sign-in.md)<br/> &#8226; [Sign in users and call an API](mobile-app-android-kotlin-sign-in-call-api) | --- |
 > |Mobile native authentication | &#8226; [Sign in users](how-to-run-native-authentication-sample-android-app.md) | &#8226; [Sign in users](tutorial-native-authentication-prepare-android-app.md)|
+
 
 ### ASP.NET Core
 
@@ -147,6 +152,7 @@ These samples and how-to guides demonstrate how to write a daemon application th
 > [!div class="mx-tdCol2BreakAll"]
 > | App type | Code sample guide | Build and integrate guide |
 > | ----------- | ----------- |----------- |
+> |Browser-delegated authentication |  &#8226; [Sign in users](sample-mobile-app-ios-swift-sign-in.md)<br/> &#8226; [Sign in users and call an API](sample-mobile-app-ios-swift-sign-in-call-api.md) | --- |
 > |Mobile native authentication | &#8226; [Sign in users](how-to-run-native-authentication-sample-ios-app.md) | &#8226; [Sign in users](tutorial-native-authentication-prepare-ios-app.md)|
 
 ### JavaScript, Vanilla
