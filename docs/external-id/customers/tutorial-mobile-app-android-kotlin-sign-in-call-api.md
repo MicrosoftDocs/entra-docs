@@ -43,14 +43,12 @@ In this tutorial, you'll:
 
     ```kotlin
     companion object {
-        private val TAG = MainActivity::class.java.simpleName
         private const val WEB_API_BASE_URL = "" // Developers should set the respective URL of their web API here
-        private const val scopes = "" // Developers should append the respective scopes of their web API with Delegated permission to Microsoft Graph here.
+        private const val scopes = "" // Developers should append the respective scopes of their web API.
     }
     ```
     
-    The code snippet, within the companion object of the `MainActivity` class, constants are defined. TAG represents the simple name of the `MainActivity` class for logging purposes. `WEB_API_BASE_URL` is an empty string, where developers should set the respective URL of their web API. `scopes` is also an empty string, where developers should append the respective scopes of their web API. 
-
+    The companion object defines two private constants: `WEB_API_BASE_URL`, where developers set their web API's URL, and `scopes`, where developers append the respective `scopes` of their web API.
 
 1. To handle the process of accessing a web API, use the following code:
 
