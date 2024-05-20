@@ -57,7 +57,7 @@ You have two main options for signing in users using Microsoft Authentication Li
     }
     ```
     
-    The code initiates the process of acquiring a token interactively using MSAL for Android. It first clears the text log field. Then, it checks if there is already a signed-in account; if so, it displays a toast message indicating that an account is already signed in and returns. 
+    The code initiates the process of acquiring a token interactively using MSAL for Android. It first clears the text log field. Then, it checks if there's already a signed-in account, if so, it displays a toast message indicating that an account is already signed in and returns. 
 
     Next, it extracts scopes from text input and converts them to lowercase before splitting them into an array. Using these scopes, it builds parameters for acquiring a token, including starting the authorization process from the current activity and specifying a callback. Finally, it calls `acquireToken()` on the authentication client with the constructed parameters to initiate the token acquisition process.
 
@@ -109,7 +109,7 @@ You have two main options for signing in users using Microsoft Authentication Li
 
     When authentication succeeds (`onSuccess`), it logs the successful authentication, retrieves the ID token and claims, updates the access token asynchronously using `CoroutineScope`, and updates the UI with the new access token. The code retrieves the ID token from the `authenticationResult` and logs it. Claims in the token contain information about the user, such as their name, email, or other profile information. You can retrieve the claims associated with the current account by accessing `authenticationResult.account.claims`.
 
-    In case of an authentication error (`onError`), it logs the error, clears the access token, updates the UI with the error message, and provides more specific handling for `MsalClientException` and `MsalServiceException`. If the user cancels the authentication (`onCancel`), it logs the cancellation.
+    If there's an authentication error (`onError`), it logs the error, clears the access token, updates the UI with the error message, and provides more specific handling for `MsalClientException` and `MsalServiceException`. If the user cancels the authentication (`onCancel`), it logs the cancellation.
 
     Make sure you include the import statements. Android Studio should include the import statements for you automatically.
 
@@ -138,7 +138,7 @@ You have two main options for signing in users using Microsoft Authentication Li
     }
     ```
 
-    The code initiates the process of acquiring a token silently. It first clears the text log. Then, it checks if there is an available account; if not, it displays a toast message indicating this and exits. Next, it extracts scopes from text input, converts them to lowercase, and splits them into an array. 
+    The code initiates the process of acquiring a token silently. It first clears the text log. Then, it checks if there's an available account; if not, it displays a toast message indicating this and exits. Next, it extracts scopes from text input, converts them to lowercase, and splits them into an array. 
 
     Using these scopes, it constructs parameters for acquiring a token silently, specifying the account, authority, scopes, and callback. Finally, it asynchronously triggers `acquireTokenSilentAsync()` on the authentication client with the constructed parameters, starting the silent token acquisition process.
 
@@ -198,7 +198,7 @@ private fun removeAccount() {
 }
 ```
 
-The code removes an account from the application. It clears the displayed user name and text log. Then, it triggers the sign-out process using the authentication client, specifying a sign-out callback to handle the completion of the sign-out operation.
+The code removes an account from the application. It clears the displayed user name and text log. Then, it triggers the sign out process using the authentication client, specifying a sign out callback to handle the completion of the sign out operation.
 
 In the code, where we specify our callback, we use a function called `signOutCallback()`. The function should have the following code:
 
@@ -217,9 +217,9 @@ private fun signOutCallback(): ISingleAccountPublicClientApplication.SignOutCall
 }
 ```
 
-The code defines a sign-out callback for a single account in the public client application. It implements the `ISingleAccountPublicClientApplication.SignOutCallback` interface, overriding two methods. 
+The code defines a sign out callback for a single account in the public client application. It implements the `ISingleAccountPublicClientApplication.SignOutCallback` interface, overriding two methods. 
 
-In the `onSignOut` method, it nullifies the current account and updates the user interface accordingly. In the `onError` method, it logs any errors that occur during the sign-out process and updates the text log with the corresponding exception message.
+In the `onSignOut` method, it nullifies the current account and updates the user interface accordingly. In the `onError` method, it logs any errors that occur during the sign out process and updates the text log with the corresponding exception message.
 
 Make sure you include the import statements. Android Studio should include the import statements for you automatically.
 
