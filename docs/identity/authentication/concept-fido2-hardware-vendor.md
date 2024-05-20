@@ -27,6 +27,9 @@ During FIDO2 registration, Microsoft Entra ID requires security keys to provide 
 
 The specific requirements vary based on how an administrator configures the FIDO2 authentication methods policy.
 
+>[!NOTE]
+>Vendors are responsible to publish all root attestation certificates to the FIDO MDS; otherwise, attestation verification can fail.
+
 | Enforce attestation set to Yes | Enforce attestation set to No |
 |--------------------------------|-------------------------------|
 |It must provide a valid 'packed' attestation statement and a complete certificate that chains back to the attestation roots extracted from the FIDO MDS, so that Microsoft can validate the key's metadata.|It must provide a valid 'packed' attestation statement (but Microsoft will ignore attestation verification results) and a complete certificate (which doesn’t need to be associated with a particular certificate chain). |
@@ -45,9 +48,6 @@ Microsoft ingests the latest version of the FIDO MDS every month, so there may b
 ## FIDO2 security keys eligible for attestation with Microsoft Entra ID
 
 The following table lists FIDO2 security key models that are currently eligible for attestation with Microsoft Entra ID. 
-
->[!NOTE]
->Vendors are responsible to publish all root attestation certificates to the FIDO MDS; otherwise, attestation verification can fail.
 
 |Model|AAGUID|Biometric|USB|NFC|BLE|
 |---|---|---|---|---|---|
