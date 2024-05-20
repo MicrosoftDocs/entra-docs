@@ -87,6 +87,17 @@ Today we’re announcing that Platform SSO for macOS is available in public prev
 **Product capability:** Identity Lifecycle Management   
 
 Customers can now monitor workflow health, and get insights throughout all their workflows in Lifecycle Workflows including viewing workflow processing data across workflows, tasks, and workflow categories. For more information, see: [Workflow Insights (preview)](../id-governance/lifecycle-workflow-insights.md).
+
+---
+
+### Public Preview - Configure Lifecycle Workflow Scope Using Custom Security Attributes
+
+**Type:** New feature    
+**Service category:** Lifecycle Workflows    
+**Product capability:** Identity Lifecycle Management   
+
+Customers can now leverage their confidential HR data stored in custom security attributes in addition to other attributes to define the scope of their workflows in Lifecycle Workflows for automating joiner, mover, and leaver scenarios. For more information, see: [Use custom security attributes to scope a workflow](../id-governance/lifecycle-workflow-insights.md).
+
 ---
 
 ### Public Preview - Enable, Disable and Delete synchronized users accounts with Lifecycle Workflows
