@@ -41,7 +41,7 @@ This page updates monthly, so revisit it regularly. If you're looking for items 
 **Service category:** MS Graph    
 **Product capability:** Monitoring & Reporting    
 
-The long-awaited `$select` has been implemented into the signIn API. Utilize the `$select` to reduce the number of attributes that are returned for each log. This should greatly help customers who deal with throttling issues, and allow every customer to run faster, more efficient queries. For more information, see: [signIn resource type](/graph/api/resources/signin).
+The long-awaited `$select` has been implemented into the signIn API. Utilize the `$select` to reduce the number of attributes that are returned for each log. This should greatly help customers who deal with throttling issues, and allow every customer to run faster, more efficient queries.
 
 ---
 
