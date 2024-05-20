@@ -25,17 +25,23 @@ To assign a traffic forwarding profile to specific users and groups, you must ha
 
 ## Assign a traffic forwarding profile to specific users and groups
 
-Global Secure Access traffic forwarding profiles default to all users being assigned the traffic profile. To scope the traffic profile to a specific user or group:
+If you already enabled a traffic forwarding profile, the traffic profile is assigned to all users by default. If you haven't yet enabled a traffic forwarding profile, when you enable it the traffic is assigned to zero users. This setting lets you roll out the feature in a controlled manner to a specific set of users.
+
+The following screenshot illustrates this distinction. The Microsoft 365 profile is disabled is assigned to zero users and groups. The Private access and Internet access profiles are enabled and are assigned to all users.
+
+:::image type="content" source="media/how-to-manage-users-groups-assignment/traffic-profile-user-assignment-comparison.png" alt-text="Screenshot of the traffic forwarding page with user assignments highlighted." lightbox="how-to-manage-users-groups-assignment/traffic-profile-user-assignment-comparison-expanded.png":::
+
+You can configure the user and group assignments before or after enabling the traffic profile. You must enable the traffic profile to acquire and forward any traffic. For more information, see [About traffic forwarding profiles](concept-traffic-forwarding.md).
+
+### How to assign users and group to a traffic profile
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator) AND [Application Administrator](../identity/role-based-access-control/permissions-reference.md#application-administrator).
 
 1. Browse to **Global Secure Access** > **Connect** > **Traffic forwarding**.
 
-1. Select the **View** link in the **user and group assignments** section.
+1. Select the **View** link in the **User and group assignments** section.
 
     ![Screenshot of the traffic forwarding profiles with the view link highlighted.](media/how-to-manage-users-groups-assignment/traffic-profile-view-user-group-assignments.png)
-
-1. Change the **Assign to all users** toggle to **No**, review the confirmation message, and select the **OK** button.
 
 1. Select the **0 Users, 0 Groups assigned** link.
 
@@ -53,8 +59,19 @@ Global Secure Access traffic forwarding profiles default to all users being assi
 
 1. Select the **Assign** button.
 
-> [!NOTE]
-> When you enable a traffic forwarding profile, all users and groups are assigned by default. This default setting lets you slowly roll out the feature in a controlled manner.
+### Change existing user and group assignments
+
+The process to change the user and group assignments for a traffic profile that's already enabled is very similar except for the following steps.
+
+1. When you select the **View** link in the **User and group assignments** section, you need to change the **Assign to all users** setting to **No.**
+
+    ![Screenshot of the Assign to all users toggle.](media/how-to-manage-users-groups-assignment/assign-to-all-users-toggle.png)
+
+1. Review the confirmation message, and select the **OK** button.
+
+    ![Screenshot of the confirmation message.](media/how-to-manage-users-groups-assignment/user-group-assignment-message.png)
+
+1. Continue with the steps in the previous section.
 
 ### Automatic assignment through user attributes
 

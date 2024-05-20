@@ -21,7 +21,8 @@ The Private Access traffic forwarding profile routes traffic to your private net
 
 To enable the Microsoft 365 traffic forwarding profile for your tenant, you must have:
 
-- A [Global Secure Access Administrator](../identity/role-based-access-control/permissions-reference.md#global-secure-access-administrator) role in Microsoft Entra ID
+- A [Global Secure Access Administrator](../identity/role-based-access-control/permissions-reference.md#global-secure-access-administrator) role in Microsoft Entra ID.
+- - A [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator)  role to create and interact with Conditional Access policies.
 - The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 
 ### Known limitations
@@ -36,8 +37,6 @@ To enable the Microsoft 365 traffic forwarding profile for your tenant, you must
 1. Browse to **Global Secure Access (preview)** > **Connect** > **Traffic forwarding**.
 1. Select the checkbox for **Private Access profile**.
 
-![]()
-
 :::image type="content" source="media/how-to-manage-private-access-profile/private-access-traffic-profile.png" alt-text="Screenshot of the traffic forwarding page with the Private Access profile enabled." lightbox="media/how-to-manage-private-access-profile/private-access-traffic-profile-expanded.png":::
 
 
@@ -49,7 +48,7 @@ You can also configure per-app access to your private resources by creating a Pr
 
 To manage the details included in the Private Access traffic forwarding policy, select the **View** link for **Private Access policies**. 
 
-:::image type="content" source="media/how-to-manage-private-access-profile/private-access-profile-link.png" alt-text="Screenshot of the Private Access profile, with the view applications link highlighted." lightbox="media/how-to-manage-private-access-profile/private-access-profile-expanded.png":::
+![Screenshot of the Private Access profile, with the view applications link highlighted.](media/how-to-manage-private-access-profile/private-access-profile-link.png)
 
 Details of your Quick Access and enterprise apps for Private Access are displayed. Select the link for the application to view the details from the Enterprise applications area of Microsoft Entra ID.
 

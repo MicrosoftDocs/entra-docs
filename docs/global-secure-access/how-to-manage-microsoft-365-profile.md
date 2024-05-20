@@ -43,7 +43,7 @@ To enable the Microsoft 365 traffic forwarding profile for your tenant, you must
 
 To manage the details included in the Microsoft 365 traffic forwarding policy, select the **View** link for **Microsoft 365 traffic policies**.
 
-:::image type="content" source="media/how-to-manage-microsoft-365-profile/microsoft-365-traffic-policies.png" alt-text="Screenshot of the Private access profile, with the view applications link highlighted." lightbox="media/how-to-manage-microsoft-365-profile/microsoft-365-traffic-policies-expanded.png":::
+:::image type="content" source="media/how-to-manage-microsoft-365-profile/microsoft-365-traffic-policies.png" alt-text="Screenshot of the Private access profile, with the view applications link highlighted.":::
 
 The policy groups are listed, with a checkbox to indicate if the policy group is enabled. Expand a policy group to view all of the IPs and FQDNs included in the group.
 
