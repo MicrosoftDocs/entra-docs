@@ -1,6 +1,6 @@
 ---
 title: Add sign-up in an Android app using native authentication
-description: Learn how to add sign-up using email one-time passcode or email and password, and collect user attributes in your Android mobile app using native authentication.
+description: Learn how to add sign-up using email one-time passcode or email and password, and collect user attributes in an Android mobile app using native authentication.
 
 author: henrymbuguakiarie
 manager: mwongerapk
@@ -11,7 +11,7 @@ ms.service: entra-external-id
 ms.subservice: customers
 ms.topic: tutorial
 ms.date: 05/30/2024
-ms.custom: developer, devx-track-dotnet
+ms.custom: developer
 
 #Customer intent: As a dev, devops, I want to add sign-up with email one-time passcode or email and password, and collect user attributes in your Android mobile app using native authentication.
 ---
@@ -24,8 +24,8 @@ In this tutorial, you learn how to:
 
 
 > [!div class="checklist"]
-> 
-> - Sign up a user. 
+>
+> - Sign up a user by using using email one-time passcode or username (email) and password.
 > - Collect user attributes during sign-up. 
 > - Handle sign-up errors.
 
@@ -97,7 +97,7 @@ Whether you sign up a user using email one-time passcode or username (email) and
         }
     ```
 
-- The Android SDK provides a utility class `UserAttribute.Builder` to create user attributes. For example, to submit *city* and *country*, use the following code snippet to build the `userAttributes` variable: 
+- The Android SDK provides a utility class `UserAttribute.Builder` that you use to create user attributes. For example, to submit *city* and *country* user attributes, use the following code snippet to build the `userAttributes` variable: 
 
     ```kotlin
          val userAttributes = UserAttributes.Builder 
@@ -108,7 +108,7 @@ Whether you sign up a user using email one-time passcode or username (email) and
     
     The method names in the `UserAttribute.Builder` class are same as the programmable names of the user attributes that they build. Learn more about [Android SDK attribute builder](concept-native-authentication-user-attribute-builder.md?tabs=android-kotlin).
 
-- `signUp(username, attributes)` method can return `SignUpResult.AttributesRequired` to indicate that the app needs to submit one or more required attributes before Microsoft Entra creates an account. These attributes are configured by the administrator as mandatory in the Microsoft Entra admin center. Microsoft Entra doesn't explicitly request for optional user attributes. 
+- The `signUp(username, attributes)` or `signUp(username, attributes, password)`method can return `SignUpResult.AttributesRequired` to indicate that the app needs to submit one or more required attributes before Microsoft Entra creates an account. These attributes are configured by the administrator as mandatory in the Microsoft Entra admin center. Microsoft Entra doesn't explicitly request for optional user attributes. 
 
 - The `SignUpResult.AttributesRequired` result contains a `requiredAttributes` parameter. `requiredAttributes` is a list of `RequiredUserAttribute` objects that contains details about the user attributes that the app needs to submit. To handle `actionResult is SignUpResult.AttributesRequired`, use the following code snippet:
 
@@ -130,7 +130,7 @@ Whether you sign up a user using email one-time passcode or username (email) and
 
 ## Handle sign-up errors
 
-During sign-up, not all actions succeed. For instance, the user might attempt to sign up with an already used email address or submit an invalid email one-time passcode. 
+During sign-up, not all requests succeed. For instance, the user might attempt to sign up with an already used email address or submit an invalid email one-time passcode. 
 
 ### Handle start sign-up error
 
