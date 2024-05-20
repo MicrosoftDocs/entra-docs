@@ -188,7 +188,7 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [ChronicX®](~/identity/saas-apps/chronicx-tutorial.md) |  | ● |
 | [Chronus SAML](~/identity/saas-apps/chronus-saml-tutorial.md) |  | ● |
 | [Cinode](~/identity/saas-apps/cinode-provisioning-tutorial.md) | ● |  |
-| [Cisco AnyConnect](~/identity/saas-apps/cisco-anyconnect.md) |  | ● |
+| [Cisco Secure Firewall - Secure Client](~/identity/saas-apps/cisco-secure-firewall-secure-client.md) |  | ● |
 | [Cisco Cloud](~/identity/saas-apps/ciscocloud-tutorial.md) |  | ● |
 | [Cisco Expressway](~/identity/saas-apps/cisco-expressway-tutorial.md) |  | ● |
 | [Cisco Intersight](~/identity/saas-apps/cisco-intersight-tutorial.md) |  | ● |
