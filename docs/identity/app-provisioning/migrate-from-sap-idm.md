@@ -6,7 +6,7 @@ manager: amycolannino
 editor: markwahl-msft
 ms.service: entra-id-governance
 ms.topic: how-to
-ms.date: 05/06/2024
+ms.date: 05/20/2024
 ms.author: mwahl
 ms.reviewer: mwahl
 ---
@@ -35,7 +35,7 @@ Microsoft and SAP are continuing to evolve their evolution to support integratio
 
 Since the introduction of SAP IDM, the identity and access management landscape has evolved with new applications and new business priorities, and so the approaches recommended for addressing IAM use cases will in many cases be different today than those organizations previously implemented for SAP IDM. Therefore, organizations should plan a staged approach for scenario migration. For example, one organization may prioritize migrating an end-user self-service password reset scenario as one step, and then once that is complete, moving a provisioning scenario. For another example, organization may choose to first deploy Microsoft Entra features in a separate staging tenant, operated in parallel with the existing identity management system and the production tenant, and then bring configurations for scenarios one-by-one from the staging tenant to the production tenant and decommission that scenario from the existing identity management system. The order in which an organization chooses to move their scenarios will depend upon their overall IT priorities and the impact on other stakeholders, such as end users needing a training update, or application owners. Organizations may also structure IAM scenario migration alongside other IT modernization, such as moving other scenarios outside of identity management from on-premises SAP technology to SuccessFactors, S/4HANA, or other cloud services. You may also wish to use this opportunity to clean up and remove outdated integrations, access rights or roles, and consolidate where necessary.
 
-To begin migration planning,
+To begin planning your migration,
 
  * Identify current and planned IAM use cases in your IAM modernization strategy.
  * Analyze the requirements of those use cases and match those requirements to the capabilities of Microsoft Entra services.
@@ -46,11 +46,23 @@ As a SAP IDM migration will likely involve integrations with existing SAP applic
 
 Partners can also help your organization with planning and deployment. Customers can engage partners listed in the Microsoft Solution Partner finder or can choose from the [services and integration partners](~/id-governance/services-and-integration-partners.md).
 
-## Migration guidance by scenario
+## Migration guidance by SAP IDM scenario
 
 The following sections provide links to additional content on how to migrate each SAP IDM scenario to Microsoft Entra. Not all the sections may be relevant to each organization, depending upon the SAP IDM scenarios an organization has deployed.
 
 Be sure to monitor this article, the Microsoft Entra product documentation, and corresponding SAP product documentation, for updates, as capabilities of both products continue to evolve to unblock more migration and net new scenarios, including Microsoft Entra integrations with SAP Access Control (SAP AC) and SAP Cloud Identity Access Governance (SAP IAG).
+
+|Scenario|Guidance|
+|:--|:--|
+|SAP IDM as an identity store|[Migrate an Identity Store to a Microsoft Entra ID tenant](#migrate-an-identity-store-to-a-microsoft-entra-id-tenant) and [Migrate existing IAM data into Microsoft Entra ID tenant](#migrate-existing-iam-data-into-a-microsoft-entra-id-tenant)|
+|User management in SAP IDM|[Migrate user management scenarios](#migrate-user-management-scenarios)|
+|SAP SuccessFactors and other HR sources|[Integrate with SAP HR sources](#integrate-with-sap-hr-sources)|
+|Provisioning identities for single-sign on in applications|[Provision to SAP systems](#provision-to-sap-systems), [Provision to non-SAP systems](#provision-to-non-sap-systems) and [Migrate authentication and single sign-on](#migrate-authentication-and-single-sign-on)|
+|End user self-service|[Migrate end user self-service](#migrate-end-user-self-service)|
+|Role and access assignment|[Migrate access lifecycle management scenarios](#migrate-access-lifecycle-management-scenarios)|
+|Reporting|[Use Microsoft Entra for reporting](#use-microsoft-entra-for-reporting)|
+|Identity federation|[Migrate exchanging identity information across organizational boundaries](#migrate-exchanging-identity-information-across-organizational-boundaries)|
+|Extensions|[Extend Microsoft Entra with additional integrations](#extend-microsoft-entra-with-additional-integrations)|
 
 ### Migrate an Identity Store to a Microsoft Entra ID tenant
 
@@ -62,20 +74,9 @@ Before migrating scenarios to a Microsoft Entra tenant, you should:
 
 * [Define the organization's policy with user prerequisites and other constraints for access to an application](plan-sap-user-source-and-target.md#define-the-organizations-policy-with-user-prerequisites-and-other-constraints-for-access-to-an-application)
 * [Decide on the provisioning and authentication topology](plan-sap-user-source-and-target.md#decide-on-the-provisioning-and-authentication-topology). Similar to SAP IDM [identity lifecycle management](https://help.sap.com/docs/SAP_IDENTITY_MANAGEMENT/4773a9ae1296411a9d5c24873a8d418c/687dff86043f49e2982ba7942808e0f6.html), a single Microsoft Entra ID tenant can connect to multiple cloud and on-premises applications for provisioning and single sign-on.
-* [Ensure organizational prerequisites are met in that tenant](plan-sap-user-source-and-target.md#ensure-organizational-prerequisites-are-met-before-configuring-microsoft-entra-id)
+* [Ensure organizational prerequisites are met in that tenant](plan-sap-user-source-and-target.md#ensure-organizational-prerequisites-are-met-before-configuring-microsoft-entra-id) including having the appropriate [Microsoft Entra license](~/id-governance/licensing-fundamentals.md#features-by-license) in that tenant for the features you will be using
 
-Once you have a tenant configured, then depending upon your [Microsoft Entra license](~/id-governance/licensing-fundamentals.md#features-by-license) in that tenant, you can use that tenant for:
-
-* [user management](#migrate-user-management-scenarios) including end user self-service
-* [user authentication](#migrate-authentication-and-single-sign-on) and single sign-on to applications
-* group management
-* integration with Windows Server AD
-* [inbound provisioning](#integrate-with-sap-hr-sources) from system of record data sources
-* outbound provisioning to [SAP](#provision-for-sap-systems) and [non-SAP](#provision-for-non-sap-systems) targets
-* identity governance for [access lifecycle management](#migrate-access-lifecycle-management-scenarios)
-* [reporting](#use-microsoft-entra-for-reporting)
-
-### Migrate existing IAM data into Microsoft Entra ID tenant
+### Migrate existing IAM data into a Microsoft Entra ID tenant
 
 In SAP IDM, the Identity Store represents identity data through entry types such as `MX_PERSON`, `MX_ROLE`, or `MX_PRIVILEGE`.
 
@@ -91,7 +92,7 @@ In SAP IDM, the Identity Store represents identity data through entry types such
 
 Through the Microsoft Entra Admin Center, Microsoft Graph API and PowerShell, administrators can easily perform day-to-day identity management activities, including creating a user, blocking a user from sign in, adding a user to a group, or deleting a user.
 
-To enable operation at scale, Microsoft Entra enables organizations to automate their identity lifecycle processes. 
+To enable operation at scale, Microsoft Entra enables organizations to automate their identity lifecycle processes.
 
 ![Diagram of the Microsoft Entra relationship in provisioning with other sources and targets.](~/id-governance/media/what-is-identity-lifecycle-management/cloud-1-id-governance.png)
 
@@ -136,7 +137,7 @@ If you have other systems of record sources besides SuccessFactors or SAP HCM, y
 
 ### Provision to SAP systems
 
-Most organizations with SAP IDM will have been using it to provision users into SAP ECC, SAP IAS, SAP S/4HANA, or other SAP applications. Microsoft Entra has connectors to SAP ECC, SAP Cloud Identity Services, and SAP SuccessFactors. Provisioning into SAP S/4HANA or other applications is a two step process. Once you have users in Microsoft Entra ID, you can provision those users from Microsoft Entra ID to SAP Cloud Identity Services or SAP ECC, to enable them to sign in to SAP applications. SAP Cloud Identity Services then provisions the users originating from Microsoft Entra ID that are in the SAP Cloud Identity Directory into the downstream SAP applications, including [`SAP S/4HANA Cloud`](https://help.sap.com/docs/identity-provisioning/identity-provisioning/target-sap-s-4hana-cloud) and [`SAP S/4HANA On-premise`](https://help.sap.com/docs/identity-provisioning/identity-provisioning/target-sap-s-4hana-on-premise).
+Most organizations with SAP IDM will have been using it to provision users into SAP ECC, SAP IAS, SAP S/4HANA, or other SAP applications. Microsoft Entra has connectors to SAP ECC, SAP Cloud Identity Services, and SAP SuccessFactors. Provisioning into SAP S/4HANA or other applications requires the users to first be present in Microsoft Entra ID. Once you have users in Microsoft Entra ID, you can provision those users from Microsoft Entra ID to SAP Cloud Identity Services or SAP ECC, to enable them to sign in to SAP applications. SAP Cloud Identity Services then provisions the users originating from Microsoft Entra ID that are in the SAP Cloud Identity Directory into the downstream SAP applications, including [`SAP S/4HANA Cloud`](https://help.sap.com/docs/identity-provisioning/identity-provisioning/target-sap-s-4hana-cloud) and [`SAP S/4HANA On-premise`](https://help.sap.com/docs/identity-provisioning/identity-provisioning/target-sap-s-4hana-on-premise).
 
   :::image type="content" source="media/plan-sap-user-source-and-target/outbound-provisioning-and-sso.png" alt-text="Diagram showing Microsoft and SAP technologies relevant to provisioning identities from Microsoft Entra ID." lightbox="media/plan-sap-user-source-and-target/outbound-provisioning-and-sso.png":::
 
@@ -176,7 +177,7 @@ Organizations that have an existing identity provider, such as Windows Server AD
 
 Organizations may have used SAP IDM [Logon Help](https://help.sap.com/docs/SAP_IDENTITY_MANAGEMENT/d376345fb4e94928a70036ddf91d690b/d0faf50c76ef43f8808165ad855bc8c6.html) to enable their end users to reset their Windows Server AD password.
 
-Microsoft Entra self-service password reset (SSPR) gives users the ability to change or reset their password, without needing administrator or help desk involvement. Once you have configured Microsoft Entra SSPR, you can [require users to register when they sign in](~/identity/authentication/concept-sspr-howitworks.md#require-users-to-register-when-they-sign-in). Then, if a user's account is locked or they forget their password, they can follow prompts to unblock themselves and get back to work. When users change or reset their passwords using SSPR in the cloud, the updated passwords can also be written back to an on-premises AD DS environment. For more information on how SSPR works, see [Microsoft Entra self-service password reset](~/identity/authentication/concept-sspr-howitworks.md).
+Microsoft Entra self-service password reset (SSPR) gives users the ability to change or reset their password, without needing administrator or help desk involvement. Once you have configured Microsoft Entra SSPR, you can [require users to register when they sign in](~/identity/authentication/concept-sspr-howitworks.md#require-users-to-register-when-they-sign-in). Then, if a user's account is locked or they forget their password, they can follow prompts to unblock themselves and get back to work. When users change or reset their passwords using SSPR in the cloud, the updated passwords can also be written back to an on-premises AD DS environment. For more information on how SSPR works, see [Microsoft Entra self-service password reset](~/identity/authentication/concept-sspr-howitworks.md). If you need to send password changes to other on-premises systems in addition to Microsoft Entra ID and Windows Server AD, you can do this using a tool like the Password Change Notification Service (PCNS) with Microsoft Identity Manager (MIM). To find information on this more complex scenario, see the article [Deploy the MIM Password Change Notification Service](/microsoft-identity-manager/deploying-mim-password-change-notification-service-on-domain-controller).
 
 Microsoft Entra also supports end user self-service for [group management](~/identity/users/groups-self-service-management.md), and self-service access requests, approval, and reviews. For more information on self-service access management through Microsoft Entra ID Governance, see the following section on [access lifecycle management](#migrate-access-lifecycle-management-scenarios).
 
@@ -186,9 +187,9 @@ Microsoft Entra includes multiple access lifecycle management technologies to en
 
 * **Access management through Entra ID security group management.** Traditional Windows Server AD-based applications relied upon checking membership of security groups for authorization. Microsoft Entra makes group memberships available to applications via SAML claims, provisioning, or by [writing groups to Windows Server AD](~/identity/users/groups-write-back-portal.md). Administrators can [manage group membership](~//identity/users/groups-bulk-import-members.md), create [access reviews of group memberships](~/id-governance/create-access-review.md) and enable [self-service group management](~/identity/users/groups-self-service-management.md). With self-service, the group owners can approve or deny membership requests and delegate control of group membership. You can also use Privileged Identity Management (PIM) [for groups](~/id-governance/privileged-identity-management/groups-discover-groups.md) to manage just-in-time membership in the group or just-in-time ownership of the group.
 
-* **Access management through [Entitlement management](~/id-governance/entitlement-management-overview.md) access packages.**. Entitlement management is an identity governance feature that enables organizations to manage identity and access lifecycle at scale, by automating access request workflows, access assignments, reviews, and expiration. 
+* **Access management through [Entitlement management](~/id-governance/entitlement-management-overview.md) access packages.**. Entitlement management is an identity governance feature that enables organizations to manage identity and access lifecycle at scale, by automating access request workflows, access assignments, reviews, and expiration.
 
-Entitlement management enables organizations to implement their practices for how users are assigned access across multiple resources, using standardized collection of access rights called access packages. Each access package grants membership to groups, assignment to application roles, or membership in SharePoint Online sites. You can configure entitlement management so that users to receive access package assignments automatically based on their properties such as their department or cost center. You can also configure lifecycle workflows to add or remove assignments when people join and leave. Administrators can also request that users have assignments to access packages, and users can also request to have an access package themselves. The access packages available for a user to request are scoped by the security group memberships of the user. Users can request access they need immediately or request access in the future, and can specify a time limit of hours or days. A request can go through multiple stages of approval, with escalation approvers in case an approver does not respond. Once approved, assignments to an access package can be time limited, and you can configure recurring access reviews to have a manager, resource owner or other approvers regularly recertify the user's need for continued access. For more information on how to migrate authorization policies represented in a role model to entitlement management, see [migrate an organizational role model](~/id-governance/identity-governance-organizational-roles.md). To automate the migration process, you can [use PowerShell to create access packages](~/id-governance/entitlement-management-access-package-create-app.md).
+Entitlement management enables organizations to implement their practices for how users are assigned access across multiple resources, using standardized collection of access rights called access packages. Each access package grants membership to groups, assignment to application roles, or membership in SharePoint Online sites. You can configure entitlement management so that users to receive access package assignments automatically based on their properties such as their department or cost center. You can also configure lifecycle workflows to add or remove assignments when people join and leave. Administrators can also request that users have assignments to access packages, and users can also request to have an access package themselves. The access packages available for a user to request are scoped by the security group memberships of the user. Users can request access they need immediately or request access in the future, and can specify a time limit of hours or days. A request can go through multiple stages of approval, with escalation approvers in case an approver does not respond. Once approved, requestors are notified. Assignments to an access package can be time limited, and you can configure recurring access reviews to have a manager, resource owner or other approvers regularly recertify the user's need for continued access. For more information on how to migrate authorization policies represented in a role model to entitlement management, see [migrate an organizational role model](~/id-governance/identity-governance-organizational-roles.md). To automate the migration process, you can [use PowerShell to create access packages](~/id-governance/entitlement-management-access-package-create-app.md).
 
 ![Entitlement management overview diagram](~/id-governance/media/entitlement-management-overview/elm-overview.png)
 
@@ -218,10 +219,10 @@ Microsoft Entra External ID includes [B2B collaboration capabilities](~/external
 
 Microsoft Entra includes multiple interfaces for integration and extension across the cloud services, including:
 
-* [Microsoft Graph API](/graph/overview) for applications to query and update identity information, configuration and policies, and retrieve logs, status, and reports
-* Provisioning to applications via [SCIM](~/identity/app-provisioning/on-premises-scim-provisioning.md), [SOAP or REST](~/identity/app-provisioning/on-premises-web-services-connector.md), and [ECMA API](~/identity/app-provisioning/on-premises-custom-connector.md)
-* the [inbound provisioning API](~/identity/app-provisioning/inbound-provisioning-api-configure-app.md) enables other system of record sources to supply user updates to Microsoft Entra ID
-* callouts to custom Azure LogicApps from [entitlement management](~/id-governance/entitlement-management-logic-apps-integration.md) and [lifecycle workflows](~/id-governance/lifecycle-workflow-extensibility.md) allow customization of the user onboarding, offboarding, and access request and assignment policies
+* Applications can call Microsoft Entra via the [Microsoft Graph API](/graph/overview) to query and update identity information, configuration and policies, and retrieve logs, status, and reports.
+* Administrators can configure provision to applications via [SCIM](~/identity/app-provisioning/on-premises-scim-provisioning.md), [SOAP or REST](~/identity/app-provisioning/on-premises-web-services-connector.md), and the [ECMA API](~/identity/app-provisioning/on-premises-custom-connector.md).
+* Administrators can use the [inbound provisioning API](~/identity/app-provisioning/inbound-provisioning-api-configure-app.md) to bring in worker records from other system of record sources to supply user updates to Windows Server AD and Microsoft Entra ID.
+* Administrators in a tenant with Microsoft Entra ID Governance can also configure calls to custom Azure LogicApps from [entitlement management](~/id-governance/entitlement-management-logic-apps-integration.md) and [lifecycle workflows](~/id-governance/lifecycle-workflow-extensibility.md). These allow customization of the user onboarding, offboarding, and access request and assignment processes.
 
 ## Next steps
 
