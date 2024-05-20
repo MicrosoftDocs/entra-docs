@@ -14,7 +14,7 @@ Assign specific users and groups to a traffic forwarding profile. User or group 
 
 ## Prerequisites
 
-To enable the Microsoft 365 traffic forwarding profile for your tenant, you must have:
+To assign a traffic forwarding profile to specific users and groups, you must have:
 
 - A [**Global Secure Access Administrator**](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator) role in Microsoft Entra ID to view the traffic forwarding profile.
 - An [**Application Administrator**](../identity/role-based-access-control/permissions-reference.md#application-administrator) role to assign the traffic profile to the selected users and groups.
@@ -23,7 +23,7 @@ To enable the Microsoft 365 traffic forwarding profile for your tenant, you must
 
 ## Assign a traffic forwarding profile to specific users and groups
 
-To scope the traffic profile to a specific user or group:
+Global Secure Access traffic forwarding profiles default to all users being assigned the traffic profile. To scope the traffic profile to a specific user or group:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator) AND [Application Administrator](../identity/role-based-access-control/permissions-reference.md#application-administrator).
 
@@ -35,14 +35,12 @@ To scope the traffic profile to a specific user or group:
 
 1. Change the **Assign to all users** toggle to **No**, review the confirmation message, and select the **OK** button.
 
-    ![Screenshot of the Assign to all users toggle.](media/how-to-manage-users-groups-assignment/assign-to-all-users-toggle.png)
-
 1. Select the **0 Users, 0 Groups assigned** link.
 
     ![Screenshot of the 0 users, 0 groups assigned link.](media/how-to-manage-users-groups-assignment/user-group-assignment-link.png)
 
 1. Select **Add user/group**.
-    - The list groups users and groups together but you can select either the **Users** or **Groups** tab to narrow the list.
+    - The default list groups users and groups together but you can select either the **Users** or **Groups** tab to view one or the other.
     - You can also use the Search box to find the user or group directly.
 
     ![Screenshot of the users and groups page with the Add user/group button highlighted.](media/how-to-manage-users-groups-assignment/traffic-profile-add-user-group-button.png)
@@ -56,9 +54,13 @@ To scope the traffic profile to a specific user or group:
 > [!NOTE]
 > When you enable a traffic forwarding profile, zero users and groups are assigned by default. This default setting lets you slowly roll out the feature in a controlled manner.
 
+### Automatic assignment using user attributes
+
+You can create and assign a dynamic group of users to the profile who satisfy specific criteria. To learn more about automatic assignment using user attributes, see [Create or update a dynamic group in Microsoft Entra ID](../identity/users/groups-create-rule.md).
+
 ## Assign the traffic profile to all users
 
-Once you assign a traffic forwarding profile to a specific user or group, you can quickly change the setting to scope the traffic profile to all users and back again to a specific group. Any users and groups assigned to that traffic forwarding profile are retained so you don't need to add them back. 
+Once you assign a traffic forwarding profile to a specific user or group, you can quickly change the setting to scope the traffic profile to all users and back again to a specific group. Any users and groups assigned to that traffic forwarding profile are retained so you don't need to add them again. 
 
 1. Browse to **Global Secure Access** > **Connect** > **Traffic forwarding**.
 
@@ -82,23 +84,16 @@ You can revert the assignment of all users to a traffic profile. When you toggle
 
 1. Select **Done**. 
 
-## Automatic assignment using user attributes 
+## Notes on user identity and group assignment
 
-You can create and assign a dynamic group of users to the profile who satisfy specific criteria. To learn more about automatic assignment using user attributes, see [Create or update a dynamic group in Microsoft Entra ID](../identity/users/groups-create-rule.md).
+Review the following notes to better understand the user and group assignment capabilities.
 
-## Notes on user identity
-
-Profiles are fetched on behalf of the Microsoft Entra user logged into the device​, not the user logged into the client​. 
-
-If there's no Microsoft Entra user logged in, then the profile is fetched only if assigned to all users. For example, if you're logged into the device as a local admin.
-
-Multiple users logging into the same device simultaneously isn't supported. 
-
-## Notes on group assignment
-
-Group-based assignment is supported for Security groups and Microsoft 365 groups whose `SecurityEnabled` setting is set to `True`.
-
-Nested group memberships aren't supported. A user must be a direct member of the group assigned to the profile. 
+- Traffic profiles are fetched on behalf of the Microsoft Entra user logged into the device​, not the user logged into the client​. 
+- If there's no Microsoft Entra user logged in, the traffic profile is fetched only if it's assigned to all users. For example, if you log into the device as a local admin you're part of the all users.
+- Multiple users logging into the same device simultaneously isn't supported.
+- Group-based assignment is supported for Security groups and Microsoft 365 groups whose `SecurityEnabled` setting is set to `True`.
+- Nested group memberships aren't supported. A user must be a direct member of the group assigned to the profile. 
 
 ## Next steps
+
 - [Learn about Global Secure Access clients](concept-clients.md)

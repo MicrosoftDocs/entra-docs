@@ -21,7 +21,8 @@ With the Microsoft 365 profile enabled, Microsoft Entra Internet Access acquires
 
 To enable the Microsoft 365 traffic forwarding profile for your tenant, you must have:
 
-- A **Global Secure Access Administrator** role in Microsoft Entra ID
+- A [Global Secure Access Administrator](../identity/role-based-access-control/permissions-reference.md#global-secure-access-administrator) role in Microsoft Entra ID to enable traffic profiles.
+- A [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator)  role to create and interact with Conditional Access policies.
 - The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 - To use the Microsoft 365 traffic forwarding profile, a Microsoft 365 E3 license is recommended.
 
@@ -32,11 +33,11 @@ To enable the Microsoft 365 traffic forwarding profile for your tenant, you must
 
 ## Enable the Microsoft 365 traffic profile
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
 1. Browse to **Global Secure Access (preview)** > **Connect** > **Traffic forwarding**.
-1. Select the checkbox for **Microsoft 365 access profile**.
+1. Enable the **Microsoft 365 access profile**.
 
-![Screenshot of the traffic forwarding page with the Private access profile enabled.](media/how-to-manage-microsoft-365-profile/microsoft-365-traffic-profile.png)
+    :::image type="content" source="media/how-to-manage-microsoft-365-profile/microsoft-365-traffic-profile.png" alt-text="Screenshot of the traffic forwarding page with the Private access profile enabled." lightbox="media/how-to-manage-microsoft-365-profile/microsoft-365-traffic-profile-expanded.png":::
 
 ## Microsoft 365 traffic policies
 
@@ -88,14 +89,13 @@ Traffic profiles can be assigned to remote networks, so that the network traffic
 
 **To assign a remote network to the Microsoft 365 profile**:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/).
-1. Browse to **Global Secure Access (preview)** > **Traffic forwarding**.
-1. Select the **Add assignments** button for the profile.
-    - If you're editing the remote network assignments, select the **Add/edit assignments** button.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
+1. Browse to **Global Secure Access (preview)** > **Connect** > **Traffic forwarding**.
+1. From the **Remove network assignments** section, select the **View** link for the profile.
 1. Select a remote network from the list and select **Add**.
 
 ## User and group assignments
-You can scope the Microsoft 365 profile to specific users and groups. To learn more about user and group assignment, see [How to assign and manage users and groups with traffic forwarding profiles](how-to-manage-users-groups-assignment.md).
+You can scope the Microsoft 365 profile to specific users and groups instead of applying the traffic profile to all users. To learn more about user and group assignment, see [How to assign and manage users and groups with traffic forwarding profiles](how-to-manage-users-groups-assignment.md).
 
 [!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
 
