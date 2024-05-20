@@ -41,7 +41,7 @@ This page updates monthly, so revisit it regularly. If you're looking for items 
 **Service category:** MS Graph    
 **Product capability:** Monitoring & Reporting    
 
-The long-awaited `$select` has now been implemented into the signIn API. Utilize the `$select` to reduce the number of attributes that are returned for each log. This should greatly help customers who deal with throttling issues, and allow every customer to run faster, more efficient queries. For more information, see: [signIn resource type](/graph/api/resources/signin).
+The long-awaited `$select` has been implemented into the signIn API. Utilize the `$select` to reduce the number of attributes that are returned for each log. This should greatly help customers who deal with throttling issues, and allow every customer to run faster, more efficient queries. For more information, see: [signIn resource type](/graph/api/resources/signin).
 
 ---
 
@@ -77,6 +77,27 @@ For more information, see: Bicep templates for Microsoft Graph resources
 **Product capability:** User Authentication    
 
 Today we’re announcing that Platform SSO for macOS is available in public preview with Microsoft Entra ID. Platform SSO is an enhancement to the Microsoft Enterprise SSO plug-in for Apple Devices that makes usage and management of Mac devices more seamless and secure than ever. At the start of public preview, Platform SSO works with Microsoft Intune. Other Mobile Device Management (MDM) providers are coming soon. Contact your MDM provider for more information on support and availability. For more information, see: [macOS Platform Single Sign-on overview (preview)](../identity/devices/macos-psso.md).
+
+---
+
+### Public Preview - Workflow History Insights in Lifecycle Workflows
+
+**Type:** New feature    
+**Service category:** Authentications (Logins)    
+**Product capability:** User Authentication    
+
+Customers can now monitor workflow health, and get insights throughout all their workflows in Lifecycle Workflows including viewing workflow processing data across workflows, tasks, and workflow categories. For more information, see: [Workflow Insights (preview)](../id-governance/lifecycle-workflow-insights.md).
+---
+
+### Public Preview - Enable, Disable and Delete synchronized users accounts with Lifecycle Workflows
+
+**Type:** New feature    
+**Service category:** Authentications (Logins)    
+**Product capability:** User Authentication    
+
+Lifecycle Workflows can now enable, disable, and delete user accounts that are synchronized from Active Directory Domain Services (AD DS) to Microsoft Entra. This allows you to ensure that the offboarding processes of your employees are completed by deleting the user account after a retention period.
+
+For more information, see: On-premises article
 
 ---
 
