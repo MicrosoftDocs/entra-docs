@@ -73,7 +73,7 @@ Prior BIG-IP experience isn't necessary. You need:
   * F5 BIG-IP APM add-on license on a BIG-IP Local Traffic Manager (LTM)
   * 90-day BIG-IP [Free Trial](https://www.f5.com/trial/big-ip-trial.php) license
 * User identities [synchronized](~/identity/hybrid/connect/how-to-connect-sync-whatis.md) from an on-premises directory to Microsoft Entra ID, or created in Microsoft Entra ID and flowed back to your on-premises directory.
-* One of the following roles in Microsoft Entra tenant: Global Administrator, Cloud Application Administrator, or Application Administrator.
+* One of the following roles in Microsoft Entra tenant: Cloud Application Administrator, or Application Administrator.
 * A web server [certificate](~/identity/enterprise-apps/f5-bigip-deployment-guide.md) for publishing services over HTTPS, or use default BIG-IP certificates while testing.
 * A Kerberos application, or go to active-directory-wp.com to learn to configure [SSO with IIS on Windows](https://active-directory-wp.com/docs/Networking/Single_Sign_On/SSO_with_IIS_on_Windows.html).
 

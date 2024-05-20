@@ -99,7 +99,7 @@ a recommended access review where members of the group are reviewed.
 ![Create an access review pane for example 1](./media/conditional-access-exclusion/create-access-review-1.png)
 
 > [!NOTE] 
-> A Global administrator or User administrator role is required to create access reviews. For a step by step guide on creating an access review, see: [Create an access review of groups and applications](create-access-review.md).
+> At least the Identity Governance Administrator, or User Administrator role, is required to create access reviews. For a step by step guide on creating an access review, see: [Create an access review of groups and applications](create-access-review.md).
 
 1. The review happens every week.
 

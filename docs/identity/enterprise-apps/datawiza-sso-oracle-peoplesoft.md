@@ -60,7 +60,7 @@ Ensure the following prerequisites are met.
 * User identities synchronized from an on-premises directory to Microsoft Entra ID, or created in Microsoft Entra ID and flowed back to an on-premises directory
   * See, [Microsoft Entra Connect Sync: Understand and customize synchronization](~/identity/hybrid/connect/how-to-connect-sync-whatis.md)
 * An account with Microsoft Entra ID and the Application Administrator role
-  * See, [Microsoft Entra built-in roles, all roles](~/identity/role-based-access-control/permissions-reference.md#all-roles)
+  * See, [Microsoft Entra built-in roles, all roles](~/identity/role-based-access-control/permissions-reference.md#application-administrator)
 * An Oracle PeopleSoft environment
 * (Optional) An SSL web certificate to publish services over HTTPS. You can use default Datawiza self-signed certs for testing.
 
@@ -154,7 +154,7 @@ To provide more security for sign-ins, you can enforce Microsoft Entra multifact
 
 Learn more: [Tutorial: Secure user sign-in events with Microsoft Entra multifactor authentication](~/identity/authentication/tutorial-enable-azure-mfa.md)
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 2. Browse to **Identity** > **Overview** > **Properties** tab.
 3. Under **Security defaults**, select **Manage security defaults**.
 4. On the **Security defaults** pane, toggle the dropdown menu to select **Enabled**.

@@ -116,7 +116,9 @@
     - name: Workflow Audit logs
       href: lifecycle-workflow-audits.md
     - name: Workflow History
-      href: lifecycle-workflow-history.md     
+      href: lifecycle-workflow-history.md
+    - name: Workflow Insights (preview)
+      href: lifecycle-workflow-insights.md        
 - name: How-to guides
   expanded: true
   items:
@@ -273,7 +275,9 @@
         - name: Check execution user scope
           href: check-workflow-execution-scope.md  
         - name: Customize the schedule of workflows
-          href: customize-workflow-schedule.md         
+          href: customize-workflow-schedule.md 
+        - name: Check Workflow Insights (preview)
+          href: manage-workflow-insights.md            
       - name: Delete
         items: 
         - name: Delete a Lifecycle workflow
