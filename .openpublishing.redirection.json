@@ -21,11 +21,6 @@
       "redirect_document_id": true
     },
     {
-      "source_path_from_root": "/docs/identity/devices/cisco-anyconnect.md",
-      "redirect_url": "/entra/identit/ysaas-apps/tutorial-list",
-      "redirect_document_id": false
-    },
-    {
       "source_path_from_root": "/docs/id-protection/reference-identity-protection-glossary.md",
       "redirect_url": "/entra/id-protection/overview-identity-protection",
       "redirect_document_id": true
@@ -133,6 +128,11 @@
     {
       "source_path_from_root": "/docs/identity/saas-apps/axiad-cloud-tutorial.md",
       "redirect_url": "/entra/identity/saas-apps/axiad-cloud-connector-tutorial",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/cisco-anyconnect.md",
+      "redirect_url": "/entra/identity/saas-apps/cisco-secure-firewall-secure-client",
       "redirect_document_id": false
     },
     {
