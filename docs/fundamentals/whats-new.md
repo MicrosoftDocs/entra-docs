@@ -55,15 +55,15 @@ End users can now enable passwordless phone sign-in for multiple accounts in the
 
 ---
 
-### Public Preview - Bicep templates for Microsoft Graph resources
+### Public Preview - Bicep templates support for Microsoft Graph
 
 **Type:** New feature    
 **Service category:** MS Graph    
 **Product capability:** Developer Experience    
 
-The Microsoft Graph Bicep Provider allows you to author, deploy, and manage a limited set of Microsoft Graph resources (mostly Microsoft Entra ID resources) using Bicep template files, alongside Azure resources.
+The Microsoft Graph Bicep extension brings declarative infrastructure-as-code (IaC) capabilities to Microsoft Graph resources. It allows you to author, deploy, and manage core Microsoft Entra ID resources using Bicep template files, alongside Azure resources.
 
-- Existing Azure customers can now use familiar tools to deploy Azure resources and the Microsoft Entra resources they depend on, such as applications and service principals, using Infrastructure-as-Code (IaC) and DevOps practices.
+- Existing Azure customers can now use familiar tools to deploy Azure resources and the Microsoft Entra resources they depend on, such as applications and service principals, IaC and DevOps practices.
 - It also opens the door for existing Microsoft Entra customers to use Bicep templates and IaC practices to deploy and manage their tenant's Entra resources.
 
 For more information, see: Bicep templates for Microsoft Graph resources
