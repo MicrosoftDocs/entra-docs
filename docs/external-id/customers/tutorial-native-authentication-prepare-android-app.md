@@ -210,6 +210,7 @@ Your code should look something similar to the following snippet:
  
 Make sure you include the import statements. Android Studio should include the import statements for you automatically.
  
-## Next steps  
- 
-- [Tutorial: Add sign-up with email one-time passcode in Android mobile app](tutorial-native-authentication-android-sign-up.md) 
+## Next step 
+
+> [!div class="nextstepaction"]
+>  [Tutorial: Add sign-up in an Android mobile app using native authentication](tutorial-native-authentication-android-sign-up.md)
