@@ -67,4 +67,4 @@ For a step by step guide on setting the flag so that user account tasks run for 
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Manage synced on-premises users with workflows (preview)](manage-workflow-onprem.md)
+> [Manage synced on-premises users with workflows (preview)](manage-workflow-on-premises.md)
