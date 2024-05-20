@@ -86,12 +86,12 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 	> [!NOTE]
 	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. You will get these values while configuring Docker SSO. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
 
-1. Docker application expects an email address as **Unique User Identifier** and it also supports **Given name** and **Surname** to sync users full name into Docker app.  The following screenshot shows the list of default attributes.
+1. Docker application expects **Unique User Identifier** mapped to an email address (**user.mail**) instead of user.userprincipalname and it also supports **givenname** and **surname** to sync users full name into Docker app.  The following screenshot shows the list of default attributes.
 
     ![Screenshot shows the image of the attributes.](common/default-attributes.png "Image")
 
     > [!Note]
-    > Please delete **Name** and **Emailaddress** manually from the above default attributes in Entra portal as per application requirements. 
+    > Please delete **name** and **emailaddress** manually from the above default attributes in Entra portal as per application requirements. 
 
 1. In addition to above, Docker application supports optional attributes to be passed back in SAML response, which are shown below. These attributes can be added to manage the provisioning of users in specific teams and their roles within the Docker Organization. To learn more about all attributes that Docker SSO supports click [here](https://docs.docker.com/security/for-admins/single-sign-on/configure/configure-idp/#sso-attributes).
 
