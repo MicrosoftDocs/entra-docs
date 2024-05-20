@@ -27,7 +27,7 @@ In this tutorial:
 > - Add code to call Microsoft Graph API
 > - Test the app
 
-MSAL Angular v2 improves on MSAL Angular v1 by supporting the authorization code flow in the browser instead of the implicit grant flow. MSAL Angular v2 does **NOT** support the implicit flow.
+MSAL Angular v2 improves on MSAL Angular v1 by supporting the authorization code flow with PKCE in the browser instead of the implicit grant flow. We recommend using the authorization code flow with PKCE for single-page applications (SPAs) because it's more secure than the implicit flow. MSAL Angular v2 does **NOT** support the implicit flow.
 
 ## Prerequisites
 

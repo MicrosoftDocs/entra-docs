@@ -86,7 +86,7 @@ You can expect the creation of administrative units in the organization to go th
 
 ## Currently supported scenarios
 
-As a Global Administrator or a Privileged Role Administrator, you can use the Microsoft Entra admin center to:
+As a Privileged Role Administrator, you can use the Microsoft Entra admin center to:
 
 - Create administrative units
 - Add users, groups, or devices as members of administrative units

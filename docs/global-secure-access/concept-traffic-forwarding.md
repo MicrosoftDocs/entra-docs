@@ -5,14 +5,14 @@ author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: conceptual
-ms.date: 06/09/2023
+ms.date: 05/02/2024
 ms.service: global-secure-access
 ms.reviewer: katabish
 ---
 
 # Global Secure Access (preview) traffic forwarding profiles
 
-With the traffic forwarding profiles in Global Secure Access (preview), you can apply policies to the network traffic that your organization needs to secure and manage. Network traffic is evaluated against the traffic forwarding policies you configure. The profiles are applied and the traffic goes through the service to the appropriate apps and resources. 
+You use traffic forwarding profiles in Global Secure Access (preview) to apply policies to the network traffic that your organization wants to secure and manage. Network traffic is evaluated against the traffic forwarding policies you configure. The profiles are applied and the traffic goes through the service to the appropriate apps and resources. 
 
 This article describes the traffic forwarding profiles and how they work.
 
@@ -24,7 +24,7 @@ When traffic comes through Global Secure Access, the service evaluates the type 
 
 For each traffic forwarding profile, you can configure three main details:
 
-- Which traffic to forward to the service
+- Which users and which traffic to forward to the service
 - What Conditional Access policies to apply
 - How your end-users connect to the service
 
@@ -42,7 +42,7 @@ Private access traffic can be forwarded to the service by connecting through the
 
 ## Internet access
 
-With the Internet access profile, you can route traffic to the public internet, including traffic to SaaS apps. This traffic forwarding profile consists of a pre-populated list of regular expressions for fully qualified domain names (FQDNs) and IP addresses representing the public internet. 
+With the internet access profile, you can route traffic to the public internet, including traffic to SaaS apps. This traffic forwarding profile consists of a pre-populated list of regular expressions for fully qualified domain names (FQDNs) and IP addresses representing the public internet. 
 
 Internet access traffic can be forwarded to the service by connecting through the [Global Secure Access desktop client](how-to-install-windows-client.md).
 

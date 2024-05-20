@@ -19,7 +19,7 @@ Microsoft Entra ID, part of Microsoft Entra, supports bulk user create and delet
 
 ## Required permissions
 
-In order to bulk create users in the administration portal, you must be signed in as a Global administrator or User administrator.
+In order to bulk create users in the administration portal, you must be signed in as at least a User Administrator.
 
 ## Understand the CSV template
 

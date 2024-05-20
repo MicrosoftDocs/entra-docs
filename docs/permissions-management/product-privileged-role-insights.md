@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-permissions-management
 
 ms.topic: how-to
-ms.date: 05/22/2023
+ms.date: 05/13/2024
 ms.author: jfields
 ---
 
@@ -14,6 +14,8 @@ ms.author: jfields
 
 The **Microsoft Entra Insights** tab shows you who is assigned to [privileged roles](/entra/identity/role-based-access-control/permissions-reference) in your organization. You can review a list of identities assigned to a privileged role and learn more about each identity.
 
+> [!NOTE] 
+> Microsoft recommends that you keep two break glass accounts permanently assigned to the Global Administrator role. Make sure that these accounts don't require the same multi-factor authentication mechanism to sign in as other administrative accounts. This is described further in [Manage emergency access accounts in Microsoft Entra](~/identity/role-based-access-control/security-emergency-access.md). 
 [!INCLUDE [emergency-access-accounts](../includes/definitions/emergency-access-accounts.md)]
 
 > [!NOTE] 
@@ -27,7 +29,7 @@ To view information on the Microsoft Entra Insights tab, you must have Permissio
 ## View information in the Microsoft Entra Insights tab
 
 1. From the Permissions Management home page, select the **Microsoft Entra Insights** tab.
-2. Select **Review Global Administrators** to review the list of Global Administrator role assignments.
+2. Select **Review global administrators** to review the list of Global Administrator role assignments.
 3. Select **Review highly privileged roles** or **Review service principals** to review information on principal role assignments for the following roles: *Application Administrator*, *Cloud Application Administrator*, *Exchange Administrator*, *Intune Administrator*, *Privileged Role Administrator*, *SharePoint Administrator*, *Security Administrator*, *User Administrator*. 
 
 

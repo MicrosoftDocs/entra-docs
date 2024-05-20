@@ -37,7 +37,7 @@ To grant tenant-wide admin consent, you need:
 
 - A Microsoft Entra user account with one of the following roles:
 
-  - Global Administrator or Privileged Role Administrator, for granting consent for apps requesting any permission, for any API.
+  - Privileged Role Administrator, for granting consent for apps requesting any permission, for any API.
   - Cloud Application Administrator or Application Administrator, for granting consent for apps requesting any permission for any API, _except_ Microsoft Graph app roles (application permissions).
   - A custom directory role that includes the [permission to grant permissions to applications](~/identity/role-based-access-control/custom-consent-permissions.md), for the permissions required by the application.
 
@@ -140,7 +140,7 @@ In this section, you grant application permissions to your enterprise applicatio
 
 In the following example, you grant the Microsoft Graph application (the principal of ID `b0d9b9e3-0ecf-4bfd-8dab-9273dd055a94`) an app role (application permission) of ID `df021288-bdef-4463-88db-98f22de89214` that's exposed by a resource API of ID `7ea9e944-71ce-443d-811c-71e8047b557a`.
 
-1. Connect to Microsoft Graph PowerShell and sign in as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Connect to Microsoft Graph PowerShell and sign in as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
    ```powershell
    Connect-MgGraph -Scopes "Application.ReadWrite.All", "AppRoleAssignment.ReadWrite.All"
@@ -214,7 +214,7 @@ In this section, you grant application permissions to your enterprise applicatio
 
 In the following example, you grant the application, Microsoft Graph (the principal of ID `b0d9b9e3-0ecf-4bfd-8dab-9273dd055a94`) an app role (application permission) of ID `df021288-bdef-4463-88db-98f22de89214` that's exposed by a resource enterprise application of ID `7ea9e944-71ce-443d-811c-71e8047b557a`.
 
-You need to sign as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+You need to sign as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
 1. Retrieve the app roles defined by Microsoft graph in your tenant. Identify the app role that you need to grant the client enterprise application. In this example, the app role ID is `df021288-bdef-4463-88db-98f22de89214`
 
