@@ -46,10 +46,9 @@ For information about the priority logic that is used when multiple policies app
 
 If you have a set of users that should have different request and approval settings, you'll likely need to create a new policy. Follow these steps to start adding a new policy to an existing access package:
 
-**Prerequisite role:** Global Administrator, Identity Governance Administrator, Catalog owner, or Access package manager
-
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
-
+    > [!TIP]
+    > Other least privilege roles that can complete this task include the Catalog owner and the Access package manager.
 1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
 
 1. On the **Access packages** page open the access package you want to edit.
@@ -160,10 +159,9 @@ Follow these steps if you want to bypass access requests and allow administrator
 
 To change the request and approval settings for an access package, you need to open the corresponding policy with those settings. Follow these steps to open and edit the request settings for an access package assignment policy:
 
-**Prerequisite role:** Global Administrator, Identity Governance Administrator, Catalog owner, or Access package manager
-
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
-
+    > [!TIP]
+    > Other least privilege roles that can complete this task include the Catalog owner and the Access package manager.
 1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
 
 1. On the **Access packages** page open the access package whose policy request settings you want to edit.
@@ -220,7 +218,7 @@ This script below illustrates creating a policy for direct assignment to an acce
 ```powershell
 Connect-MgGraph -Scopes "EntitlementManagement.ReadWrite.All"
 
-$apid = "cdd5f06b-752a-4c9f-97a6-82f4eda6c76d"
+$apid = "00001111-aaaa-2222-bbbb-3333cccc4444"
 
 $params = @{
     displayName = "New Policy"

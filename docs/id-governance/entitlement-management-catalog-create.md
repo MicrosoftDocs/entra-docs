@@ -20,15 +20,11 @@ This article shows you how to create and manage a catalog of resources and acces
 
 A catalog is a container of resources and access packages. You create a catalog when you want to group related resources and access packages. An administrator can create a catalog.  In addition, a user who has been delegated the [catalog creator](entitlement-management-delegate.md) role can create a catalog for resources that they own.  A nonadministrator who creates the catalog becomes the first catalog owner. A catalog owner can add more users, groups of users, or application service principals as catalog owners.
 
-**Prerequisite roles:** Global Administrator, Identity Governance Administrator, or Catalog creator
-
-> [!NOTE]
-> Users who were assigned the User Administrator role will no longer be able to create catalogs or manage access packages in a catalog they don't own. If users in your organization were assigned the User Administrator role to configure catalogs, access packages, or policies in entitlement management, you should instead assign these users the Identity Governance administrator role.
-
 To create a catalog:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
-
+    > [!TIP]
+    > Other least privilege roles that can complete this task include the Catalog creator. Users who were assigned the User Administrator role will no longer be able to create catalogs or manage access packages in a catalog they don't own. If users in your organization were assigned the User Administrator role to configure catalogs, access packages, or policies in entitlement management, you should instead assign these users the Identity Governance administrator role.
 1. Browse to **Identity governance** > **Entitlement management** > **Catalogs**.
 
     ![Screenshot that shows entitlement management catalogs in the Microsoft Entra admin center.](./media/entitlement-management-catalog-create/catalogs.png)
@@ -224,12 +220,11 @@ To remove resources from a catalog:
 
 The user who created a catalog becomes the first catalog owner. To delegate management of a catalog, add users to the catalog owner role. Adding more catalog owners helps to share the catalog management responsibilities.
 
-**Prerequisite roles:** Global Administrator, Identity Governance Administrator, or Catalog owner
-
 To assign a user to the catalog owner role:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
-
+    > [!TIP]
+    > Other least privilege roles that can complete this task include the Catalog owner.
 1. Browse to **Identity governance** > **Entitlement management** > **Catalogs**.
 
 1. On the **Catalogs** page open the catalog you want to add administrators to.
@@ -246,12 +241,11 @@ To assign a user to the catalog owner role:
 
 You can edit the name and description for a catalog. Users see this information in an access package's details.
 
-**Prerequisite roles:** Global Administrator, Identity Governance Administrator, or Catalog owner
-
 To edit a catalog:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
-
+    > [!TIP]
+    > Other least privilege roles that can complete this task include the Catalog creator.
 1. Browse to **Identity governance** > **Entitlement management** > **Catalogs**.
 
 1. On the **Catalogs** page open the catalog you want to edit.
@@ -268,12 +262,11 @@ To edit a catalog:
 
 You can delete a catalog, but only if it doesn't have any access packages.
 
-**Prerequisite roles:** Global Administrator, Identity Governance Administrator, or Catalog owner
-
 To delete a catalog:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
-
+    > [!TIP]
+    > Other least privilege roles that can complete this task include the Catalog creator.
 1. Browse to **Identity governance** > **Entitlement management** > **Catalogs**.
 
 1. On the **Catalogs** page open the catalog you want to delete.

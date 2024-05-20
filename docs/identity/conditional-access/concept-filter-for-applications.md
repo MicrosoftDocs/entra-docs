@@ -23,7 +23,7 @@ In this document, you create a custom attribute set, assign a custom security at
 
 ## Assign roles
 
-Custom security attributes are security sensitive and can only be managed by delegated users. Even [Global Administrators](../role-based-access-control/permissions-reference.md#global-administrator) don't have default permissions for custom security attributes. One or more of the following roles should be assigned to the users who manage or report on these attributes.
+Custom security attributes are security sensitive and can only be managed by delegated users. One or more of the following roles should be assigned to the users who manage or report on these attributes.
 
 | Role name | Description |
 | --- | --- |
@@ -33,6 +33,8 @@ Custom security attributes are security sensitive and can only be managed by del
 | [Attribute Definition Reader](../role-based-access-control/permissions-reference.md#attribute-definition-reader) | Read the definition of custom security attributes. |
 
 Assign the appropriate role to the users who manage or report on these attributes at the directory scope. For detailed steps, see [Assign a role](../role-based-access-control/manage-roles-portal.yml#assign-a-role).
+
+[!INCLUDE [security-attributes-roles](../../includes/security-attributes-roles.md)]
 
 ## Create custom security attributes
 

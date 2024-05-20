@@ -35,7 +35,7 @@ When you synchronize users, use a Microsoft Entra Connect server if your organiz
 - Support for more than 150,000 objects
 - Support for writeback
 
-To use Microsoft Entra Connect, you need to sign in with one of the following roles: Global Administrator, or Hybrid Identity Administrator.
+To use Microsoft Entra Connect, you need to sign in with a Hybrid Identity Administrator role.
 
 >[!NOTE]
 >Take all prerequisites into consideration when you install Microsoft Entra Connect or Microsoft Entra cloud provisioning. Before you continue with installation, see [Prerequisites for Microsoft Entra Connect](~/identity/hybrid/connect/how-to-connect-install-prerequisites.md).
@@ -179,7 +179,7 @@ After you disable Okta provisioning, the Microsoft Entra Connect server can sync
 2. Select **Configure**.
 3. Select **Configure staging mode** 
 4. Select **Next**. 
-5. Enter the credentials of the Global administrator account for your environment.
+5. Enter the credentials of the Hybrid Identity Administrator account for your environment.
 6. Clear **Enable staging mode**.
 7. Select **Next**.
 8. Select **Configure**.
