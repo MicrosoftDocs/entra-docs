@@ -26,9 +26,9 @@ landingContent:
             url: overview.md
           - text: What's new
             url: whats-new-in-permissions-management.md
-          - text: Customer case study: Infosys
+          - text: Customer case study - Infosys
             url: https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/final/en-us/microsoft-brand/documents/Microsoft-Entra-Permissions-Management-Infosys-Case-Study.pdf?culture=en-us&country=us
-  # Card
+            # Card
   - title: Learn
     linkLists:
       - linkListType: tutorial
