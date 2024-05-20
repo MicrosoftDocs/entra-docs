@@ -83,8 +83,8 @@ Today we’re announcing that Platform SSO for macOS is available in public prev
 ### Public Preview - Workflow History Insights in Lifecycle Workflows
 
 **Type:** New feature    
-**Service category:** Authentications (Logins)    
-**Product capability:** User Authentication    
+**Service category:** Lifecycle Workflows    
+**Product capability:** Identity Lifecycle Management   
 
 Customers can now monitor workflow health, and get insights throughout all their workflows in Lifecycle Workflows including viewing workflow processing data across workflows, tasks, and workflow categories. For more information, see: [Workflow Insights (preview)](../id-governance/lifecycle-workflow-insights.md).
 ---
@@ -92,8 +92,8 @@ Customers can now monitor workflow health, and get insights throughout all their
 ### Public Preview - Enable, Disable and Delete synchronized users accounts with Lifecycle Workflows
 
 **Type:** New feature    
-**Service category:** Authentications (Logins)    
-**Product capability:** User Authentication    
+**Service category:** Lifecycle Workflows    
+**Product capability:** Identity Lifecycle Management   
 
 Lifecycle Workflows can now enable, disable, and delete user accounts that are synchronized from Active Directory Domain Services (AD DS) to Microsoft Entra. This allows you to ensure that the offboarding processes of your employees are completed by deleting the user account after a retention period.
 
