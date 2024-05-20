@@ -64,9 +64,9 @@ Conditional Access policies for Private Access are configured at the application
 For more information, see [Apply Conditional Access policies to Private Access apps](how-to-target-resource-private-access-apps.md).
 
 ## User and group assignments
-You can scope the Private Access profile to specific users and groups. To learn more about user and group assignment, see [How to assign and manage users and groups with traffic forwarding profiles](how-to-manage-users-groups-assignment.md).
+You can scope the Private Access profile to specific users and groups. The users and groups must be assigned to both the Private Access apps and the traffic forwarding profile.
 
-
+To learn more about user and group assignment, see [How to assign and manage users and groups with traffic forwarding profiles](how-to-manage-users-groups-assignment.md).
 
 [!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
 
