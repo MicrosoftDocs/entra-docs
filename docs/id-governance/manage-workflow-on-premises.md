@@ -1,6 +1,6 @@
 ---
 title: Manage synced on-premises users with workflows (Preview)
-description: An how to article on how to edit a user account related task to run for hybrid users with Lifecycle workflows.
+description: An how to article on how to edit a user account related task to run for synced on-premises users with Lifecycle workflows.
 author: owinfreyATL
 ms.author: owinfrey
 manager: amycolannino
@@ -23,7 +23,7 @@ Workflows created by Lifecycle workflows can be used to manage the lifecycle of 
 
 [!INCLUDE [Microsoft Entra ID Governance license](~/includes/entra-entra-governance-license.md)]
 
-While most Lifecycle workflow tasks can manage synced on-premises users without any extra configuration, enabling,disabling, and deleting tasks require some additional configuration. For more information on setting these prerequisites, see:  [User account tasks (preview)](lifecycle-workflow-onprem.md#user-account-tasks-preview).
+While most Lifecycle workflow tasks can manage synced on-premises users without any extra configuration, enabling,disabling, and deleting tasks require some additional configuration. For more information on setting these prerequisites, see:  [User account tasks (preview)](lifecycle-workflow-on-premises.md#user-account-tasks-preview).
 
 ## Configure a user account task to manage synced on-premises users using the Microsoft Entra admin center
 
@@ -40,7 +40,7 @@ Account related tasks within workflows can be quickly edited to apply to synced 
 1. On the Tasks screen, either select an existing task you want to run for synced on-premises users, or create a new one by selecting **Add task**.
 
 1. On the individual task screen, enable the checkbox that corresponds to running for an on-premises account. The following image shows it being enabled for a delete user account task.
-    :::image type="content" source="media/manage-workflow-onprem/delete-user-account-task-flag.png" alt-text="Screenshot of setting on-premises flag to delete account.":::
+    :::image type="content" source="media/manage-workflow-on-premises/delete-user-account-task-flag.png" alt-text="Screenshot of setting on-premises flag to delete account.":::
 1. Select **Save**.
 
 ## Edit a user account task to be compatible with synced on-premises users using Microsoft Graph

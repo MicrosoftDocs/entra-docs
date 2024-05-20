@@ -1,5 +1,5 @@
 ---
-title: Managing synced on-premises users with lifecycle workflows
+title: Managing synced on-premises users with Lifecycle Workflows
 description: Conceptual article discussing managing synced on-premises users with Lifecycle Workflows.
 author: owinfreyATL
 ms.author: owinfrey
@@ -62,7 +62,7 @@ Additional configuration is required for the Lifecycle Workflow tasks to enable,
 
 - To delete users accounts, you must enable the Active Directory recycle bin. For a step-by-step guide on enabling the recycle bin, see: [Active Directory Recycle Bin step-by-step](/windows-server/identity/ad-ds/get-started/adac/introduction-to-active-directory-administrative-center-enhancements--level-100-#active-directory-recycle-bin-step-by-step).
 
-For a step by step guide on setting the flag so that user account tasks run for synced on-premises users, see: [Manage synced on-premises users with workflows (preview)](./manage-workflow-onprem.md).
+For a step by step guide on setting the flag so that user account tasks run for synced on-premises users, see: [Manage synced on-premises users with workflows (preview)](./manage-workflow-on-premises.md).
 
 ## Next steps
 
