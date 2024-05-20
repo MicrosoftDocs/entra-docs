@@ -143,7 +143,7 @@ Connect-MgGraph -Scopes 'Group.Read.All'
 Get-MgGroup -ConsistencyLevel eventual -Count groupCount -Filter "NOT (expirationDateTime+ge+1900-01-01T00:00:00Z)" | Format-List Id
 ```
 
-This one does the same, but also exports it to CSV -
+This example does the same as the previous one, but the script also exports the results to CSV.
 
 ```powershell
 Connect-MgGraph -Scopes 'Group.Read.All'
