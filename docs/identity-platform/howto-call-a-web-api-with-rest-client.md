@@ -35,7 +35,7 @@ This article shows you how to call a protected ASP.NET Core web API using [Insom
   - Application Administrator
   - Application Developer
   - Cloud Application Administrator
-- [Download and install Insomnia](https://insomnia.rest/download).
+- [Download and install Insomnia](https://insomnia.rest/download). You use Insomnia to obtain an access token for your API requests.
 - A minimum requirement of [.NET 6.0 SDK](https://dotnet.microsoft.com/download/dotnet).
 
 ::: zone-end
@@ -108,7 +108,7 @@ Once the API is registered, you can configure its permission by defining the sco
 
 ### Register the web app
 
-Having a web API isn't enough however, as a web app is also needed to obtain an access token to access the web API you've created.
+It's not enough to have a web API, you also need a web app to obtain an access token to access the web API.
 
 Follow these steps to create the web app registration:
 
@@ -136,7 +136,7 @@ Follow these steps to create the web app registration:
 
 ::: zone-end
 
-The application's **Overview** pane is displayed when registration is complete. Record the **Directory (tenant) ID** and the **Application (client) ID** to be used in later steps.
+You can see the application's **Overview** pane when registration is complete. Record the **Directory (tenant) ID** and the **Application (client) ID** to be used in later steps.
 
 #### Add a client secret
 
@@ -154,7 +154,7 @@ Follow these steps to configure a client secret:
 1. Select **Add**.
 1. Be sure to record the **Value** of the client secret. This secret value is **never displayed again** after you leave this page.
 
-For more information about how to securely store your client secret see, [Best practices for secrets management in Key Vault](/azure/key-vault/secrets/secrets-best-practices#configuration-and-storing).
+For more information about how to securely store your client secret, see [Best practices for secrets management in Key Vault](/azure/key-vault/secrets/secrets-best-practices#configuration-and-storing).
 
 #### Add permissions to access your web API
 
@@ -174,6 +174,8 @@ You may also notice the **User.Read** permission for the Microsoft Graph API. Th
 ::: zone pivot="no-api"
 
 ## Test the web API
+
+To ensure your API is operational and ready to handle requests, follow these steps:
 
 1. Clone the [ms-identity-docs-code-dotnet](https://github.com/Azure-Samples/ms-identity-docs-code-dotnet) repository.
 
@@ -206,6 +208,8 @@ You may also notice the **User.Read** permission for the Microsoft Graph API. Th
 ::: zone pivot="api"
 
 ## Test the web API
+
+To ensure your API is operational and ready to handle requests, follow these steps:
 
 1. Navigate to the web API that was created in [Tutorial: Create an ASP.NET Core project and configure the API](web-api-tutorial-02-prepare-api.md), for example _NewWebAPILocal_, and open the folder.
 
@@ -241,6 +245,8 @@ You may also notice the **User.Read** permission for the Microsoft Graph API. Th
 ::: zone-end
 
 ### Configure an authorized request to the web API in Insomnia
+
+To obtain an access token for your API requests, follow these steps:
 
 1. Launch the **Insomnia** application.
 1. Select **New HTTP Request**, or you can use _Ctrl + N_ to create a new HTTP Request.
