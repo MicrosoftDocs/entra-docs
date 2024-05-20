@@ -17,7 +17,7 @@ ms.custom: developer
 
 # Tutorial: Call a protected web API in Android (Kotlin) app
 
-This is the fourth tutorial in the tutorial series that guides you on signing in users and calling a protected web API using Microsoft Entra External ID.
+This is the fourth tutorial in the tutorial series that guides you on calling a protected web API using Microsoft Entra External ID.
 
 In this tutorial, you'll:
 

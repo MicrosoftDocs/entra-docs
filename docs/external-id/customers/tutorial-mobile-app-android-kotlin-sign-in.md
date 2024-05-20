@@ -105,7 +105,7 @@ You have two main options for signing in users using Microsoft Authentication Li
     }
     ```
     
-    The code snippet defines a function, getAuthInteractiveCallback, which returns an instance of `AuthenticationCallback`. Within this function, an anonymous class implementing the `AuthenticationCallback` interface is created.
+    The code snippet defines a function, `getAuthInteractiveCallback`, which returns an instance of `AuthenticationCallback`. Within this function, an anonymous class implementing the `AuthenticationCallback` interface is created.
 
     When authentication succeeds (`onSuccess`), it logs the successful authentication, retrieves the ID token and claims, updates the access token asynchronously using `CoroutineScope`, and updates the UI with the new access token. The code retrieves the ID token from the `authenticationResult` and logs it. Claims in the token contain information about the user, such as their name, email, or other profile information. You can retrieve the claims associated with the current account by accessing `authenticationResult.account.claims`.
 
