@@ -27,11 +27,14 @@ For more information, see [License requirements](access-reviews-overview.md#lice
  
 ## Create and perform an access review for users
 First, you must be assigned one of the following roles:
-- Global administrator
-- User administrator
+- Global Administrator
+- User Administrator
 - Identity Governance Administrator 
 - Privileged Role Administrator (for reviews of role-assignable groups only)
 - (Preview) Microsoft 365 or Microsoft Entra Security Group owner of the group to be reviewed 
+
+> [!NOTE]
+> Following least privilege access, we recommend using Identity Governance Administrator or User Administrator for these tasks.
 
 Then, go to the [Identity Governance page](https://portal.azure.com/#blade/Microsoft_AAD_ERM/DashboardBlade/) to ensure that access reviews is ready for your organization.
 

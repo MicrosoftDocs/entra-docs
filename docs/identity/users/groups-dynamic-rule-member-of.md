@@ -13,7 +13,7 @@ ms.reviewer: krbain
 ms.custom: it-pro
 ---
 
-# Group membership in a dynamic group (preview) in Microsoft Entra ID
+# Group membership in a dynamic group in Microsoft Entra ID
 
 This feature preview in Microsoft Entra ID enables admins to create dynamic groups and administrative units that populate by adding members of other groups using the `memberOf` attribute. Apps that couldn't read group-based membership previously in Microsoft Entra ID can now read the entire membership of these new `memberOf` groups. Not only can these groups be used for apps but they can also be used for licensing assignments.
 
@@ -25,7 +25,7 @@ With this preview, admins can configure dynamic groups with the `memberOf` attri
 
 ## Prerequisites
 
-Only administrators in the Global Administrator, Intune Administrator, or User Administrator role can use the `memberOf` attribute to create a Microsoft Entra dynamic group. You must have a Microsoft Entra ID P1 or P2 license for the Microsoft Entra tenant.
+You must be at least a [User Administrator](/entra/identity/role-based-access-control/permissions-reference#user-administrator) to use the `memberOf` attribute to create a Microsoft Entra dynamic group. You must have a Microsoft Entra ID P1 or P2 license for the Microsoft Entra tenant.
 
 ## Preview limitations
 

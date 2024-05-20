@@ -20,7 +20,7 @@ ms.custom: not-enterprise-apps
 
 In this article, you learn how to migrate your Active Directory Federation Services (AD FS) applications to Microsoft Entra ID using the AD FS application migration.
 
-The AD FS application migration provides IT Admins guided experience to migrate AD FS relying party applications from AD FS to Microsoft Entra ID. The wizard gives you a unified experience to discover, evaluate and configure new Microsoft Entra application. It provides one-click configuration for basic SAML URLs, claims mapping, and user assignments to integrate the application with Microsoft Entra ID.
+The AD FS application migration provides IT Admins guided experience to migrate AD FS relying party applications from AD FS to Microsoft Entra ID. The wizard gives you a unified experience to discover, evaluate and configure new Microsoft Entra application. It provides one-click configuration for basic SAML URLs, claims mapping, and user assignments to integrate the application with Microsoft Entra ID.
 
 The AD FS application migration tool is designed to provide end-to-end support to migrate your on-premises AD FS applications to Microsoft Entra ID.
 
@@ -37,7 +37,6 @@ To use the AD FS application migration:
 - Your organization must be currently using AD FS to access applications.
 - You have a Microsoft Entra ID P1 or P2 license.
 - You should have one of the following roles assigned,
-  - Global Administrator
   - Cloud Application Administrator
   - Application Administrator
   - Global Reader (read-only access)
@@ -57,7 +56,7 @@ The AD FS application migration dashboard is available in the Microsoft Entra ad
 
 From **Enterprise applications** section:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com)  as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 1. Under **Usage & Insights**, select **AD FS application migration** to access the AD FS applications migration dashboard.
 
@@ -118,15 +117,15 @@ The following table lists all claim rule tests that are performed on AD FS appli
 
 |Property  |Description  |
 |---------|---------|
-|UNSUPPORTED_CONDITION_PARAMETER      | The condition statement uses Regular Expressions to evaluate if the claim matches a certain pattern.  To achieve a similar functionality in Microsoft Entra ID, you can use predefined transformation such as  IfEmpty(), StartWith(), Contains(), among others. For more information, see [Customize claims issued in the SAML token for enterprise applications](~/identity-platform/saml-claims-customization.md).          |
-|UNSUPPORTED_CONDITION_CLASS      | The condition statement has multiple conditions that need to be evaluated before running the issuance statement. Microsoft Entra ID can support this functionality with the claim’s transformation functions where you can evaluate multiple claim values.  For more information, see [Customize claims issued in the SAML token for enterprise applications](~/identity-platform/saml-claims-customization.md).          |
-|UNSUPPORTED_RULE_TYPE      | The claim rule couldn’t be recognized. For more information on how to configure claims in Microsoft Entra ID, see [Customize claims issued in the SAML token for enterprise applications](~/identity-platform/saml-claims-customization.md).          |
-|CONDITION_MATCHES_UNSUPPORTED_ISSUER      | The condition statement uses an Issuer that isn't supported in Microsoft Entra ID. Currently, Microsoft Entra doesn’t source claims from stores different that Active Directory or Microsoft Entra ID. If this is blocking you from migrating applications to Microsoft Entra ID, [let us know](https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789).         |
-|UNSUPPORTED_CONDITION_FUNCTION      | The condition statement uses an aggregate function to issue or add a single claim regardless of the number of matches.  In Microsoft Entra ID, you can evaluate the attribute of a user to decide what value to use for the claim with functions like IfEmpty(), StartWith(), Contains(), among others. For more information, see [Customize claims issued in the SAML token for enterprise applications](~/identity-platform/saml-claims-customization.md).          |
-|RESTRICTED_CLAIM_ISSUED      | The condition statement uses a claim that is restricted in Microsoft Entra ID. You might be able to issue a restricted claim, but you can’t modify its source or apply any transformation. For more information, see [Customize claims emitted in tokens for a specific app in Microsoft Entra ID](~/identity-platform/saml-claims-customization.md).          |
-|EXTERNAL_ATTRIBUTE_STORE      | The issuance statement uses an attribute store different that Active Directory. Currently, Microsoft Entra doesn’t source claims from stores different that Active Directory or Microsoft Entra ID. If this result is blocking you from migrating applications to Microsoft Entra ID, [let us know](https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789).          |
-|UNSUPPORTED_ISSUANCE_CLASS      | The issuance statement uses ADD to add claims to the incoming claim set. In Microsoft Entra ID, this can be configured as multiple claim transformations.  For more information, see [Customize claims issued in the SAML token for enterprise applications](~/identity-platform/saml-claims-customization.md).         |
-|UNSUPPORTED_ISSUANCE_TRANSFORMATION      | The issuance statement uses Regular Expressions to transform the value of the claim to be emitted. To achieve similar functionality in Microsoft Entra ID, you can use predefined transformation such as `Extract()`, `Trim()`, and `ToLower()`. For more information, see [Customize claims issued in the SAML token for enterprise applications](~/identity-platform/saml-claims-customization.md).          |
+|UNSUPPORTED_CONDITION_PARAMETER      | The condition statement uses Regular Expressions to evaluate if the claim matches a certain pattern.  To achieve a similar functionality in Microsoft Entra ID, you can use predefined transformation such as  IfEmpty(), StartWith(), Contains(), among others. For more information, see [Customize claims issued in the SAML token for enterprise applications](~/identity-platform/saml-claims-customization.md).          |
+|UNSUPPORTED_CONDITION_CLASS      | The condition statement has multiple conditions that need to be evaluated before running the issuance statement. Microsoft Entra ID can support this functionality with the claim’s transformation functions where you can evaluate multiple claim values.  For more information, see [Customize claims issued in the SAML token for enterprise applications](~/identity-platform/saml-claims-customization.md).          |
+|UNSUPPORTED_RULE_TYPE      | The claim rule couldn’t be recognized. For more information on how to configure claims in Microsoft Entra ID, see [Customize claims issued in the SAML token for enterprise applications](~/identity-platform/saml-claims-customization.md).          |
+|CONDITION_MATCHES_UNSUPPORTED_ISSUER      | The condition statement uses an Issuer that isn't supported in Microsoft Entra ID. Currently, Microsoft Entra doesn’t source claims from stores different that Active Directory or Microsoft Entra ID. If this is blocking you from migrating applications to Microsoft Entra ID, [let us know](https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789).         |
+|UNSUPPORTED_CONDITION_FUNCTION      | The condition statement uses an aggregate function to issue or add a single claim regardless of the number of matches.  In Microsoft Entra ID, you can evaluate the attribute of a user to decide what value to use for the claim with functions like IfEmpty(), StartWith(), Contains(), among others. For more information, see [Customize claims issued in the SAML token for enterprise applications](~/identity-platform/saml-claims-customization.md).          |
+|RESTRICTED_CLAIM_ISSUED      | The condition statement uses a claim that is restricted in Microsoft Entra ID. You might be able to issue a restricted claim, but you can’t modify its source or apply any transformation. For more information, see [Customize claims emitted in tokens for a specific app in Microsoft Entra ID](~/identity-platform/saml-claims-customization.md).          |
+|EXTERNAL_ATTRIBUTE_STORE      | The issuance statement uses an attribute store different that Active Directory. Currently, Microsoft Entra doesn’t source claims from stores different that Active Directory or Microsoft Entra ID. If this result is blocking you from migrating applications to Microsoft Entra ID, [let us know](https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789).          |
+|UNSUPPORTED_ISSUANCE_CLASS      | The issuance statement uses ADD to add claims to the incoming claim set. In Microsoft Entra ID, this can be configured as multiple claim transformations.  For more information, see [Customize claims issued in the SAML token for enterprise applications](~/identity-platform/saml-claims-customization.md).         |
+|UNSUPPORTED_ISSUANCE_TRANSFORMATION      | The issuance statement uses Regular Expressions to transform the value of the claim to be emitted. To achieve similar functionality in Microsoft Entra ID, you can use predefined transformation such as `Extract()`, `Trim()`, and `ToLower()`. For more information, see [Customize claims issued in the SAML token for enterprise applications](~/identity-platform/saml-claims-customization.md).          |
 
 ### Ready to migrate tab
 

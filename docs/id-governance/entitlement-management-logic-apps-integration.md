@@ -43,10 +43,9 @@ These triggers to Logic Apps are controlled in a tab within access package polic
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-**Prerequisite roles:** Global administrator, Identity Governance administrator, Catalog owner or Resource Group Owner 
-
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
-
+    > [!TIP]
+    > Other least privilege roles that can complete this task include the Catalog owner and the Resource group owner.
 1. Browse to **Identity governance** > **Catalogs**.
 
 1. Select the catalog for which you want to add a custom extension and then in the left menu, select **Custom Extensions**. 
@@ -85,10 +84,9 @@ These triggers to Logic Apps are controlled in a tab within access package polic
 
 ## View and Edit Existing Custom Extensions for a Catalog
 
-**Prerequisite roles:** Global administrator, Identity Governance administrator, or Catalog owner 
-
-1. Navigate to the Custom Extensions tab within a Catalog as mentioned earlier.
-
+1. Navigate to the Custom Extensions tab within a Catalog as mentioned earlier as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
+    > [!TIP]
+    > Other least privilege roles that can complete this task include the Catalog owner.
 1. Here, you can view all the custom extensions you've created, along with the associated Logic App and information about the custom extension type.
     :::image type="content" source="media/entitlement-management-logic-apps/custom-extension-list.png" alt-text="Screenshot of a list of custom extensions." lightbox="media/entitlement-management-logic-apps/custom-extension-list.png":::
 1. Along with the Logic App name, the column Type dictates whether the custom extension was created in the new V2 auth model (after March 17, 2023), or the original model. If a custom extension was created in the new model, the Type column matches the selected type from the configuration modal that is either “*assignment request*” or “*pre-expiration*”. For older custom extensions, the type shows “*custom access package*”.    
@@ -110,10 +108,9 @@ These triggers to Logic Apps are controlled in a tab within access package polic
 
 ## Add custom extension to a policy in an access package
 
-**Prerequisite roles:** Global administrator, Identity Governance administrator, Catalog owner, or Access package manager 
-
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
-
+    > [!TIP]
+    > Other least privilege roles that can complete this task include the Catalog owner and Access package manager.
 1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
 
 1. Select the access package you want to add a custom extension (logic app) to from the list of access packages that have already been created.  
@@ -136,12 +133,11 @@ These triggers to Logic Apps are controlled in a tab within access package polic
 
 ## Edit a linked Logic App's workflow definition 
 
-**Prerequisite roles:** Global administrator, Identity Governance administrator, or Catalog owner 
-
 For newly created Logic Apps linked to custom extensions, these Logic Apps begin blank. To create the workflows in the Logic Apps that will be triggered by the extension when the linked access package policy condition is triggered, you need to edit the definition of the Logic App workflow in Logic App designer.  To accomplish this, you'd follow these steps:
 
-1. Navigate to the Custom Extensions tab within a Catalog as mentioned in the above section. 
-
+1. Navigate to the Custom Extensions tab within a Catalog as mentioned before as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator). 
+    > [!TIP]
+    > Other least privilege roles that can complete this task include the Catalog owner.
 1. Select the custom extension for whom you want to edit the Logic App. 
 
 1. Select the Logic App under the Logic app column for the associated custom extension row. This allows you to edit or create the workflow in Logic App designer.  

@@ -132,7 +132,7 @@ b) Update AndroidManifest.xml. In the app go to **app** > **src** > **main** > *
    ```
 
    - Use the **Package name** to replace `android:host=.` value. It should look like `com.azuresamples.msalandroidapp`.
-   - Use the **Signature Hash** to replace `android:path=` value. Ensure that there's a leading `/` at the beginning of your Signature Hash. It should look like `/1wIqXSqBj7w+h11ZifsnqwgyKrY=`.
+   - Use the **Signature Hash** to replace `android:path=` value. Ensure that there's a leading `/` at the beginning of your Signature Hash. It should look like `/aB1cD2eF3gH4+iJ5kL6-mN7oP8q=`.
 
    You can find these values in the Authentication blade of your app registration as well.
 

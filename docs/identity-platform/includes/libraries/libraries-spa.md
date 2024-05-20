@@ -24,7 +24,7 @@ manager: CelesteDG
 
 <sup>2</sup> [Auth code flow][auth-code-flow] with PKCE only (Recommended).
 
-<sup>3</sup> [Implicit grant flow][implicit-flow] only.
+<sup>3</sup> [Implicit grant flow][implicit-flow] only (Not recommended).
 
 <!--Image references-->
 

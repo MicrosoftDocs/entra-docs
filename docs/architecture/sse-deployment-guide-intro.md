@@ -62,7 +62,7 @@ When beginning your deployment plans, include your key stakeholders. Identify an
 |Sponsor|An enterprise senior leader with authority to approve and/or assign budget and resources. Connection between managers and the executive team. Technical decision maker for product and feature implementation.|
 |End user|The people for whom you have implemented the service. Users can participate in a pilot program.|
 |IT support manager|Provides input on proposed change supportability.|
-|Identity architect or Azure global administrator|Defines how the change aligns with identity management infrastructure. Understands the current environment.|
+|Identity architect |Defines how the change aligns with identity management infrastructure. Understands the current environment.|
 |Application business owner|Owns the affected applications that might include access management. Provides input on the user experience.|
 |Security owner|Confirms that the change plan meets security requirements.|
 |Compliance manager|Ensures compliance with corporate, industry, and governmental requirements.|
@@ -139,7 +139,7 @@ Follow the steps in this section to configure SSE through the Microsoft Entra ad
 
 Activate Microsoft SSE through the Microsoft Entra admin center and make initial configurations that are requirements for this PoC.
 
-1. Open the [Microsoft Entra admin center](https://entra.microsoft.com) using an identity assigned Global Administrator role.
+1. Open the [Microsoft Entra admin center](https://entra.microsoft.com) using an identity assigned the [Global Secure Access Administrator](../identity/role-based-access-control/permissions-reference.md#global-secure-access-administrator) role.
 1. Go to **Global Secure Access (preview)** > **Get started** > **Activate Global Secure Access in your tenant**. Select **Activate** to enable SSE features in your tenant.
 
    :::image type="content" source="media/sse-deployment-guide-intro/global-secure-access-main-inline.png" alt-text="Diagram that shows initial activation page for Microsoft's Security Service Edge Solution." lightbox="media/sse-deployment-guide-intro/global-secure-access-main-expanded.png"::: 
@@ -158,7 +158,7 @@ Microsoft Entra Internet Access for Microsoft 365 and Microsoft Entra Private Ac
 
 1. Make sure your Windows device is Microsoft Entra joined or hybrid joined.
 1. Sign in to the Windows device with a Microsoft Entra user role that has local admin privileges.
-1. Open the [Microsoft Entra admin center](https://entra.microsoft.com) using an identity assigned Global Administrator role.
+1. Open the [Microsoft Entra admin center](https://entra.microsoft.com) using an identity assigned the [Global Secure Access Administrator](../identity/role-based-access-control/permissions-reference.md#global-secure-access-administrator) role.
 1. Go to **Global Secure Access (preview)** > **Connect** > **Client Download**. Select **Download client** and complete the installation.
 
    :::image type="content" source="media/sse-deployment-guide-intro/global-secure-access-clients-inline.png" alt-text="Diagram that shows where to download the Global Secure Access client software." lightbox="media/sse-deployment-guide-intro/global-secure-access-clients-expanded.png":::

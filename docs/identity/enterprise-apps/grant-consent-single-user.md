@@ -33,7 +33,7 @@ When a user grants consent for themselves, the following events occur more often
 
 To grant consent to an application on behalf of one user, you need:
 
-- A user account with Global Administrator, Application Administrator, or Cloud Application Administrator
+- A user account with a Privileged Role Administrator, Application Administrator, or Cloud Application Administrator
 
 ## Grant consent on behalf of a single user
 

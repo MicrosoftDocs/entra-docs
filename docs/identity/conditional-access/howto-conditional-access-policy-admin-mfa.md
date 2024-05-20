@@ -18,20 +18,7 @@ Accounts that are assigned administrative rights are targeted by attackers. Requ
 
 Microsoft recommends you require MFA on the following roles at a minimum, based on [identity score recommendations](~/identity/monitoring-health/concept-identity-secure-score.md):
 
-- Global Administrator
-- Application Administrator
-- Authentication Administrator
-- Billing Administrator
-- Cloud Application Administrator
-- Conditional Access Administrator
-- Exchange Administrator
-- Helpdesk Administrator
-- Password Administrator
-- Privileged Authentication Administrator
-- Privileged Role Administrator
-- Security Administrator
-- SharePoint Administrator
-- User Administrator
+[!INCLUDE [conditional-access-admin-roles](../../includes/conditional-access-admin-roles.md)]
 
 Organizations can choose to include or exclude roles as they see fit.
 

@@ -6,7 +6,7 @@ description: Learn how to manage an external authentication method (EAM) for Mic
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 04/29/2024
+ms.date: 05/03/2024
 
 ms.author: justinha
 author: gregkmsft
@@ -20,7 +20,7 @@ ms.reviewer: gkinasewitz, gustavosa
 
 An external authentication method (EAM) lets users choose an external provider to meet multifactor authentication (MFA) requirements when they sign to Microsoft Entra ID. An EAM can satisfy MFA requirements from Conditional Access policies, Identity Protection sign-in risk policies, Privileged Identity Management (PIM) activation, and when the application itself requires MFA. 
 
-EAMs differ from federation in that the user identity is originated and managed in Microsoft Entra ID. With federation, the identity is managed in the external identity provider.
+EAMs differ from federation in that the user identity is originated and managed in Microsoft Entra ID. With federation, the identity is managed in the external identity provider. EAMs require at least a Microsoft Entra ID P1 license.
 
 :::image type="content" source="./media/concept-authentication-external-method-provider/how-external-method-authentication-works.png" alt-text="Diagram of how external method authentication works.":::
 
@@ -31,6 +31,8 @@ To create an EAM, you need the following information from your external authenti
 - A **Client ID** is an identifier from your provider used as part of the authentication integration to identify Microsoft Entra ID requesting authentication.  
 - A **Discovery URL** is the OpenID Connect (OIDC) discovery endpoint for the external authentication provider. 
  
+   >[!NOTE]
+   >See [Configure a new external authentication provider with Microsoft Entra ID](concept-authentication-external-method-provider.md#configure-a-new-external-authentication-provider-with-microsoft-entra-id) to set up the App registration.
 
 ## Manage an EAM in the Microsoft Entra admin center
 
