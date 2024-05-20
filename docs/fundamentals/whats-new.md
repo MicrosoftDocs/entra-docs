@@ -100,7 +100,7 @@ With this feature, customers can now monitor workflow health and get insights ac
 
 ---
 
-### General availability - LastSuccessfulSignIn
+### General Availability - LastSuccessfulSignIn
 
 **Type:** Changed feature    
 **Service category:** MS Graph    
