@@ -359,7 +359,7 @@ Allows Licenses to be assigned to users. For a license to be assigned to the use
 |displayName     |  Assign licenses to user (Customizable by user)        |
 |description     |  Assign selected licenses to the user (Customizable by user)       |
 |taskDefinitionId     |   683c87a4-2ad4-420b-97d4-220d90afcd24      |
-|arguments     |  Argument contains one parameter that has the name "*licenses*"  thats accepts a "*Sku id*" value. For a full list of these values, see: [Product names and service plan identifiers for licensing](../identity/users/licensing-service-plan-reference.md).  |
+|arguments     |  Argument contains one parameter that has the name "*licenses*" that accepts a "*Sku id*" value. For a full list of these values, see: [Product names and service plan identifiers for licensing](../identity/users/licensing-service-plan-reference.md).  |
 
 Example of usage within the workflow:
 
@@ -823,7 +823,7 @@ For Microsoft Graph, the parameters for the **Remove selected license assignment
 |displayName     |  Remove licenses from user (Customizable by user)        |
 |description     |  Remove selected licenses assigned to the user (Customizable by user)        |
 |taskDefinitionId     |   5fc402a8-daaf-4b7b-9203-da868b05fc5f      |
-|arguments     |  Argument contains one parameter that has the name "*licenses*"  thats accepts a "Sku id" value. For a full list of these values, see: [Product names and service plan identifiers for licensing](../identity/users/licensing-service-plan-reference.md).  |
+|arguments     |  Argument contains one parameter that has the name "*licenses*" that accepts a "Sku id" value. For a full list of these values, see: [Product names and service plan identifiers for licensing](../identity/users/licensing-service-plan-reference.md).  |
 
 Example of usage within the workflow:
 
