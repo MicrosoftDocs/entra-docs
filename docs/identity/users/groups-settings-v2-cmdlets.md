@@ -8,7 +8,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
-ms.date: 05/10/2024
+ms.date: 05/20/2024
 ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro, has-azure-ad-ps-ref
@@ -118,7 +118,7 @@ You can search for a specific group using the -filter parameter. This parameter 
 
 
     DeletionTimeStamp            :
-    ObjectId                     : 31f1ff6c-d48c-4f8a-b2e1-abca7fd399df
+    ObjectId                     : aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb
     ObjectType                   : Group
     Description                  : Intune Administrators
     DirSyncEnabled               :
@@ -135,6 +135,26 @@ You can search for a specific group using the -filter parameter. This parameter 
 
 > [!NOTE]
 > The MgGroup PowerShell cmdlets implement the OData query standard. For more information, see **$filter** in [OData system query options using the OData endpoint](/previous-versions/dynamicscrm-2015/developers-guide/gg309461(v=crm.7)#BKMK_filter).
+
+Here you have an example that shows how to pull all groups that don't have an expiration policy applied
+
+```powershell
+Connect-MgGraph -Scopes 'Group.Read.All'
+Get-MgGroup -ConsistencyLevel eventual -Count groupCount -Filter "NOT (expirationDateTime+ge+1900-01-01T00:00:00Z)" | Format-List Id
+```
+
+This example does the same as the previous one, but the script also exports the results to CSV.
+
+```powershell
+Connect-MgGraph -Scopes 'Group.Read.All'
+Get-MgGroup -ConsistencyLevel eventual -Count groupCount -Filter "NOT (expirationDateTime+ge+1900-01-01T00:00:00Z)" | Format-List Id |Export-Csv -Path {path} -NoTypeInformation
+```
+
+This last example shows you how to retrieve only groups that belong to Teams
+
+```powershell
+Get-MgGroup -ConsistencyLevel eventual -Count groupCount -Filter "NOT (expirationDateTime+ge+1900-01-01T00:00:00Z) and resourceProvisioningOptions/any(p:p eq 'Team')" | Format-List Id, expirationDateTime, resourceProvisioningOptions
+```
 
 ## Create groups
 
@@ -161,7 +181,7 @@ To update an existing group, use the Update-MgGroup cmdlet. In this example, weâ
 
 
     DeletionTimeStamp            :
-    ObjectId                     : 31f1ff6c-d48c-4f8a-b2e1-abca7fd399df
+    ObjectId                     : aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb
     ObjectType                   : Group
     Description                  : Intune Administrators
     DirSyncEnabled               :

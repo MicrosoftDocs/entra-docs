@@ -81,7 +81,7 @@ To enable authentication and access to Microsoft Graph resources, configure the 
 1. Find property named `scopes` and set the scopes recorded in [Delegated permission to Microsoft Graph](#delegated-permission-to-microsoft-graph).
 
     ```kotlin
-    private const val scopes = "" // Developers should set the respective scopes of their wMicrosoft Graph resources here. For example, private const val scopes = "api://{clientId}/{ToDoList.Read} api://{clientId}/{ToDoList.ReadWrite}"
+    private const val scopes = "" // Developers should set the respective scopes of their Microsoft Graph resources here. For example, private const val scopes = "api://{clientId}/{ToDoList.Read} api://{clientId}/{ToDoList.ReadWrite}"
     ```
    
 You've configured the app and it's ready to run. 
