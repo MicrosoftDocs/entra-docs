@@ -5,7 +5,7 @@ description: Create a Conditional Access policy requiring stronger authenticatio
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 07/18/2023
+ms.date: 05/21/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -37,7 +37,7 @@ Organizations can choose to include or exclude roles as they see fit.
 1. Select **Create new policy**.
 1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
 1. Under **Assignments**, select **Users or workload identities**.
-   1. Under **Include**, select **Directory roles** and choose at least the roles listed above.
+   1. Under **Include**, select **Directory roles** and choose at least the previously listed roles.
    
       > [!WARNING]
       > Conditional Access policies support built-in roles. Conditional Access policies are not enforced for other role types including [administrative unit-scoped](~/identity/role-based-access-control/admin-units-assign-roles.md) or [custom roles](~/identity/role-based-access-control/custom-create.yml).
