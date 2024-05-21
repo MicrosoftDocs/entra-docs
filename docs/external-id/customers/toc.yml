@@ -225,6 +225,16 @@ items:
                   href: tutorial-mobile-app-android-kotlin-sign-in.md
                 - name: Call an API
                   href: tutorial-mobile-app-android-kotlin-sign-in-call-api.md
+            - name: iOS
+              items:
+                - name: Prepare tenant
+                  href: tutorial-mobile-app-ios-swift-prepare-tenant.md
+                - name: Prepare app
+                  href: tutorial-mobile-app-ios-swift-prepare-app.md
+                - name: Sign in users
+                  href: tutorial-mobile-app-ios-swift-sign-in.md
+                - name: Call an API
+                  href: tutorial-mobile-app-ios-swift-sign-in-call-api.md
         - name: Native authentication
           items:
             - name: Android (Kotlin)
