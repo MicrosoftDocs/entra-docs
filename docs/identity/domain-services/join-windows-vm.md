@@ -53,17 +53,16 @@ If you already have a VM that you want to domain-join, skip to the section to [j
 
 1. From the Microsoft Entra admin center menu or from the **Home** page, select **Create a resource**.
 
-1. From **Get started**, choose **Windows Server 2022 Datacenter**.
+1. Below **Virtual machine**, click **Create**.
 
-    ![Choose to create a Windows Server 2022 Datacenter VM](./media/join-windows-vm/select-vm-image.png)
-
-1. In the **Basics** window, configure the core settings for the virtual machine. Leave the defaults for *Availability options*, *Image*, and *Size*.
+1. In the **Basics** window, configure these settings for the virtual machine. Use the default values for other options.
 
     | Parameter            | Suggested value   |
     |----------------------|-------------------|
     | Resource group       | Select or create a resource group, such as *myResourceGroup* |
     | Virtual machine name | Enter a name for the VM, such as *myVM* |
     | Region               | Choose the region to create your VM in, such as *East US* |
+    | Image                | Choose a Windows Server version |
     | Username             | Enter a username for the local administrator account to create on the VM, such as *azureuser* |
     | Password             | Enter, and then confirm, a secure password for the local administrator to create on the VM. Don't specify a domain user account's credentials. [Windows LAPS](/windows-server/identity/laps/laps-overview) isn't supported. |
 
