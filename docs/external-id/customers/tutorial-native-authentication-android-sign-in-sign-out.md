@@ -37,7 +37,7 @@ To sign in a user using the one-time passcode, collect the email and send an ema
 
 To sign in a user using username (email) and password, collect the email and password from the user. If the username and password are valid, the app signs in the user. If you [enable multifactor authentication (MFA) for your external tenant](how-to-multifactor-authentication-customers.md), then the user need to enter a valid one-time passcode sent to their email before the app signs then in.
 
-To sign in a user you need to: 
+To sign in a user, you need to: 
 
 1. Create a user interface (UI) to:
 
@@ -93,7 +93,7 @@ To sign in a user you need to:
     ```
     
 
-    - Use the SDK's `signIn(username)` or `signIn(username, password)` method to start the sign-in flow. 
+    - To start the sign-in flow, use the SDK's `signIn(username)` or `signIn(username, password)` method. 
     - The method's parameter, `username` is then email address you collect from the user.
     - If the sign-in method is username (email) and password, the method's parameter, `password` is then password you collect from the user.
     - In most common scenario, the `signIn(username)` or `signIn(username, password)`returns a result, `SignInResult.CodeRequired`, which indicates that the SDK expects the app to submit the email one-time passcode sent to the user's emails address. 
@@ -176,7 +176,7 @@ To retrieve the new email one-time passcode, use the following code snippet:
    }
    ```
 
-You've completed all the necessary steps to successfully sign in a user on your app. Build and run your application. If all good, you should be able to provide an email, receive a code on the email and use that to successfully sign in user. 
+You've completed all the necessary steps to successfully sign in a user on your app. Build and run your application. If all good, you should be able to provide an email, receive a code on the email, and use that to successfully sign in user. 
 
 ## Read ID token claims
 
