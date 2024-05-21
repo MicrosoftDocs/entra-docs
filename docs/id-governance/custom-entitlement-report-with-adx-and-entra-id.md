@@ -45,7 +45,7 @@ Install MS Graph Powershell modules and Connect to MS Graph
 
  1. Install the required MS Graph modules. The following modules are required for this tutorial: Microsoft.Graph.Users, Microsoft.Graph.Groups, Microsoft.Graph.Applications, Microsoft.Graph.DirectoryObjects 
 
-```json
+```powershell
          $modules = @('Microsoft.Graph.Users', 'Microsoft.Graph.Groups', 'Microsoft.Graph.Applications', 'Microsoft.Graph.DirectoryObjects') 
 
          foreach ($module in $modules) { 
@@ -55,7 +55,7 @@ Install MS Graph Powershell modules and Connect to MS Graph
 ```    
  2. Import the modules: 
  
- ```json
+ ```powershell
          $modules = @('Microsoft.Graph.Users', 'Microsoft.Graph.Groups', 'Microsoft.Graph.Applications', 'Microsoft.Graph.DirectoryObjects') 
 
          foreach ($module in $modules) { 
@@ -66,7 +66,7 @@ Install MS Graph Powershell modules and Connect to MS Graph
 ``` 
  3. Connect to Microsoft Graph
   
-```json
+```powershell
      Connect-MgGraph -Scopes "User.Read.All", "Group.Read.All", "Application.Read.All", "Directory.Read.All"   
 ``` 
 
