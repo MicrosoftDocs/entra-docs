@@ -174,7 +174,7 @@ Returns the first source value that isn't NULL. If all arguments are NULL and de
 | **defaultValue** | Optional | String | Default value to be used when all source values are NULL. Can be empty string ("").
 
 #### Flow mail value if not NULL, otherwise flow userPrincipalName
-Example: You wish to flow the mail attribute if it is present. If it isn't, you wish to flow the value of userPrincipalName instead.
+Example: You wish to flow the mail attribute if it's present. If it isn't, you wish to flow the value of userPrincipalName instead.
 
 **Expression:** 
 `Coalesce([mail],[userPrincipalName])`
@@ -230,13 +230,13 @@ Returns 48656C6C6F20776F726C6421
 Count(attribute)
 
 **Description:** 
-The Count function returns the number of elements in a multi-valued attribute
+The Count function returns the number of elements in a multi-valued attribute.
 
 **Parameters:** 
 
 | Name | Required/ Repeating | Type | Notes |
 | --- | --- | --- | --- |
-| **attribute** |Required |attribute |Multi-valued attribute that will have elements counted|
+| **attribute** |Required |attribute |Multi-valued attribute that has elements counted|
 
 ---
 ### CStr
@@ -263,13 +263,13 @@ Returns "cn=Joe,dc=contoso,dc=com"
 `DateAdd(interval, value, dateTime)`
 
 **Description:**  
-Returns a date/time string representing a date to which a specified time interval has been added. The returned date is in the format: **M/d/yyyy h:mm:ss tt**.
+Returns a date/time string representing a date to which a specified time interval is added. The returned date is in the format: **M/d/yyyy h:mm:ss tt**.
 
 **Parameters:** 
 
 | Name | Required/ Repeating | Type | Notes |
 | --- | --- | --- | --- |
-| **interval** |Required | String | Interval of time you want to add. See accepted values below this table. |
+| **interval** |Required | String | Interval of time you want to add. See accepted values after this table. |
 | **value** |Required | Number | The number of units you want to add. It can be positive (to get dates in the future) or negative (to get dates in the past). |
 | **dateTime** |Required | DateTime | DateTime representing date to which the interval is added. |
 
@@ -290,7 +290,7 @@ The **interval** string must have one of the following values:
 | Example | interval | value | dateTime (value of variable StatusHireDate) | output |
 | --- | --- | --- | --- | --- |
 | Add 7 days to hire date | "d" | 7 | 2012-03-16-07:00 | 3/23/2012 7:00:00 AM |
-| Get a date ten days prior to hire date | "d" | -10 | 2012-03-16-07:00 | 3/6/2012 7:00:00 AM |
+| Get a date ten days before to hire date | "d" | -10 | 2012-03-16-07:00 | 3/6/2012 7:00:00 AM |
 | Add two weeks to hire date | "ww" | 2 | 2012-03-16-07:00 | 3/30/2012 7:00:00 AM |
 | Add ten months to hire date | "m" | 10 | 2012-03-16-07:00 | 1/16/2013 7:00:00 AM |
 | Add two years to hire date | "yyyy" | 2 | 2012-03-16-07:00 | 3/16/2014 7:00:00 AM |
@@ -429,14 +429,14 @@ The IgnoreFlowIfNullOrEmpty function instructs the provisioning service to ignor
 | --- | --- | --- | --- |
 | **Expression** | Required | Expression | Expression to be evaluated |
 
-**Example 1: Don't flow an attribute if it is null** <br>
+**Example 1: Don't flow an attribute if it's null** <br>
 `IgnoreFlowIfNullOrEmpty([department])` <br>
-The above expression will drop the department attribute from the provisioning flow if it is null or empty. <br>
+The above expression drops the department attribute from the provisioning flow if it's null or empty. <br>
 
 **Example 2: Don't flow an attribute if the expression mapping evaluates to empty string or null** <br>
 Let's say the SuccessFactors attribute *prefix* is mapped to the on-premises Active Directory attribute *personalTitle* using the following expression mapping: <br>
 `IgnoreFlowIfNullOrEmpty(Switch([prefix], "", "3443", "Dr.", "3444", "Prof.", "3445", "Prof. Dr."))` <br>
-The above expression first evaluates the [Switch](#switch) function. If the *prefix* attribute doesn't have any of the values listed within the *Switch* function, then *Switch* will return an empty string and the attribute *personalTitle* will not be included in the provisioning flow to on-premises Active Directory.
+The above expression first evaluates the [Switch](#switch) function. If the *prefix* attribute doesn't have any of the values listed within the *Switch* function, then *Switch* returns an empty string and the attribute *personalTitle* is not included in the provisioning flow to on-premises Active Directory.
 
 ---
 ### IIF
@@ -478,7 +478,7 @@ This section includes limitations and workarounds for the IIF function. For info
      * `IIF([country]="","Other",[country])`
      * `IIF(IsNullOrEmpty([country]),"Other",[country])`
      * `IIF(IsPresent([country]),[country],"Other")`
-   * Recommended workaround: Use the [Switch](#switch) function to check for empty/null values. Example: If country attribute is empty, set value "Other". If it is present, pass the country attribute value to target attribute. 
+   * Recommended workaround: Use the [Switch](#switch) function to check for empty/null values. Example: If country attribute is empty, set value "Other". If it's present, pass the country attribute value to target attribute. 
      * `Switch([country],[country],"","Other")` 
 <br>   
 ---
@@ -487,7 +487,7 @@ This section includes limitations and workarounds for the IIF function. For info
 InStr(value1, value2, start, compareType)
 
 **Description:** 
-The InStr function finds the first occurrence of a substring in a string
+The InStr function finds the first occurrence of a substring in a string.
 
 **Parameters:** 
 
@@ -532,7 +532,7 @@ Returns True if the attribute isn't present.
 IsNullOrEmpty(Expression)
 
 **Description:** 
-If the expression is null or an empty string, then the IsNullOrEmpty function returns true. For an attribute, this would evaluate to True if the attribute is absent or is present but is an empty string.
+If the expression is null or an empty string, then the IsNullOrEmpty function returns true. This evaluates to True if the attribute is absent or is present but is an empty string.
 The inverse of this function is named IsPresent.
 
 **Parameters:** 
@@ -601,15 +601,15 @@ The Item function returns one item from a multi-valued string/attribute.
 Join(separator, source1, source2, …)
 
 **Description:** 
-Join() is similar to Append(), except that it can combine multiple **source** string values into a single string, and each value will be separated by a **separator** string.
+Join() is similar to Append(), except that it can combine multiple **source** string values into a single string, and each value is separated by a **separator** string.
 
-If one of the source values is a multi-value attribute, then every value in that attribute will be joined together, separated by the separator value.
+If one of the source values is a multi-value attribute, then every value in that attribute is joined together, separated by the separator value.
 
 **Parameters:** 
 
 | Name | Required/ Repeating | Type | Notes |
 | --- | --- | --- | --- |
-| **separator** |Required |String |String used to separate source values when they are concatenated into one string. Can be "" if no separator is required. |
+| **separator** |Required |String |String used to separate source values when they're concatenated into one string. Can be "" if no separator is required. |
 | **source1  … sourceN** |Required, variable-number of times |String |String values to be joined together. |
 
 ---
@@ -776,7 +776,7 @@ The PCase function converts the first character of each word in a string to uppe
   * *ConnectorPunctuation* characters like underscore
   * *DashPunctuation* characters like dash and hyphen (including characters such En Dash, Em Dash, double hyphen, etc.)
   * *OpenPunctuation* and *ClosePunctuation* characters that occur in pairs like parenthesis, curly bracket, angle bracket, etc. 
-  * *InitialQuotePunctuation* and *FinalQuotePunctuation* characters like single quotes, double quotes and angular quotes. 
+  * *InitialQuotePunctuation* and *FinalQuotePunctuation* characters like single quotes, double quotes, and angular quotes. 
   * *OtherPunctuation* characters like exclamation mark, number sign, percent sign, ampersand, asterisk, comma, full stop, colon, semi-colon, etc. 
   * *MathSymbol* characters like plus sign, less-than and greater-than sign, vertical line, tilde, equals sign, etc.
   * *CurrencySymbol* characters like dollar sign, cent sign, pound sign, euro sign, etc. 
@@ -786,7 +786,7 @@ The PCase function converts the first character of each word in a string to uppe
 
 **Example:**
 
-Let's say you're sourcing the attributes *firstName* and *lastName* from SAP SuccessFactors and in HR both these attributes are in upper-case. Using the PCase function, you can convert the name to proper case as shown below. 
+Let's say you're sourcing the attributes *firstName* and *lastName* from SAP SuccessFactors and in HR both these attributes are in upper-case. Using the PCase function, you can convert the name to proper case as shown here. 
 
 | Expression | Input | Output | Notes |
 | --- | --- | --- | --- |
@@ -902,10 +902,10 @@ Replaces values within a string in a case-sensitive manner. The function behaves
 | **source** |Required |String |Usually name of the attribute from the **source** object. |
 | **oldValue** |Optional |String |Value to be replaced in **source** or **template**. |
 | **regexPattern** |Optional |String |Regex pattern for the value to be replaced in **source**. When **replacementAttributeName** is used, the **regexPattern** is applied to extract a value from **replacementAttributeName**. |
-| **regexGroupName** |Optional |String |Name of the group inside **regexPattern**. When named **replacementAttributeName** is used, we'll extract the value of the named regex group from the **replacementAttributeName** and return it as the replacement value. |
+| **regexGroupName** |Optional |String |Name of the group inside **regexPattern**. When named **replacementAttributeName** is used, we extract the value of the named regex group from the **replacementAttributeName** and return it as the replacement value. |
 | **replacementValue** |Optional |String |New value to replace old one with. |
 | **replacementAttributeName** |Optional |String |Name of the attribute to be used for replacement value |
-| **template** |Optional |String |When **template** value is provided, we'll look for **oldValue** inside the template and replace it with **source** value. |
+| **template** |Optional |String |When **template** value is provided, we look for **oldValue** inside the template and replace it with **source** value. |
 
 #### Replace characters using a regular expression
 **Example 1:** Using **oldValue** and **replacementValue** to replace the entire source string with another string.
@@ -923,7 +923,7 @@ Then in this case, you can use the following expression in your attribute mappin
 **Example 2:** Using **oldValue** and **template** to insert the source string into another *templatized* string. 
 
 The parameter **oldValue** is a misnomer in this scenario. It's actually the value that gets replaced.  
-Let's say you want to always generate login ID in the format `<username>@contoso.com`. There is a source attribute called **UserID** and you want that value to be used for the `<username>` portion of the login ID. 
+Let's say you want to always generate login ID in the format `<username>@contoso.com`. There's a source attribute called **UserID** and you want that value to be used for the `<username>` portion of the login ID. 
 Then in this case, you can use the following expression in your attribute mapping. 
 
 `Replace([UserID],"<username>", , , , , "<username>@contoso.com")`
@@ -946,7 +946,7 @@ Then in this case, you can use the following expression in your attribute mappin
 * **Expression output:** 9998887777
 
 You can also use this pattern to remove characters and collapse a string. 
-For example, the expression below removes parenthesis, dashes and space characters in the mobile number string and returns only digits. 
+For example, the following expression removes parenthesis, dashes and space characters in the mobile number string and returns only digits. 
 
 `Replace([mobile], , "[()\\s-]+", , "", , )`
 
@@ -968,7 +968,7 @@ Then in this case, you can use the following expression in your attribute mappin
 * **replacementValue:** "888"
 * **Expression output:** 888 Tremont Street
 
-Here is another example where the domain suffix from a UPN is replaced with an empty string to generate login ID without domain suffix. 
+Here's another example where the domain suffix from a UPN is replaced with an empty string to generate login ID without domain suffix. 
 
 `Replace([userPrincipalName], , "(?<Suffix>@(.)*)", "Suffix", "", , )`
 
@@ -1006,7 +1006,7 @@ Then in this case, you can use the following expression in your attribute mappin
 SelectUniqueValue(uniqueValueRule1, uniqueValueRule2, uniqueValueRule3, …)
 
 **Description:** 
-Requires a minimum of two arguments, which are unique value generation rules defined using expressions. The function evaluates each rule and then checks the value generated for uniqueness in the target app/directory. The first unique value found will be the one returned. If all of the values already exist in the target, the entry will get escrowed, and the reason gets logged in the audit logs. There is no upper bound to the number of arguments that can be provided.
+Requires a minimum of two arguments, which are unique value generation rules defined using expressions. The function evaluates each rule and then checks the value generated for uniqueness in the target app/directory. The first unique value found is the one returned. If all of the values already exist in the target, the entry is escrowed, and the reason gets logged in the audit logs. There's no upper bound to the number of arguments that can be provided.
 
 
  - This function must be at the top-level and can't be nested.
@@ -1018,7 +1018,7 @@ Requires a minimum of two arguments, which are unique value generation rules def
     - API-driven provisioning to on-premises Active Directory
     
     SelectUniqueValue isn't supported for use with other provisioning applications. 
- - The LDAP search that *SelectUniqueValue* function performs in on-premises Active Directory doesn't escape special characters like diacritics. If you pass a string like "Jéssica Smith" that contains a special character, you'll encounter processing errors. Nest the [NormalizeDiacritics](#normalizediacritics) function as shown in the example below to normalize special characters. 
+ - The LDAP search that *SelectUniqueValue* function performs in on-premises Active Directory doesn't escape special characters like diacritics. If you pass a string like "Jéssica Smith" that contains a special character, you'll encounter processing errors. Nest the [NormalizeDiacritics](#normalizediacritics) function as shown in this example to normalize special characters. 
 
 
 **Parameters:** 
@@ -1077,10 +1077,10 @@ Splits a string into a multi-valued array, using the specified delimiter charact
 | Name | Required/ Repeating | Type | Notes |
 | --- | --- | --- | --- |
 | **source** |Required |String |**source** value to update. |
-| **delimiter** |Required |String |Specifies the character that will be used to split the string (example: ",") |
+| **delimiter** |Required |String |Specifies the character that is used to split the string (example: ",") |
 
 #### Split a string into a multi-valued array
-Example: You need to take a comma-delimited list of strings, and split them into an array that can be plugged into a multi-value attribute like Salesforce's PermissionSets attribute. In this example, a list of permission sets has been populated in extensionAttribute5 in Microsoft Entra ID.
+Example: You need to take a comma-delimited list of strings, and split them into an array that can be plugged into a multi-value attribute like Salesforce's PermissionSets attribute. In this example, a list of permission sets are populated in extensionAttribute5 in Microsoft Entra ID.
 
 **Expression:** 
 Split([extensionAttribute5], ",")
@@ -1115,11 +1115,11 @@ When **source** value matches a **key**, returns **value** for that **key**. If 
 
 > [!NOTE] 
 > Switch function performs a case-sensitive string comparison of the **source** and **key** values. If you'd like to perform a case-insensitive comparison, normalize the **source** string before comparison using a nested ToLower function and ensure that all **key** strings use lowercase. 
-> Example: `Switch(ToLower([statusFlag]), "0", "true", "1", "false", "0")`. In this example, the **source** attribute `statusFlag` may have values ("True" / "true" / "TRUE"). However, the Switch function will always convert it to lowercase string "true" before comparison with **key** parameters. 
+> Example: `Switch(ToLower([statusFlag]), "0", "true", "1", "false", "0")`. In this example, the **source** attribute `statusFlag` may have values ("True" / "true" / "TRUE"). However, the Switch function always converts it to lowercase string "true" before comparison with **key** parameters. 
 
 > [!CAUTION] 
 > For the **source** parameter, do not use the nested functions IsPresent, IsNull or IsNullOrEmpty. Instead use a literal empty string as one of the key values.   
-> Example: `Switch([statusFlag], "Default Value", "true", "1", "", "0")`. In this example, if the **source** attribute `statusFlag` is empty, the Switch function will return the value 0. 
+> Example: `Switch([statusFlag], "Default Value", "true", "1", "", "0")`. In this example, if the **source** attribute `statusFlag` is empty, the Switch function returns the value 0. 
 
 **Parameters:** 
 
@@ -1149,7 +1149,7 @@ If the state code doesn't match any of the predefined options, use default value
 ToLower(source, culture)
 
 **Description:** 
-Takes a *source* string value and converts it to lower case using the culture rules that are specified. If there is no *culture* info specified, then it will use Invariant culture.
+Takes a *source* string value and converts it to lower case using the culture rules that are specified. If there's no *culture* info specified, then it uses Invariant culture.
 
 If you would like to set existing values in the target system to lower case, [update the schema for your target application](./customize-application-attributes.md#editing-the-list-of-supported-attributes) and set the property caseExact to 'true' for the attribute that you're interested in. 
 
@@ -1178,9 +1178,9 @@ Example: You would like to generate the UPN value by concatenating the Preferred
 ToUpper(source, culture)
 
 **Description:** 
-Takes a *source* string value and converts it to upper case using the culture rules that are specified. If there is no *culture* info specified, then it will use Invariant culture.
+Takes a *source* string value and converts it to upper case using the culture rules that are specified. If there's no *culture* info specified, then it uses Invariant culture.
 
-If you would like to set existing values in the target system to upper case, [update the schema for your target application](./customize-application-attributes.md#editing-the-list-of-supported-attributes) and set the property caseExact to 'true' for the attribute that you're interested in. 
+If you want to set existing values in the target system to upper case, [update the schema for your target application](./customize-application-attributes.md#editing-the-list-of-supported-attributes) and set the property caseExact to 'true' for the attribute that you're interested in. 
 
 **Parameters:** 
 
