@@ -44,7 +44,7 @@ To call a protected web API from your iOS app, use the following code:
 
 ```swift
     func getContentWithToken() {
-        // Specify the API endpoint
+        // Specify the API endpoint in _Configuration.swift_ file you created earlier
         guard let url = URL(string: Configuration.kProtectedAPIEndpoint) else {
             let errorMessage = "Invalid API url"
             print(errorMessage)
