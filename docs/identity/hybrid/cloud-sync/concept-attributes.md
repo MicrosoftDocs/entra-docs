@@ -81,7 +81,7 @@ To view the cloud sync configuration synchronization schema and verify it, follo
                 "appDisplayName": "Active Directory to Azure Active Directory Provisioning",
                 "appId": "1a4721b3-e57f-4451-ae87-ef078703ec94",
                 "applicationTemplateId": null,
-                "appOwnerOrganizationId": "47df5bb7-e6bc-4256-afb0-dd8c8e3c1ce8",
+                "appOwnerOrganizationId": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
                 "appRoleAssignmentRequired": false,
                 "displayName": "Active Directory to Azure Active Directory Provisioning",
                 "errorUrl": null,
