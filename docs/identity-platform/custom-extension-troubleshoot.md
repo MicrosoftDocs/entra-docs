@@ -74,7 +74,7 @@ Use the following table to diagnose an error code.
 |1003017 | CustomExtensionClientServicePrincipalNotFound | The custom extension resource service principal is not found in the tenant.|
 |1003018 | CustomExtensionClientServiceDisabled | The custom extension resource service principal is disabled in this tenant.|
 |1003019 | CustomExtensionResourceServicePrincipalDisabled | The custom extension resource service principal is disabled in this tenant.|
-|1003020 | CustomExtensionIncorrectTargetUrlFormat | The target URL is in an improper format. It's must be a valid URL that start with https.|
+|1003020 | CustomExtensionIncorrectTargetUrlFormat | The target URL is in an improper format. It must be a valid URL that starts with https.|
 |1003021 | CustomExtensionPermissionNotGrantedToServicePrincipal | The service principal doesn't have admin consent for the Microsoft Graph CustomAuthenticationExtensions.Receive.Payload app role (also known as application permission) which is required for the app to receive custom authentication extension HTTP requests.|
 |1003022 | CustomExtensionMsGraphServicePrincipalDisabledOrNotFound |The MS Graph service principal is disabled or not found in this tenant.|
 |1003023 | CustomExtensionBlocked | The endpoint used for the custom extension is blocked by the service.|
