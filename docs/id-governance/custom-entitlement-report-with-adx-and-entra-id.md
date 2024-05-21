@@ -373,7 +373,7 @@ This report provides a view of who had what access and when to the target app an
 
 This query targets a specific application within Entra AD and analyzes the role assignments as of a certain date. The query retrieves both direct and group-based role assignments, merging this data with user details from the EntraUsers table and role information from the AppRoles table.  
 
-```json 
+```kql
         /// Define constants 
 
         let targetServicePrincipalId = "<your-service-principal-id>";  /// Target Service Principal ID 
