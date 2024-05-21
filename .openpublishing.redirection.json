@@ -605,6 +605,11 @@
       "source_path_from_root": "/docs/external-id/customers/microsoft-graph-operations.md",
       "redirect_url": "/entra/external-id/customers/concept-supported-features-customers",
       "redirect_document_id": false
+    },
+    {            
+      "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-android-sign-in-user-with-username-password.md",
+      "redirect_url": "/entra/external-id/customers/tutorial-native-authentication-android-sign-in-sign-out",
+      "redirect_document_id": false
     }
   ]
 }
