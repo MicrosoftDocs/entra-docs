@@ -50,6 +50,7 @@ The following table compares the features available for look and feel customizti
 |Feature  |Workforce tenant  | External tenant |
 |---------|---------|---------|
 | **Company branding** | You can add [company branding](~/fundamentals/how-to-customize-branding.md) that applies to all these experiences to create a consistent sign-in experience for your users. | Same as workforce. [Learn more](how-to-customize-branding-customers.md) |
+| **Language customization** | [Customize the sign-in experience by browser language](~/fundamentals/how-to-customize-branding.md). | Same as workforce. [Learn more](how-to-customize-languages-customers.md) |
 | **Custom domain names** |  You can use [custom domains](~/fundamentals/add-custom-domain.yml) for administrative accounts only. | The URLs visible  in sign-up and sign-in pages are neutral, or branded URLs. [Learn more](concept-custom-url-domain.md)|
 |**Native authentication** for mobile apps| Not available |Microsoft Entra’s [native authentication](concept-native-authentication.md) allows you to have full control over the design of your mobile application sign-in experiences.|
 
@@ -61,8 +62,8 @@ Custom authentication extensions allow you to customize the Microsoft Entra auth
 |Event  |Workforce tenant  | External tenant |
 |---------|---------|---------|
 | **TokenIssuanceStart**    |  [Add claims from external systems](~/identity-platform/custom-extension-overview.md).    |   [Add claims from external systems](./concept-custom-extensions.md).    |  
-| **OnAttributeCollectionStart**|Not available| Occurs at the beginning of the sign-up's attribute collection step, before the attribute collection page renders. You can add actions such as prefilling values and displaying a blocking error. [Learn more](~/identity-platform/custom-extension-attribute-collection?toc=%2Fentra%2Fexternal-id%2Ftoc.json&bc=%2Fentra%2Fexternal-id%2Fbreadcrumb%2Ftoc.json&tabs=start-continue%2Csubmit-continue) |
-| **OnAttributeCollectionSubmit**|Not available| Occurs during the sign-up flwo, after the user enters and submits attributes. You can add actions such as validating or modifying the user's entries. [Learn more](~/identity-platform/custom-extension-attribute-collection?toc=%2Fentra%2Fexternal-id%2Ftoc.json&bc=%2Fentra%2Fexternal-id%2Fbreadcrumb%2Ftoc.json&tabs=start-continue%2Csubmit-continue)|
+| **OnAttributeCollectionStart**|Not available| Occurs at the beginning of the sign-up's attribute collection step, before the attribute collection page renders. You can add actions such as prefilling values and displaying a blocking error. [Learn more](~/identity-platform/custom-extension-attribute-collection.md?toc=%2Fentra%2Fexternal-id%2Ftoc.json&bc=%2Fentra%2Fexternal-id%2Fbreadcrumb%2Ftoc.json&tabs=start-continue%2Csubmit-continue) |
+| **OnAttributeCollectionSubmit**|Not available| Occurs during the sign-up flwo, after the user enters and submits attributes. You can add actions such as validating or modifying the user's entries. [Learn more](~/identity-platform/custom-extension-attribute-collection.md?toc=%2Fentra%2Fexternal-id%2Ftoc.json&bc=%2Fentra%2Fexternal-id%2Fbreadcrumb%2Ftoc.json&tabs=start-continue%2Csubmit-continue)|
 
 ## Identity providers and authentication methods
 
@@ -107,7 +108,7 @@ The following table compares the features available for OAuth 2.0 and OpenID Con
 |[Device authorization](../../identity-platform/v2-oauth2-device-code.md)| Yes| No |
 |[On-Behalf-Of flow](../../identity-platform/v2-oauth2-on-behalf-of-flow.md)| Yes| Yes|
 |[Implicit grant](../../identity-platform/v2-oauth2-implicit-grant-flow.md)| Yes| Yes|
-|[Resource Owner Password Credentials](../../identity-platform/v2-oauth-ropc.md)| Yes| Yes|
+|[Resource Owner Password Credentials](../../identity-platform/v2-oauth-ropc.md)| Yes| Limited to [email and password sign-in](concept-authentication-methods-customers.md). For mobile applications, use [native authentication](concept-native-authentication.md). |
 
 ### Authority URL in OpenID Connect and OAuth2 flows
 
