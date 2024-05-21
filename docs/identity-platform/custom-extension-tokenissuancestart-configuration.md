@@ -394,7 +394,7 @@ Use the following steps to add Microsoft Entra as an identity provider to your A
 1. Unselect the **Token store** option.
 1. Select **Add** to add authentication to your Azure Function.
 
-    :::image type="content" border="true"  source="media/custom-extension-tokenissuancestart-configuration/add-identity-provider-auth-function-app-customer.png" alt-text="Screenshot that shows how to add authentication to your function app while in a external tenant." lightbox="media/custom-extension-tokenissuancestart-configuration/add-identity-provider-auth-function-app-customer.png":::
+    :::image type="content" border="true"  source="media/custom-extension-tokenissuancestart-configuration/add-identity-provider-auth-function-app-customer.png" alt-text="Screenshot that shows how to add authentication to your function app while in an external tenant." lightbox="media/custom-extension-tokenissuancestart-configuration/add-identity-provider-auth-function-app-customer.png":::
 
 ---
 
