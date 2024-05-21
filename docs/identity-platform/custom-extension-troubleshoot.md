@@ -86,7 +86,7 @@ Use the following table to diagnose an error code.
 ## Call your REST API directly
 
 Your REST API is protected by a Microsoft Entra access token. You can test your API by;
-- Obtaining an access token with an [application registration](custom-extension-tokenissuancestart-configuration.md#12-grant-admin-consent) associated with the custom authentiction extensions
+- Obtaining an access token with an [application registration](custom-extension-tokenissuancestart-configuration.md#12-grant-admin-consent) associated with the custom authentication extensions
 - Test your API locally using an API testing tool. 
 
 # [API testing tools](#tab/api-testing-tools)
@@ -111,7 +111,7 @@ Your REST API is protected by a Microsoft Entra access token. You can test your 
     >
 
 1. Using your preferred API testing tool, create a new HTTP request and set the **HTTP method** to `POST`.
-1. Use the following JSON Body that imitates the request Microsoft Entra ID sends to your REST API..
+1. Use the following JSON body that imitates the request Microsoft Entra ID sends to your REST API.
 
     ```json
     {
@@ -123,7 +123,7 @@ Your REST API is protected by a Microsoft Entra access token. You can test your 
             "authenticationEventListenerId": "11112222-bbbb-3333-cccc-4444dddd5555",
             "customAuthenticationExtensionId": "22223333-cccc-4444-dddd-5555eeee6666",
             "authenticationContext": {
-                "correlationId": "aaaa0000-bb11-2222-33cc-444444dddddd>",
+                "correlationId": "aaaa0000-bb11-2222-33cc-444444dddddd",
                 "client": {
                     "ip": "127.0.0.1",
                     "locale": "en-us",

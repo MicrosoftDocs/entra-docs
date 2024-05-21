@@ -245,7 +245,97 @@ The project has been created, and the sample code has been added. Using your IDE
 
 ---
 
-You can now deploy the function and publish it to Azure or you can test the function locally using an [API testing tool](./custom-extension-troubleshoot.md#call-your-rest-api-directly).
+## Run the function locally (recommended)
+
+It's a good idea to test the function locally before deploying it to Azure. We can use a dummy JSON body that imitates the request that Microsoft Entra ID sends to your REST API. Use your preferred API testing tool to call the function directly.
+
+1. In your IDE, open _local.settings.json_ and replace the code with the following JSON. We can set `"AuthenticationEvents__BypassTokenValidation"` to `true` for local testing purposes.
+
+    ```json
+    {
+      "IsEncrypted": false,
+      "Values": {
+        "AzureWebJobsStorage": "",
+        "AzureWebJobsSecretStorageType": "files",
+        "FUNCTIONS_WORKER_RUNTIME": "dotnet",
+        "AuthenticationEvents__BypassTokenValidation" : true
+      }
+    }
+    ```
+
+1. Using your preferred API testing tool, create a new HTTP request and set the **HTTP method** to `POST`.
+1. Use the following JSON body that imitates the request Microsoft Entra ID sends to your REST API.
+
+    ```json
+    {
+        "type": "microsoft.graph.authenticationEvent.tokenIssuanceStart",
+        "source": "/tenants/aaaabbbb-0000-cccc-1111-dddd2222eeee/applications/00001111-aaaa-2222-bbbb-3333cccc4444",
+        "data": {
+            "@odata.type": "microsoft.graph.onTokenIssuanceStartCalloutData",
+            "tenantId": "aaaabbbb-0000-cccc-1111-dddd2222eeee",
+            "authenticationEventListenerId": "11112222-bbbb-3333-cccc-4444dddd5555",
+            "customAuthenticationExtensionId": "22223333-cccc-4444-dddd-5555eeee6666",
+            "authenticationContext": {
+                "correlationId": "aaaa0000-bb11-2222-33cc-444444dddddd",
+                "client": {
+                    "ip": "127.0.0.1",
+                    "locale": "en-us",
+                    "market": "en-us"
+                },
+                "protocol": "OAUTH2.0",
+                "clientServicePrincipal": {
+                    "id": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
+                    "appId": "00001111-aaaa-2222-bbbb-3333cccc4444",
+                    "appDisplayName": "My Test application",
+                    "displayName": "My Test application"
+                },
+                "resourceServicePrincipal": {
+                    "id": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
+                    "appId": "00001111-aaaa-2222-bbbb-3333cccc4444",
+                    "appDisplayName": "My Test application",
+                    "displayName": "My Test application"
+                },
+                "user": {
+                    "companyName": "Casey Jensen",
+                    "createdDateTime": "2023-08-16T00:00:00Z",
+                    "displayName": "Casey Jensen",
+                    "givenName": "Casey",
+                    "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
+                    "mail": "casey@contoso.com",
+                    "onPremisesSamAccountName": "Casey Jensen",
+                    "onPremisesSecurityIdentifier": "<Enter Security Identifier>",
+                    "onPremisesUserPrincipalName": "Casey Jensen",
+                    "preferredLanguage": "en-us",
+                    "surname": "Jensen",
+                    "userPrincipalName": "casey@contoso.com",
+                    "userType": "Member"
+                }
+            }
+        }
+    }
+
+1. Select **Send**, and you should receive a JSON response similar to the following:
+
+    ```json
+    {
+        "data": {
+            "@odata.type": "microsoft.graph.onTokenIssuanceStartResponseData",
+            "actions": [
+                {
+                    "@odata.type": "microsoft.graph.tokenIssuanceStart.provideClaimsForToken",
+                    "claims": {
+                        "customClaim1": "customClaimValue1",
+                        "customClaim2": [
+                            "customClaimString1",
+                            "customClaimString2" 
+                        ]
+                    }
+                }
+    
+            ]
+        }
+    }
+    ```
 
 ## Deploy the function and publish to Azure 
 
@@ -291,7 +381,7 @@ There are three ways to set up authentication for your Azure Function:
 
 - [Set up authentication in the Azure portal using environment variables](#set-up-authentication-in-the-azure-portal-using-environment-variables) (recommended)
 - [Set up authentication in your code using `WebJobsAuthenticationEventsTriggerAttribute`](#set-up-authentication-in-your-code-using-webjobsauthenticationeventstriggerattribute)
-- [Azure App service authentication and authorization](/azure/app-service/overview-authentication-authorization)
+- [Azure App service authentication and authorization](/azure/app-service/configure-authentication-provider-aad?tabs=workforce-tenant)
 
 By default, the code has been set up for authentication in the Azure portal using environment variables. Use the tabs below to select your preferred method of implementing environment variables, or alternatively, refer to the built-in [Azure App service authentication and authorization](/azure/app-service/overview-authentication-authorization). For setting up environment variables, use the following values:
 
