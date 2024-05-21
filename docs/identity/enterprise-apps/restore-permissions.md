@@ -238,7 +238,7 @@ if ($ForceGrantUpdate -eq $true) {
 ### Restore app-only permissions
 
 >[!NOTE]
->Granting app-only Microsoft Graph permissions requires the global administrator role.
+>Granting app-only Microsoft Graph permissions requires the Privileged Role Administrator role.
 
 ```powershell
 # WARNING: Setting $ForceGrantUpdate to true will modify permission grants without

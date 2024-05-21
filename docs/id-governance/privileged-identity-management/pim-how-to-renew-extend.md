@@ -134,7 +134,7 @@ POST https://graph.microsoft.com/v1.0/roleManagement/directory/roleAssignmentSch
         "device": null,
         "user": {
             "displayName": null,
-            "id": "3fbd929d-8c56-4462-851e-0eb9a7b3a2a5"
+            "id": "aaaaaaaa-bbbb-cccc-1111-222222222222"
         }
     },
     "scheduleInfo": {
