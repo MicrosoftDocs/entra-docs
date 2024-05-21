@@ -130,7 +130,7 @@ Whether you sign up a user using email one-time passcode or username (email) and
 
 ## Handle sign-up errors
 
-During sign-up, not all requests succeed. For instance, the user might attempt to sign up with an already used email address or submit an invalid email one-time passcode. 
+During sign-up, not all actions succeed. For instance, the user might attempt to sign up with an already used email address or submit an invalid email one-time passcode. 
 
 ### Handle start sign-up error
 
