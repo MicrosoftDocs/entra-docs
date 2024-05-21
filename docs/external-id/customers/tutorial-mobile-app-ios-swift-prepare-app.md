@@ -46,7 +46,7 @@ The MSAL authentication SDK is used for integrating authentication into your app
 
 ### Update the Bundle Identifier
 
-In Apple ecosystem, a Bundle Identifier is a unique identifier for an appliation. To update the Bundle Identifier in your project, follow these steps:
+In Apple ecosystem, a Bundle Identifier is a unique identifier for an application. To update the Bundle Identifier in your project, follow these steps:
 
 1. Open the project settings. In the **Identity** section, enter the **Bundle Identifier**.
 1. Right-click **Info.plist** and select **Open As** > **Source Code**.
