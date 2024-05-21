@@ -151,7 +151,7 @@ Content-Type: application/json
         "device": null,
         "user": {
             "displayName": null,
-            "id": "3fbd929d-8c56-4462-851e-0eb9a7b3a2a5"
+            "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee"
         }
     },
     "scheduleInfo": {
@@ -221,7 +221,7 @@ The following is an example of the response. The response object shown here migh
         "device": null,
         "user": {
             "displayName": null,
-            "id": "3fbd929d-8c56-4462-851e-0eb9a7b3a2a5"
+            "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee"
         }
     },
     "scheduleInfo": {

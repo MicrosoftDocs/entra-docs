@@ -138,7 +138,7 @@ Example response:
 {
      "@odata.context": "https://graph.microsoft.com/beta/$metadata#reports/servicePrincipalSignInActivities",
      "id": "ODNmNDUyOTYtZmI4Zi00YWFhLWEzOTktYWM1MTA4NGUwMmI3",
-     "appId": "83f45296-fb8f-4aaa-a399-ac51084e02b7",    
+     "appId": "00001111-aaaa-2222-bbbb-3333cccc4444",    
      "delegatedClientSignInActivity": {
           "lastSignInDateTime": "2021-01-01T00:00:00Z",
           "lastSignInRequestId": "2d245633-0f48-4b0e-8c04-546c2bcd61f5"
@@ -200,8 +200,8 @@ Example response:
  "keyId": "83f45296-fb8f-4aaa-a399-ac51084e02b7",
  "keyType": "certificate",
  "keyUsage": "sign",
- "appId": "f4d9654f-0305-4072-878c-8bf266dfe146",
- "appObjectId": "6920caa5-1cae-4bc8-bf59-9c0b8495d240",
+ "appId": "11112222-bbbb-3333-cccc-4444dddd5555",
+ "appObjectId": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
  "servicePrincipalObjectId": "cf533854-9fb7-4c01-9c0e-f68922ada8b6",
  "resourceId": "a89dc091-a671-4da4-9fcf-3ef06bdf3ac3",
  "credentialOrigin": "application",

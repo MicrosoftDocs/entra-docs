@@ -517,11 +517,11 @@ Exports internal ADSync objects from Metaverse and associated connected objects 
 ### EXAMPLES
 #### EXAMPLE 1
 ```
-Export-ADSyncToolsObjects -ObjectId '9D220D58-0700-E911-80C8-000D3A3614C0' -Source Metaverse
+Export-ADSyncToolsObjects -ObjectId 'aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb' -Source Metaverse
 ```
 #### EXAMPLE 2
 ```
-Export-ADSyncToolsObjects -ObjectId '9e220d58-0700-e911-80c8-000d3a3614c0' -Source ConnectorSpace
+Export-ADSyncToolsObjects -ObjectId 'bbbbbbbb-1111-2222-3333-cccccccccccc' -Source ConnectorSpace
 ```
 #### EXAMPLE 3
 ```
