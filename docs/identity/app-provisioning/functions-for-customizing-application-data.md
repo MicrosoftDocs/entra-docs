@@ -1,13 +1,13 @@
 ---
 title: Reference for writing expressions for attribute mappings in Microsoft Entra Application Provisioning
 description: Learn how to use expression mappings to transform attribute values into an acceptable format during automated provisioning of SaaS app objects in Microsoft Entra ID. Includes a reference list of functions.
-author: kenwith
+author: jenniferf-skc
 manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: reference
-ms.date: 01/26/2024
-ms.author: kenwith
+ms.date: 05/21/2024
+ms.author: jfields
 ms.reviewer: arvinh
 ---
 
@@ -1009,11 +1009,16 @@ SelectUniqueValue(uniqueValueRule1, uniqueValueRule2, uniqueValueRule3, …)
 Requires a minimum of two arguments, which are unique value generation rules defined using expressions. The function evaluates each rule and then checks the value generated for uniqueness in the target app/directory. The first unique value found will be the one returned. If all of the values already exist in the target, the entry will get escrowed, and the reason gets logged in the audit logs. There is no upper bound to the number of arguments that can be provided.
 
 
- - This function must be at the top-level and cannot be nested.
- - This function cannot be applied to attributes that have a matching precedence.     
+ - This function must be at the top-level and can't be nested.
+ - This function can't be applied to attributes that have a matching precedence.     
  - This function is only meant to be used for entry creations. When using it with an attribute, set the **Apply Mapping** property to **Only during object creation**.
- - This function is currently only supported for "Workday to Active Directory User Provisioning" and "SuccessFactors to Active Directory User Provisioning". It cannot be used with other provisioning applications. 
- - The LDAP search that *SelectUniqueValue* function performs in on-premises Active Directory doesn't escape special characters like diacritics. If you pass a string like "Jéssica Smith" that contains a special character, you will encounter processing errors. Nest the [NormalizeDiacritics](#normalizediacritics) function as shown in the example below to normalize special characters. 
+ - This function is currently supported for use with these applications:
+    - Workday to Active Directory User Provisioning
+    - SuccessFactors to Active Directory User Provisioning 
+    - API-driven provisioning to on-premises Active Directory
+    
+    SelectUniqueValue isn't supported for use with other provisioning applications. 
+ - The LDAP search that *SelectUniqueValue* function performs in on-premises Active Directory doesn't escape special characters like diacritics. If you pass a string like "Jéssica Smith" that contains a special character, you'll encounter processing errors. Nest the [NormalizeDiacritics](#normalizediacritics) function as shown in the example below to normalize special characters. 
 
 
 **Parameters:** 

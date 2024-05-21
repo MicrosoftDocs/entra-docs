@@ -2,13 +2,13 @@
 title: Plan cloud HR application to Microsoft Entra user provisioning
 description: This article describes the deployment process of integrating cloud HR systems, such as Workday and SuccessFactors, with Microsoft Entra ID. Integrating Microsoft Entra ID with your cloud HR system results in a complete identity lifecycle management system.
 
-author: kenwith
+author: jenniferf-skc
 manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: conceptual
-ms.date: 04/15/2024
-ms.author: kenwith
+ms.date: 05/21/2024
+ms.author: jfields
 ms.reviewer: arvinh
 ---
 
@@ -410,7 +410,7 @@ Attributes like CN, samAccountName, and the UPN have unique constraints. You may
 The Microsoft Entra ID function [SelectUniqueValues](~/identity/app-provisioning/functions-for-customizing-application-data.md#selectuniquevalue) evaluates each rule and then checks the value generated for uniqueness in the target system. For an example, see [Generate unique value for the userPrincipalName (UPN) attribute](~/identity/app-provisioning/functions-for-customizing-application-data.md#generate-unique-value-for-userprincipalname-upn-attribute).
 
 > [!NOTE]
-> This function is currently only supported for Workday to Active Directory and SAP SuccessFactors to Active Directory user provisioning. It can't be used with other provisioning apps.
+> This function is currently only supported for Workday to Active Directory, SAP SuccessFactors to Active Directory user provisioning, and API-driven provisioning to on-premises Active Directory. It's not supported for use with other provisioning apps.
 
 ### Configure Active Directory OU container assignment
 
