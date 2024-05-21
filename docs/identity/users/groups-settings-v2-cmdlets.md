@@ -118,7 +118,7 @@ You can search for a specific group using the -filter parameter. This parameter 
 
 
     DeletionTimeStamp            :
-    ObjectId                     : 31f1ff6c-d48c-4f8a-b2e1-abca7fd399df
+    ObjectId                     : aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb
     ObjectType                   : Group
     Description                  : Intune Administrators
     DirSyncEnabled               :
@@ -161,7 +161,7 @@ To update an existing group, use the Update-MgGroup cmdlet. In this example, weâ
 
 
     DeletionTimeStamp            :
-    ObjectId                     : 31f1ff6c-d48c-4f8a-b2e1-abca7fd399df
+    ObjectId                     : aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb
     ObjectType                   : Group
     Description                  : Intune Administrators
     DirSyncEnabled               :

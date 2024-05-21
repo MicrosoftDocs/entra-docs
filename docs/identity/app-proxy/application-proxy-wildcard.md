@@ -101,9 +101,9 @@ You can exclude an application from the wildcard application by
 
 Publishing an application as regular application is the preferred method to exclude an application from a wildcard. You should publish the excluded applications before the wildcard applications to ensure that your exceptions are enforced from the beginning. The most specific application will always take precedence – an application published as `budgets.finance.adventure-works.com` takes precedence over the application `*.finance.adventure-works.com`, which in turn takes precedence over the application `*.adventure-works.com`.
 
-You can also limit the wildcard to only work for specific applications through your DNS management. As a best practice, you should create a CNAME entry that includes a wildcard and matches the format of the external URL you have configured. However, you can instead point specific application URLs to the wildcards. For example, instead of `*.adventure-works.com`, point `hr.adventure-works.com`, `expenses.adventure-works.com` and `travel.adventure-works.com individually` to `000aa000-11b1-2ccc-d333-4444eee4444e.tenant.runtime.msappproxy.net`.
+You can also limit the wildcard to only work for specific applications through your DNS management. As a best practice, you should create a CNAME entry that includes a wildcard and matches the format of the external URL you have configured. However, you can instead point specific application URLs to the wildcards. For example, instead of `*.adventure-works.com`, point `hr.adventure-works.com`, `expenses.adventure-works.com` and `travel.adventure-works.com individually` to `00001111-aaaa-2222-bbbb-3333cccc4444.tenant.runtime.msappproxy.net`.
 
-If you use this option, you also need another CNAME entry for the value `AppId.domain`, for example, `00000000-1a11-22b2-c333-444d4d4dd444.adventure-works.com`, also pointing to the same location. You can find the **AppId** on the application properties page of the wildcard application:
+If you use this option, you also need another CNAME entry for the value `AppId.domain`, for example, `00001111-aaaa-2222-bbbb-3333cccc4444.adventure-works.com`, also pointing to the same location. You can find the **AppId** on the application properties page of the wildcard application:
 
 ![Find the application ID on the app's property page](./media/application-proxy-wildcard/01.png)
 
@@ -134,9 +134,9 @@ All three applications:
 
 You can publish the wildcard application using the steps outlined in [Publish applications using Microsoft Entra application proxy](application-proxy-add-on-premises-application.md). This scenario assumes:
 
-- A tenant with the following ID: `000aa000-11b1-2ccc-d333-4444eee4444e`
+- A tenant with the following ID: `aaaabbbb-0000-cccc-1111-dddd2222eeee`
 - A verified domain called `adventure-works.com` has been configured.
-- A **CNAME** entry that points `*.adventure-works.com` to `000aa000-11b1-2ccc-d333-4444eee4444e.tenant.runtime.msappproxy.net` has been created.
+- A **CNAME** entry that points `*.adventure-works.com` to `00001111-aaaa-2222-bbbb-3333cccc4444.tenant.runtime.msappproxy.net` has been created.
 
 Following the [documented steps](application-proxy-add-on-premises-application.md), you create a new application proxy application in your tenant. In this example, the wildcard is in the following fields:
 

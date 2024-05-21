@@ -115,10 +115,10 @@ Optionally, you can test that you can set the extension property on a cloud only
 Get-AzureADUser
 
 #Set a value for the extension property on the user. Replace the objectid with the ID of the user and the extension name with the value from the previous step
-Set-AzureADUserExtension -objectid 0ccf8df6-62f1-4175-9e55-73da9e742690 -ExtensionName “extension_6552753978624005a48638a778921fan3_TestAttributeName”
+Set-AzureADUserExtension -objectid aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb -ExtensionName “extension_6552753978624005a48638a778921fan3_TestAttributeName”
 
 #Verify that the attribute was added correctly.
-Get-AzureADUser -ObjectId 0ccf8df6-62f1-4175-9e55-73da9e742690 | Select -ExpandProperty ExtensionProperty
+Get-AzureADUser -ObjectId bbbbbbbb-1111-2222-3333-cccccccccccc | Select -ExpandProperty ExtensionProperty
 
 ```
 ## Create an extension attribute using cloud sync
