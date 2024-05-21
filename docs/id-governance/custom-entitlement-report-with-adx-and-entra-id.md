@@ -373,70 +373,70 @@ This report provides a view of who had what access and when to the target app an
 
 This query targets a specific application within Entra AD and analyzes the role assignments as of a certain date. The query retrieves both direct and group-based role assignments, merging this data with user details from the EntraUsers table and role information from the AppRoles table.  
 
-```kql
-        /// Define constants 
+```
+/ Define constants 
 
-        let targetServicePrincipalId = "<your-service-principal-id>";  /// Target Service Principal ID 
+let targetServicePrincipalId = " 67865322-94b5-4205-9dc8-974dc569bfad"; // Target Service Principal ID 
 
-        let targetSnapshotDate = datetime("2024-01-13"); /// Target Snapshot Date for the data 
+let targetSnapshotDate = datetime("2024-01-13"); // Target Snapshot Date for the data 
 
-        /// Extract role assignments for the target Service Principal and Snapshot Date 
+// Extract role assignments for the target Service Principal and Snapshot Date 
 
-        let roleAssignments = AppRoleAssignments 
+let roleAssignments = AppRoleAssignments 
 
-            | where ResourceId == targetServicePrincipalId and startofday(SnapshotDate) == targetSnapshotDate 
+    | where ResourceId == targetServicePrincipalId and startofday(SnapshotDate) == targetSnapshotDate 
 
-            | extend AppRoleIdStr = tostring(AppRoleId); /// Convert AppRoleId to string for easier comparison 
+    | extend AppRoleIdStr = tostring(AppRoleId); // Convert AppRoleId to string for easier comparison 
 
-        /// Prepare user data from EntraUsers table 
+// Prepare user data from EntraUsers table 
 
-        let users = EntraUsers 
+let users = EntraUsers 
 
-            | project ObjectID, UserPrincipalName, DisplayName, ObjectIDStr = tostring(ObjectID); /// Include ObjectID as string for joining 
+    | project ObjectID, UserPrincipalName, DisplayName, ObjectIDStr = tostring(ObjectID); // Include ObjectID as string for joining 
 
-        /// Prepare role data from AppRoles table 
+// Prepare role data from AppRoles table 
 
-        let roles = AppRoles 
+let roles = AppRoles 
 
-            | mvexpand AppRoles /// Expand AppRoles to handle multiple roles 
+    | mvexpand AppRoles // Expand AppRoles to handle multiple roles 
 
-            | extend RoleName = AppRoles.DisplayName, RoleId = tostring(AppRoles.Id) /// Extract Role Name and ID 
+    | extend RoleName = AppRoles.DisplayName, RoleId = tostring(AppRoles.Id) // Extract Role Name and ID 
 
-            | project RoleId, RoleName; 
+    | project RoleId, RoleName; 
 
-        /// Process direct assignments 
+// Process direct assignments 
 
-        let directAssignments = roleAssignments 
+let directAssignments = roleAssignments 
 
-            | join kind=inner users on $left.PrincipalId == $right.ObjectID /// Join with EntraUsers on PrincipalId 
+    | join kind=inner users on $left.PrincipalId == $right.ObjectID // Join with EntraUsers on PrincipalId 
 
-            | join kind=inner roles on $left.AppRoleIdStr == $right.RoleId /// Join with roles to get Role Names 
+    | join kind=inner roles on $left.AppRoleIdStr == $right.RoleId // Join with roles to get Role Names 
 
-            | project UserPrincipalName, DisplayName, CreatedDateTime, RoleName, AssignmentType = "Direct", SnapshotDate; 
+    | project UserPrincipalName, DisplayName, CreatedDateTime, RoleName, AssignmentType = "Direct", SnapshotDate; 
 
-        /// Process group-based assignments 
+// Process group-based assignments 
 
-        let groupAssignments = roleAssignments 
+let groupAssignments = roleAssignments 
 
-            | join kind=inner EntraGroupMembership on $left.PrincipalId == $right.GroupId /// Join with Group Membership 
+    | join kind=inner EntraGroupMembership on $left.PrincipalId == $right.GroupId // Join with Group Membership 
 
-            | mvexpand Members /// Expand group members 
+    | mvexpand Members // Expand group members 
 
-            | extend MembersStr = tostring(Members) /// Convert member ID to string 
+    | extend MembersStr = tostring(Members) // Convert member ID to string 
 
-            | distinct MembersStr, CreatedDateTime, AppRoleIdStr, SnapshotDate /// Get distinct values 
+    | distinct MembersStr, CreatedDateTime, AppRoleIdStr, SnapshotDate // Get distinct values 
 
-            | join kind=inner users on $left.MembersStr == $right.ObjectIDStr /// Join with EntraUsers for user details 
+    | join kind=inner users on $left.MembersStr == $right.ObjectIDStr // Join with EntraUsers for user details 
 
-            | join kind=inner roles on $left.AppRoleIdStr == $right.RoleId /// Join with roles for role names 
+    | join kind=inner roles on $left.AppRoleIdStr == $right.RoleId // Join with roles for role names 
 
-            | project UserPrincipalName, DisplayName, CreatedDateTime, RoleName, AssignmentType = "Group", SnapshotDate; 
+    | project UserPrincipalName, DisplayName, CreatedDateTime, RoleName, AssignmentType = "Group", SnapshotDate; 
 
-        /// Combine results from direct and group-based assignments 
+// Combine results from direct and group-based assignments 
 
-        directAssignments 
+directAssignments 
 
-        | union groupAssignments 
+| union groupAssignments 
 ``` 
 ### Example 2: Build Basic Auditor Report with Entra data showing who had access to an app between these two dates 
 
