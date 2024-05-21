@@ -59,24 +59,29 @@ This widget provides the following alerts:
 - **Increased external tenants activity**: The number of users accessing external tenants has increased.
 - **Token and device inconsistency**: The original token is used on a different device.
 - **Web content blocked**: Access to the website has been blocked.
-- **Threat Intelligence transactions **: There number of Threat Intelligence transactions in the last 24 hours.
+- **Threat Intelligence transactions**: There number of Threat Intelligence transactions in the last 24 hours.
 
-![Screenshot of the alerts widget.](media/concept-traffic-dashboard/snapshot.png)
-<#### Ruthi - need to put an  image here ####>
+![Screenshot of the alerts and notifications widget.](media/concept-traffic-dashboard/dashboard-alerts-notifications.png)
 
 Select the link next to the alert name to navigate to a related page with additional information.
 
 ## Usage profiling
 
-The **Usage profiling** widget displays usage patterns over time per traffic type or per all traffic types. 
+The **Usage profiling** widget displays usage patterns over a selected period of time.
 
-- **Total transactions**: Total transactions across all traffic types in the last 24 hours.
-- **Microsoft M365 traffic**: M365 traffic transactions in the last 24 hours.
-- **Internet access traffic**: Internet access traffic transactions in the last 24 hours.
-- **Private access traffic**: Private access traffic transactions in the last 24 hours.
+Select the **Display by** filter to view the following usage categories:
 
-![Screenshot of the usage profiling widget.](media/concept-traffic-dashboard/snapshot.png)
-<#### Ruthi - need to put an image here ####>
+- Transactions
+- Users
+- Devices
+- Bytes sent
+- Bytes received
+
+The time period defaults to the previous month, but you can change the period of time to the last 24 hours or last week.
+
+![Screenshot of the usage profiling widget.](media/concept-traffic-dashboard/dashboard-usage-profiling.png)
+
+Select the **View details** button or select a particular point on the graph to view the usage profile details on the selected data set. Select a date on the usage profile details to view the traffic logs for that date.
 
 ## Top used destinations
 
@@ -102,8 +107,8 @@ Global Secure Access provides visibility into the most commonly used private app
 
 Select the **View all private application segments** button to navigate to the **Application discovery** page, where you can check the full list of discovered private application segments.
 
-![Screenshot of the top discovered private application segment widget.](media/concept-traffic-dashboard/snapshot.png)
-<#### Ruthi - need to put an image here ####>
+![Screenshot of the top discovered private application segment widget.](media/concept-traffic-dashboard/dashboard-top-discovered-app-segments.png)
+
 
 ## Cross-tenant access
 
