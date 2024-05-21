@@ -198,8 +198,6 @@ To complete the migration, repeat configuration for all applications in the Okta
 
 8. On the **Overview** page, record the **Application (client) ID**. You use this ID in your application.
 
-    ![Screenshot of the Application client ID entry on Migration Tenant.](media/migrate-applications-from-okta/application-client-id.png)
-
 9. On the left, select **Certificates & secrets**. Then select **+ New client secret**. Name the client secret and set its expiration.
 
     ![Screenshot of New client secret entries on Certificates and secrets.](media/migrate-applications-from-okta/new-client-secret.png)

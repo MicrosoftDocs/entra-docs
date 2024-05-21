@@ -145,7 +145,7 @@ To complete federating the VPN service with Microsoft Entra ID, create the BIG-I
     ![Screenshot of Name and Entity entries.](media/f5-passwordless-vpn/create-new-saml-sp.png)
 
    >[!NOTE]
-  >If the entity ID isn't an exact match of the hostname of the published URL, configure SP **Name** settings, or perform this action if it isn't in hostname URL format. If entity ID is `urn:ssl-vpn:contosoonline`, provide the external scheme and hostname of the application being published.
+   >If the entity ID isn't an exact match of the hostname of the published URL, configure SP **Name** settings, or perform this action if it isn't in hostname URL format. If entity ID is `urn:ssl-vpn:contosoonline`, provide the external scheme and hostname of the application being published.
 
 5. Scroll down to select the new **SAML SP object**.
 6. Select **Bind/UnBind IDP Connectors**.
@@ -261,9 +261,6 @@ An access policy enables the service for SAML authentication.
 14. For the Successful branch of SAML auth, select **+** .
 15. From the Assignment tab, select **Advanced Resource Assign**.
 16. Select **Add Item**.
-
-    ![Screenshot of the plus button on Access Policy.](media/f5-passwordless-vpn/advance-resource-assign.png)
-
 17. In the pop-up, select **New Entry**
 18. Select **Add/Delete**.
 19. In the window, select **Network Access**.

@@ -25,7 +25,7 @@ The off-boarding tutorials only require one account that has group and Teams mem
 
 [!INCLUDE [Microsoft Entra ID Governance license](../includes/entra-entra-governance-license.md)]
 - A Microsoft Entra tenant
-- A global administrator account for the Microsoft Entra tenant.  This account is used to create our users and workflows.
+- An administrator account with appropriate permissions for the Microsoft Entra tenant.  This account is used to create our users and workflows.
 
 ## Before you begin
 
@@ -47,7 +47,7 @@ You need to edit the POST and replace the &lt;your tenant name here&gt; portion 
 First we create our employee, Melva Prince.
 
  1. Now navigate to [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer).
- 2. Sign-in to Graph Explorer with the global administrator account for your tenant.
+ 2. Sign-in to Graph Explorer with the user administrator account for your tenant.
  3. At the top, change **GET** to **POST** and add `https://graph.microsoft.com/v1.0/users/` to the box. 
  4. Copy the following code in to the **Request body** 
  5. Replace `<your tenant here>` in the following code with the value of your Microsoft Entra tenant.
@@ -241,7 +241,7 @@ In this scenario, we use this feature of Microsoft Entra ID to generate a tempor
 
 To use this feature, it must be enabled on our Microsoft Entra tenant. To enable this feature, use the following steps.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Authentication Policy Administrator](../identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator). 
 1. Browse to **Protection** > **Authentication methods** > **Temporary Access Pass**
 1. Select **Yes** to enable the policy and add Britta Simon and select which users have the policy applied, and any **General** settings.
 

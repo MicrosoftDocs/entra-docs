@@ -92,8 +92,8 @@ To configure Google federation by using PowerShell, follow these steps:
    Import-Module Microsoft.Graph.Identity.SignIns
    $params = @{
    "@odata.type" = "microsoft.graph.socialIdentityProvider"
-   displayName = "Login with Amazon"
-   identityProviderType = "Amazon"
+   displayName = "Login with Google"
+   identityProviderType = "Google"
    clientId = "00001111-aaaa-2222-bbbb-3333cccc4444"
    clientSecret = "000000000000"
    }

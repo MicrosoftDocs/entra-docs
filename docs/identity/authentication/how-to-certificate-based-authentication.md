@@ -128,6 +128,8 @@ The following table and graphic show how to map information from the CA certific
 
 For more information, see [Understanding the certificate revocation process](./concept-certificate-based-authentication-technical-deep-dive.md#understanding-the-certificate-revocation-process).
 
+### Configure certification authorities using the Microsoft Graph APIs
+MS Graph APIs can be used to configure certificate authorities. Please follow the steps at [certificatebasedauthconfiguration MSGraph commands](/graph/api/resources/certificatebasedauthconfiguration?view=graph-rest-1.0) to update the Entra Certificate Authority trust store.
 
 ### Validate Certificate Authority configuration
 

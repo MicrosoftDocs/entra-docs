@@ -36,7 +36,7 @@ This article shows you how to call a protected ASP.NET Core web API using Client
   - Application Developer 
   - Cloud Application Administrator 
 - [Download and install cURL](https://curl.se/download.html) on your workstation computer.  
-- A minimum requirement of [.NET 6.0 SDK](https://dotnet.microsoft.com/download/dotnet).
+- A minimum requirement of [.NET 8.0 SDK](https://dotnet.microsoft.com/download/dotnet).
 
 ::: zone-end
 
