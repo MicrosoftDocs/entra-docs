@@ -4,7 +4,7 @@ description: Learn how to call a protected ASP.NET Core web API using the Micros
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.date: 04/26/2024
+ms.date: 05/21/2024
 ms.service: identity-platform
 
 ms.topic: how-to
@@ -36,7 +36,7 @@ This article shows you how to call a protected ASP.NET Core web API using [Insom
   - Application Developer
   - Cloud Application Administrator
 - [Download and install Insomnia](https://insomnia.rest/download). You use Insomnia to obtain an access token for your API requests.
-- A minimum requirement of [.NET 6.0 SDK](https://dotnet.microsoft.com/download/dotnet).
+- A minimum requirement of [.NET 8.0 SDK](https://dotnet.microsoft.com/download/dotnet).
 
 ::: zone-end
 
@@ -77,7 +77,7 @@ Follow these steps to create the web API registration:
 
    :::image type="content" source="./media/web-api-tutorial-01-register-app/register-application.png" alt-text="Screenshot that shows how to enter a name and select the account type.":::
 
-1. The application's **Overview** pane is displayed when registration is complete. Record the **Directory (tenant) ID** and the **Application (client) ID** to be used in your application source code.
+1. You can see the application's **Overview** pane when registration is complete. Record the **Directory (tenant) ID** and the **Application (client) ID** to be used in later steps.
 
    :::image type="content" source="./media/web-api-tutorial-01-register-app/app-identifiers.png" alt-text="Screenshot that shows the identifier values on the overview page.":::
 
@@ -263,11 +263,11 @@ To obtain an access token for your API requests, follow these steps:
    | **CLIENT ID**        | The **Application (client) ID** value of your web app registration                                                                                                                                                                             |
    | **CLIENT SECRET**    | The client secret **Value** of your web app registration                                                                                                                                                                                       |
    | **REDIRECT URL**     | Enter `http://localhost`, which sets the REDIRECT URL to the Redirect URI registered with Microsoft Entra ID.                                                                                                                                  |
-   | **SCOPE**            | `api://{application_client_id}/Forecast.Read` <br/> Navigate to your web app registration, under **Manage**, select **API permissions**, then select **Forecast.Read** <br/> Copy the value in the textbox, which contains the **Scope** value |
+   | **Advanced Options** > **SCOPE**            | `api://{application_client_id}/Forecast.Read` <br/> Navigate to your web app registration, under **Manage**, select **API permissions**, then select **Forecast.Read** <br/> Copy the value in the textbox, which contains the **Scope** value |
 
 #### Get an access token and send a request to the web API
 
-1. Once these values are entered, select **Fetch Tokens**. This launches an Insomnia browser window where you authenticate with your user credentials. Be sure to allow pop ups from the Insomnia application in the browser.
+1. Once these values are entered, select **Fetch Tokens** at the end of the form. This launches an Insomnia browser window where you authenticate with your user credentials. Be sure to allow pop ups from the Insomnia application in the browser.
 1. After authenticating, select **Send** to send the request to the protected web API endpoint.
 
 With a valid access token included in the request, the expected response is 200 OK with output similar to:
