@@ -16,6 +16,10 @@ ms.reviewer: lhuangnorth
 
 Microsoft recommends securing access to any Microsoft admin portals like Microsoft Entra, Microsoft 365, Exchange, and Azure. Using the [Microsoft Admin Portals](concept-conditional-access-cloud-apps.md#microsoft-admin-portals) app organizations can control interactive access to Microsoft admin portals.
 
+Microsoft recommends you require enable this policy for the following roles at a minimum, based on [identity score recommendations](~/identity/monitoring-health/concept-identity-secure-score.md):
+
+[!INCLUDE [conditional-access-admin-roles](../../includes/conditional-access-admin-roles.md)]
+
 ## User exclusions
 [!INCLUDE [active-directory-policy-exclusions](~/includes/entra-policy-exclude-user.md)]
 
@@ -26,22 +30,7 @@ Microsoft recommends securing access to any Microsoft admin portals like Microso
 1. Select **Create new policy**.
 1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
 1. Under **Assignments**, select **Users or workload identities**.
-   1. Under **Include**, select **Directory roles** and choose built-in roles like:
-
-      - Global Administrator
-      - Application Administrator
-      - Authentication Administrator
-      - Billing Administrator
-      - Cloud Application Administrator
-      - Conditional Access Administrator
-      - Exchange Administrator
-      - Helpdesk Administrator
-      - Password Administrator
-      - Privileged Authentication Administrator
-      - Privileged Role Administrator
-      - Security Administrator
-      - SharePoint Administrator
-      - User Administrator
+   1. Under **Include**, select **Directory roles** and choose at least the roles listed above.
    
       > [!WARNING]
       > Conditional Access policies support built-in roles. Conditional Access policies are not enforced for other role types including [administrative unit-scoped](~/identity/role-based-access-control/admin-units-assign-roles.md) or [custom roles](~/identity/role-based-access-control/custom-create.yml).
