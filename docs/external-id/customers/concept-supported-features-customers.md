@@ -34,7 +34,7 @@ The following table compares the general features and capabilities available in 
 
 |Feature  |Workforce tenant  | External tenant |
 |---------|---------|---------|
-| **External identities scenario** | Allow business partners and other external users to collaborate with your workforce. Guests can securely access your business applications through invitations or self-service sign-up.  | Use External ID to secure your applications. Consumers and business customers can securely access your consumer apps through self-service sign-up. Invitations are also supported .  |
+| **External identities scenario** | Allow business partners and other external users to collaborate with your workforce. Guests can securely access your business applications through invitations or self-service sign-up.  | Use External ID to secure your applications. Consumers and business customers can securely access your consumer apps through self-service sign-up. Invitations are also supported.  |
 | **Local accounts** | Local accounts are supported for *internal* members of your organization only.    | Local accounts are supported for:</br>- External users (consumers, business customers) who use self-service sign-up.</br>- Accounts created by admins. |
 | **Groups** | [Groups](~/fundamentals/how-to-manage-groups.yml) can be used to manage administrative and user accounts.| Groups can be used to manage administrative accounts. Support for Microsoft Entra groups and [application roles](how-to-use-app-roles-customers.md) is being phased into customer tenants. For the latest updates, see [Groups and application roles support](reference-group-app-roles-support.md). |
 | **Roles and administrators**| [Roles and administrators](~/fundamentals/how-subscriptions-associated-directory.yml) are fully supported for administrative and user accounts. | Roles aren't supported with customer accounts. Customer accounts don't have access to tenant resources.|
@@ -45,7 +45,7 @@ The following table compares the general features and capabilities available in 
 
 ## Look and feel customization
 
-The following table compares the features available for look and feel customiztion in workforce and external tenants.
+The following table compares the features available for look and feel customization in workforce and external tenants.
 
 |Feature  |Workforce tenant  | External tenant |
 |---------|---------|---------|
@@ -57,13 +57,13 @@ The following table compares the features available for look and feel customizti
 
 ## Adding your own business logic
 
-Custom authentication extensions allow you to customize the Microsoft Entra authentication experience by integrating with external systems. A custom authentication extension is essentially an event listener that, when activated, makes an HTTP call to a REST API endpoint where you've defined your own business logic. The following table compares the [custom authentication extensions](./concept-custom-extensions.md) events available in workforce and external tenants.
+Custom authentication extensions allow you to customize the Microsoft Entra authentication experience by integrating with external systems. A custom authentication extension is essentially an event listener that, when activated, makes an HTTP call to a REST API endpoint where you define your own business logic. The following table compares the [custom authentication extensions](./concept-custom-extensions.md) events available in workforce and external tenants.
 
 |Event  |Workforce tenant  | External tenant |
 |---------|---------|---------|
 | **TokenIssuanceStart**    |  [Add claims from external systems](~/identity-platform/custom-extension-overview.md).    |   [Add claims from external systems](./concept-custom-extensions.md).    |  
 | **OnAttributeCollectionStart**|Not available| Occurs at the beginning of the sign-up's attribute collection step, before the attribute collection page renders. You can add actions such as prefilling values and displaying a blocking error. [Learn more](~/identity-platform/custom-extension-attribute-collection.md?toc=%2Fentra%2Fexternal-id%2Ftoc.json&bc=%2Fentra%2Fexternal-id%2Fbreadcrumb%2Ftoc.json&tabs=start-continue%2Csubmit-continue) |
-| **OnAttributeCollectionSubmit**|Not available| Occurs during the sign-up flwo, after the user enters and submits attributes. You can add actions such as validating or modifying the user's entries. [Learn more](~/identity-platform/custom-extension-attribute-collection.md?toc=%2Fentra%2Fexternal-id%2Ftoc.json&bc=%2Fentra%2Fexternal-id%2Fbreadcrumb%2Ftoc.json&tabs=start-continue%2Csubmit-continue)|
+| **OnAttributeCollectionSubmit**|Not available| Occurs during the sign-up flow, after the user enters and submits attributes. You can add actions such as validating or modifying the user's entries. [Learn more](~/identity-platform/custom-extension-attribute-collection.md?toc=%2Fentra%2Fexternal-id%2Ftoc.json&bc=%2Fentra%2Fexternal-id%2Fbreadcrumb%2Ftoc.json&tabs=start-continue%2Csubmit-continue)|
 
 ## Identity providers and authentication methods
 
@@ -114,7 +114,7 @@ The following table compares the features available for OAuth 2.0 and OpenID Con
 
 The authority URL is a URL that indicates a directory that MSAL can request tokens from. For apps in external tenants, always use the following format: *&lt;tenant-name&gt;.ciamlogin.com*
 
-The following JSON shows an example of a .NET application app settings with an authority URL:
+The following JSON shows an example of a .NET application appsettings.json file with an authority URL:
 
 ```json
 {
@@ -143,7 +143,7 @@ The following table compares the features available for user management in each 
 
 |Feature  |Workforce tenant  | External tenant |
 |---------|---------|---------|
-|**Types of accounts** | <ul><li>Internal members, for example employees and admins.</li><li>External users who are [invited](../what-is-b2b.md) or use self-service sign-up. | <ul><li>Internal users in your tenant, for example admins.</li><li>External consumers and business customers who use self-service sign-up or are created by admins.</li><li>External users who are invited (preview).</ul>|
+|**Types of accounts** | <ul><li>Internal members, for example employees and admins.</li><li>External users who are [invited](../what-is-b2b.md) or use self-service sign-up. | <ul><li>Internal users in your tenant, for example admins.</li><li>External consumers and business customers who use self-service sign-up or create by admins.</li><li>External users who are invited (preview).</ul>|
 | **Manage user profile info** | Programmatically and by [using the Microsoft Entra admin center](~/fundamentals/how-to-manage-user-profile-info.yml). |Same as workforce.|
 | **Reset a user's password** | Administrators can [reset a user's password](~/fundamentals/users-reset-password-azure-portal.yml) if the password is forgotten, if the user gets locked out of a device, or if the user never received a password. |Same as workforce.|
 |**Restore or remove a recently deleted user**|After you delete a user, the account remains in a suspended state for 30 days. During that 30-day window, the user account can be restored, along with all its properties.|Same as workforce.|
@@ -155,7 +155,7 @@ The following table compares the features available for password protection in e
 
 |Feature  |Workforce tenant  | External tenant |
 |---------|---------|---------|
-|**Smart lockout**| [Smart lockout](~/identity/authentication/howto-password-smart-lockout.md) helps lock out bad actors that try to guess your users' passwords or use brute-force methods to get in|Same as workforce. |
+|**Smart lockout**| [Smart lockout](~/identity/authentication/howto-password-smart-lockout.md) helps lockout bad actors that try to guess your users' passwords or use brute-force methods to get in|Same as workforce. |
 | **Custom banned passwords**| The Microsoft Entra custom banned password list lets you add specific strings to evaluate and block. | Not available. |
 
 ## Token customization
