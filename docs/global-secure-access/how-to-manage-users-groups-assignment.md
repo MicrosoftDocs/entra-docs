@@ -1,5 +1,5 @@
 ---
-title: Assigning users and groups to traffic forwarding profiles
+title: Assign users and groups to traffic forwarding profiles
 description: Learn how to roll out traffic forwarding profiles to users and groups with Global Secure Access (preview)
 author: kenwith
 ms.author: kenwith
