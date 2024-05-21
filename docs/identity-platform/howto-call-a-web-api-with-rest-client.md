@@ -162,7 +162,7 @@ By specifying a web API's scopes, the web app can obtain an access token contain
 
 Follow these steps to configure client's permissions to the web API:
 
-1. From the **Overview** pane of your application, under **Manage**, select **API permissions** > **Add a permission** > **My APIs**.
+1. From the **Overview** pane of your application, under **Manage**, select **API permissions** > **Add a permission** > **APIs my organization uses**.
 1. Select **NewWebAPI1** or the API that you wish to add permissions to.
 1. Under **Select permissions**, check the box next to **Forecast.Read**. You may need to expand the **Permission** list. This selects the permissions the client app should have on behalf of the signed-in user.
 1. Select **Add permissions** to complete the process.
