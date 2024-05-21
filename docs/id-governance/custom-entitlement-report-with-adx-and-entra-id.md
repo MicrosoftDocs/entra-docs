@@ -376,7 +376,7 @@ This query targets a specific application within Entra AD and analyzes the role 
 ```
 / Define constants 
 
-let targetServicePrincipalId = " 67865322-94b5-4205-9dc8-974dc569bfad"; // Target Service Principal ID 
+let targetServicePrincipalId = "<your service principal-id>"; // Target Service Principal ID 
 
 let targetSnapshotDate = datetime("2024-01-13"); // Target Snapshot Date for the data 
 
@@ -451,7 +451,7 @@ This query targets a specific application within Entra ID and analyzes the role 
 
         let endDate = datetime('2024-03-14'); 
 
-        let servicePrincipalId = "67865322-94b5-4205-9dc8-974dc569bfad"; 
+        let servicePrincipalId = "<your service principal-id>"; 
 
         /// Query AppRoleAssignments for the specified service principal within the date range 
 
@@ -498,7 +498,7 @@ This query targets a specific application within Entra ID and changes to the rol
 
         AppRoleAssignments 
 
-        | where SnapshotDate < datetime("2024-03-14") and ResourceId == "67865322-94b5-4205-9dc8-974dc569bfad" 
+        | where SnapshotDate < datetime("2024-03-14") and ResourceId == "<your service principal-id>" 
 
         | project PrincipalId, AppRoleId2 = tostring(AppRoleId), CreatedDateTime 
 
@@ -506,7 +506,7 @@ This query targets a specific application within Entra ID and changes to the rol
 
             AppRoleAssignments 
 
-            | where SnapshotDate < earlierDate and ResourceId == "67865322-94b5-4205-9dc8-974dc569bfad" 
+            | where SnapshotDate < earlierDate and ResourceId == "<your service principal-id>" 
 
             | project PrincipalId, AppRoleId1 = tostring(AppRoleId) 
 
@@ -536,7 +536,7 @@ This report illustrates how you can combine data from two separate systems to cr
 
         let endDate = datetime("2024-03-13"); 
 
-        let servicePrincipalId = "67865322-94b5-4205-9dc8-974dc569bfad"; 
+        let servicePrincipalId = "<your service principal-id>"; 
 
         /// Pre-process AppRoleAssignments with specific filters and projections 
 
