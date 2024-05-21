@@ -1,11 +1,11 @@
 ---
-title: Learn how to use the Global Secure Access (preview) dashboard
-description: Monitor the health and activity of your network with the Global Secure Access (preview) dashboard.
+title: Learn about the Global Secure Access (preview) dashboard
+description: Monitor the health and status of your network traffic with the Global Secure Access (preview) dashboard.
 author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: conceptual
-ms.date: 03/19/2024
+ms.date: 05/21/2024
 ms.service: global-secure-access
 ---
 
@@ -13,12 +13,18 @@ ms.service: global-secure-access
 
 The Global Secure Access (preview) dashboard provides you with visualizations of the network traffic acquired by the Microsoft Entra Private and Microsoft Entra Internet Access services. The dashboard compiles the data from your network configurations, including devices, users, and tenants into several widgets that provide you with answers to the following questions:
 
-- How many active devices are deployed on my network?
+- How many devices using the Global Secure Access client are active in my network?
 - Was there a recent change to the number of active devices?
-- What are the most used applications?
+- Are there alerts that I should be aware of?
+- What are the service usage patterns across the different traffic types?
+- What are the most used destinations?
+- Which users are accessing sites with threat intelligence the most?
 - How many unique users are accessing the network across all my tenants?
+- What are the cross-tenant access activity patterns?
+- What are the most popular website categories that users are accessing?
+- What are the most used private application segments that are not attributed to an application?
 
-This article describes each of the widgets and how you can use the data on the dashboard to monitor and improve your network configurations.
+This article describes each of the dashboard widgets and how you can use the data on the dashboard to monitor and improve your network configurations.
 
 ## How to access the dashboard
 
@@ -43,14 +49,61 @@ The **Global Secure Access snapshot** defaults to showing all types of traffic, 
 
 ![Screenshot of the Global Secure Access snapshot widget with the filter open.](media/concept-traffic-dashboard/snapshot-filter.png)
 
-## Device status
+## Alerts and notifications
 
-The **Device status** widgets display the active and inactive devices that you have deployed.
+This widget shows what is happening in the network and helps identify suspicious activities or trends identified by the network data.
 
-- **Active devices**: The number of distinct device IDs seen in the last 24 hours and the % change during that time.
-- **Inactive devices**: The number of distinct device IDs that were seen in the last seven days, but not during the last 24 hours. The % change during the last 24 hours is also displayed.
+This widget provides the following alerts:
 
-![Screenshot of the device status widgets.](media/concept-traffic-dashboard/device-status.png)
+- **Unhealthy remote network**: An unhealthy remote network has one or more device links disconnected.
+- **Increased external tenants activity**: The number of users accessing external tenants has increased.
+- **Token and device inconsistency**: The original token is used on a different device.
+- **Web content blocked**: Access to the website has been blocked.
+- **Threat Intelligence transactions **: There number of Threat Intelligence transactions in the last 24 hours.
+
+![Screenshot of the alerts widget.](media/concept-traffic-dashboard/snapshot.png)
+<#### Ruthi - need to put an  image here ####>
+
+Select the link next to the alert name to navigate to a related page with additional information.
+
+## Usage profiling
+
+The **Usage profiling** widget displays usage patterns over time per traffic type or per all traffic types. 
+
+- **Total transactions**: Total transactions across all traffic types in the last 24 hours.
+- **Microsoft M365 traffic**: M365 traffic transactions in the last 24 hours.
+- **Internet access traffic**: Internet access traffic transactions in the last 24 hours.
+- **Private access traffic**: Private access traffic transactions in the last 24 hours.
+
+![Screenshot of the usage profiling widget.](media/concept-traffic-dashboard/snapshot.png)
+<#### Ruthi - need to put an image here ####>
+
+## Top used destinations
+
+The top-visited destinations defaults to all types of traffic and sorts by the number of transactions. You can select a different traffic type to narrow down the results or filter by the following options:
+
+- **Transactions**: The destinations with the highest number of transactions, showing the total number of transactions in the last 24 hours. 
+- **Users**: The destinations most used by users, showing the number of distinct users (UPN) accessing the destination in the last 24 hours.
+- **Devices**: The destinations most used by devices, showing the number of distinct device IDs accessing the destination in the last 24 hours.
+- **Threat intelligence transactions**: The most used threat intelligence destinations in the last 24 hours, showing the number of threat intelligence transactions in the last 24 hours.
+- -**Traffic volumes**: The destinations with the highest network traffic consumption, showing the total network consumption in the last 24 hours.
+
+![Screenshot of the top destinations widget with the number of transactions field highlighted.](media/concept-traffic-dashboard/top-destinations.png)
+
+## Top discovered private application segments
+
+Global Secure Access provides visibility into the most commonly used private application segments that are not attributed to enterprise applications. A private application segment is defined as the combination of the destination address, the destination port and the transport protocol.
+
+- **Destination**: The private application segment destination.
+- **Destination port**: The port of the private application segment destination.
+- **Transport protocol**: The transport protocol of the private application segment destination.
+- **Transactions**: The number of transactions for the relevant discovered private application segment in the selected timeframe.
+- **Total discovered private application segments**: The total number of discovered private application segments in the selected timeframe.
+
+Select the **View all private application segments** button to navigate to the **Application discovery** page, where you can check the full list of discovered private application segments.
+
+![Screenshot of the top discovered private application segment widget.](media/concept-traffic-dashboard/snapshot.png)
+<#### Ruthi - need to put an image here ####>
 
 ## Cross-tenant access
 
@@ -66,16 +119,6 @@ Global Secure Access provides visibility into the number of users and devices th
 
 Select the **Configure tenant restrictions** button to navigate to the **Session management** are of Global Secure Access, where you can check the settings of your tenant restrictions.
 
-## Top used destinations
-
-The top-visited destinations defaults to all types of traffic and sorts by the number of transactions. You can select a different traffic type to narrow down the results or filter by the following options:
-
-- **Transactions**: Shows the total number of transactions in the last 24 hours. 
-- **Users**: The number of distinct users (UPN) accessing the destination in the last 24 hours.
-- **Devices**: The number of distinct device IDs accessing the destination in the last 24 hours.
-
-![Screenshot of the top destinations widget with the number of transactions field highlighted.](media/concept-traffic-dashboard/top-destinations.png)
-
 ## Web content filtering
 
 The **Web content filtering** widget displays the top categories of web content that were blocked by the service. These categories can be used to determine what sites or categories of sites you might want to block. 
@@ -85,6 +128,25 @@ The **Web content filtering** widget displays the top categories of web content 
 - **Devices**: The number of distinct device IDs accessing the destination in the last 24 hours.
 
 ![Screenshot of the traffic categories accessed by users and devices.](media/concept-traffic-dashboard/web-content-filtering.png)
+
+
+
+
+
+
+
+
+
+## Device status
+
+The **Device status** widgets display the active and inactive devices that you have deployed.
+
+- **Active devices**: The number of distinct device IDs seen in the last 24 hours and the % change during that time.
+- **Inactive devices**: The number of distinct device IDs that were seen in the last seven days, but not during the last 24 hours. The % change during the last 24 hours is also displayed.
+
+![Screenshot of the device status widgets.](media/concept-traffic-dashboard/device-status.png)
+
+
 
 ## No data available
 
