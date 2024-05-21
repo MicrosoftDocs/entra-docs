@@ -101,6 +101,7 @@ Tenants are set to either Pre-migration or Migration in Progress by default, dep
 ## Known issues and limitations
 - In recent updates we removed the ability to target individual users. Previously targeted users will remain in the policy but we recommend moving them to a targeted group.
 - Registration of FIDO2 security keys may fail for some users if the FIDO2 Authentication method policy is targeted for a group and the overall Authentication methods policy has more than 20 groups configured. We're working on increasing the policy size limit and in the mean time recommend limiting the number of group targets to no more than 20.
+- When using conditional access for Authentication Strength's the number of auth methods required for SSPR registration (combined registration) is ignored. So for example if you have set SSPR registration to require at least 2 methods it will only prompt to register 1 authentication method when using authentication strength's. This is because authentication strength's use an "OR" logic so the combined registration flow is ignored.
 
 ## Next steps
 
