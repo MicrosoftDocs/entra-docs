@@ -67,28 +67,26 @@ A two-gate policy applies in the following circumstances:
 
 * All the following Azure administrator roles are affected:
   * Application Administrator
-  * Application proxy service Administrator
   * Authentication Administrator
   * Billing Administrator
   * Compliance Administrator
-  * Device Administrators
-  * Directory synchronization accounts
-  * Directory writers
+  * Cloud Device Administrator
+  * Directory Synchronization Accounts
+  * Directory Writers
   * Dynamics 365 Administrator
   * Exchange Administrator
-  * Global Administrator or company Administrator
+  * Global Administrator
   * Helpdesk Administrator
   * Intune Administrator
-  * Mailbox Administrator
   * Microsoft Entra Joined Device Local Administrator
   * Partner Tier1 Support
   * Partner Tier2 Support
   * Password Administrator
-  * Power BI service Administrator
+  * Power Platform Administrator
   * Privileged Authentication Administrator
-  * Privileged role Administrator
+  * Privileged Role Administrator
   * Security Administrator
-  * Service support Administrator
+  * Service Support Administrator
   * SharePoint Administrator
   * Skype for Business Administrator
   * Teams Administrator
