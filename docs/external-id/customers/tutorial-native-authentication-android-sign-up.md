@@ -25,7 +25,7 @@ In this tutorial, you learn how to:
 
 > [!div class="checklist"]
 >
-> - Sign up a user by using using email one-time passcode or username (email) and password.
+> - Sign up a user by using email one-time passcode or username (email) and password.
 > - Collect user attributes during sign-up. 
 > - Handle sign-up errors.
 
