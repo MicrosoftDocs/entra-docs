@@ -18,7 +18,7 @@ This article describes how to assign specific users and groups to a traffic forw
 
 To assign a traffic forwarding profile to specific users and groups, you must have:
 
-- A [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator) role in Microsoft Entra ID to view the traffic forwarding profile.
+- A [Global Secure Access Administrator](../identity/role-based-access-control/permissions-reference.md#global-secure-access-administrator) role in Microsoft Entra ID to view the traffic forwarding profile.
 - An [Application Administrator](../identity/role-based-access-control/permissions-reference.md#application-administrator) role to assign the traffic profile to the selected users and groups.
 - The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 - The minimum required Global Secure Access client version is 1.7.376.0. Clients below this version won't receive the traffic forwarding profile when assigned to the user.
@@ -27,15 +27,15 @@ To assign a traffic forwarding profile to specific users and groups, you must ha
 
 If you already enabled a traffic forwarding profile, the traffic profile is assigned to all users by default. If you haven't yet enabled a traffic forwarding profile, when you enable it the traffic is assigned to zero users. This setting lets you roll out the feature in a controlled manner to a specific set of users.
 
-The following screenshot illustrates this distinction. The Microsoft 365 profile is disabled is assigned to zero users and groups. The Private access and Internet access profiles are enabled and are assigned to all users.
+The following screenshot illustrates this distinction. The Microsoft 365 profile is disabled and is assigned to zero users and groups. The Private access and Internet access profiles are enabled and are assigned to all users.
 
-:::image type="content" source="media/how-to-manage-users-groups-assignment/traffic-profile-user-assignment-comparison.png" alt-text="Screenshot of the traffic forwarding page with user assignments highlighted." lightbox="how-to-manage-users-groups-assignment/traffic-profile-user-assignment-comparison-expanded.png":::
+:::image type="content" source="media/how-to-manage-users-groups-assignment/traffic-profile-user-assignment-comparison.png" alt-text="Screenshot of the traffic forwarding page with user assignments highlighted." lightbox="media/how-to-manage-users-groups-assignment/traffic-profile-user-assignment-comparison-expanded.png":::
 
 You can configure the user and group assignments before or after enabling the traffic profile. You must enable the traffic profile to acquire and forward any traffic. For more information, see [About traffic forwarding profiles](concept-traffic-forwarding.md).
 
 ### How to assign users and group to a traffic profile
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator) AND [Application Administrator](../identity/role-based-access-control/permissions-reference.md#application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](../identity/role-based-access-control/permissions-reference.md#global-secure-access-administrator)  AND [Application Administrator](../identity/role-based-access-control/permissions-reference.md#application-administrator).
 
 1. Browse to **Global Secure Access** > **Connect** > **Traffic forwarding**.
 
@@ -48,12 +48,12 @@ You can configure the user and group assignments before or after enabling the tr
     ![Screenshot of the 0 users, 0 groups assigned link.](media/how-to-manage-users-groups-assignment/user-group-assignment-link.png)
 
 1. Select **Add user/group**.
-    - The default list groups users and groups together but you can select either the **Users** or **Groups** tab to view one or the other.
-    - You can also use the Search box to find the user or group directly.
 
     ![Screenshot of the users and groups page with the Add user/group button highlighted.](media/how-to-manage-users-groups-assignment/traffic-profile-add-user-group-button.png)
 
 1. Select the **None selected** link, select the users and/or groups from the list, and select the **Select** button.
+    - The **All** list groups users and groups together. Select either the **Users** or **Groups** tab to narrow the list.
+    - You can also use the Search box to find the user or group directly.
 
     ![Screenshot of the user/group selection process with the None selected link highlighted.](media/how-to-manage-users-groups-assignment/user-group-selection-steps.png)
 
