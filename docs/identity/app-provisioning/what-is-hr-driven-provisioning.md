@@ -33,9 +33,6 @@ You can also use Microsoft Identity Manager to trigger provisioning when a new i
 
 [!INCLUDE [active-directory-hr-provisioning.md](~/includes/entra-hr-provisioning.md)]
 
-## API-driven provisioning from any HR system
-With [API-driven provisioning](inbound-provisioning-api-concepts.md), you can bring identities from *any* system of record into Microsoft Entra ID. You can use *any* automation tool of your choice to retrieve workforce data from the system of record and ingest it into Microsoft Entra ID. Your IT admin has full control on how the data is processed and transformed with attribute mappings.
-
 ## Manage Joiner-Mover-Leaver lifecycle workflows
 You can extend your HR-driven provisioning process to further automate business processes and security controls associated with new hires, employment changes and termination. With [Microsoft Entra ID Governance Lifecycle Workflows](~/id-governance/what-are-lifecycle-workflows.md), you can configure Joiner-Mover-Leaver workflows such as:  
 

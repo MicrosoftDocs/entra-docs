@@ -12,7 +12,7 @@ ms.author: jfields
 ms.reviewer: arvinh
 ---
 
-# Plan cloud HR application to Microsoft Entra user provisioning
+# Cloud HR application to Microsoft Entra user provisioning
 
 Historically, IT staff has relied on manual methods to create, update, and delete employees. They've used methods such as uploading CSV files or custom scripts to sync employee data. These provisioning processes are error prone, insecure, and hard to manage.
 
@@ -30,6 +30,9 @@ The following video provides guidance on planning your HR-driven provisioning in
 
 > [!NOTE]
 > This deployment plan shows you how to deploy your cloud HR app with Microsoft Entra user provisioning. For information on how to deploy automatic user provisioning to software as a service (SaaS) apps, see [Plan an automatic user provisioning deployment](./plan-auto-user-provisioning.md).
+
+## API-driven provisioning from any HR system
+With [API-driven provisioning](inbound-provisioning-api-concepts.md), you can bring identities from *any* system of record into Microsoft Entra ID. You can use *any* automation tool of your choice to retrieve workforce data from the system of record and ingest it into Microsoft Entra ID. Your IT admin has full control on how the data is processed and transformed with attribute mappings.
 
 ## Enabled HR scenarios
 
