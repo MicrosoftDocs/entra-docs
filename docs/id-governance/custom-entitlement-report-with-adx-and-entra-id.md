@@ -104,7 +104,7 @@ We have also included a hard-coded **snapshot date** below which identifies the 
 This script will export selected properties from the Entra user object to a JSON file. We will import this data into Azure Data Explorer in Step 3. 
 
               
-```json
+```powershell
     function Export-EntraUsersToJson { 
 
     ///Define a hash table for property mappings 
@@ -180,7 +180,7 @@ This script will export selected properties from the Entra user object to a JSON
 ### Get Group data 
 
 Generate a JSON file with group names and IDs that will be used to create custom views in ADX. The sample will include all groups, but additional filtering can be included if needed. If you are filtering to only include certain groups, you may want to include logic in your script to check for nested groups.  
-```json
+```powershell
         /// Get all groups and select Id and DisplayName 
 
         $groups = Get-MgGroup -All | Select-Object Id,DisplayName 
@@ -192,7 +192,7 @@ Generate a JSON file with group names and IDs that will be used to create custom
 ### Get Group Membership data 
 
 Generate a JSON file with group membership which will be used to create custom views in ADX. 
-```json
+```powershell
         /// Retrieve all groups from Microsoft Entra (Azure AD) 
 
         $groups = Get-MgGroup -All 
@@ -237,7 +237,7 @@ Generate a JSON file with group membership which will be used to create custom v
 ### Get Application and Service Principal data 
 
 Generates JSON file with all applications and the corresponding service principals in the tenant. We will import this data into ADX in Step 3 which will allow us to generate custom reports related to applications based on this data. 
-```json 
+```powershell
         /// Fetch applications and their corresponding service principals, then export to JSON 
 
         Get-MgApplication -All | ForEach-Object { 
@@ -261,7 +261,7 @@ Generates JSON file with all applications and the corresponding service principa
 ### Get AppRole data 
 
 Generate a JSON file of all appRoles for enterprise apps in Entra. Once imported to ADX, we will utilize this data to generate reports involving app role assignments for users. 
-```json 
+```powershell
         /// Get a list of all applications, handle pagination manually if necessary 
 
         $apps = Get-MgApplication -All 
@@ -309,7 +309,7 @@ Generate a JSON file of all appRoles for enterprise apps in Entra. Once imported
 ### Get AppRole Assignment data 
 
 Generate a JSON file of all app role assignments in the tenant. 
-```json 
+```powershell
         $users = Get-MgUser -All 
 
         $result = @() 
