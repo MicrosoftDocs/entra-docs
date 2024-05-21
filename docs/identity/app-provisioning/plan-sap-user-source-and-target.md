@@ -19,7 +19,7 @@ This tutorial shows how you can use Microsoft Entra features to manage identitie
 
 * Your organization has a Microsoft Entra tenant in the commercial cloud with a license for at least Microsoft Entra ID P1 in that tenant. (Some steps also illustrate using Microsoft Entra ID Governance features.)
 * You're an administrator of that tenant.
-* Your organization has a system-of-record source of workers, which is SAP SuccessFactors.
+* Your organization has a system of record source of workers, which is SAP SuccessFactors.
 * Your organization has SAP ERP Central Component (ECC), SAP S/4HANA, or other SAP applications, and optionally has other non-SAP applications.
 * You're using SAP Cloud Identity Services for provisioning and single sign-on (SSO) to any SAP applications other than SAP ECC.
 
@@ -96,9 +96,9 @@ In this section, you determine the organizational policies you plan to use to de
 
 ### Decide on the provisioning and authentication topology
 
-Now that you've determined the applications to integrate with Microsoft Entra for user provisioning and SSO, decide on the data flow for how user identities and their attributes are provided to those applications, based on data originating from authoritative system-of-record sources.
+Now that you've determined the applications to integrate with Microsoft Entra for user provisioning and SSO, decide on the data flow for how user identities and their attributes are provided to those applications, based on data originating from authoritative system of record sources.
 
-1. **Select the authoritative sources for each identity and their attributes.** This tutorial assumes SuccessFactors is the authoritative system-of-record source for the users who need access to SAP applications. Configuring cloud HR-driven user provisioning from SuccessFactors to Microsoft Entra ID requires planning that covers different aspects. These factors include determining the matching ID and defining attribute mappings, attribute transformation, and scoping filters.
+1. **Select the authoritative sources for each identity and their attributes.** This tutorial assumes SuccessFactors is the authoritative system of record source for the users who need access to SAP applications. Configuring cloud HR-driven user provisioning from SuccessFactors to Microsoft Entra ID requires planning that covers different aspects. These factors include determining the matching ID and defining attribute mappings, attribute transformation, and scoping filters.
 
    For comprehensive guidelines on these subjects, refer to the [cloud HR deployment plan](~/identity/app-provisioning/plan-cloud-hr-provision.md). To learn about the supported entities, processing details, and how to customize the integration for different HR scenarios, refer to the [SAP SuccessFactors integration reference](~/identity/app-provisioning/sap-successfactors-integration-reference.md). You might also have other authoritative sources for other identities, and some identities, such as break-glass accounts or other IT administrators, that have Microsoft Entra ID as their authoritative source.
 1. **Decide if users exist or need to be provisioned into Windows Server AD in addition to Microsoft Entra ID.** You might already have existing users in Windows Server AD, which correspond to your workers in your authoritative HR source. Or perhaps you configured SAP ECC or other applications to rely on Windows Server via Lightweight Directory Access Protocol (LDAP) or Kerberos. In these situations, you provision users into Windows Server AD. These users are then synchronized into Microsoft Entra ID.
@@ -117,9 +117,9 @@ Before you begin the process of provisioning business-critical application acces
 
 1. **Check that Microsoft Entra ID is already sending its audit log, and optionally other logs, to Azure Monitor.** Azure Monitor is optional but useful for governing access to apps because Microsoft Entra stores audit events only for up to 30 days in its audit log. You can keep the audit data for longer than this default retention period. For more information, see [How long does Microsoft Entra ID store reporting data?](~/identity/monitoring-health/reference-reports-data-retention.md).
 
-   You can also use Azure Monitor workbooks and custom queries and reports on historical audit data. You can check the Microsoft Entra configuration to see if it's using Azure Monitor, in **Microsoft Entra ID** in the Microsoft Entra admin center, by selecting **Workbooks**. If this integration isn't configured and you have an Azure subscription and are at least a security administrator, you can [configure Microsoft Entra ID to use Azure Monitor](~/id-governance/entitlement-management-logs-and-reporting.md).
+   You can also use Azure Monitor workbooks and custom queries and reports on historical audit data. You can check the Microsoft Entra configuration to see if it's using Azure Monitor, in **Microsoft Entra ID** in the Microsoft Entra admin center, by selecting **Workbooks**. If this integration isn't configured and you have an Azure subscription and are at least a Security Administrator, you can [configure Microsoft Entra ID to use Azure Monitor](~/id-governance/entitlement-management-logs-and-reporting.md).
 
-1. **Make sure only authorized users are in the highly privileged administrative roles in your Microsoft Entra tenant.** Administrators who are at least an identity governance administrator, user administrator, application administrator, cloud application administrator, or privileged role administrator can make changes to users and their application role assignments. If you haven't recently reviewed the memberships of those roles, you need a user who's at least a privileged role administrator to ensure that [access review of these directory roles](~/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md) has started.
+1. **Make sure only authorized users are in the highly privileged administrative roles in your Microsoft Entra tenant.** Administrators who are at least an Identity Governance Administrator, User Administrator, Application Administrator, Cloud Application Administrator, or Privileged Role Administrator can make changes to users and their application role assignments. If you haven't recently reviewed the memberships of those roles, you need a user who's at least a Privileged Role Administrator to ensure that [access review of these directory roles](~/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md) has started.
 
    You should also review the users in Azure roles in subscriptions that hold the Azure Monitor, Logic Apps, and other resources needed for the operation of your Microsoft Entra configuration.
 
@@ -153,7 +153,7 @@ If you aren't using SAP ECC and are only provisioning to SAP cloud services, ski
 
 1. **Confirm that the BAPIs needed for provisioning are published.** Expose the necessary APIs in SAP ECC NetWeaver 7.51 to create, update, and delete users. The [Connectors for Microsoft Identity Manager 2016](https://www.microsoft.com/download/details.aspx?id=51495) file named `Deploying SAP NetWeaver AS ABAP 7.pdf` walks through how you can expose the necessary APIs.
 
-1. **Record the schema available for the existing SAP users.** Perhaps you have existing users in SAP ECC that correspond to the workers in your authoritative system-of-record source. But if those users weren't created by Microsoft Entra ID, you need to have a field populated on those users that can be used as the unique identifier for the worker. This field is required to be present with a unique value on each user that corresponds to a worker. Then Microsoft Entra provisioning can determine which users already exist for workers and avoid creating duplicate users.
+1. **Record the schema available for the existing SAP users.** Perhaps you have existing users in SAP ECC that correspond to the workers in your authoritative system of record source. But if those users weren't created by Microsoft Entra ID, you need to have a field populated on those users that can be used as the unique identifier for the worker. This field is required to be present with a unique value on each user that corresponds to a worker. Then Microsoft Entra provisioning can determine which users already exist for workers and avoid creating duplicate users.
 
    For example, you might be using the SAP BAPIs `BAPI_USER_GETLIST` and `BAPI_USER_GETDETAIL`. One of the fields returned by `BAPI_USER_GETDETAIL` should be chosen as the unique identifier to correlate to the source. If you don't have a field that corresponds to a unique identifier from the source, you might need to use a different unique identifier. For example, you might need to use the SAP field `address.e_mail` if its values are unique on each SAP user and also present on the Microsoft Entra ID users.
 
@@ -161,7 +161,7 @@ If you aren't using SAP ECC and are only provisioning to SAP cloud services, ski
 
 ### Document the end-to-end attribute flow and transformations
 
-You've identified the schema requirements of your applications and the available worker fields from your system-of-record sources. Now document the paths for how those fields flow through Microsoft Entra and, optionally, Windows Server AD and SAP Cloud Identity Services, to the applications.
+You've identified the schema requirements of your applications and the available worker fields from your system of record sources. Now document the paths for how those fields flow through Microsoft Entra and, optionally, Windows Server AD and SAP Cloud Identity Services, to the applications.
 
 In some cases, the attributes required by the applications don't correspond directly to the data values available from the source. Then it's necessary to transform the values before those values can be supplied to the target application.
 
@@ -169,7 +169,7 @@ There are several processing stages where a transformation can be applied.
 
 | Stage | Considerations | Links for more information |
 | ------- | --------------------- | --- |
-| In the system of record itself | Microsoft Entra identity lifecycle management might not be the only solution reading from a system-of-record source. Performing the data normalization before exposing data to Microsoft Entra might also benefit other solutions that need similar data. | See the system-of-record documentation |
+| In the system of record itself | Microsoft Entra identity lifecycle management might not be the only solution reading from a system of record source. Performing the data normalization before exposing data to Microsoft Entra might also benefit other solutions that need similar data. | See the system of record documentation |
 | In the inbound provisioning flow from the system of record to Microsoft Entra or Windows Server AD | You can write a custom value to a Windows Server AD user attribute, or a Microsoft Entra ID user attribute, based on one or more SuccessFactors attributes.| [Expression with functions for customization](~/identity/app-provisioning/functions-for-customizing-application-data.md)|
 | When you synchronize from Windows Server AD to Microsoft Entra ID | If you already have users in Windows Server AD, you might be transforming attributes of those users as they're brought into Microsoft Entra ID. | [How to customize a synchronization rule in Microsoft Entra Connect](~/identity/hybrid/connect/how-to-connect-create-custom-sync-rule.md) and [Use the expression builder with Microsoft Entra Cloud Sync](~/identity/hybrid/cloud-sync/how-to-expression-builder.md)|
 | In the outbound provisioning flow from Microsoft Entra ID to SAP Cloud Identity Services, SAP ECC, or other non-SAP applications | When you configure provisioning to an application, one of the types of attribute mappings that you can specify is an expression mapping one or more of the attributes in Microsoft Entra ID to an attribute in the target.| [Expression with functions for customization](~/identity/app-provisioning/functions-for-customizing-application-data.md)|
@@ -211,7 +211,7 @@ If you don't use Windows Server AD, skip to the next section.
 1. **Extend the Windows Server AD schema, if needed.** For each user attribute required by Microsoft Entra and your applications that isn't already part of the Windows Server AD user schema, you need to select a built-in Windows Server AD user extension attribute. Or you need to extend the Windows Server AD schema to have a place for Windows Server AD to hold that attribute. This requirement also includes attributes used for automation, such as a worker's join date and leave date.
 
    For example, some organizations might use the attributes `extensionAttribute1` and `extensionAttribute2` to hold these properties. If you choose to use the built-in extension attributes, ensure that those attributes aren't already in use by any other LDAP-based applications of Windows Server AD, or by applications integrated with Microsoft Entra ID. Other organizations create new Windows Server AD attributes with names specific to their requirements, such as `contosoWorkerId`.
-1. **Confirm that any existing Windows Server AD users have necessary attributes for correlation with the HR source.** Perhaps you have existing users in Windows Server AD that correspond to workers. Those users must have an attribute whose value is unique and corresponds to a property in the authoritative system-of-record source for those workers.
+1. **Confirm that any existing Windows Server AD users have necessary attributes for correlation with the HR source.** Perhaps you have existing users in Windows Server AD that correspond to workers. Those users must have an attribute whose value is unique and corresponds to a property in the authoritative system of record source for those workers.
 
    For example, some organizations use an attribute such as `employeeId` in Windows Server AD. If there are users who don't have that attribute, they might not be considered during the subsequent integration. Then automated provisioning results in duplicate users created in Windows Server AD. When a user leaves, the original users aren't updated or removed. You can use:
 
@@ -234,18 +234,18 @@ If you're using Windows Server AD, you've already extended the Microsoft Entra I
 If you don't use Windows Server AD, follow the steps in this section to extend the Microsoft Entra ID user schema.
 
 1. **Create an application to hold the Microsoft Entra schema extensions.** For tenants that aren't synchronized from Windows Server AD, schema extensions must be part of a new application. If you haven't already done so, create an application to represent schema extensions. This application won't have any users assigned to it.
-1. **Identify the attribute for correlation with the system of record.** Perhaps you have existing users in Microsoft Entra ID that correspond to workers. Then those users must have an attribute whose value is unique and corresponds to a property in the authoritative system-of-record source for those workers.
+1. **Identify the attribute for correlation with the system of record.** Perhaps you have existing users in Microsoft Entra ID that correspond to workers. Then those users must have an attribute whose value is unique and corresponds to a property in the authoritative system of record source for those workers.
 
    For example, some organizations extend their Microsoft Entra ID user schema to have a new attribute for this purpose. If you haven't already created an attribute for that purpose, include that as an attribute in the next step.
 1. **Extend the Microsoft Entra ID user schema for new attributes.** Create directory schema extensions for each attribute required by the SAP applications that aren't already part of the Microsoft Entra ID user schema. These attributes provide a way for Microsoft Entra to store more data about users. You can extend the schema by [creating an extension attribute](user-provisioning-sync-attributes-for-mapping.md#create-an-extension-attribute-in-a-tenant-with-cloud-only-users).
 
 ### Ensure that users in Microsoft Entra ID can be correlated with worker records in the HR source
 
-Perhaps you have existing users in Microsoft Entra ID that correspond to workers. Then those users must have an attribute whose value is unique and corresponds to a property in the authoritative system-of-record source for those workers.
+Perhaps you have existing users in Microsoft Entra ID that correspond to workers. Then those users must have an attribute whose value is unique and corresponds to a property in the authoritative system of record source for those workers.
 
 For example, some organizations might extend their Microsoft Entra ID user schema to have a new attribute for this purpose. If there are users who don't have that attribute, they might not be considered during the subsequent integration. Then automated provisioning results in duplicate users being created in Windows Server AD. When a user leaves, the original users aren't updated or removed.
 
-1. **Retrieve the users from Microsoft Entra ID. Ensure that any user already in Microsoft Entra ID that represents a worker has an attribute so that it can be correlated.** Typically, a few users in Microsoft Entra ID don't correspond to workers in your authoritative system-of-record source. These users include the break-glass account for emergency administrative access, accounts for IT vendors, and business guests. The rest of the users must already have an attribute with a unique value to be used for correlation.
+1. **Retrieve the users from Microsoft Entra ID. Ensure that any user already in Microsoft Entra ID that represents a worker has an attribute so that it can be correlated.** Typically, a few users in Microsoft Entra ID don't correspond to workers in your authoritative system of record source. These users include the break-glass account for emergency administrative access, accounts for IT vendors, and business guests. The rest of the users must already have an attribute with a unique value to be used for correlation.
 
    If some users aren't correlated, they might be missed for updates and deprovisioning. Microsoft Entra might even create duplicate users. For example, if the requirement is that all member users (apart from the break-glass account) have an `employeeid` attribute, you could identify those users with a PowerShell command pipeline similar to the following script:
 
@@ -257,7 +257,7 @@ For example, some organizations might extend their Microsoft Entra ID user schem
 
 If you identified a need for a Microsoft Entra ID governance capability, such as Microsoft Entra entitlement management or Microsoft Entra Lifecycle Workflows, deploy those features before you bring in workers as users into Microsoft Entra ID.
 
-1. **Upload the terms-of-use document, if needed.** If you require users to accept terms of use before they can access an application, create and [upload the terms-of-use document](~/identity/conditional-access/terms-of-use.md) so that it can be included in a conditional access policy.
+1. **Upload the terms of use document, if needed.** If you require users to accept terms of use before they can access an application, create and [upload the terms of use document](~/identity/conditional-access/terms-of-use.md) so that it can be included in a conditional access policy.
 
 1. **Create a catalog, if needed.** By default, when an administrator first interacts with Microsoft Entra entitlement management, a default catalog is automatically created. However, access packages for governed applications should be in a designated catalog. To create a catalog in the Microsoft Entra admin center, follow the steps in the section [Create a catalog](../../id-governance/entitlement-management-catalog-create.md#create-a-catalog).
 
@@ -304,7 +304,7 @@ This section illustrates how to integrate Microsoft Entra ID with SAP SuccessFac
    write-output "member users missing employeeID, givenname or surname attributes: $u3c"
    ```
 
-1. **Ensure that no unexpected uncorrelated accounts are in Microsoft Entra ID.** Typically, a few users in Microsoft Entra ID don't correspond to workers in your authoritative system-of-record source. They include the break-glass account for emergency administrative access, accounts for IT vendors, and business guests.
+1. **Ensure that no unexpected uncorrelated accounts are in Microsoft Entra ID.** Typically, a few users in Microsoft Entra ID don't correspond to workers in your authoritative system of record source. They include the break-glass account for emergency administrative access, accounts for IT vendors, and business guests.
 
    However, they might also be orphan accounts in Microsoft Entra that resemble those accounts of current workers but that weren't synchronized with a worker record. Orphan accounts can result from former employees who are no longer in the HR system. They can also come from matching errors. Or they can arise from data quality issues, such as a person who changed their name or was rehired.
 
@@ -322,9 +322,9 @@ Alternatively, you can configure SAP Cloud Identity Services to read from Micros
 
 If you aren't using SAP Cloud Identity Services, skip to the next section.
 
-1. **Ensure that you have a** [SAP Cloud Identity Services tenant](https://www.sap.com/products/cloud-platform.html) **with a user account in SAP Cloud Identity Services with admin permissions.**
+1. **Ensure that you have a** [SAP Cloud Identity Services tenant](https://www.sap.com/products/cloud-platform.html) **with a user account in SAP Cloud Identity Services with Admin permissions.**
 
-1. **Set up SAP Cloud Identity Services for provisioning.** Sign in to your SAP Cloud Identity Services admin console and follow the steps in the section [Set up SAP Cloud Identity Services for provisioning](../saas-apps/sap-cloud-platform-identity-authentication-provisioning-tutorial.md#set-up-sap-cloud-identity-services-for-provisioning).
+1. **Set up SAP Cloud Identity Services for provisioning.** Sign in to your SAP Cloud Identity Services Admin Console and follow the steps in the section [Set up SAP Cloud Identity Services for provisioning](../saas-apps/sap-cloud-platform-identity-authentication-provisioning-tutorial.md#set-up-sap-cloud-identity-services-for-provisioning).
 
 1. **Add SAP Cloud Identity Services from the gallery and configure automatic user provisioning to SAP Cloud Identity Services.** Follow the steps in the sections [Add SAP Cloud Identity Services from the gallery](../saas-apps/sap-cloud-platform-identity-authentication-provisioning-tutorial.md#add-sap-cloud-identity-services-from-the-gallery) and [Configure automatic user provisioning to SAP Cloud Identity Services](../saas-apps/sap-cloud-platform-identity-authentication-provisioning-tutorial.md#configure-automatic-user-provisioning-to-sap-cloud-identity-services).
 
