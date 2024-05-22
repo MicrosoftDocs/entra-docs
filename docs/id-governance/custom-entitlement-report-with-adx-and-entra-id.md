@@ -179,23 +179,14 @@ Generate a JSON file with group membership which will be used to create custom v
 Generates JSON file with all applications and the corresponding service principals in the tenant. We will import this data into ADX in Step 3 which will allow us to generate custom reports related to applications based on this data. 
 ```powershell
         # Fetch applications and their corresponding service principals, then export to JSON 
-
         Get-MgApplication -All | ForEach-Object { 
-
             $app = $_ 
-
             $sp = Get-MgServicePrincipal -Filter "appId eq '$($app.AppId)'" 
-
             [pscustomobject]@{ 
-
                 Name               = $app.DisplayName 
-
                 ApplicationId      = $app.AppId 
-
                 ServicePrincipalId = $sp.Id 
-
             } 
-
         } | ConvertTo-Json -Depth 10 | Set-Content "Applications.json" 
 ``` 
 ### Get AppRole data 
@@ -274,7 +265,7 @@ This report provides a view of who had what access and when to the target app an
 
 This query targets a specific application within Entra AD and analyzes the role assignments as of a certain date. The query retrieves both direct and group-based role assignments, merging this data with user details from the EntraUsers table and role information from the AppRoles table.  
 
-```
+```kusto
 /// Define constants 
 let targetServicePrincipalId = "<your service principal-id>"; // Target Service Principal ID 
 let targetSnapshotDate = datetime("2024-01-13"); // Target Snapshot Date for the data 
@@ -320,7 +311,7 @@ This report provides a view of who had what access to the target app between two
 
 This query targets a specific application within Entra ID and analyzes the role assignments between two dates. The query retrieves direct role assignments from the AppRoleAssignments table and merges this data with user details from the EntraUsers table and role information from the AppRoles table. 
 
-```
+```kusto
 // Set the date range and service principal ID for the query 
 let startDate = datetime('2024-01-01'); 
 let endDate = datetime('2024-03-14'); 
@@ -356,7 +347,7 @@ This report provides a view of which users were given an app role assignment to 
 This query targets a specific application within Entra ID and changes to the role assignments between a start and end date.  
 
  
-```
+```kusto
 let earlierDate = datetime("2024-03-01"); // Update this to your specific earlier date 
 AppRoleAssignments 
 | where SnapshotDate < datetime("2024-03-14") and ResourceId == "<your service principal-id>" 
@@ -378,7 +369,7 @@ AppRoleAssignments
 
 This report illustrates how you can combine data from two separate systems to create custom reports in ADX. It aggregates data about users, their roles, and other attributes from two systems into a unified format for analysis or reporting. 
 
-```
+```kusto
 // Define the date range and service principal ID for the query 
 
 let startDate = datetime("2023-06-01"); 
