@@ -15,6 +15,9 @@ ms.topic: sample
 
 # Microsoft identity platform code samples
 
+ [!IMPORTANT] 
+ > This page is currently undergoing maintenance and you may experience some broken links. We are in the process of archiving older code samples and updating with new ones. Please check back later for the updated samples.
+
 These code samples are built and maintained by Microsoft to demonstrate usage of our authentication libraries with the Microsoft identity platform. Common authentication and authorization scenarios are implemented in several [application types](v2-app-types.md), development languages, and frameworks.
 
 - Sign in users to web applications and provide authorized access to protected web APIs.
