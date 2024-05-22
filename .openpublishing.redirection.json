@@ -37,7 +37,17 @@
     },
     {
       "source_path_from_root": "/docs/fundamentals/whats-new-sovereign-clouds-archive.md",
-      "redirect_url": "/entra/fundamentals/whats-new-sovereign-clouds",
+      "redirect_url": "/entra/fundamentals/whats-new",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/fundamentals/whats-new-sovereign-clouds.md",
+      "redirect_url": "/entra/fundamentals/whats-new",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/fundamentals/what-is-deprecated.md",
+      "redirect_url": "/entra/fundamentals/whats-new",
       "redirect_document_id": false
     },
     {
@@ -118,6 +128,11 @@
     {
       "source_path_from_root": "/docs/identity/saas-apps/axiad-cloud-tutorial.md",
       "redirect_url": "/entra/identity/saas-apps/axiad-cloud-connector-tutorial",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/cisco-anyconnect.md",
+      "redirect_url": "/entra/identity/saas-apps/cisco-secure-firewall-secure-client",
       "redirect_document_id": false
     },
     {
@@ -221,6 +236,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity/app-proxy/application-proxy-register-connector-powershell.md",
+      "redirect_url": "/entra/global-secure-access/how-to-register-connector-powershell",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity/app-provisioning/application-provisioning-config-problem.md",
       "redirect_url": "/entra/identity",
       "redirect_document_id": false
@@ -268,6 +288,11 @@
     {
       "source_path_from_root": "/docs/identity/app-proxy/application-proxy-page-appearance-broken-problem.md",
       "redirect_url": "/entra/identity/app-proxy/application-proxy-troubleshoot",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/devices/enroll-macos-admin.md",
+      "redirect_url": "/mem/intune/configuration/platform-sso-macos",
       "redirect_document_id": false
     },
     {
@@ -319,6 +344,11 @@
       "source_path_from_root": "/docs/external-id/customers/tutorial-browserless-app-dotnet-sign-in-build-app.md",
       "redirect_url": "/entra/external-id/customers/samples-ciam-all",
       "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/conditional-access/location-condition.md",
+      "redirect_url": "/entra/identity/conditional-access/concept-assignment-network",
+      "redirect_document_id": true
     },
     {
       "source_path_from_root": "/docs/identity/conditional-access/howto-conditional-access-apis.md",
@@ -576,7 +606,7 @@
       "redirect_url": "/entra/external-id/customers/how-to-create-external-tenant-portal",
       "redirect_document_id": false
     },
-    {            
+    {
       "source_path_from_root": "/docs/external-id/customers/microsoft-graph-operations.md",
       "redirect_url": "/entra/external-id/customers/concept-supported-features-customers",
       "redirect_document_id": false

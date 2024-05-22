@@ -70,7 +70,7 @@ The first time your organization uses these cmdlets for this scenario, you need 
    $msg = Connect-MgGraph -ContextScope Process -Scopes "User.ReadWrite.All,Application.ReadWrite.All,AppRoleAssignment.ReadWrite.All,EntitlementManagement.ReadWrite.All"
    ```
 
-1. If this is the first time you use this command, you might need to consent to allow the Microsoft Graph Command Line tools to have these permissions.
+1. If this is the first time you have used this command, you may need to consent to allow the Microsoft Graph Command Line tools to have these permissions.
 
 ## Create a catalog in Microsoft Entra entitlement management
 
@@ -173,6 +173,7 @@ Once the catalog is created, add the application [as a resource in that catalog]
 
 ## Create the access package for the application
 
+
 Next you'll use PowerShell to [create an access package in a catalog](entitlement-management-access-package-create.md#create-an-access-package-by-using-microsoft-powershell)  that includes the application's role.
 
 1. Specify the name and description of the access package.
@@ -184,6 +185,7 @@ Next you'll use PowerShell to [create an access package in a catalog](entitlemen
    ```
 
 1. Check that the access package doesn't already exist.
+
 
    ```powershell
    foreach ($a in $catalog.AccessPackages) { if ($a.DisplayName -eq $accessPackageName) { throw "access package $accessPackageName already exists" } }
@@ -463,7 +465,7 @@ For more examples, see [Create an assignment policy through PowerShell](entitlem
    ```powershell
    $policy3Name = "example policy"
    $policy3Description = "example of a policy for users to request assignment"
-   $policy3ApproverSingleUserId = "69971aca-3aed-4ab1-aaec-d617b7dbb27b"
+   $policy3ApproverSingleUserId = "1aaaaaa1-2bb2-3cc3-4dd4-5eeeeeeeeee5"
    ```
 
 1. Create the policy.

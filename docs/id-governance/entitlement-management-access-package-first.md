@@ -48,8 +48,6 @@ For more information, see [License requirements](entitlement-management-overview
 
 A resource directory has one or more resources to share. In this step, you create a group named **Marketing resources** in the Woodgrove Bank directory that is the target resource for entitlement management. You also set up an internal requestor.
 
-**Prerequisite role:** Global administrator or Identity Governance Administrator
-
 ![Diagram that shows the users and groups for this tutorial.](./media/entitlement-management-access-package-first/elm-users-groups.png)
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
@@ -60,7 +58,7 @@ A resource directory has one or more resources to share. In this step, you creat
 
     | Name | Directory role |
     | --- | --- |
-    | **Admin1** | Global administrator, or Identity Governance Administrator. This user can be the user you're currently signed in. |
+    | **Admin1** | At least an Identity Governance Administrator. This user can be the user you're currently signed in. |
     | **Requestor1** | User |
 
 4. [Create a Microsoft Entra security group](~/fundamentals/how-to-manage-groups.yml) named **Marketing resources** with a membership type of **Assigned**. This group is the target resource for entitlement management. The group should be empty of members to start.
@@ -70,12 +68,11 @@ A resource directory has one or more resources to share. In this step, you creat
 
 An *access package* is a bundle of resources that a team or project needs and is governed with policies. Access packages are defined in containers called *catalogs*. In this step, you create a **Marketing Campaign** access package in the **General** catalog.
 
-**Prerequisite role:** Global Administrator, Identity Governance Administrator, Catalog owner, or Access package manager
-
 ![Diagram that describes the relationship between the access package elements.](./media/entitlement-management-access-package-first/elm-access-package.png)
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
-
+    > [!TIP]
+    > Other least privilege roles that can complete this task include the Catalog owner and the Access package manager.
 1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
 
 1. On the **Access packages** page open an access package.
@@ -199,12 +196,11 @@ In this step, you perform the steps as the **internal requestor** and request ac
 
 In this step, you confirm that the **internal requestor** was assigned the access package and that they're now a member of the **Marketing resources** group.
 
-**Prerequisite role:** Global Administrator, Identity Governance Administrator, Catalog owner, or Access package manager
-
 1. Sign out of the My Access portal.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as **Admin1**.
-
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as **Admin1**, which is at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
+    > [!TIP]
+    > Other least privilege roles that can complete this task include the Catalog owner and Access package manager.
 1. Browse to **Identity governance** > **Entitlement management** > **Access packages**.
 
 1. Find and select **Marketing Campaign** access package.
@@ -231,9 +227,7 @@ In this step, you confirm that the **internal requestor** was assigned the acces
 
 In this step, you remove the changes you made and delete the **Marketing Campaign** access package.
 
-**Prerequisite role:**  Global Administrator or Identity Governance Administrator
-
-1. In the Microsoft Entra admin center **Identity Governance**.
+1. In the Microsoft Entra admin center as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) select **Identity Governance**.
 
 1. Open the **Marketing Campaign** access package.
 

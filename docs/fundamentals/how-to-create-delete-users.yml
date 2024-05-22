@@ -7,7 +7,7 @@ metadata:
   ms.author: sarahlipsey
   manager: amycolannino
   ms.reviewer: adelle.dimitui
-  ms.date: 02/07/2024
+  ms.date: 04/22/2024
   ms.service: entra
   ms.subservice: fundamentals
   ms.topic: how-to
@@ -21,13 +21,42 @@ title: |
 introduction: |
   Microsoft Entra ID allows you to create several types of users in your tenant, which provides greater flexibility in how you manage your organization's users.
 
-  This article explains how to create a new user, invite an external guest, and delete a user in your tenant.
+  This article explains how to create a new user, invite an external guest, and delete a user in your workforce tenant. It also includes information about creating users in an external tenant for [Microsoft Entra External ID](~/external-id/customers/overview-customers-ciam.md) scenarios.
 
   [!INCLUDE [GDPR-related guidance](~/../azure-docs-pr/includes/gdpr-hybrid-note.md)]
 
+  ## Types of users
+
+  Before you create or invite a new user, take some time to review the types of users, their authentication methods, and their access within your Microsoft Entra workforce tenant. For example, do you need to create an internal guest, an internal user, or an external guest? Does your new user need guest or member privileges? 
+
+  ### Users in workforce tenants
+
+  A Microsoft Entra workforce tenant has the following user types:
+
+  - **Internal member**: These users are most likely full-time employees in your organization.
+  - **Internal guest**: These users have an account in your tenant, but have guest-level privileges. It's possible they were created within your tenant prior to the availability of B2B collaboration.
+  - **External member**: These users authenticate using an external account, but have member access to your tenant. These types of users are common in [multitenant organizations](../identity/multi-tenant-organizations/overview.md#what-is-the-multitenant-organization-scenario).
+  - **External guest**: These users are true guests of your tenant who authenticate using an external method and who have guest-level privileges.
+
+  For more information abut the differences between internal and external guests and members, see [B2B collaboration properties](~/external-id/user-properties.md).
+
+  Authentication methods vary based on the type of user you create. Internal guests and members have credentials in your Microsoft Entra tenant that can be managed by administrators. These users can also reset their own password. External members authenticate to their home Microsoft Entra tenant and your Microsoft Entra tenant authenticates the user through a federated sign-in with the external member's Microsoft Entra tenant. If external members forget their password, the administrator in their Microsoft Entra tenant can reset their password. External guests set up their own password using the link they receive in email when their account is created.
+
+  Reviewing the default user permissions may also help you determine the type of user you need to create. For more information, see [Set default user permissions](users-default-permissions.md).
+
+  ### Users in external tenants
+
+  A Microsoft Entra tenant in an *external* configuration is used exclusively for [Microsoft Entra External ID](~/external-id/customers/overview-customers-ciam.md) scenarios. An external tenant can include the following user types:
+
+  - **Internal user**: These users authenticate internally, and are typically admins with assigned [Microsoft Entra roles](~/identity/role-based-access-control/permissions-reference.md) in your external tenant.
+  - **External user**: These users are consumers and business customers of the apps registered in your external tenant. They have a local account with [default user privileges](~/external-id/customers/reference-user-permissions.md), but authenticate externally. See how to [create a new external user](#create-a-new-external-user).
+  - **External guest**:  These users sign in with their own external credentials and are typically admins with assigned [Microsoft Entra roles](~/identity/role-based-access-control/permissions-reference.md) in your external tenant.
+
+  For more information, see [Default user permissions](~/external-id/customers/reference-user-permissions.md) for external tenants.
+
 prerequisites:
   summary: |
-    The required role of least privilege varies based on the type of user you're adding and if you need to assign Microsoft Entra roles at the same time. **Global Administrator** can create users and assign roles, but whenever possible you should use the least privileged role.
+    The required role of least privilege varies based on the type of user you're adding and if you need to assign Microsoft Entra roles at the same time. Whenever possible you should use the least privileged role.
 
     | Task | Role |
     | -- | -- |
@@ -36,25 +65,6 @@ prerequisites:
     | Assign Microsoft Entra roles | Privileged Role Administrator |
 
 procedureSection:
-  - title: |
-      Types of users
-    summary: |
-      Before you create or invite a new user, take some time to review the types of users, their authentication methods, and their access within the Microsoft Entra tenant. For example, do you need to create an internal guest, an internal user, or an external guest? Does your new user need guest or member privileges?
-    steps: 
-      - |
-        **Internal member**: These users are most likely full-time employees in your organization.
-      - |  
-        **Internal guest**: These users have an account in your tenant, but have guest-level privileges. It's possible they were created within your tenant prior to the availability of B2B collaboration.
-      - |  
-        **External member**: These users authenticate using an external account, but have member access to your tenant. These types of users are common in [multitenant organizations](~/identity/multi-tenant-organizations/overview.md#what-is-a-multi-tenant-organization).
-      - |  
-        **External guest**: These users are true guests of your tenant who authenticate using an external method and who have guest-level privileges.
-
-        For more information abut the differences between internal and external guests and members, see [B2B collaboration properties](~/external-id/user-properties.md).
-
-        Authentication methods vary based on the type of user you create. Internal guests and members have credentials in your Microsoft Entra tenant that can be managed by administrators. These users can also reset their own password. External members authenticate to their home Microsoft Entra tenant and your Microsoft Entra tenant authenticates the user through a federated sign-in with the external member's Microsoft Entra tenant. If external members forget their password, the administrator in their Microsoft Entra tenant can reset their password. External guests set up their own password using the link they receive in email when their account is created.
-
-        Reviewing the default user permissions may also help you determine the type of user you need to create. For more information, see [Set default user permissions](users-default-permissions.md).
   - title: |
       Create a new user
     summary: |
@@ -130,9 +140,46 @@ procedureSection:
         The final tab captures several key details from the user creation process. Review the details and select the **Create** button if everything looks good.
 
   - title: |
+      Create a new external user
+    summary: |
+      > [!IMPORTANT]
+      > These steps apply to [Microsoft Entra External ID](~/external-id/customers/overview-customers-ciam.md) external tenants only.
+
+    steps: 
+      - |
+        Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](../identity/role-based-access-control/permissions-reference.md#user-administrator).
+      - |
+        Make sure you're signed in to your external tenant. Use the **Settings** icon :::image type="icon" source="media/how-to-create-delete-users/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your external tenant from the **Directories + subscriptions** menu.
+      - |
+        Browse to **Identity** > **Users** > **All users**.
+      - |
+        Select  **New user** > **Create new external user**.
+
+          :::image type="content" source="media/how-to-create-delete-users/create-new-external-user-menu.png" alt-text="Screenshot of the create new external user menu in Microsoft Entra ID.":::
+      - |
+        On the **Create new user** page, complete the [Basics](#basics) tab as described earlier in this article, but with these variations:
+
+        - Instead of a user principal name and mail nickname, specify the user's email for sign-in. Next to **Identities**, under **Sign-in method**, choose **Email**. Under **Value**, enter the user's email address.
+        - To add multiple emails for the user, select the **Add** button.
+      - |
+        (Optional) Select **Next: Properties**. Complete the [Properties](#properties) tab as described earlier in this article, but note these variations:
+
+        - In the **Identity** section, the **User type** setting doesn't affect external users and can be left at the default **Member** setting.
+        - The **Authorization info** field is unavailable for external users.
+        - Under **Job Information**, the employee and manager-related information is unavailable for external users.
+      - |
+        (Optional) Select **Next: Assignments**. Complete the [Assignments](#assignments) tab as described earlier in this article, but note that the **Add administrative unit** and **Add role** options are unavailable for external users.
+      - |
+        Select the **Review + create** button to create the new user.
+
+  - title: |
       Invite an external user
     summary: |
       The overall process for inviting an external guest user is similar, except for a few details on the **Basics** tab and the email invitation process. You can't assign external users to administrative units. 
+
+      > [!NOTE]
+      > This feature applies to both workforce and external tenants, but is currently in preview for external tenants.
+
     steps: 
       - |
         Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
@@ -180,9 +227,9 @@ procedureSection:
       You can delete an existing user using the [Microsoft Entra admin center](https://entra.microsoft.com/).
     steps: 
       - |
-        You must have a Global Administrator, Privileged Authentication Administrator, or User Administrator role assignment to delete users in your organization.
+        You must have at least the User Administrator role assignment to delete users in your organization.
       - |  
-        Global Administrators and Privileged Authentication Administrators can delete any users including other administrators.
+        Those with the Privileged Authentication Administrator role can delete any users including other administrators.
       - |  
         User Administrators can delete any non-admin users, Helpdesk Administrators, and other User Administrators.
       - |  

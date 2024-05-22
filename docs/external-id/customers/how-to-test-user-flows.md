@@ -1,6 +1,6 @@
 ---
 title: Test a user flow
-description: Learn how to use the Run user flow feature to test your sign-up and sign-in user flow for your customer-facing app.
+description: Learn how to use the Run user flow feature to test your sign-up and sign-in user flow for your consumer and business customer apps.
  
 author: msmimart
 manager: celestedg

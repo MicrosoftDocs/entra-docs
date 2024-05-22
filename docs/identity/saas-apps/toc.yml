@@ -242,6 +242,8 @@
         href: askyourteam-tutorial.md
       - name: Asset Bank
         href: assetbank-tutorial.md
+      - name: Asset Infinity
+        href: asset-infinity-tutorial.md
       - name: Asset Planner
         href: asset-planner-tutorial.md  
       - name: Assent SSO
@@ -512,8 +514,8 @@
         href: circus-street-tutorial.md
       - name: Cirrus Identity Bridge for Microsoft Entra ID
         href: cirrus-identity-bridge-for-azure-ad-tutorial.md  
-      - name: Cisco AnyConnect
-        href: cisco-anyconnect.md
+      - name: Cisco Secure Firewall - Secure Client
+        href: cisco-secure-firewall-secure-client.md
       - name: Cisco Cloud
         href: ciscocloud-tutorial.md
       - name: Cisco Expressway
@@ -656,6 +658,8 @@
         href: contentsquare-sso-tutorial.md
       - name: Contentstack
         href: contentstack-tutorial.md
+      - name: Continuity Software Platform (OIDC)
+        href: continuity-software-platform-tutorial.md
       - name: ContractSafe Saml2 SSO
         href: contractsafe-saml2-sso-tutorial.md
       - name: ContractS CLM
@@ -1833,6 +1837,8 @@
         href: ms-azure-sso-access-for-ethidex-compliance-office-tutorial.md
       - name: Mural Identity
         href: mural-identity-tutorial.md  
+      - name: Muzeek
+        href: muzeek-tutorial.md
       - name: MVISION Cloud Microsoft Entra SSO Configuration
         href: skyhighnetworks-tutorial.md
       - name: myAOS
@@ -2643,6 +2649,8 @@
         href: springerlink-tutorial.md
       - name: Sprinklr
         href: sprinklr-tutorial.md
+      - name: Spyglass (OIDC)
+        href: spyglass-tutorial.md
       - name: SSOGEN Microsoft Entra SSO Gateway for Oracle E Business Suite EBS, PeopleSoft, and JDE
         href: ssogen-tutorial.md
       - name: SSO for Jama Connect®
@@ -3181,6 +3189,8 @@
         href: zonka-feedback-tutorial.md
       - name: Zoom
         href: zoom-tutorial.md
+      - name: Zscaler(OIDC)
+        href: zscaler-oidc-tutorial.md
       - name: Zscaler Internet Access ZSNet
         href: zscaler-internet-access-zsnet-tutorial.md
       - name: Zscaler B2B User Portal
@@ -3530,6 +3540,8 @@
         href: keeper-password-manager-digitalvault-provisioning-tutorial.md
       - name: Keepabl
         href: keepabl-provisioning-tutorial.md
+      - name: Keystone
+        href: keystone-provisioning-tutorial.md
       - name: Kintone
         href: kintone-provisioning-tutorial.md
       - name: Kisi Physical Security
@@ -3550,6 +3562,8 @@
         href: lanschool-air-provisioning-tutorial.md
       - name: LawVu
         href: lawvu-provisioning-tutorial.md
+      - name: Lexonis TalentScape
+        href: lexonis-talentscape-provisioning-tutorial.md
       - name: LimbleCMMS
         href: limblecmms-provisioning-tutorial.md
       - name: LinkedIn Elevate
@@ -3676,6 +3690,8 @@
         href: proware-provisioning-tutorial.md
       - name: Puzzel
         href: puzzel-provisioning-tutorial.md
+      - name: Quarem
+        href: quarem-provisioning-tutorial.md
       - name: Real Links
         href: real-links-provisioning-tutorial.md
       - name: Recnice
@@ -3876,6 +3892,8 @@
         href: yellowbox-provisioning-tutorial.md
       - name: Zapier
         href: zapier-provisioning-tutorial.md 
+      - name: Zello
+        href: zello-provisioning-tutorial.md
       - name: Zendesk
         href: zendesk-provisioning-tutorial.md
       - name: Zenya

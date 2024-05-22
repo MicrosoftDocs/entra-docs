@@ -7,7 +7,7 @@ manager: CelesteDG
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to
-ms.date: 03/16/2023
+ms.date: 04/29/2024
 ms.author: jomondi
 ms.reviewer: ludwignick
 ms.custom: enterprise-apps, has-azure-ad-ps-ref
@@ -18,11 +18,11 @@ zone_pivot_groups: home-realm-discovery
 
 # Configure sign-in behavior using Home Realm Discovery
 
-This article provides an introduction to configuring Microsoft Entra authentication behavior for federated users using Home Realm Discovery (HRD) policy. It covers using auto-acceleration sign-in to skip the username entry screen and automatically forward users to federated login endpoints. To learn more about HRD policy, check out the [Home Realm Discovery](home-realm-discovery-policy.md) article.
+This article provides an introduction to configuring Microsoft Entra authentication behavior for federated users using Home Realm Discovery (HRD) policy. It covers using auto-acceleration sign-in to skip the username entry screen and automatically forward users to federated sign-in endpoints. To learn more about HRD policy, check out the [Home Realm Discovery](home-realm-discovery-policy.md) article.
 
 ## Auto-acceleration sign-in
 
-Some organizations configure domains in their Microsoft Entra tenant to federate with another identity provider (IDP), such as AD FS for user authentication. When a user signs into an application, they're first presented with a Microsoft Entra sign-in page. After they've typed their UPN, if they are in a federated domain they're then taken to the sign-in page of the IDP serving that domain. Under certain circumstances, administrators might want to direct users to the sign-in page when they're signing in to specific applications. As a result users can skip the initial Microsoft Entra ID page. This process is referred to as "sign-in auto-acceleration." 
+Some organizations configure domains in their Microsoft Entra tenant to federate with another identity provider (IDP), such as Active Directory Federation Services (ADFS) for user authentication. When a user signs into an application, they're first presented with a Microsoft Entra sign-in page. After they type their User Principal Name (UPN), if they are in a federated domain they're then taken to the sign-in page of the IDP serving that domain. Under certain circumstances, administrators might want to direct users to the sign-in page when they're signing in to specific applications. As a result users can skip the initial Microsoft Entra ID page. This process is referred to as "sign-in auto-acceleration." 
 
 For federated users with cloud-enabled credentials, such as SMS sign-in or FIDO keys, you should prevent sign-in auto-acceleration. See [Disable auto-acceleration sign-in](prevent-domain-hints-with-home-realm-discovery.md) to learn how to prevent domain hints with HRD. 
 
@@ -36,23 +36,25 @@ For federated users with cloud-enabled credentials, such as SMS sign-in or FIDO 
 To configure HRD policy for an application in Microsoft Entra ID, you need:
 
 - An Azure account with an active subscription. If you don't already have one, you can [create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- One of the following roles: Global Administrator, or owner of the service principal.
+- One of the following roles: Application Administrator, Cloud Application Administrator or owner of the service principal.
 
-::: zone pivot="powershell-hrd"
+:::zone pivot="powershell-hrd"
 - The latest Azure AD PowerShell cmdlet preview.
-::: zone-end
+:::zone-end
 
 ## Set up an HRD policy on an application
-::: zone pivot="powershell-hrd"
 
-We'll use Azure AD PowerShell cmdlets to walk through a few scenarios, including:
+:::zone pivot="powershell-hrd"
 
-::: zone-end
-::: zone pivot="graph-hrd"
+We use Azure AD PowerShell cmdlets to walk through a few scenarios, including:
 
-We'll use Microsoft Graph to walk through a few scenarios, including:
+:::zone-end
 
-::: zone-end
+:::zone pivot="graph-hrd"
+
+We use Microsoft Graph to walk through a few scenarios, including:
+
+:::zone-end
 
 - Setting up HRD policy to do auto-acceleration for an application in a tenant with a single federated domain.
 
@@ -62,7 +64,7 @@ We'll use Microsoft Graph to walk through a few scenarios, including:
 
 - Listing the applications for which a policy is configured.
 
-::: zone pivot="powershell-hrd"
+:::zone pivot="powershell-hrd"
 
 In the following examples, you create, update, link, and delete HRD policies on application service principals in Microsoft Entra ID.
 
@@ -82,11 +84,11 @@ In the following examples, you create, update, link, and delete HRD policies on 
 
 If nothing is returned, it means you have no policies created in your tenant.
 
-::: zone-end
+:::zone-end
 
 ## Create an HRD policy
 
-In this example, you create a policy that when it's assigned to an application either:
+In this example, you create a policy such that when you assign it to an application, it either:
 
 - Auto-accelerates users to a federated identity provider sign-in screen when they're signing in to an application when there's a single domain in your tenant.
 - Auto-accelerates users to a federated identity provider sign-in screen if there's more than one federated domain in your tenant.
@@ -94,16 +96,16 @@ In this example, you create a policy that when it's assigned to an application e
 
 The following policy auto-accelerates users to a federated identity provider sign-in screen when they're signing in to an application when there's a single domain in your tenant.
 
-::: zone pivot="powershell-hrd"
+:::zone pivot="powershell-hrd"
 
 ```powershell
 New-AzureADPolicy 
     -Definition @("{`"HomeRealmDiscoveryPolicy`":{`"AccelerateToFederatedDomain`":true}}") -DisplayName BasicAutoAccelerationPolicy 
     -Type HomeRealmDiscoveryPolicy
 ```
-::: zone-end
+:::zone-end
 
-::: zone pivot="graph-hrd"
+:::zone pivot="graph-hrd"
 
 ```http
 POST /policies/homeRealmDiscoveryPolicies
@@ -112,11 +114,11 @@ POST /policies/homeRealmDiscoveryPolicies
     "AccelerateToFederatedDomain": true
 }
 ```
-::: zone-end
+:::zone-end
 
-The following policy auto-accelerates users to a federated identity provider sign-in screen when there's more than one federated domain in your tenant. If you've more than one federated domain that authenticates users for applications, you need to specify the domain to auto-accelerate.
+The following policy auto-accelerates users to a federated identity provider sign-in screen when there's more than one federated domain in your tenant. If you have more than one federated domain that authenticates users for applications, you need to specify the domain to auto-accelerate.
 
-::: zone pivot="powershell-hrd"
+:::zone pivot="powershell-hrd"
 
 ```powershell
 New-AzureADPolicy 
@@ -124,9 +126,9 @@ New-AzureADPolicy
     -DisplayName MultiDomainAutoAccelerationPolicy 
     -Type HomeRealmDiscoveryPolicy
 ```
-::: zone-end
+:::zone-end
 
-::: zone pivot="graph-hrd"
+:::zone pivot="graph-hrd"
 
 ```http
 POST /policies/homeRealmDiscoveryPolicies
@@ -138,12 +140,12 @@ POST /policies/homeRealmDiscoveryPolicies
     ]
 }
 ```
-::: zone-end
+:::zone-end
 
 The following policy enables username/password authentication for federated users directly with Microsoft Entra ID for specific applications:
 
 
-::: zone pivot="powershell-hrd"
+:::zone pivot="powershell-hrd"
 
 
 ```powershell
@@ -152,10 +154,10 @@ New-AzureADPolicy
     -DisplayName EnableDirectAuthPolicy 
     -Type HomeRealmDiscoveryPolicy
 ```
-::: zone-end
+:::zone-end
 
 
-::: zone pivot="graph-hrd"
+:::zone pivot="graph-hrd"
 
 ```http
 POST /policies/homeRealmDiscoveryPolicies
@@ -166,9 +168,9 @@ POST /policies/homeRealmDiscoveryPolicies
 
 ```
 
-::: zone-end
+:::zone-end
 
-::: zone pivot="powershell-hrd"
+:::zone pivot="powershell-hrd"
 
 To see your new policy and get its **ObjectID**, run the following command:
 
@@ -176,9 +178,9 @@ To see your new policy and get its **ObjectID**, run the following command:
 Get-AzureADPolicy
 ```
 
-To apply the HRD policy after you've created it, you can assign it to multiple application service principals.
+To apply the HRD policy after creating it, you can assign it to multiple application service principals.
 
-## Locate the service principal to which to assign the policy
+## Locate the service principal to assign to the policy
 
 You need the **ObjectID** of the service principals to which you want to assign the policy. There are several ways to find the **ObjectID** of service principals.
 
@@ -202,9 +204,9 @@ Add-AzureADServicePrincipalPolicy
 
 You can repeat this command for each service principal to which you want to add the policy.
 
-In the case where an application already has a HomeRealmDiscovery policy assigned, you won't be able to add a second one.  In that case, change the definition of the HRD policy that is assigned to the application to add extra parameters.
+In the case where an application already has a HomeRealmDiscovery policy assigned, you can't add a second one. In that case, change the definition of the HRD policy that is assigned to the application to add extra parameters.
 
-### Check which application service principals your HRD policy is assigned to
+### Check which service principals your HRD policy is assigned to
 
 To check which applications have HRD policy configured, use the **Get-AzureADPolicyAppliedObject** cmdlet. Pass it the **ObjectID** of the policy that you want to check on.
 
@@ -233,21 +235,22 @@ Note the **ObjectID** of the policy that you want to list assignments for.
 
 1. Get the ObjectID
 
-Use the previous example to get the **ObjectID** of the policy, and that of the application service principal from which you want to remove it.
+   Use the previous example to get the **ObjectID** of the policy, and that of the application service principal from which you want to remove it.
 
-2. Remove the policy assignment from the application service principal
+1. Remove the policy assignment from the application service principal
 
     ```powershell
     Remove-AzureADServicePrincipalPolicy -id <ObjectId of the Service Principal>  -PolicyId <ObjectId of the policy>
     ```
 
-3. Check removal by listing the service principals to which the policy is assigned
+1. Check removal by listing the service principals to which the policy is assigned
 
     ```powershell
     Get-AzureADPolicyAppliedObject -id <ObjectId of the Policy>
     ```
-::: zone-end
-::: zone pivot="graph-hrd"
+:::zone-end
+
+:::zone pivot="graph-hrd"
 
 ## Configuring policy through Graph Explorer
 
@@ -276,12 +279,49 @@ From the Microsoft Graph explorer window:
     ```http
     GET /policies/homeRealmDiscoveryPolicies/{id}
     ```	
+1. To assign the new policy to an application:
+   
+   ```http
+   POST /servicePrincipals/{id}/homeRealmDiscoveryPolicies/$ref
+   ```
+
+   Or,
+
+    ```http
+    POST /servicePrincipals(appId='{appId}')/homeRealmDiscoveryPolicies/$ref
+    ```
+
+1. List the service principals to which the policy is assigned
+
+   ```http
+   GET /policies/homeRealmDiscoveryPolicies/{ObjectId of the policy}/appliesTo
+   ```
+
 1. To  delete the HRD policy you created, run the query:
 
     ```http
     DELETE /policies/homeRealmDiscoveryPolicies/{id}
     ```	
-::: zone-end
+
+1. Remove the policy assignment from the service principal
+
+   ```http
+   DELETE /servicePrincipals/{id}/homeRealmDiscoveryPolicies/{policyId}/$ref
+   ```
+   
+   or,
+
+   ```http
+   DELETE /servicePrincipals(appId='{appId}')/homeRealmDiscoveryPolicies/{policyId}/$ref
+   ```
+   
+1. Check removal by listing the service principals to which the policy is assigned
+ 
+   ```http
+   GET /policies/homeRealmDiscoveryPolicies/{ObjectId of the policy}/appliesTo
+   ```
+   
+:::zone-end
 
 ## Next steps
 

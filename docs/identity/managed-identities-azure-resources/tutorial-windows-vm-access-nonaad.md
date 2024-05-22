@@ -43,7 +43,7 @@ This section shows how to grant your VM access to a secret stored in a Key Vault
 
 First, we need to create a Key Vault and grant our VM’s system-assigned managed identity access to the Key Vault.
 
-1. Sign in to the [Azure portal](https://portal.azure.com/).
+1. Sign in to the [Azure portal]portal](https://portal.azure.com/).
 1. At the top of the left navigation bar, select **Create a resource**.
 1. In the **Search the Marketplace** box type in **Key Vault** and hit **Enter**.
 1. Select **Key Vault** from the results.
@@ -86,16 +86,16 @@ The managed identity used by the virtual machine needs to be granted access to r
 1. Select **Save**.
 
 
-## Access data  
+## Access data
 
 This section shows how to get an access token using the VM identity and use it to retrieve the secret from Key Vault. If you don’t have PowerShell 4.3.1 or greater installed, you'll need to [download and install the latest version](/powershell/azure/).
 
 First, we use the VM’s system-assigned managed identity to get an access token to authenticate to Key Vault:
  
 1. In the portal, navigate to **Virtual Machines** and go to your Windows virtual machine and in the **Overview**, select **Connect**.
-2. Enter in your **Username** and **Password** for which you added when you created the **Windows VM**.  
-3. Now that you've created a **Remote Desktop Connection** with the virtual machine, open PowerShell in the remote session.  
-4. In PowerShell, invoke the web request on the tenant to get the token for the local host in the specific port for the VM.  
+2. Enter in your **Username** and **Password** for which you added when you created the **Windows VM**.
+3. Now that you've created a **Remote Desktop Connection** with the virtual machine, open PowerShell in the remote session.
+4. In PowerShell, invoke the web request on the tenant to get the token for the local host in the specific port for the VM.
 
 The PowerShell request:
 
@@ -107,13 +107,13 @@ You can see what the response looks like below:
 
 :::image type="content" source="./media/msi-tutorial-windows-vm-access-nonaad/token.png" alt-text="Screenshot showing a request with token response.":::
 
-Next, extract the access token from the response.  
+Next, extract the access token from the response.
 
 ```powershell
    $KeyVaultToken = $Response.access_token
 ```
 
-Finally, use PowerShell’s Invoke-WebRequest command to retrieve the secret you created earlier in the Key Vault, passing the access token in the Authorization header.  You’ll need the URL of your Key Vault, which is in the **Essentials** section of the **Overview** page of the Key Vault.  
+Finally, use PowerShell’s Invoke-WebRequest command to retrieve the secret you created earlier in the Key Vault, passing the access token in the Authorization header.  You’ll need the URL of your Key Vault, which is in the **Essentials** section of the **Overview** page of the Key Vault.
 
 ```powershell
 Invoke-RestMethod -Uri https://<your-key-vault-URL>/secrets/<secret-name>?api-version=2016-10-01 -Method GET -Headers @{Authorization="Bearer $KeyVaultToken"}

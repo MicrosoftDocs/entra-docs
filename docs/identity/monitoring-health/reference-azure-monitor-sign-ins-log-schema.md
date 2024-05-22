@@ -32,7 +32,7 @@ This article describes the Microsoft Entra sign-in log schema in Azure Monitor. 
   "resultDescription": "This error occurred due to 'Keep me signed in' interrupt when the user was signing-in.",
   "durationMs": 0,
   "callerIpAddress": "<CALLER IP ADDRESS>",
-  "correlationId": "a75a10bd-c126-486b-9742-c03110d36262",
+  "correlationId": "aaaa0000-bb11-2222-33cc-444444dddddd",
   "identity": "Timothy Perkins",
   "Level": 4,
   "location": "US",
@@ -69,7 +69,7 @@ This article describes the Microsoft Entra sign-in log schema in Azure Monitor. 
         "longitude": 122
       }
     },
-    "correlationId": "a75a10bd-c126-486b-9742-c03110d36262",
+    "correlationId": "bbbb1111-cc22-3333-44dd-555555eeeeee",
     "conditionalAccessStatus": "notApplied",
     "appliedConditionalAccessPolicies": [
       {

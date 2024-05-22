@@ -1,16 +1,16 @@
 ---
 title: Require MFA for administrators with Conditional Access
-description: Create a custom Conditional Access policy to require administrators to perform multifactor authentication
+description: Create a custom Conditional Access policy to require administrators to perform multifactor authentication.
 
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 07/26/2023
+ms.date: 05/21/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
-ms.reviewer: calebb, lhuangnorth
+ms.reviewer: lhuangnorth
 ---
 # Common Conditional Access policy: Require MFA for administrators
 
@@ -18,20 +18,7 @@ Accounts that are assigned administrative rights are targeted by attackers. Requ
 
 Microsoft recommends you require MFA on the following roles at a minimum, based on [identity score recommendations](~/identity/monitoring-health/concept-identity-secure-score.md):
 
-- Global Administrator
-- Application Administrator
-- Authentication Administrator
-- Billing Administrator
-- Cloud Application Administrator
-- Conditional Access Administrator
-- Exchange Administrator
-- Helpdesk Administrator
-- Password Administrator
-- Privileged Authentication Administrator
-- Privileged Role Administrator
-- Security Administrator
-- SharePoint Administrator
-- User Administrator
+[!INCLUDE [conditional-access-admin-roles](../../includes/conditional-access-admin-roles.md)]
 
 Organizations can choose to include or exclude roles as they see fit.
 
@@ -49,22 +36,7 @@ The following steps will help create a Conditional Access policy to require thos
 1. Select **Create new policy**.
 1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
 1. Under **Assignments**, select **Users or workload identities**.
-   1. Under **Include**, select **Directory roles** and choose built-in roles like:
-
-      - Global Administrator
-      - Application Administrator
-      - Authentication Administrator
-      - Billing Administrator
-      - Cloud Application Administrator
-      - Conditional Access Administrator
-      - Exchange Administrator
-      - Helpdesk Administrator
-      - Password Administrator
-      - Privileged Authentication Administrator
-      - Privileged Role Administrator
-      - Security Administrator
-      - SharePoint Administrator
-      - User Administrator
+   1. Under **Include**, select **Directory roles** and choose at least the previously listed roles.
    
       > [!WARNING]
       > Conditional Access policies support built-in roles. Conditional Access policies are not enforced for other role types including [administrative unit-scoped](~/identity/role-based-access-control/admin-units-assign-roles.md) or [custom roles](~/identity/role-based-access-control/custom-create.yml).
@@ -76,7 +48,6 @@ The following steps will help create a Conditional Access policy to require thos
 1. Select **Create** to create to enable your policy.
 
 After administrators confirm the settings using [report-only mode](howto-conditional-access-insights-reporting.md), they can move the **Enable policy** toggle from **Report-only** to **On**.
-
 
 ## Related content
 
