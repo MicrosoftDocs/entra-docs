@@ -21,7 +21,8 @@ The Private Access traffic forwarding profile routes traffic to your private net
 
 To enable the Microsoft 365 traffic forwarding profile for your tenant, you must have:
 
-- A **Global Secure Access Administrator** role in Microsoft Entra ID
+- A [Global Secure Access Administrator](../identity/role-based-access-control/permissions-reference.md#global-secure-access-administrator) role in Microsoft Entra ID.
+   - A [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator)  role to create and interact with Conditional Access policies.
 - The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 
 ### Known limitations
@@ -32,11 +33,12 @@ To enable the Microsoft 365 traffic forwarding profile for your tenant, you must
 
 ## Enable the Private Access traffic forwarding profile
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](../identity/role-based-access-control/permissions-reference.md#global-secure-access-administrator).
 1. Browse to **Global Secure Access (preview)** > **Connect** > **Traffic forwarding**.
 1. Select the checkbox for **Private Access profile**.
 
-![Screenshot of the traffic forwarding page with the Private Access profile enabled.](media/how-to-manage-private-access-profile/private-access-traffic-profile.png)
+:::image type="content" source="media/how-to-manage-private-access-profile/private-access-traffic-profile.png" alt-text="Screenshot of the traffic forwarding page with the Private Access profile enabled." lightbox="media/how-to-manage-private-access-profile/private-access-traffic-profile-expanded.png":::
+
 
 ## Private Access policies
 
@@ -46,7 +48,7 @@ You can also configure per-app access to your private resources by creating a Pr
 
 To manage the details included in the Private Access traffic forwarding policy, select the **View** link for **Private Access policies**. 
 
-:::image type="content" source="media/how-to-manage-private-access-profile/private-access-profile-link.png" alt-text="Screenshot of the Private Access profile, with the view applications link highlighted." lightbox="media/how-to-manage-private-access-profile/private-access-profile-expanded.png":::
+![Screenshot of the Private Access profile, with the view applications link highlighted.](media/how-to-manage-private-access-profile/private-access-profile-link.png)
 
 Details of your Quick Access and enterprise apps for Private Access are displayed. Select the link for the application to view the details from the Enterprise applications area of Microsoft Entra ID.
 
@@ -62,9 +64,9 @@ Conditional Access policies for Private Access are configured at the application
 For more information, see [Apply Conditional Access policies to Private Access apps](how-to-target-resource-private-access-apps.md).
 
 ## User and group assignments
-You can scope the Private Access profile to specific users and groups. To learn more about user and group assignment, see [How to assign and manage users and groups with traffic forwarding profiles](how-to-manage-users-groups-assignment.md).
+You can scope the Private Access profile to specific users and groups. The users and groups must be assigned to both the Private Access apps and the traffic forwarding profile.
 
-
+To learn more about user and group assignment, see [How to assign and manage users and groups with traffic forwarding profiles](how-to-manage-users-groups-assignment.md).
 
 [!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
 

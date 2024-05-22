@@ -2,17 +2,17 @@
 title: Plan cloud HR application to Microsoft Entra user provisioning
 description: This article describes the deployment process of integrating cloud HR systems, such as Workday and SuccessFactors, with Microsoft Entra ID. Integrating Microsoft Entra ID with your cloud HR system results in a complete identity lifecycle management system.
 
-author: kenwith
+author: jenniferf-skc
 manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: conceptual
-ms.date: 04/15/2024
-ms.author: kenwith
+ms.date: 05/22/2024
+ms.author: jfields
 ms.reviewer: arvinh
 ---
 
-# Plan cloud HR application to Microsoft Entra user provisioning
+# Cloud HR application to Microsoft Entra user provisioning
 
 Historically, IT staff has relied on manual methods to create, update, and delete employees. They've used methods such as uploading CSV files or custom scripts to sync employee data. These provisioning processes are error prone, insecure, and hard to manage.
 
@@ -30,6 +30,9 @@ The following video provides guidance on planning your HR-driven provisioning in
 
 > [!NOTE]
 > This deployment plan shows you how to deploy your cloud HR app with Microsoft Entra user provisioning. For information on how to deploy automatic user provisioning to software as a service (SaaS) apps, see [Plan an automatic user provisioning deployment](./plan-auto-user-provisioning.md).
+
+## API-driven provisioning from any HR system
+With [API-driven provisioning](inbound-provisioning-api-concepts.md), you can bring identities from *any* system of record into Microsoft Entra ID. You can use *any* automation tool of your choice to retrieve workforce data from the system of record and ingest it into Microsoft Entra ID. Your IT admin has full control on how the data is processed and transformed with attribute mappings.
 
 ## Enabled HR scenarios
 
@@ -332,7 +335,7 @@ In large organizations, it isn't uncommon to have multiple HR systems. During bu
 
 ## Plan scoping filters and attribute mapping
 
-When you enable provisioning from the cloud HR app to Active Directory or Microsoft Entra ID, the Entra admin center controls the attribute values through attribute mapping.
+When you enable provisioning from the cloud HR app to Active Directory or Microsoft Entra ID, the Microsoft Entra admin center controls the attribute values through attribute mapping.
 
 ### Define scoping filters
 
@@ -410,7 +413,7 @@ Attributes like CN, samAccountName, and the UPN have unique constraints. You may
 The Microsoft Entra ID function [SelectUniqueValues](~/identity/app-provisioning/functions-for-customizing-application-data.md#selectuniquevalue) evaluates each rule and then checks the value generated for uniqueness in the target system. For an example, see [Generate unique value for the userPrincipalName (UPN) attribute](~/identity/app-provisioning/functions-for-customizing-application-data.md#generate-unique-value-for-userprincipalname-upn-attribute).
 
 > [!NOTE]
-> This function is currently only supported for Workday to Active Directory and SAP SuccessFactors to Active Directory user provisioning. It can't be used with other provisioning apps.
+> This function is currently only supported for Workday to Active Directory, SAP SuccessFactors to Active Directory user provisioning, and API-driven provisioning to on-premises Active Directory. It's not supported for use with other provisioning apps.
 
 ### Configure Active Directory OU container assignment
 
@@ -522,7 +525,7 @@ To troubleshoot any issues that might turn up during provisioning, see the follo
 - [No users are being provisioned to a Microsoft Entra Gallery application](application-provisioning-config-problem-no-users-provisioned.md)
 - [Wrong set of users are being provisioned to a Microsoft Entra Gallery application](~/identity/enterprise-apps/add-application-portal-assign-users.md)
 - [Setting up Windows Event Viewer for agent troubleshooting](~/identity/saas-apps/workday-inbound-tutorial.md#setting-up-windows-event-viewer-for-agent-troubleshooting)
-- [Setting up Entra admin center Provisioning Logs for service troubleshooting](~/identity/saas-apps/workday-inbound-tutorial.md#setting-up-entra-admin-center-provisioning-logs-for-service-troubleshooting)
+- [Setting up Microsoft Entra admin center Provisioning Logs for service troubleshooting](~/identity/saas-apps/workday-inbound-tutorial.md#setting-up-microsoft-entra-admin-center-provisioning-logs-for-service-troubleshooting)
 - [Understanding logs for AD User Account create operations](~/identity/saas-apps/workday-inbound-tutorial.md#understanding-logs-for-ad-user-account-create-operations)
 - [Understanding logs for Manager update operations](~/identity/saas-apps/workday-inbound-tutorial.md#understanding-logs-for-manager-update-operations)
 - [Resolving commonly encountered errors](~/identity/saas-apps/workday-inbound-tutorial.md#resolving-commonly-encountered-errors)

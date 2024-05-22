@@ -306,7 +306,7 @@ Here are key points about usage of Microsoft Entra ID for VPN authentication:
 
 * Check if your VPN providers support modern authentication. For example:
 
-  * [Tutorial: Microsoft Entra SSO integration with Cisco AnyConnect](~/identity/saas-apps/cisco-anyconnect.md)
+  * [Tutorial: Microsoft Entra SSO integration with Cisco Secure Firewall - Secure Client](~/identity/saas-apps/cisco-secure-firewall-secure-client.md)
 
   * [Tutorial: Microsoft Entra SSO integration with Palo Alto Networks GlobalProtect](~/identity/saas-apps/palo-alto-networks-globalprotect-tutorial.md) 
 

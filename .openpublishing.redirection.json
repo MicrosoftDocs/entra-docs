@@ -131,6 +131,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity/saas-apps/cisco-anyconnect.md",
+      "redirect_url": "/entra/identity/saas-apps/cisco-secure-firewall-secure-client",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity/saas-apps/adobe-identity-management-provisioning-tutorial.md",
       "redirect_url": "/entra/identity/saas-apps/adobe-identity-management-provisioning-saml-tutorial",
       "redirect_document_id": false
@@ -601,7 +606,7 @@
       "redirect_url": "/entra/external-id/customers/how-to-create-external-tenant-portal",
       "redirect_document_id": false
     },
-    {            
+    {
       "source_path_from_root": "/docs/external-id/customers/microsoft-graph-operations.md",
       "redirect_url": "/entra/external-id/customers/concept-supported-features-customers",
       "redirect_document_id": false

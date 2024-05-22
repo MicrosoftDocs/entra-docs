@@ -29,7 +29,14 @@
     "dddd3333-ee44-5555-66ff-777777000000",
     "eeee4444-ff55-6666-7700-888888111111"
   ],
-  "entityId": [
+  "directoryId|tenantId": [
+    "aaaabbbb-0000-cccc-1111-dddd2222eeee",
+    "bbbbcccc-1111-dddd-2222-eeee3333ffff",
+    "ccccdddd-2222-eeee-3333-ffff4444aaaa",
+    "ddddeeee-3333-ffff-4444-00005555bbbb",
+    "eeeeffff-4444-0000-5555-bbbb6666cccc"
+  ],
+  "entityId|organizationId": [
     "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
     "11bb11bb-cc22-dd33-ee44-55ff55ff55ff",
     "22cc22cc-dd33-ee44-ff55-66aa66aa66aa",
@@ -42,13 +49,6 @@
     "cccccccc-2222-3333-4444-dddddddddddd",
     "dddddddd-3333-4444-5555-eeeeeeeeeeee",
     "eeeeeeee-4444-5555-6666-ffffffffffff"
-  ],
-  "organizationId": [
-    "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
-    "11bb11bb-cc22-dd33-ee44-55ff55ff55ff",
-    "22cc22cc-dd33-ee44-ff55-66aa66aa66aa",
-    "33dd33dd-ee44-ff55-00aa-77bb77bb77bb",
-    "44ee44ee-ff55-00aa-11bb-88cc88cc88cc"
   ],
   "principalId": [
     "aaaaaaaa-bbbb-cccc-1111-222222222222",
@@ -63,6 +63,13 @@
     "3cccccc3-4dd4-5ee5-6ff6-700000000007",
     "4dddddd4-5ee5-6ff6-7aa7-811111111118",
     "5eeeeee5-6ff6-7aa7-8bb8-922222222229"
+  ],
+  "resourceId": [
+    "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1",
+    "b1b1b1b1-cccc-dddd-eeee-f2f2f2f2f2f2",
+    "c2c2c2c2-dddd-eeee-ffff-a3a3a3a3a3a3",
+    "d3d3d3d3-eeee-ffff-0000-b4b4b4b4b4b4",
+    "e4e4e4e4-ffff-0000-1111-c5c5c5c5c5c5"
   ],
   "secretId": [
     "aaaaaaaa-0b0b-1c1c-2d2d-333333333333",
@@ -80,13 +87,6 @@
     "cccc2c2c-dd3d-ee4e-ff5f-000000606060",
     "dddd3d3d-ee4e-ff5f-0060-111111717171",
     "eeee4e4e-ff5f-0060-1171-222222828282"
-  ],
-  "tenantId|directoryId": [
-    "aaaabbbb-0000-cccc-1111-dddd2222eeee",
-    "bbbbcccc-1111-dddd-2222-eeee3333ffff",
-    "ccccdddd-2222-eeee-3333-ffff4444aaaa",
-    "ddddeeee-3333-ffff-4444-00005555bbbb",
-    "eeeeffff-4444-0000-5555-bbbb6666cccc"
   ],
   "thumbprint": [
     "00AA11BB22CC33DD44EE55FF66EE77DD88CC99"

@@ -278,6 +278,8 @@
       items:
         - name: Call a Web API with cURL
           href: howto-call-a-web-api-with-curl.md
+        - name: Call a web API with Insomnia
+          href: howto-call-a-web-api-with-rest-client.md
         - name: Protected web API
           items:
             - name: App registration

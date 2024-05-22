@@ -58,7 +58,7 @@ The following set of multitenant capabilities support the needs of multitenant o
 
 - **B2B direct connect** - Establishes a mutual, two-way trust with another Microsoft Entra tenant for seamless collaboration. B2B direct connect users aren't represented in your directory, but they're visible in Teams for collaboration in Teams shared channels.
 
-- **B2B collaboration** – Provides application access for and collaborate with external users. B2B collaboration users are represented in your directory. They're available in They're available in Microsoft Teams for collaboration, if enabled. They're available across Microsoft 365 applications
+- **B2B collaboration** – Provides application access for and collaborate with external users. B2B collaboration users are represented in your directory. They're available in Microsoft Teams for collaboration, if enabled. They're also available across Microsoft 365 applications.
 
 - **Cross-tenant synchronization** - Provides a synchronization service that automates creating, updating, and deleting B2B collaboration users across your organization of multiple tenants. The service can be used to scope Microsoft 365 people search in target tenants. The service is governed by cross-tenant synchronization settings under cross-tenant access settings.
 
