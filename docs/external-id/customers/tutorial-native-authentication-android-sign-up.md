@@ -155,7 +155,7 @@ To handle errors for the `signUp(username)` method, use the following code snipp
    }
    ```
 
-   - `signUp(username)` can return `SignUpError`. 
+   - `signUp(username, attributes)` or `signUp(username, password, attributes)` can return `SignUpError`. 
    - `SignUpError` indicates an unsuccessful action result returned by `signUp()` and won't include a reference to the new state.
    - If  `actionResult is SignUpError`, MSAL Android SDK provides utility methods to enable you to analyze the specific errors further:
         - The  method `isUserAlreadyExists()` checks whether the username has already been used to create an account.  
