@@ -90,7 +90,7 @@ This data set will enable us to perform a broad set of queries around who was gi
 >[!NOTE]
 > Larger tenants may experience throttling / 429 errors that will be handled by the MS Graph module. 
 
-In these PowerShell scripts, we'll export selected properties from the Entra objects to JSON files. The data from these exported properties will then be used to generate custom reports in Azure Data Explorer. The specific properties below, were included in these example, because we're using this data to illustrate the types of reports you can create in Azure Data Explorer. Since your specific reporting needs will likely vary from what is shown below, you should include the specific properties in these scripts that you're interested in viewing in your reports, however you can follow the same pattern shown below to help build your scripts. 
+In these PowerShell scripts, we'll export selected properties from the Entra objects to JSON files. The data from these exported properties will then be used to generate custom reports in Azure Data Explorer. The specific properties below, were included in these examples, because we're using this data to illustrate the types of reports you can create in Azure Data Explorer. Since your specific reporting needs will likely vary from what is shown below, you should include the specific properties in these scripts that you're interested in viewing in your reports, however you can follow the same pattern shown below to help build your scripts. 
 
 We have also included a hard-coded **snapshot date** below which identifies the data in the JSON file with a specific date and will allow us to keep track of similar data sets over time in Azure Data Explorer. The snapshot date is also useful for comparing changes in data between two snapshot dates. 
 
@@ -342,7 +342,7 @@ AppRoleAssignments
 
 ### Example 3: Get added users to an app between two data snapshot dates 
 
-These reports provides a view of which users were given an app role assignment to the target application between two dates. This reports can be used to track changes in app access over time. 
+These reports provide a view of which users were given an app role assignment to the target application between two dates. These reports can be used to track changes in app access over time. 
 
 This query targets a specific application within Microsoft Entra ID and changes to the role assignments between a start and end date. 
 
