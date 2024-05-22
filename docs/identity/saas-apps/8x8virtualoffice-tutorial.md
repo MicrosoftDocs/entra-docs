@@ -60,10 +60,11 @@ Configure and test Microsoft Entra SSO with 8x8 using a test user called **B.Sim
 
 To configure and test Microsoft Entra SSO with 8x8, perform the following steps:
 
-1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
+1. **[Configure Microsoft Entra SSO](#configure-microsoft-entra-sso)** - to enable your users to use this feature.
     1. **[Create a Microsoft Entra test user](#create-a-microsoft-entra-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
     1. **[Assign the Microsoft Entra test user](#assign-the-microsoft-entra-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure 8x8 SSO in 8x8 Admin Console](#configure-8x8-sso-in-8x8-admin-console)** - to configure the single sign-on settings on application side.
+    1. **[Create 8x8 test user](#create-8x8-test-user)** - to have a counterpart of B.Simon in 8x8 that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 ## Configure Microsoft Entra SSO
@@ -82,6 +83,11 @@ Follow these steps to enable Microsoft Entra SSO.
     a. In the **Identifier** text box, type the URL: `https://sso.8x8.com/saml2`
 
     b. In the **Reply URL** text box, type the URL: `https://sso.8x8.com/saml2`
+
+1. Perform the following step, if you wish to configure the application in SP initiated mode:
+    
+    In the **Sign on URL** text box, type the URL:
+    `https://sso.8x8.com`
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer. You will use the certificate later in the tutorial in the **Configure 8x8 SSO** section.
 
@@ -105,7 +111,7 @@ In this section, you'll create a test user in the Microsoft Entra admin center c
    1. Select **Review + create**.
 1. Select **Create**.
 
-### Assign the Microsoft Entra ID test user
+### Assign the Microsoft Entra test user
 
 In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by granting access to 8x8.
 
@@ -143,13 +149,13 @@ In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by 
 
     e. Click **Save**.
 
-## Test SSO
-
-In this section, you test your Microsoft Entra single sign-on configuration with either an SP initiated flow which starts at the 8x8 login page, or an IDP initiated flow which starts at the Microsoft My Apps. 
-
 ### Create 8x8 test user
 
 Create a user called Britta Simon in 8x8 Admin Console. Users must be created in 8x8 Admin Console before you can use single sign-on.
+
+## Test SSO
+
+In this section, you test your Microsoft Entra single sign-on configuration with either an SP initiated flow which starts at the 8x8 login page, or an IDP initiated flow which starts at the Microsoft My Apps. 
 
 #### SP initiated:
 
