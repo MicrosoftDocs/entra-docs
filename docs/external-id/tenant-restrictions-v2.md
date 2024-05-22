@@ -28,10 +28,10 @@ For example, suppose a user in your organization has created a separate account 
 
 | Steps  | Description  |
 |---------|---------|
-|**1**     | Contoso configures **Tenant restrictions** in their cross-tenant access settings to block all external accounts and external apps. Contoso enforces the policy on each Windows device by updating the local computer configuration with Contoso's tenant ID and the tenant restrictions policy ID.       |
-|**2**     |  A user with a Contoso-managed Windows device tries to sign in to an external app using an account from an unknown tenant. The Windows device adds an HTTP header to the authentication request. The header contains Contoso's tenant ID and the tenant restrictions policy ID.        |
-|**3**     | *Authentication plane protection:* Microsoft Entra ID uses the header in the authentication request to look up the tenant restrictions policy in the Microsoft Entra cloud. Because Contoso's policy blocks external accounts from accessing external tenants, the request is blocked at the authentication level.        |
-|**4**     | *Data plane protection (preview):* The user tries to access the external application by copying an authentication response token they obtained outside of Contoso's network and pasting it into the Windows device. However, Microsoft Entra ID compares the claim in the token to the HTTP header added by the Windows device. Because they don't match, Microsoft Entra ID blocks the session so the user can't access the application.        |
+|**1**     | Contoso configures **Tenant restrictions** in their cross-tenant access settings to block all external accounts and external apps. Contoso adds TRv2 enforcement signaling with TRv2 header either via [Universal TRv2](#option-1-universal-tenant-restrictions-v2-as-part-of-microsoft-entra-global-secure-access-preview) or a [corporate proxy](#option-2-set-up-tenant-restrictions-v2-on-your-corporate-proxy) and Entra ID will enforce TRv2 policy when the header is present on the request.      |
+|**2**     |  A user using a Contoso-managed device tries to sign in to an external app using an account from an unknown tenant. The TRv2 HTTP header with Contoso's tenant ID and the tenant restrictions policy ID is added to the authentication request.        |
+|**3**     | *Authentication plane protection:* Microsoft Entra ID will enforce Contoso's TRv2 policy and block external accounts from accessing external tenants during the authentication as per the Contoso TRv2 policy.        |
+|**4**     | *Data plane protection (preview):* Microsoft Entra ID will block any anonymous access to SharePoint file or anonymous teams meeting join as well as block user access to the resource with an infiltrated token.       |
 |||
 
 Tenant restrictions v2 provides options for both authentication plane protection and data plane protection. 
