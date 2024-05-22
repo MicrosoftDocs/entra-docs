@@ -197,7 +197,7 @@ Authorization: Required with a valid Bearer token
 Method: PATCH
 Content-type: application/json
 
-https://graph.microsoft.com/v1.0/applications/54c4806b-b260-4a12-873c-967116983792
+https://graph.microsoft.com/v1.0/applications/00001111-aaaa-2222-bbbb-3333cccc4444
 {
     "web": {
     "redirectUris":["https://www.salesforce.com"]},
@@ -243,7 +243,7 @@ Authorization: Required with a valid Bearer token
 Method: PATCH
 Content-type: application/json
 
-https://graph.microsoft.com/v1.0/applications/54c4806b-b260-4a12-873c-967116983792
+https://graph.microsoft.com/v1.0/applications/00001111-aaaa-2222-bbbb-3333cccc4444
 {
     "web": {
     "redirectUris":["https://www.samlapp.com"]},
@@ -306,7 +306,7 @@ Authorization: Required with a valid Bearer token
 Method: PATCH
 Content-type: application/json
 
-https://graph.microsoft.com/v1.0/applications/54c4806b-b260-4a12-873c-967116983792
+https://graph.microsoft.com/v1.0/applications/00001111-aaaa-2222-bbbb-3333cccc4444
 {
     "web": {
     "redirectUris":["https://www.samlapp.com"]},
