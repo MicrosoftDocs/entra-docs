@@ -1,7 +1,7 @@
 ---
 title: Become a Microsoft-Compatible FIDO2 Security Key Vendor for sign-in to Microsoft Entra ID
 description: Explains process to become a FIDO2 hardware partner
-ms.date: 04/28/2023
+ms.date: 05/22/2024
 ms.service: entra-id
 ms.subservice: authentication
 author: justinha
@@ -58,7 +58,7 @@ The following table lists partners who are Microsoft-compatible FIDO2 security k
 | Octatco | ![y] | ![y]| ![n]| ![n]|
 | OneSpan Inc. | ![n] | ![y]| ![n]| ![y]|
 | PONE Biometrics | ![y] | ![n]| ![n]| ![y]|
-| Precision Biometric| ![y] | ![y]| ![n]| ![n]|
+| Precision Biometric| ![y] | ![y]| ![y] | ![n]|
 | RSA | ![n] | ![y]| ![n]| ![n]|
 | Sentry | ![n] | ![n]| ![y]| ![n]|
 | SmartDisplayer | ![y] | ![y]| ![y]| ![y]|
