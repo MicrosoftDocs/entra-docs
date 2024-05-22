@@ -41,7 +41,7 @@ If you haven’t previously used Azure Data Explorer, you will need to set this 
 
 ## Step 2: Connect to MS Graph and Extract Entra data with PowerShell 
 
-Install MS Graph Powershell modules and Connect to MS Graph 
+[Install MS Graph Powershell modules](/powershell/microsoftgraph/installation) and [Connect to MS Graph](/powershell/module/microsoft.graph.authentication/connect-mggraph). 
 
  1. Install the required MS Graph modules. The following modules are required for this tutorial: Microsoft.Graph.Users, Microsoft.Graph.Groups, Microsoft.Graph.Applications, Microsoft.Graph.DirectoryObjects 
 
