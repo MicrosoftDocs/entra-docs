@@ -76,8 +76,8 @@ GET https://graph.microsoft.com/beta/networkAccess/logs/remotenetworks
   "@microsoft.graph.tips": "Use $select to choose only the properties your app needs, as this can lead to performance improvements. For example: GET networkAccess/logs/remoteNetworks?$select=bgpRoutesAdvertisedCount,createdDateTime",
   "value": [
     {
-     "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
-     "remoteNetworkId": "11bb11bb-cc22-dd33-ee44-55ff55ff55ff",
+     "id": "00001111-aaaa-2222-bbbb-3333cccc4444",
+     "remoteNetworkId": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
      "createdDateTime": "2024-05-09T20:53:48.3925141Z",
      "sourceIp": "20.x.x.x",
      "destinationIp": "20.x.x.x",
@@ -88,8 +88,8 @@ GET https://graph.microsoft.com/beta/networkAccess/logs/remotenetworks
      "receivedBytes": 76554
      },
      {
-     "id": "55258f4c-8e42-4463-ab83-7c7d64f7a69e",
-     "remoteNetworkId": "341c01f2-b8a2-405a-91cb-a6032316ac27",
+     "id": "11112222-bbbb-3333-cccc-4444dddd5555",
+     "remoteNetworkId": "11bb11bb-cc22-dd33-ee44-55ff55ff55ff",
      "createdDateTime": "2024-05-09T20:54:55.1969876Z",
      "sourceIp": "16.x.x.x",
      "destinationIp": "20.x.x.x",
