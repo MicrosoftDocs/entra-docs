@@ -335,7 +335,7 @@ In large organizations, it isn't uncommon to have multiple HR systems. During bu
 
 ## Plan scoping filters and attribute mapping
 
-When you enable provisioning from the cloud HR app to Active Directory or Microsoft Entra ID, the Entra admin center controls the attribute values through attribute mapping.
+When you enable provisioning from the cloud HR app to Active Directory or Microsoft Entra ID, the Microsoft Entra admin center controls the attribute values through attribute mapping.
 
 ### Define scoping filters
 
@@ -525,7 +525,7 @@ To troubleshoot any issues that might turn up during provisioning, see the follo
 - [No users are being provisioned to a Microsoft Entra Gallery application](application-provisioning-config-problem-no-users-provisioned.md)
 - [Wrong set of users are being provisioned to a Microsoft Entra Gallery application](~/identity/enterprise-apps/add-application-portal-assign-users.md)
 - [Setting up Windows Event Viewer for agent troubleshooting](~/identity/saas-apps/workday-inbound-tutorial.md#setting-up-windows-event-viewer-for-agent-troubleshooting)
-- [Setting up Entra admin center Provisioning Logs for service troubleshooting](~/identity/saas-apps/workday-inbound-tutorial.md#setting-up-entra-admin-center-provisioning-logs-for-service-troubleshooting)
+- [Setting up Microsoft Entra admin center Provisioning Logs for service troubleshooting](~/identity/saas-apps/workday-inbound-tutorial.md#setting-up-microsoft-entra-admin-center-provisioning-logs-for-service-troubleshooting)
 - [Understanding logs for AD User Account create operations](~/identity/saas-apps/workday-inbound-tutorial.md#understanding-logs-for-ad-user-account-create-operations)
 - [Understanding logs for Manager update operations](~/identity/saas-apps/workday-inbound-tutorial.md#understanding-logs-for-manager-update-operations)
 - [Resolving commonly encountered errors](~/identity/saas-apps/workday-inbound-tutorial.md#resolving-commonly-encountered-errors)

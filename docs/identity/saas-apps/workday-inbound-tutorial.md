@@ -738,7 +738,7 @@ This section covers the following aspects of troubleshooting:
 
 * [Configure provisioning agent to emit Event Viewer logs](#configure-provisioning-agent-to-emit-event-viewer-logs)
 * [Setting up Windows Event Viewer for agent troubleshooting](#setting-up-windows-event-viewer-for-agent-troubleshooting)
-* [Setting up Microsoft Entra admin center Provisioning Logs for service troubleshooting](#setting-up-entra-admin-center-provisioning-logs-for-service-troubleshooting)
+* [Setting up Microsoft Entra admin center Provisioning Logs for service troubleshooting](#setting-up-microsoft-entra-admin-center-provisioning-logs-for-service-troubleshooting)
 * [Understanding logs for AD User Account create operations](#understanding-logs-for-ad-user-account-create-operations)
 * [Understanding logs for Manager update operations](#understanding-logs-for-manager-update-operations)
 * [Resolving commonly encountered errors](#resolving-commonly-encountered-errors)
@@ -787,7 +787,7 @@ This section covers the following aspects of troubleshooting:
 
 1. Click **OK** and sort the result view by **Date and Time** column.
 
-### Setting up Entra admin center Provisioning Logs for service troubleshooting
+### Setting up Microsoft Entra admin center Provisioning Logs for service troubleshooting
 
 1. Launch the [Microsoft Entra admin center](https://entra.microsoft.com), and navigate to the **Provisioning** section of your Workday provisioning application.
 1. Use the **Columns** button on the Provisioning Logs page to display only the following columns in the view (Date, Activity, Status, Status Reason). This configuration ensures that you focus only on data that is relevant for troubleshooting.

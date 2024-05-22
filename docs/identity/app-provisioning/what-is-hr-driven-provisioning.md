@@ -16,14 +16,14 @@ ms.collection: M365-identity-device-management
 
 ![HR provisioning](./media/what-is-hr-driven-provisioning/cloud2a.png)
 
-HR-driven provisioning is the process of creating digital identities based on a human resources system. The HR systems become the source of authority for these newly created digital identities and are often the starting point for numerous provisioning processes. For example, if a new employee joins your company, they are created in the human resource system. The creation triggers the provisioning of a user account into Active Directory, and then Microsoft Entra Connect provisions this account to Microsoft Entra ID.
+HR-driven provisioning is the process of creating digital identities based on a human resources system. The HR systems become the source of authority for these newly created digital identities and are often the starting point for numerous provisioning processes. For example, if a new employee joins your company, they're created in the human resource system. The creation triggers the provisioning of a user account into Active Directory, and then Microsoft Entra Connect provisions this account to Microsoft Entra ID.
 
-HR-driven provisioning is either on-premises based or cloud based.
+HR-driven provisioning is either on-premises-based or cloud-based.
 
-## On-premises based HR provisioning
-On-premises based HR provisioning is accomplished by using a local HR system and a means of provisioning new digital identities.
+## On-premises-based HR provisioning
+On-premises-based HR provisioning is accomplished by using a local HR system and a means of provisioning new digital identities.
 
-HR systems come in a variety of packages, software bundles and may use SQL servers or files to exchange data with other systems.
+HR systems come in various packages, software bundles and may use SQL servers or files to exchange data with other systems.
 
 Customers who use SAP Human Capital Management (HCM) and have SAP SuccessFactors can bring identities into Microsoft Entra ID by using SAP Integration Suite to synchronize lists of workers between SAP HCM and SAP SuccessFactors. From there, you can bring identities directly into Microsoft Entra ID or provision them into Active Directory Domain Services.
 
@@ -34,12 +34,12 @@ You can also use Microsoft Identity Manager to trigger provisioning when a new i
 [!INCLUDE [active-directory-hr-provisioning.md](~/includes/entra-hr-provisioning.md)]
 
 ## Manage Joiner-Mover-Leaver lifecycle workflows
-You can extend your HR-driven provisioning process to further automate business processes and security controls associated with new hires, employment changes and termination. With [Microsoft Entra ID Governance Lifecycle Workflows](~/id-governance/what-are-lifecycle-workflows.md), you can configure Joiner-Mover-Leaver workflows such as:  
+You can extend your HR-driven provisioning process to further automate business processes and security controls associated with new hires, employment changes, and termination. With [Microsoft Entra ID Governance Lifecycle Workflows](~/id-governance/what-are-lifecycle-workflows.md), you can configure Joiner-Mover-Leaver workflows such as:  
 
-- “X” days before the new hire joins, send email to manager, add user to groups and generate a temporary access pass for first time login. 
-- When there is a change in user’s department or job title or group membership, launch a custom task.  
-- On the last day of work, send email to manager, remove user from groups and license assignments.  
-- “X” days after termination, delete user from Microsoft Entra ID
+- “X” days before the new hire joins, send email to manager, add user to groups, and generate a temporary access pass for first time login. 
+- When there's a change in user’s department or job title or group membership, launch a custom task.  
+- On the last day of work, send email to manager, and remove user from groups and license assignments.  
+- “X” days after termination, delete user from Microsoft Entra ID.
 
 
 ## Next steps 
