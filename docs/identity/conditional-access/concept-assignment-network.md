@@ -19,7 +19,10 @@ Administrators can create policies that target specific network locations as a s
 :::image type="content" source="media/common-conditional-access-media/conditional-access-signal-decision-enforcement.png" alt-text="Diagram showing concept of Conditional Access signals plus decision to enforce organizational policy." lightbox="media/common-conditional-access-media/conditional-access-signal-decision-enforcement.png":::
 
 > [!NOTE]
-> Conditional Access policies are enforced after first-factor authentication is completed. Conditional Access isn't intended to be an organization's first line of defense for scenarios like denial-of-service (DoS) attacks, but it can use signals from these events to determine access.
+> Conditional Access policies are enforced after first-factor authentication is completed. Conditional Access isn't intended to be an organization's first line of defense for scenarios like denial-of-service (DoS) attacks, but it can use signals from these events to determine access.<br>
+> There are two types of access controls in a conditional access policy:
+> * Grant - enforces grant or block access to resources.
+> * Session - enable limited experiences within specific cloud applications
 
 Organizations might use these locations for common tasks like: 
 
