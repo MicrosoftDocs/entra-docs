@@ -52,6 +52,8 @@
         href: entitlement-management-ticketed-provisioning.md
       - name: Automated Teams Messaging Integration
         href: entitlement-management-custom-teams-extension.md      
+      - name: Customized entitlement reports in Azure Data Explorer
+        href: custom-entitlement-report-with-adx-and-entra-id.md      
     - name: Access Reviews
       items:
       - name: Review access to Microsoft 365 groups - Microsoft Graph
