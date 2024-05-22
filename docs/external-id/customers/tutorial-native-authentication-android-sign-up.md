@@ -135,7 +135,7 @@ During sign-up, not all actions succeed. For instance, the user might attempt to
 ### Handle start sign-up error
 
 
-To handle errors for the `signUp(username)` method, use the following code snippet: 
+To handle errors for the `signUp()` method, use the following code snippet: 
 
    ```kotlin
    val actionResult = authClient.signUp(
