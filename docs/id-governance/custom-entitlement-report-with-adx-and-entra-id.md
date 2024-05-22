@@ -13,7 +13,7 @@ ms.author: billmath
 
 In this tutorial, you learn how to create customized reports in Azure Data Explorer (ADX) using data from Microsoft Entra ID. This tutorial complements other reporting options such as [Archive & report with Azure Monitor and entitlement management](entitlement-management-logs-and-reporting.md), which focuses on exporting audit log data for longer retention and analysis. By comparison, exporting Microsoft Entra ID data to Azure Data Explorer provides greater flexibility for creating custom reports by allowing data aggregation from multiple sources with massive scalability, and flexible schema and retention policies. 
 
-This report illustrates how to show configuration, users and access rights exported from Microsoft Entra alongside data exported from other sources, such as applications with a SQL database. You can then use the Kusto Query Language (KQL) to build custom reports based on your organization's requirements. Generating these types of reports within Azure Data Explorer may be especially helpful if you need to retain access data for longer periods, perform ad-hoc investigations, or need to run custom queries on user access data.
+This report illustrates how to show configuration, users, and access rights exported from Microsoft Entra alongside data exported from other sources, such as applications with SQL databases. You can then use the Kusto Query Language (KQL) to build custom reports based on your organization's requirements. Generating these types of reports within Azure Data Explorer may be especially helpful if you need to retain access data for longer periods, perform ad-hoc investigations, or need to run custom queries on user access data.
 
 You'll take the following steps to create these reports: 
 
@@ -75,9 +75,9 @@ The following queries extract Entra data from MS Graph using PowerShell and expo
 
  - An auditor would like to see a report that lists the group members for 10 groups, organized by the members’ department. 
  - An auditor would like to see a report of all users who had access to an application between two dates. 
- - An admin would like to view all users added to an application from Microsoft Entra ID and a SQL database. 
+ - An admin would like to view all users added to an application from Microsoft Entra ID and SQL databases. 
 
-These types of reports aren't built-in to Microsoft Entra ID, but you can create these reports yourself by extracting data from Entra and combining them using custom queries in Azure Data Explorer. 
+These types of reports aren't built in to Microsoft Entra ID, but you can create these reports yourself by extracting data from Entra and combining them using custom queries in Azure Data Explorer. 
 
 For this tutorial, we'll extract Entra data from several areas: 
 
@@ -90,7 +90,7 @@ This data set will enable us to perform a broad set of queries around who was gi
 >[!NOTE]
 > Larger tenants may experience throttling / 429 errors that will be handled by the MS Graph module. 
 
-In these PowerShell scripts, we'll export selected properties from the Entra objects to JSON files. The data from these exported properties will then be used to generate custom reports in Azure Data Explorer. The specific properties below were included in these example since we'll be using this data to illustrate the types of reports you can create in Azure Data Explorer. Since your specific reporting needs will likely vary from what is shown below, you should include the specific properties in these scripts that you're interested in viewing in your reports, however you can follow the same pattern shown below to help build your scripts. 
+In these PowerShell scripts, we'll export selected properties from the Entra objects to JSON files. The data from these exported properties will then be used to generate custom reports in Azure Data Explorer. The specific properties below, were included in these example, because we're using this data to illustrate the types of reports you can create in Azure Data Explorer. Since your specific reporting needs will likely vary from what is shown below, you should include the specific properties in these scripts that you're interested in viewing in your reports, however you can follow the same pattern shown below to help build your scripts. 
 
 We have also included a hard-coded **snapshot date** below which identifies the data in the JSON file with a specific date and will allow us to keep track of similar data sets over time in Azure Data Explorer. The snapshot date is also useful for comparing changes in data between two snapshot dates. 
 
@@ -342,7 +342,7 @@ AppRoleAssignments
 
 ### Example 3: Get added users to an app between two data snapshot dates 
 
-This report provides a view of which users were given an app role assignment to the target application between two dates. This reports can be used to track changes in app access over time. 
+These reports provides a view of which users were given an app role assignment to the target application between two dates. This reports can be used to track changes in app access over time. 
 
 This query targets a specific application within Microsoft Entra ID and changes to the role assignments between a start and end date. 
 
@@ -370,7 +370,7 @@ AppRoleAssignments
                   ) on $left.AppRoleId2 == $right.AppRoleId 
 | project UserPrincipalName, DisplayName, RoleDisplayName, CreatedDateTime, PrincipalId, Change = "Added" 
 ``` 
-### Example 4: Combine App Assignments from an Entra and a second source (e.g., SQL export) to create a report of all users (Entra assignments and local assignments) who had access to Salesforce between two dates 
+### Example 4: Combine App Assignments from an Entra and a second source (for example, SQL export) to create a report of all users (Entra assignments and local assignments) who had access to Salesforce between two dates 
  
 
 This report illustrates how you can combine data from two separate systems to create custom reports in ADX. It aggregates data about users, their roles, and other attributes from two systems into a unified format for analysis or reporting. 
