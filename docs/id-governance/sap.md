@@ -38,7 +38,7 @@ You can also [write back from Microsoft Entra ID to SAP SuccessFactors](../ident
 
 Customers who still use SAP Human Capital Management (HCM) can also bring identities into Microsoft Entra ID. By using SAP Integration Suite, you can synchronize lists of workers between SAP HCM and SAP SuccessFactors. From there, you can bring identities directly into Microsoft Entra ID or provision them into Active Directory Domain Services by using the native provisioning integrations mentioned earlier.
 
-![Diagram of SAP HR integrations.](./media/sap/sap-hr.png)
+![Diagram of SAP HR integrations.](./media/sap/sap-hr-no-mim.png)
 
 ## Provide access to SAP applications
 
