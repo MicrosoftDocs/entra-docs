@@ -8,14 +8,14 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: concept-article
-ms.date: 05/09/2024
+ms.date: 05/21/2024
 ms.author: mimart
 ms.custom: it-pro
 
 #Customer intent: As a dev, devops, or it admin, I want to learn about personalizing my application’s sign-in endpoints with my own branding or naming instead of Microsoft’s default domain name by using a custom URL domain.
 ---
 
-# Custom URL domains in Microsoft Entra External ID (Preview)
+# Custom URL domains in external tenants (Preview)
 
 A custom URL domain allows you to brand your application’s sign-in endpoints with your own custom URL domain instead of Microsoft’s default domain name.
 
