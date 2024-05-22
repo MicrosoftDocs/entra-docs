@@ -18,7 +18,7 @@ ms.collection: M365-identity-device-management
 
 HR-driven provisioning is the process of creating digital identities based on a human resources system. The HR systems become the source of authority for these newly created digital identities and are often the starting point for numerous provisioning processes. For example, if a new employee joins your company, they're created in the human resource system. The creation triggers the provisioning of a user account into Active Directory, and then Microsoft Entra Connect provisions this account to Microsoft Entra ID.
 
-HR-driven provisioning is either on-premises-based or cloud-based.
+Historically, integration with on-premises HR systems for HR driven provisioning leveraged on-premises HR tools such as SAP Identity Management (SAP IDM) or Microsoft Identity Manager (MIM) to create users in Active Directory. Microsoft Entra can also be used with on-premises HR systems, to either create users in Active Directory, or for those environments that do not have Active Directory, Microsoft Entra ID.
 
 ## On-premises-based HR provisioning
 On-premises-based HR provisioning is accomplished by using a local HR system and a means of provisioning new digital identities.
