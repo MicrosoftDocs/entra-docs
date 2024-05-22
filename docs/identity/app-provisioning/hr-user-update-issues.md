@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: troubleshooting
-ms.date: 01/30/2024
+ms.date: 05/22/2024
 ms.author: jfields
 ms.reviewer: chmutali
 ---
@@ -81,9 +81,37 @@ Switch([BusinessTitle],[BusinessTitle],"","N/A")
 |-- | -- |
 | **Issue** | You configured attribute mapping for Workday “Last Day of Work” (`StatusTerminationLastDayOfWork`) attribute in the provisioning app. However, the “Last Day of Work” update only happens after the termination date is effective, whereas you’d like to fetch this “Last Day of Work” before the termination date. |
 | **Cause** | In Workday, the “Last Day of Work” field gets set on the worker profile only after the termination date is effective. Hence, the Workday provisioning connector is unable to get this date in advance before the termination date. |
-| **Resolution** | There's no workaround for this behavior. |
+| **Resolution** | In Workday create a provisioning group called “Workers past Last Day of Work”. Add automation in Workday to assign users to this group when a worker’s last day of work is reached. In the Entra provisioning job, add a Workday XPATH attribute to fetch this group assignment.
+- Example:  
+``` `LastDayOfWorkWorkers =  wd:Worker/wd:Worker_Data/wd:Account_Provisioning_Data/wd:Provisioning_Group_Assignment_Data[wd:Status='Assigned' and wd:Provisioning_Group=" Workers past Last Day of Work"]/wd:Provisioning_Group/text()` ``` 
 
+Use this field in the attribute mapping logic for the accountDisabled flag.  
 
+- Example:   
+  ``` `Switch([LastDayOfWorkWorkers], Switch([Active], , "1", "False", "0", "True"), "Workers past Last Day of Work", "True")` ``` |
+
+## Workday termination processing delay
+**Applies to:**
+* Workday to on-premises Active Directory user provisioning
+* Workday to Microsoft Entra ID user provisioning
+
+| Troubleshooting | Details |
+|-- | -- |
+| **Issue** | During incremental sync, there may be a delay of 12-18 hours in processing the termination event for workers located in the Asia Pacific and Australia/New Zealand regions.  |
+| **Cause** | The Workday Integration System User (ISU) accounts always retrieve data based on the Pacific time zone. The connector currently does not implement specialized query to process termination records specific to a time zone.  |
+| **Resolution** | There are two possible workarounds:  
+
+1. Use provisioning on demand to process termination event of a specific user.  
+
+2. In Workday, create a provisioning group called **Terminated Workers**. Update the termination business process in Workday to assign users to this group when termination happens. In the Microsoft Entra provisioning job, add a Workday XPATH attribute to fetch this group assignment.  
+- Example:  
+``` `TerminatedWorkers = 
+wd:Worker/wd:Worker_Data/wd:Account_Provisioning_Data/wd:Provisioning_Group_Assignment_Data[wd:Status='Assigned' and wd:Provisioning_Group="Terminated Workers"]/wd:Provisioning_Group/text()` ```
+
+Use this field in the attribute mapping logic for the accountDisabled flag.  
+- Example:  
+  ``` `Switch([TerminatedWorkers], Switch([Active], , "1", "False", "0", "True"), "Terminated Workers", "True")` ``` 
+ |
 
 ## Next steps
 
