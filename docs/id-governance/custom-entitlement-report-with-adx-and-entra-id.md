@@ -348,13 +348,19 @@ This query targets a specific application within Entra ID and changes to the rol
 
  
 ```kusto
-let earlierDate = datetime("2024-03-01"); // Update this to your specific earlier date 
+// Define the date range and service principal ID for the query 
+
+let startDate = datetime("2024-03-01"); 
+let endDate = datetime("2024-03-14"); 
+let servicePrincipalId = "<your service principal-id>"; 
+let earlierDate = startDate; // Update this to your specific earlier date 
+
 AppRoleAssignments 
-| where SnapshotDate < datetime("2024-03-14") and ResourceId == "<your service principal-id>" 
+| where SnapshotDate < endDate and ResourceId == servicePrincipalId
 | project PrincipalId, AppRoleId2 = tostring(AppRoleId), CreatedDateTime 
 | join kind=anti ( 
     AppRoleAssignments 
-    | where SnapshotDate < earlierDate and ResourceId == "<your service principal-id>" 
+    | where SnapshotDate < earlierDate and ResourceId == servicePrincipalId 
     | project PrincipalId, AppRoleId1 = tostring(AppRoleId) 
 ) on PrincipalId 
 | join kind=inner (EntraUsers) on $left.PrincipalId == $right.ObjectID 
