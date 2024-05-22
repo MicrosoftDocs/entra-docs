@@ -1,6 +1,6 @@
 ---
 title: 'Custom reports using Microsoft Entra and application data'
-description: Tutorial that describes how to create customized entitlement reports in Azure Data Explorer (ADX) using data from Microsoft Entra ID.
+description: Tutorial that describes how to create customized reports in Azure Data Explorer (ADX) using data from Microsoft Entra ID.
 author: billmath
 manager: amycolannino
 ms.service: entra-id-governance
@@ -9,9 +9,9 @@ ms.date: 01/05/2023
 ms.author: billmath
 ---
 
-# Tutorial: Customized entitlement reports in Azure Data Explorer (ADX) using data from Microsoft Entra ID
+# Tutorial: Customized reports in Azure Data Explorer (ADX) using data from Microsoft Entra ID
 
-In this tutorial, you will learn how to create customized entitlement reports in Azure Data Explorer (ADX) using data from Microsoft Entra ID. This tutorial complements other reporting options such as [Archive & report with Azure Monitor and entitlement management](entitlement-management-logs-and-reporting.md) which focuses on exporting audit log data for longer retention and analysis. By comparison, exporting Entra ID data to Azure Data Explorer provides greater flexibility for creating custom reports by allowing data aggregation from multiple sources with massive scalability, and flexible schema and retention policies. 
+In this tutorial, you will learn how to create customized reports in Azure Data Explorer (ADX) using data from Microsoft Entra ID. This tutorial complements other reporting options such as [Archive & report with Azure Monitor and entitlement management](entitlement-management-logs-and-reporting.md) which focuses on exporting audit log data for longer retention and analysis. By comparison, exporting Entra ID data to Azure Data Explorer provides greater flexibility for creating custom reports by allowing data aggregation from multiple sources with massive scalability, and flexible schema and retention policies. 
 
 This report illustrates how to show configuration, users and access rights exported from Microsoft Entra alongside data exported from other sources, such as applications with a SQL database.  You can then use the Kusto Query Language (KQL) to build custom reports based on your organization's requirements. Generating these types of reports within Azure Data Explorer may be especially helpful if you need to retain access data for longer periods, perform ad-hoc investigations, or need to run custom queries on user access data.
 
@@ -47,9 +47,7 @@ Install MS Graph Powershell modules and Connect to MS Graph
 
 ```powershell
          $modules = @('Microsoft.Graph.Users', 'Microsoft.Graph.Groups', 'Microsoft.Graph.Applications', 'Microsoft.Graph.DirectoryObjects') 
-
          foreach ($module in $modules) { 
-
          Install-Module -Name $module -Scope CurrentUser -AllowClobber -Force
          } 
 ```    
@@ -57,11 +55,8 @@ Install MS Graph Powershell modules and Connect to MS Graph
  
  ```powershell
          $modules = @('Microsoft.Graph.Users', 'Microsoft.Graph.Groups', 'Microsoft.Graph.Applications', 'Microsoft.Graph.DirectoryObjects') 
-
          foreach ($module in $modules) { 
-
          Import-Module -Name $module 
-
          }  
 ``` 
  3. Connect to Microsoft Graph
@@ -107,74 +102,41 @@ This script will export selected properties from the Entra user object to a JSON
 ```powershell
     function Export-EntraUsersToJson { 
 
-    ///Define a hash table for property mappings 
-
+    # Define a hash table for property mappings 
         $propertyMappings = @{ 
-
             "Id" = "ObjectID" 
-
             "DisplayName" = "DisplayName" 
-
             "UserPrincipalName" = "UserPrincipalName" 
-
             "EmployeeId" = "EmployeeId" 
-
             "UserType" = "UserType" 
-
             "CreatedDateTime" = "CreatedDateTime" 
-
             "JobTitle" = "JobTitle" 
-
             "Department" = "Department" 
-
             "AccountEnabled" = "AccountEnabled" 
 
-         /// Add custom properties as needed 
-
+         # Add custom properties as needed 
             "custom_extension" = "CustomExtension" 
-
         } 
-
-      /// Retrieve users with specified properties and create custom objects directly 
-
+      # Retrieve users with specified properties and create custom objects directly 
         $users = Get-MgUser -Select ($propertyMappings.Keys) -All | ForEach-Object { 
-
             $userObject = @{} 
-
             foreach ($key in $propertyMappings.Keys) { 
-
                 if ($key -eq "CreatedDateTime") { 
-
                     # Convert date string directly to DateTime and format it 
-
                     $date = [datetime]::Parse($_.$key) 
-
                     $userObject[$propertyMappings[$key]] = $date.ToString("yyyy-MM-dd") 
-
                 } else { 
-
                     $userObject[$propertyMappings[$key]] = $_.$key 
-
                 } 
-
             } 
-
-            /// Additional properties or transformations 
-
+            # Additional properties or transformations 
             $userObject["SnapshotDate"] = "2024-01-11" 
-
             [pscustomobject]$userObject 
-
         } 
-
-        /// Convert the user data to JSON and save it to a file 
-
+        # Convert the user data to JSON and save it to a file 
         $users | ConvertTo-Json -Depth 2 | Set-Content ".\EntraUsers.json" 
-
     } 
-
-   ///Execute the function 
-
+   # Execute the function 
     Export-EntraUsersToJson 
 ```
 ### Get Group data 
