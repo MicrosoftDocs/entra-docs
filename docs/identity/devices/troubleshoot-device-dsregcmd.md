@@ -107,14 +107,14 @@ The tenant details are displayed only when the device is Microsoft Entra joined 
 +----------------------------------------------------------------------+
 
                 TenantName : HybridADFS
-                  TenantId : 96fa76d0-xxxx-xxxx-xxxx-eb60cc22xxxx
+                  TenantId : aaaabbbb-0000-cccc-1111-dddd2222eeee
                        Idp : login.windows.net
-               AuthCodeUrl : https://login.microsoftonline.com/96fa76d0-xxxx-xxxx-xxxx-eb60cc22xxxx/oauth2/authorize
-            AccessTokenUrl : https://login.microsoftonline.com/96fa76d0-xxxx-xxxx-xxxx-eb60cc22xxxx/oauth2/token
+               AuthCodeUrl : https://login.microsoftonline.com/aaaabbbb-0000-cccc-1111-dddd2222eeee/oauth2/authorize
+            AccessTokenUrl : https://login.microsoftonline.com/aaaabbbb-0000-cccc-1111-dddd2222eeee/oauth2/token
                     MdmUrl : https://enrollment.manage-beta.microsoft.com/EnrollmentServer/Discovery.svc
                  MdmTouUrl : https://portal.manage-beta.microsoft.com/TermsOfUse.aspx
           MdmComplianceUrl : https://portal.manage-beta.microsoft.com/?portalAction=Compliance
-               SettingsUrl : eyJVxxxxIjpbImh0dHBzOi8va2FpbGFuaS5vbmUubWljcm9zb2Z0LmNvbS8iLCJodHRwczovL2thaWxhbmkxLm9uZS5taWNyb3NvZnQuY29tLyxxxx==
+               SettingsUrl : eyJVx{lots of characters}xxxx==
             JoinSrvVersion : 1.0
                 JoinSrvUrl : https://enterpriseregistration.windows.net/EnrollmentServer/device/
                  JoinSrvId : urn:ms-drs:enterpriseregistration.windows.net
@@ -122,10 +122,10 @@ The tenant details are displayed only when the device is Microsoft Entra joined 
                  KeySrvUrl : https://enterpriseregistration.windows.net/EnrollmentServer/key/
                   KeySrvId : urn:ms-drs:enterpriseregistration.windows.net
         WebAuthNSrvVersion : 1.0
-            WebAuthNSrvUrl : https://enterpriseregistration.windows.net/webauthn/96fa76d0-xxxx-xxxx-xxxx-eb60cc22xxxx/
+            WebAuthNSrvUrl : https://enterpriseregistration.windows.net/webauthn/aaaabbbb-0000-cccc-1111-dddd2222eeee/
              WebAuthNSrvId : urn:ms-drs:enterpriseregistration.windows.net
     DeviceManagementSrvVer : 1.0
-    DeviceManagementSrvUrl : https://enterpriseregistration.windows.net/manage/96fa76d0-xxxx-xxxx-xxxx-eb60cc22xxxx/
+    DeviceManagementSrvUrl : https://enterpriseregistration.windows.net/manage/aaaabbbb-0000-cccc-1111-dddd2222eeee/
      DeviceManagementSrvId : urn:ms-drs:enterpriseregistration.windows.net
 +----------------------------------------------------------------------+
 ```
@@ -222,14 +222,14 @@ Active Directory Federation Services (AD FS). For Microsoft Entra hybrid joined 
 +----------------------------------------------------------------------+
 
                 AzureAdPrt : NO
-       AzureAdPrtAuthority : https://login.microsoftonline.com/96fa76d0-xxxx-xxxx-xxxx-eb60cc22xxxx
+       AzureAdPrtAuthority : https://login.microsoftonline.com/aaaabbbb-0000-cccc-1111-dddd2222eeee
      AcquirePrtDiagnostics : PRESENT
       Previous Prt Attempt : 2020-07-18 20:10:33.789 UTC
             Attempt Status : 0xc000006d
              User Identity : john@contoso.com
            Credential Type : Password
-            Correlation ID : 63648321-fc5c-46eb-996e-ed1f3ba7740f
-              Endpoint URI : https://login.microsoftonline.com/96fa76d0-xxxx-xxxx-xxxx-eb60cc22xxxx/oauth2/token/
+            Correlation ID : 0000aaaa-11bb-cccc-dd22-eeeeee333333
+              Endpoint URI : https://login.microsoftonline.com/aaaabbbb-0000-cccc-1111-dddd2222eeee/oauth2/token/
                HTTP Method : POST
                 HTTP Error : 0x0
                HTTP status : 400
