@@ -14,10 +14,18 @@
     "4e4e4e4e-5555-ffff-6666-7a7a7a7a7a7a"
   ],
   "clientSecret|clientSecretValue": [
-    "Aa1Bb2Cc3.-Dd4Ee5Ff6Gg7Hh8Ii9_~Jj0Kk1Ll2"
+    "Aa1Bb2Cc3.-Dd4Ee5Ff6Gg7Hh8Ii9_~Jj0Kk1Ll2",
+    "Bb2Cc3Dd4.-Ee5Ff6Gg7Hh8Ii9Jj0_~Kk1Ll2Mm3",
+    "Cc3Dd4Ee5.-Ff6Gg7Hh8Ii9Jj0Kk1_~Ll2Mm3Nn4",
+    "Dd4Ee5Ff6.-Gg7Hh8Ii9Jj0Kk1Ll2_~Mm3Nn4Oo5",
+    "Ee5Ff6Gg7.-Hh8Ii9Jj0Kk1Ll2Mm3_~Nn4Oo5Pp6"
   ],
   "clientSecretValueAlphanumeric": [
-    "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u"
+    "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u",
+    "C2dE3fH4iJ5kL6mN7oP8qR9sT0uV1w",
+    "E3fH4iJ5kL6mN7oP8qR9sT0uV1wX2y",
+    "H4iJ5kL6mN7oP8qR9sT0uV1wX2yZ3a",
+    "J5kL6mN7oP8qR9sT0uV1wX2yZ3aB4c"
   ],
   "correlationId": [
     "aaaa0000-bb11-2222-33cc-444444dddddd",
