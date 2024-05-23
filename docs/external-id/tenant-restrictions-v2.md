@@ -30,7 +30,7 @@ For example, suppose a user in your organization has created a separate account 
 
 | Steps  | Description  |
 |---------|---------|
-|**1**     | Contoso configures **Tenant restrictions** in their cross-tenant access settings to block all external accounts and external apps. Contoso adds TRv2 enforcement signaling with TRv2 header either via [Universal TRv2](#option-1-universal-tenant-restrictions-v2-as-part-of-microsoft-entra-global-secure-access-preview) or a [corporate proxy](#option-2-set-up-tenant-restrictions-v2-on-your-corporate-proxy) and Entra ID will enforce TRv2 policy when the header is present on the request.      |
+|**1**     | Contoso configures **Tenant restrictions** in their cross-tenant access settings to block all external accounts and external apps. Contoso adds TRv2 enforcement signaling with TRv2 header either via [Universal TRv2](#option-1-universal-tenant-restrictions-v2-as-part-of-microsoft-entra-global-secure-access-preview) or a [corporate proxy](#option-2-set-up-tenant-restrictions-v2-on-your-corporate-proxy) and Microsoft Entra ID will enforce TRv2 policy when the header is present on the request.      |
 |**2**     |  A user using a Contoso-managed device tries to sign in to an external app using an account from an unknown tenant. The TRv2 HTTP header with Contoso's tenant ID and the tenant restrictions policy ID is added to the authentication request.        |
 |**3**     | *Authentication plane protection:* Microsoft Entra ID will enforce Contoso's TRv2 policy and block external accounts from accessing external tenants during the authentication as per the Contoso TRv2 policy.        |
 |**4**     | *Data plane protection (preview):* Microsoft Entra ID will block any anonymous access to SharePoint file or anonymous teams meeting join as well as block user access to the resource with an infiltrated token.       |
@@ -63,7 +63,7 @@ Tenant restrictions v2 can be scoped to specific users, groups, organizations, o
 - Universal Windows Platform (UWP) .NET applications.
 - Auth plane protection for all applications that authenticate with Microsoft Entra ID, including all Microsoft first-party applications and any third-party applications that use Microsoft Entra ID for authentication.
 - Data plane protection for SharePoint Online and Exchange Online.
-- Anonymous access protection for SharePoint Online, OneDrive for business, and Teams (with Federation Controls configured).
+- Anonymous access protection for SharePoint Online, OneDrive, and Teams (with Federation Controls configured).
 - Authentication and Data plane protection for Microsoft tenant or Consumer accounts.
 - When using Universal tenant restrictions in Global Secure Access (preview), all browsers and platforms.
 - When using Windows Group Policy, Microsoft Edge and all websites in Microsoft Edge.
@@ -437,7 +437,7 @@ View events related to tenant restrictions in Event Viewer.
 1. Navigate to **Microsoft** > **Windows** > **TenantRestrictions** > **Operational** and look for events.  
 
 ## Tenant restrictions and Data plane support (preview)
-Trv2 is enforced by the following resources which will address token infiltration scenarios where a bad actor accesses the resource directly with a infiltrated token or annonymously.
+Trv2 is enforced by the following resources which will address token infiltration scenarios where a bad actor accesses the resource directly with an infiltrated token or anonymously.
 - Teams
 - SharePoint Online like OneDrive app
 - Exchange Online like Outlook app
@@ -487,11 +487,11 @@ For example, say a user is using a managed device configured with tenant restric
 
 ### Authenticated sessions
 
-When tenant restrictions v2 are enabled on a tenant, unauthorized access is blocked during authentication. If a user directly accesses a OneDrive for Business without an authenticated session, they're prompted to sign in. If the tenant restrictions v2 policy allows access, the user can access the resource; otherwise, access is blocked.
+When tenant restrictions v2 are enabled on a tenant, unauthorized access is blocked during authentication. If a user directly accesses a OneDrive without an authenticated session, they're prompted to sign in. If the tenant restrictions v2 policy allows access, the user can access the resource; otherwise, access is blocked.
 
 ### Anonymous access (preview)
 
-Like SharePoint, OneDrive for Business supports tenant restrictions v2 on both the authentication plane and the data plane. Blocking anonymous access to OneDrive for business is also supported. For example, tenant restrictions v2 policy enforcement works at the OneDrive for Business endpoint (microsoft-my.sharepoint.com).
+Like SharePoint, OneDrive supports tenant restrictions v2 on both the authentication plane and the data plane. Blocking anonymous access to OneDrive is also supported. For example, tenant restrictions v2 policy enforcement works at the OneDrive endpoint (microsoft-my.sharepoint.com).
 
 ### Not in scope
 
