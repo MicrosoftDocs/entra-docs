@@ -18,10 +18,10 @@ ms.custom: it-pro
 
 # Create a sign-up and sign-in user flow
 
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
 > [!TIP]
 > This article applies to user flows in external tenants. For information about workforce tenants, see [Add a self-service sign-up user flow to an app](../self-service-sign-up-user-flow.yml).
-
-[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
 You can create a simple sign-up and sign-in experience for your customers by adding a user flow to your application. The user flow defines the series of sign-up steps customers follow and the sign-in methods they can use (such as email and password, one-time passcodes, or social accounts from [Google](how-to-google-federation-customers.md) or [Facebook](how-to-facebook-federation-customers.md)). You can also collect information from customers during sign-up by selecting from a series of built-in user attributes or adding your own custom attributes.
 

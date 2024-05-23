@@ -17,10 +17,10 @@ ms.custom: it-pro
 
 # Collect custom user attributes during sign-up
 
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
 > [!TIP]
 > This article applies to user flows in external tenants. For information about workforce tenants, see [Define custom attributes for user flows](../user-flow-add-custom-attributes.md).
-
-[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
 If your app requires more information than the built-in user attributes provide, you can add your own attributes. We refer to these attributes as *custom user attributes*.
 
