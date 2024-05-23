@@ -12,7 +12,7 @@ ms.reviewer: absinh
 ---
 # Create a remote network using Azure vWAN
 
-In this article, we'll explain how to simulate remote network connectivity using a remote virtual wide-area network (vWAN). If you want to simulate remote network connectivity using an Azure virtual network gateway, see the article, [Create a remote network using Azure virtual networks](/entra/global-secure-access/how-to-simulate-remote-network).
+This article explains how to simulate remote network connectivity using a remote virtual wide-area network (vWAN). If you want to simulate remote network connectivity using an Azure virtual network gateway, see the article, [Create a remote network using Azure virtual networks](/entra/global-secure-access/how-to-simulate-remote-network).
 
 ## Prerequisites
 
@@ -28,23 +28,23 @@ In this document, we use the following default values. Feel free to configure th
 - Resource group name: GlobalSecureAccess_Documentation
 - Region: South Central US
 
-## Set up a virtual WAN in the Azure portal
-To set up a virtual WAN, you'll need to complete three sub-steps: create a virtual WAN, create a virtual hub with a site-to-site virtual private network (VPN) gateway, and obtain the VPN gateway information.
+## Set up a vWAN in the Azure portal
+To set up a vWAN, you'll need to complete three sub-steps: create a vWAN, create a virtual hub with a site-to-site virtual private network (VPN) gateway, and obtain the VPN gateway information.
 
-### Create a virtual WAN
-Create a virtual wide area network to connect to your resources in Azure. For more information about Virtual WAN, see the [Virtual WAN Overview](/azure/virtual-wan/virtual-wan-about).
-1.	From the Microsoft Azure portal, in the **Search resources** bar, type **Virtual WAN** in the search box and select **Enter**.
-1.	Select **Virtual WANs** from the results. On the Virtual WANs page, select **+ Create** to open the **Create WAN** page.
+### Create a vWAN
+Create a vWAN to connect to your resources in Azure. For more information about vWAN, see the [vWAN Overview](/azure/virtual-wan/virtual-wan-about).
+1.	From the Microsoft Azure portal, in the **Search resources** bar, type **vWAN** in the search box and select **Enter**.
+1.	Select **vWANs** from the results. On the vWANs page, select **+ Create** to open the **Create WAN** page.
 1.	On the **Create WAN** page, on the **Basics** tab, fill in the fields. Modify the example values to apply to your environment.
     - **Subscription**: Select the subscription that you want to use.
     - **Resource group**: Create new or use existing.
     - **Resource group location**: Choose a resource location from the dropdown. A WAN is a global resource and doesn't live in a particular region. However, you must select a region to manage and locate the WAN resource that you create.
-    - **Name**: Type the Name that you want to call your virtual WAN.
-    - **Type**: Basic or Standard. Select **Standard**. If you select Basic, understand that Basic virtual WANs can only contain Basic hubs. Basic hubs can only be used for site-to-site connections.
+    - **Name**: Type the Name that you want to call your vWAN.
+    - **Type**: Basic or Standard. Select **Standard**. If you select Basic, understand that Basic vWANs can only contain Basic hubs. Basic hubs can only be used for site-to-site connections.
 1.	After filling out the fields, at the bottom of the page, select **Review + create**.
  :::image type="content" source="media/how-to-create-remote-network-vwan/create-vwan.png" alt-text="Screenshot of the Create WAN page with completed fields." lightbox="media/how-to-create-remote-network-vwan/create-vwan-expanded.png"::: 
 
-1.	Once validation passes, click **Create** to create the virtual WAN.
+1.	Once validation passes, select **Create** to create the vWAN.
 
 ### Create a virtual hub with a VPN gateway
 Next, create a virtual hub with a site-to-site virtual private network (VPN) gateway:
@@ -78,7 +78,7 @@ To create a remote network in the Microsoft Entra admin center, you’ll need to
 :::image type="content" source="media/how-to-create-remote-network-vwan/vwan-create-new-hub-access-hub-hub-1-vpn-gateway.png" alt-text="Screenshot of the VPN (Site to site) page, with the the VPN Gateway link visible." lightbox="media/how-to-create-remote-network-vwan/vwan-create-new-hub-access-hub-hub-1-vpn-gateway-expanded.png":::
  
 1. On the VPN Gateway page, select **JSON View**.
-1. Copy the JSON text into a file for reference in upcoming steps. Make note of the **autonomous system number (ASN)**, device **IP address**, and the device **border gateway protocol (BGP) address** to use in the Entra admin center in next step.
+1. Copy the JSON text into a file for reference in upcoming steps. Make note of the **autonomous system number (ASN)**, device **IP address**, and the device **border gateway protocol (BGP) address** to use in the Microsoft Entra admin center in the next step.
 
 > [!TIP]
 > You cannot change the ASN value. 
@@ -92,8 +92,8 @@ In this step, use the network information from the VPN gateway to create a remot
     - **Name**
     - **Region**
 1. Proceed to the **Connectivity** tab, where you add the device links for the remote network.
-1. Click **+ Add a link**.
-1. Complete the fields on the the **General** tab in the **Add a link** form, using the VPN gateway's *Instance0* configuration from the previous step:
+1. Select **+ Add a link**.
+1. Complete the fields on the **General** tab in the **Add a link** form, using the VPN gateway's *Instance0* configuration from the previous step:
     - **Link name**: Name of your Customer Premises Equipment (CPE).
     - **Device type**: Choose a device option from the dropdown list.
     - **IP address**: Public IP address of your device.
@@ -120,13 +120,13 @@ Repeat the above steps to create a second device link with VPN gateway's *Instan
 1. Select **Create remote network**.
 
 Navigate to the Remote network page to view the details of the new remote network. There should be one **Region** and two **Links**. 
-1. Under **Connetivity details**, select the **View configuration** link.
+1. Under **Connectivity details**, select the **View configuration** link.
 1. Copy the Remote network configuration text into a file for reference in upcoming steps. Make note of the **Endpoint**, **ASN**, and **BGP address** for each of the links.
 
 ## Create a VPN site using the Microsoft gateway
 
 ### Create a VPN site
-1. In the Microsoft Azure Portal, sign in the the virtual hub created above.
+1. In the Microsoft Azure portal, sign in the virtual hub created above.
 1. Navigate to **Connectivity** > **VPN (Site to site)**.
 1. Select **+ Create new VPN site**.
 1. On the **Create VPN site** page, complete the fields on the **Basics** tab.
@@ -149,7 +149,7 @@ In this step, associate the VPN site from the previous step with the hub. Next, 
 :::image type="content" source="media/how-to-create-remote-network-vwan/clear-hub-association-filter.png" alt-text="Screenshot of the VPN (Site to site) page with the X highlighted for the hub association filter." lightbox="media/how-to-create-remote-network-vwan/clear-hub-association-filter-expanded.png":::
 
 1. Select the VPN site from the list and select **Connect VPN sites**.
-1. In the Connect sites form, type the same **Pre-shared key (PSK)** used for the Entra admin center.
+1. In the Connect sites form, type the same **Pre-shared key (PSK)** used for the Microsoft Entra admin center.
 1. Select **Connect**.
 1. After about 30 minutes, the VPN site will update to show that the **Connection provisioning status** has succeeded and the **Connectivity status** is connected.
 :::image type="content" source="media/how-to-create-remote-network-vwan/provisioning-status-succeeded.png" alt-text="Screenshot of the VPN (Site to site) page showing green checkmarks that indicate that Connection provisioning has succeeded and Connectivity is connected." lightbox="media/how-to-create-remote-network-vwan/provisioning-status-succeeded-expanded.png":::
@@ -164,9 +164,10 @@ The BGP dashboard lists the **BGP Peers** (VPN gateways and VPN site), which sho
 1. To view the list of learned routes, select **Routes the site-to-site gateway is learning**.
 
 The list of **Learned Routes** shows that the site-to-site gateway has learned the M365 routes listed in the M365 traffic profile.
+
 :::image type="content" source="media/how-to-create-remote-network-vwan/BGP-peers-learned-routes.png" alt-text="Screenshot of the Learned Routes page with the learned M365 routes highlighted." lightbox="media/how-to-create-remote-network-vwan/BGP-peers-learned-routes-expanded.png":::
 
-The image below shows the traffic profile **Policies & rules** for the Microsoft 365 profile, which should should match the routes learned from the site-to-site gateway.
+The image below shows the traffic profile **Policies & rules** for the Microsoft 365 profile, which should match the routes learned from the site-to-site gateway.
 :::image type="content" source="media/how-to-create-remote-network-vwan/traffic-profile-match.png" alt-text="Screenshot of the Microsoft 365 traffic forwarding profiles, showing the matching learned routes." lightbox="media/how-to-create-remote-network-vwan/traffic-profile-match-expanded.png":::
 
 ### Check connectivity in Microsoft Entra admin center
@@ -177,20 +178,22 @@ View the Remote netowk health logs to validate connectivity in the Microsoft Ent
 1. The connectivity should be **"Remote network alive"**.
 
 ## Test security features with Azure virtual Desktop (AVD)
-This step uses Azure Virtual Desktop (AVD) to test tenant restrictions on the virtual netork.
+This step uses Azure Virtual Desktop (AVD) to test tenant restrictions on the virtual network.
 
 ### Create a virtual network
+
 1. In the Azure portal, search for and select **Virtual networks**.
 1. On the **Virtual networks** page, select **+ Create**.
 1. Complete the **Basics** tab and select **Next** to proceed to the **Security** tab.
 1. In the **Azure Bastion** section, select **Enable Bastion**, type the **Azure Bastion host name**, and select the **Azure Bastion public IP address**.
 1. Select **Next** to proceed to the **IP Addresses tab** tab. Configure the address space of the virtual network with one or more IPv4 or IPv6 address ranges.
-> [!TIP]
-> Don’t use an overlapping address space. For example, if the virtual hub created above uses the address space 10.0.0.0/16, create this virtual network with the address space 10.2.0.0/16.
+    > [!TIP]
+    > Don’t use an overlapping address space. For example, if the virtual hub created above uses the address space 10.0.0.0/16, create this virtual network with the address space 10.2.0.0/16.
 1. Select **Review + create**. When validation passes, select **Create**.
 
-### Add a virtual network connection to the virtual WAN
-1. Open the virtual WAN created above and navigate to **Connectivity** > **Virtual network connections**.
+### Add a virtual network connection to the vWAN
+
+1. Open the vWAN created above and navigate to **Connectivity** > **Virtual network connections**.
 1. Select **+ Add connection**.
 1. Complete the **Add connection** form, using the virtual **Hub** and **Virtual network** created in previous sections. Leave the remaining fields set to their default values.
 1. Select **Create**. 
@@ -217,7 +220,7 @@ This step uses Azure Virtual Desktop (AVD) to test tenant restrictions on the vi
     * **Enable secure boot**: Yes 
     * **Enable vTPM**: Yes 
     * **Image**: Windows 11 Enterprise multi-session + Microsoft 365 apps version 22H2 
-    * **Virtual machine size**: Standard D2s v3, 2 vCPU's, 8 GiB memory 
+    * **Virtual machine size**: Standard D2s v3, 2 vCPU's, 8 GB memory 
     * **Number of VMs**: 1 
     * Select the virtual network created in previous step. 
     * **Domain to join**: Microsoft Entra ID 
@@ -241,8 +244,8 @@ Before testing, enable tenant restrictions on the virtual network.
 1. Keep the default settings, which prevent users from logging in with external accounts on managed devices. 
 
 To test:
-1. Log in to the Azure Virtual Desktop virtual machine created in the previous steps.
-1. Go to www.office.com and log in with an internal organization ID. This test should pass successfully.
+1. Sign in to the Azure Virtual Desktop virtual machine created in the previous steps.
+1. Go to www.office.com and sign in with an internal organization ID. This test should pass successfully.
 1. Repeat the above step, but with an *external account*. This test should fail due to blocked access.
 
 ### Test source IP restoration
@@ -253,8 +256,8 @@ Before testing, enable conditional access.
 1. Select **Save**. For more information, see the article, [Source IP restoration](how-to-source-ip-restoration.md).
 
 To test (option 1):
-1. Log in to the Azure Virtual Desktop virtual machine created in the previous steps.
-1. Go to www.office.com and log in with an internal organization ID. This test should pass successfully.
+1. Sign in to the Azure Virtual Desktop virtual machine created in the previous steps.
+1. Go to www.office.com and sign in with an internal organization ID. This test should pass successfully.
 1. Repeat the above step, but with an external account. This test should fail due to blocked access.
 
 To test (option 2):
@@ -263,7 +266,7 @@ To test (option 2):
 1. Select **Source IP** and type the VPN gateway public IP address. Select **Apply**.
 :::image type="content" source="media/how-to-create-remote-network-vwan/test-option-one.png" alt-text="Screenshot of the Remote network health logs page with the Add filter menu open ready to type the Source IP." lightbox="media/how-to-create-remote-network-vwan/test-option-one-expanded.png":::
 
-The system restores the branch office's customer premises equipment (CPE) IP address. Becasue the VPN gateway represents the CPE, the health logs show the public IP address of the VPN gateway, not the proxy's IP address.
+The system restores the branch office's customer premises equipment (CPE) IP address. Because the VPN gateway represents the CPE, the health logs show the public IP address of the VPN gateway, not the proxy's IP address.
 
 ## Next steps
 
