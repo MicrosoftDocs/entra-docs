@@ -92,7 +92,7 @@ You'll need to use **PowerShell** in this portion.  If you don’t have **PowerS
     The following command returns the details of the Resource Group:
 
     ```powershell
-    {"id":"/subscriptions/98f51385-2edc-4b79-bed9-7718de4cb861/resourceGroups/DevTest","name":"DevTest","location":"westus","properties":{"provisioningState":"Succeeded"}}
+    {"id":"/subscriptions/aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e/resourceGroups/DevTest","name":"DevTest","location":"westus","properties":{"provisioningState":"Succeeded"}}
     ```
 
 ## Next steps
