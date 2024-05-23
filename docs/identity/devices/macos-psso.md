@@ -56,6 +56,8 @@ Learn how you can use Platform SSO for macOS to enable passwordless authenticati
 * [Passwordless authentication options for Microsoft Entra ID](../../identity/authentication/concept-authentication-passwordless.md)
 * [Plan a passwordless authentication deployment in Microsoft Entra ID](../../identity/authentication/howto-authentication-passwordless-deployment.md)
 
+Platform Credential for macOS can also be used as a phishing resistant Passkey for browser re-auth scenarios. Admins will need to enable the FIDO2 security key authentication method for this capability. If you leverage Key Restriction Policies in your FIDO policy then you will need to add the AAGUID for the macOS Platform Credential to your list of allowed AAGUIDs: `7FD635B3-2EF9-4542-8D9D-164F2C771EFC`
+
 ## National Institute of Standards and Technology (NIST)
 
 The National Institute of Standards and Technology (NIST) is a non-regulatory federal agency within the U.S. Department of Commerce. NIST develops and issues standards, guidelines, and other publications to assist federal agencies in managing cost-effective programs to protect their information and information systems.
