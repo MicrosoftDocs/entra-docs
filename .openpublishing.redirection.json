@@ -610,6 +610,16 @@
       "source_path_from_root": "/docs/external-id/customers/microsoft-graph-operations.md",
       "redirect_url": "/entra/external-id/customers/concept-supported-features-customers",
       "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/domain-services/join-centos-linux-vm.md",
+      "redirect_url": "/entra/identity/domain-services/join-ubuntu-linux-vm",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/domain-services/ad-auth-no-join-linux-vm.md",
+      "redirect_url": "/entra/identity/domain-services/join-ubuntu-linux-vm",
+      "redirect_document_id": false
     }
   ]
 }
