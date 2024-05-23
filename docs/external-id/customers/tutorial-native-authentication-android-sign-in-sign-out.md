@@ -190,7 +190,6 @@ Make sure you include the import statements. Android Studio should include the i
 
 You have completed all the necessary steps to successfully sign out a user on your app. Build and run your application. If all good, you should be able to select sign out button to successfully sign out. 
 
-## Next steps
+## Related content
 
-- [Tutorial: Sign up user with username and user attributes](tutorial-native-authentication-android-sign-up-user-with-username-user-attributes.md). 
-- [Add user attributes to token claims](how-to-add-attributes-to-token.md).
+[Add user attributes to token claims](how-to-add-attributes-to-token.md).
