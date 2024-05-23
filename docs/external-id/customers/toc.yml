@@ -10,8 +10,8 @@ items:
       href: quickstart-get-started-guide.md
     - name: Use the Visual Studio Code extension
       href: visual-studio-code-extension.md
-    - name: Enable built-in authentication
-      href: /azure/app-service/scenario-secure-app-authentication-app-service?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+    - name: Use Azure App Service built-in authentication
+      href: /azure/app-service/scenario-secure-app-authentication-app-service?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-configuration
 - name: Samples
   expanded: false
   items:
@@ -225,26 +225,32 @@ items:
                   href: tutorial-mobile-app-android-kotlin-sign-in.md
                 - name: Call an API
                   href: tutorial-mobile-app-android-kotlin-sign-in-call-api.md
+            - name: iOS
+              items:
+                - name: Prepare tenant
+                  href: tutorial-mobile-app-ios-swift-prepare-tenant.md
+                - name: Prepare app
+                  href: tutorial-mobile-app-ios-swift-prepare-app.md
+                - name: Sign in users
+                  href: tutorial-mobile-app-ios-swift-sign-in.md
+                - name: Call an API
+                  href: tutorial-mobile-app-ios-swift-sign-in-call-api.md
         - name: Native authentication
           items:
             - name: Android (Kotlin)
               items:
                 - name: Prepare Android app
                   href: tutorial-native-authentication-prepare-android-app.md
+                - name: Sign up
+                  href: tutorial-native-authentication-android-sign-up.md
+                  displayName: email OTP, email one-time passcode, email and password
                 - name: Email and OTP code
                   items:
-                    - name: Sign up
-                      href: tutorial-native-authentication-android-sign-up.md
                     - name: Sign in and sign out
                       href: tutorial-native-authentication-android-sign-in-sign-out.md
-                    - name: Sign up with user attributes
-                      href: tutorial-native-authentication-android-sign-up-user-with-username-user-attributes.md
+                      displayName: email OTP, email one-time passcode, email and password
                 - name: Email and password
                   items:
-                    - name: Sign up
-                      href: tutorial-native-authentication-android-sign-up-user-with-username-password.md
-                    - name: Sign up and submit user attributes
-                      href: tutorial-native-authentication-android-sign-up-user-with-username-password-user-attributes.md
                     - name: Sign in and sign out
                       href: tutorial-native-authentication-android-sign-in-user-with-username-password.md
                     - name: Self-service password reset

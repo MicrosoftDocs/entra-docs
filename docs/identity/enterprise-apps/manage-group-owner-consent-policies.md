@@ -229,14 +229,14 @@ Follow these steps to create a custom group owner consent policy:
    Repeat this step to add more "include" condition sets.
 
 1. Optionally, add "exclude" condition sets.
-     Exclude delegated permissions for the Azure Management API (appId 46e6adf4-a9cf-4b60-9390-0ba6fb00bf6b)
+     Exclude delegated permissions for the Azure Management API (appId 00001111-aaaa-2222-bbbb-3333cccc4444)
 
    ```http
    POST https://graph.microsoft.com/v1.0/policies/permissionGrantPolicies/{ my-custom-app-consent-policy-for-group }/excludes
    
    {
      "permissionType": "delegated",
-     "resourceApplication": "46e6adf4-a9cf-4b60-9390-0ba6fb00bf6b "
+     "resourceApplication": "00001111-aaaa-2222-bbbb-3333cccc4444 "
    }
    ```
 

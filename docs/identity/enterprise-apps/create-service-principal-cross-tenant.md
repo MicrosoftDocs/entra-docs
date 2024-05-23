@@ -59,7 +59,7 @@ Where:
 1. Run the following command to create the enterprise application:
 
    ```powershell
-   New-MgServicePrincipal -AppId fc876dd1-6bcb-4304-b9b6-18ddf1526b62
+   New-MgServicePrincipal -AppId 00001111-aaaa-2222-bbbb-3333cccc4444
    ```
 1. To  delete the enterprise application you created, run the command:
 
@@ -81,7 +81,7 @@ You can use an API client such as [Graph Explorer](https://aka.ms/ge) to work wi
    Content-type: application/json
    
    {
-     "appId": "fc876dd1-6bcb-4304-b9b6-18ddf1526b62"
+     "appId": "00001111-aaaa-2222-bbbb-3333cccc4444"
    }
    
    ```
@@ -89,7 +89,7 @@ You can use an API client such as [Graph Explorer](https://aka.ms/ge) to work wi
 1. To delete the enterprise application you created, run the query.
 
     ```http
-    DELETE https://graph.microsoft.com/v1.0/servicePrincipals(appId='fc876dd1-6bcb-4304-b9b6-18ddf1526b62')
+    DELETE https://graph.microsoft.com/v1.0/servicePrincipals(appId='00001111-aaaa-2222-bbbb-3333cccc4444')
     ```	
 :::zone-end
 :::zone pivot="azure-cli"

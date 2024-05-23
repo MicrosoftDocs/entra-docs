@@ -158,7 +158,7 @@ Associating a traffic forwarding profile to your remote network using the Micros
             "@odata.context": "#$delta",
             "value":
             [{
-                "ID": "1adaf535-1e31-4e14-983f-2270408162bf"
+                "ID": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee"
             }]
         }
     ```
