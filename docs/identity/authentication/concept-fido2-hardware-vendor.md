@@ -139,7 +139,7 @@ The following table lists FIDO2 security key models that are currently eligible 
 |Token Ring FIDO2 Authenticator|91ad6b93-264b-4987-8737-3a690cad6917|![y]|![n]|![y]|![n]|
 |TOKEN2 FIDO2 Security Key|ab32f0c6-2239-afbb-c470-d2ef4e254db7|![n]|![n]|![n]|![n]|
 |TOKEN2 PIN Plus Security Key Series|eabb46cc-e241-80bf-ae9e-96fa6d2975cf|![n]|![y]|![y]|![n]|
-|uTrust FIDO2 Security Key73402251-f2a8-4f03-873e-3cb6db604b03|![n]|![y]|![y]|![n]|
+|uTrust FIDO2 Security Key|73402251-f2a8-4f03-873e-3cb6db604b03|![n]|![y]|![y]|![n]|
 |VALMIDO PRO FIDO|5626bed4-e756-430b-a7ff-ca78c8b12738|![y]|![n]|![n]|![y]|
 |VeriMark Guard Fingerprint Key|d94a29d9-52dd-4247-9c2d-8b818b610389|![y]|![n]|![n]|![n]|
 |VinCSS FIDO2 Authenticator|5fdb81b8-53f0-4967-a881-f5ec26fe4d18|![n]|![n]|![n]|![n]|
