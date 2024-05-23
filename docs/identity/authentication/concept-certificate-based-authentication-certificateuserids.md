@@ -18,7 +18,7 @@ ms.custom: has-adal-ref
 
 User objects in Microsoft Entra ID have an attribute named certificateUserIds.
 
-- The certificateUserIds attribute is multivalued and can hold up to 5 values.
+- The certificateUserIds attribute is multivalued and can hold up to 10 values.
 - Each value can be no more than 1024 characters.
 - Each value must be unique. Once a value is present on one user account, it can't be written to any other user account in the same Entra ID tenant.
 - The value doesn't need to be in email ID format. The certificateUserIds attribute can store nonroutable user principal names (UPNs) like _bob@woodgrove_ or _bob@local_.

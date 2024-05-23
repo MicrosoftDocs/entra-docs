@@ -17,6 +17,8 @@ ms.custom: developer, devx-track-dotnet
 
 # Sign in users in a sample .NET MAUI desktop application
 
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
 This how-to guide uses a sample .NET Multi-platform App UI (.NET MAUI) to show how to add authentication to a desktop application by using an external tenant. The sample application enables users to sign in and sign out. The sample .NET MAUI desktop application uses [Microsoft Authentication Library (MSAL)](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet) for .NET to handle authentication.
 
 In this article, you do the following tasks:
