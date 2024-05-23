@@ -66,6 +66,30 @@ This policy covers all users and requires MFA and reauthentication when we detec
 
 This policy targets Microsoft Entra ID P2 tenants where security defaults aren't enabled and there are enough licenses for each user. Microsoft doesn't allow risky users to register for MFA. To avoid locking out users, this policy is only available to organizations where every user is already registered for MFA. 
 
+### Block legacy authentication
+
+This policy blocks legacy authentication protocols for accessing applications. Legacy authentication refers to an authentication request made by:
+Clients that don't use modern authentication (for example, an office 2010 client)
+-Any client that uses older mail protocols such as IMAP, SMTEP, or POP3
+-Any sign in attempt using legacy authentication will be blocked. Today, most compromising sign-in attempts come from legacy authentication. Since legacy authentication doesn't support multifactor authentication, an attacker can bypass your MFA requirements by using an older protocol.
+
+### Require multifactor authentication for Azure management
+
+This policy covers all users when they are trying to access various Azure services managed through the Azure Resource Manager API including:
+- Azure portal
+- Microsoft Entra admin center
+- Azure PowerShell
+- Azure CLI
+When trying to access any of these resources, the user will be required to complete MFA MFA before they can gain access. 
+
+### Require multifactor authentication for admins
+
+This policy covers any user with one of 14 admin roles we consider to be highly privileged. Because of the power these highly privileged accounts have, they will be required to MFA whenever they sign into any application. 
+
+### Require multifactor authentication for all users
+
+This policy covers all users in your organization and requires them to MFA whenever they sign in. Note that in most cases, the session will be persisted on the device and they would not have to complete MFA whenever they are interacting with another application. 
+
 ## How do I see the effects of these policies?
 
 Administrators can look at the Policy impact on sign-ins section to see a quick summary of the effect of the policy in their environment.
