@@ -104,7 +104,7 @@ Use these steps to create configuration file:
     
     - For sign-up and sign-in flows with email one-time passcode, use `["oob"]`.
     - For sign-up and sign-in flows with email and password, use `["oob","password"]`.
-    - For self-service password reset (SSPR), use use `["oob"]`.
+    - For self-service password reset (SSPR), use `["oob"]`.
   
 
     Learn more [challenge types](concept-native-authentication-challenge-types.md).  
