@@ -16,10 +16,10 @@ ms.collection: M365-identity-device-management
 
 # Set up tenant restrictions v2
 
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
+
 > [!NOTE]
 > Certain features described in this article are preview features. For more information about previews, see [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
-
-[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
 
 To enhance security, you can limit what your users can access when they use an external account to sign in from your networks or devices. The **Tenant restrictions** settings, included with [cross-tenant access settings](cross-tenant-access-overview.md), let you create a policy to control access to external apps.
 
