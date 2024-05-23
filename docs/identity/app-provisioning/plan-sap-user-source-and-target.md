@@ -47,7 +47,7 @@ In this section, you define the requirements for identities and access for appli
 
 ### Determine the sequence of application onboarding and how applications integrate with Microsoft Entra
 
-Mybe your organization already integrated some applications with Microsoft Entra for a subset of the available integration scenarios. For example, perhaps you integrated SAP Cloud Identity Services with Microsoft Entra for SSO to gain the benefit of conditional access, but you're still relying on manual provisioning and deprovisioning. Or, you might have applications such as SAP ECC in your organization that you haven't yet integrated with Microsoft Entra.
+Maybe your organization already integrated some applications with Microsoft Entra for a subset of the available integration scenarios. For example, perhaps you integrated SAP Cloud Identity Services with Microsoft Entra for SSO to gain the benefit of conditional access, but you're still relying on manual provisioning and deprovisioning. Or, you might have applications such as SAP ECC in your organization that you haven't yet integrated with Microsoft Entra.
 
 1. **Establish a priority order for applications to be integrated with Microsoft Entra for SSO and for provisioning.** Organizations generally start integrating with software as a service (SaaS) applications that support modern protocols. For SAP applications, we recommend that organizations that have SAP cloud applications start their integrations with the SSO and provisioning integrations with SAP Cloud Identity Services as middleware. Here, a user provisioning and SSO integration to Microsoft Entra can benefit multiple SAP applications.
 
