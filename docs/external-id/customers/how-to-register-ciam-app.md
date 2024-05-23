@@ -14,6 +14,8 @@ ms.custom: it-pro
 ---
 # Register your app in the external tenant
 
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
 Microsoft Entra External ID enables your organization to manage customers’ identities, and securely control access to your public facing applications and APIs. Applications where your customers can buy your products, subscribe to your services, or access their account and data.  Your customers only need to sign in on a device or a web browser once and have access to all your applications you granted them permissions.
 
 To enable your application to sign in with External ID, you need to register your app with External ID. The app registration establishes a trust relationship between the app and External ID.

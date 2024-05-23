@@ -20,6 +20,8 @@ ms.custom: it-pro
 > [!TIP]
 > This article applies to user flows in external tenants. For information about workforce tenants, see [Define custom attributes for user flows](../user-flow-add-custom-attributes.md).
 
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
 If your app requires more information than the built-in user attributes provide, you can add your own attributes. We refer to these attributes as *custom user attributes*.
 
 To define a custom user attribute, you first create the attribute at the tenant level so it can be used in any user flow in the tenant. Then you assign the attribute to your sign-up user flow and configure how you want it to appear on the sign-up page.

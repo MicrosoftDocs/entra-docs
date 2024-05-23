@@ -17,6 +17,8 @@ ms.custom:
 
 # Language customization in Microsoft Entra External ID
 
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
+
 > [!TIP]
 > This article applies to B2B collaboration user flows in workforce tenants. For information about external tenants, see [Customize the language of the authentication experience](customers/how-to-customize-languages-customers.md).
 

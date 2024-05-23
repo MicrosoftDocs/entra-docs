@@ -15,6 +15,8 @@ ms.custom: it-pro
 ---
 # Investigate risk with Identity Protection in Microsoft Entra External ID
 
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
 Microsoft Entra [Identity Protection](~/id-protection/overview-identity-protection.md) provides ongoing risk detection for your external tenant. It allows organizations to discover, investigate, and remediate identity-based risks. Identity Protection comes with risk reports that can be used to investigate identity risks in external tenants. In this article, you learn how to investigate and mitigate risks.
 
 ## Identity Protection reporting

@@ -17,6 +17,8 @@ ms.collection: M365-identity-device-management
 
 # Define custom attributes for user flows
 
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
+
 > [!TIP]
 > This article applies to B2B collaboration user flows in workforce tenants. For information about external tenants, see [Collect user attributes during sign-up](customers/how-to-define-custom-attributes.md).
 

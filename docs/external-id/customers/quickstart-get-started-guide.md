@@ -16,6 +16,8 @@ ms.custom: it-pro
 ---
 # Quickstart: Get started with our guide to run a sample app and sign in your users 
 
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
 In this quickstart, we'll guide you through customizing the look and feel of your apps in the external tenant, setting up a user and configuring a sample app in only a few minutes. With these built-in external configuration features, Microsoft Entra External ID can serve as the identity provider and access management service for your customers.
 
 ## Prerequisites
