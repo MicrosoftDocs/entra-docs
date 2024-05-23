@@ -7,4 +7,4 @@ ms.author: godonnell
 ms.manager: celested
 ---
 
-**Applies to**: External ID in ![Green circle with a white check mark symbol.](../media/common/applies-to-yes.png) workforce tenants ![White circle with a gray X symbol.](../media/common/applies-to-no.png) external tenants ([learn more](../tenant-configurations.md))
+**Applies to**: ![Green circle with a white check mark symbol.](../media/common/applies-to-yes.png) Workforce tenants ![White circle with a gray X symbol.](../media/common/applies-to-no.png) External tenants ([learn more](../tenant-configurations.md))
