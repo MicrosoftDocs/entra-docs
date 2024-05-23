@@ -26,8 +26,8 @@ During the preview, Global Secure Access (preview) is available in limited point
 | Gavle, Sweden                    | Singapore, Singapore   |                         | Phoenix, Arizona, USA |
 | Johannesburg, South Africa       | Sydney, Australia      |                         | Queretaro, Mexico |
 | London, UK                       | Taipei, Taiwan         |                         | Quincy, Washington, USA |
-| Madrid, Spain                    | Tokyo, Japan           |                         | San Antonio, Texas, USA |
-| Marseille, France                |                        |                         | San Jose, California, USA |
+| Marseille, France                | Tokyo, Japan           |                         | San Antonio, Texas, USA |
+| Madrid, Spain                    |                        |                         | San Jose, California, USA |
 | Milan, Italy                     |                        |                         | Toronto, Ontario, Canada |
 | Paris, France                    |                        |                         |                          |
 | Tel Aviv, Israel                 |                        |                         |                          |
