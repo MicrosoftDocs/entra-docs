@@ -51,6 +51,8 @@ Follow these steps to change the list of incompatible groups or other access pac
 
 1. In the left menu, select **Separation of duties**.
 
+1. The list on the **Incompatible Access Packages** tab are of other access packages. If a user already has an assignment to an access package on that list, they would not be allowed to request this access package.
+
 1.  If you wish to prevent users who have another access package assignment already from requesting this access package, select on **Add access package** and select the access package that the user would already be assigned.
 
 
@@ -58,6 +60,8 @@ Follow these steps to change the list of incompatible groups or other access pac
 
 
 1.  If you wish to prevent users who have an existing group membership from requesting this access package, then select on **Add group** and select the group that the user would already be in.
+
+1. As each incompatible access package relationship is unidirectional, then if you want the users who are assigned to this access package to not be able to request that access package, then you will need to change to that access package and add this access package as incompatible.
 
 ### Configure incompatible access packages programmatically through Graph
 
