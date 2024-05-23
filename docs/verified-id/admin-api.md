@@ -253,14 +253,14 @@ Content-type: application/json
             }
         },
         {
-            "id": "cc55ba22-0000-1111-2222-000000000000",
+            "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
             "name": "AuthorityName2",
             "keyVaultUrl": "https://vccontosokv.vault.azure.net/",
             "status": "Enabled",
             "didModel": {
                 "did": "did:web:verifiedid2.contoso.com",
                 "signingKeys": [
-                    "https://vccontosokv.vault.azure.net/keys/vcSigningKey-cc55ba22-0000-1111-2222-000000000000/f8f149eaee194beb83dfca14714ef62a"
+                    "https://vccontosokv.vault.azure.net/keys/vcSigningKey-00aa00aa-bb11-cc22-dd33-44ee44ee44ee/f8f149eaee194beb83dfca14714ef62a"
                 ],
                 "recoveryKeys": [],
                 "updateKeys": [],
@@ -330,13 +330,13 @@ When successful the response message contains the name of the [authority](#autho
 Example message for did:web:
 ```
 {
-    "id": "bacf5333-d68c-01c5-152b-8c9039fbd88d",
+    "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
     "name": "APItesta",
     "status": "Enabled",
     "didModel": {
         "did": "did:web:verifiedid.contoso.com",
         "signingKeys": [
-            "https://vcwingtipskv.vault.azure.net/keys/vcSigningKey-bacf5333-d68c-01c5-152b-8c9039fbd88d/5255b9f2d9b94dc19a369ff0d36e3407"
+            "https://vcwingtipskv.vault.azure.net/keys/vcSigningKey-00aa00aa-bb11-cc22-dd33-44ee44ee44ee/5255b9f2d9b94dc19a369ff0d36e3407"
         ],
         "recoveryKeys": [],
         "updateKeys": [],
@@ -347,7 +347,7 @@ Example message for did:web:
         "didDocumentStatus": "published"
     },
     "keyVaultMetadata": {
-        "subscriptionId": "bbbb1b1b-cc2c-dd3d-ee4e-ffffff5f5f5f",
+        "subscriptionId": "aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e",
         "resourceGroup": "verifiablecredentials",
         "resourceName": "vcwingtipskv",
         "resourceUrl": "https://vcwingtipskv.vault.azure.net/"
@@ -364,13 +364,13 @@ HTTP/1.1 201 Created
 Content-type: application/json
 
 {
-    "id": "cc55ba22-0000-1111-2222-000000000000",
+    "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
     "name": "APItest6",
     "status": "Enabled",
     "didModel": {
         "did": "did:web:verifiedid.contoso.com",
         "signingKeys": [
-            "https://vccontosokv.vault.azure.net/keys/vcSigningKey-cc55ba22-0000-1111-2222-000000000000/f8f149eaee194beb83dfca14714ef62a"
+            "https://vccontosokv.vault.azure.net/keys/vcSigningKey-00aa00aa-bb11-cc22-dd33-44ee44ee44ee/f8f149eaee194beb83dfca14714ef62a"
         ],
         "recoveryKeys": [],
         "updateKeys": [],
@@ -681,13 +681,13 @@ HTTP/1.1 200 OK
 Content-type: application/json
 
 {
-    "id": "bacf5333-d68c-01c5-152b-8c9039fbd88d",
+    "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
     "name": "APItesta",
     "status": "Enabled",
     "didModel": {
         "did": "did:web:verifiedid.contoso.com",
         "signingKeys": [
-            "https://vcwingtipskv.vault.azure.net/keys/vcSigningKey-bacf5333-d68c-01c5-152b-8c9039fbd88d/5255b9f2d9b94dc19a369ff0d36e3407"
+            "https://vcwingtipskv.vault.azure.net/keys/vcSigningKey-00aa00aa-bb11-cc22-dd33-44ee44ee44ee/5255b9f2d9b94dc19a369ff0d36e3407"
         ],
         "recoveryKeys": [],
         "updateKeys": [],
@@ -698,7 +698,7 @@ Content-type: application/json
         "didDocumentStatus": "outOfSync"
     },
     "keyVaultMetadata": {
-        "subscriptionId": "bbbb1b1b-cc2c-dd3d-ee4e-ffffff5f5f5f",
+        "subscriptionId": "aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e",
         "resourceGroup": "verifiablecredentials",
         "resourceName": "vcwingtipskv",
         "resourceUrl": "https://vcwingtipskv.vault.azure.net/"
@@ -735,13 +735,13 @@ HTTP/1.1 200 OK
 Content-type: application/json
 
 {
-    "id": "bacf5333-d68c-01c5-152b-8c9039fbd88d",
+    "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
     "name": "APItesta",
     "status": "Enabled",
     "didModel": {
         "did": "did:web:verifiedid.contoso.com",
         "signingKeys": [
-            "https://vcwingtipskv.vault.azure.net/keys/vcSigningKey-bacf5333-d68c-01c5-152b-8c9039fbd88d/5255b9f2d9b94dc19a369ff0d36e3407"
+            "https://vcwingtipskv.vault.azure.net/keys/vcSigningKey-00aa00aa-bb11-cc22-dd33-44ee44ee44ee/5255b9f2d9b94dc19a369ff0d36e3407"
         ],
         "recoveryKeys": [],
         "updateKeys": [],
@@ -752,7 +752,7 @@ Content-type: application/json
         "didDocumentStatus": "published"
     },
     "keyVaultMetadata": {
-        "subscriptionId": "bbbb1b1b-cc2c-dd3d-ee4e-ffffff5f5f5f",
+        "subscriptionId": "aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e",
         "resourceGroup": "verifiablecredentials",
         "resourceName": "vcwingtipskv",
         "resourceUrl": "https://vcwingtipskv.vault.azure.net/"
@@ -1078,7 +1078,7 @@ example message:
         {
             "id": "ZjViZjJmYzYtNzEzNS00ZDk0LWE2ZmUtYzI2ZTQ1NDNiYzVhdGVzdDI",
             "name": "test2",
-            "authorityId": "cc55ba22-0000-1111-2222-000000000000",
+            "authorityId": "aaaabbbb-0000-cccc-1111-dddd2222eeee",
             "status": "Enabled",
             "issueNotificationEnabled": false,
             "manifestUrl" : "https://...",
@@ -1130,7 +1130,7 @@ Content-type: application/json
 {
     "id": "GUID",
     "name": "ExampleContractName1",
-    "issuerId": "cc55ba22-0000-1111-2222-000000000000",
+    "issuerId": "aaaabbbb-0000-cccc-1111-dddd2222eeee",
     "status": "Enabled",
     "issueNotificationEnabled": false,
     "rules": "<rules JSON>",

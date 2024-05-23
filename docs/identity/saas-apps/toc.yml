@@ -514,8 +514,8 @@
         href: circus-street-tutorial.md
       - name: Cirrus Identity Bridge for Microsoft Entra ID
         href: cirrus-identity-bridge-for-azure-ad-tutorial.md  
-      - name: Cisco AnyConnect
-        href: cisco-anyconnect.md
+      - name: Cisco Secure Firewall - Secure Client
+        href: cisco-secure-firewall-secure-client.md
       - name: Cisco Cloud
         href: ciscocloud-tutorial.md
       - name: Cisco Expressway

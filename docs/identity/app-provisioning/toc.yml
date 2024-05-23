@@ -113,6 +113,8 @@ items:
       items:
       - name: Identity lifecycle with SAP source and targets
         href: plan-sap-user-source-and-target.md
+      - name: Migrate from SAP IDM
+        href: migrate-from-sap-idm.md
     - name: Workday provisioning scenarios
       items:
       - name: Retrieve pronoun information
