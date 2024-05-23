@@ -4,7 +4,7 @@ description: Learn how to troubleshoot manager update issues with HR provisionin
 author: jenniferf-skc
 manager: amycolannino
 ms.service: entra-id
-ms.date: 02/27/2024
+ms.date: 05/23/2024
 ms.subservice: app-provisioning
 ms.topic: troubleshooting
 ms.author: jfields
@@ -46,6 +46,10 @@ In order for *manager reference resolution* to work successfully, the following 
    * SuccessFactors manager default JSONPath API expression: `$.employmentNav.results[0].userNav.manager.empInfo.personIdExternal`
 * The manager record must also be in scope of the provisioning job. 
 * The provisioning app should process the manager record prior to processing the user record. 
+
+> [!NOTE]
+> The *manager* attribute mapping must be a direct mapping and cannot include more than one source attribute. Using expression mappings to perform conditional assignment of manager attribute is not supported. For example, implementing logic such as “if user is active then assign manager1, else assign manager2” is not supported. 
+
 
 ## Provision-on-demand doesn't update manager attribute
 | Troubleshooting | Details |

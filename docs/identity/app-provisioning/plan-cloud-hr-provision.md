@@ -95,8 +95,8 @@ Use of [Lifecycle Workflows](~/id-governance/what-are-lifecycle-workflows.md) an
 
 | **Resources** | **Link and description** |
 |:-|:-|
-| Videos | [What is user provisioning in Active Azure Directory?](https://youtu.be/_ZjARPpI6NI) |
-| | [How to deploy user provisioning in Active Azure Directory](https://youtu.be/pKzyts6kfrw) |
+| Videos | [What is user provisioning in Microsoft Entra ID?](https://youtu.be/_ZjARPpI6NI) |
+| | [How to deploy user provisioning in Microsoft Entra ID](https://youtu.be/pKzyts6kfrw) |
 | Tutorials | [List of tutorials on how to integrate SaaS apps with Microsoft Entra ID](~/identity/saas-apps/tutorial-list.md) |
 | | [Tutorial: Configure automatic user provisioning with Workday](~/identity/saas-apps/workday-inbound-tutorial.md) |
 | | [Tutorial: Configure automatic user provisioning with SAP SuccessFactors](~/identity/saas-apps/sap-successfactors-inbound-provisioning-tutorial.md) |
@@ -143,6 +143,20 @@ Communication is critical to the success of any new service. Proactively communi
 Integrating HR business processes and identity workflows from the cloud HR app to target systems requires a considerable amount of data validation, data transformation, data cleansing, and end-to-end testing before you can deploy the solution into production.
 
 Run the initial configuration in a [pilot environment](~/architecture/deployment-plans.md#best-practices-for-a-pilot) before you scale it to all users in production.
+
+### Plan HR data flow and attribute mapping
+
+To ensure the right HR records are mapped to users in Microsoft Entra ID (Entra ID)/ on-premises Active Directory (AD), work with your HR and IT teams to ensure data consistency and plan for any data cleansing tasks. Here is a list of best practices to get started.  
+
+1. **Matching identifier presence and uniqueness:** The provisioning service uses a matching attribute to uniquely identify and link user records in your HR system with corresponding user accounts in AD / Entra ID. The default matching attribute is based on Employee ID. Ensure that the value of employee ID is populated in Entra ID (for cloud-only users) and on-premises AD (for hybrid users) before initiating full sync and it uniquely identifies a user.  
+
+2. **Use scoping filters to skip HR records that are no longer relevant:** HR systems have several years of employment data probably going all the way back to 1970s. On the other hand, your IT team may only be interested in the list of currently active employees and termination records that come through after go-live. To filter out HR records that are no longer relevant from your IT team perspective, work with your HR team to add flags on the HR record that can be used in the Microsoft Entra provisioning scoping filters.  
+
+3. **Plan for handling special characters in username:** It's a common practice to use the worker's first name and last name to create a unique ```userPrincipalName``` for the user. The ```userPrincipalName``` does not allow accent characters and only the following characters are allowed A - Z, a - z, 0 - 9, ' . - _ ! # ^ ~. Use the function [NormalizeDiacritics](functions-for-customizing-application-data#normalizediacritics) to handle accent characters and construct appropriate ```userPrincipalName```. 
+
+4. **Plan for handling long strings:** Check if your HR data has long string values associated with HR fields that you'll use to populate Entra ID / on-premises AD attributes. Every Entra ID attribute has a max string length. If the value in the HR field mapped to the Entra ID attribute contains more characters, then the attribute update may fail. One option is to review your attribute mapping and check if there is a possibility of truncating/updating long string values in the HR system. If that's not an option, you can either use functions like [Mid](functions-for-customizing-application-data#mid) to truncate long strings or you can use functions like [Switch](functions-for-customizing-application-data#switch) to map long values to shorter values/abbreviations.  
+
+5. **Handle null/empty values for mandatory attributes:** It's mandatory to populate certain attributes like ```firstName```, ```lastName```, ```CN```, or ```UPN``` when creating an account in Entra ID / on-premises AD. If the corresponding HR field mapped to such attributes are null, then the user creation operation fails. For example, if you map the AD ```CN``` attribute to "display name" and if the "display name" is not set for all users, then you encounter an error. One option is to review such mandatory attribute mappings and ensure that the corresponding fields are populated in HR. You may also consider the option of checking for null values in an expression mapping. For example, if display name is empty, concatenate first name and last name to form the display name. 
 
 ## Select cloud HR provisioning connector apps
 
@@ -514,6 +528,14 @@ For more information, see how to [analyze the Microsoft Entra activity logs with
 The Microsoft Entra Connect provisioning agent installed on the Windows server creates logs in the Windows event log that might contain personal data depending on your cloud HR app to Active Directory attribute mappings. To comply with user privacy obligations, set up a Windows scheduled task to clear the event log and ensure that no data is kept beyond 48 hours.
 
 Microsoft Entra provisioning service doesn't generate reports, perform analytics, or provide insights beyond 30 days because the service doesn't store, process, or keep any data beyond 30 days.
+
+## Manage Joiner-Mover-Leaver lifecycle workflows
+You can extend your HR-driven provisioning process to further automate business processes and security controls associated with new hires, employment changes, and termination. With [Microsoft Entra ID Governance Lifecycle Workflows](~/id-governance/what-are-lifecycle-workflows.md), you can configure Joiner-Mover-Leaver workflows such as:  
+
+- “X” days before the new hire joins, send email to manager, add user to groups, and generate a temporary access pass for first time login. 
+- When there's a change in user’s department or job title or group membership, launch a custom task.  
+- On the last day of work, send email to manager, and remove user from groups and license assignments.  
+- “X” days after termination, delete user from Microsoft Entra ID.
 
 ### Troubleshoot
 

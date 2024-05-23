@@ -1,13 +1,13 @@
 ---
 title: Known issues for provisioning in Microsoft Entra ID
 description: Learn about known issues when you work with automated application provisioning or cross-tenant synchronization in Microsoft Entra ID.
-author: kenwith
-ms.author: kenwith
+author: jenniferf-skc
+ms.author: jfields
 manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: troubleshooting
-ms.date: 02/02/2024
+ms.date: 05/23/2024
 ms.reviewer: arvinh
 zone_pivot_groups: app-provisioning-cross-tenant-synchronization
 ---
@@ -96,7 +96,7 @@ Attribute-mapping expressions can have a maximum of 10,000 characters.
 
 #### Unsupported scoping filters
 
-The **appRoleAssignments**, **userType**, and **accountExpires** attributes aren't supported as scoping filters.
+The **appRoleAssignments**, **userType**, **manager**, and **date-type** attributes (for example, StatusHireDate, startDate, endDate, StatusTerminationDate, accountExpires) aren't supported as scoping filters.
 
 ::: zone pivot="cross-tenant-synchronization"
 #### OtherMails should not be included in your attribute mappings as a target attribute
