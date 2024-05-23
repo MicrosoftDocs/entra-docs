@@ -5,20 +5,20 @@ author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: reference
-ms.date: 04/15/2024
+ms.date: 05/23/2024
 ms.service: global-secure-access
 ms.custom: references_regions
 ---
 # Global Secure Access (preview) points of presence and IP addresses
 
-During the preview, Global Secure Access (preview) is available in limited points of presence, with new locations added periodically. The service routes traffic through one of the following nearby locations, so even if you're not in a listed location, you can still access the service. At this time, both Microsoft Entra Internet Access and Microsoft Entra Private Access are available in the same locations.
+During the preview, Global Secure Access (preview) is available in limited points of presence, with new locations added periodically. The service routes traffic through one of the following nearby locations, so even if you're not in a listed location, you can still access the service. At this time, both Microsoft Entra Internet Access and Microsoft Entra Private Access are available in the same locations. These locations are Microsoft data centers.
 
 ## Microsoft Entra Internet Access and Microsoft Entra Private Access
 
 | Europe Middle East Africa (EMEA) | Asia Pacific (APAC)    | Latin America (LATAM)   | North America (NA) |
 |         ---                      |      ---               |         ---             |       ---          |
-| Amsterdam, Netherlands           | Busan, South Korea     | Rio de Janeiro, Brazil  | Boydton, Virginia, USA |
-| Berlin, Germany                  | Chennai, India         |                         | Cheyenne, Wyoming, USA |
+| Amsterdam, Netherlands           | Busan, South Korea     | Campinas, Brazil        | Boydton, Virginia, USA |
+| Berlin, Germany                  | Chennai, India         | Rio de Janeiro, Brazil  | Cheyenne, Wyoming, USA |
 | Cape Town, South Africa          | Melbourne, Australia   |                         | Chicago, Illinois, USA |
 | Dubai, UAE                       | Osaka, Japan           |                         | Des Moines, Iowa, USA |
 | Dublin, Ireland                  | Pune, India            |                         | Manassas, Virginia, USA |
@@ -26,9 +26,11 @@ During the preview, Global Secure Access (preview) is available in limited point
 | Gavle, Sweden                    | Singapore, Singapore   |                         | Phoenix, Arizona, USA |
 | Johannesburg, South Africa       | Sydney, Australia      |                         | Queretaro, Mexico |
 | London, UK                       | Taipei, Taiwan         |                         | Quincy, Washington, USA |
-| Milan, Italy                     | Tokyo, Japan           |                         | San Antonio, Texas, USA |
-| Paris, France                    |                        |                         | San Jose, California, USA |
-| Tel Aviv, Israel                 |                        |                         | Toronto, Ontario, Canada |
+| Madrid, Spain                    | Tokyo, Japan           |                         | San Antonio, Texas, USA |
+| Marseille, France                |                        |                         | San Jose, California, USA |
+| Milan, Italy                     |                        |                         | Toronto, Ontario, Canada |
+| Paris, France                    |                        |                         |                          |
+| Tel Aviv, Israel                 |                        |                         |                          |
 | Warsaw, Poland                   |                        |                         |                          |
 | Zurich, Switzerland              |                        |                         |                          |
 
