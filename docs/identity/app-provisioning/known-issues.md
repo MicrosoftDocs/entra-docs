@@ -159,7 +159,7 @@ Credentials, including the secret token, notification email, and SSO certificate
 
 ::: zone pivot="app-provisioning"
 ## On-premises application provisioning
-The following information is a current list of known limitations with the Microsoft Entra ECMA Connector Host and on-premises application provisioning.
+This is a current list of known limitations with the Microsoft Entra ECMA Connector Host and on-premises application provisioning.
 
 ### Application and directories
 The following applications and directories aren't yet supported.

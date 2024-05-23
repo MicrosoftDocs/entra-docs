@@ -88,7 +88,7 @@ Switch([BusinessTitle],[BusinessTitle],"","N/A")
 Use this field in the attribute mapping logic for the accountDisabled flag.  
 
 - Example:   
-  ``` `Switch([LastDayOfWorkWorkers], Switch([Active], , "1", "False", "0", "True"), "Workers past Last Day of Work", "True")` ``` |
+  ``` `Switch([LastDayOfWorkWorkers], Switch([Active], , "1", "False", "0", "True"), "Workers past Last Day of Work", "True")` ``` 
 
 ## Workday termination processing delay
 **Applies to:**
@@ -110,8 +110,7 @@ wd:Worker/wd:Worker_Data/wd:Account_Provisioning_Data/wd:Provisioning_Group_Assi
 
 Use this field in the attribute mapping logic for the accountDisabled flag.  
 - Example:  
-  ``` `Switch([TerminatedWorkers], Switch([Active], , "1", "False", "0", "True"), "Terminated Workers", "True")` ``` 
- |
+  ``` `Switch([TerminatedWorkers], Switch([Active], , "1", "False", "0", "True"), "Terminated Workers", "True")` ```
 
 ## Next steps
 

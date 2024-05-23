@@ -50,13 +50,14 @@ This document covers commonly encountered errors and issues with inbound provisi
 
 ### Forbidden 403 response code 
 
-**Too many requests 429 response code**
+
+### Too many requests 429 response code
 
 The bulkUpload API endpoint enforces the following throttling limits and returns a 429 response code if these limits are breached. 
 
-1. 40 API calls per 5 seconds – if the number of calls go beyond this limit in a 5-second range, then the client gets a 429 response. One way to avoid this is by *pacing* the request submission using delays in the client request submission logic. 
+- 40 API calls per 5 seconds – if the number of calls go beyond this limit in a 5-second range, then the client gets a 429 response. One way to avoid this is by *pacing* the request submission using delays in the client request submission logic. 
 
-2. 6000 API calls over a 24-hour period – if the number of calls go beyond this limit, then the client gets a 429 response. One way to prevent this is to make sure that your SCIM bulk payload is optimized to use the max 50 records per API call. With this approach, you can send 300K records every 24 hours. 
+- 6000 API calls over a 24-hour period – if the number of calls go beyond this limit, then the client gets a 429 response. One way to prevent this is to make sure that your SCIM bulk payload is optimized to use the max 50 records per API call. With this approach, you can send 300K records every 24 hours. 
 
 
 **Issue description**

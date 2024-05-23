@@ -48,7 +48,7 @@ In order for *manager reference resolution* to work successfully, the following 
 * The provisioning app should process the manager record prior to processing the user record. 
 
 > [!NOTE]
-> The *manager* attribute mapping must be a direct mapping and cannot include more than one source attribute. Using expression mappings to perform conditional assignment of manager attribute is not supported. For example, implementing logic such as “if user is active then assign manager1, else assign manager2” is not supported. 
+> The *manager* attribute mapping must be a direct mapping and can't include more than one source attribute. Using expression mappings to perform conditional assignment of manager attribute is not supported. For example, implementing logic such as “if user is active then assign manager1, else assign manager2” isn't supported. 
 
 
 ## Provision-on-demand doesn't update manager attribute
