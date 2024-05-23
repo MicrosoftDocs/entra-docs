@@ -346,6 +346,21 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-android-sign-up-user-with-username-password-user-attributes.md",
+      "redirect_url": "/entra/external-id/customers/tutorial-native-authentication-android-sign-up",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-android-sign-up-user-with-username-password.md",
+      "redirect_url": "/entra/external-id/customers/tutorial-native-authentication-android-sign-up",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-android-sign-up-user-with-username-user-attributes.md",
+      "redirect_url": "/entra/external-id/customers/tutorial-native-authentication-android-sign-up",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity/conditional-access/location-condition.md",
       "redirect_url": "/entra/identity/conditional-access/concept-assignment-network",
       "redirect_document_id": true
