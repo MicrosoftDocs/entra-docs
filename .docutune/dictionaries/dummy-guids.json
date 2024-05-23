@@ -66,7 +66,7 @@
     "b1b1b1b1-cccc-dddd-eeee-f2f2f2f2f2f2",
     "c2c2c2c2-dddd-eeee-ffff-a3a3a3a3a3a3",
     "d3d3d3d3-eeee-ffff-aaaa-b4b4b4b4b4b4",
-    "e4e4e4e4-ffff-aaaa-1111-c5c5c5c5c5c5"
+    "e4e4e4e4-ffff-aaaa-bbbb-c5c5c5c5c5c5"
   ],
   "secretId": [
     "aaaaaaaa-0b0b-1c1c-2d2d-333333333333",
@@ -101,7 +101,7 @@
     "1111bbbb-22cc-dddd-ee33-ffffff444444",
     "2222cccc-33dd-eeee-ff44-aaaaaa555555",
     "3333dddd-44ee-ffff-aa55-bbbbbbbb6666",
-    "4444eeee-55ff-0000-bb66-cccccccc7777"
+    "4444eeee-55ff-aaaa-bb66-cccccccc7777"
   ],
   "appRoleId|roleId": [
     "00000000-0000-0000-0000-000000000000"
