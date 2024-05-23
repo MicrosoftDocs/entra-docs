@@ -51,15 +51,15 @@ The response contains details for the user-assigned managed identity created, si
 
 ```json
 {
-"clientId": "73444643-8088-4d70-9532-c3a0fdc190fz",
-"clientSecretUrl": "https://control-westcentralus.identity.azure.net/subscriptions/<SUBSCRIPTON ID>/resourcegroups/<RESOURCE GROUP>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<UAMI NAME>/credentials?tid=5678&oid=9012&aid=12344643-8088-4d70-9532-c3a0fdc190fz",
+"clientId": "00001111-aaaa-2222-bbbb-3333cccc4444",
+"clientSecretUrl": "https://control-westcentralus.identity.azure.net/subscriptions/<SUBSCRIPTON ID>/resourcegroups/<RESOURCE GROUP>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<UAMI NAME>/credentials?tid=5678&oid=9012&aid=aaaaaaaa-0b0b-1c1c-2d2d-333333333333",
 "id": "/subscriptions/<SUBSCRIPTON ID>/resourcegroups/<RESOURCE GROUP>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<UAMI NAME>",
 "location": "westcentralus",
 "name": "<UAMI NAME>",
 "principalId": "9012",
 "resourceGroup": "<RESOURCE GROUP>",
 "tags": {},
-"tenantId": "733a8f0e-ec41-4e69-8ad8-971fc4b533bl",
+"tenantId": "aaaabbbb-0000-cccc-1111-dddd2222eeee",
 "type": "Microsoft.ManagedIdentity/userAssignedIdentities"
 }
 ```
@@ -88,11 +88,11 @@ The response contains details for the role assignment created, similar to the fo
 
 ```json
 {
-  "id": "/subscriptions/<SUBSCRIPTION ID>/resourceGroups/<RESOURCE GROUP>/providers/Microsoft.Authorization/roleAssignments/b402bd74-157f-425c-bf7d-zed3a3a581ll",
-  "name": "b402bd74-157f-425c-bf7d-zed3a3a581ll",
+  "id": "/subscriptions/<SUBSCRIPTION ID>/resourceGroups/<RESOURCE GROUP>/providers/Microsoft.Authorization/roleAssignments/00000000-0000-0000-0000-000000000000",
+  "name": "00000000-0000-0000-0000-000000000000",
   "properties": {
-    "principalId": "f5fdfdc1-ed84-4d48-8551-999fb9dedfbl",
-    "roleDefinitionId": "/subscriptions/<SUBSCRIPTION ID>/providers/Microsoft.Authorization/roleDefinitions/acdd72a7-3385-48ef-bd42-f606fba81ae7",
+    "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
+    "roleDefinitionId": "/subscriptions/<SUBSCRIPTION ID>/providers/Microsoft.Authorization/roleDefinitions/00000000-0000-0000-0000-000000000000",
     "scope": "/subscriptions/<SUBSCRIPTION ID>/resourceGroups/<RESOURCE GROUP>"
   },
   "resourceGroup": "<RESOURCE GROUP>",
