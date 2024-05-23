@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: how-to
-ms.date: 01/07/2024
+ms.date: 05/15/2024
 ms.author: mimart
 ms.reviewer: kengaderdus
 ms.custom: it-pro
@@ -16,7 +16,10 @@ ms.custom: it-pro
 #Customer intent: As a dev, devops, or it admin, I want to create and customize a user flow, which determines the sign-up and sign-i experience for my customer users.
 ---
 
-# Create a sign-up and sign-in user flow for customers  
+# Create a sign-up and sign-in user flow
+
+> [!TIP]
+> This article applies to user flows in external tenants. For information about workforce tenants, see [Add a self-service sign-up user flow to an app](../self-service-sign-up-user-flow.yml).
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 

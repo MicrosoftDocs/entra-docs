@@ -50,9 +50,9 @@ Before you create an EAM in the admin center, make sure you have the [metadata t
    Add method properties based on configuration information from your provider. For example:
    
    - Name: Adatum
-   - Client ID: 06a011bd-ec92-4404-80fb-db6d5ada8ee2
+   - Client ID: 00001111-aaaa-2222-bbbb-3333cccc4444
    - Discovery Endpoint: `https://adatum.com/.well-known/openid-configuration`
-   - App ID: 2f3d5a67-7441-4f1e-aa92-e77ca6b5a5ca
+   - App ID: 11112222-bbbb-3333-cccc-4444dddd5555
 
    >[!IMPORTANT]
    >The display name is the name that's shown to the user in the method picker. It can't be changed after the method is created. Display names must be unique.

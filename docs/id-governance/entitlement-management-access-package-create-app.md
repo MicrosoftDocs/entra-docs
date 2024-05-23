@@ -465,7 +465,7 @@ For more examples, see [Create an assignment policy through PowerShell](entitlem
    ```powershell
    $policy3Name = "example policy"
    $policy3Description = "example of a policy for users to request assignment"
-   $policy3ApproverSingleUserId = "69971aca-3aed-4ab1-aaec-d617b7dbb27b"
+   $policy3ApproverSingleUserId = "1aaaaaa1-2bb2-3cc3-4dd4-5eeeeeeeeee5"
    ```
 
 1. Create the policy.

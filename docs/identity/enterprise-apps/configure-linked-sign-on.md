@@ -33,7 +33,7 @@ Some common scenarios where linked-based SSO is valuable include:
 
 To configure linked-based SSO in your Microsoft Entra tenant, you need:
 - An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
-- One of the following roles: Global Administrator, Cloud Application Administrator, Application Administrator, or owner of the service principal.
+- One of the following roles: Cloud Application Administrator, Application Administrator, or owner of the service principal.
 - An application that supports linked-based SSO.
 
 ## Configure linked-based single sign-on

@@ -1153,8 +1153,8 @@ Now that you have a configuration, you can test on-demand provisioning with one 
     ActivityDisplayName  : Export
     AdditionalDetails    : {Details, ErrorCode, EventName, ipaddr...}
     Category             : ProvisioningManagement
-    CorrelationId        : cc519f3b-fb72-4ea2-9b7b-8f9dc271c5ec
-    Id                   : Sync_cc519f3b-fb72-4ea2-9b7b-8f9dc271c5ec_L5BFV_161778479
+    CorrelationId        : aaaa0000-bb11-2222-33cc-444444dddddd
+    Id                   : Sync_aaaa0000-bb11-2222-33cc-444444dddddd_L5BFV_161778479
     InitiatedBy          : Microsoft.Graph.PowerShell.Models.MicrosoftGraphAuditActivityInitiator1
     LoggedByService      : Account Provisioning
     OperationType        :
@@ -1167,8 +1167,8 @@ Now that you have a configuration, you can test on-demand provisioning with one 
     ActivityDisplayName  : Export
     AdditionalDetails    : {Details, ErrorCode, EventName, ipaddr...}
     Category             : ProvisioningManagement
-    CorrelationId        : cc519f3b-fb72-4ea2-9b7b-8f9dc271c5ec
-    Id                   : Sync_cc519f3b-fb72-4ea2-9b7b-8f9dc271c5ec_L5BFV_161778264
+    CorrelationId        : aaaa0000-bb11-2222-33cc-444444dddddd
+    Id                   : Sync_aaaa0000-bb11-2222-33cc-444444dddddd_L5BFV_161778264
     InitiatedBy          : Microsoft.Graph.PowerShell.Models.MicrosoftGraphAuditActivityInitiator1
     LoggedByService      : Account Provisioning
     OperationType        :
@@ -1181,8 +1181,8 @@ Now that you have a configuration, you can test on-demand provisioning with one 
     ActivityDisplayName  : Synchronization rule action
     AdditionalDetails    : {Details, ErrorCode, EventName, ipaddr...}
     Category             : ProvisioningManagement
-    CorrelationId        : cc519f3b-fb72-4ea2-9b7b-8f9dc271c5ec
-    Id                   : Sync_cc519f3b-fb72-4ea2-9b7b-8f9dc271c5ec_L5BFV_161778395
+    CorrelationId        : aaaa0000-bb11-2222-33cc-444444dddddd
+    Id                   : Sync_aaaa0000-bb11-2222-33cc-444444dddddd_L5BFV_161778395
     InitiatedBy          : Microsoft.Graph.PowerShell.Models.MicrosoftGraphAuditActivityInitiator1
     LoggedByService      : Account Provisioning
     OperationType        :

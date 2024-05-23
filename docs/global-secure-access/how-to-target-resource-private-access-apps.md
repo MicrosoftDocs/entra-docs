@@ -67,7 +67,7 @@ After administrators confirm the policy settings using [report-only mode](/azure
 
 ### User exclusions
 
-[!INCLUDE [active-directory-policy-exclusions](./includes/conditional-access-recommended-exclusions.md)]
+[!INCLUDE [entra-policy-exclude-user](../includes/entra-policy-exclude-user.md)]
 
 ## Next steps
 

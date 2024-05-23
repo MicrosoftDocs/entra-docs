@@ -61,7 +61,7 @@ To mitigate inside threats, it's possible to outsource access to [Global Adminis
 
 ### Emergency access accounts
 
-Provision [emergency access accounts](~/identity/role-based-access-control/security-emergency-access.md) for "break glass" scenarios where normal administrative accounts can't be used in the event you're accidentally locked out of your Microsoft Entra organization. For on-premises environments using federation systems such as Active Directory Federation Services (AD FS) for authentication, maintain alternate cloud-only credentials for these emergency access accounts to ensure service delivery during an on-premises infrastructure outage.
+[!INCLUDE [emergency-access-accounts](../includes/definitions/emergency-access-accounts.md)]
 
 ### Azure managed identities
 

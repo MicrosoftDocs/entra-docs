@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.date: 02/28/2024
+ms.date: 05/21/2024
 ms.author: jfields
 ms.reviewer: cmmdesai
 ---
@@ -60,7 +60,6 @@ This section describes how you can assign the necessary permissions to a managed
       Install-Module Microsoft.Graph -Scope CurrentUser
 
       Connect-MgGraph -Scopes "Application.Read.All","AppRoleAssignment.ReadWrite.All,RoleManagement.ReadWrite.Directory"
-      Select-MgProfile Beta
       $graphApp = Get-MgServicePrincipal -Filter "AppId eq '00000003-0000-0000-c000-000000000000'"
   
       $PermissionName = "SynchronizationData-User.Upload"

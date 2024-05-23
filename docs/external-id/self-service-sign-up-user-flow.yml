@@ -6,7 +6,7 @@ metadata:
   author: msmimart
   ms.author: mimart
   manager: CelesteDG
-  ms.date: 04/24/2024
+  ms.date: 05/15/2024
   ms.service: entra-external-id
   ms.topic: how-to
   ms.collection: M365-identity-device-management
@@ -20,7 +20,7 @@ title: |
   Add a self-service sign-up user flow to an app
 introduction: |
   > [!TIP]
-  > This article applies to B2B collaboration user flows. If your tenant is configured for customer identity and access management, see [Create a sign-up and sign-in user flow for customers](customers/how-to-user-flow-sign-up-sign-in-customers.md).
+  > This article applies to B2B collaboration user flows in workforce tenants. For information about external tenants, see [Create a sign-up and sign-in user flow](customers/how-to-user-flow-sign-up-sign-in-customers.md).
 
   > [!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
 

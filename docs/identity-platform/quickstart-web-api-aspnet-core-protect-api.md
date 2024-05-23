@@ -21,7 +21,7 @@ This quickstart uses an ASP.NET Core web API code sample to demonstrate how to r
 ## Prerequisites
 
 - Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- A minimum requirement of [.NET 6.0 SDK](https://dotnet.microsoft.com/download/dotnet)
+- A minimum requirement of [.NET 8.0 SDK](https://dotnet.microsoft.com/download/dotnet)
 - [Visual Studio 2022](https://visualstudio.microsoft.com/vs/) or [Visual Studio Code](https://code.visualstudio.com/)
 
 ## Register the application and record identifiers
