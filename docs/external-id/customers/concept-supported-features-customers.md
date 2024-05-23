@@ -108,7 +108,7 @@ The following table compares the features available for OAuth 2.0 and OpenID Con
 |[Device authorization](../../identity-platform/v2-oauth2-device-code.md)| Yes| No |
 |[On-Behalf-Of flow](../../identity-platform/v2-oauth2-on-behalf-of-flow.md)| Yes| Yes|
 |[Implicit grant](../../identity-platform/v2-oauth2-implicit-grant-flow.md)| Yes| Yes|
-|[Resource Owner Password Credentials](../../identity-platform/v2-oauth-ropc.md)| Yes| Limited to [email and password sign-in](concept-authentication-methods-customers.md). For mobile applications, use [native authentication](concept-native-authentication.md). |
+|[Resource Owner Password Credentials](../../identity-platform/v2-oauth-ropc.md)| Yes| No, for mobile applications, use [native authentication](concept-native-authentication.md). |
 
 ### Authority URL in OpenID Connect and OAuth2 flows
 
