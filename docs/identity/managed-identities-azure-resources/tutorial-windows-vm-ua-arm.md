@@ -94,10 +94,10 @@ Id: /subscriptions/<SUBSCRIPTIONID>/resourcegroups/myResourceGroupVM/providers/M
 ResourceGroupName : myResourceGroupVM
 Name: ID1
 Location: westus
-TenantId: 733a8f0e-ec41-4e69-8ad8-971fc4b533f8
-PrincipalId: e591178e-b785-43c8-95d2-1397559b2fb9
-ClientId: af825a31-b0e0-471f-baea-96de555632f9
-ClientSecretUrl: https://control-westus.identity.azure.net/subscriptions/<SUBSCRIPTIONID>/resourcegroups/myResourceGroupVM/providers/Microsoft.ManagedIdentity/userAssignedIdentities/ID1/credentials?tid=733a8f0e-ec41-4e69-8ad8-971fc4b533f8&oid=e591178e-b785-43c8-95d2-1397559b2fb9&aid=af825a31-b0e0-471f-baea-96de555632f9
+TenantId: aaaabbbb-0000-cccc-1111-dddd2222eeee
+PrincipalId: aaaaaaaa-bbbb-cccc-1111-222222222222
+ClientId: 00001111-aaaa-2222-bbbb-3333cccc4444
+ClientSecretUrl: https://control-westus.identity.azure.net/subscriptions/<SUBSCRIPTIONID>/resourcegroups/myResourceGroupVM/providers/Microsoft.ManagedIdentity/userAssignedIdentities/ID1/credentials?tid=aaaabbbb-0000-cccc-1111-dddd2222eeee&oid=aaaaaaaa-bbbb-cccc-1111-222222222222&aid=00001111-aaaa-2222-bbbb-3333cccc4444
 Type: Microsoft.ManagedIdentity/userAssignedIdentities
 }
 ```
@@ -125,13 +125,13 @@ New-AzRoleAssignment -ObjectId $spID -RoleDefinitionName "Reader" -Scope "/subsc
 The response contains details for the role assignment created, similar to the following example:
 
 ```azurepowershell
-RoleAssignmentId: /subscriptions/<SUBSCRIPTIONID>/resourcegroups/myResourceGroupVM/providers/Microsoft.Authorization/roleAssignments/f9cc753d-265e-4434-ae19-0c3e2ead62ac
+RoleAssignmentId: /subscriptions/<SUBSCRIPTIONID>/resourcegroups/myResourceGroupVM/providers/Microsoft.Authorization/roleAssignments/00000000-0000-0000-0000-000000000000
 Scope: /subscriptions/<SUBSCRIPTIONID>/resourcegroups/myResourceGroupVM
 DisplayName: ID1
 SignInName:
 RoleDefinitionName: Reader
-RoleDefinitionId: acdd72a7-3385-48ef-bd42-f606fba81ae7
-ObjectId: e591178e-b785-43c8-95d2-1397559b2fb9
+RoleDefinitionId: 00000000-0000-0000-0000-000000000000
+ObjectId: aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb
 ObjectType: ServicePrincipal
 CanDelegate: False
 ```
@@ -155,7 +155,7 @@ For the remainder of the tutorial, you will work from the VM we created earlier.
 5. Using PowerShell's `Invoke-WebRequest`, make a request to the local managed identities for Azure resources endpoint to get an access token for Azure Resource Manager.  The `client_id` value is the value returned when you created the user-assigned managed identity.
 
     ```azurepowershell
-    $response = Invoke-WebRequest -Uri 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&client_id=af825a31-b0e0-471f-baea-96de555632f9&resource=https://management.azure.com/' -Method GET -Headers @{Metadata="true"}
+    $response = Invoke-WebRequest -Uri 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&client_id=00001111-aaaa-2222-bbbb-3333cccc4444&resource=https://management.azure.com/' -Method GET -Headers @{Metadata="true"}
     $content = $response.Content | ConvertFrom-Json
     $ArmToken = $content.access_token
     ```

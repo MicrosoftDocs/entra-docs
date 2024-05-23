@@ -18,6 +18,8 @@ ms.custom: it-pro
 
 # Test your sign-up and sign-in user flow  
 
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
 The **Run user flow** feature allows you to test your user flows by simulating a user’s sign-up or sign-in experience with your application. You can use this feature to verify that your user flow is working as expected. To use this feature, you select the user flow associated with your application, run the user flow, and enter the requested sign-up or sign-in information.
 
 This feature obtains most of the values it needs to run from the application registration. You can select the application you want to test and specify the browser language for the user interface, but you can generally leave the other fields at their default values.

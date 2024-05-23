@@ -76,7 +76,7 @@ Make sure you're using the Azure AD PowerShell module. This is important if you'
 1. Delete the enterprise application.
 
    ```powershell
-   Remove-AzureADServicePrincipal -ObjectId 'd4142c52-179b-4d31-b5b9-08940873507b'
+   Remove-AzureADServicePrincipal -ObjectId 'aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb'
    ```
 
 :::zone-end

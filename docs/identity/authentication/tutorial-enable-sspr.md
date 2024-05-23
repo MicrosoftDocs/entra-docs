@@ -4,7 +4,7 @@ description: In this tutorial, you learn how to enable Microsoft Entra self-serv
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: tutorial
-ms.date: 04/29/2024
+ms.date: 05/21/2024
 ms.author: justinha
 author: justinha
 ms.reviewer: tilarso
@@ -28,7 +28,7 @@ In this tutorial you learn how to:
 > * Test the SSPR process as a user
 
 > [!IMPORTANT]
-> In March 2023, we announced the deprecation of managing authentication methods in the legacy multifactor authentication and self-service password reset (SSPR) policies. Beginning September 30, 2024, authentication methods can't be managed in these legacy MFA and SSPR policies. We recommend customers use the manual migration control to migrate to the Authentication methods policy by the deprecation date.
+> In March 2023, we announced the deprecation of managing authentication methods in the legacy multifactor authentication and self-service password reset (SSPR) policies. Beginning September 30, 2025, authentication methods can't be managed in these legacy MFA and SSPR policies. We recommend customers use the manual migration control to migrate to the Authentication methods policy by the deprecation date.
 
 
 ## Video tutorial

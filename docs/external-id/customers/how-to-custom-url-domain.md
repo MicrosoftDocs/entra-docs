@@ -8,22 +8,25 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: how-to
-ms.date: 05/09/2024
+ms.date: 05/21/2024
 ms.author: mimart
 ms.custom: it-pro
 
 #Customer intent: As a dev, devops, or it admin, I want to learn how to personalize my application’s sign-in endpoints with my own branding or naming instead of Microsoft’s default domain name by using a custom URL domain.
 ---
 
-# Enable custom URL domains for Microsoft Entra External ID (Preview)
+# Enable custom URL domains for apps in external tenants (Preview)
 
-This article describes how to enable [custom URL domains](concept-custom-url-domain.md) in your redirect URLs for the applications you publish to consumers and business customers. A custom URL domain allows you to brand your application’s sign-in endpoints with your own custom URL domain instead of Microsoft’s default domain name.
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
+This article describes how to enable [custom URL domains](concept-custom-url-domain.md) for Microsoft Entra External ID applications in external tenants. A custom URL domain allows you to brand your application’s sign-in endpoints with your own custom URL domain instead of Microsoft’s default domain name.
 
 [!INCLUDE [preview alert](includes/preview-alert/preview-alert-ciam.md)]
 
 ## Prerequisites
 
 - [Learn how custom URL domains work](concept-custom-url-domain.md) in External ID.
+- If you haven't already created an external tenant, [create one now](how-to-create-external-tenant-portal.md).
 - [Create a user flow](how-to-user-flow-sign-up-sign-in-customers.md) so users can sign up and sign in to your application.
 - [Register a web application](how-to-register-ciam-app.md).
 

@@ -16,6 +16,8 @@ ms.custom: it-pro
 ---
 # Customize the language of the authentication experience
 
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
 > [!TIP]
 > This article applies to user flows in external tenants. For information about workforce tenants, see [Language customization in Microsoft Entra External ID](../user-flow-customize-language.md).
 

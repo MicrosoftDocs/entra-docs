@@ -188,7 +188,7 @@ Others might include:
   [Citrix Gateway](https://docs.citrix.com/en-us/advanced-concepts/implementation-guides/citrix-gateway-microsoft-azure.html#microsoft-azure-mfa-deployment-methods) supports both RADIUS and NPS extension integration, and a SAML integration.
 
 - Cisco VPN
-  - The Cisco VPN supports both RADIUS and [SAML authentication for SSO](~/identity/saas-apps/cisco-anyconnect.md).
+  - The Cisco VPN supports both RADIUS and [SAML authentication for SSO](~/identity/saas-apps/cisco-secure-firewall-secure-client.md).
   - By moving from RADIUS authentication to SAML, you can integrate the Cisco VPN without deploying the NPS extension.
 
 - All VPNs
