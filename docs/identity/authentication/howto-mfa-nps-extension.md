@@ -123,6 +123,7 @@ Additionally, connectivity to the following URLs is required to complete the [se
 
 * `https://onegetcdn.azureedge.net`
 * `https://login.microsoftonline.com`
+* `https://graph.microsoft.com`
 * `https://provisioningapi.microsoftonline.com`
 * `https://aadcdn.msauth.net`
 * `https://www.powershellgallery.com`
