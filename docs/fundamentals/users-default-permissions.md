@@ -177,5 +177,5 @@ Users can perform the following actions on owned groups.
 * To learn more about the **Guest user access restrictions** setting, see [Restrict guest access permissions in Microsoft Entra ID](~/identity/users/users-restrict-guest-permissions.md).
 * To learn more about how to assign Microsoft Entra administrator roles, see [Assign a user to administrator roles in Microsoft Entra ID](./how-subscriptions-associated-directory.yml).
 * To learn more about how resource access is controlled in Microsoft Azure, see [Understanding resource access in Azure](/azure/role-based-access-control/rbac-and-directory-admin-roles).
-* For more information on how Microsoft Entra ID relates to your Azure subscription, see [How Azure subscriptions are associated with Microsoft Entra ID](./how-subscriptions-associated-directory.yml).
+
 * [Manage users](./add-users.md).

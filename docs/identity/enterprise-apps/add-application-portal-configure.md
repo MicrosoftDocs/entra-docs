@@ -98,7 +98,7 @@ You need to consent to the `Application.ReadWrite.All` permission.
 Run the following Microsoft Graph query to configure basic application properties.
 
 ```http
-PATCH https://graph.microsoft.com/v1.0/applications/0d0021e2-eaab-4b9f-a5ad-38c55337d63e/
+PATCH https://graph.microsoft.com/v1.0/applications/00001111-aaaa-2222-bbbb-3333cccc4444/
 Content-type: application/json
 
 {

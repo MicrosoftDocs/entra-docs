@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 03/29/2023
+ms.date: 05/17/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Zendesk so that I can control who has access to Zendesk, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -83,7 +83,8 @@ Follow these steps to enable Microsoft Entra SSO.
 	a. In the **Sign on URL** text box, type a URL using the following pattern:
     `https://<subdomain>.zendesk.com`
 
-    b. In the **Identifier (Entity ID)** text box, type a value using the following pattern: `<subdomain>.zendesk.com`
+    b. In the **Identifier (Entity ID)** text box, type a URL using the following pattern:
+    `https://<subdomain>.zendesk.com`
 
     c. In the **Reply URL** text box, type a URL using the following pattern: `https://<subdomain>.zendesk.com/access/saml`
 

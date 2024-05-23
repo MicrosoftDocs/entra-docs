@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 04/22/2024
+ms.date: 05/17/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Beeline Enterprise so that I can control who has access to Beeline Enterprise, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -41,8 +41,8 @@ To configure the integration of Beeline Enterprise into Microsoft Entra ID, you 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
-1. In the **Add from the gallery** section, type **Beeline Enterprise** in the search box.
-1. Select **Beeline Enterprise** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
+1. In the **Browse Microsoft Entra Gallery** section, type **Beeline Enterprise** in the search box.
+1. Select **Beeline Enterprise** from the results panel and then click **Create**. Wait a few seconds while the app is added to your tenant.
 
  Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
@@ -90,6 +90,8 @@ Follow these steps to enable Microsoft Entra SSO.
     > [!NOTE]
     > These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [Beeline Enterprise support team](mailto:support@beeline.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
+1. Click **Save**.
+
 1. The Beeline Enterprise application expects the SAML assertions in a specific format. Please work with [Beeline Enterprise support team](mailto:support@beeline.com) first to identify the correct user identifier which will be mapped into the application. Also please take the guidance from [Beeline Enterprise support team](mailto:support@beeline.com) about the attribute which they want to use for this mapping. You can manage the value of this attribute from the **User Attributes** tab of the application. The following screenshot shows an example for this. Here we have mapped the **User Identifier** claim with the **userprincipalname** attribute, which provides unique user ID, which will be sent to the Beeline Enterprise application in every successful SAML response.
 
     ![image](common/edit-attribute.png)
@@ -127,7 +129,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Beeline Enterprise**.
-1. In the app's overview page, select **Users and groups**.
+1. In the app's overview page, select **Assign users and groups**.
 1. Select **Add user/group**, then select **Users and groups** in the **Add Assignment** dialog.
    1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then click the **Select** button at the bottom of the screen.
    1. If you are expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
@@ -135,7 +137,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 ## Configure Beeline Enterprise SSO
 
-To configure single sign-on on **Beeline Enterprise** side, you need to send the downloaded **Certificate (Base64)** and the User Access URL properties to [Beeline Enterprise support team](mailto:support@beeline.com). They require the certificate and User Access URL so that the SAML SSO connection is configured properly on both sides.
+To configure single sign-on on **Beeline Enterprise** side, you need to send the downloaded **Certificate (Base64)**, User Access URL, Login URL and Logout URL properties to [Beeline Enterprise support team](mailto:support@beeline.com). They will configure single sign-on on the **Beeline Enterprise** side.
 
 ### Create Beeline Enterprise test user
 
@@ -143,11 +145,11 @@ In this section, you will create a user, Britta Simon, in Beeline Enterprise. Th
 
 ## Test SSO
 
-In this section, you test your Microsoft Entra single sign-on configuration with following options.
+In this section, you have two different ways to test your Microsoft Entra single sign-on configuration.
 
-* Click on **Test this application**, and you should be automatically signed in to the Beeline Enterprise for which you set up the SSO.
+* Browse to **Identity** > **Applications** > **Enterprise applications** > **Beeline Enterprise** > **Manage** > **Single sign-on**. Click **Test this application**, and you should be automatically signed in to the Beeline Enterprise for which you set up the SSO.
 
-* You can use Microsoft My Apps. When you click the Beeline Enterprise tile in the My Apps, you should be automatically signed in to the Beeline Enterprise for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you click the **Beeline Enterprise** tile in **My Apps**, you should be automatically signed in to the Beeline Enterprise site for which you set up the SSO. For more information about the My Apps portal, see [Introduction to the My Apps portal](https://support.microsoft.com/account-billing/ign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Next steps
 

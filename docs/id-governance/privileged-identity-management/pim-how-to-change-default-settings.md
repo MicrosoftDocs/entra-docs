@@ -16,7 +16,7 @@ ms.custom: pim
 
 In Privileged Identity Management (PIM) in Microsoft Entra ID, which is part of Microsoft Entra, role settings define role assignment properties. These properties include multifactor authentication and approval requirements for activation, assignment maximum duration, and notification settings. This article shows you how to configure role settings and set up the approval workflow to specify who can approve or deny requests to elevate privilege.
 
-You must have the Global Administrator or Privileged Role Administrator role to manage PIM role settings for a Microsoft Entra role. Role settings are defined per role. All assignments for the same role follow the same role settings. Role settings of one role are independent from role settings of another role.
+You must have at least the Privileged Role Administrator role to manage PIM role settings for a Microsoft Entra role. Role settings are defined per role. All assignments for the same role follow the same role settings. Role settings of one role are independent from role settings of another role.
 
 PIM role settings are also known as PIM policies.
 
