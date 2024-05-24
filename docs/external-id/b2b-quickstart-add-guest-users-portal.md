@@ -15,6 +15,8 @@ ms.collection: M365-identity-device-management
 
 # Quickstart: Add a guest user and send an invitation
 
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
+
 With Microsoft Entra [B2B collaboration](what-is-b2b.md), you can invite anyone to collaborate with your organization using their own work, school, or social account.
 
 In this quickstart, you'll learn how to add a new guest user to your Microsoft Entra directory in the Microsoft Entra admin center. You'll also send an invitation and see what the guest user's invitation redemption process looks like. 

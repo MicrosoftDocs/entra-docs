@@ -21,6 +21,8 @@ adobe-target: true
 
 # Leave an organization as an external user
 
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
+
 As a Microsoft Entra B2B collaboration or B2B direct connect user, you can leave an organization at any time if you no longer need to use apps from that organization, or maintain any association.
 
 ## Before you begin

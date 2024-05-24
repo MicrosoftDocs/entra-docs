@@ -241,20 +241,16 @@ items:
               items:
                 - name: Prepare Android app
                   href: tutorial-native-authentication-prepare-android-app.md
+                - name: Sign up
+                  href: tutorial-native-authentication-android-sign-up.md
+                  displayName: email OTP, email one-time passcode, email and password
                 - name: Email and OTP code
                   items:
-                    - name: Sign up
-                      href: tutorial-native-authentication-android-sign-up.md
                     - name: Sign in and sign out
                       href: tutorial-native-authentication-android-sign-in-sign-out.md
-                    - name: Sign up with user attributes
-                      href: tutorial-native-authentication-android-sign-up-user-with-username-user-attributes.md
+                      displayName: email OTP, email one-time passcode, email and password
                 - name: Email and password
                   items:
-                    - name: Sign up
-                      href: tutorial-native-authentication-android-sign-up-user-with-username-password.md
-                    - name: Sign up and submit user attributes
-                      href: tutorial-native-authentication-android-sign-up-user-with-username-password-user-attributes.md
                     - name: Sign in and sign out
                       href: tutorial-native-authentication-android-sign-in-user-with-username-password.md
                     - name: Self-service password reset

@@ -16,6 +16,8 @@ ms.custom: it-pro
 ---
 # Delete an external tenant
 
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
 You can't delete an external tenant until it passes several checks. These checks reduce the risk that deleting an external tenant negatively affects user access. For example, if the tenant associated with a subscription is unintentionally deleted, users can't access the Azure resources for that subscription. 
 
 ## Prerequisites
