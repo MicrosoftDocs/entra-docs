@@ -15,10 +15,10 @@ ms.author: jeedes
 ---
 # Tutorial: Configure Concur for automatic user provisioning
 
-The objective of this tutorial is to show you the steps you need to perform in Concur and Microsoft Entra ID to automatically provision and de-provision user accounts from Microsoft Entra ID to Concur.
+The objective of this tutorial is to show you the steps you need to perform in Concur and Microsoft Entra ID to automatically provision and de-provision user accounts from Microsoft Entra ID directly to Concur.
 
 > [!WARNING]
-> This provisioning integration is no longer supported. As a result of this, the provisioning functionality of the SAP Concur application in the Microsoft Entra Enterprise App Gallery will be removed soon. The application's SSO functionality will remain intact. Microsoft is working with SAP Concur to build a new modernized provisioning integration, but there is currently no ETA on when this will be completed.
+> This provisioning integration is no longer supported and the direct provisioning functionality of the SAP Concur application in the Microsoft Entra Enterprise App Gallery is being removed. The application's SSO functionality will remain intact. Customers should instead provision to SAP Concur via SAP Cloud Identity Services. For more information, see how to configure provisioning of users [from Microsoft Entra ID to SAP Cloud Identity Services](sap-cloud-platform-identity-authentication-provisioning-tutorial.md), and how to configure provisioning of users [from SAP Cloud Identity Services to SAP Concur](https://help.sap.com/docs/identity-provisioning/identity-provisioning/proxy-sap-concur).
 
 ## Prerequisites
 
