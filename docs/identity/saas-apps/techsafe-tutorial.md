@@ -76,14 +76,17 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 1. On the **Basic SAML Configuration** section, perform the following steps:
 
-    a. In the **Identifier (Entity ID)** text box, type a URL using the following pattern:
+    a. In the **Identifier (Entity ID)** text box, type the URL:
     `https://portalsso.techsafe.nz/saml2/sso`
 
     b. In the **Reply URL** text box, type the URL:
     ` https://portal.techsafe.nz/saml/module.php/saml/sp/saml2-acs.php/techsafe-sp `
 
-    c. In the **Sign on URL** text box, type a URL using the following pattern:
+    c. In the **Sign on URL** text box, type the URL:
     `https://portalsso.techsafe.nz`
+
+    d. In the **Logout Url** text box, type the URL:
+    `https://portalsso.techsafe.nz/logout.php`
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 
