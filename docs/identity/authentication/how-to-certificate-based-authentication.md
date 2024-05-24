@@ -617,7 +617,7 @@ To enable CBA and configure username bindings using Graph API, complete the foll
         }
     ) } | ConvertTo-Json -Depth 5
     ```
-   1. Execute the PATCH request
+1. Execute the PATCH request
       ```powershell
        Invoke-MgGraphRequest -Method PATCH -Uri "https://graph.microsoft.com/v1.0/policies/authenticationMethodsPolicy/authenticationMethodConfigurations/x509Certificate" -Body $body -ContentType "application/json"
       ```
