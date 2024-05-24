@@ -568,7 +568,9 @@ To enable CBA and configure username bindings using Graph API, complete the foll
     Connect-MgGraph -Scopes "Policy.ReadWrite.AuthenticationMethod"
     ```
 1. Create a variable for defining group for CBA users
+   ```powershell
    $group = Get-MgGroup -Filter "displayName eq 'CBATestGroup'"
+   ```
 1. Define the request body
     ```powershell
     $body = @{
@@ -613,8 +615,7 @@ To enable CBA and configure username bindings using Graph API, complete the foll
             "id" = $group.Id
             "isRegistrationRequired" = $false
         }
-    )
-} | ConvertTo-Json -Depth 5
+    ) } | ConvertTo-Json -Depth 5
     ```
    1. Execute the PATCH request
       ```powershell
