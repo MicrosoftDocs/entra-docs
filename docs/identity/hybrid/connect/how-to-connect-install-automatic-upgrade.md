@@ -43,7 +43,7 @@ The current state of automatic upgrade can be viewed with the PowerShell cmdlet 
 | Suspended |Set by the system only. The system is **not currently** eligible to receive automatic upgrades. |
 | Disabled |Automatic upgrade is disabled. |
 
-You can change between **Enabled** and **Disabled** with `Set-ADSyncAutoUpgrade`. Only the system should set the state **Suspended**. Before version 1.1.750.0 the Set-ADSyncAutoUpgrade cmdlet would block Autoupgrade if the auto-upgrade state was set to Suspended. This functionality has been updated so it doesn't block auto-upgrade.
+You can change between **Enabled** and **Disabled** with `Set-ADSyncAutoUpgrade`. Only the system should set the state **Suspended**. Before version 1.1.750.0 the Set-ADSyncAutoUpgrade cmdlet would block automatic upgrade if the auto upgrade state was set to Suspended. This functionality has been updated so it doesn't block auto upgrade.
 
 Automatic upgrade is using Microsoft Entra Connect Health for the upgrade infrastructure. For automatic upgrade to work, make sure you have opened the URLs in your proxy server for **Microsoft Entra Connect Health** as documented in [Office 365 URLs and IP address ranges](https://support.office.com/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2).
 
@@ -53,7 +53,7 @@ If the **Synchronization Service Manager** UI is running on the server, then the
 >[!NOTE]
 > Not all releases of Microsoft Entra Connect are made available for auto upgrade. The release status indicates if a release is available for auto upgrade or for download only. If auto upgrade was enabled on your Microsoft Entra Connect server then that server will automatically upgrade to the latest version of Microsoft Entra Connect released for auto upgrade if **your configuration is [eligible](#auto-upgrade-eligibility)** for auto upgrade. For more information, see the article [Microsoft Entra Connect: Version release history](reference-connect-version-history.md).
 
-## Auto-upgrade eligibility
+## Auto upgrade eligibility
 In order to eligible for an automatic upgrade, you must not meet any one of the following conditions:
 
 | Result Message | Description |
