@@ -17,8 +17,6 @@ ms.collection: M365-identity-device-management
 
 # Microsoft Entra B2B collaboration code and PowerShell samples
 
-[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
-
 ## PowerShell example
 
 You can bulk-invite external users to an organization from email addresses you store in a .csv file.

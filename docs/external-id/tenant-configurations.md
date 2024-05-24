@@ -16,8 +16,6 @@ ms.custom: it-pro
 ---
 # Workforce and external tenant configurations in Microsoft Entra External ID
 
-[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
-
 A *tenant* is a dedicated and trusted instance of Microsoft Entra ID that contains an organization's resources, including registered apps and a directory of users. There are two ways to configure a tenant, depending on how the organization intends to use the tenant and the resources they want to manage:
 
 - A **workforce** tenant configuration is for your employees, internal business apps, and other organizational resources. You can invite external business partners and guests to your workforce tenant.
