@@ -83,8 +83,28 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     c. In the **Sign on URL** text box, type a URL using the following pattern:
     `https://<CustomerName>.zoomgov.com`
 
+    d. In the **Logout URL** text box, type a URL using the following pattern:
+    `https://<CustomerName>.zoomgov.com`
+
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [Zoom for Government support team](mailto:support@zoomgov.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
+	> These values are not real. Update these values with the actual Identifier, Reply URL, Sign on URL and Logout URL. Contact [Zoom for Government support team](mailto:support@zoomgov.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
+
+1. Zoom for Government application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
+
+	![Screenshot shows the image of attributes configuration.](common/default-attributes.png "Image")
+
+1. In addition to above, Zoom for Government application expects few more attributes to be passed back in SAML response which are shown below. These attributes are also pre populated but you can review them as per your requirements.
+	
+	| Name |   Source Attribute|
+	| ---- | --------- |
+	| mail | user.mail |
+    | phone | user.telephonenumber |
+    | department | user.department |
+    | role | user.assignedroles |
+    | groups | user.groups |
+
+    > [!NOTE]
+    > Please click [here](~/identity-platform/howto-add-app-roles-in-apps.md#app-roles-ui) to know how to configure Role in Microsoft Entra ID.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Certificate (Raw)** and select **Download** to download the certificate and save it on your computer.
 
