@@ -56,7 +56,6 @@ For more information on how to configure single sign-on from Microsoft Entra ID,
 - [SAP SuccessFactors](../identity/saas-apps/successfactors-tutorial.md)
 - [SAP Analytics Cloud](../identity/saas-apps/sapboc-tutorial.md)
 - [SAP Fiori](../identity/saas-apps/sap-fiori-tutorial.md)
-- [SAP Qualtrics](../identity/saas-apps/qualtrics-tutorial.md)
 - [SAP Ariba](../identity/saas-apps/ariba-tutorial.md)
 - [SAP Concur Travel and Expense](../identity/saas-apps/concur-travel-and-expense-tutorial.md)
 - [SAP Business Technology Platform](../identity/saas-apps/sap-hana-cloud-platform-tutorial.md)

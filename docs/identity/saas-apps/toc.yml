@@ -2241,6 +2241,8 @@
         href: qreserve-tutorial.md
       - name: Qualaroo
         href: qualaroo-tutorial.md
+      - name: Qualtrics
+        href: qualtrics-tutorial.md
       - name: Quarem
         href: quarem-tutorial.md
       - name: Quantum Workplace
@@ -2409,8 +2411,6 @@
         href: sapient-tutorial.md
       - name: SAP NetWeaver
         href: sap-netweaver-tutorial.md
-      - name: SAP Qualtrics
-        href: qualtrics-tutorial.md
       - name: SAS Viya SSO
         href: sas-viya-sso-tutorial.md
       - name: Sauce Labs
