@@ -1,5 +1,5 @@
 {
-  "appId|applicationId|clientId|aid": [
+  "appId|applicationId|clientId": [
     "00001111-aaaa-2222-bbbb-3333cccc4444",
     "11112222-bbbb-3333-cccc-4444dddd5555",
     "22223333-cccc-4444-dddd-5555eeee6666",
@@ -48,7 +48,7 @@
     "33dd33dd-ee44-ff55-aa66-77bb77bb77bb",
     "44ee44ee-ff55-aa66-bb77-88cc88cc88cc"
   ],
-  "objectId|oid": [
+  "objectId": [
     "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
     "bbbbbbbb-1111-2222-3333-cccccccccccc",
     "cccccccc-2222-3333-4444-dddddddddddd",
