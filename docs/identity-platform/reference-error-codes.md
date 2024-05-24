@@ -36,12 +36,12 @@ Here's a sample error response:
 ```json
 {
   "error": "invalid_scope",
-  "error_description": "AADSTS70011: The provided value for the input parameter 'scope' isn't valid. The scope https://example.contoso.com/activity.read isn't valid.\r\nTrace ID: 0000aaaa-11bb-cccc-dd33-eeeeee333333\r\nCorrelation ID: aaaa0000-bb11-2222-33cc-444444dddddd\r\nTimestamp: 2016-01-09 02:02:12Z",
+  "error_description": "AADSTS70011: The provided value for the input parameter 'scope' isn't valid. The scope https://example.contoso.com/activity.read isn't valid.\r\nTrace ID: 0000aaaa-11bb-cccc-dd22-eeeeee333333\r\nCorrelation ID: aaaa0000-bb11-2222-33cc-444444dddddd\r\nTimestamp: 2016-01-09 02:02:12Z",
   "error_codes": [
     70011
   ],
   "timestamp": "2016-01-09 02:02:12Z",
-  "trace_id": "0000aaaa-11bb-cccc-dd33-eeeeee333333",
+  "trace_id": "0000aaaa-11bb-cccc-dd22-eeeeee333333",
   "correlation_id": "aaaa0000-bb11-2222-33cc-444444dddddd", 
   "error_uri":"https://login.microsoftonline.com/error?code=70011"
 }
