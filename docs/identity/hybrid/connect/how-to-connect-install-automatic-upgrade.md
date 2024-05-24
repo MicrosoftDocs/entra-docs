@@ -58,7 +58,7 @@ In order to eligible for an automatic upgrade, you must not meet any one of the 
 
 | Result Message | Description |
 | --- | --- |
-|UpgradeNotSupportedCustomizedSyncRules|There are custom syncronization rules configured in Microsoft Entra Connect. <br/>**Note:** After version 2.2.1.0, this condition no longer prevents auto upgrade.|
+|UpgradeNotSupportedCustomizedSyncRules|There are custom synchronization rules configured in Microsoft Entra Connect. <br/>**Note:** After version 2.2.1.0, this condition no longer prevents auto upgrade.|
 |UpgradeNotSupportedInvalidPersistedState|The installation isn't an Express settings or a DirSync upgrade.|
 |UpgradeNotSupportedNonLocalDbInstall|You aren't using a SQL Server Express LocalDB database.|
 |UpgradeNotSupportedLocalDbSizeExceeded|Local DB size is greater than or equal to 8 GB|
@@ -109,7 +109,7 @@ Here's a list of the most common messages you find. It doesn't list all, but the
 | UpgradeAbortedSyncExeInUse |The [synchronization service manager UI](how-to-connect-sync-service-manager-ui.md) is open on the server. |
 | UpgradeAbortedSyncOrConfigurationInProgress |The installation wizard is running or a sync was scheduled outside the scheduler. |
 | **UpgradeNotSupported** | |
-| UpgradeNotSupportedCustomizedSyncRules |There are custom syncronization rules configured in Microsoft Entra Connect. |
+| UpgradeNotSupportedCustomizedSyncRules |There are custom synchronization rules configured in Microsoft Entra Connect. |
 | UpgradeNotSupportedInvalidPersistedState |The installation isn't an Express settings or a DirSync upgrade. |
 | UpgradeNotSupportedNonLocalDbInstall |You aren't using a SQL Server Express LocalDB database. |
 |UpgradeNotSupportedLocalDbSizeExceeded|Local DB size is greater than or equal to 8 GB|
