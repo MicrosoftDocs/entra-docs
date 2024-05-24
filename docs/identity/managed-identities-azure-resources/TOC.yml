@@ -64,21 +64,11 @@
       href: managed-identity-best-practice-recommendations.md
 - name: How-to guides
   items:
-  - name: Configure managed identities on VMs
+  - name: Configure managed identities
     items:
-    - name: Portal
-      href: qs-configure-portal-windows-vm.md
-    - name: CLI
-      href: qs-configure-cli-windows-vm.md
-    - name: PowerShell
-      href: qs-configure-powershell-windows-vm.md
-    - name: Azure Resource Manager Template
-      href: qs-configure-template-windows-vm.md
-    - name: REST
-      href: qs-configure-rest-vm.md
-    - name: Azure SDKs
-      href: qs-configure-sdk-windows-vm.md
-    - name: Using Azure Policy
+    - name: Configure managed identities on Azure VMs
+      href: how-to-configure-managed-identities.md
+    - name: Use Azure Policy (preview)
       href: how-to-assign-managed-identity-via-azure-policy.md
 
   - name: Configure managed identities on virtual machine scale sets
