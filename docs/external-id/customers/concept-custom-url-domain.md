@@ -17,6 +17,8 @@ ms.custom: it-pro
 
 # Custom URL domains in external tenants (Preview)
 
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
 A custom URL domain allows you to brand your application’s sign-in endpoints with your own custom URL domain instead of Microsoft’s default domain name.
 
 [!INCLUDE [preview alert](includes/preview-alert/preview-alert-ciam.md)]

@@ -40,9 +40,11 @@ The SuccessFactors user provisioning workflows supported by the Microsoft Entra 
 
 This SuccessFactors to Active Directory user provisioning solution is ideally suited for:
 
-* Organizations that desire a pre-built, cloud-based solution for SuccessFactors user provisioning
+* Organizations that desire a pre-built, cloud-based solution for SuccessFactors user provisioning, including organizations that are populating SuccessFactors from SAP HCM using SAP Integration Suite
 
-* Organizations that require direct user provisioning from SuccessFactors to Active Directory
+* Organizations that will be [deploying Microsoft Entra for user provisioning with SAP source and target apps](~/identity/app-provisioning/plan-sap-user-source-and-target.md), using Microsoft Entra to set up identities for workers so they can sign in to one or more SAP applications, such as SAP ECC or SAP S/4HANA, as well as optionally non-SAP applications
+
+* Organizations that require direct user provisioning from SuccessFactors to Active Directory so that users can access Windows Server Active Directory-integrated applications as well as Microsoft Entra ID integrated applications
 
 * Organizations that require users to be provisioned using data obtained from the [SuccessFactors Employee Central (EC)](https://www.successfactors.com/products-services/core-hr-payroll/employee-central.html)
 

@@ -11,10 +11,10 @@ The following API and HTTP scheme-based application ID URI formats are supported
 
 | Supported application ID <br/> URI formats | Example app ID URIs |
 |--|--|
-| _api://\<appId\>_ | _api://fc4d2d73-d05a-4a9b-85a8-4f2b3a5f38ed_ |
-| _api://\<tenantId\>/\<appId\>_ | _api://a8573488-ff46-450a-b09a-6eca0c6a02dc/fc4d2d73-d05a-4a9b-85a8-4f2b3a5f38ed_ |
-| _api://\<tenantId\>/\<string\>_ | _api://a8573488-ff46-450a-b09a-6eca0c6a02dc/api_ |
-| _api://\<string\>/<appId\>_ | _api://productapi/fc4d2d73-d05a-4a9b-85a8-4f2b3a5f38ed_ |
+| _api://\<appId\>_ | _api://00001111-aaaa-2222-bbbb-3333cccc4444_ |
+| _api://\<tenantId\>/\<appId\>_ | _api://aaaabbbb-0000-cccc-1111-dddd2222eeee/00001111-aaaa-2222-bbbb-3333cccc4444_ |
+| _api://\<tenantId\>/\<string\>_ | _api://aaaabbbb-0000-cccc-1111-dddd2222eeee/api_ |
+| _api://\<string\>/<appId\>_ | _api://productapi/00001111-aaaa-2222-bbbb-3333cccc4444_ |
 | _https://\<tenantInitialDomain\>.onmicrosoft.com/\<string\>_ | _`https://contoso.onmicrosoft.com/productsapi`_  |
 | _https://\<verifiedCustomDomain\>/\<string\>_ |  _`https://contoso.com/productsapi`_ |
 | _https://\<string\>.\<verifiedCustomDomain\>_ |  _`https://product.contoso.com`_ |
