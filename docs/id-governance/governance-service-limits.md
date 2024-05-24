@@ -26,6 +26,7 @@ This article contains the default usage constraints for the Microsoft Entra ID G
 |---------|---------|
 |Access Packages   |  4,000       |
 |Access Package Assignments     | 100,000        |
+|Access Package Assignments from a given automatic assignment policy      | 5,000        |
 |Catalogs     |   1,500      |
 |Connected Organizations     |  2,500       |
 |Custom extensions     |  500       |
