@@ -19,6 +19,8 @@ ms.collection: M365-identity-device-management
 
 # Tutorial: Use PowerShell to bulk invite Microsoft Entra B2B collaboration users
 
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
+
 If you use Microsoft Entra B2B collaboration to work with external partners, you can invite multiple guest users to your organization at the same time via the portal or via PowerShell. In this tutorial, you learn how to use PowerShell to send bulk invitations to external users. Specifically, you do the following:
 
 > [!div class="checklist"]

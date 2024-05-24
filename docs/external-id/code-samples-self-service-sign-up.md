@@ -16,6 +16,8 @@ ms.collection: M365-identity-device-management
 
 # Samples for External ID self-service sign-up
 
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
+
 The following tables provide links to code samples for applying web APIs in your self-service sign-up user flows using [API connectors](api-connectors-overview.md).
 
 ## API connector Azure Function quickstarts

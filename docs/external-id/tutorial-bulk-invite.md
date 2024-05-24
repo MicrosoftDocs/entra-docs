@@ -20,6 +20,8 @@ ms.custom:
 
 # Tutorial: Bulk invite Microsoft Entra B2B collaboration users
 
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
+
 If you use Microsoft Entra B2B collaboration to work with external partners, you can invite multiple guest users to your organization at the same time. In this tutorial, you learn how to use the Microsoft Entra admin center to send bulk invitations to external users. Specifically, you'll follow these steps:
 
 > [!div class="checklist"]

@@ -17,6 +17,8 @@ ms.collection: M365-identity-device-management
 
 # Tutorial: Enforce multifactor authentication for B2B guest users
 
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
+
 When collaborating with external B2B guest users, it’s a good idea to protect your apps with multifactor authentication policies. Then external users will need more than just a user name and password to access your resources. In Microsoft Entra ID, you can accomplish this goal with a Conditional Access policy that requires MFA for access. MFA policies can be enforced at the tenant, app, or individual guest user level, the same way that they're enabled for members of your own organization. The resource tenant is always responsible for Microsoft Entra multifactor authentication for users, even if the guest user’s organization has multifactor authentication capabilities.
 
 Example:
