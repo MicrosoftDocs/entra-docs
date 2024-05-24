@@ -225,4 +225,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 ## Next steps
 
-Once you configure SAP HANA you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).
+Provisioning from SAP Cloud Identity Services to SAP HANA is a beta feature available on SAP Business Technology Platform. For more information, see how to configure provisioning of users [from Microsoft Entra ID to SAP Cloud Identity Services](sap-cloud-platform-identity-authentication-provisioning-tutorial.md), and how to configure provisioning of users [from SAP Cloud Identity Services to SAP HANA Database (Beta)](https://help.sap.com/docs/cloud-identity-services/cloud-identity-services/sap-hana-database-beta).
+
+Once you configure SAP HANA for SSO, you can enforce session control, which prevents exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).
