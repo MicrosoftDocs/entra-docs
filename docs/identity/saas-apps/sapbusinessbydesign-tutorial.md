@@ -57,7 +57,7 @@ To configure and test Microsoft Entra SSO with SAP Business ByDesign, perform th
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
     1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
     1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
-1. **[Configure SAP Business ByDesign SSO](#configure-sap-business-bydesign-sso)** - to configure the Single Sign-On settings on application side.
+1. **[Configure SAP Business ByDesign SSO](#configure-sap-business-bydesign-sso)** - to configure the single sign-on settings on application side.
     1. **[Create SAP Business ByDesign test user](#create-sap-business-bydesign-test-user)** - to have a counterpart of Britta Simon in SAP Business ByDesign that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
@@ -205,4 +205,4 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 ## Next steps
 
-* Once you configure the SAP Business ByDesign you can enforce session controls, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session controls extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).
+* Once you configure the SAP Business ByDesign you can enforce session controls, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session controls extend from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

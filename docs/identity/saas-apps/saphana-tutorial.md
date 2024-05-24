@@ -72,7 +72,7 @@ To configure and test Microsoft Entra SSO with SAP HANA, perform the following s
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
 	1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with Britta Simon.
 	1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable Britta Simon to use Microsoft Entra single sign-on.
-2. **[Configure SAP HANA SSO](#configure-sap-hana-sso)** - to configure the Single Sign-On settings on application side.
+2. **[Configure SAP HANA SSO](#configure-sap-hana-sso)** - to configure the single sign-on settings on application side.
 	1. **[Create SAP HANA test user](#create-sap-hana-test-user)** - to have a counterpart of Britta Simon in SAP HANA that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
