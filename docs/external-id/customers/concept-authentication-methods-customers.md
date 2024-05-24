@@ -1,5 +1,5 @@
 ---
-title: Authentication methods and identity providers for CIAM
+title: Authentication methods and identity providers for external tenants
 description: Learn how to use different authentication methods for your customer sign-in and sign-up in CIAM. 
  
 author: msmimart
@@ -14,6 +14,8 @@ ms.custom: it-pro
 ---
 
 # Authentication methods and identity providers in external tenants
+
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
 > [!TIP]
 > This article applies to External ID in external tenants. For information about workforce tenants, see [Identity providers for External ID in workforce tenants](../identity-providers.md).
@@ -55,11 +57,11 @@ When you [create a sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-
 
 For an optimal sign-in experience, federate with social identity providers whenever possible so you can give your customers a seamless sign-up and sign-in experience. In an external tenant, you can allow a customer to sign up and sign in using their own Facebook or Google account. When a customer signs up for your app using their social account, the social identity provider creates, maintains, and manages identity information while providing authentication services to applications.
 
-When you enable social identity providers, customers can select from the social identity providers options you've made available on the sign-up page. To set up social identity providers in your external tenant, you create an application at the identity provider and configure credentials. You obtain a client or app ID and a client or app secret, which you can then add to your external tenant.
+When you enable social identity providers, customers can select from the social identity providers options you make available on the sign-up page. To set up social identity providers in your external tenant, you create an application at the identity provider and configure credentials. You obtain a client or app ID and a client or app secret, which you can then add to your external tenant.
 
 ### Google sign-in (preview)
 
-By setting up federation with Google, you can allow customers to sign in to your applications with their own Gmail accounts. After you've added Google as one of your application's sign-in options, on the sign-in page, users can sign in to Microsoft Entra External ID with a Google account.
+By setting up federation with Google, you can allow customers to sign in to your applications with their own Gmail accounts. After you add Google as one of your application's sign-in options, on the sign-in page, users can sign in to Microsoft Entra External ID with a Google account.
 
 The following screenshots show the sign-in with Google experience. In the sign-in page, users select **Sign-in with Google**. At that point, the user is redirected to the Google identity provider to complete the sign-in.
 
@@ -69,7 +71,7 @@ Learn how to [add Google as an identity provider](how-to-google-federation-custo
 
 ### Facebook sign-in (preview)
 
-By setting up federation with Facebook, you can allow invited users to sign in to your applications with their own Facebook accounts. After you've added Facebook as one of your application's sign-in options, on the sign-in page, users can sign-in to Microsoft Entra External ID with a Facebook account.
+By setting up federation with Facebook, you can allow invited users to sign in to your applications with their own Facebook accounts. After you add Facebook as one of your application's sign-in options, on the sign-in page, users can sign-in to Microsoft Entra External ID with a Facebook account.
 
 The following screenshots show the sign-in with Facebook experience. In the sign-in page, users select **Sign-in with Facebook**. Then the user is redirected to the Facebook identity provider to complete the sign-in.
 
@@ -79,9 +81,9 @@ Learn how to [add Facebook as an identity provider](how-to-facebook-federation-c
 
 ### Updating sign-in methods
 
-At any time, you can update the sign-in options you've selected for an app. For example, you can add social identity providers or change the local account sign-in method.
+At any time, you can update the sign-in options for an app. For example, you can add social identity providers or change the local account sign-in method.
 
-Be aware that when you change sign-in methods, the change affects only new users. Existing users will continue to sign in using their original method. For example, suppose you start out with the email and password sign-in method, and then change to email with one-time passcode. New users will sign in using a one-time passcode, but any users who have already signed up with an email and password will continue to be prompted for their email and password. 
+When you change sign-in methods, the change affects only new users. Existing users continue to sign in using their original method. For example, suppose you start out with the email and password sign-in method, and then change to email with one-time passcode. New users sign in using a one-time passcode, but any users who already signed up with an email and password continue to be prompted for their email and password.
 
 ## Microsoft Graph APIs
 
