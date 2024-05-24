@@ -151,7 +151,7 @@ To configure single sign-on on **Concur** side, you need to send the downloaded 
 
 In this section, a user called B.Simon is created in Concur. Concur supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in Concur, a new one is created after authentication.
 
-Concur also supports automatic user provisioning via SAP Cloud Identity Services. For more information, see how to configure provisioning of users [from Microsoft Entra ID to SAP Cloud Identity Services](sap-cloud-platform-identity-authentication-provisioning-tutorial.md), and how to configure provisioning of users [from SAP Cloud Identity Services to SAP Concur](https://help.sap.com/docs/identity-provisioning/identity-provisioning/proxy-sap-concur).
+Concur also supports automatic user provisioning via SAP Cloud Identity Services. For more information, see how to configure provisioning of users [from Microsoft Entra ID to SAP Cloud Identity Services](sap-cloud-platform-identity-authentication-provisioning-tutorial.md), and how to configure provisioning of users [from SAP Cloud Identity Services to SAP Concur](https://help.sap.com/docs/cloud-identity-services/cloud-identity-services/target-sap-concur).
 
 ## Test SSO 
 
