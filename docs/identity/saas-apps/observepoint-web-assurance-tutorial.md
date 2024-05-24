@@ -83,7 +83,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     `https://auth.observepoint.com/saml/callback/<companyname>`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier and Reply URL. Contact [ObservePoint Web Assurance Client support team](mailto:support@observepoint.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
+	> The Reply URL value is not real. Update the value with the actual Reply URL. Contact [ObservePoint Web Assurance support team](mailto:support@observepoint.com) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
 
 1. ObservePoint Web Assurance application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
