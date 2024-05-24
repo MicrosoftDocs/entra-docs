@@ -45,7 +45,7 @@ Certain web APIs such as the Azure Resource Manager API (`https://management.cor
 Other APIs might require that *no scheme or host* is included in the scope value, and expect only the app ID (a GUID) and the scope name, for example:
 
 ```json
-11111111-1111-1111-1111-111111111111/api.read
+00001111-aaaa-2222-bbbb-3333cccc4444/api.read
 ```
 
 > [!TIP]

@@ -69,7 +69,7 @@ $startDate = (Get-Date).AddDays(-7).ToString('yyyy-MM-dd')
 $endDate = (Get-Date).AddDays(1).ToString('yyyy-MM-dd')
 
 # Set the service principal ID
-$servicePrincipalId = "efe87e5d-05cb-4b19-9b36-1eb923448697"
+$servicePrincipalId = "aaaaaaaa-bbbb-cccc-1111-222222222222"
 
 Write-Host "Searching for audit logs between $startDate and $endDate" -ForegroundColor Green
 Write-Host "Searching for audit logs for service principal $servicePrincipalId" -ForegroundColor Green
@@ -253,7 +253,7 @@ $startDate = (Get-Date).AddDays(-7).ToString('yyyy-MM-dd')
 $endDate = (Get-Date).AddDays(1).ToString('yyyy-MM-dd')
 
 # Set the service principal ID
-$servicePrincipalId = "efe87e5d-05cb-4b19-9b36-1eb923448697"
+$servicePrincipalId = "aaaaaaaa-bbbb-cccc-1111-222222222222"
 
 Write-Host "Searching for audit logs between $startDate and $endDate" -ForegroundColor Green
 Write-Host "Searching for audit logs for service principal $servicePrincipalId" -ForegroundColor Green

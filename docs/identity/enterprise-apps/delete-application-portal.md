@@ -102,7 +102,7 @@ Make sure you're using the Azure AD PowerShell module. This is important if you'
 1. Delete the enterprise application.
 
    ```powershell
-   Remove-MgServicePrincipal -ServicePrincipalId 'd4142c52-179b-4d31-b5b9-08940873507b'
+   Remove-MgServicePrincipal -ServicePrincipalId 'aaaaaaaa-bbbb-cccc-1111-222222222222'
    ```
 
 :::zone-end

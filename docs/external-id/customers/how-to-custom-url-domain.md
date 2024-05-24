@@ -198,13 +198,13 @@ The **default-route** routes the traffic from the client to Azure Front Door. Th
     For example, instead of:
 
     ```http
-    https://contoso.ciamlogin.com/contoso.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1_susi&client_id=63ba0d17-c4ba-47fd-89e9-31b3c2734339&nonce=defaultNonce&redirect_uri=https%3A%2F%2Fjwt.ms&scope=openid&response_type=id_token&prompt=login
+    https://contoso.ciamlogin.com/contoso.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1_susi&client_id=00001111-aaaa-2222-bbbb-3333cccc4444&nonce=defaultNonce&redirect_uri=https%3A%2F%2Fjwt.ms&scope=openid&response_type=id_token&prompt=login
     ```
 
     use:
 
     ```http
-    https://login.contoso.com/contoso.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1_susi&client_id=63ba0d17-c4ba-47fd-89e9-31b3c2734339&nonce=defaultNonce&redirect_uri=https%3A%2F%2Fjwt.ms&scope=openid&response_type=id_token&prompt=login
+    https://login.contoso.com/contoso.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1_susi&client_id=00001111-aaaa-2222-bbbb-3333cccc4444&nonce=defaultNonce&redirect_uri=https%3A%2F%2Fjwt.ms&scope=openid&response_type=id_token&prompt=login
     ```
 
 1. Verify that the sign-in page is loaded correctly. Then, sign in with a local account.
@@ -239,7 +239,7 @@ You can replace your external tenant name in the URL with your tenant ID GUID to
 If you choose to use tenant ID instead of tenant name, be sure to update the identity provider **OAuth redirect URIs** accordingly. When you use your tenant ID instead of tenant name, a valid OAuth redirect URI looks similar to the following sample:
 
 ```html
-https://login.contoso.com/11111111-1111-1111-1111-111111111111/oauth2/authresp 
+https://login.contoso.com/00001111-aaaa-2222-bbbb-3333cccc4444/oauth2/authresp 
 ```
 
 ## (Optional) Azure Front Door advanced configuration
