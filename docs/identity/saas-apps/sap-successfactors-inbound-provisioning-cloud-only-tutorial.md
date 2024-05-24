@@ -43,7 +43,7 @@ This SuccessFactors to Microsoft Entra user provisioning solution is ideally sui
 
 * Organizations that desire a pre-built, cloud-based solution for SuccessFactors user provisioning, including organizations that are populating SuccessFactors from SAP HCM using SAP Integration Suite
 
-* Organizations that will be [deploying Microsoft Entra for user provisioning with SAP source and target apps](~/identity/app-provisioning/plan-sap-user-source-and-target.md), using Microsoft Entra to set up identities for workers so they can sign in to one or more SAP applications, such as SAP ECC or SAP S/4HANA, as well as optionally non-SAP applications.
+* Organizations that will be [deploying Microsoft Entra for user provisioning with SAP source and target apps](~/identity/app-provisioning/plan-sap-user-source-and-target.md), using Microsoft Entra to set up identities for workers so they can sign in to one or more SAP applications, such as SAP ECC or SAP S/4HANA, as well as optionally non-SAP applications
 
 * Organizations that require direct user provisioning from SuccessFactors to Microsoft Entra ID but do not require those users to also be in Windows Server Active Directory
 
