@@ -40,7 +40,7 @@ Or install [PackageManagement PowerShell module preview - March 2016 for PowerSh
   - Server: The SQL Server name.
   - Instance (Optional): The SQL Server Instance name and optionally Port number, that you would like to use. Don't specify this parameter to use the default instance.
   - Port (Optional): The SQL Server port
-  - Username (Optional): The user account to connect with, if left blank the current logged-on account is used. If you're connecting to a remote SQL Server this username should be the custom service account created for Microsoft Entra Connect SQL Connectivity. Microsoft Entra Connect uses the Microsoft Entra Connect Sync service account to authenticate to a remote SQL server.
+  - Username (Optional): The user account to connect with, if left blank the current logged-on account is used. If you're connecting to a remote SQL Server, this username should be the custom service account created for Microsoft Entra Connect SQL Connectivity. Microsoft Entra Connect uses the Microsoft Entra Connect Sync service account to authenticate to a remote SQL server.
   - Password (Optional): Password for the UserName provided.
 
 This PowerShell function attempts to bind to the specified SQL Server and Instance using the credentials passed in or use the credentials of the current user. If the SQL Server can't be found, the script attempts to connect to the SQL Browser service to determine enabled protocols and ports.
