@@ -17,7 +17,7 @@ ms.author: billmath
 # Troubleshoot SQL connectivity issues with Microsoft Entra Connect
 This article explains how to troubleshoot connectivity issues between Microsoft Entra Connect and SQL Server. 
 
-The following screenshot shows a typical error, if the SQL Server cannot be found.
+The following screenshot shows a typical error, if the SQL Server can't be found.
 
 ![SQL error](./media/tshoot-connect-tshoot-sql-connectivity/sql1.png)
 
@@ -38,12 +38,12 @@ Or install [PackageManagement PowerShell module preview - March 2016 for PowerSh
 - **Show all commands**: `Get-Command *Sql* -Module ADSyncTools` 
 - **Execute the PowerShell function**: `Connect-ADSyncToolsSqlDatabase` with the following parameters:
   - Server: The SQL Server name.
-  - Instance (Optional): The SQL Server Instance name and optionally Port number, that you would like to use. Do not specify this parameter to use the default instance.
+  - Instance (Optional): The SQL Server Instance name and optionally Port number, that you would like to use. Don't specify this parameter to use the default instance.
   - Port (Optional): The SQL Server port
-  - UserName (Optional): The user account to connect with. If left blank the currently logged in user will be used. If you are connecting to a remote SQL Server this should be the custom service account you have created for Microsoft Entra Connect SQL Connectivity. Microsoft Entra Connect uses the Microsoft Entra Connect Sync service account as to authenticate to a remote SQL server.
-    - Password (Optional): Password for the UserName provided.
+  - Username (Optional): The user account to connect with, if left blank the current logged-on account is used. If you're connecting to a remote SQL Server this username should be the custom service account created for Microsoft Entra Connect SQL Connectivity. Microsoft Entra Connect uses the Microsoft Entra Connect Sync service account to authenticate to a remote SQL server.
+  - Password (Optional): Password for the UserName provided.
 
-This PowerShell function will attempt to bind to the specified SQL Server and Instance using the credentials passed in OR use the credentials of the current user. If the SQL Server cannot be found the script will attempt to connect to the SQL Browser service to determine enabled protocols and ports.
+This PowerShell function attempts to bind to the specified SQL Server and Instance using the credentials passed in or use the credentials of the current user. If the SQL Server can't be found, the script attempts to connect to the SQL Browser service to determine enabled protocols and ports.
 
 Example using just a Server name:
 
