@@ -41,7 +41,7 @@ The product name and icons are changing, and features are now branded as Microso
 
 Microsoft Entra ID is the new name for Azure AD. The names Azure Active Directory, Azure AD, and AAD are replaced with Microsoft Entra ID.
 
-- Microsoft Entra is the name for the product family of identity and network access solutions.
+- Microsoft Entra is the name for the product family of identity and network access solutions such as Microsoft Identity Manager (MIM), Microsoft Entra External ID, Azure AD B2C, etc.
 - Microsoft Entra ID is one of the products within that family.
 - Acronym usage isn't encouraged, but if you must replace AAD with an acronym due to space limitations, use ME-ID.
 
