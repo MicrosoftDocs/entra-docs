@@ -624,6 +624,7 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Qiita Team](~/identity/saas-apps/qiita-team-tutorial.md) |  | ● |
 | [Qmarkets Idea & Innovation Management](~/identity/saas-apps/qmarkets-idea-innovation-management-tutorial.md) |  | ● |
 | [QReserve](~/identity/saas-apps/qreserve-tutorial.md) |  | ● |
+| [Qualtrics](~/identity/saas-apps/qualtrics-tutorial.md) |  | ● |
 | [Quarem](~/identity/saas-apps/quarem-provisioning-tutorial.md) | ● | ● |
 | [QuickHelp](~/identity/saas-apps/quickhelp-tutorial.md) |  | ● |
 | [Qumu Cloud](~/identity/saas-apps/qumucloud-tutorial.md) |  | ● |
@@ -679,7 +680,6 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [SAP HANA](~/identity/saas-apps/saphana-tutorial.md) | | ● |
 | [SAP Litmos](~/identity/saas-apps/litmos-tutorial.md) |  | ● |
 | [SAP NetWeaver](~/identity/app-provisioning/on-premises-sap-connector-configure.md) |● |  ● |
-| [SAP Qualtrics](~/identity/saas-apps/qualtrics-tutorial.md) |  | ● |
 | [SAP R/3 and ERP](~/identity/app-provisioning/on-premises-sap-connector-configure.md) | ● | ●  |
 | [SAP SuccessFactors to Active Directory](~/identity/saas-apps/sap-successfactors-inbound-provisioning-tutorial.md) | ● | ● |
 | [SAP SuccessFactors to Microsoft Entra ID](~/identity/saas-apps/sap-successfactors-inbound-provisioning-cloud-only-tutorial.md) | ● | ● |
