@@ -203,8 +203,6 @@ groups:
     title: Resource Manager
   - id: identity-mi-methods-rest
     title: REST
-  - id: identity-mi-methods-sdk
-    title: SDK
 # Owner: ryanwi
 - id: identity-wif-mi-methods
   title: Workload identity federation for managed identities methods
