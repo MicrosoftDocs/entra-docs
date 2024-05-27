@@ -16,6 +16,8 @@ ms.collection: M365-identity-device-management
 
 # Identity providers for External ID in workforce tenants
 
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
+
 > [!TIP]
 > This article applies to B2B collaboration in workforce tenants. For information about external tenants, see [Authentication methods and identity providers in external tenants](customers/concept-authentication-methods-customers.md).
 

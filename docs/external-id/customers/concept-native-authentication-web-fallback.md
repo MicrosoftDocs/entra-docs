@@ -14,6 +14,8 @@ ms.author: kengaderdus
 
 # Native authentication web fallback
 
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
 Web fallback allows a client app that uses native authentication to use browser-delegated authentication as a fallback mechanism to improve resilience. This scenario happens when native authentication isn't sufficient to complete the authentication flow. For example, if the authorization server requires capabilities that the client can't provide.
 
 All client apps that use native authentications needs to support web fallback.

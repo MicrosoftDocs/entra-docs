@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: conceptual
-ms.date: 05/22/2024
+ms.date: 05/24/2024
 ms.author: jfields
 ms.reviewer: arvinh
 ---
@@ -517,11 +517,14 @@ To review these events and all other activities performed by the provisioning se
 
 #### Azure Monitor logs
 
-All activities performed by the provisioning service are recorded in the Microsoft Entra provisioning logs. You can route Microsoft Entra provisioning logs to Azure Monitor logs for further analysis. With Azure Monitor logs (also known as Log Analytics workspace), you can query data to find events, analyze trends, and perform correlation across various data sources. Watch this [video](https://youtu.be/MP5IaCTwkQg) to learn the benefits of using Azure Monitor logs for Microsoft Entra logs in practical user scenarios.
+All activities performed by the provisioning service are recorded in the Microsoft Entra provisioning logs. You can route Microsoft Entra provisioning logs to a Log Analytics workspace, which sends your data to Azure Monitor logs and Microsoft Entra workbooks where you can query data to find events, analyze trends, and perform correlation across various data sources. Watch this [video](https://youtu.be/MP5IaCTwkQg) to learn the benefits of using Azure Monitor logs for Microsoft Entra logs in practical user scenarios.
 
-Install the [log analytics views for Microsoft Entra activity logs](/azure/azure-monitor/visualize/workbooks-view-designer-conversion-overview) to get access to [prebuilt reports](https://github.com/AzureAD/Deployment-Plans/tree/master/Log%20Analytics%20Views) around provisioning events in your environment.
+To enable Log Analytics and Microsoft Entra workbooks, you need to configure a Log Analytics workspace. Then route your data to the appropriate endpoint by configuring diagnostic settings. For more information, see:
 
-For more information, see how to [analyze the Microsoft Entra activity logs with your Azure Monitor logs](~/identity/monitoring-health/howto-analyze-activity-logs-log-analytics.md).
+- [Configure a Log Analytics workspace](../monitoring-health/tutorial-configure-log-analytics-workspace.md)
+- [Integrate Microsoft Entra activity logs with Azure Monitor logs](../monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.yml)
+- [How to use Microsoft Entra workbooks](../monitoring-health/howto-use-workbooks.md)
+- [Provisioning Insights workbook](provisioning-workbook.md)
 
 ### Manage personal data
 

@@ -17,6 +17,8 @@ ms.collection: M365-identity-device-management
 
 # Self-service sign-up
 
+[!INCLUDE [applies-to-workforce-external](./includes/applies-to-workforce-external.md)]
+
 Self-service sign-up is an essential feature for your External ID workforce and customer scenarios. It gives your partners, consumers, and other external users a frictionless way to sign up and get access to your apps without any intervention on your part.
 
 - In a B2B collaboration scenario, you might not always know in advance who will need access to an application you want to share. As an alternative to sending invitations directly to individuals, you can allow external users to sign up for specific applications themselves. Learn how to [create a self-service sign-up user flow for B2B collaboration](self-service-sign-up-user-flow.yml).
