@@ -80,7 +80,7 @@ POST /{tenant_subdomain}.onmicrosoft.com/signup/v1.0/start HTTP/1.1
 Host: {tenant_subdomain}.ciamlogin.com
 Content-Type: application/x-www-form-urlencoded
 
-client_id=111101-14a6-abcd-97bc-abcd1110011
+client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &challenge_type=oob password redirect
 &username=contoso-consumer@contoso.com 
 ```
@@ -92,7 +92,7 @@ POST /{tenant_subdomain}.onmicrosoft.com/signup/v1.0/start HTTP/1.1
 Host: {tenant_subdomain}.ciamlogin.com
 Content-Type: application/x-www-form-urlencoded
 
-client_id=111101-14a6-abcd-97bc-abcd1110011
+client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &challenge_type=oob password redirect
 &password={secure_password}
 &attributes={"name": "{user_name}", "extension_2588abcdwhtfeehjjeeqwertc_age": "{user_age}", "phone": "{user_phone}"}
@@ -222,7 +222,7 @@ POST /{tenant_subdomain}.onmicrosoft.com/signup/v1.0/challenge HTTP/1.1
 Host: {tenant_subdomain}.ciamlogin.com
 Content-Type: application/x-www-form-urlencoded
 
-client_id=111101-14a6-abcd-97bc-abcd1110011
+client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &challenge_type=oob password redirect
 &continuation_token=AQABAAEAAA…
 ```
@@ -337,7 +337,7 @@ Host: {tenant_subdomain}.ciamlogin.com
 Content-Type: application/x-www-form-urlencoded
 
 continuation_token=uY29tL2F1dGhlbnRpY...
-&client_id=111101-14a6-abcd-97bc-abcd1110011 
+&client_id=00001111-aaaa-2222-bbbb-3333cccc4444 
 &grant_type=oob 
 &oob={otp_code}
 ```
@@ -415,7 +415,7 @@ POST /{tenant_subdomain}.onmicrosoft.com/signup/v1.0/challenge HTTP/1.1
 Host: {tenant_subdomain}.ciamlogin.com
 Content-Type: application/x-www-form-urlencoded
 
-client_id=111101-14a6-abcd-97bc-abcd1110011
+client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &challenge_type=oob password redirect
 &continuation_token=AQABAAEAAA…
 ```
@@ -479,7 +479,7 @@ Host: {tenant_subdomain}.ciamlogin.com
 Content-Type: application/x-www-form-urlencoded
 
 continuation_token=uY29tL2F1dGhlbnRpY...
-&client_id=111101-14a6-abcd-97bc-abcd1110011 
+&client_id=00001111-aaaa-2222-bbbb-3333cccc4444 
 &grant_type=password 
 &password={secure_password}
 ```
@@ -649,7 +649,7 @@ POST /{tenant_subdomain}.onmicrosoft.com/signup/v1.0/continue HTTP/1.1
 Host: {tenant_subdomain}.ciamlogin.com
 Content-Type: application/x-www-form-urlencoded
 
-&client_id=111101-14a6-abcd-97bc-abcd1110011 
+&client_id=00001111-aaaa-2222-bbbb-3333cccc4444 
 &grant_type=attributes 
 &attributes={"name": "{user_name}", "extension_2588abcdwhtfeehjjeeqwertc_age": "{user_age}", "phone": "{user_phone}"}
 &continuation_token=AQABAAEAAAAtn...
@@ -766,7 +766,7 @@ Host: {tenant_subdomain}.ciamlogin.com
 Content-Type: application/x-www-form-urlencoded
  
 continuation_token=ABAAEAAAAtyo... 
-&client_id=111101-14a6-abcd-97bc-abcd1110011 
+&client_id=00001111-aaaa-2222-bbbb-3333cccc4444 
 &username=contoso-consumer@contoso.com
 &scope={scopes}
 &grant_type=continuation_token 
@@ -899,7 +899,7 @@ POST /{tenant_subdomain}.onmicrosoft.com/oauth2/v2.0/initiate HTTP/1.1
 Host: {tenant_subdomain}.ciamlogin.com
 Content-Type: application/x-www-form-urlencoded
 
-client_id=111101-14a6-abcd-97bc-abcd1110011
+client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &challenge_type=password redirect
 &username=contoso-consumer@contoso.com 
 ```
@@ -1008,7 +1008,7 @@ POST /{tenant_subdomain}.onmicrosoft.com/oauth2/v2.0/challenge HTTP/1.1
 Host: {tenant_subdomain}.ciamlogin.com
 Content-Type: application/x-www-form-urlencoded
 
-client_id=111101-14a6-abcd-97bc-abcd1110011
+client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &challenge_type=password redirect 
 &continuation_token=uY29tL2F1dGhlbnRpY... 
 ```
@@ -1114,7 +1114,7 @@ Host: {tenant_subdomain}.ciamlogin.com
 Content-Type: application/x-www-form-urlencoded
 
 continuation_token=uY29tL2F1dGhlbnRpY...
-&client_id=111101-14a6-abcd-97bc-abcd1110011 
+&client_id=00001111-aaaa-2222-bbbb-3333cccc4444 
 &grant_type=password 
 &password={secure_password}
 &scope=openid offline_access 
@@ -1242,7 +1242,7 @@ POST /{tenant_subdomain}.onmicrosoft.com/resetpassword/v1.0/start HTTP/1.1
 Host: {tenant_subdomain}.ciamlogin.com
 Content-Type: application/x-www-form-urlencoded
 
-client_id=111101-14a6-abcd-97bc-abcd1110011 
+client_id=00001111-aaaa-2222-bbbb-3333cccc4444 
 &challenge_type=oob redirect 
 &username=contoso-consumer@contoso.com 
 ```
@@ -1351,7 +1351,7 @@ POST /{tenant_subdomain}.onmicrosoft.com/resetpassword/v1.0/challenge HTTP/1.1
 Host: {tenant_subdomain}.ciamlogin.com
 Content-Type: application/x-www-form-urlencoded
 
-client_id=client_id=111101-14a6-abcd-97bc-abcd1110011
+client_id=client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &challenge_type=oob redirect
 &continuation_token=uY29tL2F1dGhlbnRpY... 
 ```
@@ -1555,7 +1555,7 @@ POST /{tenant_subdomain}.onmicrosoft.com/resetpassword/v1.0/submit HTTP/1.1
 Host: {tenant_subdomain}.ciamlogin.com
 Content-Type: application/x-www-form-urlencoded
 
-client_id=111101-14a6-abcd-97bc-abcd1110011
+client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &continuation_token=czZCaGRSa3F0Mzp...
 &new_password={new_password}
 ```
@@ -1650,7 +1650,7 @@ POST /{tenant_subdomain}.onmicrosoft.com/resetpassword/v1.0/poll_completion HTTP
 Host: {tenant_subdomain}.ciamlogin.com
 Content-Type: application/x-www-form-urlencoded
 
-client_id=111101-14a6-abcd-97bc-abcd1110011
+client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &continuation_token=czZCaGRSa3F0... 
 ```
 
