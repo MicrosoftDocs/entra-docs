@@ -140,7 +140,7 @@ This article describes the Microsoft Entra sign-in log schema in Azure Monitor. 
     "riskEventTypes_v2": [],
     "resourceDisplayName": "Office 365 SharePoint Online",
     "resourceId": "00000003-0000-0ff1-ce00-000000000000",
-    "resourceTenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47",
+    "resourceTenantId": "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1",
     "homeTenantId": "<USER HOME TENANT ID>",
     "tokenIssuerName": "",
     "tokenIssuerType": "AzureAD",

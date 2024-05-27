@@ -151,7 +151,7 @@ POST /{tenant}/oauth2/v2.0/token HTTP/1.1   //Line breaks for clarity
 Host: login.microsoftonline.com
 Content-Type: application/x-www-form-urlencoded
 
-client_id=12345678-0000-0000-00000000000000000
+client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &scope=3db474b9-6a0c-4840-96ac-1fceb342124f/.default
 &client_assertion_type=urn%3Aietf%3Aparams%3Aoauth%3Aclient-assertion-type%3Ajwt-bearer
 &client_assertion=eyJhbGciOiJSUzI1NiIsIng1dCI6Imd4OHRHeXN5amNScUtqRlBuZDdSRnd2d1pJMCJ9.eyJ{a lot of characters here}M8U3bSUKKJDEg

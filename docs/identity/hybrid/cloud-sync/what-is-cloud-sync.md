@@ -85,6 +85,7 @@ The following table provides a comparison between Microsoft Entra Connect and Mi
 | Groups with up to 50,000 members |● |● |
 | Large groups with up to 250,000 members |● |  |
 | Cross domain references|● |● |
+| Cross forest references|● | |
 | On-demand provisioning| |● |
 | Support for US Government|● |● |
 

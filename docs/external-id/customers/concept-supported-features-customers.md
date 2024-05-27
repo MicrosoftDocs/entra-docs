@@ -143,7 +143,7 @@ The following table compares the features available for user management in each 
 
 |Feature  |Workforce tenant  | External tenant |
 |---------|---------|---------|
-|**Types of accounts** | <ul><li>Internal members, for example employees and admins.</li><li>External users who are [invited](../what-is-b2b.md) or use self-service sign-up. | <ul><li>Internal users in your tenant, for example admins.</li><li>External consumers and business customers who use self-service sign-up or create by admins.</li><li>External users who are invited (preview).</ul>|
+|**Types of accounts** | <ul><li>Internal members, for example employees and admins.</li><li>External users who are [invited](../what-is-b2b.md) or use self-service sign-up. | <ul><li>Internal users in your tenant, for example admins.</li><li>External consumers and business customers who use self-service sign-up or who are created by admins.</li><li>External users who are invited (preview).</ul>|
 | **Manage user profile info** | Programmatically and by [using the Microsoft Entra admin center](~/fundamentals/how-to-manage-user-profile-info.yml). |Same as workforce.|
 | **Reset a user's password** | Administrators can [reset a user's password](~/fundamentals/users-reset-password-azure-portal.yml) if the password is forgotten, if the user gets locked out of a device, or if the user never received a password. |Same as workforce.|
 |**Restore or remove a recently deleted user**|After you delete a user, the account remains in a suspended state for 30 days. During that 30-day window, the user account can be restored, along with all its properties.|Same as workforce.|
@@ -155,7 +155,7 @@ The following table compares the features available for password protection in e
 
 |Feature  |Workforce tenant  | External tenant |
 |---------|---------|---------|
-|**Smart lockout**| [Smart lockout](~/identity/authentication/howto-password-smart-lockout.md) helps lockout bad actors that try to guess your users' passwords or use brute-force methods to get in|Same as workforce. |
+|**Smart lockout**| [Smart lockout](~/identity/authentication/howto-password-smart-lockout.md) helps lock out bad actors that try to guess your users' passwords or use brute-force methods to get in|Same as workforce. |
 | **Custom banned passwords**| The Microsoft Entra custom banned password list lets you add specific strings to evaluate and block. | Not available. |
 
 ## Token customization

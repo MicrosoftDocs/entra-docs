@@ -41,7 +41,7 @@ Body
 ```http
 {
     "@odata.type": "#microsoft.graph.unifiedRoleAssignment",
-    "principalId": "ab2e1023-bddc-4038-9ac1-ad4843e7e539",
+    "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
     "roleDefinitionId": "194ae4cb-b126-40b2-bd5b-6091b380977d",
     "directoryScopeId": "/"  // Don't use "resourceScope" attribute in Azure AD role assignments. It will be deprecated soon.
 }
@@ -110,7 +110,7 @@ Body
 ```http
 {
     "@odata.type": "#microsoft.graph.unifiedRoleAssignment",
-    "principalId": "ab2e1023-bddc-4038-9ac1-ad4843e7e539",
+    "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
     "roleDefinitionId": "29232cdf-9323-42fd-ade2-1d097af3e4de",    //role template ID of Exchange Administrator
     "directoryScopeId": "/administrativeUnits/13ff0c50-18e7-4071-8b52-a6f08e17c8cc"    //object ID of an administrative unit
 }
@@ -152,13 +152,13 @@ HTTP/1.1 200 OK
 "value":[
             { 
                 "id": "mhxJMipY4UanIzy2yE-r7JIiSDKQoTVJrLE9etXyrY0-1"
-                "principalId": "ab2e1023-bddc-4038-9ac1-ad4843e7e539",
+                "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
                 "roleDefinitionId": "10dae51f-b6af-4016-8d66-8c2a99b929b3",
                 "directoryScopeId": "/"  
             } ,
             {
                 "id": "CtRxNqwabEKgwaOCHr2CGJIiSDKQoTVJrLE9etXyrY0-1"
-                "principalId": "ab2e1023-bddc-4038-9ac1-ad4843e7e539",
+                "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
                 "roleDefinitionId": "fe930be7-5e62-47db-91af-98c3a49a38b1",
                 "directoryScopeId": "/"
             }
@@ -180,7 +180,7 @@ HTTP/1.1 200 OK
 "value":[
             {
                 "id": "CtRxNqwabEKgwaOCHr2CGJIiSDKQoTVJrLE9etXyrY0-1"
-                "principalId": "ab2e1023-bddc-4038-9ac1-ad4843e7e539",
+                "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
                 "roleDefinitionId": "fe930be7-5e62-47db-91af-98c3a49a38b1",
                 "directoryScopeId": "/"
             }
@@ -200,7 +200,7 @@ Response
 HTTP/1.1 200 OK
 { 
     "id": "mhxJMipY4UanIzy2yE-r7JIiSDKQoTVJrLE9etXyrY0-1",
-    "principalId": "ab2e1023-bddc-4038-9ac1-ad4843e7e539",
+    "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
     "roleDefinitionId": "10dae51f-b6af-4016-8d66-8c2a99b929b3",
     "directoryScopeId": "/"
 }
@@ -220,13 +220,13 @@ HTTP/1.1 200 OK
 "value":[
             { 
                 "id": "mhxJMipY4UanIzy2yE-r7JIiSDKQoTVJrLE9etXyrY0-1"
-                "principalId": "ab2e1023-bddc-4038-9ac1-ad4843e7e539",
+                "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
                 "roleDefinitionId": "10dae51f-b6af-4016-8d66-8c2a99b929b3",
                 "directoryScopeId": "/d23998b1-8853-4c87-b95f-be97d6c6b610"
             } ,
             {
                 "id": "CtRxNqwabEKgwaOCHr2CGJIiSDKQoTVJrLE9etXyrY0-1"
-                "principalId": "ab2e1023-bddc-4038-9ac1-ad4843e7e539",
+                "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
                 "roleDefinitionId": "3671d40a-1aac-426c-a0c1-a3821ebd8218",
                 "directoryScopeId": "/d23998b1-8853-4c87-b95f-be97d6c6b610"
             }

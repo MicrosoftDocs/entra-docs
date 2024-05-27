@@ -182,7 +182,7 @@ The following sample is a SAML response to an unsuccessful sign-on attempt.
       <samlp:StatusCode Value="urn:oasis:names:tc:SAML:2.0:status:RequestUnsupported" />
     </samlp:StatusCode>
     <samlp:StatusMessage>AADSTS75006: An error occurred while processing a SAML2 Authentication request. AADSTS90011: The SAML authentication request property 'NameIdentifierPolicy/SPNameQualifier' is not supported.
-    Trace ID: 0000aaaa-11bb-cccc-dd33-eeeeee333333
+    Trace ID: 0000aaaa-11bb-cccc-dd22-eeeeee333333
     Timestamp: 2013-03-18 08:49:24Z</samlp:StatusMessage>
     </samlp:Status>
 </samlp:Response>

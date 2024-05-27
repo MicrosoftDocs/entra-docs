@@ -14,6 +14,8 @@ ms.custom: developer, devx-track-js
 
 # Prepare external tenant for calling an API in a Node.js web application
 
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
 In this article, you prepare your external tenant for authorization. This article is the first part of a four-part guide.
 
 ## Prerequisite

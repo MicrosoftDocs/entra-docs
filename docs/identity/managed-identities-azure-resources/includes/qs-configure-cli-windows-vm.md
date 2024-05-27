@@ -1,23 +1,9 @@
 ---
-title: Configure managed identities on Azure VM using Azure CLI
-description: Step-by-step instructions for configuring system and user-assigned managed identities on an Azure VM using Azure CLI.
 author: barclayn
-manager: amycolannino
-ms.service: entra-id
-ms.subservice: managed-identities
-ms.topic: quickstart
-ms.date: 01/11/2022
 ms.author: barclayn
-
-ms.custom: mode-api, devx-track-azurecli, devx-track-linux
-ms.devlang: azurecli
+ms.date: 04/24/2024
+ms.topic: include
 ---
-
-# Configure managed identities for Azure resources on an Azure VM using Azure CLI
-
-[!INCLUDE [preview-notice](~/includes/entra-msi-preview-notice.md)]
-
-Managed identities for Azure resources provide Azure services with an automatically managed identity in Microsoft Entra ID. You can use this identity to authenticate to any service that supports Microsoft Entra authentication, without having credentials in your code. 
 
 In this article, using the Azure CLI, you learn how to perform the following managed identities for Azure resources operations on an Azure VM:
 
@@ -28,7 +14,7 @@ If you don't already have an Azure account, [sign up for a free account](https:/
 
 ## Prerequisites
 
-- If you're unfamiliar with managed identities for Azure resources, see [What are managed identities for Azure resources?](overview.md). To learn about system-assigned and user-assigned managed identity types, see [Managed identity types](overview.md#managed-identity-types).
+- If you're unfamiliar with managed identities for Azure resources, see [What are managed identities for Azure resources?](~/identity/managed-identities-azure-resources/overview.md). To learn about system-assigned and user-assigned managed identity types, see [Managed identity types](~/identity/managed-identities-azure-resources/overview.md#managed-identity-types).
 
 [!INCLUDE [azure-cli-prepare-your-environment-no-header.md](~/../docs/reusable-content/azure-cli/azure-cli-prepare-your-environment-no-header.md)]
 
@@ -141,7 +127,7 @@ To assign a user-assigned identity to a VM, your account needs the [Virtual Mach
 1. Create a user-assigned identity using [az identity create](/cli/azure/identity#az-identity-create).  The `-g` parameter specifies the resource group where the user-assigned identity is created, and the `-n` parameter specifies its name. Be sure to replace the `<RESOURCE GROUP>` and `<USER ASSIGNED IDENTITY NAME>` parameter values with your own values:
 
    > [!IMPORTANT]
-   > Creating user-assigned managed identities with special characters (i.e. underscore) in the name is not currently supported. Please use alphanumeric characters. Check back for updates.  For more information, see [FAQs and known issues](known-issues.md)
+   > Creating user-assigned managed identities with special characters (i.e. underscore) in the name is not currently supported. Please use alphanumeric characters. Check back for updates.  For more information, see [FAQs and known issues](~/identity/managed-identities-azure-resources/known-issues.md)
 
    ```azurecli-interactive
    az identity create -g <RESOURCE GROUP> -n <USER ASSIGNED IDENTITY NAME>
@@ -196,7 +182,7 @@ az vm update -n myVM -g myResourceGroup --set identity.type='SystemAssigned' ide
 ```
 
 ## Next steps
-- [Managed identities for Azure resources overview](overview.md)
+- [Managed identities for Azure resources overview](~/identity/managed-identities-azure-resources/overview.md)
 - For the full Azure VM creation Quickstarts, see: 
   - [Create a Windows virtual machine with CLI](/azure/virtual-machines/windows/quick-create-cli)  
   - [Create a Linux virtual machine with CLI](/azure/virtual-machines/linux/quick-create-cli)

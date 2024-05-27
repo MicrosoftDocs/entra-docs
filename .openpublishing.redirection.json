@@ -301,6 +301,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity-platform/tutorial-blazor-server.md",
+      "redirect_url": "/entra/identity-platform/quickstart-single-page-app-blazor-wasm-sign-in",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/external-id/customers/how-to-web-app-node-sign-in-call-api-overview.md",
       "redirect_url": "/entra/external-id/customers/how-to-web-app-node-sign-in-call-api-prepare-tenant",
       "redirect_document_id": false
@@ -627,8 +632,38 @@
       "redirect_document_id": false
     },
     {            
+<<<<<<< merge-sign-in-out-native-auth-android-docs
       "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-android-sign-in-user-with-username-password.md",
       "redirect_url": "/entra/external-id/customers/tutorial-native-authentication-android-sign-in-sign-out",
+=======
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/qs-configure-portal-windows-vm.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-configure-managed-identities",
+      "redirect_document_id": false
+    },
+    {            
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/qs-configure-cli-windows-vm.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-configure-managed-identities",
+      "redirect_document_id": false
+    },
+    {            
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/qs-configure-powershell-windows-vm.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-configure-managed-identities",
+      "redirect_document_id": false
+    },
+    {            
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/qs-configure-template-windows-vm.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-configure-managed-identities",
+      "redirect_document_id": false
+    },
+    {            
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/qs-configure-rest-vm.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-configure-managed-identities",
+      "redirect_document_id": false
+    },
+    {            
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/qs-configure-sdk-windows-vm.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-configure-managed-identities",
+>>>>>>> main
       "redirect_document_id": false
     },
     {
@@ -640,7 +675,6 @@
       "source_path_from_root": "/docs/identity/domain-services/ad-auth-no-join-linux-vm.md",
       "redirect_url": "/entra/identity/domain-services/join-ubuntu-linux-vm",
       "redirect_document_id": false
-    }
+    },   
   ]
 }
-
