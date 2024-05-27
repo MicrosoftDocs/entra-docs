@@ -153,7 +153,7 @@ After permissions are added to your application, users or admins need to grant c
 
 When the added permissions require admin consent, the required actions vary based on app type:
 
-- **Single tenant app and multitenant app in home tenant**: The user must sign in as a Global Administrator and [grant tenant-wide consent](~/identity/enterprise-apps/grant-admin-consent.md).
+- **Single tenant app and multitenant app in home tenant**: The user must sign in as at least a [Privileged Role Administrator role](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator) and [grant tenant-wide consent](~/identity/enterprise-apps/grant-admin-consent.md).
 - **Multi-tenant apps in customer's tenants**: User sees new consent prompts on their next sign-in attempt. If the permissions only require user consent, the user can grant consent. If the permissions require admin consent, the user must contact their administrator to grant consent.
 
 ### Stop requesting unused permissions
