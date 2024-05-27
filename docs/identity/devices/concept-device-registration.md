@@ -55,6 +55,9 @@ A user in your organization wants to access your benefits enrollment tool from t
 
 Another user wants to access their organizational email on their personal Android phone that is rooted. Your company requires a compliant device and has an Intune device compliance policy to block any rooted devices. The employee is stopped from accessing organizational resources on this device.
 
+> [!NOTE]
+> The functionalities of Entra Registered does not work on devices with Unified Write Filter (UWF) feature is enabled.
+
 ## Related content
 
 - [Manage device identities](manage-device-identities.md)
