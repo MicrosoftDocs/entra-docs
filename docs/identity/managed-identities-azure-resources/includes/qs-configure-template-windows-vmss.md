@@ -49,7 +49,7 @@ In this section, you will enable and disable the system-assigned managed identit
    }
    ```
 
-4. When you're done, the following sections should added to the resource section of your template  and should resemble the example shown below:
+4. When you're done, the following sections should be added to the resource section of your template  and should resemble the example shown below:
 
    ```json
     "resources": [
