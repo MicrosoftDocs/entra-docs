@@ -614,6 +614,8 @@
         href: collaborativeinnovation-tutorial.md
       - name: Collector Systems
         href: collector-systems-tutorial.md
+      - name: Collibra
+        href: collibra-tutorial.md
       - name: Colloquial
         href: colloquial-tutorial.md
       - name: ColorTokens ZTNA
@@ -704,6 +706,8 @@
         href: coverity-static-application-security-testing-tutorial.md  
       - name: Cincom CPQ
         href: cpqsync-by-cincom-tutorial.md
+      - name: CrashPlan
+        href: crashplan-tutorial.md
       - name: Crayon
         href: crayon-tutorial.md
       - name: Creatio
@@ -1941,6 +1945,8 @@
         href: numlyengage-tutorial.md
       - name: Nulab Pass (Backlog,Cacoo,Typetalk)
         href: nulab-pass-tutorial.md  
+      - name: ObservePoint Web Assurance
+        href: observepoint-web-assurance-tutorial.md
       - name: O.C. Tanner - AppreciateHub
         href: oc-tanner-tutorial.md
       - name: OfficeSpace Software
@@ -3189,6 +3195,8 @@
         href: zonka-feedback-tutorial.md
       - name: Zoom
         href: zoom-tutorial.md
+      - name: Zoom for Government
+        href: zoom-for-government-tutorial.md
       - name: Zscaler(OIDC)
         href: zscaler-oidc-tutorial.md
       - name: Zscaler Internet Access ZSNet
