@@ -670,6 +670,11 @@
       "source_path_from_root": "/docs/identity/domain-services/ad-auth-no-join-linux-vm.md",
       "redirect_url": "/entra/identity/domain-services/join-ubuntu-linux-vm",
       "redirect_document_id": false
-    },   
+    },
+    {
+      "source_path_from_root": "/docs/identity/enterprise-apps/app-management-videos.md",
+      "redirect_url": "/entra/identity/enterprise-apps/what-is-application-management",
+      "redirect_document_id": false
+    }  
   ]
 }
