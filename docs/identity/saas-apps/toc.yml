@@ -3189,6 +3189,8 @@
         href: zonka-feedback-tutorial.md
       - name: Zoom
         href: zoom-tutorial.md
+      - name: Zoom for Government
+        href: zoom-for-government-tutorial.md
       - name: Zscaler(OIDC)
         href: zscaler-oidc-tutorial.md
       - name: Zscaler Internet Access ZSNet
