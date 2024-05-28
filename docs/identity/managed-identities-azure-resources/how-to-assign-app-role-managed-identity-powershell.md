@@ -87,7 +87,7 @@ In this article, you learn how to assign a managed identity to an application ro
 1. Assign the app role to the managed identity. You'll need the following information to assign the app role:
     * `managedIdentityObjectId`: the object ID of the managed identity's service principal, which you found in step 2.
     * `serverServicePrincipalObjectId`: the object ID of the server application's service principal, which you found in step 4.
-    * `appRoleId`: the ID of the app role exposed by the server app, which you generated in step 5 - in the example, the app role ID is `0566419e-bb95-4d9d-a4f8-ed9a0f147fa6`.
+    * `appRoleId`: the ID of the app role exposed by the server app, which you generated in step 5 - in the example, the app role ID is `00000000-0000-0000-0000-000000000000`.
    
    Execute the following PowerShell command to add the role assignment:
 

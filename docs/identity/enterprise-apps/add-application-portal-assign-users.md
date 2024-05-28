@@ -26,7 +26,7 @@ We recommend that you use a nonproduction environment to test the steps in this 
 To create a user account and assign it to an enterprise application, you need:
 
 - A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- One of the following roles: Global Administrator, Cloud Application Administrator, or owner of the service principal. You'll need the User Administrator role to manage users.
+- One of the following roles: Cloud Application Administrator, or owner of the service principal. You'll need the User Administrator role to manage users.
 - Completion of the steps in [Quickstart: Add an enterprise application](add-application-portal.md).
 
 ## Create a user account

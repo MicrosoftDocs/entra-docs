@@ -16,6 +16,8 @@ ms.collection: M365-identity-device-management
 
 # Configure cross-tenant access settings for B2B direct connect
 
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
+
 Use cross-tenant access settings to manage how you collaborate with other Microsoft Entra organizations through [B2B direct connect](b2b-direct-connect-overview.md). These settings let you determine the level of outbound access your users have to external organizations. They also let you control the level of inbound access that users in external Microsoft Entra organizations have to your internal resources.
 
 - **Default settings**: The default cross-tenant access settings apply to all external Microsoft Entra organizations, except organizations for which you configure individual settings. You can change these default settings. For B2B direct connect, you typically leave the default settings as-is and enable B2B direct connect access with organization-specific settings. Initially, your default values are as follows:
@@ -37,7 +39,7 @@ Learn more about using cross-tenant access settings to [manage B2B direct connec
 - Identify any Microsoft Entra organizations that need customized settings.
 - Contact organizations with which you want to set up B2B direct connect. Because B2B direct connect is established through mutual trust, both you and the other organization need to enable B2B direct connect with each other in your cross-tenant access settings.
 - Obtain any required information from external organizations. If you want to apply access settings to specific users, groups, or applications within an external organization, you need to obtain these IDs from the organization before you can configure access settings.
-- To configure cross-tenant access settings in the Microsoft Entra admin center, you need an account with a Global Administrator or Security Administrator role. Teams administrators can read cross-tenant access settings, but they can't update these settings.
+- To configure cross-tenant access settings in the Microsoft Entra admin center, you need an account with at least the [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator) role. Teams administrators can read cross-tenant access settings, but they can't update these settings.
 
 ## Configure default settings
 

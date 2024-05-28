@@ -52,7 +52,7 @@ procedureSection:
         "@odata.id" = "https://graph.microsoft.com/v1.0/policies/tokenLifetimePolicies/$tokenLifetimePolicyId"
       }
 
-      $applicationObjectId="11111111-1111-1111-1111-111111111111"
+      $applicationObjectId="aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb"
 
       New-MgApplicationTokenLifetimePolicyByRef -ApplicationId $applicationObjectId -BodyParameter $params
 
@@ -88,7 +88,7 @@ procedureSection:
         Assign the policy to a service principal.
 
         ```http
-        POST https://graph.microsoft.com/v1.0/servicePrincipals/11111111-1111-1111-1111-111111111111/tokenLifetimePolicies/$ref
+        POST https://graph.microsoft.com/v1.0/servicePrincipals/00001111-aaaa-2222-bbbb-3333cccc4444/tokenLifetimePolicies/$ref
         Content-Type: application/json
         {
           "@odata.id":"https://graph.microsoft.com/v1.0/policies/tokenLifetimePolicies/22222222-2222-2222-2222-222222222222"
@@ -98,13 +98,13 @@ procedureSection:
         List the policies on the service principal.
 
         ```http
-        GET https://graph.microsoft.com/v1.0/servicePrincipals/11111111-1111-1111-1111-111111111111/tokenLifetimePolicies
+        GET https://graph.microsoft.com/v1.0/servicePrincipals/00001111-aaaa-2222-bbbb-3333cccc4444/tokenLifetimePolicies
         ```
       - |
         Remove the policy from the service principal.
 
         ```http
-        DELETE https://graph.microsoft.com/v1.0/servicePrincipals/11111111-1111-1111-1111-111111111111/tokenLifetimePolicies/22222222-2222-2222-2222-222222222222/$ref
+        DELETE https://graph.microsoft.com/v1.0/servicePrincipals/00001111-aaaa-2222-bbbb-3333cccc4444/tokenLifetimePolicies/22222222-2222-2222-2222-222222222222/$ref
         ```
   - title: |
       View existing policies in a tenant

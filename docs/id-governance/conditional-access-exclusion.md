@@ -23,13 +23,11 @@ In an ideal world, all users follow the access policies to secure access to your
 
 Let's say that as the administrator, you decide to use [Microsoft Entra Conditional Access](../identity/conditional-access/concept-conditional-access-policy-common.md) to require multifactor authentication (MFA) and limit authentication requests to specific networks or devices. During deployment planning, you realize that not all users can meet these requirements. For example, you could have users who work from remote offices, not part of your internal network. You could also have to accommodate users connecting using unsupported devices while waiting for those devices to be replaced. In short, the business needs these users to sign in and do their job so you exclude them from Conditional Access policies.
 
-As another example, you could be using [named locations](../identity/conditional-access/location-condition.md) in Conditional Access to specify a set of countries and regions from which you don't want to allow users to access their tenant.
-
-![Named locations in Conditional Access](./media/conditional-access-exclusion/named-locations.png)
+As another example, you may be using [named locations](../identity/conditional-access/concept-assignment-network.md#countries) in Conditional Access to specify a set of countries and regions from which you don't want to allow users to access their tenant.
 
 Unfortunately, some users might still have a valid reason to sign in from these blocked countries/regions. For example, users could be traveling for work and need to access corporate resources. In this case, the Conditional Access policy to block these countries/regions could use a cloud security group for the excluded users from the policy. Users who need access while traveling, can add themselves to the group using [Microsoft Entra self-service Group management](../identity/users/groups-self-service-management.md).
 
-Another example might be that you have a Conditional Access policy [which blocks legacy authentication for most of your users](https://cloudblogs.microsoft.com/enterprisemobility/2018/06/07/azure-ad-conditional-access-support-for-blocking-legacy-auth-is-in-public-preview/). However, if you have some users that need to use legacy authentication methods to access your resources via Office 2010 or IMAP/SMTP/POP based clients, then you can exclude these users from the policy that blocks legacy authentication methods.
+Another example might be that you have a Conditional Access policy [blocking legacy authentication for the vast majority of your users](../identity/conditional-access/howto-conditional-access-policy-block-legacy.md). However, if you have some users that need to use legacy authentication methods to access specific resources, then you can exclude these users from the policy that blocks legacy authentication methods.
 
 >[!NOTE]
 >Microsoft strongly recommends that you block the use of legacy protocols in your tenant to improve your security posture.
@@ -101,7 +99,7 @@ a recommended access review where members of the group are reviewed.
 ![Create an access review pane for example 1](./media/conditional-access-exclusion/create-access-review-1.png)
 
 > [!NOTE] 
-> A Global administrator or User administrator role is required to create access reviews. For a step by step guide on creating an access review, see: [Create an access review of groups and applications](create-access-review.md).
+> At least the Identity Governance Administrator, or User Administrator role, is required to create access reviews. For a step by step guide on creating an access review, see: [Create an access review of groups and applications](create-access-review.md).
 
 1. The review happens every week.
 

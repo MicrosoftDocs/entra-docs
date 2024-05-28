@@ -22,13 +22,15 @@ The web filtering feature is currently limited to user- and context-aware Fully 
 ## Prerequisites
 
 - Administrators who interact with **Global Secure Access (preview)** features must have one or more of the following role assignments depending on the tasks they're performing.
-  - The **Global Secure Access Administrator** role to manage the Global Secure Access preview features.
-  - [Conditional Access Administrator](/azure/active-directory/roles/permissions-reference#conditional-access-administrator) or [Security Administrator](/azure/active-directory/roles/permissions-reference#security-administrator) to create and interact with Conditional Access policies. 
+   - The [Global Secure Access Administrator role](/azure/active-directory/roles/permissions-reference) role to manage the Global Secure Access preview features.
+   - The [Conditional Access Administrator](/azure/active-directory/roles/permissions-reference#conditional-access-administrator) to create and interact with Conditional Access policies.
 - Complete the [Get started with Global Secure Access](how-to-get-started-with-global-secure-access.md) guide. 
 - [Install the Global Secure Access client](how-to-install-windows-client.md) on end user devices.
 - You must disable Domain Name System (DNS) over HTTPS (Secure DNS) to tunnel network traffic. Use the rules of the fully qualified domain names (FQDNs) in the traffic forwarding profile. For more information, see [Configure the DNS client to support DoH](/windows-server/networking/dns/doh-client-support#configure-the-dns-client-to-support-doh).
 - Disable built-in DNS client on Chrome and Microsoft Edge.
-- User Datagram Protocol (UDP) traffic isn't supported in the current preview. If you plan to tunnel Exchange Online traffic, disable the QUIC protocol (443 UDP). For more information, see [Block QUIC when tunneling Exchange Online traffic](how-to-install-windows-client.md#block-quic-when-tunneling-exchange-online-traffic).
+- User Datagram Protocol (UDP) traffic (i.e. QUIC) isn't supported in the current preview of Internet Access. Most websites support fallback to TCP when QUIC cannot be established. For improved user experience, you can deploy a Windows Firewall rule that blocks outbound UDP 443: `@New-NetFirewallRule -DisplayName "Block QUIC" -Direction Outbound -Action Block -Protocol UDP  -RemotePort 443`. 
+ 
+
 - Review web content filtering concepts. For more information, see [web content filtering](concept-internet-access.md).
 
 ## High level steps
@@ -39,6 +41,7 @@ There are several steps to configuring web content filtering. Take note of where
 1. [Create a web content filtering policy.](#create-a-web-content-filtering-policy)
 1. [Create a security profile.](#create-a-security-profile)
 1. [Link the security profile to a Conditional Access policy.](#create-and-link-conditional-access-policy)
+1. [Assign users or groups to the traffic forwarding profile.](#user-and-group-assignments)
 
 ## Enable internet traffic forwarding
 
@@ -89,6 +92,9 @@ Create a Conditional Access policy for end users or groups and deliver your secu
 1. Select **Select**.
 1. In the **Enable policy** section, ensure **On** is selected.
 1. Select **Create**.
+
+## User and group assignments
+You can scope the Internet Access profile to specific users and groups. To learn more about user and group assignment, see [How to assign and manage users and groups with traffic forwarding profiles](how-to-manage-users-groups-assignment.md).
 
 ## Verify end user policy enforcement
 

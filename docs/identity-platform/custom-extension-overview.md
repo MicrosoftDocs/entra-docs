@@ -71,7 +71,7 @@ Learn more about [custom claims providers](custom-claims-provider-overview.md).
 Attribute collection start and submit events can be used with custom authentication extensions to add logic before and after attributes are collected from a user. For example, you can add a workflow to validate the attributes a user enters during sign-up.  The **OnAttributeCollectionStart** event occurs at the beginning of the attribute collection step, before the attribute collection page renders. It lets you add actions such as prefilling values and displaying a blocking error. The **OnAttributeCollectionSubmit** event triggers after the user enters and submits attributes, allowing you to add actions like validating entries or modifying attributes.
 
 > [!NOTE]
-> Attribute collection start and submit events are currently available only for user flows in Microsoft Entra External ID for customers. For details, see [Add your own business logic](~/external-id/customers/concept-custom-extensions.md).
+> Attribute collection start and submit events are currently available only for user flows in Microsoft Entra External ID in external tenants. For details, see [Add your own business logic](~/external-id/customers/concept-custom-extensions.md).
 
 ## See also
 

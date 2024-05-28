@@ -9,12 +9,17 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: how-to
-ms.date: 03/22/2024
+ms.date: 05/15/2024
 ms.custom: it-pro
 
 #Customer intent: As a dev, devops, or it admin, I want to learn about how to add customized browser languages to my app's authentication experience.
 ---
 # Customize the language of the authentication experience
+
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
+> [!TIP]
+> This article applies to user flows in external tenants. For information about workforce tenants, see [Language customization in Microsoft Entra External ID](../user-flow-customize-language.md).
 
 You can create a personalized sign-in experience for users who sign in using a specific browser language by customizing the branding elements for that browser language. This customization overrides any configurations made to the default branding. If you don't make any changes to the elements, the default elements are displayed.
 
@@ -97,7 +102,7 @@ Language customization in the external tenant allows your user flow to accommoda
 4. Select the user flow that you want to enable for translations.
 5. Select **Languages**.
 6. On the **Languages** page for the user flow, select the language that you want to customize.
-7. Expand **Sign up and sign in (Preview)**.
+7. Expand **Sign up and sign in **.
 8. Select **Download defaults** (or **Download overrides** if you have previously edited this language).
 
    :::image type="content" source="media/how-to-customize-languages-customers/language-customization-flow.png" alt-text="Screenshot the shows how to add languages under a user flow." lightbox="media/how-to-customize-languages-customers/language-customization-flow.png":::
@@ -160,7 +165,7 @@ You can modify any or all of these attributes in the downloaded file. For exampl
 ```
 
 9. After making the necessary changes, you can upload the new overrides file. The changes are saved to your user flow automatically. The override appears under the **Configured** tab.
-10. To double-check your changes, select the language under the **Configured** tab and expand the **Sign up and sign in (Preview)** option. You can view your customized language file by selecting Download overrides. To remove your customized override file, select **Remove overrides**.
+10. To double-check your changes, select the language under the **Configured** tab and expand the **Sign up and sign in ** option. You can view your customized language file by selecting Download overrides. To remove your customized override file, select **Remove overrides**.
 
    :::image type="content" source="media/how-to-customize-languages-customers/remove-download-override-file.png" alt-text="Screenshot the shows how to remove or download the modified JSON file." lightbox="media/how-to-customize-languages-customers/remove-download-override-file.png":::
    

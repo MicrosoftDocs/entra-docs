@@ -15,6 +15,8 @@ ms.custom: it-pro
 
 # Groups and application roles support
 
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
 An external tenant follows the Microsoft Entra user and group management model and application assignment. Many of the core Microsoft Entra features are being phased into external tenants. The following table shows which features are currently available.
 
 | **Feature** | **Currently available?** |

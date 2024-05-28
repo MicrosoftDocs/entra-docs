@@ -18,7 +18,7 @@ ms.custom: has-adal-ref
 
 User objects in Microsoft Entra ID have an attribute named certificateUserIds.
 
-- The certificateUserIds attribute is multivalued and can hold up to 5 values.
+- The certificateUserIds attribute is multivalued and can hold up to 10 values.
 - Each value can be no more than 1024 characters.
 - Each value must be unique. Once a value is present on one user account, it can't be written to any other user account in the same Entra ID tenant.
 - The value doesn't need to be in email ID format. The certificateUserIds attribute can store nonroutable user principal names (UPNs) like _bob@woodgrove_ or _bob@local_.
@@ -154,12 +154,12 @@ For this configuration, you can use [Microsoft Graph PowerShell](/powershell/mic
    ```powershell
      #Create a new variable to prepare the change. Ensure that you list any existing values you want to keep as this operation will overwrite the existing value
      $params = @{
-           authorizationInfo = @{
-                 certificateUserIds = @(
-                 "X509:<SKI>eec6b88788d2770a01e01775ce71f1125cd6ad0f", 
-                 "X509:<PN>user@contoso.com"
-                 )
-           }
+           authorizationInfo = @{
+                 certificateUserIds = @(
+                 "X509:<SKI>eec6b88788d2770a01e01775ce71f1125cd6ad0f", 
+                 "X509:<PN>user@contoso.com"
+                 )
+           }
      }
    ```
 1. Update the certificateUserIds attribute.

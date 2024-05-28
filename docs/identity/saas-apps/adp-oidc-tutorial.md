@@ -70,6 +70,8 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
         [![Screenshot of showing the redirect values.](common/redirect.png)](common/redirect.png#lightbox)
 
+    1. Click **Configure** button.
+
 1. Navigate to **Certificates & secrets** on the left menu and perform the following steps:
 
     1. Go to **Client secrets** tab and click **+New client secret**.

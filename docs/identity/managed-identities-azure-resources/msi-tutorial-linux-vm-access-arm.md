@@ -51,15 +51,15 @@ The response contains details for the user-assigned managed identity created, si
 
 ```json
 {
-"clientId": "73444643-8088-4d70-9532-c3a0fdc190fz",
-"clientSecretUrl": "https://control-westcentralus.identity.azure.net/subscriptions/<SUBSCRIPTON ID>/resourcegroups/<RESOURCE GROUP>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<UAMI NAME>/credentials?tid=5678&oid=9012&aid=12344643-8088-4d70-9532-c3a0fdc190fz",
+"clientId": "00001111-aaaa-2222-bbbb-3333cccc4444",
+"clientSecretUrl": "https://control-westcentralus.identity.azure.net/subscriptions/<SUBSCRIPTON ID>/resourcegroups/<RESOURCE GROUP>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<UAMI NAME>/credentials?tid=5678&oid=9012&aid=aaaaaaaa-0b0b-1c1c-2d2d-333333333333",
 "id": "/subscriptions/<SUBSCRIPTON ID>/resourcegroups/<RESOURCE GROUP>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<UAMI NAME>",
 "location": "westcentralus",
 "name": "<UAMI NAME>",
 "principalId": "9012",
 "resourceGroup": "<RESOURCE GROUP>",
 "tags": {},
-"tenantId": "733a8f0e-ec41-4e69-8ad8-971fc4b533bl",
+"tenantId": "aaaabbbb-0000-cccc-1111-dddd2222eeee",
 "type": "Microsoft.ManagedIdentity/userAssignedIdentities"
 }
 ```
@@ -88,11 +88,11 @@ The response contains details for the role assignment created, similar to the fo
 
 ```json
 {
-  "id": "/subscriptions/<SUBSCRIPTION ID>/resourceGroups/<RESOURCE GROUP>/providers/Microsoft.Authorization/roleAssignments/b402bd74-157f-425c-bf7d-zed3a3a581ll",
-  "name": "b402bd74-157f-425c-bf7d-zed3a3a581ll",
+  "id": "/subscriptions/<SUBSCRIPTION ID>/resourceGroups/<RESOURCE GROUP>/providers/Microsoft.Authorization/roleAssignments/00000000-0000-0000-0000-000000000000",
+  "name": "00000000-0000-0000-0000-000000000000",
   "properties": {
-    "principalId": "f5fdfdc1-ed84-4d48-8551-999fb9dedfbl",
-    "roleDefinitionId": "/subscriptions/<SUBSCRIPTION ID>/providers/Microsoft.Authorization/roleDefinitions/acdd72a7-3385-48ef-bd42-f606fba81ae7",
+    "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
+    "roleDefinitionId": "/subscriptions/<SUBSCRIPTION ID>/providers/Microsoft.Authorization/roleDefinitions/00000000-0000-0000-0000-000000000000",
     "scope": "/subscriptions/<SUBSCRIPTION ID>/resourceGroups/<RESOURCE GROUP>"
   },
   "resourceGroup": "<RESOURCE GROUP>",
@@ -112,12 +112,12 @@ To complete these steps, you need an SSH client. If you are using Windows, you c
 1. Sign in to the [Azure portal](https://portal.azure.com).
 2. In the portal, navigate to **Virtual Machines** and go to the Linux virtual machine and in the **Overview**, click **Connect**. Copy the string to connect to your VM.
 3. Connect to the VM with the SSH client of your choice. If you are using Windows, you can use the SSH client in the [Windows Subsystem for Linux](/windows/wsl/about). If you need assistance configuring your SSH client's keys, see [How to Use SSH keys with Windows on Azure](/azure/virtual-machines/linux/ssh-from-windows), or [How to create and use an SSH public and private key pair for Linux VMs in Azure](/azure/virtual-machines/linux/mac-create-ssh-keys).
-4. In the terminal window, use CURL to make a request to the Azure Instance Metadata Service (IMDS) identity endpoint to get an access token for Azure Resource Manager.  
+4. In the terminal window, use CURL to make a request to the Azure Instance Metadata Service (IMDS) identity endpoint to get an access token for Azure Resource Manager.
 
    The CURL request to acquire an access token is shown in the following example. Be sure to replace `<CLIENT ID>` with the `clientId` property returned by the `az identity create` command in [Create a user-assigned managed identity](#create-a-user-assigned-managed-identity): 
     
    ```bash
-   curl -H Metadata:true "http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https%3A%2F%2Fmanagement.azure.com/&client_id=<UAMI CLIENT ID>"   
+   curl -H Metadata:true "http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https%3A%2F%2Fmanagement.azure.com/&client_id=<UAMI CLIENT ID>"
    ```
     
     > [!NOTE]
@@ -125,7 +125,7 @@ To complete these steps, you need an SSH client. If you are using Windows, you c
     
     The response includes the access token you need to access Azure Resource Manager. 
     
-    Response example:  
+    Response example:
 
     ```bash
     {
@@ -142,7 +142,7 @@ To complete these steps, you need an SSH client. If you are using Windows, you c
 5. Use the access token to access Azure Resource Manager, and read the properties of the Resource Group to which you previously granted your user-assigned managed identity access. Be sure to replace `<SUBSCRIPTION ID>`, `<RESOURCE GROUP>` with the values you specified earlier, and `<ACCESS TOKEN>` with the token returned in the previous step.
 
     > [!NOTE]
-    > The URL is case-sensitive, so be sure to use the exact same case you used earlier when you named the Resource Group, and the uppercase "G" in `resourceGroups`.  
+    > The URL is case-sensitive, so be sure to use the exact same case you used earlier when you named the Resource Group, and the uppercase "G" in `resourceGroups`.
 
     ```bash 
     curl https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroups/<RESOURCE GROUP>?api-version=2016-09-01 -H "Authorization: Bearer <ACCESS TOKEN>" 

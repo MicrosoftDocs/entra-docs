@@ -33,7 +33,7 @@ The configuration page for password-based SSO is simple. It includes only the UR
 
 To configure password-based SSO in your Microsoft Entra tenant, you need:
 -	An Azure account with an active subscription. If you don't already have one, you can [create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
--	Global Administrator, Cloud Application Administrator, or owner of the service principal.
+-   Application Administrator, Cloud Application Administrator, or owner of the service principal.
 -	An application that supports password-based SSO.
 
 ## Configure password-based single sign-on

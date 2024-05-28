@@ -211,7 +211,7 @@ In addition to your active policies, implement disabled policies that act as sec
 
 ### Block countries/regions from which you never expect a sign-in
 
-Microsoft Entra ID allows you to create [named locations](location-condition.md). Create the list of countries/regions that are allowed, and then create a network block policy with these "allowed countries/regions" as an exclusion. This option creates less overhead for customers who are based in smaller geographic locations. **Be sure to exempt your emergency access accounts from this policy**.
+Microsoft Entra ID allows you to create [named locations](concept-assignment-network.md). Create the list of countries/regions that are allowed, and then create a network block policy with these "allowed countries/regions" as an exclusion. This option creates less overhead for customers who are based in smaller geographic locations. **Be sure to exempt your emergency access accounts from this policy**.
 
 ## Deploy Conditional Access policies
 
