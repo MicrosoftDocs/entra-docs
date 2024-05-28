@@ -15,6 +15,8 @@ ms.collection: M365-identity-device-management
 
 # Overview: Collaborate with guests using External ID in your workforce tenant
 
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
+
 Microsoft Entra External ID includes collaboration capabilities that allow your workforce to work securely with business partners and guests. In your workforce tenant, you can use B2B collaboration to share your company's applications and services with guests, while maintaining control over your own corporate data. Work securely with external partners, even if they don't have Microsoft Entra ID or an IT department.
 
 :::image type="content" source="media/what-is-b2b/b2b-collaboration-overview.png" alt-text="Diagram illustrating B2B collaboration." border="true":::
