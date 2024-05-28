@@ -103,7 +103,8 @@ The PowerShell request:
 $Response = Invoke-RestMethod -Uri 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https%3A%2F%2Fvault.azure.net' -Method GET -Headers @{Metadata="true"} 
 ```
 >[!NOTE]
-> When working with other clouds besides Azure US you may need to make adjustments to the values specified. For example, the following suffix should be used when working with the USA government cloud. $Response = Invoke-RestMethod -Uri 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https%3A%2F%2Fvault.usgovcloudapi.net' -Method GET -Headers @{Metadata="true"
+> When working with sovereign clouds you will need to make adjustments to the endpoint specified at the end of the cmdlet. 
+For example, 'vault.usgovcloudapi.net' should be used when working with Azure Government Cloud, with this being the end result: $Response = Invoke-RestMethod -Uri 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https%3A%2F%2Fvault.usgovcloudapi.net' -Method GET -Headers @{Metadata="true" To confirm, review https://learn.microsoft.com/azure/azure-government/compare-azure-government-global-azure to find the suffix for your environment.
 
 You can see what the response looks like below:
 
