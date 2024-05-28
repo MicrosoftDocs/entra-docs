@@ -117,7 +117,7 @@ You can configure your app to allow users to sign in with their email and a pass
 
 ## Set up and run a sample app
 
-The extension contains several code samples that demonstrate how authentication is implemented in different application types and development languages. Choose a single page application (JavaScript, React, Angular) sample from within the extension, and the extension automatically configures the application with your sign-in experience.
+The extension contains several code samples that demonstrate how authentication is implemented in different application types and development languages. Samples are included for single page apps (JavaScript, React, Angular) and web apps (Node.js Express, ASP.NET Core, Python Django, Python Flask). Choose a sample from within the extension, and the extension automatically configures the application with your sign-in experience.
 
 1. Under select **Set up and run a sample app**, select the **Set up sample app button**.
 
