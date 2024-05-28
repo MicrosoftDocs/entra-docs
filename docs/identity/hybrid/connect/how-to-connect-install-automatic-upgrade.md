@@ -54,7 +54,7 @@ If the **Synchronization Service Manager** UI is running on the server, then the
 > Not all releases of Microsoft Entra Connect are made available for auto upgrade. The release status indicates if a release is available for auto upgrade or for download only. If auto upgrade was enabled on your Microsoft Entra Connect server then that server will automatically upgrade to the latest version of Microsoft Entra Connect released for auto upgrade if **your configuration is [eligible](#auto-upgrade-eligibility)** for auto upgrade. For more information, see the article [Microsoft Entra Connect: Version release history](reference-connect-version-history.md).
 
 ## Auto upgrade eligibility
-In order to eligible for an automatic upgrade, you must not meet any one of the following conditions:
+Automatic upgrade will not be eligible to proceed if any of the following conditions are met:
 
 | Result Message | Description |
 | --- | --- |
