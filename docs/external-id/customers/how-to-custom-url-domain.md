@@ -8,22 +8,25 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: how-to
-ms.date: 05/09/2024
+ms.date: 05/21/2024
 ms.author: mimart
 ms.custom: it-pro
 
 #Customer intent: As a dev, devops, or it admin, I want to learn how to personalize my application’s sign-in endpoints with my own branding or naming instead of Microsoft’s default domain name by using a custom URL domain.
 ---
 
-# Enable custom URL domains for Microsoft Entra External ID (Preview)
+# Enable custom URL domains for apps in external tenants (Preview)
 
-This article describes how to enable [custom URL domains](concept-custom-url-domain.md) in your redirect URLs for the applications you publish to consumers and business customers. A custom URL domain allows you to brand your application’s sign-in endpoints with your own custom URL domain instead of Microsoft’s default domain name.
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
+This article describes how to enable [custom URL domains](concept-custom-url-domain.md) for Microsoft Entra External ID applications in external tenants. A custom URL domain allows you to brand your application’s sign-in endpoints with your own custom URL domain instead of Microsoft’s default domain name.
 
 [!INCLUDE [preview alert](includes/preview-alert/preview-alert-ciam.md)]
 
 ## Prerequisites
 
 - [Learn how custom URL domains work](concept-custom-url-domain.md) in External ID.
+- If you haven't already created an external tenant, [create one now](how-to-create-external-tenant-portal.md).
 - [Create a user flow](how-to-user-flow-sign-up-sign-in-customers.md) so users can sign up and sign in to your application.
 - [Register a web application](how-to-register-ciam-app.md).
 
@@ -195,13 +198,13 @@ The **default-route** routes the traffic from the client to Azure Front Door. Th
     For example, instead of:
 
     ```http
-    https://contoso.ciamlogin.com/contoso.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1_susi&client_id=63ba0d17-c4ba-47fd-89e9-31b3c2734339&nonce=defaultNonce&redirect_uri=https%3A%2F%2Fjwt.ms&scope=openid&response_type=id_token&prompt=login
+    https://contoso.ciamlogin.com/contoso.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1_susi&client_id=00001111-aaaa-2222-bbbb-3333cccc4444&nonce=defaultNonce&redirect_uri=https%3A%2F%2Fjwt.ms&scope=openid&response_type=id_token&prompt=login
     ```
 
     use:
 
     ```http
-    https://login.contoso.com/contoso.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1_susi&client_id=63ba0d17-c4ba-47fd-89e9-31b3c2734339&nonce=defaultNonce&redirect_uri=https%3A%2F%2Fjwt.ms&scope=openid&response_type=id_token&prompt=login
+    https://login.contoso.com/contoso.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1_susi&client_id=00001111-aaaa-2222-bbbb-3333cccc4444&nonce=defaultNonce&redirect_uri=https%3A%2F%2Fjwt.ms&scope=openid&response_type=id_token&prompt=login
     ```
 
 1. Verify that the sign-in page is loaded correctly. Then, sign in with a local account.
@@ -236,7 +239,7 @@ You can replace your external tenant name in the URL with your tenant ID GUID to
 If you choose to use tenant ID instead of tenant name, be sure to update the identity provider **OAuth redirect URIs** accordingly. When you use your tenant ID instead of tenant name, a valid OAuth redirect URI looks similar to the following sample:
 
 ```html
-https://login.contoso.com/11111111-1111-1111-1111-111111111111/oauth2/authresp 
+https://login.contoso.com/00001111-aaaa-2222-bbbb-3333cccc4444/oauth2/authresp 
 ```
 
 ## (Optional) Azure Front Door advanced configuration

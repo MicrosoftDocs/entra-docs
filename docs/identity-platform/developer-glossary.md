@@ -82,6 +82,8 @@ See the OAuth 2.0 specification's [authorization grant types][OAuth2-AuthZ-Grant
 
 A credential representing the [resource owner's](#resource-owner) [authorization](#authorization) to access its protected resources, granted to a [client application](#client-application). A client application can use one of the [four grant types defined by the OAuth 2.0 Authorization Framework][OAuth2-AuthZ-Grant-Types] to obtain a grant, depending on client type/requirements: "authorization code grant", "client credentials grant", "implicit grant", and "resource owner password credentials grant". The credential returned to the client is either an [access token](#access-token), or an [authorization code](#authorization-code) (exchanged later for an access token), depending on the type of authorization grant used.
 
+The resource owner password credentials grant [shouldn't be used](https://news.microsoft.com/features/whats-solution-growing-problem-passwords-says-microsoft/) except in scenarios when other flows can't be used. If you are building a SPA, use the [authorization code flow with PKCE instead of implicit grant](https://devblogs.microsoft.com/identity/migrate-to-auth-code-flow/).
+
 ## Authorization server
 
 As defined by the [OAuth 2.0 Authorization Framework][OAuth2-Role-Def], the server responsible for issuing access tokens to the [client](#client-application) after successfully authenticating the [resource owner](#resource-owner) and obtaining its authorization. A [client application](#client-application) interacts with the authorization server at runtime via its [authorization](#authorization-endpoint) and [token](#token-endpoint) endpoints, in accordance with the OAuth 2.0 defined [authorization grants](#authorization-grant).

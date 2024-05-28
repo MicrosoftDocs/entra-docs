@@ -1,30 +1,15 @@
 ---
-title: Configure managed identities on Azure VM using template
-description: Step-by-step instructions for configuring managed identities for Azure resources on an Azure VM, using an Azure Resource Manager template.
-
 author: barclayn
-manager: amycolannino
-ms.service: entra-id
-ms.subservice: managed-identities
-ms.topic: quickstart
-ms.tgt_pltfrm: na
-ms.date: 01/11/2022
 ms.author: barclayn
-
-ms.custom: mode-other, devx-track-arm-template
+ms.date: 04/24/2024
+ms.topic: include
 ---
-
-# Configure managed identities for Azure resources on an Azure VM using templates
-
-[!INCLUDE [preview-notice](~/includes/entra-msi-preview-notice.md)]
-
-Managed identities for Azure resources provide Azure services with an automatically managed identity in Microsoft Entra ID. You can use this identity to authenticate to any service that supports Microsoft Entra authentication, without having credentials in your code.
 
 In this article, using the Azure Resource Manager deployment template, you learn how to perform the following managed identities for Azure resources operations on an Azure VM:
 
 ## Prerequisites
 
-- If you're unfamiliar with using Azure Resource Manager deployment template, check out the [overview section](overview.md). **Be sure to review the [difference between a system-assigned and user-assigned managed identity](overview.md#managed-identity-types)**.
+- If you're unfamiliar with using Azure Resource Manager deployment template, check out the [overview section](~/identity/managed-identities-azure-resources/overview.md). **Be sure to review the [difference between a system-assigned and user-assigned managed identity](~/identity/managed-identities-azure-resources/overview.md#managed-identity-types)**.
 - If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/free/) before continuing.
 
 ## Azure Resource Manager templates
@@ -113,7 +98,7 @@ The following example shows you how to remove a system-assigned managed identity
 In this section, you assign a user-assigned managed identity to an Azure VM using Azure Resource Manager template.
 
 > [!NOTE]
-> To create a user-assigned managed identity using an Azure Resource Manager Template, see [Create a user-assigned managed identity](./how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-arm#create-a-user-assigned-managed-identity).
+> To create a user-assigned managed identity using an Azure Resource Manager Template, see [Create a user-assigned managed identity](../how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-arm#create-a-user-assigned-managed-identity).
 
 ### Assign a user-assigned managed identity to an Azure VM
 
@@ -237,4 +222,4 @@ To remove a user-assigned identity from a VM, your account needs the [Virtual Ma
 
 ## Next steps
 
-- [Managed identities for Azure resources overview](overview.md).
+- [Managed identities for Azure resources overview](~/identity/managed-identities-azure-resources/overview.md).

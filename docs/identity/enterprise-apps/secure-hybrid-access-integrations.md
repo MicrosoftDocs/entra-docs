@@ -197,7 +197,7 @@ Authorization: Required with a valid Bearer token
 Method: PATCH
 Content-type: application/json
 
-https://graph.microsoft.com/v1.0/applications/54c4806b-b260-4a12-873c-967116983792
+https://graph.microsoft.com/v1.0/applications/00001111-aaaa-2222-bbbb-3333cccc4444
 {
     "web": {
     "redirectUris":["https://www.salesforce.com"]},
@@ -243,7 +243,7 @@ Authorization: Required with a valid Bearer token
 Method: PATCH
 Content-type: application/json
 
-https://graph.microsoft.com/v1.0/applications/54c4806b-b260-4a12-873c-967116983792
+https://graph.microsoft.com/v1.0/applications/00001111-aaaa-2222-bbbb-3333cccc4444
 {
     "web": {
     "redirectUris":["https://www.samlapp.com"]},
@@ -306,7 +306,7 @@ Authorization: Required with a valid Bearer token
 Method: PATCH
 Content-type: application/json
 
-https://graph.microsoft.com/v1.0/applications/54c4806b-b260-4a12-873c-967116983792
+https://graph.microsoft.com/v1.0/applications/00001111-aaaa-2222-bbbb-3333cccc4444
 {
     "web": {
     "redirectUris":["https://www.samlapp.com"]},
@@ -589,8 +589,8 @@ To help protect legacy applications, while using networking and delivery control
 
 The following VPN solution providers connect with Microsoft Entra ID to enable modern authentication and authorization methods like SSO and multifactor authentication (MFA).
 
-* **Cisco AnyConnect**
-  * [Tutorial: Microsoft Entra SSO integration with Cisco AnyConnect](~/identity/saas-apps/cisco-anyconnect.md)
+* **Cisco Secure Firewall - Secure Client**
+  * [Tutorial: Microsoft Entra SSO integration with Cisco Secure Firewall - Secure Client](~/identity/saas-apps/cisco-secure-firewall-secure-client.md)
 * **Fortinet FortiGate**
   * [Tutorial: Microsoft Entra SSO integration with FortiGate SSL VPN](~/identity/saas-apps/fortigate-ssl-vpn-tutorial.md)
 * **F5 BIG-IP Access Policy Manager**

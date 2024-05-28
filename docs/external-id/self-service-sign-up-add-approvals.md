@@ -17,6 +17,8 @@ ms.collection: M365-identity-device-management
 
 # Add a custom approval workflow to self-service sign-up
 
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
+
 With [API connectors](api-connectors-overview.md), you can integrate with your own custom approval workflows with self-service sign-up so you can manage which guest user accounts are created in your tenant.
 
 This article gives an example of how to integrate with an approval system. In this example, the self-service sign-up user flow collects user data during the sign-up process and passes it to your approval system. Then, the approval system can:

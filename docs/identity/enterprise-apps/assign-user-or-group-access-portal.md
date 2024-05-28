@@ -286,9 +286,9 @@ $assignments | ForEach-Object {
     POST https://graph.microsoft.com/v1.0/servicePrincipals/{resource-servicePrincipal-id}/appRoleAssignedTo
 
     {
-    "principalId": "33ad69f9-da99-4bed-acd0-3f24235cb296",
-    "resourceId": "9028d19c-26a9-4809-8e3f-20ff73e2d75e",
-    "appRoleId": "ef7437e6-4f94-4a0a-a110-a439eb2aa8f7"
+    "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
+    "resourceId": "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1",
+    "appRoleId": "00000000-0000-0000-0000-000000000000"
     }
     ```
 

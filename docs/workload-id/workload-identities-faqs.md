@@ -54,7 +54,7 @@ The free features, for example managed identities and workload identity federati
 
 ## What is the cost of Workload ID Premium plan? 
 
-The [Microsoft Entra Workload ID Premium](https://www.microsoft.com/security/business/identity-access/microsoft-entra-workload-identities#office-StandaloneSKU-k3hubfz) is priced at $3/workload identity/month. There is a lead status SKU (Workload ID P1) at $2/workload identity/month, which is available only to sellers for discounting but not visible to customers. 
+The [Microsoft Entra Workload ID Premium](https://www.microsoft.com/security/business/identity-access/microsoft-entra-workload-identities#office-StandaloneSKU-k3hubfz) is priced at $3/workload identity/month. There is a lead status SKU (Workload ID P1) available. 
 
 >[!Note]
 >The lead status SKU can only provide the [Conditional Access](~/identity/conditional-access/workload-identity.md) feature.

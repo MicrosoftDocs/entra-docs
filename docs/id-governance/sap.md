@@ -13,13 +13,15 @@ ms.reviewer: markwahl-msft
 
 # Manage access to your SAP applications
 
-SAP likely runs critical functions, such as HR and ERP, for your organization. At the same time, your organization relies on Microsoft for various Azure services, Microsoft 365, and Microsoft Entra ID Governance for managing access to applications. This article describes how you can use Identity Governance to manage identities across your SAP applications.
+SAP software and services likely runs critical functions, such as HR and ERP, for your organization. At the same time, your organization relies on Microsoft for various Azure services, Microsoft 365, and Microsoft Entra ID Governance for managing access to applications. This article describes how you can use Identity Governance to manage identities across your SAP applications.
 
 ![Diagram of SAP integrations.](./media/sap/sap-integrations.png)
 
 <a name='bring-identities-from-hr-into-azure-ad'></a>
 
 ## Bring identities from HR into Microsoft Entra ID
+
+The tutorial [plan deploying Microsoft Entra for user provisioning with SAP source and target apps](~/identity/app-provisioning/plan-sap-user-source-and-target.md) illustrates how to connect Microsoft Entra with authoritative sources for the list of workers in an organization, such as SAP SuccessFactors. It also shows you how to use Microsoft Entra to set up identities for those workers. Then you learn how to use Microsoft Entra to provide workers with access to sign in to one or more SAP applications, such as SAP ECC or SAP S/4HANA.
 
 ### SuccessFactors
 
@@ -38,7 +40,7 @@ You can also [write back from Microsoft Entra ID to SAP SuccessFactors](../ident
 
 Customers who still use SAP Human Capital Management (HCM) can also bring identities into Microsoft Entra ID. By using SAP Integration Suite, you can synchronize lists of workers between SAP HCM and SAP SuccessFactors. From there, you can bring identities directly into Microsoft Entra ID or provision them into Active Directory Domain Services by using the native provisioning integrations mentioned earlier.
 
-![Diagram of SAP HR integrations.](./media/sap/sap-hr.png)
+![Diagram of SAP HR integrations.](./media/sap/sap-hr-no-mim.png)
 
 ## Provide access to SAP applications
 
@@ -54,7 +56,6 @@ For more information on how to configure single sign-on from Microsoft Entra ID,
 - [SAP SuccessFactors](../identity/saas-apps/successfactors-tutorial.md)
 - [SAP Analytics Cloud](../identity/saas-apps/sapboc-tutorial.md)
 - [SAP Fiori](../identity/saas-apps/sap-fiori-tutorial.md)
-- [SAP Qualtrics](../identity/saas-apps/qualtrics-tutorial.md)
 - [SAP Ariba](../identity/saas-apps/ariba-tutorial.md)
 - [SAP Concur Travel and Expense](../identity/saas-apps/concur-travel-and-expense-tutorial.md)
 - [SAP Business Technology Platform](../identity/saas-apps/sap-hana-cloud-platform-tutorial.md)
@@ -105,6 +106,7 @@ For more information about SAP integrations with Microsoft Entra ID, see the fol
 
 ## Next steps
 
+* [Plan deploying Microsoft Entra for user provisioning with SAP source and target apps](~/identity/app-provisioning/plan-sap-user-source-and-target.md)
 * [Bring identities from SAP SuccessFactors into Microsoft Entra ID](../identity/saas-apps/sap-successfactors-inbound-provisioning-cloud-only-tutorial.md)
 * [Provision accounts in SAP Cloud Identity Services](../identity/saas-apps/sap-cloud-platform-identity-authentication-provisioning-tutorial.md)
 * [Get started with SAP and Microsoft integration scenarios](/azure/sap/workloads/integration-get-started)

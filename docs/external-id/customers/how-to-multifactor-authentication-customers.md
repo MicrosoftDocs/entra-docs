@@ -17,6 +17,9 @@ ms.custom: it-pro
 
 # Add multifactor authentication (MFA) to an app
 
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
+[Multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md) (MFA) adds a layer of security to your applications. With MFA, customers who sign in with a username and password are prompted for a one-time passcode as a second verification method. This article describes how to enforce MFA for your customers by creating a Microsoft Entra Conditional Access policy and adding MFA to your sign-up and sign-in user flow.
 In a Microsoft Entra External ID external tenant, you can add a layer of security to your consumer- and business customer-facing applications by enforcing multifactor authentication (MFA). With MFA, each time a user signs in, they're required to provide an email one-time passcode. This article describes how to enforce MFA for your customers by creating a Microsoft Entra Conditional Access policy and adding MFA to your sign-up and sign-in user flow.
 
 > [!IMPORTANT]

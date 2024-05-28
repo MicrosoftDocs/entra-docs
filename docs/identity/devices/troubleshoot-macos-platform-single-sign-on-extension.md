@@ -101,8 +101,6 @@ If the device registration fails through the Settings application, the Device Re
 
 The device registration can take a few minutes to complete. If the device registration fails, wait a few minutes and try again if prompted.
 
----
-
 ### SSO auth prompt dialog closed while the registration is in progress
 
 If you cancel the registration process by closing the SSO auth prompt dialog, you need to sign out from your Mac device and sign in again. Upon a successful sign in, the registration notification reappears and works correctly.
@@ -110,6 +108,10 @@ If you cancel the registration process by closing the SSO auth prompt dialog, yo
 ### Per user MFA causes password sync failure
 
 If a user has per user MFA enabled on the account where PSSO is being set up, you won't be able to enter Microsoft Entra ID credentials in the next steps, causing an error. To avoid this error, admins should ensure they have Conditional Access MFA enabled in accordance with [Microsoft Entra ID recommendations](../monitoring-health/recommendation-turn-off-per-user-mfa.md). This suppresses MFA during enrollment so that password synchronization can be completed successfully.
+
+### PSSO reregistration required after password reset initiated from FileVault recovery or MDM-driven recovery
+
+Because Secure Enclave keys are protected by your local account password, password resets that occur without providing this password (e.g., FileVault or MDM-based recovery) will reset the Secure Enclave. Resetting the Secure Enclave renders keys previously stored for this account inaccessible. Devices whose Secure Enclave keys have been lost must be reregistered to use Platform SSO.
 
 ## Report an issue
 

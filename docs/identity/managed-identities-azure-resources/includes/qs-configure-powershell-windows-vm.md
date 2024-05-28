@@ -1,25 +1,9 @@
 ---
-title: Configure managed identities on an Azure VM using PowerShell
-description: Step-by-step instructions for configuring managed identities for Azure resources on an Azure VM using PowerShell.
-
 author: barclayn
-manager: amycolannino
-ms.service: entra-id
-ms.subservice: managed-identities
-ms.topic: quickstart
-ms.tgt_pltfrm: na
-ms.date: 05/10/2023
 ms.author: barclayn
-
-ms.custom: devx-track-azurepowershell, mode-api, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
-
+ms.date: 04/24/2024
+ms.topic: include
 ---
-
-# Configure managed identities for Azure resources on an Azure VM using PowerShell
-
-[!INCLUDE [preview-notice](~/includes/entra-msi-preview-notice.md)]
-
-Managed identities for Azure resources provide Azure services with an automatically managed identity in Microsoft Entra ID. You can use this identity to authenticate to any service that supports Microsoft Entra authentication, without having credentials in your code.
 
 In this article, using PowerShell, you learn how to perform the following managed identities for Azure resources operations on an Azure VM.
 
@@ -27,7 +11,7 @@ In this article, using PowerShell, you learn how to perform the following manage
 
 ## Prerequisites
 
-- If you're unfamiliar with managed identities for Azure resources, check out the [overview section](overview.md). **Be sure to review the [difference between a system-assigned and user-assigned managed identity](overview.md#managed-identity-types)**.
+- If you're unfamiliar with managed identities for Azure resources, check out the [overview section](~/identity/managed-identities-azure-resources/overview.md). **Be sure to review the [difference between a system-assigned and user-assigned managed identity](~/identity/managed-identities-azure-resources/overview.md#managed-identity-types)**.
 - If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/free/) before continuing.
 - To run the example scripts, you have two options:
     - Use the [Azure Cloud Shell](/azure/cloud-shell/overview), which you can open using the **Try It** button on the top-right corner of code blocks.
@@ -132,7 +116,7 @@ To assign a user-assigned identity to a VM, your account needs the [Virtual Mach
 1. Create a user-assigned managed identity using the [New-AzUserAssignedIdentity](/powershell/module/az.managedserviceidentity/new-azuserassignedidentity) cmdlet.  Note the `Id` in the output because you'll need this information in the next step.
 
    > [!IMPORTANT]
-   > Creating user-assigned managed identities only supports alphanumeric, underscore and hyphen (0-9 or a-z or A-Z, \_ or -) characters. Additionally, name should be limited from 3 to 128 character length for the assignment to VM/VMSS to work properly. For more information, see [FAQs and known issues](known-issues.md)
+   > Creating user-assigned managed identities only supports alphanumeric, underscore and hyphen (0-9 or a-z or A-Z, \_ or -) characters. Additionally, name should be limited from 3 to 128 character length for the assignment to VM/VMSS to work properly. For more information, see [FAQs and known issues](~/identity/managed-identities-azure-resources/known-issues.md)
 
    ```azurepowershell-interactive
    New-AzUserAssignedIdentity -ResourceGroupName <RESOURCEGROUP> -Name <USER ASSIGNED IDENTITY NAME>
@@ -172,7 +156,7 @@ Update-AzVm -ResourceGroupName myResourceGroup -VirtualMachine $vm -IdentityType
 
 ## Next steps
 
-- [Managed identities for Azure resources overview](overview.md)
+- [Managed identities for Azure resources overview](~/identity/managed-identities-azure-resources/overview.md)
 - For the full Azure VM creation Quickstarts, see:
 
   - [Create a Windows virtual machine with PowerShell](/azure/virtual-machines/windows/quick-create-powershell)
