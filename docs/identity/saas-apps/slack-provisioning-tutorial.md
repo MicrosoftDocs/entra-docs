@@ -20,6 +20,9 @@ ms.author: Thwimmer
 
 # Tutorial: Configure Slack for automatic user provisioning
 
+> [!NOTE]
+> Integrating with Slack with a custom / BYOA application is not supported. Using the gallery application as described in this tutorial is supported. The gallery application has been customized to work with Slack's SCIM v1 server. 
+
 The objective of this tutorial is to show you the steps you need to perform in Slack and Microsoft Entra ID to automatically provision and de-provision user accounts from Microsoft Entra ID to Slack. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
 
