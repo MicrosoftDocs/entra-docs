@@ -22,8 +22,7 @@ For security reasons, an Entra Authentication server does not redirect users and
 
 ## When you should add a redirect URIs to an app registration
 
-
-
+If the application you are building contains one or multiple redirect URIs in your app registration, you'll need to enable [public client flow configuration](msal-client-applications.md) for your app registration. 
 
 ## What platforms require a redirect URI(s)?
 
@@ -76,7 +75,6 @@ The Microsoft Entra application model specifies the following restrictions to re
     * `https://contoso.com/abc/response-oidc` is returned as `https://contoso.com/abc/response-oidc`
 
 * Redirect URIs do not support special characters - `! $ ' ( ) , ;`
-
 
 ### Maximum number of redirect URIs
 
@@ -167,7 +165,7 @@ To add redirect URIs with wildcards to app registrations that sign in work or sc
 
 If your scenario requires more redirect URIs than the maximum limit allowed, consider the following state parameter approach instead of adding a wildcard redirect URI.
 
-#### Use a state parameter
+### Use a state parameter
 
 If you have several subdomains and your scenario requires that, upon successful authentication, you redirect users to the same page from which they started, using a state parameter might be helpful.
 
