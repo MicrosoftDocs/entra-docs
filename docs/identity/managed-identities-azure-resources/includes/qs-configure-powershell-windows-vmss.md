@@ -1,24 +1,9 @@
 ---
-title: Configure managed identities on virtual machine scale sets using PowerShell
-description: Step-by-step instructions for configuring a system and user-assigned managed identities on a virtual machine scale set using PowerShell.
-
 author: barclayn
-manager: amycolannino
-ms.service: entra-id
-ms.subservice: managed-identities
-ms.topic: quickstart
-ms.tgt_pltfrm: na
-ms.date: 06/24/2022
 ms.author: barclayn
-
-ms.custom: devx-track-azurepowershell, mode-api
+ms.date: 05/27/2024
+ms.topic: include
 ---
-
-# Configure managed identities for Azure resources on virtual machine scale sets using PowerShell
-
-[!INCLUDE [preview-notice](~/includes/entra-msi-preview-notice.md)]
-
-Managed identities for Azure resources provide Azure services with an automatically managed identity in Microsoft Entra ID. You can use this identity to authenticate to any service that supports Microsoft Entra authentication, without having credentials in your code. 
 
 In this article, using PowerShell, you learn how to perform the managed identities for Azure resources operations on a virtual machine scale set:
 
@@ -29,7 +14,7 @@ In this article, using PowerShell, you learn how to perform the managed identiti
 
 ## Prerequisites
 
-- If you're unfamiliar with managed identities for Azure resources, check out the [overview section](overview.md). **Be sure to review the [difference between a system-assigned and user managed assigned identity](overview.md#managed-identity-types)**.
+- If you're unfamiliar with managed identities for Azure resources, check out the [overview section](~/identity/managed-identities-azure-resources/overview.md). **Be sure to review the [difference between a system-assigned and user managed assigned identity](~/identity/managed-identities-azure-resources/overview.md#managed-identity-types)**.
 
 - If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/free/) before continuing.
 
@@ -132,8 +117,9 @@ Update-AzVmss -ResourceGroupName myResourceGroup -Name myVmss -IdentityType "Sys
 
 ## Next steps
 
-- [Managed identities for Azure resources overview](overview.md)
+- [Managed identities for Azure resources overview](~/identity/managed-identities-azure-resources/overview.md)
 - For the full Azure VM creation Quickstarts, see:
   
   - [Create a Windows virtual machine with PowerShell](/azure/virtual-machines/windows/quick-create-powershell) 
   - [Create a Linux virtual machine with PowerShell](/azure/virtual-machines/linux/quick-create-powershell)
+  

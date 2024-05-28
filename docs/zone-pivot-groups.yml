@@ -189,9 +189,9 @@ groups:
   - id: identity-mi-methods-rest
     title: REST
 # Owner: barclayn
-- id: identity-configure-mi-methods
-  title: Managed identities for Azure resources
-  prompt: Select an option
+- id: identity-mi-scaled-sets
+  title: Managed identities methods
+  prompt: Choose an option
   pivots:
   - id: identity-mi-methods-azp
     title: Portal
@@ -203,8 +203,6 @@ groups:
     title: Resource Manager
   - id: identity-mi-methods-rest
     title: REST
-  - id: identity-mi-methods-sdk
-    title: SDK
 # Owner: ryanwi
 - id: identity-wif-mi-methods
   title: Workload identity federation for managed identities methods
@@ -243,3 +241,4 @@ groups:
     title: Azure CLI
   - id: identity-mi-methods-sub-powershell
     title: PowerShell
+    
