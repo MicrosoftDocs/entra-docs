@@ -83,7 +83,7 @@ To find the OIDC configuration document in the Microsoft Entra admin center, sig
 
 The following request gets the OpenID configuration metadata from the `common` authority's OpenID configuration document endpoint on the Azure public cloud:
 
-```http
+```https
 GET /common/v2.0/.well-known/openid-configuration
 Host: login.microsoftonline.com
 ```
@@ -95,7 +95,7 @@ Host: login.microsoftonline.com
 
 The configuration metadata is returned in JSON format as shown in the following example (truncated for brevity). The metadata returned in the JSON response is described in detail in the [OpenID Connect 1.0 discovery specification](https://openid.net/specs/openid-connect-discovery-1_0.html#rfc.section.4.2).
 
-```json
+```JSON
 {
   "authorization_endpoint": "https://login.microsoftonline.com/{tenant}/oauth2/v2.0/authorize",
   "token_endpoint": "https://login.microsoftonline.com/{tenant}/oauth2/v2.0/token",
@@ -111,6 +111,7 @@ The configuration metadata is returned in JSON format as shown in the following 
   ...
 }
 ```
+
 ## Send the sign-in request
 
 To authenticate a user and request an ID token for use in your application, direct their user-agent to the Microsoft identity platform's _/authorize_ endpoint. The request is similar to the first leg of the [OAuth 2.0 authorization code flow](v2-oauth2-auth-code-flow.md) but with these distinctions:
@@ -121,7 +122,7 @@ To authenticate a user and request an ID token for use in your application, dire
 
 Example sign-in request (line breaks included only for readability):
 
-```HTTP
+```https
 GET https://login.microsoftonline.com/{tenant}/oauth2/v2.0/authorize?
 client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &response_type=id_token
@@ -154,7 +155,7 @@ After the user authenticates and grants consent, the Microsoft identity platform
 
 A successful response when you use `response_mode=form_post` is similar to:
 
-```HTTP
+```https
 POST /myapp/ HTTP/1.1
 Host: localhost
 Content-Type: application/x-www-form-urlencoded
@@ -171,7 +172,7 @@ id_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik1uQ19WWmNB...&state=12345
 
 Error responses might also be sent to the redirect URI so the app can handle them, for example:
 
-```HTTP
+```https
 POST /myapp/ HTTP/1.1
 Host: localhost
 Content-Type: application/x-www-form-urlencoded
@@ -237,7 +238,7 @@ In addition to the ID token, the authenticated user's information is also made a
 
 To get an access token for the OIDC UserInfo endpoint, modify the sign-in request as described here:
 
-```HTTP
+```https
 // Line breaks are for legibility only.
 
 GET https://login.microsoftonline.com/{tenant}/oauth2/v2.0/authorize?
@@ -252,18 +253,11 @@ client_id=00001111-aaaa-2222-bbbb-3333cccc4444        // Your app registration's
 
 You can use the [authorization code flow](v2-oauth2-auth-code-flow.md), the [device code flow](v2-oauth2-device-code.md), or a [refresh token](v2-oauth2-auth-code-flow.md#refresh-the-access-token) in place of `response_type=token` to get an access token for your app.
 
-<!-- UNCOMMENT WHEN/IF THE TEST APP REGISTRATION IS RE-ENABLED -->
-<!--
-> [!TIP]
-> Click the following link to execute this request. After you sign in, your browser is redirected to `https://localhost/myapp/`, with an ID token and a token in the address bar. Note that this request uses `response_mode=fragment` for demonstration purposes only - for a webapp we recommend using `form_post` for additional security where possible. 
-> <a href="https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=00001111-aaaa-2222-bbbb-3333cccc4444&response_type=id_token%20token&redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F&response_mode=fragment&scope=openid+profile+email&state=12345&nonce=678910" target="_blank">https://login.microsoftonline.com/common/oauth2/v2.0/authorize...</a>
--->
-
 ### Successful token response
 
 A successful response from using `response_mode=form_post`:
 
-```HTTP
+```https
 POST /myapp/ HTTP/1.1
 Host: localhost
 Content-Type: application/x-www-form-urlencoded
@@ -292,7 +286,7 @@ Response parameters mean the same thing regardless of the flow used to acquire t
 
 Error responses might also be sent to the redirect URI so that the app can handle them appropriately:
 
-```HTTP
+```https
 POST /myapp/ HTTP/1.1
 Host: localhost
 Content-Type: application/x-www-form-urlencoded
@@ -315,16 +309,16 @@ Review the [UserInfo documentation](userinfo.md#calling-the-api) to look over ho
 
 ## Send a sign-out request
 
-To sign out a user, perform both of these operations:
+To sign out a user, perform both of the following operations:
 
-* Redirect the user's user-agent to the Microsoft identity platform's logout URI
-* Clear your app's cookies or otherwise end the user's session in your application.
+1. Redirect the user's user-agent to the Microsoft identity platform's logout URI.
+1. Clear your app's cookies or end the user's session in your application.
 
-If you fail to perform either operation, the user may remain authenticated and not be prompted to sign-in the next time they use your app.
+If you fail to perform either of these operations, the user may remain authenticated and not be prompted to sign-in the next time they use your app.
 
 Redirect the user-agent to the `end_session_endpoint` as shown in the OpenID Connect configuration document. The `end_session_endpoint` supports both HTTP GET and POST requests.
 
-```HTTP
+```https
 GET https://login.microsoftonline.com/common/oauth2/v2.0/logout?
 post_logout_redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
 ```
