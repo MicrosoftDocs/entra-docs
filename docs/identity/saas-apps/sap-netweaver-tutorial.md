@@ -339,7 +339,7 @@ In this section, you create a user called B.simon in SAP NetWeaver. Please work 
 
     ![test Single Sign-On](./media/sapnetweaver-tutorial/testingsso.png)
 
-3. If username & password prompt occurs, please diagnose the issue by enable the trace using the URL:
+3. If a username and password prompt occurs, you can diagnose the issue by enabling a trace, using the URL:
 
     `https://<sapurl>/sap/bc/webdynpro/sap/sec_diag_tool?sap-client=122&sap-language=EN#`
 
