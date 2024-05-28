@@ -71,20 +71,10 @@
     - name: Use Azure Policy (preview)
       href: how-to-assign-managed-identity-via-azure-policy.md
 
-  - name: Configure managed identities on virtual machine scale sets
+  - name: Configure managed identities on virtual machines (VMs)
     items:
-    - name: Portal
-      href: qs-configure-portal-windows-vmss.md
-    - name: CLI
-      href: qs-configure-cli-windows-vmss.md
-    - name: PowerShell
-      href: qs-configure-powershell-windows-vmss.md
-    - name: Azure Resource Manager Template
-      href: qs-configure-template-windows-vmss.md
-    - name: REST
-      href: qs-configure-rest-vmss.md
-    - name: Using Azure Policy
-      href: how-to-assign-managed-identity-via-azure-policy.md
+    - name: Configure managed identities on VM scale sets
+      href: how-to-configure-managed-identities-scale-sets.md
 
   - name: Use managed identities on VMs
     items:
@@ -151,3 +141,4 @@
     href: https://stackoverflow.com/questions/tagged/azure-managed-identity
   - name: Microsoft Entra Developers forum
     href: https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789?c=3abf25c9-ad25-ec11-b6e6-000d3a4f0789#
+    

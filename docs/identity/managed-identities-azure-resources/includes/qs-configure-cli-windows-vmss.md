@@ -1,25 +1,9 @@
 ---
-title: Configure managed identities on virtual machine scale set - Azure CLI
-description: Step-by-step instructions for configuring system and user-assigned managed identities on an Azure virtual machine scale set, using Azure CLI.
-
 author: barclayn
-manager: amycolannino
-ms.service: entra-id
-ms.subservice: managed-identities
-ms.topic: quickstart
-ms.tgt_pltfrm: na
-ms.date: 05/25/2023
 ms.author: barclayn
-
-ms.custom: mode-api, devx-track-azurecli, devx-track-linux
-ms.devlang: azurecli
+ms.date: 05/27/2024
+ms.topic: include
 ---
-
-# Configure managed identities for Azure resources on a virtual machine scale set using Azure CLI
-
-[!INCLUDE [preview-notice](~/includes/entra-msi-preview-notice.md)]
-
-Managed identities for Azure resources provide Azure services with an automatically managed identity in Microsoft Entra ID. You can use this identity to authenticate to any service that supports Microsoft Entra authentication, without having credentials in your code. 
 
 In this article, you learn how to perform the following managed identities for Azure resources operations on an Azure virtual machine scale set, using the Azure CLI:
 
@@ -30,7 +14,7 @@ If you don't already have an Azure account, [sign up for a free account](https:/
 
 ## Prerequisites
 
-- If you're unfamiliar with managed identities for Azure resources, see [What are managed identities for Azure resources?](overview.md). To learn about system-assigned and user-assigned managed identity types, see [Managed identity types](overview.md#managed-identity-types).
+- If you're unfamiliar with managed identities for Azure resources, see [What are managed identities for Azure resources?](~/identity/managed-identities-azure-resources/overview.md). To learn about system-assigned and user-assigned managed identity types, see [Managed identity types](~/identity/managed-identities-azure-resources/overview.md#managed-identity-types).
 
 - To perform the management operations in this article, your account needs the following Azure role-based access control assignments:
 
@@ -115,15 +99,15 @@ This section walks you through creation of a virtual machine scale set and assig
 
    ```json
    {
-        "clientId": "00001111-aaaa-2222-bbbb-3333cccc4444",
-        "clientSecretUrl": "https://control-westcentralus.identity.azure.net/subscriptions/<SUBSCRIPTON ID>/resourcegroups/<RESOURCE GROUP>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<USER ASSIGNED IDENTITY NAME>/credentials?tid=5678&oid=9012&aid=00001111-aaaa-2222-bbbb-3333cccc4444",
+        "clientId": "73444643-8088-4d70-9532-c3a0fdc190fz",
+        "clientSecretUrl": "https://control-westcentralus.identity.azure.net/subscriptions/<SUBSCRIPTON ID>/resourcegroups/<RESOURCE GROUP>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<USER ASSIGNED IDENTITY NAME>/credentials?tid=5678&oid=9012&aid=73444643-8088-4d70-9532-c3a0fdc190fz",
         "id": "/subscriptions/<SUBSCRIPTON ID>/resourcegroups/<RESOURCE GROUP>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<USER ASSIGNED IDENTITY NAME>",
         "location": "westcentralus",
         "name": "<USER ASSIGNED IDENTITY NAME>",
         "principalId": "e5fdfdc1-ed84-4d48-8551-fe9fb9dedfll",
         "resourceGroup": "<RESOURCE GROUP>",
         "tags": {},
-        "tenantId": "aaaabbbb-0000-cccc-1111-dddd2222eeee",
+        "tenantId": "733a8f0e-ec41-4e69-8ad8-971fc4b533bl",
         "type": "Microsoft.ManagedIdentity/userAssignedIdentities"    
    }
    ```
@@ -146,15 +130,15 @@ This section walks you through creation of a virtual machine scale set and assig
 
    ```json
    {
-        "clientId": "00001111-aaaa-2222-bbbb-3333cccc4444",
-        "clientSecretUrl": "https://control-westcentralus.identity.azure.net/subscriptions/<SUBSCRIPTON ID>/resourcegroups/<RESOURCE GROUP>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<USER ASSIGNED IDENTITY >/credentials?tid=5678&oid=9012&aid=00001111-aaaa-2222-bbbb-3333cccc4444",
+        "clientId": "73444643-8088-4d70-9532-c3a0fdc190fz",
+        "clientSecretUrl": "https://control-westcentralus.identity.azure.net/subscriptions/<SUBSCRIPTON ID>/resourcegroups/<RESOURCE GROUP>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<USER ASSIGNED IDENTITY >/credentials?tid=5678&oid=9012&aid=73444643-8088-4d70-9532-c3a0fdc190fz",
         "id": "/subscriptions/<SUBSCRIPTON ID>/resourcegroups/<RESOURCE GROUP>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<USER ASSIGNED IDENTITY>",
         "location": "westcentralus",
         "name": "<USER ASSIGNED IDENTITY>",
-        "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
+        "principalId": "e5fdfdc1-ed84-4d48-8551-fe9fb9dedfll",
         "resourceGroup": "<RESOURCE GROUP>",
         "tags": {},
-        "tenantId": "aaaabbbb-0000-cccc-1111-dddd2222eeee",
+        "tenantId": "733a8f0e-ec41-4e69-8ad8-971fc4b533bl",
         "type": "Microsoft.ManagedIdentity/userAssignedIdentities"    
    }
    ```
@@ -190,5 +174,5 @@ az vmss update -n myVMSS -g myResourceGroup --set identity.type='SystemAssigned'
 
 ## Next steps
 
-- [Managed identities for Azure resources overview](overview.md)
+- [Managed identities for Azure resources overview](~/identity/managed-identities-azure-resources/overview.md)
 - For the full Azure virtual machine scale set creation Quickstart, see [Create a Virtual Machine Scale Set with CLI](/azure/virtual-machines/linux/tutorial-create-vmss#create-a-scale-set)

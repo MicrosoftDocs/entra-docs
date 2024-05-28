@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 05/22/2024
 ms.author: jeedes
 
 
@@ -26,7 +26,6 @@ In this tutorial, you'll learn how to integrate GitHub Enterprise Managed User (
 > [!NOTE]
 > [GitHub Enterprise Managed Users](https://docs.github.com/enterprise-cloud@latest/admin/authentication/managing-your-enterprise-users-with-your-identity-provider/about-enterprise-managed-users) is a feature of GitHub Enterprise Cloud which is different from GitHub Enterprise's standard SAML SSO implementation. If you haven't specifically requested EMU instance, you have standard GitHub Enterprise Cloud plan. In that case, please refer to relevant documentation to configure your non-EMU [organisation](./github-tutorial.md) or [enterprise account](./github-enterprise-cloud-enterprise-account-tutorial.md) to authenticate with Microsoft Entra ID.
 
-
 ## Prerequisites
 
 To get started, you need the following items:
@@ -38,7 +37,7 @@ To get started, you need the following items:
 
 In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
 
-* GitHub Enterprise Managed User supports **SP and IDP** initiated SSO.
+* GitHub Enterprise Managed User supports both **SP and IDP** initiated SSO.
 * GitHub Enterprise Managed User requires [**Automated** user provisioning](./github-enterprise-managed-user-provisioning-tutorial.md).
 
 ## Adding GitHub Enterprise Managed User from the gallery
@@ -73,7 +72,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
 
-   ![Edit Basic SAML Configuration](common/edit-urls.png)
+   ![Screenshot shows to edit Basic SAML Configuration.](common/edit-urls.png)
 
 1. Ensure that you have your Enterprise URL before you begin. The ENTITY field mentioned below is the Enterprise name of your EMU-enabled Enterprise URL. For example, https://github.com/enterprises/contoso - **contoso** is the ENTITY. On the **Basic SAML Configuration** section, if you wish to configure the application in **IDP** initiated mode, enter the values for the following fields:
 
@@ -92,13 +91,13 @@ Follow these steps to enable Microsoft Entra SSO.
     In the **Sign-on URL** text box, type a URL using the following pattern:
     `https://github.com/enterprises/<ENTITY>/sso`
 
-1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
+1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Certificate (PEM)** and select **PEM certificate download** to download the certificate and save it on your computer.
 
-	![The Certificate download link](common/certificate-base64-download.png)
+	![Screenshot shows the Certificate download link.](common/certificate-base64-download.png "Certificate")
 
 1. On the **Set up GitHub Enterprise Managed User** section, copy the URLs below and save it for configuring GitHub below.
 
-	![Copy configuration URLs](common/copy-configuration-urls.png)
+	![Screenshot shows to copy configuration URLs.](common/copy-configuration-urls.png "Metadata")
 
 <a name='assign-the-azure-ad-test-user'></a>
 
