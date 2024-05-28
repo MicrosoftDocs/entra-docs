@@ -35,7 +35,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md) 
 * One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications). 
-* A SAP Analytics Cloud and SAP Cloud Identity Services tenant
+* An SAP Analytics Cloud and SAP Cloud Identity Services tenant
 * A user account on SAP Identity Provisioning admin console with Admin permissions. Make sure you have access to the proxy systems in the Identity Provisioning admin console. If you don't see the **Proxy Systems** tile, create an incident for component **BC-IAM-IPS** to request access to this tile.
 * An OAuth client with authorization grant Client Credentials in SAP Analytics Cloud. For more information, see [Managing OAuth Clients and Trusted Identity Providers](https://help.sap.com/viewer/00f68c2e08b941f081002fd3691d86a7/release/en-US/4f43b54398fc4acaa5efa32badfe3df6.html)
 
