@@ -203,6 +203,15 @@ groups:
     title: Resource Manager
   - id: identity-mi-methods-rest
     title: REST
+# Owner: barclayn
+- id: identity-windows-vm-access
+  title: Managed identities with VMs
+  prompt: Choose an option
+  pivots:
+  - id: windows-vm-access-wvm
+    title: Windows
+  - id: windows-vm-access-lvm
+    title: Linux
 # Owner: ryanwi
 - id: identity-wif-mi-methods
   title: Workload identity federation for managed identities methods
