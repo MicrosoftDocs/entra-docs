@@ -21,7 +21,7 @@ ms.author: thwimmer
 
 # Tutorial: Configure SAP Analytics Cloud for automatic user provisioning
 
-This tutorial describes the steps you need to perform in SAP Cloud Identity Services, SAP Analytics Cloud and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and deprovisions users and groups to [SAP Analytics Cloud](https://www.sapanalytics.cloud/) using the Microsoft Entra provisioning service and SAP Cloud Identity Services. For important details on what Microsoft Entra provisioning does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
+This tutorial describes the steps you need to perform in SAP Cloud Identity Services, SAP Analytics Cloud, and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and deprovisions users and groups to [SAP Analytics Cloud](https://www.sapanalytics.cloud/) using the Microsoft Entra provisioning service and SAP Cloud Identity Services. For important details on what Microsoft Entra provisioning does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
 ## Capabilities supported
 > [!div class="checklist"]
@@ -51,26 +51,18 @@ The scenario outlined in this tutorial assumes that you already have the followi
 
 ## Step 2: Configure SAP Analytics Cloud to support SSO with Microsoft Entra ID
 
-Follow the instructions in the [SAP Cloud Analytics SSO tutorial](sapboc-tutorial.md).
+To configure single sign-on (SSO), follow the instructions in the [SAP Cloud Analytics SSO tutorial](sapboc-tutorial.md).
 
 
 <a name='step-3-create-microsoft-entra-id-groups-for-your-sap-business-roles'></a>
 
-## Step 3: Create Microsoft Entra groups for your SAP business roles
+## Step 3: Configure user and group provisioning
 
-Create Microsoft Entra groups for your SAP business roles.
+First, create Microsoft Entra groups for your SAP business roles.
 
+Then, in SAP Cloud Identity Services provisioning, [configure Microsoft Entra ID](https://help.sap.com/docs/identity-provisioning/identity-provisioning/microsoft-azure-active-directory) to map the created groups to your SAP business roles. For more information, see [provision users from Microsoft Azure AD to SAP Cloud Identity Services - Identity Authentication](https://blogs.sap.com/2022/02/04/provision-users-from-microsoft-azure-ad-to-sap-cloud-identity-services-identity-authentication/).
 
-## Step 4: Map the created groups to your SAP business roles 
-
-In SAP Cloud Identity Services provisioning, [configure Microsoft Entra ID](https://help.sap.com/docs/identity-provisioning/identity-provisioning/microsoft-azure-active-directory) to map the created groups to your business roles. For more information, see [provision users from Microsoft Azure AD to SAP Cloud Identity Services - Identity Authentication](https://blogs.sap.com/2022/02/04/provision-users-from-microsoft-azure-ad-to-sap-cloud-identity-services-identity-authentication/).
-
-
-<a name='step-5-assign-users-as-members-of-the-microsoft-entra-id-groups'></a>
-
-## Step 5: Assign Users as members of the Microsoft Entra groups 
-
-Assign users as members of the Microsoft Entra groups, and give them app role assignments to the application.
+Select the users who will need access to SAP Analytics cloud.  Give them app role assignments to the application used for SSO, and also assign them as members of the Microsoft Entra groups.
 
 > [!NOTE]
 > Start small. Test with a small set of users and groups before rolling out to everyone. Check the users have the right access in SAP downstream targets and when they sign in, they have the right roles.
