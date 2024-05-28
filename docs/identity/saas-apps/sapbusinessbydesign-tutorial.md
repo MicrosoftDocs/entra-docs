@@ -116,7 +116,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 ### Create a Microsoft Entra test user
 
-In this section, you'll create a test user called B.Simon.
+In this section, create a test user called B.Simon.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
@@ -132,14 +132,14 @@ In this section, you'll create a test user called B.Simon.
 
 ### Assign the Microsoft Entra test user
 
-In this section, you'll enable B.Simon to use single sign-on by granting access to SAP Business ByDesign.
+In this section, enable B.Simon to use single sign-on by granting access to SAP Business ByDesign.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **SAP Business ByDesign**.
 1. In the app's overview page, find the **Manage** section and select **Users and groups**.
 1. Select **Add user**, then select **Users and groups** in the **Add Assignment** dialog.
 1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then click the **Select** button at the bottom of the screen.
-1. If you are expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
+1. If the app supports different roles to be assigned to the users, you can select the role from the **Select a role** dropdown. If no roles are available for this app, you see the "Default Access" role selected.
 
 1. In the **Add Assignment** dialog, click the **Assign** button.
 
@@ -149,7 +149,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 2. Navigate to **Application and User Management Common Task** and click the **Identity Provider** tab.
 
-3. Click **New Identity Provider** and select the metadata XML file that you have downloaded. After importing the metadata, the application automatically uploads the required signature certificate and encryption certificate.
+3. Click **New Identity Provider** and select the metadata XML file that you downloaded. After you import the metadata, the application automatically uploads the required signature certificate and encryption certificate.
 
 	![Configure Single Sign-On1](./media/sapbusinessbydesign-tutorial/tutorial_sapbusinessbydesign_54.png)
 
@@ -174,7 +174,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
     **Non-SSO URL**
 
-    The system sends only the normal system URL to the employee. The employee cannot sign on using SSO, and must use password or certificate instead.
+    The system sends only the normal system URL to the employee. The employee can't sign on using SSO, and must use a password or certificate instead.
 
     **SSO URL**
 
@@ -182,7 +182,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
     **Automatic Selection**
 
-    If SSO is not active, the system sends the normal system URL to the employee. If SSO is active, the system checks whether the employee has a password. If a password is available, both SSO URL and Non-SSO URL are sent to the employee. However, if the employee has no password, only the SSO URL is sent to the employee.
+    If SSO isn't active, the system sends the normal system URL to the employee. If SSO is active, the system checks whether the employee has a password. If a password is available, both SSO URL and Non-SSO URL are sent to the employee. However, if the employee has no password, only the SSO URL is sent to the employee.
 
 11. Save your changes.
 
