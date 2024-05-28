@@ -104,7 +104,7 @@ $Response = Invoke-RestMethod -Uri 'http://169.254.169.254/metadata/identity/oau
 ```
 >[!NOTE]
 > When working with sovereign clouds you will need to make adjustments to the endpoint specified at the end of the cmdlet. 
-For example, 'vault.usgovcloudapi.net' should be used when working with Azure Government Cloud, with this being the end result: $Response = Invoke-RestMethod -Uri 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https%3A%2F%2Fvault.usgovcloudapi.net' -Method GET -Headers @{Metadata="true" To confirm, review https://learn.microsoft.com/azure/azure-government/compare-azure-government-global-azure to find the suffix for your environment.
+For example, 'vault.usgovcloudapi.net' should be used when working with Azure Government Cloud, with this being the end result: $Response = Invoke-RestMethod -Uri 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https%3A%2F%2Fvault.usgovcloudapi.net' -Method GET -Headers @{Metadata="true" To confirm the suffix that matches your environment, review https://learn.microsoft.com/azure/azure-government/compare-azure-government-global-azure .
 
 You can see what the response looks like below:
 
