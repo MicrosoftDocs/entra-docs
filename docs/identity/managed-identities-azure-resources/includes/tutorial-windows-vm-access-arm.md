@@ -5,17 +5,13 @@ ms.date: 05/28/2024
 ms.topic: include
 ---
 
-Follow the steps in this quickstart to:
-
-- Grant your virtual machine (VM) access to a resource group in Azure Resource Manager 
-- Get an access token using a virtual machine (VM) identity and use it to call Azure Resource Manager
-
 ## Prerequisites
 
-- A basic understanding of managed identities. If you're not familiar with the managed identities for Azure resources feature, review the [overview](overview.md).
-- An Azure account. If you don't already have one, see [sign up for a free account](https://azure.microsoft.com/free/).
-- **Owner**"** permissions for the appropriate scope (your subscription or resource group) to perform required resource creation and role management steps. If you need assistance with role assignment, see [Assign Azure roles to manage access to your Azure subscription resources](/azure/role-based-access-control/role-assignments-portal).
-- A Windows VM with system assigned managed identities enabled. If you need to create a VM, see [Create a virtual machine with system-assigned identity enabled](./qs-configure-portal-windows-vm.md#system-assigned-managed-identity)
+- A basic understanding of managed identities. If you're not familiar with the managed identities for Azure resources feature, review this [overview](overview.md).
+- An Azure account, [sign up for a free account](https://azure.microsoft.com/free/).
+- **Owner** permissions at the appropriate scope (your subscription or resource group) to perform required resource creation and role management steps. If you need assistance with role assignments, see [Assign Azure roles to manage access to your Azure subscription resources](/azure/role-based-access-control/role-assignments-portal).
+- A Windows VM that has system assigned managed identities enabled.
+  - If you need to create a Windows VM for this tutorial, see [Create a virtual machine with system-assigned identity enabled](./qs-configure-portal-windows-vm.md#system-assigned-managed-identity).
 
 ## Enable a system-assigned managed identity
 
@@ -25,7 +21,7 @@ Follow the steps in this quickstart to:
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-Using managed identities for Azure resources, your application can access tokens to authenticate to resources that support Microsoft Entra authentication. The Azure Resource Manager API supports Microsoft Entra authentication, which grants the VM's identity access to a resource in Azure Resource Manager; in this case, access to a Resource Group. Assign the [Reader](/azure/role-based-access-control/built-in-roles#reader) role to the managed-identity at the scope of the resource group. 
+Using managed identities for Azure resources, your application can access tokens to authenticate to resources that support Microsoft Entra authentication. The Azure Resource Manager API supports Microsoft Entra authentication, which grants the VM's identity access to a resource in Azure Resource Manager; in this case, access to a resource group that the VM is contained. Assign the [Reader](/azure/role-based-access-control/built-in-roles#reader) role to the managed identity at the scope of the resource group. 
 
 1. Use an administrator account to sign in to the [Azure portal](https://portal.azure.com).
 1. Navigate to the tab for **Resource Groups**.

@@ -16,16 +16,28 @@ zone_pivot_groups: identity-windows-vm-access
 
 # Tutorial: Use a user-assigned managed identity on a Windows VM to access Azure Resource Manager
 
-This tutorial explains how to create a user-assigned identity, assign it to a Windows virtual machine (VM), and then use that identity to access the Azure Resource Manager API. Managed service identities, automatically managed by Azure, enable authentication to services that support Microsoft Entra authentication without needing to embed credentials into your code.
+This quickstart shows you how to use a system-assigned managed identity as a virtual machine (VM)'s identity to access the Azure Resource Manager API. Managed identities for Azure resources are automatically managed by Azure and enable you to authenticate to services that support Microsoft Entra authentication without needing to insert credentials into your code. 
 
 [!INCLUDE [preview-notice](~/includes/entra-msi-preview-notice.md)]
 
-::: zone pivot="windows-vm-access-wvm" [!INCLUDE tutorial-windows-vm-access-arm] ::: zone-end
-::: zone pivot="windows-vm-access-lvm" [!INCLUDE tutorial-windows-vm-ua-arm] ::: zone-end
+You'll learn how to:
+
+- Grant your virtual machine (VM) access to a resource group in Azure Resource Manager 
+- Get an access token using a virtual machine (VM) identity and use it to call Azure Resource Manager
+
+::: zone pivot="windows-vm-access-wvm" 
+[!INCLUDE [tutorial-windows-vm-access-arm](includes/tutorial-windows-vm-access-arm.md)]
+::: zone-end
+
+::: zone pivot="windows-vm-access-lvm" 
+[!INCLUDE [tutorial-windows-vm-ua-arm](includes/tutorial-linux-vm-access-arm.md)] 
+::: zone-end
 
 ## Next steps
 
 In this quickstart, you learned how to use a system-assigned managed identity to access the Azure Resource Manager API.  To learn more about Azure Resource Manager, see:
 
 > [!div class="nextstepaction"]
->[Azure Resource Manager](/azure/azure-resource-manager/management/overview)
+> [Azure Resource Manager](/azure/azure-resource-manager/management/overview)
+> [Create, list or delete a user-assigned managed identity using Azure PowerShell](./how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-powershell)
+
