@@ -66,7 +66,7 @@ The Microsoft Graph Bicep extension brings declarative infrastructure-as-code (I
 - Existing Azure customers can now use familiar tools to deploy Azure resources and the Microsoft Entra resources they depend on, such as applications and service principals, IaC and DevOps practices.
 - It also opens the door for existing Microsoft Entra customers to use Bicep templates and IaC practices to deploy and manage their tenant's Entra resources.
 
-For more information, see: Bicep templates for Microsoft Graph resources
+For more information, see: [Bicep templates for Microsoft Graph resources](/graph/templates/)
 
 ---
 
@@ -173,16 +173,6 @@ We've added the following new applications in our App gallery with Provisioning 
 - [ClearView Trade](../identity/saas-apps/clearview-trade-provisioning-tutorial.md)
 
 For more information about how to better secure your organization by using automated user account provisioning, see: [What is app provisioning in Microsoft Entra ID?](../identity/app-provisioning/user-provisioning.md).
-
----
-
-### General Availability - Privileged Auth Admin can be assigned at Administrative Unit scope
-
-**Type:** Changed feature    
-**Service category:** Roles    
-**Product capability:** AuthZ/Access Delegation    
-
-Administrative units now support scoped delegation of the Privileged Authentication Administrator role. This allows delegation of the ability to manage authentication of other administrators if those administrators' user accounts are part of the administrative unit. Privileged Authentication Administrator is a highly privileged role and should only be assigned when necessary; for delegating management of authentication for non-administrator user accounts, the Authentication Administrator role is recommended instead. For more information, see: [Assign Microsoft Entra roles with administrative unit scope](../identity/role-based-access-control/admin-units-assign-roles.md).
 
 ---
 
