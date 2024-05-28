@@ -1,11 +1,11 @@
 ---
 title: Protected web API app registration
-description: Learn how to build a protected web API and the information you need to register the app.
+description: Learn how to build a protected web API and acquire all the information you need to register the app.
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: 
-ms.date: 05/13/2024
+ms.date: 05/28/2024
 ms.reviewer: jmprieur
 ms.service: identity-platform
 
@@ -21,7 +21,7 @@ For the common steps to register an app, see [Quickstart: Register an applicatio
 
 ## Accepted token version
 
-The Microsoft identity platform can issue v1.0 tokens and v2.0 tokens. For more information about these tokens, see [Access tokens](access-tokens.md).
+The Microsoft identity platform can issue v1.0 tokens and v2.0 tokens. For more information about these tokens, refer to [Access tokens](access-tokens.md).
 
 The token version your API may accept depends on your **Supported account types** selection when you create your web API application registration in the Azure portal.
 
@@ -30,7 +30,7 @@ The token version your API may accept depends on your **Supported account types*
 
 After you create the application, you can determine or change the accepted token version by following these steps:
 
-1. In the Azure portal, select your app and then select **Manifest**.
+1. In the Microsoft Entra admin center, select your app and then select **Manifest**.
 1. Find the property **accessTokenAcceptedVersion** in the manifest.
 1. The value specifies to Microsoft Entra which token version the web API accepts.
    - If the value is 2, the web API accepts v2.0 tokens.
@@ -75,7 +75,7 @@ To expose delegated permissions, or _scopes_, follow the steps in [Configure an 
 If you're following along with the web API scenario described in this set of articles, use these settings:
 
 - **Application ID URI**: Accept the proposed application ID URI (_api://\<clientId\>_) (if prompted)
-- **Scope name**: _access_as_user_
+- **Scope name**: *access_as_user*
 - **Who can consent**: _Admins and users_
 - **Admin consent display name**: _Access TodoListService as a user_
 - **Admin consent description**: _Accesses the TodoListService web API as a user_
@@ -106,7 +106,7 @@ To add another layer of security, a Microsoft Entra tenant administrator can con
 To increase security by restricting token issuance only to client apps that have been assigned app roles:
 
 1. In the [Microsoft Entra admin center](https://entra.microsoft.com), select your app under **Identity** > **Applications** > **App registrations**.
-1. On the application's overview page, select its **Managed application in local directory** link to navigate to its **Enterprise Application Overview** page.
+1. On the application's **Overview** page, in **Essentials**, find and select its **Managed application in local directory** link to navigate to its **Enterprise Application Overview** page.
 1. Under **Manage**, select **Properties**.
 1. Set **Assignment required?** to **Yes**.
 1. Select **Save**.
