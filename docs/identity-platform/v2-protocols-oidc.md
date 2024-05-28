@@ -79,6 +79,22 @@ To find the OIDC configuration document in the Microsoft Entra admin center, sig
 1. Browse to **Identity** > **Applications** > **App registrations** > *\<your application\>* > **Endpoints**.
 1. Locate the URI under **OpenID Connect metadata document**.
 
+### What is a front channel logout URL?
+
+A front channel logout URL is where your web or SPA  receives the sign out request from the Entra authentication server and performs single sign out (SSO) functionality. Each application has one front channel logout URL.
+
+#### When should you set a front channel logout URL?
+
+If a user can use the same credential (usually an email and password) to sign into multiple web or SPA applications registered in this directory (also called a tenant), and you would like to set up SSO for the web or SPA application linked to this app registration, then you should set a front channel logout URL in this app registration.
+
+#### What is SSO?
+
+When a user has signed into multiple web or SPA applications registered in this directory (also called tenant), SSO allows this user to sign out of all applications instantly by signing out in either one of the applications.
+
+#### How to set up SSO?
+
+Aside from setting a front channel logout URL in this app registration, you or your developer also needs to add functionality in the application codebase to accomplish the SSO. You can learn more about how to add SSO to your application [here](single-sign-out-saml-protocol.md).
+
 ### Sample request
 
 The following request gets the OpenID configuration metadata from the `common` authority's OpenID configuration document endpoint on the Azure public cloud:
