@@ -97,7 +97,7 @@ If the associated forest is hosted in a Windows Server 2016 environment, it incl
 
 ### Using a custom gMSA account
 
-If you're creating a custom gMSA account, you need to ensure that the account has the following permissions.  The installer **doesn't** set the permissions if a custom gMSA account is specified.  These permissions reflect the **ALL** permissions set by the installer. 
+If you're creating a custom gMSA account, the installer will set the following permissons on the custom account.  These permissions reflect the **ALL** permissions. 
 
 |Type |Name |Access |Applies To|
 |-----|-----|-----|-----|
