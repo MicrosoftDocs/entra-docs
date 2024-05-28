@@ -291,7 +291,7 @@ Audit events related to GDPR and data protection are also found in this service 
 
 <a name='azure-ad-mfa-azure-mfa'></a>
 
-## Microsoft Entra multifactor authentication (Azure MFA)
+## Microsoft Entra multifactor authentication
 
 The Microsoft Entra multifactor authentication audit logs can help you track trends in suspicious activity or when fraud was reported. Use the [Microsoft Entra sign-in logs](https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/SignIns) to see each time a user signs in when MFA is required.
 
