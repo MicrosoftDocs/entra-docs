@@ -102,6 +102,8 @@ The PowerShell request:
 ```powershell
 $Response = Invoke-RestMethod -Uri 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https%3A%2F%2Fvault.azure.net' -Method GET -Headers @{Metadata="true"} 
 ```
+>[!NOTE]
+> When working with other clouds besides Azure US you may need to make adjustments to the values specified. For example, the following suffix should be used when working with the USA government cloud. $Response = Invoke-RestMethod -Uri 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https%3A%2F%2Fvault.usgovcloudapi.net' -Method GET -Headers @{Metadata="true"
 
 You can see what the response looks like below:
 
