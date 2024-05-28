@@ -5,7 +5,7 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: subject-rbac-steps, devx-track-arm-template
-ms.date: 05/12/2024
+ms.date: 05/28/2024
 ms.service: identity-platform
 
 ms.topic: how-to
