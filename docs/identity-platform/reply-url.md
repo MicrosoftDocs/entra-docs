@@ -4,7 +4,7 @@ description: A description of the restrictions and limitations on redirect URI (
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.date: 08/25/2022
+ms.date: 05/28/2024
 ms.reviewer:
 ms.service: identity-platform
 
@@ -14,13 +14,52 @@ ms.topic: reference
 
 # Redirect URI (reply URL) restrictions and limitations
 
-A redirect URI, or reply URL, is the location where the authorization server sends the user once the app has been successfully authorized and granted an authorization code or access token. The authorization server sends the code or token to the redirect URI, so it's important you register the correct location as part of the app registration process.
+A redirect URI, or reply URL, is the location where the Entra authorization server sends the user once they have successfully authorized and been granted an authorization code or access token. The redirect URI is a critical security feature that ensures authorization codes and access tokens are sent only to the intended recipient. This article describes the restrictions and limitations on redirect URIs enforced by the Microsoft identity platform.
 
-The Microsoft Entra application model specifies these restrictions to redirect URIs:
+## Why a redirect URI(s) needs to be added to an app registration
+
+For security reasons, an Entra Authentication server does not redirect users and send tokens to a random URI. Entra login servers only redirect users and send tokens to redirect URIs that have been added to an app registration. If the redirect URI specified in the login request doesn’t match any of the redirect URIs you have added in your application, you will received error message such as `AADSTS50011: The reply URL specified in the request does not match the reply URLs configured for the application`.
+
+## When you should add a redirect URIs to an app registration
+
+
+
+
+## What platforms require a redirect URI(s)?
+
+### Web application redirect URI configuration
+
+| Type of your application | Typical languages/Frameworks | Platform to add redirect URI in App Registration |
+|--------------------------|------------------------------|--------------------------------------------------|
+| A traditional web application where most of the application logic is performed on the server | Node.js, web, ASP.Net, Python, Java, ASP.NET Core, PHP, Ruby, Blazor Server | Web |
+| A single-page application where most of the user interface logic is performed in a web browser communicating with the web server primarily using web APIs | JavaScript, Angular, React, Blazor WebAssembly, Vue.js | Single-page application (SPA) |
+
+### Mobile and desktop application redirect URI configuration
+
+| Type of your application | Typical languages/Frameworks | Platform to add redirect URI in App Registration |
+|--------------------------|------------------------------|--------------------------------------------------|
+| An iOS or macOS app excluding the scenarios listed below this table | Swift, Objective-C, Xamarin | IOS/macOS |
+| An Android app | Java, Kotlin, Xamarin | Android |
+| An app that runs natively on a mobile device or desktop machine | Node.js electron, Windows desktop, UWP, React Native, Xamarin, Android, iOS/macOS | Mobile and desktop applications |
+
+### Applications that do not require a redirect URI
+
+| Type of application | Examples/notes | Associated OAuth flow |
+|---------------------|----------------|-----------------------|
+| Applications running on devices that have no keyboard | Applications running on smart TV, IoT device or a printer | Device code flow [learn more](#) |
+| Applications that handles passwords users enter directly, instead of redirecting users to Entra hosted login website and letting Entra handle user password in a secure manner. | You should only use this flow when other more secure flows such as Authorization code flow aren't viable because it is not as secure. | Resource owner password credential flow [learn more](#) |
+| Desktop or mobile applications running on Windows or on a machine connected to a Windows domain (AD or AAD joined) using Windows Integrated Auth Flow instead of Web account manager | A desktop or mobile application that should be automatically signed in after the user has signed into the windows PC system with AAD credential | Windows Integrated Auth Flow [learn more](#) |
+
+##  What are the restrictions of redirect URIs for Microsoft Entra applications
+
+The Microsoft Entra application model specifies the following restrictions to redirect URIs:
 
 * Redirect URIs must begin with the scheme `https`. There are some [exceptions for localhost](#localhost-exceptions) redirect URIs.
+* Redirect URIs are case-sensitive and must match the case of the URL path of your running application. 
 
-* Redirect URIs are case-sensitive and must match the case of the URL path of your running application. For example, if your application includes as part of its path `.../abc/response-oidc`,  do not specify `.../ABC/response-oidc` in the redirect URI. Because the web browser treats paths as case-sensitive, cookies associated with `.../abc/response-oidc` may be excluded if redirected to the case-mismatched `.../ABC/response-oidc` URL.
+    Examples: 
+    
+    * If your application includes as part of its path `.../abc/response-oidc`,  do not specify `.../ABC/response-oidc` in the redirect URI. Because the web browser treats paths as case-sensitive, cookies associated with `.../abc/response-oidc` may be excluded if redirected to the case-mismatched `.../ABC/response-oidc` URL.
 
 * Redirect URIs *not* configured with a path segment are returned with a trailing slash ('`/`') in the response. This applies only when the response mode is `query` or `fragment`.
 
@@ -38,9 +77,10 @@ The Microsoft Entra application model specifies these restrictions to redirect U
 
 * Redirect URIs do not support special characters - `! $ ' ( ) , ;`
 
-## Maximum number of redirect URIs
 
-This table shows the maximum number of redirect URIs you can add to an app registration in the Microsoft identity platform.
+### Maximum number of redirect URIs
+
+The following table shows the maximum number of redirect URIs you can add to an app registration in the Microsoft identity platform.
 
 | Accounts being signed in | Maximum number of redirect URIs | Description |
 |--------------------------|---------------------------------|-------------|
@@ -49,27 +89,27 @@ This table shows the maximum number of redirect URIs you can add to an app regis
 
 The maximum number of redirect URIs can't be raised for [security reasons](#restrictions-on-wildcards-in-redirect-uris). If your scenario requires more redirect URIs than the maximum limit allowed, consider the following [state parameter approach](#use-a-state-parameter) as the solution.
 
-## Maximum URI length
+### Maximum URI length
 
 You can use a maximum of 256 characters for each redirect URI you add to an app registration.
 
-## Redirect URIs in application vs. service principal objects
+### Redirect URIs in application vs. service principal objects
 
 * Always add redirect URIs to the application object only.
 * Do not add redirect URI values to a service principal because these values could be removed when the service principal object syncs with the application object. This could happen due to any update operation which triggers a sync between the two objects.
 
-## Query parameter support in redirect URIs
+### Query parameter support in redirect URIs
 
 Query parameters are **allowed** in redirect URIs for applications that *only* sign in users with work or school accounts.
 
 Query parameters are **not allowed** in redirect URIs for any app registration configured to sign in users with personal Microsoft accounts like Outlook.com (Hotmail), Messenger, OneDrive, MSN, Xbox Live, or Microsoft 365.
 
-| App registration sign-in audience                                                                                                  | Supports query parameters in redirect URI                            |
-|------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------|
-| Accounts in this organizational directory only (Contoso only - Single tenant)                                                      | :::image type="icon" source="media/common/yes.png" border="false"::: |
-| Accounts in any organizational directory (Any Microsoft Entra directory - Multitenant)                                                    | :::image type="icon" source="media/common/yes.png" border="false"::: |
+| App registration sign-in audience | Supports query parameters in redirect URI |
+|-----------------------------------|-------------------------------------------|
+| Accounts in this organizational directory only (Contoso only - Single tenant) | :::image type="icon" source="media/common/yes.png" border="false"::: |
+| Accounts in any organizational directory (Any Microsoft Entra directory - Multitenant)                                                    |:::image type="icon" source="media/common/yes.png" border="false"::: |
 | Accounts in any organizational directory (Any Microsoft Entra directory - Multitenant) and personal Microsoft accounts (e.g. Skype, Xbox) | :::image type="icon" source="media/common/no.png" border="false":::  |
-| Personal Microsoft accounts only                                                                                                   | :::image type="icon" source="media/common/no.png" border="false":::  |
+| Personal Microsoft accounts only | :::image type="icon" source="media/common/no.png" border="false":::  |
 
 ## Supported schemes
 
