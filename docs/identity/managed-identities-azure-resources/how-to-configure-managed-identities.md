@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: managed-identities
 ms.topic: quickstart
-ms.date: 04/24/2024
+ms.date: 05/29/2024
 ms.author: barclayn
 
 ms.custom: mode-api, devx-track-azurecli, devx-track-linux
@@ -45,3 +45,4 @@ Managed identities for Azure resources provide Azure services with an automatica
 ::: zone pivot="identity-mi-methods-sdk"
 [!INCLUDE [qs-configure-sdk-windows-vm](includes/qs-configure-sdk-windows-vm.md)]
 ::: zone-end
+
