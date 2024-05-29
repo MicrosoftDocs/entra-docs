@@ -19,6 +19,8 @@ metadata:
 title: |
   Add a self-service sign-up user flow to an app
 introduction: |
+  [!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
+
   > [!TIP]
   > This article applies to B2B collaboration user flows in workforce tenants. For information about external tenants, see [Create a sign-up and sign-in user flow](customers/how-to-user-flow-sign-up-sign-in-customers.md).
 

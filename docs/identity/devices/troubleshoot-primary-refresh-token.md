@@ -45,7 +45,7 @@ If you suspect that a PRT problem exists, we recommend that you first collect Mi
                    AzureAdPrt : YES
          AzureAdPrtUpdateTime : 2020-07-12 22:57:53.000 UTC
          AzureAdPrtExpiryTime : 2020-07-26 22:58:35.000 UTC
-          AzureAdPrtAuthority : https://login.microsoftonline.com/01234567-89ab-cdef-0123-456789abcdef
+          AzureAdPrtAuthority : https://login.microsoftonline.com/00001111-aaaa-2222-bbbb-3333cccc4444
                 EnterprisePrt : YES
       EnterprisePrtUpdateTime : 2020-07-12 22:57:54.000 UTC
       EnterprisePrtExpiryTime : 2020-07-26 22:57:54.000 UTC

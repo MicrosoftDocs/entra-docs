@@ -1,30 +1,15 @@
 ---
-title: Configure managed identities using the Azure portal
-description: Step-by-step instructions for configuring managed identities for Azure resources on an Azure VM using the Azure portal.
-
 author: barclayn
-manager: amycolannino
-ms.service: entra-id
-ms.subservice: managed-identities
-ms.topic: quickstart
-ms.tgt_pltfrm: na
-ms.date: 08/31/2023
 ms.author: barclayn
-
-ms.custom: mode-ui
+ms.date: 04/24/2024
+ms.topic: include
 ---
-
-# Configure managed identities for Azure resources on a VM using the Azure portal
-
-[!INCLUDE [preview-notice](~/includes/entra-msi-preview-notice.md)]
-
-Managed identities for Azure resources provides Azure services with an automatically managed identity in Microsoft Entra ID. You can use this identity to authenticate to any service that supports Microsoft Entra authentication, without having credentials in your code. 
 
 In this article, you learn how to enable and disable system and user-assigned managed identities for an Azure Virtual Machine (VM), using the Azure portal. 
 
 ## Prerequisites
 
-- If you're unfamiliar with managed identities for Azure resources, check out the [overview section](overview.md).
+- If you're unfamiliar with managed identities for Azure resources, check out the [overview section](~/identity/managed-identities-azure-resources/overview.md).
 - If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/free/) before continuing.
 
 ## System-assigned managed identity
@@ -37,7 +22,7 @@ To enable system-assigned managed identity on a VM during its creation, your acc
 
 - Under the **Management** tab in the **Identity** section, switch **Managed service identity** to **On**.  
 
-:::image type="content" source="./media/msi-qs-configure-portal-windows-vm/enable-system-assigned-identity-vm-creation.png" alt-text="Screenshot showing how to enable system-assigned identity during VM creation.":::
+:::image type="content" source="../media/msi-qs-configure-portal-windows-vm/enable-system-assigned-identity-vm-creation.png" alt-text="Screenshot showing how to enable system-assigned identity during VM creation.":::
 
 Refer to the following Quickstarts to create a VM: 
 
@@ -57,7 +42,7 @@ To enable system-assigned managed identity on a VM that was originally provision
 
 3. Under **System assigned**, **Status**, select **On** and then click **Save**:
 
-   ![Screenshot that shows the "Identity (preview)" page with the "System assigned" status set to "On".](./media/msi-qs-configure-portal-windows-vm/create-windows-vm-portal-configuration-blade.png) 
+   ![Screenshot that shows the "Identity (preview)" page with the "System assigned" status set to "On".](../media/msi-qs-configure-portal-windows-vm/create-windows-vm-portal-configuration-blade.png) 
 
 ### Remove system-assigned managed identity from a VM
 
@@ -71,7 +56,7 @@ If you have a Virtual Machine that no longer needs system-assigned managed ident
 
 3. Under **System assigned**, **Status**, select **Off** and then click **Save**:
 
-   :::image type="content" source="./media/msi-qs-configure-portal-windows-vm/create-windows-vm-portal-configuration-blade-disable.png" alt-text="Screenshot of the configuration page.":::
+   :::image type="content" source="../media/msi-qs-configure-portal-windows-vm/create-windows-vm-portal-configuration-blade-disable.png" alt-text="Screenshot of the configuration page.":::
 
 ## User-assigned managed identity
 
@@ -93,11 +78,11 @@ To assign a user-assigned identity to a VM, your account needs the [Virtual Mach
 1. Sign in to the [Azure portal](https://portal.azure.com) using an account associated with the Azure subscription that contains the VM.
 2. Navigate to the desired VM and click **Identity**, **User assigned** and then **\+Add**.
 
-   :::image type="content" source="./media/msi-qs-configure-portal-windows-vm/add-user-assigned-identity-vm-screenshot1.png" alt-text="Screenshot that shows the Identity page with User assigned selected and the Add button highlighted.":::
+   :::image type="content" source="../media/msi-qs-configure-portal-windows-vm/add-user-assigned-identity-vm-screenshot1.png" alt-text="Screenshot that shows the Identity page with User assigned selected and the Add button highlighted.":::
 
 3. Click the user-assigned identity you want to add to the VM and then click **Add**.
 
-    :::image type="content" source="./media/msi-qs-configure-portal-windows-vm/add-user-assigned-identity-vm-screenshot2.png" alt-text="Screenshot showing adding a  user-assigned managed identity to VM.":::
+    :::image type="content" source="../media/msi-qs-configure-portal-windows-vm/add-user-assigned-identity-vm-screenshot2.png" alt-text="Screenshot showing adding a  user-assigned managed identity to VM.":::
 
 ### Remove a user-assigned managed identity from a VM
 
@@ -106,8 +91,8 @@ To remove a user-assigned identity from a VM, your account needs the [Virtual Ma
 1. Sign in to the [Azure portal](https://portal.azure.com) using an account associated with the Azure subscription that contains the VM.
 2. Navigate to the desired VM and select **Identity**, **User assigned**, the name of the user-assigned managed identity you want to delete and then click **Remove** (click **Yes** in the confirmation pane).
 
-   :::image type="content" source="./media/msi-qs-configure-portal-windows-vm/remove-user-assigned-identity-vm-screenshot.png" alt-text="Screenshot showing how to remove user-assigned managed identity from a VM":::
+   :::image type="content" source="../media/msi-qs-configure-portal-windows-vm/remove-user-assigned-identity-vm-screenshot.png" alt-text="Screenshot showing how to remove user-assigned managed identity from a VM":::
 
 ## Next steps
 
-- Using the Azure portal, give an Azure VM's managed identity [access to another Azure resource](howto-assign-access-portal.md).
+- Using the Azure portal, give an Azure VM's managed identity [access to another Azure resource](~/identity/managed-identities-azure-resources/howto-assign-access-portal.md).

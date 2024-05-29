@@ -14,7 +14,7 @@ titleSuffix: Microsoft identity platform
 
 # Create a custom authentication extension for attribute collection start and submit events (preview)
 
-**Applies to:** Microsoft Entra External ID customer configurations
+[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
 This article describes how to extend the user sign-up experience in Microsoft Entra External ID for customers. In customer sign-up user flows, event listeners can be used to extend the attribute collection process before attribute collection and at the time of attribute submission:
 

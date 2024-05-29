@@ -1,23 +1,9 @@
 ---
-title: Configure managed identities on Azure virtual machine scale set using REST
-description: Step-by-step instructions for configuring a system and user-assigned managed identities on an Azure virtual machine scale set using CURL to make REST API calls.
-
 author: barclayn
-manager: amycolannino
-ms.service: entra-id
-ms.subservice: managed-identities
-ms.topic: quickstart
-ms.tgt_pltfrm: na
-ms.date: 05/25/2023
 ms.author: barclayn
-
-ms.custom: mode-api, devx-track-azurecli
-ms.devlang: azurecli
+ms.date: 05/27/2024
+ms.topic: include
 ---
-
-# Configure managed identities for Azure resources on a virtual machine scale set using REST API calls
-
-Managed identities for Azure resources provide Azure services with an automatically managed system identity in Microsoft Entra ID. You can use this identity to authenticate to any service that supports Microsoft Entra authentication, without having credentials in your code. 
 
 In this article, using CURL to make calls to the Azure Resource Manager REST endpoint, you learn how to perform the following managed identities for Azure resources operations on a virtual machine scale set:
 
@@ -28,7 +14,7 @@ If you don't already have an Azure account, [sign up for a free account](https:/
 
 ## Prerequisites
 
-- If you're unfamiliar with managed identities for Azure resources, see [What are managed identities for Azure resources?](overview.md). To learn about system-assigned and user-assigned managed identity types, see [Managed identity types](overview.md#managed-identity-types).
+- If you're unfamiliar with managed identities for Azure resources, see [What are managed identities for Azure resources?](~/identity/managed-identities-azure-resources/overview.md). To learn about system-assigned and user-assigned managed identity types, see [Managed identity types](~/identity/managed-identities-azure-resources/overview.md#managed-identity-types).
 
 - To perform the management operations in this article, your account needs the following Azure role assignments:
 
@@ -49,7 +35,7 @@ In this section, you learn how to enable and disable system-assigned managed ide
 
 ### Enable system-assigned managed identity during creation of a virtual machine scale set
 
-To create a virtual machine scale set with system-assigned managed identity enabled, you need create a virtual machine scale set and retrieve an access token to use CURL to call the Resource Manager endpoint with the system-assigned managed identity type value.
+To create a virtual machine scale set with system-assigned managed identity enabled, you need to create a virtual machine scale set and retrieve an access token to use CURL to call the Resource Manager endpoint with the system-assigned managed identity type value.
 
 1. Create a [resource group](/azure/azure-resource-manager/management/overview#terminology) for containment and deployment of your virtual machine scale set and its related resources, using [az group create](/cli/azure/group/#az-group-create). You can skip this step if you already have resource group you would like to use instead:
 
@@ -328,7 +314,7 @@ In this section, you learn how to add and remove user-assigned managed identity 
    az account get-access-token
    ``` 
 
-4. Create a user-assigned managed identity using the instructions found here: [Create a user-assigned managed identity](./how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-rest#create-a-user-assigned-managed-identity).
+4. Create a user-assigned managed identity using the instructions found here: [Create a user-assigned managed identity](../how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-rest#create-a-user-assigned-managed-identity).
 
 5. Create a virtual machine scale set using CURL to call the Azure Resource Manager REST endpoint. The following example creates a virtual machine scale set named *myVMSS* in the resource group *myResourceGroup* with a user-assigned managed identity `ID1`, as identified in the request body by the value `"identity":{"type":"UserAssigned"}`. Replace `<ACCESS TOKEN>` with the value you received in the previous step when you requested a Bearer access token and the `<SUBSCRIPTION ID>` value as appropriate for your environment.
  
@@ -512,7 +498,7 @@ In this section, you learn how to add and remove user-assigned managed identity 
    az account get-access-token
    ```
 
-2.  Create a user-assigned managed identity using the instructions found here, [Create a user-assigned managed identity](./how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-rest#create-a-user-assigned-managed-identity).
+2.  Create a user-assigned managed identity using the instructions found here, [Create a user-assigned managed identity](../how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-rest#create-a-user-assigned-managed-identity).
 
 3. To ensure you don't delete existing user or system-assigned managed identities that are assigned to the virtual machine scale set, you need to list the identity types assigned to the virtual machine scale set by using the following CURL command. If you have managed identities assigned to the virtual machine scale set, they are listed in the `identity` value.
 
@@ -823,4 +809,4 @@ PATCH https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroup
 
 For information on how to create, list, or delete user-assigned managed identities using REST see:
 
-- [Create, list, or delete a user-assigned managed identity using REST API calls](./how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-rest)
+- [Create, list, or delete a user-assigned managed identity using REST API calls](../how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-rest)

@@ -14,6 +14,8 @@ ms.date: 04/29/2024
 
 # Native authentication challenge types
 
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
 Native authentication supports two authentication methods:
 
 - Email with one-time passcode (OTP).

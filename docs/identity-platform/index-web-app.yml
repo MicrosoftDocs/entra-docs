@@ -35,8 +35,6 @@ landingContent:
         links:
           - text: ASP.NET Core
             url: tutorial-web-app-dotnet-register-app.md
-          - text: Blazor Server
-            url: tutorial-blazor-server.md
           - text: Node.js with Express
             url: tutorial-v2-nodejs-webapp-msal.md
           - text: Spring

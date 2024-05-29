@@ -1,24 +1,9 @@
 ---
-title: Use an SDK to configure managed identities on a VM
-description: Step-by-step instructions for configuring and using managed identities for Azure resources on an Azure VM, using an Azure SDK.
-
 author: barclayn
-manager: amycolannino
-ms.service: entra-id
-ms.subservice: managed-identities
-ms.topic: quickstart
-ms.tgt_pltfrm: na
-ms.date: 01/11/2022
 ms.author: barclayn
-
-ms.custom: mode-api
+ms.date: 04/24/2024
+ms.topic: include
 ---
-
-# Configure a VM with managed identities for Azure resources using an Azure SDK
-
-[!INCLUDE [preview-notice](~/includes/entra-msi-preview-notice.md)]
-
-Managed identities for Azure resources provide Azure services with an automatically managed identity in Microsoft Entra ID. You can use this identity to authenticate to any service that supports Microsoft Entra authentication, without having credentials in your code. 
 
 In this article, you learn how to enable and remove managed identities for Azure resources for an Azure VM, using an Azure SDK.
 
