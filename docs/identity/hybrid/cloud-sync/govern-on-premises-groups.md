@@ -20,7 +20,9 @@ With the release of provisioning agent [1.1.1370.0](reference-version-history.md
 
  :::image type="content" source="media/govern-on-premises-groups/on-premises-group-writeback.png" alt-text="Conceptual drawing of Microsoft Entra Cloud Sync's Group Provision to AD." lightbox="media/govern-on-premises-groups/on-premises-group-writeback.png":::
 
- ## Watch the group writeback video For a great overview of cloud sync group provisioning to Active directory and what it can do for you, check out the video below.
+## Watch the group writeback video
+
+For a great overview of cloud sync group provisioning to Active directory and what it can do for you, check out the video below.
 
 > [!VIDEO https://www.youtube.com/embed/C6XXlSVaIeo]
 

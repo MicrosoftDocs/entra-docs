@@ -132,7 +132,11 @@ HTTP 201/Created
 
 For this tenant, the object identifier and application identifier of the service principal are as follows:
 
-ObjectId: bbbbbbbb-1111-2222-3333-cccccccccccc AppId: 00001111-aaaa-2222-bbbb-3333cccc4444 DisplayName: testApp
+```
+ObjectId: bbbbbbbb-1111-2222-3333-cccccccccccc
+AppId: 00001111-aaaa-2222-bbbb-3333cccc4444
+DisplayName: testApp
+```
 
 We're going to need to update the domain this configuration is targeting, so update the secrets for this domain.
 
