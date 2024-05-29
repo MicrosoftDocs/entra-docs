@@ -48,7 +48,7 @@ In this tutorial, you'll;
 
 Configure delegated permission to Microsoft Graph to enable your client application to perform operations on behalf of the logged-in user, for example reading their email or modifying their profile. By default, your client app asks users to consent to the delegated permissions you configured when they sign in.
  
-[!INCLUDE [Grant API permissions](../customers/includes/register-app/grant-native-authentication-api-permission.md)]
+[!INCLUDE [Grant API permissions](../customers/includes/register-app/grant-api-permission-sign-in.md)]
 
 ## Next steps
 

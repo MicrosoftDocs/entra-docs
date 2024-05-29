@@ -47,7 +47,7 @@ In this article, you do the following tasks:
 
 [!INCLUDE [active-directory-b2c-add-client-secret](./includes/register-app/add-app-client-secret.md)]
 
-## Grant API permissions
+## Grant admin consent
 
 Since this app signs in users, add delegated permissions:
 
