@@ -5,7 +5,7 @@ description: Create a Conditional Access policy requiring multifactor authentica
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 05/21/2024
+ms.date: 05/29/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -22,6 +22,8 @@ Microsoft recommends you require enable this policy for the following roles at a
 
 ## User exclusions
 [!INCLUDE [active-directory-policy-exclusions](~/includes/entra-policy-exclude-user.md)]
+
+[!INCLUDE [active-directory-policy-deploy-template](~/includes/entra-policy-deploy-template.md)]
 
 ## Create a Conditional Access policy
 
