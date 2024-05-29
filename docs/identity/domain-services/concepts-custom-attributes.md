@@ -8,7 +8,7 @@ ms.assetid: 1a14637e-b3d0-4fd9-ba7a-576b8df62ff2
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: how-to
-ms.date: 09/21/2023
+ms.date: 05/29/2024
 ms.author: justinha
 ---
 # Custom attributes for Microsoft Entra Domain Services
@@ -24,7 +24,7 @@ Both types of extensions can be configured by using Microsoft Entra Connect for 
 
 >[!Note] 
 >The following types of extensions aren't supported for synchronization:  
->- Custom security attributes in Microsoft Entra ID (Preview)
+>- Custom security attributes in Microsoft Entra ID
 >- Microsoft Graph schema extensions
 >- Microsoft Graph open extensions
 
@@ -35,7 +35,7 @@ The minimum SKU supported for custom attributes is the Enterprise SKU. If you us
 
 ## How Custom Attributes work 
 
-After you create a managed domain, click **Custom Attributes (Preview)** under **Settings** to enable attribute synchronization. Click **Save** to confirm the change. 
+After you create a managed domain, click **Custom Attributes** under **Settings** to enable attribute synchronization. Click **Save** to confirm the change. 
 
 :::image type="content" border="true" source="./media/concepts-custom-attributes/enable.png" alt-text="Screenshot of how to enable custom attributes.":::
 
