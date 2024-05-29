@@ -186,7 +186,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 	e. If you select **User ID is in an Attribute element** option, then in **Attribute name** textbox type the name of the attribute where User ID is expected. 
 
-	f. If you are using the federated domain (like ADFS etc.) with Microsoft Entra ID, then click on the **Enable Home Realm Discovery** option and configure the **Domain Name**.
+	f. If you are using the federated domain (like ADFS, and so on) with Microsoft Entra ID, then click on the **Enable Home Realm Discovery** option and configure the **Domain Name**.
 
 	g. In **Domain Name** type the domain name here in case of the ADFS-based login.
 

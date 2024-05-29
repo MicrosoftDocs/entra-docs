@@ -84,7 +84,7 @@ To change domain-based filtering, run the installation wizard: [domain and OU fi
 To change OU-based filtering, run the installation wizard: [domain and OU filtering](how-to-connect-install-custom.md#domain-and-ou-filtering). The installation wizard automates all the tasks that are documented in this topic.
 
 > [!IMPORTANT]
-> If you explicitly select an OU for synchronization, Microsoft Entra Connect will add the DistinguishedName of that OU in the inclusion list for the domain's sync scope. However, if you later rename that OU in Active Directory, the DistinguishedName of the OU is changed, and consequently, Microsoft Entra Connect will no longer consider that OU in sync scope. This will not cause an immediate issue, but upon a full import step, Microsoft Entra Connect will reevaluate the sync scope and delete (i.e. obsolete) any objects out of sync scope, which can potentially cause an unexpected mass deletion of objects in Microsoft Entra ID. To prevent this issue, after renaming a OU, run Microsoft Entra Connect Wizard and re-select the OU to be again included in sync scope.
+> If you explicitly select an OU for synchronization, Microsoft Entra Connect will add the DistinguishedName of that OU in the inclusion list for the domain's sync scope. However, if you later rename that OU in Active Directory, the DistinguishedName of the OU is changed, and consequently, Microsoft Entra Connect will no longer consider that OU in sync scope. This will not cause an immediate issue, but upon a full import step, Microsoft Entra Connect will reevaluate the sync scope and delete (that is, obsolete) any objects out of sync scope, which can potentially cause an unexpected mass deletion of objects in Microsoft Entra ID. To prevent this issue, after renaming a OU, run Microsoft Entra Connect Wizard and re-select the OU to be again included in sync scope.
 
 ## Attribute-based filtering
 Make sure that you're using the November 2015 ([1.0.9125](reference-connect-version-history.md)) or later build for these steps to work.
@@ -210,7 +210,7 @@ When synchronizing multiple AD forests, you can configure group-based filtering 
 
 * You have a user in one forest that has a corresponding FSP (Foreign Security Principal) object in another forest. Both objects must be within group-based filtering scope. Otherwise, the user will not be synchronized to Microsoft Entra ID.
 
-* You have a user in one forest that has a corresponding resource account (e.g., linked mailbox) in another forest. Further, you have configured Microsoft Entra Connect to link the user with the resource account. Both objects must be within group-based filtering scope. Otherwise, the user will not be synchronized to Microsoft Entra ID.
+* You have a user in one forest that has a corresponding resource account (such as linked mailbox) in another forest. Further, you have configured Microsoft Entra Connect to link the user with the resource account. Both objects must be within group-based filtering scope. Otherwise, the user will not be synchronized to Microsoft Entra ID.
 
 * You have a user in one forest that has a corresponding mail contact in another forest. Further, you have configured Microsoft Entra Connect to link the user with the mail contact. Both objects must be within group-based filtering scope. Otherwise, the user will not be synchronized to Microsoft Entra ID.
 
