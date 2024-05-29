@@ -22,27 +22,27 @@ zone_pivot_groups: identity-configure-mi-methods
 
 Managed identities for Azure resources provide Azure services with an automatically managed identity in Microsoft Entra ID. You can use this identity to authenticate to any service that supports Microsoft Entra authentication, without having credentials in your code. 
 
-::: zone pivot="identity-mi-methods-azp"
+::: zone pivot="qs-configure-portal-windows-vm"
 [!INCLUDE [qs-configure-portal-windows-vm](includes/qs-configure-portal-windows-vm.md)]
 ::: zone-end
 
-::: zone pivot="identity-mi-methods-azcli"
+::: zone pivot="qs-configure-cli-windows-vm
 [!INCLUDE [qs-configure-cli-windows-vm](includes/qs-configure-cli-windows-vm.md)]
 ::: zone-end
 
-::: zone pivot="identity-mi-methods-powershell"
+::: zone pivot="qs-configure-powershell-windows-vm"
 [!INCLUDE [qs-configure-powershell-windows-vm](includes/qs-configure-powershell-windows-vm.md)]
 ::: zone-end
 
-::: zone pivot="identity-mi-methods-arm"
+::: zone pivot="qs-configure-template-windows-vm"
 [!INCLUDE [qs-configure-template-windows-vm](includes/qs-configure-template-windows-vm.md)]
 ::: zone-end
 
-::: zone pivot="identity-mi-methods-rest"
+::: zone pivot="qs-configure-rest-vm"
 [!INCLUDE [qs-configure-rest-vm](includes/qs-configure-rest-vm.md)]
 ::: zone-end
 
-::: zone pivot="identity-mi-methods-sdk"
+::: zone pivot="qs-configure-sdk-windows-vm"
 [!INCLUDE [qs-configure-sdk-windows-vm](includes/qs-configure-sdk-windows-vm.md)]
 ::: zone-end
 
