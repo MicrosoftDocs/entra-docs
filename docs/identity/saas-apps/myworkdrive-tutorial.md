@@ -87,7 +87,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<SERVER.DOMAIN.COM>/Account/Login-saml`
 
 	> [!NOTE]
-    > These values are not real. Update these values with the actual Reply URL and Sign-On URL. Input your own company's MyWorkDrive Server host name:e.g.
+    > These values are not real. Update these values with the actual Reply URL and Sign-On URL. Input your own company's MyWorkDrive Server host name: e.g., 
     > 
     > Reply URL: `https://yourserver.yourdomain.com/SAML/AssertionConsumerService.aspx`
     > 

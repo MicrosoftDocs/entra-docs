@@ -137,7 +137,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 4. Click on **Save Changes**.
 
-5. After these settings, you needs to send the **domain name** (e.g **contoso.com**) through which you are logging into Procore to the [Procore Support team](https://support.procore.com/) and they will activate federated SSO for that domain.
+5. After these settings, you needs to send the **domain name** (e.g., **contoso.com**) through which you are logging into Procore to the [Procore Support team](https://support.procore.com/) and they will activate federated SSO for that domain.
 
 ### Create Procore SSO test user
 

@@ -178,11 +178,11 @@ Once you've configured provisioning, use the following resources to monitor your
 
 * When configuring Slack's **displayName** attribute, be aware of the following behaviors:
 
-  * Values are not entirely unique (e.g. 2 users can have the same display name)
+  * Values are not entirely unique (such as 2 users can have the same display name)
 
   * Supports non-English characters, spaces, capitalization. 
   
-  * Allowed punctuation includes periods, underscores, hyphens, apostrophes, brackets (e.g. **( [ { } ] )**), and separators (e.g. **, / ;**).
+  * Allowed punctuation includes periods, underscores, hyphens, apostrophes, brackets (e.g., **( [ { } ] )**), and separators (e.g., **, / ;**).
   
   * displayName property cannot have an '@' character. If an '@' is included, you may find a skipped event in the provisioning logs with the description "AttributeValidationFailed."
 
