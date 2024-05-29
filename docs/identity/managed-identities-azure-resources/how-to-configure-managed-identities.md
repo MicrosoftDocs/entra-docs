@@ -26,7 +26,7 @@ Managed identities for Azure resources provide Azure services with an automatica
 [!INCLUDE [qs-configure-portal-windows-vm](includes/qs-configure-portal-windows-vm.md)]
 ::: zone-end
 
-::: zone pivot="qs-configure-cli-windows-vm
+::: zone pivot="qs-configure-cli-windows-vm"
 [!INCLUDE [qs-configure-cli-windows-vm](includes/qs-configure-cli-windows-vm.md)]
 ::: zone-end
 

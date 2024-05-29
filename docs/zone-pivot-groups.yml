@@ -203,6 +203,8 @@ groups:
     title: Resource Manager
   - id: qs-configure-rest-vm
     title: REST
+  - id: qs-configure-sdk-windows-vm
+    title: SDK
 # Owner: barclayn
 - id: identity-mi-scaled-sets
   title: Managed identities methods
