@@ -9,7 +9,9 @@ ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.date: 05/28/2024
 ms.author: barclayn
+
 ms.custom: devx-track-azurepowershell, devx-track-arm-template
+
 appliesto: 
 zone_pivot_groups: identity-windows-vm-access
 ---
@@ -26,11 +28,11 @@ You'll learn how to:
 - Get an access token using a virtual machine (VM) identity and use it to call Azure Resource Manager
 
 ::: zone pivot="windows-vm-access-wvm" 
-[!INCLUDE [tutorial-windows-vm-access-arm](includes/tutorial-windows-vm-access-arm.md)]
+[!INCLUDE [windows-vm-access-arm](includes/tutorial-windows-vm-access-arm.md)]
 ::: zone-end
 
 ::: zone pivot="windows-vm-access-lvm" 
-[!INCLUDE [tutorial-windows-vm-ua-arm](includes/tutorial-linux-vm-access-arm.md)] 
+[!INCLUDE [windows-vm-ua-arm](includes/tutorial-linux-vm-access-arm.md)] 
 ::: zone-end
 
 ## Next steps
