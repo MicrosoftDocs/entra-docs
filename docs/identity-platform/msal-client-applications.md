@@ -44,9 +44,9 @@ The following are some examples of how a client can prove its identity to the au
 
 Proving client identity matters when there's a need to verify both the authenticity and authorization of a client application before granting access to sensitive data or resources. Some examples include:
 
-- **Controlling API access** – If you have an API that is metered (e.g. for billing), or exposes sensitive data or resources, you'll verify the identity of the client before granting access. For example, this is important when ensuring that only authorized applications have access to the API, and that the correct customer is billed for their metered API usage.
-- **Protecting users from app impersonation** – If you have a service-deployed, user-facing application (e.g. a backend-driven web app) that accesses sensitive data or services, using client secrets to protect the resources used by that application may prevent bad actors from impersonating a legitimate client to phish users and exfiltrate data or abuse access.
-- **S2S communication** – If you have multiple backend services (e.g. downstream APIs) that need to communicate with each other, you can verify the identity of each service to ensure they're authorized to access only necessary resources to perform their function.
+- **Controlling API access** – If you have an API that is metered (such as for billing), or exposes sensitive data or resources, you'll verify the identity of the client before granting access. For example, this is important when ensuring that only authorized applications have access to the API, and that the correct customer is billed for their metered API usage.
+- **Protecting users from app impersonation** – If you have a service-deployed, user-facing application (such as a backend-driven web app) that accesses sensitive data or services, using client secrets to protect the resources used by that application may prevent bad actors from impersonating a legitimate client to phish users and exfiltrate data or abuse access.
+- **S2S communication** – If you have multiple backend services (such as downstream APIs) that need to communicate with each other, you can verify the identity of each service to ensure they're authorized to access only necessary resources to perform their function.
 
 In general, proving client identity matters when there's a need to authenticate and authorize a client independent of or in addition to a user.
 

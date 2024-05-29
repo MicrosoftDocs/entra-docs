@@ -688,7 +688,7 @@
               items:
                 - name: Init MSAL.js 2.x and 1.x clients
                   href: msal-js-initializing-client-applications.md
-                - name: Running and debugging in IE
+                - name: Running and debugging in Internet Explorer
                   href: msal-js-use-ie-browser.md
                 - name: Integrate with Azure AD B2C
                   href: msal-b2c-overview.md

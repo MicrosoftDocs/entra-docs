@@ -773,14 +773,14 @@ The PCase function converts the first character of each word in a string to uppe
   * *Control* characters like CRLF
   * *Format* control characters
   * *ConnectorPunctuation* characters like underscore
-  * *DashPunctuation* characters like dash and hyphen (including characters such En Dash, Em Dash, double hyphen, etc.)
-  * *OpenPunctuation* and *ClosePunctuation* characters that occur in pairs like parenthesis, curly bracket, angle bracket, etc. 
+  * *DashPunctuation* characters like dash and hyphen (including characters such En Dash, Em Dash, double hyphen, and so on)
+  * *OpenPunctuation* and *ClosePunctuation* characters that occur in pairs like parenthesis, curly bracket, angle bracket, and so on. 
   * *InitialQuotePunctuation* and *FinalQuotePunctuation* characters like single quotes, double quotes, and angular quotes. 
-  * *OtherPunctuation* characters like exclamation mark, number sign, percent sign, ampersand, asterisk, comma, full stop, colon, semi-colon, etc. 
-  * *MathSymbol* characters like plus sign, less-than and greater-than sign, vertical line, tilde, equals sign, etc.
-  * *CurrencySymbol* characters like dollar sign, cent sign, pound sign, euro sign, etc. 
-  * *ModifierSymbol* characters like macron, accents, arrow heads, etc. 
-  * *OtherSymbol* characters like copyright sign, degree sign, registered sign, etc. 
+  * *OtherPunctuation* characters like exclamation mark, number sign, percent sign, ampersand, asterisk, comma, full stop, colon, semi-colon, and so on. 
+  * *MathSymbol* characters like plus sign, less-than and greater-than sign, vertical line, tilde, equals sign, and so on.
+  * *CurrencySymbol* characters like dollar sign, cent sign, pound sign, euro sign, and so on. 
+  * *ModifierSymbol* characters like macron, accents, arrow heads, and so on. 
+  * *OtherSymbol* characters like copyright sign, degree sign, registered sign, and so on. 
 * If the *wordSeparators* parameter is specified, then PCase only uses the characters specified as word separators. 
 
 **Example:**
