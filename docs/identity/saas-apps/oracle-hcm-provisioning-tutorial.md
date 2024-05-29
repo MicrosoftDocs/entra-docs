@@ -112,8 +112,7 @@ Before sending your initial sync payload, you need to make sure your data is pre
 
 1. [Matching identifier](~/identity/app-provisioning/customize-application-attributes.md#matching-users-in-the-source-and-target--systems) presence and uniqueness: The provisioning service uses a matching attribute to uniquely identify and link worker records in your Oracle system with corresponding user accounts in AD / Microsoft Entra ID. The default matching attribute pair is Person Number in Oracle HCM mapped to employee ID attribute in Microsoft Entra ID / on-premises AD. Ensure that the value of employee ID is populated in Microsoft Entra ID (for cloud-only users) and on-premises AD (for hybrid users) before initiating full sync, as it uniquely identifies users.
 
-1. Use [scoping filters](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md#) to skip HR records that are no longer relevant: HR systems have several years of employment data probably going all the way back to
-    1970s. On the other hand, your IT team may only be interested in the list currently active employees and termination records that will come through after go-live. To filter out HR records that are no longer relevant from your IT team perspective, identify scoping filters rules that you can configure in Microsoft Entra.
+1. Use [scoping filters](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md#) to skip HR records that are no longer relevant: HR systems have several years of employment data probably going all the way back to the 1970s. On the other hand, your IT team may only be interested in the list currently active employees and termination records that will come through after go-live. To filter out HR records that are no longer relevant from your IT team perspective, identify scoping filters rules that you can configure in Microsoft Entra.
 
 ## CSV export for initial sync
 
