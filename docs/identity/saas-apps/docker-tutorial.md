@@ -55,8 +55,8 @@ Configure and test Microsoft Entra SSO with Docker using a test user called **B.
 To configure and test Microsoft Entra SSO with Docker, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-microsoft-entra-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra ID test user](#create-a-microsoft-entra-id-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra ID test user](#assign-the-microsoft-entra-id-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **[Create a Microsoft Entra test user](#create-a-microsoft-entra-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **[Assign the Microsoft Entra test user](#assign-the-microsoft-entra-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Docker SSO](#configure-docker-sso)** - to configure the single sign-on settings on application side.
     1. **[Create Docker test user](#create-docker-test-user)** - to have a counterpart of B.Simon in Docker that is linked to the Microsoft Entra ID representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
@@ -93,7 +93,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     > [!Note]
     > Please delete **name** and **emailaddress** manually from the above default attributes in Entra portal as per application requirements. 
 
-1. In addition to above, Docker application supports optional attributes to be passed back in SAML response, which are shown below. These attributes can be added to manage the provisioning of users in specific teams and their roles within the Docker Organization. To learn more about all attributes that Docker SSO supports click [here](https://docs.docker.com/security/for-admins/single-sign-on/configure/configure-idp/#sso-attributes).
+1. In addition to above, Docker application supports optional attributes to be passed back in SAML response, which are shown below. These attributes can be added to manage the provisioning of users in specific teams and their roles within the Docker Organization. To learn more about all attributes that Docker SSO supports, please refer [Docker SSO](https://docs.docker.com/security/for-admins/single-sign-on/configure/configure-idp/#sso-attributes) document.
 
     | Claim Name | Namespace| Source Attribute|
     | ------------ | ----------| --------- |
@@ -112,7 +112,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 	![Screenshot shows to copy configuration URLs.](./media/docker-tutorial/login.png "Metadata")
 
-### Create a Microsoft Entra ID test user
+### Create a Microsoft Entra test user
 
 In this section, you'll create a test user in the Microsoft Entra admin center called B.Simon.
 
@@ -126,7 +126,7 @@ In this section, you'll create a test user in the Microsoft Entra admin center c
    1. Select **Review + create**.
 1. Select **Create**.
 
-### Assign the Microsoft Entra ID test user
+### Assign the Microsoft Entra test user
 
 In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by granting access to Docker.
 
