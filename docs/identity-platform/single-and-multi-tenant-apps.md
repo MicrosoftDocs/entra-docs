@@ -15,7 +15,7 @@ ms.topic: concept-article
 
 # Tenancy in Microsoft Entra ID
 
-Microsoft Entra ID organizes objects like users and apps into groups called _tenants_. Tenants allow an administrator to set policies on the users within the organization and the apps that the organization owns to meet their security and operational policies.
+Microsoft Entra ID organizes objects like users and apps into groups called *tenants*. Tenants allow an administrator to set policies on the users within the organization and the apps that the organization owns to meet their security and operational policies.
 
 ## Who can sign in to your app?
 

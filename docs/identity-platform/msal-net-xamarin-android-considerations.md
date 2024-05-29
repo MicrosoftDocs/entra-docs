@@ -105,7 +105,7 @@ Here's an example of a class that represents the values of the XML file:
 
 ### Use System WebView in brokered authentication
 
-To use System WebView as a fallback for interactive authentication when you've configured your application to use brokered authentication and the device doesn't have a broker installed, enable MSAL to capture the authentication response by using the broker's redirect URI. MSAL will try to authenticate by using the default System WebView on the device when it detects that the broker is unavailable. Using this default, it will fail because the redirect URI is configured to use a broker, and System WebView doesn't know how to use it to return to MSAL. To resolve this, create an _intent filter_ by using the broker redirect URI that you configured earlier. Add the intent filter by modifying your application's manifest like this example:
+To use System WebView as a fallback for interactive authentication when you've configured your application to use brokered authentication and the device doesn't have a broker installed, enable MSAL to capture the authentication response by using the broker's redirect URI. MSAL will try to authenticate by using the default System WebView on the device when it detects that the broker is unavailable. Using this default, it will fail because the redirect URI is configured to use a broker, and System WebView doesn't know how to use it to return to MSAL. To resolve this, create an *intent filter* by using the broker redirect URI that you configured earlier. Add the intent filter by modifying your application's manifest like this example:
 
 ```xml
 <!--Intent filter to capture System WebView or Authenticator calling back to our app after sign-in-->

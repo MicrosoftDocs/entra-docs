@@ -113,7 +113,7 @@ The configuration metadata is returned in JSON format as shown in the following 
 ```
 ## Send the sign-in request
 
-To authenticate a user and request an ID token for use in your application, direct their user-agent to the Microsoft identity platform's _/authorize_ endpoint. The request is similar to the first leg of the [OAuth 2.0 authorization code flow](v2-oauth2-auth-code-flow.md) but with these distinctions:
+To authenticate a user and request an ID token for use in your application, direct their user-agent to the Microsoft identity platform's */authorize* endpoint. The request is similar to the first leg of the [OAuth 2.0 authorization code flow](v2-oauth2-auth-code-flow.md) but with these distinctions:
 
 * Include the `openid` scope in the `scope` parameter.
 * Specify `id_token` in the `response_type` parameter.

@@ -161,7 +161,7 @@ If a request fails the validation check, the application API for create/update w
 
 Applications using dynamic consent today are given all the permissions they have consent for, even if they weren't requested by name in the `scope` parameter. An app requesting only `user.read` but with consent to `files.read` can be forced to pass the Conditional Access requirement assigned for `files.read`, for example.
 
-To reduce the number of unnecessary Conditional Access prompts, Microsoft Entra ID is changing the way scopes are provided to applications so only explicitly requested scopes trigger Conditional Access. Applications relying on Microsoft Entra ID's previous behavior of including _all_ scopes in the token--whether requested or not--may break due to missing scopes.
+To reduce the number of unnecessary Conditional Access prompts, Microsoft Entra ID is changing the way scopes are provided to applications so only explicitly requested scopes trigger Conditional Access. Applications relying on Microsoft Entra ID's previous behavior of including *all* scopes in the token--whether requested or not--may break due to missing scopes.
 
 Apps will now receive access tokens with a mix of permissions: requested tokens and those they have consent for that don't require Conditional Access prompts. The scope of access for the token is reflected in the token response's `scope` parameter.
 
@@ -236,7 +236,7 @@ For more details, please see the [Azure Government blog post on this migration](
 
 Users with passwords longer than 256 characters who sign in directly to Microsoft Entra ID (not a federated IDP, like AD FS) will be asked to change their passwords before they can sign in. Admins may receive requests to help reset the user's password.
 
-The error in the sign-in logs will be similar to _AADSTS 50052: InvalidPasswordExceedsMaxLength_.
+The error in the sign-in logs will be similar to *AADSTS 50052: InvalidPasswordExceedsMaxLength*.
 
 Message: `The password entered exceeds the maximum length of 256. Please reach out to your admin to reset the password.`
 
@@ -254,7 +254,7 @@ The user is unable to log in because their password exceeds the permitted maximu
 
 **Protocol impacted**: OAuth and OIDC flows that use `response_type=query` - this covers the [authorization code flow](v2-oauth2-auth-code-flow.md) in some cases, and the [implicit flow](v2-oauth2-implicit-grant-flow.md).
 
-When an authentication response is sent from _login.microsoftonline.com_ to an application via HTTP redirect, the service will append an empty fragment to the reply URL. This prevents a class of redirect attacks by ensuring that the browser wipes out any existing fragment in the authentication request. No apps should have a dependency on this behavior.
+When an authentication response is sent from *login.microsoftonline.com* to an application via HTTP redirect, the service will append an empty fragment to the reply URL. This prevents a class of redirect attacks by ensuring that the browser wipes out any existing fragment in the authentication request. No apps should have a dependency on this behavior.
 
 
 ## August 2019
