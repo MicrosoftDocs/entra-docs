@@ -89,7 +89,7 @@ Preauthorization allows a resource application owner to grant permissions withou
 
 ## Other authorization systems
 
-The consent framework is only one way an application or user can be authorized to access protected resources. Admins should be aware of other authorization systems that may grant access to sensitive information. Examples of authorization systems at Microsoft include [Entra built-in roles](./identity/role-based-access-control/permissions-reference.md), [Exchange RBAC](~/exchange/permissions-exo/application-rbac.md), and [Teams resource-specific consent](~/microsoftteams/platform/graph-api/rsc/resource-specific-consent.md). 
+The consent framework is only one way an application or user can be authorized to access protected resources. Admins should be aware of other authorization systems that may grant access to sensitive information. Examples of various authorization systems at Microsoft include [Entra built-in roles](./identity/role-based-access-control/permissions-reference.md), [Exchange RBAC](~/exchange/permissions-exo/application-rbac.md), and [Teams resource-specific consent](~/microsoftteams/platform/graph-api/rsc/resource-specific-consent.md). 
 
 ## See also
 
