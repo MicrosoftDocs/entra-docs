@@ -182,7 +182,7 @@ Currently, Microsoft Entra joined devices don't support RADIUS authentication us
 ## Understand your provisioning options
 
 >[!Note]
->[Microsoft Entra joined devices can't be deployed using System Preparation Tool (Sysprep) or similar imaging tools.
+> Microsoft Entra joined devices can't be deployed using System Preparation Tool (Sysprep) or similar imaging tools.
 
 You can provision Microsoft Entra joined devices using the following approaches:
 
