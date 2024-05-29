@@ -14,11 +14,11 @@ ms.topic: reference
 
 # Redirect URI (reply URL) outline and restrictions
 
-A redirect URI, or reply URL, is the location where the Entra authorization server sends the user once they have successfully authorized and been granted an authorization code or access token. To sign in a user, your app must send a login request to the Entra authorization endpoint, with a redirect URI specified as a parameter. The Entra authentication server will check if the redirect URI it receives has been added to the app registration. The redirect URI is a critical security feature that ensures authorization codes and access tokens are sent only to the intended recipient. This article outlines the features and restrictions of redirect URIs in the Microsoft identity platform.
+A redirect URI, or reply URL, is the location where the Microsoft Entra authorization server sends the user once they have successfully authorized and been granted an authorization code or access token. To sign in a user, your app must send a login request to the Microsoft Entra authorization endpoint, with a redirect URI specified as a parameter. The Microsoft Entra authentication server will check if the redirect URI it receives has been added to the app registration. The redirect URI is a critical security feature that ensures authorization codes and access tokens are sent only to the intended recipient. This article outlines the features and restrictions of redirect URIs in the Microsoft identity platform.
 
 ## Why a redirect URI needs to be added to an app registration
 
-For security reasons, the Entra authorization server will not redirect users or send tokens to a URI that is not added to the app registration. Entra login servers only redirect users and send tokens to redirect URIs that have been added to an app registration. If the redirect URI specified in the login request doesn’t match any of the redirect URIs you have added in your application, you'll receive an error message such as `AADSTS50011: The reply URL specified in the request does not match the reply URLs configured for the application`. For more information on error codes, see [Microsoft Entra authentication and authorization error codes](reference-error-codes.md).
+For security reasons, the Microsoft Entra authorization server will not redirect users or send tokens to a URI that is not added to the app registration. Entra login servers only redirect users and send tokens to redirect URIs that have been added to an app registration. If the redirect URI specified in the login request doesn’t match any of the redirect URIs you have added in your application, you'll receive an error message such as `AADSTS50011: The reply URL specified in the request does not match the reply URLs configured for the application`. For more information on error codes, see [Microsoft Entra authentication and authorization error codes](reference-error-codes.md).
 
 ### What platforms require a redirect URI?
 
@@ -53,9 +53,9 @@ If you are building an iOS app using one of the following methods, please use **
 |---------------------|----------------|-----------------------|
 | Applications running on devices that have no keyboard | Applications running on smart TV, IoT device or a printer | Device code flow [learn more](v2-oauth2-device-code.md) |
 | Applications that handle passwords users enter directly, instead of redirecting users to Entra hosted login website and letting Entra handle user password in a secure manner. | You should only use this flow when other more secure flows such as Authorization code flow aren't viable because it isn't as secure. | Resource owner password credential flow [learn more](v2-oauth2-client-creds-grant-flow.md) |
-| Desktop or mobile applications running on Windows or on a machine connected to a Windows domain (AD or AAD joined) using Windows Integrated Auth Flow instead of Web account manager | A desktop or mobile application that should be automatically signed in after the user has signed into the windows PC system with an Entra credential | Windows Integrated Auth Flow [learn more](v2-oauth2-auth-code-flow.md) |
+| Desktop or mobile applications running on Windows or on a machine connected to a Windows domain (AD or Azure AD joined) using Windows Integrated Auth Flow instead of Web account manager | A desktop or mobile application that should be automatically signed in after the user has signed into the windows PC system with an Entra credential | Windows Integrated Auth Flow [learn more](v2-oauth2-auth-code-flow.md) |
 
-## What are the restrictions of redirect URIs for Microsoft Entra applications
+## What are the restrictions of redirect URIs for Microsoft Entra applications?
 
 The Microsoft Entra application model specifies the following restrictions to redirect URIs:
 
@@ -141,7 +141,7 @@ Per [RFC 8252 sections 8.3](https://tools.ietf.org/html/rfc8252#section-8.3) and
 
 From a development standpoint, this means a few things:
 
-* Do not register multiple redirect URIs where only the port differs. The login server picks one arbitrarily and use the behavior associated with that redirect URI (for example, whether it's a `web`-, `native`-, or `spa`-type redirect).
+* Do not register multiple redirect URIs where only the port differs. The login server picks one arbitrarily and uses the behavior associated with that redirect URI (for example, whether it's a `web`-, `native`-, or `spa`-type redirect).
 
     This is especially important when you want to use different authentication flows in the same application registration, for example both the authorization code grant and implicit flow. To associate the correct response behavior with each redirect URI, the login server must be able to distinguish between the redirect URIs and can't do so when only the port differs.
 * To register multiple redirect URIs on localhost to test different flows during development, differentiate them using the *path* component of the URI. For example, `http://localhost/MyWebApp` doesn't match `http://localhost/MyNativeApp`.
@@ -149,7 +149,7 @@ From a development standpoint, this means a few things:
 
 #### Prefer 127.0.0.1 over localhost
 
-To prevent your app from braking by misconfigured firewalls or renamed network interfaces, use the IP literal loopback address `127.0.0.1` in your redirect URI instead of `localhost`. For example, `https://127.0.0.1`.
+To prevent your app from breaking due to misconfigured firewalls or renamed network interfaces, use the IP literal loopback address `127.0.0.1` in your redirect URI instead of `localhost`. For example, `https://127.0.0.1`.
 
 You can't, however, use the **Redirect URIs** text box in the Azure portal to add a loopback-based redirect URI that uses the `http` scheme:
 
@@ -175,7 +175,7 @@ In this approach:
 
 1. Create a "shared" redirect URI per application to process the security tokens you receive from the authorization endpoint.
 1. Your application can send application-specific parameters (such as subdomain URL where the user originated or anything like branding information) in the state parameter. When using a state parameter, guard against CSRF protection as specified in [section 10.12 of RFC 6749](https://tools.ietf.org/html/rfc6749#section-10.12).
-1. The application-specific parameters includes all the information needed for the application to render the correct experience for the user, that is, construct the appropriate application state. The Microsoft Entra authorization endpoint strips HTML from the state parameter so make sure you aren't passing HTML content in this parameter.
+1. The application-specific parameters include all the information needed for the application to render the correct experience for the user, that is, construct the appropriate application state. The Microsoft Entra authorization endpoint strips HTML from the state parameter so make sure you aren't passing HTML content in this parameter.
 1. When Microsoft Entra ID sends a response to the "shared" redirect URI, it sends the state parameter back to the application.
 1. The application can then use the value in the state parameter to determine which URL to further send the user to. Make sure you validate for CSRF protection.
 

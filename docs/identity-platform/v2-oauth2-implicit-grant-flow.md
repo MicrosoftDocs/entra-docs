@@ -27,13 +27,13 @@ With the plans for [removing third party cookies from browsers](reference-third-
 
 The following diagram shows what the entire implicit sign-in flow looks like and the sections that follow describe each step in detail.
 
-![Diagram showing the implicit sign-in flow](./media/v2-oauth2-implicit-grant-flow/convergence-scenarios-implicit.svg)
+![Diagram showing the implicit sign-in flow.](./media/v2-oauth2-implicit-grant-flow/convergence-scenarios-implicit.svg)
 
 ## Suitable scenarios for the OAuth2 implicit grant
 
 The implicit grant is only reliable for the initial, interactive portion of your sign-in flow, where the lack of [third party cookies](reference-third-party-cookies-spas.md) doesn't impact your application. This limitation means you should use it exclusively as part of the hybrid flow, where your application requests a code as well as a token from the authorization endpoint. In a hybrid flow, your application receives a code that can be redeemed for a refresh token, thus ensuring your app's login session remains valid over time.
 
-### When should you allow an access token or ID token to be issued when requested using implicit grant or hybrid flow 
+### When should you allow an access token or ID token to be issued when requested using implicit grant or hybrid flow?
 
 The implicit grant and hybrid flow are not as secure as other OAuth flows. Unless absolutely required, you shouldn’t allow an access or ID token to be issued when requested using implicit grant or hybrid flow in your app registration. If you (or your developers) are using MSAL (Microsoft Authentication Library) in your application to implement authentication and authorization, then neither field needs to be enabled.
 
@@ -81,7 +81,7 @@ client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 | `login_hint` | optional | You can use this parameter to pre-fill the username and email address field of the sign-in page for the user, if you know the username ahead of time. Often, apps use this parameter during reauthentication, after already extracting the `login_hint` [optional claim](./optional-claims.md) from an earlier sign-in. |
 | `domain_hint` | optional |If included, it will skip the email-based discovery process that user goes through on the sign-in page, leading to a slightly more streamlined user experience. This parameter is commonly used for Line of Business apps that operate in a single tenant, where they'll provide a domain name within a given tenant, forwarding the user to the federation provider for that tenant.  This hint prevents guests from signing into this application, and limits the use of cloud credentials like FIDO.  |
 
-At this point, the user will be asked to enter their credentials and complete the authentication. The Microsoft identity platform will also ensure that the user has consented to the permissions indicated in the `scope` query parameter. If the user has consented to **none** of those permissions, it will ask the user to consent to the required permissions. For more info, see [permissions, consent, and multi-tenant apps](./permissions-consent-overview.md).
+At this point, the user will be asked to enter their credentials and complete the authentication. The Microsoft identity platform will also ensure that the user has consented to the permissions indicated in the `scope` query parameter. If the user has consented to **none** of those permissions, it will ask the user to consent to the required permissions. For more info, see [permissions, consent, and multitenant apps](./permissions-consent-overview.md).
 
 Once the user authenticates and grants consent, the Microsoft identity platform will return a response to your app at the indicated `redirect_uri`, using the method specified in the `response_mode` parameter.
 

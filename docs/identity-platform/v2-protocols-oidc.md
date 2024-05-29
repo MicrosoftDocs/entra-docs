@@ -220,7 +220,7 @@ Several other validations are common and vary by application scenario, including
 
 * Ensuring the user/organization has signed up for the app.
 * Ensuring the user has proper authorization/privileges
-* Ensuring a certain strength of authentication has occurred, such as [multi-factor authentication](~/identity/authentication/concept-mfa-howitworks.md).
+* Ensuring a certain strength of authentication has occurred, such as [multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md).
 
 Once you've validated the ID token, you can begin a session with the user and use the information in the token's claims for app personalization, display, or for storing their data.
 
@@ -335,7 +335,7 @@ post_logout_redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
 
 When you redirect the user to the `end_session_endpoint`, the Microsoft identity platform clears the user's session from the browser. However, the user may still be signed in to other applications that use Microsoft accounts for authentication. To enable those applications to sign the user out simultaneously, the Microsoft identity platform sends an HTTP GET request to the registered `LogoutUrl` of all the applications that the user is currently signed in to. Applications must respond to this request by clearing any session that identifies the user and returning a `200` response. If you wish to support single sign-out in your application, you must implement such a `LogoutUrl` in your application's code. You can set the `LogoutUrl` from the app registration portal.
 
-## What is a front channel logout URL?
+### What is a front channel logout URL?
 
 A front channel logout URL is where your web or SPA application receives the sign out request from the Entra authentication server and performs SSO functionality. Each application has one front channel logout URL.
 
@@ -347,7 +347,7 @@ If a user can use the same credential (usually an email and password) to sign in
 
 When a user has signed into multiple web or SPA applications registered in this directory (also called a tenant), SSO allows this user to sign out of all applications instantly by signing out in either one of the applications.
 
-### How to set up SSO?
+### How to set up SSO
 
 Aside from setting a front channel logout URL in this app registration, you or your developer also needs to add functionality in the application codebase to accomplish the SSO. You can learn more about how to add SSO to your application [here](single-sign-out-saml-protocol.md).
 
