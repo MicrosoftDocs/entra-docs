@@ -34,7 +34,7 @@ These basic controls include:
 ### Who should use Conditional Access?
 
 - If you're an organization with Microsoft Entra ID P1 or P2 licenses, security defaults are probably not right for you.
-- If your organization has complex security requirements, you should consider [Conditional Access](/entra/identity/role-based-access-control/permissions-reference#template-categories).
+- If your organization has complex security requirements, you should consider [Conditional Access](/entra/identity/conditional-access/overview).
 
 ## Enabling security defaults
 
