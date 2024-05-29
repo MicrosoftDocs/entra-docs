@@ -15,11 +15,11 @@ ms.topic: concept-article
 
 # How to handle third-party cookie blocking in browsers
 
-Many browsers block _third-party cookies_, cookies on requests to domains other than the domain shown in the browser's address bar. These cookies are also known as _cross-domain cookies_. This block breaks the implicit flow and requires new authentication patterns to successfully sign in users. In the Microsoft identity platform, we use the authorization flow with Proof Key for Code Exchange (PKCE) and refresh tokens to keep users signed in when third-party cookies are blocked.
+Many browsers block *third-party cookies*, cookies on requests to domains other than the domain shown in the browser's address bar. These cookies are also known as *cross-domain cookies*. This block breaks the implicit flow and requires new authentication patterns to successfully sign in users. In the Microsoft identity platform, we use the authorization flow with Proof Key for Code Exchange (PKCE) and refresh tokens to keep users signed in when third-party cookies are blocked.
 
 ## What is Intelligent Tracking Protection (ITP) and Privacy Sandbox?
 
-Apple Safari has an on-by-default privacy protection feature called [Intelligent Tracking Protection](https://webkit.org/tracking-prevention-policy/), or _ITP_. Chrome has a browser privacy initiative named the [Privacy Sandbox](https://developers.google.com/privacy-sandbox/overview). These initiatives encompass many different browser privacy efforts by the browsers and have different timelines. Both efforts block "third-party" cookies on requests that cross domains, with Safari and Brave block third-party cookies by default. Chrome recently announced that they'll start [blocking third-party cookies by default](https://privacysandbox.com/open-web/#the-privacy-sandbox-timeline). Privacy Sandbox includes changes to [partitioned storage](https://developers.google.com/privacy-sandbox/3pcd/storage-partitioning) as well as third-party cookie blocking. 
+Apple Safari has an on-by-default privacy protection feature called [Intelligent Tracking Protection](https://webkit.org/tracking-prevention-policy/), or *ITP*. Chrome has a browser privacy initiative named the [Privacy Sandbox](https://developers.google.com/privacy-sandbox/overview). These initiatives encompass many different browser privacy efforts by the browsers and have different timelines. Both efforts block "third-party" cookies on requests that cross domains, with Safari and Brave block third-party cookies by default. Chrome recently announced that they'll start [blocking third-party cookies by default](https://privacysandbox.com/open-web/#the-privacy-sandbox-timeline). Privacy Sandbox includes changes to [partitioned storage](https://developers.google.com/privacy-sandbox/3pcd/storage-partitioning) as well as third-party cookie blocking. 
 
 A common form of user tracking is done by loading an iframe to third-party site in the background and using cookies to correlate the user across the Internet. Unfortunately, this pattern is also the standard way of implementing the [implicit flow](v2-oauth2-implicit-grant-flow.md) in single-page apps (SPAs). A browser that blocks third-party cookies to protect user privacy can also block the functionality of a SPA.
 
@@ -32,7 +32,7 @@ To continue authenticating users in SPAs, app developers must use the [authoriza
 For the Microsoft identity platform, SPAs and native clients follow similar protocol guidance:
 
 - Use of a [PKCE code challenge](https://tools.ietf.org/html/rfc7636)
-  - PKCE is _required_ for SPAs on the Microsoft identity platform. PKCE is _recommended_ for native and confidential clients.
+  - PKCE is *required* for SPAs on the Microsoft identity platform. PKCE is *recommended* for native and confidential clients.
 - No use of a client secret
 
 SPAs have two more restrictions:
@@ -69,7 +69,7 @@ A common pattern in web apps is to use an iframe to embed one app inside another
 
 Silent token acquisition no longer works when third-party cookies are blocked - the application embedded in the iframe must switch to using popups to access the user's session as it can't navigate to the login page within an embedded frame.
 
-You can achieve single sign-on between iframed and parent apps with same-origin _and_ cross-origin JavaScript script API access by passing a user (account) hint from the parent app to the iframed app. For more information, see [Using MSAL.js in iframed apps](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/iframe-usage.md) in the MSAL.js repository on GitHub.
+You can achieve single sign-on between iframed and parent apps with same-origin *and* cross-origin JavaScript script API access by passing a user (account) hint from the parent app to the iframed app. For more information, see [Using MSAL.js in iframed apps](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/iframe-usage.md) in the MSAL.js repository on GitHub.
 
 ## Security implications of refresh tokens in the browser
 
