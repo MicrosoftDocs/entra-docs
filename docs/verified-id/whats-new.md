@@ -223,7 +223,7 @@ We're making protocol updates in Microsoft Authenticator to support Single Long 
 
 ## November 2021
 
-- We made updates to the Request Service REST API for [issuance](issuance-request-api.md?#callback-type) and [presentation](presentation-request-api.md?#callback-type) Callback types enforcing rules so that URL endpoints for callbacks are reachable.
+- We made updates to the Request Service REST API for [issuance](issuance-request-api.md?#callback-type) and [presentation](presentation-request-api.md?#callback-type). Callback types enforcing rules so that URL endpoints for callbacks are reachable.
 - UX updates to the Microsoft Authenticator verifiable credentials experience: Animations on card selection from the wallet.
 
 ## October 2021
