@@ -24,7 +24,7 @@ Microsoft Entra seamless single sign-on (Microsoft Entra seamless SSO) automatic
 
 >[!VIDEO https://www.youtube.com/embed/PyeAC85Gm7w]
 
-Seamless SSO can be combined with either the [Password Hash Synchronization](how-to-connect-password-hash-synchronization.md) or [Pass-through Authentication](how-to-connect-pta.md) sign-in methods. Seamless SSO is _not_ applicable to Active Directory Federation Services (ADFS).
+Seamless SSO can be combined with either the [Password Hash Synchronization](how-to-connect-password-hash-synchronization.md) or [Pass-through Authentication](how-to-connect-pta.md) sign-in methods. Seamless SSO is *not* applicable to Active Directory Federation Services (ADFS).
 
 ![Seamless single sign-on](./media/how-to-connect-sso/sso1.png)
 

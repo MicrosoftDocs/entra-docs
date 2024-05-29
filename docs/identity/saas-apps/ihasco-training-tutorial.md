@@ -134,8 +134,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 1. Log in to your iHASCO Training website as an administrator.
 
-1. Click **Settings** in top right navigation, scroll to
-the **ADVANCED** tile and click **Configure Single Sign On**.
+1. Click **Settings** in top right navigation, scroll to the **ADVANCED** tile and click **Configure Single Sign On**.
 
     ![Screenshot for iHASCO Training sso button.](./media/ihasco-training-tutorial/settings.png)
 
