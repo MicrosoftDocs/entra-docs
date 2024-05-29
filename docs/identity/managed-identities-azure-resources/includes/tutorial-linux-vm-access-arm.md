@@ -7,9 +7,9 @@ ms.topic: include
 
 ## Prerequisites
 
-- An understanding of managed identities. If you're not familiar with managed identities, review this [overview](overview.md). 
+- An understanding of managed identities. If you're not familiar with managed identities, review this [./overview](overview.md). 
 - An Azure account, [sign up for a free account](https://azure.microsoft.com/free/).
-- You also need a Linux VM that has system assigned managed identities enabled. If you have a VM but need to enable [system assigned managed identities](qs-configure-portal-windows-vm.md), you can do this in the identity section of the VM's properties. 
+- You also need a Linux VM that has system assigned managed identities enabled. If you have a VM but need to enable [system assigned managed identities](./qs-configure-portal-windows-vm.md), you can do this in the identity section of the VM's properties. 
   - If you need to create  a VM for completing this tutorial, see [Create a Linux virtual machine with the Azure portal](/azure/virtual-machines/linux/quick-create-portal#create-virtual-machine).
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
@@ -29,7 +29,7 @@ When you use managed identities for Azure resources, your code can get access to
 1. For the **Manage identity** dropdown, select **Virtual Machine**.
 1. Finally, in **Select** choose your Windows Virtual Machine in the dropdown and select **Save**.
 
-    :::image type="content" source="media/msi-tutorial-linux-vm-access-arm/msi-permission-linux.png" alt-text="Screenshot showing adding the reader role to the managed identity.":::
+    :::image type="content" source="./media/msi-tutorial-linux-vm-access-arm/msi-permission-linux.png" alt-text="Screenshot showing adding the reader role to the managed identity.":::
 
 ## Get an access token using the VM's system-assigned managed identity and use it to call Resource Manager
 
@@ -88,11 +88,3 @@ The response back with the specific Resource Group information:
   }
 } 
 ```
-
-## Next steps
-
-In this quickstart, you learned how to use a system-assigned managed identity to access the Azure Resource Manager API. For more information about Azure Resource Manager, see:
-
-> [!div class="nextstepaction"]
->[Azure Resource Manager](/azure/azure-resource-manager/management/overview)
->[Create, list or delete a user-assigned managed identity using Azure PowerShell](./how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-powershell)

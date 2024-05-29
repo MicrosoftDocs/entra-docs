@@ -7,11 +7,11 @@ ms.topic: include
 
 ## Prerequisites
 
-- A basic understanding of managed identities. If you're not familiar with the managed identities for Azure resources feature, review this [overview](overview.md).
+- A basic understanding of managed identities. If you're not familiar with the managed identities for Azure resources feature, review this [overview](./overview.md).
 - An Azure account, [sign up for a free account](https://azure.microsoft.com/free/).
 - **Owner** permissions at the appropriate scope (your subscription or resource group) to perform required resource creation and role management steps. If you need assistance with role assignments, see [Assign Azure roles to manage access to your Azure subscription resources](/azure/role-based-access-control/role-assignments-portal).
 - A Windows VM that has system assigned managed identities enabled.
-  - If you need to create a Windows VM for this tutorial, see [Create a virtual machine with system-assigned identity enabled](./qs-configure-portal-windows-vm.md#system-assigned-managed-identity).
+  - If you need to create a Windows VM for this tutorial, see [Create a virtual machine with system-assigned identity enabled](./qs-configure-portal-windows-vm.md).
 
 ## Enable a system-assigned managed identity
 
@@ -48,34 +48,34 @@ You'll need to access **PowerShell** to complete these steps. If you don’t hav
 
 This code generates an access token for Azure Resource Manager.
 
-    ```powershell
-       $response = Invoke-WebRequest -Uri 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https://management.azure.com/' -Method GET -Headers @{Metadata="true"}
-    ```
+```powershell
+    $response = Invoke-WebRequest -Uri 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https://management.azure.com/' -Method GET -Headers @{Metadata="true"}
+```
     
-    > [!NOTE]
-    > The value of the *resource* parameter must be an exact match for what is expected by Microsoft Entra ID. When using the Azure Resource Manager resource ID, you must include the trailing slash in the URI.
+> [!NOTE]
+> The value of the *resource* parameter must be an exact match for what is expected by Microsoft Entra ID. When using the Azure Resource Manager resource ID, you must include the trailing slash in the URI.
     
-    Next, extract the full response, which is stored as a JavaScript Object Notation (JSON) formatted string in the `$response` object. 
+Next, extract the full response, which is stored as a JavaScript Object Notation (JSON) formatted string in the `$response` object. 
     
-    ```powershell
-    $content = $response.Content | ConvertFrom-Json
-    ```
-    Next, extract the access token from the response.
+```powershell
+$content = $response.Content | ConvertFrom-Json
+```
+Next, extract the access token from the response.
     
-    ```powershell
-    $ArmToken = $content.access_token
-    ```
+```powershell
+$ArmToken = $content.access_token
+\```
     
-    Finally, call Azure Resource Manager using the access token. This example shows using the `Invoke-WebRequest` cmdlet to make the call to Azure Resource Manager and includes the access token in the Authorization header.
+Finally, call Azure Resource Manager using the access token. This example shows using the `Invoke-WebRequest` cmdlet to make the call to Azure Resource Manager and includes the access token in the Authorization header.
     
-    ```powershell
-    (Invoke-WebRequest -Uri https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroups/<RESOURCE GROUP>?api-version=2016-06-01 -Method GET -ContentType "application/json" -Headers @{ Authorization ="Bearer $ArmToken"}).content
-    ```
-    > [!NOTE] 
-    > The URL is case-sensitive, so ensure you use the exact case as you used earlier when you named the Resource Group. Also use the uppercase "G" in *resourceGroups*.
+```powershell
+(Invoke-WebRequest -Uri https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroups/<RESOURCE GROUP>?api-version=2016-06-01 -Method GET -ContentType "application/json" -Headers @{ Authorization ="Bearer $ArmToken"}).content
+```
+> [!NOTE] 
+> The URL is case-sensitive, so ensure you use the exact case as you used earlier when you named the Resource Group. Also use the uppercase "G" in *resourceGroups*.
         
-    The following command returns the details of the resource group:
+The following command returns the details of the resource group:
 
-    ```powershell
-    {"id":"/subscriptions/aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e/resourceGroups/DevTest","name":"DevTest","location":"westus","properties":{"provisioningState":"Succeeded"}}
-    ```
+```powershell
+{"id":"/subscriptions/aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e/resourceGroups/DevTest","name":"DevTest","location":"westus","properties":{"provisioningState":"Succeeded"}}
+```
