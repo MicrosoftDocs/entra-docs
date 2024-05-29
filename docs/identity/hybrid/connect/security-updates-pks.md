@@ -20,9 +20,9 @@ To take advantage of our latest security improvements, we strongly encourage cus
 
 - Microsoft Entra Connect: version X or higher 
 - Microsoft Entra Connect Health 
-- Connect Sync agent: version 2.3.2.0 or higher 
-- ADDS agent: version X or higher 
-- ADFS agent: version X or higher 
+     - Connect Sync agent: version 2.3.2.0 or higher 
+     - AD DS agent: version X or higher 
+     - AD FS agent: version X or higher 
 
 
 
