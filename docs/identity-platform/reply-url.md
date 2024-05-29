@@ -1,6 +1,6 @@
 ---
-title: Redirect URI (reply URL) outline and restrictions
-description: A description of the restrictions and limitations on redirect URI (reply URL) format enforced by the Microsoft identity platform.
+title: Redirect URI (reply URL) best practices and limitations
+description: A description of the best practices and limitations of redirect URIs in the Microsoft identity platform.
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
@@ -14,24 +14,24 @@ ms.topic: reference
 
 # Redirect URI (reply URL) outline and restrictions
 
-A redirect URI, or reply URL, is the location where the Entra authorization server sends the user once they have successfully authorized and been granted an authorization code or access token. The redirect URI is a critical security feature that ensures authorization codes and access tokens are sent only to the intended recipient. This article outlines the features and restrictions of redirect URIs in the Microsoft identity platform.
+A redirect URI, or reply URL, is the location where the Entra authorization server sends the user once they have successfully authorized and been granted an authorization code or access token. To sign in a user, your app must send a login request to the Entra authorization endpoint, with a redirect URI specified as a parameter. The Entra authentication server will check if the redirect URI it receives has been added to the app registration. The redirect URI is a critical security feature that ensures authorization codes and access tokens are sent only to the intended recipient. This article outlines the features and restrictions of redirect URIs in the Microsoft identity platform.
 
 ## Why a redirect URI needs to be added to an app registration
 
-For security reasons, an Entra authorization server will not redirect users or send tokens to a URI that is not added to the app registration. Entra login servers only redirect users and send tokens to redirect URIs that have been added to an app registration. If the redirect URI specified in the login request doesn’t match any of the redirect URIs you have added in your application, you'll receive an error message such as `AADSTS50011: The reply URL specified in the request does not match the reply URLs configured for the application`.
+For security reasons, the Entra authorization server will not redirect users or send tokens to a URI that is not added to the app registration. Entra login servers only redirect users and send tokens to redirect URIs that have been added to an app registration. If the redirect URI specified in the login request doesn’t match any of the redirect URIs you have added in your application, you'll receive an error message such as `AADSTS50011: The reply URL specified in the request does not match the reply URLs configured for the application`. For more information on error codes, see [Microsoft Entra authentication and authorization error codes](reference-error-codes.md).
 
-## What platforms require a redirect URI?
+### What platforms require a redirect URI?
 
 If the application you're building contains one or multiple redirect URIs in your app registration, you'll need to enable a [public client flow configuration](msal-client-applications.md). The following tables provide guidance on the type of redirect URI you should or shouldn't add based on the platform you're building your application on.
 
-### Web application redirect URI configuration
+#### Web application redirect URI configuration
 
 | Type of your application | Typical languages/Frameworks | Platform to add redirect URI in App Registration |
 |--------------------------|------------------------------|--------------------------------------------------|
 | A traditional web application where most of the application logic is performed on the server | Node.js, web, ASP.NET, Python, Java, ASP.NET Core, PHP, Ruby, Blazor Server | Web |
 | A single-page application where most of the user interface logic is performed in a web browser communicating with the web server primarily using web APIs | JavaScript, Angular, React, Blazor WebAssembly, Vue.js | Single-page application (SPA) |
 
-### Mobile and desktop application redirect URI configuration
+#### Mobile and desktop application redirect URI configuration
 
 | Type of your application | Typical languages/Frameworks | Platform to add redirect URI in App Registration |
 |--------------------------|------------------------------|--------------------------------------------------|
@@ -47,8 +47,7 @@ If you are building an iOS app using one of the following methods, please use **
  - iOS apps implementing our OAuth protocols directly 
  - macOS apps using cross-plat tech we don't support (Electron)
 
-
-### Applications that do not require a redirect URI
+#### Applications that do not require a redirect URI
 
 | Type of application | Examples/notes | Associated OAuth flow |
 |---------------------|----------------|-----------------------|

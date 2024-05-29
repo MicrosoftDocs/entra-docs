@@ -217,7 +217,7 @@ https://login.microsoftonline.com/{tenant}/oauth2/v2.0/logout?post_logout_redire
 | `tenant` |required |The `{tenant}` value in the path of the request can be used to control who can sign into the application. The allowed values are `common`, `organizations`, `consumers`, and tenant identifiers. For more detail, see [protocol basics](./v2-protocols.md#endpoints). |
 | `post_logout_redirect_uri` | recommended | The URL that the user should be returned to after logout completes. This value must match one of the redirect URIs registered for the application. If not included, the user will be shown a generic message by the Microsoft identity platform. |
 
-## Next steps
+## See also
 
-* Go over the [MSAL JS samples](sample-v2-code.md) to get started coding.
-* Review the [authorization code flow](v2-oauth2-auth-code-flow.md) as a newer, better alternative to the implicit grant. 
+- Go over the [MSAL JS samples](sample-v2-code.md) to get started coding.
+- Review the [authorization code flow](v2-oauth2-auth-code-flow.md) as a newer, better alternative to the implicit grant. 

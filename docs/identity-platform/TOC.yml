@@ -785,7 +785,7 @@
         - name: Application manifest
           displayName: app manifest
           href: reference-app-manifest.md
-        - name: Redirect URI (reply URL) outline and restrictions
+        - name: Redirect URI (reply URL) best practices and limitations
           href: reply-url.md
         - name: Validation differences by supported account types
           href: supported-accounts-validation.md

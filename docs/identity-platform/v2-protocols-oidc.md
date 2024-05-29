@@ -331,7 +331,7 @@ post_logout_redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
 > [!NOTE]
 > After successful sign-out, the active sessions will be set to inactive. If a valid Primary Refresh Token (PRT) exists for the signed-out user and a new sign-in is executed, SSO will be interrupted and user will see a prompt with an account picker. If the option selected is the connected account that refers to the PRT, sign-in will proceed automatically without the need to insert fresh credentials.  
 
-## Single sign-out (SS0)
+## Single sign-out
 
 When you redirect the user to the `end_session_endpoint`, the Microsoft identity platform clears the user's session from the browser. However, the user may still be signed in to other applications that use Microsoft accounts for authentication. To enable those applications to sign the user out simultaneously, the Microsoft identity platform sends an HTTP GET request to the registered `LogoutUrl` of all the applications that the user is currently signed in to. Applications must respond to this request by clearing any session that identifies the user and returning a `200` response. If you wish to support single sign-out in your application, you must implement such a `LogoutUrl` in your application's code. You can set the `LogoutUrl` from the app registration portal.
 
