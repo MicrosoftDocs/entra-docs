@@ -35,8 +35,6 @@ This guide uses a sample Windows Presentation Foundation (WPF) application to sh
 
 ## Grant admin consent
 
-Since this app signs in users, add delegated permissions:
-
 [!INCLUDE [active-directory-b2c-grant-delegated-permissions](./includes/register-app/grant-api-permission-sign-in.md)] 
 
 ## Create a user flow 
