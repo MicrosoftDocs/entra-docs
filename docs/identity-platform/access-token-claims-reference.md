@@ -70,6 +70,9 @@ The Microsoft identity platform uses some claims to help secure tokens for reuse
 | `ver` | String, either `1.0` or `2.0` | Indicates the version of the access token. | |
 | `xms_cc` | JSON array of strings | Indicates whether the client application that acquired the token is capable of handling claims challenges. It's often used along with claim `acrs`. This claim is commonly used in Conditional Access and Continuous Access Evaluation scenarios. The resource server or service application that the token is issued for controls the presence of this claim in a token. A value of `cp1` in the access token is the authoritative way to identify that a client application is capable of handling a claims challenge. For more information, see [Claims challenges, claims requests and client capabilities](claims-challenge.md?tabs=dotnet). |
 
+> [!Note]
+> The `roles`, `groups`, and `wids` claims are not an exhaustive list of how a resource might authorize a user or application. 
+
 ### Groups overage claim
 
 Microsoft Entra ID limits the number of object IDs that it includes in the groups claim to stay within the size limit of the HTTP header. If a user is a member of more groups than the overage limit (150 for SAML tokens, 200 for JWT tokens, and only 6 if issued by using the implicit flow), then Microsoft Entra ID doesn't emit the groups claim in the token. Instead, it includes an overage claim in the token that indicates to the application to query the Microsoft Graph API to retrieve the group membership of the user.
