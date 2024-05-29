@@ -76,7 +76,7 @@ To enable authentication and access to Microsoft Graph resources, configure the 
     - `ENTER_YOUR_SIGNATURE_HASH_HERE` and replace it with the **Signature Hash** that you generated earlier when you added the platform redirect URL.
 
 1. Open */app/src/main/java/com/azuresamples/msaldelegatedandroidkotlinsampleapp/MainActivity.kt* file.
-1. Find property named `scopes` and set the scopes recorded in [Delegated permission to Microsoft Graph](#delegated-permission-to-microsoft-graph).
+1. Find property named `scopes` and set the scopes recorded in [Grant admin consent](#grant-admin-consent). If you haven't recorded any scopes, you can leave this scope list empty.
 
     ```kotlin
     private const val scopes = "" // Developers should set the respective scopes of their Microsoft Graph resources here. For example, private const val scopes = "api://{clientId}/{ToDoList.Read} api://{clientId}/{ToDoList.ReadWrite}"
