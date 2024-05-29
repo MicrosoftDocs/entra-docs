@@ -100,10 +100,10 @@ The email one-time passcode feature is now turned on by default for all new tena
 
 1. Browse to **Identity** > **External Identities** > **All identity providers**.
 
-1. In the **Configured identity providers** list, select **Email one-time passcode**.
+1. On the **Built-in** tab, next to Email one-time passcode, select **Configured**.
 
 1. Under **Email one-time passcode for guests**, select one of the following:
-   - **Yes**: The toggle is set to **Yes** by default unless the feature has been explicitly turned it off. To enable the feature, make sure **Yes** is selected.
+   - **Yes**: The toggle is set to **Yes** by default unless the feature has been explicitly turned off. To enable the feature, make sure **Yes** is selected.
    - **No**: If you want to disable the email one-time passcode feature, select **No**.
  
 :::image type="content" source="media/one-time-passcode/email-one-time-passcode-toggle.png" alt-text="Screenshots showing the Email one-time passcode toggle.":::
