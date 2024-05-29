@@ -93,7 +93,7 @@ The following are sample scenarios where users might be prompted to register or 
 - *SSPR registration enforced:* Users are asked to register during sign-in. They register only SSPR methods.
 - *SSPR refresh enforced:* Users are required to review their security info at an interval set by the admin. Users are shown their info and can confirm the current info or make changes if needed.
 
-When registration is enforced, users are shown the minimum number of methods needed to be compliant with both multifactor authentication and SSPR policies, from most to least secure. Users going through combined registration where both MFA and SSPR registration are enforced and the SSPR policy requires two methods will first be required to register an MFA method as the first method and can select another MFA or SSPR specific method as the second registered method (e.g. email, security questions etc.)
+When registration is enforced, users are shown the minimum number of methods needed to be compliant with both multifactor authentication and SSPR policies, from most to least secure. Users going through combined registration where both MFA and SSPR registration are enforced and the SSPR policy requires two methods will first be required to register an MFA method as the first method and can select another MFA or SSPR specific method as the second registered method (such as email, security questions, and so on)
 
 Consider the following example scenario:
 
@@ -177,7 +177,7 @@ Or, you can specify a tenant by URL to access security information.
 > 
 > IE11 is not officially supported for creating a webview or browser in applications as it will not work as expected in all scenarios.
 > 
-> Applications that have not been updated and are still using Azure AD Authentication Library (ADAL) that rely on legacy webviews can fallback to older versions of IE. In these scenarios, users will experience a blank page when directed to the My Sign-ins page. To resolve this issue, switch to a modern browser.
+> Applications that have not been updated and are still using Azure AD Authentication Library (ADAL) that rely on legacy webviews can fallback to older versions of, that is, In these scenarios, users will experience a blank page when directed to the My Sign-ins page. To resolve this issue, switch to a modern browser.
 
 ## Next steps
 

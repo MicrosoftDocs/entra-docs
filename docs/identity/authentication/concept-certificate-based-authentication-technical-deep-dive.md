@@ -265,10 +265,10 @@ For cloud-only accounts you can map multiple certificates (up to 5) for use by p
 `X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<SR>b24134139f069b49997212a86ba0ef48`\
 `X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<SR>c11154138u089b48767212a86cd0ef76`
  
-In this example the first value represents X509Certificate1 and the second value represents X509Certificate2. The user may present either certificate at sign-in and as long as the CBA Username Binding is set to point to the certificateUserIds field to look for the particular binding type (i.e. Issuer+SerialNumber in this example), then the user will successfully sign-in. 
+In this example the first value represents X509Certificate1 and the second value represents X509Certificate2. The user may present either certificate at sign-in and as long as the CBA Username Binding is set to point to the certificateUserIds field to look for the particular binding type (that is, Issuer+SerialNumber in this example), then the user will successfully sign-in. 
 
 **Hybrid Synchronized accounts**
-For synchronized accounts you can map multiple certificates for use by populating the altSecurityIdentities field in AD the values identifying each certificate. If the organization is using high affinity (i.e. strong authentication) bindings say Issuer + SerialNumber, this could look like the following: 
+For synchronized accounts you can map multiple certificates for use by populating the altSecurityIdentities field in AD the values identifying each certificate. If the organization is using high affinity (that is, strong authentication) bindings say Issuer + SerialNumber, this could look like the following: 
  
 `X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<SR>b24134139f069b49997212a86ba0ef48`\
 `X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<SR>c11154138u089b48767212a86cd0ef76`
@@ -282,9 +282,9 @@ There are scenarios where an organization needs the user to use the same certifi
 > It is not a very secure configuration to use same credential to authenticate into different Entra ID accounts and it is recommended not to allow one certificate for multiple Entra user accounts.
 
 **Cloud only accounts**
-For cloud-only accounts you need to create multiple username bindings and need to map unique values to each user account that will be utilizing the certificate. Each account will be authenticated into using a different username binding. This applies within the boundary of a single directory/tenant (i.e. Tenant admin can map the certificate for use in another directory/tenant as well, as long as the values remain unique per account too).  
+For cloud-only accounts you need to create multiple username bindings and need to map unique values to each user account that will be utilizing the certificate. Each account will be authenticated into using a different username binding. This applies within the boundary of a single directory/tenant (that is, Tenant admin can map the certificate for use in another directory/tenant as well, as long as the values remain unique per account too).  
  
-Populate the certificateUserIds field (Authorization info in the User Portal) with a unique value identifying the desired certificate. If the organization is using high affinity bindings (i.e. strong authentication) bindings say Issuer + SerialNumber and SKI, this could look like the following: 
+Populate the certificateUserIds field (Authorization info in the User Portal) with a unique value identifying the desired certificate. If the organization is using high affinity bindings (that is, strong authentication) bindings say Issuer + SerialNumber and SKI, this could look like the following: 
 
 Username bindings:
 - Issuer + Serial Number -> CertificateUserIds
@@ -300,9 +300,9 @@ Now, when either user presents the same certificate at sign-in the user will suc
 > The number of accounts that can be used in this manner is limited by the number of username bindings configured on the tenant. If the organization is using only High Affinity bindings the number of accounts supported will be limited to 3. If the organization is also utilizing low affinity bindings then this number increases to 7 accounts (1 PrincipalName, 1 RFC822Name, 1 SubjectKeyIdentifier, 1 SHA1PublicKey, 1 Issuer+Subject, 1 Issuer+SerialNumber, 1 Subject).
 
 **Hybrid Synchronized accounts**
-For synchronized accounts the approach will be different. While the tenant admin can map unique values to each user account that will be utilizing the certificate, the common practice of populating all values to each account in Entra ID would make this difficult. Instead, Azure AD Connect should filter the desired values per account to unique values populated into the account in Entra ID. The uniqueness rule applies within the boundary of a single directory/tenant (i.e. Tenant admin can map the certificate for use in another directory/tenant as well, as long as the values remain unique per account too). Further, the organization may have multiple AD forests contributing users into a single Entra ID tenant. In this case Azure AD Connect will apply the filter to each of these AD forests with the same goal to populate only a desired unique value to the cloud account. 
+For synchronized accounts the approach will be different. While the tenant admin can map unique values to each user account that will be utilizing the certificate, the common practice of populating all values to each account in Entra ID would make this difficult. Instead, Azure AD Connect should filter the desired values per account to unique values populated into the account in Entra ID. The uniqueness rule applies within the boundary of a single directory/tenant (that is, Tenant admin can map the certificate for use in another directory/tenant as well, as long as the values remain unique per account too). Further, the organization may have multiple AD forests contributing users into a single Entra ID tenant. In this case Azure AD Connect will apply the filter to each of these AD forests with the same goal to populate only a desired unique value to the cloud account. 
 
-Populate the altSecurityIdentities field in AD with the values identifying the desired certificate and to include the desired certificate value for that user account type (e.g. detailee, admin, developer, etc.). Select a key attribute in AD which will tell the synchronization which user account type the user is evaluating (e.g. msDS-cloudExtensionAttribute1). Populate this attribute with the user type value you desire such as detailee, admin, or developer. If this is the user’s primary account, the value can be left empty/null. 
+Populate the altSecurityIdentities field in AD with the values identifying the desired certificate and to include the desired certificate value for that user account type (such as detailee, admin, developer, and so on). Select a key attribute in AD which will tell the synchronization which user account type the user is evaluating (such as msDS-cloudExtensionAttribute1). Populate this attribute with the user type value you desire such as detailee, admin, or developer. If this is the user’s primary account, the value can be left empty/null. 
  
 The accounts could look like the following: 
  

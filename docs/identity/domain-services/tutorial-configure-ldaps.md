@@ -68,7 +68,7 @@ The certificate you request or create must meet the following requirements. Your
 * **Key usage** - The certificate must be configured for *digital signatures* and *key encipherment*.
 * **Certificate purpose** - The certificate must be valid for TLS server authentication.
 
-There are several tools available to create self-signed certificate such as OpenSSL, Keytool, MakeCert, [New-SelfSignedCertificate][New-SelfSignedCertificate] cmdlet, etc.
+There are several tools available to create self-signed certificate such as OpenSSL, Keytool, MakeCert, [New-SelfSignedCertificate][New-SelfSignedCertificate] cmdlet, and so on.
 
 In this tutorial, let's create a self-signed certificate for secure LDAP using the [New-SelfSignedCertificate][New-SelfSignedCertificate] cmdlet.
 
