@@ -33,12 +33,14 @@ The following diagram shows what the entire implicit sign-in flow looks like and
 
 The implicit grant is only reliable for the initial, interactive portion of your sign-in flow, where the lack of [third party cookies](reference-third-party-cookies-spas.md) doesn't impact your application. This limitation means you should use it exclusively as part of the hybrid flow, where your application requests a code as well as a token from the authorization endpoint. In a hybrid flow, your application receives a code that can be redeemed for a refresh token, thus ensuring your app's login session remains valid over time.
 
-### When should you allow access token or ID token to be issued when requested using implicit grant or hybrid flow 
+### When should you allow an access token or ID token to be issued when requested using implicit grant or hybrid flow 
 
-The implicit grant and hybrid flow are not as secure as other OAuth flows. Unless absolutely required, you shouldn’t allow an access or ID token to be issued when requested using implicit grant or hybrid flow. If you (or your developers) are using MSAL (Microsoft Authentication Library) in your application to implement authentication and authorization, then neither field needs to be enabled. However, if you (or your developers) are not using MSAL in your application, then please view the following table to understand when access token or ID token should be enabled.
+The implicit grant and hybrid flow are not as secure as other OAuth flows. Unless absolutely required, you shouldn’t allow an access or ID token to be issued when requested using implicit grant or hybrid flow in your app registration. If you (or your developers) are using MSAL (Microsoft Authentication Library) in your application to implement authentication and authorization, then neither field needs to be enabled.
+
+However, if you (or your developers) are not using MSAL in your application, then please view the following table to understand when access token or ID token should be enabled.
 
 | Type of application you are building | Tokens you should enable in App Registration |
-| --- | --- |
+| ------------------------------------ | -------------------------------------------- |
 | A SPA (single-page application) that doesn't use the authorization code flow with PKCE | Access tokens & ID tokens |
 | A web or SPA application that calls a web API via JavaScript using implicit flow | Access tokens & ID tokens |
 | An ASP.NET Core web app and other web apps that use hybrid authentication | ID tokens |
