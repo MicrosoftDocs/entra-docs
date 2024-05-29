@@ -151,8 +151,7 @@ The Usage Analytics feature needs to gather and analyze data, so the Microsoft E
 
 The "basic" audit level is enabled by default. For more information, see [AD FS audit enhancement in Windows Server 2016](/windows-server/identity/ad-fs/technical-reference/auditing-enhancements-to-ad-fs-in-windows-server).
 
- #### Verify verbose logging
- To verify verbose logging is enabled do the following.
+ #### Verify verbose logging To verify verbose logging is enabled do the following.
 
  1. Open a PowerShell window and run the following command:
 

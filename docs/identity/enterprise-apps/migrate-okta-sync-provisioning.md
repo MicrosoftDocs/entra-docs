@@ -44,8 +44,7 @@ To use Microsoft Entra Connect, you need to sign in with a Hybrid Identity Admin
 
 The ImmutableID attribute ties synchronized objects to their on-premises counterparts. Okta takes the Active Directory objectGUID of an on-premises object and converts it to a Base-64-encoded string. By default, it then stamps that string to the ImmutableID field in Microsoft Entra ID.
 
-You can connect to Microsoft Graph PowerShell and examine the current ImmutableID value. If you haven't used the Microsoft Graph PowerShell module, run
-it in an administrative session before you run commands:
+You can connect to Microsoft Graph PowerShell and examine the current ImmutableID value. If you haven't used the Microsoft Graph PowerShell module, run it in an administrative session before you run commands:
 
 If you have the module, a warning might appear to update to the latest version.
 

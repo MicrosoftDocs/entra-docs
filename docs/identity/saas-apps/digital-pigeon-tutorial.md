@@ -79,10 +79,10 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 
 1. Now in Microsoft Entra ID, in the **Basic SAML Configuration** section, perform the following steps:
 
-    a. In the **Identifier** textbox, paste the value from _Digital Pigeon > Account Settings > SSO > **SP Entity ID**_.
+    a. In the **Identifier** textbox, paste the value from *Digital Pigeon > Account Settings > SSO > **SP Entity ID***.
     It should match the following pattern: `https://digitalpigeon.com/saml2/service-provider-metadata/<CustomerID>`
 
-    b. In the **Reply URL** textbox, paste the value from _Digital Pigeon > Account Settings > SSO > **SP ACS URL**_.
+    b. In the **Reply URL** textbox, paste the value from *Digital Pigeon > Account Settings > SSO > **SP ACS URL***.
     It should match the following pattern: `https://digitalpigeon.com/login/saml2/sso/<CustomerID>`  
 
 1. Click **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:

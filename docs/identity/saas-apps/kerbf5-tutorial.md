@@ -473,8 +473,7 @@ This adds the new Active Directory server to the Active Directory Servers list.
     **Example:**
     * setspn –A **host/big-ipuser.superdemo.live** big-ipuser
 
-* **Step 3:** SPN Delegation (for the App Service Account)
-    Setup the appropriate Delegation for the F5 Delegation Account.
+* **Step 3:** SPN Delegation (for the App Service Account) Setup the appropriate Delegation for the F5 Delegation Account.
     In the example below, APM Delegation account is being configured for KCD for FRP-App1.superdemo. live app.
 
     ![F5 (Kerberos) configuration](./media/kerbf5-tutorial/configure43.png)

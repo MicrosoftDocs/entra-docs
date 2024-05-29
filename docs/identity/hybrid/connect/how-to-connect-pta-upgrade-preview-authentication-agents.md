@@ -19,7 +19,7 @@ ms.author: billmath
 
 ## Overview
 
-This article is for customers using Microsoft Entra pass-through authentication through preview. We recently upgraded (and rebranded) the Authentication Agent software. You need to _manually_ upgrade preview Authentication Agents installed on your on-premises servers. This manual upgrade is a one-time action only. All future updates to Authentication Agents are automatic. The reasons to upgrade are as follows:
+This article is for customers using Microsoft Entra pass-through authentication through preview. We recently upgraded (and rebranded) the Authentication Agent software. You need to *manually* upgrade preview Authentication Agents installed on your on-premises servers. This manual upgrade is a one-time action only. All future updates to Authentication Agents are automatic. The reasons to upgrade are as follows:
 
 - The preview versions of Authentication Agents won't receive any further security or bug fixes.
 - The preview versions of Authentication Agents can't be installed on other servers, for high availability.
@@ -70,7 +70,7 @@ You need upgrade Microsoft Entra Connect before upgrading the Authentication Age
 5. **Verify that the latest version has been installed**: As shown before, go to **Control Panel -> Programs -> Programs and Features** and verify that there's an entry for "**Microsoft Entra Connect Authentication Agent**".
 
 > [!NOTE]
-> If you check the Pass-through Authentication blade on the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator). after completing the preceding steps, you'll see two Authentication Agent entries per server - one entry showing the Authentication Agent as **Active** and the other as **Inactive**. This is _expected_. The **Inactive** entry is automatically dropped after a few days.
+> If you check the Pass-through Authentication blade on the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator). after completing the preceding steps, you'll see two Authentication Agent entries per server - one entry showing the Authentication Agent as **Active** and the other as **Inactive**. This is *expected*. The **Inactive** entry is automatically dropped after a few days.
 
 ## Upgrading the Authentication Agent on other servers
 
@@ -82,7 +82,7 @@ Follow these steps to upgrade Authentication Agents on other servers (where Micr
 4. **Verify that the latest version has been installed**: As shown before, go to **Control Panel -> Programs -> Programs and Features** and verify that there's an entry called **Microsoft Entra Connect Authentication Agent**.
 
 > [!NOTE]
-> If you check the Pass-through Authentication blade on the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator) after completing the preceding steps, you'll see two Authentication Agent entries per server - one entry showing the Authentication Agent as **Active** and the other as **Inactive**. This is _expected_. The **Inactive** entry is automatically dropped after a few days.
+> If you check the Pass-through Authentication blade on the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator) after completing the preceding steps, you'll see two Authentication Agent entries per server - one entry showing the Authentication Agent as **Active** and the other as **Inactive**. This is *expected*. The **Inactive** entry is automatically dropped after a few days.
 
 ## Next steps
 - [**Troubleshoot**](tshoot-connect-pass-through-authentication.md) - Learn how to resolve common issues with the feature.

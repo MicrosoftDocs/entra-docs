@@ -169,8 +169,7 @@ In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by 
 
 1. Log in to your Contentstack company site as an administrator.
 
-1. Go to the Organization Settings page and click
-on the **Single Sign-On** tab on the left menu.
+1. Go to the Organization Settings page and click on the **Single Sign-On** tab on the left menu.
 
 1. In the **Single Sign-On** page, navigate to **SSO Configuration** section and perform the following steps:
 

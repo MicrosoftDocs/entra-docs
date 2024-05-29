@@ -190,4 +190,4 @@ Another way to monitor Authentication Agents is to track specific Performance Mo
 ![Pass-through Authentication Performance Monitor counters](./media/tshoot-connect-pass-through-authentication/pta12.png)
 
 > [!IMPORTANT]
-> Pass-through Authentication provides high availability using multiple Authentication Agents, and _not_ load balancing. Depending on your configuration, _not_ all your Authentication Agents receive roughly _equal_ number of requests. It is possible that a specific Authentication Agent receives no traffic at all.
+> Pass-through Authentication provides high availability using multiple Authentication Agents, and *not* load balancing. Depending on your configuration, *not* all your Authentication Agents receive roughly *equal* number of requests. It is possible that a specific Authentication Agent receives no traffic at all.

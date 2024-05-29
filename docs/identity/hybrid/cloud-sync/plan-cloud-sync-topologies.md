@@ -58,15 +58,13 @@ This scenario is topology is similar to the multi-forest scenario, however this 
 
 
 ### Piloting Microsoft Entra Cloud Sync in an existing hybrid AD forest
-![Topology for a single forest and a single tenant](media/tutorial-migrate-aadc-aadccp/diagram-2.png)
-The piloting scenario involves the existence of both Microsoft Entra Connect and Microsoft Entra Cloud Sync in the same forest and scoping the users and groups accordingly. NOTE: An object should be in scope in only one of the tools. 
+![Topology for a single forest and a single tenant](media/tutorial-migrate-aadc-aadccp/diagram-2.png) The piloting scenario involves the existence of both Microsoft Entra Connect and Microsoft Entra Cloud Sync in the same forest and scoping the users and groups accordingly. NOTE: An object should be in scope in only one of the tools. 
 
 For an example of this scenario see [Tutorial: Pilot Microsoft Entra Cloud Sync in an existing synced AD forest](tutorial-pilot-aadc-aadccp.md)
 
 ### Merging objects from disconnected sources 
 #### (Public Preview)
-![Diagram for merging objects from disconnected sources](media/plan-cloud-provisioning-topologies/attributes-multiple-sources.png)
-In this scenario, the attributes of a user are contributed to by two disconnected Active Directory forests. 
+![Diagram for merging objects from disconnected sources](media/plan-cloud-provisioning-topologies/attributes-multiple-sources.png) In this scenario, the attributes of a user are contributed to by two disconnected Active Directory forests. 
 
 An example would be:
 
