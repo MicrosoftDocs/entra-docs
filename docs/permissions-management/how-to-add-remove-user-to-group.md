@@ -26,11 +26,9 @@ This article describes how you can add or remove a new user for a group in Permi
 1. From the group's **Manage** menu, click **Members**.
 1. Click **+ Add members**, then search for the user you want to add from the list.
     > [!NOTE]
-    > In order to add a user to a group, you must be the group owner. If you're not the owner of the           
-      selected group, please reach out to the group owner. If you don't know who the owner of the group is, select **Owners** under the group's **Manage** menu.
-7. Click **Select**. Your user has been added. 
-8. Click the **Refresh** button to refresh your screen and view the user you've added.
-
+    > In order to add a user to a group, you must be the group owner. If you're not the owner of the selected group, please reach out to the group owner. If you don't know who the owner of the group is, select **Owners** under the group's **Manage** menu.
+1. Click **Select**. Your user has been added. 
+1. Click the **Refresh** button to refresh your screen and view the user you've added.
 
 ## Remove a user
 
