@@ -28,7 +28,7 @@ manager: CelesteDG
 
 <sup>(1)</sup> [Universal License Terms for Online Services][preview-tos] apply to libraries in *Public preview*.
 
-<sup>(2)</sup> The [Microsoft.IdentityModel](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet) library only _validates_ tokens - it can't request ID or access tokens.
+<sup>(2)</sup> The [Microsoft.IdentityModel](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet) library only *validates* tokens - it can't request ID or access tokens.
 
 <!--Image references-->
 

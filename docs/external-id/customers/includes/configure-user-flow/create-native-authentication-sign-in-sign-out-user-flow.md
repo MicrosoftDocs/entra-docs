@@ -21,7 +21,7 @@ Follow these steps to create a user flow.
 1. Select **+ New user flow**. 
 1. On the **Create** page: 
  
-   1. Enter a **Name** for the user flow, such as _SignInSignUpSample_. 
+   1. Enter a **Name** for the user flow, such as *SignInSignUpSample*. 
    1. In the **Identity providers** list, select **Email Accounts**. This identity provider allows users to sign-in or sign-up using their email address. 
    1. Under **Email accounts**, you can select one of the two options. For this tutorial, select **Email one-time passcode**. 
  

@@ -158,10 +158,7 @@ Specifically, when an access package policy has been enabled to call out a custo
 The resume request can be sent back for the following stages:  
 
 ``
-microsoft.graph.accessPackageCustomExtensionStage.assignmentRequestCreated 
-microsoft.graph.accessPackageCustomExtensionStage.assignmentRequestApproved 
-microsoft.graph.accessPackageCustomExtensionStage.assignmentRequestGranted 
-microsoft.graph.accessPackageCustomExtensionStage.assignmentRequestRemoved
+microsoft.graph.accessPackageCustomExtensionStage.assignmentRequestCreated microsoft.graph.accessPackageCustomExtensionStage.assignmentRequestApproved microsoft.graph.accessPackageCustomExtensionStage.assignmentRequestGranted microsoft.graph.accessPackageCustomExtensionStage.assignmentRequestRemoved
 ``
 
 The following flow diagram shows the entitlement management callout to Logic Apps workflow:
