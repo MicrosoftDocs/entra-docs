@@ -435,10 +435,8 @@ Export-ADSyncToolsHybridAadJoinReport [-DN] <String> [[-Filename] <String>] [<Co
 Export-ADSyncToolsHybridAadJoinReport [-OU] <String> [[-Filename] <String>] [<CommonParameters>]
 ```
 ### DESCRIPTION
-This tool checks for all certificates present in UserCertificate property of a Computer object in AD and, for each non-expired certificate present, validates if the certificate was issued for the Microsoft Entra hybrid join feature (that is, Subject Name is CN={ObjectGUID}).
-Before version 1.4, Microsoft Entra Connect would synchronize to Microsoft Entra any Computer that contained at least one certificate but in Microsoft Entra Connect version 1.4 and later, ADSync engine can identify Microsoft Entra hybrid join certificates and will "cloudfilter" 
-(exclude) the computer object from synchronizing to Microsoft Entra ID unless there's a valid Microsoft Entra hybrid join certificate present.
-Microsoft Entra Device objects that were already synchronized to AD but do not have a valid Microsoft Entra hybrid join certificate will be deleted from Microsoft Entra ID (CloudFiltered=TRUE) by Microsoft Entra Connect.
+This tool checks for all certificates present in UserCertificate property of a Computer object in AD and, for each non-expired certificate present, validates if the certificate was issued for the Microsoft Entra hybrid join feature (that is, Subject Name is CN={ObjectGUID}). Before version 1.4, Microsoft Entra Connect would synchronize to Microsoft Entra any Computer that contained at least one certificate but in Microsoft Entra Connect version 1.4 and later, ADSync engine can identify Microsoft Entra hybrid join certificates and will "cloudfilter" (exclude) the computer object from synchronizing to Microsoft Entra ID unless there's a valid Microsoft Entra hybrid join certificate present. Microsoft Entra Device objects that were already synchronized to AD but do not have a valid Microsoft Entra hybrid join certificate will be deleted from Microsoft Entra ID (CloudFiltered=TRUE) by Microsoft Entra Connect.
+
 ### EXAMPLES
 #### EXAMPLE 1
 ```
