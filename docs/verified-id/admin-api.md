@@ -220,6 +220,7 @@ Don't supply a request body for this method.
 #### Response message
 
 Response message is an array of [Authorities](#authority-type)
+
 Example:
 ```
 HTTP/1.1 200 OK

@@ -95,8 +95,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	> [!NOTE]
 	> Please use the below URL for the Logout URL.
-	```Logout URL
-    https://login.microsoftonline.com/common/wsfederation?wa=wsignout1.0
+	```Logout URL https://login.microsoftonline.com/common/wsfederation?wa=wsignout1.0
     ```
 
 <a name='create-an-azure-ad-test-user'></a>
