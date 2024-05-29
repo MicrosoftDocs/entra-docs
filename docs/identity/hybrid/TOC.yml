@@ -46,7 +46,7 @@
     - name:  Verify your version of sync
       href:  verify-sync-tool-version.md
     - name:  Security hardening for auto-upgrade
-      href:  security-updates-pks.md
+      href:  connect/security-updates-pks.md
   - name: Managing users and groups
     items: 
     - name:  Provision users on-demand
