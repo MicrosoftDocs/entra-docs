@@ -23,7 +23,7 @@ Including the global Azure cloud, Microsoft Entra ID is deployed in the followin
 - Microsoft Azure operated by 21Vianet
 - Azure Germany ([Closed on October 29, 2021](https://www.microsoft.com/cloud-platform/germany-cloud-regions)). Learn more about [Azure Germany migration](#azure-germany-microsoft-cloud-deutschland).
 
-The individual national clouds and the global Azure cloud are cloud _instances_. Each cloud instance is separate from the others and has its own environment and _endpoints_. Cloud-specific endpoints include OAuth 2.0 access token and OpenID Connect ID token request endpoints, and URLs for app management and deployment.
+The individual national clouds and the global Azure cloud are cloud *instances*. Each cloud instance is separate from the others and has its own environment and *endpoints*. Cloud-specific endpoints include OAuth 2.0 access token and OpenID Connect ID token request endpoints, and URLs for app management and deployment.
 
 As you develop your apps, use the endpoints for the cloud instance where you'll deploy the application.
 

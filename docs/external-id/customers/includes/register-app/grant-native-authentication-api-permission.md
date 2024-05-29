@@ -8,7 +8,7 @@ ms.author: henrymbuguakiarie
 ms.manager: mwongerapk
 ---
 
-1. From the **App registrations** page, select the application that you created (such as _ciam-client-app_) to open its **Overview** page. 
+1. From the **App registrations** page, select the application that you created (such as *ciam-client-app*) to open its **Overview** page. 
 1. Under **Manage**, select **API permissions**. 
 1. Under **Configured permissions**, select **Add a permission**. 
 1. Select **Microsoft APIs** tab. 
