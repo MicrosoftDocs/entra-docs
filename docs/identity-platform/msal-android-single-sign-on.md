@@ -111,7 +111,7 @@ Windows:
 keytool -exportcert -alias androiddebugkey -keystore %HOMEPATH%\.android\debug.keystore | openssl sha1 -binary | openssl base64
 ```
 
-Once you've generated a signature hash with _keytool_, use the Azure portal to generate the redirect URI:
+Once you've generated a signature hash with *keytool*, use the Azure portal to generate the redirect URI:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the tenant containing the app registration from the **Directories + subscriptions** menu.
@@ -152,7 +152,7 @@ If you get an `MsalClientException` with error code `"BROKER_BIND_FAILURE"`, the
 It might not be immediately clear that broker integration is working, but you can use the following steps to check:
 
 1. On your Android device, complete a request using the broker.
-1. In the settings on your Android device, look for a newly created account corresponding to the account that you authenticated with. The account should be of type _Work account_.
+1. In the settings on your Android device, look for a newly created account corresponding to the account that you authenticated with. The account should be of type *Work account*.
 
 You can remove the account from settings if you want to repeat the test.
 

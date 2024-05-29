@@ -81,8 +81,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. On the **Basic SAML Configuration** section, the user does not have to perform any step as the app is already pre-integrated with Azure.
 
-1. On the **Basic SAML Configuration** section, if you wish to configure the application in **SP** initiated mode,
-perform the following steps:
+1. On the **Basic SAML Configuration** section, if you wish to configure the application in **SP** initiated mode, perform the following steps:
 
     a. In the **Identifier** text box, type the URL:
     `http://federation.talx.com/adfs/services/trust`

@@ -22,7 +22,8 @@ The Microsoft Entra team regularly updates Microsoft Entra Connect Health with n
 > Microsoft Entra Connect Health agents are updated automatically when new version is released.
 >
 
-Microsoft Entra Connect Health for Sync is integrated with Microsoft Entra Connect installation. Read more about [Microsoft Entra Connect release history](./reference-connect-version-history.md)
+Microsoft Entra Connect Health for Sync is integrated with Microsoft Entra Connect installation. Read more about [Microsoft Entra Connect release history](./reference-connect-version-history.md).
+
 For feature feedback, vote at [Connect Health User Voice channel](https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789)
 
 ## May 2024

@@ -47,8 +47,8 @@ The authority can be:
 
 Microsoft Entra cloud authorities have two parts:
 
-- The identity provider _instance_
-- The sign-in _audience_ for the app
+- The identity provider *instance*
+- The sign-in *audience* for the app
 
 The instance and audience can be concatenated and provided as the authority URL. This diagram shows how the authority URL is composed:
 
@@ -56,7 +56,7 @@ The instance and audience can be concatenated and provided as the authority URL.
 
 ## Cloud instance
 
-The _instance_ is used to specify if your app is signing users from the Azure public cloud or from national clouds. Using MSAL in your code, you can set the Azure cloud instance by using an enumeration or by passing the URL to the [national cloud instance](authentication-national-cloud.md#azure-ad-authentication-endpoints) as the `Instance` member.
+The *instance* is used to specify if your app is signing users from the Azure public cloud or from national clouds. Using MSAL in your code, you can set the Azure cloud instance by using an enumeration or by passing the URL to the [national cloud instance](authentication-national-cloud.md#azure-ad-authentication-endpoints) as the `Instance` member.
 
 MSAL.NET will throw an explicit exception if both `Instance` and `AzureCloudInstance` are specified.
 
