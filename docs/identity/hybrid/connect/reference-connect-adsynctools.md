@@ -1759,7 +1759,10 @@ Update-ADSyncToolsSourceAnchor [[-DistinguishedName] <String>] [-ImmutableIdGUID
  [-Output] <String> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 ### DESCRIPTION
-Updates users with the new ConsistencyGuid (ImmutableId) value taken from the ConsistencyGuid Report This function supports the WhatIf switch Note: ConsistencyGuid Report must be imported with Tab delimiter
+Updates users with the new ConsistencyGuid (ImmutableId) value taken from the ConsistencyGuid Report. This function supports the `-WhatIf` switch.
+
+Note: ConsistencyGuid Report must be imported with Tab delimiter.
+
 ### EXAMPLES
 #### EXAMPLE 1
 ```
