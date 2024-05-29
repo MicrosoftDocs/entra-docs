@@ -41,10 +41,8 @@ This article describes how you can add or remove a new user for a group in Permi
 1. From the groups **Manage** menu, click **Members**.
 1. Search for the user you want to remove from the list, then check the box next to their name.
     > [!NOTE]
-    > In order to remove a user from a group, you must be the group owner. If you're not the owner of the 
-    selected group, please reach out to the group owner. If you don't know who the owner of the group is, select **Owners** under the group's **Manage** menu.
-7. Click **X Remove**, then click **Yes**. The user is removed from the group.
-
+    > In order to remove a user from a group, you must be the group owner. If you're not the owner of the selected group, please reach out to the group owner. If you don't know who the owner of the group is, select **Owners** under the group's **Manage** menu.
+1. Click **X Remove**, then click **Yes**. The user is removed from the group.
 
 ## Next steps
 
