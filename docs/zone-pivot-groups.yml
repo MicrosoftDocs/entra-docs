@@ -189,6 +189,21 @@ groups:
   - id: identity-mi-methods-rest
     title: REST
 # Owner: barclayn
+- id: identity-configure-mi-methods
+  title: Configure managed identities
+  prompt: Choose an option
+  pivots:
+  - id: qs-configure-portal-windows-vm
+    title: Portal
+  - id: qs-configure-cli-windows-vm
+    title: CLI
+  - id: qs-configure-powershell-windows-vm
+    title: PowerShell
+  - id: qs-configure-template-windows-vm
+    title: Resource Manager
+  - id: qs-configure-rest-vm
+    title: REST
+# Owner: barclayn
 - id: identity-mi-scaled-sets
   title: Managed identities methods
   prompt: Choose an option
