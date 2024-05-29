@@ -93,13 +93,15 @@ Ensure during the MDM configuration that the password complexity requirements ar
 
 ### Long running operations
 
-### [macOS 14](#tab/macOS14)
+#### [macOS 14](#tab/macOS14)
 
 If the device registration fails through the Settings application, the Device Registration popup will reappear after about 10 minutes, and you can try again.
 
-### [macOS 13](#tab/macOS13)
+#### [macOS 13](#tab/macOS13)
 
 The device registration can take a few minutes to complete. If the device registration fails, wait a few minutes and try again if prompted.
+
+---
 
 ### SSO auth prompt dialog closed while the registration is in progress
 
