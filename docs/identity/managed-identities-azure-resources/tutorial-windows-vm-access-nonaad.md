@@ -97,6 +97,9 @@ First, we use the VM’s system-assigned managed identity to get an access token
 3. Now that you've created a **Remote Desktop Connection** with the virtual machine, open PowerShell in the remote session.
 4. In PowerShell, invoke the web request on the tenant to get the token for the local host in the specific port for the VM.
 
+> [!NOTE]
+> If using a sovereign cloud, such as GCC-H, use the endpoint 'vault.usgovcloudapi.net' instead of 'vault.azure.net' in the PowerShell commandlet.
+
 The PowerShell request:
 
 ```powershell
