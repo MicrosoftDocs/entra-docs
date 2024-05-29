@@ -216,6 +216,7 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Cognism](~/identity/saas-apps/cognism-tutorial.md) |  | ● |
 | [CoLab](~/identity/saas-apps/colab-tutorial.md) |  | ● |
 | [Collaborative Innovation](~/identity/saas-apps/collaborativeinnovation-tutorial.md) |  | ● |
+| [Collibra](~/identity/saas-apps/collibra-tutorial.md) |  | ● |
 | [Colloquial](~/identity/saas-apps/colloquial-provisioning-tutorial.md) | ● | ● |
 | [Comeet Recruiting Software](~/identity/saas-apps/comeet-recruiting-software-provisioning-tutorial.md) | ● | ● |
 | [Communifire](~/identity/saas-apps/communifire-tutorial.md) |  | ● |
@@ -260,6 +261,7 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Directory Services](~/identity/saas-apps/directory-services-tutorial.md) |  | ● |
 | [directprint.io Cloud Print Administration](~/identity/saas-apps/directprint-io-cloud-print-administration-tutorial.md) |  | ● |
 | [Directprint.io](~/identity/saas-apps/directprint-io-provisioning-tutorial.md) | ● | ● |
+| [Docker](~/identity/saas-apps/docker-tutorial.md) |  | ● |
 | [Documo](~/identity/saas-apps/documo-provisioning-tutorial.md) | ● | ● |
 | [DocuSign](~/identity/saas-apps/docusign-provisioning-tutorial.md) | ● | ● |
 | [Domo](~/identity/saas-apps/domo-tutorial.md) |  | ● |
@@ -888,9 +890,15 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Zip](~/identity/saas-apps/zip-provisioning-tutorial.md) | ● | ● |
 | [Zoho One](~/identity/saas-apps/zoho-one-provisioning-tutorial.md) | ● | ● |
 | [Zoom](~/identity/saas-apps/zoom-provisioning-tutorial.md) | ● | ● |
+| [Zoom for Government](~/identity/saas-apps/zoom-for-government-tutorial.md) |  | ● |
 | [Zscaler](~/identity/saas-apps/zscaler-provisioning-tutorial.md) | ● | ● |
 | [Zscaler B2B User Portal](~/identity/saas-apps/zscaler-b2b-user-portal-tutorial.md) |  | ● |
 | [Zscaler Beta](~/identity/saas-apps/zscaler-beta-provisioning-tutorial.md) | ● | ● |
+| [Zscaler Internet Access ZSCloud](~/identity/saas-apps/zscaler-internet-access-zscloud-tutorial.md) |  | ● |
+| [Zscaler Internet Access ZSNet](~/identity/saas-apps/zscaler-internet-access-zsnet-tutorial.md) |  | ● |
+| [Zscaler Internet Access ZSOne](~/identity/saas-apps/zscaler-internet-access-zsone-tutorial.md) |  | ● |
+| [Zscaler Internet Access ZSThree](~/identity/saas-apps/zscaler-internet-access-zsthree-tutorial.md) |  | ● |
+| [Zscaler Internet Access ZSTwo](~/identity/saas-apps/zscaler-internet-access-zstwo-tutorial.md) |  | ● |
 | [Zscaler One](~/identity/saas-apps/zscaler-one-provisioning-tutorial.md) | ● | ● |
 | [Zscaler Private Access](~/identity/saas-apps/zscaler-private-access-provisioning-tutorial.md) | ● | ● |
 | [Zscaler Three](~/identity/saas-apps/zscaler-three-provisioning-tutorial.md) | ● | ● |
