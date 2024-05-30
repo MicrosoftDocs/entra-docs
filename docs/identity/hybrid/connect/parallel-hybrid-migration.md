@@ -29,12 +29,12 @@ This scenario provides a solution using existing Microsoft toolset to set up Hyb
 ## Pre-requisites
 - For each tenant you're migrating to, there needs to be one Microsoft Entra Connect server.
 - You should create virtual machines for each of the Microsoft Entra Connect servers and they need to be domain joined.
-- Users in your on-premises Active Directory, should be in their own organizational unit (OU).
+- Users, in your on-premises Active Directory, should be in their own organizational unit (OU).
 - Each Microsoft Entra Connect Server will have its synchronization rules scoped to individual OUs.
 - All of the migrating tenants primary domains must be added and verified in Microsoft 365
 - You should be familiar with [Exchange hybrid deployments](/exchange/exchange-hybrid)
-- Make sure that you meet the [Microsoft Entra Connect pre-requisites](how-to-connect-install-prerequisites.md).
-- Make sure that you meet the [pre-requisites for the Hybrid Configuration Wizard](/exchange/hybrid-deployment-prerequisites).
+- Ensure that you meet the [Microsoft Entra Connect prerequisites](how-to-connect-install-prerequisites.md).
+- Ensure that you meet the [prerequisites for the Hybrid Configuration Wizard](/exchange/hybrid-deployment-prerequisites).
 
 ## Parallel Hybrid Migration 
 The following outlines the steps for the multi-organizational on-premises Exchange mailbox migration with Microsoft Entra Connect using a parallel hybrid environment.  Each step must be completed for each tenant that you're migrating to.
@@ -43,7 +43,7 @@ The following outlines the steps for the multi-organizational on-premises Exchan
 
 1. On each of the [virtual machines](/windows-server/virtualization/hyper-v/get-started/create-a-virtual-machine-in-hyper-v?tabs=hyper-v-manager) that were created, [download](https://www.microsoft.com/en-us/download/details.aspx?id=47594) Microsoft Entra Connect.
 2. Install Microsoft Entra Connect using [custom settings](how-to-connect-install-custom.md). 
-3. Scope to the source [on-premises Organizational Unit](how-to-connect-sync-configure-filtering.md#organizational-unitbased-filtering) to the OU that corresponds to the tenant you're synchronizing Microsoft Entra Connect with.
+3. Configure scoping to the source [on-premises Organizational Unit](how-to-connect-sync-configure-filtering.md#organizational-unitbased-filtering) that corresponds to the tenant you're synchronizing Microsoft Entra Connect with.
 
  :::image type="content" source="media/parallel-hybrid-migration/scope-1.png" alt-text="Screenshot of scoping OU." lightbox="media/parallel-hybrid-migration/scope-1.png":::
 
@@ -62,7 +62,7 @@ Once you have configured the Microsoft Entra Connect servers and you have verifi
 
  :::image type="content" source="media/parallel-hybrid-migration/minimal-hybrid-1.png" alt-text="Screenshot of minimal hybrid." lightbox="media/parallel-hybrid-migration/minimal-hybrid-1.png":::
 
- For additional information on Exchange Hybrid see [Exchange hybrid deployments](/exchange/exchange-hybrid)
+ For additional information on Exchange Hybrid, see [Exchange hybrid deployments](/exchange/exchange-hybrid)
 
 ### Step 3 - Exchange Administrative Center
 
@@ -80,7 +80,7 @@ Once you have configured the Microsoft Entra Connect servers and you have verifi
 > Once user provisioning is completed by Microsoft Entra Connect, all users in the organization should be available as MailUser in the Exchange Admin Center and can be selected when creating migration batches.
 
 ### Step 4 - Uninstall Hybrid Configuration Wizard and Microsoft Entra Connect
-Once you have completed the migration, you can uninsatll the HCW and Microsoft Entra Connect on the virtual server. At this point you can remove the server from the domain and turn it off.
+Once you have completed the migration, you can uninstall the HCW and Microsoft Entra Connect on the virtual server. At this point you can remove the server from the domain and turn it off.
 
 ### Step 5 - Repeat for each tenant
 Once you have completed the steps for migration, repeat the steps for all of your remaining tenants.
