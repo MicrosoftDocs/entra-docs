@@ -81,7 +81,8 @@ sections:
           It's important to frequently roll over the Kerberos decryption key of the `AZUREADSSO` computer account (which represents Microsoft Entra ID) created in your on-premises AD forest.
           
           >[!IMPORTANT]
-          >We highly recommend that you roll over the Kerberos decryption key at least every 30 days.
+          >We highly recommend that you roll over the Kerberos decryption key at least every **30 days** using the `Update-AzureADSSOForest` cmdlet.  When using the `Update-AzureADSSOForest` cmdlet, ensure that you *don't* run the `Update-AzureADSSOForest` command more than once per forest. Otherwise, the feature stops working until the time your users' Kerberos tickets expire and are reissued by your on-premises Active Directory.
+          
           
           Follow these steps on the on-premises server where you're running Microsoft Entra Connect:
           
@@ -116,7 +117,7 @@ sections:
           
              >[!IMPORTANT]
              >This doesn't need to be done on servers running Microsoft Entra Connect in staging mode.
-             >Ensure that you *don't* run the `Update-AzureADSSOForest` command more than once per forest. Otherwise, the feature stops working until the time your users' Kerberos tickets expire and are reissued by your on-premises Active Directory.
+             
           
       - question: |
           How can I disable Seamless SSO?
