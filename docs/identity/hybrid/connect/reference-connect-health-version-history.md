@@ -323,8 +323,8 @@ Microsoft Entra Connect Health AD DS and ADFS Health Agents (version 3.2.2256.26
 
 * Alerts for monitoring AD FS and AD FS Proxy servers with email notifications.
 * Easy access to AD FS topology and patterns in AD FS Performance Counters.
-* Trend in successful token requests on AD FS servers grouped by Applications, Authentication Methods, Request Network Location etc.
-* Trends in failed request on AD FS servers grouped by Applications, Error Types etc.
+* Trend in successful token requests on AD FS servers grouped by Applications, Authentication Methods, Request Network Location, and so on.
+* Trends in failed request on AD FS servers grouped by Applications, Error Types, and so on.
 * Simpler Agent Deployment using Microsoft Entra Global Administrator credentials.  
 
 ## Next steps
