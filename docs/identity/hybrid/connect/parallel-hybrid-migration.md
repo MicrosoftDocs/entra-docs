@@ -9,7 +9,7 @@ ms.date: 05/15/2024
 ms.author: billmath
 ---
 
-# Scenario: Multi-organizational on-premises Exchange mailbox migration with Microsoft Entra Connect using a parallel hybrid environment.
+# Scenario: Multi-organizational on-premises Exchange mailbox migration for Hosters using Microsoft Entra Connect and parallel hybrid.
 
 Parallel multi-organizational mailbox migration can be performed from on-premises Exchange 
 Server to Microsoft 365 cloud / Exchange Online using Microsoft Entra Connect. This method offers the following benefits:
