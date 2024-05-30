@@ -31,9 +31,11 @@ For more information, [License requirements](access-reviews-overview.md#license-
 ## Create and perform an access review for guests
 
 First, you must be assigned one of the following roles:
-- global administrator
-- User administrator
+- Global Administrator
+- User Administrator
 - (Preview) Microsoft 365 or Microsoft Entra Security Group owner of the group to be reviewed
+> [!NOTE]
+> Following least privilege access, we recommend using User Administrator or be the Security Group owner for this task.
 
 Then, go to the [Identity Governance page](https://portal.azure.com/#blade/Microsoft_AAD_ERM/DashboardBlade/) to ensure that access reviews is ready for your organization.
 

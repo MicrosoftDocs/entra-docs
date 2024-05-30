@@ -1,13 +1,13 @@
 ---
 title: Known issues for provisioning in Microsoft Entra ID
 description: Learn about known issues when you work with automated application provisioning or cross-tenant synchronization in Microsoft Entra ID.
-author: kenwith
-ms.author: kenwith
+author: jenniferf-skc
+ms.author: jfields
 manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: troubleshooting
-ms.date: 02/02/2024
+ms.date: 05/23/2024
 ms.reviewer: arvinh
 zone_pivot_groups: app-provisioning-cross-tenant-synchronization
 ---
@@ -32,7 +32,7 @@ This article discusses known issues to be aware of when you work with app provis
 
 ### Updating proxyAddresses
 
-ProxyAddresses is a [read-only property in Microsoft Graph](https://learn.microsoft.com/graph/api/resources/user?view=graph-rest-1.0&preserve-view=true#mail-and-proxyaddresses-properties). It can be included as a source attribute in your mappings, but cannot be set as a target attribute. 
+ProxyAddresses is a [read-only property in Microsoft Graph](https://go.microsoft.com/fwlink/?linkid=2272551). It can be included as a source attribute in your mappings, but cannot be set as a target attribute. 
 
 ### Provisioning users
 
@@ -96,7 +96,7 @@ Attribute-mapping expressions can have a maximum of 10,000 characters.
 
 #### Unsupported scoping filters
 
-The **appRoleAssignments**, **userType**, and **accountExpires** attributes aren't supported as scoping filters.
+The **appRoleAssignments**, **userType**, **manager**, and **date-type** attributes (for example, StatusHireDate, startDate, endDate, StatusTerminationDate, accountExpires) aren't supported as scoping filters.
 
 ::: zone pivot="cross-tenant-synchronization"
 #### OtherMails should not be included in your attribute mappings as a target attribute
@@ -159,7 +159,7 @@ Credentials, including the secret token, notification email, and SSO certificate
 
 ::: zone pivot="app-provisioning"
 ## On-premises application provisioning
-The following information is a current list of known limitations with the Microsoft Entra ECMA Connector Host and on-premises application provisioning.
+This is a current list of known limitations with the Microsoft Entra ECMA Connector Host and on-premises application provisioning.
 
 ### Application and directories
 The following applications and directories aren't yet supported.

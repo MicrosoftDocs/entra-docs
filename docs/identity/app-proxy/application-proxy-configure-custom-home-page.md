@@ -104,7 +104,7 @@ You get the ObjectId of the app by searching for the app by its display name or 
    ```console
    DisplayName : SharePoint
    Homepage    : https://sharepoint-iddemo.msappproxy.net/
-   ObjectId    : 8af89bfa-eac6-40b0-8a13-c2c4e3ee22a4
+   ObjectId    : aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb
    ```
 
    Alternatively, you could just pull the list of all apps, search the list for the app with a specific display name or home page, and copy the app's ObjectId once the app is found.
@@ -158,7 +158,7 @@ Create the home page URL, and update your app with that value. Continue using th
    ```console
    DisplayName : SharePoint
    Homepage    : https://sharepoint-iddemo.msappproxy.net/hybrid/
-   ObjectId    : 8af89bfa-eac6-40b0-8a13-c2c4e3ee22a4
+   ObjectId    : bbbbbbbb-1111-2222-3333-cccccccccccc
    ```
 
 1. Restart the app to confirm that the home page appears as the first screen, as expected.

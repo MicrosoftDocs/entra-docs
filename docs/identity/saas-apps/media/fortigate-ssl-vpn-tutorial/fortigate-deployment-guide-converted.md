@@ -112,8 +112,7 @@ The following sections walk you through how to set up the FortiGate VM.
 2. Continue past any certificate errors.
 3. Sign in by using the administrator credentials provided during the FortiGate VM deployment.
 4. In the left menu, select **System** > **Firmware**.
-5. In **Firmware Management**, select **Browse**, and select the firmware file downloaded
-    earlier.
+5. In **Firmware Management**, select **Browse**, and select the firmware file downloaded earlier.
 6. Ignore the warning and select **Backup config and upgrade**.
 
     ![Screenshot of Firmware Management.](backup-configure-upgrade.png)
@@ -133,8 +132,7 @@ The following sections walk you through how to set up the FortiGate VM.
 3. Sign in by using the administrator credentials provided during the FortiGate VM deployment.
 4. In the left menu, select **System**.
 5. Under **Administration Settings**, change the HTTPS port to **8443**, and select **Apply**.
-6. After the change applies, the browser attempts to reload the administration page, but it
-    fails. From now on, the administration page address is `https://<address>:8443`.
+6. After the change applies, the browser attempts to reload the administration page, but it fails. From now on, the administration page address is `https://<address>:8443`.
 
     ![Screenshot of Upload Remote Certificate.](certificate.png)
 
@@ -148,13 +146,11 @@ The following sections walk you through how to set up the FortiGate VM.
 3. Sign in by using the administrator credentials provided during the FortiGate VM deployment.
 4. In the left menu, select **System** > **Certificates**.
 5. Select **Import** > **Remote Certificate**.
-6. Browse to the certificate downloaded from the FortiGate custom app deployment in the
-    Azure tenant. Select it, and select **OK**.
+6. Browse to the certificate downloaded from the FortiGate custom app deployment in the Azure tenant. Select it, and select **OK**.
 
 ### Upload and configure a custom SSL certificate
 
-You might want to configure the FortiGate VM with your own SSL certificate that supports the FQDN you're using. If you have access to an SSL certificate packaged with the private key in PFX format, it
-can be used for this purpose.
+You might want to configure the FortiGate VM with your own SSL certificate that supports the FQDN you're using. If you have access to an SSL certificate packaged with the private key in PFX format, it can be used for this purpose.
 
 1. Go to `https://<address>:8443`. Here, `<address>` is the FQDN or the public IP address assigned to the FortiGate VM.
 

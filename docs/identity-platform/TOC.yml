@@ -249,7 +249,7 @@
               href: scenario-web-app-call-api-acquire-token.md
             - name: Call a web API
               href: scenario-web-app-call-api-call-api.md
-        - name: Deploy and setup App Service auth in a pipeline
+        - name: Deploy and set-up App Service auth in a pipeline
           href: deploy-web-app-authentication-pipeline.md
 - name: Web API
   items:
@@ -278,6 +278,8 @@
       items:
         - name: Call a Web API with cURL
           href: howto-call-a-web-api-with-curl.md
+        - name: Call a web API with Insomnia
+          href: howto-call-a-web-api-with-rest-client.md
         - name: Protected web API
           items:
             - name: App registration
@@ -508,7 +510,7 @@
           items:
             - name: Token issuance start event
               items:
-                - name: Create a token issuance start event in a REST API
+                - name: Create REST API for token issuance event
                   href: custom-extension-tokenissuancestart-setup.md
                 - name: Configure a custom claims provider token issuance event
                   href: custom-extension-tokenissuancestart-configuration.md
@@ -783,7 +785,7 @@
         - name: Application manifest
           displayName: app manifest
           href: reference-app-manifest.md
-        - name: Redirect URI/reply URL restrictions and limitations
+        - name: Redirect URI (reply URL) best practices and limitations
           href: reply-url.md
         - name: Validation differences by supported account types
           href: supported-accounts-validation.md

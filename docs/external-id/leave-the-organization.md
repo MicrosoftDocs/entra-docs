@@ -21,6 +21,8 @@ adobe-target: true
 
 # Leave an organization as an external user
 
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
+
 As a Microsoft Entra B2B collaboration or B2B direct connect user, you can leave an organization at any time if you no longer need to use apps from that organization, or maintain any association.
 
 ## Before you begin
@@ -33,10 +35,16 @@ You can usually leave an organization on your own without having to contact an a
 
    - If you're using a work or school account, go to https://myaccount.microsoft.com and sign in.
    - If you're using a personal account or email one-time passcode, you'll need to use a My Account URL that includes your tenant name or tenant ID.
+   
    For example:
-    https://myaccount.microsoft.com?tenantId=contoso.onmicrosoft.com
-    or 
-    https://myaccount.microsoft.com?tenantId=aaaabbbb-0000-cccc-1111-dddd2222eeee. You might need to open this URL in a private browser session.
+
+   `https://myaccount.microsoft.com?tenantId=contoso.onmicrosoft.com`
+
+   -or-
+
+   `https://myaccount.microsoft.com?tenantId=aaaabbbb-0000-cccc-1111-dddd2222eeee`
+
+   You might need to open this URL in a private browser session.
 
 1. Select **Organizations** from the left navigation pane or select the **Manage organizations** link from the **Organizations** block.
 

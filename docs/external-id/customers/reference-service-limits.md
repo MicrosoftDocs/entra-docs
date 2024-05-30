@@ -16,6 +16,8 @@ ms.custom: it-pro
 ---
 # Service limits and restrictions
 
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
 This article outlines the service limits and usage constraints of Microsoft Entra External ID for external tenants, which is Microsoft’s latest customer identity and access management (CIAM) solution. If you’re looking for the full set of Microsoft Entra ID service limits, see [Microsoft Entra service limits and restrictions](/entra/identity/users/directory-service-limits-restrictions).
 
 ## User/consumption related limits
@@ -82,9 +84,10 @@ The following table lists the administrative configuration limits in the Microso
 |Number of external tenants per subscription      |20         |
 |Total number of objects (user accounts and applications) per trial tenant (can't be extended)| 10000 |
 |Total number of objects (user accounts and applications) per tenant | 300000 |
-|Number of policies per external tenant |200          |
 |Maximum policy file size      |1,024 KB          |
 |Number of API connectors per tenant     |20         |
+|Number of custom authentication extensions     |100         |
+|Number of event listener policies    |249         |
 
 <!-- Reviewed by SME in the word doc. The numbers are correct.
 

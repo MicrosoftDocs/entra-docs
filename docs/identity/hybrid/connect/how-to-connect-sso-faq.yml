@@ -116,7 +116,7 @@ sections:
           
              >[!IMPORTANT]
              >This doesn't need to be done on servers running Microsoft Entra Connect in staging mode.
-             >Ensure that you _don't_ run the `Update-AzureADSSOForest` command more than once per forest. Otherwise, the feature stops working until the time your users' Kerberos tickets expire and are reissued by your on-premises Active Directory.
+             >Ensure that you *don't* run the `Update-AzureADSSOForest` command more than once per forest. Otherwise, the feature stops working until the time your users' Kerberos tickets expire and are reissued by your on-premises Active Directory.
           
       - question: |
           How can I disable Seamless SSO?

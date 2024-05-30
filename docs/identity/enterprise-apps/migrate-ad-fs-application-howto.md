@@ -62,8 +62,7 @@ From **Enterprise applications** section:
 
 From **Monitoring & health** section:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application
-    Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Monitoring & health** > **Enterprise applications**.
 1. Under **Manage**, select **Usage & Insights**, and then select **AD FS application migration** to access the AD FS applications migration dashboard.
 
@@ -85,8 +84,7 @@ The Microsoft Entra Connect and Microsoft Entra Connect Health agents for AD FS 
 
 - **Ready to migrate** means, the AD FS application configuration is fully supported in Microsoft Entra ID and can be migrated as-is.
 - **Needs review** means, some of the application's settings can be migrated to Microsoft Entra ID, but you need to review the settings that can't be migrated as-is. However, those aren't blocker for the migration.
-- **Additional steps required** means, Microsoft Entra ID doesn't support some of the application's settings, so the application
-    can't be migrated in its current state.
+- **Additional steps required** means, Microsoft Entra ID doesn't support some of the application's settings, so the application can't be migrated in its current state.
 
 Let's review each tab on the AD FS application migration dashboard in more detail.
 

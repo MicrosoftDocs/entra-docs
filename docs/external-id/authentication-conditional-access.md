@@ -18,6 +18,8 @@ ms.collection: M365-identity-device-management
 
 # Authentication and Conditional Access for External ID
 
+  [!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
+
 > [!TIP]
 > This article applies to B2B collaboration and B2B direct connect in workforce tenants. For information about external tenants, see [Security and governance in Microsoft Entra External ID](customers/concept-security-customers.md).
 

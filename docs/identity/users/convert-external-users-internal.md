@@ -45,8 +45,7 @@ When testing external user conversion, we recommend that you use test accounts o
 
 ### Requirements
 
-- Converting external users requires an account with at least the [user administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator)
-role assigned.
+- Converting external users requires an account with at least the [user administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator) role assigned.
 - Only users configured with an authentication method external to the host organization are eligible for conversion. 
 
 ### Converting an External user

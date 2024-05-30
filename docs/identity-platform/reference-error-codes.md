@@ -5,7 +5,7 @@ author: rwike77
 manager: CelesteDG
 ms.author: ryanwi
 ms.custom: 
-ms.date: 04/10/2024
+ms.date: 04/24/2024
 ms.reviewer: ludwignick
 ms.service: identity-platform
 
@@ -36,12 +36,12 @@ Here's a sample error response:
 ```json
 {
   "error": "invalid_scope",
-  "error_description": "AADSTS70011: The provided value for the input parameter 'scope' isn't valid. The scope https://example.contoso.com/activity.read isn't valid.\r\nTrace ID: 0000aaaa-11bb-cccc-dd33-eeeeee333333\r\nCorrelation ID: aaaa0000-bb11-2222-33cc-444444dddddd\r\nTimestamp: 2016-01-09 02:02:12Z",
+  "error_description": "AADSTS70011: The provided value for the input parameter 'scope' isn't valid. The scope https://example.contoso.com/activity.read isn't valid.\r\nTrace ID: 0000aaaa-11bb-cccc-dd22-eeeeee333333\r\nCorrelation ID: aaaa0000-bb11-2222-33cc-444444dddddd\r\nTimestamp: 2016-01-09 02:02:12Z",
   "error_codes": [
     70011
   ],
   "timestamp": "2016-01-09 02:02:12Z",
-  "trace_id": "0000aaaa-11bb-cccc-dd33-eeeeee333333",
+  "trace_id": "0000aaaa-11bb-cccc-dd22-eeeeee333333",
   "correlation_id": "aaaa0000-bb11-2222-33cc-444444dddddd", 
   "error_uri":"https://login.microsoftonline.com/error?code=70011"
 }
@@ -378,6 +378,7 @@ The `error` field has several possible values - review the protocol documentatio
 | AADSTS7000112 | UnauthorizedClientApplicationDisabled - The application is disabled. |
 | AADSTS7000114| Application 'appIdentifier' isn't allowed to make application on-behalf-of calls.|
 | AADSTS7500529 | The value ‘SAMLId-Guid’ isn't a valid SAML ID - Microsoft Entra ID uses this attribute to populate the InResponseTo attribute of the returned response. ID must not begin with a number, so a common strategy is to prepend a string like "ID" to the string representation of a GUID. For example, id6c1c178c166d486687be4aaf5e482730 is a valid ID. |
+| AADSTS9002341 | V2Error: `invalid_grant` - The user is required to permit single sign-On (SSO). This error occurs when the user has not granted the necessary permissions for the application to perform SSO. The user should be redirected to the consent screen to grant the necessary permissions. Refer to [this announcement](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/upcoming-changes-to-windows-single-sign-on/ba-p/4008151) for more information."|
 
 ## Next steps
 

@@ -16,6 +16,8 @@ ms.custom: it-pro
 
 # Security and governance in Microsoft Entra External ID
 
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
 The integration of customer capabilities into Microsoft Entra ID means that your customer scenarios benefit from the advanced security and governance features available in Microsoft Entra ID. Your customers are able to self-service register for your applications using their preferred authentication methods, including social accounts through identity providers like Google and Facebook. And you can use features like multifactor authentication, Conditional Access, and Identity Protection to mitigate threats and detect risks.
 
 > [!NOTE]
