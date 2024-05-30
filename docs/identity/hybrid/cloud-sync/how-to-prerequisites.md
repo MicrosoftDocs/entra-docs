@@ -118,7 +118,7 @@ If there's a firewall between your servers and Microsoft Entra ID, configure the
    | **8080** (optional) | Agents report their status every 10 minutes over port 8080, if port 443 is unavailable. This status is displayed in the Microsoft Entra admin center. |
 
 - If your firewall enforces rules according to the originating users, open these ports for traffic from Windows services that run as a network service.
-- Ensure that your proxy supports at least HTTP 1.1 protocol and chuncked encoding is enabled.
+- Ensure that your proxy supports at least HTTP 1.1 protocol and chunked encoding is enabled.
 - If your firewall or proxy allows you to specify safe suffixes, add connections:
 
 #### [Public Cloud](#tab/public-cloud)
