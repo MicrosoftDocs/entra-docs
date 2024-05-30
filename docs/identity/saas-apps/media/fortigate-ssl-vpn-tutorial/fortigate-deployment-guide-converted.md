@@ -204,9 +204,9 @@ Multi-homed Azure VMs have all network interfaces on the same virtual network (b
 4. Under Network, select **Static Routes**.
 5. Select **Create New**.
 6. Next to Destination select **Subnet**.
-7. Under Subnet, specify the subnet information where the on-premises corporate resources reside (such as 10.1.0.0/255.255.255.0)
-8. Next to Gateway Address specify the gateway on the Azure subnet where port2 is connected (such as this usually ends in 1 like 10.6.1.1)
-9. Next to Interface select the internal network interface, port2
+7. Under Subnet, specify the subnet information where the on-premises corporate resources reside (such as `10.1.0.0/255.255.255.0`).
+8. Next to Gateway Address specify the gateway on the Azure subnet where port2 is connected (for example, this usually ends in `1`, as in `10.6.1.1`).
+9. Next to Interface select the internal network interface, `port2`.
 10. Select **OK**.
 
     ![Screenshot of Configuring a Route.](route.png)
