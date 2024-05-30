@@ -36,7 +36,7 @@ This tutorial describes the steps you need to perform in both Bizagi Studio for 
 The scenario outlined in this tutorial assumes that you already have the following:
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md). 
-* A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning. Examples include application administrator, cloud application administrator, application owner, or global administrator. 
+* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
 * Bizagi Studio for Digital Process Automation version 11.2.4.2X or later.
 
 ## Plan your provisioning deployment
@@ -143,7 +143,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
    More information on how to add custom attributes can be found in [Customize Application Attributes](~/identity/app-provisioning/customize-application-attributes.md).
 
 > [!NOTE]
-> Only basic type properties are supported (for example, String, Integer, Boolean, DateTime, etc). The properties linked to parametric tables or multiple types are not supported yet.
+> Only basic type properties are supported (for example, String, Integer, Boolean, DateTime, and so on). The properties linked to parametric tables or multiple types are not supported yet.
 
 10. To configure scoping filters, see the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 

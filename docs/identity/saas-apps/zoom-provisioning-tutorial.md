@@ -35,7 +35,7 @@ This tutorial describes the steps you need to perform in both Zoom and Microsoft
 The scenario outlined in this tutorial assumes that you already have the following prerequisites:
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md).
-* A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (e.g. Application Administrator, Cloud Application administrator, Application Owner, or Global Administrator). 
+* A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (like [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications)). 
 * [A Zoom tenant](https://zoom.us/pricing).
 * A user account in Zoom with Admin permissions.
 
@@ -139,7 +139,7 @@ Once you've configured provisioning, use the following resources to monitor your
 ## Change log
 * 05/14/2020 - Supports for UPDATE operations  added for emails[type eq "work"] attribute.
 * 10/20/2020 - Added support for two new roles **Licensed** and **on-premises** to replace existing roles **Pro** and **Corp**. Support for roles **Pro** and **Corp** will be removed in the future.
-* 05/30/2023 - Added support for new authentication method i.e. **OAuth 2.0**.
+* 05/30/2023 - Added support for new authentication method **OAuth 2.0**.
 
 ## Additional resources
 

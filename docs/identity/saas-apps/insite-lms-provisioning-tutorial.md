@@ -32,7 +32,7 @@ This tutorial describes the steps you need to do in both Insite LMS and Microsof
 The scenario outlined in this tutorial assumes that you already have the following prerequisites:
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md) 
-* A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (for example, Application Administrator, Cloud Application administrator, Application Owner, or Global Administrator). 
+* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications). 
 * A [Insite LMS tenant](https://www.insite-it.net/).
 * A user account in Insite LMS with Admin permissions.
 
@@ -99,8 +99,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
 
-1. In the **Admin Credentials** section,
-enter your Insite LMS **Tenant URL** as `https://api.insitelms.net/scim` and enter the **Secret token** generated in Step 2 above. Select **Test Connection** to ensure that Microsoft Entra ID can connect to Insite LMS. If the connection fails, ensure that your Insite LMS account has admin permissions and try again.
+1. In the **Admin Credentials** section, enter your Insite LMS **Tenant URL** as `https://api.insitelms.net/scim` and enter the **Secret token** generated in Step 2 above. Select **Test Connection** to ensure that Microsoft Entra ID can connect to Insite LMS. If the connection fails, ensure that your Insite LMS account has admin permissions and try again.
 
  	![Screenshot of Token.](common/provisioning-testconnection-tenanturltoken.png)
 

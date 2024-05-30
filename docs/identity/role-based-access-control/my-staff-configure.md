@@ -31,7 +31,7 @@ To complete this article, you need the following resources and privileges:
   * If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * A Microsoft Entra tenant associated with your subscription.
 
-  * If needed, [create a Microsoft Entra tenant](~/fundamentals/sign-up-organization.md) or [associate an Azure subscription with your account](~/fundamentals/how-subscriptions-associated-directory.md).
+  * If needed, [create a Microsoft Entra tenant](~/fundamentals/sign-up-organization.md) or [associate an Azure subscription with your account](~/fundamentals/how-subscriptions-associated-directory.yml).
 * You need *Global Administrator* privileges in your Microsoft Entra tenant to enable SMS-based authentication.
 * Each user who's enabled in the text message authentication method policy must be licensed, even if they don't use it. Each enabled user must have one of the following Microsoft Entra ID or Microsoft 365 licenses:
 
@@ -82,7 +82,6 @@ The following roles have permission to reset a user's password:
 
 * [Authentication Administrator](permissions-reference.md#authentication-administrator)
 * [Privileged Authentication Administrator](permissions-reference.md#privileged-authentication-administrator)
-* [Global Administrator](permissions-reference.md#global-administrator)
 * [Helpdesk Administrator](permissions-reference.md#helpdesk-administrator)
 * [User Administrator](permissions-reference.md#user-administrator)
 * [Password Administrator](permissions-reference.md#password-administrator)
@@ -110,7 +109,6 @@ To manage a user's phone number, you must be assigned one of the following roles
 
 * [Authentication Administrator](permissions-reference.md#authentication-administrator)
 * [Privileged Authentication Administrator](permissions-reference.md#privileged-authentication-administrator)
-* [Global Administrator](permissions-reference.md#global-administrator)
 
 ## Search
 

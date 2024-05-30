@@ -5,7 +5,7 @@ author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
 ms.custom:
-ms.date: 02/06/2024
+ms.date: 04/08/2024
 ms.reviewer: jeedes
 ms.service: identity-platform
 
@@ -17,7 +17,7 @@ ms.topic: reference
 
 This article covers the SAML 2.0 authentication requests and responses that Microsoft Entra ID supports for single sign-on (SSO).
 
-The protocol diagram below describes the single sign-on sequence. The cloud service (the service provider) uses an HTTP Redirect binding to pass an `AuthnRequest` (authentication request) element to Microsoft Entra ID (the identity provider). Microsoft Entra ID then uses an HTTP post binding to post a `Response` element to the cloud service.
+The following protocol diagram describes the single sign-on sequence. The cloud service (the service provider) uses an HTTP Redirect binding to pass an `AuthnRequest` (authentication request) element to Microsoft Entra ID (the identity provider). Microsoft Entra ID then uses an HTTP post binding to post a `Response` element to the cloud service.
 
 ![Screenshot of the Single Sign-On (SSO) Workflow.](./media/single-sign-on-saml-protocol/saml-single-sign-on-workflow.png)
 
@@ -163,7 +163,7 @@ Microsoft Entra ID sets the `Issuer` element to `https://sts.windows.net/<Tenant
 For example, a response with Issuer element could look like the following sample:
 
 ```xml
-<Issuer xmlns="urn:oasis:names:tc:SAML:2.0:assertion"> https://sts.windows.net/82869000-6ad1-48f0-8171-272ed18796e9/</Issuer>
+<Issuer xmlns="urn:oasis:names:tc:SAML:2.0:assertion"> https://sts.windows.net/aaaabbbb-0000-cccc-1111-dddd2222eeee/</Issuer>
 ```
 
 ### Status
@@ -182,7 +182,7 @@ The following sample is a SAML response to an unsuccessful sign-on attempt.
       <samlp:StatusCode Value="urn:oasis:names:tc:SAML:2.0:status:RequestUnsupported" />
     </samlp:StatusCode>
     <samlp:StatusMessage>AADSTS75006: An error occurred while processing a SAML2 Authentication request. AADSTS90011: The SAML authentication request property 'NameIdentifierPolicy/SPNameQualifier' is not supported.
-    Trace ID: 0000aaaa-11bb-cccc-dd33-eeeeee333333
+    Trace ID: 0000aaaa-11bb-cccc-dd22-eeeeee333333
     Timestamp: 2013-03-18 08:49:24Z</samlp:StatusMessage>
     </samlp:Status>
 </samlp:Response>

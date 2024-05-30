@@ -31,7 +31,7 @@ The below image describes, where Akamai EAA fits into the broader Hybrid Secure 
 
 ### Key Authentication Scenarios
 
-Apart from Microsoft Entra native integration support for modern authentication protocols like OpenID Connect, SAML and WS-Fed, Akamai EAA extends secure access for legacy-based authentication apps for both internal and external access with Microsoft Entra ID, enabling modern scenarios (e.g. password-less access) to these applications. This includes:
+Apart from Microsoft Entra native integration support for modern authentication protocols like OpenID Connect, SAML and WS-Fed, Akamai EAA extends secure access for legacy-based authentication apps for both internal and external access with Microsoft Entra ID, enabling modern scenarios (such as password-less access) to these applications. This includes:
 
 * Header-based authentication apps
 * Remote Desktop

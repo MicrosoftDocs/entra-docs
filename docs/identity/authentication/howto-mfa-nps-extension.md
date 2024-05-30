@@ -202,7 +202,7 @@ If you need to create and configure a test account, use the following steps:
 >
 > Combined security registration can be enabled that configures SSPR and Microsoft Entra multifactor authentication at the same time. For more information, see [Enable combined security information registration in Microsoft Entra ID](howto-registration-mfa-sspr-combined.md).
 >
-> You can also [force users to re-register authentication methods](howto-mfa-userdevicesettings.md#manage-user-authentication-options) if they previously only enabled SSPR.
+> You can also [force users to re-register authentication methods](howto-mfa-userdevicesettings.yml) if they previously only enabled SSPR.
 >
 > Users who connect to the NPS server using username and password will be required to complete a multifactor authentication prompt.
 
@@ -356,7 +356,7 @@ If for any reason the "Azure multifactor authentication Client" service principa
 
 ```powershell
 Connect-MgGraph -Scopes 'Application.ReadWrite.All'
-New-MgServicePrincipal -AppId 981f26a1-7f43-403b-a875-f8b09b8cd720 -DisplayName "Azure Multi-Factor Auth Client"
+New-MgServicePrincipal -AppId 00001111-aaaa-2222-bbbb-3333cccc4444 -DisplayName "Azure Multi-Factor Auth Client"
 ```
 
 Once done, sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator). Browse to **Identity** > **Applications** > **Enterprise applications** > and search for "Azure multifactor authentication client". Then click **Check properties for this app**. Confirm if the service principal is enabled or disabled. Click the application entry > **Properties**. If the option **Enabled for users to sign-in?** is set to **No**, set it to **Yes**.
@@ -377,7 +377,7 @@ Open PowerShell command prompt and run the following commands:
 
 ```powershell
 Connect-MgGraph -Scopes 'Application.Read.All'
-(Get-MgServicePrincipal -Filter "appid eq '981f26a1-7f43-403b-a875-f8b09b8cd720'" -Property "KeyCredentials").KeyCredentials | Format-List KeyId, DisplayName, StartDateTime, EndDateTime, @{Name = "Key"; Expression = {[System.Convert]::ToBase64String($_.Key)}}, @{Name = "Thumbprint"; Expression = {$Cert = New-object System.Security.Cryptography.X509Certificates.X509Certificate2; $Cert.Import([System.Text.Encoding]::UTF8.GetBytes([System.Convert]::ToBase64String($_.Key))); $Cert.Thumbprint}}
+(Get-MgServicePrincipal -Filter "appid eq '00001111-aaaa-2222-bbbb-3333cccc4444'" -Property "KeyCredentials").KeyCredentials | Format-List KeyId, DisplayName, StartDateTime, EndDateTime, @{Name = "Key"; Expression = {[System.Convert]::ToBase64String($_.Key)}}, @{Name = "Thumbprint"; Expression = {$Cert = New-object System.Security.Cryptography.X509Certificates.X509Certificate2; $Cert.Import([System.Text.Encoding]::UTF8.GetBytes([System.Convert]::ToBase64String($_.Key))); $Cert.Thumbprint}}
 ```
 
 These commands print all the certificates associating your tenant with your instance of the NPS extension in your PowerShell session. Look for your certificate by exporting your client cert as a *Base-64 encoded X.509(.cer)* file without the private key, and compare it with the list from PowerShell. Compare the thumbprint of the certificate installed on the server to this one. The certificate thumbprints should match.

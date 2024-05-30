@@ -109,6 +109,12 @@ items:
         href: ~/identity/monitoring-health/concept-provisioning-logs.md?toc=/entra/identity/app-provisioning/toc.json&bc=/entra/identity/app-provisioning/breadcrumb/TOC.json
       - name: Provisioning insights workbook
         href: provisioning-workbook.md  
+    - name: SAP provisioning scenarios
+      items:
+      - name: Identity lifecycle with SAP source and targets
+        href: plan-sap-user-source-and-target.md
+      - name: Migrate from SAP IDM
+        href: migrate-from-sap-idm.md
     - name: Workday provisioning scenarios
       items:
       - name: Retrieve pronoun information

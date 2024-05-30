@@ -36,7 +36,7 @@ When Microsoft Entra ID disables an OAuth application, the following actions occ
 
 - The malicious application and related service principals are placed into a fully disabled state. Any new token requests or requests for refresh tokens are denied, but existing access tokens are still valid until their expiration.
 - These applications show `DisabledDueToViolationOfServicesAgreement` on the `disabledByMicrosoftStatus` property on the related [application](/graph/api/resources/application) and [service principal](/graph/api/resources/serviceprincipal) resource types in Microsoft Graph. To prevent them from being instantiated in your organization again in the future, you can't delete these objects.
-- An email is sent to a global administrator when a user in an organization consented to an application before it was disabled. The email specifies the action taken and recommended steps they can do to investigate and improve their security posture.
+- An email is sent to a Privileged Role Administrator when a user in an organization consented to an application before it was disabled. The email specifies the action taken and recommended steps they can do to investigate and improve their security posture.
 
 ## Recommended response and remediation
 
@@ -64,7 +64,7 @@ Administrators should be in control of application use by providing the right in
   - Investigate and hunt for consent phishing attacks by following the guidance on [advanced hunting with Microsoft 365 Defender](/microsoft-365/security/defender/advanced-hunting-overview).
 - Allow access to trusted applications that meet certain criteria and protect against those applications that don't:
   - [Configure user consent settings](./configure-user-consent.md?tabs=azure-portal) to allow users to only consent to applications that meet certain criteria. Such applications include applications developed by your organization or from verified publishers and only for low risk permissions you select.
-  - Use applications that are publisher verified. [Publisher verification](~/identity-platform/publisher-verification-overview.md) helps administrators and users understand the authenticity of application developers through a Microsoft supported vetting process. Even if an application does have a verified publisher, it's still important to review the consent prompt to understand and evaluate the request. For example, reviewing the permissions being requested to ensure they align with the scenario the app is requesting them to enable, other app and publisher details on the consent prompt, etc.
+  - Use applications that are publisher verified. [Publisher verification](~/identity-platform/publisher-verification-overview.md) helps administrators and users understand the authenticity of application developers through a Microsoft supported vetting process. Even if an application does have a verified publisher, it's still important to review the consent prompt to understand and evaluate the request. For example, reviewing the permissions being requested to ensure they align with the scenario the app is requesting them to enable, other app and publisher details on the consent prompt, and so on.
   - Create proactive [application governance](/defender-cloud-apps/app-governance-manage-app-governance) policies to monitor third-party application behavior on the Microsoft 365 platform to address common suspicious application behaviors.
 
 ## Next steps

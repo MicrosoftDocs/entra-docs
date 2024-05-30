@@ -53,13 +53,11 @@ To complete a user sign-up flow, your app interacts with four endpoints, `/signu
 
 ### Sign-up challenge types
 
-The API allows the app to advertise the authentication methods it supports, when it makes a call to Microsoft Entra. To do so, the app uses the `challenge_type` parameter in its requests. This parameter holds predefined values, which represent different authentication methods. The following table contains the authentication methods that the API supports. New values will be added in the future when the API supports new authentication methods.
+The API allows the app to advertise the authentication methods it supports, when it makes a call to Microsoft Entra. To do so, the app uses the `challenge_type` parameter in its requests. This parameter holds predefined values, which represent different authentication methods.
 
-|    Challenge type     | Description                                |
-|-----------------------|--------------------------------------------|
-| password              | This challenge type indicates that the app supports the collection of a password credential from the user.                   |
-| oob   | This challenge type indicates that the application supports the use of one-time password or passcode (OTP) codes sent to the user using a secondary channel. Currently, the API supports only email OTPs.|
-| redirect  | This challenge type indicates that the application supports fallback to the web-based authentication. All Native Auth compliant applications must support this authentication method. In every call that the app makes, it must include this challenge type. If Microsoft Entra returns this challenges type as a response, then it indicates that the app needs to fall back to the web-based authentication. In this case, we recommend that you use a [Microsoft-built and supported authentication library](reference-v2-libraries.md).|
+For the email with password sign-up flow, the challenge type values are *oob*, *password* and *redirect*.  
+
+Learn more about challenge types in the [native authentication challenge types](../external-id/customers/concept-native-authentication-challenge-types.md).
 
 ### Sign-up flow protocol details
 
@@ -82,7 +80,7 @@ POST /{tenant_subdomain}.onmicrosoft.com/signup/v1.0/start HTTP/1.1
 Host: {tenant_subdomain}.ciamlogin.com
 Content-Type: application/x-www-form-urlencoded
 
-client_id=111101-14a6-abcd-97bc-abcd1110011
+client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &challenge_type=oob password redirect
 &username=contoso-consumer@contoso.com 
 ```
@@ -94,7 +92,7 @@ POST /{tenant_subdomain}.onmicrosoft.com/signup/v1.0/start HTTP/1.1
 Host: {tenant_subdomain}.ciamlogin.com
 Content-Type: application/x-www-form-urlencoded
 
-client_id=111101-14a6-abcd-97bc-abcd1110011
+client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &challenge_type=oob password redirect
 &password={secure_password}
 &attributes={"name": "{user_name}", "extension_2588abcdwhtfeehjjeeqwertc_age": "{user_age}", "phone": "{user_phone}"}
@@ -224,7 +222,7 @@ POST /{tenant_subdomain}.onmicrosoft.com/signup/v1.0/challenge HTTP/1.1
 Host: {tenant_subdomain}.ciamlogin.com
 Content-Type: application/x-www-form-urlencoded
 
-client_id=111101-14a6-abcd-97bc-abcd1110011
+client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &challenge_type=oob password redirect
 &continuation_token=AQABAAEAAA…
 ```
@@ -339,7 +337,7 @@ Host: {tenant_subdomain}.ciamlogin.com
 Content-Type: application/x-www-form-urlencoded
 
 continuation_token=uY29tL2F1dGhlbnRpY...
-&client_id=111101-14a6-abcd-97bc-abcd1110011 
+&client_id=00001111-aaaa-2222-bbbb-3333cccc4444 
 &grant_type=oob 
 &oob={otp_code}
 ```
@@ -417,7 +415,7 @@ POST /{tenant_subdomain}.onmicrosoft.com/signup/v1.0/challenge HTTP/1.1
 Host: {tenant_subdomain}.ciamlogin.com
 Content-Type: application/x-www-form-urlencoded
 
-client_id=111101-14a6-abcd-97bc-abcd1110011
+client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &challenge_type=oob password redirect
 &continuation_token=AQABAAEAAA…
 ```
@@ -481,7 +479,7 @@ Host: {tenant_subdomain}.ciamlogin.com
 Content-Type: application/x-www-form-urlencoded
 
 continuation_token=uY29tL2F1dGhlbnRpY...
-&client_id=111101-14a6-abcd-97bc-abcd1110011 
+&client_id=00001111-aaaa-2222-bbbb-3333cccc4444 
 &grant_type=password 
 &password={secure_password}
 ```
@@ -651,7 +649,7 @@ POST /{tenant_subdomain}.onmicrosoft.com/signup/v1.0/continue HTTP/1.1
 Host: {tenant_subdomain}.ciamlogin.com
 Content-Type: application/x-www-form-urlencoded
 
-&client_id=111101-14a6-abcd-97bc-abcd1110011 
+&client_id=00001111-aaaa-2222-bbbb-3333cccc4444 
 &grant_type=attributes 
 &attributes={"name": "{user_name}", "extension_2588abcdwhtfeehjjeeqwertc_age": "{user_age}", "phone": "{user_phone}"}
 &continuation_token=AQABAAEAAAAtn...
@@ -768,7 +766,7 @@ Host: {tenant_subdomain}.ciamlogin.com
 Content-Type: application/x-www-form-urlencoded
  
 continuation_token=ABAAEAAAAtyo... 
-&client_id=111101-14a6-abcd-97bc-abcd1110011 
+&client_id=00001111-aaaa-2222-bbbb-3333cccc4444 
 &username=contoso-consumer@contoso.com
 &scope={scopes}
 &grant_type=continuation_token 
@@ -874,13 +872,11 @@ To request your security tokens, your app interacts with three endpoints, `/init
 
 ### Sign-in challenge types
 
-The API allows the app to advertise the authentication methods it supports to Microsoft Entra. To do so, the app includes the `challenge_type` parameter in its requests. This parameter holds predefined values, which represent different authentication methods. The following table contains the authentication methods the API supports. New values will be added in the future when the API supports new authentication methods.
+The API allows the app to advertise the authentication methods it supports, when it makes a call to Microsoft Entra. To do so, the app uses the `challenge_type` parameter in its requests. This parameter holds predefined values, which represent different authentication methods.
 
-|    Challenge type     | Description                                |
-|-----------------------|--------------------------------------------|
-| password              | This challenge type indicates that the app supports the collection of a password credential from the user.                   |
-| oob   | This challenge type indicates that the application supports the use of one-time passcode sent to the user using a secondary channel. Currently, the API supports only email OTPs.|
-| redirect  | This challenge type indicates that the application supports fallback to web-based authentication. All Native Auth compliant applications must support this authentication method. In every call that the app makes, it must include this challenge type. If Microsoft Entra returns this challenges type as a response, then it indicates that the app needs to fall back to web-based authentication. In this case, we recommend that you use a [Microsoft-built and supported authentication library](reference-v2-libraries.md).|
+For the email with password sign-in flow, the challenge type values are *oob*, *password* and *redirect*.  
+
+Learn more about challenge types in the [native authentication challenge types](../external-id/customers/concept-native-authentication-challenge-types.md).
 
 ### Sign-in flow protocol details
 
@@ -903,7 +899,7 @@ POST /{tenant_subdomain}.onmicrosoft.com/oauth2/v2.0/initiate HTTP/1.1
 Host: {tenant_subdomain}.ciamlogin.com
 Content-Type: application/x-www-form-urlencoded
 
-client_id=111101-14a6-abcd-97bc-abcd1110011
+client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &challenge_type=password redirect
 &username=contoso-consumer@contoso.com 
 ```
@@ -1012,7 +1008,7 @@ POST /{tenant_subdomain}.onmicrosoft.com/oauth2/v2.0/challenge HTTP/1.1
 Host: {tenant_subdomain}.ciamlogin.com
 Content-Type: application/x-www-form-urlencoded
 
-client_id=111101-14a6-abcd-97bc-abcd1110011
+client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &challenge_type=password redirect 
 &continuation_token=uY29tL2F1dGhlbnRpY... 
 ```
@@ -1118,7 +1114,7 @@ Host: {tenant_subdomain}.ciamlogin.com
 Content-Type: application/x-www-form-urlencoded
 
 continuation_token=uY29tL2F1dGhlbnRpY...
-&client_id=111101-14a6-abcd-97bc-abcd1110011 
+&client_id=00001111-aaaa-2222-bbbb-3333cccc4444 
 &grant_type=password 
 &password={secure_password}
 &scope=openid offline_access 
@@ -1220,10 +1216,12 @@ To use this API, the app interacts with the endpoint shown in the following tabl
 
 ### Self-service password reset challenge types
 
-|    Challenge type     | Description                                |
-|-----------------------|--------------------------------------------|
-| oob   | This challenge type indicates that the application supports the use of one-time passcode sent to the user using a secondary channel. Currently, the API supports only email OTPs.|
-| redirect  | This challenge type indicates that the application supports fallback to web-based authentication. All Native Auth compliant applications must support this authentication method. In every call that the app makes, it must include this challenge type. If Microsoft Entra returns this challenge type as a response, then it indicates that the app needs to fall back to web-based authentication. In this case, we recommend that you use a [Microsoft-built and supported authentication library](reference-v2-libraries.md).|
+The API allows the app to advertise the authentication methods it supports, when it makes a call to Microsoft Entra. To do so, the app uses the `challenge_type` parameter in its requests. This parameter holds predefined values, which represent different authentication methods.
+
+For the SSPR flow, the challenge type values are *oob*, and *redirect*.  
+
+Learn more about challenge types in the [native authentication challenge types](../external-id/customers/concept-native-authentication-challenge-types.md).
+
 
 ### Self-service password reset flow protocol details
 
@@ -1244,7 +1242,7 @@ POST /{tenant_subdomain}.onmicrosoft.com/resetpassword/v1.0/start HTTP/1.1
 Host: {tenant_subdomain}.ciamlogin.com
 Content-Type: application/x-www-form-urlencoded
 
-client_id=111101-14a6-abcd-97bc-abcd1110011 
+client_id=00001111-aaaa-2222-bbbb-3333cccc4444 
 &challenge_type=oob redirect 
 &username=contoso-consumer@contoso.com 
 ```
@@ -1353,7 +1351,7 @@ POST /{tenant_subdomain}.onmicrosoft.com/resetpassword/v1.0/challenge HTTP/1.1
 Host: {tenant_subdomain}.ciamlogin.com
 Content-Type: application/x-www-form-urlencoded
 
-client_id=client_id=111101-14a6-abcd-97bc-abcd1110011
+client_id=client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &challenge_type=oob redirect
 &continuation_token=uY29tL2F1dGhlbnRpY... 
 ```
@@ -1557,7 +1555,7 @@ POST /{tenant_subdomain}.onmicrosoft.com/resetpassword/v1.0/submit HTTP/1.1
 Host: {tenant_subdomain}.ciamlogin.com
 Content-Type: application/x-www-form-urlencoded
 
-client_id=111101-14a6-abcd-97bc-abcd1110011
+client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &continuation_token=czZCaGRSa3F0Mzp...
 &new_password={new_password}
 ```
@@ -1652,7 +1650,7 @@ POST /{tenant_subdomain}.onmicrosoft.com/resetpassword/v1.0/poll_completion HTTP
 Host: {tenant_subdomain}.ciamlogin.com
 Content-Type: application/x-www-form-urlencoded
 
-client_id=111101-14a6-abcd-97bc-abcd1110011
+client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &continuation_token=czZCaGRSa3F0... 
 ```
 

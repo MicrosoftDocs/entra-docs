@@ -18,6 +18,8 @@ ms.collection: M365-identity-device-management
 
 # Add Microsoft account (MSA) as an identity provider for External ID
 
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
+
 Your B2B guest users can use their own personal Microsoft accounts for B2B collaboration without further configuration. Guest users can redeem your B2B collaboration invitations or complete your sign-up user flows using their personal Microsoft account.
 
 Microsoft accounts are set up by a user to get access to consumer-oriented Microsoft products and cloud services, such as Outlook, OneDrive, Xbox LIVE, or Microsoft 365. The account is created and stored in the Microsoft consumer identity account system, run by Microsoft.
@@ -28,13 +30,13 @@ Microsoft account is available by default in the list of **External Identities**
 
 ### Microsoft account in the invitation flow
 
-When you [invite a guest user](add-users-administrator.md) to B2B collaboration, you can specify their Microsoft account as the email address they'll use to sign in.
+When you [invite a guest user](add-users-administrator.yml) to B2B collaboration, you can specify their Microsoft account as the email address they'll use to sign in.
 
 :::image type="content" source="media/microsoft-account/microsoft-account-invite.png" alt-text="Screenshot of invite using a Microsoft account.":::
 
 ### Microsoft account in self-service sign-up user flows
 
-Microsoft account is an identity provider option for your self-service sign-up user flows. Users can sign up for your applications using their own Microsoft accounts. First, you'll need to [enable self-service sign-up](self-service-sign-up-user-flow.md) for your tenant. Then you can set up a user flow for the application, and select Microsoft account as one of the sign-in options.
+Microsoft account is an identity provider option for your self-service sign-up user flows. Users can sign up for your applications using their own Microsoft accounts. First, you'll need to [enable self-service sign-up](self-service-sign-up-user-flow.yml) for your tenant. Then you can set up a user flow for the application, and select Microsoft account as one of the sign-in options.
 
 :::image type="content" source="media/microsoft-account/microsoft-account-user-flow.png" alt-text="Screenshot of the Microsoft account in a self-service sign-up user flow.":::
 

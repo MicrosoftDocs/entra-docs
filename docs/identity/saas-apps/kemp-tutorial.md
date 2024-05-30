@@ -340,7 +340,7 @@ You should see your tenanted login page instead of unauthenticated access previo
     f. Click on OK.
 
 > [!NOTE]
-> Set the SPN on the Application / Website as applicable. To access application when the application pool identity has been set. To access the IIS application by using the FQDN name, go to Real Server command prompt and type SetSpn with required parameters. For e.g. Setspn –S HTTP/sescoindc.sunehes.co.in suneshes\kdcuser 
+> Set the SPN on the Application / Website as applicable. To access application when the application pool identity has been set. To access the IIS application by using the FQDN name, go to Real Server command prompt and type SetSpn with required parameters. For example, `Setspn –S HTTP/sescoindc.sunehes.co.in suneshes\kdcuser`. 
 
 <a name='kemp-loadmaster-azure-ad-integration-kcd-kerberos-delegation-accounts'></a>
 

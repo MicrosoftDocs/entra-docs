@@ -37,8 +37,8 @@ To grant tenant-wide admin consent, you need:
 
 - A Microsoft Entra user account with one of the following roles:
 
-  - Global Administrator or Privileged Role Administrator, for granting consent for apps requesting any permission, for any API.
-  - Cloud Application Administrator or Application Administrator, for granting consent for apps requesting any permission for any API, _except_ Microsoft Graph app roles (application permissions).
+  - Privileged Role Administrator, for granting consent for apps requesting any permission, for any API.
+  - Cloud Application Administrator or Application Administrator, for granting consent for apps requesting any permission for any API, *except* Microsoft Graph app roles (application permissions).
   - A custom directory role that includes the [permission to grant permissions to applications](~/identity/role-based-access-control/custom-consent-permissions.md), for the permissions required by the application.
 
 :::zone pivot="portal"
@@ -96,7 +96,7 @@ For more information on constructing the tenant-wide admin consent URL, see [Adm
 
 In this section, you grant delegated permissions to your application. Delegated permissions are permissions your application needs to access an API on behalf of a signed-in user. The permissions are defined by a resource API and granted to your enterprise application, which is the client application. This consent is granted on behalf of all users.
 
-In the following example, the resource API is Microsoft Graph of object ID `7ea9e944-71ce-443d-811c-71e8047b557a`. The Microsoft Graph API defines the delegated permissions, `User.Read.All` and `Group.Read.All`. The consentType is `AllPrincipals`, indicating that you're consenting on behalf of all users in the tenant. The object ID of the client enterprise application is `b0d9b9e3-0ecf-4bfd-8dab-9273dd055a941`.
+In the following example, the resource API is Microsoft Graph of object ID `11112222-bbbb-3333-cccc-4444dddd5555`. The Microsoft Graph API defines the delegated permissions, `User.Read.All` and `Group.Read.All`. The consentType is `AllPrincipals`, indicating that you're consenting on behalf of all users in the tenant. The object ID of the client enterprise application is `00001111-aaaa-2222-bbbb-3333cccc4444`.
 
 > [!CAUTION]
 > Be careful! Permissions granted programmatically aren't subject to review or confirmation. They take effect immediately.
@@ -118,9 +118,9 @@ In the following example, the resource API is Microsoft Graph of object ID `7ea9
    ```powershell
    $params = @{
    
-   "ClientId" = "b0d9b9e3-0ecf-4bfd-8dab-9273dd055a94"
+   "ClientId" = "00001111-aaaa-2222-bbbb-3333cccc4444"
    "ConsentType" = "AllPrincipals"
-   "ResourceId" = "7ea9e944-71ce-443d-811c-71e8047b557a"
+   "ResourceId" = "11112222-bbbb-3333-cccc-4444dddd5555"
    "Scope" = "User.Read.All Group.Read.All"
    }
 
@@ -131,16 +131,16 @@ In the following example, the resource API is Microsoft Graph of object ID `7ea9
 1. Confirm that you've granted tenant wide admin consent by running the following request.
 
   ```powershell
-   Get-MgOauth2PermissionGrant -Filter "clientId eq 'b0d9b9e3-0ecf-4bfd-8dab-9273dd055a94' and consentType eq 'AllPrincipals'" 
+   Get-MgOauth2PermissionGrant -Filter "clientId eq '00001111-aaaa-2222-bbbb-3333cccc4444' and consentType eq 'AllPrincipals'" 
   ```
 
 ## Grant admin consent for application permissions using Microsoft Graph PowerShell
 
 In this section, you grant application permissions to your enterprise application. Application permissions are permissions your application needs to access a resource API. The permissions are defined by the resource API and granted to your enterprise application, which is the principal application. After you've granted your application access to the resource API, it runs as a background service or daemon without a signed-in user. Application permissions are also known as app roles.
 
-In the following example, you grant the Microsoft Graph application (the principal of ID `b0d9b9e3-0ecf-4bfd-8dab-9273dd055a94`) an app role (application permission) of ID `df021288-bdef-4463-88db-98f22de89214` that's exposed by a resource API of ID `7ea9e944-71ce-443d-811c-71e8047b557a`.
+In the following example, you grant the Microsoft Graph application (the principal of ID `aaaaaaaa-bbbb-cccc-1111-222222222222`) an app role (application permission) of ID `df021288-bdef-4463-88db-98f22de89214` that's exposed by a resource API of ID `11112222-bbbb-3333-cccc-4444dddd5555`.
 
-1. Connect to Microsoft Graph PowerShell and sign in as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Connect to Microsoft Graph PowerShell and sign in as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
    ```powershell
    Connect-MgGraph -Scopes "Application.ReadWrite.All", "AppRoleAssignment.ReadWrite.All"
@@ -156,12 +156,12 @@ In the following example, you grant the Microsoft Graph application (the princip
 
 ```powershell
  $params = @{
-  "PrincipalId" ="b0d9b9e3-0ecf-4bfd-8dab-9273dd055a94"
-  "ResourceId" = "7ea9e944-71ce-443d-811c-71e8047b557a"
+  "PrincipalId" ="aaaaaaaa-bbbb-cccc-1111-222222222222"
+  "ResourceId" = "11112222-bbbb-3333-cccc-4444dddd5555"
   "AppRoleId" = "df021288-bdef-4463-88db-98f22de89214"
 }
 
-New-MgServicePrincipalAppRoleAssignment -ServicePrincipalId 'b0d9b9e3-0ecf-4bfd-8dab-9273dd055a94' -BodyParameter $params | 
+New-MgServicePrincipalAppRoleAssignment -ServicePrincipalId 'aaaaaaaa-bbbb-cccc-1111-222222222222' -BodyParameter $params | 
   Format-List Id, AppRoleId, CreatedDateTime, PrincipalDisplayName, PrincipalId, PrincipalType, ResourceDisplayName
 ```
 
@@ -177,7 +177,7 @@ In this section, you grant delegated permissions to your application. Delegated 
 
 You need to sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 
-In the following example, the resource API is Microsoft Graph of object ID `7ea9e944-71ce-443d-811c-71e8047b557a`. The Microsoft Graph API defines the delegated permissions, `User.Read.All` and `Group.Read.All`. The consentType is `AllPrincipals`, indicating that you're consenting on behalf of all users in the tenant. The object ID of the client enterprise application is `b0d9b9e3-0ecf-4bfd-8dab-9273dd055a941`.
+In the following example, the resource API is Microsoft Graph of object ID `11112222-bbbb-3333-cccc-4444dddd5555`. The Microsoft Graph API defines the delegated permissions, `User.Read.All` and `Group.Read.All`. The consentType is `AllPrincipals`, indicating that you're consenting on behalf of all users in the tenant. The object ID of the client enterprise application is `00001111-aaaa-2222-bbbb-3333cccc4444`.
 
 > [!CAUTION]
 > Be careful! Permissions granted programmatically are not subject to review or confirmation. They take effect immediately.
@@ -195,9 +195,9 @@ In the following example, the resource API is Microsoft Graph of object ID `7ea9
    
    Request body
    {
-      "clientId": "b0d9b9e3-0ecf-4bfd-8dab-9273dd055a94",
+      "clientId": "00001111-aaaa-2222-bbbb-3333cccc4444",
       "consentType": "AllPrincipals",
-      "resourceId": "7ea9e944-71ce-443d-811c-71e8047b557a",
+      "resourceId": "11112222-bbbb-3333-cccc-4444dddd5555",
       "scope": "User.Read.All Group.Read.All"
    }
    ```
@@ -205,16 +205,16 @@ In the following example, the resource API is Microsoft Graph of object ID `7ea9
 1. Confirm that you've granted tenant wide admin consent by running the following request.
 
    ```http
-   GET https://graph.microsoft.com/v1.0/oauth2PermissionGrants?$filter=clientId eq 'b0d9b9e3-0ecf-4bfd-8dab-9273dd055a94' and consentType eq 'AllPrincipals'
+   GET https://graph.microsoft.com/v1.0/oauth2PermissionGrants?$filter=clientId eq '00001111-aaaa-2222-bbbb-3333cccc4444' and consentType eq 'AllPrincipals'
    ```
 
 ## Grant admin consent for application permissions using Microsoft Graph API
 
 In this section, you grant application permissions to your enterprise application. Application permissions are permissions your application needs to access a resource API. The permissions are defined by the resource API and granted to your enterprise application, which is the principal application. After you've granted your application access to the resource API, it runs as a background service or daemon without a signed-in user. Application permissions are also known as app roles.
 
-In the following example, you grant the application, Microsoft Graph (the principal of ID `b0d9b9e3-0ecf-4bfd-8dab-9273dd055a94`) an app role (application permission) of ID `df021288-bdef-4463-88db-98f22de89214` that's exposed by a resource enterprise application of ID `7ea9e944-71ce-443d-811c-71e8047b557a`.
+In the following example, you grant the application, Microsoft Graph (the principal of ID `00001111-aaaa-2222-bbbb-3333cccc4444`) an app role (application permission) of ID `df021288-bdef-4463-88db-98f22de89214` that's exposed by a resource enterprise application of ID `11112222-bbbb-3333-cccc-4444dddd5555`.
 
-You need to sign as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+You need to sign as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
 1. Retrieve the app roles defined by Microsoft graph in your tenant. Identify the app role that you need to grant the client enterprise application. In this example, the app role ID is `df021288-bdef-4463-88db-98f22de89214`
 
@@ -225,13 +225,13 @@ You need to sign as a [Global Administrator](~/identity/role-based-access-contro
 1. Grant the application permission (app role) to the principal application by running the following request.
 
    ```http
-   POST https://graph.microsoft.com/v1.0/servicePrincipals/7ea9e944-71ce-443d-811c-71e8047b557a/appRoleAssignedTo
+   POST https://graph.microsoft.com/v1.0/servicePrincipals/11112222-bbbb-3333-cccc-4444dddd5555/appRoleAssignedTo
    
    Request body
 
    {
-      "principalId": "b0d9b9e3-0ecf-4bfd-8dab-9273dd055a94",
-      "resourceId": "7ea9e944-71ce-443d-811c-71e8047b557a",
+      "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
+      "resourceId": "11112222-bbbb-3333-cccc-4444dddd5555",
       "appRoleId": "df021288-bdef-4463-88db-98f22de89214"
    }
    ```

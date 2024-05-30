@@ -38,9 +38,9 @@ sections:
   - name: Activity logs
     questions:
       - question: |
-          Do I need to be a Global Administrator to see the activity logs in the Microsoft Entra admin center?
+          What role do I need to see the activity logs in the Microsoft Entra admin center?
         answer: |
-          No. The [least privilege role](../../identity/role-based-access-control/delegate-by-task.md) to view audit and sign-in logs is **Reports Reader**. Other roles include **Security Reader** and **Security Administrator**.
+          The [least privilege role](../../identity/role-based-access-control/delegate-by-task.md) to view audit and sign-in logs is **Reports Reader**. Other roles include **Security Reader** and **Security Administrator**.
 
       - question: |
           What logs can I integrate with Azure Monitor?
@@ -163,7 +163,7 @@ sections:
           - Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/).
           - Browse to **Identity** > **Monitoring & health** > **Sign-in logs**.
           - Select **Service Principal Sign-ins**. 
-          - Select an appropriate time frame in the Date field (last 24 hours, 7 days etc.).
+          - Select an appropriate time frame in the Date field (last 24 hours, 7 days, and so on).
           - Add a filter and select **Service Principal ID** and provide the value '00000000-0000-0000-0000-000000000000' to get instances of authentication with no client Service Principal.
             
       - question: |

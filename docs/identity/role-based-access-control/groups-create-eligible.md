@@ -45,7 +45,7 @@ For more information, see [Prerequisites to use PowerShell or Graph Explorer](pr
 
 1. Set **Microsoft Entra roles can be assigned to the group** to **Yes**.
 
-    This option is visible to only Privileged Role Administrators and Global Administrators because these are only two roles that can set this option.
+    This option is visible to Privileged Role Administrators because this role can set this option.
 
     :::image type="content" source="media/groups-create-eligible/eligible-switch.png" alt-text="Screenshot of option to make group a role-assignable group." lightbox="media/groups-create-eligible/eligible-switch.png":::
     
@@ -101,7 +101,7 @@ Install-Module -Name AzureAD
 Import-Module -Name AzureAD
 Get-Module -Name AzureAD
 
-#Connect to Azure AD. Sign in as Privileged Role Administrator or Global Administrator. Only these two roles can create a role-assignable group.
+#Connect to Azure AD. Sign in as Privileged Role Administrator. This role can create a role-assignable group.
 Connect-AzureAD
 
 #Input variabled: Existing group

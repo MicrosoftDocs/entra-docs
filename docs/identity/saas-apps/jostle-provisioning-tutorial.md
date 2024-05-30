@@ -33,7 +33,7 @@ This tutorial describes the steps you need to perform in both Jostle and Microso
 The scenario outlined in this tutorial assumes that you already have the following prerequisites:
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md) 
-* A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (for example, Application Administrator, Cloud Application administrator, Application Owner, or Global Administrator). 
+* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications). 
 * A [Jostle tenant](https://www.jostle.me/).
 * A user account in Jostle with Admin permissions.
 
@@ -53,7 +53,7 @@ Before you begin, you’ll need to create an **Automation user** in your Jostle 
 
 For more details on Automation users and how to create one, see [this article](https://forum.jostle.us/hc/en-us/articles/360057364073).
 
-Once created, the Automation user account **must be activated** (i.e. logged in to your intranet at least once) before it can be used to configure Azure.
+Once created, the Automation user account **must be activated** (that is, logged in to your intranet at least once) before it can be used to configure Azure.
 
 ### Manage user provisioning
 
@@ -71,7 +71,7 @@ The next step is to obtain the **API URL** and **API key** from Jostle:
 1. On the following screen, go to the **Automation User** field and use the drop-down menu to select your Automation user account. 
 
    ![Integration Account](media/jostle-provisioning-tutorial/select-integration-account.png)                                                                                                                                     
-1. In the **Provisioning API key description** field give your key a name (i.e. “Azure”) and then click the **Add** button.
+1. In the **Provisioning API key description** field give your key a name (such as `Azure`) and then click the **Add** button.
 
 1. Once your key is generated, **make sure to copy it right away** and save it where you saved your URL (since this will be the only time your key will appear).                                                               
 1. Next, you’ll use the **API URL** and **API key** to configure the integration in Azure.

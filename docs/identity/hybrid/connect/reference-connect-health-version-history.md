@@ -22,8 +22,17 @@ The Microsoft Entra team regularly updates Microsoft Entra Connect Health with n
 > Microsoft Entra Connect Health agents are updated automatically when new version is released.
 >
 
-Microsoft Entra Connect Health for Sync is integrated with Microsoft Entra Connect installation. Read more about [Microsoft Entra Connect release history](./reference-connect-version-history.md)
+Microsoft Entra Connect Health for Sync is integrated with Microsoft Entra Connect installation. Read more about [Microsoft Entra Connect release history](./reference-connect-version-history.md).
+
 For feature feedback, vote at [Connect Health User Voice channel](https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789)
+
+## May 2024
+**Agent Updates**
+Microsoft Entra Connect Health (version 4.5.2487.0)
+  - Updated installer to allow for specifying proxy server configuration
+  - Updated installer to default to Public Cloud with the option to specify US Government cloud
+  - Added support for command line installation
+  - Bug fixes
 
 ## January - March 2024
 **Agent Updates**
@@ -314,8 +323,8 @@ Microsoft Entra Connect Health AD DS and ADFS Health Agents (version 3.2.2256.26
 
 * Alerts for monitoring AD FS and AD FS Proxy servers with email notifications.
 * Easy access to AD FS topology and patterns in AD FS Performance Counters.
-* Trend in successful token requests on AD FS servers grouped by Applications, Authentication Methods, Request Network Location etc.
-* Trends in failed request on AD FS servers grouped by Applications, Error Types etc.
+* Trend in successful token requests on AD FS servers grouped by Applications, Authentication Methods, Request Network Location, and so on.
+* Trends in failed request on AD FS servers grouped by Applications, Error Types, and so on.
 * Simpler Agent Deployment using Microsoft Entra Global Administrator credentials.  
 
 ## Next steps

@@ -34,7 +34,7 @@ Microsoft provides [security defaults](~/fundamentals/security-defaults.md) that
    - Create or modify Conditional Access policies 
       - [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator)
 - A test user (not an administrator) that allows you to verify policies work as expected before deploying to real users. If you need to create a user, see [Quickstart: Add new users to Microsoft Entra ID](~/fundamentals/add-users.md).
-- A group that the test user is a member of. If you need to create a group, see [Create a group and add members in Microsoft Entra ID](~/fundamentals/how-to-manage-groups.md).
+- A group that the test user is a member of. If you need to create a group, see [Create a group and add members in Microsoft Entra ID](~/fundamentals/how-to-manage-groups.yml).
 
 ### Communicating change
 
@@ -173,7 +173,7 @@ By default, each policy created from template is created in report-only mode. We
 
 [Enable policies in report-only mode](howto-conditional-access-insights-reporting.md). Once you save a policy in report-only mode, you can see the effect on real-time sign-ins in the sign-in logs. From the sign-in logs, select an event and navigate to the **Report-only** tab to see the result of each report-only policy.
 
-You can view the aggregate affects of your Conditional Access policies in the **Insights and Reporting workbook**. To access the workbook, you need an Azure Monitor subscription and you need to [stream your sign-in logs to a log analytics workspace](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.md).
+You can view the aggregate affects of your Conditional Access policies in the **Insights and Reporting workbook**. To access the workbook, you need an Azure Monitor subscription and you need to [stream your sign-in logs to a log analytics workspace](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.yml).
 
 ### Plan for disruption
 
@@ -211,7 +211,7 @@ In addition to your active policies, implement disabled policies that act as sec
 
 ### Block countries/regions from which you never expect a sign-in
 
-Microsoft Entra ID allows you to create [named locations](location-condition.md). Create the list of countries/regions that are allowed, and then create a network block policy with these "allowed countries/regions" as an exclusion. This option creates less overhead for customers who are based in smaller geographic locations. **Be sure to exempt your emergency access accounts from this policy**.
+Microsoft Entra ID allows you to create [named locations](concept-assignment-network.md). Create the list of countries/regions that are allowed, and then create a network block policy with these "allowed countries/regions" as an exclusion. This option creates less overhead for customers who are based in smaller geographic locations. **Be sure to exempt your emergency access accounts from this policy**.
 
 ## Deploy Conditional Access policies
 

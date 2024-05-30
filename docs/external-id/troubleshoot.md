@@ -15,6 +15,8 @@ ms.collection: M365-identity-device-management
 
 # Troubleshooting Microsoft Entra B2B collaboration
 
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
+
 Here are some remedies for common problems with Microsoft Entra B2B collaboration.
 
 ## Guest sign-in fails with error code AADSTS50020
@@ -33,7 +35,7 @@ The organization hosting the Teams shared channel must enable the trust setting 
 
 ## An error similar to "Failure to update policy due to object limit" appears while configuring cross-tenant access settings
 
-As you configure [cross-tenant access settings](cross-tenant-access-settings-b2b-collaboration.md), if you receive an error that says “Failure to update policy due to object limit,” you've reached the policy object limit of 25 KB. We're working toward increasing this limit. If you need to be able to calculate how close the current policy is to this limit, do the following:
+As you configure [cross-tenant access settings](cross-tenant-access-settings-b2b-collaboration.yml), if you receive an error that says “Failure to update policy due to object limit,” you've reached the policy object limit of 25 KB. We're working toward increasing this limit. If you need to be able to calculate how close the current policy is to this limit, do the following:
 
 1. Open Microsoft Graph Explorer and run the following:  
 
@@ -55,7 +57,7 @@ if ($size -le $maxSize) { return “valid” }; else { return “invalid” }
 
 ## Users can no longer read email encrypted with Microsoft Rights Management Service (OME))
 
-As you configure [cross-tenant access settings](cross-tenant-access-settings-b2b-collaboration.md), if you block access to all apps by default, users will be unable to read emails encrypted with Microsoft Rights Management Service (also known as OME). To avoid this issue, we recommend configuring your outbound settings to allow your users to access this app ID: 00000012-0000-0000-c000-000000000000. If this is the only application you allow, access to all other apps will be blocked by default.
+As you configure [cross-tenant access settings](cross-tenant-access-settings-b2b-collaboration.yml), if you block access to all apps by default, users will be unable to read emails encrypted with Microsoft Rights Management Service (also known as OME). To avoid this issue, we recommend configuring your outbound settings to allow your users to access this app ID: 00000012-0000-0000-c000-000000000000. If this is the only application you allow, access to all other apps will be blocked by default.
 
 ## I’ve added an external user but don't see them in my Global Address Book or in the people picker
 
@@ -72,7 +74,7 @@ You can enable this feature by using the setting 'ShowPeoplePickerSuggestionsFor
 By default, SharePoint Online and OneDrive have their own set of external user options and don't use the settings from Microsoft Entra ID.  You need to enable [SharePoint and OneDrive integration with Microsoft Entra B2B](/sharepoint/sharepoint-azureb2b-integration) to ensure the options are consistent among those applications.
 ## Invitations have been disabled for directory
 
-If you're notified that you don't have permissions to invite users, verify that your user account is authorized to invite external users under Identity > Users > User settings > External users > Manage external collaboration settings:
+If you're notified that you don't have permissions to invite users, verify that your user account is authorized to invite external users under Microsoft Entra ID > Users > User settings > External users > Manage external collaboration settings:
 
 :::image type="content" source="media/troubleshoot/external-user-settings.png" alt-text="Screenshot showing the External User settings.":::
 
@@ -142,9 +144,9 @@ A user who has a guest account can't sign in, and is receiving the following err
     AADSTS65005: Using application 'AppName' is currently not supported for your organization contoso.com because it is in an unmanaged state. An administrator needs to claim ownership of the company by DNS validation of contoso.com before the application AppName can be provisioned.
 ```
 
-The user has an Azure user account and is a viral tenant who has been abandoned or unmanaged. Additionally, there are no Global Administrators in the tenant.
+The user has an Azure user account and is a viral tenant who has been abandoned or unmanaged. Additionally, there are no administrators in the tenant.
 
-To resolve this problem, you must take over the abandoned tenant. Refer to  [Take over an unmanaged directory as administrator in Microsoft Entra ID](~/identity/users/domains-admin-takeover.md). You must also access the internet-facing DNS for the domain suffix in question in order to provide direct evidence that you are in control of the namespace. After the tenant is returned to a managed state, discuss with the customer whether leaving the users and verified domain name is the best option for their organization.
+To resolve this problem, you must take over the abandoned tenant. Refer to [Take over an unmanaged directory as administrator in Microsoft Entra ID](~/identity/users/domains-admin-takeover.md). You must also access the internet-facing DNS for the domain suffix in question in order to provide direct evidence that you are in control of the namespace. After the tenant is returned to a managed state, discuss with the customer whether leaving the users and verified domain name is the best option for their organization.
 
 ## A guest user with a just-in-time or "viral" tenant is unable to reset their password
 
@@ -184,10 +186,10 @@ If you accidentally deleted the `aad-extensions-app`, you have 30 days to recove
 1. Run the PowerShell command `Get-MgDirectoryDeletedItem -DirectoryObjectId {id}`. As an example:
 
 ```powershell
-Get-MgDirectoryDeletedItem -DirectoryObjectId 'd4142c52-179b-4d31-b5b9-08940873507b'
+Get-MgDirectoryDeletedItem -DirectoryObjectId '00aa00aa-bb11-cc22-dd33-44ee44ee44ee'
 Id                                   DeletedDateTime
 --                                   ---------------
-d4142c52-179b-4d31-b5b9-08940873507b 8/30/2021 7:37:37 AM
+00aa00aa-bb11-cc22-dd33-44ee44ee44ee 8/30/2021 7:37:37 AM
 ```
 
 1. Run the PowerShell command `Restore-MgDirectoryDeletedItem -DirectoryObjectId {id}`. Replace the `{id}` portion of the command with the `DirectoryObjectId` from the previous step.

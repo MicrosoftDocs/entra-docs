@@ -54,7 +54,7 @@ To create an app role by using the Microsoft Entra admin center's user interface
    | **Allowed member types**                 | Specifies whether this app role can be assigned to users, applications, or both.<br/><br/>When available to `applications`, app roles appear as application permissions in an app registration's **Manage** section > **API permissions > Add a permission > My APIs > Choose an API > Application permissions**. | `Users/Groups`                |
    | **Value**                                | Specifies the value of the roles claim that the application should expect in the token. The value should exactly match the string referenced in the application's code. The value can't contain spaces.                                                                                                          | `Survey.Create`               |
    | **Description**                          | A more detailed description of the app role displayed during admin app assignment and consent experiences.                                                                                                                                                                                                        | `Writers can create surveys.` |
-   | **Do you want to enable this app role?** | Specifies whether the app role is enabled. To delete an app role, deselect this checkbox and apply the change before attempting the delete operation. This setting controls the app role's usage and availability while being able to temporarily or permanently disabling it without removing it entirely.                                                                                                                                                            | _Checked_                     |
+   | **Do you want to enable this app role?** | Specifies whether the app role is enabled. To delete an app role, deselect this checkbox and apply the change before attempting the delete operation. This setting controls the app role's usage and availability while being able to temporarily or permanently disabling it without removing it entirely.                                                                                                                                                            | *Checked*                     |
 
 1. Select **Apply** to save your changes.
 
@@ -73,9 +73,9 @@ If you have not already done so, you'll need to assign yourself as the applicati
 
 ## Assign app roles to applications
 
-Once you've added app roles in your application, you can assign an app role to a client app by using the Microsoft Entra admin center or programmatically by using [Microsoft Graph](/graph/api/user-post-approleassignments). This is not to be confused with [assigning roles to users](~/identity/role-based-access-control/manage-roles-portal.md).
+Once you've added app roles in your application, you can assign an app role to a client app by using the Microsoft Entra admin center or programmatically by using [Microsoft Graph](/graph/api/user-post-approleassignments). This is not to be confused with [assigning roles to users](~/identity/role-based-access-control/manage-roles-portal.yml).
 
-When you assign app roles to an application, you create _application permissions_. Application permissions are typically used by daemon apps or back-end services that need to authenticate and make authorized API call as themselves, without the interaction of a user.
+When you assign app roles to an application, you create *application permissions*. Application permissions are typically used by daemon apps or back-end services that need to authenticate and make authorized API call as themselves, without the interaction of a user.
 
 To assign app roles to an application by using the Microsoft Entra admin center:
 
@@ -92,7 +92,7 @@ The newly added roles should appear in your app registration's **API permissions
 
 ### Grant admin consent
 
-Because these are _application permissions_, not delegated permissions, an admin must grant consent to use the app roles assigned to the application.
+Because these are *application permissions*, not delegated permissions, an admin must grant consent to use the app roles assigned to the application.
 
 1. In the app registration's **API permissions** pane, select **Grant admin consent for \<tenant name\>**.
 1. Select **Yes** when prompted to grant consent for the requested permissions.

@@ -38,11 +38,11 @@ To get started with FIDO2 security keys and hybrid access to on-premises resourc
 
 ### My organization requires multifactor authentication to access resources. What can I do to support this requirement?
 
-FIDO2 Security keys come in a variety of form factors. Contact the device manufacturer of interest to discuss how their devices can be enabled with a PIN or biometric as a second factor. For a list of supported providers, see [FIDO2 security keys providers](concept-authentication-passwordless.md#fido2-security-key-providers).
+FIDO2 Security keys come in a variety of form factors. Contact the device manufacturer of interest to discuss how their devices can be enabled with a PIN or biometric as a second factor. For a list of supported providers, see [FIDO2 security keys providers](concept-authentication-passwordless.md).
 
 ### Where can I find compliant FIDO2 security keys?
 
-For a list of supported providers, see [FIDO2 security keys providers](concept-authentication-passwordless.md#fido2-security-key-providers).
+For a list of supported providers, see [FIDO2 security keys providers](concept-authentication-passwordless.md).
 
 ### What if I lose my security key?
 

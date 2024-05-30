@@ -34,7 +34,7 @@ This tutorial describes the steps you need to perform in both ContractS CLM and 
 The scenario outlined in this tutorial assumes that you already have the following prerequisites:
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md). 
-* A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (for example, Application Administrator, Cloud Application administrator, Application Owner, or Global Administrator). 
+* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications). 
 * A [ContractS CLM](https://www.holmescloud.com/) tenant.
 * A user account in ContractS CLM with Admin permissions.
 * A ContractS CLM subscription where single sign-on and user provisioning services are enabled.
@@ -51,7 +51,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 
 > [!NOTE]
 > * You will receive your ContractS CLM tenant URL from **ContractS CLM Support** <cs@holmescloud.com> team after purchasing the subscription.
-> * You can find the required information(endpoint URL, token, etc.) to set up the provisioning service in the **Company Settings** page as long as you subscribe single sign-on and user provisioning service.
+> * You can find the required information(endpoint URL, token, and so on) to set up the provisioning service in the **Company Settings** page as long as you subscribe single sign-on and user provisioning service.
  
 1. Log in to ContractS CLM account with your ContractS CLM credentials.
 1. Select "会社設定 (Company Settings)" menu and then select the hat shaped icon.

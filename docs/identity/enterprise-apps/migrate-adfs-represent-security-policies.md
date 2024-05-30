@@ -54,7 +54,7 @@ Explicit group authorization in AD FS:
 
 To map this rule to Microsoft Entra ID:
 
-1. In the [Microsoft Entra admin center](https://entra.microsoft.com/#home), [create a user group](~/fundamentals/how-to-manage-groups.md) that corresponds to the group of users from AD FS.
+1. In the [Microsoft Entra admin center](https://entra.microsoft.com/#home), [create a user group](~/fundamentals/how-to-manage-groups.yml) that corresponds to the group of users from AD FS.
 1. Assign app permissions to the group:
 
    :::image type="content" source="media/migrate-adfs-represent-security-policies/allow-a-group-explicitly-2.png" alt-text="Screenshot shows how to add an assignment to the app.":::
@@ -73,7 +73,7 @@ To map this rule to Microsoft Entra ID:
 
 ## Map multifactor authentication rules
 
-An on-premises deployment of [Multifactor Authentication (MFA)](~/identity/authentication/concept-mfa-howitworks.md) and AD FS still works after the migration because you're federated with AD FS. However, consider migrating to Azure's built-in MFA capabilities that are tied into Microsoft Entra Conditional Access workflows.
+An on-premises deployment of [Multifactor Authentication (MFA)](~/identity/authentication/concept-mfa-howitworks.md) and AD FS still works after the migration because you're federated with AD FS. However, consider migrating to Azure's built-in MFA capabilities that are tied into Microsoft Entra Conditional Access policies.
 
 The following are examples of types of MFA rules in AD FS, and how you can map them to Microsoft Entra ID based on different conditions.
 
@@ -85,40 +85,13 @@ MFA rule settings in AD FS:
 
 The users/groups selector is a rule that allows you to enforce MFA on a per-group (Group SID) or per-user (Primary SID) basis. Apart from the users/groups assignments, all other checkboxes in the AD FS MFA configuration UI function as extra rules that are evaluated after the users/groups rule is enforced.
 
-Specify MFA rules for a user or a group in Microsoft Entra ID:
-
-1. Create a [new Conditional Access policy](~/identity/authentication/tutorial-enable-azure-mfa.md?bc=/azure/active-directory/conditional-access/breadcrumb/toc.json&toc=/azure/active-directory/conditional-access/toc.json).
-1. Select **Assignments**. Add the user(s) or group(s) for which you want to enforce MFA.
-1. Configure the **Access controls** options as shown in the following screenshots:
-
-   :::image type="content" source="media/migrate-adfs-represent-security-policies/mfa-users-groups.png" alt-text="Screenshot shows the Grant pane where you can grant access." lightbox="media/migrate-adfs-represent-security-policies/mfa-users-groups.png":::
+[Common Conditional Access policy: Require MFA for all users](../conditional-access/howto-conditional-access-policy-all-users-mfa.md)
 
 ### Example 2: Enforce MFA for unregistered devices
 
-Specify MFA rules for unregistered devices in Microsoft Entra ID:
+Specify MFA rules for unregistered devices in Microsoft Entra:
 
-1. Create a [new Conditional Access policy](~/identity/authentication/tutorial-enable-azure-mfa.md?bc=/azure/active-directory/conditional-access/breadcrumb/toc.json&toc=/azure/active-directory/conditional-access/toc.json).
-1. Set the **Assignments** to **All users**.
-1. Configure the **Access controls** options as shown below:
-
-   :::image type="content" source="media/migrate-adfs-represent-security-policies/mfa-unregistered-devices.png" alt-text="Screenshot shows the Grant pane where you can grant access and specify other restrictions." lightbox="media/migrate-adfs-represent-security-policies/mfa-unregistered-devices.png":::
-
-When you set the **For multiple controls** option to **Require one of the selected controls**, it means that if any one of the conditions specified by the checkbox are met by the user, the user is granted access to your app.
-
-### Example 3: Enforce MFA based on location
-
-Specify MFA rules based on a user's location in Microsoft Entra ID:
-
-1. Create a [new Conditional Access policy](~/identity/authentication/tutorial-enable-azure-mfa.md?bc=/azure/active-directory/conditional-access/breadcrumb/toc.json&toc=/azure/active-directory/conditional-access/toc.json).
-1. Set the **Assignments** to **All users**.
-1. [Configure named locations in Microsoft Entra ID](~/identity/conditional-access/location-condition.md). Otherwise, federation from inside your corporate network is trusted.
-1. Configure the **Conditions rules** to specify the locations for which you would like to enforce MFA.
-
-   :::image type="content" source="media/migrate-adfs-represent-security-policies/mfa-location-1.png" alt-text="Screenshot shows the Locations pane for Conditions rules." lightbox="media/migrate-adfs-represent-security-policies/mfa-location-1.png":::
-
-1. Configure the **Access controls** options as shown below:
-
-   :::image type="content" source="media/migrate-adfs-represent-security-policies/mfa-location-2.png" alt-text="Screenshot shows the Locations pane to map access control policies.":::
+[Common Conditional Access policy: Require a compliant device, Microsoft Entra hybrid joined device, or multifactor authentication for all users](../conditional-access/howto-conditional-access-policy-compliant-device.md)
 
 ## Map Emit attributes as Claims rule
 
@@ -151,7 +124,7 @@ In this table, we've listed some useful Permit and Except options and how they m
 
 | Option | How to configure Permit option in Microsoft Entra ID?| How to configure Except option in Microsoft Entra ID? |
 | - | - | - |
-| From specific network| Maps to [Named Location](~/identity/conditional-access/location-condition.md) in Microsoft Entra ID| Use the **Exclude** option for [trusted locations](~/identity/conditional-access/location-condition.md) |
+| From specific network| Maps to [Named Location](../conditional-access/concept-assignment-network.md) in Microsoft Entra| Use the **Exclude** option for [trusted locations](../conditional-access/concept-assignment-network.md#trusted-locations) |
 | From specific groups| [Set a User/Groups Assignment](assign-user-or-group-access-portal.md)| Use the **Exclude** option in Users and Groups |
 | From Devices with Specific Trust Level| Set this from the **Device State** control under Assignments -> Conditions| Use the **Exclude** option under Device State Condition and Include **All devices** |
 | With Specific Claims in the Request| This setting can't be migrated| This setting can't be migrated |
@@ -187,7 +160,7 @@ Your existing external users can be set up in these two ways in AD FS:
 As you progress with your migration, you can take advantage of the benefits that [Microsoft Entra B2B](~/external-id/what-is-b2b.md) offers by migrating these users to use their own corporate identity when such an identity is available. This streamlines the process of signing in for those users, as they're often signed in with their own corporate sign-in. Your organization's administration is easier as well, by not having to manage accounts for external users.
 
 - **Federated external Identities**—If you're currently federating with an external organization, you have a few approaches to take:
-  - [Add Microsoft Entra B2B collaboration users in the Microsoft Entra admin center](~/external-id/add-users-administrator.md). You can proactively send B2B collaboration invitations from the Microsoft Entra administrative portal to the partner organization for individual members to continue using the apps and assets they're used to.
+  - [Add Microsoft Entra B2B collaboration users in the Microsoft Entra admin center](~/external-id/add-users-administrator.yml). You can proactively send B2B collaboration invitations from the Microsoft Entra administrative portal to the partner organization for individual members to continue using the apps and assets they're used to.
   - [Create a self-service B2B sign-up workflow](~/external-id/self-service-portal.md) that generates a request for individual users at your partner organization using the B2B invitation API.
 
 No matter how your existing external users are configured, they likely have permissions that are associated with their account, either in group membership or specific permissions. Evaluate whether these permissions need to be migrated or cleaned up.

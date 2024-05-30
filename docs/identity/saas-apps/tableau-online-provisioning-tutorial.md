@@ -41,7 +41,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md) 
-* A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (for example, Application Administrator, Cloud Application administrator, Application Owner, or Global Administrator).
+* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
 * A [Tableau Cloud tenant](https://www.tableau.com/).
 * A user account in Tableau Cloud with Admin permission
 
@@ -91,10 +91,10 @@ The Microsoft Entra provisioning service allows you to scope who will be provisi
 Tableau Cloud will only store the highest privileged role that is assigned to a user. In other words, if a user is assigned to two groups, the user’s role will reflect the highest privileged role.
 
 
-To keep track of role assignments, you can create two purpose-specific groups for role assignments. For example, you can create groups such as Tableau – Creator, and Tableau – Explorer, etc. Assignment would then look like:
+To keep track of role assignments, you can create two purpose-specific groups for role assignments. For example, you can create groups such as Tableau – Creator, and Tableau – Explorer, and so on. Assignment would then look like:
 * Tableau – Creator: Creator
 * Tableau – Explorer: Explorer
-* Etc.
+* And so on.
 
 Once provisioning is set up, you will want to edit role changes directly in Microsoft Entra ID. Otherwise, you may end up with role inconsistencies between Tableau Cloud and Microsoft Entra ID.
 

@@ -15,7 +15,7 @@ ms.custom: H1Hack27Feb2017
 
 ---
 
-# The Risky IP report (preview)
+# The Risky IP report 
 
 Active Directory Federation Services (AD FS) customers may expose password authentication endpoints to the internet to provide authentication services for end users to access SaaS applications such as Microsoft 365. 
 
@@ -70,9 +70,7 @@ Your load balancer aggregate might have failed, causing it to hit the alert thre
 
 ## Download the Risky IP report 
 
-Using the **Download** functionality, the whole risky IP address list in the past 30 days can be exported from the Connect Health Portal
-The export result will include all the failed AD FS sign-in activities in each detection time window, so you can customize the filtering after the export. 
-Besides the highlighted aggregations in the portal, the export result also shows more details about failed sign-in activities per IP address:
+Using the **Download** functionality, the whole risky IP address list in the past 30 days can be exported from the Connect Health Portal. The export result will include all the failed AD FS sign-in activities in each detection time window, so you can customize the filtering after the export. Besides the highlighted aggregations in the portal, the export result also shows more details about failed sign-in activities per IP address:
 
 |  Report Item  |  Description  | 
 | ------- | ----------- | 

@@ -18,6 +18,8 @@ ms.custom: developer
 
 # Sign in users in a sample Electron desktop application
 
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
 This how-to guide uses a sample Electron desktop application to show how to add authentication to a desktop application. The sample application enables users to sign in and sign out. The sample web application uses [Microsoft Authentication Library (MSAL)](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-node) for Node to handle authentication.
 
 In this article, you do the following tasks:
@@ -78,7 +80,8 @@ If you choose to download the `.zip` file, extract the sample app file to a fold
 
     ```powershell
     cd 1-Authentication\3-sign-in-electron\App
-    ```)
+    ```
+ 
 1. Run the following commands to install app dependencies:
 
     ```powershell
@@ -115,12 +118,9 @@ You can now test the sample Electron desktop app. After you run the app, the des
 
     :::image type="content" source="media/how-to-desktop-app-electron-sample-sign-in/desktop-app-electron-view-claims.png" alt-text="Screenshot of view token claims in an electron desktop app.":::
 
-## Next steps
+## See also
 
 - [Enable password reset](how-to-enable-password-reset-customers.md).
-
 - [Customize the default branding](how-to-customize-branding-customers.md).
-
 - [Configure sign-in with Google](how-to-google-federation-customers.md).
-
 - [Explore the Electron desktop app sample code](https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial/tree/main/1-Authentication/3-sign-in-electron#about-the-code).

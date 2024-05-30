@@ -33,7 +33,7 @@ This tutorial describes the steps you need to perform in both Starmind and Micro
 The scenario outlined in this tutorial assumes that you already have the following prerequisites:
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md) 
-* A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (for example, Application Administrator, Cloud Application administrator, Application Owner, or Global Administrator).
+* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
 * A user account in Starmind with at least User Admin permissions.
 
 ## Plan your provisioning deployment
@@ -44,7 +44,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 
 ## Configure Starmind to support provisioning with Microsoft Entra ID
 
-Contact [Starmind support](https://starmind.atlassian.net/servicedesk/customer/portal/2) to open a service request to enable Starmind to support provisioning with Microsoft Entra ID. Ensure to provide the Starmind network domain (e.g. acme.starmind.com) you want to enable user provisioning for. You will then get provided with the Tenant URL and Secret Token for authorization.
+Contact [Starmind support](https://starmind.atlassian.net/servicedesk/customer/portal/2) to open a service request to enable Starmind to support provisioning with Microsoft Entra ID. Ensure to provide the Starmind network domain (such as acme.starmind.com) you want to enable user provisioning for. You will then get provided with the Tenant URL and Secret Token for authorization.
 
 ## Starmind from the Microsoft Entra application gallery
 

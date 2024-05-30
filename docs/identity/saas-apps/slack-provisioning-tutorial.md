@@ -37,7 +37,7 @@ The objective of this tutorial is to show you the steps you need to perform in S
 The scenario outlined in this tutorial assumes that you already have the following items:
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md).
-* A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (for example, Application Administrator, Cloud Application administrator, Application Owner, or Global Administrator).
+* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
 * A Slack tenant with the [Plus plan](https://slack.com/pricing) or better enabled.
 * A user account in Slack with Team Admin permissions.
 
@@ -178,11 +178,11 @@ Once you've configured provisioning, use the following resources to monitor your
 
 * When configuring Slack's **displayName** attribute, be aware of the following behaviors:
 
-  * Values are not entirely unique (e.g. 2 users can have the same display name)
+  * Values are not entirely unique (such as 2 users can have the same display name)
 
   * Supports non-English characters, spaces, capitalization. 
   
-  * Allowed punctuation includes periods, underscores, hyphens, apostrophes, brackets (e.g. **( [ { } ] )**), and separators (e.g. **, / ;**).
+  * Allowed punctuation includes periods, underscores, hyphens, apostrophes, brackets (for example, `( [ { } ] )`), and separators (for example, `, / ;`).
   
   * displayName property cannot have an '@' character. If an '@' is included, you may find a skipped event in the provisioning logs with the description "AttributeValidationFailed."
 

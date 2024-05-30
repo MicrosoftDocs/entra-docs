@@ -48,7 +48,12 @@ A sign-up flow with email one-time passcode uses similar endpoints as sign-up wi
 
 ### Challenge types
 
-The API allows the app to advertise the authentication methods it supports to Microsoft Entra. To do so, the app uses the `challenge_type` parameter in its request. A sign-up flow with email one-time passcode uses *oob* and *redirect* challenge types as described in [Challenge types](reference-native-authentication-email-password.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json#self-service-password-reset-challenge-types).
+The API allows the app to advertise the authentication methods it supports, when it makes a call to Microsoft Entra. To do so, the app uses the `challenge_type` parameter in its requests. This parameter holds predefined values, which represent different authentication methods.
+
+For then email one-time passcode sign-up flow, the challenge type values are *oob* and *redirect*.  
+
+Learn more about challenge types in the [native authentication challenge types](../external-id/customers/concept-native-authentication-challenge-types.md).
+
 
 ### Sign-up flow protocol details
 
@@ -71,7 +76,7 @@ POST /{tenant_subdomain}.onmicrosoft.com/signup/v1.0/start HTTP/1.1
 Host: {tenant_subdomain}.ciamlogin.com
 Content-Type: application/x-www-form-urlencoded
 
-client_id=111101-14a6-abcd-97bc-abcd1110011
+client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &challenge_type=oob redirect
 &username=contoso-consumer@contoso.com 
 ```
@@ -83,7 +88,7 @@ POST /{tenant_subdomain}.onmicrosoft.com/signup/v1.0/start HTTP/1.1
 Host: {tenant_subdomain}.ciamlogin.com
 Content-Type: application/x-www-form-urlencoded
 
-client_id=111101-14a6-abcd-97bc-abcd1110011
+client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &challenge_type=oob redirect
 &attributes={"name": "{user_name}", "extension_2588abcdwhtfeehjjeeqwertc_age": "{user_age}", "phone": "{user_phone}"}
 &username=contoso-consumer@contoso.com 
@@ -197,7 +202,7 @@ POST /{tenant_subdomain}.onmicrosoft.com/signup/v1.0/challenge HTTP/1.1
 Host: {tenant_subdomain}.ciamlogin.com
 Content-Type: application/x-www-form-urlencoded
 
-client_id=111101-14a6-abcd-97bc-abcd1110011
+client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &challenge_type=oob redirect
 &continuation_token=AQABAAEAAA...
 ```
@@ -311,7 +316,7 @@ Host: {tenant_subdomain}.ciamlogin.com
 Content-Type: application/x-www-form-urlencoded
 
 continuation_token = uY29tL2F1dGhlbnRpY...
-&client_id=111101-14a6-abcd-97bc-abcd1110011 
+&client_id=00001111-aaaa-2222-bbbb-3333cccc4444 
 &grant_type=oob 
 &oob={otp_code}
 ```
@@ -464,7 +469,7 @@ POST /{tenant_subdomain}.onmicrosoft.com/signup/v1.0/continue HTTP/1.1
 Host: {tenant_subdomain}.ciamlogin.com
 Content-Type: application/x-www-form-urlencoded
  
-&client_id=111101-14a6-abcd-97bc-abcd1110011 
+&client_id=00001111-aaaa-2222-bbbb-3333cccc4444 
 &grant_type=attributes 
 &attributes={"name": "{user_name}", "age": "{user_age}", "hobbies": "{comma_separated_hobbies}"}
 &continuation_token=AQABAAEAAAAtn...
@@ -573,7 +578,7 @@ Host: {tenant_subdomain}.ciamlogin.com
 Content-Type: application/x-www-form-urlencoded
 
 continuation_token=ABAAEAAAAtyo... 
-&client_id=111101-14a6-abcd-97bc-abcd1110011 
+&client_id=00001111-aaaa-2222-bbbb-3333cccc4444 
 &username=contoso-consumer@contoso.com
 &scope={scopes}
 &grant_type=continuation_token 
@@ -675,7 +680,11 @@ Sign in with email one-time passcode uses similar endpoints as email with passwo
 
 ### Challenge types
 
-The API allows the app to advertise the authentication methods it supports to Microsoft Entra. To do so, the app includes the `challenge_type` parameter in its requests. Sign in with mail OTP uses *oob* and *redirect* challenge types as described in [Challenge types](reference-native-authentication-email-password.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json#sign-in-challenge-types).
+The API allows the app to advertise the authentication methods it supports, when it makes a call to Microsoft Entra. To do so, the app uses the `challenge_type` parameter in its requests. This parameter holds predefined values, which represent different authentication methods.
+
+For the email OTP sign-in flow, the challenge type values are *oob* and *redirect*.  
+
+Learn more about challenge types in the [native authentication challenge types](../external-id/customers/concept-native-authentication-challenge-types.md).
 
 ### Sign-in flow protocol details
 
@@ -696,7 +705,7 @@ POST /{tenant_subdomain}.onmicrosoft.com/oauth2/v2.0/initiate HTTP/1.1
 Host: {tenant_subdomain}.ciamlogin.com
 Content-Type: application/x-www-form-urlencoded 
 
-client_id=111101-14a6-abcd-97bc-abcd1110011
+client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &challenge_type=oob redirect
 &username=contoso-consumer@contoso.com 
 ```
@@ -804,7 +813,7 @@ POST /{tenant_subdomain}.onmicrosoft.com/oauth2/v2.0/challenge HTTP/1.1
 Host: {tenant_subdomain}.ciamlogin.com
 Content-Type: application/x-www-form-urlencoded 
 
-client_id=111101-14a6-abcd-97bc-abcd1110011
+client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &challenge_type=oob redirect 
 &continuation_token= uY29tL2F1dGhlbnRpY... 
 ```
@@ -916,7 +925,7 @@ Host: {tenant_subdomain}.ciamlogin.com
 Content-Type: application/x-www-form-urlencoded 
 
 continuation_token=uY29tL2F1dGhlbnRpY...
-&client_id=111101-14a6-abcd-97bc-abcd1110011 
+&client_id=00001111-aaaa-2222-bbbb-3333cccc4444 
 &grant_type=oob 
 &oob={otp_code}
 &scope= openid offline_access 

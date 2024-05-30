@@ -249,7 +249,7 @@
               href: scenario-web-app-call-api-acquire-token.md
             - name: Call a web API
               href: scenario-web-app-call-api-call-api.md
-        - name: Deploy and setup App Service auth in a pipeline
+        - name: Deploy and set-up App Service auth in a pipeline
           href: deploy-web-app-authentication-pipeline.md
 - name: Web API
   items:
@@ -278,6 +278,8 @@
       items:
         - name: Call a Web API with cURL
           href: howto-call-a-web-api-with-curl.md
+        - name: Call a web API with Insomnia
+          href: howto-call-a-web-api-with-rest-client.md
         - name: Protected web API
           items:
             - name: App registration
@@ -501,14 +503,14 @@
             - name: Customize claims using PowerShell
               href: claims-customization-powershell.md
             - name: Set an access token lifetime policy
-              href: configure-token-lifetimes.md    
+              href: configure-token-lifetimes.yml    
             - name: Configure app multi-instancing
               href: configure-app-multi-instancing.md
         - name: Custom claims provider
           items:
             - name: Token issuance start event
               items:
-                - name: Create a token issuance start event in a REST API
+                - name: Create REST API for token issuance event
                   href: custom-extension-tokenissuancestart-setup.md
                 - name: Configure a custom claims provider token issuance event
                   href: custom-extension-tokenissuancestart-configuration.md
@@ -676,41 +678,7 @@
             - name: Migrate from ADAL to MSAL Android
               href: migrate-android-adal-msal.md
         - name: MSAL iOS and macOS
-          items:
-            - name: Library initialization
-              items:
-                - name: MSAL for iOS and macOS differences
-                  href: msal-differences-ios-macos.md
-                - name: Redirect URI configuration
-                  href: redirect-uris-ios.md
-                - name: Customize browsers and WebViews
-                  href: customize-webviews.md
-                - name: Shared device mode for iOS devices
-                  displayName: firstline worker, frontline worker, flw
-                  href: msal-ios-shared-devices.md
-                - name: Integrate with Azure AD B2C
-                  href: config-authority.md#b2c
-            - name: Authentication and single sign-on (SSO)
-              items:
-                - name: Configure keychain
-                  href: howto-v2-keychain-objc.md
-                - name: SSO between MSAL apps
-                  href: single-sign-on-macos-ios.md
-                - name: SSO between ADAL and MSAL apps
-                  href: sso-between-adal-msal-apps-macos-ios.md
-                - name: Request custom claims
-                  href: request-custom-claims.md
-            - name: Logging and error handling
-              items:
-                - name: Logging in MSAL for iOS/macOS
-                  href: msal-logging-ios.md
-                - name: Handle errors and exceptions in MSAL for iOS/macOS
-                  displayName: handling, catch
-                  href: msal-error-handling-ios.md
-                - name: Troubleshoot SSL issues (MSAL iOS/macOS)
-                  href: ssl-issues.md
-            - name: Migrate to MSAL.iOS / macOS
-              href: migrate-objc-adal-msal.md
+          href: /entra/msal/objc/
         - name: MSAL Java
           href: /entra/msal/java/
         - name: MSAL.js
@@ -720,7 +688,7 @@
               items:
                 - name: Init MSAL.js 2.x and 1.x clients
                   href: msal-js-initializing-client-applications.md
-                - name: Running and debugging in IE
+                - name: Running and debugging in Internet Explorer
                   href: msal-js-use-ie-browser.md
                 - name: Integrate with Azure AD B2C
                   href: msal-b2c-overview.md
@@ -817,7 +785,7 @@
         - name: Application manifest
           displayName: app manifest
           href: reference-app-manifest.md
-        - name: Redirect URI/reply URL restrictions and limitations
+        - name: Redirect URI (reply URL) best practices and limitations
           href: reply-url.md
         - name: Validation differences by supported account types
           href: supported-accounts-validation.md

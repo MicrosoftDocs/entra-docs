@@ -16,6 +16,8 @@ ms.collection: M365-identity-device-management
 
 # Microsoft Entra B2B collaboration for hybrid organizations
 
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
+
 Microsoft Entra B2B collaboration makes it easy for you to give your external partners access to apps and resources in your organization. This is true even in a hybrid configuration where you have both on-premises and cloud-based resources. It doesn’t matter if you currently manage external partner accounts locally in your on-premises identity system, or if you manage the external accounts in the cloud as Microsoft Entra B2B users. You can now grant these users access to resources in either location, using the same sign-in credentials for both environments.
 
 <a name='grant-b2b-users-in-azure-ad-access-to-your-on-premises-apps'></a>

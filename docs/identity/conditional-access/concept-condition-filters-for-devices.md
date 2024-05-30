@@ -50,7 +50,7 @@ Policy 1: All users with an administrator role, accessing the Windows Azure Serv
    1. Under **Include**, select **Directory roles**, then all roles with administrator in the name.
    
       > [!WARNING]
-      > Conditional Access policies support built-in roles. Conditional Access policies are not enforced for other role types including [administrative unit-scoped](~/identity/role-based-access-control/admin-units-assign-roles.md) or [custom roles](~/identity/role-based-access-control/custom-create.md).
+      > Conditional Access policies support built-in roles. Conditional Access policies are not enforced for other role types including [administrative unit-scoped](~/identity/role-based-access-control/admin-units-assign-roles.md) or [custom roles](~/identity/role-based-access-control/custom-create.yml).
 
    1. Under **Exclude**, select **Users and groups** and choose your organization's emergency access or break-glass accounts. 
    1. Select **Done**.
@@ -67,7 +67,7 @@ Policy 2: All users with the an administrator role, accessing the Windows Azure 
    1. Under **Include**, select **Directory roles**, then all roles with administrator in the name
    
       > [!WARNING]
-      > Conditional Access policies support built-in roles. Conditional Access policies are not enforced for other role types including [administrative unit-scoped](~/identity/role-based-access-control/admin-units-assign-roles.md) or [custom roles](~/identity/role-based-access-control/custom-create.md).
+      > Conditional Access policies support built-in roles. Conditional Access policies are not enforced for other role types including [administrative unit-scoped](~/identity/role-based-access-control/admin-units-assign-roles.md) or [custom roles](~/identity/role-based-access-control/custom-create.yml).
 
    1. Under **Exclude**, select **Users and groups** and choose your organization's emergency access or break-glass accounts. 
    1. Select **Done**.
@@ -119,7 +119,7 @@ The following device attributes can be used with the filter for devices conditio
 | deviceOwnership | Equals, NotEquals | Supported values are "Personal" for bring your own devices and "Company" for corporate owned devices  | (device.deviceOwnership -eq "Company") |
 | isCompliant | Equals, NotEquals | Supported values are "True" for compliant devices and "False" for non compliant devices  | (device.isCompliant -eq "True") |
 | manufacturer | Equals, NotEquals, StartsWith, NotStartsWith, EndsWith, NotEndsWith, Contains, NotContains, In, NotIn | Any string | (device.manufacturer -startsWith "Microsoft") |
-| mdmAppId | Equals, NotEquals, In, NotIn | A valid MDM application ID | (device.mdmAppId -in ["0000000a-0000-0000-c000-000000000000"] |
+| mdmAppId | Equals, NotEquals, In, NotIn | A valid MDM application ID | (device.mdmAppId -in ["00001111-aaaa-2222-bbbb-3333cccc4444"] |
 | model | Equals, NotEquals, StartsWith, NotStartsWith, EndsWith, NotEndsWith, Contains, NotContains, In, NotIn | Any string | (device.model -notContains "Surface") |
 | operatingSystem | Equals, NotEquals, StartsWith, NotStartsWith, EndsWith, NotEndsWith, Contains, NotContains, In, NotIn | A valid operating system (like Windows, iOS, or Android) | (device.operatingSystem -eq "Windows") |
 | operatingSystemVersion | Equals, NotEquals, StartsWith, NotStartsWith, EndsWith, NotEndsWith, Contains, NotContains, In, NotIn | A valid operating system version (like 6.1 for Windows 7, 6.2 for Windows 8, or 10.0 for Windows 10 and Windows 11) | (device.operatingSystemVersion -in ["10.0.18363", "10.0.19041", "10.0.19042", "10.0.22000"]) |

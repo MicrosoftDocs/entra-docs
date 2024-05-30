@@ -52,15 +52,14 @@ Configure delegated permission to Microsoft Graph to enable your client applicat
 
 ## Clone sample Android mobile application  
 
-To obtain the sample application, clone the sample by following these steps:
+To obtain the sample application, you can either clone it from GitHub or download it as a .zip file.
 
-1. Open Terminal and navigate to a directory where you want to keep the code.  
-1. Clone the application from GitHub by running the following command:  
+- To clone the sample, open a command prompt and navigate to where you wish to create the project, and enter the following command:
  
-   ```bash 
+   ```console 
    git clone https://github.com/Azure-Samples/ms-identity-ciam-browser-delegated-android-sample
    ```
- 
+
 ## Configure the sample Android mobile application
 
 To enable authentication and access to Microsoft Graph resources, configure the sample by following these steps:
@@ -82,7 +81,7 @@ To enable authentication and access to Microsoft Graph resources, configure the 
 1. Find property named `scopes` and set the scopes recorded in [Delegated permission to Microsoft Graph](#delegated-permission-to-microsoft-graph).
 
     ```kotlin
-    private const val scopes = "" // Developers should set the respective scopes of their wMicrosoft Graph resources here. For example, private const val scopes = "api://{clientId}/{ToDoList.Read} api://{clientId}/{ToDoList.ReadWrite}"
+    private const val scopes = "" // Developers should set the respective scopes of their Microsoft Graph resources here. For example, private const val scopes = "api://{clientId}/{ToDoList.Read} api://{clientId}/{ToDoList.ReadWrite}"
     ```
    
 You've configured the app and it's ready to run. 
@@ -99,8 +98,10 @@ To build and run your app, follow these steps:
  
 1. Select the **Run** button.
 1. Select **Acquire Token Interactively** to request an access token.
-1. If you select **API - Perform GET** to call a protected ASP.NET Core web API, you will get an error. For more information about calling a protected web API, see [Next Step](#next-step) 
+1. If you select **API - Perform GET** to call a protected ASP.NET Core web API, you will get an error. 
 
-## Next Step
+For more information about calling a protected web API, see our [next steps](#next-steps) 
+
+## Next steps
 
 - [Sign in users and call a protected web API in sample Android (Kotlin) app](sample-mobile-app-android-kotlin-sign-in-call-api.md).
