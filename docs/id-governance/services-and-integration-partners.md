@@ -11,9 +11,11 @@ ms.author: mwahl
 ms.reviewer: mwahl
 ---
 
-# Services and integration partners for Microsoft Entra ID Governance
+# Services and integration partners
 
- Partners can help your organization with planning and deployment of Identity Governance.  Customers can engage partners listed in the Microsoft Solution Partner finder or can choose from the services partners listed in the following table.
+ Partners can help your organization with planning and deployment of Microsoft Entra scenarios including Identity Governance.  Customers can engage partners listed in the Microsoft Solution Partner finder or can choose from the services partners listed in the following tables.
+
+## Services and integration partners for Microsoft Entra ID Governance
 
 The descriptions and linked pages are provided by the partners themselves. You can use the description to identify a partner that you may want to contact and learn more about.
 
@@ -26,6 +28,14 @@ The descriptions and linked pages are provided by the partners themselves. You c
 |[KPMG](https://aka.ms/KPMGEntraIDGov) |"KPMG and Microsoft further strengthen their alliance by delivering a comprehensive identity governance proposition. By adeptly navigating the complexities of identity governance, the combination of Microsoft Entra advanced tools with KPMG Powered Enterprise helps drive functional transformation. This synergy can propel accelerated digital capabilities, enhance operational efficiency, fortify security and ensure compliance."|
 |[Oxford Computer Group](https://aka.ms/OCGEntraIDGov) |"Oxford Computer Group's customer base includes some of the largest and most recognizable companies in the US and beyond. Our solutions include Identity Lifecycle Management, Identity and Access Management, Entitlements, Conditional Access, Separation of Duties, Attestation, SOX, Risk Assessments for IAM, Audit Remediation, External Identities, and Verifiable Credentials - nearly every aspect of Identity Governance. "|
 |[PwC](https://aka.ms/PwCEntraIDGov) |"Organizations use identity and access management to build trust, and doing so sustainably often requires the right technology and a multi-disciplinary team. Our team can help you implement Microsoft Entra ID Governance from strategy through execution by collaborating with you and our network of professionals by focusing on three key aspects: people, process, and technology."|
+
+## Services and integration partners for Microsoft Entra with SAP applications
+
+| Name | Description |
+| ------- | --------------------- |
+| Accenture and Avanade | "Accenture and Avanade are global leaders in Microsoft Security and SAP Services. With our unique combination of Microsoft and SAP skills, we can help you to understand and successfully plan a migration from SAP IdM to Microsoft Entra ID. Through our delivery assets and expertise, Avanade and Accenture can help you accelerate your migration project, to achieve your goals with less risk. Accenture are uniquely positioned to assist large global enterprises, complemented by Avanade’s deep experience with supporting both mid to large enterprises on their migration journey. Our extensive knowledge and experience can help you accelerate your journey to replace SAP IdM, whilst maximizing your investment in Microsoft Entra ID."|
+| Partner 2| |
+| Partner 3| |
 
 ## Partner-driven application integrations
 
