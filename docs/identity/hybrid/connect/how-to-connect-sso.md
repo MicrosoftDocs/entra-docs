@@ -72,7 +72,7 @@ For more information on how SSO works with Windows 10 using PRT, see: [Primary R
  >Microsoft Edge legacy is no longer supported
 
 
-\*Requires Internet Explorer version 11 or later. ([Beginning August 17, 2021, Microsoft 365 apps and services won't support, that is, 11](https://techcommunity.microsoft.com/t5/microsoft-365-blog/microsoft-365-apps-say-farewell-to-internet-explorer-11-and/ba-p/1591666).)
+\*Requires Internet Explorer version 11 or later. ([Beginning August 17, 2021, Microsoft 365 apps and services won't support Internet Explorer 11](https://techcommunity.microsoft.com/t5/microsoft-365-blog/microsoft-365-apps-say-farewell-to-internet-explorer-11-and/ba-p/1591666).)
 
 \*\*Requires Internet Explorer version 11 or later. Disable Enhanced Protected Mode.
 
