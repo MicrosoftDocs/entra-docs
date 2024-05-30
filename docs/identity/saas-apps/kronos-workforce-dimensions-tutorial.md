@@ -371,7 +371,7 @@ The automated process consists of a flat-file in CSV format which allows the use
 
     * **jobAssignment.jobAssignmentDetails.payRuleName**: Specific Pay Rule Name from WFD. 
 
-    * **jobAssignment.jobAssignmentDetails.timeZoneName**: Timezone format must match WFD instance (i.e., (GMT -08:00) Pacific Time) 
+    * **jobAssignment.jobAssignmentDetails.timeZoneName**: Timezone format must match WFD instance (that is, `(GMT -08:00) Pacific Time`).
 
     * **jobAssignment.primaryLaborAccounts.organizationPath**: Organization Path of a specific Business structure in the WFD instance. 
 
