@@ -4,14 +4,10 @@
   items:
   - name: About managed identities for Azure resources
     href: overview.md
-- name: Quickstarts
+- name: Quickstart guide
   items:
   - name: Use a VM managed identity to access Azure Resource Manager
-    items:
-    - name: Windows VM
-      href: tutorial-windows-vm-access-arm.md
-    - name: Linux VM
-      href: tutorial-linux-vm-access-arm.md
+    href: tutorial-windows-vm-access.md
 - name: Tutorials
   items:
   - name: Windows VM/VMSS
