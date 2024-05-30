@@ -33,7 +33,7 @@ In cases where an application doesn't support SCIM, partners have built [custom 
    [![Diagram showing gateways between the Microsoft Entra SCIM client and target applications.](media/partner-driven-integrations/partner-driven-connectors-1.png)](media/partner-driven-integrations/partner-driven-connectors-1.png#lightbox)
 
 
-[!INCLUDE [Microsoft Entra ID application integration partners](../includes/application-integration-partners.md)]
+[!INCLUDE [Microsoft Entra ID application integration partners](../../includes/application-integration-partners.md)]
 
 ## How-to add partner-driven integrations to this document
 If you have built a SCIM Gateway and would like to add it to this list, follow the steps below. 
