@@ -195,7 +195,7 @@ Without this, Microsoft Entra ID returns an [AADSTS50146 error code](./reference
 
 ## Configure a custom signing key
 
-For multi-tenant apps, a custom signing key should be used. Don't set `acceptMappedClaims` in the app manifest. when setting up an app in the Azure portal, you get an app registration object and a service principal in your tenant. That app is using the Azure global sign-in key, which can't be used for customizing claims in tokens. To get custom claims in tokens, create a custom sign-in key from a certificate and add it to service principal. For testing purposes, you can use a self-signed certificate. After you configure the custom signing key, your application code needs to validate the token signing key.
+For multitenant apps, a custom signing key should be used. Don't set `acceptMappedClaims` in the app manifest. When setting up an app in the Azure portal, you get an app registration object and a service principal in your tenant. That app is using the Azure global sign-in key, which can't be used for customizing claims in tokens. To get custom claims in tokens, create a custom sign-in key from a certificate and add it to service principal. For testing purposes, you can use a self-signed certificate. After you configure the custom signing key, your application code needs to validate the token signing key.
 
 Add the following information to the service principal:
 
