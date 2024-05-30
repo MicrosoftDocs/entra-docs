@@ -1,6 +1,6 @@
 ---
-title: include file
-description: include file
+title: Include file for services and integration partners.
+description: Include file for services and integration partners for identity and access management (IAM), and for identity governance and administration (IGA).
 author: markwahl-msft
 ms.service: entra-id
 ms.topic: include
@@ -11,7 +11,7 @@ ms.custom: include file
 
 ## Services and integration partners for Microsoft Entra ID Governance
 
-The descriptions and linked pages are provided by the partners themselves. You can use the description to identify a partner that you may want to contact and learn more about.
+Partners can help your organization with planning and deployment of Microsoft Entra scenarios including Identity Governance. Customers can engage partners listed in the Microsoft Solution Partner finder or can choose from the services partners listed in the following table. The descriptions and linked pages are provided by the partners themselves. You can use the description to identify a partner that you may want to contact and learn more about.
 
 | Name | Description |
 | ------- | --------------------- |
