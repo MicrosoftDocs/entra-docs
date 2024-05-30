@@ -5,7 +5,7 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: curation-claims, devx-track-dotnet
-ms.date: 05/13/2024
+ms.date: 05/30/2024
 ms.reviewer: rahulnagraj, alamaral
 ms.service: identity-platform
 
@@ -220,9 +220,9 @@ Authorization: Bearer {token}
 {
     "keyCredentials":[
         {
-            "customKeyIdentifier": "Abababababababa121212121212121=", 
+            "customKeyIdentifier": "aB1cD2eF3gH4iJ5kL6-mN7oP8qR=", 
             "endDateTime": "2021-04-22T22:10:13Z",
-            "keyId": "11111111-1111-1111-1111-111111111111",
+            "keyId": "aaaaaaaa-0b0b-1c1c-2d2d-333333333333",
             "startDateTime": "2020-04-22T21:50:13Z",
             "type": "X509CertAndPassword",
             "usage": "Sign",
@@ -230,9 +230,9 @@ Authorization: Bearer {token}
             "displayName": "CN=contoso"
         },
         {
-            "customKeyIdentifier": "Abababababababa121212121212121=",
+            "customKeyIdentifier": "aB1cD2eF3gH4iJ5kL6-mN7oP8qR=",
             "endDateTime": "2021-04-22T22:10:13Z",
-            "keyId": "22222222-2222-2222-2222-222222222222",
+            "keyId": "bbbbbbbb-1c1c-2d2d-3e3e-444444444444",
             "startDateTime": "2020-04-22T21:50:13Z",
             "type": "AsymmetricX509Cert",
             "usage": "Verify",
@@ -243,8 +243,8 @@ Authorization: Bearer {token}
     ],
     "passwordCredentials": [
         {
-            "customKeyIdentifier": "Abababababababa121212121212121=",
-            "keyId": "33333333-3333-3333-3333-333333333333",
+            "customKeyIdentifier": "aB1cD2eF3gH4iJ5kL6-mN7oP8qR=",
+            "keyId": "cccccccc-2d2d-3e3e-4f4f-555555555555",
             "endDateTime": "2022-01-27T19:40:33Z",
             "startDateTime": "2020-04-20T19:40:33Z",
             "secretText": "mypassword"

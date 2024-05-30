@@ -1,5 +1,5 @@
 ---
-title: Create a Microsoft Entra app and service principal
+title: Register a Microsoft Entra app and create a service principal
 description: Create a new Microsoft Entra app and service principal to manage access to resources with role-based access control in Azure Resource Manager.
 author: cilwerner
 manager: CelesteDG
@@ -12,7 +12,7 @@ ms.topic: how-to
 #Customer intent: As a developer, I want to understand how to create a Microsoft Entra application and service principal, so that I can access resources with RBAC and manage permissions for my application.
 ---
 
-# Create a Microsoft Entra application and service principal
+# Register a Microsoft Entra app and create a service principal
 
 In this article, you'll learn how to create a Microsoft Entra application and service principal that can be used with role-based access control (RBAC). When you register a new application in Microsoft Entra ID, a service principal is automatically created for the app registration. The service principal is the app's identity in the Microsoft Entra tenant. Access to resources is restricted by the roles assigned to the service principal, giving you control over which resources can be accessed and at which level. For security reasons, it's always recommended to use service principals with automated tools rather than allowing them to sign in with a user identity.
 
