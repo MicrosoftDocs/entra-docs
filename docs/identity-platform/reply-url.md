@@ -107,9 +107,9 @@ Query parameters *are not allowed* in redirect URIs for any app registration con
 | App registration sign-in audience | Supports query parameters in redirect URI |
 |-----------------------------------|-------------------------------------------|
 | Accounts in this organizational directory only (Contoso only - Single tenant) | :::image type="icon" source="media/common/yes.png" border="false"::: |
-| Accounts in any organizational directory (Any Microsoft Entra directory - Multitenant)                                                    |:::image type="icon" source="media/common/yes.png" border="false"::: |
-| Accounts in any organizational directory (Any Microsoft Entra directory - Multitenant) and personal Microsoft accounts (for example, Skype, Xbox) | :::image type="icon" source="media/common/no.png" border="false":::  |
-| Personal Microsoft accounts only | :::image type="icon" source="media/common/no.png" border="false":::  |
+| Accounts in any organizational directory (Any Microsoft Entra directory - Multitenant) |:::image type="icon" source="media/common/yes.png" border="false"::: |
+| Accounts in any organizational directory (Any Microsoft Entra directory - Multitenant) and personal Microsoft accounts (such as Skype and Xbox) | :::image type="icon" source="media/common/no.png" border="false":::  |
+| Personal Microsoft accounts only | :::image type="icon" source="media/common/no.png" border="false"::: |
 
 ## Supported schemes
 
