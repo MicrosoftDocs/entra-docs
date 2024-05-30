@@ -89,7 +89,7 @@ To enable Microsoft Entra SSO in the Azure portal, follow these steps:
     | https://login.mypurecloud.com/saml |
     | https://login.mypurecloud.de/saml |
     | https://login.mypurecloud.jp/saml |
-    | https://login.mypurecloud. That is, /saml |
+    | https://login.mypurecloud.ie/saml |
     | https://login.mypurecloud.com.au/saml |
     |
 
