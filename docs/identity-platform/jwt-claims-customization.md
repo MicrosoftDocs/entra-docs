@@ -220,30 +220,30 @@ Authorization: Bearer {token}
 {
     "keyCredentials":[
         {
-            "customKeyIdentifier": "aB1cD2eF3gH4iJ5kL6-mN7oP8qR=", 
+            "customKeyIdentifier": "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u=", 
             "endDateTime": "2021-04-22T22:10:13Z",
             "keyId": "aaaaaaaa-0b0b-1c1c-2d2d-333333333333",
             "startDateTime": "2020-04-22T21:50:13Z",
             "type": "X509CertAndPassword",
             "usage": "Sign",
-            "key":"MIIKIAIBAz...eZmAAgIH0A==",
+            "key":"MIIKIAIBAz.....BRFVNXeZmAAgIH0A==",
             "displayName": "CN=contoso"
         },
         {
-            "customKeyIdentifier": "aB1cD2eF3gH4iJ5kL6-mN7oP8qR=",
+            "customKeyIdentifier": "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u=",
             "endDateTime": "2021-04-22T22:10:13Z",
             "keyId": "bbbbbbbb-1c1c-2d2d-3e3e-444444444444",
             "startDateTime": "2020-04-22T21:50:13Z",
             "type": "AsymmetricX509Cert",
             "usage": "Verify",
-            "key": "MIIDJzCCAg+gAw......83hlCSyg==",
+            "key": "MIIDJzCCAg+gAw......N3bafeesMSueR83hlCSyg==",
             "displayName": "CN=contoso"
         }
 
     ],
     "passwordCredentials": [
         {
-            "customKeyIdentifier": "aB1cD2eF3gH4iJ5kL6-mN7oP8qR=",
+            "customKeyIdentifier": "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u=",
             "keyId": "cccccccc-2d2d-3e3e-4f4f-555555555555",
             "endDateTime": "2022-01-27T19:40:33Z",
             "startDateTime": "2020-04-20T19:40:33Z",

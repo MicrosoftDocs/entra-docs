@@ -232,7 +232,7 @@ Note: the default validity period of the initial Microsoft Entra certificate use
 
 When certificates expire, they can no longer be used, and new certificates must be configured. Therefore, a process must be established to keep the certificate configuration inside the relying party (which needs to validate the signatures) up to date with the actual certificates being used to sign the SAML tokens.
 
-In some cases, the relying party can do this automatically by providing it with a metadata endpoint which returns the latest metadata information dynamically - i.e., typically a publicly accessible URL from which the relying party can periodically retrieve the metadata and update its internal configuration store.
+In some cases, the relying party can do this automatically by providing it with a metadata endpoint which returns the latest metadata information dynamically - that is, typically a publicly accessible URL from which the relying party can periodically retrieve the metadata and update its internal configuration store.
 
 However, IAS only allows Corporate Identity Providers to be set up through an import of the metadata XML file, it does not support providing a metadata endpoint for dynamic retrieval of the Microsoft Entra metadata (for example `https://login.microsoftonline.com/my-azuread-tenant/federationmetadata/2007-06/federationmetadata.xml?appid=my-app-id`). Similarly, BTP does not allow a new Trust Configuration to be set up from the IAS metadata endpoint (for example `https://my-ias-tenant.accounts.ondemand.com/saml2/metadata`), it also needs a one-time upload of a metadata XML file.
 

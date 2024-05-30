@@ -79,7 +79,7 @@ To view the cloud sync configuration synchronization schema and verify it, follo
                 "deletedDateTime": null,
                 "accountEnabled": true,
                 "appDisplayName": "Active Directory to Azure Active Directory Provisioning",
-                "appId": "1a4721b3-e57f-4451-ae87-ef078703ec94",
+                "appId": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
                 "applicationTemplateId": null,
                 "appOwnerOrganizationId": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
                 "appRoleAssignmentRequired": false,

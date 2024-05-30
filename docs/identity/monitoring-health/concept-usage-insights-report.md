@@ -202,8 +202,8 @@ Example response:
  "keyUsage": "sign",
  "appId": "11112222-bbbb-3333-cccc-4444dddd5555",
  "appObjectId": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
- "servicePrincipalObjectId": "cf533854-9fb7-4c01-9c0e-f68922ada8b6",
- "resourceId": "a89dc091-a671-4da4-9fcf-3ef06bdf3ac3",
+ "servicePrincipalObjectId": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
+ "resourceId": "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1",
  "credentialOrigin": "application",
  "expirationDate": "2021-04-01T21:36:48-8:00",
  "signInActivity": {

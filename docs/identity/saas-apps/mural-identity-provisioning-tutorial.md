@@ -145,7 +145,7 @@ Once you've configured provisioning, use the following resources to monitor your
 * If the provisioning configuration seems to be in an unhealthy state, the application will go into quarantine. Learn more about quarantine states [here](~/identity/app-provisioning/application-provisioning-quarantine-status.md).  
 
 ## Troubleshooting Tips
-* When provisioning a user keep in mind that at MURAL we do not support numbers in the name fields (i.e. givenName or familyName).
+* When provisioning a user keep in mind that at MURAL we do not support numbers in the name fields (that is, givenName or familyName).
 * When filtering on **userName** in the GET endpoint make sure that the email address is all lowercase otherwise you will get an empty result. This is because we convert email addresses to lowercase while provisioning accounts.
 * When de-provisioning an end-user (setting the active attribute to false), user will be soft-deleted and lose access to all their workspaces. When that same de-provisioned end-user is later activated again (setting the active attribute to true), user will not have access to the workspaces user previously belonged to. The end-user will see an error message "You’ve been deactivated from this workspace",  with an option to request reactivation which the workspace admin must approve.
 * If you have any other issues, please reach out to [MURAL Identity support team](mailto:support@mural.co).

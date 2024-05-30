@@ -560,7 +560,7 @@ This script illustrates using a filter to retrieve the assignments to the access
 You can remove a user's assignment with the `New-MgEntitlementManagementAssignmentRequest` cmdlet.
 
 ```powershell
-$userId = "040a792f-4c5f-4395-902f-f0d9d192ab2c"
+$userId = "00aa00aa-bb11-cc22-dd33-44ee44ee44ee"
 $filter = "accessPackage/Id eq '" + $accessPackageId + "' and state eq 'Delivered' and target/objectId eq '" + $userId + "'"
 $assignment = Get-MgEntitlementManagementAssignment -Filter $filter -ExpandProperty target -all -ErrorAction stop
 if ($assignment -ne $null) {

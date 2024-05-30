@@ -25,7 +25,7 @@ The Microsoft identity platform can issue v1.0 tokens and v2.0 tokens. For more 
 
 The token version your API may accept depends on your **Supported account types** selection when you create your web API application registration in the Azure portal.
 
-- If the value of **Supported account types** is **Accounts in any organizational directory and personal Microsoft accounts (e.g. Skype, Xbox, Outlook.com)**, the accepted token version must be v2.0.
+- If the value of **Supported account types** is **Accounts in any organizational directory and personal Microsoft accounts (such as Skype, Xbox, Outlook.com)**, the accepted token version must be v2.0.
 - Otherwise, the accepted token version can be v1.0.
 
 After you create the application, you can determine or change the accepted token version by following these steps:

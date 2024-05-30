@@ -72,7 +72,7 @@ Administrators can then choose to take action on these events. Administrators ca
 1. Consider creating a known traveler database for updated organizational travel reporting and use it to cross-reference travel activity.
 1. Add corporate VPN's and IP Address ranges to named locations to reduce false positives.
 1. Review the logs to identify similar activities with the same characteristics. This could be an indication of more compromised accounts.
-   1. If there are common characteristics, like IP address, geography, success/failure, etc..., consider blocking these with a Conditional Access policy.
+   1. If there are common characteristics, like IP address, geography, success/failure, and so on..., consider blocking these with a Conditional Access policy.
    1. Review which resource may have been compromised, such as potential data downloads or administrative modifications.
    1. Enable self-remediation policies through Conditional Access
 1. If you see that the user performed other risky activities, such as downloading a large volume of files from a new location, this is a strong indication of a possible compromise.

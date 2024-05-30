@@ -92,7 +92,7 @@ Follow these steps to enable Microsoft Entra SSO.
 	> If the **Identifier** and **Reply URL** values are not getting auto populated, then fill in the values manually according to your requirement.
 
     > [!Note]
-    > When changing identity provider in AWS (i.e. from AD to external provider such as Microsoft Entra ID) the AWS metadata will change and need to be reuploaded to Azure for SSO to function correctly.
+    > When changing identity provider in AWS (that is, from AD to external provider such as Microsoft Entra ID) the AWS metadata will change and need to be reuploaded to Azure for SSO to function correctly.
 
 1. If you don't have **Service Provider metadata file**, perform the following steps on the **Basic SAML Configuration** section, if you wish to configure the application in **IDP** initiated mode, perform the following steps:
 

@@ -90,7 +90,7 @@ Accept wildcard characters: False
 ```
 
 #### -ObjectClass
-The class of the objects to search that can be '*' (for any object class), 'user', 'group', 'container', etc.
+The class of the objects to search that can be '*' (for any object class), 'user', 'group', 'container', and so on.
 By default, this function will search for 'organizationalUnit' object class.
 
 ```yaml
