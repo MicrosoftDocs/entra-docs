@@ -72,7 +72,7 @@ You can scope the agent to synchronize all or specific security groups. You can 
 
  :::image type="content" source="media/how-to-configure-entra-to-active-directory/config-6.png" alt-text="Screenshot of the scoping filters expression." lightbox="media/how-to-configure-entra-to-active-directory/config-6.png":::
 
- 5. Attribute based scope filtering is supported. For more information see [Attribute based scope filtering](how-to-attribute-mapping-entra-to-active-directory.md#attribute-scope-filtering) and [Reference for writing expressions for attribute mappings in Microsoft Entra ID](../../app-provisioning/functions-for-customizing-application-data.md).
+ 5. Attribute based scope filtering is supported. For more information see [Attribute based scope filtering](how-to-attribute-mapping-entra-to-active-directory.md#attribute-scope-filtering) and [Reference for writing expressions for attribute mappings in Microsoft Entra ID](../../app-provisioning/functions-for-customizing-application-data.md) and [Scenario - Using directory extensions with group provisioning to Active Directory](tutorial-directory-extension-group-provisioning.md).
  4. Once your scoping filters are configured, click **Save**.
  5. After saving, you should see a message telling you what you still need to do to configure cloud sync. You can click the link to continue.
  :::image type="content" source="media/how-to-configure/new-ux-configure-16.png" alt-text="Screenshot of the nudge for scoping filters." lightbox="media/how-to-configure/new-ux-configure-16.png":::
