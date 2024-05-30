@@ -24,7 +24,7 @@ In this article, you learn how to review and take action on admin consent reques
 To review and take action on admin consent requests, you need:
 
 - An Azure account. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- A Global Administrator or a designated reviewer with the appropriate role to [review admin consent requests](grant-admin-consent.md#prerequisites).
+- An administrator role or a designated reviewer with the appropriate role to [review admin consent requests](grant-admin-consent.md#prerequisites).
 
 ## Review and take action on admin consent requests
 
@@ -51,7 +51,7 @@ To review the admin consent requests and take action:
 
 ## Review admin consent requests using Microsoft Graph
 
-To review the admin consent requests programmatically, use the [appConsentRequest resource type](/graph/api/resources/appconsentrequest) and [userConsentRequest resource type](/graph/api/resources/userconsentrequest) and their associated methods in Microsoft Graph. You can't approve or deny consent requests using Microsoft Graph.
+To review the admin consent requests programmatically, use the [`appConsentRequest` resource type](/graph/api/resources/appconsentrequest) and [`userConsentRequest` resource type](/graph/api/resources/userconsentrequest) and their associated methods in Microsoft Graph. You can't approve or deny consent requests using Microsoft Graph.
 
 ## Next steps
 - [Review permissions granted to apps](manage-application-permissions.md)

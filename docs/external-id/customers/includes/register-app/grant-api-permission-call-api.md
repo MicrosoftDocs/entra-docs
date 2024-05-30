@@ -3,7 +3,7 @@ author: kengaderdus
 ms.service: entra-external-id
 ms.subservice: customers
 ms.topic: include
-ms.date: 03/30/2023
+ms.date: 04/10/2024
 ms.author: kengaderdus
 ms.manager: mwongerapk
 ---
@@ -27,7 +27,7 @@ To grant your client app (*ciam-client-app*) API permissions, follow these steps
  
 1. Under **Configured permissions**, select **Add a permission** again.
 
-1. Select the **My APIs** tab.
+1. Select the **APIs my organization uses** tab.
  
 1. In the list of APIs, select the API such as *ciam-ToDoList-api*.
  

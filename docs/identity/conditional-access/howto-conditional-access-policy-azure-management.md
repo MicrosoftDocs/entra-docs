@@ -1,16 +1,16 @@
 ---
 title: Require MFA for Azure management with Conditional Access
-description: Create a custom Conditional Access policy to require multifactor authentication for Azure management tasks
+description: Create a custom Conditional Access policy to require multifactor authentication for Azure management tasks.
 
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 07/18/2023
+ms.date: 05/29/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
-ms.reviewer: calebb, lhuangnorth
+ms.reviewer: lhuangnorth
 ---
 # Common Conditional Access policy: Require MFA for Azure management
 
@@ -35,7 +35,7 @@ To protect these privileged resources, Microsoft recommends requiring multifacto
 
 ## Create a Conditional Access policy
 
-The following steps will help create a Conditional Access policy to require users who access the [Windows Azure Service Management API](concept-conditional-access-cloud-apps.md#windows-azure-service-management-api) suite do multifactor authentication.
+The following steps help create a Conditional Access policy to require users who access the [Windows Azure Service Management API](concept-conditional-access-cloud-apps.md#windows-azure-service-management-api) suite do multifactor authentication.
 
 > [!CAUTION]
 > Make sure you understand how Conditional Access works before setting up a policy to manage access to Windows Azure Service Management API. Make sure you don't create conditions that could block your own access to the portal.

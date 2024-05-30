@@ -11,6 +11,8 @@ ms.subservice: saas-apps
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: jeedes
+
+# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and MyWorkDrive so that I can control who has access to MyWorkDrive, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 # Tutorial: Integrate MyWorkDrive with Microsoft Entra ID
 
@@ -147,7 +149,7 @@ In this section, you'll enable Britta Simon to use Azure single sign-on by grant
 	d. Click **Save**.
 
 	> [!NOTE]
-	> For additional information review the [MyWorkDrive Microsoft Entra ID support article](https://www.myworkdrive.com/support/saml-single-sign-on-azure-ad/).
+	> For additional information review the [MyWorkDrive Microsoft Entra support article](https://www.myworkdrive.com/support/saml-single-sign-on-azure-ad/).
 
 ### Create MyWorkDrive test user
 

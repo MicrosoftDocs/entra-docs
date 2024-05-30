@@ -58,8 +58,7 @@ Use the following instructions to learn how to enhance monitoring of inactive gu
 
    `(user.userType -eq "Guest") and (user.mail -contains "@contoso.com") and (user.accountEnabled -eq true)`
 
-2. To [create an Access Review](~/id-governance/create-access-review.md)
-    for the dynamic group, navigate to **Microsoft Entra ID > Identity Governance > Access Reviews**.
+2. To [create an Access Review](~/id-governance/create-access-review.md) for the dynamic group, navigate to **Microsoft Entra ID > Identity Governance > Access Reviews**.
 
 3. Select **New access review**.
 
@@ -184,7 +183,4 @@ Use the following instructions to learn how to enhance monitoring of inactive gu
 
 11. Select **Create**.
 
-Guest users who don't sign into the tenant for the number of days you
-configured are disabled for 30 days, then deleted. After deletion, you
-can restore guests for up to 30 days, after which a new invitation is
-needed.
+Guest users who don't sign into the tenant for the number of days you configured are disabled for 30 days, then deleted. After deletion, you can restore guests for up to 30 days, after which a new invitation is needed.

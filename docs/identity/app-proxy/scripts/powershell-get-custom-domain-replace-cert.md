@@ -1,27 +1,26 @@
 ---
 title: PowerShell sample - Replace certificate in Microsoft Entra application proxy apps
 description: PowerShell example that bulk replaces a certificate across Microsoft Entra application proxy applications.
-
 author: kenwith
 manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-proxy
-ms.custom: has-azure-ad-ps-ref
+ms.custom: 
 ms.topic: sample
-ms.date: 01/04/2024
+ms.date: 02/27/2024
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
 
 # Get all Microsoft Entra application proxy applications published with the identical certificate and replace it
 
-This PowerShell script example allows you to replace the certificate in bulk for all the Microsoft Entra application proxy applications that are published with the identical certificate.
+The PowerShell script example replaces the certificates in bulk for all Microsoft Entra application proxy applications published with identical certificate.
 
-[!INCLUDE [quickstarts-free-trial-note](~/../azure-docs-pr/includes/quickstarts-free-trial-note.md)]
+[!INCLUDE [quickstarts-free-trial-note](~/includes/azure-docs-pr/quickstarts-free-trial-note.md)]
 
-[!INCLUDE [updated-for-az](~/../azure-docs-pr/includes/updated-for-az.md)]
+[!INCLUDE [updated-for-az](~/includes/azure-docs-pr/updated-for-az.md)]
 
-This sample requires the [Microsoft Graph Beta PowerShell module](/powershell/microsoftgraph/installation) 2.10 or newer.
+The sample requires the [Microsoft Graph Beta PowerShell module](/powershell/microsoftgraph/installation) 2.10 or newer.
 
 ## Sample script
 
@@ -89,41 +88,39 @@ Write-Host ("")
 
 foreach ($item in $allApps) {
 
- $aadapApp, $aadapAppConf, $aadapAppConf1 = $null, $null, $null
- 
- $aadapAppId =  Get-MgBetaApplication | where-object {$_.AppId -eq $item.AppId}
- $aadapAppConf = Get-MgBetaApplication -ApplicationId $aadapAppId.Id -ErrorAction SilentlyContinue -select OnPremisesPublishing | select OnPremisesPublishing -expand OnPremisesPublishing 
- $aadapAppConf1 = Get-MgBetaApplication -ApplicationId $aadapAppId.Id -ErrorAction SilentlyContinue -select OnPremisesPublishing | select OnPremisesPublishing -expand OnPremisesPublishing `
-  | select verifiedCustomDomainCertificatesMetadata -expand verifiedCustomDomainCertificatesMetadata 
+  $aadapApp, $aadapAppConf, $aadapAppConf1 = $null, $null, $null
+
+  $aadapAppId =  Get-MgBetaApplication | where-object {$_.AppId -eq $item.AppId}
+  $aadapAppConf = Get-MgBetaApplication -ApplicationId $aadapAppId.Id -ErrorAction SilentlyContinue -select OnPremisesPublishing | select OnPremisesPublishing -expand OnPremisesPublishing 
+  $aadapAppConf1 = Get-MgBetaApplication -ApplicationId $aadapAppId.Id -ErrorAction SilentlyContinue -select OnPremisesPublishing | select OnPremisesPublishing -expand OnPremisesPublishing `
+    | select verifiedCustomDomainCertificatesMetadata -expand verifiedCustomDomainCertificatesMetadata 
 
   if ($aadapAppConf -ne $null) {
-   
-   if ($aadapAppConf1.VerifiedCustomDomainCertificatesMetadata.Thumbprint -match $certThumbprint) {
-  
-     Write-Host $item.DisplayName"(AppId: " $item.AppId ", ObjId:" $item.Id")" -BackgroundColor "Black" -ForegroundColor "White"
-     Write-Host
-     Write-Host "External Url: " $aadapAppConf.ExternalUrl
-     Write-Host "Internal Url: " $aadapAppConf.InternalUrl
-     Write-Host "Pre-authentication: " $aadapAppConf.ExternalAuthenticationType
-     Write-Host
 
-     $params = @{
-         onPremisesPublishing = @{
-            verifiedCustomDomainKeyCredential = @{
-                  type="X509CertAndPassword";
-                  value = [convert]::ToBase64String((Get-Content $certPfxFilePath -Encoding byte));
-                 };
-                  verifiedCustomDomainPasswordCredential = @{ value = $securePassword };
-         }
-     }
+    if ($aadapAppConf1.VerifiedCustomDomainCertificatesMetadata.Thumbprint -match $certThumbprint) {
 
-     Update-MgBetaApplication -ApplicationId $aadapAppId.Id -BodyParameter $params
+      Write-Host $item.DisplayName"(AppId: " $item.AppId ", ObjId:" $item.Id")" -BackgroundColor "Black" -ForegroundColor "White"
+      Write-Host
+      Write-Host "External Url: " $aadapAppConf.ExternalUrl
+      Write-Host "Internal Url: " $aadapAppConf.InternalUrl
+      Write-Host "Pre-authentication: " $aadapAppConf.ExternalAuthenticationType
+      Write-Host
+
+      $params = @{
+         onPremisesPublishing = @{
+            verifiedCustomDomainKeyCredential = @{
+                type="X509CertAndPassword";
+                value = [convert]::ToBase64String((Get-Content $certPfxFilePath -Encoding byte));
+            };
+            verifiedCustomDomainPasswordCredential = @{ value = $securePassword };
+         }
+      }
+
+      Update-MgBetaApplication -ApplicationId $aadapAppId.Id -BodyParameter $params
   
-     $numberofAadapApps = $numberofAadapApps + 1              
+      $numberofAadapApps = $numberofAadapApps + 1
     }
-  
-   }
-  
+  }
 }
 
 Write-Host
@@ -146,6 +143,5 @@ Write-Host "To disconnect from Microsoft Graph, please use the Disconnect-MgGrap
 
 ## Next steps
 
-For more information on the Microsoft Graph PowerShell module, see [Microsoft Graph PowerShell overview](/powershell/microsoftgraph/overview).
-
-For other PowerShell examples for Application Proxy, see [Microsoft Entra application proxy PowerShell examples](../application-proxy-powershell-samples.md).
+- [Microsoft Graph PowerShell overview](/powershell/microsoftgraph/overview)
+- [Microsoft Entra application proxy PowerShell examples](../application-proxy-powershell-samples.md)

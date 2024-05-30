@@ -8,7 +8,7 @@ ms.custom: curation-claims
 ms.date: 04/21/2023
 ms.service: identity-platform
 
-ms.topic: conceptual
+ms.topic: concept-article
 #Customer intent: As a developer building applications with secure authorization, I want to understand the claims based authorization process, so that I can ensure my applications adhere to the most secure practices.
 ---
 

@@ -9,9 +9,11 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 11/21/2023
+ms.date: 02/12/2024
 ms.author: jeedes
 
+
+# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Tanium SSO so that I can control who has access to Tanium SSO, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
 # Microsoft Entra SSO integration with Tanium SSO
@@ -30,7 +32,7 @@ You'll configure and test Microsoft Entra single sign-on for Tanium SSO in a tes
 To integrate Microsoft Entra ID with Tanium SSO, you need:
 
 * A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* One of the following roles: Global Administrator, Cloud Application Administrator, Application Administrator, or owner of the service principal.
+* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
 * A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
 * Tanium SSO single sign-on (SSO) enabled subscription.
 
@@ -79,7 +81,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
     `https://<InstanceName>.cloud.tanium.com`
 
     > [!NOTE]
-    > These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [Tanium SSO support team](mailto:integrations@tanium.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [Tanium Support](https://community.tanium.com/s/contactsupport) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
     > [!NOTE]
     > If deploying Tanium in an on-premises configuration, your values may look different than those shown above. The values to use can be retrieved from the **Administration > SAML Configuration** menu in the Tanium console. Details can be found in the [Tanium Console User Guide: Integrating with a SAML IdP](https://docs.tanium.com/platform_user/platform_user/console_using_saml.html?cloud=false "Integrating with a SAML IdP Guide").
@@ -90,7 +92,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 
 ## Configure Tanium SSO
 
-To configure single sign-on on **Tanium SSO** side, you need to send the **App Federation Metadata Url** to [Tanium SSO support team](mailto:integrations@tanium.com). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **Tanium SSO** side, you need to send the **App Federation Metadata Url** to [Tanium Support](https://community.tanium.com/s/contactsupport). They set this setting to have the SAML SSO connection set properly on both sides.
 
 ### Create Tanium SSO test user
 

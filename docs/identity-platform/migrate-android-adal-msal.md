@@ -10,7 +10,7 @@ ms.reviewer: shoatman
 ms.service: identity-platform
 
 ms.tgt_pltfrm: Android
-ms.topic: conceptual
+ms.topic: concept-article
 #Customer intent: As an Android application developer, I want to learn how to migrate my v1 ADAL app to v2 MSAL.
 ---
 

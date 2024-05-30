@@ -85,7 +85,7 @@ The issuance request payload contains information about your verifiable credenti
     "clientName": "Verifiable Credential Expert Sample"
   },
   "type": "VerifiedCredentialExpert",
-  "manifest": "https://verifiedid.did.msidentity.com/v1.0/tenants/12345678-0000-0000-0000-000000000000/verifiableCredentials/contracts/MTIzNDU2NzgtMDAwMC0wMDAwLTAwMDAtMDAwMDAwMDAwMDAwdmVyaWZpZWRjcmVkZW50aWFsZXhwZXJ0/manifest",
+  "manifest": "https://verifiedid.did.msidentity.com/v1.0/tenants/aaaabbbb-0000-cccc-1111-dddd2222eeee/verifiableCredentials/contracts/MTIzNDU2NzgtMDAwMC0wMDAwLTAwMDAtMDAwMDAwMDAwMDAwdmVyaWZpZWRjcmVkZW50aWFsZXhwZXJ0/manifest",
   "pin": {
     "value": "3539",
     "length": 4
@@ -110,7 +110,7 @@ The payload contains the following properties:
 | `manifest` | string| The URL of the verifiable credential manifest document. For more information, see [Gather credentials and environment details to set up your sample application](verifiable-credentials-configure-issuer.md).|
 | `claims` | string| Optional. Can only be used for the [ID token hint](rules-and-display-definitions-model.md#idtokenhintattestation-type) attestation flow to include a collection of assertions made about the subject in the verifiable credential. |
 | `pin` | [PIN](#pin-type)| Optional. PIN code can only be used with the [ID token hint](rules-and-display-definitions-model.md#idtokenhintattestation-type) attestation flow. A PIN number to provide extra security during issuance. You generate a PIN code, and present it to the user in your app. The user must provide the PIN code that you generated. |
-| `expirationDate` | string| Optional. The expirationDate can only be used with the [ID token hint](rules-and-display-definitions-model.md#idtokenhintattestation-type) attestation flow. If specified, the value needs to be a date expressed in the [ISO8601](https://en.wikipedia.org/wiki/ISO_8601) format. The date will override the [validityInterval](rules-and-display-definitions-model.md#rulesmodel-type) in the credentials rules definition for this issuance request. Use this setting to explicitly control when a credential expires, like end-of-day, end-of-month or end-of-year, regardless of when it is issued. Please note that the date is expressed in UTC format. If you specify end-of-year, with time set to `23:59:59`, that is 1 second to midnight in UTC time. Any user in a different timezone will get the expiration date presented in local timezone in the Microsoft Authenticator. This means that if you are in the CET timezone, it will be presented as January 1 1am. |
+| `expirationDate` | string| Optional. The expirationDate can only be used with the [ID token hint](rules-and-display-definitions-model.md#idtokenhintattestation-type) attestation flow. If specified, the value needs to be a date expressed in the [ISO8601](https://en.wikipedia.org/wiki/ISO_8601) format. The date will override the [validityInterval](rules-and-display-definitions-model.md#rulesmodel-type) in the credentials rules definition for this issuance request. Use this setting to explicitly control when a credential expires, like end-of-day, end-of-month or end-of-year, regardless of when it is issued. Please note that the date is expressed in UTC format. If you specify end-of-year, with time set to `23:59:59`, that is 1 second to midnight in UTC time. Any user in a different timezone will get the expiration date presented in local timezone in the Microsoft Authenticator. This means that if you are in the CET timezone, it will be presented as January 1 1am.<br/><br/>The credential contract needs to have the flag [allowOverrideValidityOnIssuance](admin-api.md#contract-type) set to true. |
 
 There are currently four claims attestation types that you can send in the payload. Microsoft Entra Verified ID uses four ways to insert claims into a verifiable credential and attest to that information with the issuer's DID. The following are the four types:
 
@@ -164,7 +164,7 @@ If successful, this method returns a response code (*HTTP 201 Created*), and a c
 ```json
 {  
     "requestId": "799f23ea-5241-45af-99ad-cf8e5018814e",  
-    "url": "openid://vc?request_uri=https://verifiedid.did.msidentity.com/v1.0/12345678-0000-0000-0000-000000000000/verifiableCredentials/request/178319f7-20be-4945-80fb-7d52d47ae82e",  
+    "url": "openid://vc?request_uri=https://verifiedid.did.msidentity.com/v1.0/00001111-aaaa-2222-bbbb-3333cccc4444/verifiableCredentials/request/178319f7-20be-4945-80fb-7d52d47ae82e",  
     "expiry": 1622227690,  
     "qrCode": "data:image/png;base64,iVBORw0KggoA<SNIP>"  
 } 

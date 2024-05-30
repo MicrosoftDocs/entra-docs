@@ -21,7 +21,7 @@ This article explains how to create a custom role with permissions to manage ent
 ## Prerequisites
 
 - Microsoft Entra ID P1 or P2 license
-- Privileged Role Administrator or Global Administrator
+- Privileged Role Administrator
 - Microsoft Graph PowerShell SDK installed when using PowerShell
 - Admin consent when using Graph explorer for Microsoft Graph API
 
@@ -94,7 +94,7 @@ Granting the update permission is done in two steps:
 
 ## PowerShell
 
-For more detail, see [Create and assign a custom role in Microsoft Entra ID](custom-create.md) and [Assign custom roles with resource scope using PowerShell](custom-assign-powershell.md).
+For more detail, see [Create and assign a custom role in Microsoft Entra ID](custom-create.yml) and [Assign custom roles with resource scope using PowerShell](custom-assign-powershell.md).
 
 ### Create a custom role
 
@@ -136,7 +136,7 @@ $roleAssignment = New-MgRoleManagementDirectoryRoleAssignment -DirectoryScopeId 
 
 ## Microsoft Graph API
 
-Use the [Create unifiedRoleDefinition](/graph/api/rbacapplication-post-roledefinitions) API to create a custom role. For more information, see [Create and assign a custom role in Microsoft Entra ID](custom-create.md) and [Assign custom admin roles using the Microsoft Graph API](custom-assign-graph.md).
+Use the [Create unifiedRoleDefinition](/graph/api/rbacapplication-post-roledefinitions) API to create a custom role. For more information, see [Create and assign a custom role in Microsoft Entra ID](custom-create.yml) and [Assign custom admin roles using the Microsoft Graph API](custom-assign-graph.md).
 
 ```http
 POST https://graph.microsoft.com/v1.0/roleManagement/directory/roleDefinitions

@@ -5,11 +5,11 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: scenarios:getting-started, has-adal-ref
-ms.date: 02/09/2024
+ms.date: 03/20/2024
 ms.reviewer: jmprieur
 ms.service: identity-platform
 
-ms.topic: conceptual
+ms.topic: concept-article
 #Customer intent: As an app developer, I want to learn about authentication flows and application scenarios so I can create applications protected by the Microsoft identity platform.
 ---
 

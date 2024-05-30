@@ -5,11 +5,11 @@ author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
 ms.custom: devx-track-csharp,  devx-track-dotnet
-ms.date: 01/30/2024
-ms.reviewer: saeeda, Dickson-Mwendia
+ms.date: 04/10/2024
+ms.reviewer: saeeda, dmwendia, negoe
 ms.service: identity-platform
 
-ms.topic: conceptual
+ms.topic: troubleshooting
 #Customer intent: As an application developer, I want to learn about special requirements for using Xamarin Android and MSAL.NET.
 ---
 
@@ -82,10 +82,10 @@ To support System WebView, the *AndroidManifest.xml* file should contain the fol
 </activity>
 ```
 
-The `android:scheme` value is created from the redirect URI that's configured in the application portal. For example, if your redirect URI is `msal4a1aa1d5-c567-49d0-ad0b-cd957a47f842://auth`, the `android:scheme` entry in the manifest would look like this example:
+The `android:scheme` value is created from the redirect URI that's configured in the application portal. For example, if your redirect URI is `msal00001111-aaaa-2222-bbbb-3333cccc4444://auth`, the `android:scheme` entry in the manifest would look like this example:
 
 ```xml
-<data android:scheme="msal4a1aa1d5-c567-49d0-ad0b-cd957a47f842" android:host="auth" />
+<data android:scheme="msal00001111-aaaa-2222-bbbb-3333cccc4444" android:host="auth" />
 ```
 
 Alternatively, [create the activity in code](/xamarin/android/platform/android-manifest#the-basics) rather than manually editing *AndroidManifest.xml*. To create the activity in code, first create a class that includes the `Activity` attribute and the `IntentFilter` attribute.
@@ -105,7 +105,7 @@ Here's an example of a class that represents the values of the XML file:
 
 ### Use System WebView in brokered authentication
 
-To use System WebView as a fallback for interactive authentication when you've configured your application to use brokered authentication and the device doesn't have a broker installed, enable MSAL to capture the authentication response by using the broker's redirect URI. MSAL will try to authenticate by using the default System WebView on the device when it detects that the broker is unavailable. Using this default, it will fail because the redirect URI is configured to use a broker, and System WebView doesn't know how to use it to return to MSAL. To resolve this, create an _intent filter_ by using the broker redirect URI that you configured earlier. Add the intent filter by modifying your application's manifest like this example:
+To use System WebView as a fallback for interactive authentication when you've configured your application to use brokered authentication and the device doesn't have a broker installed, enable MSAL to capture the authentication response by using the broker's redirect URI. MSAL will try to authenticate by using the default System WebView on the device when it detects that the broker is unavailable. Using this default, it will fail because the redirect URI is configured to use a broker, and System WebView doesn't know how to use it to return to MSAL. To resolve this, create an *intent filter* by using the broker redirect URI that you configured earlier. Add the intent filter by modifying your application's manifest like this example:
 
 ```xml
 <!--Intent filter to capture System WebView or Authenticator calling back to our app after sign-in-->
@@ -172,7 +172,7 @@ Your updated manifest, which now includes support for the system browser and bro
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="msal4a1aa1d5-c567-49d0-ad0b-cd957a47f842" android:host="auth" />
+                <data android:scheme="msal00001111-aaaa-2222-bbbb-3333cccc4444" android:host="auth" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />

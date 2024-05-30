@@ -1,6 +1,6 @@
 ---
 title: Identity Protection for a customer app
-description: Learn how to add Identity Protection to your customer-facing (CIAM) application to provide ongoing risk detection.
+description: Learn how to add Identity Protection to your consumer and business customer (CIAM) application to provide ongoing risk detection.
  
 author: msmimart
 manager: celestedg
@@ -13,9 +13,11 @@ ms.author: mimart
 ms.custom: it-pro
 
 ---
-# Investigate risk with Identity Protection in Microsoft Entra ID for customers
+# Investigate risk with Identity Protection in Microsoft Entra External ID
 
-Microsoft Entra [Identity Protection](~/id-protection/overview-identity-protection.md) provides ongoing risk detection for your customer tenant. It allows organizations to discover, investigate, and remediate identity-based risks. Identity Protection comes with risk reports that can be used to investigate identity risks in customer tenants. In this article, you learn how to investigate and mitigate risks.
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
+Microsoft Entra [Identity Protection](~/id-protection/overview-identity-protection.md) provides ongoing risk detection for your external tenant. It allows organizations to discover, investigate, and remediate identity-based risks. Identity Protection comes with risk reports that can be used to investigate identity risks in external tenants. In this article, you learn how to investigate and mitigate risks.
 
 ## Identity Protection reporting
 
@@ -30,7 +32,7 @@ Consider the following points when using Identity Protection:
 - Identity Protection is not available in trial tenants.
 - Identity Protection is on by default.
 - Identity Protection is available for both local and social identities, such as Google or Facebook. Detection is limited because the external identity provider manages the social account credentials.
-- Currently in Microsoft Entra customer tenants, a subset of the [Microsoft Entra ID Protection risk detections](~/id-protection/overview-identity-protection.md) is available. Microsoft Entra ID for customers supports the following risk detections:  
+- Currently in Microsoft Entra external tenants, a subset of the [Microsoft Entra ID Protection risk detections](~/id-protection/overview-identity-protection.md) is available. Microsoft Entra External ID supports the following risk detections:  
 
 |Risk detection type  |Description  |
 |---------|---------|
@@ -65,7 +67,7 @@ An administrator can choose to dismiss a user's risk in the Microsoft Entra admi
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
-1. Make sure you're using the directory that contains your Microsoft Entra customer tenant: Select the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the toolbar and find your customer tenant from the **Directories + subscriptions** menu. If it's not the current directory, select **Switch**.
+1. Make sure you're using the directory that contains your Microsoft Entra external tenant: Select the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the toolbar and find your external tenant from the **Directories + subscriptions** menu. If it's not the current directory, select **Switch**.
 
 1. Browse to **Identity** > **Protection** > **Security Center**.
 

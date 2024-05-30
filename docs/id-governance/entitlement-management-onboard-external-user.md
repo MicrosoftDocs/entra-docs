@@ -26,10 +26,9 @@ For more information, see [License requirements](entitlement-management-overview
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-**Prerequisite role:** Global administrator, Identity Governance administrator, User administrator, Catalog owner, or Access package manager
-
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
-
+    > [!TIP]
+    > Other least privilege roles that can complete this task include the Catalog owner, User Administrator, and Access package manager.
 1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
 
 3. When selecting the access package page if you see Access denied, ensure that a Microsoft Entra ID P2 or Microsoft Entra ID Governance license is present in your directory.
@@ -100,12 +99,11 @@ For more information, see [License requirements](entitlement-management-overview
 
 ## Step 7: Clean up resources
 
-In this step, you can delete the **External user package** access package. 
-
-**Prerequisite role:** Global administrator, Identity Governance administrator or Access package manager
+In this step, you can delete the **External user package** access package.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
-
+    > [!TIP]
+    > Other least privilege roles that can complete this task include the Access package manager.
 1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
 
 4. Open the **External user package** access package. 

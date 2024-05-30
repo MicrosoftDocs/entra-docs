@@ -47,6 +47,8 @@ The `Verifiable Credentials Service Admin` service supports the following applic
 
 The app registration needs to have the API Permission for `Verifiable Credentials Service Admin` and permissions required from the above table. When acquiring the access token, via the [client credentials flow](~/identity-platform/v2-oauth2-client-creds-grant-flow.md), the app should use scope `6a8b4b39-c021-437c-b060-5a14a3fd65f3/.default`.
 
+If the app intends to create a new authority, it needs two things. First, the app registration needs the `VerifiableCredential.Authority.ReadWrite` permission. Second, the app needs have `Create Key` permission in Key Vaults Access Policies. If the app only read/writes existing authorities, it does not need the Key Vault permission.
+
 ## Onboarding
 
 This API is to help create a new environment so new authorities can be set up. This can be triggered manually by navigating to the Verifiable Credential page in the Azure portal as well. You only need to call this API once and only if you want to set up a brand new environment just with the API.
@@ -76,9 +78,9 @@ Content-type: application/json
 
 {
     "id": "f5bf2fc6-7135-4d94-a6fe-c26e4543bc5a",
-    "verifiableCredentialServicePrincipalId": "90e10a26-94cd-49d6-8cd7-cacb10f00686",
-    "verifiableCredentialRequestServicePrincipalId": "870e10a26-94cd-49d6-8cd7-cacb10f00fe",
-    "verifiableCredentialAdminServicePrincipalId": "760e10a26-94cd-49d6-8cd7-cacb10f00ab",
+    "verifiableCredentialServicePrincipalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
+    "verifiableCredentialRequestServicePrincipalId": "bbbbbbbb-cccc-dddd-2222-333333333333",
+    "verifiableCredentialAdminServicePrincipalId": "cccccccc-dddd-eeee-3333-444444444444",
     "status": "Enabled"
 }
 ```
@@ -151,7 +153,7 @@ Content-type: application/json
         "didDocumentStatus": "published"
     },
     "keyVaultMetadata": {
-        "subscriptionId": "b593ade1-e353-43ab-9fb8-cccf669478d0",
+        "subscriptionId": "aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e",
         "resourceGroup": "verifiablecredentials",
         "resourceName": "vccontosokv",
         "resourceUrl": "https://vccontosokv.vault.azure.net/"
@@ -218,6 +220,7 @@ Don't supply a request body for this method.
 #### Response message
 
 Response message is an array of [Authorities](#authority-type)
+
 Example:
 ```
 HTTP/1.1 200 OK
@@ -244,21 +247,21 @@ Content-type: application/json
                 "didDocumentStatus": "published"
             },
             "keyVaultMetadata": {
-                "subscriptionId": "b593ade1-e353-43ab-9fb8-cccf669478d0",
+                "subscriptionId": "aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e",
                 "resourceGroup": "verifiablecredentials",
                 "resourceName": "vccontosokv",
                 "resourceUrl": "https://vccontosokv.vault.azure.net/"
             }
         },
         {
-            "id": "cc55ba22-0000-1111-2222-000000000000",
+            "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
             "name": "AuthorityName2",
             "keyVaultUrl": "https://vccontosokv.vault.azure.net/",
             "status": "Enabled",
             "didModel": {
                 "did": "did:web:verifiedid2.contoso.com",
                 "signingKeys": [
-                    "https://vccontosokv.vault.azure.net/keys/vcSigningKey-cc55ba22-0000-1111-2222-000000000000/f8f149eaee194beb83dfca14714ef62a"
+                    "https://vccontosokv.vault.azure.net/keys/vcSigningKey-00aa00aa-bb11-cc22-dd33-44ee44ee44ee/f8f149eaee194beb83dfca14714ef62a"
                 ],
                 "recoveryKeys": [],
                 "updateKeys": [],
@@ -269,7 +272,7 @@ Content-type: application/json
                 "didDocumentStatus": "published"
             },
             "keyVaultMetadata": {
-                "subscriptionId": "b593ade1-e353-43ab-9fb8-cccf669478d0",
+                "subscriptionId": "aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e",
                 "resourceGroup": "verifiablecredentials",
                 "resourceName": "vccontosokv",
                 "resourceUrl": "https://vccontosokv.vault.azure.net/"
@@ -302,7 +305,7 @@ In the request body, supply a JSON representation of the following
 | -------- | -------- | -------- |
 | `name` | string | The display name of this instance of the service |
 | `linkedDomainUrl` | string | The domain linked to this DID |
-| `didMethod` | string | option `web` or `ion` |
+| `didMethod` | string | Must be `web` |
 | `keyVaultMetadata` | keyVaultMetadata | meta data for specific key vault |
 
 Example message:
@@ -313,7 +316,7 @@ Example message:
   "didMethod": "web",
   "keyVaultMetadata":
   {
-    "subscriptionId":"b593ade1-e353-43ab-9fb8-cccf669478d0",
+    "subscriptionId":"aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e",
     "resourceGroup":"verifiablecredentials",
     "resourceName":"vccontosokv",
     "resourceUrl": "https://vccontosokv.vault.azure.net/"
@@ -328,13 +331,13 @@ When successful the response message contains the name of the [authority](#autho
 Example message for did:web:
 ```
 {
-    "id": "bacf5333-d68c-01c5-152b-8c9039fbd88d",
+    "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
     "name": "APItesta",
     "status": "Enabled",
     "didModel": {
         "did": "did:web:verifiedid.contoso.com",
         "signingKeys": [
-            "https://vcwingtipskv.vault.azure.net/keys/vcSigningKey-bacf5333-d68c-01c5-152b-8c9039fbd88d/5255b9f2d9b94dc19a369ff0d36e3407"
+            "https://vcwingtipskv.vault.azure.net/keys/vcSigningKey-00aa00aa-bb11-cc22-dd33-44ee44ee44ee/5255b9f2d9b94dc19a369ff0d36e3407"
         ],
         "recoveryKeys": [],
         "updateKeys": [],
@@ -345,7 +348,7 @@ Example message for did:web:
         "didDocumentStatus": "published"
     },
     "keyVaultMetadata": {
-        "subscriptionId": "1853e356-bc86-4e54-8bb8-6db4e5eacdbd",
+        "subscriptionId": "aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e",
         "resourceGroup": "verifiablecredentials",
         "resourceName": "vcwingtipskv",
         "resourceUrl": "https://vcwingtipskv.vault.azure.net/"
@@ -362,13 +365,13 @@ HTTP/1.1 201 Created
 Content-type: application/json
 
 {
-    "id": "cc55ba22-0000-1111-2222-000000000000",
+    "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
     "name": "APItest6",
     "status": "Enabled",
     "didModel": {
         "did": "did:web:verifiedid.contoso.com",
         "signingKeys": [
-            "https://vccontosokv.vault.azure.net/keys/vcSigningKey-cc55ba22-0000-1111-2222-000000000000/f8f149eaee194beb83dfca14714ef62a"
+            "https://vccontosokv.vault.azure.net/keys/vcSigningKey-00aa00aa-bb11-cc22-dd33-44ee44ee44ee/f8f149eaee194beb83dfca14714ef62a"
         ],
         "recoveryKeys": [],
         "updateKeys": [],
@@ -379,7 +382,7 @@ Content-type: application/json
         "didDocumentStatus": "submitted"
     },
     "keyVaultMetadata": {
-        "subscriptionId": "b593ade1-e353-43ab-9fb8-cccf669478d0",
+        "subscriptionId": "aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e",
         "resourceGroup": "verifiablecredentials",
         "resourceName": "vccontosokv",
         "resourceUrl": "https://vccontosokv.vault.azure.net/"
@@ -465,21 +468,6 @@ Content-type: application/json
 "error": {
         "code": "deleteIssuerSuccessfulButKeyDeletionFailed",
         "message": "The organization has been opted out of the Verifiable Credentials, but the following keys could not be deleted. To keep your organization secure, delete keys that are not in use. https://kxxxxxx.vault.azure.net/keys/vcSigningKey-9daeexxxxx-0575-23dc-81be-5f6axxxxx/0dcc532adb9a4fcf9902f90xxxxx"
-    }
-}
-
-```
-
-Response message if trying to delete a did:web authority
-
-```
-HTTP/1.1 400 Bad Request
-Content-type: application/json
-
-{
-"error": {
-        "code": "didMethodNotSupported",
-        "message": "The specified DID method is not supported: web"
     }
 }
 
@@ -694,13 +682,13 @@ HTTP/1.1 200 OK
 Content-type: application/json
 
 {
-    "id": "bacf5333-d68c-01c5-152b-8c9039fbd88d",
+    "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
     "name": "APItesta",
     "status": "Enabled",
     "didModel": {
         "did": "did:web:verifiedid.contoso.com",
         "signingKeys": [
-            "https://vcwingtipskv.vault.azure.net/keys/vcSigningKey-bacf5333-d68c-01c5-152b-8c9039fbd88d/5255b9f2d9b94dc19a369ff0d36e3407"
+            "https://vcwingtipskv.vault.azure.net/keys/vcSigningKey-00aa00aa-bb11-cc22-dd33-44ee44ee44ee/5255b9f2d9b94dc19a369ff0d36e3407"
         ],
         "recoveryKeys": [],
         "updateKeys": [],
@@ -711,7 +699,7 @@ Content-type: application/json
         "didDocumentStatus": "outOfSync"
     },
     "keyVaultMetadata": {
-        "subscriptionId": "1853e356-bc86-4e54-8bb8-6db4e5eacdbd",
+        "subscriptionId": "aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e",
         "resourceGroup": "verifiablecredentials",
         "resourceName": "vcwingtipskv",
         "resourceUrl": "https://vcwingtipskv.vault.azure.net/"
@@ -748,13 +736,13 @@ HTTP/1.1 200 OK
 Content-type: application/json
 
 {
-    "id": "bacf5333-d68c-01c5-152b-8c9039fbd88d",
+    "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
     "name": "APItesta",
     "status": "Enabled",
     "didModel": {
         "did": "did:web:verifiedid.contoso.com",
         "signingKeys": [
-            "https://vcwingtipskv.vault.azure.net/keys/vcSigningKey-bacf5333-d68c-01c5-152b-8c9039fbd88d/5255b9f2d9b94dc19a369ff0d36e3407"
+            "https://vcwingtipskv.vault.azure.net/keys/vcSigningKey-00aa00aa-bb11-cc22-dd33-44ee44ee44ee/5255b9f2d9b94dc19a369ff0d36e3407"
         ],
         "recoveryKeys": [],
         "updateKeys": [],
@@ -765,7 +753,7 @@ Content-type: application/json
         "didDocumentStatus": "published"
     },
     "keyVaultMetadata": {
-        "subscriptionId": "1853e356-bc86-4e54-8bb8-6db4e5eacdbd",
+        "subscriptionId": "aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e",
         "resourceGroup": "verifiablecredentials",
         "resourceName": "vcwingtipskv",
         "resourceUrl": "https://vcwingtipskv.vault.azure.net/"
@@ -826,8 +814,9 @@ Content-type: application/json
     "availableInVcDirectory": false,
     "manifestUrl": "...",
     "issueNotificationAllowedToGroupOids" : null,
-    "rules": rulesModel,
-    "displays": displayModel[]
+    "rules": <rulesModel>,
+    "displays": <displayModel[]>,
+    "allowOverrideValidityIntervalOnIssuance": false
 }
 ```
 
@@ -846,6 +835,7 @@ The response contains the following properties
 | `availableInVcDirectory` | boolean | Is this contract published in the Verifiable Credential Network |
 | [rules](#rulesmodel-type) | rulesModel | rules definition |
 | [displays](#displaymodel-type) | displayModel array| display definitions |
+| `allowOverrideValidityIntervalOnIssuance` | boolean | If the createIssuanceRequest API call is allowed to override expiry of the credential. This is only valid for [idTokenHint](admin-api.md#idtokenhintattestation-type) flows. |
 
 #### rulesModel type
 
@@ -936,7 +926,7 @@ example:
     "attestations": {
         "idTokens": [
             {
-                "clientId": "2f670d73-624a-41fe-a139-6f1f8f2d2e47",
+                "clientId": "00001111-aaaa-2222-bbbb-3333cccc4444",
                 "configuration": "https://bankofwoodgrove.b2clogin.com/bankofwoodgrove.onmicrosoft.com/v2.0/.well-known/openid-configuration?p=B2C_1_si",
                 "redirectUri": "vcclient://openid/",
                 "scope": "openid",
@@ -991,7 +981,7 @@ example:
 
 | Property | Type | Description |
 | -------- | -------- | -------- |
-|`uri`| string (uri) | uri of the logo |
+|`uri`| string (uri) | uri of the logo. If this is a URL, it must be reachable over the public internet anonymously. |
 |`description` | string | the description of the logo |
 
 #### displayConsent type
@@ -1089,7 +1079,7 @@ example message:
         {
             "id": "ZjViZjJmYzYtNzEzNS00ZDk0LWE2ZmUtYzI2ZTQ1NDNiYzVhdGVzdDI",
             "name": "test2",
-            "authorityId": "cc55ba22-0000-1111-2222-000000000000",
+            "authorityId": "aaaabbbb-0000-cccc-1111-dddd2222eeee",
             "status": "Enabled",
             "issueNotificationEnabled": false,
             "manifestUrl" : "https://...",
@@ -1141,7 +1131,7 @@ Content-type: application/json
 {
     "id": "GUID",
     "name": "ExampleContractName1",
-    "issuerId": "cc55ba22-0000-1111-2222-000000000000",
+    "issuerId": "aaaabbbb-0000-cccc-1111-dddd2222eeee",
     "status": "Enabled",
     "issueNotificationEnabled": false,
     "rules": "<rules JSON>",
@@ -1163,6 +1153,8 @@ Example request:
 {
     "rules": "<rules JSON>",
     "displays": [{<display JSON}],}
+    "availableInVcDirectory": true
+    "allowOverrideValidityIntervalOnIssuance": true
 }
 ```
 
@@ -1179,11 +1171,12 @@ Content-type: application/json
     "name": "contractname",
     "status": "Enabled",
     "issueNotificationEnabled": false,
-    "availableInVcDirectory": false,
+    "availableInVcDirectory": true,
     "manifestUrl": "https://...",
     "issueNotificationAllowedToGroupOids" : null,
     "rules": rulesModel,
-    "displays": displayModel[]
+    "displays": displayModel[],
+    "allowOverrideValidityIntervalOnIssuance": true
 }
 ```
 
@@ -1273,23 +1266,8 @@ Content-type: application/json
     "value": [
         {
             "id": "urn:pic:aea42fb3724b4ef08bd2d2712e79bda2",
-            "contractId": "ZjViZjJmYzYtNzEzNS00ZDk0LWE2ZmUtYzI2ZTQ1NDNiYzVhdGVzdDM",
             "status": "valid",
-            "issuedAt": 1644029489000
-        }
-    ]
-}
-```
-
-Example message
-```
-{
-    "value": [
-        {
-            "id": "urn:pic:aea42fb3724b4ef08bd2d2712e79bda2",
-            "contractId": "ZjViZjJmYzYtNzEzNS00ZDk0LWE2ZmUtYzI2ZTQ1NDNiYzVhdGVzdDM",
-            "status": "issuerRevoked",
-            "issuedAt": 1644029489000
+            "issuedAtTimestamp": "Sat, 5 Feb 2022 03:51:29 GMT"
         }
     ]
 }

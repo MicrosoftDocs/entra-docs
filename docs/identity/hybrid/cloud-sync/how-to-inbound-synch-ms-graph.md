@@ -4,10 +4,10 @@ description: This topic describes how to enable inbound synchronization using ju
 
 author: billmath
 manager: amycolannino
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.service: entra-id
-ms.custom: has-azure-ad-ps-ref
 ms.topic: conceptual
-ms.date: 11/06/2023
+ms.date: 04/26/2024
 ms.subservice: hybrid-cloud-sync
 ms.author: billmath
 
@@ -16,7 +16,7 @@ ms.author: billmath
 # How to programmatically configure cloud sync using MS Graph API
 
 The following document describes how to replicate a synchronization profile from scratch using only MSGraph APIs.  
-The structure of how to do this consists of the following steps.  They are:
+The structure of how to replicate a synchronization profile consists of the following steps. They are:
 
 - [How to programmatically configure cloud sync using MS Graph API](#how-to-programmatically-configure-cloud-sync-using-ms-graph-api)
   - [Basic setup](#basic-setup)
@@ -33,18 +33,22 @@ The structure of how to do this consists of the following steps.  They are:
   - [Review status](#review-status)
   - [Next steps](#next-steps)
 
-Use these [Azure AD PowerShell module](/powershell/module/msonline/) commands to enable synchronization for a production tenant, a prerequisite for being able to call the Administration Web Service for that tenant.
+Use these [Microsoft Graph PowerShell](/powershell/microsoftgraph/) commands to enable synchronization for a production tenant, a prerequisite for being able to call the Administration Web Service for that tenant.
 
 ## Basic setup
 
 ### Enable tenant flags
 
 ```powershell
-Connect-MsolService ('-AzureEnvironment <AzureEnvironmnet>')
- Set-MsolDirSyncEnabled -EnableDirSync $true
+Connect-MgGraph -Scopes "DeviceManagementConfiguration.ReadWrite.All" ('-Environment <AzureEnvironment>')
+$organizationId = (Get-MgOrganization).Id
+$params = @{
+	onPremisesSyncEnabled = $true
+}
+Update-MgBetaOrganization -OrganizationId $organizationId -BodyParameter $params
 ```
 
-The first of those two commands, require Microsoft Entra credentials. These cmdlets implicitly identify the tenant and enable it for synchronization.
+This cmdlet enables synchronization for a tenant. It uses the [Get-MgOrganization](/powershell/module/microsoft.graph.identity.directorymanagement/get-mgorganization) to get the organization's ID.
 
 ## Create service principals
 
@@ -62,11 +66,11 @@ Content-type: application/json
 
 ## Create sync job
 
-The output of the above command returns the objectId of the service principal that was created. For this example, the objectId is 614ac0e9-a59b-481f-bd8f-79a73d167e1c.  Use Microsoft Graph to add a synchronizationJob to that service principal.
+The output of the preceding command returns the objectId of the service principal that was created. For this example, the objectId is aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb. Use Microsoft Graph to add a synchronizationJob to that service principal.
 
 Documentation for creating a sync job can be found [here](/graph/api/synchronization-synchronization-post-jobs?tabs=http&preserve-view=true&view=graph-rest-beta).
 
-If you didn't record the ID above, you can find the service principal by running the following MS Graph call. You'll need Directory.Read.All permissions to make that call:
+If you didn't record the ID, you can find the service principal by running the following MS Graph call. You need Directory.Read.All permissions to make that call:
 
 `GET https://graph.microsoft.com/beta/servicePrincipals`
 
@@ -99,7 +103,7 @@ Example return value (for provisioning):
 ```
 HTTP 201/Created
 {
-    "@odata.context": "https://graph.microsoft.com/beta/$metadata#servicePrincipals('614ac0e9-a59b-481f-bd8f-79a73d167e1c')/synchronization/jobs/$entity",
+    "@odata.context": "https://graph.microsoft.com/beta/$metadata#servicePrincipals('aaaaaaaa-0000-1111-2222-bbbbbbbbbbbbc')/synchronization/jobs/$entity",
     "id": "AD2AADProvisioning.fc96887f36da47508c935c28a0c0b6da",
     "templateId": "ADDCInPassthrough",
     "schedule": {
@@ -128,9 +132,11 @@ HTTP 201/Created
 
 For this tenant, the object identifier and application identifier of the service principal are as follows:
 
-ObjectId: 8895955e-2e6c-4d79-8943-4d72ca36878f
-AppId: 00000014-0000-0000-c000-000000000000
+```
+ObjectId: bbbbbbbb-1111-2222-3333-cccccccccccc
+AppId: 00001111-aaaa-2222-bbbb-3333cccc4444
 DisplayName: testApp
+```
 
 We're going to need to update the domain this configuration is targeting, so update the secrets for this domain.
 
@@ -167,7 +173,7 @@ Here, the highlighted "Domain" value is the name of the on-premises Active Direc
 
 ## Enable Sync password hashes on configuration blade
 
- This section covers enabling syncing password hashes for a particular configuration. This is different than the AppKey secret that enables the tenant-level feature flag - this is only for a single domain/config. You need to set the application key to the PHS one for this to work end to end.
+ This section covers enabling syncing password hashes for a particular configuration. This situation is different than the AppKey secret that enables the tenant-level feature flag. This procedure is only for a single domain/config. You need to set the application key to the PHS one for this procedure to work end to end.
 
 1. Grab the schema (warning, it's pretty large):
 
@@ -215,13 +221,13 @@ Here, the highlighted "Domain" value is the name of the on-premises Active Direc
    } 
    ```
 
-   Copy/paste the mapping from the **Create AD2AADProvisioning and AD2AADPasswordHash jobs** step above into the attributeMappings array.
+   Copy/paste the mapping from the **Create AD2AADProvisioning and AD2AADPasswordHash jobs** step into the attributeMappings array.
 
-   Order of elements in this array doesn't matter (the backend sorts for you). Be careful about adding this attribute mapping if the name exists already in the array (e.g. if there's already an item in attributeMappings that has the targetAttributeName CredentialData) - you may get conflict errors, or the pre-existing and new mappings may be combined together (usually not desired outcome). Backend doesn't dedupe for you.
+   Order of elements in this array doesn't matter (the backend sorts for you). Be careful about adding this attribute mapping if the name exists already in the array (for example, if there's already an item in attributeMappings that has the targetAttributeName CredentialData) - you may get conflict errors, or the pre-existing and new mappings might be combined together, usually not the desired outcome. Backend doesn't dedupe for you.
 
-   Remember to do this for both Users and inetOrgpersons.
+   Remember to do this action for both Users and inetOrgpersons.
 
-5. Save the schema you've created:
+5. Save the schema that you create:
 
    ```
    PUT –
@@ -240,7 +246,7 @@ Enabling Exchange hybrid writeback programmatically requires two steps.
 	2.  Create the Exchange hybrid writeback job
 
 ### Schema verification
-Prior to enabling and using Exchange hybrid writeback, cloud sync needs to determine whether or not the on-premises Active Directory has been extended to include the Exchange schema.  
+Before you enable and using Exchange hybrid writeback, cloud sync needs to determine whether or not the on-premises Active Directory has been extended to include the Exchange schema.  
 
 You can use the [directoryDefinition:discover](/graph/api/synchronization-directorydefinition-discover?tabs=http&preserve-view=true&view=graph-rest-beta) to initiate schema discovery. 
 
@@ -250,7 +256,7 @@ POST https://graph.microsoft.com/beta/servicePrincipals/[SERVICE_PRINCIPAL_ID]/s
 The expected response is … 
 HTTP 200/OK
 
-The response should look similar to the following:
+The response should look similar to the following output:
 
 ```
 HTTP/1.1 200 OK
@@ -272,7 +278,7 @@ Content-type: application/json
 }
 ```
 
-Now check to see if the **mailNickName** attribute is present.  If it is, then your schema is verified and contains the Exchange attributes. If not, review the [prerequisites](exchange-hybrid.md#prerequisites) for Exchange hybrid writeback.
+Now check to see if the **mailNickName** attribute is present. If it is, then your schema is verified and contains the Exchange attributes. If not, review the [prerequisites](exchange-hybrid.md#prerequisites) for Exchange hybrid writeback.
 
 
 
@@ -298,7 +304,7 @@ This section covers how to programmatically enable/disable and use [accidental d
 There are two per job settings that you can use, they are:
 
 - DeleteThresholdEnabled  - Enables accidental delete prevention for the job when set to 'true'. Set to 'true' by default.
-- DeleteThresholdValue    - Defines the maximum number of deletes that is allowed in each execution of the job when accidental deletes prevention is enabled. The value is set to 500 by default.  So, if the value is set to 500, the maximum number of deletes allowed is 499 in each execution.
+- DeleteThresholdValue    - Defines the maximum number of deletes that is allowed in each execution of the job when accidental deletes prevention is enabled. The value is set to 500 by default. So, if the value is set to 500, the maximum number of deletes allowed is 499 in each execution.
 
 The delete threshold settings are a part of the `SyncNotificationSettings` and can be modified via graph.
 

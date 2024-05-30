@@ -13,7 +13,7 @@ ms.author: barclayn
 
 ---
 
-# [Preview] Use Azure Policy to assign managed identities
+# Use Azure Policy to assign managed identities (preview)
 
 
 [Azure Policy](/azure/governance/policy/overview) helps enforce organizational standards and assess compliance at scale. Through its compliance dashboard, Azure policy provides an aggregated view that helps administrators evaluate the overall state of the environment. You have the ability to drill down to the per-resource, per-policy granularity. It also helps bring your resources to compliance through bulk remediation for existing resources and automatic remediation for new resources. Common use cases for Azure Policy include implementing governance for:
@@ -49,7 +49,7 @@ When executed, the policy takes the following actions:
 2. Once created, put a lock on the user-assigned managed identity so that it will not be accidentally deleted. 
 3. Assign the built-in user-assigned managed identity to Virtual Machines from the subscription and region based on the VMs that are in scope of the policy. 
 > [!NOTE]
-> If the Virtual Machine has exactly 1 user-assigned managed identity already assigned, then the policy skips this VM to assign the built-in identity. This is to make sure assignment of the policy does not break applications that take a dependency on [the default behavior of the token endpoint on IMDS.](managed-identities-faq.md#what-identity-will-imds-default-to-if-dont-specify-the-identity-in-the-request)
+> If the Virtual Machine has exactly 1 user-assigned managed identity already assigned, then the policy skips this VM to assign the built-in identity. This is to make sure assignment of the policy does not break applications that take a dependency on [the default behavior of the token endpoint on IMDS.](managed-identities-faq.md#what-identity-will-imds-default-to-if-i-dont-specify-the-identity-in-the-request)
 
 
 There are two scenarios to use the policy: 

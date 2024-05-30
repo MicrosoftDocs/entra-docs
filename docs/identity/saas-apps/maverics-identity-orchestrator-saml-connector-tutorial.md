@@ -9,8 +9,10 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 05/22/2024
 ms.author: jeedes
+
+# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Maverics Identity Orchestrator SAML Connector so that I can control who has access to Maverics Identity Orchestrator SAML Connector, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 # Integrate Microsoft Entra single sign-on with Maverics Identity Orchestrator SAML Connector
 
@@ -31,7 +33,7 @@ This hybrid access tutorial demonstrates how to migrate an on-premises web appli
 * A Maverics Identity Orchestrator SAML Connector SSO-enabled subscription. To get the Maverics software, contact [Strata sales](mailto:sales@strata.io).
 * At least one application that uses header-based authentication. The examples work against an application called Connectulum, hosted at `https://app.connectulum.com`.
 * A Linux machine to host the Maverics Orchestrator
-  * OS: RHEL 7.7 or higher, CentOS 7+
+  * OS: RHEL 7.7 or higher
   * Disk: >= 10 GB
   * Memory: >= 4 GB
   * Ports: 22 (SSH/SCP), 443, 7474

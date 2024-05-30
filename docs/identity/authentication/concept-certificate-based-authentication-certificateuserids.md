@@ -11,17 +11,17 @@ ms.author: justinha
 author: vimrang
 manager: amycolannino
 ms.reviewer: vranganathan
-ms.custom: has-adal-ref, has-azure-ad-ps-ref
+ms.custom: has-adal-ref
 ---
 
 # Mapping to the certificateUserIds attribute in Microsoft Entra ID
 
 User objects in Microsoft Entra ID have an attribute named certificateUserIds.
 
-- The certificateUserIds attribute is multivalued and can hold up to 5 values.
+- The certificateUserIds attribute is multivalued and can hold up to 10 values.
 - Each value can be no more than 1024 characters.
 - Each value must be unique. Once a value is present on one user account, it can't be written to any other user account in the same Entra ID tenant.
-- The value doesn't need to be in email ID format. The certificateUserIds attribute can store nonroutable user principal names (UPNs) like _bob@woodgrove_ or _bob@local_.
+- The value doesn't need to be in email ID format. The certificateUserIds attribute can store nonroutable user principal names (UPNs) like *bob@woodgrove* or *bob@local*.
 
 > [!NOTE]
 > Although each value must be unique in Entra ID, you can map a single certificate to multiple accounts by implementing multiple username bindings. For more information, see [Multiple username bindings](~/identity/authentication/concept-certificate-based-authentication-technical-deep-dive.md#securing-microsoft-entra-configuration-with-multiple-username-bindings).
@@ -154,12 +154,12 @@ For this configuration, you can use [Microsoft Graph PowerShell](/powershell/mic
    ```powershell
      #Create a new variable to prepare the change. Ensure that you list any existing values you want to keep as this operation will overwrite the existing value
      $params = @{
-           authorizationInfo = @{
-                 certificateUserIds = @(
-                 "X509:<SKI>eec6b88788d2770a01e01775ce71f1125cd6ad0f", 
-                 "X509:<PN>user@contoso.com"
-                 )
-           }
+           authorizationInfo = @{
+                 certificateUserIds = @(
+                 "X509:<SKI>eec6b88788d2770a01e01775ce71f1125cd6ad0f", 
+                 "X509:<PN>user@contoso.com"
+                 )
+           }
      }
    ```
 1. Update the certificateUserIds attribute.
@@ -217,8 +217,6 @@ Before you begin, make sure all user accounts that are synchronized from on-prem
 Follow these steps to configure Microsoft Entra Connect to synchronize userPrincipalName to certificateUserIds:
 
 1. On the Microsoft Entra Connect server, find and start the **Synchronization Rules Editor**.
-
-   :::image type="content" border="true" source="./media/concept-certificate-based-authentication-certificateuserids/sync-rules-editor.png" alt-text="Screenshot of Synchronization Rules Editor.":::
 
 1. Click **Direction**, and click **Outbound**. 
 
@@ -339,4 +337,3 @@ Administrators can filter values from altSecurityIdentities that align with the 
 - [Windows smart card logon using Microsoft Entra CBA](concept-certificate-based-authentication-smartcard.md)
 - [How to migrate federated users](concept-certificate-based-authentication-migration.md)
 - [FAQ](certificate-based-authentication-faq.yml)
-

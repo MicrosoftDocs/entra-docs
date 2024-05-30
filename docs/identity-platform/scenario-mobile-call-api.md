@@ -6,10 +6,10 @@ manager: CelesteDG
 ms.author: henrymbugua
 ms.custom: 
 ms.date: 05/18/2020
-ms.reviewer: brandwe, jmprieur
+ms.reviewer: brianmel, jmprieur
 ms.service: identity-platform
 
-ms.topic: conceptual
+ms.topic: concept-article
 #Customer intent: As an application developer, I want to know how to write a mobile app that calls web APIs by using the Microsoft identity platform.
 ---
 

@@ -5,10 +5,10 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: curation-claims
-ms.date: 8/1/2023
+ms.date: 04/10/2024
 ms.service: identity-platform
 
-ms.topic: conceptual
+ms.topic: concept-article
 #Customer intent: As a developer, I want to understand how to validate access tokens, so that I can ensure the security and integrity of the tokens being used in my application.
 ---
 
@@ -98,7 +98,7 @@ The following examples suppose that your application is validating a v2.0 access
 
 ### Validate the issuer
 
-[OpenID Connect Core](https://openid.net/specs/openid-connect-core-1_0.html#IDTokenValidation) says "The Issuer Identifier \[...\] MUST exactly match the value of the iss (issuer) Claim." For applications which use a tenant-specific metadata endpoint (like `https://login.microsoftonline.com/8eaef023-2b34-4da1-9baa-8bc8c9d6a490/v2.0/.well-known/openid-configuration` or `https://login.microsoftonline.com/contoso.onmicrosoft.com/v2.0/.well-known/openid-configuration`), this is all that is needed.
+[OpenID Connect Core](https://openid.net/specs/openid-connect-core-1_0.html#IDTokenValidation) says "The Issuer Identifier \[...\] MUST exactly match the value of the iss (issuer) Claim." For applications which use a tenant-specific metadata endpoint (like `https://login.microsoftonline.com/aaaabbbb-0000-cccc-1111-dddd2222eeee/v2.0/.well-known/openid-configuration` or `https://login.microsoftonline.com/contoso.onmicrosoft.com/v2.0/.well-known/openid-configuration`), this is all that is needed.
 
 Microsoft Entra ID has a tenant-independent version of the document available at [https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration](https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration). This endpoint returns an issuer value `https://login.microsoftonline.com/{tenantid}/v2.0`. Applications may use this tenant-independent endpoint to validate tokens from every tenant with the following modifications:
 
@@ -122,7 +122,7 @@ Microsoft Entra ID has a tenant-independent version of the document available at
 Using tenant-independent metadata is more efficient for applications which accept tokens from many tenants.
 
 > [!NOTE]
-> With Microsoft Entra tenant-independent metadata, claims should be interpreted within the tenant, just as under standard OpenID Connect, claims are interpreted within the issuer. That is, `{"sub":"ABC123","iss":"https://login.microsoftonline.com/8eaef023-2b34-4da1-9baa-8bc8c9d6a490/v2.0","tid":"8eaef023-2b34-4da1-9baa-8bc8c9d6a490"}` and `{"sub":"ABC123","iss":"https://login.microsoftonline.com/82229342-1101-4ab6-817b-70c0747630f3/v2.0","tid":"82229342-1101-4ab6-817b-70c0747630f3"}` describe different users, even though the `sub` is the same, because claims like `sub` are interpreted within the context of the issuer/tenant.
+> With Microsoft Entra tenant-independent metadata, claims should be interpreted within the tenant, just as under standard OpenID Connect, claims are interpreted within the issuer. That is, `{"sub":"ABC123","iss":"https://login.microsoftonline.com/aaaabbbb-0000-cccc-1111-dddd2222eeee/v2.0","tid":"aaaabbbb-0000-cccc-1111-dddd2222eeee"}` and `{"sub":"ABC123","iss":"https://login.microsoftonline.com/bbbbcccc-1111-dddd-2222-eeee3333ffff/v2.0","tid":"bbbbcccc-1111-dddd-2222-eeee3333ffff"}` describe different users, even though the `sub` is the same, because claims like `sub` are interpreted within the context of the issuer/tenant.
 
 ### Validate the signature
 
@@ -162,7 +162,7 @@ The following information describes the metadata document:
 
 Doing signature validation is outside the scope of this document. There are many open-source libraries available for helping with signature validation if necessary.  However, the Microsoft identity platform has one token signing extension to the standards, which are custom signing keys.
 
-If the application has custom signing keys as a result of using the [claims-mapping](./saml-claims-customization.md) feature, append an `appid` query parameter that contains the application ID. For validation, use `jwks_uri` that points to the signing key information of the application. For example: `https://login.microsoftonline.com/{tenant}/.well-known/openid-configuration?appid=535fb089-9ff3-47b6-9bfb-4f1264799865` contains a `jwks_uri` of `https://login.microsoftonline.com/{tenant}/discovery/keys?appid=535fb089-9ff3-47b6-9bfb-4f1264799865`.
+If the application has custom signing keys as a result of using the [claims-mapping](./saml-claims-customization.md) feature, append an `appid` query parameter that contains the application ID. For validation, use `jwks_uri` that points to the signing key information of the application. For example: `https://login.microsoftonline.com/{tenant}/.well-known/openid-configuration?appid=00001111-aaaa-2222-bbbb-3333cccc4444` contains a `jwks_uri` of `https://login.microsoftonline.com/{tenant}/discovery/keys?appid=00001111-aaaa-2222-bbbb-3333cccc4444`.
 
 ### Validate the issuer
 

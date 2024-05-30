@@ -5,7 +5,7 @@ author: jenniferf-skc
 manager: amycolannino
 ms.service: entra-permissions-management
 
-ms.topic: overview
+ms.topic: how-to
 ms.date: 07/25/2023
 ms.author: jfields
 ---

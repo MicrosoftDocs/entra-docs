@@ -8,7 +8,7 @@ ms.date: 11/17/2023
 ms.reviewer: jawoods, ludwignick, phsignor
 ms.service: identity-platform
 
-ms.topic: conceptual
+ms.topic: concept-article
 
 #Customer intent: As a developer integrating with the Microsoft identity platform, I want to understand how to request scopes and permissions, so that I can access web-hosted resources on behalf of a user and ensure fine-grained control over data access and API functionality.
 ---
@@ -142,7 +142,7 @@ In some cases, a client can request its own `.default` scope. The following exam
 
 GET https://login.microsoftonline.com/{tenant}/oauth2/v2.0/authorize
     ?response_type=token            //Code or a hybrid flow is also possible here
-    &client_id=9ada6f8a-6d83-41bc-b169-a306c21527a5
+    &client_id=00001111-aaaa-2222-bbbb-3333cccc4444
     &scope=9ada6f8a-6d83-41bc-b169-a306c21527a5/.default
     &redirect_uri=https%3A%2F%2Flocalhost
     &state=1234

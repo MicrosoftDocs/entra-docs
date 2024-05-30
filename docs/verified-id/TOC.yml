@@ -39,6 +39,8 @@
       href: plan-verification-solution.md
   - name: Remote onboarding
     href: remote-onboarding-new-employees-id-verification.md
+  - name: Verified helpdesk
+    href: helpdesk-with-verified-id.md
 - name: How-to guides
   expanded: true
   items:

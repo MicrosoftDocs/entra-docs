@@ -47,7 +47,7 @@ Familiarize yourself with these articles:
 
 - [Tutorial: Collect and analyze resource logs from an Azure resource](/azure/azure-monitor/essentials/tutorial-resource-logs)
 
-- [How to integrate activity logs with Log Analytics](./howto-integrate-activity-logs-with-azure-monitor-logs.md)
+- [How to integrate activity logs with Log Analytics](./howto-integrate-activity-logs-with-azure-monitor-logs.yml)
 
 - [Manage emergency access account in Microsoft Entra ID](~/identity/role-based-access-control/security-emergency-access.md)
 

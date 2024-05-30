@@ -16,7 +16,7 @@ ms.reviewer: jeffsta
 
 Microsoft Entra ID enables you to securely manage access to Azure services and resources for your users. Included with Microsoft Entra ID is a full suite of identity management capabilities. For information about Microsoft Entra features, see [What is Microsoft Entra ID?](~/fundamentals/whatis.md)
 
-With Microsoft Entra ID, you can create and manage users and groups, and enable permissions to allow and deny access to enterprise resources. For information about identity management, see [The fundamentals of Azure identity management](~/fundamentals/whatis.md).
+With Microsoft Entra ID, you can create and manage users and groups, and enable permissions to allow and deny access to enterprise resources. For information about identity management, see The [fundamentals of Azure identity management](~/fundamentals/whatis.md).
 
 <a name='azure-ad-architecture'></a>
 
@@ -35,7 +35,7 @@ The following architecture elements are covered in this article:
 
 The most common way to build an accessible and usable, data-rich system is through independent building blocks or scale units. For the Microsoft Entra data tier, scale units are called *partitions*.
 
-The data tier has several front-end services that provide read-write capability. The diagram below shows how the components of a single-directory partition are delivered throughout geographically distributed datacenters.
+The data tier has several front-end services that provide read-write capability. The following diagram shows how the components of a single-directory partition are delivered throughout geographically distributed datacenters.
 
   ![Single-directory partition diagram](./media/architecture/entra-architecture.png)
 
@@ -59,7 +59,7 @@ Directory applications connect to the nearest datacenters. This connection impro
 
 ### Continuous availability
 
-Availability (or uptime) defines the ability of a system to perform uninterrupted. The key to Microsoft Entra ID’s high-availability is that the services can quickly shift traffic across multiple geographically distributed datacenters. Each datacenter is independent, which enables de-correlated failure modes. Through this high availability design, Microsoft Entra ID requires no downtime for maintenance activities.
+Availability (or uptime) defines the ability of a system to perform uninterrupted. The key to Microsoft Entra ID's high availability is that the services can quickly shift traffic across multiple geographically distributed datacenters. Each datacenter is independent, which enables de-correlated failure modes. Through this high availability design, Microsoft Entra ID requires no downtime for maintenance activities.
 
 The partition design of Microsoft Entra ID is simplified compared to the enterprise AD design, using a single-master design that includes a carefully orchestrated and deterministic primary replica failover process.
 
@@ -75,8 +75,8 @@ A write is durably committed to at least two datacenters prior to it being ackno
 
 Microsoft Entra ID maintains a zero [Recovery Time Objective (RTO)](https://en.wikipedia.org/wiki/Recovery_time_objective) to not lose data on failovers. This includes:
 
-* Token issuance and directory reads
-* Allowing only about 5 minutes RTO for directory writes
+- Token issuance and directory reads
+- Allowing only about 5 minutes RTO for directory writes
 
 ### Datacenters
 
@@ -84,25 +84,25 @@ Microsoft Entra replicas are stored in datacenters located throughout the world.
 
 Microsoft Entra ID operates across datacenters with the following characteristics:
 
-* Authentication, Graph, and other AD services reside behind the Gateway service. The Gateway manages load balancing of these services. It will fail over automatically if any unhealthy servers are detected using transactional health probes. Based on these health probes, the Gateway dynamically routes traffic to healthy datacenters.
-* For *reads*, the directory has secondary replicas and corresponding front-end services in an active-active configuration operating in multiple datacenters. If a datacenter fails, traffic is automatically routed to a different datacenter.
-* For *writes*, the directory will fail over the primary replica across datacenters via planned (new primary is synchronized to old primary) or emergency failover procedures. Data durability is achieved by replicating any commit to at least two datacenters.
+- Authentication, Graph, and other AD services reside behind the Gateway service. The Gateway manages load balancing of these services. It will fail over automatically if any unhealthy servers are detected using transactional health probes. Based on these health probes, the Gateway dynamically routes traffic to healthy datacenters.
+- For *reads*, the directory has secondary replicas and corresponding front-end services in an active-active configuration operating in multiple datacenters. If a datacenter fails, traffic is automatically routed to a different datacenter.
+- For *writes*, the directory will fail over the primary replica across datacenters via planned (new primary is synchronized to old primary) or emergency failover procedures. Data durability is achieved by replicating any commit to at least two datacenters.
 
 #### Data consistency
 
-The directory model is one of eventual consistencies. One typical problem with distributed asynchronously replicating systems is that the data returned from a “particular” replica may not be up-to-date. 
+The directory model is one of eventual consistencies. One typical problem with distributed asynchronously replicating systems is that the data returned from a "particular" replica might not be up-to-date.
 
 Microsoft Entra ID provides read-write consistency for applications targeting a secondary replica by routing its writes to the primary replica, and synchronously pulling the writes back to the secondary replica.
 
-Application writes using the Microsoft Graph API of Microsoft Entra ID are abstracted from maintaining affinity to a directory replica for read-write consistency. The Microsoft Graph API service maintains a logical session, which has affinity to a secondary replica used for reads; affinity is captured in a “replica token” that the service caches using a distributed cache in the secondary replica datacenter. This token is then used for subsequent operations in the same logical session. To continue using the same logical session, subsequent requests must be routed to the same Microsoft Entra datacenter. It isn't possible to continue a logical session if the directory client requests are being routed to multiple Microsoft Entra datacenters; if this happens then the client has multiple logical sessions that have independent read-write consistencies.
+Application writes using the Microsoft Graph API of Microsoft Entra ID are abstracted from maintaining affinity to a directory replica for read-write consistency. The Microsoft Graph API service maintains a logical session, which has affinity to a secondary replica used for reads; affinity is captured in a "replica token" that the service caches using a distributed cache in the secondary replica datacenter. This token is then used for subsequent operations in the same logical session. To continue using the same logical session, subsequent requests must be routed to the same Microsoft Entra datacenter. It isn't possible to continue a logical session if the directory client requests are being routed to multiple Microsoft Entra datacenters; if this happens then the client has multiple logical sessions that have independent read-write consistencies.
 
  >[!NOTE]
- >Writes are immediately replicated to the secondary replica to which the logical session's reads were issued.
+ > Writes are immediately replicated to the secondary replica to which the logical session's reads were issued.
 
 #### Service-level backup
 
 Microsoft Entra ID implements daily backup of directory data and can use these backups to restore data if there is any service-wide issue.
- 
+
 The directory also implements soft deletes instead of hard deletes for selected object types. The tenant administrator can undo any accidental deletions of these objects within 30 days. For more information, see the [API to restore deleted objects](/graph/api/directory-deleteditems-restore).
 
 #### Metrics and monitors
@@ -113,7 +113,7 @@ If any Microsoft Entra service isn't working as expected, action is immediately 
 
 #### Secure operations
 
-Using operational controls such as multi-factor authentication (MFA) for any operation, and auditing of all operations. In addition, using a just-in-time elevation system to grant necessary temporary access for any operational task-on-demand on an ongoing basis. For more information, see [The Trusted Cloud](https://azure.microsoft.com/support/trust-center).
+Using operational controls such as multifactor authentication for any operation, and auditing of all operations. In addition, using a just-in-time elevation system to grant necessary temporary access for any operational task-on-demand on an ongoing basis. For more information, see The [Trusted Cloud](https://azure.microsoft.com/support/trust-center).
 
 ## Next steps
 

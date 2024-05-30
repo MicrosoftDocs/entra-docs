@@ -17,7 +17,9 @@ ms.custom: developer, devx-track-js
 
 # Use client certificate for authentication in your Node.js web app
 
-Microsoft Entra ID for customers supports two types of authentication for [confidential client applications](~/identity-platform/msal-client-applications.md); password-based authentication (such as client secret) and certificate-based authentication. For a higher level of security, we recommend using a certificate (instead of a client secret) as a credential in your confidential client applications.
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
+Microsoft Entra External ID supports two types of authentication for [confidential client applications](~/identity-platform/msal-client-applications.md); password-based authentication (such as client secret) and certificate-based authentication. For a higher level of security, we recommend using a certificate (instead of a client secret) as a credential in your confidential client applications.
 
 In production, you should purchase a certificate signed by a well-known certificate authority, and use [Azure Key Vault](https://azure.microsoft.com/products/key-vault/) to manage certificate access and lifetime for you. However, for testing purposes, you can create a self-signed certificate and configure your apps to authenticate with it. 
 
@@ -31,7 +33,7 @@ When needed, you can also create a self-signed certificate programmatically by u
 
 - [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 
-- External ID for customers tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>. 
+- An external tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>. 
 
 - [OpenSSL](https://wiki.openssl.org/index.php/Binaries) or you can easily install [OpenSSL](https://community.chocolatey.org/packages/openssl) in Windows via [Chocolatey](https://chocolatey.org/). 
 
@@ -151,7 +153,7 @@ Once you associate your app registration with the certificate, you need to updat
     
     -  `Enter_the_Application_Id_Here` with the Application (client) ID of the app you registered earlier.
     
-    - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
+    - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
 
     We encrypted the key (we recommend that you do so), so we have to decrypt it before we pass it to MSAL configuration object.
 

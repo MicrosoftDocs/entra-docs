@@ -73,15 +73,15 @@ To register your application and add the app's registration information to your 
 
 #### Step 4: Admin consent
 
-If you try to run the application at this point, you'll receive *HTTP 403 - Forbidden* error: `Insufficient privileges to complete the operation`. This error happens because any *app-only permission* requires **admin consent**: an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) or [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) must give consent to your application. Select one of the options below depending on your role:
+If you try to run the application at this point, you'll receive *HTTP 403 - Forbidden* error: `Insufficient privileges to complete the operation`. This error happens because any *app-only permission* requires **admin consent**: Someone assigned at least the [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) role must give consent to your application. Select one of the options below depending on your role:
 
 ##### Administrators
 
-If you're assigned the [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) or [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) roles, go to **API Permissions** page in the Azure portal's Application Registration and select **Grant admin consent for {Tenant Name}** (where {Tenant Name} is the name of your directory).
+If you're assigned at least the [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) role, go to **API Permissions** page in the Azure portal's Application Registration and select **Grant admin consent for {Tenant Name}** (where {Tenant Name} is the name of your directory).
 
 ##### Standard users
 
-If you're a standard user of your tenant, then you need to ask a global administrator to grant **admin consent** for your application. To do this, give the following URL to your administrator:
+If you're a standard user of your tenant, then you need to ask a Global Administrator to grant **admin consent** for your application. To do this, give the following URL to your administrator:
 
 ```url
 https://login.microsoftonline.com/Enter_the_Tenant_Id_Here/adminconsent?client_id=Enter_the_Application_Id_Here

@@ -7,7 +7,7 @@ editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: how-to
-ms.date: 06/28/2023
+ms.date: 04/09/2024
 ms.author: owinfrey
 ms.reviewer: mwahl
 ---
@@ -126,9 +126,9 @@ To review access of B2B direct connect users, use the following instructions:
 1. Follow the instructions in [Review access for one or more users](#review-access-for-one-or-more-users) to make decisions to approve or deny the users access to the teams.
 
 > [!NOTE]
-> Unlike internal users and B2B collaboration users, B2B direct connect users and teams _don't_ have recommendations based on last sign-in activity to make decisions when you perform the review.
+> Unlike internal users and B2B collaboration users, B2B direct connect users and teams *don't* have recommendations based on last sign-in activity to make decisions when you perform the review.
 
-If a team you review has shared channels, all B2B direct connect users and teams that access those shared channels are part of the review. This includes B2B collaboration users and internal users. When a B2B direct connect user or team is denied access in an access review, the user loses access to every shared channel in the team. To learn more about B2B direct connect users, read [B2B direct connect](~/external-id/b2b-direct-connect-overview.md).
+If a team you review has shared channels, all B2B direct connect users and teams that access those shared channels are part of the review. This includes B2B collaboration users and internal users. When a B2B direct connect user or team is denied access in an access review, the user loses access to every shared channel in the team. To learn more about B2B direct connect users, read [B2B direct connect](../external-id/b2b-direct-connect-overview.md).
 
 ## Set up what will happen if no action is taken on access review
 When the access review is set up, the administrator has the option to use advanced settings to determine what will happen if a reviewer doesn't respond to an access review request.

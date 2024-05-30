@@ -6,10 +6,10 @@ manager: CelesteDG
 ms.author: owenrichards
 ms.custom: template-concept
 ms.date: 01/06/2023
-ms.reviewer: johngarland, mamarxen, ianbe
+ms.reviewer:
 ms.service: identity-platform
 
-ms.topic: conceptual
+ms.topic: concept-article
 #Customer intent: As a developer or application architect, I want to understand the different approaches to authorization, so that I can choose the most appropriate method for implementing access control in my application.
 ---
 

@@ -1,9 +1,9 @@
-This article lists the versions and features of Microsoft Entra Provisioning Agent that have been released. The Microsoft Entra ID team regularly updates the Provisioning Agent with new features and functionality. 
+This article lists the versions and features of Microsoft Entra provisioning agent that have been released. The Microsoft Entra team regularly updates the Provisioning Agent with new features and functionality. 
 > [!NOTE]
 > All new Provisioning Agent releases are made available through auto upgrade for existing installations and can be downloaded for new installations.
 
 >[!NOTE]
-> Microsoft Entra Provisioning agent follows the [Modern Lifecycle Policy](/lifecycle/policies/modern). Changes for products and services  under the Modern Lifecycle Policy may be more frequent and require customers to be alert for forthcoming modifications to their product or service.
+> Microsoft Entra provisioning agent follows the [Modern Lifecycle Policy](/lifecycle/policies/modern). Changes for products and services  under the Modern Lifecycle Policy may be more frequent and require customers to be alert for forthcoming modifications to their product or service.
 >
 > Products governed by the Modern Policy follow a [continuous support and servicing model](/lifecycle/overview/product-end-of-support-overview). Customers must take the latest update to remain supported. 
 >
@@ -13,6 +13,17 @@ This article lists the versions and features of Microsoft Entra Provisioning Age
 Go to the [Microsoft Entra admin center](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/~/GetStarted), click on "Cloud Sync" and the "Agents" tab to download the "Provisioning Agent".
 
 Get notified about when to revisit this page for updates by copying and pasting this URL: `https://aka.ms/cloudsyncrss` into your ![RSS feed reader icon](media/cloud-sync-version-history/feed-icon-16-x-16.png) feed reader.
+
+## 1.1.1586.0
+
+Release date: May 13th, 2024
+
+### Fixed issues
+ 
+ - Miscellaneous supportability improvements.
+ - Improved handling of Active Directory Provider initialization issues.
+ - Fixed a bug with removing attributes.
+ - Improved group writeback error handling.
 
 ## 1.1.1373.0
 
@@ -86,7 +97,7 @@ Release date: August 8, 2022
 
 ### New or changed functionality
 
- - We added a new cmdlet to enable and disable writeback of passwords. For more information about this cmdlet and its use, see [Enable password writeback in Azure AD Connect cloud sync](../identity/authentication/tutorial-enable-cloud-sync-sspr-writeback.md#enable-password-writeback-in-sspr).
+ - We added a new cmdlet to enable and disable writeback of passwords. For more information about this cmdlet and its use, see [Enable password writeback in Microsoft Entra Connect cloud sync](../identity/authentication/tutorial-enable-cloud-sync-sspr-writeback.md#enable-password-writeback-in-sspr).
  - We now return more info in the 'Get-AADCloudSyncDomains' cmdlet. 
  - We updated new cmdlets of CloudSync PowerShell module in the unattended agent install script. 
  - We have added support for the installation of the provisioning agent using the commandline. 

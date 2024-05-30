@@ -66,6 +66,9 @@ The below table lists some more service dependencies, where the client apps must
 | Microsoft Forms     | Exchange                                    | Early-bound |
 |                     | SharePoint                                  | Early-bound |
 | Microsoft To-Do     | Exchange                                    | Early-bound |
+| SharePoint          | SharePoint Online Web Client Extensibility  | Early-bound |
+|                     | SharePoint Online Web Client Extensibility Isolated | Early-bound |
+|                     | SharePoint Client Extensibility web application principal (where present) | Early-bound |
 
 ## Troubleshooting service dependencies
 

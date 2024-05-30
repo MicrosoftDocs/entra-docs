@@ -1,27 +1,26 @@
 ---
 title: PowerShell sample - List all Microsoft Entra application proxy apps with a policy
 description: PowerShell example that lists all Microsoft Entra application proxy applications in your directory that have a lifetime token policy.
-
 author: kenwith
 manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-proxy
-ms.custom: has-azure-ad-ps-ref
+ms.custom: 
 ms.topic: sample
-ms.date: 01/04/2024
+ms.date: 02/27/2024
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
 
-# Get all Application Proxy apps with a token lifetime policy
+# Get all application proxy apps with a token lifetime policy
 
-This PowerShell script example lists all the Microsoft Entra application proxy applications in your directory that have a token lifetime policy and lists details about the policy.
+The PowerShell script example lists all the Microsoft Entra application proxy applications in your directory that have a token lifetime policy and lists details about the policy.
 
-[!INCLUDE [quickstarts-free-trial-note](~/../azure-docs-pr/includes/quickstarts-free-trial-note.md)]
+[!INCLUDE [quickstarts-free-trial-note](~/includes/azure-docs-pr/quickstarts-free-trial-note.md)]
 
-[!INCLUDE [updated-for-az](~/../azure-docs-pr/includes/updated-for-az.md)]
+[!INCLUDE [updated-for-az](~/includes/azure-docs-pr/updated-for-az.md)]
 
-This sample requires the [Microsoft Graph Beta PowerShell module](/powershell/microsoftgraph/installation) 2.10 or newer.
+The sample requires the [Microsoft Graph Beta PowerShell module](/powershell/microsoftgraph/installation) 2.10 or newer.
 
 ## Sample script
 
@@ -110,6 +109,5 @@ Write-Host "To disconnect from Microsoft Graph, please use the Disconnect-MgGrap
 
 ## Next steps
 
-For more information on the Microsoft Graph PowerShell module, see [Microsoft Graph PowerShell overview](/powershell/microsoftgraph/overview).
-
-For other PowerShell examples for Application Proxy, see [Microsoft Entra application proxy PowerShell examples](../application-proxy-powershell-samples.md).
+- [Microsoft Graph PowerShell overview](/powershell/microsoftgraph/overview)
+- [Microsoft Entra application proxy PowerShell examples](../application-proxy-powershell-samples.md)

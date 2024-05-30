@@ -11,7 +11,7 @@ ms.service: identity-platform
 
 ms.topic: how-to
 
-#Customer intent: As a cloud application administrator, I want to customize the role claim in the access token for an enterprise application, so that I can define custom roles and assign them to user accounts.
+#Customer intent: As a cloud Application Administrator, I want to customize the role claim in the access token for an enterprise application, so that I can define custom roles and assign them to user accounts.
 ---
 
 # Configure the role claim
@@ -64,7 +64,7 @@ Use the Microsoft Graph Explorer to add roles to an enterprise application.
           ],
           "description": "msiam_access",
           "displayName": "msiam_access",
-          "id": "ef7437e6-4f94-4a0a-a110-a439eb2aa8f7",
+          "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
           "isEnabled": true,
           "origin": "Application",
           "value": null
@@ -85,7 +85,7 @@ Use the Microsoft Graph Explorer to add roles to an enterprise application.
           ],
           "description": "msiam_access",
           "displayName": "msiam_access",
-          "id": "ef7437e6-4f94-4a0a-a110-a439eb2aa8f7",
+          "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
           "isEnabled": true,
           "origin": "Application",
           "value": null
@@ -96,7 +96,7 @@ Use the Microsoft Graph Explorer to add roles to an enterprise application.
           ],
           "description": "Administrators Only",
           "displayName": "Admin",
-          "id": "4f8f8640-f081-492d-97a0-caf24e9bc134",
+          "id": "11bb11bb-cc22-dd33-ee44-55ff55ff55ff",
           "isEnabled": true,
           "origin": "ServicePrincipal",
           "value": "Administrator"
@@ -105,7 +105,7 @@ Use the Microsoft Graph Explorer to add roles to an enterprise application.
     }
     ```
 
-    You can only add new roles after msiam_access for the patch operation. Also, you can add as many roles as your organization needs. The value of these roles is sent as the claim value in the SAML response. To generate the GUID values for the ID of new roles use the web tools, such as the [Online GUID / UUID Generator](https://www.guidgenerator.com/). The appRoles property should represent what was in the request body of the query.
+    You must include the `msiam_access` role object in addition to any new roles in the request body. Failure to include any existing roles in the request body removes them from the **appRoles** object. Also, you can add as many roles as your organization needs. The value of these roles is sent as the claim value in the SAML response. To generate the GUID values for the ID of new roles use the web tools, such as the [Online GUID / UUID Generator](https://www.guidgenerator.com/). The appRoles property in the response includes what was in the request body of the query.
 
 ## Edit attributes
 

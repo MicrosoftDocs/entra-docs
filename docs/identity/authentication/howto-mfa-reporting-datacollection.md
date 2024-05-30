@@ -17,7 +17,7 @@ ms.reviewer: jpettere
 
 This document explains how to find user information collected by Azure Multi-Factor Authentication Server (MFA Server), Microsoft Entra multifactor authentication (Cloud-based), and self-service password reset (SSPR) in the event you would like to remove it.
 
-[!INCLUDE [gdpr-hybrid-note](~/../azure-docs-pr/includes/gdpr-hybrid-note.md)]
+[!INCLUDE [gdpr-hybrid-note](~/includes/azure-docs-pr/gdpr-hybrid-note.md)]
 
 ## MFA information collected
 

@@ -11,7 +11,6 @@ ms.date: 05/13/2022
 ms.author: rolyon
 ms.reviewer: anandy
 ms.custom: oldportal, it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
-
 ---
 
 # Manage users or devices for an administrative unit with dynamic membership rules (Preview)
@@ -31,9 +30,9 @@ Although administrative units with members assigned manually support multiple ob
 
 - Microsoft Entra ID P1 or P2 license for each administrative unit administrator
 - Microsoft Entra ID P1 or P2 license for each administrative unit member
-- Privileged Role Administrator or Global Administrator
+- Privileged Role Administrator
 - Microsoft Graph PowerShell SDK installed when using PowerShell
-- Admin consent when using Graph explorer for Microsoft Graph API
+- Admin consent when using Graph Explorer for Microsoft Graph API
 - Global Azure cloud (not available in specialized clouds, such as Azure Government or Microsoft Azure operated by 21Vianet)
 
 > [!NOTE]
@@ -58,7 +57,7 @@ Follow these steps to create administrative units with dynamic membership rules 
 1. In the **Membership type** list, select **Dynamic User** or **Dynamic Device**, depending on the type of rule you want to add.
 
     ![Screenshot of an administrative unit Properties page with Membership type list displayed.](./media/admin-units-members-dynamic/admin-unit-properties.png)
-    
+
 1. Select **Add dynamic query**.
 
 1. Use the rule builder to specify the dynamic membership rule. For more information, see [Rule builder in the Azure portal](~/identity/users/groups-dynamic-membership.md#rule-builder-in-the-azure-portal).
@@ -71,7 +70,7 @@ Follow these steps to create administrative units with dynamic membership rules 
 
     The following message is displayed:
 
-    After changing the administrative unit type, the existing membership may change based on the dynamic membership rule you provide.
+    After changing the administrative unit type, the existing membership might change based on the dynamic membership rule you provide.
 
 1. Select **Yes** to continue.
 
@@ -81,12 +80,12 @@ For steps on how to edit your rule, see the following [Edit dynamic membership r
 
 1. Create a dynamic membership rule. For more information, see [Dynamic membership rules for groups in Microsoft Entra ID](~/identity/users/groups-dynamic-membership.md).
 
-1. Use the [Connect-MgGraph](/powershell/microsoftgraph/authentication-commands#using-connect-mggraph) command to connect with Microsoft Entra ID with a user that has been assigned the Privileged Role Administrator or Global Administrator role.
+1. Use the [Connect-MgGraph](/powershell/microsoftgraph/authentication-commands#using-connect-mggraph) command to connect with Microsoft Entra ID with a user that has been assigned the Privileged Role Administrator role.
 
     ```powershell
     Connect-MgGraph -Scopes "AdministrativeUnit.ReadWrite.All"
     ```
-  
+
 1. Use the [New-MgDirectoryAdministrativeUnit](/powershell/module/microsoft.graph.identity.directorymanagement/new-mgdirectoryadministrativeunit) command to create a new administrative unit with a dynamic membership rule using the following parameters:
 
     - `MembershipType`: `Dynamic` or `Assigned`
@@ -111,17 +110,17 @@ For steps on how to edit your rule, see the following [Edit dynamic membership r
 1. Create a dynamic membership rule. For more information, see [Dynamic membership rules for groups in Microsoft Entra ID](~/identity/users/groups-dynamic-membership.md).
 
 1. Use the [Create administrativeUnit](/graph/api/directory-post-administrativeunits?view=graph-rest-beta&preserve-view=true) API to create a new administrative unit with a dynamic membership rule.
-    
+
     The following shows an example of a dynamic membership rule that applies to Windows devices.
 
     Request
-    
+
     ```http
     POST https://graph.microsoft.com/beta/administrativeUnits
     ```
-    
+
     Body
-    
+
     ```http
     {
       "displayName": "Windows Devices",
@@ -131,7 +130,7 @@ For steps on how to edit your rule, see the following [Edit dynamic membership r
       "membershipRuleProcessingState": "On"
     }
     ```
-    
+
 ## Edit dynamic membership rules
 
 When an administrative unit has been configured for dynamic membership, the usual commands to add or remove members for the administrative unit are disabled as the dynamic membership engine retains the sole ownership of adding or removing members. To make changes to the membership, you can edit the dynamic membership rules.
@@ -210,7 +209,7 @@ Follow these steps to change an administrative unit with dynamic membership rule
 
 1. Select **Yes** to continue.
 
-    When the membership type setting is changed from dynamic to assigned, the current members remain intact in the administrative unit. Additionally, the ability to add groups to the administrative unit is enabled. 
+    When the membership type setting is changed from dynamic to assigned, the current members remain intact in the administrative unit. Additionally, the ability to add groups to the administrative unit is enabled.
 
 ### PowerShell
 

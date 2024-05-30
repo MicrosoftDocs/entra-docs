@@ -44,12 +44,16 @@
         href: entitlement-management-group-licenses.md
       - name: Onboard external users to Microsoft Entra ID through an approval process
         href: entitlement-management-onboard-external-user.md
+      - name: Create an access package for an application - PowerShell
+        href: entitlement-management-access-package-create-app.md
       - name: Migrate an organizational role model
         href: identity-governance-organizational-roles.md
       - name: Automated ServiceNow Ticket Creation Integration
         href: entitlement-management-ticketed-provisioning.md
       - name: Automated Teams Messaging Integration
         href: entitlement-management-custom-teams-extension.md      
+      - name: Customized entitlement reports in Azure Data Explorer
+        href: custom-entitlement-report-with-adx-and-entra-id.md      
     - name: Access Reviews
       items:
       - name: Review access to Microsoft 365 groups - Microsoft Graph
@@ -74,6 +78,8 @@
         href: tutorial-scheduled-leaver-portal.md  
       - name: Automate employee offboarding tasks - Microsoft Graph
         href: /graph/tutorial-lifecycle-workflows-scheduled-leaver?toc=/entra/id-governance/toc.json&bc=/entra/id-governance/breadcrumb/toc.json
+      - name: Automate employee mover tasks - Microsoft Entra admin center
+        href: tutorial-mover-custom-workflow-portal.md   
 - name: Concepts
   expanded: true
   items:
@@ -112,7 +118,11 @@
     - name: Workflow Audit logs
       href: lifecycle-workflow-audits.md
     - name: Workflow History
-      href: lifecycle-workflow-history.md     
+      href: lifecycle-workflow-history.md
+    - name: Synced on-premises users (Preview)
+      href: lifecycle-workflow-on-premises.md         
+    - name: Workflow Insights (preview)
+      href: lifecycle-workflow-insights.md        
 - name: How-to guides
   expanded: true
   items:
@@ -186,6 +196,8 @@
         href: entitlement-management-reprocess-access-package-assignments.md
       - name: Hide or delete
         href: entitlement-management-access-package-edit.md
+      - name: Assign Microsoft Entra Roles (Preview)
+        href: entitlement-management-roles.md  
     - name: Approvers
       items:
       - name: Approve requests
@@ -254,18 +266,24 @@
           href: manage-workflow-properties.md
         - name: Manage workflow versions
           href: manage-workflow-tasks.md
+        - name: Using custom security attributes
+          href: manage-workflow-custom-security-attribute.md  
         - name: Run a workflow on-demand
           href: on-demand-workflow.md
         - name: Customize emails
           href: customize-workflow-email.md
         - name: Check the status of a workflow
           href: check-status-workflow.md
-        - name: Download workflow history reports (Preview)
+        - name: Download workflow history reports
           href: download-workflow-history.md  
         - name: Check execution user scope
           href: check-workflow-execution-scope.md  
         - name: Customize the schedule of workflows
-          href: customize-workflow-schedule.md         
+          href: customize-workflow-schedule.md
+        - name: Manage synced on-premises users (Preview)
+          href: manage-workflow-on-premises.md              
+        - name: Check Workflow Insights (preview)
+          href: manage-workflow-insights.md            
       - name: Delete
         items: 
         - name: Delete a Lifecycle workflow

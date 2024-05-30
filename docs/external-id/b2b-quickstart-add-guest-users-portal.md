@@ -5,7 +5,7 @@ description: Use this quickstart to learn how Microsoft Entra admins can add B2B
 ms.author: cmulligan
 author: csmulligan
 manager: celestedg
-ms.date: 12/14/2023
+ms.date: 04/02/2024
 ms.topic: quickstart
 ms.service: entra-external-id
 ms.custom: it-pro, mode-ui
@@ -15,11 +15,13 @@ ms.collection: M365-identity-device-management
 
 # Quickstart: Add a guest user and send an invitation
 
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
+
 With Microsoft Entra [B2B collaboration](what-is-b2b.md), you can invite anyone to collaborate with your organization using their own work, school, or social account.
 
 In this quickstart, you'll learn how to add a new guest user to your Microsoft Entra directory in the Microsoft Entra admin center. You'll also send an invitation and see what the guest user's invitation redemption process looks like. 
 
-This guide provides the basic steps to invite an external user. To learn about all of the properties and settings that you can include when you invite an external user, see [How to create and delete a user](~/fundamentals/how-to-create-delete-users.md).
+This guide provides the basic steps to invite an external user. To learn about all of the properties and settings that you can include when you invite an external user, see [How to create and delete a user](~/fundamentals/how-to-create-delete-users.yml).
 
 If you don’t have an Azure subscription, create a [free account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) before you begin.
 
@@ -27,7 +29,7 @@ If you don’t have an Azure subscription, create a [free account](https://azure
 
 To complete the scenario in this quickstart, you need:
 
-- A role that allows you to create users in your tenant directory, such as at least a [Guest Inviter role](~/identity/role-based-access-control/permissions-reference.md#guest-inviter) or a [User administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
+- A role that allows you to create users in your tenant directory, such as at least a [Guest Inviter role](~/identity/role-based-access-control/permissions-reference.md#guest-inviter) or a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 
 - Access to a valid email address outside of your Microsoft Entra tenant, such as a separate work, school, or social email address. You'll use this email to create the guest account in your tenant directory and access the invitation.
 
@@ -35,7 +37,7 @@ To complete the scenario in this quickstart, you need:
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 
 1. Browse to **Identity** > **Users** > **All users**.
 
@@ -79,25 +81,25 @@ Now sign in as the guest user to see the invitation.
 
     :::image type="content" source="media/quickstart-add-users-portal/quickstart-users-portal-email-small.png" alt-text="Screenshot showing the B2B invitation email.":::
 
-1. In the email body, select **Accept invitation**. A **Review permissions** page opens in the browser.
+1. In the email body, select **Accept invitation**. A **Permission requested by:** page opens in the browser.
 
     :::image type="content" source="media/quickstart-add-users-portal/consent-screen.png" alt-text="Screenshot showing the Review permissions page.":::
 
 1. Select **Accept**.
 
-1. The **My Apps** page opens. Because we haven't assigned any apps to this guest user, you'll see the message "There are no apps to show." In a real-life scenario, you would [add the guest user to an app](add-users-administrator.md#add-guest-users-to-an-application) so the app would appear here.
+1. The **My Apps** page opens. Because we haven't assigned any apps to this guest user, you'll see the message "There are no apps to show." In a real-life scenario, you would [add the guest user to an app](add-users-administrator.yml#add-guest-users-to-an-application) so the app would appear here.
 
 ## Clean up resources
 
 When no longer needed, delete the test guest user.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **User settings**.
 1. Select the test user, and then select **Delete user**.
 
 ## Next steps
 
 In this quickstart, you created a guest user in the Microsoft Entra admin center and sent an invitation to share apps. Then you viewed the redemption process from the guest user's perspective, and verified that the guest user was able to access their My Apps page. 
-To learn more about adding guest users for collaboration, see [Add Microsoft Entra B2B collaboration users in the Microsoft Entra admin center](add-users-administrator.md).
+To learn more about adding guest users for collaboration, see [Add Microsoft Entra B2B collaboration users in the Microsoft Entra admin center](add-users-administrator.yml).
 To learn more about adding guest users with PowerShell, see [Add and invite guests with PowerShell](b2b-quickstart-invite-powershell.md).
 You can also bulk invite guest users [via the admin center](tutorial-bulk-invite.md) or [via PowerShell](bulk-invite-powershell.md). 

@@ -233,13 +233,13 @@ Find the application ID (client ID) of the multi-tenant application and share it
 
 The following steps are performed by the customer in the customer's tenant *Tenant2*. The customer can use the Azure portal, Azure PowerShell, or Azure CLI.
 
-The user executing the steps must be an administrator with a privileged role such as [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator), [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator), or [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+The user executing the steps must be an administrator with at least the [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) or [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator) role.
 
 # [Portal](#tab/azure-portal)
 
 Sign in to the [Azure portal](https://portal.azure.com) and follow these steps.
 
-#### The customer installs the service provider application in the customer tenant
+#### The customer installs the service provider application in the external tenant
 
 To install the service provider's registered application in the customer's tenant, you create a service principal with the application ID from the registered app. You can create the service principal in either of the following ways:
 
@@ -309,16 +309,16 @@ To use Azure PowerShell to configure the client's tenant, install the latest [Az
 In Azure PowerShell, sign in to the customer's tenant and set the active subscription to the customer's subscription.
 
 ```azurepowershell
-$customerTenantId="<customer-tenant-id>"
+$externaltenantid="<external-tenant-id>"
 $customerSubscriptionId="<customer-subscription-id>"
 
 # Sign in to Azure in the customer's tenant.
-Connect-AzAccount -Tenant $customerTenantId
+Connect-AzAccount -Tenant $externaltenantid
 # Set the context to the customer's subscription.
 Set-AzContext -Subscription $customerSubscriptionId
 ```
 
-#### The customer installs the service provider application in the customer tenant
+#### The customer installs the service provider application in the external tenant
 
 Once you receive the application ID of the service provider's multi-tenant application, install the application in your tenant, *Tenant2*, by creating a service principal.
 
@@ -399,7 +399,7 @@ Sign in to Azure to use Azure CLI.
 az login
 ```
 
-#### The customer installs the service provider application in the customer tenant
+#### The customer installs the service provider application in the external tenant
 
 Once you receive the application ID of the service provider's multi-tenant application, install the application in your tenant *Tenant2* using the following command. Installing the application creates a service principal in your tenant.
 

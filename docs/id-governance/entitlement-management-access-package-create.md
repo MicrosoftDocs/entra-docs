@@ -42,12 +42,11 @@ Then once the access package is created, you can [change the hidden setting](ent
 
 ## Start the creation process
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
+[!INCLUDE [portal updates](../includes/portal-update.md)]
 
-To complete the following steps, you need a role of global Administrator, Identity Governance Administrator, catalog owner, or access package manager.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
-
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
+    > [!TIP]
+    > Other least privilege roles that can complete this task include the Catalog owner or Access Package manager.
 1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
 
 1. Select **New access package**.
@@ -62,11 +61,11 @@ On the **Basics** tab, you give the access package a name and specify which cata
 
 1. In the **Catalog** dropdown list, select the catalog where you want to put the access package. For example, you might have a catalog owner who manages all the marketing resources that can be requested. In this case, you could select the marketing catalog.
 
-    You see only catalogs that you have permission to create access packages in. To create an access package in an existing catalog, you must be a Global Administrator or Identity Governance Administrator. Or you must be a catalog owner or access package manager in that catalog.
+    You see only catalogs that you have permission to create access packages in. To create an access package in an existing catalog, you must be at least an Identity Governance Administrator. Or you must be a catalog owner or access package manager in that catalog.
 
     ![Screenshot that shows basic information for a new access package.](./media/entitlement-management-access-package-create/basics.png)
 
-    If you're a Global Administrator, an Identity Governance Administrator, or catalog creator, and you want to create your access package in a new catalog that's not listed, select **Create new catalog**. Enter the catalog name and description, and then select **Create**.
+    If you're at least an Identity Governance Administrator, or catalog creator, and you want to create your access package in a new catalog that's not listed, select **Create new catalog**. Enter the catalog name and description, and then select **Create**.
 
     The access package that you're creating, and any resources included in it, are added to the new catalog. Later, you can add more catalog owners or add attributes to the resources that you put in the catalog. To learn more about how to edit the attributes list for a specific catalog resource and the prerequisite roles, read [Add resource attributes in the catalog](entitlement-management-catalog-create.md#add-resource-attributes-in-the-catalog).
 
@@ -84,14 +83,14 @@ If you're not sure which resource roles to include, you can skip adding them whi
 
     ![Screenshot that shows the panel for selecting applications for resource roles in a new access package.](./media/entitlement-management-access-package-create/resource-roles.png)
 
-    If you're creating the access package in the general catalog or a new catalog, you can choose any resource from the directory that you own. You must be at least a global administrator, an Identity Governance Administrator, or catalog creator.
+    If you're creating the access package in the general catalog or a new catalog, you can choose any resource from the directory that you own. You must be at least an Identity Governance Administrator, or catalog creator.
 
     >[!NOTE]
     >You can add dynamic groups to a catalog and to an access package. However, you can select only the owner role when you're managing a dynamic group resource in an access package.
 
     If you're creating the access package in an existing catalog, you can select any resource that's already in the catalog without needing to be an owner of that resource.
 
-    If you're a global administrator, an Identity Governance Administrator, or catalog owner, you have the additional option of selecting resources that you own or administer but that aren't yet in the catalog. If you select resources in the directory but not currently in the selected catalog, these resources are also added to the catalog for other catalog administrators to build access packages with. To see all the resources in the directory that can be added to the catalog, select the **See all** checkbox at the top of the panel. If you want to select only resources that are currently in the selected catalog, leave the **See all** checkbox cleared (the default state).
+    If you're at least an Identity Governance Administrator, or catalog owner, you have the additional option of selecting resources that you own or administer but that aren't yet in the catalog. If you select resources in the directory but not currently in the selected catalog, these resources are also added to the catalog for other catalog administrators to build access packages with. To see all the resources in the directory that can be added to the catalog, select the **See all** checkbox at the top of the panel. If you want to select only resources that are currently in the selected catalog, leave the **See all** checkbox cleared (the default state).
 
 1. In the **Role** list, select the role that you want users to be assigned for the resource. For more information on selecting the appropriate roles for a resource, see [how to determine which resource roles to include in an access package](entitlement-management-access-package-resources.md#determine-which-resource-roles-to-include-in-an-access-package).
 
@@ -108,9 +107,9 @@ On the **Requests** tab, you create the first policy to specify who can request 
 
 Depending on which users you want to be able to request this access package, perform the steps in one of the following sections.
 
-[!INCLUDE [Entitlement management request policy](~/includes/entra-entitlement-management-request-policy.md)]
+[!INCLUDE [Entitlement management request policy](../includes/entra-entitlement-management-request-policy.md)]
 
-[!INCLUDE [Entitlement management lifecycle policy](~/includes/entra-entitlement-management-lifecycle-policy.md)]
+[!INCLUDE [Entitlement management lifecycle policy](../includes/entra-entitlement-management-lifecycle-policy.md)]
 
 ## Review and create the access package
 

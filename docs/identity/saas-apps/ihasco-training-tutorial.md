@@ -12,6 +12,8 @@ ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: jeedes
 
+
+# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and iHASCO Training so that I can control who has access to iHASCO Training, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
 # Tutorial: Microsoft Entra single sign-on (SSO) integration with iHASCO Training
@@ -132,8 +134,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 1. Log in to your iHASCO Training website as an administrator.
 
-1. Click **Settings** in top right navigation, scroll to
-the **ADVANCED** tile and click **Configure Single Sign On**.
+1. Click **Settings** in top right navigation, scroll to the **ADVANCED** tile and click **Configure Single Sign On**.
 
     ![Screenshot for iHASCO Training sso button.](./media/ihasco-training-tutorial/settings.png)
 

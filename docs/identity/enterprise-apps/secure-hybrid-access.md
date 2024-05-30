@@ -24,7 +24,7 @@ In this article, learn to protect your on-premises and cloud legacy authenticati
   * Protect users, apps, and data in the cloud and on-premises 
   * [Use it to publish on-premises web applications externally](~/identity/app-proxy/overview-what-is-app-proxy.md)
   
-* **[Secure hybrid access through Microsoft Entra partner integrations](#partner-integrations-for-apps-on-premises-and-legacy-authentication)**:
+* **[Secure hybrid access through Microsoft Entra ID partner integrations](#partner-integrations-for-apps-on-premises-and-legacy-authentication)**:
 
   * [Pre-built solutions](#secure-hybrid-access-through-azure-ad-partner-integrations)
   * [Apply Conditional Access policies per application](secure-hybrid-access-integrations.md#apply-conditional-access-policies)
@@ -85,7 +85,7 @@ The following partners offer solutions to support [Conditional Access policies p
 |---|---|
 |Amazon Web Service, Inc.|[Tutorial: Microsoft Entra SSO integration with AWS ClientVPN](~/identity/saas-apps/aws-clientvpn-tutorial.md)|
 |Check Point Software Technologies Ltd.|[Tutorial: Microsoft Entra single SSO integration with Check Point Remote Secure Access VPN](~/identity/saas-apps/check-point-remote-access-vpn-tutorial.md)|
-|Cisco Systems, Inc.|[Tutorial: Microsoft Entra SSO integration with Cisco AnyConnect](~/identity/saas-apps/cisco-anyconnect.md)|
+|Cisco Systems, Inc.|[Tutorial: Microsoft Entra SSO integration with Cisco Secure Firewall - Secure Client](~/identity/saas-apps/cisco-secure-firewall-secure-client.md)|
 |Fortinet, Inc.|[Tutorial: Microsoft Entra SSO integration with FortiGate SSL VPN](~/identity/saas-apps/fortigate-ssl-vpn-tutorial.md)|
 |Palo Alto Networks|[Tutorial: Microsoft Entra SSO integration with Palo Alto Networks Admin UI](~/identity/saas-apps/paloaltoadmin-tutorial.md)|
 |Pulse Secure|[Tutorial: Microsoft Entra SSO integration with Pulse Connect Secure (PCS)](~/identity/saas-apps/pulse-secure-pcs-tutorial.md)</br>[Tutorial: Microsoft Entra SSO integration with Pulse Secure Virtual Traffic Manager](~/identity/saas-apps/pulse-secure-virtual-traffic-manager-tutorial.md)|

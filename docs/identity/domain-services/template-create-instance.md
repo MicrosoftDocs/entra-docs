@@ -1,12 +1,12 @@
 ---
 title: Enable Azure DS Domain Services using a template | Microsoft Docs
-description: Learn how to configure and enable Microsoft Entra Domain Services using an Azure Resource Manager template
+description: Learn how to configure and enable Microsoft Entra Domain Services using an Azure Resource Manager template.
 author: justinha
 manager: amycolannino
 
 ms.service: entra-id
 ms.subservice: domain-services
-ms.custom: devx-track-arm-template, has-azure-ad-ps-ref
+ms.custom: devx-track-arm-template, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: sample
 ms.date: 09/15/2023
 ms.author: justinha
@@ -26,8 +26,8 @@ To complete this article, you need the following resources:
     * If needed, follow the instructions to [install the Azure PowerShell module and connect to your Azure subscription](/powershell/azure/install-azure-powershell).
     * Make sure that you sign in to your Azure subscription using the [Connect-AzAccount][Connect-AzAccount] cmdlet.
 * Install and configure MS Graph PowerShell.
-   - If needed, follow the instructions to [install the MS Graph PowerShell module and connect to Microsoft Entra ID](/powershell/microsoftgraph/authentication-commands?view=graph-powershell-1.0).
-   - Make sure that you sign in to your Microsoft Entra tenant using the [Connect-MgGraph](/powershell/microsoftgraph/authentication-commands?view=graph-powershell-1.0) cmdlet.
+   - If needed, follow the instructions to [install the MS Graph PowerShell module and connect to Microsoft Entra ID](/powershell/microsoftgraph/authentication-commands?view=graph-powershell-1.0&preserve-view=true).
+   - Make sure that you sign in to your Microsoft Entra tenant using the [Connect-MgGraph](/powershell/microsoftgraph/authentication-commands?view=graph-powershell-1.0&preserve-view=true) cmdlet.
 * You need [Application Administrator](/azure/active-directory/roles/permissions-reference#application-administrator) and [Groups Administrator](/azure/active-directory/roles/permissions-reference#groups-administrator) Microsoft Entra roles in your tenant to enable Domain Services.
 * You need Domain Services Contributor Azure role to create the required Domain Services resources.
 
@@ -35,9 +35,9 @@ To complete this article, you need the following resources:
 
 When you create a Domain Services managed domain, you specify a DNS name. There are some considerations when you choose this DNS name:
 
-* **Built-in domain name:** By default, the built-in domain name of the directory is used (a *.onmicrosoft.com* suffix). If you wish to enable secure LDAP access to the managed domain over the internet, you can't create a digital certificate to secure the connection with this default domain. Microsoft owns the *.onmicrosoft.com* domain, so a Certificate Authority (CA) won't issue a certificate.
+* **Built-in domain name:** By default, the built-in domain name of the directory is used (a *.onmicrosoft.com* suffix). If you wish to enable secure LDAP access to the managed domain over the internet, you can't create a digital certificate to secure the connection with this default domain. Microsoft owns the *.onmicrosoft.com* domain, so a Certificate Authority (CA) doesn't issue a certificate.
 * **Custom domain names:** The most common approach is to specify a custom domain name, typically one that you already own and is routable. When you use a routable, custom domain, traffic can correctly flow as needed to support your applications.
-* **Non-routable domain suffixes:** We generally recommend that you avoid a non-routable domain name suffix, such as *contoso.local*. The *.local* suffix isn't routable and can cause issues with DNS resolution.
+* **Non-routable domain suffixes:** We generally recommend that you avoid a nonroutable domain name suffix, such as *contoso.local*. The *.local* suffix isn't routable and can cause issues with DNS resolution.
 
 > [!TIP]
 > If you create a custom domain name, take care with existing DNS namespaces. It's recommended to use a domain name separate from any existing Azure or on-premises DNS name space.
@@ -51,10 +51,10 @@ When you create a Domain Services managed domain, you specify a DNS name. There 
 The following DNS name restrictions also apply:
 
 * **Domain prefix restrictions:** You can't create a managed domain with a prefix longer than 15 characters. The prefix of your specified domain name (such as *aaddscontoso* in the *aaddscontoso.com* domain name) must contain 15 or fewer characters.
-* **Network name conflicts:** The DNS domain name for your managed domain shouldn't already exist in the virtual network. Specifically, check for the following scenarios that would lead to a name conflict:
-    * If you already have an Active Directory domain with the same DNS domain name on the Azure virtual network.
-    * If the virtual network where you plan to enable the managed domain has a VPN connection with your on-premises network. In this scenario, ensure you don't have a domain with the same DNS domain name on your on-premises network.
-    * If you have an existing Azure cloud service with that name on the Azure virtual network.
+* **Network name conflicts:** The DNS domain name for your managed domain shouldn't already exist in the virtual network. Specifically, check for the following scenarios that would lead to a name conflict.
+  * If you already have an Active Directory domain with the same DNS domain name on the Azure virtual network.
+  * If the virtual network where you plan to enable the managed domain has a VPN connection with your on-premises network. In this scenario, ensure you don't have a domain with the same DNS domain name on your on-premises network.
+  * If you have an existing Azure cloud service with that name on the Azure virtual network.
 
 <a name='create-required-azure-ad-resources'></a>
 
@@ -91,17 +91,17 @@ In the following example, the user object ID for the account with a UPN of `admi
 
 ```powershell
 # First, retrieve the object ID of the newly created 'AAD DC Administrators' group.
-$GroupObjectId = Get-AzureADGroup `
+$GroupObjectId = Get-MgGroup `
   -Filter "DisplayName eq 'AAD DC Administrators'" | `
-  Select-Object ObjectId
+  Select-Object Id
 
 # Now, retrieve the object ID of the user you'd like to add to the group.
-$UserObjectId = Get-AzureADUser `
+$UserObjectId = Get-MgUser `
   -Filter "UserPrincipalName eq 'admin@contoso.onmicrosoft.com'" | `
-  Select-Object ObjectId
+  Select-Object Id
 
 # Add the user to the 'AAD DC Administrators' group.
-Add-AzureADGroupMember -ObjectId $GroupObjectId.ObjectId -RefObjectId $UserObjectId.ObjectId
+New-MgGroupMember -GroupId $GroupObjectId.Id -DirectoryObjectId $UserObjectId.Id
 ```
 
 Finally, create a resource group using the [New-AzResourceGroup][New-AzResourceGroup] cmdlet. In the following example, the resource group is named *myResourceGroup* and is created in the *westus* region. Use your own name and desired region:
@@ -112,7 +112,7 @@ New-AzResourceGroup `
   -Location "WestUS"
 ```
 
-If you choose a region that supports Availability Zones, the Domain Services resources are distributed across zones for additional redundancy. Availability Zones are unique physical locations within an Azure region. Each zone is made up of one or more datacenters equipped with independent power, cooling, and networking. To ensure resiliency, there's a minimum of three separate zones in all enabled regions.
+If you choose a region that supports Availability Zones, the Domain Services resources are distributed across zones for more redundancy. Availability Zones are unique physical locations within an Azure region. Each zone is made up of one or more datacenters equipped with independent power, cooling, and networking. To ensure resiliency, there's a minimum of three separate zones in all enabled regions.
 
 There's nothing for you to configure for Domain Services to be distributed across zones. The Azure platform automatically handles the zone distribution of resources. For more information and to see region availability, see [What are Availability Zones in Azure?][availability-zones].
 
@@ -126,10 +126,10 @@ As part of the Resource Manager resource definition, the following configuration
 |-------------------------|---------|
 | domainName              | The DNS domain name for your managed domain, taking into consideration the previous points on naming prefixes and conflicts. |
 | filteredSync            | Domain Services lets you synchronize *all* users and groups available in Microsoft Entra ID, or a *scoped* synchronization of only specific groups.<br /><br /> For more information about scoped synchronization, see [Microsoft Entra Domain Services scoped synchronization][scoped-sync].|
-| notificationSettings    | If there are any alerts generated in the managed domain, email notifications can be sent out. <br /><br />*Global administrators* of the Azure tenant and members of the *AAD DC Administrators* group can be *Enabled* for these notifications.<br /><br /> If desired, you can add additional recipients for notifications when there are alerts that require attention.|
-| domainConfigurationType | By default, a managed domain is created as a *User* forest. This type of forest synchronizes all objects from Microsoft Entra ID, including any user accounts created in an on-premises AD DS environment. You don't need to specify a *domainConfiguration* value to create a user forest.<br /><br /> A *Resource* forest only synchronizes users and groups created directly in Microsoft Entra ID. Set the value to *ResourceTrusting* to create a resource forest.<br /><br />For more information on *Resource* forests, including why you may use one and how to create forest trusts with on-premises AD DS domains, see [Domain Services resource forests overview][resource-forests].|
+| notificationSettings    | If there are any alerts generated in the managed domain, email notifications can be sent out. <br /><br />*Global administrators* of the Azure tenant and members of the *AAD DC Administrators* group can be *Enabled* for these notifications.<br /><br /> If desired, you can add other recipients for notifications when there are alerts that require attention.|
+| domainConfigurationType | By default, a managed domain is created as a *User* forest. This type of forest synchronizes all objects from Microsoft Entra ID, including any user accounts created in an on-premises AD DS environment. You don't need to specify a *domainConfiguration* value to create a user forest.<br /><br /> A *Resource* forest only synchronizes users and groups created directly in Microsoft Entra ID. Set the value to *ResourceTrusting* to create a resource forest.<br /><br />For more information on *Resource* forests, including why you might use one and how to create forest trusts with on-premises AD DS domains, see [Domain Services resource forests overview][resource-forests].|
 
-The following condensed parameters definition shows how these values are declared. A user forest named *aaddscontoso.com* is created with all users from Entra ID synchronized to the managed domain:
+The following condensed parameters definition shows how these values are declared. A user forest named *aaddscontoso.com* is created with all users from Microsoft Entra ID synchronized to the managed domain:
 
 ```json
 "parameters": {
@@ -328,10 +328,10 @@ New-AzResourceGroupDeployment -ResourceGroupName "myResourceGroup" -TemplateFile
 
 It takes a few minutes to create the resource and return control to the PowerShell prompt. The managed domain continues to be provisioned in the background, and can take up to an hour to complete the deployment. In the Microsoft Entra admin center, the **Overview** page for your managed domain shows the current status throughout this deployment stage.
 
-When the Microsoft Entra admin center shows that the managed domain has finished provisioning, the following tasks need to be completed:
+When the Microsoft Entra admin center shows that the managed domain finishes provisioning, the following tasks need to be completed:
 
 * Update DNS settings for the virtual network so virtual machines can find the managed domain for domain join or authentication.
-    * To configure DNS, select your managed domain in the portal. On the **Overview** window, you are prompted to automatically configure these DNS settings.
+    * To configure DNS, select your managed domain in the portal. On the **Overview** window, you're prompted to automatically configure these DNS settings.
 * [Enable password synchronization to Domain Services](tutorial-create-instance.md#enable-user-accounts-for-azure-ad-ds) so end users can sign in to the managed domain using their corporate credentials.
 
 ## Next steps
@@ -358,17 +358,17 @@ To see the managed domain in action, you can [domain-join a Windows VM][windows-
 <!-- EXTERNAL LINKS -->
 [Connect-AzAccount]: /powershell/module/Az.Accounts/Connect-AzAccount
 
-[Connect-MgGraph](/powershell/microsoftgraph/authentication-commands?view=graph-powershell-1.0): /powershell/microsoftgraph/authentication-commands?view=graph-powershell-1.0
+[Connect-MgGraph]: /powershell/microsoftgraph/authentication-commands?view=graph-powershell-1.0
 
-[New-MgServicePrincipal](/powershell/module/microsoft.graph.applications/new-mgserviceprincipal): /powershell/module/microsoft.graph.applications/new-mgserviceprincipal
+[New-MgServicePrincipal]: /powershell/module/microsoft.graph.applications/new-mgserviceprincipal
 
-[New-MgGroup](/powershell/module/microsoft.graph.groups/new-mggroup): /powershell/module/microsoft.graph.groups/new-mggroup
+[New-MgGroup]: /powershell/module/microsoft.graph.groups/new-mggroup
 
-[New-MgGroupMember](/powershell/module/microsoft.graph.groups/new-mggroupmember): /powershell/module/microsoft.graph.groups/new-mggroupmember
+[New-MgGroupMember]: /powershell/module/microsoft.graph.groups/new-mggroupmember
 
-[Get-MgGroup](/powershell/module/microsoft.graph.groups/get-mggroup): /powershell/module/microsoft.graph.groups/get-mggroup
+[Get-MgGroup]: /powershell/module/microsoft.graph.groups/get-mggroup
 
-[Get-MgUser](/powershell/module/microsoft.graph.users/get-mguser): /powershell/module/microsoft.graph.users/get-mguser
+[Get-MgUser]: /powershell/module/microsoft.graph.users/get-mguser
 
 [Register-AzResourceProvider]: /powershell/module/Az.Resources/Register-AzResourceProvider
 

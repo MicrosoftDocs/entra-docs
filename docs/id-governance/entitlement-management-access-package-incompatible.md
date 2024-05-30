@@ -8,11 +8,11 @@ ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 05/31/2023
 ms.author: owinfrey
-#Customer intent: As a global administrator or access package manager, I want to configure that a user cannot request an access package if they already have incompatible access.
+#Customer intent: As an Identity Governance Administrator or access package manager, I want to configure that a user cannot request an access package if they already have incompatible access.
 ---
 # Configure separation of duties checks for an access package in entitlement management
 
-In entitlement management, you can configure multiple policies, with different settings for each user community that will need access through an access package.  For example, employees might only need manager approval to get access to certain apps, but guests coming in from other organizations may require both a sponsor and a resource team departmental manager to approve. In a policy for users already in the directory, you can specify a particular group of users for who can request access. However, you may have a requirement to avoid a user obtaining excessive access.  To meet this requirement, you'll want to further restrict who can request access, based on the access the requestor already has.
+In entitlement management, you can configure multiple policies, with different settings for each user community that will need access through an access package.  For example, employees might only need manager approval to get access to certain apps, but guests coming in from other organizations could require both a sponsor and a resource team departmental manager to approve. In a policy for users already in the directory, you can specify a particular group of users for who can request access. However, you can have a requirement to avoid a user obtaining excessive access.  To meet this requirement, you want to further restrict who can request access, based on the access the requestor already has.
 
 With the separation of duties settings on an access package, you can configure that a user who is a member of a group or who already has an assignment to one access package can't request an additional access package.
 
@@ -21,13 +21,13 @@ With the separation of duties settings on an access package, you can configure t
 
 ## Scenarios for separation of duties checks
 
-For example, you have an access package, *Marketing Campaign*, that people across your organization and other organizations can request access to, to work with your organization's marketing department while that campaign is going on. Since employees in the marketing department should already have access to that marketing campaign material, you don't want employees in the marketing department to request access to that access package.  Or, you may already have a dynamic group, *Marketing department employees*, with all of the marketing employees in it. You could indicate that the access package is incompatible with the membership of that dynamic group. Then, if a marketing department employee is looking for an access package to request, they couldn't request access to the *Marketing campaign* access package.
+For example, you have an access package, *Marketing Campaign*, that people across your organization and other organizations can request access to, to work with your organization's marketing department while that campaign is going on. Since employees in the marketing department should already have access to that marketing campaign material, you don't want employees in the marketing department to request access to that access package.  Or, you could already have a dynamic group, *Marketing department employees*, with all of the marketing employees in it. You could indicate that the access package is incompatible with the membership of that dynamic group. Then, if a marketing department employee is looking for an access package to request, they couldn't request access to the *Marketing campaign* access package.
 
-Similarly, you may have an application with two app roles - **Western Sales** and **Eastern Sales** - representing sales territories, and you want to ensure that a user can only have one sales territory at a time.  If you have two access packages, one access package **Western Territory** giving the **Western Sales** role and the other access package **Eastern Territory** giving the **Eastern Sales** role, then you can configure
+Similarly, you could have an application with two app roles - **Western Sales** and **Eastern Sales** - representing sales territories, and you want to ensure that a user can only have one sales territory at a time.  If you have two access packages, one access package **Western Territory** giving the **Western Sales** role and the other access package **Eastern Territory** giving the **Eastern Sales** role, then you can configure:
  - the **Western Territory** access package has the **Eastern Territory** package as incompatible, and
  - the **Eastern Territory** access package has the **Western Territory** package as incompatible.
 
-If you’ve been using Microsoft Identity Manager or other on-premises identity management systems for automating access for on-premises apps, then you can integrate these systems with entitlement management as well.  If you'll be controlling access to Microsoft Entra integrated apps through entitlement management, and want to prevent users from having incompatible access, you can configure that an access package is incompatible with a group. That could be a group, which your on-premises identity management system sends into Microsoft Entra ID through Microsoft Entra Connect. This check ensures a user will be unable to request an access package, if that access package would give access that's incompatible with access the user has in on-premises apps.
+If you’ve been using Microsoft Identity Manager or other on-premises identity management systems for automating access for on-premises apps, then you can integrate these systems with entitlement management as well.  If you are controlling access to Microsoft Entra integrated apps through entitlement management, and want to prevent users from having incompatible access, you can configure that an access package is incompatible with a group. That could be a group, which your on-premises identity management system sends into Microsoft Entra ID through Microsoft Entra Connect. This check ensures a user is unable to request an access package, if that access package would give access that's incompatible with access the user has in on-premises apps.
 
 ## Prerequisites
 
@@ -38,27 +38,30 @@ To use entitlement management and assign users to access packages, you must have
 
 ## Configure another access package or group membership as incompatible for requesting access to an access package
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
-
-**Prerequisite role**: Global Administrator, Identity Governance Administrator, Catalog owner or Access package manager
+[!INCLUDE [portal updates](../includes/portal-update.md)]
 
 Follow these steps to change the list of incompatible groups or other access packages for an existing access package:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
-
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
+    > [!TIP]
+    > Other least privilege roles that can complete this task include the Catalog owner and the Access package manager.
 1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
 
-1. On the **Access packages** page open the access package which users will request.
+1. On the **Access packages** page, open the access package which users will request.
 
 1. In the left menu, select **Separation of duties**.
 
-1.  If you wish to prevent users who have another access package assignment already from requesting this access package, select on **Add access package** and select the access package that the user would already be assigned.
+1. The list on the **Incompatible access packages** tab is of other access packages. If a user already has an assignment to an access package on that list, they won't allowed to request this access package.
+
+1.  If you wish to prevent users who have another access package assignment already from requesting this access package, select on **Add access package** and select the access package that the user would already be assigned. That access package will then be added to the list of access packages on the **Incompatible access packages** tab.
 
 
     ![configuration of incompatible access packages](./media/entitlement-management-access-package-incompatible/select-incompatible-ap.png)
 
 
-1.  If you wish to prevent users who have an existing group membership from requesting this access package, then select on **Add group** and select the group that the user would already be in.
+1.  If you wish to prevent users who have an existing group membership from requesting this access package, then select on **Add group** and select the group that the user would already be in. That group will then be added to the list of groups on the **Incompatible groups** tab.
+
+1. If you want the users who are assigned to this access package to not be able to request that access package, as each incompatible access package relationship is unidirectional, then change to that access package, and add this access package as incompatible. For example, you want to have users with the **Western Territory** access package not be able to request the **Eastern Territory** access package, and users with the **Eastern Territory** access package not be able to request the **Western Territory** access package. If first on the **Western Territory** access package you added the **Eastern Territory** access package as incompatible, then next change to the **Eastern Territory** access package, and add the **Western Territory** access package as incompatible.
 
 ### Configure incompatible access packages programmatically through Graph
 
@@ -73,8 +76,8 @@ This script below illustrates using the `v1.0` profile of Graph to create a rela
 ```powershell
 Connect-MgGraph -Scopes "EntitlementManagement.ReadWrite.All"
 
-$apid = "5925c3f7-ed14-4157-99d9-64353604697a"
-$otherapid = "cdd5f06b-752a-4c9f-97a6-82f4eda6c76d"
+$apid = "00001111-aaaa-2222-bbbb-3333cccc4444"
+$otherapid = "11112222-bbbb-3333-cccc-4444dddd5555"
 
 $params = @{
    "@odata.id" = "https://graph.microsoft.com/v1.0/identityGovernance/entitlementManagement/accessPackages/" + $otherapid
@@ -84,12 +87,11 @@ New-MgEntitlementManagementAccessPackageIncompatibleAccessPackageByRef -AccessPa
 
 ## View other access packages that are configured as incompatible with this one
 
-**Prerequisite role**: Global Administrator, Identity Governance Administrator, Catalog owner or Access package manager
-
 Follow these steps to view the list of other access packages that have indicated that they're incompatible with an existing access package:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
-
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
+    > [!TIP]
+    > Other least privilege roles that can complete this task include the Catalog owner and the Access package manager.
 1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
 
 1. On the **Access packages** page open the access package.
@@ -102,12 +104,11 @@ Follow these steps to view the list of other access packages that have indicated
 
 If you've configured incompatible access settings on an access package that already has users assigned to it, then you can download a list of those users who have that additional access. Those users who also have an assignment to the incompatible access package won't be able to re-request access.
 
-**Prerequisite role**: Global Administrator, Identity Governance Administrator, Catalog owner or Access package manager
-
 Follow these steps to view the list of users who have assignments to two access packages.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
-
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
+    > [!TIP]
+    > Other least privilege roles that can complete this task include the Catalog owner and the Access package manager.
 1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
 
 1. On the **Access packages** page open the access package where you've configured another access package as incompatible.
@@ -126,12 +127,11 @@ Follow these steps to view the list of users who have assignments to two access 
 
 If you're configuring incompatible access settings on an access package that already has users assigned to it, then any of those users who also have an assignment to the incompatible access package or groups won't be able to re-request access.
 
-**Prerequisite role**: Global Administrator, Identity Governance Administrator, Catalog owner or Access package manager
-
 Follow these steps to view the list of users who have assignments to two access packages.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
-
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
+    > [!TIP]
+    > Other least privilege roles that can complete this task include the Catalog owner and the Access package manager.
 1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
 
 1. Open the access package where you'll be configuring incompatible assignments.

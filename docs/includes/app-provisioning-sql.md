@@ -24,8 +24,9 @@ Configuration of the connection to the application's database is done via a wiza
 #### Supported databases
 
 - Microsoft SQL Server and Azure SQL
-- IBM DB2 10.x
 - IBM DB2 9.x
+- IBM DB2 10.x
+- IBM DB2 11.5
 - Oracle 10g and 11g
 - Oracle 12c and 18c
 - MySQL 5.x
@@ -170,7 +171,7 @@ If you have already downloaded the provisioning agent and configured it for anot
  9. Wait for the Microsoft Entra provisioning agent configuration wizard and then select **Next**.
  10. In the **Select Extension** step, select **On-premises application provisioning** and then select **Next**.
  11. The provisioning agent will use the operating system's web browser to display a popup window for you to authenticate to Microsoft Entra ID, and potentially also your organization's identity provider.  If you are using Internet Explorer as the browser on Windows Server, then you may need to add Microsoft web sites to your browser's trusted site list to allow JavaScript to run correctly.
- 12. Provide credentials for a Microsoft Entra administrator when you're prompted to authorize. The user is required to have the Hybrid Identity Administrator or Global Administrator role.
+ 12. Provide credentials for a Microsoft Entra administrator when you're prompted to authorize. The user is required to have at least the [Hybrid Identity Administrator](/entra/identity/role-based-access-control/permissions-reference#hybrid-identity-administrator) role.
  13. Select **Confirm** to confirm the setting. Once installation is successful, you can select **Exit**, and also close the Provisioning Agent Package installer.
  
 ## 4. Configure the On-premises ECMA app
@@ -404,7 +405,7 @@ You'll use the Azure portal to configure the mapping between the Microsoft Entra
  1. Ensure that the Microsoft Entra schema includes the attributes that are required by the database. If the database requires users to have an attribute, such as `uidNumber`, and that attribute is not already part of your Microsoft Entra schema for a user, then you will need to use the [directory extension feature](~/identity/app-provisioning/user-provisioning-sync-attributes-for-mapping.md) to add that attribute as an extension.
  1. In the Microsoft Entra admin center, under **Enterprise applications**, select the **On-premises ECMA app** application, and then the **Provisioning** page.
  2. Select **Edit provisioning**, and wait 10 seconds.
- 3. Expand **Mappings** and select the **Provision Azure Active Directory Users** mapping. If this is the first time you've configured the attribute mappings for this application, this will be the only mapping present, for a placeholder.
+ 3. Expand **Mappings** and select the **Provision Microsoft Entra ID Users** mapping. If this is the first time you've configured the attribute mappings for this application, this will be the only mapping present, for a placeholder.
 
 
      ![Screenshot that shows provisioning a user.](.\media\app-provisioning-sql\configure-10.png)
@@ -447,7 +448,7 @@ You'll use the Azure portal to configure the mapping between the Microsoft Entra
 Now that you have the Microsoft Entra ECMA Connector Host talking with Microsoft Entra ID, and the attribute mapping configured, you can move on to configuring who's in scope for provisioning.
 
 >[!IMPORTANT]
->If you were signed in using a Hybrid Identity Administrator role, you need to sign-out and sign-in with an account that has the Application Administrator, Cloud Application Administrator or Global Administrator role, for this section. The Hybrid Identity Administrator role does not have permissions to assign users to applications.
+>If you were signed in using a Hybrid Identity Administrator role, you need to sign-out and sign-in with an account that has the at least the Application Administrator role for this section. The Hybrid Identity Administrator role doesn't have permissions to assign users to applications.
 
 
 If there are existing users in the SQL database, then you should create application role assignments for those existing users. To learn more about how to create application role assignments in bulk, see [governing an application's existing users in Microsoft Entra ID](~/id-governance/identity-governance-applications-existing-users.md).

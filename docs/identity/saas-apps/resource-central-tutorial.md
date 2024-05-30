@@ -12,6 +12,8 @@ ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: jeedes
 
+
+# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Resource Central â€“ SAML SSO for Meeting Room Booking System so that I can control who has access to Resource Central â€“ SAML SSO for Meeting Room Booking System, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
 # Tutorial: Microsoft Entra single sign-on (SSO) integration with Resource Central – SAML SSO for Meeting Room Booking System

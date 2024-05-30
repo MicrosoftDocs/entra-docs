@@ -11,8 +11,10 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 04/04/2023
+ms.date: 02/27/2023
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Asana so that I can streamline the user management process and ensure that users have the appropriate access to Asana.
 ---
 
 # Tutorial: Configure Asana for automatic user provisioning
@@ -20,13 +22,13 @@ ms.author: thwimmer
 This tutorial describes the steps you need to do in both Asana and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and deprovisions users and groups to [Asana](https://www.asana.com/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
 
-## Capabilities Supported
+## Capabilities supported
 > [!div class="checklist"]
 > * Create users in Asana.
 > * Remove users in Asana when they do not require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and Asana.
 > * Provision groups and group memberships in Asana.
-> * [Single sign-on](asana-tutorial.md) to Asana(recommended).
+> * [Single sign-on](asana-tutorial.md) to Asana (recommended).
 
 ## Prerequisites
 
@@ -50,13 +52,24 @@ The scenario outlined in this tutorial assumes that you already have the followi
  > [!TIP]
  > To enable SAML-based single sign-on for Asana, follow the instructions provided. Single sign-on can be configured independently of automatic provisioning, although these two features complement each other.
 
-### Generate Secret Token in Asana
+### Generate Service Account token in Asana
 
-* Sign in to [Asana](https://app.asana.com/-/login) by using your admin account.
-* Select the profile photo from the top bar, and select your current organization-name settings.
-* Go to the **Service Accounts** tab.
-* Select **Add Service Account**.
-* Update **Name** and **About** and the profile photo as needed. Copy the token in **Token**, and select it in Save Changes.
+1. Sign in to [Asana](https://app.asana.com/-/login) by using your admin account.
+1. Select the profile photo from the top bar, and select **Admin Console**.
+1. Select the Apps tab from with your admin console.
+1. Select Service accounts.
+1. Select **Add Service Account** and perform the following steps.
+
+      ![Screenshot of Service Account Token.](media/asana-provisioning-tutorial/service.png)
+
+      1. Update **Name** and **Description** as needed. 
+      1. Under the **Permission scopes** section, select **Scoped permissions** and **User provisioning (SCIM)**. Ensure the following permission scopes are selected:
+            * Users: Read
+            * Users: Create and modify
+            * Teams: Read
+            * Teams: Create and modify
+      1. Select **Save Changes**.
+1. Copy the token.
 
 <a name='step-3-add-asana-from-the-azure-ad-application-gallery'></a>
 
@@ -166,8 +179,7 @@ Once you've configured provisioning, use the following resources to monitor your
 
 * 11/06/2021 - Dropped support for **externalId, name.givenName and name.familyName**. Added support for **preferredLanguage , title and urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department**. Enabled **Group Provisioning**.
 * 05/23/2023 - Dropped support for **preferredLanguage** Added support for **urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager**.
-* 09/07/2023 - Added support for **addresses[type eq "work"].locality, addresses[type eq "work"].region, addresses[type eq "work"].country, phoneNumbers[type eq "work"].value, urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:employeeNumber, urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:costCenter, 
-urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:organization and urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division**.
+* 09/07/2023 - Added support for **addresses[type eq "work"].locality, addresses[type eq "work"].region, addresses[type eq "work"].country, phoneNumbers[type eq "work"].value, urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:employeeNumber, urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:costCenter, urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:organization and urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division**.
 
 ## More resources
 

@@ -96,7 +96,7 @@ The following status messages can be shown for **Dynamic rule processing** statu
 - **Update paused**: Dynamic membership rule updates have been paused by the administrator. MembershipRuleProcessingState is set to “Paused”.
 
 >[!NOTE]
->In this screen you now may also choose to **Pause processing**. Previously, this option was only available through the modification of the membershipRuleProcessingState property. Global admins, group admins, user admins, and Intune admins can manage this setting and can pause and resume dynamic group processing. Group owners without the correct roles do not have the rights needed to edit this setting.
+>In this screen you now may also choose to **Pause processing**. Previously, this option was only available through the modification of the membershipRuleProcessingState property. Those assigned at least the [Groups Administrator](/entra/identity/role-based-access-control/permissions-reference#groups-administrator) role can manage this setting and can pause and resume dynamic group processing. Group owners without the correct roles do not have the rights needed to edit this setting.
 
 The following status messages can be shown for **Last membership change** status:
 
@@ -116,7 +116,7 @@ If an error occurs while processing the membership rule for a specific group, an
 The following articles provide additional information on how to use groups in Microsoft Entra ID.
 
 - [See existing groups](~/fundamentals/groups-view-azure-portal.md)
-- [Create a new group and adding members](~/fundamentals/how-to-manage-groups.md)
-- [Manage settings of a group](~/fundamentals/how-to-manage-groups.md)
-- [Manage memberships of a group](~/fundamentals/how-to-manage-groups.md)
+- [Create a new group and adding members](~/fundamentals/how-to-manage-groups.yml)
+- [Manage settings of a group](~/fundamentals/how-to-manage-groups.yml)
+- [Manage memberships of a group](~/fundamentals/how-to-manage-groups.yml)
 - [Manage dynamic rules for users in a group](groups-dynamic-membership.md)

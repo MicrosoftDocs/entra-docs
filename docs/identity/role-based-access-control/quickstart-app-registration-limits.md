@@ -1,6 +1,6 @@
 ---
 title: Remove limits on creating app registrations
-description: Assign a custom role to grant unrestricted app registrations in the Microsoft Entra Active Directory
+description: Assign a custom role to grant unrestricted app registrations in the Microsoft Entra Active Directory.
 
 author: rolyon
 manager: amycolannino
@@ -10,20 +10,20 @@ ms.topic: quickstart
 ms.date: 02/04/2022
 ms.author: rolyon
 ms.reviewer: vincesm
-ms.custom: it-pro, mode-other, has-azure-ad-ps-ref
+ms.custom: it-pro, mode-other, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 
 ---
 # Quickstart: Grant permission to create unlimited app registrations
 
-In this quick start guide, you will create a custom role with permission to create an unlimited number of app registrations, and then assign that role to a user. The assigned user can then use the Microsoft Entra admin center, Azure AD PowerShell, or Microsoft Graph API to create application registrations. Unlike the built-in Application Developer role, this custom role grants the ability to create an unlimited number of application registrations. The Application Developer role grants the ability, but the total number of created objects is limited to 250 to prevent hitting [the directory-wide object quota](~/identity/users/directory-service-limits-restrictions.md). The least privileged role required to create and assign Microsoft Entra custom roles is the Privileged Role Administrator.
+In this quick start guide, you create a custom role with permission to create an unlimited number of app registrations, and then assign that role to a user. The assigned user can then use the Microsoft Entra admin center, Microsoft Graph PowerShell, or Microsoft Graph API to create application registrations. Unlike the built-in Application Developer role, this custom role grants the ability to create an unlimited number of application registrations. The Application Developer role grants the ability, but the total number of created objects is limited to 250 to prevent hitting [the directory-wide object quota](~/identity/users/directory-service-limits-restrictions.md). The least privileged role required to create and assign Microsoft Entra custom roles is the Privileged Role Administrator.
 
 If you don't have an Azure subscription, [create a free account](https://azure.microsoft.com/free/) before you begin.
 
 ## Prerequisites
 
 - Microsoft Entra ID P1 or P2 license
-- Privileged Role Administrator or Global Administrator
-- AzureADPreview module when using PowerShell
+- Privileged Role Administrator
+- Microsoft Graph PowerShell module when using PowerShell
 - Admin consent when using Graph explorer for Microsoft Graph API
 
 For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
@@ -71,8 +71,8 @@ Done! In this quickstart, you successfully created a custom role with permission
 
 There are two permissions available for granting the ability to create application registrations, each with different behavior.
 
-- microsoft.directory/applications/createAsOwner: Assigning this permission results in the creator being added as the first owner of the created app registration, and the created app registration will count against the creator's 250 created objects quota.
-- microsoft.directory/applications/create: Assigning this permission results in the creator not being added as the first owner of the created app registration, and the created app registration will not count against the creator's 250 created objects quota. Use this permission carefully, because there is nothing preventing the assignee from creating app registrations until the directory-level quota is hit. If both permissions are assigned, this permission takes precedence.
+- microsoft.directory/applications/createAsOwner: Assigning this permission results in the creator being added as the first owner of the created app registration, and the created app registration counts against the creator's 250 created objects quota.
+- microsoft.directory/applications/create: Assigning this permission results in the creator not being added as the first owner of the created app registration, and the created app registration won't count against the creator's 250 created objects quota. Use this permission carefully, because there's nothing preventing the assignee from creating app registrations until the directory-level quota is hit. If both permissions are assigned, this permission takes precedence.
 
 ## PowerShell
 
@@ -81,7 +81,6 @@ There are two permissions available for granting the ability to create applicati
 Create a new role using the following PowerShell script:
 
 ```powershell
-
 # Basic role information
 $displayName = "Application Registration Creator"
 $description = "Can create an unlimited number of application registrations."
@@ -96,7 +95,7 @@ $allowedResourceAction =
 $rolePermissions = @{'allowedResourceActions'= $allowedResourceAction}
 
 # Create new custom admin role
-$customRole = New-AzureAdMSRoleDefinition -RolePermissions $rolePermissions -DisplayName $displayName -Description $description -TemplateId $templateId -IsEnabled $true
+$customRole = New-MgRoleManagementDirectoryRoleDefinition -DisplayName $displayName -Description $description -RolePermissions $rolePermissions -TemplateId $templateId -IsEnabled:$true
 ```
 
 ### Assign the role
@@ -105,14 +104,14 @@ Assign the role using the following PowerShell script:
 
 ```powershell
 # Get the user and role definition you want to link
-$user = Get-AzureADUser -Filter "userPrincipalName eq 'Adam@contoso.com'"
-$roleDefinition = Get-AzureADMSRoleDefinition -Filter "displayName eq 'Application Registration Creator'"
+$user = Get-MgUser -Filter "UserPrincipalName eq 'Adam@contoso.com'"
+$roleDefinition = Get-MgRoleManagementDirectoryRoleDefinition -Filter "DisplayName eq 'Application Registration Creator'"
 
 # Get resource scope for assignment
 $resourceScope = '/'
 
 # Create a scoped role assignment
-$roleAssignment = New-AzureADMSRoleAssignment -ResourceScope $resourceScope -RoleDefinitionId $roleDefinition.Id -PrincipalId $user.objectId
+$roleAssignment = New-MgRoleManagementDirectoryRoleAssignment -DirectoryScopeId $resourceScope -RoleDefinitionId $roleDefinition.Id -PrincipalId $user.Id
 ```
 
 ## Microsoft Graph API

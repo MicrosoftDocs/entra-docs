@@ -11,7 +11,6 @@ ms.date: 06/09/2023
 ms.author: rolyon
 ms.reviewer: anandy
 ms.custom: oldportal;it-pro;
-
 ---
 
 # Add users, groups, or devices to an administrative unit
@@ -25,11 +24,11 @@ This article describes how to add users, groups, or devices to administrative un
 - Microsoft Entra ID P1 or P2 license for each administrative unit administrator
 - Microsoft Entra ID Free licenses for administrative unit members
 - To add existing users, groups, or devices:
-    - Privileged Role Administrator or Global Administrator
+    - Privileged Role Administrator
 - To create new groups:
-    - Groups Administrator (scoped to the administrative unit or entire directory) or Global Administrator
+    - Groups Administrator (scoped to the administrative unit or entire directory)
 - Microsoft Graph PowerShell
-- Admin consent when using Graph explorer for Microsoft Graph API
+- Admin consent when using Graph Explorer for Microsoft Graph API
 
 For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
 
@@ -50,10 +49,10 @@ You can add users, groups, or devices to administrative units using the Microsof
     - **Users** > **All users**
     - **Groups** > **All groups**
     - **Devices** > **All devices**
-  
+
 1. Select the user, group, or device you want to add to administrative units.
 
-1. Select **Administrative units**. 
+1. Select **Administrative units**.
 
 1. Select **Assign to administrative unit**.
 

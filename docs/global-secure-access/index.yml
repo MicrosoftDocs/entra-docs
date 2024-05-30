@@ -5,12 +5,12 @@ summary: Microsoft Entra Internet Access and Microsoft Entra Private Access are 
 
 metadata: 
    title: Global Secure Access documentation
-   description: Explore documentation for Microsoft's Security Service Edge solution, Global Secure Access, which is comprised of Microsoft Entra Internet Access and Microsoft Entra Private Access.
+   description: Explore documentation for Microsoft's Security Service Edge solution, Global Secure Access, which is composed of Microsoft Entra Internet Access and Microsoft Entra Private Access.
    ms.service: global-secure-access
    ms.topic: landing-page
-   ms.date: 07/27/2023
-   author: shlipsey3
-   ms.author: sarahlipsey
+   ms.date: 02/27/2024
+   author: kenwith
+   ms.author: kenwith
    manager: amycolannino
 
 landingContent:
@@ -57,7 +57,7 @@ landingContent:
         links:
           - text: Learn about Private Access
             url: concept-private-access.md
-          - text: Configure App Proxy connectors
+          - text: Configure Microsoft Entra private network connectors
             url: how-to-configure-connectors.md
           - text: Configure a Quick Access app
             url: how-to-configure-quick-access.md
@@ -83,7 +83,7 @@ landingContent:
     linkLists:
       - linkListType: how-to-guide
         links:
-          - text: Network traffic dashboard
+          - text: Dashboard
             url: concept-traffic-dashboard.md
           - text: Audit logs
             url: how-to-access-audit-logs.md

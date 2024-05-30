@@ -6,7 +6,7 @@ author: omondiatieno
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: enterprise-apps
-ms.topic: conceptual
+ms.topic: concept-article
 
 ms.date: 04/25/2023
 ms.author: jomondi
@@ -33,7 +33,7 @@ The configuration page for password-based SSO is simple. It includes only the UR
 
 To configure password-based SSO in your Microsoft Entra tenant, you need:
 -	An Azure account with an active subscription. If you don't already have one, you can [create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
--	Global Administrator, Cloud Application Administrator, or owner of the service principal.
+-   Application Administrator, Cloud Application Administrator, or owner of the service principal.
 -	An application that supports password-based SSO.
 
 ## Configure password-based single sign-on
@@ -71,8 +71,7 @@ For password-based SSO, the end user’s browsers can be:
 
 - Internet Explorer 8, 9, 10, 11 -- on Windows 7 or later (limited support)
 - Edge on Windows 10 Anniversary Edition or later
-- Chrome -- on Windows 7 or later, and on MacOS X or later
-- Firefox 26.0 or later -- on Windows XP SP2 or later, and on Mac OS X 10.6 or later
+- Chrome -- on Windows 7 or later, and on macOS X or later
 
 ## Next steps
 

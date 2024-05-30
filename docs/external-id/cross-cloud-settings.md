@@ -16,12 +16,17 @@ ms.collection: M365-identity-device-management
 
 # Configure Microsoft cloud settings for B2B collaboration
 
-When Microsoft Entra organizations in separate Microsoft Azure clouds need to collaborate, they can use Microsoft cloud settings to enable Microsoft Entra B2B collaboration. B2B collaboration is available between the following global and sovereign Microsoft Azure clouds:
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
+
+When Microsoft Entra organizations in separate Microsoft Azure clouds need to collaborate, they can use Microsoft cloud settings to enable Microsoft Entra B2B collaboration with each other. B2B collaboration is available between the following global and sovereign Microsoft Azure clouds:
 
 - Microsoft Azure commercial cloud and Microsoft Azure Government
 - Microsoft Azure commercial cloud and Microsoft Azure operated by 21Vianet
 
-To set up B2B collaboration between partner organizations in different Microsoft Azure clouds, each partner mutually agrees to configure B2B collaboration with each other. In each organization, an admin completes the following steps:
+> [!IMPORTANT]
+> Both organizations must enable collaboration with each other, as described in this article. Then each organization can optionally modify their inbound and outbound access settings, as described in [Configure cross-tenant access settings for B2B collaboration](cross-tenant-access-settings-b2b-collaboration.yml).
+
+To enable collaboration between two organizations in different Microsoft clouds, an admin in each organization completes the following steps:
 
 1. Configures their Microsoft cloud settings to enable collaboration with the partner's cloud.
 
@@ -49,7 +54,7 @@ After each organization completes these steps, Microsoft Entra B2B collaboration
 
 In your Microsoft cloud settings, enable the Microsoft Azure cloud you want to collaborate with.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
 1. Browse to **Identity** > **External Identities** > **Cross-tenant access settings**, then select **Microsoft cloud settings**.
 1. Select the checkboxes next to the external Microsoft Azure clouds you want to enable.
 
@@ -62,7 +67,7 @@ In your Microsoft cloud settings, enable the Microsoft Azure cloud you want to c
 
 Follow these steps to add the tenant you want to collaborate with to your Organizational settings.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
 1. Browse to **Identity** > **External Identities** > **Cross-tenant access settings**, then select **Organizational settings**.
 1. Select **Add organization**.
 1. On the **Add organization** pane, type the tenant ID for the organization (cross-cloud lookup by domain name isn't currently available).
@@ -76,8 +81,8 @@ Follow these steps to add the tenant you want to collaborate with to your Organi
 
 1. If you want to change the cross-tenant access settings for this organization, select the **Inherited from default** link under the **Inbound access** or **Outbound access** column. Then follow the detailed steps in these sections:
 
-   - [Modify inbound access settings](cross-tenant-access-settings-b2b-collaboration.md#modify-inbound-access-settings)
-   - [Modify outbound access settings](cross-tenant-access-settings-b2b-collaboration.md#modify-outbound-access-settings)
+   - [Modify inbound access settings](cross-tenant-access-settings-b2b-collaboration.yml#modify-inbound-access-settings)
+   - [Modify outbound access settings](cross-tenant-access-settings-b2b-collaboration.yml#modify-outbound-access-settings)
 
 ## Sign-in endpoints
 

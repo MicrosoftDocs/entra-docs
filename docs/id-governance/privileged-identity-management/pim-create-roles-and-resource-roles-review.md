@@ -23,12 +23,15 @@ The need for access to privileged Azure resource and Microsoft Entra roles by yo
 
 For more information about licenses for PIM, see [License requirements to use Privileged Identity Management](~/id-governance/licensing-fundamentals.md).
 
-To create access reviews for Azure resources, you must be assigned to the [Owner](/azure/role-based-access-control/built-in-roles#owner) or the [User Access Administrator](/azure/role-based-access-control/built-in-roles#user-access-administrator) role for the Azure resources. To create access reviews for Microsoft Entra roles, you must be assigned to the [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) or the [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator) role.
+To create access reviews for Azure resources, you must be assigned to the [Owner](/azure/role-based-access-control/built-in-roles#owner) or the [User Access Administrator](/azure/role-based-access-control/built-in-roles#user-access-administrator) role for the Azure resources. To create access reviews for Microsoft Entra roles, you must be assigned at least the [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator) role.
 
 Using Access Reviews for **Service Principals** requires a Microsoft Entra Workload ID Premium plan in addition to a Microsoft Entra ID P2 or Microsoft Entra ID Governance license. 
 
 - Workload Identities Premium licensing: You can view and acquire licenses on the [Workload Identities blade](https://portal.azure.com/#view/Microsoft_Azure_ManagedServiceIdentity/WorkloadIdentitiesBlade) in the Microsoft Entra admin center.
 
+
+> [!NOTE]
+> Access reviews capture a snapshot of access at the beginning of each review instance. Any changes made during the review process will be reflected in the subsequent review cycle. Essentially, with the commencement of each new recurrence, pertinent data regarding the users, resources under review, and their respective reviewers is retrieved.
 
 ## Create access reviews
 

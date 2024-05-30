@@ -78,11 +78,11 @@ To use this feature, you need:
 Here, we'll initialize three variables. One is the content of the event that was triggered and streamed to the event hub. The two others are empty variables for our email body, and the date and time of the activity, which we'll later fill with information from the event.
 
 1. On the designer, under **When events are available in Event Hubs trigger**, select **New step**.
-1. Under **Choose an operation**, select **Built-in**. In the search box, enter _variables_, and select **Initialize variable**.
+1. Under **Choose an operation**, select **Built-in**. In the search box, enter *variables*, and select **Initialize variable**.
 
    :::image type="content" border="true" source="./media/tutorial-enable-security-notifications-for-audit-logs/initialize-variable.png" alt-text="Screenshot of Initialize variable.":::
 
-1. For **Name**, type _content_.
+1. For **Name**, type *content*.
 1. For **Type**, select **String**.
 1. Place the cursor in the **Value** property, and **Dynamic Content** appears.
 1. In **Dynamic Content**, search for and select **Content**.
@@ -90,15 +90,15 @@ Here, we'll initialize three variables. One is the content of the event that was
    :::image type="content" border="true" source="./media/tutorial-enable-security-notifications-for-audit-logs/dynamic-content.png" alt-text="Screenshot of Dynamic Content.":::
 
 1. Select **New step**.
-1. Under **Choose an operation**, select **Built-in**. In the search box, enter _variables_, and select **Initialize variable**.
-1. Give the variable a name, such as _emailBody_.
+1. Under **Choose an operation**, select **Built-in**. In the search box, enter *variables*, and select **Initialize variable**.
+1. Give the variable a name, such as *emailBody*.
 1. For **Type**, select **String**, and leave **Value** blank.
 
    :::image type="content" border="true" source="./media/tutorial-enable-security-notifications-for-audit-logs/email-body.png" alt-text="Screenshot of email body variable.":::
    
 1. Select **New step**.
-1. Under **Choose an operation**, select **Built-in**. In the search box, enter _variables_, and select **Initialize variable**.
-1. Give the variable a name, such as _dateTime_.
+1. Under **Choose an operation**, select **Built-in**. In the search box, enter *variables*, and select **Initialize variable**.
+1. Give the variable a name, such as *dateTime*.
 1. For **Type**, select **String**, and leave **Value** blank.
 
    :::image type="content" border="true" source="./media/tutorial-enable-security-notifications-for-audit-logs/date-time.png" alt-text="Screenshot of date-timeInitialize variable.":::
@@ -108,7 +108,7 @@ Here, we'll initialize three variables. One is the content of the event that was
 Now we'll format the raw JSON that we received from the events that were streamed to the event hub by parsing the JSON so we can access specific data within that content.
 
 1. Under **Initialize variable 3**, select **New step**.
-1. In the Search connectors and actions search bar, type _Parse JSON_.
+1. In the Search connectors and actions search bar, type *Parse JSON*.
 1. Switch to the **Actions** tab and select **Parse JSON**.
 
    :::image type="content" border="true" source="./media/tutorial-enable-security-notifications-for-audit-logs/initialize-variable.png" alt-text="Screenshot of Initialize variable.":::
@@ -277,7 +277,7 @@ Now we'll format the raw JSON that we received from the events that were streame
 Next, we'll compose and style the security email that alerts users about the actions taken on their account. Here, we want to inform users of the activity that took place, and prompt them to report it if it wasn't their action.
 
 1. Under **Parse JSON**, select **New step**.
-1. Under **Choose an operation**, select **Built-in**. In the search box, enter _for each_, and from the list of **Actions**, select **For each**.
+1. Under **Choose an operation**, select **Built-in**. In the search box, enter *for each*, and from the list of **Actions**, select **For each**.
 
    :::image type="content" border="true" source="./media/tutorial-enable-security-notifications-for-audit-logs/for-each.png" alt-text="Screenshot of for each step.":::
    
@@ -291,14 +291,14 @@ Next, we'll compose and style the security email that alerts users about the act
    :::image type="content" border="true" source="./media/tutorial-enable-security-notifications-for-audit-logs/add-an-action-records.png" alt-text="Screenshot of how to add an action for Records.":::
    
 1. Under **Choose an operation**, select **Built-in**. In the search box, enter **variables**, and select **Set variable**.
-1. Under **Name**, select the _dateTime_ variable you created.
+1. Under **Name**, select the *dateTime* variable you created.
 1. Inside **Value**, select **Add dynamic content**.
 1. In **Dynamic content**, search for and select **time** under Parse JSON.
 
    :::image type="content" border="true" source="./media/tutorial-enable-security-notifications-for-audit-logs/time.png" alt-text="Screenshot of how to select Time.":::
    
 1. Under **Set variable**, select **Built-in**. In the search box, enter **variables**, and select **Set variable**.
-1. Under **Name**, select the _emailBody_ variable you created.
+1. Under **Name**, select the *emailBody* variable you created.
 1. Under **Value**, input the text you want to display in the body of the security notification email. The body can be formatted with html. You can start with this template and customize it. For example, replace the href placeholders with links that are relevant to your organization.
 
    ```html
@@ -395,7 +395,7 @@ For more information about using dynamic content to customize the email further,
    :::image type="content" border="true" source="./media/tutorial-enable-security-notifications-for-audit-logs/target-resources.png" alt-text="Screenshot of how to select target resources.":::
    
 1. Inside the **For each 2** action block and under **targetResources**, select **Add an action**.
-1. Under **Choose an operation**, select **Built-in**. In the search box, enter _condition_ and from the actions list, select the action named **Condition**.
+1. Under **Choose an operation**, select **Built-in**. In the search box, enter *condition* and from the actions list, select the action named **Condition**.
 
    :::image type="content" border="true" source="./media/tutorial-enable-security-notifications-for-audit-logs/condition.png" alt-text="Screenshot of how to select a condition.":::
    

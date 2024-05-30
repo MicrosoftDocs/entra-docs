@@ -24,13 +24,13 @@ When a membership or ownership is assigned, the assignment:
 - Can't be removed within five minutes of it being assigned
 
 >[!NOTE]
->Every user who is eligible for membership in or ownership of a PIM for Groups must have a Microsoft Entra Premium P2 or Microsoft Entra ID Governance license. For more information, see [License requirements to use Privileged Identity Management](~/id-governance/licensing-fundamentals.md).
+>Every user who is eligible for membership in or ownership of a PIM for Groups must have a Microsoft Entra ID P2 or Microsoft Entra ID Governance license. For more information, see [License requirements to use Privileged Identity Management](~/id-governance/licensing-fundamentals.md).
 
 ## Assign an owner or member of a group
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-Follow these steps to make a user eligible member or owner of a group. You'll need permissions to manage groups. For role-assignable groups, you need to have Global Administrator, Privileged Role Administrator role, or be an Owner of the group. For non-role-assignable groups, you need to have Global Administrator, Directory Writer, Groups Administrator, Identity Governance Administrator, User Administrator role, or be an Owner of the group. Role assignments for administrators should be scoped at directory level (not administrative unit level). 
+Follow these steps to make a user eligible member or owner of a group. You'll need permissions to manage groups. For role-assignable groups, you need to be at least a Privileged Role Administrator role or be an Owner of the group. For non-role-assignable groups, you need to be at least a Directory Writer, Groups Administrator, or Identity Governance Administrator, User Administrator role, or be an Owner of the group. Role assignments for administrators should be scoped at directory level (not administrative unit level). 
 
 > [!NOTE]
 > Other roles with permissions to manage groups (such as Exchange Administrators for non-role-assignable M365 groups) and administrators with assignments scoped at administrative unit level can manage groups through Groups API/UX and override changes made in Microsoft Entra PIM.
@@ -77,7 +77,7 @@ Follow these steps to make a user eligible member or owner of a group. You'll ne
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-Follow these steps to update or remove an existing role assignment. You'll need permissions to manage groups. For role-assignable groups, you need to have Global Administrator, Privileged Role Administrator role, or be an Owner of the group. For non-role-assignable groups, you need to have Global Administrator, Directory Writer, Groups Administrator, Identity Governance Administrator, User Administrator role, or be an Owner of the group. Role assignments for administrators should be scoped at directory level (not administrative unit level). 
+Follow these steps to update or remove an existing role assignment. You'll need permissions to manage groups. For role-assignable groups, you need to be at least a Privileged Role Administrator role or be an Owner of the group. For non-role-assignable groups, you need to have at least the Directory Writer, Groups Administrator, Identity Governance Administrator, User Administrator role, or be an Owner of the group. Role assignments for administrators should be scoped at directory level (not administrative unit level). 
 
 > [!NOTE]
 > Other roles with permissions to manage groups (such as Exchange Administrators for non-role-assignable M365 groups) and administrators with assignments scoped at administrative unit level can manage groups through Groups API/UX and override changes made in Microsoft Entra PIM.

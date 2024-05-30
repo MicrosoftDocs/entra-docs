@@ -23,8 +23,7 @@ To add or deactivate custom security attributes definitions, you must have:
 - Microsoft.Graph module when using [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation)
 - [AzureADPreview](https://www.powershellgallery.com/packages/AzureADPreview) version 2.0.2.138 or later when using Azure AD PowerShell
 
-> [!IMPORTANT]
-> By default, [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) and other administrator roles do not have permissions to read, define, or assign custom security attributes.
+[!INCLUDE [security-attributes-roles](../includes/security-attributes-roles.md)]
 
 ## Add an attribute set
 
@@ -61,7 +60,7 @@ An attribute set is a collection of related attributes. All custom security attr
     All custom security attribute definitions must be part of an attribute set.
 
 1. Click to open the selected attribute set.
- 
+
 1. Click **Add attribute** to add a new custom security attribute to the attribute set.
 
     :::image type="content" source="./media/custom-security-attributes-add/attribute-new.png" alt-text="Screenshot of New attribute pane in Microsoft Entra admin center." lightbox="./media/custom-security-attributes-add/attribute-new.png":::
@@ -81,7 +80,7 @@ An attribute set is a collection of related attributes. All custom security attr
     | Boolean | A Boolean value that can be true, True, false, or False. |
     | Integer | A 32-bit integer. |
     | String | A string that can be X characters long. |
-    
+
 1. For **Allow multiple values to be assigned**, select **Yes** or **No**.
 
     Select **Yes** to allow multiple values to be assigned to this custom security attribute. Select **No** to only allow a single value to be assigned to this custom security attribute.
@@ -112,10 +111,10 @@ Once you add a new custom security attribute definition, you can later edit some
 
 1. Click the attribute set that includes the custom security attribute you want to edit.
 
-1. In the list of custom security attributes, click the ellipsis for the custom security attribute you want to edit and then click **Edit attribute**.
-  
+1. In the list of custom security attributes, click the ellipsis for the custom security attribute you want to edit, and then select **Edit attribute**.
+
 1. Edit the properties that are enabled.
-  
+
 1. If **Only allow predefined values to be assigned** is **Yes**, click **Add value** to add predefined values. Click an existing predefined value to change the **Is active?** setting.
 
     :::image type="content" source="./media/custom-security-attributes-add/attribute-predefined-value-add.png" alt-text="Screenshot of Add predefined value pane in Microsoft Entra admin center." lightbox="./media/custom-security-attributes-add/attribute-predefined-value-add.png":::
@@ -133,7 +132,7 @@ Once you add a custom security attribute definition, you can't delete it. Howeve
 1. In the list of custom security attributes, add a check mark next to the custom security attribute you want to deactivate.
 
 1. Click **Deactivate attribute**.
-  
+
 1. In the Deactivate attribute dialog that appears, click **Yes**.
 
     The custom security attribute is deactivated and moved to the Deactivated attributes list.
@@ -154,7 +153,7 @@ The following example gets all attribute sets.
 Get-MgDirectoryAttributeSet | Format-List
 ```
 
-```Output
+```output
 Description          : Attributes for engineering team
 Id                   : Engineering
 MaxAttributesPerSet  : 25
@@ -250,7 +249,7 @@ The following example gets an attribute set.
 Get-MgDirectoryAttributeSet -AttributeSetId "Engineering" | Format-List
 ```
 
-```Output
+```output
 Description          : Attributes for engineering team
 Id                   : Engineering
 MaxAttributesPerSet  : 25
@@ -294,7 +293,7 @@ $params = @{
 New-MgDirectoryAttributeSet -BodyParameter $params
 ```
 
-```Output
+```output
 Id          Description                     MaxAttributesPerSet
 --          -----------                     -------------------
 Engineering Attributes for engineering team 25
@@ -376,7 +375,7 @@ The following example gets all custom security attribute definitions.
 Get-MgDirectoryCustomSecurityAttributeDefinition | Format-List
 ```
 
-```Output
+```output
 AllowedValues           :
 AttributeSet            : Engineering
 Description             : Target completion date
@@ -446,7 +445,7 @@ The following examples filter custom security attribute definitions.
 Get-MgDirectoryCustomSecurityAttributeDefinition -Filter "name eq 'Project' and status eq 'Available'" | Format-List
 ```
 
-```Output
+```output
 AllowedValues           :
 AttributeSet            : Engineering
 Description             : Active projects for user
@@ -484,7 +483,7 @@ None
 Get-MgDirectoryCustomSecurityAttributeDefinition -Filter "attributeSet eq 'Engineering' and status eq 'Available' and type eq 'String'" | Format-List
 ```
 
-```Output
+```output
 AllowedValues           :
 AttributeSet            : Engineering
 Description             : Target completion date
@@ -539,7 +538,7 @@ The following example gets a custom security attribute definition.
 Get-MgDirectoryCustomSecurityAttributeDefinition -CustomSecurityAttributeDefinitionId "Engineering_ProjectDate" | Format-List
 ```
 
-```Output
+```output
 AllowedValues           :
 AttributeSet            : Engineering
 Description             : Target completion date
@@ -597,7 +596,7 @@ $params = @{
 New-MgDirectoryCustomSecurityAttributeDefinition -BodyParameter $params | Format-List
 ```
 
-```Output
+```output
 AllowedValues           :
 AttributeSet            : Engineering
 Description             : Target completion date
@@ -665,7 +664,7 @@ $params = @{
 New-MgDirectoryCustomSecurityAttributeDefinition -BodyParameter $params | Format-List
 ```
 
-```Output
+```output
 AllowedValues           :
 AttributeSet            : Engineering
 Description             : Active projects for user
@@ -744,7 +743,7 @@ $params = @{
 New-MgDirectoryCustomSecurityAttributeDefinition -BodyParameter $params | Format-List
 ```
 
-```Output
+```output
 AllowedValues           :
 AttributeSet            : Engineering
 Description             : Active projects for user
@@ -954,7 +953,7 @@ The following example gets all predefined values for a custom security attribute
 Get-MgDirectoryCustomSecurityAttributeDefinitionAllowedValue -CustomSecurityAttributeDefinitionId "Engineering_Project" | Format-List
 ```
 
-```Output
+```output
 Id                   : Skagit
 IsActive             : True
 AdditionalProperties : {}
@@ -1006,7 +1005,7 @@ The following example gets a predefined value for a custom security attribute de
 Get-MgDirectoryCustomSecurityAttributeDefinitionAllowedValue -CustomSecurityAttributeDefinitionId "Engineering_Project" -AllowedValueId "Alpine" | Format-List
 ```
 
-```Output
+```output
 Id                   : Alpine
 IsActive             : True
 AdditionalProperties : {[@odata.context, https://graph.microsoft.com/v1.0/$metadata#directory/customSecurityAttributeDefinitions('Engineering_Project')/al
@@ -1053,7 +1052,7 @@ $params = @{
 New-MgDirectoryCustomSecurityAttributeDefinitionAllowedValue -CustomSecurityAttributeDefinitionId "Engineering_Project" -BodyParameter $params | Format-List
 ```
 
-```Output
+```output
 Id                   : Alpine
 IsActive             : True
 AdditionalProperties : {[@odata.context, https://graph.microsoft.com/v1.0/$metadata#directory/customSecurityAttributeDefinitions('Engineering_Project')/al

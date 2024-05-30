@@ -46,7 +46,7 @@ For an overview of the feature, view this "What is Staged Rollout?" video:
 
 -   You have configured all the appropriate tenant-branding and Conditional Access policies you need for users who are being migrated to cloud authentication.
 
--   If you have moved from federated to cloud authentication, you must verify that the DirSync setting `SynchronizeUpnForManagedUsers` is enabled, otherwise Microsoft Entra doesn't allow sync updates to the UPN or alternate login ID for licensed user accounts that use managed authentication. For more information, see [Microsoft Entra Connect Sync service features](how-to-connect-syncservice-features.md).
+-   If you have moved from federated to cloud authentication, you must verify that the DirSync setting `SynchronizeUpnForManagedUsers` is enabled, otherwise Microsoft Entra ID doesn't allow sync updates to the UPN or alternate login ID for licensed user accounts that use managed authentication. For more information, see [Microsoft Entra Connect Sync service features](how-to-connect-syncservice-features.md).
 
 -   If you plan to use Microsoft Entra multifactor authentication, we recommend that you use [combined registration for self-service password reset (SSPR) and multifactor authentication](~/identity/authentication/concept-registration-mfa-sspr-combined.md) to have your users register their authentication methods once. Note- when using SSPR to reset password or change password using MyProfile page while in Staged Rollout, Microsoft Entra Connect needs to sync the new password hash that can take up to 2 minutes after reset.
 
@@ -117,7 +117,7 @@ For information about which PowerShell cmdlets to use, see [Microsoft Entra ID 2
 
 1. Ensure that a full *password hash sync* cycle has run so that all the users' password hashes have been synchronized to Microsoft Entra ID. To check the status of *password hash sync*, you can use the PowerShell diagnostics in [Troubleshoot password hash sync with Microsoft Entra Connect Sync](tshoot-connect-password-hash-synchronization.md).
 
-   ![Screenshot of the AADConnect Troubleshooting log](./media/how-to-connect-staged-rollout/staged-2.png)
+   ![Screenshot of the Microsoft Entra Connect Troubleshooting log](./media/how-to-connect-staged-rollout/staged-2.png)
 
 If you want to test *pass-through authentication* sign-in by using Staged Rollout, enable it by following the prework instructions in the next section.
 

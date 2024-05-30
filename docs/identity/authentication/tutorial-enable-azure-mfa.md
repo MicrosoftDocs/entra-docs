@@ -44,7 +44,7 @@ To complete this tutorial, you need the following resources and privileges:
     * If you need information about creating a user account, see [Add or delete users using Microsoft Entra ID](~/fundamentals/add-users.md).
 
 * A group that the non-administrator user is a member of. For this tutorial, we created such a group, named *MFA-Test-Group*. In this tutorial, you enable Microsoft Entra multifactor authentication for this group.
-    * If you need more information about creating a group, see [Create a basic group and add members using Microsoft Entra ID](~/fundamentals/how-to-manage-groups.md).
+    * If you need more information about creating a group, see [Create a basic group and add members using Microsoft Entra ID](~/fundamentals/how-to-manage-groups.yml).
 
 ## Create a Conditional Access policy
 
@@ -170,7 +170,7 @@ You configured the Conditional Access policy to require additional authenticatio
 
 1. Select **Next** to begin the process. 
 
-   You can choose to configure an authentication phone, an office phone, or a mobile app for authentication. _Authentication phone_ supports text messages and phone calls, _office phone_ supports calls to numbers that have an extension, and _mobile app_ supports using a mobile app to receive notifications for authentication or to generate authentication codes.
+   You can choose to configure an authentication phone, an office phone, or a mobile app for authentication. *Authentication phone* supports text messages and phone calls, *office phone* supports calls to numbers that have an extension, and *mobile app* supports using a mobile app to receive notifications for authentication or to generate authentication codes.
 
    :::image type="content" alt-text="A prompt that says, 'Additional security verification.' This is a prompt to configure a method of multi-factor authentication for this user. You can choose as the method an authentication phone, an office phone, or a mobile app." source="media/tutorial-enable-azure-mfa/tutorial-enable-azure-mfa-additional-security-verification-mobile-app.png":::
 

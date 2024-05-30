@@ -6,7 +6,7 @@ author: billmath
 manager: amycolannino
 ms.service: entra-id
 ms.topic: conceptual
-ms.date: 11/06/2023
+ms.date: 04/26/2024
 ms.subservice: hybrid-cloud-sync
 ms.author: billmath
 
@@ -20,9 +20,6 @@ The cloud sync workbook provides a flexible canvas for data analysis. The workbo
 This workbook is intended for Hybrid Identity Admins who use cloud sync to sync users from AD to Microsoft Entra ID.  It allows admins to gain insights into sync status and details.
 
 The workbook can be accessed by select **Insights** on the left hand side of the cloud sync page.
-
-
- :::image type="content" source="media/how-to-cloud-sync-workbook/workbook-1.png" alt-text="Screenshot of the cloud sync workbook." lightbox="media/how-to-cloud-sync-workbook/workbook-1.png":::
 
 >[!NOTE]
 >The Insights node is available at both the all configurations level and the individual configuration level.  To view information on individual configurations select the Job Id for the configuration.

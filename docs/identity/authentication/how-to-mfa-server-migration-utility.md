@@ -6,7 +6,7 @@ description: Step-by-step guidance to migrate MFA server settings to Microsoft E
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 09/13/2023
+ms.date: 03/25/2024
 
 ms.author: justinha
 author: justinha
@@ -31,7 +31,11 @@ Take a look at our video for an overview of the MFA Server Migration Utility and
 
 ## Limitations and requirements
 
-- The MFA Server Migration Utility requires a new build of the MFA Server solution to be installed on your Primary MFA Server. The build makes updates to the MFA Server data file, and includes the new MFA Server Migration Utility. You don't have to update the WebSDK or User portal. Installing the update _doesn't_ start the migration automatically.
+- The MFA Server Migration Utility requires a new build of the MFA Server solution to be installed on your Primary MFA Server. The build makes updates to the MFA Server data file, and includes the new MFA Server Migration Utility. You don't have to update the WebSDK or User portal. Installing the update *doesn't* start the migration automatically.
+
+   > [!NOTE]
+   > The MFA Server Migration Utility can be executed on a secondary MFA Server. For more information, please check [Run a secondary MFA Server (optional)](#run-a-secondary-mfa-server-optional).
+
 - The MFA Server Migration Utility copies the data from the database file onto the user objects in Microsoft Entra ID. During migration, users can be targeted for Microsoft Entra multifactor authentication for testing purposes using [Staged Rollout](~/identity/hybrid/connect/how-to-connect-staged-rollout.md). Staged migration lets you test without making any changes to your domain federation settings. Once migrations are complete, you must finalize your migration by making changes to your domain federation settings.
 - AD FS running Windows Server 2016 or higher is required to provide MFA authentication on any AD FS relying parties, not including Microsoft Entra ID and Office 365. 
 - Review your AD FS access control policies and make sure none requires MFA to be performed on-premises as part of the authentication process.
@@ -70,7 +74,7 @@ A few important points:
 
 During the previous phases, you can remove users from the Staged Rollout folders to take them out of scope of Microsoft Entra multifactor authentication and route them back to your on-premises Azure MFA server for all MFA requests originating from Microsoft Entra ID.
 
-**Phase 3** requires moving all clients that authenticate to the on-premises MFA Server (VPNs, password managers, and so on) to Microsoft Entra federation via SAML/OAUTH. If modern authentication standards aren't supported, you're required to stand up NPS server(s) with the Microsoft Entra multifactor authentication extension installed. Once dependencies are migrated, users should no longer use the User portal on the MFA Server, but rather should manage their authentication methods in Microsoft Entra ID ([aka.ms/mfasetup](https://aka.ms/mfasetup)). Once users begin managing their authentication data in Microsoft Entra ID, those methods won't be synced back to MFA Server. If you roll back to the on-premises MFA Server after users have made changes to their Authentication Methods in Microsoft Entra ID, those changes will be lost. After user migrations are complete, change the [federatedIdpMfaBehavior](/graph/api/resources/internaldomainfederation?view=graph-rest-1.0&preserve-view=true#federatedidpmfabehavior-values) domain federation setting. The change tells Microsoft Entra ID to no longer perform MFA on-premises and to perform _all_ MFA requests with Microsoft Entra multifactor authentication, regardless of group membership. 
+**Phase 3** requires moving all clients that authenticate to the on-premises MFA Server (VPNs, password managers, and so on) to Microsoft Entra federation via SAML/OAUTH. If modern authentication standards aren't supported, you're required to stand up NPS server(s) with the Microsoft Entra multifactor authentication extension installed. Once dependencies are migrated, users should no longer use the User portal on the MFA Server, but rather should manage their authentication methods in Microsoft Entra ID ([aka.ms/mfasetup](https://aka.ms/mfasetup)). Once users begin managing their authentication data in Microsoft Entra ID, those methods won't be synced back to MFA Server. If you roll back to the on-premises MFA Server after users have made changes to their Authentication Methods in Microsoft Entra ID, those changes will be lost. After user migrations are complete, change the [federatedIdpMfaBehavior](/graph/api/resources/internaldomainfederation?view=graph-rest-1.0&preserve-view=true#federatedidpmfabehavior-values) domain federation setting. The change tells Microsoft Entra ID to no longer perform MFA on-premises and to perform *all* MFA requests with Microsoft Entra multifactor authentication, regardless of group membership. 
 
 The following sections explain the migration steps in more detail.
 
@@ -114,7 +118,7 @@ Open MFA Server, click **Company Settings**:
 
 <sup>*</sup>When a PIN is used to provide proof-of-presence functionality, the functional equivalent is provided above. PINs that aren't cryptographically tied to a device don't sufficiently protect against scenarios where a device has been compromised. To protect against these scenarios, including [SIM swap attacks](https://wikipedia.org/wiki/SIM_swap_scam), move users to more secure methods according to Microsoft authentication methods [best practices](concept-authentication-methods.md).
 
-<sup>**</sup>The default SMS MFA experience in Microsoft Entra multifactor authentication sends users a code, which they're required to enter in the login window as part of authentication. The requirement to roundtrip the SMS code provides proof-of-presence functionality.
+<sup>**</sup>The default Text MFA experience in Microsoft Entra multifactor authentication sends users a code, which they're required to enter in the login window as part of authentication. The requirement to roundtrip the code provides proof-of-presence functionality.
 
 #### User portal 
 
@@ -269,6 +273,10 @@ Once complete, a confirmation will inform you of the tasks completed:
 
 As mentioned in the confirmation message, it can take several minutes for the migrated data to appear on user objects within Microsoft Entra ID. Users can view their migrated methods by navigating to [aka.ms/mfasetup](https://aka.ms/mfasetup).
 
+>[!TIP]
+>You can reduce the time required to display groups if you don't need to view Microsoft Entra MFA methods. Click **View** > **Azure AD MFA Methods** to toggle the display of columns for **AAD Default**, **AAD Phone**, **AAD Alternate**, **AAD Office**, **AAD Devices**, and **AAD OATH Token**. When columns are hidden, some Microsoft Graph API calls are skipped, which greatly improves user load time. 
+
+
 #### View migration details 
 
 You can use Audit logs or Log Analytics to view details of MFA Server to Azure MFA user migrations.
@@ -285,7 +293,7 @@ To access the Audit logs in the Microsoft Entra admin center to view details of 
 
    :::image type="content" border="true" source="./media/how-to-mfa-server-migration-utility/actor.png" alt-text="Screenshot of Initiated by Actor option.":::
 
-1. Type _Azure MFA Management_ and click **Apply**.
+1. Type *Azure MFA Management* and click **Apply**.
 
    :::image type="content" border="true" source="./media/how-to-mfa-server-migration-utility/apply-actor.png" alt-text="Screenshot of MFA management option.":::
 

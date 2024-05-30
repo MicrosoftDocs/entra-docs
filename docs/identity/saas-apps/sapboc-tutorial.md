@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with SAP Analytics Cloud'
+title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with SAP Analytics Cloud'
 description: Learn how to configure single sign-on between Microsoft Entra ID and SAP Analytics Cloud.
 
 author: jeevansd
@@ -11,15 +11,16 @@ ms.subservice: saas-apps
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: jeedes
+
+# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SAP Analytics Cloud so that I can control who has access to SAP Analytics Cloud, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Integrate SAP Analytics Cloud with Microsoft Entra ID
+# Tutorial: Integrate SAP Analytics Cloud for single sign-on with Microsoft Entra ID
 
 In this tutorial, you'll learn how to integrate SAP Analytics Cloud with Microsoft Entra ID. When you integrate SAP Analytics Cloud with Microsoft Entra ID, you can:
 
-* Control in Microsoft Entra ID who has access to SAP Analytics Cloud.
-* Enable your users to be automatically signed-in to SAP Analytics Cloud with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
+* Enable your users to be automatically signed-in to SAP Analytics Cloud with their Microsoft Entra accounts.
 
 ## Prerequisites
 

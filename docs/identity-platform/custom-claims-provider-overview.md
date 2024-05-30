@@ -9,19 +9,19 @@ ms.date: 04/10/2023
 ms.reviewer: JasSuri
 ms.service: identity-platform
 
-ms.topic: conceptual
+ms.topic: concept-article
 titleSuffix: Microsoft identity platform
 #Customer intent: As a developer, I want to learn about custom claims provider so that I can augment tokens with claims from an external identity system or role management system.
 ---
 
-# Custom claims provider (preview)
+# Custom claims provider
 
 This article provides an overview to the Microsoft Entra custom claims provider.
 When a user authenticates to an application, a custom claims provider can be used to add  claims into the token. A custom claims provider is made up of a custom authentication extension that calls an external REST API, to fetch claims from external systems. A custom claims provider can be assigned to one or many applications in your directory.
 
 Key data about a user is often stored in systems external to Microsoft Entra ID. For example, secondary email, billing tier, or sensitive information. Some applications may rely on these attributes for the application to function as designed. For example, the application may block access to certain features based on a claim in the token.
 
-The following short video provides an excellent overview of the Microsoft Entra custom authentication extensions and custom claims providers:
+The following video provides an excellent overview of the Microsoft Entra custom authentication extensions and custom claims providers:
 
 > [!VIDEO https://www.youtube.com/embed/1tPA7B9ztz0]
 
@@ -34,10 +34,32 @@ Use a custom claims provider for the following scenarios:
 
 An event listener is a procedure that waits for an event to occur. The custom authentication extension uses the **token issuance start** event listener. The  event is triggered when a token is about to be issued to your application. When the event is triggered the custom authentication extension REST API is called to fetch attributes from external systems.
 
-For an example using a custom claims provider with the **token issuance start** event listener, check out the [get started with custom claims providers](custom-extension-get-started.md) article.
+To set up a custom claims provider, you'll need to [create a REST API with a token issuance start event](./custom-extension-tokenissuancestart-setup.md), then [configure a custom claim provider for a token issuance event](./custom-extension-tokenissuancestart-configuration.md).
 
-## Next steps
+> [!TIP]
+> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=TokenAugmentation)
+> 
+> To try out this feature, go to the Woodgrove Groceries demo and start the “Add claims to security tokens from a REST API” use case.
 
-- Learn how to [create and register a custom claims provider](custom-extension-get-started.md) with a sample OpenID Connect application.
-- If you already have a custom claims provider registered, you can configure a [SAML application](custom-extension-configure-saml-app.md) to receive tokens with claims sourced from an external store.
-- Learn more about custom claims providers with the [custom claims provider reference](custom-claims-provider-reference.md) article.
+## Authentication events trigger for Azure Functions client library for .NET
+
+<!--As an API developer, to be able to handle token issuance start custom extensions, I need to easily interact with the request object and easily build a response object without necessarily needing to know the exact format of the request or response
+
+I should be able to build an Azure function in minutes as a basic function structure is there, the request is read for a particular event and there's no need to specify the format. As long as you know its token issuance event, once the request is parsed automatically into a tokenissuancestart event request and the response you are responding with, you can respond for that particular event.
+
+For local testing of a URL, you'd get one similar to https://localhost:7071/api/onTokenIssuanceStart
+
+AuthenticationEventResponse -> Whatever is coming in, parse it to the correct response
+-->
+
+The authentication events trigger for Azure Functions allows you to implement a custom extension to handle Microsoft Entra ID authentication events. The authentication events trigger handles all the backend processing for incoming HTTP requests for authentication events.
+
+- Token validation for securing the API call
+- Object model, typing and IDE intellisense
+- Inbound and outbound validation of the API request and response schemas
+
+## See also
+
+- [Create a REST API with a token issuance start event](custom-extension-tokenissuancestart-setup.md)
+- [Configure a SAML app to receive tokens with claims from an external store](custom-extension-configure-saml-app.md)
+- [Custom claims provider reference](custom-claims-provider-reference.md) article.

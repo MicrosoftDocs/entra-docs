@@ -5,11 +5,12 @@ description: Create a custom Conditional Access policy with authentication stren
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 07/18/2023
+ms.date: 05/29/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
+ms.reviewer: inbarc
 ---
 # Conditional Access: Require an authentication strength for external users
 
@@ -30,9 +31,9 @@ In external user scenarios, the MFA authentication methods that a resource tenan
 
 ## Configure cross-tenant access settings to trust MFA
 
-Authentication strength policies work together with [MFA trust settings](~/external-id/cross-tenant-access-settings-b2b-collaboration.md#to-change-inbound-trust-settings-for-mfa-and-device-claims) in your cross-tenant access settings to determine where and how the external user must perform MFA. A Microsoft Entra user first authenticates with their own account in their home tenant. Then when this user tries to access your resource, Microsoft Entra ID applies the authentication strength Conditional Access policy and checks to see if you've enabled MFA trust.
+Authentication strength policies work together with [MFA trust settings](~/external-id/cross-tenant-access-settings-b2b-collaboration.yml#to-change-inbound-trust-settings-for-mfa-and-device-claims) in your cross-tenant access settings to determine where and how the external user must perform MFA. A Microsoft Entra user first authenticates with their own account in their home tenant. Then when this user tries to access your resource, Microsoft Entra ID applies the authentication strength Conditional Access policy and checks to see if you enabled MFA trust.
 
-- **If MFA trust is enabled**, Microsoft Entra ID checks the user's authentication session for a claim indicating that MFA has been fulfilled in the user's home tenant.
+- **If MFA trust is enabled**, Microsoft Entra ID checks the user's authentication session for a claim indicating that MFA was fulfilled in the user's home tenant.
 - **If MFA trust is disabled**, the resource tenant presents the user with a challenge to complete MFA in the resource tenant using an acceptable authentication method.
 
 The authentication methods that external users can use to satisfy MFA requirements are different depending on whether the user is completing MFA in their home tenant or the resource tenant. See the table in [Conditional Access authentication strength](https://aka.ms/b2b-auth-strengths).
@@ -42,7 +43,7 @@ The authentication methods that external users can use to satisfy MFA requiremen
 
 ## Choose an authentication strength
 
-Determine if one of the built-in authentication strengths will work for your scenario or if you'll need to create a custom authentication strength.
+Determine if one of the built-in authentication strengths works for your scenario or if you need to create a custom authentication strength.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Protection** > **Authentication methods** > **Authentication strengths**.

@@ -15,6 +15,8 @@ ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: thwimmer
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to myday so that I can streamline the user management process and ensure that users have the appropriate access to myday.
 ---
 
 # Tutorial: Configure myday for automatic user provisioning
@@ -35,7 +37,7 @@ This tutorial describes the steps you need to perform in both myday and Microsof
 The scenario outlined in this tutorial assumes that you already have the following prerequisites:
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md) 
-* A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (for example, Application Administrator, Cloud Application administrator, Application Owner, or Global Administrator). 
+* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications). 
 * A user account in myday with Admin permissions.
 
 ## Step 1: Plan your provisioning deployment
@@ -75,27 +77,27 @@ This section guides you through the steps to configure the Microsoft Entra provi
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications**
 
-	![Enterprise applications blade](common/enterprise-applications.png)
+	![Screenshot shows the Enterprise applications blade.](common/enterprise-applications.png)
 
 1. In the applications list, select **myday**.
 
-	![The myday link in the Applications list](common/all-applications.png)
+	![Screenshot shows the myday link in the Applications list.](common/all-applications.png)
 
 3. Select the **Provisioning** tab.
 
-	![Provisioning tab](common/provisioning.png)
+	![Screenshot shows the Provisioning tab.](common/provisioning.png)
 
 4. Set the **Provisioning Mode** to **Automatic**.
 
-	![Provisioning tab automatic](common/provisioning-automatic.png)
+	![Screenshot shows the Provisioning tab automatic.](common/provisioning-automatic.png)
 
 5. Under the **Admin Credentials** section, input the tenant URL value retrieved earlier in **Tenant URL**. Input the secret Token value retrieved earlier in **Secret Token**. Click **Test Connection** to ensure Microsoft Entra ID can connect to myday. If the connection fails, ensure your myday account has Admin permissions and try again.
 
-	![Tenant URL Token](common/provisioning-testconnection-tenanturltoken.png)
+	![Screenshot shows the Tenant URL Token.](common/provisioning-testconnection-tenanturltoken.png)
 
 6. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
 
-	![Notification Email](common/provisioning-notification-email.png)
+	![Screenshot shows the Notification Email.](common/provisioning-notification-email.png)
 
 7. Select **Save**.
 
@@ -147,15 +149,15 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 13. To enable the Microsoft Entra provisioning service for myday, change the **Provisioning Status** to **On** in the **Settings** section.
 
-	![Provisioning Status Toggled On](common/provisioning-toggle-on.png)
+	![Screenshot shows the Provisioning Status Toggled On.](common/provisioning-toggle-on.png)
 
 14. Define the users and/or groups that you would like to provision to myday by choosing the desired values in **Scope** in the **Settings** section.
 
-	![Provisioning Scope](common/provisioning-scope.png)
+	![Screenshot shows the Provisioning Scope.](common/provisioning-scope.png)
 
 15. When you're ready to provision, click **Save**.
 
-	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
+	![Screenshot shows saving Provisioning Configuration.](common/provisioning-configuration-save.png)
 
 This operation starts the initial synchronization cycle of all users and groups defined in **Scope** in the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. 
 

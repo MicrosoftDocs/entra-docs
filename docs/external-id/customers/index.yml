@@ -1,26 +1,26 @@
 ### YamlMime:Landing
 
-title: Microsoft Entra ID for customers documentation
-summary: Microsoft Entra ID for customers is a customer identity access management (CIAM) solution that lets you create secure, customized sign-in experiences for your customer-facing apps and services.
+title: Microsoft Entra External ID in external tenants documentation
+summary: Microsoft Entra External ID is a customer identity access management (CIAM) solution that lets you create secure, customized sign-in experiences for your external-facing apps and services.
 
 metadata: 
-   title: Microsoft Entra ID for customers documentation
-   description: Microsoft Entra ID for customers is a customer identity access management (CIAM) solution that lets you create secure, customized sign-in experiences for your customer-facing apps and services.
+   title: Microsoft Entra External ID in external tenants documentation
+   description: Microsoft Entra External ID is a customer identity access management (CIAM) solution that lets you create secure, customized sign-in experiences for your external-facing apps and services.
    ms.service: entra-external-id
    ms.subservice: customers
     
    ms.topic: landing-page
-   ms.date: 07/31/2023
+   ms.date: 04/29/2024
    author: csmulligan
    ms.author: cmulligan
    manager: celested
 
 landingContent:
-  - title: About Microsoft Entra ID for customers
+  - title: About Microsoft Entra External ID in external tenants
     linkLists:
       - linkListType: overview
         links:
-          - text: About Microsoft Entra ID for customers
+          - text: About Microsoft Entra External ID
             url: overview-customers-ciam.md 
           - text: Frequently asked questions
             url: faq-customers.md 
@@ -28,7 +28,7 @@ landingContent:
         links:
           - text: Planning for customer identity and access management
             url: concept-planning-your-solution.md 
-          - text: Feature support in customer tenants
+          - text: Feature support in external tenants
             url: concept-supported-features-customers.md 
           - text: Security and governance
             url: concept-security-customers.md
@@ -38,10 +38,12 @@ landingContent:
         links:
           - text: Sign-in methods
             url: concept-authentication-methods-customers.md
+          - text: Sign-in with native authentication
+            url: concept-native-authentication.md
       - linkListType: how-to-guide
         links:
-          - text: Create a customer tenant
-            url: how-to-create-customer-tenant-portal.md 
+          - text: Create an external tenant
+            url: how-to-create-external-tenant-portal.md 
           - text: Register your app
             url: how-to-register-ciam-app.md 
           - text: Add a sign-up and sign-in flow

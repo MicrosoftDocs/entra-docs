@@ -2,17 +2,15 @@
 title: What is device identity in Microsoft Entra ID?
 description: Device identities and their use cases
 
-
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: overview
-ms.date: 01/24/2023
+ms.date: 02/26/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: sandeo, jogro, jploegert
-
 ---
 # What is a device identity?
 
@@ -39,7 +37,7 @@ The modern device scenario focuses on two of these methods:
    - Windows 11 and Windows 10 devices owned by your organization
    - [Windows Server 2019 and newer servers in your organization running as VMs in Azure](howto-vm-sign-in-azure-ad-windows.md)
 
-[Microsoft Entra hybrid join](concept-hybrid-join.md) is seen as an interim step on the road to Microsoft Entra join. Microsoft Entra hybrid join provides organizations support for downlevel Windows versions back to Windows 7 and Server 2008. All three scenarios can coexist in a single organization.
+[Microsoft Entra hybrid join](concept-hybrid-join.md) is seen as an interim step on the road to Microsoft Entra join. All three scenarios can coexist in a single organization.
 
 ## Resource access
 
@@ -51,10 +49,7 @@ Devices that are Microsoft Entra joined benefit from [SSO to your organization's
 
 Getting devices in to Microsoft Entra ID can be done in a self-service manner or a controlled process managed by administrators.
 
-## Next steps
+## Related content
 
-- Learn more about [Microsoft Entra registered devices](concept-device-registration.md)
-- Learn more about [Microsoft Entra joined devices](concept-directory-join.md)
-- Learn more about [Microsoft Entra hybrid joined devices](concept-hybrid-join.md)
 - To get an overview of how to manage device identities, see [Managing device identities](manage-device-identities.md).
 - To learn more about device-based Conditional Access, see [Configure Microsoft Entra device-based Conditional Access policies](~/identity/conditional-access/concept-conditional-access-grant.md).

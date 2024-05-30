@@ -6,10 +6,10 @@ manager: CelesteDG
 ms.author: ryanwi
 ms.custom: template-concept
 ms.date: 01/06/2023
-ms.reviewer: john.garland, maggie.marxen, ian.bennett
+ms.reviewer:
 ms.service: identity-platform
 
-ms.topic: conceptual
+ms.topic: concept-article
 #Customer intent: As a developer, I want to learn about custom RBAC and why I need to use it in my application.
 ---
 

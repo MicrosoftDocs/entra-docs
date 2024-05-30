@@ -16,7 +16,7 @@ ms.author: billmath
 ---
 # User Privacy and Microsoft Entra seamless single sign-on
 
-[!INCLUDE [Privacy](~/../azure-docs-pr/includes/gdpr-intro-sentence.md)]
+[!INCLUDE [Privacy](~/includes/azure-docs-pr/gdpr-intro-sentence.md)]
 
 ## Overview
 

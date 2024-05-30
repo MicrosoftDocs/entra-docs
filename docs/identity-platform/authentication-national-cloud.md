@@ -9,7 +9,7 @@ ms.date: 12/11/2023
 ms.reviewer: negoe
 ms.service: identity-platform
 
-ms.topic: conceptual
+ms.topic: concept-article
 #Customer intent: As a developer building an application for a specific national cloud instance, I want to understand the separate environments and endpoints for each national cloud, so that I can register my application correctly and make requests to the appropriate region-specific base URLs.
 ---
 
@@ -23,7 +23,7 @@ Including the global Azure cloud, Microsoft Entra ID is deployed in the followin
 - Microsoft Azure operated by 21Vianet
 - Azure Germany ([Closed on October 29, 2021](https://www.microsoft.com/cloud-platform/germany-cloud-regions)). Learn more about [Azure Germany migration](#azure-germany-microsoft-cloud-deutschland).
 
-The individual national clouds and the global Azure cloud are cloud _instances_. Each cloud instance is separate from the others and has its own environment and _endpoints_. Cloud-specific endpoints include OAuth 2.0 access token and OpenID Connect ID token request endpoints, and URLs for app management and deployment.
+The individual national clouds and the global Azure cloud are cloud *instances*. Each cloud instance is separate from the others and has its own environment and *endpoints*. Cloud-specific endpoints include OAuth 2.0 access token and OpenID Connect ID token request endpoints, and URLs for app management and deployment.
 
 As you develop your apps, use the endpoints for the cloud instance where you'll deploy the application.
 
@@ -31,9 +31,8 @@ As you develop your apps, use the endpoints for the cloud instance where you'll 
 
 There's a separate Azure portal for each one of the national clouds. To integrate applications with the Microsoft identity platform in a national cloud, you're required to register your application separately in each Azure portal that's specific to the environment.
 
-> [!IMPORTANT]
-> Users with a Microsoft Entra ID guest account can’t access Cost management + Billing features to manage EA enrollments.
-
+> [!NOTE]
+> Users with a Microsoft Entra guest account from another national cloud can’t access Cost management + Billing features to manage EA enrollments.
 The following table lists the base URLs for the Microsoft Entra endpoints used to register an application for each national cloud.
 
 | National cloud                          | Azure portal endpoint      |

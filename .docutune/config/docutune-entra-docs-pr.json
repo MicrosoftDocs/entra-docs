@@ -7,7 +7,26 @@
     }
   ],
   "MetadataDelimiter": "\"",
-  "Exclude": [
+  "Exclude": [],
+  "RemoveTermSets": [
+    "*au-administrative-unit*",
+    "*guest-user*",
+    "*microsoft-brands-microsoft*",
+    "*right-click*",
+    "*and-then-click*",
+    "*had-had*",
+    "*single-backtick*",
+    "*incorrect-backtick-spacing*",
+    "*-caution-*",
+    "*cloudsimple*",
+    "*-crm-*",
+    "*-crud-*",
+    "*-mdm-*",
+    "*-mvc-*",
+    "*-mvp-*",
+    "*september-october-november*",
+    "product-azure-app-service",
+    "invalid-product-microsoft-visual-studio-vs"
   ],
   "PreloadTOCFiles": [
   ],

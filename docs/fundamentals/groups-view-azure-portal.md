@@ -5,28 +5,29 @@ author: barclayn
 manager: amycolannino
 ms.service: entra
 ms.subservice: fundamentals
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: quickstart
-ms.date: 11/29/2023
+ms.date: 03/23/2024
 ms.author: barclayn
 ms.reviewer: krbain
 ---
+
 # Quickstart: Create a group with members and view all groups and members
 
-You can view your organization's existing groups and group members using the Microsoft Entra Admin Center. Groups are used to manage users that all need the same access and permissions for potentially restricted apps and services.
+In this quickstart, you'll set up a new group and assign members to the group. Then you'll view your organization's group and assigned members. Throughout this guide, you'll create a user and group that you can use in other quickstarts and tutorials.
 
-In this quickstart, you’ll set up a new group and assign members to the group. Then you'll view your organization's group and assigned members. Throughout this guide, you'll create a user and group that you can use in other quickstarts and tutorials.
-
-If you don’t have an Azure subscription, create a [free account](https://azure.microsoft.com/free/) before you begin. 
+You can view your organization's existing groups and group members using the Microsoft Entra admin center. Groups are used to manage users that all need the same access and permissions for potentially restricted apps and services.
 
 ## Prerequisites
 
-Before you begin, you’ll need to:
+Before you begin, you'll need to:
 
+- Have an Azure subscription. If you don't have one, create a [free account](https://azure.microsoft.com/free/).
 - Create a Microsoft Entra tenant. For more information, see [Access the portal and create a new tenant](./create-new-tenant.md).
 
-## Create a new group 
+## Create a new group
 
-Create a new group, named _MDM policy - West_. For more information about creating a group, see [How to create a basic group and add members](./how-to-manage-groups.md).
+Create a new group, named *MDM policy - West*. For more information about creating a group, see [How to create a basic group and add members](./how-to-manage-groups.yml).
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
@@ -37,8 +38,8 @@ Create a new group, named _MDM policy - West_. For more information about creati
 
 1. Select **New group**.
 1. Complete the options in the **Group** page:
-   - **Group name**: Type *MDM policy - West*
-   - **Membership type**: Select *Assigned*.
+   - **Group name:** Type *MDM policy - West*
+   - **Membership type:** Select *Assigned*.
 
    :::image type="content" source="media/groups-view-azure-portal/new-group-page.png" alt-text="Screenshot of the New group page.":::
 
@@ -46,23 +47,23 @@ Create a new group, named _MDM policy - West_. For more information about creati
 
 ## Create a new user
 
-A user must exist before being added as a group member, so you'll need to create a new user. For this quickstart, we've added a user named _Alain Charon_. Check the "Custom domain names" tab first to get the verified domain name in which to create users. For more information about creating a user, see [How to add or delete users](./add-users.md).
+A user must exist before being added as a group member, so you'll need to create a new user. For this quickstart, we've added a user named *Alain Charon*. Check the "Custom domain names" tab first to get the verified domain name in which to create users. For more information about creating a user, see [How to add or delete users](./add-users.md).
 
 1. Browse to **Identity** > **Users** > **All users**.
-1. Select  **New user** > **Create new user**.
+1. Select **New user** > **Create new user**.
 
    :::image type="content" source="media/groups-view-azure-portal/create-new-user-menu.png" alt-text="Screenshot of the New user page.":::
 
 1. Complete the **User** page:
 
    - **User principal name:** Type *alain\@contoso.com*.
-   - **Display name:** Type _Alain Charon_.
+   - **Display name:** Type *Alain Charon*.
 
 1. Copy the auto-generated password provided in the **Password** box and select **Create**.
 
 ## Add a group member
 
-Now that you have a group and a user, you can add _Alain Charon_ as a member to the _MDM policy - West_ group. For more information about adding group members, see the [Manage groups](how-to-manage-groups.md) article.
+Now that you have a group and a user, you can add *Alain Charon* as a member to the *MDM policy - West* group. For more information about adding group members, see the [Manage groups](how-to-manage-groups.yml) article.
 
 1. Browse to **Identity** > **Groups** > **All groups**.
 1. Select the **MDM policy - West** group created earlier.
@@ -85,9 +86,9 @@ You can see all the groups for your organization in the **Groups - All groups** 
 Search the **All groups** page to find the **MDM policy – West** group.
 
 1. Browse to **Identity** > **Groups** > **All groups**.
-1. From the **All groups** page, type _MDM_ into the **Search** box.
+1. From the **All groups** page, type *MDM* into the **Search** box.
 
-    The search results appear under the **Search** box, including the _MDM policy - West_ group.
+    The search results appear under the **Search** box, including the *MDM policy - West* group.
 
    :::image type="content" source="media/groups-view-azure-portal/groups-search-group-name.png" alt-text="Screenshot of the 'Groups' search page showing matching search results.":::
 
@@ -98,9 +99,9 @@ Search the **All groups** page to find the **MDM policy – West** group.
 
 ## View group members
 
-Now that you’ve found the group, you can view all the assigned members.
+Now that you've found the group, you can view all the assigned members.
 
-Select **Members** from the **Manage** area, and then review the complete list of member names assigned to that specific group, including _Alain Charon_.
+Select **Members** from the **Manage** area, and then review the complete list of member names assigned to that specific group, including *Alain Charon*.
 
 :::image type="content" source="media/groups-view-azure-portal/groups-all-members.png" alt-text="Screenshot of the list of members assigned to the MDM policy – West group.":::
 
@@ -122,7 +123,7 @@ The group you just created is used in other articles in this documentation. If y
 
    > [!IMPORTANT]
    > This doesn't delete the user Alain Charon, just his membership in the deleted group.
-   > 
+   >
    > To delete your test user: Browse to **Identity** > **Users** > **All users** select your test user and choose **Delete**.
 
 ## Next steps
@@ -130,4 +131,4 @@ The group you just created is used in other articles in this documentation. If y
 Advance to the next article to learn how to associate a subscription to your directory.
 
 > [!div class="nextstepaction"]
-> [Associate an Azure subscription](./how-subscriptions-associated-directory.md)
+> [Associate an Azure subscription](./how-subscriptions-associated-directory.yml)

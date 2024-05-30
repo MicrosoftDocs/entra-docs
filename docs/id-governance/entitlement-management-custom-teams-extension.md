@@ -29,19 +29,18 @@ In this tutorial, you learn how to:
 ## Prerequisites
 
 - A Microsoft Entra user account with an active Azure subscription. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- One of the following roles: Global Administrator, Cloud Application Administrator, Application Administrator, or owner of the service principal.
+- At least one of the following roles: Cloud Application Administrator, Application Administrator, or owner of the service principal.
 
 
 ## Create a Logic App and custom extension in a catalog
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
-
-Prerequisite roles: Global administrator, Identity Governance administrator, or Catalog owner and Resource Group Owner.
+[!INCLUDE [portal updates](../includes/portal-update.md)]
 
 To create a Logic App and custom extension in a catalog, you'd follow these steps:
 
-1. Navigate To Microsoft Entra admin center [Identity Governance - Microsoft Entra admin center](https://entra.microsoft.com/#view/Microsoft_AAD_ERM/DashboardBlade/~/elmEntitlement)
-
+1. Navigate To Microsoft Entra admin center [Identity Governance - Microsoft Entra admin center](https://entra.microsoft.com/#view/Microsoft_AAD_ERM/DashboardBlade/~/elmEntitlement) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
+    > [!TIP]
+    > Other least privilege roles that can complete this task include the Catalog owner and the Resource group owner.
 1. In the left menu, select **Catalogs**. 
 
 1. Select the catalog for which you want to add a custom extension and then in the left menu, select **Custom Extensions**.
@@ -92,12 +91,11 @@ This custom extension to the linked Logic App now appears in your Custom Extensi
 
 ## Add Custom Extension to a policy in an existing Access Package
 
-After setting up custom extensibility in the catalog, administrators can create an access package with a policy to trigger the custom extension when the request has been approved. This enables them to define specific access requirements, and tailor the access review process to meet their organization's needs.   
+After setting up custom extensibility in the catalog, administrators can create an access package with a policy to trigger the custom extension when the request has been approved. This enables them to define specific access requirements, and tailor the access review process to meet their organization's needs.
 
-**Prerequisite roles**: Global administrator, Identity Governance administrator, Catalog owner, or Access package manager 
-
-1. In the Identity Governance portal, select **Access packages**. 
-
+1. In the Identity Governance portal as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator), select **Access packages**. 
+    > [!TIP]
+    > Other least privilege roles that can complete this task include the Catalog owner and the Access package manager.
 1. Select the access package you want to add a custom extension (Logic App) to from the list of already created access packages.
 
 1. Select **Edit** and under **Properties** change the catalog to one previously used in the section: [Create a Logic App and custom extension in a catalog](entitlement-management-custom-teams-extension.md#create-a-logic-app-and-custom-extension-in-a-catalog) then select **Save**.

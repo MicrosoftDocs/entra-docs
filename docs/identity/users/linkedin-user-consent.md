@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
-ms.date: 11/21/2023
+ms.date: 04/30/2024
 ms.author: barclayn
 ms.reviewer: beengen
 ms.custom: it-pro
@@ -19,7 +19,7 @@ You can enable users in your organization in Microsoft Entra ID, part of Microso
 
 To see LinkedIn information in Microsoft apps and services, users must consent to connect their own Microsoft and LinkedIn accounts. Users are prompted to connect their accounts the first time they click to see someone's LinkedIn information on a profile card in Outlook, OneDrive or SharePoint Online. LinkedIn account connections are not fully enabled for your users until they consent to the experience and to connect their accounts.
 
-[!INCLUDE [active-directory-gdpr-note](~/../azure-docs-pr/includes/gdpr-hybrid-note.md)]
+[!INCLUDE [active-directory-gdpr-note](~/includes/azure-docs-pr/gdpr-hybrid-note.md)]
 
 ## Benefits of sharing LinkedIn information
 
@@ -40,7 +40,7 @@ You must announce Linkedin Integration to your users providing them all the info
 
 ## User consent for data access in Microsoft and LinkedIn
 
-Data that is accessed from LinkedIn is not stored permanently in Microsoft services. Data that is accessed from Microsoft is not stored permanently with LinkedIn, except for Contacts. Microsoft Contacts are stored on LinkedIn until users remove them, as described in [deleting imported contacts from LinkedIn](https://www.linkedin.com/help/linkedin/answer/43377).
+Data that is accessed from LinkedIn is not stored permanently in Microsoft services. Data that is accessed from Microsoft is not stored permanently with LinkedIn.
 
 When users connect their accounts, information and insights from LinkedIn are available in some Microsoft apps, like the profile card. Users can also expect their networking experience on LinkedIn to be improved and enriched with information from Microsoft.
 When users in your organization connect their LinkedIn and Microsoft work or school accounts, they have two options:
@@ -71,9 +71,7 @@ When you connect your Microsoft and LinkedIn accounts, you allow Microsoft to pr
 * Subscriptions data - includes subscriptions provided by your organization to Microsoft apps and services, such as Microsoft 365.
 * Contacts data - includes contact lists in Outlook, Skype, and other Microsoft account services, including the contact information for people you frequently communicate or collaborate with. Contacts will be periodically imported, stored, and used by LinkedIn, for example to suggest connections, help organize contacts, and show updates about contacts.
 
-Data that is accessed from Microsoft is not stored permanently with LinkedIn, except for Contacts. Microsoft Contacts are stored on LinkedIn until users remove them. Learn more about [deleting imported contacts from LinkedIn](https://www.linkedin.com/help/linkedin/answer/43377).
-
-For more information on LinkedIn’s use of personal data, see the [LinkedIn Privacy Policy](https://www.linkedin.com/legal/privacy-policy). For LinkedIn services, data transfer, and storage, data can flow from the European Union to the United States and back, and your privacy is protected as described in [European Union data transfers](https://www.linkedin.com/help/linkedin/answer/62533).
+Data that is accessed from Microsoft is not stored permanently with LinkedIn. For more information on LinkedIn’s use of personal data, see the [LinkedIn Privacy Policy](https://www.linkedin.com/legal/privacy-policy). For LinkedIn services, data transfer, and storage, data can flow from the European Union to the United States and back, and your privacy is protected as described in [European Union data transfers](https://www.linkedin.com/help/linkedin/answer/62533).
 
 ## Next steps
 

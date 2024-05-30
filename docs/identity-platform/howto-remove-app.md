@@ -6,7 +6,7 @@ manager: CelesteDG
 ms.author: cwerner
 ms.custom: 
 ms.date: 06/21/2023
-ms.reviewer: aragra, lenalepa, sureshja
+ms.reviewer: sureshja
 ms.service: identity-platform
 
 ms.topic: how-to
@@ -46,7 +46,7 @@ Applications that you or your organization have registered are represented by bo
 
 If you're viewing **App registrations** in the context of a tenant, a subset of the applications that appear under the **All apps** tab are from another tenant and were registered into your tenant during the consent process. More specifically, they're represented by only a service principal object in your tenant, with no corresponding application object. For more information on the differences between application and service principal objects, see [Application and service principal objects in Microsoft Entra ID](./app-objects-and-service-principals.md).
 
-In order to remove an application’s access to your directory (after having granted consent), the company administrator must remove its service principal. The administrator must have Global Administrator access. To learn how to delete a service principal, see [Delete an enterprise application](~/identity/enterprise-apps/delete-application-portal.md).
+In order to remove an application’s access to your directory (after having granted consent), the company administrator must remove its service principal. The administrator must have at least the [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator) access. To learn how to delete a service principal, see [Delete an enterprise application](~/identity/enterprise-apps/delete-application-portal.md).
 
 ## Next steps
 

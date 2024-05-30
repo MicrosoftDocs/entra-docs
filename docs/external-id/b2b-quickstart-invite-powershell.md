@@ -15,6 +15,8 @@ ms.collection: M365-identity-device-management
 
 # Quickstart: Add a guest user with PowerShell
 
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
+
 There are many ways you can invite external partners to your apps and services with Microsoft Entra B2B collaboration. In the previous quickstart, you saw how to add guest users directly in the Microsoft Entra admin center. You can also use PowerShell to add guest users, either one at a time or in bulk. In this quickstart, you’ll use the New-MgInvitation command to add one guest user to your Microsoft Entra tenant.
 
 If you don’t have an Azure subscription, create a [free account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) before you begin.
@@ -24,7 +26,7 @@ If you don’t have an Azure subscription, create a [free account](https://azure
 
 To complete the scenario in this quickstart, you need:
 
-- A role that allows you to create users in your tenant directory, such as at least a [Guest Inviter role](~/identity/role-based-access-control/permissions-reference.md#guest-inviter) or a [User administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
+- A role that allows you to create users in your tenant directory, such as at least a [Guest Inviter role](~/identity/role-based-access-control/permissions-reference.md#guest-inviter) or a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 - Install the [Microsoft Graph Identity Sign-ins module](/powershell/module/microsoft.graph.identity.signins/?viewFallbackFrom=graph-powershell-beta&preserve-view=true&view=graph-powershell-1.0) (Microsoft.Graph.Identity.SignIns) and the [Microsoft Graph Users module](/powershell/module/microsoft.graph.users/?viewFallbackFrom=graph-powershell-beta&preserve-view=true&view=graph-powershell-1.0) (Microsoft.Graph.Users). You can use the `#Requires` statement to prevent running a script unless the required PowerShell modules are met.
 
 ```powershell
@@ -78,7 +80,7 @@ Remove-MgUser -UserId 'john_contoso.com#EXT#@fabrikam.onmicrosoft.com'
 ``` 
 or 
 ```powershell 
-Remove-MgUser -UserId '3f80a75e-750b-49aa-a6b0-d9bf6df7b4c6'
+Remove-MgUser -UserId '00aa00aa-bb11-cc22-dd33-44ee44ee44ee'
 ```
 
 

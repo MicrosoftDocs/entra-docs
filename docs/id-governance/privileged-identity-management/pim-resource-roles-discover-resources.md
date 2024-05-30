@@ -6,8 +6,8 @@ author: barclayn
 manager: amycolannino
 ms.service: entra-id-governance
 ms.topic: how-to
+ms.date: 01/22/2024
 ms.subservice: privileged-identity-management
-ms.date: 09/13/2023
 ms.author: barclayn
 ms.reviewer: shaunliu
 
@@ -21,6 +21,9 @@ You can use Privileged Identity Management (PIM) in Microsoft Entra ID, to impro
 - Management group and subscription owners who are trying to secure production resources
 
 When you first set up Privileged Identity Management for Azure resources, you need to discover and select the resources you want to protect with Privileged Identity Management. When you discover resources through Privileged Identity Management, PIM creates the PIM service principal (MS-PIM) assigned as User Access Administrator on the resource. There's no limit to the number of resources that you can manage with Privileged Identity Management. However, we recommend starting with your most critical production resources.
+
+>[!NOTE]
+>PIM can now automatically manage Azure resources in a tenant with no onboarding required. The updated user experience uses the latest PIM ARM API, allowing for improved performance and granularity in choosing the correct scope you want to manage. 
 
 ## Required permissions
 
@@ -36,15 +39,15 @@ You can view and manage the management groups or subscriptions to which you have
 
     If this is your first time using Privileged Identity Management for Azure resources, you'll see a **Discover resources** page.
 
-    ![Discover resources pane with no resources listed for first time experience](./media/pim-resource-roles-discover-resources/discover-resources-first-run.png)
+    :::image type="content" source="./media/pim-resource-roles-discover-resources/discover-resources-first-run.png" alt-text="Screenshot of the Discover resources pane with no resources listed for first time experience.":::
 
     If another administrator in your organization is already managing Azure resources in Privileged Identity Management, you'll see a list of the resources that are currently being managed.
 
-    ![Discover resources pane listing resources that are currently being managed](./media/pim-resource-roles-discover-resources/discover-resources.png)
+    :::image type="content" source="./media/pim-resource-roles-discover-resources/discover-resources.png" alt-text="Screenshot of the Discover resources pane listing resources that are currently being managed.":::
 
 1. Select **Discover resources** to launch the discovery experience.
 
-    ![Discovery pane lists resources that can be managed, such as subscriptions and management groups](./media/pim-resource-roles-discover-resources/discovery-pane.png)
+    :::image type="content" source="./media/pim-resource-roles-discover-resources/discovery-pane.png" alt-text="Screenshot showing the discovery pane lists resources that can be managed, such as subscriptions and management groups":::
 
 1. On the **Discovery** page, use **Resource state filter** and **Select resource type** to filter the management groups or subscriptions you have write permission to. It's probably easiest to start with **All** initially.
 
@@ -55,17 +58,16 @@ You can view and manage the management groups or subscriptions to which you have
 
 1. Select any unmanaged resources that you want to manage.
 
-1. Select **Manage resource** to start managing the selected resources. The PIM service principal (MS-PIM) is 
-assigned as User Access Administrator on the resource.
+1. Select **Manage resource** to start managing the selected resources. The PIM service principal (MS-PIM) is assigned as User Access Administrator on the resource.
 
     > [!NOTE]
     > Once a management group or subscription is managed, it can't be unmanaged. This prevents another resource administrator from removing Privileged Identity Management settings.
      
-    ![Discovery pane with a resource selected and the Manage resource option highlighted](./media/pim-resource-roles-discover-resources/discovery-manage-resource.png)
+    :::image type="content" source="./media/pim-resource-roles-discover-resources/discovery-manage-resource.png" alt-text="Discovery pane with a resource selected and the Manage resource option highlighted":::
 
 1. If you see a message to confirm the onboarding of the selected resource for management, select **Yes**. PIM will then be configured to manage all the new and existing child objects under the resource(s).
 
-    ![Message confirming to onboard the selected resources for management](./media/pim-resource-roles-discover-resources/discovery-manage-resource-message.png)
+    :::image type="content" source="./media/pim-resource-roles-discover-resources/discovery-manage-resource-message.png" alt-text="Screenshot showing a Message confirming to onboard the selected resources for management.":::
 
 ## Next steps
 

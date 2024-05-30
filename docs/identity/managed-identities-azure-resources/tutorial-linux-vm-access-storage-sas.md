@@ -48,7 +48,7 @@ If you don't already have one, you'll now create a storage account.  You can als
 5. Ensure the **Subscription** and **Resource Group** match the ones you specified when you created your VM in the previous step.
 6. Select **Create**.
 
-    ![Create new storage account](./media/msi-tutorial-linux-vm-access-storage/msi-storage-create.png)
+    :::image type="content" source="./media/msi-tutorial-linux-vm-access-storage/msi-storage-create.png" alt-text="Screenshot showing the new storage account creation screen.":::
 
 ## Create a blob container in the storage account
 
@@ -59,7 +59,7 @@ Later we'll upload and download a file to the new storage account. Because files
 3. Select **+ Container** on the top of the page, and a "New container" panel slides out.
 4. Give the container a name, select an access level, then select **OK**. The name you specified will be used later in the tutorial. 
 
-    ![Create storage container](./media/msi-tutorial-linux-vm-access-storage/create-blob-container.png)
+    :::image type="content" source="./media/msi-tutorial-linux-vm-access-storage/create-blob-container.png" alt-text="Screenshot showing storage container creation screen.":::
 
 ## Grant your VM's system-assigned managed identity access to use a storage SAS
 

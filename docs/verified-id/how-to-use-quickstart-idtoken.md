@@ -23,11 +23,11 @@ A [rules definition](rules-and-display-definitions-model.md#rulesmodel-type) tha
 
 In the Azure portal, when you select **Add credential**, you get the option to launch two quickstarts. Select **custom credential**, and then select **Next**. 
 
-![Screenshot of the "Issue credentials" quickstart for creating a custom credential.](media/how-to-use-quickstart/quickstart-startscreen.png)
+:::image type="content" source="media/how-to-use-quickstart/quickstart-startscreen.png" alt-text="Screenshot of the issue credentials quickstart for creating a custom credential.":::
 
 On the **Create a new credential** page, enter the JSON code for the display and the rules definitions. In the **Credential name** box, give the credential a type name. To create the credential, select **Create**.
 
-![Screenshot of the "Create a new credential" page, displaying JSON samples for the display and rules files.](media/how-to-use-quickstart/quickstart-create-new.png)
+:::image type="content" source="media/how-to-use-quickstart/quickstart-create-new.png" alt-text="Screenshot of the Create a new credential page, displaying JSON samples for the display and rules files.":::
 
 ## Sample JSON display definitions
 
@@ -88,7 +88,7 @@ The claims mapping in the following example requires that you configure the toke
   "attestations": {
     "idTokens": [
       {
-        "clientId": "8d5b446e-22b2-4e01-bb2e-9070f6b20c90",
+        "clientId": "00001111-aaaa-2222-bbbb-3333cccc4444",
         "configuration": "https://didplayground.b2clogin.com/didplayground.onmicrosoft.com/B2C_1_sisu/v2.0/.well-known/openid-configuration",
         "redirectUri": "vcclient://openid/",
         "scope": "openid profile email",
@@ -221,7 +221,7 @@ To configure your sample code to issue and verify your custom credentials, you n
 
 The easiest way to find this information for a custom credential is to go to your credential in the Azure portal. Select **Issue credential**. Then you have access to a text box with a JSON payload for the Request Service API. Replace the placeholder values with your environment's information. The issuer’s DID is the authority value.
 
-![Screenshot of the quickstart custom credential issue.](media/how-to-use-quickstart/quickstart-config-sample-2.png)
+:::image type="content" source="media/how-to-use-quickstart/quickstart-config-sample-2.png" alt-text="Screenshot of the quickstart custom credential issue.":::
 
 ## Next steps
 

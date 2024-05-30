@@ -12,6 +12,8 @@ ms.topic: tutorial
 ms.date: 01/19/2024
 ms.author: jeedes
 
+
+# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and AWS IAM Identity Center so that I can control who has access to AWS IAM Identity Center, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
 # Tutorial: Microsoft Entra SSO integration with AWS IAM Identity Center
@@ -214,15 +216,11 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
     > Make sure the username and email address entered in AWS IAM Identity Center  matches the user’s Microsoft Entra sign-in name. This will you help avoid any authentication problems.
 
 5. Choose **Add user**.
-6. Next, you will assign the user to your AWS account. To do so, in the left navigation pane of the
-AWS IAM Identity Center console, choose **AWS accounts**.
-7. On the AWS Accounts page, select the AWS organization tab, check the box next to the AWS
-account you want to assign to the user. Then choose **Assign users**.
+6. Next, you will assign the user to your AWS account. To do so, in the left navigation pane of the AWS IAM Identity Center console, choose **AWS accounts**.
+7. On the AWS Accounts page, select the AWS organization tab, check the box next to the AWS account you want to assign to the user. Then choose **Assign users**.
 8. On the Assign Users page, find and check the box next to the user B.Simon. Then choose **Next:
 Permission sets**.
-9. Under the select permission sets section, check the box next to the permission set you want to
-assign to the user B.Simon. If you don’t have an existing permission set, choose **Create new
-permission set**.
+9. Under the select permission sets section, check the box next to the permission set you want to assign to the user B.Simon. If you don’t have an existing permission set, choose **Create new permission set**.
 
     > [!NOTE]
     > Permission sets define the level of access that users and groups have to an AWS account. To learn more

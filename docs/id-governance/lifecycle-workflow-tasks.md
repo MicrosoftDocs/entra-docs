@@ -9,6 +9,7 @@ ms.subservice: lifecycle-workflows
 ms.topic: conceptual
 ms.date: 01/26/2023
 ---
+
 # Lifecycle Workflow built-in tasks
 
 Lifecycle Workflows come with many pre-configured tasks that are designed to automate common lifecycle management scenarios. These built-in tasks can be utilized to make customized workflows to suit your organization's needs. These tasks can be configured within seconds to create new workflows. These tasks also have categories based on the Joiner-Mover-Leaver model so that they can be easily placed into workflows based on need. In this article you get the complete list of tasks, information on common parameters each task has, and a list of unique parameters needed for each specific task.
@@ -19,7 +20,7 @@ Lifecycle Workflows come with many pre-configured tasks that are designed to aut
 Lifecycle Workflow's built-in tasks each include an identifier, known as **taskDefinitionID**, and can be used to create either new workflows from scratch, or inserted into workflow templates so that they fit the needs of your organization. For more information on templates available for use with Lifecycle Workflows, see: [Lifecycle Workflow Templates](lifecycle-workflow-templates.md).
 
 
-[!INCLUDE [Lifecylce Workflows tasks table](~/../azure-docs-pr/includes/lifecycle-workflows-tasks-table.md)]
+[!INCLUDE [Lifecylce Workflows tasks table](../includes/lifecycle-workflows-tasks-table.md)]
 
 ## Common task parameters
 
@@ -32,7 +33,7 @@ Common task parameters are the non-unique parameters contained in every task. Wh
 |isEnabled     | A boolean value that denotes whether the task is set to run or not. If set to “true" then the task runs. Defaults to true.       |
 |displayName     |  A unique string that identifies the task.       |
 |description     | A string that describes the purpose of the task for administrative use. (Optional)         |
-|executionSequence     | A read-only integer that states in what order the task runs in a workflow. For more information about executionSequence and workflow order, see: [Configure Scope](understanding-lifecycle-workflows.md#configure-scope).       |
+|executionSequence     | A read-only integer that states in what order the task runs in a workflow.      |
 |continueOnError     |  A boolean value that determines if the failure of this task stops the subsequent workflows from running.        |
 |arguments     |  Contains unique parameters relevant for the given task.       |
 
@@ -199,7 +200,7 @@ The Microsoft Entra prerequisites to run the **Generate Temporary Access Pass an
 
 - A populated manager attribute for the user.
 - A populated manager's mail attribute for the user.
-- The TAP tenant policy must be enabled and the selected values for activation duration and one time use must be within the allowed range of the policy. For more information, see [Enable the Temporary Access Pass policy](~/identity/authentication/howto-authentication-temporary-access-pass.md#enable-the-temporary-access-pass-policy)
+- The TAP tenant policy must be enabled and the selected values for activation duration and one time use must be within the allowed range of the policy. For more information, see [Enable the Temporary Access Pass policy](../identity/authentication/howto-authentication-temporary-access-pass.md#enable-the-temporary-access-pass-policy)
 
 > [!IMPORTANT]
 > A user having this task run for them in a workflow must also not have any other authentication methods, sign-ins, or Microsoft Entra role assignments for this task to work for them.
@@ -307,7 +308,7 @@ Example of usage within the workflow:
 
 ### Request user access package assignment
 
-Allows you to request an access package assignment for users. For more information on access packages, see [What are access packages and what resources can I manage with them?](entitlement-management-overview.md#what-are-access-packages-and-what-resources-can-i-manage-with-them).
+Allows you to request an access package assignment for users. If an approval process is configured for the access package and should take place, you must opt-into the `Enforce policy approval setting for admin direct assignments` Entitlement Management setting. For more information on access packages, see [What are access packages and what resources can I manage with them?](entitlement-management-overview.md#what-are-access-packages-and-what-resources-can-i-manage-with-them).
 
 You're able to customize the task name and task description for this task. You must also select the access package and policy that is being requested for the user.
 :::image type="content" source="media/lifecycle-workflow-task/request-user-access-package-assignment-task.png" alt-text="Screenshot of the request user access package assignment task.":::
@@ -316,7 +317,7 @@ For Microsoft Graph, the parameters for the **Request user access package assign
 
 |Parameter |Definition  |
 |---------|---------|
-|category    |  joiner      |
+|category    |  joiner, mover      |
 |displayName     |  Request user access package assignment (Customizable by user)        |
 |description     |  Request user assignment to selected access package (Customizable by user)       |
 |taskDefinitionId     |   c1ec1e76-f374-4375-aaa6-0bb6bd4c60be      |
@@ -345,10 +346,45 @@ Example of usage within the workflow:
 }
 ```
 
+### Assign licenses to user (Preview)
+
+Allows Licenses to be assigned to users. For a license to be assigned to the user, they must have a "*usageLocation*" attribute set.
+
+:::image type="content" source="media/lifecycle-workflow-task/assign-license-user-task.png" alt-text="Screenshot of the assign licenses to user task.":::
+
+
+|Parameter |Definition  |
+|---------|---------|
+|category    |  joiner, mover      |
+|displayName     |  Assign licenses to user (Customizable by user)        |
+|description     |  Assign selected licenses to the user (Customizable by user)       |
+|taskDefinitionId     |   683c87a4-2ad4-420b-97d4-220d90afcd24      |
+|arguments     |  Argument contains one parameter that has the name "*licenses*" that accepts a "*Sku id*" value. For a full list of these values, see: [Product names and service plan identifiers for licensing](../identity/users/licensing-service-plan-reference.md).  |
+
+Example of usage within the workflow:
+
+```Example for usage within the workflow
+{
+            "category": "joiner,mover",
+            "continueOnError": false,
+            "description": "Assign selected licenses to the user",
+            "displayName": "Assign licenses to user (Preview)",
+            "isEnabled": true,
+            "taskDefinitionId": "683c87a4-2ad4-420b-97d4-220d90afcd24",
+            "arguments": [
+                {
+                    "name": "licenses",
+                    "value": "a403ebcc-fae0-4ca2-8c8c-7a907fd6c235"
+                }
+            ]
+        }
+```
+
+
 ### Add user to groups
 
 
-Allows users to be added to Microsoft 365 and cloud-only security groups. Mail-enabled, distribution, dynamic and role-assignable groups aren't supported. To control access to on-premises AD group-based applications and resources, you need to enable group writeback. For more information, see [Microsoft Entra Cloud Sync group writeback](~/identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md) and [using group writeback with entitlement management](entitlement-management-group-writeback.md). 
+Allows users to be added to Microsoft 365 and cloud-only security groups. Mail-enabled, distribution, dynamic and role-assignable groups aren't supported. To control access to on-premises AD group-based applications and resources, you need to enable group writeback. For more information, see [Microsoft Entra Cloud Sync group writeback](../identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md) and [using group writeback with entitlement management](entitlement-management-group-writeback.md). 
 
 
 You're able to customize the task name and description for this task.
@@ -423,7 +459,7 @@ For Microsoft Graph, the parameters for the **Add user to teams** task are as fo
 
 ### Enable user account
 
-Allows cloud-only user accounts to be enabled. Users with Microsoft Entra role assignments aren't supported, nor are users with membership or ownership of role-assignable groups. You can utilize Microsoft Entra ID's HR driven provisioning to on-premises Active Directory to disable and enable synchronized accounts with an attribute mapping to `accountDisabled` based on data from your HR source. For more information, see: [Workday Configure attribute mappings](~/identity/saas-apps/workday-inbound-tutorial.md#part-4-configure-attribute-mappings) and [SuccessFactors Configure attribute mappings](~/identity/saas-apps/sap-successfactors-inbound-provisioning-tutorial.md#part-4-configure-attribute-mappings). You're able to customize the task name and description for this task in the Microsoft Entra admin center.
+Allows user accounts to be enabled. For prerequisites on running this task for synced on-premises users, see: [User account tasks (preview)](../id-governance/lifecycle-workflow-on-premises.md#user-account-tasks-preview). Users with Microsoft Entra role assignments aren't supported, nor are users with membership or ownership of role-assignable groups. You can also utilize Microsoft Entra ID's HR driven provisioning to on-premises Active Directory to disable and enable synchronized accounts with an attribute mapping to `accountDisabled` based on data from your HR source. For more information, see: [Workday Configure attribute mappings](../identity/saas-apps/workday-inbound-tutorial.md#part-4-configure-attribute-mappings) and [SuccessFactors Configure attribute mappings](../identity/saas-apps/sap-successfactors-inbound-provisioning-tutorial.md#part-4-configure-attribute-mappings). You're able to customize the task name and description for this task in the Microsoft Entra admin center.
 
 :::image type="content" source="media/lifecycle-workflow-task/enable-task.png" alt-text="Screenshot of Workflows task: enable user account.":::
 
@@ -436,6 +472,7 @@ For Microsoft Graph, the parameters for the **Enable user account** task are as 
 |displayName     |  EnableUserAccount (Customizable by user)       |
 |description     |  Enable user account (Customizable by user)        |
 |taskDefinitionId     |   6fc52c9d-398b-4305-9763-15f42c1676fc      |
+|arguments     |  Can contain the optional *enableOnPremisesAccount* argument. The value is a boolean value of either *true*, if you want the task to run for synced on-premises users, or *false*, if you don't want it to run for synced on-premises users.   |
 
 
 
@@ -447,7 +484,12 @@ For Microsoft Graph, the parameters for the **Enable user account** task are as 
             "isEnabled": true,
             "continueOnError": true,
             "taskDefinitionId": "6fc52c9d-398b-4305-9763-15f42c1676fc",
-            "arguments": []
+           "arguments": [
+                {
+                    "name": "enableOnPremisesAccount",
+                    "value": "true"
+                }
+            ]
 }
 
 ```
@@ -497,7 +539,7 @@ For more information on setting up a Logic app to run with Lifecycle Workflows, 
 
 ### Disable user account
 
-Allows cloud-only user accounts to be disabled. Users with Microsoft Entra role assignments aren't supported, nor are users with membership or ownership of role-assignable groups. You can utilize Microsoft Entra ID's HR driven provisioning to on-premises Active Directory to disable and enable synchronized accounts with an attribute mapping to `accountDisabled` based on data from your HR source. For more information, see: [Workday Configure attribute mappings](~/identity/saas-apps/workday-inbound-tutorial.md#part-4-configure-attribute-mappings) and [SuccessFactors Configure attribute mappings](~/identity/saas-apps/sap-successfactors-inbound-provisioning-tutorial.md#part-4-configure-attribute-mappings). You're able to customize the task name and description for this task in the Microsoft Entra admin center.
+Allows user accounts to be disabled. For prerequisites on running this task for synced on-premises users, see: [User account tasks (preview)](../id-governance/lifecycle-workflow-on-premises.md#user-account-tasks-preview). Users with Microsoft Entra role assignments aren't supported, nor are users with membership or ownership of role-assignable groups. You can utilize Microsoft Entra ID's HR driven provisioning to on-premises Active Directory to disable and enable synchronized accounts with an attribute mapping to `accountDisabled` based on data from your HR source. For more information, see: [Workday Configure attribute mappings](../identity/saas-apps/workday-inbound-tutorial.md#part-4-configure-attribute-mappings) and [SuccessFactors Configure attribute mappings](../identity/saas-apps/sap-successfactors-inbound-provisioning-tutorial.md#part-4-configure-attribute-mappings). You're able to customize the task name and description for this task in the Microsoft Entra admin center.
 
 :::image type="content" source="media/lifecycle-workflow-task/disable-task.png" alt-text="Screenshot of Workflows task: disable user account.":::
 
@@ -510,6 +552,7 @@ For Microsoft Graph, the parameters for the **Disable user account** task are as
 |displayName     |  DisableUserAccount (Customizable by user)       |
 |description     |  Disable user account (Customizable by user)       |
 |taskDefinitionId     |   1dfdfcc7-52fa-4c2e-bf3a-e3919cc12950      |
+|arguments     |  Can contain the optional *disableOnPremisesAccount* argument. The value is a boolean value of either *true*, if you want the task to run for synced on-premises users, or *false*, if you don't want it to run for synced on-premises users.   |
 
 
 ```Example for usage within the workflow
@@ -520,14 +563,19 @@ For Microsoft Graph, the parameters for the **Disable user account** task are as
             "isEnabled": true,
             "continueOnError": true,
             "taskDefinitionId": "1dfdfcc7-52fa-4c2e-bf3a-e3919cc12950",
-            "arguments": []
+            "arguments": [
+                {
+                    "name": "disableOnPremisesAccount",
+                    "value": "true"
+                }
+            ]
 }
 
 ```
 
 ### Remove user from selected groups
 
-Allows users to be removed from Microsoft 365 and cloud-only security groups. Mail-enabled, distribution, dynamic and role-assignable groups aren't supported. To control access to on-premises AD group-based applications and resources, you need to enable group writeback. For more information, see [Microsoft Entra Cloud Sync group writeback](~/identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md) and [using group writeback with entitlement management](entitlement-management-group-writeback.md). 
+Allows users to be removed from Microsoft 365 and cloud-only security groups. Mail-enabled, distribution, dynamic and role-assignable groups aren't supported. To control access to on-premises AD group-based applications and resources, you need to enable group writeback. For more information, see [Microsoft Entra Cloud Sync group writeback](../identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md) and [using group writeback with entitlement management](entitlement-management-group-writeback.md). 
 
 
 You're able to customize the task name and description for this task in the Microsoft Entra admin center.
@@ -567,7 +615,7 @@ For Microsoft Graph, the parameters for the **Remove user from selected groups**
 
 ### Remove users from all groups
 
-Allows users to be removed from every Microsoft 365 and cloud-only security group they're a member of. Mail-enabled, distribution, dynamic and role-assignable groups aren't supported. To control access to on-premises AD-group-based applications and resources, you need to enable group writeback. For more information, see [Microsoft Entra Cloud Sync group writeback](~/identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md).
+Allows users to be removed from every Microsoft 365 and cloud-only security group they're a member of. Mail-enabled, distribution, dynamic and role-assignable groups aren't supported. To control access to on-premises AD-group-based applications and resources, you need to enable group writeback. For more information, see [Microsoft Entra Cloud Sync group writeback](../identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md).
 
 
 
@@ -674,7 +722,7 @@ For Microsoft Graph, the parameters for the **Remove access package assignment f
 
 |Parameter |Definition  |
 |---------|---------|
-|category    |  leaver      |
+|category    |  leaver, mover      |
 |displayName     |  Remove access package assignment for user (Customizable by user)        |
 |description     |  Remove user assignment of selected access package (Customizable by user)        |
 |taskDefinitionId     |   4a0b64f2-c7ec-46ba-b117-18f262946c50      |
@@ -760,6 +808,41 @@ Example of usage within the workflow:
 }
 ```
 
+### Remove selected license assignments from user (Preview)
+
+Remove selected license assignments from a user.
+
+You're able to customize the task name and description for this task in the Microsoft Entra admin center.
+:::image type="content" source="media/lifecycle-workflow-task/remove-select-license-assignments-user-task.png" alt-text="Screenshot of the Remove selected license assignment from user task.":::
+
+For Microsoft Graph, the parameters for the **Remove selected license assignments from user** task are as follows:
+
+|Parameter |Definition  |
+|---------|---------|
+|category    |  leaver, mover      |
+|displayName     |  Remove licenses from user (Customizable by user)        |
+|description     |  Remove selected licenses assigned to the user (Customizable by user)        |
+|taskDefinitionId     |   5fc402a8-daaf-4b7b-9203-da868b05fc5f      |
+|arguments     |  Argument contains one parameter that has the name "*licenses*" that accepts a "Sku id" value. For a full list of these values, see: [Product names and service plan identifiers for licensing](../identity/users/licensing-service-plan-reference.md).  |
+
+Example of usage within the workflow:
+
+```Example for usage within the workflow 
+{
+            "category": "leaver,mover",
+            "description": "Remove selected licenses assigned to the user",
+            "displayName": "Remove licenses from user",
+            "id": "5fc402a8-daaf-4b7b-9203-da868b05fc5f",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "licenses",
+                    "values": [],
+                    "valueType": "string"
+                }
+            ]
+        }
+```
 
 ### Remove all license assignments from User
 
@@ -794,7 +877,7 @@ For Microsoft Graph, the parameters for the **Remove all license assignment from
 
 ### Delete User
 
-Allows cloud-only user accounts to be deleted. Users with Microsoft Entra role assignments aren't supported, nor are users with membership or ownership of role-assignable groups. You're able to customize the task name and description for this task in the Microsoft Entra admin center.
+Allows user accounts to be deleted. For prerequisites on running this task for synced on-premises users, see: [User account tasks (preview)](../id-governance/lifecycle-workflow-on-premises.md#user-account-tasks-preview). Users with Microsoft Entra role assignments aren't supported, nor are users with membership or ownership of role-assignable groups. You're able to customize the task name and description for this task in the Microsoft Entra admin center.
 :::image type="content" source="media/lifecycle-workflow-task/delete-user-task.png" alt-text="Screenshot of Workflows task: Delete user account.":::
 
 
@@ -806,6 +889,7 @@ For Microsoft Graph, the parameters for the **Delete User** task are as follows:
 |displayName     |  Delete user account (Customizable by user)      |
 |description     |  Delete user account in Microsoft Entra ID (Customizable by user)      |
 |taskDefinitionId     |   8d18588d-9ad3-4c0f-99d0-ec215f0e3dff      |
+|arguments     |  Can contain the optional *deleteOnPremisesAccount* argument. The value is a boolean value of either *true*, if you want the task to run for synced on-premises users, or *false*, if you don't want it to run for an on-premises user.  |
 
 
 
@@ -817,7 +901,12 @@ For Microsoft Graph, the parameters for the **Delete User** task are as follows:
             "description": "Delete user account in Azure AD",
             "isEnabled": true,
             "taskDefinitionId": "8d18588d-9ad3-4c0f-99d0-ec215f0e3dff",
-            "arguments": []
+            "arguments": [
+                {
+                    "name": "deleteOnPremisesAccount",
+                    "value": "true"
+                }
+            ]
 }
 
 ```

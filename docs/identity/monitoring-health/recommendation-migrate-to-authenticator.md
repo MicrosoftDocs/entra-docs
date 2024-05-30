@@ -5,7 +5,7 @@ description: Learn why you should migrate your users to the Microsoft authentica
 author: shlipsey3
 manager: amycolannino
 ms.service: entra-id
-ms.topic: reference
+ms.topic: how-to
 ms.subservice: monitoring-health
 ms.date: 09/21/2023
 ms.author: sarahlipsey

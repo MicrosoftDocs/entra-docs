@@ -6,7 +6,7 @@ description: If you have internal user accounts for partners, distributors, supp
 ms.service: entra-external-id
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: how-to
-ms.date: 11/10/2023
+ms.date: 05/20/2024
 
 ms.author: cmulligan
 author: csmulligan
@@ -18,18 +18,18 @@ ms.collection: M365-identity-device-management
 
 # Invite internal users to B2B collaboration
 
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
+
 Before the availability of Microsoft Entra B2B collaboration, organizations could collaborate with distributors, suppliers, vendors, and other guest users by setting up internal credentials for them. If you have internal guest users like these, you can invite them to use B2B collaboration instead. These B2B guest users will be able to sign in using their own identities and credentials, eliminating the need for password maintenance or account lifecycle management.
 
 
-Sending an invitation to an existing internal account lets you retain that user’s object ID, UPN, group memberships, and app assignments. You don’t need to manually delete and re-invite the user or reassign resources. To invite the user, you use the invitation API to pass both the internal user object and the guest user’s email address along with the invitation. When the user accepts the invitation, the B2B service changes the existing internal user object to a B2B user. Going forward, the user must sign in to cloud resources services using their B2B credentials.
+Sending an invitation to an existing internal account lets you retain that user’s object ID, UPN, group memberships, and app assignments. You don’t need to manually delete and reinvite the user or reassign resources. To invite the user, you use the invitation API to pass both the internal user object and the guest user’s email address along with the invitation. When the user accepts the invitation, the B2B service changes the existing internal user object to a B2B user. Going forward, the user must sign in to cloud resources services using their B2B credentials.
 
 ## Things to consider
 
 - **Access to on-premises resources**: After the user is invited to B2B collaboration, they can still use their internal credentials to access on-premises resources. You can prevent this by resetting or changing the password on the internal account. The exception is email one-time passcode authentication; if the user's authentication method is changed to one-time passcode, they won't be able to use their internal credentials anymore.
 
-- **Billing**: This feature doesn't change the UserType for the user, so it doesn't automatically switch the user's billing model to [External Identities monthly active user (MAU) pricing](external-identities-pricing.md). To activate MAU pricing for the user, change the UserType for the user to `guest`. Also note that your Microsoft Entra tenant must be linked to an Azure subscription to activate MAU billing.
-
-- **Invitation is one-way**: You can invite internal users to use B2B collaboration, but you can’t remove the B2B credentials once they’re added. To change the user back to an internal-only user, you’ll need to delete the user object and create a new one.
+- **Billing**: This feature doesn't change the UserType for the user, so it doesn't automatically switch the user's billing model to [External ID monthly active user (MAU) pricing](external-identities-pricing.md). To activate MAU pricing for the user, change the UserType for the user to `guest`. Also note that your Microsoft Entra tenant must be linked to an Azure subscription to activate MAU billing.
 
 - **Teams**: When the user accesses Teams using their external credentials, their tenant won't be available initially in the Teams tenant picker. The user can access Teams using a URL that contains the tenant context, for example: `https://teams.microsoft.com/?tenantId=<TenantId>`. After that, the tenant will become available in the Teams tenant picker.
 
@@ -76,7 +76,7 @@ You'll need the [latest Microsoft Graph PowerShell module](/powershell/microsoft
 
 ```powershell
 Update-Module Microsoft.Graph
-Get-MgUser -UserId '11111111-aaaa-2222-bbbb-333333333333' 
+Get-MgUser -UserId '00aa00aa-bb11-cc22-dd33-44ee44ee44ee' 
 New-MgInvitation -InvitedUserEmailAddress John@contoso.com -SendInvitationMessage:$true -InviteRedirectUrl "https://myapplications.microsoft.com" -InvitedUser $msGraphUser
 ```
 
@@ -113,6 +113,6 @@ ContentType: application/json
 The response to the API is the same response you get when you invite a new guest user to the directory.
 ## Next steps
 
-- [Add and invite guest users](add-users-administrator.md)
+- [Add and invite guest users](add-users-administrator.yml)
 - [Customize invitations using API](customize-invitation-api.md)
 - [B2B collaboration invitation redemption](redemption-experience.md)

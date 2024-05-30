@@ -5,7 +5,7 @@ description: Learn where and when to use adaptive session lifetimes in Condition
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 01/08/2024
+ms.date: 02/28/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -102,11 +102,12 @@ There are scenarios where customers might want to require a fresh authenticati
 * Protecting risky users and risky sign-ins​ identified by Microsoft Entra ID Protection.
 * Securing sensitive user actions like Microsoft Intune enrollment.
 
-Sign-in frequency set to **every time** works best when the resource has the logic of when a client should get a new token. These resources redirect the user back to Microsoft Entra only once the session expires.
+Sign-in frequency set to **every time** works best when the resource has the logic of when a client should get a new token. These resources redirect the user back to Microsoft Entra-only once the session expires.
 
-Administrators should limit the number of applications they enforce a policy requiring users to reauthenticate every time with. Triggering reauthentication too frequently can increase security friction to a point that it causes users to experience MFA fatigue and open the door to phishing attempts. Web applications usually provide a less disruptive experience than their desktop counterparts when require reauthentication every time is enabled.
+Administrators should limit the number of applications they enforce a policy requiring users to reauthenticate every time with. We factor for five minutes of clock skew when every time is selected in policy, so that we don’t prompt users more often than once every five minutes. Triggering reauthentication too frequently can increase security friction to a point that it causes users to experience MFA fatigue and open the door to phishing attempts. Web applications usually provide a less disruptive experience than their desktop counterparts when require reauthentication every time is enabled.
 
-For applications in the Microsoft 365 stack, we recommend using [time-bassed user sign-in frequency](#user-sign-in-frequency) for a better user experience.
+* For applications in the Microsoft 365 stack, we recommend using [time-based user sign-in frequency](#user-sign-in-frequency) for a better user experience.
+* For the Azure portal and the Microsoft Entra admin center, we recommend either using [time-bassed user sign-in frequency](#user-sign-in-frequency) or to [require reauthentication on PIM activation](../../id-governance/privileged-identity-management/pim-how-to-change-default-settings.md#on-activation-require-microsoft-entra-conditional-access-authentication-context) using authentication context for a better user experience.
 
 Generally available supported scenarios:
 
@@ -114,7 +115,7 @@ Generally available supported scenarios:
 * Require user reauthentication for risky users with the [require password change](concept-conditional-access-grant.md#require-password-change) grant control.
 * Require user reauthentication for risky sign-ins with the [require multifactor authentication](concept-conditional-access-grant.md#require-multifactor-authentication) grant control.
 
-The January 2024 public preview capabilities allow administrators to require authentication with:
+The [February 2024 public preview capabilities](https://techcommunity.microsoft.com/t5/microsoft-entra-blog/prompt-users-for-reauthentication-on-sensitive-apps-and-high/ba-p/4062703) allow administrators to require authentication with:
 
 * [SAML](../../architecture/auth-saml.md) or [OIDC](../../architecture/auth-oidc.md) enabled applications
 * [Authentication context](concept-conditional-access-cloud-apps.md#authentication-context)

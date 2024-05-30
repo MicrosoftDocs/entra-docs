@@ -1,12 +1,12 @@
 ---
-title: "Quickstart: Sign in users in a single-page app (SPA) and call the Microsoft Graph API using React"
+title: "Quickstart: Sign in to a SPA & call an API - React"
 description: In this quickstart, learn how a JavaScript React single-page application (SPA) can sign in users of personal accounts, work accounts, and school accounts by using the authorization code flow and call Microsoft Graph.
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
 ms.custom: scenarios:getting-started, languages:JavaScript, devx-track-js
 ms.date: 12/13/2023
-ms.reviewer: EmLauber
+ms.reviewer: emilylauber
 ms.service: identity-platform
 
 ms.topic: quickstart

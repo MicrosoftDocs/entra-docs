@@ -97,7 +97,7 @@ If an application or service attempts to perform a protection action, it must be
 
 - Microsoft Entra administrator experiences for the actions in the [Microsoft Entra admin center](https://entra.microsoft.com)
 - [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview?branch=main)
-- [Microsoft Graph Explorer](/graph/graph-explorer/graph-explorer-overview?branch=main)
+- [Graph Explorer](/graph/graph-explorer/graph-explorer-overview?branch=main)
 
 There are some known and expected limitations. The following applications will fail if they attempt to perform a protected action.
  
@@ -121,7 +121,7 @@ Here are some best practices for using protected actions.
 
 - **Use named network locations**
 
-    Named network location permissions aren't used when managing multi-factor authentication trusted IPs. We recommend using [named network locations](~/identity/conditional-access/location-condition.md#named-locations).
+    Named network location permissions aren't used when managing multi-factor authentication trusted IPs. We recommend using [named network locations](../conditional-access/concept-assignment-network.md).
 
 - **Don't use protected actions to block access based on identity or group membership**
 

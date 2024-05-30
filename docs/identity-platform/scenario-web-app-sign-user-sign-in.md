@@ -9,7 +9,7 @@ ms.date: 07/14/2020
 ms.reviewer: jmprieur
 ms.service: identity-platform
 
-ms.topic: conceptual
+ms.topic: concept-article
 #Customer intent: As an application developer, I want to know how to write a web app that signs in users by using the Microsoft identity platform.
 ---
 

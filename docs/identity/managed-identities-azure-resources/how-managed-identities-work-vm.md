@@ -30,7 +30,7 @@ Your code can use a managed identity to request access tokens for services that 
 
 The following diagram shows how managed service identities work with Azure virtual machines (VMs):
 
-[![Diagram that shows how managed service identities are associated with Azure virtual machines, get an access token, and invoked a protected Microsoft Entra resource.](media/how-managed-identities-work-vm/data-flow.png)](media/how-managed-identities-work-vm/data-flow.png#lightbox)
+:::image type="content" source="media/how-managed-identities-work-vm/data-flow.png" alt-text="Diagram that shows how managed service identities are associated with Azure virtual machines, get an access token, and invoked a protected Microsoft Entra resource.":::
 
 The following table shows the differences between the system-assigned and user-assigned managed identities:
 
@@ -82,14 +82,14 @@ The following table shows the differences between the system-assigned and user-a
     - The resource parameter specifies the service to which the token is sent. To authenticate to Azure Resource Manager, use `resource=https://management.azure.com/`.
     - The `client_id` parameter specifies the identity for which the token is requested. This value is required for disambiguation when more than one user-assigned identity is on a single VM. You can find the **Client ID** in the Managed Identity **Overview**:
 
-        [![Screenshot that shows how to copy the managed identity client ID.](./media/how-managed-identities-work-vm/managed-identity-client-id.png)](./media/how-managed-identities-work-vm/managed-identity-client-id.png#lightbox)
+        :::image type="content" source="./media/how-managed-identities-work-vm/managed-identity-client-id.png" alt-text="Screenshot that shows how to copy the managed identity client ID.":::
 
     - The API version parameter specifies the Azure Instance Metadata Service version. Use `api-version=2018-02-01` or higher.
 
         The following example demonstrates how to to use CURL to make a request to the local Managed Identity endpoint to get an access token for Azure Instance Metadata service.
     
         ```bash
-        curl 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https%3A%2F%2Fstorage.azure.com%2F&client_id=12345678-0000-0000-0000-000000000000' -H Metadata:true
+        curl 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https%3A%2F%2Fstorage.azure.com%2F&client_id=00001111-aaaa-2222-bbbb-3333cccc4444' -H Metadata:true
         ```
 
 6. A call is made to Microsoft Entra ID to request an access token (as specified in step 5) by using the client ID and certificate configured in step 3. Microsoft Entra ID returns a JSON Web Token (JWT) access token.
@@ -100,5 +100,5 @@ The following table shows the differences between the system-assigned and user-a
 
 Get started with the managed identities for Azure resources feature with the following quickstarts:
 
-* [Use a Windows VM system-assigned managed identity to access Resource Manager](tutorial-windows-vm-access-arm.md)
-* [Use a Linux VM system-assigned managed identity to access Resource Manager](tutorial-linux-vm-access-arm.md)
+* [Use a Windows VM system-assigned managed identity to access Resource Manager](tutorial-windows-vm-access.md)
+* [Use a Linux VM system-assigned managed identity to access Resource Manager](tutorial-windows-vm-access.md)

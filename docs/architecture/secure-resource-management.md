@@ -99,7 +99,7 @@ An enterprise agreement can be configured to support multiple tenants by setting
 
 It's important to note that the default configuration described above grants the Azure EA Account Owner privileges to manage the resources in any subscriptions they created. For subscriptions holding production workloads, consider decoupling billing and resource management by changing the service administrator of the subscription right after creation.
 
- To further decouple and prevent the account owner from regaining service administrator access to the subscription, the subscription's tenant can be [changed](~/fundamentals/how-subscriptions-associated-directory.md) after creation. If the account owner doesn't have a user object in the Microsoft Entra tenant the subscription is moved to, they can't regain the service owner role.
+ To further decouple and prevent the account owner from regaining service administrator access to the subscription, the subscription's tenant can be [changed](~/fundamentals/how-subscriptions-associated-directory.yml) after creation. If the account owner doesn't have a user object in the Microsoft Entra tenant the subscription is moved to, they can't regain the service owner role.
 
 To learn more, visit [Azure roles, Microsoft Entra roles, and classic subscription administrator roles](/azure/role-based-access-control/rbac-and-directory-admin-roles).  
 
@@ -167,7 +167,7 @@ Microsoft Entra Domain Services provides a managed domain to facilitate authenti
 
 An Azure AD B2C tenant is linked to an Azure subscription for billing and communication purposes. Azure AD B2C tenants have a self-contained role structure in the directory, which is independent from the Azure RBAC privileged roles of the Azure subscription.
 
-When the Azure AD B2C tenant is initially provisioned, the user creating the B2C tenant must have contributor or owner permissions in the subscription. Upon creation, that user becomes the first Azure AD B2C tenant global administrator and they can later create other accounts and assign them to directory roles.
+When the Azure AD B2C tenant is initially provisioned, the user creating the B2C tenant must have contributor or owner permissions in the subscription. Upon creation, that user becomes the first Azure AD B2C tenant [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator) and they can later create other accounts and assign them to directory roles.
 
 It's important to note that the owners and contributors of the linked Microsoft Entra subscription can remove the link between the subscription and the directory, which will affect the ongoing billing of the Azure AD B2C usage.
 

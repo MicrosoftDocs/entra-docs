@@ -11,6 +11,8 @@ ms.subservice: saas-apps
 ms.topic: tutorial
 ms.date: 12/12/2023
 ms.author: jeedes
+
+# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Timetabling Solutions so that I can control who has access to Timetabling Solutions, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
 # Tutorial: Microsoft Entra SSO integration with Timetabling Solutions
