@@ -66,9 +66,7 @@ Once you have configured the Microsoft Entra Connect servers and you have verifi
 
 ### Step 3 - Exchange Administrative Center
 
-1. In [Exchange Admin Center](/exchange/exchange-admin-center), go to Migration and select the users to be migrated.   You can access the EAC using the URL https://admin.exchange.microsoft.com
-  > [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWBuGs]  
-
+1. In [Exchange Admin Center](/exchange/exchange-admin-center), go to Migration and select the users to be migrated.   You can access the EAC using the URL https://admin.exchange
 2. [Migrate users](/exchange/troubleshoot/move-or-migrate-mailboxes/migrate-data-with-admin-center).
 3. Complete migration batches after mailboxes are fully transferred.
  
