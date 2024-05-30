@@ -182,7 +182,7 @@ Once you've configured provisioning, use the following resources to monitor your
 
   * Supports non-English characters, spaces, capitalization. 
   
-  * Allowed punctuation includes periods, underscores, hyphens, apostrophes, brackets (e.g., **( [ { } ] )**), and separators (e.g., **, / ;**).
+  * Allowed punctuation includes periods, underscores, hyphens, apostrophes, brackets (for example, `( [ { } ] )`), and separators (for example, `, / ;`).
   
   * displayName property cannot have an '@' character. If an '@' is included, you may find a skipped event in the provisioning logs with the description "AttributeValidationFailed."
 
