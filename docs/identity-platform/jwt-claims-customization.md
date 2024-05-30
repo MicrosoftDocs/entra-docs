@@ -218,31 +218,31 @@ Authorization: Bearer {token}
 {
     "keyCredentials":[
         {
-            "customKeyIdentifier": "lY85bR8r6yWTW6jnciNEONwlVhDyiQjdVLgPDnkI5mA=", 
+            "customKeyIdentifier": "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u=", 
             "endDateTime": "2021-04-22T22:10:13Z",
-            "keyId": "4c266507-3e74-4b91-aeba-18a25b450f6e",
+            "keyId": "aaaaaaaa-0b0b-1c1c-2d2d-333333333333",
             "startDateTime": "2020-04-22T21:50:13Z",
             "type": "X509CertAndPassword",
             "usage": "Sign",
-            "key":"MIIKIAIBAz.....HBgUrDgMCERE20nuTptI9MEFCh2Ih2jaaLZBZGeZBRFVNXeZmAAgIH0A==",
+            "key":"MIIKIAIBAz.....BRFVNXeZmAAgIH0A==",
             "displayName": "CN=contoso"
         },
         {
-            "customKeyIdentifier": "lY85bR8r6yWTW6jnciNEONwlVhDyiQjdVLgPDnkI5mA=",
+            "customKeyIdentifier": "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u=",
             "endDateTime": "2021-04-22T22:10:13Z",
-            "keyId": "e35a7d11-fef0-49ad-9f3e-aacbe0a42c42",
+            "keyId": "bbbbbbbb-1c1c-2d2d-3e3e-444444444444",
             "startDateTime": "2020-04-22T21:50:13Z",
             "type": "AsymmetricX509Cert",
             "usage": "Verify",
-            "key": "MIIDJzCCAg+gAw......CTxQvJ/zN3bafeesMSueR83hlCSyg==",
+            "key": "MIIDJzCCAg+gAw......N3bafeesMSueR83hlCSyg==",
             "displayName": "CN=contoso"
         }
 
     ],
     "passwordCredentials": [
         {
-            "customKeyIdentifier": "lY85bR8r6yWTW6jnciNEONwlVhDyiQjdVLgPDnkI5mA=",
-            "keyId": "4c266507-3e74-4b91-aeba-18a25b450f6e",
+            "customKeyIdentifier": "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u=",
+            "keyId": "cccccccc-2d2d-3e3e-4f4f-555555555555",
             "endDateTime": "2022-01-27T19:40:33Z",
             "startDateTime": "2020-04-20T19:40:33Z",
             "secretText": "mypassword"
