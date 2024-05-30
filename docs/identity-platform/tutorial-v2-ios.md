@@ -5,7 +5,7 @@ author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
 ms.custom: has-adal-ref
-ms.date: 06/27/2023
+ms.date: 05/29/2024
 ms.reviewer: oldalton
 ms.service: identity-platform
 
@@ -31,7 +31,7 @@ In this tutorial:
 
 ## Prerequisites
 
-- [Xcode 11.x+](https://developer.apple.com/xcode/)
+- [Xcode](https://developer.apple.com/xcode/)
 
 ## How tutorial app works
 
