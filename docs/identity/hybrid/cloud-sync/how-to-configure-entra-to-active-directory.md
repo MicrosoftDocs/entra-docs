@@ -77,6 +77,11 @@ You can scope the agent to synchronize all or specific security groups. You can 
  5. After saving, you should see a message telling you what you still need to do to configure cloud sync. You can click the link to continue.
  :::image type="content" source="media/how-to-configure/new-ux-configure-16.png" alt-text="Screenshot of the nudge for scoping filters." lightbox="media/how-to-configure/new-ux-configure-16.png":::
 
+ ### Scope provisioning to specific groups using directory extensions
+ For more advanced scoping and filtering, you can configure the use of directory extensions.  For an overview of directory extensions see [Directory extensions for provisioning Microsoft Entra ID to Active Directory](custom-attribute-mapping-entra-to-active-directory.md)
+
+For a step-by-step tutorial on how to extend the schema and then use the directory extension attribute with cloud sync provisioning to AD, see [Scenario - Using directory extensions with group provisioning to Active Directory](tutorial-directory-extension-group-provisioning.md).
+
 ## Attribute mapping
 Microsoft Entra Cloud Sync allows you to easily map attributes between your on-premises user/group objects and the objects in Microsoft Entra ID. 
 
