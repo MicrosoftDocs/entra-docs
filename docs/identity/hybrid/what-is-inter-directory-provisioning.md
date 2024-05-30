@@ -42,6 +42,10 @@ This capability of inter-directory provisioning offers the following significant
 - [Synchronization](./connect/how-to-connect-sync-whatis.md) - Responsible for creating users, groups, and other objects.  As well as, making sure identity information for your on-premises users and groups is matching the cloud.  This synchronization also includes password hashes.
 - [Health Monitoring](./connect/whatis-azure-ad-connect.md) - can provide robust monitoring and provide a central location in the [Microsoft Entra admin center](https://entra.microsoft.com) to view this activity. 
 
+
+### Common scenarios
+For a list of common hybrid synchronization scenarios, see [Common scenarios](#common-scenarios).
+
 ## Next steps 
 - [What is identity lifecycle management](~/id-governance/what-is-identity-lifecycle-management.md)
 - [What is provisioning?](what-is-provisioning.md)
