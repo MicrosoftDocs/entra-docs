@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: enterprise-apps
 
 ms.topic: overview
-ms.date: 20/05/2024
+ms.date: 05/30/2024
 ms.author: jomondi
 ms.reviewer: phsignor
 ms.collection: M365-identity-device-management
@@ -41,13 +41,13 @@ As an administrator, you can choose whether user consent is allowed. If you choo
 
 By choosing which application consent policies apply for all users, you can set limits on when users are allowed to grant consent to applications. The consent policies also inform when users are required to request administrator review and approval. The Microsoft Entra admin center provides the following built-in options:
 
-- *You can disable user consent*. Users can't grant permissions to applications. Users continue to sign in to applications they already consented to or to applications that administrators grant consent to on their behalf. However, they're not allowed to consent to new permissions to applications on their own. Only users who're granted a directory role that includes the permission to grant consent can consent to new applications.
+- *You can disable user consent*. Users can't grant permissions to applications. Users continue to sign in to applications they already consented to or to applications that administrators grant consent to on their behalf. However, they're not allowed to consent to new permissions to applications on their own. Only users who are granted a directory role that includes the permission to grant consent can consent to new applications.
 
-- *Users can consent to applications from verified publishers or your organization, but only for permissions you select*. All users can consent only to applications that are published by a [verified publisher](~/identity-platform/publisher-verification-overview.md) and applications that are registered in your tenant. Users can consent only to the permissions classified as *low impact*. You must [classify permissions](configure-permission-classifications.md) to select which permissions users are allowed to consent to.
+- *Users can consent to applications from verified publishers or your organization, but only for permissions you select*. All users can consent only to applications published by a [verified publisher](~/identity-platform/publisher-verification-overview.md) and applications that are registered in your tenant. Users can consent only to the permissions classified as *low impact*. You must [classify permissions](configure-permission-classifications.md) to select which permissions users are allowed to consent to.
 
 - *Users can consent to all applications*. This option allows all users to consent to any permissions that don't require admin consent, for any application.
 
-For most organizations, one of the built-in options are appropriate. Some advanced customers might want more control over the conditions that govern when users are allowed to consent. These customers can [create custom app consent policy](manage-app-consent-policies.md#create-a-custom-app-consent-policy-using-powershell) and configure those policies to apply to user consent.
+For most organizations, one of the built-in options is appropriate. Some advanced customers might want more control over the conditions that govern when users are allowed to consent. These customers can [create custom app consent policy](manage-app-consent-policies.md#create-a-custom-app-consent-policy-using-powershell) and configure those policies to apply to user consent.
 
 ## Admin consent
 
@@ -55,7 +55,7 @@ During admin consent, a Privileged Administrator might grant an application acce
 
 When your organization purchases a license or subscription for a new application, you might proactively want to set up the application so that all users in the organization can use it. To avoid the need for user consent, an administrator can grant consent for the application on behalf of all users in the organization.
 
-After an administrator grants admin consent on behalf of the organization, users aren't prompted for consent for that application. In certain cases, a user might be prompted for consent even after consent is granted by an administrator. An example might be if an application requests another permission that the administrator hasn't granted.
+After an administrator grants admin consent on behalf of the organization, users aren't prompted for consent for that application. In certain cases, a user might be prompted for consent even after an administrator grants consent. An example might be if an application requests another permission that the administrator hasn't granted.
 
 Granting admin consent on behalf of an organization is a sensitive operation, potentially allowing the application's publisher access to significant portions of the organization's data, or the permission to do highly privileged operations. Examples of such operations might be role management, full access to all mailboxes or all sites, and full user impersonation. 
 
@@ -79,7 +79,7 @@ For a broader overview, including how to handle other complex scenarios, see [Us
 
 The admin consent workflow gives users a way to request admin consent for applications when they aren't allowed to consent themselves. When the admin consent workflow is enabled, users are presented with an "Approval required" window for requesting admin approval for access to the application.
 
-After users submit the admin consent request, the admins who're designated as reviewers receive a notification. The users are notified after a reviewer acts on their request. For step-by-step instructions for configuring the admin consent workflow by using the Microsoft Entra admin center, see [configure the admin consent workflow](configure-admin-consent-workflow.md).
+After users submit the admin consent request, the admins who are designated as reviewers receive a notification. The users are notified after a reviewer acts on their request. For step-by-step instructions for configuring the admin consent workflow by using the Microsoft Entra admin center, see [configure the admin consent workflow](configure-admin-consent-workflow.md).
 
 ### How users request admin consent
 
