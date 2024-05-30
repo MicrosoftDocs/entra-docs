@@ -1,5 +1,4 @@
 {
-
   "AccessReview.Read.All - Application" : "d07a8cc0-3d51-4b77-b3b0-32704d1f69fa",
   "AccessReview.Read.All - Delegated" : "ebfcd32b-babb-40f4-a14b-42706e83bd28",
   "AccessReview.ReadWrite.All - Application" : "ef5f7d5c-338f-44b0-86c3-351f46c8bb5f",
@@ -2793,5 +2792,34 @@
   "YAMMER MIDSIZE" : "41bf139a-4e60-409f-9346-a1361efc6dfb",
   "Yammer Web" : "c1c74fed-04c9-4704-80dc-9f79a2e515cb",
   "Yammer Web Embed" : "e1ef36fd-b883-4dbf-97f0-9ece4b576fc6",
-  "YAMMER_ENTERPRISE" : "7547a3fe-08ee-4ccb-b430-5077c5041653"
+  "YAMMER_ENTERPRISE" : "7547a3fe-08ee-4ccb-b430-5077c5041653",
+  "Microsoft Graph - Request user access package assignment" : "c1ec1e76-f374-4375-aaa6-0bb6bd4c60be",
+  "Microsoft Graph - Send welcome email to new hire" : "70b29d51-b59a-4773-9280-8841dfd3f2ea"
+  "Microsoft Graph - Send onboarding reminder email" : "3C860712-2D37-42A4-928F-5C93935D26A1",
+  "Microsoft Graph - Generate Temporary Access Pass and send via email to user's manager" : "1b555e50-7f65-41d5-b514-5894a026d10d",
+  "Microsoft Graph - Send email to notify manager of user move" : "aab41899-9972-422a-9d97-f626014578b7",
+  "Microsoft Graph - Assign licenses to user" : "683c87a4-2ad4-420b-97d4-220d90afcd24",
+  "Microsoft Graph - Add user to groups" : "22085229-5809-45e8-97fd-270d28d66910",
+  "Microsoft Graph - Add user to teams" : "e440ed8d-25a1-4618-84ce-091ed5be5594",
+  "Microsoft Graph - Enable user account" : "6fc52c9d-398b-4305-9763-15f42c1676fc",
+  "Microsoft Graph - Run a Custom Task Extension" : "d79d1fcc-16be-490c-a865-f4533b1639ee",
+  "Microsoft Graph - Disable user account" : "1dfdfcc7-52fa-4c2e-bf3a-e3919cc12950",
+  "Microsoft Graph - Remove user from selected groups" : "1953a66c-751c-45e5-8bfe-01462c70da3c",
+  "Microsoft Graph -Remove users from all groups" : "b3a31406-2a15-4c9a-b25b-a658fa5f07fc",
+  "Microsoft Graph - Remove User from Teams" : "06aa7acb-01af-4824-8899-b14e5ed788d6",
+  "Microsoft Graph - Remove users from all teams" : "81f7b200-2816-4b3b-8c5d-dc556f07b024",
+  "Microsoft Graph - Remove access package assignment for user" : "4a0b64f2-c7ec-46ba-b117-18f262946c50",
+  "Microsoft Graph - Remove all access package assignments for user" : "42ae2956-193d-4f39-be06-691b8ac4fa1d", 
+  "Microsoft Graph - Cancel all pending access package assignment requests for user" : "498770d9-bab7-4e4c-b73d-5ded82a1d0b3",
+  "Microsoft Graph - Remove selected license assignments from user" : "5fc402a8-daaf-4b7b-9203-da868b05fc5f", 
+  "Microsoft Graph - Remove all license assignment from user" : "8fa97d28-3e52-4985-b3a9-a1126f9b8b4e",
+  "Microsoft Graph - Delete User" : "8d18588d-9ad3-4c0f-99d0-ec215f0e3dff", 
+  "Microsoft Graph - Send email before user's last day" : "52853a3e-f4e5-4eb8-bb24-1ac09a1da935", 
+  "Microsoft Graph - Send email on user last day" : "9c0a1eaf-5bda-4392-9d9e-6e155bb57411", 
+  "Microsoft Graph - Send email to user's manager after their last day" : "6f22ddd4-b3a5-47a4-a846-0d7c201a49ce", 
+  "Microsoft Defender Endpoint on Android and iOS" : "dd47d17a-3194-4d86-bfd5-c6ae6f5651e3", 
+  "Microsoft Intune Enrollment app" : "d4ebce55-015a-49b5-a083-c84d1797ae8c", 
+  "Re-register Microsoft.AAD namespace (1)" : "443155a6-77f3-45e3-882b-22b3a8d431fb", 
+  "Re-register Microsoft.AAD namespace (2)" : "abba844e-bc0e-44b0-947a-dc74e5d09022",
+  "Re-register Microsoft.AAD namespace (3)" : "d87dcbc6-a371-462e-88e3-28ad15ec4e64"
 }
