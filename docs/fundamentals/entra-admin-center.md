@@ -18,7 +18,7 @@ The [Microsoft Entra admin center](https://entra.microsoft.com/) is a web-based 
 
 The Microsoft Entra products and features can be accessed using the search bar, left-hand navigation, or a pop-up menu that includes links to documentation by selecting **View all products**.
 
-:::image type="content" source="./media/entra-admin-center/entra-admin-center-home.png" alt-text="Microsoft Entra admin center overview home page.":::
+:::image type="content" source="./media/entra-admin-center/entra-admin-center-home.png" alt-text="Screenshot of the Microsoft Entra admin center overview home page.":::
 
 
 The following sections show the interfaces for each product along with links to learn more about the different features.
@@ -33,13 +33,13 @@ The **What's new** menu item provides information about the latest updates to th
 * **Roadmap**: Lists the public previews and recent general availability releases.
 * **Change announcements**: Describes the modifications to existing features.
 
-:::image type="content" source="./media/entra-admin-center/entra-admin-whats-new.png" alt-text="Microsoft Entra admin center What's new page.":::
+:::image type="content" source="./media/entra-admin-center/entra-admin-whats-new.png" alt-text="Screenshot of the Microsoft Entra admin center What's new page.":::
 
 ### Identity
 
 The **Identity** menu gives administrators and developers access to [Microsoft Entra ID](./whatis.md) solutions, including tenants, users, groups, devices, applications, roles, and licensing.
 
-:::image type="content" source="./media/entra-admin-center/entra-admin-identity.png" alt-text="Microsoft Entra admin center Identity menu.":::
+:::image type="content" source="./media/entra-admin-center/entra-admin-identity.png" alt-text="Screenshot of the Microsoft Entra admin center Identity menu.":::
 
 For more information about configuring and managing Microsoft Entra ID solutions, see the following documentation:
 
@@ -53,7 +53,7 @@ For more information about configuring and managing Microsoft Entra ID solutions
 
  The **Protection** menu gives administrators and developers access to [Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md) solutions, including the protection dashboard, conditional access, multifactor authentication, and password reset.
 
-:::image type="content" source="./media/entra-admin-center/entra-admin-protection.png" alt-text="Microsoft Entra admin center Protection menu.":::
+:::image type="content" source="./media/entra-admin-center/entra-admin-protection.png" alt-text="Screenshot of the Microsoft Entra admin center Protection menu.":::
 
 For more information about configuring and managing Microsoft Entra ID Protection solutions, see the following documentation:
 
@@ -69,7 +69,7 @@ For more information about configuring and managing Microsoft Entra ID Protectio
 
 The **Identity governance** menu gives administrators and developers access to [Microsoft Entra ID Governance](~/id-governance/identity-governance-overview.md) solutions, including entitlement management, access reviews, and lifecycle workflows.
 
-:::image type="content" source="./media/entra-admin-center/entra-admin-identity-governance.png" alt-text="Microsoft Entra admin center Identity governance menu.":::
+:::image type="content" source="./media/entra-admin-center/entra-admin-identity-governance.png" alt-text="Screenshot of the Microsoft Entra admin center Identity governance menu.":::
 
 For more information about configuring and managing Microsoft Entra ID Governance solutions, see the following documentation:
 
@@ -83,7 +83,7 @@ For more information about configuring and managing Microsoft Entra ID Governanc
 
 The **Verified ID** menu gives administrators and developers access to [Microsoft Entra Verified ID](~/verified-id/decentralized-identifier-overview.md) solutions, including credentials and organization settings.
 
-:::image type="content" source="./media/entra-admin-center/entra-admin-verified-id.png" alt-text="Microsoft Entra admin center Verified ID menu.":::
+:::image type="content" source="./media/entra-admin-center/entra-admin-verified-id.png" alt-text="Screenshot of the Microsoft Entra admin center Verified ID menu.":::
 
 For more information about configuring and managing Microsoft Entra Verified ID solutions, see the following documentation:
 
@@ -93,7 +93,7 @@ For more information about configuring and managing Microsoft Entra Verified ID 
 
 The **Permissions Management** menu gives administrators and developers access to [Microsoft Entra Permissions Management](~/permissions-management/overview.md) solutions, including user identities, actions, and resources across multicloud infrastructure environments.
 
-:::image type="content" source="./media/entra-admin-center/entra-admin-permissions-management.png" alt-text="Microsoft Entra admin center Permissions Management menu.":::
+:::image type="content" source="./media/entra-admin-center/entra-admin-permissions-management.png" alt-text="Screenshot of the Microsoft Entra admin center Permissions Management menu.":::
 
 For more information about configuring and managing Microsoft Entra Permissions Management solutions, see the [Quickstart guide to Microsoft Entra Permissions Management](~/permissions-management/permissions-management-quickstart-guide.md).
 
@@ -101,9 +101,9 @@ For more information about configuring and managing Microsoft Entra Permissions 
 
 The **Diagnose & solve problems** menu item provides troubleshooting resources to fix common problems, and the option to contact our support team by opening a **New support request**.
 
-:::image type="content" source="./media/entra-admin-center/entra-admin-diagnose-and-solve.png" alt-text="Microsoft Entra admin center Diagnose & solve menu.":::
+:::image type="content" source="./media/entra-admin-center/entra-admin-diagnose-and-solve.png" alt-text="Screenshot of the Microsoft Entra admin center Diagnose & solve menu.":::
 
-:::image type="content" source="./media/entra-admin-center/entra-admin-learn-and-support.png" alt-text="Microsoft Entra admin center Learn & support menu.":::
+:::image type="content" source="./media/entra-admin-center/entra-admin-learn-and-support.png" alt-text="Screenshot of the Microsoft Entra admin center Learn & support menu.":::
 
 ## Next steps
 
