@@ -55,7 +55,7 @@ You can set the scope at the level of the subscription, resource group, or resou
 1. Select **Add**, then select **Add role assignment**.
 1. In the **Role** tab, select the role you wish to assign to the application in the list.
 1. Select **Next**.
-1. On the **Members** tab, fo **Assign access to**, select **User, group, or service principal**.
+1. On the **Members** tab, for **Assign access to**, select **User, group, or service principal**.
 1. Select **Select members**. By default, Microsoft Entra applications aren't displayed in the available options. To find your application, search for it by name. 
 1. Select the **Select** button, then select **Review + assign**.
 
@@ -123,7 +123,7 @@ If you choose not to use a certificate, you can create a new client secret.
 1. Provide a description of the secret, and a duration.
 1. Select **Add**.
 
-Once you've saved the client secret, the value of the client secret is displayed. This is only displayed once, so copy this value and store it where your application can retrieve it, usually where your application keeps values like `clientId`, or `authoruty` in the source code. You'll provide the secret value along with with the application's client ID to sign in as the application.
+Once you've saved the client secret, the value of the client secret is displayed. This is only displayed once, so copy this value and store it where your application can retrieve it, usually where your application keeps values like `clientId`, or `authoruty` in the source code. You'll provide the secret value along with the application's client ID to sign in as the application.
 
    :::image type="content" source="media/howto-create-service-principal-portal/copy-secret.png" alt-text="Screenshot showing the client secret value.":::
 
