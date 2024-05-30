@@ -15,6 +15,8 @@ ms.collection: M365-identity-device-management
 
 # How users in your organization can invite guest users to an app
 
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
+
 After a guest user has been added to the directory in Microsoft Entra ID, an application owner can send the guest user a direct link to the app they want to share. Microsoft Entra admins can also set up self-service management for gallery or SAML-based apps in their Microsoft Entra tenant. This way, application owners can manage their own guest users, even if the guest users haven’t been added to the directory yet. When an app is configured for self-service, the application owner uses their Access Panel to invite a guest user to an app or add a guest user to a group that has access to the app. 
 
 Self-service app management for gallery and SAML-based apps requires some initial setup by an admin. Follow the summary of the setup steps (for more detailed instructions, see [Prerequisites](#prerequisites) later on this page):
@@ -71,7 +73,7 @@ After an app is configured for self-service, application owners can invite guest
 
 ## Prerequisites
 
-Self-service app management requires some initial setup by a Global Administrator and a Microsoft Entra administrator. As part of this setup, you'll configure the app for self-service and assign a group to the app that the application owner can manage. You can also configure the group to allow anyone to request membership but require a group owner's approval. (Learn more about [self-service group management](~/identity/users/groups-self-service-management.md).) 
+Self-service app management requires some initial setup by a Microsoft Entra administrator. As part of this setup, you'll configure the app for self-service and assign a group to the app that the application owner can manage. You can also configure the group to allow anyone to request membership but require a group owner's approval. (Learn more about [self-service group management](~/identity/users/groups-self-service-management.md).) 
 
 > [!NOTE]
 > You cannot add guest users to a dynamic group or to a group that is synced with on-premises Active Directory.

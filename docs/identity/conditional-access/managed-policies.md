@@ -5,7 +5,7 @@ description: Microsoft-managed policies take action to require multifactor authe
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 02/08/2024
+ms.date: 05/22/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -33,18 +33,15 @@ At launch Microsoft is deploying the following three policies where our data tel
 
 Administrators with at least the [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator) role assigned find these policies in the [Microsoft Entra admin center](https://entra.microsoft.com) under **Protection** > **Conditional Access** > **Policies**.
 
-Administrators have the ability to **Edit** the **State** (On, Off, or Report-only) and the **Excluded identities** (Users, Groups, and Roles) in the policy. Organizations should [exclude their break-glass or emergency access accounts](../role-based-access-control/security-emergency-access.md) from these policies the same as they would in other Conditional Access policies.
+Administrators have the ability to **Edit** the **State** (On, Off, or Report-only) and the **Excluded identities** (Users, Groups, and Roles) in the policy. Organizations should [exclude their break-glass or emergency access accounts](../role-based-access-control/security-emergency-access.md) from these policies the same as they would in other Conditional Access policies. Organizations can duplicate these policies if they want to make more changes than the basic ones allowed in the Microsoft-managed versions.
 
-> [!TIP]
-> Using the **Edit** pencil at the top to modify the Microsoft-managed per-user multifactor authentication policy might result in a **failed to update** error. To work around this issue, select **Edit** under the **Excluded identities** section of the policy.
-
-Microsoft will enable these policies after no less than 90 days after they're introduced in your tenant if they're left in the **Report-only** state. Administrators might choose to enable these policies sooner if they wish.
+Microsoft will enable these policies after no less than 90 days after they're introduced in your tenant if they're left in the **Report-only** state. Administrators might choose to turn these policies **On** sooner, or opt out by setting the policy state to **Off**. Customers are notified via emails and [Message center](/microsoft-365/admin/manage/message-center) posts 28 days before the policies are enabled. 
 
 ## Policies
 
-These Microsoft-managed policies allow administrators to make simple modifications like excluding users or turning them from report-only mode to on or off, however they won't be able to rename or delete the Microsoft-managed policies. As Administrators get more comfortable with Conditional Access policy, they might choose to clone the policy and make custom versions.
+These Microsoft-managed policies allow administrators to make simple modifications like excluding users or turning them from report-only mode to on or off. Organizations can't rename or delete any Microsoft-managed policies. As Administrators get more comfortable with Conditional Access policy, they might choose to duplicate the policy to make custom versions.
 
-As threats evolve over time, Microsoft might change these policies in the future to take advantage of new features and functionality to improve their function.
+As threats evolve over time, Microsoft might change these policies in the future to take advantage of new features, functionality, or to improve their function.
 
 ### Multifactor authentication for admins accessing Microsoft Admin Portals
 
@@ -54,17 +51,22 @@ This policy targets Microsoft Entra ID P1 and P2 tenants where security defaults
 
 ### Multifactor authentication for per-user multifactor authentication users
 
-This policy covers users [per-user MFA](../authentication/howto-mfa-userstates.md), a configuration that Microsoft no longer recommends. [Conditional Access](concept-conditional-access-policies.md) offers a better admin experience with many additional features. Consolidating all MFA policies in Conditional Access can help you be more targeted in requiring MFA, lowering end user friction while maintaining security posture. 
+This policy covers users [per-user MFA](../authentication/howto-mfa-userstates.md), a configuration that Microsoft no longer recommends. [Conditional Access](concept-conditional-access-policies.md) offers a better admin experience with many extra features. Consolidating all MFA policies in Conditional Access can help you be more targeted in requiring MFA, lowering end user friction while maintaining security posture. 
 
-This policy targets licensed users with Microsoft Entra ID P1 and P2, where security defaults policy isn't enabled and there are less than 500 per-user MFA enabled/enforced users. 
+This policy only targets licensed users with Microsoft Entra ID P1 and P2, where security defaults policy isn't enabled, and there are less than 500 per-user MFA enabled or enforced users. 
+
+To apply this policy to more users, duplicate it and change the assignments.
+
+> [!TIP]
+> Using the **Edit** pencil at the top to modify the Microsoft-managed per-user multifactor authentication policy might result in a **failed to update** error. To work around this issue, select **Edit** under the **Excluded identities** section of the policy.
 
 ### Multifactor authentication and reauthentication for risky sign-ins
 
 This policy covers all users and requires MFA and reauthentication when we detect high-risk sign-ins. High-risk in this case means something about the way the user signed in is out of the ordinary. These high-risk sign-ins might include: travel that is highly abnormal, password spray attacks, or token replay attacks. For more information about these risk definitions, see the article [What are risk detections](/entra/id-protection/concept-identity-protection-risks#sign-in-risk-detections).
 
-This policy targets Microsoft Entra ID P2 tenants where security defaults aren't enabled and there are enough licenses for each user. Microsoft Entra ID doesn't allow risky users to register for MFA, so to avoid locking them out of the system this policy is only available to organizations where every user is already registered for MFA. 
+This policy targets Microsoft Entra ID P2 tenants where security defaults aren't enabled and there are enough licenses for each user. Microsoft doesn't allow risky users to register for MFA. To avoid locking out users, this policy is only available to organizations where every user is already registered for MFA. 
 
-## How do I see the effects?
+## How do I see the effects of these policies?
 
 Administrators can look at the Policy impact on sign-ins section to see a quick summary of the effect of the policy in their environment.
 
@@ -86,7 +88,7 @@ Administrators can go deeper and look through the Microsoft Entra sign-in logs t
 
 ## What is Conditional Access?
 
-Conditional Access is a Microsoft Entra feature that allows organizations to enforce security requirements when accessing resources. Commonly it's used to enforce multifactor authentication, device configuration, or network location requirements.
+Conditional Access is a Microsoft Entra feature that allows organizations to enforce security requirements when accessing resources. Conditional Access is commonly used to enforce multifactor authentication, device configuration, or network location requirements.
 
 These policies can be thought of as logical if then statements.
 
@@ -96,6 +98,10 @@ These policies can be thought of as logical if then statements.
 ## What if I want to make more changes?
 
 Administrators might choose to make further changes to these policies by duplicating them using the **Duplicate** button in the policy list view. This new policy can be configured in the same way as any other Conditional Access policy with starting from a Microsoft recommended position.
+
+## What if I use a different solution for multifactor authentication?
+
+Multifactor authentication completed via federation or the recently announced external authentication methods satisfies the requirements of the managed policy.
 
 ## Next steps
 

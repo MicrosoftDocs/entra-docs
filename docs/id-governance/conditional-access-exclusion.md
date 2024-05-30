@@ -93,13 +93,12 @@ Let's cover two examples where you can use access reviews to manage exclusions i
 
 ## Example 1: Access review for users accessing from blocked countries/regions
 
-Let's say you have a Conditional Access policy that blocks access from certain countries/regions. It includes a group that is excluded from the policy. Here's
-a recommended access review where members of the group are reviewed.
+Let's say you have a Conditional Access policy that blocks access from certain countries/regions. It includes a group that is excluded from the policy. Here's a recommended access review where members of the group are reviewed.
 
 ![Create an access review pane for example 1](./media/conditional-access-exclusion/create-access-review-1.png)
 
 > [!NOTE] 
-> A Global administrator or User administrator role is required to create access reviews. For a step by step guide on creating an access review, see: [Create an access review of groups and applications](create-access-review.md).
+> At least the Identity Governance Administrator, or User Administrator role, is required to create access reviews. For a step by step guide on creating an access review, see: [Create an access review of groups and applications](create-access-review.md).
 
 1. The review happens every week.
 
@@ -107,8 +106,7 @@ a recommended access review where members of the group are reviewed.
 
 1. All members of this group are in scope for the review.
 
-1. Each user needs to self-attest that they still need access from these blocked countries/regions, therefore they still need to be a member of the
-    group.
+1. Each user needs to self-attest that they still need access from these blocked countries/regions, therefore they still need to be a member of the group.
 
 1. If the user doesn't respond to the review request, they're automatically removed from the group, and no longer has access to the tenant while traveling to these countries/regions.
 
@@ -117,8 +115,7 @@ a recommended access review where members of the group are reviewed.
 
 ## Example 2: Access review for users accessing with legacy authentication
 
-Let's say you have a Conditional Access policy that blocks access for users using legacy authentication and older client versions and it includes a group
-that is excluded from the policy. Here's a recommended access review where members of the group are reviewed.
+Let's say you have a Conditional Access policy that blocks access for users using legacy authentication and older client versions and it includes a group that is excluded from the policy. Here's a recommended access review where members of the group are reviewed.
 
 ![Create an access review pane for example 2](./media/conditional-access-exclusion/create-access-review-2.png)
 

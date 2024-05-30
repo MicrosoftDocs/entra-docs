@@ -59,7 +59,7 @@ During app registration, define these parameters:
 
 By default, the application registration portal recommends that you use the resource URI `api://{clientId}`. This URI is unique but not human readable. If you change the URI, make sure the new value is unique. The application registration portal will ensure that you use a [configured publisher domain](howto-configure-publisher-domain.md).
 
-To client applications, scopes show up as _delegated permissions_ and app roles show up as _application permissions_ for your web API.
+To client applications, scopes show up as *delegated permissions* and app roles show up as *application permissions* for your web API.
 
 Scopes also appear on the consent window that's presented to users of your app. Therefore, provide the corresponding strings that describe the scope:
 
@@ -70,7 +70,7 @@ App roles cannot be consented to by a user (as they're used by an application th
 
 ### Expose delegated permissions (scopes)
 
-To expose delegated permissions, or _scopes_, follow the steps in [Configure an application to expose a web API](quickstart-configure-app-expose-web-apis.md).
+To expose delegated permissions, or *scopes*, follow the steps in [Configure an application to expose a web API](quickstart-configure-app-expose-web-apis.md).
 
 If you're following along with the web API scenario described in this set of articles, use these settings:
 
@@ -88,7 +88,7 @@ If you're following along with the web API scenario described in this set of art
 
 ### If your web API is called by a service or daemon app
 
-Expose _application permissions_ instead of delegated permissions if your API should be accessed by daemons, services, or other non-interactive (by a human) applications. Because daemon- and service-type applications run unattended and authenticate with their own identity, there is no user to "delegate" their permission.
+Expose *application permissions* instead of delegated permissions if your API should be accessed by daemons, services, or other non-interactive (by a human) applications. Because daemon- and service-type applications run unattended and authenticate with their own identity, there is no user to "delegate" their permission.
 
 
 #### Expose application permissions (app roles)
@@ -101,7 +101,7 @@ In the **Create app role** pane under **Allowed member types**, select **Applica
 
 App roles are the mechanism an application developer uses to expose their app's permissions. Your web API's code should check for app roles in the access tokens it receives from callers.
 
-To add another layer of security, a Microsoft Entra tenant administrator can configure their tenant so the Microsoft identity platform issues security tokens _only_ to the client apps they've approved for API access.
+To add another layer of security, a Microsoft Entra tenant administrator can configure their tenant so the Microsoft identity platform issues security tokens *only* to the client apps they've approved for API access.
 
 To increase security by restricting token issuance only to client apps that have been assigned app roles:
 
@@ -114,7 +114,7 @@ To increase security by restricting token issuance only to client apps that have
 Microsoft Entra ID will now check for app role assignments of client applications that request access tokens for your web API. If a client app hasn't been assigned any app roles, Microsoft Entra ID returns an error message to the client similar to `_invalid_client: AADSTS501051: Application \<application name\> isn't assigned to a role for the \<web API\>_`.
 
 > [!WARNING]
-> **DO NOT use AADSTS error codes** or their message strings as literals in your application's code. The "AADSTS" error codes and the error message strings returned by Microsoft Entra ID are _not immutable_, and may be changed by Microsoft at any time and without your knowledge. If you make branching decisions in your code based on the values of either the AADSTS codes or their message strings, you put your application's functionality and stability at risk.
+> **DO NOT use AADSTS error codes** or their message strings as literals in your application's code. The "AADSTS" error codes and the error message strings returned by Microsoft Entra ID are *not immutable*, and may be changed by Microsoft at any time and without your knowledge. If you make branching decisions in your code based on the values of either the AADSTS codes or their message strings, you put your application's functionality and stability at risk.
 
 ## Next step
 

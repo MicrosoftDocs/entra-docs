@@ -88,7 +88,7 @@ The claims mapping in the following example requires that you configure the toke
   "attestations": {
     "idTokens": [
       {
-        "clientId": "8d5b446e-22b2-4e01-bb2e-9070f6b20c90",
+        "clientId": "00001111-aaaa-2222-bbbb-3333cccc4444",
         "configuration": "https://didplayground.b2clogin.com/didplayground.onmicrosoft.com/B2C_1_sisu/v2.0/.well-known/openid-configuration",
         "redirectUri": "vcclient://openid/",
         "scope": "openid profile email",

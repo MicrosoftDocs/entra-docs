@@ -105,7 +105,7 @@ procedureSection:
                     "approvalId": null,
                     "customData": null,
                     "action": "adminAssign",
-                    "principalId": "3fbd929d-8c56-4462-851e-0eb9a7b3a2a5",
+                    "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
                     "roleDefinitionId": "8424c6f0-a189-499e-bbd0-26c1753c96d4",
                     "directoryScopeId": "/",
                     "appScopeId": null,
@@ -117,7 +117,7 @@ procedureSection:
                         "device": null,
                         "user": {
                             "displayName": null,
-                            "id": "3fbd929d-8c56-4462-851e-0eb9a7b3a2a5"
+                            "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee"
                         }
                     },
                     "scheduleInfo": {
@@ -147,7 +147,7 @@ procedureSection:
 
         {
             "action": "selfActivate",
-            "principalId": "071cc716-8147-4397-a5ba-b2105951cc0b",
+            "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
             "roleDefinitionId": "8424c6f0-a189-499e-bbd0-26c1753c96d4",
             "directoryScopeId": "/",
             "justification": "I need access to the Attribute Administrator role to manage attributes to be assigned to restricted AUs",
@@ -180,7 +180,7 @@ procedureSection:
             "approvalId": null,
             "customData": null,
             "action": "selfActivate",
-            "principalId": "071cc716-8147-4397-a5ba-b2105951cc0b",
+            "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
             "roleDefinitionId": "8424c6f0-a189-499e-bbd0-26c1753c96d4",
             "directoryScopeId": "/",
             "appScopeId": null,

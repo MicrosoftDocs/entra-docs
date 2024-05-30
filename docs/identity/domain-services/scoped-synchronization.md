@@ -39,7 +39,7 @@ By default, all users and groups from a Microsoft Entra directory are synchroniz
 
 If only a few groups of users need to access the managed domain, you can select **Filter by group entitlement** to synchronize only those groups. This scoped synchronization is only group-based. When you configure group-based scoped synchronization, only the user accounts that belong to the groups you specify are synchronized to the managed domain. Nested groups aren't synchronized; only the groups you specify get synchronized.
 
-You can change the synchronization scope before or after you create the managed domain. The scope of synchronization is defined by a service principal with the application identifier 2565bd9d-da50-47d4-8b85-4c97f669dc36. To prevent scope loss, don't delete or change the service principal. If it is accidentally deleted, the synchronization scope can't be recovered. 
+You can change the synchronization scope before or after you create the managed domain. The scope of synchronization is defined by a service principal with the application identifier `2565bd9d-da50-47d4-8b85-4c97f669dc36`. To prevent scope loss, don't delete or change the service principal. If it is accidentally deleted, the synchronization scope can't be recovered. 
 
 Keep in mind the following caveats if you change the synchronization scope:
 

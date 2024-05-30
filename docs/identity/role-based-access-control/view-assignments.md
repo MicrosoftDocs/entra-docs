@@ -157,7 +157,7 @@ Response
 HTTP/1.1 200 OK
 {
     "id": "CtRxNqwabEKgwaOCHr2CGJIiSDKQoTVJrLE9etXyrY0-1",
-    "principalId": "ab2e1023-bddc-4038-9ac1-ad4843e7e539",
+    "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
     "roleDefinitionId": "3671d40a-1aac-426c-a0c1-a3821ebd8218",
     "directoryScopeId": "/"
 }

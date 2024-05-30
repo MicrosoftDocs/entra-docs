@@ -59,15 +59,14 @@ SHA for this scenario supports SP and IdP initiated flows. The following image i
 Prior BIG-IP experience isn't necessary, but you need:
 
 - An [Azure free account](https://azure.microsoft.com/free/active-directory/), or a higher-tier subscription
-- A BIG-IP or [deploy a BIG-IP Virtual Edition (VE) in
-    Azure](./f5-bigip-deployment-guide.md)
+- A BIG-IP or [deploy a BIG-IP Virtual Edition (VE) in Azure](./f5-bigip-deployment-guide.md)
 - Any of the following F5 BIG-IP licenses:
   - F5 BIG-IP® Best bundle
   - F5 BIG-IP Access Policy Manager™ (APM) standalone license
   - F5 BIG-IP Access Policy Manager™ (APM) add-on license on a BIG-IP F5 BIG-IP® Local Traffic Manager™ (LTM)
   - 90-day BIG-IP product [Free Trial](https://www.f5.com/trial/big-ip-trial.php)
 - User identities [synchronized](~/identity/hybrid/connect/how-to-connect-sync-whatis.md) from an on-premises directory to Microsoft Entra ID
-- One of the following roles: Global Administrator, Cloud Application Administrator, or Application Administrator.
+- One of the following roles: Cloud Application Administrator, or Application Administrator.
 - An [SSL Web certificate](./f5-bigip-deployment-guide.md#ssl-profile) for publishing services over HTTPS, or use default BIG-IP certificates while testing
 - A header-based application or [set up a simple IIS header app](/previous-versions/iis/6.0-sdk/ms525396(v=vs.90)) for testing
 - A user directory that supports LDAP, such as Windows Active Directory Lightweight Directory Services (AD LDS), OpenLDAP etc.

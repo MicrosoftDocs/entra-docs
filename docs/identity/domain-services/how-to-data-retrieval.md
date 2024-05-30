@@ -53,13 +53,13 @@ To add a new user, follow these steps:
 
 The user is created and added to your Microsoft Entra organization.
 
-To read or update a user, search for and select the user such as, _Mary Parker_. Change any property and click **Save**. 
+To read or update a user, search for and select the user such as, *Mary Parker*. Change any property and click **Save**. 
 
 ### Delete a user
 
 To delete a user, follow these steps:
 
-1. Search for and select the user you want to delete from your Microsoft Entra tenant. For example, _Mary Parker_.
+1. Search for and select the user you want to delete from your Microsoft Entra tenant. For example, *Mary Parker*.
 
 1. Select **Delete user**.
 

@@ -3,11 +3,11 @@ title: Learn about Universal Conditional Access through Global Secure Access
 description: Learn about how Microsoft Entra Internet Access and Microsoft Entra Private Access secures access to your resources through Conditional Access.
 ms.service: global-secure-access
 ms.topic: conceptual
-ms.date: 07/27/2023
+ms.date: 05/09/2024
 ms.author: kenwith
 author: kenwith
 manager: amycolannino
-ms.reviewer: mamkumar
+ms.reviewer: smistry
 ---
 # Universal Conditional Access through Global Secure Access
 

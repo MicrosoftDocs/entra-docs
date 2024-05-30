@@ -5,13 +5,14 @@ author: barclayn
 manager: amycolannino
 ms.service: entra-id
 ms.topic: include
-ms.date: 09/19/2023
+ms.date: 05/10/2024
 ms.author: barclayn
 ms.custom: include file
 ---
 
 
-Microsoft Entra ID may include preview, beta, or other prerelease features, services, software, or regions offered by Microsoft to obtain customer feedback ("Previews"). Previews are made available to you on the condition that you agree to these terms of use, which are outlined in the overall [Microsoft product terms for online services](https://www.microsoft.com/licensing/terms/product/ForOnlineServices/all).
+Microsoft Entra ID may include preview, beta, or other prerelease features, services, software, or regions offered by Microsoft to obtain customer feedback ("Previews"). Previews are made available to you under the terms applicable to previews, which are outlined in the overall Microsoft product terms for 
+[online services](https://www.microsoft.com/licensing/terms/product/ForOnlineServices/all).
 
 Microsoft may roll out previews in phases to give Microsoft and customers the opportunity to evaluate and understand potential new features. 
 

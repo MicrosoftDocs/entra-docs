@@ -149,12 +149,12 @@ To verify that the agent was installed, look for the following services on the s
 1. Run the following script. Replace the parameters with your new user account and its password.
 
     ```powershell
-    AdHealthAddsAgentSetup.exe /quiet
+    AdHealthAddsAgentSetup.exe /quiet AddsMonitoringEnabled=1 SkipRegistration=1
     Start-Sleep 30
     $userName = "NEWUSER@DOMAIN"
     $secpasswd = ConvertTo-SecureString "PASSWORD" -AsPlainText -Force
     $myCreds = New-Object System.Management.Automation.PSCredential ($userName, $secpasswd)
-    import-module "C:\Program Files\Azure Ad Connect Health Adds Agent\PowerShell\AdHealthAdds"
+    import-module "C:\Program Files\Microsoft Azure AD Connect Health Agent\Modules\AdHealthConfiguration"
      
     Register-MicrosoftEntraConnectHealthAgent -Credential $myCreds
     ```

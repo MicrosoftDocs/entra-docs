@@ -27,8 +27,6 @@ Watch the following video to learn how to view what resources users have access 
 
 This report enables you to list all of the users who are assigned to an access package.
 
-**Prerequisite role:** Global Administrator or Identity Governance Administrator
-
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
 1. Browse to **Identity governance** > **Entitlement management** > **Access packages**.
@@ -42,8 +40,6 @@ This report enables you to list all of the users who are assigned to an access p
 ## View access packages for a user
 
 This report enables you to list all of the access packages a user can request and the access packages that are currently assigned to the user.
-
-**Prerequisite role:** Global Administrator or Identity Governance Administrator
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
@@ -66,8 +62,6 @@ This report enables you to list all of the access packages a user can request an
 ## View resource assignments for a user
 
 This report enables you to list the resources currently assigned to a user in entitlement management. This report is for resources managed with entitlement management. The user might have access to other resources in your directory outside of entitlement management.
-
-**Prerequisite role:** Global administrator or Identity Governance Administrator
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
@@ -118,8 +112,6 @@ If access wasn't assigned, then Microsoft Entra ID writes an audit record for th
 When the user's access package assignment expires, is canceled by the user, or removed by an administrator, then Microsoft Entra ID writes an audit record for the `EntitlementManagement` category with **Activity** of `Remove access package assignment`.
 
 ## Download list of connected organizations
-
-**Prerequisite role**: *Global Administrator* or *Identity Governance Administrator*
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 

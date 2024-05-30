@@ -16,6 +16,8 @@ ms.custom: it-pro, has-azure-ad-ps-ref
 
 # Add Google as an identity provider (preview)
 
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
 By setting up federation with Google, you allow customers to sign in to your applications with their own Google accounts. After you add Google as one of your user flow's sign-in options, customers can sign up and sign in to your application with a Google account. (Learn more about [authentication methods and identity providers for customers](concept-authentication-methods-customers.md).)
 
 > [!TIP]
@@ -92,8 +94,8 @@ To configure Google federation by using PowerShell, follow these steps:
    Import-Module Microsoft.Graph.Identity.SignIns
    $params = @{
    "@odata.type" = "microsoft.graph.socialIdentityProvider"
-   displayName = "Login with Amazon"
-   identityProviderType = "Amazon"
+   displayName = "Login with Google"
+   identityProviderType = "Google"
    clientId = "00001111-aaaa-2222-bbbb-3333cccc4444"
    clientSecret = "000000000000"
    }

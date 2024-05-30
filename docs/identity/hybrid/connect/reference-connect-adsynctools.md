@@ -208,8 +208,7 @@ Convert Base64 ImmutableId (SourceAnchor) to GUID value
 ConvertFrom-ADSyncToolsImmutableID [-Value] <String> [<CommonParameters>]
 ```
 ### DESCRIPTION
-Converts value of the ImmutableID from Base64 string and returns a GUID value
-In case Base64 string cannot be converted to GUID, returns a Byte Array.
+Converts value of the ImmutableID from Base64 string and returns a GUID value In case Base64 string cannot be converted to GUID, returns a Byte Array.
 ### EXAMPLES
 #### EXAMPLE 1
 ```
@@ -242,8 +241,7 @@ Convert ImmutableId to Microsoft Entra Connector DistinguishedName
 ConvertTo-ADSyncToolsAadDistinguishedName [-ImmutableId] <String> [<CommonParameters>]
 ```
 ### DESCRIPTION
-Takes an ImmutableId (SourceAnchor) like QF5HMK7n80qvdYsUPIHa9Q== and converts to the respective
-Microsoft Entra Connector DistinguishedName value, e.g.
+Takes an ImmutableId (SourceAnchor) like QF5HMK7n80qvdYsUPIHa9Q== and converts to the respective Microsoft Entra Connector DistinguishedName value, e.g.
 CN={514635484D4B376E38307176645973555049486139513D3D}
 ### EXAMPLES
 #### EXAMPLE 1
@@ -342,8 +340,7 @@ Export Microsoft Entra Disconnector objects
 Export-ADSyncToolsAadDisconnectors [[-SyncObjectType] <Object>] [<CommonParameters>]
 ```
 ### DESCRIPTION
-Executes CSExport tool to export all Disconnectors to XML and then takes this XML output and converts it to a CSV file
-with: UserPrincipalName, Mail, SourceAnchor, DistinguishedName, CsObjectId, ObjectType, ConnectorId, CloudAnchor
+Executes CSExport tool to export all Disconnectors to XML and then takes this XML output and converts it to a CSV file with: UserPrincipalName, Mail, SourceAnchor, DistinguishedName, CsObjectId, ObjectType, ConnectorId, CloudAnchor
 ### EXAMPLES
 #### EXAMPLE 1
 ```
@@ -427,8 +424,7 @@ This cmdlet creates the `<filename>` containing all synced Mail-Enabled PublicFo
     
 ## Export-ADSyncToolsHybridAadJoinReport
 ### SYNOPSIS
-Generates a report of certificates stored in Active Directory Computer objects, specifically, 
-certificates issued by the Microsoft Entra hybrid join feature.
+Generates a report of certificates stored in Active Directory Computer objects, specifically, certificates issued by the Microsoft Entra hybrid join feature.
 ### SYNTAX
 #### SingleObject
 ```
@@ -439,14 +435,8 @@ Export-ADSyncToolsHybridAadJoinReport [-DN] <String> [[-Filename] <String>] [<Co
 Export-ADSyncToolsHybridAadJoinReport [-OU] <String> [[-Filename] <String>] [<CommonParameters>]
 ```
 ### DESCRIPTION
-This tool checks for all certificates present in UserCertificate property of a Computer object in AD and, for each 
-non-expired certificate present, validates if the certificate was issued for the Microsoft Entra hybrid join feature 
-(that is, Subject Name is CN={ObjectGUID}).
-Before version 1.4, Microsoft Entra Connect would synchronize to Microsoft Entra any Computer that contained at least one certificate but 
-in Microsoft Entra Connect version 1.4 and later, ADSync engine can identify Microsoft Entra hybrid join certificates and will "cloudfilter" 
-(exclude) the computer object from synchronizing to Microsoft Entra ID unless there's a valid Microsoft Entra hybrid join certificate present.
-Microsoft Entra Device objects that were already synchronized to AD but do not have a valid Microsoft Entra hybrid join certificate will be 
-deleted from Microsoft Entra ID (CloudFiltered=TRUE) by Microsoft Entra Connect.
+This tool checks for all certificates present in UserCertificate property of a Computer object in AD and, for each non-expired certificate present, validates if the certificate was issued for the Microsoft Entra hybrid join feature (that is, Subject Name is CN={ObjectGUID}). Before version 1.4, Microsoft Entra Connect would synchronize to Microsoft Entra any Computer that contained at least one certificate but in Microsoft Entra Connect version 1.4 and later, ADSync engine can identify Microsoft Entra hybrid join certificates and will "cloudfilter" (exclude) the computer object from synchronizing to Microsoft Entra ID unless there's a valid Microsoft Entra hybrid join certificate present. Microsoft Entra Device objects that were already synchronized to AD but do not have a valid Microsoft Entra hybrid join certificate will be deleted from Microsoft Entra ID (CloudFiltered=TRUE) by Microsoft Entra Connect.
+
 ### EXAMPLES
 #### EXAMPLE 1
 ```
@@ -517,11 +507,11 @@ Exports internal ADSync objects from Metaverse and associated connected objects 
 ### EXAMPLES
 #### EXAMPLE 1
 ```
-Export-ADSyncToolsObjects -ObjectId '9D220D58-0700-E911-80C8-000D3A3614C0' -Source Metaverse
+Export-ADSyncToolsObjects -ObjectId 'aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb' -Source Metaverse
 ```
 #### EXAMPLE 2
 ```
-Export-ADSyncToolsObjects -ObjectId '9e220d58-0700-e911-80c8-000d3a3614c0' -Source ConnectorSpace
+Export-ADSyncToolsObjects -ObjectId 'bbbbbbbb-1111-2222-3333-cccccccccccc' -Source ConnectorSpace
 ```
 #### EXAMPLE 3
 ```
@@ -877,8 +867,7 @@ Helper function to get which Azure environment the user belongs.
 Get-ADSyncToolsTenantAzureEnvironment [-Credential] <PSCredential> [<CommonParameters>]
 ```
 ### DESCRIPTION
-This function will call Oauth discovery endpoint to get CloudInstance and 
-tenant_region_scope to determine the Azure environment.
+This function will call Oauth discovery endpoint to get CloudInstance and tenant_region_scope to determine the Azure environment.
 https://login.microsoftonline.com/{tenant}/.well-known/openid-configuration
 
 ### EXAMPLES
@@ -1007,8 +996,7 @@ Import ImmutableID from Microsoft Entra ID
 Import-ADSyncToolsSourceAnchor [-Output] <String> [-IncludeSyncUsersFromRecycleBin] [<CommonParameters>]
 ```
 ### DESCRIPTION
-Generates a file with all Microsoft Entra ID synchronized users containing the ImmutableID value in GUID format
-Requirements: MSOnline PowerShell Module
+Generates a file with all Microsoft Entra ID synchronized users containing the ImmutableID value in GUID format Requirements: MSOnline PowerShell Module
 ### EXAMPLES
 #### EXAMPLE 1
 ```
@@ -1107,8 +1095,7 @@ Remove-ADSyncToolsAadObject [-Credential] <PSCredential> [-SourceAnchor] <Object
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 ### DESCRIPTION
-Deletes from Microsoft Entra ID a synced object(s) based on SourceAnchor and ObjecType in batches of 10 objects
-The CSV file can be generated using Export-ADSyncToolsAadDisconnectors
+Deletes from Microsoft Entra ID a synced object(s) based on SourceAnchor and ObjecType in batches of 10 objects The CSV file can be generated using Export-ADSyncToolsAadDisconnectors
 ### EXAMPLES
 #### EXAMPLE 1
 ```
@@ -1197,8 +1184,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### INPUTS
 InputCsvFilename must point to a CSV file with at least 2 columns: SourceAnchor, SyncObjectType
 ### OUTPUTS
-Shows results from ExportDeletions operation
-DISCLAIMER: Other than User objects that have a Recycle Bin, any other object types DELETED with this function cannot be RECOVERED!
+Shows results from ExportDeletions operation DISCLAIMER: Other than User objects that have a Recycle Bin, any other object types DELETED with this function cannot be RECOVERED!
 
 ## Remove-ADSyncToolsAadPublicFolders
 ### SYNOPSIS
@@ -1278,12 +1264,8 @@ Remove-ADSyncToolsExpiredCertificates [-TargetOU] <String> [[-BackupOnly] <Boole
  [<CommonParameters>]
 ```
 ### DESCRIPTION
-This script takes all the objects from a target Organizational Unit in your Active Directory domain - filtered by Object Class (User/Computer) 
-and deletes all expired certificates present in the UserCertificate attribute.
-By default (BackupOnly mode) it will only backup expired certificates to a file and not do any changes in AD.
-If you use -BackupOnly $false then any Expired Certificate present in UserCertificate attribute for these objects will be removed from Active Directory after being copied to file.
-Each certificate will be backed up to a separated filename: ObjectClass_ObjectGUID_CertThumprint.cer
-The script will also create a log file in CSV format showing all the users with certificates that either are valid or expired including the actual action taken (Skipped/Exported/Deleted).
+This script takes all the objects from a target Organizational Unit in your Active Directory domain - filtered by Object Class (User/Computer) and deletes all expired certificates present in the UserCertificate attribute. By default (BackupOnly mode) it will only backup expired certificates to a file and not do any changes in AD. If you use `-BackupOnly $false` then any Expired Certificate present in UserCertificate attribute for these objects will be removed from Active Directory after being copied to file. Each certificate will be backed up to a separated filename: `ObjectClass_ObjectGUID_CertThumprint.cer`. The script will also create a log file in CSV format showing all the users with certificates that either are valid or expired including the actual action taken (Skipped/Exported/Deleted).
+
 ### EXAMPLES
 #### EXAMPLE 1
 Check all users in target OU - Expired Certificates will be copied to separated files and no certificates will be removed
@@ -1342,8 +1324,7 @@ Repair Microsoft Entra Connect AutoUpgrade State
 Repair-ADSyncToolsAutoUpgradeState
 ```
 ### DESCRIPTION
-Fixes an issue with AutoUpgrade introduced in build 1.1.524 (May 2017) which disables the online checking 
-of new versions while AutoUpgrade is enabled.
+Fixes an issue with AutoUpgrade introduced in build 1.1.524 (May 2017) which disables the online checking of new versions while AutoUpgrade is enabled.
 ### EXAMPLES
 #### EXAMPLE 1
 ```
@@ -1778,9 +1759,10 @@ Update-ADSyncToolsSourceAnchor [[-DistinguishedName] <String>] [-ImmutableIdGUID
  [-Output] <String> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 ### DESCRIPTION
-Updates users with the new ConsistencyGuid (ImmutableId) value taken from the ConsistencyGuid Report 
-This function supports the WhatIf switch
-Note: ConsistencyGuid Report must be imported with Tab delimiter
+Updates users with the new ConsistencyGuid (ImmutableId) value taken from the ConsistencyGuid Report. This function supports the `-WhatIf` switch.
+
+Note: ConsistencyGuid Report must be imported with Tab delimiter.
+
 ### EXAMPLES
 #### EXAMPLE 1
 ```

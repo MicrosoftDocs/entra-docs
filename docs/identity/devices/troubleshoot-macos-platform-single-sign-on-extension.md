@@ -93,11 +93,11 @@ Ensure during the MDM configuration that the password complexity requirements ar
 
 ### Long running operations
 
-### [macOS 14](#tab/macOS14)
+#### [macOS 14](#tab/macOS14)
 
 If the device registration fails through the Settings application, the Device Registration popup will reappear after about 10 minutes, and you can try again.
 
-### [macOS 13](#tab/macOS13)
+#### [macOS 13](#tab/macOS13)
 
 The device registration can take a few minutes to complete. If the device registration fails, wait a few minutes and try again if prompted.
 
@@ -110,6 +110,10 @@ If you cancel the registration process by closing the SSO auth prompt dialog, yo
 ### Per user MFA causes password sync failure
 
 If a user has per user MFA enabled on the account where PSSO is being set up, you won't be able to enter Microsoft Entra ID credentials in the next steps, causing an error. To avoid this error, admins should ensure they have Conditional Access MFA enabled in accordance with [Microsoft Entra ID recommendations](../monitoring-health/recommendation-turn-off-per-user-mfa.md). This suppresses MFA during enrollment so that password synchronization can be completed successfully.
+
+### PSSO reregistration required after password reset initiated from FileVault recovery or MDM-driven recovery
+
+Because Secure Enclave keys are protected by your local account password, password resets that occur without providing this password (e.g., FileVault or MDM-based recovery) will reset the Secure Enclave. Resetting the Secure Enclave renders keys previously stored for this account inaccessible. Devices whose Secure Enclave keys have been lost must be reregistered to use Platform SSO.
 
 ## Report an issue
 
@@ -146,8 +150,8 @@ We'd love to hear your feedback. You should include the following information:
 
 If a user has insufficient permissions to complete Microsoft Entra ID join and registration, no error message is shown. For the device join and registration to complete successfully, the user initiating the registration flow must be allowlisted.
 
-1. In the Microsoft Intune admin center, navigate to **Devices** > **Device Settings**.
-1. Under **Microsoft Entra ID join and registration settings**, ensure that the **All** option is selected in the toggle menu.
+1. In the [Microsoft Entra admin center](https://entra.microsoft.com/), navigate to **Identity** > **Devices** > **Overview** > **Device Settings**.
+1. Under **Microsoft Entra ID join and registration settings**, ensure that the **All** option is selected in the toggle menu for **Users may join devices to Microsoft Entra**.
 1. Select **Save** to apply the changes.
 
 ### Troubleshoot Passkey issues
@@ -156,6 +160,49 @@ Platform Credential as Passkey option is only available if Secure Enclave is con
 
 1. Ensure that your admin has set up your device with Secure Enclave as the authentication method, and has [enabled passkeys (FIDO2) for your organization](/entra/identity/authentication/how-to-enable-passkey-fido2#enable-passkey-authentication-method).
 1. As a user, check that you have enabled Company Portal as a passkey provider in your device settings. Navigate to your **Settings** app, **Passwords** and **Password options**, and ensure that **Company Portal** is enabled.
+
+### Troubleshoot Google Chrome SSO issues
+
+If a user has the [Microsoft Single Sign On](https://chromewebstore.google.com/detail/microsoft-single-sign-on/ppnbnpeolgkicgegkbkbjmhlideopiji?pli=1) extension for Google Chrome installed then their Chrome browser should be able communicate with the Microsoft SSO broker for both a SSO user experience and to work with device-based Conditional Access policies. If users are not able to pass device-based Conditional Access policies in Google Chrome then there may be an issue with how the Company Portal application was installed, which can prevent Chrome from communicating with the SSO broker. You should take the following steps to remediate this issue:
+
+1. Open the **Applications** folder on the Mac
+1. Right click the **Company Portal** application and choose **Move to Trash**
+1. Download the latest version of the Company Portal installer from [https://go.microsoft.com/fwlink/?linkid=853070](https://go.microsoft.com/fwlink/?linkid=853070)
+1. Freshly install Company Portal using the downloaded **CompanyPortal-Installer.pkg**
+
+Validate that the issue has been resolved by checking for the **existence of this file**: `~/Library/Application\ Support/Google/Chrome/NativeMessagingHosts/com.microsoft.browsercore.json`
+
+```console
+ls ~/Library/Application\ Support/Google/Chrome/NativeMessagingHosts/com.microsoft.browsercore.json
+```
+
+Alternatively, you can deploy the following script via your MDM or other automation tools to copy the JSON file to the correct location. This script should be run in the the user's context for each user who experiences the Chrome SSO issue:
+
+```zsh
+#!/usr/bin/env zsh
+# Copy over Browser Core json file to the right location
+# If the folder doesn't exist, create it
+
+# For Google Chrome (user-specific, default path)
+
+if [ ! -d ~/Library/Application\ Support/Google/Chrome/NativeMessagingHosts ]; then
+  mkdir ~/Library/Application\ Support/Google/Chrome/NativeMessagingHosts
+fi
+
+cp /Applications/Company\ Portal.app/Contents/Resources/com.microsoft.browsercore.json ~/Library/Application\ Support/Google/Chrome/NativeMessagingHosts/
+
+# For Edge (user-specific, default path, not channel specific)
+# See: https://learn.microsoft.com/en-us/microsoft-edge/extensions-chromium/developer-guide/native-messaging?tabs=v3%2Cmacos
+
+if [ ! -d ~/Library/Application\ Support/Microsoft\ Edge/NativeMessagingHosts ]; then
+  mkdir ~/Library/Application\ Support/Microsoft\ Edge/NativeMessagingHosts
+fi
+
+cp /Applications/Company\ Portal.app/Contents/Resources/com.microsoft.browsercore.json ~/Library/Application\ Support/Microsoft\ Edge/NativeMessagingHosts/
+```
+
+> [!IMPORTANT]
+> **Note: This issue is due to a bug with how Company Portal is installed or updated under certain circumstances. This issue will be resolved in a future update to Company Portal.**
 
 ## See also
 

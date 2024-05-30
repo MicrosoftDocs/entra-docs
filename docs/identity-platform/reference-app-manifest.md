@@ -217,6 +217,7 @@ Example:
 
 User-defined URIs that uniquely identify a web app within its Microsoft Entra tenant or verified customer owned domain.
 When an application is used as a resource app, the identifierUri value is used to uniquely identify and access the resource.
+For a public client application it cannot have value for identifierUris.
 
 [!INCLUDE [active-directory-identifierUri](~/includes/entra-identifier-uri-patterns.md)]
 
@@ -331,7 +332,7 @@ Example:
 | :--- | :--- |
 | oauth2AllowImplicitFlow | Boolean |
 
-Specifies whether this web app can request OAuth2.0 implicit flow access tokens. The default is false. This flag is used for browser-based apps, like JavaScript single-page apps. To learn more, enter `OAuth 2.0 implicit grant flow` in the table of contents and see the topics about implicit flow.
+Specifies whether this web app can request OAuth2.0 implicit flow access tokens. The default is false. This flag is used for browser-based apps, like JavaScript single-page apps. To learn more, enter `OAuth 2.0 implicit grant flow` in the table of contents and see the topics about implicit flow. We, however, discourage the use of implicit grant even in SPAs and recommend using the [authorization code flow](./v2-oauth2-auth-code-flow.md) with PKCE.
 
 Example:
 
@@ -345,7 +346,7 @@ Example:
 | :--- | :--- |
 | oauth2AllowIdTokenImplicitFlow | Boolean |
 
-Specifies whether this web app can request OAuth2.0 implicit flow ID tokens. The default is false. This flag is used for browser-based apps, like JavaScript single-page apps.
+Specifies whether this web app can request OAuth2.0 implicit flow ID tokens. The default is false. This flag is used for browser-based apps, like JavaScript single-page apps. We, however, discourage the use of implicit grant even in SPAs and recommend using the [authorization code flow](./v2-oauth2-auth-code-flow.md) with PKCE.
 
 Example:
 

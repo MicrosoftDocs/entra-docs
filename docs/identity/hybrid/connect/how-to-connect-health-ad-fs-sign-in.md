@@ -89,8 +89,7 @@ For a full list of AD FS related errors that are populated in the sign-in report
 ***I am seeing “00000000-0000-0000-0000-000000000000” in the “User” section of a sign-in. What does that 
 mean?***
 If the sign-in failed and the attempted UPN does not match an existing UPN, the “User”, “Username”, and “User ID” 
-fields will be “00000000-0000-0000-0000-000000000000” and the “Sign-in Identifier” will be populated with 
-the attempted value the user entered. In these cases, the user attempting to sign-in does not exist.
+fields will be “00000000-0000-0000-0000-000000000000” and the “Sign-in Identifier” will be populated with the attempted value the user entered. In these cases, the user attempting to sign-in does not exist.
 
 ***How can I correlate my on-premises events to the Microsoft Entra sign-ins report?***
 The Microsoft Entra Connect Health agent for AD FS correlates event IDs from AD FS dependent on server version. The events will be available on the Security Log of the AD FS servers. 

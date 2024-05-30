@@ -42,10 +42,9 @@ For a demonstration of how to add a multi-stage approval to a request policy, wa
 
 Follow these steps to specify the approval settings for requests for the access package through a policy:
 
-**Prerequisite role:** Global administrator, Identity Governance Administrator, Catalog owner, or Access package manager
-
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
-
+    > [!TIP]
+    > Other least privilege roles that can complete this task include the Catalog owner and the Access Package assignment manager.
 1. Browse to **Identity governance** > **Entitlement management** > **Access packages**.
 
 1. On the **Access packages** page open an access package.

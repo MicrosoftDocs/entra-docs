@@ -50,7 +50,7 @@ To manage authentication methods for self-service password reset (SSPR), click *
 
 ## How policies work together
 
-Settings aren't synchronized between the policies, which allows administrators to manage each policy independently. Microsoft Entra ID respects the settings in all of the policies so a user who is enabled for an authentication method in _any_ policy can register and use that method. To prevent users from using a method, it must be disabled in all policies.
+Settings aren't synchronized between the policies, which allows administrators to manage each policy independently. Microsoft Entra ID respects the settings in all of the policies so a user who is enabled for an authentication method in *any* policy can register and use that method. To prevent users from using a method, it must be disabled in all policies.
 
 Let's walk through an example where a user who belongs to the Accounting group wants to register Microsoft Authenticator. The registration process first checks the Authentication methods policy. If the Accounting group is enabled for Microsoft Authenticator, the user can register it. 
 

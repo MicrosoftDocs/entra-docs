@@ -84,13 +84,13 @@ Permission | Setting explanation
 
 When a user registers an application, they're automatically added as an owner for the application. As an owner, they can manage the metadata of the application, such as the name and permissions that the app requests. They can also manage the tenant-specific configuration of the application, such as the single sign-on (SSO) configuration and user assignments. 
 
-An owner can also add or remove other owners. Unlike Global Administrators, owners can manage only the applications that they own.
+An owner can also add or remove other owners. Unlike those assigned at least the Application Administrator role, owners can manage only the applications that they own.
 
 ### Enterprise application owner permissions
 
 When a user adds a new enterprise application, they're automatically added as an owner. As an owner, they can manage the tenant-specific configuration of the application, such as the SSO configuration, provisioning, and user assignments. 
 
-An owner can also add or remove other owners. Unlike Global Administrators, owners can manage only the applications that they own.
+An owner can also add or remove other owners. Unlike those assigned at least the Application Administrator role, owners can manage only the applications that they own.
 
 ### Group owner permissions
 
@@ -177,5 +177,5 @@ Users can perform the following actions on owned groups.
 * To learn more about the **Guest user access restrictions** setting, see [Restrict guest access permissions in Microsoft Entra ID](~/identity/users/users-restrict-guest-permissions.md).
 * To learn more about how to assign Microsoft Entra administrator roles, see [Assign a user to administrator roles in Microsoft Entra ID](./how-subscriptions-associated-directory.yml).
 * To learn more about how resource access is controlled in Microsoft Azure, see [Understanding resource access in Azure](/azure/role-based-access-control/rbac-and-directory-admin-roles).
-* For more information on how Microsoft Entra ID relates to your Azure subscription, see [How Azure subscriptions are associated with Microsoft Entra ID](./how-subscriptions-associated-directory.yml).
+
 * [Manage users](./add-users.md).

@@ -7,12 +7,14 @@ ms.author: kengaderdus
 ms.service: entra-external-id 
 ms.subservice: customers
 ms.topic: concept-article
-ms.date: 04/29/2024
+ms.date: 05/11/2024
 
 #Customer intent: As a dev, devops, I want to learn how to use native authentication SDK attribute builder to build attribute variables for both built-in and custom attributes, so that I can use them in my app.
 ---
 
 # Native authentication SDK attribute builder
+
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
 In native authentication, the information you collect from the user during sign-up is configured in the user flow in the Microsoft Entra admin center. The name of the user attribute as it appears in the Microsoft Entra admin center is different from the variable name that you use when you reference it in your app. 
 
@@ -20,7 +22,7 @@ Fortunately, the native authentication SDK enables you to build the user attribu
 
 ## Build user attributes
 
-### [Android(Kotlin)](#tab/android-kotlin)
+### [Android (Kotlin)](#tab/android-kotlin)
 
 To build user attributes in the Android SDK:
 
@@ -66,7 +68,7 @@ To build user attributes in the Android SDK:
         }  
      ```
 
-### [iOS(Swift)](#tab/ios-swift)
+### [iOS (Swift)](#tab/ios-swift)
 
 To build user attributes in the iOS MSAL SDK:
 

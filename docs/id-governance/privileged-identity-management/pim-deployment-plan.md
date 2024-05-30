@@ -88,7 +88,9 @@ You can also set a start and end time for each type of assignment. This addition
 
 In case the role expires, you can **extend** or **renew** these assignments. 
 
-**We recommend** you keep zero permanently active assignments for roles other than the recommended [two break-glass emergency access accounts](~/identity/role-based-access-control/security-emergency-access.md), which should have the permanent Global Administrator role. 
+**We recommend** you keep zero permanently active assignments for roles other than your [emergency access accounts](~/identity/role-based-access-control/security-emergency-access.md).
+
+[!INCLUDE [emergency-access-accounts](../../includes/definitions/emergency-access-accounts.md)]
 
 ## Plan the project
 

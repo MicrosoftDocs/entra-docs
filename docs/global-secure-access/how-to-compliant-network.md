@@ -3,11 +3,11 @@ title: Enable compliant network check with Conditional Access
 description: Learn how to require known compliant network locations in order to connect to your secured resources with Conditional Access.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 03/19/2024
+ms.date: 05/09/2024
 ms.author: kenwith
 author: kenwith
 manager: amycolannino
-ms.reviewer: mamkumar
+ms.reviewer: smistry
 ---
 # Enable compliant network check with Conditional Access
 
@@ -91,7 +91,7 @@ The following example shows this type of policy. In addition, token theft replay
 
 ### User exclusions
 
-[!INCLUDE [conditional-access-recommended-exclusions](includes/conditional-access-recommended-exclusions.md)]
+[!INCLUDE [entra-policy-exclude-user](../includes/entra-policy-exclude-user.md)]
 
 ## Try your compliant network policy
 

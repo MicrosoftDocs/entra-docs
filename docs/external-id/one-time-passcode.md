@@ -17,6 +17,8 @@ ms.collection: M365-identity-device-management
 
 # Email one-time passcode authentication
 
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
+
 The email one-time passcode feature is a way to authenticate B2B collaboration users when they can't be authenticated through other means, such as Microsoft Entra ID, Microsoft account (MSA), or social identity providers. When a B2B guest user tries to redeem your invitation or sign in to your shared resources, they can request a temporary passcode, which is sent to their email address. Then they enter this passcode to continue signing in.
 
 :::image type="content" source="media/one-time-passcode/email-otp.png" alt-text="Diagram showing an overview of Email one-time passcode.":::

@@ -38,7 +38,7 @@ Make sure that the following prerequisites are in place:
 >Please visit the [Microsoft recommendations](/security/sdl/cryptographic-recommendations#security-protocol-algorithm-and-key-length-recommendations) for best practices for Microsoft Cryptographic involving algorithm choice, key length and data protection. Please make sure to use one of the recommended algorithms, key length and NIST approved curves.
 
 >[!IMPORTANT]
->As part of ongoing security improvements Azure/M365 endpoints are adding support for TLS1.3 and this process is expected to take a few months to cover the thousands of service endpoints across Azure/M365. This includes the Entra ID endpoint used by Microsoft Entra Certificate Based Authentication (CBA) *.certauth.login.microsoftonline.com & *.certauth.login.mcirosoftonline.us. TLS 1.3 is the latest version of the internet’s most deployed security protocol, which encrypts data to provide a secure communication channel between two endpoints. TLS 1.3 eliminates obsolete cryptographic algorithms, enhances security over older versions, and aims to encrypt as much of the handshake as possible. We highly recommend for developers to start testing TLS 1.3 in their applications and services.
+>As part of ongoing security improvements Azure/M365 endpoints are adding support for TLS1.3 and this process is expected to take a few months to cover the thousands of service endpoints across Azure/M365. This includes the Entra ID endpoint used by Microsoft Entra certificate-based authentication (CBA) *.certauth.login.microsoftonline.com & *.certauth.login.mcirosoftonline.us. TLS 1.3 is the latest version of the internet’s most deployed security protocol, which encrypts data to provide a secure communication channel between two endpoints. TLS 1.3 eliminates obsolete cryptographic algorithms, enhances security over older versions, and aims to encrypt as much of the handshake as possible. We highly recommend for developers to start testing TLS 1.3 in their applications and services.
 
 >[!NOTE]
 >When evaluating a PKI, it is important to review certificate issuance policies and enforcement. As mentioned, adding certificate authorities (CAs) to Microsoft Entra configuration allows certificates issued by those CAs to authenticate any user in Microsoft Entra ID. For this reason, it is important to consider how and when the CAs are allowed to issue certificates, and how they implement reusable identifiers. Where administrators need to ensure only a specific certificate is able to be used to authenticate a user, admins should exclusively use high-affinity bindings to achieve a higher level of assurance that only a specific certificate is able to authenticate the user. For more information, see [high-affinity bindings](concept-certificate-based-authentication-technical-deep-dive.md#understanding-the-username-binding-policy).
@@ -128,6 +128,8 @@ The following table and graphic show how to map information from the CA certific
 
 For more information, see [Understanding the certificate revocation process](./concept-certificate-based-authentication-technical-deep-dive.md#understanding-the-certificate-revocation-process).
 
+### Configure certification authorities using the Microsoft Graph APIs
+MS Graph APIs can be used to configure certificate authorities. Please follow the steps at [certificatebasedauthconfiguration MSGraph commands](/graph/api/resources/certificatebasedauthconfiguration?view=graph-rest-1.0) to update the Entra Certificate Authority trust store.
 
 ### Validate Certificate Authority configuration
 
@@ -488,7 +490,7 @@ To enable CBA and configure username bindings using Graph API, complete the foll
 
 1. Go to [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer).
 1. Select **Sign into Graph Explorer** and sign in to your tenant.
-1. Follow the steps to [consent to the _Policy.ReadWrite.AuthenticationMethod_ delegated permission](/graph/graph-explorer/graph-explorer-features#consent-to-permissions).
+1. Follow the steps to [consent to the *Policy.ReadWrite.AuthenticationMethod* delegated permission](/graph/graph-explorer/graph-explorer-features#consent-to-permissions).
 1. GET all authentication methods:
 
    ```http
@@ -557,7 +559,69 @@ To enable CBA and configure username bindings using Graph API, complete the foll
 
 1. You get a `204 No content` response code. Rerun the GET request to make sure the policies are updated correctly.
 1. Test the configuration by signing in with a certificate that satisfies the policy.
- 
+
+## Enable CBA using Microsoft Power Shell
+
+1. Open a power shell command window
+1. Connect to Microsoft Graph
+    ```powershell
+    Connect-MgGraph -Scopes "Policy.ReadWrite.AuthenticationMethod"
+    ```
+1. Create a variable for defining group for CBA users
+   ```powershell
+   $group = Get-MgGroup -Filter "displayName eq 'CBATestGroup'"
+   ```
+1. Define the request body
+    ```powershell
+    $body = @{
+    "@odata.type" = "#microsoft.graph.x509CertificateAuthenticationMethodConfiguration"
+    "id" = "X509Certificate"
+    "state" = "enabled"
+    "certificateUserBindings" = @(
+        @{
+            "@odata.type" = "#microsoft.graph.x509CertificateUserBinding"
+            "x509CertificateField" = "SubjectKeyIdentifier"
+            "userProperty" = "certificateUserIds"
+            "priority" = 1
+        },
+        @{
+            "@odata.type" = "#microsoft.graph.x509CertificateUserBinding"
+            "x509CertificateField" = "PrincipalName"
+            "userProperty" = "UserPrincipalName"
+            "priority" = 2
+        },
+        @{
+            "@odata.type" = "#microsoft.graph.x509CertificateUserBinding"
+            "x509CertificateField" = "RFC822Name"
+            "userProperty" = "userPrincipalName"
+            "priority" = 3
+        }
+    )
+    "authenticationModeConfiguration" = @{
+        "@odata.type" = "#microsoft.graph.x509CertificateAuthenticationModeConfiguration"
+        "x509CertificateAuthenticationDefaultMode" = "x509CertificateMultiFactor"
+        "rules" = @(
+            @{
+                "@odata.type" = "#microsoft.graph.x509CertificateRule"
+                "x509CertificateRuleType" = "policyOID"
+                "identifier" = "1.3.6.1.4.1.311.21.1"
+                "x509CertificateAuthenticationMode" = "x509CertificateMultiFactor"
+            }
+        )
+    }
+    "includeTargets" = @(
+        @{
+            "targetType" = "group"
+            "id" = $group.Id
+            "isRegistrationRequired" = $false
+        }
+    ) } | ConvertTo-Json -Depth 5
+    ```
+1. Execute the PATCH request
+      ```powershell
+       Invoke-MgGraphRequest -Method PATCH -Uri "https://graph.microsoft.com/v1.0/policies/authenticationMethodsPolicy/authenticationMethodConfigurations/x509Certificate" -Body $body -ContentType "application/json"
+      ```
+
 ## Next steps 
 
 - [Overview of Microsoft Entra CBA](concept-certificate-based-authentication.md)

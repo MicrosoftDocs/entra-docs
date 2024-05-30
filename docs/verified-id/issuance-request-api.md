@@ -85,7 +85,7 @@ The issuance request payload contains information about your verifiable credenti
     "clientName": "Verifiable Credential Expert Sample"
   },
   "type": "VerifiedCredentialExpert",
-  "manifest": "https://verifiedid.did.msidentity.com/v1.0/tenants/12345678-0000-0000-0000-000000000000/verifiableCredentials/contracts/MTIzNDU2NzgtMDAwMC0wMDAwLTAwMDAtMDAwMDAwMDAwMDAwdmVyaWZpZWRjcmVkZW50aWFsZXhwZXJ0/manifest",
+  "manifest": "https://verifiedid.did.msidentity.com/v1.0/tenants/aaaabbbb-0000-cccc-1111-dddd2222eeee/verifiableCredentials/contracts/MTIzNDU2NzgtMDAwMC0wMDAwLTAwMDAtMDAwMDAwMDAwMDAwdmVyaWZpZWRjcmVkZW50aWFsZXhwZXJ0/manifest",
   "pin": {
     "value": "3539",
     "length": 4
@@ -164,7 +164,7 @@ If successful, this method returns a response code (*HTTP 201 Created*), and a c
 ```json
 {  
     "requestId": "799f23ea-5241-45af-99ad-cf8e5018814e",  
-    "url": "openid://vc?request_uri=https://verifiedid.did.msidentity.com/v1.0/12345678-0000-0000-0000-000000000000/verifiableCredentials/request/178319f7-20be-4945-80fb-7d52d47ae82e",  
+    "url": "openid://vc?request_uri=https://verifiedid.did.msidentity.com/v1.0/00001111-aaaa-2222-bbbb-3333cccc4444/verifiableCredentials/request/178319f7-20be-4945-80fb-7d52d47ae82e",  
     "expiry": 1622227690,  
     "qrCode": "data:image/png;base64,iVBORw0KggoA<SNIP>"  
 } 

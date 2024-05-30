@@ -21,7 +21,7 @@ Using the admin center in Microsoft Entra ID, part of Microsoft Entra, you can r
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Select Microsoft Entra ID.
 1. Select **Users** > **All users** > **Bulk operations** > **Bulk delete**.
 
