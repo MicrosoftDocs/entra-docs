@@ -136,14 +136,14 @@ Organizations should monitor sign-in and audit log activity from the emergency a
         // Search for a single Object ID (UserID)
         SigninLogs
         | project UserId 
-        | where UserId == "f66e7317-2ad4-41e9-8238-3acf413f7448"
+        | where UserId == "00aa00aa-bb11-cc22-dd33-44ee44ee44ee"
         ```
         
         ```kusto
         // Search for multiple Object IDs (UserIds)
         SigninLogs
         | project UserId 
-        | where UserId == "f66e7317-2ad4-41e9-8238-3acf413f7448" or UserId == "0383eb26-1cbc-4be7-97fd-e8a0d8f4e62b"
+        | where UserId == "00aa00aa-bb11-cc22-dd33-44ee44ee44ee" or UserId == "11bb11bb-cc22-dd33-ee44-55ff55ff55ff"
         ```
         
         ```kusto

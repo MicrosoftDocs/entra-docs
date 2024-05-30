@@ -196,7 +196,7 @@ Connect-MgGraph -Scopes $Scopes
 
 
 # Query a user, using its user ID, and return the desired properties
-$user = Get-MgUser -UserID "9093a415-2968-48b5-808b-a1a6f006f7a3" -Property EmployeeLeaveDateTime
+$user = Get-MgUser -UserID "00aa00aa-bb11-cc22-dd33-44ee44ee44ee" -Property EmployeeLeaveDateTime
 $User.EmployeeLeaveDateTime
 
 ```
