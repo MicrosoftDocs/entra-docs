@@ -2682,6 +2682,8 @@ Assign the Teams Telephony Administrator role to users who need to do the follow
 - View user profile page
 - Create and manage support tickets in Azure and the Microsoft 365 admin center
 
+[Learn more](/microsoftteams/using-admin-roles)
+
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
