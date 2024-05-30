@@ -222,7 +222,7 @@ Include one more attribute:
 
 #### Additional User Attributes
 
-In the **Additional User Attributes** tab, enable session augmentation. Use this feature for distributed systems such as Oracle, SAP, and other JAVA implementations that require attributes to be stored in other directories. Attributes fetched from a Lightweight Directory Access Protocol (LDAP) source are injected as more SSO headers. This action helps control access based on roles, Partner IDs, etc. 
+In the **Additional User Attributes** tab, enable session augmentation. Use this feature for distributed systems such as Oracle, SAP, and other JAVA implementations that require attributes to be stored in other directories. Attributes fetched from a Lightweight Directory Access Protocol (LDAP) source are injected as more SSO headers. This action helps control access based on roles, Partner IDs, and so on. 
 
    >[!NOTE] 
    >This feature has no correlation to Microsoft Entra ID. It's an attribute source. 

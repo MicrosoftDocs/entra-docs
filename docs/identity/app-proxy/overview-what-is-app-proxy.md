@@ -58,7 +58,7 @@ Application proxy supports single sign-on. For more information on supported met
 Previously, your control plane for protecting internal resources from attackers while facilitating access by remote users was all in the DMZ or perimeter network. But the VPN and reverse proxy solutions deployed in the DMZ used by external clients to access corporate resources aren't suited to the cloud world. They typically suffer from the following drawbacks:
 
 * Hardware costs
-* Maintaining security (patching, monitoring ports, etc.)
+* Maintaining security (patching, monitoring ports, and so on)
 * Authenticating users at the edge
 * Authenticating users to web servers in the perimeter network
 * Maintaining VPN access for remote users with the distribution and configuration of VPN client software. Also, maintaining domain-joined servers in the DMZ, which can be vulnerable to outside attacks.
@@ -70,7 +70,7 @@ In today's cloud-first world, Microsoft Entra ID is best suited to control who a
 In today's digital workplace, users work anywhere with multiple devices and apps. The only constant is user identity. That's why the first step to a secure network today is to use [Microsoft Entra identity management](/azure/security/fundamentals/identity-management-overview) capabilities as your security control plane. A model that uses identity as your control plane is typically comprised of the following components:
 
 * An identity provider to keep track of users and user-related information.
-* Device directory to maintain a list of devices that have access to corporate resources. This directory includes corresponding device information (for example, type of device, integrity etc.).
+* Device directory to maintain a list of devices that have access to corporate resources. This directory includes corresponding device information (for example, type of device, integrity, and so on).
 * Policy evaluation service to determine if a user and device conform to the policy set forth by security admins.
 * The ability to grant or deny access to organizational resources.
 

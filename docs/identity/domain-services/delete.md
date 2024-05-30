@@ -22,7 +22,7 @@ This article shows you how to use the Microsoft Entra admin center to delete a m
 > When you delete a managed domain, the following steps occur:
 >
 > * Domain controllers for the managed domain are deprovisioned and removed from the virtual network.
-> * Data on the managed domain is deleted permanently. This data includes custom OUs, GPOs, custom DNS records, service principals, GMSAs, etc. that you created.
+> * Data on the managed domain is deleted permanently. This data includes custom OUs, GPOs, custom DNS records, service principals, GMSAs, and so on. that you created.
 > * Machines joined to the managed domain lose their trust relationship with the domain and need to be unjoined from the domain.
 > * You can't sign in to these machines using corporate AD credentials. Instead, you must use the local administrator credentials for the machine.
 
