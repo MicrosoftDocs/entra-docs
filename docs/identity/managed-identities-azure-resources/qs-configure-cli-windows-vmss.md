@@ -120,7 +120,7 @@ This section walks you through creation of a virtual machine scale set and assig
         "id": "/subscriptions/<SUBSCRIPTON ID>/resourcegroups/<RESOURCE GROUP>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<USER ASSIGNED IDENTITY NAME>",
         "location": "westcentralus",
         "name": "<USER ASSIGNED IDENTITY NAME>",
-        "principalId": "e5fdfdc1-ed84-4d48-8551-fe9fb9dedfll",
+        "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
         "resourceGroup": "<RESOURCE GROUP>",
         "tags": {},
         "tenantId": "aaaabbbb-0000-cccc-1111-dddd2222eeee",
