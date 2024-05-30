@@ -1,5 +1,5 @@
 {
-  "appId|applicationId|clientId": [
+  "appId|applicationId|clientId|audience|aud|aid": [
     "00001111-aaaa-2222-bbbb-3333cccc4444",
     "11112222-bbbb-3333-cccc-4444dddd5555",
     "22223333-cccc-4444-dddd-5555eeee6666",
@@ -20,7 +20,7 @@
     "Dd4Ee5Ff6.-Gg7Hh8Ii9Jj0Kk1Ll2_~Mm3Nn4Oo5",
     "Ee5Ff6Gg7.-Hh8Ii9Jj0Kk1Ll2Mm3_~Nn4Oo5Pp6"
   ],
-  "clientSecretValueAlphanumeric": [
+  "clientSecretValue|key": [
     "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u",
     "C2dE3fH4iJ5kL6mN7oP8qR9sT0uV1w",
     "E3fH4iJ5kL6mN7oP8qR9sT0uV1wX2y",
@@ -34,7 +34,7 @@
     "dddd3333-ee44-5555-66ff-777777aaaaaa",
     "eeee4444-ff55-6666-77aa-888888bbbbbb"
   ],
-  "directoryId|tenantId|issuer": [
+  "directoryId|tenantId|tid|issuer|iss": [
     "aaaabbbb-0000-cccc-1111-dddd2222eeee",
     "bbbbcccc-1111-dddd-2222-eeee3333ffff",
     "ccccdddd-2222-eeee-3333-ffff4444aaaa",
@@ -48,7 +48,7 @@
     "33dd33dd-ee44-ff55-aa66-77bb77bb77bb",
     "44ee44ee-ff55-aa66-bb77-88cc88cc88cc"
   ],
-  "objectId": [
+  "objectId|oid": [
     "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
     "bbbbbbbb-1111-2222-3333-cccccccccccc",
     "cccccccc-2222-3333-4444-dddddddddddd",
@@ -81,28 +81,28 @@
     "d3d3d3d3-eeee-ffff-aaaa-b4b4b4b4b4b4",
     "e4e4e4e4-ffff-aaaa-bbbb-c5c5c5c5c5c5"
   ],
-  "secretId": [
+  "secretId|tokenEncryptionKeyId|keyId": [
     "aaaaaaaa-0b0b-1c1c-2d2d-333333333333",
     "bbbbbbbb-1c1c-2d2d-3e3e-444444444444",
     "cccccccc-2d2d-3e3e-4f4f-555555555555",
     "dddddddd-3e3e-4f4f-5a5a-666666666666",
     "eeeeeeee-4f4f-5a5a-6b6b-777777777777"
   ],
-  "signatureHash": [
+  "signatureHash|customKeyIdentifier": [
     "aB1cD2eF3gH4iJ5kL6-mN7oP8qR=",
     "cD2eF3gH4iJ5kL6mN7-oP8qR9sT=",
     "eF3gH4iJ5kL6mN7oP8-qR9sT0uV=",
     "gH4iJ5kL6mN7oP8qR9-sT0uV1wX=",
     "iJ5kL6mN7oP8qR9sT0-uV1wX2yZ="
   ],
-  "subscriptionId": [
+  "subscriptionId|sub": [
     "aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e",
     "bbbb1b1b-cc2c-dd3d-ee4e-ffffff5f5f5f",
     "cccc2c2c-dd3d-ee4e-ff5f-aaaaaa6a6a6a",
     "dddd3d3d-ee4e-ff5f-aa6a-bbbbbb7b7b7b",
     "eeee4efe-ff5f-aa6a-bb7b-cccccc8c8c8c"
   ],
-  "thumbprint|keyId|hash": [
+  "thumbprint|hash": [
     "AA11BB22CC33DD44EE55FF66AA77BB88CC99DD00",
     "BB22CC33DD44EE55FF66AA77BB88CC99DD00EE11",
     "CC33DD44EE55FF66AA77BB88CC99DD00EE11FF22",
