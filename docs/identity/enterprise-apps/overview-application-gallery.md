@@ -56,13 +56,17 @@ Applications that are specific to major cloud platforms, such as AWS, Google, or
 
 ### On-premises applications
 
-On-premises applications are connected to Microsoft Entra ID using Microsoft Entra application proxy. From the on-premises section of the Microsoft Entra gallery, you can undertake the following tasks:
+There are three ways on-premises applications can be connected to Microsoft Entra ID. One is using Microsoft Entra application proxy for single sign-on. If your application supports single-sign on via SAML or Kerberos, then from the on-premises section of the Microsoft Entra gallery, you can undertake the following tasks:
 
 - Configure Application Proxy to enable remote access to an on-premises application.
 - Use the documentation to learn more about how to use Application Proxy to secure remote access to on-premises applications.
 - Manage any private network connectors that you created.
 
 :::image type="content" source="media/overview-application-gallery/on-premises-applications.png" alt-text="Screenshot showing the on-premises application options on the Microsoft Entra application gallery pane in the Microsoft Entra admin center.":::
+
+The second is using the provisioning agent to provision to an on-premises application. You can configure provisioning to [on-premises applications that support SCIM](../app-provisioning/on-premises-scim-provisioning.md), that use a [SQL database](../app-provisioning/on-premises-sql-connector-configure.md), that use an [LDAP directory](../app-provisioning/on-premises-ldap-connector-configure.md), or support a [SOAP or REST provisioning API](../app-provisioning/on-premises-web-services-connector.md).
+
+The third is using Microsoft Entra Private Access, by configuring a Global Secure Access app for per-app connections. For more information, see [Learn about Microsoft Entra Private Access](~/entra/global-secure-access/concept-private-access).
 
 ### Featured applications
 
