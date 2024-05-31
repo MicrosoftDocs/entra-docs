@@ -11,7 +11,7 @@ ms.custom:
  - has-azure-ad-ps-ref
  - azure-ad-ref-level-one-done
 ms.topic: tutorial
-ms.date: 01/09/2024
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SharePoint on-premises so that I can control who has access to SharePoint on-premises, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
