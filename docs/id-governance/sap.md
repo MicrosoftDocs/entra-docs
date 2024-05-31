@@ -82,6 +82,8 @@ After your users are in Microsoft Entra ID, you can provision accounts into the 
 
 ### Provision identities into on-premises SAP systems
 
+Once you have users in Microsoft Entra ID, you can provision those users from Microsoft Entra ID to SAP Cloud Identity Services or SAP ECC, to enable them to sign in to SAP applications. If you have [`SAP S/4HANA On-premise`](https://help.sap.com/docs/identity-provisioning/identity-provisioning/target-sap-s-4hana-on-premise), then provision users from Microsoft Entra ID to SAP Cloud Identity Directory. SAP Cloud Identity Services then provisions the users originating from Microsoft Entra ID that are in the SAP Cloud Identity Directory into the downstream SAP applications to SAP S/4HANA On-Premise through the SAP cloud connector.
+
 Customers who have yet to transition from applications such as  SAP R/3 and SAP ERP Central Component (SAP ECC) to SAP S/4HANA can still rely on the Microsoft Entra provisioning service to provision user accounts. Within SAP R/3 and SAP ECC, you expose the necessary Business Application Programming Interfaces (BAPIs) for creating, updating, and deleting users. Within Microsoft Entra ID, you have two options:
 
 * Use the lightweight Microsoft Entra provisioning agent and [web services connector](../identity/app-provisioning/on-premises-web-services-connector.md) to [provision users into apps such as SAP ECC](../identity/app-provisioning/on-premises-sap-connector-configure.md).
