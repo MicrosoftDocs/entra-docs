@@ -256,7 +256,7 @@ Custom authentication extensions allow you to customize the Microsoft Entra auth
 
 Microsoft Entra organizations could previously have a maximum of 5,000 dynamic groups and dynamic administrative units combined. 
 
-We have increased this quota to 15000. For example, you can now have 5,000 dynamic groups and 10,000 dynamic AUs (or any other combination that adds up to 15k). You don't need to do anything to take advantage of this change - it's available right now. For more information, see: [Microsoft Entra service limits and restrictions](../identity/users/directory-service-limits-restrictions.md).
+We have increased this quota to 15000. For example, you can now have 5,000 dynamic groups and 10,000 dynamic AUs (or any other combination that adds up to 15k). You don't need to do anything to take advantage of this change - its available right now. For more information, see: [Microsoft Entra service limits and restrictions](../identity/users/directory-service-limits-restrictions.md).
 
 ---
 
@@ -288,7 +288,7 @@ Native authentication empowers developers to take complete control over the desi
 **Service category:** Microsoft Authenticator App    
 **Product capability:** User Authentication    
 
-Users can now create device-bound passkeys in the Microsoft Authenticator to access Microsoft Entra ID resources. Passkeys in the Authenticator app provide cost-effective, phishing-resistant and seamless authentications to users from their mobile devices. For more information, see https://aka.ms/PasskeyInAuthenticator.
+Users can now create device-bound passkeys in the Microsoft Authenticator to access Microsoft Entra ID resources. Passkeys in the Authenticator app provide cost-effective, phishing-resistant, and seamless authentications to users from their mobile devices. For more information, see https://aka.ms/PasskeyInAuthenticator.
 
 ---
 
@@ -308,7 +308,7 @@ The maximum number of workflows that can be configured in Lifecycle workflows ha
 **Service category:** Lifecycle Workflows    
 **Product capability:** Identity Governance    
 
-Lifecycle Workflows now supports the ability to trigger workflows based on job change events like changes to an employee's department, job role, or location and see them executed on the workflow schedule. With this feature, customers can leverage new workflow triggers to create custom workflows for executing tasks associated with employees moving within the organization including:
+Lifecycle Workflows now supports the ability to trigger workflows based on job change events like changes to an employee's department, job role, or location and see them executed on the workflow schedule. With this feature, customers can use new workflow triggers to create custom workflows for executing tasks associated with employees moving within the organization including:
 
 - Trigger workflows when a specified attribute changes
 - Triggering workflows when a user is added or removed from a group's membership
@@ -375,7 +375,7 @@ Assigning Microsoft Entra roles through access packages helps to efficiently man
 **Service category:** Self Service Password Reset    
 **Product capability:** Identity Security & Protection    
 
-Self-service password reset (SSPR) policy for Admins has expanded to include 3 additional built-in admin roles. These additional roles include: 
+Self-service password reset (SSPR) policy for Admins expands to include three extra built-in admin roles. These extra roles include: 
 
 - Teams Administrator
 - Teams Communications Administrator
@@ -415,12 +415,12 @@ Customer Lockbox for Microsoft Azure is launching a new feature that enables cus
 **Service category:** Conditional Access    
 **Product capability:** Identity Security & Protection    
 
-Starting mid-April 2024, the Conditional Access *‘Locations’* condition is moving up. Locations will become the '*Network*' assignment, with the new Global Secure Access assignment - '*All compliant network locations*'.
+Starting mid-April 2024, the Conditional Access *‘Locations’* condition is moving up. Locations becomes the '*Network*' assignment, with the new Global Secure Access assignment - '*All compliant network locations*'.
 
 This change will occur automatically, and admins won’t need to take any action. Here's more details:
 
 - The familiar ‘*Locations*’ condition is unchanged, updating the policy in the ‘*Locations*’ condition are reflected in the ‘*Network*’ assignment, and vice versa.
-- No functionality changes, existing policies will continue to work without changes.
+- No functionality changes, existing policies continue to work without changes.
 
 ---
 
@@ -495,7 +495,7 @@ With API-driven inbound provisioning, Microsoft Entra ID provisioning service no
 **Service category:** My Security Info    
 **Product capability:** End User Experiences        
 
-Now Generally Available, My Sign Ins [(My Sign-Ins (microsoft.com))](https://mysignins.microsoft.com/) supports end users changing their passwords inline. When a user authenticates with a password and an MFA credential, they're able to are able to change their password without entering their existing password. Beginning April 1st, through a phased rollout, traffic from the [Change password (windowsazure.com)](https://account.activedirectory.windowsazure.com/ChangePassword.aspx) portal will redirect to the new My Sign Ins change experience. The [Change password (windowsazure.com)](https://account.activedirectory.windowsazure.com/ChangePassword.aspx) will no longer be available after June 2024, but will continue to redirect to the new experience.
+Now Generally Available, My Sign Ins [(My Sign-Ins (microsoft.com))](https://mysignins.microsoft.com/) supports end users changing their passwords inline. When a user authenticates with a password and an MFA credential, they're able to are able to change their password without entering their existing password. Beginning April 1, through a phased rollout, traffic from the [Change password (windowsazure.com)](https://account.activedirectory.windowsazure.com/ChangePassword.aspx) portal will redirect to the new My Sign Ins change experience. The [Change password (windowsazure.com)](https://account.activedirectory.windowsazure.com/ChangePassword.aspx) will no longer be available after June 2024, but will continue to redirect to the new experience.
 
 
 For more information, see: 
