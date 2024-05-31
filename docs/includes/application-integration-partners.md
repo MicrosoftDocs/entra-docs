@@ -1,6 +1,6 @@
 ---
 title: Include file for application integration partners
-description: Include file for application integration partners for identity and access management (IAM), and for identity governance and administration (IGA), using the System for Cross Domain Identity Management (SCIM) protocol.
+description: Include file for application integration partners for identity and access management (IAM), and for identity governance and administration (IGA), using the System for Cross Domain Identity Management (SCIM) protocol to reach additional systems such as Enterprise Resource Planning (ERP).
 author: markwahl-msft
 ms.service: entra-id
 ms.topic: include
@@ -17,8 +17,8 @@ The following descriptions and lists of applications are provided by the partner
 
 #### Description
 Aquera is a leading provider of SCIM Gateway Services for Microsoft Entra. The SCIM Gateway for Microsoft Entra from Aquera is a cloud-based service providing out-of-the-box connectivity between Microsoft Entra ID and the provisioning target applications, directories, databases, devices, or third party identity providers (IDPs) that an organization or their partners operate, which are not covered by the Microsoft Entra application gallery. 
-The Aquera SCIM Gateway powers Microsoft Entra ID to create, update, deactivate, and delete user accounts via Aquera connectors in any cloud or on-premises application, database, directory, device, or third party IDP via the Microsoft Entra ID SCIM protocol. Aquera has a catalog of over 800 connectors covering these targets, builds additional connectors on-demand, and offers a self-service connector builder for customers to build their own connectors for the Aquera SCIM Gateway. The Aquera connectors support the various integration methods required by each target including REST, SQL, LDAP, SOAP, non-Microsoft Entra ID compatible SCIM, or web service APIs, admin console automation, SDKs, code libraries, and files via FTP and local file shares. 
-Aquera also supports over 40 inbound provisioning HRIS sources of record for Microsoft Entra ID, and further provides deep integration with all the major ITSMs supporting automatic generation of joiner, mover, and leaver work tickets in the ITSMs, and fulfilling ITSM self-service access requests via Microsoft Entra ID. 
+The Aquera SCIM Gateway powers Microsoft Entra ID to create, update, deactivate, and delete user accounts via Aquera connectors in any cloud or on-premises application, database, directory, device, or third party IDP via the Microsoft Entra ID SCIM protocol. Aquera has a catalog of over 800 connectors covering these targets, builds additional connectors on-demand, and offers a self-service connector builder for customers to build their own connectors for the Aquera SCIM Gateway. The Aquera connectors support the various integration methods required by each target including REST, SQL, LDAP, SOAP, SCIM not compatible with Microsoft Entra ID, or web service APIs, admin console automation, SDKs, code libraries, and files via FTP and local file shares. 
+Aquera also supports over 40 inbound provisioning HR Information System (HRIS) sources of record for Microsoft Entra ID, and further provides deep integration with all the major IT Service Management systems (ITSMs) supporting automatic generation of joiner, mover, and leaver work tickets in the ITSMs, and fulfilling ITSM self-service access requests via Microsoft Entra ID. 
 
 #### Contact Information
 * Company website: https://www.aquera.com 
@@ -37,8 +37,8 @@ Aquera also supports over 40 inbound provisioning HRIS sources of record for Mic
 ### IDMWORKS
 #### Description
 We Are Experts In Identity & Access Management and Data Center Management.
-The Microsoft Entra platform integrates with IDMWORKS IdentityForge (IDF) Gateway for user lifecycle management for Mainframe systems (RACF, Top Secret, ACF2), Midrange system (AS400), Healthcare applications (EPIC and Cerner), Linux/Unix servers, Databases, and dozens of on-premises and cloud applications. IdentityForge provides a central, standardized integration engine and modern identity store that serves as a trusted source for all lifecycle management.
-The IDF Gateway for Microsoft Entra ID provides lifecycle management for import sources and provisioning target systems that are not covered by the Microsoft Entra connector portfolio like Mainframe systems (RACF, Top Secret, ACF2) or Healthcare applications (EPIC and Cerner). The IDF Gateway powers Microsoft Entra identity lifecycle management (LCM) to continuously synchronize user account information from Mainframe and Healthcare sources and to automate the account provisioning lifecycle use cases like create, read (import), update, deactivate, delete user accounts and perform group management.
+The Microsoft Entra platform integrates with IDMWORKS IdentityForge (IDF) Gateway for user lifecycle management for Mainframe systems (RACF, Top Secret, ACF2), Midrange system (AS400), Healthcare applications (EPIC and Cerner), Linux and Unix servers, Databases, and dozens of on-premises and cloud applications. IdentityForge provides a central, standardized integration engine and modern identity store that serves as a trusted source for all lifecycle management.
+The IDF Gateway for Microsoft Entra ID provides lifecycle management for import sources and provisioning target systems that are not covered by the Microsoft Entra connector portfolio like Mainframe systems (RACF, Top Secret, ACF2) or Healthcare applications (EPIC and Cerner). The IDF Gateway powers Microsoft Entra identity lifecycle management (LCM) to continuously synchronize user account information from Mainframe and Healthcare sources and to automate the account provisioning lifecycle use cases like create, read (import), update, deactivate, delete user accounts, and perform group management.
 
 #### Contact information
 * Company website: https://www.idmworks.com/identity-forge
@@ -75,7 +75,7 @@ KloudIdentity provides a universal connector platform; Hence any LOB application
 ### UNIFY Solutions
 #### Description
 
-UNIFY Solutions is a leading provider of Identity, Access, Security and Governance solutions.
+UNIFY Solutions is a leading provider of Identity, Access, Security, and Governance solutions.
 
 #### Contact information
 * Company website: https://unifysolutions.net/identity/unifyconnect
