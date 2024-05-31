@@ -131,8 +131,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 #### -Port
-SQL Server Port (e.g.
-49823)
+SQL Server Port (for example, `49823`)
 ```yaml
 Type: String
 Parameter Sets: (All)
@@ -178,8 +177,7 @@ ConvertFrom-ADSyncToolsAadDistinguishedName [-DistinguishedName] <String> [<Comm
 ```
 ### DESCRIPTION
 Takes a Microsoft Entra Connector DistinguishedName like CN={514635484D4B376E38307176645973555049486139513D3D}
-and converts to the respective base64 ImmutableID value, e.g.
-QF5HMK7n80qvdYsUPIHa9Q==
+and converts to the respective base64 ImmutableID value, such as `QF5HMK7n80qvdYsUPIHa9Q==`
 ### EXAMPLES
 #### EXAMPLE 1
 ```
@@ -241,8 +239,7 @@ Convert ImmutableId to Microsoft Entra Connector DistinguishedName
 ConvertTo-ADSyncToolsAadDistinguishedName [-ImmutableId] <String> [<CommonParameters>]
 ```
 ### DESCRIPTION
-Takes an ImmutableId (SourceAnchor) like QF5HMK7n80qvdYsUPIHa9Q== and converts to the respective Microsoft Entra Connector DistinguishedName value, e.g.
-CN={514635484D4B376E38307176645973555049486139513D3D}
+Takes an ImmutableId (SourceAnchor) like QF5HMK7n80qvdYsUPIHa9Q== and converts to the respective Microsoft Entra Connector DistinguishedName value, such as `CN={514635484D4B376E38307176645973555049486139513D3D}`
 ### EXAMPLES
 #### EXAMPLE 1
 ```
@@ -272,8 +269,7 @@ ConvertTo-ADSyncToolsCloudAnchor [-Anchor] <String> [<CommonParameters>]
 ```
 ### DESCRIPTION
 Takes a Base64 Anchor like VAAAAFUAcwBlAHIAXwBjADcAMgA5ADAAMwBlAGQALQA3ADgAMQA2AC0ANAAxAGMAZAAtADkAMAA2ADYALQBlAGEAYwAzADMAZAAxADcAMQBkADcANwAAAA==
-and converts to the respective CloudAnchor value, e.g.
-User_abc12345-1234-abcd-9876-ab0123456789
+and converts to the respective CloudAnchor value, such as `User_abc12345-1234-abcd-9876-ab0123456789`
 ### EXAMPLES
 #### EXAMPLE 1
 ```
@@ -1658,8 +1654,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 #### -ADwatermark
-Manual input of watermark, instead of XML file e.g.
-$ADwatermark = "TVNEUwMAAAAXyK9ir1zSAQAAAAAAAAAA(...)"
+Manual input of watermark, instead of XML file, for example `$ADwatermark = "TVNEUwMAAAAXyK9ir1zSAQAAAAAAAAAA(...)"`
 ```yaml
 Type: String
 Parameter Sets: ADwatermarkInput

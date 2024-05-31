@@ -91,10 +91,10 @@ The Microsoft Entra provisioning service allows you to scope who will be provisi
 Tableau Cloud will only store the highest privileged role that is assigned to a user. In other words, if a user is assigned to two groups, the user’s role will reflect the highest privileged role.
 
 
-To keep track of role assignments, you can create two purpose-specific groups for role assignments. For example, you can create groups such as Tableau – Creator, and Tableau – Explorer, etc. Assignment would then look like:
+To keep track of role assignments, you can create two purpose-specific groups for role assignments. For example, you can create groups such as Tableau – Creator, and Tableau – Explorer, and so on. Assignment would then look like:
 * Tableau – Creator: Creator
 * Tableau – Explorer: Explorer
-* Etc.
+* And so on.
 
 Once provisioning is set up, you will want to edit role changes directly in Microsoft Entra ID. Otherwise, you may end up with role inconsistencies between Tableau Cloud and Microsoft Entra ID.
 

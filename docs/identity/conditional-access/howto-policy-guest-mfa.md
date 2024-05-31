@@ -1,11 +1,11 @@
 ---
 title: Require MFA for guest users with Conditional Access
-description: Create a custom Conditional Access policy requiring guest users perform multifactor authentication
+description: Create a custom Conditional Access policy requiring guest users perform multifactor authentication.
 
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 07/18/2023
+ms.date: 05/29/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo

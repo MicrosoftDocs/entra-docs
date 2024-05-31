@@ -44,7 +44,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 
 ## Configure Contentstack to support provisioning with Microsoft Entra ID
 
-Contact [Contentstack support](https://Contentstack.atlassian.net/servicedesk/customer/portal/2) to open a service request to enable Contentstack to support provisioning with Microsoft Entra ID. Ensure to provide the Contentstack network domain (e.g. acme.Contentstack.com) you want to enable user provisioning for. You will then get provided with the Tenant URL and Secret Token for authorization.
+Contact [Contentstack support](https://Contentstack.atlassian.net/servicedesk/customer/portal/2) to open a service request to enable Contentstack to support provisioning with Microsoft Entra ID. Ensure to provide the Contentstack network domain (such as acme.Contentstack.com) you want to enable user provisioning for. You will then get provided with the Tenant URL and Secret Token for authorization.
 
 ## Contentstack from the Microsoft Entra application gallery
 

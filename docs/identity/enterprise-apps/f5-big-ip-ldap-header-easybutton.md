@@ -69,7 +69,7 @@ Prior BIG-IP experience isn't necessary, but you need:
 - One of the following roles: Cloud Application Administrator, or Application Administrator.
 - An [SSL Web certificate](./f5-bigip-deployment-guide.md#ssl-profile) for publishing services over HTTPS, or use default BIG-IP certificates while testing
 - A header-based application or [set up a simple IIS header app](/previous-versions/iis/6.0-sdk/ms525396(v=vs.90)) for testing
-- A user directory that supports LDAP, such as Windows Active Directory Lightweight Directory Services (AD LDS), OpenLDAP etc.
+- A user directory that supports LDAP, such as Windows Active Directory Lightweight Directory Services (AD LDS), OpenLDAP, and so on.
 
 ## BIG-IP configuration
 
@@ -196,7 +196,7 @@ For this example, include one more attribute:
 
 #### Additional User Attributes
 
-On the **Additional User Attributes** tab, you can enable session augmentation for distributed systems such as Oracle, SAP, and other JAVA-based implementations requiring attributes stored in other directories. Attributes fetched from an LDAP source can be injected as more SSO headers to control access based on roles, Partner IDs, etc.
+On the **Additional User Attributes** tab, you can enable session augmentation for distributed systems such as Oracle, SAP, and other JAVA-based implementations requiring attributes stored in other directories. Attributes fetched from an LDAP source can be injected as more SSO headers to control access based on roles, Partner IDs, and so on.
 
 1. Enable the **Advanced Settings** option.
 2. Check the **LDAP Attributes** check box.

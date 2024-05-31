@@ -146,7 +146,7 @@ After you set up Azure Key Vault, [enable logging](/azure/key-vault/general/howt
 
 | What to monitor| Risk Level| Where| Filter/sub-filter| Notes |
 |-|-|-|-|-|
-| End-user consent to application| Low| Microsoft Entra audit logs| Activity: Consent to application / ConsentContext.IsAdminConsent = false| Look for: high profile or highly privileged accounts, app requests high-risk permissions, apps with suspicious names, for example generic, misspelled, etc.<br>[Microsoft Sentinel template](https://github.com/Azure/Azure-Sentinel/blob/master/Hunting%20Queries/AuditLogs/ConsentToApplicationDiscovery.yaml)<br><br>[Sigma rules](https://github.com/SigmaHQ/sigma/tree/master/rules/cloud/azure) |
+| End-user consent to application| Low| Microsoft Entra audit logs| Activity: Consent to application / ConsentContext.IsAdminConsent = false| Look for: high profile or highly privileged accounts, app requests high-risk permissions, apps with suspicious names, for example generic, misspelled, and so on.<br>[Microsoft Sentinel template](https://github.com/Azure/Azure-Sentinel/blob/master/Hunting%20Queries/AuditLogs/ConsentToApplicationDiscovery.yaml)<br><br>[Sigma rules](https://github.com/SigmaHQ/sigma/tree/master/rules/cloud/azure) |
 
 The act of consenting to an application isn't malicious. However, investigate new end-user consent grants looking for suspicious applications. You can [restrict user consent operations](/azure/security/fundamentals/steps-secure-identity).
 
@@ -162,7 +162,7 @@ For more information on consent operations, see the following resources:
 
 | What to monitor| Risk Level| Where| Filter/sub-filter| Notes |
 |-|-|-|-|-|
-| End-user consent stopped due to risk-based consent| Medium| Microsoft Entra audit logs| Core Directory / ApplicationManagement / Consent to application<br> Failure status reason = Microsoft.online.Security.userConsent<br>BlockedForRiskyAppsExceptions| Monitor and analyze any time consent is stopped due to risk. Look for: high profile or highly privileged accounts, app requests high-risk permissions, or apps with suspicious names, for example generic, misspelled, etc.<br>[Microsoft Sentinel template](https://github.com/Azure/Azure-Sentinel/blob/master/Detections/AuditLogs/End-userconsentstoppedduetorisk-basedconsent.yaml)<br><br>[Sigma rules](https://github.com/SigmaHQ/sigma/tree/master/rules/cloud/azure) |
+| End-user consent stopped due to risk-based consent| Medium| Microsoft Entra audit logs| Core Directory / ApplicationManagement / Consent to application<br> Failure status reason = Microsoft.online.Security.userConsent<br>BlockedForRiskyAppsExceptions| Monitor and analyze any time consent is stopped due to risk. Look for: high profile or highly privileged accounts, app requests high-risk permissions, or apps with suspicious names, for example generic, misspelled, and so on.<br>[Microsoft Sentinel template](https://github.com/Azure/Azure-Sentinel/blob/master/Detections/AuditLogs/End-userconsentstoppedduetorisk-basedconsent.yaml)<br><br>[Sigma rules](https://github.com/SigmaHQ/sigma/tree/master/rules/cloud/azure) |
 
 ## Application authentication flows
 

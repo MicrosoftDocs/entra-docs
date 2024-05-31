@@ -192,7 +192,7 @@ To join the managed domain using **winbind** and the *`samba net` command*:
 
 2. Edit the configuration files:
 
-   * /etc/samba/smb.conf
+   * `/etc/samba/smb.conf`
    
      ```config
      [global]
@@ -211,7 +211,7 @@ To join the managed domain using **winbind** and the *`samba net` command*:
          winbind refresh tickets = yes
      ```
 
-   * /etc/krb5.conf
+   * `/etc/krb5.conf`
    
      ```config
      [libdefaults]

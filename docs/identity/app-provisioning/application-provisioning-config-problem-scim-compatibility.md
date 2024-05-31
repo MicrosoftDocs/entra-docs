@@ -37,7 +37,7 @@ In the table below, any item marked as fixed means that the proper behavior can 
 | Extension attributes use dot "." notation before attribute names instead of colon ":" notation |  Yes  | December 18, 2018  | downgrade to customappSSO |
 | Patch requests for multi-value attributes contain invalid path filter syntax | Yes  |  December 18, 2018  | downgrade to customappSSO |
 | Group creation requests contain an invalid schema URI | Yes  |  December 18, 2018  |  downgrade to customappSSO |
-| Update PATCH behavior to ensure compliance (e.g. active as boolean and proper group membership removals) | No | TBD| use feature flag |
+| Update PATCH behavior to ensure compliance (such as active as boolean and proper group membership removals) | No | TBD| use feature flag |
 
 ## Flags to alter the SCIM behavior
 Use the flags below in the tenant URL of your application in order to change the default SCIM client behavior.

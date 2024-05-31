@@ -94,7 +94,7 @@ Administrators can employ [Microsoft Entra Conditional Access](~/identity/condit
 
 ## Access to Microsoft applications
 
-Microsoft Applications (like Exchange, SharePoint, Yammer, etc.) are assigned and managed a bit differently than third party SaaS applications or other applications you integrate with Microsoft Entra ID for single sign-on.
+Microsoft Applications (like Exchange, SharePoint, Yammer, and so on) are assigned and managed a bit differently than third party SaaS applications or other applications you integrate with Microsoft Entra ID for single sign-on.
 
 There are three main ways that a user can get access to a Microsoft-published application.
 
