@@ -72,6 +72,9 @@ As part of enabling security defaults, administrators should revoke all existing
 
 All users have 14 days to register using the [Microsoft Authenticator app](~/identity/authentication/concept-authentication-authenticator-app.md) or any app supporting [OATH TOTP](~/identity/authentication/concept-authentication-oath-tokens.md). After the 14 days pass, the user can't sign in until registration is completed. A user's 14-day period begins after their first successful interactive sign-in after enabling security defaults.
 
+> [!NOTE]
+> All tenants created after DATE, will no longer have the 14 day MFA registration skip period available. This change will slowly be rolled out to all existing customers to ensure that their users are secure from the beginning. 
+
 When users sign in and are prompted to perform multifactor authentication, they see a screen providing them with a number to enter in the Microsoft Authenticator app. This measure helps prevent users from falling for MFA fatigue attacks.
 
 :::image type="content" source="media/security-defaults/approve-sign-in-request.png" alt-text="Screenshot showing an example of the Approve sign in request window with a number to enter.":::
