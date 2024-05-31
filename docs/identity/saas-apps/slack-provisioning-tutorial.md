@@ -20,6 +20,9 @@ ms.author: Thwimmer
 
 # Tutorial: Configure Slack for automatic user provisioning
 
+> [!NOTE]
+> Integrating with Slack with a custom / BYOA application is not supported. Using the gallery application as described in this tutorial is supported. The gallery application has been customized to work with Slack's SCIM v1 server. 
+
 The objective of this tutorial is to show you the steps you need to perform in Slack and Microsoft Entra ID to automatically provision and de-provision user accounts from Microsoft Entra ID to Slack. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
 
@@ -178,11 +181,11 @@ Once you've configured provisioning, use the following resources to monitor your
 
 * When configuring Slack's **displayName** attribute, be aware of the following behaviors:
 
-  * Values are not entirely unique (e.g. 2 users can have the same display name)
+  * Values are not entirely unique (such as 2 users can have the same display name)
 
   * Supports non-English characters, spaces, capitalization. 
   
-  * Allowed punctuation includes periods, underscores, hyphens, apostrophes, brackets (e.g. **( [ { } ] )**), and separators (e.g. **, / ;**).
+  * Allowed punctuation includes periods, underscores, hyphens, apostrophes, brackets (for example, `( [ { } ] )`), and separators (for example, `, / ;`).
   
   * displayName property cannot have an '@' character. If an '@' is included, you may find a skipped event in the provisioning logs with the description "AttributeValidationFailed."
 

@@ -121,8 +121,8 @@ There are two settings values that define which users would be able to allow an 
 
 | Setting       | Type         | Description  |
 | ------------- | ------------ | ------------ |
-| _EnableGroupSpecificConsent_   | Boolean | Flag indicating if groups owners are allowed to grant group-specific permissions. |
-| _ConstrainGroupSpecificConsentToMembersOfGroupId_ | Guid | If _EnableGroupSpecificConsent_ is set to "True" and this value set to a group's object ID, members of the identified group will be authorized to grant group-specific permissions to the groups they own. |
+| *EnableGroupSpecificConsent*   | Boolean | Flag indicating if groups owners are allowed to grant group-specific permissions. |
+| *ConstrainGroupSpecificConsentToMembersOfGroupId* | Guid | If *EnableGroupSpecificConsent* is set to "True" and this value set to a group's object ID, members of the identified group will be authorized to grant group-specific permissions to the groups they own. |
 
 ### Update settings values for the desired configuration using Microsoft Graph PowerShell
 

@@ -66,7 +66,7 @@ The following diagram illustrates all the components and the steps involved.
 
 ![Seamless Single Sign On - Web app flow](./media/how-to-connect-sso-how-it-works/sso2.png)
 
-Seamless SSO is opportunistic, which means if it fails, the sign-in experience falls back to its regular behavior - i.e, the user needs to enter their password to sign in.
+Seamless SSO is opportunistic, which means if it fails, the sign-in experience falls back to its regular behavior - that is, the user needs to enter their password to sign in.
 
 ### How does sign-in on a native client with Seamless SSO work?
 

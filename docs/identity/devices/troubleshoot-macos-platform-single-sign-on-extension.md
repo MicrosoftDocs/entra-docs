@@ -113,7 +113,7 @@ If a user has per user MFA enabled on the account where PSSO is being set up, yo
 
 ### PSSO reregistration required after password reset initiated from FileVault recovery or MDM-driven recovery
 
-Because Secure Enclave keys are protected by your local account password, password resets that occur without providing this password (e.g., FileVault or MDM-based recovery) will reset the Secure Enclave. Resetting the Secure Enclave renders keys previously stored for this account inaccessible. Devices whose Secure Enclave keys have been lost must be reregistered to use Platform SSO.
+Because Secure Enclave keys are protected by your local account password, password resets that occur without providing this password (such as FileVault or MDM-based recovery) will reset the Secure Enclave. Resetting the Secure Enclave renders keys previously stored for this account inaccessible. Devices whose Secure Enclave keys have been lost must be reregistered to use Platform SSO.
 
 ## Report an issue
 

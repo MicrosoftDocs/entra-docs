@@ -95,7 +95,7 @@ To better prioritize the use cases and solutions, organize the options by "requi
 
 * **Retention** - Log retention: store audit logs and sign in logs of Microsoft Entra longer than 30 days
 * **Analytics** - Logs are searchable with analytic tools
-* **Operational and security insights** - Provide access to application usage, sign-in errors, self-service usage, trends, etc.
+* **Operational and security insights** - Provide access to application usage, sign-in errors, self-service usage, trends, and so on.
 * **SIEM integration** - Integrate and stream Microsoft Entra sign-in logs and audit logs to SIEM systems
 
 ### Monitoring solution architecture

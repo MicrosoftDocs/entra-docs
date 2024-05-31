@@ -42,8 +42,7 @@ First, determine whether the Synchronization Service is still running or not:
 3. Check the status of **Microsoft Entra ID Sync**.
 
 
-4. If it is running, do not stop or restart the service. Skip [Shrink the database](#shrink-the-database) step and go to [Delete run 
-history data](#delete-run-history-data) step.
+4. If it is running, do not stop or restart the service. Skip [Shrink the database](#shrink-the-database) step and go to [Delete run history data](#delete-run-history-data) step.
 
 5. If it is not running, try to start the service. If the service starts successfully, skip [Shrink the database](#shrink-the-database) step and go to [Delete run history data](#delete-run-history-data) step. Otherwise, continue with [Shrink the database](#shrink-the-database) step.
 

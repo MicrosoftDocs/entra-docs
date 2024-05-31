@@ -16,8 +16,7 @@ ms.custom: not-enterprise-apps
 
 # Tutorial: Configure Datawiza to enable Microsoft Entra multifactor authentication and single sign-on to Oracle PeopleSoft
 
-In this tutorial, learn how to enable Microsoft Entra single sign-on (SSO) and Microsoft Entra multifactor authentication for an
-Oracle PeopleSoft application using Datawiza Access Proxy (DAP).
+In this tutorial, learn how to enable Microsoft Entra single sign-on (SSO) and Microsoft Entra multifactor authentication for an Oracle PeopleSoft application using Datawiza Access Proxy (DAP).
 
 Learn more: [Datawiza Access Proxy](https://www.datawiza.com/)
 

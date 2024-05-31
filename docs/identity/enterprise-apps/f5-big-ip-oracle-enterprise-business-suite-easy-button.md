@@ -215,7 +215,7 @@ When a user authenticates, Microsoft Entra ID issues a SAML token with default c
 
 #### Additional User Attributes
 
-The **Additional User Attributes** tab supports distributed systems that require attributes stored in directories for session augmentation. Attributes fetched from an LDAP source are injected as more SSO headers to control access based on roles, partner ID, etc.
+The **Additional User Attributes** tab supports distributed systems that require attributes stored in directories for session augmentation. Attributes fetched from an LDAP source are injected as more SSO headers to control access based on roles, partner ID, and so on.
 
 1. Enable the **Advanced Settings** option.
 2. Check the **LDAP Attributes** check box.

@@ -177,8 +177,7 @@ You can ignore this section for Microsoft Entra registered devices.
 - **AzureAdPrtUpdateTime**: Set the state to the time, in Coordinated Universal Time (UTC), when the [PRT was last updated](concept-primary-refresh-token.md#how-is-a-prt-renewed).
 - **AzureAdPrtExpiryTime**: Set the state to the time, in UTC, when the PRT is going to expire if it isn't renewed.
 - **AzureAdPrtAuthority**: The Microsoft Entra authority URL
-- **EnterprisePrt**: Set the state to *YES* if the device has a PRT from on-premises 
-Active Directory Federation Services (AD FS). For Microsoft Entra hybrid joined devices, the device could have a PRT from both Microsoft Entra ID and on-premises Active Directory simultaneously. On-premises joined devices have only an Enterprise PRT.
+- **EnterprisePrt**: Set the state to *YES* if the device has a PRT from on-premises Active Directory Federation Services (AD FS). For Microsoft Entra hybrid joined devices, the device could have a PRT from both Microsoft Entra ID and on-premises Active Directory simultaneously. On-premises joined devices have only an Enterprise PRT.
 - **EnterprisePrtUpdateTime**: Set the state to the time, in UTC, when the Enterprise PRT was last updated.
 - **EnterprisePrtExpiryTime**: Set the state to the time, in UTC, when the PRT is going to expire if it isn't renewed.
 - **EnterprisePrtAuthority**: The AD FS authority URL

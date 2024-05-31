@@ -70,8 +70,8 @@ In this article, you learn how to:
 
 ## Configure the sample iOS mobile application 
 
-1. In Xcode, open _NativeAuthSampleApp.xcodeproj_ project. 
-1. Open _NativeAuthSampleApp/Configuration.swift_ file. 
+1. In Xcode, open *NativeAuthSampleApp.xcodeproj* project. 
+1. Open *NativeAuthSampleApp/Configuration.swift* file. 
 1. Find the placeholder:
 
    - `Enter_the_Application_Id_Here` and replace it with the **Application (client) ID** of the app you registered earlier. 
@@ -121,4 +121,3 @@ Use the steps in [Call a protected web API in a sample iOS mobile app by using n
 ## Next steps 
 
 - [Tutorial: Prepare your iOS app for native authentication](tutorial-native-authentication-prepare-ios-app.md). 
-

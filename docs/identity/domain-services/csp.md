@@ -38,7 +38,7 @@ Domain Services supports Azure CSP subscriptions. You can deploy your applicatio
 
 You can also deploy a Domain Services managed domain in your customer's Microsoft Entra tenant. Your application is then connected to your customer's managed domain. Capabilities within your application that rely on Kerberos / NTLM, LDAP, or the [System.DirectoryServices API](/dotnet/api/system.directoryservices) work seamlessly against your customer's domain. End customers benefit from consuming your application as a service, without needing to worry about maintaining the infrastructure the application is deployed on.
 
-All billing for Azure resources you consume in that subscription, including Domain Services, is charged back to you. You maintain full control over the relationship with the customer when it comes to sales, billing, technical support etc. With the flexibility of the Azure CSP platform, a small team of support agents can service many such customers who have instances of your application deployed.
+All billing for Azure resources you consume in that subscription, including Domain Services, is charged back to you. You maintain full control over the relationship with the customer when it comes to sales, billing, technical support, and so on. With the flexibility of the Azure CSP platform, a small team of support agents can service many such customers who have instances of your application deployed.
 
 <a name='csp-deployment-models-for-azure-ad-ds'></a>
 

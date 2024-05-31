@@ -24,7 +24,7 @@
     href: concept-hybrid-join.md
   - name: Device registration flows
     href: device-registration-how-it-works.md
-  - name: single sign-on (SSO) to on-premises resources
+  - name: Single sign-on (SSO) to on-premises resources
     href: device-sso-to-on-premises-resources.md
   - name: Primary Refresh Tokens
     href: concept-primary-refresh-token.md

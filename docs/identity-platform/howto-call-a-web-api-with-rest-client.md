@@ -71,7 +71,7 @@ Follow these steps to create the web API registration:
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the tenant in which you want to register the application from the **Directories + subscriptions** menu.
 1. Browse to **Identity** > **Applications** > **App registrations**.
 1. Select **New registration**.
-1. Enter a **Name** for the application, such as _NewWebAPI1_.
+1. Enter a **Name** for the application, such as *NewWebAPI1*.
 1. For **Supported account types**, select **Accounts in this organizational directory only**. For information on different account types, select **Help me choose** option.
 1. Select **Register**.
 
@@ -140,12 +140,12 @@ You can see the application's **Overview** pane when registration is complete. R
 
 #### Add a client secret
 
-A client secret is a string value your app can use to identity itself, and is sometimes referred to as an _application password_. The web app uses the client secret to prove its identity when it requests tokens.
+A client secret is a string value your app can use to identity itself, and is sometimes referred to as an *application password*. The web app uses the client secret to prove its identity when it requests tokens.
 
 Follow these steps to configure a client secret:
 
 1. From the **Overview** pane, under **Manage**, select **Certificates & secrets** > **Client secrets** > **New client secret**.
-1. Add a description for your client secret, for example _My client secret_.
+1. Add a description for your client secret, for example *My client secret*.
 1. Select an expiration for the secret or specify a custom lifetime.
 
    - A client secret's lifetime is limited to two years (24 months) or less. You can't specify a custom lifetime longer than 24 months.
@@ -211,7 +211,7 @@ To ensure your API is operational and ready to handle requests, follow these ste
 
 To ensure your API is operational and ready to handle requests, follow these steps:
 
-1. Navigate to the web API that was created in [Tutorial: Create an ASP.NET Core project and configure the API](web-api-tutorial-02-prepare-api.md), for example _NewWebAPILocal_, and open the folder.
+1. Navigate to the web API that was created in [Tutorial: Create an ASP.NET Core project and configure the API](web-api-tutorial-02-prepare-api.md), for example *NewWebAPILocal*, and open the folder.
 
 1. Open a new terminal window and navigate to the folder where the web API project is located.
 
@@ -249,8 +249,8 @@ To ensure your API is operational and ready to handle requests, follow these ste
 To obtain an access token for your API requests, follow these steps:
 
 1. Launch the **Insomnia** application.
-1. Select **New HTTP Request**, or you can use _Ctrl + N_ to create a new HTTP Request.
-1. In the _New Request modal_, select a **GET** method from the dropdown.
+1. Select **New HTTP Request**, or you can use *Ctrl + N* to create a new HTTP Request.
+1. In the *New Request modal*, select a **GET** method from the dropdown.
 1. For the request URL, enter the URL of the endpoint exposed by the web API, `https://localhost:{port}/weatherforecast`.
 1. From **Auth** dropdown menu, select **OAuth 2.0**. This displays **OAuth 2.0** form.
 1. Enter the following values in the **OAuth 2.0** form:

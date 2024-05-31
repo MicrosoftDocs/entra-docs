@@ -167,7 +167,7 @@ Connect-MgGraph -Scopes "EntitlementManagement.ReadWrite.All"
 $accesspackage = Get-MgEntitlementManagementAccessPackage -Filter "displayname eq 'Marketing Campaign'" -ExpandProperty "assignmentpolicies"
 if ($null -eq $accesspackage) { throw "no access package"}
 $policy = $accesspackage.AssignmentPolicies[0]
-$userid = "cdbdf152-82ce-479c-b5b8-df90f561d5c7"
+$userid = "00aa00aa-bb11-cc22-dd33-44ee44ee44ee"
 $params = @{
    requestType = "adminAdd"
    assignment = @{
@@ -262,7 +262,7 @@ You can remove a user's assignment in PowerShell with the `New-MgEntitlementMana
 ```powershell
 Connect-MgGraph -Scopes "EntitlementManagement.ReadWrite.All"
 $accessPackageId = "9f573551-f8e2-48f4-bf48-06efbb37c7b8"
-$userId = "040a792f-4c5f-4395-902f-f0d9d192ab2c"
+$userId = "11bb11bb-cc22-dd33-ee44-55ff55ff55ff"
 $filter = "accessPackage/Id eq '" + $accessPackageId + "' and state eq 'Delivered' and target/objectId eq '" + $userId + "'"
 $assignment = Get-MgEntitlementManagementAssignment -Filter $filter -ExpandProperty target -all -ErrorAction stop
 if ($assignment -ne $null) {

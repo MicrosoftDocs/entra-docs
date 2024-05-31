@@ -132,8 +132,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 ## Configure Pulse Secure PCS SSO
 
-This section covers the SAML configurations required to configure PCS as SAML SP. The other basic
-configurations like creating Realms and Roles are not covered.
+This section covers the SAML configurations required to configure PCS as SAML SP. The other basic configurations like creating Realms and Roles are not covered.
 
 **Pulse Connect Secure configurations include:**
 

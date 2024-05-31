@@ -35,10 +35,16 @@ You can usually leave an organization on your own without having to contact an a
 
    - If you're using a work or school account, go to https://myaccount.microsoft.com and sign in.
    - If you're using a personal account or email one-time passcode, you'll need to use a My Account URL that includes your tenant name or tenant ID.
+   
    For example:
-    https://myaccount.microsoft.com?tenantId=contoso.onmicrosoft.com
-    or 
-    https://myaccount.microsoft.com?tenantId=aaaabbbb-0000-cccc-1111-dddd2222eeee. You might need to open this URL in a private browser session.
+
+   `https://myaccount.microsoft.com?tenantId=contoso.onmicrosoft.com`
+
+   -or-
+
+   `https://myaccount.microsoft.com?tenantId=aaaabbbb-0000-cccc-1111-dddd2222eeee`
+
+   You might need to open this URL in a private browser session.
 
 1. Select **Organizations** from the left navigation pane or select the **Manage organizations** link from the **Organizations** block.
 

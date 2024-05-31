@@ -176,10 +176,7 @@ c2652d63-9161-439b-b74e-fcd8228a7074 EMSandOffice             {ENTERPRISEPREMIUM
 ```
 
 ## Get statistics for groups with licenses
-You can report basic statistics for groups with licenses. In the example
-below, the script lists the total user count, the count of users with licenses
-already assigned by the group, and the count of users for whom licenses
-could not be assigned by the group.
+You can report basic statistics for groups with licenses. In the example below, the script lists the total user count, the count of users with licenses already assigned by the group, and the count of users for whom licenses could not be assigned by the group.
 
 ```powershell
 # Import User Graph Module

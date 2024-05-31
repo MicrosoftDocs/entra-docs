@@ -229,7 +229,7 @@ To configure token encryption for an application registration, follow these step
        "keyCredentials":[ 
           { 
              "type":"AsymmetricX509Cert","usage":"Encrypt",
-             "keyId":"fdf8c5d8-f727-43fd-beaf-0f1521cf3d35",    (Use a GUID generator to obtain a value for the keyId)
+             "keyId":"aaaaaaaa-0b0b-1c1c-2d2d-333333333333",    (Use a GUID generator to obtain a value for the keyId)
              "key": "MIICADCCAW2gAwIBAgIQ5j9/b+n2Q4pDvQUCcy3…"  (Base64Encoded .cer file)
           }
         ]
@@ -242,7 +242,7 @@ To configure token encryption for an application registration, follow these step
     PATCH https://graph.microsoft.com/beta/applications/<application objectid> 
 
     { 
-       "tokenEncryptionKeyId":"fdf8c5d8-f727-43fd-beaf-0f1521cf3d35" (The keyId of the keyCredentials entry to use)
+       "tokenEncryptionKeyId":"aaaaaaaa-0b0b-1c1c-2d2d-333333333333" (The keyId of the keyCredentials entry to use)
     }
     ```
 
