@@ -1,17 +1,14 @@
 ---
 title: Default user permissions
-description: Learn about the user permissions available in Microsoft Entra ID.
+description: Compare the default user permissions available in Microsoft Entra ID and learn how to restrict access.
 author: barclayn
 manager: amycolannino
-
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: conceptual
-ms.date: 02/17/2023
+ms.date: 05/31/2024
 ms.author: barclayn
 ms.reviewer: vincesm
-ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
-ms.collection: M365-identity-device-management
 ---
 # What are the default user permissions in Microsoft Entra ID?
 
@@ -61,8 +58,7 @@ You can restrict default permissions for member users in the following ways:
 | **Restrict users from recovering the BitLocker key(s) for their owned devices** | This setting can be found in the Microsoft Entra admin center in the Device Settings. Setting this option to **Yes** restricts users from being able to self-service recover BitLocker key(s) for their owned devices. Users will have to contact their organization's helpdesk to retrieve their BitLocker keys. Setting this option to **No** allows users to recover their BitLocker key(s). |
 | **Read other users** | This setting is available in Microsoft Graph and PowerShell only. Setting this flag to `$false` prevents all non-admins from reading user information from the directory. This flag may prevent reading user information in other Microsoft services like Microsoft Teams.</p><p>This setting is meant for special circumstances, so we don't recommend setting the flag to `$false`. |
 
-The **Restrict non-admin users from creating tenants** option is shown [below](https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/UserSettings)
-
+The **Restrict non-admin users from creating tenants** option is shown in the following screenshot.
 
 :::image type="content" source="media/user-default-permissions/tenant-creation-restriction.png" alt-text="Screenshot showing the option to Restrict non-admins from creating tenants." lightbox="media/user-default-permissions/tenant-creation-restriction.png":::
 
