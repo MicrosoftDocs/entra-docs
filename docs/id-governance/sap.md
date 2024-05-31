@@ -17,7 +17,9 @@ SAP software and services likely runs critical functions, such as HR and ERP, fo
 
 ![Diagram of SAP integrations.](./media/sap/sap-integrations.png)
 
-If you've been using SAP IDM, then you can migrate your identity management scenarios from SAP IDM to Microsoft Entra. For more information, see [Migrate identity management scenarios from SAP IDM to Microsoft Entra](~/identity/app-provisioning/migrate-from-sap-idm.md).
+## Migrate from SAP Identity Management
+
+If you've been using SAP Identity Management (IDM), then you can migrate identity management scenarios from SAP IDM to Microsoft Entra. For more information, see [Migrate identity management scenarios from SAP IDM to Microsoft Entra](~/identity/app-provisioning/migrate-from-sap-idm.md).
 
 <a name='bring-identities-from-hr-into-azure-ad'></a>
 
