@@ -42,7 +42,7 @@ To begin planning your migration,
 
 As a SAP IDM migration will likely involve integrations with existing SAP applications, review the [integrations with SAP sources and targets](plan-sap-user-source-and-target.md#plan-the-integrations-with-sap-sources-and-targets) guidance for how to determine the sequence of application onboarding and how applications will integrate with Microsoft Entra.
 
-Partners can also help your organization with planning and deployment. Customers can engage partners listed in the Microsoft Solution Partner finder or can choose from the [services and integration partners](~/id-governance/services-and-integration-partners.md).
+Partners can also help your organization with planning and deployment. Customers can engage partners listed in the Microsoft Solution Partner finder or can choose from the [services and integration partners for deploying Microsoft Entra with SAP applications](~/id-governance/services-and-integration-partners.md#services-and-integration-partners-for-using-microsoft-entra-with-sap-applications).
 
 ## Migration guidance for each SAP IDM scenario
 

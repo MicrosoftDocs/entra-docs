@@ -109,6 +109,7 @@ For more information about SAP integrations with Microsoft Entra ID, see the fol
 
 - [Secure access with SAP Cloud Identity Services and Microsoft Entra ID](../fundamentals/scenario-azure-first-sap-identity-integration.md)
 - [SAP workload security - Microsoft Azure Well-Architected Framework](/azure/architecture/framework/sap/security)
+- [Services and integration partners for deploying Microsoft Entra with SAP applications](services-and-integration-partners.md#services-and-integration-partners-for-deploying-microsoft-entra-with-sap-applications)
 
 ## Next steps
 
