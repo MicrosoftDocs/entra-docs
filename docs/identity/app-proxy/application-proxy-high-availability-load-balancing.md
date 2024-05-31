@@ -57,7 +57,7 @@ Another key area where high availability is a factor is the connection between c
 ![Diagram of user connecting to an application via application proxy](media/application-proxy-high-availability-load-balancing/application-proxy-three-hops.png)
 
 ### X-Forwarded-For header field considerations
-In some situations (like auditing, load balancing etc.), sharing the originating IP address of the external client with the on-premises environment is a requirement. To address the requirement, Microsoft Entra private network connector adds the X-Forwarded-For header field with the originating client IP address (public) to the HTTP request. The appropriate network device (load balancer, firewall) or the web server or back-end application can then read and use the information.
+In some situations (like auditing, load balancing, and so on), sharing the originating IP address of the external client with the on-premises environment is a requirement. To address the requirement, Microsoft Entra private network connector adds the X-Forwarded-For header field with the originating client IP address (public) to the HTTP request. The appropriate network device (load balancer, firewall) or the web server or back-end application can then read and use the information.
 
 ## Best practices for load balancing among multiple application servers
 Load balancing is important when the connector group assigned to the application proxy application has two or more connectors. Load balancing is also important when you’re running the back-end web application on multiple servers.

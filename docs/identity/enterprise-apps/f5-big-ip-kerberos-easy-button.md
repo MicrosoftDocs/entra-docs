@@ -197,7 +197,7 @@ The infrastructure is based on a .com domain suffix used internally and external
 
 #### Additional User Attributes
 
-The **Additional User Attributes** tab supports various distributed systems requiring attributes stored in other directories, for session augmentation. Attributes fetched from a Lightweight Directory Access Protocol (LDAP) source can be injected as SSO headers to help control access based on roles, Partner IDs, etc.
+The **Additional User Attributes** tab supports various distributed systems requiring attributes stored in other directories, for session augmentation. Attributes fetched from a Lightweight Directory Access Protocol (LDAP) source can be injected as SSO headers to help control access based on roles, Partner IDs, and so on.
 
 >[!NOTE] 
 >This feature has no correlation to Microsoft Entra ID but is another source of attributes.

@@ -164,7 +164,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
    
     ![Screenshot shows the SAML page where you can enter the values described.](./media/moxtra-tutorial/admin.png "Administrator")   
  
-    a. In the **Name** textbox, type a name for your configuration (e.g.: **SAML**). 
+    a. In the **Name** textbox, type a name for your configuration (such as **SAML**). 
   
     b. In the **IdP Entity ID** textbox, paste the value of **Microsoft Entra Identifier**.. 
  

@@ -192,7 +192,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 	![Screenshot that shows the "Name and S S O location" with the "Identity provider name" textbox highlighted, and the "Next" button selected.](./media/kantegassoforconfluence-tutorial/location.png)
 
-	a. Add Name of the Identity Provider in **Identity provider name** textbox (e.g Microsoft Entra ID).
+	a. Add Name of the Identity Provider in **Identity provider name** textbox (such as Microsoft Entra ID).
 
 	b. Click **Next**.
 

@@ -208,7 +208,7 @@ If needed, include other Microsoft Entra attributes. The Oracle JDE scenario req
 
 #### Additional User Attributes
 
-The **Additional User Attributes** tab supports distributed systems that require attributes are stored in other directories for session augmentation. Attributes from an LDAP source are injected as more SSO headers to control access based on roles, Partner IDs, etc.  
+The **Additional User Attributes** tab supports distributed systems that require attributes are stored in other directories for session augmentation. Attributes from an LDAP source are injected as more SSO headers to control access based on roles, Partner IDs, and so on.  
 
    >[!NOTE] 
    >This feature has no correlation to Microsoft Entra ID; it's another attribute source.

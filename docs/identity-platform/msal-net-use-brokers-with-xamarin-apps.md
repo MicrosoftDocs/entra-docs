@@ -161,7 +161,7 @@ Add `msauthv2` to the `LSApplicationQueriesSchemes` section of the *Info.plist* 
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-When you use the broker, your redirect URI has an extra requirement. The redirect URI _must_ have the following format:
+When you use the broker, your redirect URI has an extra requirement. The redirect URI *must* have the following format:
 
 ```csharp
 $"msauth.{BundleId}://auth"

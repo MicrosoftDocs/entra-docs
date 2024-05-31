@@ -61,7 +61,7 @@ procedureSection:
       ### To restore a user
     steps:
       - |
-        On the **Deleted users** page, search for and select one of the available users. For example, _Mary Parker_.
+        On the **Deleted users** page, search for and select one of the available users. For example, *Mary Parker*.
       - |
         Select **Restore user**.
 
@@ -77,7 +77,7 @@ procedureSection:
       ### To permanently delete a user
     steps: 
       - |
-        On the **Deleted users** page, search for and select one of the available users. For example, _Rae Huff_.
+        On the **Deleted users** page, search for and select one of the available users. For example, *Rae Huff*.
       - |
         Select **Delete permanently**.
 

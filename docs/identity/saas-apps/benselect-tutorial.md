@@ -149,7 +149,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 To configure single sign-on on **BenSelect** side, you need to send the downloaded **Certificate (Raw)** and appropriate copied URLs from the application configuration to [BenSelect support team](mailto:support@selerix.com). They set this setting to have the SAML SSO connection set properly on both sides.
 
 > [!NOTE]
-> You need to mention that this integration requires the SHA256 algorithm (SHA1 is not supported) to set the SSO on the appropriate server like app2101 etc.
+> You need to mention that this integration requires the SHA256 algorithm (SHA1 is not supported) to set the SSO on the appropriate server like app2101, and so on.
 
 ### Create BenSelect test user
 

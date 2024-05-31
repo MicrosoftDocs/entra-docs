@@ -228,8 +228,7 @@ The cloud HR app to Active Directory user provisioning solution requires the dep
 
 To prepare the on-premises environment, the Microsoft Entra Connect provisioning agent configuration wizard registers the agent with your Microsoft Entra tenant, [opens ports](../../global-secure-access/how-to-configure-connectors.md), [allows access to URLs](../../global-secure-access/how-to-configure-connectors.md), and supports [outbound HTTPS proxy configuration](~/identity/saas-apps/workday-inbound-tutorial.md#how-do-i-configure-the-provisioning-agent-to-use-a-proxy-server-for-outbound-http-communication).
 
-The provisioning agent configures a [Global Managed Service Account (GMSA)](~/identity/hybrid/cloud-sync/how-to-prerequisites.md#group-managed-service-accounts)
-to communicate with the Active Directory domains.
+The provisioning agent configures a [Global Managed Service Account (GMSA)](~/identity/hybrid/cloud-sync/how-to-prerequisites.md#group-managed-service-accounts) to communicate with the Active Directory domains.
 
 You can select domain controllers that should handle provisioning requests. If you have several geographically distributed domain controllers, install the provisioning agent in the same site as your preferred domain controllers. This positioning improves the reliability and performance of the end-to-end solution.
 

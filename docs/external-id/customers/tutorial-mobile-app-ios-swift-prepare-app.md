@@ -108,9 +108,9 @@ To create MSAL instance in your project, follow these steps:
     }
     ```
     
-    This code initializes the MSAL for iOS. It first attempts to create a URL for the authority using the provided _Configuration.kAuthority_ string. If successful, it creates an MSAL authority object based on that URL. Then, it configures the `MSALPublicClientApplication` with the given client ID, redirect URI, and authority. If all configurations are set up correctly, it initializes the application context with the configured `MSALPublicClientApplication`. If any errors occur during the process, it throws an error.
+    This code initializes the MSAL for iOS. It first attempts to create a URL for the authority using the provided *Configuration.kAuthority* string. If successful, it creates an MSAL authority object based on that URL. Then, it configures the `MSALPublicClientApplication` with the given client ID, redirect URI, and authority. If all configurations are set up correctly, it initializes the application context with the configured `MSALPublicClientApplication`. If any errors occur during the process, it throws an error.
 
-1. Create _Configuration.swift_ file and add the following configurations:
+1. Create *Configuration.swift* file and add the following configurations:
 
     ```swift
     import Foundation
@@ -130,7 +130,7 @@ To create MSAL instance in your project, follow these steps:
     }
     ```
     
-    This Swift configuration code defines a class named `Configuration` and is marked with `@objcMembers`. It includes static constants for various configuration parameters related to an authentication setup. These parameters include the _tenant subdomain_, _client ID_, _redirect URI_, _protected API endpoint_, and _scopes_. These configuration constants should be updated with appropriate values specific to the application's setup.
+    This Swift configuration code defines a class named `Configuration` and is marked with `@objcMembers`. It includes static constants for various configuration parameters related to an authentication setup. These parameters include the *tenant subdomain*, *client ID*, *redirect URI*, *protected API endpoint*, and *scopes*. These configuration constants should be updated with appropriate values specific to the application's setup.
 
     Find the placeholder:
 

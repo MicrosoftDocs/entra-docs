@@ -165,7 +165,7 @@ There are currently a few known limitations to on-demand provisioning. Post your
 ::: zone pivot="app-provisioning"
 > [!NOTE]
 > The following limitations are specific to the on-demand provisioning capability. For information about whether an application supports provisioning groups, deletions, or other capabilities, check the tutorial for that application.
-* On-demand provisioning of groups supports updating up to five members at a time. Connectors for cross-tenant synchronization, Workday, etc. do not support group provisioning and as a result do not support on-demand provisioning of groups.
+* On-demand provisioning of groups supports updating up to five members at a time. Connectors for cross-tenant synchronization, Workday, and so on. do not support group provisioning and as a result do not support on-demand provisioning of groups.
 * The on-demand provisioning request API can only accept a single group with up to 5 members at a time.
 ::: zone-end
 ::: zone pivot="cross-tenant-synchronization"

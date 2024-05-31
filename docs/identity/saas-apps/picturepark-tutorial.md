@@ -102,7 +102,7 @@ Follow these steps to enable Microsoft Entra SSO.
 7. On the **Set up Picturepark** section, copy the appropriate URL(s) as per your requirement. For **Login URL**, use the value with the following pattern: `https://login.microsoftonline.com/_my_directory_id_/wsfed`
 
     > [!Note]
-    > _my_directory_id_ is the tenant id of Microsoft Entra subscription.
+    > *my_directory_id* is the tenant id of Microsoft Entra subscription.
 
 	![Copy configuration URLs](./media/picturepark-tutorial/configure.png)
 

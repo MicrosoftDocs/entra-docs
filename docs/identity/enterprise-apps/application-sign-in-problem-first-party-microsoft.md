@@ -19,7 +19,7 @@ ms.custom: enterprise-apps
 
 # Problems signing in to a Microsoft application
 
-Microsoft Applications (like Exchange, SharePoint, Yammer, etc.) are assigned and managed a bit differently than third-party SaaS applications or other applications you integrate with Microsoft Entra ID for single sign-on.
+Microsoft Applications (like Exchange, SharePoint, Yammer, and so on) are assigned and managed a bit differently than third-party SaaS applications or other applications you integrate with Microsoft Entra ID for single sign-on.
 
 There are three main ways that a user can get access to a Microsoft-published application.
 

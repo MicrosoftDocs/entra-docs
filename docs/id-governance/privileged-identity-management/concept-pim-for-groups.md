@@ -37,7 +37,7 @@ To learn more about Microsoft Entra role-assignable groups, see [Create a role-a
 Role-assignable groups benefit from extra protections comparing to non-role-assignable groups:
 
 - **Role-assignable groups** - only the Global Administrator, Privileged Role Administrator, or the group Owner can manage the group. Also, no other users can change the credentials of the users who are (active) members of the group. This feature helps prevent an admin from elevating to a higher privileged role without going through a request and approval procedure.
-- **Non-role-assignable groups** - various Microsoft Entra roles can manage these groups – that includes Exchange Administrators, Groups Administrators, User Administrators, etc. Also, various roles Microsoft Entra roles can change the credentials of the users who are (active) members of the group – that includes Authentication Administrators, Helpdesk Administrators, User Administrators, etc.
+- **Non-role-assignable groups** - various Microsoft Entra roles can manage these groups – that includes Exchange Administrators, Groups Administrators, User Administrators, and so on. Also, various roles Microsoft Entra roles can change the credentials of the users who are (active) members of the group – that includes Authentication Administrators, Helpdesk Administrators, User Administrators, and so on.
 
 To learn more about Microsoft Entra built-in roles and their permissions, see [Microsoft Entra built-in roles](~/identity/role-based-access-control/permissions-reference.md).
 
