@@ -108,9 +108,9 @@ Currently, the Microsoft Entra SAML/WS-Fed federation feature doesn't support se
 
 You need to be an [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator) or a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) in your Microsoft Entra tenant to configure a SAML/Ws-Fed identity provider.
 
-**Can we avoid the creation of guest/B2B accounts on our tenant?**
+**Does federation eliminate the need to create a guest account in my directory for the B2B collaboration user?**
 
-Guests accounts will always be need to be created on the teant in order to grant access to applications, roles or membership to security groups or teams in the teanat, regardless of the federation method used.   
+No. A guest account is created for a B2B collaboration user in your directory regardless of the authentication or federation method used. This user object allows you to grant access to applications, assign roles, and define membership in security groups.  
 
 ## Step 1: Determine if the partner needs to update their DNS text records
 
