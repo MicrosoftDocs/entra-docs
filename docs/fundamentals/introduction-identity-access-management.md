@@ -1,13 +1,13 @@
 ---
 title: What is identity and access management (IAM)?
-description:  Learn what identity and access management (IAM) is, why it's important, and how it works.  Learn about authentication and authorization, single sign-on (SSO), and multi-factor authentication (MFA). Learn about SAML, Open ID Connect (OIDC), and OAuth 2.0 and other authentication and authorization standards, tokens, and more.
+description:  Learn what identity and access management (IAM) is, why it's important, and how it works.  Learn about authentication and authorization, single sign-on (SSO), and multifactor authentication (MFA). Learn about SAML, Open ID Connect (OIDC), and OAuth 2.0 and other authentication and authorization standards, tokens, and more.
 author: rwike77
 manager: CelesteDG
 
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: conceptual
-ms.date: 01/20/2024
+ms.date: 05/31/2024
 ms.author: ryanwi
 ms.reviewer: 
 ---
@@ -30,7 +30,7 @@ IAM systems typically provide the following core functionality:
 
 - **Provisioning and deprovisioning of users** - The process of creating and managing user accounts, which includes specifying which users have access to which resources, and assigning permissions and access levels.
 
-- **Authentication of users** - Authenticate a user, machine, or software component by confirming that they're who or what they say they are. You can add multi-factor authentication (MFA) for individual users for extra security or single sign-on (SSO) to allow users to authenticate their identity with one portal instead of many different resources.
+- **Authentication of users** - Authenticate a user, machine, or software component by confirming that they're who or what they say they are. You can add multifactor authentication (MFA) for individual users for extra security or single sign-on (SSO) to allow users to authenticate their identity with one portal instead of many different resources.
 
 - **Authorization of users** - Authorization ensures a user is granted the exact level and type of access to a tool that they're entitled to. Users can also be portioned into groups or roles so large cohorts of users can be granted the same privileges.
 
@@ -92,7 +92,7 @@ WS-Fed was developed by Microsoft and used extensively in their applications, th
 To learn more, see:
 
 - [Single sign-on (SSO)](~/identity/enterprise-apps/what-is-single-sign-on.md)
-- [Multi-factor authentication (MFA)](~/identity/authentication/concept-mfa-howitworks.md)
+- [Multifactor authentication (MFA)](~/identity/authentication/concept-mfa-howitworks.md)
 - [Authentication vs authorization](~/identity-platform/authentication-vs-authorization.md)
 - [OAuth 2.0 and OpenID Connect](~/identity-platform/v2-protocols.md)
 - [App types and authentication flows](~/identity-platform/authentication-flows-app-scenarios.md)

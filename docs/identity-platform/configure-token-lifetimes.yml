@@ -6,7 +6,7 @@ metadata:
   author: rwike77
   ms.author: ryanwi
   manager: CelesteDG
-  ms.date: 11/02/2023
+  ms.date: 05/31/2024
   ms.service: identity-platform
   ms.custom:
     - ge-structured-content-pilot
@@ -18,6 +18,8 @@ title: |
   Configure token lifetime policies (preview)
 introduction: 
   In the following steps, you'll implement a common policy scenario that imposes new rules for token lifetime. It's possible to specify the lifetime of an access, SAML, or ID token issued by the Microsoft identity platform. This can be set for all apps in your organization or for a specific app or principal. They can also be set for multi-organizations (multitenant application).
+
+  You might want to increase the token lifetime so that a script will run for more than an hour. Many Microsoft libraries, such as Microsoft Graph PowerShell SDK, extend the token lifetime as needed and you don't need to makes changes to the access token policy. 
 
   For more information, see [configurable token lifetimes](configurable-token-lifetimes.md).
 
