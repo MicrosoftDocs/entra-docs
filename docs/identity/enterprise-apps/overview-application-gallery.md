@@ -56,7 +56,7 @@ Applications that are specific to major cloud platforms, such as AWS, Google, or
 
 ### On-premises applications
 
-There are three ways on-premises applications can be connected to Microsoft Entra ID. One is using Microsoft Entra application proxy for single sign-on. If your application supports single-sign on via SAML or Kerberos, then from the on-premises section of the Microsoft Entra gallery, you can undertake the following tasks:
+There are five ways on-premises applications can be connected to Microsoft Entra ID. One is using Microsoft Entra application proxy for single sign-on. If your application supports single-sign on via SAML or Kerberos, then from the on-premises section of the Microsoft Entra gallery, you can undertake the following tasks:
 
 - Configure Application Proxy to enable remote access to an on-premises application.
 - Use the documentation to learn more about how to use Application Proxy to secure remote access to on-premises applications.
@@ -64,9 +64,15 @@ There are three ways on-premises applications can be connected to Microsoft Entr
 
 :::image type="content" source="media/overview-application-gallery/on-premises-applications.png" alt-text="Screenshot showing the on-premises application options on the Microsoft Entra application gallery pane in the Microsoft Entra admin center.":::
 
-The second is using the provisioning agent to provision to an on-premises application. You can configure provisioning to [on-premises applications that support SCIM](../app-provisioning/on-premises-scim-provisioning.md), that use a [SQL database](../app-provisioning/on-premises-sql-connector-configure.md), that use an [LDAP directory](../app-provisioning/on-premises-ldap-connector-configure.md), or support a [SOAP or REST provisioning API](../app-provisioning/on-premises-web-services-connector.md).
+If your application uses Kerberos and also requires group memberships, then you can populate Windows Server AD groups from corresponding groups in Microsoft Entra. For more information, see [group writeback with Microsoft Entra Cloud Sync](/identity/hybrid/group-writeback-cloud-sync.md).
 
-The third is using Microsoft Entra Private Access, by configuring a Global Secure Access app for per-app connections. For more information, see [Learn about Microsoft Entra Private Access](~/entra/global-secure-access/concept-private-access).
+The second is using the provisioning agent to provision to an on-premises application that has its own user store and does not rely upon Windows Server AD. You can configure provisioning to [on-premises applications that support SCIM](../app-provisioning/on-premises-scim-provisioning.md), that use a [SQL database](../app-provisioning/on-premises-sql-connector-configure.md), that use an [LDAP directory](../app-provisioning/on-premises-ldap-connector-configure.md), or support a [SOAP or REST provisioning API](../app-provisioning/on-premises-web-services-connector.md).
+
+The third is using Microsoft Entra Private Access, by configuring a Global Secure Access app for per-app connections. For more information, see [Learn about Microsoft Entra Private Access](/entra/global-secure-access/concept-private-access).
+
+The fourth is to use the application's own connector. If you have [`SAP S/4HANA On-premise`](https://help.sap.com/docs/identity-provisioning/identity-provisioning/target-sap-s-4hana-on-premise), then provision users from Microsoft Entra ID to SAP Cloud Identity Directory. SAP Cloud Identity Services then provisions the users originating from Microsoft Entra ID that are in the SAP Cloud Identity Directory into the downstream SAP applications to SAP S/4HANA On-Premise through the SAP cloud connector. For more information, see [plan deploying Microsoft Entra for user provisioning with SAP source and target apps](../app-provisioning/plan-sap-user-source-and-target.md).
+
+The fifth is to use a third party integration technology. In cases where an application doesn't support standards such as SCIM, partners have built custom ECMA connectors and SCIM gateways to integrate Microsoft Entra ID with numerous applications, including on-premises applications. For more information, see the list of [available partner-driven integrations](..//app-provisioning/partner-driven-integrations.md#available-partner-driven-integrations).
 
 ### Featured applications
 
