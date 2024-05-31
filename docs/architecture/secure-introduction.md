@@ -93,7 +93,7 @@ Having a set of directory objects in the Microsoft Entra tenant boundary engende
 
 * Visibility. Identities can discover or enumerate resources, users, groups, access usage reporting and audit logs based on their permissions. For example, a member of the directory can discover users in the directory per Microsoft Entra ID [default user permissions](~/fundamentals/users-default-permissions.md).
 
-* Applications can affect objects. Applications can manipulate directory objects through Microsoft Graph as part of their business logic. Typical examples include reading/setting user attributes, updating user's calendar, sending emails on behalf of the user, etc. Consent is necessary to allow applications to affect the tenant. Administrators can consent for all users. For more information, see [Permissions and consent in the Microsoft identity platform](~/identity-platform/v2-admin-consent.md).
+* Applications can affect objects. Applications can manipulate directory objects through Microsoft Graph as part of their business logic. Typical examples include reading/setting user attributes, updating user's calendar, sending emails on behalf of the user, and so on. Consent is necessary to allow applications to affect the tenant. Administrators can consent for all users. For more information, see [Permissions and consent in the Microsoft identity platform](~/identity-platform/v2-admin-consent.md).
 
 >[!NOTE]
 >Use caution when using application permissions. For example, with Exchange Online, you should [scope application permissions to specific mailboxes and permissions](/graph/auth-limit-mailbox-access).
@@ -122,7 +122,7 @@ Sometimes a group of resources should be isolated from other resources for secur
 
 * Developer teams need the flexibility to safely iterate during the software development lifecycle of apps. But the development and testing of apps that write to Microsoft Entra ID can potentially affect the Microsoft Entra tenant through write operations. Some examples of this include:
 
-  * New applications that may change Office 365 content such as SharePoint sites, OneDrive, MS Teams, etc.
+  * New applications that may change Office 365 content such as SharePoint sites, OneDrive, MS Teams, and so on.
 
   * Custom applications that can change data of users with MS Graph or similar APIs at scale (for example, applications that are granted Directory.ReadWrite.All)
 
@@ -168,7 +168,7 @@ The implementation of some tenant-wide configurations can be scoped as long as t
 
 Configurations, controlled by administrators, affect resources. While some tenant-wide configuration can be scoped with policies to not apply or partially apply to a specific resource, others can't. If a resource has configuration needs that are unique, isolate it in a separate tenant. Examples of configuration isolation scenarios include:
 
-* Resources having requirements that conflict with existing tenant-wide security or collaboration postures. (for example allowed authentication types, device management policies, ability to self-service, identity proofing for external identities, etc.).
+* Resources having requirements that conflict with existing tenant-wide security or collaboration postures. (for example allowed authentication types, device management policies, ability to self-service, identity proofing for external identities, and so on).
 
 * Compliance requirements that scope certification to the entire environment, including all resources and the Microsoft Entra tenant itself, especially when those requirements conflict with or must exclude other organizational resources.
 
@@ -178,7 +178,7 @@ Configurations, controlled by administrators, affect resources. While some tenan
 
 ## Administration in a tenant
 
-Identities with privileged roles in the Microsoft Entra tenant have the visibility and permissions to execute the configuration tasks described in the previous sections. Administration includes both the administration of identity objects such as users, groups, and devices, and the scoped implementation of tenant-wide configurations for authentication, authorization, etc.
+Identities with privileged roles in the Microsoft Entra tenant have the visibility and permissions to execute the configuration tasks described in the previous sections. Administration includes both the administration of identity objects such as users, groups, and devices, and the scoped implementation of tenant-wide configurations for authentication, authorization, and so on.
 
 ### Administration of directory objects
 
@@ -249,7 +249,7 @@ Who should have the ability to administer the environment and its resources? The
 
 * Separation of tenant-wide administrative responsibilities to further mitigate the risk of security and operational errors affecting critical resources.
 
-* Regulations that constrain who can administer the environment based on conditions such as citizenship, residency, clearance level, etc. that can't be accommodated with staff.
+* Regulations that constrain who can administer the environment based on conditions such as citizenship, residency, clearance level, and so on. that can't be accommodated with staff.
 
 ## Security and operational considerations
 

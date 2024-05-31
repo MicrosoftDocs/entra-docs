@@ -174,9 +174,9 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
  
 	a. Set **Microsoft Entra ID** as the IdP type.
 	
-	b. Add **Name** of the Identity Provider (e.g Microsoft Entra ID).
+	b. Add **Name** of the Identity Provider (such as Microsoft Entra ID).
 	
-	c. Add **Description** of the Identity Provider (e.g Microsoft Entra ID).
+	c. Add **Description** of the Identity Provider (such as Microsoft Entra ID).
 	
 	d. Click **Next**.
 	
