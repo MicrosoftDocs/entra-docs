@@ -19,7 +19,7 @@ ms.custom:
 
 # Group Managed Service Accounts
 
-A group Managed Service Account is a managed domain account that provides automatic password management, simplified service principal name (SPN) management, the ability to delegate the management to other administrators, and also extends this functionality over multiple servers. Microsoft Entra Cloud Sync supports and uses a gMSA for running the agent. You can choose to allow the installer to create a new account or specify a custom account.  You'll be prompted for administrative credentials during setup, in order to create this account or set permissions if using a custom account. The account appears as `domain\provAgentgMSA$`. For more information on a gMSA, see [group Managed Service Accounts](/windows-server/security/group-managed-service-accounts/group-managed-service-accounts-overview).
+A group Managed Service Account is a managed domain account that provides automatic password management, simplified service principal name (SPN) management, the ability to delegate the management to other administrators, and also extends this functionality over multiple servers. Microsoft Entra Cloud Sync supports and uses a gMSA for running the agent. You can choose to allow the installer to create a new account or specify a custom account.  You'll be prompted for administrative credentials during setup, in order to create this account or set permissions if using a custom account. If the installer creates the account, the account appears as `domain\provAgentgMSA$`. For more information on a gMSA, see [group Managed Service Accounts](/windows-server/security/group-managed-service-accounts/group-managed-service-accounts-overview).
 
 ### Prerequisites for gMSA
 
@@ -99,17 +99,6 @@ If the associated forest is hosted in a Windows Server 2016 environment, it incl
 
 If you're creating a custom gMSA account, the installer will set the following permissons on the custom account.  These permissions reflect the **ALL** permissions. 
 
-|Type |Name |Access |Applies To|
-|-----|-----|-----|-----|
-|Allow |&lt;gmsa account&gt;|Read all properties |Descendant device objects|
-|Allow |&lt;gmsa account&gt;|Read all properties |Descendant InetOrgPerson objects|
-|Allow |&lt;gmsa account&gt;|Read all properties |Descendant Computer objects|
-|Allow |&lt;gmsa account&gt;|Read all properties |Descendant foreignSecurityPrincipal objects|
-|Allow |&lt;gmsa account&gt;|Full control |Descendant Group objects|
-|Allow |&lt;gmsa account&gt;|Read all properties |Descendant User objects|
-|Allow |&lt;gmsa account&gt;|Read all properties |Descendant Contact objects|
-|Allow |&lt;gmsa account&gt;|Create/delete User objects|This object and all descendant objects|
-
 For steps on how to upgrade an existing agent to use a gMSA account see [group Managed Service Accounts](how-to-install.md#group-managed-service-accounts).
 
 For more information on how to prepare your Active Directory for group Managed Service Account, see [group Managed Service Accounts Overview](/windows-server/security/group-managed-service-accounts/group-managed-service-accounts-overview).
@@ -134,8 +123,6 @@ The [Set-AADCloudSyncPermission](how-to-gmsa-cmdlets.md#using-set-aadcloudsyncpe
 |All| Applies all the above permissions|
 
 
-
-
 #### Basic Read
 Basic read is seperate from the ALL permissions set by the installer because it is not specifically set.  By Setting the other permissions, the gMSA account will get the basic read permissions on the following objects:
 
@@ -144,7 +131,7 @@ Basic read is seperate from the ALL permissions set by the installer because it 
  - Group
  - Contact
 
-However it **doesn't** set the basic read permissions  for the following objects:
+However it **doesn't** set the basic read permissions for the following objects:
 
  - Device
  - Computer
