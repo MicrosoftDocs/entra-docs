@@ -111,6 +111,10 @@ Currently, the Microsoft Entra SAML/WS-Fed federation feature doesn't support se
 
 You need to be at least an [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator) to configure a SAML/Ws-Fed identity provider.
 
+**Does federation eliminate the need to create a guest account in my directory for the B2B collaboration user?**
+
+No. A guest account is created for a B2B collaboration user in your directory regardless of the authentication or federation method used. This user object allows you to grant access to applications, assign roles, and define membership in security groups.  
+
 ## Step 1: Determine if the partner needs to update their DNS text records
 
 Depending on the partner's IdP, the partner might need to update their DNS records to enable federation with you. Use the following steps to determine if DNS updates are needed.
