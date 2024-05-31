@@ -33,6 +33,149 @@ Microsoft Entra ID (previously known as Azure Active Directory) receives improve
 
 This page updates monthly, so revisit it regularly. If you're looking for items older than six months, you can find them in [Archive for What's new in Microsoft Entra ID?](whats-new-archive.md).
 
+## May 2024
+
+### General Availability - $select in signIn API
+
+**Type:** New feature    
+**Service category:** MS Graph    
+**Product capability:** Monitoring & Reporting    
+
+The long-awaited `$select` has been implemented into the signIn API. Utilize the `$select` to reduce the number of attributes that are returned for each log. This should greatly help customers who deal with throttling issues, and allow every customer to run faster, more efficient queries.
+
+---
+
+### General Availability - Multiple Passwordless Phone Sign-in for Android Devices
+
+**Type:** New feature    
+**Service category:** Authentications (Logins)    
+**Product capability:** User Authentication    
+
+End users can now enable passwordless phone sign-in for multiple accounts in the Authenticator App on any supported Android device. Consultants, students, and others with multiple accounts in Microsoft Entra can add each account to Microsoft Authenticator and use passwordless phone sign-in for all of them from the same Android device. The Microsoft Entra accounts can be in the same tenant or different tenants. Guest accounts aren't supported for multiple account sign-ins from one device. For more information, see: [Enable passwordless sign-in with Microsoft Authenticator](../identity/authentication/howto-authentication-passwordless-phone.md).
+
+---
+
+### Public Preview - Bicep templates support for Microsoft Graph
+
+**Type:** New feature    
+**Service category:** MS Graph    
+**Product capability:** Developer Experience    
+
+The Microsoft Graph Bicep extension brings declarative infrastructure-as-code (IaC) capabilities to Microsoft Graph resources. It allows you to author, deploy, and manage core Microsoft Entra ID resources using Bicep template files, alongside Azure resources.
+
+- Existing Azure customers can now use familiar tools to deploy Azure resources and the Microsoft Entra resources they depend on, such as applications and service principals, IaC and DevOps practices.
+- It also opens the door for existing Microsoft Entra customers to use Bicep templates and IaC practices to deploy and manage their tenant's Entra resources.
+
+For more information, see: [Bicep templates for Microsoft Graph resources](/graph/templates/)
+
+---
+
+### Public Preview - Platform Single Sign-on for macOS with Microsoft Entra ID
+
+**Type:** New feature    
+**Service category:** Authentications (Logins)    
+**Product capability:** User Authentication    
+
+Today we’re announcing that Platform SSO for macOS is available in public preview with Microsoft Entra ID. Platform SSO is an enhancement to the Microsoft Enterprise SSO plug-in for Apple Devices that makes usage and management of Mac devices more seamless and secure than ever. At the start of public preview, Platform SSO works with Microsoft Intune. Other Mobile Device Management (MDM) providers are coming soon. Contact your MDM provider for more information on support and availability. For more information, see: [macOS Platform Single Sign-on overview (preview)](../identity/devices/macos-psso.md).
+
+---
+
+### Public Preview - Workflow History Insights in Lifecycle Workflows
+
+**Type:** New feature    
+**Service category:** Lifecycle Workflows    
+**Product capability:** Identity Lifecycle Management   
+
+Customers can now monitor workflow health, and get insights throughout all their workflows in Lifecycle Workflows including viewing workflow processing data across workflows, tasks, and workflow categories. For more information, see: [Workflow Insights (preview)](../id-governance/lifecycle-workflow-insights.md).
+
+---
+
+### Public Preview - Configure Lifecycle Workflow Scope Using Custom Security Attributes
+
+**Type:** New feature    
+**Service category:** Lifecycle Workflows    
+**Product capability:** Identity Lifecycle Management   
+
+Customers can now leverage their confidential HR data stored in custom security attributes in addition to other attributes to define the scope of their workflows in Lifecycle Workflows for automating joiner, mover, and leaver scenarios. For more information, see: [Use custom security attributes to scope a workflow](../id-governance/lifecycle-workflow-insights.md).
+
+---
+
+### Public Preview - Enable, Disable and Delete synchronized users accounts with Lifecycle Workflows
+
+**Type:** New feature    
+**Service category:** Lifecycle Workflows    
+**Product capability:** Identity Lifecycle Management   
+
+Lifecycle Workflows can now enable, disable, and delete user accounts that are synchronized from Active Directory Domain Services (AD DS) to Microsoft Entra. This allows you to ensure that the offboarding processes of your employees are completed by deleting the user account after a retention period.
+
+For more information, see: On-premises article
+
+---
+
+### Public Preview - External authentication methods for multifactor authentication
+
+**Type:** New feature    
+**Service category:** MFA    
+**Product capability:** User Authentication    
+
+External authentication methods enable you to use your preferred multifactor authentication (MFA) solution with Microsoft Entra ID. For more information, see: [Manage an external authentication method in Microsoft Entra ID (Preview)](../identity/authentication/how-to-authentication-external-method-manage.md).
+
+---
+
+### Public Preview - Workflow History Insights in Lifecycle Workflows
+
+**Type:**  New feature    
+**Service category:** Lifecycle Workflows    
+**Product capability:** Identity Governance    
+
+With this feature, customers can now monitor workflow health and get insights across all their workflows in Lifecycle Workflows including viewing workflow processing data across workflows, tasks, and workflow categories. For more information, see: [Workflow Insights (preview)](../id-governance/lifecycle-workflow-insights.md).
+
+---
+
+### General Availability - LastSuccessfulSignIn
+
+**Type:** Changed feature    
+**Service category:** MS Graph    
+**Product capability:** Monitoring & Reporting    
+
+Due to popular demand and increased confidence in the stability of the properties, we have now brought LastSuccessfulSignIn & LastSuccessfulSigninDateTime into V1. Feel free to take dependencies on these properties in your production environments now. For more information, see: [signInActivity resource type](/graph/api/resources/signinactivity).
+
+---
+
+### General Availability - Changing default accepted token version for new applications
+
+**Type:** Plan for change    
+**Service category:** Other    
+**Product capability:** Developer Experience    
+
+Starting August 2024, new Microsoft Entra applications created using any interface (including the Microsoft Entra admin center, Azure portal, Powershell/CLI, or the Microsoft Graph application API) will have the default value of the 'requestedAccessTokenVersion' property in the app registration set to '2'; this is a change from the previous default of 'null' (meaning '1').  This means that new resource applications receive v2 access tokens instead of v1 by default.  This improves the security of apps. For more information on differences between token versions, see: [Access tokens in the Microsoft identity platform](../identity-platform/access-tokens.md) and [Access token claims reference](../identity-platform/access-token-claims-reference.md).
+
+---
+
+### General Availability - Windows Account extension is now Microsoft Single Sign On
+
+**Type:** Changed feature    
+**Service category:** Authentications (Logins)    
+**Product capability:** SSO    
+
+The Windows Account extension is now the [Microsoft Single Sign On](https://chromewebstore.google.com/detail/microsoft-single-sign-on/ppnbnpeolgkicgegkbkbjmhlideopiji) extension in docs and Chrome store. The Windows Account extension has been updated to represent the new macOS compatibility. It's now known as the Microsoft Single Sign On extension for Chrome, offering single sign-on and device identity features with the Enterprise SSO plug-in for Apple devices. This is just a name change for the extension, there are no software changes to the extension itself.
+
+---
+
+### General Availability - New provisioning connectors in the Microsoft Entra Application Gallery - May 2024
+
+**Type:** New feature    
+**Service category:** App Provisioning    
+**Product capability:** 3rd Party Integration    
+
+We've added the following new applications in our App gallery with Provisioning support. You can now automate creating, updating, and deleting of user accounts for these newly integrated apps:
+
+- [ClearView Trade](../identity/saas-apps/clearview-trade-provisioning-tutorial.md)
+
+For more information about how to better secure your organization by using automated user account provisioning, see: [What is app provisioning in Microsoft Entra ID?](../identity/app-provisioning/user-provisioning.md).
+
+---
+
 ## April 2024
 
 ### Public Preview - FIDO2 authentication in Android web browsers
@@ -145,7 +288,7 @@ Native authentication empowers developers to take complete control over the desi
 **Service category:** Microsoft Authenticator App    
 **Product capability:** User Authentication    
 
-Users can now create device-bound passkeys in the Microsoft Authenticator to access Entra ID resources. Passkeys in the Authenticator app provide cost-effective, phishing-resistant and seamless authentications to users from their mobile devices. For more information, see https://aka.ms/PasskeyInAuthenticator.
+Users can now create device-bound passkeys in the Microsoft Authenticator to access Microsoft Entra ID resources. Passkeys in the Authenticator app provide cost-effective, phishing-resistant and seamless authentications to users from their mobile devices. For more information, see https://aka.ms/PasskeyInAuthenticator.
 
 ---
 
