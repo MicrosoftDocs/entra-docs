@@ -26,11 +26,11 @@ Aquera also supports over 40 inbound provisioning HR Information System (HRIS) s
 
 #### Popular applications supported
 * HRIS Applications: Over 40 including Oracle Cloud HCM, Dayforce, UKG Pro/Ready/Pro Workforce, ADP (all US and international versions), Workday, SAP HR, Greenhouse, iCIMS, SuccessFactors, HiBob, BambooHR, Paylocity, Paycor, PeopleSoft, Cornerstone, Lever
-* ERP Applications: Netsuite, Oracle Cloud ERP, Oracle EBS, SAP ECC, SAP S/4HANA, Sage Intacct, PeopleSoft ERP
+* ERP Applications: Netsuite, Oracle Cloud ERP, Oracle EBS, SAP ERP Central Component (ECC), SAP S/4HANA, Sage Intacct, PeopleSoft ERP
 * EHR Applications: Epic, Cerner, PointClickCare, MyAvatar, Homecare Homebase
 * Student Information Systems: Ellucian Banner, PeopleSoft Campus Solutions
 * Databases: Oracle, MySQL, SQLServer, MongoDB, PostgreSQL, AS/400 DB2, DB2, Snowflake, Redshift
-* Directories and IDPs: AS/400, RACF, ACF2, TopSecret, OpenLDAP, IDP Directories
+* Directories and IDPs: AS/400, Resource Access Control Facility (RACF), ACF2, TopSecret, OpenLDAP, IDP Directories
 
 
 
@@ -63,7 +63,7 @@ KloudIdentity streamlines enterprise operations by simplifying the onboarding pr
 
 Integration with LOB applications is primarily achieved through REST APIs, with support also extended to SOAP APIs and PowerShell scripts. Administrators can easily configure attribute mapping templates using a user-friendly web portal. Beyond graphical UI-driven attribute mapping, KloudIdentity offers a customizable policies-based approach, allowing for the configuration of highly tailored sequences of attribute mapping and payload generation.
 
-Furthermore, KloudIdentity provides a Software Development Kit (SDK) to customize the standard connector platform, addressing complex and advanced integration scenarios. This empowers users to make code modifications within the KloudIdentity framework safely and efficiently, enabling seamless integration of LOB applications for users and groups provisioning. The SCIM gateway can be deployed either as a cloud-based solution or within on-premises data centers, supporting a range of deployment options from conventional IIS setups to Kubernetes orchestrated environments
+Furthermore, KloudIdentity provides a Software Development Kit (SDK) to customize the standard connector platform, addressing complex and advanced integration scenarios. This SDK empowers users to make code modifications within the KloudIdentity framework safely and efficiently, enabling seamless integration of LOB applications for users and groups provisioning. The SCIM gateway can be deployed either as a cloud-based solution or within on-premises data centers, supporting a range of deployment options from conventional Internet Information Services (IIS) setups to Kubernetes orchestrated environments
 
 #### Contact information
 * Company website: https://www.kloudynet.com/
@@ -88,3 +88,10 @@ UNIFY Solutions is a leading provider of Identity, Access, Security, and Governa
 * Ascender HCM
 * Fusion5 EmpowerHR
 * SAP ERP Human Capital Management
+
+### Custom connectors
+
+Microsoft Entra ID includes connectivity to provision into applications that support protocols and interfaces including SCIM, SQL, LDAP, REST, SOAP and PowerShell. 
+For connectivity to applications that don't support one of the aforementioned protocols and interfaces, customers and [partners](/archive/technet-wiki/1589.fim-2010-mim-2016-management-agents-from-partners) have built custom [ECMA 2.0](/previous-versions/windows/desktop/forefront-2010/hh859557(v=vs.100)) connectors for use with Microsoft Identity Manager (MIM) 2016. These same ECMA2 connectors can be used to provision into apps with the Microsoft Entra provisioning agent and Extensible Connectivity(ECMA) Connector host, without needing MIM sync deployed. For more information, see [provisioning with the custom connectors](~/identity/app-provisioning/on-premises-custom-connector.md).
+
+If you have been using a custom connector with MIM, then you can [export the MIM connector configuration](~/identity/app-provisioning/on-premises-migrate-microsoft-identity-manager.md) and import it into Microsoft Entra.
