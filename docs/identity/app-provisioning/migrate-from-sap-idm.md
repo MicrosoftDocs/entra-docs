@@ -230,6 +230,15 @@ Microsoft Entra External ID includes [B2B collaboration capabilities](~/external
 
 ### Migrate applications requiring directory services
 
+Some organizations may be using SAP IDM as a directory service, for applications to call into to read and write identities. Microsoft Entra ID provides a directory service for modern applications, enabling applications to call via the [Microsoft Graph API](/graph/overview) to query and update users, groups and other identity information.
+
+For applications that still require an LDAP interface to read users or groups, Microsoft Entra provides several options:
+
+* [Microsoft Entra Domain Services](~/identity/domain-services/overview.md) provides identity services to applications and VMs in the cloud, and is compatible with a traditional AD DS environment for operations such as domain join and secure LDAP. Domain Services replicates identity information from Microsoft Entra ID, so it works with Microsoft Entra tenants that are cloud-only, or those synchronized with an on-premises AD DS environment.
+
+* If you are using Microsoft Entra to populate workers [from SuccessFactors into on-premises Active Directory](~/identity/saas-apps/sap-successfactors-inbound-provisioning-tutorial.md), then the applications can read users from that Windows Server Active Directory. If your applications also require group memberships, then you can populate Windows Server AD groups from corresponding groups in Microsoft Entra. For more information, see [Group writeback with Microsoft Entra Cloud Sync](/identity/hybrid/group-writeback-cloud-sync).
+
+* If your organization has been using another LDAP directory, then you can [configure Microsoft Entra ID to provision users into that LDAP directory](../app-provisioning/on-premises-ldap-connector-configure.md).
 
 ### Extend Microsoft Entra through integration interfaces
 
