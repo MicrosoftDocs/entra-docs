@@ -78,25 +78,32 @@ To get started, you need:
    ```yaml
    services:
       datawiza-access-broker:
-      image: registry.gitlab.com/datawiza/access-broker
-      container_name: datawiza-access-broker
-      restart: always
-      ports:
-      - "9772:9772"
-      environment:
-      PROVISIONING_KEY: #############################################
-      PROVISIONING_SECRET: ##############################################
-      
+         image: registry.gitlab.com/datawiza/access-broker
+         container_name: datawiza-access-broker
+         restart: always
+         ports:
+            - "9772:9772"
+         environment:
+            PROVISIONING_KEY: ${PROVISIONING_KEY:?}
+            PROVISIONING_SECRET: ${PROVISIONING_SECRET:?}
+
       header-based-app:
-      image: registry.gitlab.com/datawiza/header-based-app
-      restart: always
-   ports:
-   - "3001:3001"
+         image: registry.gitlab.com/datawiza/header-based-app
+         restart: always
+         ports:
+            - "3001:3001"
+   ```
+
+    - Set **PROVISIONING_KEY** and **PROVISIONING_SECRET** using an `.env` file placed at the base of your project directory.
+
+   ```bash
+   PROVISIONING_KEY=replace-with-your-PROVISIONING-KEY
+   PROVISIONING_SECRET=replace-with-your-PROVISIONING-SECRET
    ```
 
 7. Sign in to the container registry.
 8. Download the DAP images and the header-based application in this [Important Step](https://docs.datawiza.com/step-by-step/step3.html#important-step).
-9. Run the following command: `docker-compose -f docker-compose.yml up`.
+9. Run the following command: `docker compose -f docker-compose.yml up`.
 10. The header-based application has SSO enabled with Microsoft Entra ID.
 11. In a browser, go to `http://localhost:9772/`. 
 12. A Microsoft Entra sign-in page appears.
