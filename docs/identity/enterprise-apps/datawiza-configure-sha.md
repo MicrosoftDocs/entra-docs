@@ -94,7 +94,7 @@ To get started, you need:
             - "3001:3001"
    ```
 
-    - Set **PROVISIONING_KEY** and **PROVISIONING_SECRET** using an `.env` file placed at the base of your project directory.
+  - Set **PROVISIONING_KEY** and **PROVISIONING_SECRET** using an `.env` file placed at the base of your project directory.
 
    ```bash
    PROVISIONING_KEY=replace-with-your-PROVISIONING-KEY
