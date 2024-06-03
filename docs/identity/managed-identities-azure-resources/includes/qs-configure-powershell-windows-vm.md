@@ -128,7 +128,14 @@ To assign a user-assigned identity to a VM, your account needs the [Virtual Mach
 
    ```azurepowershell-interactive
    $vm = Get-AzVM -ResourceGroupName <RESOURCE GROUP> -Name <VM NAME>
-   Update-AzVM -ResourceGroupName <RESOURCE GROUP> -VM $vm -IdentityType UserAssigned -IdentityID "/subscriptions/<SUBSCRIPTION ID>/resourcegroups/<RESROURCE GROUP>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<USER ASSIGNED IDENTITY NAME>"
+
+   # Get the list of existing identity IDs and then append to it
+   $identityIds = $vm.Identity.UserAssignedIdentities.Keys
+   $uid = "/subscriptions/<SUBSCRIPTION ID>/resourcegroups/<RESROURCE GROUP>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<USER ASSIGNED IDENTITY NAME>"
+   $identityIds = $identityIds + $uid 
+
+   # Update the VM with added identity IDs
+   Update-AzVM -ResourceGroupName <RESOURCE GROUP> -VM $vm -IdentityType UserAssigned -IdentityID $uid 
    ```
 
 ### Remove a user-assigned managed identity from an Azure VM

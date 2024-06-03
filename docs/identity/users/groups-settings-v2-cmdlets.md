@@ -224,7 +224,7 @@ To delete groups from your directory, use the Remove-MgGroup cmdlet as follows:
 
 ### Add members
 
-To add new members to a group, use the Add-MgGroupMember cmdlet. This command adds a member to the Intune Administrators group we used in the previous example:
+To add new members to a group, use the New-MgGroupMember cmdlet. This command adds a member to the Intune Administrators group we used in the previous example:
 
 ```powershell
     PS C:\Windows\system32> New-MgGroupMember -GroupId f76cbbb8-0581-4e01-a0d4-133d3ce9197f -DirectoryObjectId a88762b7-ce17-40e9-b417-0add1848eb68
