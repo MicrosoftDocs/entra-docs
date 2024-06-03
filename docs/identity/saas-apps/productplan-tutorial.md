@@ -147,7 +147,7 @@ In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by 
 1. Log in to ProductPlan company site as an administrator.
 
 1. Go to **Account** > **Security** and perform the following steps:
-![Screenshot shows Settings for the configuration.](./media/productplan-tutorial/image.png "Settings")
+![Screenshot shows account setting for the configuration.](./media/productplan-tutorial/settings.png "Security")
 
     1. Download **Federation Metadata XML** from Microsoft Entra admin center and paste the XML content into **IDP Metadata** textbox.
 
