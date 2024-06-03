@@ -5,15 +5,11 @@ ms.date: 06/03/2024
 ms.topic: include
 ---
 
-## Prerequisites
+## Use Azure RBAC to assign a managed identity access to another resource
 
-- If you're unfamiliar with managed identities for Azure resources, check out the [overview section](./overview.md). Be sure to review the [difference between a system-assigned and user-assigned managed identity](./overview.md#managed-identity-types).
-- If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/free/) before continuing.
 - To run the example scripts, you have two options:
     - Use the [Azure Cloud Shell](/azure/cloud-shell/overview), which you can open using the **Try It** button on the top-right corner of code blocks.
     - Run scripts locally by installing the latest version of [Azure PowerShell](/powershell/azure/install-azure-powershell), then sign in to Azure using `Connect-AzAccount`. 
-
-## Use Azure RBAC to assign a managed identity access to another resource
 
 1. Enable managed identity on an Azure resource, [such as an Azure VM](how-to-configure-managed-identities.md).
 

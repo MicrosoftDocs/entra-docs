@@ -5,10 +5,6 @@ ms.date: 06/03/2024
 ms.topic: include
 ---
 
-## Prerequisites
-
-- If you're unfamiliar with managed identities for Azure resources, see [What are managed identities for Azure resources?](./overview.md). To learn about system-assigned and user-assigned managed identity types, see [Managed identity types](./overview.md#managed-identity-types).
-
 [!INCLUDE [azure-cli-prepare-your-environment-no-header.md](~/../docs/reusable-content/azure-cli/azure-cli-prepare-your-environment-no-header.md)]
 
 ## Use Azure RBAC to assign a managed identity access to another resource

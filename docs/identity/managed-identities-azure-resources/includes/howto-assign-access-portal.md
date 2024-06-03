@@ -5,10 +5,6 @@ ms.date: 06/03/2024
 ms.topic: include
 ---
 
-## Prerequisites
-
-- If you're unfamiliar with managed identities for Azure resources, check out the [overview section](./overview.md). Be sure to review the [difference between a system-assigned and user-assigned managed identity](./overview.md#managed-identity-types).
-- If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/free/) before continuing.
 
 ## Use Azure RBAC to assign a managed identity access to another resource
 
