@@ -47,13 +47,13 @@ Now we'll walk through each step:
 
    :::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/sign-in-alt.png" alt-text="Screenshot of the Sign-in if FIDO2 is also enabled.":::
 
-1. Once the user selects certificate-based authentication, the client is redirected to the certauth endpoint, which is [https://certauth.login.microsoftonline.com](https://certauth.login.microsoftonline.com) for public Entra ID. For [Azure Government](/azure/azure-government/compare-azure-government-global-azure#guidance-for-developers), the certauth endpoint is [https://certauth.login.microsoftonline.us](https://certauth.login.microsoftonline.us).  
+1. Once the user selects certificate-based authentication, the client is redirected to the certauth endpoint, which is [https://certauth.login.microsoftonline.com](https://certauth.login.microsoftonline.com) for public Microsoft Entra ID. For [Azure Government](/azure/azure-government/compare-azure-government-global-azure#guidance-for-developers), the certauth endpoint is [https://certauth.login.microsoftonline.us](https://certauth.login.microsoftonline.us).  
 
    <!---
    If you enable issuer hints, the certauth endpoint is `https://t{tenantid}.certauth.login.microsoftonline.com`.
    --->
 
-   The endpoint performs TLS mutual authentication, and requests the client certificate as part of the TLS handshake. An entry for this request appears in the Sign-ins log.
+   The endpoint performs TLS mutual authentication, and requests the client certificate as part of the TLS handshake. An entry for this request appears in the sign-in log.
 
    >[!NOTE]
    >The network administrator should allow access to the User sign-in page and certauth endpoint `*.certauth.login.microsoftonline.com` for the customer's cloud environment. Disable TLS inspection on the certauth endpoint to make sure the client certificate request succeeds as part of the TLS handshake.
@@ -189,12 +189,12 @@ Because multiple custom authentication binding policy rules can be created with 
 1. One certificate issuer can only have one valid strong authentication binding (that is, a certificate can't bind to both single-factor and MFA).
 
 >[!IMPORTANT]
->There is a known issue where an Entra tenant admin configures a CBA authentication policy rule using both Issuer and Policy OID impacts some device registration scenarios including:
+>There is a known issue where a Microsoft Entra tenant admin configures a CBA authentication policy rule using both Issuer and Policy OID impacts some device registration scenarios including:
 >- Windows Hello For Business enrollment
 >- Fido2 Security Key registration
 >- Windows Passwordless Phone Sign-in
 >  
->Device registration with Workplace Join, Entra ID and Hybrid Entra ID device join scenarios are not impacted. CBA authentication policy rules using either Issuer OR Policy OID are not impacted.
+>Device registration with Workplace Join, Microsoft Entra ID and Hybrid Microsoft Entra device join scenarios are not impacted. CBA authentication policy rules using either Issuer OR Policy OID are not impacted.
 >To mitigate, admins should :
 >- Edit the certificate-based authentication policy rules currently using both Issuer and Policy OID options and remove either the Issuer or OID requirement and save. OR
 >- Remove the authentication policy rule currently using both Issuer and Policy OID and create rules using only issuer or policy OID
@@ -246,7 +246,7 @@ Use the highest priority (lowest number) binding.
 
 ## Securing Microsoft Entra configuration with multiple username bindings
 
-Each of the Microsoft Entra user object attributes (userPrincipalName, onPremiseUserPrincipalName, certificateUserIds) available to bind certificates to Microsoft Entra user accounts has a unique constraint to ensure a certificate only matches a single Microsoft Entra user account. However, Microsoft Entra CBA supports multiple binding methods in the username binding policy which allows an administrator to accommodate one certificate to multiple Entra user accounts configurations.
+Each of the Microsoft Entra user object attributes (userPrincipalName, onPremiseUserPrincipalName, certificateUserIds) available to bind certificates to Microsoft Entra user accounts has a unique constraint to ensure a certificate only matches a single Microsoft Entra user account. However, Microsoft Entra CBA supports multiple binding methods in the username binding policy which allows an administrator to accommodate one certificate to multiple Microsoft Entra user accounts configurations.
 
 >[!IMPORTANT]
 >If you configure multiple bindings, Microsoft Entra CBA authentication is only as secure as your lowest affinity binding because CBA validates each binding to authenticate the user. To prevent a scenario where a single certificate matches multiple Microsoft Entra accounts, an Authentication Policy Administrator can:
@@ -256,7 +256,9 @@ Each of the Microsoft Entra user object attributes (userPrincipalName, onPremise
 
 For example, lets suppose you have two username bindings on PrincipalName mapped to UPN and SubjectKeyIdentifier (SKI) to certificateUserIds. If you want a certificate to only be used for a single account, an Authentication Policy Administrator must make sure that account has the UPN that is present in the certificate, and implement the SKI mapping in the certificateUserId attribute of the same account.
 
-### Support for multiple certificates with one Entra user account (M:1)
+<a name='support-for-multiple-certificates-with-one-entra-user-account-m1'></a>
+
+### Support for multiple certificates with one Microsoft Entra user account (M:1)
 There are scenarios where an organization issues multiple certificates for a single identity. Most commonly this could be a derived credential for a mobile device or can also be for a secondary smartcard or x509 credential holder capable device such as a Yubikey. 
 
 **Cloud only accounts**
@@ -273,13 +275,15 @@ For synchronized accounts you can map multiple certificates for use by populatin
 `X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<SR>b24134139f069b49997212a86ba0ef48`\
 `X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<SR>c11154138u089b48767212a86cd0ef76`
  
-In this example the first value represents X509Certificate1 and the second value represents X509Certificate2. These values must then be synchronized to the certificateUserIds field in Azure AD.  
+In this example the first value represents X509Certificate1 and the second value represents X509Certificate2. These values must then be synchronized to the certificateUserIds field in Microsoft Entra ID.  
 
-### Support for one certificate with multiple Entra user accounts (1:M)
+<a name='support-for-one-certificate-with-multiple-entra-user-accounts-1m'></a>
+
+### Support for one certificate with multiple Microsoft Entra user accounts (1:M)
 There are scenarios where an organization needs the user to use the same certificate to authenticate into multiple identities. Most commonly this is for administrative accounts. It can also be for developer accounts or temporary duty accounts. In traditional AD the altSecurityIdentities field is used to populate the certificate values and a Hint is used during login to direct AD to the desired account to check for the login. With Microsoft Entra CBA this is different and there is no Hint. Instead, Home Realm Discovery identifies the desired account to check the certificate values. The other key difference is that Microsoft Entra CBA enforces uniqueness in the certificateUserIds field. This means that two accounts cannot both populate the same certificate values. 
 
 >[!Important]
-> It is not a very secure configuration to use same credential to authenticate into different Entra ID accounts and it is recommended not to allow one certificate for multiple Entra user accounts.
+> It is not a very secure configuration to use same credential to authenticate into different Microsoft Entra accounts and it is recommended not to allow one certificate for multiple Microsoft Entra user accounts.
 
 **Cloud only accounts**
 For cloud-only accounts you need to create multiple username bindings and need to map unique values to each user account that will be utilizing the certificate. Each account will be authenticated into using a different username binding. This applies within the boundary of a single directory/tenant (that is, Tenant admin can map the certificate for use in another directory/tenant as well, as long as the values remain unique per account too).  
@@ -300,7 +304,7 @@ Now, when either user presents the same certificate at sign-in the user will suc
 > The number of accounts that can be used in this manner is limited by the number of username bindings configured on the tenant. If the organization is using only High Affinity bindings the number of accounts supported will be limited to 3. If the organization is also utilizing low affinity bindings then this number increases to 7 accounts (1 PrincipalName, 1 RFC822Name, 1 SubjectKeyIdentifier, 1 SHA1PublicKey, 1 Issuer+Subject, 1 Issuer+SerialNumber, 1 Subject).
 
 **Hybrid Synchronized accounts**
-For synchronized accounts the approach will be different. While the tenant admin can map unique values to each user account that will be utilizing the certificate, the common practice of populating all values to each account in Entra ID would make this difficult. Instead, Azure AD Connect should filter the desired values per account to unique values populated into the account in Entra ID. The uniqueness rule applies within the boundary of a single directory/tenant (that is, Tenant admin can map the certificate for use in another directory/tenant as well, as long as the values remain unique per account too). Further, the organization may have multiple AD forests contributing users into a single Entra ID tenant. In this case Azure AD Connect will apply the filter to each of these AD forests with the same goal to populate only a desired unique value to the cloud account. 
+For synchronized accounts the approach will be different. While the tenant admin can map unique values to each user account that will be utilizing the certificate, the common practice of populating all values to each account in Microsoft Entra ID would make this difficult. Instead, Microsoft Entra Connect should filter the desired values per account to unique values populated into the account in Microsoft Entra ID. The uniqueness rule applies within the boundary of a single directory/tenant (that is, Tenant admin can map the certificate for use in another directory/tenant as well, as long as the values remain unique per account too). Further, the organization may have multiple AD forests contributing users into a single Microsoft Entra tenant. In this case Microsoft Entra Connect will apply the filter to each of these AD forests with the same goal to populate only a desired unique value to the cloud account. 
 
 Populate the altSecurityIdentities field in AD with the values identifying the desired certificate and to include the desired certificate value for that user account type (such as detailee, admin, developer, and so on). Select a key attribute in AD which will tell the synchronization which user account type the user is evaluating (such as msDS-cloudExtensionAttribute1). Populate this attribute with the user type value you desire such as detailee, admin, or developer. If this is the user’s primary account, the value can be left empty/null. 
  
@@ -321,10 +325,10 @@ Forest 2 – ADAccount1 (bob-tdy@woodgrove.com):\
 `X509:<SHA1-PUKEY>123456789abcdef`\
 `X509:<PN>bob@woodgrove.com`
  
-These values must then be synchronized to the certificateUserIds field in Entra ID.
+These values must then be synchronized to the certificateUserIds field in Microsoft Entra ID.
 
 **Steps to synchronize to certificateUserIds**
-1. Configure Azure AD connect to add the alternativeSecurityIds field to the Metaverse
+1. Configure Microsoft Entra Connect to add the alternativeSecurityIds field to the Metaverse
 1. For each AD Forest, configure a new custom inbound rule with a high precedence (low number below 100). Add an Expression transform with the altSecurityIdentities field as the source. The target expression will use the Key Attribute that you selected and populated as well as the mapping to the User Types that you defined.
 1. For example:
 
@@ -338,7 +342,7 @@ IIF((IsPresent([msDS-cloudExtensionAttribute1]) && IsPresent([altSecurityIdentit
     Where($item,[altSecurityIdentities],(BitAnd(InStr($item, "X509:<I>"),InStrRev($item, "<SR>"))>0)), NULL) 
 )
 ```
-In the example above, altSecurityIdentities and the key attribute msDS-cloudExtensionAttribute1is are first checked to see if they are populated. If not, altSecurityIdentities is checked to see if it's populated. If it is empty then we set it to NULL. Otherwise the account falls into the default case and in this example we filter to only the Issuer+SerialNumber mapping. If the key attribute is populated, then the value is checked to see if it is equal to one of our defined user types. In this example if that value is detailee, then we filter to the SHA1PublicKey value from altSecurityIdentities. If the value is developer, then we filter to the SubjectKeyIssuer value from altSecurityIdentities. There may be multiple certificate values of a specific type. For example, multiple PrincipalName values or multiple SKI or SHA1-PUKEY values. The filter will get all the values and sync into Entra ID – not just the first one it finds.
+In the example above, altSecurityIdentities and the key attribute msDS-cloudExtensionAttribute1is are first checked to see if they are populated. If not, altSecurityIdentities is checked to see if it's populated. If it is empty then we set it to NULL. Otherwise the account falls into the default case and in this example we filter to only the Issuer+SerialNumber mapping. If the key attribute is populated, then the value is checked to see if it is equal to one of our defined user types. In this example if that value is detailee, then we filter to the SHA1PublicKey value from altSecurityIdentities. If the value is developer, then we filter to the SubjectKeyIssuer value from altSecurityIdentities. There may be multiple certificate values of a specific type. For example, multiple PrincipalName values or multiple SKI or SHA1-PUKEY values. The filter will get all the values and sync into Microsoft Entra ID – not just the first one it finds.
 1. A second example that shows how to push an empty value if the control attribute is empty is below.
  
 ```powershell
@@ -351,10 +355,10 @@ IIF((IsPresent([msDS-cloudExtensionAttribute1]) && IsPresent([altSecurityIdentit
     AuthoritativeNull, NULL) 
 ) 
 ```
-If the value in altSecurityIdentities does not match any of the search values in the control attribute, then an AuthoritativeNull is passed. This ensures that prior or subsequent rules which populate alternativeSecurityId are ignored and the result is empty in Entra ID. 
+If the value in altSecurityIdentities does not match any of the search values in the control attribute, then an AuthoritativeNull is passed. This ensures that prior or subsequent rules which populate alternativeSecurityId are ignored and the result is empty in Microsoft Entra ID. 
 1. Configure a new custom outbound rule with a low precedence (high number above 160 – bottom of list).
 1. Add a direct transform with the alternativeSecurityIds field as the source and the certificateUserIds field as the target.
-1. Run a synchronization cycle to complete the population of the data in Entra ID. 
+1. Run a synchronization cycle to complete the population of the data in Microsoft Entra ID. 
  
 Ensure that CBA in each tenant is configured with the Username Bindings pointing to the certificateUserIds field for the field types that you have mapped from the certificate. Now any of these users may present the certificate at sign-in and after the unique value from the certificate is validated against the certificateUserIds field, that user will be successfully signed-in. 
 
@@ -367,13 +371,13 @@ Microsoft Entra ID downloads and caches the customers certificate revocation lis
 An admin can configure the CRL distribution point during the setup process of the trusted issuers in the Microsoft Entra tenant. Each trusted issuer should have a CRL that can be referenced by using an internet-facing URL.
  
 >[!IMPORTANT]
->The maximum size of a CRL for Microsoft Entra ID to successfully download on an interactive sign-in and cache is 20 MB in public Entra ID and 45 MB in Azure US Government clouds, and the time required to download the CRL must not exceed 10 seconds. If Microsoft Entra ID can't download a CRL, certificate-based authentications using certificates issued by the corresponding CA fail. As a best practice to keep CRL files within size limits, keep certificate lifetimes within reasonable limits and to clean up expired certificates. For more information, see [Is there a limit for CRL size?](certificate-based-authentication-faq.yml#is-there-a-limit-for-crl-size-).
+>The maximum size of a CRL for Microsoft Entra ID to successfully download on an interactive sign-in and cache is 20 MB in public Microsoft Entra ID and 45 MB in Azure US Government clouds, and the time required to download the CRL must not exceed 10 seconds. If Microsoft Entra ID can't download a CRL, certificate-based authentications using certificates issued by the corresponding CA fail. As a best practice to keep CRL files within size limits, keep certificate lifetimes within reasonable limits and to clean up expired certificates. For more information, see [Is there a limit for CRL size?](certificate-based-authentication-faq.yml#is-there-a-limit-for-crl-size-).
 
 When a user performs an interactive sign-in with a certificate, and the CRL exceeds the interactive limit for a cloud, their initial sign-in fails with the following error:
 
 "The Certificate Revocation List (CRL) downloaded from {uri} has exceeded the maximum allowed size ({size} bytes) for CRLs in Microsoft Entra ID. Try again in few minutes. If the issue persists, contact your tenant administrators."
 
-After the error, Microsoft Entra ID attempts to download the CRL subject to the service-side limits (45 MB in public Entra ID and 150 MB in Azure US Government clouds).
+After the error, Microsoft Entra ID attempts to download the CRL subject to the service-side limits (45 MB in public Microsoft Entra ID and 150 MB in Azure US Government clouds).
 
 >[!IMPORTANT]
 >If the admin skips the configuration of the CRL, Microsoft Entra ID doesn't perform any CRL checks during the certificate-based authentication of the user. This can be helpful for initial troubleshooting, but shouldn't be considered for production use.
