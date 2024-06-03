@@ -5,7 +5,7 @@ author: barclayn
 manager: amycolannino
 ms.service: entra
 ms.topic: conceptual
-ms.date: 01/17/2024
+ms.date: 06/03/2024
 ms.subservice: fundamentals
 ms.author: barclayn
 ---
@@ -16,6 +16,12 @@ This article discusses Microsoft Entra services' licensing. It is intended for I
 
 >[!IMPORTANT]
 > For licensing information on services not listed here, refer to the service's documentation or the [Microsoft Entra ID pricing page.](https://www.microsoft.com/security/business/microsoft-entra-pricing)
+
+## Entra licensing overview
+
+
+[!INCLUDE [Entra SKUs](../includes/entra-types.md)]
+
 
 ## App provisioning
 
