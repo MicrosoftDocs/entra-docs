@@ -9,7 +9,7 @@ ms.date: 06/20/2023
 ms.author: billmath
 ms.custom:
 ---
-# Identity Governance dashboard (Preview)
+# Identity Governance dashboard
 
 In this article, we provide guidance on how to use the Microsoft Identity Governance dashboard. 
 
