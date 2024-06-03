@@ -83,10 +83,10 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 	![Screenshot shows how to choose metadata file.](common/browse-upload-metadata.png "File")
 
-	c. After the metadata file is successfully uploaded, the values gets auto populated in **Basic SAML Configuration** section.
+	c. After the metadata file is successfully uploaded, the values get auto populated in **Basic SAML Configuration** section.
 
 	> [!Note]
-	> If the values does not get auto populated, then please fill in the values manually according to your requirement. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
+	> If the values are not auto populated, then please fill in the values manually according to your requirement. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
 
 1. Perform the following step, if you wish to configure the application in **SP** initiated mode:
 
