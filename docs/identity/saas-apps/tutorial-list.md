@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: landing-page
 
-ms.date: 01/30/2024
+ms.date: 03/25/2024
 ms.author: jeedes
 ms.reviewer: celested
 
