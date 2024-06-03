@@ -20,19 +20,19 @@ Welcome to what's new in the Microsoft identity platform documentation. This art
 
 ### New articles
 
-- [Call an ASP.NET Core web API with Insomnia](howto-call-a-web-api-with-rest-client.md) - Replace 'Test a protected Web API in Postman' with Insomnia
+- [Call an ASP.NET Core web API with Insomnia](howto-call-a-web-api-with-rest-client.md) - Test a protected Web API in Postman with Insomnia
 
 ### Updated articles
 
-- [Create a REST API for a token issuance start event in Azure Functions](custom-extension-tokenissuancestart-setup.md) - Rework token issuance setup article
-- [Get a complete list of apps using ADAL in your tenant](howto-get-list-of-all-auth-library-apps.md) - Signin workbook and recommndations doc updates
+- [Create a REST API for a token issuance start event in Azure Functions](custom-extension-tokenissuancestart-setup.md) - Rework token issuance setup
+- [Get a complete list of apps using ADAL in your tenant](howto-get-list-of-all-auth-library-apps.md) - Signin workbook and recommndations updates
 - [Microsoft identity platform and OAuth 2.0 implicit grant flow](v2-oauth2-implicit-grant-flow.md) - Redirect URI page updated 
 - [OpenID Connect on the Microsoft identity platform](v2-protocols-oidc.md) - Redirect URI page updated
 - [Register a Microsoft Entra app and create a service principal](howto-create-service-principal-portal.md) - Added clarity to the content
 - [Redirect URI (reply URL) outline and restrictions](reply-url.md) - Redirect URI page updated
 - [Single-page application: sign-in and sign-out](scenario-spa-sign-in.md) - Added clarity to the content
-- [Troubleshoot your custom claims provider API](custom-extension-troubleshoot.md) - Rework token issuance setup article
-- [What's new for authentication?](reference-breaking-changes.md) - Add note that apps must be registered in a directory to identity platform updates reference
+- [Troubleshoot your custom claims provider API](custom-extension-troubleshoot.md) - Rework token issuance setup
+- [What's new for authentication?](reference-breaking-changes.md) - Added clarity to the content
 
 ## April 2024
 
