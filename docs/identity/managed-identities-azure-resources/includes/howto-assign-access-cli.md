@@ -5,13 +5,11 @@ ms.date: 06/03/2024
 ms.topic: include
 ---
 
+## Use Azure RBAC to assign a managed identity access to another resource using CLI
+
 [!INCLUDE [azure-cli-prepare-your-environment-no-header.md](~/../docs/reusable-content/azure-cli/azure-cli-prepare-your-environment-no-header.md)]
 
-## Use Azure RBAC to assign a managed identity access to another resource
-
-After you've enabled managed identity on an Azure resource, such as an [Azure virtual machine](how-to-configure-managed-identities.md) or [Azure virtual machine scale set](how-to-configure-managed-identities-scale-sets.md):
-
-1. In this example, you'll give an Azure virtual machine (VM) access to a storage account. First use [az resource list](/cli/azure/resource#az-resource-list) to get the service principal for the VM named myVM:
+1. In this example, you'll give an Azure virtual machine (VM) managed access to a storage account. First use [az resource list](/cli/azure/resource#az-resource-list) to get the service principal for a VM named myVM:
 
    ```azurecli-interactive
    spID=$(az resource list -n myVM --query [*].identity.principalId --out tsv)

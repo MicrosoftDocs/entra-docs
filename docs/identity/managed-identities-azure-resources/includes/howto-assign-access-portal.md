@@ -5,19 +5,16 @@ ms.date: 06/03/2024
 ms.topic: include
 ---
 
-
-## Use Azure RBAC to assign a managed identity access to another resource
+## Use Azure RBAC to assign a managed identity access to another resource using the Azure portal
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 >[!IMPORTANT]
-> The steps outlined below show is how you grant access to a service using Azure RBAC. Check specific service documentation on how to grant access - for example check Azure Data Explorer for instructions. Some Azure services are in the process of adopting Azure RBAC on the data plane
+> The steps outlined below show is how you grant access to a service using Azure RBAC. Check specific service documentation on how to grant access; for example, check [Azure Data Explorer](/azure/data-explorer/data-explorer-overview) for instructions. Some Azure services are in the process of adopting Azure RBAC on the data plane.
 
-After you've enabled managed identity on an Azure resource, such as an [Azure virtual machine](how-to-configure-managed-identities.md) or [Azure virtual machine scale set](how-to-configure-managed-identities-scale-sets.md):
+1. Sign in to the [Azure portal](https://portal.azure.com) using an account associated with the Azure subscription for which you've configured the managed identity.
 
-1. Sign in to the [Azure portal](https://portal.azure.com) using an account associated with the Azure subscription under which you have configured the managed identity.
-
-2. Navigate to the desired resource on which you want to modify access control. In this example, you'll give an Azure virtual machine (VM) access to a storage account, then you can navigate to the storage account.
+2. Navigate to the desired resource that you want to modify access control. In this example, you'll give an Azure virtual machine (VM) access to a storage account, then you can navigate to the storage account.
 
 1. Select **Access control (IAM)**.
 
