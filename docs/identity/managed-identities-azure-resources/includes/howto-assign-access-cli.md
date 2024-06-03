@@ -9,12 +9,12 @@ ms.topic: include
 
 [!INCLUDE [azure-cli-prepare-your-environment-no-header.md](~/../docs/reusable-content/azure-cli/azure-cli-prepare-your-environment-no-header.md)]
 
-1. In this example, you'll give an Azure virtual machine (VM) managed access to a storage account. First use [az resource list](/cli/azure/resource#az-resource-list) to get the service principal for a VM named myVM:
+1. In this example, you give an Azure virtual machine (VM) managed access to a storage account. First use [az resource list](/cli/azure/resource#az-resource-list) to get the service principal for a VM named myVM:
 
    ```azurecli-interactive
    spID=$(az resource list -n myVM --query [*].identity.principalId --out tsv)
    ```
-   For an Azure VM scale set, the command is the same except here you get the service principal for the VM set named "DevTestVMSS":
+   For an Azure Virtual Machine (VM) scale set, the command is the same except here you get the service principal for the VM set named "DevTestVMSS":
    
    ```azurecli-interactive
    spID=$(az resource list -n DevTestVMSS --query [*].identity.principalId --out tsv)
