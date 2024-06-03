@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: conceptual
-ms.date: 05/21/2024
+ms.date: 06/03/2024
 ms.service: global-secure-access
 ---
 
@@ -25,6 +25,13 @@ The Global Secure Access (preview) dashboard provides you with visualizations of
 - What are the most used private application segments that are not attributed to an application?
 
 This article describes each of the dashboard widgets and how you can use the data on the dashboard to monitor and improve your network configurations.
+
+## Prerequisites
+
+To view the Global Secure Access dashboard, you must have:
+
+- A **Global Secure Access Administrator** role in Microsoft Entra ID.
+- The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 
 ## How to access the dashboard
 
@@ -59,7 +66,6 @@ This widget provides the following alerts:
 - **Increased external tenants activity**: The number of users accessing external tenants has increased.
 - **Token and device inconsistency**: The original token is used on a different device.
 - **Web content blocked**: Access to the website has been blocked.
-- **Threat Intelligence transactions**: There number of Threat Intelligence transactions in the last 24 hours.
 
 ![Screenshot of the alerts and notifications widget.](media/concept-traffic-dashboard/dashboard-alerts-notifications.png)
 
@@ -90,25 +96,14 @@ The top-visited destinations defaults to all types of traffic and sorts by the n
 - **Transactions**: The destinations with the highest number of transactions, showing the total number of transactions in the last 24 hours. 
 - **Users**: The destinations most used by users, showing the number of distinct users (UPN) accessing the destination in the last 24 hours.
 - **Devices**: The destinations most used by devices, showing the number of distinct device IDs accessing the destination in the last 24 hours.
-- **Threat intelligence transactions**: The most used threat intelligence destinations in the last 24 hours, showing the number of threat intelligence transactions in the last 24 hours.
-- -**Traffic volumes**: The destinations with the highest network traffic consumption, showing the total network consumption in the last 24 hours.
+- **Bytes sent**: The destinations (IP address) with the highest number of bytes sent, showing the total number of bytes sent in the last 24 hours.
+- **Bytes received**: The destinations (IP address) with the highest number of bytes received, showing the total number of bytes received in the last 24 hours.
 
 ![Screenshot of the top destinations widget with the number of transactions field highlighted.](media/concept-traffic-dashboard/top-destinations.png)
 
-## Top discovered private application segments
+Change the results to show all traffic or filter by Internet Access, Private Access, or Microsoft 365 traffic.
 
-Global Secure Access provides visibility into the most commonly used private application segments that are not attributed to enterprise applications. A private application segment is defined as the combination of the destination address, the destination port and the transport protocol.
-
-- **Destination**: The private application segment destination.
-- **Destination port**: The port of the private application segment destination.
-- **Transport protocol**: The transport protocol of the private application segment destination.
-- **Transactions**: The number of transactions for the relevant discovered private application segment in the selected timeframe.
-- **Total discovered private application segments**: The total number of discovered private application segments in the selected timeframe.
-
-Select the **View all private application segments** button to navigate to the **Application discovery** page, where you can check the full list of discovered private application segments.
-
-![Screenshot of the top discovered private application segment widget.](media/concept-traffic-dashboard/dashboard-top-discovered-app-segments.png)
-
+Select the **View all destinations** button to see more details about the destinations.
 
 ## Cross-tenant access
 
@@ -124,9 +119,9 @@ Global Secure Access provides visibility into the number of users and devices th
 
 Select the **Configure tenant restrictions** button to navigate to the **Session management** are of Global Secure Access, where you can check the settings of your tenant restrictions.
 
-## Web content filtering
+## Web category filtering
 
-The **Web content filtering** widget displays the top categories of web content that were blocked by the service. These categories can be used to determine what sites or categories of sites you might want to block. 
+The **Web category filtering** widget displays the top categories of web content that were blocked by the service. These categories can be used to determine what sites or categories of sites you might want to block. 
 
 - **Transactions**: Shows the total number of transactions in the last 24 hours. 
 - **Users**: The number of distinct users (UPN) accessing the destination in the last 24 hours.
@@ -150,8 +145,6 @@ The **Device status** widgets display the active and inactive devices that you h
 - **Inactive devices**: The number of distinct device IDs that were seen in the last seven days, but not during the last 24 hours. The % change during the last 24 hours is also displayed.
 
 ![Screenshot of the device status widgets.](media/concept-traffic-dashboard/device-status.png)
-
-
 
 ## No data available
 
