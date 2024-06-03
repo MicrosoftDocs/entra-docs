@@ -64,7 +64,7 @@ If you are a **Managed Services provider (MSP)** or **Cloud Solutions Provider (
 "requestedCredentials": [ 
   { 
     "type": "VerifiedEmployee", 
-    "acceptedIssuers": [ "<authirity1>", "<authority2>", "..." ], 
+    "acceptedIssuers": [ "<authority1>", "<authority2>", "..." ], 
     "configuration": { 
       "validation": { 
         "allowRevoked": false, 
