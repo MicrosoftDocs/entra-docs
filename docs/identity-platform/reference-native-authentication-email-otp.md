@@ -72,8 +72,7 @@ Here's an example of the request(we present the example request in multiple line
 Examples 1:
 
 ```http
-POST /{tenant_subdomain}.onmicrosoft.com/signup/v1.0/start HTTP/1.1
-Host: {tenant_subdomain}.ciamlogin.com
+POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/signup/v1.0/start
 Content-Type: application/x-www-form-urlencoded
 
 client_id=00001111-aaaa-2222-bbbb-3333cccc4444
@@ -84,8 +83,7 @@ client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 Example 2 (include user attributes in the request):
 
 ```http
-POST /{tenant_subdomain}.onmicrosoft.com/signup/v1.0/start HTTP/1.1
-Host: {tenant_subdomain}.ciamlogin.com
+POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/signup/v1.0/start
 Content-Type: application/x-www-form-urlencoded
 
 client_id=00001111-aaaa-2222-bbbb-3333cccc4444
@@ -198,8 +196,7 @@ When the request for the continuation token is done, the app needs to request Mi
 Here's an example of the request(we present the example request in multiple lines for readability):
 
 ```http
-POST /{tenant_subdomain}.onmicrosoft.com/signup/v1.0/challenge HTTP/1.1
-Host: {tenant_subdomain}.ciamlogin.com
+POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/signup/v1.0/challenge
 Content-Type: application/x-www-form-urlencoded
 
 client_id=00001111-aaaa-2222-bbbb-3333cccc4444
@@ -304,15 +301,14 @@ Here are the possible errors you can encounter (possible values of the `error` p
 |`expired_token`|The continuation token is expired. |
 |`unsupported_challenge_type`|The `challenge_type` parameter value isn't supported or doesn't include the `redirect` challenge type.|
 
-### Step 3: Submit OTP
+### Step 3: Submit one-time passcode
 
 The app submits the  one-time passcode sent to the user's email. To do so, the app makes a POST request to the `/signup/v1.0/continue` endpoint. Since we're submitting one-time passcode, the request includes `oob` parameter whose value is the one-time passcode received in the user's emails, and a `grant_type` parameter whose value must be *oob*.
 
 Here's an example of the request(we present the example request in multiple lines for readability):
 
 ```http
-POST /{tenant_subdomain}.onmicrosoft.com/signup/v1.0/continue HTTP/1.1
-Host: {tenant_subdomain}.ciamlogin.com
+POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/signup/v1.0/continue
 Content-Type: application/x-www-form-urlencoded
 
 continuation_token = uY29tL2F1dGhlbnRpY...
@@ -465,8 +461,7 @@ To continue with the flow, the app needs to make a request to the `/signup/v1.0/
 Here's an example of the request(we present the example request in multiple lines for readability):
 
 ```http
-POST /{tenant_subdomain}.onmicrosoft.com/signup/v1.0/continue HTTP/1.1
-Host: {tenant_subdomain}.ciamlogin.com
+POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/signup/v1.0/continue
 Content-Type: application/x-www-form-urlencoded
  
 &client_id=00001111-aaaa-2222-bbbb-3333cccc4444 
@@ -573,8 +568,7 @@ The app makes a POST request to the `/token` endpoint and provides the continuat
 Here's an example of the request (we present the example request in multiple lines for readability):
 
 ```http
-POST /{tenant_subdomain}.onmicrosoft.com/oauth2/v2.0/token HTTP/1.1
-Host: {tenant_subdomain}.ciamlogin.com
+POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/oauth2/v2.0/token
 Content-Type: application/x-www-form-urlencoded
 
 continuation_token=ABAAEAAAAtyo... 
@@ -672,7 +666,9 @@ Here are the possible errors you can encounter (possible values of the `error` p
 
 ## Sign-in API reference
 
-To request your security tokens, your app interacts with three endpoints, `/initiate`, `/challenge` and `/token`.
+Users who sign up using email one-time passcode authentication method must sign in using the same authentication method. 
+
+To request for security tokens, your app interacts with three endpoints, `/initiate`, `/challenge` and `/token`.
 
 ### Sign-in API endpoints
 
@@ -701,8 +697,7 @@ The authentication flow begins with the application making a POST request to the
 Here's an example of the request(we present the example request in multiple lines for readability):
 
 ```http
-POST /{tenant_subdomain}.onmicrosoft.com/oauth2/v2.0/initiate HTTP/1.1
-Host: {tenant_subdomain}.ciamlogin.com
+POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/oauth2/v2.0/initiate
 Content-Type: application/x-www-form-urlencoded 
 
 client_id=00001111-aaaa-2222-bbbb-3333cccc4444
@@ -809,8 +804,7 @@ To continue with the flow, the app uses the continuation token acquired from the
 Here's an example of the request (we present the example request in multiple lines for readability):
 
 ```http
-POST /{tenant_subdomain}.onmicrosoft.com/oauth2/v2.0/challenge HTTP/1.1
-Host: {tenant_subdomain}.ciamlogin.com
+POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/oauth2/v2.0/challenge
 Content-Type: application/x-www-form-urlencoded 
 
 client_id=00001111-aaaa-2222-bbbb-3333cccc4444
@@ -920,8 +914,7 @@ The app makes a POST request to the `/token` endpoint and provides the user’s 
 Here's an example of the request(we present the example request in multiple lines for readability):
 
 ```http
-POST /{tenant_subdomain}.onmicrosoft.com/oauth2/v2.0/token HTTP/1.1
-Host: {tenant_subdomain}.ciamlogin.com
+POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/oauth2/v2.0/token
 Content-Type: application/x-www-form-urlencoded 
 
 continuation_token=uY29tL2F1dGhlbnRpY...

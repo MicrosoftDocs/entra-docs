@@ -860,7 +860,9 @@ Here are the possible errors you can encounter (possible values of the `error` p
 
 ## Sign-in API reference
 
-To request your security tokens, your app interacts with three endpoints, `/initiate`, `/challenge` and `/token`.
+Users who sign up using email with password authentication method must sign in using the same authentication method.
+
+To request for security tokens, your app interacts with three endpoints, `/initiate`, `/challenge` and `/token`.
 
 ### Sign-in API endpoints
 
@@ -1200,7 +1202,7 @@ Here are the possible errors you can encounter (possible values of the `error` p
 
 ## Self-service password reset (SSPR)
 
-If you use email and password as the authentication method in your app, use the self-service password reset (SSPR) API enable customer users to reset their password. You can use this API for forgot password or change password scenarios.
+If you use email and password as the authentication method in your app, use the self-service password reset (SSPR) API to enable customer users to reset their password. Use this API for forgot password or change password scenarios.
 
 ### Self-service password reset API endpoints
 
