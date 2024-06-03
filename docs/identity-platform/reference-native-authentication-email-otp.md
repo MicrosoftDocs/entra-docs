@@ -571,7 +571,7 @@ Here's an example of the request (we present the example request in multiple lin
 POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/oauth2/v2.0/token
 Content-Type: application/x-www-form-urlencoded
 
-continuation_token=ABAAEAAAAtyo... 
+continuation_token=ABAAEAAAAtyo.... 
 &client_id=00001111-aaaa-2222-bbbb-3333cccc4444 
 &username=contoso-consumer@contoso.com
 &scope={scopes}
