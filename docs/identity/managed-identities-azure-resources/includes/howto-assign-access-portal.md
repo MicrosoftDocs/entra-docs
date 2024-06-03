@@ -1,0 +1,32 @@
+--- 
+author: barclayn 
+ms.author: barclayn
+ms.date: 06/03/2024 
+ms.topic: include
+---
+
+## Prerequisites
+
+- If you're unfamiliar with managed identities for Azure resources, check out the [overview section](./overview.md). Be sure to review the [difference between a system-assigned and user-assigned managed identity](./overview.md#managed-identity-types).
+- If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/free/) before continuing.
+
+## Use Azure RBAC to assign a managed identity access to another resource
+
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
+
+>[!IMPORTANT]
+> The steps outlined below show is how you grant access to a service using Azure RBAC. Check specific service documentation on how to grant access - for example check Azure Data Explorer for instructions. Some Azure services are in the process of adopting Azure RBAC on the data plane
+
+After you've enabled managed identity on an Azure resource, such as an [Azure virtual machine](how-to-configure-managed-identities.md) or [Azure virtual machine scale set](how-to-configure-managed-identities-scale-sets.md):
+
+1. Sign in to the [Azure portal](https://portal.azure.com) using an account associated with the Azure subscription under which you have configured the managed identity.
+
+2. Navigate to the desired resource on which you want to modify access control. In this example, you'll give an Azure virtual machine (VM) access to a storage account, then you can navigate to the storage account.
+
+1. Select **Access control (IAM)**.
+
+1. Select **Add** > **Add role assignment** to open the **Add role assignment** page.
+
+1. Select the role and managed identity. For detailed steps, see [Assign Azure roles using the Azure portal](/azure/role-based-access-control/role-assignments-portal).
+
+    :::image type="content" source="../../media/common/add-role-assignment-page.png" alt-text="Screenshot that shows the page for adding a role assignment.":::
