@@ -237,7 +237,7 @@ groups:
   - id: identity-mi-access-portal
     title: Portal
   - id: identity-mi-access-cli
-    title: Portal
+    title: CLI
   - id: identity-mi-access-powershell
     title: PowerShell
 # Owner: ryanwi
