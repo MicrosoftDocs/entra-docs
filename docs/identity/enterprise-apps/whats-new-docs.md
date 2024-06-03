@@ -1,7 +1,7 @@
 ---
 title: "What's new in Microsoft Entra application management"
 description: "New and updated documentation for the Microsoft Entra application management."
-ms.date: 05/03/2024
+ms.date: 06/03/2024
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: whats-new
@@ -16,6 +16,18 @@ manager: CelesteDG
 # Microsoft Entra application management: What's new
 
 Welcome to what's new in Microsoft Entra application management documentation. This article lists new docs that have been added and those that have had significant updates in the last three months. To learn what's new with the application management service, see [What's new in Azure AD](~/fundamentals/whats-new.md).
+
+## MAY 2024
+
+### Updated articles
+
+- [Overview of the Microsoft Entra application gallery](overview-application-gallery.md) - Add information on provisioning agent and ZTNA alongside app proxy
+
+Reviewed the following articles to improve technical accuracy and clarity:
+
+- [Configure Datawiza Access Proxy for Microsoft Entra single sign-on and multifactor authentication for Outlook Web Access](datawiza-sso-mfa-to-owa.md).
+- [User and admin consent in Microsoft Entra ID](user-admin-consent-overview.md).
+- [View activity logs for application permissions](app-perms-audit-logs.md).
 
 ## April 2024
 
@@ -44,10 +56,3 @@ Reviewed the following articles to improve technical accuracy and clarity:
 ## March 2024
 
 No new or updated articles.
-
-## February 2024
-
-### Updated articles
-
-- [Manage certificates for federated single sign-on](tutorial-manage-certificates-for-federated-single-sign-on.md) - Update to enhance the article's technical accuracy
-- [Troubleshoot SAML-based single sign-on](troubleshoot-saml-based-sso.md) - Update to enhance the article's technical accuracy
