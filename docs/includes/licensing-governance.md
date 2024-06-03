@@ -46,7 +46,7 @@ The following table shows what features are available with each license.  Not al
 |[Lifecycle Workflows (LCW)](~/id-governance/what-are-lifecycle-workflows.md)|||| :white_check_mark: |
 |[LCW + Custom Extensions (Logic Apps)](~/id-governance/lifecycle-workflow-extensibility.md)|||| :white_check_mark: |
 |[Identity governance dashboard](~/id-governance/governance-dashboard.md)| | :white_check_mark: | :white_check_mark: | :white_check_mark: |
-|[Insights and reporting - Inactive guest accounts(Preview)](~/identity/users/clean-up-stale-guest-accounts.md)|||| :white_check_mark: |
+|[Insights and reporting - Inactive guest accounts](~/identity/users/clean-up-stale-guest-accounts.md)|||| :white_check_mark: |
 
 ### Entitlement Management
 
