@@ -25,7 +25,7 @@ Welcome to what's new in the Microsoft identity platform documentation. This art
 ### Updated articles
 
 - [Create a REST API for a token issuance start event in Azure Functions](custom-extension-tokenissuancestart-setup.md) - Rework token issuance setup
-- [Get a complete list of apps using ADAL in your tenant](howto-get-list-of-all-auth-library-apps.md) - Signin workbook and recommndations updates
+- [Get a complete list of apps using ADAL in your tenant](howto-get-list-of-all-auth-library-apps.md) - Sign-in workbook and recommendations updates
 - [Microsoft identity platform and OAuth 2.0 implicit grant flow](v2-oauth2-implicit-grant-flow.md) - Redirect URI page updated 
 - [OpenID Connect on the Microsoft identity platform](v2-protocols-oidc.md) - Redirect URI page updated
 - [Register a Microsoft Entra app and create a service principal](howto-create-service-principal-portal.md) - Added clarity to the content
