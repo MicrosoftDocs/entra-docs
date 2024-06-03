@@ -22,4 +22,4 @@ ms.topic: include
 
 1. Select the role and managed identity. For detailed steps, see [Assign Azure roles using the Azure portal](/azure/role-based-access-control/role-assignments-portal).
 
-    :::image type="content" source="../../media/common/add-role-assignment-page.png" alt-text="Screenshot that shows the page for adding a role assignment.":::
+    :::image type="content" source="../../../media/common/add-role-assignment-page.png" alt-text="Screenshot that shows the page for adding a role assignment.":::

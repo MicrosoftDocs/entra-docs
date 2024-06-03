@@ -13,7 +13,7 @@ ms.topic: include
     - Use the [Azure Cloud Shell](/azure/cloud-shell/overview), which you can open using the **Try It** button on the top-right corner of code blocks.
     - Run scripts locally by installing the latest version of [Azure PowerShell](/powershell/azure/install-azure-powershell), then sign in to Azure using `Connect-AzAccount`. 
 
-1. Enable managed identity on an Azure resource, [such as an Azure VM](how-to-configure-managed-identities.md).
+1. Enable managed identity on an Azure resource, [such as an Azure VM](~/identity/managed-identities-azure-resources/how-to-configure-managed-identities.md).
 
 1. Give the Azure virtual machine (VM) access to a storage account. 
    1. Use [Get-AzVM](/powershell/module/az.compute/get-azvm) to get the service principal for the VM named `myVM`, which was created when you enabled managed identity. 
