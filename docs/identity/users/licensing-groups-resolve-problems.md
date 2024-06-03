@@ -59,7 +59,7 @@ To see how many licenses are available, go to **Identity** > **Billing** > **Lic
 
 To see which users and groups are consuming licenses, select a product. Under **Licensed users**, you see a list of all users who've had licenses assigned directly or via one or more groups. Under **Licensed groups**, you see all groups that have that products assigned.
 
-**PowerShell:** PowerShell cmdlets report this error as _CountViolation_.
+**PowerShell:** PowerShell cmdlets report this error as *CountViolation*.
 
 ## Conflicting service plans
 
@@ -71,7 +71,7 @@ To see which users and groups are consuming licenses, select a product. Under **
 
 The decision about how to resolve conflicting product licenses always belongs to the administrator. Microsoft Entra ID doesn't automatically resolve license conflicts.
 
-**PowerShell:** PowerShell cmdlets report this error as _MutuallyExclusiveViolation_.
+**PowerShell:** PowerShell cmdlets report this error as *MutuallyExclusiveViolation*.
 
 ## Other products depend on this license
 
@@ -79,7 +79,7 @@ The decision about how to resolve conflicting product licenses always belongs to
 
 To solve this problem, you need to make sure that the required plan is still assigned to users through some other method or that the dependent services are disabled for those users. After doing that, you can properly remove the group license from those users.
 
-**PowerShell:** PowerShell cmdlets report this error as _DependencyViolation_.
+**PowerShell:** PowerShell cmdlets report this error as *DependencyViolation*.
 
 ## Usage location isn't allowed
 
@@ -89,7 +89,7 @@ When Microsoft Entra ID attempts to assign a group license to a user whose usage
 
 To solve this problem, remove users from unsupported locations from the licensed group. Or, if the current usage location values don't represent the actual user location, you can modify them so that the licenses are correctly assigned next time (if the new location is supported).
 
-**PowerShell:** PowerShell cmdlets report this error as _ProhibitedInUsageLocationViolation_.
+**PowerShell:** PowerShell cmdlets report this error as *ProhibitedInUsageLocationViolation*.
 
 > [!NOTE]
 > When Microsoft Entra ID assigns group licenses, any users without a specified usage location inherit the location of the directory. Microsoft recommends that administrators set the correct usage location values on users before using group-based licensing to comply with local laws and regulations.

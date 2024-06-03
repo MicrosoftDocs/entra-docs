@@ -106,7 +106,7 @@ To clean up Microsoft Entra ID:
 > - Deleting devices in your on-premises Active Directory or Microsoft Entra ID does not remove registration on the client. It will only prevent access to resources using device as an identity (such as Conditional Access). Read additional information on how to [remove registration on the client](faq.yml).
 > - Deleting a Windows 10 or newer device only in Microsoft Entra ID will re-synchronize the device from your on-premises using Microsoft Entra Connect but as a new object in "Pending" state. A re-registration is required on the device.
 > - Removing the device from sync scope for Windows 10 or newer /Server 2016 devices will delete the Microsoft Entra device. Adding it back to sync scope will place a new object in "Pending" state. A re-registration of the device is required.
-> - If you are not using Microsoft Entra Connect for Windows 10 or newer devices to synchronize (e.g. ONLY using AD FS for registration), you must manage lifecycle similar to Windows 7/8 devices.
+> - If you are not using Microsoft Entra Connect for Windows 10 or newer devices to synchronize (such as ONLY using AD FS for registration), you must manage lifecycle similar to Windows 7/8 devices.
 
 <a name='azure-ad-joined-devices'></a>
 
@@ -115,7 +115,7 @@ To clean up Microsoft Entra ID:
 Disable or delete Microsoft Entra joined devices in the Microsoft Entra ID.
 
 > [!NOTE]
-> - Deleting a Microsoft Entra device does not remove registration on the client. It will only prevent access to resources using device as an identity (e.g Conditional Access). 
+> - Deleting a Microsoft Entra device does not remove registration on the client. It will only prevent access to resources using device as an identity (such as Conditional Access). 
 > - Read more on [how to unjoin on Microsoft Entra ID](faq.yml) 
 
 <a name='azure-ad-registered-devices'></a>
@@ -125,7 +125,7 @@ Disable or delete Microsoft Entra joined devices in the Microsoft Entra ID.
 Disable or delete Microsoft Entra registered devices in the Microsoft Entra ID.
 
 > [!NOTE]
-> - Deleting a Microsoft Entra registered device in Microsoft Entra ID does not remove registration on the client. It will only prevent access to resources using device as an identity (e.g. Conditional Access).
+> - Deleting a Microsoft Entra registered device in Microsoft Entra ID does not remove registration on the client. It will only prevent access to resources using device as an identity (such as Conditional Access).
 > - Read more on [how to remove a registration on the client](faq.yml)
 
 ## Clean up stale devices  

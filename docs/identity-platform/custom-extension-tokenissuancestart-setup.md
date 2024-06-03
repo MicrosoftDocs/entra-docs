@@ -249,7 +249,7 @@ The project has been created, and the sample code has been added. Using your IDE
 
 It's a good idea to test the function locally before deploying it to Azure. We can use a dummy JSON body that imitates the request that Microsoft Entra ID sends to your REST API. Use your preferred API testing tool to call the function directly.
 
-1. In your IDE, open _local.settings.json_ and replace the code with the following JSON. We can set `"AuthenticationEvents__BypassTokenValidation"` to `true` for local testing purposes.
+1. In your IDE, open *local.settings.json* and replace the code with the following JSON. We can set `"AuthenticationEvents__BypassTokenValidation"` to `true` for local testing purposes.
 
     ```json
     {

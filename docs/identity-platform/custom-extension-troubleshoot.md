@@ -68,7 +68,7 @@ Use the following table to diagnose an error code.
 |1003010 | CustomExtensionInvalidNumberOfActions | The custom extension API response included a different number of actions than those supported for that custom extension type.|
 |1003011 | CustomExtensionNotFound | The custom extension associated with an event listener couldn't be found.|
 |1003012 | CustomExtensionInvalidActionType | The custom extension returned an invalid action type defined for that custom extension type.|
-|1003014 | CustomExtensionIncorrectResourceIdFormat | The _identifierUris_ property in the manifest for the application registration for the custom extension, should be in the format of "api://{fully qualified domain name}/{appid}.|
+|1003014 | CustomExtensionIncorrectResourceIdFormat | The *identifierUris* property in the manifest for the application registration for the custom extension, should be in the format of "api://{fully qualified domain name}/{appid}.|
 |1003015 | CustomExtensionDomainNameDoesNotMatch | The targetUrl and resourceId of the custom extension should have the same fully qualified domain name.|
 |1003016 | CustomExtensionResourceServicePrincipalNotFound | The appId of the custom extension resourceId should correspond to a real service principal in the tenant.|
 |1003017 | CustomExtensionClientServicePrincipalNotFound | The custom extension resource service principal is not found in the tenant.|
@@ -91,7 +91,7 @@ Your REST API is protected by a Microsoft Entra access token. You can test your 
 
 # [API testing tools](#tab/api-testing-tools)
 
-1. For local development and testing purposes, open _local.settings.json_ and replace the code with the following JSON: 
+1. For local development and testing purposes, open *local.settings.json* and replace the code with the following JSON: 
 
     ```json
     {

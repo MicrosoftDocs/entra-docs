@@ -20,7 +20,7 @@ These code samples are built and maintained by Microsoft to demonstrate usage of
 - Sign in users to web applications and provide authorized access to protected web APIs.
 - Protect a web API by requiring an access token to perform API operations.
 
-Each code sample includes a _README.md_ file describing how to build the project (if applicable) and run the sample application. Comments in the code help you understand how these libraries are used in the application to perform authentication and authorization by using the identity platform.
+Each code sample includes a *README.md* file describing how to build the project (if applicable) and run the sample application. Comments in the code help you understand how these libraries are used in the application to perform authentication and authorization by using the identity platform.
 
 ## Samples and guides
 
@@ -74,7 +74,7 @@ The following samples show how to protect a web API with the Microsoft identity 
 
 ### Desktop
 
-The following samples show public client desktop applications that access the Microsoft Graph API, or your own web API in the name of the user. Apart from the _Desktop (Console) with Web Authentication Manager (WAM)_ sample, all these client applications use the Microsoft Authentication Library (MSAL).
+The following samples show public client desktop applications that access the Microsoft Graph API, or your own web API in the name of the user. Apart from the *Desktop (Console) with Web Authentication Manager (WAM)* sample, all these client applications use the Microsoft Authentication Library (MSAL).
 
 > [!div class="mx-tdCol2BreakAll"]
 > | Language/<br/>Platform | Code sample(s) <br/> on GitHub | Auth<br/> libraries | Auth flow |
@@ -147,7 +147,7 @@ The following sample illustrates Microsoft Teams Tab application that signs in u
 
 ### Multi-tenant SaaS
 
-The following samples show how to configure your application to accept sign-ins from any Microsoft Entra tenant. Configuring your application to be _multi-tenant_ means that you can offer a **Software as a Service** (SaaS) application to many organizations, allowing their users to be able to sign-in to your application after providing consent.
+The following samples show how to configure your application to accept sign-ins from any Microsoft Entra tenant. Configuring your application to be *multi-tenant* means that you can offer a **Software as a Service** (SaaS) application to many organizations, allowing their users to be able to sign-in to your application after providing consent.
 
 > [!div class="mx-tdCol2BreakAll"]
 > | Language/<br/>Platform | Code sample(s) <br/> on GitHub |Auth<br/> libraries |Auth flow |

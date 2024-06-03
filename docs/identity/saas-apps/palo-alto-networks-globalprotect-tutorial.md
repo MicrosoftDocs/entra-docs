@@ -136,7 +136,7 @@ In this section, you'll enable B.Simon to use  Microsoft Entra single sign-on by
 
 	![Configure Palo Alto Single Sign-on 3](./media/paloaltoglobalprotect-tutorial/tutorial_paloaltoadmin_admin3.png)
 
-	a. In the **Profile Name** textbox, provide a name e.g Microsoft Entra GlobalProtect.
+	a. In the **Profile Name** textbox, provide a name, such as Microsoft Entra GlobalProtect.
 
     b. In **Identity Provider Metadata**, click **Browse** and select the Federation Metadata XML file which you have downloaded from Microsoft Entra admin center.
 

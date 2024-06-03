@@ -5,7 +5,7 @@ description: Create a custom Conditional Access policy to require compliant or h
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 05/21/2024
+ms.date: 05/29/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -61,7 +61,7 @@ After administrators confirm the settings using [report-only mode](howto-conditi
 
 ### Known behavior
 
-On Windows 7, iOS, Android, macOS, and some third-party web browsers, Microsoft Entra ID identifies the device using a client certificate that is provisioned when the device is registered with Microsoft Entra ID. When a user first signs in through the browser the user is prompted to select the certificate. The end user must select this certificate before they can continue to use the browser.
+On Windows 7, iOS, Android, macOS, and some non-Microsoft web browsers, Microsoft Entra ID identifies the device using a client certificate that is provisioned when the device is registered with Microsoft Entra ID. When a user first signs in through the browser the user is prompted to select the certificate. The end user must select this certificate before they can continue to use the browser.
 
 #### Subscription activation
 

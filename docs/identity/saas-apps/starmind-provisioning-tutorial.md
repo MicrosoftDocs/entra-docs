@@ -10,7 +10,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 12/18/2023
+ms.date: 03/25/2024
 ms.author: thwimmer
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Starmind so that I can streamline the user management process and ensure that users have the appropriate access to Starmind.
@@ -44,7 +44,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 
 ## Configure Starmind to support provisioning with Microsoft Entra ID
 
-Contact [Starmind support](https://starmind.atlassian.net/servicedesk/customer/portal/2) to open a service request to enable Starmind to support provisioning with Microsoft Entra ID. Ensure to provide the Starmind network domain (e.g. acme.starmind.com) you want to enable user provisioning for. You will then get provided with the Tenant URL and Secret Token for authorization.
+Contact [Starmind support](https://starmind.atlassian.net/servicedesk/customer/portal/2) to open a service request to enable Starmind to support provisioning with Microsoft Entra ID. Ensure to provide the Starmind network domain (such as acme.starmind.com) you want to enable user provisioning for. You will then get provided with the Tenant URL and Secret Token for authorization.
 
 ## Starmind from the Microsoft Entra application gallery
 

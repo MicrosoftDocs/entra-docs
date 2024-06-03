@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and F5 BIG-IP Easy Button for SSO to SAP ERP using Microsoft Entra ID so that I can control who has access to F5 BIG-IP Easy Button for SSO to SAP ERP using Microsoft Entra ID, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -238,7 +238,7 @@ You can include additional Microsoft Entra attributes, if necessary, but for thi
 
 #### Additional User Attributes
 
-The **Additional User Attributes** tab can support a variety of distributed systems requiring attributes stored in other directories, for session augmentation. Attributes fetched from an LDAP source can then be injected as additional SSO headers to further control access based on roles, Partner IDs, etc.
+The **Additional User Attributes** tab can support a variety of distributed systems requiring attributes stored in other directories, for session augmentation. Attributes fetched from an LDAP source can then be injected as additional SSO headers to further control access based on roles, Partner IDs, and so on.
 
    ![Screenshot for additional user attributes](./media/f5-big-ip-easy-button-sap-erp/additional-user-attributes.png)
 

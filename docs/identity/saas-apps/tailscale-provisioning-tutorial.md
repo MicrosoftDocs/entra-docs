@@ -10,7 +10,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 08/03/2023
+ms.date: 03/25/2024
 ms.author: thwimmer
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Tailscale so that I can streamline the user management process and ensure that users have the appropriate access to Tailscale.
@@ -46,8 +46,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 
 ## Step 2: Configure Tailscale to support provisioning with Microsoft Entra ID
 
-You need to be an [Owner, Admin, or IT admin](https://tailscale.com/kb/1138/user-roles/) in Tailscale to complete these steps. See [Tailscale plans](https://tailscale.com/pricing/)
-to find out which plans make user & group provisioning for Microsoft Entra available.
+You need to be an [Owner, Admin, or IT admin](https://tailscale.com/kb/1138/user-roles/) in Tailscale to complete these steps. See [Tailscale plans](https://tailscale.com/pricing/) to find out which plans make user & group provisioning for Microsoft Entra available.
 
 ### Generate a SCIM API key in Tailscale.
 

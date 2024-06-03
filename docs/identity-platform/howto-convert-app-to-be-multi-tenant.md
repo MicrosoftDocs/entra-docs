@@ -54,7 +54,7 @@ The sign-in response to the application then contains a token representing the u
 > [!NOTE]
 > There are, in reality 2 authorities for multitenant applications:
 >
-> - `https://login.microsoftonline.com/common` for applications processing accounts in any organizational directory (any Microsoft Entra directory) and personal Microsoft accounts (e.g. Skype, XBox).
+> - `https://login.microsoftonline.com/common` for applications processing accounts in any organizational directory (any Microsoft Entra directory) and personal Microsoft accounts (such as Skype, XBox).
 > - `https://login.microsoftonline.com/organizations` for applications processing accounts in any organizational directory (any Microsoft Entra directory):
 >
 > The explanations in this document use `common`. But you can replace it by `organizations` if your application doesn't support Microsoft personal accounts.

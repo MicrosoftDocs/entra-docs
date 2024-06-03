@@ -12,7 +12,7 @@ ms.subservice: saas-apps
 
 
 ms.topic: tutorial
-ms.date: 02/25/2024
+ms.date: 03/25/2024
 ms.author: thwimmer
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Zoom so that I can streamline the user management process and ensure that users have the appropriate access to Zoom.
@@ -139,7 +139,7 @@ Once you've configured provisioning, use the following resources to monitor your
 ## Change log
 * 05/14/2020 - Supports for UPDATE operations  added for emails[type eq "work"] attribute.
 * 10/20/2020 - Added support for two new roles **Licensed** and **on-premises** to replace existing roles **Pro** and **Corp**. Support for roles **Pro** and **Corp** will be removed in the future.
-* 05/30/2023 - Added support for new authentication method i.e. **OAuth 2.0**.
+* 05/30/2023 - Added support for new authentication method **OAuth 2.0**.
 
 ## Additional resources
 

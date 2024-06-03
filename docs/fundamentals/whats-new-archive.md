@@ -913,8 +913,8 @@ The Converged Authentication Methods Policy enables you to manage all authentica
 
 ### General Availability - Support for Directory Extensions using Azure AD cloud sync
 
-**Type:** New feature
-**Service category:** Provisioning
+**Type:** New feature  
+**Service category:** Provisioning  
 **Product capability:** Azure AD Connect cloud sync
 
 Hybrid IT Admins can now sync both Active Directory and Azure AD Directory Extensions using Azure AD Connect cloud sync. This new capability adds the ability to dynamically discover the schema for both Active Directory and Azure Active Directory, thereby, allowing customers to map the needed attributes using the attribute mapping experience of cloud sync. For more information, see [Directory extensions and custom attribute mapping in cloud sync](~/identity/hybrid/cloud-sync/custom-attribute-mapping.md).
@@ -1660,8 +1660,8 @@ For more information about how to better secure your organization by using autom
 ### Public Preview - Azure AD Connect cloud sync new user experience
 
 
-**Type:** Changed feature
-**Service category:** Azure AD Connect cloud sync
+**Type:** Changed feature  
+**Service category:** Azure AD Connect cloud sync  
 **Product capability:** Identity Governance
 
 Try out the new guided experience for syncing objects from AD to Azure AD using Azure AD Connect cloud sync in Azure portal. With this new experience, Hybrid Identity Administrators can easily determine which sync engine to use for their scenarios and learn more about the various options they have with our sync solutions. With a rich set of tutorials and videos, customers are able to learn everything about Azure AD Connect cloud sync in one single place. 

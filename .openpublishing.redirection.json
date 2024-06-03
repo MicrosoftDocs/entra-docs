@@ -677,6 +677,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity/enterprise-apps/app-management-videos.md",
+      "redirect_url": "/entra/identity/enterprise-apps/what-is-application-management",
+      "redirect_document_id": false
+    },  
+    {
       "source_path_from_root": "/docs/identity/managed-identities-azure-resources/qs-configure-cli-windows-vmss.md",
       "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-configure-managed-identities-scale-sets",
       "redirect_document_id": false
@@ -700,6 +705,16 @@
       "source_path_from_root": "/docs/identity/managed-identities-azure-resources/qs-configure-template-windows-vmss.md",
       "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-configure-managed-identities-scale-sets",
       "redirect_document_id": false
-    }   
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/tutorial-windows-vm-access-arm.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/tutorial-windows-vm-access",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/tutorial-linux-vm-access-arm.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/tutorial-windows-vm-access",
+      "redirect_document_id": false
+    }
   ]
 }

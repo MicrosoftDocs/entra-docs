@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: multitenant-organizations
 ms.topic: troubleshooting
-ms.date: 05/16/2024
+ms.date: 05/30/2024
 ms.author: rolyon
 ms.custom: it-pro
 #Customer intent: As a dev, devops, or it admin, I want to
@@ -122,12 +122,6 @@ The limitations described in this article have the following scope.
 - In Microsoft Intune, multitenant organization capabilities aren't yet supported. Learn more about existing functionalities to [trust compliant device claims from external organizations](../../external-id/cross-tenant-access-settings-b2b-collaboration.yml#to-change-inbound-trust-settings-for-mfa-and-device-claims).
 
 ## B2B users or B2B members
-
-- The promotion of B2B guests to B2B members represents a strategic decision by multitenant organizations to consider B2B members as trusted users of the organization. Review the [default permissions](../../fundamentals/users-default-permissions.md) for B2B members.
-
-- To promote B2B guests to B2B members, a source tenant administrator can amend the [attribute mappings](cross-tenant-synchronization-configure.md#step-9-review-attribute-mappings), or a target tenant administrator can [change the userType](../../fundamentals/how-to-manage-user-profile-info.yml#add-or-change-profile-information) if the property isn't recurringly synchronized.
-
-- As your organization rolls out the multitenant organization functionality including provisioning of B2B users across multitenant organization tenants, you might want to provision some users as B2B guests, while provision others users as B2B members. To achieve this, you might want to establish two cross-tenant synchronization configurations in the source tenant, one with userType attribute mappings configured to B2B guest, and another with userType attribute mappings configured to B2B member, each with [**Apply this mapping** set to **Always**](cross-tenant-synchronization-configure.md#step-9-review-attribute-mappings). By moving a user from one configuration's scope to the other, you can easily control who will be a B2B guest or a B2B member in the target tenant.
 
 - As part of a multitenant organization, [reset redemption for an already redeemed B2B user](../../external-id/reset-redemption-status.md) is currently disabled.
 
