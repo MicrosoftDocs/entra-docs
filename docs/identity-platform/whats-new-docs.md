@@ -5,7 +5,7 @@ author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
 ms.custom: has-adal-ref
-ms.date: 05/03/2024
+ms.date: 06/03/2024
 ms.service: identity-platform
 
 ms.topic: whats-new
@@ -15,6 +15,24 @@ ms.topic: whats-new
 # Microsoft identity platform docs: What's new
 
 Welcome to what's new in the Microsoft identity platform documentation. This article lists new articles that were added or had significant updates in the last three months.
+
+## May 2024
+
+### New articles
+
+- [Call an ASP.NET Core web API with Insomnia](howto-call-a-web-api-with-rest-client.md) - Replace 'Test a protected Web API in Postman' with Insomnia
+
+### Updated articles
+
+- [Create a REST API for a token issuance start event in Azure Functions](custom-extension-tokenissuancestart-setup.md) - Rework token issuance setup article
+- [Get a complete list of apps using ADAL in your tenant](howto-get-list-of-all-auth-library-apps.md) - Signin workbook and recommndations doc updates
+- [Microsoft identity platform and OAuth 2.0 implicit grant flow](v2-oauth2-implicit-grant-flow.md) - Redirect URI page updated 
+- [OpenID Connect on the Microsoft identity platform](v2-protocols-oidc.md) - Redirect URI page updated
+- [Register a Microsoft Entra app and create a service principal](howto-create-service-principal-portal.md) - Added clarity to the content
+- [Redirect URI (reply URL) outline and restrictions](reply-url.md) - Redirect URI page updated
+- [Single-page application: sign-in and sign-out](scenario-spa-sign-in.md) - Added clarity to the content
+- [Troubleshoot your custom claims provider API](custom-extension-troubleshoot.md) - Rework token issuance setup article
+- [What's new for authentication?](reference-breaking-changes.md) - Add note that apps must be registered in a directory to identity platform updates reference
 
 ## April 2024
 
@@ -48,12 +66,3 @@ Welcome to what's new in the Microsoft identity platform documentation. This art
 - [Custom claims provider (preview)](custom-claims-provider-overview.md) - Custom authentication extensions NuGet libraries
 - [Troubleshoot your custom claims provider API (preview)](custom-extension-troubleshoot.md) - Custom authentication extensions NuGet libraries
 
-## February 2024
-
-### Updated articles
-
-- [Custom authentication extensions for attribute collection start and submit events (preview)](custom-extension-attribute-collection.md) - Adding custom authentication extensions: Split issuer
-- [Configure a custom claim provider token issuance event (preview)](custom-extension-get-started.md) - Adding custom authentication extensions: Split issuer
-- [Microsoft identity platform app types and authentication flows](authentication-flows-app-scenarios.md) - Update to enhance the article's technical accuracy
-- [Overview of the Microsoft Authentication Library (MSAL)](msal-overview.md) - Update to enhance the article's technical accuracy
-- [Use Microsoft Authenticator or Intune Company Portal on Xamarin applications](msal-net-use-brokers-with-xamarin-apps.md) - Removing the android signature digest for the latest android version
