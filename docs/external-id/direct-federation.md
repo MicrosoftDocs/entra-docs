@@ -26,11 +26,11 @@ This article describes how to set up federation with any organization whose iden
 
 > [!IMPORTANT]
 >
->- You can now set up SAML/WS-Fed IdP federation with Microsoft Entra ID verified domains and [configure the invitation redemption order](cross-tenant-access-overview.md#configurable-redemption) to make sure that when invited users sign in, they redeem their invitations using the federated IdP instead of Microsoft Entra ID. **Redemption order** settings are available in your cross-tenant access settings for inbound B2B collaboration.
+>- You can now set up SAML/WS-Fed IdP federation with Microsoft Entra ID verified domains. The verified domain must be in a separate tenant from where you are setting up federation. Once configured, you can make sure users sign in with the federated IdP instead of Microsoft Entra ID by [configuring the invitation **Redemption order**](cross-tenant-access-overview.md#configurable-redemption) in your cross-tenant access settings for inbound B2B collaboration.
 >- We no longer support an allowlist of IdPs for new SAML/WS-Fed IdP federations. When you're setting up a new external federation, refer to [Step 1: Determine if the partner needs to update their DNS text records](#step-1-determine-if-the-partner-needs-to-update-their-dns-text-records).
 >- In the SAML request sent by Microsoft Entra ID for external federations, the Issuer URL is a tenanted endpoint. For any new federations, we recommend that all our partners set the audience of the SAML or WS-Fed based IdP to a tenanted endpoint. Refer to the [SAML 2.0](#required-saml-20-attributes-and-claims) and [WS-Fed](#required-ws-fed-attributes-and-claims) required attributes and claims sections. Any existing federations configured with the global endpoint will continue to work, but new federations will stop working if your external IdP is expecting a global issuer URL in the SAML request.
-> - We've removed the single domain limitation. You can now associate multiple domains with an individual federation configuration.
-> - We've removed the limitation that required the authentication URL domain to match the target domain or be from an allowed IdP. For details, see [Step 1: Determine if the partner needs to update their DNS text records](#step-1-determine-if-the-partner-needs-to-update-their-dns-text-records).
+>- We've removed the single domain limitation. You can now associate multiple domains with an individual federation configuration.
+>- We've removed the limitation that required the authentication URL domain to match the target domain or be from an allowed IdP. For details, see [Step 1: Determine if the partner needs to update their DNS text records](#step-1-determine-if-the-partner-needs-to-update-their-dns-text-records).
 
 ## When is a guest user authenticated with SAML/WS-Fed IdP federation?
 
@@ -110,6 +110,10 @@ Currently, the Microsoft Entra SAML/WS-Fed federation feature doesn't support se
 **What permissions are required to configure a SAML/Ws-Fed identity provider?**
 
 You need to be at least an [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator) to configure a SAML/Ws-Fed identity provider.
+
+**Does federation eliminate the need to create a guest account in my directory for the B2B collaboration user?**
+
+No. A guest account is created for a B2B collaboration user in your directory regardless of the authentication or federation method used. This user object allows you to grant access to applications, assign roles, and define membership in security groups.  
 
 ## Step 1: Determine if the partner needs to update their DNS text records
 

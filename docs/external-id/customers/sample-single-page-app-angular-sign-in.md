@@ -30,7 +30,7 @@ This how-to guide uses a sample Angular single-page application (SPA) to demonst
 [!INCLUDE [active-directory-b2c-register-app](./includes/register-app/register-client-app-common.md)]
 [!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/register-app/add-platform-redirect-url-angular.md)]
 
-## Grant API permissions
+## Grant admin consent
 
 [!INCLUDE [active-directory-b2c-grant-delegated-permissions](./includes/register-app/grant-api-permission-sign-in.md)]
 

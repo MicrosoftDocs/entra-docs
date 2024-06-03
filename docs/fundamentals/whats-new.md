@@ -108,7 +108,7 @@ Customers can now leverage their confidential HR data stored in custom security 
 
 Lifecycle Workflows can now enable, disable, and delete user accounts that are synchronized from Active Directory Domain Services (AD DS) to Microsoft Entra. This allows you to ensure that the offboarding processes of your employees are completed by deleting the user account after a retention period.
 
-For more information, see: On-premises article
+For more information, see: [Managing synced on-premises users with Lifecycle Workflows](../id-governance/lifecycle-workflow-on-premises.md).
 
 ---
 
@@ -119,16 +119,6 @@ For more information, see: On-premises article
 **Product capability:** User Authentication    
 
 External authentication methods enable you to use your preferred multifactor authentication (MFA) solution with Microsoft Entra ID. For more information, see: [Manage an external authentication method in Microsoft Entra ID (Preview)](../identity/authentication/how-to-authentication-external-method-manage.md).
-
----
-
-### Public Preview - Workflow History Insights in Lifecycle Workflows
-
-**Type:**  New feature    
-**Service category:** Lifecycle Workflows    
-**Product capability:** Identity Governance    
-
-With this feature, customers can now monitor workflow health and get insights across all their workflows in Lifecycle Workflows including viewing workflow processing data across workflows, tasks, and workflow categories. For more information, see: [Workflow Insights (preview)](../id-governance/lifecycle-workflow-insights.md).
 
 ---
 
