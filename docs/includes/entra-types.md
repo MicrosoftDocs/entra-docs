@@ -6,59 +6,62 @@ ms.date: 06/03/2024
 ms.author: barclayn
 ---
 
-
-| Category label | Drop down capabilities | Entra ID Free | Entra ID P1 | Entra ID P2 (Identity Protection) | Entra Suite |
-|----------------|-----------------------|---------------|-------------|-----------------------------------|-------------|
-| Identity management | | | | | |
-| Single sign-on (SSO) unlimited | &#x2714; | &#x2714; | &#x2714; | &#x2714; |
-| Group assignment to applications | | &#x2714; | &#x2714; | &#x2714; |
-| Cloud app discovery (Microsoft Defender for Cloud Apps) | | &#x2714; | &#x2714; | &#x2714; |
-| Service level agreement | | &#x2714; | &#x2714; | &#x2714; |
-| Multifactor authentication (MFA) | &#x2714; | &#x2714; | &#x2714; | &#x2714; |
-| Passwordless (Windows Hello for Business, Microsoft Authenticator, FIDO2, security key integrations) | &#x2714; | &#x2714; | &#x2714; | &#x2714; |
-| Conditional access | | &#x2714; | &#x2714; | &#x2714; |
-| Role-based access control (RBAC) | &#x2714; | &#x2714; | &#x2714; | &#x2714; |
-| Advanced group management (dynamic groups, naming policies, expiration, default classification) | | &#x2714; | &#x2714; | &#x2714; |
-| Cross-tenant user synchronization, Mult-tenant organizations | | &#x2714; | &#x2714; | &#x2714; |
-| SharePoint limited access | | &#x2714; | &#x2714; | &#x2714; |
-| Session lifetime management | | &#x2714; | &#x2714; | &#x2714; |
-| Global password protection and management (custom banned passwords, users synchronized from on-premises Active Directory) | | &#x2714; | &#x2714; | &#x2714; |
-| Application launch portal and user application collections in My Apps | &#x2714; | &#x2714; | &#x2714; | &#x2714; |
-| Self-service: password change/reset/unlock, sign-in activity search and reporting, group management (My Groups), entitlement management (My Access), app launching (My Apps), delegated password resets and phone number mangement (My Staff) | &#x2714; | &#x2714; | &#x2714; |
-| Custom security attributes | | &#x2714; | &#x2714; | &#x2714; |
-| Advanced security and usage reports | | &#x2714; | &#x2714; | &#x2714; |
-| ID Protection | | | | | |
-| Risk-based Conditional Access | | | &#x2714; | &#x2714; |
-| Real-time dynamic sign-in assessment | | | &#x2714; | &#x2714; |
-| Real-time dynamic user assessment | | | &#x2714; | &#x2714; |
-| Authentication context (step-up authentication) | | | &#x2714; | &#x2714; |
-| Device and application filters for Conditional Access | | | &#x2714; | &#x2714; |
-| Token protection | | | &#x2714; | &#x2714; |
-| Vulnerabilities and risky accounts | | | &#x2714; | &#x2714; |
-| Risk event investigation | | | &#x2714; | &#x2714; |
-| ID Governance | | | | | |
-| Automated user provisioning to SaaS apps | &#x2714; | &#x2714; | &#x2714; | &#x2714; |
-| Automated user provisioning to on-premises apps | | &#x2714; | &#x2714; | &#x2714; |
-| Automated group provisioning to apps | | &#x2714; | &#x2714; | &#x2714; |
-| HR-driven provisioning | | &#x2714; | &#x2714; | &#x2714; |
-| Terms of use attestation | | &#x2714; | &#x2714; | &#x2714; |
-| Basic access certifications and reviews | | | &#x2714; | &#x2714; |
-| Machine learning assisted access certifications and reviews | | | | &#x2714; |
-| Basic entitlement management | | &#x2714; | &#x2714; | |
-| Entitlement management Custom Extensions (Logic Apps) | | | | &#x2714; |
-| Entitlement management with Verified ID | | | | &#x2714; |
-| Lifecycle workflows | | | | &#x2714; |
-| Identity governance dashboard | | | | &#x2714; |
-| Privileged identity management (PIM) | | | &#x2714; | &#x2714; |
-| Verified ID | | | | | |
-| Issue and verify custom user-owned verifiable credentials | | | | |
-| Verified helpdesk | | | | |
-| Fast remote onboarding | | | | |
-| Secure access to applications and resources | | | | |
-| Higher assurance verifications with Face Check | | | | |
-| Higher assurance entitlement management with ID Governance | | | | |
-| LinkedIn employment verification | | | | |
-| Internet Access | | | | | |
-| Extend adaptive access controls universally | | | | &#x2714; |
-| Unify network security controls with rich Conditional Access signals | | | | &#x2714; |
-| Prevent end-user access to unsafe and non-compliant content with web category filtering | &#x2714; |
+| Category label                                                | Drop down capabilities                                          | Entra ID Free | Entra ID P1 | Entra ID P2 (Identity Protection) | Entra Suite |
+|--------------------------------------------------------------|----------------------------------------------------------------|---------------|-------------|-----------------------------------|-------------|
+| Identity management                                           |                                                                |                |             |                                   |             |
+| Single sign-on (SSO) unlimited                                | :white_check_mark:                                              | :white_check_mark:              | :white_check_mark:           | :white_check_mark:                                 | :white_check_mark:           |
+| Group assignment to applications                              |                                                                | :white_check_mark:              | :white_check_mark:           | :white_check_mark:                                 |             |
+| Cloud app discovery (Microsoft Defender for Cloud Apps)       |                                                                | :white_check_mark:              | :white_check_mark:           | :white_check_mark:                                 |             |
+| Service level agreement                                       |                                                                | :white_check_mark:              | :white_check_mark:           | :white_check_mark:                                 |             |
+| Multifactor authentication (MFA)                              | :white_check_mark:                                              | :white_check_mark:              | :white_check_mark:           | :white_check_mark:                                 | :white_check_mark:           |
+| Passwordless (Windows Hello for Business, Microsoft Authenticator, FIDO2, security key integrations) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| Conditional access                                            |                                                                | :white_check_mark:              | :white_check_mark:           | :white_check_mark:                                 |             |
+| Role-based access control (RBAC)                              | :white_check_mark:                                              | :white_check_mark:              | :white_check_mark:           | :white_check_mark:                                 | :white_check_mark:           |
+| Advanced group management (dynamic groups, naming policies, expiration, default classification) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |             |
+| Cross-tenant user synchronization, Mult-tenant organizations | :white_check_mark:                                              | :white_check_mark:              | :white_check_mark:           | :white_check_mark:                                 |             |
+| SharePoint limited access                                     | :white_check_mark:                                              | :white_check_mark:              | :white_check_mark:           | :white_check_mark:                                 |             |
+| Session lifetime management                                   | :white_check_mark:                                              | :white_check_mark:              | :white_check_mark:           | :white_check_mark:                                 |             |
+| Global password protection and management (custom banned passwords, users synchronized from on-premises Active Directory) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |             |
+| Application launch portal and user application collections in My Apps | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| Self-service: password change/reset/unlock, sign-in activity search and reporting, group management (My Groups), entitlement management (My Access), app launching (My Apps), delegated password resets and phone number mangement (My Staff) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| Custom security attributes                                    | :white_check_mark:                                              | :white_check_mark:              | :white_check_mark:           | :white_check_mark:                                 |             |
+| Advanced security and usage reports                           | :white_check_mark:                                              | :white_check_mark:              | :white_check_mark:           | :white_check_mark:                                 |             |
+| ID Protection                                                 |                                                                |                |             |                                   |             |
+| Risk-based Conditional Access                                 |                                                                |                | :white_check_mark:           | :white_check_mark:                                 |             |
+| Real-time dynamic sign-in assessment                          |                                                                |                | :white_check_mark:           | :white_check_mark:                                 |             |
+| Real-time dynamic user assessment                             |                                                                |                | :white_check_mark:           | :white_check_mark:                                 |             |
+| Authentication context (step-up authentication)               |                                                                |                | :white_check_mark:           | :white_check_mark:                                 |             |
+| Device and application filters for Conditional Access         |                                                                |                | :white_check_mark:           | :white_check_mark:                                 |             |
+| Token protection                                              |                                                                |                | :white_check_mark:           | :white_check_mark:                                 |             |
+| Vulnerabilities and risky accounts                            |                                                                |                | :white_check_mark:           | :white_check_mark:                                 |             |
+| Risk event investigation                                      |                                                                |                | :white_check_mark:           | :white_check_mark:                                 |             |
+| ID Governance                                                 |                                                                |                |             |                                   |             |
+| Automated user provisioning to SaaS apps                      | :white_check_mark:                                              | :white_check_mark:              | :white_check_mark:           | :white_check_mark:                                 | :white_check_mark:           |
+| Automated user provisioning to on-premises apps               | :white_check_mark:                                              | :white_check_mark:              | :white_check_mark:           | :white_check_mark:                                 |             |
+| Automated group provisioning to apps                          | :white_check_mark:                                              | :white_check_mark:              | :white_check_mark:           | :white_check_mark:                                 |             |
+| HR-driven provisioning                                        | :white_check_mark:                                              | :white_check_mark:              | :white_check_mark:           | :white_check_mark:                                 |             |
+| Terms of use attestation                                      | :white_check_mark:                                              | :white_check_mark:              | :white_check_mark:           | :white_check_mark:                                 |             |
+| Basic access certifications and reviews                       |                                                                |                | :white_check_mark:           | :white_check_mark:                                 |             |
+| Machine learning assisted access certifications and reviews  |                                                                |                |                | :white_check_mark:                                 |             |
+| Basic entitlement management                                  |                                                                |                | :white_check_mark:           | :white_check_mark:                                 |             |
+| Entitlement management Custom Extensions (Logic Apps)         |                                                                |                |                | :white_check_mark:                                 |             |
+| Entitlement management with Verified ID                       |                                                                |                |                | :white_check_mark:                                 |             |
+| Lifecycle workflows                                           |                                                                |                |                | :white_check_mark:                                 |             |
+| Identity governance dashboard                                |                                                                |                |                | :white_check_mark:                                 |             |
+| Privileged identity management (PIM)                          |                                                                |                | :white_check_mark:           | :white_check_mark:                                 |             |
+| Verified ID                                                   |                                                                |                |             |                                   |             |
+| Issue and verify custom user-owned verifiable credentials     |                                                                |                |                |                                   |             |
+| Verified helpdesk                                             |                                                                |                |                |                                   |             |
+| Fast remote onboarding                                        |                                                                |                |                |                                   |             |
+| Secure access to applications and resources                    |                                                                |                |                |                                   |             |
+| Higher assurance verifications with Face Check                |                                                                |                |                |                                   |             |
+| Higher assurance entitlement management with ID Governance    |                                                                |                |                |                                   |             |
+| LinkedIn employment verification                             |                                                                |                |                |                                   |             |
+| Internet Access                                               |                                                                |                |             |                                   |             |
+| Extend adaptive access controls universally                   |                                                                |                |                | :white_check_mark:                                 |             |
+| Unify network security controls with rich Conditional Access signals |                                                            |                |                | :white_check_mark:                                 |             |
+| Prevent end-user access to unsafe and non-compliant content with web category filtering |                                      |                |                | :white_check_mark:                                 |             |
+| Allow or block access to specific internet endpoints with FDQN filtering |                                                  |                |                | :white_check_mark:                                 |             |
+| Prevent users from bypassing secure network edge with compliant network |                                                  |                |                | :white_check_mark:                                 |             |
+| Restore original source IP context for all Entra traffic      |                                                                |                |                | :white_check_mark:                                 |             |
+| Monitoring and visibility through detailed network traffic logs |                                                            |                |                | :white_check_mark:                                 |             |
