@@ -20,7 +20,7 @@ Welcome to what's new in the Microsoft identity platform documentation. This art
 
 ### New articles
 
-- [Call an ASP.NET Core web API with Insomnia](howto-call-a-web-api-with-rest-client.md) - Test a protected Web API in Postman with Insomnia
+- [Call an ASP.NET Core web API with Insomnia](howto-call-a-web-api-with-rest-client.md) - Test a protected Web API using Insomnia
 
 ### Updated articles
 
