@@ -73,7 +73,7 @@ When setting up the application proxy service, ask the following questions:
 - Where is the application proxy instance located?
 - Do you already have a dedicated network connection to Microsoft data centers set up, like Azure ExpressRoute or a similar VPN?
 
-The connector must communicate with both Microsoft Entra and your applications. Steps 2 and 3 represent the communication in the traffic flow diagram. The placement of the connector affects the latency of those two connections. When evaluating the placement of the connector, keep in mind these points.
+The connector must communicate with both Microsoft Entra ID and your applications. Steps 2 and 3 represent the communication in the traffic flow diagram. The placement of the connector affects the latency of those two connections. When evaluating the placement of the connector, keep in mind these points.
 
 - Confirm "line of site" between the connector and the data center for Kerberos Constrained Delegation (KCD). Additionally, the connector server needs to be domain joined.
 - Install the connector as close to the application as possible.

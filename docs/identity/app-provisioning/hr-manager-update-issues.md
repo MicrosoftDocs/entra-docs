@@ -15,9 +15,9 @@ ms.reviewer: chmutali
 
 **Applies to:**
 * Workday to on-premises Active Directory user provisioning
-* Workday to Microsoft Entra ID user provisioning
+* Workday to Microsoft Entra user provisioning
 * SAP SuccessFactors to on-premises Active Directory user provisioning
-* SAP SuccessFactors to Microsoft Entra ID user provisioning
+* SAP SuccessFactors to Microsoft Entra user provisioning
 
 ## Understanding how manager reference resolution works
 The Microsoft Entra provisioning service automatically updates manager information so that the user-manager relationship in Microsoft Entra ID is always in sync with your HR data. It uses a process called *manager reference resolution* to accurately update the *manager* attribute. Before going into the process details, it's important to understand how manager information is stored in Microsoft Entra ID and on-premises Active Directory. 
