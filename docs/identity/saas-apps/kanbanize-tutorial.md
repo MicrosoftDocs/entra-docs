@@ -1,6 +1,6 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Kanbanize'
-description: Learn how to configure single sign-on between Microsoft Entra ID and Kanbanize.
+title: 'Tutorial: Microsoft Entra SSO integration with Businessmap'
+description: Learn how to configure single sign-on between Microsoft Entra ID and Businessmap.
 
 author: jeevansd
 manager: CelesteDG
@@ -12,15 +12,15 @@ ms.topic: tutorial
 ms.date: 03/25/2024
 ms.author: jeedes
 
-# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Kanbanize so that I can control who has access to Kanbanize, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
+# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Businessmap so that I can control who has access to Businessmap, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Kanbanize
+# Tutorial: Microsoft Entra SSO integration with Businessmap
 
-In this tutorial, you'll learn how to integrate Kanbanize with Microsoft Entra ID. When you integrate Kanbanize with Microsoft Entra ID, you can:
+In this tutorial, you'll learn how to integrate Businessmap with Microsoft Entra ID. When you integrate Businessmap with Microsoft Entra ID, you can:
 
-* Control in Microsoft Entra ID who has access to Kanbanize.
-* Enable your users to be automatically signed-in to Kanbanize with their Microsoft Entra accounts.
+* Control in Microsoft Entra ID who has access to Businessmap.
+* Enable your users to be automatically signed-in to Businessmap with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
 ## Prerequisites
@@ -28,39 +28,39 @@ In this tutorial, you'll learn how to integrate Kanbanize with Microsoft Entra I
 To get started, you need the following items:
 
 * A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
-* Kanbanize single sign-on (SSO) enabled subscription.
+* Businessmap single sign-on (SSO) enabled subscription.
 
 ## Scenario description
 
 In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
 
-* Kanbanize supports **SP and IDP** initiated SSO.
-* Kanbanize supports **Just In Time** user provisioning.
+* Businessmap supports **SP and IDP** initiated SSO.
+* Businessmap supports **Just In Time** user provisioning.
 
-## Add Kanbanize from the gallery
+## Add Businessmap from the gallery
 
-To configure the integration of Kanbanize into Microsoft Entra ID, you need to add Kanbanize from the gallery to your list of managed SaaS apps.
+To configure the integration of Businessmap into Microsoft Entra ID, you need to add Businessmap from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
-1. In the **Add from the gallery** section, type **Kanbanize** in the search box.
-1. Select **Kanbanize** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
+1. In the **Add from the gallery** section, type **Businessmap** in the search box.
+1. Select **Businessmap** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
  Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
-<a name='configure-and-test-azure-ad-sso-for-kanbanize'></a>
+<a name='configure-and-test-azure-ad-sso-for-Businessmap'></a>
 
-## Configure and test Microsoft Entra SSO for Kanbanize
+## Configure and test Microsoft Entra SSO for Businessmap
 
-Configure and test Microsoft Entra SSO with Kanbanize using a test user called **B.Simon**. For SSO to work, you need to establish a link relationship between a Microsoft Entra user and the related user in Kanbanize.
+Configure and test Microsoft Entra SSO with Businessmap using a test user called **B.Simon**. For SSO to work, you need to establish a link relationship between a Microsoft Entra user and the related user in Businessmap.
 
-To configure and test Microsoft Entra SSO with Kanbanize, perform the following steps:
+To configure and test Microsoft Entra SSO with Businessmap, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
     1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
     1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
-1. **[Configure Kanbanize SSO](#configure-kanbanize-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Kanbanize test user](#create-kanbanize-test-user)** - to have a counterpart of B.Simon in Kanbanize that is linked to the Microsoft Entra representation of user.
+1. **[Configure Businessmap SSO](#configure-businessmap-sso)** - to configure the single sign-on settings on application side.
+    1. **[Create Businessmap test user](#create-businessmap-test-user)** - to have a counterpart of B.Simon in Businessmap that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -70,7 +70,7 @@ To configure and test Microsoft Entra SSO with Kanbanize, perform the following 
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Kanbanize** > **Single sign-on**.
+1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Businessmap** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -79,10 +79,10 @@ Follow these steps to enable Microsoft Entra SSO.
 1. On the **Basic SAML Configuration** section, if you wish to configure the application in **IDP** initiated mode, perform the following steps:
 
      a. In the **Identifier** text box, type a URL using the following pattern:
-    `https://<subdomain>.kanbanize.com/`
+    `https://<subdomain>.Businessmap.com/`
 
     b. In the **Reply URL** text box, type a URL using the following pattern:
-    `https://<subdomain>.kanbanize.com/saml/acs`
+    `https://<subdomain>.Businessmap.com/saml/acs`
 
 	c. Click **Set additional URLs**.
 
@@ -91,12 +91,12 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Click **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
 
     In the **Sign-on URL** text box, type a URL using the following pattern:
-    `https://<subdomain>.kanbanize.com`
+    `https://<subdomain>.Businessmap.com`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign-on URL. Contact [Kanbanize Client support team](mailto:support@ms.kanbanize.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign-on URL. Contact [Businessmap Client support team](mailto:support@ms.businessmap.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-1. Kanbanize application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes, where as nameidentifier is mapped with **user.userprincipalname**. Kanbanize application expects nameidentifier to be mapped with **user.mail**, so you need to edit the attribute mapping by clicking on Edit icon and change the attribute mapping.
+1. Businessmap application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes, where as nameidentifier is mapped with **user.userprincipalname**. Businessmap application expects nameidentifier to be mapped with **user.mail**, so you need to edit the attribute mapping by clicking on Edit icon and change the attribute mapping.
 
 	![image](common/edit-attribute.png)
 
@@ -104,7 +104,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	![The Certificate download link](common/certificatebase64.png)
 
-1. On the **Set up Kanbanize** section, copy the appropriate URL(s) based on your requirement.
+1. On the **Set up Businessmap** section, copy the appropriate URL(s) based on your requirement.
 
 	![Copy configuration URLs](common/copy-configuration-urls.png)
 
@@ -128,26 +128,26 @@ In this section, you'll create a test user called B.Simon.
 
 ### Assign the Microsoft Entra test user
 
-In this section, you'll enable B.Simon to use single sign-on by granting access to Kanbanize.
+In this section, you'll enable B.Simon to use single sign-on by granting access to Businessmap.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Kanbanize**.
+1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Businessmap**.
 1. In the app's overview page, find the **Manage** section and select **Users and groups**.
 1. Select **Add user**, then select **Users and groups** in the **Add Assignment** dialog.
 1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then click the **Select** button at the bottom of the screen.
 1. If you're expecting any role value in the SAML assertion, in the **Select Role** dialog, select the appropriate role for the user from the list and then click the **Select** button at the bottom of the screen.
 1. In the **Add Assignment** dialog, click the **Assign** button.
 
-## Configure Kanbanize SSO
+## Configure Businessmap SSO
 
 
 
 
-1. In a different web browser window, sign in to your Kanbanize company site as an administrator
+1. In a different web browser window, sign in to your Businessmap company site as an administrator
 
 4. Go to top  right of the page, click on **Settings** logo.
 
-	![Kanbanize settings](./media/kanbanize-tutorial/tutorial-kanbanize-set.png)
+	![Businessmap settings](./media/kanbanize-tutorial/tutorial-kanbanize-set.png)
 
 5. On the Administration panel page from the left side of menu click **Integrations** and then enable **Single Sign-On**.
 
@@ -155,7 +155,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 6. Under Integrations section, click on **CONFIGURE** to open **Single Sign-On Integration** page.
 
-	![Screenshot shows the Kanbanize Integration.](./media/kanbanize-tutorial/configuration.png)
+	![Screenshot shows the Businessmap Integration.](./media/kanbanize-tutorial/configuration.png)
 
 7. On the **Single Sign-On Integration** page under **Configurations**, perform the following steps:
 
@@ -178,13 +178,13 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 	g. In Notepad, open the base-64 encoded certificate that you downloaded, copy its content (without the start and end markers), and then paste it into the **Idp X.509 Certificate** box.
 
-	h. Check **Enable login with both SSO and Kanbanize**.
+	h. Check **Enable login with both SSO and Businessmap**.
 
 	i. Click **Save Settings**.
 
-### Create Kanbanize test user
+### Create Businessmap test user
 
-In this section, a user called B.Simon is created in Kanbanize. Kanbanize supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in Kanbanize, a new one is created after authentication. If you need to create a user manually, contact [Kanbanize Client support team](mailto:support@ms.kanbanize.com).
+In this section, a user called B.Simon is created in Businessmap. Businessmap supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in Businessmap, a new one is created after authentication. If you need to create a user manually, contact [Businessmap Client support team](mailto:support@ms.businessmap.com).
 
 ## Test SSO 
 
@@ -192,16 +192,16 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP initiated:
 
-* Click on **Test this application**, this will redirect to Kanbanize Sign on URL where you can initiate the login flow.  
+* Click on **Test this application**, this will redirect to Businessmap Sign on URL where you can initiate the login flow.  
 
-* Go to Kanbanize Sign-on URL directly and initiate the login flow from there.
+* Go to Businessmap Sign-on URL directly and initiate the login flow from there.
 
 #### IDP initiated:
 
-* Click on **Test this application**, and you should be automatically signed in to the Kanbanize for which you set up the SSO. 
+* Click on **Test this application**, and you should be automatically signed in to the Businessmap for which you set up the SSO. 
 
-You can also use Microsoft My Apps to test the application in any mode. When you click the Kanbanize tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Kanbanize for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+You can also use Microsoft My Apps to test the application in any mode. When you click the Businessmap tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Businessmap for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Next steps
 
-Once you configure Kanbanize you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).
+Once you configure Businessmap you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).
