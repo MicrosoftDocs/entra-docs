@@ -1,5 +1,5 @@
 ---
-title: Sign in with Microsoft branding guidelines | Microsoft Entra ID
+title: Sign in with Microsoft branding guidelines
 description: Learn about application branding guidelines for Microsoft identity platform.
 author: rwike77
 manager: CelesteDG

@@ -1,5 +1,5 @@
 ---
-title: Understanding telephony fraud risk for Microsoft Entra multifactor authentication | Microsoft Entra ID
+title: Understanding telephony fraud risk for Microsoft Entra multifactor authentication
 description: Understanding International Revenue Share Fraud (IRSF) is crucial for implementing preventive measures for Microsoft Entra multifactor authentication telephony verification.
 
 ms.service: entra-id
