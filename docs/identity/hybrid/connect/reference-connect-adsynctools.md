@@ -275,7 +275,7 @@ ConvertTo-ADSyncToolsCloudAnchor [-Anchor] <String> [<CommonParameters>]
 ### DESCRIPTION
 Takes a Base64 Anchor like VAAAAFUAcwBlAHIAXwBjADcAMgA5ADAAMwBlAGQALQA3ADgAMQA2AC0ANAAxAGMAZAAtADkAMAA2ADYALQBlAGEAYwAzADMAZAAxADcAMQBkADcANwAAAA==
 and converts to the respective CloudAnchor value, e.g.
-User_abc12345-1234-abcd-9876-ab0123456789
+User_00aa00aa-bb11-cc22-dd33-44ee44ee44ee
 ### EXAMPLES
 #### EXAMPLE 1
 ```
@@ -1428,7 +1428,7 @@ Supports Active Directory objects in multi-domain forests.
 ### EXAMPLES
 #### EXAMPLE 1
 ```
-Set-ADSyncToolsMsDsConsistencyGuid -Identity 'CN=User1,OU=Sync,DC=Contoso,DC=com' -Value '88666888-0101-1111-bbbb-1234567890ab'
+Set-ADSyncToolsMsDsConsistencyGuid -Identity 'CN=User1,OU=Sync,DC=Contoso,DC=com' -Value '00aa00aa-bb11-cc22-dd33-44ee44ee44ee'
 ```
 #### EXAMPLE 2
 ```
@@ -1436,7 +1436,7 @@ Set-ADSyncToolsMsDsConsistencyGuid -Identity 'CN=User1,OU=Sync,DC=Contoso,DC=com
 ```
 #### EXAMPLE 3
 ```
-Set-ADSyncToolsMsDsConsistencyGuid 'User1@Contoso.com' '8d6c6818-018c-4f11-9bb8-1b04e2caa1b6'
+Set-ADSyncToolsMsDsConsistencyGuid 'User1@Contoso.com' '11bb11bb-cc22-dd33-ee44-55ff55ff55ff'
 ```
 #### EXAMPLE 4
 ```
@@ -1444,7 +1444,7 @@ Set-ADSyncToolsMsDsConsistencyGuid 'User1@Contoso.com' 'GGhsjYwBEU+buBsE4sqhtg==
 ```
 #### EXAMPLE 5
 ```
-'88666888-0101-1111-bbbb-1234567890ab' | Set-ADSyncToolsMsDsConsistencyGuid -Identity User1
+'00aa00aa-bb11-cc22-dd33-44ee44ee44ee' | Set-ADSyncToolsMsDsConsistencyGuid -Identity User1
 ```
 #### EXAMPLE 6
 ```

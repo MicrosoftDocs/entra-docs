@@ -102,7 +102,7 @@ The following JSON payload shows an example SCIM schema:
      "lastModified": "2011-05-13T04:42:34Z",
      "version": "W\/\"3694e05e9dff591\"",
      "location":
- "https://example.com/v2/Users/2819c223-7f76-453a-919d-413861904646"
+ "https://example.com/v2/Users/00aa00aa-bb11-cc22-dd33-44ee44ee44ee"
    }
 }   
 ```
@@ -1214,7 +1214,7 @@ In the sample code, the request is translated into a call to the QueryAsync meth
 * parameters.AlternateFilter.ElementAt(x).ComparisonValue: "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1"
 * parameters.AlternateFilters.ElementAt(y).AttributePath: "manager"
 * parameters.AlternateFilters.ElementAt(y).ComparisonOperator: ComparisonOperator.Equals
-* parameters.AlternateFilter.ElementAt(y).ComparisonValue: "2819c223-7f76-453a-919d-413861904646"
+* parameters.AlternateFilter.ElementAt(y).ComparisonValue: "00aa00aa-bb11-cc22-dd33-44ee44ee44ee"
 * parameters.RequestedAttributePaths.ElementAt(0): "ID"
 * parameters.SchemaIdentifier: `urn:ietf:params:scim:schemas:extension:enterprise:2.0:User`
 
@@ -1240,8 +1240,8 @@ Content-type: application/scim+json
         "value":
           [
             {
-              "$ref":"http://.../scim/Users/2819c223-7f76-453a-919d-413861904646",
-              "value":"2819c223-7f76-453a-919d-413861904646"}]}]}
+              "$ref":"http://.../scim/Users/00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
+              "value":"00aa00aa-bb11-cc22-dd33-44ee44ee44ee"}]}]}
 ```
 
 In the sample code, the request is translated into a call to the UpdateAsync method of the service's provider. Here's the signature of that method: 
@@ -1267,8 +1267,8 @@ In the example of a request, to update a user, the object provided as the value 
 |`(PatchRequest as PatchRequest2).Operations.ElementAt(0).OperationName`| `OperationName.Add`|
 |`(PatchRequest as PatchRequest2).Operations.ElementAt(0).Path.AttributePath`| Manager|
 |`(PatchRequest as PatchRequest2).Operations.ElementAt(0).Value.Count`|1|
-|`(PatchRequest as PatchRequest2).Operations.ElementAt(0).Value.ElementAt(0).Reference`|`http://.../scim/Users/2819c223-7f76-453a-919d-413861904646`|
-|`(PatchRequest as PatchRequest2).Operations.ElementAt(0).Value.ElementAt(0).Value`| 2819c223-7f76-453a-919d-413861904646|
+|`(PatchRequest as PatchRequest2).Operations.ElementAt(0).Value.ElementAt(0).Reference`|`http://.../scim/Users/00aa00aa-bb11-cc22-dd33-44ee44ee44ee`|
+|`(PatchRequest as PatchRequest2).Operations.ElementAt(0).Value.ElementAt(0).Value`| 00aa00aa-bb11-cc22-dd33-44ee44ee44ee|
 
 ***Example 6. Deprovision a user***
 

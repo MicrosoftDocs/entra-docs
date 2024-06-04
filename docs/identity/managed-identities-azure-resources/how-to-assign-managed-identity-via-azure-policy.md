@@ -75,7 +75,7 @@ For example, Joe can create a user-assigned managed identity called PolicyAssign
 > /subscriptions/your-subscription-id/resourceGroups/built-in-identity-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/built-in-identity-{location}
 
 For example: 
-> /subscriptions/aaaabbbb-aaaa-bbbb-1111-111122223333/resourceGroups/built-in-identity-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/built-in-identity-eastus
+> /subscriptions/aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e/resourceGroups/built-in-identity-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/built-in-identity-eastus
 
 ### Required authorization 
 

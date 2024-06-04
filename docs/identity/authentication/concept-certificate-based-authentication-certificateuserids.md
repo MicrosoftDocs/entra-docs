@@ -173,7 +173,7 @@ For this configuration, you can use [Microsoft Graph PowerShell](/powershell/mic
 1. Get the user object.
 
    ```powershell
-     $userObjectId = "6b2d3bd3-b078-4f46-ac53-f862f35e10b6"
+     $userObjectId = "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb"
      $user = Get-MgUser -UserId $userObjectId -Property AuthorizationInfo
    ```
 

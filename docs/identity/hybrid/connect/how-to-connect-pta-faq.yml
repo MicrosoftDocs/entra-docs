@@ -216,7 +216,7 @@ sections:
           To validate which local server or authentication agent was used for a specific sign-in event:
 
           1. In the [Microsoft Entra admin center](https://entra.microsoft.com), go to the sign-in event.
-          2. Select **Authentication Details**. In the **Authentication Method Detail** column, Agent ID details are shown in the format "Pass-through Authentication; PTA AgentId: XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX".
+          2. Select **Authentication Details**. In the **Authentication Method Detail** column, Agent ID details are shown in the format "Pass-through Authentication; PTA AgentId: 00001111-aaaa-2222-bbbb-3333cccc4444".
           3. To get Agent ID details for the agent that's installed on your local server, log in to your local server and run following cmdlet: 
           
               `Get-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\Azure AD Connect Agents\Azure AD Connect Authentication Agent' | Select *Instance*`

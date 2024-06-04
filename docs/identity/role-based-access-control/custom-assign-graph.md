@@ -64,7 +64,7 @@ Body
 ```http
 {
     "@odata.type": "#microsoft.graph.unifiedRoleAssignment",
-    "principalId": "2142743c-a5b3-4983-8486-4532ccba12869",
+    "principalId": "aaaaaaaa-bbbb-cccc-1111-2222222222229",
     "roleDefinitionId": "194ae4cb-b126-40b2-bd5b-6091b380977d",
     "directoryScopeId": "/"  //Don't use "resourceScope" attribute in Azure AD role assignments. It will be deprecated soon.
 }
@@ -87,7 +87,7 @@ Body
 ```http
 {
     "@odata.type": "#microsoft.graph.unifiedRoleAssignment",
-    "principalId": "2142743c-a5b3-4983-8486-4532ccba12869",
+    "principalId": "aaaaaaaa-bbbb-cccc-1111-2222222222229",
     "roleDefinitionId": "e9b2b976-1dea-4229-a078-b08abd6c4f84",    //role template ID of a custom role
     "directoryScopeId": "/13ff0c50-18e7-4071-8b52-a6f08e17c8cc"  //object ID of an application
 }
