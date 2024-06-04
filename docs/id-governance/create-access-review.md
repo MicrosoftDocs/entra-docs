@@ -323,6 +323,7 @@ After one or more access reviews have started, you might want to modify or updat
 
 - [Complete an access review of groups or applications](complete-access-review.md)
 - [Create an access review of PIM for Groups (preview)](create-access-review-pim-for-groups.md)
+- [Create an access review of Azure resource and Microsoft Entra roles in PIM](privileged-identity-management/pim-create-roles-and-resource-roles-review.md)
 - [Review access to groups or applications](perform-access-review.md)
 - [Review access for yourself to groups or applications](review-your-access.md)
-- [Create an access review of Azure resource and Microsoft Entra roles in PIM](privileged-identity-management/pim-create-roles-and-resource-roles-review.md)
+
