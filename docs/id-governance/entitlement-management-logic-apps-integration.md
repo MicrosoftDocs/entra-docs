@@ -183,7 +183,7 @@ The diagram flow diagram shows:
 An example of a resume request payload is:
 
 ``` http
-POST https://graph.microsoft.com/beta/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/0e60f18c-b2a0-4887-9da8-da2e30a39d99/resume
+POST https://graph.microsoft.com/beta/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/00aa00aa-bb11-cc22-dd33-44ee44ee44ee/resume
 ```
 
 ``` http
