@@ -143,6 +143,9 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
     e. Click **Save**.
 
+> [!NOTE]
+> To configure Single Sign-on in Screensteps, Please refer [How to Set up Single Sign-on](https://help.screensteps.com/a/1097728-how-to-set-up-single-sign-on). This article will guide you through the steps of setting up ScreenSteps to work with Microsoft Entra ID.
+
 ### Create ScreenSteps test user
 
 In this section, you create a user called Britta Simon in ScreenSteps. Work with [ScreenSteps Client support team](https://www.screensteps.com/contact) to add the users in the ScreenSteps platform. Users must be created and activated before you use single sign-on.
