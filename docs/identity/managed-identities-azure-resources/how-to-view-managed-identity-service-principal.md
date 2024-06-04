@@ -22,7 +22,7 @@ zone_pivot_groups: identity-mi-service-principals
 
 Managed identities for Azure resources provide Azure services with an automatically managed identity in Microsoft Entra ID. You can use this identity to authenticate to any service that supports Microsoft Entra authentication without having credentials in your code. 
 
-In this article, you learn how to view the service principal of a managed identity.
+In this article, you'll learn how to view the service principal of a managed identity.
 
 > [!NOTE] 
 > Service principals are enterprise applications. 
