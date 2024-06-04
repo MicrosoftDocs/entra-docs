@@ -99,8 +99,9 @@ If the CBA-enabled user can't use an MF cert, such as on mobile device without s
 Microsoft Entra CBA can be used as a second factor to meet MFA requirements with single-factor certificates. 
 Some of the supported combinations are:
 
-1. CBA (first factor) and passwordless phone sign-in (passwordless sign-in as second factor)
-1. CBA (first factor) and FIDO2 security keys (second factor) 
+1. CBA (first factor) and [passkeys](../authentication/how-to-enable-authenticator-passkey) (second factor)
+1. CBA (first factor) and [passwordless phone sign-in](../authentication/howto-authentication-passwordless-phone.md#enable-passwordless-phone-sign-in-authentication-methods) (second factor)
+1. CBA (first factor) and [FIDO2 security keys](../authentication/howto-authentication-passwordless-security-key-windows) (second factor) 
 1. Password (first factor) and CBA (second factor) 
 
 Users need to have another way to get MFA and register passwordless sign-in or FIDO2 in advance to signing in with Microsoft Entra CBA.
