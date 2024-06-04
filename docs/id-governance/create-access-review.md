@@ -27,6 +27,7 @@ This article describes how to create one or more access reviews for group member
 - To review access package assignments, see [configure an access review in entitlement management](entitlement-management-access-reviews-create.md).
 - To review Azure resource or Microsoft Entra roles, see [create an access review in PIM](privileged-identity-management/pim-create-roles-and-resource-roles-review.md). 
 - For reviews of PIM for Groups, see [create an access review of PIM for Groups](create-access-review-pim-for-groups.md).
+- For reviews on Azure resource, and PIM roles, see: [Create an access review of Azure resource and Microsoft Entra roles in PIM](../id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md)
 
 ## Prerequisites
 
