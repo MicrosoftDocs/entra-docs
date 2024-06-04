@@ -57,8 +57,8 @@ Configure and test Microsoft Entra SSO with TechSafe Entra ID SSO using a test u
 To configure and test Microsoft Entra SSO with TechSafe Entra ID SSO, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-microsoft-entra-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra ID test user](#create-a-microsoft-entra-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra ID test user](#assign-the-microsoft-entra-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **[Create a Microsoft Entra test user](#create-a-microsoft-entra-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **[Assign the Microsoft Entra test user](#assign-the-microsoft-entra-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure TechSafe Entra ID SSO](#configure-techsafe-entra-id-sso)** - to configure the single sign-on settings on application side.
     1. **[Create TechSafe Entra ID SSO test user](#create-techsafe-entra-id-sso-test-user)** - to have a counterpart of B.Simon in TechSafe Entra ID SSO that is linked to the Microsoft Entra ID representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
