@@ -229,6 +229,17 @@ groups:
     title: Windows
   - id: windows-vm-access-lvm
     title: Linux
+# Owner: barclayn
+- id: identity-mi-azure-resource
+  title: Managed identities Azure resource
+  prompt: Choose an option
+  pivots:
+  - id: identity-mi-access-portal
+    title: Portal
+  - id: identity-mi-access-cli
+    title: CLI
+  - id: identity-mi-access-powershell
+    title: PowerShell
 # Owner: ryanwi
 - id: identity-wif-mi-methods
   title: Workload identity federation for managed identities methods
