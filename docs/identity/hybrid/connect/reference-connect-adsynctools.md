@@ -307,11 +307,11 @@ Converts a value in GUID, GUID string or byte array format to a Base64 string
 ### EXAMPLES
 #### EXAMPLE 1
 ```
-ConvertTo-ADSyncToolsImmutableID '88888888-0101-3333-cccc-1234567890cd'
+ConvertTo-ADSyncToolsImmutableID '00aa00aa-bb11-cc22-dd33-44ee44ee44ee'
 ```
 #### EXAMPLE 2
 ```
-'88888888-0101-3333-cccc-1234567890cd' | ConvertTo-ADSyncToolsImmutableID
+'00aa00aa-bb11-cc22-dd33-44ee44ee44ee' | ConvertTo-ADSyncToolsImmutableID
 ```
 ### PARAMETERS
 #### -Value

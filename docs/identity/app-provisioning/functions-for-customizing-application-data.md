@@ -413,7 +413,7 @@ The function Guid generates a new random GUID
 
 **Example:** <br>
 `Guid()`<br>
-Sample output: "1088051a-cd4b-4288-84f8-e02042ca72bc"
+Sample output: "00aa00aa-bb11-cc22-dd33-44ee44ee44ee"
 
 ---
 ### IgnoreFlowIfNullOrEmpty
@@ -1267,7 +1267,7 @@ Join("", 1000, Replace(ConvertToUTF8Hex([objectId]), , "[a-zA-Z_]*", , "", , ))
 
 **Sample input/output:** 
 
-* **INPUT**: "d05e47b1-3909-445a-ba5e-ca60cbc0e4b4"
+* **INPUT**: "00aa00aa-bb11-cc22-dd33-44ee44ee44ee"
 * **OUTPUT**:  "100064303565343762312333930392343435612626135652636136306362633065346234"
 
 ## Related Articles
