@@ -34,7 +34,7 @@ In this article, you learn how to view the service principal of a managed identi
 - Enable [system assigned identity on a virtual machine](~/identity/managed-identities-azure-resources/qs-configure-portal-windows-vm.md#system-assigned-managed-identity) or [application](/azure/app-service/overview-managed-identity#add-a-system-assigned-identity).
 
 ::: zone pivot="identity-mi-service-principal-portal"
-[!INCLUDE [how-to-view-managed-identity-service-principal-portal](includes/how-to-view-managed-identity-service-principal-portal.yml)]
+[!INCLUDE [how-to-view-managed-identity-service-principal-portal](includes/how-to-view-managed-identity-service-principal-portal.md)]
 ::: zone-end
 
 ::: zone pivot="identity-mi-service-principal-cli"
