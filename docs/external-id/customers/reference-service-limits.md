@@ -16,6 +16,8 @@ ms.custom: it-pro
 ---
 # Service limits and restrictions
 
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
 This article outlines the service limits and usage constraints of Microsoft Entra External ID for external tenants, which is Microsoft’s latest customer identity and access management (CIAM) solution. If you’re looking for the full set of Microsoft Entra ID service limits, see [Microsoft Entra service limits and restrictions](/entra/identity/users/directory-service-limits-restrictions).
 
 ## User/consumption related limits

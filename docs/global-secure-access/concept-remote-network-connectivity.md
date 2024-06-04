@@ -33,8 +33,7 @@ Remote networks, such as a branch location, are typically connected to the corpo
 
 To connect a remote network to Global Secure Access, you set up an Internet Protocol Security (IPSec) tunnel between your on-premises equipment and the Global Secure Access endpoint. Traffic that you specify is routed through the IPSec tunnel to the nearest Global Secure Access endpoint. You can apply security policies in the Microsoft Entra admin center.
 
-Global Secure Access remote network connectivity provides a secure solution between a remote network and the
-Global Secure Access service. It doesn't provide a secure connection between one remote network and another.
+Global Secure Access remote network connectivity provides a secure solution between a remote network and the Global Secure Access service. It doesn't provide a secure connection between one remote network and another.
 To learn more about secure remote network-to-remote network connectivity, see the [Azure Virtual WAN documentation](/azure/virtual-wan/).
  
 ## Why remote network connectivity is important for you? 

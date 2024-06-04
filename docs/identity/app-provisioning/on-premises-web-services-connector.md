@@ -139,8 +139,8 @@ To connect the Microsoft Entra provisioning agent with your application, follow 
      |Property|Description|
      |-----|-----|
      |Web Service Project |Your web services template name.|
-     |Host|Your application's SOAP endpoint host name, e.g. vhcalnplci.dummy.nodomain|
-     |Port|Your application's SOAP endpoint port, e.g. 8000|
+     |Host|Your application's SOAP endpoint host name, such as vhcalnplci.dummy.nodomain|
+     |Port|Your application's SOAP endpoint port, such as 8000|
 
 
 1. On the **Capabilities** page, fill in the boxes with the values specified in the table below and select **Next**.

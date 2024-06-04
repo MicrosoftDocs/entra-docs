@@ -1,11 +1,11 @@
 ---
 title: Conditional Access - Use application enforced restrictions for unmanaged devices
-description: Create a custom Conditional Access policy for unmanaged devices
+description: Create a custom Conditional Access policy for unmanaged devices.
 
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 07/18/2023
+ms.date: 05/29/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo

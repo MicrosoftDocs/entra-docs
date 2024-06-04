@@ -614,6 +614,8 @@
         href: collaborativeinnovation-tutorial.md
       - name: Collector Systems
         href: collector-systems-tutorial.md
+      - name: Collibra
+        href: collibra-tutorial.md
       - name: Colloquial
         href: colloquial-tutorial.md
       - name: ColorTokens ZTNA
@@ -704,6 +706,8 @@
         href: coverity-static-application-security-testing-tutorial.md  
       - name: Cincom CPQ
         href: cpqsync-by-cincom-tutorial.md
+      - name: CrashPlan
+        href: crashplan-tutorial.md
       - name: Crayon
         href: crayon-tutorial.md
       - name: Creatio
@@ -810,6 +814,8 @@
         href: dlg-learning-center-tutorial.md
       - name: dmarcian
         href: dmarcian-tutorial.md
+      - name: Docker
+        href: docker-tutorial.md
       - name: Document360
         href: document360-tutorial.md
       - name: Documo
@@ -1941,6 +1947,8 @@
         href: numlyengage-tutorial.md
       - name: Nulab Pass (Backlog,Cacoo,Typetalk)
         href: nulab-pass-tutorial.md  
+      - name: ObservePoint Web Assurance
+        href: observepoint-web-assurance-tutorial.md
       - name: O.C. Tanner - AppreciateHub
         href: oc-tanner-tutorial.md
       - name: OfficeSpace Software
@@ -2241,6 +2249,8 @@
         href: qreserve-tutorial.md
       - name: Qualaroo
         href: qualaroo-tutorial.md
+      - name: Qualtrics
+        href: qualtrics-tutorial.md
       - name: Quarem
         href: quarem-tutorial.md
       - name: Quantum Workplace
@@ -2409,8 +2419,6 @@
         href: sapient-tutorial.md
       - name: SAP NetWeaver
         href: sap-netweaver-tutorial.md
-      - name: SAP Qualtrics
-        href: qualtrics-tutorial.md
       - name: SAS Viya SSO
         href: sas-viya-sso-tutorial.md
       - name: Sauce Labs
@@ -3189,6 +3197,8 @@
         href: zonka-feedback-tutorial.md
       - name: Zoom
         href: zoom-tutorial.md
+      - name: Zoom for Government
+        href: zoom-for-government-tutorial.md
       - name: Zscaler(OIDC)
         href: zscaler-oidc-tutorial.md
       - name: Zscaler Internet Access ZSNet

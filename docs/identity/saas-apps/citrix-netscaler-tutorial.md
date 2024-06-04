@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Citrix ADC SAML Connector for Microsoft Entra ID so that I can control who has access to Citrix ADC SAML Connector for Microsoft Entra ID, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -321,7 +321,7 @@ Modify two sections for the authentication virtual server:
 
 ### Create a Kerberos delegation account for Citrix ADC SAML Connector for Microsoft Entra ID
 
-1. Create a user account (in this example, we use _AppDelegation_).
+1. Create a user account (in this example, we use *AppDelegation*).
 
     ![Screenshot of Citrix ADC SAML Connector for Microsoft Entra configuration - Properties pane.](./media/citrix-netscaler-tutorial/properties.png "Properties")
 
@@ -340,7 +340,7 @@ Modify two sections for the authentication virtual server:
     ![Screenshot of Citrix ADC SAML Connector for Microsoft Entra configuration - Delegation under Properties pane.](./media/citrix-netscaler-tutorial/delegation.png "Delegation")
 
     > [!NOTE]
-    > In the screenshot example, the internal web server name running the Windows Integrated Authentication (WIA) site is _CWEB2_.
+    > In the screenshot example, the internal web server name running the Windows Integrated Authentication (WIA) site is *CWEB2*.
 
 <a name='citrix-adc-saml-connector-for-azure-ad-aaa-kcd-kerberos-delegation-accounts'></a>
 

@@ -42,7 +42,7 @@ In this tutorial:
 
 [!INCLUDE [add-platform-redirect-url-react](./includes/register-app/add-platform-redirect-url-angular.md)]
 
-## Grant API permissions
+## Grant admin consent
 
 [!INCLUDE [grant-api-permission-sign-in](./includes/register-app/grant-api-permission-sign-in.md)]
 

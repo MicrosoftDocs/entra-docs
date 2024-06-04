@@ -188,19 +188,71 @@ groups:
     title: Resource Manager
   - id: identity-mi-methods-rest
     title: REST
+# Owner: barclayn
+- id: identity-configure-mi-methods
+  title: Configure managed identities
+  prompt: Choose an option
+  pivots:
+  - id: qs-configure-portal-windows-vm
+    title: Portal
+  - id: qs-configure-cli-windows-vm
+    title: CLI
+  - id: qs-configure-powershell-windows-vm
+    title: PowerShell
+  - id: qs-configure-template-windows-vm
+    title: Resource Manager
+  - id: qs-configure-rest-vm
+    title: REST
+  - id: qs-configure-sdk-windows-vm
+    title: SDK
+# Owner: barclayn
+- id: identity-mi-scaled-sets
+  title: Managed identities methods
+  prompt: Choose an option
+  pivots:
+  - id: identity-mi-methods-azp
+    title: Portal
+  - id: identity-mi-methods-azcli
+    title: CLI
+  - id: identity-mi-methods-powershell
+    title: PowerShell
+  - id: identity-mi-methods-arm
+    title: Resource Manager
+  - id: identity-mi-methods-rest
+    title: REST
+# Owner: barclayn
+- id: identity-windows-vm-access
+  title: Managed identities with VMs
+  prompt: Choose an option
+  pivots:
+  - id: windows-vm-access-wvm
+    title: Windows
+  - id: windows-vm-access-lvm
+    title: Linux
+# Owner: barclayn
+- id: identity-mi-azure-resource
+  title: Managed identities Azure resource
+  prompt: Choose an option
+  pivots:
+  - id: identity-mi-access-portal
+    title: Portal
+  - id: identity-mi-access-cli
+    title: CLI
+  - id: identity-mi-access-powershell
+    title: PowerShell
 # Owner: ryanwi
 - id: identity-wif-mi-methods
   title: Workload identity federation for managed identities methods
   prompt: Choose an option
   pivots:
   - id: identity-wif-mi-methods-azp
-    title: Azure portal
+    title: Portal
   - id: identity-wif-mi-methods-powershell
-    title: Azure PowerShell
+    title: PowerShell
   - id: identity-wif-mi-methods-azcli
-    title: Azure CLI
+    title: CLI
   - id: identity-wif-mi-methods-arm
-    title: Resource Manager
+    title: Template
   - id: identity-wif-mi-methods-rest
     title: REST
 # Owner: ryanwi
@@ -226,3 +278,4 @@ groups:
     title: Azure CLI
   - id: identity-mi-methods-sub-powershell
     title: PowerShell
+    

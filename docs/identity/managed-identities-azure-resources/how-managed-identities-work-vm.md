@@ -100,5 +100,5 @@ The following table shows the differences between the system-assigned and user-a
 
 Get started with the managed identities for Azure resources feature with the following quickstarts:
 
-* [Use a Windows VM system-assigned managed identity to access Resource Manager](tutorial-windows-vm-access-arm.md)
-* [Use a Linux VM system-assigned managed identity to access Resource Manager](tutorial-linux-vm-access-arm.md)
+* [Use a Windows VM system-assigned managed identity to access Resource Manager](tutorial-windows-vm-access.md)
+* [Use a Linux VM system-assigned managed identity to access Resource Manager](tutorial-windows-vm-access.md)

@@ -97,11 +97,17 @@ First, we use the VM’s system-assigned managed identity to get an access token
 3. Now that you've created a **Remote Desktop Connection** with the virtual machine, open PowerShell in the remote session.
 4. In PowerShell, invoke the web request on the tenant to get the token for the local host in the specific port for the VM.
 
+> [!NOTE]
+> If using a sovereign cloud, such as GCC-H, use the endpoint 'vault.usgovcloudapi.net' instead of 'vault.azure.net' in the PowerShell commandlet.
+
 The PowerShell request:
 
 ```powershell
 $Response = Invoke-RestMethod -Uri 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https%3A%2F%2Fvault.azure.net' -Method GET -Headers @{Metadata="true"} 
 ```
+>[!NOTE]
+> When working with sovereign clouds you will need to make adjustments to the endpoint specified at the end of the cmdlet. 
+For example, 'vault.usgovcloudapi.net' should be used when working with Azure Government Cloud, with this being the end result: $Response = Invoke-RestMethod -Uri 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https%3A%2F%2Fvault.usgovcloudapi.net' -Method GET -Headers @{Metadata="true" To confirm the suffix that matches your environment, review the article titled [Azure Key vault security overview](https://learn.microsoft.com/azure/key-vault/general/security-features#privileged-access).
 
 You can see what the response looks like below:
 

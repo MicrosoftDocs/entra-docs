@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Salesforce so that I can streamline the user management process and ensure that users have the appropriate access to Salesforce.
@@ -117,7 +117,7 @@ For more information on how to read the Microsoft Entra provisioning logs, see [
 ## Common issues
 * If you are having issues authorizing access to Salesforce ensure the following:
     * The credentials used have admin access to Salesforce.
-    * The version of Salesforce that you are using supports Web Access (e.g. Developer, Enterprise, Sandbox, and Unlimited editions of Salesforce.)
+    * The version of Salesforce that you are using supports Web Access (such as Developer, Enterprise, Sandbox, and Unlimited editions of Salesforce.)
     * Web API access is enabled for the user.
 * The Microsoft Entra provisioning service supports provisioning language, locale, and timeZone for a user. These attributes are in the default attribute mappings but do not have a default source attribute. Ensure that you select the default source attribute and that the source attribute is in the format expected by SalesForce. For example, localeSidKey for english(UnitedStates) is en_US. Review the guidance provided [here](https://help.salesforce.com/articleView?id=faq_getstart_what_languages_does.htm&type=5) to determine the proper localeSidKey format. The languageLocaleKey formats can be found [here](https://help.salesforce.com/articleView?id=faq_getstart_what_languages_does.htm&type=5). In addition to ensuring that the format is correct, you may need to ensure that the language is enabled for your users as described [here](https://help.salesforce.com/articleView?id=faq_getstart_what_languages_does.htm&type=5). 
 * **SalesforceLicenseLimitExceeded:** The user could not be created in the target application because there are no available licenses for this user. Either procure additional licenses for the target application, or review your user assignments and attribute mapping configuration to ensure that the correct users are assigned with the correct attributes.

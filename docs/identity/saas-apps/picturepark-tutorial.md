@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Picturepark so that I can control who has access to Picturepark, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -102,7 +102,7 @@ Follow these steps to enable Microsoft Entra SSO.
 7. On the **Set up Picturepark** section, copy the appropriate URL(s) as per your requirement. For **Login URL**, use the value with the following pattern: `https://login.microsoftonline.com/_my_directory_id_/wsfed`
 
     > [!Note]
-    > _my_directory_id_ is the tenant id of Microsoft Entra subscription.
+    > *my_directory_id* is the tenant id of Microsoft Entra subscription.
 
 	![Copy configuration URLs](./media/picturepark-tutorial/configure.png)
 

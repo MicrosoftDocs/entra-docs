@@ -301,6 +301,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity-platform/tutorial-blazor-server.md",
+      "redirect_url": "/entra/identity-platform/quickstart-single-page-app-blazor-wasm-sign-in",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/external-id/customers/how-to-web-app-node-sign-in-call-api-overview.md",
       "redirect_url": "/entra/external-id/customers/how-to-web-app-node-sign-in-call-api-prepare-tenant",
       "redirect_document_id": false
@@ -626,6 +631,41 @@
       "redirect_url": "/entra/external-id/customers/concept-supported-features-customers",
       "redirect_document_id": false
     },
+    {            
+      "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-android-sign-in-user-with-username-password.md",
+      "redirect_url": "/entra/external-id/customers/tutorial-native-authentication-android-sign-in-sign-out",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/qs-configure-portal-windows-vm.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-configure-managed-identities",
+      "redirect_document_id": false
+    },
+    {            
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/qs-configure-cli-windows-vm.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-configure-managed-identities",
+      "redirect_document_id": false
+    },
+    {            
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/qs-configure-powershell-windows-vm.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-configure-managed-identities",
+      "redirect_document_id": false
+    },
+    {            
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/qs-configure-template-windows-vm.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-configure-managed-identities",
+      "redirect_document_id": false
+    },
+    {            
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/qs-configure-rest-vm.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-configure-managed-identities",
+      "redirect_document_id": false
+    },
+    {            
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/qs-configure-sdk-windows-vm.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-configure-managed-identities",
+      "redirect_document_id": false
+    },
     {
       "source_path_from_root": "/docs/identity/domain-services/join-centos-linux-vm.md",
       "redirect_url": "/entra/identity/domain-services/join-ubuntu-linux-vm",
@@ -635,7 +675,61 @@
       "source_path_from_root": "/docs/identity/domain-services/ad-auth-no-join-linux-vm.md",
       "redirect_url": "/entra/identity/domain-services/join-ubuntu-linux-vm",
       "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/enterprise-apps/app-management-videos.md",
+      "redirect_url": "/entra/identity/enterprise-apps/what-is-application-management",
+      "redirect_document_id": false
+    },  
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/qs-configure-cli-windows-vmss.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-configure-managed-identities-scale-sets",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/qs-configure-portal-windows-vmss.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-configure-managed-identities-scale-sets",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/qs-configure-powershell-windows-vmss.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-configure-managed-identities-scale-sets",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/qs-configure-rest-vmss.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-configure-managed-identities-scale-sets",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/qs-configure-template-windows-vmss.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-configure-managed-identities-scale-sets",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/tutorial-windows-vm-access-arm.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/tutorial-windows-vm-access",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/tutorial-linux-vm-access-arm.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/tutorial-windows-vm-access",
+      "redirect_document_id": false
+    }, 
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/howto-assign-access-portal.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-assign-azure-resource",
+      "redirect_document_id": false
+    }, 
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/howto-assign-access-cli.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-assign-azure-resource",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/howto-assign-access-powershell.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-assign-azure-resource",
+      "redirect_document_id": false
     }
   ]
 }
-

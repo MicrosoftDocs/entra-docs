@@ -8,9 +8,9 @@ ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to
 
-ms.date: 05/31/2023
+ms.date: 05/27/2024
 ms.author: jomondi
-ms.reviewer: alamaral
+ms.reviewer: gasinh
 ms.custom: not-enterprise-apps
 
 #customer intent: As an IT admin responsible for migrating application access and authentication, I want resources and tools to help me plan and execute the migration to Microsoft Entra ID, so that I can ensure a smooth and secure transition for my organization's applications.
@@ -33,4 +33,6 @@ Resources to help you migrate application access and authentication to Microsoft
 | [Migrating apps from Symantec SiteMinder to Microsoft Entra ID](https://azure.microsoft.com/mediahandler/files/resourcefiles/migrating-applications-from-symantec-siteminder-to-azure-active-directory/Migrating-applications-from-Symantec-SiteMinder-to-Azure-Active-Directory.pdf) | Get step by step guidance on application migration and integration options with an example that walks you through migrating applications from Symantec SiteMinder to Microsoft Entra ID. |
 | [Identity governance for applications](~/id-governance/identity-governance-applications-prepare.md)| This guide outlines what you need to do if you're migrating identity governance for an application from a previous identity governance technology, to connect Microsoft Entra ID to that application.|
 | [Active Directory Federation Services (AD FS) decommission guide](/windows-server/identity/ad-fs/decommission/adfs-decommission-guide) | This guide explains the prerequisites for decommissioning, including migrating user authentication and applications to Microsoft Entra ID. It also provides step-by-step instructions for decommissioning the AD FS servers, including removing load balancer entries, uninstalling WAP and AD FS servers, and deleting SSL certificates and databases. |
-| [Videos - Phases of migrating apps from ADFS to Microsoft Entra ID](app-management-videos.md#phases-of-migrating-apps-from-adfs-to-azure-ad) | These videos illustrate the five phases of a typical migration of an application from ADFS to Microsoft Entra ID.
+| [Phases of migrating apps from ADFS to Microsoft Entra ID](migrate-adfs-apps-phases-overview.md) | This set of articles illustrates the five phases of a typical migration of an application from ADFS to Microsoft Entra ID. |
+| [Migrate identity management scenarios from SAP IDM to Microsoft Entra](~/identity/app-provisioning/migrate-from-sap-idm.md) |If you've been using SAP Identity Management (IDM), then you can migrate identity management scenarios from SAP IDM to Microsoft Entra. |
+| [Migrating Identity and Access Management scenarios to Microsoft Entra from Microsoft Identity Manager](/microsoft-identity-manager/migrate-entra-id)| This document provides guidance on migration options and approaches for moving Identity and Access Management (IAM) scenarios from Microsoft Identity Manager to Microsoft Entra cloud-hosted services.|

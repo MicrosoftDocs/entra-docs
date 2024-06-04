@@ -17,6 +17,8 @@ ms.custom: it-pro
 
 # Overview: Secure your apps using External ID in an external tenant
 
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
 Microsoft Entra External ID includes Microsoft's customer identity and access management (CIAM) solution. For organizations and businesses that want to make their apps available to consumers and business customers, External ID makes it easy to add CIAM features like self-service registration, personalized sign-in experiences, and customer account management. Because these CIAM capabilities are built into Microsoft Entra ID, you also benefit from platform features like enhanced security, compliance, and scalability.
 
 :::image type="content" source="media/overview-customers-ciam/overview-ciam.png" alt-text="Diagram showing an overview customer identity and access management." border="true":::

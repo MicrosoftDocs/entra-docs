@@ -13,7 +13,7 @@ ms.author: barclayn
 
 ---
 
-# [Preview] Use Azure Policy to assign managed identities
+# Use Azure Policy to assign managed identities (preview)
 
 
 [Azure Policy](/azure/governance/policy/overview) helps enforce organizational standards and assess compliance at scale. Through its compliance dashboard, Azure policy provides an aggregated view that helps administrators evaluate the overall state of the environment. You have the ability to drill down to the per-resource, per-policy granularity. It also helps bring your resources to compliance through bulk remediation for existing resources and automatic remediation for new resources. Common use cases for Azure Policy include implementing governance for:

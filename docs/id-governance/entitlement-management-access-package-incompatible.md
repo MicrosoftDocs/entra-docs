@@ -51,13 +51,17 @@ Follow these steps to change the list of incompatible groups or other access pac
 
 1. In the left menu, select **Separation of duties**.
 
-1.  If you wish to prevent users who have another access package assignment already from requesting this access package, select on **Add access package** and select the access package that the user would already be assigned.
+1. The list on the **Incompatible access packages** tab is of other access packages. If a user already has an assignment to an access package on that list, they won't allowed to request this access package.
+
+1.  If you wish to prevent users who have another access package assignment already from requesting this access package, select on **Add access package** and select the access package that the user would already be assigned. That access package will then be added to the list of access packages on the **Incompatible access packages** tab.
 
 
     ![configuration of incompatible access packages](./media/entitlement-management-access-package-incompatible/select-incompatible-ap.png)
 
 
-1.  If you wish to prevent users who have an existing group membership from requesting this access package, then select on **Add group** and select the group that the user would already be in.
+1.  If you wish to prevent users who have an existing group membership from requesting this access package, then select on **Add group** and select the group that the user would already be in. That group will then be added to the list of groups on the **Incompatible groups** tab.
+
+1. If you want the users who are assigned to this access package to not be able to request that access package, as each incompatible access package relationship is unidirectional, then change to that access package, and add this access package as incompatible. For example, you want to have users with the **Western Territory** access package not be able to request the **Eastern Territory** access package, and users with the **Eastern Territory** access package not be able to request the **Western Territory** access package. If first on the **Western Territory** access package you added the **Eastern Territory** access package as incompatible, then next change to the **Eastern Territory** access package, and add the **Western Territory** access package as incompatible.
 
 ### Configure incompatible access packages programmatically through Graph
 

@@ -42,7 +42,7 @@ To automate provisioning to an application, it requires building and integrating
 
 ## Design your user and group schema
 
-Each application requires different attributes to create a user or group. Start your integration by identifying the required objects (users, groups) and attributes (name, manager, job title, etc.) that your application needs. 
+Each application requires different attributes to create a user or group. Start your integration by identifying the required objects (users, groups) and attributes (name, manager, job title, and so on) that your application needs. 
 
 The SCIM standard defines a schema for managing users and groups. 
 
@@ -209,7 +209,7 @@ Use the general guidelines when implementing a SCIM endpoint to ensure compatibi
 ### /Users:
 
 * The entitlements attribute isn't supported.
-* Any attributes that are considered for user uniqueness must be usable as part of a filtered query. (for example, if user uniqueness is evaluated for both userName and emails[type eq "work"], a GET to /Users with a filter must allow for both _userName eq "user@contoso.com"_ and _emails[type eq "work"].value eq "user@contoso.com"_ queries.
+* Any attributes that are considered for user uniqueness must be usable as part of a filtered query. (for example, if user uniqueness is evaluated for both userName and emails[type eq "work"], a GET to /Users with a filter must allow for both *userName eq "user@contoso.com"* and *emails[type eq "work"].value eq "user@contoso.com"* queries.
 
 ### /Groups:
 
@@ -919,7 +919,7 @@ TLS 1.2 Cipher Suites minimum bar:
 
 The Microsoft Entra provisioning service currently operates under the IP Ranges for Microsoft Entra ID as listed [here](https://www.microsoft.com/download/details.aspx?id=56519). You can add the IP ranges listed under the Microsoft Entra ID tag to allow traffic from the Microsoft Entra provisioning service into your application. You need to review the IP range list carefully for computed addresses. An address such as '40.126.25.32' could be represented in the IP range list as  '40.126.0.0/18'. You can also programmatically retrieve the IP range list using the following [API](/rest/api/virtualnetwork/service-tags/list).
 
-Microsoft Entra ID also supports an agent based solution to provide connectivity to applications in private networks (on-premises, hosted in Azure, hosted in AWS, etc.). Customers can deploy a lightweight agent, which provides connectivity to Microsoft Entra ID without opening any inbound ports, on a server in their private network. Learn more [here](./on-premises-scim-provisioning.md).
+Microsoft Entra ID also supports an agent based solution to provide connectivity to applications in private networks (on-premises, hosted in Azure, hosted in AWS, and so on). Customers can deploy a lightweight agent, which provides connectivity to Microsoft Entra ID without opening any inbound ports, on a server in their private network. Learn more [here](./on-premises-scim-provisioning.md).
 
 ## Build a SCIM endpoint
 
@@ -932,13 +932,13 @@ The open source .NET Core [reference code example](https://aka.ms/SCIMReferenceC
    > [!Note]
    > The reference code is intended to help you get started building your SCIM endpoint and is provided "AS IS." Contributions from the community are welcome to help build and maintain the code.
 
-The solution is composed of two projects, _Microsoft.SCIM_ and _Microsoft.SCIM.WebHostSample_.
+The solution is composed of two projects, *Microsoft.SCIM* and *Microsoft.SCIM.WebHostSample*.
 
-The _Microsoft.SCIM_ project is the library that defines the components of the web service that conforms to the SCIM specification. It declares the interface _Microsoft.SCIM.IProvider_, requests are translated into calls to the provider's methods, which would be programmed to operate on an identity store.
+The *Microsoft.SCIM* project is the library that defines the components of the web service that conforms to the SCIM specification. It declares the interface *Microsoft.SCIM.IProvider*, requests are translated into calls to the provider's methods, which would be programmed to operate on an identity store.
 
 ![Breakdown: A request translated into calls to the provider's methods](media/use-scim-to-provision-users-and-groups/scim-figure-3.png)
 
-The _Microsoft.SCIM.WebHostSample_ project is an ASP.NET Core Web Application, based on the _Empty_ template. It allows the sample code to be deployed as standalone, hosted in containers or within Internet Information Services. It also implements the _Microsoft.SCIM.IProvider_ interface keeping classes in memory as a sample identity store.
+The *Microsoft.SCIM.WebHostSample* project is an ASP.NET Core Web Application, based on the *Empty* template. It allows the sample code to be deployed as standalone, hosted in containers or within Internet Information Services. It also implements the *Microsoft.SCIM.IProvider* interface keeping classes in memory as a sample identity store.
 
 ```csharp
 public class Startup
@@ -988,8 +988,8 @@ Requests from Microsoft Entra provisioning service include an OAuth 2.0 bearer t
 - Microsoft Entra bearer token. If **Secret Token** field is left blank, Microsoft Entra ID includes an OAuth bearer token issued from Microsoft Entra ID with each request. Apps that use Microsoft Entra ID as an identity provider can validate this Microsoft Entra ID-issued token.
 
   - The application that receives requests should validate the token issuer as being Microsoft Entra ID for an expected Microsoft Entra tenant.
-  - An `iss` claim identifies the issuer of the token. For example, `"iss":"https://sts.windows.net/aaaabbbb-0000-cccc-1111-dddd2222eeee/"`. In this example, the base address of the claim value, `https://sts.windows.net` identifies Microsoft Entra ID as the issuer, while the relative address segment, _aaaabbbb-0000-cccc-1111-dddd2222eeee_, is a unique identifier of the Microsoft Entra tenant for which the token was issued.
-  - The audience for a token is the **Application ID** for the application in the gallery. Applications registered in a single tenant receive the same `iss` claim with SCIM requests. The application ID for all custom apps is _8adf8e6e-67b2-4cf2-a259-e3dc5476c621_. The token generated by the Microsoft Entra ID should only be used for testing. It shouldn't be used in production environments.
+  - An `iss` claim identifies the issuer of the token. For example, `"iss":"https://sts.windows.net/aaaabbbb-0000-cccc-1111-dddd2222eeee/"`. In this example, the base address of the claim value, `https://sts.windows.net` identifies Microsoft Entra ID as the issuer, while the relative address segment, *aaaabbbb-0000-cccc-1111-dddd2222eeee*, is a unique identifier of the Microsoft Entra tenant for which the token was issued.
+  - The audience for a token is the **Application ID** for the application in the gallery. Applications registered in a single tenant receive the same `iss` claim with SCIM requests. The application ID for all custom apps is *8adf8e6e-67b2-4cf2-a259-e3dc5476c621*. The token generated by the Microsoft Entra ID should only be used for testing. It shouldn't be used in production environments.
 
 
 
@@ -1062,7 +1062,7 @@ public void ConfigureServices(IServiceCollection services)
 ...
 ```
 
-Send a GET request to the Token controller to get a valid bearer token, the method _GenerateJSONWebToken_ is responsible to create a token matching the parameters configured for development:
+Send a GET request to the Token controller to get a valid bearer token, the method *GenerateJSONWebToken* is responsible to create a token matching the parameters configured for development:
 
 ```csharp
 private string GenerateJSONWebToken()
@@ -1446,7 +1446,7 @@ To help drive awareness and demand of our joint integration, we recommend you up
 > * Ensure your sales and customer support teams are aware, ready, and can speak to the integration capabilities. Brief your teams, provide them with FAQs and include the integration into your sales materials. 
 > * Craft a blog post or press release that describes the joint integration, the benefits and how to get started. [Example: Imprivata and Microsoft Entra Press Release](https://www.imprivata.com/company/press/imprivata-introduces-iam-cloud-platform-healthcare-supported-microsoft) 
 > * Leverage your social media like Twitter, Facebook or LinkedIn to promote the integration to your customers. Be sure to include @Microsoft Entra ID so we can retweet your post. [Example: Imprivata Twitter Post](https://twitter.com/azuread/status/1123964502909779968)
-> * Create or update your marketing pages/website (e.g. integration page, partner page, pricing page, etc.) to include the availability of the joint integration. [Example: Pingboard integration Page](https://pingboard.com/org-chart-for), [Smartsheet integration page](https://www.smartsheet.com/marketplace/apps/directory-integrations), [Monday.com pricing page](https://monday.com/pricing/) 
+> * Create or update your marketing pages/website (such as integration page, partner page, pricing page, and so on) to include the availability of the joint integration. [Example: Pingboard integration Page](https://pingboard.com/org-chart-for), [Smartsheet integration page](https://www.smartsheet.com/marketplace/apps/directory-integrations), [Monday.com pricing page](https://monday.com/pricing/) 
 > * Create a help center article or technical documentation on how customers can get started. [Example: Envoy + Microsoft Entra integration.](https://envoy.help/en/articles/3453335-microsoft-azure-active-directory-integration) 
 > * Alert customers of the new integration through your customer communication (monthly newsletters, email campaigns, product release notes). 
 

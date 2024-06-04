@@ -490,7 +490,7 @@ To enable CBA and configure username bindings using Graph API, complete the foll
 
 1. Go to [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer).
 1. Select **Sign into Graph Explorer** and sign in to your tenant.
-1. Follow the steps to [consent to the _Policy.ReadWrite.AuthenticationMethod_ delegated permission](/graph/graph-explorer/graph-explorer-features#consent-to-permissions).
+1. Follow the steps to [consent to the *Policy.ReadWrite.AuthenticationMethod* delegated permission](/graph/graph-explorer/graph-explorer-features#consent-to-permissions).
 1. GET all authentication methods:
 
    ```http
