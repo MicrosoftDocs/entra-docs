@@ -51,12 +51,12 @@ You must also meet the following system requirements:
    - An Active Directory user who is a member of the Domain Admins group for a domain and a member of the Enterprise Admins group for a forest. Referred to as **$domainCred**.
    - A Microsoft Entra user who is a member of the Global Administrators role. Referred to as **$cloudCred**.
 
-- Users must have the following Microsoft Entra ID attributes populated through Microsoft Entra Connect:
-   - onPremisesSamAccountName (accountName in Entra Connect)
-   - onPremisesDomainName (domainFQDN in Entra Connect)
-   - onPremisesSecurityIdentifier (objectSID in Entra Connect)
+- Users must have the following Microsoft Entra attributes populated through Microsoft Entra Connect:
+   - `onPremisesSamAccountName` (`accountName` in Microsoft Entra Connect)
+   - `onPremisesDomainName` (`domainFQDN` in Microsoft Entra Connect)
+   - `onPremisesSecurityIdentifier` (`objectSID` in Microsoft Entra Connect)
 
-  Entra Connect synchronizes these attributes by default. If you change which attributes to synchronize, make you select accountName, domainFQDN, and objectSID for synchronization.
+  Microsoft Entra Connect synchronizes these attributes by default. If you change which attributes to synchronize, make sure you select `accountName`, `domainFQDN`, and `objectSID` for synchronization.
 
 ### Supported scenarios
 
@@ -123,8 +123,10 @@ Supported Endpoints:
 ```
 Note the **numeric value** next to your desired cloud environment.
 
-To then **set** the desired cloud environment, run the following:  
-_(Example: For US Government Cloud)_  
+To then **set** the desired cloud environment, run the following:
+
+_(Example: For US Government Cloud)_
+
 `Set-AzureADKerberosServerEndpoint -TargetEndpoint 2`
 
 ### Example 1 prompt for all credentials
