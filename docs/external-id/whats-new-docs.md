@@ -25,8 +25,11 @@ This month, we have made updates to our table of contents to make navigation eas
 
 ### Updated articles
 
+- [Overview of Microsoft Entra External ID](/entra/external-id/external-identities-overview) - Updated scenario concepts, terminology, and images
+- [B2B collaboration overview](/entra/external-id/what-is-b2b) - Updated scenario concepts, terminology, and images
 - [Microsoft Entra B2B collaboration FAQs](/entra/external-id/faq) - Conditional Access policy updates
 - [Overview: Cross-tenant access with Microsoft Entra External ID](/entra/external-id/cross-tenant-access-overview) - Email one-time passcode updates
+- [Add a self-service sign-up user flow to an app](/entra/external-id/self-service-sign-up-user-flow)
 
 ## March 2024
 
