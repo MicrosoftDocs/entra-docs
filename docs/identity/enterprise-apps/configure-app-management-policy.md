@@ -6,7 +6,8 @@ manager: jesakowi
 ms.author: jomondi
 ms.date: 06/05/2024
 ms.reviewer: saumadan
-ms.service: enterprise-apps
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: how-to
 
 #Customer intent: As an IT admin, I want to configure app management policies for my organization's app registrations and service principals in Microsoft Entra ID, so that I can enforce best practices for how they use app authentication methods like certificates and password secrets.
@@ -28,12 +29,12 @@ These policies allow organizations to take advantage of the new app security har
 To configure app management policies, you need:
 
 - An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- A Workload Identity Premium license. For more information on Workload identity licensing, see [Frequently asked questions about Microsoft Entra Workload ID](https://learn.microsoft.com/entra/workload-id/workload-identities-faqs)
+- A Workload Identity Premium license. For more information on Workload identity licensing, see [Frequently asked questions about Microsoft Entra Workload ID](~workload-id/workload-identities-faqs.md)
 - Security Administrator role.
 
 ## Tenant default app management policy
 
-A tenant default policy is a single object that always exists and is disabled by default. It's defined by the [tenantAppManagementPolicy](/graph/api/resources/tenantappmanagementpolicy.md) resource and enforces restrictions on app registration vs service principal objects. It contains the following two properties:
+A tenant default policy is a single object that always exists and is disabled by default. It's defined by the [tenantAppManagementPolicy](/graph/api/resources/tenantappmanagementpolicy) resource and enforces restrictions on app registration vs service principal objects. It contains the following two properties:
 
 - **applicationRestrictions** allows targeting applications owned by the tenant (app registration objects).
 - **servicePrincipalRestrictions** allows targeting applications provisioned from another tenant (service principal objects).
@@ -42,7 +43,7 @@ These properties enable an organization to lock down credential usage in apps th
 
 ## App management policy for app registrations and service principals
 
-App management policies are defined in the [appManagementPolicy](/graph/api/resources/appmanagementpolicy.md) resource. This resource contains a collection of policies with varying restrictions or different enforcement dates from what tenant default policy defines. One of these policies can be assigned to an app registration or service principal, excluding them from the tenant default policy.
+App management policies are defined in the [appManagementPolicy](/graph/api/resources/appmanagementpolicy) resource. This resource contains a collection of policies with varying restrictions or different enforcement dates from what tenant default policy defines. One of these policies can be assigned to an app registration or service principal, excluding them from the tenant default policy.
 
 When both the tenant default policy and an app management policy exist, the app management policy takes precedence. In this case, the assigned app registration or service principal doesn't inherit from the tenant default policy. Only one policy can be assigned to an app registration or service principal.
 
@@ -67,7 +68,7 @@ To configure the tenant default policy app instance lock:
 1. Select the **Certificate restrictions** restriction type under **Default policy restrictions** column.
 1. Configure the desired certificate restrictions.
 
-   :::image type="content" source="media/configure-app-management-policy/default-app-management-policy-appreg-certrestrictions.png" alt-text="Screenshot of the tenant app management policy password restrictions.":::
+   :::image type="content" source="media/configure-app-management-policy/default-app-management-policy-appreg-certrestrictions.png" alt-text="Screenshot of the tenant app management policy certificate restrictions.":::
 
 1. Select **Save** to save your changes.
 1. Select the checkbox **Copy settings selection to apply to enterprise apps** if you want the restrictions configured for App registrations to be applied for Enterprise apps. You can also select the **Enterprise apps** tab and use different parameters to configure the same restriction for Enterprise applications.
