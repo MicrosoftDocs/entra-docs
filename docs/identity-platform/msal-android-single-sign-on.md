@@ -233,6 +233,6 @@ The following browsers have been tested to see if they correctly redirect to the
 [Shared device mode for Android devices](msal-android-shared-devices.md) allows you to configure an Android device so that it can be easily shared by multiple employees.
 
 For more information on broker applications go to following pages:
-- [Microsoft Authenticator](https://support.microsoft.com/en-us/account-billing/how-to-use-the-microsoft-authenticator-app-9783c865-0308-42fb-a519-8cf666fe0acc)
+- [Microsoft Authenticator](https://support.microsoft.com/account-billing/how-to-use-the-microsoft-authenticator-app-9783c865-0308-42fb-a519-8cf666fe0acc)
 - [Intune Company Portal](/mem/intune/user-help/sign-in-to-the-company-portal)
 - [Link to Windows](https://aka.ms/LTWBroker)
