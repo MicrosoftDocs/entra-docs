@@ -5,7 +5,7 @@ description: Directly federate with a SAML or WS-Fed identity provider so guests
  
 ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 05/29/2024
+ms.date: 06/05/2024
 
 ms.author: mimart
 author: msmimart
@@ -210,7 +210,7 @@ Next, configure federation with the IdP configured in step 1 in Microsoft Entra 
 1. Browse to **Identity** > **External Identities** > **All identity providers**.
 1. Select the **Custom** tab, and then select **Add new** > **SAML/WS-Fed**.
 
-   :::image type="content" source="media/direct-federation/new-saml-wsfed-idp.png" alt-text="Screenshot showing button for adding a new SAML or WS-Fed IdP.":::
+   :::image type="content" source="media/direct-federation/new-saml-wsfed-idp.png" alt-text="Screenshot showing button for adding a new SAML or WS-Fed IdP." lightbox="media/direct-federation/new-saml-wsfed-idp.png":::
 
 1. On the **New SAML/WS-Fed IdP** page, enter the following:
    - **Display name** - Enter a name to help you identify the partner's IdP.
@@ -219,9 +219,9 @@ Next, configure federation with the IdP configured in step 1 in Microsoft Entra 
 
     :::image type="content" source="media/direct-federation/new-saml-wsfed-idp-parse.png" alt-text="Screenshot showing the new SAML or WS-Fed IdP page.":::
 
-1. Select a method for populating metadata. You can **Input metadata manually**, or if you have a file that contains the metadata, you can automatically populate the fields  by selecting **Parse metadata file** and browsing for the file.
-   - **Issuer URI** - The issuer URI of the partner's IdP.
-   - **Passive authentication endpoint** - The partner IdP's passive requestor endpoint.
+1. Select a method for populating metadata. If you have a file that contains the metadata, you can automatically populate the fields by selecting **Parse metadata file** and browsing for the file. Or, you can select **Input metadata manually** and enter the following information:
+   - The SAML **Issuer URI** or the WS-Fed **Entity ID** for the partner's IdP.
+   - The SAML **Passive authentication endpoint** or the WS-Fed **Passive requestor endpoint** for the partner's IdP.
    - **Certificate** - The signing certificate ID.
    - **Metadata URL** - The location of the IdP's metadata for automatic renewal of the signing certificate.
 
@@ -232,17 +232,17 @@ Next, configure federation with the IdP configured in step 1 in Microsoft Entra 
 
 1. Select **Save**. The identity provider is added to the **SAML/WS-Fed identity providers** list.
 
-      <!--TODO:::image type="content" source="media/direct-federation/new-saml-wsfed-idp-list.png" alt-text="Screenshot showing the SAML/WS-Fed identity provider list with the new entry.":::-->
+      :::image type="content" source="media/direct-federation/new-saml-wsfed-idp-list.png" alt-text="Screenshot showing the SAML/WS-Fed identity provider list with the new entry." lightbox="media/direct-federation/new-saml-wsfed-idp-list.png":::
 
 1. (Optional) To add more domain names to this federating identity provider:
    
    1. Select the link in the **Domains** column.
 
-      <!--TODO:::image type="content" source="media/direct-federation/new-saml-wsfed-idp-add-domain.png" alt-text="Screenshot showing the link for adding domains to the SAML/WS-Fed identity provider.":::-->
+      :::image type="content" source="media/direct-federation/new-saml-wsfed-idp-add-domain.png" alt-text="Screenshot showing the link for adding domains to the SAML/WS-Fed identity provider." lightbox="media/direct-federation/new-saml-wsfed-idp-add-domain.png":::
 
    1. Next to **Domain name of federating IdP**, type the domain name, and then select **Add**. Repeat for each domain you want to add. When you're finished, select **Done**.
 
-      <!--TODO:::image type="content" source="media/direct-federation/add-domain.png" alt-text="Screenshot showing the Add button in the domain details pane.":::-->
+      :::image type="content" source="media/direct-federation/add-domain.png" alt-text="Screenshot showing the Add button in the domain details pane.":::
    
 ### To configure federation using the Microsoft Graph API
 
