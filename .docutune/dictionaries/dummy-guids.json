@@ -62,7 +62,7 @@
     "55ff55ff-aa66-bb77-cc88-99dd99dd99dd",
     "66aa66aa-bb77-cc88-dd99-00ee00ee00ee"
   ],
-  "objectId|oid": [
+  "objectId|userObjectId|oid|sub": [
     "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
     "bbbbbbbb-1111-2222-3333-cccccccccccc",
     "cccccccc-2222-3333-4444-dddddddddddd",
@@ -119,7 +119,7 @@
     "kL6mN7oP8qR9sT0uV1-wX2yZ3aB=",
     "mN7oP8qR9sT0uV1wX2-yZ3aB4dE="
   ],
-  "subscriptionId|sub": [
+  "subscriptionId": [
     "aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e",
     "bbbb1b1b-cc2c-dd3d-ee4e-ffffff5f5f5f",
     "cccc2c2c-dd3d-ee4e-ff5f-aaaaaa6a6a6a",
