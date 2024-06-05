@@ -74,7 +74,7 @@ After you create the Google application, in this step you set the Google client 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com). 
 1. Browse to **Identity** > **External Identities** > **All identity providers**.
-1. Select **+ Google**.
+1. On the **Built-in** tab, next to **Google**, select **Configure**.
 
    <!-- ![Screenshot that shows how to add Google identity provider in Microsoft Entra ID.](./media/sign-in-with-google/configure-google-idp.png)-->
 
