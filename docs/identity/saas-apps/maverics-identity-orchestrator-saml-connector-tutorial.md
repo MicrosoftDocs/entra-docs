@@ -30,11 +30,11 @@ This hybrid access tutorial demonstrates how to migrate an on-premises web appli
 
 * An Entra ID subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
 * A Maverics Identity Orchestrator Platform account. Sign up at [maverics.strata.io](https://maverics.strata.io).
-* At least one application that uses header based authentication. In our examples, we will be working against an application called Sonar hosted at https://app.sonarsystems.com, and an application called Connectulum hosted at https://app.connectulum.com.
+* At least one application that uses header based authentication. In our examples, we  are working against an application called Sonar hosted at https://app.sonarsystems.com, and an application called Connectulum hosted at https://app.connectulum.com.
 
 ## Step 1: Setting up the Maverics Orchestrator
 
-After you've signed up for a Maverics account at [maverics.strata.io](https://maverics.strata.io), use our Learning Center tutorial titled [**Getting Started: Evaluation Environment**](https://maverics.strata.io/learn/redirect?context=environments-create-evaluation). This tutorial takes you through the step-by-step process of creating an evaluation environment, downloading an orchestrator, and installing the orchestrator on your machine. 
+After signed up for a Maverics account at [maverics.strata.io](https://maverics.strata.io), use our Learning Center tutorial titled [**Getting Started: Evaluation Environment**](https://maverics.strata.io/learn/redirect?context=environments-create-evaluation). This tutorial takes you through the step-by-step process of creating an evaluation environment, downloading an orchestrator, and installing the orchestrator on your machine. 
 
 ## Step 2: Extending Entra ID to an app with a recipe
 
@@ -42,7 +42,7 @@ Next, use the Learning Center tutorial, [**Extend Microsoft Entra ID to a Legacy
 
 ## Step 3: Registering an enterprise application in Entra ID
 
-We will now create a new enterprise application in Entra ID that will be used for authenticating end-users.
+We will now create a new enterprise application in Entra ID that is used for authenticating end-users.
 
 >Note: When leveraging Entra ID features such as Conditional Access it is important to create an enterprise application per on-premises application. This permits per-app conditional access, per-app risk evaluation, per-app assigned permissions, etc. Generally, an enterprise application in Entra ID maps to an Azure connector in Maverics.
 
@@ -56,9 +56,9 @@ We will now create a new enterprise application in Entra ID that will be used fo
 
    ![Screenshot of the "Basic SAML Configuration" Edit button.](common/edit-urls.png)
 
-1. Enter an **Entity ID** of: `https://sonar.maverics.com`. The Entity ID must be unique across the apps in the tenant, and can be an arbitrary value. We will use this value when defining the `samlEntityID` field for our Azure connector in the next section.
+1. Enter an **Entity ID** of: `https://sonar.maverics.com`. The Entity ID must be unique across the apps in the tenant, and can be an arbitrary value. We use this value when defining the `samlEntityID` field for our Azure connector in the next section.
 
-1. Enter a **Reply URL** of: `https://sonar.maverics.com/acs`. We will use this value when defining the `samlConsumerServiceURL` field for our Azure connector in the next section.
+1. Enter a **Reply URL** of: `https://sonar.maverics.com/acs`. We use this value when defining the `samlConsumerServiceURL` field for our Azure connector in the next section.
 
 1. Enter a **Sign on URL** of: `https://sonar.maverics.com/`. This field won't be used by Maverics, but it is required in Entra ID to enable users to get access to the application through the Entra ID My Apps portal.
 
@@ -70,16 +70,16 @@ We will now create a new enterprise application in Entra ID that will be used fo
 
 ## Step 4: Authenticating via Entra ID and authorizing access to the application
 
-Continue on with step 4 of the Learning Center topic, **Extend Microsoft Entra ID to a Legacy, Non-Standard App** to edit your user flow in Maverics. These steps will walk you through the process of adding headers to the upstream application and deploying the user flow.
+Continue on with step 4 of the Learning Center topic, **Extend Microsoft Entra ID to a Legacy, Non-Standard App** to edit your user flow in Maverics. These steps walk you through the process of adding headers to the upstream application and deploying the user flow.
 
 Once you've deployed the user flow, to confirm authentication is working as expected, make a request to an application resource through the Maverics proxy. The protected application should now be receiving headers on the request.
 
-Feel free to edit the header keys if your application expects different headers. All claims that come back from Entra ID as part of the SAML flow are available to use in headers. For example, we could include an additional header of `secondary_email: azureSonarApp.email`, where `azureSonarApp` is the connector name and `email` is a claim returned from Entra ID.
+Feel free to edit the header keys if your application expects different headers. All claims that come back from Entra ID as part of the SAML flow are available to use in headers. For example, we could include an another header of `secondary_email: azureSonarApp.email`, where `azureSonarApp` is the connector name and `email` is a claim returned from Entra ID.
 
 ## Advanced Scenarios
 
 ### Identity Migration
-Can't stand your end-of-life'd web access management tool, but don't have a way to migrate your users without mass password resets? The Maverics Orchestrator supports identity migration through the use of `migrationgateways`.
+Can't stand your end-of-life'd web access management tool, but don't have a way to migrate your users without mass password resets? The Maverics Orchestrator supports identity migration by using `migrationgateways`.
 
 ### Web Server Modules 
 Don't want to rework your network and proxy traffic through the Maverics Orchestrator? Not a problem, the Maverics Orchestrator can be paired with web server modules to offer the same solutions without proxying.
