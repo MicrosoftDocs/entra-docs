@@ -151,7 +151,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 > If you have imported the objectGUID attribute for users via Microsoft Entra Connect (refer Step 2), add a mapping from objectGUID to urn:ietf:params:scim:schemas:extension:ciscoumbrella:2.0:User:nativeObjectId.
 
 > [!NOTE]
-> To provision a Microsoft Entra guest user account to Cisco Secure Access, add a mapping from originalUserPrincipleName to UserName.
+> To provision a Microsoft Entra guest user account on Cisco User Management for Secure Access, add a mapping from originalUserPrincipleName to UserName.
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Cisco User Management for Secure Access**.
 
