@@ -102,11 +102,11 @@ The following information is provided for high availablity / failover scenarios.
 
 For on-prem apps using the ECMA connector: The recommendation is having 1 active agent and 1 passive agent (configured, but stopped, not assigned to the enterprise app in Entra) per data center. When doing a failover, stop the active agent, restart the passive agent, and assign the passive and assign the active agent. This allows the passive agent to perform a full import of identities in the target application before provisioning accounts.
 
- :::image type="content" source="/media/on-premises-application-provisioning-architecture/high-availability-1.png" alt-text="Diagram of high availablity with ECMA connector." lightbox="/media/on-premises-application-provisioning-architecture/high-availability-1.png":::
+ :::image type="content" source="media/on-premises-application-provisioning-architecture/high-availability-1.png" alt-text="Diagram of high availablity with ECMA connector." lightbox="media/on-premises-application-provisioning-architecture/high-availability-1.png":::
 
 For on-prem apps using the SCIM connector: The recommendation is having 2 active agents per application.
 
- :::image type="content" source="/media/on-premises-application-provisioning-architecture/high-availability-2.png" alt-text="Diagram of high availability with SCIM connector." lightbox="/media/on-premises-application-provisioning-architecture/high-availability-2.png":::
+ :::image type="content" source="media/on-premises-application-provisioning-architecture/high-availability-2.png" alt-text="Diagram of high availability with SCIM connector." lightbox="media/on-premises-application-provisioning-architecture/high-availability-2.png":::
 
 
 ## Provisioning agent questions
