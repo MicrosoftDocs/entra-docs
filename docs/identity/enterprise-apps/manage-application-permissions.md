@@ -251,7 +251,7 @@ Run the following queries to remove appRoleAssignments of users or groups to the
 
 ## Other authorization to consider
 
-Delegated and application permissions are not the only ways to grant applications and users access to protected resources. Admins should be aware of other authorization systems that may grant access to sensitive information. Examples of various authorization systems at Microsoft include [Entra built-in roles](./identity/role-based-access-control/permissions-reference.md), [Exchange RBAC](~/exchange/permissions-exo/application-rbac.md), and [Teams resource-specific consent](~/microsoftteams/platform/graph-api/rsc/resource-specific-consent.md).
+Delegated and application permissions are not the only ways to grant applications and users access to protected resources. Admins should be aware of other authorization systems that may grant access to sensitive information. Examples of various authorization systems at Microsoft include [Entra built-in roles](/entra/identity/role-based-access-control/permissions-reference), [Exchange RBAC](/exchange/permissions-exo/application-rbac), and [Teams resource-specific consent](/microsoftteams/platform/graph-api/rsc/resource-specific-consent).
 
 ## Next steps
 
