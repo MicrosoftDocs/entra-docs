@@ -103,53 +103,6 @@ For steps on how to upgrade an existing agent to use a gMSA account see [group M
 
 For more information on how to prepare your Active Directory for group Managed Service Account, see [group Managed Service Accounts Overview](/windows-server/security/group-managed-service-accounts/group-managed-service-accounts-overview).
 
-### Apply a subset of permissions
-To set gMSA permissions on an account, you can use the following [Set-AADCloudSyncPermission](how-to-gmsa-cmdlets.md#using-set-aadcloudsyncpermissions) PowerShell cmdlet.  This cmdlet allows you to set more granular permissions on the gMSA.  You can use it to apply only a subset of the permissions.  This can be done in scenarios where you only want the gMSA to perform a specific function.
-
-See [Set-AADCloudSyncPermission](how-to-gmsa-cmdlets.md#using-set-aadcloudsyncpermissions) below for examples on setting specific permissions.
-
-
-#### Supported permission types
-The [Set-AADCloudSyncPermission](how-to-gmsa-cmdlets.md#using-set-aadcloudsyncpermissions) cmdlet supports the following permission types.
-
-|Permission type|Description|
-|-----|-----|
-|BasicRead| See [BasicRead](#basic-read) permissions.|
-|PasswordHashSync|See [PasswordHashSync](#password-hash-sync) permissions.|
-|PasswordWriteBack|See [PasswordWriteBack](#password-writeback) permissions.|
-|HybridExchangePermissions|See [HybridExchangePermissions](#exchange-hybrid-deployment) permissions.|
-|ExchangeMailPublicFolderPermissions| See [ExchangeMailPublicFolderPermissions](#exchange-mail-public-folders) permissions.|
-|UserGroupCreateDelete|See [UserGroupCreateDelete](#usergroupcreatedelete-cloudhr) permissions.|
-|All| Applies all the above permissions|
-
-
-#### Basic Read
-Basic read is seperate from the ALL permissions set by the installer because it is not specifically set.  By Setting the other permissions, the gMSA account will get the basic read permissions on the following objects:
-
- - User
- - InetOrgPerson
- - Group
- - Contact
-
-However it **doesn't** set the basic read permissions for the following objects:
-
- - Device
- - Computer
- - ForeignSecurityPrincipal objects.
-
-If you require read permissions to these objects, you should use the cmdlet to set the BasicRead permissionType.  BasicRead sets the following permissions:
-
-|Type |Name |Access |Applies To| 
-|-----|-----|-----|-----|
-|Allow |&lt;gmsa account&gt;|Read all properties |Descendant device objects| 
-|Allow |&lt;gmsa account&gt;|Read all properties |Descendant InetOrgPerson objects| 
-|Allow |&lt;gmsa account&gt;|Read all properties |Descendant Computer objects| 
-|Allow |&lt;gmsa account&gt;|Read all properties |Descendant foreignSecurityPrincipal objects| 
-|Allow |&lt;gmsa account&gt;|Read all properties |Descendant Group objects| 
-|Allow |&lt;gmsa account&gt;|Read all properties |Descendant User objects| 
-|Allow |&lt;gmsa account&gt;|Read all properties |Descendant Contact objects| 
-|Allow|&lt;gmsa account&gt;|Replicating Directory Changes|This object only (Domain root)|
-
 
 ## Next Steps
 
