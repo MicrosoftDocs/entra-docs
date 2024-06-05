@@ -93,7 +93,7 @@ Now assign a user for application testing and choose header-based single sign-on
 1. From the application sidebar, select **Single sign-on** > **Header-based**.
 
    > [!TIP]
-   > If this is your first time using header-based single sign-on, you need to install PingAccess. To make sure your Microsoft Entra ID subscription is automatically associated with your PingAccess installation, use the link on this single sign-on page to download PingAccess. You can open the download site now, or come back to this page later.
+   > If this is your first time using header-based single sign-on, you need to install PingAccess. To make sure your Microsoft Entra subscription is automatically associated with your PingAccess installation, use the link on this single sign-on page to download PingAccess. You can open the download site now, or come back to this page later.
 
    ![Shows header-based sign-on screen and PingAccess](./media/application-proxy-configure-single-sign-on-with-ping-access/sso-header.png)
 
@@ -125,7 +125,7 @@ Finally, set up the on-premises application so that users have `read` access and
 
 Collect three Globally Unique Identifiers (GUIDs). Use the GUIDs to set up your application with PingAccess. 
 
-| Name of Microsoft Entra ID field | Name of PingAccess field | Data format |
+| Name of Microsoft Entra field | Name of PingAccess field | Data format |
 | --- | --- | --- |
 | **Application (client) ID** | **Client ID** | GUID |
 | **Directory (tenant) ID** | **Issuer** | GUID |

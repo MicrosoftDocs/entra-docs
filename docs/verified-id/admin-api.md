@@ -136,13 +136,13 @@ HTTP/1.1 200 OK
 Content-type: application/json
 
 {
-    "id": "ffea7eb3-0000-1111-2222-000000000000",
+    "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
     "name": "ExampleAuthorityName",
     "status": "Enabled",
     "didModel": {
         "did": "did:web:verifiedid.contoso.com",
         "signingKeys": [
-            "https://vccontosokv.vault.azure.net/keys/vcSigningKey-ffea7eb3-0000-1111-2222-000000000000/5257c49db8164e198b4c5997e8a31ad4"
+            "https://vccontosokv.vault.azure.net/keys/vcSigningKey-00aa00aa-bb11-cc22-dd33-44ee44ee44ee/5257c49db8164e198b4c5997e8a31ad4"
         ],
         "recoveryKeys": [],
         "updateKeys": [],
@@ -230,13 +230,13 @@ Content-type: application/json
 
     [
         {
-            "id": "ffea7eb3-0000-1111-2222-000000000000",
+            "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
             "name": "AuthorityName",
             "status": "Enabled",
             "didModel": {
                 "did": "did:web:verifiedid.contoso.com",
                 "signingKeys": [
-                    "https://vccontosokv.vault.azure.net/keys/vcSigningKey-ffea7eb3-0000-1111-2222-000000000000/5257c49db8164e198b4c5997e8a31ad4"
+                    "https://vccontosokv.vault.azure.net/keys/vcSigningKey-00aa00aa-bb11-cc22-dd33-44ee44ee44ee/5257c49db8164e198b4c5997e8a31ad4"
                 ],
                 "recoveryKeys": [],
                 "updateKeys": [],
@@ -1069,7 +1069,7 @@ example message:
         {
             "id": "ZjViZjJmYzYtNzEzNS00ZDk0LWE2ZmUtYzI2ZTQ1NDNiYzVhPHNjcmlwdD5hbGVydCgneWF5IScpOzwvc2NyaXB0Pg",
             "name": "test1",
-            "authorityId": "ffea7eb3-0000-1111-2222-000000000000",
+            "authorityId": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
             "status": "Enabled",
             "issueNotificationEnabled": false,
             "manifestUrl" : "https://...",

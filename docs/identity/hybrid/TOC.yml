@@ -103,7 +103,10 @@
       href: cloud-sync/tutorial-pilot-aadc-aadccp.md
     - name: Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync
       href: cloud-sync/migrate-group-writeback.md
-
+  - name: Additional migration scenarios
+    items:
+    - name: Multi-organizational on-premises Exchange mailbox migration with Microsoft Entra Connect
+      href: connect/parallel-hybrid-migration.md
 
 - name: Cloud sync reference
   items:
