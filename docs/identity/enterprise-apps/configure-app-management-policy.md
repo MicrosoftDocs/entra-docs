@@ -14,7 +14,7 @@ ms.topic: how-to
 
 # Configure app management policy (preview)
 
-In this article, you will learn how to configure the tenant default app management policy and create and configure custom application policies in Microsoft Entra ID.
+In this article, you learn how to configure the tenant default app management policy and create and configure custom application policies in Microsoft Entra ID.
 
 Application authentication methods such as certificates and password secrets allow apps to acquire tokens to access data in Microsoft Entra ID. App management policies allow IT admins to enforce best practices for how apps in their organizations use these application authentication methods. For example, an admin might configure a policy to block the use or limit the lifetime of password secrets, and use the creation date of the object to enforce the policy.
 
