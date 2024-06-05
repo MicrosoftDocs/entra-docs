@@ -94,7 +94,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<subdomain>.Businessmap.com`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign-on URL. Contact [Businessmap Client support team](mailto:support@ms.businessmap.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign-on URL. Contact [Businessmap Client support team](mailto:support@businessmap.io) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. Businessmap application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes, where as nameidentifier is mapped with **user.userprincipalname**. Businessmap application expects nameidentifier to be mapped with **user.mail**, so you need to edit the attribute mapping by clicking on Edit icon and change the attribute mapping.
 
@@ -147,19 +147,19 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 4. Go to top  right of the page, click on **Settings** logo.
 
-	![Businessmap settings](./media/kanbanize-tutorial/tutorial-kanbanize-set.png)
+	![Screenshot shows the Businessmap settings](./media/businessmap-tutorial/tutorial-businessmap-set.png)
 
 5. On the Administration panel page from the left side of menu click **Integrations** and then enable **Single Sign-On**.
 
-	![Screenshot shows the Administration panel with Integration selected.](./media/kanbanize-tutorial/tutorial-kanbanize-admin.png)
+	![Screenshot shows the Administration panel with Integration selected.](./media/businessmap-tutorial/tutorial-businessmap-admin.png)
 
 6. Under Integrations section, click on **CONFIGURE** to open **Single Sign-On Integration** page.
 
-	![Screenshot shows the Businessmap Integration.](./media/kanbanize-tutorial/configuration.png)
+	![Screenshot shows the Businessmap Integration.](./media/businessmap-tutorial/configuration.png)
 
 7. On the **Single Sign-On Integration** page under **Configurations**, perform the following steps:
 
-	![Screenshot shows the Single Sign-On Integration page where you enter the values in this step.](./media/kanbanize-tutorial/values.png)
+	![Screenshot shows the Single Sign-On Integration page where you enter the values in this step.](./media/businessmap-tutorial/values.png)
 
 	a. In the **Idp Entity ID** textbox, paste the value of **Microsoft Entra Identifier**, which you copied previously.
 
@@ -184,7 +184,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 ### Create Businessmap test user
 
-In this section, a user called B.Simon is created in Businessmap. Businessmap supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in Businessmap, a new one is created after authentication. If you need to create a user manually, contact [Businessmap Client support team](mailto:support@ms.businessmap.com).
+In this section, a user called B.Simon is created in Businessmap. Businessmap supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in Businessmap, a new one is created after authentication. If you need to create a user manually, contact [Businessmap Client support team](mailto:support@businessmap.io).
 
 ## Test SSO 
 
