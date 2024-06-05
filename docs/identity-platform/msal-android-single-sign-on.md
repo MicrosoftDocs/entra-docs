@@ -18,7 +18,7 @@ ms.topic: how-to
 
 Single sign-on (SSO) allows users to only enter their credentials once and have those credentials automatically work across applications.It enhances user experience and improves security by reducing the number of passwords users need to manage, lowering the risk of password fatigue and associated vulnerabilities.
 
-The [Microsoft identity platform](./index.yml) and the Microsoft Authentication Library (MSAL) help you enable SSO across your suite of applications. By enabling Broker capability in integration with applications like Authenticator app, Intune Company Portal or Link to Windows, you can extend SSO across the entire device.
+The [Microsoft identity platform](./index.yml) and the Microsoft Authentication Library (MSAL) help you enable SSO across your suite of applications. By enabling Broker capability you can extend SSO across the entire device.
 
 In this how-to, you'll learn how to configure the SDKs used by your application to provide SSO to your customers.
 
@@ -65,7 +65,7 @@ Broker-hosting apps can be installed by the device owner from their app store (t
 - Enrolled in Device Management or
 - Enrolled in Intune App Protection
 
-If the device with above mentioned requirements doesn't already have a broker app installed, MSAL instructs the user to install one as soon as the app attempts to get a token interactively. The app will then need to lead the user through the steps to make the device compliant with the required policy.
+If the device with above mentioned requirements doesn't already have a broker app installed, MSAL instructs the user to install one as soon as the app attempts to get a token interactively. The app will then lead the user through the steps to make the device compliant with the required policy. If there is no policy requirement, or the user is signing in with Microsoft account, then Broker app installation isn't required. 
 
 ### Effects of installing and uninstalling a broker
 
