@@ -322,10 +322,10 @@ The direct reports rule is constructed using the following syntax:
 Direct Reports for "{objectID_of_manager}"
 ```
 
-Here's an example of a valid rule, where "62e19b97-8b3d-4d4a-a106-4ce66896a863" is the objectID of the manager:
+Here's an example of a valid rule, where "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb" is the objectID of the manager:
 
 ```
-Direct Reports for "62e19b97-8b3d-4d4a-a106-4ce66896a863"
+Direct Reports for "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb"
 ```
 
 The following tips can help you use the rule properly.
