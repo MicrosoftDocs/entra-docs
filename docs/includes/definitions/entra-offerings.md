@@ -13,7 +13,7 @@ Microsoft Entra ID is available in several licensing options that allow you to c
 - **Microsoft Entra ID P1** - Microsoft Entra ID P1 is available as a standalone product or included with Microsoft 365 E3 for enterprise customers and Microsoft 365 Business Premium for small to medium businesses.
 - **Microsoft Entra ID P2** - Microsoft Entra ID P2 is available as a standalone product or included with Microsoft 365 E5 for enterprise customers.
 - **Microsoft Entra ID Governance** - Microsoft Entra ID Governance is an advanced set of identity governance capabilities available for Microsoft Entra ID P1 and P2 customers, as two products Microsoft Entra ID Governance and Microsoft Entra ID Governance Step Up for Microsoft Entra ID P2. These products contain the basic identity governance capabilities that were in Microsoft Entra ID P2, and additional advanced identity governance capabilities.
-- **Microsoft Entra Suite** - Includes components of all other options and extends zero trust foundations by securing access for an organization’s workforce.
+- **Microsoft Entra Suite** - Includes components of all other options and extends zero trust foundations by securing access for an organization’s workforce. It is available for Microsoft Entra ID P1 and P2 customers.
 
   :::image type="content" source="media/entra-offerings/entra-suite.png" alt-text="Image Description":::  
 
