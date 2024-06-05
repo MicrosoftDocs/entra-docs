@@ -64,14 +64,10 @@
     items:
     - name: Configure managed identities on Azure VMs
       href: how-to-configure-managed-identities.md
+    - name: Configure managed identities on VM scale sets
+      href: how-to-configure-managed-identities-scale-sets.md
     - name: Use Azure Policy (preview)
       href: how-to-assign-managed-identity-via-azure-policy.md
-
-  - name: Configure managed identities on VM scale sets
-    items:
-    - name: Configure managed identities on Azure VMs
-      href: how-to-configure-managed-identities-scale-sets.md
-
   - name: Use managed identities on VMs
     items:
     - name: Acquire an access token
@@ -81,16 +77,12 @@
     - name: Use with Azure SDKs
       href: how-to-use-vm-sdk.md
   - name: Assign a managed identity access to an Azure resource
-    items:
-    - name: Assign a managed identity access to an Azure or other resource
-      href: how-to-assign-access-azure-resource.md
+    href: how-to-assign-access-azure-resource.md
   - name: Manage user-assigned managed identities
     href: how-manage-user-assigned-managed-identities.md
   - name: View associated resources for a managed identity
     href: how-to-view-associated-resources-for-an-identity.md
   - name: View managed identity service principals
-    items:
-  - name: View the service principal of a managed identity
     href: how-to-view-managed-identity-service-principal.md
   - name: Assign a managed identity to an app role
     items:

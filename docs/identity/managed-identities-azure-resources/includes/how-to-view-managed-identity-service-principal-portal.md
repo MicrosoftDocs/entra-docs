@@ -15,7 +15,7 @@ ms.subservice: managed-identities
 1. Under **Application Type**, choose **All Applications** and then select **Apply**.
 1. In the search filter box, type the name of the Azure resource that has managed identities enabled or choose it from the list.
 
-   :::image type="content" border="true" source="../media/how-to-view-managed-identity-service-principal-portal/view-managed-identity-service-principal-portal.png" alt-text="Screenshot of the View managed identity service principal in portal."  lightbox="../media/how-to-view-managed-identity-service-principal-portal/view-managed-identity-service-principal-portal.png":::
+   :::image type="content" border="true" source="../media/how-to-view-managed-identity-service-principal-portal/view-managed-identity-service-principal-portal.png" alt-text="Screenshot of the View managed identity service principal."  lightbox="../media/how-to-view-managed-identity-service-principal-portal/view-managed-identity-service-principal-portal.png":::
 
 ## Next steps
 
