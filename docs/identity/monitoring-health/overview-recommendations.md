@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: overview
 ms.subservice: monitoring-health
-ms.date: 02/05/2024
+ms.date: 06/05/2024
 ms.author: sarahlipsey
 ms.reviewer: deawari  
 
@@ -52,6 +52,7 @@ The recommendations listed in the following table are currently available in pub
 
 | Recommendation  | Impacted resources | Required license | Availability |
 |---- |---- |---- |---- |
+| Enable Microsoft Purview Adaptive Protection and the Insider Risk condition in Conditional Access (preview) | Tenant level | All licenses | Preview |
 | [Convert per-user MFA to Conditional Access MFA](recommendation-turn-off-per-user-mfa.md) | Users | All licenses | Generally available |
 | [Migrate applications from AD FS to Microsoft Entra ID](recommendation-migrate-apps-from-adfs-to-azure-ad.md) | Applications | All licenses | Generally available |
 | [Migrate from ADAL to MSAL](recommendation-migrate-from-adal-to-msal.md) | Applications | All licenses | Generally available |
