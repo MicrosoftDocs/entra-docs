@@ -14,13 +14,9 @@ ms.author: barclayn
 
 This article discusses Microsoft Entra services' licensing. It is intended for IT decision makers, IT administrators, and IT professionals who are considering Microsoft Entra services for their organizations. This article isn't intended for end users.
 
->[!IMPORTANT]
-> For licensing information on services not listed here, refer to the service's documentation or the [Microsoft Entra ID pricing page.](https://www.microsoft.com/security/business/microsoft-entra-pricing)
+## Entra licensing options
 
-## Entra licensing overview
-
-
-[!INCLUDE [Entra SKUs](../includes/entra-types.md)]
+[!INCLUDE [Entra offerings](../includes/definitions/entra-offerings.md)]
 
 
 ## App provisioning
