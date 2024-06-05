@@ -58,7 +58,7 @@ To configure the tenant default policy app instance lock:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the tenant containing the app registration from the **Directories + subscriptions** menu.
-1. Browse to **Identity** > **Security** > **Authentication methods** > **Application policies**.
+1. Browse to **Identity** > **Protection** > **Authentication methods** > **Application policies**.
 1. Select the **Password restrictions** restriction type under **Default policy restrictions** column.
 1. Configure the desired password restrictions.
 
@@ -81,7 +81,7 @@ To create and configure custom application policies:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the tenant containing the app registration from the **Directories + subscriptions** menu.
-1. Browse to **Identity** > **Security** > **Authentication methods** > **Application policies**.
+1. Browse to **Identity** > **Protection** > **Authentication methods** > **Application policies**.
 1. Select the **Custom application policies** tab. 
 1. Select **New custom policy** and proceed to fill out the information in the **Basics section**.
 1. Select **Next** to configure **Password Restrictions** tab and fill out the information in that section. 
