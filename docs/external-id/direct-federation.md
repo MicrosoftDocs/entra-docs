@@ -220,8 +220,8 @@ Next, configure federation with the IdP configured in step 1 in Microsoft Entra 
     :::image type="content" source="media/direct-federation/new-saml-wsfed-idp-parse.png" alt-text="Screenshot showing the new SAML or WS-Fed IdP page.":::
 
 1. Select a method for populating metadata. If you have a file that contains the metadata, you can automatically populate the fields by selecting **Parse metadata file** and browsing for the file. Or, you can select **Input metadata manually** and enter the following information:
-   - The SAML **Issuer URI** or the WS-Fed **Entity ID** for the partner's IdP.
-   - The SAML **Passive authentication endpoint** or the WS-Fed **Passive requestor endpoint** for the partner's IdP.
+   - The **Issuer URI** of the partner's SAML IdP, or the **Entity ID** of the partner's WS-Fed IdP.
+   - The **Passive authentication endpoint** of the partner's SAML IdP, or the **Passive requestor endpoint** of the partner's WS-Fed IdP.
    - **Certificate** - The signing certificate ID.
    - **Metadata URL** - The location of the IdP's metadata for automatic renewal of the signing certificate.
 
