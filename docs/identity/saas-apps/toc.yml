@@ -1227,6 +1227,8 @@
         href: gtnexus-sso-module-tutorial.md  
       - name: Guardium Data Protection
         href: guardium-data-protection-tutorial.md
+      - name: gulfHR SSO
+        href: gulfhr-sso-tutorial.md
       - name: Guru
         href: guru-tutorial.md
     - name: H - I
