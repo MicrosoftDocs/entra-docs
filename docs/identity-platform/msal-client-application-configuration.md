@@ -5,7 +5,7 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: has-adal-ref
-ms.date: 08/11/2023
+ms.date: 06/06/2024
 ms.reviewer: saeeda
 ms.service: identity-platform
 
@@ -115,11 +115,7 @@ If you're a public client app developer who's using MSAL:
   | UWP                   | value of `WebAuthenticationBroker.GetCurrentApplicationCallbackUri()`. This enables single sign-on (SSO) with the browser by setting the value to the result of WebAuthenticationBroker.GetCurrentApplicationCallbackUri(), which you need to register |
   | .NET             | `https://localhost` enables the user to use the system browser for interactive authentication since .NET doesn't have a UI for the embedded web view at the moment.                                                                               |
 
-- You don't need to add a redirect URI if you're building a Xamarin Android and iOS application that doesn't support the broker redirect URI. It's automatically set to `msal{ClientId}://auth` for Xamarin Android and iOS.
-
-- Configure the redirect URI in [App registrations](https://aka.ms/appregistrations):
-
-  ![Redirect URI in App registrations](media/msal-client-application-configuration/redirect-uri.png)
+You don't need to add a redirect URI if you're building a Xamarin Android and iOS application that doesn't support the broker redirect URI. It's automatically set to `msal{ClientId}://auth` for Xamarin Android and iOS.
 
 You can override the redirect URI by using the `RedirectUri` property (for example, if you use brokers). Here are some examples of redirect URIs for that scenario:
 
@@ -128,6 +124,15 @@ You can override the redirect URI by using the `RedirectUri` property (for examp
 
 For more iOS details, see [Migrate iOS applications that use Microsoft Authenticator from ADAL.NET to MSAL.NET](msal-net-migration-ios-broker.md) and [Leveraging the broker on iOS](msal-net-use-brokers-with-xamarin-apps.md).
 For more Android details, see [Brokered auth in Android](msal-android-single-sign-on.md).
+
+- When building an app using MSAL Android, you can configure the `redirect_uri` during the initial [App registration](https://aka.ms/appregistrations) step or add it afterward. 
+  - The format of the redirect URI is: `msauth://<yourpackagename>/<base64urlencodedsignature>`
+  - Example: `redirect_uri` = `msauth://com.azuresamples.myapp/6/aB1cD2eF3gH4iJ5kL6-mN7oP8qR=`
+- To find more details on the MSAL Android app configuration, refer to [MSAL Android configuration](msal-configuration.md). 
+
+- Configure the redirect URI in [App registrations](https://aka.ms/appregistrations):
+
+    :::image type="content" source="media/msal-client-application-configuration/redirect-uri.png" alt-text="Screenshot showing the Redirect URI pane and options on the App registrations page.":::
 
 ### Redirect URI for confidential client apps
 
