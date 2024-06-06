@@ -68,7 +68,7 @@
       href: how-to-configure-managed-identities-scale-sets.md
     - name: Assign managed identities using Azure Policy (preview)
       href: how-to-assign-managed-identity-via-azure-policy.md
-  - name: Use managed identities on VMs
+  - name: Maintain managed identities
     items:
     - name: Acquire an access token
       href: how-to-use-vm-token.md
