@@ -11,7 +11,7 @@
 - name: Tutorials
   items:
   - name: Use a Windows VM/VMSS to access Azure services
-    href: tutorial-windows-mi-vm-access.md
+    href: tutorial-windows-managed-identities-vm-access.md
   - name: Linux VM/VMSS
     items:
     - name: Access Azure Data Lake Store

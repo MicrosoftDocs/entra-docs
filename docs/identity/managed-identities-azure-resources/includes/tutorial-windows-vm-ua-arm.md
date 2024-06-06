@@ -24,7 +24,7 @@ You'll learn how to:
 
 ### Configure Azure PowerShell locally
 
-To run scripts im this example, you have two options:
+To run scripts in this example, you have two options:
    - Use the [Azure Cloud Shell](/azure/cloud-shell/overview), which you can open using the **Try It** button on the top-right corner of code blocks.
    - Run scripts locally with Azure PowerShell, as described in the next section.
 

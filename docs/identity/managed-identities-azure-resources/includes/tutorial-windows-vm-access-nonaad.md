@@ -33,7 +33,7 @@ First, you need to create a Key Vault and grant your VM’s system-assigned mana
 1. Select **Key Vault** from the results, then select **Create**.
 1. Provide a **Name** for the new key vault.
 
-    :::image type="content" source="../media/msi-tutorial-windows-vm-access-nonaad/create-key-vault.png" alt-text="Create a Key vault screen.":::
+    :::image type="content" source="../media/msi-tutorial-windows-vm-access-nonaad/create-key-vault.png" alt-text="Screenshot of the Create a Key vault screen.":::
 
 1. Fill out all required information. Make sure that you choose the subscription and resource group that you're using for this tutorial.
 1. Select **Review+ create**.
