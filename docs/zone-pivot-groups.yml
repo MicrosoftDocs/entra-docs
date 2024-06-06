@@ -251,6 +251,21 @@ groups:
     title: CLI
   - id: identity-mi-service-principal-powershell
     title: PowerShell
+# Owner: barclayn
+- id: identity-windows--mi-vm-access
+  title: Use managed identity on a Windows VM/VMSS
+  prompt: Choose an Azure service
+  pivots:
+  - id: identity-windows--mi-vm-access-data-lake
+    title: Data Lake
+  - id: identity-windows--mi-vm-access-storage
+    title: Storage
+  - id: identity-windows--mi-vm-access-sql-db
+    title: SQL DB
+  - id: identity-windows--mi-vm-access-key-vault
+    title: Key Vault
+  - id: identity-windows--mi-vm-access-resource-manager
+    title: Resource Manager
 # Owner: ryanwi
 - id: identity-wif-mi-methods
   title: Workload identity federation for managed identities methods
