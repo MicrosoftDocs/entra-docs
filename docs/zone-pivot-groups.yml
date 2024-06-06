@@ -260,7 +260,7 @@ groups:
     title: Data Lake
   - id: identity-windows-mi-vm-access-storage
     title: Storage
-  - id: identity-windows-]mi-vm-access-sql-db
+  - id: identity-windows-mi-vm-access-sql-db
     title: SQL DB
   - id: identity-windows-mi-vm-access-key-vault
     title: Key Vault
