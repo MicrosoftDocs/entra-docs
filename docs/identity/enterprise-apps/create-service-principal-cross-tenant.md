@@ -96,7 +96,7 @@ You can use an API client such as [Graph Explorer](https://aka.ms/ge) to work wi
 1. To create the enterprise application, run the following command:
    
    ```azurecli
-   az ad sp create --id fc876dd1-6bcb-4304-b9b6-18ddf1526b62
+   az ad sp create --id 00001111-aaaa-2222-bbbb-3333cccc4444
    ```
 
 1. To  delete the enterprise application you created, run the command:

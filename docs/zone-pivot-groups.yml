@@ -240,6 +240,26 @@ groups:
     title: CLI
   - id: identity-mi-access-powershell
     title: PowerShell
+# Owner: barclayn
+- id: identity-mi-service-principals
+  title: Managed identity service principals
+  prompt: Choose an option
+  pivots:
+  - id: identity-mi-service-principal-portal
+    title: Portal
+  - id: identity-mi-service-principal-cli
+    title: CLI
+  - id: identity-mi-service-principal-powershell
+    title: PowerShell
+# Owner: barclayn
+- id: identity-mi-app-role
+  title: Managed identity application roles
+  prompt: Choose an option
+  pivots:
+  - id: identity-mi-app-role-powershell
+    title: PowerShell
+  - id: identity-mi-app-role-cli
+    title: CLI
 # Owner: ryanwi
 - id: identity-wif-mi-methods
   title: Workload identity federation for managed identities methods
