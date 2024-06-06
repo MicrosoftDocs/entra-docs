@@ -11,7 +11,7 @@ ms.subservice: managed-identities
 
 [!INCLUDE [azure-cli-prepare-your-environment-no-header.md](~/../docs/reusable-content/azure-cli/azure-cli-prepare-your-environment-no-header.md)]
 
-1. Enable managed identity on an Azure resource, [such as an Azure VM](~/identity/managed-identities-azure-resources/how-to-configure-managed-identities.md).
+1. Enable managed identity on an Azure resource, [such as an Azure virtual machines](~/identity/managed-identities-azure-resources/how-to-configure-managed-identities.md).
 
 1. Find the object ID of the managed identity's service principal.
 
@@ -34,7 +34,7 @@ ms.subservice: managed-identities
     echo "object id for managed identity is: $oidForMI"
     ```
 
-1. Create a new application registration to represent the service that your managed identity will send a request to.
+1. Create a new application registration to represent the service that your managed identity sends a request to.
    -  If the API or service that exposes the app role grant to the managed identity already has a service principal in your Microsoft Entra tenant, skip this step.
 
 1. Find the object ID of the service application's service principal. You can find this using the Azure portal. 
@@ -78,7 +78,7 @@ ms.subservice: managed-identities
     * `serverServicePrincipalObjectId`: the object ID of the server application's service principal, which you found in step 4.
     * `appRoleId`: the ID of the app role exposed by the server app, which you generated in step 5 - in the example, the app role ID is `00000000-0000-0000-0000-000000000000`.
    
-1. Execute the following script to add the role assignment.  Note that this functionality is not directly exposed on the Azure CLI and that a REST command is used here instead:
+1. Execute the following script to add the role assignment. This functionality isn't directly exposed on the Azure CLI and that a REST command is used here instead:
 
     ```azurecli
     roleguid="00000000-0000-0000-0000-000000000000"
