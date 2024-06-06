@@ -117,6 +117,8 @@ items:
     items:
     - name: Integrate SaaS applications
       href: ~/identity/saas-apps/tutorial-list.md
+    - name: Configure app management policies
+      href: configure-app-management-policy.md
     - name: Assign owners
       href: assign-app-owners.md
     - name: Configure properties

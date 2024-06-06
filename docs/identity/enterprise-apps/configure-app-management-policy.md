@@ -39,7 +39,7 @@ A tenant default policy is a single object that always exists and is disabled by
 - **applicationRestrictions** allows targeting applications owned by the tenant (app registration objects).
 - **servicePrincipalRestrictions** allows targeting applications provisioned from another tenant (service principal objects).
 
-These properties enable an organization to lock down credential usage in apps that originate from their tenant and provide a mechanism to control credential addition in externally provisioned applications to protect them from credential abuse. The application owner of a multi-tenant app can still use any type of credentials in their app registration object, but the policy only protects the service principal from credential abuse. 
+These properties enable an organization to lock down credential usage in apps that originate from their tenant and provide a mechanism to control credential addition in externally provisioned applications to protect them from credential abuse. The application owner of a multitenant app can still use any type of credentials in their app registration object, but the policy only protects the service principal from credential abuse. 
 
 ## App management policy for app registrations and service principals
 
@@ -62,13 +62,13 @@ To configure the tenant default policy app instance lock:
 1. Select the **Password restrictions** restriction type under **Default policy restrictions** column.
 1. Configure the desired password restrictions.
 
-   :::image type="content" source="media/configure-app-management-policy/default-app-management-policy-appreg-pwdrestrictions.png" alt-text="Screenshot of the tenant app management policy password restrictions.":::
+   :::image type="content" source="media/configure-app-management-policy/default-policy-app-reg-password-restrictions.png" alt-text="Screenshot of the tenant app management policy password restrictions.":::
 
 1. Select **Save** to save your changes.
 1. Select the **Certificate restrictions** restriction type under **Default policy restrictions** column.
 1. Configure the desired certificate restrictions.
 
-   :::image type="content" source="media/configure-app-management-policy/default-app-management-policy-appreg-certrestrictions.png" alt-text="Screenshot of the tenant app management policy certificate restrictions.":::
+   :::image type="content" source="media/configure-app-management-policy/default-policy-app-reg-cert-restrictions.png" alt-text="Screenshot of the tenant app management policy certificate restrictions.":::
 
 1. Select **Save** to save your changes.
 1. Select the checkbox **Copy settings selection to apply to enterprise apps** if you want the restrictions configured for App registrations to be applied for Enterprise apps. You can also select the **Enterprise apps** tab and use different parameters to configure the same restriction for Enterprise applications.
@@ -85,7 +85,7 @@ To create and configure custom application policies:
 1. Select the **Custom application policies** tab. 
 1. Select **New custom policy** and proceed to fill out the information in the **Basics section**.
 1. Select **Next** to configure **Password Restrictions** tab and fill out the information in that section. 
-      :::image type="content" source="media/configure-app-management-policy/custom-app-management-policy-appreg-pwdrestrictions.png" alt-text="Screenshot of the custom app management policy password restrictions.":::
+      :::image type="content" source="media/configure-app-management-policy/custom-policy-app-reg-password-restrictions.png" alt-text="Screenshot of the custom app management policy password restrictions.":::
 1. Select **Next** to configure **Certificate Restrictions** tab and fill out the information in that section. 
 1. Select **Next** to review the policy configuration.
 1.  Select **Create** to create the policy. 
