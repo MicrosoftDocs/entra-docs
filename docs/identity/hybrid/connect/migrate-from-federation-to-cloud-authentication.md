@@ -327,7 +327,7 @@ On your Microsoft Entra Connect server, follow the steps 1- 5 in [Option A](#opt
 
     ![Pass-through authentication settings](media/deploy-cloud-user-authentication/pass-through-authentication-settings.png)
 
-   If the authentication agent isn't active, complete these [troubleshooting steps](tshoot-connect-pass-through-authentication.md) before you continue with the domain conversion process in the next step. You risk causing an authentication outage if you convert your domains before you validate that your PTA agents are successfully installed and that their status is **Active** in the [Microsoft Entra admin center](https://entra.microsoft.com).
+   If the authentication agent isn't active, complete these [troubleshooting steps](tshoot-connect-pass-through-authentication.md) before you continue with the domain conversion process in the next step. You risk causing an authentication outage if you convert your domains before you validate that your PTA agents are successfully installed and that their status is **Active** in the [Microsoft Entra admin center](https://entra.microsoft.com). 
 
 3. [Deploy more authentication agents](#deploy-more-authentication-agents-for-pta).
 
@@ -357,6 +357,8 @@ On your Microsoft Entra Connect server, follow the steps 1- 5 in [Option A](#opt
     ```powershell
     Get-MgDomain -DomainId yourdomain.com
     ```
+To ensure that Entra ID Connect recognizes PTA as enabled after converting your domain to managed authentication, you need to update the sign-in method settings in Entra ID Connect to reflect the changes. Refer to [Microsoft Entra pass-through authentication documentation](how-to-connect-pta,md) for additional details. 
+
 ## Complete your migration
 
 Complete the following tasks to verify the sign-up method and to finish the conversion process.
