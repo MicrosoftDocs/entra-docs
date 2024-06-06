@@ -758,27 +758,27 @@
     },
     {
       "source_path_from_root": "/docs/identity/managed-identities-azure-resources/tutorial-windows-vm-access-datalake.md",
-      "redirect_url": "/entra/identity/managed-identities-azure-resources/tutorial-windows-mi-vm-access",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/tutorial-windows-managed-identities-vm-access",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/identity/managed-identities-azure-resources/tutorial-windows-vm-access-storage-sas.md",
-      "redirect_url": "/entra/identity/managed-identities-azure-resources/tutorial-windows-mi-vm-access",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/tutorial-windows-managed-identities-vm-access",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/identity/managed-identities-azure-resources/tutorial-windows-vm-access-nonaad.md",
-      "redirect_url": "/entra/identity/managed-identities-azure-resources/tutorial-windows-mi-vm-access",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/tutorial-windows-managed-identities-vm-access",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/identity/managed-identities-azure-resources/tutorial-windows-vm-access-sql.md",
-      "redirect_url": "/entra/identity/managed-identities-azure-resources/tutorial-windows-mi-vm-access",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/tutorial-windows-managed-identities-vm-access",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/identity/managed-identities-azure-resources/tutorial-windows-vm-ua-arm.md",
-      "redirect_url": "/entra/identity/managed-identities-azure-resources/tutorial-windows-mi-vm-access",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/tutorial-windows-managed-identities-vm-access",
       "redirect_document_id": false
     }
   ]
