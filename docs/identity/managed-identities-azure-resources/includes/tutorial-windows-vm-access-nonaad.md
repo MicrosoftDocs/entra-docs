@@ -17,14 +17,6 @@ You'll learn how to:
 > * Grant your VM access to a secret stored in a Key Vault
 > * Get an access token using the VM identity and use it to retrieve the secret from Key Vault 
 
-## Prerequisites
-
-- An understanding of managed identities. If you're not familiar with the managed identities for Azure resources feature, see this [overview](~/identity/managed-identities-azure-resources/overview.md).
-- An Azure account, [sign up for a free account](https://azure.microsoft.com/free/).
-- *Owner* permissions at the appropriate scope (your subscription or resource group) to perform required resource creation and role management steps. If you need assistance with role assignment, see [Assign Azure roles to manage access to your Azure subscription resources](/azure/role-based-access-control/role-assignments-portal).
-- A Windows virtual machine (VM) that has system assigned managed identities enabled.
-  - If you need to create a VM for this tutorial, see [Create a virtual machine with system-assigned identity enabled](~/identity/managed-identities-azure-resources/how-to-configure-managed-identities.md).
-
 ## Create a Key Vault  
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]

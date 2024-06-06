@@ -19,7 +19,15 @@ zone_pivot_groups: identity-windows-mi-vm-access
 # Tutorial: Use a Windows VM/VMSS to access Azure services
 
 [!INCLUDE [preview-notice](~/includes/entra-msi-preview-notice.md)]
--
+
+## Prerequisites
+
+- An understanding of managed identities. If you're not familiar with the managed identities for Azure resources feature, see this [overview](~/identity/managed-identities-azure-resources/overview.md).
+- An Azure account, [sign up for a free account](https://azure.microsoft.com/free/).
+- *Owner* permissions at the appropriate scope (your subscription or resource group) to perform required resource creation and role management steps. If you need assistance with role assignment, see [Assign Azure roles to manage access to your Azure subscription resources](/azure/role-based-access-control/role-assignments-portal).
+- A Windows virtual machine (VM) that has system assigned managed identities enabled.
+  - If you need to create a VM for this tutorial, see [Create a virtual machine with system-assigned identity enabled](~/identity/managed-identities-azure-resources/how-to-configure-managed-identities.md).
+
 ::: zone pivot="identity-windows-mi-vm-access-data-lake"
 [!INCLUDE [tutorial-windows-vm-access-datalake](includes/tutorial-windows-vm-access-datalake.md)]
 ::: zone-end

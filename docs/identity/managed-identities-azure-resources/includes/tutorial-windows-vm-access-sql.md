@@ -20,10 +20,6 @@ You'll learn how to:
 > * Create a contained user in the database that represents the VM's system assigned identity
 > * Get an access token using the VM identity and use it to query Azure SQL Database
 
-## Prerequisites
-
-[!INCLUDE [msi-tut-prereqs](~/includes/entra-msi-tut-prereqs.md)]
-
 ## Enable
 
 [!INCLUDE [msi-tut-enable](~/includes/entra-msi-tut-enable.md)]

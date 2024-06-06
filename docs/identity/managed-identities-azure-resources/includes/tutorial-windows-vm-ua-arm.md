@@ -22,17 +22,6 @@ You'll learn how to:
 
 [!INCLUDE [az-powershell-update](~/includes/azure-docs-pr/updated-for-az.md)]
 
-## Prerequisites
-
-[!INCLUDE [msi-qs-configure-prereqs](~/includes/entra-msi-qs-configure-prereqs.md)]
-
-- Sign in to the [Azure portal](https://portal.azure.com).
-
-- [Create a Windows virtual machine](/azure/virtual-machines/windows/quick-create-portal).
-
-- To perform the required resource creation and role management steps in this tutorial, your account needs *Owner*0 permissions at the appropriate scope (your subscription or resource group). 
-   - If you need assistance with role assignment, see [Assign Azure roles to manage access to your Azure subscription resources](/azure/role-based-access-control/role-assignments-portal).
-
 ### Configure Azure PowerShell locally
 
 To run scripts im this example, you have two options:
