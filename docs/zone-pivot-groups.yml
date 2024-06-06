@@ -252,7 +252,7 @@ groups:
   - id: identity-mi-service-principal-powershell
     title: PowerShell
 # Owner: barclayn
-- id: identity-windows--mi-vm-access
+- id: identity-windows-mi-vm-access
   title: Use managed identity on a Windows VM/VMSS
   prompt: Choose an Azure service
   pivots:

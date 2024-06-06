@@ -1,10 +1,8 @@
 ---
 title: Tutorial: Use a Windows VM/VMSS to access Azure services
 description: A tutorial that shows you how to use a Windows VM/VMSS to access Azure services.
-
 author: barclayn
 manager: amycolannino
-
 ms.service: entra-id
 ms.subservice: managed-identities
 ms.topic: tutorial

@@ -7,7 +7,7 @@ ms.service: entra-id
 ms.subservice: managed-identities
 ---
 
-# Use a Windows VM system-assigned managed identity to access Azure SQL Database
+## Use a Windows VM system-assigned managed identity to access Azure SQL Database
 
 This tutorial shows you how to use a system-assigned identity for a Windows virtual machine (VM) to access Azure SQL Database. Managed Service Identities are automatically managed by Azure and enable you to authenticate to services that support Microsoft Entra authentication, without needing to insert credentials into your code. 
 
