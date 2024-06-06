@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.topic: overview
 ms.date: 02/13/2024
 ms.subservice: hybrid
-ms.author: billma
+ms.author: billmath
 ms.collection: M365-identity-device-management
 ---
 
