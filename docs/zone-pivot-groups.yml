@@ -256,15 +256,15 @@ groups:
   title: Use managed identity on a Windows VM/VMSS
   prompt: Choose an Azure service
   pivots:
-  - id: identity-windows--mi-vm-access-data-lake
+  - id: identity-windows-mi-vm-access-data-lake
     title: Data Lake
-  - id: identity-windows--mi-vm-access-storage
+  - id: identity-windows-mi-vm-access-storage
     title: Storage
-  - id: identity-windows--mi-vm-access-sql-db
+  - id: identity-windows-]mi-vm-access-sql-db
     title: SQL DB
-  - id: identity-windows--mi-vm-access-key-vault
+  - id: identity-windows-mi-vm-access-key-vault
     title: Key Vault
-  - id: identity-windows--mi-vm-access-resource-manager
+  - id: identity-windows-mi-vm-access-resource-manager
     title: Resource Manager
 # Owner: barclayn
 - id: identity-mi-app-role
