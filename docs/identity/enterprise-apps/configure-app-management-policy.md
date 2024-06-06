@@ -1,5 +1,5 @@
 ---
-title: "Configure app management policy preview)"
+title: "Configure app management policy (preview)"
 description: Learn how to increase the security posture of your tenant by configuring app management policy that enforces security best practices for applications in your tenant.
 author: omondiatieno 
 manager: jesakowi
@@ -29,8 +29,8 @@ These policies allow organizations to take advantage of the new app security har
 To configure app management policies, you need:
 
 - An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- A Workload Identity Premium license. For more information on Workload identity licensing, see [Frequently asked questions about Microsoft Entra Workload ID](~workload-id/workload-identities-faqs.md)
-- Security Administrator role.
+- A Workload Identity Premium license. For more information on Workload identity licensing, see [Frequently asked questions about Microsoft Entra Workload ID](~/workload-id/workload-identities-faqs.md)
+- Security Administrator role and Cloud Application Administrator role. The Cloud Application Administrator role can only configure custom app management policies.
 
 ## Tenant default app management policy
 
