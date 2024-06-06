@@ -19,7 +19,8 @@ By using filtering, you can control which objects appear in Microsoft Entra ID f
 
 >[!NOTE]
 > Microsoft Entra Cloud Sync and Microsoft Entra Connect Sync filter out any Active Directory objects where the **isCriticalSystemObject** attribute is set to **True**.  This will filter out built-in AD high privilege objects such as Administrator, DomainAdmins, EnterpriseAdmins.  This filtering means that the last two groups **DON'T** sync to Entra ID by default.
->  However other objects that are added to these high privilege group (DomainAdmins, EnterpriseAdmins) are not filtered out from syncing to cloud. For example, if you add a local AD User to the EnterpriseAdmins group, that user will still get synced to Microsoft Entra ID.
+>
+>  However, other objects that are added to these high privilege group (DomainAdmins, EnterpriseAdmins) are not filtered out from syncing to cloud. For example, if you add a local AD User to the EnterpriseAdmins group, that user will still get synced to Microsoft Entra ID.
 
 
 In some cases however, you're required to make some changes to the default configuration. Here are some examples:
