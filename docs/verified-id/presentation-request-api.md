@@ -52,7 +52,7 @@ Authorization: Bearer  <token>
     "includeQRCode": true,
     "callback": {
       "url": "https://contoso.com/api/verifier/presentationCallback",
-      "state": "11111111-2222-2222-2222-333333333333",
+      "state": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
       "headers": {
         "api-key": "an-api-key-can-go-here"
       }

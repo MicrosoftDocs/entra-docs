@@ -74,7 +74,7 @@ After you create the Facebook application, in this step you set the Facebook cli
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 1. Browse to **Identity** > **External Identities** > **All identity providers**.
-2. Select **+ Facebook**.
+2. On the **Built-in** tab, next to **Facebook**, select **Configure**.
 
    <!-- ![Screenshot that shows how to add Facebook identity provider in Microsoft Entra ID.](./media/sign-in-with-facebook/configure-facebook-idp.png)-->
 
