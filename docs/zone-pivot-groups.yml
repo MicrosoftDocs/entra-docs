@@ -266,6 +266,15 @@ groups:
     title: Key Vault
   - id: identity-windows--mi-vm-access-resource-manager
     title: Resource Manager
+# Owner: barclayn
+- id: identity-mi-app-role
+  title: Managed identity application roles
+  prompt: Choose an option
+  pivots:
+  - id: identity-mi-app-role-powershell
+    title: PowerShell
+  - id: identity-mi-app-role-cli
+    title: CLI
 # Owner: ryanwi
 - id: identity-wif-mi-methods
   title: Workload identity federation for managed identities methods
