@@ -19,24 +19,24 @@ zone_pivot_groups: identity-windows-mi-vm-access
 # Tutorial: Use a Windows VM/VMSS to access Azure services
 
 [!INCLUDE [preview-notice](~/includes/entra-msi-preview-notice.md)]
-
-::: zone pivot="identity-windows--mi-vm-access-data-lake"
+-
+::: zone pivot="identity-windows-mi-vm-access-data-lake"
 [!INCLUDE [tutorial-windows-vm-access-datalake](includes/tutorial-windows-vm-access-datalake.md)]
 ::: zone-end
 
-::: zone pivot="identity-windows--mi-vm-access-storage"
+::: zone pivot="identity-windows-mi-vm-access-storage"
 [!INCLUDE [tutorial-windows-vm-access-storage-sas](includes/tutorial-windows-vm-access-storage-sas.md)]
 ::: zone-end
 
-::: zone pivot="identity-windows--mi-vm-access-sql-db"
+::: zone pivot="identity-windows-mi-vm-access-sql-db"
 [!INCLUDE [tutorial-windows-vm-access-sql](includes/tutorial-windows-vm-access-sql.md)]
 ::: zone-end
 
-::: zone pivot="identity-windows--mi-vm-access-key-vault"
+::: zone pivot="identity-windows-mi-vm-access-key-vault"
 [!INCLUDE [tutorial-windows-vm-access-nonaad](includes/tutorial-windows-vm-access-nonaad.md)]
 ::: zone-end
 
-::: zone pivot="identity-windows--mi-vm-access-resource-manager"
+::: zone pivot="identity-windows-mi-vm-access-resource-manager"
 [!INCLUDE [tutorial-windows-vm-access-arm](includes/tutorial-windows-vm-access-arm.md)]
 ::: zone-end
 
