@@ -357,7 +357,7 @@ On your Microsoft Entra Connect server, follow the steps 1- 5 in [Option A](#opt
     ```powershell
     Get-MgDomain -DomainId yourdomain.com
     ```
-To ensure that Entra ID Connect recognizes PTA as enabled after converting your domain to managed authentication, you need to update the sign-in method settings in Entra ID Connect to reflect the changes. Refer to [Microsoft Entra pass-through authentication documentation](how-to-connect-pta,md) for additional details. 
+To ensure that Microsoft Entra Connect recognizes pass-through authentication as enabled after converting your domain to managed authentication, update the sign-in method settings in Microsoft Entra Connect to reflect the changes. Refer to [Microsoft Entra pass-through authentication documentation](how-to-connect-pta.md) for additional details. 
 
 ## Complete your migration
 
