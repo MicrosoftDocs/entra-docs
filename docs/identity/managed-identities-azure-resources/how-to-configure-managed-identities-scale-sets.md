@@ -22,6 +22,8 @@ zone_pivot_groups: identity-mi-scaled-sets
 
 Managed identities for Azure resources provide Azure services with an automatically managed identity in Microsoft Entra ID. You can use this identity to authenticate to any service that supports Microsoft Entra authentication, without having credentials in your code. 
 
+For information about Azure Policy definition and details, see [Use Azure Policy to assign managed identities (preview)](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F516187d4-ef64-4a1b-ad6b-a7348502976c).
+
 ::: zone pivot="identity-mi-methods-azp"
 [!INCLUDE [qs-configure-portal-windows-vmss](includes/qs-configure-portal-windows-vmss.md)]
 ::: zone-end
