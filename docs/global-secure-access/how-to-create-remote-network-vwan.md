@@ -3,7 +3,7 @@ title: Create a remote network using Azure vWAN
 description: Create a virtual wide area network to connect to your resources in Azure.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 06/03/2024
+ms.date: 06/06/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -23,10 +23,33 @@ To complete the steps in this process, you must have the following prerequisites
 - A Microsoft Entra tenant with the [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator) role assigned.
 - A basic understanding of Azure virtual desktops or Azure virtual machines.
 
-In this document, we use the following default values. Feel free to configure these settings according to your own requirements.
+This document uses the following example values, along with the values in the images and steps. Feel free to configure these settings according to your own requirements.
 - Subscription: Visual Studio Enterprise
 - Resource group name: GlobalSecureAccess_Documentation
 - Region: South Central US
+
+## High-level steps
+The steps to create a remote network using Azure vWAN requires access to both the Azure portal and the Microsoft Entra admin center. Keep each open in a separate tab to switch between them easily. Because the system can take more than 30 minutes to deploy certain resources, set aside at least two hours to complete this process.
+1. [Set up a vWAN in the Azure portal](#set-up-a-vwan-in-the-azure-portal)
+    1. [Create a vWAN](#create-a-vwan)
+    1. [Create a virtual hub with a site-to-site VPN gateway](#create-a-virtual-hub-with-a-vpn-gateway)
+        *Allow the virtual hub about 30 minutes to deploy.*
+    1. [Obtain VPN gateway information](#obtain-vpn-gateway-information)
+1. [Create a remote network in the Microsoft Entra admin center](#create-a-remote-network-in-the-microsoft-entra-admin-center)
+1. [Create a VPN site using the Microsoft gateway](#create-a-vpn-site-using-the-microsoft-gateway)
+    1. [Create a VPN site](#create-a-vpn-site)
+    1. [Create a site-to-site connection](#create-a-site-to-site-connection)
+        *The site-to-site connection takes about 30 minutes to deploy.*
+    1. [Check BGP connectivity and learned routes in Microsoft Azure portal](#check-bgp-connectivity-and-learned-routes-in-microsoft-azure-portal)
+    1. [Check connectivity in Microsoft Entra admin center](#check-connectivity-in-microsoft-entra-admin-center)
+1. [Test security features with Azure virtual Desktop (AVD)](#test-security-features-with-azure-virtual-desktop-avd)
+    1. [Create a virtual network](#create-a-virtual-network)
+    1. [Add a virtual network connection to the vWAN](#add-a-virtual-network-connection-to-the-vwan)
+    1. [Create an Azure virtual Desktop](#create-an-azure-virtual-desktop)
+        *The Azure virtual Desktop takes about 30 minutes to deploy. The Bastion takes another 30 minutes.*
+    1. [Test the tenant restriction](#test-the-tenant-restriction)
+    1. [Test source IP restoration](#test-source-ip-restoration)
+
 
 ## Set up a vWAN in the Azure portal
 There are three main steps to set up a vWAN:
@@ -47,7 +70,7 @@ Create a vWAN to connect to your resources in Azure. For more information about 
 1.	After filling out the fields, at the bottom of the page, select **Review + create**.
  :::image type="content" source="media/how-to-create-remote-network-vwan/create-vwan.png" alt-text="Screenshot of the Create WAN page with completed fields." lightbox="media/how-to-create-remote-network-vwan/create-vwan-expanded.png"::: 
 
-1.	Once validation passes, select **Create** to create the vWAN.
+1.	Once validation passes, select the **Create** button.
 
 ### Create a virtual hub with a VPN gateway
 Next, create a virtual hub with a site-to-site virtual private network (VPN) gateway:
@@ -89,7 +112,7 @@ To create a remote network in the Microsoft Entra admin center, you need to view
 ## Create a remote network in the Microsoft Entra admin center
 In this step, use the network information from the VPN gateway to create a remote network in the Microsoft Entra admin center. The first step is to provide the name and location of your remote network.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator).
 1. Navigate to **Global Secure Access (preview)** > **Connect** > **Remote networks**.
 1. Select the **Create remote network** button and provide the details.
     - **Name**
