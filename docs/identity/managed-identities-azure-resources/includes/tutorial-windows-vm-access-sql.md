@@ -64,7 +64,7 @@ SQL databases require unique Microsoft Entra ID display names. With this, Micros
 1. Open SQL Server Management Studio.
 1. In the **Connect to Server** dialog, enter your server name in the **Server name** field.
 1. In the **Authentication** field, select **Active Directory - Universal with MFA support**.
-1. In the **User name** field, enter the name of the Microsoft Entra account that you set as the server administrator; for example, helen@woodgroveonline.com.
+1. In the **User name** field, enter the name of the Microsoft Entra account that you set as the server administrator; for example, *cjensen@fabrikam.com*.
 1. Select **Options**.
 1. In the **Connect to database** field, enter the name of the non-system database you want to configure.
 1. Select **Connect**, then complete the sign-in process.

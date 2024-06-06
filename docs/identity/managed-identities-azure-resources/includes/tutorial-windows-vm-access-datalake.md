@@ -23,7 +23,7 @@ In this article, you'll learn how to:
 - An Azure account, [sign up for a free account](https://azure.microsoft.com/free/).
 - *Owner* permissions at the appropriate scope (your subscription or resource group) to perform required resource creation and role management steps. If you need assistance with role assignment, see [Assign Azure roles to manage access to your Azure subscription resources](/azure/role-based-access-control/role-assignments-portal).
 - A Windows virtual machine (VM) that has system assigned managed identities enabled.
-  - If you need to create a VW for this tutorial, see [Create a virtual machine with system-assigned identity enabled](~/identity/managed-identities-azure-resources/how-to-configure-managed-identities.md)
+  - If you need to create a VW for this tutorial, see [Create a virtual machine with system-assigned identity enabled](~/identity/managed-identities-azure-resources/how-to-configure-managed-identities.md).
 
 ## Enable
 
@@ -54,7 +54,7 @@ Your VM's system-assigned managed identity can now perform all operations on fil
 
 ## Access data
 
-Azure Data Lake Store natively supports Microsoft Entra authentication, so that it can directly accept access tokens obtained using managed identities for Azure resources. To authenticate to the Data Lake Store filesystem, you send an access token issued by Microsoft Entra ID to your Data Lake Store filesystem endpoint in an Authorization header. The header has the format "Bearer <ACCESS_TOKEN_VALUE>".
+Azure Data Lake Store natively supports Microsoft Entra authentication, so that it can directly accept access tokens obtained using managed identities for Azure resources. To authenticate to the Data Lake Store filesystem, you send an access token issued by Microsoft Entra ID to your Data Lake Store filesystem endpoint in an Authorization header. The header has the format `Bearer <ACCESS_TOKEN_VALUE>`.
 
 To learn more about Data Lake Store support for Microsoft Entra authentication, see [Authentication with Data Lake Store using Microsoft Entra ID](/azure/data-lake-store/data-lakes-store-authentication-using-azure-active-directory).
 
@@ -121,8 +121,8 @@ In this tutorial, you authenticate to the Data Lake Store filesystem REST API us
 
 1. Using the PowerShell `Invoke-WebRequest` cmdlet, make a request to your Data Lake Store's REST endpoint to upload the file to the folder you created earlier. This request takes two steps.
  
-   1. In the first step, make a request and get a redirection to where the file should be uploaded. 
-   1. In the second step, you actually upload the file. Remember to set the name of the folder and file appropriately if you used different values than indicated in this tutorial. 
+   1. Make a request and get a redirection to where the file should be uploaded. 
+   1. Upload the file. Remember to set the name of the folder and file appropriately if you used different values than indicated in this tutorial. 
 
    ```powershell
    $HdfsRedirectResponse = Invoke-WebRequest -Uri https://<YOUR_ADLS_NAME>.azuredatalakestore.net/webhdfs/v1/TestFolder/Test1.txt?op=CREATE -Method PUT -Headers @{Authorization="Bearer $AccessToken"} -Infile Test1.txt -MaximumRedirection 0

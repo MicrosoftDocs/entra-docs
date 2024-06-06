@@ -116,78 +116,77 @@ For this request, use the following HTTP request parameters to create the SAS cr
 
 The parameters here are included in the POST body of the request for the SAS credential. For more information on parameters for creating a SAS credential, see the [List Service SAS REST reference](/rest/api/storagerp/storage-accounts/list-service-sas).
 
-Next, convert the parameters to JSON, then call the storage `listServiceSas` endpoint to create the SAS credential:
+1. Convert the parameters to JSON, then call the storage `listServiceSas` endpoint to create the SAS credential:
 
-```powershell
-$params = @{canonicalizedResource="/blob/<STORAGE-ACCOUNT-NAME>/<CONTAINER-NAME>";signedResource="c";signedPermission="rcw";signedProtocol="https";signedExpiry="2017-09-23T00:00:00Z"}
-$jsonParams = $params | ConvertTo-Json
-```
+   ```powershell
+   $params = @{canonicalizedResource="/blob/<STORAGE-ACCOUNT-NAME>/<CONTAINER-NAME>";signedResource="c";signedPermission="rcw";signedProtocol="https";signedExpiry="2017-09-23T00:00:00Z"}
+   $jsonParams = $params | ConvertTo-Json
+   ```
 
-```powershell
-$sasResponse = Invoke-WebRequest -Uri https://management.azure.com/subscriptions/<SUBSCRIPTION-ID>/resourceGroups/<RESOURCE-GROUP>/providers/Microsoft.Storage/storageAccounts/<STORAGE-ACCOUNT-NAME>/listServiceSas/?api-version=2017-06-01 -Method POST -Body $jsonParams -Headers @{Authorization="Bearer $ArmToken"}
-```
+   ```powershell
+   $sasResponse = Invoke-WebRequest -Uri https://management.azure.com/subscriptions/<SUBSCRIPTION-ID>/resourceGroups/<RESOURCE-GROUP>/providers/Microsoft.Storage/storageAccounts/<STORAGE-ACCOUNT-NAME>/listServiceSas/?api-version=2017-06-01 -Method POST -Body $jsonParams -Headers @{Authorization="Bearer $ArmToken"}
+   ```
 
-> [!NOTE] 
-> The URL is case-sensitive, so ensure that you use the exact same case used when you named the resource group, including the uppercase "G" in `resourceGroups`. 
+   > [!NOTE] 
+   > The URL is case-sensitive, so ensure that you use the exact same case used when you named the resource group, including the uppercase "G" in `resourceGroups`. 
 
-Now you can extract the SAS credential from the response:
+1. Next, extract the SAS credential from the response:
 
-```powershell
-$sasContent = $sasResponse.Content | ConvertFrom-Json
-$sasCred = $sasContent.serviceSasToken
-```
+   ```powershell
+   $sasContent = $sasResponse.Content | ConvertFrom-Json
+   $sasCred = $sasContent.serviceSasToken
+   ```
 
-If you inspect the SAS credential, you should see something like this:
+1. If you inspect the SAS credential, you should see something like this:
 
-```powershell
-PS C:\> $sasCred
-sv=2015-04-05&sr=c&spr=https&se=2017-09-23T00%3A00%3A00Z&sp=rcw&sig=JVhIWG48nmxqhTIuN0uiFBppdzhwHdehdYan1W%2F4O0E%3D
-```
+   ```powershell
+   PS C:\> $sasCred
+   sv=2015-04-05&sr=c&spr=https&se=2017-09-23T00%3A00%3A00Z&sp=rcw&sig=JVhIWG48nmxqhTIuN0uiFBppdzhwHdehdYan1W%2F4O0E%3D
+   ```
 
-Next, create a file called *test.txt*. Then use the SAS credential to authenticate with the `New-AzStorageContent` cmdlet, upload the file to the blob container, then download the file.
+1. Create a file called *test.txt*. Then use the SAS credential to authenticate with the `New-AzStorageContent` cmdlet, upload the file to the blob container, then download the file.
 
-```bash
-echo "This is a test text file." > test.txt
-```
+   ```bash
+   echo "This is a test text file." > test.txt
+   ```
 
-Be sure to install the Azure Storage cmdlets first, using `Install-Module Azure.Storage`. Then upload the blob you just created, using the PowerShell `Set-AzStorageBlobContent` cmdlet:
+1. Be sure to install the Azure Storage cmdlets first, using `Install-Module Azure.Storage`. Then upload the blob you just created, using the PowerShell `Set-AzStorageBlobContent` cmdlet:
 
-```powershell
-$ctx = New-AzStorageContext -StorageAccountName <STORAGE-ACCOUNT-NAME> -SasToken $sasCred
-Set-AzStorageBlobContent -File test.txt -Container <CONTAINER-NAME> -Blob testblob -Context $ctx
-```
+   ```powershell
+   $ctx = New-AzStorageContext -StorageAccountName <STORAGE-ACCOUNT-NAME> -SasToken $sasCred
+   Set-AzStorageBlobContent -File test.txt -Container <CONTAINER-NAME> -Blob testblob -Context $ctx
+   ```
 
-Response:
+   Response:
 
-```powershell
-ICloudBlob        : Microsoft.WindowsAzure.Storage.Blob.CloudBlockBlob
-BlobType          : BlockBlob
-Length            : 56
-ContentType       : application/octet-stream
-LastModified      : 9/21/2017 6:14:25 PM +00:00
-SnapshotTime      :
-ContinuationToken :
-Context           : Microsoft.WindowsAzure.Commands.Storage.AzureStorageContext
-Name              : testblob
-```
+   ```powershell
+   ICloudBlob        : Microsoft.WindowsAzure.Storage.Blob.CloudBlockBlob
+   BlobType          : BlockBlob
+   Length            : 56
+   ContentType       : application/octet-stream
+   LastModified      : 9/21/2017 6:14:25 PM +00:00
+   SnapshotTime      :
+   ContinuationToken :
+   Context           : Microsoft.WindowsAzure.Commands.Storage.AzureStorageContext
+   Name              : testblob
+   ```
 
-You can also download the blob you uploaded, using the `Get-AzStorageBlobContent` PowerShell cmdlet:
+1. You can also download the blob you uploaded, using the `Get-AzStorageBlobContent` PowerShell cmdlet:
 
-```powershell
-Get-AzStorageBlobContent -Blob testblob -Container <CONTAINER-NAME> -Destination test2.txt -Context $ctx
-```
+   ```powershell
+   Get-AzStorageBlobContent -Blob testblob -Container <CONTAINER-NAME> -Destination test2.txt -Context $ctx
+   ```
 
-Response:
+   Response:
 
-```powershell
-ICloudBlob        : Microsoft.WindowsAzure.Storage.Blob.CloudBlockBlob
-BlobType          : BlockBlob
-Length            : 56
-ContentType       : application/octet-stream
-LastModified      : 9/21/2017 6:14:25 PM +00:00
-SnapshotTime      :
-ContinuationToken :
-Context           : Microsoft.WindowsAzure.Commands.Storage.AzureStorageContext
-Name              : testblob
-```
-
+   ```powershell
+   ICloudBlob        : Microsoft.WindowsAzure.Storage.Blob.CloudBlockBlob
+   BlobType          : BlockBlob
+   Length            : 56
+   ContentType       : application/octet-stream
+   LastModified      : 9/21/2017 6:14:25 PM +00:00
+   SnapshotTime      :
+   ContinuationToken :
+   Context           : Microsoft.WindowsAzure.Commands.Storage.AzureStorageContext
+   Name              : testblob
+   ```
