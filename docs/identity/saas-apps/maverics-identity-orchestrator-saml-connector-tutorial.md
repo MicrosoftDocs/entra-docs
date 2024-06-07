@@ -30,8 +30,7 @@ This hybrid access tutorial demonstrates how to migrate an on-premises web appli
 
 * An Entra ID subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
 * A Maverics Identity Orchestrator Platform account. Sign up at [maverics.strata.io](https://maverics.strata.io).
-* At least one application that uses header based authentication. In our examples, we  are working against an application called Sonar hosted at https://app.sonarsystems.com, and an application called Connectulum hosted at https://app.connectulum.com.
-
+* At least one application that uses header based authentication. In our examples, we will be working against an application called Sonar that will be reachable at `https://localhost:8443`.
 ## Step 1: Setting up the Maverics Orchestrator
 
 After signed up for a Maverics account at [maverics.strata.io](https://maverics.strata.io), use our Learning Center tutorial titled [**Getting Started: Evaluation Environment**](https://maverics.strata.io/learn/redirect?context=environments-create-evaluation). This tutorial takes you through the step-by-step process of creating an evaluation environment, downloading an orchestrator, and installing the orchestrator on your machine. 
@@ -86,5 +85,5 @@ Don't want to rework your network and proxy traffic through the Maverics Orchest
 
 ## Wrapping Up
 
-At this point, we have installed the Maverics Orchestrator, created and configured an enterprise application in Entra ID, and configured the Orchestrator to proxy to a protected application while requiring authentication and enforcing policy. To learn more about how the Maverics Orchestrator can be used for distributed identity management use cases please [contact Strata]((mailto:sales@strata.io)).
+At this point, we have installed the Maverics Orchestrator, created and configured an enterprise application in Entra ID, and configured the Orchestrator to proxy to a protected application while requiring authentication and enforcing policy. To learn more about how the Maverics Orchestrator can be used for distributed identity management use cases please [contact Strata](mailto:sales@strata.io).
 
