@@ -104,7 +104,7 @@ For on-prem apps using the ECMA connector: The recommendation is having 1 active
 
  :::image type="content" source="media/on-premises-application-provisioning-architecture/high-availability-1.png" alt-text="Diagram of high availability with ECMA connector." lightbox="media/on-premises-application-provisioning-architecture/high-availability-1.png":::
 
-For on-prem apps using the SCIM connector: The recommendation is having 2 active agents per application.
+For on-premises apps using the SCIM connector: The recommendation is having 2 active agents per application.
 
  :::image type="content" source="media/on-premises-application-provisioning-architecture/high-availability-2.png" alt-text="Diagram of high availability with SCIM connector." lightbox="media/on-premises-application-provisioning-architecture/high-availability-2.png":::
 
