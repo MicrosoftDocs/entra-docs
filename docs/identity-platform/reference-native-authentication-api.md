@@ -232,7 +232,7 @@ client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 |-----------------------|-------------------------|------------------------|
 | `tenant_subdomain`  |   Yes |  The subdomain of the external tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).|
 | `client_id`         |   Yes    | The Application (client) ID of the app you registered in the Microsoft Entra admin center.|
-| `challenge_type`    |   No  | A space-separated list of authorization [challenge type](#sign-up-challenge-types) strings that the app supports such as `oob password redirect`. The list must always include the `redirect` challenge type. The value is expected to be `oob redirect` or `oob password redirect` for email with password authentication method.|
+| `challenge_type`    |   No  | A space-separated list of authorization [challenge type](#sign-in-challenge-types) strings that the app supports such as `oob password redirect`. The list must always include the `redirect` challenge type. The value is expected to `oob redirect` for email one-time passcode and `oob password redirect` for email with password authentication method.|
 |`continuation_token`| Yes |[Continuation token](#continuation-token) that Microsoft Entra returned in the previous request.|
 
 #### Success response
@@ -916,7 +916,7 @@ client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 | `tenant_subdomain`  |   Yes |  The subdomain of the external tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).|
 | `client_id`         |   Yes    | The Application (client) ID of the app you registered in the Microsoft Entra admin center.                |
 | `username`          |    Yes   |   Email of the customer user such as *contoso-consumer@contoso.com*.  |
-| `challenge_type`    |   Yes  | A space-separated list of authorization [challenge type](#sign-in-challenge-types) strings that the app supports such as `oob password redirect`. The list must always include the `redirect` challenge type. For the email with password sign-in flow, the value is expected to contain `password redirect`.|
+| `challenge_type`    |   Yes  | A space-separated list of authorization [challenge type](#sign-in-challenge-types) strings that the app supports such as `oob password redirect`. The list must always include the `redirect` challenge type. The value is expected to `oob redirect` for email one-time passcode and `password redirect` for email with password.|
 
 #### Success response
 
@@ -1006,7 +1006,7 @@ If the error parameter has a value of *invalid_client*, Microsoft Entra includes
 
 ### Step 2: Select an authentication method
 
-To continue with the flow, the app uses the continuation token acquired from the previous step to request Microsoft Entra to select one of the supported challenge types for the user to authenticate with. The app makes a POST request to the `/challenge` endpoint.
+To continue with the flow, the app uses the continuation token it acquires from the previous step to request Microsoft Entra to select one of the supported challenge types for the user to authenticate with. The app makes a POST request to the `/challenge` endpoint.
 
 Here's an example of the request (we present the example request in multiple lines for readability):
 
@@ -1024,10 +1024,38 @@ client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 | `tenant_subdomain`  |   Yes |  The subdomain of the external tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).|
 | `client_id`       |   Yes   | The Application (client) ID of the app you registered in the Microsoft Entra admin center.|
 | `continuation_token` |    Yes   | [Continuation token](#continuation-token) that Microsoft Entra returned in the previous request. |
-| `challenge_type`    |   No  | A space-separated list of authorization [challenge type](#sign-in-challenge-types) strings that the app supports such as `oob password redirect`. The list must always include the `redirect` challenge type. For the email with password flow, the value is expected to be `password redirect`.|
+| `challenge_type`    |   No  | A space-separated list of authorization [challenge type](#sign-in-challenge-types) strings that the app supports such as `oob password redirect`. The list must always include the `redirect` challenge type. The value is expected to `oob redirect` for email one-time passcode and `password redirect` for email with password.|
 
 #### Success response
+# [Email one-time passcode](#tab/emailOtp)
+If the tenant administrator configured email one-time passcode in the Microsoft Entra admin center as the user’s authentication method, Microsoft Entra sends a one-time passcode to the user’s email, then responds with a challenge type of *oob* and provides more information about the one-time passcode.
 
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+```
+
+```json
+{
+    "continuation_token": "uY29tL2F1dGhlbnRpY...",
+    "challenge_type": "oob",
+    "binding_method": "prompt ", 
+    "challenge_channel": "email",
+    "challenge_target_label ": "c***r@co**o**o.com ",
+    "code_length": 8
+} 
+```
+
+|    Parameter     | Description        |
+|----------------------|------------------------|
+| `continuation_token`  | [Continuation token](#continuation-token) that Microsoft Entra returns. |
+|`challenge_type`| Challenge type selected for the user to authenticate with.|
+|`binding_method`|The only valid value is *prompt*. This parameter can be used in the future to offer more ways for the user to enter the one-time passcode. Issued if `challenge_type` is *oob*  |
+|`challenge_channel`| The type of the channel through which the one-time passcode was sent. At the moment, we support email. |
+|`challenge_target_label` |An obfuscated email where the one-time passcode was sent.|
+|`code_length`|The length of the one-time passcode that Microsoft Entra generates. |
+
+# [Email with password](#tab/emailPassword)
 If the tenant administrator configured email with password in the Microsoft Entra admin center as the user’s authentication method, Microsoft Entra returns a success response, which includes a challenge type of *password*.
 
 Example:
@@ -1048,6 +1076,7 @@ Content-Type: application/json
 |----------------------|------------------------|
 | `continuation_token`  |  [Continuation token](#continuation-token) that Microsoft Entra returns. |  
 |`challenge_type`|Microsoft Entra returns the supported challenge type configured for the user in the Microsoft Entra admin center. In this case the values is expected to be *password*.|
+---
 
 If an app can't support a required authentication method by Microsoft Entra, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in its response:
 
@@ -1130,9 +1159,10 @@ continuation_token=uY29tL2F1dGhlbnRpY...
 | `tenant_subdomain`  |   Yes |  The subdomain of the external tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).|
 | `client_id`       |   Yes   | The Application (client) ID of the app you registered in the Microsoft Entra admin center.|
 | `continuation_token`          |    Yes   |  [Continuation token](#continuation-token) that Microsoft Entra returned in the previous request. |
-|`grant_type`| Yes |The value must be *password*. |
+|`grant_type`| Yes |The value must be *password* for email with password authentication method and *oob* for email one-time passcode authentication method. |
 |`scope`| Yes | A space-separated list of scopes. All the scopes must be from a single resource, along with OpenID Connect (OIDC) scopes, such as *profile*, *openid, and *email*. The app needs to include *openid* scope for Microsoft Entra to issue an ID token. The app needs to include *offline_access* scope for Microsoft Entra to issue a refresh token. Learn more about [Permissions and consent in the Microsoft identity platform](permissions-consent-overview.md). |
-|   `password`    | Yes | The password value that the app collects from the customer user. Replace `{secure_password}` with the password value that the app collects from the customer user.|
+|   `password`    | Yes <br> (for email with password) | The password value that the app collects from the customer user. Replace `{secure_password}` with the password value that the app collects from the customer user.|
+|`oob`| Yes <br> (for email one-time passcode) |The one-time passcode that the customer user received in their email. Replace `{otp_code}` with the one-time passcode that the customer user received in their email. To **resend a one-time passcode**, the app needs to make a request to the `/challenge` endpoint again. |
 
 #### Successful response
 
@@ -1200,8 +1230,15 @@ Here are the possible errors you can encounter (possible values of the `error` p
 |----------------------|------------------------|
 | `invalid_request`  |  Request parameter validation failed. To understand what happened, use the message in the error description.   |  
 |`invalid_grant`|The continuation token included in the request isn't valid or customer user sign in credentials included in the request are invalid or the grant type included in the request is unknown.  |
+|`invalid_client`| The client ID included in the request isn't for a public client. |
 |`expired_token`|The continuation token included in the request is expired. |
 |`invalid_scope`| One or more of the scoped included in the request are invalid.|
+
+If the error parameter has a value of *invalid_grant*, Microsoft Entra includes a `suberror` parameter in its response. Here are the possible values of the `suberror` parameter for an *invalid_grant* error:
+
+|    Suberror value     | Description        |
+|----------------------|------------------------|
+|`invalid_oob_value`| The value of one-time passcode is invalid. This sub-error only applies email one-time passcode |
 
 ## Self-service password reset (SSPR)
 
