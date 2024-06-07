@@ -94,18 +94,19 @@ When you target the Windows Azure Service Management API application, policy is 
 
 Because the policy is applied to the Azure management portal and API, services, or clients with an Azure API service dependency, can indirectly be impacted. For example:
 
-- Classic deployment model APIs
-- Azure PowerShell
 - Azure CLI
-- Azure DevOps
 - Azure Data Factory portal
+- Azure DevOps
 - Azure Event Hubs
+- Azure PowerShell
 - Azure Service Bus
 - Azure SQL Database
-- SQL Managed Instance
 - Azure Synapse
-- Visual Studio subscriptions administrator portal
+- Classic deployment model APIs
+- Microsoft 365 admin center
 - Microsoft IoT Central
+- SQL Managed Instance
+- Visual Studio subscriptions administrator portal
 
 > [!NOTE]
 > The Windows Azure Service Management API application applies to [Azure PowerShell](/powershell/azure/what-is-azure-powershell), which calls the [Azure Resource Manager API](/azure/azure-resource-manager/management/overview). It does not apply to [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview), which calls the [Microsoft Graph API](/graph/overview).
