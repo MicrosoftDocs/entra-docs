@@ -112,7 +112,8 @@ foreach ($item in $allApps) {
                 type="X509CertAndPassword";
                 value = [convert]::ToBase64String((Get-Content $certPfxFilePath -Encoding byte));
             };
-            verifiedCustomDomainPasswordCredential = @{ value = $securePassword };
+            verifiedCustomDomainPasswordCredential = @{
+                value = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto([System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($securePassword)) };
          }
       }
 
