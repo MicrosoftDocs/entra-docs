@@ -16,8 +16,6 @@ ms.topic: quickstart
 
 In this quickstart, you download and run a code sample that demonstrates how an Android application can sign in users and get an access token to call the Microsoft Graph API.
 
-See [How the sample works](#how-the-sample-works) for an illustration.
-
 Applications must be represented by an app object in Microsoft Entra ID so that the Microsoft identity platform can provide tokens to your application.
 
 ## Prerequisites
