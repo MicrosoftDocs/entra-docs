@@ -1,6 +1,6 @@
 ---
 title: Manage access to your SAP applications
-description: Learn how to bring identities from SAP SuccessFactors into Microsoft Entra ID and provision access to SAP ECC, SAP S/4HANA, and other SAP applications.
+description: Learn how to bring identities from SAP SuccessFactors into Microsoft Entra ID and provision access to SAP ERP Central Component (ECC), SAP S/4HANA, and other SAP applications.
 author: owinfreyATL
 manager: amycolannino
 editor: markwahl-msft
@@ -109,6 +109,7 @@ For more information about SAP integrations with Microsoft Entra ID, see the fol
 
 - [Secure access with SAP Cloud Identity Services and Microsoft Entra ID](../fundamentals/scenario-azure-first-sap-identity-integration.md)
 - [SAP workload security - Microsoft Azure Well-Architected Framework](/azure/architecture/framework/sap/security)
+- [Services and integration partners for deploying Microsoft Entra with SAP applications](~/identity/app-provisioning/migrate-from-sap-idm.md#services-and-integration-partners-for-deploying-microsoft-entra-with-sap-applications)
 
 ## Next steps
 
