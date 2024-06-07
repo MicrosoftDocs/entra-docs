@@ -881,14 +881,17 @@ Learn more about challenge types in the [native authentication challenge types](
 The sequence diagram demonstrates the flow of the sign in process.
 
 # [Email one-time passcode](#tab/emailOtp)
+
 :::image type="content" source="media/reference-native-auth-api/sign-in-email-otp.png" alt-text="Diagram of native authentication sign-in with email one-time passcode."::: 
 
 After the app verifies the user's email with OTP, it receives security tokens. If the delivery of the one-time passcode delays or is never delivered to the user's email, the user can request to be sent another one-time passcode. Microsoft Entra resends another one-time passcode if the previous one hasn't been verified. When Microsoft Entra resends a one-time passcode, it invalidates the previously sent code.
 
 # [Email with password](#tab/emailPassword)
+
 :::image type="content" source="media/reference-native-auth-api/sign-in-email-with-password.png" alt-text="Diagram of native auth sign in with email and password option."::: 
 
 This diagram indicates that the app collects username (email) and password from the user at different times (and possibly on separate screens). However, you can design your app to collect the two values in the same screen. If you collect the username (email) and password in the same screen, steps **two** and **three** gets merged with steps **eight** and **nine**. In this case, the app holds the password, then submits it in step **ten** where it's required.
+
 ---
 
 In the sections that follow, we summarize the sequence diagram flow into three basic steps.
