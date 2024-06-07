@@ -48,7 +48,7 @@ You can also view the one-time bypass report from this same window.
 
 ## Caching rules
 
-You can set a time period to allow authentication attempts after a user is authenticated by using the _caching_ feature. Subsequent authentication attempts for the user within the specified time period succeed automatically.
+You can set a time period to allow authentication attempts after a user is authenticated by using the *caching* feature. Subsequent authentication attempts for the user within the specified time period succeed automatically.
 
 Caching is primarily used when on-premises systems, such as VPN, send multiple verification requests while the first request is still in progress. This feature allows the subsequent requests to succeed automatically, after the user succeeds the first verification in progress.
 

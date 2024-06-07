@@ -76,11 +76,10 @@ Here are examples of the request(we present the example request in multiple line
 Example 1:
 
 ```http
-POST /{tenant_subdomain}.onmicrosoft.com/signup/v1.0/start HTTP/1.1
-Host: {tenant_subdomain}.ciamlogin.com
+POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/signup/v1.0/start
 Content-Type: application/x-www-form-urlencoded
 
-client_id=111101-14a6-abcd-97bc-abcd1110011
+client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &challenge_type=oob password redirect
 &username=contoso-consumer@contoso.com 
 ```
@@ -88,11 +87,10 @@ client_id=111101-14a6-abcd-97bc-abcd1110011
 Example 2 (include user attributes and password in the request):
 
 ```http
-POST /{tenant_subdomain}.onmicrosoft.com/signup/v1.0/start HTTP/1.1
-Host: {tenant_subdomain}.ciamlogin.com
+POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/signup/v1.0/start
 Content-Type: application/x-www-form-urlencoded
 
-client_id=111101-14a6-abcd-97bc-abcd1110011
+client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &challenge_type=oob password redirect
 &password={secure_password}
 &attributes={"name": "{user_name}", "extension_2588abcdwhtfeehjjeeqwertc_age": "{user_age}", "phone": "{user_phone}"}
@@ -218,11 +216,10 @@ When the request for the continuation token is done, the app needs to request Mi
 Here's an example of the request(we present the example request in multiple lines for readability).
 
 ```http
-POST /{tenant_subdomain}.onmicrosoft.com/signup/v1.0/challenge HTTP/1.1
-Host: {tenant_subdomain}.ciamlogin.com
+POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/signup/v1.0/challenge
 Content-Type: application/x-www-form-urlencoded
 
-client_id=111101-14a6-abcd-97bc-abcd1110011
+client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &challenge_type=oob password redirect
 &continuation_token=AQABAAEAAA…
 ```
@@ -332,12 +329,11 @@ The app submits the  one-time passcode sent to the user's email. Since we're sub
 Here's an example of the request(we present the example request in multiple lines for readability):
 
 ```http
-POST /{tenant_subdomain}.onmicrosoft.com/signup/v1.0/continue HTTP/1.1
-Host: {tenant_subdomain}.ciamlogin.com
+POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/signup/v1.0/continue
 Content-Type: application/x-www-form-urlencoded
 
 continuation_token=uY29tL2F1dGhlbnRpY...
-&client_id=111101-14a6-abcd-97bc-abcd1110011 
+&client_id=00001111-aaaa-2222-bbbb-3333cccc4444 
 &grant_type=oob 
 &oob={otp_code}
 ```
@@ -411,11 +407,10 @@ For the password credential to be collected from the user, the app needs to make
 Here's an example of the request(we present the example request in multiple lines for readability):
 
 ```http
-POST /{tenant_subdomain}.onmicrosoft.com/signup/v1.0/challenge HTTP/1.1
-Host: {tenant_subdomain}.ciamlogin.com
+POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/signup/v1.0/challenge
 Content-Type: application/x-www-form-urlencoded
 
-client_id=111101-14a6-abcd-97bc-abcd1110011
+client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &challenge_type=oob password redirect
 &continuation_token=AQABAAEAAA…
 ```
@@ -474,12 +469,11 @@ The app needs to submit the user's credential, in this case password, that Micro
 Here's an example of the request(we present the example request in multiple lines for readability):
 
 ```http
-POST /{tenant_subdomain}.onmicrosoft.com/signup/v1.0/continue HTTP/1.1
-Host: {tenant_subdomain}.ciamlogin.com
+POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/signup/v1.0/continue
 Content-Type: application/x-www-form-urlencoded
 
 continuation_token=uY29tL2F1dGhlbnRpY...
-&client_id=111101-14a6-abcd-97bc-abcd1110011 
+&client_id=00001111-aaaa-2222-bbbb-3333cccc4444 
 &grant_type=password 
 &password={secure_password}
 ```
@@ -645,11 +639,10 @@ To continue with the flow, the app needs to make a call to the `/signup/v1.0/con
 Here's an example of the request(we present the example request in multiple lines for readability):
 
 ```http
-POST /{tenant_subdomain}.onmicrosoft.com/signup/v1.0/continue HTTP/1.1
-Host: {tenant_subdomain}.ciamlogin.com
+POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/signup/v1.0/continue
 Content-Type: application/x-www-form-urlencoded
 
-&client_id=111101-14a6-abcd-97bc-abcd1110011 
+&client_id=00001111-aaaa-2222-bbbb-3333cccc4444 
 &grant_type=attributes 
 &attributes={"name": "{user_name}", "extension_2588abcdwhtfeehjjeeqwertc_age": "{user_age}", "phone": "{user_phone}"}
 &continuation_token=AQABAAEAAAAtn...
@@ -761,12 +754,11 @@ The app makes a POST request to the `/token` endpoint and provides the continuat
 Here's an example of the request (we present the example request in multiple lines for readability):
 
 ```http
-POST /{tenant_subdomain}.onmicrosoft.com/oauth2/v2.0/token HTTP/1.1
-Host: {tenant_subdomain}.ciamlogin.com
+POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/oauth2/v2.0/token
 Content-Type: application/x-www-form-urlencoded
  
 continuation_token=ABAAEAAAAtyo... 
-&client_id=111101-14a6-abcd-97bc-abcd1110011 
+&client_id=00001111-aaaa-2222-bbbb-3333cccc4444 
 &username=contoso-consumer@contoso.com
 &scope={scopes}
 &grant_type=continuation_token 
@@ -860,7 +852,9 @@ Here are the possible errors you can encounter (possible values of the `error` p
 
 ## Sign-in API reference
 
-To request your security tokens, your app interacts with three endpoints, `/initiate`, `/challenge` and `/token`.
+Users who sign up using email with password authentication method must sign in using the same authentication method.
+
+To request for security tokens, your app interacts with three endpoints, `/initiate`, `/challenge` and `/token`.
 
 ### Sign-in API endpoints
 
@@ -895,11 +889,10 @@ The authentication flow begins with the application making a POST request to the
 Here's an example of the request(we present the example request in multiple lines for readability):
 
 ```http
-POST /{tenant_subdomain}.onmicrosoft.com/oauth2/v2.0/initiate HTTP/1.1
-Host: {tenant_subdomain}.ciamlogin.com
+POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/oauth2/v2.0/initiate
 Content-Type: application/x-www-form-urlencoded
 
-client_id=111101-14a6-abcd-97bc-abcd1110011
+client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &challenge_type=password redirect
 &username=contoso-consumer@contoso.com 
 ```
@@ -1004,11 +997,10 @@ To continue with the flow, the app uses the continuation token acquired from the
 Here's an example of the request (we present the example request in multiple lines for readability):
 
 ```http
-POST /{tenant_subdomain}.onmicrosoft.com/oauth2/v2.0/challenge HTTP/1.1
-Host: {tenant_subdomain}.ciamlogin.com
+POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/oauth2/v2.0/challenge
 Content-Type: application/x-www-form-urlencoded
 
-client_id=111101-14a6-abcd-97bc-abcd1110011
+client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &challenge_type=password redirect 
 &continuation_token=uY29tL2F1dGhlbnRpY... 
 ```
@@ -1109,12 +1101,11 @@ The app makes a POST request to the `/token` endpoint and provides the user’s 
 Here's an example of the request(we present the example request in multiple lines for readability):
 
 ```http
-POST /{tenant_subdomain}.onmicrosoft.com/oauth2/v2.0/token HTTP/1.1
-Host: {tenant_subdomain}.ciamlogin.com
+POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/oauth2/v2.0/token
 Content-Type: application/x-www-form-urlencoded
 
 continuation_token=uY29tL2F1dGhlbnRpY...
-&client_id=111101-14a6-abcd-97bc-abcd1110011 
+&client_id=00001111-aaaa-2222-bbbb-3333cccc4444 
 &grant_type=password 
 &password={secure_password}
 &scope=openid offline_access 
@@ -1200,7 +1191,7 @@ Here are the possible errors you can encounter (possible values of the `error` p
 
 ## Self-service password reset (SSPR)
 
-If you use email and password as the authentication method in your app, use the self-service password reset (SSPR) API enable customer users to reset their password. You can use this API for forgot password or change password scenarios.
+If you use email and password as the authentication method in your app, use the self-service password reset (SSPR) API to enable customer users to reset their password. Use this API for forgot password or change password scenarios.
 
 ### Self-service password reset API endpoints
 
@@ -1238,11 +1229,10 @@ The password reset flow starts with the app making a POST request to the `/start
 Here's an example of the request (we present the example request in multiple lines for readability):
 
 ```http
-POST /{tenant_subdomain}.onmicrosoft.com/resetpassword/v1.0/start HTTP/1.1
-Host: {tenant_subdomain}.ciamlogin.com
+POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/resetpassword/v1.0/start
 Content-Type: application/x-www-form-urlencoded
 
-client_id=111101-14a6-abcd-97bc-abcd1110011 
+client_id=00001111-aaaa-2222-bbbb-3333cccc4444 
 &challenge_type=oob redirect 
 &username=contoso-consumer@contoso.com 
 ```
@@ -1347,11 +1337,10 @@ To continue with the flow, the app uses the continuation token acquired from the
 Here's an example (we present the example request in multiple lines for readability):
 
 ```http
-POST /{tenant_subdomain}.onmicrosoft.com/resetpassword/v1.0/challenge HTTP/1.1
-Host: {tenant_subdomain}.ciamlogin.com
+POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/resetpassword/v1.0/challenge
 Content-Type: application/x-www-form-urlencoded
 
-client_id=client_id=111101-14a6-abcd-97bc-abcd1110011
+client_id=client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &challenge_type=oob redirect
 &continuation_token=uY29tL2F1dGhlbnRpY... 
 ```
@@ -1457,8 +1446,7 @@ The app then makes a POST request to the `/continue` endpoint. In the request, t
 Here's an example of the request (we present the example request in multiple lines for readability):
 
 ```http
-POST /{tenant_subdomain}.onmicrosoft.com/resetpassword/v1.0/continue HTTP/1.1
-Host: {tenant_subdomain}.ciamlogin.com
+POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/resetpassword/v1.0/continue
 Content-Type: application/x-www-form-urlencoded
 
 continuation_token=uY29tL2F1dGhlbnRpY... 
@@ -1551,11 +1539,10 @@ The app collects a new password from the user, then uses the *continuation token
 Here's an example (we present the example request in multiple lines for readability):
 
 ```http
-POST /{tenant_subdomain}.onmicrosoft.com/resetpassword/v1.0/submit HTTP/1.1
-Host: {tenant_subdomain}.ciamlogin.com
+POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/resetpassword/v1.0/submit
 Content-Type: application/x-www-form-urlencoded
 
-client_id=111101-14a6-abcd-97bc-abcd1110011
+client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &continuation_token=czZCaGRSa3F0Mzp...
 &new_password={new_password}
 ```
@@ -1646,11 +1633,10 @@ Lastly, since updating of the user’s configuration with the new password incur
 Here's an example (we present the example request in multiple lines for readability):
 
 ```http
-POST /{tenant_subdomain}.onmicrosoft.com/resetpassword/v1.0/poll_completion HTTP/1.1
-Host: {tenant_subdomain}.ciamlogin.com
+POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/resetpassword/v1.0/poll_completion
 Content-Type: application/x-www-form-urlencoded
 
-client_id=111101-14a6-abcd-97bc-abcd1110011
+client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &continuation_token=czZCaGRSa3F0... 
 ```
 

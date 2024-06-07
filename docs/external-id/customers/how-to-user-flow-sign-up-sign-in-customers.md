@@ -18,6 +18,8 @@ ms.custom: it-pro
 
 # Create a sign-up and sign-in user flow
 
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
 > [!TIP]
 > This article applies to user flows in external tenants. For information about workforce tenants, see [Add a self-service sign-up user flow to an app](../self-service-sign-up-user-flow.yml).
 

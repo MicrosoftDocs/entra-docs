@@ -17,8 +17,8 @@ To create a security group, follow these steps:
 1. Browse to **Identity** > **Groups** > **All groups**.
 1. Select **New group**.
 1. Under **Group type** dropdown, select **Security**.
-1. Enter **Group name** for the security group, such as _Contoso_App_Administrators_.
-1. Enter **Group description** for the security group, such as _Contoso app Security Administrator_.
+1. Enter **Group name** for the security group, such as *Contoso_App_Administrators*.
+1. Enter **Group description** for the security group, such as *Contoso app Security Administrator*.
 1. Select **Create**.
 
 The new security group appears in the **All groups** list. If you don't see it immediately, refresh the page.

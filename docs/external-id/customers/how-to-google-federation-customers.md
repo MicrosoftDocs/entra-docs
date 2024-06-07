@@ -16,6 +16,8 @@ ms.custom: it-pro, has-azure-ad-ps-ref
 
 # Add Google as an identity provider (preview)
 
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
 By setting up federation with Google, you allow customers to sign in to your applications with their own Google accounts. After you add Google as one of your user flow's sign-in options, customers can sign up and sign in to your application with a Google account. (Learn more about [authentication methods and identity providers for customers](concept-authentication-methods-customers.md).)
 
 > [!TIP]
@@ -72,7 +74,7 @@ After you create the Google application, in this step you set the Google client 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com). 
 1. Browse to **Identity** > **External Identities** > **All identity providers**.
-1. Select **+ Google**.
+1. On the **Built-in** tab, next to **Google**, select **Configure**.
 
    <!-- ![Screenshot that shows how to add Google identity provider in Microsoft Entra ID.](./media/sign-in-with-google/configure-google-idp.png)-->
 

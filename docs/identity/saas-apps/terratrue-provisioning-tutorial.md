@@ -13,7 +13,7 @@ ms.subservice: saas-apps
 
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: Thwimmer
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to TerraTrue so that I can streamline the user management process and ensure that users have the appropriate access to TerraTrue.

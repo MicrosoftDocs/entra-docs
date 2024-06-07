@@ -855,7 +855,7 @@ When you click on any of the provisioning log records, the **Activity Details** 
   EventName : EntryExportAdd // Implies that object is created
   JoiningProperty : 21023 // Value of the Workday attribute that serves as the Matching ID
   SourceAnchor : a071861412de4c2486eb10e5ae0834c3 // set to the WorkdayID (WID) associated with the profile in Workday
-  TargetAnchor : 83f0156c-3222-407e-939c-56677831d525 // set to the value of the AD "objectGuid" attribute of the new user
+  TargetAnchor : aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb // set to the value of the AD "objectGuid" attribute of the new user
   ```
 
   To find Provisioning Agent log records corresponding to this AD export operation, open the Windows Event Viewer logs and use the **Find…** menu option to find log entries containing the Matching ID/Joining Property attribute value (in this case *21023*).  
@@ -879,7 +879,7 @@ The first 4 records are like the ones we explored as part of the user create ope
   ```JSON
   // Modified Properties
   Name : manager
-  New Value : "83f0156c-3222-407e-939c-56677831d525" // objectGuid of the user 21023
+  New Value : "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb" // objectGuid of the user 21023
 
   // Additional Details
   ErrorCode : None // Use the error code captured here to troubleshoot AD account creation issues
@@ -930,7 +930,7 @@ During the AD user account update process, the provisioning service reads inform
 |#|Error Scenario |Probable Causes|Recommended Resolution|
 |--|---|---|---|
 |1.| Synchronization rule action failures in the provisioning log with the message *EventName = EntrySynchronizationError and ErrorCode = EndpointUnavailable*. | This error shows up if the provisioning service is unable to retrieve user profile data from Active Directory due to a processing error encountered by the on-premises provisioning agent. | Check the Provisioning Agent Event Viewer logs for error events that indicate issues with the read operation (Filter by Event ID #2). |
-|2.| The manager attribute in AD doesn't get updated for certain users in AD. | The most likely cause of this error is if you are using scoping rules and the user's manager is not part of the scope. You may also run into this issue if the manager's matching ID attribute (e.g. EmployeeID) is not found in the target AD domain or not set to the correct value. | Review the scoping filter and add the manager user in scope. Check the manager's profile in AD to make sure that there is a value for the matching ID attribute. |
+|2.| The manager attribute in AD doesn't get updated for certain users in AD. | The most likely cause of this error is if you are using scoping rules and the user's manager is not part of the scope. You may also run into this issue if the manager's matching ID attribute (such as EmployeeID) is not found in the target AD domain or not set to the correct value. | Review the scoping filter and add the manager user in scope. Check the manager's profile in AD to make sure that there is a value for the matching ID attribute. |
 
 ## Managing your configuration
 

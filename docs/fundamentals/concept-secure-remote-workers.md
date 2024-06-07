@@ -1,18 +1,17 @@
 ---
-title: Secure your organization's identities with Microsoft Entra ID
-description: Improve your security posture and empower users with Microsoft Entra ID.
+title: Secure your organization's identities
+description: Improve your security posture and empower users with Microsoft Entra ID with the principles of Zero Trust architecture.
 
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: conceptual
-ms.date: 05/10/2024
+ms.date: 05/31/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
-ms.reviewer: lhuangnorth, martinco
 
-ms.collection: M365-identity-device-management
+ms.reviewer: lhuangnorth, martinco
 ms.custom: zt-include
 ---
 

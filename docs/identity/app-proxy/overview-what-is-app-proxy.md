@@ -58,7 +58,7 @@ Application proxy supports single sign-on. For more information on supported met
 Previously, your control plane for protecting internal resources from attackers while facilitating access by remote users was all in the DMZ or perimeter network. But the VPN and reverse proxy solutions deployed in the DMZ used by external clients to access corporate resources aren't suited to the cloud world. They typically suffer from the following drawbacks:
 
 * Hardware costs
-* Maintaining security (patching, monitoring ports, etc.)
+* Maintaining security (patching, monitoring ports, and so on)
 * Authenticating users at the edge
 * Authenticating users to web servers in the perimeter network
 * Maintaining VPN access for remote users with the distribution and configuration of VPN client software. Also, maintaining domain-joined servers in the DMZ, which can be vulnerable to outside attacks.
@@ -70,7 +70,7 @@ In today's cloud-first world, Microsoft Entra ID is best suited to control who a
 In today's digital workplace, users work anywhere with multiple devices and apps. The only constant is user identity. That's why the first step to a secure network today is to use [Microsoft Entra identity management](/azure/security/fundamentals/identity-management-overview) capabilities as your security control plane. A model that uses identity as your control plane is typically comprised of the following components:
 
 * An identity provider to keep track of users and user-related information.
-* Device directory to maintain a list of devices that have access to corporate resources. This directory includes corresponding device information (for example, type of device, integrity etc.).
+* Device directory to maintain a list of devices that have access to corporate resources. This directory includes corresponding device information (for example, type of device, integrity, and so on).
 * Policy evaluation service to determine if a user and device conform to the policy set forth by security admins.
 * The ability to grant or deny access to organizational resources.
 
@@ -138,7 +138,7 @@ For more information on supported methods, see [Choosing a single sign-on method
 
 ### Security benefits
 
-The remote access solution offered by application proxy and Microsoft Entra ID support several security benefits customers may take advantage of, including:
+The remote access solution offered by application proxy and Microsoft Entra support several security benefits customers may take advantage of, including:
 
 * **Authenticated access**. Application proxy is best suited to publish applications with [pre-authentication](./application-proxy-security.md#authenticated-access) to ensure that only authenticated connections hit your network. No traffic is allowed to pass through the application proxy service to your on-premises environment without a valid token for applications published with pre-authentication. Pre-authentication, by its very nature, blocks a significant number of targeted attacks, as only authenticated identities can access the backend application.
 * **Conditional Access**. Richer policy controls can be applied before connections to your network are established. With Conditional Access, you can define restrictions on the traffic that you allow to hit your backend application. You create policies that restrict sign-ins based on location, the strength of authentication, and user risk profile. As Conditional Access evolves, more controls are being added to provide additional security such as integration with Microsoft Defender for Cloud Apps. Defender for Cloud Apps integration enables you to configure an on-premises application for [real-time monitoring](./application-proxy-integrate-with-microsoft-cloud-application-security.md) by leveraging Conditional Access to monitor and control sessions in real-time based on Conditional Access policies.
@@ -173,7 +173,7 @@ The diagram illustrates in general how Microsoft Entra authentication services a
 Microsoft Entra application proxy consists of the cloud-based application proxy service and an on-premises connector. The connector listens for requests from the application proxy service and handles connections to the internal applications. It's important to note that all communications occur over TLS, and always originate at the connector to the application proxy service. That is, communications are outbound only. The connector uses a client certificate to authenticate to the application proxy service for all calls. The only exception to the connection security is the initial setup step where the client certificate is established. See the application proxy [Under the hood](./application-proxy-security.md#under-the-hood) for more details.
 
 ### Microsoft Entra private network connector
-Application proxy uses the Microsoft Entra private network connector. The same connector is used by Microoft Entra Private Access. To learn more about connectors, see [Microsoft Entra private network connector](../../global-secure-access/concept-connectors.md).
+Application proxy uses the Microsoft Entra private network connector. The same connector is used by Microsoft Entra Private Access. To learn more about connectors, see [Microsoft Entra private network connector](../../global-secure-access/concept-connectors.md).
 
 ## Other use cases
 

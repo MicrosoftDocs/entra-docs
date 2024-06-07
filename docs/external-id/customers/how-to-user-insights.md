@@ -17,6 +17,8 @@ ms.custom: it-pro
 ---
 # Gain insights into your app users’ activity
 
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
 The Application user activity  feature under Usage & insights provides data analytics on user activity and engagement for registered applications in your tenant. You can use this feature to view, query, and analyze user activity data in the Microsoft Entra admin center. This can help you uncover valuable insights that can aid strategic decisions and drive business growth.
 
 > [!TIP]

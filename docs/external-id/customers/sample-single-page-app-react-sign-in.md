@@ -28,7 +28,7 @@ This guide uses a sample React single-page application (SPA) to demonstrate how 
 [!INCLUDE [active-directory-b2c-register-app](./includes/register-app/register-client-app-common.md)]
 [!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/register-app/add-platform-redirect-url-react.md)]
 
-## Grant API permissions
+## Grant admin consent
 
 [!INCLUDE [active-directory-b2c-grant-delegated-permissions](./includes/register-app/grant-api-permission-sign-in.md)]
 
@@ -68,7 +68,7 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 
 ## Configure the sample SPA
 
-1. Open _SPA\src\authConfig.js_ and replace the following with the values obtained from the Microsoft Entra admin center:
+1. Open *SPA\src\authConfig.js* and replace the following with the values obtained from the Microsoft Entra admin center:
 
      * `Enter_the_Application_Id_Here` and replace it with the Application (client) ID of the app you registered earlier.
      * `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).

@@ -14,6 +14,8 @@ ms.date: 05/11/2024
 
 # Native authentication SDK attribute builder
 
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
 In native authentication, the information you collect from the user during sign-up is configured in the user flow in the Microsoft Entra admin center. The name of the user attribute as it appears in the Microsoft Entra admin center is different from the variable name that you use when you reference it in your app. 
 
 Fortunately, the native authentication SDK enables you to build the user attributes and assign values to them before you use them in the SDKs `signUp()` method.
