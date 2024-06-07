@@ -1076,6 +1076,7 @@ Content-Type: application/json
 |----------------------|------------------------|
 | `continuation_token`  |  [Continuation token](#continuation-token) that Microsoft Entra returns. |  
 |`challenge_type`|Microsoft Entra returns the supported challenge type configured for the user in the Microsoft Entra admin center. In this case the values is expected to be *password*.|
+
 ---
 
 If an app can't support a required authentication method by Microsoft Entra, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in its response:
