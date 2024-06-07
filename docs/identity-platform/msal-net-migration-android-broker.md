@@ -5,7 +5,7 @@ author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
 ms.custom: has-adal-ref
-ms.date: 08/31/2020
+ms.date: 06/04/2024
 ms.reviewer: saeeda, negoe
 ms.service: identity-platform
 
@@ -20,6 +20,9 @@ If you have a Xamarin Android app currently using the Azure Active Directory Aut
 ## Prerequisites
 
 * A Xamarin Android app already integrated with a broker ([Microsoft Authenticator](https://play.google.com/store/apps/details?id=com.azure.authenticator) or [Intune Company Portal](https://play.google.com/store/apps/details?id=com.microsoft.windowsintune.companyportal)) and ADAL.NET that you need to migrate to MSAL.NET.
+
+> [!NOTE]
+> MSAL.NET versions 4.61.0 and above do not provide support for Universal Windows Platform (UWP), Xamarin Android, and Xamarin iOS. We recommend you migrate your Xamarin applications to modern frameworks like MAUI. Read more about the deprecation in [Announcing the Upcoming Deprecation of MSAL.NET for Xamarin and UWP](https://devblogs.microsoft.com/identity/uwp-xamarin-msal-net-deprecation/).
 
 ## Step 1: Enable the broker
 
@@ -107,7 +110,7 @@ In MSAL.NET, do two things to set the activity for Android:
 `"Activity_required_for_android_broker":"Activity is null, so MSAL.NET cannot invoke the Android broker. See https://aka.ms/Brokered-Authentication-for-Android"`
 
 1. On the AcquireTokenInteractive call, use the `.WithParentActivityOrWindow(App.RootViewController)`
- and pass in the reference to the activity you will use. This example will use the MainActivity.
+ and pass in the reference to the activity you'll use. This example uses the MainActivity.
 
 **For example:**
 

@@ -71,7 +71,7 @@ The bulk request shown below uses the SCIM standard Core User and Enterprise Use
     "Operations": [
     {
         "method": "POST",
-        "bulkId": "897401c2-2de4-4b87-a97f-c02de3bcfc61",
+        "bulkId": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
         "path": "/Users",
         "data": {
             "schemas": ["urn:ietf:params:scim:schemas:core:2.0:User",
@@ -134,7 +134,7 @@ The bulk request shown below uses the SCIM standard Core User and Enterprise Use
     },
     {
         "method": "POST",
-        "bulkId": "897401c2-2de4-4b87-a97f-c02de3bcfc61",
+        "bulkId": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
         "path": "/Users",
         "data": {
             "schemas": ["urn:ietf:params:scim:schemas:core:2.0:User",

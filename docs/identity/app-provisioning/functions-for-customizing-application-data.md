@@ -171,7 +171,7 @@ Returns the first source value that isn't NULL. If all arguments are NULL and de
 | Name | Required/ Repeating | Type | Notes |
 | --- | --- | --- | --- |
 | **source1  … sourceN** | Required | String |Required, variable-number of times. Usually name of the attribute from the source object. |
-| **defaultValue** | Optional | String | Default value to be used when all source values are NULL. Can be empty string ("").
+| **defaultValue** | Optional | String | Default value to be used when all source values are NULL. Can be empty string (""). |
 
 #### Flow mail value if not NULL, otherwise flow userPrincipalName
 Example: You wish to flow the mail attribute if it's present. If it isn't, you wish to flow the value of userPrincipalName instead.
@@ -413,7 +413,7 @@ The function Guid generates a new random GUID
 
 **Example:** <br>
 `Guid()`<br>
-Sample output: "1088051a-cd4b-4288-84f8-e02042ca72bc"
+Sample output: "00aa00aa-bb11-cc22-dd33-44ee44ee44ee"
 
 ---
 ### IgnoreFlowIfNullOrEmpty
@@ -1259,7 +1259,8 @@ Add a comma between last name and first name.
 * **INPUT** (surname): "Doe"
 * **OUTPUT**:  "Doe, John"
 
-### Generate an ID for a user based on their Microsoft Entra ID object ID. Remove any letters from the ID and add 1000 at the beginning.  
+### Generate an ID for a user based on their Microsoft Entra object ID. Remove any letters from the ID and add 1000 at the beginning.
+
 This expression allows you to generate an identifier for a user that starts with 1000 and is likely to be unique.  
 
 **Expression:** 
@@ -1267,7 +1268,7 @@ Join("", 1000, Replace(ConvertToUTF8Hex([objectId]), , "[a-zA-Z_]*", , "", , ))
 
 **Sample input/output:** 
 
-* **INPUT**: "d05e47b1-3909-445a-ba5e-ca60cbc0e4b4"
+* **INPUT**: "00aa00aa-bb11-cc22-dd33-44ee44ee44ee"
 * **OUTPUT**:  "100064303565343762312333930392343435612626135652636136306362633065346234"
 
 ## Related Articles

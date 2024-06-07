@@ -14,7 +14,7 @@ ms.subservice: saas-apps
 ms.tgt_pltfrm: na
 
 ms.topic: article
-ms.date: 11/28/2022
+ms.date: 03/25/2024
 ms.author: thwimmer
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to GHAE so that I can streamline the user management process and ensure that users have the appropriate access to GHAE.

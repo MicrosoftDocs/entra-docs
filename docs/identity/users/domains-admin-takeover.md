@@ -26,6 +26,9 @@ During the process of admin takeover, you can prove ownership as described in [A
 
 * When you perform an ["external" admin takeover](#external-admin-takeover) of an unmanaged Azure directory, you add the DNS domain name of the unmanaged directory to your managed Azure directory. When you add the domain name, a mapping of users to resources is created in your managed Azure directory so that users can continue to access services without interruption. 
 
+> [!NOTE]
+> An ["internal" admin takeover](#internal-admin-takeover) requires you to have some level of access to the unmanaged directory. If you are unable to access the directory that you're attempting to takeover, you will need to perform an ["external" admin takeover](#external-admin-takeover).
+
 ## Internal admin takeover
 
 Some products that include SharePoint and OneDrive, such as Microsoft 365, don't support external takeover. If that is your scenario, or if you're an admin and want to take over an unmanaged or "shadow" Microsoft Entra organization created by users who used self-service sign-up, you can do this with an internal admin takeover.
