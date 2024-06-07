@@ -110,7 +110,7 @@ In MSAL.NET, do two things to set the activity for Android:
 `"Activity_required_for_android_broker":"Activity is null, so MSAL.NET cannot invoke the Android broker. See https://aka.ms/Brokered-Authentication-for-Android"`
 
 1. On the AcquireTokenInteractive call, use the `.WithParentActivityOrWindow(App.RootViewController)`
- and pass in the reference to the activity you will use. This example will use the MainActivity.
+ and pass in the reference to the activity you'll use. This example uses the MainActivity.
 
 **For example:**
 
