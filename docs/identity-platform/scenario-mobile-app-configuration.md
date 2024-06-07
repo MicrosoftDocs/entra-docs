@@ -57,6 +57,9 @@ if let application = try? MSALPublicClientApplication(configuration: config){ /*
 
 This section explains how to instantiate the application for Xamarin.iOS, Xamarin.Android, and UWP apps.
 
+> [!NOTE]
+> MSAL.NET versions 4.61.0 and above do not provide support for Universal Windows Platform (UWP), Xamarin Android, and Xamarin iOS. We recommend you migrate your Xamarin applications to modern frameworks like MAUI. Read more about the deprecation in [Announcing the Upcoming Deprecation of MSAL.NET for Xamarin and UWP](https://devblogs.microsoft.com/identity/uwp-xamarin-msal-net-deprecation/).
+
 #### Instantiate the application
 
 In Xamarin or UWP, the simplest way to instantiate the application is by using the following code. In this code, `ClientId` is the GUID of your registered app.
