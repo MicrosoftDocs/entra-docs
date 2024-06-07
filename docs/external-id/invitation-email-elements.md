@@ -49,25 +49,25 @@ The reply-to email is set to the inviter's email when available, so that replyin
 
 The email starts with a brief warning to the user about phishing, alerting them that they should only accept invitations they're expecting. It’s good practice to let partners know in advance to expect your invitation.
 
-![Image of the phishing warning in the email.](media/invitation-email-elements/phishing-warning.png)
+![Screenshot of the phishing warning in the email.](media/invitation-email-elements/phishing-warning.png)
 
 ### Inviter's information and invitation message
 
 The email includes the name and primary domain associated with the organization sending the invitation. This information should help the invitee make an informed decision about accepting the invitation. The inviter can include a message as part of their invitation to the [directory, group, or app](add-users-administrator.yml), or when they [use the invitation API](customize-invitation-api.md). The message is highlighted in the main section of the email. The inviter’s name and profile image are also included if they have one. The message itself is a text area, so for security reasons, it doesn't process HTML tags.
 
-![Image of the invitation message in the email.](media/invitation-email-elements/invitation-message-inviters-info.png)
+![Screenshot of the invitation message in the email.](media/invitation-email-elements/invitation-message-inviters-info.png)
 
 ### Accept invitation button or link and redirect URL
 
 The next section of the email contains information about where the invitee will be taken after they accept the invitation, and a button or link to do so. In the future, the invitee can always use this link to return to your resources directly.
 
-![Image of the accept button and redirect URL in the email.](media/invitation-email-elements/accept-button.png)
+![Screenshot of the accept button and redirect URL in the email.](media/invitation-email-elements/accept-button.png)
 
 ### Footer section
 
 The footer contains more information about the invitation being sent. If the organization [configured a privacy statement](~/fundamentals/properties-area.yml), the link to the statement is displayed here. Otherwise, a note indicates the organization's privacy statement isn't available.
 
-:::image type="content" source="media/invitation-email-elements/footer-section.png" alt-text="Image of the footer section in the email.":::
+:::image type="content" source="media/invitation-email-elements/footer-section.png" alt-text="Screenshot showing the footer section in the email.":::
 
 ## How the language is determined
 
