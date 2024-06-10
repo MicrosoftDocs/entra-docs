@@ -30,7 +30,7 @@ Microsoft Entra's native authentication API supports sign-up and sign-in for two
 
 1. Microsoft Entra External ID for customers tenant. If you don't already have one, [sign up for a free trial](https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl).
 
-1. If you haven't already done so, [Register an application in the Microsoft Entra admin center](../external-id/customers/how-to-register-ciam-app.md?tabs=nativeauth#choose-your-app-type). Make sure you grant delegated permissions, and enable public client and native authentication flows.
+1. If you haven't already done so, [Register an application in the Microsoft Entra admin center](../external-id/customers/how-to-register-ciam-app.md?tabs=nativeauthentication#choose-your-app-type). Make sure you grant delegated permissions, and enable public client and native authentication flows.
 
 1. If you haven't already done so, [Create a user flow in the Microsoft Entra admin center](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md#to-add-a-new-user-flow). While you create the user flow, take note of the user attributes you configure required as these attributes are the ones that Microsoft Entra expects your app to submit. Under **Identity providers**, select **Email one-time-passcode** option.
 
