@@ -5,7 +5,7 @@ ms.date: 05/28/2024
 ms.topic: include
 ---
 
-## Enable a system-assigned managed identity
+## Enable a system-assigned managed identity 
 
 [!INCLUDE [msi-tut-enable](~/includes/entra-msi-tut-enable.md)]
 
