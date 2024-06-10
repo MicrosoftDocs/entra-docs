@@ -60,7 +60,7 @@ We'll now create a new enterprise application in Microsoft Entra ID that is used
 
 1. Enter a **Reply URL** of: `https://sonar.maverics.com/acs`. We use this value when defining the `samlConsumerServiceURL` field for our Azure connector in the next section.
 
-1. Enter a **Sign on URL** of: `https://sonar.maverics.com/`. This field won't be used by Maverics, but it is required in Entra ID to enable users to get access to the application through the Entra ID My Apps portal.
+1. Enter a **Sign on URL** of: `https://sonar.maverics.com/`. This field won't be used by Maverics, but it is required in Microsoft Entra ID to enable users to get access to the application through the Microsoft Entra ID My Apps portal.
 
 1. Select **Save**.
 
@@ -68,7 +68,7 @@ We'll now create a new enterprise application in Microsoft Entra ID that is used
 
    ![Screenshot of the "SAML Signing Certificate" Copy button.](common/copy-metadataurl.png)
 
-## Step 4: Authenticating via Entra ID and authorizing access to the application
+## Step 4: Authenticating via Microsoft Entra ID and authorizing access to the application
 
 Continue on with step 4 of the Learning Center topic, **Extend Microsoft Entra ID to a Legacy, Non-Standard App** to edit your user flow in Maverics. These steps walk you through the process of adding headers to the upstream application and deploying the user flow.
 
