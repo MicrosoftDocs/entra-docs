@@ -31,7 +31,7 @@ You can configure optional claims for your application through the Microsoft Ent
 1. Select **Add**.
 
 # [Proceed with manifest](#tab/manifest)
-1. Under **Manage**, select **Manifest**. A web-based manifest editor opens, allowing you to edit the manifest. Optionally, you can select **Download** and edit the manifest locally, and then use **Upload** to reapply it to your application.
+1. Under **Manage**, select **Manifest**. A web-based manifest editor opens, allowing you to edit the manifest. Optionally, you can select **Download** and edit the manifest locally, and then use **Upload** to reapply it to your application. If the file doesn't contain `optionalClaims` property, you can add it.
 
     The following application manifest entry adds the `auth_time`, `ipaddr`, and `upn` optional claims to ID, access, and SAML tokens.
 
