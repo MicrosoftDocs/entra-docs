@@ -23,7 +23,7 @@ This article defines authentication and authorization. It also briefly covers Mu
 
 ## Authorization
 
-*Authorization* is the act of granting an authenticated party permission to do something. It specifies what data you're allowed to access and what you can do with that data. Authorization is sometimes shortened to *AuthZ*. The Microsoft identity platform uses the [OAuth 2.0](https://oauth.net/2/) protocol for handling authorization, but there are various other authorization systems at Microsoft, such as [Entra built-in roles](/entra/identity/role-based-access-control/permissions-reference) and [Exchange RBAC](/exchange/permissions-exo/application-rbac).
+*Authorization* is the act of granting an authenticated party permission to do something. It specifies what data you're allowed to access and what you can do with that data. Authorization is sometimes shortened to *AuthZ*. The Microsoft identity platform provides resource owners the ability to use the [OAuth 2.0](https://oauth.net/2/) protocol for handling authorization, but the Microsoft cloud also has other authorization systems such as [Entra built-in roles](/entra/identity/role-based-access-control/permissions-reference), [Azure RBAC](/azure/role-based-access-control/overview), and [Exchange RBAC](/exchange/permissions-exo/application-rbac).
 
 ## Multifactor authentication
 
