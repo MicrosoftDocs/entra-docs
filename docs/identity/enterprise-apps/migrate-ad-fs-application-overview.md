@@ -1,5 +1,5 @@
 ---
-title: Overview of AD FS application migration (preview)
+title: Overview of AD FS application migration
 description: Learn about the capabilities of the AD FS application migration wizard and the migration status available on its dashboard. Learn the various validation tests that the  application migration generates and how to resolve the validation issues.
 
 author: omondiatieno
@@ -16,7 +16,7 @@ ms.custom: not-enterprise-apps
 #customer intent: As an IT admin responsible for migrating applications from AD FS to Microsoft Entra ID, I want to use the AD FS application migration wizard to assess the compatibility of my applications, prioritize them for migration, run migration tests, and receive guidance on configuring new Microsoft Entra applications, so that I can efficiently migrate my applications to the new platform.
 ---
 
-# Overview of AD FS application migration (preview)
+# Overview of AD FS application migration
 
 In this article, you learn about the capabilities of the AD FS application migration wizard and the migration status available on its dashboard. You also learn the various validation tests that the application migration generates for each of the applications that you want to migrate from AD FS to Microsoft Entra ID.
 
@@ -26,7 +26,7 @@ With the AD FS application migration wizard, you can:
 
 - **Discover AD FS applications and scope your migration** - The AD FS application migration wizard lists all AD FS applications in your organization that have had an active user sign-in in the last 30 days. The report indicates an apps readiness for migration to Microsoft Entra ID. The report doesn't display Microsoft related relying parties in AD FS such as Office 365. For example, relying parties with name `urn:federation:MicrosoftOnline`.
 
-- **Prioritize applications for migration** - Get the number of unique users who have signed in to the application in the past 1, 7, or 30 days to help determine the criticality or risk of migrating the application.
+- **Prioritize applications for migration** - Get the number of unique users signed in to the application in the past 1, 7, or 30 days to help determine the criticality or risk of migrating the application.
 
 - **Run migration tests and fix issues** - The reporting service automatically runs tests to determine if an application is ready to migrate. The results are displayed in the AD FS application migration dashboard as a migration status. If the AD FS configuration isn't compatible with a Microsoft Entra configuration, you get specific guidance on how to address the configuration in Microsoft Entra ID.
 
