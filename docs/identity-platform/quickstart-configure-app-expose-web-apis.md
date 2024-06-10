@@ -5,7 +5,7 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: has-adal-ref 
-ms.date: 06/29/2023
+ms.date: 06/10/2024
 ms.reviewer: sureshja
 ms.service: identity-platform
 

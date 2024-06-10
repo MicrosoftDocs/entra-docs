@@ -5,7 +5,7 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: mode-other
-ms.date: 06/29/2023
+ms.date: 06/10/2024
 ms.service: identity-platform
 
 ms.topic: quickstart
