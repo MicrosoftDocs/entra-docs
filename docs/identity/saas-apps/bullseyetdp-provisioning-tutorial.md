@@ -3,8 +3,7 @@ title: 'Tutorial: Configure BullseyeTDP for automatic user provisioning with Mic
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to BullseyeTDP.
 
 documentationcenter: ''
-author: twimmers
-writer: Thwimmer
+author: thomasakelo
 manager: jeedes
 
 ms.assetid: a1a4e5ab-87ae-4cad-b187-cc474a8ea185
@@ -14,7 +13,7 @@ ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 03/25/2024
-ms.author: Thwimmer
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to BullseyeTDP so that I can streamline the user management process and ensure that users have the appropriate access to BullseyeTDP.
 ---
