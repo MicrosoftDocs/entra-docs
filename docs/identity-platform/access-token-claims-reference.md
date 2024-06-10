@@ -71,7 +71,7 @@ The Microsoft identity platform uses some claims to help secure tokens for reuse
 | `xms_cc` | JSON array of strings | Indicates whether the client application that acquired the token is capable of handling claims challenges. It's often used along with claim `acrs`. This claim is commonly used in Conditional Access and Continuous Access Evaluation scenarios. The resource server or service application that the token is issued for controls the presence of this claim in a token. A value of `cp1` in the access token is the authoritative way to identify that a client application is capable of handling a claims challenge. For more information, see [Claims challenges, claims requests and client capabilities](claims-challenge.md?tabs=dotnet). |
 
 > [!Note]
-> The `roles`, `groups`, and `wids` claims are not an exhaustive list of how a resource might authorize a user or application, and the target resource may use another method to authorize access to its protected resources.
+> The `roles`, `groups`, `scp`, and `wids` claims are not an exhaustive list of how a resource might authorize a user or application, nor are they an exhaustive list of permissions granted to the caller. The target resource may use another method to authorize access to its protected resources.
 
 ### Groups overage claim
 
