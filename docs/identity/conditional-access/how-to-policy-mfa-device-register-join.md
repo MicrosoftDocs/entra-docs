@@ -38,7 +38,7 @@ After administrators confirm the settings using [report-only mode](howto-conditi
 > [!WARNING]
 > When a Conditional Access policy is configured with the **Register or join devices** user action, you must set **Identity** > **Devices** > **Overview** > **Device Settings** - `Require Multifactor Authentication to register or join devices with Microsoft Entra` to **No**. Otherwise, the Conditional Access policy with this user action isn't properly enforced. More information about this device setting can found in [Configure device settings](~/identity/devices/manage-device-identities.md#configure-device-settings).
 > 
-> :::image type="content" source="media/how-to-policy-mfa-device-register-join/device-settings-require-mfa-to-register-or-join.png" alt-text="Screenshot of the Require Multifactor Authentication to register or join devices with Microsoft Entra control to be disabled.":::
+> :::image type="content" source="media/how-to-policy-mfa-device-register-join/device-settings-require-mfa-to-register-or-join.png" alt-text="Screenshot of the Require Multifactor Authentication to register or join devices with Microsoft Entra control to be disabled." lightbox="media/how-to-policy-mfa-device-register-join/device-settings-require-mfa-to-register-or-join.png":::
 
 ## Related content
 
