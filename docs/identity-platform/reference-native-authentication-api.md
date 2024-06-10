@@ -14,15 +14,17 @@ ms.date: 04/09/2024
 
 # Native authentication API reference
 
+[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
+
 Microsoft Entra's [native authentication](../external-id/customers/concept-native-authentication.md) enables you to host the user interface of your app in the client application instead of delegating authentication to browsers, resulting in a natively integrated authentication experience. As a developer, you have full control over the look and feel of the sign-in interface.
 
 [!INCLUDE [native-auth-api-common-description](./includes/native-auth-api/native-auth-api-common-description.md)]
 
 Microsoft Entra's native authentication API supports sign-up and sign-in for two authentication methods:
 
-- [Email with password](reference-native-authentication-email-password.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json), which supports sign-up and sign-in with an email and password, and self-service password reset (SSPR).
+- Email with password, which supports sign-up and sign-in with an email and password, and self-service password reset (SSPR).
 
-- [Email one-time passcode](reference-native-authentication-email-otp.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json), which supports sign-up and sign-in with email one-time passcode.
+- Email one-time passcode, which supports sign-up and sign-in with email one-time passcode.
 
 [!INCLUDE [native-auth-api-cors-note](./includes/native-auth-api/native-auth-api-cors-note.md)]
 
