@@ -29,10 +29,6 @@ Use the [Conditional Access user action](concept-conditional-access-cloud-apps.m
    1. Under **Include**, select **All users**.
    1. Under **Exclude**, select **Users and groups** and choose your organization's emergency access or break-glass accounts.
 1. Under **Target resources** > **User actions**, select **Register or join devices**.
-1. Under **Conditions** > **Insider risk**, set **Configure** to **Yes**. 
-   1. Under **Select the risk levels that must be assigned to enforce the policy**. 
-      1. Select **Elevated**.
-      1. Select **Done**.
 1. Under **Access controls** > **Grant**, select **Grant access**, **Require authentication strength**, select **Multifactor authentication**, then select **Select**.
 1. Confirm your settings and set **Enable policy** to **Report-only**.
 1. Select **Create** to create to enable your policy.
