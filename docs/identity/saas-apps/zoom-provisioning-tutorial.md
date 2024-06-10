@@ -3,8 +3,7 @@ title: 'Tutorial: Configure Zoom for automatic user provisioning with Microsoft 
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Zoom.
 
 documentationcenter: ''
-author: twimmers
-writer: Thwimmer
+author: thomasakelo
 manager: jeedes
 ms.assetid: d9bd44ed-2e9a-4a1b-b33c-cb9e9fe8ff47
 ms.service: entra-id
@@ -13,7 +12,7 @@ ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 03/25/2024
-ms.author: thwimmer
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Zoom so that I can streamline the user management process and ensure that users have the appropriate access to Zoom.
 ---
