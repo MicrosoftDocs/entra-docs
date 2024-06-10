@@ -21,31 +21,32 @@ This hybrid access tutorial demonstrates how to migrate an on-premises web appli
 
 1. Setting up the Maverics Orchestrator
 2. Proxying an application
-3. Registering an enterprise application in Entra ID
-4. Authenticating via Entra ID and authorizing access to the application
+3. Registering an enterprise application in Microsoft Entra ID
+4. Authenticating via Microsoft Entra ID and authorizing access to the application
 5. Adding headers for seamless application access
 6. Working with multiple applications
 
 ## Prerequisites
 
-* An Entra ID subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+* A Microsoft Entra ID subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
 * A Maverics Identity Orchestrator Platform account. Sign up at [maverics.strata.io](https://maverics.strata.io).
-* At least one application that uses header based authentication. In our examples, we will be working against an application called Sonar that will be reachable at `https://localhost:8443`.
+* At least one application that uses header based authentication. In our examples, we'll be working against an application called Sonar that will be reachable at `https://localhost:8443`.
 ## Step 1: Setting up the Maverics Orchestrator
 
-After signed up for a Maverics account at [maverics.strata.io](https://maverics.strata.io), use our Learning Center tutorial titled [**Getting Started: Evaluation Environment**](https://maverics.strata.io/learn/redirect?context=environments-create-evaluation). This tutorial takes you through the step-by-step process of creating an evaluation environment, downloading an orchestrator, and installing the orchestrator on your machine. 
+After signing up for a Maverics account at [maverics.strata.io](https://maverics.strata.io), use our Learning Center tutorial titled [**Getting Started: Evaluation Environment**](https://maverics.strata.io/learn/redirect?context=environments-create-evaluation). This tutorial takes you through the step-by-step process of creating an evaluation environment, downloading an orchestrator, and installing the orchestrator on your machine. 
 
-## Step 2: Extending Entra ID to an app with a recipe
+## Step 2: Extending Microsoft Entra ID to an app with a recipe
 
 Next, use the Learning Center tutorial, [**Extend Microsoft Entra ID to a Legacy, Non-Standard App**](https://maverics.strata.io/learn/redirect?context=microsoft-entra-id-recipe). This tutorial provides you with a .json recipe that automatically configures an identity fabric, header-based application, and partially complete user flow.
 
-## Step 3: Registering an enterprise application in Entra ID
+## Step 3: Registering an enterprise application in Microsoft Entra ID
 
-We will now create a new enterprise application in Entra ID that is used for authenticating end-users.
+We'll now create a new enterprise application in Microsoft Entra ID that is used for authenticating end-users.
 
->Note: When leveraging Entra ID features such as Conditional Access it is important to create an enterprise application per on-premises application. This permits per-app conditional access, per-app risk evaluation, per-app assigned permissions, etc. Generally, an enterprise application in Entra ID maps to an Azure connector in Maverics.
+>[!Note]
+> When leveraging Microsoft Entra ID features such as Conditional Access it's important to create an enterprise application per on-premises application. This permits per-app conditional access, per-app risk evaluation, per-app assigned permissions, etc. Generally, an enterprise application in Microsoft Entra  ID maps to an Azure connector in Maverics.
 
-1. In your Entra ID tenant, go to **Enterprise applications**, click **New Application** and search for **Maverics Identity Orchestrator SAML Connector** in the Entra ID gallery, and then select it.
+1. In your Microsoft Entra ID tenant, go to **Enterprise applications**, click **New Application** and search for **Maverics Identity Orchestrator SAML Connector** in the Microsoft Entra ID gallery, and then select it.
 
 1. On the Maverics Identity Orchestrator SAML Connector **Properties** pane, set **User assignment required?** to **No** to enable the application to work for all users in your directory.
 
@@ -73,7 +74,7 @@ Continue on with step 4 of the Learning Center topic, **Extend Microsoft Entra I
 
 Once you've deployed the user flow, to confirm authentication is working as expected, make a request to an application resource through the Maverics proxy. The protected application should now be receiving headers on the request.
 
-Feel free to edit the header keys if your application expects different headers. All claims that come back from Entra ID as part of the SAML flow are available to use in headers. For example, we could include an another header of `secondary_email: azureSonarApp.email`, where `azureSonarApp` is the connector name and `email` is a claim returned from Entra ID.
+Feel free to edit the header keys if your application expects different headers. All claims that come back from Microsoft Entra ID as part of the SAML flow are available to use in headers. For example, we could include another header of `secondary_email: azureSonarApp.email`, where `azureSonarApp` is the connector name and `email` is a claim returned from Microsoft Entra ID.
 
 ## Advanced Scenarios
 
@@ -85,5 +86,5 @@ Don't want to rework your network and proxy traffic through the Maverics Orchest
 
 ## Wrapping Up
 
-At this point, we have installed the Maverics Orchestrator, created and configured an enterprise application in Entra ID, and configured the Orchestrator to proxy to a protected application while requiring authentication and enforcing policy. To learn more about how the Maverics Orchestrator can be used for distributed identity management use cases please [contact Strata](mailto:sales@strata.io).
+At this point, we have installed the Maverics Orchestrator, created and configured an enterprise application in Microsoft Entra ID, and configured the Orchestrator to proxy to a protected application while requiring authentication and enforcing policy. To learn more about how the Maverics Orchestrator can be used for distributed identity management use cases please [contact Strata](mailto:sales@strata.io).
 
