@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: concept-article
 
-ms.date: 10/25/2023
+ms.date: 06/10/2024
 ms.author: jomondi
 ms.reviewer: smriti3
 ms.custom: not-enterprise-apps
@@ -30,7 +30,7 @@ With the AD FS application migration wizard, you can:
 
 - **Run migration tests and fix issues** - The reporting service automatically runs tests to determine if an application is ready to migrate. The results are displayed in the AD FS application migration dashboard as a migration status. If the AD FS configuration isn't compatible with a Microsoft Entra configuration, you get specific guidance on how to address the configuration in Microsoft Entra ID.
 
-- **Use one-click application configuration experience to configure new Microsoft Entra application** -  This provides a guided experience to migrate on-premises relying party applications to cloud. The migration experience uses the relying party application's metadata that is directly imported from your on-premises environment. Also the experience provides a one-click configuration of SAML application on Microsoft Entra platform with some basic SAML settings, claims configurations and groups assignments.
+- **Use one-click application configuration experience to configure new Microsoft Entra application** -  This provides a guided experience to migrate on-premises relying party applications to cloud. The migration experience uses the relying party application's metadata that is directly imported from your on-premises environment. Also the experience provides a one-click configuration of SAML application on Microsoft Entra platform with some basic SAML settings, claims configurations, and groups assignments.
 
 > [!NOTE]
 > AD FS application migration only supports SAML-based applications. It doesn't support applications that use protocols such as OpenID Connect, WS-Fed and OAuth 2.0. If you want to migrate applications that use these protocols, see [Use the AD FS application activity report](migrate-adfs-application-activity.md) to identify the applications that you want to migrate. Once you've identified the apps you want to migrate, you can configure them manually in Microsoft Entra ID. For more information on how to get started on manual migration, see [Migrate and test your application](migrate-adfs-plan-migration-test.md).
