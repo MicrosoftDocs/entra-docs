@@ -176,6 +176,9 @@ Microsoft Entra tenant user object:
 - MailNickName: us4
 - UserPrincipalName: us5@verified.contoso.com
 
+> [!NOTE]  
+> The UPN for a guest users contains the email of the guest user, followed by #EXT#, followed by the tenantname.onmicrosoft.com. For example, if the user john@contoso.com is added as an external user in the directory fabrikam, then its UPN will be john_contoso.com#EXT#@fabrikam.onmicrosoft.com.
+
 ## Next Steps
 - [Integrate your on-premises directories with Microsoft Entra ID](../whatis-hybrid-identity.md)
 - [Custom installation of Microsoft Entra Connect](how-to-connect-install-custom.md)
