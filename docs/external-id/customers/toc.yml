@@ -441,15 +441,8 @@ items:
     - name: Native authentication
       items:
         - name: API reference
-          items: 
-           - name: Native authentication APIs
-             displayName: Native authentication, Native authentication API   
-             href: /entra/identity-platform/reference-native-authentication-overview?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
-           - name: Native authentication with email OTP
-             displayName: Native authentication with email and one-time password or passcode          
-             href: /entra/identity-platform/reference-native-authentication-email-otp?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
-           - name: Native authentication with email and password
-             href: /entra/identity-platform/reference-native-authentication-email-password?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+          href: /entra/identity-platform/reference-native-authentication-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+          displayName: Native authentication, Native authentication API, native auth                
         - name: SDK reference
           items: 
            - name: MSAL iOS and macOS
