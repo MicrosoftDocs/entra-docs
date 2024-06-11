@@ -1,6 +1,6 @@
 ---
-title: Tutorial - Use a Windows VM/VMSS to access Azure services 
-description: A tutorial that shows you how to use a Windows VM/VMSS to access Azure services.
+title: Tutorial - Use a Windows VM/VMSS to access Azure resources 
+description: A tutorial that shows you how to use a Windows VM/VMSS to access Azure resources.
 author: barclayn
 manager: amycolannino
 ms.service: entra-id
@@ -16,7 +16,7 @@ appliesto:
 zone_pivot_groups: identity-windows-mi-vm-access
 ---
 
-# Tutorial: Use a Windows VM/VMSS to access Azure services
+# Tutorial: Use a Windows VM/VMSS to access Azure resources
 
 [!INCLUDE [preview-notice](~/includes/entra-msi-preview-notice.md)]
 
@@ -32,7 +32,11 @@ zone_pivot_groups: identity-windows-mi-vm-access
 [!INCLUDE [tutorial-windows-vm-access-datalake](includes/tutorial-windows-vm-access-datalake.md)]
 ::: zone-end
 
-::: zone pivot="identity-windows-mi-vm-access-storage"
+::: zone pivot="identity-windows-mi-vm-storage"
+[!INCLUDE [tutorial-windows-vm-access-storage](includes/tutorial-windows-vm-access-storage.md)]
+::: zone-end
+
+::: zone pivot="identity-windows-mi-vm-access-storage-sas"
 [!INCLUDE [tutorial-windows-vm-access-storage-sas](includes/tutorial-windows-vm-access-storage-sas.md)]
 ::: zone-end
 
@@ -44,8 +48,12 @@ zone_pivot_groups: identity-windows-mi-vm-access
 [!INCLUDE [tutorial-windows-vm-access-nonaad](includes/tutorial-windows-vm-access-nonaad.md)]
 ::: zone-end
 
-::: zone pivot="identity-windows-mi-vm-access-resource-manager"
+::: zone pivot="identity-windows-mi-vm-access-arm"
 [!INCLUDE [tutorial-windows-vm-access-arm](includes/tutorial-windows-vm-access-arm.md)]
+::: zone-end
+
+::: zone pivot="identity-windows-mi-vm-ua-arm"
+[!INCLUDE [tutorial-windows-vm-ua-arm](includes/tutorial-windows-vm-ua-arm.md)]
 ::: zone-end
 
 ## Learn more

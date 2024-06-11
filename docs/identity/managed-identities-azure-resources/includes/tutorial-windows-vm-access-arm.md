@@ -5,7 +5,9 @@ ms.date: 05/28/2024
 ms.topic: include
 ---
 
-## Enable a system-assigned managed identity
+## Use a Windows VM system-assigned managed identity to access Resource manager
+
+This tutorial explains how to create a system-assigned identity, assign it to a Windows Virtual Machine (VM), and then use that identity to access the [Azure Resource Manager](/azure/azure-resource-manager/management/overview) API. Managed Service Identities are automatically managed by Azure. They enable authentication to services that support Microsoft Entra authentication, without needing to embed credentials into your code.
 
 [!INCLUDE [msi-tut-enable](~/includes/entra-msi-tut-enable.md)]
 

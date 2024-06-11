@@ -1,22 +1,11 @@
 ---
-title: Access Azure Storage using a Windows VM system-assigned managed identity
-description: A tutorial that walks you through the process of using a Windows VM system-assigned managed identity to access Azure Storage.
-
 author: barclayn
-manager: amycolannino
-editor: daveba
-
-ms.custom: subject-rbac-steps
-ms.service: entra-id
-ms.subservice: managed-identities
-ms.topic: tutorial
-ms.tgt_pltfrm: na
-ms.date: 01/05/2024
 ms.author: barclayn
-
+ms.date: 05/28/2024
+ms.topic: include
 ---
 
-# Tutorial: Use a Windows VM system-assigned managed identity to access Azure Storage
+## Use a Windows VM system-assigned managed identity to access Azure Storage
 
 [!INCLUDE [preview-notice](~/includes/entra-msi-preview-notice.md)]
 

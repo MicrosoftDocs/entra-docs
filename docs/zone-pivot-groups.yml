@@ -260,12 +260,16 @@ groups:
     title: Data Lake
   - id: identity-windows-mi-vm-access-storage
     title: Storage
+  - id: identity-windows-mi-vm-access-storage-sas
+    title: SAS
   - id: identity-windows-mi-vm-access-sql-db
     title: SQL DB
   - id: identity-windows-mi-vm-access-key-vault
     title: Key Vault
-  - id: identity-windows-mi-vm-access-resource-manager
-    title: Resource Manager
+  - id: identity-windows-mi-vm-access-arm
+    title: System ARM
+  - id: identity-windows-mi-vm-ua-arm
+    title: User ARM
 # Owner: barclayn
 - id: identity-mi-app-role
   title: Managed identity application roles
