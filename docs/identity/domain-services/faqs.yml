@@ -10,7 +10,7 @@ metadata:
   ms.service: entra-id
   ms.subservice: domain-services
   ms.topic: faq
-  ms.date: 04/25/2024
+  ms.date: 06/11/2024
   ms.author: justinha
 title: Frequently asked questions (FAQs) about Microsoft Entra Domain Services
 summary: This page answers frequently asked questions about Microsoft Entra Domain Services.
@@ -85,6 +85,14 @@ sections:
           You don't need to provision, configure, or otherwise manage domain controllers for this domain. 
           These management activities are provided as a service by Microsoft. 
           Therefore, you can't add more domain controllers (read-write or read-only) for the managed domain.
+
+      - question: |
+          Can I expand a managed domain to different Azure regions for application recovery if an Azure region goes offline?
+        answer: |
+          Yes. 
+          You can create replica sets that share the same namespace and configuration with your managed domain. 
+          Replica sets can be added to any peered virtual network in any Azure region that supports Domain Services.  
+          For more information, see [Replica sets concepts and features for Microsoft Entra Domain Services](concepts-replica-sets.md).
 
       - question: |
           Can guest users who are invited to my directory use Microsoft Entra Domain Services?
