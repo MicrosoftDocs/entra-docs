@@ -7,8 +7,6 @@ ms.topic: include
 
 ## Use a Windows VM system-assigned managed identity to access Azure Storage
 
-[!INCLUDE [preview-notice](~/includes/entra-msi-preview-notice.md)]
-
 This tutorial shows you how to use a system-assigned managed identity for a Windows virtual machine (VM) to access Azure Storage. You learn how to:
 
 > [!div class="checklist"]
@@ -16,60 +14,46 @@ This tutorial shows you how to use a system-assigned managed identity for a Wind
 > * Grant your Windows VM's system-assigned managed identity access to a storage account
 > * Get an access and use it to call Azure Storage
 
-> [!NOTE]
-> Microsoft Entra authentication for Azure Storage is in public preview.
-
-## Prerequisites
-
-[!INCLUDE [msi-tut-prereqs](~/includes/entra-msi-tut-prereqs.md)]
-
-
-
 ## Enable
 
 [!INCLUDE [msi-tut-enable](~/includes/entra-msi-tut-enable.md)]
-
-
-
-## Grant access
-
 
 ### Create storage account
 
 In this section, you create a storage account.
 
-1. Select the **+ Create a resource** button found on the upper left-hand corner of the Azure portal.
-2. Select **Storage**, then **Storage account - blob, file, table, queue**.
-3. Under **Name**, enter a name for the storage account.
-4. **Deployment model** and **Account kind** should be set to **Resource manager** and **Storage (general purpose v1)**.
-5. Ensure the **Subscription** and **Resource Group** match the ones you specified when you created your VM in the previous step.
-6. Select **Create**.
+1. Select the **+ Create a resource** button found on the upper-left corner of the Azure portal.
+1. Select **Storage**, then **Storage account - blob, file, table, queue**.
+1. In the **Name** field, enter a name for the storage account.
+1. **Deployment model** and **Account kind** should be set to **Resource manager** and **Storage (general purpose v1)**.
+1. Ensure the **Subscription** and **Resource Group** match the ones you specified when you created your VM in the previous step.
+1. Select **Create**.
 
-    :::image type="content" source="./media/msi-tutorial-linux-vm-access-storage/msi-storage-create.png" alt-text="Screenshot showing how to create new storage account.":::
+    :::image type="content" source="../media/msi-tutorial-linux-vm-access-storage/msi-storage-create.png" alt-text="Screenshot showing how to create new storage account.":::
 
 ### Create a blob container and upload a file to the storage account
 
 Files require blob storage so you need to create a blob container in which to store the file. You then upload a file to the blob container in the new storage account.
 
-1. Navigate back to your newly created storage account.
-2. Under **Blob Service**, select **Containers**.
-3. Select **+ Container** on the top of the page.
-4. Under **New container**, enter a name for the container and under **Public access level** keep the default value.
+1. Navigate to your newly created storage account.
+1. In the **Blob Service** section, select **Containers**.
+1. Select **+ Container** on the top of the page.
+1. In the **New container** field, enter a name for the container, then in the **Public access level** option, keep the default value.
 
-    :::image type="content" source="./media/msi-tutorial-linux-vm-access-storage/create-blob-container.png" alt-text="Screenshot showing how to create storage container.":::
+    :::image type="content" source="../media/msi-tutorial-linux-vm-access-storage/create-blob-container.png" alt-text="Screenshot showing how to create storage container.":::
 
-5. Using an editor of your choice, create a file titled *hello world.txt* on your local machine. Open the file and add the text (without the quotes) "Hello world! :)" and then save it.
-6. Upload the file to the newly created container by clicking on the container name, then **Upload**
-7. In the **Upload blob** pane, under **Files**, select the folder icon and browse to the file **hello_world.txt** on your local machine, select the file, then select **Upload**.
-    :::image type="content" source="./media/msi-tutorial-linux-vm-access-storage/upload-text-file.png" alt-text="Screenshot showing the text file upload screen.":::
+1. Using an editor of your choice, create a file titled *hello world.txt* on your local machine. Open the file and add the text *Hello world!*, then save it.
+1. Select the container name to upload the file to the newly created container, then select **Upload**.
+1. In the **Upload blob** pane, in the **Files** section, select the folder icon and browse to the file **hello_world.txt** on your local machine. Then select the file and **Upload**.
+    :::image type="content" source="../media/msi-tutorial-linux-vm-access-storage/upload-text-file.png" alt-text="Screenshot showing the text file upload screen.":::
 
 ### Grant access
 
 This section shows how to grant your VM access to an Azure Storage container. You can use the VM's system-assigned managed identity to retrieve the data in the Azure storage blob.
 
-1. Navigate back to your newly created storage account.
+1. Navigate to your newly created storage account.
 1. Select **Access control (IAM)**.
-1. Select **Add** > **Add role assignment** to open the Add role assignment page.
+1. Select **Add** > **Add role assignment** to open the **Add role assignment** page.
 1. Assign the following role. For detailed steps, see [Assign Azure roles using the Azure portal](/azure/role-based-access-control/role-assignments-portal).
     
     | Setting | Value |
@@ -163,12 +147,3 @@ The response contains the contents of the file:
 ## Disable
 
 [!INCLUDE [msi-tut-disable](~/includes/entra-msi-tut-disable.md)]
-
-
-
-## Next steps
-
-In this tutorial, you learned how enable a Windows VM's system-assigned identity to access Azure Storage.  To learn more about Azure Storage, see:
-
-> [!div class="nextstepaction"]
-> [Azure Storage](/azure/storage/common/storage-introduction)
