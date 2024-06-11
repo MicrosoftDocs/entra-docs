@@ -13,7 +13,7 @@ ms.subservice: managed-identities
 
 This tutorial explains how to create a system-assigned identity, assign it to a Linux Virtual Machine (VM), and then use that identity to access the [Azure Resource Manager](/azure/azure-resource-manager/management/overview) API. Managed Service Identities are automatically managed by Azure. They enable authentication to services that support Microsoft Entra authentication, without needing to embed credentials into your code.
 
-You'll learn how to:
+You learn how to:
 
 > [!div class="checklist"]
 > * Grant your VM access to Azure resource manager.
