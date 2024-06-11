@@ -7,17 +7,17 @@ ms.service: entra-id
 ms.subservice: managed-identities
 ---
 
-## Use a Linux VM system-assigned managed identity to access a resource group in resource manager
+## Use a Linux VM system-assigned managed identity to access a resource group in Resource Manager
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-This tutorial explains how to create a system-assigned identity, assign it to a Linux Virtual Machine (VM), and then use that identity to access the [Azure resource manager](/azure/azure-resource-manager/management/overview) API. Managed Service Identities are automatically managed by Azure. They enable authentication to services that support Microsoft Entra authentication, without needing to embed credentials into your code.
+This tutorial explains how to create a system-assigned identity, assign it to a Linux Virtual Machine (VM), and then use that identity to access the [Azure Resource Manager](/azure/azure-resource-manager/management/overview) API. Managed Service Identities are automatically managed by Azure. They enable authentication to services that support Microsoft Entra authentication, without needing to embed credentials into your code.
 
 You'll learn how to:
 
 > [!div class="checklist"]
-> * Grant your VM access to Azure resource manager.
-> * Get an access token by using the VM's system-assigned managed identity to access resource manager.
+> * Grant your VM access to Azure Resource Manager.
+> * Get an access token by using the VM's system-assigned managed identity to access Resource Manager.
 
 1. Sign in to the [Azure portal](https://portal.azure.com) with your administrator account.
 1. Navigate to the **Resource Groups** tab.
@@ -34,13 +34,13 @@ You'll learn how to:
 
 ## Get an access token
 
-Use the VM's system-assigned managed identity and call the resource manager to get an access token.
+Use the VM's system-assigned managed identity and call the Resource Manager to get an access token.
 
 To complete these steps, you need an SSH client. If you're using Windows, you can use the SSH client in the [Windows Subsystem for Linux](/windows/wsl/about). If you need assistance configuring your SSH client's keys, see [How to Use SSH keys with Windows on Azure](/azure/virtual-machines/linux/ssh-from-windows), or [How to create and use an SSH public and private key pair for Linux VMs in Azure](/azure/virtual-machines/linux/mac-create-ssh-keys).
 
 1. In the portal, navigate to your Linux VM and in the **Overview**, select **Connect**.
 1. **Connect** to the VM with the SSH client of your choice.
-1. In the terminal window, using `curl`, make a request to the local managed identities for Azure resources endpoint to get an access token for Azure resource manager.
+1. In the terminal window, using `curl`, make a request to the local managed identities for Azure resources endpoint to get an access token for Azure Resource Manager.
  
 The `curl` request for the access token is below.
 
@@ -49,9 +49,9 @@ curl 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-
 ```
 
 > [!NOTE]
-> The value of the `resource` parameter must be an exact match for what is expected by Microsoft Entra ID. In the case of the resource manager resource ID, you must include the trailing slash on the URI.
+> The value of the `resource` parameter must be an exact match for what is expected by Microsoft Entra ID. In the case of the Resource Manager resource ID, you must include the trailing slash on the URI.
 
-The response includes the access token you need to access Azure resource manager.
+The response includes the access token you need to access Azure Resource Manager.
 
 Response:
 
@@ -67,7 +67,7 @@ Response:
 }
 ```
 
-Use this access token to access Azure resource manager; for example, to read the details of the Resource Group to which you previously granted this VM access. Replace the values of `<SUBSCRIPTION-ID>`, `<RESOURCE-GROUP>`, and `<ACCESS-TOKEN>` with the ones you created earlier.
+Use this access token to access Azure Resource Manager; for example, to read the details of the Resource Group to which you previously granted this VM access. Replace the values of `<SUBSCRIPTION-ID>`, `<RESOURCE-GROUP>`, and `<ACCESS-TOKEN>` with the ones you created earlier.
 
 > [!NOTE]
 > The URL is case-sensitive, so ensure if you are using the exact case as you used earlier when you named the resource group, and the uppercase “G” in “resourceGroup”.
