@@ -25,7 +25,7 @@ You'll learn how to:
 1. In the left panel, select **Access control (IAM)**.
 1. Select **Add**, then select **Add role assignment**.
 1. In the **Role** tab, select **Reader**. This role allows view all resources, but doesn't allow you to make any changes.
-1. In the **Members** tab, for the **Assign access to** option, select **Managed identity**, then select **+ Select members**.
+1. In the **Members** tab, in the **Assign access to** option, select **Managed identity**, then select **+ Select members**.
 1. Ensure the proper subscription is listed in the **Subscription** dropdown. For **Resource Group**, select **All resource groups**.
 1. In the **Manage identity** dropdown, select **Virtual Machine**.
 1. In the **Select** option, choose your VM in the dropdown, then select **Save**.
@@ -38,7 +38,8 @@ Use the VM's system-assigned managed identity and call the resource manager to g
 
 To complete these steps, you need an SSH client. If you're using Windows, you can use the SSH client in the [Windows Subsystem for Linux](/windows/wsl/about). If you need assistance configuring your SSH client's keys, see [How to Use SSH keys with Windows on Azure](/azure/virtual-machines/linux/ssh-from-windows), or [How to create and use an SSH public and private key pair for Linux VMs in Azure](/azure/virtual-machines/linux/mac-create-ssh-keys).
 
-1. In the portal, navigate to your Linux VM and in the **Overview**, select **Connect**.
+1. In the Azure portal, navigate to your Linux VM.
+1. In the **Overview**, select **Connect**.
 1. **Connect** to the VM with the SSH client of your choice.
 1. In the terminal window, using `curl`, make a request to the local managed identities for Azure resources endpoint to get an access token for Azure resource manager.
  
@@ -67,10 +68,10 @@ Response:
 }
 ```
 
-Use this access token to access Azure resource manager; for example, to read the details of the Resource Group to which you previously granted this VM access. Replace the values of `<SUBSCRIPTION-ID>`, `<RESOURCE-GROUP>`, and `<ACCESS-TOKEN>` with the ones you created earlier.
+Use this access token to access Azure resource manager. For example, to read the details of the resource group to which you previously granted this VM access. Replace the values of `<SUBSCRIPTION-ID>`, `<RESOURCE-GROUP>`, and `<ACCESS-TOKEN>` with the ones you created earlier.
 
 > [!NOTE]
-> The URL is case-sensitive, so ensure if you are using the exact case as you used earlier when you named the resource group, and the uppercase “G” in “resourceGroup”.
+> The URL is case-sensitive, so ensure if you are using the exact case as you used earlier when you named the resource group, and the uppercase “G” in `resourceGroup`.
 
 ```bash
 curl https://management.azure.com/subscriptions/<SUBSCRIPTION-ID>/resourceGroups/<RESOURCE-GROUP>?api-version=2016-09-01 -H "Authorization: Bearer <ACCESS-TOKEN>" 
