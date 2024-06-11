@@ -57,8 +57,7 @@ If the **Writeback Group Distinguished Name with cloud Display Name** feature is
 When migrating, cloud sync will use the same format, depending on whether or not the **Writeback Group Distinguished Name with cloud Display Name** feature is enabled.  This means that if it is disabled, it will use the default format.  If it is enabled, it will use the new format.  
 
 >[!IMPORTANT]
->If you want cloud sync to use the new format, you need to ensure that the "Writeback Group Distinguished Name with cloud Display Name" feature in Microsoft Entra Connect Sync is enabled before you migrate.  Enable this feature and then allow the groups to synchronize before starting a migration.  See [Modifying group writeback V2]() for information on how update an existing Microsoft Entra Connect Group Writeback V2 deployment.
-
+>If you want cloud sync to use the new format, you need to ensure that the **Writeback Group Distinguished Name with cloud Display Name** feature in Microsoft Entra Connect Sync is enabled before you migrate.  Enable this feature and then allow the groups to synchronize before starting a migration.  See [Modifying group writeback V2](../connect/how-to-connect-modify-group-writeback.md) for information on how update an existing Microsoft Entra Connect Group Writeback V2 deployment.
 
 
 ## Step 1 - Copy adminDescription to msDS-ExternalDirectoryObjectID
