@@ -50,7 +50,7 @@ zone_pivot_groups: identity-linux-vm-access
 ::: zone-end
 
 ::: zone pivot="identity-linux-mi-vm-access-arm"
-[!INCLUDE [tutorial-linux-vm-access-arm](includes/msi-tutorial-linux-vm-access-arm.md)]
+[!INCLUDE [tutorial-linux-vm-access-arm](includes/tutorial-linux-vm-access-arm.md)]
 ::: zone-end
 
 ::: zone pivot="identity-linux-mi-vm-user-arm"
