@@ -7,7 +7,7 @@ ms.author: kengaderdus
 ms.service: entra-external-id 
 ms.subservice: customers
 ms.topic: how-to
-ms.date: 01/27/2024
+ms.date: 06/10/2024
 ms.custom: developer, devx-track-js
 #Customer intent: As a developer, devops or IT admin, I want to learn about how to configure my external tenant so that I can call a web API that is protected by Microsoft Entra External ID. 
 ---
@@ -27,6 +27,11 @@ In this article, you prepare your external tenant for authorization. This articl
 ## Configure idtyp token claim [optional]
 
 [!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/register-app/add-optional-claims-access.md)]
+
+Use the steps in [Configure optional claims](../../identity-platform/optional-claims.md?tabs=appui) article to add idtyp claim to the access token:
+
+- For the **Token type** select **Access**.
+- From the optional claims list, select **idtyp**.  
 
 ### Grant API permissions to the web app
 
