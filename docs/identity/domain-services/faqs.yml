@@ -80,7 +80,7 @@ sections:
           
           However, if you're using Microsoft Entra Connect for password hash synchronization, you can use Microsoft Entra Domain Services because the password hash values are stored in Microsoft Entra ID.
 
-s      - question: |
+      - question: |
           Can I enable Microsoft Entra Domain Services using PowerShell?
         answer: |
           Yes. For more information, see [how to enable Microsoft Entra Domain Services using PowerShell](powershell-create-instance.md).
