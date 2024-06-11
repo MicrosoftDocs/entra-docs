@@ -28,7 +28,7 @@ In this article, you prepare your external tenant for authorization. This articl
 
 [!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/register-app/add-optional-claims-access.md)]
 
-Use the steps in [Configure optional claims](../../identity-platform/optional-claims.md?tabs=appui) article to add *idtyp* claim to the *Access* token:
+Use the steps in [Configure optional claims](../../identity-platform/optional-claims.md?tabs=appui) article to add idtyp claim to the access token:
 
 - For the **Token type** select **Access**.
 - From the optional claims list, select **idtyp**.  
