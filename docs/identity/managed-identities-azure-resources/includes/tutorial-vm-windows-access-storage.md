@@ -63,7 +63,7 @@ This section shows how to grant your VM access to an Azure Storage container. Yo
     | System-assigned | Virtual Machine |
     | Select | &lt;your virtual machine&gt; |
 
-    :::image type="content" source="./media/common/tutorial-windows/add-role-assignment-page.png" alt-text="Screenshot that shows the page for adding a role assignment.":::
+    :::image type="content" source="../media/msi-tutorial-linux-vm-access-storage/add-role-assignment-page.png" alt-text="Screenshot that shows the page for adding a role assignment.":::
 
 ## Access data 
 
