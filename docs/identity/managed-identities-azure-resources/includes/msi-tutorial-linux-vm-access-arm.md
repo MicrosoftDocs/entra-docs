@@ -9,23 +9,23 @@ ms.subservice: managed-identities
 
 ## Use a Linux VM system-assigned managed identity to access Azure Resource Manager
 
-This tutorial shows you how to create a user-assigned managed identity, assign it to a Linux Virtual Machine (VM), and then use that identity to access the Azure Resource Manager API. Managed identities for Azure resources are automatically managed by Azure. They enable authentication to services that support Microsoft Entra authentication, without needing to embed credentials into your code. 
+This tutorial shows you how to create a system-assigned managed identity, assign it to a Linux Virtual Machine (VM), and then use that identity to access the Azure Resource Manager API. Managed identities for Azure resources are automatically managed by Azure. They enable authentication to services that support Microsoft Entra authentication, without needing to embed credentials into your code. 
 
 You'll learn how to:
 
 > [!div class="checklist"]
-> * Create a user-assigned managed identity
-> * Assign the user-assigned managed identity to a Linux VM 
-> * Grant the user-assigned managed identity access to a resource group in Azure Resource Manager 
-> * Get an access token using the user-assigned managed identity and use it to call Azure Resource Manager 
+> * Create a system-assigned managed identity
+> * Assign the system-assigned managed identity to a Linux VM 
+> * Grant the system-assigned managed identity access to a resource group in Azure Resource Manager 
+> * Get an access token using the system-assigned managed identity and use it to call Azure Resource Manager 
 
-## Create a user-assigned managed identity
+## Create a system-assigned managed identity
 
 To run the scripts in this example, you have two options:
-    - Use the [Azure Cloud Shell](/azure/cloud-shell/overview), which you can open using the **Try It** button on the top-right corner of code blocks.
-    - Run scripts locally by installing the latest version of the [Azure CLI](/cli/azure/install-azure-cli), then sign in to Azure using [az login](/cli/azure/reference-index#az-login).
+- Use the [Azure Cloud Shell](/azure/cloud-shell/overview), which you can open using the **Try It** button on the top-right corner of code blocks.
+- Run scripts locally by installing the latest version of the [Azure CLI](/cli/azure/install-azure-cli), then sign in to Azure using [az login](/cli/azure/reference-index#az-login).
 
-Create a user-assigned managed identity using [az identity create](/cli/azure/identity#az-identity-create). The `-g` parameter specifies the resource group where the user-assigned managed identity is created, and the `-n` parameter specifies its name. Be sure to replace the `<RESOURCE GROUP>` and `<UAMI NAME>` parameter values with your own values:
+Create a system-assigned managed identity using [az identity create](/cli/azure/identity#az-identity-create). The `-g` parameter specifies the resource group where the system-assigned managed identity is created, and the `-n` parameter specifies its name. Be sure to replace the `<RESOURCE GROUP>` and `<UAMI NAME>` parameter values with your own values:
     
 [!INCLUDE [ua-character-limit](~/includes/managed-identity-ua-character-limits.md)]
 
@@ -33,7 +33,7 @@ Create a user-assigned managed identity using [az identity create](/cli/azure/id
 az identity create -g <RESOURCE GROUP> -n <UAMI NAME>
 ```
 
-The response contains details for the user-assigned managed identity created, similar to the following example. The `id` value for your user-assigned managed identity, as it will be used in the next step:
+The response contains details for the system-assigned managed identity created, similar to the following example. The `id` value for your system-assigned managed identity, as it will be used in the next step:
 
 ```json
 {
@@ -52,9 +52,9 @@ The response contains details for the user-assigned managed identity created, si
 
 ## Assign an identity to your Linux VM
 
-A user-assigned managed identity can be used by clients on multiple Azure resources. Use the following commands to assign the user-assigned managed identity to a single VM. Use the `Id` property returned in the previous step for the `-IdentityID` parameter.
+A system-assigned managed identity can be used by clients on multiple Azure resources. Use the following commands to assign the system-assigned managed identity to a single VM. Use the `Id` property returned in the previous step for the `-IdentityID` parameter.
 
-Assign the user-assigned managed identity to your Linux VM using [az vm identity assign](/cli/azure/vm). Be sure to replace the `<RESOURCE GROUP>` and `<VM NAME>` parameter values with your own values. Use the `id` property returned in the previous step for the `--identities` parameter value.
+Assign the system-assigned managed identity to your Linux VM using [az vm identity assign](/cli/azure/vm). Be sure to replace the `<RESOURCE GROUP>` and `<VM NAME>` parameter values with your own values. Use the `id` property returned in the previous step for the `--identities` parameter value.
 
 ```azurecli-interactive
 az vm identity assign -g <RESOURCE GROUP> -n <VM NAME> --identities "/subscriptions/<SUBSCRIPTION ID>/resourcegroups/<RESOURCE GROUP>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<UAMI NAME>"
@@ -64,7 +64,7 @@ az vm identity assign -g <RESOURCE GROUP> -n <VM NAME> --identities "/subscripti
 
 Managed identities are identities that your code can use to request access tokens to authenticate to resource APIs that support Microsoft Entra authentication. In this tutorial, your code will access the Azure Resource Manager API.  
 
-Before your code can access the API, you need to grant the identity access to a resource in Azure Resource Manager. In this case, the resource group in which the VM is contained. Update the value for `<SUBSCRIPTION ID>` and `<RESOURCE GROUP>` as appropriate for your environment. Additionally, replace `<UAMI PRINCIPALID>` with the `principalId` property returned by the `az identity create` command in [Create a user-assigned managed identity](#create-a-user-assigned-managed-identity):
+Before your code can access the API, you need to grant the identity access to a resource in Azure Resource Manager. In this case, the resource group in which the VM is contained. Update the value for `<SUBSCRIPTION ID>` and `<RESOURCE GROUP>` as appropriate for your environment. Additionally, replace `<UAMI PRINCIPALID>` with the `principalId` property returned by the `az identity create` command in [Create a system-assigned managed identity](#create-a-system-assigned-managed-identity):
 
 ```azurecli-interactive
 az role assignment create --assignee <UAMI PRINCIPALID> --role 'Reader' --scope "/subscriptions/<SUBSCRIPTION ID>/resourcegroups/<RESOURCE GROUP> "
@@ -100,7 +100,7 @@ To complete these steps, you need an SSH client. If you are using Windows, you c
 1. Connect to the VM with the SSH client of your choice. If you are using Windows, you can use the SSH client in the [Windows Subsystem for Linux](/windows/wsl/about). If you need assistance configuring your SSH client's keys, see [How to Use SSH keys with Windows on Azure](/azure/virtual-machines/linux/ssh-from-windows), or [How to create and use an SSH public and private key pair for Linux VMs in Azure](/azure/virtual-machines/linux/mac-create-ssh-keys).
 1. In the terminal window, use CURL to make a request to the Azure Instance Metadata Service (IMDS) identity endpoint to get an access token for Azure Resource Manager.
 
-   The CURL request to acquire an access token is shown in the following example. Be sure to replace `<CLIENT ID>` with the `clientId` property returned by the `az identity create` command in [Create a user-assigned managed identity](#create-a-user-assigned-managed-identity): 
+   The CURL request to acquire an access token is shown in the following example. Be sure to replace `<CLIENT ID>` with the `clientId` property returned by the `az identity create` command in [Create a system-assigned managed identity](#create-a-system-assigned-managed-identity): 
     
    ```bash
    curl -H Metadata:true "http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https%3A%2F%2Fmanagement.azure.com/&client_id=<UAMI CLIENT ID>"
@@ -125,7 +125,7 @@ To complete these steps, you need an SSH client. If you are using Windows, you c
     } 
     ```
 
-1. Use the access token to access Azure Resource Manager, and read the properties of the resource group to which you previously granted your user-assigned managed identity access. Be sure to replace `<SUBSCRIPTION ID>`, `<RESOURCE GROUP>` with the values you specified earlier, and `<ACCESS TOKEN>` with the token returned in the previous step.
+1. Use the access token to access Azure Resource Manager, and read the properties of the resource group to which you previously granted your system-assigned managed identity access. Be sure to replace `<SUBSCRIPTION ID>`, `<RESOURCE GROUP>` with the values you specified earlier, and `<ACCESS TOKEN>` with the token returned in the previous step.
 
     > [!NOTE]
     > The URL is case-sensitive, so be sure to use the exact same case you used earlier when you named the resource group, and the uppercase "G" in `resourceGroups`.
