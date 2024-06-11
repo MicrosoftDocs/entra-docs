@@ -12,8 +12,8 @@ ms.subservice: managed-identities
 [!INCLUDE [az-powershell-update](~/includes/azure-docs-pr/updated-for-az.md)]
 
 To run the scripts in this example, you have two options:
-   - Use the [Azure Cloud Shell](/azure/cloud-shell/overview), which you can open using the **Try It** button on the top-right corner of code blocks.
-   - Run scripts locally by installing the latest version of [Azure PowerShell](/powershell/azure/install-azure-powershell), then sign in to Azure using `Connect-AzAccount`. 
+- Use the [Azure Cloud Shell](/azure/cloud-shell/overview), which you can open using the **Try It** button on the top-right corner of code blocks.
+- Run scripts locally by installing the latest version of [Azure PowerShell](/powershell/azure/install-azure-powershell), then sign in to Azure using `Connect-AzAccount`. 
 
 1. Enable managed identity on an Azure resource, [such as an Azure VM](~/identity/managed-identities-azure-resources/how-to-configure-managed-identities.md).
 
