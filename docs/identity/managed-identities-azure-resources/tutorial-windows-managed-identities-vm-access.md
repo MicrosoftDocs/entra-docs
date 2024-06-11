@@ -32,8 +32,8 @@ zone_pivot_groups: identity-windows-mi-vm-access
 [!INCLUDE [tutorial-windows-vm-access-datalake](includes/tutorial-windows-vm-access-datalake.md)]
 ::: zone-end
 
-::: zone pivot="identity-windows-mi-vm-storage"
-[!INCLUDE [tutorial-windows-vm-access-storage](includes/tutorial-windows-vm-access-storage.md)]
+::: zone pivot="identity-windows-mi-vm-access-storage"
+[!INCLUDE [tutorial-vm-windows-access-storage](includes/tutorial-vm-windows-access-storage.md)]
 ::: zone-end
 
 ::: zone pivot="identity-windows-mi-vm-access-storage-sas"
