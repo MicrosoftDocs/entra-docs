@@ -17,6 +17,10 @@ ms.topic: troubleshooting
 
 There are several configuration changes you're required to make in your code when using Xamarin Android with the Microsoft Authentication Library for .NET (MSAL.NET). The following sections describe the required modifications, followed by a [Troubleshooting](#troubleshooting) section to help you avoid some of the most common issues.
 
+> [!NOTE]
+> MSAL.NET versions 4.61.0 and above do not provide support for Universal Windows Platform (UWP), Xamarin Android, and Xamarin iOS. We recommend you migrate your Xamarin applications to modern frameworks like MAUI. Read more about the deprecation in [Announcing the Upcoming Deprecation of MSAL.NET for Xamarin and UWP](https://devblogs.microsoft.com/identity/uwp-xamarin-msal-net-deprecation/).
+
+
 ## Set the parent activity
 
 On Xamarin Android, set the parent activity so the token returns after the interaction:
