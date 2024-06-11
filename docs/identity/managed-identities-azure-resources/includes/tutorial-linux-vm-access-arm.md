@@ -30,7 +30,7 @@ You'll learn how to:
 1. For the **Manage identity** dropdown, select **Virtual Machine**.
 1. For **Select**, choose your VM in the dropdown, then select **Save**.
 
-    :::image type="content" source="../../media/msi-tutorial-linux-vm-access-arm/msi-permission-linux.png" alt-text="Screenshot that shows adding the reader role to the managed identity.":::
+    :::image type="content" source="../media/msi-tutorial-linux-vm-access-arm/msi-permission-linux.png" alt-text="Screenshot that shows adding the reader role to the managed identity.":::
 
 ## Get an access token
 

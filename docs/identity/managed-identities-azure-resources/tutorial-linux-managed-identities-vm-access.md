@@ -36,13 +36,13 @@ zone_pivot_groups: identity-linux-vm-access
 [!INCLUDE [tutorial-linux-vm-access-storage](includes/tutorial-linux-vm-access-storage.md)]
 ::: zone-end
 
-::: zone pivot="identity-linux-mi-vm-access-sas"
+::: zone pivot="identity-linux-mi-vm-access-sas-key"
 [!INCLUDE [tutorial-linux-vm-access-storage-sas](includes/tutorial-linux-vm-access-storage-sas.md)]
 ::: zone-end
 
 
 ::: zone pivot="identity-linux-mi-vm-access-key"
-[!INCLUDE [tutorial-linux-vm-access-key](includes/tutorial-linux-vm-access-key.md)]
+[!INCLUDE [tutorial-linux-vm-access-key](includes/tutorial-linux-vm-storage-access-key.md)]
 ::: zone-end
 
 ::: zone pivot="identity-linux-mi-vm-access-key-vault"
@@ -60,5 +60,5 @@ zone_pivot_groups: identity-linux-vm-access
 ## Learn more
 
 - [What are managed identities for Azure resources?](~/identity/managed-identities-azure-resources/overview.md)
-- [Quickstart: Use a user-assigned managed identity on a VM to access Azure Resource Manager](~/identity/managed-identities-azure-resources/tutorial-Linux-vm-access.md)
+- [Quickstart: Use a user-assigned managed identity on a VM to access Azure Resource Manager](~/identity/managed-identities-azure-resources/tutorial-linux-managed-identities-vm-access.md)
 - [Create, list, or delete a user-assigned managed identity using Azure PowerShell](./how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-powershell)
