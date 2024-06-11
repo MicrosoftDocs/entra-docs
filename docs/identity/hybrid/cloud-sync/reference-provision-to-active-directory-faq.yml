@@ -34,7 +34,7 @@ sections:
         answer:
           No, this field isn't currently used for determining the scope of groups being provisioned to AD using Cloud Sync. You have to use the Microsoft Entra Cloud Sync configuration experience in the portal to set scope. 
       - question:
-          If I am following the steps outlined in [Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync](migrate-group-writeback.md), will this impact my synchronization from Active Directory to Microsoft Entra ID with Microsoft Entra Connect?
+          If I am following the steps outlined in <a href="https://learn.microsoft.com/entra/identity/hybrid/cloud-sync/migrate-group-writeback>Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync</a>, will this impact my synchronization from Active Directory to Microsoft Entra ID with Microsoft Entra Connect?
         answer:
           No, following the migration steps for moving from group writeback V2 to Microsoft Entra cloud sync will not affect synchronization between AD and Microsoft Entra ID.
 
