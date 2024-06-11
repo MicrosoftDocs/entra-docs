@@ -712,11 +712,6 @@
       "redirect_document_id": false
     },
     {
-      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/tutorial-windows-vm-access-arm.md",
-      "redirect_url": "/entra/identity/managed-identities-azure-resources/tutorial-windows-vm-access",
-      "redirect_document_id": false
-    },
-    {
       "source_path_from_root": "/docs/identity/managed-identities-azure-resources/howto-assign-access-portal.md",
       "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-assign-azure-resource",
       "redirect_document_id": false
@@ -791,16 +786,17 @@
       "redirect_url": "/entra/identity/managed-identities-azure-resources/tutorial-windows-managed-identities-vm-access",
       "redirect_document_id": false
     },
+    {
       "source_path_from_root": "/docs/identity/managed-identities-azure-resources/tutorial-linux-vm-access-datalake.md",
       "redirect_url": "/entra/identity/managed-identities-azure-resources/tutorial-linux-managed-identities-vm-access",
       "redirect_document_id": false
     },
-        {
+    {
       "source_path_from_root": "/docs/identity/managed-identities-azure-resources/tutorial-linux-vm-access-storage.md",
       "redirect_url": "/entra/identity/managed-identities-azure-resources/tutorial-linux-managed-identities-vm-access",
       "redirect_document_id": false
     },
-        {
+    {
       "source_path_from_root": "/docs/identity/managed-identities-azure-resources/tutorial-linux-vm-access-storage-sas.md",
       "redirect_url": "/entra/identity/managed-identities-azure-resources/tutorial-linux-managed-identities-vm-access",
       "redirect_document_id": false
