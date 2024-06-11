@@ -16,7 +16,7 @@ appliesto:
 zone_pivot_groups: identity-linux-vm-access
 ---
 
-# Tutorial: Use a Linux VM system-assigned managed identity
+# Tutorial: Use a Linux VM/VMSS to access Azure resources
 
 [!INCLUDE [preview-notice](~/includes/entra-msi-preview-notice.md)]
 
