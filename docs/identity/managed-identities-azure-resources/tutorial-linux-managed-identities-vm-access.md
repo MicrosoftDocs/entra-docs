@@ -42,7 +42,7 @@ zone_pivot_groups: identity-linux-vm-access
 
 
 ::: zone pivot="identity-linux-mi-vm-access-key"
-[!INCLUDE [tutorial-linux-vm-access-key](includes/tutorial-linux-vm-storage-access-key.md)]
+[!INCLUDE [tutorial-linux-vm-access-storage-access-key](includes/tutorial-linux-vm-access-storage-access-key.md)]
 ::: zone-end
 
 ::: zone pivot="identity-linux-mi-vm-access-key-vault"
