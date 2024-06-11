@@ -147,7 +147,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 4. Go to top  right of the page, click on **Settings** logo.
 
-	![Screenshot shows the Businessmap settings](./media/businessmap-tutorial/tutorial-businessmap-set.png)
+	![Screenshot shows the Businessmap settings.](./media/businessmap-tutorial/tutorial-businessmap-set.png)
 
 5. On the Administration panel page from the left side of menu click **Integrations** and then enable **Single Sign-On**.
 
