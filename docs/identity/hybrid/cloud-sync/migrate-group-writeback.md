@@ -41,6 +41,25 @@ The following prerequisites are required to implement this scenario.
      - Required for global catalog lookup to filter out invalid membership references
 
 
+## Naming convention for groups written back
+Microsoft Entra Connect Sync uses the following format when naming groups that are written back.
+
+ - Default format: CN=Group_&lt;guid&gt;,OU=&lt;container&gt;,DC=&lt;domain component&gt;,DC=&lt;domain component&gt; 
+ - Example: CN=Group_3a5c3221-c465-48c0-95b8-e9305786a271,OU=WritebackContainer,DC=contoso,DC=com 
+
+To make it easier to find groups being written back from Microsoft Entra ID to Active Directory, Microsoft Entra Connect Sync added an option to write back the group distinguished name by using the cloud display name.  This is done by selecting the **Writeback Group Distinguished Name with cloud Display Name** during initial setup of group writeback v2.  If this feature is not enabled, the default format will be used.
+
+If the **Writeback Group Distinguished Name with cloud Display Name** feature is enabled, Microsoft Entra Connect will use the following format.
+
+ - New format: CN=&lt;display name&gt;_&lt;last 12 digits of object ID&gt;,OU=&lt;container&gt;,DC=&lt;domain component&gt;,DC=&lt;domain component&gt; 
+ - Example: CN=Sales_e9305786a271,OU=WritebackContainer,DC=contoso,DC=com 
+
+When migrating, cloud sync will use the same format, depending on whether or not the **Writeback Group Distinguished Name with cloud Display Name** feature is enabled.  This means that if it is disabled, it will use the default format.  If it is enabled, it will use the new format.  
+
+>[!IMPORTANT]
+>If you want cloud sync to use the new format, you need to ensure that the "Writeback Group Distinguished Name with cloud Display Name" feature in Microsoft Entra Connect Sync is enabled before you migrate.  Enable this feature and then allow the groups to synchronize before starting a migration.  See [Modifying group writeback V2]() for information on how update an existing Microsoft Entra Connect Group Writeback V2 deployment.
+
+
 
 ## Step 1 - Copy adminDescription to msDS-ExternalDirectoryObjectID
 
