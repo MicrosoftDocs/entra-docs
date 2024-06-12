@@ -3,8 +3,7 @@ title: 'Tutorial: Configure Proware for automatic user provisioning with Microso
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Proware.
 
 documentationcenter: ''
-author: twimmers
-writer: twimmers
+author: thomasakelo
 manager: jeedes
 
 ms.assetid: 8887932e-e27e-419b-aa85-a0cda428d525
@@ -13,8 +12,8 @@ ms.subservice: saas-apps
 
 ms.tgt_pltfrm: na
 ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: thwimmer
+ms.date: 03/25/2024
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Proware so that I can streamline the user management process and ensure that users have the appropriate access to Proware.
 ---

@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: tutorial
-ms.date: 01/25/2024
+ms.date: 05/06/2024
 ms.author: chmutali
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Workday to Microsoft Entra ID so that I can streamline the user management process and ensure that users have the appropriate access to Workday to Microsoft Entra ID.
@@ -28,7 +28,7 @@ The [Microsoft Entra user provisioning service](~/identity/app-provisioning/user
 
 * **Hiring new employees** - When a new employee is added to Workday, a user account is automatically created in Microsoft Entra ID and optionally Microsoft 365 and [other SaaS applications supported by Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md), with write-back of the email address to Workday.
 
-* **Employee attribute and profile updates** - When an employee record is updated in Workday (such as their name, title, or manager), their user account will be automatically updated Microsoft Entra ID and optionally Microsoft 365 and [other SaaS applications supported by Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
+* **Employee attribute and profile updates** - When an employee record is updated in Workday (such as their name, title, or manager), their user account is automatically updated Microsoft Entra ID and optionally Microsoft 365 and [other SaaS applications supported by Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 
 * **Employee terminations** - When an employee is terminated in Workday, their user account is automatically disabled in Microsoft Entra ID and optionally Microsoft 365 and [other SaaS applications supported by Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 
@@ -194,9 +194,9 @@ Once the Workday provisioning app configurations have been completed, you can tu
 
 2. Click **Save**.
 
-3. This operation will start the initial sync, which can take a variable number of hours depending on how many users are in the Workday tenant. You can check the progress bar to the track the progress of the sync cycle. 
+3. This operation starts the initial sync, which can take a variable number of hours depending on how many users are in the Workday tenant. You can check the progress bar to the track the progress of the sync cycle. 
 
-4. At any time, check the **Audit logs** tab in the Azure portal to see what actions the provisioning service has performed. The audit logs lists all individual sync events performed by the provisioning service, such as which users are being read out of Workday and then subsequently added or updated to Microsoft Entra ID. 
+4. At any time, check the **Provisioning** tab in the Entra admin center to see what actions the provisioning service has performed. The provisioning logs lists all individual sync events performed by the provisioning service, such as which users are being read out of Workday and then subsequently added or updated to Microsoft Entra ID. 
 
 5. Once the initial sync is completed, it will write an audit summary report in the **Provisioning** tab, as shown below.
 

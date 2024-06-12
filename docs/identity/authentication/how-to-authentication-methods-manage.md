@@ -139,7 +139,7 @@ The Authentication methods policy has granular control with separate controls fo
 
 ### Security questions
 
-A control for **Security questions** is coming soon. If you use security questions, and don't want to disable them, make sure to keep them enabled in the legacy SSPR policy until the new control is available. You _can_ finish migration as described in the next section with security questions enabled.
+A control for **Security questions** is coming soon. If you use security questions, and don't want to disable them, make sure to keep them enabled in the legacy SSPR policy until the new control is available. You *can* finish migration as described in the next section with security questions enabled.
 
 ## Finish the migration 
 

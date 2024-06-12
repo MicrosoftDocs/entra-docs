@@ -21,7 +21,7 @@ This article explains how to create a custom role with permissions to manage ent
 ## Prerequisites
 
 - Microsoft Entra ID P1 or P2 license
-- Privileged Role Administrator or Global Administrator
+- Privileged Role Administrator
 - Microsoft Graph PowerShell SDK installed when using PowerShell
 - Admin consent when using Graph explorer for Microsoft Graph API
 

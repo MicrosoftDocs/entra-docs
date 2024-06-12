@@ -3,8 +3,7 @@ title: 'Tutorial: Configure Palo Alto Networks SCIM Connector for automatic user
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Palo Alto Networks SCIM Connector.
 
 documentationcenter: ''
-author: twimmers
-writer: Thwimmer
+author: thomasakelo
 manager: jeedes
 
 ms.assetid: b44885ef-fc1c-473c-9948-d7ca54d42d49
@@ -13,8 +12,8 @@ ms.subservice: saas-apps
 
 
 ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: Thwimmer
+ms.date: 03/25/2024
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Palo Alto Networks SCIM Connector so that I can streamline the user management process and ensure that users have the appropriate access to Palo Alto Networks SCIM Connector.
 ---

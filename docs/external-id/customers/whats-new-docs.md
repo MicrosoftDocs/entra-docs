@@ -1,7 +1,7 @@
 ---
 title: "What's new in Microsoft Entra External ID in external tenants"
 description: "New and updated documentation for Microsoft Entra External ID in external tenants."
-ms.date: 05/01/2024
+ms.date: 06/05/2024
 ms.service: entra-external-id
 ms.subservice: customers
 ms.topic: whats-new
@@ -14,6 +14,35 @@ manager: CelesteDG
 # Microsoft Entra External ID in external tenants: What's new
 
 Welcome to what's new in documentation for Microsoft Entra External ID in external tenants. This article lists new docs that have been added and those that have had significant updates in the last three months. 
+
+## May 2024
+
+This month, we announced the general availability of Microsoft Entra External ID. Additionally, we’ve added “Applies to” tags to many of our articles to help navigation within the documentation.
+
+### New articles
+
+- [Tutorial: Prepare your Android (Kotlin) app for authentication](tutorial-mobile-app-android-kotlin-prepare-app.md)
+- [Tutorial: Register and configure Android (Kotlin) mobile app](tutorial-mobile-app-android-kotlin-prepare-tenant.md)
+- [Tutorial: Call a protected web API in Android (Kotlin) app](tutorial-mobile-app-android-kotlin-sign-in-call-api.md)
+- [Tutorial: Sign in users in Android (Kotlin) mobile app](tutorial-mobile-app-android-kotlin-sign-in.md)
+- [Custom URL domains in Microsoft Entra External ID (Preview)](concept-custom-url-domain.md)
+- [Enable custom URL domains for Microsoft Entra External ID (Preview)](how-to-custom-url-domain.md)
+- [Tutorial: Prepare your iOS (Swift) app for authentication](tutorial-mobile-app-ios-swift-prepare-app.md)
+- [Tutorial: Register and configure iOS (Swift) mobile app](tutorial-mobile-app-ios-swift-prepare-tenant.md)
+- [Tutorial: Call a protected web API in iOS (Swift) app](tutorial-mobile-app-ios-swift-sign-in-call-api.md)
+- [Tutorial: Sign in users in iOS (Swift) mobile app](tutorial-mobile-app-ios-swift-sign-in.md)
+- [Delete an external tenant](how-to-delete-external-tenant-portal.md)
+
+### Updated articles
+
+- [Tutorial: Add sign-in in Android app by using native authentication](tutorial-native-authentication-android-sign-in-sign-out.md) - Merged sign-in native authentication Android articles
+- [Supported features in workforce and external tenants](concept-supported-features-customers.md) - Added new supported features
+- [Samples for External ID developers](samples-ciam-all.md) - Updated the list of guides and tutorials for samples
+- [Tutorial: Add sign-up in an Android mobile app using native authentication](tutorial-native-authentication-android-sign-up.md) - Merged sign-in native authentication Android articles
+- [Tutorial: Prepare your Android mobile app for native authentication](tutorial-native-authentication-prepare-android-app.md) - Merged sign-in native authentication Android articles
+- [Authentication methods and identity providers in external tenants](concept-authentication-methods-customers.md) - Clarified authentication methods, identity providers, and MFA in external tenants
+- [Add and manage admin accounts](how-to-manage-admin-accounts.md) - Updated the least privileged role
+- [Microsoft Entra External ID frequently asked questions](faq-customers.md) - Updates some FAQs
 
 ## April 2024
 
@@ -35,7 +64,7 @@ This month, we made updates to our table of contents to make navigation easier f
 
 ### New articles
 
-- [Native authentication (preview)](concept-native-authentication.md)
+- [Native authentication ](concept-native-authentication.md)
 - [Get started guide features](concept-guide-explained.md)
 
 ### Updated articles
@@ -50,17 +79,6 @@ This month, we made updates to our table of contents to make navigation easier f
 - [Get started with Microsoft Entra External ID](quickstart-trial-setup.md) - Updated screenshots
 - [Samples for customer identity and access management (CIAM)](samples-ciam-all.md) - Added links to native authentication public preview articles
 
-## February 2024
-
-### New articles
-
-- [Test your sign-up and sign-in user flow](how-to-test-user-flows.md) - Describes the Run user flow feature
-- [Get started with the Microsoft Entra External ID extension for Visual Studio Code](visual-studio-code-extension.md)
-
-### Updated articles
-
-- [Supported features in Microsoft Entra External ID (preview)](concept-supported-features-customers.md) - OpenID Connect and OAuth2 updates
-- [Create a customer identity and access management (CIAM) tenant (preview)](how-to-create-external-tenant-portal.md) - Built-in role update
 
 
 

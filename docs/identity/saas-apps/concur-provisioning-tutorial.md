@@ -8,17 +8,17 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: jeedes
+ms.date: 03/25/2024
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Concur so that I can streamline the user management process and ensure that users have the appropriate access to Concur.
 ---
 # Tutorial: Configure Concur for automatic user provisioning
 
-The objective of this tutorial is to show you the steps you need to perform in Concur and Microsoft Entra ID to automatically provision and de-provision user accounts from Microsoft Entra ID to Concur.
+The objective of this tutorial is to show you the steps you need to perform in Concur and Microsoft Entra ID to automatically provision and de-provision user accounts from Microsoft Entra ID directly to Concur.
 
 > [!WARNING]
-> This provisioning integration is no longer supported. As a result of this, the provisioning functionality of the SAP Concur application in the Microsoft Entra Enterprise App Gallery will be removed soon. The application's SSO functionality will remain intact. Microsoft is working with SAP Concur to build a new modernized provisioning integration, but there is currently no ETA on when this will be completed.
+> This provisioning integration is no longer supported and the direct provisioning functionality of the SAP Concur application in the Microsoft Entra Enterprise App Gallery is being removed. The application's SSO functionality will remain intact. Customers should instead provision to SAP Concur via SAP Cloud Identity Services. For more information, see how to configure provisioning of users [from Microsoft Entra ID to SAP Cloud Identity Services](sap-cloud-platform-identity-authentication-provisioning-tutorial.md), and how to configure provisioning of users [from SAP Cloud Identity Services to SAP Concur](https://help.sap.com/docs/cloud-identity-services/cloud-identity-services/target-sap-concur).
 
 ## Prerequisites
 
@@ -30,11 +30,11 @@ The scenario outlined in this tutorial assumes that you already have the followi
 
 ## Assigning users to Concur
 
-Microsoft Entra ID uses a concept called "assignments" to determine which users should receive access to selected apps. In the context of automatic user account provisioning, only the users and groups that have been "assigned" to an application in Microsoft Entra ID is synchronized.
+Microsoft Entra ID uses a concept called "assignments" to determine which users should receive access to selected apps. In the context of automatic user account provisioning, only the users and groups that are "assigned" to an application in Microsoft Entra ID are synchronized.
 
 Before configuring and enabling the provisioning service, you need to decide what users and/or groups in Microsoft Entra ID represent the users who need access to your Concur app. Once decided, you can assign these users to your Concur app by following the instructions here:
 
-[Assign a user or group to an enterprise app](~/identity/enterprise-apps/assign-user-or-group-access-portal.md)
+[Assign a user or group to an enterprise app.](~/identity/enterprise-apps/assign-user-or-group-access-portal.md)
 
 ### Important tips for assigning users to Concur
 
@@ -47,7 +47,7 @@ Before configuring and enabling the provisioning service, you need to decide wha
 This section guides you through connecting your Microsoft Entra ID to Concur's user account provisioning API, and configuring the provisioning service to create, update, and disable assigned user accounts in Concur based on user and group assignment in Microsoft Entra ID.
 
 > [!Tip] 
-> You may also choose to enabled SAML-based Single Sign-On for Concur, following the instructions provided in the [Azure portal](https://portal.azure.com). Single sign-on can be configured independently of automatic provisioning, though these two features compliment each other.
+> You may also choose to enabled SAML-based Single Sign-On for Concur, following the instructions provided in the [Azure portal](https://portal.azure.com). Single sign-on can be configured independently of automatic provisioning, though these two features complement each other.
 
 ### To configure user account provisioning:
 
@@ -63,9 +63,9 @@ For the following reasons, this action should not be done with the profile they 
 
 * The client has to be the one that clicks "*Yes*" on the dialogue window that is displayed after an app is enabled. This click acknowledges the client is willing for the Partner application to access their data, so you or the Partner cannot click that Yes button.
 
-* If a client administrator that has enabled an app using the T&E admin profile leaves the company (resulting in the profile being inactivated), any apps enabled using that profile does not function until the app is enabled with another active WS Admin profile. This is why you are supposed to create distinct WS Admin profiles.
+* If a client administrator that has enabled an app using the T&E admin profile leaves the company (resulting in the profile being inactivated), any apps enabled using that profile do not function until the app is enabled with another active WS Admin profile. This reason is why you should create distinct WS Admin profiles.
 
-* If an administrator leaves the company, the name associated to the WS Admin profile can be changed to the replacement administrator if desired without impacting the enabled app because that profile does not need inactivated.
+* If an administrator leaves the company, the name associated to the WS Admin profile can be changed to the replacement administrator if desired without impacting the enabled app because that profile does not need to be inactivated.
 
 **To configure user provisioning, perform the following steps:**
 

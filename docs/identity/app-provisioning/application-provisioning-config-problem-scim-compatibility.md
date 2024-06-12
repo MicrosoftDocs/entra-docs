@@ -16,7 +16,7 @@ ms.reviewer: arvinh
 
 Microsoft Entra ID can automatically provision users and groups to any application or system that is fronted by a web service with the interface defined in the [System for Cross-Domain Identity Management (SCIM) 2.0 protocol specification](https://tools.ietf.org/html/draft-ietf-scim-api-19). 
 
-Microsoft Entra ID support for the SCIM 2.0 protocol is described in [Using System for Cross-Domain Identity Management (SCIM) to automatically provision users and groups from Microsoft Entra ID to applications](use-scim-to-provision-users-and-groups.md), which lists the specific parts of the protocol that it implements in order to automatically provision users and groups from Microsoft Entra ID to applications that support SCIM 2.0.
+Microsoft Entra support for the SCIM 2.0 protocol is described in [Using System for Cross-Domain Identity Management (SCIM) to automatically provision users and groups from Microsoft Entra ID to applications](use-scim-to-provision-users-and-groups.md), which lists the specific parts of the protocol that it implements in order to automatically provision users and groups from Microsoft Entra ID to applications that support SCIM 2.0.
 
 This article describes current and past issues with the Microsoft Entra user provisioning service's adherence to the SCIM 2.0 protocol, and how to work around these issues.
 
@@ -37,7 +37,7 @@ In the table below, any item marked as fixed means that the proper behavior can 
 | Extension attributes use dot "." notation before attribute names instead of colon ":" notation |  Yes  | December 18, 2018  | downgrade to customappSSO |
 | Patch requests for multi-value attributes contain invalid path filter syntax | Yes  |  December 18, 2018  | downgrade to customappSSO |
 | Group creation requests contain an invalid schema URI | Yes  |  December 18, 2018  |  downgrade to customappSSO |
-| Update PATCH behavior to ensure compliance (e.g. active as boolean and proper group membership removals) | No | TBD| use feature flag |
+| Update PATCH behavior to ensure compliance (such as active as boolean and proper group membership removals) | No | TBD| use feature flag |
 
 ## Flags to alter the SCIM behavior
 Use the flags below in the tenant URL of your application in order to change the default SCIM client behavior.

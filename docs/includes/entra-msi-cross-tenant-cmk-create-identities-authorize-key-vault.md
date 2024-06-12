@@ -48,7 +48,7 @@ Create a user-assigned managed identity to be used as a federated identity crede
 1. Select **Review + create**.
 1. On successful deployment, note the **Azure ResourceId** of the user-assigned managed identity, which is available under **Properties**. For example:
 
-   `/subscriptions/tttttttt-0000-tttt-0000-tttt0000tttt/resourcegroups/XTCMKDemo/providers/Microsoft.ManagedIdentity/userAssignedIdentities/ConsotoCMKDemoUA`
+   `/subscriptions/aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e/resourcegroups/XTCMKDemo/providers/Microsoft.ManagedIdentity/userAssignedIdentities/ConsotoCMKDemoUA`
 
     :::image type="content" source="media/msi-cross-tenant-cmk-create-identities-authorize-key-vault/create-user-assigned-managed-identity.png" alt-text="Screen shot showing how to create a resource group and a user-assigned managed identity." lightbox="media/msi-cross-tenant-cmk-create-identities-authorize-key-vault/create-user-assigned-managed-identity.png" border="true":::
 
@@ -233,7 +233,7 @@ Find the application ID (client ID) of the multi-tenant application and share it
 
 The following steps are performed by the customer in the customer's tenant *Tenant2*. The customer can use the Azure portal, Azure PowerShell, or Azure CLI.
 
-The user executing the steps must be an administrator with a privileged role such as [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator), [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator), or [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+The user executing the steps must be an administrator with at least the [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) or [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator) role.
 
 # [Portal](#tab/azure-portal)
 

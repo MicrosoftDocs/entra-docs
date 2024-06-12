@@ -12,6 +12,8 @@ items:
     href: identity-fundamental-concepts.md
   - name: Introduction to identity and access management (IAM)
     href: introduction-identity-access-management.md
+  - name: Microsoft Entra admin center
+    href: entra-admin-center.md
 - name: First steps
   expanded: true
   items:
@@ -158,6 +160,8 @@ items:
       href: ~/identity/enterprise-apps/custom-security-attributes-apps.md?toc=/entra/fundamentals/toc.json&bc=/entra/fundamentals/breadcrumb/toc.json
     - name: Troubleshoot attributes
       href: custom-security-attributes-troubleshoot.md
+  - name: Microsoft Graph API reference
+    href: /graph/api/resources/identity-network-access-overview?toc=/entra/fundamentals/toc.json&bc=/entra/fundamentals/breadcrumb/toc.json
   - name: Microsoft Graph extensions
     href: /graph/extensibility-overview?toc=/entra/fundamentals/toc.json&bc=/entra/fundamentals/breadcrumb/toc.json
   - name: Frontline worker management

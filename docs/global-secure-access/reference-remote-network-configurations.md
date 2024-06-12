@@ -79,11 +79,11 @@ When you select **Default** as your IPsec/IKE policy when configuring remote net
 
 ### IKE Phase 1 combinations
 
-| Properties | Combination 1 | Combination 2 | Combination 3 | Combination 4 | Combination 5 |
-| --- | --- | --- | --- | --- | --- |
-| IKE encryption | GCMAES256 | GCMAES128 | AES256 | AES128 | AES256 |
-| IKE integrity | SHA384 | SHA256 | SHA384 | SHA256 | SHA256 |
-| DH group | DHGroup24 | DHGroup24 | DHGroup24 | DHGroup24 | DHGroup2 |
+| Properties | Combination 1 | Combination 2 | Combination 3 | Combination 4 |
+| --- | --- | --- | --- | --- |
+| IKE encryption | GCMAES256 | GCMAES128 | AES256 | AES128 |
+| IKE integrity | SHA384 | SHA256 | SHA384 | SHA256 |
+| DH group | DHGroup24 | DHGroup24 | DHGroup24 | DHGroup24 |
 
 ### IKE Phase 2 combinations
 

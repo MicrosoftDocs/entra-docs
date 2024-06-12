@@ -5,7 +5,7 @@ description: Learn how to configure and enable users to register passwordless au
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 04/16/2024
+ms.date: 05/21/2024
 
 ms.author: justinha
 author: tilarso 
@@ -105,14 +105,14 @@ New-MgUserAuthenticationTemporaryAccessPassMethod -UserId user2@contoso.com -Bod
 
 Id                                   CreatedDateTime       IsUsable IsUsableOnce LifetimeInMinutes MethodUsabilityReason StartDateTime         TemporaryAccessPass
 --                                   ---------------       -------- ------------ ----------------- --------------------- -------------         -------------------
-c5dbd20a-8b8f-4791-a23f-488fcbde3b38 5/22/2022 11:19:17 PM False    True         60                NotYetValid           23/05/2022 6:00:00 AM TAPRocks!
+00aa00aa-bb11-cc22-dd33-44ee44ee44ee 5/22/2022 11:19:17 PM False    True         60                NotYetValid           23/05/2022 6:00:00 AM TAPRocks!
 
 # Get a user's Temporary Access Pass
 Get-MgUserAuthenticationTemporaryAccessPassMethod -UserId user3@contoso.com
 
 Id                                   CreatedDateTime       IsUsable IsUsableOnce LifetimeInMinutes MethodUsabilityReason StartDateTime         TemporaryAccessPass
 --                                   ---------------       -------- ------------ ----------------- --------------------- -------------         -------------------
-c5dbd20a-8b8f-4791-a23f-488fcbde3b38 5/22/2022 11:19:17 PM False    True         60                NotYetValid           23/05/2022 6:00:00 AM
+00aa00aa-bb11-cc22-dd33-44ee44ee44ee 5/22/2022 11:19:17 PM False    True         60                NotYetValid           23/05/2022 6:00:00 AM
 
 ```
 
@@ -191,7 +191,7 @@ You can also use PowerShell:
 
 ```powershell
 # Remove a user's Temporary Access Pass
-Remove-MgUserAuthenticationTemporaryAccessPassMethod -UserId user3@contoso.com -TemporaryAccessPassAuthenticationMethodId c5dbd20a-8b8f-4791-a23f-488fcbde3b38
+Remove-MgUserAuthenticationTemporaryAccessPassMethod -UserId user3@contoso.com -TemporaryAccessPassAuthenticationMethodId 00aa00aa-bb11-cc22-dd33-44ee44ee44ee
 ```
 
 For more information, see [Remove-MgUserAuthenticationTemporaryAccessPassMethod](/powershell/module/microsoft.graph.identity.signins/remove-mguserauthenticationtemporaryaccesspassmethod?view=graph-powershell-1.0&preserve-view=true&viewFallbackFrom=graph-powershell-beta).
@@ -210,7 +210,6 @@ For more information about NIST standards for onboarding and recovery, see [NIST
 Keep these limitations in mind:
 
 - When using a one-time TAP to register a passwordless method such as a FIDO2 security key or phone sign-in, the user must complete the registration within 10 minutes of sign-in with the one-time TAP. This limitation doesn't apply to a TAP that can be used more than once.
-- A one-time TAP can't be used with [guided passkey (FIDO2) registration](/entra/identity/authentication/how-to-register-passkey#guided-registration).
 - Users in scope for self service password reset (SSPR) registration policy *or* [Identity Protection multifactor authentication registration policy](~/id-protection/howto-identity-protection-configure-mfa-policy.md) are required to register authentication methods after they've signed in with a TAP using a browser. 
 Users in scope for these policies are redirected to the [Interrupt mode of the combined registration](concept-registration-mfa-sspr-combined.md#combined-registration-modes). This experience doesn't currently support FIDO2 and phone sign-in registration. 
 - A TAP can't be used with the Network Policy Server (NPS) extension and Active Directory Federation Services (AD FS) adapter.

@@ -7,7 +7,7 @@ manager: celestedg
 
 ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 01/23/2024
+ms.date: 05/15/2024
 ms.author: mimart
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
@@ -17,8 +17,10 @@ ms.collection: M365-identity-device-management
 
 # Define custom attributes for user flows
 
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
+
 > [!TIP]
-> This article applies to B2B collaboration user flows. If your tenant is configured for customer identity and access management, see [Collect user attributes during sign-up](customers/how-to-define-custom-attributes.md) for customers.
+> This article applies to B2B collaboration user flows in workforce tenants. For information about external tenants, see [Collect user attributes during sign-up](customers/how-to-define-custom-attributes.md).
 
 For each application, you might have different requirements for the information you want to collect during sign-up. Microsoft Entra External ID comes with a built-in set of information stored in attributes, such as Given Name, Surname, City, and Postal Code. With Microsoft Entra External ID, you can extend the set of attributes stored on a guest account when the external user signs up through a user flow.
 

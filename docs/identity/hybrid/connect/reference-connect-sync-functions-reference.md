@@ -410,7 +410,7 @@ The CGuid function converts the string representation of a GUID to its binary re
 **Syntax:**  
 `bin CGuid(str GUID)`
 
-* A String formatted in this pattern: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx or {xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}
+* A String formatted in this pattern: 00001111-aaaa-2222-bbbb-3333cccc4444 or {00001111-aaaa-2222-bbbb-3333cccc4444}
 
 ---
 ### Contains
@@ -784,7 +784,7 @@ If the string could be converted to a GUID, then the IsGuid function evaluated t
 `bool IsGuid(str GUID)`
 
 **Remarks:**  
-A GUID is defined as a string following one of these patterns: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx or {xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}
+A GUID is defined as a string following one of these patterns: 00001111-aaaa-2222-bbbb-3333cccc4444 or {00001111-aaaa-2222-bbbb-3333cccc4444}
 
 Used to determine if CGuid() can be successful.
 

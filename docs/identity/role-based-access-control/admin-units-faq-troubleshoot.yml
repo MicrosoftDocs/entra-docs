@@ -14,7 +14,7 @@ metadata:
   
 title: "Microsoft Entra administrative units: Troubleshooting and FAQ"
 summary: |
-  For more granular administrative control in Microsoft Entra ID, you can assign users to a Microsoft Entra role with a scope that's limited to one or more administrative units. For sample PowerShell scripts for common tasks, see [Work with administrative units](/powershell/azure/active-directory/working-with-administrative-units).
+  For more granular administrative control in Microsoft Entra ID, you can assign users to a Microsoft Entra role with a scope that is limited to one or more administrative units. For sample PowerShell scripts for common tasks, see [Work with administrative units](/powershell/azure/active-directory/working-with-administrative-units).
   
 sections:
   - name: General
@@ -22,12 +22,12 @@ sections:
       - question: |
           Why am I unable to create an administrative unit?
         answer: |
-          Only a *Global Administrator* or *Privileged Role Administrator* can create an administrative unit in Microsoft Entra ID. Check to ensure that the user who's trying to create the administrative unit is assigned either the *Global Administrator* or *Privileged Role Administrator* role.
+          You must be assigned at least the [Privileged Role Administrator](permissions-reference.md#privileged-role-administrator) role to create an administrative unit in Microsoft Entra ID. Check to ensure that the user who's trying to create the administrative unit is assigned the *Privileged Role Administrator* role.
 
       - question: |
           I added a group to an administrative unit. Why are the group members still not showing up there?
         answer: |
-          When you add a group to an administrative unit, that does not result in all the group's members being added to it. Users must be directly assigned to the administrative unit.
+          When you add a group to an administrative unit, that doesn't result in all the group's members being added to it. Users must be directly assigned to the administrative unit.
 
       - question: |
           I just added (or removed) a member of the administrative unit. Why is the member not showing up (or still showing up) on the user interface?
@@ -44,7 +44,7 @@ sections:
       - question: |
           Why are administrative units necessary? Couldn't we have used security groups as the way to define a scope?
         answer: |
-          Security groups have an existing purpose and authorization model. A *User Administrator*, for example, can manage membership of all security groups in the Microsoft Entra organization. The role might use groups to manage access to applications such as Salesforce. A *User Administrator* should not be able to manage the delegation model itself, which would be the result if security groups were extended to support "resource grouping" scenarios. 
+          Security groups have an existing purpose and authorization model. A *User Administrator*, for example, can manage membership of all security groups in the Microsoft Entra organization. The role might use groups to manage access to applications such as Salesforce. A *User Administrator* shouldn't be able to manage the delegation model itself, which would be the result if security groups were extended to support "resource grouping" scenarios. 
           
           Administrative units, such as organizational units in Windows Server Active Directory, are intended to provide a way to scope administration of a wide range of directory objects. Security groups themselves can be members of resource scopes. Using security groups to define the set of security groups that an administrator can manage could become confusing.
           
@@ -61,15 +61,15 @@ sections:
       - question: |
           Are administrative units available in B2C organizations?
         answer: |
-          No, administrative units are not available for B2C organizations.
+          No, administrative units aren't available for B2C organizations.
 
       - question: |
           Are nested administrative units supported?
         answer: |
-          No, nested administrative units are not supported.
+          No, nested administrative units aren't supported.
 
       - question: |
-          Are administrative units supported in PowerShell and the Graph API?
+          Are administrative units supported in PowerShell and the Microsoft Graph API?
         answer: |
           Yes. You'll find support for administrative units in [PowerShell cmdlet documentation](/powershell/module/azuread/) and [sample scripts](/powershell/azure/active-directory/working-with-administrative-units).
           
@@ -85,7 +85,7 @@ sections:
       - question: |
           After creating a dynamic membership rule in the Microsoft Entra admin center using the rule builder and attempting to save, I get the error "Failed to update administrative unit properties".
         answer: |
-          This usually means there is a problem with the supplied property values. Confirm that the property values you have supplied have a proper value type (Boolean, string, or string collection). For more information, see the allowed values for each operator for [users](~/identity/users/groups-dynamic-membership.md#supported-properties) or [devices](~/identity/users/groups-dynamic-membership.md#rules-for-devices).
+          This usually means there's a problem with the supplied property values. Confirm that the property values you have supplied have a proper value type (Boolean, string, or string collection). For more information, see the allowed values for each operator for [users](~/identity/users/groups-dynamic-membership.md#supported-properties) or [devices](~/identity/users/groups-dynamic-membership.md#rules-for-devices).
           
           This error can also result if a person without a Microsoft Entra ID P1 license attempts to save an update to the administrative unit.
 
@@ -95,7 +95,7 @@ sections:
           To add a single user, add an appropriate expression with the `OR` query operator to the dynamic membership rule.
 
       - question: |
-          I am a Global Administrator, but I can't add or remove members for an administrative unit.
+          I am a Privileged Role Administrator, but I can't add or remove members for an administrative unit.
         answer: |
           When an administrative unit has been configured for dynamic membership, you must edit the dynamic membership rules to change membership.
 

@@ -21,6 +21,6 @@ ms.manager: mwongerapk
    | **Allowed member types**  | Specifies whether this app role can be assigned to users, applications, or both. | `Users/Groups`                |
    | **Value** | Specifies the value of the roles claim that the application should expect in the token. The value should exactly match the string referenced in the application's code. The value can't contain spaces.| `Orders.Manager`               |
    | **Description** | A more detailed description of the app role displayed during admin app assignment experiences. | `Manage online orders.` |
-   | **Do you want to enable this app role?** | Specifies whether the app role is enabled. To delete an app role, deselect this checkbox and apply the change before attempting the delete operation.| _Checked_ |
+   | **Do you want to enable this app role?** | Specifies whether the app role is enabled. To delete an app role, deselect this checkbox and apply the change before attempting the delete operation.| *Checked* |
 
 1. Select **Apply** to create the application role.

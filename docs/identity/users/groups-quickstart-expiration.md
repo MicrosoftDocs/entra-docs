@@ -32,13 +32,13 @@ If you don't have an Azure subscription, [create a free account](https://azure.m
 
 ## Prerequisite
 
- The least-privileged role required to set up group expiration is User administrator in the organization.
+ The least-privileged role required to set up group expiration is User Administrator in the organization.
 
 ## Turn on user creation for groups
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
 1. Browse to **Identity** > **Groups** > **All groups** and then select **General**.
   
    :::image type="content" source="./media/groups-quickstart-expiration/self-service-settings.png" alt-text="Screenshot of the Self-service group settings page.":::
@@ -68,7 +68,7 @@ That's it! In this quickstart, you successfully set the expiration policy for th
 
 ### To remove the expiration policy
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
 1. Browse to **Identity** > **Groups** > **All groups** > **Expiration**.
 1. Set **Enable expiration for these Microsoft 365 groups** to **None**.
 

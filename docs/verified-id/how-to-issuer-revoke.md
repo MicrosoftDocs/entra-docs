@@ -67,7 +67,7 @@ Microsoft Entra Verified ID doesn't store verifiable credential data. The issuer
   "attestations": {
     "idTokens": [
       {
-        "clientId": "8d5b446e-22b2-4e01-bb2e-9070f6b20c90",
+        "clientId": "00001111-aaaa-2222-bbbb-3333cccc4444",
         "configuration": "https://didplayground.b2clogin.com/didplayground.onmicrosoft.com/B2C_1_sisu/v2.0/.well-known/openid-configuration",
         "redirectUri": "vcclient://openid",
         "scope": "openid profile email",
@@ -120,7 +120,7 @@ In every Microsoft-issued verifiable credential, there's a claim called `credent
 ```json
 ...
 "credentialStatus": { 
-    "id": "urn:uuid:625dfcad-0000-1111-2222-333444445555?bit-index=31", 
+    "id": "urn:uuid:00aa00aa-bb11-cc22-dd33-44ee44ee44ee?bit-index=31", 
     "type": "RevocationList2021Status", 
     "statusListIndex": 31, 
     "statusListCredential": "did:web:verifiedid.contoso.com?service=IdentityHub&queries=...data..." 
@@ -155,7 +155,7 @@ didDocument": {
              "type": "IdentityHub",
              "serviceEndpoint": {
                 "instances": [
-                   "https://verifiedid.hub.msidentity.com/v1.0/11111111-2222-3333-4444-000000000000"
+                   "https://verifiedid.hub.msidentity.com/v1.0/00aa00aa-bb11-cc22-dd33-44ee44ee44ee"
                 ],
                 "origins": [ ]
              }

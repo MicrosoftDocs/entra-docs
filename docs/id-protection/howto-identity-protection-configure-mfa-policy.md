@@ -5,18 +5,18 @@ description: Learn how to configure the Microsoft Entra ID Protection multifacto
 ms.service: entra-id-protection
 
 ms.topic: how-to
-ms.date: 04/25/2024
+ms.date: 05/06/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
-ms.reviewer: 
+ms.reviewer: etbasser
 ---
 # How To: Configure the multifactor authentication registration policy
 
 Microsoft helps you manage the deployment of multifactor authentication (MFA) by configuring the Microsoft Entra ID Protection policy to require MFA registration no matter what modern authentication app you're signing in to. Multifactor authentication provides a means to verify who you are using more than just a username and password. It provides a second layer of security to user sign-ins. In order for users to be able to respond to MFA prompts, they must first register authentication methods, like the Microsoft Authenticator app.
 
-We recommend that you require multifactor authentication for all user sign-ins. Based on our studies, your account is more than 99.9% less likely to be compromised if you use MFA.
+We recommend that you require multifactor authentication for all user sign-ins. [Based on our studies](https://www.microsoft.com/security/security-insider/microsoft-digital-defense-report-2023), your account is more than 99% less likely to be compromised if you use MFA. Even if you don't require MFA all the time this policy ensures your users are ready when the time comes to do MFA.
 
 For more information, see the article [Common Conditional Access policy: Require MFA for all users](../identity/conditional-access/howto-conditional-access-policy-all-users-mfa.md).
 

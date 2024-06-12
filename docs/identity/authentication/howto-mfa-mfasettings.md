@@ -6,7 +6,7 @@ description: Learn how to configure settings for Microsoft Entra multifactor aut
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 04/28/2024
+ms.date: 06/11/2024
 
 ms.author: justinha
 author: justinha
@@ -84,7 +84,7 @@ Microsoft recommends using [Report suspicious activity](#report-suspicious-activ
 
 The following fraud alert configuration options are available:
 
-* **Automatically block users who report fraud**. If a user reports fraud, the Azure AD Multifactor Authentication attempts for the user  account are blocked for 90 days or until an administrator unblocks the account. An administrator can review sign-ins by using the sign-in report, and take appropriate action to prevent future fraud. An administrator can then [unblock](#unblock-a-user) the user's account.
+* **Automatically block users who report fraud**. If a user reports fraud, the Microsoft Entra multifactor authentication attempts for the user  account are blocked for 90 days or until an administrator unblocks the account. An administrator can review sign-ins by using the sign-in report, and take appropriate action to prevent future fraud. An administrator can then [unblock](#unblock-a-user) the user's account.
 * **Code to report fraud during initial greeting**. When users receive a phone call to perform multifactor authentication, they normally press **#** to confirm their sign-in. To report fraud, the user enters a code before pressing **#**. This code is **0** by default, but you can customize it. If automatic blocking is enabled, after the user presses **0#** to report fraud, they need to press **1** to confirm the account blocking.
 
    > [!NOTE]
@@ -110,7 +110,7 @@ To enable **Report suspicious activity** from the Authentication methods **Setti
 1. Browse to **Protection** > **Authentication Methods** > **Settings**. 
 1. Set **Report suspicious activity** to **Enabled**. The feature remains disabled if you choose **Microsoft managed**. For more information about Microsoft managed values, see [Protecting authentication methods in Microsoft Entra ID](concept-authentication-default-enablement.md).
 1. Select **All users** or a specific group. 
-1. Select a **Reporting code**.
+1. If you also upload custom greetings for your tenant, select a **Reporting code**. The reporting code is the number that users enter into their phone to report suspicious activity. The reporting code is only applicable if custom greetings are also uploaded by an [Authentication Policy Administrator](/entra/identity/role-based-access-control/permissions-reference#authentication-policy-administrator). Otherwise, the default code is 0, regardless of any value specified in the policy.
 1. Click **Save**. 
 
 >[!NOTE]
@@ -314,7 +314,7 @@ The trusted IPs feature of Microsoft Entra multifactor authentication also bypas
 > [!NOTE]
 > The trusted IPs can include private IP ranges only when you use MFA Server. For cloud-based Microsoft Entra multifactor authentication, you can use only public IP address ranges.
 >
-> IPv6 ranges are supported only in the [Named locations](~/identity/conditional-access/location-condition.md) interface.
+> IPv6 ranges are supported in [named locations](../conditional-access/concept-assignment-network.md#ipv4-and-ipv6-address-ranges).
 
 If your organization uses the NPS extension to provide MFA to on-premises applications, the source IP address will always appear to be the NPS server that the authentication attempt flows through.
 
@@ -396,6 +396,9 @@ If you don't want to use Conditional Access policies to enable trusted IPs, you 
 
 You can choose the verification methods that are available for your users in the service settings portal. When your users enroll their accounts for Microsoft Entra multifactor authentication, they choose their preferred verification method from the options that you've enabled. Guidance for the user enrollment process is provided in [Set up my account for multifactor authentication](https://support.microsoft.com/account-billing/how-to-use-the-microsoft-authenticator-app-9783c865-0308-42fb-a519-8cf666fe0acc).
 
+>[!IMPORTANT]
+>In March 2023, we announced the deprecation of managing authentication methods in the legacy multifactor authentication and self-service password reset (SSPR) policies. Beginning September 30, 2025, authentication methods can't be managed in these legacy MFA and SSPR policies. We recommend customers use the manual migration control to migrate to the Authentication methods policy by the deprecation date. For help with the migration control, see [How to migrate MFA and SSPR policy settings to the Authentication methods policy for Microsoft Entra ID](/entra/identity/authentication/how-to-authentication-methods-manage).
+
 The following verification methods are available:
 
 | Method | Description |
@@ -433,7 +436,7 @@ To enable or disable verification methods, complete the following steps:
 
 The **remember multifactor authentication** feature sets a persistent cookie on the browser when a user selects the **Don't ask again for *X* days** option at sign-in. The user isn't prompted again for MFA from that browser until the cookie expires. If the user opens a different browser on the same device or clears the cookies, they're prompted again to verify.
 
-The **Don't ask again for *X* days** option isn't shown on non-browser applications, regardless of whether the app supports modern authentication. These apps use _refresh tokens_ that provide new access tokens every hour. When a refresh token is validated, Microsoft Entra ID checks that the last multifactor authentication occurred within the specified number of days.
+The **Don't ask again for *X* days** option isn't shown on non-browser applications, regardless of whether the app supports modern authentication. These apps use *refresh tokens* that provide new access tokens every hour. When a refresh token is validated, Microsoft Entra ID checks that the last multifactor authentication occurred within the specified number of days.
 
 The feature reduces the number of authentications on web apps, which normally prompt every time. The feature can increase the number of authentications for modern authentication clients that normally prompt every 180 days, if a lower duration is configured. It might also increase the number of authentications when combined with Conditional Access policies.
 
