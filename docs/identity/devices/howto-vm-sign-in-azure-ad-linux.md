@@ -47,7 +47,7 @@ The following Linux distributions are currently supported for deployments in a s
 | RedHat Enterprise Linux (RHEL) | RHEL 7.4 to RHEL 7.9, RHEL 8.3+, RHEL 9.0+ |
 | Rocky | Rocky 8, Rocky 9 |
 | SUSE Linux Enterprise Server (SLES) | SLES 12, SLES 15.1+ |
-| Ubuntu Server | Ubuntu Server 16.04 to Ubuntu Server 22.04, all minor version after Ubuntu 22.04 |
+| Ubuntu | Ubuntu 16.04 to Ubuntu 24.04 |
 
 The following Azure regions are currently supported for this feature:
 
