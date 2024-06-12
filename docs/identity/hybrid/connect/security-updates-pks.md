@@ -10,13 +10,24 @@ ms.subservice: hybrid-connect
 ms.author: billmath
 ---
 
-# Security hardening to the auto-upgrade process for Microsoft Entra Connect and Microsoft Entra Connect Health 
+# Security update to the auto-upgrade process 
 
 As part of Microsoft’s push to harden the security of our features, we're making service changes to Microsoft Entra Connect Sync and Microsoft Entra Connect Health. This includes a change to Product Key Services. PKS is an internal service used by Microsoft Entra Connect Sync and Microsoft Entra Connect Health to auto-upgrade client components to an updated version. We're in the process of deprecating PKS because the service is being replaced by the Hybrid Upgrade Service (HUS). 
 
 Since January 2024, we have been auto-upgrading Microsoft Entra Connect Sync and Microsoft Entra Connect Health to an updated build. For customers who have previously opted out of auto-upgrade or for whom auto-upgrade failed, we **strongly recommend** that you upgrade to the [latest versions](reference-connect-version-history.md) by **September 16, 2024**. 
 
 To take advantage of our latest security improvements, we strongly encourage customers to upgrade to the following builds by **September 16, 2024**. 
+
+The following table provides information on the feature and impact to services if you are not on the minimum recommended versions.
+
+|Service|Impact|
+|-----|-----|
+|Microsoft Entra Connect| Auto-upgrade will stop working.  Synchronization will not be impacted|
+|Microsoft Entra Connect Health Connect Sync agent|A subset of alerts will be impacted: </br> - Connection to Microsoft Entra ID failed due to authentication failure </br> - High CPU usage detected</br> - High Memory Consumption Detected </br> - Password Hash Synchronization has stopped working </br> - Export to Microsoft Entra ID was Stopped. Accidental delete threshold was reached</br> - Password Hash Synchronization heartbeat was skipped in the last 120 minutes </br> - Microsoft Entra Sync service cannot start due to invalid encryption keys </br> - Microsoft Entra Sync service not running: Windows Service account Creds Expired| 
+|Microsoft Entra Connect HealthAD DS agent|All alerts|
+|Microsoft Entra Connect Health AD FS agent|All alerts|
+
+The avoid any service impact you should be using the following minimum versions:
 
 - Microsoft Entra Connect: [version 2.3.2.0](reference-connect-version-history.md#2320) or higher
 - Microsoft Entra Connect Health 
@@ -27,6 +38,13 @@ To take advantage of our latest security improvements, we strongly encourage cus
 To upgrade to the latest version.
 > [!div class="nextstepaction"]
 > [Install Microsoft Entra Connect](https://www.microsoft.com/download/details.aspx?id=47594)
+
+>[!IMPORTANT]
+>The auto-upgrade service will stop working after September 16, 2024 if you have not upgraded to the minimum recommended versions above.
+
+
+
+
 
 ## Consider moving to Microsoft Entra Cloud Sync
 

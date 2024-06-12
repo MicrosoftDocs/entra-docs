@@ -327,6 +327,8 @@
         href: connect/how-to-connect-health-agent-install.md
       - name: Automatic upgrade
         href: connect/how-to-connect-install-automatic-upgrade.md
+      - name: Security update to the auto-upgrade process 
+        href: connect/security-updates-pks.md
       - name: Running the installation wizard a second time
         href: connect/how-to-connect-installation-wizard.md
       - name: Upgrade to a new version of Microsoft Entra Connect
