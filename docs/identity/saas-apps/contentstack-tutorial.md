@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 12/19/2023
+ms.date: 03/25/2024
 ms.author: jeedes
 
 
@@ -111,7 +111,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     ![Screenshot shows how to paste the Sign on URL.](./media/contentstack-tutorial/optional.png "Login Value")
 
     > [!NOTE]
-    > You will find the **SSO One-Click URL** (i.e., the Sign on URL) when you complete configuring Contentstack SSO.
+    > You will find the **SSO One-Click URL** (that is, the Sign on URL) when you complete configuring Contentstack SSO.
     ![Screenshot shows how to enable the access page.](./media/contentstack-tutorial/click.png "Access Page")
 
 1. Contentstack application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
@@ -169,8 +169,7 @@ In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by 
 
 1. Log in to your Contentstack company site as an administrator.
 
-1. Go to the Organization Settings page and click
-on the **Single Sign-On** tab on the left menu.
+1. Go to the Organization Settings page and click on the **Single Sign-On** tab on the left menu.
 
 1. In the **Single Sign-On** page, navigate to **SSO Configuration** section and perform the following steps:
 

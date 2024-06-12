@@ -22,8 +22,7 @@ To manage access to custom security attributes, you must have:
 - [Attribute Assignment Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator)
 - Microsoft.Graph module when using [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation)
 
-> [!IMPORTANT]
-> By default, [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) and other administrator roles do not have permissions to read, define, or assign custom security attributes.
+[!INCLUDE [security-attributes-roles](../includes/security-attributes-roles.md)]
 
 <a name='step-1-figure-out-how-to-organize-your-attributes'></a>
 
@@ -43,7 +42,7 @@ Microsoft Entra role assignments are an additive model, so your effective permis
 
 ## Step 3: Review the available roles
 
-You need to determine who needs access to work with custom security attributes in your organization. To help you manage access to custom security attributes, there are four Microsoft Entra built-in roles. By default, [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) and other administrator roles don't have permissions to read, define, or assign custom security attributes. If necessary, a Global Administrator can assign these roles to themselves.
+You need to determine who needs access to work with custom security attributes in your organization. To help you manage access to custom security attributes, there are four Microsoft Entra built-in roles. If necessary, someone with at least the [Privileged Role Administrator](/entra/identity/role-based-access-control/permissions-reference#privileged-role-administrator) role can assign these roles.
 
 - [Attribute Definition Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-definition-administrator)
 - [Attribute Assignment Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator)
@@ -52,14 +51,14 @@ You need to determine who needs access to work with custom security attributes i
 
 The following table provides a high-level comparison of the custom security attributes roles.
 
-| Permission | Global Administrator | Attribute Definition Admin | Attribute Assignment Admin | Attribute Definition Reader | Attribute Assignment Reader |
-| --- | :---: | :---: | :---: | :---: | :---: |
-| Read attribute sets |  | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
-| Read attribute definitions |  | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
-| Read attribute assignments for users and applications (service principals) |  |  | :white_check_mark: |  | :white_check_mark: |
-| Add or edit attribute sets |  | :white_check_mark: |  |  |  |
-| Add, edit, or deactivate attribute definitions |  | :white_check_mark: |  |  |  |
-| Assign attributes to users and applications (service principals) |  |  | :white_check_mark: |  |  |
+| Permission | Attribute Definition Admin | Attribute Assignment Admin | Attribute Definition Reader | Attribute Assignment Reader |
+| --- | :---: | :---: | :---: | :---: |
+| Read attribute sets | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| Read attribute definitions | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| Read attribute assignments for users and applications (service principals) |  | :white_check_mark: |  | :white_check_mark: |
+| Add or edit attribute sets | :white_check_mark: |  |  |  |
+| Add, edit, or deactivate attribute definitions | :white_check_mark: |  |  |  |
+| Assign attributes to users and applications (service principals) |  | :white_check_mark: |  |  |
 
 ## Step 4: Determine your delegation strategy
 
@@ -134,7 +133,7 @@ The following examples show how to assign a custom security attribute role to a 
 
 ```powershell
 $roleDefinitionId = "58a13ea3-c632-46ae-9ee0-9c0d43cd7f3d"
-$principalId = "f8ca5a85-489a-49a0-b555-0a6d81e56f0d"
+$principalId = "aaaaaaaa-bbbb-cccc-1111-222222222222"
 $directoryScopeId = "/attributeSets/Engineering"
 $roleAssignment = New-MgRoleManagementDirectoryRoleAssignment -RoleDefinitionId $roleDefinitionId -PrincipalId $principalId -DirectoryScopeId $directoryScopeId
 ```
@@ -150,7 +149,7 @@ Content-type: application/json
 {
     "@odata.type": "#microsoft.graph.unifiedRoleAssignment",
     "roleDefinitionId": "58a13ea3-c632-46ae-9ee0-9c0d43cd7f3d",
-    "principalId": "f8ca5a85-489a-49a0-b555-0a6d81e56f0d",
+    "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
     "directoryScopeId": "/attributeSets/Engineering"
 }
 ```
@@ -161,7 +160,7 @@ Content-type: application/json
 
 ```powershell
 $roleDefinitionId = "58a13ea3-c632-46ae-9ee0-9c0d43cd7f3d"
-$principalId = "f8ca5a85-489a-49a0-b555-0a6d81e56f0d"
+$principalId = "aaaaaaaa-bbbb-cccc-1111-222222222222"
 $directoryScope = "/attributeSets/Engineering"
 $roleAssignment = New-AzureADMSRoleAssignment -RoleDefinitionId $roleDefinitionId -PrincipalId $principalId -DirectoryScopeId $directoryScope
 ```
@@ -188,7 +187,7 @@ The following examples show how to assign a custom security attribute role to a 
 
 ```powershell
 $roleDefinitionId = "58a13ea3-c632-46ae-9ee0-9c0d43cd7f3d"
-$principalId = "f8ca5a85-489a-49a0-b555-0a6d81e56f0d"
+$principalId = "aaaaaaaa-bbbb-cccc-1111-222222222222"
 $directoryScopeId = "/"
 $roleAssignment = New-MgRoleManagementDirectoryRoleAssignment -RoleDefinitionId $roleDefinitionId -PrincipalId $principalId -DirectoryScopeId $directoryScopeId
 ```
@@ -204,7 +203,7 @@ Content-type: application/json
 {
     "@odata.type": "#microsoft.graph.unifiedRoleAssignment",
     "roleDefinitionId": "58a13ea3-c632-46ae-9ee0-9c0d43cd7f3d",
-    "principalId": "f8ca5a85-489a-49a0-b555-0a6d81e56f0d",
+    "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
     "directoryScopeId": "/"
 }
 ```
@@ -215,7 +214,7 @@ Content-type: application/json
 
 ```powershell
 $roleDefinitionId = "58a13ea3-c632-46ae-9ee0-9c0d43cd7f3d"
-$principalId = "f8ca5a85-489a-49a0-b555-0a6d81e56f0d"
+$principalId = "aaaaaaaa-bbbb-cccc-1111-222222222222"
 $directoryScope = "/"
 $roleAssignment = New-AzureADMSRoleAssignment -RoleDefinitionId $roleDefinitionId -PrincipalId $principalId -DirectoryScopeId $directoryScope
 ```
@@ -237,7 +236,7 @@ Custom security attribute audit logs provide you with the history of activities 
 
 ### View audit logs for attribute changes
 
-To view the custom security attribute audit logs, sign in to the Microsoft Entra admin center, browse to **Audit Logs**, and select **Custom Security**. To view custom security attribute audit logs, you must be assigned one of the following roles. By default, a Global Administrator does not have access to these audit logs.
+To view the custom security attribute audit logs, sign in to the Microsoft Entra admin center, browse to **Audit Logs**, and select **Custom Security**. To view custom security attribute audit logs, you must be assigned one of the following roles. If necessary, someone with at least the [Privileged Role Administrator](/entra/identity/role-based-access-control/permissions-reference#privileged-role-administrator) role can assign these roles.
 
 - [Attribute Log Reader](../identity/role-based-access-control/permissions-reference.md#attribute-log-reader)
 - [Attribute Log Administrator](../identity/role-based-access-control/permissions-reference.md#attribute-log-administrator)
@@ -282,7 +281,7 @@ The following table lists the endpoint where you can find custom security attrib
 
 ### Assign Attribute Log roles to view audit logs
 
-During the preview, custom security attribute audit logs could be viewed using the [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator) or [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) roles in the directory audit logs. You are no longer able to use these roles to view custom security attribute audit logs using the new endpoint. To view the custom security attribute audit logs, you must be assigned either the [Attribute Log Reader](../identity/role-based-access-control/permissions-reference.md#attribute-log-reader) or [Attribute Log Administrator](../identity/role-based-access-control/permissions-reference.md#attribute-log-administrator) role.
+During the preview, custom security attribute audit logs could be viewed by those with at least the [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) role in the directory audit logs. You are no longer able to use these roles to view custom security attribute audit logs using the new endpoint. To view the custom security attribute audit logs, you must be assigned either the [Attribute Log Reader](../identity/role-based-access-control/permissions-reference.md#attribute-log-reader) or [Attribute Log Administrator](../identity/role-based-access-control/permissions-reference.md#attribute-log-administrator) role.
 
 ### Create new diagnostic settings to export audit logs
 

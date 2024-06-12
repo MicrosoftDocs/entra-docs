@@ -109,8 +109,6 @@
       items:
         - name: Windows Server VM from template
           href: join-windows-vm-template.md
-        - name: CentOS
-          href: join-centos-linux-vm.md
         - name: CoreOS
           href: join-coreos-linux-vm.md
         - name: Red Hat Enterprise Linux
@@ -119,10 +117,6 @@
           href: join-ubuntu-linux-vm.md
         - name: SUSE Linux Enterprise
           href: join-suse-linux-vm.md
-    - name: Active Directory authentication through LDAP Linux
-      items:
-        - name: Active Directory authentication non domain joined Linux Virtual Machines
-          href: ad-auth-no-join-linux-vm.md
     - name: Deploy applications
       items:
         - name: Deploy Microsoft Entra application proxy

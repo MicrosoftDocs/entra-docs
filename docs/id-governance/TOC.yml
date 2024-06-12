@@ -52,6 +52,8 @@
         href: entitlement-management-ticketed-provisioning.md
       - name: Automated Teams Messaging Integration
         href: entitlement-management-custom-teams-extension.md      
+      - name: Customized entitlement reports in Azure Data Explorer
+        href: custom-entitlement-report-with-adx-and-entra-id.md      
     - name: Access Reviews
       items:
       - name: Review access to Microsoft 365 groups - Microsoft Graph
@@ -116,7 +118,11 @@
     - name: Workflow Audit logs
       href: lifecycle-workflow-audits.md
     - name: Workflow History
-      href: lifecycle-workflow-history.md     
+      href: lifecycle-workflow-history.md
+    - name: Synced on-premises users (Preview)
+      href: lifecycle-workflow-on-premises.md         
+    - name: Workflow Insights (preview)
+      href: lifecycle-workflow-insights.md        
 - name: How-to guides
   expanded: true
   items:
@@ -260,6 +266,8 @@
           href: manage-workflow-properties.md
         - name: Manage workflow versions
           href: manage-workflow-tasks.md
+        - name: Using custom security attributes
+          href: manage-workflow-custom-security-attribute.md  
         - name: Run a workflow on-demand
           href: on-demand-workflow.md
         - name: Customize emails
@@ -271,7 +279,11 @@
         - name: Check execution user scope
           href: check-workflow-execution-scope.md  
         - name: Customize the schedule of workflows
-          href: customize-workflow-schedule.md         
+          href: customize-workflow-schedule.md
+        - name: Manage synced on-premises users (Preview)
+          href: manage-workflow-on-premises.md              
+        - name: Check Workflow Insights (preview)
+          href: manage-workflow-insights.md            
       - name: Delete
         items: 
         - name: Delete a Lifecycle workflow

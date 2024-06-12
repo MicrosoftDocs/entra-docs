@@ -79,7 +79,7 @@ Steps to test YubiKey on Microsoft apps on Android:
 
 Certain Exchange ActiveSync applications on Android 5.0 (Lollipop) or later are supported. To determine if your email application supports Microsoft Entra CBA, contact your application developer.
 
-## Supported Entra use cases
+## Supported Microsoft Entra use cases
 
 ### Microsoft mobile application support
 
@@ -139,7 +139,7 @@ Before installing Microsoft Authenticator, uninstall Company Portal and install 
 
 #### Does Microsoft Entra CBA support YubiKey via NFC? 
 
-Entra CBA supports using YubiKey with USB and NFC.
+Microsoft Entra CBA supports using YubiKey with USB and NFC.
 
 #### Once CBA fails, clicking on the CBA option again in the ‘Other ways to signin’ link on the error page fails. 
 

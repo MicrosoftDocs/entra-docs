@@ -21,7 +21,7 @@ Organizations might want to require users to accept [terms of use (ToU)](terms-o
 This section provides you with the steps to create a sample terms of use document. When you create a terms of use document, you select a value for **Enforce with Conditional Access policy templates**. Selecting **Custom policy** opens a dialog to create a new Conditional Access policy as soon as your terms of use is created.
 
 1. Create a new terms of use document and save it as a PDF file.
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Protection** > **Conditional Access** > **Terms of use**.
 1. In the menu on the top, select **New terms**.
 1. In the **Name** textbox, provide a name for your terms of use policy.

@@ -27,7 +27,7 @@ Microsoft supports this sign-on experience as the integration of a Microsoft clo
 > Only a limited set of clients are available in this sign-on scenario with SAML 2.0 identity providers, this includes:
 > 
 > - Web-based clients such as Outlook Web Access and SharePoint Online
-> - Email-rich clients that use basic authentication and a supported Exchange access method such as IMAP, POP, Active Sync, MAPI, etc. (the Enhanced Client Protocol end point is required to be deployed), including:
+> - Email-rich clients that use basic authentication and a supported Exchange access method such as IMAP, POP, Active Sync, MAPI, and so on. (the Enhanced Client Protocol end point is required to be deployed), including:
 >     - Microsoft Outlook 2010/Outlook 2013/Outlook 2016, Apple iPhone (various iOS versions)
 >     - Various Google Android Devices
 >     - Windows Phone 7, Windows Phone 7.8, and Windows Phone 8.0

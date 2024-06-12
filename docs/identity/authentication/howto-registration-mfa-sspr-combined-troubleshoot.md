@@ -58,7 +58,7 @@ The steps that follow will help you roll back a user or group of users.
 
 #### Prerequisites
 
-[!INCLUDE [Azure AD PowerShell migration](~/includes/aad-powershell-migration-include.md)]
+[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
 
 1. Install the appropriate Azure AD PowerShell modules. In a PowerShell window, run these commands to install the modules:
 

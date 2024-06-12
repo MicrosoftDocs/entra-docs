@@ -37,7 +37,7 @@ Microsoft Entra ID uses AES-256 to encrypt the SAML assertion data.
 To configure SAML token encryption, you need:
 
 - A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- One of the following roles: Global Administrator, Cloud Application Administrator, Application Administrator, or owner of the service principal.
+- One of the following roles: Cloud Application Administrator, Application Administrator, or owner of the service principal.
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
@@ -112,10 +112,10 @@ To configure token encryption for an application registration, follow these step
 
     ```json
     { 
-      "id": "3cca40e2-367e-45a5-8440-ed94edd6cc35",
+      "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
       "accessTokenAcceptedVersion": null,
       "allowPublicClient": false,
-      "appId": "cb2df8fb-63c4-4c35-bba5-3d659dd81bf1",
+      "appId": "00001111-aaaa-2222-bbbb-3333cccc4444",
       "appRoles": [],
       "oauth2AllowUrlPathMatching": false,
       "createdDateTime": "2017-12-15T02:10:56Z",
@@ -133,7 +133,7 @@ To configure token encryption for an application registration, follow these step
         { 
           "customKeyIdentifier": "Tog/O1Hv1LtdsbPU5nPphbMduD=", 
           "endDate": "2039-12-31T23:59:59Z", 
-          "keyId": "8be4cb65-59d9-404a-a6f5-3d3fb4030351", 
+          "keyId": "aaaaaaaa-0b0b-1c1c-2d2d-333333333333", 
           "startDate": "2018-10-25T21:42:18Z", 
           "type": "AsymmetricX509Cert", 
           "usage": "Encrypt", 
@@ -141,9 +141,9 @@ To configure token encryption for an application registration, follow these step
           "displayName": "CN=SAMLEncryptTest" 
         }, 
         {
-          "customKeyIdentifier": "U5nPphbMduDmr3c9Q3p0msqp6eEI=",
+          "customKeyIdentifier": "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u=",
           "endDate": "2039-12-31T23:59:59Z", 
-          "keyId": "6b9c6e80-d251-43f3-9910-9f1f0be2e851",
+          "keyId": "bbbbbbbb-1c1c-2d2d-3e3e-444444444444",
           "startDate": "2018-10-25T21:42:18Z", 
           "type": "AsymmetricX509Cert", 
           "usage": "Encrypt", 
@@ -173,7 +173,7 @@ To configure token encryption for an application registration, follow these step
       "signInUrl": "https://127.0.0.1:444/applications/default.aspx?metadata=customappsso|ISV9.1|primary|z" 
       "signInAudience": "AzureADMyOrg",
       "tags": [], 
-      "tokenEncryptionKeyId": "6b9c6e80-d251-43f3-9910-9f1f0be2e851" 
+      "tokenEncryptionKeyId": "bbbbbbbb-1c1c-2d2d-3e3e-444444444444" 
     }  
     ```
 
@@ -229,7 +229,7 @@ To configure token encryption for an application registration, follow these step
        "keyCredentials":[ 
           { 
              "type":"AsymmetricX509Cert","usage":"Encrypt",
-             "keyId":"fdf8c5d8-f727-43fd-beaf-0f1521cf3d35",    (Use a GUID generator to obtain a value for the keyId)
+             "keyId":"aaaaaaaa-0b0b-1c1c-2d2d-333333333333",    (Use a GUID generator to obtain a value for the keyId)
              "key": "MIICADCCAW2gAwIBAgIQ5j9/b+n2Q4pDvQUCcy3…"  (Base64Encoded .cer file)
           }
         ]
@@ -242,7 +242,7 @@ To configure token encryption for an application registration, follow these step
     PATCH https://graph.microsoft.com/beta/applications/<application objectid> 
 
     { 
-       "tokenEncryptionKeyId":"fdf8c5d8-f727-43fd-beaf-0f1521cf3d35" (The keyId of the keyCredentials entry to use)
+       "tokenEncryptionKeyId":"aaaaaaaa-0b0b-1c1c-2d2d-333333333333" (The keyId of the keyCredentials entry to use)
     }
     ```
 

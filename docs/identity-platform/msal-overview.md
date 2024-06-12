@@ -42,7 +42,7 @@ You can refer to the following documentation to learn more about the different M
 
 | MSAL Documentation | MSAL Library | Supported platforms and frameworks |
 | --- | --- | --- |
-| [MSAL.NET](/entra/msal/dotnet/) | [MSAL.NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet)| .NET Framework, .NET, Xamarin Android, Xamarin iOS, Universal Windows Platform|
+| [MSAL.NET](/entra/msal/dotnet/) | [MSAL.NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet)| .NET Framework, .NET, .NET MAUI, WINUI,Xamarin Android, Xamarin iOS, Universal Windows Platform|
 | [MSAL for Android](https://github.com/AzureAD/microsoft-authentication-library-for-android/tree/dev/docs) | [MSAL for Android](https://github.com/AzureAD/microsoft-authentication-library-for-android)|Android|
 | [MSAL Angular](/javascript/api/@azure/msal-angular/) | [MSAL Angular](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-angular)| Single-page apps with Angular and Angular.js frameworks|
 | [MSAL for iOS and macOS](https://github.com/AzureAD/microsoft-authentication-library-for-objc/tree/dev/docs) | [MSAL for iOS and macOS](https://github.com/AzureAD/microsoft-authentication-library-for-objc)|iOS and macOS|

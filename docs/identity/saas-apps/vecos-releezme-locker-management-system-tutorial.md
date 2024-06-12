@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 
@@ -20,7 +20,7 @@ ms.author: jeedes
 
 In this tutorial, you'll learn how to integrate VECOS Releezme Locker management system with Microsoft Entra ID. When you integrate VECOS Releezme Locker management system with Microsoft Entra ID, you can:
 
-* Control in Microsoft Entra ID who has access to VECOS Releezme Locker management system. Access to the VECOS Releezme Locker Management System is only needed for users who need to manage the lockers, i.e., facility managers, service desk employees, etc.
+* Control in Microsoft Entra ID who has access to VECOS Releezme Locker management system. Access to the VECOS Releezme Locker Management System is only needed for users who need to manage the lockers, that is, facility managers, service desk employees, and so on.
 * Enable your users to be automatically signed-in to VECOS Releezme Locker management system with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 

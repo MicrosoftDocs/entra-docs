@@ -44,7 +44,7 @@ In this tutorial;
 
 [!INCLUDE [add-platform-redirect-url-react](./includes/register-app/add-platform-redirect-url-react.md)]
 
-## Grant sign-in permissions
+## Grant admin consent
 
 [!INCLUDE [grant-api-permission-sign-in](./includes/register-app/grant-api-permission-sign-in.md)]
 

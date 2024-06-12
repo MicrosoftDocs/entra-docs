@@ -70,12 +70,7 @@ When you use Microsoft Entra ID with on-premises Active Directory, user accounts
    >[!NOTE]
    > Define a process for updating a User Principal Name (UPN) for users and your organization. 
 
-When you synchronize user accounts from Active Directory to Microsoft Entra ID, ensure the UPNs in Active Directory map to verified domains in Microsoft Entra ID.
-
-   ![Screenshot of Active Director UPN suffixes and related domains.](./media/howto-troubleshoot-upn-changes/verified-domains.png)
-
-   >[!NOTE]
-   > If the userPrincipalName attribute value doesn't correspond to a verified domain in Microsoft Entra ID, synchronization replaces the suffix with .onmicrosoft.com.
+When you synchronize user accounts from Active Directory to Microsoft Entra ID, ensure the UPNs in Active Directory map to verified domains in Microsoft Entra ID. If the userPrincipalName attribute value doesn't correspond to a verified domain in Microsoft Entra ID, synchronization replaces the suffix with .onmicrosoft.com.
 
 ### Bulk UPN change rollout
 

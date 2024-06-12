@@ -20,6 +20,12 @@ With the release of provisioning agent [1.1.1370.0](reference-version-history.md
 
  :::image type="content" source="media/govern-on-premises-groups/on-premises-group-writeback.png" alt-text="Conceptual drawing of Microsoft Entra Cloud Sync's Group Provision to AD." lightbox="media/govern-on-premises-groups/on-premises-group-writeback.png":::
 
+## Watch the group writeback video
+
+For a great overview of cloud sync group provisioning to Active directory and what it can do for you, check out the video below.
+
+> [!VIDEO https://www.youtube.com/embed/C6XXlSVaIeo]
+
 ## Prerequisites
 The following prerequisites are required to implement this scenario.
 
@@ -106,8 +112,7 @@ You can now govern access to the AD application through this new access package.
 In this scenario option, you add a new AD security group as a nested group member of an existing group. This scenario is applicable to deployments for applications that have a hardcoded dependency on a particular group account name, SID, or distinguished name.
 
 Nesting that group into the applications existing AD group will allow:
- - Microsoft Entra users, who are assigned by a governance feature, and subsequently access the app, 
- to have an appropriate Kerberos ticket. This ticket will contain the existing groups SID. This nesting is allowed by AD group nesting rules. 
+ - Microsoft Entra users, who are assigned by a governance feature, and subsequently access the app, to have an appropriate Kerberos ticket. This ticket will contain the existing groups SID. This nesting is allowed by AD group nesting rules. 
 
  If the app uses LDAP and follows nested group membership, the app will see the Microsoft Entra users as having the existing group as one of their memberships.
 

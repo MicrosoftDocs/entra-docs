@@ -18,6 +18,8 @@ ms.collection: M365-identity-device-management
 
 # Reset redemption status for a guest user
 
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
+
 In this article, you'll learn how to update the [guest user's](user-properties.md) sign-in information after they've redeemed your invitation for B2B collaboration. There might be times when you'll need to update their sign-in information, for example when:
 
 - The user wants to sign in using a different email and identity provider
@@ -35,7 +37,6 @@ To reset a user's redemption status, you'll need one of the following roles:
 
 - [Helpdesk Administrator](~/identity/role-based-access-control/permissions-reference.md#helpdesk-administrator) (least privileged)
 - [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator)
-- [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator)
 
 ## Use the Microsoft Entra admin center to reset redemption status
 

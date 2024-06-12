@@ -77,7 +77,7 @@ For this scenario, SHA supports SP- and IdP-initiated flows. The following diagr
     * 90-day BIG-IP full feature [trial license](https://www.f5.com/trial/big-ip-trial.php)
 * User identities synchronized from an on-premises directory to Microsoft Entra ID, or created in Microsoft Entra ID and flowed back to the on-premises directory
   * See, [Microsoft Entra Connect Sync: Understand and customize synchronization](~/identity/hybrid/connect/how-to-connect-sync-whatis.md)
-* One of the following roles: Global Administrator, Cloud Application Administrator, or Application Administrator.
+* One of the following roles: Cloud Application Administrator, or Application Administrator.
 * An SSL Web certificate to publish services over HTTPS, or use default BIG-IP certs for testing
   * See, [Deploy F5 BIG-IP Virtual Edition VM in Azure](./f5-bigip-deployment-guide.md)
 * A PeopleSoft environment
@@ -215,7 +215,7 @@ If needed, include other Microsoft Entra attributes. The sample PeopleSoft appli
 
 #### Additional User Attributes
 
-The **Additional User Attributes** tab supports distributed systems that require attributes are stored in other directories for session augmentation. Attributes from an LDAP source are injected as more SSO headers to control access based on roles, Partner IDs, etc. 
+The **Additional User Attributes** tab supports distributed systems that require attributes are stored in other directories for session augmentation. Attributes from an LDAP source are injected as more SSO headers to control access based on roles, Partner IDs, and so on. 
 
    >[!NOTE] 
    >This feature has no correlation to Microsoft Entra ID; it's another attribute source.

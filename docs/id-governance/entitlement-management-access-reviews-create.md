@@ -18,10 +18,12 @@ To reduce the risk of stale access, you should enable periodic reviews of users 
 
 To enable reviews of access packages, you must meet the prerequisites for creating an access package:
 - Microsoft Entra ID P2 or Microsoft Entra ID Governance
-- Global administrator, Identity Governance administrator, Catalog owner, or Access package manager
+- Global Administrator, Identity Governance Administrator, Catalog owner, or Access package manager
+
+> [!NOTE]
+> Following least privilege access, we recommend using the Identity Governance Administrator, catalog owner, or Access package manager role.
 
 For more information, see [License requirements](entitlement-management-overview.md#license-requirements).
-
 
 ## Create an access review of an access package
 
@@ -134,6 +136,9 @@ You can designate reviewers, or users can review their access themselves. By def
 The email includes instructions on how to review access to access packages. If the review is for users to review their access, show them the instructions on how to perform a self-review of their access packages.
   
 If you've assigned guest users as reviewers, and they haven't accepted their Microsoft Entra guest invitation, they won't receive emails from access reviews. They must first accept the invite and create an account with Microsoft Entra ID before they can receive the emails. 
+
+> [!NOTE]
+> While the review cycle is open, reviewers can always change their access review decisions. At the midpoint of your access review, even if the reviewer has previously made a decision, a reminder email is still sent to reviewers notifying them that the access review cycle is still open.
 
 ## Next steps
 

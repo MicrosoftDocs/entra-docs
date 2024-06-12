@@ -28,11 +28,8 @@ introduction: |
 
 prerequisites:
   summary: |
-    You must have one of the following roles to restore and permanently delete users.
-  dependencies:    
-    - Global Administrator
-    - Partner Tier1 Support
-    - Partner Tier2 Support
+    You must have at least the following role to restore and permanently delete users.
+  dependencies:
     - User Administrator
 
 procedureSection:
@@ -59,12 +56,12 @@ procedureSection:
       When a user account is deleted from the organization, the account is in a suspended state. All of the account's organization information is preserved. When you restore a user, this organization information is also restored.
 
       > [!NOTE]
-      > Once a user is restored, licenses that were assigned to the user at the time of deletion are also restored even if there are no seats available for those licenses. If you are then consuming more licenses than you purchased, your organization could be temporarily out of compliance for license usage.
+      > Once a user is restored, licenses that were assigned to the user at the time of deletion are also restored even if there are none available. If you're consuming more licenses than you purchased, your organization could be temporarily out of compliance for license usage.
 
       ### To restore a user
     steps:
       - |
-        On the **Deleted users** page, search for and select one of the available users. For example, _Mary Parker_.
+        On the **Deleted users** page, search for and select one of the available users. For example, *Mary Parker*.
       - |
         Select **Restore user**.
 
@@ -72,15 +69,15 @@ procedureSection:
   - title: |
       Permanently delete a user
     summary: |
-      You can permanently delete a user from your organization without waiting the 30 days for automatic deletion. A permanently deleted user can't be restored by you, another administrator, nor by Microsoft customer support.
+      You can permanently delete a user from your organization without waiting the 30 days for automatic deletion. A permanently deleted user can't be restored by anyone, including Microsoft customer support.
 
       >[!Note]
-      >If you permanently delete a user by mistake, you'll have to create a new user and manually enter all the previous information. For more information about creating a new user, see [Add or delete users](./add-users.md).
+      >If you permanently delete a user by mistake, you have to create a new user and manually enter all the previous information. For more information about creating a new user, see [Add or delete users](./add-users.md).
 
       ### To permanently delete a user
     steps: 
       - |
-        On the **Deleted users** page, search for and select one of the available users. For example, _Rae Huff_.
+        On the **Deleted users** page, search for and select one of the available users. For example, *Rae Huff*.
       - |
         Select **Delete permanently**.
 

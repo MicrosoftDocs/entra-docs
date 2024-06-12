@@ -98,7 +98,7 @@ procedureSection:
       ### Request
 
       ````HTTP
-      PUT https://management.azure.com/providers/Microsoft.Subscription/subscriptions/dfa2a084-766f-4003-8ae1-c4aeb893a99f/providers/Microsoft.Authorization/roleAssignmentScheduleRequests/{roleAssignmentScheduleRequestName}?api-version=2020-10-01
+      PUT https://management.azure.com/providers/Microsoft.Subscription/subscriptions/aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e/providers/Microsoft.Authorization/roleAssignmentScheduleRequests/{roleAssignmentScheduleRequestName}?api-version=2020-10-01
       ````
 
       ### Request body
@@ -106,8 +106,8 @@ procedureSection:
       ````JSON
       { 
       "properties": { 
-        "principalId": "a3bb8764-cb92-4276-9d2a-ca1e895e55ea", 
-        "roleDefinitionId": "/subscriptions/dfa2a084-766f-4003-8ae1-c4aeb893a99f/providers/Microsoft.Authorization/roleDefinitions/c8d4ff99-41c3-41a8-9f60-21dfdad59608", 
+        "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222", 
+        "roleDefinitionId": "/subscriptions/aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e/providers/Microsoft.Authorization/roleDefinitions/c8d4ff99-41c3-41a8-9f60-21dfdad59608", 
         "requestType": "SelfActivate", 
         "linkedRoleEligibilityScheduleId": "b1477448-2cc6-4ceb-93b4-54a202a89413", 
         "scheduleInfo": { 
@@ -133,9 +133,9 @@ procedureSection:
         "properties": { 
           "targetRoleAssignmentScheduleId": "c9e264ff-3133-4776-a81a-ebc7c33c8ec6", 
           "targetRoleAssignmentScheduleInstanceId": null, 
-          "scope": "/subscriptions/dfa2a084-766f-4003-8ae1-c4aeb893a99f", 
-          "roleDefinitionId": "/subscriptions/dfa2a084-766f-4003-8ae1-c4aeb893a99f/providers/Microsoft.Authorization/roleDefinitions/c8d4ff99-41c3-41a8-9f60-21dfdad59608", 
-          "principalId": "a3bb8764-cb92-4276-9d2a-ca1e895e55ea", 
+          "scope": "/subscriptions/aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e", 
+          "roleDefinitionId": "/subscriptions/aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e/providers/Microsoft.Authorization/roleDefinitions/c8d4ff99-41c3-41a8-9f60-21dfdad59608", 
+          "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222", 
           "principalType": "User", 
           "requestType": "SelfActivate", 
           "status": "Provisioned", 
@@ -159,12 +159,12 @@ procedureSection:
           "conditionVersion": "1.0", 
           "expandedProperties": { 
             "scope": { 
-              "id": "/subscriptions/dfa2a084-766f-4003-8ae1-c4aeb893a99f", 
+              "id": "/subscriptions/aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e", 
               "displayName": "Pay-As-You-Go", 
               "type": "subscription" 
             }, 
             "roleDefinition": { 
-              "id": "/subscriptions/dfa2a084-766f-4003-8ae1-c4aeb893a99f/providers/Microsoft.Authorization/roleDefinitions/c8d4ff99-41c3-41a8-9f60-21dfdad59608", 
+              "id": "/subscriptions/aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e/providers/Microsoft.Authorization/roleDefinitions/c8d4ff99-41c3-41a8-9f60-21dfdad59608", 
               "displayName": "Contributor", 
               "type": "BuiltInRole" 
             }, 
@@ -177,7 +177,7 @@ procedureSection:
           } 
         }, 
         "name": "fea7a502-9a96-4806-a26f-eee560e52045", 
-        "id": "/subscriptions/dfa2a084-766f-4003-8ae1-c4aeb893a99f/providers/Microsoft.Authorization/RoleAssignmentScheduleRequests/fea7a502-9a96-4806-a26f-eee560e52045", 
+        "id": "/subscriptions/aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e/providers/Microsoft.Authorization/RoleAssignmentScheduleRequests/fea7a502-9a96-4806-a26f-eee560e52045", 
         "type": "Microsoft.Authorization/RoleAssignmentScheduleRequests" 
       } 
       ````

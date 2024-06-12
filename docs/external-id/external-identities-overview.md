@@ -78,7 +78,7 @@ The following table compares the scenarios you can enable with External ID.
 
 |   | External ID in workforce tenants |  External ID in external tenants  |
 | ---- | --- |   --- |
-| **Primary scenario**  | Allow your workforce to collaborate with business guests. Let guests use their preferred identities to sign in to resources in your Microsoft Entra organization. Provides access to Microsoft applications or your own applications (SaaS apps, custom-developed apps, etc.). <br><br> *Example:* Invite a guest to sign in to your Microsoft apps or become a guest member in Teams. |  Publish apps to external consumers and business customers using External ID for identity experiences. Provides identity and access management for modern SaaS or custom-developed applications (not first-party Microsoft apps). <br><br> *Example:* Create a customized sign-in experience for users of your consumer mobile app and monitor app usage. |
+| **Primary scenario**  | Allow your workforce to collaborate with business guests. Let guests use their preferred identities to sign in to resources in your Microsoft Entra organization. Provides access to Microsoft applications or your own applications (SaaS apps, custom-developed apps, and so on). <br><br> *Example:* Invite a guest to sign in to your Microsoft apps or become a guest member in Teams. |  Publish apps to external consumers and business customers using External ID for identity experiences. Provides identity and access management for modern SaaS or custom-developed applications (not first-party Microsoft apps). <br><br> *Example:* Create a customized sign-in experience for users of your consumer mobile app and monitor app usage. |
 | **Intended for**  | Collaborating with business partners from external organizations like suppliers, partners, vendors. These users might or might not have Microsoft Entra ID or managed IT.   |   Consumers and business customers of your app. These users are managed in a Microsoft Entra tenant that is configured for external apps and users. |
 | **User management**  | B2B collaboration users are managed in the same workforce tenant as employees but are typically annotated as guest users. Guest users can be managed the same way as employees, added to the same groups, and so on. [Cross-tenant access settings](cross-tenant-access-overview.md) can be used to determine which users have access to B2B collaboration.   |   App users are managed in an external tenant that you create for consumers of your application. Users in an external tenant have different [default permissions](customers/reference-user-permissions.md) than users in a workforce tenant. They're managed in the external tenant, separate from the organization's employee directory. |
 | **Single sign-on (SSO)**  | SSO to all Microsoft Entra connected apps is supported. For example, you can provide access to Microsoft 365 or on-premises apps, and to other SaaS apps such as Salesforce or Workday.  | SSO to apps registered in the external tenant is supported. SSO to Microsoft 365 or to other Microsoft SaaS apps isn't supported. |
@@ -140,15 +140,17 @@ If you offer a Software as a Service (SaaS) application to many organizations, y
 
 ### Multitenant organizations
 
-A multitenant organization is an organization that has more than one instance of Microsoft Entra ID. There are various reasons for [multi-tenancy](~/identity/multi-tenant-organizations/overview.md#what-is-a-multi-tenant-organization). For example, your organization might span multiple clouds or geographical boundaries.
+A multitenant organization is an organization that has more than one instance of Microsoft Entra ID. There are various reasons for [multi-tenancy](../identity/multi-tenant-organizations/overview.md). For example, your organization might span multiple clouds or geographical boundaries.
 
-Multitenant organizations use a one-way synchronization service in Microsoft Entra ID, called [cross-tenant synchronization](~/identity/multi-tenant-organizations/cross-tenant-synchronization-overview.md). Cross-tenant synchronization enables seamless collaboration for a multitenant organization. It improves user experience and ensures that users can access resources, without receiving an invitation email and having to accept a consent prompt in each tenant.
+The [multitenant organization](../identity/multi-tenant-organizations/multi-tenant-organization-overview.md) capability enables seamless collaboration across Microsoft 365. It improves employee collaboration experiences across your organization of multiple tenants in applications such as Microsoft Teams and Microsoft Viva Engage.
 
-Cross-tenant synchronization settings are configured under the **Organization-specific access settings**. To learn more about multitenant organizations and cross-tenant synchronization see the [multitenant organizations documentation](~/identity/multi-tenant-organizations/index.yml) and the [feature comparison](~/identity/multi-tenant-organizations/overview.md#compare-multi-tenant-capabilities).
+The [cross-tenant synchronization](../identity/multi-tenant-organizations/cross-tenant-synchronization-overview.md) capability is a one-way synchronization service that ensures users can access resources, without receiving an invitation email and having to accept a consent prompt in each tenant.
+
+To learn more about multitenant organizations and cross-tenant synchronization, see the [multitenant organizations documentation](../identity/multi-tenant-organizations/index.yml) and the [feature comparison](../identity/multi-tenant-organizations/overview.md#compare-multitenant-capabilities).
 
 ## Next steps
 
 - [What is Microsoft Entra B2B collaboration?](what-is-b2b.md)
 - [What is Microsoft Entra B2B direct connect?](b2b-direct-connect-overview.md)
 - [About Azure AD B2C](/azure/active-directory-b2c/overview)
-- [About Microsoft Entra multitenant organizations](~/identity/multi-tenant-organizations/overview.md)
+- [About Microsoft Entra multitenant organizations](../identity/multi-tenant-organizations/overview.md)
