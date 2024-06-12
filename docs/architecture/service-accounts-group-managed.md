@@ -1,7 +1,7 @@
 ---
 title: Secure group managed service accounts
 description: A guide to securing group managed service accounts (gMSAs)
-author: jricketts
+author: janicericketts
 manager: martinco
 ms.service: entra
 ms.subservice: architecture
