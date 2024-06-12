@@ -1,15 +1,13 @@
 ---
 title: Managed identities for Azure resources frequently asked questions"
 description: Frequently asked questions about managed identities
-services: active-directory
+
 author: barclayn
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: msi
-ms.topic: conceptual
-ms.tgt_pltfrm: 
-ms.workload: identity
-ms.date: 07/27/2022
+ms.service: entra-id
+ms.subservice: managed-identities
+ms.topic: faq
+ms.date: 02/21/2024
 ms.author: barclayn
 ---
 
@@ -32,7 +30,7 @@ az resource list --query "[?identity.type=='SystemAssigned'].{Name:name,  princi
 
 ### Which Azure RBAC permissions are required to use a managed identity on a resource?
 
-- System-assigned managed identity: You need write permissions over the resource. For example, for virtual machines you need `Microsoft.Compute/virtualMachines/write`. This action is included in resource specific built-in roles like [Virtual Machine Contributor](/azure/role-based-access-control/built-in-roles#virtual-machine-contributor).
+- System-assigned managed identity: You need to have write permissions over the resource. For example, for virtual machines you need `Microsoft.Compute/virtualMachines/write`. This action is included in resource specific built-in roles like [Virtual Machine Contributor](/azure/role-based-access-control/built-in-roles#virtual-machine-contributor).
 - Assigning user-assigned managed identities to resources: You need write permissions over the resource. For example, for virtual machines you need `Microsoft.Compute/virtualMachines/write`. You'll also need `Microsoft.ManagedIdentity/userAssignedIdentities/*/assign/action` action over the user-assigned identity. This action is included in the [Managed Identity Operator](/azure/role-based-access-control/built-in-roles#managed-identity-operator) built-in role.
 - Managing user-assigned identities: To create or delete user-assigned managed identities, you need the [Managed Identity Contributor](/azure/role-based-access-control/built-in-roles#managed-identity-contributor) role assignment.
 - Managing role assignments for managed identities: You need the [Owner](/azure/role-based-access-control/built-in-roles#all) or [User Access Administrator](/azure/role-based-access-control/built-in-roles#all) role assignment over the resource to which you're granting access. You'll need the [Reader](/azure/role-based-access-control/built-in-roles#all) role assignment to the resource with a system-assigned identity, or to the user-assigned identity that is being given the role assignment. If you don't have read access, you can search by "User, group, or service principal" to find the identity's backing service principal, instead of searching by managed identity while adding the role assignment. [Read more about assigning Azure roles](/azure/role-based-access-control/role-assignments-portal).
@@ -74,15 +72,15 @@ After creating the policy, assign it to the resource group that you would like t
     1. **Policy definition**: The policy that we created earlier.
 6. Leave all other settings at their defaults and choose **Review + Create**
 
-At this point, any attempt to create a user-assigned managed identity in the resource group will fail.
+At this point, any attempt to create a user-assigned managed identity in the resource group fails.
 
-  ![Policy violation](./media/known-issues/policy-violation.png)
+  :::image type="content" source="./media/known-issues/policy-violation.png" alt-text="Screenshot showing a policy violation.":::
 
 ## Concepts
 
 ### Do managed identities have a backing app object?
 
-No. Managed identities and Microsoft Entra App Registrations aren't the same thing in the directory.
+No, managed identities and Microsoft Entra App Registrations aren't the same thing in the directory.
 
 App registrations have two components: An Application Object + A Service Principal Object.
 Managed Identities for Azure resources have only one of those components: A Service Principal Object.
@@ -96,10 +94,11 @@ Managed identities don't have an application object in the directory, which is w
 
 Managed identities use certificate-based authentication. Each managed identity’s credential has an expiration of 90 days and it's rolled after 45 days.
 
-### What identity will IMDS default to if don't specify the identity in the request?
+### What identity will IMDS default to if I don't specify the identity in the request?
 
 - If system assigned managed identity is enabled and no identity is specified in the request, Azure Instance Metadata Service (IMDS) defaults to the system assigned managed identity.
 - If system assigned managed identity isn't enabled, and only one user assigned managed identity exists, IMDS defaults to that single user assigned managed identity.
+    > If another user assigned managed identity is assigned to the resource for any reason, your requests to IMDS will start failing with the error `Multiple user assigned identities exist, please specify the clientId / resourceId of the identity in the token request`. We highly recommend you explicitly specify an identity in your request, even if only one user assigned managed identity currently exists for the resource.
 - If system assigned managed identity isn't enabled, and multiple user assigned managed identities exist, then you are required to specify a managed identity in the request.
 
 ## Limitations
@@ -119,14 +118,14 @@ The security boundary of the identity is the resource to which it's attached. Fo
 
 ### Will managed identities be recreated automatically if I move a subscription to another directory?
 
-No. If you move a subscription to another directory, you have to manually re-create them and grant Azure role assignments again.
+No, if you move a subscription to another directory, you have to manually re-create them and grant Azure role assignments again.
 
 - For system assigned managed identities: disable and re-enable. 
 - For user assigned managed identities: delete, re-create, and attach them again to the necessary resources (for example, virtual machines)
 
 ### Can I use a managed identity to access a resource in a different directory/tenant?
 
-No. Managed identities don't currently support cross-directory scenarios. 
+No, managed identities don't currently support cross-directory scenarios. 
 
 ### Are there any rate limits that apply to managed identities?
 
@@ -145,8 +144,13 @@ Moving a user-assigned managed identity to a different resource group isn't supp
 
 Managed identity tokens are cached by the underlying Azure infrastructure for performance and resiliency purposes: the back-end services for managed identities maintain a cache per resource URI for around 24 hours. It can take several hours for changes to a managed identity's permissions to take effect, for example. Today, it is not possible to force a managed identity's token to be refreshed before its expiry. For more information, see [Limitation of using managed identities for authorization](managed-identity-best-practice-recommendations.md#limitation-of-using-managed-identities-for-authorization).
 
+### Are managed identities soft deleted? 
+
+Yes, Managed Identities are soft deleted for 30 days. You can view the soft deleted managed identity service principal, but you can't restore or permanently delete it.
+
 ### What happens to tokens after a managed identity is deleted?
-When a managed identity is deleted, an Azure resource that was previously associated with that identity can no longer request new tokens for that identity. Tokens that were issued before the identity was deleted will still be valid until their original expiry. Some target endpoints' authorization systems may carry out additional checks in the directory for the identity, in which case the request will fail as the object can't be found. However some systems, like Azure RBAC, will continue to accept requests from that token until it expires.
+
+When a managed identity is deleted, an Azure resource that was previously associated with that identity can no longer request new tokens for that identity. Tokens that were issued before the identity was deleted will still be valid until their original expiry. Some target endpoints' authorization systems may carry out other checks in the directory for the identity, in which case the request fails as the object can't be found. However some systems, like Azure RBAC, will continue to accept requests from that token until it expires.
 
 ## Next steps
 

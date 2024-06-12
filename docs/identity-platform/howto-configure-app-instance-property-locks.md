@@ -5,9 +5,9 @@ author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
 ms.date: 10/26/2023
-ms.reviewer: madansr7
-ms.service: active-directory
-ms.subservice: develop
+ms.reviewer:
+ms.service: identity-platform
+
 ms.topic: how-to
 #Customer intent: As an application developer, I want to learn how to protect properties of my application instance of being modified.
 ---
@@ -38,7 +38,7 @@ To configure an app instance lock:
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the tenant containing the app registration from the **Directories + subscriptions** menu.
 1. Browse to **Identity** > **Applications** > **App registrations**.
 1. Select the application you want to configure.
-1. Select **Authentication**, and then select **Configure** under the _App instance property lock_ section.
+1. Select **Authentication**, and then select **Configure** under the *App instance property lock* section.
 
    :::image type="content" source="media/howto-configure-app-instance-property-locks/app-instance-lock-configure-overview.png" alt-text="Screenshot of an app registration's app instance lock.":::
 

@@ -9,10 +9,9 @@ metadata:
   manager: celested
   ms.author: ryanwi
   ms.date: 03/22/2023
-  ms.service: active-directory
-  ms.subservice: workload-identities
+  ms.service: entra-workload-id  
   ms.topic: landing-page
-  services: active-directory
+  
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
 

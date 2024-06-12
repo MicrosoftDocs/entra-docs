@@ -1,18 +1,14 @@
 ---
-title: Resource isolation in a single tenant to secure with Microsoft Entra ID 
+title: Resource isolation in a single tenant to secure with Microsoft Entra ID
 description: Introduction to resource isolation in a single tenant in Microsoft Entra ID.
-services: active-directory
 author: gargi-sinha
 manager: martinco
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: fundamentals
+ms.service: entra
+ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 7/5/2022
 ms.author: gasinh
-ms.reviewer: ajburnle
-ms.custom: it-pro, ignite-2022
-ms.collection: M365-identity-device-management
+ms.reviewer: ajburnle, ignite-2022
 ---
 
 # Resource isolation in a single tenant
@@ -25,13 +21,13 @@ Many separation scenarios can be achieved within a single tenant. If possible, w
 
 If a set of resources require unique tenant-wide settings, or there's minimal risk tolerance for unauthorized access by tenant members, or critical impact could be caused by configuration changes, you must achieve isolation in multiple tenants.
 
-**Configuration separation** - In some cases, resources such as applications have dependencies on tenant-wide configurations like authentication methods or [named locations](~/identity/conditional-access/location-condition.md#named-locations). You should consider these dependencies when isolating resources. Global administrators can configure the resource settings and tenant-wide settings that affect resources.
+**Configuration separation** - In some cases, resources such as applications have dependencies on tenant-wide configurations like authentication methods or named locations. You should consider these dependencies when isolating resources. Global Administrators can configure the resource settings and tenant-wide settings that affect resources.
 
 If a set of resources require unique tenant-wide settings, or the tenant's settings must be administered by a different entity, you must achieve isolation with multiple tenants.
 
 **Administrative separation** - With Microsoft Entra ID delegated administration, you can segregate the administration of resources such as applications and APIs, users and groups, resource groups, and Conditional Access policies.
 
-Global administrators can discover and obtain full access to any trusting resources. You can set up auditing and alerts to know when an administrator changes a resource if they're authenticated.
+Global Administrators can discover and obtain full access to any trusting resources. You can set up auditing and alerts to know when an administrator changes a resource if they're authenticated.
 
 You can also use administrative units (AU) in Microsoft Entra ID to provide some level of administrative separation. Administrative units restrict permissions in a role to any portion of your organization that you define. You could, for example, use administrative units to delegate the [Helpdesk Administrator](~/identity/role-based-access-control/permissions-reference.md) role to regional support specialists, so they can manage users only in the region that they support.
 
@@ -39,12 +35,12 @@ You can also use administrative units (AU) in Microsoft Entra ID to provide some
 
 Administrative Units can be used to separate [user, groups and device objects](~/identity/role-based-access-control/administrative-units.md). Assignments of those units can be managed by [dynamic membership rules](~/identity/role-based-access-control/admin-units-members-dynamic.md).
 
-By using Privileged Identity Management (PIM) you can define who in your organization is the best person to approve the request for highly privileged roles. For example, admins requiring global administrator access to make tenant-wide changes.
+By using Privileged Identity Management (PIM) you can define who in your organization is the best person to approve the request for highly privileged roles. For example, admins requiring Global Administrator access to make tenant-wide changes.
 
 >[!NOTE]
 >Using PIM requires and Microsoft Entra ID P2 license per human.
 
-If you must ensure that global administrators are unable to manage a specific resource, you must isolate that resource in a separate tenant with separate global administrators. This can be especially important for backups, see [multi-user authorization guidance](/azure/backup/multi-user-authorization) for examples of this.
+If you must ensure that Global Administrators are unable to manage a specific resource, you must isolate that resource in a separate tenant with separate Global Administrators. This can be especially important for backups, see [multi-user authorization guidance](/azure/backup/multi-user-authorization) for examples of this.
 
 ## Common usage
 
@@ -108,7 +104,7 @@ There are tenant-wide aspects that affect all trusting applications in the Micro
 
 * Global Administrators can manage all tenant-wide settings.
 
-* Other [directory roles](https://aka.ms/AzureADSecuredAzure/14b) such as User Administrator, Administrator, and Conditional Access Administrators can manage tenant-wide configuration within the scope of the role.
+* Other [directory roles](https://aka.ms/AzureADSecuredAzure/14b) such as User Administrator, Application Administrator, and Conditional Access Administrators can manage tenant-wide configuration within the scope of the role.
 
 Configuration settings such authentication methods allowed, hybrid configurations, B2B collaboration allow-listing of domains, and named locations are tenant wide.
 

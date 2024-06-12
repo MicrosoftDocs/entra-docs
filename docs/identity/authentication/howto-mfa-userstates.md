@@ -2,8 +2,8 @@
 title: Enable per-user multifactor authentication
 description: Learn how to enable per-user Microsoft Entra multifactor authentication by changing the user state
 
-services: multi-factor-authentication
-ms.service: active-directory
+
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 01/29/2023
@@ -13,7 +13,7 @@ author: justinha
 manager: amycolannino
 ms.reviewer: michmcla
 
-ms.collection: M365-identity-device-management 
+
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
 # Enable per-user Microsoft Entra multifactor authentication to secure sign-in events
@@ -22,7 +22,7 @@ To secure user sign-in events in Microsoft Entra ID, you can require multifactor
 
 For Microsoft Entra ID Free tenants without Conditional Access, you can [use security defaults to protect users](~/fundamentals/security-defaults.md). Users are prompted for MFA as needed, but you can't define your own rules to control the behavior.
 
-If needed, you can instead enable each account for per-user Microsoft Entra multifactor authentication. When users are enabled individually, they perform multifactor authentication each time they sign in (with some exceptions, such as when they sign in from trusted IP addresses or when the _remember MFA on trusted devices_ feature is turned on).
+If needed, you can instead enable each account for per-user Microsoft Entra multifactor authentication. When users are enabled individually, they perform multifactor authentication each time they sign in (with some exceptions, such as when they sign in from trusted IP addresses or when the *remember MFA on trusted devices* feature is turned on).
 
 Changing [user states](#azure-ad-multi-factor-authentication-user-states) isn't recommended unless your Microsoft Entra ID licenses don't include Conditional Access and you don't want to use security defaults. For more information on the different ways to enable MFA, see [Features and licenses for Microsoft Entra multifactor authentication](concept-mfa-licensing.md).
 
@@ -86,6 +86,6 @@ After you enable users, notify them via email. Tell the users that a prompt is d
 
 To configure Microsoft Entra multifactor authentication settings, see  [Configure Microsoft Entra multifactor authentication settings](howto-mfa-mfasettings.md).
 
-To manage user settings for Microsoft Entra multifactor authentication, see [Manage user settings with Microsoft Entra multifactor authentication](howto-mfa-userdevicesettings.md).
+To manage user settings for Microsoft Entra multifactor authentication, see [Manage user settings with Microsoft Entra multifactor authentication](howto-mfa-userdevicesettings.yml).
 
 To understand why a user was prompted or not prompted to perform MFA, see [Microsoft Entra multifactor authentication reports](howto-mfa-reporting.md).

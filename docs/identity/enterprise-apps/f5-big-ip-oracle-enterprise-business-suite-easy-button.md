@@ -4,8 +4,8 @@ description: Learn to implement SHA with header-based SSO to Oracle EBS using F5
 
 author: gargi-sinha
 manager: martinco
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: how-to
 
 ms.date: 03/23/2023
@@ -72,7 +72,7 @@ You need the following components:
 
 * An Azure subscription
   * If you don't have one, get an [Azure free account](https://azure.microsoft.com/free/)
-* Global Administrator, Cloud Application Administrator, or Application Administrator.
+* A Cloud Application Administrator, or Application Administrator role.
 * A BIG-IP or deploy a BIG-IP Virtual Edition (VE) in Azure
   * See, [Deploy F5 BIG-IP Virtual Edition VM in Azure](./f5-bigip-deployment-guide.md)
 * Any of the following F5 BIG-IP license SKUs:
@@ -133,13 +133,8 @@ Create a tenant app registration to authorize the Easy Button access to Graph. T
 2. Start the **Easy Button** template.
 3. Navigate to **Access > Guided Configuration > Microsoft Integration**.
 4. Select **Microsoft Entra Application**.
-
-   ![Screenshot of the Microsoft Entra Application option.](./media/f5-big-ip-easy-button-ldap/easy-button-template.png)
-
 5. Review the configuration options.
 6. Select **Next**.
-
-   ![Screenshot of configuration options and the Next option.](./media/f5-big-ip-easy-button-ldap/config-steps.png)
 
 7. Use the graphic to help publish your application.
 
@@ -196,16 +191,11 @@ Easy Button has application templates for Oracle PeopleSoft, Oracle E-Business S
 1. Select **Oracle E-Business Suite**.
 2. Select **Add**.
 
-   ![Screenshot of the Oracle E-Business Suite option under Azure Configuration.](./media/f5-big-ip-oracle/azure-configuration-add-big-ip-application.png)
-
 #### Azure Configuration
 
 1. Enter a **Display Name** for the app BIG-IP creates in your Microsoft Entra tenant, and the icon on MyApps.
 2. In **Sign On URL (optional)**, enter the EBS application public FQDN.
 3. Enter the default path for the Oracle EBS homepage.
-
-    ![Screenshot for Azure configuration add display info](./media/f5-big-ip-oracle/azure-configuration-add-display-info.png)
-
 3. Next to the **Signing Key** and **Signing Certificate**, select the **refresh** icon.
 4. Locate the certificate you imported.
 5. In **Signing Key Passphrase**, enter the certificate password.
@@ -225,7 +215,7 @@ When a user authenticates, Microsoft Entra ID issues a SAML token with default c
 
 #### Additional User Attributes
 
-The **Additional User Attributes** tab supports distributed systems that require attributes stored in directories for session augmentation. Attributes fetched from an LDAP source are injected as more SSO headers to control access based on roles, partner ID, etc.
+The **Additional User Attributes** tab supports distributed systems that require attributes stored in directories for session augmentation. Attributes fetched from an LDAP source are injected as more SSO headers to control access based on roles, partner ID, and so on.
 
 1. Enable the **Advanced Settings** option.
 2. Check the **LDAP Attributes** check box.

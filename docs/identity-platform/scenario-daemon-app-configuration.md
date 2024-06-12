@@ -1,19 +1,19 @@
 ---
-title: Configure daemon apps that call web APIs
+title: How to configure daemon apps that call web APIs
 description: Learn how to configure the code for your daemon application that calls web APIs (app configuration)
 author: Dickson-Mwendia
 manager: CelesteDG
 ms.author: dmwendia
 ms.custom: 
-ms.date: 09/19/2020
+ms.date: 02/01/2024
 ms.reviewer: jmprieur
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: conceptual
+ms.service: identity-platform
+
+ms.topic: concept-article
 #Customer intent: As an application developer, I want to know how to write a daemon app that can call web APIs by using the Microsoft identity platform.
 ---
 
-# Daemon app that calls web APIs - code configuration
+# How to configure daemon apps that call web APIs
 
 Learn how to configure the code for your daemon application that calls web APIs.
 
@@ -48,7 +48,7 @@ The configuration file defines:
 
 # [.NET](#tab/idweb)
 
-Here's an example of defining the configuration in an [*appsettings.json*](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/blob/master/1-Call-MSGraph/daemon-console/appsettings.json) file. This example is taken from the [.NET Core console daemon](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2) code sample on GitHub.
+Here's an example of defining the configuration in an [*appsettings.json*](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/blob/master/1-Call-MSGraph/daemon-console/appsettings.json) file. This example is taken from the [.NET console daemon](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2) code sample on GitHub.
 
 ```json
 {
@@ -129,7 +129,7 @@ When you build a confidential client with certificates, the [parameters.json](ht
 
 # [.NET (low level)](#tab/dotnet)
 
-Here's an example of defining the configuration in an [*appsettings.json*](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/blob/master/1-Call-MSGraph/daemon-console/appsettings.json) file. This example is taken from the [.NET Core console daemon](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2) code sample on GitHub.
+Here's an example of defining the configuration in an [*appsettings.json*](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/blob/master/1-Call-MSGraph/daemon-console/appsettings.json) file. This example is taken from the [.NET console daemon](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2) code sample on GitHub.
 
 ```json
 {
@@ -324,7 +324,7 @@ app = ConfidentialClientApplicationBuilder.Create(config.ClientId)
            .Build();
 ```
 
-The `Authority` is a concatenation of the cloud instance and the tenant ID, for example `https://login.microsoftonline.com/contoso.onmicrosoft.com` or `https://login.microsoftonline.com/eb1ed152-0000-0000-0000-32401f3f9abd`. In the *appsettings.json* file shown in the [Configuration file](#configuration-file) section, instance and tenant are represented by the `Instance` and `Tenant` values, respectively.
+The `Authority` is a concatenation of the cloud instance and the tenant ID, for example `https://login.microsoftonline.com/contoso.onmicrosoft.com` or `https://login.microsoftonline.com/aaaabbbb-0000-cccc-1111-dddd2222eeee`. In the *appsettings.json* file shown in the [Configuration file](#configuration-file) section, instance and tenant are represented by the `Instance` and `Tenant` values, respectively.
 
 In the code sample the previous snippet was taken from, `Authority` is a property on the  [AuthenticationConfig](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/blob/ffc4a9f5d9bdba5303e98a1af34232b434075ac7/1-Call-MSGraph/daemon-console/AuthenticationConfig.cs#L61-L70) class, and is defined as such:
 
@@ -351,7 +351,7 @@ Here's the code to build an application with a certificate:
 
 The code itself is exactly the same. The certificate is described in the configuration. 
 There are many ways to get the certificate. For details see https://aka.ms/ms-id-web-certificates.
-Here's how you would do to get your certificate from KeyVault. Microsoft identity delegates to Azure Identity's DefaultAzureCredential, and used Managed identity when available to access the certificate from KeyVault. You can debug your application locally as it, then, uses your developer credentials.
+Here's how you would do to get your certificate from KeyVault. Microsoft identity delegates to Azure Identity's DefaultAzureCredential, and used Managed identity when available to access the certificate from KeyVault. You can debug your application locally as it then uses your developer credentials.
 
 ```json
   "ClientCredentials": [
@@ -448,7 +448,7 @@ app = ConfidentialClientApplicationBuilder.Create(config.ClientId)
 
 # [.NET](#tab/idweb)
 
-Instead of a client secret or a certificate, the confidential client application can also prove its identity by using client assertions. See
+In addition to using a client secret or certificate, confidential client applications can also prove their identity by using client assertions. See
 [CredentialDescription](/dotnet/api/microsoft.identity.abstractions.credentialdescription?view=msal-model-dotnet-latest&preserve-view=true) for details.
 
 # [Java](#tab/java)

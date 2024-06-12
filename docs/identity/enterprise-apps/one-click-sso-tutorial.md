@@ -4,11 +4,10 @@ description: Steps for one-click configuration of  SSO for your application from
 
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
-
-ms.topic: conceptual
-ms.date: 06/11/2019
+ms.service: entra-id
+ms.subservice: saas-apps
+ms.topic: concept-article
+ms.date: 02/26/2024
 ms.author: jomondi
 ms.reviewer: alamaral
 ms.collection: M365-identity-device-management
@@ -64,7 +63,7 @@ The one-click SSO feature is designed to configure single sign-on for Azure Mark
    > [!NOTE]
    > If SSO configuration for your application requires additional steps, following the prompts to perform the steps.
 
-8. After the configuration has finished, select **OK** to save the changes.
+8. After the configuration is completed, select **OK** to save the changes.
 
    ![Save the auto-populated data](./media/one-click-sso-tutorial/save-data.png)
 

@@ -1,3 +1,12 @@
+---
+author: henrymbuguakiarie
+ms.service: identity-platform
+ms.topic: include
+ms.date: 09/25/2023
+ms.author: henrymbugua
+manager: CelesteDG 
+---
+
 | Language / framework | Project on<br/>GitHub                                                                                     | Package                                                                               | Getting<br/>started                        | Sign in users                                         | Access web APIs                                                 | Generally available (GA) *or*<br/>Public preview<sup>1</sup> |
 |----------------------|-----------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|:------------------------------------------:|:-----------------------------------------------------:|:---------------------------------------------------------------:|:------------------------------------------------------------:|
 | Electron             | [MSAL Node.js](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-node) | [msal-node](https://www.npmjs.com/package/@azure/msal-node)                    | —                                          | ![Library can request ID tokens for user sign-in.][y] | ![Library can request access tokens for protected web APIs.][y] | Public preview                                               |

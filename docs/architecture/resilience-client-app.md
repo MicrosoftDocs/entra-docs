@@ -1,10 +1,8 @@
 ---
 title: Increase the resilience of authentication and authorization in client applications you develop
-description: Learn to increasing resiliency of authentication and authorization in client application using the Microsoft identity platform 
-services: active-directory 
-ms.service: active-directory
-ms.subservice: fundamentals 
-ms.workload: identity
+description: Learn to increasing resiliency of authentication and authorization in client application using the Microsoft identity platform
+ms.service: entra
+ms.subservice: architecture
 ms.topic: how-to
 author: jricketts
 ms.author: jricketts
@@ -201,7 +199,7 @@ See, [What is a Primary Refresh Token?](~/identity/devices/concept-primary-refre
 
 MSAL supports broker authentication. Learn more:
 
-* [SSO through Authentication broker on iOS](~/identity-platform/single-sign-on-macos-ios.md#sso-through-authentication-broker-on-ios)
+* [SSO through Authentication broker on iOS](/entra/msal/objc/single-sign-on-macos-ios#sso-through-authentication-broker-on-ios)
 * [Enable cross-app SSO on Android using MSAL](~/identity-platform/msal-android-single-sign-on.md)
 
 ## Continuous Access Evaluation

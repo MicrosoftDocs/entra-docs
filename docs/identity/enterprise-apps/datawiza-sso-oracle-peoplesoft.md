@@ -1,25 +1,22 @@
 ---
 title: Configure Microsoft Entra multifactor authentication and SSO for Oracle PeopleSoft applications using Datawiza Access Proxy
 description: Enable Microsoft Entra multifactor authentication and SSO for Oracle PeopleSoft application using Datawiza Access Proxy
-
 author: gargi-sinha
 manager: martinco
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: how-to
-
-ms.date: 01/25/2023
+ms.date: 01/30/2024
 ms.author: gasinh
 ms.collection: M365-identity-device-management
 ms.custom: not-enterprise-apps
 
-#customer intent: As an IT admin, I want to configure Datawiza to enable Microsoft Entra multifactor authentication and single sign-on to Oracle PeopleSoft, so that I can enhance the security of user sign-ins and provide seamless access to the application.
+#customer intent: I'm an IT admin, and I want to configure Datawiza to enable Microsoft Entra multifactor authentication (MFA) and single sign-on (SSO) to Oracle PeopleSoft. My goal is to enhance user sign-in security and provide seamless access to applications.
 ---
 
 # Tutorial: Configure Datawiza to enable Microsoft Entra multifactor authentication and single sign-on to Oracle PeopleSoft
 
-In this tutorial, learn how to enable Microsoft Entra single sign-on (SSO) and Microsoft Entra multifactor authentication for an
-Oracle PeopleSoft application using Datawiza Access Proxy (DAP).
+In this tutorial, learn how to enable Microsoft Entra single sign-on (SSO) and Microsoft Entra multifactor authentication for an Oracle PeopleSoft application using Datawiza Access Proxy (DAP).
 
 Learn more: [Datawiza Access Proxy](https://www.datawiza.com/)
 
@@ -62,7 +59,7 @@ Ensure the following prerequisites are met.
 * User identities synchronized from an on-premises directory to Microsoft Entra ID, or created in Microsoft Entra ID and flowed back to an on-premises directory
   * See, [Microsoft Entra Connect Sync: Understand and customize synchronization](~/identity/hybrid/connect/how-to-connect-sync-whatis.md)
 * An account with Microsoft Entra ID and the Application Administrator role
-  * See, [Microsoft Entra built-in roles, all roles](~/identity/role-based-access-control/permissions-reference.md#all-roles)
+  * See, [Microsoft Entra built-in roles, all roles](~/identity/role-based-access-control/permissions-reference.md#application-administrator)
 * An Oracle PeopleSoft environment
 * (Optional) An SSL web certificate to publish services over HTTPS. You can use default Datawiza self-signed certs for testing.
 
@@ -90,18 +87,18 @@ To integrate Oracle PeopleSoft with Microsoft Entra ID:
 
    ![Screenshot of entries under Add Application.](./media/datawiza-sso-oracle-peoplesoft/add-application.png)
    
-7. Select **Next**.
-8. On the **Configure IdP** dialog, enter information.
+12. Select **Next**.
+13. On the **Configure IdP** dialog, enter information.
 
    >[!Note]
    >DCMC has one-click integration to help complete Microsoft Entra configuration. DCMC calls the Microsoft Graph API to create an application registration on your behalf in your Microsoft Entra tenant. Learn more at docs.datawiza.com in [One Click Integration with Microsoft Entra ID](https://docs.datawiza.com/tutorial/web-app-azure-one-click.html#preview)
 
-9. Select **Create**.
+14. Select **Create**.
 
    ![Screenshot of entries under Configure IDP.](./media/datawiza-sso-oracle-peoplesoft/configure-idp.png)
 
-10. The DAP deployment page appears.
-11. Make a note of the deployment Docker Compose file. The file includes the DAP image, the Provisioning Key and Provision Secret, which pulls the latest configuration and policies from DCMC.
+15. The DAP deployment page appears.
+16. Make a note of the deployment Docker Compose file. The file includes the DAP image, the Provisioning Key and Provision Secret, which pulls the latest configuration and policies from DCMC.
 
    ![Screenshot of three sets of Docker information.](./media/datawiza-sso-oracle-peoplesoft/docker-compose-file.png)
 
@@ -156,7 +153,7 @@ To provide more security for sign-ins, you can enforce Microsoft Entra multifact
 
 Learn more: [Tutorial: Secure user sign-in events with Microsoft Entra multifactor authentication](~/identity/authentication/tutorial-enable-azure-mfa.md)
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 2. Browse to **Identity** > **Overview** > **Properties** tab.
 3. Under **Security defaults**, select **Manage security defaults**.
 4. On the **Security defaults** pane, toggle the dropdown menu to select **Enabled**.

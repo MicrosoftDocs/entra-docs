@@ -5,11 +5,11 @@ author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
 ms.custom:
-ms.date: 02/07/2023
-ms.reviewer: kkrishna, jmprieur
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: conceptual
+ms.date: 02/09/2024
+ms.reviewer: jmprieur
+ms.service: identity-platform
+
+ms.topic: concept-article
 #Customer intent: As a web app developer, I want to handle SameSite cookie changes in the Chrome browser, so that I can ensure authentication works correctly and prevent CSRF attacks in my web applications.
 ---
 
@@ -28,7 +28,7 @@ By default, the `SameSite` value is NOT set in browsers and that's why there are
 
 Recent [updates to the standards on SameSite](https://tools.ietf.org/html/draft-west-cookie-incrementalism-00) propose protecting apps by making the default behavior of `SameSite` when no value is set to Lax. This mitigation means cookies will be restricted on HTTP requests except GET made from other sites. Additionally, a value of **None** is introduced to remove restrictions on cookies being sent. These updates will soon be released in an upcoming version of the Chrome browser.
 
-When web apps authenticate with the Microsoft identity platform using the response mode "form_post", the login server responds to the application using an HTTP POST to send the tokens or auth code. Because this request is a cross-domain request (from `login.microsoftonline.com` to your domain - for instance `https://contoso.com/auth`), cookies that were set by your app now fall under the new rules in Chrome. The cookies that need to be used in cross-site scenarios are cookies that hold the _state_ and _nonce_ values, that are also sent in the login request. There are other cookies dropped by Microsoft Entra ID to hold the session.
+When web apps authenticate with the Microsoft identity platform using the response mode "form_post", the login server responds to the application using an HTTP POST to send the tokens or auth code. Because this request is a cross-domain request (from `login.microsoftonline.com` to your domain - for instance `https://contoso.com/auth`), cookies that were set by your app now fall under the new rules in Chrome. The cookies that need to be used in cross-site scenarios are cookies that hold the *state* and *nonce* values, that are also sent in the login request. There are other cookies dropped by Microsoft Entra ID to hold the session.
 
 If you don't update your web apps, this new behavior will result in authentication failures.
 
@@ -50,7 +50,7 @@ The following table presents the pull requests that worked around the SameSite c
 | [ASP.NET MVC web app sample](https://github.com/Azure-Samples/ms-identity-aspnet-webapp-openidconnect)                                    | [Same site cookie fix #35](https://github.com/Azure-Samples/ms-identity-aspnet-webapp-openidconnect/pull/35)               |
 | [active-directory-dotnet-admin-restricted-scopes-v2](https://github.com/azure-samples/active-directory-dotnet-admin-restricted-scopes-v2) | [Same site cookie fix #28](https://github.com/Azure-Samples/active-directory-dotnet-admin-restricted-scopes-v2/pull/28)    |
 
-for details on how to handle SameSite cookies in ASP.NET and ASP.NET Core, see also:
+For details on how to handle SameSite cookies in ASP.NET and ASP.NET Core, see also:
 
 - [Work with SameSite cookies in ASP.NET Core](/aspnet/core/security/samesite) .
 - [ASP.NET Blog on SameSite issue](https://devblogs.microsoft.com/aspnet/upcoming-samesite-cookie-changes-in-asp-net-and-asp-net-core/)
@@ -75,7 +75,5 @@ for details on how to handle SameSite cookies in ASP.NET and ASP.NET Core, see a
 Learn more about SameSite and the Web app scenario:
 
 - [Google Chrome's FAQ on SameSite](https://www.chromium.org/updates/same-site/faq)
-
 - [Chromium SameSite page](https://www.chromium.org/updates/same-site)
-
-- [Scenario: Web app that signs in users](scenario-web-app-sign-user-overview.md)
+- [Tutorial: Web app that signs in users](tutorial-web-app-dotnet-register-app.md)

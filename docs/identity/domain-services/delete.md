@@ -1,18 +1,15 @@
 ---
 title: Delete Microsoft Entra Domain Services | Microsoft Docs
-description: Learn how to disable, or delete, a Microsoft Entra Domain Services managed domain 
-services: active-directory-ds
+description: Learn how to disable, or delete, a Microsoft Entra Domain Services managed domain
 author: justinha
 manager: amycolannino
 
 ms.assetid: 89e407e1-e1e0-49d1-8b89-de11484eee46
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: domain-services
-ms.workload: identity
 ms.topic: how-to
 ms.date: 10/18/2023
 ms.author: justinha
-
 ---
 # Delete a Microsoft Entra Domain Services managed domain
 
@@ -25,7 +22,7 @@ This article shows you how to use the Microsoft Entra admin center to delete a m
 > When you delete a managed domain, the following steps occur:
 >
 > * Domain controllers for the managed domain are deprovisioned and removed from the virtual network.
-> * Data on the managed domain is deleted permanently. This data includes custom OUs, GPOs, custom DNS records, service principals, GMSAs, etc. that you created.
+> * Data on the managed domain is deleted permanently. This data includes custom OUs, GPOs, custom DNS records, service principals, GMSAs, and so on. that you created.
 > * Machines joined to the managed domain lose their trust relationship with the domain and need to be unjoined from the domain.
 > * You can't sign in to these machines using corporate AD credentials. Instead, you must use the local administrator credentials for the machine.
 

@@ -6,13 +6,11 @@ manager: celesteDG
 ms.author: jomondi
 ms.date: 12/05/2023
 ms.reviewer: yuhko, ergreenl
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: how-to
-ms.workload: identity
 services: active-directory
 zone_pivot_groups: enterprise-apps-with-ms-graph
-#Customer intent:
 ---
 # Update an app's requested permissions in Microsoft Entra ID
 
@@ -32,7 +30,7 @@ Updating permissions for your app isn't only a security best practice, but also 
 To update an app's requested permissions, you need:
 
 - A Microsoft Entra user account. If you don't already have one, [create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- One of the following roles: Global Administrator, Application Administrator, Cloud Application Administrator. An application owner who isn't an administrator is able to update an app's requested permissions.
+- One of the following roles: Application Administrator, Cloud Application Administrator. An application owner who isn't an administrator is able to update an app's requested permissions.
 
 ## Scenarios for updating permissions
 
@@ -92,10 +90,10 @@ To complete the following steps of adding permissions, you need the following re
 
 1. Identify the permissions your app requires, their permission IDs, and whether they're app roles (application permissions) or delegated permissions. For example, if you want to request Microsoft Graph permissions, see [Microsoft Graph permissions](/graph/permissions-reference#permission-scenarios) for a list of permissions and their IDs.
 1. Add the required Microsoft Graph permissions to your app.
-   The following example calls the [Update application](/graph/api/application-update) API to add the required Microsoft Graph permissions to an app registration identified by object ID `581088ba-83c5-4975-b8af-11d2d7a76e98`. This example uses `Analytics.Read` and `Application.Read.All` delegated permission and application permission. Microsoft Graph is identified as a ServicePrincipal object with `00000003-0000-0000-c000-000000000000` as its globally unique `AppId`.
+   The following example calls the [Update application](/graph/api/application-update) API to add the required Microsoft Graph permissions to an app registration identified by object ID `aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb`. This example uses `Analytics.Read` and `Application.Read.All` delegated permission and application permission. Microsoft Graph is identified as a ServicePrincipal object with `00000003-0000-0000-c000-000000000000` as its globally unique `AppId`.
 
    ```http
-   PATCH https://graph.microsoft.com/v1.0/applications/581088ba-83c5-4975-b8af-11d2d7a76e98
+   PATCH https://graph.microsoft.com/v1.0/applications/aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb
    Content-Type: application/json
     {
         "requiredResourceAccess": [
@@ -122,11 +120,11 @@ Dynamic consent is a way of requesting permissions from users or administrators 
 
 To add permissions into dynamic consent:
 
-- **Use Microsoft Graph**: Add the required Microsoft Graph permissions to an app registration identified by object ID `581088ba-83c5-4975-b8af-11d2d7a76e98`. This example uses `Analytics.Read` and `Application.Read.All` delegated permission and application permission. Replace the values in \`scopes\` with values of any Microsoft Graph delegated permissions you want to configure for the app.
+- **Use Microsoft Graph**: Add the required Microsoft Graph permissions to an app registration. This example uses `Analytics.Read` and `Application.Read.All` delegated permission and application permission. Replace the values in \`scopes\` with values of any Microsoft Graph delegated permissions you want to configure for the app.
 
    The request should be like the following example:
 
-   `https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=581088ba-83c5-4975-b8af-11d2d7a76e98&response_type=code&scope=Analytics.Read+Application.Read`
+   `https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=00001111-aaaa-2222-bbbb-3333cccc4444&response_type=code&scope=Analytics.Read+Application.Read`
 
 - Use **MSAL.js**: Replace the values in \`scopes\` with values of any Microsoft Graph delegated permissions you want to configure for the app.
 
@@ -155,7 +153,7 @@ After permissions are added to your application, users or admins need to grant c
 
 When the added permissions require admin consent, the required actions vary based on app type:
 
-- **Single tenant app and multitenant app in home tenant**: The user must sign in as a Global Administrator and [grant tenant-wide consent](~/identity/enterprise-apps/grant-admin-consent.md).
+- **Single tenant app and multitenant app in home tenant**: The user must sign in as at least a [Privileged Role Administrator role](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator) and [grant tenant-wide consent](~/identity/enterprise-apps/grant-admin-consent.md).
 - **Multi-tenant apps in customer's tenants**: User sees new consent prompts on their next sign-in attempt. If the permissions only require user consent, the user can grant consent. If the permissions require admin consent, the user must contact their administrator to grant consent.
 
 ### Stop requesting unused permissions
@@ -206,10 +204,10 @@ To complete the following steps of removing permissions, you need the following 
 1. Identify the permissions for your app.
 1. For example, to stop your app from requesting Microsoft Graph permissions, identify the Microsoft Graph permissions for your app, their permission IDs, and whether they're app roles (application permissions) or delegated permissions.
 1. Remove the unwanted Microsoft Graph permissions from your app.
-   The following example calls the [Update application](/graph/api/application-update) API to remove the unwanted Microsoft Graph permissions from an app registration identified by object ID `581088ba-83c5-4975-b8af-11d2d7a76e98`. In this example, the application has `Analytics.Read`, `User.Read`, and `Application.Read.All`. We need to remove `Analytics.Read` and `Application.Read.All` delegated permission and application permission. Microsoft Graph is identified as a ServicePrincipal object with `00000003-0000-0000-c000-000000000000` as its globally unique `AppId` and Microsoft Graph as its `DisplayName` and `AppDisplayName`.
+   The following example calls the [Update application](/graph/api/application-update) API to remove the unwanted Microsoft Graph permissions from an app registration identified by a sample client ID `00001111-aaaa-2222-bbbb-3333cccc4444`. In this example, the application has `Analytics.Read`, `User.Read`, and `Application.Read.All`. We need to remove `Analytics.Read` and `Application.Read.All` delegated permission and application permission. Microsoft Graph is identified as a ServicePrincipal object with `00000003-0000-0000-c000-000000000000` as its globally unique `AppId` and Microsoft Graph as its `DisplayName` and `AppDisplayName`.
 
     ```http
-    PATCH https://graph.microsoft.com/v1.0/applications/581088ba-83c5-4975-b8af-11d2d7a76e98
+    PATCH https://graph.microsoft.com/v1.0/applications/00001111-aaaa-2222-bbbb-3333cccc4444
     Content-Type: application/json
     {
         "requiredResourceAccess": [
@@ -236,7 +234,7 @@ To stop requesting permissions with dynamic consent:
 
 The request should be similar to the following example:
 
-`https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=581088ba-83c5-4975-b8af-11d2d7a76e98&response_type=code&scope=User.Read`
+`https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=00001111-aaaa-2222-bbbb-3333cccc4444&response_type=code&scope=User.Read`
 
 - **using MSAL.js**: Remove the unwanted Microsoft Graph delegated permissions in \`scopes\`.
 

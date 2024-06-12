@@ -3,18 +3,19 @@ title: 'Tutorial: Configure TAP App Security for automatic user provisioning wit
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to TAP App Security.
 
 documentationcenter: ''
-author: twimmers
-writer: Thwimmer
+author: thomasakelo
 manager: jeedes
 
 ms.assetid: affd297c-2b6f-4dc2-b4c3-d29458cf4b1b
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 
 ms.topic: article
-ms.date: 11/21/2022
-ms.author: Thwimmer
+ms.date: 03/25/2024
+ms.author: thomasakelo
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Tap App Security so that I can streamline the user management process and ensure that users have the appropriate access to Tap App Security.
 ---
 
 # Tutorial: Configure TAP App Security for automatic user provisioning
@@ -34,7 +35,7 @@ This tutorial describes the steps you need to perform in both TAP App Security a
 The scenario outlined in this tutorial assumes that you already have the following prerequisites:
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md). 
-* A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (for example, Application Administrator, Cloud Application administrator, Application Owner, or Global Administrator). 
+* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications). 
 * A user account in TAP App Security with Admin permissions.
 
 

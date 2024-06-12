@@ -1,19 +1,18 @@
 ---
 title: Quickstart API-driven inbound provisioning with Graph Explorer
 description: Learn how to get started quickly with API-driven inbound provisioning using Graph Explorer
-services: active-directory
-author: kenwith
+
+author: jenniferf-skc
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-provisioning
-ms.workload: identity
 ms.topic: how-to
-ms.date: 11/15/2023
-ms.author: kenwith
+ms.date: 02/28/2024
+ms.author: jfields
 ms.reviewer: cmmdesai
 ---
 
-# Quickstart API-driven inbound provisioning with Graph Explorer (Public preview)
+# Quickstart API-driven inbound provisioning with Graph Explorer
 
 This tutorial describes how you can quickly test [API-driven inbound provisioning](inbound-provisioning-api-concepts.md) with Microsoft Graph Explorer.
 
@@ -90,7 +89,7 @@ The bulk request shown below uses the SCIM standard Core User and Enterprise Use
     "Operations": [
     {
         "method": "POST",
-        "bulkId": "897401c2-2de4-4b87-a97f-c02de3bcfc61",
+        "bulkId": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
         "path": "/Users",
         "data": {
             "schemas": ["urn:ietf:params:scim:schemas:core:2.0:User",
@@ -153,7 +152,7 @@ The bulk request shown below uses the SCIM standard Core User and Enterprise Use
     },
     {
         "method": "POST",
-        "bulkId": "897401c2-2de4-4b87-a97f-c02de3bcfc61",
+        "bulkId": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
         "path": "/Users",
         "data": {
             "schemas": ["urn:ietf:params:scim:schemas:core:2.0:User",

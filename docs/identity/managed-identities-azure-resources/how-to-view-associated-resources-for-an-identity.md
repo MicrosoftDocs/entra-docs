@@ -1,21 +1,18 @@
 ---
 title: View associated resources for a user-assigned managed identity
 description: Step-by-step instructions for viewing the Azure resources that are associated with a user-assigned managed identity
-services: active-directory
-documentationcenter: ''
+
 author: barclayn
 manager: amycolannino
-editor: ''
 
-ms.service: active-directory
-ms.subservice: msi
+ms.service: entra-id
+ms.subservice: managed-identities
 
 ms.topic: how-to
 ms.tgt_pltfrm: na
-ms.workload: identity
 ms.date: 01/18/2023
 ms.author: barclayn
-ms.collection: M365-identity-device-management
+
 ---
 
 # View associated Azure resources for a user-assigned managed identity (Preview)
@@ -73,7 +70,7 @@ https://management.azure.com/subscriptions/{resourceID of user-assigned identity
 You can see a sample request to the REST API:
 
 ```http
-POST https://management.azure.com/subscriptions/aab111d1-1111-43e2-8d11-3bfc47ab8111/resourceGroups/devrg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/devIdentity/listAssociatedResources?$filter={filter}&$orderby={orderby}&$skip={skip}&$top={top}&skipToken={skipToken}&api-version=2021-09-30-preview 
+POST https://management.azure.com/subscriptions/aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e/resourceGroups/devrg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/devIdentity/listAssociatedResources?$filter={filter}&$orderby={orderby}&$skip={skip}&$top={top}&skipToken={skipToken}&api-version=2021-09-30-preview 
 ```
 
 Notice a sample response from the REST API:
@@ -181,7 +178,7 @@ This confirmation process is only available in the portal. To view an identity's
 ## Limitations
 
  - This functionality is available in all public regions, and will be available in USGov and China in the coming weeks.
- - API requests for associated resources are limited to one per second per tenant. If you exceed this limit, you may receive a `HTTP 429` error. This limit doesn't apply to retrieving a list of user-assigned managed identities.
+ - API requests for associated resources are limited to one per second per tenant. If you exceed this limit, you may receive an `HTTP 429` error. This limit doesn't apply to retrieving a list of user-assigned managed identities.
  - Azure Resources types that are in preview, or their support for Managed identities is in preview, may not appear in the associated resources list until fully generally available. This list includes Service Fabric clusters, Blueprints, and Machine learning services.
  - This functionality is limited to tenants with fewer than 5,000 subscriptions. An error will be displayed if the tenant has greater than 5,000 subscriptions.
  - The list of associated resources will display the resource type, not display name.

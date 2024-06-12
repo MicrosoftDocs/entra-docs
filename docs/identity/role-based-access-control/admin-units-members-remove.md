@@ -1,19 +1,16 @@
 ---
 title: Remove users, groups, or devices from an administrative unit
 description: Remove users, groups, or devices from an administrative unit in Microsoft Entra ID
-services: active-directory
-documentationcenter: ''
+
 author: rolyon
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: how-to
-ms.subservice: roles
-ms.workload: identity
+ms.subservice: role-based-access-control
 ms.date: 06/09/2023
 ms.author: rolyon
 ms.reviewer: anandy
-ms.custom: oldportal, it-pro, has-azure-ad-ps-ref
-ms.collection: M365-identity-device-management
+ms.custom: oldportal, it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
 
 # Remove users, groups, or devices from an administrative unit
@@ -24,10 +21,9 @@ When users, groups, or devices in an administrative unit no longer need access, 
 
 - Microsoft Entra ID P1 or P2 license for each administrative unit administrator
 - Microsoft Entra ID Free licenses for administrative unit members
-- Privileged Role Administrator or Global Administrator
-- Azure AD PowerShell module when using PowerShell
-- AzureADPreview module when using PowerShell for devices
-- Admin consent when using Graph explorer for Microsoft Graph API
+- Privileged Role Administrator
+- Microsoft Graph PowerShell module when using PowerShell
+- Admin consent when using Graph Explorer for Microsoft Graph API
 
 For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
 
@@ -103,31 +99,30 @@ You can remove users, groups, or devices from administrative units individually 
 
 ## PowerShell
 
-Use the [Remove-AzureADMSAdministrativeUnitMember](/powershell/module/azuread/remove-azureadmsadministrativeunitmember) command to remove users or groups from an administrative unit.
-
-Use the [Remove-AzureADMSAdministrativeUnitMember (Preview)](/powershell/module/azuread/remove-azureadmsadministrativeunitmember?view=azureadps-2.0-preview&preserve-view=true) command to remove devices from an administrative unit.
+Use the [Remove-MgDirectoryAdministrativeUnitMemberByRef](/powershell/module/microsoft.graph.identity.directorymanagement/remove-mgdirectoryadministrativeunitmemberbyref) command to remove users, groups, or devices from an administrative unit.
 
 ### Remove users from an administrative unit
 
 ```powershell
-$adminUnitObj = Get-AzureADMSAdministrativeUnit -Filter "displayname eq 'Test administrative unit 2'"
-$userObj = Get-AzureADUser -Filter "UserPrincipalName eq 'bill@example.com'"
-Remove-AzureADMSAdministrativeUnitMember -Id $adminUnitObj.Id -MemberId $userObj.ObjectId
+$adminUnitObj = Get-MgDirectoryAdministrativeUnit -Filter "DisplayName eq 'Test administrative unit 2'"
+$userObj = Get-MgUser -Filter "UserPrincipalName eq 'bill@example.com'"
+Remove-MgDirectoryAdministrativeUnitMemberByRef -AdministrativeUnitId $adminUnitObj.Id -DirectoryObjectId $userObj.Id
 ```
 
 ### Remove groups from an administrative unit
 
 ```powershell
-$adminUnitObj = Get-AzureADMSAdministrativeUnit -Filter "displayname eq 'Test administrative unit 2'"
-$groupObj = Get-AzureADGroup -Filter "displayname eq 'TestGroup'"
-Remove-AzureADMSAdministrativeUnitMember -Id $adminUnitObj.Id -MemberId $groupObj.ObjectId
+$adminUnitObj = Get-MgDirectoryAdministrativeUnit -Filter "DisplayName eq 'Test administrative unit 2'"
+$groupObj = Get-MgGroup -Filter "DisplayName eq 'TestGroup'"
+Remove-MgDirectoryAdministrativeUnitMemberByRef -AdministrativeUnitId $adminUnitObj.Id -DirectoryObjectId $groupObj.Id
 ```
 
 ### Remove devices from an administrative unit
 
 ```powershell
-Remove-AzureADMSAdministrativeUnitMember -ObjectId $adminUnitId -MemberId $deviceObjId
+Remove-MgDirectoryAdministrativeUnitMemberByRef -AdministrativeUnitId $adminUnitObj.Id -DirectoryObjectId $deviceObj.Id
 ```
+
 ## Microsoft Graph API
 
 Use the [Remove a member](/graph/api/administrativeunit-delete-members) API to remove users, groups, or devices from an administrative unit. For `{member-id}`, specify the user, group, or device ID.

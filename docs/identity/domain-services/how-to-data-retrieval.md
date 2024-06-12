@@ -1,13 +1,11 @@
 ---
 title: Instructions for data retrieval from Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to retrieve data from Microsoft Entra Domain Services.
-services: active-directory-ds
 author: justinha
 manager: amycolannino
 
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: domain-services
-ms.workload: identity
 ms.topic: conceptual
 ms.date: 09/14/2023
 ms.author: justinha
@@ -18,7 +16,7 @@ ms.reviewer: manthanm
 
 This document describes how to retrieve data from Microsoft Entra Domain Services.
 
-[!INCLUDE [active-directory-app-provisioning.md](~/../azure-docs-pr/includes/gdpr-intro-sentence.md)]
+[!INCLUDE [active-directory-app-provisioning.md](~/includes/azure-docs-pr/gdpr-intro-sentence.md)]
 
 <a name='use-azure-active-directory-to-create-read-update-and-delete-user-objects'></a>
 
@@ -55,13 +53,13 @@ To add a new user, follow these steps:
 
 The user is created and added to your Microsoft Entra organization.
 
-To read or update a user, search for and select the user such as, _Mary Parker_. Change any property and click **Save**. 
+To read or update a user, search for and select the user such as, *Mary Parker*. Change any property and click **Save**. 
 
 ### Delete a user
 
 To delete a user, follow these steps:
 
-1. Search for and select the user you want to delete from your Microsoft Entra tenant. For example, _Mary Parker_.
+1. Search for and select the user you want to delete from your Microsoft Entra tenant. For example, *Mary Parker*.
 
 1. Select **Delete user**.
 

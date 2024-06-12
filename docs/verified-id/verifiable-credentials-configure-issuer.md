@@ -1,8 +1,8 @@
 ---
 title: Tutorial - Issue Microsoft Entra Verified ID credentials from an application
 description: In this tutorial, you learn how to issue verifiable credentials by using a sample app.
-ms.service: decentralized-identity
-ms.subservice: verifiable-credentials
+ms.service: entra-verified-id
+
 author: barclayn
 manager: amycolannino
 ms.author: barclayn
@@ -195,7 +195,7 @@ Now you'll make modifications to the sample app's issuer code to update it with 
     1. **DidAuthority**: Your Decentralized Identifier
     1. **Credential Manifest**: Your manifest URL
 
-CredentialType is only needed for presentation, so if all you want to do is issuance, it strictly isn't needed.
+    CredentialType is only needed for presentation, so if all you want to do is issuance, it strictly isn't needed.
 
 1. Save the *appsettings.json* file.
 
@@ -207,13 +207,13 @@ The following JSON demonstrates a complete *appsettings.json* file:
     "Endpoint": "https://verifiedid.did.msidentity.com/v1.0/verifiableCredentials/",
     "VCServiceScope": "3db474b9-6a0c-4840-96ac-1fceb342124f/.default",
     "Instance": "https://login.microsoftonline.com/",
-    "TenantId": "12345678-0000-0000-0000-000000000000",
-    "ClientId": "33333333-0000-0000-0000-000000000000",
+    "TenantId": "aaaabbbb-0000-cccc-1111-dddd2222eeee",
+    "ClientId": "00001111-aaaa-2222-bbbb-3333cccc4444",
     "ClientSecret": "123456789012345678901234567890",
     "CertificateName": "[Or instead of client secret: Enter here the name of a certificate (from the user cert store) as registered with your application]",
     "DidAuthority": "did:web:...your-decentralized-identifier...",
     "CredentialType": "VerifiedCredentialExpert",
-    "CredentialManifest":  "https://verifiedid.did.msidentity.com/v1.0/12345678-0000-0000-0000-000000000000/verifiableCredentials/contracts/VerifiedCredentialExpert"
+    "CredentialManifest":  "https://verifiedid.did.msidentity.com/v1.0/00001111-aaaa-2222-bbbb-3333cccc4444/verifiableCredentials/contracts/VerifiedCredentialExpert"
   }
 }
 ```

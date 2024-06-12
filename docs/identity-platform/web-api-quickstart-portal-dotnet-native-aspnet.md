@@ -7,9 +7,9 @@ manager: CelesteDG
 ms.author: dmwendia
 ms.custom: devx-track-csharp,  scenarios:getting-started, "languages:ASP.NET", mode-api
 ms.date: 08/16/2022
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: conceptual
+ms.service: identity-platform
+
+ms.topic: quickstart
 #Customer intent: As an application developer, I want to know how to set up OpenId Connect authentication in a web application that's built by using Node.js with Express.
 ---
 
@@ -50,7 +50,7 @@ ms.topic: conceptual
 > 
 > ## Register the web API (TodoListService)
 > 
-> Register your web API in **App registrations** in the Azure portal.
+> Register your web API in **App registrations** in the Azure Microsoft Entra admin center.
 > 
 > 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 > 1. Browse to **Identity** > **Applications** > **App registrations**.
@@ -76,7 +76,7 @@ ms.topic: conceptual
 > 
 > 1. Open the solution in Visual Studio, and then open the *Web.config* file under the root of the TodoListService project.
 > 
-> 1. Replace the value of the `ida:ClientId` parameter with the Client ID (Application ID) value from the application you registered in the **App registrations** portal.
+> 1. Replace the value of the `ida:ClientId` parameter with the Client ID (Application ID) value from the application you registered in the Microsoft Entra admin center.
 > 
 > ### Add the new scope to the app.config file
 > 
@@ -91,7 +91,7 @@ ms.topic: conceptual
 > 
 > ## Register the web app (TodoListClient)
 > 
-> Register your TodoListClient app in **App registrations** in the Azure portal, and then configure the code in the TodoListClient project. If the client and server are considered the same application, you can reuse the application that's registered in step 2. Use the same application if you want users to sign in with a personal Microsoft account.
+> Register your TodoListClient app in **App registrations** in the Microsoft Entra admin centers, and then configure the code in the TodoListClient project. If the client and server are considered the same application, you can reuse the application that's registered in step 2. Use the same application if you want users to sign in with a personal Microsoft account.
 > 
 > ### Register the app
 > 
@@ -192,7 +192,9 @@ ms.topic: conceptual
 > [!INCLUDE [Help and support](./includes/error-handling-and-tips/help-support-include.md)]
 > 
 > ## Next steps
-> 
-> Learn more about the protected web API scenario that the Microsoft identity platform supports.
-> > [!div class="nextstepaction"]
-> > [Protected web API scenario](scenario-protected-web-api-overview.md)
+>
+> Learn more by building a protected ASP.NET Core web api in the following tutorial series:
+>
+> [!div class="nextstepaction"]
+> [Protected web API tutorial](tutorial-web-api-dotnet-register-app.md)
+

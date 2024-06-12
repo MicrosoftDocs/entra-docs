@@ -5,9 +5,8 @@ author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: reference
-ms.date: 10/27/2023
-ms.service: network-access
-ms.custom: 
+ms.date: 03/04/2024
+ms.service: global-secure-access
 ---
 
 # Global Secure Access data storage and privacy
@@ -24,11 +23,11 @@ We prioritize the protection of your data and understand the importance of trans
 
 **Azure Event Hubs disk storage** - Enriched logs are stored on the Azure Event Hubs disk.
 
-**Retention Period** - The data is retained for a duration of 24 hours. Once the data is in the customer repository, it remains there, and Global Secure Access retains its copy for the aforementioned 24-hour period.
+**Retention Period** - The data is retained for a duration of 24 hours. Once the data is in the customer repository, it remains there, and Global Secure Access retains its copy for a 24-hour period.
 
 ## Data isolation and access
 
-**Access Authentication** - Robust access authentication mechanisms have been implemented to ensure only authorized individuals can access the data.
+**Access Authentication** - Robust access authentication mechanisms are implemented to ensure only authorized individuals access the data.
 
 ## Data processing locations
 

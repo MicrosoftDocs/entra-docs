@@ -1,25 +1,21 @@
 ---
 title: Approve or deny requests for Microsoft Entra roles in PIM
 description: Learn how to approve or deny requests for Microsoft Entra roles in Privileged Identity Management (PIM).
-services: active-directory
-documentationcenter: ''
+
 author: barclayn
 manager: amycolannino
-editor: ''
-ms.service: active-directory
-ms.subservice: pim
+ms.service: entra-id-governance
+ms.subservice: privileged-identity-management
 ms.topic: how-to
-ms.tgt_pltfrm: na
-ms.workload: identity
 ms.date: 09/12/2023
 ms.author: barclayn
 ms.custom: pim
-ms.collection: M365-identity-device-management
+
 ---
 
 # Approve or deny requests for Microsoft Entra roles in Privileged Identity Management
 
-With Privileged Identity Management (PIM) in Microsoft Entra ID you can configure roles to require approval for activation, and choose one or multiple users or groups as delegated approvers. Delegated approvers have 24 hours to approve requests. If a request is not approved within 24 hours, then the eligible user must re-submit a new request. The 24 hour approval time window is not configurable.
+With Privileged Identity Management (PIM) in Microsoft Entra ID you can configure roles to require approval for activation, and choose one or multiple users or groups as delegated approvers. Delegated approvers have 24 hours to approve requests. If a request isn't approved within 24 hours, then the eligible user must re-submit a new request. The 24 hour approval time window isn't configurable.
 
 
 
@@ -33,7 +29,7 @@ As a delegated approver, you receive an email notification when a Microsoft Entr
 
 1. Browse to **Identity governance** > **Privileged Identity Management** > **Approve requests**.
 
-    ![Approve requests - page showing request to review Microsoft Entra roles](./media/azure-ad-pim-approval-workflow/resources-approve-pane.png)
+    :::image type="content" source="./media/azure-ad-pim-approval-workflow/resources-approve-pane.png" alt-text="Screenshot showing the approve requests page showing request to review Microsoft Entra roles.":::
 
     In the **Requests for role activations** section, you'll see a list of requests pending your approval.
 
@@ -53,19 +49,19 @@ GET https://graph.microsoft.com/v1.0/roleManagement/directory/roleAssignmentSche
     "value": [ 
         { 
             "@odata.type": "#microsoft.graph.unifiedRoleAssignmentScheduleRequest", 
-            "id": "9f2b5ddb-a50e-44a1-a6f4-f616322262ea", 
+            "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee", 
             "status": "PendingApproval", 
             "createdDateTime": "2021-07-15T19:57:17.76Z", 
             "completedDateTime": "2021-07-15T19:57:17.537Z", 
-            "approvalId": "9f2b5ddb-a50e-44a1-a6f4-f616322262ea", 
+            "approvalId": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee", 
             "customData": null, 
             "action": "SelfActivate", 
-            "principalId": "d96ea738-3b95-4ae7-9e19-78a083066d5b", 
+            "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222", 
             "roleDefinitionId": "88d8e3e3-8f55-4a1e-953a-9b9898b8876b", 
             "directoryScopeId": "/", 
             "appScopeId": null, 
             "isValidationOnly": false, 
-            "targetScheduleId": "9f2b5ddb-a50e-44a1-a6f4-f616322262ea", 
+            "targetScheduleId": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee", 
             "justification": "test", 
             "createdBy": { 
                 "application": null, 
@@ -109,7 +105,7 @@ GET https://graph.microsoft.com/v1.0/roleManagement/directory/roleAssignmentSche
 
 ### Get IDs for the steps that require approval
 
-For a specific activation request, this command gets all the approval steps that need approval. Multi-step approvals are not currently supported.
+For a specific activation request, this command gets all the approval steps that need approval. Multi-step approvals aren't currently supported.
 
 #### HTTP request
 

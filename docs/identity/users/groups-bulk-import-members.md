@@ -1,18 +1,16 @@
 ---
 title: Bulk upload to add or create members of a group
 description: Add group members in bulk by using a comma-separated values (CSV) file.
-services: active-directory 
+
 author: barclayn
 ms.author: barclayn
 manager: amycolannino
 ms.date: 11/10/2023
 ms.topic: how-to
-ms.service: active-directory
-ms.subservice: enterprise-users
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: users
 ms.custom: it-pro
 ms.reviewer: jeffsta
-ms.collection: M365-identity-device-management
 ---
 
 # Bulk add group members in Microsoft Entra ID
@@ -45,7 +43,7 @@ The rows in a downloaded CSV template are:
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
 1. Select **Microsoft Entra ID**.
    >[!NOTE]
    >Group owners can also bulk import members of groups they own.

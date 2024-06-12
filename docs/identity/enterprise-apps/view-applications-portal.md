@@ -4,11 +4,11 @@ description: View the enterprise applications that are registered to use your Mi
 
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 
 ms.topic: quickstart
-ms.date: 03/23/2023
+ms.date: 03/19/2024
 ms.author: jomondi
 ms.reviewer: alamaral
 ms.custom: mode-other, enterprise-apps
@@ -20,14 +20,14 @@ ms.custom: mode-other, enterprise-apps
 
 In this quickstart, you learn how to use the Microsoft Entra admin center to search for and view the enterprise applications that are already configured in your Microsoft Entra tenant.
 
-It's recommended that you use a nonproduction environment to test the steps in this quickstart.
+We recommend that you use a nonproduction environment to test the steps in this quickstart.
 
 ## Prerequisites
 
-To view applications that have been registered in your Microsoft Entra tenant, you need:
+To view applications registered in your Microsoft Entra tenant, you need:
 
 - A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- One of the following roles: Global Administrator, Cloud Application Administrator, or owner of the service principal.
+- One of the following roles: Cloud Application Administrator, or owner of the service principal.
 - Completion of the steps in [Quickstart: Add an enterprise application](add-application-portal.md).
 
 ## View a list of applications
@@ -46,27 +46,26 @@ To view the enterprise applications registered in your tenant:
 To search for a particular application:
 
 1. Select the **Application Type** filter option. Select **All applications** from the **Application Type** drop-down menu, and choose **Apply**.
-1. Enter the name of the application you want to find. If the application has been added to your Microsoft Entra tenant, it appears in the search results. For example, you can search for the **Azure AD SAML Toolkit 1** application that is used in the previous quickstarts. 
+1. Enter the name of the application you want to find. If the application is already in your Microsoft Entra tenant, it appears in the search results. For example, you can search for the **Azure AD SAML Toolkit 1** application that is used in the previous quickstarts. 
 1. Try entering the first few letters of an application name.
 
 ## Select viewing options
 
 Select options according to what you're looking for:
 
-1. The default filters are **Application Type** and **Application ID starts with**, and **Application visibility**. 
+1. The default filters are **Application Type** and **Application ID starts with**. 
 1. Under **Application Type**, choose one of these options:
     - **Enterprise Applications** shows non-Microsoft applications.
     - **Microsoft Applications** shows Microsoft applications.
     - **Managed Identities** shows applications that are used to authenticate to services that support Microsoft Entra authentication.
     - **All Applications** shows both non-Microsoft and Microsoft applications.
 1. Under **Application ID starts with**, enter the first few digits of the application ID if you know the application ID.
-1. Under **Application Visibility**, choose **Any**, or **Hidden**. The **Hidden** option shows applications that are in the tenant, but aren't visible to users.
 1. After choosing the options you want, select **Apply**.
 1. Select **Add filters** to add more options for filtering the search results. The other options include:
    - **Application Visibility**
    - **Created on**
    - **Assignment required**
-   - **Is App Proxy**
+   - **Is app Proxy**
    - **Owner**
 1. To remove any of the filter options already added, select the **X** icon next to the filter option.
 

@@ -1,18 +1,16 @@
 ---
 title: Bulk restore deleted users in the Azure portal
 description: Restore deleted users in bulk in the Azure portal in Microsoft Entra ID
-services: active-directory 
+
 author: barclayn
 ms.author: barclayn
 manager: amycolannino
 ms.date: 11/21/2022
 ms.topic: how-to
-ms.service: active-directory
-ms.subservice: enterprise-users
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: users
 ms.custom: it-pro, has-azure-ad-ps-ref
 ms.reviewer: jeffsta
-ms.collection: M365-identity-device-management
 ---
 
 # Bulk restore deleted users in Microsoft Entra ID
@@ -89,7 +87,7 @@ Get-MgUser -Filter "UserType eq 'Member'"
 
 You should see that the users that you restored are listed.
 
-[!INCLUDE [Azure AD PowerShell migration](../../includes/aad-powershell-migration-include.md)]
+[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
 
 ## Next steps
 

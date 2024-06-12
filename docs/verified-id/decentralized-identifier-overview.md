@@ -1,11 +1,11 @@
 ---
 title: Introduction to Microsoft Entra Verified ID
 description: An overview Azure Verifiable Credentials.
-services: active-directory
+
 author: barclayn
 manager: amycolannino
-ms.service: decentralized-identity
-ms.subservice: verifiable-credentials
+ms.service: entra-verified-id
+
 ms.topic: overview
 ms.date: 10/24/2023
 ms.author: barclayn
@@ -61,7 +61,7 @@ We need a new form of identity. We need an identity that brings together technol
 
 To deliver on these promises, we need a technical foundation made up of seven key innovations. One key innovation is identifiers that are owned by the user, a user agent to manage keys associated with such identifiers, and encrypted, user-controlled datastores.
 
-![overview of Microsoft's verifiable credential environment](media/decentralized-identifier-overview/microsoft-did-system.png)
+:::image type="content" source="media/decentralized-identifier-overview/microsoft-did-system.png" alt-text="Diagram of a Microsoft verifiable credential environment.":::
 
 **1. W3C Decentralized Identifiers (DIDs)**.
 IDs users create, own, and control independently of any organization or government. DIDs are globally unique identifiers linked to Decentralized Public Key Infrastructure (DPKI) metadata composed of JSON documents that contain public key material, authentication descriptors, and service endpoints.
@@ -92,7 +92,7 @@ Today, Alice provides a username and password to sign in Woodgrove’s networked
 
 Alice requests Woodgrove Inc for a proof of employment verifiable credential. Woodgrove Inc attests Alice's identity and issues a signed verifiable credential that Alice can accept and store in her digital wallet application. Alice can now present this verifiable credential as a proof of employment on the Proseware site. After a successful presentation of the credential, Proseware offers discount to Alice and the transaction is logged in Alice's wallet application so that she can track where and to whom she presented her proof of employment verifiable credential.
 
-![microsoft-did-overview](media/decentralized-identifier-overview/did-overview.png)
+:::image type="content" source="media/decentralized-identifier-overview/did-overview.png" alt-text="Diagram of a DID deployment example.":::
 
 ## Roles in a verifiable credential solution 
 
@@ -104,7 +104,7 @@ There are three primary actors in the verifiable credential solution. In the fol
 
 The roles in this scenario are:
 
-![roles in a verifiable credential environment](media/decentralized-identifier-overview/issuer-user-verifier.png)
+:::image type="content" source="media/decentralized-identifier-overview/issuer-user-verifier.png" alt-text="Diagram showing the roles in a verifiable credential environment.":::
 
 ### Issuer
 

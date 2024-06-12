@@ -32,21 +32,23 @@ items:
     items:
     - name: Access activity logs
       href: howto-access-activity-logs.md
-    - name: Customize and filter activity logs
-      href: howto-customize-filter-logs.md
-    - name: Analyze sign-ins
-      href: quickstart-analyze-sign-in.md
     - name: Analyze provisioning logs
       href: howto-analyze-provisioning-logs.md
-    - name: Enable Microsoft Graph for activity logs
-      href: howto-enable-microsoft-graph-activity-logs.md
-    - name: Access logs with Microsoft Graph  
-      href: quickstart-access-log-with-graph-api.md
+    - name: Analyze activity logs with Microsoft Graph
+      href: howto-analyze-activity-logs-with-microsoft-graph.md
     - name: Archive logs to a storage account
       href: howto-archive-logs-to-storage-account.md
+    - name: Customize and filter activity logs
+      href: howto-customize-filter-logs.md
     - name: Download logs
       href: howto-download-logs.md
-
+  - name: Quickstarts 
+    expanded: false
+    items:
+      - name: Find a sign-in with the Microsoft Entra admin center
+        href: quickstart-analyze-sign-in.md
+      - name: Find a sign-in with Microsoft Graph  
+        href: quickstart-access-log-with-graph-api.md
 - name: Identity reports 
   expanded: true
   items:
@@ -63,7 +65,7 @@ items:
     - name: How to use Identity Recommendations
       href: howto-use-recommendations.md
     - name: How to use Identity Workbooks
-      href: ./howto-use-workbooks.md
+      href: howto-use-workbooks.md
   - name: Recommendations
     expanded: false
     items:
@@ -71,6 +73,8 @@ items:
         href: recommendation-migrate-from-adal-to-msal.md
       - name: Migrate apps from AD FS to Microsoft Entra ID
         href: recommendation-migrate-apps-from-adfs-to-azure-ad.md
+      - name: Migrate apps and service principals to Microsoft Graph
+        href: recommendation-migrate-to-microsoft-graph-api.md
       - name: Migrate from MFA server to Microsoft Entra MFA
         href: recommendation-migrate-to-microsoft-entra-mfa.md
       - name: Migrate to Microsoft authenticator
@@ -79,13 +83,13 @@ items:
         href: recommendation-turn-off-per-user-mfa.md
       - name: Minimize MFA prompts from known devices
         href: recommendation-mfa-from-known-devices.md
-      - name: Remove unused apps (preview)
+      - name: Remove unused apps
         href: recommendation-remove-unused-apps.md
-      - name: Remove unused credentials from apps (preview)
+      - name: Remove unused credentials from apps
         href: recommendation-remove-unused-credential-from-apps.md
-      - name: Renew expiring application credentials (preview)
+      - name: Renew expiring application credentials
         href: recommendation-renew-expiring-application-credential.md
-      - name: Renew expiring service principal credentials (preview)
+      - name: Renew expiring service principal credentials
         href: recommendation-renew-expiring-service-principal-credential.md
   - name: Workbooks
     expanded: false
@@ -127,52 +131,55 @@ items:
     - name: Configure a Log Analytics workspace
       href: tutorial-configure-log-analytics-workspace.md
     - name: Integrate activity logs with Azure Monitor logs
-      href: howto-integrate-activity-logs-with-azure-monitor-logs.md  
+      href: howto-integrate-activity-logs-with-azure-monitor-logs.yml  
     - name: Analyze activity logs in Azure Monitor logs
       href: howto-analyze-activity-logs-log-analytics.md
 
 - name: Common troubleshooting scenarios
   expanded: false
   items:
-  - name: Manage inactive user accounts in Microsoft Entra ID
-    href: howto-manage-inactive-user-accounts.md
-  - name: View applied Conditional Access policies
-    href: how-to-view-applied-conditional-access-policies.md
+  - name: Bulk changes to UserPrincipalName triggered by verified domain change
+    href: troubleshoot-audit-data-verified-domain.md
   - name: Flagged sign-ins
     href: overview-flagged-sign-ins.md
+  - name: Manage inactive user accounts in Microsoft Entra ID
+    href: howto-manage-inactive-user-accounts.md
   - name: Sign-in diagnostic
     href: howto-use-sign-in-diagnostics.md
   - name: Sign-in diagnostics scenarios
     href: concept-sign-in-diagnostics-scenarios.md
-  - name: Troubleshoot sign-in errors for a user
+  - name: Sign-in errors for a user
     href: howto-troubleshoot-sign-in-errors.md
-  - name: Audit data on verified domain change
-    href: troubleshoot-audit-data-verified-domain.md
+  - name: View applied Conditional Access policies
+    href: how-to-view-applied-conditional-access-policies.md
 
 - name: Reference
   expanded: false
   items:
   - name: SLA performance for Microsoft Entra ID
     href: reference-sla-performance.md
-  - name: Log latency
-    href: reference-log-latency.md
-  - name: Microsoft Graph PowerShell cmdlets
-    href: reference-powershell-reporting.md
-  - name: Audit logs API reference
-    href: /graph/api/resources/directoryaudit
-  - name: Microsoft Entra recommendations API reference
-    href: /graph/api/resources/recommendations-api-overview
-  - name: Application credential activity API reference
-    href: /graph/api/resources/appcredentialsigninactivity
-  - name: Application sign-in activity API reference
-    href: /graph/api/resources/serviceprincipalsigninactivity
-  - name: Sign-in logs API reference
-    href: /graph/api/resources/signin
   - name: Audit activities
     href: reference-audit-activities.md
   - name: Data retention policies
     href: reference-reports-data-retention.md
-  - name: Frequently asked questions
+  - name: Log latency
+    href: reference-log-latency.md
+  - name: FAQs
     href: reports-faq.yml
-  - name: Sign-in log schema
-    href: reference-azure-monitor-sign-ins-log-schema.md
+  - name: Microsoft Graph
+    expanded: false
+    items:
+    - name: Application credential activity API reference
+      href: /graph/api/resources/appcredentialsigninactivity
+    - name: Application sign-in activity API reference
+      href: /graph/api/resources/serviceprincipalsigninactivity
+    - name: Audit logs API reference
+      href: /graph/api/resources/directoryaudit
+    - name: Microsoft Graph PowerShell cmdlets
+      href: reference-powershell-reporting.md
+    - name: Recommendations API reference
+      href: /graph/api/resources/recommendations-api-overview
+    - name: Sign-in logs API reference
+      href: /graph/api/resources/signin
+    - name: Sign-in log schema
+      href: reference-azure-monitor-sign-ins-log-schema.md

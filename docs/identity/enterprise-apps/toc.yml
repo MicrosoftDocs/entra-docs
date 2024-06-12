@@ -117,6 +117,8 @@ items:
     items:
     - name: Integrate SaaS applications
       href: ~/identity/saas-apps/tutorial-list.md
+    - name: Configure app management policies
+      href: configure-app-management-policy.md
     - name: Assign owners
       href: assign-app-owners.md
     - name: Configure properties
@@ -161,6 +163,8 @@ items:
           href: manage-application-permissions.md
         - name: Restore revoked permissions
           href: restore-permissions.md
+        - name: Review permission audit logs
+          href: app-perms-audit-logs.md
       - name: Manage user assignment
         href: assign-user-or-group-access-portal.md
       - name: Assign custom security attributes
@@ -291,10 +295,8 @@ items:
         href: restore-application.md
   - name: Reference
     items:
-    - name: Application API - Microsoft Graph
-      href: /graph/api/resources/application?context=/entra/identity/enterprise-apps/context/manage-apps-context.json
-    - name: Service principals API - Microsoft Graph
-      href: /graph/api/resources/serviceprincipal?context=/entra/identity/enterprise-apps/context/manage-apps-context.json
+    - name: Microsoft Graph APIs
+      href: /graph/api/resources/applications-api-overview
     - name: Manage apps using Microsoft Graph
       href: /graph/tutorial-applications-basics?context=/entra/identity/enterprise-apps/context/manage-apps-context.json
     - name: Deletion and recovery FAQ
@@ -311,8 +313,6 @@ items:
       href: methods-for-removing-user-access.md
   - name: Resources
     items:
-        - name: Video learning
-          href: app-management-videos.md
         - name: Migration resources
           href: migration-resources.md
         - name: Support and help options for developers

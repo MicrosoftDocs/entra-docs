@@ -1,12 +1,11 @@
 ---
 title: Privileged roles and permissions in Microsoft Entra ID (preview) - Microsoft Entra ID
 description: Privileged roles and permissions in Microsoft Entra ID.
-services: active-directory
+
 author: rolyon
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: roles
+ms.service: entra-id
+ms.subservice: role-based-access-control
 ms.topic: conceptual
 ms.date: 01/16/2024
 ms.author: rolyon
@@ -16,7 +15,7 @@ ms.custom: it-pro
 # Privileged roles and permissions in Microsoft Entra ID (preview)
 
 > [!IMPORTANT]
-> Privileged roles and permissions are currently in PREVIEW.
+> The label for privileged roles and permissions is currently in PREVIEW.
 > See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
 
 Microsoft Entra ID has roles and permissions that are identified as privileged. These roles and permissions can be used to delegate management of directory resources to other users, modify credentials, authentication or authorization policies, or access restricted data. Privileged role assignments can lead to elevation of privilege if not used in a secure and intended manner. This article describes privileged roles and permissions and best practices for how to use.
@@ -462,6 +461,7 @@ The following table is for roles assigned at the scope of a tenant. For roles as
 | User<br/>(no admin role, but member or owner of a [role-assignable group](groups-concept.md)) | &nbsp; | &nbsp; | &nbsp; | &nbsp; | :white_check_mark: | :white_check_mark: |
 | User with a role scoped to a [restricted management administrative unit](./admin-units-restricted-management.md) | &nbsp; | &nbsp; | &nbsp; | &nbsp; | :white_check_mark: | :white_check_mark: |
 | User Admin | &nbsp; | &nbsp; | &nbsp; | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| User Experience Success Manager | &nbsp; | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 | Usage Summary Reports Reader | &nbsp; | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 | All custom roles |  |  |  |  | :white_check_mark: | :white_check_mark: |
 
@@ -509,6 +509,7 @@ The following table is for roles assigned at the scope of a tenant. For roles as
 | User<br/>(no admin role, but member or owner of a [role-assignable group](groups-concept.md)) | &nbsp; | &nbsp; | :white_check_mark: | :white_check_mark: |
 | User with a role scoped to a [restricted management administrative unit](./admin-units-restricted-management.md) | &nbsp; | &nbsp; | :white_check_mark: | :white_check_mark: |
 | User Admin | &nbsp; | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| User Experience Success Manager | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 | Usage Summary Reports Reader | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 | All custom roles |  |  | :white_check_mark: | :white_check_mark: |
 

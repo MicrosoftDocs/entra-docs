@@ -1,16 +1,13 @@
 ---
 title: Enable compliant network check with Conditional Access
 description: Learn how to require known compliant network locations in order to connect to your secured resources with Conditional Access.
-
-ms.service: network-access
-ms.subservice: 
+ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 01/08/2024
-
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.date: 05/09/2024
+ms.author: kenwith
+author: kenwith
 manager: amycolannino
-ms.reviewer: mamkumar
+ms.reviewer: smistry
 ---
 # Enable compliant network check with Conditional Access
 
@@ -26,21 +23,22 @@ This compliant network check is specific to each tenant.
   - For example: Contoso can protect their services like Exchange Online and SharePoint Online behind their compliant network check to ensure only Contoso users can access these resources.
   - If another organization like Fabrikam was using a compliant network check, they wouldn't pass Contoso's compliant network check.
 
-The compliant network is different than [IPv4, IPv6, or geographic locations](../identity/conditional-access/location-condition.md) you might configure in Microsoft Entra ID. No administrator upkeep is required.
+The compliant network is different than [IPv4, IPv6, or geographic locations](../identity/conditional-access/concept-assignment-network.md) you might configure in Microsoft Entra. No administrator upkeep is required.
 
 ## Prerequisites
 
-* Administrators who interact with **Global Secure Access preview** features must have one or more of the following role assignments depending on the tasks they're performing.
-   * The **Global Secure Access Administrator** role to manage the Global Secure Access preview features
-   * [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) or [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) to create and interact with Conditional Access policies and named locations.
-* The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
-* To use the Microsoft 365 traffic forwarding profile, a Microsoft 365 E3 license is recommended.
+- Administrators who interact with **Global Secure Access preview** features must have one or more of the following role assignments depending on the tasks they're performing.
+   - The [Global Secure Access Administrator role](/azure/active-directory/roles/permissions-reference) role to manage the Global Secure Access preview features.
+   - [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) to create and interact with Conditional Access policies and named locations.
+- The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
+- To use the Microsoft 365 traffic forwarding profile, a Microsoft 365 E3 license is recommended.
 
 ### Known limitations
 
-- Organizations can protect other Microsoft Entra integrated apps with Conditional Access policies requiring a compliant network check. During the preview, administrators must choose the individual applications from the app picker instead of choosing *All cloud apps*. **Do not choose *All cloud apps*.**
 - Compliant network check with [continuous access evaluation](../identity/conditional-access/concept-continuous-access-evaluation.md) is now supported for SharePoint Online.
 - Compliant network check is currently not supported for private access apps.
+- The compliant network location condition isn't supported for devices that aren't enrolled in mobile device management (MDM). If you configure a Conditional Access policy using the compliant network location condition, users with devices that aren't yet MDM-enrolled might be affected. Users on these devices might fail the Conditional Access policy check, and be blocked. 
+   - Ensure that you exclude the affected users or devices when using the compliant network location condition.     
 
 ## Enable Global Secure Access signaling for Conditional Access
 
@@ -74,9 +72,9 @@ The following example shows this type of policy. In addition, token theft replay
    1. Choose **Office 365 Exchange Online**, and/or **Office 365 SharePoint Online**, and/or any of your third-party SaaS apps.
    1. The specific *Office 365* cloud app in the app picker is currently NOT supported, so don't select this cloud app.
 1. Under **Conditions** > **Location**.
-   1. Set **Configure** to **Yes**
+   1. Set **Configure** to **Yes**.
    1. Under **Include**, select **Any location**.
-   1. Under **Exclude**, select **Selected locations**
+   1. Under **Exclude**, select **Selected locations**.
       1. Select the **All Compliant Network locations** location.
    1. Select **Select**.
 1. Under **Access controls**:
@@ -85,11 +83,15 @@ The following example shows this type of policy. In addition, token theft replay
 1. Select the **Create** button to create to enable your policy.
 
 > [!NOTE]
-> Token theft replay protection is now available for SharePoint Online.
+> You can use Global Secure Access traffic profiles along with a Conditional Access policy requiring a compliant network for **All cloud apps**. There's no exclusion required when setting up a policy using the **All Compliant Network locations** location and **All cloud apps**.
+> 
+> Traffic profiles are internally excluded from Conditional Access enforcement when a compliant network is required. This exclusion enables the Global Secure Access client to access required resources.
+>
+> The traffic profile excluded appears in the sign-in logs as the following application ZTNA Network Access Traffic Profile.
 
 ### User exclusions
 
-[!INCLUDE [conditional-access-recommended-exclusions](includes/conditional-access-recommended-exclusions.md)]
+[!INCLUDE [entra-policy-exclude-user](../includes/entra-policy-exclude-user.md)]
 
 ## Try your compliant network policy
 

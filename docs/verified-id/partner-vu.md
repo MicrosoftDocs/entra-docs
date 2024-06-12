@@ -1,11 +1,11 @@
 ---
 title: Configure Verified ID by VU Identity Card as your Identity Verification Partner
 description: This article shows you the steps you need to follow to configure VU Identity Card as your identity verification partner
-services: active-directory
+
 author: gargi-sinha
 manager: martinco
-ms.service: decentralized-identity
-ms.subservice: verifiable-credentials
+ms.service: entra-verified-id
+
 ms.topic: how-to
 ms.date: 10/26/2022
 ms.author: gasinh
@@ -14,13 +14,9 @@ ms.author: gasinh
 
 # Configure Verified ID by VU Identity Card as your Identity Verification Partner
 
-In this article, we cover the steps needed to integrate Microsoft Entra Verified ID with VU Identity Card, a product of [VU Security](https://www.vusecurity.com/). VU Identity Card creates secure and frictionless digital experiences that enhance
-biometric onboarding and verification scenarios throughout the lifecycle
-of citizens and organizations.
+In this article, we cover the steps needed to integrate Microsoft Entra Verified ID with VU Identity Card, a product of [VU Security](https://www.vusecurity.com/). VU Identity Card creates secure and frictionless digital experiences that enhance biometric onboarding and verification scenarios throughout the lifecycle of citizens and organizations.
 
-VU Identity Card provides flexible and simple onboarding, authentication and
-verification processes on any device. It focuses on user experience and
-security without impacting the business.
+VU Identity Card provides flexible and simple onboarding, authentication and verification processes on any device. It focuses on user experience and security without impacting the business.
 
 To learn more about VU Security and its complete set of solutions, visit
 <https://www.vusecurity.com>
@@ -29,12 +25,9 @@ To learn more about VU Security and its complete set of solutions, visit
 
 To get started with the VU Identity Card, ensure the following prerequisites are met:
 
-- A tenant [configured](./verifiable-credentials-configure-tenant.md)
-  for Microsoft Entra Verified ID service.
+- A tenant [configured](./verifiable-credentials-configure-tenant.md) for Microsoft Entra Verified ID service.
 
-  - If you don\'t have an existing tenant, you can [create an Azure
-        account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
-        for free.
+  - If you don\'t have an existing tenant, you can [create an Azure account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) for free.
 
 - The tenant must complete the VU Identity Card onboarding process.
 
@@ -73,13 +66,11 @@ As a developer you can share these steps with your tenant administrator to obtai
 
 3. Choose **Select Issuer**.
 
-4. Look for **VUSecurity** in the Search/select issuers
-   drop-down.
+4. Look for **VUSecurity** in the Search/select issuers drop-down.
 
-   [ ![Screenshot of the portal section used to choose issuers.](./media/partner-vu/select-issuers.png)](./media/partner-vu/select-issuers.png#lightbox)
+   :::image type="content" source="./media/partner-vu/select-issuers.png" alt-text="Screenshot of the portal section used to choose issuers.":::
 
-5. Check the **VUIdentityCard** credential with the attributes
-   such as firstname, lastname, number, country/region, gender, birth-date, and nationality or any other credential type.
+5. Check the **VUIdentityCard** credential with the attributes such as firstname, lastname, number, country/region, gender, birth-date, and nationality or any other credential type.
    >[!NOTE]
    >Number attribute refers to National ID. For example, DNI-National Identification Number in Argentina.
 

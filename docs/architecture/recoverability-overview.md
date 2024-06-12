@@ -1,18 +1,14 @@
 ---
 title: Recoverability best practices in Microsoft Entra ID
 description: Learn the best practices for increasing recoverability.
-services: active-directory
 author: janicericketts
 manager: martinco
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: fundamentals
+ms.service: entra
+ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 08/26/2022
 ms.author: jricketts
 ms.reviewer: jricketts
-ms.custom: "it-pro, seodec18"
-ms.collection: M365-identity-device-management
 ---
 
 # Recoverability best practices
@@ -197,7 +193,7 @@ The [Cross-tenant access activity workbook](~/identity/monitoring-health/workboo
 Preventing unwanted changes is far less difficult than needing to re-create and reconfigure objects. Include the following tasks in your change management processes to minimize accidents:
 
 - Use a least privilege model. Ensure that each member of your team has the least privileges necessary to complete their usual tasks. Require a process to escalate privileges for more unusual tasks.
-- Administrative control of an object enables configuration and deletion. Use read-only admin roles, for example, the Global Reader role, for tasks that don't require operations to create, update, or delete (CRUD). When CRUD operations are required, use object-specific roles when possible. For example, User administrators can delete only users, and Application administrators can delete only applications. Use these more limited roles whenever possible, instead of a Global administrator role, which can delete anything, including the tenant.
+- Administrative control of an object enables configuration and deletion. Use less privleged roles, like [Security Reader](../identity/role-based-access-control/permissions-reference.md#security-reader), for tasks that don't require operations to create, update, or delete (CRUD). When CRUD operations are required, use object-specific roles when possible. For example, User Administrators can delete only users, and Application Administrators can delete only applications. Use these more limited roles whenever possible.
 - [Use Privileged Identity Management (PIM)](~/id-governance/privileged-identity-management/pim-configure.md). PIM enables just-in-time escalation of privileges to perform tasks like hard deletion. You can configure PIM to have notifications or approvals for the privilege escalation.
 
 ## Next steps

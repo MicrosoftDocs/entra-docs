@@ -1,6 +1,6 @@
 ---
 author: justinha
-ms.service: active-directory
+ms.service: entra-id
 ms.custom: has-azure-ad-ps-ref
 ms.topic: include
 ms.date: 01/23/2024
@@ -12,6 +12,8 @@ To revoke a client certificate, Microsoft Entra ID fetches the certificate revoc
 If a more instant revocation is required (for example, if a user loses a device), the authorization token of the user can be invalidated. To invalidate the authorization token, set the **StsRefreshTokenValidFrom** field for this particular user using Windows PowerShell. You must update the **StsRefreshTokenValidFrom** field for each user you want to revoke access for.
 
 To ensure that the revocation persists, you must set the **Effective Date** of the CRL to a date after the value set by **StsRefreshTokenValidFrom** and ensure the certificate in question is in the CRL.
+
+[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
 
 The following steps outline the process for updating and invalidating the authorization token by setting the **StsRefreshTokenValidFrom** field.
 

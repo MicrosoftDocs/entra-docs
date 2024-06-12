@@ -2,9 +2,8 @@
 title: Self-service sign-up portal for B2B collaboration
 description: Learn how to customize the onboarding workflow for Microsoft Entra B2B users to fit your organization’s needs.
  
-ms.service: active-directory
-ms.subservice: B2B
-ms.topic: conceptual
+ms.service: entra-external-id
+ms.topic: concept-article
 ms.date: 01/23/2024
 
 ms.author: mimart
@@ -16,6 +15,8 @@ ms.collection: M365-identity-device-management
 ---
 
 # Self-service for Microsoft Entra B2B collaboration sign-up
+
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
 
 Customers can do a lot with the built-in features that are exposed through the [Azure portal](https://portal.azure.com) and the [Application Access Panel](https://myapps.microsoft.com) for end users. However, you might need to customize the onboarding workflow for B2B users to fit your organization’s needs.
 
@@ -35,4 +36,4 @@ Organizations can use the [Microsoft Graph invitation manager API](/graph/api/re
 
 - [Self-service sign-up user flows](self-service-sign-up-overview.md)
 - [What is Microsoft Entra B2B collaboration?](what-is-b2b.md)
-- [External Identities pricing](external-identities-pricing.md)
+- [External ID pricing](external-identities-pricing.md)

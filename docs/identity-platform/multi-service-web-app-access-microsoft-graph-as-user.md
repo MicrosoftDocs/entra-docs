@@ -6,7 +6,7 @@ manager: CelesteDG
 ms.author: ryanwi
 ms.custom: azureday1
 ms.date: 09/15/2023
-ms.devlang: csharp, javascript
+ms.devlang: csharp
 ms.reviewer: stsoneff
 ms.service: app-service
 ms.subservice: web-apps
@@ -30,7 +30,7 @@ In this tutorial, you learn how to:
 > * Grant delegated permissions to a web app.
 > * Call Microsoft Graph from a web app for a signed-in user.
 
-[!INCLUDE [quickstarts-free-trial-note](~/../azure-docs-pr/includes/quickstarts-free-trial-note.md)]
+[!INCLUDE [quickstarts-free-trial-note](~/includes/azure-docs-pr/quickstarts-free-trial-note.md)]
 
 ## Prerequisites
 
@@ -137,9 +137,9 @@ To see this code as part of a sample application, see the [sample on GitHub](htt
 
 ### Install client library packages
 
-Install the [Microsoft.Identity.Web](https://www.nuget.org/packages/Microsoft.Identity.Web/) and [Microsoft.Identity.Web.GraphServiceClient](https://www.nuget.org/packages/Microsoft.Identity.Web.GraphServiceClient) NuGet packages in your project by using the .NET Core command-line interface or the Package Manager Console in Visual Studio.
+Install the [Microsoft.Identity.Web](https://www.nuget.org/packages/Microsoft.Identity.Web/) and [Microsoft.Identity.Web.GraphServiceClient](https://www.nuget.org/packages/Microsoft.Identity.Web.GraphServiceClient) NuGet packages in your project by using the .NET command-line interface (CLI) or the Package Manager Console in Visual Studio.
 
-#### .NET Core command line
+#### .NET CLI
 
 Open a command line, and switch to the directory that contains your project file.
 
@@ -217,8 +217,8 @@ public class Startup
   "AzureAd": {
     "Instance": "https://login.microsoftonline.com/",
     "Domain": "[Enter the domain of your tenant, e.g. contoso.onmicrosoft.com]",
-    "TenantId": "[Enter 'common', or 'organizations' or the Tenant Id (Obtained from the Entra admin center. Select 'Endpoints' from the 'App registrations' blade and use the GUID in any of the URLs), e.g. da41245a5-11b3-996c-00a8-4d99re19f292]",
-    "ClientId": "[Enter the Client Id (Application ID obtained from the Microsoft Entra admin center), e.g. ba74781c2-53c2-442a-97c2-3d60re42f403]",
+    "TenantId": "[Enter 'common', or 'organizations' or the Tenant Id (Obtained from the Entra admin center. Select 'Endpoints' from the 'App registrations' blade and use the GUID in any of the URLs), e.g. aaaabbbb-0000-cccc-1111-dddd2222eeee]",
+    "ClientId": "[Enter the Client Id (Application ID obtained from the Microsoft Entra admin center), e.g. 00001111-aaaa-2222-bbbb-3333cccc4444]",
     "ClientSecret": "[Copy the client secret added to the app from the Microsoft Entra admin center]",
     "ClientCertificates": [
     ],

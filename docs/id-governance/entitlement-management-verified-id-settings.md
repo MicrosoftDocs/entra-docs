@@ -1,21 +1,15 @@
 ---
 title: Configure Verified ID settings for an access package in entitlement management
 description: Learn how to configure verified ID settings for an access package in entitlement management.
-services: active-directory
-documentationCenter: ''
 author: owinfreyatl
 manager: amycolannino
 editor: HANKI
-ms.service: active-directory
-ms.workload: identity
-ms.tgt_pltfrm: na
+ms.service: entra-id-governance
+ms.subservice: entitlement-management
 ms.topic: how-to
-ms.subservice: compliance
 ms.date: 05/31/2023
 ms.author: owinfrey
 ms.reviewer: hanki
-ms.collection: M365-identity-device-management
-
 ---
 
 # Configure Verified ID settings for an access package in entitlement management
@@ -49,7 +43,7 @@ To add a verified ID requirement to an access package, you must start from the a
 > [!NOTE]
 > Identity Governance administrator, User administrator, Catalog owner, or Access package manager will be able to add verified ID requirements to access packages soon.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 
 1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
 

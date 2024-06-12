@@ -4,17 +4,17 @@ description: Configure the properties of an enterprise application in Microsoft 
 
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: how-to
 
-ms.date: 01/26/2023
+ms.date: 02/20/2024
 ms.author: jomondi
 ms.reviewer: ergreenl
 zone_pivot_groups: enterprise-apps-minus-former-powershell
 ms.custom: enterprise-apps
 
-#customer intent: As an IT admin managing user accounts in Microsoft Entra, I want to create a new user account and assign it to an enterprise application, so that I can provide access to the application for the user.
+#customer intent: As a Microsoft Entra admin, I want to configure the properties of an enterprise application, so that I can control how the application is represented and accessed by users.
 ---
 
 # Configure enterprise application properties
@@ -26,7 +26,7 @@ This article shows you where you can configure the properties of an enterprise a
 To configure the properties of an enterprise application, you need:
 
 - A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- One of the following roles: Global Administrator, Cloud Application Administrator, Application Administrator, or owner of the service principal.
+- One of the following roles: Cloud Application Administrator, Application Administrator, or owner of the service principal.
 
 ## Configure application properties
 
@@ -42,12 +42,13 @@ To configure the application properties:
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
 1. Search for and select the application that you want to use.
 1. In the **Manage** section, select **Properties** to open the **Properties** pane for editing.
-1. On the **Properties** pane, you may want to configure the following properties for your application:
+1. On the **Properties** pane, you might want to configure the following properties for your application.
    - Logo
    - User sign in options
    - App visibility to users
    - Set available URL options
    - Choose whether app assignment is required
+1. After you've configured the properties according to your apps needs, select **Save**.
    
 :::zone-end
 
@@ -55,7 +56,7 @@ To configure the application properties:
 
 Use the following Microsoft Graph PowerShell script to configure basic application properties.
 
-You'll need to to sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator) and consent to the `Application.ReadWrite.All` permission.
+You need to sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator) and consent to the `Application.ReadWrite.All` permission.
 
 ```powershell
 
@@ -92,12 +93,12 @@ Update-MgApplication -ApplicationId $applicationId -BodyParameter $params
 
 To configure the basic properties of an application, sign in to [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 
-You'll need to consent to the `Application.ReadWrite.All` permission.
+You need to consent to the `Application.ReadWrite.All` permission.
 
 Run the following Microsoft Graph query to configure basic application properties.
 
 ```http
-PATCH https://graph.microsoft.com/v1.0/applications/0d0021e2-eaab-4b9f-a5ad-38c55337d63e/
+PATCH https://graph.microsoft.com/v1.0/applications/00001111-aaaa-2222-bbbb-3333cccc4444/
 Content-type: application/json
 
 {

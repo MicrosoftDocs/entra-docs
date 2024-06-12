@@ -4,8 +4,8 @@ description: Enable single sign-on for an enterprise application in Microsoft En
 
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: how-to
 
 ms.date: 10/30/2023
@@ -29,7 +29,7 @@ It's recommended that you use a nonproduction environment to test the steps in t
 To configure SSO, you need:
 
 - A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- One of the following roles: Global Administrator, Cloud Application Administrator, Application Administrator, or owner of the service principal.
+- One of the following roles: Cloud Application Administrator, Application Administrator, or owner of the service principal.
 - Completion of the steps in [Quickstart: Create and assign a user account](add-application-portal-assign-users.md).
 
 ## Enable single sign-on
@@ -71,8 +71,6 @@ To register a user account with the application:
 
 1. Open a new browser window and browse to the sign-in URL for the application. For the **Microsoft Entra SAML Toolkit** application, the address is `https://samltoolkit.azurewebsites.net`.
 1. Select **Register** in the upper right corner of the page.
-
-    :::image type="content" source="media/add-application-portal-setup-sso/toolkit-register.png" alt-text="Screenshot showing where to register a user account in the Microsoft Entra SAML Toolkit application.":::
 
 1. For **Email**, enter the email address of the user that can access the application. Ensure that the user account is already assigned to the application.
 1. Enter a **Password** and confirm it.

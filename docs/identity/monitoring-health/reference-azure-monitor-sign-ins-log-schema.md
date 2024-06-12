@@ -1,13 +1,12 @@
 ---
 title: Sign-in log schema in Azure Monitor
 description: Describe the Microsoft Entra sign-in log schema for use in Azure Monitor
-services: active-directory
+
 author: shlipsey3
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: reference
-ms.workload: identity
-ms.subservice: report-monitor
+ms.subservice: monitoring-health
 ms.date: 10/31/2022
 ms.author: sarahlipsey
 ms.reviewer: besiler
@@ -33,7 +32,7 @@ This article describes the Microsoft Entra sign-in log schema in Azure Monitor. 
   "resultDescription": "This error occurred due to 'Keep me signed in' interrupt when the user was signing-in.",
   "durationMs": 0,
   "callerIpAddress": "<CALLER IP ADDRESS>",
-  "correlationId": "a75a10bd-c126-486b-9742-c03110d36262",
+  "correlationId": "aaaa0000-bb11-2222-33cc-444444dddddd",
   "identity": "Timothy Perkins",
   "Level": 4,
   "location": "US",
@@ -70,7 +69,7 @@ This article describes the Microsoft Entra sign-in log schema in Azure Monitor. 
         "longitude": 122
       }
     },
-    "correlationId": "a75a10bd-c126-486b-9742-c03110d36262",
+    "correlationId": "bbbb1111-cc22-3333-44dd-555555eeeeee",
     "conditionalAccessStatus": "notApplied",
     "appliedConditionalAccessPolicies": [
       {
@@ -141,7 +140,7 @@ This article describes the Microsoft Entra sign-in log schema in Azure Monitor. 
     "riskEventTypes_v2": [],
     "resourceDisplayName": "Office 365 SharePoint Online",
     "resourceId": "00000003-0000-0ff1-ce00-000000000000",
-    "resourceTenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47",
+    "resourceTenantId": "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1",
     "homeTenantId": "<USER HOME TENANT ID>",
     "tokenIssuerName": "",
     "tokenIssuerType": "AzureAD",

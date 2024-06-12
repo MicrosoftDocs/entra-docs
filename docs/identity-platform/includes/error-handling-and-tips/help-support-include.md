@@ -1,7 +1,7 @@
 ---
 author: cilwerner
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+manager: CelesteDG
 ms.topic: include
 ms.date: 01/27/2023
 ms.author: cwerner

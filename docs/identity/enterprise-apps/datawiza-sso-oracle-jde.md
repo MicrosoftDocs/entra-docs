@@ -1,19 +1,17 @@
 ---
 title: Configure Microsoft Entra multifactor authentication and SSO for Oracle JD Edwards applications using Datawiza Access Proxy
 description: Enable Microsoft Entra multifactor authentication and SSO for Oracle JD Edwards application using Datawiza Access Proxy
-
 author: gargi-sinha
 manager: martinco
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: how-to
-
-ms.date: 01/24/2023
+ms.date: 01/30/2024
 ms.author: gasinh
 ms.collection: M365-identity-device-management
 ms.custom: not-enterprise-apps
 
-#customer intent: As an IT admin, I want to configure Datawiza to enable Microsoft Entra multifactor authentication and single sign-on to Oracle JD Edwards, so that I can enhance the security and access control for the application.
+#customer intent: I'm an IT admin, and I want to configure Datawiza to enable Microsoft Entra multifactor authentication (MFA) and single sign-on (SSO) to Oracle JD Edwards. My goal is to enhance security and access control for the application.
 ---
 
 # Tutorial: Configure Datawiza to enable Microsoft Entra multifactor authentication and single sign-on to Oracle JD Edwards
@@ -60,7 +58,7 @@ Ensure the following prerequisites are met.
   * Go to docs.docker.com to [Get Docker](https://docs.docker.com/get-docker) and [Install Docker Compose](https://docs.docker.com/compose/install)
 * User identities synchronized from an on-premises directory to Microsoft Entra ID, or created in Microsoft Entra ID and flowed back to an on-premises directory
   * See, [Microsoft Entra Connect Sync: Understand and customize synchronization](~/identity/hybrid/connect/how-to-connect-sync-whatis.md)
-* An account with Microsoft Entra ID and a global administrator role. See, [Microsoft Entra built-in roles, all roles](~/identity/role-based-access-control/permissions-reference.md#all-roles)
+* An account with Microsoft Entra ID and an Application Administrator role. See, [Microsoft Entra built-in roles, all roles](~/identity/role-based-access-control/permissions-reference.md#all-roles)
 * An Oracle JDE environment
 * (Optional) An SSL web certificate to publish services over HTTPS. You can also use default Datawiza self-signed certs for testing 
 
@@ -158,7 +156,7 @@ To provide more security for sign-ins, you can enforce MFA for user sign-in.
 
 See,  [Tutorial: Secure user sign-in events with Microsoft Entra multifactor authentication](~/identity/authentication/tutorial-enable-azure-mfa.md).
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 2. Browse to **Identity** > **Overview** > **Properties** tab.
 3. Under **Security defaults**, select **Manage security defaults**.
 4. On the **Security defaults** pane, toggle the dropdown menu to select **Enabled**.

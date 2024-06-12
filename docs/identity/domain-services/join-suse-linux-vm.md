@@ -1,13 +1,11 @@
 ---
 title: Join a SLE VM to Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to configure and join a SUSE Linux Enterprise virtual machine to a Microsoft Entra Domain Services managed domain.
-services: active-directory-ds
 author: justinha
 manager: amycolannino
 
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: domain-services
-ms.workload: identity
 ms.custom: devx-track-linux
 ms.topic: how-to
 ms.date: 09/23/2023
@@ -194,7 +192,7 @@ To join the managed domain using **winbind** and the *`samba net` command*:
 
 2. Edit the configuration files:
 
-   * /etc/samba/smb.conf
+   * `/etc/samba/smb.conf`
    
      ```config
      [global]
@@ -213,7 +211,7 @@ To join the managed domain using **winbind** and the *`samba net` command*:
          winbind refresh tickets = yes
      ```
 
-   * /etc/krb5.conf
+   * `/etc/krb5.conf`
    
      ```config
      [libdefaults]

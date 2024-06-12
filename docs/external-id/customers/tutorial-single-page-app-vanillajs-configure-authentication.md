@@ -1,22 +1,22 @@
 ---
 title: Tutorial - Handle authentication flows in a Vanilla JavaScript single-page app
-description: Learn how to configure authentication for a Vanilla JavaScript single-page app (SPA) with your Microsoft Entra ID for customers tenant.
+description: Learn how to configure authentication for a Vanilla JavaScript single-page app (SPA) with your external tenant.
  
 author: OwenRichards1
 manager: CelesteDG
 
 ms.author: owenrichards
-ms.service: active-directory
-ms.subservice: ciam
+ms.service: entra-external-id
+ms.subservice: customers
 ms.custom: devx-track-js
 ms.topic: tutorial
 ms.date: 08/17/2023
-#Customer intent: As a developer, I want to learn how to configure Vanilla JavaScript single-page app (SPA) to sign in and sign out users with my Microsoft Entra ID for customers tenant.
+#Customer intent: As a developer, I want to learn how to configure Vanilla JavaScript single-page app (SPA) to sign in and sign out users with my external tenant.
 ---
 
 # Tutorial: Handle authentication flows in a Vanilla JavaScript SPA
 
-This tutorial is part 3 of a series that demonstrates building a Vanilla JavaScript (JS) single-page application (SPA) and preparing it for authentication. In [part 2 of this series](./tutorial-single-page-app-vanillajs-prepare-app.md), you created a Vanilla JS SPA and prepared it for authentication with your Microsoft Entra ID for customers tenant. In this tutorial, you'll learn how to handle authentication flows in your app by adding Microsoft Authentication Library (MSAL) components.
+This tutorial is part 3 of a series that demonstrates building a Vanilla JavaScript (JS) single-page application (SPA) and preparing it for authentication. In [part 2 of this series](./tutorial-single-page-app-vanillajs-prepare-app.md), you created a Vanilla JS SPA and prepared it for authentication with your external tenant. In this tutorial, you'll learn how to handle authentication flows in your app by adding Microsoft Authentication Library (MSAL) components.
 
 In this tutorial;
 
@@ -27,7 +27,7 @@ In this tutorial;
 
 ## Prerequisites
 
-* [Tutorial: Prepare your customer tenant to authenticate users in a Vanilla JavaScript SPA](tutorial-single-page-app-vanillajs-prepare-tenant.md).
+* [Tutorial: Prepare your external tenant to authenticate users in a Vanilla JavaScript SPA](tutorial-single-page-app-vanillajs-prepare-tenant.md).
 
 ## Edit the authentication configuration file
 
@@ -36,21 +36,25 @@ The application uses the [Implicit Grant Flow](~/identity-platform/v2-oauth2-imp
 1. Open *public/authConfig.js* and add the following code snippet:
 
     ```javascript
+    import { LogLevel } from '@azure/msal-browser';
+
     /**
-     * Configuration object to be passed to MSAL instance on creation. 
-     * For a full list of MSAL.js configuration parameters, visit:
-     * https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/configuration.md 
-     */
-    const msalConfig = {
+    * Configuration object to be passed to MSAL instance on creation. 
+    * For a full list of MSAL.js configuration parameters, visit:
+    * https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/configuration.md 
+    */
+
+    export const msalConfig = {
         auth: {
             clientId: 'Enter_the_Application_Id_Here', // This is the ONLY mandatory field that you need to supply.
-            authority: 'https://Enter_the_Tenant_Subdomain_Here.ciamlogin.com/', // Replace "Enter_the_Tenant_Subdomain_Here" with your tenant subdomain
-            redirectUri: '/', // You must register this URI on Azure Portal/App Registration. Defaults to window.location.href e.g. http://localhost:3000/
-            navigateToLoginRequestUrl: true, // If "true", will navigate back to the original request location before processing the auth code response.
+            authority: 'https://Enter_the_Tenant_Subdomain_Here.ciamlogin.com/', // Replace the placeholder with your tenant subdomain 
+            redirectUri: '/', // Points to window.location.origin. You must register this URI on Azure Portal/App Registration.
+            postLogoutRedirectUri: '/', // Indicates the page to navigate after logout.
+            navigateToLoginRequestUrl: false, // If "true", will navigate back to the original request location before processing the auth code response.
         },
         cache: {
-            cacheLocation: 'sessionStorage', // Configures cache location. "sessionStorage" is more secure, but "localStorage" gives you SSO.
-            storeAuthStateInCookie: false, // set this to true if you have to support IE
+            cacheLocation: 'sessionStorage', // Configures cache location. "sessionStorage" is more secure, but "localStorage" gives you SSO between tabs.
+            storeAuthStateInCookie: false, // Set this to "true" if you are having issues on IE11 or Edge
         },
         system: {
             loggerOptions: {
@@ -59,46 +63,40 @@ The application uses the [Implicit Grant Flow](~/identity-platform/v2-oauth2-imp
                         return;
                     }
                     switch (level) {
-                        case msal.LogLevel.Error:
+                        case LogLevel.Error:
                             console.error(message);
                             return;
-                        case msal.LogLevel.Info:
+                        case LogLevel.Info:
                             console.info(message);
                             return;
-                        case msal.LogLevel.Verbose:
+                        case LogLevel.Verbose:
                             console.debug(message);
                             return;
-                        case msal.LogLevel.Warning:
+                        case LogLevel.Warning:
                             console.warn(message);
+                            return;
+                        default:
                             return;
                     }
                 },
             },
         },
     };
-    
+
     /**
-     * An optional silentRequest object can be used to achieve silent SSO
-     * between applications by providing a "login_hint" property.
-     */
-    
-    // const silentRequest = {
-    //   scopes: ["openid", "profile"],
-    //   loginHint: "example@domain.net"
-    // };
-    
-    // exporting config object for jest
-    if (typeof exports !== 'undefined') {
-        module.exports = {
-            msalConfig: msalConfig,
-            loginRequest: loginRequest,
-        };
-    }
+    * Scopes you add here will be prompted for user consent during sign-in.
+    * By default, MSAL.js will add OIDC scopes (openid, profile, email) to any login request.
+    * For more information about OIDC scopes, visit: 
+    * https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-permissions-and-consent#openid-connect-scopes
+    */
+    export const loginRequest = {
+        scopes: [],
+    };
      ```
 
 1. Replace the following values with the values from the Azure portal:
     - Find the `Enter_the_Application_Id_Here` value and replace it with the **Application ID (clientId)** of the app you registered in the Microsoft Entra admin center.
-      - In **Authority**, find `Enter_the_Tenant_Subdomain_Here` and replace it with the subdomain of your tenant. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, [learn how to read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
+      - In **Authority**, find `Enter_the_Tenant_Subdomain_Here` and replace it with the subdomain of your tenant. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, [learn how to read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
 2. Save the file.
 
 ## Adding code to the redirection file
@@ -111,79 +109,82 @@ A redirection file is required to handle the response from the sign-in page. It 
     // Create the main myMSALObj instance
     // configuration parameters are located at authConfig.js
     const myMSALObj = new msal.PublicClientApplication(msalConfig);
-    
+
     let username = "";
-    
+
     /**
-     * A promise handler needs to be registered for handling the
-     * response returned from redirect flow. For more information, visit:
-     * https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/initialization.md#redirect-apis
-     */
+    * A promise handler needs to be registered for handling the
+    * response returned from redirect flow. For more information, visit:
+    * https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/initialization.md#redirect-apis
+    */
     myMSALObj.handleRedirectPromise()
         .then(handleResponse)
         .catch((error) => {
             console.error(error);
         });
-    
+
     function selectAccount() {
-    
+
         /**
-         * See here for more info on account retrieval: 
-         * https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-common/docs/Accounts.md
-         */
-    
+        * See here for more info on account retrieval: 
+        * https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-common/docs/Accounts.md
+        */
+
         const currentAccounts = myMSALObj.getAllAccounts();
-    
+
         if (!currentAccounts) {
             return;
         } else if (currentAccounts.length > 1) {
             // Add your account choosing logic here
             console.warn("Multiple accounts detected.");
         } else if (currentAccounts.length === 1) {
+            username = currentAccounts[0].username
             welcomeUser(currentAccounts[0].username);
             updateTable(currentAccounts[0]);
         }
     }
-    
+
     function handleResponse(response) {
-    
+
         /**
-         * To see the full list of response object properties, visit:
-         * https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/request-response-object.md#response
-         */
-    
+        * To see the full list of response object properties, visit:
+        * https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/request-response-object.md#response
+        */
+
         if (response !== null) {
-            welcomeUser(response.account.username);
+            username = response.account.username
+            welcomeUser(username);
             updateTable(response.account);
         } else {
             selectAccount();
+
         }
     }
-    
+
     function signIn() {
-    
+
         /**
-         * You can pass a custom request object below. This will override the initial configuration. For more information, visit:
-         * https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/request-response-object.md#request
-         */
-    
+        * You can pass a custom request object below. This will override the initial configuration. For more information, visit:
+        * https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/request-response-object.md#request
+        */
+
         myMSALObj.loginRedirect(loginRequest);
     }
-    
+
     function signOut() {
-    
+
         /**
-         * You can pass a custom request object below. This will override the initial configuration. For more information, visit:
-         * https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/request-response-object.md#request
-         */
-    
+        * You can pass a custom request object below. This will override the initial configuration. For more information, visit:
+        * https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/request-response-object.md#request
+        */
+
         // Choose which account to logout from by passing a username.
         const logoutRequest = {
             account: myMSALObj.getAccountByUsername(username),
             postLogoutRedirectUri: '/signout', // remove this line if you would like navigate to index page after logout.
-    
+
         };
-    
+
         myMSALObj.logoutRedirect(logoutRequest);
     }
     ```

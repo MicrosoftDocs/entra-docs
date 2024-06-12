@@ -2,8 +2,8 @@
 title: Migrate from MFA Server to Microsoft Entra multifactor authentication
 description: Step-by-step guidance to migrate from MFA Server on-premises to Microsoft Entra multifactor authentication
 
-services: multi-factor-authentication
-ms.service: active-directory
+
+ms.service: entra-id
 ms.subservice: authentication
 ms.custom: has-azure-ad-ps-ref
 ms.topic: how-to
@@ -13,8 +13,6 @@ ms.author: justinha
 author: Gargi-Sinha
 manager: martinco
 ms.reviewer: michmcla
-
-ms.collection: M365-identity-device-management
 ---
 # Migrate from MFA Server to Microsoft Entra multifactor authentication
 
@@ -145,7 +143,7 @@ Others might include:
 - Citrix Gateway
   - [Citrix Gateway](https://docs.citrix.com/en-us/citrix-gateway) supports both RADIUS and NPS extension integration, and a SAML integration.
 - Cisco VPN
-  - The Cisco VPN supports both RADIUS and [SAML authentication for SSO](~/identity/saas-apps/cisco-anyconnect.md).
+  - The Cisco VPN supports both RADIUS and [SAML authentication for SSO](~/identity/saas-apps/cisco-secure-firewall-secure-client.md).
   - By moving from RADIUS authentication to SAML, you can integrate the Cisco VPN without deploying the NPS extension.
 - All VPNs
   - We recommend federating your VPN as a SAML app if possible. This federation will allow you to use Conditional Access. For more information, see a [list of VPN vendors that are integrated into the Microsoft Entra ID](~/identity/enterprise-apps/secure-hybrid-access.md#secure-hybrid-access-through-azure-ad-partner-integrations) App gallery.
@@ -155,7 +153,7 @@ Others might include:
 
 - [Adding new NPS infrastructure](/windows-server/networking/technologies/nps/nps-top)
 - [NPS deployment best practices](https://www.youtube.com/watch?v=qV9wddunpCY)
-- [Microsoft Entra multifactor authentication NPS extension health check script](/samples/azure-samples/azure-mfa-nps-extension-health-check/azure-mfa-nps-extension-health-check/)
+- [Microsoft Entra multifactor authentication NPS extension health check script](https://github.com/Azure-Samples/azure-mfa-nps-extension-health-check)
 - [Integrating existing NPS infrastructure with Microsoft Entra multifactor authentication](howto-mfa-nps-extension-vpn.md)
 
 ## Next steps

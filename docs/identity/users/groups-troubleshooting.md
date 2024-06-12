@@ -1,18 +1,16 @@
 ---
 title: Fix problems with dynamic group memberships
 description: Troubleshooting tips for dynamic group membership in Microsoft Entra ID
-services: active-directory
+
 author: barclayn
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: enterprise-users
+ms.service: entra-id
+ms.subservice: users
 ms.topic: troubleshooting
 ms.date: 06/24/2022
 ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro
-ms.collection: M365-identity-device-management
 ---
 
 # Troubleshoot and resolve groups issues
@@ -50,7 +48,7 @@ To disable group creation for nonadmin users in PowerShell:
    ```
 
 **I received a max groups allowed error when trying to create a Dynamic Group in PowerShell**  
-If you receive a message in PowerShell indicating _Dynamic group policies max allowed groups count reached_, this means you have reached the max limit for Dynamic groups in your organization. The max number of Dynamic groups per organization is 5,000.
+If you receive a message in PowerShell indicating *Dynamic group policies max allowed groups count reached*, this means you have reached the max limit for Dynamic groups in your organization. The max number of Dynamic groups per organization is 5,000.
 
 To create any new Dynamic groups, you'll first need to delete some existing Dynamic groups. There's no way to increase the limit.
 

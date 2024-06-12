@@ -5,13 +5,15 @@ description: Learn how to configure single sign-on between Microsoft Entra ID an
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: CelesteDG
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 04/06/2023
+ms.date: 03/25/2024
 ms.author: jeedes
 
+
+# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and goFLUENT so that I can control who has access to goFLUENT, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
 # Microsoft Entra SSO integration with goFLUENT
@@ -29,7 +31,7 @@ You configure and test Microsoft Entra single sign-on for goFLUENT in a test env
 To integrate Microsoft Entra ID with goFLUENT, you need:
 
 * A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* One of the following roles: Global Administrator, Cloud Application Administrator, Application Administrator, or owner of the service principal.
+* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
 * A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
 * goFLUENT single sign-on (SSO) enabled subscription.
 
@@ -67,10 +69,10 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 1. On the **Basic SAML Configuration** section, perform the following steps:
 
     a. In the **Identifier** textbox, type a URL using the following pattern:
-    `https://<CustomerName>.gofluent.com/samlsso/metadata.jsp?pid=<CustomerName>`
+    `https://CustomerName.gofluent.com/app/samlconnector?client=<CustomerName>`
 
     b. In the **Reply URL** textbox, type a URL using the following pattern:
-    `https://<CustomerName>.gofluent.com/samlsso/acs.jsp?pid=<CustomerName>`
+    `https://<CustomerName>.gofluent.com/app/samlconnector?client=<CustomerName>`
 
 	c. In the **Sign on URL** textbox, type a URL using the following pattern:
 	`https://<CustomerName>.gofluent.com`
@@ -78,7 +80,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 	> [!NOTE]
     > These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [goFLUENT Client support team](mailto:presales-team@gofluent.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-1. On the **Set-up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
+1. On the **Set-up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 
     ![Screenshot shows the Certificate download link.](common/metadataxml.png "Certificate")
 

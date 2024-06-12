@@ -1,19 +1,16 @@
 ---
 title: Microsoft Entra Connect Health - Health service data is not up to date alert
 description: This document describes the cause of "Health service data is not up to date" alert and how to troubleshoot it.
-services: active-directory
-documentationcenter: ''
+
 author: billmath
 manager: amycolannino
-editor: ''
-ms.service: active-directory
-ms.subservice: hybrid
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: hybrid-connect
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 11/06/2023
 ms.author: billmath
-ms.collection: M365-identity-device-management
+
 ---
 
 # Health service data is not up to date alert
@@ -37,7 +34,7 @@ The following table maps service types to corresponding required data types:
 
 | Service type | Agent (Windows Service name) | Purpose | Data type generated  |
 | --- | --- | --- | --- |  
-| Microsoft Entra Connect (Sync) | Microsoft Entra Connect Health Sync Insights Service | Collect Microsoft Entra Connect-specific information (connectors, synchronization rules, etc.) | - AadSyncService-SynchronizationRules <br />  - AadSyncService-Connectors <br /> - AadSyncService-GlobalConfigurations  <br />  - AadSyncService-RunProfileResults <br /> - AadSyncService-ServiceConfigurations <br /> - AadSyncService-ServiceStatus   |
+| Microsoft Entra Connect (Sync) | Microsoft Entra Connect Health Sync Insights Service | Collect Microsoft Entra Connect-specific information (connectors, synchronization rules, and so on) | - AadSyncService-SynchronizationRules <br />  - AadSyncService-Connectors <br /> - AadSyncService-GlobalConfigurations  <br />  - AadSyncService-RunProfileResults <br /> - AadSyncService-ServiceConfigurations <br /> - AadSyncService-ServiceStatus   |
 |  | Microsoft Entra Connect Health Sync Monitoring Service | Collect Microsoft Entra Connect-specific perf counters, ETW traces, files | Performance counter |
 | AD DS | Microsoft Entra Connect Health AD DS Insights Service | Perform synthetic tests, collect topology information, replication metadata |  - Adds-TopologyInfo-Json <br /> - Common-TestData-Json (creates the test results)   | 
 |  | Microsoft Entra Connect Health AD DS Monitoring Service | Collect ADDS-specific perf counters, ETW traces, files | - Performance counter  <br /> - Common-TestData-Json (uploads the test results)  |

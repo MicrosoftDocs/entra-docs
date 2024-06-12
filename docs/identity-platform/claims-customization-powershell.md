@@ -4,10 +4,8 @@ description: This article describes how to customize claims in Microsoft Entra I
 services: active-directory
 documentationcenter: .net
 author: rahul-nagraj
-manager: 
-ms.service: active-directory
-ms.subservice: develop
-ms.workload: identity
+ms.service: identity-platform
+
 ms.topic: how-to
 ms.date: 11/02/2023
 ms.author: rahulnagraj
@@ -31,7 +29,7 @@ In this how-to guide, we'll cover a few common scenarios that can help you under
 
 ## Prerequisites
 
-1. Learn about [how to get an Microsoft Entra tenant](~/external-id/customers/quickstart-tenant-setup.md).
+1. Learn about [how to get a Microsoft Entra tenant](~/external-id/customers/quickstart-tenant-setup.md).
 1. Download the latest [Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/installation).
 
 ## Get started
@@ -42,12 +40,12 @@ When creating a claims-mapping policy, you can also emit a claim from a director
 > [!Note]
 > The [Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/installation) is required to configure claims-mapping policies.
 
-Open a terminal and run the following command to sign in to your Microsoft Entra ID admin account. Run this command each time you start a new session.
+Open a terminal and run the following command to sign in to your Microsoft Entra admin account. Run this command each time you start a new session.
 
 ```PowerShell
 Import-Module Microsoft.Graph.Identity.SignIns
 
-Connect-MgGraph -Scopes "Policy.ReadWrite.ApplicationConfiguration"
+Connect-MgGraph -Scopes "Policy.ReadWrite.ApplicationConfiguration", "Policy.Read.All"
 ```
 
 Now you can create a claims mapping policy and assign it to a service principal. Refer to the following examples for common scenarios:

@@ -7,8 +7,8 @@ ms.author: jomondi
 ms.custom:
 ms.date: 11/17/2023
 ms.reviewer: jawoods, ludwignick, phsignor
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: overview
 
 #Customer intent: As an application developer, I want to understand the different types of permissions and consent in order to properly request authorization from users and administrators for accessing protected resources in my application.
@@ -80,6 +80,8 @@ Depending on the permissions they require, some applications might require an ad
 Administrators can grant consent for themselves or for the entire organization. For more information about user and admin consent, see [user and admin consent overview](~/identity/enterprise-apps/user-admin-consent-overview.md).
 
 Authentication requests are prompted for admin consent if consent wasn't granted and if one of those high-privilege permissions is requested.
+
+Permission requests that contain custom application scopes aren't considered high-privilege and thus, they don't require admin consent.
 
 ### Preauthorization
 

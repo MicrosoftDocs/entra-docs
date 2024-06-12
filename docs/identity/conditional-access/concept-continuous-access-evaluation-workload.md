@@ -1,19 +1,15 @@
 ---
 title: Continuous access evaluation for workload identities in Microsoft Entra ID
-description: Respond to changes to applications with continuous access evaluation for workload identities in Microsoft Entra ID
+description: Respond to changes to applications with continuous access evaluation for workload identities in Microsoft Entra ID.
 
-services: active-directory
-ms.service: active-directory
-ms.subservice: workload-identities
+ms.service: entra-workload-id
 ms.topic: conceptual
-ms.date: 07/22/2022
+ms.date: 02/26/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: joroja
-
-ms.collection: M365-identity-device-management
 ---
 # Continuous access evaluation for workload identities
 
@@ -23,9 +19,9 @@ Continuous access evaluation doesn't currently support managed identities.
 
 ## Scope of support
 
-The continuous access evaluation for workload identities is supported only on access requests sent to Microsoft Graph as a resource provider.  More resource providers will be added over time.
+Continuous access evaluation for workload identities is supported only on access requests sent to Microsoft Graph as a resource provider. More resource providers will be added over time.
 
-Service principals for line of business (LOB) applications are supported
+Service principals for line of business (LOB) applications are supported.
 
 We support the following revocation events:
 
@@ -47,17 +43,17 @@ Organizations who have Microsoft Entra ID P1 or P2 can create a [Conditional Acc
 
 ## Troubleshooting
 
-When a client’s access to a resource is blocked due to CAE being triggered, the client’s session will be revoked, and the client will need to reauthenticate. This behavior can be verified in the sign-in logs. 
+When a client’s access to a resource is blocked due to CAE being triggered, the client’s session is revoked, and the client needs to reauthenticate. This behavior can be verified in the sign-in logs. 
 
 The following steps detail how an admin can verify sign in activity in the sign-in logs: 
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Reader](../role-based-access-control/permissions-reference.md#security-reader).
 1. Browse to **Identity** > **Monitoring & health** > **Sign-in logs** > **Service Principal Sign-ins**. You can use filters to ease the debugging process. 
-1. Select an entry to see activity details. The **Continuous access evaluation** field indicates whether a CAE token was issued in a particular sign-in attempt. 
+1. To see activity details, select an entry. The **Continuous access evaluation** field indicates whether a CAE token was issued in a particular sign-in attempt. 
 
-## Next steps
+## Related content
 
-- [Register an application with Microsoft Entra ID and create a service principal](~/identity-platform/howto-create-service-principal-portal.md#register-an-application-with-azure-ad-and-create-a-service-principal)
+- [Register an application with Microsoft Entra ID and create a service principal](~/identity-platform/howto-create-service-principal-portal.md#register-an-application-with-microsoft-entra-id-and-create-a-service-principal)
 - [How to use Continuous Access Evaluation enabled APIs in your applications](~/identity-platform/app-resilience-continuous-access-evaluation.md)
 - [Sample application using continuous access evaluation](https://github.com/Azure-Samples/ms-identity-dotnetcore-daemon-graph-cae)
 - [Securing workload identities with Microsoft Entra ID Protection](~/id-protection/concept-workload-identity-risk.md)

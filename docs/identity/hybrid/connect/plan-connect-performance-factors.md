@@ -1,18 +1,17 @@
 ---
 title: Factors influencing the performance of Microsoft Entra Connect
 description: This document explains the how various factors influence the Microsoft Entra Connect provisioning engine. These factors will help organizations to plan their Microsoft Entra Connect deployment to make sure it meets their sync requirements.
-services: active-directory
+
 author: billmath
 manager: amycolannino
 tags: azuread
-ms.service: active-directory
-ms.subservice: hybrid
+ms.service: entra-id
+ms.subservice: hybrid-connect
 ms.topic: conceptual
-ms.workload: identity
 ms.date: 11/06/2023
 ms.reviewer: martincoetzer
 ms.author: billmath
-ms.collection: M365-identity-device-management
+
 ---
 # Factors influencing the performance of Microsoft Entra Connect
 
@@ -185,6 +184,7 @@ To optimize the performance of your Microsoft Entra Connect implementation, cons
 - Use the [recommended hardware configuration](how-to-connect-install-prerequisites.md) based on your implementation size for the Microsoft Entra Connect server.
 - When upgrading Microsoft Entra Connect in large-scale deployments, consider using [swing migration method](./how-to-upgrade-previous-version.md#swing-migration), to make sure you have the least downtime and best reliability. 
 - Use SSD for the SQL database for best writing performance.
+- Back-up of ADSync Database using Azure Backup is not recommended.
 - Filter the Active Directory scope to only include objects that need to be provisioned in Microsoft Entra ID, using domain, OU, or attribute filtering.
 - If you require to change the default attribute flow rules, first copy the rule, then change the copy and disable the original rule. Remember to rerun a full sync.
 - Plan adequate time for the initial full sync run profile.

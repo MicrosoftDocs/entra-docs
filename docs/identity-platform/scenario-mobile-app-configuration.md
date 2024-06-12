@@ -7,8 +7,8 @@ ms.author: henrymbugua
 ms.custom: 
 ms.date: 06/16/2020
 ms.reviewer: jmprieur
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: how-to
 #Customer intent: As an application developer, I want to know how to write a mobile app that calls web APIs using the Microsoft identity platform.
 ---
@@ -56,6 +56,9 @@ if let application = try? MSALPublicClientApplication(configuration: config){ /*
 ### Xamarin or UWP
 
 This section explains how to instantiate the application for Xamarin.iOS, Xamarin.Android, and UWP apps.
+
+> [!NOTE]
+> MSAL.NET versions 4.61.0 and above do not provide support for Universal Windows Platform (UWP), Xamarin Android, and Xamarin iOS. We recommend you migrate your Xamarin applications to modern frameworks like MAUI. Read more about the deprecation in [Announcing the Upcoming Deprecation of MSAL.NET for Xamarin and UWP](https://devblogs.microsoft.com/identity/uwp-xamarin-msal-net-deprecation/).
 
 #### Instantiate the application
 
@@ -112,8 +115,8 @@ For more information, see [Xamarin iOS considerations](msal-net-xamarin-ios-cons
 These tasks are necessary when you use MSAL for iOS and macOS:
 
 * [Implement the `openURL` callback](#brokered-authentication-for-msal-for-ios-and-macos)
-* [Enable keychain access groups](howto-v2-keychain-objc.md)
-* [Customize browsers and WebViews](customize-webviews.md)
+* [Enable keychain access groups](/entra/msal/objc/howto-v2-keychain-objc)
+* [Customize browsers and WebViews](/entra/msal/objc/customize-webviews)
 
 ## Tasks for Xamarin.Android
 

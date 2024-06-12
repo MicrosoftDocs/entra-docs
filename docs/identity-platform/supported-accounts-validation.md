@@ -7,8 +7,8 @@ ms.author: cwerner
 ms.custom: 
 ms.date: 03/24/2023
 ms.reviewer: manrath, sureshja
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: reference
 #Customer intent: As a developer registering an application with the Microsoft identity platform, I want to understand the validation differences between supported account types, so that I can ensure that the properties of my application are configured correctly.
 ---
@@ -23,7 +23,7 @@ After the application has been registered, you can check or change the account t
 |---------------------------------------------------|-----------------------------|
 | Accounts in this organizational directory only (Single tenant) | `AzureADMyOrg` |
 | Accounts in any organizational directory (Any Microsoft Entra directory - Multitenant) | `AzureADMultipleOrgs` |
-| Accounts in any organizational directory (Any Microsoft Entra directory - Multitenant) and personal Microsoft accounts (e.g. Skype, Xbox) | `AzureADandPersonalMicrosoftAccount` |
+| Accounts in any organizational directory (Any Microsoft Entra directory - Multitenant) and personal Microsoft accounts (such as Skype, Xbox) | `AzureADandPersonalMicrosoftAccount` |
 | Personal Microsoft accounts only | `PersonalMicrosoftAccount` |
 
 If you change this property you may need to change other properties first. 

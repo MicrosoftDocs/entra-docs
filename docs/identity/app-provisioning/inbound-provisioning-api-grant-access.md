@@ -1,19 +1,18 @@
 ---
 title: Grant access to inbound provisioning API
 description: Learn how to grant access to the inbound provisioning API.
-services: active-directory
-author: kenwith
+
+author: jenniferf-skc
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-provisioning
-ms.workload: identity
 ms.topic: how-to
-ms.date: 11/15/2023
-ms.author: kenwith
+ms.date: 05/21/2024
+ms.author: jfields
 ms.reviewer: cmmdesai
 ---
 
-# Grant access to the inbound provisioning API (Public preview)
+# Grant access to the inbound provisioning API
 
 ## Introduction
 
@@ -61,7 +60,6 @@ This section describes how you can assign the necessary permissions to a managed
       Install-Module Microsoft.Graph -Scope CurrentUser
 
       Connect-MgGraph -Scopes "Application.Read.All","AppRoleAssignment.ReadWrite.All,RoleManagement.ReadWrite.Directory"
-      Select-MgProfile Beta
       $graphApp = Get-MgServicePrincipal -Filter "AppId eq '00000003-0000-0000-c000-000000000000'"
   
       $PermissionName = "SynchronizationData-User.Upload"

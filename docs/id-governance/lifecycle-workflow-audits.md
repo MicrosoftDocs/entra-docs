@@ -4,12 +4,11 @@ description: Information about audit logs with Lifecycle Workflows
 author: owinfreyATL
 ms.author: owinfrey
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: compliance
-ms.workload: identity
-ms.topic: conceptual 
+ms.service: entra-id-governance
+ms.subservice: lifecycle-workflows
+ms.topic: conceptual
 ms.date: 05/31/2023
-ms.custom: template-concept 
+ms.custom: template-concept
 ---
 
 # Auditing Lifecycle Workflows
@@ -43,4 +42,4 @@ After filtering this information, you're also able to see other information in t
 
 - [Lifecycle Workflow History](lifecycle-workflow-history.md)
 - [Check the status of a workflow](check-status-workflow.md)
-- [Microsoft Entra audit activity reference](~/identity/monitoring-health/reference-audit-activities.md)
+- [Microsoft Entra audit activity reference](../identity/monitoring-health/reference-audit-activities.md)

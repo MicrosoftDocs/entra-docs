@@ -1,12 +1,10 @@
 ---
 title: What's Microsoft Entra Permissions Management?
 description: An introduction to Microsoft Entra Permissions Management.
-services: active-directory
 author: jenniferf-skc
 manager: amycolannino
-ms.service: active-directory 
-ms.subservice: ciem
-ms.workload: identity
+ms.service: entra-permissions-management
+
 ms.topic: overview
 ms.date: 10/04/2023
 ms.author: jfields

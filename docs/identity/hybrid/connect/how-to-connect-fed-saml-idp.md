@@ -1,18 +1,17 @@
 ---
 title: 'Microsoft Entra Connect: Use a SAML 2.0 Identity Provider for Single Sign On - Azure'
 description: This document describes using a SAML 2.0 compliant Idp for single sign-on.
-services: active-directory
+
 author: billmath
 manager: amycolannino
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.date: 03/19/2024
+ms.subservice: hybrid-connect
 ms.author: billmath
-ms.collection: M365-identity-device-management
+
 ---
 
 #  Use a SAML 2.0 Identity Provider (IdP) for Single Sign On
@@ -28,7 +27,7 @@ Microsoft supports this sign-on experience as the integration of a Microsoft clo
 > Only a limited set of clients are available in this sign-on scenario with SAML 2.0 identity providers, this includes:
 > 
 > - Web-based clients such as Outlook Web Access and SharePoint Online
-> - Email-rich clients that use basic authentication and a supported Exchange access method such as IMAP, POP, Active Sync, MAPI, etc. (the Enhanced Client Protocol end point is required to be deployed), including:
+> - Email-rich clients that use basic authentication and a supported Exchange access method such as IMAP, POP, Active Sync, MAPI, and so on. (the Enhanced Client Protocol end point is required to be deployed), including:
 >     - Microsoft Outlook 2010/Outlook 2013/Outlook 2016, Apple iPhone (various iOS versions)
 >     - Various Google Android Devices
 >     - Windows Phone 7, Windows Phone 7.8, and Windows Phone 8.0
@@ -92,32 +91,14 @@ A request and response message pair is shown for the sign-on message exchange.
 The following is a sample request message that is sent from Microsoft Entra ID to a sample SAML 2.0 identity provider. The sample SAML 2.0 identity provider is Active Directory Federation Services (AD FS) configured to use SAML-P protocol. Interoperability testing has also been completed with other SAML 2.0 identity providers.
 
 ```xml
-  <?xml version="1.0"?>
-<samlp:AuthnRequest xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol" ID="_f6f7cf98-e2c8-470e-ace9-4c0dabdd36cb" Version="2.0" IssueInstant="2023-10-09T15:48:00.361Z">
-  <Issuer xmlns="urn:oasis:names:tc:SAML:2.0:assertion">urn:federation:MicrosoftOnline</Issuer>
-  <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
-    <SignedInfo>
-      <CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
-      <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
-      <Reference URI="#_f6f7cf98-e2c8-470e-ace9-4c0dabdd36cb">
-        <Transforms>
-          <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
-          <Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
-        </Transforms>
-        <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
-        <DigestValue>f5c2T/UEzCMjKYp6yuscKKFojDI=</DigestValue>
-      </Reference>
-    </SignedInfo>
-    <SignatureValue>BdlWtxZE+ZvkfbD1B8wskZwiGVDDFRcnlIDrAOvvOd625vpEHpjW4j8Y3Buks+W1PLV1nC2cCRIAmPZMsxt7GLjT9AjYpgo+E5FlGQq7AezcLsKRrmxI4eVwRpy4zWthq/Gae9HGF5gajU+dE4jMd2275lk7poCHdlPXJR+EH6oikILBjWZeeWs4HAxYn7TtZ4/H2tcaz8yOQkWWlbR8ZVsUF5ZTbdtr24N9Mk4ZWooJN0jYN5nBv0LuGTlmpwjcdY9fuaBLwqlq6nUKzpDNiPXTn7BW8+EPidS/GonXzbJl18WwyaDKPre1qWtJzSuLInoYIWIcSdA+uwhETrcaew==</SignatureValue>
-    <KeyInfo>
-      <ds:X509Data xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
-        <ds:X509SKI>bwzmkdKETWhixlS99FL36FH37EI=</ds:X509SKI>
-      </ds:X509Data>
-      <KeyName>MicrosoftOnline</KeyName>
-    </KeyInfo>
-  </Signature>
-  <samlp:NameIDPolicy Format="urn:oasis:names:tc:SAML:2.0:nameid-format:persistent"/>
-</samlp:AuthnRequest>
+<samlp:AuthnRequest ID="_1e089e5c-a976-4881-af74-3b92c89e7e2c" Version="2.0" IssueInstant="2024-03-12T14:00:18.450Z" xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol"><Issuer xmlns="urn:oasis:names:tc:SAML:2.0:assertion">urn:federation:MicrosoftOnline</Issuer><samlp:NameIDPolicy Format="urn:oasis:names:tc:SAML:2.0:nameid-format:persistent"/></samlp:AuthnRequest>
+
+```
+
+If isSignedAuthenticationRequestRequired is enabled as explained in [internaldomainfederation-update](/graph/api/internaldomainfederation-update), then the request would look like this example:
+
+```xml
+  <samlp:AuthnRequest ID="_1868c6f2-1fdd-40b9-818f-b4b44efb92c5" Version="2.0" IssueInstant="2024-03-11T16:51:17.120Z" Destination="https://fs.contoso.com/adfs/ls/" xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol"><Issuer xmlns="urn:oasis:names:tc:SAML:2.0:assertion">urn:federation:MicrosoftOnline</Issuer><Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><Reference URI="#_1868c6f2-1fdd-40b9-818f-b4b44efb92c5"><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><DigestValue>FPM404CTAfI458trTryNB7mVS4Q=</DigestValue></Reference></SignedInfo><SignatureValue>CuCSgua+bCtV8mlJJUxtbz1tsZjj7RDfH73YyJgDbOvk9lIpdZkrCcz3r9Qqb4OP+3we8cauXAOEDGNke2QywkHyGHV55zJomb5pKNiX8r/2xAD+LaGEeOw3O4H0lGZCyvN32pbDi/aTr8ocZu6tTcW7CbD51TNCasc+YJALYAa73F9rhDqgy/eieC3HvM6e18QE/9URKrT7IT82hsmUcOGjvhSF6gvWtRtdwsJ+4LLR1FnTKCJvPcDU0AeKtvh9DDTrIEBY9OurB0VLYMQ75F9P2ijZXnBaITqx1nkdT70NjVmq+tUWl//24v1AnSu1Z7lTkYNlydV536epaYYb4Q==</SignatureValue><KeyInfo><ds:X509Data xmlns:ds="http://www.w3.org/2000/09/xmldsig#"><ds:X509SKI>bwzmkdKETWhixlS99FL36FH37EI=</ds:X509SKI></ds:X509Data><ds:KeyName xmlns:ds="http://www.w3.org/2000/09/xmldsig#">MicrosoftOnline</ds:KeyName></KeyInfo></Signature><samlp:NameIDPolicy Format="urn:oasis:names:tc:SAML:2.0:nameid-format:persistent"/></samlp:AuthnRequest>
 ```
 
 The following is a sample response message that is sent from the sample SAML 2.0 compliant identity provider to Microsoft Entra ID / Microsoft 365.
@@ -233,9 +214,10 @@ The following procedure walks you through converting an existing standard domain
    $LogOnUrl = "https://WS2012R2-0.contoso.com/passiveLogon" 
    $LogOffUrl = "https://WS2012R2-0.contoso.com/passiveLogOff" 
    $ecpUrl = "https://WS2012R2-0.contoso.com/PAOS" 
-   $MyUri = "urn:uri:MySamlp2IDP" 
-   $MySigningCert = "MIIC7jCCAdagAwIBAgIQRrjsbFPaXIlOG3GTv50fkjANBgkqhkiG9w0BAQsFADAzMTEwLwYDVQQDEyh BREZTIFNpZ25pbmcgLSBXUzIwMTJSMi0wLnN3aW5mb3JtZXIuY29tMB4XDTE0MDEyMDE1MTY0MFoXDT E1MDEyMDE1MTY0MFowMzExMC8GA1UEAxMoQURGUyBTaWduaW5nIC0gV1MyMDEyUjItMC5zd2luZm9yb WVyLmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKe+rLVmXy1QwCwZwqgbbp1/kupQ VcjKuKLitVDbssFyqbDTjP7WRjlVMWAHBI3kgNT7oE362Gf2WMJFf1b0HcrsgLin7daRXpq4Qi6OA57 sW1YFMj3sqyuTP0eZV3S4+ZbDVob6amsZIdIwxaLP9Zfywg2bLsGnVldB0+XKedZwDbCLCVg+3ZWxd9 T/jV0hpLIIWr+LCOHqq8n8beJvlivgLmDJo8f+EITnAxWcsJUvVai/35AhHCUq9tc9sqMp5PWtabAEM b2AU72/QlX/72D2/NbGQq1BWYbqUpgpCZ2nSgvlWDHlCiUo//UGsvfox01kjTFlmqQInsJVfRxF5AcC AwEAATANBgkqhkiG9w0BAQsFAAOCAQEAi8c6C4zaTEc7aQiUgvnGQgCbMZbhUXXLGRpjvFLKaQzkwa9 eq7WLJibcSNyGXBa/SfT5wJgsm3TPKgSehGAOTirhcqHheZyvBObAScY7GOT+u9pVYp6raFrc7ez3c+ CGHeV/tNvy1hJNs12FYH4X+ZCNFIT9tprieR25NCdi5SWUbPZL0tVzJsHc1y92b2M2FxqRDohxQgJvy JOpcg2mSBzZZIkvDg7gfPSUXHVS1MQs0RHSbwq/XdQocUUhl9/e/YWCbNNxlM84BxFsBUok1dH/gzBy Sx+Fc8zYi7cOq9yaBT3RLT6cGmFGVYZJW4FyhPZOCLVNsLlnPQcX3dDg9A==" 
-   $Protocol = "wsFed"
+   $MyUri = "urn:uri:MySamlp2IDP"
+   $idptokensigningcert = [System.Security.Cryptography.X509Certificates.X509Certificate2]("C:\temp\contosoidptokensign.cer")  
+   $MySigningCert = [system.convert]::tobase64string($idptokensigningcert.rawdata) 
+   $Protocol = "saml"
 
    New-MgDomainFederationConfiguration `
      -DomainId $Domain `
@@ -310,43 +292,16 @@ As the administrator, before you verify and manage single sign-on (also called i
 
 1. You have reviewed the Microsoft Entra SAML 2.0 Protocol Requirements
 2. You have configured your SAML 2.0 identity provider
-3. Install PowerShell for single sign-on with SAML 2.0 identity provider
+3. Install PowerShell for single sign-on (SSO) with SAML 2.0 identity provider
 4. Set up a trust between SAML 2.0 identity provider and Microsoft Entra ID
 5. Provisioned a known test user principal to Microsoft Entra ID (Microsoft 365) via either PowerShell or Microsoft Entra Connect.
 6. Configure directory synchronization using [Microsoft Entra Connect](../whatis-hybrid-identity.md).
 
-After setting up single sign-on with your SAML 2.0 SP-Lite based identity Provider, you should verify that it's working correctly.
+After setting up SSO with your SAML 2.0 SP-Lite based identity Provider, you should verify that it's working correctly. For more information about testing SAML-based SSO, see [Test SAML-based single sign-on](~/identity/enterprise-apps/debug-saml-sso-issues.md).
 
 >[!NOTE]
 >If you converted a domain, rather than adding one, it may take up to 24 hours to set up single sign-on.
 Before you verify single sign-on, you should finish setting up Active Directory synchronization, synchronize your directories, and activate your synced users.
-
-### Use the tool to verify that single sign-on is set up correctly
-To verify that single sign-on has been set up correctly, you can perform the following procedure to confirm that you're able to sign-in to the cloud service with your corporate credentials.
-
-Microsoft provides a tool that you can use to test your SAML 2.0 based identity provider. Before running the test tool, you must have configured a Microsoft Entra tenant to federate with your identity provider.
-
->[!NOTE]
->The Connectivity Analyzer requires Internet Explorer 10 or later.
-
-
-
-1. Download the [Connectivity Analyzer](https://testconnectivity.microsoft.com/?tabid=Client).
-2. Select Install Now to begin downloading and installing the tool.
-3. Select “I can’t set up federation with Office 365, Azure, or other services that use Microsoft Entra ID.”
-4. Once the tool is downloaded and running, you'll see the Connectivity Diagnostics window. The tool will step you through testing your federation connection.
-5. The Connectivity Analyzer opens your SAML 2.0 IDP for you to sign-in, enter the credentials for the user principal you're testing:
-
-    ![Screenshot that shows the sign-in window for your SAML 2.0 IDP.](./media/how-to-connect-fed-saml-idp/saml1.png)
-
-6.  At the Federation test sign-in window, you should enter an account name and password for the Microsoft Entra tenant that is configured to be federated with your SAML 2.0 identity provider. The tool attempts to sign-in using those credentials and detailed results of tests performed during the sign-in attempt will be provided as output.
-
-    ![SAML](./media/how-to-connect-fed-saml-idp/saml2.png)
-
-7. This window shows a failed result of testing. Clicking on Review detailed results show information about the results for each test that was performed. You can also save the results to disk in order to share them.
- 
-> [!NOTE]
-> The Connectivity analyzer also tests Active Federation using the WS*-based and ECP/PAOS protocols. If you are not using these you can disregard the following error: Testing the Active sign-in flow using your identity provider’s Active federation endpoint.
 
 ### Manually verify that single sign-on has been set up correctly
 

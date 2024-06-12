@@ -3,15 +3,14 @@ title: 'Microsoft Entra Connect: Version release history'
 description: This article lists all releases of Microsoft Entra Connect and Azure AD Sync.
 author: billmath
 ms.assetid: ef2797d7-d440-4a9a-a648-db32ad137494
-ms.service: active-directory
+ms.service: entra-id
 manager: amycolannino
 ms.topic: reference
-ms.workload: identity
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
 ms.custom: has-adal-ref, has-azure-ad-ps-ref
-ms.collection: M365-identity-device-management
+
 ---
 
 # Microsoft Entra Connect: Version release history
@@ -48,11 +47,22 @@ Required permissions | For permissions required to apply an update, see [Microso
 > We will begin retiring past versions of Microsoft Entra Connect Sync 2.x 12 months from the date they are superseded by a newer version. 
 > This policy will go into effect on 15 March 2023, when we will retire all versions that are superseded by a newer version on 15 March 2022.
 > 
-> Currently only builds 2.1.20.0 (release November 9th 2022) or later are supported.  Version 2.1.20 was supperseded by build 2.2.1.0 which was released June 6th 2023.  This means that 2.1.20 will be supported until June 6th, 2024.
+> Currently only builds 2.1.20.0 (release November 9th 2022) or later are supported.  Version 2.1.20 was superseded by build 2.2.1.0 which was released June 19th 2023.  This means that 2.1.20 will be supported until June 19th, 2024.
 >
 > Build 2.1.19 was released on November 2nd, 2022.  It was superseded by 2.1.20 which was released on November 9th 2022.  Since twelves months (November 9th 2023) have past since this release, 2.1.19 is no longer supported.
 > 
 > If you are not already using the latest release version of Microsoft Entra Connect Sync, you should upgrade your Microsoft Entra Connect Sync software before that date. 
+
+|Version|End of support date|
+|-----|-----|
+|[2.1.20.0](#21200)|6/19/2024 (12 months after release of 2.2.1.0)|
+|[2.2.1.0](#2210)|10/11/2024 (12 months after release of 2.2.8.0)|
+|[2.2.8.0](#2280)|12/12/2024 (12 months after release of 2.3.2.0)|
+|[2.3.2.0](#2320)|2/21/2025 (12 months after release of 2.3.6.0)|
+|[2.3.6.0](#2360)|4/01/2025 (12 months after release of 2.3.8.0|
+|[2.3.8.0](#2380)|TBD|
+
+**All other versions are not supported**
 
 
 If you run a retired version of Microsoft Entra Connect, it might unexpectedly stop working. You also might not have the latest security fixes, performance improvements, troubleshooting and diagnostic tools, and service enhancements. If you require support, we might not be able to provide you with the level of service your organization needs.
@@ -73,6 +83,23 @@ Auto-upgrade is meant to push all important updates and critical fixes to you. I
 If you want all the latest features and updates, check this page and install what you need.
 
 To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade](how-to-connect-install-automatic-upgrade.md).
+
+## 2.3.8.0
+
+### Release status
+4/01/2024: Released for download
+
+### Bug Fixes
+- Microsoft Entra Connect Health has been updated to 4.5.2466.0 to address an endpoint discovery issue that could occur in some clouds.
+
+
+## 2.3.6.0
+
+### Release status
+2/21/2024: Released for download and autoupgrade.
+
+### Bug Fixes:
+- Improvements to auto-upgrade detection. Auto-upgrade will no longer retry if it detects the machine does not meet the OS or .NET runtime requirements.
 
 ## 2.3.2.0
 
@@ -95,11 +122,11 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 10/11/2023: Released for download
 
 ### Functional Changes
- - The attribute onPremisesObjectIdentifier has been added to the default sync rules. This attribute is required by Microsoft Entra Cloud Sync's Group Provisioning to AD feature.
+- The attribute onPremisesObjectIdentifier has been added to the default sync rules. This attribute is required by Microsoft Entra Cloud Sync's Group Provisioning to AD feature.
  - The minimum .NET runtime requirement has been increased to 4.7.1.
 
 ### Bug Fixes
- - Improvements to upgrade and auto-upgrade components.
+- Improvements to upgrade and auto-upgrade components.
  - Fixed an issue preventing deprovisioning of group when deletions of both the group and a member belonging to a different domain are processed in the same sync cycle.
 
 ## 2.2.1.0
@@ -108,13 +135,13 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 6/19/2023: Released for download.
 
 ### Functional Changes
- - We have enabled Auto Upgrade for tenants with custom synchronization rules. Note that deleted (not disabled) default rules will be re-created and enabled upon Auto Upgrade.
+- We have enabled Auto Upgrade for tenants with custom synchronization rules. Note that deleted (not disabled) default rules will be re-created and enabled upon Auto Upgrade.
  - We have added Microsoft Entra Connect Agent Updater service to the install. This new service will be used for future auto upgrades.
  - We have removed the Synchronization Service WebService Connector Config program from the install.
  - Default sync rule “In from AD – User Common” was updated to flow the employeeType attribute.
 
 ### Bug Fixes
- - We have made improvements to accessibility.
+- We have made improvements to accessibility.
  - We have made the Microsoft Privacy Statement accessible in more places.
 
 
@@ -149,7 +176,7 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 10/5/2022: Released for download
 
 ### Bug fixes
- - we fixed a bug where upgrade from version 1.6 to version 2.1 got stuck in a loop due to IsMemberOfLocalGroup enumeration.
+- we fixed a bug where upgrade from version 1.6 to version 2.1 got stuck in a loop due to IsMemberOfLocalGroup enumeration.
  - we fixed a bug where the Microsoft Entra Connect Configuration Wizard was sending incorrect credentials (username format) while validating if Enterprise Admin. 
 
 ## 2.1.16.0
@@ -169,12 +196,12 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 > We have discovered a security vulnerability in the Microsoft Entra Connect Admin Agent. If you have installed the Admin Agent previously it is important that you update your Microsoft Entra Connect server(s) to this version to mitigate the vulnerability.
 
 ### Functional changes
- - We have removed the public preview functionality for the Admin Agent from Microsoft Entra Connect. We won't provide this functionality going forward.
+- We have removed the public preview functionality for the Admin Agent from Microsoft Entra Connect. We won't provide this functionality going forward.
  - We added support for two new attributes: employeeOrgDataCostCenter and employeeOrgDataDivision.
  - We added CertificateUserIds attribute to Microsoft Entra Connector static schema.
  - The Microsoft Entra Connect wizard will now abort if write event logs permission is missing.
- - We updated the AADConnect health endpoints to support the US government clouds.
- - We added new cmdlets “Get-ADSyncToolsDuplicateUsersSourceAnchor and Set-ADSyncToolsDuplicateUsersSourceAnchor“ to fix bulk "source anchor has changed" errors. When a new forest is added to AADConnect with duplicate user objects, the objects are running into bulk "source anchor has changed" errors. This is happening due to the mismatch between msDsConsistencyGuid & ImmutableId. More information about this module and the new cmdlets can be found in [this article](./reference-connect-adsynctools.md).
+ - We updated the Microsoft Entra Connect Health endpoints to support the US government clouds.
+ - We added new cmdlets “Get-ADSyncToolsDuplicateUsersSourceAnchor and Set-ADSyncToolsDuplicateUsersSourceAnchor“ to fix bulk "source anchor has changed" errors. When a new forest is added to Microsoft Entra Connect with duplicate user objects, the objects are running into bulk "source anchor has changed" errors. This is happening due to the mismatch between msDsConsistencyGuid & ImmutableId. More information about this module and the new cmdlets can be found in [this article](./reference-connect-adsynctools.md).
 
 ### Bug fixes
  - We fixed a bug that prevented localDB upgrades in some Locales.
@@ -201,7 +228,7 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 3/24/2022: Released for download only, not available for auto upgrade
 
 ### Bug fixes
- - Fixed an issue where some sync rule functions weren't parsing surrogate pairs properly.
+- Fixed an issue where some sync rule functions weren't parsing surrogate pairs properly.
  - Fixed an issue where, under certain circumstances, the sync service wouldn't start due to a model db corruption. You can read more about the model db corruption issue in [this article](/troubleshoot/azure/active-directory/resolve-model-database-corruption-sqllocaldb)
 
 ## 2.0.91.0
@@ -337,8 +364,8 @@ When you upgrade to this V1.6 build or any newer builds, the group membership li
 - We added a check to enforce autoupgrade for V2.0 to require Windows Server 2016 or newer.
 - We added the Replicating Directory Changes permission in the Set-ADSyncBasicReadPermissions cmdlet.
 - We made a change to prevent UseExistingDatabase and import configuration from being used together because they could contain conflicting configuration settings.
-- We made a change to allow a user with the Application Admin role to change the App Proxy service configuration.
-- We removed the (Preview) label from the labels of **Import/Export** settings. This functionality is generally available.
+- We made a change to allow a user with the Application Admin role to change the application proxy service configuration.
+- We removed the  label from the labels of **Import/Export** settings. This functionality is generally available.
 - We changed some labels that still referred to Company Administrator. We now use the role name Global Administrator.
 - We created new Microsoft Entra Kerberos PowerShell cmdlets (\*-AADKerberosServer) to add a Claims Transform rule to the Microsoft Entra service principal.
 
@@ -504,7 +531,7 @@ You can use these cmdlets to retrieve the TLS 1.2 enablement status or set it as
 - We addressed an issue where you were allowed to deselect objects and attributes used in sync rules by using the UI and PowerShell. We now show friendly error messages if you try to deselect any attribute or object that's used in any sync rules.
 - We made some updates to the "migrate settings code" to check and fix backward compatibility issues when the script runs on an older version of Microsoft Entra Connect.
 - We fixed a bug that occurred when PHS tried to look up an incomplete object. It didn't use the same algorithm to resolve the DC as it used originally to fetch the passwords. In particular, it ignored affinitized DC information. The Incomplete object lookup should use the same logic to locate the DC in both instances.
-- We fixed a bug where Microsoft Entra Connect can't read Application Proxy items by using Microsoft Graph because of a permissions issue with calling Microsoft Graph directly based on the Microsoft Entra Connect client identifier. To fix this issue, we removed the dependency on Microsoft Graph and instead use Azure AD PowerShell to work with the App Proxy Application objects.
+- We fixed a bug where Microsoft Entra Connect can't read Application Proxy items by using Microsoft Graph because of a permissions issue with calling Microsoft Graph directly based on the Microsoft Entra Connect client identifier. To fix this issue, we removed the dependency on Microsoft Graph and instead use Azure AD PowerShell to work with the application proxy Application objects.
 - We removed the writeback member limit from the Out to AD - Group SOAInAAD Exchange sync rule.
 - We fixed a bug that occurred when you changed connector account permissions. If an object came in scope that hadn't changed since the last delta import, a delta import wouldn't import it. We now display a warning to alert you of the issue.
 - We fixed an accessibility issue where the screen reader wasn't reading the radio button position. We added positional text to the radio button accessibility text field.
@@ -648,4 +675,3 @@ This is a bug fix release. There are no functional changes in this release.
 ## Next steps
 
 Learn more about how to [integrate your on-premises identities with Microsoft Entra ID](../whatis-hybrid-identity.md).
-

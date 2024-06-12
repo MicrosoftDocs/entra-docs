@@ -1,24 +1,16 @@
 ---
 title: Request process & notifications - Microsoft Entra entitlement management
 description: Learn about the request process for an access package and when email notifications are sent in entitlement management.
-services: active-directory
-documentationCenter: ''
 author: owinfreyatl
 manager: amycolannino
 editor: mamtakumar
-ms.service: active-directory
-ms.workload: identity
-ms.tgt_pltfrm: na
+ms.service: entra-id-governance
+ms.subservice: entitlement-management
 ms.topic: conceptual
-ms.subservice: compliance
 ms.date: 05/31/2023
 ms.author: owinfrey
 ms.reviewer: mamkumar
-ms.collection: M365-identity-device-management
-
-
 #Customer intent: As a < type of user >, I want < what? > so that < why? >.
-
 ---
 # Request process and email notifications in entitlement management
 
@@ -125,8 +117,7 @@ Both the approver and the alternate approvers can approve or deny the request.
 
 ### Approved or denied emails
 
- When an approver receives an access request submitted by a requestor, they can approve or deny the access request. The approver needs to add a business justification for their decision. Here's a sample email sent to the approvers
- and alternate approvers after a request is approved:
+ When an approver receives an access request submitted by a requestor, they can approve or deny the access request. The approver needs to add a business justification for their decision. Here's a sample email sent to the approvers and alternate approvers after a request is approved:
 
 ![Approved request to access package email](./media/entitlement-management-process/approver-request-email-approved.png)
 

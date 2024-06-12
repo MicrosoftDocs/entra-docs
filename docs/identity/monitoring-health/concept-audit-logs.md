@@ -3,10 +3,10 @@ title: Learn about the audit logs in Microsoft Entra ID
 description: Learn about the types of activities and events that are captured in Microsoft Entra audit logs and how you can use the logs for troubleshooting.
 author: shlipsey3
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: conceptual
-ms.subservice: report-monitor
-ms.date: 12/15/2023
+ms.subservice: monitoring-health
+ms.date: 03/08/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg14
 
@@ -23,7 +23,7 @@ Two other activity logs are also available to help monitor the health of your te
 - **[Sign-ins](concept-sign-ins.md)** – Information about sign-ins and how your resources are used by your users.
 - **[Provisioning](concept-provisioning-logs.md)** – Activities performed by the provisioning service, such as the creation of a group in ServiceNow or a user imported from Workday.
 
-This article gives you an overview of the audit logs, including what's required to access them, what information they provide, and 
+This article gives you an overview of the audit logs, including what's required to access them and what information they provide.
 
 ## License and role requirements
 
@@ -51,19 +51,27 @@ Audit logs in Microsoft Entra ID provide access to system activity records, ofte
 - Has a service principal for an application changed?
 - Have the names of applications been changed?
 
+**Custom security attributes:**
+
+- What changes were made to [custom security attribute](../../fundamentals/custom-security-attributes-overview.md) definitions or assignments?
+- What updates were made to attribute sets?
+- What custom attribute values were assigned to a user?
+
 > [!NOTE]
 > Entries in the audit logs are system generated and can't be changed or deleted.
 
 ## What do the logs show?
 
-Audit logs have a default list view that shows:
+Audit logs default to the **Directory** tab, which displays the following information:
 
 - Date and time of the occurrence
 - Service that logged the occurrence
 - Category and name of the activity (*what*) 
 - Status of the activity (success or failure)
-- Target
-- Initiator / actor of an activity (*who*)
+
+A second tab for **Custom Security** displays audit logs for custom security attributes. To view data on this tab, you must have the [Attribute Log Administrator](../../identity/role-based-access-control/permissions-reference.md#attribute-log-administrator) or [Attribute Log Reader](../../identity/role-based-access-control/permissions-reference.md#attribute-log-reader) role. This audit log shows all activities related to custom security attributes. For more information, see [What are custom security attributes](../../fundamentals/custom-security-attributes-overview.md).
+
+![Screenshot of the audit logs, with the Directory and Custom Security tabs highlighted.](media/concept-audit-logs/audit-log-tabs.png)
 
 ## Microsoft 365 activity logs
 

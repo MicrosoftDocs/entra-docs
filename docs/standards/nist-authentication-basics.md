@@ -1,10 +1,8 @@
 ---
 title: NIST authentication basics and Microsoft Entra ID
 description: This article has terminology definitions, describes Trusted Platform Modules, and lists NIST authentication factors
-services: active-directory 
-ms.service: active-directory
-ms.subservice: fundamentals
-ms.workload: identity
+ms.service: entra
+ms.subservice: standards
 ms.topic: how-to
 author: gargi-sinha
 ms.author: gasinh
@@ -12,7 +10,6 @@ manager: martinco
 ms.reviewer: martinco
 ms.date: 11/23/2022
 ms.custom: it-pro
-ms.collection: M365-identity-device-management
 ---
 
 # NIST authentication basics 

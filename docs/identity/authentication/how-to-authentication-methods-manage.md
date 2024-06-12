@@ -1,9 +1,8 @@
 ---
-title: How to migrate to the Authentication methods policy 
+title: How to migrate to the Authentication methods policy
 description: Learn about how to centrally manage multifactor authentication and self-service password reset (SSPR) settings in the Authentication methods policy.
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 09/24/2023
@@ -12,10 +11,6 @@ ms.author: justinha
 author: justinha
 ms.reviewer: jpettere
 manager: amycolannino
-
-ms.collection: M365-identity-device-management
-ms.custom: contperf-fy20q4
-
 # Customer intent: As an identity administrator, I want to understand what authentication options are available in Microsoft Entra ID and how I can manage them.
 ---
 # How to migrate MFA and SSPR policy settings to the Authentication methods policy for Microsoft Entra ID 
@@ -144,7 +139,7 @@ The Authentication methods policy has granular control with separate controls fo
 
 ### Security questions
 
-A control for **Security questions** is coming soon. If you use security questions, and don't want to disable them, make sure to keep them enabled in the legacy SSPR policy until the new control is available. You _can_ finish migration as described in the next section with security questions enabled.
+A control for **Security questions** is coming soon. If you use security questions, and don't want to disable them, make sure to keep them enabled in the legacy SSPR policy until the new control is available. You *can* finish migration as described in the next section with security questions enabled.
 
 ## Finish the migration 
 

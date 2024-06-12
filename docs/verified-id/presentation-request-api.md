@@ -5,9 +5,9 @@ description: Learn how to start a presentation request in Verifiable Credentials
 documentationCenter: ''
 author: barclayn
 manager: amycolannino
-ms.service: decentralized-identity
+ms.service: entra-verified-id
 ms.topic: reference
-ms.subservice: verifiable-credentials
+
 ms.date: 07/28/2022
 ms.author: barclayn
 
@@ -52,7 +52,7 @@ Authorization: Bearer  <token>
     "includeQRCode": true,
     "callback": {
       "url": "https://contoso.com/api/verifier/presentationCallback",
-      "state": "11111111-2222-2222-2222-333333333333",
+      "state": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
       "headers": {
         "api-key": "an-api-key-can-go-here"
       }
@@ -129,7 +129,7 @@ The `RequestRegistration` type provides information registration for the issuer.
 
 The following screenshot shows the `clientName` property and the display name of the `authority` (the verifier) in the presentation request.
 
-![Screenshot that shows how to approve the presentation request.](media/presentation-request-api/approve-presentation-request.jpg)
+:::image type="content" source="media/presentation-request-api/approve-presentation-request.jpg" alt-text="Screenshot that shows how to approve the presentation request.":::
 
 ### Callback type
 
@@ -161,6 +161,7 @@ The `Configuration.Validation` provides information about how the presented cred
 |---------|---------|---------|
 | `allowRevoked` |  Boolean | Optional. Determines if a revoked credential should be accepted. Default is `false` (it shouldn't be accepted). |
 | `validateLinkedDomain` |  Boolean | Optional. Determines if the linked domain should be validated. Default is `false`. Setting this flag to `false` means you as a Relying Party application accept credentials from an unverified linked domain. Setting this flag to `true` means the linked domain will be validated and only verified domains will be accepted. |
+| `faceCheck` |  [faceCheck](#facecheck-type) | Optional. Allows requesting a liveness check during presentation. |
 
 ### Constraints type
 
@@ -168,10 +169,19 @@ The `constraints` type contains a collection of claims constraints that must be 
 
 |Property |Type |Description |
 |---------|---------|---------|
-| `claimName` |  string | Optional. Mandatory. Name of the claim for the constraint. |
+| `claimName` |  string | Mandatory. Name of the claim for the constraint. This is the claim name in the verifiable credential. See [outputClaim](rules-and-display-definitions-model.md#claimmapping-type) in claimMapping type. |
 | `values` |  string collection | Set of values that should match the claim value. If you specify multiple values, like ["red", "green", "blue"] it is a match if the claim value in the credential has any of the values in the collection.|
 | `contains` | string |	The constraint evaluates to true if the claim value contains the specified value.|
 | `startsWith` | string |	The constraint evaluates to true if the claim value starts with the specified value.|
+
+### faceCheck type
+
+The faceCheck type contains information for performing liveness check during presentation of a credential. The credential requested must contain a photo of the holder in the claim named by the sourcePhotoClaimName. The presentation will succeed if the liveness check reaches a confidence level equal or greater to what is specified in the property matchConfidenceThreshold. If the threshold is not met, the entire presentation will fail.
+
+|Property |Type |Description |
+|---------|---------|---------|
+| `sourcePhotoClaimName` |  string | Mandatory. The name of the claim in the credential that contains the photo. See [outputClaim](rules-and-display-definitions-model.md#claimmapping-type) in claimMapping type. |
+| `matchConfidenceThreshold` |  integer | Optional. The confidential threshold for a successful check between the photo and the liveness data. Must be an integer between 50 and 100. The default is 70. |
 
 ## Successful response
 
@@ -180,7 +190,7 @@ If successful, this method returns a response code (*HTTP 201 Created*), and a c
 ```json
 {
     "requestId": "e4ef27ca-eb8c-4b63-823b-3b95140eac11",
-    "url": "openid://vc/?request_uri=https://verifiedid.did.msidentity.com/v1.0/12345678-0000-0000-0000-000000000000/verifiableCredentials/request/e4ef27ca-eb8c-4b63-823b-3b95140eac11",
+    "url": "openid-vc://?request_uri=https://verifiedid.did.msidentity.com/v1.0/00001111-aaaa-2222-bbbb-3333cccc4444/verifiableCredentials/presentationRequests/e4ef27ca-eb8c-4b63-823b-3b95140eac11",
     "expiry": 1633017751,
     "qrCode": "data:image/png;base64,iVBORw0KGgoA<SNIP>"
 }

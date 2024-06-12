@@ -1,20 +1,17 @@
 ---
 title: Plan a Privileged Identity Management deployment
 description: Learn how to deploy Privileged Identity Management (PIM) in your Microsoft Entra organization.
-services: active-directory
-documentationcenter: ''
+
 author: barclayn
 manager: amycolannino
-editor: ''
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: pim
+ms.service: entra-id-governance
+ms.subservice: privileged-identity-management
 ms.topic: conceptual
 ms.date: 10/12/2023
 ms.author: barclayn
 ms.reviewer: shaunliu
 ms.custom: pim
-ms.collection: M365-identity-device-management
+
 ---
 
 # Plan a Privileged Identity Management deployment
@@ -91,7 +88,9 @@ You can also set a start and end time for each type of assignment. This addition
 
 In case the role expires, you can **extend** or **renew** these assignments. 
 
-**We recommend** you keep zero permanently active assignments for roles other than the recommended [two break-glass emergency access accounts](~/identity/role-based-access-control/security-emergency-access.md), which should have the permanent Global Administrator role. 
+**We recommend** you keep zero permanently active assignments for roles other than your [emergency access accounts](~/identity/role-based-access-control/security-emergency-access.md).
+
+[!INCLUDE [emergency-access-accounts](../../includes/definitions/emergency-access-accounts.md)]
 
 ## Plan the project
 
@@ -162,7 +161,7 @@ First, ensure that all Global and Security admin roles are managed using PIM bec
 
 <a name='configure-pim-settings-for-azure-ad-roles'></a>
 
-You can use the Privileged label to identify roles with high privileges that you can manage with PIM. Privileged label is present on [**Roles and Administrator**](~/identity/role-based-access-control/privileged-roles-permissions.md?tabs=admin-center) in Microsoft Entra ID admin center. See the article, [Microsoft Entra built-in roles](~/identity/role-based-access-control/permissions-reference.md) to learn more.
+You can use the Privileged label to identify roles with high privileges that you can manage with PIM. Privileged label is present on [**Roles and Administrator**](~/identity/role-based-access-control/privileged-roles-permissions.md?tabs=admin-center) in Microsoft Entra admin center. See the article, [Microsoft Entra built-in roles](~/identity/role-based-access-control/permissions-reference.md) to learn more.
 
 ### Configure PIM settings for Microsoft Entra roles
 
@@ -187,7 +186,7 @@ Follow the instructions in the links below:
 
 1. [Give eligible assignments](pim-how-to-add-role-to-user.md).
 
-1. [Allow eligible users to activate their Microsoft Entra role just-in-time](pim-how-to-activate-role.md)
+1. [Allow eligible users to activate their Microsoft Entra role just-in-time](pim-how-to-activate-role.yml)
 
 When role nears its expiration, use [PIM to extend or renew the roles](pim-resource-roles-renew-extend.md). Both user-initiated actions require an approval from a Global administrator or Privileged role administrator.
 
@@ -257,7 +256,7 @@ Follow the instructions in the links below:
 
 1.[Give eligible assignments](pim-resource-roles-assign-roles.md)
 
-2.[Allow eligible users to activate their Azure roles just-in-time](pim-resource-roles-activate-your-roles.md)
+2.[Allow eligible users to activate their Azure roles just-in-time](pim-resource-roles-activate-your-roles.yml)
 
 When privileged role assignment nears its expiration, [use PIM to extend or renew the roles](pim-resource-roles-renew-extend.md). Both user-initiated actions require an approval from the resource owner or User Access administrator. 
 
@@ -308,7 +307,7 @@ You can [assign eligibility to members or owners of the PIM for Groups.](groups-
 >[!NOTE] 
 >You can assign the group to one or more Microsoft Entra ID and Azure resource roles in the same way as you assign roles to users. A maximum of 500 role-assignable groups can be created in a single Microsoft Entra organization (tenant).
 
-![Diagram of assign eligibility for PIM for Groups.](media/pim-deployment-plan/pim-for-groups.png)
+:::image type="content" source="media/pim-deployment-plan/pim-for-groups.png" alt-text="Diagram of assign eligibility for PIM for Groups.":::
 
 
 When group assignment nears its expiration, use [PIM to extend or renew the group assignment](groups-renew-extend.md). This operation requires group owner approval.

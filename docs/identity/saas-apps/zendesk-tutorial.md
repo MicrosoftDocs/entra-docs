@@ -5,12 +5,14 @@ description: Learn how to configure single sign-on between Microsoft Entra ID an
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: celested
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 03/29/2023
+ms.date: 05/17/2024
 ms.author: jeedes
+
+# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Zendesk so that I can control who has access to Zendesk, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
 # Tutorial: Microsoft Entra SSO integration with Zendesk
@@ -74,14 +76,15 @@ Follow these steps to enable Microsoft Entra SSO.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
 
-   ![Edit Basic SAML Configuration](common/edit-urls.png)
+   ![Screenshot shows to Edit Basic SAML Configuration.](common/edit-urls.png)
 
 1. On the **Basic SAML Configuration** section, perform the following steps:
 
 	a. In the **Sign on URL** text box, type a URL using the following pattern:
     `https://<subdomain>.zendesk.com`
 
-    b. In the **Identifier (Entity ID)** text box, type a URL using the following pattern: `https://<subdomain>.zendesk.com`
+    b. In the **Identifier (Entity ID)** text box, type a URL using the following pattern:
+    `https://<subdomain>.zendesk.com`
 
     c. In the **Reply URL** text box, type a URL using the following pattern: `https://<subdomain>.zendesk.com/access/saml`
 
@@ -97,15 +100,15 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. In the **SAML Signing Certificate** section, click **Edit** button to open **SAML Signing Certificate** dialog.
 
-	![Edit SAML Signing Certificate](common/edit-certificate.png)
+	![Screenshot shows to edit SAML Signing Certificate.](common/edit-certificate.png)
 
 1. In the **SAML Signing Certificate** section, copy the **Thumbprint Value** and save it on your computer.
 
-    ![Copy Thumbprint value](common/copy-thumbprint.png)
+    ![Screenshot shows to copy Thumbprint value.](common/copy-thumbprint.png)
 
 1. On the **Set up Zendesk** section, copy the appropriate URL(s) based on your requirement.
 
-	![Copy configuration URLs](common/copy-configuration-urls.png)
+	![Screenshot shows to copy configuration URLs.](common/copy-configuration-urls.png)
 
 <a name='create-an-azure-ad-test-user'></a>
 
@@ -148,15 +151,15 @@ You can set up one SAML configuration for team members and a second SAML configu
 
 1. Perform the following steps in the **Single sign-on** page.
 
-	![Single sign-on](./media/zendesk-tutorial/zendesk-saml-configuration-settings.png "Single sign-on")
+	![Screenshot shows Single sign-on.](./media/zendesk-tutorial/zendesk-saml-configuration-settings.png "Single sign-on")
 
     a. In **Configuration name**, enter a name for your configuration. Up to two SAML and two JWT configurations are possible.
 
-    b. In **SAML SSO URL** textbox, paste the value of **Login URL**..
+    b. In **SAML SSO URL** textbox, paste the value of **Login URL**.
 
-    c. In **Certificate fingerprint** textbox, paste the **Thumbprint** value of certificate..
+    c. In **Certificate fingerprint** textbox, paste the **Thumbprint** value of certificate.
 
-    d. In **Remote logout URL** textbox, paste the value of **Logout URL**..
+    d. In **Remote logout URL** textbox, paste the value of **Logout URL**.
 
     e. Click **Save**.
 

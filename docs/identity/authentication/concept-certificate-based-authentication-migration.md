@@ -2,8 +2,7 @@
 title:  Migrate from federation to Microsoft Entra CBA
 description: Learn how to migrate from Federated server to Microsoft Entra ID
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 09/13/2023
@@ -13,8 +12,6 @@ ms.author: justinha
 author: justinha
 manager: amycolannino
 ms.reviewer: vimrang
-
-ms.collection: M365-identity-device-management
 ms.custom: has-adal-ref
 ---
 
@@ -24,9 +21,9 @@ This article explains how to migrate from running federated servers such as Acti
 
 ## Staged Rollout 
 
-A tenant admin could cut the federated domain fully over to Entra ID CBA without pilot testing by enabling the CBA auth method in Entra ID and converting the entire domain to managed authentication. However if customer wants to test a small batch of users authenticate against Entra ID CBA before the full domain cutover to managed, they can make use of staged rollout feature.
+A tenant admin could cut the federated domain fully over to Microsoft Entra CBA without pilot testing by enabling the CBA auth method in Microsoft Entra ID and converting the entire domain to managed authentication. However if customer wants to test a small batch of users authenticate against Microsoft Entra CBA before the full domain cutover to managed, they can make use of staged rollout feature.
 
-[Staged Rollout](~/identity/hybrid/connect/how-to-connect-staged-rollout.md) for Certificate-based Authentication (CBA) helps customers transition from performing CBA at a federated IdP to Microsoft Entra ID by selectively moving small set of users to use CBA at Entra ID (no longer being redirected to the federated IdP) with selected groups of users before then converting the domain configuration in Entra ID from federated to managed. Staged rollout is not designed for the domain to remain federated for long periods of time or for large amounts of users.
+[Staged Rollout](~/identity/hybrid/connect/how-to-connect-staged-rollout.md) for Certificate-based Authentication (CBA) helps customers transition from performing CBA at a federated IdP to Microsoft Entra ID by selectively moving small set of users to use CBA at Microsoft Entra ID (no longer being redirected to the federated IdP) with selected groups of users before then converting the domain configuration in Microsoft Entra ID from federated to managed. Staged rollout is not designed for the domain to remain federated for long periods of time or for large amounts of users.
 
 Watch this quick video demonstrating the migration from ADFS certificate-based authentication to Microsoft Entra CBA
 > [!VIDEO https://www.youtube.com/embed/jsKQxo-xGgA]

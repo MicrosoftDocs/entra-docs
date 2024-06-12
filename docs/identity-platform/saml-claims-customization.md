@@ -5,12 +5,12 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: curation-claims
-ms.date: 05/01/2023
+ms.date: 05/30/2024
 ms.reviewer: rahulnagraj, alamaral, jeedes
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: how-to
-#Customer intent: As an application administrator, I want to customize the SAML token claims, so that I can control the information that is sent to applications during SSO authentication using the Microsoft identity platform.
+#Customer intent: As an Application Administrator, I want to customize the SAML token claims, so that I can control the information that is sent to applications during SSO authentication using the Microsoft identity platform.
 ---
 
 # Customize SAML token claims
@@ -33,7 +33,7 @@ You might need to edit the claims issued in the SAML token for the following rea
 * The application requires the `NameIdentifier` or `nameID` claim to be something other than the username (or user principal name).
 * The application has been written to require a different set of claim URIs or claim values.
 
-## Edit nameID
+## Edit `nameID`
 
 To edit the name identifier value claim:
 
@@ -262,6 +262,6 @@ The following table lists other advanced options that can be configured for an a
 | Override audience claim | Allows for the overriding of the audience claim sent to the application. The value provided must be a valid absolute URI. This setting is ignored if a custom signing key isn't configured for the application. |
 | Include attribute name format | If selected, Microsoft Entra ID adds an attribute called `NameFormat` that describes the format of the name to restricted, core, and optional claims for the application.  For more information, see, [Claims mapping policy type](reference-claims-mapping-policy-type.md#claim-sets) |
 
-## Next steps
+## Related content
 
 * [Configure single sign-on for applications that aren't in the Microsoft Entra application gallery](./single-sign-on-saml-protocol.md)

@@ -1,20 +1,19 @@
 ---
 title: Use Azure Policy to assign managed identities (preview)
 description: Documentation for the Azure Policy that can be used to assign managed identities to Azure resources.
-services: active-directory
+
 author: barclayn
 manager: amycolannino
 editor: barclayn
-ms.service: active-directory
-ms.subservice: msi
+ms.service: entra-id
+ms.subservice: managed-identities
 ms.topic: how-to
-ms.workload: identity
 ms.date: 05/23/2022
 ms.author: barclayn
-ms.collection: M365-identity-device-management
+
 ---
 
-# [Preview] Use Azure Policy to assign managed identities
+# Use Azure Policy to assign managed identities (preview)
 
 
 [Azure Policy](/azure/governance/policy/overview) helps enforce organizational standards and assess compliance at scale. Through its compliance dashboard, Azure policy provides an aggregated view that helps administrators evaluate the overall state of the environment. You have the ability to drill down to the per-resource, per-policy granularity. It also helps bring your resources to compliance through bulk remediation for existing resources and automatic remediation for new resources. Common use cases for Azure Policy include implementing governance for:
@@ -50,7 +49,7 @@ When executed, the policy takes the following actions:
 2. Once created, put a lock on the user-assigned managed identity so that it will not be accidentally deleted. 
 3. Assign the built-in user-assigned managed identity to Virtual Machines from the subscription and region based on the VMs that are in scope of the policy. 
 > [!NOTE]
-> If the Virtual Machine has exactly 1 user-assigned managed identity already assigned, then the policy skips this VM to assign the built-in identity. This is to make sure assignment of the policy does not break applications that take a dependency on [the default behavior of the token endpoint on IMDS.](managed-identities-faq.md#what-identity-will-imds-default-to-if-dont-specify-the-identity-in-the-request)
+> If the Virtual Machine has exactly 1 user-assigned managed identity already assigned, then the policy skips this VM to assign the built-in identity. This is to make sure assignment of the policy does not break applications that take a dependency on [the default behavior of the token endpoint on IMDS.](managed-identities-faq.md#what-identity-will-imds-default-to-if-i-dont-specify-the-identity-in-the-request)
 
 
 There are two scenarios to use the policy: 
@@ -76,7 +75,7 @@ For example, Joe can create a user-assigned managed identity called PolicyAssign
 > /subscriptions/your-subscription-id/resourceGroups/built-in-identity-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/built-in-identity-{location}
 
 For example: 
-> /subscriptions/aaaabbbb-aaaa-bbbb-1111-111122223333/resourceGroups/built-in-identity-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/built-in-identity-eastus
+> /subscriptions/aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e/resourceGroups/built-in-identity-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/built-in-identity-eastus
 
 ### Required authorization 
 

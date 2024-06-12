@@ -1,16 +1,15 @@
 ---
 title: Uninstall Microsoft Entra Connect
 description: This document describes how to uninstall Microsoft Entra Connect.
-services: active-directory
+
 author: billmath
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id
 ms.topic: conceptual
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
-ms.collection: M365-identity-device-management
+
 ---
 
 # Uninstall Microsoft Entra Connect

@@ -3,9 +3,8 @@ title: Limitations of B2B collaboration
 description: Current limitations for Microsoft Entra B2B collaboration
 
  
-ms.service: active-directory
-ms.subservice: B2B
-ms.topic: conceptual
+ms.service: entra-external-id
+ms.topic: concept-article
 ms.date: 01/23/2024
 
 ms.author: mimart

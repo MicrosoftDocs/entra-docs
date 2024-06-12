@@ -2,20 +2,21 @@
 title: Add API connectors to self-service sign-up flows
 description: Configure a web API to be used in a user flow.
  
-ms.service: active-directory
-ms.subservice: B2B
+ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 01/23/2024
+ms.date: 02/05/2024
 
 ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.custom: "it-pro"
 ms.collection: M365-identity-device-management
-#customer intent: As a user administrator in Microsoft Entra, I want to add an API connector to a user flow after the authentication step or before creating the user, so that I can integrate with web APIs, customize the sign-up experience, and integrate with external systems.
+#customer intent: As a User Administrator in Microsoft Entra, I want to add an API connector to a user flow after the authentication step or before creating the user, so that I can integrate with web APIs, customize the sign-up experience, and integrate with external systems.
 ---
 
 # Add an API connector to a user flow
+
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
 
 To use an [API connector](api-connectors-overview.md), you first create the API connector and then enable it in a user flow.
 
@@ -32,7 +33,7 @@ To use an [API connector](api-connectors-overview.md), you first create the API 
 1. Browse to **Identity** > **External Identities** > **Overview**.
 1. Select **All API connectors**, and then select **New API connector**.
 
-    :::image type="content" source="media/self-service-sign-up-add-api-connector/api-connector-new.png" alt-text="Screenshot of adding a new API connector to External Identities.":::
+    :::image type="content" source="media/self-service-sign-up-add-api-connector/api-connector-new.png" alt-text="Screenshot of adding a new API connector to External ID.":::
 
 1. Provide a display name for the call. For example, **Check approval status**.
 1. Provide the **Endpoint URL** for the API call.

@@ -5,8 +5,7 @@ titleSuffix: Microsoft Entra External ID
 description: Shows how a Microsoft Entra B2B guest user can leave an organization by using the Access Panel.
 
  
-ms.service: active-directory
-ms.subservice: B2B
+ms.service: entra-external-id
 ms.topic: how-to
 ms.date: 07/27/2023
 
@@ -22,6 +21,8 @@ adobe-target: true
 
 # Leave an organization as an external user
 
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
+
 As a Microsoft Entra B2B collaboration or B2B direct connect user, you can leave an organization at any time if you no longer need to use apps from that organization, or maintain any association.
 
 ## Before you begin
@@ -34,10 +35,16 @@ You can usually leave an organization on your own without having to contact an a
 
    - If you're using a work or school account, go to https://myaccount.microsoft.com and sign in.
    - If you're using a personal account or email one-time passcode, you'll need to use a My Account URL that includes your tenant name or tenant ID.
+   
    For example:
-    https://myaccount.microsoft.com?tenantId=wingtiptoys.onmicrosoft.com
-    or 
-    https://myaccount.microsoft.com?tenantId=ab123456-cd12-ef12-gh12-ijk123456789. You might need to open this URL in a private browser session.
+
+   `https://myaccount.microsoft.com?tenantId=contoso.onmicrosoft.com`
+
+   -or-
+
+   `https://myaccount.microsoft.com?tenantId=aaaabbbb-0000-cccc-1111-dddd2222eeee`
+
+   You might need to open this URL in a private browser session.
 
 1. Select **Organizations** from the left navigation pane or select the **Manage organizations** link from the **Organizations** block.
 
@@ -82,7 +89,7 @@ In these cases, you can select **Leave**, but then you'll see a message saying y
 Administrators can use the **External user leave settings** to control whether external users can remove themselves from their organization. If you disallow the ability for external users to remove themselves from your organization, external users will need to contact your admin, or privacy contact to be removed.
 
 > [!IMPORTANT]
-> You can configure **External user leave settings** only if you have [added your privacy information](~/fundamentals/properties-area.md) to your Microsoft Entra tenant. Otherwise, this setting will be unavailable. We recommend adding your privacy information to allow external users to review your policies and email your privacy contact when necessary.
+> You can configure **External user leave settings** only if you have [added your privacy information](~/fundamentals/properties-area.yml) to your Microsoft Entra tenant. Otherwise, this setting will be unavailable. We recommend adding your privacy information to allow external users to review your policies and email your privacy contact when necessary.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [External Identity Provider administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
 

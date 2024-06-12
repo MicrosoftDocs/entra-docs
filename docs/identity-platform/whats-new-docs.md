@@ -5,10 +5,10 @@ author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
 ms.custom: has-adal-ref
-ms.date: 12/05/2023
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: reference
+ms.date: 06/03/2024
+ms.service: identity-platform
+
+ms.topic: whats-new
 #Customer intent: As a developer or IT admin, I want to stay updated on the latest changes and additions to the Microsoft identity platform documentation, so that I can ensure that my applications and systems are using the most current and relevant information.
 ---
 
@@ -16,29 +16,53 @@ ms.topic: reference
 
 Welcome to what's new in the Microsoft identity platform documentation. This article lists new articles that were added or had significant updates in the last three months.
 
-## December 2023
-
-No new or updated articles.
-
-## November 2023
+## May 2024
 
 ### New articles
 
-- [Update an app's requested permissions in Microsoft Entra ID](howto-update-permissions.md)
+- [Call an ASP.NET Core web API with Insomnia](howto-call-a-web-api-with-rest-client.md) - Test a protected Web API using Insomnia
 
 ### Updated articles
 
-- [Public client and confidential client applications](msal-client-applications.md) - Update to enhance the article's technical accuracy
-- [Convert single-tenant app to multitenant on Microsoft Entra ID](howto-convert-app-to-be-multi-tenant.md) - Update to enhance the article's technical accuracy
-- [Overview of the Microsoft Authentication Library (MSAL)](msal-overview.md) - Update to enhance the article's technical accuracy
-- [Scopes and permissions in the Microsoft identity platform](scopes-oidc.md) - Update to enhance the article's technical accuracy
-- [Application types for the Microsoft identity platform](v2-app-types.md) - Update to enhance the article's technical accuracy
-- [Single-page application: Sign-in and Sign-out](scenario-spa-sign-in.md) - Update to enhance the article's technical accuracy
-- [Configure token lifetime policies (preview)](configure-token-lifetimes.md) - Update on how to add policies to service principals
-- [How to handle third-party cookie blocking in browsers](reference-third-party-cookies-spas.md) - Update to enhance the article's technical accuracy
+- [Create a REST API for a token issuance start event in Azure Functions](custom-extension-tokenissuancestart-setup.md) - Rework token issuance setup
+- [Get a complete list of apps using ADAL in your tenant](howto-get-list-of-all-auth-library-apps.md) - Sign-in workbook and recommendations updates
+- [Microsoft identity platform and OAuth 2.0 implicit grant flow](v2-oauth2-implicit-grant-flow.md) - Redirect URI page updated 
+- [OpenID Connect on the Microsoft identity platform](v2-protocols-oidc.md) - Redirect URI page updated
+- [Register a Microsoft Entra app and create a service principal](howto-create-service-principal-portal.md) - Added clarity to the content
+- [Redirect URI (reply URL) outline and restrictions](reply-url.md) - Redirect URI page updated
+- [Single-page application: sign-in and sign-out](scenario-spa-sign-in.md) - Added clarity to the content
+- [Troubleshoot your custom claims provider API](custom-extension-troubleshoot.md) - Rework token issuance setup
+- [What's new for authentication?](reference-breaking-changes.md) - Added clarity to the content
 
-## October 2023
+## April 2024
+
+### New articles
+
+- [Quickstart: .NET console app that accesses a protected web API](quickstart-daemon-dotnet-acquire-token.md) - Quickstart daemon console update
+- [Quickstart: Sign in users and call Microsoft Graph from a Python Flask web app](quickstart-web-app-python-flask.md) - Build MSAL Python content - Sign in with Microsoft to a Python web app
+- [Tutorial: Register a Python web app with the Microsoft identity platform](tutorial-web-app-python-register-app.md) - Build MSAL Python content - Register an application
+- [Prepare a Python web app for authentication](tutorial-web-app-python-prepare-app.md) - Build MSAL Python content - Prepare Python web app
+- [Tutorial: Add sign in to a Python Flask web app](tutorial-web-app-python-sign-in-users.md) - Build MSAL Python content - Add sign in to the web app
+- [Tutorial: Call a protected API and display the results](tutorial-web-app-python-call-api.md) - Build MSAL Python content - Call a protected web API
 
 ### Updated articles
 
-- [Tutorial: Access Microsoft Graph from a secured app as the user](multi-service-web-app-access-microsoft-graph-as-user.md) - Updating URLs
+- [Acquire tokens to call a web API using a daemon application](scenario-daemon-acquire-token.md) - Quickstart daemon console update
+- [Claims challenges, claims requests and client capabilities](claims-challenge.md) - Remove remaining sensitive GUIDs from identity platform docs
+- [Microsoft Entra authentication and authorization error codes](reference-error-codes.md) - Remove remaining sensitive GUIDs from identity platform docs
+- [Microsoft Enterprise SSO plug-in for Apple devices](apple-sso-plugin.md) - [macOS] Upcoming changes to Enterprise SSO device identity
+
+## March 2024
+
+### New articles
+
+- [Create a REST API with a token issuance start event for Azure Functions (preview)](custom-extension-tokenissuancestart-setup.md) - Custom authentication extensions NuGet libraries
+- [Microsoft account (MSA) Server Side API Reference](reference-msa-server-side-api.md) - API reference for EU regulation
+- [Microsoft Entra ID Windows Account Manager (WAM) API Reference](reference-entra-id-wam-api.md) - API reference for EU regulation
+
+### Updated articles
+
+- [Configure a custom claim provider for a token issuance event (preview)](custom-extension-tokenissuancestart-configuration.md) - Custom authentication extensions NuGet libraries
+- [Custom claims provider (preview)](custom-claims-provider-overview.md) - Custom authentication extensions NuGet libraries
+- [Troubleshoot your custom claims provider API (preview)](custom-extension-troubleshoot.md) - Custom authentication extensions NuGet libraries
+

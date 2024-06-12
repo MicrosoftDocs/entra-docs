@@ -6,9 +6,9 @@ manager: CelesteDG
 ms.author: cwerner
 ms.date: 12/15/2023
 ms.reviewer: jmprieur
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: conceptual
+ms.service: identity-platform
+
+ms.topic: concept-article
 #Customer intent: As an application developer, I want to learn how to write a protected web API using the Microsoft identity platform for developers.
 ---
 
@@ -52,8 +52,7 @@ In ASP.NET Core, you can use [Microsoft.Identity.Web](/entra/msal/dotnet/microso
 
 #### Verify the scopes on each controller action
 
-You can verify the scopes in the controller action by using the `[RequiredScope]` attribute. This attribute
-has several overrides. One that takes the required scopes directly, and one that takes a key to the configuration.
+You can verify the scopes in the controller action by using the `[RequiredScope]` attribute. This attribute has several overrides. One that takes the required scopes directly, and one that takes a key to the configuration.
 
 ##### Verify the scopes on a controller action with hardcoded scopes
 
@@ -349,8 +348,7 @@ Checking the inverse condition allows only apps that sign in a user to call your
 
 ### Using ACL-based authorization
 
-Alternatively to app-roles based authorization, you can
-protect your web API with an Access Control List (ACL) based authorization pattern to [control tokens without the `roles` claim](v2-oauth2-client-creds-grant-flow.md#controlling-tokens-without-the-roles-claim).
+Alternatively to app-roles based authorization, you can protect your web API with an Access Control List (ACL) based authorization pattern to [control tokens without the `roles` claim](v2-oauth2-client-creds-grant-flow.md#controlling-tokens-without-the-roles-claim).
 
 If you're using `Microsoft.Identity.Web` on ASP.NET Core, you'll need to declare that you are using ACL-based authorization, otherwise Microsoft Identity Web will throw an exception when neither roles nor scopes are in the claims provided:
 
@@ -375,5 +373,6 @@ If you set `AllowWebApiToBeAuthorizedByACL` to `true`, this is **your responsibi
 
 ## Next steps
 
-Move on to the next article in this scenario,
-[Move to production](scenario-protected-web-api-production.md).
+- Learn more by building an ASP.NET Core web app that signs in users in the following multi-part [tutorial series](tutorial-web-app-dotnet-register-app.md)
+
+- Explore Microsoft identity platform [web API samples](sample-v2-code.md#web-api) 

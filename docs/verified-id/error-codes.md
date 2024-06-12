@@ -5,9 +5,9 @@ description: Reference of error codes for Microsoft Entra Verified ID APIs
 documentationCenter: ''
 author: barclayn
 manager: amycolannino
-ms.service: decentralized-identity
+ms.service: entra-verified-id
 ms.topic: reference
-ms.subservice: verifiable-credentials
+
 ms.date: 07/29/2022
 ms.author: barclayn
 

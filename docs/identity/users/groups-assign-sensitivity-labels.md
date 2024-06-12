@@ -1,24 +1,23 @@
 ---
 title: Assign sensitivity labels to groups
 description: Learn how to assign sensitivity labels to groups. See troubleshooting information and view more resources.
-services: active-directory
-documentationcenter: ''
+
 author: barclayn
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: enterprise-users
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: users
 ms.topic: how-to
 ms.date: 11/08/2023
 ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
-ms.collection: M365-identity-device-management
 ---
 
 # Assign sensitivity labels to Microsoft 365 groups in Microsoft Entra ID
 
-Microsoft Entra ID supports applying sensitivity labels published by the [Microsoft Purview compliance portal](https://compliance.microsoft.com) to Microsoft 365 groups. Sensitivity labels apply to groups across services like Outlook, Microsoft Teams, and SharePoint. For more information about Microsoft 365 apps support, see [Microsoft 365 support for sensitivity labels](/purview/sensitivity-labels-teams-groups-sites#support-for-the-sensitivity-labels).
+Microsoft Entra ID supports applying [sensitivity labels](/purview/sensitivity-labels) to Microsoft 365 groups when those labels are published in the [Microsoft Purview portal](/purview/purview-portal) or the [Microsoft Purview compliance portal](/purview/purview-compliance-portal) and the labels are configured for groups and sites. 
+
+Sensitivity labels can be applied to groups across apps and services such as Outlook, Microsoft Teams, and SharePoint. For more information, see [Support for sensitivity labels](/purview/sensitivity-labels-teams-groups-sites#support-for-the-sensitivity-labels) from the Purview documentation.
 
 > [!IMPORTANT]
 > To configure this feature, there must be at least one active Microsoft Entra ID P1 license in your Microsoft Entra organization.
@@ -83,7 +82,7 @@ You also need to synchronize your sensitivity labels to Microsoft Entra ID. For 
 
 ## Assign a label to a new group in the Microsoft Entra admin center
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
 1. Select **Microsoft Entra ID**.
 1. Select **Groups** > **All groups** > **New group**.
 1. On the **New Group** page, select **Microsoft 365**. Then fill out the required information for the new group and select a sensitivity label from the list.
@@ -96,7 +95,7 @@ Your group is created and the site and group settings associated with the select
 
 ## Assign a label to an existing group in the Microsoft Entra admin center
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
 1. Select **Microsoft Entra ID**.
 1. Select **Groups**.
 1. From the **All groups** page, select the group that you want to label.
@@ -108,7 +107,7 @@ Your group is created and the site and group settings associated with the select
 
 ## Remove a label from an existing group in the Microsoft Entra admin center
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
 1. Select **Microsoft Entra ID**.
 1. Select **Groups** > **All groups**.
 1. On the **All groups** page, select the group that you want to remove the label from.
@@ -122,7 +121,7 @@ Your group is created and the site and group settings associated with the select
 
 After you enable this feature, the "classic" classifications for groups appear only on existing groups and sites. You should use them for new groups only if you create groups in apps that don't support sensitivity labels. Your admin can convert them to sensitivity labels later, if needed. Classic classifications are the old classifications you set up by defining values for the `ClassificationList` setting in Azure AD PowerShell. When this feature is enabled, those classifications aren't applied to groups.
 
-[!INCLUDE [Azure AD PowerShell migration](../../includes/aad-powershell-migration-include.md)]
+[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
 
 ## Troubleshooting issues
 
@@ -134,12 +133,12 @@ The sensitivity label option appears for groups only when all the following cond
 
 1. The organization has an active Microsoft Entra ID P1 license.
 1. The feature is enabled and `EnableMIPLabels` is set to **True** in the Microsoft Graph PowerShell module.
-1. The sensitivity labels are published in the Microsoft Purview compliance portal for this Microsoft Entra organization.
+1. The sensitivity labels are published in the Microsoft Purview portal or the Microsoft Purview compliance portal for this Microsoft Entra organization.
 1. Labels are synchronized to Microsoft Entra ID with the `Execute-AzureAdLabelSync` cmdlet in the Security & Compliance PowerShell module. It can take up to 24 hours after synchronization for the label to be available to Microsoft Entra ID.
 1. The [sensitivity label scope](/purview/sensitivity-labels?preserve-view=true&view=o365-worldwide#label-scopes) must be configured for Groups & Sites.
 1. The group is a Microsoft 365 group.
 1. The current signed-in user:
-    1. Has sufficient privileges to assign sensitivity labels. The user must be a Global Administrator, Group Administrator, or the group owner.
+    1. Has sufficient privileges to assign sensitivity labels. The user must be the group owner or at least a Groups Administrator.
     1. Must be within the scope of the [sensitivity label publishing policy](/purview/sensitivity-labels?preserve-view=true&view=o365-worldwide#what-label-policies-can-do).
 
 Make sure all the preceding conditions are met to assign labels to a group.
@@ -148,14 +147,14 @@ Make sure all the preceding conditions are met to assign labels to a group.
 
 If the label you're looking for isn't in the list:
 
-- The label might not be published in the Microsoft Purview compliance portal. Also, the label might no longer be published. Check with your administrator for more information.
+- The label might not be published in the Microsoft Purview portal or the Microsoft Purview compliance portal. Also, the label might no longer be published. Check with your administrator for more information.
 - The label might be published, but it isn't available to the user who is signed in. Check with your administrator for more information on how to get access to the label.
 
 ### Change the label on a group
 
 Labels can be swapped at any time by using the same steps as assigning a label to an existing group:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
 1. Select **Microsoft Entra ID**.
 1. Select **Groups** > **All groups**, and then select the group that you want to label.
 1. On the selected group's page, select **Properties** and select a new sensitivity label from the list.
@@ -163,13 +162,13 @@ Labels can be swapped at any time by using the same steps as assigning a label t
 
 ### Group setting changes to published labels aren't updated on the groups
 
-When you make changes to group settings for a published label in the [Microsoft Purview compliance portal](https://compliance.microsoft.com), those policy changes aren't automatically applied on the labeled groups. After the sensitivity label is published and applied to groups, Microsoft recommends that you don't change the group settings for the label in the Microsoft Purview compliance portal.
+When you make changes to group settings for a published label in the [Microsoft Purview portal](https://purview.microsoft.com/) or the [Microsoft Purview compliance portal](https://compliance.microsoft.com), those policy changes aren't automatically applied on the labeled groups. After the sensitivity label is published and applied to groups, Microsoft recommends that you don't change the group settings for the label in the portal.
 
 If you must make a change, use a [PowerShell script](https://github.com/microsoftgraph/powershell-aad-samples/blob/master/ReassignSensitivityLabelToO365Groups.ps1) to manually apply updates to the affected groups. This method makes sure that all existing groups enforce the new setting.
 
 ## Next steps
 
-- [Use sensitivity labels with Microsoft Teams, Microsoft 365 groups, and SharePoint sites](/purview/sensitivity-labels-teams-groups-sites)
+- [Use sensitivity labels to protect content in Microsoft Teams, Microsoft 365 groups, and SharePoint sites](/purview/sensitivity-labels-teams-groups-sites)
 - [Update groups after label policy change manually with Azure AD PowerShell script](https://github.com/microsoftgraph/powershell-aad-samples/blob/master/ReassignSensitivityLabelToO365Groups.ps1)
-- [Edit your group settings](~/fundamentals/how-to-manage-groups.md)
+- [Edit your group settings](~/fundamentals/how-to-manage-groups.yml)
 - [Manage groups using PowerShell commands](~/identity/users/groups-settings-v2-cmdlets.md)

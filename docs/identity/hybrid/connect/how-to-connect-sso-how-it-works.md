@@ -1,20 +1,18 @@
 ---
 title: 'Microsoft Entra Connect: Seamless Single Sign-On - How it works'
 description: This article describes how the Microsoft Entra seamless single sign-on feature works.
-services: active-directory
+
 keywords: what is Azure AD Connect, install Active Directory, required components for Azure AD, SSO, Single Sign-on
-documentationcenter: ''
 author: billmath
 manager: amycolannino
 ms.assetid: 9f994aca-6088-40f5-b2cc-c753a4f41da7
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
-ms.collection: M365-identity-device-management
+
 ---
 
 # Microsoft Entra seamless single sign-on: Technical deep dive
@@ -68,7 +66,7 @@ The following diagram illustrates all the components and the steps involved.
 
 ![Seamless Single Sign On - Web app flow](./media/how-to-connect-sso-how-it-works/sso2.png)
 
-Seamless SSO is opportunistic, which means if it fails, the sign-in experience falls back to its regular behavior - i.e, the user needs to enter their password to sign in.
+Seamless SSO is opportunistic, which means if it fails, the sign-in experience falls back to its regular behavior - that is, the user needs to enter their password to sign in.
 
 ### How does sign-in on a native client with Seamless SSO work?
 

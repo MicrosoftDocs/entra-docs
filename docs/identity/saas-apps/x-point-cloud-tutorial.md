@@ -5,13 +5,15 @@ description: Learn how to configure single sign-on between Microsoft Entra ID an
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: CelesteDG
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
+
+# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and X-point Cloud so that I can control who has access to X-point Cloud, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
 # Tutorial: Azure A SSO integration with X-point Cloud
@@ -134,8 +136,7 @@ To configure single sign-on on the X-point Cloud side, you can use the downloade
 
 In this section, you can use the **email addresses** of users registered with Microsoft Entra ID in X-point Cloud.
 Create a user who has removed @ and beyond.
-For example "username@companydomain.extension", add "username" to X-point Cloud,
-Before you can use single sign-on, you must create and enable users.
+For example "username@companydomain.extension", add "username" to X-point Cloud, Before you can use single sign-on, you must create and enable users.
 
 
 ## Test SSO 

@@ -3,9 +3,9 @@ title: Microsoft Entra data retention
 description: Learn about the data retention policies for the Microsoft Entra audit, sign-in, and provisioning logs. 
 author: shlipsey3
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: reference
-ms.subservice: report-monitor
+ms.subservice: monitoring-health
 ms.date: 12/01/2023
 ms.author: sarahlipsey
 ms.reviewer: dhanyahk
@@ -27,7 +27,7 @@ In this article, you learn about the data retention policies for the different a
 If you already have activities data with your free license, then you can see it immediately on upgrade. If you don’t have any data, then it will take up to three days for the data to show up in the reports after you upgrade to a premium license.
 
 - For security signals, the collection process starts when you opt in to use the **Identity Protection Center**.
-- For Microsoft Graph activity logs, the collection process starts when the [log category is enabled in diagnostic settings](howto-integrate-activity-logs-with-azure-monitor-logs.md#send-logs-to-azure-monitor).
+- For Microsoft Graph activity logs, the collection process starts when the [log category is enabled in diagnostic settings](howto-integrate-activity-logs-with-azure-monitor-logs.yml#send-logs-to-azure-monitor).
 
 <a name='how-long-does-azure-ad-store-the-data'></a>
 

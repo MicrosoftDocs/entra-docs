@@ -4,45 +4,33 @@ title: Microsoft Entra application proxy documentation
 summary: Microsoft Entra application proxy provides secure remote access and cloud scale security to your private applications.
 
 metadata:
-  title: Application Proxy documentation
+  title: Application proxy documentation
   description: Microsoft Entra application proxy provides secure remote access and cloud scale security to your private applications.
-  ms.service: active-directory
+  ms.service: entra-id
   ms.subservice: app-proxy
-  ms.workload: identity
   ms.topic: landing-page
-  ms.date: 08/29/2022
+  ms.date: 02/23/2024
   author: kenwith
   ms.author: kenwith
   manager: amycolannino
-
 landingContent:
-  - title: About Application Proxy
+  - title: About application proxy
     linkLists:
       - linkListType: overview
         links:
-          - text: What is Application Proxy?
+          - text: What is application proxy?
             url: overview-what-is-app-proxy.md
   - title: Get started
     linkLists:
       - linkListType: quickstart
         links:
-          - text: View your apps
-            url: ~/identity/enterprise-apps/view-applications-portal.md
-          - text: Add an app
-            url: ~/identity/enterprise-apps/add-application-portal.md
+          - text: Add an on-premises application for remote access through application proxy in Microsoft Entra ID
+            url: application-proxy-add-on-premises-application.md
+          - text: Understand Microsoft Entra private network connectors
+            url: application-proxy-connectors.md
   - title: Understand single sign-on
     linkLists:
       - linkListType: architecture
         links:
-          - text: Single sign-on concepts
-            url: ~/identity/enterprise-apps/what-is-single-sign-on.md
-          - text: Single sign-on options
-            url: ~/identity/enterprise-apps/plan-sso-deployment.md
-  - title: Develop new apps
-    linkLists:
-      - linkListType: learn
-        links:
-          - text: Guidance for developers
-            url: ~/identity/enterprise-apps/v2-howto-app-gallery-listing.md
-          - text: Understand the platform
-            url: ~/identity-platform/v2-overview.md
+          - text: How to configure single sign-on to an application proxy application
+            url: how-to-configure-sso.md

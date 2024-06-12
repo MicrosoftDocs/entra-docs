@@ -2,8 +2,7 @@
 title: Self-service password reset policies
 description: Learn about the different Microsoft Entra self-service password reset policy options
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 11/28/2023
@@ -12,9 +11,7 @@ ms.author: justinha
 author: justinha
 manager: amycolannino
 ms.reviewer: tilarso
-
-ms.collection: M365-identity-device-management
-ms.custom: contperf-fy20q4, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
 # Password policies and account restrictions in Microsoft Entra ID
 
@@ -64,39 +61,48 @@ By default, administrator accounts are enabled for self-service password reset, 
 
 The two-gate policy requires two pieces of authentication data, such as an email address, authenticator app, or a phone number, and it prohibits security questions. Office and mobile voice calls are also prohibited for trial or free versions of Microsoft Entra ID. 
 
+The SSPR administrator policy doesn't depend upon the Authentications method policy. For example, if you disable third party software tokens in the Authentication methods policy, administrator accounts can still register third party software token applications and use them, but only for SSPR. 
+
 A two-gate policy applies in the following circumstances:
 
 * All the following Azure administrator roles are affected:
-  * Application administrator
-  * Application proxy service administrator
-  * Authentication administrator
-  * Billing administrator
-  * Compliance administrator
-  * Device administrators
-  * Directory synchronization accounts
-  * Directory writers
-  * Dynamics 365 administrator
-  * Exchange administrator
-  * Global administrator or company administrator
-  * Helpdesk administrator
-  * Intune administrator
-  * Mailbox Administrator
+  * Application Administrator
+  * Authentication Administrator
+  * Billing Administrator
+  * Compliance Administrator
+  * Cloud Device Administrator
+  * Directory Synchronization Accounts
+  * Directory Writers
+  * Dynamics 365 Administrator
+  * Exchange Administrator
+  * Global Administrator
+  * Helpdesk Administrator
+  * Intune Administrator
   * Microsoft Entra Joined Device Local Administrator
   * Partner Tier1 Support
   * Partner Tier2 Support
-  * Password administrator
-  * Power BI service administrator
-  * Privileged Authentication administrator
-  * Privileged role administrator
-  * Security administrator
-  * Service support administrator
-  * SharePoint administrator
-  * Skype for Business administrator
-  * User administrator
+  * Password Administrator
+  * Power Platform Administrator
+  * Privileged Authentication Administrator
+  * Privileged Role Administrator
+  * Security Administrator
+  * Service Support Administrator
+  * SharePoint Administrator
+  * Skype for Business Administrator
+  * Teams Administrator
+  * Teams Communications Administrator
+  * Teams Devices Administrator
+  * User Administrator
 
-* If 30 days have elapsed in a trial subscription; or
-* A custom domain has been configured for your Microsoft Entra tenant, such as *contoso.com*; or
-* Microsoft Entra Connect is synchronizing identities from your on-premises directory
+* If 30 days elapsed in a trial subscription 
+
+  -Or-
+  
+* A custom domain is configured for your Microsoft Entra tenant, such as *contoso.com*
+
+  -Or-
+
+* Microsoft Entra Connect synchronizes identities from your on-premises directory
 
 You can disable the use of SSPR for administrator accounts using the [Update-MgPolicyAuthorizationPolicy](/powershell/module/microsoft.graph.identity.signins/update-mgpolicyauthorizationpolicy) PowerShell cmdlet. The `-AllowedToUseSspr:$true|$false ` parameter enables/disables SSPR for administrators. Policy changes to enable or disable SSPR for administrator accounts can take up to 60 minutes to take effect. 
 

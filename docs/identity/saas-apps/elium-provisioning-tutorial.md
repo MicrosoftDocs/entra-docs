@@ -2,15 +2,16 @@
 title: 'Tutorial: Configure Elium for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Elium.
 
-author: twimmers
-writer: twimmers
+author: thomasakelo
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: thwimmer
+ms.date: 03/25/2024
+ms.author: thomasakelo
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Elium so that I can streamline the user management process and ensure that users have the appropriate access to Elium.
 ---
 
 # Tutorial: Configure Elium for automatic user provisioning
@@ -18,7 +19,7 @@ ms.author: thwimmer
 This tutorial shows how to configure Elium and Microsoft Entra ID to automatically provision and de-provision users or groups to Elium.
 
 > [!NOTE]
-> This tutorial describes a connector that's built on top of the Microsoft Entra user Provisioning service. For important details about what this service does and how it works, and for frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
+> This tutorial describes a connector that's built on top of the Microsoft Entra user provisioning service. For important details about what this service does and how it works, and for frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 >
 > This connector is currently in preview. For more information about previews, see [Universal License Terms For Online Services](https://www.microsoft.com/licensing/terms/product/ForOnlineServices/all).
 

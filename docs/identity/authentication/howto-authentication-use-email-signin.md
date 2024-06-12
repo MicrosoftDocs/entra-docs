@@ -2,8 +2,7 @@
 title: Sign-in to Microsoft Entra ID with email as an alternate login ID
 description: Learn how to enable users to sign in to Microsoft Entra ID with their email as an alternate login ID
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: how-to
@@ -454,7 +453,7 @@ To learn more about hybrid identity, such as Microsoft Entra application proxy o
 For more information on hybrid identity operations, see [how password hash sync][phs-overview] or [pass-through authentication][pta-overview] synchronization work.
 
 <!-- INTERNAL LINKS -->
-[verify-domain]: ~/fundamentals/add-custom-domain.md
+[verify-domain]: ~/fundamentals/add-custom-domain.yml
 [hybrid-auth-methods]: ~/identity/hybrid/connect/choose-ad-authn.md
 [azure-ad-connect]: ~/identity/hybrid/connect/whatis-azure-ad-connect.md
 [hybrid-overview]: ~/identity/hybrid/connect/cloud-governed-management-for-on-premises.md

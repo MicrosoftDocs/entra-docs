@@ -7,9 +7,9 @@ ms.author: dmwendia
 ms.custom: devx-track-js
 ms.date: 12/19/2023
 ms.reviewer: saeeda, jmprieur
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: conceptual
+ms.service: identity-platform
+
+ms.topic: concept-article
 #Customer intent: As a developer using MSAL.js, I want to configure logging in my application, so that I can troubleshoot and track down issues effectively.
 ---
 # Logging in MSAL.js

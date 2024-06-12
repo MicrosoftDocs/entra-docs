@@ -1,20 +1,17 @@
 ---
-title: Delete a Microsoft Entra tenant 
+title: Delete a Microsoft Entra tenant
 description: Learn how to prepare a Microsoft Entra tenant, including a self-service tenant, for deletion.
-services: active-directory
-documentationcenter: ''
+
 author: barclayn
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: enterprise-users
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: users
 ms.topic: how-to
 ms.date: 01/12/2024
 ms.author: barclayn
 ms.reviewer: addimitu
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 
-ms.collection: M365-identity-device-management
 ---
 # Delete a tenant in Microsoft Entra ID
 
@@ -72,10 +69,6 @@ You can use the Microsoft admin center to put a subscription into the **Deprovis
 
 1. Sign in to the [Microsoft 365 admin center](https://admin.microsoft.com) with an account that is a global administrator in your organization. If you're trying to delete the Contoso organization that has the initial default domain `contoso.onmicrosoft.com`, sign in with a User Principal Name (UPN) such as `admin@contoso.onmicrosoft.com`.
 
-1. Preview the new Microsoft 365 admin center by turning on the **Try the new admin center** toggle.
-
-   :::image type="content" source="./media/directory-delete-howto/preview-toggle.png" alt-text="Screenshot that shows the toggle for previewing the new admin center.":::
-
 1. You need to cancel a subscription before you can delete it. Select **Billing** > **Your products**, and then select **Cancel subscription** for the subscription that you want to cancel. 
 
    :::image type="content" source="./media/directory-delete-howto/cancel-choose-subscription.png" alt-text="Screenshot that shows choosing a subscription to cancel.":::
@@ -100,11 +93,11 @@ You can use the Microsoft admin center to put a subscription into the **Deprovis
    
 ## Delete an Azure subscription
 
-If you have an active or canceled Azure subscription associated with your Microsoft Entra tenant, you can't delete the tenant. After you cancel, billing is stopped immediately. However, Microsoft waits 30 to 90 days before permanently deleting your data in case you need to access it or you change your mind. We don't charge you for keeping the data. 
+If you have an active or canceled Azure subscription associated with your Microsoft Entra tenant, you can't delete the tenant. After you cancel, billing is stopped immediately. After you cancel a subscription, your billing stops immediately. You can delete your subscription directly using the Azure portal seven days after you cancel it, when the Delete subscription option becomes available. Once your subscription is deleted. Microsoft waits 30 to 90 days before permanently deleting your data in case you need to access it or reactivate your subscription. We don't charge you for retaining this data. To learn more, see [Microsoft Trust Center - How we manage your data](https://go.microsoft.com/fwLink/p/?LinkID=822930&clcid=0x409). 
 
-If you have a free trial or pay-as-you-go subscription, you don't have to wait 90 days for the subscription to be automatically deleted. You can delete your subscription three days after you cancel it, when the **Delete subscription** option becomes available. For details, read through [Delete free trial or pay-as-you-go subscriptions](/azure/cost-management-billing/manage/cancel-azure-subscription#delete-subscriptions).
+If you have a free trial or pay-as-you-go subscription. You can delete your subscription three days after you cancel it, when the **Delete subscription** option becomes available. For details, read through [Delete free trial or pay-as-you-go subscriptions](/azure/cost-management-billing/manage/cancel-azure-subscription#delete-subscriptions).
 
-All other subscription types are deleted only through the [subscription cancellation](/azure/cost-management-billing/manage/cancel-azure-subscription#cancel-a-subscription-in-the-azure-portal) process. In other words, you can't delete a subscription directly unless it's a free trial or pay-as-you-go subscription. However, after you cancel a subscription, you can create an [Azure support request](https://go.microsoft.com/fwlink/?linkid=2083458) and ask to have the subscription deleted immediately.
+All other subscription types are deleted only through the [subscription cancellation](/azure/cost-management-billing/manage/cancel-azure-subscription#cancel-a-subscription-in-the-azure-portal) process. In other words, you can't delete a subscription directly unless it's a free trial or pay-as-you-go subscription.
 
 Alternatively, you can move the Azure subscription to another tenant. When you transfer billing ownership of your subscription to an account in another tenant, you can move the subscription to the new account's tenant. Performing a **Switch Directory** action on the subscription wouldn't help, because the billing would still be aligned with the Microsoft Entra tenant that was used to sign up for the subscription. For more information, review [Transfer a subscription to another Microsoft Entra tenant account](/azure/cost-management-billing/manage/billing-subscription-transfer#transfer-a-subscription-to-another-azure-ad-tenant-account).
 

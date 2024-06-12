@@ -1,13 +1,12 @@
 ---
 title: Skip deletion of out of scope users in Microsoft Entra Application Provisioning
 description: Learn how to override the default behavior of deprovisioning out of scope users in Microsoft Entra ID.
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.workload: identity
 ms.date: 09/15/2023
 ms.author: kenwith
 ms.reviewer: arvinh
@@ -36,7 +35,7 @@ Because this configuration is widely used with the *Workday to Active Directory 
 ## Step 2: Sign into Microsoft Graph Explorer
 
 1. Launch [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer)
-1. Click on the "Sign-In with Microsoft" button and sign-in using Microsoft Entra Global Administrator or App Admin credentials.
+1. Click on the "Sign-In with Microsoft" button and sign-in as a user with at least the [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) role.
 
     ![Screenshot of Microsoft Graph Explorer Sign-in.](./media/skip-out-of-scope-deletions/wd_export_02.png)
 

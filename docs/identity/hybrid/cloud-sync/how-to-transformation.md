@@ -4,10 +4,10 @@ description: This article describes how to use transformations to alter the defa
 author: billmath
 ms.author: billmath
 manager: amycolannino
-ms.date: 11/06/2023
+ms.date: 04/26/2024
 ms.topic: how-to
-ms.service: active-directory
-ms.subservice: hybrid
+ms.service: entra-id
+ms.subservice: hybrid-cloud-sync
 ---
 
 # Transformations
@@ -28,7 +28,7 @@ To add a custom attribute mapping, follow these steps.
 1. Copy the schema into a text or code editor such as [Visual Studio Code](https://code.visualstudio.com/).
 1. Locate the object that you want to update in the schema.
 
-   ![Object in the schema](media/how-to-transformation/transform-1.png)</br>
+   ![Screenshot of object in the schema.](media/how-to-transformation/transform-1.png)</br>
 1. Locate the code for `ExtensionAttribute3` under the user object.
 
     ```
@@ -90,9 +90,6 @@ To add a custom attribute mapping, follow these steps.
     ![Run Query](media/how-to-transformation/transform-2.png)
 
  1. Now, in the portal, go to the cloud sync configuration and select **Restart provisioning**.
-
-    ![Restart provisioning](media/how-to-transformation/transform-3.png)
-
  1. After a little while, verify the attributes are being populated by running the following query in Graph Explorer: `https://graph.microsoft.com/beta/users/{Azure AD user UPN}`.
  1. You should now see the value.
 

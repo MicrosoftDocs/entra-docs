@@ -1,13 +1,11 @@
 ---
 title: Enable accidental deletions prevention in the Microsoft Entra provisioning service
 description: Enable accidental deletions prevention in the Microsoft Entra provisioning service for applications and cross-tenant synchronization.
-services: active-directory
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.workload: identity
 ms.date: 09/15/2023
 ms.author: kenwith
 ms.reviewer: arvinh
@@ -43,8 +41,7 @@ To enable accidental deletion prevention:
 1. Select **Provisioning**.
 ::: zone-end
 
-1. Under **Settings**, select the **Prevent accidental deletions** check box and specify a deletion 
-threshold.
+1. Under **Settings**, select the **Prevent accidental deletions** check box and specify a deletion threshold.
 1. Ensure the **Notification Email** address is completed.
     If the deletion threshold is met, an email is sent.
 1. Select **Save** to save the changes.
@@ -88,15 +85,10 @@ To learn more about deprovisioning scenarios, see [How Application Provisioning 
 ## Frequently Asked Questions
 
 ### What scenarios count toward the deletion threshold?
-When a user is set for removal from the target application (or target tenant), it's counted against the 
-deletion threshold. Scenarios that could lead to a user being removed from the target 
-application (or target tenant) could include: unassigning the user from the application (or configuration) and soft / hard deleting a user in the directory. Groups 
-evaluated for deletion count towards the deletion threshold. In addition to deletions, the same functionality also works for disables.
+When a user is set for removal from the target application (or target tenant), it's counted against the deletion threshold. Scenarios that could lead to a user being removed from the target application (or target tenant) could include: unassigning the user from the application (or configuration) and soft / hard deleting a user in the directory. Groups evaluated for deletion count towards the deletion threshold. In addition to deletions, the same functionality also works for disables.
 
 ### What is the interval that the deletion threshold is evaluated on?
-It's evaluated each cycle. If the number of deletions doesn't exceed the threshold during a 
-single cycle, the “circuit breaker” isn't triggered. If multiple cycles are needed to reach a 
-steady state, the deletion threshold is evaluated per cycle.
+It's evaluated each cycle. If the number of deletions doesn't exceed the threshold during a single cycle, the “circuit breaker” isn't triggered. If multiple cycles are needed to reach a steady state, the deletion threshold is evaluated per cycle.
 
 ### How are these deletion events logged?
 You can find users that should be disabled / deleted but haven’t due to the deletion threshold. 

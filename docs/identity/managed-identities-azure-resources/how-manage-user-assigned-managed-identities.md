@@ -1,13 +1,12 @@
 ---
 title: Manage user-assigned managed identities
 description: Create user-assigned managed identities.
-services: active-directory
+
 author: barclayn
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: msi
+ms.service: entra-id
+ms.subservice: managed-identities
 ms.topic: how-to
-ms.workload: identity
 ms.date: 05/10/2023
 ms.author: barclayn
 ms.custom: devx-track-azurecli, devx-track-linux
@@ -84,7 +83,7 @@ In some environments, administrators choose to limit who can manage user-assigne
 1. Select **Access control (IAM)**.
 1. Choose **Add role assignment**.
 
-   ![Screenshot that shows the user-assigned managed identity access control screen](media/how-manage-user-assigned-managed-identities/role-assign.png)
+   :::image type="content" source="media/how-manage-user-assigned-managed-identities/role-assign.png" alt-text="Screenshot that shows the user-assigned managed identity access control screen.":::
 
 1. In the **Add role assignment** pane, choose the role to assign and choose **Next**.
 1. Choose who should have the role assigned.
@@ -399,7 +398,7 @@ s/<RESOURCE GROUP>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<U
 ```
 
 ```HTTP
-DELETE https://management.azure.com/subscriptions/80c696ff-5efa-4909-a64d-f1b616f423ca/resourceGroups/TestRG/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<USER ASSIGNED IDENTITY NAME>?api-version=2015-08-31-preview HTTP/1.1
+DELETE https://management.azure.com/subscriptions/aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e/resourceGroups/TestRG/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<USER ASSIGNED IDENTITY NAME>?api-version=2015-08-31-preview HTTP/1.1
 ```
 |Request header  |Description  |
 |---------|---------|

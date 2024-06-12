@@ -3,23 +3,23 @@ title: 'Tutorial - multifactor authentication for B2B'
 description: In this tutorial, learn how to require multifactor authentication when you use Microsoft Entra B2B to collaborate with external users and partner organizations.
 
  
-ms.service: active-directory
-ms.subservice: B2B
+ms.service: entra-external-id
 ms.topic: tutorial
 ms.date: 07/28/2023
 
 ms.author: cmulligan
 author: csmulligan
 manager: CelesteDG
-ms.custom: "it-pro, seo-update-azuread-jan"
+ms.custom: it-pro
 ms.collection: M365-identity-device-management
-
 # Customer intent: As an IT admin managing external B2B guest users, I want to enforce multifactor authentication for access to cloud or on-premises applications, so that I can ensure the security of our resources and protect against unauthorized access.
 ---
 
 # Tutorial: Enforce multifactor authentication for B2B guest users
 
-When collaborating with external B2B guest users, it’s a good idea to protect your apps with multifactor authentication policies. Then external users will need more than just a user name and password to access your resources. In Microsoft Entra ID, you can accomplish this goal with a Conditional Access policy that requires MFA for access. MFA policies can be enforced at the tenant, app, or individual guest user level, the same way that they're enabled for members of your own organization. The resource tenant is always responsible for Microsoft Entra multifactor authentication for users, even if the guest user’s organization has multifactor authentication capabilities.
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
+
+When collaborating with external B2B guest users, it’s a good idea to protect your apps with multifactor authentication policies. Then external users need more than just a user name and password to access your resources. In Microsoft Entra ID, you can accomplish this goal with a Conditional Access policy that requires MFA for access. MFA policies can be enforced at the tenant, app, or individual guest user level, the same way that they're enabled for members of your own organization. The resource tenant is always responsible for Microsoft Entra multifactor authentication for users, even if the guest user’s organization has multifactor authentication capabilities.
 
 Example:
 
@@ -51,7 +51,7 @@ If you don’t have an Azure subscription, create a [free account](https://azure
 To complete the scenario in this tutorial, you need:
 
 - **Access to Microsoft Entra ID P1 or P2 edition**, which includes Conditional Access policy capabilities. To enforce MFA, you need to create a Microsoft Entra Conditional Access policy. MFA policies are always enforced at your organization, regardless of whether the partner has MFA capabilities.
-- **A valid external email account** that you can add to your tenant directory as a guest user and use to sign in. If you don't know how to create a guest account, see [Add a B2B guest user in the Microsoft Entra admin center](add-users-administrator.md).
+- **A valid external email account** that you can add to your tenant directory as a guest user and use to sign in. If you don't know how to create a guest account, see [Add a B2B guest user in the Microsoft Entra admin center](add-users-administrator.yml).
 
 <a name='create-a-test-guest-user-in-azure-ad'></a>
 
@@ -59,7 +59,7 @@ To complete the scenario in this tutorial, you need:
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
 1. Select **New user**, and then select **Invite external user**.
 
@@ -81,7 +81,7 @@ To complete the scenario in this tutorial, you need:
 
 ## Create a Conditional Access policy that requires MFA
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Identity** > **Protection** > **Security Center**.
 1. Under **Protect**, select **Conditional Access**.
 1. On the **Conditional Access** page, in the toolbar on the top, select **Create new policy**.
@@ -101,7 +101,7 @@ To complete the scenario in this tutorial, you need:
 1. On the **New** page, in the **Access controls** section, choose the link under **Grant**.
 1. On the **Grant** page, choose **Grant access**, select the **Require multifactor authentication** check box, and then choose **Select**.
 
-    :::image type="content" source="media/tutorial-mfa/tutorial-mfa-grant-access.png" alt-text="Screenshot showing the Require multifactor authentication option.":::
+    :::image type="content" source="media/tutorial-mfa/tutorial-mfa-grant-access.png" alt-text="Screenshot showing the option for requiring multifactor authentication.":::
 
 
 1. Under **Enable policy**, select **On**.
@@ -123,7 +123,7 @@ To complete the scenario in this tutorial, you need:
 
 1. Select the link under **Cloud apps, actions, or authentication content**. Choose **Select apps**, and then choose the link under **Select**.
 
-    :::image type="content" source="media/tutorial-mfa/tutorial-mfa-what-if-app.png" alt-text="Screenshot showing the Windows Azure Service Management API app selected." lightbox="media/tutorial-mfa/tutorial-mfa-what-if-app.png":::
+    :::image type="content" source="media/tutorial-mfa/tutorial-mfa-what-if-app.png" alt-text="Screenshot showing the app selected." lightbox="media/tutorial-mfa/tutorial-mfa-what-if-app.png":::
 
 1. On the **Cloud apps** page, in the applications list, choose **Windows Azure Service Management API**, and then choose **Select**.
 1. Choose **What If**, and verify that your new policy appears under **Evaluation results** on the **Policies that will apply** tab.
@@ -146,7 +146,7 @@ To complete the scenario in this tutorial, you need:
 
 When no longer needed, remove the test user and the test Conditional Access policy.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
 1. Select the test user, and then select **Delete user**.
 1. Browse to **Identity** > **Protection** > **Security Center**.
@@ -155,4 +155,4 @@ When no longer needed, remove the test user and the test Conditional Access poli
 
 ## Next steps
 
-In this tutorial, you’ve created a Conditional Access policy that requires guest users to use MFA when signing in to one of your cloud apps. To learn more about adding guest users for collaboration, see [Add Microsoft Entra B2B collaboration users in the Azure portal](add-users-administrator.md).
+In this tutorial, you created a Conditional Access policy that requires guest users to use MFA when signing in to one of your cloud apps. To learn more about adding guest users for collaboration, see [Add Microsoft Entra B2B collaboration users in the Azure portal](add-users-administrator.yml).

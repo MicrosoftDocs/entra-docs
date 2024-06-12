@@ -5,12 +5,14 @@ description: Admin guide to use Atlassian Jira and Confluence with Microsoft Ent
 author: dhivyagana
 manager: CelesteDG
 ms.reviewer: celested
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: dhivyag
+
+# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Atlassian Jira and Confluence so that I can control who has access to Atlassian Jira and Confluence, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 # Atlassian Jira and Confluence admin guide for Microsoft Entra ID
 
@@ -120,7 +122,7 @@ The following image shows the configuration screen in both Jira and Confluence:
 
 * Enable **Force Azure Login** checkbox, if you wish to sign in through Microsoft Entra credentials only.
 
-* **Enable Use of Application Proxy** checkbox, if you have configured your on-premise atlassian application in an App Proxy setup.
+* **Enable Use of Application Proxy** checkbox, if you have configured your on-premise atlassian application in an application proxy setup.
 
    * For App proxy setup , follow the steps on the [Microsoft Entra application proxy Documentation](~/identity/app-proxy/overview-what-is-app-proxy.md).
 ## Release Notes
@@ -134,7 +136,7 @@ JIRA:
 |                 |   The last login date for a user doesn't update when user signs in via SSO.           |                                     |
 |                 |                                                                                           |                                     |
 |  1.0.19         |   New Feature:                                                                            | Jira Core and Software:             |
-|                 |    Application Proxy Support - Checkbox on the configure plugin screen to toggle the App Proxy mode so as to make the Reply URL editable as per the need to point the App Proxy mode so as to make the Reply URL editable as per the need to point it to the proxy server URL |  6.0 to 9.3.1           |
+|                 |    Application Proxy Support - Checkbox on the configure plugin screen to toggle the application proxy mode so as to make the Reply URL editable as per the need to point the application proxy mode so as to make the Reply URL editable as per the need to point it to the proxy server URL |  6.0 to 9.3.1           |
 |                 |                                                                                           | Jira Service Desk: 3.0.0 to 4.22.1  |
 |                 |                                                                                           |                                     |
 |  1.0.18         |   Bug Fixes:                                                                              | Jira Core and Software:             |
@@ -152,7 +154,7 @@ Confluence:
 |                 |   System Error: Metadata link cannot be configured on SSO plugins.                        |                                     |
 |                 |                                                                                           |                                     |
 |  6.3.8          |   New Feature:                                                                            | Confluence Server: 5.0 to 7.20.1    |
-|                 |   Application Proxy Support - Checkbox on the configure plugin screen to toggle the App Proxy mode so as to make the Reply URL editable as per the need to point it to the proxy server URL                                                                      |                                     |
+|                 |   Application Proxy Support - Checkbox on the configure plugin screen to toggle the application proxy mode so as to make the Reply URL editable as per the need to point it to the proxy server URL                                                                      |                                     |
 |                 |                                                                                           |                                     |
 |  6.3.7          |   Bug Fixes:                                                                              | Confluence Server: 5.0 to 7.19.0    |
 |                 |   "Force Login" functionality allows the IT admins to force the Microsoft Entra authentication to users. This way users will not see the username and password box and they will be forced to use SSO.                                                              |                                     |

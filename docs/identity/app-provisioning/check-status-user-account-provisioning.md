@@ -1,16 +1,15 @@
 ---
 title: Report automatic user account provisioning from Microsoft Entra ID to Software as a Service (SaaS) applications
 description: 'Learn how to check the status of automatic user account provisioning jobs, and how to troubleshoot the provisioning of individual users.'
-services: active-directory
-author: kenwith
+
+author: jenniferf-skc
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-provisioning
-ms.workload: identity
 ms.topic: how-to
-ms.date: 09/15/2023
-ms.author: kenwith
-ms.reviewer: arvinh
+ms.date: 05/06/2024
+ms.author: jfields
+ms.reviewer: cmmdesai
 ---
 
 # Tutorial: Reporting on automatic user account provisioning
@@ -62,14 +61,16 @@ The **Current Status** should be the first place admins look to check on the ope
 
  ![Summary report](./media/check-status-user-account-provisioning/provisioning-progress-bar-section.png)
 
+You can also use Microsoft Graph to programmatically monitor the status of provisioning to an application.  For more information, see [monitor provisioning](application-provisioning-configuration-api.md#step-5-monitor-provisioning).
+
 ## Provisioning logs 
 
-All activities performed by the provisioning service are recorded in the Microsoft Entra [provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md?context=azure/active-directory/manage-apps/context/manage-apps-context). You can access the provisioning logs in the Microsoft Entra admin center. You can search the provisioning data based on the name of the user or the identifier in either the source system or the target system. For details, see [Provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md?context=azure/active-directory/manage-apps/context/manage-apps-context). 
+All activities performed by the provisioning service are recorded in the Microsoft Entra [Provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md?context=azure/active-directory/manage-apps/context/manage-apps-context). You can access the Provisioning logs in the Microsoft Entra admin center. You can search the provisioning data based on the name of the user or the identifier in either the source system or the target system. For details, see [Provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md?context=azure/active-directory/manage-apps/context/manage-apps-context). 
 
 
 ## Troubleshooting
 
-The provisioning summary report and provisioning logs play a key role helping admins troubleshoot various user account provisioning issues.
+The provisioning summary report and Provisioning logs play a key role helping admins troubleshoot various user account provisioning issues.
 
 For scenario-based guidance on how to troubleshoot automatic user provisioning, see [Problems configuring and provisioning users to an application](~/identity/app-provisioning/application-provisioning-config-problem.md).
 

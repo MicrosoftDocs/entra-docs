@@ -5,11 +5,11 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom:  scenarios:getting-started
-ms.date: 06/29/2023
+ms.date: 03/20/2024
 ms.reviewer: jmprieur, saeeda, sureshja, ludwignick
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: conceptual
+ms.service: identity-platform
+
+ms.topic: concept-article
 #Customer intent: As an application developer, I want to understand the basic concepts of authentication and authorization in the Microsoft identity platform.
 ---
 

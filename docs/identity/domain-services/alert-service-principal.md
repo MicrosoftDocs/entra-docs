@@ -1,15 +1,13 @@
 ---
 title: Resolve service principal alerts in Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to troubleshoot service principal configuration alerts for Microsoft Entra Domain Services
-services: active-directory-ds
 author: justinha
 manager: amycolannino
 
 ms.assetid: f168870c-b43a-4dd6-a13f-5cfadc5edf2c
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: domain-services
-ms.workload: identity
-ms.custom: has-azure-ad-ps-ref
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: troubleshooting
 ms.date: 09/15/2023
 ms.author: justinha
@@ -44,19 +42,18 @@ To check which service principal is missing and must be recreated, complete the 
 
 ### Recreate a missing Service Principal
 
-If application ID *2565bd9d-da50-47d4-8b85-4c97f669dc36* is missing from your Microsoft Entra directory in Azure Global, use Azure AD PowerShell to complete the following steps. For other Azure clouds, use AppId value *6ba9a5d4-8456-4118-b521-9c5ca10cdf84*. For more information, see [Azure AD PowerShell](/powershell/azure/active-directory/install-adv2).
+If application ID *2565bd9d-da50-47d4-8b85-4c97f669dc36* is missing from your Microsoft Entra directory in Azure Global, use Microsoft Graph PowerShell to complete the following steps. For other Azure clouds, use AppId value *6ba9a5d4-8456-4118-b521-9c5ca10cdf84*. For more information, see [Install the Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/installation).
 
-1. If needed, install the Azure AD PowerShell module and import it as follows:
+1. If needed, install the Microsoft Graph PowerShell module and import it as follows:
 
     ```powershell
-    Install-Module AzureAD
-    Import-Module AzureAD
+    Install-Module Microsoft.Graph -Scope CurrentUser
     ```
 
-1. Now recreate the service principal using the [New-AzureAdServicePrincipal][New-AzureAdServicePrincipal] cmdlet:
+1. Now recreate the service principal using the [New-MgServicePrincipal][/powershell/module/microsoft.graph.applications/new-mgserviceprincipal] cmdlet:
 
     ```powershell
-    New-AzureAdServicePrincipal -AppId "2565bd9d-da50-47d4-8b85-4c97f669dc36"
+    New-MgServicePrincipal -AppId "2565bd9d-da50-47d4-8b85-4c97f669dc36"
     ```
 
 The managed domain's health automatically updates itself within two hours and removes the alert.
@@ -84,22 +81,21 @@ Domain Services automatically synchronizes user accounts and credentials from Mi
 
 ### Resolution
 
-To recreate the Microsoft Entra application used for credential synchronization, use Azure AD PowerShell to complete the following steps. For more information, see [install Azure AD PowerShell](/powershell/azure/active-directory/install-adv2).
+To recreate the Microsoft Entra application used for credential synchronization, use Microsoft Graph PowerShell to complete the following steps. For more information, see [Install the Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/installation).
 
-1. If needed, install the Azure AD PowerShell module and import it as follows:
+1. If needed, install the Microsoft Graph PowerShell module and import it as follows:
 
     ```powershell
-    Install-Module AzureAD
-    Import-Module AzureAD
+    Install-Module Microsoft.Graph -Scope CurrentUser
     ```
 
 2. Now delete the old application and object using the following PowerShell cmdlets:
 
     ```powershell
-    $app = Get-AzureADApplication -Filter "IdentifierUris eq 'https://sync.aaddc.activedirectory.windowsazure.com'"
-    Remove-AzureADApplication -ObjectId $app.ObjectId
-    $spObject = Get-AzureADServicePrincipal -Filter "DisplayName eq 'Azure AD Domain Services Sync'"
-    Remove-AzureADServicePrincipal -ObjectId $spObject
+    $app = Get-MgApplication | Where-Object { $_.IdentifierUris -eq 'https://sync.aaddc.activedirectory.windowsazure.com' }
+    Remove-MgApplication -ApplicationId $app.Id
+    $sp = Get-MgServicePrincipal -Filter "DisplayName eq 'Azure AD Domain Services Sync'"
+    Remove-MgServicePrincipal -ServicePrincipalId $sp.Id
     ```
 
 After you delete both applications, the Azure platform automatically recreates them and tries to resume password synchronization. The managed domain's health automatically updates itself within two hours and removes the alert.
@@ -112,4 +108,4 @@ If you still have issues, [open an Azure support request][azure-support] for add
 [azure-support]: /azure/active-directory/fundamentals/how-to-get-support
 
 <!-- EXTERNAL LINKS -->
-[New-AzureAdServicePrincipal]: /powershell/module/azuread/new-azureadserviceprincipal
+

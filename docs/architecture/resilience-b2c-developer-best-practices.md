@@ -1,17 +1,13 @@
 ---
 title: Resilience through developer best practices using Azure AD B2C
 description: Resilience through developer best practices in Customer Identity and Access Management using Azure AD B2C
-services: active-directory 
-ms.service: active-directory
-ms.subservice: fundamentals 
-ms.workload: identity
+ms.service: entra
+ms.subservice: architecture
 ms.topic: how-to
 author: gargi-sinha
 ms.author: gasinh
 manager: martinco
 ms.date: 12/01/2022
-ms.custom: it-pro
-ms.collection: M365-identity-device-management
 ---
 
 # Resilience through developer best practices
@@ -59,11 +55,11 @@ Your business requirements and desired end-user experience will dictate your fre
 
 ### How to extend token lifetimes
 
-- **Web applications**: For web applications where the authentication token is validated at the beginning of sign-in, the application depends on the session cookie to continue to extend the session validity. Enable users to remain signed in by implementing rolling session times that will continue to renew sessions based on user activity. If there's a long-term token issuance outage, these session times can be further increased as a onetime configuration on the application. Keep the lifetime of the session to the maximum allowed.
-- **SPAs**: A SPA may depend on access tokens to make calls to the APIs. A SPA traditionally uses the implicit flow that doesn't result in a refresh token. The SPA can use a hidden `iframe` to perform new token requests against the authorization endpoint if the browser still has an active session with the Azure AD B2C. For SPAs, there are a few options available to allow the user to continue to use the application.
+- **Web applications**: For web applications where the authentication token is validated at the beginning of sign-in, the application depends on the session cookie to continue to extend the session validity. Enable users to remain signed in by implementing rolling session times that will continue to renew sessions based on user activity. If there's a long-term token issuance outage, these session times can be further increased as a one-time configuration on the application. Keep the lifetime of the session to the maximum allowed.
+- **SPAs**: A SPA may depend on access tokens to make calls to the APIs. For SPAs, we recommend using the authorization code flow with Proof Key for Code Exchange (PKCE) flow as your option to allow the user to continue to use the application. If your SPA is currently using implicit flow, consider [migrating to authorization code flow with PKCE](https://developer.microsoft.com/identity/blogs/msal-js-2-0-supports-authorization-code-flow-is-now-generally-available/). Migrate your application from MSAL.js 1.x to MSAL.js 2.x to realize the resiliency of Web applications. If you stick with using the implicit flow, keep in mind that the implicit flow that doesn't result in a refresh token. The SPA can use a hidden `iframe` to perform new token requests against the authorization endpoint if the browser still has an active session with the Azure AD B2C. For SPAs, there are a few options available to allow the user to continue to use the application in this scenario. 
   - Extend the access token's validity duration to meet your business requirements.
   - Build your application to use an API gateway as the authentication proxy. In this configuration, the SPA loads without any authentication and the API calls are made to the API gateway. The API gateway sends the user through a sign-in process using an [authorization code grant](https://oauth.net/2/grant-types/authorization-code/) based on a policy and authenticates the user. Then the authentication session between the API gateway and the client is maintained using an authentication cookie. The API gateway services the APIs using the token that is obtained by the API gateway (or some other direct authentication method such as certificates, client credentials, or API keys).
-  - [Migrate your SPA from implicit grant](https://developer.microsoft.com/identity/blogs/msal-js-2-0-supports-authorization-code-flow-is-now-generally-available/) to [authorization code grant flow](/azure/active-directory-b2c/implicit-flow-single-page-application) with Proof Key for Code Exchange (PKCE) and Cross-origin Resource Sharing (CORS) support. Migrate your application from MSAL.js 1.x to MSAL.js 2.x to realize the resiliency of Web applications.
+  - Switch to the recommended option by [migrating your SPA from implicit grant](https://developer.microsoft.com/identity/blogs/msal-js-2-0-supports-authorization-code-flow-is-now-generally-available/) to [authorization code grant flow](/azure/active-directory-b2c/implicit-flow-single-page-application) with Proof Key for Code Exchange (PKCE) and Cross-origin Resource Sharing (CORS) support. 
   - For mobile applications, it's recommended to extend both the refresh and access token lifetimes.
 - **Backend or microservice applications**: Because backend (daemon) applications are non-interactive and aren't in a user context, the prospect of token theft is greatly diminished. Recommendation is to strike a balance between security and lifetime and set a long token lifetime.
 

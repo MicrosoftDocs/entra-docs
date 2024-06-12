@@ -2,7 +2,7 @@
 title: Enable Enterprise State Roaming in Microsoft Entra ID
 description: Frequently asked questions about Enterprise State Roaming settings in Windows devices.
 
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: devices
 ms.topic: how-to
 ms.date: 01/04/2024
@@ -22,7 +22,7 @@ Enterprise State Roaming provides users with a unified experience across their W
 
 ## To enable Enterprise State Roaming
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](../role-based-access-control/permissions-reference.md#global-administrator).
 1. Browse to **Identity** > **Devices** > **Overview** > **Enterprise State Roaming**.
 1. Select **Users may sync settings and app data across devices**. For more information, see [how to configure device settings](./manage-device-identities.md).
 
@@ -45,7 +45,7 @@ The country/region value is set as part of the Microsoft Entra directory creatio
 
 Follow these steps to view a per-user device sync status report.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Reader](../role-based-access-control/permissions-reference.md#global-reader).
 1. Browse to **Identity** > **Users** > **All users**.
 1. Select the user, and then select **Devices**.
 1. Select **View devices syncing settings and app data** to show sync status.

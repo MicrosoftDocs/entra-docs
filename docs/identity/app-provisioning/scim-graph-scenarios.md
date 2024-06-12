@@ -1,12 +1,11 @@
 ---
 title: Use SCIM, Microsoft Graph, and Microsoft Entra ID to provision users and enrich apps with data
 description: Using SCIM and the Microsoft Graph together to provision users and enrich your application with the data it needs in Microsoft Entra ID.
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-provisioning
-ms.workload: identity
 ms.topic: reference
 ms.date: 09/15/2023
 ms.author: kenwith
@@ -103,8 +102,7 @@ I need to be able to track changes to Teams and Outlook messages and react to th
 **Recommendation:** The Microsoft Graph provides [change notifications](/graph/webhooks) and [change tracking](/graph/delta-query-overview) for various resources. Note the following limitations of change notifications:
 - If an event receiver acknowledges an event, but fails to act on it for any reason, the event may be lost.
 - The order in which changes are received are not guaranteed to be chronological.
-- Change notifications don't always contain the [resource data](/graph/webhooks-with-resource-data)
-For the reasons above, developers often use change notifications along with change tracking for synchronization scenarios. 
+- Change notifications don't always contain the [resource data](/graph/webhooks-with-resource-data) For the reasons above, developers often use change notifications along with change tracking for synchronization scenarios. 
 
 <a name='scenario-6-provision-users-and-groups-in-azure-ad'></a>
 

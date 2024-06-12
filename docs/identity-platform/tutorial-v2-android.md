@@ -5,10 +5,10 @@ author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
 ms.custom: has-adal-ref
-ms.date: 04/04/2023
-ms.reviewer: brandwe
-ms.service: active-directory
-ms.subservice: develop
+ms.date: 02/24/2024
+ms.reviewer: negoe
+ms.service: identity-platform
+
 ms.topic: tutorial
 #Customer intent: As an Android developer, I want to integrate the Microsoft Entra ID into my Android app, so that users can sign in with their personal Microsoft accounts or work/school accounts and access the Microsoft Graph API.
 ---
@@ -23,7 +23,7 @@ In this tutorial:
 
 > [!div class="checklist"]
 >
-> - Create an Android app project in _Android Studio_
+> - Create an Android app project in *Android Studio*
 > - Register the app in the Microsoft Entra admin center
 > - Add code to support user sign-in and sign-out
 > - Add code to call the Microsoft Graph API
@@ -48,10 +48,10 @@ Follow these steps to create a new project if you don't already have an Android 
 
 1. Open Android Studio, and select **Start a new Android Studio project**.
 2. Select **Basic Activity** and select **Next**.
-3. Enter a name for the application, such as _MSALAndroidapp_.
+3. Enter a name for the application, such as *MSALAndroidapp*.
 4. Record the package name to be used in later steps.
 5. Change the language from **Kotlin** to **Java**.
-6. Set the **Minimum SDK API level** to **API 19** or higher, and select **Finish**.
+6. Set the **Minimum SDK API level** to **API 16** or higher, and select **Finish**.
 
 <a name='register-your-application-with-azure-ad'></a>
 
@@ -67,7 +67,7 @@ Follow these steps to create a new project if you don't already have an Android 
 1. For **Supported account types**, select **Accounts in any organizational directory (Any Microsoft Entra directory - Multitenant) and personal Microsoft accounts (e.g. Skype, Xbox)**. For information on different account types, select the **Help me choose** option.
 1. Select **Register**.
 1. Under **Manage**, select **Authentication** > **Add a platform** > **Android**.
-1. Enter your project's Package Name. If you downloaded the code, this value is `com.azuresamples.msalandroidapp`.
+1. Enter your project's Package Name. If you downloaded the [sample code](https://github.com/Azure-Samples/ms-identity-android-java), this value is `com.azuresamples.msalandroidapp`.
 1. In the **Signature hash** section of the **Configure your Android app** pane, select **Generating a development Signature Hash.** and copy the KeyTool command to your command line.
 
    - KeyTool.exe is installed as part of the Java Development Kit (JDK). You must also install the OpenSSL tool to execute the KeyTool command. For more information, see [Android documentation on generating a key](https://developer.android.com/studio/publish/app-signing#generate-key) for more information.
@@ -93,7 +93,7 @@ Follow these steps to create a new project if you don't already have an Android 
    ```json
    {
      "client_id": "00001111-aaaa-bbbb-3333-cccc4444",
-     "authorization_user_agent": "DEFAULT",
+     "authorization_user_agent": "WEBVIEW",
      "redirect_uri": "msauth://com.azuresamples.msalandroidapp/00001111%cccc4444%3D",
      "broker_redirect_uri_registered": true,
      "account_mode": "SINGLE",
@@ -111,7 +111,9 @@ Follow these steps to create a new project if you don't already have an Android 
 
    As this tutorial only demonstrates how to configure an app in Single Account mode, see [single vs. multiple account mode](./single-multi-account.md) and [configuring your app](./msal-configuration.md) for more information
 
-1. In **app** > **src** > **main** > **AndroidManifest.xml**, add the `BrowserTabActivity` activity as a child of the `<application>` element. This entry allows Microsoft Entra ID to call back to your application after it completes the authentication:
+1. We recommend using 'WEBVIEW'. In case you want to configure  "authorization_user_agent" as 'BROWSER' in your app, you need make the following updates.
+a) Update auth_config_single_account.json with  "authorization_user_agent": "Browser". 
+b) Update AndroidManifest.xml. In the app go to **app** > **src** > **main** > **AndroidManifest.xml**, add the `BrowserTabActivity` activity as a child of the `<application>` element. This entry allows Microsoft Entra ID to call back to your application after it completes the authentication:
 
    ```xml
    <!--Intent filter to capture System Browser or Authenticator calling back to our app after sign-in-->
@@ -130,16 +132,16 @@ Follow these steps to create a new project if you don't already have an Android 
    ```
 
    - Use the **Package name** to replace `android:host=.` value. It should look like `com.azuresamples.msalandroidapp`.
-   - Use the **Signature Hash** to replace `android:path=` value. Ensure that there's a leading `/` at the beginning of your Signature Hash. It should look like `/1wIqXSqBj7w+h11ZifsnqwgyKrY=`.
+   - Use the **Signature Hash** to replace `android:path=` value. Ensure that there's a leading `/` at the beginning of your Signature Hash. It should look like `/aB1cD2eF3gH4+iJ5kL6-mN7oP8q=`.
 
    You can find these values in the Authentication blade of your app registration as well.
 
 ### Add MSAL and relevant libraries to your project
 
-1. In the Android Studio project window, navigate to **app** > **build.gradle** and add the following libraries in the _dependencies_ section:
+1. In the Android Studio project window, navigate to **app** > **build.gradle** and add the following libraries in the *dependencies* section:
 
    ```gradle
-    implementation 'com.microsoft.identity.client:msal:4.5.0'
+    implementation 'com.microsoft.identity.client:msal:5.0.0'
     implementation 'com.android.volley:volley:1.2.1'
    ```
 
@@ -157,11 +159,11 @@ Follow these steps to create a new project if you don't already have an Android 
 
 1. In **app** > **src** > **main**> **java** > **com.example(your app name)**. Create the following Android fragments:
 
-   - _MSGraphRequestWrapper_
-   - _OnFragmentInteractionListener_
-   - _SingleAccountModeFragment_
+   - *MSGraphRequestWrapper*
+   - *OnFragmentInteractionListener*
+   - *SingleAccountModeFragment*
 
-1. Open _MSGraphRequestWrapper.java_ and replace the code with following code snippet to call the Microsoft Graph API using the token provided by MSAL:
+1. Open *MSGraphRequestWrapper.java* and replace the code with following code snippet to call the Microsoft Graph API using the token provided by MSAL:
 
    ```java
     package com.azuresamples.msalandroidapp;
@@ -237,7 +239,7 @@ Follow these steps to create a new project if you don't already have an Android 
     }
    ```
 
-1. Open _OnFragmentInteractionListener.java_ and replace the code with following code snippet to allow communication between different fragments:
+1. Open *OnFragmentInteractionListener.java* and replace the code with following code snippet to allow communication between different fragments:
 
    ```java
     package com.azuresamples.msalandroidapp;
@@ -256,7 +258,7 @@ Follow these steps to create a new project if you don't already have an Android 
     }
    ```
 
-1. Open _SingleAccountModeFragment.java_ and replace the code with following code snippet to initialize a single-account application, loads a user account, and gets a token to call the Microsoft Graph API:
+1. Open *SingleAccountModeFragment.java* and replace the code with following code snippet to initialize a single-account application, loads a user account, and gets a token to call the Microsoft Graph API:
 
    ```java
     package com.azuresamples.msalandroidapp;
@@ -644,7 +646,7 @@ Follow these steps to create a new project if you don't already have an Android 
     }
    ```
 
-1. Open _MainActivity.java_ and replace the code with following code snippet to manage the UI.
+1. Open *MainActivity.java* and replace the code with following code snippet to manage the UI.
 
    ```java
     package com.azuresamples.msalandroidapp;

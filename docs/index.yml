@@ -6,17 +6,34 @@ brand: azure
 metadata:
   title: Microsoft Entra documentation
   description: Learn more about the Microsoft Entra family of multicloud identity and network access solutions. Find content to help solve secure access needs across your multifaceted digital landscape, protect access to any app or resource for any user, verify and secure every identity and every access request, discover permissions and govern access, and simplify user experience with intelligent real-time access controls.
-  services: azure
-  ms.service: active-directory
+  ms.service: entra
   ms.topic: hub-page
   author: CelesteDG
   ms.author: celested
-  ms.date: 10/23/2023
+  ms.date: 05/16/2024
+
+## BAND 1 - HIGHLIGHTED CONTENT ##############################################
+highlightedContent:
+  items:
+    - title: What is Microsoft Entra ID?
+      itemType: overview
+      url: /entra/fundamentals/whatis
+    - title: Identity fundamentals
+      url: /entra/fundamentals/identity-fundamental-concepts
+      itemType: concept
+    - title: Create a new tenant
+      url: /entra/fundamentals/create-new-tenant
+      itemType: quickstart
+    - title: What is Microsoft Entra External ID?
+      url: /entra/external-id/external-identities-overview
+      itemType: overview
+
+## BAND 1 - HIGHLIGHTED CONTENT END ##########################################
 
 productDirectory:
-  title: Getting started
+  title: Get started
   items:
-    - title: Microsoft Entra ID (Azure AD)
+    - title: Microsoft Entra ID
       imageSrc: ./media/index/microsoft-entra-id-color.png
       summary: "Manage user identities and control access to your apps, data, and resources."
       url: /entra/identity/
@@ -29,7 +46,7 @@ productDirectory:
       summary: "Protect, monitor, and audit access to critical assets while ensuring employee productivity."
       url: /entra/id-governance/
     - title: Microsoft Entra External ID
-      imageSrc: ./media/index/placeholder-icon.png
+      imageSrc: ./media/index/external-id-color.png
       summary: "Secure and manage any external user, including customers and partners, in your organization."
       url: /entra/external-id/
     - title: Microsoft Entra Internet Access
@@ -52,13 +69,78 @@ productDirectory:
       imageSrc: ./media/index/workload-id-color.png
       summary: "Secure identities for apps and services and their access to cloud resources."
       url: /entra/workload-id/
-          
+
+conceptualContent:
+  title: Learn more
+  summary: Quick access to more in-depth information about Microsoft Entra basics, architecture, standards, and developer app platform.
+  items:
+    ## CARD 1 ######################
+    - title: Fundamentals
+      links:
+        - text: New name for Azure AD
+          url: /entra/fundamentals/new-name
+          itemType: concept
+        - text: Access the admin center and create a tenant
+          url: /entra/fundamentals/create-new-tenant
+          itemType: quickstart
+        - text: Create a group and add members 
+          url: /entra/fundamentals/groups-view-azure-portal
+          itemType: quickstart
+        - text: Add your custom domain name 
+          url: /entra/fundamentals/add-custom-domain
+          itemType: how-to-guide
+    ## CARD 2 ######################
+    - title: Architecture
+      links:
+        - text: Microsoft Entra architecture
+          url: /entra/architecture/architecture
+          itemType: architecture
+        - text: Deploy Microsoft Entra ID
+          url: /entra/architecture/deployment-plans
+          itemType: get-started
+        - text: Microsoft Entra SecOps Guide
+          url: /entra/architecture/security-operations-introduction
+          itemType: how-to-guide
+        - text: Maintaining your environment
+          url: /entra/architecture/ops-guide-intro
+          itemType: how-to-guide
+    ## CARD 3 ######################
+    - title: Standards
+      links:
+        - text: NIST AAL overview
+          url: /entra/standards/nist-overview
+          itemType: overview
+        - text: Authenticator assurance levels
+          url: /entra/standards/nist-about-authenticator-assurance-levels
+          itemType: concept
+        - text: Configure Microsoft Entra ID for CMMC compliance
+          url: /entra/standards/configure-for-cmmc-compliance
+          itemType: how-to-guide
+        - text: Configure CMMC Level 2 Access Control controls
+          url: /entra/standards/configure-cmmc-level-2-access-control
+          itemType: how-to-guide
+    ## CARD 4 ######################
+    - title: Microsoft identity platform
+      links:
+        - text: What is Microsoft identity platform?
+          url: /entra/identity-platform/v2-overview
+          itemType: overview
+        - text: Authentication and authorization basics
+          url: /entra/identity-platform/authentication-vs-authorization
+          itemType: concept
+        - text: App types and authentication flows
+          url: /entra/identity-platform/authentication-flows-app-scenarios
+          itemType: concept
+        - text: Code samples
+          url: /entra/identity-platform/sample-v2-code
+          itemType: sample
+
 additionalContent:
   sections:
     - title: Announcements and resources
       items:
         - title: "Microsoft Entra"
-          summary: "Learn more about Microsoft Entra and how the Entra family of products can help your business."
+          summary: "Learn more about Microsoft Entra and how the Microsoft Entra family of products can help your business."
           url: https://aka.ms/MicrosoftEntra
         - title: "New name for Azure Active Directory"
           summary: "Learn more about the new name, what the change means, and how it affects you."
@@ -66,6 +148,6 @@ additionalContent:
         - title: "Introducing Security Service Edge (SSE)"
           summary: "Read the blog on expanded capabilities for securing access with Microsoft Entra."
           url: https://aka.ms/EntraMomentSecurityblog
-        - title: "Microsoft security documentation"
+        - title: "Microsoft Security documentation"
           summary: "Technical guidance to help security professionals build and implement cybersecurity strategy, architecture, and prioritized roadmaps."
           url: /security/

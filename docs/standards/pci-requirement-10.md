@@ -1,10 +1,8 @@
 ---
 title: Microsoft Entra ID and PCI-DSS Requirement 10
 description: Learn PCI-DSS defined approach requirements about logging and monitoring all access to system components and CHD
-services: active-directory 
-ms.service: active-directory
+ms.service: entra
 ms.subservice: standards
-ms.workload: identity
 ms.topic: how-to
 author: jricketts
 ms.author: jricketts
@@ -12,7 +10,7 @@ manager: martinco
 ms.reviewer: martinco
 ms.date: 04/18/2023
 ms.custom: it-pro
-ms.collection: 
+ms.collection:
 ---
 
 # Microsoft Entra ID and PCI-DSS Requirement 10
@@ -64,7 +62,7 @@ ms.collection:
 
 |PCI-DSS Defined approach requirements|Microsoft Entra guidance and recommendations|
 |-|-|
-|**10.5.1** Retain audit log history for at least 12 months, with at least the most recent three months immediately available for analysis.|Integrate with Azure Monitor and export the logs for long term archival. [Integrate Microsoft Entra logs with Azure Monitor logs](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.md) </br> Learn about Microsoft Entra logs data retention policy. [Microsoft Entra data retention](~/identity/monitoring-health/reference-reports-data-retention.md)|
+|**10.5.1** Retain audit log history for at least 12 months, with at least the most recent three months immediately available for analysis.|Integrate with Azure Monitor and export the logs for long term archival. [Integrate Microsoft Entra logs with Azure Monitor logs](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.yml) </br> Learn about Microsoft Entra logs data retention policy. [Microsoft Entra data retention](~/identity/monitoring-health/reference-reports-data-retention.md)|
 
 ## 10.6 Time-synchronization mechanisms support consistent time settings across all systems.
 

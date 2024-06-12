@@ -1,20 +1,17 @@
 ---
 title: API concepts in Privileged Identity management
 description: Information for understanding the APIs in Microsoft Entra Privileged Identity Management (PIM).
-services: active-directory
-documentationcenter: ''
+
 author: barclayn
 manager: amycolannino
-editor: ''
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: pim
+ms.service: entra-id-governance
+ms.subservice: privileged-identity-management
 ms.topic: how-to
 ms.date: 09/12/2023
 ms.author: barclayn
 ms.reviewer: shaunliu
-ms.custom: pim 
-ms.collection: M365-identity-device-management
+ms.custom: pim
+
 ---
 # Privileged Identity Management APIs
 
@@ -95,7 +92,7 @@ To manage the PIM policies, use **\*roleManagementPolicy** and **\*roleManagemen
   - For PIM for Microsoft Entra roles, PIM for Groups: [unifiedroleManagementPolicy](/graph/api/resources/unifiedrolemanagementpolicy), [unifiedroleManagementPolicyAssignment](/graph/api/resources/unifiedrolemanagementpolicyassignment) 
   - For PIM for Azure resources: [Role Management Policies](/rest/api/authorization/role-management-policies), [Role Management Policy Assignments](/rest/api/authorization/role-management-policy-assignments) 
 
-The **\*roleManagementPolicy** resource includes rules that constitute PIM policy: approval requirements, maximum activation duration, notification settings, etc. 
+The **\*roleManagementPolicy** resource includes rules that constitute PIM policy: approval requirements, maximum activation duration, notification settings, and so on. 
 
 The **\*roleManagementPolicyAssignment** object attaches the policy to a specific role. 
 

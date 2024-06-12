@@ -2,8 +2,7 @@
 title: Protecting authentication methods in Microsoft Entra ID
 description: Learn about authentication features that may be enabled by default in Microsoft Entra ID
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 10/25/2023
@@ -11,8 +10,6 @@ ms.date: 10/25/2023
 ms.author: justinha
 author: ChristianCB83
 manager: amycolannino
-
-ms.collection: M365-identity-device-management
 
 # Customer intent: As an identity administrator, I want to encourage users to understand how default protection can improve our security posture.
 ---

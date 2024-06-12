@@ -6,8 +6,8 @@ manager: CelesteDG
 ms.author: cwerner
 ms.date: 05/11/2022
 ms.reviewer: ryanwi, arcrowe
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: how-to
 #Customer intent: As a developer, I want to set up a test environment so that I can test my app integrated with Microsoft identity platform.
 ---
@@ -35,7 +35,7 @@ Don't use your production Microsoft Entra tenant if:
 
 If any of these restrictions apply, set up a [test environment in a separate tenant](#set-up-a-test-environment-in-a-separate-tenant).
 
-If none of these restrictions apply, you can set up a [test environment in your production tenant](#set-up-a-test-environment-in-your-production-tenant). Be aware that global administrators in your production tenant can access its resources and change its configuration at any time. To prevent access to any test resources or configuration, put that data in a separate tenant.
+If none of these restrictions apply, you can set up a [test environment in your production tenant](#set-up-a-test-environment-in-your-production-tenant). Be aware that Global Administrators in your production tenant can access its resources and change its configuration at any time. To prevent access to any test resources or configuration, put that data in a separate tenant.
 
 ## Set up a test environment in a separate tenant
 

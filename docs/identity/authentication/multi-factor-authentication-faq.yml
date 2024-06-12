@@ -2,9 +2,7 @@
 metadata:
   title: Microsoft Entra multifactor authentication FAQ
   description: Frequently asked questions and answers related to Microsoft Entra multifactor authentication. 
-  
-  services: multi-factor-authentication
-  ms.service: active-directory
+  ms.service: entra-id
   ms.subservice: authentication
   ms.topic: faq
   ms.date: 09/13/2023
@@ -12,7 +10,6 @@ metadata:
   author: justinha
   manager: amycolannino
   ms.reviewer: jpettere
-  ms.collection: M365-identity-device-management
 title: Frequently asked questions about Microsoft Entra multifactor authentication
 summary: |
   This FAQ answers common questions about Microsoft Entra multifactor authentication and using the multifactor authentication service. It's broken down into questions about the service in general, billing models, user experiences, and troubleshooting.
@@ -143,12 +140,12 @@ sections:
       - question: |
           What should I do if one of my users can't get in to their account?
         answer: |
-          You can reset the user's account by making them to go through the registration process again. Learn more about [managing user and device settings with Microsoft Entra multifactor authentication in the cloud](howto-mfa-userdevicesettings.md).
+          You can reset the user's account by making them to go through the registration process again. Learn more about [managing user and device settings with Microsoft Entra multifactor authentication in the cloud](howto-mfa-userdevicesettings.yml).
           
       - question: |
           What should I do if one of my users loses a phone that is using app passwords?
         answer: |
-          To prevent unauthorized access, delete all the user's app passwords. After the user has a replacement device, they can recreate the passwords. Learn more about [managing user and device settings with Microsoft Entra multifactor authentication in the cloud](howto-mfa-userdevicesettings.md).
+          To prevent unauthorized access, delete all the user's app passwords. After the user has a replacement device, they can recreate the passwords. Learn more about [managing user and device settings with Microsoft Entra multifactor authentication in the cloud](howto-mfa-userdevicesettings.yml).
           
       - question: |
           What if a user can't sign in to non-browser apps?

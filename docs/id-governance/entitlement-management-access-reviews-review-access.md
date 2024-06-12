@@ -1,23 +1,14 @@
 ---
 title: Review access of an access package in entitlement management
 description: Learn how to complete an access review of entitlement management access packages in access reviews.
-services: active-directory
-documentationCenter: ''
 author: owinfreyATL
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
-ms.tgt_pltfrm: na
+ms.service: entra-id-governance
+ms.subservice: entitlement-management
 ms.topic: how-to
-ms.subservice: compliance
 ms.date: 06/28/2023
 ms.author: owinfrey
-ms.reviewer: 
-ms.collection: M365-identity-device-management
-
-
 #Customer intent: As an administrator, I want to review the active assignments of my users to ensure everyone has the appropriate access.
-
 ---
 # Review access of an access package in entitlement management
 
@@ -27,7 +18,10 @@ Entitlement management simplifies how enterprises manage access to groups, appli
 
 To review users' active access package assignments, the creator of a review must satisfy these prerequisites:
 - Microsoft Entra ID P2 or Microsoft Entra ID Governance
-- Global administrator or Identity Governance administrator
+- Global Administrator or Identity Governance Administrator role
+
+> [!NOTE]
+> Following least privilege access, we recommend using the Identity Governance Administrator role.
 
 For more information, see [License requirements](entitlement-management-overview.md#license-requirements).
 

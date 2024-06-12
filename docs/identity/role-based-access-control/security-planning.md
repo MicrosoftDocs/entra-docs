@@ -1,20 +1,19 @@
 ---
 
 title: Secure access practices for administrators in Microsoft Entra ID
-description: Ensure that your organization's administrative access and administrator accounts are secure. For system architects and IT pros who configure Microsoft Entra ID, Azure, and Microsoft Online Services. 
-services: active-directory 
-keywords: 
+description: Ensure that your organization's administrative access and administrator accounts are secure. For system architects and IT pros who configure Microsoft Entra ID, Azure, and Microsoft Online Services.
+
+keywords:
 author: rolyon
 manager: amycolannino
 ms.author: rolyon
 ms.date: 04/19/2022
 ms.topic: conceptual
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: roles
+ms.service: entra-id
+ms.subservice: role-based-access-control
 ms.custom: it-pro, has-azure-ad-ps-ref
 ms.reviewer: "martincoetzer; MarkMorow"
-ms.collection: M365-identity-device-management
+
 ---
 
 # Securing privileged access for hybrid and cloud deployments in Microsoft Entra ID
@@ -102,11 +101,7 @@ Remove any accounts that are no longer needed in those roles. Then, categorize t
 
 #### Define at least two emergency access accounts
 
-It's possible for a user to be accidentally locked out of their role. For example, if a federated on-premises identity provider isn't available, users can't sign in or activate an existing administrator account. You can prepare for accidental lack of access by storing two or more emergency access accounts.
-
-Emergency access accounts help restrict privileged access within a Microsoft Entra organization. These accounts are highly privileged and aren't assigned to specific individuals. Emergency access accounts are limited to emergency for "break glass" scenarios where normal administrative accounts can't be used. Ensure that you control and reduce the emergency account's usage to only that time for which it's necessary.
-
-Evaluate the accounts that are assigned or eligible for the Global Administrator role. If you don't see any cloud-only accounts using the \*.onmicrosoft.com domain (for "break glass" emergency access), create them. For more information, see [Managing emergency access administrative accounts in Microsoft Entra ID](security-emergency-access.md).
+[!INCLUDE [emergency-access-accounts](../../includes/definitions/emergency-access-accounts.md)]
 
 <a name='turn-on-multi-factor-authentication-and-register-all-other-highly-privileged-single-user-non-federated-administrator-accounts'></a>
 

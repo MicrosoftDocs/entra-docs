@@ -4,23 +4,24 @@ title: Add Google as an identity provider for B2B
 description: Federate with Google to enable guest users to sign in to your Microsoft Entra apps with their own Gmail accounts.
 
  
-ms.service: active-directory
-ms.subservice: B2B
+ms.service: entra-external-id
 ms.topic: how-to
 ms.date: 01/23/2024
 
 ms.author: mimart
 author: msmimart
 manager: celestedg
-ms.custom: it-pro, seo-update-azuread-jan, has-adal-ref, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom: it-pro, has-adal-ref, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.collection: M365-identity-device-management
 #customer intent: As a B2B collaboration administrator, I want to add Google as an identity provider, so that invited users can sign in to shared apps and resources using their Gmail accounts.
 ---
 
 # Add Google as an identity provider for B2B guest users
 
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
+
 > [!TIP]
-> This article describes adding Google as an identity provider for B2B collaboration. If your tenant is configured for customer identity and access management, see [Add Google as an identity provider](customers/how-to-google-federation-customers.md) for customers.
+> This article describes adding Google as an identity provider for B2B collaboration in workforce tenants. For instructions for external tenants, see [Add Google as an identity provider](customers/how-to-google-federation-customers.md).
 
 By setting up federation with Google, you can allow invited users to sign in to your shared apps and resources with their own Gmail accounts, without having to create Microsoft accounts. After you add Google as one of your application's sign-in options, on the **Sign in** page, a user can enter the Gmail address they use to sign in to Google.
 
@@ -198,17 +199,17 @@ You'll now set the Google client ID and client secret. You can use the Microsoft
 
 **To configure Google federation in the Microsoft Entra admin center** 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [External Identity Provider administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
-1. Browse to **Identity** > **External Identities** > **All identity providers** and then select the **Google** button.
-5. Enter the client ID and client secret you obtained earlier. Select **Save**:
+1. Browse to **Identity** > **External Identities** > **All identity providers** and then on the **Google**line, select **Configure**.
+1. Enter the client ID and client secret you obtained earlier. Select **Save**:
 
    ![Screenshot that shows the Add Google identity provider page.](media/google-federation/google-identity-provider.png)
 
 **To configure Google federation by using PowerShell**
 
 1. Install the latest version of the [Microsoft Graph PowerShell module](/powershell/microsoftgraph/installation).
-2. Connect to your tenant by using the [Connect-MgGraph](/powershell/microsoftgraph/authentication-commands#using-connect-mggraph) command.
-3. At the sign-in prompt, sign in with the managed Global Administrator account.  
-4. Run the following commands:
+1. Connect to your tenant by using the [Connect-MgGraph](/powershell/microsoftgraph/authentication-commands#using-connect-mggraph) command.
+1. At the sign-in prompt, sign in with the managed Global Administrator account.  
+1. Run the following commands:
 
    ```powershell
    $params = @{
@@ -227,7 +228,7 @@ You'll now set the Google client ID and client secret. You can use the Microsoft
 
 ## Add Google identity provider to a user flow
 
-At this point, the Google identity provider is set up in your Microsoft Entra ID tenant. Users who redeem invitations from you can use Google to sign in. However, if you've created self-service sign-up user flows, you also need to add Google to your user flow sign-in pages. To add the Google identity provider to a user flow:
+At this point, the Google identity provider is set up in your Microsoft Entra tenant. Users who redeem invitations from you can use Google to sign in. However, if you've created self-service sign-up user flows, you also need to add Google to your user flow sign-in pages. To add the Google identity provider to a user flow:
 
 1. Browse to **Identity** > **External Identities** > **User flows**.
 
@@ -246,10 +247,8 @@ You can delete your Google federation setup. If you do so, Google guest users wh
 **To delete Google federation in the Microsoft Entra admin center**
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [External Identity Provider administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
 1. Browse to **Identity** > **External Identities** > **All identity providers**.
-1. On the **Google** line, select the ellipsis button (**...**) and then select **Delete**. 
+1. On the **Google** line, select (**Configured**), and then select **Delete**.
    
-   ![Screenshot that shows the Delete button for the social identity provider.](media/google-federation/google-social-identity-providers.png)
-
 1. Select **Yes** to confirm the deletion. 
 
 **To delete Google federation by using PowerShell** 

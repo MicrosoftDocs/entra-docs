@@ -1,8 +1,8 @@
 ---
 title: Migrate to Microsoft Entra multifactor authentication and Microsoft Entra user authentication
 description: Guidance to move from MFA Server on-premises to Microsoft Entra multifactor authentication and Microsoft Entra user authentication
-services: multi-factor-authentication
-ms.service: active-directory
+
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 05/23/2023
@@ -10,7 +10,6 @@ ms.author: gasinh
 author: gargi-sinha
 manager: martinco
 ms.reviewer: michmcla
-ms.collection: M365-identity-device-management
 ---
 # Migrate to Microsoft Entra multifactor authentication and Microsoft Entra user authentication
 
@@ -305,7 +304,7 @@ We recommend reviewing MFA Server logs to ensure no users or applications are us
 
 ### Convert your domains to managed authentication
 
-You should now [convert your federated domains in Microsoft Entra ID to managed](~/identity/hybrid/connect/migrate-from-federation-to-cloud-authentication.md#convert-domains-from-federated-to-managed) and remove the Staged Rollout configuration. 
+You should now [convert your federated domains in Microsoft Entra ID to managed](../hybrid/connect/migrate-from-federation-to-cloud-authentication.md) and remove the Staged Rollout configuration. 
 This conversion ensures new users use cloud authentication without being added to the migration groups.
 
 ### Revert claims rules on AD FS and remove MFA Server authentication provider

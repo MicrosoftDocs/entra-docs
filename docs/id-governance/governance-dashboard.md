@@ -1,19 +1,15 @@
 ---
-title: 'Identity Governance dashboard (Preview)'
+title: 'Identity Governance dashboard'
 description: This article shows how to use the new identity governance dashboard
-services: active-directory
 author: billmath
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id-governance
 ms.topic: how-to
-ms.subservice: compliance
 ms.date: 06/20/2023
 ms.author: billmath
-ms.reviewer: 
-ms.custom: 
+ms.custom:
 ---
-# Identity Governance dashboard (Preview)
+# Identity Governance dashboard
 
 In this article, we provide guidance on how to use the Microsoft Identity Governance dashboard. 
 

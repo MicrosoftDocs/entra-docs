@@ -7,28 +7,27 @@ ms.author: cwerner
 ms.custom: 
 ms.date: 03/06/2023
 ms.reviewer: JasSuri
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: how-to
 titleSuffix: Microsoft identity platform
 
 #Customer intent: As an app administrator, I want to configure a SAML application to receive tokens with claims from an external store, so that I can enrich tokens for existing or new applications using a custom claims provider.
 ---
 
-# Configure a SAML app to receive tokens with claims from an external store (preview)
-
+# Configure a SAML app to receive tokens with claims from an external store
 This article describes how to configure a SAML application to receive tokens with external claims from your custom claims provider.
 
 ## Prerequisites
 
 Before configuring a SAML application to receive tokens with external claims, first follow these sections:
 
-- [Create a custom claims provider API](custom-extension-get-started.md#step-1-create-an-azure-function-app)
-- [Register a custom claims extension](custom-extension-get-started.md#step-2-register-a-custom-authentication-extension)
+- [Configure a custom claim provider token issuance start event](custom-extension-tokenissuancestart-setup.md)
+- [Register a custom claims extension](custom-extension-tokenissuancestart-configuration.md#step-1-register-a-custom-authentication-extension)
 
 ## Configure a SAML application that receives enriched tokens
 
-Individual app administrators or owners can use a custom claims provider to enrich tokens for existing applications or new applications.  These apps can use tokens in either [JWT (for OpenID connect)](./custom-extension-get-started.md) or SAML formats.
+Individual app administrators or owners can use a custom claims provider to enrich tokens for existing applications or new applications.  These apps can use tokens in either [JWT (for OpenID connect)](./custom-extension-tokenissuancestart-configuration.md) or SAML formats.
 
 The following steps are for registering a demo [XRayClaims](https://adfshelp.microsoft.com/ClaimsXray/TokenRequest) application so you can test whether it can receive a token with enriched claims.
 
@@ -70,7 +69,7 @@ Attributes that return by your custom claims provider API aren't automatically i
 
 1. Select on **Configure** for **Custom claims provider**.
 
-1. Select the custom authentication extension you [registered previously](custom-extension-get-started.md#step-2-register-a-custom-authentication-extension) in the **Custom claims provider** dropdown.  Select **Save**.
+1. Select the custom authentication extension you [registered previously](custom-extension-tokenissuancestart-configuration.md#step-1-register-a-custom-authentication-extension) in the **Custom claims provider** dropdown.  Select **Save**.
 
 1. Select **Add new claim** to add a new claim.
 

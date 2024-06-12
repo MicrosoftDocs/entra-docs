@@ -1,13 +1,12 @@
 ---
 title: User provisioning management for enterprise apps in Microsoft Entra ID
 description: Learn how to manage user account provisioning for enterprise apps using the Microsoft Entra ID.
-services: active-directory
+
 author: kenwith
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.workload: identity
 ms.date: 09/15/2023
 ms.author: kenwith
 ms.reviewer: arvinh
@@ -15,7 +14,7 @@ ms.reviewer: arvinh
 
 # Managing user account provisioning for enterprise apps in the Microsoft Entra admin center
 
-This article describes the general steps for managing automatic user account provisioning and deprovisioning for applications that support it. *User account provisioning* is the act of creating, updating, and/or disabling user account records in an application’s local user profile store. Most cloud and SaaS applications store the role and permissions in the user's own local user profile store. The presence of such a user record in the user's local store is *required* for single sign-on and access to work. To learn more about automatic user account provisioning, see [Automate User Provisioning and Deprovisioning to SaaS Applications with Microsoft Entra ID](user-provisioning.md).
+This article describes the general steps for managing automatic user account provisioning and deprovisioning for applications that support it. *User account provisioning* is the act of creating, updating, and/or disabling user account records in an application’s local user profile store. Most cloud and SaaS applications, as well many on-premises applications store the role and permissions in the application's own local user profile store. The presence of such a user record in the application's local store is *required* for single sign-on and access to work. To learn more about automatic user account provisioning, see [Automate User Provisioning and Deprovisioning to SaaS Applications with Microsoft Entra ID](user-provisioning.md).
 
 > [!IMPORTANT]
 > Microsoft Entra ID has a gallery that contains thousands of pre-integrated applications that are enabled for automatic provisioning with Microsoft Entra ID. You should start by finding the provisioning setup tutorial specific to your application in the [List of tutorials on how to integrate SaaS apps with Microsoft Entra ID](~/identity/saas-apps/tutorial-list.md). You'll likely find step-by-step guidance for configuring both the app and Microsoft Entra ID to create the provisioning connection.

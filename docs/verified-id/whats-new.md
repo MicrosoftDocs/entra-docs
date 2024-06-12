@@ -3,9 +3,9 @@ title: What's new for Microsoft Entra Verified ID
 description: Recent updates for Microsoft Entra Verified ID
 author: barclayn
 manager: amycolannino
-ms.service: decentralized-identity
-ms.subservice: verifiable-credentials
-ms.topic: reference
+ms.service: entra-verified-id
+
+ms.topic: whats-new
 ms.date: 10/31/2023
 ms.custom: references_regions
 ms.author: barclayn
@@ -16,8 +16,21 @@ ms.author: barclayn
 
 # What's new in Microsoft Entra Verified ID
 
-  
 This article lists the latest features, improvements, and changes in the Microsoft Entra Verified ID service.
+
+## March 2024
+
+- Starting February 2024, Verified ID [supports NIST compliant P-256 curve](verifiable-credentials-standards.md#supported-algorithms).
+- [Wallet Library 1.0.1](using-wallet-library.md#prerequisites) supports P-256.
+
+## February 2024
+
+- New concept article on [Verified helpdesk](helpdesk-with-verified-id.md) on how to identity of callers seeking help using Entra Verified ID.
+- Override of [expirationDate](issuance-request-api.md#issuance-request-payload) on issuance for idTokenHint attestation flow requires that the contract needs to have the flag [allowOverrideValidityOnIssuance](admin-api.md#contract-type) set to true.
+
+## January 2024
+
+- [FaceCheck](using-facecheck.md) is now in public preview. It allows enterprises to perform high-assurance verifications by performing facial matching between a user’s real-time selfie and a photo in the Verified ID credential. FaceCheck is offered free of cost during the Public Preview period and can be leveraged by any Verified ID project. Later in the year we will announce billing models.
 
 ## December 2023
 
@@ -32,7 +45,7 @@ This article lists the latest features, improvements, and changes in the Microso
 
 - [Quick setup](verifiable-credentials-configure-tenant-quick.md) introduced as preview which enables an admin to onboard a Microsoft Entra tenant with just one click of a button.
 - [MyAccount available now to simplify issuance of Workplace Credentials](verifiable-credentials-configure-tenant-quick.md#myaccount-available-now-to-simplify-issuance-of-workplace-credentials)
-- [Manual setup](verifiable-credentials-configure-tenant.md) still available as an option to `Quick setup`.
+- [Advanced setup](verifiable-credentials-configure-tenant.md) still available as an option to `Quick setup`.
 
 ## September 2023
 
@@ -164,7 +177,7 @@ Starting next month, we're rolling out exciting changes to the subscription requ
 We're rolling out some breaking changes to our service. These updates require Microsoft Entra Verified ID service reconfiguration. End-users need to have their verifiable credentials reissued.
 
 - The Microsoft Entra Verified ID service can now store and handle data processing in the Azure European region.
-- Microsoft Entra Verified ID customers can take advantage of enhancements to credential revocation. These changes add a higher degree of privacy through the implementation of the [W3C Status List 2021](https://w3c-ccg.github.io/vc-status-list-2021/) standard. [More information](whats-new.md?#credential-revocation-with-enhanced-privacy)
+- Microsoft Entra Verified ID customers can take advantage of enhancements to credential revocation. These changes add a higher degree of privacy through the implementation of the [W3C Status List 2021](https://w3c-ccg.github.io/vc-status-list-2021/) standard.
 - We made updates to Microsoft Authenticator that change the interaction between the Issuer of a verifiable credential and the user presenting the verifiable credential. This update forces all Verifiable Credentials to be reissued in Microsoft Authenticator for Android. [More information](whats-new.md?#microsoft-authenticator-did-generation-update)
 
 >[!IMPORTANT]
@@ -197,48 +210,6 @@ Applications that use the Microsoft Entra Verified ID service must use the Reque
 
 To confirm which endpoint you should use, we recommend checking your Azure AD tenant's region as described previously. If the Azure AD tenant is in the EU, you should use the Europe endpoint.  
 
-### Credential Revocation with Enhanced Privacy
-
-The Azure AD Verifiable Credential service supports the [W3C Status List 2021](https://w3c-ccg.github.io/vc-status-list-2021/) standard. Each Issuer tenant now has an Identity Hub endpoint used by verifiers to check on the status of a credential using a privacy-respecting mechanism. The identity hub endpoint for the tenant is also published in the DID document. This feature replaces the current status endpoint.
-
-To uptake this feature, follow the next steps:
-
-1. [Check if your tenant has the Hub endpoint](verifiable-credentials-faq.md#how-can-i-check-if-my-tenant-has-the-new-hub-endpoint).
-    1. If so, go to the next step.
-    1. If not, [reconfigure the Verifiable Credentials service](verifiable-credentials-faq.md#how-do-i-reset-the-microsoft-entra-verified-id-service) in your tenant and go to the next step.
-1. Create new verifiable credentials contracts. In the rules file you must add the ` "credentialStatusConfiguration": "anonymous" ` property to start using the new feature in combination with the Hub endpoint for your credentials:
-
-Sample contract file:
-
-  ``` json
-  {
-    "attestations": {
-      "idTokens": [
-        {
-          "id": "https://self-issued.me",
-          "mapping": {
-            "firstName": { "claim": "$.given_name" },
-            "lastName": { "claim": "$.family_name" }
-          },
-          "configuration": "https://self-issued.me",
-          "clientId": "",
-          "redirectUri": ""
-        }
-      ]
-    },
-    "validityInterval": 2592001,
-  "credentialStatusConfiguration": "anonymous",
-    "vc": {
-      "type": [ "VerifiedCredentialExpert" ]
-    }
-  } 
-  ```
-
-1. You have to issue new verifiable credentials using your new configuration. All verifiable credentials previously issued continue to exist. Your previous DID remains resolvable however, they use the previous status endpoint implementation.
-
->[!IMPORTANT]
-> You have to reconfigure your Azure AD Verifiable Credential service instance to create your new Identity hub endpoint. You have until March 31st 2022, to schedule and manage the reconfiguration of your deployment. On March 31st, 2022 deployments that have not been reconfigured will lose access to any previous Microsoft Entra Verified ID service configuration. Administrators will need to set up a new service instance.
-
 ### Microsoft Authenticator DID Generation Update
 
 We're making protocol updates in Microsoft Authenticator to support Single Long Form DID, thus deprecating the use of pairwise. With this update, your DID in Microsoft Authenticator is used for every issuer and relaying party exchange. Holders of verifiable credentials using Microsoft Authenticator must get their verifiable credentials reissued as any previous credentials aren't going to continue working.
@@ -252,8 +223,7 @@ We're making protocol updates in Microsoft Authenticator to support Single Long 
 
 ## November 2021
 
-- We made updates to the Request Service REST API for [issuance](issuance-request-api.md?#callback-type) and [presentation](presentation-request-api.md?#callback-type)
-Callback types enforcing rules so that URL endpoints for callbacks are reachable.
+- We made updates to the Request Service REST API for [issuance](issuance-request-api.md?#callback-type) and [presentation](presentation-request-api.md?#callback-type). Callback types enforcing rules so that URL endpoints for callbacks are reachable.
 - UX updates to the Microsoft Authenticator verifiable credentials experience: Animations on card selection from the wallet.
 
 ## October 2021

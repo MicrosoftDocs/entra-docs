@@ -3,21 +3,21 @@ title: Sync local partner accounts to cloud as B2B users
 description: Give locally managed external partners access to both local and cloud resources using the same credentials with Microsoft Entra B2B collaboration.
 
  
-ms.service: active-directory
-ms.subservice: B2B
+ms.service: entra-external-id
 ms.topic: how-to
 ms.date: 10/04/2023
 
 ms.author: cmulligan
 author: csmulligan
 manager: celestedg
-ms.custom: "it-pro, seo-update-azuread-jan"
+ms.custom: it-pro
 ms.collection: M365-identity-device-management
-
 # Customer intent: As an IT admin managing partner accounts in a hybrid organization, I want to sync partner accounts from our on-premises directory to the cloud using Microsoft Entra Connect, so that our partners can access the resources they need with the same sign-in credentials for both on-premises and cloud resources.
 ---
 
 # Grant locally managed partner accounts access to cloud resources using Microsoft Entra B2B collaboration
+
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
 
 Before Microsoft Entra ID, organizations with on-premises identity systems have traditionally managed partner accounts in their on-premises directory. In such an organization, when you start to move apps to Microsoft Entra ID, you want to make sure your partners can access the resources they need. It shouldn't matter whether the resources are on-premises or in the cloud. Also, you want your partner users to be able to use the same sign-in credentials for both on-premises and Microsoft Entra resources. 
 

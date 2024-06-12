@@ -2,8 +2,8 @@
 title: Microsoft Entra feature availability in Azure Government
 description: Learn which Microsoft Entra features are available in Azure Government. 
 
-services: multi-factor-authentication
-ms.service: active-directory
+
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 04/13/2023
@@ -13,7 +13,6 @@ ms.author: justinha
 author: justinha
 manager: amycolannino
 ms.reviewer: mattsmith
-ms.collection: M365-identity-device-management
 ---
 
 # Microsoft Entra feature availability
@@ -114,5 +113,5 @@ This following tables list Microsoft Entra feature availability in Azure Governm
 
 ## Other Microsoft Entra products
 
-[Microsoft Entra Workload Identities Premium edition](~/workload-id/workload-identities-faqs.md#is-the-workload-identities-premium-edition-available-on-government-clouds) is available in the US government clouds.
+[Microsoft Entra Workload Identities Premium edition](~/workload-id/workload-identities-faqs.md#is-the-workload-id-premium-plan-available-on-azure-government-clouds) is available in the US government clouds.
 [Microsoft Entra ID Governance](~/id-governance/licensing-fundamentals.md) and [Microsoft Entra Permissions Management](~/permissions-management/faqs.md#is-permissions-management-available-in-government-cloud) products aren't yet available in the US government or US national clouds.

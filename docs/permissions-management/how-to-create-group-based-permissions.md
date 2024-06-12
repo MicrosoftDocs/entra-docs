@@ -1,14 +1,12 @@
 ---
 title: Select group-based permissions settings with the User management dashboard
 description: How to select group-based permissions settings with the User management dashboard.
-services: active-directory
 author: jenniferf-skc
 manager: amycolannino
-ms.service: active-directory 
-ms.subservice: ciem
-ms.workload: identity
+ms.service: entra-permissions-management
+
 ms.topic: how-to
-ms.date: 06/16/2023
+ms.date: 03/15/2024
 ms.author: jfields
 ---
 
@@ -49,5 +47,3 @@ This article describes how you can create  and manage group-based permissions in
 ## Next steps
 
 - For information about how to manage user information, see [Manage users and groups with the User management dashboard](ui-user-management.md).
-- For information about how to view information about active and completed tasks, see [View information about active and completed tasks](ui-tasks.md).
-- For information about how to view personal and organization information, see [View personal and organization information](product-account-settings.md).

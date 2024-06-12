@@ -5,31 +5,33 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: curation-claims
-ms.date: 06/07/2023
+ms.date: 06/10/2024
 ms.reviewer: ludwignick
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: how-to
 #Customer intent: As an application developer, I want to configure optional claims for my application, so that I can customize the claims returned in ID tokens, access tokens, and SAML tokens based on my specific requirements and scenarios.
 ---
 
 # Configure optional claims
 
-You can configure optional claims for your application through the Azure portal or application manifest.
+Tokens that Microsoft Entra returns are kept smaller to ensure optimal performance by clients that request them. As a result, several claims are no longer present in the token by default and must be asked for specifically on a per-application basis.
+
+You can configure optional claims for your application through the Microsoft Entra admin center's applications UI or manifest:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 1. Browse to **Identity** > **Applications** > **App registrations**.
 1. Choose the application for which you want to configure optional claims based on your scenario and desired outcome.
+
+# [Proceed with app UI](#tab/appui)
 1. Under **Manage**, select **Token configuration**.
-   - The UI option **Token configuration** blade isn't available for apps registered in an Azure AD B2C tenant, which can be configured by modifying the application manifest. For more information, see  [Add claims and customize user input using custom policies in Azure Active Directory B2C](/azure/active-directory-b2c/configure-user-input)  
-
-Configure claims using the manifest:
-
 1. Select **Add optional claim**.
-1. Select the token type you want to configure.
+1. Select the token type you want to configure, such as *Access*.
 1. Select the optional claims to add.
 1. Select **Add**.
-1. Under **Manage**, select **Manifest**. A web-based manifest editor opens, allowing you to edit the manifest. Optionally, you can select **Download** and edit the manifest locally, and then use **Upload** to reapply it to your application.
+
+# [Proceed with manifest](#tab/manifest)
+1. Under **Manage**, select **Manifest**. A web-based manifest editor opens, allowing you to edit the manifest. Optionally, you can select **Download** and edit the manifest locally, and then use **Upload** to reapply it to your application. If the file doesn't contain `optionalClaims` property, you can add it.
 
     The following application manifest entry adds the `auth_time`, `ipaddr`, and `upn` optional claims to ID, access, and SAML tokens.
 
@@ -79,6 +81,8 @@ If supported by a specific claim, you can also modify the behavior of the option
 | `source` | Edm.String | The source (directory object) of the claim. There are predefined claims and user-defined claims from extension properties. If the source value is null, the claim is a predefined optional claim. If the source value is user, the value in the name property is the extension property from the user object. |
 | `essential` | Edm.Boolean | If the value is true, the claim specified by the client is necessary to ensure a smooth authorization experience for the specific task requested by the end user. The default value is false. |
 | `additionalProperties` | Collection (Edm.String) | Other properties of the claim. If a property exists in this collection, it modifies the behavior of the optional claim specified in the name property. |
+
+---
 
 ## Configure directory extension optional claims
 
@@ -138,7 +142,7 @@ Complete the following steps to configure groups optional claims through the app
 
 1. Set group name configuration optional claims.
 
-   If you want groups in the token to contain the on premises group attributes in the optional claims section, specify which token type optional claim should be applied to. You also specify the name of optional claim requested and any other properties desired.  
+   If you want groups in the token to contain the on-premises group attributes in the optional claims section, specify which token type optional claim should be applied to. You also specify the name of optional claim requested and any other properties desired.  
    
    Multiple token types can be listed:
 

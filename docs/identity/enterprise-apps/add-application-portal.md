@@ -4,11 +4,11 @@ description: Add an enterprise application in Microsoft Entra ID.
 
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: quickstart
 
-ms.date: 03/22/2023
+ms.date: 03/18/2024
 ms.author: jomondi
 ms.reviewer: ergreenl
 ms.custom: mode-other, enterprise-apps
@@ -17,16 +17,16 @@ ms.custom: mode-other, enterprise-apps
 
 # Quickstart: Add an enterprise application
 
-In this quickstart, you use the Microsoft Entra admin center to add an enterprise application to your Microsoft Entra tenant. Microsoft Entra ID has a gallery that contains thousands of enterprise applications that have been preintegrated. Many of the applications your organization uses are probably already in the gallery. This quickstart uses the application named **Microsoft Entra SAML Toolkit** as an example, but the concepts apply for most [enterprise applications in the gallery](~/identity/saas-apps/tutorial-list.md).
+In this quickstart, you use the Microsoft Entra admin center to add an enterprise application to your Microsoft Entra tenant. Microsoft Entra ID has a gallery that contains thousands of enterprise applications that are already preintegrated. Many of the applications your organization uses are probably already in the gallery. This quickstart uses the application named **Microsoft Entra SAML Toolkit** as an example, but the concepts apply for most [enterprise applications in the gallery](~/identity/saas-apps/tutorial-list.md).
 
-It's recommended that you use a nonproduction environment to test the steps in this quickstart.
+We recommend that you use a nonproduction environment to test the steps in this quickstart.
 
 ## Prerequisites
 
 To add an enterprise application to your Microsoft Entra tenant, you need:
 
 - A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- One of the following roles: Global Administrator, Cloud Application Administrator, or Application Administrator.
+- One of the following roles: Cloud Application Administrator, or Application Administrator.
 
 ## Add an enterprise application
 

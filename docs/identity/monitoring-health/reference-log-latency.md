@@ -3,10 +3,10 @@ title: Log latency for Microsoft Entra ID
 description: Reference information for the factors that drive sign-in and audit log latency in Microsoft Entra ID
 author: shlipsey3
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: reference
-ms.subservice: report-monitor
-ms.date: 01/16/2024
+ms.subservice: monitoring-health
+ms.date: 03/04/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg14
 ---
@@ -20,6 +20,8 @@ Latency is the amount of time it takes for Microsoft Entra ID reporting data to 
 When you upgrade from a free version of Microsoft Entra Premium P1 or P2, you should expect a delay of roughly 24 hours from when you upgrade your tenant before all premium reporting features show data. Many premium reporting features only begin retaining data after this 24-hour period following your upgrade.
 
 When setting up a new storage account or security information and event management (SIEM) tool, you should also expect a delay of 24 hours before reporting data appears in those tools.
+
+When routing activity logs to a Log Analytics workspace for analysis with Azure Monitor logs, you should expect a delay of up to three days before the logs appear in the workspace.
 
 ## Reporting latency factors
 
@@ -37,7 +39,7 @@ There are many more steps in this process that aren't reflected here. Even with 
 
 ## Last sign-in
 
-The last sign-in of a user is one of the most common questions related to log latency. This information is provided by the `signInActivity` property in Microsoft Graph. The `signInActivity` property provides the last interactive and non-interactive sign-in attempt for a user. This property may take up to 24 hours to update. For more information, see [signInActivity resource type](/graph/api/resources/signinactivity?view=graph-rest-beta&preserve-view=true).
+The last sign-in of a user is one of the most common questions related to log latency. This information is provided by the `signInActivity` property in Microsoft Graph. The signInActivity property provides the last interactive and non-interactive sign-in *attempt* for a user. This property might take up to 24 hours to update. For more information, see [signInActivity resource type](/graph/api/resources/signinactivity?view=graph-rest-beta&preserve-view=true).
 
 You must be using a [Microsoft Entra role](howto-access-activity-logs.md#prerequisites) that grants access to the sign-in logs to see this detail, which is found in several places:
 
@@ -55,4 +57,4 @@ You must be using a [Microsoft Entra role](howto-access-activity-logs.md#prerequ
 
 The last sign-in details that appear on the **Sign-ins** tile on the user profile and the **Last interactive sign-in** and **Last non-interactive sign-in** columns in the **Users** list are *not* real-time.
 
-If you need to see the most recent sign-in date and time for a user, go to the sign-in logs and filter for that user. The third bullet in the previous list shows an example of the sign-in logs filtered for a particular user.
+If you need to see the most recent sign-in date and time for a user, go to the sign-in logs and filter for that user.

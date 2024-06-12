@@ -1,22 +1,19 @@
 ---
 title: 'Microsoft Entra Connect Sync: Scheduler'
 description: This topic describes the built-in scheduler feature in Microsoft Entra Connect Sync.
-services: active-directory
-documentationcenter: ''
+
 author: billmath
 manager: amycolannino
-editor: ''
 
 ms.assetid: 6b1a598f-89c0-4244-9b20-f4aaad5233cf
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: how-to
 ms.tgt_pltfrm: na
-ms.workload: identity
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
 
-ms.collection: M365-identity-device-management
+
 ---
 # Microsoft Entra Connect Sync: Scheduler
 This topic describes the built-in scheduler in Microsoft Entra Connect Sync (sync engine).

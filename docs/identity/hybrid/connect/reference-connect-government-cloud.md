@@ -1,16 +1,15 @@
 ---
 title: 'Microsoft Entra Connect: Hybrid identity considerations for Azure Government cloud'
 description: Special considerations for deploying Microsoft Entra Connect with the Azure Government cloud.
-services: active-directory
+
 author: billmath
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id
 ms.topic: reference
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
-ms.collection: M365-identity-device-management
+
 ---
 
 # Hybrid identity considerations for the Azure Government cloud
@@ -35,9 +34,9 @@ Before you deploy the Pass-through Authentication agent, verify whether a firewa
 > [!IMPORTANT]
 > The following guidance applies only to the following:
 > - the pass-through authentication agent
-> - [Microsoft Entra application proxy connector](~/identity/app-proxy/overview-what-is-app-proxy.md) 
+> - [Microsoft Entra private network connector](~/identity/app-proxy/overview-what-is-app-proxy.md) 
 >
-> For information on URLS for the Microsoft Entra Provisioning Agent see the [installation pre-requisites](/azure/active-directory/cloud-sync/how-to-prerequisites)  for cloud sync.
+> For information on URLS for the Microsoft Entra provisioning agent see the [installation pre-requisites](/azure/active-directory/cloud-sync/how-to-prerequisites)  for cloud sync.
 
 
 |URL |How it's used|
@@ -62,7 +61,7 @@ Follow these steps to install the agent for the Azure Government cloud:
    For Application Proxy:
 
    ```
-   AADApplicationProxyConnectorInstaller.exe ENVIRONMENTNAME="AzureUSGovernment" 
+   MicrosoftEntraPrivateNetworkConnectorInstaller.exe ENVIRONMENTNAME="AzureUSGovernment" 
    ```
 
 ## Single sign-on

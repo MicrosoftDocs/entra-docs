@@ -1,17 +1,17 @@
 ---
 title: Microsoft Entra SSO integration with LifeSight
 description: Learn how to configure single sign-on between Microsoft Entra ID and LifeSight.
-services: active-directory
+
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: CelesteDG
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: saas-apps
 ms.topic: how-to
-ms.date: 01/17/2024
+ms.date: 03/25/2024
 ms.author: jeedes
 
+# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and LifeSight so that I can control who has access to LifeSight, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
 # Microsoft Entra SSO integration with LifeSight

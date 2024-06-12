@@ -5,17 +5,19 @@ description: Learn how to configure single sign-on between Microsoft Entra ID an
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: celested
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
+
+# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SignalFx so that I can control who has access to SignalFx, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
 # Tutorial: Microsoft Entra single sign-on (SSO) integration with SignalFx
 
-In this tutorial, you will learn how to integrate SignalFx with Microsoft Entra ID. When you integrate SignalFx with Microsoft Entra ID, you can:
+In this tutorial, you'll learn how to integrate SignalFx with Microsoft Entra ID. When you integrate SignalFx with Microsoft Entra ID, you can:
 
 * Control from Microsoft Entra ID who has access to SignalFx.
 * Enable your users to be automatically signed-in to SignalFx with their Microsoft Entra accounts.
@@ -30,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you will configure and test Microsoft Entra SSO in a test environment.
+In this tutorial, you'll configure and test Microsoft Entra SSO in a test environment.
 
 * SignalFx supports **IDP** initiated SSO.
 * SignalFx supports **Just In Time** user provisioning.
@@ -58,7 +60,7 @@ Use these instructions to begin the configuration process for the SignalFx SSO.
     * This feature will display a customized button in the login page that your users can click on. 
     * The information you entered in **Name** will appear on the button. As a result, enter a **Name** that your users will recognize. 
     * This option will only function if you use a custom subdomain for the SignalFx application, such as **yourcompanyname.signalfx.com**. To obtain a custom subdomain, contact SignalFx support. 
-1. Copy the **Integration ID**. You will need this information in a later step. 
+1. Copy the **Integration ID**. you'll need this information in a later step. 
 1. Leave the SignalFx UI open. 
 
 <a name='step-3-configure-azure-ad-sso'></a>
@@ -75,9 +77,9 @@ Use these instructions to enable Microsoft Entra SSO.
 
 1. On the **Set up single sign-on with SAML** page, perform the following steps: 
 
-    a. In **Identifier**, enter the following URL `https://api.<realm>.signalfx.com/v1/saml/metadata` and replace `<realm>` with your SignalFx realm. 
+    a. In **Identifier**, enter the following URL `https://api.<realm>.signalfx.com/v1/saml/metadata` and replace `<realm>` with your SignalFx realm. (except realm US0, the url should be `https://api.signalfx.com/v1/saml/metadata`). 
 
-    b. In **Reply URL**, enter the following URL `https://api.<realm>.signalfx.com/v1/saml/acs/<integration ID>` and replace `<realm>` with your SignalFx realm, as well as `<integration ID>` with the **Integration ID** you copied earlier from the SignalFx UI.
+    b. In **Reply URL**, enter the following URL `https://api.<realm>.signalfx.com/v1/saml/acs/<integration ID>` and replace `<realm>` with your SignalFx realm, as well as `<integration ID>` with the **Integration ID** you copied earlier from the SignalFx UI. (except US0, the url should be `https://api.signalfx.com/v1/saml/acs/<integration ID>`)
 
 1. SignalFx application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. 
     
@@ -93,11 +95,11 @@ Use these instructions to enable Microsoft Entra SSO.
     > [!NOTE]
     > This process requires that your Active Directory is configured with at least one verified custom domain, as well as has access to the email accounts in this domain. If you are unsure or need assistance with this configuration, please contact SignalFx support.  
 
-1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Certificate (Base64)**, and then select **Download**. Download the certificate, and save it on your computer. Then, copy the **App Federation Metadata Url** value; you will need this information in a later step in the SignalFx UI. 
+1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Certificate (Base64)**, and then select **Download**. Download the certificate, and save it on your computer. Then, copy the **App Federation Metadata Url** value; you'll need this information in a later step in the SignalFx UI. 
 
     ![The Certificate download link](common/certificatebase64.png)
 
-1. On the **Set up SignalFx** section, copy the **Microsoft Entra Identifier** value. You will need this information in a later step in the SignalFx UI. 
+1. On the **Set up SignalFx** section, copy the **Microsoft Entra Identifier** value. you'll need this information in a later step in the SignalFx UI. 
 
 <a name='step-4-create-an-azure-ad-test-user'></a>
 
@@ -149,7 +151,7 @@ Review the following information regarding how to test SSO, as well as expectati
     * When you click the SignalFx tile in the MyApps, you should be automatically logged into the SignalFx. 
         * For more information about the MyApps, see [Introduction to the MyApps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-* SignalFx application can be accessed from the MyApps or via a custom login page assigned to the organization. The test user should test the integration starting from either of these location.
+* SignalFx application can be accessed from the MyApps or via a custom login page assigned to the organization. The test user should test the integration starting from either of these locations.
     * The test user can use the credentials created earlier in this process for **b.simon\@contoso.com**.
 
 ### First-time logins

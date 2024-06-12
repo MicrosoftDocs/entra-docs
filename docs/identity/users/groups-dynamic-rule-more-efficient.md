@@ -1,19 +1,16 @@
 ---
 title: Create simpler and faster rules for dynamic groups
 description: How to optimize your membership rules to automatically populate groups.
-services: active-directory
-documentationcenter: ''
+
 author: barclayn
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: enterprise-users
-ms.workload: identity
-ms.topic: overview
+ms.service: entra-id
+ms.subservice: users
+ms.topic: conceptual
 ms.date: 11/07/2023
 ms.author: barclayn
 ms.reviewer: jordandahl
 ms.custom: it-pro
-ms.collection: M365-identity-device-management
 ---
 
 
@@ -39,7 +36,7 @@ Or, best of all:
 
 ## Minimize use of CONTAINS
 
-Similiar to the use of MATCH. Minimize the usage of the `contains` operator in rules as much as possible. Instead, explore if it's possible to use the `startswith` or `-eq` operators. Utilizing CONTAINS can decrease processing times within Intune based on the tenant. Extension attributes are another avenue that can be used to help with processing time. 
+Similar to the use of MATCH. Minimize the usage of the `contains` operator in rules as much as possible. Instead, explore if it's possible to use the `startswith` or `-eq` operators. Utilizing CONTAINS can increase processing times, especially for tenants with many dynamic groups.
 
 ## Use fewer OR operators
 

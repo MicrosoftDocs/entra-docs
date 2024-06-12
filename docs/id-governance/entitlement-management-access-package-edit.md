@@ -1,23 +1,14 @@
 ---
 title: Hide or delete access package in entitlement management
 description: Learn how to hide or delete an access package in Microsoft Entra entitlement management.
-services: active-directory
-documentationCenter: ''
 author: owinfreyATL
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
-ms.tgt_pltfrm: na
+ms.service: entra-id-governance
+ms.subservice: entitlement-management
 ms.topic: how-to
-ms.subservice: compliance
 ms.date: 05/31/2023
 ms.author: owinfrey
-ms.reviewer: 
-ms.collection: M365-identity-device-management
-
-
 #Customer intent: As an administrator, I want detailed information about how I can edit an access package so that requestors have the resources they need to perform their job.
-
 ---
 # Hide or delete an access package in entitlement management
 
@@ -29,10 +20,9 @@ This article describes how to hide or delete an access package.
 
 Follow these steps to change the **Hidden** setting for an access package.
 
-**Prerequisite role:** Global Administrator, Identity Governance Administrator, Catalog owner, or Access package manager
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
-
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
+    > [!TIP]
+    > Other least privilege roles that can complete this task include the Catalog owner and Access Package manager.
 1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
 
 1. On the **Access packages** page open an access package.
@@ -49,10 +39,9 @@ Follow these steps to change the **Hidden** setting for an access package.
 
 An access package can only be deleted if it has no active user assignments. Follow these steps to delete an access package.
 
-**Prerequisite role:** Global Administrator, Identity Governance Administrator, Catalog owner, or Access package manager
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
-
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
+     > [!TIP]
+     > Other least privilege roles that can complete this task include the Catalog owner and Access Package manager.
 1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
 
 1. On the **Access packages** page open the access package.

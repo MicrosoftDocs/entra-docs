@@ -1,21 +1,19 @@
 ---
 title: Microsoft Entra Connect - Manage AD FS trust with Microsoft Entra ID using Microsoft Entra Connect
 description: Operational details of Microsoft Entra ID trust handling by Microsoft Entra Connect.
-services: active-directory
-documentationcenter: ''
+
 ms.reviewer: anandyadavmsft
 manager: amycolannino
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.assetid: 2593b6c6-dc3f-46ef-8e02-a8e2dc4e9fb9
-ms.service: active-directory    
-ms.workload: identity
+ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 11/06/2023
 ms.author: billmath
 author: billmath
-ms.custom: 
-ms.collection: M365-identity-device-management
+ms.custom:
+
 ---
 # Manage AD FS trust with Microsoft Entra ID using Microsoft Entra Connect
 

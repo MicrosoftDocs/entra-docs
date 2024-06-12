@@ -1,17 +1,13 @@
 ---
 title: Microsoft Entra security operations for applications
 description: Learn how to monitor and alert on applications to identify security threats.
-services: active-directory
 author: janicericketts
 manager: martinco
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: fundamentals
+ms.service: entra
+ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 09/06/2022
 ms.author: jricketts
-ms.custom: "it-pro, seodec18"
-ms.collection: M365-identity-device-management
 ---
 
 # Microsoft Entra security operations guide for applications
@@ -114,13 +110,13 @@ Many applications use credentials to authenticate in Microsoft Entra ID. Any oth
 
 ## Application permissions
 
-Like an administrator account, applications can be assigned privileged roles. Apps can be assigned Microsoft Entra roles, such as Global Administrator, or Azure RBAC roles such as Subscription Owner. Because they can run without a user, and as a background service, closely monitor when an application is granted a highly privileged role or permission.
+Like an administrator account, applications can be assigned privileged roles. Apps can be assigned any Microsoft Entra roles, such as [User Administrator](../identity/role-based-access-control/permissions-reference.md#user-administrator), or Azure RBAC roles such as [Billing Reader](/azure/role-based-access-control/built-in-roles/management-and-governance#billing-reader). Because they can run without a user, and as a background service, closely monitor when an application is granted privileged roles or permissions.
 
 ### Service principal assigned to a role
 
 | What to monitor| Risk Level| Where| Filter/sub-filter| Notes |
 |-|-|-|-|-|
-| App assigned to Azure RBAC role, or Microsoft Entra role| High to Medium| Microsoft Entra audit logs| Type: service principal<br>Activity: “Add member to role” or “Add eligible member to role”<br>-or-<br>“Add scoped member to role.”| For highly privileged roles such as Global Administrator, risk is high. For lower privileged roles risk is medium. Alert anytime an application is assigned to an Azure role or Microsoft Entra role outside of normal change management or configuration procedures.<br>[Microsoft Sentinel template](https://github.com/Azure/Azure-Sentinel/blob/master/Detections/AuditLogs/ServicePrincipalAssignedPrivilegedRole.yaml)<br><br>[Sigma rules](https://github.com/SigmaHQ/sigma/tree/master/rules/cloud/azure) |
+| App assigned to Azure RBAC role, or Microsoft Entra role| High to Medium| Microsoft Entra audit logs| Type: service principal<br>Activity: “Add member to role” or “Add eligible member to role”<br>-or-<br>“Add scoped member to role.”| For highly privileged roles risk is high. For lower privileged roles risk is medium. Alert anytime an application is assigned to an Azure role or Microsoft Entra role outside of normal change management or configuration procedures.<br>[Microsoft Sentinel template](https://github.com/Azure/Azure-Sentinel/blob/master/Detections/AuditLogs/ServicePrincipalAssignedPrivilegedRole.yaml)<br><br>[Sigma rules](https://github.com/SigmaHQ/sigma/tree/master/rules/cloud/azure) |
 
 ### Application granted highly privileged permissions
 
@@ -129,7 +125,7 @@ Applications should follow the principle of least privilege. Investigate applica
 | What to monitor|Risk Level|Where| Filter/sub-filter| Notes|
 |-|-|-|-|-|
 | App granted highly privileged permissions, such as permissions with “*.All” (Directory.ReadWrite.All) or wide ranging permissions (Mail.*)| High |Microsoft Entra audit logs| “Add app role assignment to service principal”, <br>- where-<br> Target(s) identifies an API with sensitive data (such as Microsoft Graph) <br>-and-<br>AppRole.Value identifies a highly privileged application permission (app role).| Apps granted broad permissions such as “*.All” (Directory.ReadWrite.All) or wide ranging permissions (Mail.*)<br>[Microsoft Sentinel template](https://github.com/Azure/Azure-Sentinel/blob/master/Detections/AuditLogs/ServicePrincipalAssignedAppRoleWithSensitiveAccess.yaml)<br><br>[Sigma rules](https://github.com/SigmaHQ/sigma/tree/master/rules/cloud/azure) |
-| Administrator granting either application permissions (app roles) or highly privileged delegated permissions |High| Microsoft 365 portal| “Add app role assignment to service principal”, <br>-where-<br>Target(s) identifies an API with sensitive data (such as Microsoft Graph)<br>“Add delegated permission grant”, <br>-where-<br>Target(s) identifies an API with sensitive data (such as Microsoft Graph) <br>-and-<br>DelegatedPermissionGrant.Scope includes high-privilege permissions.| Alert when a global administrator, application administrator, or cloud application administrator consents to an application. Especially look for consent outside of normal activity and change procedures.<br>[Microsoft Sentinel template](https://github.com/Azure/Azure-Sentinel/blob/master/Detections/AuditLogs/ServicePrincipalAssignedAppRoleWithSensitiveAccess.yaml)<br>[Microsoft Sentinel template](https://github.com/Azure/Azure-Sentinel/blob/master/Detections/AuditLogs/AzureADRoleManagementPermissionGrant.yaml)<br>[Microsoft Sentinel template](https://github.com/Azure/Azure-Sentinel/blob/master/Detections/AuditLogs/MailPermissionsAddedToApplication.yaml)<br><br>[Sigma rules](https://github.com/SigmaHQ/sigma/tree/master/rules/cloud/azure) |
+| Administrator granting either application permissions (app roles) or highly privileged delegated permissions |High| Microsoft 365 portal| “Add app role assignment to service principal”, <br>-where-<br>Target(s) identifies an API with sensitive data (such as Microsoft Graph)<br>“Add delegated permission grant”, <br>-where-<br>Target(s) identifies an API with sensitive data (such as Microsoft Graph) <br>-and-<br>DelegatedPermissionGrant.Scope includes high-privilege permissions.| Alert when an administrator consents to an application. Especially look for consent outside of normal activity and change procedures.<br>[Microsoft Sentinel template](https://github.com/Azure/Azure-Sentinel/blob/master/Detections/AuditLogs/ServicePrincipalAssignedAppRoleWithSensitiveAccess.yaml)<br>[Microsoft Sentinel template](https://github.com/Azure/Azure-Sentinel/blob/master/Detections/AuditLogs/AzureADRoleManagementPermissionGrant.yaml)<br>[Microsoft Sentinel template](https://github.com/Azure/Azure-Sentinel/blob/master/Detections/AuditLogs/MailPermissionsAddedToApplication.yaml)<br><br>[Sigma rules](https://github.com/SigmaHQ/sigma/tree/master/rules/cloud/azure) |
 | Application is granted permissions for Microsoft Graph, Exchange, SharePoint, or Microsoft Entra ID. |High| Microsoft Entra audit logs| “Add delegated permission grant” <br>-or-<br>“Add app role assignment to service principal”, <br>-where-<br>Target(s) identifies an API with sensitive data (such as Microsoft Graph, Exchange Online, and so on)| Alert as in the preceding row.<br>[Microsoft Sentinel template](https://github.com/Azure/Azure-Sentinel/blob/master/Detections/AuditLogs/ServicePrincipalAssignedAppRoleWithSensitiveAccess.yaml)<br><br>[Sigma rules](https://github.com/SigmaHQ/sigma/tree/master/rules/cloud/azure) |
 | Application permissions (app roles) for other APIs are granted |Medium| Microsoft Entra audit logs| “Add app role assignment to service principal”, <br>-where-<br>Target(s) identifies any other API.| Alert as in the preceding row.<br>[Sigma rules](https://github.com/SigmaHQ/sigma/tree/master/rules/cloud/azure) |
 | Highly privileged delegated permissions are granted on behalf of all users |High| Microsoft Entra audit logs| “Add delegated permission grant”, where Target(s) identifies an API with sensitive data (such as Microsoft Graph), <br> DelegatedPermissionGrant.Scope includes high-privilege permissions, <br>-and-<br>DelegatedPermissionGrant.ConsentType is “AllPrincipals”.| Alert as in the preceding row.<br>[Microsoft Sentinel template](https://github.com/Azure/Azure-Sentinel/blob/master/Detections/AuditLogs/ServicePrincipalAssignedAppRoleWithSensitiveAccess.yaml)<br>[Microsoft Sentinel template](https://github.com/Azure/Azure-Sentinel/blob/master/Detections/AuditLogs/AzureADRoleManagementPermissionGrant.yaml)<br>[Microsoft Sentinel template](https://github.com/Azure/Azure-Sentinel/blob/master/Detections/AuditLogs/SuspiciousOAuthApp_OfflineAccess.yaml)<br><br>[Sigma rules](https://github.com/SigmaHQ/sigma/tree/master/rules/cloud/azure) |
@@ -150,7 +146,7 @@ After you set up Azure Key Vault, [enable logging](/azure/key-vault/general/howt
 
 | What to monitor| Risk Level| Where| Filter/sub-filter| Notes |
 |-|-|-|-|-|
-| End-user consent to application| Low| Microsoft Entra audit logs| Activity: Consent to application / ConsentContext.IsAdminConsent = false| Look for: high profile or highly privileged accounts, app requests high-risk permissions, apps with suspicious names, for example generic, misspelled, etc.<br>[Microsoft Sentinel template](https://github.com/Azure/Azure-Sentinel/blob/master/Hunting%20Queries/AuditLogs/ConsentToApplicationDiscovery.yaml)<br><br>[Sigma rules](https://github.com/SigmaHQ/sigma/tree/master/rules/cloud/azure) |
+| End-user consent to application| Low| Microsoft Entra audit logs| Activity: Consent to application / ConsentContext.IsAdminConsent = false| Look for: high profile or highly privileged accounts, app requests high-risk permissions, apps with suspicious names, for example generic, misspelled, and so on.<br>[Microsoft Sentinel template](https://github.com/Azure/Azure-Sentinel/blob/master/Hunting%20Queries/AuditLogs/ConsentToApplicationDiscovery.yaml)<br><br>[Sigma rules](https://github.com/SigmaHQ/sigma/tree/master/rules/cloud/azure) |
 
 The act of consenting to an application isn't malicious. However, investigate new end-user consent grants looking for suspicious applications. You can [restrict user consent operations](/azure/security/fundamentals/steps-secure-identity).
 
@@ -166,7 +162,7 @@ For more information on consent operations, see the following resources:
 
 | What to monitor| Risk Level| Where| Filter/sub-filter| Notes |
 |-|-|-|-|-|
-| End-user consent stopped due to risk-based consent| Medium| Microsoft Entra audit logs| Core Directory / ApplicationManagement / Consent to application<br> Failure status reason = Microsoft.online.Security.userConsent<br>BlockedForRiskyAppsExceptions| Monitor and analyze any time consent is stopped due to risk. Look for: high profile or highly privileged accounts, app requests high-risk permissions, or apps with suspicious names, for example generic, misspelled, etc.<br>[Microsoft Sentinel template](https://github.com/Azure/Azure-Sentinel/blob/master/Detections/AuditLogs/End-userconsentstoppedduetorisk-basedconsent.yaml)<br><br>[Sigma rules](https://github.com/SigmaHQ/sigma/tree/master/rules/cloud/azure) |
+| End-user consent stopped due to risk-based consent| Medium| Microsoft Entra audit logs| Core Directory / ApplicationManagement / Consent to application<br> Failure status reason = Microsoft.online.Security.userConsent<br>BlockedForRiskyAppsExceptions| Monitor and analyze any time consent is stopped due to risk. Look for: high profile or highly privileged accounts, app requests high-risk permissions, or apps with suspicious names, for example generic, misspelled, and so on.<br>[Microsoft Sentinel template](https://github.com/Azure/Azure-Sentinel/blob/master/Detections/AuditLogs/End-userconsentstoppedduetorisk-basedconsent.yaml)<br><br>[Sigma rules](https://github.com/SigmaHQ/sigma/tree/master/rules/cloud/azure) |
 
 ## Application authentication flows
 
@@ -174,7 +170,7 @@ There are several flows in the  OAuth 2.0 protocol. The recommended flow for an 
 
 The only scenario where ROPC is suggested is for automated application testing. See [Run automated integration tests](~/identity-platform/test-automate-integration-testing.md) for details.  
 
-Device code flow is another OAuth 2.0 protocol flow for input-constrained devices and isn't used in all environments. When device code flow appears in the environment, and isn't used in an input constrained device scenario. More investigation is warranted for a misconfigured application or potentially something malicious.
+Device code flow is another OAuth 2.0 protocol flow for input-constrained devices and isn't used in all environments. When device code flow appears in the environment, and isn't used in an input constrained device scenario. More investigation is warranted for a misconfigured application or potentially something malicious. Device code flow can also be blocked or allowed in Conditional Access. See [Conditional Access authentication flows](../identity/conditional-access/concept-authentication-flows.md#device-code-flow) for details.
 
 Monitor application authentication using the following formation:
 

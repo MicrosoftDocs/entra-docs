@@ -1,22 +1,19 @@
 ---
 title: 'Microsoft Entra Connect: How to recover from LocalDB 10GB limit issue'
 description: This topic describes how to recover Microsoft Entra Connect Synchronization Service when it encounters LocalDB 10GB limit issue.
-services: active-directory
-documentationcenter: ''
+
 author: billmath
 manager: amycolannino
-editor: ''
 
 ms.assetid: 41d081af-ed89-4e17-be34-14f7e80ae358
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: troubleshooting
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
 
-ms.collection: M365-identity-device-management
+
 ---
 # Microsoft Entra Connect: How to recover from LocalDB 10-GB limit
 Microsoft Entra Connect requires a SQL Server database to store identity data. You can either use the default SQL Server 2019 Express LocalDB installed with Microsoft Entra Connect or use your own full SQL. SQL Server Express imposes a 10-GB size limit. When using LocalDB and this limit is reached, Microsoft Entra Connect Synchronization Service can no longer start or synchronize properly. This article provides the recovery steps.
@@ -45,8 +42,7 @@ First, determine whether the Synchronization Service is still running or not:
 3. Check the status of **Microsoft Entra ID Sync**.
 
 
-4. If it is running, do not stop or restart the service. Skip [Shrink the database](#shrink-the-database) step and go to [Delete run 
-history data](#delete-run-history-data) step.
+4. If it is running, do not stop or restart the service. Skip [Shrink the database](#shrink-the-database) step and go to [Delete run history data](#delete-run-history-data) step.
 
 5. If it is not running, try to start the service. If the service starts successfully, skip [Shrink the database](#shrink-the-database) step and go to [Delete run history data](#delete-run-history-data) step. Otherwise, continue with [Shrink the database](#shrink-the-database) step.
 

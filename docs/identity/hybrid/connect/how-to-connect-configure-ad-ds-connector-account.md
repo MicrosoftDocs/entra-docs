@@ -1,17 +1,16 @@
 ---
 title: 'Microsoft Entra Connect: Configure AD DS Connector Account Permissions '
 description: This document details how to configure the AD DS Connector account with the new ADSyncConfig PowerShell module
-services: active-directory
+
 author: billmath
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id
 ms.topic: how-to
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
 
-ms.collection: M365-identity-device-management 
+
 ms.custom:
 ---
 
@@ -67,7 +66,7 @@ Get-Command -Module AdSyncConfig
 
 Each cmdlet has the same parameters to input the AD DS Connector Account and an AdminSDHolder switch. To specify your AD DS Connector Account, you can provide the account name and domain, or just the account Distinguished Name (DN),
 
-e.g.:
+ e.g., :
 
 ```powershell
 Set-ADSyncPasswordHashSyncPermissions -ADConnectorAccountName <ADAccountName> -ADConnectorAccountDomain <ADDomainName>

@@ -6,9 +6,9 @@ ms.author: cwerner
 ms.custom: curation-claims
 ms.date: 05/11/2023
 ms.reviewer: medbhargava
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: conceptual
+ms.service: identity-platform
+
+ms.topic: concept-article
 #Customer intent: As a developer,I want to migrate my application from using email claims to a more secure pattern using globally unique identifiers, so that I can prevent unauthorized access and account takeover by another user.
 ---
 
@@ -46,7 +46,7 @@ By setting `removeUnverifiedEmailClaim` to `false`, your application will receiv
 
 ## Identifying insecure configurations and performing database migration 
 
-You should never use mutable claims (such as `email`, `preferred_username`, etc.) as identifiers to perform authorization checks or index users in a database. These values are reusable and could expose your application to privilege escalation attacks.
+You should never use mutable claims (such as `email`, `preferred_username`, and so on) as identifiers to perform authorization checks or index users in a database. These values are reusable and could expose your application to privilege escalation attacks.
 
 The following pseudocode sample helps illustrate the insecure pattern of user identification / authorization:
 

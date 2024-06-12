@@ -3,10 +3,9 @@ title: Grant B2B users access to your on-premises apps
 description: Shows how to give cloud B2B users access to on premises apps with Microsoft Entra B2B collaboration.
 
  
-ms.service: active-directory
-ms.subservice: B2B
+ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 10/06/2023
+ms.date: 02/28/2024
 
 ms.author: cmulligan
 author: csmulligan
@@ -19,6 +18,8 @@ ms.collection: M365-identity-device-management
 
 # Grant Microsoft Entra B2B users access to your on-premises applications
 
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
+
 As an organization that uses Microsoft Entra B2B collaboration capabilities to invite guest users from partner organizations, you can now provide these B2B users access to on-premises apps. These on-premises apps can use SAML-based authentication or integrated Windows authentication (IWA) with Kerberos constrained delegation (KCD).
 
 ## Access to SAML apps
@@ -28,7 +29,7 @@ If your on-premises app uses SAML-based authentication, you can easily make thes
 You must do the following:
 
 - Enable Application Proxy and install a connector. For instructions, see [Publish applications using Microsoft Entra application proxy](~/identity/app-proxy/application-proxy-add-on-premises-application.md).
-- Publish the on-premises SAML-based application through Microsoft Entra application proxy by following the instructions in [SAML single sign-on for on-premises applications with Application Proxy](~/identity/app-proxy/application-proxy-configure-single-sign-on-on-premises-apps.md).
+- Publish the on-premises SAML-based application through Microsoft Entra application proxy by following the instructions in [SAML single sign-on for on-premises applications with Application Proxy](~/identity/app-proxy/conceptual-sso-apps.md).
 - Assign Microsoft Entra B2B Users to the SAML Application.
 
 When you've completed the steps above, your app should be up and running. To test Microsoft Entra B2B access:
@@ -52,7 +53,7 @@ To provide B2B users access to on-premises applications that are secured with in
 
 The following diagram provides a high-level overview of how Microsoft Entra application proxy and the generation of the B2B user object in the on-premises directory work together to grant B2B users access to your on-premises IWA and KCD apps. The numbered steps are described in detail below the diagram.
 
-![Diagram of MIM and B2B script solutions.](media/hybrid-cloud-to-on-premises/MIMScriptSolution.PNG)
+[![Diagram of MIM and B2B script solutions.](media/hybrid-cloud-to-on-premises/MIMScriptSolution.PNG)](media/hybrid-cloud-to-on-premises/MIMScriptSolution.PNG#lightbox)
 
 1. A user from a partner organization (the Fabrikam tenant) is invited to the Contoso tenant.
 2. A guest user object is created in the Contoso tenant (for example, a user object with a UPN of guest_fabrikam.com#EXT#@contoso.onmicrosoft.com).
@@ -66,8 +67,8 @@ The following diagram provides a high-level overview of how Microsoft Entra appl
 
 You can manage the on-premises B2B user objects through lifecycle management policies. For example:
 
-- You can set up multi-factor authentication (MFA) policies for the Guest user so that MFA is used during Application Proxy authentication. For more information, see [Conditional Access for B2B collaboration users](authentication-conditional-access.md).
-- Any sponsorships, access reviews, account verifications, etc. that are performed on the cloud B2B user applies to the on-premises users. For example, if the cloud user is deleted through your lifecycle management policies, the on-premises user is also deleted by MIM Sync or through the Microsoft Entra B2B script. For more information, see [Manage guest access with Microsoft Entra access reviews](~/id-governance/manage-guest-access-with-access-reviews.md).
+- You can set up multifactor authentication (MFA) policies for the Guest user so that MFA is used during Application Proxy authentication. For more information, see [Conditional Access for B2B collaboration users](authentication-conditional-access.md).
+- Any sponsorships, access reviews, account verifications, and so on. that are performed on the cloud B2B user applies to the on-premises users. For example, if the cloud user is deleted through your lifecycle management policies, the on-premises user is also deleted by MIM Sync or through the Microsoft Entra B2B script. For more information, see [Manage guest access with Microsoft Entra access reviews](~/id-governance/manage-guest-access-with-access-reviews.md).
 
 <a name='create-b2b-guest-user-objects-through-an-azure-ad-b2b-script'></a>
 

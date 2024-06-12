@@ -1,19 +1,17 @@
 ---
 title: Configure Datawiza for Microsoft Entra multifactor authentication and single sign-on to Oracle EBS
 description: Learn how to enable Microsoft Entra multifactor authentication and SSO for an Oracle E-Business Suite application via Datawiza.
-
 author: gargi-sinha
 manager: martinco
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: how-to
-
-ms.date: 01/26/2023
+ms.date: 01/31/2024
 ms.author: gasinh
 ms.collection: M365-identity-device-management
 ms.custom: not-enterprise-apps
 
-#customer intent: As an IT administrator responsible for securing access to Oracle EBS, I want to configure Microsoft Entra multifactor authentication and single sign-on via Datawiza, so that I can provide secure and seamless access for device users and apps from any location.
+#customer intent: I'm an IT administrator responsible for securing access to Oracle EBS. I want to configure Microsoft Entra multifactor authentication (MFA) and single sign-on (SSO) with Datawiza. My goal is to provide secure and seamless access for device users and to apps from any location.
 ---
 
 # Configure Datawiza for Microsoft Entra multifactor authentication and single sign-on to Oracle EBS
@@ -46,7 +44,7 @@ To complete the steps in this article, you need:
 
 * An Azure subscription. If you don't have one, you can get an [Azure free account](https://azure.microsoft.com/free/).
 * A Microsoft Entra tenant linked to the Azure subscription.
-* A [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) role.
+* A [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) role.
 * Docker and Docker Compose, to run DAP. For more information, see [Get Docker](https://docs.docker.com/get-docker/) and [Docker Compose Overview](https://docs.docker.com/compose/install/).
 * User identities synchronized from an on-premises directory to Microsoft Entra ID, or created in Microsoft Entra ID and flowed back to your on-premises directory. For more information, see [Microsoft Entra Connect Sync: Understand and customize synchronization](~/identity/hybrid/connect/how-to-connect-sync-whatis.md).
 * An Oracle EBS environment.
@@ -110,19 +108,19 @@ In the Oracle EBS Linux environment, generate a new DBC file for DAP. You need t
 1. For **EBS DBC Content**, use the content that you copied.
 1. Select **Next**.
 
-[![Screenshot of entries and selections for adding an application.](./media/datawiza-sso-mfa-oracle-ebs/add-application.png)](./media/datawiza-sso-mfa-oracle-ebs/add-application.png#lightbox)
+   [![Screenshot of entries and selections for adding an application.](./media/datawiza-sso-mfa-oracle-ebs/add-application.png)](./media/datawiza-sso-mfa-oracle-ebs/add-application.png#lightbox)
 
 ### IdP configuration
 
 Use the DCMC one-click integration to help you complete Microsoft Entra configuration. With this feature, you can reduce management costs and the likelihood of configuration errors.
 
-[![Screenshot of entries and selections for configuring IdP.](./media/datawiza-sso-mfa-oracle-ebs/configure-idp.png)](./media/datawiza-sso-mfa-oracle-ebs/configure-idp.png#lightbox)
+   [![Screenshot of entries and selections for configuring IdP.](./media/datawiza-sso-mfa-oracle-ebs/configure-idp.png)](./media/datawiza-sso-mfa-oracle-ebs/configure-idp.png#lightbox)
 
 ### Docker Compose file
 
 Configuration on the management console is complete. You're prompted to deploy DAP with your application. Make a note of the deployment Docker Compose file. The file includes the DAP image, `PROVISIONING_KEY`, and `PROVISIONING_SECRET`. DAP uses this information to pull the latest configuration and policies from DCMC.
 
-![Screenshot of Docker information.](./media/datawiza-sso-mfa-oracle-ebs/docker-information.png)
+   ![Screenshot of Docker information.](./media/datawiza-sso-mfa-oracle-ebs/docker-information.png)
 
 ### SSL configuration
 
@@ -153,7 +151,7 @@ Configuration on the management console is complete. You're prompted to deploy D
 
 To provide more security for sign-ins, you can enable multifactor authentication in the Microsoft Entra admin center:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 2. Browse to **Identity** > **Overview** > **Properties** tab.
 3. Under **Security defaults**, select **Manage security defaults**.
 4. On the **Security defaults** pane, toggle the dropdown menu to select **Enabled**.

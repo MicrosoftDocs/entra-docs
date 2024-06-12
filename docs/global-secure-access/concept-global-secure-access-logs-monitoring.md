@@ -1,24 +1,23 @@
 ---
 title: Global Secure Access (preview) logs and monitoring
 description: Learn about the available Global Secure Access (preview) logs and monitoring options.
-author: shlipsey3
-ms.author: sarahlipsey
+author: kenwith
+ms.author: kenwith
 manager: amycolannino
 ms.topic: conceptual
-ms.date: 11/30/2023
-ms.service: network-access
-ms.custom: 
+ms.date: 04/18/2024
+ms.service: global-secure-access
 ---
 
 # Global Secure Access (preview) logs and monitoring
 
 As an IT administrator, you need to monitor the performance, experience, and availability of the traffic flowing through your networks. Within the Global Secure Access (preview) logs there are many data points that you can review to gain insights into your network traffic. This article describes the logs and dashboards that are available to you and some common monitoring scenarios.
 
-## Network traffic dashboard
+## Dashboard
 
-The Global Secure Access network traffic dashboard provides you with visualizations of the traffic flowing through the Microsoft Entra Private Access and Microsoft Entra Internet Access services, which include Microsoft 365 and Private Access traffic. The dashboard provides a summary of the data related to product deployment and insights. Within these categories you can see the number of users, devices, and applications seen in the last 24 hours. You can also see device activity and cross-tenant access.
+The Global Secure Access dashboard provides you with visualizations of the traffic flowing through the Microsoft Entra Private Access and Microsoft Entra Internet Access services, which include Microsoft 365 and Private Access traffic. The dashboard provides a summary of the data related to product deployment and insights. Within these categories you can see the number of users, devices, and applications seen in the last 24 hours. You can also see device activity and cross-tenant access.
 
-For more information, see [Global Secure Access network traffic dashboard](concept-traffic-dashboard.md).
+For more information, see [Global Secure Access dashboard](concept-traffic-dashboard.md).
 
 ## Audit logs
 

@@ -1,19 +1,16 @@
 ---
 title: Enforce a group naming policy in Microsoft Entra ID
 description: Learn how to set up a naming policy for Microsoft 365 groups in Microsoft Entra ID.
-services: active-directory
-documentationcenter: ''
+
 author: barclayn
 manager: amycolannino
-ms.service: active-directory
-ms.subservice: enterprise-users
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: users
 ms.topic: how-to
 ms.date: 11/15/2023
-ms.author: barclayn                   
+ms.author: barclayn
 ms.reviewer: krbain
-ms.custom: it-pro, seo-update-azuread-jan, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
-ms.collection: M365-identity-device-management
+ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
 
 # Enforce a naming policy on Microsoft 365 groups in Microsoft Entra ID
@@ -31,18 +28,18 @@ When a group naming policy is configured, the policy is applied to new Microsoft
 
 You can enforce a naming policy for groups in two different ways:
 
-- **Prefix-suffix naming policy**: You can define prefixes or suffixes that are then added automatically to enforce a naming convention on your groups. For example, in the group name `GRP\_JAPAN\_My Group\_Engineering`, the prefix is `GRP\_JAPAN\_` and the suffix is `\_Engineering`.
+- **Prefix-suffix naming policy**: You can define prefixes or suffixes that are then added automatically to enforce a naming convention on your groups. For example, in the group name `GRP_JAPAN_My Group_Engineering`, the prefix is `GRP_JAPAN_` and the suffix is `_Engineering`.
 - **Custom blocked words**: You can upload a set of blocked words specific to your organization to be blocked in groups created by users. For example, you might use `Payroll,CEO,HR`.
 
 ### Prefix-suffix naming policy
 
-The general structure of the naming convention is `Prefix[GroupName]Suffix`. While you can define multiple prefixes and suffixes, you can have only one instance of the `[GroupName]` in the setting. The prefixes or suffixes can be either fixed strings or user attributes, such as `\[Department\]`, that are substituted based on the user who's creating the group. The total allowable number of characters for your prefix and suffix strings including group name is 63 characters.
+The general structure of the naming convention is `Prefix[GroupName]Suffix`. While you can define multiple prefixes and suffixes, you can have only one instance of the `[GroupName]` in the setting. The prefixes or suffixes can be either fixed strings or user attributes, such as `[Department]`, that are substituted based on the user who's creating the group. The total allowable number of characters for your prefix and suffix strings including group name is 63 characters.
 
 Prefixes and suffixes can contain special characters that are supported in a group name and a group alias. Any characters in the prefix or suffix that aren't supported in the group alias are still applied in the group name but removed from the group alias. Because of this restriction, the prefixes and suffixes applied to the group name might be different from the ones applied to the group alias.
 
 #### Fixed strings
 
-You can use strings to make it easier to scan and differentiate groups in the global address list and in the left navigation links of group workloads. Some of the common prefixes are keywords like `Grp\_Name`, `\#Name`, and `\_Name`.
+You can use strings to make it easier to scan and differentiate groups in the global address list and in the left navigation links of group workloads. Some of the common prefixes are keywords like `Grp_Name`, `#Name`, and `_Name`.
 
 #### User attributes
 
@@ -104,7 +101,7 @@ Some administrator roles are exempted from these policies, across all group work
 
 Install the Microsoft Graph cmdlets as described in [Install the Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/installation).
 
-[!INCLUDE [Azure AD PowerShell migration](../../includes/aad-powershell-migration-include.md)]
+[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
 
 1. Open the Windows PowerShell app as an administrator.
 1. Install the Microsoft Graph cmdlets.
@@ -293,7 +290,7 @@ For more information on Microsoft Entra groups, see:
 
 - [Existing groups](~/fundamentals/groups-view-azure-portal.md)
 - [Expiration policy for Microsoft 365 groups](groups-lifecycle.md)
-- [Manage settings of a group](~/fundamentals/how-to-manage-groups.md)
-- [Manage members of a group](~/fundamentals/how-to-manage-groups.md)
-- [Manage memberships of a group](~/fundamentals/how-to-manage-groups.md)
+- [Manage settings of a group](~/fundamentals/how-to-manage-groups.yml)
+- [Manage members of a group](~/fundamentals/how-to-manage-groups.yml)
+- [Manage memberships of a group](~/fundamentals/how-to-manage-groups.yml)
 - [Manage dynamic rules for users in a group](groups-dynamic-membership.md)

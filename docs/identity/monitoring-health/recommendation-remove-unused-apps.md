@@ -1,21 +1,21 @@
 ---
-title: Microsoft Entra recommendation - Remove unused apps (preview)
-description: Learn why you should remove unused apps.
-services: active-directory
+title: Recommendation to remove unused apps
+description: Learn how the Microsoft Entra recommendation to remove unused apps works and why you should follow the guidance.
+
 author: shlipsey3
 manager: amycolannino
-ms.service: active-directory
-ms.topic: reference
-ms.workload: identity
-ms.subservice: report-monitor
-ms.date: 09/21/2023
+ms.service: entra-id
+ms.topic: how-to
+ms.subservice: monitoring-health
+ms.date: 05/06/2024
 ms.author: sarahlipsey
 ms.reviewer: saumadan
 ---
 # Microsoft Entra recommendation: Remove unused applications (preview)
+
 [Microsoft Entra recommendations](overview-recommendations.md) is a feature that provides you with personalized insights and actionable guidance to align your tenant with recommended best practices.
 
-This article covers the recommendation to investigate unused applications. This recommendation is called `UnusedApps` in the recommendations API in Microsoft Graph. 
+This article covers the recommendation to investigate unused applications. This recommendation is called `StaleApps` in the recommendations API in Microsoft Graph. 
 
 ## Description
 

@@ -5,8 +5,8 @@ description: Include file indicating that it's best to use MSAL.
 author: henrymbuguakiarie
 manager: CelesteDG
 
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 
 ms.topic: include
 ms.date: 11/17/2020

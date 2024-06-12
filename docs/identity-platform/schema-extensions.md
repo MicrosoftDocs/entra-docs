@@ -7,9 +7,9 @@ ms.author: cwerner
 ms.custom: curation-claims
 ms.date: 05/26/2023
 ms.reviewer: ludwignick, rahulnagraj, alamaral
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: conceptual
+ms.service: identity-platform
+
+ms.topic: concept-article
 
 #Customer intent: As a developer integrating user data into applications, I want to understand how to use directory extension attributes for sending user data to applications in token claims, so that I can customize the claims emitted in tokens and retrieve the necessary data for my application.
 ---

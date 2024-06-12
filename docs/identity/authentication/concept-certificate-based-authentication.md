@@ -2,8 +2,7 @@
 title: Overview of Microsoft Entra certificate-based authentication 
 description: Learn about Microsoft Entra certificate-based authentication without federation
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 01/29/2023
@@ -12,8 +11,6 @@ ms.author: justinha
 author: vimrang
 manager: amycolannino
 ms.reviewer: vranganathan
-
-ms.collection: M365-identity-device-management
 ms.custom: has-adal-ref
 ---
 
@@ -78,7 +75,7 @@ The following scenarios aren't supported:
 
 ## Known Limitation with Windows Hello For Business certificates
 
-- While Windows Hello For Business (WHFB) can be used for multi-factor authentication in Microsoft Entra ID, WHFB is not supported for fresh MFA. Customers may choose to enroll certificates for your users using the WHFB key pair.  When properly configured, these WHFB certificates can be used for multi-factor authentication in Microsoft Entra ID. WHFB certificates are compatible with Microsoft Entra certificate-based authentication (CBA) in Edge and Chrome browsers; however, at this time WHFB certificates are not compatible with Microsoft Entra CBA in non-browser scenarios (e.g. Office 365 applications). The workaround is to use the "Sign in Windows Hello or security key" option to sign in (when available) as this option does not use certificates for authentication and avoids the issue with Microsoft Entra CBA; however, this option may not be available in some older applications.
+- While Windows Hello For Business (WHFB) can be used for multi-factor authentication in Microsoft Entra ID, WHFB is not supported for fresh MFA. Customers may choose to enroll certificates for your users using the WHFB key pair.  When properly configured, these WHFB certificates can be used for multi-factor authentication in Microsoft Entra ID. WHFB certificates are compatible with Microsoft Entra certificate-based authentication (CBA) in Edge and Chrome browsers; however, at this time WHFB certificates are not compatible with Microsoft Entra CBA in non-browser scenarios (such as Office 365 applications). The workaround is to use the "Sign in Windows Hello or security key" option to sign in (when available) as this option does not use certificates for authentication and avoids the issue with Microsoft Entra CBA; however, this option may not be available in some older applications.
 
 ## Out of Scope
 

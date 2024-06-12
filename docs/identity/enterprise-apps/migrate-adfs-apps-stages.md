@@ -4,9 +4,9 @@ description: This article provides the stages of the migration process and what 
 
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
-ms.topic: conceptual
+ms.service: entra-id
+ms.subservice: enterprise-apps
+ms.topic: concept-article
 
 ms.date: 12/19/2023
 ms.author: jomondi

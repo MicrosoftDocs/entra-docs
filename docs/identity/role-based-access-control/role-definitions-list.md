@@ -1,19 +1,18 @@
 ---
 title: List Microsoft Entra role definitions
 description: Learn how to list Azure built-in and custom roles.
-services: active-directory
+
 author: rolyon
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: roles
+ms.service: entra-id
+ms.subservice: role-based-access-control
 ms.topic: how-to
 ms.date: 02/04/2022
 ms.author: rolyon
 ms.reviewer: absinh
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 
-ms.collection: M365-identity-device-management
+
 ---
 # List Microsoft Entra role definitions
 
@@ -42,7 +41,7 @@ For more information, see [Prerequisites to use PowerShell or Graph Explorer](pr
 
     The page includes links to relevant documentation to help guide you through managing roles.
 
-    ![Screenshot that shows the "Global Administrator - Description" page.](./media/role-definitions-list/role-description-updated.png)
+    ![Screenshot that shows the "Conditional Access Administrator - Description" page.](./media/role-definitions-list/role-description-updated.png)
 
 ## PowerShell
 
@@ -98,5 +97,5 @@ Follow these instructions to list Microsoft Entra roles using the Microsoft Grap
 ## Next steps
 
 * [List Microsoft Entra role assignments](view-assignments.md).
-* [Assign Microsoft Entra roles to users](manage-roles-portal.md).
+* [Assign Microsoft Entra roles to users](manage-roles-portal.yml).
 * [Microsoft Entra built-in roles](permissions-reference.md).

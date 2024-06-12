@@ -5,12 +5,14 @@ description: Learn how to configure single sign-on between Microsoft Entra ID an
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: celested
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
+
+# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Kantega SSO for Confluence so that I can control who has access to Kantega SSO for Confluence, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 # Tutorial: Microsoft Entra SSO integration with Kantega SSO for Confluence
 
@@ -190,7 +192,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 	![Screenshot that shows the "Name and S S O location" with the "Identity provider name" textbox highlighted, and the "Next" button selected.](./media/kantegassoforconfluence-tutorial/location.png)
 
-	a. Add Name of the Identity Provider in **Identity provider name** textbox (e.g Microsoft Entra ID).
+	a. Add Name of the Identity Provider in **Identity provider name** textbox (such as Microsoft Entra ID).
 
 	b. Click **Next**.
 

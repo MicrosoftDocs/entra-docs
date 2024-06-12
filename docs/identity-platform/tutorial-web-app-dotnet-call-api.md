@@ -1,12 +1,12 @@
 ---
 title: "Tutorial: Call an API and display the results"
-description: Call an API and display the results.
+description: Learn how to call the Microsoft Graph web API, sign-in, and display the profile information of the logged-in user
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.date: 01/18/2024
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: tutorial
 #Customer intent: As an application developer, I want to use my app to call a web API, in this case Microsoft Graph. I need to know how to modify my code so the API can be called successfully.
 ---

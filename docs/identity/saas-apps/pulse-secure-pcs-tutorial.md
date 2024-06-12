@@ -5,13 +5,15 @@ description: Learn how to configure single sign-on between Microsoft Entra ID an
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: CelesteDG
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
+
+# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Pulse Secure PCS so that I can control who has access to Pulse Secure PCS, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
 # Tutorial: Microsoft Entra single sign-on (SSO) integration with Pulse Secure PCS
@@ -130,8 +132,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 ## Configure Pulse Secure PCS SSO
 
-This section covers the SAML configurations required to configure PCS as SAML SP. The other basic
-configurations like creating Realms and Roles are not covered.
+This section covers the SAML configurations required to configure PCS as SAML SP. The other basic configurations like creating Realms and Roles are not covered.
 
 **Pulse Connect Secure configurations include:**
 

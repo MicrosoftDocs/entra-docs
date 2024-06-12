@@ -7,9 +7,9 @@ ms.author: dmwendia
 ms.custom: has-adal-ref
 ms.date: 07/17/2023
 ms.reviewer: saeeda, jmprieur, localden
-ms.service: active-directory
-ms.subservice: develop
-ms.topic: conceptual
+ms.service: identity-platform
+
+ms.topic: concept-article
 #Customer intent: As an application developer, I want to learn about MSAL so I can migrate my ADAL applications to MSAL.
 ---
 
@@ -26,7 +26,7 @@ If any of your applications use the Azure Active Directory Authentication Librar
 
 ## Why switch to MSAL?
 
-If you've developed apps against Azure Active Directory (v1.0) endpoint in the past, you're likely using ADAL. Since Microsoft identity platform (v2.0) endpoint has changed significantly, the new library (MSAL) was entirely built for the new endpoint.
+If you've developed apps using the Azure AD (v1.0) endpoint, you're likely using ADAL. Since Microsoft identity platform (v2.0) endpoint has changed significantly, the new library (MSAL) was entirely built for the new endpoint.
 
 MSAL is designed to enable a secure solution without developers having to worry about the implementation details. It simplifies and manages acquiring, managing, caching, and refreshing tokens, and uses best practices for resilience. We recommend you use MSAL to [increase the resilience of authentication and authorization in client applications that you develop](~/architecture/resilience-client-app.md?tabs=csharp#use-the-microsoft-authentication-library-msal).
 
@@ -76,7 +76,7 @@ MSAL Supports a wide range of application types and scenarios. Refer to [Microso
 
 ADAL to MSAL migration guide for different platforms are available in the following links:
 
-- [Migrate to MSAL iOS and macOS](migrate-objc-adal-msal.md)
+- [Migrate to MSAL iOS and macOS](/entra/msal/objc/migrate-objc-adal-msal)
 - [Migrate to MSAL Java](/entra/msal/java/advanced/migrate-adal-msal-java)
 - [Migrate to MSAL.js](msal-compare-msal-js-and-adal-js.md)
 - [Migrate to MSAL .NET](/entra/msal/dotnet/how-to/msal-net-migration)
@@ -88,7 +88,7 @@ ADAL to MSAL migration guide for different platforms are available in the follow
 If you have questions about migrating your app from ADAL to MSAL, here are some options:
 
 - Post your question on [Microsoft Q&A](/answers/topics/azure-ad-adal-deprecation.html) and tag it with `[azure-ad-adal-deprecation]`.
-- Open an issue in the library's GitHub repository. See the [Languages and frameworks](msal-overview.md#languages-and-frameworks) section of the MSAL overview article for links to each library's repo.
+- Open an issue in the library's GitHub repository. See the [Languages and frameworks](msal-overview.md#msal-languages-and-frameworks) section of the MSAL overview article for links to each library's repo.
 
 If you partnered with an Independent Software Vendor (ISV) in the development of your application, we recommend that you contact them directly to understand their migration journey to MSAL.
 

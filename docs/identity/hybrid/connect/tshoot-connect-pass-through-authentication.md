@@ -1,20 +1,18 @@
 ---
 title: 'Microsoft Entra Connect: Troubleshoot Pass-through Authentication'
 description: This article describes how to troubleshoot Microsoft Entra pass-through authentication.
-services: active-directory
+
 keywords: Troubleshoot Azure AD Connect Pass-through Authentication, install Active Directory, required components for Azure AD, SSO, Single Sign-on
-documentationcenter: ''
 author: billmath
 manager: amycolannino
 ms.assetid: 9f994aca-6088-40f5-b2cc-c753a4f41da7
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: troubleshooting
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
-ms.collection: M365-identity-device-management
+
 ---
 
 # Troubleshoot Microsoft Entra pass-through authentication
@@ -192,4 +190,4 @@ Another way to monitor Authentication Agents is to track specific Performance Mo
 ![Pass-through Authentication Performance Monitor counters](./media/tshoot-connect-pass-through-authentication/pta12.png)
 
 > [!IMPORTANT]
-> Pass-through Authentication provides high availability using multiple Authentication Agents, and _not_ load balancing. Depending on your configuration, _not_ all your Authentication Agents receive roughly _equal_ number of requests. It is possible that a specific Authentication Agent receives no traffic at all.
+> Pass-through Authentication provides high availability using multiple Authentication Agents, and *not* load balancing. Depending on your configuration, *not* all your Authentication Agents receive roughly *equal* number of requests. It is possible that a specific Authentication Agent receives no traffic at all.

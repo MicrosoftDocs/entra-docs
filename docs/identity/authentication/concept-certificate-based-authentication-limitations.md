@@ -2,8 +2,7 @@
 title: Limitations with Microsoft Entra certificate-based authentication without federation
 description: Learn supported and unsupported scenarios for Microsoft Entra certificate-based authentication
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 01/29/2023
@@ -12,8 +11,6 @@ ms.author: justinha
 author: justinha
 manager: amycolannino
 ms.reviewer: vimrang
-
-ms.collection: M365-identity-device-management
 ms.custom: has-adal-ref
 ---
 # Limitations with Microsoft Entra certificate-based authentication 

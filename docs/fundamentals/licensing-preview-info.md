@@ -1,7 +1,7 @@
 ---
 title: Microsoft Entra ID preview program information
 description: In this article we go over the information in effect when participating in Microsoft Entra ID preview programs.
-ms.service: active-directory
+ms.service: entra
 author: barclayn
 manager: amycolannino
 ms.author: barclayn

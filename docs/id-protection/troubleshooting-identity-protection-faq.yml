@@ -2,12 +2,9 @@
 metadata:
   title: FAQs for Microsoft Entra ID Protection
   description: Frequently asked questions Microsoft Entra ID Protection
-  
-  ms.service: active-directory
-  ms.subservice: identity-protection
+  ms.service: entra-id-protection
   ms.topic: faq
-  ms.date: 01/16/2024
-
+  ms.date: 05/02/2024
   ms.author: joflore
   author: MicrosoftGuyJFlo
   manager: amycolannino
@@ -42,7 +39,7 @@ sections:
           
           ### Why can't I set my own risk levels for each risk detection?
 
-          Risk levels in ID Protection are based on the precision of the detection and powered by our supervised machine learning. To customize what experience users are presented, administrator can include/exclude certain users/groups from the User Risk and Sign-In Risk Policies.
+          Risk levels in ID Protection are based on the precision of the detection and powered by our supervised machine learning. To customize what experience users are presented, administrators can configure [risk-based Conditional Access policies](howto-identity-protection-configure-risk-policies.md).
 
           ### Why does the location of a sign-in not match where the user truly signed in from?
 
@@ -60,7 +57,7 @@ sections:
           
           ### How can I learn more about a specific detection?
 
-          All risk detections are documented in the article [What is risk](concept-identity-protection-risks.md#risk-types-and-detection). You can hover over the (i) symbol next to the detection to learn more about a detection.
+          All risk detections are documented in the article [What is risk](concept-identity-protection-risks.md#risk-detections-mapped-to-riskeventtype). You can hover over the (i) symbol next to the detection to learn more about a detection.
           
           ### How do the feedback mechanisms in ID Protection work?
 

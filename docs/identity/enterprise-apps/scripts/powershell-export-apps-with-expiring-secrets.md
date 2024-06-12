@@ -4,8 +4,8 @@ description: PowerShell example that exports all app registrations with expiring
 
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 
 ms.custom:
 ms.topic: sample
@@ -18,7 +18,7 @@ ms.reviewer: mifarca
 
 This PowerShell script example exports all app registrations with secrets and certificates expiring in the next X days (and already expired if you choose so) with their owners for the specified apps from your directory in a CSV file.
 
-[!INCLUDE [quickstarts-free-trial-note](~/../azure-docs-pr/includes/quickstarts-free-trial-note.md)]
+[!INCLUDE [quickstarts-free-trial-note](~/includes/azure-docs-pr/quickstarts-free-trial-note.md)]
 
 This sample requires the [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation) SDK module.
 

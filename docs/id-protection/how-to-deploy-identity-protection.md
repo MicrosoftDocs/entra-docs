@@ -2,9 +2,9 @@
 title: Plan a Microsoft Entra ID Protection deployment
 description: Deploy Microsoft Entra ID Protection
 
-services: active-directory
-ms.service: active-directory
-ms.subservice: identity-protection
+
+ms.service: entra-id-protection
+
 ms.topic: how-to
 ms.date: 03/10/2023
 
@@ -13,7 +13,7 @@ author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: jhenders, tracyyu, chuqiaoshi
 
-ms.collection: M365-identity-device-management
+
 ---
 # Plan an Identity Protection deployment
 
@@ -38,7 +38,7 @@ This deployment plan extends concepts introduced in the [Conditional Access depl
       * [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator)
       * [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator)
 * A test user (non-administrator) that allows you to verify policies work as expected before deploying to real users. If you need to create a user, see [Quickstart: Add new users to Microsoft Entra ID](~/fundamentals/add-users.md).
-* A group that the non-administrator user is a member of. If you need to create a group, see [Create a group and add members in Microsoft Entra ID](~/fundamentals/how-to-manage-groups.md).
+* A group that the non-administrator user is a member of. If you need to create a group, see [Create a group and add members in Microsoft Entra ID](~/fundamentals/how-to-manage-groups.yml).
 
 ### Engage the right stakeholders
 

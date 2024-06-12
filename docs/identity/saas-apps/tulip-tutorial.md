@@ -5,13 +5,15 @@ description: Learn how to configure single sign-on between Microsoft Entra ID an
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: CelesteDG
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 12/15/2023
+ms.date: 03/25/2024
 ms.author: jeedes
 
+
+# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Tulip so that I can control who has access to Tulip, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
 # Tutorial: Microsoft Entra SSO integration with Tulip
@@ -121,7 +123,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	c. Upload the Federation Metadata XML file from Azure to Tulip. This will populate the SSO Login, SSO Logout URL and the Certificates.
 
-	d. Verify that the Name, Email and Badge attributes are not null, i.e. enter any unique strings in all three inputs and do a test authentication using the ```Authenticate``` button on the right.
+	d. Verify that the Name, Email and Badge attributes are not null, that is, enter any unique strings in all three inputs and do a test authentication using the ```Authenticate``` button on the right.
 	
 	e. Upon successful authentication, copy/paste the entire claim URL into the appropriate mapping for the name, email and badgeID attributes.
 	

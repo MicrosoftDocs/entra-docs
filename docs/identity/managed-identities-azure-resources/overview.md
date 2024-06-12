@@ -1,18 +1,15 @@
 ---
 title: Managed identities for Azure resources
 description: An overview of the managed identities for Azure resources.
-services: active-directory
-documentationcenter:
 author: barclayn
 manager: amycolannino
 ms.assetid: 0232041d-b8f5-4bd2-8d11-27999ad69370
-ms.service: active-directory
-ms.subservice: msi
+ms.service: entra-id
+ms.subservice: managed-identities
 ms.topic: overview
-ms.custom: mvc
 ms.date: 01/23/2023
 ms.author: barclayn
-ms.collection: M365-identity-device-management
+
 
 #Customer intent: As a developer, I'd like to securely manage the credentials that my application uses for authenticating to cloud services without having the credentials in my code or checked into source control.
 ---
@@ -97,8 +94,7 @@ Operations on managed identities can be performed by using an Azure Resource Man
 ## Next steps
 
 * [Developer introduction and guidelines](overview-for-developers.md)
-* [Use a Windows VM system-assigned managed identity to access Resource Manager](tutorial-windows-vm-access-arm.md)
-* [Use a Linux VM system-assigned managed identity to access Resource Manager](tutorial-linux-vm-access-arm.md)
+* [Use a VM system-assigned managed identity to access Resource Manager](tutorial-windows-vm-access.md)
 * [How to use managed identities for App Service and Azure Functions](/azure/app-service/overview-managed-identity)
 * [How to use managed identities with Azure Container Instances](/azure/container-instances/container-instances-managed-identity)
 * [Implementing managed identities for Microsoft Azure Resources](https://www.pluralsight.com/courses/microsoft-azure-resources-managed-identities-implementing)

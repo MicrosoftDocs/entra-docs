@@ -2,8 +2,8 @@
 title: Microsoft Entra ID Protection and B2B users
 description: Using Microsoft Entra ID Protection with B2B users
 
-ms.service: active-directory
-ms.subservice: identity-protection
+ms.service: entra-id-protection
+
 ms.topic: conceptual
 ms.date: 01/16/2024
 

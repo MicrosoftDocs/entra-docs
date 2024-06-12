@@ -1,18 +1,16 @@
 ---
 title: Monitor and clean up stale guest accounts
-description: Monitor and clean up stale guest accounts using access reviews 
-services: active-directory 
+description: Monitor and clean up stale guest accounts using access reviews
+
 author: billmath
 ms.author: billmath
 manager: amycolannino
 ms.date: 06/29/2023
 ms.reviewer: gasinh
 ms.topic: how-to
-ms.service: active-directory
-ms.subservice: enterprise-users
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: users
 ms.custom: it-pro
-ms.collection: M365-identity-device-management
 ---
 
 # Monitor and clean up stale guest accounts using access reviews 
@@ -60,8 +58,7 @@ Use the following instructions to learn how to enhance monitoring of inactive gu
 
    `(user.userType -eq "Guest") and (user.mail -contains "@contoso.com") and (user.accountEnabled -eq true)`
 
-2. To [create an Access Review](~/id-governance/create-access-review.md)
-    for the dynamic group, navigate to **Microsoft Entra ID > Identity Governance > Access Reviews**.
+2. To [create an Access Review](~/id-governance/create-access-review.md) for the dynamic group, navigate to **Microsoft Entra ID > Identity Governance > Access Reviews**.
 
 3. Select **New access review**.
 
@@ -186,7 +183,4 @@ Use the following instructions to learn how to enhance monitoring of inactive gu
 
 11. Select **Create**.
 
-Guest users who don't sign into the tenant for the number of days you
-configured are disabled for 30 days, then deleted. After deletion, you
-can restore guests for up to 30 days, after which a new invitation is
-needed.
+Guest users who don't sign into the tenant for the number of days you configured are disabled for 30 days, then deleted. After deletion, you can restore guests for up to 30 days, after which a new invitation is needed.

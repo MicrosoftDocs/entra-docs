@@ -1,13 +1,12 @@
 ---
 title: 'Use partner driven integrations to provision accounts into all your applications'
 description: Use partner driven integrations to provision accounts into all your applications.
-services: active-directory
+
 author: billmath
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id
 ms.topic: overview
-ms.date: 08/25/2023
+ms.date: 02/13/2024
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
@@ -33,47 +32,8 @@ In cases where an application doesn't support SCIM, partners have built [custom 
 
    [![Diagram showing gateways between the Microsoft Entra SCIM client and target applications.](media/partner-driven-integrations/partner-driven-connectors-1.png)](media/partner-driven-integrations/partner-driven-connectors-1.png#lightbox)
 
-## Available partner-driven integrations
-The descriptions and lists of applications below are provided by the partners themselves. You can use the lists of applications supported to identify a partner that you may want to contact and learn more about.  
 
-### IDMWORKS
-#### Description
-We Are Experts In Identity & Access Management and Data Center Management.
-The Microsoft Entra platform integrates with IDMWORKS IdentityForge (IDF) Gateway for user lifecycle management for Mainframe systems (RACF, Top Secret, ACF2), Midrange system (AS400), Healthcare applications (EPIC/Cerner), Linux/Unix servers, Databases, and dozens of on-premises and cloud applications. IdentityForge provides a central, standardized integration engine and modern identity store that serves as a trusted source for all lifecycle management.
-The IDF Gateway for Microsoft Entra ID provides lifecycle management for import sources and provisioning target systems that are not covered by the Microsoft Entra connector portfolio like Mainframe systems (RACF, Top Secret, ACF2) or Healthcare applications (EPIC/Cerner). The IDF Gateway powers Microsoft Entra identity lifecycle management (LCM) to continuously synchronize user account information from Mainframe/Healthcare sources and to automate the account provisioning lifecycle use cases like create, read (import), update, deactivate, delete user accounts and perform group management.
-
-#### Contact information
-* Company website: https://www.idmworks.com/identity-forge
-* Contact information: https://www.idmworks.com/contacts/
-
-#### Popular applications supported
-
-Leading provider of Mainframe, Healthcare and ERP integrations.  More can be found at https://www.idmworks.com/identity-forge/
-
-* IBM RACF
-* CA Top Secret
-* CA ACF2
-* IBM i (AS/400)
-* HP NonStop
-* EPIC
-* SAP ECC
-
-### UNIFY Solutions
-#### Description
-
-UNIFY Solutions is the leading provider of Identity, Access, Security and Governance solutions.
-
-#### Contact information
-* Company website: https://unifysolutions.net/identity/unifyconnect
-* Contact information: https://unifysolutions.net/contact/
-
-#### Popular applications supported
-* Aurion People & Payroll
-* Frontier Software chris21
-* TechnologyOne HR
-* Ascender HCM
-* Fusion5 EmpowerHR
-* SAP ERP Human Capital Management
+[!INCLUDE [Microsoft Entra ID application integration partners](../../includes/application-integration-partners.md)]
 
 ## How-to add partner-driven integrations to this document
 If you have built a SCIM Gateway and would like to add it to this list, follow the steps below. 

@@ -1,18 +1,16 @@
 ---
 title: Bulk remove group members by uploading a CSV file
-description: Remove group members in bulk operations by using a comma-separated values (CSV) file. 
-services: active-directory 
+description: Remove group members in bulk operations by using a comma-separated values (CSV) file.
+
 author: barclayn
 ms.author: barclayn
 manager: amycolannino
 ms.date: 11/10/2023
 ms.topic: how-to
-ms.service: active-directory
-ms.subservice: enterprise-users
-ms.workload: identity
+ms.service: entra-id
+ms.subservice: users
 ms.custom: it-pro
 ms.reviewer: jeffsta
-ms.collection: M365-identity-device-management
 ---
 
 # Bulk remove group members in Microsoft Entra ID
@@ -44,7 +42,7 @@ The rows in a downloaded CSV template are:
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
 1. Select **Microsoft Entra ID**.
 1. Select **Groups** > **All groups**.
 1. Open the group from which you're removing members and then select **Members**.

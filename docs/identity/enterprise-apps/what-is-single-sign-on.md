@@ -4,8 +4,8 @@ description: Learn about single sign-on for enterprise applications in Microsoft
 
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 
 ms.topic: overview
 ms.date: 10/30/2023
@@ -32,7 +32,7 @@ Choosing an SSO method depends on how the application is configured for authenti
 
     There are some scenarios where the SSO option isn't present for an enterprise application. If the application was registered using **App registrations** in the portal, then the single sign-on capability is configured to use OpenID Connect and OAuth by default. In this case, the single sign-on option doesn't appear in the navigation under enterprise applications.
 
-    Single sign-on isn't available when an application is hosted in another tenant. Single sign-on is also not available if your account doesn't have the required permissions (Global Administrator, Cloud Application Administrator, Application Administrator, or owner of the service principal). Permissions can also cause a scenario where you can open single sign-on but might not be able to save.
+    Single sign-on isn't available when an application is hosted in another tenant. Single sign-on is also not available if your account doesn't have the required permissions (Cloud Application Administrator, Application Administrator, or owner of the service principal). Permissions can also cause a scenario where you can open single sign-on but might not be able to save.
 
     > [!VIDEO https://www.youtube.com/embed/CjarTgjKcX8]
 
@@ -59,7 +59,7 @@ Web applications are hosted by various companies and made available as a service
 
 How you implement SSO depends on where the application is hosted. Hosting matters because of the way network traffic is routed to access the application. Users don't need to use the Internet to access on-premises applications (hosted on a local network). If the application is hosted in the cloud, users need the Internet to use it. Cloud hosted applications are also called Software as a Service (SaaS) applications.
 
-For cloud applications, federation protocols are used. You can also use single sign-on for on-premises applications. You can use Application Proxy to configure access for your on-premises application. For more information, see [Remote access to on-premises applications through Microsoft Entra application proxy](~/identity/app-proxy/application-proxy.md).
+For cloud applications, federation protocols are used. You can also use single sign-on for on-premises applications. You can use Application Proxy to configure access for your on-premises application. For more information, see [Remote access to on-premises applications through Microsoft Entra application proxy](/entra/identity/app-proxy).
 
 ## My Apps
 

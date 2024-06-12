@@ -2,8 +2,7 @@
 title: Combined password policy and check for weak passwords in Microsoft Entra ID
 description: Learn about the combined password policy and check for weak passwords in Microsoft Entra ID
 
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: conceptual
@@ -13,8 +12,6 @@ ms.author: justinha
 author: justinha
 manager: amycolannino
 ms.reviewer: tilarso
-
-ms.collection: M365-identity-device-management
 ---
 # Combined password policy and check for weak passwords in Microsoft Entra ID
 

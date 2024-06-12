@@ -5,12 +5,14 @@ description: Learn how to configure single sign-on between Microsoft Entra ID an
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: celested
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 01/12/2024
+ms.date: 03/25/2024
 ms.author: jeedes
+
+# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Google Cloud / G Suite Connector so that I can control who has access to Google Cloud / G Suite Connector, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
 # Tutorial: Microsoft Entra SSO integration with Google Cloud / G Suite Connector by Microsoft
@@ -170,7 +172,7 @@ Follow these steps to enable Microsoft Entra SSO.
 	![image](common/default-attributes.png)
 
     > [!NOTE]
-    > Ensure that the the SAML Response doesn't include any non-standard ASCII characters in the Surname attribute.
+    > Ensure that the SAML Response doesn't include any non-standard ASCII characters in the Surname attribute.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 

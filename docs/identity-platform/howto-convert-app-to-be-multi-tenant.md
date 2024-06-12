@@ -6,9 +6,9 @@ manager: CelesteDG
 ms.author: cwerner
 ms.custom:
 ms.date: 11/17/2023
-ms.reviewer: jmprieur, lenalepa, sureshja, kkrishna
-ms.service: active-directory
-ms.subservice: develop
+ms.reviewer: jmprieur, sureshja
+ms.service: identity-platform
+
 ms.topic: how-to
 #Customer intent: As an Azure user, I want to convert a single tenant app to a Microsoft Entra multitenant app so any Microsoft Entra user can sign in,
 ---
@@ -30,7 +30,7 @@ If you want to try using one of our samples, refer to [Build a multitenant SaaS 
 
 ## Prerequisites
 
-- A Microsoft Entra ID tenant. If you don't have one, you can create one in our [Quickstart: Create a new tenant in Microsoft Entra ID](/entra/fundamentals/create-new-tenant)
+- A Microsoft Entra tenant. If you don't have one, you can create one in our [Quickstart: Create a new tenant in Microsoft Entra ID](/entra/fundamentals/create-new-tenant)
 - An application registered in the Microsoft identity platform. If you don't have one, you can create one in our [Quickstart: Register an application with the Microsoft identity platform](quickstart-register-app.md).
 - Familiarity with [Tenancy in Microsoft Entra ID](./single-and-multi-tenant-apps.md).
 - An integrated development environment (IDE) that enables you to edit your application code.
@@ -54,7 +54,7 @@ The sign-in response to the application then contains a token representing the u
 > [!NOTE]
 > There are, in reality 2 authorities for multitenant applications:
 >
-> - `https://login.microsoftonline.com/common` for applications processing accounts in any organizational directory (any Microsoft Entra directory) and personal Microsoft accounts (e.g. Skype, XBox).
+> - `https://login.microsoftonline.com/common` for applications processing accounts in any organizational directory (any Microsoft Entra directory) and personal Microsoft accounts (such as Skype, XBox).
 > - `https://login.microsoftonline.com/organizations` for applications processing accounts in any organizational directory (any Microsoft Entra directory):
 >
 > The explanations in this document use `common`. But you can replace it by `organizations` if your application doesn't support Microsoft personal accounts.
@@ -102,7 +102,7 @@ Your application may have multiple tiers, with each represented by its own regis
 
 #### Multiple tiers in a single tenant
 
-This can be a problem if your logical application consists of two or more application registrations, for example a separate client and resource. How do you get the resource into the customer tenant first? Microsoft Entra ID covers this case by enabling client and resource to be consented in a single step. The user sees the sum total of the permissions requested by both the client and resource on the consent page. To enable this behavior, the resource’s application registration must include the client’s App ID as a `knownClientApplications` in its [application manifest](./reference-app-manifest.md). For example:
+This can be a problem if your logical application consists of two or more application registrations, for example a separate client and resource. How do you get the resource into the external tenant first? Microsoft Entra ID covers this case by enabling client and resource to be consented in a single step. The user sees the sum total of the permissions requested by both the client and resource on the consent page. To enable this behavior, the resource’s application registration must include the client’s App ID as a `knownClientApplications` in its [application manifest](./reference-app-manifest.md). For example:
 
 ```json
 "knownClientApplications": ["12ab34cd-56ef-78gh-90ij11kl12mn"]
@@ -143,7 +143,6 @@ Multitenant applications can also get access tokens to call APIs that are protec
 ## See also
 
 * [Multitenant application sample](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/blob/master/2-WebApp-graph-user/2-3-Multi-Tenant/README.md)
-* [Multi-tier multitenant application sample](https://github.com/Azure-Samples/ms-identity-javascript-angular-tutorial/blob/main/6-AdvancedScenarios/2-call-api-mt/README.md)
 * [Application objects and service principal objects](app-objects-and-service-principals.md)
 * [Integrating applications with Microsoft Entra ID](./quickstart-register-app.md)
 * [Overview of the Consent Framework](./application-consent-experience.md)

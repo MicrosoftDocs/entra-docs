@@ -4,8 +4,8 @@ description: In this tutorial, you learn how to govern and monitor an applicatio
 author: omondiatieno
 manager: CelesteDG
 ms.author: jomondi
-ms.service: active-directory
-ms.subservice: app-mgmt
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: tutorial
 ms.date: 09/07/2023
 ms.reviewer: saibandaru
@@ -29,7 +29,7 @@ Using the information in this tutorial, an administrator of the application lear
 ## Prerequisites
 
 - An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- One of the following roles: Global Administrator, Identity Governance Administrator, Privileged Role Administrator, Cloud Application Administrator, or Application Administrator.
+- One of the following roles: Identity Governance Administrator, Privileged Role Administrator, Cloud Application Administrator, or Application Administrator.
 - An enterprise application that has been configured in your Microsoft Entra tenant.
 
 ## Create an access review

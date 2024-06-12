@@ -1,17 +1,13 @@
 ---
 title: Build resilience in Customer Identity and Access Management using Azure AD B2C
 description: Methods to build resilience in Customer Identity and Access Management using Azure AD B2C
-services: active-directory 
-ms.service: active-directory
-ms.subservice: fundamentals 
-ms.workload: identity
+ms.service: entra
+ms.subservice: architecture
 ms.topic: how-to
 author: gargi-sinha
 ms.author: gasinh
 manager: martinco
 ms.date: 12/01/2022
-ms.custom: it-pro
-ms.collection: M365-identity-device-management
 ---
 
 # Build resilience in your customer identity and access management with Azure Active Directory B2C
@@ -31,6 +27,7 @@ A resilient service is one that continues to function despite disruptions. You c
 As you develop your application, we recommend considering how to [increase resilience of authentication and authorization in your applications](resilience-app-development-overview.md) with the identity components of your solution. This article attempts to address enhancements for resilience specific to Azure AD B2C applications. Our recommendations are grouped by CIAM functions.
 
 ![Image shows CIAM components](media/resilience-b2c/high-level-components.png)
+
 In the subsequent sections, we'll guide you to build resilience in the following areas:
 
 - [End-user experience](resilient-end-user-experience.md): Enable a fallback plan for your authentication flow and mitigate the potential impact from a disruption of Azure AD B2C authentication service.

@@ -1,11 +1,10 @@
 ---
 title: Microsoft Entra ID Governance service limits
-description: This article details service limits for offerings within Microsoft Entra ID Governance 
+description: This article details service limits for offerings within Microsoft Entra ID Governance
 author: owinfreyATL
 ms.author: owinfrey
 manager: amycolannino
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id-governance
 ms.topic: concept-article
 ms.date: 10/30/2023
 
@@ -14,7 +13,7 @@ ms.date: 10/30/2023
 
 # Microsoft Entra ID Governance service limits
 
-This article contains the default usage constraints for the Microsoft Entra ID Governance, part of Microsoft Entra, service. If you’re looking for the full set of non-governance specific Microsoft Entra service limits, see: [Microsoft Entra service limits and restrictions](~/identity/users/directory-service-limits-restrictions.md).
+This article contains the default usage constraints for the Microsoft Entra ID Governance, part of Microsoft Entra, service. If you’re looking for the full set of non-governance specific Microsoft Entra service limits, see: [Microsoft Entra service limits and restrictions](../identity/users/directory-service-limits-restrictions.md).
 
 > [!NOTE]
 > Limits can be increased if your usage will exceed these listed default constraints. To go beyond the default quota, you must contact Microsoft Support.
@@ -27,6 +26,7 @@ This article contains the default usage constraints for the Microsoft Entra ID G
 |---------|---------|
 |Access Packages   |  4,000       |
 |Access Package Assignments     | 100,000        |
+|Access Package Assignments from a given automatic assignment policy      | 5,000        |
 |Catalogs     |   1,500      |
 |Connected Organizations     |  2,500       |
 |Custom extensions     |  500       |
@@ -35,14 +35,18 @@ This article contains the default usage constraints for the Microsoft Entra ID G
 
 ## Lifecycle Workflows
 
-### Per Tenant
-
-|Feature  |Limit  |
+|Category  |Limit  |
 |---------|---------|
-|Custom Task Extensions     |  100     |
-|Number of users per on-demand selection   |  10       |
-|Tasks     |  25 per workflow      |
-|Workflows     |   50    |
+|Number of Workflows     |   100 per tenant      |
+|Number of Tasks     |  25 per workflow       |
+|Number of Custom Task Extensions     |  100 per tenant       |
+|offsetInDays range of triggerAndScopeBasedConditions executionConditions     |  180 days       |
+|Workflow schedule interval in hours     |   1-24 hours      |
+|Number of users per on-demand selection	     |  10       |
+|durationBeforeTimeout range of custom task extensions     |   5 minutes-3 hours      |
+
+> [!NOTE]
+> If creating, or updating, a workflow via API the offsetInDays range will be between -180-180 days. The negative value will signal happening before the timeBasedAttribute, while the positive value will signal happening afterwards.
 
 ## Related content
 

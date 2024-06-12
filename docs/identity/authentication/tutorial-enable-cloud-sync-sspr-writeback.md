@@ -1,16 +1,13 @@
 ---
 title: Enable Microsoft Entra Connect cloud sync password writeback
 description: In this tutorial, you learn how to enable Microsoft Entra self-service password reset writeback using Microsoft Entra Connect cloud sync to synchronize changes back to an on-premises Active Directory Domain Services environment.
-services: active-directory
-ms.service: active-directory
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: tutorial
 ms.date: 09/13/2023
 ms.author: justinha
 author: justinha
 ms.reviewer: tilarso
-ms.collection: M365-identity-device-management
-ms.custom: contperf-fy20q4, ignite-fall-2021
 # Customer intent: As a Microsoft Entra Administrator, I want to learn how to enable and use password writeback so that when end-users reset their password through a web browser their updated password is synchronized back to my on-premises AD environment.
 ---
 # Tutorial: Enable cloud sync self-service password reset writeback to an on-premises environment

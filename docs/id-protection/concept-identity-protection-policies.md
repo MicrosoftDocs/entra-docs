@@ -2,25 +2,25 @@
 title: Microsoft Entra ID Protection risk-based access policies
 description: Identifying risk-based Conditional Access policies
 
-ms.service: active-directory
-ms.subservice: identity-protection
+ms.service: entra-id-protection
+
 ms.topic: conceptual
-ms.date: 01/16/2024
+ms.date: 05/02/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
-ms.reviewer: chuqiaoshi
+ms.reviewer: cokoopma
 ---
 # Risk-based access policies
 
 Access control policies can be applied to protect organizations when a sign-in or user is detected to be at risk. Such policies are called **risk-based policies**. 
 
-Microsoft Entra Conditional Access offers two risk conditions: **Sign-in risk** and **User risk**. Organizations can create risk-based Conditional Access policies by configuring these two risk conditions and choosing an access control method. During each sign-in, Microsoft Entra ID Protection sends the detected risk levels to Conditional Access, and the risk-based policies apply if the policy conditions are satisfied.
+Microsoft Entra Conditional Access offers two risk conditions powered by Microsoft Entra ID Protection signals: **[Sign-in risk](../identity/conditional-access/concept-conditional-access-conditions.md#sign-in-risk)** and **[User risk](../identity/conditional-access/concept-conditional-access-conditions.md#user-risk)**. Organizations can create risk-based Conditional Access policies by configuring these two risk conditions and choosing an access control method. During each sign-in, ID Protection sends the detected risk levels to Conditional Access, and the risk-based policies apply if the policy conditions are satisfied.
 
 ![Diagram that shows a conceptual risk-based Conditional Access policy.](./media/concept-identity-protection-policies/risk-based-conditional-access-diagram.png)
 
-For example, as shown in the following diagram, if organizations have a sign-in risk policy that requires multifactor authentication when the sign-in risk level is medium or high, their users must complete multifactor authentication when their sign-in risk is medium or high.
+You might require multifactor authentication when the sign-in risk level is medium or high, users are only prompted at that level.
 
 ![Diagram that shows a conceptual risk-based Conditional Access policy with self-remediation.](./media/concept-identity-protection-policies/risk-based-conditional-access-policy-example.png)
 
@@ -47,21 +47,27 @@ If risks are detected on a sign-in, users can perform the required access contro
 
 ID Protection analyzes signals about user accounts and calculates a risk score based on the probability that the user is compromised. If a user has risky sign-in behavior, or their credentials leak, ID Protection uses these signals to calculate the user risk level. Administrators can configure user risk-based Conditional Access policies to enforce access controls based on user risk, including requirements such as: 
 
-- Block access
+- Block access.
 - Allow access but require a secure password change.
 
 A secure password change remediates the user risk and close the risky user event to prevent unnecessary noise for administrators.
 
-## ID Protection policies
+## Migrate ID Protection risk policies to Conditional Access
 
-While ID Protection also offers a user interface for creating user risk policy and sign-in risk policy, we highly recommend that you [use Microsoft Entra Conditional Access to create risk-based policies](howto-identity-protection-configure-risk-policies.md) for the following benefits:
+If you have the legacy **user risk policy** or **sign-in risk policy** enabled in ID Protection (formerly Identity Protection), you should [migrate them to Conditional Access](howto-identity-protection-configure-risk-policies.md#migrate-risk-policies-to-conditional-access). 
 
-- Rich set of conditions to control access: Conditional Access offers a rich set of conditions such as applications and locations for configuration. The risk conditions can be used in combination with other conditions to create policies that best enforce your organizational requirements.
-- Multiple risk-based policies can be put in place to target different user groups or apply different access control for different risk levels.
-- Conditional Access policies can be created through Microsoft Graph API and can be tested first in report-only mode.
-- Manage all access policies in one place in Conditional Access.
+> [!WARNING]
+> The legacy risk policies configured in Microsoft Entra ID Protection will be retired on **October 1, 2026**.
 
-If you already have ID Protection risk policies set up, we encourage you to [migrate them to Conditional Access](howto-identity-protection-configure-risk-policies.md#migrate-risk-policies-from-identity-protection-to-conditional-access).
+Configuring risk policies in Conditional Access provides benefits like the ability to:
+
+- Manage access policies in one location.
+- Use report-only mode and Graph APIs.
+- Enforce sign-in frequency to require reauthentication every time.
+- Provide granular access control combining risk with other conditions like location. 
+- Enhance security with multiple risk-based policies targeting different user groups or risk levels. 
+- Improve diagnostics experience detailing which risk-based policy applied in sign-in Logs.
+- Support the backup authentication system.
 
 ## Microsoft Entra multifactor authentication registration policy
 
@@ -69,7 +75,7 @@ ID Protection can help organizations roll out Microsoft Entra multifactor authen
 
 More information about Microsoft Entra multifactor authentication can be found in the article, [How it works: Microsoft Entra multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md).
 
-## Next steps
+## Related content
 
-- [Enable Microsoft Entra multifactor authentication registration policy](howto-identity-protection-configure-mfa-policy.md)
+- [Enable the Microsoft Entra multifactor authentication registration policy](howto-identity-protection-configure-mfa-policy.md)
 - [Enable sign-in and user risk policies](howto-identity-protection-configure-risk-policies.md)

@@ -1,20 +1,17 @@
 ---
 title: Extend or renew PIM for groups assignments
 description: Learn how to extend or renew PIM for groups assignments.
-services: active-directory
-documentationcenter: ''
+
 author: barclayn
 manager: amycolannino
 ms.reviewer: markwahl-msft
-ms.service: active-directory
-ms.workload: identity
-ms.tgt_pltfrm: na
+ms.service: entra-id-governance
 ms.topic: how-to
-ms.subservice: pim
+ms.subservice: privileged-identity-management
 ms.date: 6/7/2023
 ms.author: barclayn
 ms.custom: pim
-ms.collection: M365-identity-device-management
+
 ---
 
 # Extend or renew PIM for groups assignments 
@@ -25,7 +22,7 @@ Privileged Identity Management (PIM) in Microsoft Entra ID provides controls to 
 
 Only users with permissions to manage groups can extend or renew group membership or ownership time-bound assignments. The affected user or group can request to extend assignments that are about to expire and request to renew assignments that are already expired.
 
-Role-assignable groups can be managed by Global Administrator, Privileged Role Administrator, or Owner of the group. Non-role-assignable groups can be managed by Global Administrator, Directory Writer, Groups Administrator, Identity Governance Administrator, User Administrator, or Owner of the group. Role assignments for administrators should be scoped at directory level (not Administrative Unit level). 
+Role-assignable groups can be managed by at least the Privileged Role Administrator or Owner of the group. Non-role-assignable groups can be managed by at least the Directory Writer, Groups Administrator, Identity Governance Administrator, User Administrator, or Owner of the group. Role assignments for administrators should be scoped at directory level (not Administrative Unit level). 
 
 > [!NOTE]
 > Other roles with permissions to manage groups (such as Exchange Administrators for non-role-assignable M365 groups) and administrators with assignments scoped at administrative unit level can manage groups through Groups API/UX and override changes made in Microsoft Entra PIM.

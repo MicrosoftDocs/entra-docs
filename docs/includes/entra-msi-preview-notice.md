@@ -1,9 +1,9 @@
 ---
 title: include file
 description: include file
-services: active-directory
+
 author: daveba
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: include
 ms.date: 04/24/2018
 ms.author: daveba

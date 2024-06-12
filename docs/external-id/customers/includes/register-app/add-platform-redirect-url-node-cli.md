@@ -1,10 +1,11 @@
 ---
 author: Dickson-Mwendia
-ms.service: active-directory
-ms.subservice: ciam
+ms.service: entra-external-id
+ms.subservice: customers
 ms.topic: include
 ms.date: 11/22/2023
 ms.author: dmwendia
+ms.manager: mwongerapk
 ---
 
 To specify your app type to your app registration, follow these steps:

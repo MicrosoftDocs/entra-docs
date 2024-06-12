@@ -5,11 +5,11 @@ description: Learn how to configure single sign-on (SSO) between Microsoft Entra
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: celested
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: entra-id
+ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 ---
 
@@ -92,7 +92,7 @@ In this tutorial, you configure and test Microsoft Entra SSO in a test environme
 
 ### Key Authentication Scenarios
 
-Apart from Microsoft Entra native integration support for modern authentication protocols like OpenID Connect, SAML and WS-Fed, F5 extends secure access for legacy-based authentication apps for both internal and external access with Microsoft Entra ID, enabling modern scenarios (e.g. password-less access) to these applications. This include:
+Apart from Microsoft Entra native integration support for modern authentication protocols like OpenID Connect, SAML and WS-Fed, F5 extends secure access for legacy-based authentication apps for both internal and external access with Microsoft Entra ID, enabling modern scenarios (such as password-less access) to these applications. This include:
 
 * Header-based authentication apps
 
@@ -310,7 +310,7 @@ You configure an Active Directory AAA server in Access Policy Manager (APM) to s
 
    * To monitor the health of the AAA server, you have the option of selecting a health monitor: only the **gateway_icmp** monitor is appropriate in this case; you can select it from the **Server Pool Monitor** list.
 
-8. In the **Admin Name** field, type a is case-sensitive name for an administrator who has Active Directory administrative permissions. APM uses the information in the **Admin Name** and **Admin Password** fields for AD Query. If Active Directory is configured for anonymous queries, you do not need to provide an Admin Name. Otherwise, APM needs an account with sufficient privilege to bind to an Active Directory server, fetch user group information, and fetch Active Directory password policies to support password-related functionality. (APM must fetch password policies, for example, if you select the Prompt user to change password before expiration option in an AD Query action.) If you do not provide Admin account information in this configuration, APM uses the user account to fetch information. This works if the user account has sufficient privilege.
+8. In the **Admin Name** field, type an is case-sensitive name for an administrator who has Active Directory administrative permissions. APM uses the information in the **Admin Name** and **Admin Password** fields for AD Query. If Active Directory is configured for anonymous queries, you do not need to provide an Admin Name. Otherwise, APM needs an account with sufficient privilege to bind to an Active Directory server, fetch user group information, and fetch Active Directory password policies to support password-related functionality. (APM must fetch password policies, for example, if you select the Prompt user to change password before expiration option in an AD Query action.) If you do not provide Admin account information in this configuration, APM uses the user account to fetch information. This works if the user account has sufficient privilege.
 
 9. In the **Admin Password** field, type the administrator password associated with the Domain Name.
 
@@ -474,7 +474,9 @@ This adds the new Active Directory server to the Active Directory Servers list.
     * setspn –A **host/big-ipuser.superdemo.live** big-ipuser
 
 * **Step 3:** SPN Delegation (for the App Service Account)
-    Setup the appropriate Delegation for the F5 Delegation Account.
+
+    Set up the appropriate Delegation for the F5 Delegation Account.
+
     In the example below, APM Delegation account is being configured for KCD for FRP-App1.superdemo. live app.
 
     ![F5 (Kerberos) configuration](./media/kerbf5-tutorial/configure43.png)

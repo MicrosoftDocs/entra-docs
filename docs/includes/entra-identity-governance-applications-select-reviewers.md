@@ -1,6 +1,6 @@
 ---
 author: markwahl-msft
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: include
 ms.date: 12/22/2022
 ms.author: mwahl

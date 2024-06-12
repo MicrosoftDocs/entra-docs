@@ -3,23 +3,19 @@ title: Microsoft Graph PowerShell monitoring and health cmdlets
 description: Reference information for Microsoft Graph PowerShell cmdlets for Microsoft Entra monitoring and health.
 author: shlipsey3
 manager: amycolannino
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: reference
-ms.workload: identity
-ms.subservice: report-monitor
-ms.date: 11/17/2023
+ms.subservice: monitoring-health
+ms.date: 02/06/2024
 ms.author: sarahlipsey
 ms.reviewer: dhanyahk
-ms.custom: has-azure-ad-ps-ref
 ---
 
 # Microsoft Graph PowerShell cmdlets for Microsoft Entra monitoring and health
 
 With Microsoft Entra monitoring and health, you can get details on activities around all the write operations in your directory (audit logs) and authentication data (sign-in logs). Although the information is available by using the Microsoft Graph API, now you can retrieve the same data by using the Microsoft Graph PowerShell cmdlets for Identity monitoring and health.
 
-This article gives you an overview of the Microsoft Graph PowerShell cmdlets to use for audit logs and sign-in logs.
-
-[Get started with Microsoft Graph PowerShell](/powershell/microsoftgraph/get-started).
+This article gives you an overview of the Microsoft Graph PowerShell cmdlets to use for audit logs and sign-in logs. [Get started with Microsoft Graph PowerShell](/powershell/microsoftgraph/get-started).
 
 ## Audit logs
 
@@ -50,7 +46,4 @@ You get access to the sign-in logs using the `Get-MgAuditLogSignIn` cmdlet. Use 
 
 ## Next steps
 
-- [Microsoft Entra monitoring and health overview](overview-monitoring-health.md)
-- [Audit logs](concept-audit-logs.md)
-- [Sign-in logs](concept-sign-ins.md)
-- [Programmatic access to Microsoft Entra reports](howto-configure-prerequisites-for-reporting-api.md)
+- [Analyze activity logs with Microsoft Graph](howto-analyze-activity-logs-with-microsoft-graph.md)

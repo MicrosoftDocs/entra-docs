@@ -1,20 +1,17 @@
 ---
 title: 'Understand the Microsoft Entra schema and custom expressions'
 description: This article describes the Microsoft Entra schema, the attributes that the provisioning agent flows, and custom expressions.
-services: active-directory
-documentationcenter: ''
+
 author: billmath
 manager: amycolannino
-editor: ''
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: conceptual
 ms.tgt_pltfrm: na
-ms.workload: identity
-ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.date: 04/26/2024
+ms.subservice: hybrid-cloud-sync
 ms.author: billmath
 
-ms.collection: M365-identity-device-management
+
 ---
 
 
@@ -82,9 +79,9 @@ To view the cloud sync configuration synchronization schema and verify it, follo
                 "deletedDateTime": null,
                 "accountEnabled": true,
                 "appDisplayName": "Active Directory to Azure Active Directory Provisioning",
-                "appId": "1a4721b3-e57f-4451-ae87-ef078703ec94",
+                "appId": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
                 "applicationTemplateId": null,
-                "appOwnerOrganizationId": "47df5bb7-e6bc-4256-afb0-dd8c8e3c1ce8",
+                "appOwnerOrganizationId": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
                 "appRoleAssignmentRequired": false,
                 "displayName": "Active Directory to Azure Active Directory Provisioning",
                 "errorUrl": null,

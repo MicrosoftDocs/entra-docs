@@ -6,8 +6,8 @@ manager: CelesteDG
 ms.author: owenrichards
 ms.custom: has-adal-ref, devx-track-js
 ms.date: 07/06/2021
-ms.service: active-directory
-ms.subservice: develop
+ms.service: identity-platform
+
 ms.topic: how-to
 #Customer intent: As an application developer, I want to learn how to change the code in my JavaScript application from using ADAL.js as its authentication library to MSAL.js.
 ---
@@ -60,7 +60,7 @@ For alternative CDN links and best practices when using CDN, see: [CDN Usage](ht
 
 ## Initialize MSAL
 
-In ADAL.js, you instantiate the [AuthenticationContext](https://github.com/AzureAD/azure-activedirectory-library-for-js/wiki/Config-authentication-context#authenticationcontext) class, which then exposes the methods you can use to achieve authentication (`login`, `acquireTokenPopup` etc.). This object serves as the representation of your application's connection to the authorization server or identity provider. When initializing, the only mandatory parameter is the **clientId**:
+In ADAL.js, you instantiate the [AuthenticationContext](https://github.com/AzureAD/azure-activedirectory-library-for-js/wiki/Config-authentication-context#authenticationcontext) class, which then exposes the methods you can use to achieve authentication (`login`, `acquireTokenPopup` , and so on). This object serves as the representation of your application's connection to the authorization server or identity provider. When initializing, the only mandatory parameter is the **clientId**:
 
 ```javascript
 window.config = {

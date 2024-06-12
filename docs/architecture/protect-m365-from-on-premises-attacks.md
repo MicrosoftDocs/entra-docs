@@ -1,21 +1,17 @@
 ---
 title: Protecting Microsoft 365 from on-premises attacks
 description: Learn how to configure your systems to help protect your Microsoft 365 cloud environment from on-premises compromise.
-services: active-directory
 author: janicericketts
 manager: martinco
-ms.service: active-directory
-ms.workload: identity
-ms.subservice: fundamentals
+ms.service: entra
+ms.subservice: architecture
 ms.topic: how-to
 ms.date: 08/26/2022
 ms.author: jricketts
 ms.reviewer: ajburnle
 ms.custom:
   - it-pro
-  - seodec18
   - kr2b-contr-experiment
-ms.collection: M365-identity-device-management
 ---
   
 # Protecting Microsoft 365 from on-premises attacks
@@ -172,7 +168,7 @@ Deploy Microsoft Entra joined Windows 10 workstations with mobile device managem
 
 - **Legacy applications**
 
-  You can enable authentication, authorization, and remote access to legacy applications that don't support modern authentication. Use [Microsoft Entra application proxy](~/identity/app-proxy/application-proxy.md). Or, enable them through a network or application delivery controller solution by using secure hybrid access partner integrations. See [Secure legacy apps with Microsoft Entra ID](~/identity/enterprise-apps/secure-hybrid-access.md).
+  You can enable authentication, authorization, and remote access to legacy applications that don't support modern authentication. Use [Microsoft Entra application proxy](/entra/identity/app-proxy). Or, enable them through a network or application delivery controller solution by using secure hybrid access partner integrations. See [Secure legacy apps with Microsoft Entra ID](~/identity/enterprise-apps/secure-hybrid-access.md).
 
   Choose a VPN vendor that supports modern authentication. Integrate its authentication with Microsoft Entra ID. In an on-premises compromise, you can use Microsoft Entra ID to disable or block access by disabling the VPN.
 
@@ -208,7 +204,7 @@ Monitor the following key scenarios, in addition to any scenarios specific to yo
 
   Monitor all Microsoft Entra risk events for suspicious activity. See [How To: Investigate risk](~/id-protection/howto-identity-protection-investigate-risk.md). Microsoft Entra ID Protection is natively integrated with [Microsoft Defender for Identity](/defender-for-identity/what-is).
 
-  Define network named locations to avoid noisy detections on location-based signals. See [Using the location condition in a Conditional Access policy](~/identity/conditional-access/location-condition.md).
+  Define network named locations to avoid noisy detections on location-based signals. See [Using the location condition in a Conditional Access policy](../identity/conditional-access/concept-assignment-network.md).
 
 - **User and Entity Behavioral Analytics (UEBA) alerts**
 
@@ -265,7 +261,7 @@ Define a log storage and retention strategy, design, and implementation to facil
 
   Use the Microsoft Graph API to ingest risk events. See [Use the Microsoft Graph identity protection APIs](/graph/api/resources/identityprotection-overview).
 
-  You can stream Microsoft Entra logs to Azure Monitor logs. See [Integrate Microsoft Entra logs with Azure Monitor logs](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.md).
+  You can stream Microsoft Entra logs to Azure Monitor logs. See [Integrate Microsoft Entra logs with Azure Monitor logs](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.yml).
 
 - **Hybrid infrastructure operating system security logs**. All hybrid identity infrastructure operating system logs should be archived and carefully monitored as a tier-0 system, because of the surface-area implications. Include the following elements:
 

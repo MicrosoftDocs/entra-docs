@@ -2,9 +2,9 @@
 title: Investigate risk Microsoft Entra ID Protection
 description: Learn how to investigate risky users, detections, and sign-ins in Microsoft Entra ID Protection
 
-services: active-directory
-ms.service: active-directory
-ms.subservice: identity-protection
+
+ms.service: entra-id-protection
+
 ms.topic: how-to
 ms.date: 10/02/2023
 
@@ -13,7 +13,7 @@ author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: chuqiaoshi
 
-ms.collection: M365-identity-device-management
+
 ---
 # How To: Investigate risk
 
@@ -50,7 +50,7 @@ To view and investigate risks on a user’s account, select the “Detections no
 
 The Risk history tab also shows all the events that have led to a user risk change in the last 90 days. This list includes risk detections that increased the user’s risk and admin remediation actions that lowered the user’s risk. View it to understand how the user’s risk has changed. 
 
-:::image type="content" source="media/howto-identity-protection-investigate-risk/risky-users-without-details.png" alt-text="Screenshot of the Risky users report." lightbox="media/howto-identity-protection-investigate-risk/risky-users-with-details.png":::
+:::image type="content" source="media/howto-identity-protection-investigate-risk/risky-users-without-details.png" alt-text="Screenshot of the Risky users report.":::
 
 With the information provided by the risky users report, administrators can find:
 
@@ -72,7 +72,7 @@ Administrators can then choose to take action on these events. Administrators ca
 1. Consider creating a known traveler database for updated organizational travel reporting and use it to cross-reference travel activity.
 1. Add corporate VPN's and IP Address ranges to named locations to reduce false positives.
 1. Review the logs to identify similar activities with the same characteristics. This could be an indication of more compromised accounts.
-   1. If there are common characteristics, like IP address, geography, success/failure, etc..., consider blocking these with a Conditional Access policy.
+   1. If there are common characteristics, like IP address, geography, success/failure, and so on..., consider blocking these with a Conditional Access policy.
    1. Review which resource may have been compromised, such as potential data downloads or administrative modifications.
    1. Enable self-remediation policies through Conditional Access
 1. If you see that the user performed other risky activities, such as downloading a large volume of files from a new location, this is a strong indication of a possible compromise.
@@ -172,7 +172,7 @@ If more information is shown for the detection:
 
 Organizations who have deployed [Microsoft 365 Defender](/microsoft-365/security/defender/microsoft-365-defender) and [Microsoft Defender for Identity](/defender-for-identity/what-is) gain extra value from Identity Protection signals. This value comes in the form of enhanced correlation with other data from other parts of the organization and extra [automated investigation and response](/microsoft-365/security/defender/m365d-autoir).
 
-:::image type="content" source="media/howto-identity-protection-investigate-risk/investigate-user-in-microsoft-365-defender.png" alt-text="Screenshot showing alerts for a risky user in the Microsoft 365 Defender portal." lightbox="media/howto-identity-protection-investigate-risk/alert-details-in-microsoft-365-defender.png":::
+:::image type="content" source="media/howto-identity-protection-investigate-risk/investigate-user-in-microsoft-365-defender.png" alt-text="Screenshot showing alerts for a risky user in the Microsoft 365 Defender portal." lightbox="media/howto-identity-protection-investigate-risk/investigate-user-in-microsoft-365-defender.png":::
 
 In Microsoft 365 Defender Security Professionals and Administrators can make connections to suspicious activity from areas like: 
 

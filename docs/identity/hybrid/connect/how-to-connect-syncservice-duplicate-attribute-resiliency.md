@@ -1,23 +1,20 @@
 ---
 title: Identity synchronization and duplicate attribute resiliency
 description: New behavior of how to handle objects with UPN or ProxyAddress conflicts during directory sync using Microsoft Entra Connect.
-services: active-directory
-documentationcenter: ''
+
 author: billmath
 manager: amycolannino
-editor: ''
 
 ms.assetid: 537a92b7-7a84-4c89-88b0-9bce0eacd931
-ms.service: active-directory
-ms.workload: identity
+ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.custom: has-azure-ad-ps-ref
 ms.topic: how-to
 ms.date: 11/06/2023
-ms.subservice: hybrid
+ms.subservice: hybrid-connect
 ms.author: billmath
 
-ms.collection: M365-identity-device-management
+
 ---
 # Identity synchronization and duplicate attribute resiliency
 Duplicate Attribute Resiliency is a feature in Microsoft Entra ID that will eliminate friction caused by **UserPrincipalName** and SMTP **ProxyAddress** conflicts when running one of Microsoft’s synchronization tools.
@@ -64,6 +61,8 @@ To check if the feature is enabled for your tenant, you can do so by downloading
 > [!NOTE]
 > You can no longer use Set-MsolDirSyncFeature cmdlet to proactively enable the Duplicate Attribute Resiliency feature before it is turned on for your tenant. To be able to test the feature, you will need to create a new Microsoft Entra tenant.
 
+[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
+
 ## Identifying Objects with DirSyncProvisioningErrors
 There are currently two methods to identify objects that have these errors due to duplicate property conflicts, Azure Active Directory PowerShell and the [Microsoft 365 admin center](https://admin.microsoft.com). There are plans to extend to additional portal based reporting in the future.
 
@@ -71,8 +70,7 @@ There are currently two methods to identify objects that have these errors due t
 For the PowerShell cmdlets in this topic, the following is true:
 
 * All of the following cmdlets are case sensitive.
-* The **–ErrorCategory PropertyConflict** must always be included. There are currently no other types of
-  **ErrorCategory**, but this may be extended in the future.
+* The **–ErrorCategory PropertyConflict** must always be included. There are currently no other types of **ErrorCategory**, but this may be extended in the future.
 
 First, get started by running **Connect-MsolService** and entering credentials for a tenant administrator.
 

@@ -6,12 +6,12 @@ author: OwenRichards1
 manager: CelesteDG
 editor: ''
 
-ms.service: active-directory
+ms.service: identity-platform
 
 ms.topic: include
 ms.tgt_pltfrm: na
 
-ms.date: 05/07/2019
+ms.date: 04/09/2024
 ms.author: owenrichards
 ms.reviewer: jmprieur
 ms.custom: include file

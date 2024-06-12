@@ -1,32 +1,29 @@
 ---
 title: 'Install your synchronization tool'
 description: This article describes the steps required to install either cloud sync or Microsoft Entra Connect.
-services: active-directory
-documentationcenter: ''
+
 author: billmath
 manager: amycolannino
-editor: ''
-ms.service: active-directory
+ms.service: entra-id
 ms.topic: conceptual
 ms.tgt_pltfrm: na
-ms.workload: identity
 ms.date: 11/06/2023
 ms.subservice: hybrid
 ms.author: billmath
-ms.collection: M365-identity-device-management
+
 ---
 # Install your synchronization tool
 The following document provides the steps to install either cloud sync or Microsoft Entra Connect.  
 
 <a name='install-the-azure-ad-connect-provisioning-agent-for-cloud-sync'></a>
 
-## Install the Microsoft Entra Provisioning Agent for cloud sync
-Cloud sync uses the Microsoft Entra Provisioning Agent.  Use the steps below to install it.
+## Install the Microsoft Entra provisioning agent for cloud sync
+Cloud sync uses the Microsoft Entra provisioning agent.  Use the steps below to install it.
 
 [!INCLUDE [sign in](~/includes/cloud-sync-sign-in.md)]
  4. On the left, select **Agent**.
  5. Select **Download on-premises agent**, and select **Accept terms & download**.
- 6. Once the **Microsoft Entra Provisioning Agent Package** has completed downloading, run the *AADConnectProvisioningAgentSetup.exe* installation file from your downloads folder.
+ 6. Once the **Microsoft Entra provisioning agent package** has completed downloading, run the *AADConnectProvisioningAgentSetup.exe* installation file from your downloads folder.
    >[!NOTE]
    >When installing for the US Government Cloud use:  
    >*AADConnectProvisioningAgentSetup.exe ENVIRONMENTNAME=AzureUSGovernment*  
@@ -57,7 +54,7 @@ Express settings are the default option to install Microsoft Entra Connect, and 
  4. On **Express settings**, select **Use express settings**.
  5.  n **Connect to Microsoft Entra ID**, enter the username and password of the Hybrid Identity Administrator account, and then select **Next**.
  6. On **Connect to AD DS**, enter the username and password for an Enterprise Admin account. You can enter the domain part in either NetBIOS or FQDN format, like `FABRIKAM\administrator` or `fabrikam.com\administrator`. Select **Next**
- 7. The [Microsoft Entra sign-in configuration](./connect/plan-connect-user-signin.md#azure-ad-sign-in-configuration) page appears only if you didn't complete the step to [verify your domains](~/fundamentals/add-custom-domain.md) in the [prerequisites](./connect/how-to-connect-install-prerequisites.md)
+ 7. The [Microsoft Entra sign-in configuration](./connect/plan-connect-user-signin.md#azure-ad-sign-in-configuration) page appears only if you didn't complete the step to [verify your domains](~/fundamentals/add-custom-domain.yml) in the [prerequisites](./connect/how-to-connect-install-prerequisites.md)
  8. On **Ready to configure**, select **Install**
  9. When the installation is finished, select **Exit**.
  10. Before you use Synchronization Service Manager or Synchronization Rule Editor, sign out, and then sign in again.

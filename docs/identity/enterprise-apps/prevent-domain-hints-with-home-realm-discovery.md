@@ -4,16 +4,14 @@ description: Learn how to prevent domain_hint auto-acceleration to federated IDP
 
 author: omondiatieno
 manager: CelesteDG
-ms.service: active-directory
-ms.subservice: app-mgmt
-ms.workload: infrastructure-services
+ms.service: entra-id
+ms.subservice: enterprise-apps
 ms.topic: how-to
 ms.date: 03/16/2023
 ms.author: jomondi
 ms.reviewer: ludwignick
 zone_pivot_groups: home-realm-discovery
 ms.custom: enterprise-apps, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
-
 #customer intent: As an administrator managing federated domains, I want to disable auto-acceleration sign-in for certain domains and applications, so that users can always use their managed credentials and have a consistent sign-in experience, improving security and reducing frustration.
 ---
 # Disable auto-acceleration sign-in
@@ -50,7 +48,7 @@ Once a user has entered a username at the sign-in page, they can use their manag
 To disable auto-acceleration sign-in for an application in Microsoft Entra ID, you need:
 
 - An Azure account with an active subscription. If you don't already have one, you can [create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- One of the following roles: Global Administrator, or owner of the service principal.
+- One of the following roles: Cloud Application Administrator, Application Administrator, or owner of the service principal.
 ::: zone pivot="powershell-hrd"
 - [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview) module.
 ::: zone-end
