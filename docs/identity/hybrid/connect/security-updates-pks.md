@@ -24,8 +24,8 @@ The following table provides information on the feature and impact to services i
 |-----|-----|
 |Microsoft Entra Connect| Auto-upgrade will stop working.  Synchronization will not be impacted|
 |Microsoft Entra Connect Health Connect Sync agent|A subset of alerts will be impacted: </br> - Connection to Microsoft Entra ID failed due to authentication failure </br> - High CPU usage detected</br> - High Memory Consumption Detected </br> - Password Hash Synchronization has stopped working </br> - Export to Microsoft Entra ID was Stopped. Accidental delete threshold was reached</br> - Password Hash Synchronization heartbeat was skipped in the last 120 minutes </br> - Microsoft Entra Sync service cannot start due to invalid encryption keys </br> - Microsoft Entra Sync service not running: Windows Service account Creds Expired| 
-|Microsoft Entra Connect HealthAD DS agent|All alerts|
-|Microsoft Entra Connect Health AD FS agent|All alerts|
+|Microsoft Entra Connect HealthAD DS agent|[All alerts](how-to-connect-health-adds.md#alerts-for-microsoft-entra-connect-health-for-ad-ds)|
+|Microsoft Entra Connect Health AD FS agent|[All alerts]|
 
 The avoid any service impact you should be using the following minimum versions:
 
@@ -40,7 +40,7 @@ To upgrade to the latest version.
 > [Install Microsoft Entra Connect](https://www.microsoft.com/download/details.aspx?id=47594)
 
 >[!IMPORTANT]
->The auto-upgrade service will stop working after September 16, 2024 if you have not upgraded to the minimum recommended versions above.
+>The auto-upgrade service that relies on the PKS service will stop working after September 16, 2024.   To avoid impact you shoud be at the minimum recommended versions above.
 
 
 
