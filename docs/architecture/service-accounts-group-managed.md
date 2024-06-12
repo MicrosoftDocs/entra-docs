@@ -48,18 +48,6 @@ gMSAs are more secure than standard user accounts, which require ongoing passwor
 
 ## Find gMSAs
 
-Your organization might have gMSAs. To retrieve these accounts, run the following PowerShell cmdlets:
-
-```powershell
-Get-ADServiceAccount 
-Install-ADServiceAccount 
-New-ADServiceAccount 
-Remove-ADServiceAccount 
-Set-ADServiceAccount 
-Test-ADServiceAccount 
-Uninstall-ADServiceAccount
-```
-
 ### Managed Service Accounts container
   
 To work effectively, gMSAs must be in the Managed Service Accounts container.
