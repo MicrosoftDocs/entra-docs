@@ -1,6 +1,6 @@
 ---
 title: 'Security hardening to the auto-upgrade process for Microsoft Entra Connect and Microsoft Entra Connect Health '
-description: This article describes security hardening being taken by Microsoft to improve auto-upgrade.
+description: This article describes security improvements to improve auto-upgrade.
 author: billmath
 manager: amycolannino
 ms.service: entra-id
@@ -10,11 +10,11 @@ ms.subservice: hybrid-connect
 ms.author: billmath
 ---
 
-# Security update to the auto-upgrade process 
+# Security improvements to the auto-upgrade process 
 
-As part of Microsoft’s push to harden the security of our features, we're making service changes to Microsoft Entra Connect Sync and Microsoft Entra Connect Health. This includes a change to Product Key Services. PKS is an internal service used by Microsoft Entra Connect Sync and Microsoft Entra Connect Health to auto-upgrade client components to an updated version. We're in the process of deprecating PKS because the service is being replaced by the Hybrid Upgrade Service (HUS). 
+As part of Microsoft’s push to harden the security of our features, we're making service changes to Microsoft Entra Connect Sync and Microsoft Entra Connect Health. This push includes a change to Product Key Services. PKS is an internal service used by Microsoft Entra Connect Sync and Microsoft Entra Connect Health to auto-upgrade client components to an updated version. We're in the process of deprecating PKS. This service is being replaced by the Hybrid Upgrade Service (HUS). 
 
-Since January 2024, we have been auto-upgrading Microsoft Entra Connect Sync and Microsoft Entra Connect Health to an updated build. For customers who have previously opted out of auto-upgrade or for whom auto-upgrade failed, we **strongly recommend** that you upgrade to the [latest versions](reference-connect-version-history.md) by **September 16, 2024**. 
+Since January 2024, we have been auto-upgrading Microsoft Entra Connect Sync and Microsoft Entra Connect Health to an updated build. For customers who opted out of auto-upgrade or for whom auto-upgrade failed, we **strongly recommend** that you upgrade to the [latest versions](reference-connect-version-history.md) by **September 16, 2024**. 
 
 To take advantage of our latest security improvements, we strongly encourage customers to upgrade to the following builds by **September 16, 2024**. 
 
@@ -22,8 +22,8 @@ The following table provides information on the feature and impact to services i
 
 |Service|Impact|
 |-----|-----|
-|Microsoft Entra Connect| Auto-upgrade will stop working.  Synchronization will not be impacted|
-|Microsoft Entra Connect Health Connect Sync agent|A subset of alerts will be impacted: </br> - Connection to Microsoft Entra ID failed due to authentication failure </br> - High CPU usage detected</br> - High Memory Consumption Detected </br> - Password Hash Synchronization has stopped working </br> - Export to Microsoft Entra ID was Stopped. Accidental delete threshold was reached</br> - Password Hash Synchronization heartbeat was skipped in the last 120 minutes </br> - Microsoft Entra Sync service cannot start due to invalid encryption keys </br> - Microsoft Entra Sync service not running: Windows Service account Creds Expired| 
+|Microsoft Entra Connect| Auto-upgrade will stop working.  Synchronization isn't impacted|
+|Microsoft Entra Connect Health Connect Sync agent|A subset of alerts are impacted: </br> - Connection to Microsoft Entra ID failed due to authentication failure </br> - High CPU usage detected</br> - High Memory Consumption Detected </br> - Password Hash Synchronization has stopped working </br> - Export to Microsoft Entra ID was Stopped. Accidental delete threshold was reached</br> - Password Hash Synchronization heartbeat was skipped in the last 120 minutes </br> - Microsoft Entra Sync service cannot start due to invalid encryption keys </br> - Microsoft Entra Sync service not running: Windows Service account Creds Expired| 
 |Microsoft Entra Connect HealthAD DS agent|[All alerts](how-to-connect-health-adds.md#alerts-for-microsoft-entra-connect-health-for-ad-ds)|
 |Microsoft Entra Connect Health AD FS agent|[All alerts](how-to-connect-health-adfs.md#usage-analytics-for-ad-fs)|
 
@@ -40,7 +40,7 @@ To upgrade to the latest version.
 > [Install Microsoft Entra Connect](https://www.microsoft.com/download/details.aspx?id=47594)
 
 >[!IMPORTANT]
->The auto-upgrade service that relies on the PKS service will stop working after September 16, 2024.   To avoid impact you shoud be at the minimum recommended versions above.
+>The auto-upgrade service that relies on the PKS service won't work after September 16, 2024.   To avoid impact you shoud be at the minimum recommended versions.
 
 
 
@@ -48,7 +48,7 @@ To upgrade to the latest version.
 
 ## Consider moving to Microsoft Entra Cloud Sync
 
-If your eligible, we recommend migrating from Microsoft Entra Connect Sync to Microsoft Entra Cloud Sync. Microsoft Entra Cloud Sync is the new sync client that works from the cloud and allows customers to set up and manage their sync preferences online. We recommend that you use Cloud Sync because we'll be introducing new features that will improve the sync experiences through Cloud Sync. You can avoid future migrations by choosing Cloud Sync if that's the right option for you. Use the https://aka.ms/EvaluateSyncOptions to see if Cloud Sync is the right sync client for you. 
+If your eligible, we recommend migrating from Microsoft Entra Connect Sync to Microsoft Entra Cloud Sync. Microsoft Entra Cloud Sync is the new sync client that works from the cloud and allows customers to set up and manage their sync preferences online. We recommend that you use Cloud Sync because  we are introducing new features that improve the sync experiences through Cloud Sync. You can avoid future migrations by choosing Cloud Sync if that's the right option for you. Use the https://aka.ms/EvaluateSyncOptions to see if Cloud Sync is the right sync client for you. 
 
 See the video below to understand how Cloud sync provides value to your business.
 
