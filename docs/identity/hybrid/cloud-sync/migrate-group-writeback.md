@@ -76,6 +76,19 @@ When migrating, cloud sync will use the new format.  It does not matter whether 
 
    :::image type="content" source="media/migrate-group-writeback/migrate-2.png" alt-text="Screenshot of the msDS-ExternalDirectoryObjectID attribute." lightbox="media/migrate-group-writeback/migrate-2.png":::
 
+The following PowerShell script can be used to help automate this step.
+
+   ```powershell
+      $users = Get-ADUser -Filter * -SearchBase "OU=Users,DC=Contoso,DC=com" -Properties * | Where-Object {$_.adminDescription -ne $null} |
+         Select-Object Samaccountname, adminDescription
+
+      foreach ($user in $users) 
+       {
+       Set-ADUser -Identity $user.Samaccountname -Add @{msDS-ExternalDirectoryObjectID=$user.adminDescription}
+       } 
+
+   ```
+
 ## Step 2 - Place the Microsoft Entra Connect Sync server in staging mode and disable the sync scheduler
 
 1. Start the Microsoft Entra Connect Sync wizard 
