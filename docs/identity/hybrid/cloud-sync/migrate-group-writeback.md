@@ -61,7 +61,7 @@ If you want cloud sync to use the default format, you need modify the attribute 
 
 |Expression|Syntax|Description|
 |-----|-----|-----|
-|Default expression|Append(Append(Left(Trim([displayName]), 51), "_"), Mid([objectId], 25, 12))|The default expression used by cloud sync.|
+|Default expression|Append(Append(Left(Trim([displayName]), 51), "_"), Mid([objectId], 25, 12))|The default expression used by Microsoft Entra cloud sync.|
 |New expression|Append("Group_", [objectId])|This is the new expression you can use the default format used by Microsoft Entra Connect.|
 
 For more information see [Add an attribute mapping - Microsoft Entra ID to Active Directory](how-to-attribute-mapping.md#add-an-attribute-mapping---microsoft-entra-id-to-active-directory)
