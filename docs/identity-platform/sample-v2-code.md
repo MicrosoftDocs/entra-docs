@@ -68,8 +68,8 @@ The following samples illustrate web applications that sign in users. Some sampl
 The following samples show how to protect a web API with the Microsoft identity platform, and how to call a downstream API from the web API.
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Language/<br/>Platform | Code sample(s) <br/> on GitHub |Auth<br/> libraries |Auth flow |
-> | ----------- | ----------- |----------- |----------- |
+> | Language /<br/>Platform | Code sample(s) <br/>on GitHub | Auth <br/>libraries | Auth flow | Quickstart | Tutorial |
+> | ----------------------- | ----------------------------- | ------------------- | --------- | ---------- | -------- |
 > | ASP.NET | [Call Microsoft Graph](https://github.com/Azure-Samples/ms-identity-aspnet-webapi-onbehalfof) | [MSAL.NET](/entra/msal/dotnet) | On-Behalf-Of (OBO) |
 > | ASP.NET Core | [Sign in users and call Microsoft Graph](https://github.com/Azure-Samples/active-directory-dotnet-native-aspnetcore-v2/tree/master/2.%20Web%20API%20now%20calls%20Microsoft%20Graph) | [MSAL.NET](/entra/msal/dotnet) | On-Behalf-Of (OBO) |
 > | Java | [Sign in users](https://github.com/Azure-Samples/ms-identity-msal-java-samples/tree/main/4-spring-web-app/3-Authorization-II/protect-web-api) | [MSAL Java](/java/api/com.microsoft.aad.msal4j) | On-Behalf-Of (OBO) |
@@ -80,8 +80,8 @@ The following samples show how to protect a web API with the Microsoft identity 
 The following samples show public client desktop applications that access the Microsoft Graph API, or your own web API in the name of the user. Apart from the _Desktop (Console) with Web Authentication Manager (WAM)_ sample, all these client applications use the Microsoft Authentication Library (MSAL).
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Language/<br/>Platform | Code sample(s) <br/> on GitHub | Auth<br/> libraries | Auth flow |
-> | ------- | -------- | ------------- | -------------- |
+> | Language /<br/>Platform | Code sample(s) <br/>on GitHub | Auth <br/>libraries | Auth flow | Quickstart | Tutorial |
+> | ----------------------- | ----------------------------- | ------------------- | --------- | ---------- | -------- |
 > | .NET Core | &#8226; [Call Microsoft Graph](https://github.com/Azure-Samples/ms-identity-dotnet-desktop-tutorial/tree/master/1-Calling-MSGraph/1-1-AzureAD) <br/> &#8226; [Call Microsoft Graph with token cache](https://github.com/Azure-Samples/ms-identity-dotnet-desktop-tutorial/tree/master/2-TokenCache) <br/> &#8226; [Call Microsoft Graph with custom web UI HTML](https://github.com/Azure-Samples/ms-identity-dotnet-desktop-tutorial/tree/master/3-CustomWebUI/3-1-CustomHTML) <br/> &#8226; [Call Microsoft Graph with custom web browser](https://github.com/Azure-Samples/ms-identity-dotnet-desktop-tutorial/tree/master/3-CustomWebUI/3-2-CustomBrowser) <br/> &#8226; [Sign in users with device code flow](https://github.com/Azure-Samples/ms-identity-dotnet-desktop-tutorial/tree/master/4-DeviceCodeFlow) <br/> &#8226; [Authenticate users with MSAL.NET in a WinUI desktop application](https://github.com/Azure-Samples/ms-identity-netcore-winui) | [MSAL.NET](/entra/msal/dotnet) |&#8226; Authorization code with PKCE <br/> &#8226; Device code |
 > | .NET | [Invoke protected API with integrated Windows authentication](https://github.com/azure-samples/active-directory-dotnet-iwa-v2) | [MSAL.NET](/entra/msal/dotnet) | Integrated Windows authentication |
 > | Java | [Call Microsoft Graph](https://github.com/Azure-Samples/ms-identity-msal-java-samples/tree/main/2-client-side/Integrated-Windows-Auth-Flow) | [MSAL Java](/java/api/com.microsoft.aad.msal4j) | Integrated Windows authentication |
@@ -97,8 +97,8 @@ The following samples show public client desktop applications that access the Mi
 The following samples show public client mobile applications that access the Microsoft Graph API. These client applications use the Microsoft Authentication Library (MSAL).
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Language/<br/>Platform | Code sample(s) <br/> on GitHub |Auth<br/> libraries |Auth flow |
-> | ----------- | ----------- |----------- |----------- |
+> | Language /<br/>Platform | Code sample(s) <br/>on GitHub | Auth <br/>libraries | Auth flow | Quickstart | Tutorial |
+> | ----------------------- | ----------------------------- | ------------------- | --------- | ---------- | -------- |
 > | .NET Core | &#8226; [Call Microsoft Graph using MAUI](https://github.com/Azure-Samples/ms-identity-dotnetcore-maui/tree/main/MauiAppBasic) <br/> &#8226; [Call Microsoft Graph using MAUI with broker](https://github.com/Azure-Samples/ms-identity-dotnetcore-maui/tree/main/MauiAppWithBroker) <br/> &#8226; [Call Active Directory B2C tenant using MAUI](https://github.com/Azure-Samples/ms-identity-dotnetcore-maui/tree/main/MauiAppB2C) | [MSAL.NET](/entra/msal/dotnet) | Authorization code with PKCE |
 > | iOS | &#8226; [Call Microsoft Graph native](https://github.com/Azure-Samples/ms-identity-mobile-apple-swift-objc) | [MSAL iOS](https://github.com/AzureAD/microsoft-authentication-library-for-objc) | Authorization code with PKCE |
 > | Java | [Sign in users and call Microsoft Graph](https://github.com/Azure-Samples/ms-identity-android-java) | [MSAL Android](https://github.com/AzureAD/microsoft-authentication-library-for-android) | Authorization code with PKCE |
@@ -110,8 +110,8 @@ The following samples show public client mobile applications that access the Mic
 The following samples show an application that accesses the Microsoft Graph API with its own identity (with no user).
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Language/<br/>Platform | Code sample(s) <br/> on GitHub |Auth<br/> libraries |Auth flow |
-> | ----------- | ----------- |----------- |----------- |
+> | Language /<br/>Platform | Code sample(s) <br/>on GitHub | Auth <br/>libraries | Auth flow | Quickstart | Tutorial |
+> | ----------------------- | ----------------------------- | ------------------- | --------- | ---------- | -------- |
 > | .NET Core | &#8226; [Call Microsoft Graph](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/tree/master/1-Call-MSGraph) <br/> &#8226; [Call web API](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/tree/master/2-Call-OwnApi) <br/> &#8226; [Using managed identity and Azure Key Vault](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/tree/master/3-Using-KeyVault)| [MSAL.NET](/entra/msal/dotnet) | Client credentials grant|
 > | ASP.NET |[Multi-tenant with Microsoft identity platform endpoint](https://github.com/Azure-Samples/ms-identity-aspnet-daemon-webapp) | [MSAL.NET](/entra/msal/dotnet) | Client credentials grant|
 > | Java | &#8226; [Call Microsoft Graph with Secret](https://github.com/Azure-Samples/ms-identity-msal-java-samples/tree/main/1-server-side/msal-client-credential-secret) <br/> &#8226; [Call Microsoft Graph with Certificate](https://github.com/Azure-Samples/ms-identity-msal-java-samples/tree/main/1-server-side/msal-client-credential-certificate)| [MSAL Java](/java/api/com.microsoft.aad.msal4j) | Client credentials grant|
@@ -123,8 +123,8 @@ The following samples show an application that accesses the Microsoft Graph API 
 The following samples show how to protect an Azure Function using HttpTrigger and exposing a web API with the Microsoft identity platform, and how to call a downstream API from the web API.
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Language/<br/>Platform | Code sample(s) <br/> on GitHub |Auth<br/> libraries |Auth flow |
-> | ----------- | ----------- |----------- |----------- |
+> | Language /<br/>Platform | Code sample(s) <br/>on GitHub | Auth <br/>libraries | Auth flow | Quickstart | Tutorial |
+> | ----------------------- | ----------------------------- | ------------------- | --------- | ---------- | -------- |
 > | .NET | [.NET Azure function web API secured by Microsoft Entra ID](https://github.com/Azure-Samples/ms-identity-dotnet-webapi-azurefunctions) | [MSAL.NET](/entra/msal/dotnet) | Authorization code |
 > | Python | [Python Azure function web API secured by Microsoft Entra ID](https://github.com/Azure-Samples/ms-identity-python-webapi-azurefunctions) | [MSAL Python](/entra/msal/python) | Authorization code |
 
@@ -133,8 +133,8 @@ The following samples show how to protect an Azure Function using HttpTrigger an
 The following sample shows a public client application running on a device without a web browser. The app can be a command-line tool, an app running on Linux or Mac, or an IoT application. The sample features an app accessing the Microsoft Graph API, in the name of a user who signs-in interactively on another device (such as a mobile phone). This client application uses the Microsoft Authentication Library (MSAL).
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Language/<br/>Platform | Code sample(s) <br/> on GitHub |Auth<br/> libraries |Auth flow |
-> | ----------- | ----------- |----------- |----------- |
+> | Language /<br/>Platform | Code sample(s) <br/>on GitHub | Auth <br/>libraries | Auth flow | Quickstart | Tutorial |
+> | ----------------------- | ----------------------------- | ------------------- | --------- | ---------- | -------- |
 > | .NET Core | [Invoke protected API from text-only device](https://github.com/azure-samples/active-directory-dotnetcore-devicecodeflow-v2) | [MSAL.NET](/entra/msal/dotnet) | Device code|
 > | Java | [Sign in users and invoke protected API from text-only device](https://github.com/Azure-Samples/ms-identity-msal-java-samples/tree/main/2-client-side/Device-Code-Flow) | [MSAL Java](/java/api/com.microsoft.aad.msal4j) | Device code |
 > | Python | [Call Microsoft Graph](https://github.com/Azure-Samples/ms-identity-python-devicecodeflow) | [MSAL Python](/entra/msal/python) | Device code |
@@ -144,8 +144,8 @@ The following sample shows a public client application running on a device witho
 The following sample illustrates Microsoft Teams Tab application that signs in users. Additionally it demonstrates how to call Microsoft Graph API with the user's identity using the Microsoft Authentication Library (MSAL).
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Language/<br/>Platform | Code sample(s) <br/>on GitHub | Auth<br/> libraries | Auth flow |
-> | ------- | -------- | ------------- | -------------- |
+> | Language /<br/>Platform | Code sample(s) <br/>on GitHub | Auth <br/>libraries | Auth flow | Quickstart | Tutorial |
+> | ----------------------- | ----------------------------- | ------------------- | --------- | ---------- | -------- |
 > | Node.js | [Teams Tab app: single sign-on (SSO) and call Microsoft Graph](https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/tab-sso/nodejs) | [MSAL Node](/javascript/api/@azure/msal-node) |  On-Behalf-Of (OBO) |
 
 ### Multi-tenant SaaS
@@ -153,8 +153,8 @@ The following sample illustrates Microsoft Teams Tab application that signs in u
 The following samples show how to configure your application to accept sign-ins from any Microsoft Entra tenant. Configuring your application to be _multi-tenant_ means that you can offer a **Software as a Service** (SaaS) application to many organizations, allowing their users to be able to sign-in to your application after providing consent.
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Language/<br/>Platform | Code sample(s) <br/> on GitHub |Auth<br/> libraries |Auth flow |
-> | ----------- | ----------- |----------- |----------- |
+> | Language /<br/>Platform | Code sample(s) <br/>on GitHub | Auth <br/>libraries | Auth flow | Quickstart | Tutorial |
+> | ----------------------- | ----------------------------- | ------------------- | --------- | ---------- | -------- |
 > | ASP.NET Core | [ASP.NET Core MVC web application calls Microsoft Graph API](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/2-WebApp-graph-user/2-3-Multi-Tenant) | [MSAL.NET](/entra/msal/dotnet) | OpenID connect |
 > | ASP.NET Core | [ASP.NET Core MVC web application calls ASP.NET Core web API](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/4-WebApp-your-API/4-3-AnyOrg) | [MSAL.NET](/entra/msal/dotnet) | Authorization code |
 > | Angular | [Angular single-page application calls ASP.NET Core web API](https://github.com/Azure-Samples/ms-identity-javascript-angular-tutorial/tree/main/6-AdvancedScenarios/2-call-api-mt) | [MSAL Angular](/javascript/api/@azure/msal-angular/) | Authorization code |
@@ -168,16 +168,16 @@ The following samples show how to build applications using the C# language and f
 #### .NET 
 
 > [!div class="mx-tdCol2BreakAll"]
-> | App type | Code sample(s) <br/> on GitHub |Auth<br/> libraries |Auth flow |
-> | ----------- | ----------- |----------- |----------- |
+> | App type | Code sample(s) <br/>on GitHub | Auth <br/>libraries | Auth flow | Quickstart | Tutorial |
+> | -------- | ----------------------------- | ------------------- | --------- | ---------- | -------- |
 > | Desktop | [Invoke protected API with integrated Windows authentication](https://github.com/azure-samples/active-directory-dotnet-iwa-v2) | [MSAL.NET](/entra/msal/dotnet) | Integrated Windows authentication |
 > | Headless | [.NET Azure function web API secured by Microsoft Entra ID](https://github.com/Azure-Samples/ms-identity-dotnet-webapi-azurefunctions) | [MSAL.NET](/entra/msal/dotnet) | Authorization code |
 
 #### .NET Core
 
 > [!div class="mx-tdCol2BreakAll"]
-> | App type | Code sample(s) <br/> on GitHub |Auth<br/> libraries |Auth flow |
-> | ----------- | ----------- |----------- |----------- |
+> | App type | Code sample(s) <br/>on GitHub | Auth <br/>libraries | Auth flow | Quickstart | Tutorial |
+> | -------- | ----------------------------- | ------------------- | --------- | ---------- | -------- |
 > | Desktop | &#8226; [Call Microsoft Graph](https://github.com/Azure-Samples/ms-identity-dotnet-desktop-tutorial/tree/master/1-Calling-MSGraph/1-1-AzureAD) <br/> &#8226; [Call Microsoft Graph with token cache](https://github.com/Azure-Samples/ms-identity-dotnet-desktop-tutorial/tree/master/2-TokenCache) <br/> &#8226; [Call Microsoft Graph with custom web UI HTML](https://github.com/Azure-Samples/ms-identity-dotnet-desktop-tutorial/tree/master/3-CustomWebUI/3-1-CustomHTML) <br/> &#8226; [Call Microsoft Graph with custom web browser](https://github.com/Azure-Samples/ms-identity-dotnet-desktop-tutorial/tree/master/3-CustomWebUI/3-2-CustomBrowser) <br/> &#8226; [Sign in users with device code flow](https://github.com/Azure-Samples/ms-identity-dotnet-desktop-tutorial/tree/master/4-DeviceCodeFlow) <br/> &#8226; [Authenticate users with MSAL.NET in a WinUI desktop application](https://github.com/Azure-Samples/ms-identity-netcore-winui) | [MSAL.NET](/entra/msal/dotnet) |&#8226; Authorization code with PKCE <br/> &#8226; Device code |
 > | Mobile | &#8226; [Call Microsoft Graph using MAUI](https://github.com/Azure-Samples/ms-identity-dotnetcore-maui/tree/main/MauiAppBasic) <br/> &#8226; [Call Microsoft Graph using MAUI with broker](https://github.com/Azure-Samples/ms-identity-dotnetcore-maui/tree/main/MauiAppWithBroker) <br/> &#8226; [Call Active Directory B2C tenant using MAUI](https://github.com/Azure-Samples/ms-identity-dotnetcore-maui/tree/main/MauiAppB2C) | [MSAL.NET](/entra/msal/dotnet) | Authorization code with PKCE |
 > | Headless | [Invoke protected API from text-only device](https://github.com/azure-samples/active-directory-dotnetcore-devicecodeflow-v2) | [MSAL.NET](/entra/msal/dotnet) | Device code|
@@ -186,8 +186,8 @@ The following samples show how to build applications using the C# language and f
 #### ASP.NET 
 
 > [!div class="mx-tdCol2BreakAll"]
-> | App type | Code sample(s) <br/> on GitHub |Auth<br/> libraries |Auth flow |
-> | ----------- | ----------- |----------- |----------- |
+> | App type | Code sample(s) <br/>on GitHub | Auth <br/>libraries | Auth flow | Quickstart | Tutorial |
+> | -------- | ----------------------------- | ------------------- | --------- | ---------- | -------- |
 > | Web application | &#8226; [Microsoft Graph Training Sample](https://github.com/microsoftgraph/msgraph-training-aspnetmvcapp) <br/> &#8226; [Sign in users and call Microsoft Graph](https://github.com/Azure-Samples/ms-identity-aspnet-webapp-openidconnect) <br/> &#8226; [Sign in users and call Microsoft Graph with admin restricted scope](https://github.com/azure-samples/active-directory-dotnet-admin-restricted-scopes-v2) <br/> &#8226; [Quickstart: Sign in users](https://github.com/AzureAdQuickstarts/AppModelv2-WebApp-OpenIDConnect-DotNet) | [MSAL.NET](/entra/msal/dotnet) | &#8226; OpenID connect <br/> &#8226; Authorization code |
 > | Web API | [Call Microsoft Graph](https://github.com/Azure-Samples/ms-identity-aspnet-webapi-onbehalfof) | [MSAL.NET](/entra/msal/dotnet) | On-Behalf-Of (OBO) |
 > | Service/</br>daemon |[Multi-tenant with Microsoft identity platform endpoint](https://github.com/Azure-Samples/ms-identity-aspnet-daemon-webapp) | [MSAL.NET](/entra/msal/dotnet) | Client credentials grant|
@@ -195,8 +195,8 @@ The following samples show how to build applications using the C# language and f
 #### ASP.NET Core
 
 > [!div class="mx-tdCol2BreakAll"]
-> | App type | Code sample(s) <br/> on GitHub |Auth<br/> libraries |Auth flow |
-> | ----------- | ----------- |----------- |----------- |
+> | App type | Code sample(s) <br/>on GitHub | Auth <br/>libraries | Auth flow | Quickstart | Tutorial |
+> | -------- | ----------------------------- | ------------------- | --------- | ---------- | -------- |
 > | Web application| &#8226; [Sign in users](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/blob/master/1-WebApp-OIDC/README.md) <br/> &#8226; [Sign in users (B2C)](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/blob/master/1-WebApp-OIDC/1-5-B2C/README.md) <br/> &#8226; [Call Microsoft Graph](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/blob/master/2-WebApp-graph-user/2-1-Call-MSGraph/README.md) <br/> &#8226; [Customize token cache](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/blob/master/2-WebApp-graph-user/2-2-TokenCache/README.md) <br/> &#8226; [Call Graph (multi-tenant)](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/blob/master/2-WebApp-graph-user/2-3-Multi-Tenant/README.md) <br/> &#8226; [Call Azure REST APIs](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/blob/master/3-WebApp-multi-APIs/README.md) <br/> &#8226; [Protect web API](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/blob/master/4-WebApp-your-API/4-1-MyOrg/README.md) <br/> &#8226; [Protect web API (B2C)](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/blob/master/4-WebApp-your-API/4-2-B2C/README.md) <br/> &#8226; [Protect multi-tenant web API](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/blob/master/4-WebApp-your-API/4-3-AnyOrg/Readme.md) <br/> &#8226; [Use App Roles for access control](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/blob/master/5-WebApp-AuthZ/5-1-Roles/README.md) <br/> &#8226; [Use Security Groups for access control](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/blob/master/5-WebApp-AuthZ/5-2-Groups/README.md) <br/> &#8226; [Deploy to Azure Storage and App Service](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/blob/master/6-Deploy-to-Azure/README.md) | [Microsoft.Identity.Web](/dotnet/api/microsoft-authentication-library-dotnet/confidentialclient) | &#8226; OpenID connect <br/> &#8226; Authorization code <br/> &#8226; On-Behalf-Of|
 > | Web application |[Advanced Token Cache Scenarios](https://github.com/Azure-Samples/ms-identity-dotnet-advanced-token-cache) | [Microsoft.Identity.Web](/dotnet/api/microsoft-authentication-library-dotnet/confidentialclient) | On-Behalf-Of (OBO) |
 > | Web application |[Use the Conditional Access auth context to perform step\-up authentication](https://github.com/Azure-Samples/ms-identity-dotnetcore-ca-auth-context-app/blob/main/README.md) | [Microsoft.Identity.Web](/dotnet/api/microsoft-authentication-library-dotnet/confidentialclient) | Authorization code |
@@ -208,8 +208,8 @@ The following samples show how to build applications using the C# language and f
 #### Blazor 
 
 > [!div class="mx-tdCol2BreakAll"]
-> | App type | Code sample(s) <br/> on GitHub |Auth<br/> libraries |Auth flow |
-> | ----------- | ----------- |----------- |----------- |
+> | App type | Code sample(s) <br/>on GitHub | Auth <br/>libraries | Auth flow | Quickstart | Tutorial |
+> | -------- | ----------------------------- | ------------------- | --------- | ---------- | -------- |
 > | Single-page application | &#8226; [Sign in users](https://github.com/Azure-Samples/ms-identity-blazor-wasm/blob/main/WebApp-OIDC/MyOrg/README.md)<br/>&#8226; [Sign in users (B2C)](https://github.com/Azure-Samples/ms-identity-blazor-wasm/blob/main/WebApp-OIDC/B2C/README.md)<br/>&#8226; [Call Microsoft Graph](https://github.com/Azure-Samples/ms-identity-blazor-wasm/blob/main/WebApp-graph-user/Call-MSGraph/README.md)<br/>&#8226; [Deploy to Azure App Service](https://github.com/Azure-Samples/ms-identity-blazor-wasm/blob/main/Deploy-to-Azure/README.md) | [MSAL.js](/javascript/api/overview/msal-overview) | Implicit Flow |
 > | Web application | &#8226; [Sign in users](https://github.com/Azure-Samples/ms-identity-blazor-server/tree/main/WebApp-OIDC/MyOrg) <br/> &#8226; [Sign in users (B2C)](https://github.com/Azure-Samples/ms-identity-blazor-server/tree/main/WebApp-OIDC/B2C) <br/> &#8226; [Call Microsoft Graph](https://github.com/Azure-Samples/ms-identity-blazor-server/tree/main/WebApp-graph-user/Call-MSGraph) <br/> &#8226; [Call web API](https://github.com/Azure-Samples/ms-identity-blazor-server/tree/main/WebApp-your-API/MyOrg) <br/> &#8226; [Call web API (B2C)](https://github.com/Azure-Samples/ms-identity-blazor-server/tree/main/WebApp-your-API/B2C) | [MSAL.NET](/entra/msal/dotnet) | Implicit/Hybrid flow|
 
@@ -219,8 +219,8 @@ The following samples show how to build applications using the C# language and f
 The following samples show how to build applications for the Xamarin platform.
 
 > [!div class="mx-tdCol2BreakAll"]
-> | App type | Code sample(s) <br/> on GitHub |Auth<br/> libraries |Auth flow |
-> | ----------- | ----------- |----------- |----------- |
+> | App type | Code sample(s) <br/>on GitHub | Auth <br/>libraries | Auth flow | Quickstart | Tutorial |
+> | -------- | ----------------------------- | ------------------- | --------- | ---------- | -------- |
 > | Mobile | &#8226; [Sign in users and call Microsoft Graph](https://github.com/Azure-Samples/active-directory-xamarin-native-v2/tree/main/1-Basic) <br/>&#8226; [Sign in users with broker and call Microsoft Graph](https://github.com/Azure-Samples/active-directory-xamarin-native-v2/tree/main/2-With-broker) | [MSAL.NET](/entra/msal/dotnet) | Authorization code with PKCE |
 
 ### iOS
@@ -228,8 +228,8 @@ The following samples show how to build applications for the Xamarin platform.
 The following samples show how to build applications for the iOS platform.
 
 > [!div class="mx-tdCol2BreakAll"]
-> | App type | Code sample(s) <br/> on GitHub |Auth<br/> libraries |Auth flow |
-> | ----------- | ----------- |----------- |----------- |
+> | App type | Code sample(s) <br/>on GitHub | Auth <br/>libraries | Auth flow | Quickstart | Tutorial |
+> | -------- | ----------------------------- | ------------------- | --------- | ---------- | -------- |
 > | Mobile | &#8226; [Call Microsoft Graph native](https://github.com/Azure-Samples/ms-identity-mobile-apple-swift-objc) | [MSAL iOS](https://github.com/AzureAD/microsoft-authentication-library-for-objc) | Authorization code with PKCE |
 
 
@@ -240,8 +240,8 @@ The following samples show how to build applications for the iOS platform.
 The following samples show how to build applications for the JavaScript language and platform. 
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Language /<br/>Platform | Code sample(s) <br/>on GitHub | Auth <br/>libraries | Auth flow | Quickstart | Tutorial |
-> | ----------------------- | ----------------------------- | ------------------- | --------- | ---------- | -------- |
+> | App type | Code sample(s) <br/>on GitHub | Auth <br/>libraries | Auth flow | Quickstart | Tutorial |
+> | -------- | ----------------------------- | ------------------- | --------- | ---------- | -------- |
 > | Single-page application | &#8226; [Sign in users](https://github.com/Azure-Samples/ms-identity-docs-code-javascript/tree/main/vanillajs-spa) <br/>&#8226; [Sign in users (B2C)](https://github.com/Azure-Samples/ms-identity-javascript-tutorial/tree/main/1-Authentication/2-sign-in-b2c/README.md) <br/> &#8226; [Call Microsoft Graph](https://github.com/Azure-Samples/ms-identity-javascript-tutorial/tree/main/2-Authorization-I/1-call-graph/README.md)<br/>&#8226; [Call Node.js web API](https://github.com/Azure-Samples/ms-identity-javascript-tutorial/tree/main/3-Authorization-II/1-call-api/README.md)<br/>&#8226; [Call Node.js web API (B2C)](https://github.com/Azure-Samples/ms-identity-javascript-tutorial/tree/main/3-Authorization-II/2-call-api-b2c/README.md) <br/>&#8226; [Deploy to Azure Storage and App Service](https://github.com/Azure-Samples/ms-identity-javascript-tutorial/tree/main/4-Deployment/README.md) | [MSAL.js](/javascript/api/overview/msal-overview) | &#8226; Authorization code with PKCE | [Quickstart](quickstart-single-page-app-javascript-sign-in.md) | |
 
 #### Angular
@@ -249,13 +249,13 @@ The following samples show how to build applications for the JavaScript language
 > [!div class="mx-tdCol2BreakAll"]
 > | App type | Code sample(s) <br/> on GitHub |Auth<br/> libraries |Auth flow | Quickstart | Tutorial |
 > | -------- | ------------------------------ |------------------- |--------- |----------- |--------- |
-> | Single-page application | &#8226; [Sign in users](https://github.com/Azure-Samples/ms-identity-docs-code-javascript/tree/main/angular-spa)<br/>&#8226; | [MSAL Angular](/javascript/api/@azure/msal-angular/) | &#8226; Authorization code with PKCE<br/>&#8226; On-behalf-of (OBO) <br/>&#8226; Continuous Access Evaluation (CAE) | | |
+> | Single-page application | &#8226; [Sign in users](https://github.com/Azure-Samples/ms-identity-docs-code-javascript/tree/main/angular-spa) | | | [Quickstart](quickstart-single-page-app-angular-sign-in.md) | [Tutorial](tutorial-v2-angular-auth-code.md) |
 
 #### Node.js
 
 > [!div class="mx-tdCol2BreakAll"]
-> | App type | Code sample(s) <br/> on GitHub |Auth<br/> libraries |Auth flow |
-> | ----------- | ----------- |----------- |----------- |
+> | App type | Code sample(s) <br/>on GitHub | Auth <br/>libraries | Auth flow | Quickstart | Tutorial |
+> | -------- | ----------------------------- | ------------------- | --------- | ---------- | -------- |
 > | Web API | &#8226; [Protect a Node.js web API](https://github.com/Azure-Samples/ms-identity-javascript-tutorial/tree/main/3-Authorization-II/1-call-api) <br/> &#8226; [Protect a Node.js Web API with Azure AD B2C](https://github.com/Azure-Samples/active-directory-b2c-javascript-nodejs-webapi) | [MSAL Node](/javascript/api/@azure/msal-node) | Authorization bearer |
 > | Desktop | [Sign in users](https://github.com/Azure-Samples/ms-identity-javascript-nodejs-desktop) | [MSAL Node](/javascript/api/@azure/msal-node) | Authorization code with PKCE |
 > | Service, daemon | [Call Microsoft Graph with secret](https://github.com/Azure-Samples/ms-identity-javascript-nodejs-console) | [MSAL Node](/javascript/api/@azure/msal-node) | Client credentials grant |
@@ -264,15 +264,15 @@ The following samples show how to build applications for the JavaScript language
 #### Node.js (Express) 
 
 > [!div class="mx-tdCol2BreakAll"]
-> | App type | Code sample(s) <br/> on GitHub |Auth<br/> libraries |Auth flow |
-> | ----------- | ----------- |----------- |----------- |
+> | App type | Code sample(s) <br/>on GitHub | Auth <br/>libraries | Auth flow | Quickstart | Tutorial |
+> | -------- | ----------------------------- | ------------------- | --------- | ---------- | -------- |
 > | Web application | &#8226; [Sign in users](https://github.com/Azure-Samples/ms-identity-javascript-nodejs-tutorial/blob/main/1-Authentication/1-sign-in/README.md)<br/> &#8226; [Sign in users (B2C)](https://github.com/Azure-Samples/ms-identity-javascript-nodejs-tutorial/blob/main/1-Authentication/2-sign-in-b2c/README.md)<br/> &#8226; [Call Microsoft Graph](https://github.com/Azure-Samples/ms-identity-javascript-nodejs-tutorial/blob/main/2-Authorization/1-call-graph/README.md)<br/> &#8226; [Deploy to Azure App Service](https://github.com/Azure-Samples/ms-identity-javascript-nodejs-tutorial/blob/main/3-Deployment/README.md)<br/> &#8226; [Use App Roles for access control](https://github.com/Azure-Samples/ms-identity-javascript-nodejs-tutorial/blob/main/4-AccessControl/1-app-roles/README.md)<br/> &#8226; [Use Security Groups for access control](https://github.com/Azure-Samples/ms-identity-javascript-nodejs-tutorial/blob/main/4-AccessControl/2-security-groups/README.md) <br/> &#8226; [Web app that sign in users](https://github.com/Azure-Samples/ms-identity-node) | [MSAL Node](/javascript/api/@azure/msal-node) | Authorization code |
 
 #### React
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Language /<br/>Platform | Code sample(s) <br/>on GitHub | Auth <br/>libraries | Auth flow | Quickstart | Tutorial |
-> | ----------------------- | ----------------------------- | ------------------- | --------- | ---------- | -------- |
+> | App type | Code sample(s) <br/>on GitHub | Auth <br/>libraries | Auth flow | Quickstart | Tutorial |
+> | -------- | ----------------------------- | ------------------- | --------- | ---------- | -------- |
 > | Single-page application |  &#8226; [Sign in users](https://github.com/Azure-Samples/ms-identity-docs-code-javascript/tree/main/react-spa) | [MSAL React](/javascript/api/@azure/msal-react) | &#8226; Authorization code with PKCE<br/>&#8226; On-behalf-of (OBO) <br/>&#8226; Conditional Access <br/>&#8226; Conditional Access Auth Context (acrs) <br/>&#8226; Continuous Access Evaluation (CAE) | [Quickstart](quickstart-single-page-app-react-sign-in.md) | [Tutorial](tutorial-single-page-app-react-register-app.md) |
 
 ### Java
@@ -280,8 +280,8 @@ The following samples show how to build applications for the JavaScript language
 The following samples show how to build applications for the Java language and platform.
 
 > [!div class="mx-tdCol2BreakAll"]
-> | App type | Code sample(s) <br/> on GitHub |Auth<br/> libraries |Auth flow |
-> | ----------- | ----------- |----------- |----------- |
+> | App type | Code sample(s) <br/>on GitHub | Auth <br/>libraries | Auth flow | Quickstart | Tutorial |
+> | -------- | ----------------------------- | ------------------- | --------- | ---------- | -------- |
 > | Web API | [Sign in users](https://github.com/Azure-Samples/ms-identity-msal-java-samples/tree/main/4-spring-web-app/3-Authorization-II/protect-web-api) | [MSAL Java](/java/api/com.microsoft.aad.msal4j) | On-Behalf-Of (OBO) |
 > | Desktop | [Call Microsoft Graph](https://github.com/Azure-Samples/ms-identity-msal-java-samples/tree/main/2-client-side/Integrated-Windows-Auth-Flow) | [MSAL Java](/java/api/com.microsoft.aad.msal4j) | Integrated Windows authentication |
 > | Mobile | [Sign in users and call Microsoft Graph](https://github.com/Azure-Samples/ms-identity-android-java) | [MSAL Android](https://github.com/AzureAD/microsoft-authentication-library-for-android) | Authorization code with PKCE |
@@ -291,15 +291,15 @@ The following samples show how to build applications for the Java language and p
 #### Java Spring
 
 > [!div class="mx-tdCol2BreakAll"]
-> | App type | Code sample(s) <br/> on GitHub |Auth<br/> libraries |Auth flow |
-> | ----------- | ----------- |----------- |----------- |
+> | App type | Code sample(s) <br/>on GitHub | Auth <br/>libraries | Auth flow | Quickstart | Tutorial |
+> | -------- | ----------------------------- | ------------------- | --------- | ---------- | -------- |
 > | Web application |Microsoft Entra Spring Boot Starter Series <br/> &#8226; [Sign in users](https://github.com/Azure-Samples/ms-identity-msal-java-samples/tree/main/4-spring-web-app/1-Authentication/sign-in) <br/> &#8226; [Sign in users (B2C)](https://github.com/Azure-Samples/ms-identity-msal-java-samples/tree/main/4-spring-web-app/1-Authentication/sign-in-b2c) <br/> &#8226; [Call Microsoft Graph](https://github.com/Azure-Samples/ms-identity-msal-java-samples/tree/main/4-spring-web-app/2-Authorization-I/call-graph) <br/> &#8226; [Use App Roles for access control](https://github.com/Azure-Samples/ms-identity-msal-java-samples/tree/main/4-spring-web-app/3-Authorization-II/roles) <br/> &#8226; [Use Groups for access control](https://github.com/Azure-Samples/ms-identity-msal-java-samples/tree/main/4-spring-web-app/3-Authorization-II/groups) <br/> &#8226; [Deploy to Azure App Service](https://github.com/Azure-Samples/ms-identity-msal-java-samples/tree/main/4-spring-web-app/4-Deployment/deploy-to-azure-app-service) <br/> &#8226; [Protect a web API](https://github.com/Azure-Samples/ms-identity-msal-java-samples/tree/main/4-spring-web-app/3-Authorization-II/protect-web-api) | &#8226; [MSAL Java](/java/api/com.microsoft.aad.msal4j) <br/> &#8226; Microsoft Entra ID Boot Starter | Authorization code |
 
 #### Java Servlet
 
 > [!div class="mx-tdCol2BreakAll"]
-> | App type | Code sample(s) <br/> on GitHub |Auth<br/> libraries |Auth flow |
-> | ----------- | ----------- |----------- |----------- |
+> | App type | Code sample(s) <br/>on GitHub | Auth <br/>libraries | Auth flow | Quickstart | Tutorial |
+> | -------- | ----------------------------- | ------------------- | --------- | ---------- | -------- |
 > | Web application | Spring-less Servlet Series <br/> &#8226; [Sign in users](https://github.com/Azure-Samples/ms-identity-msal-java-samples/tree/main/3-java-servlet-web-app/1-Authentication/sign-in) <br/> &#8226; [Sign in users (B2C)](https://github.com/Azure-Samples/ms-identity-msal-java-samples/tree/main/3-java-servlet-web-app/1-Authentication/sign-in-b2c) <br/> &#8226; [Call Microsoft Graph](https://github.com/Azure-Samples/ms-identity-msal-java-samples/tree/main/3-java-servlet-web-app/2-Authorization-I/call-graph) <br/> &#8226; [Use App Roles for access control](https://github.com/Azure-Samples/ms-identity-msal-java-samples/tree/main/3-java-servlet-web-app/3-Authorization-II/roles) <br/> &#8226; [Use Security Groups for access control](https://github.com/Azure-Samples/ms-identity-msal-java-samples/tree/main/3-java-servlet-web-app/3-Authorization-II/groups) <br/> &#8226; [Deploy to Azure App Service](https://github.com/Azure-Samples/ms-identity-msal-java-samples/tree/main/3-java-servlet-web-app/4-Deployment/deploy-to-azure-app-service) | [MSAL Java](/java/api/com.microsoft.aad.msal4j) | Authorization code |
 
 ### Python 
@@ -307,8 +307,8 @@ The following samples show how to build applications for the Java language and p
 The following samples show how to build applications for the Python language and platform.
 
 > [!div class="mx-tdCol2BreakAll"]
-> | App type | Code sample(s) <br/> on GitHub |Auth<br/> libraries |Auth flow |
-> | ----------- | ----------- |----------- |----------- |
+> | App type | Code sample(s) <br/>on GitHub | Auth <br/>libraries | Auth flow | Quickstart | Tutorial |
+> | -------- | ----------------------------- | ------------------- | --------- | ---------- | -------- |
 > | Azure Functions as web APIs | [Python Azure function web API secured by Microsoft Entra ID](https://github.com/Azure-Samples/ms-identity-python-webapi-azurefunctions) | [MSAL Python](/entra/msal/python) | Authorization code |
 > | Desktop | [Sign in users](https://github.com/Azure-Samples/ms-identity-python-desktop) | [MSAL Python](/entra/msal/python) | Resource owner password credentials |
 > | Headless | [Call Microsoft Graph](https://github.com/Azure-Samples/ms-identity-python-devicecodeflow) | [MSAL Python](/entra/msal/python) | Device code |
@@ -317,15 +317,15 @@ The following samples show how to build applications for the Python language and
 #### Flask
 
 > [!div class="mx-tdCol2BreakAll"]
-> | App type | Code sample(s) <br/> on GitHub |Auth<br/> libraries |Auth flow |
-> | ----------- | ----------- |----------- |----------- |
+> | App type | Code sample(s) <br/>on GitHub | Auth <br/>libraries | Auth flow | Quickstart | Tutorial |
+> | -------- | ----------------------------- | ------------------- | --------- | ---------- | -------- |
 > | Web application | &#8226; [Sign in users](https://github.com/Azure-Samples/ms-identity-python-flask-tutorial) <br/> &#8226; [Sign in users (B2C)](https://github.com/Azure-Samples/ms-identity-python-flask-tutorial) <br/>&#8226; [A template to sign in Microsoft Entra ID or Azure AD B2C users, and optionally call a downstream API (Microsoft Graph)](https://github.com/Azure-Samples/ms-identity-python-webapp) <br/> &#8226; [Call Microsoft Graph](https://github.com/Azure-Samples/ms-identity-python-flask-tutorial) <br/> &#8226; [Deploy to Azure App Service](https://github.com/Azure-Samples/ms-identity-python-flask-tutorial) | [MSAL Python](/entra/msal/python) | Authorization code |
 
 #### Django
 
 > [!div class="mx-tdCol2BreakAll"]
-> | App type | Code sample(s) <br/> on GitHub |Auth<br/> libraries |Auth flow |
-> | ----------- | ----------- |----------- |----------- |
+> | App type | Code sample(s) <br/>on GitHub | Auth <br/>libraries | Auth flow | Quickstart | Tutorial |
+> | -------- | ----------------------------- | ------------------- | --------- | ---------- | -------- |
 > | Web application | &#8226; [Sign in users](https://github.com/Azure-Samples/ms-identity-python-django-tutorial/tree/main/1-Authentication/sign-in) <br/> &#8226; [Sign in users (B2C)](https://github.com/Azure-Samples/ms-identity-python-django-tutorial/tree/main/1-Authentication/sign-in-b2c) <br/> &#8226; [Call Microsoft Graph](https://github.com/Azure-Samples/ms-identity-python-django-tutorial/tree/main/2-Authorization-I/call-graph) <br/> &#8226; [Deploy to Azure App Service](https://github.com/Azure-Samples/ms-identity-python-django-tutorial/tree/main/3-Deployment/deploy-to-azure-app-service)| [MSAL Python](/entra/msal/python/) | Authorization code |
 
 ### Kotlin 
@@ -333,8 +333,8 @@ The following samples show how to build applications for the Python language and
 The following samples show how to build applications with Kotlin.
 
 > [!div class="mx-tdCol2BreakAll"]
-> | App type | Code sample(s) <br/> on GitHub |Auth<br/> libraries |Auth flow |
-> | ----------- | ----------- |----------- |----------- |
+> | App type | Code sample(s) <br/>on GitHub | Auth <br/>libraries | Auth flow | Quickstart | Tutorial |
+> | -------- | ----------------------------- | ------------------- | --------- | ---------- | -------- |
 > | Mobile | [Sign in users and call Microsoft Graph](https://github.com/Azure-Samples/ms-identity-android-kotlin) | [MSAL Android](https://github.com/AzureAD/microsoft-authentication-library-for-android) | Authorization code with PKCE |
 
 ### Ruby 
@@ -342,8 +342,8 @@ The following samples show how to build applications with Kotlin.
 The following samples show how to build applications with Ruby.
 
 > [!div class="mx-tdCol2BreakAll"]
-> | App type | Code sample(s) <br/> on GitHub |Auth<br/> libraries |Auth flow |
-> | ----------- | ----------- |----------- |----------- |
+> | App type | Code sample(s) <br/>on GitHub | Auth <br/>libraries | Auth flow | Quickstart | Tutorial |
+> | -------- | ----------------------------- | ------------------- | --------- | ---------- | -------- |
 > | Web application | Graph Training <br/> &#8226; [Sign in users and call Microsoft Graph](https://github.com/microsoftgraph/msgraph-training-rubyrailsapp) | OmniAuth OAuth2 | Authorization code |
 
 ### Universal Windows Platform (UWP)
@@ -351,8 +351,8 @@ The following samples show how to build applications with Ruby.
 The following samples show how to build applications with Universal Windows Platform (UWP).
 
 > [!div class="mx-tdCol2BreakAll"]
-> | App type | Code sample(s) <br/> on GitHub |Auth<br/> libraries |Auth flow |
-> | ----------- | ----------- |----------- |----------- |
+> | App type | Code sample(s) <br/>on GitHub | Auth <br/>libraries | Auth flow | Quickstart | Tutorial |
+> | -------- | ----------------------------- | ------------------- | --------- | ---------- | -------- |
 > | Desktop | [Call Microsoft Graph](https://github.com/Azure-Samples/active-directory-xamarin-native-v2/tree/main/2-With-broker) | [MSAL.NET](/entra/msal/dotnet) | Web account manager |
 
 ### Windows Presentation Foundation (WPF) 
@@ -360,8 +360,8 @@ The following samples show how to build applications with Universal Windows Plat
 The following samples show how to build applications with Windows Presentation Foundation (WPF).
 
 > [!div class="mx-tdCol2BreakAll"]
-> | App type | Code sample(s) <br/> on GitHub |Auth<br/> libraries |Auth flow |
-> | ----------- | ----------- |----------- |----------- |
+> | App type | Code sample(s) <br/>on GitHub | Auth <br/>libraries | Auth flow | Quickstart | Tutorial |
+> | -------- | ----------------------------- | ------------------- | --------- | ---------- | -------- |
 > | Desktop | [Sign in users and call Microsoft Graph](https://github.com/Azure-Samples/active-directory-dotnet-native-aspnetcore-v2/tree/master/2.%20Web%20API%20now%20calls%20Microsoft%20Graph) | [MSAL.NET](/entra/msal/dotnet) | Authorization code with PKCE |
 > | Desktop | &#8226; [Sign in users and call ASP.NET Core web API](https://github.com/Azure-Samples/active-directory-dotnet-native-aspnetcore-v2/tree/master/1.%20Desktop%20app%20calls%20Web%20API) <br/> &#8226; [Sign in users and call Microsoft Graph](https://github.com/azure-samples/active-directory-dotnet-desktop-msgraph-v2) | [MSAL.NET](/entra/msal/dotnet/) | Authorization code with PKCE |
 
