@@ -3,8 +3,7 @@ title: 'Tutorial: Configure Twingate for automatic user provisioning with Micros
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Twingate.
 
 documentationcenter: ''
-author: twimmers
-writer: twimmers
+author: thomasakelo
 manager: jeedes
 
 ms.assetid: 39476198-1ade-4c22-b880-111f4c30d823
@@ -13,8 +12,8 @@ ms.subservice: saas-apps
 
 ms.tgt_pltfrm: na
 ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: thwimmer
+ms.date: 03/25/2024
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Twingate so that I can streamline the user management process and ensure that users have the appropriate access to Twingate.
 ---

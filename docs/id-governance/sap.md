@@ -1,6 +1,6 @@
 ---
 title: Manage access to your SAP applications
-description: Learn how to bring identities from SAP SuccessFactors into Microsoft Entra ID and provision access to SAP ECC, SAP S/4HANA, and other SAP applications.
+description: Learn how to bring identities from SAP SuccessFactors into Microsoft Entra ID and provision access to SAP ERP Central Component (ECC), SAP S/4HANA, and other SAP applications.
 author: owinfreyATL
 manager: amycolannino
 editor: markwahl-msft
@@ -16,6 +16,10 @@ ms.reviewer: markwahl-msft
 SAP software and services likely runs critical functions, such as HR and ERP, for your organization. At the same time, your organization relies on Microsoft for various Azure services, Microsoft 365, and Microsoft Entra ID Governance for managing access to applications. This article describes how you can use Identity Governance to manage identities across your SAP applications.
 
 ![Diagram of SAP integrations.](./media/sap/sap-integrations.png)
+
+## Migrate from SAP Identity Management
+
+If you've been using SAP Identity Management (IDM), then you can migrate identity management scenarios from SAP IDM to Microsoft Entra. For more information, see [Migrate identity management scenarios from SAP IDM to Microsoft Entra](~/identity/app-provisioning/migrate-from-sap-idm.md).
 
 <a name='bring-identities-from-hr-into-azure-ad'></a>
 
@@ -78,6 +82,8 @@ After your users are in Microsoft Entra ID, you can provision accounts into the 
 
 ### Provision identities into on-premises SAP systems
 
+Once you have users in Microsoft Entra ID, you can provision those users from Microsoft Entra ID to SAP Cloud Identity Services or SAP ECC, to enable them to sign in to SAP applications. If you have [`SAP S/4HANA On-premise`](https://help.sap.com/docs/identity-provisioning/identity-provisioning/target-sap-s-4hana-on-premise), then provision users from Microsoft Entra ID to SAP Cloud Identity Directory. SAP Cloud Identity Services then provisions the users originating from Microsoft Entra ID that are in the SAP Cloud Identity Directory into the downstream SAP applications to SAP S/4HANA On-Premise through the SAP cloud connector.
+
 Customers who have yet to transition from applications such as  SAP R/3 and SAP ERP Central Component (SAP ECC) to SAP S/4HANA can still rely on the Microsoft Entra provisioning service to provision user accounts. Within SAP R/3 and SAP ECC, you expose the necessary Business Application Programming Interfaces (BAPIs) for creating, updating, and deleting users. Within Microsoft Entra ID, you have two options:
 
 * Use the lightweight Microsoft Entra provisioning agent and [web services connector](../identity/app-provisioning/on-premises-web-services-connector.md) to [provision users into apps such as SAP ECC](../identity/app-provisioning/on-premises-sap-connector-configure.md).
@@ -103,6 +109,7 @@ For more information about SAP integrations with Microsoft Entra ID, see the fol
 
 - [Secure access with SAP Cloud Identity Services and Microsoft Entra ID](../fundamentals/scenario-azure-first-sap-identity-integration.md)
 - [SAP workload security - Microsoft Azure Well-Architected Framework](/azure/architecture/framework/sap/security)
+- [Services and integration partners for deploying Microsoft Entra with SAP applications](~/identity/app-provisioning/migrate-from-sap-idm.md#services-and-integration-partners-for-deploying-microsoft-entra-with-sap-applications)
 
 ## Next steps
 

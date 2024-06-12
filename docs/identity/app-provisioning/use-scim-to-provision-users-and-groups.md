@@ -42,7 +42,7 @@ To automate provisioning to an application, it requires building and integrating
 
 ## Design your user and group schema
 
-Each application requires different attributes to create a user or group. Start your integration by identifying the required objects (users, groups) and attributes (name, manager, job title, etc.) that your application needs. 
+Each application requires different attributes to create a user or group. Start your integration by identifying the required objects (users, groups) and attributes (name, manager, job title, and so on) that your application needs. 
 
 The SCIM standard defines a schema for managing users and groups. 
 
@@ -102,7 +102,7 @@ The following JSON payload shows an example SCIM schema:
      "lastModified": "2011-05-13T04:42:34Z",
      "version": "W\/\"3694e05e9dff591\"",
      "location":
- "https://example.com/v2/Users/2819c223-7f76-453a-919d-413861904646"
+ "https://example.com/v2/Users/00aa00aa-bb11-cc22-dd33-44ee44ee44ee"
    }
 }   
 ```
@@ -289,12 +289,12 @@ This article provides example SCIM requests emitted by the Microsoft Entra provi
         "urn:ietf:params:scim:schemas:core:2.0:User",
         "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"],
     "externalId": "0a21f0f2-8d2a-4f8e-bf98-7363c4aed4ef",
-    "userName": "Test_User_ab6490ee-1e48-479e-a20b-2d77186b5dd1",
+    "userName": "Test_User_00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
     "active": true,
     "emails": [{
         "primary": true,
         "type": "work",
-        "value": "Test_User_fd0ea19b-0777-472c-9f96-4f70d2226f2e@testuser.com"
+        "value": "Test_User_11bb11bb-cc22-dd33-ee44-55ff55ff55ff@testuser.com"
     }],
     "meta": {
         "resourceType": "User"
@@ -321,7 +321,7 @@ This article provides example SCIM requests emitted by the Microsoft Entra provi
         "created": "2018-03-27T19:59:26.000Z",
         "lastModified": "2018-03-27T19:59:26.000Z"
     },
-    "userName": "Test_User_ab6490ee-1e48-479e-a20b-2d77186b5dd1",
+    "userName": "Test_User_00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
     "name": {
         "formatted": "givenName familyName",
         "familyName": "familyName",
@@ -329,7 +329,7 @@ This article provides example SCIM requests emitted by the Microsoft Entra provi
     },
     "active": true,
     "emails": [{
-        "value": "Test_User_fd0ea19b-0777-472c-9f96-4f70d2226f2e@testuser.com",
+        "value": "Test_User_11bb11bb-cc22-dd33-ee44-55ff55ff55ff@testuser.com",
         "type": "work",
         "primary": true
     }]
@@ -353,7 +353,7 @@ This article provides example SCIM requests emitted by the Microsoft Entra provi
         "created": "2018-03-27T19:59:26.000Z",
         "lastModified": "2018-03-27T19:59:26.000Z"
     },
-    "userName": "Test_User_feed3ace-693c-4e5a-82e2-694be1b39934",
+    "userName": "Test_User_00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
     "name": {
         "formatted": "givenName familyName",
         "familyName": "familyName",
@@ -361,7 +361,7 @@ This article provides example SCIM requests emitted by the Microsoft Entra provi
     },
     "active": true,
     "emails": [{
-        "value": "Test_User_22370c1a-9012-42b2-bf64-86099c2a1c22@testuser.com",
+        "value": "Test_User_11bb11bb-cc22-dd33-ee44-55ff55ff55ff@testuser.com",
         "type": "work",
         "primary": true
     }]
@@ -390,7 +390,7 @@ This article provides example SCIM requests emitted by the Microsoft Entra provi
 
 ##### <a name="request-2"></a>Request
 
-*GET /Users?filter=userName eq "Test_User_dfeef4c5-5681-4387-b016-bdf221e82081"*
+*GET /Users?filter=userName eq "Test_User_00aa00aa-bb11-cc22-dd33-44ee44ee44ee"*
 
 ##### <a name="response-2"></a>Response
 
@@ -409,14 +409,14 @@ This article provides example SCIM requests emitted by the Microsoft Entra provi
             "lastModified": "2018-03-27T19:59:26.000Z"
             
         },
-        "userName": "Test_User_dfeef4c5-5681-4387-b016-bdf221e82081",
+        "userName": "Test_User_00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
         "name": {
             "familyName": "familyName",
             "givenName": "givenName"
         },
         "active": true,
         "emails": [{
-            "value": "Test_User_91b67701-697b-46de-b864-bd0bbe4f99c1@testuser.com",
+            "value": "Test_User_11bb11bb-cc22-dd33-ee44-55ff55ff55ff@testuser.com",
             "type": "work",
             "primary": true
         }]
@@ -481,7 +481,7 @@ This article provides example SCIM requests emitted by the Microsoft Entra provi
         "created": "2018-03-27T19:59:26.000Z",
         "lastModified": "2018-03-27T19:59:26.000Z"
     },
-    "userName": "Test_User_fbb9dda4-fcde-4f98-a68b-6c5599e17c27",
+    "userName": "Test_User_00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
     "name": {
         "formatted": "givenName updatedFamilyName",
         "familyName": "updatedFamilyName",
@@ -534,7 +534,7 @@ This article provides example SCIM requests emitted by the Microsoft Entra provi
     },
     "active": true,
     "emails": [{
-        "value": "Test_User_49dc1090-aada-4657-8434-4995c25a00f7@testuser.com",
+        "value": "Test_User_11bb11bb-cc22-dd33-ee44-55ff55ff55ff@testuser.com",
         "type": "work",
         "primary": true
     }]
@@ -919,7 +919,7 @@ TLS 1.2 Cipher Suites minimum bar:
 
 The Microsoft Entra provisioning service currently operates under the IP Ranges for Microsoft Entra ID as listed [here](https://www.microsoft.com/download/details.aspx?id=56519). You can add the IP ranges listed under the Microsoft Entra ID tag to allow traffic from the Microsoft Entra provisioning service into your application. You need to review the IP range list carefully for computed addresses. An address such as '40.126.25.32' could be represented in the IP range list as  '40.126.0.0/18'. You can also programmatically retrieve the IP range list using the following [API](/rest/api/virtualnetwork/service-tags/list).
 
-Microsoft Entra ID also supports an agent based solution to provide connectivity to applications in private networks (on-premises, hosted in Azure, hosted in AWS, etc.). Customers can deploy a lightweight agent, which provides connectivity to Microsoft Entra ID without opening any inbound ports, on a server in their private network. Learn more [here](./on-premises-scim-provisioning.md).
+Microsoft Entra ID also supports an agent based solution to provide connectivity to applications in private networks (on-premises, hosted in Azure, hosted in AWS, and so on). Customers can deploy a lightweight agent, which provides connectivity to Microsoft Entra ID without opening any inbound ports, on a server in their private network. Learn more [here](./on-premises-scim-provisioning.md).
 
 ## Build a SCIM endpoint
 
@@ -1214,7 +1214,7 @@ In the sample code, the request is translated into a call to the QueryAsync meth
 * parameters.AlternateFilter.ElementAt(x).ComparisonValue: "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1"
 * parameters.AlternateFilters.ElementAt(y).AttributePath: "manager"
 * parameters.AlternateFilters.ElementAt(y).ComparisonOperator: ComparisonOperator.Equals
-* parameters.AlternateFilter.ElementAt(y).ComparisonValue: "2819c223-7f76-453a-919d-413861904646"
+* parameters.AlternateFilter.ElementAt(y).ComparisonValue: "00aa00aa-bb11-cc22-dd33-44ee44ee44ee"
 * parameters.RequestedAttributePaths.ElementAt(0): "ID"
 * parameters.SchemaIdentifier: `urn:ietf:params:scim:schemas:extension:enterprise:2.0:User`
 
@@ -1240,8 +1240,8 @@ Content-type: application/scim+json
         "value":
           [
             {
-              "$ref":"http://.../scim/Users/2819c223-7f76-453a-919d-413861904646",
-              "value":"2819c223-7f76-453a-919d-413861904646"}]}]}
+              "$ref":"http://.../scim/Users/00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
+              "value":"00aa00aa-bb11-cc22-dd33-44ee44ee44ee"}]}]}
 ```
 
 In the sample code, the request is translated into a call to the UpdateAsync method of the service's provider. Here's the signature of that method: 
@@ -1267,8 +1267,8 @@ In the example of a request, to update a user, the object provided as the value 
 |`(PatchRequest as PatchRequest2).Operations.ElementAt(0).OperationName`| `OperationName.Add`|
 |`(PatchRequest as PatchRequest2).Operations.ElementAt(0).Path.AttributePath`| Manager|
 |`(PatchRequest as PatchRequest2).Operations.ElementAt(0).Value.Count`|1|
-|`(PatchRequest as PatchRequest2).Operations.ElementAt(0).Value.ElementAt(0).Reference`|`http://.../scim/Users/2819c223-7f76-453a-919d-413861904646`|
-|`(PatchRequest as PatchRequest2).Operations.ElementAt(0).Value.ElementAt(0).Value`| 2819c223-7f76-453a-919d-413861904646|
+|`(PatchRequest as PatchRequest2).Operations.ElementAt(0).Value.ElementAt(0).Reference`|`http://.../scim/Users/00aa00aa-bb11-cc22-dd33-44ee44ee44ee`|
+|`(PatchRequest as PatchRequest2).Operations.ElementAt(0).Value.ElementAt(0).Value`| 00aa00aa-bb11-cc22-dd33-44ee44ee44ee|
 
 ***Example 6. Deprovision a user***
 
@@ -1446,7 +1446,7 @@ To help drive awareness and demand of our joint integration, we recommend you up
 > * Ensure your sales and customer support teams are aware, ready, and can speak to the integration capabilities. Brief your teams, provide them with FAQs and include the integration into your sales materials. 
 > * Craft a blog post or press release that describes the joint integration, the benefits and how to get started. [Example: Imprivata and Microsoft Entra Press Release](https://www.imprivata.com/company/press/imprivata-introduces-iam-cloud-platform-healthcare-supported-microsoft) 
 > * Leverage your social media like Twitter, Facebook or LinkedIn to promote the integration to your customers. Be sure to include @Microsoft Entra ID so we can retweet your post. [Example: Imprivata Twitter Post](https://twitter.com/azuread/status/1123964502909779968)
-> * Create or update your marketing pages/website (e.g. integration page, partner page, pricing page, etc.) to include the availability of the joint integration. [Example: Pingboard integration Page](https://pingboard.com/org-chart-for), [Smartsheet integration page](https://www.smartsheet.com/marketplace/apps/directory-integrations), [Monday.com pricing page](https://monday.com/pricing/) 
+> * Create or update your marketing pages/website (such as integration page, partner page, pricing page, and so on) to include the availability of the joint integration. [Example: Pingboard integration Page](https://pingboard.com/org-chart-for), [Smartsheet integration page](https://www.smartsheet.com/marketplace/apps/directory-integrations), [Monday.com pricing page](https://monday.com/pricing/) 
 > * Create a help center article or technical documentation on how customers can get started. [Example: Envoy + Microsoft Entra integration.](https://envoy.help/en/articles/3453335-microsoft-azure-active-directory-integration) 
 > * Alert customers of the new integration through your customer communication (monthly newsletters, email campaigns, product release notes). 
 

@@ -3,7 +3,7 @@ author: kengaderdus
 ms.service: entra-external-id
 ms.subservice: customers
 ms.topic: include
-ms.date: 03/19/2024
+ms.date: 05/07/2024
 ms.author: kengaderdus
 ---
 
@@ -33,7 +33,7 @@ continuation_token=ABAAEAAAAtfyo...
 
 Learn more about user attributes input types in [Custom user attributes input types](../../../external-id/customers/concept-user-attributes.md#custom-user-attributes-input-types) article.
 
-### Reference user attributes 
+### How to reference user attributes 
 
 When you [create a sign-up user-flow](../../../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md), you configure user attributes that you want to collect from the user during sign-up. The names of the user attributes in the Microsoft Entra admin center are different from how you reference them in the native authentication API.
 

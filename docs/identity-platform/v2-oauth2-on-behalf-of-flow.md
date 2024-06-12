@@ -82,7 +82,7 @@ Host: login.microsoftonline.com/<tenant>
 Content-Type: application/x-www-form-urlencoded
     
 grant_type=urn:ietf:params:oauth:grant-type:jwt-bearer
-client_id=00001111-aaaa-2222-bbbb-3333cccc4444
+&client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &client_secret=sampleCredentia1s
 &assertion=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6InowMzl6ZHNGdWl6cEJmQlZLMVRuMjVRSFlPMCJ9.eyJhdWQiOiIyO{a lot of characters here}
 &scope=https://graph.microsoft.com/user.read+offline_access
@@ -170,7 +170,7 @@ To [surface this error back](https://datatracker.ietf.org/doc/html/rfc6750#secti
     "timestamp":"2017-05-01 22:43:20Z",
     "trace_id":"0000aaaa-11bb-cccc-dd22-eeeeee333333",
     "correlation_id":"aaaa0000-bb11-2222-33cc-444444dddddd",
-    "claims":"{\"access_token\":{\"polids\":{\"essential\":true,\"values\":[\"9ab03e19-ed42-4168-b6b7-7001fb3e933a\"]}}}"
+    "claims":"{\"access_token\":{\"polids\":{\"essential\":true,\"values\":[\"00aa00aa-bb11-cc22-dd33-44ee44ee44ee\"]}}}"
 }
 ```
 

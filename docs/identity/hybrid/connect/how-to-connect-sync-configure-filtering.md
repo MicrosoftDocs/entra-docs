@@ -8,14 +8,20 @@ ms.assetid: 880facf6-1192-40e9-8181-544c0759d506
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 11/06/2023
+ms.date: 06/06/2024
 ms.subservice: hybrid-connect
 ms.author: billmath
 
 ---
 
 # Microsoft Entra Connect Sync: Configure filtering
-By using filtering, you can control which objects appear in Microsoft Entra ID from your on-premises directory. The default configuration takes all objects in all domains in the configured forests. In general, this is the recommended configuration. Users using Microsoft 365 workloads, such as Exchange Online and Skype for Business, benefit from a complete Global Address List so they can send email and call everyone. With the default configuration, they would have the same experience that they would have with an on-premises implementation of Exchange or Lync.
+By using filtering, you can control which objects appear in Microsoft Entra ID from your on-premises directory. The default configuration takes most objects in all domains in the configured forests. In general, this is the recommended configuration. Users using Microsoft 365 workloads, such as Exchange Online and Skype for Business, benefit from a complete Global Address List so they can send email and call everyone. With the default configuration, they would have the same experience that they would have with an on-premises implementation of Exchange or Lync.
+
+>[!NOTE]
+> Microsoft Entra Cloud Sync and Microsoft Entra Connect Sync filter out any Active Directory objects where the **isCriticalSystemObject** attribute is set to **True**.  This will filter out built-in AD high privilege objects such as Administrator, DomainAdmins, EnterpriseAdmins.  This filtering means that the last two groups **DON'T** sync to Entra ID by default.
+>
+>  However, other objects that are added to these high privilege group (DomainAdmins, EnterpriseAdmins) are not filtered out from syncing to cloud. For example, if you add a local AD User to the EnterpriseAdmins group, that user will still get synced to Microsoft Entra ID.
+
 
 In some cases however, you're required to make some changes to the default configuration. Here are some examples:
 
@@ -84,7 +90,7 @@ To change domain-based filtering, run the installation wizard: [domain and OU fi
 To change OU-based filtering, run the installation wizard: [domain and OU filtering](how-to-connect-install-custom.md#domain-and-ou-filtering). The installation wizard automates all the tasks that are documented in this topic.
 
 > [!IMPORTANT]
-> If you explicitly select an OU for synchronization, Microsoft Entra Connect will add the DistinguishedName of that OU in the inclusion list for the domain's sync scope. However, if you later rename that OU in Active Directory, the DistinguishedName of the OU is changed, and consequently, Microsoft Entra Connect will no longer consider that OU in sync scope. This will not cause an immediate issue, but upon a full import step, Microsoft Entra Connect will reevaluate the sync scope and delete (i.e. obsolete) any objects out of sync scope, which can potentially cause an unexpected mass deletion of objects in Microsoft Entra ID. To prevent this issue, after renaming a OU, run Microsoft Entra Connect Wizard and re-select the OU to be again included in sync scope.
+> If you explicitly select an OU for synchronization, Microsoft Entra Connect will add the DistinguishedName of that OU in the inclusion list for the domain's sync scope. However, if you later rename that OU in Active Directory, the DistinguishedName of the OU is changed, and consequently, Microsoft Entra Connect will no longer consider that OU in sync scope. This will not cause an immediate issue, but upon a full import step, Microsoft Entra Connect will reevaluate the sync scope and delete (that is, obsolete) any objects out of sync scope, which can potentially cause an unexpected mass deletion of objects in Microsoft Entra ID. To prevent this issue, after renaming a OU, run Microsoft Entra Connect Wizard and re-select the OU to be again included in sync scope.
 
 ## Attribute-based filtering
 Make sure that you're using the November 2015 ([1.0.9125](reference-connect-version-history.md)) or later build for these steps to work.
@@ -129,7 +135,7 @@ In the following example, you filter out (not synchronize) all users where **ext
 #### Positive filtering: "only sync these"
 Expressing positive filtering can be more challenging because you also have to consider objects that aren't obvious to be synchronized, such as conference rooms. You are also going to override the default filter in the out-of-box rule **In from AD - User Join**. When you create your custom filter, make sure to not include critical system objects, replication conflict objects, special mailboxes, and the service accounts for Microsoft Entra Connect.
 
-The positive filtering option requires two sync rules. You need one rule (or several) with the correct scope of objects to synchronize. You also need a second catch-all sync rule that filters out all objects that haven't yet been identified as an object that should be synchronized.
+The positive filtering option requires two sync rules: one sync rule (or more) with the correct scope of objects to synchronize, and a catch-all sync rule that filters out any remaining objects that should not be synchronized.
 
 In the following example, you only synchronize user objects where the department attribute has the value **Sales**.
 
@@ -210,7 +216,7 @@ When synchronizing multiple AD forests, you can configure group-based filtering 
 
 * You have a user in one forest that has a corresponding FSP (Foreign Security Principal) object in another forest. Both objects must be within group-based filtering scope. Otherwise, the user will not be synchronized to Microsoft Entra ID.
 
-* You have a user in one forest that has a corresponding resource account (e.g., linked mailbox) in another forest. Further, you have configured Microsoft Entra Connect to link the user with the resource account. Both objects must be within group-based filtering scope. Otherwise, the user will not be synchronized to Microsoft Entra ID.
+* You have a user in one forest that has a corresponding resource account (such as linked mailbox) in another forest. Further, you have configured Microsoft Entra Connect to link the user with the resource account. Both objects must be within group-based filtering scope. Otherwise, the user will not be synchronized to Microsoft Entra ID.
 
 * You have a user in one forest that has a corresponding mail contact in another forest. Further, you have configured Microsoft Entra Connect to link the user with the mail contact. Both objects must be within group-based filtering scope. Otherwise, the user will not be synchronized to Microsoft Entra ID.
 

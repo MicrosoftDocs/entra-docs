@@ -135,7 +135,7 @@ The **Remove** button allows the administrator to delete one or more synchroniza
 
 The synchronization item or synchronization items have been removed from Multi-Factor Auth Server.  The Multi-Factor Auth Server service will no longer process the synchronization items.
 
-The Move Up and Move Down buttons allow the administrator to change the order of the synchronization items.  The order is important since the same user may be a member of more than one synchronization item (e.g. a container and a security group).  The settings applied to the user during synchronization will come from the first synchronization item in the list to which the user is associated.  Therefore, the synchronization items should be put in priority order.
+The Move Up and Move Down buttons allow the administrator to change the order of the synchronization items.  The order is important since the same user may be a member of more than one synchronization item (such as a container and a security group).  The settings applied to the user during synchronization will come from the first synchronization item in the list to which the user is associated.  Therefore, the synchronization items should be put in priority order.
 
 > [!TIP]
 > A full synchronization should be performed after removing synchronization items.  A full synchronization should be performed after ordering synchronization items.  Click **Synchronize Now** to perform a full synchronization.

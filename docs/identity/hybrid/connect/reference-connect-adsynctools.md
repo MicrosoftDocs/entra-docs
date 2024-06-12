@@ -131,8 +131,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 #### -Port
-SQL Server Port (e.g.
-49823)
+SQL Server Port (for example, `49823`)
 ```yaml
 Type: String
 Parameter Sets: (All)
@@ -178,8 +177,7 @@ ConvertFrom-ADSyncToolsAadDistinguishedName [-DistinguishedName] <String> [<Comm
 ```
 ### DESCRIPTION
 Takes a Microsoft Entra Connector DistinguishedName like CN={514635484D4B376E38307176645973555049486139513D3D}
-and converts to the respective base64 ImmutableID value, e.g.
-QF5HMK7n80qvdYsUPIHa9Q==
+and converts to the respective base64 ImmutableID value, such as `QF5HMK7n80qvdYsUPIHa9Q==`
 ### EXAMPLES
 #### EXAMPLE 1
 ```
@@ -241,8 +239,7 @@ Convert ImmutableId to Microsoft Entra Connector DistinguishedName
 ConvertTo-ADSyncToolsAadDistinguishedName [-ImmutableId] <String> [<CommonParameters>]
 ```
 ### DESCRIPTION
-Takes an ImmutableId (SourceAnchor) like QF5HMK7n80qvdYsUPIHa9Q== and converts to the respective Microsoft Entra Connector DistinguishedName value, e.g.
-CN={514635484D4B376E38307176645973555049486139513D3D}
+Takes an ImmutableId (SourceAnchor) like QF5HMK7n80qvdYsUPIHa9Q== and converts to the respective Microsoft Entra Connector DistinguishedName value, such as `CN={514635484D4B376E38307176645973555049486139513D3D}`
 ### EXAMPLES
 #### EXAMPLE 1
 ```
@@ -272,8 +269,8 @@ ConvertTo-ADSyncToolsCloudAnchor [-Anchor] <String> [<CommonParameters>]
 ```
 ### DESCRIPTION
 Takes a Base64 Anchor like VAAAAFUAcwBlAHIAXwBjADcAMgA5ADAAMwBlAGQALQA3ADgAMQA2AC0ANAAxAGMAZAAtADkAMAA2ADYALQBlAGEAYwAzADMAZAAxADcAMQBkADcANwAAAA==
-and converts to the respective CloudAnchor value, e.g.
-User_abc12345-1234-abcd-9876-ab0123456789
+and converts to the respective CloudAnchor value, such as `User_00aa00aa-bb11-cc22-dd33-44ee44ee44ee`
+
 ### EXAMPLES
 #### EXAMPLE 1
 ```
@@ -310,11 +307,11 @@ Converts a value in GUID, GUID string or byte array format to a Base64 string
 ### EXAMPLES
 #### EXAMPLE 1
 ```
-ConvertTo-ADSyncToolsImmutableID '88888888-0101-3333-cccc-1234567890cd'
+ConvertTo-ADSyncToolsImmutableID '00aa00aa-bb11-cc22-dd33-44ee44ee44ee'
 ```
 #### EXAMPLE 2
 ```
-'88888888-0101-3333-cccc-1234567890cd' | ConvertTo-ADSyncToolsImmutableID
+'00aa00aa-bb11-cc22-dd33-44ee44ee44ee' | ConvertTo-ADSyncToolsImmutableID
 ```
 ### PARAMETERS
 #### -Value
@@ -1409,7 +1406,7 @@ Supports Active Directory objects in multi-domain forests.
 ### EXAMPLES
 #### EXAMPLE 1
 ```
-Set-ADSyncToolsMsDsConsistencyGuid -Identity 'CN=User1,OU=Sync,DC=Contoso,DC=com' -Value '88666888-0101-1111-bbbb-1234567890ab'
+Set-ADSyncToolsMsDsConsistencyGuid -Identity 'CN=User1,OU=Sync,DC=Contoso,DC=com' -Value '00aa00aa-bb11-cc22-dd33-44ee44ee44ee'
 ```
 #### EXAMPLE 2
 ```
@@ -1417,7 +1414,7 @@ Set-ADSyncToolsMsDsConsistencyGuid -Identity 'CN=User1,OU=Sync,DC=Contoso,DC=com
 ```
 #### EXAMPLE 3
 ```
-Set-ADSyncToolsMsDsConsistencyGuid 'User1@Contoso.com' '8d6c6818-018c-4f11-9bb8-1b04e2caa1b6'
+Set-ADSyncToolsMsDsConsistencyGuid 'User1@Contoso.com' '11bb11bb-cc22-dd33-ee44-55ff55ff55ff'
 ```
 #### EXAMPLE 4
 ```
@@ -1425,7 +1422,7 @@ Set-ADSyncToolsMsDsConsistencyGuid 'User1@Contoso.com' 'GGhsjYwBEU+buBsE4sqhtg==
 ```
 #### EXAMPLE 5
 ```
-'88666888-0101-1111-bbbb-1234567890ab' | Set-ADSyncToolsMsDsConsistencyGuid -Identity User1
+'00aa00aa-bb11-cc22-dd33-44ee44ee44ee' | Set-ADSyncToolsMsDsConsistencyGuid -Identity User1
 ```
 #### EXAMPLE 6
 ```
@@ -1658,8 +1655,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 #### -ADwatermark
-Manual input of watermark, instead of XML file e.g.
-$ADwatermark = "TVNEUwMAAAAXyK9ir1zSAQAAAAAAAAAA(...)"
+Manual input of watermark, instead of XML file, for example `$ADwatermark = "TVNEUwMAAAAXyK9ir1zSAQAAAAAAAAAA(...)"`
 ```yaml
 Type: String
 Parameter Sets: ADwatermarkInput

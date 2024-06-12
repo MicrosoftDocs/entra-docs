@@ -1,36 +1,36 @@
 ---
 title: Protected web API app registration
-description: Learn how to build a protected web API and the information you need to register the app.
+description: Learn how to build a protected web API and acquire all the information you need to register the app.
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: 
-ms.date: 01/27/2022
+ms.date: 05/28/2024
 ms.reviewer: jmprieur
 ms.service: identity-platform
 
-ms.topic: concept-article
+ms.topic: how-to
 #Customer intent: As an application developer, I want to know how to write a protected web API using the Microsoft identity platform for developers.
 ---
 
 # Protected web API: App registration
 
-This article explains the specifics of app registration for a protected web API.
+This article explains how to register an application for a protected web API.
 
 For the common steps to register an app, see [Quickstart: Register an application with the Microsoft identity platform](quickstart-register-app.md).
 
 ## Accepted token version
 
-The Microsoft identity platform can issue v1.0 tokens and v2.0 tokens. For more information about these tokens, see [Access tokens](access-tokens.md).
+The Microsoft identity platform can issue v1.0 tokens and v2.0 tokens. For more information about these tokens, refer to [Access tokens](access-tokens.md).
 
 The token version your API may accept depends on your **Supported account types** selection when you create your web API application registration in the Azure portal.
 
-- If the value of **Supported account types** is **Accounts in any organizational directory and personal Microsoft accounts (e.g. Skype, Xbox, Outlook.com)**, the accepted token version must be v2.0.
+- If the value of **Supported account types** is **Accounts in any organizational directory and personal Microsoft accounts (such as Skype, Xbox, Outlook.com)**, the accepted token version must be v2.0.
 - Otherwise, the accepted token version can be v1.0.
 
 After you create the application, you can determine or change the accepted token version by following these steps:
 
-1. In the Azure portal, select your app and then select **Manifest**.
+1. In the Microsoft Entra admin center, select your app and then select **Manifest**.
 1. Find the property **accessTokenAcceptedVersion** in the manifest.
 1. The value specifies to Microsoft Entra which token version the web API accepts.
    - If the value is 2, the web API accepts v2.0 tokens.
@@ -66,7 +66,7 @@ Scopes also appear on the consent window that's presented to users of your app. 
 - As seen by a user.
 - As seen by a tenant admin, who can grant admin consent.
 
-App roles cannot be consented to by a user (as they're used by an application that call the web API on behalf of itself). A tenant administrator will need to consent to client applications of your web API exposing app roles. See [Admin consent](v2-admin-consent.md) for details.
+App roles cannot be consented to by a user (as they're used by an application that calls the web API on behalf of itself). A tenant administrator will need to consent to client applications of your web API exposing app roles. See [Admin consent](v2-admin-consent.md) for details.
 
 ### Expose delegated permissions (scopes)
 
@@ -76,12 +76,12 @@ If you're following along with the web API scenario described in this set of art
 
 - **Application ID URI**: Accept the proposed application ID URI (_api://\<clientId\>_) (if prompted)
 - **Scope name**: *access_as_user*
-- **Who can consent**: *Admins and users*
-- **Admin consent display name**: *Access TodoListService as a user*
-- **Admin consent description**: *Accesses the TodoListService web API as a user*
-- **User consent display name**: *Access TodoListService as a user*
-- **User consent description**: *Accesses the TodoListService web API as a user*
-- **State**: *Enabled*
+- **Who can consent**: _Admins and users_
+- **Admin consent display name**: _Access TodoListService as a user_
+- **Admin consent description**: _Accesses the TodoListService web API as a user_
+- **User consent display name**: _Access TodoListService as a user_
+- **User consent description**: _Accesses the TodoListService web API as a user_
+- **State**: _Enabled_
 
 > [!TIP] 
 > For the **Application ID URI**, you have the option to set it to the physical authority of the API, for example `https://graph.microsoft.com`. This can be useful if the URL of the API that needs to be called is known.
@@ -106,16 +106,16 @@ To add another layer of security, a Microsoft Entra tenant administrator can con
 To increase security by restricting token issuance only to client apps that have been assigned app roles:
 
 1. In the [Microsoft Entra admin center](https://entra.microsoft.com), select your app under **Identity** > **Applications** > **App registrations**.
-1. On the application's overview page, select its **Managed application in local directory** link to navigate to its **Enterprise Application Overview** page.
+1. On the application's **Overview** page, in **Essentials**, find and select its **Managed application in local directory** link to navigate to its **Enterprise Application Overview** page.
 1. Under **Manage**, select **Properties**.
 1. Set **Assignment required?** to **Yes**.
 1. Select **Save**.
 
-Microsoft Entra ID will now check for app role assignments of client applications that request access tokens for your web API. If a client app hasn't been assigned any app roles, Microsoft Entra ID returns an error message to the client similar to *invalid_client: AADSTS501051: Application \<application name\> isn't assigned to a role for the \<web API\>*.
+Microsoft Entra ID will now check for app role assignments of client applications that request access tokens for your web API. If a client app hasn't been assigned any app roles, Microsoft Entra ID returns an error message to the client similar to `_invalid_client: AADSTS501051: Application \<application name\> isn't assigned to a role for the \<web API\>_`.
 
 > [!WARNING]
 > **DO NOT use AADSTS error codes** or their message strings as literals in your application's code. The "AADSTS" error codes and the error message strings returned by Microsoft Entra ID are *not immutable*, and may be changed by Microsoft at any time and without your knowledge. If you make branching decisions in your code based on the values of either the AADSTS codes or their message strings, you put your application's functionality and stability at risk.
 
-## Next steps
+## Next step
 
 The next article in this series is [App code configuration](scenario-protected-web-api-app-configuration.md).

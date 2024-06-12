@@ -3,8 +3,7 @@ title: 'Tutorial: Configure Joyn FSM for automatic user provisioning with Micros
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Joyn FSM.
 
 documentationcenter: ''
-author: twimmers
-writer: Thwimmer
+author: thomasakelo
 manager: jeedes
 
 ms.assetid: e778e26b-c998-4432-85b7-5a0d0047ccae
@@ -13,8 +12,8 @@ ms.subservice: saas-apps
 
 
 ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: Thwimmer
+ms.date: 03/25/2024
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Joyn FSM so that I can streamline the user management process and ensure that users have the appropriate access to Joyn FSM.
 ---

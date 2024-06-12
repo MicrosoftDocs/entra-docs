@@ -80,8 +80,8 @@ The sign-in report supports sign-ins through O-Auth, WS-Fed, SAML, and WS-Trust 
 
 ***How are different types of sign-ins shown in the sign-in report?***
 If a Seamless SSO sign-in is performed, there will be one row for the sign-in with one correlation ID.
-If a single factor authentication is performed, two rows will be populated with the same correlation ID, but with two different authentication methods (i.e. Forms, SSO).
-In cases of Multi Factor Authentication, there will be three rows with a shared correlation ID and three corresponding Authentication Methods (i.e. Forms, AzureMFA, Multifactor). In this particular example, the multifactor in this case shows that the SSO has an MFA.
+If a single factor authentication is performed, two rows will be populated with the same correlation ID, but with two different authentication methods (that is, Forms, SSO).
+In cases of Multi Factor Authentication, there will be three rows with a shared correlation ID and three corresponding Authentication Methods (that is, Forms, AzureMFA, Multifactor). In this particular example, the multifactor in this case shows that the SSO has an MFA.
 
 ***What are the errors that I can see in the report?***
 For a full list of AD FS related errors that are populated in the sign-in report and descriptions, visit [AD FS Help Error Code Reference](https://adfshelp.microsoft.com/References/ConnectHealthErrorCodeReference)

@@ -171,7 +171,7 @@ Returns the first source value that isn't NULL. If all arguments are NULL and de
 | Name | Required/ Repeating | Type | Notes |
 | --- | --- | --- | --- |
 | **source1  … sourceN** | Required | String |Required, variable-number of times. Usually name of the attribute from the source object. |
-| **defaultValue** | Optional | String | Default value to be used when all source values are NULL. Can be empty string ("").
+| **defaultValue** | Optional | String | Default value to be used when all source values are NULL. Can be empty string (""). |
 
 #### Flow mail value if not NULL, otherwise flow userPrincipalName
 Example: You wish to flow the mail attribute if it's present. If it isn't, you wish to flow the value of userPrincipalName instead.
@@ -413,7 +413,7 @@ The function Guid generates a new random GUID
 
 **Example:** <br>
 `Guid()`<br>
-Sample output: "1088051a-cd4b-4288-84f8-e02042ca72bc"
+Sample output: "00aa00aa-bb11-cc22-dd33-44ee44ee44ee"
 
 ---
 ### IgnoreFlowIfNullOrEmpty
@@ -773,14 +773,14 @@ The PCase function converts the first character of each word in a string to uppe
   * *Control* characters like CRLF
   * *Format* control characters
   * *ConnectorPunctuation* characters like underscore
-  * *DashPunctuation* characters like dash and hyphen (including characters such En Dash, Em Dash, double hyphen, etc.)
-  * *OpenPunctuation* and *ClosePunctuation* characters that occur in pairs like parenthesis, curly bracket, angle bracket, etc. 
+  * *DashPunctuation* characters like dash and hyphen (including characters such En Dash, Em Dash, double hyphen, and so on)
+  * *OpenPunctuation* and *ClosePunctuation* characters that occur in pairs like parenthesis, curly bracket, angle bracket, and so on. 
   * *InitialQuotePunctuation* and *FinalQuotePunctuation* characters like single quotes, double quotes, and angular quotes. 
-  * *OtherPunctuation* characters like exclamation mark, number sign, percent sign, ampersand, asterisk, comma, full stop, colon, semi-colon, etc. 
-  * *MathSymbol* characters like plus sign, less-than and greater-than sign, vertical line, tilde, equals sign, etc.
-  * *CurrencySymbol* characters like dollar sign, cent sign, pound sign, euro sign, etc. 
-  * *ModifierSymbol* characters like macron, accents, arrow heads, etc. 
-  * *OtherSymbol* characters like copyright sign, degree sign, registered sign, etc. 
+  * *OtherPunctuation* characters like exclamation mark, number sign, percent sign, ampersand, asterisk, comma, full stop, colon, semi-colon, and so on. 
+  * *MathSymbol* characters like plus sign, less-than and greater-than sign, vertical line, tilde, equals sign, and so on.
+  * *CurrencySymbol* characters like dollar sign, cent sign, pound sign, euro sign, and so on. 
+  * *ModifierSymbol* characters like macron, accents, arrow heads, and so on. 
+  * *OtherSymbol* characters like copyright sign, degree sign, registered sign, and so on. 
 * If the *wordSeparators* parameter is specified, then PCase only uses the characters specified as word separators. 
 
 **Example:**
@@ -1259,7 +1259,8 @@ Add a comma between last name and first name.
 * **INPUT** (surname): "Doe"
 * **OUTPUT**:  "Doe, John"
 
-### Generate an ID for a user based on their Microsoft Entra ID object ID. Remove any letters from the ID and add 1000 at the beginning.  
+### Generate an ID for a user based on their Microsoft Entra object ID. Remove any letters from the ID and add 1000 at the beginning.
+
 This expression allows you to generate an identifier for a user that starts with 1000 and is likely to be unique.  
 
 **Expression:** 
@@ -1267,7 +1268,7 @@ Join("", 1000, Replace(ConvertToUTF8Hex([objectId]), , "[a-zA-Z_]*", , "", , ))
 
 **Sample input/output:** 
 
-* **INPUT**: "d05e47b1-3909-445a-ba5e-ca60cbc0e4b4"
+* **INPUT**: "00aa00aa-bb11-cc22-dd33-44ee44ee44ee"
 * **OUTPUT**:  "100064303565343762312333930392343435612626135652636136306362633065346234"
 
 ## Related Articles

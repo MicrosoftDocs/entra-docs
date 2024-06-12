@@ -676,6 +676,8 @@
         href: convene-tutorial.md
       - name: Convercent
         href: convercent-tutorial.md
+      - name: Convi.BASE
+        href: convi-base-tutorial.md
       - name: Coralogix
         href: coralogix-tutorial.md
       - name: Cornerstone Single Sign-On
@@ -1225,6 +1227,8 @@
         href: gtnexus-sso-module-tutorial.md  
       - name: Guardium Data Protection
         href: guardium-data-protection-tutorial.md
+      - name: gulfHR SSO
+        href: gulfhr-sso-tutorial.md
       - name: Guru
         href: guru-tutorial.md
     - name: H - I
@@ -2377,6 +2381,8 @@
         href: intacct-tutorial.md
       - name: SailPoint IdentityNow
         href: sailpoint-identitynow-tutorial.md
+      - name: Sakon Device Platform
+        href: sakon-device-platform-tutorial.md
       - name: Salesforce
         href: salesforce-tutorial.md
       - name: Salesforce Sandbox
@@ -2781,6 +2787,8 @@
         href: teamviewer-tutorial.md
       - name: Teamwork.com
         href: teamwork-tutorial.md
+      - name: TechSafe Entra ID SSO
+        href: techsafe-tutorial.md
       - name: Templafy SAML2
         href: templafy-tutorial.md
       - name: TencentCloud IDaaS

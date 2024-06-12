@@ -5,7 +5,7 @@ description: In this tutorial, you learn how to enable Microsoft Entra multifact
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: tutorial
-ms.date: 01/16/2024
+ms.date: 05/31/2024
 
 ms.author: justinha
 author: justinha
@@ -17,7 +17,7 @@ ms.reviewer: jupetter
 
 Multifactor authentication is a process in which a user is prompted for additional forms of identification during a sign-in event. For example, the prompt could be to enter a code on their cellphone or to provide a fingerprint scan. When you require a second form of identification, security is increased because this additional factor isn't easy for an attacker to obtain or duplicate.
 
-Microsoft Entra multifactor authentication and Conditional Access policies give you the flexibility to require MFA from users for specific sign-in events. For an overview of MFA, we recommend watching this video: [How to configure and enforce multifactor authentication in your tenant](https://www.youtube.com/embed?v=qNndxl7gqVM).
+Microsoft Entra multifactor authentication and Conditional Access policies give you the flexibility to require MFA from users for specific sign-in events. 
 
 > [!IMPORTANT]
 > This tutorial shows an administrator how to enable Microsoft Entra multifactor authentication. To step through the multifactor authentication as a user, see [Sign in to your work or school account using your two-step verification method](https://support.microsoft.com/account-billing/sign-in-to-your-work-or-school-account-using-your-two-step-verification-method-c7293464-ef5e-4705-a24b-c4a3ec0d6cf9). 
