@@ -59,8 +59,10 @@ When migrating, cloud sync will use the new format.  It does not matter whether 
 >[!IMPORTANT]
 >If you want cloud sync to use the default format, you need modify the attribute flow expression for the CN attribute.  The default the mapping is:
 >
->- Default expression:  Append(Append(Left(Trim([displayName]), 51), "_"), Mid([objectId], 25, 12))
->- New expression:  Append("Group_", [objectId])
+>|Expression|Syntax|Description|
+>|-----|-----|-----|
+>|Default expression|Append(Append(Left(Trim([displayName]), 51), "_"), Mid([objectId], 25, 12))|The default expression used by cloud sync.|
+>|New expression|Append("Group_", [objectId])|This is the new expression you can use the default format used by Microsoft Entra Connect.|
 >
 >For more information see [Add an attribute mapping - Microsoft Entra ID to Active Directory](how-to-attribute-mapping.md#add-an-attribute-mapping---microsoft-entra-id-to-active-directory)
 
