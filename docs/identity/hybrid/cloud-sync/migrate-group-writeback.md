@@ -54,11 +54,15 @@ If the **Writeback Group Distinguished Name with cloud Display Name** feature is
  - New format: CN=&lt;display name&gt;_&lt;last 12 digits of object ID&gt;,OU=&lt;container&gt;,DC=&lt;domain component&gt;,DC=&lt;domain component&gt; 
  - Example: CN=Sales_e9305786a271,OU=WritebackContainer,DC=contoso,DC=com 
 
-When migrating, cloud sync will use the same format, depending on whether or not the **Writeback Group Distinguished Name with cloud Display Name** feature is enabled.  This means that if it is disabled, it will use the default format.  If it is enabled, it will use the new format.  
+When migrating, cloud sync will use the new format.  It does not matter whether the **Writeback Group Distinguished Name with cloud Display Name** feature is enabled or not.  
 
 >[!IMPORTANT]
->If you want cloud sync to use the new format, you need to ensure that the **Writeback Group Distinguished Name with cloud Display Name** feature in Microsoft Entra Connect Sync is enabled before you migrate.  Enable this feature and then allow the groups to synchronize before starting a migration.  See [Modifying group writeback V2](../connect/how-to-connect-modify-group-writeback.md) for information on how update an existing Microsoft Entra Connect Group Writeback V2 deployment.
-
+>If you want cloud sync to use the default format, you need modify the attribute flow expression for the CN attribute.  The default the mapping is:
+>
+>- Default expression:  Append(Append(Left(Trim([displayName]), 51), "_"), Mid([objectId], 25, 12))
+>- New expression:  Append("Group_", [objectId])
+>
+>For more information see [Add an attribute mapping - Microsoft Entra ID to Active Directory](how-to-attribute-mapping.md#add-an-attribute-mapping---microsoft-entra-id-to-active-directory)
 
 ## Step 1 - Copy adminDescription to msDS-ExternalDirectoryObjectID
 
