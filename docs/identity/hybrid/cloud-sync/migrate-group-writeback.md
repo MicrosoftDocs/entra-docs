@@ -76,7 +76,7 @@ When migrating, cloud sync will use the new format.  It does not matter whether 
 
    :::image type="content" source="media/migrate-group-writeback/migrate-2.png" alt-text="Screenshot of the msDS-ExternalDirectoryObjectID attribute." lightbox="media/migrate-group-writeback/migrate-2.png":::
 
-The following PowerShell script can be used to help automate this step.
+The following PowerShell script can be used to help automate this step.  This script will take all of the users in the **OU=Users,DC=Contoso,DC=com** container and copy the adminDescription attribute value to the msDS-ExternalDirectoryObjectID attribute value.
 
    ```powershell
       $users = Get-ADUser -Filter * -SearchBase "OU=Users,DC=Contoso,DC=com" -Properties * | Where-Object {$_.adminDescription -ne $null} |
