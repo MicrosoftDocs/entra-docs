@@ -3,7 +3,7 @@ title: Create a remote network using Azure vWAN
 description: Use Global Secure Access to configure Azure and Entra resources to create a virtual wide area network to connect to your resources in Azure.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 06/06/2024
+ms.date: 06/11/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -123,29 +123,43 @@ In this step, use the network information from the VPN gateway to create a remot
 1. Proceed to the **Connectivity** tab.
 :::image type="content" source="media/how-to-create-remote-network-vwan/vwan-entra-create-remote-network-basicstab.png" alt-text="Screenshot of the Create a remote network page on the Basics tab, with the Next: Connectivity button highlighted." lightbox="media/how-to-create-remote-network-vwan/vwan-entra-create-remote-network-basicstab-expanded.png":::
 
-On the **Connectivity** tab, add the device links for the remote network:
-1. Select **+ Add a link**.
-1. Complete the fields on the **General** tab in the **Add a link** form, using the VPN gateway's *Instance0* configuration from the previous step:
-    - **Link name**: Name of your Customer Premises Equipment (CPE).
-    - **Device type**: Choose a device option from the dropdown list.
-    - **IP address**: Public IP address of your device.
-    - **Local BGP address**: Enter a BGP IP address that *isn't* part of your on-premises network where your CPE resides.
-    - **Peer BGP address**: Enter the BGP IP address of your CPE.
-    - **Link ASN**: Provide the autonomous system number (ASN) of the CPE.
-    - **Redundancy**: Select either *No redundancy* or *Zone redundancy* for your IPSec tunnel.
-    - **Zone redundant local BGP address**: This optional field shows up only when you select **Zone redundancy**.
-        - Enter a BGP IP address that isn't* part of your on-premises network where your CPE resides and is different from the **Local BGP address**.
-    - **Bandwidth capacity (Mbps)**: Specify tunnel bandwidth. Available options are 250, 500, 750, and 1,000 Mbps.
-    :::image type="content" source="media/how-to-create-remote-network-vwan/vwan-json-add-a-link-general.png" alt-text="Screenshot of the Add a link form with arrows showing the relationship between the JSON code and the link information." lightbox="media/how-to-create-remote-network-vwan/vwan-json-add-a-link-general-expanded.png":::
-
-For more information about links, see the article, [How to manage remote network device links](how-to-manage-remote-network-device-links.md).
-
-1. Select the **Next** button to view the **Details** tab. Keep the default settings.
-1. Select the **Next** button to view the **Security** tab. 
-1. Enter the **Preshared key (PSK)**. The same secret key must be used on your CPE.
-1. Select the **Save** button.
-
-Repeat the above steps to create a second device link with VPN gateway's *Instance1* configuration. 
+    On the **Connectivity** tab, add device links for the remote network. Create one link for the VPN gateway's *Instance0* and another link for the VPN gateway's *Instance1*:
+    1. Select **+ Add a link**.
+    1. Complete the fields on the **General** tab in the **Add a link** form, using the VPN gateway's *Instance0* configuration from the JSON view:
+        - **Link name**: Name of your Customer Premises Equipment (CPE). For this example, **Instance0**.
+        - **Device type**: Choose a device option from the dropdown list. Set to **Other**.
+        - **IP address**: Public IP address of your device. For this example, use **172.206.158.63**.
+        - **Local BGP address**: Use a BGP IP address that *isn't* part of your on-premises network where your CPE resides, such as **192.168.10.10**.
+        - **Peer BGP address**: Enter the BGP IP address of your CPE. For this example, **10.101.0.4**.
+        - **Link ASN**: Provide the autonomous system number (ASN) of the CPE. For this example, the ASN is **65515**.
+        - **Redundancy**: Set to **No redundancy**.
+        - **Zone redundant local BGP address**: This optional field shows up only when you select **Zone redundancy**.
+            - Enter a BGP IP address that *isn't* part of your on-premises network where your CPE resides and is different from the **Local BGP address**.
+        - **Bandwidth capacity (Mbps)**: Specify tunnel bandwidth. For this example, set to **250 Mbps**.
+        :::image type="content" source="media/how-to-create-remote-network-vwan/vwan-json-add-a-link-general-crop.png" alt-text="Screenshot of the Add a link form with arrows showing the relationship between the JSON code and the link information." lightbox="media/how-to-create-remote-network-vwan/vwan-json-add-a-link-general-crop-expanded.png":::
+    
+    For more information about links, see the article, [How to manage remote network device links](how-to-manage-remote-network-device-links.md).
+    
+    1. Select the **Next** button to view the **Details** tab. Keep the default settings.
+    1. Select the **Next** button to view the **Security** tab. 
+    1. Enter the **Preshared key (PSK)**. The same secret key must be used on your CPE.
+    1. Select the **Save** button.
+    
+    Repeat the above steps to create a second device link using the VPN gateway's *Instance1* configuration. 
+    1. In this example, based on the JSON view, use the following values:
+        - **Link name**: Instance1
+        - **Device type**: Other
+        - **IP address**: 172.206.158.38
+        - **Local BGP address**: 192.168.10.11
+        - **Peer BGP address**: 10.101.0.5
+        - **Link ASN**: 65515
+        - **Redundancy**: No redundancy
+        - **Bandwidth capacity (Mbps)**: 250 Mbps
+    
+    1. Select the **Next** button to view the **Details** tab. Keep the default settings.
+    1. Select the **Next** button to view the **Security** tab. 
+    1. Enter the **Preshared key (PSK)**. The same secret key must be used on your CPE.
+    1. Select the **Save** button.
 
 1. Proceed to the **Traffic profiles** tab to select the traffic profile to link to the remote network. 
 1. Select **Microsoft 365 traffic profile**.
@@ -154,6 +168,8 @@ Repeat the above steps to create a second device link with VPN gateway's *Instan
 
 Navigate to the Remote network page to view the details of the new remote network. There should be one **Region** and two **Links**. 
 1. Under **Connectivity details**, select the **View configuration** link.
+:::image type="content" source="media/how-to-create-remote-network-vwan/vwan-view-config.png" alt-text="Screenshot of the Remote network page with the newly created region, its two links, and the View configuration link highlighted." lightbox="media/how-to-create-remote-network-vwan/vwan-view-config-expanded.png":::
+
 1. Copy the Remote network configuration text into a file for reference in upcoming steps. Make note of the **Endpoint**, **ASN**, and **BGP address** for each of the links.
 
 ## Create a VPN site using the Microsoft gateway
@@ -165,12 +181,12 @@ In this step, create a VPN site, associate the VPN site with the hub, and then v
 1. Select **+ Create new VPN site**.
 1. On the **Create VPN site** page, complete the fields on the **Basics** tab.
 1. Proceed to the **Links** tab. For each link, enter the Microsoft gateway configuration from the Remote network configuration noted in the "view details" step:
-    - **Link name**
-    - **Link speed**
-    - **Link provider name**
-    - **Link IP address / FQDN**: Use the Endpoint address.
-    - **Link BGP address**: Use the BGP address.
-    - **Link ASN**: Use the ASN.
+    - **Link name**: For this example, **Instance0**; **Instance1**.
+    - **Link speed**: For this example, **250** for both links.
+    - **Link provider name**: Set to **Other** for both links.
+    - **Link IP address / FQDN**: Use the Endpoint address. For this example, **4.151.198.103**; **20.255.201.95**.
+    - **Link BGP address**: Use the BGP address, **192.168.10.10**; **192.168.10.11**.
+    - **Link ASN**: Use the ASN. For this example, **65476** for both links.
 :::image type="content" source="media/how-to-create-remote-network-vwan/create-vwan-create-new-vpn-site-links-enhanced.png" alt-text="Screenshot of the Create VPN page, on the Links tab, with completed fields." lightbox="media/how-to-create-remote-network-vwan/create-vwan-create-new-vpn-site-links_expanded.png"::: 
 
 1. Select **Review + create**.
@@ -208,19 +224,23 @@ The following image shows the traffic profile **Policies & rules** for the Micro
 View the Remote netowk health logs to validate connectivity in the Microsoft Entra admin center.
 1. In Microsoft Entra admin center, navigate to **Global Secure Access (Preview)** > **Monitor** > **Remote network health logs**.
 1. Select **Add Filter**. 
-1. Select **Source IP** and type the source IP address for the VPN gateway's Instance0 or Instance1 IP address. Select **Apply**.
+1. Select **Source IP** and type the source IP address for the VPN gateway's *Instance0* or *Instance1* IP address. Select **Apply**.
 1. The connectivity should be **"Remote network alive"**.
 
-## Test security features with Azure virtual Desktop (AVD)
+## Test security features with Azure Virtual Desktop (AVD)
 This step uses Azure Virtual Desktop (AVD) to test tenant restrictions on the virtual network.
 
 ### Create a virtual network
 In this step, use the Azure portal to create a virtual network.
 1. In the Azure portal, search for and select **Virtual networks**.
 1. On the **Virtual networks** page, select **+ Create**.
-1. Complete the **Basics** tab and select **Next** to proceed to the **Security** tab.
-1. In the **Azure Bastion** section, select **Enable Bastion**, type the **Azure Bastion host name**, and select the **Azure Bastion public IP address**.
-1. Select **Next** to proceed to the **IP Addresses tab** tab. Configure the address space of the virtual network with one or more IPv4 or IPv6 address ranges.
+1. Complete the **Basics** tab, including the **Subscription**, **Resource group**, **Virtual network name**, and the **Region**.
+1. Select **Next** to proceed to the **Security** tab.
+1. In the **Azure Bastion** section, select **Enable Bastion**.
+    - Type the **Azure Bastion host name**. For this example, use **Virtual_network_01-bastion**.
+    - Select the **Azure Bastion public IP address**. For this example, select **(New) default**.
+    :::image type="content" source="media/how-to-create-remote-network-vwan/vwan-bastion-settings.png" alt-text="Screenshot of the Create virtual network screen, on the Security tab, showing the Bastion settings.":::
+1. Select **Next** to proceed to the **IP addresses tab** tab. Configure the address space of the virtual network with one or more IPv4 or IPv6 address ranges.
 > [!TIP]
 > Don’t use an overlapping address space. For example, if the virtual hub created in the previous steps uses the address space 10.0.0.0/16, create this virtual network with the address space 10.2.0.0/16.
 1. Select **Review + create**. When validation passes, select **Create**.
@@ -229,36 +249,43 @@ In this step, use the Azure portal to create a virtual network.
 In this step, connect the virtual network to the vWAN.
 1. Open the vWAN created in the previous steps and navigate to **Connectivity** > **Virtual network connections**.
 1. Select **+ Add connection**.
-1. Complete the **Add connection** form, using the virtual **Hub** and **Virtual network** created in previous sections. Leave the remaining fields set to their default values.
-1. Select **Create**. 
+1. Complete the **Add connection** form, selecting the values from the virtual hub and virtual network created in previous sections:
+    - **Connection name**: VirtualNetwork
+    - **Hubs**: hub1
+    - **Subscription**: Contoso Azure Subscription
+    - **Resource group**: GlobalSecureAccess_Documentation
+    - **Virtual network**: VirtualNetwork
 
-### Create an Azure virtual Desktop
+1. Leave the remaining fields set to their default values and select **Create**.
+:::image type="content" source="media/how-to-create-remote-network-vwan/vwan-add-connection.png" alt-text="Screenshot of the Add connection form with example information in the required fields." lightbox="media/how-to-create-remote-network-vwan/vwan-add-connection-expanded.png":::
+
+### Create an Azure Virtual Desktop
 In this step, create a virtual desktop and host it with Bastion.
 1. In the Azure portal, search for and select **Azure Virtual desktop**.
 1. On the **Azure Virtual Desktop** page, select **Create a host pool**.
 1. Complete the **Basics** tab with the following:
-    * The **Host pool name**.
-    * The **Location** of the Azure Virtual Desktop object.  
-    * **Preferred app group type**: Desktop 
-    * **Host pool type**: Pooled
-    * **Load balancing algorithm**: Breadth-first
-    * **Max session limit**: 2
+    * The **Host pool name**. For this example, **VirtualDesktops**. 
+    * The **Location** of the Azure Virtual Desktop object. In this case, **South Central US**.  
+    * **Preferred app group type**: select **Desktop**.
+    * **Host pool type**: select **Pooled**.
+    * **Load balancing algorithm**: select **Breadth-first**.
+    * **Max session limit**: select **2**.
 1. Select **Next: Virtual Machines**.
 1. Complete the **Next: Virtual Machines** tab with the following:
     * **Add virtual machines**: Yes 
-    * The desired **Resource group**. 
+    * The desired **Resource group**. For this example, **GlobalSecureAccess_Documentation**.
     * **Name prefix**: avd 
-    * **Virtual machine type**: Azure virtual machine 
-    * **Virtual machine location**: East US 
-    * **Availability options**: No infrastructure redundancy required 
-    * **Security type**: Trusted launch virtual machine 
+    * **Virtual machine type**: select **Azure virtual machine**.
+    * **Virtual machine location**: **South Central US**.
+    * **Availability options**: select **No infrastructure redundancy required**. 
+    * **Security type**: select **Trusted launch virtual machine**.
     * **Enable secure boot**: Yes 
     * **Enable vTPM**: Yes 
-    * **Image**: Windows 11 Enterprise multi-session + Microsoft 365 apps version 22H2 
-    * **Virtual machine size**: Standard D2s v3, 2 vCPU's, 8-GB memory 
+    * **Image**: For this example, select **Windows 11 Enterprise multi-session + Microsoft 365 apps version 22H2**.
+    * **Virtual machine size**: select **Standard D2s v3, 2 vCPU's, 8-GB memory**.
     * **Number of VMs**: 1 
-    * Select the virtual network created in previous step. 
-    * **Domain to join**: Microsoft Entra ID 
+    * **Virtual network**: select the virtual network created in previous step, **VirtualNetwork**. 
+    * **Domain to join**: select **Microsoft Entra ID**.
     * Enter the admin account credentials. 
 1. Leave other options to default and select **Review + create**.
 1. When validation passes, select **Create**.
