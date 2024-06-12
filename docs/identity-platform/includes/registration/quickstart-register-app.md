@@ -17,7 +17,7 @@ ms.service: identity-platform
 # https://learn.microsoft.com/en-us/graph/auth-register-app-v2
 ---
 
-Get started with the Microsoft identity platform by registering an application in the Azure portal.
+Get started with the Microsoft identity platform by registering an application in the Microsoft Entra admin center.
 
 The Microsoft identity platform performs identity and access management (IAM) only for registered applications. Whether it's a client application like a web or mobile app, or it's a web API that backs a client app, registering it establishes a trust relationship between your application and the identity provider, the Microsoft identity platform.
 
@@ -105,11 +105,11 @@ There are some restrictions on the format of the redirect URIs you add to an app
 
 Credentials are used by [confidential client applications](../../msal-client-applications.md) that access a web API. Examples of confidential clients are web apps, other web APIs, or service-type and daemon-type applications. Credentials allow your application to authenticate as itself, requiring no interaction from a user at runtime.
 
-You can add certificates, client secrets (a string), or federated identity credentials as credentials to your confidential client app registration.
+You can add certificates, client secrets (a string), or federated identity credentials as credentials to your confidential client app registration. Itis 'recommended to use certificates from a trusted certificate authority (CA) where possible
 
 :::image type="content" source="../../media/quickstart-register-app/portal-05-app-reg-04-credentials.png" alt-text="Screenshot of the Microsoft Entra admin center, showing the Certificates and secrets pane in an app registration." lightbox="../../media/quickstart-register-app/portal-05-app-reg-04-credentials.png":::
 
-### Add a certificate
+### [Add a certificate](#tab/certificate)
 
 Sometimes called a *public key*, a certificate is the recommended credential type because they're considered more secure than client secrets. For more information about using a certificate as an authentication method in your application, see [Microsoft identity platform application authentication certificate credentials](../../certificate-credentials.md).
 
@@ -118,7 +118,7 @@ Sometimes called a *public key*, a certificate is the recommended credential typ
 3. Select the file you want to upload. It must be one of the following file types: *.cer*, *.pem*, *.crt*.
 4. Select **Add**.
 
-### Add a client secret
+### [Add a client secret](#tab/client-secret)
 
 Sometimes called an *application password*, a client secret is a string value your app can use in place of a certificate to identity itself.
 
@@ -138,7 +138,7 @@ For application security recommendations, see [Microsoft identity platform best 
 If you're using an Azure DevOps service connection that automatically creates a service principal, you need to update the client secret from the Azure DevOps portal site instead of directly updating the client secret. Refer to this document on how to update the client secret from the Azure DevOps portal site:
 [Troubleshoot Azure Resource Manager service connections](/azure/devops/pipelines/release/azure-rm-endpoint#service-principals-token-expired).
 
-### Add a federated credential
+### [Add a federated credential](#tab/federated-credential)
 
 Federated identity credentials are a type of credential that allows workloads, such as GitHub Actions, workloads running on Kubernetes, or workloads running in compute platforms outside of Azure access Microsoft Entra protected resources without needing to manage secrets using [workload identity federation](~/workload-id/workload-identity-federation.md).
 
@@ -152,6 +152,7 @@ To add a federated credential, follow these steps:
     - **GitHub actions deploying Azure resources** to [configure a GitHub workflow](~/workload-id/workload-identity-federation-create-trust.md#github-actions) to get tokens for your application and deploy assets to Azure.
     - **Kubernetes accessing Azure resources** to configure a [Kubernetes service account](~/workload-id/workload-identity-federation-create-trust.md#kubernetes) to get tokens for your application and access Azure resources.
     - **Other issuer** to configure an identity managed by an external [OpenID Connect provider](~/workload-id/workload-identity-federation-create-trust.md#other-identity-providers) to get tokens for your application and access Azure resources.
-    
 
 For more information, how to get an access token with a federated credential, check out the [Microsoft identity platform and the OAuth 2.0 client credentials flow](../../v2-oauth2-client-creds-grant-flow.md#third-case-access-token-request-with-a-federated-credential) article.
+
+---
