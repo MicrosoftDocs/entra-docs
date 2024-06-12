@@ -229,9 +229,8 @@ Now that you have successfully removed the groups from the scope of Microsoft En
 
 ## Next Steps
 
-- [Group writeback with Microsoft Entra Cloud Sync ](../group-writeback-cloud-sync.md)
-- [Provision groups to Active Directory using Microsoft Entra Cloud Sync](how-to-configure-entra-to-active-directory.md)
 
+- [Provision groups to Active Directory using Microsoft Entra Cloud Sync](how-to-configure-entra-to-active-directory.md)
 - [Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance](govern-on-premises-groups.md)
 - [Provisioning to Active Directory with Microsoft Entra Cloud Sync FAQ](reference-provision-to-active-directory-faq.yml)
 
