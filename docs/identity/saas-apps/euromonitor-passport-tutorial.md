@@ -80,13 +80,13 @@ Follow these steps to enable Microsoft Entra SSO.
     a. In the **Identifier (Entity ID)** text box, type a URL using the following pattern:
     `https://auth.euromonitor.com/<CustomerID>`
 
-    b. In the **Reply URL** text box, type a URL using one of the following patterns:
+    b. In the **Reply URL** text box, type the URL:
     `https://auth.euromonitor.com/saml20/sp/acs`
 
 1. If you wish to configure the application in **SP** initiated mode, then perform the following step:
 
     In the **Sign on URL** textbox, type a URL using the following pattern:
-    `https://login.euromonitor.com/Account/ExternalLogin?provider=pingOne&returnUrl=pingone-signin-oidc&login_hint=<CustomerID>`
+    `https://login.euromonitor.com/Account/ExternalLogin?provider=<PROVIDER>&returnUrl=<PROVIDER>-signin-oidc&login_hint=<CustomerID>`
 
 	> [!NOTE]
 	> These values are not real. Update these values with the actual Identifier and Sign-on URL. Contact [Euromonitor International support team](mailto:passport.support@euromonitor.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
