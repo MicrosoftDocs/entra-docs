@@ -522,10 +522,6 @@
           items:
             - name: Create attribute collection start and submit events
               href: custom-extension-attribute-collection.md
-            - name: OnAttributeCollectionStart event reference
-              href: custom-extension-OnAttributeCollectionStart-reference.md
-            - name: OnAttributeCollectionSubmit event reference
-              href: custom-extension-OnAttributeCollectionSubmit-reference.md
         - name: Handle browser cookie restrictions
           items:
             - name: How to handle third-party cookie blocking in browsers
