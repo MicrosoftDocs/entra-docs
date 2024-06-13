@@ -16,9 +16,7 @@ As part of Microsoft’s push to harden the security of our features, we're maki
 
 Since January 2024, we have been auto-upgrading Microsoft Entra Connect Sync and Microsoft Entra Connect Health to an updated build. For customers who opted out of auto-upgrade or for whom auto-upgrade failed, we **strongly recommend** that you upgrade to the [latest versions](reference-connect-version-history.md) by **September 16, 2024**. 
 
-To take advantage of our latest security improvements, we strongly encourage customers to upgrade to the following builds by **September 16, 2024**. 
-
-The following table provides information on the feature and impact to services if you are not on the minimum recommended versions.
+The following table provides information on the features and impact to services, you may encounter, if you are not on the minimum recommended versions.
 
 |Service|Impact|
 |-----|-----|
@@ -27,7 +25,7 @@ The following table provides information on the feature and impact to services i
 |Microsoft Entra Connect HealthAD DS agent|[All alerts](how-to-connect-health-adds.md#alerts-for-microsoft-entra-connect-health-for-ad-ds)|
 |Microsoft Entra Connect Health AD FS agent|[All alerts](how-to-connect-health-adfs.md#usage-analytics-for-ad-fs)|
 
-The avoid any service impact you should be using the following minimum versions:
+To take advantage of our latest security improvements, we strongly encourage customers to upgrade to the following builds by **September 16, 2024**. To avoid any service impact you should be using the following minimum versions:
 
 - Microsoft Entra Connect: [version 2.3.2.0](reference-connect-version-history.md#2320) or higher
 - Microsoft Entra Connect Health 
