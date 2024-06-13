@@ -5,7 +5,6 @@ services: active-directory
 author: rwike77
 manager: CelesteDG
 ms.service: identity-platform
-ms.subservice: develop
 ms.topic: concept-article
 ms.workload: identity
 ms.date: 06/13/2024
