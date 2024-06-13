@@ -86,7 +86,7 @@ The following PowerShell script can be used to help automate this step.  This sc
 
       foreach ($group in $groups) 
        {
-       Set-ADGroup -Identity $group.Samaccountname -Add @{msDS-ExternalDirectoryObjectID=$group.adminDescription}
+       Set-ADGroup -Identity $group.Samaccountname -Add @{('msDS-ExternalDirectoryObjectID') = $group.adminDescription}
        } 
 
    ```
