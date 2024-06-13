@@ -117,7 +117,7 @@ The **API permissions** pane of an app registration contains a [Configured permi
 
 ### Configured permissions
 
-The **Configured permissions** table on the **API permissions** pane shows the list of permissions that your application requires for basic operation - the *required resource access* (RRA) list. Users, or their admins, will need to consent to these permissions before using your app. Other, optional permissions can be requested later at runtime (using dynamic consent).
+The **Configured permissions** table on the **API permissions** pane shows the list of permissions that your application requires for basic operation - the *required resource access (RRA)* list. Users, or their admins, will need to consent to these permissions before using your app. Other, optional permissions can be requested later at runtime (using dynamic consent).
 
 This is the minimum list of permissions people will have to consent to for your app. There could be more, but these will always be required. For security and to help users and admins feel more comfortable using your app, never ask for anything you don’t need.
 

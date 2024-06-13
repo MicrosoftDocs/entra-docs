@@ -25,7 +25,7 @@ Here are some benefits of integrating applications with Microsoft Entra ID via D
 * [Multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md) prompts users during sign-in for forms of identification, such as a code on their device or a fingerprint scan.
 * [Conditional Access](~/identity/conditional-access/overview.md) provides policies as if/then statements. If a user wants to access a resource, then they must complete an action.
 * [Datawiza](https://www.microsoft.com/security/blog/2022/05/17/easy-authentication-and-authorization-in-azure-active-directory-with-no-code-datawiza/) provides authentication and authorization in Microsoft Entra ID with no code. Use web applications such as Oracle JDE, Oracle EBS, Oracle Siebel, and home-grown apps.
-* Use the [Datawiza Cloud Management Console](https://console.datawiza.com) (DCMC) to manage access to applications in public clouds and on-premises.
+* Use the [Datawiza Cloud Management Console (DCMC)](https://console.datawiza.com) to manage access to applications in public clouds and on-premises.
 
 This article focuses on modern identity providers (IdPs) integrating with the legacy Oracle EBS application. The application requires a set of Oracle EBS service account credentials and an Oracle EBS database container (DBC) file.
 

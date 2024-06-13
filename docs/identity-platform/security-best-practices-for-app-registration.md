@@ -18,7 +18,7 @@ ms.topic: concept-article
 
 Security is an important concept when registering an application in Microsoft Entra ID and is a critical part of its business use in the organization. Any misconfiguration of an application can result in downtime or compromise. Depending on the permissions added to an application, there can be organization-wide effects.
 
-Because secure applications are essential to the organization, any downtime to them because of security issues can affect the business or some critical service that the business depends upon. So, it's important to allocate time and resources to ensure applications always stay in a healthy and secure state. Conduct a periodic security and health assessment of applications, much like a Security Threat Model assessment for code. For a broader perspective on security for organizations, see the [security development lifecycle](https://www.microsoft.com/securityengineering/sdl) (SDL).
+Because secure applications are essential to the organization, any downtime to them because of security issues can affect the business or some critical service that the business depends upon. So, it's important to allocate time and resources to ensure applications always stay in a healthy and secure state. Conduct a periodic security and health assessment of applications, much like a Security Threat Model assessment for code. For a broader perspective on security for organizations, see the [security development lifecycle (SDL)](https://www.microsoft.com/securityengineering/sdl).
 
 This article describes security best practices for the following application properties:
 
