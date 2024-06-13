@@ -29,8 +29,6 @@ From June 13 to June 27 2024, the **App registrations** manifest page in the Mic
 > [!IMPORTANT] 
 > The new tabbed experience is rolling out to Entra users in batches to ensure the quality of our experience.  You may not see the new experience immediately, it will appear in your tenant by the end of June 2024.
 
-[Screenshot]
-
 Starting January 7 2025, you won't be able to view, save, upload, or download the Azure AD Graph app manifest in the **App registrations** manifest page in the Microsoft Entra admin center.
 
 ## How does app manifest migration impact your user experience?
