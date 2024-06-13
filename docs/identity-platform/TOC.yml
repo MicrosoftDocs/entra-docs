@@ -793,26 +793,30 @@
           href: custom-extension-OnAttributeCollectionStart-reference.md
         - name: Attribute collection submit custom extension reference
           href: custom-extension-OnAttributeCollectionSubmit-reference.md
-    - name: Spring Cloud Azure
-      href: /azure/developer/java/spring-framework/developer-guide-overview?toc=/entra/identity-platform/toc.json&bc=/entra/identity-platform/breadcrumb/toc.json   
-    - name: Configured permissions limits troubleshooting
-      href: troubleshoot-required-resource-access-limits.md
+    - name: Endpoint reference
+      items: 
+        - name: Admin consent URI
+          href: v2-admin-consent.md
+        - name: National and public cloud URIs
+          displayName: china, germany, gov, 21vianet
+          href: authentication-national-cloud.md
+    - name: API reference
+      items:
+        - name: Microsoft Graph API reference (identity operations)
+          href: /graph/api/resources/azure-ad-overview
+        - name: MSA Server side API reference 
+          href: reference-msa-server-side-api.md
+        - name: Microsoft Entra ID WAM API reference
+          href: reference-entra-id-wam-api.md
     - name: Microsoft auth libraries by app type
       displayName: MSAL, auth client library, SDK, token validation
       href: reference-v2-libraries.md
     - name: AADSTS error code reference
       href: reference-error-codes.md
-    - name: "Endpoint reference: Admin consent URI"
-      href: v2-admin-consent.md
-    - name: "Endpoint reference: National and public cloud URIs"
-      displayName: china, germany, gov, 21vianet
-      href: authentication-national-cloud.md
-    - name: Microsoft Graph API reference (identity operations)
-      href: /graph/api/resources/azure-ad-overview
-    - name: MSA Server side API reference 
-      href: reference-msa-server-side-api.md
-    - name: Microsoft Entra ID WAM API reference
-      href: reference-entra-id-wam-api.md
+    - name: Spring Cloud Azure
+      href: /azure/developer/java/spring-framework/developer-guide-overview?toc=/entra/identity-platform/toc.json&bc=/entra/identity-platform/breadcrumb/toc.json   
+    - name: Configured permissions limits troubleshooting
+      href: troubleshoot-required-resource-access-limits.md
 - name: Resources
   items:
     - name: Help and support options
