@@ -21,9 +21,6 @@ In this article, we go over some examples using Microsoft Graph PowerShell.
 
 [!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
 
-> [!NOTE]
-> As the Azure AD Graph APIs are being retired, we are also retiring the license assignment operation in the MSOnline and Azure AD PowerShell modules. We recommend that you update existing applications to access the license assignment APIs from the [Microsoft Graph](/graph/api/user-assignlicense) endpoint and update your scripts to use the [Microsoft Graph PowerShell](/powershell/microsoftgraph/migration-steps) module to reduce the impact on operations. Other operations in the MSOnline and Azure AD PowerShell modules won’t be impacted. 
-
 > [!WARNING]
 > These samples are provided for demonstration purposes only. We recommend testing them on a smaller scale or in a separate test environment before relying on them in your production environment. You may also need to modify the samples to meet your specific environment's requirements.
 
