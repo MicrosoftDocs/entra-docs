@@ -16,7 +16,7 @@ The following flow chart presents ways to onboard devices in Microsoft Entra ID 
 
 ![flow chart for choosing device states](./media/resilience-with-device-states/admin-resilience-devices.png)
 
-When you use [device states](~/identity/devices/overview.md), in most cases users will experience single sign-on to resources through a [Primary Refresh Token](~/identity/devices/concept-primary-refresh-token.md) (PRT). The PRT contains claims about the user and the device. You can use these claims to get authentication tokens to access applications from the device. The PRT is valid for 14 days and is continuously renewed as long as the user actively uses the device, providing users a resilient experience. For more information about how a PRT can get multifactor authentication claims, see [When does a PRT get an MFA claim](~/identity/devices/concept-primary-refresh-token.md).
+When you use [device states](~/identity/devices/overview.md), in most cases users will experience single sign-on to resources through a [Primary Refresh Token (PRT)](~/identity/devices/concept-primary-refresh-token.md). The PRT contains claims about the user and the device. You can use these claims to get authentication tokens to access applications from the device. The PRT is valid for 14 days and is continuously renewed as long as the user actively uses the device, providing users a resilient experience. For more information about how a PRT can get multifactor authentication claims, see [When does a PRT get an MFA claim](~/identity/devices/concept-primary-refresh-token.md).
 
 ## How do device states help?
 
