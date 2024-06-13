@@ -273,6 +273,13 @@ The purpose of this script is to remove unnecessary direct licenses from users w
 > [!NOTE]
 >To ensure that users do not lose access to services and data, it is important to confirm that directly assigned licenses do not provide more service functionality than the inherited licenses. It is not currently possible to use PowerShell to determine which services are enabled through inherited licenses versus direct licenses. Therefore, the script uses a minimum level of services that are known to be inherited from groups to check and ensure that users do not experience unexpected service loss.
 
+### Variables
+
+- *$groupLicenses:* Represents the licenses assigned to the group.
+- *$groupMembers:* Contains the members of the group.
+- *$userLicenses:* Holds the licenses directly assigned to a user.
+- *$licensesToRemove:* Stores the licenses that need to be removed from the user.
+
 
 ```powershell
 # Import the Microsoft.Graph.Users and Microsoft.Graph.Groups modules
@@ -283,8 +290,9 @@ Import-Module Microsoft.Graph.Groups -Force
 
 Clear-Host
 
+# Connect to Microsoft Graph if not already connected
 if ($null -eq (Get-MgContext)) {
-    Connect-MgGraph -Scopes "Directory.Read.All, User.Read.All, Group.Read.All, Organization.Read.All" -NoWelcome
+Connect-MgGraph -Scopes "Directory.Read.All, User.Read.All, Group.Read.All, Organization.Read.All" -NoWelcome
 }
 
 # Get all groups with licenses assigned
@@ -292,47 +300,35 @@ $groupsWithLicenses = Get-MgGroup -All -Property AssignedLicenses, DisplayName, 
 
 $output = @()
 
-# Check if there is any group that has licenses assigned or not
-if ($null -ne $groupsWithLicenses) {
-    # Loop through each group
-    foreach ($group in $groupsWithLicenses) {
-        # Get the group's licenses
-        $groupLicenses = $group.SkuId
-    
-        # Get the group's members
-        $groupMembers = Get-MgGroupMember -GroupId $group.Id -All
+# Check if there are any groups with licenses assigned
+if ($null -ne groupsWithLicenses) { foreach (group in $groupsWithLicenses) {
 
-        # Check if the group member list is empty or not
-        if ($groupMembers) {
-            # Loop through each member
-            foreach ($member in $groupMembers) {
-                # Check if the member is a user
-                if ($member.AdditionalProperties.'@odata.type' -eq '#microsoft.graph.user') {
-                    # Get the user's direct licenses
-                    Write-Host "Fetching license details for $($member.AdditionalProperties.displayName)" -ForegroundColor Yellow
-                    
-                    # Get User With Directly Assigned Licenses Only
-                    $user = Get-MgUser -UserId $member.Id -Property AssignedLicenses, LicenseAssignmentStates, DisplayName | Select-Object DisplayName, AssignedLicenses -ExpandProperty LicenseAssignmentStates | Select-Object DisplayName, AssignedByGroup, State, Error, SkuId | Where-Object { $_.AssignedByGroup -eq $null }
+# Get the group's licenses
+$groupLicenses = $group.SkuId
 
-                    $licensesToRemove = @()
-                    if($user)
-                    {
-                        if ($user.count -ge 2) {
-                            foreach ($u in $user) {
-                                $userLicenses = $u.SkuId
-                                $licensesToRemove += $userLicenses | Where-Object { $_ -in $groupLicenses }
-                            }
+# Get the group's members
+    $groupMembers = Get-MgGroupMember -GroupId $group.Id -All
+
+    if ($groupMembers) {
+        foreach ($member in $groupMembers) {
+            # Check if the member is a user
+            if ($member.AdditionalProperties.'@odata.type' -eq '#microsoft.graph.user') {
+                Write-Host "Fetching license details for $($member.AdditionalProperties.displayName)" -ForegroundColor Yellow
+                
+                # Get User With Directly Assigned Licenses Only
+                $user = Get-MgUser -UserId $member.Id -Property AssignedLicenses, LicenseAssignmentStates, DisplayName | Select-Object DisplayName, AssignedLicenses -ExpandProperty LicenseAssignmentStates | Select-Object DisplayName, AssignedByGroup, State, Error, SkuId | Where-Object { $_.AssignedByGroup -eq $null }
+
+                $licensesToRemove = @()
+                if ($user) {
+                    if ($user.count -ge 2) {
+                        foreach ($u in $user) {
+                            $userLicenses = $u.SkuId
+                            $licensesToRemove += $userLicenses | Where-Object { $_ -in $groupLicenses }
                         }
-                        else {
-                            $userLicenses = $user.SkuId
-                            $licensesToRemove = $userLicenses | Where-Object { $_ -in $groupLicenses }
-                        }  
                     } else {
                         Write-Host "No conflicting licenses found for the user $($member.AdditionalProperties.displayName)" -ForegroundColor Green
                     }
                     
-                                       
-        
                     # Remove the licenses from the user
                     if ($licensesToRemove) {
                         Write-Host "Removing the license $($licensesToRemove) from user $($member.AdditionalProperties.displayName) as inherited from group $($group.DisplayName)" -ForegroundColor Green
@@ -367,8 +363,6 @@ else {
     Write-Host "No groups found with licenses assigned." -ForegroundColor Cyan
 }
 ```
-
-
 
 ## Next steps
 
