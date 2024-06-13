@@ -7,7 +7,7 @@ manager: CelesteDG
 ms.service: identity-platform
 ms.topic: reference
 ms.workload: identity
-ms.date: 03/25/2024
+ms.date: 06/13/2024
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: youazhou
@@ -15,7 +15,7 @@ ms.reviewer: youazhou
 # Customer intent: As an application developer, I want to learn how to configure an application manifest (Microsoft Graph Format) in the Microsoft Entra admin center or programmatically, so that I can update the application object and define permissions and roles for the app.
 ---
 
-# App manifest
+# Understand the app manifest (Microsoft Graph format)
 
 The application manifest contains all the attributes and their values of an app registration in the Microsoft identity platform. 
 
@@ -539,7 +539,7 @@ An application manifest has multiple attributes that are referred to as collecti
 > [!NOTE]
 > In case you try to add more than 1200 entries in the application manifest, you may see an error **"Failed to update application xxxxxx. Error details: The size of the manifest has exceeded its limit. Please reduce the number of values and retry your request."**
 
-### Manifest migration from AAD Graph to Microsoft Graph app manifest
+### Manifest migration from Azure AD Graph to Microsoft Graph app manifest
 
 When you upload a previously downloaded app manifest in Azure AD Graph format, you may get the following error:
 

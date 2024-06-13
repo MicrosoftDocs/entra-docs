@@ -1,6 +1,6 @@
 ---
 title: Frequently asked questions
-description: Find answers to some of the most frequently asked questions about Microsoft Entra ID for customers. 
+description: Find answers to some of the most frequently asked questions about Microsoft Entra External ID. 
  
 author: msmimart
 manager: celestedg
@@ -8,71 +8,148 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: faq
-ms.date: 05/23/2023
+ms.date: 05/15/2024
 ms.author: mimart
 ms.custom: it-pro
 ---
 
-# Microsoft Entra ID for customers frequently asked questions
+# Microsoft Entra External ID frequently asked questions
 
-This article answers frequently asked questions about Microsoft Entra ID for customers. This document offers guidance to help customers better understand Microsoft’s current external identities capabilities and the journey for our next generation platform (Microsoft Entra External ID).
+This article answers frequently asked questions about Microsoft Entra External ID. It offers guidance to help customers better understand Microsoft’s current external identities capabilities and the journey for our next generation platform (Microsoft Entra External ID).
 
 This FAQ references customer identity and access management (CIAM). CIAM is an industry recognized category that covers solutions that manage identity, authentication, and authorization for external identity use cases (partners, customers, and citizens). Common functionality includes self-service capabilities, adaptive access, single sign-on (SSO), and bring your own identity (BYOI).
 
-## Frequently asked questions
+## External ID pricing  
+
+### How is External ID licensed?
+
+Microsoft Entra External ID pricing is based on monthly active users (MAU), which is the count of unique users with authentication activity within a calendar month. External ID consists of a core offer and premium add-ons. We're currently offering an extended free trial for all features in the core offer. We won't start enforcing External ID core offer pricing until July 1, 2024.*  
+
+After July 1, you can still get started for free and only pay for what you use as your business grows. The Microsoft Entra External ID core offering is free for the first 50,000 MAU, and additional active users are priced at $0.03 USD per MAU (with a launch discounted price of $0.01625 USD per MAU until May 2025).
+
+> [!NOTE]
+> Existing subscriptions to Azure Active Directory B2C (Azure AD B2C) B2C or B2B collaboration under an Azure AD External Identities P1/P2 SKU remain valid and no migration is necessary. We'll communicate upgrade options once they're available. For multitenant organizations, identities whose UserType is external member aren't counted as part of the External ID MAU. Only internal and external guests count as External ID MAU.
+
+|MAU  | Core offer pricing        |
+|------------|---------|
+|1-50 K MAU   |Free        |
+|50 K+ MAU    |Discounted rate: $0.01625 USD per MAU until May 2025<br/>Standard rate: $0.03 USD per MAU |
+
+External ID premium features are available as add-ons. These premium features don't have a free tier.
+
+|Premium add-on feature  | Add-on pricing          |
+|---------------------|------------------|
+|ID Governance        |Free while the ID Governance feature is in preview for External ID<br/>Standard rate: $0.75 USD per MAU 
+
+### Does the 50,000 MAU free tier apply to add-ons?
+
+No, External ID add-ons don't have a free tier. However, while the ID Governance premium feature for External ID is in preview, there is no charge for the add-on.
+
+### Does External ID have phone authentication via SMS?
+
+Yes, this feature is currently available in workforce configurations. Once it is supported in external configurations, it will be offered as an add-on for External ID. We will release pricing details soon.
+
+## About External ID
 
 ### What is Microsoft Entra External ID?
 
-Microsoft Entra External ID is our next generation CIAM platform that represents an evolutionary step in unifying secure and engaging experiences across all external identities including customers, partners, citizens, and others, within a single, integrated platform.
+Microsoft Entra External ID is our next generation CIAM platform. It represents an evolutionary step in unifying secure and engaging experiences across all external identities including customers, partners, citizens, and others, within a single, integrated platform.
 
 ### Is Microsoft Entra External ID a new name for Azure AD B2C?
 
-No, this isn't a new name for Azure AD B2C. Microsoft Entra External ID builds on the success of our existing Azure AD B2C technologies but represents our future for CIAM. The new platform serves as the foundation for rapid innovation, features, and capabilities that address use cases across all external users.  
+No, it's not a new name for Azure AD B2C. Microsoft Entra External ID is our next generation CIAM solution that combines CIAM use cases and B2B collaboration features into one unified platform.
 
-### What is the release date for Microsoft Entra External ID?  
+### I notice some name changes, both in the admin center and on the website
 
-Microsoft Entra External ID (for customers) entered preview at Microsoft Build 2023. The existing B2B collaboration feature remains unchanged.
+Yes, we rebranded some items in the admin center and in our messaging to best match our vision for External ID. The following table summarizes the changes.
 
-### What is the pricing for Microsoft Entra External ID?
+|Previous name                | New name                                |
+|-----------------------------|-----------------------------------------|
+|Azure AD External Identities | Azure AD B2C                            |
+|Azure AD B2B                 | Now part of Microsoft Entra External ID |
+|Azure AD for customers       | Microsoft Entra External ID             |
+|Azure AD B2B collaboration   | External ID B2B collaboration           |
+|Azure AD B2B direct connect  | External ID B2B direct connect          |
+|Customer tenant              | External tenant                         |
 
-Microsoft Entra External ID (for customers) is in preview, so no pricing details are available at this time. The pricing for existing B2B collaboration features is unchanged.
+### How can I get started with External ID?
 
-### How does Microsoft Entra External ID affect B2B collaboration?
+Get started with securing your consumer and business customer apps by [creating an external tenant](quickstart-tenant-setup.md) in the Microsoft Entra admin center.
 
-There are no changes to the existing B2B collaboration features or related pricing. Upon general availability, Microsoft Entra External ID will address use cases across all external user identities, including partners, customers, citizens, and others.
+## Azure AD B2C and Azure AD External Identities  
 
-### How long will you support the current Azure AD B2C platform?
+### What's happening to Azure AD B2C and Azure AD External Identities?
 
-We remain fully committed to support of the current Azure AD B2C product. The SLA remains unchanged, and we’ll continue investments in the product to ensure security, availability, and reliability. For existing Azure AD B2C customers that have an interest in moving to the next generation platform, more details will be made available after general availability.
+Effective May 1, 2025 Azure AD External Identities P1 and P2 will no longer be available to purchase for new customers, but current Azure AD B2C customers can continue using the product. The product experience, including creating new tenants or user flows, will remain unchanged. The operational commitments, including service level agreements (SLAs), security updates, and compliance, will also remain unchanged. We'll continue supporting Azure AD External Identities until at least May  2030. More information, including migration plans will be made available. Contact your account representative for more information and to learn more about Microsoft Entra External ID.
 
-### I have many investments tied up in Azure AD B2C, both in code artifacts and CI/CD pipelines. Do I need to plan for a migration or some other effort?
+### What's happening to Azure AD B2B collaboration and B2B direct connect?
 
-We recognize the large investments in building and managing custom policies. We’ve listened to many customers who, like you, have shared that custom policies are too hard to build and manage. Our next generation platform will resolve the need for intricate custom policies. In addition to many other platform and feature improvements, you’ll have equivalent functionality in the new platform but a much easier way to build and manage it. We expect to share migration options closer to general availability of the next generation platform.  
+Azure AD B2B collaboration and B2B direct connect are now part of Microsoft Entra External ID as External ID B2B collaboration and B2B direct connect. They remain in the same location in the Microsoft Entra admin center within the workforce tenant.  
 
-### I’ve heard I can preview the Microsoft Entra External ID platform. Where can I learn more?
+### I have a substantial investment in custom policies, including code artifacts and CI/CD pipelines. How should I view the upcoming converged platform?
 
-You can learn more about the preview and the features we're delivering on the new platform by visiting the Microsoft Entra ID for customers [developer center](https://aka.ms/ciam/dev).
+We recognize the large investments in building and managing custom policies. We listened to customers who told us custom policies are too hard to build and manage. With the new External ID platform, we're simplifying experiences so that custom policies are no longer needed. We'll provide a migration path for existing custom policies in B2C when it becomes available.
 
-### As a new customer, which solution is a better fit, Azure AD B2C or Microsoft Entra External ID (preview)?
+## Product Features
 
-Opt for the current Azure AD B2C product if:
+### What's the difference between external and workforce tenants?
 
-- You have an immediate need to deploy a production ready build for customer-facing apps.
-  
-   > [!NOTE]
-   > Keep in mind that the next generation Microsoft Entra External ID platform represents the future of CIAM for Microsoft, and rapid innovation, new features and capabilities will be focused on this platform. By choosing the next generation platform from the start, you will receive the benefits of rapid innovation and a future-proof architecture.
+Both are Microsoft Entra tenants, but with different default configurations. [Learn more about the tenant configurations](../tenant-configurations.md).  
 
-Opt for the next generation Microsoft Entra External ID platform if:
+### Are there custom policies in External ID?
 
-- You’re starting fresh building identities into apps or you're in the early stages of product discovery.
-- The benefits of rapid innovation, new features and capabilities are a priority.
+Our next-generation CIAM platform is designed to accommodate equivalent capabilities without the need for complex custom policies.  
 
-<a name='why-is-azure-ad-b2c-not-part-of-entra-idexternal-id'></a>
+### What identity providers does External ID support?
 
-### Why is Azure AD B2C not part of Microsoft Entra External ID?
+ External ID supports various identity providers, including Microsoft Entra accounts (via invite), Facebook, Google, and SAML/WS-Fed identity provider federation. Identity providers are based on the tenant configuration and whether the external user is invited or uses self-service sign-up. [Learn more about identity providers](../identity-providers.md) in External ID, and refer to our [supported feature comparison](concept-supported-features-customers.md).
 
-Microsoft Entra External ID and Azure AD B2C are two separate platforms powered by ESTS and IEF respectively. Microsoft Entra External ID is our new converged platform which is future proof and developer friendly to meet all your identity needs – B2E, B2B and B2C. At the same time, we will still continue to support Azure AD B2C as a separate product offering with no change in SLA, and we’ll continue investments in the product to ensure security, availability, and reliability.
+### Where can I find a list of External ID features?
+
+For a detailed list of the External ID features and capabilities, see [Supported features in workforce and external tenants](concept-supported-features-customers.md).
+
+<!--
+### Will External ID be available in all regions worldwide?
+-->
+### Will External ID support Microsoft Entra US Government Cloud?
+
+Currently, External ID supports public clouds only.
+
+## Developer Experiences
+
+### I'm a developer, where can I get started with External ID?
+
+You can find the latest resources and information for developers in our [Developer Center](https://aka.ms/ciam/dev).
+
+- [Create an external tenant](quickstart-tenant-setup.md) and follow a guide to set up your tenant and run your first sample.
+- Use our tutorials to learn how to build and integrate your consumer and business customer apps with External ID.
+- Sign up for [Identity blog](https://devblogs.microsoft.com/identity/tag/external-id/) email updates to keep up with the latest news and insights.
+- Follow us on [YouTube](https://www.youtube.com/playlist?list=PL3ZTgFEc7Lythpts59O9KOVuEDLWJLLmA) for video overviews, tutorials, and deep dives.
+
+In addition to those resources, we have some developer-focused features in public preview:
+
+- Use Microsoft Entra External ID as an identity provider for [Azure App Service’s built-in authentication](https://devblogs.microsoft.com/identity/app-service-external-id/).
+
+- Use the [Microsoft Entra External ID extension for Visual Studio Code](https://aka.ms/ciam/vscode/marketplace). This extension offers a seamless, guided experience that enables you to create and configure a sample External ID application entirely from within VS Code. Read our [blog](https://devblogs.microsoft.com/identity/external-id-extension/) and [documentation](visual-studio-code-extension.md) to learn more.
+
+### How do I add authentication with External ID to my app code?
+
+We have a single, unified [Microsoft Authentication Library (MSAL)](~/identity-platform/msal-overview.md) where the same application code works for workforce and customer scenarios. In three steps, you can sign up or sign in a user:
+
+1. Configure MSAL to use to your tenant and application
+1. Create a sign-in function that calls MSAL to start the web-based sign in flow
+1. Create a response handler which can extract customer information from the returned token
+
+You can see example code for each of these steps in our [sample applications](samples-ciam-all.md).
+
+### Can I build a fully custom authentication sign-in experience?
+
+[Native authentication](concept-native-authentication.md) empowers you to take complete control over the design of the sign-in experience of your mobile applications. It allows you to craft stunning, pixel-perfect authentication screens that are seamlessly integrated into your apps, rather than relying on browser-based solutions. Read more in our [blog](https://devblogs.microsoft.com/identity/native-auth-for-external-id/).
+
+### What integrations does External ID support for developers?
+
+External ID supports server-side integrations with external systems via [custom authentication extensions](~/identity-platform/custom-extension-overview.md). This capability allows developers to implement their own logic and invoke it via real-time API calls during sign-in/up flows.
 
 ## Next steps
 
-[Learn more about Microsoft Entra ID for customers](index.yml)
+[Learn more about Microsoft Entra External ID](../index.yml).

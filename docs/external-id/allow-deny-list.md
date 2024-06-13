@@ -17,6 +17,8 @@ ms.collection: M365-identity-device-management
 
 # Allow or block invitations to B2B users from specific organizations
 
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
+
 You can use an allowlist or a blocklist to allow or block invitations to B2B collaboration users from specific organizations. For example, if you want to block personal email address domains, you can set up a blocklist that contains domains like Gmail.com and Outlook.com. Or, if your business has a partnership with other businesses like Contoso.com, Fabrikam.com, and Litware.com, and you want to restrict invitations to only these organizations, you can add Contoso.com, Fabrikam.com, and Litware.com to your allowlist. 
 
 This article discusses two ways to configure an allow or blocklist for B2B collaboration:
@@ -162,5 +164,5 @@ Remove-AzureADPolicy -Id $currentpolicy.Id
 
 ## Next steps
 
-- [Cross-tenant access settings](cross-tenant-access-settings-b2b-collaboration.md)
+- [Cross-tenant access settings](cross-tenant-access-settings-b2b-collaboration.yml)
 - [External collaboration settings](external-collaboration-settings-configure.md).

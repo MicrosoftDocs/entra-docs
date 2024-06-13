@@ -29,7 +29,7 @@ The steps in this article apply to all applications that were added to your Micr
 To review permissions granted to applications, you need:
 
 - An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- One of the following roles: Global Administrator, Cloud Application Administrator, Application Administrator.
+- One of the following roles: Cloud Application Administrator, Application Administrator.
 - A Service principal owner who isn't an administrator is able to invalidate refresh tokens.
 
 ## Restoring permissions
@@ -126,7 +126,7 @@ Connect-MgGraph -Scopes "Application.ReadWrite.All", "Directory.ReadWrite.All", 
 # Get Service Principal using objectId
 $sp = Get-MgServicePrincipal -ServicePrincipalID "$ServicePrincipalID"
 
-Example: Get-MgServicePrincipal -ServicePrincipalId '22c1770d-30df-49e7-a763-f39d2ef9b369'
+Example: Get-MgServicePrincipal -ServicePrincipalId 'aaaaaaaa-bbbb-cccc-1111-222222222222'
 
 # Get all delegated permissions for the service principal
 $spOAuth2PermissionsGrants= Get-MgOauth2PermissionGrant -All| Where-Object { $_.clientId -eq $sp.Id }
@@ -155,7 +155,7 @@ Connect-MgGraph -Scopes "Application.ReadWrite.All", "Directory.ReadWrite.All", 
 # Get Service Principal using objectId
 $sp = Get-MgServicePrincipal -ServicePrincipalID "$ServicePrincipalID"
 
-Example: Get-MgServicePrincipal -ServicePrincipalId '22c1770d-30df-49e7-a763-f39d2ef9b369'
+Example: Get-MgServicePrincipal -ServicePrincipalId 'aaaaaaaa-bbbb-cccc-1111-222222222222'
 
 # Get Azure AD App role assignments using objectID of the Service Principal
 $spApplicationPermissions = Get-MgServicePrincipalAppRoleAssignedTo -ServicePrincipalID $sp.Id -All | Where-Object { $_.PrincipalType -eq "ServicePrincipal" }
@@ -191,7 +191,7 @@ Run the following queries to review delegated permissions granted to an applicat
    Example:
 
     ```http
-    GET https://graph.microsoft.com/v1.0/servicePrincipals/00063ffc-54e9-405d-b8f3-56124728e051
+    GET https://graph.microsoft.com/v1.0/servicePrincipals/00001111-aaaa-2222-bbbb-3333cccc4444
     ```
 
 1. Get all delegated permissions for the service principal
@@ -232,7 +232,7 @@ Run the following queries to remove appRoleAssignments of users or groups to the
    Example:
 
     ```http
-    GET https://graph.microsoft.com/v1.0/servicePrincipals/57443554-98f5-4435-9002-852986eea510
+    GET https://graph.microsoft.com/v1.0/servicePrincipals/aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb
     ```
 1. Get Microsoft Entra App role assignments using objectID of the Service Principal.
 

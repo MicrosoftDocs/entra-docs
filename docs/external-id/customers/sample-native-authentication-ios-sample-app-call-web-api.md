@@ -47,13 +47,15 @@ Once you've registered both your client app and web API and you've exposed the A
 
 ## Clone or download sample web API
 
-To get the web API sample code, [download the .zip file](https://github.com/Azure-Samples/ms-identity-ciam-dotnet-tutorial/archive/refs/heads/main.zip) or clone the sample web application from GitHub by running the following command:
+To obtain the sample application, you can either clone it from GitHub or download it as a .zip file.
 
-```bash
-git clone https://github.com/Azure-Samples/ms-identity-ciam-dotnet-tutorial.git
-```
+- To clone the sample, open a command prompt and navigate to where you wish to create the project, and enter the following command:
 
-If you choose to download the .zip file, extract the sample app file to a folder where the total length of the path is 260 or fewer characters.
+    ```console
+    git clone https://github.com/Azure-Samples/ms-identity-ciam-dotnet-tutorial.git
+    ```
+
+- [Download the .zip file](https://github.com/Azure-Samples/ms-identity-ciam-dotnet-tutorial/archive/refs/heads/main.zip). Extract it to a file path where the length of the name is fewer than 260 characters.
 
 ## Configure and run sample web API
 
@@ -62,7 +64,7 @@ If you choose to download the .zip file, extract the sample app file to a folder
 
     - `Enter_the_Application_Id_Here` and replace it with the **Application (client) ID** of the web API you copied earlier. 
     - `Enter_the_Tenant_Id_Here` and replace it with the **Directory (tenant) ID** you copied earlier.
-    - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
+    - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
 
 You need to host your web API for the iOS sample app to call it. Follow [Quickstart: Deploy an ASP.NET web app](/azure/app-service/quickstart-dotnetcore) to deploy your web API.
 

@@ -156,7 +156,7 @@ Import-Module ADSync
 Get-ADSyncScheduler
 ``` 
   
-From the results, verify the value of the "StagingModeEnabled" setting. If the server was successfully switched to staging mode the value of this setting should be _**True**_ like in the example below:  
+From the results, verify the value of the "StagingModeEnabled" setting. If the server was successfully switched to staging mode the value of this setting should be ***True*** like in the example below:  
 
 > [!div class="mx-imgBorder"]
 > ![Screenshot shows Sync Service console on the Active Microsoft Entra Connect dialog box.](media/how-to-connect-sync-staging-server/staging-server-verification.png)

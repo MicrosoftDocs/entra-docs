@@ -9,8 +9,10 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
+
+# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Hackerone so that I can control who has access to Hackerone, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 # Tutorial: Microsoft Entra SSO integration with HackerOne
 
@@ -46,7 +48,7 @@ To configure the integration of HackerOne into Microsoft Entra ID, you need to a
 1. In the **Add from the gallery** section, type **HackerOne** in the search box.
 1. Select **HackerOne** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-hackerone'></a>
 
@@ -57,11 +59,9 @@ Configure and test Microsoft Entra SSO with HackerOne using a test user called *
 To configure and test Microsoft Entra SSO with HackerOne, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
+1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure HackerOne SSO](#configure-hackerone-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create HackerOne test user](#create-hackerone-test-user)** - to have a counterpart of B.Simon in HackerOne that is linked to the Microsoft Entra representation of user.
-1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
 
@@ -108,7 +108,7 @@ In this section, you'll create a test user called B.Simon.
 1. Browse to **Identity** > **Users** > **All users**.
 1. Select **New user** > **Create new user**, at the top of the screen.
 1. In the **User** properties, follow these steps:
-   1. In the **Display name** field, enter `B.Simon`.  
+   1. In the **Display name** field, enter `B.Simon`.
    1. In the **User principal name** field, enter the username@companydomain.extension. For example, `B.Simon@contoso.com`.
    1. Select the **Show password** check box, and then write down the value that's displayed in the **Password** box.
    1. Select **Review + create**.
@@ -130,56 +130,4 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 ## Configure HackerOne SSO
 
-1. Sign On to your HackerOne tenant as an administrator.
-
-2. In the menu on the top, click the **Settings**.
-
-    ![Screenshot that shows "Settings" selected in the menu.](./media/hackerone-tutorial/menu.png)
-
-3. Navigate to **Authentication** and click **Add SAML settings**.
-
-    ![Screenshot that shows the "Authentication Settings" page with the "Add S A M L settings" button selected.](./media/hackerone-tutorial/settings.png)
-
-4. On the **SAML Settings** dialog, perform the following steps:
-
-    ![Configure Single Sign-On](./media/hackerone-tutorial/certificate.png)
-
-    a. In the **Email Domain** textbox, type a registered domain.
-
-    b. In  **Single Sign On URL** textboxes, paste the value of **Login URL**..
-
-	c. Open your downloaded **Certificate file** from Azure portal into Notepad, copy the content of it into your clipboard, and then paste it to the **X509 Certificate**  textbox.
-
-    d. Click **Save**.
-
-5. On the Authentication Settings dialog, perform the following steps:
-
-    ![Screenshot that shows the "Authentication Settings" dialog with the "Run test" button selected.](./media/hackerone-tutorial/test.png)
-
-    a. Click **Run test**.
-
-6. When the test finishes successfully and the **Status** field shows **Last test status: success**, select the **Request Verification** button to submit to HackerOne for approval.
-
-    ![Submit to HackerOne for approval](./media/hackerone-tutorial/verification.png)
-
-7. After HackerOne approves the settings, you can select the **Migrate Users** button to require SSO authentication for all users.
-
-    ![Enable SAML](./media/hackerone-tutorial/users.png)
-
-### Create HackerOne test user
-
-In this section, a user called Britta Simon is created in HackerOne. HackerOne supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in HackerOne, a new one is created after authentication.
-
-## Test SSO
-
-In this section, you test your Microsoft Entra single sign-on configuration with following options. 
-
-* Click on **Test this application**, this will redirect to HackerOne Sign-on URL where you can initiate the login flow. 
-
-* Go to HackerOne Sign-on URL directly and initiate the login flow from there.
-
-* You can use Microsoft My Apps. When you click the HackerOne tile in the My Apps, this will redirect to HackerOne Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
-
-## Next steps
-
-Once you configure HackerOne you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).
+Follow the steps as described by the [HackerOne documentation](https://docs.hackerone.com/en/articles/8487039-single-sign-on-sso-via-saml)

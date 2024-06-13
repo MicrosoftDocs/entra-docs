@@ -5,7 +5,7 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: 
-ms.date: 12/6/2022
+ms.date: 03/25/2024
 ms.reviewer: jmprieur
 ms.service: identity-platform
 
@@ -107,7 +107,7 @@ By default, the sample uses:
 
 1. When the **Register an application page** appears, enter your application's registration information:
    1. Enter a **Name** for your application, for example `python-webapp`. Users of your app might see this name, and you can change it later.
-   1. Change **Supported account types** to **Accounts in any organizational directory and personal Microsoft accounts (e.g. Skype, Xbox, Outlook.com)**.
+   1. Change **Supported account types** to **Accounts in any organizational directory and personal Microsoft accounts (such as Skype, Xbox, Outlook.com)**.
    1. In the **Redirect URI (optional)** section, select **Web** in the combo  box and enter the following redirect URI: `http://localhost:5000/getAToken`.
    1. Select **Register** to create the application.
 1. On the app's **Overview** page, find the **Application (client) ID** value and record it for later. You'll need it to configure the *.env* file for this project.
@@ -183,9 +183,7 @@ if ($owner -eq $null)
 Write-Host "Done creating the webApp application (WebApp)"
 ```
 
-
-
-## Next steps
+## Next step
 
 # [ASP.NET Core](#tab/aspnetcore)
 

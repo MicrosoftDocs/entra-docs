@@ -1,6 +1,6 @@
 ---
 title: Sign in users in a sample Angular single-page application.
-description: Learn how to configure a sample Angular Single Page Application (SPA) using Microsoft Entra ID for customers
+description: Learn how to configure a sample Angular Single Page Application (SPA) using Microsoft Entra External ID.
  
 author: garrodonnell
 manager: celestedg
@@ -9,29 +9,28 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: sample
-ms.date: 06/23/2023
+ms.date: 04/10/2024
 ms.custom: developer
 
-#Customer intent: As a dev, devops, I want to learn about how to configure a sample Angular Single Page Application to sign in and sign out users with my Microsoft Entra ID for customers tenant
+#Customer intent: As a dev, devops, I want to learn about how to configure a sample Angular Single-page application to sign in and sign out users with my external tenant
 ---
 
 # Sign in users in a sample Angular single-page application 
 
-This how-to guide uses a sample Angular single-page application (SPA) to demonstrate how to add authentication users into a SPA. The SPA enables users to sign in and sign out by using your Microsoft Entra External  ID for customers tenant. The sample uses the [Microsoft Authentication Library for JavaScript (MSAL.js)](https://github.com/AzureAD/microsoft-authentication-library-for-js) to handle authentication.
+This how-to guide uses a sample Angular single-page application (SPA) to demonstrate how to add authentication users into a SPA. The SPA enables users to sign in and sign out by using your external tenant. The sample uses the [Microsoft Authentication Library for JavaScript (MSAL.js)](https://github.com/AzureAD/microsoft-authentication-library-for-js) to handle authentication.
 
 ## Prerequisites
 
-* Although any IDE that supports vanilla JS applications can be used, **Visual Studio Code** is used for this guide. It can be downloaded from the [Downloads](https://visualstudio.microsoft.com/downloads) page.
+* [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 * [Node.js](https://nodejs.org/en/download/).
-* Microsoft Entra ID for customers tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
-
+* An external tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
 
 ## Register the SPA in the Microsoft Entra admin center
 
 [!INCLUDE [active-directory-b2c-register-app](./includes/register-app/register-client-app-common.md)]
 [!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/register-app/add-platform-redirect-url-angular.md)]
 
-## Grant API permissions
+## Grant admin consent
 
 [!INCLUDE [active-directory-b2c-grant-delegated-permissions](./includes/register-app/grant-api-permission-sign-in.md)]
 
@@ -45,38 +44,37 @@ This how-to guide uses a sample Angular single-page application (SPA) to demonst
 
 ## Clone or download sample SPA
 
-To get the sample SPA, you can choose one of the following options:
+To obtain the sample application, you can either clone it from GitHub or download it as a .zip file.
 
-* Clone the repository using Git:
+- To clone the sample, open a command prompt and navigate to where you wish to create the project, and enter the following command:
 
-    ```powershell
+    ```console
     git clone https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial.git
     ```
 
-* [Download the sample](https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial/archive/refs/heads/main.zip)
-
-If you choose to download the `.zip` file, extract the sample app file to a folder where the total length of the path is 260 or fewer characters.
+- [Download the sample](https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial/archive/refs/heads/main.zip). Extract it to a file path where the length of the name is fewer than 260 characters.
 
 ## Install project dependencies
 
 1. Open a terminal window in the root directory of the sample project, and enter the following snippet to navigate to the project folder:
 
-    ```powershell
+    ```console
     cd 1-Authentication\2-sign-in-angular\SPA
     ```
 
 1. Install the project dependencies:
 
-    ```powershell
+    ```console
     npm install
     ```
 
 ## Configure the sample SPA
 
-1. Open `SPA\src\authConfig.js` and replace the following with the values obtained from the Microsoft Entra admin center
-    * `clientId` - The identifier of the application, also referred to as the client. Replace `Enter_the_Application_Id_Here` with the **Application (client) ID** value that was recorded earlier from the overview page of the registered application.
-    * `authority` - The identity provider instance and sign-in audience for the app. Replace `Enter_the_Tenant_Name_Here` with the name of your CIAM tenant.
-    * The *Tenant ID* is the identifier of the tenant where the application is registered. Replace the `_Enter_the_Tenant_Info_Here` with the **Directory (tenant) ID** value that was recorded earlier from the overview page of the registered application.
+1. Open `SPA/src/app/auth-config.ts` and replace the following with the values obtained from the Microsoft Entra admin center:
+
+     * `Enter_the_Application_Id_Here` and replace it with the Application (client) ID of the app you registered earlier.
+     * `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
+
 1. Save the file.
 
 ## Run your project and sign in
@@ -86,18 +84,20 @@ All the required code snippets have been added, so the application can now be ca
 1. Open a new terminal by selecting **Terminal** > **New Terminal**.
 1. Run the following command to start your web server.
 
-    ```powershell
+    ```console
     cd 1-Authentication\2-sign-in-angular\SPA
     npm start
     ```
 
 1. Open a web browser and navigate to `http://localhost:4200/`.
 
-1. Sign-in with an account registered to the Microsoft Entra ID for customers tenant.
+1. Sign-in with an account registered to the external tenant.
 
 1. Once you successfully sign-in, the display name is shown next to the **Sign out** button.
 
-## Next steps
+## Related content
 
-> [!div class="nextstepaction"]
-> [Enable self-service password reset](./how-to-enable-password-reset-customers.md)
+- [Use our multi-part tutorial series to build this Angular SPA from scratch](tutorial-single-page-app-angular-sign-in-prepare-app.md).
+- [Enable password reset](how-to-enable-password-reset-customers.md).
+- [Customize the default branding](how-to-customize-branding-customers.md).
+- [Configure sign-in with Google](how-to-google-federation-customers.md).

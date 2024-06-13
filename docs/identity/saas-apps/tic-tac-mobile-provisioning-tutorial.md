@@ -3,8 +3,7 @@ title: 'Tutorial: Configure Tic-Tac Mobile for automatic user provisioning with 
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Tic-Tac Mobile.
 
 documentationcenter: ''
-author: twimmers
-writer: twimmers
+author: thomasakelo
 manager: jeedes
 
 ms.assetid: d0f24e81-fecf-4e71-bd8a-ab911366fdf5
@@ -13,8 +12,10 @@ ms.subservice: saas-apps
 
 ms.tgt_pltfrm: na
 ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: thwimmer
+ms.date: 03/25/2024
+ms.author: thomasakelo
+
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Tic-Tac Mobile so that I can streamline the user management process and ensure that users have the appropriate access to Tic-Tac Mobile.
 ---
 
 # Tutorial: Configure Tic-Tac Mobile for automatic user provisioning
@@ -34,7 +35,7 @@ This tutorial describes the steps you need to perform in both Tic-Tac Mobile and
 The scenario outlined in this tutorial assumes that you already have the following prerequisites:
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md).
-* A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning. Examples are Application administrator, Cloud Application administrator, Application owner, or Global administrator.
+* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
 * A [Tic-Tac Mobile](https://www.tictacmobile.com/) account with a super admin role.
 
 

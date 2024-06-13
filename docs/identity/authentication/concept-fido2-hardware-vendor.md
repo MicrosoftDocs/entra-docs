@@ -1,11 +1,12 @@
 ---
 title: Become a Microsoft-Compatible FIDO2 Security Key Vendor for sign-in to Microsoft Entra ID
 description: Explains process to become a FIDO2 hardware partner
-ms.date: 01/29/2023
+ms.date: 05/22/2024
 ms.service: entra-id
 ms.subservice: authentication
-author: martincoetzer
-ms.author: martinco
+author: justinha
+ms.author: justinha
+ms.reviewer: calui
 ms.topic: conceptual
 ---
 
@@ -30,46 +31,52 @@ The following table lists partners who are Microsoft-compatible FIDO2 security k
 
 | Provider | Biometric | USB | NFC | BLE |
 |:-|:-:|:-:|:-:|:-:|
-| [AuthenTrend](https://authentrend.com/about-us/#pg-35-3) | ![y] | ![y]| ![y]| ![y]|
-| [ACS](https://www.acs.com.hk/) | ![n] | ![y]| ![y]| ![n]|
-| [ATOS](https://atos.net/en/solutions/cyber-security/iot-and-ot-security/smart-card-solution-cardos-for-iot) | ![n] | ![y]| ![y]| ![n]|
-| [Ciright](https://www.cyberonecard.com/) | ![n] | ![n]| ![y]| ![n]|
-| [Composecure](https://www.composecure.com/arculus) | ![n] | ![n]| ![y]| ![n]|
-| [Crayonic](https://www.crayonic.com/keyvault) | ![y] | ![n]| ![y]| ![y]|
-| [Cryptnox](https://cryptnox.com/) | ![n] | ![y]| ![y]| ![n]|
-| [Ensurity](https://www.ensurity.com/contact) | ![y] | ![y]| ![n]| ![n]|
-| [Excelsecu](https://www.excelsecu.com/productdetail/esecufido2secu.html) | ![y] | ![y]| ![y]| ![y]|
-| [Feitian](https://shop.ftsafe.us/pages/microsoft) | ![y] | ![y]| ![y]| ![y]|
-| [Fortinet](https://www.fortinet.com/) | ![n] | ![y]| ![n]| ![n]|
-| [Giesecke + Devrient (G+D)](https://www.gi-de.com/en/identities/enterprise-security/hardware-based-authentication) | ![y] | ![y]| ![y]| ![y]|
-| [Google](https://store.google.com/us/product/titan_security_key) | ![n] | ![y]| ![y]| ![n]|
-| [GoTrustID Inc.](https://www.gotrustid.com/idem-key) | ![n] | ![y]| ![y]| ![y]|
-| [HID](https://www.hidglobal.com/products/crescendo-key) | ![n] | ![y]| ![y]| ![n]|
-| [HIDEEZ](https://hideez.com/products/hideez-key-4) | ![n] | ![y]| ![y]| ![y]|
-| [Hypersecu](https://www.hypersecu.com/hyperfido) | ![n] | ![y]| ![n]| ![n]|
-| [Hypr](https://www.hypr.com/true-passwordless-mfa) | ![y] | ![y]| ![n]| ![y]|
-| [Identiv](https://www.identiv.com/products/logical-access-control/utrust-fido2-security-keys/nfc) | ![n] | ![y]| ![y]| ![n]|
-| [IDmelon Technologies Inc.](https://www.idmelon.com/#idmelon) | ![y] | ![y]| ![y]| ![y]|
-| [Kensington](https://www.kensington.com/solutions/product-category/why-biometrics/) | ![y] | ![y]| ![n]| ![n]|
-| [KONA I](https://www.konai.com/main) | ![y] | ![n]| ![y]| ![y]|
-| [NeoWave](https://neowave.fr/en/products/fido-range/) | ![n] | ![y]| ![y]| ![n]|
-| [Nymi](https://www.nymi.com/nymi-band) | ![y] | ![n]| ![y]| ![n]|
-| [Octatco](https://octatco.com/) | ![y] | ![y]| ![n]| ![n]|
-| [OneSpan Inc.](https://www.onespan.com/products/fido) | ![n] | ![y]| ![n]| ![y]|
-| [PONE Biometrics](https://ponebiometrics.com/) | ![y] | ![n]| ![n]| ![y]|
-| [Precision Biometric](https://www.innait.com/product/fido/) | ![n] | ![y]| ![n]| ![n]|
-| [RSA](https://www.rsa.com/products/securid/) | ![n] | ![y]| ![n]| ![n]|
-| [Sentry](https://sentryenterprises.com/) | ![n] | ![n]| ![y]| ![n]|
-| [SmartDisplayer](https://www.smartdisplayer.com/fido) | ![y] | ![y]| ![y]| ![y]|
-| [Swissbit](https://www.swissbit.com/en/products/ishield-key/) | ![n] | ![y]| ![y]| ![n]|
-| [Thales Group](https://cpl.thalesgroup.com/access-management/authenticators/fido-devices) | ![n] | ![y]| ![y]| ![n]|
-| [Thetis](https://thetis.io/collections/fido2) | ![y] | ![y]| ![y]| ![y]|
-| [Token2 Switzerland](https://www.token2.swiss/shop/product/token2-t2f2-alu-fido2-u2f-and-totp-security-key) | ![y] | ![y]| ![y]| ![n]|
-| [Token Ring](https://www.tokenring.com/) | ![y] | ![n]| ![y]| ![n]|
-| [TrustKey Solutions](https://www.trustkeysolutions.com/en/sub/product.form) | ![y] | ![y]| ![n]| ![n]|
-| [VinCSS](https://passwordless.vincss.net) | ![n] | ![y]| ![n]| ![n]|
-| [WiSECURE Technologies](https://wisecure-tech.com/en-us/zero-trust/fido/authtron) | ![n] | ![y]| ![n]| ![n]|
-| [Yubico](https://www.yubico.com/solutions/passwordless/) | ![y] | ![y]| ![y]| ![n]|
+| Allthenticate | ![n] | ![y] | ![n] | ![y] |
+| Authenton | ![n] | ![y] | ![y] | ![n] |
+| AuthenTrend | ![y] | ![y]| ![y]| ![y]|
+| ACS | ![n] | ![y]| ![y]| ![n]|
+| ATOS| ![n] | ![y]| ![y]| ![n]|
+| Ciright | ![n] | ![n]| ![y]| ![n]|
+| Composecure | ![n] | ![n]| ![y]| ![n]|
+| Crayonic | ![y] | ![n]| ![y]| ![y]|
+| Cryptnox | ![n] | ![y]| ![y]| ![n]|
+| CryptoTrust | ![n] | ![y] | ![n] | ![n] |
+| Ensurity | ![y] | ![y]| ![n]| ![n]|
+| Excelsecu | ![y] | ![y]| ![y]| ![y]|
+| Feitian | ![y] | ![y]| ![y]| ![y]|
+| Fortinet | ![n] | ![y]| ![n]| ![n]|
+| Giesecke + Devrient (G+D)| ![y] | ![y]| ![y]| ![y]|
+| Google | ![n] | ![y]| ![y]| ![n]|
+| GoTrustID Inc.| ![n] | ![y]| ![y]| ![y]|
+| HID | ![n] | ![y]| ![y]| ![n]|
+| HIDEEZ | ![n] | ![y]| ![y]| ![y]|
+| Hypersecu | ![n] | ![y]| ![n]| ![n]|
+| Hypr | ![y] | ![y]| ![n]| ![y]|
+| Identiv | ![n] | ![y]| ![y]| ![n]|
+| IDmelon Technologies Inc. | ![y] | ![y]| ![y]| ![y]|
+| Kensington | ![y] | ![y]| ![n]| ![n]|
+| Keyxentic | ![n] | ![y]| ![y]| ![n]|
+| KONA I | ![y] | ![n]| ![y]| ![y]|
+| NeoWave | ![n] | ![y]| ![y]| ![n]|
+| Nymi | ![y] | ![n]| ![y]| ![n]|
+| Octatco | ![y] | ![y]| ![n]| ![n]|
+| OneSpan Inc. | ![n] | ![y]| ![y]| ![y]|
+| PONE Biometrics | ![y] | ![n]| ![n]| ![y]|
+| Precision Biometric| ![y] | ![y]| ![y] | ![n]|
+| RSA | ![n] | ![y]| ![n]| ![n]|
+| Sentry | ![n] | ![n]| ![y]| ![n]|
+| SmartDisplayer | ![y] | ![y]| ![y]| ![y]|
+| SpearID | ![n] | ![y]| ![y]| ![y]|
+| Swissbit | ![n] | ![y]| ![y]| ![n]|
+| Thales Group | ![n] | ![y]| ![y]| ![n]|
+| Thetis | ![y] | ![y]| ![y]| ![y]|
+| Token2 Switzerland | ![y] | ![y]| ![y]| ![n]|
+| Token Ring | ![y] | ![n]| ![y]| ![n]|
+| TrustKey Solutions | ![y] | ![y]| ![n]| ![n]|
+| Valmido | ![n] | ![n]| ![y]| ![y]|
+| VinCSS | ![n] | ![y]| ![n]| ![n]|
+| WiSECURE Technologies | ![n] | ![y]| ![n]| ![n]|
+| Yubico | ![y] | ![y]| ![y]| ![n]|
 
 <!--Image references-->
 [y]: ./media/fido2-compatibility/yes.png

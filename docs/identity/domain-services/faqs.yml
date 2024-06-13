@@ -10,7 +10,7 @@ metadata:
   ms.service: entra-id
   ms.subservice: domain-services
   ms.topic: faq
-  ms.date: 03/25/2024
+  ms.date: 06/11/2024
   ms.author: justinha
 title: Frequently asked questions (FAQs) about Microsoft Entra Domain Services
 summary: This page answers frequently asked questions about Microsoft Entra Domain Services.
@@ -43,19 +43,7 @@ sections:
         answer: |
           Yes. 
           For more information, see [how to enable Microsoft Entra Domain Services in Azure CSP subscriptions](csp.md).
-          
-      - question: |
-          Can I enable Microsoft Entra Domain Services in a federated Microsoft Entra directory? 
-          I don't synchronize password hashes to Microsoft Entra ID. 
-          Can I enable Microsoft Entra Domain Services for this directory?
-        answer: |
-          No. 
-          To authenticate users via NTLM or Kerberos, Microsoft Entra Domain Services needs access to the password hashes of user accounts. 
-          In a federated directory, password hashes aren't stored in the Microsoft Entra directory. 
-          Therefore, Microsoft Entra Domain Services doesn't work with such Microsoft Entra directories.
-          
-          However, if you're using Microsoft Entra Connect for password hash synchronization, you can use Microsoft Entra Domain Services because the password hash values are stored in Microsoft Entra ID.
-          
+                    
       - question: |
           Can I make Microsoft Entra Domain Services available in multiple virtual networks within my subscription?
         answer: |
@@ -64,6 +52,34 @@ sections:
           However, you can configure connectivity between multiple virtual networks to expose Microsoft Entra Domain Services to other virtual networks. 
           For more information, see [how to connect virtual networks in Azure using VPN gateways](/azure/vpn-gateway/vpn-gateway-howto-vnet-vnet-portal-classic) or [virtual network peering](/azure/virtual-network/virtual-network-peering-overview).
           
+      - question: |
+          Can I add domain controllers to a Microsoft Entra Domain Services managed domain?
+        answer: |
+          No. 
+          The domain provided by Microsoft Entra Domain Services is a managed domain. 
+          You don't need to provision, configure, or otherwise manage domain controllers for this domain. 
+          These management activities are provided as a service by Microsoft. 
+          Therefore, you can't add more domain controllers (read-write or read-only) for the managed domain.
+
+      - question: |
+          Can I expand a managed domain to different Azure regions for application recovery if an Azure region goes offline?
+        answer: |
+          Yes. 
+          You can create replica sets that share the same namespace and configuration with your managed domain. 
+          Replica sets can be added to any peered virtual network in any Azure region that supports Domain Services.  
+          For more information, see [Replica sets concepts and features for Microsoft Entra Domain Services](concepts-replica-sets.md).
+
+      - question: |
+          Can I enable Microsoft Entra Domain Services in a federated Microsoft Entra directory without password hash synchronization? 
+
+        answer: |
+          No. 
+          To authenticate users via NTLM or Kerberos, Microsoft Entra Domain Services needs access to the password hashes of user accounts. 
+          In a federated directory, password hashes aren't stored in the Microsoft Entra directory. 
+          Therefore, Microsoft Entra Domain Services doesn't work with such Microsoft Entra directories.
+          
+          However, if you're using Microsoft Entra Connect for password hash synchronization, you can use Microsoft Entra Domain Services because the password hash values are stored in Microsoft Entra ID.
+
       - question: |
           Can I enable Microsoft Entra Domain Services using PowerShell?
         answer: |
@@ -77,14 +93,6 @@ sections:
           When you create a Microsoft Entra Domain Services managed domain in the Microsoft Entra admin center, there's also an option to export the template for use with other deployments.
           For more information, see [Create a Domain Services managed domain using an Azure Resource Manager template](template-create-instance.md). 
           
-      - question: |
-          Can I add domain controllers to a Microsoft Entra Domain Services managed domain?
-        answer: |
-          No. 
-          The domain provided by Microsoft Entra Domain Services is a managed domain. 
-          You don't need to provision, configure, or otherwise manage domain controllers for this domain. 
-          These management activities are provided as a service by Microsoft. 
-          Therefore, you can't add more domain controllers (read-write or read-only) for the managed domain.
 
       - question: |
           Can guest users who are invited to my directory use Microsoft Entra Domain Services?
@@ -107,7 +115,7 @@ sections:
       - question: |
           Can I move a managed domain?
         answer: |
-          After you create a Domain Services managed domain, you can't move it to a different subscription, resource group, or region. As a workaround, you can [delete the managed domain](delete-aadds.md) by using PowerShell or the Microsoft Entra admin center and re-create it with your desired setup. No restore operations can be provided while the managed domain is re-created.
+          After you create a Domain Services managed domain, you can't move it to a different subscription, resource group, or region. To change the region, a possible workaround would be deploying a new replica set in the region that you want to migrate to. Once that completes, delete the replica set in the region you don't want any more. As a workaround for the rest of the settings, you can [delete the managed domain](delete-aadds.md) by using PowerShell or the Microsoft Entra admin center and re-create it with your desired setup. No restore operations can be provided while the managed domain is re-created.
 
       - question: |
           Can I rename an existing Microsoft Entra Domain Services domain name?
@@ -196,6 +204,12 @@ sections:
           How are Windows Updates applied in Microsoft Entra Domain Services?
         answer: |
           Domain controllers in a managed domain automatically apply required Windows updates. There's nothing for you to configure or administer here. Make sure you don't create network security group rules that block outbound traffic to Windows Updates. For your own VMs joined to the managed domain, you are responsible for configuring and applying any required OS and application updates.
+      - question: | 
+          Where does Microsoft Entra Domain Services store customer data?
+        answer: |
+          Microsoft Entra Domain Services stores customer data. 
+          By default, customer data stays within the region where the service instance is deployed. 
+          Customers can use replica sets to store data in other regions. 
       - question: |
          How is patching performed on domain controllers that are part of a managed domain?
         answer: |

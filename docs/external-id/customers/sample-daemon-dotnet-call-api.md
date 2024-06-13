@@ -1,7 +1,7 @@
 ---
 title: Call an API in a sample .NET daemon application
-description: Learn how to configure a sample .NET daemon application that calls an API protected with Microsoft Entra ID for customers
- 
+description: Learn how to configure a sample .NET daemon application that calls an API protected with Microsoft Entra External ID.
+
 author: SHERMANOUKO
 manager: mwongerapk
 
@@ -11,22 +11,20 @@ ms.subservice: customers
 ms.custom: devx-track-dotnet
 ms.topic: sample
 ms.date: 07/13/2023
-#Customer intent: As a dev, devops, I want to configure a sample .NET daemon application that calls an API protected by Microsoft Entra ID for customers tenant
+#Customer intent: As a dev, devops, I want to configure a sample .NET daemon application that calls an API protected by my external tenant
 ---
 
 # Call an API in a sample .NET daemon application 
 
-This article uses a sample .NET daemon application to show you how a daemon application acquires a token to call a protected web API. Microsoft Entra ID for customers protects the Web API. 
+This guide uses a sample .NET daemon application to show you how a daemon application acquires a token to call a protected web API. Microsoft Entra protects the web API.
 
-A daemon application acquires a token on behalf of itself (not on behalf of a user). Users can't interact with a daemon application because it requires its own identity. This type of application requests an access token by using its application identity and presenting its application ID, credential (password or certificate), and application ID URI to External ID. 
+A daemon application acquires a token on behalf of itself (not on behalf of a user). Users can't interact with a daemon application because it requires its own identity. This type of application requests an access token by using its application identity and presenting its application ID, credential (password or certificate), and application ID URI to Microsoft Entra External ID. 
 
 ## Prerequisites
 
-- [.NET 7.0](https://dotnet.microsoft.com/download/dotnet/7.0) or later. 
-
-- [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
-
-- Microsoft Entra ID for customers tenant. If you don't already have one, [sign up for a free trial](https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl)</a>.
+* [Visual Studio Code](https://code.visualstudio.com/download) or another code editor
+* [.NET 7.0](https://dotnet.microsoft.com/download/dotnet/7.0) or later. 
+* An external tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
 
 ## Register a daemon application and a web API
 
@@ -56,16 +54,17 @@ In this step, you create the daemon and the web API application registrations, a
 
 [!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/register-app/grant-api-permissions-app-permissions.md)]
 
-##  Clone or download sample daemon application and web API
+## Clone or download sample daemon application and web API
 
-To get the web application sample code, you can do either of the following tasks:
+To obtain the sample application, you can either clone it from GitHub or download it as a .zip file.
 
-- [Download the .zip file](https://github.com/Azure-Samples/ms-identity-ciam-dotnet-tutorial/archive/refs/heads/main.zip) or clone the sample web application from GitHub by running the following command:
+- To clone the sample, open a command prompt and navigate to where you wish to create the project, and enter the following command:
 
     ```console
-        git clone https://github.com/Azure-Samples/ms-identity-ciam-dotnet-tutorial.git
+    git clone https://github.com/Azure-Samples/ms-identity-ciam-dotnet-tutorial.git
     ```
-If you choose to download the *.zip* file, extract the sample application file to a folder where the total length of the path is 260 or fewer characters.
+
+- [Download the .zip file](https://github.com/Azure-Samples/ms-identity-ciam-dotnet-tutorial/archive/refs/heads/main.zip). Extract it to a file path where the length of the name is fewer than 260 characters.
 
 ## Configure the sample daemon application and API
 
@@ -76,11 +75,8 @@ To use your app registration in the client web application sample:
 1. Find the placeholder:
 
     - `Enter_the_Application_Id_Here` and replace it with the Application (client) ID of the daemon application you registered earlier.
-     
-    - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details). 
-    
+    - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details). 
     - `Enter_the_Client_Secret_Here` and replace it with the daemon application secret value you copied earlier.
-    
     - `Enter_the_Web_Api_Application_Id_Here` and replace it with the Application (client) ID of the web API you copied earlier.
 
 To use your app registration in the web API sample: 
@@ -90,10 +86,8 @@ To use your app registration in the web API sample:
 1. Find the placeholder:
     
     - `Enter_the_Application_Id_Here` and replace it with the Application (client) ID of the web API you copied. 
-    
     - `Enter_the_Tenant_Id_Here` and replace it with the Directory (tenant) ID you copied earlier.
-    
-    - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
+    - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
 
 ##  Run and test sample daemon application and API 
 
@@ -110,35 +104,35 @@ To use your app registration in the web API sample:
     dotnet run
     ```
 
-If your daemon application and web API successfully run, you should see something similar to the following JSON array in your console window
+If your daemon application and web API successfully run, you should see something similar to the following JSON array in your console window:
 
 ```bash
 Posting a to-do...
 Retrieving to-do's from server...
 To-do data:
 ID: 1
-User ID: 41b1e1a8-8e51-4514-8dab-e568afa2826c
+User ID: 00aa00aa-bb11-cc22-dd33-44ee44ee44ee
 Message: Bake bread
 Posting a second to-do...
 Retrieving to-do's from server...
 To-do data:
 ID: 1
-User ID: 41b1e1a8-8e51-4514-8dab-e568afa2826c
+User ID: 00aa00aa-bb11-cc22-dd33-44ee44ee44ee
 Message: Bake bread
 ID: 2
-User ID: 41b1e1a8-8e51-4514-8dab-e568afa2826c
+User ID: 00aa00aa-bb11-cc22-dd33-44ee44ee44ee
 Message: Butter bread
 Deleting a to-do...
 Retrieving to-do's from server...
 To-do data:
 ID: 2
-User ID: 41b1e1a8-8e51-4514-8dab-e568afa2826c
+User ID: 00aa00aa-bb11-cc22-dd33-44ee44ee44ee
 Message: Butter bread
 Editing a to-do...
 Retrieving to-do's from server...
 To-do data:
 ID: 2
-User ID: 41b1e1a8-8e51-4514-8dab-e568afa2826c
+User ID: 00aa00aa-bb11-cc22-dd33-44ee44ee44ee
 Message: Eat bread
 Deleting remaining to-do...
 Retrieving to-do's from server...
@@ -151,6 +145,9 @@ The daemon application use [OAuth2.0 client credentials grant](~/identity-platfo
 
 On the API side, the web API must verify that the access token has the required permissions (application permissions). The web API rejects access tokens that don't have the required permissions. 
 
-## See also
+## Related content
 
-See the tutorial on how to [build your own .NET daemon app that calls an API](./tutorial-daemon-dotnet-call-api-prepare-tenant.md)
+- [Use our multi-part tutorial series to build this .NET daemon app from scratch](tutorial-daemon-dotnet-call-api-prepare-tenant.md)
+- [Enable password reset](how-to-enable-password-reset-customers.md).
+- [Customize the default branding](how-to-customize-branding-customers.md).
+- [Configure sign-in with Google](how-to-google-federation-customers.md).

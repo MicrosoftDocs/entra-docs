@@ -9,8 +9,10 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
+
+# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Meta4 Global HR so that I can control who has access to Meta4 Global HR, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 # Tutorial: Microsoft Entra integration with Meta4 Global HR
 

@@ -19,7 +19,7 @@ Microsoft partnered with PingAccess to provide more access applications. PingAcc
 
 With PingAccess for Microsoft Entra ID, you give users access and single sign-on (SSO) to applications that use headers for authentication. Application proxy treats these applications like any other, using Microsoft Entra ID to authenticate access and then passing traffic through the connector service. PingAccess sits in front of the applications and translates the access token from Microsoft Entra ID into a header. The application then receives the authentication in the format it can read.
 
-Users don't notice anything different when they sign in to use corporate applications. Applications still work from anywhere on any device. The application proxy connectors direct remote traffic to all apps without regard to their authentication type, so they still balance loads automatically.
+Users don't notice anything different when they sign in to use corporate applications. Applications still work from anywhere on any device. The private network connectors direct remote traffic to all apps without regard to their authentication type, so they still balance loads automatically.
 
 ## How do I get access?
 
@@ -34,9 +34,9 @@ This article outlines the steps to publish an application for the first time. Th
 > [!NOTE]
 > Some of the instructions exist on the Ping Identity site.
 
-### Install an application proxy connector
+### Install a private network connector
 
-The application proxy connector is a Windows Server service that directs traffic from your remote employees to your published applications. For more detailed installation instructions, see [Tutorial: Add an on-premises application for remote access through application proxy in Microsoft Entra ID](application-proxy-add-on-premises-application.md).
+The private network connector is a Windows Server service that directs traffic from your remote employees to your published applications. For more detailed installation instructions, see [Tutorial: Add an on-premises application for remote access through application proxy in Microsoft Entra ID](application-proxy-add-on-premises-application.md).
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Application proxy**.
@@ -93,7 +93,7 @@ Now assign a user for application testing and choose header-based single sign-on
 1. From the application sidebar, select **Single sign-on** > **Header-based**.
 
    > [!TIP]
-   > If this is your first time using header-based single sign-on, you need to install PingAccess. To make sure your Microsoft Entra ID subscription is automatically associated with your PingAccess installation, use the link on this single sign-on page to download PingAccess. You can open the download site now, or come back to this page later.
+   > If this is your first time using header-based single sign-on, you need to install PingAccess. To make sure your Microsoft Entra subscription is automatically associated with your PingAccess installation, use the link on this single sign-on page to download PingAccess. You can open the download site now, or come back to this page later.
 
    ![Shows header-based sign-on screen and PingAccess](./media/application-proxy-configure-single-sign-on-with-ping-access/sso-header.png)
 
@@ -125,7 +125,7 @@ Finally, set up the on-premises application so that users have `read` access and
 
 Collect three Globally Unique Identifiers (GUIDs). Use the GUIDs to set up your application with PingAccess. 
 
-| Name of Microsoft Entra ID field | Name of PingAccess field | Data format |
+| Name of Microsoft Entra field | Name of PingAccess field | Data format |
 | --- | --- | --- |
 | **Application (client) ID** | **Client ID** | GUID |
 | **Directory (tenant) ID** | **Issuer** | GUID |

@@ -26,12 +26,12 @@ To use entitlement management, you must have one of these licenses:
 - Enterprise Mobility + Security (EMS) E5
 
 For more information, see [License requirements](entitlement-management-overview.md#license-requirements).
+
 ## Step 1: Configure basics for your access package
 
-**Prerequisite role:** Global Administrator, Identity Governance Administrator, User Administrator, Catalog Owner, or Access Package Manager
-
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
-
+    > [!TIP]
+    > Other least privilege roles that can complete this task include the Catalog owner, User Administrator, and the Access package manager.
 1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
 
 1. On the **Access packages** page Select **New access package**.
@@ -106,12 +106,11 @@ For more information, see [License requirements](entitlement-management-overview
 
 ## Step 7: Clean up resources
 
-In this step, you can delete the Office Licenses access package. 
-
-**Prerequisite role:** Global Administrator, Identity Governance Administrator, or Access Package Manager
+In this step, you delete the Office Licenses access package. 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
-
+    > [!TIP]
+    > Other least privilege roles that can complete this task include the Access package manager.
 1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
 
 1. Open the **Office Licenses** access package. 

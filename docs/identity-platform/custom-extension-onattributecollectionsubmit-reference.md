@@ -1,19 +1,20 @@
 ---
-title: OnAttributeCollectionSubmit reference
+title: Custom Extension for OnAttributeCollectionSubmit event reference (preview)
 description: Reference documentation for a custom authentication extension that invokes the OnAttributeCollectionSubmit event for External ID customer configurations.
 author: msmimart
 manager: CelesteDG
 ms.author: mimart 
-ms.date: 01/23/2024
+ms.date: 04/10/2024
 ms.service: identity-platform
 
 ms.topic: reference
 titleSuffix: Microsoft identity platform
 #customer intent: As a developer creating a custom authentication extension for user sign-up flows, I want to understand the REST API schema for the OnAttributeCollectionSubmit event, so that I can design and implement my own REST API to handle attribute collection requests and responses when the user submits attribute entries.
 ---
-# Custom Extension for OnAttributeCollectionSubmit event (preview)
 
-**Applies to:** Microsoft Entra External ID customer configurations
+# Custom Extension for OnAttributeCollectionSubmit event reference (preview)
+
+[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
 To modify the sign-up experience for your customer self-service sign-up user flows, you can create a custom authentication extension and invoke it at specific points in the user flow. The OnAttributeCollectionSubmit event occurs after the user enters and submits attributes and can be used to validate the information provided by the user. For example, you can validate an invitation code or partner number, modify an address format, allow the user to continue, or show a validation or block page. The following actions can be configured:
 
@@ -50,12 +51,12 @@ POST https://exampleAzureFunction.azureWebsites.net/api/functionName
 
 {
   "type": "microsoft.graph.authenticationEvent.attributeCollectionSubmit",
-  "source": "/tenants/30000000-0000-0000-0000-000000000003/applications/<resourceAppguid>",
+  "source": "/tenants/aaaabbbb-0000-cccc-1111-dddd2222eeee/applications/<resourceAppguid>",
   "data": {
     "@odata.type": "microsoft.graph.onAttributeCollectionSubmitCalloutData",
-    "tenantId": "30000000-0000-0000-0000-000000000003",
-    "authenticationEventListenerId": "10000000-0000-0000-0000-000000000001",
-    "customAuthenticationExtensionId": "10000000-0000-0000-0000-000000000002",
+    "tenantId": "aaaabbbb-0000-cccc-1111-dddd2222eeee",
+    "authenticationEventListenerId": "00001111-aaaa-2222-bbbb-3333cccc4444",
+    "customAuthenticationExtensionId": "11112222-bbbb-3333-cccc-4444dddd5555",
     "authenticationContext": {
         "correlationId": "<GUID>",
         "client": {

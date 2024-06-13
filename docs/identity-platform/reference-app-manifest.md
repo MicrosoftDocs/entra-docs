@@ -1,11 +1,11 @@
 ---
-title: Understanding the Microsoft Entra app manifest
+title: Understanding the app manifest (Azure AD Graph format)
 description: Describes the Microsoft Entra app manifest, which represents an application's identity configuration in a Microsoft Entra tenant.
 author: rwike77
 manager: CelesteDG
 ms.author: ryanwi
 ms.custom: 
-ms.date: 03/25/2024
+ms.date: 06/13/2024
 ms.reviewer: sureshja
 ms.service: identity-platform
 
@@ -14,9 +14,6 @@ ms.topic: reference
 ---
 
 # Microsoft Entra app manifest (Azure AD Graph format)
-> [!WARNING]
->  On [date], the app manifest in Azure Active Directory (Azure AD) Graph format was deprecated in the Micrsoft Entra admin center due to the [Azure AD Graph deprecation](/graph/migrate-azure-ad-graph-overview). However, apps registered with your personal Microsoft account will continue to be managed using app manifest in Azure AD Graph format until further notice. For more information, see [app manifest in Microsoft Graph format](reference-microsoft-graph-app-manifest.md).  
-
 
 The application manifest contains a definition of all the attributes of an application object in the Microsoft identity platform. It also serves as a mechanism for updating the application object. For more info on the Application entity and its schema, see the [Graph API Application entity documentation](/graph/api/resources/application).
 
@@ -44,12 +41,12 @@ This section describes the attributes found in the application manifest.
 | :--- | :--- |
 | id | String |
 
-The unique identifier for the app in the directory. This ID isn't the identifier used to identify the app in any protocol transaction. It's used for the referencing the object in directory queries.
+The unique identifier for the app in the directory. This ID is not the identifier used to identify the app in any protocol transaction. Use it for the referencing the object in directory queries.
 
 Example:
 
 ```json
-    "id": "f7f9acfc-ae0c-4d6c-b489-0a81dc1652dd",
+    "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
 ```
 
 ### acceptMappedClaims attribute
@@ -95,14 +92,14 @@ Example:
 | :--- | :--- |
 | addIns | Collection |
 
-Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the `addIns` property for its "FileHandler" functionality. This parameter  lets services like Microsoft 365 call the application in the context of a document the user is working on.
+Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the `addIns` property for its "FileHandler" functionality. This parameter lets services like Microsoft 365 call the application in the context of a document the user is working on.
 
 Example:
 
 ```json
     "addIns": [
        {
-        "id": "968A844F-7A47-430C-9163-07AE7C31D407",
+        "id": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
         "type":" FileHandler",
         "properties": [
            {
@@ -139,7 +136,7 @@ Specifies the unique identifier for the app that is assigned to an app by Micros
 Example:
 
 ```json
-    "appId": "601790de-b632-4f57-9523-ee7cb6ceba95",
+    "appId": "00001111-aaaa-2222-bbbb-3333cccc4444",
 ```
 
 ### appRoles attribute
@@ -160,7 +157,7 @@ Example:
            ],
            "description": "Read-only access to device information",
            "displayName": "Read Only",
-           "id": "601790de-b632-4f57-9523-ee7cb6ceba95",
+           "id": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
            "isEnabled": true,
            "value": "ReadOnly"
         }
@@ -220,13 +217,14 @@ Example:
 
 User-defined URIs that uniquely identify a web app within its Microsoft Entra tenant or verified customer owned domain.
 When an application is used as a resource app, the identifierUri value is used to uniquely identify and access the resource.
+For a public client application it cannot have value for identifierUris.
 
 [!INCLUDE [active-directory-identifierUri](~/includes/entra-identifier-uri-patterns.md)]
 
 Example:
 
 ```json
-    "identifierUris": "https://contoso.onmicrosoft.com/fc4d2d73-d05a-4a9b-85a8-4f2b3a5f38ed",
+    "identifierUris": "https://contoso.onmicrosoft.com/00001111-aaaa-2222-bbbb-3333cccc4444",
 ```
 
 ### informationalUrls attribute
@@ -278,12 +276,12 @@ Example:
 | :--- | :--- |
 | knownClientApplications | String Array |
 
-Used for bundling consent if you have a solution that contains two parts: a client app and a custom web API app. If you enter the appID of the client app into this value, the user will only have to consent once to the client app. Microsoft Entra ID knows that consenting to the client means implicitly consenting to the web API. It will automatically provision service principals for both the client and web API at the same time. Both the client and the web API app must be registered in the same tenant.
+Used for bundling consent if you have a solution that contains two parts: a client app and a custom web API app. If you enter the appID of the client app into this value, the user will only have to consent once to the client app. Microsoft Entra ID will know that consenting to the client means implicitly consenting to the web API. It automatically provisions service principals for both the client and web API at the same time. Both the client and the web API app must be registered in the same tenant.
 
 Example:
 
 ```json
-    "knownClientApplications": ["f7f9acfc-ae0c-4d6c-b489-0a81dc1652dd"],
+    "knownClientApplications": ["00001111-aaaa-2222-bbbb-3333cccc4444"],
 ```
 
 ### logoUrl attribute
@@ -334,7 +332,7 @@ Example:
 | :--- | :--- |
 | oauth2AllowImplicitFlow | Boolean |
 
-Specifies whether this web app can request OAuth2.0 implicit flow access tokens. The default is false. This flag is used for browser-based apps, like JavaScript single-page apps. To learn more, enter `OAuth 2.0 implicit grant flow` in the table of contents and see the articles about implicit flow.
+Specifies whether this web app can request OAuth2.0 implicit flow access tokens. The default is false. This flag is used for browser-based apps, like JavaScript single-page apps. To learn more, enter `OAuth 2.0 implicit grant flow` in the table of contents and see the topics about implicit flow. We, however, discourage the use of implicit grant even in SPAs and recommend using the [authorization code flow](./v2-oauth2-auth-code-flow.md) with PKCE.
 
 Example:
 
@@ -348,7 +346,7 @@ Example:
 | :--- | :--- |
 | oauth2AllowIdTokenImplicitFlow | Boolean |
 
-Specifies whether this web app can request OAuth2.0 implicit flow ID tokens. The default is false. This flag is used for browser-based apps, like JavaScript single-page apps.
+Specifies whether this web app can request OAuth2.0 implicit flow ID tokens. The default is false. This flag is used for browser-based apps, like JavaScript single-page apps. We, however, discourage the use of implicit grant even in SPAs and recommend using the [authorization code flow](./v2-oauth2-auth-code-flow.md) with PKCE.
 
 Example:
 
@@ -387,7 +385,7 @@ Example:
 | :--- | :--- |
 | oauth2RequiredPostResponse | Boolean |
 
-Specifies whether, as part of OAuth 2.0 token requests, Microsoft Entra ID allows POST requests, as opposed to GET requests. The default is false, which specifies that only GET requests will be allowed.
+Specifies whether, as part of OAuth 2.0 token requests, Microsoft Entra ID will allow POST requests, as opposed to GET requests. The default is false, which specifies that only GET requests are allowed.
 
 Example:
 
@@ -443,16 +441,16 @@ Example:
 | :--- | :--- |
 | preAuthorizedApplications | Collection |
 
-Lists applications and requested permissions for implicit consent. Requires an admin to have provided consent to the application. preAuthorizedApplications don't require the user to consent to the requested permissions. Permissions listed in preAuthorizedApplications don't require user consent. However, any extra requested permissions not listed in preAuthorizedApplications require user consent.
+Lists applications and requested permissions for implicit consent. Requires an admin to provide consent to the application. preAuthorizedApplications do not require the user to consent to the requested permissions. Permissions listed in preAuthorizedApplications do not require user consent. However, any additional requested permissions not listed in preAuthorizedApplications require user consent.
 
 Example:
 
 ```json
     "preAuthorizedApplications": [
        {
-          "appId": "abcdefg2-000a-1111-a0e5-812ed8dd72e8",
+          "appId": "00001111-aaaa-2222-bbbb-3333cccc4444",
           "permissionIds": [
-             "8748f7db-21fe-4c83-8ab5-53033933c8f1"
+             "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb"
             ]
         }
     ],

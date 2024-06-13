@@ -1,13 +1,13 @@
 ---
 title: Known issues for provisioning in Microsoft Entra ID
 description: Learn about known issues when you work with automated application provisioning or cross-tenant synchronization in Microsoft Entra ID.
-author: kenwith
-ms.author: kenwith
+author: jenniferf-skc
+ms.author: jfields
 manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: troubleshooting
-ms.date: 02/02/2024
+ms.date: 05/23/2024
 ms.reviewer: arvinh
 zone_pivot_groups: app-provisioning-cross-tenant-synchronization
 ---
@@ -30,15 +30,16 @@ This article discusses known issues to be aware of when you work with app provis
 - Synchronizing contacts and converting contacts to B2B users
 - Synchronizing meeting rooms across tenants
 
-### Microsoft Teams
+### Updating proxyAddresses
 
-External / B2B users of type `member` created by cross-tenant synchronization can be added to a shared channel in Microsoft Teams. However, external member users created outside of cross-tenant sync cannot be added to a Teams shared channel.  
+ProxyAddresses is a [read-only property in Microsoft Graph](https://go.microsoft.com/fwlink/?linkid=2272551). It can be included as a source attribute in your mappings, but cannot be set as a target attribute. 
 
- ### Provisioning users
+### Provisioning users
 
 An external user from the source (home) tenant can't be provisioned into another tenant. Internal guest users from the source tenant can't be provisioned into another tenant. Only internal member users from the source tenant can be provisioned into the target tenant. For more information, see [Properties of a Microsoft Entra B2B collaboration user](~/external-id/user-properties.md).
 
 In addition, users that are enabled for SMS sign-in cannot be synchronized through cross-tenant synchronization.
+
 
 ### Updating the showInAddressList property fails
 
@@ -95,7 +96,7 @@ Attribute-mapping expressions can have a maximum of 10,000 characters.
 
 #### Unsupported scoping filters
 
-The **appRoleAssignments**, **userType**, and **accountExpires** attributes aren't supported as scoping filters.
+The **appRoleAssignments**, **userType**, **manager**, and **date-type** attributes (for example, StatusHireDate, startDate, endDate, StatusTerminationDate, accountExpires) aren't supported as scoping filters.
 
 ::: zone pivot="cross-tenant-synchronization"
 #### OtherMails should not be included in your attribute mappings as a target attribute
@@ -158,7 +159,7 @@ Credentials, including the secret token, notification email, and SSO certificate
 
 ::: zone pivot="app-provisioning"
 ## On-premises application provisioning
-The following information is a current list of known limitations with the Microsoft Entra ECMA Connector Host and on-premises application provisioning.
+This is a current list of known limitations with the Microsoft Entra ECMA Connector Host and on-premises application provisioning.
 
 ### Application and directories
 The following applications and directories aren't yet supported.

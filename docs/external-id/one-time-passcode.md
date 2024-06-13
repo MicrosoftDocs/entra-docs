@@ -17,6 +17,8 @@ ms.collection: M365-identity-device-management
 
 # Email one-time passcode authentication
 
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
+
 The email one-time passcode feature is a way to authenticate B2B collaboration users when they can't be authenticated through other means, such as Microsoft Entra ID, Microsoft account (MSA), or social identity providers. When a B2B guest user tries to redeem your invitation or sign in to your shared resources, they can request a temporary passcode, which is sent to their email address. Then they enter this passcode to continue signing in.
 
 :::image type="content" source="media/one-time-passcode/email-otp.png" alt-text="Diagram showing an overview of Email one-time passcode.":::
@@ -98,10 +100,10 @@ The email one-time passcode feature is now turned on by default for all new tena
 
 1. Browse to **Identity** > **External Identities** > **All identity providers**.
 
-1. In the **Configured identity providers** list, select **Email one-time passcode**.
+1. On the **Built-in** tab, next to Email one-time passcode, select **Configured**.
 
 1. Under **Email one-time passcode for guests**, select one of the following:
-   - **Yes**: The toggle is set to **Yes** by default unless the feature has been explicitly turned it off. To enable the feature, make sure **Yes** is selected.
+   - **Yes**: The toggle is set to **Yes** by default unless the feature has been explicitly turned off. To enable the feature, make sure **Yes** is selected.
    - **No**: If you want to disable the email one-time passcode feature, select **No**.
  
 :::image type="content" source="media/one-time-passcode/email-one-time-passcode-toggle.png" alt-text="Screenshots showing the Email one-time passcode toggle.":::
@@ -124,7 +126,7 @@ For more information about the different redemption process pathways, see [B2B c
 
 **Will the “No account? Create one!” option for self-service sign-up go away?**
 
-No. It’s easy to get [self-service sign-up in the context of External Identities](self-service-sign-up-overview.md) confused with self-service sign-up for email-verified users, but they're two different features. The unmanaged ("viral") feature that has been deprecated is [self-service sign-up with email-verified users](~/identity/users/directory-self-service-signup.md), which resulted in guests creating an unmanaged Microsoft Entra account. However, self-service sign-up for External Identities will continue to be available, which results in your guests signing up to your organization with a [variety of identity providers](identity-providers.md).  
+No. It’s easy to get [self-service sign-up in the context of External ID](self-service-sign-up-overview.md) confused with self-service sign-up for email-verified users, but they're two different features. The unmanaged ("viral") feature that has been deprecated is [self-service sign-up with email-verified users](~/identity/users/directory-self-service-signup.md), which resulted in guests creating an unmanaged Microsoft Entra account. However, self-service sign-up for External ID will continue to be available, which results in your guests signing up to your organization with a [variety of identity providers](identity-providers.md).  
 
 **What does Microsoft recommend we do with existing Microsoft accounts (MSA)?**
 
@@ -136,4 +138,4 @@ No, the global rollout of the change to enable email one-time passcode by defaul
 
 ## Next steps
 
-Learn about [Identity Providers for External Identities](identity-providers.md), and how to reset [redemption status for a guest user](reset-redemption-status.md).
+Learn about [Identity Providers for External ID](identity-providers.md), and how to reset [redemption status for a guest user](reset-redemption-status.md).

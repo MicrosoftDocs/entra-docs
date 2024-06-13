@@ -1,6 +1,6 @@
 ---
 title: "Tutorial: Register an application with the Microsoft identity platform"
-description: In this tutorial, you learn how to register a web application with the Microsoft identity platform.
+description: Learn how to register a web application with the Microsoft identity platform by creating an application in the Microsoft Entra admin center.
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner

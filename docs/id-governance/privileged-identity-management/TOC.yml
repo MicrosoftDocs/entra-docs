@@ -44,9 +44,9 @@
   - name: Activate
     items:
     - name: Microsoft Entra roles
-      href: pim-how-to-activate-role.md
+      href: pim-how-to-activate-role.yml
     - name: Azure roles
-      href: pim-resource-roles-activate-your-roles.md
+      href: pim-resource-roles-activate-your-roles.yml
     - name: Groups
       href: groups-activate-roles.md 
   - name: Approve

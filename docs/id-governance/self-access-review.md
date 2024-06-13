@@ -7,7 +7,7 @@ editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: how-to
-ms.date: 06/28/2023
+ms.date: 04/09/2024
 ms.author: owinfrey
 ms.reviewer: mwahl
 ---

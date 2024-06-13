@@ -17,7 +17,7 @@ ms.topic: quickstart
 > [!div renderon="docs"]
 > Welcome! This probably isn't the page you were expecting. While we work on a fix, this link should take you to the right article:
 >
-> > [Quickstart: Add sign-in with Microsoft to a Python web app](quickstart-web-app-python-sign-in.md)
+> > [Quickstart: Add sign-in with Microsoft to a Python web app](quickstart-web-app-python-flask.md)
 > 
 > We apologize for the inconvenience and appreciate your patience while we work to get this resolved.
 
@@ -35,7 +35,7 @@ ms.topic: quickstart
 > - [Flask](https://flask.palletsprojects.com/en/3.0.x/), [Flask-Session](https://pypi.org/project/Flask-Session/), [requests](https://github.com/psf/requests/graphs/contributors)
 > - [MSAL Python](https://github.com/AzureAD/microsoft-authentication-library-for-python)
 > 
-> #### Step 1: Configure your application in Azure portal
+> #### Step 1: Configure your application in Microsoft Entra admin center
 > 
 > For the code sample in this quickstart to work:
 > 

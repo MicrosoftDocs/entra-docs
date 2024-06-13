@@ -36,7 +36,7 @@ ms.topic: quickstart
 > * [Node.js](https://nodejs.org/en/download/)
 > * [Visual Studio Code](https://code.visualstudio.com/download) or another code editor
 > 
-> #### Step 1: Configure the application in Azure portal
+> #### Step 1: Configure the application in the Microsoft Entra admin center
 > For the code sample for this quickstart to work, you need to create a client secret and add the following reply URL: `http:/> /localhost:3000/redirect`.
 > 
 > <button id="makechanges" class="nextstepaction configure-app-button"> Make these changes for me </button>

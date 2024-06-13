@@ -122,7 +122,7 @@ sections:
       - question: |
           Why do I see two servers with the same name in the Microsoft Entra Connect Health portal?
         answer: |
-          When you remove an agent from a server, the server isn't automatically removed from the Microsoft Entra Connect Health portal. If you manually remove an agent from a server or remove the server itself, you need to manually delete the server entry from the Microsoft Entra Connect Health portal.
+          When you remove an agent from a server, the server isn't automatically removed from the Microsoft Entra Connect Health portal. If you manually remove an agent from a server or remove the server itself, you need to manually delete the server entry from the Microsoft Entra Connect Health portal. To delete monitored servers from Microsoft Entra Connect Health, you must have either Microsoft Entra Global Administrator account permissions or the Contributor role in Azure role-based access control.
           
           You might reimage a server or create a new server with the same details (such as machine name). If you did not remove the already registered server from the Microsoft Entra Connect Health portal, and you installed the agent on the new server, you might see two entries with the same name.
           
@@ -166,7 +166,7 @@ sections:
         answer: |
           Microsoft Entra Connect Health for AD FS generates this alert when the Health Agent installed on an AD FS server fails to obtain a token as part of a synthetic transaction initiated by the Health Agent. The Health agent uses the local system context and attempts to get a token for a self relying party. This behavior is a catch-all test to ensure that AD FS is in a state of issuing tokens.
           
-          Most often this test fails because the Health Agent is unable to resolve the AD FS farm name. This state can happen if the AD FS servers are behind a network load balancers and the request gets initiated from a node that's behind the load balancer (as opposed to a regular client that is in front of the load balancer). This issue can be fixed by updating the "hosts" file located under "C:\Windows\System32\drivers\etc" to include the IP address of the AD FS server or a loopback IP address (127.0.0.1) for the AD FS farm name (such as sts.contoso.com). Adding the host file will short-circuit the network call, thus allowing the Health Agent to get the token.
+          Most often this test fails because the Health Agent is unable to resolve the AD FS farm name. This state can happen if the AD FS servers are behind a network load balancers and the request gets initiated from a node that's behind the load balancer (as opposed to a regular client that is in front of the load balancer). This issue can be fixed by updating the "hosts" file located under `C:\Windows\System32\drivers\etc` to include the IP address of the AD FS server or a loopback IP address (`127.0.0.1`) for the AD FS farm name (such as `sts.contoso.com`). Adding the host file will short-circuit the network call, thus allowing the Health Agent to get the token.
           
       - question: |
           I got an email indicating my machines are NOT patched for the recent ransomware attacks. Why did I receive this email?

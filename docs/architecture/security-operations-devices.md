@@ -92,7 +92,7 @@ You can also use [Microsoft Intune to set and monitor device compliance policies
 
 It might not be possible to block access to all cloud and software-as-a-service applications with Conditional Access policies requiring compliant devices.
 
-[Mobile device management](/windows/client-management/mdm/) (MDM) helps you keep Windows 10 devices compliant. With Windows version 1809, we released a [security baseline](/windows/client-management/mdm/) of policies. Microsoft Entra ID can [integrate with MDM](/windows/client-management/azure-active-directory-integration-with-mdm) to enforce device compliance with corporate policies, and can report a device’s compliance status.
+[Mobile device management (MDM)](/windows/client-management/mdm/) helps you keep Windows 10 devices compliant. With Windows version 1809, we released a [security baseline](/windows/client-management/mdm/) of policies. Microsoft Entra ID can [integrate with MDM](/windows/client-management/azure-active-directory-integration-with-mdm) to enforce device compliance with corporate policies, and can report a device’s compliance status.
 
 | What to monitor| Risk Level| Where| Filter/sub-filter| Notes |
 | - |- |- |- |- |
@@ -145,7 +145,7 @@ AuditLogs
 
 ## Device administrator roles
 
-Global administrators and cloud Device Administrators automatically get local administrator rights on all Microsoft Entra joined devices. It’s important to monitor who has these rights to keep your environment safe.
+The [Microsoft Entra Joined Device Local Administrator](../identity/role-based-access-control/permissions-reference.md#microsoft-entra-joined-device-local-administrator) and the [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator) roles automatically get local administrator rights on all Microsoft Entra joined devices. It’s important to monitor who has these rights to keep your environment safe.
 
 | What to monitor| Risk Level| Where| Filter/sub-filter| Notes |
 | - |- |- |- |- |

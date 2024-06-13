@@ -6,11 +6,11 @@ manager: amycolannino
 ms.service: entra-permissions-management
 
 ms.topic: conceptual
-ms.date: 01/03/2024
+ms.date: 05/16/2024
 ms.author: jfields
 ---
 
-# Microsoft Entra Permissions Management integration with Microsoft Defender for Cloud (Preview)
+# Microsoft Entra Permissions Management integration with Microsoft Defender for Cloud
 
 Cloud Infrastructure Entitlement Management (CIEM) is a security model that helps organizations manage and control user access and entitlements in their cloud infrastructure. CIEM is a critical component of a Cloud Native Application Protection Platform (CNAPP) solution providing visibility into who has access to what resources and ensuring access rights align with the principle of least privilege (PoLP), where users have the minimum levels of access necessary to perform their tasks.  
  

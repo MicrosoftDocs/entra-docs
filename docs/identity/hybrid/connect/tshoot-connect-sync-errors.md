@@ -257,8 +257,7 @@ Microsoft Entra ID protects cloud-only objects from being updated through Micros
 
 This section discusses potential causes and solutions to resolving the error DeletingCloudOnlyObjectNotAllowed (Error Type 114).
 
-> [!WARNING]
-> Microsoft recommends that customers set up a break glass account before logging in to Microsoft Entra Connect. For more info, see [Manage emergency access accounts in Microsoft Entra ID](~/identity/role-based-access-control/security-emergency-access.md).
+[!INCLUDE [emergency-access-accounts](../../../includes/definitions/emergency-access-accounts.md)]
 
 #### Description
 
@@ -292,7 +291,7 @@ ErrorType 114
 ErrorCode 0x8023134a
 ErrorLiteral This synchronization operation, Delete, is not valid. Contact Technical Support. Tracking Id: 09fb1e9b-3ff7-4163-9731-581785e347e5
 ServerErrorDetail N/A
-CsObjectIdentifier {2819A5C8-BE27-EC11-A970-000D3A1B4EEE}
+CsObjectIdentifier {aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb}
 Dn CN={783456306961654236304B58786A66746377643748773D3D}
 ```
 
@@ -302,10 +301,10 @@ To resolve this issue:
 
 1. Identify the problem object reference. 
 1. Use PowerShell to soft-delete the cloud account:
-1. Run `Start-ADSyncSyncCyle -PolicyType Delta` which should successfully import the account deletion.
+1. Run `Start-ADSyncSyncCycle -PolicyType Delta` which should successfully import the account deletion.
 1. Confirm that the deletion was successful.
 1. Restore the user from the Recycle Bin.
-1. Run `Start-ADSyncSyncCyle -PolicyType Delta` on the server to confirm the error doesn't occur again.
+1. Run `Start-ADSyncSyncCycle -PolicyType Delta` on the server to confirm the error doesn't occur again.
 
 > [!WARNING]
 > When a user is excluded from sync scope the object becomes soft-deleted in Microsoft Entra ID and its DirSyncEnabled attribute is switched to False. This process however doesn't convert the object to cloud managed, as it still contains attributes and values synchronized from on-premises Active Directory that can't be managed in the cloud. The DirSyncEnabled value is False to indicate that it’s currently out of sync scope and is available to be matched again.

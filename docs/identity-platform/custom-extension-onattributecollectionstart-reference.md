@@ -1,5 +1,5 @@
 ---
-title: OnAttributeCollectionStart reference
+title: Custom Extension OnAttributeCollectionStart event reference (preview)
 description: Reference documentation for a custom authentication extension that invokes the OnAttributeCollectionStart event for External ID customer configurations.
 author: msmimart
 manager: CelesteDG
@@ -12,9 +12,9 @@ titleSuffix: Microsoft identity platform
 #customer intent: As a developer creating a custom authentication extension for user sign-up flows, I want to understand the REST API schema for the OnAttributeCollectionStart event, so that I can design and implement my own REST API to handle attribute collection requests and responses before the user enters attributes.
 ---
 
-# Custom Extension for OnAttributeCollectionStart event (preview)
+# Custom Extension for OnAttributeCollectionStart event reference (preview)
 
-**Applies to:** Microsoft Entra External ID customer configurations
+[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
 To modify the sign-up experience for your customer self-service sign-up user flows, you can create a custom authentication extension and invoke it at specific points in the user flow. The OnAttributeCollectionStart event occurs at the beginning of the attribute collection step, before the attribute collection page renders. This event allows you to define actions before attributes are collected from the user. For example, you can block a user from continuing the sign-up flow based on their federated identity or email, or prefill attributes with specified values. The following actions can be configured:
 
@@ -52,12 +52,12 @@ POST https://exampleAzureFunction.azureWebsites.net/api/functionName
 
 {
   "type": "microsoft.graph.authenticationEvent.attributeCollectionStart",
-  "source": "/tenants/30000000-0000-0000-0000-000000000003/applications/<resourceAppguid>",
+  "source": "/tenants/aaaabbbb-0000-cccc-1111-dddd2222eeee/applications/<resourceAppguid>",
   "data": {
     "@odata.type": "microsoft.graph.onAttributeCollectionStartCalloutData",
-    "tenantId": "30000000-0000-0000-0000-000000000003",
-    "authenticationEventListenerId": "10000000-0000-0000-0000-000000000001",
-    "customAuthenticationExtensionId": "10000000-0000-0000-0000-000000000002",
+    "tenantId": "aaaabbbb-0000-cccc-1111-dddd2222eeee",
+    "authenticationEventListenerId": "00001111-aaaa-2222-bbbb-3333cccc4444",
+    "customAuthenticationExtensionId": "11112222-bbbb-3333-cccc-4444dddd5555",
     "authenticationContext": {
         "correlationId": "<GUID>",
         "client": {

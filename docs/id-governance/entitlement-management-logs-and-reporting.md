@@ -34,15 +34,15 @@ Archiving Microsoft Entra audit logs requires you to have Azure Monitor in an Az
 
 1. Check if there's already a setting to send the audit logs to that workspace.
 
-1. If there isn't already a setting, select **Add diagnostic setting**. Use the instructions in [Integrate Microsoft Entra logs with Azure Monitor logs](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.md) to send the Microsoft Entra audit log to the Azure Monitor workspace.
+1. If there isn't already a setting, select **Add diagnostic setting**. Use the instructions in [Integrate Microsoft Entra logs with Azure Monitor logs](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.yml) to send the Microsoft Entra audit log to the Azure Monitor workspace.
 
-    ![Diagnostics settings pane](./media/entitlement-management-logs-and-reporting/audit-log-diagnostics-settings.png)
+    :::image type="content" source="./media/entitlement-management-logs-and-reporting/audit-log-diagnostics-settings.png" alt-text="Diagnostics settings pane.":::
 
 1. After the log is sent to Azure Monitor, select **Log Analytics workspaces**, and select the workspace that contains the Microsoft Entra audit logs.
 
 1. Select **Usage and estimated costs** and select **Data Retention**. Change the slider to the number of days you want to keep the data to meet your auditing requirements.
 
-    ![Log Analytics workspaces pane](./media/entitlement-management-logs-and-reporting/log-analytics-workspaces.png)
+    :::image type="content" source="./media/entitlement-management-logs-and-reporting/log-analytics-workspaces.png" alt-text="Log Analytics workspaces pane.":::
 
 1. Later, to see the range of dates held in your workspace, you can use the *Archived Log Date Range* workbook:  
     
@@ -70,13 +70,13 @@ Use the following procedure to view events:
 
 1. In that workbook, select a time range (change to **All** if not sure), and select an access package ID from the drop-down list of all access packages that had activity during that time range. The events related to the access package that occurred during the selected time range will be displayed.
 
-    ![View access package events](./media/entitlement-management-logs-and-reporting/view-events-access-package.png) 
+    :::image type="content" source="./media/entitlement-management-logs-and-reporting/view-events-access-package.png" alt-text="View access package events.":::
 
     Each row includes the time, access package ID, the name of the operation, the object ID, UPN, and the display name of the user who started the operation.  Additional details are included in JSON.
 
 1. If you would like to see if there have been changes to application role assignments for an application that weren't due to access package assignments, such as by a global administrator directly assigning a user to an application role, then you can select the workbook named *Application role assignment activity*.
 
-    ![View app role assignments](./media/entitlement-management-access-package-incompatible/workbook-ara.png)
+    :::image type="content" source="./media/entitlement-management-access-package-incompatible/workbook-ara.png" alt-text="View app role assignments.":::
 
 ## Create custom Azure Monitor queries using the Microsoft Entra admin center
 You can create your own queries on Microsoft Entra audit events, including entitlement management events.  
@@ -93,7 +93,7 @@ You can create your own queries on Microsoft Entra audit events, including entit
 
 1. Then select **Run**. 
 
-    ![Click Run to start query](./media/entitlement-management-logs-and-reporting/run-query.png)
+    :::image type="content" source="./media/entitlement-management-logs-and-reporting/run-query.png" alt-text="Click Run to start query.":::
 
 The table shows the Audit log events for entitlement management from the last hour by default. You can change the "Time range" setting to view older events. However, changing this setting will only show events that occurred after Microsoft Entra ID was configured to send events to Azure Monitor.
 
@@ -121,7 +121,7 @@ To set the role assignment and create a query, do the following steps:
 
 1. Then select **Add** to add a role assignment.
 
-    ![Add a role assignment](./media/entitlement-management-logs-and-reporting/workspace-set-role-assignment.png)
+    :::image type="content" source="./media/entitlement-management-logs-and-reporting/workspace-set-role-assignment.png" alt-text="Add a role assignment.":::
 
 ### Install Azure PowerShell module
 

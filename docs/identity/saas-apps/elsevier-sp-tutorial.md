@@ -9,9 +9,11 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 12/02/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
+
+# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Elsevier SP so that I can control who has access to Elsevier SP, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
 # Microsoft Entra SSO integration with Elsevier SP
@@ -32,7 +34,7 @@ You'll configure and test Microsoft Entra single sign-on for Elsevier SP in a te
 To integrate Microsoft Entra ID with Elsevier SP, you need:
 
 * A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* One of the following roles: Global Administrator, Cloud Application Administrator, Application Administrator, or owner of the service principal.
+* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
 * A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
 * Elsevier SP single sign-on (SSO) enabled subscription.
 

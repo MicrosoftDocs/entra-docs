@@ -26,6 +26,7 @@ This article contains the default usage constraints for the Microsoft Entra ID G
 |---------|---------|
 |Access Packages   |  4,000       |
 |Access Package Assignments     | 100,000        |
+|Access Package Assignments from a given automatic assignment policy      | 5,000        |
 |Catalogs     |   1,500      |
 |Connected Organizations     |  2,500       |
 |Custom extensions     |  500       |
@@ -36,7 +37,7 @@ This article contains the default usage constraints for the Microsoft Entra ID G
 
 |Category  |Limit  |
 |---------|---------|
-|Number of Workflows     |   50 per tenant      |
+|Number of Workflows     |   100 per tenant      |
 |Number of Tasks     |  25 per workflow       |
 |Number of Custom Task Extensions     |  100 per tenant       |
 |offsetInDays range of triggerAndScopeBasedConditions executionConditions     |  180 days       |

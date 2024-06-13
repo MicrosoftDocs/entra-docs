@@ -6,7 +6,7 @@ description: Learn how to reset the invitation redemption status for a Microsoft
  
 ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 05/31/2023
+ms.date: 03/26/2024
 
 ms.author: cmulligan
 author: csmulligan
@@ -17,6 +17,8 @@ ms.collection: M365-identity-device-management
 ---
 
 # Reset redemption status for a guest user
+
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
 
 In this article, you'll learn how to update the [guest user's](user-properties.md) sign-in information after they've redeemed your invitation for B2B collaboration. There might be times when you'll need to update their sign-in information, for example when:
 
@@ -35,7 +37,6 @@ To reset a user's redemption status, you'll need one of the following roles:
 
 - [Helpdesk Administrator](~/identity/role-based-access-control/permissions-reference.md#helpdesk-administrator) (least privileged)
 - [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator)
-- [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator)
 
 ## Use the Microsoft Entra admin center to reset redemption status
 
@@ -119,7 +120,7 @@ ContentType: application/json
 }
 ```
 
-## Next steps
+## Next step
 
 - [Properties of a Microsoft Entra B2B guest user](user-properties.md)
-- [Add Microsoft Entra B2B collaboration users by using PowerShell](customize-invitation-api.md#powershell)
+

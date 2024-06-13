@@ -1,10 +1,10 @@
 ---
-title: Identity providers for External Identities
+title: Identity providers for External ID
 description: Learn how to use Microsoft Entra ID as your default identity provider for sharing with external users.
  
 ms.service: entra-external-id
 ms.topic: concept-article
-ms.date: 01/23/2024
+ms.date: 05/15/2024
 
 ms.author: mimart
 author: msmimart
@@ -14,14 +14,16 @@ ms.collection: M365-identity-device-management
 #customer intent: As a B2B collaboration administrator, I want to configure and enable multiple identity providers (such as Microsoft Entra ID, Microsoft accounts, email one-time passcode, Google, Facebook, and SAML/WS-Fed) for external users, so that they can easily sign in and access our apps and resources.
 ---
 
-# Identity Providers for External Identities
+# Identity providers for External ID in workforce tenants
+
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
 
 > [!TIP]
-> This article applies to B2B collaboration identity providers. If your tenant is configured for customer identity and access management, see [Authentication methods and identity providers for customers](customers/concept-authentication-methods-customers.md).
+> This article applies to B2B collaboration in workforce tenants. For information about external tenants, see [Authentication methods and identity providers in external tenants](customers/concept-authentication-methods-customers.md).
 
 An *identity provider* creates, maintains, and manages identity information while providing authentication services to applications. When you share your apps and resources with external users, Microsoft Entra ID is the default identity provider for sharing. If you invite an external user who already has a Microsoft Entra account or Microsoft account, they can automatically sign in without further configuration on your part.
 
-External Identities offers various identity providers.
+External ID offers various identity providers.
 
 - **Microsoft Entra accounts**: Guest users can use their Microsoft Entra work or school accounts to redeem your B2B collaboration invitations or complete your sign-up user flows. [Microsoft Entra ID](default-account.md) is one of the allowed identity providers by default. No other configuration is needed to make this identity provider available for user flows.
 
@@ -42,7 +44,7 @@ External Identities offers various identity providers.
    > [!NOTE]
    > Federated SAML/WS-Fed IdPs can't be used in your self-service sign-up user flows.
 
-To configure federation with Google, Facebook, or a SAML/Ws-Fed identity provider, you need to be an [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator) or a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) in your Microsoft Entra tenant.
+To configure federation with Google, Facebook, or a SAML/Ws-Fed identity provider, you need to be at least an [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator) in your Microsoft Entra tenant.
 
 ## Adding social identity providers
 

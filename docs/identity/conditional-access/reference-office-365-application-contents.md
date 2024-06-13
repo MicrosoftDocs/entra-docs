@@ -5,7 +5,7 @@ description: What are all of the services included in the Office 365 app in Micr
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: reference
-ms.date: 02/08/2022
+ms.date: 04/10/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -17,12 +17,16 @@ ms.reviewer: calebb
 
 The following list is provided as a reference and includes a detailed list of services and applications that are included in the Conditional Access [Office 365](concept-conditional-access-cloud-apps.md#office-365) app.
 
+- App Studio
 - Augmentation Loop
 - Call Recorder
 - Connectors
 - Device Management Service
 - EnrichmentSvc
 - IC3 Gateway
+- M365 Admin Services
+- M365 Auditing Public Protected Web API app
+- Mail Hook App Office 365
 - Media Analysis and Transformation Service
 - Message Recall app
 - Messaging Async Media
@@ -53,7 +57,11 @@ The following list is provided as a reference and includes a detailed list of se
 - Microsoft Teams Web Client
 - Microsoft To-Do WebApp
 - Microsoft Whiteboard Services
+- Microsoft Information Protection
+- Msi Meeting Intelligence
+- Natural Language Editor
 - O365 Suite UX
+- O365 Diagnostic Service
 - OCPS Checkin Service
 - Office 365 app, corresponding to a migrated siteId.
 - Office 365 Exchange Microservices
@@ -68,15 +76,29 @@ The following list is provided as a reference and includes a detailed list of se
 - Office Services Manager
 - Office Services Manager in USGov
 - Office Shredding Service
+- Office MRO Device Manager
+- Office Online Add-in SSO
+- Office Online Augmentation Loop SSO
+- Office Online Core SSO
+- Office Online Loki SSO
+- Office Online Maker SSO
+- Office Online Print SSO
+- Office Online Search SSO
+- Office Online Service
+- Office Online Speech SSO
+- Office Scripts Service
+- Office Scripts Service - Local
 - Office365 Shell WCSS-Client
 - Office365 Shell WCSS-Client in Azure Government
 - OfficeClientService
 - OfficeHome
+- OfficePowerPointSGS
 - OneDrive
 - OneDrive SyncEngine
 - OneNote
 - Outlook Browser Extension
 - Outlook Service for Exchange
+- Outlook WebApp
 - PowerApps Service
 - PowerApps Web
 - PowerApps Web GCC
@@ -84,6 +106,7 @@ The following list is provided as a reference and includes a detailed list of se
 - ProjectWorkManagement_USGov
 - Reply at mention
 - Security & Compliance Center
+- SharePoint eSignature
 - SharePoint Online Web Client Extensibility
 - SharePoint Online Web Client Extensibility Isolated
 - Skype and Teams Tenant Admin API
@@ -91,6 +114,7 @@ The following list is provided as a reference and includes a detailed list of se
 - Skype meeting broadcast
 - Skype Presence Service
 - SmartCompose
+- Speedway (Groups Service)
 - Sway
 - Targeted Messaging Service
 - The GCC DoD app for office.com

@@ -33,10 +33,11 @@ By using the indexed claim in verifiable credentials, you can search for issued 
 1. Select the verifiable credential type.
 1. On the leftmost menu, select **Revoke a credential**.
 
-   ![Screenshot that shows revoking a credential.](media/how-to-issuer-revoke/settings-revoke.png)
+   :::image type="content" source="media/how-to-issuer-revoke/settings-revoke.png" alt-text="Screenshot that shows credential revocation.":::
+
 1. Search for the index claim of the user you want to revoke. Indexing a claim is a requirement for being able to search for a credential.
 
-   ![Screenshot that shows the credential to revoke.](media/how-to-issuer-revoke/revoke-search.png)
+   :::image type="content" source="media/how-to-issuer-revoke/revoke-search.png" alt-text="Screenshot that shows the credential to revoke.":::
   
     Because only a hash of the indexed claim from the verifiable credential is stored, only an exact match populates the search results. The information entered in the text box is hashed by using the same algorithm. It's used as a search criterion to match the hashed value that's stored.
   
@@ -44,11 +45,11 @@ By using the indexed claim in verifiable credentials, you can search for issued 
 
     The admin user who performs the revoke operation must have **sign** key permission for Key Vault or else the error message "Unable to access Key Vault resource with given credentials" appears.
 
-   ![Screenshot that shows a warning that tells you that after revocation the user still has the credential.](media/how-to-issuer-revoke/warning.png)
+   :::image type="content" source="media/how-to-issuer-revoke/warning.png" alt-text="Screenshot that shows a warning that tells you that after revocation the user still has the credential.":::
 
 1. After successful revocation, you see the status update and a green banner appears at the top of the page.
 
-   ![Screenshot that shows a successfully revoked verifiable credential message.](media/how-to-issuer-revoke/revoke-successful.png)
+   :::image type="content" source="media/how-to-issuer-revoke/revoke-successful.png" alt-text="Screenshot that shows a successfully revoked verifiable credential message.":::
 
 The Request Service API indicates a revoked credential in the `presentation_verified` [callback](presentation-request-api.md#callback-events) as `REVOKED`. Depending on if the presentation request specified that it [allows revoked credentials](presentation-request-api.md#configurationvalidation-type) to be presented, the presentation of a revoked credential either succeeds or fails.
 
@@ -66,7 +67,7 @@ Microsoft Entra Verified ID doesn't store verifiable credential data. The issuer
   "attestations": {
     "idTokens": [
       {
-        "clientId": "8d5b446e-22b2-4e01-bb2e-9070f6b20c90",
+        "clientId": "00001111-aaaa-2222-bbbb-3333cccc4444",
         "configuration": "https://didplayground.b2clogin.com/didplayground.onmicrosoft.com/B2C_1_sisu/v2.0/.well-known/openid-configuration",
         "redirectUri": "vcclient://openid",
         "scope": "openid profile email",
@@ -119,7 +120,7 @@ In every Microsoft-issued verifiable credential, there's a claim called `credent
 ```json
 ...
 "credentialStatus": { 
-    "id": "urn:uuid:625dfcad-0000-1111-2222-333444445555?bit-index=31", 
+    "id": "urn:uuid:00aa00aa-bb11-cc22-dd33-44ee44ee44ee?bit-index=31", 
     "type": "RevocationList2021Status", 
     "statusListIndex": 31, 
     "statusListCredential": "did:web:verifiedid.contoso.com?service=IdentityHub&queries=...data..." 
@@ -154,7 +155,7 @@ didDocument": {
              "type": "IdentityHub",
              "serviceEndpoint": {
                 "instances": [
-                   "https://verifiedid.hub.msidentity.com/v1.0/11111111-2222-3333-4444-000000000000"
+                   "https://verifiedid.hub.msidentity.com/v1.0/00aa00aa-bb11-cc22-dd33-44ee44ee44ee"
                 ],
                 "origins": [ ]
              }

@@ -45,7 +45,7 @@ Open a terminal and run the following command to sign in to your Microsoft Entra
 ```PowerShell
 Import-Module Microsoft.Graph.Identity.SignIns
 
-Connect-MgGraph -Scopes "Policy.ReadWrite.ApplicationConfiguration"
+Connect-MgGraph -Scopes "Policy.ReadWrite.ApplicationConfiguration", "Policy.Read.All"
 ```
 
 Now you can create a claims mapping policy and assign it to a service principal. Refer to the following examples for common scenarios:

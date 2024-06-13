@@ -24,9 +24,9 @@ This article describes how to add users, groups, or devices to administrative un
 - Microsoft Entra ID P1 or P2 license for each administrative unit administrator
 - Microsoft Entra ID Free licenses for administrative unit members
 - To add existing users, groups, or devices:
-    - Privileged Role Administrator or Global Administrator
+    - Privileged Role Administrator
 - To create new groups:
-    - Groups Administrator (scoped to the administrative unit or entire directory) or Global Administrator
+    - Groups Administrator (scoped to the administrative unit or entire directory)
 - Microsoft Graph PowerShell
 - Admin consent when using Graph Explorer for Microsoft Graph API
 

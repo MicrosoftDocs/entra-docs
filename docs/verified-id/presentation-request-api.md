@@ -52,7 +52,7 @@ Authorization: Bearer  <token>
     "includeQRCode": true,
     "callback": {
       "url": "https://contoso.com/api/verifier/presentationCallback",
-      "state": "11111111-2222-2222-2222-333333333333",
+      "state": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
       "headers": {
         "api-key": "an-api-key-can-go-here"
       }
@@ -129,7 +129,7 @@ The `RequestRegistration` type provides information registration for the issuer.
 
 The following screenshot shows the `clientName` property and the display name of the `authority` (the verifier) in the presentation request.
 
-![Screenshot that shows how to approve the presentation request.](media/presentation-request-api/approve-presentation-request.jpg)
+:::image type="content" source="media/presentation-request-api/approve-presentation-request.jpg" alt-text="Screenshot that shows how to approve the presentation request.":::
 
 ### Callback type
 
@@ -190,7 +190,7 @@ If successful, this method returns a response code (*HTTP 201 Created*), and a c
 ```json
 {
     "requestId": "e4ef27ca-eb8c-4b63-823b-3b95140eac11",
-    "url": "openid://vc/?request_uri=https://verifiedid.did.msidentity.com/v1.0/12345678-0000-0000-0000-000000000000/verifiableCredentials/request/e4ef27ca-eb8c-4b63-823b-3b95140eac11",
+    "url": "openid-vc://?request_uri=https://verifiedid.did.msidentity.com/v1.0/00001111-aaaa-2222-bbbb-3333cccc4444/verifiableCredentials/presentationRequests/e4ef27ca-eb8c-4b63-823b-3b95140eac11",
     "expiry": 1633017751,
     "qrCode": "data:image/png;base64,iVBORw0KGgoA<SNIP>"
 }
