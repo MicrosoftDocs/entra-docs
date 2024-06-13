@@ -26,6 +26,9 @@ This tutorial describes the steps you need to perform in both N-able User Provis
 > * Remove users in N-able User Provisioning when they do not require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and N-able User Provisioning.
 
+> [!NOTE]
+> To use the OAuth2 flow, users should use the https://portal.azure.com/?feature.userProvisioningV2Authentication=true url to access the Azure portal.
+
 ## Prerequisites
 
 The scenario outlined in this tutorial assumes that you already have the following prerequisites:
