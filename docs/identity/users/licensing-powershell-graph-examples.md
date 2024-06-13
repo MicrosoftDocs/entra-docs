@@ -321,8 +321,8 @@ $groupLicenses = $group.SkuId
                         foreach ($u in $user) {
                             $userLicenses = $u.SkuId
                             $licensesToRemove += $userLicenses | Where-Object { $_ -in $groupLicenses }
-                        }
-                    } else {
+                    }
+                    else {
                         Write-Host "No conflicting licenses found for the user $($member.AdditionalProperties.displayName)" -ForegroundColor Green
                     }
                     
