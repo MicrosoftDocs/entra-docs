@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 03/21/2024
+ms.date: 06/13/2024
 ms.author: sarahlipsey
 ms.reviewer: poulomib
 
@@ -25,17 +25,17 @@ Adaptive protection dynamically assigns appropriate Data Loss Prevention (DLP) p
 
 These risk signals, when integrated with Conditional Access policies, allow Administrators to take appropriate actions for each risk level. Configuring Conditional Access policies with insider risk allows organizations to respond effectively to changing threat landscapes.  
 
-## Value 
+## Value
 
 Implementing a Conditional Access policy that blocks access to resources for high-risk internal users is of high priority due to its critical role in proactively enhancing security, mitigating insider threats, and safeguarding sensitive data in real-time.
 
 ## Action plan
 
-1. Enable [**Adaptive Protection**](https://go.microsoft.com/fwlink/?linkid=2261736) in Microsoft Purview.
+1. Enable [Adaptive Protection](https://compliance.microsoft.com/insiderriskmgmt?viewid=dynamicriskprevention&innerviewid=summary) in Microsoft Purview.
 	- You must be a member of the Insider Risk Management or Insider Risk Management Admins role group in Microsoft Purview to configure Adaptive Protection.
 	- For information, see [Roles and role groups for Microsoft Purview](/microsoft-365/security/office-365-security/scc-permissions)
 
-1. Create a [Conditional Access policy](https://go.microsoft.com/fwlink/?linkid=2261903) that includes the Insider Risk condition.
+1. Create a [Conditional Access policy](https://entra.microsoft.com/#view/Microsoft_AAD_ConditionalAccess/CaTemplates.ReactView/templateIds~/%5B%2216aaa400-bfdf-4756-a420-ad2245d4cde8%22%5D) that includes the Insider Risk condition.
 	- You must be signed in as a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator) to view this template.
 	- For more information, see [Conditional Access conditions: Insider Risk (preview)](../../identity/conditional-access/concept-conditional-access-conditions.md#insider-risk-preview).
 
