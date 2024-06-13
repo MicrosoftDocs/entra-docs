@@ -14,7 +14,6 @@ ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Amazon Business so that I can streamline the user management process and ensure that users have the appropriate access to Amazon Business.
 
-# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Amazon Business so that I can streamline the user management process and ensure that users have the appropriate access to Amazon Business.
 ---
 
 # Tutorial: Configure Amazon Business for automatic user provisioning
