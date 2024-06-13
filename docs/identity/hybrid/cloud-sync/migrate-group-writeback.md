@@ -82,7 +82,7 @@ The following PowerShell script can be used to help automate this step.  This sc
 
    ```powershell
       $groups = Get-ADGroup -Filter * -SearchBase "OU=Groups,DC=Contoso,DC=com" -Properties * | Where-Object {$_.adminDescription -ne $null} |
-         Select-Object Samaccountname, adminDescription
+         Select-Object Samaccountname, adminDescription, msDS-ExternalDirectoryObjectID
 
       foreach ($group in $groups) 
        {
