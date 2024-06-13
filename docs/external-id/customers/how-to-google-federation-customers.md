@@ -57,8 +57,8 @@ To enable sign-in for customers with a Google account, you need to create an app
     - `https://login.microsoftonline.com/te/<tenant-subdomain>.onmicrosoft.com/oauth2/authresp`
     - `https://<tenant-ID>.ciamlogin.com/<tenant-ID>/federation/oidc/accounts.google.com`
     - `https://<tenant-ID>.ciamlogin.com/<tenant-subdomain>.onmicrosoft.com/federation/oidc/accounts.google.com`
-    - `https://<tenant-ID>.ciamlogin.com/<tenant-ID>/federation/oauth2`
-    - `https://<tenant-ID>.ciamlogin.com/<tenant-subdomain>.onmicrosoft.com/federation/oauth2`
+    - `https://<tenant-subdomain>.ciamlogin.com/<tenant-ID>/federation/oauth2`
+    - `https://<tenant-subdomain>.ciamlogin.com/<tenant-subdomain>.onmicrosoft.com/federation/oauth2`
 
 1. Select **Create**.
 1. Record the values of **Client ID** and **Client secret**. You need both values to configure Google as an identity provider in your tenant.
