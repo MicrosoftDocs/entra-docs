@@ -18,7 +18,7 @@ ms.reviewer: gasinh
 
 In this article, you learn how to configure an application for SAML-based single sign-on (SSO) with Microsoft Entra ID. This article covers mapping users to specific application roles based on rules, and limitations to keep in mind when mapping attributes. It also covers SAML signing certificates, SAML token encryption, SAML request signature verification, and custom claims providers.
 
-Apps that use SAML 2.0 for authentication can be configured for [SAML-based single sign-on](what-is-single-sign-on.md) (SSO). With SAML-based SSO, you can map users to specific application roles based on rules that you define in your SAML claims.
+Apps that use SAML 2.0 for authentication can be configured for [SAML-based single sign-on (SSO)](what-is-single-sign-on.md). With SAML-based SSO, you can map users to specific application roles based on rules that you define in your SAML claims.
 
 To configure a SaaS application for SAML-based SSO, see [Quickstart: Set up SAML-based single sign-on](add-application-portal-setup-sso.md).
 

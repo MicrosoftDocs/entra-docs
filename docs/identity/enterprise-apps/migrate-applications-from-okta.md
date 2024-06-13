@@ -105,7 +105,7 @@ To migrate a SAML 2.0 application to Microsoft Entra ID, configure the applicati
 
     ![Screenshot of applications in the Microsoft Entra Gallery.](media/migrate-applications-from-okta/salesforce-application.png)
 
-4. After the application is created, on the **Single sign-on** (SSO) tab, select **SAML**.
+4. After the application is created, on the **Single sign-on (SSO)** tab, select **SAML**.
 
     ![Screenshot of the SAML option on Single sign-on.](media/migrate-applications-from-okta/saml-application.png)
 
