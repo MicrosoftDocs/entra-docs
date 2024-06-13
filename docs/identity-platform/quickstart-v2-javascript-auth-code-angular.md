@@ -95,7 +95,7 @@ ms.topic: quickstart
 > 
 > ## Next steps
 > 
-> For a detailed step-by-step guide on building the auth code flow application using React, see the following  tutorial:
+> For a detailed step-by-step guide on building the auth code flow application using React,see the following tutorial:
 > 
 > > [!div class="nextstepaction"]
 > > [Tutorial: React single-page app (SPA) sign in users](./tutorial-single-page-app-react-register-app.md)
