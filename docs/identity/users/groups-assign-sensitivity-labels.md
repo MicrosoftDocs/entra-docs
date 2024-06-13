@@ -82,7 +82,7 @@ You also need to synchronize your sensitivity labels to Microsoft Entra ID. For 
 
 ## Assign a label to a new group in the Microsoft Entra admin center
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
 1. Select **Microsoft Entra ID**.
 1. Select **Groups** > **All groups** > **New group**.
 1. On the **New Group** page, select **Microsoft 365**. Then fill out the required information for the new group and select a sensitivity label from the list.
@@ -95,7 +95,7 @@ Your group is created and the site and group settings associated with the select
 
 ## Assign a label to an existing group in the Microsoft Entra admin center
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
 1. Select **Microsoft Entra ID**.
 1. Select **Groups**.
 1. From the **All groups** page, select the group that you want to label.
@@ -107,7 +107,7 @@ Your group is created and the site and group settings associated with the select
 
 ## Remove a label from an existing group in the Microsoft Entra admin center
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
 1. Select **Microsoft Entra ID**.
 1. Select **Groups** > **All groups**.
 1. On the **All groups** page, select the group that you want to remove the label from.
@@ -121,7 +121,7 @@ Your group is created and the site and group settings associated with the select
 
 After you enable this feature, the "classic" classifications for groups appear only on existing groups and sites. You should use them for new groups only if you create groups in apps that don't support sensitivity labels. Your admin can convert them to sensitivity labels later, if needed. Classic classifications are the old classifications you set up by defining values for the `ClassificationList` setting in Azure AD PowerShell. When this feature is enabled, those classifications aren't applied to groups.
 
-[!INCLUDE [Azure AD PowerShell migration](../../includes/aad-powershell-migration-include.md)]
+[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
 
 ## Troubleshooting issues
 
@@ -138,7 +138,7 @@ The sensitivity label option appears for groups only when all the following cond
 1. The [sensitivity label scope](/purview/sensitivity-labels?preserve-view=true&view=o365-worldwide#label-scopes) must be configured for Groups & Sites.
 1. The group is a Microsoft 365 group.
 1. The current signed-in user:
-    1. Has sufficient privileges to assign sensitivity labels. The user must be a Global Administrator, Group Administrator, or the group owner.
+    1. Has sufficient privileges to assign sensitivity labels. The user must be the group owner or at least a Groups Administrator.
     1. Must be within the scope of the [sensitivity label publishing policy](/purview/sensitivity-labels?preserve-view=true&view=o365-worldwide#what-label-policies-can-do).
 
 Make sure all the preceding conditions are met to assign labels to a group.
@@ -154,7 +154,7 @@ If the label you're looking for isn't in the list:
 
 Labels can be swapped at any time by using the same steps as assigning a label to an existing group:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
 1. Select **Microsoft Entra ID**.
 1. Select **Groups** > **All groups**, and then select the group that you want to label.
 1. On the selected group's page, select **Properties** and select a new sensitivity label from the list.

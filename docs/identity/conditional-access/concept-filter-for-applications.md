@@ -23,7 +23,7 @@ In this document, you create a custom attribute set, assign a custom security at
 
 ## Assign roles
 
-Custom security attributes are security sensitive and can only be managed by delegated users. Even [Global Administrators](../role-based-access-control/permissions-reference.md#global-administrator) don't have default permissions for custom security attributes. One or more of the following roles should be assigned to the users who manage or report on these attributes.
+Custom security attributes are security sensitive and can only be managed by delegated users. One or more of the following roles should be assigned to the users who manage or report on these attributes.
 
 | Role name | Description |
 | --- | --- |
@@ -33,6 +33,8 @@ Custom security attributes are security sensitive and can only be managed by del
 | [Attribute Definition Reader](../role-based-access-control/permissions-reference.md#attribute-definition-reader) | Read the definition of custom security attributes. |
 
 Assign the appropriate role to the users who manage or report on these attributes at the directory scope. For detailed steps, see [Assign a role](../role-based-access-control/manage-roles-portal.yml#assign-a-role).
+
+[!INCLUDE [security-attributes-roles](../../includes/security-attributes-roles.md)]
 
 ## Create custom security attributes
 
@@ -50,7 +52,7 @@ Follow the instructions in the article, [Add or deactivate custom security attri
 :::image type="content" source="media/concept-filter-for-applications/custom-attributes.png" alt-text="A screenshot showing custom security attribute and predefined values in Microsoft Entra ID." lightbox="media/concept-filter-for-applications/custom-attributes.png":::
 
 > [!NOTE]
-> Conditional Access filters for devices only works with custom security attributes of type "string". Custom Security Attributes support creation of Boolean data type but Conditional Access Policy only supports "string".
+> Conditional Access filters for applications only works with custom security attributes of type "string". Custom Security Attributes support creation of Boolean data type but Conditional Access Policy only supports "string".
 
 ## Create a Conditional Access policy
 
@@ -91,7 +93,7 @@ Set up a sample application that, demonstrates how a job or a Windows service ca
 
 When you don't have a service principal listed in your tenant, it can't be targeted. The Office 365 suite is an example of one such service principal.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) and [Attribute Assignment Administrator](../role-based-access-control/permissions-reference.md#attribute-assignment-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator)~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) and [Attribute Assignment Administrator](../role-based-access-control/permissions-reference.md#attribute-assignment-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 1. Select the service principal you want to apply a custom security attribute to.
 1. Under **Manage** > **Custom security attributes**, select **Add assignment**.

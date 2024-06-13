@@ -95,12 +95,12 @@ To create two groups, follow these steps.
    ```powershell
    New-MgApplication -DisplayName "CloudSyncCustomExtensionsApp" -IdentifierUris "api://<tenant ID>/CloudSyncCustomExtensionsApp"
    ```
- 8. If the app exists, check to see if it has a security principal. Replace &lt;application id&gt; with your appId. If you just created the app
+ 8. If the app exists, check to see if it has a security principal. Replace &lt;application id&gt; with your appId.
    
    ```powershell
    Get-MgServicePrincipal -Filter "AppId eq '<application id>'"
    ```
-9. If you just created the app, create a new security principal. Replace &lt;application id&gt; with your appId. If you just created the app
+9. If you just created the app, create a new security principal. Replace &lt;application id&gt; with your appId.
   
    ```powershell
    New-MgServicePrincipal -AppId '<appId>'

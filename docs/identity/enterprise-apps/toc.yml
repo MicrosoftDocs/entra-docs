@@ -117,6 +117,8 @@ items:
     items:
     - name: Integrate SaaS applications
       href: ~/identity/saas-apps/tutorial-list.md
+    - name: Configure app management policies
+      href: configure-app-management-policy.md
     - name: Assign owners
       href: assign-app-owners.md
     - name: Configure properties
@@ -311,8 +313,6 @@ items:
       href: methods-for-removing-user-access.md
   - name: Resources
     items:
-        - name: Video learning
-          href: app-management-videos.md
         - name: Migration resources
           href: migration-resources.md
         - name: Support and help options for developers

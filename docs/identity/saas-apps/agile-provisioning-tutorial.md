@@ -9,8 +9,8 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: jeedes
+ms.date: 03/25/2024
+ms.author: thomasakelo
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Agile Provisioning so that I can control who has access to Agile Provisioning, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.

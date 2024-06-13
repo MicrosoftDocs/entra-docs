@@ -40,9 +40,7 @@ In this tutorial;
 
 [!INCLUDE [active-directory-b2c-wpf-app-platform](./includes/register-app/add-platform-redirect-url-wpf.md)]
 
-## Grant API permissions
-
-Since this app signs in users, add delegated permissions:
+## Grant admin consent
 
 [!INCLUDE [active-directory-b2c-grant-delegated-permissions](./includes/register-app/grant-api-permission-sign-in.md)]
 

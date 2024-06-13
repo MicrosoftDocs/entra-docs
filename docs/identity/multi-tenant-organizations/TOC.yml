@@ -13,6 +13,7 @@
   expanded: true
   items:
   - name: Multitenant organizations
+    expanded: true
     items:
     - name: Identity provisioning for Microsoft 365
       href: multi-tenant-organization-microsoft-365.md
@@ -21,11 +22,14 @@
     - name: Limitations
       href: multi-tenant-organization-known-issues.md
   - name: Cross-tenant synchronization
+    expanded: true
     items:
     - name: Topologies for cross-tenant synchronization
       href: cross-tenant-synchronization-topology.md
     - name: Governance and cross-tenant synchronization
       href: cross-tenant-synchronization-governance.md
+    - name: Secure and govern security operations center access in a multitenant organization
+      href: defender-xdr-microsoft-entra-mto.md
     - name: Known issues
       href: ../app-provisioning/known-issues.md?toc=/entra/identity/multi-tenant-organizations/toc.json&bc=/entra/identity/multi-tenant-organizations/breadcrumb/toc.json?pivots=cross-tenant-synchronization
 - name: How-to guides

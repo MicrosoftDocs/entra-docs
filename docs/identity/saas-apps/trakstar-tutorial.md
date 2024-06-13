@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Trakstar so that I can control who has access to Trakstar, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -83,7 +83,7 @@ Follow these steps to enable Microsoft Entra SSO.
 	| Field name | Value | Note | 
 	| ---------------------- | ----- | ---- |
 	| **Reply URL (Assertion Consumer Service URL)** | `https://perform.trakstar.com/auth/saml/callback?namespace=<YOUR_NAMESPACE>` | Replace `<YOUR_NAMESPACE>` with a real value, which is visible in the **ACS (Consumer) URL** field in Trakstar Perform. See the note that appears after this table. |
-	| **Sign on URL** | `https://perform.trakstar.com/auth/saml/?namespace=<YOUR_NAMESPACE>` | This URL is _similar_ to the preceding URL, but it doesn't have the `/callback` portion. |
+	| **Sign on URL** | `https://perform.trakstar.com/auth/saml/?namespace=<YOUR_NAMESPACE>` | This URL is *similar* to the preceding URL, but it doesn't have the `/callback` portion. |
 	| **Identifier (Entity ID)** | `https://perform.trakstar.com` | |
 	
 	> [!NOTE]

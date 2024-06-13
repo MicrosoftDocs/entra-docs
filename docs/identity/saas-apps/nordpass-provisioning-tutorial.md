@@ -3,8 +3,7 @@ title: 'Tutorial: Configure NordPass for automatic user provisioning with Micros
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to NordPass.
 
 documentationcenter: ''
-author: twimmers
-writer: Thwimmer
+author: thomasakelo
 manager: jeedes
 
 ms.assetid: ad92f598-f6f6-4ee4-8de4-a488d4e07126
@@ -13,8 +12,8 @@ ms.subservice: saas-apps
 
 
 ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: Thwimmer
+ms.date: 03/25/2024
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to NordPass so that I can streamline the user management process and ensure that users have the appropriate access to NordPass.
 ---

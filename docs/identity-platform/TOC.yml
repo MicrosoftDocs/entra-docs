@@ -249,7 +249,7 @@
               href: scenario-web-app-call-api-acquire-token.md
             - name: Call a web API
               href: scenario-web-app-call-api-call-api.md
-        - name: Deploy and setup App Service auth in a pipeline
+        - name: Deploy and set-up App Service auth in a pipeline
           href: deploy-web-app-authentication-pipeline.md
 - name: Web API
   items:
@@ -278,6 +278,8 @@
       items:
         - name: Call a Web API with cURL
           href: howto-call-a-web-api-with-curl.md
+        - name: Call a web API with Insomnia
+          href: howto-call-a-web-api-with-rest-client.md
         - name: Protected web API
           items:
             - name: App registration
@@ -508,7 +510,7 @@
           items:
             - name: Token issuance start event
               items:
-                - name: Create a token issuance start event in a REST API
+                - name: Create REST API for token issuance event
                   href: custom-extension-tokenissuancestart-setup.md
                 - name: Configure a custom claims provider token issuance event
                   href: custom-extension-tokenissuancestart-configuration.md
@@ -520,10 +522,6 @@
           items:
             - name: Create attribute collection start and submit events
               href: custom-extension-attribute-collection.md
-            - name: OnAttributeCollectionStart event reference
-              href: custom-extension-OnAttributeCollectionStart-reference.md
-            - name: OnAttributeCollectionSubmit event reference
-              href: custom-extension-OnAttributeCollectionSubmit-reference.md
         - name: Handle browser cookie restrictions
           items:
             - name: How to handle third-party cookie blocking in browsers
@@ -686,7 +684,7 @@
               items:
                 - name: Init MSAL.js 2.x and 1.x clients
                   href: msal-js-initializing-client-applications.md
-                - name: Running and debugging in IE
+                - name: Running and debugging in Internet Explorer
                   href: msal-js-use-ie-browser.md
                 - name: Integrate with Azure AD B2C
                   href: msal-b2c-overview.md
@@ -783,36 +781,42 @@
         - name: Application manifest
           displayName: app manifest
           href: reference-app-manifest.md
-        - name: Redirect URI/reply URL restrictions and limitations
+        - name: Redirect URI (reply URL) best practices and limitations
           href: reply-url.md
         - name: Validation differences by supported account types
           href: supported-accounts-validation.md
-    - name: Spring Cloud Azure
-      href: /azure/developer/java/spring-framework/developer-guide-overview?toc=/entra/identity-platform/toc.json&bc=/entra/identity-platform/breadcrumb/toc.json   
-    - name: Configured permissions limits troubleshooting
-      href: troubleshoot-required-resource-access-limits.md
+    - name: Custom authentication extensions reference
+      items:
+        - name: Custom claims provider reference
+          href: custom-claims-provider-reference.md
+        - name: Attribute collection start custom extension reference
+          href: custom-extension-OnAttributeCollectionStart-reference.md
+        - name: Attribute collection submit custom extension reference
+          href: custom-extension-OnAttributeCollectionSubmit-reference.md
+    - name: Endpoint reference
+      items: 
+        - name: Admin consent URI
+          href: v2-admin-consent.md
+        - name: National and public cloud URIs
+          displayName: china, germany, gov, 21vianet
+          href: authentication-national-cloud.md
+    - name: API reference
+      items:
+        - name: Microsoft Graph API reference (identity operations)
+          href: /graph/api/resources/azure-ad-overview
+        - name: MSA Server side API reference 
+          href: reference-msa-server-side-api.md
+        - name: Microsoft Entra ID WAM API reference
+          href: reference-entra-id-wam-api.md
     - name: Microsoft auth libraries by app type
       displayName: MSAL, auth client library, SDK, token validation
       href: reference-v2-libraries.md
     - name: AADSTS error code reference
       href: reference-error-codes.md
-    - name: "Endpoint reference: Admin consent URI"
-      href: v2-admin-consent.md
-    - name: "Endpoint reference: National and public cloud URIs"
-      displayName: china, germany, gov, 21vianet
-      href: authentication-national-cloud.md
-    - name: Microsoft Graph API reference (identity operations)
-      href: /graph/api/resources/azure-ad-overview
-    - name: Custom claims provider reference
-      href: custom-claims-provider-reference.md
-    - name: MSA Server side API reference 
-      href: reference-msa-server-side-api.md
-    - name: Microsoft Entra ID WAM API reference
-      href: reference-entra-id-wam-api.md
-    - name: Attribute collection start custom extension reference
-      href: custom-extension-OnAttributeCollectionStart-reference.md
-    - name: Attribute collection submit custom extension reference
-      href: custom-extension-OnAttributeCollectionSubmit-reference.md
+    - name: Spring Cloud Azure
+      href: /azure/developer/java/spring-framework/developer-guide-overview?toc=/entra/identity-platform/toc.json&bc=/entra/identity-platform/breadcrumb/toc.json   
+    - name: Configured permissions limits troubleshooting
+      href: troubleshoot-required-resource-access-limits.md
 - name: Resources
   items:
     - name: Help and support options

@@ -35,7 +35,7 @@ introduction: |
 
   - **Internal member**: These users are most likely full-time employees in your organization.
   - **Internal guest**: These users have an account in your tenant, but have guest-level privileges. It's possible they were created within your tenant prior to the availability of B2B collaboration.
-  - **External member**: These users authenticate using an external account, but have member access to your tenant. These types of users are common in [multitenant organizations](~/identity/multi-tenant-organizations/overview.md#what-is-a-multi-tenant-organization).
+  - **External member**: These users authenticate using an external account, but have member access to your tenant. These types of users are common in [multitenant organizations](../identity/multi-tenant-organizations/overview.md#what-is-the-multitenant-organization-scenario).
   - **External guest**: These users are true guests of your tenant who authenticate using an external method and who have guest-level privileges.
 
   For more information abut the differences between internal and external guests and members, see [B2B collaboration properties](~/external-id/user-properties.md).
@@ -56,7 +56,7 @@ introduction: |
 
 prerequisites:
   summary: |
-    The required role of least privilege varies based on the type of user you're adding and if you need to assign Microsoft Entra roles at the same time. **Global Administrator** can create users and assign roles, but whenever possible you should use the least privileged role.
+    The required role of least privilege varies based on the type of user you're adding and if you need to assign Microsoft Entra roles at the same time. Whenever possible you should use the least privileged role.
 
     | Task | Role |
     | -- | -- |
@@ -227,9 +227,9 @@ procedureSection:
       You can delete an existing user using the [Microsoft Entra admin center](https://entra.microsoft.com/).
     steps: 
       - |
-        You must have a Global Administrator, Privileged Authentication Administrator, or User Administrator role assignment to delete users in your organization.
+        You must have at least the User Administrator role assignment to delete users in your organization.
       - |  
-        Global Administrators and Privileged Authentication Administrators can delete any users including other administrators.
+        Those with the Privileged Authentication Administrator role can delete any users including other administrators.
       - |  
         User Administrators can delete any non-admin users, Helpdesk Administrators, and other User Administrators.
       - |  

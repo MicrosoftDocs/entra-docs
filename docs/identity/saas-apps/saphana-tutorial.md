@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with SAP HANA'
+title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with SAP HANA'
 description: Learn how to configure single sign-on between Microsoft Entra ID and SAP HANA.
 
 author: jeevansd
@@ -9,12 +9,12 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SAP HANA so that I can control who has access to SAP HANA, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with SAP HANA
+# Tutorial: Microsoft Entra single sign-on (SSO) integration with SAP HANA
 
 In this tutorial, you'll learn how to integrate SAP HANA with Microsoft Entra ID. When you integrate SAP HANA with Microsoft Entra ID, you can:
 
@@ -72,7 +72,7 @@ To configure and test Microsoft Entra SSO with SAP HANA, perform the following s
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
 	1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with Britta Simon.
 	1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable Britta Simon to use Microsoft Entra single sign-on.
-2. **[Configure SAP HANA SSO](#configure-sap-hana-sso)** - to configure the Single Sign-On settings on application side.
+2. **[Configure SAP HANA SSO](#configure-sap-hana-sso)** - to configure the single sign-on settings on application side.
 	1. **[Create SAP HANA test user](#create-sap-hana-test-user)** - to have a counterpart of Britta Simon in SAP HANA that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
@@ -203,7 +203,7 @@ If you need to create a user manually, take the following steps:
 4. Add the **External Identity** (in this case, BrittaSimon). Then select **OK**.
 
    > [!Note]
-   > You have to populate the **External Identity** field for the user and that has to match the **NameID** field in the SAML token from Microsoft Entra ID. **Any** checkbox should not be checked as this option requires the IDP to send SPProvderID property in the NameID Field which is right now not supported by Microsoft Entra ID. Plese refer [this](https://help.sap.com/viewer/b3ee5778bc2e4a089d3299b82ec762a7/2.0.05/en-US/db6db355bb571014b56eb25057daec5f.html) document for more details.
+   > You must populate the **External Identity** field for the user, and that value needs to match the **NameID** field in the SAML token from Microsoft Entra ID. The **Any** checkbox should not be checked, as this option requires the IDP to send a **SPProviderID** property in the NameID Field, which is currently not supported by Microsoft Entra ID. For more information, see [Single Sign-On Using SAML 2.0](https://help.sap.com/viewer/b3ee5778bc2e4a089d3299b82ec762a7/2.0.05/en-US/db6db355bb571014b56eb25057daec5f.html).
 
 5. For testing purposes, assign all **XS** roles to the user.
 
@@ -225,4 +225,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 ## Next steps
 
-Once you configure SAP HANA you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).
+Provisioning from SAP Cloud Identity Services to SAP HANA is a beta feature available on SAP Business Technology Platform. For more information, see how to configure provisioning of users [from Microsoft Entra ID to SAP Cloud Identity Services](sap-cloud-platform-identity-authentication-provisioning-tutorial.md), and how to configure provisioning of users [from SAP Cloud Identity Services to SAP HANA Database (Beta)](https://help.sap.com/docs/cloud-identity-services/cloud-identity-services/sap-hana-database-beta).
+
+Once you configure SAP HANA for SSO, you can enforce session control, which prevents exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

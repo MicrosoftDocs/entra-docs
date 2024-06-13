@@ -62,7 +62,7 @@ For the scenario you need:
 
 * An Azure subscription
   * If you don't have one, get an [Azure free account](https://azure.microsoft.com/free/)
-* One of the following roles: Global Administrator, Cloud Application Administrator, or Application Administrator
+* One of the following roles: Cloud Application Administrator, or Application Administrator
 * A BIG-IP or deploy a BIG-IP Virtual Edition (VE) in Azure
   * See, [Deploy F5 BIG-IP Virtual Edition Virtual Machine in Azure](./f5-bigip-deployment-guide.md)
 * Any of the following F5 BIG-IP licenses:
@@ -121,7 +121,7 @@ Learn more: [What is Conditional Access?](~/identity/conditional-access/overview
 
 9. For **Logout URI** enter the BIG-IP APM Single Logout (SLO) endpoint, prepended by the service host header. The SLO URI ensures user BIG-IP APM sessions end after Microsoft Entra sign-out. For example, `https://mytravel.contoso.com/saml/sp/profile/redirect/slr`
 
-   ![Screenshot of Basic SAML Configuration input for Identifier, Reply URL, Sign on URL, etc.](./media/f5-big-ip-header-advanced/basic-saml-configuration.png)
+   ![Screenshot of Basic SAML Configuration input for Identifier, Reply URL, Sign on URL, and so on.](./media/f5-big-ip-header-advanced/basic-saml-configuration.png)
 
    >[!Note]
    >From Traffic Management operating system (TMOS) v16 onward, the SAML SLO endpoint changed to `/saml/sp/profile/redirect/slo`.
@@ -145,7 +145,7 @@ Learn more: [What is Conditional Access?](~/identity/conditional-access/overview
 20. Close the view.
 21. Observe the **User Attributes & Claims** section properties. Microsoft Entra ID issues users properties for BIG-IP APM authentication and SSO to the back-end application.
 
-   ![Screenshot of User Attributes and Claims information such as surname, email address, identity, etc.](./media/f5-big-ip-header-advanced/user-attributes-claims.png)
+   ![Screenshot of User Attributes and Claims information such as surname, email address, identity, and so on.](./media/f5-big-ip-header-advanced/user-attributes-claims.png)
 
    > [!NOTE]
    > Add other claims the BIG-IP published application expects as headers. More defined claims are issued if they're in Microsoft Entra ID. Define directory memberships and user objects in Microsoft Entra ID before claims can be issued. See, [Configure group claims for applications by using Microsoft Entra ID](~/identity/hybrid/connect/how-to-connect-fed-group-claims.md).

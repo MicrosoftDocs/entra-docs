@@ -70,8 +70,7 @@ In the example below, “Virtual Machine 4” has both a user-assigned identity,
 
 ## Limits 
 
-View the limits for [managed identities](/azure/azure-resource-manager/management/azure-subscription-service-limits#managed-identity-limits)
-and for [custom roles and role assignments](/azure/azure-resource-manager/management/azure-subscription-service-limits#azure-rbac-limits).
+View the limits for [managed identities](/azure/azure-resource-manager/management/azure-subscription-service-limits#managed-identity-limits) and for [custom roles and role assignments](/azure/azure-resource-manager/management/azure-subscription-service-limits#azure-rbac-limits).
 
 ## Follow the principle of least privilege when granting access
 
@@ -79,7 +78,7 @@ When granting any identity, including a managed identity, permissions to access 
 
 ### Consider the effect of assigning managed identities to Azure resources and/or granting assign permissions to a user
 
-It is important to note that when an Azure resource, such as an Azure Logic App, an Azure function, or a Virtual Machine, etc. is assigned a managed identity, all the permissions granted to the managed identity are now available to the Azure resource. This is important because if a user has access to install or execute code on this resource, then the user has access to all the identities assigned/associated to the Azure resource. The purpose of managed identity is to give code running on an Azure resource access to other resources, without developers needing to handle or put credentials directly into code to get that access.
+It is important to note that when an Azure resource, such as an Azure Logic App, an Azure function, or a Virtual Machine, and so on. is assigned a managed identity, all the permissions granted to the managed identity are now available to the Azure resource. This is important because if a user has access to install or execute code on this resource, then the user has access to all the identities assigned/associated to the Azure resource. The purpose of managed identity is to give code running on an Azure resource access to other resources, without developers needing to handle or put credentials directly into code to get that access.
 
 For example, if a managed Identity (ClientId = 1234) has been granted read/write access to ***StorageAccount7755*** and has been assigned to ***LogicApp3388***, then Alice, who does not have direct access to the storage account but has permission to execute code within ***LogicApp3388*** can also read/write data to/from ***StorageAccount7755*** by executing the code that uses the managed identity.
 
@@ -97,8 +96,7 @@ You'll need to manually delete a user-assigned identity when it's no longer requ
 
 Role assignments aren't automatically deleted when either system-assigned or user-assigned managed identities are deleted. These role assignments should be manually deleted so the limit of role assignments per subscription isn't exceeded. 
 
-Role assignments that are associated with deleted managed identities
-will be displayed with “Identity not found” when viewed in the portal. [Read more](/azure/role-based-access-control/troubleshooting#symptom---role-assignments-with-identity-not-found).
+Role assignments that are associated with deleted managed identities will be displayed with “Identity not found” when viewed in the portal. [Read more](/azure/role-based-access-control/troubleshooting#symptom---role-assignments-with-identity-not-found).
 
 :::image type="content" source="media/managed-identity-best-practice-recommendations/identity-not-found.png" alt-text="Identity not found for role assignment.":::
 
@@ -110,7 +108,7 @@ Get-AzRoleAssignment | Where-Object {$_.ObjectType -eq "Unknown"} | Remove-AzRol
 
 ## Limitation of using managed identities for authorization
 
-Using Microsoft Entra ID **groups** for granting access to services is a great way to simplify the authorization process. The idea is simple – grant permissions to a group and add identities to the group so that they inherit the same permissions. This is a well-established pattern from various on-premises systems and works well when the identities represent users. Another option to control authorization in Microsoft Entra ID is by using [App Roles](~/identity-platform/howto-add-app-roles-in-apps.md), which allows you to declare **roles** that are specific to an app (rather than groups, which are a global concept in the directory). You can then [assign app roles to managed identities](how-to-assign-app-role-managed-identity-powershell.md) (as well as users or groups).
+Using Microsoft Entra ID **groups** for granting access to services is a great way to simplify the authorization process. The idea is simple – grant permissions to a group and add identities to the group so that they inherit the same permissions. This is a well-established pattern from various on-premises systems and works well when the identities represent users. Another option to control authorization in Microsoft Entra ID is by using [App Roles](~/identity-platform/howto-add-app-roles-in-apps.md), which allows you to declare **roles** that are specific to an app (rather than groups, which are a global concept in the directory). You can then [assign app roles to managed identities](how-to-assign-app-role-managed-identity.md) (as well as users or groups).
 
 In both cases, for non-human identities such as Microsoft Entra Applications and Managed identities, the exact mechanism of how this authorization information is presented to the application is not ideally suited today. Today's implementation with Microsoft Entra ID and Azure Role Based Access Control (Azure RBAC) uses access tokens issued by Microsoft Entra ID for authentication of each identity. If the identity is added to a group or role, this is expressed as claims in the access token issued by Microsoft Entra ID. Azure RBAC uses these claims to further evaluate the authorization rules for allowing or denying access.
 

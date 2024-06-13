@@ -1,28 +1,27 @@
 ---
-title: Secure your organization's identities with Microsoft Entra ID
-description: Improve your security posture and empower users with Microsoft Entra ID.
+title: Secure your organization's identities
+description: Improve your security posture and empower users with Microsoft Entra ID with the principles of Zero Trust architecture.
 
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: conceptual
-ms.date: 03/28/2023
+ms.date: 05/31/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
-ms.reviewer: lhuangnorth, martinco
 
-ms.collection: M365-identity-device-management
+ms.reviewer: lhuangnorth, martinco
 ms.custom: zt-include
 ---
 
 # Secure your organization's identities with Microsoft Entra ID
 
-It can seem daunting trying to secure your workers in today's world, especially when you have to respond rapidly and provide access to many services quickly. This article is meant to provide a concise list of all the actions to take, helping you identify and prioritize which order to deploy the Microsoft Entra features based on the license type you own.
+It can seem daunting trying to secure your workers in today's world, especially when you have to respond rapidly and provide access to many services quickly. This article helps provide a concise list of actions to take, helping you identify and prioritize features based on the license type you own.
 
 Microsoft Entra ID offers many features and provides many layers of security for your Identities, navigating which feature is relevant can sometimes be overwhelming. This document is intended to help organizations deploy services quickly, with secure identities as the primary consideration.
 
-Each table provides a consistent security recommendation, protecting identities from common security attacks while minimizing user friction.
+Each table provides security recommendations to protect identities from common security attacks while minimizing user friction.
 
 The guidance helps:
 
@@ -32,7 +31,9 @@ The guidance helps:
 
 ## Prerequisites
 
-This guide assumes that your cloud only or hybrid identities have been established in Microsoft Entra ID already. For help with choosing your identity type see the article, [Choose the right authentication (AuthN) method for your Microsoft Entra hybrid identity solution](~/identity/hybrid/connect/choose-ad-authn.md).
+This guide assumes that your cloud-only or hybrid identities are established in Microsoft Entra ID already. For help with choosing your identity type see the article, [Choose the right authentication (AuthN) method for your Microsoft Entra hybrid identity solution](~/identity/hybrid/connect/choose-ad-authn.md).
+
+[!INCLUDE [emergency-access-accounts](../includes/definitions/emergency-access-accounts.md)]
 
 ### Guided walkthrough
 
@@ -74,7 +75,6 @@ The following table is intended to highlight the key actions for the following l
 
 | Recommended action | Detail |
 | --- | --- |
-| [Create more than one Global Administrator](~/identity/role-based-access-control/security-emergency-access.md) | Assign at least two cloud-only permanent Global Administrator accounts for use in an emergency. These accounts aren't to be used daily and should have long and complex passwords. |
 | [Enable combined registration experience for Microsoft Entra multifactor authentication and SSPR to simplify user registration experience](~/identity/authentication/howto-registration-mfa-sspr-combined.md) | Allow your users to register from one common experience for both Microsoft Entra multifactor authentication and self-service password reset. |
 | [Configure multifactor authentication settings for your organization](~/identity/authentication/howto-mfa-getstarted.md) | Ensure accounts are protected from being compromised with multifactor authentication. |
 | [Enable self-service password reset](~/identity/authentication/tutorial-enable-sspr.md) | This ability reduces help desk calls and loss of productivity when a user can't sign in to their device or an application. |
@@ -108,7 +108,6 @@ The following table is intended to highlight the key actions for the following l
 
 | Recommended action | Detail |
 | --- | --- |
-| [Create more than one Global Administrator](~/identity/role-based-access-control/security-emergency-access.md) | Assign at least two cloud-only permanent Global Administrator accounts for use in an emergency. These accounts aren't to be used daily and should have long and complex passwords. |
 | [Enable combined registration experience for Microsoft Entra multifactor authentication and SSPR to simplify user registration experience](~/identity/authentication/howto-registration-mfa-sspr-combined.md) | Allow your users to register from one common experience for both Microsoft Entra multifactor authentication and self-service password reset. |
 | [Configure multifactor authentication settings for your organization](~/identity/authentication/howto-mfa-getstarted.md) | Ensure accounts are protected from being compromised with multifactor authentication. |
 | [Enable self-service password reset](~/identity/authentication/tutorial-enable-sspr.md) | This ability reduces help desk calls and loss of productivity when a user can't sign in to their device or an application. |
@@ -134,7 +133,7 @@ The following table is intended to highlight the key actions for the following l
 | [Enable Privileged Identity Management (PIM)](~/id-governance/privileged-identity-management/pim-configure.md) | Enables you to manage, control, and monitor access to important resources in your organization, ensuring admins have access only when needed and with approval. |
 | [Complete an access review for Microsoft Entra directory roles in PIM](~/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md) | Work with your security and leadership teams to create an access review policy to review administrative access based on your organization's policies. |
 
-[!INCLUDE [active-directory-zero-trust](~/includes/entra-zero-trust.md)]
+[!INCLUDE [active-directory-zero-trust](../includes/entra-zero-trust.md)]
 
 ## Next steps
 

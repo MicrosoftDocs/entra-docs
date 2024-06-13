@@ -3,8 +3,7 @@ title: 'Tutorial: Configure TAP App Security for automatic user provisioning wit
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to TAP App Security.
 
 documentationcenter: ''
-author: twimmers
-writer: Thwimmer
+author: thomasakelo
 manager: jeedes
 
 ms.assetid: affd297c-2b6f-4dc2-b4c3-d29458cf4b1b
@@ -13,8 +12,8 @@ ms.subservice: saas-apps
 
 
 ms.topic: article
-ms.date: 11/21/2022
-ms.author: Thwimmer
+ms.date: 03/25/2024
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Tap App Security so that I can streamline the user management process and ensure that users have the appropriate access to Tap App Security.
 ---

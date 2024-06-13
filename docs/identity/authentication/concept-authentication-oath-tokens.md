@@ -80,7 +80,7 @@ To determine the cause of the failure listed, make sure to click the checkbox ne
 
 :::image type="content" border="true" source="./media/concept-authentication-methods/download-status-example.png" alt-text="Screenshot of download status example.":::
 
-The downloaded file is named **Failures_filename.csv** where _filename_ is the name of the file uploaded. It's saved to your default downloads directory for your browser. 
+The downloaded file is named **Failures_filename.csv** where *filename* is the name of the file uploaded. It's saved to your default downloads directory for your browser. 
 
 This example shows the error identified as a user who doesn't currently exist in the tenant directory:  
 

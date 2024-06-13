@@ -47,7 +47,7 @@
       "uhfHeaderId": "MSDocsHeader-Entra",
       "breadcrumb_path": "/entra/breadcrumb/toc.json",
       "extendBreadcrumb": false,
-      "feedback_system": "GitHub",
+      "feedback_system": "Standard",
       "feedback_github_repo": "MicrosoftDocs/entra-docs",
       "feedback_product_url": "https://feedback.azure.com/d365community/forum/79b1327d-d925-ec11-b6e6-000d3a4f06a4",
       "searchScope": "Microsoft Entra"
@@ -60,14 +60,12 @@
         "identity-platform/*.md": "/entra/identity-platform/developer-support-help-options"
       },
       "learn_banner_products": {
-        "docs/**/*.md": [
-          "entra"
-        ]
+        "docs/**/*.md": "entra",
+        "docs/**/*.yml": "entra"
       },
       "featureFlags": {
-        "docs/**/*.md": [
-          "show_learn_banner"
-        ]
+        "docs/**/*.md": "show_learn_banner",
+        "docs/**/*.yml": "show_learn_banner"
       },
       "manager": {
         "architecture/*.md": "martincoetzer",

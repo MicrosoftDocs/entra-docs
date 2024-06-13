@@ -17,6 +17,8 @@ ms.collection: M365-identity-device-management
 
 # Billing model for Microsoft Entra External ID
 
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
+
 Microsoft Entra External ID pricing is based on monthly active users (MAU), which is the count of unique users with authentication activity within a calendar month. This billing model applies to both Microsoft Entra guest user collaboration (B2B) and [Azure AD B2C tenants](/azure/active-directory-b2c/billing). MAU billing helps you reduce costs by offering a free tier and flexible, predictable pricing. In this article, learn about MAU billing and linking your Microsoft Entra tenants to a subscription.
 
 > [!IMPORTANT]

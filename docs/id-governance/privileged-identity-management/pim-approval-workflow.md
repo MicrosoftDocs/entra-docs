@@ -49,19 +49,19 @@ GET https://graph.microsoft.com/v1.0/roleManagement/directory/roleAssignmentSche
     "value": [ 
         { 
             "@odata.type": "#microsoft.graph.unifiedRoleAssignmentScheduleRequest", 
-            "id": "9f2b5ddb-a50e-44a1-a6f4-f616322262ea", 
+            "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee", 
             "status": "PendingApproval", 
             "createdDateTime": "2021-07-15T19:57:17.76Z", 
             "completedDateTime": "2021-07-15T19:57:17.537Z", 
-            "approvalId": "9f2b5ddb-a50e-44a1-a6f4-f616322262ea", 
+            "approvalId": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee", 
             "customData": null, 
             "action": "SelfActivate", 
-            "principalId": "d96ea738-3b95-4ae7-9e19-78a083066d5b", 
+            "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222", 
             "roleDefinitionId": "88d8e3e3-8f55-4a1e-953a-9b9898b8876b", 
             "directoryScopeId": "/", 
             "appScopeId": null, 
             "isValidationOnly": false, 
-            "targetScheduleId": "9f2b5ddb-a50e-44a1-a6f4-f616322262ea", 
+            "targetScheduleId": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee", 
             "justification": "test", 
             "createdBy": { 
                 "application": null, 

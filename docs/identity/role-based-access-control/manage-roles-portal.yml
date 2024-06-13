@@ -24,7 +24,7 @@ introduction: |
 
 prerequisites:
   summary: |
-    - Privileged Role Administrator or Global Administrator. To know who your Privileged Role Administrator or Global Administrator is, see [List Microsoft Entra role assignments](view-assignments.md)
+    - Privileged Role Administrator. To know who your Privileged Role Administrator is, see [List Microsoft Entra role assignments](view-assignments.md)
     - Microsoft Entra ID P2 license when using Privileged Identity Management (PIM)
     - [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview) module when using PowerShell
     - Admin consent when using Graph explorer for Microsoft Graph API
@@ -155,7 +155,7 @@ procedureSection:
 
         ```powershell
         $params = @{
-          "PrincipalId" = "053a6a7e-4a75-48bc-8324-d70f50ec0d91"
+          "PrincipalId" = "aaaaaaaa-bbbb-cccc-1111-222222222222"
           "RoleDefinitionId" = "b0f54661-2d74-4c50-afa3-1ec803f12efe"
           "Justification" = "Add eligible assignment"
           "DirectoryScopeId" = "/"
@@ -182,7 +182,7 @@ procedureSection:
 
         ### Assign a role
 
-        In this example, a security principal with objectID `f8ca5a85-489a-49a0-b555-0a6d81e56f0d` is assigned the Billing Administrator role (role definition ID `b0f54661-2d74-4c50-afa3-1ec803f12efe`) at tenant scope. To see the list of immutable role template IDs of all built-in roles, see [Microsoft Entra built-in roles](permissions-reference.md).
+        In this example, a security principal with objectID `aaaaaaaa-bbbb-cccc-1111-222222222222` is assigned the Billing Administrator role (role definition ID `b0f54661-2d74-4c50-afa3-1ec803f12efe`) at tenant scope. To see the list of immutable role template IDs of all built-in roles, see [Microsoft Entra built-in roles](permissions-reference.md).
 
         ```http
         POST https://graph.microsoft.com/v1.0/roleManagement/directory/roleAssignments
@@ -191,7 +191,7 @@ procedureSection:
         { 
             "@odata.type": "#microsoft.graph.unifiedRoleAssignment",
             "roleDefinitionId": "b0f54661-2d74-4c50-afa3-1ec803f12efe",
-            "principalId": "f8ca5a85-489a-49a0-b555-0a6d81e56f0d",
+            "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
             "directoryScopeId": "/"
         }
         ```
@@ -200,7 +200,7 @@ procedureSection:
 
         #### Assign a time-bound eligible role assignment
 
-        In this example, a security principal with objectID `f8ca5a85-489a-49a0-b555-0a6d81e56f0d` is assigned a time-bound eligible role assignment to Billing Administrator (role definition ID `b0f54661-2d74-4c50-afa3-1ec803f12efe`) for 180 days.
+        In this example, a security principal with objectID `aaaaaaaa-bbbb-cccc-1111-222222222222` is assigned a time-bound eligible role assignment to Billing Administrator (role definition ID `b0f54661-2d74-4c50-afa3-1ec803f12efe`) for 180 days.
 
         ```http
         POST https://graph.microsoft.com/v1.0/rolemanagement/directory/roleEligibilityScheduleRequests
@@ -210,7 +210,7 @@ procedureSection:
             "action": "adminAssign",
             "justification": "for managing admin tasks",
             "directoryScopeId": "/",
-            "principalId": "f8ca5a85-489a-49a0-b555-0a6d81e56f0d",
+            "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
             "roleDefinitionId": "b0f54661-2d74-4c50-afa3-1ec803f12efe",
             "scheduleInfo": {
                 "startDateTime": "2021-07-15T19:15:08.941Z",
@@ -234,7 +234,7 @@ procedureSection:
             "action": "adminAssign",
             "justification": "for managing admin tasks",
             "directoryScopeId": "/",
-            "principalId": "f8ca5a85-489a-49a0-b555-0a6d81e56f0d",
+            "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
             "roleDefinitionId": "b0f54661-2d74-4c50-afa3-1ec803f12efe",
             "scheduleInfo": {
                 "startDateTime": "2021-07-15T19:15:08.941Z",
@@ -258,7 +258,7 @@ procedureSection:
             "justification": "activating role assignment for admin privileges",
             "roleDefinitionId": "b0f54661-2d74-4c50-afa3-1ec803f12efe",
             "directoryScopeId": "/",
-            "principalId": "f8ca5a85-489a-49a0-b555-0a6d81e56f0d"
+            "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222"
         }
         ```
 
