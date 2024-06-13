@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: conceptual
 ms.subservice: role-based-access-control
-ms.date: 05/02/2024
+ms.date: 06/13/2024
 ms.author: rolyon
 ms.custom: oldportal;it-pro;
 ---
