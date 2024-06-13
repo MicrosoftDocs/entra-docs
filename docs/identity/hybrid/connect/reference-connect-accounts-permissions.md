@@ -186,7 +186,7 @@ If you use custom settings, you're responsible for creating the account before y
 
 ### ADSync service account
 
-The sync service can run under different accounts. It can run under a *virtual service account* (VSA), a *group managed service account* (gMSA), a *standalone managed service* (sMSA), or a regular user account. The supported options were changed with the 2017 April release of Microsoft Entra Connect when you do a fresh installation. If you upgrade from an earlier release of Microsoft Entra Connect, these other options aren't available.
+The sync service can run under different accounts. It can run under a *virtual service account (VSA)*, a *group managed service account (gMSA)*, a *standalone managed service (sMSA)*, or a regular user account. The supported options were changed with the 2017 April release of Microsoft Entra Connect when you do a fresh installation. If you upgrade from an earlier release of Microsoft Entra Connect, these other options aren't available.
 
 | Type of account | Installation option | Description |
 | --- | --- | --- |
