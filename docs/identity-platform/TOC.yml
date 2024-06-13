@@ -785,6 +785,14 @@
           href: reply-url.md
         - name: Validation differences by supported account types
           href: supported-accounts-validation.md
+    - name: Custom authentication extensions reference
+      items:
+        - name: Custom claims provider reference
+          href: custom-claims-provider-reference.md
+        - name: Attribute collection start custom extension reference
+          href: custom-extension-OnAttributeCollectionStart-reference.md
+        - name: Attribute collection submit custom extension reference
+          href: custom-extension-OnAttributeCollectionSubmit-reference.md
     - name: Spring Cloud Azure
       href: /azure/developer/java/spring-framework/developer-guide-overview?toc=/entra/identity-platform/toc.json&bc=/entra/identity-platform/breadcrumb/toc.json   
     - name: Configured permissions limits troubleshooting
@@ -801,16 +809,10 @@
       href: authentication-national-cloud.md
     - name: Microsoft Graph API reference (identity operations)
       href: /graph/api/resources/azure-ad-overview
-    - name: Custom claims provider reference
-      href: custom-claims-provider-reference.md
     - name: MSA Server side API reference 
       href: reference-msa-server-side-api.md
     - name: Microsoft Entra ID WAM API reference
       href: reference-entra-id-wam-api.md
-    - name: Attribute collection start custom extension reference
-      href: custom-extension-OnAttributeCollectionStart-reference.md
-    - name: Attribute collection submit custom extension reference
-      href: custom-extension-OnAttributeCollectionSubmit-reference.md
 - name: Resources
   items:
     - name: Help and support options
