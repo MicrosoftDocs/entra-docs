@@ -20,7 +20,7 @@ Requiring multifactor authentication (MFA) for the administrators in your tenant
 
 ## Detect current usage for Microsoft Entra Built-in administrator roles
 
-The [Microsoft Entra ID Secure Score](~/identity/monitoring-health/concept-identity-secure-score.md) provides a score for **Require MFA for administrative roles** in your tenant. This improvement action tracks the MFA usage of Global administrator, Security administrator, Exchange administrator, and SharePoint administrator. 
+The [Microsoft Entra ID Secure Score](~/identity/monitoring-health/concept-identity-secure-score.md) provides a score for **Require MFA for administrative roles** in your tenant. This improvement action tracks the MFA usage of those with [administrator roles](../role-based-access-control/permissions-reference.md). 
 
 There are different ways to check if your admins are covered by an MFA policy. 
 
