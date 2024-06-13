@@ -182,6 +182,8 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	![Screenshot shows to copy configuration URLs.](common/copy-configuration-urls.png "Metadata")
 
+    > [!NOTE]
+    > The default logout URL listed in the app is incorrect. The correct URL is:
     ```Logout URL
     https://login.microsoftonline.com/common/wsfederation?wa=wsignout1.0
     ```
@@ -238,7 +240,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
     e. Check/Uncheck the **Use a domain specific issuer** option as per the note mentioned in the above **Basic SAML Configuration** section in the Microsoft Entra ID.
 
-	f. In the **Change password URL** field in Google Cloud / G Suite Connector by Microsoft, enter the value as `https://account.activedirectory.windowsazure.com/changepassword.aspx`
+	f. In the **Change password URL** field in Google Cloud / G Suite Connector by Microsoft, enter the value as `https://mysignins.microsoft.com/security-info/password/changet`
 
     g. Click **Save**.
 
