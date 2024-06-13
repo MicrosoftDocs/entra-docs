@@ -78,15 +78,15 @@ For more information see [Add an attribute mapping - Microsoft Entra ID to Activ
 
    :::image type="content" source="media/migrate-group-writeback/migrate-2.png" alt-text="Screenshot of the msDS-ExternalDirectoryObjectID attribute." lightbox="media/migrate-group-writeback/migrate-2.png":::
 
-The following PowerShell script can be used to help automate this step.  This script will take all of the users in the **OU=Users,DC=Contoso,DC=com** container and copy the adminDescription attribute value to the msDS-ExternalDirectoryObjectID attribute value.
+The following PowerShell script can be used to help automate this step.  This script will take all of the groups in the **OU=Groups,DC=Contoso,DC=com** container and copy the adminDescription attribute value to the msDS-ExternalDirectoryObjectID attribute value.
 
    ```powershell
-      $users = Get-ADUser -Filter * -SearchBase "OU=Users,DC=Contoso,DC=com" -Properties * | Where-Object {$_.adminDescription -ne $null} |
+      $groups = Get-ADGroup -Filter * -SearchBase "OU=Groups,DC=Contoso,DC=com" -Properties * | Where-Object {$_.adminDescription -ne $null} |
          Select-Object Samaccountname, adminDescription
 
-      foreach ($user in $users) 
+      foreach ($group in $groups) 
        {
-       Set-ADUser -Identity $user.Samaccountname -Add @{msDS-ExternalDirectoryObjectID=$user.adminDescription}
+       Set-ADGroup -Identity $user.Samaccountname -Add @{msDS-ExternalDirectoryObjectID=$group.adminDescription}
        } 
 
    ```
