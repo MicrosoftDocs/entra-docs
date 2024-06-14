@@ -624,7 +624,7 @@ When you see one of these errors, we recommend the following actions:
 
 ## Next steps
 
-* For more info on the relationship between an app's application and service principal objects, see [Application and service principal objects in Microsoft Entra ID](app-objects-and-service-principals.md).
+* For more information on the relationship between an app's application and service principal objects, see [Application and service principal objects in Microsoft Entra ID](app-objects-and-service-principals.md).
 * See the [Microsoft identity platform developer glossary](developer-glossary.md) for definitions of some core Microsoft identity platform developer concepts.
 
 Use the following comments section to provide feedback that helps refine and shape our content.

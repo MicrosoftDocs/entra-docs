@@ -1,5 +1,5 @@
 ---
-title: Azure AD Graph app manifest deprecation
+title: Azure Active Directory Graph app manifest deprecation
 description: Describes the deprecation of the Azure AD Graph format for application manifests and attribute differences in the new format.
 services: active-directory
 author: rwike77
@@ -15,9 +15,9 @@ ms.reviewer: youazhou
 # Customer intent: As an application developer, I want to learn about the new app manifest format, so that I can update the application object and define permissions and roles for the app.
 ---
 
-# Azure AD Graph app manifest deprecation
+# Azure Active Directory Graph app manifest deprecation
 
-Following the Azure AD Graph deprecation, the Azure AD Graph format of application manifests is deprecated and the Microsoft Entra admin center displays app manifests in Microsoft Graph format.  Read this article to learn more about how the app manifest migrtaion impacts your user experience.
+Following the Azure AD Graph deprecation, the Azure AD Graph format of application manifests is deprecated and the Microsoft Entra admin center displays app manifests in Microsoft Graph format.  Read this article to learn more about how the app manifest migration impacts your user experience.
 
 > [!IMPORTANT] 
 > Apps registered with your personal Microsoft account (MSA account) are not in scope for this deprecation. Apps registered with your personal MSA account will continue to manage app manifests in the Azure AD Graph format in the Microsoft Entra admin center until further notice.
@@ -27,7 +27,7 @@ Following the Azure AD Graph deprecation, the Azure AD Graph format of applicati
 From June 13 to June 27 2024, the **App registrations** manifest page in the Microsoft Entra admin center launched a new tabbed experience that allows you to view, edit, upload, download the app manifest in both Azure AD Graph format and Microsoft Graph format.
 
 > [!IMPORTANT] 
-> The new tabbed experience is rolling out to Entra users in batches to ensure the quality of our experience.  You may not see the new experience immediately, it will appear in your tenant by the end of June 2024.
+> The new tabbed experience is rolling out to Microsoft Entra users in batches to ensure the quality of your experience.  You may not see the new experience immediately.
 
 Starting January 7 2025, you won't be able to view, save, upload, or download the Azure AD Graph app manifest in the **App registrations** manifest page in the Microsoft Entra admin center.
 
@@ -73,7 +73,7 @@ You can tell whether an app manifest is an Azure AD Graph format or Microsoft Gr
 
 If you have stored an app manifest in Azure AD Graph format and want to convert it to Microsoft Graph format:
 
-Between [date1] and [date2], you can follow the steps below and use the portal to convert an app manifest in Azure AD Graph format to Microsoft format:
+Between June 13 2024 and January 7 2025, you can follow the steps below and use the portal to convert an app manifest in Azure AD Graph format to Microsoft format:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) as at least an [Application Developer](/entra/identity/role-based-access-control/permissions-reference#application-developer). 
 
@@ -89,7 +89,7 @@ Between [date1] and [date2], you can follow the steps below and use the portal t
 
 6. Select **download**.
 
-Starting [date2], the Microsoft Entra admin center will no longer support app manifests in Azure AD Graph format. However, you can perform the conversion manually.
+Starting January 7 2025, the Microsoft Entra admin center will no longer support app manifests in Azure AD Graph format. However, you can perform the conversion manually.
 
 1. Browse to **Identity** > **Applications** > **App registrations**.
 
@@ -106,3 +106,5 @@ Starting [date2], the Microsoft Entra admin center will no longer support app ma
     1. For all other attributes, you can copy the value of the attribute in Azure AD Graph app manifest and paste it into the value of the attribute in Microsoft Graph app manifest.
 
 ## Next steps
+
+Learn about the [app manifest (Microsoft Graph format)](reference-microsoft-graph-app-manifest.md)

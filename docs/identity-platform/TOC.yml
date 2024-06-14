@@ -81,7 +81,7 @@
           href: app-objects-and-service-principals.md
         - name: How and why apps are added
           href: how-applications-are-added.md
-        - name: Single-tenant and multi-tenant apps
+        - name: Single-tenant and multitenant apps
           href: single-and-multi-tenant-apps.md
     - name: Custom Authentication Extensions
       displayName: Custom Authentication Extensions
@@ -249,7 +249,7 @@
               href: scenario-web-app-call-api-acquire-token.md
             - name: Call a web API
               href: scenario-web-app-call-api-call-api.md
-        - name: Deploy and set-up App Service auth in a pipeline
+        - name: Deploy and set up App Service auth in a pipeline
           href: deploy-web-app-authentication-pipeline.md
 - name: Web API
   items:
@@ -574,9 +574,9 @@
           href: howto-authenticate-service-principal-powershell.md
     - name: Publish
       items:
-        - name: Prepare app for multi-tenant access
+        - name: Prepare app for multitenant access
           items:
-            - name: Enable multi-tenant log-ins
+            - name: Enable multitenant log-ins
               href: howto-convert-app-to-be-multi-tenant.md
             - name: Modify accounts supported by an app
               href: ./howto-modify-supported-accounts.md
@@ -615,8 +615,8 @@
           href: howto-get-list-of-all-auth-library-apps.md
         - name: Migrate off email-based authorization
           href: migrate-off-email-claim-authorization.md
-        - name: Azure AD Graph app manifest deprecation
-          href: azure-ad-graph-app-manifest-deprecation.md
+        - name: Azure Active Directory Graph app manifest deprecation
+          href: azure-active-directory-graph-app-manifest-deprecation.md
     - name: Deprecate
       items:
         - name: Remove an app registration
