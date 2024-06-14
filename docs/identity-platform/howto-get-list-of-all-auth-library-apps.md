@@ -59,7 +59,7 @@ If there are no apps using ADAL, this section of workbook displays a view as sho
     
 :::image type="content" source="media/howto-get-list-of-all-auth-library-apps/no-active-apps-using-adal.png" alt-text="Screenshot of sign-ins workbook when no app is using Active Directory Authentication Library.":::
 
-The following section of the sign-ins workbook shows all the apps sign in data. This includes total number of apps and sign-in activities including location and device. 
+The following section of the workbook shows all the apps sign-in data. This includes total number of apps and sign-in activities including location and device. 
 
 :::image type="content" source="media/howto-get-list-of-all-auth-library-apps/all-apps-sign-in-data.png" alt-text="Screenshot of sign-ins workbook showing detailed sign-in information for your apps.":::
 
