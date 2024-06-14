@@ -141,9 +141,10 @@ After granting consent, the permissions that required admin consent are shown as
 
 The **Grant admin consent** button is *disabled* if you aren't an admin or if no permissions have been configured for the application. If you have permissions that have been granted but not yet configured, the admin consent button prompts you to handle these permissions. You can add them to configured permissions or remove them.
 
-## Next steps
+## Related content
 
 Advance to the next quickstart in the series to learn how to configure which account types can access your application. For example, you might want to limit access only to those users in your organization (single-tenant) or allow users in other Microsoft Entra tenants (multi-tenant) and those with personal Microsoft accounts (MSA).
+
 
 > [!div class="nextstepaction"]
 > [Modify the accounts supported by an application](./howto-modify-supported-accounts.md)
