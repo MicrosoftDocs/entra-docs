@@ -17,24 +17,6 @@
     "5f5f5f5f-6666-aaaa-7777-8b8b8b8b8b8b",
     "6a6a6a6a-7777-bbbb-8888-9c9c9c9c9c9c"
   ],
-  "clientSecret|clientSecretValue": [
-    "Aa1Bb2Cc3.-Dd4Ee5Ff6Gg7Hh8Ii9_~Jj0Kk1Ll2",
-    "Bb2Cc3Dd4.-Ee5Ff6Gg7Hh8Ii9Jj0_~Kk1Ll2Mm3",
-    "Cc3Dd4Ee5.-Ff6Gg7Hh8Ii9Jj0Kk1_~Ll2Mm3Nn4",
-    "Dd4Ee5Ff6.-Gg7Hh8Ii9Jj0Kk1Ll2_~Mm3Nn4Oo5",
-    "Ee5Ff6Gg7.-Hh8Ii9Jj0Kk1Ll2Mm3_~Nn4Oo5Pp6",
-    "Ff6Gg7Hh8.-Ii9Jj0Kk1Ll2Mm3Nn4_~Oo5Pp6Qq7",
-    "Gg7Hh8Ii9.-Jj0Kk1Ll2Mm3Nn4Oo5_-Pp6Qq7Rr8"
-  ],
-  "clientSecretValue|key": [
-    "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u",
-    "C2dE3fH4iJ5kL6mN7oP8qR9sT0uV1w",
-    "E3fH4iJ5kL6mN7oP8qR9sT0uV1wX2y",
-    "H4iJ5kL6mN7oP8qR9sT0uV1wX2yZ3a",
-    "J5kL6mN7oP8qR9sT0uV1wX2yZ3aB4c",
-    "L6mN7oP8qR9sT0uV1wX2yZ3aB4cD5e",
-    "N7oP8qR9sT0uV1wX2yZ3aB4cD5eF6g"
-  ],
   "correlationId": [
     "aaaa0000-bb11-2222-33cc-444444dddddd",
     "bbbb1111-cc22-3333-44dd-555555eeeeee",
@@ -110,15 +92,6 @@
     "ffffffff-5a5a-6b6b-7c7c-888888888888",
     "aaaaaaaa-6b6b-7c7c-8d8d-999999999999"
   ],
-  "signatureHash|customKeyIdentifier": [
-    "aB1cD2eF3gH4iJ5kL6-mN7oP8qR=",
-    "cD2eF3gH4iJ5kL6mN7-oP8qR9sT=",
-    "eF3gH4iJ5kL6mN7oP8-qR9sT0uV=",
-    "gH4iJ5kL6mN7oP8qR9-sT0uV1wX=",
-    "iJ5kL6mN7oP8qR9sT0-uV1wX2yZ=",
-    "kL6mN7oP8qR9sT0uV1-wX2yZ3aB=",
-    "mN7oP8qR9sT0uV1wX2-yZ3aB4dE="
-  ],
   "subscriptionId": [
     "aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e",
     "bbbb1b1b-cc2c-dd3d-ee4e-ffffff5f5f5f",
@@ -127,15 +100,6 @@
     "eeee4efe-ff5f-aa6a-bb7b-cccccc8c8c8c",
     "ffff5f5f-aa6a-bb7b-cc8c-dddddd9d9d9d",
     "aaaa6a6a-bb7b-cc8c-dd9d-eeeeee0e0e0e"
-  ],
-  "thumbprint|hash": [
-    "AA11BB22CC33DD44EE55FF66AA77BB88CC99DD00",
-    "BB22CC33DD44EE55FF66AA77BB88CC99DD00EE11",
-    "CC33DD44EE55FF66AA77BB88CC99DD00EE11FF22",
-    "EE55FF66AA77BB88CC99DD00EE11FF22AA33BB44",
-    "FF66AA77BB88CC99DD00EE11FF22AA33BB44CC55",
-    "AA77BB88CC99DD00EE11FF22AA33BB44CC55DD66",
-    "BB88CC99DD00EE11FF22AA33BB44CC55DD66EE77"
   ],
   "traceId": [
     "0000aaaa-11bb-cccc-dd22-eeeeee333333",
@@ -148,12 +112,5 @@
   ],
   "appRoleId|roleId": [
     "00000000-0000-0000-0000-000000000000"
-  ],
-  "securityIdentifier" : [
-    "A-1-22-3-4444444444-5555555555-6666666-7777777777",
-    "B-2-33-4-5555555555-6666666666-7777777-8888888888",
-    "C-3-44-5-6666666666-7777777777-8888888-9999999999",
-    "D-4-55-6-7777777777-8888888888-9999999-0000000000",
-    "E-5-66-7-8888888888-9999999999-0000000-1111111111"
   ]
 }
