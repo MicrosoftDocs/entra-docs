@@ -10,8 +10,8 @@ ms.subservice: managed-identities
 ## View the service principal for a managed identity using PowerShell
 
 To run the scripts for this example, you have two options:
-   - Use the [Azure Cloud Shell](/azure/cloud-shell/overview), which you can open using the **Try It** button on the top right corner of code blocks.
-   - Run scripts locally by installing the latest version of [Azure PowerShell](/powershell/azure/install-azure-powershell), then sign in to Azure using `Connect-AzAccount`.
+- Use the [Azure Cloud Shell](/azure/cloud-shell/overview), which you can open using the **Try It** button on the top right corner of code blocks.
+- Run scripts locally by installing the latest version of [Azure PowerShell](/powershell/azure/install-azure-powershell), then sign in to Azure using `Connect-AzAccount`.
  
 The following command demonstrates how to view the service principal of a virtual machine (VM) or application with *system assigned identity* enabled. Replace `<Azure resource name>` with your own values.
 

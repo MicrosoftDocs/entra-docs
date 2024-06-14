@@ -57,7 +57,7 @@ To verify and enable password writeback in SSPR, complete the following steps:
 1. When ready, select **Save**.
 
 #### PowerShell
-With PowerShell you can enable Microsoft Entra Connect cloud sync by using the Set-AADCloudSyncPasswordWritebackConfiguration cmdlet on the servers with the provisioning agents. You will need global administrator credentials: 
+With PowerShell you can enable Microsoft Entra Connect cloud sync by using the Set-AADCloudSyncPasswordWritebackConfiguration cmdlet on the servers with the provisioning agents. You will need Global Administrator credentials: 
 
 ```powershell
 Import-Module 'C:\\Program Files\\Microsoft Azure AD Connect Provisioning Agent\\Microsoft.CloudSync.Powershell.dll' 

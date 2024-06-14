@@ -3,8 +3,7 @@ title: 'Tutorial: Configure LogMeIn for automatic user provisioning with Microso
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to LogMeIn.
 
 documentationcenter: ''
-author: twimmers
-writer: twimmers
+author: thomasakelo
 manager: jeedes
 
 ms.assetid: cf38e6ad-6391-4e5d-98f7-fbdaf3de54f5
@@ -14,7 +13,7 @@ ms.subservice: saas-apps
 ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 03/25/2024
-ms.author: thwimmer
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to LogMeIn so that I can streamline the user management process and ensure that users have the appropriate access to LogMeIn.
 ---

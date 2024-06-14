@@ -75,7 +75,7 @@ Help set realistic expectations and make contingency plans to meet key milestone
 - For authorization, use the Identity Experience Framework (IEF) sample user journeys
   - See, [Azure Active Directory B2C: Custom CIAM User Journeys](https://github.com/azure-ad-b2c/samples#local-account-policy-enhancements)
 - Use policy-based control for cloud-native environments
-  - Go to openpolicyagent.org to learn about [Open Policy Agent](https://www.openpolicyagent.org/) (OPA)
+  - Go to `openpolicyagent.org` to learn about [Open Policy Agent (OPA)](https://www.openpolicyagent.org/)
 
 Learn more with the Microsoft Identity PDF, [Gaining expertise with Azure AD B2C](https://aka.ms/learnaadb2c), a course for developers.
 

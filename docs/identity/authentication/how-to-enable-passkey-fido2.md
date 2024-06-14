@@ -84,7 +84,7 @@ There are two ways to get your AAGUID. You can either ask your security key or p
 
 ### Enable passkeys using Microsoft Graph API
 
-In addition to using the Microsoft Entra admin center, you can also enable passkeys by using the Microsoft Graph API. To enable passkeys, you need to update the Authentication methods policy as a **Global Administrator** or **Authentication Policy Administrator**. 
+In addition to using the Microsoft Entra admin center, you can also enable passkeys by using the Microsoft Graph API. To enable passkeys, you need to update the Authentication methods policy as at least an [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator). 
 
 To configure the policy using Graph Explorer:
 
@@ -145,7 +145,7 @@ To make users sign in with a passkey when they access a sensitive resource, you 
 
 The following steps show how to create a custom authentication strength Conditional Access policy that allows passkey sign-in for only a specific security key model or passkey provider. For a list of FIDO2 providers, see [Current FIDO2 hardware vendor partners](concept-fido2-hardware-vendor.md#current-partners).
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a Conditional Access Administrator.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Protection** > **Authentication methods** > **Authentication strengths**.
 1. Select **New authentication strength**.
 1. Provide a **Name** for your new authentication strength.
