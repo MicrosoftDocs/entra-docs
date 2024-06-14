@@ -174,14 +174,12 @@
           href: quickstart-web-app-aspnet-sign-in.md
         - name: ASP.NET Core
           href: quickstart-web-app-dotnet-core-sign-in.md
-        - name: Node.js - MSAL
+        - name: Node.js
           href: quickstart-web-app-nodejs-msal-sign-in.md
         - name: Java
           href: quickstart-web-app-java-sign-in.md
-        - name: Python
-          items:
-            - name: Flask
-              href: quickstart-web-app-python-flask.md
+        - name: Python Flask
+          href: quickstart-web-app-python-flask.md
     - name: Tutorials
       items:
         - name: ASP.NET Core
@@ -206,7 +204,7 @@
             href: tutorial-web-app-python-call-api.md
         - name: Node.js
           href: tutorial-v2-nodejs-webapp-msal.md
-        - name: Spring
+        - name: Java Spring
           href: /azure/developer/java/spring-framework/configure-spring-boot-starter-java-app-with-azure-active-directory?toc=/entra/identity-platform/toc.json&bc=/entra/identity-platform/breadcrumb/toc.json
         - name: Secure web app accesses storage and Microsoft Graph
           items:
@@ -310,12 +308,12 @@
           href: quickstart-desktop-app-wpf-sign-in.md
     - name: Tutorials
       items:
+        - name: Node.js Electron
+          href: tutorial-v2-nodejs-desktop.md
         - name: Universal Windows Platform (UWP)
           href: tutorial-v2-windows-uwp.md
         - name: Windows Presentation Foundation (WPF)
           href: tutorial-v2-windows-desktop.md
-        - name: Node.js Electron
-          href: tutorial-v2-nodejs-desktop.md
     - name: Samples
       displayName: code samples, example code, code snippets
       href: sample-v2-code.md#desktop
