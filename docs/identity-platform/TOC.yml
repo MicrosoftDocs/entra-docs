@@ -81,7 +81,7 @@
           href: app-objects-and-service-principals.md
         - name: How and why apps are added
           href: how-applications-are-added.md
-        - name: Single-tenant and multi-tenant apps
+        - name: Single-tenant and multitenant apps
           href: single-and-multi-tenant-apps.md
     - name: Custom Authentication Extensions
       displayName: Custom Authentication Extensions
@@ -147,8 +147,6 @@
             href: tutorial-single-page-app-react-call-api.md
         - name: Angular
           href: tutorial-v2-angular-auth-code.md
-        - name: JavaScript
-          href: tutorial-v2-javascript-auth-code.md
     - name: Samples
       displayName: code samples, example code, code snippets
       href: sample-v2-code.md#single-page-applications
@@ -176,14 +174,12 @@
           href: quickstart-web-app-aspnet-sign-in.md
         - name: ASP.NET Core
           href: quickstart-web-app-dotnet-core-sign-in.md
-        - name: Node.js - MSAL
+        - name: Node.js
           href: quickstart-web-app-nodejs-msal-sign-in.md
         - name: Java
           href: quickstart-web-app-java-sign-in.md
-        - name: Python
-          items:
-            - name: Flask
-              href: quickstart-web-app-python-flask.md
+        - name: Python Flask
+          href: quickstart-web-app-python-flask.md
     - name: Tutorials
       items:
         - name: ASP.NET Core
@@ -208,7 +204,7 @@
             href: tutorial-web-app-python-call-api.md
         - name: Node.js
           href: tutorial-v2-nodejs-webapp-msal.md
-        - name: Spring
+        - name: Java Spring
           href: /azure/developer/java/spring-framework/configure-spring-boot-starter-java-app-with-azure-active-directory?toc=/entra/identity-platform/toc.json&bc=/entra/identity-platform/breadcrumb/toc.json
         - name: Secure web app accesses storage and Microsoft Graph
           items:
@@ -249,7 +245,7 @@
               href: scenario-web-app-call-api-acquire-token.md
             - name: Call a web API
               href: scenario-web-app-call-api-call-api.md
-        - name: Deploy and set-up App Service auth in a pipeline
+        - name: Deploy and set up App Service auth in a pipeline
           href: deploy-web-app-authentication-pipeline.md
 - name: Web API
   items:
@@ -306,19 +302,18 @@
       items:
         - name: Node.js Electron
           href: quickstart-desktop-app-nodejs-electron-sign-in.md
-        - name: Universal Windows Platform
+        - name: Universal Windows Platform (UWP)
           href: quickstart-desktop-app-uwp-sign-in.md
-        - name: Windows Presentation Foundation
+        - name: Windows Presentation Foundation (WPF)
           href: quickstart-desktop-app-wpf-sign-in.md
     - name: Tutorials
       items:
+        - name: Node.js Electron
+          href: tutorial-v2-nodejs-desktop.md
         - name: Universal Windows Platform (UWP)
           href: tutorial-v2-windows-uwp.md
         - name: Windows Presentation Foundation (WPF)
           href: tutorial-v2-windows-desktop.md
-        - name: Electron
-          displayName: Node.js
-          href: tutorial-v2-nodejs-desktop.md
     - name: Samples
       displayName: code samples, example code, code snippets
       href: sample-v2-code.md#desktop
@@ -574,9 +569,9 @@
           href: howto-authenticate-service-principal-powershell.md
     - name: Publish
       items:
-        - name: Prepare app for multi-tenant access
+        - name: Prepare app for multitenant access
           items:
-            - name: Enable multi-tenant log-ins
+            - name: Enable multitenant log-ins
               href: howto-convert-app-to-be-multi-tenant.md
             - name: Modify accounts supported by an app
               href: ./howto-modify-supported-accounts.md
@@ -615,6 +610,8 @@
           href: howto-get-list-of-all-auth-library-apps.md
         - name: Migrate off email-based authorization
           href: migrate-off-email-claim-authorization.md
+        - name: Azure Active Directory Graph app manifest deprecation
+          href: azure-active-directory-graph-app-manifest-deprecation.md
     - name: Deprecate
       items:
         - name: Remove an app registration
@@ -778,9 +775,12 @@
             href: federation-metadata.md
     - name: App registration reference
       items:
-        - name: Application manifest
+        - name: App manifest (Azure AD Graph format)
           displayName: app manifest
           href: reference-app-manifest.md
+        - name: App manifest (Microsoft Graph format)
+          displayName: Microsoft Graph app manifest
+          href: reference-microsoft-graph-app-manifest.md
         - name: Redirect URI (reply URL) best practices and limitations
           href: reply-url.md
         - name: Validation differences by supported account types
