@@ -111,6 +111,8 @@ You can add certificates, client secrets (a string), or federated identity crede
 
 ### [Add a certificate](#tab/certificate)
 
+### Add a certificate
+
 Sometimes called a *public key*, a certificate is the recommended credential type because they're considered more secure than client secrets. For more information about using a certificate as an authentication method in your application, see [Microsoft identity platform application authentication certificate credentials](../../certificate-credentials.md).
 
 1. In the Microsoft Entra admin center, in **App registrations**, select your application.
@@ -119,6 +121,8 @@ Sometimes called a *public key*, a certificate is the recommended credential typ
 4. Select **Add**.
 
 ### [Add a client secret](#tab/client-secret)
+
+### Add a client secret
 
 Sometimes called an *application password*, a client secret is a string value your app can use in place of a certificate to identity itself.
 
@@ -139,6 +143,8 @@ If you're using an Azure DevOps service connection that automatically creates a 
 [Troubleshoot Azure Resource Manager service connections](/azure/devops/pipelines/release/azure-rm-endpoint#service-principals-token-expired).
 
 ### [Add a federated credential](#tab/federated-credential)
+
+### Add a federated credential
 
 Federated identity credentials are a type of credential that allows workloads, such as GitHub Actions, workloads running on Kubernetes, or workloads running in compute platforms outside of Azure access Microsoft Entra protected resources without needing to manage secrets using [workload identity federation](~/workload-id/workload-identity-federation.md).
 
