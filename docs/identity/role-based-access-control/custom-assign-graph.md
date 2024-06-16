@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: how-to
-ms.date: 02/04/2022
+ms.date: 06/16/2024
 ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro
@@ -166,7 +166,7 @@ HTTP/1.1 200 OK
 }
 ```
 
-### Example 6: Get role assignments for a given role definition.
+### Example 6: Get role assignments for a given role definition
 
 ```http
 GET https://graph.microsoft.com/v1.0/roleManagement/directory/roleAssignments?$filter=roleDefinitionId+eq+'<object-id-or-template-id-of-role-definition>'
@@ -188,7 +188,7 @@ HTTP/1.1 200 OK
 }
 ```
 
-### Example 7: Get a role assignment by ID.
+### Example 7: Get a role assignment by ID
 
 ```http
 GET https://graph.microsoft.com/v1.0/roleManagement/directory/roleAssignments/lAPpYvVpN0KRkAEhdxReEJC2sEqbR_9Hr48lds9SGHI-1
@@ -199,7 +199,7 @@ Response
 ```http
 HTTP/1.1 200 OK
 { 
-    "id": "mhxJMipY4UanIzy2yE-r7JIiSDKQoTVJrLE9etXyrY0-1",
+    "id": "lAPpYvVpN0KRkAEhdxReEJC2sEqbR_9Hr48lds9SGHI-1",
     "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
     "roleDefinitionId": "10dae51f-b6af-4016-8d66-8c2a99b929b3",
     "directoryScopeId": "/"
