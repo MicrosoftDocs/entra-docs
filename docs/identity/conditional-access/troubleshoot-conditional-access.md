@@ -45,23 +45,17 @@ In the above error, the message states that the application can only be accessed
 
 ## Tenant lifecycle block
 
-This error message is expected. Tenants that remain inactive for longer than "x" days will be blocked. Administrators may request the tenant to be reactivated within 90 days of the tenant entering the "blocked" state.
+Error message ```Error message: AADSTS5000225: This tenantt has beeen blocked due to inactivity. To learn more about ...``` is expected for tenants blocked due to lifecycle actions. Lifecycle actions may include marking tenants for deletion manually or tenants expiring due to tenant expiration date set on the tenant. Tenants that remain inactive for longer than "x" days will be blocked. Administrators may request the tenant to be reactivated within 90 days of the tenant entering the "blocked" state.
 
 :::image type="content" source="media/troubleshoot-conditional-access/block-tenant.png" alt-text="Screenshot showing an error when tenant access blocked due to inactivity" lightbox="media/troubleshoot-conditional-access/tenant-block.png":::
 
 Depending on your plans for the tenant we suggest:
 
-Application owners/developers
-
-- Minimize the number of authentication requests sent to this deactivated tenant until the tenant is reactivated.
-- Refrain from submitting another assistance request while your existing case is in process.  and until you have heard back a decision on this case.
-- Review Microsoft's data protection policies, click here.  
-
 Administrators
 
 If you need to reactivate your tenant:
 
-- The tenant administrator can reach out to Microsoft. In the United States you may contact us via (800) 865-9408 (toll-free, US only) If you are outside the United States, see the [global support phone numbers](https://support.microsoft.com/en-us/topic/global-customer-service-phone-numbers-c0389ade-5640-e588-8b0e-28de8afeb3f2).
+- The tenant administrator can reach out to Microsoft. In the United States you may contact us via (800) 865-9408 (toll-free, US only) If you are outside the United States, see the [global support phone numbers](https://support.microsoft.com/topic/global-customer-service-phone-numbers-c0389ade-5640-e588-8b0e-28de8afeb3f2).
 - Notification will be sent whether the request is approved or denied
 - Refrain from submitting another assistance request while your existing case is in process.  and until you have heard back a decision on this case. 
 
@@ -69,6 +63,14 @@ If you do not plan to reactivate your tenant:
 
 - The tenant will be deleted after 90 days of authentication blocked and will not be recoverable.
 - A notification email will be sent out to the tenant administrator before the tenant is deleted. Review Microsoft's data protection policies, [here](https://www.microsoft.com/en-us/trust-center/privacy/data-management#leave).  
+
+Application owners/developers
+
+- Minimize the number of authentication requests sent to this deactivated tenant until the tenant is reactivated.
+- Refrain from submitting another assistance request while your existing case is in process.  and until you have heard back a decision on this case.
+- Review Microsoft's [data protection policies](https://www.microsoft.com/trust-center/privacy/data-management#leave).  
+
+
 
 ## Microsoft Entra sign-in events
 
