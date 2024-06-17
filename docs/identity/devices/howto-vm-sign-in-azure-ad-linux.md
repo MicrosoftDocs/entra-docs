@@ -11,7 +11,7 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: sandeo
-ms.custom: references_regions, devx-track-azurecli, subject-rbac-steps, devx-track-linux
+ms.custom: references_regions, devx-track-azurecli, subject-rbac-steps, devx-track-linux, linux-related-content
 ---
 
 # Sign in to a Linux virtual machine in Azure by using Microsoft Entra ID and OpenSSH

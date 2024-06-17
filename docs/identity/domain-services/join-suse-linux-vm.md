@@ -6,7 +6,7 @@ manager: amycolannino
 
 ms.service: entra-id
 ms.subservice: domain-services
-ms.custom: devx-track-linux
+ms.custom: devx-track-linux, linux-related-content
 ms.topic: how-to
 ms.date: 09/23/2023
 ms.author: justinha
