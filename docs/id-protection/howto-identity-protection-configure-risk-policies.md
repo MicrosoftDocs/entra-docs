@@ -76,7 +76,7 @@ If you have legacy risk policies enabled in Microsoft Entra ID Protection, you s
 > [!WARNING]
 > The legacy risk policies configured in Microsoft Entra ID Protection will be retired on **October 1, 2026**.
 
-### Migrating to Conditional Access
+### Migrate to Conditional Access
 
 1. **Create an equivalent** [user risk-based](#user-risk-policy-in-conditional-access) and [sign-in risk-based](#sign-in-risk-policy-in-conditional-access) policy in Conditional Access in report-only mode. You can create a policy with the previous steps or using [Conditional Access templates](~/identity/conditional-access/concept-conditional-access-policy-common.md) based on Microsoft's recommendations and your organizational requirements.
    1. After administrators confirm the settings using [report-only mode](../identity/conditional-access/howto-conditional-access-insights-reporting.md), they can move the **Enable policy** toggle from **Report-only** to **On**.
