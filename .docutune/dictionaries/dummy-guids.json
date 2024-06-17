@@ -110,7 +110,7 @@
     "5555ffff-66aa-bbbb-cc77-dddddd888888",
     "6666aaaa-77bb-cccc-dd88-eeeeee999999"
   ],
-  "appRoleId|roleId": [
+  "appRoleId|roleId|roleAssignments|roleDefinitions": [
     "00000000-0000-0000-0000-000000000000"
   ]
 }

@@ -151,13 +151,13 @@ HTTP/1.1 200 OK
 {
 "value":[
             { 
-                "id": "mhxJMipY4UanIzy2yE-r7JIiSDKQoTVJrLE9etXyrY0-1"
+                "id": "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0uIiSDKQoTVJrLE9etXyrY0-1"
                 "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
                 "roleDefinitionId": "10dae51f-b6af-4016-8d66-8c2a99b929b3",
                 "directoryScopeId": "/"  
             } ,
             {
-                "id": "CtRxNqwabEKgwaOCHr2CGJIiSDKQoTVJrLE9etXyrY0-1"
+                "id": "C2dE3fH4iJ5kL6mN7oP8qR9sT0uV1wIiSDKQoTVJrLE9etXyrY0-1"
                 "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
                 "roleDefinitionId": "fe930be7-5e62-47db-91af-98c3a49a38b1",
                 "directoryScopeId": "/"
@@ -179,7 +179,7 @@ HTTP/1.1 200 OK
 {
 "value":[
             {
-                "id": "CtRxNqwabEKgwaOCHr2CGJIiSDKQoTVJrLE9etXyrY0-1"
+                "id": "C2dE3fH4iJ5kL6mN7oP8qR9sT0uV1wIiSDKQoTVJrLE9etXyrY0-1"
                 "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
                 "roleDefinitionId": "fe930be7-5e62-47db-91af-98c3a49a38b1",
                 "directoryScopeId": "/"
@@ -199,7 +199,7 @@ Response
 ```http
 HTTP/1.1 200 OK
 { 
-    "id": "lAPpYvVpN0KRkAEhdxReEJC2sEqbR_9Hr48lds9SGHI-1",
+    "id": "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0uIiSDKQoTVJrLE9etXyrY0-1",
     "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
     "roleDefinitionId": "10dae51f-b6af-4016-8d66-8c2a99b929b3",
     "directoryScopeId": "/"
@@ -219,13 +219,13 @@ HTTP/1.1 200 OK
 {
 "value":[
             { 
-                "id": "mhxJMipY4UanIzy2yE-r7JIiSDKQoTVJrLE9etXyrY0-1"
+                "id": "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0uIiSDKQoTVJrLE9etXyrY0-1"
                 "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
                 "roleDefinitionId": "10dae51f-b6af-4016-8d66-8c2a99b929b3",
                 "directoryScopeId": "/d23998b1-8853-4c87-b95f-be97d6c6b610"
             } ,
             {
-                "id": "CtRxNqwabEKgwaOCHr2CGJIiSDKQoTVJrLE9etXyrY0-1"
+                "id": "C2dE3fH4iJ5kL6mN7oP8qR9sT0uV1wIiSDKQoTVJrLE9etXyrY0-1"
                 "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
                 "roleDefinitionId": "3671d40a-1aac-426c-a0c1-a3821ebd8218",
                 "directoryScopeId": "/d23998b1-8853-4c87-b95f-be97d6c6b610"
