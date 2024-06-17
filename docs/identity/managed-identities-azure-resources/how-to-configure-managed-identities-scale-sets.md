@@ -1,5 +1,5 @@
 ---
-title: Configure managed identities for Azure resources on virtual machine scale set 
+title: Configure managed identities for Azure resources on virtual machine scale set
 description: Step-by-step instructions for configuring managed identities for Azure resources on a virtual machine scale set using the Azure portal.
 author: barclayn
 manager: amycolannino
@@ -8,8 +8,7 @@ ms.subservice: managed-identities
 ms.topic: quickstart
 ms.date: 05/27/2024
 ms.author: barclayn
-
-ms.custom: mode-api, devx-track-azurecli, devx-track-linux
+ms.custom: mode-api, devx-track-azurecli, devx-track-linux, devx-track-arm-template, devx-track-azurepowershell
 ms.devlang: azurecli
 
 appliesto:
