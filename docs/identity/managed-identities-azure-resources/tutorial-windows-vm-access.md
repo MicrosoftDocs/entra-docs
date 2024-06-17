@@ -9,10 +9,9 @@ ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.date: 05/28/2024
 ms.author: barclayn
+ms.custom: devx-track-arm-template, linux-related-content
 
-ms.custom: devx-track-azurepowershell, devx-track-arm-template
-
-appliesto: 
+appliesto:
 zone_pivot_groups: identity-windows-vm-access
 ---
 
