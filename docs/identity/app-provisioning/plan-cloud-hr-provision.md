@@ -444,7 +444,7 @@ With this expression, if the Municipality value is Dallas, Austin, Seattle, or L
 
 ## Plan for password delivery of new user accounts
 
-When you initiate the Joiners process, you need to set and deliver a temporary password of new user accounts. With cloud HR to Microsoft Entra user provisioning, you can roll out the Microsoft Entra ID [self-service password reset](~/identity/authentication/tutorial-enable-sspr.md) (SSPR) capability for the user on day one.
+When you initiate the Joiners process, you need to set and deliver a temporary password of new user accounts. With cloud HR to Microsoft Entra user provisioning, you can roll out the Microsoft Entra ID [self-service password reset (SSPR)](~/identity/authentication/tutorial-enable-sspr.md) capability for the user on day one.
 
 SSPR is a simple means for IT administrators to enable users to reset their passwords or unlock their accounts. You can provision the **Mobile Number** attribute from the cloud HR app to Active Directory and sync it with Microsoft Entra ID. After the **Mobile Number** attribute is in Microsoft Entra ID, you can enable SSPR for the user's account. Then on day one, the new user can use the registered and verified mobile number for authentication. Refer to the [SSPR documentation](~/identity/authentication/howto-sspr-authenticationdata.md) for details on how to prepopulate authentication contact information. 
 
