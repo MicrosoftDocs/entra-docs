@@ -199,11 +199,7 @@ Response
 ```http
 HTTP/1.1 200 OK
 { 
-<<<<<<< HEAD
     "id": "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0uIiSDKQoTVJrLE9etXyrY0-1",
-=======
-    "id": "lAPpYvVpN0KRkAEhdxReEJC2sEqbR_9Hr48lds9SGHI-1",
->>>>>>> 844b6bdf6e044fa33e61479a8490dd03d1461225
     "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
     "roleDefinitionId": "10dae51f-b6af-4016-8d66-8c2a99b929b3",
     "directoryScopeId": "/"
