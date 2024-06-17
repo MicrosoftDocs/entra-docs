@@ -117,6 +117,8 @@ items:
     items:
     - name: Integrate SaaS applications
       href: ~/identity/saas-apps/tutorial-list.md
+    - name: Configure app management policies
+      href: configure-app-management-policy.md
     - name: Assign owners
       href: assign-app-owners.md
     - name: Configure properties
@@ -184,11 +186,7 @@ items:
     - name: Migrate applications
       items:
       - name: Migrate applications from AD FS to Microsoft Entra ID 
-        items:
-        - name: Use the AD FS application migration wizard
-          href: migrate-ad-fs-application-howto.md
-        - name: Use the ADFS application activity report
-          href: migrate-adfs-application-activity.md
+        href: migrate-ad-fs-application-howto.md
       - name: Migrate applications from Okta to Microsoft Entra ID
         items:
         - name: Migrate applications from Okta to Microsoft Entra ID

@@ -34,8 +34,6 @@ landingContent:
             url: tutorial-single-page-app-react-register-app.md
           - text: Angular
             url: tutorial-v2-angular-auth-code.md
-          - text: JavaScript
-            url: tutorial-v2-javascript-auth-code.md
           - text: Blazor WebAssembly
             url: quickstart-single-page-app-blazor-wasm-sign-in.md
   # - title: "Scenario in depth"

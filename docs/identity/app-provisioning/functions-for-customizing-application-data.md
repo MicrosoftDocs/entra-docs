@@ -171,7 +171,7 @@ Returns the first source value that isn't NULL. If all arguments are NULL and de
 | Name | Required/ Repeating | Type | Notes |
 | --- | --- | --- | --- |
 | **source1  … sourceN** | Required | String |Required, variable-number of times. Usually name of the attribute from the source object. |
-| **defaultValue** | Optional | String | Default value to be used when all source values are NULL. Can be empty string ("").
+| **defaultValue** | Optional | String | Default value to be used when all source values are NULL. Can be empty string (""). |
 
 #### Flow mail value if not NULL, otherwise flow userPrincipalName
 Example: You wish to flow the mail attribute if it's present. If it isn't, you wish to flow the value of userPrincipalName instead.
@@ -1259,7 +1259,8 @@ Add a comma between last name and first name.
 * **INPUT** (surname): "Doe"
 * **OUTPUT**:  "Doe, John"
 
-### Generate an ID for a user based on their Microsoft Entra ID object ID. Remove any letters from the ID and add 1000 at the beginning.  
+### Generate an ID for a user based on their Microsoft Entra object ID. Remove any letters from the ID and add 1000 at the beginning.
+
 This expression allows you to generate an identifier for a user that starts with 1000 and is likely to be unique.  
 
 **Expression:** 

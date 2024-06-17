@@ -3,7 +3,7 @@ title: 'Tutorial: Configure Contentful for automatic user provisioning with Micr
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Contentful.
 
 documentationcenter: ''
-author: twimmers
+author: thomasakelo
 manager: jeedes
 
 ms.assetid: 3b761984-a9a0-4519-b23e-563438978de5
@@ -13,7 +13,7 @@ ms.subservice: saas-apps
 ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 03/25/2024
-ms.author: thwimmer
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Contentful so that I can streamline the user management process and ensure that users have the appropriate access to Contentful.
 ---

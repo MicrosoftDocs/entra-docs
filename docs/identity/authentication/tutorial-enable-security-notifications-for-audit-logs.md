@@ -1,6 +1,6 @@
 ---
-title: Enable security notifications for audit log events | Microsoft Entra ID
-description: create an Azure Logic App that monitors Microsoft Entra ID audit logs and sends a security email notification to users based on different audit log events.
+title: Enable security notifications for audit log events
+description: Create an Azure Logic App that monitors Microsoft Entra audit logs and sends a security email notification to users based on different audit log events.
 
 ms.service: entra-id
 ms.subservice: authentication
@@ -14,7 +14,7 @@ ms.reviewer: jupetter
 ---
 # Tutorial: Enable security notifications for audit log events
 
-In this tutorial, you learn how to create an [Azure Logic App](/azure/logic-apps/logic-apps-overview) that monitors Microsoft Entra ID audit logs. A logic app can send a security email notification to users based on different audit log events.   
+In this tutorial, you learn how to create an [Azure Logic App](/azure/logic-apps/logic-apps-overview) that monitors Microsoft Entra audit logs. A logic app can send a security email notification to users based on different audit log events.   
 
 This tutorial focuses on security notifications that get emailed when there's a change to a user's authentication methods. You can also use logic apps to create workflows that send security notifications for other audit log events. These security notifications help update users and notify them of any risky activity. Users can quickly take the correct steps to report it. 
 
@@ -24,8 +24,8 @@ This tutorial focuses on security notifications that get emailed when there's a 
 To use this feature, you need:
 
 - An Azure subscription. If you don't have an Azure subscription, you can [sign up for a free trial](https://azure.microsoft.com/free/).
-- An Entra ID tenant.
-- A user who's a Global Administrator or Security Administrator for the Entra ID tenant.
+- A Microsoft Entra tenant.
+- A user who's at least a [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) for the Microsoft Entra tenant.
 - An Event Hubs namespace and an event hub in your Azure subscription. Learn how to [create an event hub](/azure/event-hubs/event-hubs-create).
 - Enable logs to be streamed to the event hub. Learn how to [stream logs to an event hub](/azure/azure-monitor/essentials/stream-monitoring-data-event-hubs). Only select the logs that you want the security notification to be sent for. For this tutorial, we'll stream Audit Logs.
 - An email account from a service that works with Azure Logic Apps, such as Office 365 Outlook or Outlook.com. For other supported email providers, review [Connectors for Azure Logic Apps](/connectors/connector-reference/connector-reference-logicapps-connectors).
