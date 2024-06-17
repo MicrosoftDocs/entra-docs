@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: conceptual
-ms.date: 06/03/2024
+ms.date: 06/17/2024
 ms.service: global-secure-access
 ---
 
