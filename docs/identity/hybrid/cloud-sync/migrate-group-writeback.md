@@ -56,6 +56,9 @@ If the **Writeback Group Distinguished Name with cloud Display Name** feature is
 
 When migrating, cloud sync will use the new format.  It does not matter whether the **Writeback Group Distinguished Name with cloud Display Name** feature is enabled or not.  
 
+>[!IMPORTANT]
+>If you are using the default Microsoft Entra Connect naming and then migrate the group so that it is managed by Microsoft Entra cloud sync, it will rename the group to the new format.  Use the section below allow Microsoft Entra cloud sync to use the old format.
+
 ### Using the default format
 If you want cloud sync to use the default format, you need modify the attribute flow expression for the CN attribute.  The default the mapping is:
 
