@@ -48,7 +48,7 @@ Click **Previous** to go back. If you select **Exit**, you close the installatio
 ## Customize synchronization options
 This option is used to make changes to the sync configuration. You see a subset of options from the custom configuration installation path. You see this option even if you used express installation initially.
 
-* [Add more directories](how-to-connect-install-custom.md#connect-your-directories). For removing a directory, see [Delete a Connector](how-to-connect-sync-service-manager-ui-connectors.md#delete).
+* [Add more directories](how-to-connect-install-custom.md#connect-your-directories). 
 * [Change Domain and OU filtering](how-to-connect-install-custom.md#domain-and-ou-filtering).
 * Remove Group filtering.
 * [Change optional features](how-to-connect-install-custom.md#optional-features).
