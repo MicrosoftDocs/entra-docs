@@ -81,6 +81,9 @@ For more information see [Add an attribute mapping - Microsoft Entra ID to Activ
 The following PowerShell script can be used to help automate this step.  This script will take all of the groups in the **OU=Groups,DC=Contoso,DC=com** container and copy the adminDescription attribute value to the msDS-ExternalDirectoryObjectID attribute value.
 
    ```powershell
+
+       Import-module ActiveDirectory
+
       $groups = Get-ADGroup -Filter * -SearchBase "OU=Groups,DC=Contoso,DC=com" -Properties * | Where-Object {$_.adminDescription -ne $null} |
          Select-Object Samaccountname, adminDescription, msDS-ExternalDirectoryObjectID
 
