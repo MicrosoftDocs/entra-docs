@@ -45,7 +45,7 @@ In the above error, the message states that the application can only be accessed
 
 ## Tenant lifecycle block
 
-Error message ```Error message: AADSTS5000225: This tenantt has beeen blocked due to inactivity. To learn more about ...``` is expected for tenants blocked due to lifecycle actions. Lifecycle actions may include marking tenants for deletion manually or tenants expiring due to tenant expiration date set on the tenant. Tenants that remain inactive for longer than "x" days will be blocked. Administrators may request the tenant to be reactivated within 90 days of the tenant entering the "blocked" state.
+Error message ```Error message: AADSTS5000225: This tenantt has beeen blocked due to inactivity. To learn more about ...``` is expected for tenants blocked due to lifecycle actions. Lifecycle actions may include marking tenants for deletion manually or tenants expiring due to tenant expiration date set on the tenant. Tenants that remain inactive for longer than twenty days will be blocked. Administrators may request the tenant to be reactivated within twenty days of the tenant entering the "blocked" state.
 
 :::image type="content" source="media/troubleshoot-conditional-access/tenant-block.png" alt-text="Screenshot showing an error when tenant access blocked due to inactivity" lightbox="media/troubleshoot-conditional-access/tenant-block.png":::
 
