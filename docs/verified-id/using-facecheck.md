@@ -1,6 +1,6 @@
 ---
-title: Tutorial - Using FaceCheck with Verified ID and unlocking high assurance verifications at scale (Preview)
-description: In this tutorial, you learn how to use FaceCheck with Verified ID
+title: Tutorial - Using Face Check with Verified ID and unlocking high assurance verifications at scale (Preview)
+description: In this tutorial, you learn how to use Face Check with Verified ID
 ms.service: entra-verified-id
 
 author: barclayn
@@ -23,8 +23,20 @@ Face Check is a privacy-respecting facial matching. It allows enterprises to per
 :::image type="content" source="media/using-facecheck/verify-confirm-review.png" alt-text="Screenshot of using Face Check.":::
 
 ## Prerequisites
-
+Face Check is a paid functionality in Verified ID that requires linking your Azure Subscription as part of onboarding. Follow the next steps before you start using Face Check.
 - [Set up a tenant for Microsoft Entra Verified ID](./verifiable-credentials-configure-tenant-quick.md).
+- [Associate or add an Azure subscription to your Microsoft Entra tenant](https://learn.microsoft.com/en-us/entra/fundamentals/how-subscriptions-associated-directory)
+- The Administrator setting up Face Check should  requires [contributor role for the Azure subscription](https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles/general#contributor)
+
+## Setting up the Face Check service Addon
+1. Go to the Verified ID overview page, scroll down to the new Addons section and `Enable` the Face Check addon
+:::image type="content" source="media/using-facecheck/face-check-addon.png" alt-text="Screenshot of the Face Check Addon.":::
+
+1. In the Link a subscription section, select a Subscription, a Resource group and the Resouce location. Then select `Validate`. If there are no subscriptions listed, see [What if I can't find a subscription?](using-facecheck.md#what-if-i-cant-find-a-subscription)
+:::image type="content" source="media/using-facecheck/face-check-subscription-linking.png" alt-text="Screenshot subscription linking for Face Check.":::
+
+1. Once validated you can `Enable` the Addon
+:::image type="content" source="media/using-facecheck/face-check-addon-enabled.png" alt-text="Screenshot of using Face Check."::: 
 
 ## Get started with Face Check using MyAccount
 
@@ -168,9 +180,17 @@ Azure AI is a suite of cloud services on the Azure Platform. The Azure AI Vision
 
 The Azure AI Vision Face API liveness check verifies that it's a real person in the live footage from the camera on the device. It can detect a wide variety of spoofing techniques  and this helps ensure that a static photo or even a 2D video of a user can't be used in place of their live self.
 
-### How much does Face Check cost?
+### What if I can't find a subscription?
+If no subscriptions are available in the Link a subscription pane, here are some possible reasons:
 
-Face Check is offered free of cost during the Public Preview period and can be used by any Verified ID project. Later in the year we will announce billing models.
+You don't have the appropriate permissions. Be sure to sign in with an Azure account that's assigned at least the Contributor role within the subscription or a resource group within the subscription.
+
+A subscription exists, but it isn't associated with your directory yet. You can [associate an existing subscription to your tenant](https://learn.microsoft.com/en-us/entra/fundamentals/how-subscriptions-associated-directory) and then repeat the steps for linking it to your tenant.
+
+No subscription exists. In the Link a subscription pane, you can create a subscription by selecting the link if you don't already have a subscription you may create one here. After you create a new subscription, you'll need to [create a resource group](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal]) in the new subscription, and then repeat the steps for linking it to your tenant.
+
+### How much does Face Check cost?
+This article does not contain pricing details. For the latest information about usage billing and pricing, see [Microsoft Entra pricing](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
 
 ### Are you iBeta Level 2 conformant?
 
