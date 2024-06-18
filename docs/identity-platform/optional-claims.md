@@ -17,13 +17,21 @@ ms.topic: how-to
 
 Tokens that Microsoft Entra returns are kept smaller to ensure optimal performance by clients that request them. As a result, several claims are no longer present in the token by default and must be asked for specifically on a per-application basis.
 
-You can configure optional claims for your application through the Microsoft Entra admin center's applications UI or manifest:
+You can configure optional claims for your application through the Microsoft Entra admin center's applications UI or manifest.
+
+## Prerequisites
+
+* An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* Completion of [Quickstart: Register an application](quickstart-register-app.md)
+
+## Configure optional claims in your application
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 1. Browse to **Identity** > **Applications** > **App registrations**.
 1. Choose the application for which you want to configure optional claims based on your scenario and desired outcome.
 
 # [Proceed with app UI](#tab/appui)
+
 1. Under **Manage**, select **Token configuration**.
 1. Select **Add optional claim**.
 1. Select the token type you want to configure, such as *Access*.
@@ -31,6 +39,7 @@ You can configure optional claims for your application through the Microsoft Ent
 1. Select **Add**.
 
 # [Proceed with manifest](#tab/manifest)
+
 1. Under **Manage**, select **Manifest**. A web-based manifest editor opens, allowing you to edit the manifest. Optionally, you can select **Download** and edit the manifest locally, and then use **Upload** to reapply it to your application. If the file doesn't contain `optionalClaims` property, you can add it.
 
     The following application manifest entry adds the `auth_time`, `ipaddr`, and `upn` optional claims to ID, access, and SAML tokens.
@@ -304,13 +313,9 @@ Configure claims in the manifest:
 
 1. When you're finished updating the manifest, select **Save** to save the manifest.
 
-## See also
+## Related content
 
 - [Access tokens](access-tokens.md)
 - [Application manifest](reference-app-manifest.md)
 - [ID tokens](id-tokens.md)
 - [Optional claims reference](optional-claims-reference.md)
-
-## Next steps
-
-- Learn more about the [tokens and claims](security-tokens.md) in the Microsoft identity platform.
