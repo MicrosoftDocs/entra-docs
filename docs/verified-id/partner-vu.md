@@ -35,7 +35,7 @@ To get started, ensure the following prerequisites are met:
 
 Digital Identity is a link between users who need to access an application and applications that require secure access control, regardless of how users access the system.
 
-To enable faster and easier user onboarding, replace some human interactions with verifiable credentials. For example, for a user to create or remotely access an account, use a Verified ID with Digital Identity. Verify identity without using vulnerable or complex passwords, or require users to be on-site.
+To enable faster and easier user onboarding, replace some human interactions with verifiable credentials. For a user to create or remotely access an account, enable Verified ID with Digital Identity. Verify identity without using vulnerable or complex passwords, or require users to be on-site.
 
 Learn more about [account onboarding](./plan-verification-solution.md#account-onboarding).
 
