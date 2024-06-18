@@ -176,9 +176,9 @@ Single tenant applications are applications that support:
 - Personal Microsoft accounts only: `https://login.microsoftonline.com/consumers` (**consumers** being a nickname for the tenant 9188040d-6c67-4c5b-b112-36a304b66dad)
 
 
-#### Multi-tenant applications
+#### Multitenant applications
 
-Microsoft Entra ID also supports multi-tenant applications. These applications support:
+Microsoft Entra ID also supports multitenant applications. These applications support:
 - Accounts in any organizational directory (any Microsoft Entra directory): `https://login.microsoftonline.com/organizations`
 - Accounts in any organizational directory (any Microsoft Entra directory) and personal Microsoft accounts (for example, Skype, XBox): `https://login.microsoftonline.com/common`
 
