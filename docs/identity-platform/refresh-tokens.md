@@ -5,7 +5,7 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: curation-claims
-ms.date: 06/02/2023
+ms.date: 06/10/2024
 ms.reviewer: ludwignick
 ms.service: identity-platform
 
@@ -15,7 +15,7 @@ ms.topic: concept-article
 
 # Refresh tokens in the Microsoft identity platform
 
-When a client acquires an access token to access a protected resource, the client also receives a refresh token. The refresh token is used to obtain new access and refresh token pairs when the current access token expires. 
+A refresh token is used to obtain new access and refresh token pairs when the current access token expires. When a client acquires an access token to access a protected resource, the client also receives a refresh token. 
 
 Refresh tokens are also used to acquire extra access tokens for other resources. Refresh tokens are bound to a combination of user and client, but aren't tied to a resource or tenant. A client can use a refresh token to acquire access tokens across any combination of resource and tenant where it has permission to do so. Refresh tokens are encrypted and only the Microsoft identity platform can read them.
 
@@ -58,7 +58,7 @@ The server can revoke refresh tokens because of a change in credentials, user ac
 >
 > Refresh tokens are not revoked for B2B users in their resource tenant. The token needs to be revoked in the home tenant.
 
-## See also
+## Related content
 
 - [Primary refresh tokens](~/identity/devices/concept-primary-refresh-token.md)
 - [Access tokens in the Microsoft identity platform](access-tokens.md)
