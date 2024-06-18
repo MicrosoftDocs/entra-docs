@@ -50,7 +50,7 @@ If you have a custom domain registered for your Microsoft Entra tenant, you see 
 
 To set up Verified ID, follow these steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 
 1. Select **Verified ID**.
 

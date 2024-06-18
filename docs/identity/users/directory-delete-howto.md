@@ -38,7 +38,7 @@ Check the following conditions:
 
 ## Delete the organization
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 1. Select Microsoft Entra ID.
 1. On a tenant's **Overview** page, select **Manage tenants**.
   
@@ -164,7 +164,7 @@ Use the following PowerShell code to remove those applications:
    Get-MgServicePrincipal | ForEach-Object { Update-MgServicePrincipal -ServicePrincipalId $_.Id -BodyParameter $ServicePrincipalUpdate }
    ```
 
-9. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator)., and remove any new admin account that you created in step 3.
+9. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator)., and remove any new admin account that you created in step 3.
 
 10. Retry tenant deletion from the Microsoft Entra admin center.
 
@@ -197,7 +197,7 @@ You can put a self-service sign-up product like Microsoft Power BI or Azure RMS 
 >[!NOTE]
 > If you're trying to delete the Contoso organization that has the initial default domain `contoso.onmicrosoft.com`, sign in with a UPN such as `admin@contoso.onmicrosoft.com`.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 1. Select Microsoft Entra ID.
 1. Select **Licenses**, and then select **Self-service sign-up products**. You can see all the self-service sign-up products separately from the seat-based subscriptions. Choose the product that you want to permanently delete. Here's an example in Microsoft Power BI:
 
