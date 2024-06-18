@@ -865,66 +865,6 @@
       "source_path_from_root": "/docs/global-secure-access/how-to-manage-m365-profile.md",
       "redirect_url": "/docs/global-secure-access/how-to-manage-microsoft-profile.md",
       "redirect_document_id": false
-    },
-    {            
-      "source_path_from_root": "/docs/global-secure-access/media/how-to-manage-m365-profile/conditional-access-applied-policies.png",
-      "redirect_url": "/docs/global-secure-access/media/how-to-manage-microsoft-profile/conditional-access-applied-policies.png",
-      "redirect_document_id": false
-    },
-    {            
-      "source_path_from_root": "/docs/global-secure-access/media/how-to-manage-m365-profile/conditional-access-menu-options.png",
-      "redirect_url": "/docs/global-secure-access/media/how-to-manage-microsoft-profile/conditional-access-menu-options.png",
-      "redirect_document_id": false
-    },
-    {            
-      "source_path_from_root": "/docs/global-secure-access/media/how-to-manage-m365-profile/microsoft-365-conditional-access-policy-link.png",
-      "redirect_url": "/docs/global-secure-access/media/how-to-manage-microsoft-profile/microsoft-365-conditional-access-policy-link.png",
-      "redirect_document_id": false
-    },
-    {            
-      "source_path_from_root": "/docs/global-secure-access/media/how-to-manage-m365-profile/microsoft-365-policies-forward-bypass.png",
-      "redirect_url": "/docs/global-secure-access/media/how-to-manage-microsoft-profile/microsoft-policies-forward-bypass.png",
-      "redirect_document_id": false
-    },
-    {            
-      "source_path_from_root": "/docs/global-secure-access/media/how-to-manage-m365-profile/microsoft-365-profile-details.png",
-      "redirect_url": "/docs/global-secure-access/media/how-to-manage-microsoft-profile/microsoft-profile-details.png",
-      "redirect_document_id": false
-    },
-    {            
-      "source_path_from_root": "/docs/global-secure-access/media/how-to-manage-m365-profile/microsoft-365-traffic-policies-expanded.png",
-      "redirect_url": "/docs/global-secure-access/media/how-to-manage-microsoft-profile/microsoft-traffic-policies-expanded.png",
-      "redirect_document_id": false
-    },
-    {            
-      "source_path_from_root": "/docs/global-secure-access/media/how-to-manage-m365-profile/microsoft-365-traffic-policies.png",
-      "redirect_url": "/docs/global-secure-access/media/how-to-manage-microsoft-profile/microsoft-traffic-policies.png",
-      "redirect_document_id": false
-    },
-    {            
-      "source_path_from_root": "/docs/global-secure-access/media/how-to-manage-m365-profile/microsoft-365-traffic-profile-expanded.png",
-      "redirect_url": "/docs/global-secure-access/media/how-to-manage-microsoft-profile/microsoft-traffic-profile-expanded.png",
-      "redirect_document_id": false
-    },
-    {            
-      "source_path_from_root": "/docs/global-secure-access/media/how-to-manage-m365-profile/microsoft-365-traffic-profile.png",
-      "redirect_url": "/docs/global-secure-access/media/how-to-manage-microsoft-profile/microsoft-traffic-profile.png",
-      "redirect_document_id": false
-    },
-    {            
-      "source_path_from_root": "/docs/global-secure-access/media/how-to-target-resource-m365-profile/global-secure-access-client-signed-in.png",
-      "redirect_url": "/docs/global-secure-access/media/how-to-target-resource-microsoft-profile/global-secure-access-client-signed-in.png",
-      "redirect_document_id": false
-    },
-    {            
-      "source_path_from_root": "/docs/global-secure-access/media/how-to-target-resource-m365-profile/target-resource-traffic-profile.png",
-      "redirect_url": "/docs/global-secure-access/media/how-to-target-resource-microsoft-profile/target-resource-traffic-profile.png",
-      "redirect_document_id": false
-    },
-    {            
-      "source_path_from_root": "/docs/global-secure-access/media/how-to-target-resource-m365-profile/windows-client-pick-an-account.png",
-      "redirect_url": "/docs/global-secure-access/media/how-to-target-resource-microsoft-profile/windows-client-pick-an-account.png",
-      "redirect_document_id": false
     }
   ]
 }
