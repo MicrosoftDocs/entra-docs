@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 ms.workload: identity
 ms.topic: how-to
-ms.date: 06/04/2024
+ms.date: 06/18/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Directory Services so that I can control who has access to Directory Services, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -77,16 +77,16 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 1. On the **Basic SAML Configuration** section, perform the following steps:
 
     a. In the **Identifier (Entity ID)** text box, type the URL:
-    `https://portalsso.techsafe.nz/saml2/sso`
+    `https://portal.techsafe.nz/saml2/sso`
 
     b. In the **Reply URL** text box, type the URL:
     ` https://portal.techsafe.nz/saml/module.php/saml/sp/saml2-acs.php/techsafe-sp `
 
     c. In the **Sign on URL** text box, type the URL:
-    `https://portalsso.techsafe.nz`
+    `https://portal.techsafe.nz`
 
     d. In the **Logout Url** text box, type the URL:
-    `https://portalsso.techsafe.nz/logout.php`
+    `https://portal.techsafe.nz/logout.php`
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 
