@@ -125,7 +125,7 @@ You can also choose one of these active assignment duration options.
 | Allow permanent active assignment | Resource administrators can assign permanent active assignments. |
 | Expire active assignment after | Resource administrators can require that all active assignments have a specified start and end date. |
 
-All assignments that have a specified end date can be renewed by Global admins and Privileged Role admins. Also, users can initiate self-service requests to [extend or renew role assignments](pim-resource-roles-renew-extend.md).
+All assignments that have a specified end date can be renewed by Global Administrators and Privileged Role Administrators. Also, users can initiate self-service requests to [extend or renew role assignments](pim-resource-roles-renew-extend.md).
 
 ### Require multifactor authentication on active assignment
 
