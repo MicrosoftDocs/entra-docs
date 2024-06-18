@@ -51,7 +51,7 @@ To check if the prerequisite products for a Microsoft Entra ID Governance produc
 
 ## Starting a trial
 
-A global administrator in a tenant that has an appropriate prerequisite product, such as Microsoft Entra ID P1, already purchased, and isn't already using or has previously trialed Microsoft Entra ID Governance, can request a trial of Microsoft Entra ID Governance in their tenant.
+A Global Administrator in a tenant that has an appropriate prerequisite product, such as Microsoft Entra ID P1, already purchased, and isn't already using or has previously trialed Microsoft Entra ID Governance, can request a trial of Microsoft Entra ID Governance in their tenant.
 
 1. Sign in to the [Microsoft 365 admin center](https://admin.microsoft.com/AdminPortal/Home) as a [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator)
 

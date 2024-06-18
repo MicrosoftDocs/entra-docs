@@ -147,7 +147,7 @@ Most commonly caused by the signed-in user not being a member of the proper role
 
     - The Partner One ID is correct. 
     - There are no errors or "pending actions" shown, and the verification status under Legal business profile and Partner info both say "authorized" or "success".
-1. Go to the [CPP tenant management page](https://partner.microsoft.com/dashboard/account/v3/tenantmanagement) and confirm that the tenant the app is registered in and that you're signing with a user account from is on the list of associated tenants. To add another tenant, follow the [multi-tenant-account instructions](/partner-center/multi-tenant-account). All Global Admins of any tenant you add will be granted Global Administrator privileges on your Partner Center account.
+1. Go to the [CPP tenant management page](https://partner.microsoft.com/dashboard/account/v3/tenantmanagement) and confirm that the tenant the app is registered in and that you're signing with a user account from is on the list of associated tenants. To add another tenant, follow the [multi-tenant-account instructions](/partner-center/multi-tenant-account). All Global Administrators of any tenant you add will be granted Global Administrator privileges on your Partner Center account.
 1. Go to the [CPP User Management page](https://partner.microsoft.com/pcv/users) and confirm the user you're signing in as is either a Global Administrator, MPN Admin, or Accounts Admin. To add a user to a role in Partner Center, follow the instructions for [creating user accounts and setting permissions](/partner-center/create-user-accounts-and-set-permissions).
 
 ### MPNGlobalAccountNotFound

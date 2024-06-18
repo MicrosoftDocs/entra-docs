@@ -22,7 +22,7 @@ This article describes two ways to take over a DNS domain name in an unmanaged d
 
 During the process of admin takeover, you can prove ownership as described in [Add a custom domain name to Microsoft Entra ID](~/fundamentals/add-custom-domain.yml). The next sections explain the admin experience in more detail, but here's a summary:
 
-* When you perform an ["internal" admin takeover](#internal-admin-takeover) of an unmanaged Azure directory, you're added as the global administrator of the unmanaged directory. No users, domains, or service plans are migrated to any other directory you administer.
+* When you perform an ["internal" admin takeover](#internal-admin-takeover) of an unmanaged Azure directory, you're added as the Global Administrator of the unmanaged directory. No users, domains, or service plans are migrated to any other directory you administer.
 
 * When you perform an ["external" admin takeover](#external-admin-takeover) of an unmanaged Azure directory, you add the DNS domain name of the unmanaged directory to your managed Azure directory. When you add the domain name, a mapping of users to resources is created in your managed Azure directory so that users can continue to access services without interruption. 
 
@@ -53,7 +53,7 @@ Some products that include SharePoint and OneDrive, such as Microsoft 365, don't
 
 When the DNS TXT records are verified at your domain name registrar, you can manage the Microsoft Entra organization.
 
-When you complete the preceding steps, you're now the global administrator of the Fourth Coffee organization in Microsoft 365. To integrate the domain name with your other Azure services, you can remove it from Microsoft 365 and add it to a different managed organization in Azure.
+When you complete the preceding steps, you're now the Global Administrator of the Fourth Coffee organization in Microsoft 365. To integrate the domain name with your other Azure services, you can remove it from Microsoft 365 and add it to a different managed organization in Azure.
 
 <a name='adding-the-domain-name-to-a-managed-organization-in-entra-id'></a>
 

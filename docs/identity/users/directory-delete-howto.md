@@ -15,7 +15,7 @@ ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
 # Delete a tenant in Microsoft Entra ID
 
-When an organization (tenant) is deleted in Microsoft Entra ID, all resources in the organization are also deleted. Prepare your organization by minimizing its associated resources before you delete. Only a global administrator can delete a Microsoft Entra organization from the Microsoft Entra Admin center.
+When an organization (tenant) is deleted in Microsoft Entra ID, all resources in the organization are also deleted. Prepare your organization by minimizing its associated resources before you delete. Only a Global Administrator can delete a Microsoft Entra organization from the Microsoft Entra Admin center.
 
 ## Prepare the organization
 
@@ -24,7 +24,7 @@ You can't delete an organization in Microsoft Entra ID until it passes several c
 Check the following conditions:
 
 * You've paid all outstanding invoices and amounts due or overdue.
-* No users are in the Microsoft Entra tenant, except one global administrator who will delete the organization. You must delete any other users before you can delete the organization. 
+* No users are in the Microsoft Entra tenant, except one Global Administrator who will delete the organization. You must delete any other users before you can delete the organization. 
 
   If users are synchronized from on-premises, turn off the sync first. You must delete the users in the cloud organization by using the Microsoft Entra admin center or Azure PowerShell cmdlets.
 * No applications are in the organization. You must remove any applications before you can delete the organization.
@@ -67,7 +67,7 @@ Subscription state | Data | Access to data
 
 You can use the Microsoft admin center to put a subscription into the **Deprovisioned** state for deletion in three days:
 
-1. Sign in to the [Microsoft 365 admin center](https://admin.microsoft.com) with an account that is a global administrator in your organization. If you're trying to delete the Contoso organization that has the initial default domain `contoso.onmicrosoft.com`, sign in with a User Principal Name (UPN) such as `admin@contoso.onmicrosoft.com`.
+1. Sign in to the [Microsoft 365 admin center](https://admin.microsoft.com) with an account that is a Global Administrator in your organization. If you're trying to delete the Contoso organization that has the initial default domain `contoso.onmicrosoft.com`, sign in with a User Principal Name (UPN) such as `admin@contoso.onmicrosoft.com`.
 
 1. You need to cancel a subscription before you can delete it. Select **Billing** > **Your products**, and then select **Cancel subscription** for the subscription that you want to cancel. 
 

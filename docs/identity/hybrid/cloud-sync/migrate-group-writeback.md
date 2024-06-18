@@ -32,7 +32,7 @@ For more information, see the [Provisioning to Active Directory with Microsoft E
 ## Prerequisites
 The following prerequisites are required to implement this scenario.
 
- - Microsoft Entra account with at least a [Hybrid Administrator](../../role-based-access-control/permissions-reference.md#hybrid-identity-administrator) role.
+ - Microsoft Entra account with at least a [Hybrid Identity Administrator](../../role-based-access-control/permissions-reference.md#hybrid-identity-administrator) role.
  - An on-premises AD account with at least domain administrator permissions - required to access the adminDescription attribute and copy it to the msDS-ExternalDirectoryObjectId attribute
  - On-premises Active Directory Domain Services environment with Windows Server 2016 operating system or later. 
      - Required for AD Schema attribute  - msDS-ExternalDirectoryObjectId 
