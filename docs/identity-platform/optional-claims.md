@@ -15,13 +15,17 @@ ms.topic: how-to
 
 # Configure optional claims
 
-You can configure optional claims for your application through the Azure portal or application manifest.
+You can configure optional claims for your application through the Microsoft Entra admin center or the application manifest.
+
+### [Microsoft Entra admin center](#tab/microsoft-entra-admin-center)
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 1. Browse to **Identity** > **Applications** > **App registrations**.
 1. Choose the application for which you want to configure optional claims based on your scenario and desired outcome.
 1. Under **Manage**, select **Token configuration**.
    - The UI option **Token configuration** blade isn't available for apps registered in an Azure AD B2C tenant, which can be configured by modifying the application manifest. For more information, see  [Add claims and customize user input using custom policies in Azure Active Directory B2C](/azure/active-directory-b2c/configure-user-input)  
+
+### [Application manifest](#tab/application-manifest)
 
 Configure claims using the manifest:
 
@@ -62,6 +66,8 @@ Configure claims using the manifest:
     ```
 
 1. When finished, select **Save**. Now the specified optional claims are included in the tokens for your application.
+
+---
 
 The `optionalClaims` object declares the optional claims requested by an application. An application can configure optional claims that are returned in ID tokens, access tokens, and SAML 2 tokens. The application can configure a different set of optional claims to be returned in each token type.
 
