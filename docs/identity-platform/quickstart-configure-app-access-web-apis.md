@@ -21,7 +21,7 @@ By specifying a web API's scopes in your client app's registration, the client a
 
 ## Prerequisites
 
-* An Azure account with an active subscription - [create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
+* An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * Completion of [Quickstart: Register an application](quickstart-register-app.md)
 * Completion of [Quickstart: Configure an application to expose a web API](quickstart-configure-app-expose-web-apis.md)
 
