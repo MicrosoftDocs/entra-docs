@@ -118,7 +118,7 @@ Use a Windows device with the Global Secure Access client installed. Sign in as 
 - Internet traffic acquisition profiles for the client can't be configured.
 - The client traffic acquisition policy includes Transmission Control Protocol (TCP) ports 80/443.
 - Standard ports for HTTP/S traffic (ports 80 and 443).
-- *microsoft.com is currently acquired by the Microsoft 365 access profile.
+- *microsoft.com is currently acquired by the Microsoft access profile.
 - IPv6 isn't supported on this platform.
 - Hyper-V isn't supported on this platform.
 - Remote network connectivity for Internet Access is in development.

@@ -18,11 +18,11 @@ This article explains how to manage your existing remote networks for Global Sec
 
 - A **Global Secure Access Administrator** role in Microsoft Entra ID.
 - The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
-- To use the Microsoft 365 traffic forwarding profile, a Microsoft 365 E3 license is recommended.
+- To use the Microsoft traffic forwarding profile, a Microsoft 365 E3 license is recommended.
 
 ### Known limitations
 
-- At this time, remote networks can only be assigned to the Microsoft 365 traffic forwarding profile.
+- At this time, remote networks can only be assigned to the Microsoft traffic forwarding profile.
 
 ## Update remote networks
 
@@ -54,11 +54,11 @@ Add a new device link or delete an existing device link from this page. You can'
 
 #### Traffic profiles
 
-From this page, you can enable or disable the available traffic forwarding profile. At this time, only the Microsoft 365 access profile can be applied to remote networks.
+From this page, you can enable or disable the available traffic forwarding profile. At this time, only the Microsoft access profile can be applied to remote networks.
 
 ![Screenshot of the traffic profiles options on the remote networks.](./media/how-to-manage-remote-networks/remote-network-traffic-profile.png)
 
-You can also assign a remote network to the Microsoft 365 traffic forwarding profile from **Traffic forwarding** area of Global Secure Access. Browse to **Connect** > **Traffic forwarding** and select the **Add/edit assignments** button for the traffic profile. For more information, see [Global Secure Access traffic forwarding](concept-traffic-forwarding.md).
+You can also assign a remote network to the Microsoft traffic forwarding profile from **Traffic forwarding** area of Global Secure Access. Browse to **Connect** > **Traffic forwarding** and select the **Add/edit assignments** button for the traffic profile. For more information, see [Global Secure Access traffic forwarding](concept-traffic-forwarding.md).
 
 ### [Microsoft Graph API](#tab/microsoft-graph-api)
 
