@@ -1,9 +1,9 @@
 ---
-title: Create a remote network using Azure vWAN
+title: Simulate remote network connectivity using Azure vWAN
 description: Use Global Secure Access to configure Azure and Entra resources to create a virtual wide area network to connect to your resources in Azure.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 06/11/2024
+ms.date: 06/17/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -14,7 +14,7 @@ ms.reviewer: absinh
 ---
 # Create a remote network using Azure vWAN
 
-This article explains how to simulate remote network connectivity using a remote virtual wide-area network (vWAN). If you want to simulate remote network connectivity using an Azure virtual network gateway, see the article, [Create a remote network using Azure virtual networks](/entra/global-secure-access/how-to-simulate-remote-network).
+This article explains how to simulate remote network connectivity using a remote virtual wide-area network (vWAN). If you want to simulate remote network connectivity using an Azure virtual network gateway (VNG), see the article, [Simulate remote network connectivity using Azure VNG](/entra/global-secure-access/how-to-simulate-remote-network).
 
 ## Prerequisites
 
@@ -44,11 +44,12 @@ The steps to create a remote network using Azure vWAN require access to both the
         *The site-to-site connection takes about 30 minutes to deploy.*
     1. [Check border gateway protocol connectivity and learned routes in Microsoft Azure portal](#check-bgp-connectivity-and-learned-routes-in-microsoft-azure-portal)
     1. [Check connectivity in Microsoft Entra admin center](#check-connectivity-in-microsoft-entra-admin-center)
-1. [Test security features with Azure virtual Desktop (AVD)](#test-security-features-with-azure-virtual-desktop-avd)
+1. [Configure security features for testing](#configure-security-features-for-testing)
     1. [Create a virtual network](#create-a-virtual-network)
     1. [Add a virtual network connection to the vWAN](#add-a-virtual-network-connection-to-the-vwan)
     1. [Create an Azure virtual Desktop](#create-an-azure-virtual-desktop)
         *The Azure virtual Desktop takes about 30 minutes to deploy. The Bastion takes another 30 minutes.*
+1. [Test security features with Azure virtual Desktop (AVD)](#test-security-features-with-azure-virtual-desktop-avd)
     1. [Test the tenant restriction](#test-the-tenant-restriction)
     1. [Test source IP restoration](#test-source-ip-restoration)
 
@@ -227,8 +228,8 @@ View the Remote netowk health logs to validate connectivity in the Microsoft Ent
 1. Select **Source IP** and type the source IP address for the VPN gateway's *Instance0* or *Instance1* IP address. Select **Apply**.
 1. The connectivity should be **"Remote network alive"**.
 
-## Test security features with Azure Virtual Desktop (AVD)
-This step uses Azure Virtual Desktop (AVD) to test tenant restrictions on the virtual network.
+## Configure security features for testing
+In this step, we prepare for testing by configuring a virtual network, adding a virtual network connection to the vWAN, and creating an Azure Virtual Desktop.
 
 ### Create a virtual network
 In this step, use the Azure portal to create a virtual network.
@@ -261,7 +262,7 @@ In this step, connect the virtual network to the vWAN.
 
 ### Create an Azure Virtual Desktop
 In this step, create a virtual desktop and host it with Bastion.
-1. In the Azure portal, search for and select **Azure Virtual desktop**.
+1. In the Azure portal, search for and select **Azure Virtual Desktop**.
 1. On the **Azure Virtual Desktop** page, select **Create a host pool**.
 1. Complete the **Basics** tab with the following:
     * The **Host pool name**. For this example, **VirtualDesktops**. 
@@ -296,6 +297,9 @@ In this step, create a virtual desktop and host it with Bastion.
 1. Select **Deploy Bastion**. The system takes about 30 minutes to deploy the Bastion host.
 1. After the Bastion is deployed, enter the same admin credentials used to create the Azure Virtual Desktop. 
 1. Select **Connect**. The virtual desktop launches.
+
+## Test security features with Azure Virtual Desktop (AVD)
+In this step, we use the AVD to test access restrictions to the virtual network.
 
 ### Test the tenant restriction
 Before testing, enable tenant restrictions on the virtual network.
