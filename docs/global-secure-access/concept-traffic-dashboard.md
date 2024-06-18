@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: conceptual
-ms.date: 06/17/2024
+ms.date: 06/18/2024
 ms.service: global-secure-access
 ---
 
@@ -31,7 +31,8 @@ This article describes each of the dashboard widgets and how you can use the dat
 To view the Global Secure Access dashboard, you must have:
 
 - A **Global Secure Access Administrator** role in Microsoft Entra ID.
-- The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
+- A Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
+- Configured network traffic to be acquired by the service to view data on the dashboard. On the dashboard, select **Get started with the dashboard** for an overview video.
 
 ## How to access the dashboard
 
@@ -121,21 +122,17 @@ Select the **Configure tenant restrictions** button to navigate to the **Session
 
 ## Web category filtering
 
-The **Web category filtering** widget displays the top categories of web content that were blocked by the service. These categories can be used to determine what sites or categories of sites you might want to block. 
+The **Web category filtering** widget displays the top categories of web content that were blocked or allowed by the service. These categories can be used to determine what sites or categories of sites you might want to block.
+
+The widget defaults to showing blocked and allowed traffic, but you can use the **Blocked** or **Allowed** filter options to view one or the other. Sort the results using the following categories:
 
 - **Transactions**: Shows the total number of transactions in the last 24 hours. 
 - **Users**: The number of distinct users (UPN) accessing the destination in the last 24 hours.
 - **Devices**: The number of distinct device IDs accessing the destination in the last 24 hours.
 
+Select **View all web categories** to view more details about your network traffic.
+
 ![Screenshot of the traffic categories accessed by users and devices.](media/concept-traffic-dashboard/web-content-filtering.png)
-
-
-
-
-
-
-
-
 
 ## Device status
 
