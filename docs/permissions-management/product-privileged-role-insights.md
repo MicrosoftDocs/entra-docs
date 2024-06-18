@@ -29,7 +29,7 @@ To view information on the Microsoft Entra Insights tab, you must have Permissio
 ## View information in the Microsoft Entra Insights tab
 
 1. From the Permissions Management home page, select the **Microsoft Entra Insights** tab.
-2. Select **Review global administrators** to review the list of Global Administrator role assignments.
+2. Select **Review Global Administrators** to review the list of Global Administrator role assignments.
 3. Select **Review highly privileged roles** or **Review service principals** to review information on principal role assignments for the following roles: *Application Administrator*, *Cloud Application Administrator*, *Exchange Administrator*, *Intune Administrator*, *Privileged Role Administrator*, *SharePoint Administrator*, *Security Administrator*, *User Administrator*. 
 
 

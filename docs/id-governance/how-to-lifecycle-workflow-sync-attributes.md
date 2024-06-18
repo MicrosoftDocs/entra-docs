@@ -157,7 +157,7 @@ Once you have set up your provisioning application, you're able to edit its attr
 
 To update this mapping, you'd do the following:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator).
 
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 

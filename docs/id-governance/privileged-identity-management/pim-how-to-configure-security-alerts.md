@@ -100,7 +100,7 @@ Severity: **High**
 >[!NOTE]
 > PIM sends email notifications for the **Role assigned outside of PIM** alert when the alert is enabled from [alert settings](#customize-security-alert-settings) For Microsoft Entra roles in PIM, emails are sent to **Privileged Role Administrators**, **Security Administrators**, and **Global Administrators** that have enabled Privileged Identity Management. For Azure resources in PIM, emails are sent to **Owners** and **User Access Administrators**.
 
-### There are too many global administrators
+### There are too many Global Administrators
 
 Severity: **Low**
 
