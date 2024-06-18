@@ -29,7 +29,7 @@ For a great overview of cloud sync group provisioning to Active directory and wh
 ## Prerequisites
 The following prerequisites are required to implement this scenario.
 
- - Microsoft Entra account with at least a [Hybrid Administrator](../../role-based-access-control/permissions-reference.md#hybrid-identity-administrator) role.
+ - Microsoft Entra account with at least a [Hybrid Identity Administrator](../../role-based-access-control/permissions-reference.md#hybrid-identity-administrator) role.
  - On-premises Active Directory Domain Services environment with Windows Server 2016 operating system or later. 
    - Required for AD Schema attribute - msDS-ExternalDirectoryObjectId. 
  - Provisioning agent with build version [1.1.1367.0](reference-version-history.md#1113700) or later.
