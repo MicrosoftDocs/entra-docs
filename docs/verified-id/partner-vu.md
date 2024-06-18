@@ -35,7 +35,7 @@ To get started, ensure the following prerequisites are met:
 
 Digital Identity is a link between users who need to access an application and applications that require secure access control, regardless of how users access the system.
 
-To enable faster and easier user onboarding, replace some human interactions with verifiable credentials. For example, for a user to create or remotely access an account, use a Verified ID with Digtial Identity to verify identity, without using vulnerable or complex passwords, or the requirement to be on-site.
+To enable faster and easier user onboarding, replace some human interactions with verifiable credentials. For example, for a user to create or remotely access an account, use a Verified ID with Digital Identity. Verify identity without using vulnerable or complex passwords, or require users to be on-site.
 
 Learn more about [account onboarding](./plan-verification-solution.md#account-onboarding).
 
@@ -60,7 +60,7 @@ As a developer you can share these steps with your tenant administrator to obtai
 3. Select **Verification Request**.
 4. Select [**Start**](https://entra.microsoft.com/#view/Microsoft_AAD_DecentralizedIdentity/QuickStartVerifierBlade).
 5. Select **Select Issuer**.
-6. In Search, in the **Select issuers** drop-down, find **VUSecurity**.
+6. In Search, in the **Issuers** drop-down, find **VU Security**.
 
    :::image type="content" source="./media/partner-vu/select-issuers.png" alt-text="Screenshot of the portal section used to choose issuers.":::
 
