@@ -86,7 +86,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<customerprefix>customerportal.equinix.com`
 
 	> [!NOTE]
-	> The Sign on URL value is not real. Update the value with the actual Sign on URL. Contact [Equinix Federation App Client support team](mailto:prodsecops@equinix.com) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> The Sign on URL value is not real. Update the value with the actual Sign on URL. Contact [Equinix Federation App Client support team](mailto:FederationSupport@equinix.com) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 
@@ -132,7 +132,7 @@ To configure Single Sign-On on **Equinix Federation App** side, please the follo
 
 ### Create Equinix Federation App test user
 
-In this section, you create a user called Britta Simon in Equinix Federation App. Work with [Equinix Federation App support team](mailto:prodsecops@equinix.com) to add the users in the Equinix Federation App platform. Users must be created and activated before you use single sign-on.
+In this section, you create a user called Britta Simon in Equinix Federation App. Work with [Equinix Federation App support team](mailto:FederationSupport@equinix.com) to add the users in the Equinix Federation App platform. Users must be created and activated before you use single sign-on.
 
 ## Test SSO 
 
