@@ -100,8 +100,8 @@ To sign up a user, you need to:
     
     The call to `signUp(username:password:delegate)` or `signUp(username:delegate)` results in a call to either `onSignUpCodeRequired()` or `onSignUpStartError()` delegate methods. The `onSignUpCodeRequired(newState:sentTo:channelTargetType:codeLength)` is called to indicate that a code has been sent to verify the user's email address. Along with some details of where the code has been sent, and how many digits it contains, this delegate method also has a `newState` parameter of type `SignUpCodeRequiredState`, which gives us access to two new methods: 
 
-       - `submitCode(code:delegate)`
-       - `resendCode(delegate)`
+    - `submitCode(code:delegate)`
+    - `resendCode(delegate)`
 
    To submit the code that the user supplied us with, use: 
 
