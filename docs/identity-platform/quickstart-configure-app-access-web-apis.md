@@ -29,7 +29,7 @@ By specifying a web API's scopes in your client app's registration, the client a
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-Access to APIs require configuration of access scopes and roles. If you want to expose your resource application web APIs to client applications, you can configure access scopes and roles for the API. If you want a client application to access a web API, you configure permissions to access the API in the app registration.
+Access to APIs requires configuration of access scopes and roles. If you want to expose your resource application web APIs to client applications, you can configure access scopes and roles for the API. If you want a client application to access a web API, you configure permissions to access the API in the app registration.
 
 To grant a client application to access to your own web API, you need to have two app registrations;
 
@@ -136,7 +136,7 @@ The **Grant admin consent** button is *disabled* if you aren't an admin or if no
 
 ## Related content
 
-Advance to the next quickstart in the series to learn how to configure which account types can access your application. For example, you might want to limit access only to those users in your organization (single-tenant) or allow users in other Microsoft Entra tenants (multi-tenant) and those with personal Microsoft accounts (MSA).
+Advance to the next quickstart in the series to learn how to configure which account types can access your application. For example, you might want to limit access only to those users in your organization (single-tenant) or allow users in other Microsoft Entra tenants (multitenant) and those with personal Microsoft accounts (MSA).
 
 > [!div class="nextstepaction"]
 > [Modify the accounts supported by an application](./howto-modify-supported-accounts.md)

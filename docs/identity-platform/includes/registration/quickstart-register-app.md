@@ -105,7 +105,7 @@ There are some restrictions on the format of the redirect URIs you add to an app
 
 Credentials are used by [confidential client applications](../../msal-client-applications.md) that access a web API. Examples of confidential clients are web apps, other web APIs, or service-type and daemon-type applications. Credentials allow your application to authenticate as itself, requiring no interaction from a user at runtime.
 
-You can add certificates, client secrets (a string), or federated identity credentials as credentials to your confidential client app registration. Itis 'recommended to use certificates from a trusted certificate authority (CA) where possible
+You can add certificates, client secrets (a string), or federated identity credentials as credentials to your confidential client app registration. It's  recommended to use certificates from a trusted certificate authority (CA) where possible.
 
 :::image type="content" source="../../media/quickstart-register-app/portal-05-app-reg-04-credentials.png" alt-text="Screenshot of the Microsoft Entra admin center, showing the Certificates and secrets pane in an app registration." lightbox="../../media/quickstart-register-app/portal-05-app-reg-04-credentials.png":::
 
