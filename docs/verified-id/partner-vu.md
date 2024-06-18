@@ -1,5 +1,5 @@
 ---
-title: Configure Microsoft Entra Verified ID with VU Digital Identity as your Identity Verification Partner
+title: Configure Microsoft Entra Verified ID with VU Security Digital Identity as your Identity Verification Partner
 description: Configure Microsoft Entra Verified ID with VU Digital Identity as your Identity Verification Partner.
 author: gargi-sinha
 manager: martinco
@@ -10,7 +10,7 @@ ms.author: gasinh
 # Customer intent: As a developer, I'm looking for information about the open standards supported by Microsoft Entra Verified ID.
 ---
 
-# Configure Microsoft Entra Verified ID with VU Digital Identity as your Identity Verification Partner
+# Configure Microsoft Entra Verified ID with VU Security Digital Identity as your Identity Verification Partner
 
 In this article, learn to integrate [Microsoft Entra Verified ID](decentralized-identifier-overview.md) with [VU Security](https://www.vusecurity.com/) Digital Identity to create secure and frictionless digital experiences. Enhance biometric onboarding and verification scenarios throughout the lifecycle of citizens and organizations.
 
@@ -35,7 +35,7 @@ To get started, ensure the following prerequisites are met:
 
 Digital Identity is a link between users who need to access an application and applications that require secure access control, regardless of how users access the system.
 
-Replace some human interactions with verifiable credentials to enable faster and easier user onboarding. For example, for a user or employee to create, or remotely access, an account use a Verified ID with Digtial Identity to verify identity, without using vulnerable or complex passwords, or the requirement to be on-site.
+To enable faster and easier user onboarding, replace some human interactions with verifiable credentials. For example, for a user to create or remotely access an account, use a Verified ID with Digtial Identity to verify identity, without using vulnerable or complex passwords, or the requirement to be on-site.
 
 Learn more about [account onboarding](./plan-verification-solution.md#account-onboarding).
 
@@ -64,7 +64,7 @@ As a developer you can share these steps with your tenant administrator to obtai
 
    :::image type="content" source="./media/partner-vu/select-issuers.png" alt-text="Screenshot of the portal section used to choose issuers.":::
 
-7. Compare the **VUIdentityCard** credential with attributes such as firstname, lastname, number, country or region, gender, birth date, nationality. etc.
+7. Compare the **VUIdentityCard** credential with attributes such as firstname, lastname, number, country, region, gender, birth date, nationality. etc.
 
    >[!NOTE]
    >Number attribute refers to a national ID. For example, the Documento Nacional de Identidad (DNI) in Argentina.
@@ -83,8 +83,8 @@ With the request URL and body from the tenant administrator, update your applica
    >[!NOTE]
    >If you're using [a sample app](https://aka.ms/vcsample), replace the contents of the `presentation_request_config.json` with the request body obtained in the previous instructions. The sample code overwrites the `trustedIssuers` values with `IssuerAuthority` value from `appsettings.json`.
 
-2. Copy the `trustedIssuers` value from the payload to `IssuerAuthority` in `appsettings.json` file.
-3. Replace the values for the **url**, **state**, and **api-key** with your values.
+2. Copy the `trustedIssuers` value from the payload to `IssuerAuthority` in the `appsettings.json` file.
+3. Replace the values for **url**, **state**, and **api-key** with your values.
 4. To obtain an access token for the Verified ID service request Service Principal, [grant needed permissions](verifiable-credentials-configure-tenant.md#grant-permissions-to-get-access-tokens) for your app.
 
 ## Test the user flow
