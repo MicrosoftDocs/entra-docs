@@ -120,7 +120,7 @@ The **Configured permissions** table on the **API permissions** pane shows the l
 
 This is the minimum list of permissions people will have to consent to for your app. There could be more, but these will always be required. For security and to help users and admins feel more comfortable using your app, never ask for anything you don’t need.
 
-You can add or remove the permissions that appear in this table by using the steps outlined above or from [Other permissions granted](#other-permissions-granted) (described in the next section). As an admin, you can grant admin consent for the full set of an API's permissions that appear in the table, and revoke consent for individual permissions.
+You can add or remove the permissions that appear in this table by using the steps outlined above. As an admin, you can grant admin consent for the full set of an API's permissions that appear in the table, and revoke consent for individual permissions.
 
 ### Admin consent button
 
