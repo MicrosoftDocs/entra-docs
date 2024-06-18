@@ -14,9 +14,9 @@ ms.date: 10/06/2023
 
 # Billing model for Microsoft Entra Verified ID Face Check
 
-[!INCLUDE [applies-to-workforce-only](https://learn.microsoft.com/en-us/entra/external-id/tenant-configurations)
+[!INCLUDE [applies-to-workforce-only](/entra/external-id/tenant-configurations)]
 
-Microsoft Entra Verified ID pricing is based on the count of unique Face Check verification activity within a calendar month that are performed by a Tenant acting as the verifier for the credential. Consumption based billing helps you manage costs by only paying for what the Face Check transactions used. In this article, learn about consumptive billing and linking your Microsoft Entra tenants to a subscription.
+Microsoft Entra Verified ID pricing is based on the unique Face Check verification count within a calendar month by a verifier Tenant. Consumption based billing helps you manage costs by only paying for what the Face Check transactions used. In this article, learn about consumptive billing and linking your Microsoft Entra tenants to a subscription.
 
 > [!IMPORTANT]
 > This article does not contain pricing details. For the latest information about usage billing and pricing, see [Microsoft Entra pricing](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
@@ -32,29 +32,29 @@ To take advantage of the consumptive billing, your Microsoft Entra tenant must b
 
 ## About monthly Face Check verifications billing
 
-In your Microsoft Entra tenant, you can verify credentials from any issuer that you trust. In addition with Face Check, your organization can perform high-assurance verifications securely, simply, and at scale by performing facial matching between a user’s real-time selfie and a photo. Verified ID generates individual billing events for each unique verification that is performed by the platform.Whether that verification succeeded or failed.
+In your Microsoft Entra tenant, you can verify credentials from any issuer that you trust. In addition with Face Check, your organization can perform high-assurance verifications securely, simply, and at scale by performing facial matching between a user’s real-time selfie and a photo. Verified ID generates individual billing events for each unique verification performed by the platform. Whether that verification succeeds or fails.
 
 <a name='link-your-azure-ad-tenant-to-a-subscription'></a>
 
 ## Link your Microsoft Entra tenant to a subscription
 
-1. Go to the Verified ID overview page, scroll down to the new Addons section and `Enable` the Face Check addon
+1. Go to the Verified ID overview page. Scroll down to the new Addons section and `Enable` the Face Check addon
 :::image type="content" source="media/using-facecheck/face-check-addon.png" alt-text="Screenshot of the Face Check Addon.":::
 
-1. In the Link a subscription section, select a Subscription, a Resource group and the Resouce location. Then select `Validate`. If there are no subscriptions listed, see [What if I can't find a subscription?](using-facecheck.md#what-if-i-cant-find-a-subscription)
+1. In the Link a subscription section, select a Subscription, a Resource group, and the Resource location. Then select `Validate`. If there are no subscriptions listed, see [What if I can't find a subscription?](using-facecheck.md#what-if-i-cant-find-a-subscription)
 :::image type="content" source="media/using-facecheck/face-check-subscription-linking.png" alt-text="Screenshot subscription linking for Face Check.":::
 
-1. Once validated you can `Enable` the Addon
+1. `Enable` the Addon once the information is validated
 :::image type="content" source="media/using-facecheck/face-check-addon-enabled.png" alt-text="Screenshot of using Face Check."::: 
 
 ## What if I can't find a subscription?
 If no subscriptions are available in the Link a subscription pane, here are some possible reasons:
 
-You don't have the appropriate permissions. Be sure to sign in with an Azure account that's assigned at least the Contributor role within the subscription or a resource group within the subscription.
+You don't have the appropriate permissions. Be sure to sign in with an Azure account that is assigned at least the Contributor role within the subscription or a resource group within the subscription.
 
-A subscription exists, but it isn't associated with your directory yet. You can [associate an existing subscription to your tenant](https://learn.microsoft.com/en-us/entra/fundamentals/how-subscriptions-associated-directory) and then repeat the steps for linking it to your tenant.
+A subscription exists, but it isn't associated with your directory yet. You can [associate an existing subscription to your tenant](entra/fundamentals/how-subscriptions-associated-directory) and then repeat the steps for linking it to your tenant.
 
-No subscription exists. In the Link a subscription pane, you can create a subscription by selecting the link if you don't already have a subscription you may create one here. After you create a new subscription, you'll need to [create a resource group](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal]) in the new subscription, and then repeat the steps for linking it to your tenant..
+No subscription exists. In the Link a subscription pane, you can create a subscription by selecting the link if you don't already have a subscription you might create one here. After you create a new subscription, you'll need to [create a resource group](/azure/azure-resource-manager/management/manage-resource-groups-portal]) in the new subscription, and then repeat the steps for linking it to your tenant.
 
 ## Next steps
 
