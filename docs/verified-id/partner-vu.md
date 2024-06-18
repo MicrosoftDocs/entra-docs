@@ -1,13 +1,11 @@
 ---
-title: Configure Verified ID by VU Identity Card as your Identity Verification Partner
-description: This article shows you the steps you need to follow to configure VU Identity Card as your identity verification partner
-
+title: Configure Verified ID by VU Identity Card as your identity verification partner
+description: Learn to configure VU Identity Card as your identity verification partner.
 author: gargi-sinha
 manager: martinco
 ms.service: entra-verified-id
-
 ms.topic: how-to
-ms.date: 10/26/2022
+ms.date: 06/18/2024
 ms.author: gasinh
 # Customer intent: As a developer, I'm looking for information about the open standards that are supported by Microsoft Entra Verified ID.
 ---
