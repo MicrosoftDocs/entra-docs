@@ -11,7 +11,7 @@ ms.service: entra-external-id
 ms.subservice: customers
 ms.topic: tutorial
 ms.date: 02/23/2024
-ms.custom: developer, devx-track-dotnet
+ms.custom: developer
 #Customer intent: As a dev, devops, I want to learn how to sign in using username and password.
 ---
 
@@ -91,4 +91,3 @@ func onSignInStartError(error: MSAL.SignInStartError) {
 ## Next steps 
 
 - [Tutorial: Sign in user after sign up](tutorial-native-authentication-ios-sign-in-user-after-sign-up.md) 
-

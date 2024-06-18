@@ -150,7 +150,7 @@ Content-Type: application/x-www-form-urlencoded
 
 client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &scope=https%3A%2F%2Fgraph.microsoft.com%2F.default
-&client_secret=sampleCredentials
+&client_secret=qWgdYAmab0YSkuL1qKv5bPX
 &grant_type=client_credentials
 ```
 
@@ -264,12 +264,12 @@ Now that you've acquired a token, use the token to make requests to the resource
 ```HTTP
 GET /v1.0/users HTTP/1.1
 Host: graph.microsoft.com:443
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik5HVEZ2ZEstZnl0aEV1Q...
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbG...
 ```
 Try the following command in your terminal, ensuring to replace the token with your own.
 
 ```bash
-curl -X GET -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbG...." 'https://graph.microsoft.com/v1.0/users'
+curl -X GET -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbG..." 'https://graph.microsoft.com/v1.0/users'
 ```
 
 ## Code samples and other documentation

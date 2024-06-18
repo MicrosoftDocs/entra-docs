@@ -807,7 +807,7 @@ HTTP/1.1 200 OK
 Content-type: application/json
 
 {
-    "id": "ZjViZjJmYzYtNzEzNS00ZDk0LWE2ZmUtYzI2ZTQ1NDNiYzVhPHNjcmlwdD5hbGVydCgneWF5IScpOzwvc2NyaXB0Pg",
+    "id": "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u",
     "name": "contractname",
     "status": "Enabled",
     "issueNotificationEnabled": false,
@@ -1067,7 +1067,7 @@ example message:
     "value":
     [
         {
-            "id": "ZjViZjJmYzYtNzEzNS00ZDk0LWE2ZmUtYzI2ZTQ1NDNiYzVhPHNjcmlwdD5hbGVydCgneWF5IScpOzwvc2NyaXB0Pg",
+            "id": "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u",
             "name": "test1",
             "authorityId": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
             "status": "Enabled",
@@ -1077,7 +1077,7 @@ example message:
             "displays": [{<display JSON}]
         },
         {
-            "id": "ZjViZjJmYzYtNzEzNS00ZDk0LWE2ZmUtYzI2ZTQ1NDNiYzVhdGVzdDI",
+            "id": "C2dE3fH4iJ5kL6mN7oP8qR9sT0uV1w",
             "name": "test2",
             "authorityId": "aaaabbbb-0000-cccc-1111-dddd2222eeee",
             "status": "Enabled",
@@ -1167,7 +1167,7 @@ HTTP/1.1 200 OK
 Content-type: application/json
 
 {
-    "id": "ZjViZjJmYzYtNzEzNS00ZDk0LWE2ZmUtYzI2ZTQ1NDNiYzVhPHNjcmlwdD5hbGVydCgneWF5IScpOzwvc2NyaXB0Pg",
+    "id": "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u",
     "name": "contractname",
     "status": "Enabled",
     "issueNotificationEnabled": false,

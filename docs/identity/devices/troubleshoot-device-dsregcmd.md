@@ -81,7 +81,7 @@ The state is displayed only when the device is Microsoft Entra joined or Microso
 +----------------------------------------------------------------------+
 
                   DeviceId : 00aa00aa-bb11-cc22-dd33-44ee44ee44ee
-                Thumbprint : D293213EF327483560EED8410CAE36BB67208179
+                Thumbprint : AA11BB22CC33DD44EE55FF66AA77BB88CC99DD00
  DeviceCertificateValidity : [ 2019-01-11 21:02:50.000 UTC -- 2029-01-11 21:32:50.000 UTC ]
             KeyContainerId : 00aa00aa-bb11-cc22-dd33-44ee44ee44ee
                KeyProvider : Microsoft Software Key Storage Provider

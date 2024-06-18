@@ -73,6 +73,9 @@ The managed identity used by the VM needs to be granted access to read the secre
 
 This section shows you how to get an access token using the VM identity and use it to retrieve the secret from Key Vault. If you don’t have PowerShell 4.3.1 or greater installed, you'll need to [download and install the latest version](/powershell/azure/).
 
+> [!NOTE]
+> The method of using PowerShell to authenticate and retrieve the secret is preferred in scenarios where managed identities are specifically required, or when embedding the process within an application's code.
+
 First, use the VM’s system-assigned managed identity to get an access token to authenticate to Key Vault:
  
 1. In the portal, navigate to **Virtual Machines** and go to your Windows VM, then in the **Overview**, select **Connect**.

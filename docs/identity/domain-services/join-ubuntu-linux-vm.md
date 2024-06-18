@@ -10,7 +10,7 @@ ms.subservice: domain-services
 ms.topic: how-to
 ms.date: 09/23/2023
 ms.author: justinha
-ms.custom: fasttrack-edit, devx-track-linux
+ms.custom: fasttrack-edit, devx-track-linux, linux-related-content
 ---
 # Join an Ubuntu Linux virtual machine to a Microsoft Entra Domain Services managed domain
 

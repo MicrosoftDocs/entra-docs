@@ -69,7 +69,7 @@ Applications that use Microsoft Entra ID require directory objects to be configu
 
 ### Access to Azure resources
 
-Users, groups, and service principal objects (workload identities) in the Microsoft Entra tenant are granted roles by using [Azure Role Based Access Control](/azure/role-based-access-control/overview) (RBAC) and [Azure attribute-based access control](/azure/role-based-access-control/conditions-overview) (ABAC).
+Users, groups, and service principal objects (workload identities) in the Microsoft Entra tenant are granted roles by using [Azure role-based access control (RBAC)](/azure/role-based-access-control/overview) and [Azure attribute-based access control (ABAC)](/azure/role-based-access-control/conditions-overview).
 
 * Azure RBAC enables you to provide access based on role as determined by security principal, role definition, and scope.
 

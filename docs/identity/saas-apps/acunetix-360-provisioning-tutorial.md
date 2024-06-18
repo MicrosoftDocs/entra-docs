@@ -14,7 +14,6 @@ ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Acunetix 360 so that I can streamline the user management process and ensure that users have the appropriate access to Acunetix 360.
 
-# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Acunetix 360 so that I can streamline the user management process and ensure that users have the appropriate access to Acunetix 360.
 ---
 
 # Tutorial: Configure Acunetix 360 for automatic user provisioning
