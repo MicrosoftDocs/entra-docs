@@ -275,7 +275,7 @@ For detailed information on how to build a validation solution and architectural
 
 Decentralized architectures can be used to enhance existing solutions and provide new capabilities.
 
-To deliver on the aspirations of the [Decentralized Identity Foundation](https://identity.foundation/) (DIF) and W3C [Design goals](https://www.w3.org/TR/did-core/), the following items should be considered when creating a verifiable credential solution:
+To deliver on the aspirations of the [Decentralized Identity Foundation (DIF)](https://identity.foundation/) and W3C [Design goals](https://www.w3.org/TR/did-core/), the following items should be considered when creating a verifiable credential solution:
 
 * There are no central points of trust establishment between actors in the system. That is, trust boundaries aren't expanded through federation because actors trust specific VCs.
 

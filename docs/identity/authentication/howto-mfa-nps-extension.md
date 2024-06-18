@@ -99,7 +99,7 @@ The NPS Extension for Microsoft Entra multifactor authentication is available to
 
 As part of the configuration of the NPS extension, you must supply administrator credentials and the ID of your Microsoft Entra tenant. To get the tenant ID, complete the following steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 1. Browse to **Identity** > **Settings**.
 
    ![Getting the Tenant ID from the Microsoft Entra admin center](./media/howto-mfa-nps-extension-vpn/tenant-id.png)
@@ -162,7 +162,7 @@ Depending on which VPN solution you use, the steps to configure your RADIUS auth
 
 This step may already be complete on your tenant, but it's good to double-check that Microsoft Entra Connect has synchronized your databases recently.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Hybrid Identity Administrator](../role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
 1. Browse to **Identity** > **Hybrid management** > **Microsoft Entra Connect**.
 3. Verify that your sync status is **Enabled** and that your last sync was less than an hour ago.
 
@@ -263,7 +263,7 @@ To provide load-balancing capabilities or for redundancy, repeat these steps on 
    .\AzureMfaNpsExtnConfigSetup.ps1
    ```
 
-1. When prompted, sign in to Microsoft Entra ID as a Global administrator.
+1. When prompted, sign in to Microsoft Entra ID as a Global Administrator.
 1. PowerShell prompts for your tenant ID. Use the *Tenant ID* GUID that you copied in the prerequisites section.
 1. A success message is shown when the script is finished.  
 

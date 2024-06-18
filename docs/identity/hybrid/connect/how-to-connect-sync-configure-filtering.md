@@ -135,7 +135,7 @@ In the following example, you filter out (not synchronize) all users where **ext
 #### Positive filtering: "only sync these"
 Expressing positive filtering can be more challenging because you also have to consider objects that aren't obvious to be synchronized, such as conference rooms. You are also going to override the default filter in the out-of-box rule **In from AD - User Join**. When you create your custom filter, make sure to not include critical system objects, replication conflict objects, special mailboxes, and the service accounts for Microsoft Entra Connect.
 
-The positive filtering option requires two sync rules. You need one rule (or several) with the correct scope of objects to synchronize. You also need a second catch-all sync rule that filters out all objects that haven't yet been identified as an object that should be synchronized.
+The positive filtering option requires two sync rules: one sync rule (or more) with the correct scope of objects to synchronize, and a catch-all sync rule that filters out any remaining objects that should not be synchronized.
 
 In the following example, you only synchronize user objects where the department attribute has the value **Sales**.
 

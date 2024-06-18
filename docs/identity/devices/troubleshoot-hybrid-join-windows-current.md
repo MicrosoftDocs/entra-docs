@@ -46,7 +46,7 @@ This article assumes that you have [Microsoft Entra hybrid joined devices](hybri
     AzureAdJoined: YES
  EnterpriseJoined: NO
          DeviceId: 5820fbe9-60c8-43b0-bb11-44aee233e4e7
-       Thumbprint: B753A6679CE720451921302CA873794D94C6204A
+       Thumbprint: AA11BB22CC33DD44EE55FF66AA77BB88CC99DD00
    KeyContainerId: bae6a60b-1d2f-4d2a-a298-33385f6d05e9
       KeyProvider: Microsoft Platform Crypto Provider
      TpmProtected: YES

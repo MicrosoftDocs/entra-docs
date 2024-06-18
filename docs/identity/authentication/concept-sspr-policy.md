@@ -118,7 +118,7 @@ A one-gate policy requires one piece of authentication data, such as an email ad
 
 ## Password expiration policies
 
-A *Global Administrator* or *User Administrator* can use the [Microsoft Graph](/powershell/microsoftgraph/) to set user passwords not to expire.
+Those assigned at least the [User Administrator](../role-based-access-control/permissions-reference.md#user-administrator) role can use the [Microsoft Graph](/powershell/microsoftgraph/) to set user passwords not to expire.
 
 You can also use PowerShell cmdlets to remove the never-expires configuration or to see which user passwords are set to never expire.
 
@@ -135,7 +135,7 @@ After the module is installed, use the following steps to complete each task as 
 
 ### Check the expiration policy for a password
 
-1. Open a PowerShell prompt and [connect to your Microsoft Entra tenant](/powershell/microsoftgraph/authentication-commands#using-connect-mggraph) using a *Global Administrator* or *User Administrator* account.
+1. Open a PowerShell prompt and [connect to your Microsoft Entra tenant](/powershell/microsoftgraph/authentication-commands#using-connect-mggraph) as at least a [User Administrator](../role-based-access-control/permissions-reference.md#user-administrator).
 
 1. Run one of the following commands for either an individual user or for all users:
 
@@ -153,7 +153,7 @@ After the module is installed, use the following steps to complete each task as 
 
 ### Set a password to expire
 
-1. Open a PowerShell prompt and [connect to your Microsoft Entra tenant](/powershell/microsoftgraph/authentication-commands#using-connect-mggraph) using a *Global Administrator* or *User Administrator* account.
+1. Open a PowerShell prompt and [connect to your Microsoft Entra tenant](/powershell/microsoftgraph/authentication-commands#using-connect-mggraph) as at least a [User Administrator](../role-based-access-control/permissions-reference.md#user-administrator).
 
 1. Run one of the following commands for either an individual user or for all users:
 
@@ -171,7 +171,7 @@ After the module is installed, use the following steps to complete each task as 
 
 ### Set a password to never expire
 
-1. Open a PowerShell prompt and [connect to your Microsoft Entra tenant](/powershell/microsoftgraph/authentication-commands#using-connect-mggraph) using a *Global Administrator* or *User Administrator* account.
+1. Open a PowerShell prompt and [connect to your Microsoft Entra tenant](/powershell/microsoftgraph/authentication-commands#using-connect-mggraph) as at least a [User Administrator](../role-based-access-control/permissions-reference.md#user-administrator).
 1. Run one of the following commands for either an individual user or for all users:
 
    * To set the password of one user to never expire, run the following cmdlet. Replace `<user ID>` with the user ID of the user you want to check:

@@ -11,7 +11,7 @@ ms.service: entra-external-id
 ms.subservice: customers
 ms.topic: tutorial
 ms.date: 04/02/2024
-ms.custom: developer, devx-track-dotnet
+ms.custom: developer
 #Customer intent: As a dev, devops, I want to learn about how to configure prepare your iOS app for native authentication using Microsoft Entra External ID.
 ---
 
@@ -91,4 +91,3 @@ This outputs all debug logs from MSAL, which can be helpful in diagnosing issues
 ## Next steps
 
 - [Tutorial: Add sign up with email one-time passcode](tutorial-native-authentication-ios-sign-up.md)
-

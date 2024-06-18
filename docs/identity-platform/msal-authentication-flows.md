@@ -66,7 +66,7 @@ In the following diagram, the application:
 
 ### Constraints for authorization code
 
-- Single-page applications require *Proof Key for Code Exchange* (PKCE) when using the authorization code grant flow. PKCE is supported by MSAL.
+- Single-page applications require *Proof Key for Code Exchange (PKCE)* when using the authorization code grant flow. PKCE is supported by MSAL.
 
 - The OAuth 2.0 specification requires you to use an authorization code to redeem an access token only *once*.
 

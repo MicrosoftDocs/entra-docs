@@ -29,7 +29,7 @@ To publish your application in the Microsoft Entra application gallery, you need
 
 ## Prerequisites
 To publish your application in the gallery, you must first read and agree to specific [terms and conditions](https://azure.microsoft.com/support/legal/active-directory-app-gallery-terms/).
-- Implement support for *single sign-on* (SSO). To learn more about supported options, see [Plan a single sign-on deployment](plan-sso-deployment.md).
+- Implement support for *single sign-on (SSO)*. To learn more about supported options, see [Plan a single sign-on deployment](plan-sso-deployment.md).
     - For password SSO, make sure that your application supports form authentication so that password vaulting can be used.
 	- For federated applications (SAML/WS-Fed), the application should preferably support [software-as-a-service (SaaS) model](https://azure.microsoft.com/overview/what-is-saas/) but it is not mandatory and it can be an on-premises application as well. Enterprise gallery applications must support multiple user configurations and not any specific user.
 

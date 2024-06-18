@@ -8,8 +8,7 @@ ms.subservice: managed-identities
 ms.topic: quickstart
 ms.date: 05/29/2024
 ms.author: barclayn
-
-ms.custom: mode-api, devx-track-azurecli, devx-track-linux
+ms.custom: mode-api, devx-track-azurecli, devx-track-linux, devx-track-arm-template, devx-track-azurepowershell
 ms.devlang: azurecli
 
 appliesto:
@@ -48,4 +47,3 @@ For information about Azure Policy definition and details, see [Use Azure Policy
 ::: zone pivot="qs-configure-sdk-windows-vm"
 [!INCLUDE [qs-configure-sdk-windows-vm](includes/qs-configure-sdk-windows-vm.md)]
 ::: zone-end
-
