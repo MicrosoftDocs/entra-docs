@@ -12,23 +12,23 @@ ms.date: 06/18/2024
 
 # Resilience through developer best practices
 
-In this article, we share some learnings that are based on our experience from working with large customers. You may consider these recommendations in the design and implementation of your services.
+In this article, we share learnings based on our experience from working with large customers. You can consider these recommendations in the design and implementation of your services.
 
-![Image shows developer experience components](media/resilience-b2c-developer-best-practices/developer-best-practices-architecture.png)
+   ![Diagram of developer experience components](media/resilience-b2c-developer-best-practices/developer-best-practices-architecture.png)
 
 ## Use the Microsoft Authentication Library (MSAL)
 
-The [Microsoft Authentication Library (MSAL)](~/identity-platform/msal-overview.md) and the [Microsoft identity web authentication library for ASP.NET](~/identity-platform/reference-v2-libraries.md) simplify acquiring, managing, caching, and refreshing the tokens an application requires. These libraries are optimized specifically to support Microsoft Identity including features that improve application resiliency.
+The [Microsoft Authentication Library (MSAL)](~/identity-platform/msal-overview.md) and the [Microsoft identity web authentication library for ASP.NET](~/identity-platform/reference-v2-libraries.md) simplify acquiring, managing, caching, and refreshing the tokens an application requires. These libraries are optimized to support Microsoft Identity, including features that improve application resiliency.
 
-Developers should adopt latest releases of MSAL and stay up to date. See [how to increase resilience of authentication and authorization](resilience-app-development-overview.md) in your applications. Where possible, avoid implementing your own authentication stack and use well-established libraries.
+Developers can adopt latest releases of MSAL and stay up to date. See [how to increase resilience of authentication and authorization](resilience-app-development-overview.md) in your applications. Where possible, avoid implementing your own authentication stack and use well-established libraries.
 
 ## Optimize directory reads and writes
 
-The Azure AD B2C directory service supports billions of authentications a day. It's designed for a high rate of reads per second. Optimize your writes to minimize dependencies and increase resilience.
+The Azure AD B2C directory service supports billions of authentications a day, with a high rate of reads per second. Optimize your writes to minimize dependencies and increase resilience.
 
 ### How to optimize directory reads and writes
 
-- **Avoid write functions to the directory on sign-in**: Never execute a write on sign-in without a precondition (if clause) in your custom policies. One use case that requires a write on a sign-in is [just-in-time migration of user passwords](https://github.com/azure-ad-b2c/user-migration/tree/master/seamless-account-migration). Avoid any scenario that requires a write on every sign-in. [Preconditions](/azure/active-directory-b2c/userjourneys) in a user journey will look like this:
+- **Avoid write functions to the directory on sign-in**: Never execute a write on sign-in without a precondition (if clause) in your custom policies. One use case that requires a write on a sign-in is [just-in-time migration of user passwords](https://github.com/azure-ad-b2c/user-migration/tree/master/seamless-account-migration). Avoid any scenario that requires a write on every sign-in. [Preconditions](/azure/active-directory-b2c/userjourneys) in a user journey are:
 
   ```xml
   <Precondition Type="ClaimEquals" ExecuteActionsIf="true"> 
@@ -39,9 +39,9 @@ The Azure AD B2C directory service supports billions of authentications a day. I
 
 - **Understand throttling**: The directory implements both application and tenant level throttling rules. There are further rate limits for Read/GET, Write/POST, Update/PUT, and Delete/DELETE operations and each operation have different limits.
 
-  - A write at the time of sign-in will fall under a POST for new users or PUT for existing users.
+  - A write during sign-in falls under a POST for new users or PUT for current users.
   - A custom policy that creates or updates a user on every sign-in, can potentially hit an application level PUT or POST rate limit. The same limits apply when updating directory objects via Microsoft Entra ID or Microsoft Graph. Similarly, examine the reads to keep the number of reads on every sign-in to the minimum.
-  - Estimate peak load to predict the rate of directory writes and avoid throttling. Peak traffic estimates should include estimates for actions such as sign-up, sign-in, and Multi-factor authentication (MFA). Be sure to test both the Azure AD B2C system and your application for peak traffic. It's possible that Azure AD B2C can handle the load without throttling, when your downstream applications or services won't.
+  - Estimate peak load to predict the rate of directory writes and avoid throttling. Peak traffic estimates should include estimates for actions such as sign-up, sign-in, and multifactor authentication (MFA). Be sure to test both the Azure AD B2C system and your application for peak traffic. It's possible Azure AD B2C can handle the load without throttling, when your downstream applications or services won't.
   - Understand and plan your migration timeline. When planning to migrate users to Azure AD B2C using Microsoft Graph, consider the application and tenant limits to calculate the time needed to complete the migration of users. If you split your user creation job or script using two applications, you can use the per application limit. It would still need to remain below the per tenant threshold.
   - Understand the effects of your migration job on other applications. Consider the live traffic served by other relying applications to make sure you don't cause throttling at the tenant level and resource starvation for your live application. For more information, see the [Microsoft Graph throttling guidance](/graph/throttling).
   - Use a [load test sample](https://github.com/azure-ad-b2c/load-tests) to simulate sign-up and sign-in. 
@@ -49,25 +49,25 @@ The Azure AD B2C directory service supports billions of authentications a day. I
   
 ## Extend token lifetimes
 
-In an unlikely event, when the Azure AD B2C authentication service is unable to complete new sign-ups and sign-ins, you can still provide mitigation for users who are signed in. With [configuration](/azure/active-directory-b2c/configure-tokens), you can allow users that are already signed in to continue using the application without any perceived disruption until the user signs out from the application or the [session](/azure/active-directory-b2c/session-behavior) times out due to inactivity.
+If the Azure AD B2C authentication service can't complete new sign-ups and sign-ins, provide mitigation for users who are signed in. With [configuration](/azure/active-directory-b2c/configure-tokens), users that are signed in can use the application without disruption until they sign out from the application, or the [session](/azure/active-directory-b2c/session-behavior) times out from inactivity.
 
-Your business requirements and desired end-user experience will dictate your frequency of token refresh for both web and Single-page applications (SPAs).
+Your business requirements and end-user experience dictate the frequency of token refresh for web and single-page applications (SPAs).
 
 ### How to extend token lifetimes
 
 - **Web applications**: For web applications where the authentication token is validated at the beginning of sign-in, the application depends on the session cookie to continue to extend the session validity. Enable users to remain signed in by implementing rolling session times that will continue to renew sessions based on user activity. If there's a long-term token issuance outage, these session times can be further increased as a one-time configuration on the application. Keep the lifetime of the session to the maximum allowed.
-- **SPAs**: A SPA may depend on access tokens to make calls to the APIs. For SPAs, we recommend using the authorization code flow with Proof Key for Code Exchange (PKCE) flow as your option to allow the user to continue to use the application. If your SPA is currently using implicit flow, consider [migrating to authorization code flow with PKCE](https://developer.microsoft.com/identity/blogs/msal-js-2-0-supports-authorization-code-flow-is-now-generally-available/). Migrate your application from MSAL.js 1.x to MSAL.js 2.x to realize the resiliency of Web applications. If you stick with using the implicit flow, keep in mind that the implicit flow that doesn't result in a refresh token. The SPA can use a hidden `iframe` to perform new token requests against the authorization endpoint if the browser still has an active session with the Azure AD B2C. For SPAs, there are a few options available to allow the user to continue to use the application in this scenario. 
-  - Extend the access token's validity duration to meet your business requirements.
-  - Build your application to use an API gateway as the authentication proxy. In this configuration, the SPA loads without any authentication and the API calls are made to the API gateway. The API gateway sends the user through a sign-in process using an [authorization code grant](https://oauth.net/2/grant-types/authorization-code/) based on a policy and authenticates the user. Then the authentication session between the API gateway and the client is maintained using an authentication cookie. The API gateway services the APIs using the token that is obtained by the API gateway (or some other direct authentication method such as certificates, client credentials, or API keys).
-  - Switch to the recommended option by [migrating your SPA from implicit grant](https://developer.microsoft.com/identity/blogs/msal-js-2-0-supports-authorization-code-flow-is-now-generally-available/) to [authorization code grant flow](/azure/active-directory-b2c/implicit-flow-single-page-application) with Proof Key for Code Exchange (PKCE) and Cross-origin Resource Sharing (CORS) support. 
-  - For mobile applications, it's recommended to extend both the refresh and access token lifetimes.
-- **Backend or microservice applications**: Because backend (daemon) applications are non-interactive and aren't in a user context, the prospect of token theft is greatly diminished. Recommendation is to strike a balance between security and lifetime and set a long token lifetime.
+- **SPAs**: A SPA migh depend on access tokens to make calls to the APIs. For SPAs, we recommend using the authorization code flow with [Proof Key for Code Exchange (PKCE)](~/identity-platform/reference-third-party-cookies-spas.md) flow as your option to allow the user to continue to use the application. If your SPA is using implicit flow, consider migrating to authorization code flow with PKCE. Migrate your application from MSAL.js 1.x to MSAL.js 2.x to realize the resiliency of Web applications. If you stick with using the implicit flow, keep in mind that the implicit flow that doesn't result in a refresh token. The SPA can use a hidden `iframe` to perform new token requests against the authorization endpoint if the browser still has an active session with the Azure AD B2C. For SPAs, there are a few options available to allow the user to continue to use the application in this scenario. 
+  - Extend the access token's validity duration to meet business requirements.
+  - Build your application to use an API gateway as the authentication proxy. In this configuration, the SPA loads without authentication and the API calls are made to the API gateway. The API gateway sends the user through a sign-in process using an [authorization code grant](https://oauth.net/2/grant-types/authorization-code/), based on a policy, and authenticates the user. The authentication session between the API gateway and the client is maintained using an authentication cookie. The API gateway services the APIs using the token obtained by the API gateway, or another direct authentication method such as certificates, client credentials, or API keys.
+  - Switch to the recommended option. Migrate your SPA from implicit grant to [authorization code grant flow](/azure/active-directory-b2c/implicit-flow-single-page-application) with Proof Key for Code Exchange (PKCE) and Cross-Origin Resource Sharing (CORS) support. 
+  - For mobile applications, extend the refresh and access token lifetimes.
+- **Backend or microservice applications**: Because back-end (daemon) applications are non-interactive and aren't in a user context, the prospect of token theft is greatly diminished. Recommendation is to strike a balance between security and lifetime and set a long token lifetime.
 
 ## Configure Single sign-on
 
 With [Single sign-on (SSO)](~/identity/enterprise-apps/what-is-single-sign-on.md), users sign in once with a single account and get access to multiple applications. The application can be a web, mobile, or a Single page application (SPA), regardless of platform or domain name. When the user initially signs in to an application, Azure AD B2C persists a [cookie-based session](/azure/active-directory-b2c/session-behavior).
 
-Upon subsequent authentication requests, Azure AD B2C reads and validates the cookie-based session and issues an access token without prompting the user to sign in again. If SSO is configured with a limited scope at a policy or an application, later access to other policies and applications will require fresh authentication.
+Upon subsequent authentication requests, Azure AD B2C reads and validates the cookie-based session and issues an access token without prompting the user to sign in again. If SSO is configured with a limited scope at a policy or an application, later access to other policies and applications require fresh authentication.
 
 ### How to configure SSO
 
@@ -87,12 +87,12 @@ Protect your applications against known vulnerabilities such as Distributed Deni
 
 ## Secrets rotation
 
-Azure AD B2C uses secrets for applications, APIs, policies, and encryption. The secrets secure authentication, external interactions, and storage. The National Institute of Standards and Technology (NIST) calls the time span during which a specific key is authorized for use by legitimate entities a cryptoperiod. Choose the right length of [cryptoperiod](https://csrc.nist.gov/publications/detail/sp/800-57-part-1/rev-5/final) to meet your business needs. Developers need to manually set the expiration and rotate secrets well in advance of their expiration.
+Azure AD B2C uses secrets for applications, APIs, policies, and encryption. The secrets secure authentication, external interactions, and storage. The National Institute of Standards and Technology (NIST) refers to the time span of key authorization, used by legitimate entities, as a *cryptoperiod*. Choose the right length of [cryptoperiod](https://csrc.nist.gov/publications/detail/sp/800-57-part-1/rev-5/final) to meet business needs. Developers can set the expiration and rotate secrets before expiration.
 
 ### How to implement secret rotation
 
 - Use [managed identities](~/identity/managed-identities-azure-resources/overview.md) for supported resources to authenticate to any service that supports Microsoft Entra authentication. When you use managed identities, you can manage resources automatically, including rotation of credentials.
-- Take an inventory of all the [keys and certificates configured](/azure/active-directory-b2c/policy-keys-overview) in Azure AD B2C. This list is likely to include keys used in custom policies, [APIs](/azure/active-directory-b2c/secure-rest-api), signing ID token, and certificates for SAML.
+- Take an inventory of [keys and certificates configured](/azure/active-directory-b2c/policy-keys-overview) in Azure AD B2C. This list is likely to include keys used in custom policies, [APIs](/azure/active-directory-b2c/secure-rest-api), signing ID token, and certificates for Security Assertion Markup Language (SAML).
 - Using CICD, rotate secrets that are about to expire within two months from the anticipated peak season. The recommended maximum cryptoperiod of private keys associated to a certificate is one year.
 - Proactively monitor and rotate the API access credentials such as passwords, and certificates.
 
