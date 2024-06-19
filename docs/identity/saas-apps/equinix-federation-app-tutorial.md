@@ -128,7 +128,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 ## Configure Equinix Federation App SSO
 
-To configure Single Sign-On on **Equinix Federation App** side, please the follow the [link](https://docs.equinix.com/Content/home.htm).
+To configure Single Sign-On on **Equinix Federation App** side, please follow the [link](https://docs.equinix.com/Content/home.htm).
 
 ### Create Equinix Federation App test user
 
