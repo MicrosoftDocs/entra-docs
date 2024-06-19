@@ -132,9 +132,9 @@ When technology projects fail, they typically do so due to mismatched expectatio
 
 | Business Role/Persona| Microsoft Entra role (if necessary) |
 | - | - |
-| Level 1 helpdesk| Password administrator |
-| Level 2 helpdesk| User administrator |
-| SSPR administrator| Global administrator |
+| Level 1 helpdesk| Password Administrator |
+| Level 2 helpdesk| User Administrator |
+| SSPR administrator| Global Administrator |
 
 ### Plan a pilot
 
@@ -314,7 +314,7 @@ Microsoft Entra ID can provide additional information on your SSPR performance t
 You can use pre-built reports on Microsoft Entra admin center to measure the SSPR performance. If you're appropriately licensed, you can also create custom queries. For more information, see [Reporting options for Microsoft Entra password management](./howto-sspr-reporting.md)
 
 > [!NOTE]
->  You must be [a global administrator](~/identity/role-based-access-control/permissions-reference.md), and you must opt-in for this data to be gathered for your organization. To opt in, you must visit the Reporting tab or the audit logs on the Microsoft Entra admin center at least once. Until then, the data doesn't collect for your organization.
+> You must be a [Global Administrator](../role-based-access-control/permissions-reference.md#global-administrator), and you must opt-in for this data to be gathered for your organization. To opt in, you must visit the Reporting tab or the audit logs on the Microsoft Entra admin center at least once. Until then, the data doesn't collect for your organization.
 
 Audit logs for registration and password reset are available for 30 days. If security auditing within your corporation requires longer retention, the logs need to be exported and consumed into a SIEM tool such as [Microsoft Sentinel](/azure/sentinel/connect-azure-active-directory), Splunk, or ArcSight.
 

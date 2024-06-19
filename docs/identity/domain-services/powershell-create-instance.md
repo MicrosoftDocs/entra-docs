@@ -32,7 +32,7 @@ To complete this article, you need the following resources:
 * Install and configure MS Graph PowerShell.
    - If needed, follow the instructions to [install the MS Graph PowerShell module and connect to Microsoft Entra ID](/powershell/microsoftgraph/installation).
     * Make sure that you sign in to your Microsoft Entra tenant using the [Connect-MgGraph][Connect-MgGraph] cmdlet.
-* You need *global administrator* privileges in your Microsoft Entra tenant to enable Domain Services.
+* You need *Global Administrator* privileges in your Microsoft Entra tenant to enable Domain Services.
 * You need *Contributor* privileges in your Azure subscription to create the required Domain Services resources.
 
   > [!IMPORTANT]
@@ -232,7 +232,7 @@ When the Microsoft Entra admin center shows that the managed domain has finished
 The following complete PowerShell script combines all of the tasks shown in this article. Copy the script and save it to a file with a `.ps1` extension. For Azure Global, use AppId value *2565bd9d-da50-47d4-8b85-4c97f669dc36*. For other Azure clouds, use AppId value *6ba9a5d4-8456-4118-b521-9c5ca10cdf84*. Run the script in a local PowerShell console or the [Azure Cloud Shell][cloud-shell].
 
 > [!NOTE]
-> To enable Domain Services, you must be a global administrator for the Microsoft Entra tenant. You also need at least *Contributor* privileges in the Azure subscription.
+> To enable Domain Services, you must be a Global Administrator for the Microsoft Entra tenant. You also need at least *Contributor* privileges in the Azure subscription.
 
 ```azurepowershell-interactive
 # Change the following values to match your deployment.

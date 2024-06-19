@@ -1,58 +1,45 @@
 ---
-title: Tutorial`:` Use a managed identity to access Azure Storage via access key - Linux
-description: A tutorial that walks you through the process of using a Linux VM system-assigned managed identity to access Azure Storage via an access key.
-
-author: barclayn
-manager: amycolannino
-editor: daveba
-ms.custom: subject-rbac-steps, devx-track-arm-template
+author: barclayn 
+ms.author: barclayn
+ms.date: 06/10/2024 
+ms.topic: include
 ms.service: entra-id
 ms.subservice: managed-identities
-ms.topic: tutorial
-ms.tgt_pltfrm: na
-ms.date: 03/26/2024
-ms.author: barclayn
-
 ---
 
+## Use a Linux VM system-assigned managed identity to access Azure Storage via access key
 
-# Tutorial: Use a Linux VM system-assigned managed identity to access Azure Storage via access key
+This tutorial shows you how to use a system-assigned managed identity for a Linux virtual machine (VM) to retrieve storage account access keys. You can use a storage access key as usual when doing storage operations; for example, when using the Storage SDK. For this tutorial, you upload and download blobs using Azure CLI. 
 
-[!INCLUDE [preview-notice](~/includes/entra-msi-preview-notice.md)]
-
-This tutorial shows you how to use a system-assigned managed identity for a Linux virtual machine (VM) to retrieve storage account access keys. You can use a storage access key as usual when doing storage operations, for example when using the Storage SDK. For this tutorial, we upload and download blobs using Azure CLI. You will learn how to:
+You'll learn how to:
 
 > [!div class="checklist"]
 > * Grant your VM access to storage account access keys in Resource Manager 
 > * Get an access token using your VM's identity, and use it to retrieve the storage access keys from Resource Manager  
 
-## Prerequisites
-
-[!INCLUDE [msi-tut-prereqs](~/includes/entra-msi-tut-prereqs.md)]
-
 ## Create a storage account 
 
-If you don't have an existing storage account that you want to use in this tutorial you need to create one. You can also skip this step and grant your VM system-assigned managed identity access to the keys of an existing storage account. 
+If you don't have an existing storage account before starting this tutorial, you need to create one. If you do have an existing storage account, follow these steps to grant your VM system-assigned managed identity access to the keys for your existing storage account. 
 
-1. Select the **+/Create new service** button found on the upper left-hand corner of the Azure portal.
-2. Select **Storage**, then **Storage Account**, and a new "Create storage account" panel will display.
-3. Enter a **Name** for the storage account.  
-4. **Deployment model** and **Account kind** should be set to "Resource Manager" and "General purpose", respectively. 
-5. Ensure the **Subscription** and **Resource Group** match the ones you specified when you created your VM in the previous step.
-6. Select **Create**.
+1. Select the **+/Create new service** button, located at the upper-left corner of the Azure portal.
+1. Select **Storage**, then **Storage Account**, then the **Create storage account** panel appears.
+1. Enter a **Name** for the storage account. Remember this name, as you'll need it later.  
+1. Make sure that **Deployment model** is set to *Resource Manager*, and **Account kind** is set to *General purpose*. 
+1. Ensure the **Subscription** and **Resource Group** match the ones you specified when you created your VM.
+1. Select **Create** to finish creating a storage account.
 
-    :::image type="content" source="./media/msi-tutorial-linux-vm-access-storage/msi-storage-create.png" alt-text="Screenshot showing new storage account creation.":::
+    :::image type="content" source="../media/msi-tutorial-linux-vm-access-storage/msi-storage-create.png" alt-text="Screenshot showing new storage account creation.":::
 
 ## Create a blob container in the storage account
 
-Later we will upload and download a file to the new storage account. Because files require blob storage, we need to create a blob container in which to store the file.
+Later in the tutorial, you'll upload and download a file to the new storage account. Because files require blob storage, you need to create a blob container in which to store the file.
 
-1. Navigate back to your newly created storage account.
-2. Select the **Containers** link in the left, under "Blob service."
-3. Select **+ Container** on the top of the page, and a "New container" panel slides out.
-4. Give the container a name, select an access level, then select **OK**. The name you specified will be used later in the tutorial. 
+1. Navigate to your newly created storage account.
+1. Select the **Containers** link in the left panel, under **Blob service**.
+1. Select **+ Container** at the top of the page, then a **New container** panel appears.
+1. Give the container a name, select an access level, then select **OK**. You'll need the name you specified later in the tutorial. 
 
-    :::image type="content" source="./media/msi-tutorial-linux-vm-access-storage/create-blob-container.png" alt-text="Screenshot showing the creation of a storage container.":::
+    :::image type="content" source="../media/msi-tutorial-linux-vm-access-storage/create-blob-container.png" alt-text="Screenshot showing the creation of a storage container.":::
 
 ## Grant your VM's system-assigned managed identity access to use storage account access keys
 
@@ -62,7 +49,6 @@ For detailed steps, see [Assign Azure roles using the Azure portal](/azure/role-
 
 >[!NOTE]
 > For more information on the various roles that you can use to grant permissions to storage review [Authorize access to blobs and queues using Microsoft Entra ID.](/azure/storage/blobs/authorize-access-azure-active-directory#assign-azure-roles-for-access-rights)
-
 
 ## Get an access token using the VM's identity and use it to call Azure Resource Manager
 
@@ -186,10 +172,3 @@ Response:
   "snapshot": null
 }
 ```
-
-## Next steps
-
-In this tutorial, you learned how to use a Linux VM system-assigned managed identity to access Azure Storage using an access key.  To learn more about Azure Storage access keys see:
-
-> [!div class="nextstepaction"]
->[Manage your storage access keys](/azure/storage/common/storage-account-create)

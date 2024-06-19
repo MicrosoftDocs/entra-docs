@@ -11,7 +11,7 @@ ms.service: entra-external-id
 ms.subservice: customers
 ms.topic: tutorial
 ms.date: 02/23/2024
-ms.custom: developer, devx-track-dotnet
+ms.custom: developer
 #Customer intent: As a dev, devops, I want to learn how to Self-service password reset.
 ---
 
@@ -235,4 +235,3 @@ extension ViewController: CredentialsDelegate {
 ## Next steps 
 
 [Tutorial: Support web fallback](tutorial-native-authentication-ios-support-web-fallback.md) 
-

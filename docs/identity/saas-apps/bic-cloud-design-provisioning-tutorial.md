@@ -3,8 +3,7 @@ title: 'Tutorial: Configure BIC Cloud Design for automatic user provisioning wit
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to BIC Cloud Design.
 
 documentationcenter: ''
-author: twimmers
-writer: Thwimmer
+author: thomasakelo
 manager: jeedes
 
 ms.assetid: 1aace746-6f6d-4ac4-ad2c-7ba65bb86a72
@@ -14,7 +13,7 @@ ms.subservice: saas-apps
 ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 03/25/2024
-ms.author: Thwimmer
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to BIC Cloud Design so that I can streamline the user management process and ensure that users have the appropriate access to BIC Cloud Design.
 ---

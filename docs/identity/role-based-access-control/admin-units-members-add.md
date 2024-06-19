@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: role-based-access-control
-ms.date: 06/09/2023
+ms.date: 06/18/2024
 ms.author: rolyon
 ms.reviewer: anandy
 ms.custom: oldportal;it-pro;
@@ -120,46 +120,50 @@ You can add users, groups, or devices to administrative units using the Microsof
 
 ## PowerShell
 
-Use the [Invoke-MgGraphRequest](/powershell/microsoftgraph/authentication-commands#using-invoke-mggraphrequest) command to add user, groups, or devices to an administrative unit or create a new group in an administrative unit.
+Use the [New-MgDirectoryAdministrativeUnitMemberByRef](/powershell/module/microsoft.graph.identity.directorymanagement/new-mgdirectoryadministrativeunitmemberbyref) command to add user, groups, or devices to an administrative unit or create a new group in an administrative unit.
 
 ### Add users to an administrative unit
 
 ```powershell
-Invoke-MgGraphRequest -Method POST -Uri https://graph.microsoft.com/v1.0/directory/administrativeUnits/{ADMIN_UNIT_ID}/members/ -Body '{
-         "@odata.id": "https://graph.microsoft.com/v1.0/users/{USER_ID}"
-       }'
+$adminUnitObj = Get-MgDirectoryAdministrativeUnit -Filter "DisplayName eq '{admin-unit-id}'"
+$userObj = Get-MgUser -Filter "UserPrincipalName eq '{user-principal-name}'"
+$odataId = "https://graph.microsoft.com/v1.0/users/" + $userObj.Id
+New-MgDirectoryAdministrativeUnitMemberByRef -AdministrativeUnitId $adminUnitObj.Id -OdataId $odataId
 ```
 
 ### Add groups to an administrative unit
 
 ```powershell
-Invoke-MgGraphRequest -Method POST -Uri https://graph.microsoft.com/v1.0/directory/administrativeUnits/{ADMIN_UNIT_ID}/members/ -Body '{
-         "@odata.id": https://graph.microsoft.com/v1.0/groups/{GROUP_ID}
-       }'
+$adminUnitObj = Get-MgDirectoryAdministrativeUnit -Filter "DisplayName eq '{admin-unit-id}'"
+$groupObj = Get-MgGroup -Filter "DisplayName eq 'group-name'"
+$odataId = "https://graph.microsoft.com/v1.0/groups/" + $groupObj.Id
+New-MgDirectoryAdministrativeUnitMemberByRef -AdministrativeUnitId $adminUnitObj.Id -OdataId $odataId
 ```
 
 ### Add devices to an administrative unit
 
 ```powershell
-Invoke-MgGraphRequest -Method POST -Uri https://graph.microsoft.com/v1.0/directory/administrativeUnits/{ADMIN_UNIT_ID}/members/ -Body '{
-         "@odata.id": https://graph.microsoft.com/v1.0/devices/{DEVICE_ID}
-       }'
+$adminUnitObj = Get-MgDirectoryAdministrativeUnit -Filter "DisplayName eq '{admin-unit-id}'"
+$odataId = "https://graph.microsoft.com/v1.0/devices/{device-id}"
+New-MgDirectoryAdministrativeUnitMemberByRef -AdministrativeUnitId $adminUnitObj.Id -OdataId $odataId
 ```
 
 ### Create a new group in an administrative unit
 
 ```powershell
-$exampleGroup = Invoke-MgGraphRequest -Method POST -Uri https://graph.microsoft.com/v1.0/directory/administrativeUnits/{ADMIN_UNIT_ID}/members/ -Body '{
-         "@odata.type": "#Microsoft.Graph.Group",
-         "description": "{Example group description}",
-         "displayName": "{Example group name}",
-         "groupTypes": [
-              "Unified"
-          ],
-         "mailEnabled": true,
-          "mailNickname": "{exampleGroup}",
-          "securityEnabled": false
-       }'
+$adminUnitObj = Get-MgDirectoryAdministrativeUnit -Filter "DisplayName eq '{admin-unit-id}'"
+$params = @{
+    "@odata.type" = "#microsoft.graph.group"
+    description = "{group-description}"
+    displayName = "{group-name}"
+    groupTypes = @(
+        "Unified"
+    )
+    mailEnabled = $false
+    mailNickname = "{group-name}"
+    securityEnabled = $true
+}
+New-MgDirectoryAdministrativeUnitMember -AdministrativeUnitId $adminUnitObj.Id -BodyParameter $params
 ```
 
 ## Microsoft Graph API

@@ -205,16 +205,16 @@ Now you need to create a Microsoft Entra tenant so that you can synchronize our 
 
 <a name='create-a-global-administrator-in-azure-ad'></a>
 
-## Create a global administrator in Microsoft Entra ID
-Now that you have a Microsoft Entra tenant, you'll create a global administrator account.  To create the global administrator account do the following.
+## Create a Global Administrator in Microsoft Entra ID
+Now that you have a Microsoft Entra tenant, you'll create a Global Administrator account.  To create the Global Administrator account do the following.
 
 1.  Under **Manage**, select **Users**.</br>
 ![Screenshot that shows the "Overview" menu with "Users" selected.](media/tutorial-single-forest/administrator-1.png)</br>
 2.  Select **All users** and then select **+ New user**.
 3.  Provide a name and username for this user. This will be your Global Administrator for the tenant. You'll also want to change the **Directory role** to **Global administrator.** You can also show the temporary password. When you're done, select **Create**.</br>
 ![Create](media/tutorial-single-forest/administrator-2.png)</br>
-4. Once this has completed, open a new web browser and sign-in to myapps.microsoft.com using the new global administrator account and the temporary password.
-5. Change the password for the global administrator to something that you'll remember.
+4. Once this has completed, open a new web browser and sign-in to myapps.microsoft.com using the new Global Administrator account and the temporary password.
+5. Change the password for the Global Administrator to something that you'll remember.
 
 ## Optional:  Additional server and forest
 The following is an optional section that provides steps to creating an additional server and or forest.  This can be used in some of the more advanced tutorials such as [Pilot for Microsoft Entra Connect to cloud sync](tutorial-pilot-aadc-aadccp.md).
