@@ -17,18 +17,6 @@ Microsoft and Zscaler’s Secure Access Service Edge (SASE) solution can be used
 
 This document contains steps to deploy these solutions side by side, specifically, Microsoft Entra Global Secure Access for Internet Access and Microsoft 365 applications such as Exchange Online and SharePoint Online, and Zscaler Private Access for private applications. It also contains steps to deploy Entra Global Secure Access for Microsoft 365 applications and Zscaler Internet Access for Internet Access.
 
-Microsoft’s Security Service Edge solution provides a robust set of capabilities to increase security and improve performance of your Microsoft 365 products. Some of these capabilities include: 
-
-- Prevent data moving to untrusted tenants.
-- Verify users and conditions before giving access to the network.
-- Revoke access to Microsoft 365 products when conditions change by using continuous access evaluation.
-- Apply location-based conditional access, risk detection, and enhanced activity logs by taking advantage of source IP restoration.
-- Protect Microsoft 365 apps against token infiltration and anonymous access.
-
-These capabilities are unique to Microsoft Entra Internet Access for Microsoft 365. You can use these features for Microsoft 365 and use Zscaler Security Service Edge (SSE) solution at the same time. As a result, you harness a robust set of capabilities from both platforms to elevate your SSE journey. The synergy between these platforms empowers you with enhanced security and seamless connectivity. 
-
-This document contains steps to deploy the two solutions side by side. Specifically, Microsoft Entra Internet Access for Microsoft 365 applications such as Exchange Online and SharePoint Online, and Zscaler SSE for all other web traffic.
- 
 ## Configuration overview
 
 Two configurations are covered in this article. 
