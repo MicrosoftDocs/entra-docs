@@ -159,7 +159,7 @@ Face ID is a vision based biometric security option offer on Apple products for 
 When the camera is turned on the mobile device, live footage is captured on the mobile device. This footage is then passed to Verified ID who uses it to invoke services of Azure AI services.
 
 Data isn't store by or keep by any of the services Microsoft Authenticator, Verified ID, or Azure AI. Furthermore, the footage isn't shared with the verifier application either. The verifier application only gets the confidence score in return. In an AI based system the confidence score is the probability percentage answer for a query to the system. For this scenario the confidence score is the likelihood the Verified ID user photo matches user capture on the mobile device.
-Data and privacy for Azure AI Services can be found [here](https://www.microsoft.com/legal/cognitive-services/face/data-privacy-security).
+Data and privacy for Azure AI Services can be found [here](/legal/cognitive-services/face/data-privacy-security).
 
 ### Does Face Check Require MS Authenticator?
 
@@ -184,14 +184,14 @@ You don't have the appropriate permissions. Be sure to sign in with an Azure acc
 
 A subscription exists, but it isn't associated with your directory yet. You can [associate an existing subscription to your tenant](/entra/fundamentals/how-subscriptions-associated-directory) and then repeat the steps for linking it to your tenant.
 
-No subscription exists. In the Link a subscription pane, you can create a subscription by selecting the link if you don't already have a subscription you may create one here. After you create a new subscription, you'll need to [create a resource group](azure/azure-resource-manager/management/manage-resource-groups-portal]) in the new subscription, and then repeat the steps for linking it to your tenant.
+No subscription exists. In the Link a subscription pane, you can create a subscription by selecting the link if you don't already have a subscription you may create one here. After you create a new subscription, you'll need to [create a resource group](/azure/azure-resource-manager/management/manage-resource-groups-portal) in the new subscription, and then repeat the steps for linking it to your tenant.
 
 ### How much does Face Check cost?
 This article doesn't contain pricing details. For the latest information about usage billing and pricing, see [Microsoft Entra pricing](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
 
 ### Are you iBeta Level 2 conformant?
 
-Yes, in the latest version of the [Wallet Library](/verified-id/using-wallet-library) we added iBeta Level 2 support.
+Yes, in the latest version of the [Wallet Library](using-wallet-library.md) we added iBeta Level 2 support.
 
 ### How fair is Azure AI Vision Face API?
 

@@ -7,14 +7,12 @@ author: barclayn
 manager: amycolannino
 ms.author: barclayn
 ms.topic: concept-article
-ms.date: 19/06/2023
+ms.date: 06/19/2024
 # Customer intent: As a Microsoft Entra tenant administrator, I want to link my tenant to an Azure subscription, so that I can take advantage of Verified ID Face Check.
 
 ---
 
 # Billing model for Microsoft Entra Verified ID Face Check
-
-[!INCLUDE [applies-to-workforce-only](/entra/external-id/tenant-configurations)]
 
 Microsoft Entra Verified ID pricing is based on the unique Face Check verification count within a calendar month by a verifier authority. Consumption based billing helps you manage costs by only paying the Face Check transactions used. In this article, learn about consumptive billing and linking your Verified ID authority to an Azure subscription.
 
@@ -50,9 +48,9 @@ If no subscriptions are available in the Link a subscription pane, here are some
 
 You don't have the appropriate permissions. Be sure to sign in with an Azure account that is assigned at least the Contributor role within the subscription or a resource group within the subscription.
 
-A subscription exists, but it isn't associated with your directory yet. You can [associate an existing subscription to your tenant](entra/fundamentals/how-subscriptions-associated-directory) and then repeat the steps for linking it to your tenant.
+A subscription exists, but it isn't associated with your directory yet. You can [associate an existing subscription to your tenant](/entra/fundamentals/how-subscriptions-associated-directory) and then repeat the steps for linking it to your tenant.
 
-No subscription exists. In the Link a subscription pane, you can create a subscription by selecting the link if you don't already have a subscription you might create one here. After you create a new subscription, you'll need to [create a resource group](/azure/azure-resource-manager/management/manage-resource-groups-portal]) in the new subscription, and then repeat the steps for linking it to your tenant.
+No subscription exists. In the Link a subscription pane, you can create a subscription by selecting the link if you don't already have a subscription you might create one here. After you create a new subscription, you'll need to [create a resource group](/azure/azure-resource-manager/management/manage-resource-groups-portal) in the new subscription, and then repeat the steps for linking it to your tenant.
 
 ## Next steps
 
