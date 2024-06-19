@@ -16,6 +16,8 @@ ms.custom: it-pro
 ---
 # Service limits and restrictions
 
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
 This article outlines the service limits and usage constraints of Microsoft Entra External ID for external tenants, which is Microsoft’s latest customer identity and access management (CIAM) solution. If you’re looking for the full set of Microsoft Entra ID service limits, see [Microsoft Entra service limits and restrictions](/entra/identity/users/directory-service-limits-restrictions).
 
 ## User/consumption related limits
@@ -78,28 +80,12 @@ The following table lists the administrative configuration limits in the Microso
 |Number of custom attributes per user      |100         |
 |Number of redirect URLs per application       |100         |
 |Number of sign-out URLs per application        |1          |
-|String Limit per Attribute      |250 Chars          |
+|String limit per attribute      |250 Chars          |
 |Number of external tenants per subscription      |20         |
 |Total number of objects (user accounts and applications) per trial tenant (can't be extended)| 10000 |
-|Total number of objects (user accounts and applications) per tenant | 300000 |
-|Number of policies per external tenant |200          |
-|Maximum policy file size      |1,024 KB          |
-|Number of API connectors per tenant     |20         |
-
-<!-- Reviewed by SME in the word doc. The numbers are correct.
-
-## Throttle limits for Microsoft Entra ID for external configuration tenants
-
-Microsoft Entra ID for customers uses throttling to protect the cloud service from denial-of-service (DoS) attacks. The following table lists the throttle limits for the Microsoft Entra ID for customers service.
-
-|Throttling identifier |Limit per tenant |
-|---------|---------|
-|Application (gateway level)        | - Region: US - 2,500,000 requests per minute <br>- Region: EU - 1,500,000 requests per minute <br>- Region: APAC - 2,000,000 requests per minute <br>- Region: OC - 350000 requests per minute |
-|Tenant + Application + Fault Domain (gateway level)        |1,200,000 requests per minute       |
-|Tenant (gateway level)        |200 requests per second       |
-|IP  (gateway level)        |20 requests per second        |
-|IP + Tenant (gateway level)        |20 requests per second        |
---> 
+|Total number of objects (user accounts and applications) per tenant | 13 million |
+|Number of [custom authentication extensions](/entra/identity-platform/custom-extension-overview)    |100         |
+|Number of event listener policies    |249         |
 
 ## Next steps
 

@@ -7,7 +7,7 @@ metadata:
   ms.author: sarahlipsey
   manager: amycolannino
   ms.reviewer: jeffsta
-  ms.date: 12/01/2023
+  ms.date: 05/14/2024
   ms.service: entra
   ms.subservice: fundamentals
   ms.topic: how-to
@@ -31,37 +31,31 @@ procedureSection:
   - title: |
       Assign roles
     summary: |
-      There are two main steps to the role assignment process. First you'll select the role to assign. Then you'll adjust the role settings and duration.
-
-      ### Select the role to assign
+      There are two main steps to the role assignment process. First you select the role to assign. Then you adjust the role settings and duration. Eligible roles are assigned to a user but must be elevated Just-In-Time by the user through Privileged Identity Management (PIM). For more information about how to use PIM, see [Privileged Identity Management](~/id-governance/privileged-identity-management/index.yml).
 
       [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-      - Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
-
-      - Browse to **Identity** > **Users** > **All users**.
-
-        :::image type="content" source="media/entra-users-assign-role-azure-portal/all-users-page.png" alt-text="Screenshot of the All users page." lightbox="media/entra-users-assign-role-azure-portal/all-users-page.png":::
-
-      - Search for and select the user getting the role assignment.
-
-        :::image type="content" source="media/entra-users-assign-role-azure-portal/select-existing-user.png" alt-text="Screenshot of the Users - All users list with Alain Charon highlighted.":::
-
-      - Select **Assigned roles** from the side menu, then select **Add assignments**. 
-
-        :::image type="content" source="media/entra-users-assign-role-azure-portal/user-profile-assign-roles.png" alt-text="Screenshot of the user's overview page with Assigned roles option highlighted.":::
-
-      - Select a role to assign from the dropdown list and select the **Next** button.
-
-      ### Adjust the role settings
-
-      You can assign roles as either _eligible_ or _active_. Eligible roles are assigned to a user but must be elevated Just-In-Time by the user through Privileged Identity Management (PIM). For more information about how to use PIM, see [Privileged Identity Management](~/id-governance/privileged-identity-management/index.yml).
-
-        :::image type="content" source="media/entra-users-assign-role-azure-portal/role-assignment-types.png" alt-text="Screenshot of the assigned roles page with the assignment types highlighted.":::
-    
     steps: 
       - |
-        From the Setting section of the **Add assignments** page, select an **Assignment type** option.
+        Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
+      - |
+        Browse to **Identity** > **Users** > **All users**.
+      - |
+        Search for and select the user getting the role assignment.
+
+        :::image type="content" source="media/entra-users-assign-role-azure-portal/select-existing-user.png" alt-text="Screenshot of the Users - All users list with Alain Charon highlighted.":::
+      - |
+        Select **Assigned roles** from the side menu, then select **Add assignments**. 
+
+        :::image type="content" source="media/entra-users-assign-role-azure-portal/assigned-roles-add-assignment.png" alt-text="Screenshot of assigned roles page with Add assignments highlighted.":::
+      - |
+        Select a role to assign from the dropdown list and select the **Next** button. 
+      - |
+        Select an **Assignment type**.
+        
+          You can assign roles as either *eligible* or *active*. 
+
+          :::image type="content" source="media/entra-users-assign-role-azure-portal/role-assignment-settings.png" alt-text="Screenshot of the role assignment settings.":::
       - |
         Leave the **Permanently eligible** option selected if the role should always be available to elevate for the user.
 
@@ -70,8 +64,6 @@ procedureSection:
         Select the **Assign** button.
 
           Assigned roles appear in the associated section for the user, so eligible and active roles are listed separately. 
-
-          :::image type="content" source="media/entra-users-assign-role-azure-portal/role-assignment-settings.png" alt-text="Screenshot of the role assignment settings.":::
   
   - title: |
       Update roles
@@ -83,11 +75,15 @@ procedureSection:
       - |
         Search for and select the user getting their role updated.
       - |
-        Go to the **Assigned roles** page and select the **Update** link for the role that needs to be changed.
+        Select **Assigned roles** from the side menu, then select either **Eligible assignments** or **Active assignments**.
+      - |       
+        Select the the **Update** link for the role that needs to be changed.
+
+          :::image type="content" source="media/entra-users-assign-role-azure-portal/remove-update-role-assignment.png" alt-text="Screenshot of assigned roles page with the Remove and Update options highlighted." lightbox="media/entra-users-assign-role-azure-portal/remove-update-role-assignment.png":::
       - |
         Change the settings as needed and select the **Save** button.
 
-          :::image type="content" source="media/entra-users-assign-role-azure-portal/remove-update-role-assignment.png" alt-text="Screenshot of assigned roles page with the Remove and Update options highlighted." lightbox="media/entra-users-assign-role-azure-portal/remove-update-role-assignment.png":::
+          :::image type="content" source="media/entra-users-assign-role-azure-portal/update-role-settings.png" alt-text="Screenshot of the role membership settings panel.":::
   - title: |
       Remove roles
     summary: |

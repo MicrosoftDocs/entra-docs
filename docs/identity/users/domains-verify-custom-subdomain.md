@@ -91,6 +91,7 @@ Invoking API with a federated verified subdomain with user references | POST | 4
 1. Use the following command to change the subdomain authentication type:
 
    ```powershell
+   Connect-MGGraph -Scopes "Domain.ReadWrite.All", "Directory.AccessAsUser.All"
    Update-MgDomain -DomainId "test.contoso.com" -BodyParameter @{AuthenticationType="Managed"}
    ```
 

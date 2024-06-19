@@ -25,12 +25,13 @@ We recommend organizations get as close as possible to a unilateral block on dev
 
 For organizations that have no established use of device code flow, blocking can be done with the following Conditional Access policy: 
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator). 
-1. Browse to **Protection** > **Conditional Access**. 
-1. Select **Create new policy**. 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator). 
+1. Browse to **Protection** > **Conditional Access** > **Policies**.
+1. Select **New policy**.
 1. Under **Assignments**, select **Users or workload identities**. 
    1. Under **Include**, select the users you want to be in-scope for the policy (**all users** recommended).
-   1. Under **Exclude**, select **Users and groups**. You should only exclude necessary users and this exclusion list should be audited regularly.  
+   1. Under **Exclude**: 
+      1. Select **Users and groups** and choose your organization's emergency access or break-glass accounts and any other necessary users this exclusion list should be audited regularly.  
 1. Under **Target resources** > **Cloud apps** > **Include**, select the apps you want to be in-scope for the policy (**all cloud apps** recommended).
 1. Under **Conditions** > **Authentication Flows**, set **Configure** to **Yes**.
    1. Select **Device code flow**.
@@ -46,12 +47,13 @@ After administrators confirm the settings using [report-only mode](howto-conditi
 
 The ability to control [authentication transfer](concept-authentication-transfer.md) is in preview, use the **Authentication flows** condition in Conditional Access to manage the feature. You might want to block authentication transfer if you don’t want users to transfer authentication from their PC to a mobile device. For example, if you don’t allow Outlook to be used on personal devices by certain groups. Blocking authentication transfer can be done with the following Conditional Access policy:   
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator). 
 1. Browse to **Protection** > **Conditional Access**. 
 1. Select **Create new policy**. 
 1. Under **Assignments**, select **Users or workload identities**. 
    1. Under **Include**, select **All users** or user groups you would like to block for authentication transfer.
-   1. Under **Exclude**, select **Users and groups**. You should only exclude necessary users and this exclusion list should be audited regularly.
+   1. Under **Exclude**: 
+      1. Select **Users and groups** and choose your organization's emergency access or break-glass accounts and any other necessary users this exclusion list should be audited regularly.  
 1. Under **Target resources** > **Cloud apps** > **Include**, select **All cloud apps** or apps you would like to block for authentication transfer.
 1. Under **Conditions** > **Authentication Flows**, set **Configure** to **Yes**  
    1. Select **Authentication transfer**.

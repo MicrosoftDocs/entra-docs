@@ -82,4 +82,4 @@ A message appears indicating that you have signed out. You can now close the bro
 
 - [Quickstart: Protect an ASP.NET Core web API with the Microsoft identity platform](./quickstart-web-api-aspnet-core-protect-api.md).
 
-- Learn more by building this JavaScript SPA from scratch with the following series - [Tutorial: Sign in users and call Microsoft Graph](./tutorial-v2-javascript-auth-code.md)
+- Learn more by building a React SPA that signs in users in the following multi-part [tutorial series](./tutorial-single-page-app-react-register-app.md).

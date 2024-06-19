@@ -117,8 +117,7 @@ Both the approver and the alternate approvers can approve or deny the request.
 
 ### Approved or denied emails
 
- When an approver receives an access request submitted by a requestor, they can approve or deny the access request. The approver needs to add a business justification for their decision. Here's a sample email sent to the approvers
- and alternate approvers after a request is approved:
+ When an approver receives an access request submitted by a requestor, they can approve or deny the access request. The approver needs to add a business justification for their decision. Here's a sample email sent to the approvers and alternate approvers after a request is approved:
 
 ![Approved request to access package email](./media/entitlement-management-process/approver-request-email-approved.png)
 

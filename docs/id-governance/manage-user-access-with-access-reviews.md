@@ -17,7 +17,7 @@ ms.reviewer: mwahl
 With Microsoft Entra, you can easily ensure that users have appropriate access. You can ask the users themselves or a decision maker to participate in an access review and recertify (or attest) to users' access. The reviewers can give their input on each user's need for continued access based on suggestions from Microsoft Entra. When an access review is finished, you can then make changes and remove access from users who no longer need it.
 
 > [!NOTE]
-> If you want to review only guest users' access and not review all types of users' access, see [Manage guest user access with access reviews](manage-guest-access-with-access-reviews.md). If you want to review users' membership in administrative roles such as global administrator, see [Start an access review in Microsoft Entra Privileged Identity Management](../id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md).
+> If you want to review only guest users' access and not review all types of users' access, see [Manage guest user access with access reviews](manage-guest-access-with-access-reviews.md). If you want to review users' membership in administrative roles such as Global Administrator, see [Start an access review in Microsoft Entra Privileged Identity Management](../id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md).
 
 ## Prerequisites
 
@@ -35,7 +35,7 @@ You can have one or more users as reviewers in an access review.
 
 2. Decide whether to have each user review their own access or to have one or more users review everyone's access.
 
-3. In one of the following roles: a global administrator, user administrator, or (Preview) an owner of a Microsoft 365 group or Microsoft Entra security group to be reviewed, go to the [Identity Governance page](https://portal.azure.com/#blade/Microsoft_AAD_ERM/DashboardBlade/).
+3. As at least a User Administrator, or (Preview) an owner of a Microsoft 365 group or Microsoft Entra security group to be reviewed, go to the [Identity Governance page](https://portal.azure.com/#blade/Microsoft_AAD_ERM/DashboardBlade/).
 
 4. Create the access review. For more information, see [Create an access review of groups or applications](create-access-review.md).
 

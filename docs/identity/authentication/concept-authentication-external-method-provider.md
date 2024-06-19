@@ -330,16 +330,16 @@ Here's an example of an id_token_hint for a directory member:
   "kid": "7_Zuf1tvkwLxYaHS3q6lUjUYIGw"
 }.{
   "ver": "2.0",
-  "iss": "https://login.microsoftonline.com/9122040d-6c67-4c5b-b112-36a304b66dad/v2.0",
+  "iss": "https://login.microsoftonline.com/aaaabbbb-0000-cccc-1111-dddd2222eeee/v2.0",
   "sub": "mBfcvuhSHkDWVgV72x2ruIYdSsPSvcj2R0qfc6mGEAA",
-  "aud": "600b719b-3766-4dc5-95a6-3c4a8dc31885",
+  "aud": "00001111-aaaa-2222-bbbb-3333cccc4444",
   "exp": 1536093790,
   "iat": 1536093791,
   "nbf": 1536093791,
   "name": "Test User 2",
   "preferred_username": "testuser2@contoso.com"
-  "oid": "951ddb04-b16d-45f3-bbf7-b0fa18fa7aee",
-  "tid": "14c2f153-90a7-4689-9db7-9543bf084dad"
+  "oid": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
+  "tid": "aaaabbbb-0000-cccc-1111-dddd2222eeee"
   }.
 
 ```
@@ -355,14 +355,14 @@ Here's an example of the id_token hint for a guest user in the tenant:
   "ver": "2.0",
   "iss": "https://login.microsoftonline.com/9122040d-6c67-4c5b-b112-36a304b66dad/v2.0",
   "sub": "mBfcvuhSHkDWVgV72x2ruIYdSsPSvcj2R0qfc6mGEAA",
-  "aud": "600b719b-3766-4dc5-95a6-3c4a8dc31885",
+  "aud": "00001111-aaaa-2222-bbbb-3333cccc4444",
   "exp": 1536093790,
   "iat": 1536093791,
   "nbf": 1536093791,
   "name": "External Test User (Hotmail)",
   "preferred_username": "externaltestuser@hotmail.com",
-  "oid": "951ddb04-b16d-45f3-bbf7-b0fa18fa7aee",
-  "tid": "14c2f153-90a7-4689-9db7-9543bf084dad"
+  "oid": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
+  "tid": "aaaabbbb-0000-cccc-1111-dddd2222eeee"
   }.
 
 
@@ -478,9 +478,9 @@ When you reach out to Microsoft support or a similar service, provide the value 
 
 For example:
 
->ENTRA IDSTS70002: Error validating credentials. ENTRA IDSTS50012: External ID token from issuer 'https://sts.XXXXXXXXX.com/auth/realms/XXXXXXXXXmfa' failed signature verification. KeyID of token is 'Rk3vlP4vD3OMJzBvrig81pnvaMqA'
->Trace ID: 01c2cd09-8997-45bf-bfe4-18fdf9d1a101
->**Correlation ID**: 72826bb4-abb7-4221-b253-100f530b4b0a
+>ENTRA IDSTS70002: Error validating credentials. ENTRA IDSTS50012: External ID token from issuer 'https://sts.XXXXXXXXX.com/auth/realms/XXXXXXXXXmfa' failed signature verification. KeyID of token is 'A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u'
+>Trace ID: 0000aaaa-11bb-cccc-dd22-eeeeee333333
+>**Correlation ID**: aaaa0000-bb11-2222-33cc-444444dddddd
 >Timestamp: 2023-07-24 16:51:34Z
 
 
@@ -512,7 +512,7 @@ Term | Description
 MFA  | Multifactor authentication.
 EAM  | An external authentication method is an authentication method from a provider other than Microsoft Entra ID that is used as part of authenticating a user.
 OIDC | Open ID Connect is an authentication protocol based on OAuth 2.0.
-600b719b-3766-4dc5-95a6-3c4a8dc31885 | An example of an appid integrated for an external authentication method.
+00001111-aaaa-2222-bbbb-3333cccc4444 | An example of an appid integrated for an external authentication method.
 
 ## Next steps
 

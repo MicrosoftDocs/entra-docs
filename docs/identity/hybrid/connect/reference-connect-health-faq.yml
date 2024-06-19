@@ -142,7 +142,7 @@ sections:
           
           * The agent cannot communicate with the required endpoints because a firewall is blocking traffic. This issue is common on web application proxy servers. Make sure that you have allowed outbound communication to the required endpoints and ports. See the [requirements section](how-to-connect-health-agent-install.md#requirements) for details.
           * Outbound communication is subjected to a TLS inspection by the network layer. This causes the certificate that the agent uses to be replaced by the inspection server/entity, and the steps to complete the agent registration fail.
-          * The user doesn't have access to perform the registration of the agent. Global admins have access by default. You can use [Azure role-based access control (Azure RBAC)](how-to-connect-health-operations.md#manage-access-with-azure-rbac) to delegate access to other users.
+          * The user doesn't have access to perform the registration of the agent. Global Administrators have access by default. You can use [Azure role-based access control (Azure RBAC)](how-to-connect-health-operations.md#manage-access-with-azure-rbac) to delegate access to other users.
           
       - question: |
           I am getting alerted that "Health Service data isn't up to date." How do I troubleshoot the issue?
@@ -166,7 +166,7 @@ sections:
         answer: |
           Microsoft Entra Connect Health for AD FS generates this alert when the Health Agent installed on an AD FS server fails to obtain a token as part of a synthetic transaction initiated by the Health Agent. The Health agent uses the local system context and attempts to get a token for a self relying party. This behavior is a catch-all test to ensure that AD FS is in a state of issuing tokens.
           
-          Most often this test fails because the Health Agent is unable to resolve the AD FS farm name. This state can happen if the AD FS servers are behind a network load balancers and the request gets initiated from a node that's behind the load balancer (as opposed to a regular client that is in front of the load balancer). This issue can be fixed by updating the "hosts" file located under "C:\Windows\System32\drivers\etc" to include the IP address of the AD FS server or a loopback IP address (127.0.0.1) for the AD FS farm name (such as sts.contoso.com). Adding the host file will short-circuit the network call, thus allowing the Health Agent to get the token.
+          Most often this test fails because the Health Agent is unable to resolve the AD FS farm name. This state can happen if the AD FS servers are behind a network load balancers and the request gets initiated from a node that's behind the load balancer (as opposed to a regular client that is in front of the load balancer). This issue can be fixed by updating the "hosts" file located under `C:\Windows\System32\drivers\etc` to include the IP address of the AD FS server or a loopback IP address (`127.0.0.1`) for the AD FS farm name (such as `sts.contoso.com`). Adding the host file will short-circuit the network call, thus allowing the Health Agent to get the token.
           
       - question: |
           I got an email indicating my machines are NOT patched for the recent ransomware attacks. Why did I receive this email?

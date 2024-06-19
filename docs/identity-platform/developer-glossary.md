@@ -35,7 +35,7 @@ Another term for the [client application](#client-application). The actor is the
 
 ## Application (client) ID
 
-The application ID, or _[client ID](https://datatracker.ietf.org/doc/html/rfc6749#section-2.2)_, is a value the Microsoft identity platform assigns to your application when you register it in Microsoft Entra ID. The application ID is a GUID value that uniquely identifies the application and its configuration within the identity platform. You add the app ID to your application's code, and authentication libraries include the value in their requests to the identity platform at application runtime. The application (client) ID isn't a secret - don't use it as a password or other credential.
+The application ID, or *[client ID](https://datatracker.ietf.org/doc/html/rfc6749#section-2.2)*, is a value the Microsoft identity platform assigns to your application when you register it in Microsoft Entra ID. The application ID is a GUID value that uniquely identifies the application and its configuration within the identity platform. You add the app ID to your application's code, and authentication libraries include the value in their requests to the identity platform at application runtime. The application (client) ID isn't a secret - don't use it as a password or other credential.
 
 ## Application manifest
 
@@ -43,7 +43,7 @@ An application manifest is a feature that produces a JSON representation of the 
 
 ## Application object
 
-When you register/update an application, both an application object and a corresponding [service principal object](#service-principal-object) are created/updated for that tenant. The application object _defines_ the application's identity configuration globally (across all tenants where it has access), providing a template from which its corresponding service principal object(s) are _derived_ for use locally at run-time (in a specific tenant).
+When you register/update an application, both an application object and a corresponding [service principal object](#service-principal-object) are created/updated for that tenant. The application object *defines* the application's identity configuration globally (across all tenants where it has access), providing a template from which its corresponding service principal object(s) are *derived* for use locally at run-time (in a specific tenant).
 
 For more information, see [Application and Service Principal Objects][AAD-App-SP-Objects].
 
@@ -70,7 +70,7 @@ The act of granting an authenticated security principal permission to do somethi
 
 ## Authorization code
 
-A short-lived value provided by the [authorization endpoint](#authorization-endpoint) to a [client application](#client-application) during the OAuth 2.0 _authorization code grant flow_, one of the four OAuth 2.0 [authorization grants](#authorization-grant). Also called an _auth code_, the authorization code is returned to the client application in response to the authentication of a [resource owner](#resource-owner). The auth code indicates the resource owner has delegated authorization to the client application to access their resources. As part of the flow, the auth code is later redeemed for an [access token](#access-token).
+A short-lived value provided by the [authorization endpoint](#authorization-endpoint) to a [client application](#client-application) during the OAuth 2.0 *authorization code grant flow*, one of the four OAuth 2.0 [authorization grants](#authorization-grant). Also called an *auth code*, the authorization code is returned to the client application in response to the authentication of a [resource owner](#resource-owner). The auth code indicates the resource owner has delegated authorization to the client application to access their resources. As part of the flow, the auth code is later redeemed for an [access token](#access-token).
 
 ## Authorization endpoint
 
@@ -81,6 +81,8 @@ See the OAuth 2.0 specification's [authorization grant types][OAuth2-AuthZ-Grant
 ## Authorization grant
 
 A credential representing the [resource owner's](#resource-owner) [authorization](#authorization) to access its protected resources, granted to a [client application](#client-application). A client application can use one of the [four grant types defined by the OAuth 2.0 Authorization Framework][OAuth2-AuthZ-Grant-Types] to obtain a grant, depending on client type/requirements: "authorization code grant", "client credentials grant", "implicit grant", and "resource owner password credentials grant". The credential returned to the client is either an [access token](#access-token), or an [authorization code](#authorization-code) (exchanged later for an access token), depending on the type of authorization grant used.
+
+The resource owner password credentials grant [shouldn't be used](https://news.microsoft.com/features/whats-solution-growing-problem-passwords-says-microsoft/) except in scenarios when other flows can't be used. If you are building a SPA, use the [authorization code flow with PKCE instead of implicit grant](https://devblogs.microsoft.com/identity/migrate-to-auth-code-flow/).
 
 ## Authorization server
 
@@ -187,7 +189,7 @@ A signed document containing claims, such as an OAuth 2.0 token or SAML 2.0 asse
 
 ## Service principal object
 
-When you register/update an application, both an [application object](#application-object) and a corresponding service principal object are created/updated for that tenant. The application object _defines_ the application's identity configuration globally (across all tenants where the associated application has been granted access), and is the template from which its corresponding service principal object(s) are _derived_ for use locally at run-time (in a specific tenant).
+When you register/update an application, both an [application object](#application-object) and a corresponding service principal object are created/updated for that tenant. The application object *defines* the application's identity configuration globally (across all tenants where the associated application has been granted access), and is the template from which its corresponding service principal object(s) are *derived* for use locally at run-time (in a specific tenant).
 
 For more information, see [Application and Service Principal Objects][AAD-App-SP-Objects].
 
@@ -225,11 +227,11 @@ A type of [client application](#client-application) that downloads code from a w
 
 ## User principal
 
-Similar to the way a service principal object is used to represent an application instance, a user principal object is another type of security principal, which represents a user. The Microsoft Graph [`User` resource type][Graph-User-Resource] defines the schema for a user object, including user-related properties like first and last name, user principal name, directory role membership, etc. This provides the user identity configuration for Microsoft Entra ID to establish a user principal at run-time. The user principal is used to represent an authenticated user for single sign-on, recording [consent](#consent) delegation, making access control decisions, etc.
+Similar to the way a service principal object is used to represent an application instance, a user principal object is another type of security principal, which represents a user. The Microsoft Graph [`User` resource type][Graph-User-Resource] defines the schema for a user object, including user-related properties like first and last name, user principal name, directory role membership, and so on. This provides the user identity configuration for Microsoft Entra ID to establish a user principal at run-time. The user principal is used to represent an authenticated user for single sign-on, recording [consent](#consent) delegation, making access control decisions, and so on.
 
 ## Web client
 
-A type of [client application](#client-application) that executes all code on a web server, functioning as a _confidential client_ because it can securely store its credentials on the server. For more information, see [OAuth 2.0 client types and profiles][OAuth2-Client-Types].
+A type of [client application](#client-application) that executes all code on a web server, functioning as a *confidential client* because it can securely store its credentials on the server. For more information, see [OAuth 2.0 client types and profiles][OAuth2-Client-Types].
 
 ## Workload identity
 

@@ -196,7 +196,7 @@ Custom attributes can't be referential attributes, multi-value, or complex-typed
     "created": "2010-01-23T04:56:22Z",
     "lastModified": "2011-05-13T04:42:34Z",
     "version": "W\/\"3694e05e9dff591\"",
-    "location": "https://example.com/v2/Users/2819c223-7f76-453a-919d-413861904646"
+    "location": "https://example.com/v2/Users/00aa00aa-bb11-cc22-dd33-44ee44ee44ee"
   }
 }
 ```

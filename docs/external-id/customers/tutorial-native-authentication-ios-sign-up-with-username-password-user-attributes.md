@@ -11,7 +11,7 @@ ms.service: entra-external-id
 ms.subservice: customers
 ms.topic: tutorial
 ms.date: 02/23/2024
-ms.custom: developer, devx-track-dotnet
+ms.custom: developer
 #Customer intent: As a dev, devops, I want to learn about sign up using username, password and user attributes.
 ---
 
@@ -73,7 +73,7 @@ We use the `signUp(username:password:attributes:delegate)` method, which respond
    }
    ```
 
-    If the attributes are invalid, the method `onSignUpAttributesInvalid(attributeNames: [String])` is called. In this case, we display the list of invalid attributes to the user. Otherwise, the `onSignUpCodeRequired(newState:sentTo:channelTargetType:codeLength)` is called to indicate that a code has been sent to verify the user's email address. Apart from details such as the recipient of the code, and number of digits of the code, this delegate method has a _newState_ parameter of type `SignUpCodeRequiredState`, which gives us access to two new methods:  
+    If the attributes are invalid, the method `onSignUpAttributesInvalid(attributeNames: [String])` is called. In this case, we display the list of invalid attributes to the user. Otherwise, the `onSignUpCodeRequired(newState:sentTo:channelTargetType:codeLength)` is called to indicate that a code has been sent to verify the user's email address. Apart from details such as the recipient of the code, and number of digits of the code, this delegate method has a *newState* parameter of type `SignUpCodeRequiredState`, which gives us access to two new methods:  
 
    - `submitCode(code:delegate)`
    - `resendCode(delegate)`
@@ -191,4 +191,3 @@ Both delegate methods contain a new state reference. We'll use the `newState` pa
 ## Next steps 
 
 - [Tutorial: Sign up using username and password](tutorial-native-authentication-ios-sign-up-with-username-password.md) 
-

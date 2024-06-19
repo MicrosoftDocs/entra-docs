@@ -31,7 +31,7 @@ Take a look at our video for an overview of the MFA Server Migration Utility and
 
 ## Limitations and requirements
 
-- The MFA Server Migration Utility requires a new build of the MFA Server solution to be installed on your Primary MFA Server. The build makes updates to the MFA Server data file, and includes the new MFA Server Migration Utility. You don't have to update the WebSDK or User portal. Installing the update _doesn't_ start the migration automatically.
+- The MFA Server Migration Utility requires a new build of the MFA Server solution to be installed on your Primary MFA Server. The build makes updates to the MFA Server data file, and includes the new MFA Server Migration Utility. You don't have to update the WebSDK or User portal. Installing the update *doesn't* start the migration automatically.
 
    > [!NOTE]
    > The MFA Server Migration Utility can be executed on a secondary MFA Server. For more information, please check [Run a secondary MFA Server (optional)](#run-a-secondary-mfa-server-optional).
@@ -74,7 +74,7 @@ A few important points:
 
 During the previous phases, you can remove users from the Staged Rollout folders to take them out of scope of Microsoft Entra multifactor authentication and route them back to your on-premises Azure MFA server for all MFA requests originating from Microsoft Entra ID.
 
-**Phase 3** requires moving all clients that authenticate to the on-premises MFA Server (VPNs, password managers, and so on) to Microsoft Entra federation via SAML/OAUTH. If modern authentication standards aren't supported, you're required to stand up NPS server(s) with the Microsoft Entra multifactor authentication extension installed. Once dependencies are migrated, users should no longer use the User portal on the MFA Server, but rather should manage their authentication methods in Microsoft Entra ID ([aka.ms/mfasetup](https://aka.ms/mfasetup)). Once users begin managing their authentication data in Microsoft Entra ID, those methods won't be synced back to MFA Server. If you roll back to the on-premises MFA Server after users have made changes to their Authentication Methods in Microsoft Entra ID, those changes will be lost. After user migrations are complete, change the [federatedIdpMfaBehavior](/graph/api/resources/internaldomainfederation?view=graph-rest-1.0&preserve-view=true#federatedidpmfabehavior-values) domain federation setting. The change tells Microsoft Entra ID to no longer perform MFA on-premises and to perform _all_ MFA requests with Microsoft Entra multifactor authentication, regardless of group membership. 
+**Phase 3** requires moving all clients that authenticate to the on-premises MFA Server (VPNs, password managers, and so on) to Microsoft Entra federation via SAML/OAUTH. If modern authentication standards aren't supported, you're required to stand up NPS server(s) with the Microsoft Entra multifactor authentication extension installed. Once dependencies are migrated, users should no longer use the User portal on the MFA Server, but rather should manage their authentication methods in Microsoft Entra ID ([aka.ms/mfasetup](https://aka.ms/mfasetup)). Once users begin managing their authentication data in Microsoft Entra ID, those methods won't be synced back to MFA Server. If you roll back to the on-premises MFA Server after users have made changes to their Authentication Methods in Microsoft Entra ID, those changes will be lost. After user migrations are complete, change the [federatedIdpMfaBehavior](/graph/api/resources/internaldomainfederation?view=graph-rest-1.0&preserve-view=true#federatedidpmfabehavior-values) domain federation setting. The change tells Microsoft Entra ID to no longer perform MFA on-premises and to perform *all* MFA requests with Microsoft Entra multifactor authentication, regardless of group membership. 
 
 The following sections explain the migration steps in more detail.
 
@@ -293,7 +293,7 @@ To access the Audit logs in the Microsoft Entra admin center to view details of 
 
    :::image type="content" border="true" source="./media/how-to-mfa-server-migration-utility/actor.png" alt-text="Screenshot of Initiated by Actor option.":::
 
-1. Type _Azure MFA Management_ and click **Apply**.
+1. Type *Azure MFA Management* and click **Apply**.
 
    :::image type="content" border="true" source="./media/how-to-mfa-server-migration-utility/apply-actor.png" alt-text="Screenshot of MFA management option.":::
 
@@ -471,14 +471,14 @@ Content-Type: application/json
   "id": "6601d14b-d113-8f64-fda2-9b5ddda18ecc",
    "issuerUri": "http://contoso.com/adfs/services/trust",
    "metadataExchangeUri": "https://sts.contoso.com/adfs/services/trust/mex",
-   "signingCertificate": "MIIE3jCCAsagAwIBAgIQQcyDaZz3MI",
+   "signingCertificate": "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u",
    "passiveSignInUri": "https://sts.contoso.com/adfs/ls",
    "preferredAuthenticationProtocol": "wsFed",
    "activeSignInUri": "https://sts.contoso.com/adfs/services/trust/2005/usernamemixed",
    "signOutUri": "https://sts.contoso.com/adfs/ls",
    "promptLoginBehavior": "nativeSupport",
    "isSignedAuthenticationRequestRequired": true,
-   "nextSigningCertificate": "MIIE3jCCAsagAwIBAgIQQcyDaZz3MI",
+   "nextSigningCertificate": "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u",
    "signingCertificateUpdateStatus": {
         "certificateUpdateResult": "Success",
         "lastRunDateTime": "2021-08-25T07:44:46.2616778Z"
@@ -547,14 +547,14 @@ If the upgrade had issues, follow these steps to roll back:
      "id": "6601d14b-d113-8f64-fda2-9b5ddda18ecc",
       "issuerUri": "http://contoso.com/adfs/services/trust",
       "metadataExchangeUri": "https://sts.contoso.com/adfs/services/trust/mex",
-      "signingCertificate": "MIIE3jCCAsagAwIBAgIQQcyDaZz3MI",
+      "signingCertificate": "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u",
       "passiveSignInUri": "https://sts.contoso.com/adfs/ls",
       "preferredAuthenticationProtocol": "wsFed",
       "activeSignInUri": "https://sts.contoso.com/adfs/services/trust/2005/usernamemixed",
       "signOutUri": "https://sts.contoso.com/adfs/ls",
       "promptLoginBehavior": "nativeSupport",
       "isSignedAuthenticationRequestRequired": true,
-      "nextSigningCertificate": "MIIE3jCCAsagAwIBAgIQQcyDaZz3MI",
+      "nextSigningCertificate": "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u",
       "signingCertificateUpdateStatus": {
            "certificateUpdateResult": "Success",
            "lastRunDateTime": "2021-08-25T07:44:46.2616778Z"

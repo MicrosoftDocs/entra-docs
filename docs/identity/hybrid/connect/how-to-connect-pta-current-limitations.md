@@ -29,15 +29,15 @@ The following scenarios are supported:
 
 ## Unsupported scenarios
 
-The following scenarios are _not_ supported:
+The following scenarios are *not* supported:
 
 - Detection of users with [leaked credentials](~/id-protection/overview-identity-protection.md).
-- Microsoft Entra Domain Services needs Password Hash Synchronization to be enabled on the tenant. Therefore tenants that use Pass-through Authentication _only_ don't work for scenarios that need Microsoft Entra Domain Services.
+- Microsoft Entra Domain Services needs Password Hash Synchronization to be enabled on the tenant. Therefore tenants that use Pass-through Authentication *only* don't work for scenarios that need Microsoft Entra Domain Services.
 - Pass-through Authentication is not integrated with [Microsoft Entra Connect Health](./whatis-azure-ad-connect.md).
 - Signing in to Microsoft Entra joined (AADJ) devices with a temporary or expired password is not supported for Pass-through authentication users. The error "the sign-in method you're trying to use isn't allowed" will appear.  These users must sign in to a browser to update their temporary password.
 
 > [!IMPORTANT]
-> As a workaround for unsupported scenarios _only_ (except Microsoft Entra Connect Health integration), enable Password Hash Synchronization on the [Optional features](how-to-connect-install-custom.md#optional-features) page in the Microsoft Entra Connect wizard.
+> As a workaround for unsupported scenarios *only* (except Microsoft Entra Connect Health integration), enable Password Hash Synchronization on the [Optional features](how-to-connect-install-custom.md#optional-features) page in the Microsoft Entra Connect wizard.
 > 
 > [!NOTE]
 > Enabling Password Hash Synchronization gives you the option to failover authentication if your on-premises infrastructure is disrupted. This failover from Pass-through Authentication to Password Hash Synchronization is not automatic. You'll need to switch the sign-in method manually using Microsoft Entra Connect. If the server running Microsoft Entra Connect goes down, you'll require help from Microsoft Support to turn off Pass-through Authentication.

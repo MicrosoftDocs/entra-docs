@@ -66,7 +66,7 @@ Content-type: application/json
 
 ## Create sync job
 
-The output of the preceding command returns the objectId of the service principal that was created. For this example, the objectId is 614ac0e9-a59b-481f-bd8f-79a73d167e1c. Use Microsoft Graph to add a synchronizationJob to that service principal.
+The output of the preceding command returns the objectId of the service principal that was created. For this example, the objectId is aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb. Use Microsoft Graph to add a synchronizationJob to that service principal.
 
 Documentation for creating a sync job can be found [here](/graph/api/synchronization-synchronization-post-jobs?tabs=http&preserve-view=true&view=graph-rest-beta).
 
@@ -103,7 +103,7 @@ Example return value (for provisioning):
 ```
 HTTP 201/Created
 {
-    "@odata.context": "https://graph.microsoft.com/beta/$metadata#servicePrincipals('614ac0e9-a59b-481f-bd8f-79a73d167e1c')/synchronization/jobs/$entity",
+    "@odata.context": "https://graph.microsoft.com/beta/$metadata#servicePrincipals('aaaaaaaa-0000-1111-2222-bbbbbbbbbbbbc')/synchronization/jobs/$entity",
     "id": "AD2AADProvisioning.fc96887f36da47508c935c28a0c0b6da",
     "templateId": "ADDCInPassthrough",
     "schedule": {
@@ -132,9 +132,11 @@ HTTP 201/Created
 
 For this tenant, the object identifier and application identifier of the service principal are as follows:
 
-ObjectId: 8895955e-2e6c-4d79-8943-4d72ca36878f
-AppId: 00000014-0000-0000-c000-000000000000
+```
+ObjectId: bbbbbbbb-1111-2222-3333-cccccccccccc
+AppId: 00001111-aaaa-2222-bbbb-3333cccc4444
 DisplayName: testApp
+```
 
 We're going to need to update the domain this configuration is targeting, so update the secrets for this domain.
 

@@ -5,12 +5,12 @@ description: Using network locations as assignments in a Microsoft Entra Conditi
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 03/29/2024
+ms.date: 05/22/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
-ms.reviewer: lhuangnorth
+ms.reviewer: lhuangnorth, inbarc
 ---
 # Conditional Access: Network assignment
 
@@ -29,7 +29,9 @@ Organizations might use these locations for common tasks like:
 A user's location is found using their public IP address or the GPS coordinates provided by the Microsoft Authenticator app. Conditional Access policies apply to all locations by default.
 
 > [!TIP]
-> The **Location** condition has moved and is renamed **Network**. At first this condition will appear at both the **Assignment** level, and under **Conditions**. 
+> The **Location** condition has moved and is renamed **Network**. At first this condition will appear at both the **Assignment** level, and under **Conditions**.
+> 
+> Updates or changes appear in both locations. The functionality remains the same and existing policies using **Location** continue to work without changes.
 
 :::image type="content" source="media/concept-assignment-network/network-assignment.png" alt-text="Screenshot showing the network assignment condition in Conditional Access policy." lightbox="media/concept-assignment-network/network-assignment.png":::
 
@@ -179,7 +181,7 @@ A policy that uses the location condition to block access is considered restrict
 <!--- 
 ## Define locations
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Protection** > **Conditional Access** > **Named locations**.
 1. Choose **IP ranges location** or **Countries location**.
 1. Give your location a name.

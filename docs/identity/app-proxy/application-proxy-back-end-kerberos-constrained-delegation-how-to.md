@@ -21,7 +21,7 @@ This article makes the following assumptions.
 - Deployment of Microsoft Entra application proxy and general access to non-KCD applications. For more information, see [Get started with application proxy](application-proxy-add-on-premises-application.md).
 - Published application is based on Internet Information Services (IIS) and the Microsoft implementation of Kerberos.
 - Server and application hosts reside in a single Microsoft Entra domain. For more information on cross-domain and forest scenarios, see [KCD white paper](https://aka.ms/KCDPaper).
-- Application is published in a Microsoft Entra ID tenant with pre authentication enabled. Users are expected to authenticate using forms-based authentication. Rich client authentication scenarios aren't covered by this article.
+- Application is published in a Microsoft Entra tenant with preauthentication enabled. Users are expected to authenticate using forms-based authentication. Rich client authentication scenarios aren't covered by this article.
 
 ## Prerequisites
 

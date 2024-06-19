@@ -56,8 +56,7 @@ Lifecycle workflows checks that the user is assigned the custom security attribu
 
 ### How does Lifecycle workflows handle custom security attributes with multiple values?
 
-If a user is assigned a custom security attribute that has multiple values, and one of the values matches the value in the 
-specified in rule expressions, the user matches the scope.
+If a user is assigned a custom security attribute that has multiple values, and one of the values matches the value in the specified in rule expressions, the user matches the scope.
 
 ## Next steps
 

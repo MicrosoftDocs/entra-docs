@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: tutorial
-ms.date: 05/06/2024
+ms.date: 05/22/2024
 ms.author: chmutali
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Workday to Active Directory so that I can streamline the user management process and ensure that users have the appropriate access to Workday to Active Directory.
@@ -738,7 +738,7 @@ This section covers the following aspects of troubleshooting:
 
 * [Configure provisioning agent to emit Event Viewer logs](#configure-provisioning-agent-to-emit-event-viewer-logs)
 * [Setting up Windows Event Viewer for agent troubleshooting](#setting-up-windows-event-viewer-for-agent-troubleshooting)
-* [Setting up Microsoft Entra admin center Provisioning Logs for service troubleshooting](#setting-up-entra-admin-center-provisioning-logs-for-service-troubleshooting)
+* [Setting up Microsoft Entra admin center Provisioning Logs for service troubleshooting](#setting-up-microsoft-entra-admin-center-provisioning-logs-for-service-troubleshooting)
 * [Understanding logs for AD User Account create operations](#understanding-logs-for-ad-user-account-create-operations)
 * [Understanding logs for Manager update operations](#understanding-logs-for-manager-update-operations)
 * [Resolving commonly encountered errors](#resolving-commonly-encountered-errors)
@@ -787,7 +787,7 @@ This section covers the following aspects of troubleshooting:
 
 1. Click **OK** and sort the result view by **Date and Time** column.
 
-### Setting up Entra admin center Provisioning Logs for service troubleshooting
+### Setting up Microsoft Entra admin center Provisioning Logs for service troubleshooting
 
 1. Launch the [Microsoft Entra admin center](https://entra.microsoft.com), and navigate to the **Provisioning** section of your Workday provisioning application.
 1. Use the **Columns** button on the Provisioning Logs page to display only the following columns in the view (Date, Activity, Status, Status Reason). This configuration ensures that you focus only on data that is relevant for troubleshooting.
@@ -855,7 +855,7 @@ When you click on any of the provisioning log records, the **Activity Details** 
   EventName : EntryExportAdd // Implies that object is created
   JoiningProperty : 21023 // Value of the Workday attribute that serves as the Matching ID
   SourceAnchor : a071861412de4c2486eb10e5ae0834c3 // set to the WorkdayID (WID) associated with the profile in Workday
-  TargetAnchor : 83f0156c-3222-407e-939c-56677831d525 // set to the value of the AD "objectGuid" attribute of the new user
+  TargetAnchor : aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb // set to the value of the AD "objectGuid" attribute of the new user
   ```
 
   To find Provisioning Agent log records corresponding to this AD export operation, open the Windows Event Viewer logs and use the **Find…** menu option to find log entries containing the Matching ID/Joining Property attribute value (in this case *21023*).  
@@ -879,7 +879,7 @@ The first 4 records are like the ones we explored as part of the user create ope
   ```JSON
   // Modified Properties
   Name : manager
-  New Value : "83f0156c-3222-407e-939c-56677831d525" // objectGuid of the user 21023
+  New Value : "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb" // objectGuid of the user 21023
 
   // Additional Details
   ErrorCode : None // Use the error code captured here to troubleshoot AD account creation issues
@@ -930,7 +930,7 @@ During the AD user account update process, the provisioning service reads inform
 |#|Error Scenario |Probable Causes|Recommended Resolution|
 |--|---|---|---|
 |1.| Synchronization rule action failures in the provisioning log with the message *EventName = EntrySynchronizationError and ErrorCode = EndpointUnavailable*. | This error shows up if the provisioning service is unable to retrieve user profile data from Active Directory due to a processing error encountered by the on-premises provisioning agent. | Check the Provisioning Agent Event Viewer logs for error events that indicate issues with the read operation (Filter by Event ID #2). |
-|2.| The manager attribute in AD doesn't get updated for certain users in AD. | The most likely cause of this error is if you are using scoping rules and the user's manager is not part of the scope. You may also run into this issue if the manager's matching ID attribute (e.g. EmployeeID) is not found in the target AD domain or not set to the correct value. | Review the scoping filter and add the manager user in scope. Check the manager's profile in AD to make sure that there is a value for the matching ID attribute. |
+|2.| The manager attribute in AD doesn't get updated for certain users in AD. | The most likely cause of this error is if you are using scoping rules and the user's manager is not part of the scope. You may also run into this issue if the manager's matching ID attribute (such as EmployeeID) is not found in the target AD domain or not set to the correct value. | Review the scoping filter and add the manager user in scope. Check the manager's profile in AD to make sure that there is a value for the matching ID attribute. |
 
 ## Managing your configuration
 

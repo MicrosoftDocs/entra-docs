@@ -6,6 +6,8 @@ author: billmath
 manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-provisioning
+ms.custom:
+  - linux-related-content
 ms.topic: how-to
 ms.date: 02/13/2024
 ms.author: billmath
@@ -14,7 +16,7 @@ ms.reviewer: arvinh
 
 # Configuring Microsoft Entra ID to provision users into an LDAP directory for Linux authentication
 
-The following documentation is a tutorial demonstrating how to govern access to a Linux system. This is implemented by Microsoft Entra ID provisioning users into an on-premises LDAP directory trusted by that Linux system, so that those users can subsequently log into a Linux system that relies upon that LDAP directory for user authentication.  And when a user is removed from Microsoft Entra ID, they are subsequently no longer able to log into a Linux system.
+The following documentation is a tutorial demonstrating how to govern access to a Linux system. This is implemented by Microsoft Entra provisioning users into an on-premises LDAP directory trusted by that Linux system, so that those users can subsequently log into a Linux system that relies upon that LDAP directory for user authentication.  And when a user is removed from Microsoft Entra ID, they are subsequently no longer able to log into a Linux system.
 
 >[!NOTE]
 > The scenario described in this article is only applicable for existing Linux systems that already rely upon a Name Services Switch (NSS) or Pluggable Authentication Modules (PAM) LDAP module for user identification and authentication.  Linux VMs in Azure or that are Azure Arc-enabled should be instead integrated with Microsoft Entra authentication. You can now use Microsoft Entra ID as a core authentication platform and a certificate authority to SSH into a Linux VM by using Microsoft Entra ID and OpenSSH certificate-based authentication, as described in [Log in to a Linux virtual machine in Azure by using Microsoft Entra ID and OpenSSH](/entra/identity/devices/howto-vm-sign-in-azure-ad-linux).  

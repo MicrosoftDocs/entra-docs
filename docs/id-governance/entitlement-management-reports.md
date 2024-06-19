@@ -27,8 +27,6 @@ Watch the following video to learn how to view what resources users have access 
 
 This report enables you to list all of the users who are assigned to an access package.
 
-**Prerequisite role:** Global Administrator or Identity Governance Administrator
-
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
 1. Browse to **Identity governance** > **Entitlement management** > **Access packages**.
@@ -42,8 +40,6 @@ This report enables you to list all of the users who are assigned to an access p
 ## View access packages for a user
 
 This report enables you to list all of the access packages a user can request and the access packages that are currently assigned to the user.
-
-**Prerequisite role:** Global Administrator or Identity Governance Administrator
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
@@ -66,8 +62,6 @@ This report enables you to list all of the access packages a user can request an
 ## View resource assignments for a user
 
 This report enables you to list the resources currently assigned to a user in entitlement management. This report is for resources managed with entitlement management. The user might have access to other resources in your directory outside of entitlement management.
-
-**Prerequisite role:** Global administrator or Identity Governance Administrator
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
@@ -119,8 +113,6 @@ When the user's access package assignment expires, is canceled by the user, or r
 
 ## Download list of connected organizations
 
-**Prerequisite role**: *Global Administrator* or *Identity Governance Administrator*
-
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
 1. Browse to **Identity governance** > **Entitlement management** > **Connected organizations**.
@@ -151,7 +143,7 @@ To view events for an access package, you must have access to the underlying Azu
 
     Each row includes the time, access package ID, the name of the operation, the object ID, UPN, and the display name of the user who started the operation.  Additional details are included in JSON.
 
-1. If you would like to see if there have been changes to application role assignments for an application that weren't due to access package assignments, such as by a global administrator directly assigning a user to an application role, then you can select the workbook named *Application role assignment activity*.
+1. If you would like to see if there have been changes to application role assignments for an application that weren't due to access package assignments, such as by a Global Administrator directly assigning a user to an application role, then you can select the workbook named *Application role assignment activity*.
 
     [ ![View app role assignments](./media/entitlement-management-access-package-incompatible/workbook-ara-sml.png) ](./media/entitlement-management-access-package-incompatible/workbook-ara-lrg.png#lightbox)
 

@@ -465,7 +465,7 @@ For more examples, see [Create an assignment policy through PowerShell](entitlem
    ```powershell
    $policy3Name = "example policy"
    $policy3Description = "example of a policy for users to request assignment"
-   $policy3ApproverSingleUserId = "69971aca-3aed-4ab1-aaec-d617b7dbb27b"
+   $policy3ApproverSingleUserId = "1aaaaaa1-2bb2-3cc3-4dd4-5eeeeeeeeee5"
    ```
 
 1. Create the policy.
@@ -560,7 +560,7 @@ This script illustrates using a filter to retrieve the assignments to the access
 You can remove a user's assignment with the `New-MgEntitlementManagementAssignmentRequest` cmdlet.
 
 ```powershell
-$userId = "040a792f-4c5f-4395-902f-f0d9d192ab2c"
+$userId = "00aa00aa-bb11-cc22-dd33-44ee44ee44ee"
 $filter = "accessPackage/Id eq '" + $accessPackageId + "' and state eq 'Delivered' and target/objectId eq '" + $userId + "'"
 $assignment = Get-MgEntitlementManagementAssignment -Filter $filter -ExpandProperty target -all -ErrorAction stop
 if ($assignment -ne $null) {

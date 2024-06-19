@@ -31,7 +31,7 @@ To request a user authentication, cloud services send an `AuthnRequest` element 
 ```xml
 <samlp:AuthnRequest
   xmlns="urn:oasis:names:tc:SAML:2.0:metadata"
-  ID="id6c1c178c166d486687be4aaf5e482730"
+  ID="C2dE3fH4iJ5kL6mN7oP8qR9sT0uV1w"
   Version="2.0" IssueInstant="2013-03-18T03:28:54.1839884Z"
   xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol">
   <Issuer xmlns="urn:oasis:names:tc:SAML:2.0:assertion">https://www.contoso.com</Issuer>
@@ -107,7 +107,7 @@ A subject can instead be provided by adding a `login_hint` parameter to the HTTP
 When a requested sign-on completes successfully, Microsoft Entra ID posts a response to the cloud service. A response to a successful sign-on attempt looks like the following sample:
 
 ```xml
-<samlp:Response ID="_a4958bfd-e107-4e67-b06d-0d85ade2e76a" Version="2.0" IssueInstant="2013-03-18T07:38:15.144Z" Destination="https://contoso.com/identity/inboundsso.aspx" InResponseTo="id758d0ef385634593a77bdf7e632984b6" xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol">
+<samlp:Response ID="_a4958bfd-e107-4e67-b06d-0d85ade2e76a" Version="2.0" IssueInstant="2013-03-18T07:38:15.144Z" Destination="https://contoso.com/identity/inboundsso.aspx" InResponseTo="C2dE3fH4iJ5kL6mN7oP8qR9sT0uV1w" xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol">
   <Issuer xmlns="urn:oasis:names:tc:SAML:2.0:assertion"> https://login.microsoftonline.com/aaaabbbb-0000-cccc-1111-dddd2222eeee/</Issuer>
   <ds:Signature xmlns:ds="https://www.w3.org/2000/09/xmldsig#">
     ...
@@ -182,7 +182,7 @@ The following sample is a SAML response to an unsuccessful sign-on attempt.
       <samlp:StatusCode Value="urn:oasis:names:tc:SAML:2.0:status:RequestUnsupported" />
     </samlp:StatusCode>
     <samlp:StatusMessage>AADSTS75006: An error occurred while processing a SAML2 Authentication request. AADSTS90011: The SAML authentication request property 'NameIdentifierPolicy/SPNameQualifier' is not supported.
-    Trace ID: 0000aaaa-11bb-cccc-dd33-eeeeee333333
+    Trace ID: 0000aaaa-11bb-cccc-dd22-eeeeee333333
     Timestamp: 2013-03-18 08:49:24Z</samlp:StatusMessage>
     </samlp:Status>
 </samlp:Response>

@@ -15,6 +15,8 @@ ms.custom: developer, devx-track-js
 
 # Acquire an access token in your Node.js web app
 
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
 In this article, you update your code, to enable your web app to acquire an access token. You use [Microsoft Authentication Library (MSAL) for Node](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-node) to simplify adding authentication and authorization to your node web application. This article is the third part of a four-part guide series.
 
 ## Prerequisites

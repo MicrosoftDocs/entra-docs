@@ -134,7 +134,7 @@ In addition to those resources, we have some developer-focused features in publi
 
 ### How do I add authentication with External ID to my app code?
 
-We have a single, unified [Microsoft Authentication Library](~/identity-platform/msal-overview.md) (MSAL) where the same application code works for workforce and customer scenarios. In three steps, you can sign up or sign in a user:
+We have a single, unified [Microsoft Authentication Library (MSAL)](~/identity-platform/msal-overview.md) where the same application code works for workforce and customer scenarios. In three steps, you can sign up or sign in a user:
 
 1. Configure MSAL to use to your tenant and application
 1. Create a sign-in function that calls MSAL to start the web-based sign in flow

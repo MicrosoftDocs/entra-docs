@@ -68,7 +68,7 @@ The following table lists common attributes and how they're synchronized to Micr
 To view the cloud sync configuration synchronization schema and verify it, follow these steps.
 
 1.  Go to [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer).
-1.  Sign in with your global administrator account.
+1.  Sign in with your Global Administrator account.
 1.  On the left, select **modify permissions** and ensure that **Directory.ReadWrite.All** is *Consented*.
 1.  Run the query `https://graph.microsoft.com/beta/serviceprincipals/?$filter=startswith(DisplayName, ‘{sync config name}’)`. This query returns a filtered list of service principals.  This can also be acquired via the App Registration node under Microsoft Entra ID.
 1.  Locate `"appDisplayName": "Active Directory to Azure Active Directory Provisioning"` and note the value for `"id"`.
@@ -79,9 +79,9 @@ To view the cloud sync configuration synchronization schema and verify it, follo
                 "deletedDateTime": null,
                 "accountEnabled": true,
                 "appDisplayName": "Active Directory to Azure Active Directory Provisioning",
-                "appId": "1a4721b3-e57f-4451-ae87-ef078703ec94",
+                "appId": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
                 "applicationTemplateId": null,
-                "appOwnerOrganizationId": "47df5bb7-e6bc-4256-afb0-dd8c8e3c1ce8",
+                "appOwnerOrganizationId": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
                 "appRoleAssignmentRequired": false,
                 "displayName": "Active Directory to Azure Active Directory Provisioning",
                 "errorUrl": null,
