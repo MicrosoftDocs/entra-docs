@@ -45,7 +45,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 
 ## Step 2: Configure Lucidchart to support provisioning with Microsoft Entra ID
 
-1. Login to [Lucidchart admin console](https://www.lucidchart.com). Navigate to **Team > App Integration**.
+1. Login to [Lucidchart admin console](https://lucid.app/). Navigate to **Team > App Integration**.
 
       :::image type="content" source="./media/lucidchart-provisioning-tutorial/team1.png" alt-text="Screenshot of the Lucidchart admin console. The Team menu is highlighted and open. Under Admin, App Integration is highlighted." border="false":::
 
