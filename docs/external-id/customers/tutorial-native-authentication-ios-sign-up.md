@@ -17,7 +17,7 @@ ms.custom: developer
 
 # Tutorial: Add sign-up in an iOS mobile app using native authentication
 
-This tutorial demonstrates how to sign up a user using email one-time passcode or username (email) and password, and collect user attributes in your Android mobile app using native authentication.
+This tutorial demonstrates how to sign up a user using email one-time passcode or username (email) and password, and collect user attributes in your iOS mobile app using native authentication.
 
 > [!div class="checklist"]
 >
@@ -65,38 +65,38 @@ To sign up a user, you need to:
     - To sign up the user, we're going to use the library's `signUp(username:delegate)` method, which responds asynchronously by calling one of the methods on the passed delegate object, which must implement the `SignUpStartDelegate` protocol.
     - To sign up a user using **Email one-time-passcode**, use the following code snippet:
     
-    ```swift
-    nativeAuth.signUp(username: email, delegate: self)
-    ```
+        ```swift
+        nativeAuth.signUp(username: email, delegate: self)
+        ```
     
     In the `signUp(username:delegate)` method, we pass the email address that the user provides in the email submission form and pass self as the delegate.
     
     - To sign up a user using **Email with password**, use the following code snippets:
 
-    ```swift
-    nativeAuth.signUp(username: email, password: password, delegate: self)
-    ```
+        ```swift
+        nativeAuth.signUp(username: email, password: password, delegate: self)
+        ```
     
     In the `signUp(username:password:delegate)` method, we pass in the email address that the user supplied us with, their password, and pass self for the delegate.
 
     - To implement `SignUpStartDelegate` protocol as an extension to our class, use:
 
-    ```swift
-    extension ViewController: SignUpStartDelegate {
-        func onSignUpStartError(error: MSAL.SignUpStartError) {
-            resultTextView.text = "Error signing up: \(error.errorDescription ?? "no description")"
+        ```swift
+        extension ViewController: SignUpStartDelegate {
+            func onSignUpStartError(error: MSAL.SignUpStartError) {
+                resultTextView.text = "Error signing up: \(error.errorDescription ?? "no description")"
+            }
+        
+            func onSignUpCodeRequired(
+                newState: MSAL.SignUpCodeRequiredState,
+                sentTo: String,
+                channelTargetType: MSAL.MSALNativeAuthChannelType,
+                codeLength: Int
+            ) {
+                resultTextView.text = "Verification code sent to \(sentTo)"
+            }
         }
-    
-        func onSignUpCodeRequired(
-            newState: MSAL.SignUpCodeRequiredState,
-            sentTo: String,
-            channelTargetType: MSAL.MSALNativeAuthChannelType,
-            codeLength: Int
-        ) {
-            resultTextView.text = "Verification code sent to \(sentTo)"
-        }
-    }
-    ```
+        ```
     
     The call to `signUp(username:password:delegate)` or `signUp(username:delegate)` results in a call to either `onSignUpCodeRequired()` or `onSignUpStartError()` delegate methods. The `onSignUpCodeRequired(newState:sentTo:channelTargetType:codeLength)` is called to indicate that a code has been sent to verify the user's email address. Along with some details of where the code has been sent, and how many digits it contains, this delegate method also has a `newState` parameter of type `SignUpCodeRequiredState`, which gives us access to two new methods: 
 
