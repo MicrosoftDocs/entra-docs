@@ -114,7 +114,7 @@ After editing the script, save it and follow these steps:
 1.  Open a Windows PowerShell command prompt, with Administrative privileges, from a machine that has access to the Microsoft Entra admin center.
 1. Navigate to the saved PowerShell script location and run it.
 1. If prompted select **Yes to all** when installing the PowerShell module.
-1. When prompted, sign in to the Microsoft Entra admin center with a global administrator for your tenant.
+1. When prompted, sign in to the Microsoft Entra admin center with a Global Administrator for your tenant.
 
 ```powershell
 #
@@ -196,7 +196,7 @@ In order to do this, we must get the object ID for our user Melva Prince.
 1. Select **Melva Prince**.
 1. Select the copy sign next to the **Object ID**.
 1. Now navigate to [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer).
-1. Sign-in to Graph Explorer with the global administrator account for your tenant.
+1. Sign-in to Graph Explorer with the Global Administrator account for your tenant.
 1. At the top, change **GET** to **PATCH** and add `https://graph.microsoft.com/v1.0/users/<id>` to the box. Replace `<id>` with the value we copied before.
 1. Copy the following in to the **Request body** and select **Run query**
     ```Example

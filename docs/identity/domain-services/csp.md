@@ -67,7 +67,7 @@ With this deployment, the workloads or applications deployed by the CSP partner 
 
 ![Peered deployment model](./media/csp/csp_peered_deployment_model.png)
 
-This deployment model provides a separation of privileges and enables the CSP partner's helpdesk agents to administer the Azure subscription and deploy and manage resources within it. However, the CSP partner's helpdesk agents don't need to have global administrator privileges on the customer's Microsoft Entra directory. The customer's identity administrators can continue to manage identities for their organization.
+This deployment model provides a separation of privileges and enables the CSP partner's helpdesk agents to administer the Azure subscription and deploy and manage resources within it. However, the CSP partner's helpdesk agents don't need to have Global Administrator privileges on the customer's Microsoft Entra directory. The customer's identity administrators can continue to manage identities for their organization.
 
 This deployment model may be suited to scenarios where an ISV provides a hosted version of their on-premises application, which also needs to connect to the customer's Microsoft Entra ID.
 

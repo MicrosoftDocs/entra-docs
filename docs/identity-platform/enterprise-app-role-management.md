@@ -46,7 +46,7 @@ Use the Microsoft Graph Explorer to add roles to an enterprise application.
 1. Open [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) in another window and sign in using the administrator credentials for your tenant.
 
     > [!NOTE]
-    > The Cloud App Administrator and App Administrator role won't work in this scenario, use another role that has permissions for directory read and write.
+    > The Cloud Application Administrator and Application Administrator role won't work in this scenario, use another role that has permissions for directory read and write.
 
 1. Select **modify permissions**, select **Consent** for the `Application.ReadWrite.All` and the `Directory.ReadWrite.All` permissions in the list.
 1. Replace `<objectID>` in the following request with the object ID that was previously recorded and then run the query:

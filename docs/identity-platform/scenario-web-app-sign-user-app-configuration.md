@@ -40,7 +40,7 @@ You might want to refer to this sample for full implementation details.
 
 # [Java](#tab/java)
 
-Code snippets in this article and the following are extracted from the [Java web application calling Microsoft graph](https://github.com/Azure-Samples/ms-identity-java-webapp) sample in MSAL Java.
+Code snippets in this article and the following are extracted from the [Java web application calling Microsoft graph](https://github.com/Azure-Samples/ms-identity-docs-code-java/tree/main/webapp) sample in MSAL Java.
 
 You might want to refer to this sample for full implementation details.
 

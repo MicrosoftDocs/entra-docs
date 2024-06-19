@@ -31,7 +31,7 @@ The API is protected through Microsoft Entra ID and uses OAuth2 bearer tokens. T
 
 ### User bearer tokens
 
-The app registration needs to have the API Permission for `Verifiable Credentials Service Admin` and then when acquiring the access token the app should use scope `6a8b4b39-c021-437c-b060-5a14a3fd65f3/full_access`. The access token must be for a user with the [global administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) or the [authentication policy administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator) role. A user with role [global reader](~/identity/role-based-access-control/permissions-reference.md#global-reader) can perform read-only API calls.
+The app registration needs to have the API Permission for `Verifiable Credentials Service Admin` and then when acquiring the access token the app should use scope `6a8b4b39-c021-437c-b060-5a14a3fd65f3/full_access`. The access token must be for a user with the [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) or the [authentication policy administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator) role. A user with role [global reader](~/identity/role-based-access-control/permissions-reference.md#global-reader) can perform read-only API calls.
 
 ### Application bearer tokens
 
@@ -807,7 +807,7 @@ HTTP/1.1 200 OK
 Content-type: application/json
 
 {
-    "id": "ZjViZjJmYzYtNzEzNS00ZDk0LWE2ZmUtYzI2ZTQ1NDNiYzVhPHNjcmlwdD5hbGVydCgneWF5IScpOzwvc2NyaXB0Pg",
+    "id": "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u",
     "name": "contractname",
     "status": "Enabled",
     "issueNotificationEnabled": false,
@@ -1067,7 +1067,7 @@ example message:
     "value":
     [
         {
-            "id": "ZjViZjJmYzYtNzEzNS00ZDk0LWE2ZmUtYzI2ZTQ1NDNiYzVhPHNjcmlwdD5hbGVydCgneWF5IScpOzwvc2NyaXB0Pg",
+            "id": "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u",
             "name": "test1",
             "authorityId": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
             "status": "Enabled",
@@ -1077,7 +1077,7 @@ example message:
             "displays": [{<display JSON}]
         },
         {
-            "id": "ZjViZjJmYzYtNzEzNS00ZDk0LWE2ZmUtYzI2ZTQ1NDNiYzVhdGVzdDI",
+            "id": "C2dE3fH4iJ5kL6mN7oP8qR9sT0uV1w",
             "name": "test2",
             "authorityId": "aaaabbbb-0000-cccc-1111-dddd2222eeee",
             "status": "Enabled",
@@ -1167,7 +1167,7 @@ HTTP/1.1 200 OK
 Content-type: application/json
 
 {
-    "id": "ZjViZjJmYzYtNzEzNS00ZDk0LWE2ZmUtYzI2ZTQ1NDNiYzVhPHNjcmlwdD5hbGVydCgneWF5IScpOzwvc2NyaXB0Pg",
+    "id": "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u",
     "name": "contractname",
     "status": "Enabled",
     "issueNotificationEnabled": false,

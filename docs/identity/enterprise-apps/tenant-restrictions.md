@@ -146,7 +146,7 @@ For Outlook on Windows, customers might choose to implement restrictions prevent
 
 ### Azure RMS and Office Message Encryption incompatibility
 
-The [Azure Rights Management Service](/azure/information-protection/what-is-azure-rms) (RMS) and [Office Message Encryption](/purview/ome) features aren't compatible with tenant restrictions. These features rely on signing your users into other tenants in order to get decryption keys for the encrypted documents. Because tenant restrictions blocks access to other tenants, encrypted mail and documents sent to your users from untrusted tenants aren't accessible.
+The [Azure Rights Management Service (Azure RMS)](/azure/information-protection/what-is-azure-rms) and [Office Message Encryption](/purview/ome) features aren't compatible with tenant restrictions. These features rely on signing your users into other tenants in order to get decryption keys for the encrypted documents. Because tenant restrictions blocks access to other tenants, encrypted mail and documents sent to your users from untrusted tenants aren't accessible.
 
 ## Testing
 
