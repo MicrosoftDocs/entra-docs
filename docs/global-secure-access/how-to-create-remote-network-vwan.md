@@ -3,16 +3,16 @@ title: Simulate remote network connectivity using Azure vWAN
 description: Use Global Secure Access to configure Azure and Entra resources to create a virtual wide area network to connect to your resources in Azure.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 06/17/2024
+ms.date: 06/18/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
 ms.reviewer: absinh
 
 
-# Customer intent: As an IT administrator, I want to create a virtual wide area network to connect resources in Azure so I can better understand how Global Secure Access can be implemented in my organization.
+# Customer intent: As an IT administrator, I want to simulate a virtual wide area network to connect resources in Azure so I can better understand how Global Secure Access can be implemented in my organization.
 ---
-# Create a remote network using Azure vWAN
+# Simulate remote network connectivity using Azure vWAN
 
 This article explains how to simulate remote network connectivity using a remote virtual wide-area network (vWAN). If you want to simulate remote network connectivity using an Azure virtual network gateway (VNG), see the article, [Simulate remote network connectivity using Azure VNG](/entra/global-secure-access/how-to-simulate-remote-network).
 
@@ -31,7 +31,8 @@ This document uses the following example values, along with the values in the im
 - Region: South Central US
 
 ## High-level steps
-The steps to create a remote network using Azure vWAN require access to both the Azure portal and the Microsoft Entra admin center. To switch between them easily, keep Azure and Entra open in separate tabs. Because certain resources can take more than 30 minutes to deploy, set aside at least two hours to complete this process.
+The steps to create a remote network using Azure vWAN require access to both the Azure portal and the Microsoft Entra admin center. To switch between them easily, keep Azure and Entra open in separate tabs. Because certain resources can take more than 30 minutes to deploy, set aside at least two hours to complete this process. Reminder: Resources left running can cost you money. When done testing, or at the end of a project, it's a good idea to remove the resources that you no longer need.
+
 1. [Set up a vWAN in the Azure portal](#set-up-a-vwan-in-the-azure-portal)
     1. [Create a vWAN](#create-a-vwan)
     1. [Create a virtual hub with a site-to-site VPN gateway](#create-a-virtual-hub-with-a-vpn-gateway)
@@ -110,6 +111,36 @@ To create a remote network in the Microsoft Entra admin center, you need to view
 1. On the VPN Gateway page, select **JSON View**.
 1. Copy the JSON text into a file for reference in upcoming steps. Make note of the **autonomous system number (ASN)**, device **IP address**, and the device **border gateway protocol (BGP) address** to use in the Microsoft Entra admin center in the next step.
 
+    ```json
+       "bgpSettings": {
+            "asn": 65515,
+            "peerWeight": 0,
+            "bgpPeeringAddresses": [
+                {
+                    "ipconfigurationId": "Instance0",
+                    "defaultBgpIpAddresses": [
+                        "10.101.0.12"
+                    ],
+                    "customBgpIpAddresses": [],
+                    "tunnelIpAddresses": [
+                        "172.206.158.63",
+                        "10.101.0.4"
+                    ]
+                },
+                {
+                    "ipconfigurationId": "Instance1",
+                    "defaultBgpIpAddresses": [
+                        "10.101.0.13"
+                    ],
+                    "customBgpIpAddresses": [],
+                    "tunnelIpAddresses": [
+                        "172.206.158.38",
+                        "10.101.0.5"
+                    ]
+                }
+            ]
+        }
+
 > [!TIP]
 > You cannot change the ASN value. 
 
@@ -171,7 +202,44 @@ Navigate to the Remote network page to view the details of the new remote networ
 1. Under **Connectivity details**, select the **View configuration** link.
 :::image type="content" source="media/how-to-create-remote-network-vwan/vwan-view-config.png" alt-text="Screenshot of the Remote network page with the newly created region, its two links, and the View configuration link highlighted." lightbox="media/how-to-create-remote-network-vwan/vwan-view-config-expanded.png":::
 
-1. Copy the Remote network configuration text into a file for reference in upcoming steps. Make note of the **Endpoint**, **ASN**, and **BGP address** for each of the links.
+1. Copy the Remote network configuration text into a file for reference in upcoming steps. Make note of the **Endpoint**, **ASN**, and **BGP address** for each of the links (**Instance0** and **Instance1**).
+    ```json
+       {
+      "id": "68d2fab0-0efd-48af-bb17-d793f8ec8bd8",
+      "displayName": "Instance0",
+      "localConfigurations": [
+        {
+          "endpoint": "4.151.198.103",
+          "asn": 65476,
+          "bgpAddress": "192.168.10.10",
+          "region": "southCentralUS"
+        }
+      ],
+      "peerConfiguration": {
+        "endpoint": "20.236.157.94",
+        "asn": 65515,
+        "bgpAddress": "10.101.0.4"
+      }
+    },
+    {
+      "id": "26500385-b1fe-4a1c-a546-39e2d0faa31f",
+      "displayName": "Instance1",
+      "localConfigurations": [
+        {
+          "endpoint": "20.225.201.95",
+          "asn": 65476,
+          "bgpAddress": "192.168.10.11",
+          "region": "southCentralUS"
+        }
+      ],
+      "peerConfiguration": {
+        "endpoint": "20.236.157.81",
+        "asn": 65515,
+        "bgpAddress": "10.101.0.5"
+      }
+    }
+     ```
+    
 
 ## Create a VPN site using the Microsoft gateway
 In this step, create a VPN site, associate the VPN site with the hub, and then validate the connection.
@@ -222,11 +290,13 @@ The following image shows the traffic profile **Policies & rules** for the Micro
 :::image type="content" source="media/how-to-create-remote-network-vwan/traffic-profile-match.png" alt-text="Screenshot of the Microsoft 365 traffic forwarding profiles, showing the matching learned routes." lightbox="media/how-to-create-remote-network-vwan/traffic-profile-match-expanded.png":::
 
 ### Check connectivity in Microsoft Entra admin center
-View the Remote netowk health logs to validate connectivity in the Microsoft Entra admin center.
+View the Remote network health logs to validate connectivity in the Microsoft Entra admin center.
 1. In Microsoft Entra admin center, navigate to **Global Secure Access (Preview)** > **Monitor** > **Remote network health logs**.
 1. Select **Add Filter**. 
 1. Select **Source IP** and type the source IP address for the VPN gateway's *Instance0* or *Instance1* IP address. Select **Apply**.
 1. The connectivity should be **"Remote network alive"**.
+
+You can also validate by filtering by **tunnelConnected** or **BGPConnected**. For more information, see [What are remote network health logs?](/entra/global-secure-access/how-to-remote-network-health-logs).
 
 ## Configure security features for testing
 In this step, we prepare for testing by configuring a virtual network, adding a virtual network connection to the vWAN, and creating an Azure Virtual Desktop.
@@ -313,6 +383,8 @@ To test:
 1. Sign in to the Azure Virtual Desktop virtual machine created in the previous steps.
 1. Go to www.office.com and sign in with an internal organization ID. This test should pass successfully.
 1. Repeat the above step, but with an *external account*. This test should fail due to blocked access.
+    
+    :::image type="content" source="media/how-to-create-remote-network-vwan/vwan-access-blocked-01.png" alt-text="Screenshot of the 'Access is blocked' message.":::
 
 ### Test source IP restoration
 Before testing, enable conditional access.
@@ -322,9 +394,12 @@ Before testing, enable conditional access.
 1. Select **Save**. For more information, see the article, [Source IP restoration](how-to-source-ip-restoration.md).
 
 To test (option 1):
+Repeat the tenant restriction test from the previous section: 
 1. Sign in to the Azure Virtual Desktop virtual machine created in the previous steps.
 1. Go to www.office.com and sign in with an internal organization ID. This test should pass successfully.
-1. Repeat the above step, but with an *external account*. This test should fail due to blocked access.
+1. Repeat the above step, but with an *external account*. This test should fail because the source **IP address** in the error message is coming from the VPN gateway public IP address instead of the Microsoft SSE proxying the request to Entra.
+
+    :::image type="content" source="media/how-to-create-remote-network-vwan/vwan-access-blocked-02.png" alt-text="Screenshot of the 'Access is blocked' message with the IP address highlighted.":::
 
 To test (option 2):
 1. In Microsoft Entra admin center, navigate to **Global Secure Access (Preview)** > **Monitor** > **Remote network health logs**.
@@ -333,3 +408,6 @@ To test (option 2):
 :::image type="content" source="media/how-to-create-remote-network-vwan/test-option-one.png" alt-text="Screenshot of the Remote network health logs page with the Add filter menu open ready to type the Source IP." lightbox="media/how-to-create-remote-network-vwan/test-option-one-expanded.png":::
 
 The system restores the branch office's customer premises equipment (CPE) IP address. Because the VPN gateway represents the CPE, the health logs show the public IP address of the VPN gateway, not the proxy's IP address.
+
+## Clean up resources
+When done testing, or at the end of a project, it's a good idea to remove the resources that you no longer need. Resources left running can cost you money. You can delete resources individually or delete the resource group to delete the entire set of resources.
