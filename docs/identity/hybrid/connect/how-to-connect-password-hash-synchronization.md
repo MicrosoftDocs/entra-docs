@@ -102,7 +102,7 @@ When *CloudPasswordPolicyForPasswordSyncedUsersEnabled* is disabled (which is th
 
 To enable the CloudPasswordPolicyForPasswordSyncedUsersEnabled feature, run the following commands using the Graph PowerShell module as shown below:
 
-```
+```powershell
 $OnPremSync = Get-MgDirectoryOnPremiseSynchronization
 $OnPremSync.Features.CloudPasswordPolicyForPasswordSyncedUsersEnabled = $true
 
@@ -110,6 +110,7 @@ Update-MgDirectoryOnPremiseSynchronization `
   -OnPremisesDirectorySynchronizationId $OnPremSync.Id `
   -Features $OnPremSync.Features 
 ```
+
 > [!NOTE]
 > You need to install the MSGraph PowerShell module for the preceding script to work. If you get any errors related to insufficient privileges, make sure that you have consented the API scope correctly by using the following command when connecting `Connect-MgGraph -Scopes "OnPremDirectorySynchronization.ReadWrite.All"`
 
@@ -144,9 +145,16 @@ It is typical to force a user to change their password during their first logon,
   
 The temporary password functionality helps to ensure that the transfer of ownership of the credential is completed on first use, to minimize the duration of time in which more than one individual has knowledge of that credential.
 
-To support temporary passwords in Microsoft Entra ID for synchronized users, you can enable the *ForcePasswordChangeOnLogOn* feature, by running the following command on your Microsoft Entra Connect server:
+To support temporary passwords in Microsoft Entra ID for synchronized users, you can enable the *ForcePasswordChangeOnLogOn* feature, by running the following commands using the Graph PowerShell module as shown below:
 
-`Set-ADSyncAADCompanyFeature -ForcePasswordChangeOnLogOn $true`
+```powershell
+$OnPremSync = Get-MgDirectoryOnPremiseSynchronization
+$OnPremSync.Features.UserForcePasswordChangeOnLogonEnabled = $true
+
+Update-MgDirectoryOnPremiseSynchronization `
+  -OnPremisesDirectorySynchronizationId $OnPremSync.Id `
+  -Features $OnPremSync.Features 
+```
 
 > [!NOTE]
 > Forcing a user to change their password on next logon requires a password change at the same time.  Microsoft Entra Connect will not pick up the force password change flag by itself; it is supplemental to the detected password change that occurs during password hash sync.
