@@ -25,8 +25,11 @@ Privileged Identity Management (PIM) lets you know when important events occur i
 
 Emails sent from Privileged Identity Management for both Microsoft Entra ID and Azure resource roles have the following sender email address:
 
-- Email address:  **azure-noreply\@microsoft.com**
-- Display name: Microsoft Azure
+- Email address:  **MSSecurity-noreply@microsoft.com**
+- Display name: **Microsoft Security**
+
+>[!IMPORTANT]
+> The azure-noreply@microsoft.com has been deprecated and should no longer be sending PIM email notifications
 
 These emails include a **PIM** prefix in the subject line. Here's an example:
 
