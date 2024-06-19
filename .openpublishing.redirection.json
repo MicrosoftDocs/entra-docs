@@ -852,11 +852,6 @@
       "redirect_document_id": false
     } ,
     {            
-      "source_path_from_root": "/docs/global-secure-access/how-to-manage-m365-profile.md",
-      "redirect_url": "/docs/global-secure-access/how-to-manage-microsoft-profile.md",
-      "redirect_document_id": false
-    },
-    {            
       "source_path_from_root": "/docs/global-secure-access/how-to-target-resource-m365-profile.md",
       "redirect_url": "/docs/global-secure-access/how-to-target-resource-microsoft-profile.md",
       "redirect_document_id": false
