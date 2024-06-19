@@ -134,7 +134,7 @@ Below are the configuration steps to complete the OIDC federation setup:
 To connect your MyApps account to Muzeek in the Microsoft Entra Admin Center, please follow the below steps:
 
 1. Navigate to **App Registrations** > **Muzeek**  > **Branding & Properties**.
-[![Screenshot showing Muzeek configuration.](./media/Muzeek-tutorial/home.png)](./media/Muzeek-tutorial/home.png#lightbox)
+[![Screenshot showing the app registrations of Muzeek.](./media/Muzeek-tutorial/home.png)](./media/Muzeek-tutorial/home.png#lightbox)
 
 1. In the **Home Page URL** textbox, type a URL using the following pattern:
     `https://muzeek.com/i/api/sso/entra/idp?client_id=<CLIENT_ID>`
