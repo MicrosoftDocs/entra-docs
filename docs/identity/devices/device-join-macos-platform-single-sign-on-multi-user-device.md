@@ -21,10 +21,18 @@ In this tutorial, you will learn how to configure an Entra Joined Mac via MDM to
 ## Prerequisites
 
 - A required minimum version of macOS 14 Sonoma. While macOS 13 Ventura is supported for PSSO overall, only Sonoma supports the necessary tools for the PSSO shared Mac scenario described in this guide.
-- Microsoft Intune [Company Portal app](/mem/intune/apps/apps-company-portal-macos) version 5.2404.0 or later
-- A configured PSSO MDM payload in your MDM by an administrator
+- Microsoft Intune [Company Portal app](/mem/intune/apps/apps-company-portal-macos) version 5.2404.0 or later.
+- A configured PSSO MDM payload in your MDM by an administrator.
 
-## MDM Profile Configuration
+## MDM Configuration
+
+There are three main steps for configuring Platform SSO on a shared device:
+
+1. **Deploy Company Portal.** For more information, see [Add the Company Portal for macOS app](/mem/intune/apps/apps-company-portal-macos).
+1. **Deploy Platform SSO Configuration.** Create and deploy a settings catalog profile with the required Platform SSO Configuration.
+1. **Deploy macOS Login Screen Configuration.** The macOS Login screen configuration can be changed to allow new users to log in.
+
+### Platform SSO Profile Configuration
 
 Your Platform SSO MDM profile should leverage the following configurations to support multi-user devices:
 
@@ -49,37 +57,42 @@ If you use Intune as your MDM of choice then the configuration profile settings 
 
 :::image type="content" source="media/device-registration-macos-platform-single-sign-on/intune-psso-shared-device-profile.png" alt-text="Screenshot of a PSSO MDM profile in Intune.":::
 
-## Intune MDM and Microsoft Entra Join using Company Portal
+### macOS Login Screen Configuration
 
-To register a Mac device with PSSO, you must first enroll your device in your MDM. If you are using Microsoft Intune then make sure the Company Portal app is installed. If you are using another MDM then make sure the device is enrolled in that MDM and you have deployed Company Portal to the device. Once enrolled, you can use your user account to register your device with PSSO. For shared devices, the first user to do the setup will typically be an administrator or technician - this user will have local administrative rights unless there is alternative local admin account created.
+To allow new users to log on and be created from the macOS login screen there are two configurations that can be used:
 
-1. Open the **Company Portal** app and select **Sign in**.
-1. Enter your Microsoft Entra ID credentials and select **Next**.
-1. You're prompted to **Set up {Company} access**. The placeholder "Company" is different depending on your setup. Select **Begin**, then on the next screen, select **Continue**.
+ - **Show Other Users Managed**. With this configuration, the macOS login screen shows a list of profiles that have been created and an "other user" button that can be used to log in with a username and password for a new user. Users can select their existing profile to login or log in with their Entra ID UPN.
+    
+ - **Show full name**. With this configuration, the macOS login screen displays and username and password field with no list of users. Users can log in with their Entra ID UPN.
 
-    :::image type="content" source="media/device-registration-macos-platform-single-sign-on/pssoe-company-portal-set-up-access.png" alt-text="Screenshot of the Company portal access setup window.":::
+These configurations can be found in Intune Settings Catalog under **Login** > **Login Window Behavior**.
 
-1. You're presented with steps to install the management profile, which should be set up by an administrator using Microsoft Intune using the settings specified in the [MDM Profile Configuration](#mdm-profile-configuration) section of this guide. Select **Download profile**.
+## Enrolling and registering devices
 
-    :::image type="content" source="media/device-registration-macos-platform-single-sign-on/pssoe-company-portal-install-management-profile.png" alt-text="Screenshot of a Company Portal window requesting the user to download the management profile.":::
+To register a Mac device with PSSO, devices must be enrolled into MDM. For shared devices, the user who sets up the device would typically be an administrator or technician - this user will have local administrative rights unless there is alternative local admin account created.
 
-1. Open **Settings** > **Privacy & Security** > **Profiles** if it doesn't automatically appear. Select **Management Profile**.
+> [!NOTE]
+> If you are enrolling using Automated Device Enrollment you may choose to encourage the user setting up the device to create the local account as:
+>  - **Account name:** Entra ID username (eg. user@domain.com).
+>  - **Full Name:** First and Last Name.
+> This is because the local account that is created during setup assistant will be associated with the Entra ID account during registration. 
 
-    :::image type="content" source="media/device-registration-macos-platform-single-sign-on/pssoe-settings-profiles-management-profile.png" alt-text="Screenshot of the Settings app Profiles showing a downloaded management profile.":::
+There are three high-level steps to set up Platform SSO on a shared device:
 
-1. Select **Install** to get access to company resources.
+1. IT admin or delegated person enrolls device with Intune.
+1. IT admin or delegated person registers the device with Entra ID using their credentials.
+1. Now the device is ready for new users to log in from the Entra ID login screen.
 
-    :::image type="content" source="media/device-registration-macos-platform-single-sign-on/pssoe-settings-profiles-install-management-profile.png" alt-text="Screenshot the prompt to install the management profile in settings.":::
+Organizations can enroll shared devices into Intune using different methods depending on the device ownership.
 
-1. Enter your local device password in the **Profiles** window that appears and select **Enroll**.
+| Enrollment method | Device Ownership | Requirements |
+|---|---|---|
+| [Automated Device Enrollment with no user affinity](/mem/intune/enrollment/device-enrollment-program-enroll-ios) | Company or school owned | ✔️Registration in Apple Business Manager</br>✔️ Automated Device Enrollment configured in Intune|
+| [Company Portal](/mem/intune/user-help/enroll-your-device-in-intune-macos-cp) | Personal | None |
 
-    :::image type="content" source="media/device-registration-macos-platform-single-sign-on/pssoe-profiles-enroll.png" alt-text="Screenshot of the profiles window requesting a password to enroll you into an MDM service.":::
+### Platform SSO registration
 
-1. You'll see a notification in **Company Portal** that the installation is complete. Select **Done**.
-
-## Platform SSO registration
-
-Now that the device MDM enrolled and has Company Portal installed, you need to register your device with PSSO. A **Registration Required** popup appears at the top right of the screen following successful completion of [Intune MDM and Microsoft Entra Join using Company Portal](#intune-mdm-and-microsoft-entra-join-using-company-portal). Use the popup to register your device with PSSO using your Entra ID credentials:
+Once the device is MDM enrolled and has Company Portal installed, you need to register your device with PSSO. A **Registration Required** popup appears at the top right of the screen. Use the popup to register your device with PSSO using your Entra ID credentials:
 
 1. Navigate to the **Registration Required** popup at the top right of the screen. Hover over the popup and select **Register**. 
 
