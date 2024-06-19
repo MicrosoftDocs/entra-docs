@@ -27,7 +27,7 @@ The objective of this tutorial is to demonstrate the steps to be performed in iP
 The scenario outlined in this tutorial assumes that you already have the following prerequisites:
 
 * A Microsoft Entra tenant.
-* [An iPass SmartConnect tenant](https://www.ipass.com/buy-ipass/).
+* [An iPass SmartConnect tenant](https://www.ipass.com/).
 * A user account in iPass SmartConnect with Admin permissions.
 
 > [!NOTE]
