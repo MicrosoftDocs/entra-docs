@@ -17,7 +17,7 @@ ms.custom: developer
 
 # Tutorial: Add sign-up in an iOS mobile app using native authentication
 
-This tutorial demonstrates how to sign up a user using email one-time passcode or username (email) and password, and collect user attributes in your iOS mobile app using native authentication.
+This tutorial demonstrates how to sign up a user using email one-time passcode or username (email) and password, and collects user attributes in your iOS mobile app using native authentication.
 
 > [!div class="checklist"]
 >
@@ -123,13 +123,13 @@ To sign up a user, you need to:
             }
             ```
     
-            The `submitCode(code:delegate)` accepts a delegate parameter and we must implement the required methods in the `SignUpVerifyCodeDelegate` protocol. In the most common scenario, we'll receive a call to `onSignUpCompleted(newState)` indicating that the user has been signed up and the flow is complete.   
+            The `submitCode(code:delegate)` accepts a delegate parameter and we must implement the required methods in the `SignUpVerifyCodeDelegate` protocol. In the most common scenario, we receive a call to `onSignUpCompleted(newState)` indicating that the user has been signed up and the flow is complete.   
 
 ## Collect user attributes during sign-up
 
 Whether you sign up a user using email one-time passcode or username (email) and password, you can collect user attributes before a user's account is created.  The `signUp(username:attributes:delegate)` method, accepts attributes as a parameter.
 
-1. To collect user attibutes, use the following code snippet:
+1. To collect user attributes, use the following code snippet:
 
     ```swift
     let attributes = [
@@ -236,7 +236,7 @@ When the user doesn't provide all the required attributes, or the attributes are
 - onSignUpAttributesInvalid: indicates that one or more attributes that were sent failed input validation. This error contains an attributeNames parameter, which is a list of all attributes that were sent by the developer that failed input validation. 
 - onSignUpAttributesRequired: indicates that the server requires one or more attributes to be sent, before the user account can be created. This happens when one or more attributes is set as mandatory in the tenant configuration. This result contains attributes parameter, which is a list of `MSALNativeAuthRequiredAttribute` objects, which outline details about the user attributes that the API requires. 
  
-Both delegate methods contain a new state reference. We'll use the `newState` parameter to call `submitAttributes(attributes:delegate)` again with the new attributes. 
+Both delegate methods contain a new state reference. We use the `newState` parameter to call `submitAttributes(attributes:delegate)` again with the new attributes. 
 
 
 ## Handle sign-up errors

@@ -263,12 +263,6 @@ items:
                   href: tutorial-native-authentication-ios-sign-in-sign-out.md
                 - name: Additional scenarios
                   items:
-                    - name: Sign up with user attributes
-                      href: tutorial-native-authentication-ios-sign-up-with-email-one-time-passcode.md
-                    - name: Sign up with username, password and user attributes
-                      href: tutorial-native-authentication-ios-sign-up-with-username-password-user-attributes.md
-                    - name: Sign up with username and password
-                      href: tutorial-native-authentication-ios-sign-up-with-username-password.md
                     - name: Sign in user after sign-up
                       href: tutorial-native-authentication-ios-sign-in-user-after-sign-up.md
                     - name: Self-service password reset
