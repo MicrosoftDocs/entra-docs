@@ -165,7 +165,7 @@ Whether you sign up a user using email one-time passcode or username (email) and
     }
     ```
     
-    If the attributes are invalid, the method `onSignUpAttributesInvalid(attributeNames: [String])` is called. In this case, we display the list of invalid attributes to the user. Otherwise, the onSignUpCodeRequired(newState:sentTo:channelTargetType:codeLength) is called to indicate that a code has been sent to verify the user's email address. Apart from details such as the recipient of the code, and number of digits of the code, this delegate method has a newState parameter of type SignUpCodeRequiredState, which gives us access to two new methods:
+    If the attributes are invalid, the method `onSignUpAttributesInvalid(attributeNames: [String])` is called. In this case, we display the list of invalid attributes to the user. Otherwise, the `onSignUpCodeRequired(newState:sentTo:channelTargetType:codeLength)` is called to indicate that a code has been sent to verify the user's email address. Apart from details such as the recipient of the code, and number of digits of the code, this delegate method has a newState parameter of type `SignUpCodeRequiredState`, which gives us access to two new methods:
 
     - `submitCode(code:delegate)`
     - `resendCode(delegate)`
