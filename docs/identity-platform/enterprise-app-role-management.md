@@ -134,7 +134,9 @@ After the service principal is patched with more roles, you can assign users to 
 To update an existing role, perform the following steps:
 
 1. Open [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer).
-1. Sign in to the Graph Explorer site by using the Global Administrator or coadmin credentials for your tenant.
+1. Sign in to the Graph Explorer site by using the Global Administrator credentials for your tenant.
+   > [!IMPORTANT]
+   > Microsoft recommends that you use roles with the fewest permissions. This helps improve security for your organization. Global Administrator is a highly privileged role that should be limited to emergency scenarios when you can't use an existing role.
 1. Using the object ID for the application from the overview pane, replace `<objectID>` in the following request with it and then run the query:
 
     `https://graph.microsoft.com/v1.0/servicePrincipals/<objectID>`
@@ -148,7 +150,7 @@ To update an existing role, perform the following steps:
 To delete an existing role, perform the following steps:
 
 1. Open [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer).
-1. Sign in to the Graph Explorer site by using the Global Administrator or coadmin credentials for your tenant.
+1. Sign in to the Graph Explorer site by using the Global Administrator credentials for your tenant.
 1. Using the object ID for the application from the overview pane in the Azure portal, replace `<objectID>` in the following request with it and then run the query:
 
     `https://graph.microsoft.com/v1.0/servicePrincipals/<objectID>`
