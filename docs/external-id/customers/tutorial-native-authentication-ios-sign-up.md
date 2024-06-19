@@ -69,7 +69,7 @@ To sign up a user, you need to:
         nativeAuth.signUp(username: email, delegate: self)
         ```
     
-    In the `signUp(username:delegate)` method, we pass the email address that the user provides in the email submission form and pass self as the delegate.
+       In the `signUp(username:delegate)` method, we pass the email address that the user provides in the email submission form and pass self as the delegate.
     
     - To sign up a user using **Email with password**, use the following code snippets:
 
@@ -77,7 +77,7 @@ To sign up a user, you need to:
         nativeAuth.signUp(username: email, password: password, delegate: self)
         ```
     
-    In the `signUp(username:password:delegate)` method, we pass in the email address that the user supplied us with, their password, and pass self for the delegate.
+        In the `signUp(username:password:delegate)` method, we pass in the email address that the user supplied us with, their password, and pass self for the delegate.
 
     - To implement `SignUpStartDelegate` protocol as an extension to our class, use:
 
@@ -97,34 +97,33 @@ To sign up a user, you need to:
             }
         }
         ```
+
+        The call to `signUp(username:password:delegate)` or `signUp(username:delegate)` results in a call to either `onSignUpCodeRequired()` or `onSignUpStartError()` delegate methods. The `onSignUpCodeRequired(newState:sentTo:channelTargetType:codeLength)` is called to indicate that a code has been sent to verify the user's email address. Along with some details of where the code has been sent, and how many digits it contains, this delegate method also has a `newState` parameter of type `SignUpCodeRequiredState`, which gives us access to two new methods: 
+
+        - `submitCode(code:delegate)`
+        - `resendCode(delegate)`
+
+        To submit the code that the user supplied us with, use: 
+        
+        ```swift
+        newState.submitCode(code: userSuppliedCode, delegate: self)
+        ```
+        
+        - To implement `SignUpVerifyCodeDelegate` protocol as an extension to our class, use: 
+        
+            ```swift
+            extension ViewController: SignUpVerifyCodeDelegate {
+                func onSignUpVerifyCodeError(error: MSAL.VerifyCodeError, newState: MSAL.SignUpCodeRequiredState?) {
+                    resultTextView.text = "Error verifying code: \(error.errorDescription ?? "no description")"
+                }
+            
+                func onSignUpCompleted(newState: SignInAfterSignUpState) {
+                    resultTextView.text = "Signed up successfully!"
+                }
+            }
+            ```
     
-    The call to `signUp(username:password:delegate)` or `signUp(username:delegate)` results in a call to either `onSignUpCodeRequired()` or `onSignUpStartError()` delegate methods. The `onSignUpCodeRequired(newState:sentTo:channelTargetType:codeLength)` is called to indicate that a code has been sent to verify the user's email address. Along with some details of where the code has been sent, and how many digits it contains, this delegate method also has a `newState` parameter of type `SignUpCodeRequiredState`, which gives us access to two new methods: 
-
-    - `submitCode(code:delegate)`
-    - `resendCode(delegate)`
-
-   To submit the code that the user supplied us with, use: 
-
-   ```swift
-   newState.submitCode(code: userSuppliedCode, delegate: self)
-   ```
-
-    - To implement `SignUpVerifyCodeDelegate` protocol as an extension to our class, use: 
-    
-       ```swift
-       extension ViewController: SignUpVerifyCodeDelegate {
-           func onSignUpVerifyCodeError(error: MSAL.VerifyCodeError, newState: MSAL.SignUpCodeRequiredState?) {
-               resultTextView.text = "Error verifying code: \(error.errorDescription ?? "no description")"
-           }
-    
-           func onSignUpCompleted(newState: SignInAfterSignUpState) {
-               resultTextView.text = "Signed up successfully!"
-           }
-       }
-       ```
-    
-       The `submitCode(code:delegate)` accepts a delegate parameter and we must implement the required methods in the `SignUpVerifyCodeDelegate` protocol. In the most common scenario, we'll receive a call to `onSignUpCompleted(newState)` indicating that the user has been signed up and the flow is complete.
-
+            The `submitCode(code:delegate)` accepts a delegate parameter and we must implement the required methods in the `SignUpVerifyCodeDelegate` protocol. In the most common scenario, we'll receive a call to `onSignUpCompleted(newState)` indicating that the user has been signed up and the flow is complete.   
 
 ## Collect user attributes during sign-up
 
