@@ -5,13 +5,17 @@ author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: conceptual
-ms.date: 04/29/2024
+ms.date: 06/99/2024
 ms.service: global-secure-access
 ms.subservice: entra-private-access 
 ms.reviewer: shkhalid
 ---
 
 # Learn about Security Service Edge (SSE) coexistence with Microsoft and Zscaler
+
+Microsoft and Zscaler’s Secure Access Service Edge (SASE) solutions can be used together in a unified environment. When used together, you harness a robust set of capabilities from both platforms to elevate your SASE journey. The synergy between these platforms enhances security and provides seamless connectivity. 
+
+This document contains steps to deploy these solutions side by side, specifically, Microsoft Entra Global Secure Access for Internet Access and Microsoft 365 applications such as Exchange Online and SharePoint Online, and Zscaler Private Access for private applications. It also contains steps to deploy Entra Global Secure Access for Microsoft 365 applications and Zscaler Internet Access for Internet Access.
 
 Microsoft’s Security Service Edge solution provides a robust set of capabilities to increase security and improve performance of your Microsoft 365 products. Some of these capabilities include: 
 
