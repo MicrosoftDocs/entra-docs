@@ -137,6 +137,9 @@ The email includes instructions on how to review access to access packages. If t
   
 If you've assigned guest users as reviewers, and they haven't accepted their Microsoft Entra guest invitation, they won't receive emails from access reviews. They must first accept the invite and create an account with Microsoft Entra ID before they can receive the emails. 
 
+> [!NOTE]
+> While the review cycle is open, reviewers can always change their access review decisions. At the midpoint of your access review, even if the reviewer has previously made a decision, a reminder email is still sent to reviewers notifying them that the access review cycle is still open.
+
 ## Next steps
 
 - [Review access of access packages](entitlement-management-access-reviews-review-access.md)

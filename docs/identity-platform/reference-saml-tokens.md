@@ -56,13 +56,13 @@ This is a sample of a typical SAML token.
         </EndpointReference>
     </wsp:AppliesTo>
     <t:RequestedSecurityToken>
-        <Assertion xmlns="urn:oasis:names:tc:SAML:2.0:assertion" ID="_3ef08993-846b-41de-99df-b7f3ff77671b" IssueInstant="2014-12-24T05:20:47.060Z" Version="2.0">
+        <Assertion xmlns="urn:oasis:names:tc:SAML:2.0:assertion" ID="_aaaaaaaa-0b0b-1c1c-2d2d-333333333333" IssueInstant="2014-12-24T05:20:47.060Z" Version="2.0">
             <Issuer>https://sts.windows.net/aaaabbbb-0000-cccc-1111-dddd2222eeee/</Issuer>
             <ds:Signature xmlns:ds="https://www.w3.org/2000/09/xmldsig#">
                 <ds:SignedInfo>
                     <ds:CanonicalizationMethod Algorithm="https://www.w3.org/2001/10/xml-exc-c14n#" />
                     <ds:SignatureMethod Algorithm="https://www.w3.org/2001/04/xmldsig-more#rsa-sha256" />
-                    <ds:Reference URI="#_3ef08993-846b-41de-99df-b7f3ff77671b">
+                    <ds:Reference URI="#_aaaaaaaa-0b0b-1c1c-2d2d-333333333333">
                         <ds:Transforms>
                             <ds:Transform Algorithm="https://www.w3.org/2000/09/xmldsig#enveloped-signature" />
                             <ds:Transform Algorithm="https://www.w3.org/2001/10/xml-exc-c14n#" />
@@ -131,12 +131,12 @@ This is a sample of a typical SAML token.
     </t:RequestedSecurityToken>
     <t:RequestedAttachedReference>
         <SecurityTokenReference xmlns="https://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:d3p1="https://docs.oasis-open.org/wss/oasis-wss-wssecurity-secext-1.1.xsd" d3p1:TokenType="http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV2.0">
-            <KeyIdentifier ValueType="http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLID">_3ef08993-846b-41de-99df-b7f3ff77671b</KeyIdentifier>
+            <KeyIdentifier ValueType="http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLID">_aaaaaaaa-0b0b-1c1c-2d2d-333333333333</KeyIdentifier>
         </SecurityTokenReference>
     </t:RequestedAttachedReference>
     <t:RequestedUnattachedReference>
         <SecurityTokenReference xmlns="https://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:d3p1="https://docs.oasis-open.org/wss/oasis-wss-wssecurity-secext-1.1.xsd" d3p1:TokenType="http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV2.0">
-            <KeyIdentifier ValueType="http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLID">_3ef08993-846b-41de-99df-b7f3ff77671b</KeyIdentifier>
+            <KeyIdentifier ValueType="http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLID">_aaaaaaaa-0b0b-1c1c-2d2d-333333333333</KeyIdentifier>
         </SecurityTokenReference>
     </t:RequestedUnattachedReference>
     <t:TokenType>http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV2.0</t:TokenType>

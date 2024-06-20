@@ -238,7 +238,7 @@ The following information explains what each notification item means and provide
 
 - **Object ID**: (can be empty) the object ID against which the operation was run.
 
-   Example: *8e08161d-f2fd-40ad-a34a-a9632d6bb599*
+   Example: *aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb*
 
 - **Details**: the detailed description of what occurred as a result of the operation.
 

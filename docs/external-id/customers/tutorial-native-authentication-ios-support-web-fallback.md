@@ -11,7 +11,7 @@ ms.service: entra-external-id
 ms.subservice: customers
 ms.topic: tutorial
 ms.date: 02/29/2024
-ms.custom: developer, devx-track-dotnet
+ms.custom: developer
 #Customer intent: As a dev, devops, I want to learn how to support web fallback.
 ---
 
@@ -97,4 +97,3 @@ The tokens and account that are returned are identical to the ones that would be
 
 - [How to run the Android sample app](how-to-run-native-authentication-sample-android-app.md).
 - [Overview of native authentication API reference](../../identity-platform/reference-native-authentication-overview.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json) 
-

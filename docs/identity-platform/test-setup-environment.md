@@ -35,7 +35,7 @@ Don't use your production Microsoft Entra tenant if:
 
 If any of these restrictions apply, set up a [test environment in a separate tenant](#set-up-a-test-environment-in-a-separate-tenant).
 
-If none of these restrictions apply, you can set up a [test environment in your production tenant](#set-up-a-test-environment-in-your-production-tenant). Be aware that Global Administrators in your production tenant can access its resources and change its configuration at any time. To prevent access to any test resources or configuration, put that data in a separate tenant.
+If none of these restrictions apply, you can set up a [test environment in your production tenant](#set-up-a-test-environment-in-your-production-tenant). Be aware that users with privileged roles in your production tenant (such as Cloud Application Administrator) can access its resources and change its configuration at any time. To prevent access to any test resources or configuration, put that data in a separate tenant.
 
 ## Set up a test environment in a separate tenant
 

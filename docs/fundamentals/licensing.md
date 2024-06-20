@@ -1,5 +1,5 @@
 ---
-title: 'Microsoft Entra ID licensing'
+title: 'Microsoft Entra licensing'
 description: This article documents licensing requirements for Microsoft Entra features.
 author: barclayn
 manager: amycolannino
@@ -10,7 +10,7 @@ ms.subservice: fundamentals
 ms.author: barclayn
 ---
 
-# Microsoft Entra ID licensing
+# Microsoft Entra licensing
 
 This article discusses Microsoft Entra services' licensing. It is intended for IT decision makers, IT administrators, and IT professionals who are considering Microsoft Entra services for their organizations. This article isn't intended for end users.
 

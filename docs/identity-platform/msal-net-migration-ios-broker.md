@@ -5,7 +5,7 @@ author: Dickson-Mwendia
 manager: CelesteDG
 ms.author: dmwendia
 ms.custom: "devx-track-csharp,  has-adal-ref"
-ms.date: 09/08/2019
+ms.date: 06/05/2024
 ms.reviewer: jmprieur, saeeda
 ms.service: identity-platform
 
@@ -22,6 +22,9 @@ Where should you start? This article helps you migrate your Xamarin iOS app from
 ## Prerequisites
 
 This article assumes that you already have a Xamarin iOS app that's integrated with the iOS broker. If you don't, move directly to MSAL.NET and begin the broker implementation there. For information on how to invoke the iOS broker in MSAL.NET with a new application, see [this documentation](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/Leveraging-the-broker-on-iOS#why-use-brokers-on-xamarinios-and-xamarinandroid-applications).
+
+> [!NOTE]
+> MSAL.NET versions 4.61.0 and above do not provide support for Universal Windows Platform (UWP), Xamarin Android, and Xamarin iOS. We recommend you migrate your Xamarin applications to modern frameworks like MAUI. Read more about the deprecation in [Announcing the Upcoming Deprecation of MSAL.NET for Xamarin and UWP](https://devblogs.microsoft.com/identity/uwp-xamarin-msal-net-deprecation/).
 
 ## Background
 

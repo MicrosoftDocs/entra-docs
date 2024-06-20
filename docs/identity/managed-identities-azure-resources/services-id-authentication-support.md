@@ -4,7 +4,7 @@ description: List of services that support Microsoft Entra authentication
 
 author: barclayn
 ms.author: barclayn
-ms.date: 08/01/2023
+ms.date: 06/14/2024
 ms.topic: conceptual
 ms.service: entra-id
 ms.subservice: managed-identities
@@ -21,6 +21,7 @@ The following services support Microsoft Entra authentication. New services are 
 | Azure App Configuration         | [Authorize access to Azure App Configuration using Microsoft Entra ID](/azure/azure-app-configuration/concept-enable-rbac)                                                                                                           |
 | Azure App Services              | [Configure your App Service or Azure Functions app to use Microsoft Entra login](/azure/app-service/configure-authentication-provider-aad)    |
 | Azure Batch                     | [Authenticate Batch service solutions with Active Directory](/azure/batch/batch-aad-auth)         |
+| Azure Cache for Redis           | [Use Microsoft Entra ID for cache authentication](/azure/azure-cache-for-redis/cache-azure-active-directory-for-authentication) |
 | Azure Container Registry        | [Authenticate with an Azure container registry](/azure/container-registry/container-registry-authentication)                                                                       |
 | Azure AI services        | [Authenticate requests to Azure AI services](/azure/ai-services/authentication?tabs=powershell#authenticate-with-azure-active-directory)                                                                          |
 | Azure Communication Services    | [Authenticate to Azure Communication Services](/azure/communication-services/concepts/authentication)   |

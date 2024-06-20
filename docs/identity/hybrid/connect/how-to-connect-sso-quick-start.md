@@ -8,7 +8,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 11/06/2023
+ms.date: 06/14/2024
 ms.subservice: hybrid-connect
 ms.author: billmath
 
@@ -232,7 +232,7 @@ To test a scenario in which the user doesn't have to enter a username or passwor
 In [Enable the feature](#enable-the-feature), Microsoft Entra Connect creates computer accounts (representing Microsoft Entra ID) in all the Windows Server AD forests on which you enabled Seamless SSO. To learn more, see [Microsoft Entra seamless single sign-on: Technical deep dive](how-to-connect-sso-how-it-works.md).
 
 > [!IMPORTANT]
-> The Kerberos decryption key on a computer account, if leaked, can be used to generate Kerberos tickets for any user in its Windows Server AD forest. Malicious actors can then impersonate Microsoft Entra sign-ins for compromised users. We highly recommend that you periodically roll over these Kerberos decryption keys, or at least once every 30 days.
+> The Kerberos decryption key on a computer account, if leaked, can be used to generate Kerberos tickets for any synchronized user. Malicious actors can then impersonate Microsoft Entra sign-ins for compromised users. We highly recommend that you periodically roll over these Kerberos decryption keys, or at least once every 30 days.
 
 For instructions on how to roll over keys, see [Microsoft Entra seamless single sign-on: Frequently asked questions](how-to-connect-sso-faq.yml).
 

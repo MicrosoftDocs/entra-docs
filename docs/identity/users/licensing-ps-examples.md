@@ -117,12 +117,12 @@ HTTP/1.1 200 OK
 {
   "assignedLicenses": [
      {
-          "accountId":"f1b45b40-57df-41f7-9596-7f2313883635",
+          "accountId":"aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
           "skuId":"c7df2760-2c81-4ef7-b578-5b5392b571df",
       "disabledPlans":[]
      },
      {
-          "accountId":"f1b45b40-57df-41f7-9596-7f2313883635",
+          "accountId":"aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
           "skuId":" b05e124f-c7cc-45a0-a6aa-8cf78c946968",
       "disabledPlans":[]
      },
@@ -332,7 +332,7 @@ The result looks like the following example:
 ```output
 Id                                   DisplayName      License Error
 --                                   -----------      ------------
-6d325baf-22b7-46fa-a2fc-a2500613ca15 Catherine Gibson MutuallyExclusiveViolation
+11bb11bb-cc22-dd33-ee44-55ff55ff55ff Catherine Gibson MutuallyExclusiveViolation
 ```
 
 Use following to get the same data from Microsoft Graph:
@@ -349,7 +349,7 @@ HTTP/1.1 200 OK
     {
       "odata.type": "Microsoft.DirectoryServices.User",
       "objectType": "User",
-      "id": "6d325baf-22b7-46fa-a2fc-a2500613ca15",
+      "id": "11bb11bb-cc22-dd33-ee44-55ff55ff55ff",
       ... # other user properties.
     },
     ... # other users.
@@ -384,10 +384,10 @@ The result looks like the following example:
 ```output
 UserName         UserId                               GroupId                              LicenseError
 --------         ------                               -------                              ------------
-Anna Bergman     0d0fd16d-872d-4e87-b0fb-83c610db12bc 7946137d-b00d-4336-975e-b1b81b0666d0 MutuallyExclusiveViolation
-Catherine Gibson 6d325baf-22b7-46fa-a2fc-a2500613ca15 f2503e79-0edc-4253-8bed-3e158366466b CountViolation
-Catherine Gibson 6d325baf-22b7-46fa-a2fc-a2500613ca15 11151866-5419-4d93-9141-0603bbf78b42 MutuallyExclusiveViolation
-Drew Fogarty     f2af28fc-db0b-4909-873d-ddd2ab1fd58c 1ebd5028-6092-41d0-9668-129a3c471332 MutuallyExclusiveViolation
+Anna Bergman     00aa00aa-bb11-cc22-dd33-44ee44ee44ee 7946137d-b00d-4336-975e-b1b81b0666d0 MutuallyExclusiveViolation
+Catherine Gibson 11bb11bb-cc22-dd33-ee44-55ff55ff55ff f2503e79-0edc-4253-8bed-3e158366466b CountViolation
+Catherine Gibson 22cc22cc-dd33-ee44-ff55-66aa66aa66aa 11151866-5419-4d93-9141-0603bbf78b42 MutuallyExclusiveViolation
+Drew Fogarty     33dd33dd-ee44-ff55-aa66-77bb77bb77bb 1ebd5028-6092-41d0-9668-129a3c471332 MutuallyExclusiveViolation
 ```
 
 Here is another version of the script that searches only through groups that contain license errors. It may be more optimized for scenarios where you expect to have few groups with problems.

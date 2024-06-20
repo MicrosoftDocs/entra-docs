@@ -92,8 +92,8 @@ You can also investigate the sign-ins of a specific user by searching for sign-i
 
 To configure a Conditional Access policy in report-only mode:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Protection** > **Conditional Access**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
+1. Browse to **Protection** > **Conditional Access** > **Policies**.
 1. Select an existing policy or create a new policy.
 1. Under **Enable policy** set the toggle to **Report-only** mode.
 1. Select **Save**

@@ -131,6 +131,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity/saas-apps/kanbanize-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/businessmap-tutorial",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity/saas-apps/cisco-anyconnect.md",
       "redirect_url": "/entra/identity/saas-apps/cisco-secure-firewall-secure-client",
       "redirect_document_id": false
@@ -303,6 +308,21 @@
     {
       "source_path_from_root": "/docs/identity-platform/tutorial-blazor-server.md",
       "redirect_url": "/entra/identity-platform/quickstart-single-page-app-blazor-wasm-sign-in",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/reference-native-authentication-overview.md",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/reference-native-authentication-email-otp.md",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/reference-native-authentication-email-password.md",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api",
       "redirect_document_id": false
     },
     {
@@ -631,7 +651,7 @@
       "redirect_url": "/entra/external-id/customers/concept-supported-features-customers",
       "redirect_document_id": false
     },
-    {            
+    {
       "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-android-sign-in-user-with-username-password.md",
       "redirect_url": "/entra/external-id/customers/tutorial-native-authentication-android-sign-in-sign-out",
       "redirect_document_id": false
@@ -641,27 +661,27 @@
       "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-configure-managed-identities",
       "redirect_document_id": false
     },
-    {            
+    {
       "source_path_from_root": "/docs/identity/managed-identities-azure-resources/qs-configure-cli-windows-vm.md",
       "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-configure-managed-identities",
       "redirect_document_id": false
     },
-    {            
+    {
       "source_path_from_root": "/docs/identity/managed-identities-azure-resources/qs-configure-powershell-windows-vm.md",
       "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-configure-managed-identities",
       "redirect_document_id": false
     },
-    {            
+    {
       "source_path_from_root": "/docs/identity/managed-identities-azure-resources/qs-configure-template-windows-vm.md",
       "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-configure-managed-identities",
       "redirect_document_id": false
     },
-    {            
+    {
       "source_path_from_root": "/docs/identity/managed-identities-azure-resources/qs-configure-rest-vm.md",
       "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-configure-managed-identities",
       "redirect_document_id": false
     },
-    {            
+    {
       "source_path_from_root": "/docs/identity/managed-identities-azure-resources/qs-configure-sdk-windows-vm.md",
       "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-configure-managed-identities",
       "redirect_document_id": false
@@ -680,7 +700,7 @@
       "source_path_from_root": "/docs/identity/enterprise-apps/app-management-videos.md",
       "redirect_url": "/entra/identity/enterprise-apps/what-is-application-management",
       "redirect_document_id": false
-    },  
+    },
     {
       "source_path_from_root": "/docs/identity/managed-identities-azure-resources/qs-configure-cli-windows-vmss.md",
       "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-configure-managed-identities-scale-sets",
@@ -707,16 +727,6 @@
       "redirect_document_id": false
     },
     {
-      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/tutorial-windows-vm-access-arm.md",
-      "redirect_url": "/entra/identity/managed-identities-azure-resources/tutorial-windows-vm-access",
-      "redirect_document_id": false
-    },
-    {
-      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/tutorial-linux-vm-access-arm.md",
-      "redirect_url": "/entra/identity/managed-identities-azure-resources/tutorial-windows-vm-access",
-      "redirect_document_id": false
-    }, 
-    {
       "source_path_from_root": "/docs/identity/managed-identities-azure-resources/howto-assign-access-portal.md",
       "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-assign-azure-resource",
       "redirect_document_id": false
@@ -730,6 +740,116 @@
       "source_path_from_root": "/docs/identity/managed-identities-azure-resources/howto-assign-access-powershell.md",
       "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-assign-azure-resource",
       "redirect_document_id": false
-    }
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/how-to-view-managed-identity-service-principal-portal.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-view-managed-identity-service-principal",
+      "redirect_document_id": false
+    }, 
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/how-to-view-managed-identity-service-principal-cli.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-view-managed-identity-service-principal",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/how-to-view-managed-identity-service-principal-powershell.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-view-managed-identity-service-principal",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/how-to-assign-app-role-managed-identity-powershell.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-assign-app-role-managed-identity",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/how-to-assign-app-role-managed-identity-cli.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-assign-app-role-managed-identity",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/tutorial-windows-vm-access-datalake.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/tutorial-windows-managed-identities-vm-access",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/tutorial-windows-vm-access-storage-sas.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/tutorial-windows-managed-identities-vm-access",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/tutorial-windows-vm-access-nonaad.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/tutorial-windows-managed-identities-vm-access",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/tutorial-windows-vm-access-sql.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/tutorial-windows-managed-identities-vm-access",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/tutorial-windows-vm-ua-arm.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/tutorial-windows-managed-identities-vm-access",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/enterprise-apps/migrate-adfs-application-activity.md",
+      "redirect_url": "/entra/identity/enterprise-apps/migrate-ad-fs-application-howto",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/tutorial-vm-windows-access-storage.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/tutorial-windows-managed-identities-vm-access",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/tutorial-windows-vm-access-arm.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/tutorial-windows-managed-identities-vm-access",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/tutorial-linux-vm-access-datalake.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/tutorial-linux-managed-identities-vm-access",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/tutorial-linux-vm-access-storage.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/tutorial-linux-managed-identities-vm-access",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/tutorial-linux-vm-access-storage-sas.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/tutorial-linux-managed-identities-vm-access",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/tutorial-linux-vm-access-arm.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/tutorial-linux-managed-identities-vm-access",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/tutorial-linux-vm-access-storage-access-key.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/tutorial-linux-managed-identities-vm-access",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/tutorial-linux-vm-access-nonaad.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/tutorial-linux-managed-identities-vm-access",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/msi-tutorial-linux-vm-access-arm.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/tutorial-linux-managed-identities-vm-access",
+      "redirect_document_id": false
+    },
+    {            
+      "source_path_from_root": "/docs/identity-platform/quickstart-v2-javascript.md",
+      "redirect_url": "/entra/identity-platform/quickstart-single-page-app-javascript-sign-in",
+      "redirect_document_id": false
+    },
+    {            
+      "source_path_from_root": "/docs/identity-platform/tutorial-v2-javascript-auth-code.md",
+      "redirect_url": "/entra/identity-platform/quickstart-single-page-app-javascript-sign-in",
+      "redirect_document_id": false
+    } 
   ]
 }

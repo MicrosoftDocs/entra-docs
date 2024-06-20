@@ -33,7 +33,7 @@ You can allow users in your organization to access their LinkedIn connections wi
 
 You can enable LinkedIn account connections for only the users you want to have access, from your entire organization to only selected users in your organization.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 1. Select Microsoft Entra ID.
 1. Select **Users** > **All users**.
 1. Select **User settings**.

@@ -60,7 +60,7 @@ Content-type: application/json
 
 [
   {
-    "id": "0459a193-1111-2222-3333-444455556666",
+    "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
     "tenantId": "aaaabbbb-0000-cccc-1111-dddd2222eeee",
     "did": "did:web:bank.woodgrove.com...<SNIP>...",
     "name": "WoodgroveBank",
@@ -69,7 +69,7 @@ Content-type: application/json
     ]
   },
   {
-    "id": "6e0e41cb-1111-2222-3333-444455556666",
+    "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
     "tenantId": "bbbbcccc-1111-dddd-2222-eeee3333ffff",
     "did": "did:web:woodgrove.com...<SNIP>...",
     "name": "Woodgrove",

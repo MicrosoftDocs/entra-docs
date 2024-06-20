@@ -5,7 +5,7 @@ description: Learn how conditions are used in Microsoft Entra Conditional Access
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 01/03/2024
+ms.date: 06/14/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -34,9 +34,9 @@ The following diagram illustrates Microsoft Teams service dependencies. Solid ar
 
 ![A diagram showing Microsoft Teams service dependencies.](./media/service-dependencies/01.png)
 
-As a best practice, you should set common policies across related apps and services whenever possible. Having a consistent security posture provides you with the best user experience. For example, setting a common policy across Exchange Online, SharePoint Online, Microsoft Teams, and Skype for business significantly reduces unexpected prompts that might arise from different policies being applied to downstream services.
+As a best practice, you should set common policies across related apps and services whenever possible. Having a consistent security posture provides you with the best user experience. For example, setting a common policy across Exchange Online, SharePoint Online, and Microsoft Teams reduces prompts that might arise from different policies being applied to downstream services.
 
-A great way to accomplish a common policy with applications in the Office stack is to use the [Office 365 app](concept-conditional-access-cloud-apps.md#office-365) instead of targeting individual applications.
+A great way to accomplish a common policy with applications in Microsoft 365 is to use the [Office 365 app](concept-conditional-access-cloud-apps.md#office-365) instead of targeting individual applications.
 
 The below table lists some more service dependencies, where the client apps must satisfy. This list isn't exhaustive.
 
@@ -65,7 +65,7 @@ The below table lists some more service dependencies, where the client apps must
 | Visual Studio       | Windows Azure Service Management API (portal and API) | Early-bound |
 | Microsoft Forms     | Exchange                                    | Early-bound |
 |                     | SharePoint                                  | Early-bound |
-| Microsoft To-Do     | Exchange                                    | Early-bound |
+| Microsoft To Do     | Exchange                                    | Early-bound |
 | SharePoint          | SharePoint Online Web Client Extensibility  | Early-bound |
 |                     | SharePoint Online Web Client Extensibility Isolated | Early-bound |
 |                     | SharePoint Client Extensibility web application principal (where present) | Early-bound |

@@ -27,7 +27,7 @@ Specifically, you learn how to:
 
 ## Prerequisites
 
-- Ensure that you have the [global administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) or the [authentication policy administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator) permission for the directory you want to configure. If you're not the global administrator, you need the [application administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) permission to complete the app registration including granting admin consent.
+- Ensure that you have the [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) or the [authentication policy administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator) permission for the directory you want to configure. If you're not the Global Administrator, you need the [application administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) permission to complete the app registration including granting admin consent.
 - Ensure that you have a [custom domain registered](~/identity/users/domains-manage.md) for the Microsoft Entra tenant. If you don't have one registered, the setup defaults to the advanced setup experience.
 
 ## How Quick Verified ID setup works
@@ -50,7 +50,7 @@ If you have a custom domain registered for your Microsoft Entra tenant, you see 
 
 To set up Verified ID, follow these steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 
 1. Select **Verified ID**.
 

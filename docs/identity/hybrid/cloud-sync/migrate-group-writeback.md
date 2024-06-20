@@ -32,7 +32,7 @@ For more information, see the [Provisioning to Active Directory with Microsoft E
 ## Prerequisites
 The following prerequisites are required to implement this scenario.
 
- - Microsoft Entra account with at least a [Hybrid Administrator](../../role-based-access-control/permissions-reference.md#hybrid-identity-administrator) role.
+ - Microsoft Entra account with at least a [Hybrid Identity Administrator](../../role-based-access-control/permissions-reference.md#hybrid-identity-administrator) role.
  - An on-premises AD account with at least domain administrator permissions - required to access the adminDescription attribute and copy it to the msDS-ExternalDirectoryObjectId attribute
  - On-premises Active Directory Domain Services environment with Windows Server 2016 operating system or later. 
      - Required for AD Schema attribute  - msDS-ExternalDirectoryObjectId 
@@ -41,6 +41,33 @@ The following prerequisites are required to implement this scenario.
      - Required for global catalog lookup to filter out invalid membership references
 
 
+## Naming convention for groups written back
+Microsoft Entra Connect Sync uses the following format when naming groups that are written back.
+
+ - Default format: CN=Group_&lt;guid&gt;,OU=&lt;container&gt;,DC=&lt;domain component&gt;,DC=&lt;domain component&gt; 
+ - Example: CN=Group_3a5c3221-c465-48c0-95b8-e9305786a271,OU=WritebackContainer,DC=contoso,DC=com 
+
+To make it easier to find groups being written back from Microsoft Entra ID to Active Directory, Microsoft Entra Connect Sync added an option to write back the group distinguished name by using the cloud display name.  This is done by selecting the **Writeback Group Distinguished Name with cloud Display Name** during initial setup of group writeback v2.  If this feature is not enabled, the default format will be used.
+
+If the **Writeback Group Distinguished Name with cloud Display Name** feature is enabled, Microsoft Entra Connect will use the following format.
+
+ - New format: CN=&lt;display name&gt;_&lt;last 12 digits of object ID&gt;,OU=&lt;container&gt;,DC=&lt;domain component&gt;,DC=&lt;domain component&gt; 
+ - Example: CN=Sales_e9305786a271,OU=WritebackContainer,DC=contoso,DC=com 
+
+When migrating, cloud sync will use the new format.  It does not matter whether the **Writeback Group Distinguished Name with cloud Display Name** feature is enabled or not.  
+
+>[!IMPORTANT]
+>If you are using the default Microsoft Entra Connect naming and then migrate the group so that it is managed by Microsoft Entra cloud sync, it will rename the group to the new format.  Use the section below allow Microsoft Entra cloud sync to use the old format.
+
+### Using the default format
+If you want cloud sync to use the default format, you need modify the attribute flow expression for the CN attribute.  The default the mapping is:
+
+|Expression|Syntax|Description|
+|-----|-----|-----|
+|Default expression|Append(Append(Left(Trim([displayName]), 51), "_"), Mid([objectId], 25, 12))|The default expression used by Microsoft Entra cloud sync.|
+|New expression|Append("Group_", [objectId])|This is the new expression you can use the default format used by Microsoft Entra Connect.|
+
+For more information see [Add an attribute mapping - Microsoft Entra ID to Active Directory](how-to-attribute-mapping.md#add-an-attribute-mapping---microsoft-entra-id-to-active-directory)
 
 ## Step 1 - Copy adminDescription to msDS-ExternalDirectoryObjectID
 
@@ -53,6 +80,22 @@ The following prerequisites are required to implement this scenario.
 3. Paste in to the msDS-ExternalDirectoryObjectID attribute
 
    :::image type="content" source="media/migrate-group-writeback/migrate-2.png" alt-text="Screenshot of the msDS-ExternalDirectoryObjectID attribute." lightbox="media/migrate-group-writeback/migrate-2.png":::
+
+The following PowerShell script can be used to help automate this step.  This script will take all of the groups in the **OU=Groups,DC=Contoso,DC=com** container and copy the adminDescription attribute value to the msDS-ExternalDirectoryObjectID attribute value.
+
+   ```powershell
+
+       Import-module ActiveDirectory
+
+      $groups = Get-ADGroup -Filter * -SearchBase "OU=Groups,DC=Contoso,DC=com" -Properties * | Where-Object {$_.adminDescription -ne $null} |
+         Select-Object Samaccountname, adminDescription, msDS-ExternalDirectoryObjectID
+
+      foreach ($group in $groups) 
+       {
+       Set-ADGroup -Identity $group.Samaccountname -Add @{('msDS-ExternalDirectoryObjectID') = $group.adminDescription}
+       } 
+
+   ```
 
 ## Step 2 - Place the Microsoft Entra Connect Sync server in staging mode and disable the sync scheduler
 
@@ -192,9 +235,8 @@ Now that you have successfully removed the groups from the scope of Microsoft En
 
 ## Next Steps
 
-- [Group writeback with Microsoft Entra Cloud Sync ](../group-writeback-cloud-sync.md)
-- [Provision groups to Active Directory using Microsoft Entra Cloud Sync](how-to-configure-entra-to-active-directory.md)
 
+- [Provision groups to Active Directory using Microsoft Entra Cloud Sync](how-to-configure-entra-to-active-directory.md)
 - [Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance](govern-on-premises-groups.md)
 - [Provisioning to Active Directory with Microsoft Entra Cloud Sync FAQ](reference-provision-to-active-directory-faq.yml)
 

@@ -93,7 +93,7 @@ Set up a sample application that, demonstrates how a job or a Windows service ca
 
 When you don't have a service principal listed in your tenant, it can't be targeted. The Office 365 suite is an example of one such service principal.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) and [Attribute Assignment Administrator](../role-based-access-control/permissions-reference.md#attribute-assignment-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator)~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) and [Attribute Assignment Administrator](../role-based-access-control/permissions-reference.md#attribute-assignment-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 1. Select the service principal you want to apply a custom security attribute to.
 1. Under **Manage** > **Custom security attributes**, select **Add assignment**.

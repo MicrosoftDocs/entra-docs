@@ -164,13 +164,13 @@ You can retrieve assignments to an access package using Microsoft Graph, that ar
 
 You can also query the users who have assignments to an access package with the `Get-MgEntitlementManagementAssignment` cmdlet from the [Microsoft Graph PowerShell cmdlets for Identity Governance](https://www.powershellgallery.com/packages/Microsoft.Graph.Identity.Governance/) module version 2.1.0 or later.
 
-For example, if you have two access packages, one with ID `29be137f-b006-426c-b46a-0df3d4e25ccd` and the other with ID `cce10272-68d8-4482-8ba3-a5965c86cfe5`, then you could retrieve the users who have assignments to the first access package, and then compare them to the users who have assignments to the second access package. You can also report the users who have assignments delivered to both, using a PowerShell script similar to the following:
+For example, if you have two access packages, one with ID `00aa00aa-bb11-cc22-dd33-44ee44ee44ee` and the other with ID `11bb11bb-cc22-dd33-ee44-55ff55ff55ff`, then you could retrieve the users who have assignments to the first access package, and then compare them to the users who have assignments to the second access package. You can also report the users who have assignments delivered to both, using a PowerShell script similar to the following:
 
 ```powershell
 $c = Connect-MgGraph -Scopes "EntitlementManagement.Read.All"
 
-$ap_w_id = "29be137f-b006-426c-b46a-0df3d4e25ccd"
-$ap_e_id = "cce10272-68d8-4482-8ba3-a5965c86cfe5"
+$ap_w_id = "00aa00aa-bb11-cc22-dd33-44ee44ee44ee"
+$ap_e_id = "11bb11bb-cc22-dd33-ee44-55ff55ff55ff"
 $apa_w_filter = "accessPackage/id eq '" + $ap_w_id + "' and state eq 'Delivered'"
 $apa_e_filter = "accessPackage/id eq '" + $ap_e_id + "' and state eq 'Delivered'"
 $apa_w = @(Get-MgEntitlementManagementAssignment -Filter $apa_w_filter -ExpandProperty target -All)
@@ -208,7 +208,7 @@ You can use Azure Monitor workbooks to get insights on how users have been recei
 
     ![View access package events](./media/entitlement-management-logs-and-reporting/view-events-access-package.png)
 
-1. To see if there have been changes to application role assignments for an application that weren't created due to access package assignments, then you can select the workbook named *Application role assignment activity*.  If you select to omit entitlement activity, then only changes to application roles that weren't made by entitlement management are shown. For example, you would see a row if a global administrator had directly assigned a user to an application role.
+1. To see if there have been changes to application role assignments for an application that weren't created due to access package assignments, then you can select the workbook named *Application role assignment activity*.  If you select to omit entitlement activity, then only changes to application roles that weren't made by entitlement management are shown. For example, you would see a row if a Global Administrator had directly assigned a user to an application role.
 
     ![View app role assignments](./media/entitlement-management-access-package-incompatible/workbook-ara.png)
 

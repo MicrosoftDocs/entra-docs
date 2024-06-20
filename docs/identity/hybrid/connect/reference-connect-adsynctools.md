@@ -269,7 +269,8 @@ ConvertTo-ADSyncToolsCloudAnchor [-Anchor] <String> [<CommonParameters>]
 ```
 ### DESCRIPTION
 Takes a Base64 Anchor like VAAAAFUAcwBlAHIAXwBjADcAMgA5ADAAMwBlAGQALQA3ADgAMQA2AC0ANAAxAGMAZAAtADkAMAA2ADYALQBlAGEAYwAzADMAZAAxADcAMQBkADcANwAAAA==
-and converts to the respective CloudAnchor value, such as `User_abc12345-1234-abcd-9876-ab0123456789`
+and converts to the respective CloudAnchor value, such as `User_00aa00aa-bb11-cc22-dd33-44ee44ee44ee`
+
 ### EXAMPLES
 #### EXAMPLE 1
 ```
@@ -306,11 +307,11 @@ Converts a value in GUID, GUID string or byte array format to a Base64 string
 ### EXAMPLES
 #### EXAMPLE 1
 ```
-ConvertTo-ADSyncToolsImmutableID '88888888-0101-3333-cccc-1234567890cd'
+ConvertTo-ADSyncToolsImmutableID '00aa00aa-bb11-cc22-dd33-44ee44ee44ee'
 ```
 #### EXAMPLE 2
 ```
-'88888888-0101-3333-cccc-1234567890cd' | ConvertTo-ADSyncToolsImmutableID
+'00aa00aa-bb11-cc22-dd33-44ee44ee44ee' | ConvertTo-ADSyncToolsImmutableID
 ```
 ### PARAMETERS
 #### -Value
@@ -388,7 +389,7 @@ Export-ADSyncToolsAadPublicFolders -Credential $(Get-Credential) -Path <file_nam
 ```
 ### PARAMETERS
 #### -Credential
-Microsoft Entra Global Admin Credential
+Microsoft Entra Global Administrator Credential
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
@@ -1208,7 +1209,7 @@ Remove-ADSyncToolsAadPublicFolders [-Credential] <PSCredential> [-SourceAnchor] 
 ```
 ### PARAMETERS
 #### -Credential
-Microsoft Entra Global Admin Credential
+Microsoft Entra Global Administrator Credential
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
@@ -1405,7 +1406,7 @@ Supports Active Directory objects in multi-domain forests.
 ### EXAMPLES
 #### EXAMPLE 1
 ```
-Set-ADSyncToolsMsDsConsistencyGuid -Identity 'CN=User1,OU=Sync,DC=Contoso,DC=com' -Value '88666888-0101-1111-bbbb-1234567890ab'
+Set-ADSyncToolsMsDsConsistencyGuid -Identity 'CN=User1,OU=Sync,DC=Contoso,DC=com' -Value '00aa00aa-bb11-cc22-dd33-44ee44ee44ee'
 ```
 #### EXAMPLE 2
 ```
@@ -1413,7 +1414,7 @@ Set-ADSyncToolsMsDsConsistencyGuid -Identity 'CN=User1,OU=Sync,DC=Contoso,DC=com
 ```
 #### EXAMPLE 3
 ```
-Set-ADSyncToolsMsDsConsistencyGuid 'User1@Contoso.com' '8d6c6818-018c-4f11-9bb8-1b04e2caa1b6'
+Set-ADSyncToolsMsDsConsistencyGuid 'User1@Contoso.com' '11bb11bb-cc22-dd33-ee44-55ff55ff55ff'
 ```
 #### EXAMPLE 4
 ```
@@ -1421,7 +1422,7 @@ Set-ADSyncToolsMsDsConsistencyGuid 'User1@Contoso.com' 'GGhsjYwBEU+buBsE4sqhtg==
 ```
 #### EXAMPLE 5
 ```
-'88666888-0101-1111-bbbb-1234567890ab' | Set-ADSyncToolsMsDsConsistencyGuid -Identity User1
+'00aa00aa-bb11-cc22-dd33-44ee44ee44ee' | Set-ADSyncToolsMsDsConsistencyGuid -Identity User1
 ```
 #### EXAMPLE 6
 ```

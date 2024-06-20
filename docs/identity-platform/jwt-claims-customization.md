@@ -4,7 +4,7 @@ description: Learn how to customize the claims issued by Microsoft identity plat
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.custom: curation-claims, devx-track-dotnet
+ms.custom: curation-claims
 ms.date: 05/30/2024
 ms.reviewer: rahulnagraj, alamaral
 ms.service: identity-platform
@@ -212,7 +212,7 @@ Extract the private and public key base-64 encoded from the PFX file export of y
 The following example shows the format of the HTTP PATCH request to add a custom signing key to a service principal. The "key" value in the `keyCredentials` property is shortened for readability. The value is base-64 encoded. For the private key, the property usage is `Sign`. For the public key, the property usage is `Verify`.
 
 ```JSON
-PATCH https://graph.microsoft.com/v1.0/servicePrincipals/f47a6776-bca7-4f2e-bc6c-eec59d058e3e
+PATCH https://graph.microsoft.com/v1.0/servicePrincipals/aaaaaaaa-bbbb-cccc-1111-222222222222
 
 Content-type: servicePrincipals/json
 Authorization: Bearer {token}
@@ -266,7 +266,6 @@ To run this script, you need:
 - A user who logs in to get the Microsoft Graph access token. The user should be one of the following Microsoft Entra administrative roles (required to update the service principal):
   - Cloud Application Administrator
   - Application Administrator
-  - Global Administrator
 - A certificate to configure as a custom signing key for our application. You can either create a self-signed certificate or obtain one from your trusted certificate authority. The following certificate components are used in the script:
   - public key (typically a *.cer* file)
   - private key in PKCS#12 format (in *.pfx* file)

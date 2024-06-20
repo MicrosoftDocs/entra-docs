@@ -27,7 +27,7 @@ There are two types of delegated administration relationships that are visible i
 
 ## Granular delegated admin permission
 
-When a Microsoft CSP creates a GDAP relationship request for your tenant a global administrator needs to approve the request. The GDAP relationship request specifies:
+When a Microsoft CSP creates a GDAP relationship request for your tenant a Global Administrator needs to approve the request. The GDAP relationship request specifies:
 
 * The CSP partner tenant
 * The roles that the partner needs to delegate to their technicians

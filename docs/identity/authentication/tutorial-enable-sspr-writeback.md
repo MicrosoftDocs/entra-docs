@@ -153,7 +153,7 @@ If you no longer want to use any password functionality, complete the following 
 1. Sign in to your Microsoft Entra Connect server and start the **Microsoft Entra Connect** configuration wizard.
 1. On the **Welcome** page, select **Configure**.
 1. On the **Additional tasks** page, select **Customize synchronization options**, and then select **Next**.
-1. On the **Connect to Microsoft Entra ID** page, enter a global administrator credential for your Azure tenant, and then select **Next**.
+1. On the **Connect to Microsoft Entra ID** page, enter a Global Administrator credential, and then select **Next**.
 1. On the **Connect directories** and **Domain/OU** filtering pages, select **Next**.
 1. On the **Optional features** page, deselect the box next to **Password writeback** and select **Next**.
 1. On the **Ready to configure** page, select **Configure** and wait for the process to finish.

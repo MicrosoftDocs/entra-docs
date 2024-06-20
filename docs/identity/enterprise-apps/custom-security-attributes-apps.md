@@ -146,7 +146,7 @@ $attributes = @{
         Project = @("Baker","Cascade")
     }
 }
-Set-AzureADMSServicePrincipal -Id 7d194b0c-bf17-40ff-9f7f-4b671de8dc20 -CustomSecurityAttributes $attributes
+Set-AzureADMSServicePrincipal -Id aaaaaaaa-bbbb-cccc-1111-222222222222 -CustomSecurityAttributes $attributes
 ```
 
 ### Update a custom security attribute with a multi-string value for an application (service principal) using Azure AD PowerShell
@@ -166,7 +166,7 @@ $attributesUpdate = @{
         Project = @("Alpine","Baker")
     }
 }
-Set-AzureADMSServicePrincipal -Id 7d194b0c-bf17-40ff-9f7f-4b671de8dc20 -CustomSecurityAttributes $attributesUpdate 
+Set-AzureADMSServicePrincipal -Id aaaaaaaa-bbbb-cccc-1111-222222222222 -CustomSecurityAttributes $attributesUpdate 
 ```
 
 ### Get the custom security attribute assignments for an application (service principal) using Azure AD PowerShell
@@ -175,7 +175,7 @@ Use the [Get-AzureADMSServicePrincipal](/powershell/module/azuread/get-azureadms
 
 ```powershell
 Get-AzureADMSServicePrincipal -Select CustomSecurityAttributes
-Get-AzureADMSServicePrincipal -Id 7d194b0c-bf17-40ff-9f7f-4b671de8dc20  -Select "CustomSecurityAttributes, Id"
+Get-AzureADMSServicePrincipal -Id aaaaaaaa-bbbb-cccc-1111-222222222222  -Select "CustomSecurityAttributes, Id"
 ```
 
 :::zone-end
@@ -247,7 +247,7 @@ $appAttributes.CustomSecurityAttributes.AdditionalProperties | Format-List
 ```
 
 ```Output
-Id                       : 7d194b0c-bf17-40ff-9f7f-4b671de8dc20
+Id                       : aaaaaaaa-bbbb-cccc-1111-222222222222
 DisplayName              : TestApp
 CustomSecurityAttributes : Microsoft.Graph.PowerShell.Models.MicrosoftGraphCustomSecurityAttributeValue
 

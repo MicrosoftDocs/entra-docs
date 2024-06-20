@@ -264,7 +264,7 @@ Before you create the service principal name (SPN), you can list SPNs and confir
 
 Use the following instructions to integrate OWA with Microsoft Entra ID.
 
-1.  Sign in to the [Datawiza Cloud Management Console](https://console.datawiza.com/) (DCMC).
+1.  Sign in to the [Datawiza Cloud Management Console (DCMC)](https://console.datawiza.com/).
 
 2.  The Welcome page appears.
 
