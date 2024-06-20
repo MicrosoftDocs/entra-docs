@@ -262,4 +262,4 @@ You have successfully completed all the necessary steps to sign out a user on yo
 
 ## Next steps 
 
-[Tutorial: Add built-in attributes to your native iOS authentication.](tutorial-native-authentication-ios-sign-up-with-email-one-time-passcode.md) 
+[Tutorial: Self-service password reset in iOS app](tutorial-native-authentication-ios-self-service-password-reset.md).
