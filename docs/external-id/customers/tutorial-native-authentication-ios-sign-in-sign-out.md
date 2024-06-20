@@ -140,7 +140,6 @@ To sign in a user, you need to:
         }
     }
 
-
 1. To implement `SignInStartDelegate` protocol when you use **Email with password** flow, use the following code snippet:
 
     ```swift
