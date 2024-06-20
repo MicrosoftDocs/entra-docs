@@ -38,7 +38,7 @@ To sign up a user, you need to:
 
 1. Create a user interface (UI) to: 
 
-   - Collect an email from the user. Add validation to your inputs to make sure the user enters a valid emails address.
+   - Collect an email from the user. Add validation to your inputs to make sure the user enters a valid email address.
    - Collect a password if you sign up with username (email) and password.
    - Collect an email one-time passcode from the user.
    - If needed, collect user attributes.
