@@ -858,7 +858,7 @@
     } ,
     {            
       "source_path_from_root": "/docs/global-secure-access/how-to-target-resource-microsoft-365-profile.md",
-      "redirect_url": "/docs/global-secure-access/how-to-target-resource-microsoft-profile",
+      "redirect_url": "/entra/global-secure-access/how-to-target-resource-microsoft-profile",
       "redirect_document_id": false
     },
     {            
