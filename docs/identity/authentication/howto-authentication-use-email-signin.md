@@ -6,7 +6,7 @@ ms.service: entra-id
 ms.subservice: authentication
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: how-to
-ms.date: 09/13/2023
+ms.date: 06/19/2024
 
 ms.author: justinha
 author: calui
@@ -320,7 +320,7 @@ You need *Global Administrator* permissions to complete the following steps:
 1. Find the directoryObject ID for the group to be added to the staged rollout policy. Note the value returned for the *Id* parameter, because it will be used in the next step.
 
    ```powershell
-   Get-MgGroup -Filter "DisplayName eq 'Name of group to be added to the staged rollout policy'"
+   Get-MgBetaGroup -Filter "DisplayName eq 'Name of group to be added to the staged rollout policy'"
    ```
 
 1. Add the group to the staged rollout policy as shown in the following example. Replace the value in the *-FeatureRolloutPolicyId* parameter with the value returned for the policy ID in step 4 and replace the value in the *-OdataId* parameter with the *Id* noted in step 5. It may take up to 1 hour before users in the group can sign in to Microsoft Entra ID with email as an alternate login ID.
