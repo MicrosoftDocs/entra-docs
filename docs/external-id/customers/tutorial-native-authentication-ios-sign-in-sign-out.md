@@ -219,7 +219,7 @@ func onSignInCompleted(result: MSAL.MSALNativeAuthUserAccountResult) {
 
 The key you use to access the claim value is the name that you specify when you add the user attribute as a token claim. 
 
-To learn how to add built-in and custom attributes to as token claims in the [Add user attributes to token claims](../../how-to-add-attributes-to-token.md) article.
+To learn how to add built-in and custom attributes to as token claims in the [Add user attributes to token claims](how-to-add-attributes-to-token.md) article.
 
 ## Sign out user 
 
