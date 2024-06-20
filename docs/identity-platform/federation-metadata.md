@@ -22,7 +22,7 @@ Microsoft Entra ID publishes tenant-specific and tenant-independent endpoints.
 
 Tenant-specific endpoints are designed for a particular tenant. The tenant-specific federation metadata includes information about the tenant, including tenant-specific issuer and endpoint information. Applications that restrict access to a single tenant use tenant-specific endpoints.
 
-Tenant-independent endpoints provide information that is common to all Microsoft Entra tenants. This information applies to tenants hosted at *login.microsoftonline.com* and is shared across tenants. Tenant-independent endpoints are recommended for multi-tenant applications, since they are not associated with any particular tenant.
+Tenant-independent endpoints provide information that is common to all Microsoft Entra tenants. This information applies to tenants hosted at *login.microsoftonline.com* and is shared across tenants. Tenant-independent endpoints are recommended for multitenant applications, since they are not associated with any particular tenant.
 
 ## Federation metadata endpoints
 
@@ -54,7 +54,7 @@ ID="_00aa00aa-bb11-cc22-dd33-44ee44ee44ee"
 entityID="https://sts.windows.net/11bb11bb-cc22-dd33-ee44-55ff55ff55ff/">
 ```
 
-You can replace the tenant ID in the tenant-independent endpoint with your tenant ID to create a tenant-specific `EntityID` value. The resulting value will be the same as the token issuer. The strategy allows a multi-tenant application to validate the issuer for a given tenant.
+You can replace the tenant ID in the tenant-independent endpoint with your tenant ID to create a tenant-specific `EntityID` value. The resulting value will be the same as the token issuer. The strategy allows a multitenant application to validate the issuer for a given tenant.
 
 The following metadata shows a sample tenant-independent `EntityID` element. Please note, that the `{tenant}` is a literal, not a placeholder.
 
