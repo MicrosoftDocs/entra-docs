@@ -15,7 +15,7 @@ ms.custom: developer
 #Customer intent: As a dev, devops, I want to learn how to add sign-in and sign-out with email one-time passcode or username and password in iOS app by using native authentication.
 ---
 
-# Tutorial: Add sign-in in iOS app by using native authentication
+# Tutorial: Add sign-in and sign-out in iOS app by using native authentication
 
 This tutorial demonstrates how to sign-in and sign-out a user with email one-time passcode or username and password in your iOS mobile app by using native authentication. 
 
