@@ -276,7 +276,7 @@ To verify connectivity, you need to simulate the traffic flow. One method is to 
 
 ### Simulate traffic with a virtual machine
 
-This step creates a VM and initiates traffic to Microsoft 365 services. Leave all settings set to the default value unless noted.
+This step creates a VM and initiates traffic to Microsoft services. Leave all settings set to the default value unless noted.
 
 1. From the Azure portal, browse to **Virtual machines**.
 1. Select **Create** > **Azure virtual machine**.
@@ -305,7 +305,7 @@ After you create the remote networks and connections in the previous steps, it m
 
 :::image type="content" source="media/how-to-simulate-remote-network/verify-connectivity.png" alt-text="Screenshot showing how to find the connection status for your virtual network gateway." lightbox="media/how-to-simulate-remote-network/verify-connectivity.png" :::
 
-You can use the virtual machine you created to validate that traffic is flowing to Microsoft 365 locations like SharePoint Online. Browsing to resources in SharePoint or Exchange Online should result in traffic on your virtual network gateway. This traffic can be seen by browsing to [Metrics on the virtual network gateway](/azure/vpn-gateway/monitor-vpn-gateway#analyzing-metrics) or by [Configuring packet capture for VPN gateways](/azure/vpn-gateway/packet-capture).
+You can use the virtual machine you created to validate that traffic is flowing to Microsoft services. Browsing to resources in SharePoint or Exchange Online should result in traffic on your virtual network gateway. This traffic can be seen by browsing to [Metrics on the virtual network gateway](/azure/vpn-gateway/monitor-vpn-gateway#analyzing-metrics) or by [Configuring packet capture for VPN gateways](/azure/vpn-gateway/packet-capture).
 
 > [!TIP]
 > If you're using this article for testing Microsoft Entra Internet Access, clean up all related Azure resources by deleting the new resource group after you're done.

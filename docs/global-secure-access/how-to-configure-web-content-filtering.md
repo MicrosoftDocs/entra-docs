@@ -47,9 +47,15 @@ There are several steps to configuring web content filtering. Take note of where
 
 To enable the Microsoft Entra Internet Access forwarding profile to forward user traffic:
 
+> [!NOTE]
+> When you enable the Internet Access forwarding profile, you should also enable the Microsoft traffic forwarding profile for optimal routing of Microsoft traffic.
+
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
 1. Browse to **Global Secure Access** > **Connect** > **Traffic forwarding**.
 1. Enable the **Internet access profile**. Internet traffic starts forwarding from all client devices to Microsoft's Security Service Edge (SSE) proxy, where you configure granular security policies.
+1. Enable the **Microsoft traffic profile**. Microsoft traffic starts forwarding from all client devices to Microsoft's Security Service Edge (SSE) proxy, where you can configure advanced security features specific to Microsoft traffic.
+
+
 
 ## Create a web content filtering policy
 
@@ -118,7 +124,7 @@ Use a Windows device with the Global Secure Access client installed. Sign in as 
 - Internet traffic acquisition profiles for the client can't be configured.
 - The client traffic acquisition policy includes Transmission Control Protocol (TCP) ports 80/443.
 - Standard ports for HTTP/S traffic (ports 80 and 443).
-- *microsoft.com is currently acquired by the Microsoft 365 access profile.
+- *microsoft.com is currently acquired by the Microsoft access profile.
 - IPv6 isn't supported on this platform.
 - Hyper-V isn't supported on this platform.
 - Remote network connectivity for Internet Access is in development.
