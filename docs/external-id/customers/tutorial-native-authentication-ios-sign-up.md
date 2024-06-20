@@ -54,10 +54,6 @@ To sign up a user, you need to:
             return
         }
 
-        print("Signing up with email \(email) and password")
-
-        showResultText("Signing up...")
-
         nativeAuth.signUp(username: email, delegate: self)
     }
     ```
