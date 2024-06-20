@@ -74,7 +74,7 @@ To sign in a user, you need to:
     nativeAuth.signIn(username: email, password: password, delegate: self)
     ```
     
-    In the `signIn(username:password:delegate)` method, you pass in the email address that the user supplied us with, their password, and pass self for the delegate.
+    In the `signIn(username:password:delegate)` method, you pass in the email address that the user supplied us with, their password, and pass the delegate object that conforms to the `SignInStartDelegate` protocol. For this example, we pass `self`.
 
 1. To implement `SignInStartDelegate` protocol when you use **Email one-time passcode** flow, use the following code snippet:
 
