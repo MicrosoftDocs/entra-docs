@@ -190,7 +190,7 @@ During sign in, not every action succeeds. For example, the user might try to si
     }
     ```
 
-1. To handle errors in submitCode() method, use the following code snippet:
+1. To handle errors in `submitCode()` method, use the following code snippet:
 
     ```swift
     func onSignInVerifyCodeError(error: MSAL.VerifyCodeError, newState: MSAL.SignInCodeRequiredState?) {
