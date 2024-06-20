@@ -72,10 +72,10 @@ Complete the following steps to enable Microsoft Entra single sign-on.
     `https://<CustomerName>.kwork.cloud/saml`
 
     b. In the **Reply URL** textbox, type the URL:
-    `https://knowledgework-prd.firebaseapp.com/__/auth/handle`
+    `https://auth.kwork.cloud/_auth/saml/callback`
 
     c. In the **Sign on URL** textbox, type a URL using the following pattern:
-    `https://<CustomerName>.kwork.cloud/login`
+    `https://<CustomerName>.kwork.cloud/redirect`
 
     > [!Note]
     > These values are not real. Update these values with the actual Identifier and Sign-on URL. Contact [Knowledge Work Client support team](mailto:support@knowledgework.com) to get these values. You can also refer to the patterns shown in the Basic SAML Configuration section.
