@@ -66,7 +66,7 @@ To sign in a user, you need to:
     nativeAuth.signIn(username: email, delegate: self)
     ```
 
-    The `signIn(username:delegate)` method, which responds asynchronously by calling one of the methods on the passed delegate object, must implement the `SignInStartDelegate` protocol. We pass the email address that the user provides in the email submission form and pass self as the delegate.
+    The `signIn(username:delegate)` method, which responds asynchronously by calling one of the methods on the passed delegate object, must implement the `SignInStartDelegate` protocol. We pass the email address that the user provides in the email submission form and pass `self` as the delegate.
 
     To sign in a user using **Email with password** flow, we use the following code snippet:
 
@@ -216,9 +216,9 @@ func onSignInCompleted(result: MSAL.MSALNativeAuthUserAccountResult) {
 }
 ```
 
-The key you use to access the claim value is the name that you specify when you add the user attribute as a token claim. 
+The key you use to access the claim value is the name that you specify when you add the user attribute as a token claim.
 
-To learn how to add built-in and custom attributes to as token claims in the [Add user attributes to token claims](how-to-add-attributes-to-token.md) article.
+Learn how to add built-in and custom attributes as token claims in the [Add user attributes to token claims](how-to-add-attributes-to-token.md) article.
 
 ## Sign out user 
 
