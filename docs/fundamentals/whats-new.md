@@ -35,6 +35,16 @@ This page updates monthly, so revisit it regularly. If you're looking for items 
 
 ## May 2024
 
+### General Availability - Azure China now supports My sign-ins and MFA/SSPR Combined Registration
+
+**Type:** Changed feature    
+**Service category:** MFA        
+**Product capability:** Identity Security & Protection        
+
+Starting end of June 2024, all organizations utilizing Microsoft Azure in China (operated by 21Vianet) will now have access to My Sign-ins activity reporting, and will be required to use the combined security information registration end-user experience for MFA and SSPR. As result of enablement users will now see a unified SSPR and MFA registration experience when prompted to register for SSPR or MFA. For more information, see: [Combined security information registration for Microsoft Entra overview](../identity/authentication/concept-registration-mfa-sspr-combined.md). 
+
+---
+
 ### General Availability - $select in signIn API
 
 **Type:** New feature    
