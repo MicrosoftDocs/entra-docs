@@ -45,7 +45,7 @@ To sign in a user, you need to:
     - Collect an email from the user. Add validation to your inputs to make sure the user enters a valid emails address.
     - Collect a password if you sign in with username (email) and password.
     - Collect an email one-time passcode from the user if you sign in with email one-time passcode.
-    - Resend one-time passcode (recommended) if you sign in with email one-time passcode.
+    - Add a button to let the user resend one-time passcode if you sign in with email one-time passcode.
 
 1. In your UI, add a button, whose select event starts a sign-in as shown in the following code snippet:
 
