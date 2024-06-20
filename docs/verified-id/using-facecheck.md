@@ -26,13 +26,13 @@ Face Check is a paid functionality in Verified ID that requires linking your Azu
 - The Administrator setting up Face Check requires [contributor role for the Azure subscription](/azure/role-based-access-control/built-in-roles/general#contributor)
 
 ## Setting up the Face Check service add-on
-1. In the Verified ID overview page, scroll down to the new Add-ons section and `Enable` the Face Check add-on
+1. In the Verified ID overview page, scroll down to the new Add-ons section and `Enable` the Face Check add-on.
 :::image type="content" source="media/using-facecheck/face-check-add-on.png" alt-text="Screenshot of the Face Check add-on.":::
 
 1. In the Link a subscription section, select a Subscription, a Resource group, and the Resource location. Then select `Validate`. If there are no subscriptions listed, see [What if I can't find a subscription?](using-facecheck.md#what-if-i-cant-find-a-subscription)
 :::image type="content" source="media/using-facecheck/face-check-subscription-linking.png" alt-text="Screenshot subscription linking for Face Check.":::
 
-1. Once validated you can `Enable` the add-on
+1. Once validated you can `Enable` the add-on.
 :::image type="content" source="media/using-facecheck/face-check-add-on-enabled.png" alt-text="Screenshot Face Check add-on enabled.":::
 
 ## Get started with Face Check using MyAccount
