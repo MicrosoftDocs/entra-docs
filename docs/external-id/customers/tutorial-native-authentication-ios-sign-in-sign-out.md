@@ -100,7 +100,7 @@ To sign in a user, you need to:
     - `submitCode(code:delegate)`
     - `resendCode(delegate)`
     
-    To use `submitCode(code:delegate)` to submit the one-time passcode that user supplies in one-time passcode form, use the following code snippet: 
+    Use `submitCode(code:delegate)` to submit the one-time passcode that user supplies in one-time passcode form, use the following code snippet: 
 
     ```swift
     newState.submitCode(code: userSuppliedCode, delegate: self)
