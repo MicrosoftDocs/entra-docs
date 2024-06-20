@@ -3,7 +3,7 @@ title: Simulate remote network connectivity using Azure vWAN
 description: Use Global Secure Access to configure Azure and Entra resources to create a virtual wide area network to connect to your resources in Azure.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 06/18/2024
+ms.date: 06/19/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -409,5 +409,5 @@ To test (option 2):
 
 The system restores the branch office's customer premises equipment (CPE) IP address. Because the VPN gateway represents the CPE, the health logs show the public IP address of the VPN gateway, not the proxy's IP address.
 
-## Clean up resources
+## Remove unneeded resources
 When done testing, or at the end of a project, it's a good idea to remove the resources that you no longer need. Resources left running can cost you money. You can delete resources individually or delete the resource group to delete the entire set of resources.
