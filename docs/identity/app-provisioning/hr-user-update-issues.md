@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: troubleshooting
-ms.date: 05/22/2024
+ms.date: 06/20/2024
 ms.author: jfields
 ms.reviewer: chmutali
 ---
@@ -49,6 +49,17 @@ Switch([BusinessTitle],[BusinessTitle],"","N/A")
 | **Cause** | During incremental sync, the provisioning app queries Workday transaction log for changes to the primary Worker entity and only changes tracked by Workday's transaction log are processed. <br> If changes to a Workday attribute in your setup aren't tracked by Workday's transaction log, then Microsoft Entra ID won't fetch that change. For example: the *LocalReference* Workday attribute is part of the default attribute mapping and it has XPATH `wd:Worker/wd:Worker_Data/wd:Employment_Data/wd:Position_Data/wd:Business_Site_Summary_Data/wd:Local_Reference/wd:ID[@wd:type='Locale_ID']/text()`. This attribute is part of the entity *Business_Site_Summary_Data*. A change in the value of this attribute in Workday doesn't show up in the Workday transaction log. Thus during incremental sync, the new value of this attribute shows up only if an attribute associated with the primary Worker entity also changes during the sync interval. |
 | **Resolution** | If you notice this behavior frequently, where changes to certain Workday attributes aren't flowing through, we recommend periodically running a weekly or monthly full sync. |
 
+## Attribute is not found
+**Applies to:**
+* Workday to on-premises Active Directory user provisioning
+* Workday to Microsoft Entra user provisioning
+
+| Troubleshooting | Details |
+|-- | -- |
+| **Issue** | You receive the error code: ```HybridSynchronizationActiveDirectoryCannotFindAttribute``` |
+| **Cause** | The attribute name was not found in the Active Directory schema: attribute. |
+| **Resolution** | If the attribute was recently added to Active Directory, restart the provisioning agent, as it caches the schema at startup. |
+
 ## User match with extensionAttribute not working
 **Applies to:**
 * Workday to Microsoft Entra user provisioning
@@ -71,6 +82,7 @@ Switch([BusinessTitle],[BusinessTitle],"","N/A")
 | **Issue** | You configured *mail* attribute provisioning from your HR system to Microsoft Entra ID. Any update to the mail attribute isn't working even though the provisioning logs display a record for the mail attribute.  |
 | **Cause** | The provisioning connector to Microsoft Entra supports setting the mail attribute only during user creation. Once the user is created, the connector doesn't support updating the email address. |
 | **Resolution** | To update the mail attribute for existing users, consider using Exchange Online portal or PowerShell. |
+
 
 ## Provisioning Last Day of Work field from Workday
 **Applies to:**
