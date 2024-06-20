@@ -163,7 +163,7 @@ The command  returns your current additional authentication rules for your relyi
 You need to append the following rules to your current claim rules:
 
 ```console
-c:[Type == "https://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid", Value == 
+c:[Type == "https://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid", Value ==   ( In the claim rules, this should be http://...  not https://.  While this does not cause an error the rules will not work as expected.. Need to change all references in the claims rules from https://schemas.microsoft.com to http://schemas.microsoft.com
 "YourGroupSID"] => issue(Type = "https://schemas.microsoft.com/claims/authnmethodsproviders", 
 Value = "AzureMfaAuthentication");
 not exists([Type == "https://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid", 
