@@ -45,7 +45,7 @@ In the above error, the message states that the application can only be accessed
 
 ## Tenant lifecycle block
 
-Error message ```Error message: AADSTS5000225: This tenantt has beeen blocked due to inactivity. To learn more about ...``` is expected for tenants blocked due to lifecycle actions. Tenants that remain in a blocked state for longer than twenty days will be deleted. Administrators may request the tenant to be reactivated within twenty days of the tenant entering the "blocked" state.
+Error message ```Error message: AADSTS5000225: This tenantt has beeen blocked due to inactivity. To learn more about ...``` is expected for tenants innacessible due inactivity. Administrators may request the tenant to be reactivated within twenty days of the tenant entering an inactive state. Tenants that remain in this state for longer than twenty days will be deleted.
 
 :::image type="content" source="media/troubleshoot-conditional-access/tenant-block.png" alt-text="Screenshot showing an error when tenant access blocked due to inactivity" lightbox="media/troubleshoot-conditional-access/tenant-block.png":::
 
@@ -55,14 +55,13 @@ Administrators
 
 If you need to reactivate your tenant:
 
-- The tenant administrator can reach out to Microsoft. In the United States you may contact us via (800) 865-9408 (toll-free, US only) If you are outside the United States, see the [global support phone numbers](https://support.microsoft.com/topic/global-customer-service-phone-numbers-c0389ade-5640-e588-8b0e-28de8afeb3f2).
-- Notification will be sent whether the request is approved or denied
+- The tenant administrator can reach out to Microsoft, see the [global support phone numbers](https://support.microsoft.com/topic/global-customer-service-phone-numbers-c0389ade-5640-e588-8b0e-28de8afeb3f2).
 - Refrain from submitting another assistance request while your existing case is in process.  and until you have heard back a decision on this case. 
 
 If you do not plan to reactivate your tenant:
 
 - The tenant will be deleted after 20 days of authentication blocked and will not be recoverable.
-- A notification email will be sent out to the tenant administrator before the tenant is deleted. Review Microsoft's data protection policies, [here](https://www.microsoft.com/en-us/trust-center/privacy/data-management#leave).  
+- Review Microsoft's data protection policies, [here](https://www.microsoft.com/en-us/trust-center/privacy/data-management#leave).  
 
 Application owners/developers
 
