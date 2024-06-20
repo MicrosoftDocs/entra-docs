@@ -10,7 +10,7 @@ ms.author: jricketts
 ---
 # Microsoft's Security Service Edge solution deployment guide for Microsoft Entra Internet Access for Microsoft 365 proof of concept
 
-This Proof of Concept (PoC) Deployment Guide helps you to deploy Microsoft's Security Service Edge (SSE) solution that features [Microsoft Entra Internet Access for Microsoft 365](../global-secure-access/how-to-manage-microsoft-365-profile.md).
+This Proof of Concept (PoC) Deployment Guide helps you to deploy Microsoft's Security Service Edge (SSE) solution that features [Microsoft Entra Internet Access for Microsoft 365](../global-secure-access/how-to-manage-microsoft-profile.md).
 
 ## Overview
 
