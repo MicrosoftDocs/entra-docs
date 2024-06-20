@@ -25,15 +25,15 @@ Face Check is a paid functionality in Verified ID that requires linking your Azu
 - [Associate or add an Azure subscription to your Microsoft Entra tenant](/entra/fundamentals/how-subscriptions-associated-directory)
 - The Administrator setting up Face Check requires [contributor role for the Azure subscription](/azure/role-based-access-control/built-in-roles/general#contributor)
 
-## Setting up the Face Check service Addon
-1. In the Verified ID overview page, scroll down to the new Addons section and `Enable` the Face Check addon
-:::image type="content" source="media/using-facecheck/face-check-addon.png" alt-text="Screenshot of the Face Check Addon.":::
+## Setting up the Face Check service add-on
+1. In the Verified ID overview page, scroll down to the new Add-ons section and `Enable` the Face Check add-on
+:::image type="content" source="media/using-facecheck/face-check-add-on.png" alt-text="Screenshot of the Face Check add-on.":::
 
 1. In the Link a subscription section, select a Subscription, a Resource group, and the Resource location. Then select `Validate`. If there are no subscriptions listed, see [What if I can't find a subscription?](using-facecheck.md#what-if-i-cant-find-a-subscription)
 :::image type="content" source="media/using-facecheck/face-check-subscription-linking.png" alt-text="Screenshot subscription linking for Face Check.":::
 
-1. Once validated you can `Enable` the Addon
-:::image type="content" source="media/using-facecheck/face-check-addon-enabled.png" alt-text="Screenshot Face Check addon enabled."::: 
+1. Once validated you can `Enable` the add-on
+:::image type="content" source="media/using-facecheck/face-check-add-on-enabled.png" alt-text="Screenshot Face Check add-on enabled.":::
 
 ## Get started with Face Check using MyAccount
 
@@ -158,7 +158,7 @@ Face ID is a vision based biometric security option offer on Apple products for 
 
 When the camera is turned on the mobile device, live footage is captured on the mobile device. This footage is then passed to Verified ID who uses it to invoke services of Azure AI services.
 
-Data isn't store by or keep by any of the services Microsoft Authenticator, Verified ID, or Azure AI. Furthermore, the footage isn't shared with the verifier application either. The verifier application only gets the confidence score in return. In an AI based system the confidence score is the probability percentage answer for a query to the system. For this scenario the confidence score is the likelihood the Verified ID user photo matches user capture on the mobile device.
+Data isn't stored by or kept by any of the services Microsoft Authenticator, Verified ID, or Azure AI. Furthermore, the footage isn't shared with the verifier application either. The verifier application only gets the confidence score in return. In an AI based system the confidence score is the probability percentage answer for a query to the system. For this scenario the confidence score is the likelihood the Verified ID user photo matches user capture on the mobile device.
 Data and privacy for Azure AI Services can be found [here](/legal/cognitive-services/face/data-privacy-security).
 
 ### Does Face Check Require MS Authenticator?

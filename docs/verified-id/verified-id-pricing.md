@@ -34,14 +34,14 @@ In your Microsoft Verified ID, you can verify credentials from issuer authoritie
 
 ## Link your Verified ID authority to a subscription
 
-1. Go to the Verified ID overview page. Scroll down to the new Addons section and `Enable` the Face Check addon
-:::image type="content" source="media/using-facecheck/face-check-addon.png" alt-text="Screenshot of the Face Check Addon.":::
+1. Go to the Verified ID overview page. Scroll down to the new Add-ons section and `Enable` the Face Check add-on
+:::image type="content" source="media/using-facecheck/face-check-add-on.png" alt-text="Screenshot of the Face Check add-on.":::
 
 1. In the Link a subscription section, select a Subscription, a Resource group, and the Resource location. Then select `Validate`. If there are no subscriptions listed, see [What if I can't find a subscription?](using-facecheck.md#what-if-i-cant-find-a-subscription)
 :::image type="content" source="media/using-facecheck/face-check-subscription-linking.png" alt-text="Screenshot subscription linking for Face Check.":::
 
-1. `Enable` the Addon once the information is validated
-:::image type="content" source="media/using-facecheck/face-check-addon-enabled.png" alt-text="Screenshot of using Face Check."::: 
+1. `Enable` the add-on once the information is validated
+:::image type="content" source="media/using-facecheck/face-check-add-on-enabled.png" alt-text="Screenshot of using Face Check."::: 
 
 ## What if I can't find a subscription?
 If no subscriptions are available in the Link a subscription pane, here are some possible reasons:
