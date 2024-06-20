@@ -208,7 +208,7 @@ You can use Azure Monitor workbooks to get insights on how users have been recei
 
     ![View access package events](./media/entitlement-management-logs-and-reporting/view-events-access-package.png)
 
-1. To see if there have been changes to application role assignments for an application that weren't created due to access package assignments, then you can select the workbook named *Application role assignment activity*.  If you select to omit entitlement activity, then only changes to application roles that weren't made by entitlement management are shown. For example, you would see a row if a global administrator had directly assigned a user to an application role.
+1. To see if there have been changes to application role assignments for an application that weren't created due to access package assignments, then you can select the workbook named *Application role assignment activity*.  If you select to omit entitlement activity, then only changes to application roles that weren't made by entitlement management are shown. For example, you would see a row if a Global Administrator had directly assigned a user to an application role.
 
     ![View app role assignments](./media/entitlement-management-access-package-incompatible/workbook-ara.png)
 

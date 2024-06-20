@@ -657,6 +657,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-ios-sign-in-with-username-password.md",
+      "redirect_url": "/entra/external-id/customers/tutorial-native-authentication-ios-sign-in-sign-out",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity/managed-identities-azure-resources/qs-configure-portal-windows-vm.md",
       "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-configure-managed-identities",
       "redirect_document_id": false

@@ -28,7 +28,7 @@ An external tenant can contain the following user types:
 
 ## Default permissions
 
-The following table describes the default permissions assigned to a user in an external tenant customer:
+The following table describes the default permissions assigned to a user in an external tenant, including:
 
 - Users who use self-service sign-up
 - Users who are created by administrators

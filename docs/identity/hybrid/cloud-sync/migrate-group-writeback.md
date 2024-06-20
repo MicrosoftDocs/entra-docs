@@ -32,7 +32,7 @@ For more information, see the [Provisioning to Active Directory with Microsoft E
 ## Prerequisites
 The following prerequisites are required to implement this scenario.
 
- - Microsoft Entra account with at least a [Hybrid Administrator](../../role-based-access-control/permissions-reference.md#hybrid-identity-administrator) role.
+ - Microsoft Entra account with at least a [Hybrid Identity Administrator](../../role-based-access-control/permissions-reference.md#hybrid-identity-administrator) role.
  - An on-premises AD account with at least domain administrator permissions - required to access the adminDescription attribute and copy it to the msDS-ExternalDirectoryObjectId attribute
  - On-premises Active Directory Domain Services environment with Windows Server 2016 operating system or later. 
      - Required for AD Schema attribute  - msDS-ExternalDirectoryObjectId 
@@ -134,7 +134,7 @@ In the Microsoft Entra Connect Synchronization Rules editor, you need to create 
     - **Connected System Object Type:** Group
     - **Metaverse Object Type:** Group
     - **Link Type:** Join
-    - **Precedence:** Provide a value that is unique in the system
+    - **Precedence:** Provide a value that is unique in the system. Lower than 100 is recommended, so that it takes precedence over the default rules.
     - **Tag:** Leave empty
 
       :::image type="content" source="media/migrate-group-writeback/migrate-5.png" alt-text="Screenshot of inbound sync rule." lightbox="media/migrate-group-writeback/migrate-5.png":::
@@ -170,7 +170,7 @@ You'll also need an outbound sync rule with a link type of JoinNoFlow and the sc
     - **Connected System Object Type:** Group
     - **Metaverse Object Type:** Group
     - **Link Type:** JoinNoFlow
-    - **Precedence:** Provide a value that is unique in the system
+    - **Precedence:** Provide a value that is unique in the system. Lower than 100 is recommended, so that it takes precedence over the default rules.
     - **Tag:** Leave empty
 
 

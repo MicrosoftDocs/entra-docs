@@ -87,7 +87,7 @@ To configure Google federation by using PowerShell, follow these steps:
 
 1. Install the latest version of the [Microsoft Graph PowerShell for Graph module](/powershell/microsoftgraph/installation).
 1. Run the following command: `Connect-MgGraph`
-1. At the sign-in prompt, sign in with the managed Global Administrator account.
+1. At the sign-in prompt, sign in as at least an [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
 1. Run the following command:
 
    ```powershell
