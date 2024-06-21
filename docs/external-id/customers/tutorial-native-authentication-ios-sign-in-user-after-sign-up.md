@@ -17,7 +17,7 @@ ms.custom: developer
 
 # Tutorial: Sign in user automatically after sign-up in an iOS app 
 
-This tutorial demonstrates how to sign in user automatically after sign-up in an Android app by using native authentication. 
+This tutorial demonstrates how to sign in user automatically after sign-up in an iOS app by using native authentication. 
 
 In this tutorial, you learn how to:  
 
