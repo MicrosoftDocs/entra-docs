@@ -5,7 +5,7 @@ description: Shows how an administrator can use the Microsoft Entra admin center
  
 ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 01/23/2024
+ms.date: 06/21/2024
 
 ms.author: mimart
 author: msmimart
