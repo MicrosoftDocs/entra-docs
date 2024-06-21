@@ -234,6 +234,7 @@ extension ViewController: CredentialsDelegate {
 
 ```
 
-## Next steps 
-
-[Tutorial: Support web fallback](tutorial-native-authentication-ios-support-web-fallback.md) 
+## Next step
+ 
+> [!div class="nextstepaction"]
+> [Tutorial: Support web fallback](tutorial-native-authentication-ios-support-web-fallback.md) 

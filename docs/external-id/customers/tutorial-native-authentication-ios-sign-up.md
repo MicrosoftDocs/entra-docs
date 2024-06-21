@@ -271,6 +271,11 @@ func onSignUpStartError(error: MSAL.SignUpStartError) {
 }
 ```
 
-## Next steps
+## Optional: Sign in after a sign-up flow
 
-[Add sign in and sign out with email one-time passcode](tutorial-native-authentication-ios-sign-in-sign-out.md). 
+After a successful sign-up flow, you can sign-in a user without initiating a sign-in flow. Learn more in the [Tutorial: Sign in user automatically after sign-up in an iOS app](tutorial-native-authentication-ios-sign-in-user-after-sign-up.md) article.
+
+## Next step
+
+> [!div class="nextstepaction"]
+> [Tutorial: Add sign-in and sign-out in iOS app by using native authentication](tutorial-native-authentication-ios-sign-in-sign-out.md). 

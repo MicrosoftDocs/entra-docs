@@ -90,6 +90,7 @@ MSALGlobalConfig.loggerConfig.setLogCallback { logLevel, message, containsPII in
 
 This outputs all debug logs from MSAL, which can be helpful in diagnosing issues and learning how the native authentication flows work. To learn more about configuring log levels and best practices see [Logging in MSAL for iOS/macOS](/entra/msal/objc/logging-ios?tabs=swift).
 
-## Next steps
+## Next step
 
-- [Tutorial: Add sign up with email one-time passcode](tutorial-native-authentication-ios-sign-up.md)
+> [!div class="nextstepaction"]
+> [Tutorial: Add sign-up in an iOS mobile app using native authentication](tutorial-native-authentication-ios-sign-up.md)

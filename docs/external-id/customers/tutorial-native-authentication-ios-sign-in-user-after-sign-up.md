@@ -15,7 +15,7 @@ ms.custom: developer
 #Customer intent: As a dev, devops, I want to learn how to automatically sign-in a user after sign-up in an iOS app by using native authentication.
 ---
 
-# Tutorial: Sign in user automatically after sign-up in an iOS app 
+# Tutorial: Sign in user automatically after sign-up in an iOS app
 
 This tutorial demonstrates how to sign in user automatically after sign-up in an iOS app by using native authentication. 
 
@@ -84,6 +84,7 @@ extension ViewController: CredentialsDelegate {
 
 ```
 
-## Next steps 
+## Next step 
 
-- [Tutorial: Self-service password reset](tutorial-native-authentication-ios-self-service-password-reset.md) 
+> [!div class="nextstepaction"]
+> [Tutorial: Self-service password reset](tutorial-native-authentication-ios-self-service-password-reset.md) 
