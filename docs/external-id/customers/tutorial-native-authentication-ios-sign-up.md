@@ -151,7 +151,7 @@ Whether you sign up a user using email one-time passcode or username (email) and
 
     The `signUp(username:attributes:delegate)` or `ignUp(username:password:attributes:delegate)` results in a call to either `onSignUpCodeRequired()` or `onSignUpStartError()` delegate methods, or in a call to `onSignUpAttributesInvalid(attributeNames: [String])` if it's implemented in the delegate.
 
-1. To implement the SignUpStartDelegate protocol as an extension to our class, use the following code snippet:
+1. To implement the `SignUpStartDelegate` protocol as an extension to our class, use the following code snippet:
     
     ```swift
     extension ViewController: SignUpStartDelegate {
@@ -174,7 +174,7 @@ Whether you sign up a user using email one-time passcode or username (email) and
     }
     ```
     
-    If the attributes are invalid, the method `onSignUpAttributesInvalid(attributeNames: [String])` is called. In this case, we display the list of invalid attributes to the user. Otherwise, the `onSignUpCodeRequired(newState:sentTo:channelTargetType:codeLength)` is called to indicate that a code has been sent to verify the user's email address. Apart from details such as the recipient of the code, and number of digits of the code, this delegate method has a newState parameter of type `SignUpCodeRequiredState`, which gives us access to two new methods:
+    If the attributes are invalid, the method `onSignUpAttributesInvalid(attributeNames: [String])` is called. In this case, we display the list of invalid attributes to the user. Otherwise, the `onSignUpCodeRequired(newState:sentTo:channelTargetType:codeLength)` is called to indicate that a code has been sent to verify the user's email address. Apart from details such as the recipient of the code, and number of digits of the code, this delegate method has a `newState` parameter of type `SignUpCodeRequiredState`, which gives us access to two new methods:
 
     - `submitCode(code:delegate)`
     - `resendCode(delegate)`
@@ -242,8 +242,8 @@ extension ViewController: SignUpAttributesRequiredDelegate {
 
 When the user doesn't provide all the required attributes, or the attributes are invalid, these delegate methods are called: 
 
-- onSignUpAttributesInvalid: indicates that one or more attributes that were sent failed input validation. This error contains an attributeNames parameter, which is a list of all attributes that were sent by the developer that failed input validation. 
-- onSignUpAttributesRequired: indicates that the server requires one or more attributes to be sent, before the user account can be created. This happens when one or more attributes is set as mandatory in the tenant configuration. This result contains attributes parameter, which is a list of `MSALNativeAuthRequiredAttribute` objects, which outline details about the user attributes that the API requires. 
+- `onSignUpAttributesInvalid`: indicates that one or more attributes that were sent failed input validation. This error contains an attributeNames parameter, which is a list of all attributes that were sent by the developer that failed input validation. 
+- `onSignUpAttributesRequired`: indicates that the server requires one or more attributes to be sent, before the user account can be created. This happens when one or more attributes is set as mandatory in the tenant configuration. This result contains attributes parameter, which is a list of `MSALNativeAuthRequiredAttribute` objects, which outline details about the user attributes that the API requires. 
  
 Both delegate methods contain a new state reference. We use the `newState` parameter to call `submitAttributes(attributes:delegate)` again with the new attributes. 
 
