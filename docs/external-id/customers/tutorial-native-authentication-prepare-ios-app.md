@@ -1,6 +1,6 @@
 ---
 title: Prepare your iOS app for native authentication
-description: Learn how to prepare your iOS app for native authentication using Microsoft Entra External ID.
+description:  Learn how to add Microsoft Authentication Library (MSAL) native auth SDK framework to your iOS application.
 
 author: henrymbuguakiarie
 manager: mwongerapk
@@ -21,8 +21,10 @@ This tutorial demonstrates how to add Microsoft Authentication Library (MSAL) na
 
 In this tutorial, you learn how to:
 
-- Add the MSAL framework to an iOS app.
-- Create SDK instance.
+> [!div class="checklist"]
+>
+> - Add the MSAL framework to an iOS app.
+> - Create SDK instance.
 
 ## Prerequisites
 
