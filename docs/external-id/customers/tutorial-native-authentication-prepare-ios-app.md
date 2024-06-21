@@ -73,6 +73,15 @@ For more information and other mechanisms to add MSAL to your project, see the [
 1. Replace the following values with the values from the Microsoft Entra admin center:
    1. Find the `Enter_the_Application_Id_Here` value and replace it with the **Application (client) ID** of the app you registered earlier.
    1. Find the `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your Directory (tenant) subdomain, learn how to [read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
+   
+      The challenge types are a list of values, which the app uses to notify Microsoft Entra about the authentication method that it supports. 
+    
+      - For sign-up and sign-in flows with email one-time passcode, use `[.OOB]`.
+      - For sign-up and sign-in flows with email and password, use `[.OOB, .password]`.
+      - For self-service password reset (SSPR), use `[.OOB]`.
+
+       Learn more [challenge types](concept-native-authentication-challenge-types.md).
+
 1. To build, select the **Product** > **Build** in your project’s toolbar.
 
 ### Optional: Logging configuration
