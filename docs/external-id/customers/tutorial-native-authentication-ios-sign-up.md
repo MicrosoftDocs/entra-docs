@@ -65,7 +65,7 @@ To sign up a user, you need to:
         nativeAuth.signUp(username: email, delegate: self)
         ```
     
-       In the `signUp(username:delegate)` method, we pass the email address that the user provides in the email submission form and pass `self` for the delegate.
+       In the `signUp(username:delegate)` method, we pass the user's email address from the submission form and the delegate (a class that implements the `SignUpStartDelegate` protocol).
     
     - To sign up a user using **Email with password**, use the following code snippets:
 
@@ -80,14 +80,14 @@ To sign up a user, you need to:
         }
         ```
         
-        We use the `signUp(username:password:delegate)` method, which responds asynchronously by calling one of the methods on the passed delegate object, which must implement the `SignUpStartDelegate` protocol.
+        We use the `signUp(username:password:delegate)` method, which responds asynchronously by calling one of the methods on the passed delegate object, which must implement the `SignUpStartDelegate` protocol. The following line of code initiates the user sign-up process:
         
 
         ```swift
         nativeAuth.signUp(username: email, password: password, delegate: self)
         ```
     
-        In the `signUp(username:password:delegate)` method, we pass in the email address that the user supplied us with, their password, and pass `self` for the delegate.
+        In the `signUp(username:password:delegate)` method, we pass the user's email address, their password, and the delegate (a class that implements the `SignUpStartDelegate` protocol).
 
     - To implement `SignUpStartDelegate` protocol as an extension to our class, use:
 
