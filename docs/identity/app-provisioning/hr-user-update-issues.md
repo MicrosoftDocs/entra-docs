@@ -83,7 +83,6 @@ Switch([BusinessTitle],[BusinessTitle],"","N/A")
 | **Cause** | The provisioning connector to Microsoft Entra supports setting the mail attribute only during user creation. Once the user is created, the connector doesn't support updating the email address. |
 | **Resolution** | To update the mail attribute for existing users, consider using Exchange Online portal or PowerShell. |
 
-
 ## Provisioning Last Day of Work field from Workday
 **Applies to:**
 * Workday to on-premises Active Directory user provisioning
