@@ -58,8 +58,7 @@ To sign up a user, you need to:
     }
     ```
 
-    - To sign up a user using **Email one-time-passcode**, we use the library's `signUp(username:delegate)` method, which responds asynchronously by calling one of the methods on the passed delegate object, which must implement the `SignUpStartDelegate` protocol.
-    - The following line of code initiates the user sign-up process:
+    - To sign up a user using **Email one-time-passcode**, we use the library's `signUp(username:delegate)` method, which responds asynchronously by calling one of the methods on the passed delegate object, which must implement the `SignUpStartDelegate` protocol. The following line of code initiates the user sign-up process:
     
         ```swift
         nativeAuth.signUp(username: email, delegate: self)
@@ -80,7 +79,7 @@ To sign up a user, you need to:
         }
         ```
         
-        We use the `signUp(username:password:delegate)` method, which responds asynchronously by calling one of the methods on the passed delegate object, which must implement the `SignUpStartDelegate` protocol. The following line of code initiates the user sign-up process:
+        we use the library's `signUp(username:password:delegate)` method, which responds asynchronously by calling one of the methods on the passed delegate object, which must implement the `SignUpStartDelegate` protocol. The following line of code initiates the user sign-up process:
         
 
         ```swift
