@@ -70,18 +70,17 @@ For more information, see the [connectivity prerequisites for Microsoft Entra Co
 ### Check if TLS 1.2 is enabled
  
 An additional troubleshooting step is to check that TLS 1.2 is enabled correctly on the Sync Server.
-Run [PowerShell Script to check TLS 1.2 on Entra Connect Server](/entra/identity/hybrid/connect/reference-connect-tls-enforcement#powershell-script-to-check-tls-12). Make sure to run in Admin Mode.
+Run [PowerShell Script to check TLS 1.2 on Entra Connect Server](/entra/identity/hybrid/connect/reference-connect-tls-enforcement#powershell-script-to-check-tls-12). Make sure to run the script in Admin Mode.
  
 Output from check script that must look like the following image (the path, name and value columns) to be enabled correctly. If it doesn't, run the [PowerShell Script to enable TLS 1.2 on Entra Connect Server](/entra/identity/hybrid/connect/reference-connect-tls-enforcement#powershell-script-to-enable-tls-12)/ Then reboot the server, and run script to check TLS 1.2 again.
  
-:::image type="content" source="./media/troubleshoot-sspr-writeback/output.png" alt-text="Screenshot of a sample output that shows TLS 1.2 is enabled" border="false":::
  
 ### Make sure Microsoft .NET Framework 4.8 or higher is enabled (Sync Server)
 Make sure Microsoft .NET Framework 4.8 or higher is enabled on the Sync Server.
  
-[How to check that .NET is already installed](/dotnet/core/install/how-to-detect-installed-versions)
-[Query the registry using PowerShell](/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed#query-the-registry-using-powershell)
-[Download .NET framework](/download/dotnet-framework/net48)
+- [How to check that .NET is already installed](/dotnet/core/install/how-to-detect-installed-versions)
+- [Query the registry using PowerShell](/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed#query-the-registry-using-powershell)
+- [Download .NET framework](https://dotnet.microsoft.com/download/dotnet-framework/net48)
 
 <a name='restart-the-azure-ad-connect-sync-service'></a>
 
