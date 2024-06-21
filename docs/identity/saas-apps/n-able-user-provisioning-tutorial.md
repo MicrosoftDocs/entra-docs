@@ -81,6 +81,8 @@ This section guides you through the steps to configure the Microsoft Entra provi
 	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
 
 1. In the **Admin Credentials** section, enter the **Tenant Url** and then click on Authorize, make sure that you enter your N-able User Provisioning account's Admin credentials. Click **Test Connection** to ensure Microsoft Entra ID can connect to N-able User Provisioning. If the connection fails, ensure your N-able User Provisioning account has Admin permissions and try again.
+	> [!NOTE]
+	> To use the OAuth2 flow, users should use the https://portal.azure.com/?feature.userProvisioningV2Authentication=true url to access the Azure portal.
 
  	![Screenshot of Token.](common/provisioning-testconnection-tenanturltoken.png)
 
