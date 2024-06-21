@@ -42,14 +42,14 @@ To sign up a user, you need to:
    - Collect a password if you sign up with username (email) and password.
    - Collect an email one-time passcode from the user.
    - If needed, collect user attributes.
-   - Resend one-time passcode (recommended).
+   - Resend one-time passcode if the user doesn't receive it.
    - Start sign-up flow.
 
 1. In your app, add a button, whose select event triggers the following code snippet: 
 
     ```swift
     @IBAction func signUpPressed(_: Any) {
-        guard let email = emailTextField.text, let password = passwordTextField.text else {
+        guard let email = emailTextField.text else {
             resultTextView.text = "Email or password not set"
             return
         }
@@ -65,15 +65,29 @@ To sign up a user, you need to:
         nativeAuth.signUp(username: email, delegate: self)
         ```
     
-       In the `signUp(username:delegate)` method, we pass the email address that the user provides in the email submission form and pass self as the delegate.
+       In the `signUp(username:delegate)` method, we pass the email address that the user provides in the email submission form and pass `self` for the delegate.
     
     - To sign up a user using **Email with password**, use the following code snippets:
+
+        ```swift
+        @IBAction func signUpPressed(_: Any) {
+            guard let email = emailTextField.text, let password = passwordTextField.text else {
+                resultTextView.text = "Email or password not set"
+                return
+            }
+    
+            nativeAuth.signUp(username: email,password: password,delegate: self)
+        }
+        ```
+        
+        We use the `signUp(username:password:delegate)` method, which responds asynchronously by calling one of the methods on the passed delegate object, which must implement the SignUpStartDelegate protocol.
+        
 
         ```swift
         nativeAuth.signUp(username: email, password: password, delegate: self)
         ```
     
-        In the `signUp(username:password:delegate)` method, we pass in the email address that the user supplied us with, their password, and pass self for the delegate.
+        In the `signUp(username:password:delegate)` method, we pass in the email address that the user supplied us with, their password, and pass `self` for the delegate.
 
     - To implement `SignUpStartDelegate` protocol as an extension to our class, use:
 
