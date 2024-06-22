@@ -3,7 +3,7 @@ title: Simulate remote network connectivity using Azure vWAN
 description: Use Global Secure Access to configure Azure and Entra resources to create a virtual wide area network to connect to your resources in Azure.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 06/20/2024
+ms.date: 06/21/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -118,7 +118,7 @@ To create a remote network in the Microsoft Entra admin center, you need to view
                     ],
                     "customBgpIpAddresses": [],
                     "tunnelIpAddresses": [
-                        "172.206.158.63",
+                        "203.0.113.250",
                         "10.101.0.4"
                     ]
                 },
@@ -129,7 +129,7 @@ To create a remote network in the Microsoft Entra admin center, you need to view
                     ],
                     "customBgpIpAddresses": [],
                     "tunnelIpAddresses": [
-                        "172.206.158.38",
+                        "203.0.113.251",
                         "10.101.0.5"
                     ]
                 }
@@ -148,13 +148,13 @@ In this step, use the network information from the VPN gateway to create a remot
     - **Name**: For this example, use Azure_vWAN.
     - **Region**: For this example, select **South Central US**.
 1. Select **Next: Connectivity** to proceed to the **Connectivity** tab.
-:::image type="content" source="media/how-to-create-remote-network-vwan/vwan-entra-create-remote-network-basicstab.png" alt-text="Screenshot of the Create a remote network page on the Basics tab, with the Next: Connectivity button highlighted." lightbox="media/how-to-create-remote-network-vwan/vwan-entra-create-remote-network-basicstab-expanded.png":::
+:::image type="content" source="media/how-to-create-remote-network-vwan/entra-create-remote-network-basics-tab.png" alt-text="Screenshot of the Create a remote network page on the Basics tab, with the Next: Connectivity button highlighted." lightbox="media/how-to-create-remote-network-vwan/entra-create-remote-network-basics-tab-expanded.png":::
 1. On the **Connectivity** tab, add device links for the remote network. Create one link for the VPN gateway's *Instance0* and another link for the VPN gateway's *Instance1*:
     1. Select **+ Add a link**.
     1. Complete the fields on the **General** tab in the **Add a link** form, using the VPN gateway's *Instance0* configuration from the JSON view:
         - **Link name**: Name of your Customer Premises Equipment (CPE). For this example, **Instance0**.
         - **Device type**: Choose a device option from the dropdown list. Set to **Other**.
-        - **IP address**: Public IP address of your device. For this example, use **172.206.158.63**.
+        - **IP address**: Public IP address of your device. For this example, use **203.0.113.250**.
         - **Local BGP address**: Use a BGP IP address that *isn't* part of your on-premises network where your CPE resides, such as **192.168.10.10**.
         - **Peer BGP address**: Enter the BGP IP address of your CPE. For this example, **10.101.0.4**.
         - **Link ASN**: Provide the autonomous system number (ASN) of the CPE. For this example, the ASN is **65515**.
@@ -175,7 +175,7 @@ For more information about links, see the article, [How to manage remote network
     1. Complete the fields on the **General** tab in the **Add a link** form, using the VPN gateway's *Instance1* configuration from the JSON view:
         - **Link name**: Instance1
         - **Device type**: Other
-        - **IP address**: 172.206.158.38
+        - **IP address**: 203.0.113.251
         - **Local BGP address**: 192.168.10.11
         - **Peer BGP address**: 10.101.0.5
         - **Link ASN**: 65515
@@ -192,7 +192,7 @@ For more information about links, see the article, [How to manage remote network
 
 Navigate to the Remote network page to view the details of the new remote network. There should be one **Region** and two **Links**. 
 1. Under **Connectivity details**, select the **View configuration** link.
-:::image type="content" source="media/how-to-create-remote-network-vwan/vwan-view-config.png" alt-text="Screenshot of the Remote network page with the newly created region, its two links, and the View configuration link highlighted." lightbox="media/how-to-create-remote-network-vwan/vwan-view-config-expanded.png":::
+:::image type="content" source="media/how-to-create-remote-network-vwan/vwan-view-configuration.png" alt-text="Screenshot of the Remote network page with the newly created region, its two links, and the View configuration link highlighted." lightbox="media/how-to-create-remote-network-vwan/vwan-view-configuration-expanded.png":::
 1. Copy the Remote network configuration text into a file for reference in upcoming steps. Make note of the **Endpoint**, **ASN**, and **BGP address** for each of the links (**Instance0** and **Instance1**).
     ```json
        {
@@ -200,14 +200,14 @@ Navigate to the Remote network page to view the details of the new remote networ
       "displayName": "Instance0",
       "localConfigurations": [
         {
-          "endpoint": "4.151.198.103",
+          "endpoint": "203.0.113.32",
           "asn": 65476,
           "bgpAddress": "192.168.10.10",
           "region": "southCentralUS"
         }
       ],
       "peerConfiguration": {
-        "endpoint": "20.236.157.94",
+        "endpoint": "203.0.113.33",
         "asn": 65515,
         "bgpAddress": "10.101.0.4"
       }
@@ -217,14 +217,14 @@ Navigate to the Remote network page to view the details of the new remote networ
       "displayName": "Instance1",
       "localConfigurations": [
         {
-          "endpoint": "20.225.201.95",
+          "endpoint": "203.0.113.34",
           "asn": 65476,
           "bgpAddress": "192.168.10.11",
           "region": "southCentralUS"
         }
       ],
       "peerConfiguration": {
-        "endpoint": "20.236.157.81",
+        "endpoint": "203.0.113.35",
         "asn": 65515,
         "bgpAddress": "10.101.0.5"
       }
@@ -244,10 +244,10 @@ In this step, create a VPN site, associate the VPN site with the hub, and then v
     - **Link name**: For this example, **Instance0**; **Instance1**.
     - **Link speed**: For this example, **250** for both links.
     - **Link provider name**: Set to **Other** for both links.
-    - **Link IP address / FQDN**: Use the Endpoint address. For this example, **4.151.198.103**; **20.255.201.95**.
+    - **Link IP address / FQDN**: Use the Endpoint address. For this example, **203.0.113.32**; **203.0.113.34**.
     - **Link BGP address**: Use the BGP address, **192.168.10.10**; **192.168.10.11**.
     - **Link ASN**: Use the ASN. For this example, **65476** for both links.
-:::image type="content" source="media/how-to-create-remote-network-vwan/create-vwan-create-new-vpn-site-links-enhanced.png" alt-text="Screenshot of the Create VPN page, on the Links tab, with completed fields." lightbox="media/how-to-create-remote-network-vwan/create-vwan-create-new-vpn-site-links-expanded.png"::: 
+:::image type="content" source="media/how-to-create-remote-network-vwan/create-vwan-create-new-vpn-site-links-enhanced.png" alt-text="Screenshot of the Create VPN page, on the Links tab, with completed fields."::: 
 1. Select **Review + create**.
 1. Select **Create**.
 
@@ -391,7 +391,7 @@ To test (option 2):
 1. In Microsoft Entra admin center, navigate to **Global Secure Access (Preview)** > **Monitor** > **Remote network health logs**.
 1. Select **Add Filter**. 
 1. Select **Source IP** and type the VPN gateway public IP address. Select **Apply**.
-:::image type="content" source="media/how-to-create-remote-network-vwan/test-option-one.png" alt-text="Screenshot of the Remote network health logs page with the Add filter menu open ready to type the Source IP." lightbox="media/how-to-create-remote-network-vwan/test-option-one-expanded.png":::
+:::image type="content" source="media/how-to-create-remote-network-vwan/remote-network-health-logs-filter.png" alt-text="Screenshot of the Remote network health logs page with the Add filter menu open ready to type the Source IP.":::
 
 The system restores the branch office's customer premises equipment (CPE) IP address. Because the VPN gateway represents the CPE, the health logs show the public IP address of the VPN gateway, not the proxy's IP address.
 
