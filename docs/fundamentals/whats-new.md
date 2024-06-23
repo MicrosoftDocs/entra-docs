@@ -128,7 +128,7 @@ Upgrade to the latest versions of Microsoft Entra Connect Sync and Microsoft Ent
 
  
 
-See documentation here: Security improvements to the auto-upgrade process for upgrade-related guidance and further details on the expected impacts of the service change.
+See documentation here: [Security improvements to the auto-upgrade process](https://review.learn.microsoft.com/en-us/entra/identity/hybrid/connect/security-updates-pks?branch=pr-en-us-3827) for upgrade-related guidance and further details on the expected impacts of the service change.
 
 ---
 
