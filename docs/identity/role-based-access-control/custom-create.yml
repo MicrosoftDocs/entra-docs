@@ -51,11 +51,9 @@ procedureSection:
       - |
         On the **Basics** tab, provide a name and description for the role.
 
-          ![provide a name and description for a custom role on the Basics tab](./media/custom-create/basics-tab.png)
-      - |
-        For **Baseline permissions**, select **Start from scratch** or **Clone from a custom role**.
+          You can clone the baseline permissions from a custom role but you can't clone a built-in role.
 
-          You can clone custom roles but you can't clone built-in roles.
+          ![provide a name and description for a custom role on the Basics tab](./media/custom-create/basics-tab.png)
       - |
         On the **Permissions** tab, select the permissions necessary to manage basic properties and credential properties of app registrations. For a detailed description of each permission, see [Application registration subtypes and permissions in Microsoft Entra ID](custom-available-permissions.md).
           1. First, enter "credentials" in the search bar and select the `microsoft.directory/applications/credentials/update` permission.
