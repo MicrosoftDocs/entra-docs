@@ -49,6 +49,9 @@ Microsoft Entra Registration isn't the same as device enrollment. If Administrat
 
 Microsoft Entra registration can be accomplished when accessing a work application for the first time or manually using the Windows 10 or Windows 11 Settings menu.
 
+> [!NOTE]  
+> Microsoft Entra registered devices support personal devices. Whereas, the Microsoft Entra joined devices support corporate-owned assets. Both of them help administrators to protect assets and that devices meet standards for security and compliance.
+
 ## Scenarios
 
 A user in your organization wants to access your benefits enrollment tool from their home PC. Your organization requires that anyone accesses this tool from an Intune compliant device. The user registers their home PC with Microsoft Entra ID and Enrolls the device in Intune, then the required Intune policies are enforced giving the user access to their resources.
