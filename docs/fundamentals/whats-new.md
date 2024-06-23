@@ -194,7 +194,7 @@ In addition to providing global SLA performance, Microsoft Entra ID reports tena
 **Service category:** Entitlement Management
 **Product capability:** Entitlement Management
 
-As we continue to design governance features to help our customers stay ahead of the evolving threat landscape, today we're thrilled to announce the general availability of B2B Sponsors support in Entitlement Management! Sponsors as approvers in Entitlement Management is our first experience in using this attribute where access requests made by guests can be directed to Sponsors for approval. This capability is a part of the Microsoft Entra ID Governance license. For more information, see: [Single-stage approval](/id-governance/entitlement-management-access-package-create.md#single-stage-approval).
+As we continue to design governance features to help our customers stay ahead of the evolving threat landscape, today we're thrilled to announce the general availability of B2B Sponsors support in Entitlement Management! Sponsors as approvers in Entitlement Management is our first experience in using this attribute where access requests made by guests can be directed to Sponsors for approval. This capability is a part of the Microsoft Entra ID Governance license. For more information, see: [Single-stage approval](../id-governance/entitlement-management-access-package-create.md#single-stage-approval).
 
 ---
 
