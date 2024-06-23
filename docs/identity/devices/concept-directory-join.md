@@ -52,6 +52,10 @@ Microsoft Entra join can be accomplished using self-service options like the Out
 
 Microsoft Entra joined devices can still maintain single sign-on access to on-premises resources when they are on the organization's network. Devices that are Microsoft Entra joined can still authenticate to on-premises servers like file, print, and other applications.
 
+> [!NOTE]  
+> Microsoft Entra registered devices support personal devices. Whereas, the Microsoft Entra joined devices support corporate-owned assets. Both of them help administrators to protect assets and that devices meet standards for security and compliance.
+
+
 ## Scenarios
 
 Microsoft Entra join can be used in various scenarios like:
