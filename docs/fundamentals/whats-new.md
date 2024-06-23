@@ -85,7 +85,7 @@ The issuer hints feature improves user experience by helping users easily identi
 **Service category:** Authentications (Logins)    
 **Product capability:** User Authentication    
 
-**[No action is required] **
+**No action is required**
 
 As part of our ongoing commitment to security, we're announcing upcoming enhancements to the Microsoft Entra ID device code flow. These improvements aim to provide a more secure and efficient authentication experience. 
 
@@ -190,9 +190,9 @@ In addition to providing global SLA performance, Microsoft Entra ID reports tena
 
 ### General Availability - Sponsors support in EM
 
-**Type:** New feature
-**Service category:** Entitlement Management
-**Product capability:** Entitlement Management
+**Type:** New feature    
+**Service category:** Entitlement Management    
+**Product capability:** Entitlement Management    
 
 As we continue to design governance features to help our customers stay ahead of the evolving threat landscape, today we're thrilled to announce the general availability of B2B Sponsors support in Entitlement Management! Sponsors as approvers in Entitlement Management is our first experience in using this attribute where access requests made by guests can be directed to Sponsors for approval. This capability is a part of the Microsoft Entra ID Governance license. For more information, see: [Single-stage approval](../id-governance/entitlement-management-access-package-create.md#single-stage-approval).
 
@@ -200,9 +200,9 @@ As we continue to design governance features to help our customers stay ahead of
 
 ### General Availability - B2B Sponsors as an Attribute and Approvers in Entitlement Management!
 
-**Type:** New feature
-**Service category:** B2B
-**Product capability:** B2B/B2C
+**Type:** New feature    
+**Service category:** B2B    
+**Product capability:** B2B/B2C    
 
 As we continue to design governance features to help our customers stay ahead of the evolving threat landscape, today we're thrilled to announce the general availability of B2B Sponsors!
 
@@ -212,9 +212,9 @@ Sponsors are responsible to manage and monitor the lifecycle of users and ensure
 
 ### Public Preview - Traffic Forwarding Profiles - User Assignment Support
 
-**Type:** New feature
-**Service category:** Other
-**Product capability:** Network Access
+**Type:** New feature    
+**Service category:** Other    
+**Product capability:** Network Access    
 
 With the traffic forwarding profiles in Global Secure Access (preview), you can apply policies to the network traffic that your organization needs to secure and manage. Network traffic is evaluated against the traffic forwarding rules you configure. The rules are applied, and the traffic goes through the service to the appropriate apps and resources.
 
