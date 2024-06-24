@@ -99,6 +99,8 @@ The application uses the [Implicit Grant Flow](~/identity-platform/v2-oauth2-imp
       - In **Authority**, find `Enter_the_Tenant_Subdomain_Here` and replace it with the subdomain of your tenant. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, [learn how to read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
 2. Save the file.
 
+[!INCLUDE [external-id-custom-domain](./includes/use-custom-domain-url.md)]
+
 ## Adding code to the redirection file
 
 A redirection file is required to handle the response from the sign-in page. It is used to extract the access token from the URL fragment and use it to call the protected API. It is also used to handle errors that occur during the authentication process.
