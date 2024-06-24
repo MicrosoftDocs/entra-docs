@@ -53,7 +53,7 @@ This article discusses Microsoft Entra services' licensing. It is intended for I
 
 ## Microsoft Entra Internet Access
 
-[Microsoft Entra Internet Access]((../global-secure-access/overview-what-is-global-secure-access.md)) is available as part of the Microsoft Entra Suite.
+[Microsoft Entra Internet Access](../global-secure-access/overview-what-is-global-secure-access.md) is available as part of the Microsoft Entra Suite.
 
 ## Microsoft Entra monitoring and health
 
