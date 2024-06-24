@@ -51,9 +51,17 @@ This article discusses Microsoft Entra services' licensing. It is intended for I
 
 [!INCLUDE [Microsoft Entra ID Protection](../includes/licensing-identity-protection.md)]
 
+## Microsoft Entra Internet Access
+
+Microsoft Entra Internet Access is available as part of the Microsoft Entra Suite.
+
 ## Microsoft Entra monitoring and health
 
 [!INCLUDE [Microsoft Entra monitoring and health](../includes/licensing-monitoring-health.md)]
+
+## Microsoft Entra Private Access
+
+[Microsoft Entra Private access](../global-secure-access/) is available as part of the Microsoft Entra Suite.
 
 ## Microsoft Entra Privileged Identity Management
 
