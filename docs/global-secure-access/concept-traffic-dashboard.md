@@ -53,7 +53,7 @@ This widget provides a summary of how many users and devices are using the servi
 
 ![Screenshot of the Global Secure Access snapshot widget.](media/concept-traffic-dashboard/snapshot.png)
 
-The **Global Secure Access snapshot** defaults to showing all types of traffic, but you can change the filter to show Internet Access, Private Access, or Microsoft 365 traffic.
+The **Global Secure Access snapshot** defaults to showing all types of traffic, but you can change the filter to show Internet Access, Private Access, or Microsoft traffic.
 
 ![Screenshot of the Global Secure Access snapshot widget with the filter open.](media/concept-traffic-dashboard/snapshot-filter.png)
 
@@ -102,7 +102,7 @@ The top-visited destinations defaults to all types of traffic and sorts by the n
 
 ![Screenshot of the top destinations widget with the number of transactions field highlighted.](media/concept-traffic-dashboard/top-destinations.png)
 
-Change the results to show all traffic or filter by Internet Access, Private Access, or Microsoft 365 traffic.
+Change the results to show all traffic or filter by Internet Access, Private Access, or Microsoft traffic.
 
 Select the **View all destinations** button to see more details about the destinations.
 
@@ -110,7 +110,7 @@ Select the **View all destinations** button to see more details about the destin
 
 Global Secure Access provides visibility into the number of users and devices that are accessing other tenants. This widget displays the following information:
 
-- **Sign-ins**: The number of sign-ins through Microsoft Entra ID to Microsoft 365 in the last 24 hours. This widget provides you with information about the activity in your tenant. 
+- **Sign-ins**: The number of sign-ins through Microsoft Entra ID to Microsoft services in the last 24 hours. This widget provides you with information about the activity in your tenant. 
 - **Total distinct tenants**: The number of distinct tenant IDs seen in the last 24 hours.
 - **Unseen tenants**: The number of distinct tenant IDs that were seen in the last 24 hours, but not in the previous seven days.
 - **Users**: The number of distinct user sign-ins to other tenants in the last 24 hours. 

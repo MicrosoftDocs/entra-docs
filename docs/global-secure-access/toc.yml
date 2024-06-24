@@ -58,8 +58,8 @@ items:
         items:
           - name: About Universal Conditional Access 
             href: concept-universal-conditional-access.md
-          - name: Microsoft 365 traffic
-            href: how-to-target-resource-microsoft-365-profile.md
+          - name: Microsoft traffic
+            href: how-to-target-resource-microsoft-profile.md
       - name: Compliant network check
         href: how-to-compliant-network.md
       - name: Private Access apps
@@ -73,8 +73,8 @@ items:
     items:
       - name: About traffic forwarding profiles
         href: concept-traffic-forwarding.md
-      - name: Manage the Microsoft 365 profile
-        href: how-to-manage-microsoft-365-profile.md
+      - name: Manage the Microsoft profile
+        href: how-to-manage-microsoft-profile.md
       - name: Manage the Private Access profile
         href: how-to-manage-private-access-profile.md
       - name: Assign users and groups to a profile

@@ -35,6 +35,16 @@ This page updates monthly, so revisit it regularly. If you're looking for items 
 
 ## May 2024
 
+### General Availability - Azure China now supports My sign-ins and MFA/SSPR Combined Registration
+
+**Type:** Changed feature    
+**Service category:** MFA        
+**Product capability:** Identity Security & Protection        
+
+Starting end of June 2024, all organizations utilizing Microsoft Azure in China (operated by 21Vianet) will now have access to My Sign-ins activity reporting, and will be required to use the combined security information registration end-user experience for MFA and SSPR. As result of enablement users will now see a unified SSPR and MFA registration experience when prompted to register for SSPR or MFA. For more information, see: [Combined security information registration for Microsoft Entra overview](../identity/authentication/concept-registration-mfa-sspr-combined.md). 
+
+---
+
 ### General Availability - $select in signIn API
 
 **Type:** New feature    
@@ -697,27 +707,5 @@ In January 2024 we added the following new applications in our App gallery with 
 You can also find the documentation of all the applications from here https://aka.ms/AppsTutorial.
 
 For listing your application in the Microsoft Entra ID app gallery, read the details here https://aka.ms/AzureADAppRequest.
-
----
-
-## December 2023
-
-### Public Preview - Configurable redemption order for B2B collaboration
-
-**Type:** New feature   
-**Service category:** B2B                     
-**Product capability:**  B2B/B2C             
-
-With configurable redemption, you can customize the order of identity providers that your guest users can sign in with when they accept your invitation. This lets your override the default configuration order set by Microsoft and use your own. This can be used to help with scenarios like prioritizing a SAML/WS-fed federation above a Microsoft Entra ID verified domain, disabling certain identity providers as an option during redemption, or even only using something like email one-time pass-code as a redemption option. For more information, see: [Configurable redemption (Preview)](../external-id/cross-tenant-access-overview.md#configurable-redemption).
-
----
-
-### General Availability - Edits to Dynamic Group Rule Builder
-
-**Type:** Changed feature   
-**Service category:** Group Management                     
-**Product capability:**  Directory             
-
-The dynamic group rule builder is updated to no longer include the '*contains*' and '*notContains*' operators, as they're less performant. If needed, you can still create dynamic group rules with those operators by typing directly into the text box. For more information, see: [Rule builder in the Azure portal](../identity/users/groups-dynamic-membership.md#rule-builder-in-the-azure-portal).
 
 ---

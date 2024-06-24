@@ -36,7 +36,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 * SCIM provisioning enabled in BlueJeans Enterprise.
 
 > [!NOTE]
-> The Microsoft Entra provisioning integration relies on the [BlueJeans API](https://BlueJeans.github.io/developer), which is available to BlueJeans teams on the Standard plan or better.
+> The Microsoft Entra provisioning integration relies on the BlueJeans API at `https://BlueJeans.github.io/developer`, which is available to BlueJeans teams on the Standard plan or better.
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
