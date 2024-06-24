@@ -12,16 +12,16 @@ ms.author: billmath
 
 # Security improvements to the auto-upgrade process 
 
-Since September 2023, we have been auto-upgrading Microsoft Entra Connect Sync and Microsoft Entra Connect Health customers to an updated build as part of a precautionary security-related service change. Customers who have been auto-upgraded will not be impacted by the service change, but if you opted out of auto-upgrade or auto-upgrade failed, we **strongly recommend** that you upgrade to the [latest versions](reference-connect-version-history.md) by **September 23, 2024**. 
+Since September 2023, we have been auto-upgrading Microsoft Entra Connect Sync and Microsoft Entra Connect Health customers to an updated build as part of a precautionary security-related service change. Customers who have been auto-upgraded won't be impacted by the service change, but if you opted out of auto-upgrade or auto-upgrade failed, we **strongly recommend** that you upgrade to the [latest versions](reference-connect-version-history.md) by **September 23, 2024**. 
 
 
 ## Expected impacts
-The following table provides information on the features and impact to services, you may encounter, if you are not on the minimum recommended versions.
+The following table provides information on the features and impact to services, you may encounter, if you aren't on the minimum recommended versions.
 
 |Service|Impact|
 |-----|-----|
-|Microsoft Entra Connect| Auto-upgrade will stop working.  Synchronization isn't impacted|
-|Microsoft Entra Connect Health Connect Sync agent|A subset of [alerts](how-to-connect-health-alert-catalog.md#alerts-for-microsoft-entra-connect-sync) are impacted: </br> - Connection to Microsoft Entra ID failed due to authentication failure </br> - High CPU usage detected</br> - High Memory Consumption Detected </br> - Password Hash Synchronization has stopped working </br> - Export to Microsoft Entra ID was Stopped. Accidental delete threshold was reached</br> - Password Hash Synchronization heartbeat was skipped in the last 120 minutes </br> - Microsoft Entra Sync service cannot start due to invalid encryption keys </br> - Microsoft Entra Sync service not running: Windows Service account Creds Expired| 
+|Microsoft Entra Connect| Auto-upgrade will stop working. Synchronization isn't impacted|
+|Microsoft Entra Connect Health Connect Sync agent|A subset of [alerts](how-to-connect-health-alert-catalog.md#alerts-for-microsoft-entra-connect-sync) are impacted: </br> - Connection to Microsoft Entra ID failed due to authentication failure </br> - High CPU usage detected</br> - High Memory Consumption Detected </br> - Password Hash Synchronization has stopped working </br> - Export to Microsoft Entra ID was Stopped. Accidental delete threshold was reached</br> - Password Hash Synchronization heartbeat was skipped in the last 120 minutes </br> - Microsoft Entra Sync service can't start due to invalid encryption keys </br> - Microsoft Entra Sync service not running: Windows Service account Creds Expired| 
 |Microsoft Entra Connect HealthAD DS agent|[All alerts](how-to-connect-health-adds.md#alerts-for-microsoft-entra-connect-health-for-ad-ds)|
 |Microsoft Entra Connect Health AD FS agent|[All alerts](how-to-connect-health-adfs.md#usage-analytics-for-ad-fs)|
 
@@ -41,7 +41,7 @@ To upgrade to the latest version.
 >[!IMPORTANT]
 >The auto-upgrade service of Microsoft Entra Connect Sync and some alerts of Microsoft Entra Connect Health won't work after **September 23, 2024**. To avoid impact you should be at the minimum recommended versions. 
 >
->If you're unable to upgrade before the deadline, you can restore the impacted functionalities by upgrading to the latest versions.  However, you will loose the alerts during the time period between **September 23, 2024** and when you upgrade.
+>If you're unable to upgrade before the deadline, you can restore the impacted functionalities by upgrading to the latest versions. However, you will lose the alerts during the time period between **September 23, 2024** and when you upgrade.
 
 
 
@@ -49,7 +49,7 @@ To upgrade to the latest version.
 
 ## Consider moving to Microsoft Entra Cloud Sync
 
-If you're eligible, we recommend migrating from Microsoft Entra Connect Sync to Microsoft Entra Cloud Sync. Microsoft Entra Cloud Sync is the new sync client that works from the cloud and allows customers to set up and manage their sync preferences online. We recommend that you use Cloud Sync because  we are introducing new features that improve the sync experiences through Cloud Sync. You can avoid future migrations by choosing Cloud Sync if that's the right option for you. Use the https://aka.ms/EvaluateSyncOptions to see if Cloud Sync is the right sync client for you. 
+If you're eligible, we recommend migrating from Microsoft Entra Connect Sync to Microsoft Entra Cloud Sync. Microsoft Entra Cloud Sync is the new sync client that works from the cloud and allows customers to set up and manage their sync preferences online. We recommend that you use Cloud Sync because we're introducing new features that improve the sync experiences through Cloud Sync. You can avoid future migrations by choosing Cloud Sync if that's the right option for you. Use the https://aka.ms/EvaluateSyncOptions to see if Cloud Sync is the right sync client for you. 
 
 See the video below to understand how Cloud sync provides value to your business.
 
