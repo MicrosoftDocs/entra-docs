@@ -12,7 +12,7 @@ ms.author: billmath
 
 # Security improvements to Microsoft Entra Connect Sync autoupgrade and Microsoft Entra Connect Health alerts 
 
-Since September 2023, we've been auto-upgrading Microsoft Entra Connect Sync and Microsoft Entra Connect Health customers to an updated build as part of a precautionary security-related service change. Customers who autoupgraded won't be impacted by the service change, but if you opted out of autoupgrade or autoupgrade failed, we **strongly recommend** that you upgrade to the [latest versions](reference-connect-version-history.md) by **September 23, 2024**. 
+Since September 2023, we've been autoupgrading Microsoft Entra Connect Sync and Microsoft Entra Connect Health customers to an updated build as part of a precautionary security-related service change. Customers who were autoupgraded won't be impacted by the service change, but if you opted out of autoupgrade or autoupgrade failed, we **strongly recommend** that you upgrade to the [latest versions](reference-connect-version-history.md) by **September 23, 2024**. 
 
 
 ## Expected impacts
