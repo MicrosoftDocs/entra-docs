@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: how-to
-ms.date: 01/07/2024
+ms.date: 06/13/2024
 ms.author: mimart
 ms.custom: it-pro, has-azure-ad-ps-ref
 #Customer intent: As a dev, devops, or it admin, I want to
@@ -57,8 +57,8 @@ To enable sign-in for customers with a Google account, you need to create an app
     - `https://login.microsoftonline.com/te/<tenant-subdomain>.onmicrosoft.com/oauth2/authresp`
     - `https://<tenant-ID>.ciamlogin.com/<tenant-ID>/federation/oidc/accounts.google.com`
     - `https://<tenant-ID>.ciamlogin.com/<tenant-subdomain>.onmicrosoft.com/federation/oidc/accounts.google.com`
-    - `https://<tenant-ID>.ciamlogin.com/<tenant-ID>/federation/oauth2`
-    - `https://<tenant-ID>.ciamlogin.com/<tenant-subdomain>.onmicrosoft.com/federation/oauth2`
+    - `https://<tenant-subdomain>.ciamlogin.com/<tenant-ID>/federation/oauth2`
+    - `https://<tenant-subdomain>.ciamlogin.com/<tenant-subdomain>.onmicrosoft.com/federation/oauth2`
 
 1. Select **Create**.
 1. Record the values of **Client ID** and **Client secret**. You need both values to configure Google as an identity provider in your tenant.
@@ -87,7 +87,7 @@ To configure Google federation by using PowerShell, follow these steps:
 
 1. Install the latest version of the [Microsoft Graph PowerShell for Graph module](/powershell/microsoftgraph/installation).
 1. Run the following command: `Connect-MgGraph`
-1. At the sign-in prompt, sign in with the managed Global Administrator account.
+1. At the sign-in prompt, sign in as at least an [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
 1. Run the following command:
 
    ```powershell

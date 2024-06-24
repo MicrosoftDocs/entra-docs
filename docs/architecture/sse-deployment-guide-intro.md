@@ -12,7 +12,7 @@ ms.author: jricketts
 
 # Introduction to Microsoft's Security Service Edge Solution Deployment Guide for Proof of Concept
 
-This Proof of Concept (PoC) Deployment Guide helps you to deploy Microsoft's Security Service Edge (SSE) solution that features [Microsoft Entra Internet Access](../global-secure-access/concept-internet-access.md), [Microsoft Entra Internet Access for Microsoft 365](../global-secure-access/how-to-manage-microsoft-365-profile.md) and [Microsoft Entra Private Access](../global-secure-access/concept-private-access.md). Note that this solution is in Public Preview.
+This Proof of Concept (PoC) Deployment Guide helps you to deploy Microsoft's Security Service Edge (SSE) solution that features [Microsoft Entra Internet Access](../global-secure-access/concept-internet-access.md), [Microsoft Entra Internet Access for Microsoft 365](../global-secure-access/how-to-manage-microsoft-profile.md) and [Microsoft Entra Private Access](../global-secure-access/concept-private-access.md). Note that this solution is in Public Preview.
 
 ## Overview
 
@@ -33,7 +33,7 @@ Built on Zero Trust principles, this easy-to-deploy SSE solution protects agains
 
 The unified Zero Trust architecture and policy engine simplifies access control and technology management for directory, single sign-on (SSO), federation, role-based access control (RBAC), proxy. To enforce access to your data, consistently apply a centralized policy across corporate resources such as identity, data, network plus infrastructure, and apps across cloud, on-premises, Internet of Things (IoT), and operational technology (OT).
 
-- **Enforce unified adaptive access controls.** Eliminate gaps in your defenses and protect access end-to-end by extending [Microsoft Entra Conditional Access](../identity/conditional-access/overview.md) and [continuous access evaluation](../identity/conditional-access/concept-continuous-access-evaluation.md) (CAE) to any application, resource, or other network destination. ​
+- **Enforce unified adaptive access controls.** Eliminate gaps in your defenses and protect access end-to-end by extending [Microsoft Entra Conditional Access](../identity/conditional-access/overview.md) and [continuous access evaluation (CAE)](../identity/conditional-access/concept-continuous-access-evaluation.md) to any application, resource, or other network destination. ​
 - **Simplify network access security​.** Minimize risk from threats and escape the complexity and cost of traditional stand-alone network security tools with comprehensive, simple to deploy, cloud-delivered security services.
 - **Deliver a great user experience anywhere and boost hybrid work productivity.** Provide fast and seamless access through a globally distributed secure network edge with Points of Presence (PoP) closest to the user. Eliminate extra hops to optimize traffic routing to apps and resources on-premises, across clouds, and anywhere in between.
 - **Integrated fabric**. Converged identity and network access controls secure access to all apps and resources. ​

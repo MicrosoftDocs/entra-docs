@@ -386,6 +386,21 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-ios-sign-up-with-email-one-time-passcode.md",
+      "redirect_url": "/entra/external-id/customers/tutorial-native-authentication-ios-sign-up",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-ios-sign-up-with-username-password-user-attributes.md",
+      "redirect_url": "/entra/external-id/customers/tutorial-native-authentication-ios-sign-up",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-ios-sign-up-with-username-password.md",
+      "redirect_url": "/entra/external-id/customers/tutorial-native-authentication-ios-sign-up",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity/conditional-access/location-condition.md",
       "redirect_url": "/entra/identity/conditional-access/concept-assignment-network",
       "redirect_document_id": true
@@ -657,6 +672,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-ios-sign-in-with-username-password.md",
+      "redirect_url": "/entra/external-id/customers/tutorial-native-authentication-ios-sign-in-sign-out",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity/managed-identities-azure-resources/qs-configure-portal-windows-vm.md",
       "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-configure-managed-identities",
       "redirect_document_id": false
@@ -792,6 +812,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity/enterprise-apps/migrate-adfs-application-activity.md",
+      "redirect_url": "/entra/identity/enterprise-apps/migrate-ad-fs-application-howto",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity/managed-identities-azure-resources/tutorial-vm-windows-access-storage.md",
       "redirect_url": "/entra/identity/managed-identities-azure-resources/tutorial-windows-managed-identities-vm-access",
       "redirect_document_id": false
@@ -834,6 +859,26 @@
     {
       "source_path_from_root": "/docs/identity/managed-identities-azure-resources/msi-tutorial-linux-vm-access-arm.md",
       "redirect_url": "/entra/identity/managed-identities-azure-resources/tutorial-linux-managed-identities-vm-access",
+      "redirect_document_id": false
+    },
+    {            
+      "source_path_from_root": "/docs/identity-platform/quickstart-v2-javascript.md",
+      "redirect_url": "/entra/identity-platform/quickstart-single-page-app-javascript-sign-in",
+      "redirect_document_id": false
+    },
+    {            
+      "source_path_from_root": "/docs/identity-platform/tutorial-v2-javascript-auth-code.md",
+      "redirect_url": "/entra/identity-platform/quickstart-single-page-app-javascript-sign-in",
+      "redirect_document_id": false
+    } ,
+    {            
+      "source_path_from_root": "/docs/global-secure-access/how-to-target-resource-microsoft-365-profile.md",
+      "redirect_url": "/entra/global-secure-access/how-to-target-resource-microsoft-profile",
+      "redirect_document_id": false
+    },
+    {            
+      "source_path_from_root": "/docs/global-secure-access/how-to-manage-microsoft-365-profile.md",
+      "redirect_url": "/entra/global-secure-access/how-to-manage-microsoft-profile",
       "redirect_document_id": false
     }
   ]

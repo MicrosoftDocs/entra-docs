@@ -1,6 +1,6 @@
 ---
-title: Tutorial - Using FaceCheck with Verified ID and unlocking high assurance verifications at scale (Preview)
-description: In this tutorial, you learn how to use FaceCheck with Verified ID
+title: Tutorial - Using Face Check with Verified ID and unlocking high assurance verifications at scale
+description: In this tutorial, you learn how to use Face Check with Verified ID
 ms.service: entra-verified-id
 
 author: barclayn
@@ -12,19 +12,28 @@ ms.date: 10/06/2023
 
 ---
 
-# Using Face Check with Verified ID and unlocking high assurance verifications at scale (Preview)
+# Using Face Check with Verified ID and unlocking high assurance verifications at scale
 
-> [!IMPORTANT]
-> Face Check is currently in PREVIEW.
-> This information relates to a prerelease product that may be modified before it's released. 
 
 Face Check is a privacy-respecting facial matching. It allows enterprises to perform high-assurance verifications securely, simply, and at scale. Face Check adds a critical layer of trust by performing facial matching between a user’s real-time selfie and a photo. The facial matching is powered by Azure AI services. By sharing only the match results and not any sensitive identity data, Face Check protects user privacy while allowing organizations to be sure the person claiming an identity is really them.
 
 :::image type="content" source="media/using-facecheck/verify-confirm-review.png" alt-text="Screenshot of using Face Check.":::
 
 ## Prerequisites
-
+Face Check is a paid functionality in Verified ID that requires linking your Azure Subscription as part of onboarding. Follow the next steps before you start using Face Check.
 - [Set up a tenant for Microsoft Entra Verified ID](./verifiable-credentials-configure-tenant-quick.md).
+- [Associate or add an Azure subscription to your Microsoft Entra tenant](/entra/fundamentals/how-subscriptions-associated-directory)
+- The Administrator setting up Face Check requires [contributor role for the Azure subscription](/azure/role-based-access-control/built-in-roles/general#contributor)
+
+## Setting up the Face Check service add-on
+1. In the Verified ID overview page, scroll down to the new Add-ons section and `Enable` the Face Check add-on.
+:::image type="content" source="media/using-facecheck/face-check-add-on.png" alt-text="Screenshot of the Face Check add-on.":::
+
+1. In the Link a subscription section, select a Subscription, a Resource group, and the Resource location. Then select `Validate`. If there are no subscriptions listed, see [What if I can't find a subscription?](using-facecheck.md#what-if-i-cant-find-a-subscription)
+:::image type="content" source="media/using-facecheck/face-check-subscription-linking.png" alt-text="Screenshot subscription linking for Face Check.":::
+
+1. Once validated you can `Enable` the add-on.
+:::image type="content" source="media/using-facecheck/face-check-add-on-enabled.png" alt-text="Screenshot Face Check add-on enabled.":::
 
 ## Get started with Face Check using MyAccount
 
@@ -34,7 +43,7 @@ You can easily get started using Face Check by using [MyAccount](https://myaccou
 1. Go to [MyAccount](verifiable-credentials-configure-tenant-quick.md#myaccount-available-now-to-simplify-issuance-of-workplace-credentials), sign in as the test user and issue a `VerifiedEmployee` credential for the user.
 1. Use the [public test app](https://aka.ms/vcempver) to present your `VerifiedEmployee` credential using Face Check.
 
-When the Microsoft Authenticator gets a presentation request including a Face Check, there's an extra item after the credential type the user is asked to share. When the user clicks on that item, the actual Face Check is performed and the user can then share the requested credential and the confidence score of the check with the public test app (relying party). You could review the results on the Test app.
+When the Microsoft Authenticator gets a presentation request including a Face Check, there's an extra item after the credential type the user is asked to share. When the user selects on that item, the actual Face Check is performed and the user can then share the requested credential and the confidence score of the check with the public test app (relying party). You could review the results on the Test app.
 
 ## Get started with Face Check using Request Service API
 
@@ -133,23 +142,23 @@ The Authenticator displays an error message informing the user that the confiden
 
 ### What is Face Check?
 
-Face Check in Verified ID is an open standards-based solution for high-assurance verifications. Powered by Azure AI services, Face Check assesses facial matching between a user’s real-time selfie and the photo in their Verified ID. (supplied from a passport or driver’s license). Providing business confidence, the user accessing sensitive info is really who they are.
+Face Check in Verified ID is an open standards-based solution for high-assurance verifications. Powered by Azure AI services, Face Check assesses facial matching between a user’s real-time selfie and the photo in their Verified ID. (Supplied from a passport or driver’s license). Providing business confidence, the user accessing sensitive info is really who they are.
 
 There's a clear distinction between facial verification, also referred to as facial comparison, and controversial facial recognition. Facial verification is a consent-based process for proving a person is who they claim to be. Facial recognition tools are controversial and are used for surveillance and investigation without a person’s knowledge by government agencies.
 
 ### What is the difference between Face Check and Face ID?
 
-Face ID is a vision based biometric security option offer on Apple products for unlocking a device to access to a mobile app. Face Check is a Microsoft Entra Verified ID feature that also uses vision based AI technology, but compares the user to the presented Verified ID. Face Check determines if the user identity is valid across a wide range of online scenarios where high-assurance access is required such as high value business processes or access to sensitive company information. Both mechanisms require a user to face a camera in the process but operate in different ways.
+Face ID is a vision based biometric security option offer on Apple products for unlocking a device to access to a mobile app. Face Check is a Microsoft Entra Verified ID feature that also uses vision based AI technology, but compares the user to the presented Verified ID. Face Check determines the user identity across a wide range of online scenarios where high-assurance access is required. Some examples of that are high value business processes or access to sensitive company information. Both mechanisms require a user to face a camera in the process but operate in different ways.
 
 ### Is the Face Check biometric vision check performed on the mobile device?
 
-No. The biometric check between the photo and the liveness data captured is performed in the cloud, using [Azure AI Vision Face API](/azure/ai-services/computer-vision/overview-identity). The user selfie capture during the process isn't shared with the requesting ID verifying site.
+ No. The biometric check between the photo and the liveness data captured is performed in the cloud, using [Azure AI Vision Face API](/azure/ai-services/computer-vision/overview-identity). The user selfie capture during the process isn't shared with the requesting ID verifying site.
 
 ### What happens to the liveness data taken?
 
 When the camera is turned on the mobile device, live footage is captured on the mobile device. This footage is then passed to Verified ID who uses it to invoke services of Azure AI services.
 
-Neither the Microsoft Authenticator, nor Verified ID or Azure AI Services store or keep this data. Furthermore, the footage isn't shared with the verifier application either. The verifier application only gets the confidence score in return. In an AI based system the confidence score is the probability percentage answer for a query to the system. For this scenario the confidence score is the likelihood the Verified ID user photo matches user capture on the mobile device.
+Data isn't stored by or kept by any of the services Microsoft Authenticator, Verified ID, or Azure AI. Furthermore, the footage isn't shared with the verifier application either. The verifier application only gets the confidence score in return. In an AI based system the confidence score is the probability percentage answer for a query to the system. For this scenario the confidence score is the likelihood the Verified ID user photo matches user capture on the mobile device.
 Data and privacy for Azure AI Services can be found [here](/legal/cognitive-services/face/data-privacy-security).
 
 ### Does Face Check Require MS Authenticator?
@@ -158,7 +167,7 @@ Yes. Currently to ensure security Face Check is limited to Verified ID usage wit
 
 ### What is the confidence percentage match and what does confidence mean?
 
-Today we use a default confidence matching value when verifying the user on par with Windows Hello. A developer can override and adjust the required confidence score to their specific usage scenario. The higher the confidence score, the lower the false-acceptance-rate is, i.e. the probability of an imposter getting incorrectly accepted in the system. This in turn increases the false-reject-rate, i.e. the probability of an authorized user getting rejected by the biometric system, so a balance is always needed when setting a threshold based on the usage scenario. For example, setting the confidence threshold between 80% to 90% during photo match verification correlates to a very low false-acceptance-rate and is suitable for most security applications. Though we would still recommend you trial different values in your scenarios to determine a suitable threshold that provides a good balance between the expected security vs user-experience.
+Today we use a default confidence matching value when verifying the user on par with Windows Hello. A developer can override and adjust the required confidence score to their specific usage scenario. The higher the confidence score, the lower the false-acceptance-rate is, i.e. the probability of an imposter getting incorrectly accepted in the system. In turn, this increases the false-reject-rate, i.e. the probability of an authorized user getting rejected by the biometric system, so a balance is always needed when setting a threshold based on the usage scenario. For example, setting the confidence threshold between 80% to 90% during photo match verification correlates to a low false-acceptance-rate and is suitable for most security applications, though we would still recommend you trial different values in your scenarios to determine a suitable threshold that provides a good balance between the expected security vs user-experience.
 
 ### What is Azure AI Vision Face API?
 
@@ -168,17 +177,25 @@ Azure AI is a suite of cloud services on the Azure Platform. The Azure AI Vision
 
 The Azure AI Vision Face API liveness check verifies that it's a real person in the live footage from the camera on the device. It can detect a wide variety of spoofing techniques  and this helps ensure that a static photo or even a 2D video of a user can't be used in place of their live self.
 
-### How much does Face Check cost?
+### What if I can't find a subscription?
+If no subscriptions are available in the Link a subscription pane, here are some possible reasons:
 
-Face Check is offered free of cost during the Public Preview period and can be used by any Verified ID project. Later in the year we will announce billing models.
+You don't have the appropriate permissions. Be sure to sign in with an Azure account that's assigned at least the Contributor role within the subscription or a resource group within the subscription.
+
+A subscription exists, but it isn't associated with your directory yet. You can [associate an existing subscription to your tenant](/entra/fundamentals/how-subscriptions-associated-directory) and then repeat the steps for linking it to your tenant.
+
+No subscription exists. In the Link a subscription pane, you can create a subscription by selecting the link if you don't already have a subscription you may create one here. After you create a new subscription, you'll need to [create a resource group](/azure/azure-resource-manager/management/manage-resource-groups-portal) in the new subscription, and then repeat the steps for linking it to your tenant.
+
+### How much does Face Check cost?
+This article doesn't contain pricing details. For the latest information about usage billing and pricing, see [Microsoft Entra pricing](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
 
 ### Are you iBeta Level 2 conformant?
 
-The current preview isn't iBeta Level 2. There will be updates to be conformant before general availability later in the year.
+Yes, in the latest version of the [Wallet Library](using-wallet-library.md) we added iBeta Level 2 support.
 
 ### How fair is Azure AI Vision Face API?
 
-Microsoft has conducted fairness testing of the Face API. The Azure AI Services team is continuously striving to ensure responsible and inclusive use of biometric AI. The Face API Fairness report is available [here](https://visionstudio-dev-8.azurewebsites.net/responsibleAI/face-fairness/information).
+Microsoft conducted fairness testing of the Face API. The Azure AI Services team is continuously striving to ensure responsible and inclusive use of biometric AI. The Face API Fairness report is available [here](https://visionstudio-dev-8.azurewebsites.net/responsibleAI/face-fairness/information).
 
 ### What are the requirements for the photo in the Verified ID?
 
@@ -191,7 +208,7 @@ Photo Requirements:
 1. Facial jewelry is allowed provided they don't hide your face.
 1. Only one face should be visible in the photo.
 1. Face should be in neutral front facing pose with both eyes open, mouth closed, with no extreme facial expressions or head tilt present.
-1. Face should be free of any shadows or red eyes. Retake photo if either of this occur.
+1. Face should be free of any shadows or red eyes. Retake photo if this occurs.
 1. Background should be uniform and plain, free of any shadows.
 1. Face should be centered within the image and fill at least 50% of the image.
 1. Recommended Face size is 200 pixels x 200 pixels. Face sizes larger than 200 pixels x 200 pixels don't result in better AI quality.

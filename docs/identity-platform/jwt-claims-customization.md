@@ -4,7 +4,7 @@ description: Learn how to customize the claims issued by Microsoft identity plat
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.custom: curation-claims, devx-track-dotnet
+ms.custom: curation-claims
 ms.date: 05/30/2024
 ms.reviewer: rahulnagraj, alamaral
 ms.service: identity-platform
@@ -266,7 +266,6 @@ To run this script, you need:
 - A user who logs in to get the Microsoft Graph access token. The user should be one of the following Microsoft Entra administrative roles (required to update the service principal):
   - Cloud Application Administrator
   - Application Administrator
-  - Global Administrator
 - A certificate to configure as a custom signing key for our application. You can either create a self-signed certificate or obtain one from your trusted certificate authority. The following certificate components are used in the script:
   - public key (typically a *.cer* file)
   - private key in PKCS#12 format (in *.pfx* file)

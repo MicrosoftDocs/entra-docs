@@ -19,7 +19,7 @@ metadata:
 title: |
   Manage the 'Stay signed in?' prompt
 introduction: |
-  The **Stay signed in?** prompt appears after a user successfully signs in. This process is known as **Keep me signed in** (KMSI) and was previously part of the [customize branding](how-to-customize-branding.md) process.
+  The **Stay signed in?** prompt appears after a user successfully signs in. This process is known as **Keep me signed in (KMSI)** and was previously part of the [customize branding](how-to-customize-branding.md) process.
 
   This article covers how the KMSI process works, how to enable it for customers, and how to troubleshoot KMSI issues.
 
@@ -91,4 +91,3 @@ relatedContent:
     url: how-to-customize-branding.md
   - text: Manage user settings in Microsoft Entra ID
     url: how-to-manage-user-profile-info.yml
-

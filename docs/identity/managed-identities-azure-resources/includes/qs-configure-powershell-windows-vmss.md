@@ -3,6 +3,8 @@ author: barclayn
 ms.author: barclayn
 ms.date: 05/27/2024
 ms.topic: include
+ms.custom:
+  - devx-track-azurepowershell
 ---
 
 In this article, using PowerShell, you learn how to perform the managed identities for Azure resources operations on a virtual machine scale set:

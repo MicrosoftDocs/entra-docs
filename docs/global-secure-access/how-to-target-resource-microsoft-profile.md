@@ -1,6 +1,6 @@
 ---
-title: Microsoft 365 traffic Conditional Access policies
-description: Learn how to apply Conditional Access policies to the Microsoft 365 traffic profile with Global Secure Access (preview).
+title: Microsoft traffic Conditional Access policies
+description: Learn how to apply Conditional Access policies to the Microsoft traffic profile with Global Secure Access (preview).
 ms.service: global-secure-access
 ms.subservice: entra-internet-access
 ms.topic: how-to
@@ -10,11 +10,11 @@ author: kenwith
 manager: amycolannino
 ms.reviewer: alexpav
 ---
-# Apply Conditional Access policies to the Microsoft 365 traffic profile
+# Apply Conditional Access policies to the Microsoft traffic profile
 
-With a devoted traffic forwarding profile for all your Microsoft 365 traffic, you can apply Conditional Access policies to all of your Microsoft 365 traffic. With Conditional Access, you can require multifactor authentication and device compliance for accessing Microsoft 365 resources. 
+With a dedicated traffic forwarding profile for your Microsoft traffic, you can apply Conditional Access policies to Microsoft traffic. With Conditional Access, you can require multifactor authentication and device compliance for accessing Microsoft resources. 
 
-This article describes how to apply Conditional Access policies to your Microsoft 365 traffic forwarding profile.
+This article describes how to apply Conditional Access policies to your Microsoft traffic forwarding profile.
 
 ## Prerequisites
 
@@ -22,13 +22,13 @@ This article describes how to apply Conditional Access policies to your Microsof
    * The [Global Secure Access Administrator role](../identity/role-based-access-control/permissions-reference.md#global-secure-access-administrator) role to manage the Global Secure Access preview features.
    * The [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) role to create and interact with Conditional Access policies.
 * The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
-* To use the Microsoft 365 traffic forwarding profile, a Microsoft 365 E3 license is recommended.
+* To use the Microsoft traffic forwarding profile, a Microsoft 365 E3 license is recommended.
 
-## Create a Conditional Access policy targeting the Microsoft 365 traffic profile
+## Create a Conditional Access policy targeting the Microsoft traffic profile
 
-The following example policy targets all users except for your break-glass accounts and guest/external users, requiring multifactor authentication, device compliance, or a Microsoft Entra hybrid joined device when accessing Microsoft 365 traffic.
+The following example policy targets all users except for your break-glass accounts and guest/external users, requiring multifactor authentication, device compliance, or a Microsoft Entra hybrid joined device when accessing Microsoft traffic.
 
-:::image type="content" source="media/how-to-target-resource-microsoft-365-profile/target-resource-traffic-profile.png" alt-text="Screenshot showing a Conditional Access policy targeting a traffic profile.":::
+:::image type="content" source="media/how-to-target-resource-microsoft-profile/target-resource-traffic-profile.png" alt-text="Screenshot showing a Conditional Access policy targeting a traffic profile.":::
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Identity** > **Protection** > **Conditional Access**.
@@ -40,7 +40,7 @@ The following example policy targets all users except for your break-glass accou
       1. Select **Users and groups** and choose your organization's [emergency access or break-glass accounts](#user-exclusions).
       1. Select **Guest or external users** and select all checkboxes.
 1. Under **Target resources** > **Global Secure Access (Preview)***.
-   1. Choose **Microsoft 365 traffic**.
+   1. Choose **Microsoft traffic**.
 1. Under **Access controls** > **Grant**.
    1. Select **Require multifactor authentication**, **Require device to be marked as compliant**, and **Require Microsoft Entra hybrid joined device**
    1. **For multiple controls** select **Require one of the selected controls**.
@@ -59,4 +59,4 @@ The next step for getting started with Microsoft Entra Internet Access is to [re
 For more information about traffic forwarding, see the following articles:
 
 - [Learn about traffic forwarding profiles](concept-traffic-forwarding.md)
-- [Manage the Microsoft 365 traffic profile](how-to-manage-microsoft-365-profile.md)
+- [Manage the Microsoft traffic profile](how-to-manage-microsoft-profile.md)

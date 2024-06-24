@@ -108,6 +108,11 @@ The otherMails property is automatically computed in the target tenant. Changes 
 
 Multivalue directory extensions can't be used in attribute mappings or scoping filters. 
 
+#### Attribute targetAddress not available to select
+
+Attribute **targetAddress** (which maps to the ExternalEmailAddress property in Microsoft Exchange Online) isn't available as an attribute you can choose. If you need to change this attribute, you have to do it manually over the required object.  
+
+
 ## Service issues 
 
 #### Unsupported scenarios

@@ -23,7 +23,7 @@ To configure remote networks, you must have:
 
 - A **Global Secure Access Administrator** role in Microsoft Entra ID.
 - The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
-- To use the Microsoft 365 traffic forwarding profile, a Microsoft 365 E3 license is recommended.
+- To use the Microsoft traffic forwarding profile, a Microsoft 365 E3 license is recommended.
 - Customer premises equipment (CPE) must support the following protocols:
     - Internet Protocol Security (IPSec)
     - GCMEAES128, GCMAES 192, or GCMAES256 algorithms for Internet Key Exchange (IKE) phase 2 negotiation
@@ -36,7 +36,7 @@ To configure remote networks, you must have:
 ### Known limitations
 
 - The number of remote networks per tenant is limited to 10. The number of device links per remote network is limited to four.
-- Microsoft 365 traffic is accessed through remote network connectivity without the Global Secure Access client. However, the Conditional Access policy isn't enforced. In other words, Conditional Access policies for the Global Secure Access Microsoft 365 traffic are only enforced when a user has the Global Secure Access client.
+- Microsoft traffic is accessed through remote network connectivity without the Global Secure Access client. However, the Conditional Access policy isn't enforced. In other words, Conditional Access policies for the Global Secure Access Microsoft traffic are only enforced when a user has the Global Secure Access client.
 - You must use the Global Secure Access client for Microsoft Entra Private Access. Remote network connectivity only supports Microsoft Entra Internet Access.
 
 ## High-level steps
@@ -208,7 +208,7 @@ There are a few things to consider and verify when creating remote networks. You
 
 ## Next steps
 
-The next step for getting started with Microsoft Entra Internet Access is to [target the Microsoft 365 traffic profile with Conditional Access policy](how-to-target-resource-microsoft-365-profile.md).
+The next step for getting started with Microsoft Entra Internet Access is to [target the Microsoft traffic profile with Conditional Access policy](how-to-target-resource-microsoft-profile.md).
 
 For more information about remote networks, see the following articles:
 - [List remote networks](how-to-list-remote-networks.md)

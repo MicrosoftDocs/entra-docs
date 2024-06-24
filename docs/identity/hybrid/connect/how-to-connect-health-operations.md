@@ -146,7 +146,7 @@ To allow a user access at the *all service instances* level within Microsoft Ent
 Now the listed users and groups have access, according to their assigned roles.
 
 > [!NOTE]
-> * Global administrators always have full access to all the operations, but global administrator accounts are not present in the preceding list.
+> * Global Administrators always have full access to all the operations, but Global Administrator accounts are not present in the preceding list.
 > * The Invite Users feature is not supported within Microsoft Entra Connect Health.
 >
 >
