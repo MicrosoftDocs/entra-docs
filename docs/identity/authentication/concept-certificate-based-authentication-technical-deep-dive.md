@@ -5,7 +5,7 @@ description: Learn how Microsoft Entra certificate-based authentication works
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 12/14/2023
+ms.date: 06/24/2024
 
 
 ms.author: justinha
@@ -60,12 +60,9 @@ Now we'll walk through each step:
 
    Make sure your TLS inspection disablement also works for the new url with issuer hints. Don't hardcode the url with tenantId because it might change for B2B users. Use a regular expression to allow both the old and new URL to work for TLS inspection disablement. For example, depending on the proxy, use `*.certauth.login.microsoftonline.com` or `*certauth.login.microsoftonline.com`. In Azure Government, use `*.certauth.login.microsoftonline.us` or `*certauth.login.microsoftonline.us`.
 
-   Unless access is allowed, certificate-based authentication fails if you enable the upcoming Trusted CA hints feature.
+   Unless access is allowed, certificate-based authentication fails if you enable [issuer hints](#understanding-issuer-hints).
 
 1. Microsoft Entra ID requests a client certificate. The user picks the client certificate, and selects **Ok**.
-
-   >[!NOTE] 
-   >Trusted CA hints aren't supported, so the list of certificates can't be further scoped. We're looking into adding this functionality in the future.
 
    :::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/cert-picker.png" alt-text="Screenshot of the certificate picker." lightbox="./media/concept-certificate-based-authentication-technical-deep-dive/cert-picker.png":::
 
@@ -74,7 +71,34 @@ Now we'll walk through each step:
 1. Microsoft Entra ID completes the sign-in process by sending a primary refresh token back to indicate successful sign-in.
 1. If the user sign-in is successful, the user can access the application.
 
-## Certificate-based authentication is MFA capable
+## Understanding issuer hints (Preview)
+
+Issuer hints send back a Trusted CA Indication as part of the TLS handshake. The trusted CA list is set to subject of the Certificate Authorities (CAs) uploaded by the tenant in the Entra trust store. Browsers client or native application client use the hints sent back by server to filter the certificates shown in certificate picker. The client shows only the authentication certificates issued by the CAs in the trust store. 
+
+### Enable issuer hints
+
+To enable click on the check box **Issuer Hints**. Admins should click **I acknowledge** after making sure proxy with TLS inspection enabled are updated correctly, and save.
+
+>[!NOTE]
+>If your organization has firewalls or proxies with TLS Inspection, acknowledge that you have disabled TLS inspection of the certauth endpoint capable of matching any name under `[*.]certauth.login.microsoftonline.com`, customized according to the specific proxy in use. 
+
+>[!Important] 
+>There will be a delay of up to 10 minutes in propagating the issuer hints back to client after a tenant admin enables issuer hints and updates the CA trust store, like adding, updating, or deleting CAs from trust store. Users can't authenticate with certificates issued by the new CAs until the hints are propagated.
+
+:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/issuer-hints.png" alt-text="Screenshot of the certificate picker." lightbox="./media/concept-certificate-based-authentication-technical-deep-dive/cert-picker.png":::
+
+>[!Note] 
+>The certificate authority URL will be of a format `t{tenantId}.certauth.login.microsoftonline.com` after issuer hints are enabled.
+
+:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/issuer-hints.png" alt-text="Screenshot of the certificate picker." lightbox="./media/concept-certificate-based-authentication-technical-deep-dive/issuer-hints-picker.png":::
+
+### Error message when CA trust store updates are in progress
+
+Users will see the error message below when CA trust store updates are in propagation.
+
+:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/issuer-hints.png" alt-text="Screenshot of the certificate picker." lightbox="./media/concept-certificate-based-authentication-technical-deep-dive/propagation-error.png":::
+
+## Certificate-based authentication MFA capability
 
 Microsoft Entra CBA is capable of multifactor authentication (MFA). Microsoft Entra CBA can be either single-factor (SF) or multifactor (MF) depending on the tenant configuration. Enabling CBA makes a user potentially capable to complete MFA. A user might need more configuration to complete MFA, and proof up to register other authentication methods when the user is in scope for CBA.
 
