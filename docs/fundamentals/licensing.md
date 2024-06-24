@@ -61,7 +61,7 @@ Microsoft Entra Internet Access is available as part of the Microsoft Entra Suit
 
 ## Microsoft Entra Private Access
 
-[Microsoft Entra Private access](../global-secure-access/) is available as part of the Microsoft Entra Suite.
+[Microsoft Entra Private access](../global-secure-access/overview-what-is-global-secure-access.md) is available as part of the Microsoft Entra Suite.
 
 ## Microsoft Entra Privileged Identity Management
 
