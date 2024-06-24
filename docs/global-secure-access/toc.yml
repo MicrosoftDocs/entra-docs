@@ -48,8 +48,10 @@ items:
         href: how-to-manage-remote-networks.md
       - name: Assign a traffic forwarding profile to remote networks
         href: how-to-assign-traffic-profile-to-remote-network.md
-      - name: Simulate remote network connectivity in Azure
+      - name: Simulate remote network connectivity using Azure VNG
         href: how-to-simulate-remote-network.md
+      - name: Simulate remote network connectivity using Azure vWAN
+        href: how-to-create-remote-network-vwan.md
   - name: Access controls
     expanded: false
     items:
