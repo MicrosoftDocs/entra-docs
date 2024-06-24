@@ -5,7 +5,7 @@ description: Create a Conditional Access policy requiring stronger authenticatio
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 05/29/2024
+ms.date: 06/24/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -17,13 +17,15 @@ ms.reviewer: lhuangnorth
 Accounts that are assigned highly privileged administrative rights are frequent targets of attackers. Requiring phishing-resistant multifactor authentication (MFA) on those accounts is an easy way to reduce the risk of those accounts being compromised.
 
 > [!CAUTION]
-> Before creating a policy requiring phishing-resistant multifactor authentication, ensure your administrators have the appropriate methods registered. If you enable this policy without completing this step you risk locking yourself out of your tenant.
+> Before creating a policy requiring phishing-resistant multifactor authentication, ensure your administrators have the appropriate methods registered. If you enable this policy without completing this step you risk locking yourself out of your tenant. Administrators can [Configure Temporary Access Pass to register passwordless authentication methods](../authentication/howto-authentication-temporary-access-pass.md) or follow the steps in [Register a passkey (FIDO2)](../authentication/how-to-register-passkey-with-security-key.md).
 
 Microsoft recommends you require phishing-resistant multifactor authentication on the following roles at a minimum:
 
 [!INCLUDE [conditional-access-admin-roles](../../includes/conditional-access-admin-roles.md)]
 
-Organizations can choose to include or exclude roles as they see fit.
+Organizations might choose to include or exclude roles based on their own requirements.
+
+Organizations can use this policy in conjunction with features like Privileged Identity Management (PIM) and its ability to require MFA for role activation.
 
 ## User exclusions
 [!INCLUDE [active-directory-policy-exclusions](~/includes/entra-policy-exclude-user.md)]
