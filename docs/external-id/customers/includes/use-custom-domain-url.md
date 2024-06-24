@@ -20,7 +20,7 @@ Use the following steps to use a custom domain:
     1. Update the value of the `authority` property to *https://Enter_the_Custom_Domain_Here/Enter_the_Tenant_ID_Here*. Replace `Enter_the_Custom_Domain_Here` with your custom domain URL and `Enter_the_Tenant_ID_Here` with your tenant ID. If you don't have your tenant ID, learn how to [read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details). 
     1. Add `knownAuthorities` property with a value *[Enter_the_Custom_Domain_Here]*.
     
-After you make the changes to your *authConfig.js* file, if your custom domain URL is *login.contoso.com*, and your tenant Id is *aaaabbbb-0000-cccc-1111-dddd2222eeee*, then your file should look similar to the following snippet:
+After you make the changes to your *authConfig.js* file, if your custom domain URL is *login.contoso.com*, and your tenant ID is *aaaabbbb-0000-cccc-1111-dddd2222eeee*, then your file should look similar to the following snippet:
 
 ```JavaScript
 //...
