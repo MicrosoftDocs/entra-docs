@@ -60,7 +60,7 @@ Now we'll walk through each step:
 
    Make sure your TLS inspection disablement also works for the new url with issuer hints. Don't hardcode the url with tenantId because it might change for B2B users. Use a regular expression to allow both the old and new URL to work for TLS inspection disablement. For example, depending on the proxy, use `*.certauth.login.microsoftonline.com` or `*certauth.login.microsoftonline.com`. In Azure Government, use `*.certauth.login.microsoftonline.us` or `*certauth.login.microsoftonline.us`.
 
-   Unless access is allowed, certificate-based authentication fails if you enable [issuer hints](#understanding-issuer-hints).
+   Unless access is allowed, certificate-based authentication fails if you enable [issuer hints](#understanding-issuer-hints-preview).
 
 1. Microsoft Entra ID requests a client certificate. The user picks the client certificate, and selects **Ok**.
 
