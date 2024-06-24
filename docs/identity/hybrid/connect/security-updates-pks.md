@@ -1,6 +1,6 @@
 ---
-title: 'Security hardening to the auto-upgrade process for Microsoft Entra Connect and Microsoft Entra Connect Health '
-description: This article describes security improvements to improve auto-upgrade.
+title: 'Security hardening to the autoupgrade process for Microsoft Entra Connect and Microsoft Entra Connect Health '
+description: This article describes security improvements to improve autoupgrade.
 author: billmath
 manager: amycolannino
 ms.service: entra-id
@@ -10,9 +10,9 @@ ms.subservice: hybrid-connect
 ms.author: billmath
 ---
 
-# Security improvements to the auto-upgrade process 
+# Security improvements to the autoupgrade process 
 
-Since September 2023, we've auto-upgrading Microsoft Entra Connect Sync and Microsoft Entra Connect Health customers to an updated build as part of a precautionary security-related service change. Customers who've auto-upgraded won't be impacted by the service change, but if you opted out of auto-upgrade or auto-upgrade failed, we **strongly recommend** that you upgrade to the [latest versions](reference-connect-version-history.md) by **September 23, 2024**. 
+Since September 2023, we've auto-upgrading Microsoft Entra Connect Sync and Microsoft Entra Connect Health customers to an updated build as part of a precautionary security-related service change. Customers who autoupgraded won't be impacted by the service change, but if you opted out of autoupgrade or autoupgrade failed, we **strongly recommend** that you upgrade to the [latest versions](reference-connect-version-history.md) by **September 23, 2024**. 
 
 
 ## Expected impacts
@@ -20,7 +20,7 @@ The following table provides information on the features and impact to services,
 
 |Service|Impact|
 |-----|-----|
-|Microsoft Entra Connect| Auto-upgrade stops working. Synchronization isn't impacted|
+|Microsoft Entra Connect| autoupgrade stops working. Synchronization isn't impacted|
 |Microsoft Entra Connect Health Connect Sync agent|A subset of [alerts](how-to-connect-health-alert-catalog.md#alerts-for-microsoft-entra-connect-sync) are impacted: </br> - Connection to Microsoft Entra ID failed due to authentication failure </br> - High CPU usage detected</br> - High Memory Consumption Detected </br> - Password Hash Synchronization has stopped working </br> - Export to Microsoft Entra ID was Stopped. Accidental delete threshold was reached</br> - Password Hash Synchronization heartbeat was skipped in the last 120 minutes </br> - Microsoft Entra Sync service can't start due to invalid encryption keys </br> - Microsoft Entra Sync service not running: Windows Service account Creds Expired| 
 |Microsoft Entra Connect HealthAD DS agent|[All alerts](how-to-connect-health-adds.md#alerts-for-microsoft-entra-connect-health-for-ad-ds)|
 |Microsoft Entra Connect Health AD FS agent|[All alerts](how-to-connect-health-adfs.md#usage-analytics-for-ad-fs)|
@@ -39,7 +39,7 @@ To upgrade to the latest version.
 > [Install Microsoft Entra Connect](https://www.microsoft.com/download/details.aspx?id=47594)
 
 >[!IMPORTANT]
->The auto-upgrade service of Microsoft Entra Connect Sync and some alerts of Microsoft Entra Connect Health won't work after **September 23, 2024**. To avoid impact you should be at the minimum recommended versions. 
+>The autoupgrade service of Microsoft Entra Connect Sync and some alerts of Microsoft Entra Connect Health won't work after **September 23, 2024**. To avoid impact you should be at the minimum recommended versions. 
 >
 >If you're unable to upgrade before the deadline, you can restore the impacted functionalities by upgrading to the latest versions. However, you lose the alerts during the time period between **September 23, 2024** and when you upgrade.
 
