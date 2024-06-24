@@ -26,10 +26,9 @@ After you make the changes to your *authConfig.js* file, if your custom domain U
 //...
 const msalConfig = {
     auth: {
-        clientId: process.env.CLIENT_ID || 'Enter_the_Application_Id_Here', // 'Application (client) ID' of app registration in Azure portal - this value is a GUID
         authority: process.env.AUTHORITY || 'https://login.contoso.com/aaaabbbb-0000-cccc-1111-dddd2222eeee', 
-        clientSecret: process.env.CLIENT_SECRET || 'Enter_the_Client_Secret_Here', // Client secret generated from the app registration in Azure portal
-        knownAuthorities: ["login.contoso.com"]
+        knownAuthorities: ["login.contoso.com"],
+        //Other properties
     },
     //...
 };
