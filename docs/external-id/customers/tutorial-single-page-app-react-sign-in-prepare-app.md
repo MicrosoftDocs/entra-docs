@@ -34,7 +34,7 @@ In this tutorial;
 
 1. Open Visual Studio Code, select **File** > **Open Folder...**. Navigate to and select the location in which to create your project.
 1. Open a new terminal by selecting **Terminal** > **New Terminal**.
-1. Run the following commands to create a new React project with the name *reactspalocal*, change to the new directory and start the React project. A web browser will open with the address `http://localhost:3000/` by default. The browser remains open and rerenders for every saved change.
+1. Run the following commands to create a new React project with the name *reactspalocal*, change to the new directory and start the React project. A web browser opens with the address `http://localhost:3000/` by default. The browser remains open and rerenders for every saved change.
 
     ```powershell
     npx create-react-app reactspalocal
@@ -67,7 +67,7 @@ In this tutorial;
 
 Identity related **npm** packages must be installed in the project to enable user authentication. For project styling, **Bootstrap** is used.
 
-1. In the **Terminal** bar, select the **+** icon to create a new terminal. A new terminal window will open enabling the other terminal to continue running in the background.
+1. In the **Terminal** bar, select the **+** icon to create a new terminal. A new terminal window opens enabling the other terminal to continue running in the background.
 1. If necessary, navigate to *reactspalocal* and enter the following commands into the terminal to install the `msal` and `bootstrap` packages.
 
     ```powershell
