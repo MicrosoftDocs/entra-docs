@@ -3,7 +3,7 @@ title: Simulate remote network connectivity using Azure vWAN
 description: Use Global Secure Access to configure Azure and Entra resources to create a virtual wide area network to connect to your resources in Azure.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 06/21/2024
+ms.date: 06/24/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -273,7 +273,7 @@ The BGP dashboard lists the **BGP Peers** (VPN gateways and VPN site), which sho
 4. To view the list of learned routes, select **Routes the site-to-site gateway is learning**.
 
 The list of **Learned Routes** shows that the site-to-site gateway is learning the Microsoft 365 routes listed in the Microsoft 365 traffic profile.
-:::image type="content" source="media/how-to-create-remote-network-vwan/bgp-peers-learned-routes.png" alt-text="Screenshot of the Learned Routes page with the learned Microsoft 365 routes highlighted." lightbox="media/how-to-create-remote-network-vwan/bgp-peers-learned-routes-expanded.png":::
+:::image type="content" source="media/how-to-create-remote-network-vwan/list-of-bgp-learned-routes.png" alt-text="Screenshot of the Learned Routes page with the learned Microsoft 365 routes highlighted." lightbox="media/how-to-create-remote-network-vwan/list-of-bgp-learned-routes-expanded.png":::
 
 The following image shows the traffic profile **Policies & rules** for the Microsoft 365 profile, which should match the routes learned from the site-to-site gateway.
 :::image type="content" source="media/how-to-create-remote-network-vwan/traffic-profile-match.png" alt-text="Screenshot of the Microsoft 365 traffic forwarding profiles, showing the matching learned routes." lightbox="media/how-to-create-remote-network-vwan/traffic-profile-match-expanded.png":::
