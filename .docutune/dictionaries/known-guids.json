@@ -2859,5 +2859,7 @@
   "Configuration partition in Active Directory GUID" : "62a0ff2e-97b9-4513-943f-0d221bd30080",
   "Group.Unified TemplateId" : "62375ab9-6b52-47ed-826b-58e47e0e304b",
   "Group.Unified.Guest TemplateId" : "08d542b9-071f-4e16-94b0-74abb372e3d9",
-  "SharePoint Embedded Administrator" : "1a7d78b6-429f-476b-b8eb-35fb715fffd4"
+  "SharePoint Embedded Administrator" : "1a7d78b6-429f-476b-b8eb-35fb715fffd4",
+  "Cosmos DB Built-in Data Reader" : "00000000-0000-0000-0000-000000000001",
+  "Cosmos DB Built-in Data Contributor" : "00000000-0000-0000-0000-000000000002"
 }
