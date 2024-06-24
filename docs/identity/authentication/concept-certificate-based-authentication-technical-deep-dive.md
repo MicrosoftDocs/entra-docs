@@ -82,21 +82,19 @@ To enable click on the check box **Issuer Hints**. Admins should click **I ackno
 >[!NOTE]
 >If your organization has firewalls or proxies with TLS Inspection, acknowledge that you have disabled TLS inspection of the certauth endpoint capable of matching any name under `[*.]certauth.login.microsoftonline.com`, customized according to the specific proxy in use. 
 
->[!Important] 
->There will be a delay of up to 10 minutes in propagating the issuer hints back to client after a tenant admin enables issuer hints and updates the CA trust store, like adding, updating, or deleting CAs from trust store. Users can't authenticate with certificates issued by the new CAs until the hints are propagated.
 
-:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/issuer-hints.png" alt-text="Screenshot of the certificate picker." lightbox="./media/concept-certificate-based-authentication-technical-deep-dive/cert-picker.png":::
+:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/issuer-hints.png" alt-text="Screenshot of the certificate picker.":::
 
 >[!Note] 
 >The certificate authority URL will be of a format `t{tenantId}.certauth.login.microsoftonline.com` after issuer hints are enabled.
 
-:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/issuer-hints.png" alt-text="Screenshot of the certificate picker." lightbox="./media/concept-certificate-based-authentication-technical-deep-dive/issuer-hints-picker.png":::
+:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/issuer-hints.png" alt-text="Screenshot of the certificate picker after issuer hints are enabled.":::
 
-### Error message when CA trust store updates are in progress
+### CA trust store update propagation
 
-Users will see the error message below when CA trust store updates are in propagation.
+After you enable issuer hints and add, update, or delete CAs from the trust stote, there's a delay of up to 10 minutes to propagate the issuer hints back to client. Users can't authenticate with certificates issued by the new CAs until the hints are propagated. Users will see the error message below when CA trust store updates are in propagation.
 
-:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/issuer-hints.png" alt-text="Screenshot of the certificate picker." lightbox="./media/concept-certificate-based-authentication-technical-deep-dive/propagation-error.png":::
+:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/issuer-hints.png" alt-text="Screenshot of an error users see if updates are in progress.":::
 
 ## Certificate-based authentication MFA capability
 
