@@ -384,7 +384,7 @@ To create a joiner workflow, follow these steps.
    :::image type="content" source="media/deployment-scenario-remote-access/workflow-joiner.png" alt-text="Example of Choose a workflow with a red box highlighting the Joiner card.":::
 1. For **Basics**, enter *Onboard New hire employee -- Finance* for the workflow display name and description. Select **Next**.
 1. For **Configure scope** \> **Rule**, enter values for **Property**, **Operator**, and **Value**. Change the expression of the scope to only users where **Property** \> **department** has a **Value** of **Finance**. Ensure that your test user populates **Property** with the *Finance* string so that it's in the workflow scope.
-   :::image type="content" source="media/deployment-scenario-internet-access/scope-rule.png" alt-text="Example of Rule view with a red box highlighting the Value control.":::
+   :::image type="content" source="media/deployment-scenario-remote-access/scope-rule.png" alt-text="Example of Rule view with a red box highlighting the Value control.":::
 1. On **Review tasks**, select **Add task** to add a task to the template. For this scenario, we add **Request user access package assignment**.
 1. For **Basics**, select **Request user access package assignment**. Assign a name to this task (such as *Assign Finance Access Package*). Select a policy.
 1. In **Configure**, select the access package that you previously created.
@@ -407,7 +407,7 @@ To create a leaver workflow, follow these steps.
    :::image type="content" source="media/deployment-scenario-remote-access/workflow-leaver.png" alt-text="Example of Choose a workflow with a red box highlighting the Leaver card.":::
 1. On **Basics**, enter *Offboard an employee -- Finance* as display name and description for the workflow. Select **Next**.
 1. On **Configure scope** \> **Rule**, enter values for **Property**, **Operator**, and **Value**. Change the expression of the scope to only users where **Property** \> **department** has a **Value** of **Finance**. Ensure that your test user populates **Property** with the *Finance* string so that it's in the workflow scope.
-   :::image type="content" source="media/deployment-scenario-internet-access/scope-rule.png" alt-text="Example of Rule view with a red box highlighting the Value control.":::
+   :::image type="content" source="media/deployment-scenario-remote-access/scope-rule.png" alt-text="Example of Rule view with a red box highlighting the Value control.":::
 1. On **Review tasks**, select **Add task** to add a task to the template. For this scenario, we add **Request user access package assignment**.
 1. **Optional:** Add other leaver tasks such as:
    - Disable User Account
