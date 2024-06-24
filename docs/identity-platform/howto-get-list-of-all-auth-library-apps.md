@@ -17,7 +17,7 @@ ms.topic: how-to
 
 This article provides guidance on how to use Azure Monitor workbooks to obtain a list of all apps that use ADAL in your tenant.
 
-Azure Active Directory Authentication Library (ADAL) has been deprecated. We strongly recommend migrating to the Microsoft Authentication Library (MSAL), which replaces ADAL. Microsoft **no longer releases new features and security fixes on ADAL**. Applications using ADAL will not be able to utilize the latest security features, leaving them vulnerable to future security threats. If you have existing applications that use ADAL, be sure to [migrate them to MSAL](~/identity-platform/msal-migration.md). 
+Azure Active Directory Authentication Library (ADAL) has been deprecated. We strongly recommend migrating to the Microsoft Authentication Library (MSAL), which replaces ADAL. Microsoft **no longer releases new features and security fixes on ADAL**. Applications using ADAL won't be able to utilize the latest security features, leaving them vulnerable to future security threats. If you have existing applications that use ADAL, be sure to [migrate them to MSAL](~/identity-platform/msal-migration.md). 
 
 
 
@@ -25,7 +25,7 @@ Azure Active Directory Authentication Library (ADAL) has been deprecated. We str
 
 Workbooks are a set of queries that collect and visualize information that is available in Microsoft Entra logs. [Learn more about the sign-in logs schema here](~/identity/monitoring-health/reference-azure-monitor-sign-ins-log-schema.md). 
 
-The Sign-ins Workbook in the Azure portal consolidates logs from various types of sign-in events, including interactive, non-interactive, and service principal sign-ins. This aggregation offers detailed insights into the usage of ADAL applications across your tenant to help you fully understand and manage migration of your ADAL applications. 
+The Sign-ins Workbook in the Microsoft Entra admin center consolidates logs from various types of sign-in events, including interactive, non-interactive, and service principal sign-ins. This aggregation offers detailed insights into the usage of ADAL applications across your tenant to help you fully understand and manage migration of your ADAL applications. 
 
 Below, we provide comprehensive instructions on accessing the workbook and subsequently demonstrate effective ways for visualizing the list of applications.
 
@@ -37,27 +37,31 @@ Configure AD to send sign-in events to Azure Monitor by following the steps in [
 
 No sign-in event that occurred *before* you configure Microsoft Entra ID to send the events to Azure Monitor will appear in the Sign-ins workbook.
 
-## Step 2: Access Sign-ins workbook in Azure portal
+## Step 2: Access Sign-ins workbook in the Microsoft Entra admin center
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-Once you've integrated your Microsoft Entra sign-in and audit logs with Azure Monitor as specified in the Azure Monitor integration, access the sign-ins workbook:
+Once you integrate your Microsoft Entra sign-in and audit logs with Azure Monitor as specified in the Azure Monitor integration, access the sign-ins workbook:
 
    1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](~/identity/role-based-access-control/permissions-reference.md#reports-reader).
    1. Browse to **Identity** > **Monitoring & health** > **Workbooks**.
    1. In the **Usage** section, open the **Sign-ins** workbook.
 
-   :::image type="content" source="media/howto-get-list-of-all-auth-library-apps/sign-in-workbook.png" alt-text="Screenshot of the Azure portal workbooks interface highlighting the sign-ins workbook.":::
+   :::image type="content" source="media/howto-get-list-of-all-auth-library-apps/sign-in-workbook.png" alt-text="Screenshot of the Microsoft Entra admin center workbooks interface highlighting the sign-ins workbook.":::
 
 ## Step 3: Identify apps that use ADAL
 
-The table at the bottom of the Sign-ins workbook page lists apps that recently used ADAL. You can also export a list of the apps. Update these apps to use MSAL.
+The table at the bottom of the Sign-ins workbook page lists ADAL apps active in last 30 days. You can also export a list of these apps by selecting the download button. Update these apps to use MSAL.
     
-:::image type="content" source="media/howto-get-list-of-all-auth-library-apps/auth-library-apps-present.png" alt-text="Screenshot of sign-ins workbook displaying apps that use Active Directory Authentication Library.":::
+:::image type="content" source="media/howto-get-list-of-all-auth-library-apps/active-apps-using-adal.png" alt-text="Screenshot of sign-ins workbook displaying active apps that use Active Directory Authentication Library.":::
     
-If there are no apps using ADAL, the workbook will display a view as shown below. 
+If there are no apps using ADAL, this section of workbook displays a view as shown: 
     
-:::image type="content" source="media/howto-get-list-of-all-auth-library-apps/no-auth-library-apps.png" alt-text="Screenshot of sign-ins workbook when no app is using Active Directory Authentication Library.":::
+:::image type="content" source="media/howto-get-list-of-all-auth-library-apps/no-active-apps-using-adal.png" alt-text="Screenshot of sign-ins workbook when no app is using Active Directory Authentication Library.":::
+
+The following section of the workbook shows all the apps sign-in data. This includes total number of apps and sign-in activities including location and device. 
+
+:::image type="content" source="media/howto-get-list-of-all-auth-library-apps/all-apps-sign-in-data.png" alt-text="Screenshot of sign-ins workbook showing detailed sign-in information for your apps.":::
 
 ## Step 4: Dive deep to analyze application usage and authentication data
 To thoroughly assess the impact of ADAL applications within your tenant, it's crucial to analyze more detailed data beyond mere identification. 
