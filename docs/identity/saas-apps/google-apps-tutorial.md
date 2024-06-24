@@ -240,7 +240,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
     e. Check/Uncheck the **Use a domain specific issuer** option as per the note mentioned in the above **Basic SAML Configuration** section in the Microsoft Entra ID.
 
-	f. In the **Change password URL** field in Google Cloud / G Suite Connector by Microsoft, enter the value as `https://mysignins.microsoft.com/security-info/password/changet`
+	f. In the **Change password URL** field in Google Cloud / G Suite Connector by Microsoft, enter the value as `https://mysignins.microsoft.com/security-info/password/change`
 
     g. Click **Save**.
 
