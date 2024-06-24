@@ -45,7 +45,7 @@
       href:  decommission-connect-sync-v1.md
     - name:  Verify your version of sync
       href:  verify-sync-tool-version.md
-    - name:  Security hardening for auto-upgrade
+    - name:  Security improvements to autoupgrade and alerts 
       href:  connect/security-updates-pks.md
   - name: Managing users and groups
     items: 

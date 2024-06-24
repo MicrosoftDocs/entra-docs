@@ -10,7 +10,7 @@ ms.subservice: hybrid-connect
 ms.author: billmath
 ---
 
-# Security improvements to the autoupgrade process 
+# Security improvements to Microsoft Entra Connect Sync autoupgrade and Microsoft Entra Connect Health alerts 
 
 Since September 2023, we've auto-upgrading Microsoft Entra Connect Sync and Microsoft Entra Connect Health customers to an updated build as part of a precautionary security-related service change. Customers who autoupgraded won't be impacted by the service change, but if you opted out of autoupgrade or autoupgrade failed, we **strongly recommend** that you upgrade to the [latest versions](reference-connect-version-history.md) by **September 23, 2024**. 
 
@@ -22,17 +22,17 @@ The following table provides information on the features and impact to services,
 |-----|-----|
 |Microsoft Entra Connect| autoupgrade stops working. Synchronization isn't impacted|
 |Microsoft Entra Connect Health Connect Sync agent|A subset of [alerts](how-to-connect-health-alert-catalog.md#alerts-for-microsoft-entra-connect-sync) are impacted: </br> - Connection to Microsoft Entra ID failed due to authentication failure </br> - High CPU usage detected</br> - High Memory Consumption Detected </br> - Password Hash Synchronization has stopped working </br> - Export to Microsoft Entra ID was Stopped. Accidental delete threshold was reached</br> - Password Hash Synchronization heartbeat was skipped in the last 120 minutes </br> - Microsoft Entra Sync service can't start due to invalid encryption keys </br> - Microsoft Entra Sync service not running: Windows Service account Creds Expired| 
-|Microsoft Entra Connect HealthAD DS agent|[All alerts](how-to-connect-health-adds.md#alerts-for-microsoft-entra-connect-health-for-ad-ds)|
-|Microsoft Entra Connect Health AD FS agent|[All alerts](how-to-connect-health-adfs.md#usage-analytics-for-ad-fs)|
+|Microsoft Entra Connect HealthAD DS agent|[All alerts](how-to-connect-health-alert-catalog.md#alerts-for-active-directory-domain-services)|
+|Microsoft Entra Connect Health AD FS agent|[All alerts](how-to-connect-health-alert-catalog.md#alerts-for-active-directory-federation-services)|
 
 ## Minimum versions
 To take advantage of our latest security improvements, we strongly encourage customers to upgrade to the following builds by **September 23, 2024**. To avoid any service impact you should be using the following minimum versions:
 
 - Microsoft Entra Connect: [version 2.3.2.0](reference-connect-version-history.md#2320) or higher
 - Microsoft Entra Connect Health 
- - Connect Sync agent: [4.5.2487.0](https://aka.ms/connecthealth-download) or higher 
- - AD DS agent: version [4.5.2487.0](https://aka.ms/connecthealth-adds-download) or higher 
- - AD FS agent: version [4.5.2487.0](https://aka.ms/connecthealth-adfs-download) or higher
+     - Connect Sync agent: [4.5.2487.0](https://aka.ms/connecthealth-download) or higher 
+     - AD DS agent: version [4.5.2487.0](https://aka.ms/connecthealth-adds-download) or higher 
+     - AD FS agent: version [4.5.2487.0](https://aka.ms/connecthealth-adfs-download) or higher
 
 To upgrade to the latest version.
 > [!div class="nextstepaction"]
