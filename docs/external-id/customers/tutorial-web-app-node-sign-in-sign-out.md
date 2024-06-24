@@ -98,6 +98,8 @@ If you use the *.env* file to store your configuration information:
 
 You export `msalConfig`, `REDIRECT_URI`, `TENANT_SUBDOMAIN` and `POST_LOGOUT_REDIRECT_URI` variables in the *authConfig.js* file, which makes them accessible wherever you require the file.
 
+[!INCLUDE [external-id-custom-domain](./includes/use-custom-domain-url.md)]
+
 ## Add express routes
 
 The Express routes provide the endpoints that enable us to execute operations such as sign in, sign out and view ID token claims.
