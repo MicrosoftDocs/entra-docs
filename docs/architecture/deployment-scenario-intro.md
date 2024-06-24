@@ -1,5 +1,5 @@
 ---
-title: #Required; Keep the title body to 60-65 chars max including spaces and brand
+title: Microsoft Entra deployment scenarios introduction
 description: The Microsoft Entra deployment scenarios article series provides guidance regarding the Microsoft Entra Suite. 
 ms.author: gasinh
 author: gargi-sinha
@@ -11,15 +11,15 @@ ms.date: 06/13/2024
 
 #CustomerIntent: As a Microsoft Entra customer, I want learn how to configure the Microsoft Entra Suite products so that we can achieve best practices for them working together.
 ---
-# Introduction
+# Microsoft Entra deployment scenarios introduction
 
 The Microsoft Entra deployment scenarios article series provides guidance regarding the Microsoft Entra Suite that bundles these products:
 
-- [Microsoft Entra ID Protection](../id-protection/overview-identity-protection)
-- [Microsoft Entra ID Governance](../id-governance/identity-governance-overview)
-- [Microsoft Entra Verified ID](../verified-id/decentralized-identifier-overview)
-- [Microsoft Entra Internet Access](../global-secure-access/concept-internet-access) (Preview)
-- [Microsoft Entra Private Access](../global-secure-access/concept-private-access) (Preview)
+- [Microsoft Entra ID Protection](../id-protection/overview-identity-protection.md)
+- [Microsoft Entra ID Governance](../id-governance/identity-governance-overview.md)
+- [Microsoft Entra Verified ID](../verified-id/decentralized-identifier-overview.md)
+- [Microsoft Entra Internet Access](../global-secure-access/concept-internet-access.md) (Preview)
+- [Microsoft Entra Private Access](../global-secure-access/concept-private-access.md) (Preview)
 
 In these articles, we describe scenarios that articulate the value of the Microsoft Entra Suite and how its capabilities work together.
 
