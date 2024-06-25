@@ -1,9 +1,9 @@
 ---
-title: Simulate remote networks with Azure virtual networks
+title: Simulate remote network connectivity using Azure VNG
 description: Configure Azure resources to simulate remote network connectivity to Microsoft's Security Edge Solutions with Global Secure Access.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 03/27/2024
+ms.date: 06/24/2024
 ms.author: kenwith
 author: kenwith
 manager: amycolannino
@@ -11,7 +11,7 @@ ms.reviewer: absinh
 
 # Customer intent: As an IT administrator, I want to configure Global Secure Access with an Azure virtual network so I can better understand how the service can be implemented in my organization.
 ---
-# Create a remote network using Azure virtual networks
+# Simulate remote network connectivity using Azure VNG
 
 Organizations might want to extend the capabilities of Microsoft Entra Internet Access to entire networks not just individual devices they can [install the Global Secure Access Client](how-to-install-windows-client.md) on. This article shows how to extend these capabilities to an Azure virtual network hosted in the cloud. Similar principles might be applied to a customer's on-premises network equipment.
 
