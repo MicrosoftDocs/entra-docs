@@ -138,4 +138,4 @@ In your terminal, install  more Node packages, `axios`, `cookie-parser`, `body-p
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Edit profile in a Node.js we app](how-to-web-app-node-edit-profile-prepare-app.md)
+> [Edit profile in a Node.js web app](how-to-web-app-node-edit-profile-prepare-app.md)

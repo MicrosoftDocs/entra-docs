@@ -1,7 +1,8 @@
 ---
 title: Prepare external tenant for profile editing with MFA in a Node.js web application
-description: Learn how to edit profile with multifactor authentication protection in your external-facing Node.js web app
+description: Learn how to prepare external ternant to edit profile with multifactor authentication protection in your external-facing Node.js web app
 manager: mwongerapz
+author: kengaderdus
 ms.author: kengaderdus
 ms.service: entra-external-id 
 ms.subservice: customers
@@ -48,7 +49,7 @@ This API needs to expose permissions, which a client needs to acquire for callin
 In this section, you grant API permissions to the client web app that you registered earlier (from the pre-requisites). You grant two permissions: 
 
 - *User.ReadWrite* - a Microsoft Graph APIs permissions that enables user to update their profile.
-- *api://{clientId}/{User.MFA}* - the MFA web API permission that protects the update profile operation with MFA.
+- *api://{clientId}/User.MFA* - the MFA web API permission that protects the update profile operation with MFA.
 
 ### Grant Microsoft Graph API User.ReadWrite permission
 

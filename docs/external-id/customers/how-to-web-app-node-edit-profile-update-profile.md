@@ -2,6 +2,7 @@
 title: Edit profile in a Node.js web app
 description: Learn how to edit profile with multifactor authentication protection in your external-facing Node.js web app
 manager: mwongerapz
+author: kengaderdus
 ms.author: kengaderdus
 ms.service: entra-external-id 
 ms.subservice: customers
