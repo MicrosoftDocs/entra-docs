@@ -16,11 +16,30 @@ ms.topic: reference
 
 A redirect URI, or reply URL, is the location where the Microsoft Entra authorization server sends the user once they have successfully authorized and been granted an authorization code or access token. To sign in a user, your app must send a login request to the Microsoft Entra authorization endpoint, with a redirect URI specified as a parameter. The Microsoft Entra authentication server will check if the redirect URI it receives has been added to the app registration. The redirect URI is a critical security feature that ensures authorization codes and access tokens are sent only to the intended recipient. This article outlines the features and restrictions of redirect URIs in the Microsoft identity platform.
 
-## Why a redirect URI needs to be added to an app registration
+## Why do redirect URI(s) need to be added to an app registration?
 
-For security reasons, the Microsoft Entra authorization server will not redirect users or send tokens to a URI that is not added to the app registration. Entra login servers only redirect users and send tokens to redirect URIs that have been added to an app registration. If the redirect URI specified in the login request doesn’t match any of the redirect URIs you have added in your application, you'll receive an error message such as `AADSTS50011: The reply URL specified in the request does not match the reply URLs configured for the application`. For more information on error codes, see [Microsoft Entra authentication and authorization error codes](reference-error-codes.md).
+For security reasons, the Microsoft Entra authentication server will not redirect users or send tokens to a URI that is not added to the app registration. Microsoft Entra login servers only redirect users and send tokens to redirect URIs that have been added to an app registration. If the redirect URI specified in the login request doesn’t match any of the redirect URIs you have added in your application, you'll receive an error message such as `AADSTS50011: The reply URL specified in the request does not match the reply URLs configured for the application`. For more information on error codes, see [Microsoft Entra authentication and authorization error codes](reference-error-codes.md).
 
-### What platforms require a redirect URI?
+## Should I add a redirect URIs to an app registration?
+
+Whether you should add a redirect URI to your app registration depends on the authorization protocol your application uses. You must add appropriate redirect URIs to your app registration if your application is using the following authorization protocols:
+
+-	[OAuth 2.0 authorization code flow](v2-oauth2-auth-code-flow.md)
+-	[OAuth 2.0 client credentials flow](v2-oauth2-client-creds-grant-flow.md)
+-	[OAuth 2.0 implicit grant flow](v2-oauth2-implicit-grant-flow.md)
+-	[OpenID Connect](v2-protocols-oidc.md)
+-	[Single sign-on SAML protocol](single-sign-on-saml-protocol.md)
+
+You don’t need to add redirect URIs to your app registration if your application is using the following authorization protocols or features.
+
+-	[Native Authentication](../external-id/customers/concept-native-authentication.md)
+-	[OAuth 2.0 Device code flow](v2-oauth2-device-code.md)
+-	[OAuth 2.0 On-Behalf-Of flow](v2-oauth2-on-behalf-of-flow.md)
+-	[OAuth 2.0 Resource owner password credential flow](v2-oauth-ropc.md)
+-	[Windows Integrated Auth Flow](/msal/dotnet/acquiring-tokens/desktop-mobile/integrated-windows-authentication.md)
+-	[SAML 2.0 Identity Provider (IdP) for Single Sign On ](../identity/hybrid/connect/how-to-connect-fed-saml-idp.md)
+
+### What platform should I add my redirect URI(s) to?
 
 If the application you're building contains one or multiple redirect URIs in your app registration, you'll need to enable a [public client flow configuration](msal-client-applications.md). The following tables provide guidance on the type of redirect URI you should or shouldn't add based on the platform you're building your application on.
 
