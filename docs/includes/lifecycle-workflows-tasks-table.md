@@ -12,12 +12,12 @@ Lifecycle Workflows currently support the following tasks:
 
 |Task  |taskdefinitionID  |Category  | Active Directory Compatibility  |
 |---------|---------|---------|
-| [Send welcome email to new hire](../id-governance/lifecycle-workflow-tasks.md#send-welcome-email-to-new-hire)     |   70b29d51-b59a-4773-9280-8841dfd3f2ea      | Joiner         | :white_check_mark:  |
-| [Send onboarding reminder email](../id-governance/lifecycle-workflow-tasks.md#send-onboarding-reminder-email)   |   3C860712-2D37-42A4-928F-5C93935D26A1     | Joiner         | :white_check_mark:  |
+| [Send welcome email to new hire](../id-governance/lifecycle-workflow-tasks.md#send-welcome-email-to-new-hire)     |   70b29d51-b59a-4773-9280-8841dfd3f2ea      | Joiner         | :white_check_mark:, , but user must have a mailbox in either Exchange or Exchange Online |
+| [Send onboarding reminder email](../id-governance/lifecycle-workflow-tasks.md#send-onboarding-reminder-email)   |   3C860712-2D37-42A4-928F-5C93935D26A1     | Joiner         | :white_check_mark:, but only if created from HR source  |
 | [Generate Temporary Access Pass and send via email to user's manager](../id-governance/lifecycle-workflow-tasks.md#generate-temporary-access-pass-and-send-via-email-to-users-manager)     |  1b555e50-7f65-41d5-b514-5894a026d10d       | Joiner         | :white_check_mark:  |
 |[Send email to notify manager of user move](../id-governance/lifecycle-workflow-tasks.md#send-email-to-notify-manager-of-user-move)     |  aab41899-9972-422a-9d97-f626014578b7       | Mover         | :white_check_mark:  |
 | [Request user access package assignment](../id-governance/lifecycle-workflow-tasks.md#request-user-access-package-assignment)     |  c1ec1e76-f374-4375-aaa6-0bb6bd4c60be       | Joiner, Mover         | :white_check_mark:  |
-| [Add user to groups](../id-governance/lifecycle-workflow-tasks.md#add-user-to-groups)     |    22085229-5809-45e8-97fd-270d28d66910     | Joiner, Leaver, Mover | :white_check_mark:  |
+| [Add user to groups](../id-governance/lifecycle-workflow-tasks.md#add-user-to-groups)     |    22085229-5809-45e8-97fd-270d28d66910     | Joiner, Leaver, Mover | :white_check_mark:, Users can be either created in Microsoft Entra or synched, but group must be Microsoft Entra SG or Microsoft 365 group  |
 | [Add user to teams](../id-governance/lifecycle-workflow-tasks.md#add-user-to-teams)      |  e440ed8d-25a1-4618-84ce-091ed5be5594       | Joiner, Leaver, Mover | :white_check_mark:  |
 |[Enable user account](../id-governance/lifecycle-workflow-tasks.md#enable-user-account)     |    6fc52c9d-398b-4305-9763-15f42c1676fc     | Joiner, Leaver | :white_check_mark:  |
 | [Run a custom task extension](../id-governance/lifecycle-workflow-tasks.md#run-a-custom-task-extension)    |    4262b724-8dba-4fad-afc3-43fcbb497a0e    | Joiner, Leaver, Mover | :white_check_mark:  |
