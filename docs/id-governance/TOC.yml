@@ -7,12 +7,6 @@
     href: identity-governance-overview.md
 
 
-  - name: What is identity lifecycle management?
-    href: what-is-identity-lifecycle-management.md
-
-
-
-
 - name: Scenarios
   expanded: true
   items:
@@ -26,18 +20,6 @@
       href: scenarios/govern-the-employee-lifecycle.md
     - name: Identity lifecycle management provisioning
       href: what-is-provisioning.md
-
-        items: 
-        - name: Govern provisioning to LDAP based apps
-          href: scenarios/provision-ldap.md
-        - name: Govern provisioning to LDAP for Linux auth
-          href: scenarios/provision-ldap-linux.md
-        - name: Govern provisioning to SQL based apps
-          href: scenarios/provision-sql.md     
-        - name: Govern provisioning to SAP ECC
-          href: scenarios/provision-sap.md    
-        - name: Govern provisioning to PowerShell based apps
-          href: scenarios/provision-powershell.md   
     - name: Automate identity lifecycle management
       href: scenarios/automate-identity-lifecycle.md
   - name: Govern access to applications
