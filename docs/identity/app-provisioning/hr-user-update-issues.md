@@ -53,8 +53,8 @@ Switch([BusinessTitle],[BusinessTitle],"","N/A")
 **Applies to:**
 * Workday to on-premises Active Directory user provisioning
 * Workday to Microsoft Entra user provisioning
-* SAP SuccessFactors to on-premises Active Directory user provisioning
 * Workday to on-premises Active Directory user provisioning
+* SAP SuccessFactors to on-premises Active Directory user provisioning
 * API-driven provisioning to on-premises Active Directory
 
 | Troubleshooting | Details |
