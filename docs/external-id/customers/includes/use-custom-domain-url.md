@@ -14,7 +14,7 @@ Use a custom domain to fully brand the authentication URL. From a user perspecti
 
 Use the following steps to use a custom domain:
 
-1. Use the steps in [Enable custom URL domains for apps in external tenants](../how-to-custom-url-domain.md) article to enable custom domain URL for your external tenant.
+1. Use the steps in [Enable custom URL domains for apps in external tenants](../how-to-custom-url-domain.md) to enable custom domain URL for your external tenant.
 
 1. In your *authConfig.js* file, locate then `auth` object, then:
     1. Update the value of the `authority` property to *https://Enter_the_Custom_Domain_Here/Enter_the_Tenant_ID_Here*. Replace `Enter_the_Custom_Domain_Here` with your custom domain URL and `Enter_the_Tenant_ID_Here` with your tenant ID. If you don't have your tenant ID, learn how to [read your tenant details](../how-to-create-external-tenant-portal.md#get-the-external-tenant-details). 
