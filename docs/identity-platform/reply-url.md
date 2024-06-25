@@ -4,7 +4,7 @@ description: A description of the best practices and limitations of redirect URI
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.date: 05/28/2024
+ms.date: 06/25/2024
 ms.reviewer:
 ms.service: identity-platform
 
@@ -14,11 +14,15 @@ ms.topic: reference
 
 # Redirect URI (reply URL) outline and restrictions
 
-A redirect URI, or reply URL, is the location where the Microsoft Entra authorization server sends the user once they have successfully authorized and been granted an authorization code or access token. To sign in a user, your app must send a login request to the Microsoft Entra authorization endpoint, with a redirect URI specified as a parameter. The Microsoft Entra authentication server will check if the redirect URI it receives has been added to the app registration. The redirect URI is a critical security feature that ensures authorization codes and access tokens are sent only to the intended recipient. This article outlines the features and restrictions of redirect URIs in the Microsoft identity platform.
+To sign in a user, your application must send a login request to the Microsoft Entra authorization endpoint, with a redirect URI specified as a parameter. The redirect URI is a critical security feature that ensures authorization codes and access tokens are sent only by the Microsoft Entra authentication server to the intended recipient. This article outlines the features and restrictions of redirect URIs in the Microsoft identity platform.
+
+## What is a redirect URI?
+
+A redirect URI, or reply URL, is the location where the Microsoft Entra authentication server sends the user once they have successfully authorized and been granted an authorization code or access token. To sign in a user, your application must send a login request with a redirect URI specified as a perimeter, so after the user has successfully signed in, the authentication server will re-direct the user and issue an access token to the redirect URI specified in the login request.
 
 ## Why do redirect URI(s) need to be added to an app registration?
 
-For security reasons, the Microsoft Entra authentication server will not redirect users or send tokens to a URI that is not added to the app registration. Microsoft Entra login servers only redirect users and send tokens to redirect URIs that have been added to an app registration. If the redirect URI specified in the login request doesn’t match any of the redirect URIs you have added in your application, you'll receive an error message such as `AADSTS50011: The reply URL specified in the request does not match the reply URLs configured for the application`. For more information on error codes, see [Microsoft Entra authentication and authorization error codes](reference-error-codes.md).
+For security reasons, the authentication server will not redirect users or send tokens to a URI that is not added to the app registration. Microsoft Entra login servers only redirect users and send tokens to redirect URIs that have been added to an app registration. If the redirect URI specified in the login request doesn’t match any of the redirect URIs you have added in your application, you'll receive an error message such as `AADSTS50011: The reply URL specified in the request does not match the reply URLs configured for the application`. For more information on error codes, see [Microsoft Entra authentication and authorization error codes](reference-error-codes.md).
 
 ## Should I add a redirect URIs to an app registration?
 
@@ -33,7 +37,7 @@ Whether you should add a redirect URI to your app registration depends on the au
 You don’t need to add redirect URIs to your app registration if your application is using the following authorization protocols or features.
 
 -	[Native Authentication](../external-id/customers/concept-native-authentication.md)
--	[OAuth 2.0 Device code flow](v2-oauth2-device-code.md)
+-	[OAuth 2.0 device code flow](v2-oauth2-device-code.md)
 -	[OAuth 2.0 On-Behalf-Of flow](v2-oauth2-on-behalf-of-flow.md)
 -	[OAuth 2.0 Resource owner password credential flow](v2-oauth-ropc.md)
 -	[Windows Integrated Auth Flow](/entra/msal/dotnet/acquiring-tokens/desktop-mobile/integrated-windows-authentication)
