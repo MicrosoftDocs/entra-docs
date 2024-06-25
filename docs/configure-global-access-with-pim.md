@@ -37,9 +37,9 @@ The following diagram shows how you can easily achieve secure private access usi
 :::image type="content" border="true" source="./media/image.png" alt-text="Screenshot of X.":::
 
 To successfully implement secure private access, you must complete these three steps:
-- Step 1: [Configure and assign groups](#configure-amd-assign-groups)
-- Step 2: [Activate privileged access](#activate-privileged-access)
-- Step 3: [Tracking and logging compliance](#tracking-and-logging-compliance)
+- Step 1: [Configure and assign groups](#step-1-configure-amd-assign-groups)
+- Step 2: [Activate privileged access](#step-2-activate-privileged-access)
+- Step 3: [Tracking and logging compliance](#step-3-tracking-and-logging-compliance)
 
 ## Step 1: Configure amd assign groups
 
