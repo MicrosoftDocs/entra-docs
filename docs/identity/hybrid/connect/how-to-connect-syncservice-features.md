@@ -72,7 +72,7 @@ The following settings are configured in Microsoft Entra Connect:
 | DirectoryExtensions |[Microsoft Entra Connect Sync: Directory extensions](how-to-connect-sync-feature-directory-extensions.md) |
 | [DuplicateProxyAddressResiliency<br/>DuplicateUPNResiliency](#duplicate-attribute-resiliency) |Allows an attribute to be quarantined when it's a duplicate of another object rather than failing the entire object during export. |
 | Password Hash Sync |[Implementing password hash synchronization with Microsoft Entra Connect Sync](how-to-connect-password-hash-synchronization.md) |
-| Password Writeback | Not supported. This service feature is discontinued. To configure Password Writeback see [Enable password writeback in Microsoft Entra Connect](./authentication/tutorial-enable-sspr-writeback.md#enable-password-writeback-in-microsoft-entra-connect) |
+| Password Writeback | Not supported. This service feature is discontinued. To configure Password Writeback see [Enable password writeback in Microsoft Entra Connect](~/identity/authentication/tutorial-enable-sspr-writeback.md#enable-password-writeback-in-microsoft-entra-connect) |
 | Pass-through Authentication |[User sign-in with Microsoft Entra pass-through authentication](how-to-connect-pta.md)|
 | UnifiedGroupWriteback |Group writeback|
 | UserWriteback |Not currently supported. |
