@@ -45,7 +45,7 @@ To successfully implement secure private access, you must complete these three s
 
 [To begin, we TBD.]
 
-1. Browse to [Microsoft Entra](https://entra.microsoft.com/) > **Identity** > **Groups** > **All Groups**.
+1. Navigate to [Microsoft Entra](https://entra.microsoft.com/) > **Identity** > **Groups** > **All Groups**.
  
    :::image type="content" border="true" source="./media/image.png" alt-text="Screenshot of X.":::
 
@@ -59,7 +59,7 @@ To successfully implement secure private access, you must complete these three s
 
 ### Onboard the group to PIM 
 
-1. Navigate to entra.microsoft.com  >  **Identity Governance**  > **Privileged Identity Management**.
+1. Navigate to [Microsoft Entra](https://entra.microsoft.com/) >  **Identity Governance**  > **Privileged Identity Management**.
 1. Select **Groups**, then **Discover Groups**. 
 
    :::image type="content" border="true" source="./media/image.png" alt-text="Screenshot of X.":::
@@ -98,7 +98,7 @@ To successfully implement secure private access, you must complete these three s
 
 ### Quick Access assignment
 
-1. Navigate to entra.microsoft.com > **Global Secure Access** > **Quick Access** > **Users and Groups**. 
+1. Navigate to [Microsoft Entra](https://entra.microsoft.com/) > **Global Secure Access** > **Quick Access** > **Users and Groups**. 
 1. Select **Add user/group**, then specify the group that you created; for example `HighRiskAssetAccess`.
 
    > [!NOTE]  
@@ -116,8 +116,8 @@ Even if a user and their device meet security requirements, attempting to access
 
 [Next, we TBD.]
 
-1. As a privileged user, navigate to entra.microsoft.com  >  **Identity Governance**  > **Privileged Identity Management**. 
-1. Select My Roles and select Groups to see all eligible assignments.
+1. With at least a privileged user role, navigate to [Microsoft Entra](https://entra.microsoft.com/)  >  **Identity Governance**  > **Privileged Identity Management**. 
+1. Select **My Roles** and select **Groups** to see all eligible assignments.
 
    :::image type="content" border="true" source="./media/image.png" alt-text="Screenshot of X.":::
 
@@ -131,7 +131,7 @@ Even if a user and their device meet security requirements, attempting to access
 
 ### Reattempt to connect with role activated 
 
-1 Browse any of the published resources, as you should be able to successfully connect to them. 
+- Browse any of the published resources, as you should be able to successfully connect to them. 
 
    :::image type="content" border="true" source="./media/image.png" alt-text="Screenshot of X.":::
 
