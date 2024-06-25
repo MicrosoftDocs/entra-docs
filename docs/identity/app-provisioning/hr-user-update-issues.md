@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: troubleshooting
-ms.date: 06/20/2024
+ms.date: 06/25/2024
 ms.author: jfields
 ms.reviewer: chmutali
 ---
@@ -53,6 +53,9 @@ Switch([BusinessTitle],[BusinessTitle],"","N/A")
 **Applies to:**
 * Workday to on-premises Active Directory user provisioning
 * Workday to Microsoft Entra user provisioning
+* SAP SuccessFactors to on-premises Active Directory user provisioning
+* Workday to on-premises Active Directory user provisioning
+* API-driven provisioning to on-premises Active Directory
 
 | Troubleshooting | Details |
 |-- | -- |
