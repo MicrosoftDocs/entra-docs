@@ -36,7 +36,7 @@ You don’t need to add redirect URIs to your app registration if your applicati
 -	[OAuth 2.0 Device code flow](v2-oauth2-device-code.md)
 -	[OAuth 2.0 On-Behalf-Of flow](v2-oauth2-on-behalf-of-flow.md)
 -	[OAuth 2.0 Resource owner password credential flow](v2-oauth-ropc.md)
--	[Windows Integrated Auth Flow](/entra/msal/dotnet/acquiring-tokens/desktop-mobile/integrated-windows-authentication.md)
+-	[Windows Integrated Auth Flow](/entra/msal/dotnet/acquiring-tokens/desktop-mobile/integrated-windows-authentication)
 -	[SAML 2.0 Identity Provider (IdP) for Single Sign On ](../identity/hybrid/connect/how-to-connect-fed-saml-idp.md)
 
 ### What platform should I add my redirect URI(s) to?
