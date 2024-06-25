@@ -1,10 +1,12 @@
 ---
-author: barclayn 
+author: barclayn
 ms.author: barclayn
-ms.date: 06/10/2024 
+ms.date: 06/10/2024
 ms.topic: include
 ms.service: entra-id
 ms.subservice: managed-identities
+ms.custom:
+  - linux-related-content
 ---
 
 ## Use a Linux VM system-assigned managed identity to access Azure Storage 
