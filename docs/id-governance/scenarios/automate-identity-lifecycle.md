@@ -8,9 +8,7 @@ ms.service: active-directory
 ms.workload: identity
 ms.topic: overview
 ms.date: 02/28/2024
-ms.subservice: compliance
 ms.author: billmath
-ms.collection: M365-identity-device-management
 ---
 
 # Automate identity lifecycle manangement with Microsoft Entra ID Governance

@@ -8,10 +8,7 @@ manager: amycolannino
 editor: ''
 ms.service: active-directory
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: identity
 ms.date: 02/28/2024
-ms.subservice: hybrid
 ms.author: billmath
 ---
 
