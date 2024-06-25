@@ -1,10 +1,12 @@
 ---
-author: barclayn 
+author: barclayn
 ms.author: barclayn
-ms.date: 06/05/2024 
+ms.date: 06/05/2024
 ms.topic: include
 ms.service: entra-id
 ms.subservice: managed-identities
+ms.custom:
+  - devx-track-azurecli
 ---
 
 ## Assign a managed identity access to another application's app role using CLI
