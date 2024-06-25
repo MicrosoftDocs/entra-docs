@@ -36,10 +36,6 @@
     items:
     - name: Migrate IAM scenarios to Microsoft Entra ID
       href: scenarios/migrate-iam-governance.md
-    - name: Microsoft Entra Connect sync to cloud sync migrations
-      items:
-      - name: Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync
-        href: ~/identity/hybrid/cloud-sync/migrate-group-writeback.md
     - name: Microsoft identity manager migrations
       items:
       - name: Migrate IAM scenarios to Microsoft Entra ID
