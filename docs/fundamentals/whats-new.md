@@ -154,7 +154,7 @@ We've improved the experience when using Microsoft Entra External ID as an ident
 
 ---
 
-### General Availability - Refactored account details screen
+### General Availability - Refactored account details screen in Microsoft Authenticator
 
 **Type:** Plan for change    
 **Service category:** Microsoft Authenticator App    
