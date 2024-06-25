@@ -26,7 +26,7 @@ The following table provides information on the features and impact to services,
 |Microsoft Entra Connect Health AD FS agent|[All alerts](how-to-connect-health-alert-catalog.md#alerts-for-active-directory-federation-services)|
 
 ## Minimum versions
-To take advantage of our latest security improvements, we strongly encourage customers to upgrade to the following builds by **September 23, 2024**. To avoid any service impact you should be using the following minimum versions:
+To take advantage of our latest security improvements, we strongly encourage customers to upgrade to the following builds by **September 23, 2024**. To avoid any service impact, you should be using the following minimum versions:
 
 - Microsoft Entra Connect: [version 2.3.2.0](reference-connect-version-history.md#2320) or higher
 - Microsoft Entra Connect Health 
@@ -42,9 +42,6 @@ To upgrade to the latest version.
 >The autoupgrade service of Microsoft Entra Connect Sync and some alerts of Microsoft Entra Connect Health won't work after **September 23, 2024**. To avoid impact you should be at the minimum recommended versions. 
 >
 >If you're unable to upgrade before the deadline, you can restore the impacted functionalities by upgrading to the latest versions. However, you lose the alerts during the time period between **September 23, 2024** and when you upgrade.
-
-
-
 
 
 ## Consider moving to Microsoft Entra Cloud Sync
