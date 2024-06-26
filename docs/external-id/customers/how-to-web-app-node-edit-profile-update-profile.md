@@ -50,4 +50,159 @@ In this how-to guide, you learn how to acquire an access token to call Microsoft
     
 1. Replace the placeholder `{clientId}` with the Application (client) ID of the MFA web API that you registered earlier.
 
-## 
+## Acquire access token
+
+In your code editor, open *auth/AuthProvider.js* file, then update the `getToken` method in the `AuthProvider` class:
+
+```javascript
+    const axios = require('axios');
+    class AuthProvider {
+    //...
+    getToken(scopes, redirectUri = "http://localhost:3000/") {
+            return  async function (req, res, next) {
+                const msalInstance = authProvider.getMsalInstance(authProvider.config.msalConfig);
+                try {
+                    msalInstance.getTokenCache().deserialize(req.session.tokenCache);
+    
+                    const silentRequest = {
+                        account: req.session.account,
+                        scopes: scopes,
+                    };
+                    const tokenResponse = await msalInstance.acquireTokenSilent(silentRequest);
+    
+                    req.session.tokenCache = msalInstance.getTokenCache().serialize();
+                    req.session.accessToken = tokenResponse.accessToken;
+                    next();
+                } catch (error) {
+                    if (error instanceof msal.InteractionRequiredAuthError) {
+                        req.session.csrfToken = authProvider.cryptoProvider.createNewGuid();
+    
+                        const state = authProvider.cryptoProvider.base64Encode(
+                            JSON.stringify({
+                                redirectTo: redirectUri,
+                                csrfToken: req.session.csrfToken,
+                            })
+                        );
+                        
+                        const authCodeUrlRequestParams = {
+                            state: state,
+                            scopes: scopes,
+                        };
+    
+                        const authCodeRequestParams = {
+                            state: state,
+                            scopes: scopes,
+                        };
+    
+                        authProvider.redirectToAuthCodeUrl(
+                            req,
+                            res,
+                            next,
+                            authCodeUrlRequestParams,
+                            authCodeRequestParams,
+                            msalInstance
+                        );
+                    }
+    
+                    next(error);
+                }
+            };
+    }
+    //...
+```
+
+The `getToken` method uses specified scope to acquire a token.
+
+## Update the users.js file
+
+In your code editor, open the *routes/users.js* file, add the following routes:
+
+```JavaScript
+    //...
+    
+    var { fetch } = require("../fetch");
+    const { GRAPH_ME_ENDPOINT, mfaProtectedResourceScope } = require('../authConfig');
+    //...
+    
+    router.get(
+        '/gatedUpdateProfile',
+        isAuthenticated, // check if user is authenticated
+        authProvider.getToken(["User.ReadWrite"]),
+        async function (req, res, next) {
+            const graphResponse = await fetch(
+                GRAPH_ME_ENDPOINT,
+                req.session.accessToken
+              );
+            res.render("gatedUpdateProfile", {
+                profile: graphResponse,
+              });
+        }
+    );
+    
+    router.get(
+      '/updateProfile',
+      isAuthenticated, // check if user is authenticated
+      authProvider.getToken(["User.ReadWrite", mfaProtectedResourceScope], 
+                            "http://localhost:3000/users/updateProfile"),
+      async function (req, res, next) {
+          const graphResponse = await fetch(
+              GRAPH_ME_ENDPOINT,
+              req.session.accessToken
+            );
+          res.render("updateProfile", {
+              profile: graphResponse,
+            });
+      }
+    );
+    
+    router.post(
+        '/update',
+        isAuthenticated, // check if user is authenticated
+        async function (req, res, next) {
+            try {
+                if (!!req.body) {
+                  let body = req.body;
+                  const graphEndpoint = GRAPH_ME_ENDPOINT;
+                  // API that calls for a single singed in user.
+                  // more infromation for this endpoint found here
+                  // https://learn.microsoft.com/en-us/graph/api/user-update?view=graph-rest-1.0&tabs=http
+                  fetch(graphEndpoint, req.session.accessToken, "PATCH", {
+                    displayName: body.displayName,
+                    givenName: body.givenName,
+                    surname: body.surname,
+                    mail: body.mail,
+                  })
+                    .then((response) => {
+                      if (response.status === 204) {
+                        return res.redirect("/");
+                      } else {
+                        next("Not updated");
+                      }
+                    })
+                    .catch((error) => {
+                      next(error);
+                    });
+                } else {
+                  throw { error: "empty request" };
+                }
+              } catch (error) {
+                next(error);
+              }
+        }
+    );
+    //...
+```
+
+- You trigger the `/gatedUpdateProfile` route when the customer user selects the **Edit profile** link. The app:
+    1. Acquires an access token with the *User.ReadWriter* permission.
+    1. Makes a call to Microsoft Graph API to read the signed-in user's profile.
+    1. Displays the user details in the *gatedUpdateProfile.hbs* UI.
+
+- You trigger the `/updateProfile` route when the user wants to update their display name, that's, they select the *Edit* button. The app:
+    1. Acquires an access token with the *User.ReadWrite* and *mfaProtectedResourceScope* permissions. By including the *mfaProtectedResourceScope* permission, the user must complete an MFA challenge if they've not already done so.
+    1. Makes a call to Microsoft Graph API to read the signed-in user's profile.
+    1. Displays the user details in the *updateProfile.hbs* UI.
+- `/update`
+
+
+
