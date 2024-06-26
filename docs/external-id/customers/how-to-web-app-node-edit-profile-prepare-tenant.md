@@ -1,6 +1,6 @@
 ---
 title: Prepare external tenant for profile editing with MFA in a Node.js web application
-description: Learn how to prepare external ternant to edit profile with multifactor authentication protection in your external-facing Node.js web app
+description: Learn how to prepare external tenant to edit profile with multifactor authentication protection in your external-facing Node.js web app
 manager: mwongerapz
 author: kengaderdus
 ms.author: kengaderdus
@@ -18,17 +18,17 @@ ms.custom: developer
 
 After customer users successfully sign in into your external-facing app, you can enable them to edit their profiles. You enable the customer users to manage their profiles by using [Microsoft Graph API's](/graph/api/user-get) `/me` endpoint. Calling the `/me` endpoint requires a signed-in user and therefore a delegated permission.
 
-In this how-to guide, you learn how to prepare your external tenant to support edit their profile with multifactor authentication (MFA) protection. The MFA requirement is enables by a Conditional Access (CA) policy. 
+In this how-to guide, you learn how to prepare your external tenant to support edit their profile with multifactor authentication (MFA) protection. The MFA requirement is enables by a Conditional Access (CA) policy.
 
-This article is the first part of a four-part guide.
+This article is the first part of a three-part guide.
 
 ## Updatable properties 
 
 To customize the fields your customer users can edit in their profile, choose from the properties listed in the *Update profile* row of the table in [Microsoft Graph APIs and permissions](reference-user-permissions.md#microsoft-graph-apis-and-permissions).
 
-## Pre-requisites 
+## Prerequisites
 
-Complete the steps in [Tutorial: Prepare your external tenant to sign in users in a Node.js web app](tutorial-web-app-node-sign-in-prepare-tenant.md) tutorial series. After you complete this tutorial, you register an app in your external tenant, and build a web app that signs in users. We refer to this web application as the client web app.
+- Complete the steps in [Tutorial: Prepare your external tenant to sign in users in a Node.js web app](tutorial-web-app-node-sign-in-prepare-tenant.md) tutorial series. After you complete this tutorial, you register an app in your external tenant, and build a web app that signs in users. We refer to this web application as the client web app.
 
 ## Register MFA web API
 

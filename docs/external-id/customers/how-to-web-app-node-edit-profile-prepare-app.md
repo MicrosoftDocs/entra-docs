@@ -8,7 +8,7 @@ ms.service: entra-external-id
 ms.subservice: customers
 ms.topic: how-to
 ms.date: 07/01/2024
-ms.custom: developer, devx-track-js
+ms.custom: developer
 #Customer intent: As a developer, I want to prepare my Node.js web app for profile editing so that customer users can update their profile after a successful sign-in.
 ---
 
@@ -68,14 +68,14 @@ To your Node.js web app that signs in users, add the following new files:
             <br/>
             <label for="userName" >Display Name :</label>
             <input type="text" id="displayName" name="displayName" disabled value="{{profile.displayName}}" />
-            <br />
+            <br/>
             <label for="userName">Given Name :</label>
             <input type="text" id="givenName" name="givenName" value="{{profile.givenName}}" />
-            <br />
+            <br/>
         
             <label for="userSurname">Surname :</label>
             <input type="text" id="surname" name="surname" value="{{profile.surname}}" />
-            <br />
+            <br/>
         
             <button type="submit" id="button">Save</button>
           </form>
