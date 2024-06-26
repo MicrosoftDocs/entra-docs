@@ -14,10 +14,6 @@ ms.date: 06/26/2024
 
 Monitoring maximizes the availability and performance of your applications and services. It delivers a comprehensive solution for collecting, analyzing, and acting on telemetry from your infrastructure and applications. Alerts notify you when issues are found with your service or applications. You can identify and address issues before the end users of your service notice them. [Microsoft Entra ID Log Analytics](https://azure.microsoft.com/services/monitor/?OCID=AID2100131_SEM_6d16332c03501fc9c1f46c94726d2264:G:s&ef_id=6d16332c03501fc9c1f46c94726d2264:G:s&msclkid=6d16332c03501fc9c1f46c94726d2264#features) helps you analyze, search the audit logs and sign-in logs, and build custom views.
 
-See the following video to learn how to set up monitoring and reporting in Azure AD B2C using Azure Monitor.
-
-   >[!Video https://www.youtube.com/embed/Mu9GQy-CbXI]
-
 ## Monitor and get notified through alerts
 
 Monitoring your system and infrastructure helps ensure the overall health of your services. It starts with the definition of business metrics, such as, new user arrival, end user authentication rates, and conversion. Configure such indicators to monitor. If you're planning for an upcoming surge because of a promotion or holiday traffic, revise your estimates for the event and corresponding benchmark for the business metrics. After the event, fall back to the previous benchmark.
