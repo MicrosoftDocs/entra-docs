@@ -55,7 +55,6 @@ In this how-to guide, you learn how to acquire an access token to call Microsoft
 In your code editor, open *auth/AuthProvider.js* file, then update the `getToken` method in the `AuthProvider` class:
 
 ```javascript
-    const axios = require('axios');
     class AuthProvider {
     //...
     getToken(scopes, redirectUri = "http://localhost:3000/") {
@@ -111,7 +110,7 @@ In your code editor, open *auth/AuthProvider.js* file, then update the `getToken
     //...
 ```
 
-The `getToken` method uses specified scope to acquire a token.
+The `getToken` method uses specified scope to acquire a token. The `redirectUri` parameter is the redirect URL after the app acquires an access token. 
 
 ## Update the users.js file
 
@@ -164,7 +163,7 @@ In your code editor, open the *routes/users.js* file, add the following routes:
                   let body = req.body;
                   const graphEndpoint = GRAPH_ME_ENDPOINT;
                   // API that calls for a single singed in user.
-                  // more infromation for this endpoint found here
+                  // Finf more information for this endpoint found here
                   // https://learn.microsoft.com/en-us/graph/api/user-update?view=graph-rest-1.0&tabs=http
                   fetch(graphEndpoint, req.session.accessToken, "PATCH", {
                     displayName: body.displayName,
@@ -202,7 +201,76 @@ In your code editor, open the *routes/users.js* file, add the following routes:
     1. Acquires an access token with the *User.ReadWrite* and *mfaProtectedResourceScope* permissions. By including the *mfaProtectedResourceScope* permission, the user must complete an MFA challenge if they've not already done so.
     1. Makes a call to Microsoft Graph API to read the signed-in user's profile.
     1. Displays the user details in the *updateProfile.hbs* UI.
-- `/update`
+
+- You trigger the `/update` route when the user selects the **Save** button in either *gatedUpdateProfile.hbs* or *updateProfile.hbs*. The app:
+    1. Retrieves the access token for app session.
+    1. Collects all user details.
+    1. Makes a call to Microsoft Graph API to update the user's profile.
 
 
+## Update the fetch.js file
 
+The app uses the *fetch.js* file to make the actual API call. 
+
+In your code editor, open *fetch.js* file, then add the PATCH option. After you update the file, the resulting file should looks similar to the following code:
+
+```JavaScript
+var axios = require('axios');
+var authProvider = require("./auth/AuthProvider");
+
+/**
+ * Makes an Authorization "Bearer" request with the given accessToken to the given endpoint.
+ * @param endpoint
+ * @param accessToken
+ * @param method
+ */
+const fetch = async (endpoint, accessToken, method = "GET", data = null) => {
+    const options = {
+        headers: {
+            Authorization: `Bearer ${accessToken}`,
+        },
+    };
+    console.log(`request made to ${endpoint} at: ` + new Date().toString());
+
+    switch (method) {
+        case 'GET':
+            const response = await axios.get(endpoint, options);
+            return await response.data;
+        case 'POST':
+            return await axios.post(endpoint, data, options);
+        case 'DELETE':
+            return await axios.delete(endpoint + `/${data}`, options);
+        case 'PATCH': 
+            return await axios.patch(endpoint, ReqBody = data, options);
+        default:
+            return null;
+    }
+};
+
+module.exports = { fetch };
+```
+
+## Test your app
+
+Use these steps to test your app:
+
+1. In your terminal, make sure you're in the project folder that contains the *package.json*, then run the following command:
+
+    ```console
+        npm start
+    ```
+1. Open your browser, then go to http://localhost:3000.
+
+1. Select the **Sign In** button. You're prompted to sign in.
+
+1. On the sign-in page, type your **Email address**, select **Next**, type your **Password**, then select **Sign in**. If you don't have an account, select **No account? Create one** link, which starts the sign-up flow.
+
+1. To update profile, select the **Edit profile** link. You see a page similar to the following screenshot:
+
+    :::image type="content" source="media/how-to-web-app-node-edit-profile-update-profile/edit-user-profile.png" alt-text="Screenshot of user update profile."::: 
+
+1. To edit the user's **Display Name**, select the **Edit** button. If you haven't already done so, you're prompted to complete an MFA challenge. 
+ 
+## Related content
+
+- [Add multifactor authentication to an app](how-to-multifactor-authentication-customers.md)
