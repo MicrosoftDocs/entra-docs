@@ -14,7 +14,7 @@ ms.reviewer: inbarc
 ---
 # Planned change to Conditional Access target resources assignment
 
-Starting in September 2024, we're consolidating the Conditional Access **Target resources** assignments **Cloud apps** and **Global Secure Access (Preview)** options under a new name of **Resources**. Customers will be able to target **All internet resources with Global Secure Access**, **All resources (formerly all cloud apps)** or **Select specific resources (formerly select apps)**. Additionally some of the Global Secure Access (Preview) attributes in the Conditional Access API will be deprecated. 
+Starting in September 2024, we're consolidating the Conditional Access **Target resources** assignments **Cloud apps** and **Global Secure Access (Preview)** options under a new name of **Resources**. Customers are then able to target **All internet resources with Global Secure Access**, **All resources (formerly all cloud apps)** or **Select specific resources (formerly select apps)**. Some of the Global Secure Access (Preview) attributes in the Conditional Access beta API are being deprecated. 
 
 There's no change to the behavior of existing Conditional Access policies. Administrators don't need to make changes to their existing policies.
 
@@ -28,15 +28,15 @@ Customers are able to target **All internet resources with Global Secure Access*
 
 ### Microsoft Graph API changes
 
-The **networkAccess** and **globalSecureAccess** settings in the [conditionalAccessPolicy API](/graph/api/conditionalaccessroot-post-policies) will be marked for deprecation. 
+The **networkAccess** and **globalSecureAccess** settings in the [conditionalAccessPolicy API](/graph/api/conditionalaccessroot-post-policies) are being marked for deprecation. 
 
 :::image type="content" source="media/reference-resources-change/conditional-access-policy-graph-api.md.png" alt-text="Screenshot showing an example of the networkAccess and globalSecureAccess settings in the contisionalAccessPolicy Graph API.":::
 
 Administrators should avoid creating new policies with these settings and migrate any existing policies to the [new Global Secure Access App IDs](#new-global-secure-access-app-ids).
 
-When an administrator edits an existing Conditional Access policy that uses the Global Secure Access (Preview) settings in the Microsoft Entra admin center, the policy will show the new configuration. Saving the updated policy updates the schema and AppIDs. 
+When an administrator edits and saves an existing Conditional Access policy that uses these settings in the Microsoft Entra admin center the schema and AppIDs are updated.
 
-In October 2024, Microsoft will make updates to any remaining policy using the older schema to the new schema.  
+In October 2024, Microsoft will update any remaining policy using the older schema to the new schema.  
 
 ### Global Secure Access - Service principals
 
