@@ -78,7 +78,7 @@ The following metadata shows a sample `KeyDescriptor` element with a signing key
 <KeyInfo xmlns="https://www.w3.org/2000/09/xmldsig#">
 <X509Data>
 <X509Certificate>
-MIIDPjCCAiqgAwIBAgIQVWmXY...jEcQZT7EKeTiZ6bTrpDAnrr8tDCy8ng
+A1bC2dE3fH4iJ5...kL6mN7oP8qR9sT0u
 </X509Certificate>
 </X509Data>
 </KeyInfo>

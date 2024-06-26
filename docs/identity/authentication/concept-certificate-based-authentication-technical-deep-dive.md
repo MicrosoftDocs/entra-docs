@@ -218,9 +218,9 @@ Mapping types based on user names and email addresses are considered low-affinit
 |RFC822Name	| `X509:<RFC822>user@woodgrove.com` | userPrincipalName <br> onPremisesUserPrincipalName <br> certificateUserIds | low-affinity |
 |IssuerAndSubject (preview) | `X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<S>DC=com,DC=contoso,OU=UserAccounts,CN=mfatest` | certificateUserIds | low-affinity |
 |Subject (preview)| `X509:<S>DC=com,DC=contoso,OU=UserAccounts,CN=mfatest`  | certificateUserIds | low-affinity |
-|SKI | `X509:<SKI>123456789abcdef` | certificateUserIds | high-affinity |
-|SHA1PublicKey | `X509:<SHA1-PUKEY>123456789abcdef` | certificateUserIds | high-affinity |
-|IssuerAndSerialNumber (preview) | `X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<SR>b24134139f069b49997212a86ba0ef48` <br> To get the correct value for serial number, run this command and store the value shown in CertificateUserIds:<br> **Syntax**:<br> `Certutil –dump –v [~certificate path~] >> [~dumpFile path~]` <br> **Example**: <br> `certutil -dump -v firstusercert.cer >> firstCertDump.txt` | certificateUserIds | high-affinity |
+|SKI | `X509:<SKI>aB1cD2eF3gH4iJ5kL6-mN7oP8qR=` | certificateUserIds | high-affinity |
+|SHA1PublicKey | `X509:<SHA1-PUKEY>aB1cD2eF3gH4iJ5kL6-mN7oP8qR` | certificateUserIds | high-affinity |
+|IssuerAndSerialNumber (preview) | `X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<SR>cD2eF3gH4iJ5kL6mN7-oP8qR9sT` <br> To get the correct value for serial number, run this command and store the value shown in CertificateUserIds:<br> **Syntax**:<br> `Certutil –dump –v [~certificate path~] >> [~dumpFile path~]` <br> **Example**: <br> `certutil -dump -v firstusercert.cer >> firstCertDump.txt` | certificateUserIds | high-affinity |
 
 ### Define Affinity binding at the tenant level and override with custom rules (Preview)
 
@@ -265,16 +265,16 @@ There are scenarios where an organization issues multiple certificates for a sin
 **Cloud only accounts**
 For cloud-only accounts you can map multiple certificates (up to 5) for use by populating the certificateUserIds field (Authorization info in the User Portal) with unique values identifying each certificate. If the organization is using high affinity bindings say Issuer + SerialNumber, values within CertificateUserIds may look like the following: 
  
-`X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<SR>b24134139f069b49997212a86ba0ef48`\
-`X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<SR>c11154138u089b48767212a86cd0ef76`
+`X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<SR>cD2eF3gH4iJ5kL6mN7-oP8qR9sT`\
+`X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<SR>eF3gH4iJ5kL6mN7oP8-qR9sT0uV`
  
 In this example the first value represents X509Certificate1 and the second value represents X509Certificate2. The user may present either certificate at sign-in and as long as the CBA Username Binding is set to point to the certificateUserIds field to look for the particular binding type (that is, Issuer+SerialNumber in this example), then the user will successfully sign-in. 
 
 **Hybrid Synchronized accounts**
 For synchronized accounts you can map multiple certificates for use by populating the altSecurityIdentities field in AD the values identifying each certificate. If the organization is using high affinity (that is, strong authentication) bindings say Issuer + SerialNumber, this could look like the following: 
  
-`X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<SR>b24134139f069b49997212a86ba0ef48`\
-`X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<SR>c11154138u089b48767212a86cd0ef76`
+`X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<SR>cD2eF3gH4iJ5kL6mN7-oP8qR9sT`\
+`X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<SR>eF3gH4iJ5kL6mN7oP8-qR9sT0uV`
  
 In this example the first value represents X509Certificate1 and the second value represents X509Certificate2. These values must then be synchronized to the certificateUserIds field in Microsoft Entra ID.  
 
@@ -296,8 +296,8 @@ Username bindings:
 - SKI -> CertificateUserIds
 
 User account CertificateUserIds values:\
-`X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<SR>b24134139f069b49997212a86ba0ef48`\
-`X509:<SKI>82b287a25c48af0918ea088d5293712324dfd523`
+`X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<SR>aB1cD2eF3gH4iJ5kL6-mN7oP8qR`\
+`X509:<SKI>cD2eF3gH4iJ5kL6mN7-oP8qR9sT`
 
 Now, when either user presents the same certificate at sign-in the user will successfully sign-in because their account matches a unique value on that certificate. One account will be authenticated into using Issuer+SerialNumber and the other using SKI binding.
 
@@ -312,18 +312,18 @@ Populate the altSecurityIdentities field in AD with the values identifying the d
 The accounts could look like the following: 
  
 Forest 1 - Account1 (bob@woodgrove.com):\
-`X509:<SKI>82b287a25c48af0918ea088d5293712324dfd523`\
-`X509:<SHA1-PUKEY>123456789abcdef`\
+`X509:<SKI>aB1cD2eF3gH4iJ5kL6mN7oP8qR`\
+`X509:<SHA1-PUKEY>cD2eF3gH4iJ5kL6mN7oP8qR9sT`\
 `X509:<PN>bob@woodgrove.com`
  
 Forest 1 - Account2 (bob-admin@woodgrove.com): \
-`X509:<SKI>82b287a25c48af0918ea088d5293712324dfd523`\
-`X509:<SHA1-PUKEY>123456789abcdef`\
+`X509:<SKI>aB1cD2eF3gH4iJ5kL6mN7oP8qR`\
+`X509:<SHA1-PUKEY>>cD2eF3gH4iJ5kL6mN7oP8qR9sT`\
 `X509:<PN>bob@woodgrove.com`
  
 Forest 2 – ADAccount1 (bob-tdy@woodgrove.com):\
-`X509:<SKI>82b287a25c48af0918ea088d5293712324dfd523`\
-`X509:<SHA1-PUKEY>123456789abcdef`\
+`X509:<SKI>aB1cD2eF3gH4iJ5kL6mN7oP8qR`\
+`X509:<SHA1-PUKEY>>cD2eF3gH4iJ5kL6mN7oP8qR9sT`\
 `X509:<PN>bob@woodgrove.com`
  
 These values must then be synchronized to the certificateUserIds field in Microsoft Entra ID.
