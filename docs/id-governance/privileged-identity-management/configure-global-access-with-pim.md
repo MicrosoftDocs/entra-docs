@@ -13,9 +13,9 @@ ms.reviewer: katabish
 
 # Securing high value private application access with Privileged Identity Management (PIM)
 
-Microsoft Entra Private Access provides secure access to private application. Private Access includes built-in capabilities to analyze device health posture combined with user risks and state. For general corporate access, see [Microsoft Entra Private Access](/entra/global-secure-access).
+Microsoft Entra Private Access provides secure access to private application. Private Access includes built-in capabilities for maintaining a secure environment. Microsoft Entra Private Access does this by controlling access to private apps and preventing unauthorized or compromised devices from accessing critical resources. For general corporate access, see [Microsoft Entra Private Access](/entra/global-secure-access).
 
-For specific resources, such as highly valued servers and applications, customers typically add an extra in-depth defense layer by enforcing privilege access on top of their already secured private access. 
+For controlling access to specific critical resources, such as highly valued servers and applications, customers typically add an extra security layer by enforcing privileged access on top of their already secured private access. 
 
 This article discusses how to use Microsoft Entra Private Access to enable Privileged Identity Management (PIM) for Secure Access. For details about enabling (PIM), see [What is Microsoft Entra Privileged Identity Management?](/entra/id-governance/privileged-identity-management/pim-configure). 
 
@@ -25,7 +25,7 @@ Customer should consider configuring PIM using Global Secure Access for these re
 
 **Enhanced Security:** PIM allows for just-in-time privileged access, reducing the risk of excessive, unnecessary, or misused access permissions within your environment. This enhanced security aligns with the Zero Trust principle of least privilege, ensuring that users have access only when they need it.
 
-**Efficient Management**: Microsoft Global Secure Access offers Role-Based Access Control (RBAC) to manage administrative access efficiently. Admin roles like Global Administrator, Security Administrator, and others have varying levels of access, from full permissions to read-only access. This helps in delegating access effectively based on administrative responsibilities.
+**Efficient Management**: Microsoft Global Secure Access offers Role-Based Access Control (RBAC) to manage administrative access efficiently. Admin roles like Global Administrator, Security Administrator, and others have varying levels of access, from full permissions to read-only access. This feature helps in delegating access effectively based on administrative responsibilities.
 
 **Compliance and Auditing**: Using PIM with Microsoft Global Secure Access can help ensure that your organization meets compliance requirements by providing detailed tracking and logging of privileged access requests and activations.
 
@@ -144,7 +144,7 @@ If the work is completed ahead of the time you allocated, you can choose to deac
 1. Select **My Roles**, then **Groups**. 
 1. Select **Deactivate**. 
 
-:::image type="content" border="true" source="./media/pim-global-secure-access/deactivate-member.png" alt-text="Screenshot of Deactiviate member screen.":::
+   :::image type="content" border="true" source="./media/pim-global-secure-access/deactivate-member.png" alt-text="Screenshot of Deactiviate member screen.":::
 
 1. A confirmation is sent to you once the role is deactivated.  
 
