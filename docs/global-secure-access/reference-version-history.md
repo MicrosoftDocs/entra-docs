@@ -98,7 +98,6 @@ June 20, 2023: Released for download. This version is only available for install
 
 ### New features and improvements
 
-- Support for Microsoft Entra Private Access.
 - Updated partner notices.
 
 ### Fixed issues

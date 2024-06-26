@@ -11,10 +11,9 @@ ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.date: 06/05/2024
 ms.author: barclayn
+ms.custom: has-azure-ad-ps-ref, devx-track-azurepowershell, devx-track-azurecli
 
-ms.custom: has-azure-ad-ps-ref, devx-track-azurepowershell
-
-appliesto: 
+appliesto:
 zone_pivot_groups: identity-mi-app-role
 ---
 

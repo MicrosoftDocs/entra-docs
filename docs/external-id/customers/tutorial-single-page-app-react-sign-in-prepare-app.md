@@ -7,7 +7,7 @@ manager: celestedg
 ms.service: entra-external-id
 ms.subservice: customers
 ms.topic: tutorial
-ms.date: 11/27/2023
+ms.date: 06/27/2024
 ms.author: godonnell
 #Customer intent: As a dev, DevOps, or IT admin, I want to learn how to enable authentication in my own React single-page app
 ---
@@ -34,7 +34,7 @@ In this tutorial;
 
 1. Open Visual Studio Code, select **File** > **Open Folder...**. Navigate to and select the location in which to create your project.
 1. Open a new terminal by selecting **Terminal** > **New Terminal**.
-1. Run the following commands to create a new React project with the name *reactspalocal*, change to the new directory and start the React project. A web browser will open with the address `http://localhost:3000/` by default. The browser remains open and rerenders for every saved change.
+1. Run the following commands to create a new React project with the name *reactspalocal*, change to the new directory and start the React project. A web browser opens with the address `http://localhost:3000/` by default. The browser remains open and rerenders for every saved change.
 
     ```powershell
     npx create-react-app reactspalocal
@@ -67,7 +67,7 @@ In this tutorial;
 
 Identity related **npm** packages must be installed in the project to enable user authentication. For project styling, **Bootstrap** is used.
 
-1. In the **Terminal** bar, select the **+** icon to create a new terminal. A new terminal window will open enabling the other terminal to continue running in the background.
+1. In the **Terminal** bar, select the **+** icon to create a new terminal. A new terminal window opens enabling the other terminal to continue running in the background.
 1. If necessary, navigate to *reactspalocal* and enter the following commands into the terminal to install the `msal` and `bootstrap` packages.
 
     ```powershell
@@ -155,7 +155,9 @@ Identity related **npm** packages must be installed in the project to enable use
 1. Replace the following values with the values from the Azure portal:
     - Find the `Enter_the_Application_Id_Here` value and replace it with the **Application ID (clientId)** of the app you registered in the Microsoft Entra admin center.
     - In **Authority**, find `Enter_the_Tenant_Subdomain_Here` and replace it with the subdomain of your tenant. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, [learn how to read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
-2. Save the file.
+1. Save the file.
+
+[!INCLUDE [external-id-custom-domain](./includes/use-custom-domain-url.md)]
 
 ## Modify *index.js* to include the authentication provider
 

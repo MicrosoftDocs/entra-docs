@@ -10,7 +10,7 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: tutorial
-ms.date: 07/27/2023
+ms.date: 06/27/2024
 ms.custom: developer, devx-track-js
 #Customer intent: As a dev, devops, I want to learn about how to enable authentication in my own Node.js web app with an external tenant
 ---
@@ -97,6 +97,8 @@ If you use the *.env* file to store your configuration information:
 1. Replace the `Enter_the_Application_Id_Here`, `Enter_the_Tenant_Subdomain_Here` and `Enter_the_Client_Secret_Here` placeholders as explained earlier. 
 
 You export `msalConfig`, `REDIRECT_URI`, `TENANT_SUBDOMAIN` and `POST_LOGOUT_REDIRECT_URI` variables in the *authConfig.js* file, which makes them accessible wherever you require the file.
+
+[!INCLUDE [external-id-custom-domain](./includes/use-custom-domain-url.md)]
 
 ## Add express routes
 
