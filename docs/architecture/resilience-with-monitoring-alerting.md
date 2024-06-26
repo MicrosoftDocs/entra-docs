@@ -7,7 +7,7 @@ ms.topic: how-to
 author: gargi-sinha
 ms.author: gasinh
 manager: martinco
-ms.date: 12/01/2022
+ms.date: 06/26/2024
 ---
 
 # Resilience through monitoring and analytics
