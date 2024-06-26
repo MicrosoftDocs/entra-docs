@@ -185,7 +185,7 @@ Example of usage within the workflow:
 
 ### Generate Temporary Access Pass and send via email to user's manager
 
-When a compatible user joins your organization, Lifecycle Workflows allow you to automatically generate a [Temporary Access Pass (TAP)](..//identity/authentication/howto-authentication-temporary-access-pass.md), and have it sent to the new user's manager. You're also able to customize the email that is sent to the user's manager.
+Microsoft Entra allows you to use a [Temporary Access Pass (TAP)](..//identity/authentication/howto-authentication-temporary-access-pass.md) to setup password-less credentials for users. You can also use [SSPR](..//identity/authentication/concept-sspr-howitworks.md) to set a regular password. With this task, Lifecycle workflows allow you to automatically generate a Temporary Access Pass (TAP), and have it sent to the new user's manager. You're also able to customize the email that is sent to the user's manager.
 
 > [!NOTE]
 > The user's employee hire date is used as the start time for the Temporary Access Pass. Please make sure that the TAP lifetime task setting and the [time portion of your user's hire date](how-to-lifecycle-workflow-sync-attributes.md#importance-of-time) are set appropriately so that the TAP is still valid when the user starts their first day. If the hire date at the time of workflow execution is already in the past, the current time is used as the start time.
