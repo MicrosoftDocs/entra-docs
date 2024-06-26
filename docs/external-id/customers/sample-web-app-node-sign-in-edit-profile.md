@@ -78,9 +78,9 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 
 [Download the .zip file](https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial/archive/refs/heads/main.zip) or clone the sample web application from GitHub by running the following command:
 
-    ```Console
-    git clone https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial.git
-    ```
+```Console
+git clone https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial.git
+```
 
 ## Install project dependencies
 
@@ -100,7 +100,7 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 1. In your terminal, run the following command::
 
     ```console
-        npm start
+    npm start
     ```
 1. Open your browser, then go to http://localhost:3000.
 

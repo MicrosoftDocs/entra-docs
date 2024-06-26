@@ -29,19 +29,19 @@ In this how-to guide, you learn how to acquire an access token to call Microsoft
 1. In your code editor, open *authConfig.js* file, then add three new variable, `GRAPH_API_ENDPOINT`, `GRAPH_ME_ENDPOINT` and `mfaProtectedResourceScope`. Make sure to export the three variables:
 
     ```JavaScript
+    //...
+    const GRAPH_API_ENDPOINT = process.env.GRAPH_API_ENDPOINT || "https://graph.microsoft.com/";
+    // https://learn.microsoft.com/en-us/graph/api/user-update?view=graph-rest-1.0&tabs=http
+    const GRAPH_ME_ENDPOINT = GRAPH_API_ENDPOINT + "v1.0/me";
+    const mfaProtectedResourceScope = process.env.MFA_PROTECTED_SCOPE || 'api://{clientId}/User.MFA';
+    
+    module.exports = {
         //...
-        const GRAPH_API_ENDPOINT = process.env.GRAPH_API_ENDPOINT || "https://graph.microsoft.com/";
-        // https://learn.microsoft.com/en-us/graph/api/user-update?view=graph-rest-1.0&tabs=http
-        const GRAPH_ME_ENDPOINT = GRAPH_API_ENDPOINT + "v1.0/me";
-        const mfaProtectedResourceScope = process.env.MFA_PROTECTED_SCOPE || 'api://{clientId}/User.MFA';
-        
-        module.exports = {
-            //...
-            mfaProtectedResourceScope,
-            GRAPH_API_ENDPOINT,
-            GRAPH_ME_ENDPOINT,
-            //...
-        };
+        mfaProtectedResourceScope,
+        GRAPH_API_ENDPOINT,
+        GRAPH_ME_ENDPOINT,
+        //...
+    };
     ```
 
     - The `mfaProtectedResourceScope` variable represents MFA protected resource, that's the MFA web API.
@@ -257,7 +257,7 @@ Use these steps to test your app:
 1. In your terminal, make sure you're in the project folder that contains the *package.json*, then run the following command:
 
     ```console
-        npm start
+    npm start
     ```
 
 1. Open your browser, then go to http://localhost:3000. If you experience SSL certificate errors, create a `.env` file, then add the following configuration:

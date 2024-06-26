@@ -34,61 +34,61 @@ To your Node.js web app that signs in users, add the following new files:
 1. In your code editor, open *views/index.hbs* file, then add a *Edit profile* link, which shows the customer user the edit profile UI:
 
     ```html
-        <a href="/users/gatedUpdateProfile">Edit profile</a>
+    <a href="/users/gatedUpdateProfile">Edit profile</a>
     ```
     Your *views/index.hbs* file now looks similar to the following file:
 
     ```html
-        <h1>{{title}}</h1>
-        {{#if isAuthenticated }}
-        <p>Hi {{username}}!</p>
-        <a href="/users/id">View ID token claims</a>
-        <br>
-        <a href="/users/gatedUpdateProfile">Edit profile</a>
-        <br>
-        <a href="/auth/signout">Sign out</a>
-        {{else}}
-        <p>Welcome to {{title}}</p>
-        <a href="/auth/signin">Sign in</a>
-        {{/if}}
+    <h1>{{title}}</h1>
+    {{#if isAuthenticated }}
+    <p>Hi {{username}}!</p>
+    <a href="/users/id">View ID token claims</a>
+    <br>
+    <a href="/users/gatedUpdateProfile">Edit profile</a>
+    <br>
+    <a href="/auth/signout">Sign out</a>
+    {{else}}
+    <p>Welcome to {{title}}</p>
+    <a href="/auth/signin">Sign in</a>
+    {{/if}}
     ```
 
 1. In your code editor, open *views/gatedUpdateProfile.hbs* file, then add the following code:
 
     ```html
-        <h3>Microsoft Graph API /me endpoint response</h3>
-        <div style="display: flex; justify-content: left;">
-        <div style="size: 400px;">
-          <form id="userInfoForm" action='/users/update' method='POST'>
-            <label>Id :</label>
-            <label> {{profile.id}}</label>
-            <br/>
-            <label>Email :</label>
-            <label> {{profile.mail}}</label>
-            <br/>
-            <label for="userName" >Display Name :</label>
-            <input type="text" id="displayName" name="displayName" disabled value="{{profile.displayName}}" />
-            <br/>
-            <label for="userName">Given Name :</label>
-            <input type="text" id="givenName" name="givenName" value="{{profile.givenName}}" />
-            <br/>
-        
-            <label for="userSurname">Surname :</label>
-            <input type="text" id="surname" name="surname" value="{{profile.surname}}" />
-            <br/>
-        
-            <button type="submit" id="button">Save</button>
-          </form>
-        </div>
-        <div>
-          <br>
-          <br>
-            <a href="/users/updateProfile">
-            <button>Edit</button>
-            </a>
-         </div>
-        </div>
-        <a href="/">Go back</a>
+    <h3>Microsoft Graph API /me endpoint response</h3>
+    <div style="display: flex; justify-content: left;">
+    <div style="size: 400px;">
+      <form id="userInfoForm" action='/users/update' method='POST'>
+        <label>Id :</label>
+        <label> {{profile.id}}</label>
+        <br/>
+        <label>Email :</label>
+        <label> {{profile.mail}}</label>
+        <br/>
+        <label for="userName" >Display Name :</label>
+        <input type="text" id="displayName" name="displayName" disabled value="{{profile.displayName}}" />
+        <br/>
+        <label for="userName">Given Name :</label>
+        <input type="text" id="givenName" name="givenName" value="{{profile.givenName}}" />
+        <br/>
+    
+        <label for="userSurname">Surname :</label>
+        <input type="text" id="surname" name="surname" value="{{profile.surname}}" />
+        <br/>
+    
+        <button type="submit" id="button">Save</button>
+      </form>
+    </div>
+    <div>
+      <br>
+      <br>
+        <a href="/users/updateProfile">
+        <button>Edit</button>
+        </a>
+      </div>
+    </div>
+    <a href="/">Go back</a>
     ```
 
     - This file contains an HTML form that represents the [editable user details](reference-user-permissions.md#microsoft-graph-apis-and-permissions). 
@@ -99,33 +99,33 @@ To your Node.js web app that signs in users, add the following new files:
 1. In your code editor, open *views/updateProfile.hbs* file, then add the following code:
 
     ```html
-        <h3>Microsoft Graph API /me endpoint response</h3>
-        <div style="display: flex; justify-content: left;">
-        <div style="size: 400px;">
-          <form id="userInfoForm" action='/users/update' method='POST'>
-            <label>Id :</label>
-            <label> {{profile.id}}</label>
-            <br/>
-            <label>Email :</label>
-            <label> {{profile.mail}}</label>
-            <br/>
-            <label for="userName" >Display Name :</label>
-            <input type="text" id="displayName" name="displayName" value="{{profile.displayName}}" />
-            <br />
-            <label for="userName">Given Name :</label>
-            <input type="text" id="givenName" name="givenName" value="{{profile.givenName}}" />
-            <br />
-        
-            <label for="userSurname">Surname :</label>
-            <input type="text" id="surname" name="surname" value="{{profile.surname}}" />
-            <br />
-        
-            <button type="submit" id="button">Save</button>
-          </form>
-        </div>
-        <br>
-        </div>
-        <a href="/">Go back</a>
+    <h3>Microsoft Graph API /me endpoint response</h3>
+    <div style="display: flex; justify-content: left;">
+    <div style="size: 400px;">
+      <form id="userInfoForm" action='/users/update' method='POST'>
+        <label>Id :</label>
+        <label> {{profile.id}}</label>
+        <br/>
+        <label>Email :</label>
+        <label> {{profile.mail}}</label>
+        <br/>
+        <label for="userName" >Display Name :</label>
+        <input type="text" id="displayName" name="displayName" value="{{profile.displayName}}" />
+        <br />
+        <label for="userName">Given Name :</label>
+        <input type="text" id="givenName" name="givenName" value="{{profile.givenName}}" />
+        <br />
+    
+        <label for="userSurname">Surname :</label>
+        <input type="text" id="surname" name="surname" value="{{profile.surname}}" />
+        <br />
+    
+        <button type="submit" id="button">Save</button>
+      </form>
+    </div>
+    <br>
+    </div>
+    <a href="/">Go back</a>
     ```
 
 This file contains an HTML form that represents the [editable user details](reference-user-permissions.md#microsoft-graph-apis-and-permissions), but only visible after the user has completes MFA.
@@ -135,7 +135,7 @@ This file contains an HTML form that represents the [editable user details](refe
 In your terminal, install  more Node packages, `axios`, `cookie-parser`, `body-parser`, `method-override`, by running the following command:
 
 ```console
-    npm install axios cookie-parser body-parser method-override 
+npm install axios cookie-parser body-parser method-override 
 ```
 
 ## Next step
