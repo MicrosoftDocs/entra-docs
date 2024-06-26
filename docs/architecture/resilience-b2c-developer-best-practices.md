@@ -12,9 +12,7 @@ ms.date: 06/26/2024
 
 # Resilience through developer best practices
 
-In this article, discover learnings based on our experience from working with large customers. You can consider these recommendations for the design and implementation of your services.
-
-   ![Diagram of developer experience components](media/resilience-b2c-developer-best-practices/developer-best-practices-architecture.png)
+In this article, you can benefit from our experience working with large customers. You can consider these recommendations for the design and implementation of your services.
 
 ## Microsoft Authentication Library
 
@@ -45,7 +43,7 @@ The Azure AD B2C directory service supports billions of authentications a day, w
   - Understand and plan your migration timeline. When planning to migrate users to Azure AD B2C using Microsoft Graph, consider the application and tenant limits to calculate the time to complete user migration. If you split your user creation job or script using two applications, you can use the per-application limit. Ensure it remains below the per tenant threshold.
   - Understand the effects of your migration job on other applications. Consider the live traffic served by other relying applications to ensure no throttling at the tenant level and resource starvation for your live application. For more information, see the [Microsoft Graph throttling guidance](/graph/throttling).
   - Use a [load test sample](https://github.com/azure-ad-b2c/load-tests) to simulate sign-up and sign-in. 
-  - Learn more about [Azure Active Directory B2C service limits and restrictions](/azure/active-directory-b2c/service-limits?pivots=b2c-custom-policy).
+  - Learn more about [Azure AD B2C service limits and restrictions](/azure/active-directory-b2c/service-limits?pivots=b2c-custom-policy).
   
 ## Token lifetimes
 
