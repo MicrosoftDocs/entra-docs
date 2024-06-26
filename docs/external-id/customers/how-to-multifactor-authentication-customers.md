@@ -55,9 +55,9 @@ Create a Conditional Access policy in your external tenant that prompts users fo
 
    a. On the **Include** tab, select **All users**.
 
-   :::image type="content" source="media/how-to-multifactor-authentication-customers/new-policy-users.png" alt-text="Screenshot of assigning users to the new policy." lightbox="media/how-to-multifactor-authentication-customers/new-policy-users.png":::
-
    b. On the **Exclude** tab, select **Users and groups** and choose your organization's emergency access or break-glass accounts. Then choose **Select**.
+
+   :::image type="content" source="media/how-to-multifactor-authentication-customers/new-policy-users.png" alt-text="Screenshot of assigning users to the new policy." lightbox="media/how-to-multifactor-authentication-customers/new-policy-users.png":::
 
 1. Select the link under **Target resources**.
 
@@ -67,7 +67,7 @@ Create a Conditional Access policy in your external tenant that prompts users fo
 
       - Choose **Select apps** and select the link under **Select**. Find your app, select it, and then choose **Select**.
 
-   b. Under **Exclude**, select any applications that don't require multifactor authentication.
+   b. On the **Exclude** tab, select any applications that don't require multifactor authentication.
 
    :::image type="content" source="media/how-to-multifactor-authentication-customers/new-policy-apps.png" alt-text="Screenshot of assigning apps to the new policy." lightbox="media/how-to-multifactor-authentication-customers/new-policy-apps.png":::
 
