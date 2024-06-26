@@ -7,7 +7,7 @@ ms.author: barclayn
 ms.custom: Identity-Managed-Definition
 ---
 
-Microsoft Entra ID is available in several licensing options that allow you to choose the package best suited to your needs. You can get detailed information about each option at the [Microsoft Entra ID pricing page.](https://www.microsoft.com/security/business/microsoft-entra-pricing). 
+Microsoft Entra is available in several licensing options that allow you to choose the package best suited to your needs. You can get detailed information about each option at the [Microsoft Entra pricing page.](https://www.microsoft.com/security/business/microsoft-entra-pricing). 
 
 - **Microsoft Entra ID Free** - Included with Microsoft cloud subscriptions such as Microsoft Azure, Microsoft 365, and others.
 - **Microsoft Entra ID P1** - Microsoft Entra ID P1 is available as a standalone product or included with Microsoft 365 E3 for enterprise customers and Microsoft 365 Business Premium for small to medium businesses.
