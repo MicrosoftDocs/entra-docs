@@ -37,7 +37,7 @@ Customer should consider configuring PIM using Global Secure Access for these re
 ## Secure private access 
 
 To successfully implement secure private access, you must complete these three steps:
-- Step 1: [Configure and assign groups](#step-1-configure-amd-assign-groups)
+- Step 1: [Configure and assign groups](#step-1-configure-and-assign-groups)
 - Step 2: [Activate privileged access](#step-2-activate-privileged-access)
 - Step 3: [Tracking and logging compliance](#step-3-tracking-and-logging-compliance)
 
