@@ -13,15 +13,15 @@ ms.reviewer: katabish
 
 # Secure private application access with Privileged Identity Management (PIM) and Global Secure Access
 
-Microsoft Entra Private Access provides secure access to private application. Private Access includes built-in capabilities for maintaining a secure environment. Microsoft Entra Private Access does this by controlling access to private apps and preventing unauthorized or compromised devices from accessing critical resources. For general corporate access, see [Microsoft Entra Private Access](/entra/global-secure-access).
+Microsoft Entra Private Access provides secure access to private applications. Private Access includes built-in capabilities for maintaining a secure environment. Microsoft Entra Private Access does this by controlling access to private apps and preventing unauthorized or compromised devices from accessing critical resources. For general corporate access, see [Microsoft Entra Private Access](/entra/global-secure-access).
 
 For controlling access to specific critical resources, such as highly valued servers and applications, customers typically add an extra security layer by enforcing privileged access on top of their already secured private access. 
 
-This article discusses how to use Microsoft Entra Private Access to enable Privileged Identity Management (PIM) for Secure Access. For details about enabling (PIM), see [What is Microsoft Entra Privileged Identity Management?](/entra/id-governance/privileged-identity-management/pim-configure). 
+This article discusses how to use Microsoft Entra Private Access to enable Privileged Identity Management (PIM) for Secure Access. For details about enabling (PIM), see [What is Microsoft Entra Privileged Identity Management?](/entra/id-governance/privileged-identity-management/pim-configure) 
 
 ## Ensure secure access to your high value private applications
 
-Customer should consider configuring PIM using Global Secure Access for these reasons:
+Customers should consider configuring PIM using Global Secure Access to enable:
 
 **Enhanced Security:** PIM allows for just-in-time privileged access, reducing the risk of excessive, unnecessary, or misused access permissions within your environment. This enhanced security aligns with the [Zero Trust](https://www.microsoft.com/security/business/zero-trust) principle, ensuring that users have access only when they need it.
 
@@ -100,7 +100,7 @@ To begin, we configure and assign groups by creating a Microsoft Entra ID group,
 ### Quick Access assignment
 
 1. Navigate to [Microsoft Entra](https://entra.microsoft.com/) > **Global Secure Access** > **Quick Access** > **Users and groups**. 
-1. Select **Add user/group**, then specify the group that you created; for example `HighRiskAssetAccess`.  
+1. Select **Add user/group**, then specify the group that you created; for example, `HighRiskAssetAccess`.  
 
    :::image type="content" border="true" source="./media/pim-global-secure-access/quick-access.png" alt-text="Screenshot of the Quick Access screen.":::
 
