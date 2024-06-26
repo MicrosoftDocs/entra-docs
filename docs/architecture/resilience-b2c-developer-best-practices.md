@@ -7,7 +7,7 @@ ms.topic: how-to
 author: gargi-sinha
 ms.author: gasinh
 manager: martinco
-ms.date: 06/18/2024
+ms.date: 06/26/2024
 ---
 
 # Resilience through developer best practices
