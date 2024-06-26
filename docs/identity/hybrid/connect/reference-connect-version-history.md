@@ -23,7 +23,7 @@ This article helps you keep track of the versions that have been released and un
 
 You can upgrade your Microsoft Entra Connect server from all supported versions with the latest versions:
 
-You can download the latest version of Microsoft Entra Connect 2.0 from the [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=47594). See the [release notes for the latest V2.0 release](reference-connect-version-history.md#21200).
+You can download the latest version of Microsoft Entra Connect 2.x from the [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=47594). See the [release notes for the latest release](reference-connect-version-history.md#21200).
 
 Get notified about when to revisit this page for updates by copying and pasting this URL: `https://aka.ms/aadconnectrss` into your ![RSS feed reader icon](media/reference-connect-version-history/feed-icon-16x16.png) feed reader.
 
@@ -36,30 +36,26 @@ Required permissions | For permissions required to apply an update, see [Microso
 
 <a name='retiring-azure-ad-connect-1x-versions'></a>
 
-## Retiring Microsoft Entra Connect 1.x versions
+## Non-functional Microsoft Entra Connect 1.x versions
 > [!IMPORTANT]
-> Action required: Synchronization will stop working on October 1, 2023, for any customers still running Microsoft Entra Connect Sync V1.  Customers using cloud sync or Microsoft Entra Connect V2 will remain fully operational with no action required. For more information and next step guidance, see [Decommission Azure AD Connect V1](https://aka.ms/DecommissionAADConnectV1) if an upgrade is required.
+> All Microsoft Entra Connect Sync 1.x versions are unsupported and synchronization does not function. Customers using cloud sync or supported versions of Microsoft Entra Connect 2.x remain fully operational. For more information about the retirement of all 1.x versions, see [Decommission Azure AD Connect V1](https://aka.ms/DecommissionAADConnectV1).
 
 <a name='retiring-azure-ad-connect-2x-versions'></a>
 
 ## Retiring Microsoft Entra Connect 2.x versions
 > [!IMPORTANT]
-> We will begin retiring past versions of Microsoft Entra Connect Sync 2.x 12 months from the date they are superseded by a newer version. 
-> This policy will go into effect on 15 March 2023, when we will retire all versions that are superseded by a newer version on 15 March 2022.
+> Versions of Microsoft Entra Connect Sync 2.x retire 12 months from the date that a newer version is released.
+> This policy went into effect on 15 March 2023.
 > 
-> Currently only builds 2.1.20.0 (release November 9th 2022) or later are supported.  Version 2.1.20 was superseded by build 2.2.1.0 which was released June 19th 2023.  This means that 2.1.20 will be supported until June 19th, 2024.
->
-> Build 2.1.19 was released on November 2nd, 2022.  It was superseded by 2.1.20 which was released on November 9th 2022.  Since twelves months (November 9th 2023) have past since this release, 2.1.19 is no longer supported.
-> 
-> If you are not already using the latest release version of Microsoft Entra Connect Sync, you should upgrade your Microsoft Entra Connect Sync software before that date. 
+> For new installs, always install the latest version. For upgrades, make sure you upgrade to the latest version prior to the retirement of your current version.
 
 |Version|End of support date|
 |-----|-----|
-|[2.1.20.0](#21200)|6/19/2024 (12 months after release of 2.2.1.0)|
-|[2.2.1.0](#2210)|10/11/2024 (12 months after release of 2.2.8.0)|
-|[2.2.8.0](#2280)|12/12/2024 (12 months after release of 2.3.2.0)|
-|[2.3.2.0](#2320)|2/21/2025 (12 months after release of 2.3.6.0)|
-|[2.3.6.0](#2360)|4/01/2025 (12 months after release of 2.3.8.0|
+|[2.1.20.0](#21200)|retired on 19 Jun 2024 (12 months after release of 2.2.1.0)|
+|[2.2.1.0](#2210)|11 Oct 2024 (12 months after release of 2.2.8.0)|
+|[2.2.8.0](#2280)|12 Dec 2024 (12 months after release of 2.3.2.0)|
+|[2.3.2.0](#2320)|21 Feb 2025(12 months after release of 2.3.6.0)|
+|[2.3.6.0](#2360)|1 Apr 2025 (12 months after release of 2.3.8.0|
 |[2.3.8.0](#2380)|TBD|
 
 **All other versions are not supported**
@@ -67,7 +63,7 @@ Required permissions | For permissions required to apply an update, see [Microso
 
 If you run a retired version of Microsoft Entra Connect, it might unexpectedly stop working. You also might not have the latest security fixes, performance improvements, troubleshooting and diagnostic tools, and service enhancements. If you require support, we might not be able to provide you with the level of service your organization needs.
 
-To learn more about what has changed in V2.0 and how this change affects you, see [Microsoft Entra Connect V2.0](whatis-azure-ad-connect-v2.md).
+To learn more about what has changed in versions 2.x and how this change affects you, see [Microsoft Entra Connect v2](whatis-azure-ad-connect-v2.md).
 
 To learn more about how to upgrade Microsoft Entra Connect to the latest version, see [Microsoft Entra Connect: Upgrade from a previous version to the latest](./how-to-upgrade-previous-version.md).
 
@@ -87,7 +83,7 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 ## 2.3.8.0
 
 ### Release status
-4/01/2024: Released for download
+1 Apr 2024: Released for download
 
 ### Bug Fixes
 - Microsoft Entra Connect Health has been updated to 4.5.2466.0 to address an endpoint discovery issue that could occur in some clouds.
@@ -96,7 +92,7 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 ## 2.3.6.0
 
 ### Release status
-2/21/2024: Released for download and autoupgrade.
+21 Feb 2024: Released for download and autoupgrade.
 
 ### Bug Fixes:
 - Improvements to auto-upgrade detection. Auto-upgrade will no longer retry if it detects the machine does not meet the OS or .NET runtime requirements.
