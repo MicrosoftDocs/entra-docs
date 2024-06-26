@@ -262,7 +262,7 @@ Use these steps to test your app:
 
 1. Open your browser, then go to http://localhost:3000. If you experience SSL certificate errors, create a `.env` file, then add the following configuration:
 
-    ```
+    ```Console
     # Use this variable only in the development environment. 
     # Remove the variable when you move the app to the production environment.
     NODE_TLS_REJECT_UNAUTHORIZED='0'
@@ -274,7 +274,7 @@ Use these steps to test your app:
 
 1. To update profile, select the **Edit profile** link. You see a page similar to the following screenshot:
 
-    :::image type="content" source="media/how-to-web-app-node-edit-profile-update-profile/edit-user-profile.png" alt-text="Screenshot of user update profile."::: 
+    :::image type="content" source="media/how-to-web-app-node-edit-profile-update-profile/edit-user-profile.png" alt-text="Screenshot of update user profile."::: 
 
 1. To edit the user's **Display Name**, select the **Edit** button. If you haven't already done so, the app prompts you to complete an MFA challenge. 
  
