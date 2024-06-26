@@ -113,7 +113,7 @@ Privileged Identity Management (PIM) for Groups in Microsoft Entra ID allows adm
 
 **Action Recommended: Security Improvements to Microsoft Entra Connect Sync and Connect Health**
 
-Since September 2023, we have been auto-upgrading Microsoft Entra Connect Sync and Microsoft Entra Connect Health customers to an updated build as part of a precautionary security-related service change. For customers who previously opted out of auto-upgrade, or for whom auto-upgrade failed, **we strongly recommend** that you upgrade to the latest versions by September 23, 2024.
+Since September 2023, we have been auto-upgrading Microsoft Entra Connect Sync and Microsoft Entra Connect Health customers to an updated build as part of a precautionary security-related service change. For customers who previously opted out of auto-upgrade, or for whom auto-upgrade failed, **we strongly recommend** that you upgrade to the latest versions by **September 23, 2024**.
 
 When you upgrade to the latest versions, you ensure that when the service change takes effect, you avoid service disruptions for:
 
