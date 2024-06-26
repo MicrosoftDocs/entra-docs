@@ -45,9 +45,7 @@ Create a Conditional Access policy in your external tenant that prompts users fo
 
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your external tenant from the **Directories + subscriptions** menu.
 
-1. Browse to **Protection** > **Security Center**.
-
-1. Select **Conditional Access** > **Policies**, and then select **New policy**.
+1. Browse to **Protection** > **Conditional Access** > **Policies**, and then select **New policy**.
 
    :::image type="content" source="media/how-to-multifactor-authentication-customers/new-policy.png" alt-text="Screenshot of the new policy button." lightbox="media/how-to-multifactor-authentication-customers/new-policy.png":::
 
