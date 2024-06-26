@@ -183,12 +183,12 @@ http://customcaserver.azurewebsites.net/.well-known/jwks
     {
       "kty": "RSA",
       "use": "sig",
-      "kid": "CEYm9GmLvfIqrl0zBJc9-Chk_LM",
-      "x5t": "CEYm9GmLvfIqrl0zBJc9-Chk_LM",
-      "n": "jq277LRoE6WKM0awT3b-—redacted--vt8J6MZvmgboVB9S5CMQ",
+      "kid": "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u",
+      "x5t": "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u",
+      "n": "jq277LRoE6WKM0awT3b...vt8J6MZvmgboVB9S5CMQ",
       "e": "AQAB",
       "x5c": [
-        "cZa3jEzEd0nvztzAVM6Uy—redacted--Z0HBHjTZq9IWiPHSWo0rzA="
+        "cZa3jz...Wo0rzA="
       ]
     }
   ]
@@ -327,7 +327,7 @@ Here's an example of an id_token_hint for a directory member:
 {
   "typ": "JWT",
   "alg": "RS256",
-  "kid": "7_Zuf1tvkwLxYaHS3q6lUjUYIGw"
+  "kid": "C2dE3fH4iJ5kL6mN7oP8qR9sT0uV1w"
 }.{
   "ver": "2.0",
   "iss": "https://login.microsoftonline.com/aaaabbbb-0000-cccc-1111-dddd2222eeee/v2.0",
@@ -350,7 +350,7 @@ Here's an example of the id_token hint for a guest user in the tenant:
 {
   "typ": "JWT",
   "alg": "RS256",
-  "kid": "7_Zuf1tvkwLxYaHS3q6lUjUYIGw"
+  "kid": "C2dE3fH4iJ5kL6mN7oP8qR9sT0uV1w"
 }.{
   "ver": "2.0",
   "iss": "https://login.microsoftonline.com/9122040d-6c67-4c5b-b112-36a304b66dad/v2.0",
