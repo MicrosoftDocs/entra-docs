@@ -139,7 +139,7 @@ This section provides instructions for configuring RDS infrastructure to use Mic
 
 As part of the configuration of the NPS extension, you must supply administrator credentials and the ID of your Microsoft Entra tenant. To get the tenant ID, complete the following steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 1. Browse to **Identity** > **Settings**.
 
    ![Getting the Tenant ID from the Microsoft Entra admin center](./media/howto-mfa-nps-extension-vpn/tenant-id.png)
@@ -289,7 +289,7 @@ The Remote Desktop Gateway needs to be configured as a RADIUS client to the NPS 
 
    ![Create a New RADIUS Client in the NPS console](./media/howto-mfa-nps-extension-rdg/image17.png)
 
-1. In the **New RADIUS Client** dialog box, provide a friendly name, such as _Gateway_, and the IP address or DNS name of the Remote Desktop Gateway server.
+1. In the **New RADIUS Client** dialog box, provide a friendly name, such as *Gateway*, and the IP address or DNS name of the Remote Desktop Gateway server.
 1. In the **Shared secret** and the **Confirm shared secret** fields, enter the same secret that you used before.
 
    ![Configure a friendly name and the IP or DNS address](./media/howto-mfa-nps-extension-rdg/image18.png)
@@ -306,7 +306,7 @@ Recall that the NPS server with the Microsoft Entra multifactor authentication e
    ![Duplicate the connection to other access servers policy](./media/howto-mfa-nps-extension-rdg/image19.png)
 
 1. Right-click **Copy of Connections to other access servers**, and click **Properties**.
-1. In the **Copy of Connections to other access servers** dialog box, in **Policy name**, enter a suitable name, such as _RDG_CAP_. Check **Policy enabled**, and select **Grant access**. Optionally, in **Type of network access server**, select **Remote Desktop Gateway**, or you can leave it as **Unspecified**.
+1. In the **Copy of Connections to other access servers** dialog box, in **Policy name**, enter a suitable name, such as *RDG_CAP*. Check **Policy enabled**, and select **Grant access**. Optionally, in **Type of network access server**, select **Remote Desktop Gateway**, or you can leave it as **Unspecified**.
 
    ![Name the policy, enable, and grant access](./media/howto-mfa-nps-extension-rdg/image21.png)
 
@@ -347,7 +347,7 @@ Once you have successfully authenticated using the secondary authentication meth
 
 To view the successful sign-in events in the Windows Event Viewer logs, you can issue the following PowerShell command to query the Windows Terminal Services and Windows Security logs.
 
-To query successful sign-in events in the Gateway operational logs _(Event Viewer\Applications and Services Logs\Microsoft\Windows\TerminalServices-Gateway\Operational)_, use the following PowerShell commands:
+To query successful sign-in events in the Gateway operational logs *(Event Viewer\Applications and Services Logs\Microsoft\Windows\TerminalServices-Gateway\Operational)*, use the following PowerShell commands:
 
 * `Get-WinEvent -Logname Microsoft-Windows-TerminalServices-Gateway/Operational | where {$_.ID -eq '300'} | FL`
 * This command displays Windows events that show the user met resource authorization policy requirements (RD RAP) and was granted access.
@@ -370,7 +370,7 @@ You can also view the Security log or the Network Policy and Access Services cus
 
 ![Network Policy and Access Services Event Viewer](./media/howto-mfa-nps-extension-rdg/image31.png)
 
-On the server where you installed the NPS extension for Microsoft Entra multifactor authentication, you can find Event Viewer application logs specific to the extension at _Application and Services Logs\Microsoft\AzureMfa_.
+On the server where you installed the NPS extension for Microsoft Entra multifactor authentication, you can find Event Viewer application logs specific to the extension at *Application and Services Logs\Microsoft\AzureMfa*.
 
 ![Event Viewer AuthZ application logs](./media/howto-mfa-nps-extension-rdg/image32.png)
 
@@ -388,19 +388,13 @@ Below is a related event from the AzureMFA logs:
 
 ![Sample Microsoft Entra multifactor authentication log in Event Viewer](./media/howto-mfa-nps-extension-rdg/image34.png)
 
-To perform advanced troubleshoot options, consult the NPS database format log files where the NPS service is installed. These log files are created in _%SystemRoot%\System32\Logs_ folder as comma-delimited text files.
+To perform advanced troubleshoot options, consult the NPS database format log files where the NPS service is installed. These log files are created in *%SystemRoot%\System32\Logs* folder as comma-delimited text files.
 
 For a description of these log files, see [Interpret NPS Database Format Log Files](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771748(v=ws.10)). The entries in these log files can be difficult to interpret without importing them into a spreadsheet or a database. You can find several IAS parsers online to assist you in interpreting the log files.
 
 The image below shows the output of one such downloadable [shareware application](https://www.deepsoftware.com/iasviewer).
 
 ![Sample Shareware app IAS parser](./media/howto-mfa-nps-extension-rdg/image35.png)
-
-Finally, for additional troubleshoot options, you can use a protocol analyzer, such [Microsoft Message Analyzer](/message-analyzer/microsoft-message-analyzer-operating-guide).
-
-The image below from Microsoft Message Analyzer shows network traffic filtered on RADIUS protocol that contains the user name **CONTOSO\AliceC**.
-
-![Microsoft Message Analyzer showing filtered traffic](./media/howto-mfa-nps-extension-rdg/image36.png)
 
 ## Next steps
 

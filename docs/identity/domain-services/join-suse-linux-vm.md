@@ -6,7 +6,7 @@ manager: amycolannino
 
 ms.service: entra-id
 ms.subservice: domain-services
-ms.custom: devx-track-linux
+ms.custom: devx-track-linux, linux-related-content
 ms.topic: how-to
 ms.date: 09/23/2023
 ms.author: justinha
@@ -192,7 +192,7 @@ To join the managed domain using **winbind** and the *`samba net` command*:
 
 2. Edit the configuration files:
 
-   * /etc/samba/smb.conf
+   * `/etc/samba/smb.conf`
    
      ```config
      [global]
@@ -211,7 +211,7 @@ To join the managed domain using **winbind** and the *`samba net` command*:
          winbind refresh tickets = yes
      ```
 
-   * /etc/krb5.conf
+   * `/etc/krb5.conf`
    
      ```config
      [libdefaults]

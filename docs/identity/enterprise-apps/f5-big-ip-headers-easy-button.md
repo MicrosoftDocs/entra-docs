@@ -1,19 +1,17 @@
 ---
 title: Configure F5 BIG-IP Easy Button for Header-based SSO
 description: Learn to implement secure hybrid access (SHA) with single sign-on (SSO) to header-based applications using F5 BIG-IP Easy Button Guided Configuration.
-
 author: gargi-sinha
 manager: martinco
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to
-
-ms.date: 03/27/2023
+ms.date: 04/18/2024
 ms.author: gasinh
 ms.collection: M365-identity-device-management
 ms.custom: not-enterprise-apps
 
-#customer intent: As an IT administrator, I want to configure F5 BIG-IP Easy Button for header-based SSOLearn, so that I can secure header-based applications with Microsoft Entra ID and improve Zero Trust governance through preauthentication and Conditional Access.
+#customer intent: I'm an IT administrator, and I want to configure F5 BIG-IP Easy Button for header-based SSOLearn. I need to secure header-based applications with Microsoft Entra ID and improve Zero Trust governance through preauthentication and Conditional Access. 
 ---
 
 # Tutorial: Configure F5 BIG-IP Easy Button for header-based SSO
@@ -67,10 +65,10 @@ For the scenario you need:
 
 * An Azure subscription
   * If you don't have one, get an [Azure free account](https://azure.microsoft.com/free/)
-* One of the following roles: Global Administrator, Cloud Application Administrator, or Application Administrator
+* One of the following roles: Cloud Application Administrator, or Application Administrator
 * A BIG-IP or deploy a BIG-IP Virtual Edition (VE) in Azure
-  * See, [Deploy F5 BIG-IP Virtual Edition VM in Azure](./f5-bigip-deployment-guide.md)
-* Any of the following F5 BIG-IP license SKUs:
+  * See, [Deploy F5 BIG-IP Virtual Edition Virtual Machine in Azure](./f5-bigip-deployment-guide.md)
+* Any of the following F5 BIG-IP licenses:
   * F5 BIG-IP® Best bundle
   * F5 BIG-IP Access Policy Manager™ (APM) standalone license
   * F5 BIG-IP Access Policy Manager™ (APM) add-on license on a BIG-IP F5 BIG-IP® Local Traffic Manager™ (LTM)
@@ -95,7 +93,7 @@ This tutorial uses Guided Configuration v16.1 with an Easy button template. With
 
 Before a client or service accesses Microsoft Graph, the Microsoft identity platform must trust it.
 
-Learn more: [Quickstart: Register an application with the Microsoft identity platform](~/identity-platform/quickstart-register-app.md)
+Learn more: [Quickstart: Register an application with the Microsoft identity platform](~/identity-platform/quickstart-register-app.md).
 
 Create a tenant app registration to authorize the Easy Button access to Graph. With these permissions, the BIG-IP pushes the configurations to establish a trust between a SAML SP instance for published application, and Microsoft Entra ID as the SAML IdP.
 
@@ -190,7 +188,7 @@ In Service Provider settings, define SAML SP instance settings for the SHA-prote
 
 Use the following instructions to configure a new BIG-IP SAML application in your Microsoft Entra tenant. Easy Button has application templates for Oracle PeopleSoft, Oracle E-Business Suite, Oracle JD Edwards, SAP ERP, and a generic SHA template.
 
-1. In **Azure Configuration**, under **Configuration Properties**, select **F5 BIG-IP APM Azure AD Integration**.
+1. In **Azure Configuration**, under **Configuration Properties**, select **F5 BIG-IP APM Microsoft Entra ID Integration**.
 2. Select **Add**.
 
 #### Azure Configuration
@@ -224,7 +222,7 @@ Include one more attribute:
 
 #### Additional User Attributes
 
-In the **Additional User Attributes** tab, enable session augmentation. Use this feature for distributed systems such as Oracle, SAP, and other JAVA implementations that require attributes to be stored in other directories. Attributes fetched from an LDAP source are injected as more SSO headers. This action helps control access based on roles, Partner IDs, etc. 
+In the **Additional User Attributes** tab, enable session augmentation. Use this feature for distributed systems such as Oracle, SAP, and other JAVA implementations that require attributes to be stored in other directories. Attributes fetched from a Lightweight Directory Access Protocol (LDAP) source are injected as more SSO headers. This action helps control access based on roles, Partner IDs, and so on. 
 
    >[!NOTE] 
    >This feature has no correlation to Microsoft Entra ID. It's an attribute source. 
@@ -254,7 +252,7 @@ To select a policy to be applied to the application being published:
 
 A virtual server is a BIG-IP data plane object, represented by a virtual IP address. The server listens for clients requests to the application. Received traffic is processed and evaluated against the APM profile associated with the virtual server. Traffic is directed according to policy.
 
-1. For **Destination Address**, enter an IPv4 or IPv6 address BIG-IP uses to receive client traffic. Ensure a corresponding record in DNS that enables clients to resolve the external URL, of the BIG-IP published application, to this IP. You can use computer's localhost DNS for testing.
+1. For **Destination Address**, enter an IPv4 or IPv6 address that BIG-IP uses to receive client traffic. Ensure a corresponding record in domain name server (DNS) that enables clients to resolve the external URL, of the BIG-IP published application, to this IP. You can use computer's localhost DNS for testing.
 2. For **Service Port**, enter **443**, and select **HTTPS**.
 3. Check the box for **Enable Redirect Port**.
 4. Enter a value for **Redirect Port**. This option redirects incoming HTTP client traffic to HTTPS.
@@ -284,7 +282,7 @@ With SSO, users access BIG-IP published services without entering credentials. T
 3. For **Header Value**, use **%{session.saml.last.identity}**.
 4. For **Header Operation**, select **insert**.
 5. For **Header Name**, use **employeeid**.
-6. For **Header Value**,use **%{session.saml.last.attr.name.employeeid}**.
+6. For **Header Value**, use **%{session.saml.last.attr.name.employeeid}**.
 
    ![Screenshot of entries and selections for SSO Headers.](./media/f5-big-ip-easy-button-header/sso-http-headers.png)
 
@@ -324,9 +322,9 @@ Deployment provides a breakdown of your configurations.
 
 ## Test
 
-1. From a browser, connect to the application external URL or select the application icon on [My Apps](https://myapplications.microsoft.com/). 
+1. In a browser, connect to the application external URL or select the application icon on [My Apps](https://myapplications.microsoft.com/). 
 2. Authenticate to Microsoft Entra ID.
-3. You’re redirected to the BIG-IP virtual server for the application and signed in with SSO.
+3. A redirection occurs to the BIG-IP virtual server for the application and signed in with SSO.
 
 The following screenshot is injected headers output from the header-based application.
 

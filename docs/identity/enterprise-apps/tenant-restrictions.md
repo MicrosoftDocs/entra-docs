@@ -79,9 +79,9 @@ For each outgoing request to `login.microsoftonline.com`, `login.microsoft.com`,
 
 The headers should include the following elements:
 
-- For *Restrict-Access-To-Tenants*, use a value of \<permitted tenant list\>, which is a comma-separated list of tenants you want to allow users to access. Any domain that is registered with a tenant can be used to identify the tenant in this list, and the directory ID itself. For an example of all three ways of describing a tenant, the name/value pair to allow Contoso, Fabrikam, and Microsoft looks like: `Restrict-Access-To-Tenants: contoso.com,fabrikam.onmicrosoft.com,72f988bf-86f1-41af-91ab-2d7cd011db47`
+- For *Restrict-Access-To-Tenants*, use a value of \<permitted tenant list\>, which is a comma-separated list of tenants you want to allow users to access. Any domain that is registered with a tenant can be used to identify the tenant in this list, and the directory ID itself. For an example of all three ways of describing a tenant, the name/value pair to allow Contoso, Fabrikam, and Microsoft looks like: `Restrict-Access-To-Tenants: contoso.com,fabrikam.onmicrosoft.com,aaaabbbb-0000-cccc-1111-dddd2222eeee`
 
-- For *Restrict-Access-Context*, use a value of a single directory ID, declaring which tenant is setting the tenant restrictions. For example, to declare Contoso as the tenant that set the tenant restrictions policy, the name/value pair looks like: `Restrict-Access-Context: 456ff232-35l2-5h23-b3b3-3236w0826f3d`. You *must* use your own directory ID here to get logs for these authentications. If you use any directory ID other than your own, the sign-in logs *appear in someone else's tenant, with all personal information removed. For more information, see [Admin experience](#admin-experience).
+- For *Restrict-Access-Context*, use a value of a single directory ID, declaring which tenant is setting the tenant restrictions. For example, to declare Contoso as the tenant that set the tenant restrictions policy, the name/value pair looks like: `Restrict-Access-Context: bbbbcccc-1111-dddd-2222-eeee3333ffff`. You *must* use your own directory ID here to get logs for these authentications. If you use any directory ID other than your own, the sign-in logs *appear in someone else's tenant, with all personal information removed. For more information, see [Admin experience](#admin-experience).
 
 To find your directory ID:
 
@@ -146,7 +146,7 @@ For Outlook on Windows, customers might choose to implement restrictions prevent
 
 ### Azure RMS and Office Message Encryption incompatibility
 
-The [Azure Rights Management Service](/azure/information-protection/what-is-azure-rms) (RMS) and [Office Message Encryption](/purview/ome) features aren't compatible with tenant restrictions. These features rely on signing your users into other tenants in order to get decryption keys for the encrypted documents. Because tenant restrictions blocks access to other tenants, encrypted mail and documents sent to your users from untrusted tenants aren't accessible.
+The [Azure Rights Management Service (Azure RMS)](/azure/information-protection/what-is-azure-rms) and [Office Message Encryption](/purview/ome) features aren't compatible with tenant restrictions. These features rely on signing your users into other tenants in order to get decryption keys for the encrypted documents. Because tenant restrictions blocks access to other tenants, encrypted mail and documents sent to your users from untrusted tenants aren't accessible.
 
 ## Testing
 
@@ -242,7 +242,7 @@ For such environments that can't break and inspect traffic to add the tenant res
 
 - [Conditional Access: Only allow use of managed/compliant devices](/mem/intune/protect/conditional-access-intune-common-ways-use#device-based-conditional-access)
 - [Conditional Access: Manage access for guest/external users](/microsoft-365/security/office-365-security/identity-access-policies-guest-access)
-- [B2B Collaboration: Restrict outbound rules by Cross-tenant access for the same tenants listed in the parameter "Restrict-Access-To-Tenants"](~/external-id/cross-tenant-access-settings-b2b-collaboration.md)
+- [B2B Collaboration: Restrict outbound rules by Cross-tenant access for the same tenants listed in the parameter "Restrict-Access-To-Tenants"](~/external-id/cross-tenant-access-settings-b2b-collaboration.yml)
 - [B2B Collaboration: Restrict invitations to B2B users to the same domains listed in the "Restrict-Access-To-Tenants" parameter](~/external-id/allow-deny-list.md)
 - [Application management: Restrict how users consent to applications](configure-user-consent.md)
 - [Intune: Apply App Policy through Intune to restrict usage of managed apps to only the UPN of the account that enrolled the device](/mem/intune/apps/app-configuration-policies-use-android) - Check the section under, **Allow only configured organization accounts in apps** subheading.

@@ -3,7 +3,7 @@ title: The Global Secure Access client for Windows (preview)
 description: Install the Global Secure Access client for Windows.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 03/04/2024
+ms.date: 04/08/2024
 ms.author: kenwith
 author: kenwith
 manager: amycolannino
@@ -37,10 +37,9 @@ There are several other limitations based on the traffic forwarding profile in u
 
 | Traffic forwarding profile | Limitation |
 | --- | --- |
-| [Microsoft 365](how-to-manage-microsoft-365-profile.md) | Tunneling [IPv6 traffic isn't currently supported](#disable-ipv6-and-secure-dns). |
-| [Microsoft 365](how-to-manage-microsoft-365-profile.md) and [Private access](how-to-manage-private-access-profile.md) | To tunnel network traffic based on rules of FQDNs (in the forwarding profile), [Domain Name System (DNS) over HTTPS (Secure DNS) needs to be disabled](#disable-ipv6-and-secure-dns). |
-| [Microsoft 365](how-to-manage-microsoft-365-profile.md) | The Global Secure Access client currently only supports Transmission Control Protocol (TCP) traffic. Exchange Online uses the QUIC protocol for some traffic over User Datagram Protocol (UDP) port 443 force this traffic to use HTTPS (443 TCP) by [blocking the QUIC traffic with a local firewall rule](#block-quic-when-tunneling-exchange-online-traffic). Non-HTTP protocols, such as POP3, IMAP, SMTP, aren't acquired from the client and are sent direct-and-local. |
-| [Microsoft 365](how-to-manage-microsoft-365-profile.md) and [Private access](how-to-manage-private-access-profile.md) | If the end-user device is configured to use a proxy server, locations that you wish to tunnel using the Global Secure Access client must be excluded from that configuration. For examples, see [Proxy configuration example](#proxy-configuration-example). |
+| [Microsoft traffic profile](how-to-manage-microsoft-profile.md) | Tunneling [IPv6 traffic isn't currently supported](#disable-ipv6-and-secure-dns). |
+| [Microsoft traffic profile ](how-to-manage-microsoft-profile.md) and [Private access](how-to-manage-private-access-profile.md) | To tunnel network traffic based on rules of FQDNs (in the forwarding profile), [Domain Name System (DNS) over HTTPS (Secure DNS) needs to be disabled](#disable-ipv6-and-secure-dns). |
+| [Microsoft](how-to-manage-microsoft-profile.md) and [Private access](how-to-manage-private-access-profile.md) | If the end-user device is configured to use a proxy server, locations that you wish to tunnel using the Global Secure Access client must be excluded from that configuration. For examples, see [Proxy configuration example](#proxy-configuration-example). |
 | [Private access](how-to-manage-private-access-profile.md) | Single label domains, like `https://contosohome` for private apps aren't supported. Instead use a fully qualified domain name (FQDN), like `https://contosohome.contoso.com`. Administrators can also choose to append DNS suffixes via Windows. |
 
 ## Download the client
@@ -158,30 +157,20 @@ Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Google\Chrome" -Name "BuiltInDns
 
 ### Proxy configuration example
 
-Example proxy PAC file containing exclusions:  
+Example proxy PAC file containing exclusions:
 
 ```
-function FindProxyForURL(url, host) {  // basic function; do not change
-   if (isPlainHostName(host) ||    
-      dnsDomainIs(host, ".contoso.com") || //tunneled  
-      dnsDomainIs(host, ".fabrikam.com")) // tunneled  
-      return "DIRECT";                    // If true, sets "DIRECT" connection  
-      else                                   // for all other destinations  
-      return "PROXY 10.1.0.10:8080";  // transfer the traffic to the proxy. 
-}  
+function FindProxyForURL(url, host) {  // basic function; do not change
+   if (isPlainHostName(host) ||
+      dnsDomainIs(host, ".contoso.com") || //tunneled
+      dnsDomainIs(host, ".fabrikam.com"))  // tunneled
+      return "DIRECT";                     // If true, sets "DIRECT" connection
+      else                                 // for all other destinations  
+      return "PROXY 10.1.0.10:8080";  // transfer the traffic to the proxy. 
+}
 ```
 
 Organizations must then create a system variable named `grpc_proxy` with a value like `http://10.1.0.10:8080` that matches your proxy server's configuration on end-user machines to allow the Global Secure Access client services to use the proxy by configuring the following.
-
-### Block QUIC when tunneling Exchange Online traffic 
-
-Since UDP traffic isn't supported in the current preview, organizations that plan to tunnel their Exchange Online traffic should disable the QUIC protocol (443 UDP). Administrators can disable this protocol triggering clients to fall back to HTTPS (443 TCP) with the following Windows Firewall rule:
-
-```powershell
-New-NetFirewallRule -DisplayName "Block QUIC for Exchange Online" -Direction Outbound -Action Block -Protocol UDP -RemoteAddress 13.107.6.152/31,13.107.18.10/31,13.107.128.0/22,23.103.160.0/20,40.96.0.0/13,40.104.0.0/15,52.96.0.0/14,131.253.33.215/32,132.245.0.0/16,150.171.32.0/22,204.79.197.215/32,6.6.0.0/16 -RemotePort 443 
-```
-
-This list of IPv4 addresses is based on the [Office 365 URLs and IP address ranges](/microsoft-365/enterprise/urls-and-ip-address-ranges#exchange-online) and the IPv4 block used by the Global Secure Access client.
 
 [!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
 

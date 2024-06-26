@@ -6,6 +6,8 @@ author: billmath
 manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-provisioning
+ms.custom:
+  - linux-related-content
 ms.topic: how-to
 ms.date: 02/13/2024
 ms.author: billmath
@@ -14,7 +16,7 @@ ms.reviewer: arvinh
 
 # Configuring Microsoft Entra ID to provision users into an LDAP directory for Linux authentication
 
-The following documentation is a tutorial demonstrating how to govern access to a Linux system. This is implemented by Microsoft Entra ID provisioning users into an on-premises LDAP directory trusted by that Linux system, so that those users can subsequently log into a Linux system that relies upon that LDAP directory for user authentication.  And when a user is removed from Microsoft Entra ID, they are subsequently no longer able to log into a Linux system.
+The following documentation is a tutorial demonstrating how to govern access to a Linux system. This is implemented by Microsoft Entra provisioning users into an on-premises LDAP directory trusted by that Linux system, so that those users can subsequently log into a Linux system that relies upon that LDAP directory for user authentication.  And when a user is removed from Microsoft Entra ID, they are subsequently no longer able to log into a Linux system.
 
 >[!NOTE]
 > The scenario described in this article is only applicable for existing Linux systems that already rely upon a Name Services Switch (NSS) or Pluggable Authentication Modules (PAM) LDAP module for user identification and authentication.  Linux VMs in Azure or that are Azure Arc-enabled should be instead integrated with Microsoft Entra authentication. You can now use Microsoft Entra ID as a core authentication platform and a certificate authority to SSH into a Linux VM by using Microsoft Entra ID and OpenSSH certificate-based authentication, as described in [Log in to a Linux virtual machine in Azure by using Microsoft Entra ID and OpenSSH](/entra/identity/devices/howto-vm-sign-in-azure-ad-linux).  
@@ -118,7 +120,7 @@ Finally, you'll need to agree on the deprovisioning behavior.  When the connecto
  9. Wait for the Microsoft Entra provisioning agent configuration wizard and then select **Next**.
  10. In the **Select Extension** step, select **On-premises application provisioning** and then select **Next**.
  11. The provisioning agent will use the operating system's web browser to display a popup window for you to authenticate to Microsoft Entra ID, and potentially also your organization's identity provider.  If you are using Internet Explorer as the browser on Windows Server, then you may need to add Microsoft web sites to your browser's trusted site list to allow JavaScript to run correctly.
- 12. Provide credentials for a Microsoft Entra administrator when you're prompted to authorize. The user is required to have the Hybrid Identity Administrator or Global Administrator role.
+ 12. Provide credentials for a Microsoft Entra administrator when you're prompted to authorize. The user is required to have at least the [Hybrid Identity Administrator](/entra/identity/role-based-access-control/permissions-reference#hybrid-identity-administrator) role.
  13. Select **Confirm** to confirm the setting. Once installation is successful, you can select **Exit**, and also close the Provisioning Agent Package installer.
  
 ## Configure the On-premises ECMA app
@@ -426,7 +428,7 @@ The first time your organization uses these cmdlets for this scenario, you need 
 Now that you have the Microsoft Entra ECMA Connector Host talking with Microsoft Entra ID, and the attribute mapping configured, you can move on to configuring who's in scope for provisioning. 
 
 >[!IMPORTANT]
->If you were signed in using a Hybrid Identity Administrator role, you need to sign-out and sign-in with an account that has the Application Administrator, Cloud Application Administrator or Global Administrator role, for this section.  The Hybrid Identity Administrator role does not have permissions to assign users to applications.
+>If you were signed in using a Hybrid Identity Administrator role, you need to sign-out and sign-in with an account that has at least the Application Administrator role for this section. The Hybrid Identity Administrator role doesn't have permissions to assign users to applications.
 
 If there are existing users in the LDAP directory, then you should create application role assignments for those existing users. To learn more about how to create application role assignments in bulk using `New-MgServicePrincipalAppRoleAssignedTo`, see [governing an application's existing users in Microsoft Entra ID](~/id-governance/identity-governance-applications-existing-users.md).
 

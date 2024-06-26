@@ -18,7 +18,7 @@ The purpose of this topic is to walk you through how to configure the attribute 
 For a list of all geos supported by Microsoft Entra Connect see [Microsoft 365 Multi-Geo availability](/microsoft-365/enterprise/microsoft-365-multi-geo#microsoft-365-multi-geo-availability)
 
 ## Enable synchronization of preferred data location
-By default, Microsoft 365 resources for your users are located in the same geo as your Microsoft Entra tenant. For example, if the _Tenant_ is located in North America, then the users' Exchange mailboxes are also located in North America. For a multinational organization, this might not be optimal.
+By default, Microsoft 365 resources for your users are located in the same geo as your Microsoft Entra tenant. For example, if the *Tenant* is located in North America, then the users' Exchange mailboxes are also located in North America. For a multinational organization, this might not be optimal.
 
 By setting the attribute **preferredDataLocation**, you can define a user's geo. You can have the user's Microsoft 365 resources, such as the mailbox and OneDrive, in the same geo as the user, and still have one tenant for your entire organization.
 
@@ -231,7 +231,7 @@ Re-enable the built-in sync scheduler:
 ## Step 9: Verify the result
 It is now time to verify the configuration and enable it for your users.
 
-1. Add the geo to the selected attribute on a user. The list of available geos can be [found in this table](https://learn.microsoft.com/microsoft-365/enterprise/microsoft-365-multi-geo).  
+1. Add the geo to the selected attribute on a user. The list of available geos can be [found in this table](/microsoft-365/enterprise/microsoft-365-multi-geo).  
 ![Screenshot of AD attribute added to a user](./media/how-to-connect-sync-feature-preferreddatalocation/preferreddatalocation-adattribute.png)
 2. Wait for the attribute to be synchronized to Microsoft Entra ID.
 3. Using Exchange Online PowerShell, verify that the mailbox region has been set correctly.  

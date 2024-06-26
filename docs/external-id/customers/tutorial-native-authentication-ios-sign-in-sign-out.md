@@ -1,6 +1,6 @@
 ---
 title: Add sign in and sign out in native iOS app
-description: Learn how to add sign-up, sign in and sign out with email one-time passcode.
+description: Learn how to add sign-in and sign-out with email one-time passcode or username and password in iOS app by using native authentication.
 
 author: henrymbuguakiarie
 manager: mwongerapk
@@ -10,46 +10,73 @@ ms.service: entra-external-id
 
 ms.subservice: customers
 ms.topic: tutorial
-ms.date: 02/23/2024
-ms.custom: developer, devx-track-dotnet
-#Customer intent: As a dev, devops, I want to learn about add sign in and sign out with email one-time passcode.
+ms.date: 06/20/2024
+ms.custom: developer
+#Customer intent: As a dev, devops, I want to learn how to add sign-in and sign-out with email one-time passcode or username and password in iOS app by using native authentication.
 ---
 
+# Tutorial: Add sign-in and sign-out in iOS app by using native authentication
 
-# Tutorial: Add sign in and sign out with email one-time passcode 
-
-This tutorial demonstrates how to sign in and sign out a user using email one-time passcode (OTP) in your native auth iOS Swift app. 
+This tutorial demonstrates how to sign-in and sign-out a user with email one-time passcode or username and password in your iOS mobile app by using native authentication. 
 
 In this tutorial, you learn how to: 
 
-- Sign in user. 
-- Sign out user. 
+> [!div class="checklist"]
+> 
+> - Sign in a user using email one-time passcode or username (email) and password.
+> - Sign out a user.
+> - Handle sign-in error
 
 ## Prerequisites 
 
-- [Tutorial: Prepare your iOS app for native authentication](tutorial-native-authentication-prepare-ios-app.md) 
+- [Tutorial: Prepare your iOS app for native authentication](tutorial-native-authentication-prepare-ios-app.md).
+- If you want to sign in using **Email with password**, configure your user flow to use **Email with password** when you [create your sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md).
 
 ## Sign in user
 
-To sign in a user using the **Email one-time passcode** flow, capture the email and send an email containing a one-time passcode for the user to verify their email. When the user enters a valid one-time passcode, the app signs them in and displays the account details. 
+To sign in a user using the **Email one-time passcode** flow, capture the email and send an email containing a one-time passcode for the user to verify their email. When the user enters a valid one-time passcode, the app signs them in. 
 
-To  sign in user using **Email one-time-passcode** you need to: 
+To sign in a user using the **Email with password** flow, capture the email and password. If the username and password are valid, the app signs in the user.
 
-1. Create your user interface that includes: 
+To sign in a user, you need to: 
 
-    - A form to submit an Email. 
-    - A form to submit one-time passcode. 
-    - A page to display the account details. 
+1. Create a user interface (UI) to:
 
-1. To sign in user, we're going to use `signIn(username:delegate)` method, which responds asynchronously by calling one of the methods on the passed delegate object, which must implement the `SignInStartDelegate` protocol. To implement the `signIn(username:delegate)`, use the following code snippet: 
+    - Collect an email from the user. Add validation to your inputs to make sure the user enters a valid emails address.
+    - Collect a password if you sign in with username (email) and password.
+    - Collect an email one-time passcode from the user if you sign in with email one-time passcode.
+    - Add a button to let the user resend one-time passcode if you sign in with email one-time passcode.
+
+1. In your UI, add a button, whose select event starts a sign-in as shown in the following code snippet:
+
+    ```swift
+        @IBAction func signInPressed(_: Any) {
+        guard let email = emailTextField.text else {
+            resultTextView.text = "email not set"
+            return
+        }
+
+        nativeAuth.signIn(username: email, delegate: self)
+    }
+    ```
+
+    To sign in a user using **Email one-time passcode** flow, we use the following code snippet:
 
     ```swift
     nativeAuth.signIn(username: email, delegate: self)
     ```
 
-    We pass the email address that the user provides in the email submission form and pass `self` as the delegate.
+    The `signIn(username:delegate)` method, which responds asynchronously by calling one of the methods on the passed delegate object, must implement the `SignInStartDelegate` protocol. We pass the email address that the user provides in the email submission form and pass `self` as the delegate.
 
-1. To implement `SignInStartDelegate` protocol as an extension to your class, use the following code snippet: 
+    To sign in a user using **Email with password** flow, we use the following code snippet:
+
+    ```swift
+    nativeAuth.signIn(username: email, password: password, delegate: self)
+    ```
+    
+    In the `signIn(username:password:delegate)` method, you pass in the email address that the user supplied us with, their password, and pass the delegate object that conforms to the `SignInStartDelegate` protocol. For this example, we pass `self`.
+
+1. To implement `SignInStartDelegate` protocol when you use **Email one-time passcode** flow, use the following code snippet:
 
     ```swift
     extension ViewController: SignInStartDelegate {
@@ -72,16 +99,16 @@ To  sign in user using **Email one-time-passcode** you need to:
 
     - `submitCode(code:delegate)`
     - `resendCode(delegate)`
-
-1. To use `submitCode(code:delegate)` to submit the one-time passcode that user supplies in one-time passcode form, use the following code snippet: 
+    
+    Use `submitCode(code:delegate)` to submit the one-time passcode that user supplies in one-time passcode form, use the following code snippet: 
 
     ```swift
     newState.submitCode(code: userSuppliedCode, delegate: self)
     ```
 
-    The `submitCode(code:delegate)` accepts the one-time passcode and delegate parameter. After submitting the code, you must verify the one-time passcode by implementing the `SignInVerifyCodeDelegate` protocol. 
+    The `submitCode(code:delegate)` accepts the one-time passcode and delegate parameter. After submitting the code, you must verify the one-time passcode by implementing the `SignInVerifyCodeDelegate` protocol.
 
-1. To implement `SignInVerifyCodeDelegate` protocol as an extension to your class, use the following code snippet: 
+    To implement `SignInVerifyCodeDelegate` protocol as an extension to your class, use the following code snippet: 
 
     ```swift
     extension ViewController: SignInVerifyCodeDelegate {
@@ -113,45 +140,85 @@ To  sign in user using **Email one-time-passcode** you need to:
         }
     }
 
+1. To implement `SignInStartDelegate` protocol when you use **Email with password** flow, use the following code snippet:
+
+    ```swift
+    extension ViewController: SignInStartDelegate {
+        func onSignInStartError(error: MSAL.SignInStartError) {
+            resultTextView.text = "Error signing in: \(error.errorDescription ?? "no description")"
+        }
+    
+        func onSignInCompleted(result: MSAL.MSALNativeAuthUserAccountResult) {
+            // User successfully signed in
+        }
+    }
     ```
 
+    In the most common scenario, we receive a call to `onSignInCompleted(result)` indicating that the user has signed in. The result can be used to retrieve the `access token`.
 
+    The `getAccessToken(delegate)` accepts a delegate parameter and we must implement the required methods in the `CredentialsDelegate` protocol.
 
-### Handle errors during sign in
+    In the most common scenario, we receive a call to `onAccessTokenRetrieveCompleted(result)` indicating that the user obtained an `access token`.
 
-During sign in, not every action succeeds. For example, the user might try to sign in with an email address that doesn't exist, or submit an invalid code. 
+    ```swift
+    extension ViewController: CredentialsDelegate {
+        func onAccessTokenRetrieveError(error: MSAL.RetrieveAccessTokenError) {
+            resultTextView.text = "Error retrieving access token"
+        }
 
-In our earlier implementation of `SignInStartDelegate` protocol, we simply displayed the error when we handled the `onSignInStartError(error)` delegate function. 
+        func onAccessTokenRetrieveCompleted(result: MSALNativeAuthTokenResult) {
+            resultTextView.text = "Signed in. Access Token: \(result.accessToken)"
+        }
+    }
 
-To enhance the user experience by managing the particular error type, use the following code snippet: 
+    ```
+
+### Handle sign-in errors
+
+During sign in, not every action succeeds. For example, the user might try to sign in with an email address that doesn't exist, or submit an invalid code.
+
+1. To handle errors in the `signIn(username)` or `signIn(username, password)` method, use the following code snippet:
+
+    ```swift
+    func onSignInStartError(error: MSAL.SignInStartError) {
+        if error.isUserNotFound || error.isInvalidUsername {
+            resultTextView.text = "Invalid username"
+        } else {
+            resultTextView.text = "Error signing in: \(error.errorDescription ?? "no description")"
+        }
+    }
+    ```
+
+1. To handle errors in `submitCode()` method, use the following code snippet:
+
+    ```swift
+    func onSignInVerifyCodeError(error: MSAL.VerifyCodeError, newState: MSAL.SignInCodeRequiredState?) {
+        if error.isInvalidCode {
+            // Inform the user that the submitted code was incorrect and ask for a new code to be supplied
+            let userSuppliedCode = retrieveNewCode()
+            newState?.submitCode(code: userSuppliedCode, delegate: self)
+        } else {
+            resultTextView.text = "Error verifying code: \(error.errorDescription ?? "no description")"
+        }
+    }
+    ```
+
+    If the user enters an incorrect email verification code, the error handler includes a reference to a `SignInCodeRequiredState` that can be used to submit an updated code. In our earlier implementation of `SignInVerifyCodeDelegate` protocol, we simply displayed the error when we handled the `onSignInVerifyCodeError(error:newState)` delegate function. 
+
+### Read ID token claims
+
+Once your app acquires an ID token, you can retrieve the claims associated with the current account. To do so, use the following code snippet:
 
 ```swift
-func onSignInStartError(error: MSAL.SignInStartError) {
-    if error.isUserNotFound || error.isInvalidUsername {
-        resultTextView.text = "Invalid username"
-    } else {
-        resultTextView.text = "Error signing in: \(error.errorDescription ?? "no description")"
-    }
+func onSignInCompleted(result: MSAL.MSALNativeAuthUserAccountResult) {
+   let claims = result.account.accountClaims
+   let preferredUsername = claims?["preferred_username"] as? String
 }
 ```
 
-If the user enters an incorrect email verification code, the error handler includes a reference to a `SignInCodeRequiredState` that can be used to submit an updated code. In our earlier implementation of `SignInVerifyCodeDelegate` protocol, we simply displayed the error when we handled the `onSignInVerifyCodeError(error:newState)` delegate function. 
+The key you use to access the claim value is the name that you specify when you add the user attribute as a token claim.
 
-For a better user experience when an incorrect one-time passcode is entered, use the following code snippet to prompt for the correct code and request resubmission: 
-
-```swift
-func onSignInVerifyCodeError(error: MSAL.VerifyCodeError, newState: MSAL.SignInCodeRequiredState?) {
-    if error.isInvalidCode {
-        // Inform the user that the submitted code was incorrect and ask for a new code to be supplied
-        let userSuppliedCode = retrieveNewCode()
-        newState?.submitCode(code: userSuppliedCode, delegate: self)
-    } else {
-        resultTextView.text = "Error verifying code: \(error.errorDescription ?? "no description")"
-    }
-}
-```
-
-Well, you have done everything that is required to successfully sign in a user on your app. Build and run your application. If all good, you should be able to provide an email ID, receive a code on the email, and use that to successfully sign in user. 
+Learn how to add built-in and custom attributes as token claims in the [Add user attributes to token claims](how-to-add-attributes-to-token.md) article.
 
 ## Sign out user 
 
@@ -192,6 +259,7 @@ To sign out a user, use the reference to the `MSALNativeAuthUserAccountResult` t
 
 You have successfully completed all the necessary steps to sign out a user on your app. Build and run your application. If all good, you should be able to select sign out button to successfully sign out. 
 
-## Next steps 
+## Next step
 
-[Tutorial: Add built-in attributes to your native iOS authentication.](tutorial-native-authentication-ios-sign-up-with-email-one-time-passcode.md) 
+> [!div class="nextstepaction"]
+> [Tutorial: Self-service password reset in iOS app](tutorial-native-authentication-ios-self-service-password-reset.md).

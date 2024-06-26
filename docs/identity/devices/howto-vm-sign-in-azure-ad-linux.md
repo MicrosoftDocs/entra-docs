@@ -11,7 +11,7 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: sandeo
-ms.custom: references_regions, devx-track-azurecli, subject-rbac-steps, devx-track-linux
+ms.custom: references_regions, devx-track-azurecli, subject-rbac-steps, devx-track-linux, linux-related-content
 ---
 
 # Sign in to a Linux virtual machine in Azure by using Microsoft Entra ID and OpenSSH
@@ -39,13 +39,15 @@ The following Linux distributions are currently supported for deployments in a s
 | Distribution | Version |
 | --- | --- |
 | Common Base Linux Mariner (CBL-Mariner) | CBL-Mariner 1, CBL-Mariner 2 |
+| AlmaLinux | AlmaLinux 8, AlmaLinux 9 |
 | CentOS | CentOS 7, CentOS 8 |
 | Debian | Debian 9, Debian 10, Debian 11, Debian 12 |
 | openSUSE | openSUSE Leap 42.3, openSUSE Leap 15.1+ |
 | Oracle | Oracle Linux 8, Oracle Linux 9 |
-| RedHat Enterprise Linux (RHEL) | RHEL 7.4 to RHEL 7.9, RHEL 8.3+ |
+| RedHat Enterprise Linux (RHEL) | RHEL 7.4 to RHEL 7.9, RHEL 8.3+, RHEL 9.0+ |
+| Rocky | Rocky 8, Rocky 9 |
 | SUSE Linux Enterprise Server (SLES) | SLES 12, SLES 15.1+ |
-| Ubuntu Server | Ubuntu Server 16.04 to Ubuntu Server 22.04, all minor version after Ubuntu 22.04 |
+| Ubuntu | Ubuntu 16.04 to Ubuntu 24.04 |
 
 The following Azure regions are currently supported for this feature:
 
@@ -277,19 +279,6 @@ If the Azure Linux VM Sign-In application is missing from Conditional Access, ma
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 1. Remove the filters to see all applications, and search for **Virtual Machine**. If you don't see Microsoft Azure Linux Virtual Machine Sign-In as a result, the service principal is missing from the tenant.
 
-Another way to verify it is via Graph PowerShell:
-
-1. [Install the Graph PowerShell SDK](/powershell/microsoftgraph/installation) if you haven't already done so.
-1. Enter the command `Connect-MgGraph -Scopes "ServicePrincipalEndpoint.ReadWrite.All","Application.ReadWrite.All"`.
-1. Sign in with a Global Administrator account.
-1. Consent to the prompt that asks for your permission.
-1. Enter the command `Get-MgServicePrincipal -ConsistencyLevel eventual -Search '"DisplayName:Microsoft Azure Linux Virtual Machine Sign-In"'`.
-
-   If this command results in no output and returns you to the PowerShell prompt, you can create the service principal by using the following Graph PowerShell command: `New-MgServicePrincipal -AppId ce6ff14a-7fdc-4685-bbe0-f6afdfcfa8e0`.
-
-   Successful output will show that the app ID and the application name Azure Linux VM Sign-In were created.
-1. Sign out of Graph PowerShell by using the following command: `Disconnect-MgGraph`.
-
 <a name='log-in-by-using-an-azure-ad-user-account-to-ssh-into-the-linux-vm'></a>
 
 ## Log in by using a Microsoft Entra user account to SSH into the Linux VM
@@ -465,7 +454,7 @@ To uninstall old packages:
 
 1. Log in as a local user with admin privileges.
 1. Make sure there are no logged-in Microsoft Entra users. Call the `who -u` command to see who is logged in. Then use `sudo kill <pid>` for all session processes that the previous command reported.
-1. Run `sudo apt remove --purge aadlogin` (Ubuntu/Debian), `sudo yum remove aadlogin` (RHEL or CentOS), or `sudo zypper remove aadlogin` (openSUSE or SLES).
+1. Run `sudo apt remove --purge aadlogin` (Ubuntu/Debian), `sudo yum remove aadlogin` (RHEL), or `sudo zypper remove aadlogin` (openSUSE or SLES).
 1. If the command fails, try the low-level tools with scripts disabled:
    1. For Ubuntu/Debian, run `sudo dpkg --purge aadlogin`. If it's still failing because of the script, delete the `/var/lib/dpkg/info/aadlogin.prerm` file and try again.
    1. For everything else, run `rpm -e --noscripts aadogin`.
@@ -542,7 +531,7 @@ One solution is to remove `AllowGroups` and `DenyGroups` statements from *sshd_c
 
 Another solution is to move `AllowGroups` and `DenyGroups` to a `match user` section in *sshd_config*. Make sure the match template excludes Microsoft Entra users.
 
-### Getting Permission Denied when trying to connect from Azure Shell to Linux Red Hat/Oracle/CentOS 7.X VM.
+### Getting Permission Denied when trying to connect from Azure Shell to Linux Red Hat/Oracle 7.X VM.
 
 The OpenSSH server version in the target VM 7.4 is too old. Version incompatible with OpenSSH client version 8.8. Refer to [RSA SHA256 certificates no longer work](https://bugzilla.mindrot.org/show_bug.cgi?id=3351) for more information.
 

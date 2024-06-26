@@ -15,8 +15,7 @@ titleSuffix: Microsoft identity platform
 #Customer intent: As an app administrator, I want to configure a SAML application to receive tokens with claims from an external store, so that I can enrich tokens for existing or new applications using a custom claims provider.
 ---
 
-# Configure a SAML app to receive tokens with claims from an external store (preview)
-
+# Configure a SAML app to receive tokens with claims from an external store
 This article describes how to configure a SAML application to receive tokens with external claims from your custom claims provider.
 
 ## Prerequisites

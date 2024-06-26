@@ -41,6 +41,7 @@ Creation of federated identity credentials is currently **not supported** on use
 - Malaysia South
 - Italy North
 - Israel Central
+- Mexico Central
 
 Support for creating federated identity credentials on user assigned identities in these regions will be gradually rolled out. 
 Resources in this region which need to use federated identity credentials, can do so by leveraging a user assigned managed identity created in a supported region. 

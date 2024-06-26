@@ -29,7 +29,7 @@ Currently, restoring permissions is only possible through Microsoft Graph PowerS
 To restore previously revoked permissions for an application, you need:
 
 - An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- One of the following roles: Global Administrator, Cloud Application Administrator, Application Administrator.
+- One of the following roles: Cloud Application Administrator, Application Administrator.
 - A Service principal owner who isn't an administrator is able to invalidate refresh tokens.
 
 ## Restore revoked permissions for an application
@@ -69,7 +69,7 @@ $startDate = (Get-Date).AddDays(-7).ToString('yyyy-MM-dd')
 $endDate = (Get-Date).AddDays(1).ToString('yyyy-MM-dd')
 
 # Set the service principal ID
-$servicePrincipalId = "efe87e5d-05cb-4b19-9b36-1eb923448697"
+$servicePrincipalId = "aaaaaaaa-bbbb-cccc-1111-222222222222"
 
 Write-Host "Searching for audit logs between $startDate and $endDate" -ForegroundColor Green
 Write-Host "Searching for audit logs for service principal $servicePrincipalId" -ForegroundColor Green
@@ -238,7 +238,7 @@ if ($ForceGrantUpdate -eq $true) {
 ### Restore app-only permissions
 
 >[!NOTE]
->Granting app-only Microsoft Graph permissions requires the global administrator role.
+>Granting app-only Microsoft Graph permissions requires the Privileged Role Administrator role.
 
 ```powershell
 # WARNING: Setting $ForceGrantUpdate to true will modify permission grants without
@@ -253,7 +253,7 @@ $startDate = (Get-Date).AddDays(-7).ToString('yyyy-MM-dd')
 $endDate = (Get-Date).AddDays(1).ToString('yyyy-MM-dd')
 
 # Set the service principal ID
-$servicePrincipalId = "efe87e5d-05cb-4b19-9b36-1eb923448697"
+$servicePrincipalId = "aaaaaaaa-bbbb-cccc-1111-222222222222"
 
 Write-Host "Searching for audit logs between $startDate and $endDate" -ForegroundColor Green
 Write-Host "Searching for audit logs for service principal $servicePrincipalId" -ForegroundColor Green

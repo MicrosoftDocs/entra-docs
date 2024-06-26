@@ -13,7 +13,7 @@ ms.subservice: saas-apps
 
 ms.tgt_pltfrm: na
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: thwimmer
 
 
@@ -38,7 +38,7 @@ This tutorial describes the steps you need to perform in both Apple Business Man
 The scenario outlined in this tutorial assumes that you already have the following prerequisites:
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md).
-* A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (for example, Application Administrator, Cloud Application administrator, Application Owner, or Global Administrator).
+* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
 * An Apple Business Manager account with the role of Administrator or People Manager.
 * Configure and verify the domain you want to use. See [Link to new domains](https://support.apple.com/guide/apple-business-manager/link-to-new-domains-axm48c3280c0/1/web/1).
 * Configure (but do not turn on) federated authentication. See [Turn on and test federated authentication](https://support.apple.com/guide/apple-business-manager/axmb02f73f18/1/web/1).

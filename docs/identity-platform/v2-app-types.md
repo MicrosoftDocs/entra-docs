@@ -68,7 +68,7 @@ abC1dEf2Ghi3jkL4mNo5Pqr6stU7vWx8Yza9...
 {
     "name": "Casey Jensen",
     "email": "casey.jensen@onmicrosoft.com",
-    "oid": "ab12cd34-effe-5678-9012-abcdef012345"
+    "oid": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb"
     ...
 }
 ```

@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/09/2023
+ms.date: 03/25/2024
 ms.author: jeedes
 
 
@@ -31,7 +31,7 @@ You'll configure and test Microsoft Entra single sign-on for Island in a test en
 To integrate Microsoft Entra ID with Island, you need:
 
 * A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* One of the following roles: Global Administrator, Cloud Application Administrator, Application Administrator, or owner of the service principal.
+* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
 * A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
 * Island single sign-on (SSO) enabled subscription.
 
@@ -82,8 +82,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
     > [!NOTE]
     > These values are not real. Update these values with the actual Identifier and Reply URL. Contact [Island Client support team](mailto:support@island.io) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-1. Your Island application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows an example for this. The default value of **Unique User Identifier** is **user.userprincipalname** but Island expects this to be mapped with the user's object ID and change the name identifier
-format setting to **Persistent**. For that you can use **user.objectid** attribute from the list or use the appropriate attribute value based on your organization configuration.
+1. Your Island application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows an example for this. The default value of **Unique User Identifier** is **user.userprincipalname** but Island expects this to be mapped with the user's object ID and change the name identifier format setting to **Persistent**. For that you can use **user.objectid** attribute from the list or use the appropriate attribute value based on your organization configuration.
 
     ![Screenshot shows the image of attributes configuration.](common/default-attributes.png "Image")
 

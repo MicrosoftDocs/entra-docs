@@ -1,19 +1,17 @@
 ---
 title: Tutorial to configure Conditional Access policies in Cloudflare Access
-description: Configure Conditional Access to enforce application and user policies in Cloudflare Access
-
+description: Configure Conditional Access to enforce application and user policies in Cloudflare Access.
 author: gargi-sinha
 manager: martinco
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: tutorial
-
-ms.date: 05/11/2023
+ms.date: 04/18/2024
 ms.author: gasinh
 ms.collection: M365-identity-device-management
 ms.custom: not-enterprise-apps
 
-#customer intent: As an administrator configuring access policies in Cloudflare Access, I want to learn how to configure Conditional Access policies in Microsoft Entra ID, so that I can enforce organizational policies and provide secure access to self-hosted, SaaS, or nonweb applications.
+#customer intent: I'm an administrator configuring access policies in Cloudflare Access, and I want to learn how to configure Conditional Access policies in Microsoft Entra ID. I need to enforce organizational policies and provide secure access to self-hosted, SaaS, or nonweb apps.
 ---
 
 # Tutorial: Configure Conditional Access policies in Cloudflare Access
@@ -28,7 +26,7 @@ Learn more: [What is Conditional Access?](~/identity/conditional-access/overview
   * If you don't have one, get an [Azure free account](https://azure.microsoft.com/free/)
 * A Microsoft Entra tenant linked to the Microsoft Entra subscription
   * See, [Quickstart: Create a new tenant in Microsoft Entra ID](~/fundamentals/create-new-tenant.md)
-* One of the following roles: Global Administrator, Cloud Application Administrator, or Application Administrator.
+* One of the following roles: Cloud Application Administrator, or Application Administrator.
 * Configured users in the Microsoft Entra subscription  
 * A Cloudflare account
   * Go to `dash.cloudflare.com` to [Get started with Cloudflare](https://dash.cloudflare.com/sign-up)
@@ -76,12 +74,7 @@ Enforce Conditional Access policies on a Cloudflare Access application.
 4. See, [Add a self-hosted application](https://developers.cloudflare.com/cloudflare-one/applications/configure-apps/self-hosted-apps/).
 5. In **Application domain**, enter the protected application target URL.
 6. For **Identity providers**, select the IdP integration.
-
-   ![Screenshot of the IdP integration selection on Identity providers.](./media/cloudflare-conditional-access-policies/identity-providers.png)
-
 7. Create an Access policy. See, [Access policies](https://developers.cloudflare.com/cloudflare-one/policies/access/) and the following example. 
-
-   ![Screenshot of an example policy.](./media/cloudflare-conditional-access-policies/access-policy-example.png)
 
    > [!NOTE]
    > Reuse the IdP integration for other applications if they require the same Conditional Access policies. For example, a baseline IdP integration with a Conditional Access policy requiring multifactor authentication and a modern authentication client. If an application requires specific Conditional Access policies, set up a dedicated IdP instance for that application.

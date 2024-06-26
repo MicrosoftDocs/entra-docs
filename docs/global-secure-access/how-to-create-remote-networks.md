@@ -1,14 +1,15 @@
 ---
-title: How to create remote networks for Global Secure Access (preview)
+title: How to create remote networks
 description: Learn how to create remote networks, such as branch office locations, for Global Secure Access (preview).
 author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: how-to
-ms.date: 03/01/2024
+ms.date: 03/22/2024
 ms.service: global-secure-access
+# Customer intent: As an IT admin, I need to be able to create a remote network for a remote office so that my organization can connect to the Global Secure Access service.
 ---
-# How to create a remote network
+# How to create a remote network with Global Secure Access (preview)
 
 Remote networks are remote locations, such as a branch office, or networks that require internet connectivity. Setting up remote networks connects your users in remote locations to Global Secure Access (preview). Once a remote network is configured, you can assign a traffic forwarding profile to manage your corporate network traffic. Global Secure Access provides remote network connectivity so you can apply network security policies to your outbound traffic. 
 
@@ -22,8 +23,8 @@ To configure remote networks, you must have:
 
 - A **Global Secure Access Administrator** role in Microsoft Entra ID.
 - The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
-- To use the Microsoft 365 traffic forwarding profile, a Microsoft 365 E3 license is recommended.
-- Customer premises equipment (CPE) must support the protocols.
+- To use the Microsoft traffic forwarding profile, a Microsoft 365 E3 license is recommended.
+- Customer premises equipment (CPE) must support the following protocols:
     - Internet Protocol Security (IPSec)
     - GCMEAES128, GCMAES 192, or GCMAES256 algorithms for Internet Key Exchange (IKE) phase 2 negotiation
     - Internet Key Exchange Version 2 (IKEv2)
@@ -35,7 +36,7 @@ To configure remote networks, you must have:
 ### Known limitations
 
 - The number of remote networks per tenant is limited to 10. The number of device links per remote network is limited to four.
-- Microsoft 365 traffic is accessed through remote network connectivity without the Global Secure Access client. However, the Conditional Access policy isn't enforced. In other words, Conditional Access policies for the Global Secure Access Microsoft 365 traffic are only enforced when a user has the Global Secure Access client.
+- Microsoft traffic is accessed through remote network connectivity without the Global Secure Access client. However, the Conditional Access policy isn't enforced. In other words, Conditional Access policies for the Global Secure Access Microsoft traffic are only enforced when a user has the Global Secure Access client.
 - You must use the Global Secure Access client for Microsoft Entra Private Access. Remote network connectivity only supports Microsoft Entra Internet Access.
 
 ## High-level steps
@@ -71,9 +72,9 @@ The first step is to provide the name and location of your remote network. Compl
 
 ### Connectivity
 
-The connectivity tab is where you add the device links for the remote network. You need to provide the device type, public IP address of your CPE, border gateway protocol (BGP) address, and autonomous system number (ASN) for each device link. You can also add device links after creating the remote network.
+The connectivity tab is where you add the device links for the remote network. You can add device links *after* creating the remote network. You need to provide the device type, public IP address of your CPE, border gateway protocol (BGP) address, and autonomous system number (ASN) for each device link. 
 
-This process is covered in detail in the [How to manage remote network device links](how-to-manage-remote-network-device-links.md).
+The details required to complete this tab can be complex, so this process is covered in detail in the [How to manage remote network device links](how-to-manage-remote-network-device-links.md).
 
 ![Screenshot of the general tab of the create device link process.](media/how-to-create-remote-networks/add-device-link.png)
 
@@ -157,7 +158,7 @@ Associating a traffic forwarding profile to your remote network using the Micros
             "@odata.context": "#$delta",
             "value":
             [{
-                "ID": "1adaf535-1e31-4e14-983f-2270408162bf"
+                "ID": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee"
             }]
         }
     ```
@@ -173,13 +174,14 @@ There are a few things to consider and verify when creating remote networks. You
 - **Verify pre shared key**: Compare the pre shared key (PSK) you specified when creating the device link in Microsoft Global Secure Access with the PSK you specified on your CPE. This detail is added on the **Security** tab during the **Add a link** process. For more information, see [How to manage remote network device links.](how-to-manage-remote-network-device-links.md#add-a-link---security-tab).
 
 - **Verify local and peer BGP IP addresses**: The public IP and BGP address you use to configure the CPE must match what you use when you create a device link in Microsoft Global Secure Access.
+    - Refer to the [valid BGP addresses](reference-remote-network-configurations.md#valid-bgp-addresses) list for reserved values that can't be used.
     - The local and peer BGP addresses are reversed between the CPE and what is entered in Global Secure Access.
         - **CPE**: Local BGP IP address = IP1, Peer BGP IP address = IP2
         - **Global Secure Access**: Local BGP IP address = IP2, Peer BGP IP address = IP1
     - Choose an IP address for Global Secure Access that doesn't overlap with your on-premises network.
-    - The same rule applies to Autonomous System Number (ASN).
 
 - **Verify ASN**: Global Secure Access uses BGP to advertise routes between two autonomous systems: your network and Microsoft's. These autonomous systems should have different Autonomous System Numbers (ASNs).
+    - Refer to the [valid ASN values](reference-remote-network-configurations.md#valid-asn) list for reserved values that can't be used.
     - When creating a remote network in the Microsoft Entra admin center, use your network's ASN.
     - When configuring your CPE, use Microsoft's ASN. Go to **Global Secure Access** > **Devices** > **Remote Networks**. Select **Links** and confirm the value in the **Link ASN** column.
 
@@ -206,7 +208,7 @@ There are a few things to consider and verify when creating remote networks. You
 
 ## Next steps
 
-The next step for getting started with Microsoft Entra Internet Access is to [target the Microsoft 365 traffic profile with Conditional Access policy](how-to-target-resource-microsoft-365-profile.md).
+The next step for getting started with Microsoft Entra Internet Access is to [target the Microsoft traffic profile with Conditional Access policy](how-to-target-resource-microsoft-profile.md).
 
 For more information about remote networks, see the following articles:
 - [List remote networks](how-to-list-remote-networks.md)

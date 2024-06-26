@@ -41,7 +41,7 @@ For more information, see [Prerequisites to use PowerShell or Graph Explorer](pr
 
     The page includes links to relevant documentation to help guide you through managing roles.
 
-    ![Screenshot that shows the "Global Administrator - Description" page.](./media/role-definitions-list/role-description-updated.png)
+    ![Screenshot that shows the "Conditional Access Administrator - Description" page.](./media/role-definitions-list/role-description-updated.png)
 
 ## PowerShell
 
@@ -97,5 +97,5 @@ Follow these instructions to list Microsoft Entra roles using the Microsoft Grap
 ## Next steps
 
 * [List Microsoft Entra role assignments](view-assignments.md).
-* [Assign Microsoft Entra roles to users](manage-roles-portal.md).
+* [Assign Microsoft Entra roles to users](manage-roles-portal.yml).
 * [Microsoft Entra built-in roles](permissions-reference.md).

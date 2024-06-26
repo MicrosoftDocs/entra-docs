@@ -24,8 +24,7 @@ To assign or remove custom security attributes for a user in your Microsoft Entr
 - Microsoft.Graph module when using [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation)
 - [AzureADPreview](https://www.powershellgallery.com/packages/AzureADPreview) version 2.0.2.138 or later when using Azure AD PowerShell
 
-> [!IMPORTANT]
-> By default, [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) and other administrator roles do not have permissions to read, define, or assign custom security attributes.
+[!INCLUDE [security-attributes-roles](../../includes/security-attributes-roles.md)]
     
 ## Assign custom security attributes to a user
 
@@ -217,7 +216,7 @@ $attributes = @{
         Project = @("Baker","Cascade")
     }
 }
-Set-AzureADMSUser -Id dbb22700-a7de-4372-ae78-0098ee60e55e -CustomSecurityAttributes $attributes
+Set-AzureADMSUser -Id 00aa00aa-bb11-cc22-dd33-44ee44ee44ee -CustomSecurityAttributes $attributes
 ```
 
 ---
@@ -518,7 +517,7 @@ $attributesUpdate = @{
         Project = @("Alpine","Baker")
     }
 }
-Set-AzureADMSUser -Id dbb22700-a7de-4372-ae78-0098ee60e55e -CustomSecurityAttributes $attributesUpdate 
+Set-AzureADMSUser -Id 00aa00aa-bb11-cc22-dd33-44ee44ee44ee -CustomSecurityAttributes $attributesUpdate 
 ```
 
 ---
@@ -617,7 +616,7 @@ If there are no custom security attributes assigned to the user or if the callin
 [Get-AzureADMSUser](/powershell/module/azuread/get-azureadmsuser)
 
 ```powershell
-$user1 = Get-AzureADMSUser -Id dbb22700-a7de-4372-ae78-0098ee60e55e -Select CustomSecurityAttributes
+$user1 = Get-AzureADMSUser -Id 00aa00aa-bb11-cc22-dd33-44ee44ee44ee -Select CustomSecurityAttributes
 $user1.CustomSecurityAttributes
 ```
 
@@ -644,8 +643,8 @@ $userAttributes.CustomSecurityAttributes.AdditionalProperties | Format-List
 ```Output
 Id                                   DisplayName CustomSecurityAttributes
 --                                   ----------- ------------------------
-4b4e8090-e9ba-4bdc-b2f0-67c3c7c59489 Jiya        Microsoft.Graph.PowerShell.Models.MicrosoftGraphCustomSecurityAttributeValue
-efdf3082-64ae-495f-b051-855e2d8df969 Jana        Microsoft.Graph.PowerShell.Models.MicrosoftGraphCustomSecurityAttributeValue
+00aa00aa-bb11-cc22-dd33-44ee44ee44ee Jiya        Microsoft.Graph.PowerShell.Models.MicrosoftGraphCustomSecurityAttributeValue
+11bb11bb-cc22-dd33-ee44-55ff55ff55ff Jana        Microsoft.Graph.PowerShell.Models.MicrosoftGraphCustomSecurityAttributeValue
 
 Key   : Engineering
 Value : {[@odata.type, #microsoft.graph.customSecurityAttributeValue], [Datacenter@odata.type, #Collection(String)], [Datacenter, System.Object[]]}
@@ -674,7 +673,7 @@ ConsistencyLevel: eventual
     "@odata.count": 2,
     "value": [
         {
-            "id": "4b4e8090-e9ba-4bdc-b2f0-67c3c7c59489",
+            "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
             "displayName": "Jiya",
             "customSecurityAttributes": {
                 "Engineering": {
@@ -696,7 +695,7 @@ ConsistencyLevel: eventual
             }
         },
         {
-            "id": "efdf3082-64ae-495f-b051-855e2d8df969",
+            "id": "11bb11bb-cc22-dd33-ee44-55ff55ff55ff",
             "displayName": "Jana",
             "customSecurityAttributes": {
                 "Marketing": {
@@ -741,9 +740,9 @@ $userAttributes.CustomSecurityAttributes.AdditionalProperties | Format-List
 ```Output
 Id                                   DisplayName CustomSecurityAttributes
 --                                   ----------- ------------------------
-02d52406-be75-411b-b02f-29d7f38dcf62 Chandra     Microsoft.Graph.PowerShell.Models.MicrosoftGraphCustomSecurityAttributeValue
-efdf3082-64ae-495f-b051-855e2d8df969 Jana        Microsoft.Graph.PowerShell.Models.MicrosoftGraphCustomSecurityAttributeValue
-d5a1c025-2d79-4ad3-9217-91ac3a4ed8b8 Joe         Microsoft.Graph.PowerShell.Models.MicrosoftGraphCustomSecurityAttributeValue
+22cc22cc-dd33-ee44-ff55-66aa66aa66aa Chandra     Microsoft.Graph.PowerShell.Models.MicrosoftGraphCustomSecurityAttributeValue
+11bb11bb-cc22-dd33-ee44-55ff55ff55ff Jana        Microsoft.Graph.PowerShell.Models.MicrosoftGraphCustomSecurityAttributeValue
+33dd33dd-ee44-ff55-aa66-77bb77bb77bb Joe         Microsoft.Graph.PowerShell.Models.MicrosoftGraphCustomSecurityAttributeValue
 
 Key   : Marketing
 Value : {[@odata.type, #microsoft.graph.customSecurityAttributeValue], [EmployeeId, GS36348]}
@@ -775,7 +774,7 @@ ConsistencyLevel: eventual
     "@odata.count": 3,
     "value": [
         {
-            "id": "02d52406-be75-411b-b02f-29d7f38dcf62",
+            "id": "22cc22cc-dd33-ee44-ff55-66aa66aa66aa",
             "displayName": "Chandra",
             "customSecurityAttributes": {
                 "Marketing": {
@@ -785,7 +784,7 @@ ConsistencyLevel: eventual
             }
         },
         {
-            "id": "efdf3082-64ae-495f-b051-855e2d8df969",
+            "id": "11bb11bb-cc22-dd33-ee44-55ff55ff55ff",
             "displayName": "Jana",
             "customSecurityAttributes": {
                 "Marketing": {
@@ -800,7 +799,7 @@ ConsistencyLevel: eventual
             }
         },
         {
-            "id": "d5a1c025-2d79-4ad3-9217-91ac3a4ed8b8",
+            "id": "33dd33dd-ee44-ff55-aa66-77bb77bb77bb",
             "displayName": "Joe",
             "customSecurityAttributes": {
                 "Engineering": {
@@ -855,11 +854,11 @@ $userAttributes | select Id,DisplayName,CustomSecurityAttributes
 ```Output
 Id                                   DisplayName              CustomSecurityAttributes
 --                                   -----------              ------------------------
-02d52406-be75-411b-b02f-29d7f38dcf62 Chandra                  Microsoft.Graph.PowerShell.Models.MicrosoftGraphCustomSecurityAttributeValue
-eaea4971-7764-4498-9aeb-776496812e75 Isabella                 Microsoft.Graph.PowerShell.Models.MicrosoftGraphCustomSecurityAttributeValue
-d937580c-692c-451f-a507-6758d3bdf353 Alain                    Microsoft.Graph.PowerShell.Models.MicrosoftGraphCustomSecurityAttributeValue
-d5a1c025-2d79-4ad3-9217-91ac3a4ed8b8 Joe                      Microsoft.Graph.PowerShell.Models.MicrosoftGraphCustomSecurityAttributeValue
-23ad8721-f46c-421a-9785-33b0ef474198 Dara                     Microsoft.Graph.PowerShell.Models.MicrosoftGraphCustomSecurityAttributeValue
+22cc22cc-dd33-ee44-ff55-66aa66aa66aa Chandra                  Microsoft.Graph.PowerShell.Models.MicrosoftGraphCustomSecurityAttributeValue
+44ee44ee-ff55-aa66-bb77-88cc88cc88cc Isabella                 Microsoft.Graph.PowerShell.Models.MicrosoftGraphCustomSecurityAttributeValue
+00aa00aa-bb11-cc22-dd33-44ee44ee44ee Alain                    Microsoft.Graph.PowerShell.Models.MicrosoftGraphCustomSecurityAttributeValue
+33dd33dd-ee44-ff55-aa66-77bb77bb77bb Joe                      Microsoft.Graph.PowerShell.Models.MicrosoftGraphCustomSecurityAttributeValue
+00aa00aa-bb11-cc22-dd33-44ee44ee44ee Dara                     Microsoft.Graph.PowerShell.Models.MicrosoftGraphCustomSecurityAttributeValue
 ```
 
 # [Microsoft Graph](#tab/ms-graph)
@@ -877,7 +876,7 @@ ConsistencyLevel: eventual
     "@odata.count": 47,
     "value": [
         {
-            "id": "02d52406-be75-411b-b02f-29d7f38dcf62",
+            "id": "22cc22cc-dd33-ee44-ff55-66aa66aa66aa",
             "displayName": "Chandra",
             "customSecurityAttributes": {
                 "Marketing": {
@@ -887,7 +886,7 @@ ConsistencyLevel: eventual
             }
         },
         {
-            "id": "eaea4971-7764-4498-9aeb-776496812e75",
+            "id": "44ee44ee-ff55-aa66-bb77-88cc88cc88cc",
             "displayName": "Isabella",
             "customSecurityAttributes": {
                 "Marketing": {
@@ -900,7 +899,7 @@ ConsistencyLevel: eventual
             }
         },
         {
-            "id": "d937580c-692c-451f-a507-6758d3bdf353",
+            "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
             "displayName": "Alain",
             "customSecurityAttributes": {
                 "Marketing": {
@@ -914,7 +913,7 @@ ConsistencyLevel: eventual
             }
         },
         {
-            "id": "d5a1c025-2d79-4ad3-9217-91ac3a4ed8b8",
+            "id": "33dd33dd-ee44-ff55-aa66-77bb77bb77bb",
             "displayName": "Joe",
             "customSecurityAttributes": {
                 "Engineering": {
@@ -940,7 +939,7 @@ ConsistencyLevel: eventual
             }
         },
         {
-            "id": "23ad8721-f46c-421a-9785-33b0ef474198",
+            "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
             "displayName": "Dara",
             "customSecurityAttributes": null
         }

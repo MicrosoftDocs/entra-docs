@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 07/24/2023
+ms.date: 06/20/2024
 ms.author: jeedes
 
 
@@ -34,7 +34,7 @@ You'll configure and test Microsoft Entra single sign-on for Fleet Management Sy
 To integrate Microsoft Entra ID with Fleet Management System, you need:
 
 * A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* One of the following roles: Global Administrator, Cloud Application Administrator, Application Administrator, or owner of the service principal.
+* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
 * A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
 * Fleet Management System single sign-on (SSO) enabled subscription.
 
@@ -95,11 +95,11 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 
 ## Configure Fleet Management System SSO
 
-To configure single sign-on on **Fleet Management System** side, you need to send the downloaded **Certificate (Base64)** and appropriate copied URLs from the application configuration to [Fleet Management System support team](mailto:fms-datashare@navagis.com). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **Fleet Management System** side, you need to send the downloaded **Certificate (Base64)** and appropriate copied URLs from the application configuration to [Fleet Management System support team](mailto:msfms-support@navagis.com). They set this setting to have the SAML SSO connection set properly on both sides.
 
 ### Create Fleet Management System test user
 
-In this section, you create a user called Britta Simon at Fleet Management System. Work with [Fleet Management System support team](mailto:fms-datashare@navagis.com) to add the users in the Fleet Management System platform. Users must be created and activated before you use single sign-on.
+In this section, you create a user called Britta Simon at Fleet Management System. Work with [Fleet Management System support team](mailto:msfms-support@navagis.com) to add the users in the Fleet Management System platform. Users must be created and activated before you use single sign-on.
 
 ## Test SSO 
 

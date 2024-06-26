@@ -93,7 +93,7 @@ The following rules definition will ask the user to present the **True Identity*
         "required": false,
         "credentialType": "TrueIdentity",
         "contracts": [
-          "https://verifiedid.did.msidentity.com/v1.0/tenants/3c32ed40-8a10-465b-8ba4-0b1e86882668/verifiableCredentials/contracts/M2MzMmVkNDAtOGExMC00NjViLThiYTQtMGIxZTg2ODgyNjY4dHJ1ZSBpZGVudGl0eSBwcm9k/manifest"
+          "https://verifiedid.did.msidentity.com/v1.0/tenants/aaaabbbb-0000-cccc-1111-dddd2222eeee/verifiableCredentials/contracts/M2MzMmVkNDAtOGExMC00NjViLThiYTQtMGIxZTg2ODgyNjY4dHJ1ZSBpZGVudGl0eSBwcm9k/manifest"
         ]
       }
     ]

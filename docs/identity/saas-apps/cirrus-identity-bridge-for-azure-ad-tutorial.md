@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 
@@ -53,7 +53,7 @@ To use the Microsoft Graph API integration, you must grant the Cirrus Identity B
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 1. Edit the URL `https://login.microsoftonline.com/$TENANT_ID/adminconsent?client_id=ea71bc49-6159-422d-84d5-6c29d7287974&state=12345&redirect_uri=https://admin.cirrusidentity.com/azure-registration` replacing **$TENANT_ID** with the value for your Microsoft Entra tenant.
-1. Paste the URL into the browser where you are signed in as a Global Administrator.
+1. Paste the URL into the browser where you are signed in.
 1. You will be asked to consent to grant access.
 1. When successful, there should be a new application called Cirrus Bridge API. 
 1. Advise the Cirrus Identity contract representative you are working with that you have successfully granted API access to the Cirrus Identity Bridge for Microsoft Entra ID.

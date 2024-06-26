@@ -1,16 +1,15 @@
 ---
 title: 'Tutorial: Configure TeamViewer for automatic user provisioning with Microsoft Entra ID'
-description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to TeamViewer.
+description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to TeamViewer.
 
-author: twimmers
-writer: twimmers
+author: thomasakelo
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: thwimmer
+ms.date: 04/30/2024
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to TeamViewer so that I can streamline the user management process and ensure that users have the appropriate access to TeamViewer.
 ---
@@ -32,9 +31,12 @@ This tutorial describes the steps you need to perform in both TeamViewer and Mic
 The scenario outlined in this tutorial assumes that you already have the following prerequisites:
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md) 
-* A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (e.g. Application Administrator, Cloud Application administrator, Application Owner, or Global Administrator). 
+* A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (like [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications)). 
 * A valid [Tensor license](https://www.teamviewer.com/de/teamviewer-tensor/) for TeamViewer.
 * A valid custom identifier from the [Single Sign-On](https://community.teamviewer.com/t5/Knowledge-Base/Single-Sign-On-with-Azure-Active-Directory/ta-p/60209#toc-hId--473669723) configuration available.
+
+> [!NOTE]
+> This requires a Microsoft Entra Premium license subscription.
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
@@ -45,23 +47,34 @@ The scenario outlined in this tutorial assumes that you already have the followi
 
 ## Step 2: Configure TeamViewer to support provisioning with Microsoft Entra ID
 
-1. Login to [TeamViewer Management Console](https://login.teamviewer.com). Navigate to **Edit Profile**.
+1. Log in to [TeamViewer Management Console](https://login.teamviewer.com). Navigate to **Admin settings**.
+1. In the Authentication section, click **Apps and token**.
+1. Click Profile **settings**.
+1. Click **Add app or token**.
+1. Click **Create script token**.
+1. Enter a name for your API token and select the following options for the token.
 
- 	![TeamViewer Admin Console](./media/teamviewer-provisioning-tutorial/admin.png)
+	### Account management
 
-2.	Navigate to **Apps**. Click on **Create Script Token**.
+	* View online state.
+	* View account data.
+	* View email address.
+	* View license.
 
- 	![TeamViewer Create Token](./media/teamviewer-provisioning-tutorial/createtoken.png)
+	### User management
 
-3.	Provide a name for the script token. Click on the **Save** button.
+	* Create users.
+	* Edit users.
+	* View users.
 
- 	![TeamViewer Token Name](./media/teamviewer-provisioning-tutorial/tokenname.png)
+	### User groups
 
-4. Copy the **Token** and click **OK**. This value will be entered in the **Secret Token** field of your TeamViewer application.
+	* Create user groups.
+	* Delete user groups.
+	* Edit user groups.
+	* Read user groups.
 
- 	![TeamViewer Token](./media/teamviewer-provisioning-tutorial/token.png)
-
-<a name='step-3-add-teamviewer-from-the-azure-ad-application-gallery'></a>
+1. Click Save, to create your script token.
 
 ## Step 3: Add TeamViewer from the Microsoft Entra application gallery
 
@@ -71,7 +84,7 @@ Add TeamViewer from the Microsoft Entra application gallery to start managing pr
 
 The Microsoft Entra provisioning service allows you to scope who will be provisioned based on assignment to the application and or based on attributes of the user. If you choose to scope who will be provisioned to your app based on assignment, you can use the following [steps](~/identity/enterprise-apps/assign-user-or-group-access-portal.md) to assign users to the application. If you choose to scope who will be provisioned based solely on attributes of the user, you can use a scoping filter as described [here](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md). 
 
-* Start small. Test with a small set of users before rolling out to everyone. When scope for provisioning is set to assigned users, you can control this by assigning one or two usersto the app. When scope is set to all users, you can specify an [attribute based scoping filter](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+* Start small. Test with a small set of users before rolling out to everyone. When scope for provisioning is set to assigned users, you can control this by assigning one or two users to the app. When scope is set to all users, you can specify an [attribute based scoping filter](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 * If you need additional roles, you can [update the application manifest](~/identity-platform/howto-add-app-roles-in-apps.md) to add new roles.
 

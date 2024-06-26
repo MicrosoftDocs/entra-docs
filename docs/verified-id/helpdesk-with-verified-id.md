@@ -40,7 +40,7 @@ To set up the Microsoft Entra Verified ID service, follow the instructions for Q
 1. Create a test user in your [Microsoft Entra tenant](https://entra.microsoft.com/#view/Microsoft_AAD_UsersAndTenants/UserManagementMenuBlade/%7E/AllUsers/menuId/) and upload a photo of [yourself](https://support.microsoft.com/office/add-your-profile-photo-to-microsoft-365-2eaf93fd-b3f1-43b9-9cdc-bdcd548435b7).
 1. Go to [MyAccount](verifiable-credentials-configure-tenant-quick.md#myaccount-available-now-to-simplify-issuance-of-workplace-credentials), sign in as the test user and issue a VerifiedEmployee credential for the user.
 
-[![Screenshot of getting started with VerifiedEmployee.](media/helpdesk-with-verified-id/get-started-with-verifiedemployee.png)](media/helpdesk-with-verified-id/get-started-with-verifiedemployee.png#lightbox)
+:::image type="content" source="media/helpdesk-with-verified-id/get-started-with-verifiedemployee.png" alt-text="Screenshot of getting started with VerifiedEmployee.":::
 
 You first select who can request issuance of a Verified ID by selecting all users or a specific group of users. Then sign in to [https://myaccount.microsoft.com](https://myaccount.microsoft.com) and get your [Face Check](using-facecheck.md) ready credential using [Microsoft Authenticator](https://www.microsoft.com/security/mobile-authenticator-app). 
 
@@ -48,10 +48,10 @@ You first select who can request issuance of a Verified ID by selecting all user
 
 An enterprise can set up Microsoft Entra Verified ID integration by either:
 
-1. Adding it as an inline process like a `Get Verified` button in the Service desk webapp, follow the steps to add a Presentation request to verify VerifedID with Face Check. Steps are mentioned in the link [https://aka.ms/verifiedidfacecheck](https://aka.ms/verifiedidfacecheck)
+1. Adding it as an inline process like a `Get Verified` button in the Service desk webapp, follow the steps to add a Presentation request to verify Verified ID with Face Check. Steps are mentioned in the link [https://aka.ms/verifiedidfacecheck](https://aka.ms/verifiedidfacecheck)
 1. Setting up a dedicated web application that could accept Microsoft Entra Verified ID `VerifiedEmployee` with [Face Check](using-facecheck.md). Use the GitHub [sample](https://github.com/Azure-Samples/active-directory-verifiable-credentials-dotnet/tree/main/6-woodgrove-helpdesk) to deploy the custom webapp. Click `Deploy to Azure` to deploy the [ARM template](/azure/azure-resource-manager/templates/) that uses Managed Identity.
 
-![Screenshot of Deploy to Azure using ARM template.](media/helpdesk-with-verified-id/deploy-to-azure.png)
+:::image type="content" source="media/helpdesk-with-verified-id/deploy-to-azure.png" alt-text="Screenshot of Deploy to Azure using ARM template.":::
 
 An enterprise could add a webhook to send the response of Verified ID verification with [Face Check](using-facecheck.md) to the ServiceDesk tool. You can refer this example of [adding webhook](/microsoftteams/platform/webhooks-and-connectors/what-are-webhooks-and-connectors) to a Teams channel. This GitHub sample deploys a verification webapp on Azure using Azure App Service. 
 
@@ -62,22 +62,22 @@ If you are a **Managed Services provider (MSP)** or **Cloud Solutions Provider (
 ```json
 ...
 "requestedCredentials": [ 
-  { 
-    "type": "VerifiedEmployee", 
-    "acceptedIssuers": [ "<authirity1>", "<authority2>", "..." ], 
-    "configuration": { 
-      "validation": { 
-        "allowRevoked": false, 
-        "validateLinkedDomain": true, 
-        "faceCheck": { 
-          "sourcePhotoClaimName": "photo", 
-          "matchConfidenceThreshold": 70 
-        } 
-      }
+  { 
+    "type": "VerifiedEmployee", 
+    "acceptedIssuers": [ "<authority1>", "<authority2>", "..." ], 
+    "configuration": { 
+      "validation": { 
+        "allowRevoked": false, 
+        "validateLinkedDomain": true, 
+        "faceCheck": { 
+          "sourcePhotoClaimName": "photo", 
+          "matchConfidenceThreshold": 70 
+        } 
+      }
   ...
 ```
 
-[![Sequence diagram of Face Check.](media/helpdesk-with-verified-id/sequence-diagram-of-facecheck.png)](media/helpdesk-with-verified-id/sequence-diagram-of-facecheck.png#lightbox)
+:::image type="content" source="media/helpdesk-with-verified-id/sequence-diagram-of-facecheck.png" alt-text="Sequence diagram of Face Check.":::
 
 ## Additional resources
 

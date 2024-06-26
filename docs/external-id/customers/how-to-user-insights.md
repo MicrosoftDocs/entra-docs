@@ -1,6 +1,6 @@
 ---
-title: Analyze user activity in Microsoft Entra ID for customers
-description: Learn about how to analyze user activity and engagement for your registered application in the customer tenant.
+title: Analyze user activity in Microsoft Entra External ID
+description: Learn about how to analyze user activity and engagement for your registered application in the external tenant.
  
 author: csmulligan
 ms.author: cmulligan
@@ -9,7 +9,7 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: how-to
-ms.date: 01/16/2024
+ms.date: 06/19/2024
 
 ms.custom: it-pro
 
@@ -17,7 +17,9 @@ ms.custom: it-pro
 ---
 # Gain insights into your app users’ activity
 
-The Application user activity (Preview) feature under Usage & insights provides data analytics on user activity and engagement for registered applications in your tenant. You can use this feature to view, query, and analyze user activity data in the Microsoft Entra admin center. This can help you uncover valuable insights that can aid strategic decisions and drive business growth.
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
+The Application user activity  feature under Usage & insights provides data analytics on user activity and engagement for registered applications in your tenant. You can use this feature to view, query, and analyze user activity data in the Microsoft Entra admin center. This can help you uncover valuable insights that can aid strategic decisions and drive business growth.
 
 > [!TIP]
 > [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=UserInsights)
@@ -43,12 +45,12 @@ To access and view data from application user activity, you must have:
 
 ## How to access the Application user activity dashboards
 
-The Application user activity dashboards provide insights into how users interact with your apps. You can access them from the **Application user activity (Preview)** menu.
+The Application user activity dashboards provide insights into how users interact with your apps. You can access them from the **Application user activity** menu.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](/entra/identity/role-based-access-control/permissions-reference#reports-reader).
-1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the customer tenant you created earlier from the **Directories + subscriptions** menu.
+1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the external tenant you created earlier from the **Directories + subscriptions** menu.
 1. Browse to **Identity** > **Monitoring & health** > **Usage & insights**
-1. Select **Application user activity (Preview)** to view the dashboards.
+1. Select **Application user activity** to view the dashboards.
 
     :::image type="content" source="media/how-to-user-insights/app-user-activity-dashboard.png" alt-text="Screenshot of the Application user activity dashboards under the Usage & insights menu." lightbox="media/how-to-user-insights/app-user-activity-dashboard.png":::
 

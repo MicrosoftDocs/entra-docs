@@ -16,6 +16,8 @@ ms.custom: it-pro
 
 # Add user attributes to token claims  
 
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
 User attributes are values collected from the user during self-service sign-up. In addition to built-in user attributes, you can create custom attributes when you need to collect additional information. Because your application might rely on certain user attributes to function as designed, you can add any of these attributes to the token that is sent from Microsoft Entra ID to your application.
 
 You can specify which built-in or custom attributes you want to include as claims in the token that Microsoft Entra ID sends to your application.
@@ -67,7 +69,7 @@ You can specify which built-in or custom attributes you want to include as claim
 
     :::image type="content" source="media/how-to-add-attributes-to-token/manage-claim-directory-schema.png" alt-text="Screenshot of the Directory schema extension option.":::
 
-1. In the **Select Application** pane, select **b2c-extensions-app** (the app that contains all extension attributes for your customer tenant), and then choose **Select**.
+1. In the **Select Application** pane, select **b2c-extensions-app** (the app that contains all extension attributes for your external tenant), and then choose **Select**.
 
     :::image type="content" source="media/how-to-add-attributes-to-token/edit-select-application.png" alt-text="Screenshot of the Select Application pane.":::
 

@@ -1,37 +1,37 @@
 ---
-title: 'Tutorial: Prepare your customer tenant to authorize a Node.js daemon application'
-description: Learn how to prepare your customer tenant to authorize your Node.js daemon application
- 
+title: 'Tutorial: Prepare your external tenant to authorize a Node.js daemon application'
+description: Learn how to prepare your external tenant to authorize your Node.js daemon application
+
 author: kengaderdus
 manager: mwongerapk
 
 ms.author: kengaderdus
 ms.service: entra-external-id
- 
+
 ms.subservice: customers
 ms.topic: tutorial
 ms.date: 07/26/2023
 ms.custom: developer, devx-track-js
 ---
 
-# Tutorial: Prepare your customer tenant to authorize a Node.js daemon application
+# Tutorial: Prepare your external tenant to authorize a Node.js daemon application
 
-This tutorial series demonstrates how to build a Node.js daemon client app and prepare it for authentication in the Microsoft Entra admin center. You'll be using the [OAuth 2.0 client credentials grant flow](~/identity-platform/v2-oauth2-client-creds-grant-flow.md), then configure it to acquire an access token for calling a web API.
+This tutorial series demonstrates how to build a Node.js daemon client app and prepare it for authentication in the Microsoft Entra admin center. You'll be using the [Open Authorization (OAuth) 2.0 client credentials grant flow](~/identity-platform/v2-oauth2-client-creds-grant-flow.md), then configure it to acquire an access token for calling a web API.
 
 In this tutorial;
 
 > [!div class="checklist"]
-> * Register a web API in the Microsoft Entra admin center, and record its identifiers
-> * Configure app roles for the web API
-> * Register a client daemon application 
-> * Grant permissions to the daemon app
-> * Create a client secret for your daemon app
+> - Register a web API in the Microsoft Entra admin center, and record its identifiers
+> - Configure app roles for the web API
+> - Register a client daemon application
+> - Grant permissions to the daemon app
+> - Create a client secret for your daemon app
 
 If you've already registered a client daemon application and a web API in the Microsoft Entra admin center, you can skip the steps in this tutorial, then proceed to [Acquire access token for calling an API](tutorial-daemon-node-call-api-build-app.md).
 
 ## Prerequisites
 
-- A Microsoft Entra ID for customers tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>. 
+- An external tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
 
 ## Register a web API application
 
@@ -57,15 +57,14 @@ If you've already registered a client daemon application and a web API in the Mi
 
 [!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/register-app/grant-api-permissions-app-permissions.md)]
 
-## Collect your app registration details 
+## Collect your app registration details
 
 In the next step, you prepare your daemon app application. Make sure you've the following details:
 
 - The Application (client) ID of the client daemon app that you registered.
-- The Directory (tenant) subdomain where you registered your daemon app. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details). 
+- The Directory (tenant) subdomain where you registered your daemon app. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
 - The application secret value for the daemon app you created.
 - The Application (client) ID of the web API app you registered.
-
 
 ## Next step
 

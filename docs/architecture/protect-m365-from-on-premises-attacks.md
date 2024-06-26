@@ -204,7 +204,7 @@ Monitor the following key scenarios, in addition to any scenarios specific to yo
 
   Monitor all Microsoft Entra risk events for suspicious activity. See [How To: Investigate risk](~/id-protection/howto-identity-protection-investigate-risk.md). Microsoft Entra ID Protection is natively integrated with [Microsoft Defender for Identity](/defender-for-identity/what-is).
 
-  Define network named locations to avoid noisy detections on location-based signals. See [Using the location condition in a Conditional Access policy](~/identity/conditional-access/location-condition.md).
+  Define network named locations to avoid noisy detections on location-based signals. See [Using the location condition in a Conditional Access policy](../identity/conditional-access/concept-assignment-network.md).
 
 - **User and Entity Behavioral Analytics (UEBA) alerts**
 
@@ -261,7 +261,7 @@ Define a log storage and retention strategy, design, and implementation to facil
 
   Use the Microsoft Graph API to ingest risk events. See [Use the Microsoft Graph identity protection APIs](/graph/api/resources/identityprotection-overview).
 
-  You can stream Microsoft Entra logs to Azure Monitor logs. See [Integrate Microsoft Entra logs with Azure Monitor logs](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.md).
+  You can stream Microsoft Entra logs to Azure Monitor logs. See [Integrate Microsoft Entra logs with Azure Monitor logs](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.yml).
 
 - **Hybrid infrastructure operating system security logs**. All hybrid identity infrastructure operating system logs should be archived and carefully monitored as a tier-0 system, because of the surface-area implications. Include the following elements:
 

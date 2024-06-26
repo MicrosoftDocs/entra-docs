@@ -10,7 +10,6 @@ ms.topic: conceptual
 ms.date: 11/06/2023
 ms.subservice: hybrid-connect
 ms.author: billmath
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 
 ---
 

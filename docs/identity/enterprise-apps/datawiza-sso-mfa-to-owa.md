@@ -17,8 +17,7 @@ ms.custom: not-enterprise-apps
 
 In this tutorial, learn how to configure Datawiza Access Proxy (DAP) to enable Microsoft Entra single sign-on (SSO) and Microsoft Entra multifactor authentication for Outlook Web Access (OWA). Help solve issues when modern identity providers (IdPs) integrate with legacy OWA, which supports Kerberos token authentication to identify users.
 
-Often, legacy app and modern SSO integration are a challenge because there's no modern protocol support. Datawiza Access Proxy removes the protocol support
-gap, reduces integration overhead, and improves application security.
+Often, legacy app and modern SSO integration are a challenge because there's no modern protocol support. Datawiza Access Proxy removes the protocol support gap, reduces integration overhead, and improves application security.
 
 Integration benefits:
 
@@ -47,8 +46,7 @@ Integration benefits:
 -   Use the Datawiza Cloud Management Console (DCMC) to manage access to cloud and on-premises apps:
 
     -   Go to
-        [login.datawizwa.com](https://login.datawiza.com/df3f213b-68db-4966-bee4-c826eea4a310/b2c_1a_linkage/oauth2/v2.0/authorize?client_id=4f011d0f-44d4-4c42-ad4c-88c7bbcd1ac8&scope=https%3A%2F%2Fdatawizab2cprod.onmicrosoft.com%2F4f011d0f-44d4-4c42-ad4c-88c7bbcd1ac8%2FReadWrite.All%20openid%20profile%20offline_access&redirect_uri=https%3A%2F%2Fconsole.datawiza.com%2Fhome&client-request-id=3c20ca19-1dc7-4226-b2cf-fab4d7af3929&response_mode=fragment&response_type=code&x-client-SKU=msal.js.browser&x-client-VER=2.14.2&x-client-OS=&x-client-CPU=&client_info=1&code_challenge=hz6u_I8Z04mD8zz-olLBSXJ_OI1T2-Evy699ff0O8Ik&code_challenge_method=S256&nonce=80f15c2b-ff10-40a8-a48c-a2533fb2b8d9&state=eyJpZCI6ImY1NzEyZTcyLTBiZTItNGJjMC1hMmExLTYzNjE3NzYyMGU1OSIsIm1ldGEiOnsiaW50ZXJhY3Rpb25UeXBlIjoicmVkaXJlY3QifX0%3D)
-        to sign in or sign up for an account
+        [login.datawizwa.com](https://login.datawiza.com/df3f213b-68db-4966-bee4-c826eea4a310/b2c_1a_linkage/oauth2/v2.0/authorize?client_id=4f011d0f-44d4-4c42-ad4c-88c7bbcd1ac8&scope=https%3A%2F%2Fdatawizab2cprod.onmicrosoft.com%2F4f011d0f-44d4-4c42-ad4c-88c7bbcd1ac8%2FReadWrite.All%20openid%20profile%20offline_access&redirect_uri=https%3A%2F%2Fconsole.datawiza.com%2Fhome&client-request-id=3c20ca19-1dc7-4226-b2cf-fab4d7af3929&response_mode=fragment&response_type=code&x-client-SKU=msal.js.browser&x-client-VER=2.14.2&x-client-OS=&x-client-CPU=&client_info=1&code_challenge=hz6u_I8Z04mD8zz-olLBSXJ_OI1T2-Evy699ff0O8Ik&code_challenge_method=S256&nonce=80f15c2b-ff10-40a8-a48c-a2533fb2b8d9&state=eyJpZCI6ImY1NzEyZTcyLTBiZTItNGJjMC1hMmExLTYzNjE3NzYyMGU1OSIsIm1ldGEiOnsiaW50ZXJhY3Rpb25UeXBlIjoicmVkaXJlY3QifX0%3D) to sign in or sign up for an account
 
 ## Architecture
 
@@ -74,8 +72,7 @@ DAP integration architecture includes the following components:
 
 -   **DCMC** - the DAP management console with UI and RESTful APIs to manage configurations and access control policies
 
-The following diagram illustrates a user flow with DAP in a customer 
-network.
+The following diagram illustrates a user flow with DAP in a customer network.
 
    ![Screenshot shows the user flow with DAP in a customer network.](media/datawiza-access-proxy/datawiza-architecture.png)
 
@@ -118,16 +115,13 @@ You need the following components. Prior DAP experience isn't necessary.
 
     -   See, Install Docker Compose, [Overview](https://docs.docker.com/compose/install/)
 
--   User identities synchronized from an on-premises directory to Microsoft Entra ID, or created in Microsoft Entra ID and flowed back to your on-premises
-    directory
+-   User identities synchronized from an on-premises directory to Microsoft Entra ID, or created in Microsoft Entra ID and flowed back to your on-premises directory
 
-    -   See, [Microsoft Entra Connect Sync: Understand and customize
-        synchronization](~/identity/hybrid/connect/how-to-connect-sync-whatis.md)
+    -   See, [Microsoft Entra Connect Sync: Understand and customize synchronization](~/identity/hybrid/connect/how-to-connect-sync-whatis.md)
 
 -   An account with Microsoft Entra Application Administrator permissions
 
-    -   See, Application Administrator and other roles on, [Microsoft Entra built-in
-        roles](~/identity/role-based-access-control/permissions-reference.md)
+    -   See, Application Administrator and other roles on, [Microsoft Entra built-in roles](~/identity/role-based-access-control/permissions-reference.md)
 
 -   An Exchange Server environment. Supported versions:
 
@@ -135,8 +129,7 @@ You need the following components. Prior DAP experience isn't necessary.
 
     -   Microsoft OWA IWA - IIS 7 or later
 
--   A Windows Server instance configured with IIS and Microsoft Entra services running as a domain controller (DC) and implementing
-    Kerberos (IWA) SSO
+-   A Windows Server instance configured with IIS and Microsoft Entra services running as a domain controller (DC) and implementing Kerberos (IWA) SSO
 
     -   It's unusual for large production environments to have an application server (IIS) that also functions as a DC.
 
@@ -271,7 +264,7 @@ Before you create the service principal name (SPN), you can list SPNs and confir
 
 Use the following instructions to integrate OWA with Microsoft Entra ID.
 
-1.  Sign in to the [Datawiza Cloud Management Console](https://console.datawiza.com/) (DCMC).
+1.  Sign in to the [Datawiza Cloud Management Console (DCMC)](https://console.datawiza.com/).
 
 2.  The Welcome page appears.
 
@@ -293,11 +286,9 @@ Use the following instructions to integrate OWA with Microsoft Entra ID.
 
 2.  For **App name**, enter the app name. We recommend a meaningful naming convention.
 
-3.  For **Public Domain**, enter the app's external-facing URL. For example, `https://external.example.com`. Use localhost DNS for
-    testing.
+3.  For **Public Domain**, enter the app's external-facing URL. For example, `https://external.example.com`. Use localhost DNS for testing.
 
-4.  For **Listen Port**, enter the port DAP listens on. If DAP isn't deployed behind a load balancer, you can use port indicated in
-    Public Domain.
+4.  For **Listen Port**, enter the port DAP listens on. If DAP isn't deployed behind a load balancer, you can use port indicated in Public Domain.
 
 5.  For **Upstream Servers**, enter the OWA implementations' URL and port combination.
 
@@ -307,8 +298,7 @@ Use the following instructions to integrate OWA with Microsoft Entra ID.
 
 ### Configure IdP
 
-DCMC integration features help complete Microsoft Entra configuration. Instead, DCMC calls Microsoft Graph API to perform the tasks. The feature reduces
-time, effort, and errors.
+DCMC integration features help complete Microsoft Entra configuration. Instead, DCMC calls Microsoft Graph API to perform the tasks. The feature reduces time, effort, and errors.
 
 1.  On **Configure IdP**, enter a **Name**.
 
@@ -326,8 +316,7 @@ time, effort, and errors.
 
 7.  A page appears with deployment steps for DAP and the application.
 
-8.  See the deployment's Docker Compose file, which includes an image of the DAP, also **PROVISIONING_KEY** and **PROVISIONING_SECRET.** DAP
-    uses the keys to pull the latest DCMC configuration and policies.
+8.  See the deployment's Docker Compose file, which includes an image of the DAP, also **PROVISIONING_KEY** and **PROVISIONING_SECRET.** DAP uses the keys to pull the latest DCMC configuration and policies.
 
 ### Configure Kerberos
 
@@ -367,8 +356,7 @@ time, effort, and errors.
 
 4.  Select the option to **Enable SSL**.
 
-5.  From **Cert Type**, select a certificate type. You can use the
-    provided self-signed localhost certificate for testing.
+5.  From **Cert Type**, select a certificate type. You can use the provided self-signed localhost certificate for testing.
 
     ![Screenshot shows the cert type.](media/datawiza-access-proxy/cert-type.png)
 
@@ -382,7 +370,7 @@ time, effort, and errors.
 
 To provide more sign-in security, you can enforce Microsoft Entra multifactor authentication. The process starts in the Microsoft Entra admin center.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 2. Browse to **Identity** > **Overview** > **Properties** tab.
 3. Under **Security defaults**, select **Manage security defaults**.
 4. On the **Security defaults** pane, toggle the dropdown menu to select **Enabled**.

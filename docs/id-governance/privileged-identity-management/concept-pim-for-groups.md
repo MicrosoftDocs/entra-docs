@@ -37,7 +37,7 @@ To learn more about Microsoft Entra role-assignable groups, see [Create a role-a
 Role-assignable groups benefit from extra protections comparing to non-role-assignable groups:
 
 - **Role-assignable groups** - only the Global Administrator, Privileged Role Administrator, or the group Owner can manage the group. Also, no other users can change the credentials of the users who are (active) members of the group. This feature helps prevent an admin from elevating to a higher privileged role without going through a request and approval procedure.
-- **Non-role-assignable groups** - various Microsoft Entra roles can manage these groups – that includes Exchange Administrators, Groups Administrators, User Administrators, etc. Also, various roles Microsoft Entra roles can change the credentials of the users who are (active) members of the group – that includes Authentication Administrators, Helpdesk Administrators, User Administrators, etc.
+- **Non-role-assignable groups** - various Microsoft Entra roles can manage these groups – that includes Exchange Administrators, Groups Administrators, User Administrators, and so on. Also, various roles Microsoft Entra roles can change the credentials of the users who are (active) members of the group – that includes Authentication Administrators, Helpdesk Administrators, User Administrators, and so on.
 
 To learn more about Microsoft Entra built-in roles and their permissions, see [Microsoft Entra built-in roles](~/identity/role-based-access-control/permissions-reference.md).
 
@@ -76,7 +76,7 @@ If a user is an active member of Group A, and Group A is an eligible member of G
 
 If the group is configured for [app provisioning](~/identity/app-provisioning/index.yml), activation of group membership will trigger provisioning of group membership (and user account itself if it wasn’t provisioned previously) to the application using SCIM protocol. 
 
-In Public Preview we have a functionality that triggers provisioning right after group membership is activated in PIM.
+We have a functionality that triggers provisioning right after group membership is activated in PIM.
 Provisioning configuration depends on the application. Generally, we recommend having at least two groups assigned to the application. Depending on the number of roles in your application, you may choose to define additional “privileged groups.”:
 
 

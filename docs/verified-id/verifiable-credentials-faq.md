@@ -1,6 +1,6 @@
 ---
 title: Frequently asked questions - Azure Verifiable Credentials
-description: Find answers to common questions about Verifiable Credentials
+description: Find answers to common questions about Verifiable Credentials.
 author: barclayn
 manager: amycolannino
 ms.service: entra-verified-id
@@ -47,19 +47,15 @@ There are multiple ways of offering a recovery mechanism to users, each with the
 
 We implement [the Decentralized Identity Foundation's Well Known DID Configuration spec](https://identity.foundation/.well-known/resources/did-configuration/) in order to connect a DID to a highly known existing system, domain names. Each DID created using the Microsoft Entra Verified ID has the option of including a root domain name that is encoded in the DID Document. Follow the article titled [Link your Domain to your Distributed Identifier](how-to-dnsbind.md) to learn more.  
 
-### Why does the Microsoft Entra Verified ID support ION as its DID method, and therefore Bitcoin to provide decentralized public key infrastructure?
-
-Microsoft now offers two different trust systems, Web and ION. You can choose to use either one of them during tenant onboarding. ION is a decentralized, permissionless, scalable decentralized identifier Layer 2 network that runs atop Bitcoin. It achieves scalability without including a special crypto asset token, trusted validators, or centralized consensus mechanisms. We use Bitcoin for the base Layer 1 substrate because of the strength of the decentralized network to provide a high degree of immutability for a chronological event record system.
-
 ### What are the licensing requirements?
 
 There are no special licensing requirements to issue Verifiable credentials.
 
 ### How do I reset the Microsoft Entra Verified ID service?
 
-Resetting requires that you opt out and opt back into the Microsoft Entra Verified ID service. Your existing verifiable credentials configuration is reset and your tenant obtains a new DID to use during issuance and presentation.
+Resetting requires that you opt-out and opt back into the Microsoft Entra Verified ID service. Your existing verifiable credentials configuration is reset and your tenant obtains a new DID to use during issuance and presentation.
 
-1. Follow the [opt out](how-to-opt out.md) instructions.
+1. Follow the [opt-out](how-to-opt-out.md) instructions.
 1. Go over the Microsoft Entra Verified ID [deployment steps](verifiable-credentials-configure-tenant-quick.md) to reconfigure the service.
     1. If you're manually setting up Verified ID, choose a location for your Azure Key Vault to be in the same or closest region. This avoids performance and latency issues.
 1. Finish [setting up](verifiable-credentials-configure-tenant.md#set-up-verified-id) your verifiable credentials service. You need to recreate your credentials.
@@ -70,58 +66,30 @@ Resetting requires that you opt out and opt back into the Microsoft Entra Verifi
 
 1. In the [Azure portal](https://portal.azure.com), go to Microsoft Entra ID for the subscription you use for your Microsoft Entra Verified ID deployment.
 1. Under Manage, select Properties
-    :::image type="content" source="media/verifiable-credentials-faq/region.png" alt-text="settings delete and opt out":::
+    :::image type="content" source="media/verifiable-credentials-faq/region.png" alt-text="settings delete and opt-out":::
 1. See the value for Country or Region. If the value is a country or a region in Europe, your Microsoft Entra Verified ID service is set up in Europe.
 
-### How can I check if my tenant has the new Hub endpoint?
+### Does Microsoft Entra Verified ID support ION as its DID method?
 
-1. Navigate to the Verified ID in the Azure portal.  
-1. Navigate to the Organization Settings. 
-1. Copy your organization’s Decentralized Identifier (DID). 
-1. Go to the [ION Explorer](https://identity.foundation/ion/explorer) and paste the DID in the search box 
-1. Inspect your DID document and search for the ` “#hub” ` node.
-
-```json
- "service": [
-      {
-        "id": "#linkeddomains",
-        "type": "LinkedDomains",
-        "serviceEndpoint": {
-          "origins": [
-            "https://contoso.com/"
-          ]
-        }
-      },
-      {
-        "id": "#hub",
-        "type": "IdentityHub",
-        "serviceEndpoint": {
-          "instances": [
-            "https://verifiedid.hub.msidentity.com/v1.0/12345678-0000-0000-0000-000000000000"
-          ],
-          "origins": []
-        }
-      }
-    ],
-```
+Verified ID supported the DID:ION method in preview until December 2023, after which it was discontinued.
 
 ### How do I move to did:web from did:ion?
 
-If you want to move to `did:web` from `did:ion`, you can follow these steps via the [Admin API](admin-api.md). Note that changing authority requires reissuance of all credentials:
+If you want to move to `did:web` from `did:ion`, you can follow these steps via the [Admin API](admin-api.md). Changing authority requires reissuance of all credentials:
 
 #### Export existing did:ion credential definitions
 
 1. For the `did:ion` authority, use the [portal](https://entra.microsoft.com/#view/Microsoft_AAD_DecentralizedIdentity/CardsListBlade) to copy out all display and rules definition of the existing credentials. 
-1. If you have more than one authority, you have to use the Admin APIs if the `did:ion` authority isn't the default authority. On the Verified ID tenant, connect using Admin API,  [list the authorities](admin-api.md#list-authorities) to get the authority id for the `did:ion` authority. Then use the [list contracts](admin-api.md#list-contracts) API to export them and save the result to a file so you can recreate them.
+1. If you have more than one authority, you have to use the Admin APIs if the `did:ion` authority isn't the default authority. On the Verified ID tenant, connect using Admin API,  [list the authorities](admin-api.md#list-authorities) to get the authority ID for the `did:ion` authority. Then use the [list contracts](admin-api.md#list-contracts) API to export them and save the result to a file so you can recreate them.
 
 #### Creating new did:web authority
 
-1. Using the [onboard](admin-api.md#onboarding) API, create the new `did:web` authority. Alternatively, if your tenant has only one did:ion authority, you could also perform a service opt out followed by an opt-in operation to restart with Verified ID configurations. In this case, you could choose between [Quick](verifiable-credentials-configure-tenant-quick.md) and [Manual](verifiable-credentials-configure-tenant.md) setup.
-1. If you are setting up a did:web authority using Admin API, you need to call [generate DID document](admin-api.md#generate-did-document) to generate your did document and call [generate well-known document](admin-api.md#well-known-did-configuration) and then upload JSON files to the respective well-known path.
+1. Using the [onboard](admin-api.md#onboarding) API, create the new `did:web` authority. Alternatively, if your tenant has only one did:ion authority, you could also perform a service opt-out followed by an opt-in operation to restart with Verified ID configurations. In this case, you could choose between [Quick](verifiable-credentials-configure-tenant-quick.md) and [Manual](verifiable-credentials-configure-tenant.md) setup.
+1. If you're setting up a did:web authority using Admin API, you need to call [generate DID document](admin-api.md#generate-did-document) to generate your did document and call [generate well-known document](admin-api.md#well-known-did-configuration) and then upload JSON files to the respective well-known path.
 
 #### Recreate credential definitions
 
-After you have created your new `did:web` authority, you need to recreate your credential definitions. You can either do that via the [portal](https://entra.microsoft.com/#view/Microsoft_AAD_DecentralizedIdentity/CardsListBlade) if you opted-out and reonboarded, or you need to use the [create contract](admin-api.md#create-contract) to recreate them.
+After you have created your new `did:web` authority, you need to recreate your credential definitions. You can either do that via the [portal](https://entra.microsoft.com/#view/Microsoft_AAD_DecentralizedIdentity/CardsListBlade) if you opted-out and reonboarded, or you need to use the [create contract](admin-api.md#create-contract) API to recreate them.
 
 #### Update existing applications
 
@@ -130,7 +98,7 @@ After you have created your new `did:web` authority, you need to recreate your c
 
 #### Delete did:ion authority
 
-If you didn't opt out and reonboarded, you need to remove your old `did:ion` authority. Use the [delete authority](admin-api.md#delete-authority) API to delete the did:ion authority. 
+If you didn't opt-out and reonboarded, you need to remove your old `did:ion` authority. Use the [delete authority](admin-api.md#delete-authority) API to delete the did:ion authority. 
 
 ### If I reconfigure the Microsoft Entra Verified ID service, do I need to relink my DID to my domain?
 
@@ -138,7 +106,7 @@ Yes, after reconfiguring your service, your tenant has a new DID use to issue an
 
 ### Is it possible to request Microsoft to retrieve "old DIDs"?
 
-No, at this point it isn't possible to keep your tenant's DID after you have opt out of the service.
+No, at this point it isn't possible to keep your tenant's DID after you have opt-out of the service.
 
 ### I cannot use ngrok, what do I do?
 
@@ -149,7 +117,7 @@ The tutorials for deploying and running the [samples](verifiable-credentials-con
 - Java - [Deploy to App Service](/azure/app-service/quickstart-java?tabs=javase&pivots=platform-linux-development-environment-maven#4---deploy-the-app). You need to add the maven plugin for Azure App Service to the sample.
 - Python - [Deploy using Visual Studio Code](/azure/app-service/quickstart-python?tabs=flask%2Cwindows%2Cazure-cli%2Cvscode-deploy%2Cdeploy-instructions-azportal%2Cterminal-bash%2Cdeploy-instructions-zip-azcli#3---deploy-your-application-code-to-azure)
 
-Regardless of which language of the sample you're using, the Azure AppService hostname `https://something.azurewebsites.net` is used as the public endpoint. You don't need to configure something extra to make it work. If you make changes to the code or configuration, you need to redeploy the sample to Azure AppServices. Troubleshooting/debugging is not as easy as running the sample on your local machine, where traces to the console window show you errors, but you can achieve almost the same by using the [Log Stream](/azure/app-service/troubleshoot-diagnostic-logs#stream-logs).
+Regardless of which language of the sample you're using, the Azure AppService hostname `https://something.azurewebsites.net` is used as the public endpoint. You don't need to configure something extra to make it work. If you make changes to the code or configuration, you need to redeploy the sample to Azure AppServices. Troubleshooting/debugging isn't as easy as running the sample on your local machine, where traces to the console window show you errors, but you can achieve almost the same by using the [Log Stream](/azure/app-service/troubleshoot-diagnostic-logs#stream-logs).
  
 ## Next steps
 

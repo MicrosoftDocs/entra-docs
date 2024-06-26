@@ -42,10 +42,9 @@ For a demonstration of how to add a multi-stage approval to a request policy, wa
 
 Follow these steps to specify the approval settings for requests for the access package through a policy:
 
-**Prerequisite role:** Global administrator, Identity Governance Administrator, Catalog owner, or Access package manager
-
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
-
+    > [!TIP]
+    > Other least privilege roles that can complete this task include the Catalog owner and the Access Package assignment manager.
 1. Browse to **Identity governance** > **Entitlement management** > **Access packages**.
 
 1. On the **Access packages** page open an access package.
@@ -81,7 +80,7 @@ Use the following steps to add approvers after selecting how many stages you req
     
 1. If you selected **Manager** as the first approver, select **Add fallback to select one, or more users or groups in your directory to be a fallback approver. Fallback approvers receive the request if entitlement management can't find the manager for the user requesting access.
 
-    The manager is found by entitlement management using the **Manager** attribute. The attribute is in the user's profile in Microsoft Entra ID. For more information, see [Add or update a user's profile information using Microsoft Entra ID](../fundamentals/how-to-manage-user-profile-info.md).
+    The manager is found by entitlement management using the **Manager** attribute. The attribute is in the user's profile in Microsoft Entra ID. For more information, see [Add or update a user's profile information using Microsoft Entra ID](~/fundamentals/how-to-manage-user-profile-info.yml).
 
 1. If you selected **Choose specific approvers**, select **Add approvers** to choose one, or more, users or groups in your directory to be approvers.
 

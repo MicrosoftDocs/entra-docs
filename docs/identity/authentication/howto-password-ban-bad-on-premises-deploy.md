@@ -130,8 +130,8 @@ The following requirements apply to the Microsoft Entra Password Protection prox
     * If .NET 4.7.2 is not already installed, download and run the installer found at [The .NET Framework 4.7.2 offline installer for Windows](https://support.microsoft.com/topic/microsoft-net-framework-4-7-2-offline-installer-for-windows-05a72734-2127-a15d-50cf-daf56d5faec2).
 * All machines that host the Microsoft Entra Password Protection proxy service must be configured to grant domain controllers the ability to log on to the proxy service. This ability is controlled via the "Access this computer from the network" privilege assignment.
 * All machines that host the Microsoft Entra Password Protection proxy service must be configured to allow outbound TLS 1.2 HTTP traffic.
-* A *Global Administrator* account is required to register the Microsoft Entra Password Protection proxy service for the first time in a given tenant. Subsequent proxy and forest registrations with Microsoft Entra ID may use an account with either *Global Administrator* or *Security Administrator* credentials.
-* Network access must be enabled for the set of ports and URLs specified in the [Application Proxy environment setup procedures](~/identity/app-proxy/application-proxy-add-on-premises-application.md#prepare-your-on-premises-environment). This is in addition to the two endpoints described above.
+* A [Global Administrator](../role-based-access-control/permissions-reference.md#global-administrator) is required to register the Microsoft Entra Password Protection proxy service for the first time in a given tenant. Subsequent proxy and forest registrations with Microsoft Entra ID may use an account with at least the [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) role.
+* Network access must be enabled for the set of ports and URLs specified in the [application proxy environment setup procedures](../../global-secure-access/how-to-configure-connectors.md). This is in addition to the two endpoints described above.
 
 <a name='microsoft-azure-ad-connect-agent-updater-prerequisites'></a>
 
@@ -140,7 +140,7 @@ The following requirements apply to the Microsoft Entra Password Protection prox
 The Microsoft Entra Connect Agent Updater service is installed side by side with the Microsoft Entra Password Protection Proxy service. Additional configuration is required in order for the Microsoft Entra Connect Agent Updater service to be able to function:
 
 * If your environment uses an HTTP proxy server, follow the guidelines specified in [Work with existing on-premises proxy servers](~/identity/app-proxy/application-proxy-configure-connectors-with-proxy-servers.md).
-* The Microsoft Entra Connect Agent Updater service also requires the TLS 1.2 steps specified in [TLS requirements](~/identity/app-proxy/application-proxy-add-on-premises-application.md#transport-layer-security-tls-requirements).
+* The Microsoft Entra Connect Agent Updater service also requires the TLS 1.2 steps specified in [TLS requirements](../../global-secure-access/how-to-configure-connectors.md).
 
 > [!WARNING]
 > Microsoft Entra Password Protection proxy and Microsoft Entra application proxy install different versions of the Microsoft Entra Connect Agent Updater service, which is why the instructions refer to Application Proxy content. These different versions are incompatible when installed side by side and doing so will prevent the Agent Updater service from contacting Azure for software updates, so you should never install Microsoft Entra Password Protection Proxy and Application Proxy on the same machine.

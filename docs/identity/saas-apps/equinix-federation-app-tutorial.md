@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 06/19/2024
 ms.author: jeedes
 
 
@@ -80,13 +80,13 @@ Follow these steps to enable Microsoft Entra SSO.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
-1. On the **Basic SAML Configuration** section, enter the values for the following fields:
+1. On the **Basic SAML Configuration** section, perform the following step:
 
 	In the **Sign on URL** text box, type a URL using the following pattern:
     `https://<customerprefix>customerportal.equinix.com`
 
 	> [!NOTE]
-	> The Sign on URL value is not real. Update the value with the actual Sign on URL. Contact [Equinix Federation App Client support team](mailto:prodsecops@equinix.com) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> The Sign on URL value is not real. Update the value with the actual Sign on URL. Contact [Equinix Federation App Client support team](mailto:FederationSupport@equinix.com) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 
@@ -128,11 +128,11 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 ## Configure Equinix Federation App SSO
 
-To configure Single Sign-On on **Equinix Federation App** side, please the follow the [link](https://docs.equinix.com/Content/home.htm).
+To configure Single Sign-On on **Equinix Federation App** side, please follow the [link](https://docs.equinix.com/Content/home.htm).
 
 ### Create Equinix Federation App test user
 
-In this section, you create a user called Britta Simon in Equinix Federation App. Work with [Equinix Federation App support team](mailto:prodsecops@equinix.com) to add the users in the Equinix Federation App platform. Users must be created and activated before you use single sign-on.
+In this section, you create a user called Britta Simon in Equinix Federation App. Work with [Equinix Federation App support team](mailto:FederationSupport@equinix.com) to add the users in the Equinix Federation App platform. Users must be created and activated before you use single sign-on.
 
 ## Test SSO 
 

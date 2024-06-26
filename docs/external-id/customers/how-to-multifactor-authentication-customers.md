@@ -1,6 +1,6 @@
 ---
 title: Add multifactor authentication (MFA) to a customer app
-description: Learn how to add multifactor authentication (MFA) to your customer-facing (CIAM) application. For example, add email one-time passcode as a second authentication factor to your CIAM sign-up and sign-in user flows.
+description: Learn how to add multifactor authentication (MFA) to your consumer and business customer (CIAM) application. For example, add email one-time passcode as a second authentication factor to your CIAM sign-up and sign-in user flows.
  
 author: msmimart
 manager: celestedg
@@ -8,17 +8,22 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: how-to
-ms.date: 01/11/2024
+ms.date: 05/09/2024
 ms.author: mimart
 ms.custom: it-pro
 
-#Customer intent: As a dev, devops, or it admin, I want to add multifactor authentication to my customer-facing app.
+#Customer intent: As a dev, devops, or it admin, I want to add multifactor authentication to my custoconsumer and business customer app.
 ---
 
-# Add multifactor authentication (MFA) to a customer-facing app
+# Add multifactor authentication (MFA) to an app
 
-[Multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md) (MFA) adds a layer of security to your customer-facing applications. With MFA, customers who sign in with a username and password are prompted for a one-time passcode as a second verification method. This article describes how to enforce MFA for your customers by creating a Microsoft Entra Conditional Access policy and adding MFA to your sign-up and sign-in user flow.
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
+[Multifactor authentication (MFA)](~/identity/authentication/concept-mfa-howitworks.md) adds a layer of security to your applications. With MFA, customers who sign in with a username and password are prompted for a one-time passcode as a second verification method. This article describes how to enforce MFA for your customers by creating a Microsoft Entra Conditional Access policy and adding MFA to your sign-up and sign-in user flow.
+In a Microsoft Entra External ID external tenant, you can add a layer of security to your consumer- and business customer-facing applications by enforcing multifactor authentication (MFA). With MFA, each time a user signs in, they're required to provide an email one-time passcode. This article describes how to enforce MFA for your customers by creating a Microsoft Entra Conditional Access policy and adding MFA to your sign-up and sign-in user flow.
+
+> [!IMPORTANT]
+> If you want to enable MFA, set your local account authentication method to **Email with password**. If you set your local account option to **Email with one-time passcode**, customers who use this method won't be able to sign in because the one-time passcode is already their first-factor sign-in method and can't be used as a second factor. Currently, one-time passcode is the only method available for MFA in external tenants.
 
 > [!TIP]
 > [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=MFA)
@@ -27,21 +32,18 @@ ms.custom: it-pro
 
 ## Prerequisites
 
-- A Microsoft Entra customer tenant (if you don't have a tenant, you can start a <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">free trial</a>.
-- A [sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md).
-- An app that's registered in your customer tenant, added to the sign-up and sign-in user flow, and updated to point to the user flow for authentication.
-- An account with Conditional Access Administrator, Security Administrator, or Global Administrator privileges to configure Conditional Access policies and MFA.
-
-> [!NOTE]
-> If you want to enable MFA, set your local account authentication method to **Email with password**. If you set your local account option to **Email with one-time passcode**, customers who use this method won't be able to sign in because the one-time passcode is already their first-factor sign-in method and can't be used as a second factor. Currently, one-time passcode is the only method available for MFA in customer tenants.
+- A Microsoft Entra external tenant (if you don't have a tenant, you can start a <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">free trial</a>.
+- A [sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md) with the local account authentication method set to **Email with password**.
+- An app that's registered in your external tenant, added to the sign-up and sign-in user flow, and updated to point to the user flow for authentication.
+- An account with at least the Security Administrator role to configure Conditional Access policies and MFA.
 
 ## Create a Conditional Access policy
 
-Create a Conditional Access policy in your customer tenant that prompts users for MFA when they sign up or sign in to your app. (For more information, see [Common Conditional Access policy: Require MFA for all users](~/identity/conditional-access/howto-conditional-access-policy-all-users-mfa.md)).
+Create a Conditional Access policy in your external tenant that prompts users for MFA when they sign up or sign in to your app. (For more information, see [Common Conditional Access policy: Require MFA for all users](~/identity/conditional-access/howto-conditional-access-policy-all-users-mfa.md)).
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a Conditional Access Administrator, Security Administrator, or Global Administrator.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator).
 
-1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your customer tenant from the **Directories + subscriptions** menu.
+1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your external tenant from the **Directories + subscriptions** menu.
 
 1. Browse to **Identity** > **Protection** > **Security Center**.
 
@@ -81,9 +83,9 @@ Create a Conditional Access policy in your customer tenant that prompts users fo
 
 ## Enable email one-time passcode as an MFA method
 
-Enable the email one-time passcode authentication method in your customer tenant for all users.
+Enable the email one-time passcode authentication method in your external tenant for all users.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator).
 
 1. Browse to **Identity** > **Protection** > **Authentication methods**.
 

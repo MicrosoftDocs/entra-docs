@@ -5,7 +5,7 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom:  scenarios:getting-started
-ms.date: 06/29/2023
+ms.date: 03/20/2024
 ms.reviewer: jmprieur, saeeda, sureshja, ludwignick
 ms.service: identity-platform
 

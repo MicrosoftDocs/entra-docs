@@ -1,6 +1,6 @@
 ---
 title: "Tutorial: Prepare a web application for authentication"
-description: Prepare an ASP.NET Core application for authentication using Visual Studio.
+description: Learn how to create and prepare an ASP.NET Core application for authentication with the Microsoft identity platform, and secure it with a self-signed certificate.
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
@@ -8,7 +8,7 @@ ms.date: 01/18/2024
 ms.service: identity-platform
 
 ms.topic: tutorial
-#Customer intent: As an application developer, I want to use an IDE to set up an ASP.NET Core project, set up and upload a self signed certificate to the Azure portal and configure the application for authentication.
+#Customer intent: As an application developer, I want to use an IDE to set up an ASP.NET Core project, set up and upload a self signed certificate to the Microsoft Entra admin center and configure the application for authentication.
 ---
 
 # Tutorial: Prepare an application for authentication
@@ -64,7 +64,7 @@ Use the following tabs to create an ASP.NET Core project within an IDE.
 1. Under **Web and Console** in the left navigation bar, select **App**.
 1. Under **ASP.NET Core**, select **Web Application** and ensure **C#** is selected in the drop down menu, then select **Continue**.
 1. Ensure the **Target Framework** is set to **.NET 6.0** at a minimum.
-1. Enter a name for **Project name**, this is reflected in **Solution Name**. Provide a similar name to the one registered on the Azure portal, such as *NewWebAppLocal*.
+1. Enter a name for **Project name**, this is reflected in **Solution Name**. Provide a similar name to the one registered in the Microsoft Entra admin center, such as *NewWebAppLocal*.
 1. Accept the default location for the project or choose a different location, and then select **Create**.
 
 >[!NOTE]

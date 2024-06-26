@@ -25,8 +25,11 @@ Privileged Identity Management (PIM) lets you know when important events occur i
 
 Emails sent from Privileged Identity Management for both Microsoft Entra ID and Azure resource roles have the following sender email address:
 
-- Email address:  **azure-noreply\@microsoft.com**
-- Display name: Microsoft Azure
+- Email address:  **MSSecurity-noreply@microsoft.com**
+- Display name: **Microsoft Security**
+
+>[!IMPORTANT]
+> The azure-noreply@microsoft.com has been deprecated and should no longer be sending PIM email notifications
 
 These emails include a **PIM** prefix in the subject line. Here's an example:
 
@@ -69,7 +72,7 @@ Who receives these emails for Microsoft Entra roles depends on your role, the ev
 
 The following shows an example email that is sent when a user activates a Microsoft Entra role for the fictional Contoso organization.
 
-![New Privileged Identity Management email for Microsoft Entra roles](./media/pim-email-notifications/email-directory-new.png)
+:::image type="content" source="./media/pim-email-notifications/email-directory-new.png" alt-text="Screenshot showing the new Privileged Identity Management email for Microsoft Entra roles.":::
 
 <a name='weekly-privileged-identity-management-digest-email-for-azure-ad-roles'></a>
 
@@ -77,7 +80,7 @@ The following shows an example email that is sent when a user activates a Micros
 
 A weekly Privileged Identity Management summary email for Microsoft Entra roles is sent to Privileged Role Administrators, Security Administrators, and Global Administrators that have enabled Privileged Identity Management. This weekly email provides a snapshot of Privileged Identity Management activities for the week as well as privileged role assignments. It is only available for Microsoft Entra organizations on the public cloud. Here's an example email:
 
-![Weekly Privileged Identity Management digest email for Microsoft Entra roles](./media/pim-email-notifications/email-directory-weekly.png)
+:::image type="content" source="./media/pim-email-notifications/email-directory-weekly.png" alt-text="Screenshot showing the weekly Privileged Identity Management digest email for Microsoft Entra roles.":::
 
 The email includes:
 
@@ -110,7 +113,7 @@ Privileged Identity Management sends emails to end users when the following even
 
 The following shows an example email that is sent when a user is assigned an Azure resource role for the fictional Contoso organization.
 
-![New Privileged Identity Management email for Azure resource roles](./media/pim-email-notifications/email-resources-new.png)
+:::image type="content" source="./media/pim-email-notifications/email-resources-new.png" alt-text="Screenshot showing the new Privileged Identity Management email for Azure resource roles.":::
 
 ## Notifications for PIM for Groups
 
