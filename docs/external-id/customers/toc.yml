@@ -39,6 +39,8 @@ items:
             href: sample-web-app-node-sign-in.md
           - name: Sign in users and call an API
             href: sample-web-app-node-sign-in-call-api.md
+          - name: Sign in users and edit profile
+            href: sample-web-app-node-sign-in-edit-profile.md
       - name: ASP.NET Core
         items:
           - name: Sign in users

@@ -212,7 +212,7 @@ In your code editor, open the *routes/users.js* file, add the following routes:
 
 The app uses the *fetch.js* file to make the actual API call. 
 
-In your code editor, open *fetch.js* file, then add the PATCH option. After you update the file, the resulting file should looks similar to the following code:
+In your code editor, open *fetch.js* file, then add the PATCH operation option. After you update the file, the resulting file should looks similar to the following code:
 
 ```JavaScript
 var axios = require('axios');
@@ -259,7 +259,14 @@ Use these steps to test your app:
     ```console
         npm start
     ```
-1. Open your browser, then go to http://localhost:3000.
+
+1. Open your browser, then go to http://localhost:3000. If you experience SSL certificate errors, create a `.env` file, then add the following configuration:
+
+    ```
+    # Use this variable only in the development environment. 
+    # Remove the variable when you move the app to the production environment.
+    NODE_TLS_REJECT_UNAUTHORIZED='0'
+    ```
 
 1. Select the **Sign In** button. You're prompted to sign in.
 
@@ -273,4 +280,4 @@ Use these steps to test your app:
  
 ## Related content
 
-- [Add multifactor authentication to an app](how-to-multifactor-authentication-customers.md)
+- [Add multifactor authentication to an app](how-to-multifactor-authentication-customers.md).
