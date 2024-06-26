@@ -1,6 +1,6 @@
 ---
-title: Securing high value private application access with Privileged Identity Management (PIM)
-description: Learn how to secure high value private application access with Privileged Identity Management (PIM)
+title: Secure private application access with Privileged Identity Management (PIM) and Global Secure Access
+description: Learn how to secure high value private application access with Privileged Identity Management (PIM) and Global Secure Access
 author: kenwith
 manager: amycolannino
 ms.service: entra-id
@@ -11,7 +11,7 @@ ms.author: kenwith
 ms.reviewer: katabish
 ---
 
-# Securing high value private application access with Privileged Identity Management (PIM)
+# Secure private application access with Privileged Identity Management (PIM) and Global Secure Access
 
 Microsoft Entra Private Access provides secure access to private application. Private Access includes built-in capabilities for maintaining a secure environment. Microsoft Entra Private Access does this by controlling access to private apps and preventing unauthorized or compromised devices from accessing critical resources. For general corporate access, see [Microsoft Entra Private Access](/entra/global-secure-access).
 
@@ -19,11 +19,11 @@ For controlling access to specific critical resources, such as highly valued ser
 
 This article discusses how to use Microsoft Entra Private Access to enable Privileged Identity Management (PIM) for Secure Access. For details about enabling (PIM), see [What is Microsoft Entra Privileged Identity Management?](/entra/id-governance/privileged-identity-management/pim-configure). 
 
-## Add Microsoft Entra Private Access with Privileged Identity Management (PIM)
+## Ensure secure access to your high value private applications
 
 Customer should consider configuring PIM using Global Secure Access for these reasons:
 
-**Enhanced Security:** PIM allows for just-in-time privileged access, reducing the risk of excessive, unnecessary, or misused access permissions within your environment. This enhanced security aligns with the Zero Trust principle of least privilege, ensuring that users have access only when they need it.
+**Enhanced Security:** PIM allows for just-in-time privileged access, reducing the risk of excessive, unnecessary, or misused access permissions within your environment. This enhanced security aligns with the [Zero Trust](https://www.microsoft.com/security/business/zero-trust) principle, ensuring that users have access only when they need it.
 
 **Efficient Management**: Microsoft Global Secure Access offers Role-Based Access Control (RBAC) to manage administrative access efficiently. Admin roles like Global Administrator, Security Administrator, and others have varying levels of access, from full permissions to read-only access. This feature helps in delegating access effectively based on administrative responsibilities.
 
