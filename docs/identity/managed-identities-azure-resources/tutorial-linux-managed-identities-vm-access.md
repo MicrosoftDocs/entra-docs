@@ -1,5 +1,5 @@
 ---
-title: Tutorial - Use a Linux VM/VMSS to access Azure resources 
+title: Tutorial - Use a Linux VM/VMSS to access Azure resources
 description: A tutorial that shows you how to use a Linux VM/VMSS to access Azure resources.
 author: barclayn
 manager: amycolannino
@@ -10,9 +10,9 @@ ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.date: 06/10/2024
 ms.author: barclayn
-ms.custom: devx-track-azurepowershell, devx-track-arm-template
+ms.custom: devx-track-arm-template, devx-track-azurecli, linux-related-content
 
-appliesto: 
+appliesto:
 zone_pivot_groups: identity-linux-vm-access
 ---
 

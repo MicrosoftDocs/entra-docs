@@ -100,3 +100,8 @@ For Example:
 $credential = Get-Credential 
 Set-AADCloudSyncRestrictedPermissions -Credential $credential  
 ```
+
+## Next Steps
+
+- [Understand group Managed Service Accounts](/windows-server/security/group-managed-service-accounts/group-managed-service-accounts-overview)
+- [Understand gMSA accounts with cloud sync](gmsa-cloud-sync.md)
