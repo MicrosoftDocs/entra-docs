@@ -18,6 +18,8 @@ Starting in September 2024, we're consolidating the Conditional Access **Target 
 
 There's no change to the behavior of existing Conditional Access policies. Administrators don't need to make changes to their existing policies.
 
+:::image type="content" source="media/reference-resources-change/target-resources.png" alt-text="Screenshot showing a Conditional Access policy with the Global Secure Access (Preview) controls selected.":::
+
 ## What's changing?
 
 ### All internet resources with Global Secure Access
