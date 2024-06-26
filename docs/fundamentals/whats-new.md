@@ -105,7 +105,7 @@ Privileged Identity Management (PIM) for Groups in Microsoft Entra ID allows adm
 
 ---
 
-### General Availability -  Security Improvements to Microsoft Entra Connect Sync and Connect Health
+### General Availability - Security Improvements to Microsoft Entra Connect Sync and Connect Health
 
 **Type:** Changed feature    
 **Service category:** Provisioning    
@@ -113,7 +113,7 @@ Privileged Identity Management (PIM) for Groups in Microsoft Entra ID allows adm
 
 **Action Recommended: Security Improvements to Microsoft Entra Connect Sync and Connect Health**
 
-Since September 2023, we have been auto-upgrading Microsoft Entra Connect Sync and Microsoft Entra Connect Health customers to an updated build as part of a precautionary security-related service change. For customers who previously opted out of auto-upgrade, or for whom auto-upgrade failed, we strongly recommend that you upgrade to the latest versions by September 23, 2024.
+Since September 2023, we have been auto-upgrading Microsoft Entra Connect Sync and Microsoft Entra Connect Health customers to an updated build as part of a precautionary security-related service change. For customers who previously opted out of auto-upgrade, or for whom auto-upgrade failed, **we strongly recommend** that you upgrade to the latest versions by September 23, 2024.
 
 When you upgrade to the latest versions, you ensure that when the service change takes effect, you avoid service disruptions for:
 
@@ -128,7 +128,7 @@ Upgrade to the latest versions of Microsoft Entra Connect Sync and Microsoft Ent
 
  
 
-See documentation here: [Security improvements to the auto-upgrade process](https://review.learn.microsoft.com/en-us/entra/identity/hybrid/connect/security-updates-pks?branch=pr-en-us-3827) for upgrade-related guidance and further details on the expected impacts of the service change.
+See documentation here: [Security improvements to the auto-upgrade process](https://review.learn.microsoft.com/en-us/entra/identity/hybrid/connect/security-updates-pks?branch=pr-en-us-3827) for upgrade-related guidance, versioning information, and further details on the expected impacts of the service change.
 
 ---
 
