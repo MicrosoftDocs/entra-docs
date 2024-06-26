@@ -141,4 +141,4 @@ npm install axios cookie-parser body-parser method-override
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Edit profile in a Node.js web app](how-to-web-app-node-edit-profile-update-profile.md.md)
+> [Edit profile in a Node.js web app](how-to-web-app-node-edit-profile-update-profile.md)
