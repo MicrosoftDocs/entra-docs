@@ -35,7 +35,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 * One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications). 
 * A verified domain name assigned to your Azure tenant and used for the emails of the respective users.
 * Familiar with [Chaos Corporate Sign In](https://docs.chaosgroup.com/display/KB/Corporate+Sign+In).
-* Have read and agreed to the Chaos [terms of use](https://www.chaosgroup.com/en/terms), [privacy statement](https://www.chaosgroup.com/corporate/privacy-notice) and [EULA](https://www.chaosgroup.com/eula) related to Corporate Sign In.
+* Have read and agreed to the Chaos [terms of use](https://www.chaosgroup.com/en/terms), [privacy statement](https://www.chaosgroup.com/corporate/privacy-notice) and EULA agreement at `https://www.chaosgroup.com/eula` related to Corporate Sign In.
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
