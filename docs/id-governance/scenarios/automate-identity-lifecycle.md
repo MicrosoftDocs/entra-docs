@@ -1,5 +1,5 @@
 ---
-title: 'Automate identity lifecycle manangement with Microsoft Entra ID Governance'
+title: 'Automate identity lifecycle management with Microsoft Entra ID Governance'
 description: Describes overview of identity lifecycle management for Microsoft Entra ID Governance.
 services: active-directory
 author: billmath
@@ -11,7 +11,7 @@ ms.date: 02/28/2024
 ms.author: billmath
 ---
 
-# Automate identity lifecycle manangement with Microsoft Entra ID Governance
+# Automate identity lifecycle management with Microsoft Entra ID Governance
 
 The following document provides an overview of how you can automate identity lifecycle processes using Microsoft Entra ID Governance.
 
@@ -26,11 +26,11 @@ Provisioning from active directory to Microsoft Entra ID can be accomplished in 
  - [Microsoft Identity Manager](/microsoft-identity-manager/microsoft-identity-manager-2016) to trigger provisioning when a new identity is created in these HR systems. 
 
 ## Automatic inbound provisioning from your organization's HR sources
-HR driven provisioning is the process of creating digital identities based on a human resources system. The HR systems, become the start-of-authority for these newly created digital identities and is often the starting point for numerous provisioning processes.  These HR systems can be either on-premises or cloud based.  
+HR driven provisioning is the process of creating digital identities based on a human resources system. The HR systems, become the start-of-authority for these newly created digital identities and is often the starting point for numerous provisioning processes. These HR systems can be either on-premises or cloud based. 
 
 To manage the identity lifecycles of employees, vendors, or contingent workers, [Microsoft Entra user provisioning service](~/identity/app-provisioning/user-provisioning.md) offers integration with cloud-based human resources (HR) applications.
 
-Microsoft on-premises HR provisioning solutions use [Microsoft Identity Manager](/microsoft-identity-manager/microsoft-identity-manager-2016) to trigger provisioning when a new identity is created in these HR systems. Using MIM, you can provision users from your on-premises HR systems to Active Directory or Microsoft Entra ID.  Users already present in Active Directory can be automatically created and maintained in Microsoft Entra ID using [inter-directory provisioning](~/identity/hybrid/what-is-inter-directory-provisioning.md).
+Microsoft on-premises HR provisioning solutions use [Microsoft Identity Manager](/microsoft-identity-manager/microsoft-identity-manager-2016) to trigger provisioning when a new identity is created in these HR systems. Using MIM, you can provision users from your on-premises HR systems to Active Directory or Microsoft Entra ID. Users already present in Active Directory can be automatically created and maintained in Microsoft Entra ID using [inter-directory provisioning](~/identity/hybrid/what-is-inter-directory-provisioning.md).
 
 ### Enabled HR scenarios
 
