@@ -46,9 +46,9 @@ This API needs to expose permissions, which a client needs to acquire for callin
 
 ## Grant API permissions to the client web app
 
-In this section, you grant API permissions to the client web app that you registered earlier (from the pre-requisites). You grant two permissions: 
+In this section, you grant API permissions to the client web app that you registered earlier (from the prerequisites). You grant two permissions: 
 
-- *User.ReadWrite* - a Microsoft Graph APIs permissions that enables user to update their profile.
+- *User.ReadWrite* - a Microsoft Graph APIs permission that enables user to update their profile.
 - *api://{clientId}/User.MFA* - the MFA web API permission that protects the update profile operation with MFA.
 
 ### Grant Microsoft Graph API User.ReadWrite permission

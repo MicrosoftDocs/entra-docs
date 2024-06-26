@@ -43,9 +43,9 @@ This API needs to expose permissions, which a client needs to acquire for callin
 
 ## Grant API permissions to the client web app
 
-In this section, you grant API permissions to the client web app that you registered earlier (from the pre-requisites). You grant two permissions: 
+In this section, you grant API permissions to the client web app that you registered earlier (from the prerequisites). You grant two permissions: 
 
-- *User.ReadWrite* - a Microsoft Graph APIs permissions that enables user to update their profile.
+- *User.ReadWrite* - a Microsoft Graph APIs permission that enables user to update their profile.
 - *api://{clientId}/User.MFA* - the MFA web API permission that protects the update profile operation with MFA.
 
 ### Grant Microsoft Graph API User.ReadWrite permission
@@ -104,7 +104,7 @@ git clone https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial.
     ```
 1. Open your browser, then go to http://localhost:3000.
 
-1. Select the **Sign In** button. You're prompted to sign in.
+1. Select the **Sign In** button, then you sign in.
 
 1. On the sign-in page, type your **Email address**, select **Next**, type your **Password**, then select **Sign in**. If you don't have an account, select **No account? Create one** link, which starts the sign-up flow.
 
@@ -112,7 +112,7 @@ git clone https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial.
 
     :::image type="content" source="media/how-to-web-app-node-edit-profile-update-profile/edit-user-profile.png" alt-text="Screenshot of user update profile."::: 
 
-1. To edit the user's **Display Name**, select the **Edit** button. If you haven't already done so, you're prompted to complete an MFA challenge. 
+1. To edit the user's **Display Name**, select the **Edit** button. If you haven't already done so, the app prompts you to complete an MFA challenge. 
 
 ## Related content
 

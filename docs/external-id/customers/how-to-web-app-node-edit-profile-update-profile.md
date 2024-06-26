@@ -26,7 +26,7 @@ In this how-to guide, you learn how to acquire an access token to call Microsoft
 
 ## Update authConfig.js file
 
-1. In your code editor, open *authConfig.js* file, then add three new variable, `GRAPH_API_ENDPOINT`, `GRAPH_ME_ENDPOINT` and `mfaProtectedResourceScope`. Make sure to export the three variables:
+1. In your code editor, open *authConfig.js* file, then add three new variables, `GRAPH_API_ENDPOINT`, `GRAPH_ME_ENDPOINT` and `mfaProtectedResourceScope`. Make sure to export the three variables:
 
     ```JavaScript
     //...
@@ -268,7 +268,7 @@ Use these steps to test your app:
     NODE_TLS_REJECT_UNAUTHORIZED='0'
     ```
 
-1. Select the **Sign In** button. You're prompted to sign in.
+1. Select the **Sign In** button, then sign in.
 
 1. On the sign-in page, type your **Email address**, select **Next**, type your **Password**, then select **Sign in**. If you don't have an account, select **No account? Create one** link, which starts the sign-up flow.
 
@@ -276,7 +276,7 @@ Use these steps to test your app:
 
     :::image type="content" source="media/how-to-web-app-node-edit-profile-update-profile/edit-user-profile.png" alt-text="Screenshot of user update profile."::: 
 
-1. To edit the user's **Display Name**, select the **Edit** button. If you haven't already done so, you're prompted to complete an MFA challenge. 
+1. To edit the user's **Display Name**, select the **Edit** button. If you haven't already done so, the app prompts you to complete an MFA challenge. 
  
 ## Related content
 
