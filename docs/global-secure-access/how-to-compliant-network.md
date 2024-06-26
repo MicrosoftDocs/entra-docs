@@ -31,7 +31,7 @@ The compliant network is different than [IPv4, IPv6, or geographic locations](..
    - The [Global Secure Access Administrator role](/azure/active-directory/roles/permissions-reference) role to manage the Global Secure Access preview features.
    - [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) to create and interact with Conditional Access policies and named locations.
 - The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
-- To use the Microsoft 365 traffic forwarding profile, a Microsoft 365 E3 license is recommended.
+- To use the Microsoft traffic forwarding profile, a Microsoft 365 E3 license is recommended.
 
 ### Known limitations
 
@@ -57,7 +57,7 @@ To enable the required setting to allow the compliant network check, an administ
 
 ## Protect your resources behind the compliant network
 
-The compliant network Conditional Access policy can be used to protect your Microsoft 365 and third-party resources.
+The compliant network Conditional Access policy can be used to protect your Microsoft and third-party resources.
 
 The following example shows this type of policy. In addition, token theft replay protection using CAE for SharePoint Online is now supported.
 

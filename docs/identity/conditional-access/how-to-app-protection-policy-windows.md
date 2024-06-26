@@ -14,7 +14,7 @@ ms.reviewer: lhuangnorth, jogro
 ---
 # Require an app protection policy on Windows devices
 
-App protection policies apply [mobile application management (MAM)](/mem/intune/apps/app-management#mobile-application-management-mam-basics) to specific applications on a device. These policies allow for securing data within an application in support of scenarios like bring your own device (BYOD). We support applying policy to the Microsoft Edge browser on Windows 11 devices.
+App protection policies apply [mobile application management (MAM)](/mem/intune/apps/app-management#mobile-application-management-mam-basics) to specific applications on a device. These policies allow for securing data within an application in support of scenarios like bring your own device (BYOD). We support applying policy to the Microsoft Edge browser on Windows devices meeting the prerequisites below.
 
 ![Screenshot of a browser requiring the user to sign in to their Microsoft Edge profile to access an application.](./media/how-to-app-protection-policy-windows/browser-sign-in-with-edge-profile.png)
 

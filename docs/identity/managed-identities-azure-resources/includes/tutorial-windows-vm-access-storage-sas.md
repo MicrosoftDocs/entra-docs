@@ -1,10 +1,12 @@
 ---
-author: barclayn 
+author: barclayn
 ms.author: barclayn
-ms.date: 06/06/2024 
+ms.date: 06/06/2024
 ms.topic: include
 ms.service: entra-id
 ms.subservice: managed-identities
+ms.custom:
+  - devx-track-arm-template
 ---
 
 ## Use a Windows VM system-assigned managed identity to access Azure Storage via a SAS credential

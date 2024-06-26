@@ -28,7 +28,7 @@ The following table explains the steps taken at each point in the previous diagr
 
 Universal tenant restrictions help to prevent data exfiltration across browsers, devices, and networks in the following ways:
 
-- It enables Microsoft Entra ID, Microsoft Accounts, and Microsoft 365 applications to look up and enforce the associated tenant restrictions v2 policy. This lookup enables consistent policy application. 
+- It enables Microsoft Entra ID, Microsoft Accounts, and Microsoft applications to look up and enforce the associated tenant restrictions v2 policy. This lookup enables consistent policy application. 
 - Works with all Microsoft Entra integrated third-party apps at the auth plane during sign in.
 - Works with Exchange, SharePoint, and Microsoft Graph for data plane protection.
 
