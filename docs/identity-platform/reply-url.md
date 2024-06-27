@@ -64,7 +64,7 @@ If the application you're building contains one or multiple redirect URIs in you
 | An Android app | Java, Kotlin, Xamarin | Android |
 | An app that runs natively on a mobile device or desktop machine | Node.js electron, Windows desktop, UWP, React Native, Xamarin, Android, iOS/macOS | Mobile and desktop applications |
 
-If you're building an iOS app using one of the following methods, use the **Mobile and desktop applications** platform to add redirect URI:
+If you're building an iOS app using one of the following methods, use the **Mobile and desktop applications** platform to add a redirect URI:
 
  - iOS apps using legacy SDKs (ADAL) 
  - iOS apps using open source SDKs (AppAuth) 
