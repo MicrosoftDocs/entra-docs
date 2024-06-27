@@ -18,15 +18,15 @@ To sign in a user, your application must send a login request to the Microsoft E
 
 ## What is a redirect URI?
 
-A redirect URI, or reply URL, is the location where the Microsoft Entra authentication server sends the user once they have successfully authorized and been granted an authorization code or access token. To sign in a user, your application must send a login request with a redirect URI specified as a perimeter, so after the user has successfully signed in, the authentication server will re-direct the user and issue an access token to the redirect URI specified in the login request.
+A redirect URI, or reply URL, is the location where the Microsoft Entra authentication server sends the user once they have successfully authorized and been granted an access token. To sign in a user, your application must send a login request with a redirect URI specified as a parameter, so after the user has successfully signed in, the authentication server will redirect the user and issue an access token to the redirect URI specified in the login request.
 
 ## Why do redirect URI(s) need to be added to an app registration?
 
-For security reasons, the authentication server will not redirect users or send tokens to a URI that is not added to the app registration. Microsoft Entra login servers only redirect users and send tokens to redirect URIs that have been added to an app registration. If the redirect URI specified in the login request doesn’t match any of the redirect URIs you have added in your application, you'll receive an error message such as `AADSTS50011: The reply URL specified in the request does not match the reply URLs configured for the application`. 
+For security reasons, the authentication server won't redirect users or send tokens to a URI that isn't added to the app registration. Microsoft Entra login servers only redirect users and send tokens to redirect URIs that have been added to an app registration. If the redirect URI specified in the login request doesn’t match any of the redirect URIs you have added in your application, you receive an error message such as `AADSTS50011: The reply URL specified in the request does not match the reply URLs configured for the application`. 
 
 For more information on error codes, see [Microsoft Entra authentication and authorization error codes](reference-error-codes.md).
 
-## Should I add a redirect URIs to an app registration?
+## Should I add a redirect URI to an app registration?
 
 Whether you should add a redirect URI to your app registration depends on the authorization protocol your application uses. You must add appropriate redirect URIs to your app registration if your application is using the following authorization protocols:
 
@@ -47,7 +47,7 @@ You don’t need to add redirect URIs to your app registration if your applicati
 
 ### What platform should I add my redirect URI(s) to?
 
-If the application you're building contains one or multiple redirect URIs in your app registration, you'll need to enable a [public client flow configuration](msal-client-applications.md). The following tables provide guidance on the type of redirect URI you should or shouldn't add based on the platform you're building your application on.
+If the application you're building contains one or multiple redirect URIs in your app registration, you need to enable a [public client flow configuration](msal-client-applications.md). The following tables provide guidance on the type of redirect URI you should or shouldn't add based on the platform you're building your application on.
 
 #### Web application redirect URI configuration
 
@@ -64,7 +64,7 @@ If the application you're building contains one or multiple redirect URIs in you
 | An Android app | Java, Kotlin, Xamarin | Android |
 | An app that runs natively on a mobile device or desktop machine | Node.js electron, Windows desktop, UWP, React Native, Xamarin, Android, iOS/macOS | Mobile and desktop applications |
 
-If you are building an iOS app using one of the following methods, please use **Mobile and desktop applications** platform to add redirect URI:
+If you're building an iOS app using one of the following methods, use the **Mobile and desktop applications** platform to add redirect URI:
 
  - iOS apps using legacy SDKs (ADAL) 
  - iOS apps using open source SDKs (AppAuth) 
@@ -72,7 +72,7 @@ If you are building an iOS app using one of the following methods, please use **
  - iOS apps implementing our OAuth protocols directly 
  - macOS apps using cross-plat tech we don't support (Electron)
 
-#### Applications that do not require a redirect URI
+#### Applications that don't require a redirect URI
 
 | Type of application | Examples/notes | Associated OAuth flow |
 |---------------------|----------------|-----------------------|
