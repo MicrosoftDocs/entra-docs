@@ -1,5 +1,5 @@
 ---
-title: Secure your resources with Conditional Access policy templates
+title: Simplify Conditional Access policy deployment with templates
 description: Deploy recommended Conditional Access policies from easy to use templates.
 
 ms.service: entra-id
@@ -115,5 +115,4 @@ Organizations can select individual policy templates and:
 ## Next steps
 
 - [Simulate sign in behavior using the Conditional Access What If tool.](troubleshoot-conditional-access-what-if.md)
-
 - [Use report-only mode for Conditional Access to determine the results of new policy decisions.](concept-conditional-access-report-only.md)
