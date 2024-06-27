@@ -7,7 +7,7 @@ ms.topic: how-to
 author: gargi-sinha
 ms.author: gasinh
 manager: martinco
-ms.date: 12/01/2022
+ms.date: 06/27/2024
 ---
 
 # Build resilience in your customer identity and access management with Azure Active Directory B2C
