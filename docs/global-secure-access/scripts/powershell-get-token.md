@@ -14,8 +14,6 @@ ms.reviewer: sumi
 
 The PowerShell script helps you get the Auth Token for registering your Microsoft Entra private network connector through Azure Marketplace. 
 
-If you don't have an Azure subscription, create an Azure free account before you begin.
-
 [!INCLUDE [quickstarts-free-trial-note](~/includes/azure-docs-pr/quickstarts-free-trial-note.md)]
 
 [!INCLUDE [updated-for-az](~/includes/azure-docs-pr/updated-for-az.md)]
