@@ -13,13 +13,17 @@ Microsoft Entra is available in several licensing options that allow you to choo
 - **Microsoft Entra ID P1** - Microsoft Entra ID P1 is available as a standalone product or included with Microsoft 365 E3 for enterprise customers and Microsoft 365 Business Premium for small to medium businesses.
 - **Microsoft Entra ID P2** - Microsoft Entra ID P2 is available as a standalone product or included with Microsoft 365 E5 for enterprise customers.
 - **Microsoft Entra ID Governance** - Microsoft Entra ID Governance is an advanced set of identity governance capabilities available for Microsoft Entra ID P1 and P2 customers, as two products Microsoft Entra ID Governance and Microsoft Entra ID Governance Step Up for Microsoft Entra ID P2. These products contain the basic identity governance capabilities that were in Microsoft Entra ID P2, and additional advanced identity governance capabilities.
-- **Microsoft Entra Suite** - Includes components of all other options and extends zero trust foundations by securing access for an organization’s workforce. It is available for Microsoft Entra ID P1 and P2 customers.
+- **Microsoft Entra Suite** - The suite combines Microsoft Entra products to protect and verify any identity. The suite provides secure access from anywhere to any app or resource (cloud or on-premises), keep users and organizations safe, and ensuring that only the right identities have the right access at the right time. It is available for Microsoft Entra ID P1 and P2 customers.
+
 
   :::image type="content" source="media/entra-offerings/entra-suite.png" alt-text="Image Description":::  
 
-  - **Zero Trust Access Controls**: The suite extends zero trust access controls, known as Conditional Access, to all applications and internet traffic.
-  - **Protection for On-premises Apps**: It offers complete protection for on-premises applications, including multifactor authentication (MFA) and access governance.
-  - **Least Privilege Access Enforcement**: Enforces least privilege access and verification to all resources, which enhances security and compliance.
-  - **Simplified User Experience**: The suite simplifies the user experience and access controls, leading to reduced complexity and costs.
-  - **Unique Value for M365**: Provides additional security insights for Microsoft 365.
+The Microsoft Entra Suite includes 5 products. They are:
 
+- Microsoft Entra ID Protection
+- Microsoft Entra ID Governance
+- Microsoft Entra Internet Access
+- Microsoft Entra Private Access
+- Microsoft Entra Verified ID: Face Check
+
+ 
