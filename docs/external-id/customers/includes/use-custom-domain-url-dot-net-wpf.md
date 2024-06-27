@@ -24,16 +24,11 @@ After you make the changes to your *appsettings.json* file, if your custom domai
 
 ```json
 {
-  "AzureAd": {
-    "Authority": "https://login.contoso.com/aaaabbbb-0000-cccc-1111-dddd2222eeee",
-    "ClientId": "Enter_the_Application_Id_Here",
-    "CacheFileName": "msal_cache.txt",
-    "CacheDir": "C:/temp",
-    "KnownAuthorities": ["login.contoso.com"]
-  },
-  "DownstreamApi": {
-    "Scopes": "openid offline_access"
-  }
+    "AzureAd": {
+        "Authority": "https://login.contoso.com/aaaabbbb-0000-cccc-1111-dddd2222eeee",
+        "ClientId": "Enter_the_Application_Id_Here",
+        "KnownAuthorities": ["login.contoso.com"]
+    }
 }
 ```
 

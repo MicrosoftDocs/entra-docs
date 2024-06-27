@@ -84,6 +84,9 @@ Replace the following placeholders as shown:
 - Replace `Enter_the_Tenant_Id_Here` with your Directory (tenant) ID.
 - Replace `Enter_the_Tenant_Subdomain_Here` with your Directory (tenant) subdomain.
 
+[!INCLUDE [external-id-custom-domain](./includes/use-custom-domain-url-dot-net-core.md)]
+
+
 ## Add app role and scope
 
 All APIs must publish a minimum of one scope, also called delegated permission, for the client apps to obtain an access token for a user successfully. APIs should also publish a minimum of one app role for applications, also called application permission, for the client apps to obtain an access token as themselves, that is, when they aren't signing-in a user.

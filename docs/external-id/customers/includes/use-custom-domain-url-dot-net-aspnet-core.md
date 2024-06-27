@@ -27,13 +27,23 @@ After you make the changes to your *appsettings.json* file, if your custom domai
   "AzureAd": {
     "Authority": "https://login.contoso.com/aaaabbbb-0000-cccc-1111-dddd2222eeee",
     "ClientId": "Enter_the_Application_Id_Here",
-    "CacheFileName": "msal_cache.txt",
-    "CacheDir": "C:/temp",
+    "ClientCredentials": [
+      {
+        "SourceType": "ClientSecret",
+        "ClientSecret": "Enter_the_Client_Secret_Here"
+      }
+    ],
+    "CallbackPath": "/signin-oidc",
+    "SignedOutCallbackPath": "/signout-callback-oidc",
     "KnownAuthorities": ["login.contoso.com"]
   },
-  "DownstreamApi": {
-    "Scopes": "openid offline_access"
-  }
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "AllowedHosts": "*"
 }
 ```
 

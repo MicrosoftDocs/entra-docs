@@ -91,6 +91,8 @@ Identity related NuGet packages must be installed in the project to authenticate
 1. In the `https` section of `profiles`, change the `https` URL in `applicationUrl` so that it reads `https://localhost:7274`. You used this URL to define the **Redirect URI**.
 1. Save the changes to your file.
 
+[!INCLUDE [external-id-custom-domain](./includes/use-custom-domain-url-dot-net-aspnet-core.md)]
+
 ## Add authorization to *HomeController.cs*
 
 The *HomeController.cs* file contains the code for the home page of the application and needs to have the capability to authorize the user. The `Microsoft.AspNetCore.Authorization` namespace provides the classes and interfaces to implement authorization to the web app, and the `[Authorize]` attribute is used to specify that only authenticated users can use the web app.
