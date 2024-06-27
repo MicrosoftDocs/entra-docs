@@ -17,7 +17,7 @@ This article lists the Global Secure Access built-in roles you can assign to all
 
 ## Role-based permissions
 
-| Permissions | [Global Admin](#global-administrator-and-security-administrator) | [Security Admin](#global-administrator-and-security-administrator) | [GSA Admin](#global-secure-access-administrators) | [CA Admin](#conditional-access-administrator) | [Apps Admin](#application-administrator) | [Global Reader](#security-reader-and-global-reader) | [Security Reader](#security-reader-and-global-reader) |
+| Permissions | [Global Admin](#global-administrator-and-security-administrator) | [Security Admin](#global-administrator-and-security-administrator) | [GSA Admin](#global-secure-access-administrator) | [CA Admin](#conditional-access-administrator) | [Apps Admin](#application-administrator) | [Global Reader](#security-reader-and-global-reader) | [Security Reader](#security-reader-and-global-reader) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | Configure Private Access (Quick access, Private Network connectors, app segments, Enterprise apps) | X |  |  |  | X |  |  |
 | Create and interact with Conditional Access policies | X | X |  | X |  |  |  |
@@ -40,7 +40,7 @@ This article lists the Global Secure Access built-in roles you can assign to all
 
 **Limited Access**: This role grants permissions to configure remote networks, security profiles, manage traffic forwarding profiles, and view traffic logs and alerts. However, security admins can't configure Private Access or Office 365 logging. 
 
-### Global Secure Access Administrator 
+### Global Secure Access Administrator
 
 **Limited Access**: This role grants permissions to configure remote networks, security profiles, manage traffic forwarding profiles, and view traffic logs and alerts. However, GSA admins can't configure Private Access, create, or interact with Conditional Access policies, manage user and group assignments, or configure Office 365 logging. 
 
