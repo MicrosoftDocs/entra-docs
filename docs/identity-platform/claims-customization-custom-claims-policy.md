@@ -47,7 +47,7 @@ After creating a Custom Claims policy, you should configure your application to 
 
 ### Omit the basic claims from tokens
 
-In this example, you create a custom claims policy that removes the [basic claim set](reference-claims-mapping-policy-type.md#claim-sets) from tokens issued to the linked service principal.
+In this example, you create a custom claims policy that removes the [basic claim set](reference-claims-customization.md#claim-sets) from tokens issued to the linked service principal.
 
 1. In Microsoft Graph Explorer, identify the application you want to configure the custom claims policy for using the [service principal API](/graph/api/resources/serviceprincipal).
 1. Create the Custom Claims policy by running the following API. This policy, linked to a service principal, omits the basic claims from the tokens.
@@ -249,5 +249,5 @@ In this example, you update a policy to emit a custom claim "JoinedData" to JWTs
 
 ## Related content
 
-- Learn more about the differences between policies in [Claims customization using a policy](reference-claims-mapping-policy-type.md#claims-customization-using-a-policy)
+- Learn more about the differences between policies in [Claims customization using a policy](reference-claims-customization.md#claims-customization-using-a-policy)
 - [Microsoft Graph identity sign-ins](/powershell/module/microsoft.graph.identity.signins)

@@ -59,7 +59,7 @@ After creating a claims mapping policy, configure your application to acknowledg
 
 ### Omit the basic claims from tokens
 
-In this example, you create a policy that removes the [basic claim set](reference-claims-mapping-policy-type.md#claim-sets) from tokens issued to linked service principals.
+In this example, you create a policy that removes the [basic claim set](reference-claims-customization.md#claim-sets) from tokens issued to linked service principals.
 
 1. Create a claims-mapping policy. This policy, linked to specific service principals, removes the basic claim set from tokens.
 
