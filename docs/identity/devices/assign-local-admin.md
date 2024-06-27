@@ -55,7 +55,7 @@ To modify the Microsoft Entra Joined Device Local Administrator role, configure 
 
 Microsoft Entra Joined Device Local Administrators are assigned to all Microsoft Entra joined devices. You can't scope this role to a specific set of devices. Updating the Microsoft Entra Joined Device Local Administrator role doesn't necessarily have an immediate impact on the affected users. On devices where a user is already signed in to, the privilege elevation takes place when *both* the below actions happen:
 
-- Upto 4 hours passed for Microsoft Entra ID to issue a new Primary Refresh Token with the appropriate privileges.
+- Up to 4 hours passed for Microsoft Entra ID to issue a new Primary Refresh Token with the appropriate privileges.
 - User signs out and signs back in, not lock/unlock, to refresh their profile.
 
 Users aren't directly listed in the local administrator group, their permissions are received through the Primary Refresh Token.
