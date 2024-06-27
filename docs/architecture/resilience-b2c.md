@@ -18,18 +18,18 @@ Improve resilience in your service:
 
 - Understand all the components
 - Eliminate single points of failures
-- Isolate failing components to limit their impact
+- Isolate failing components and limit their effect
 - Enable redundancy with fast failover mechanisms and recovery paths
 
-As you develop your application, consider how to [increase resilience of authentication and authorization in your applications](resilience-app-development-overview.md) with the identity components of your solution. This article addresses resilience enhancements for Azure AD B2C applications. Our recommendations are grouped by CIAM functions.
+As you develop your application, consider how to [increase resilience of authentication and authorization in your applications](resilience-app-development-overview.md) with the identity components of your solution. 
 
-By following instructions in the articles listed below, you can learn to build resilience in:
+By following instructions, find guidance on building resilience in:
 
 - [End-user experience](resilient-end-user-experience.md): Enable a fallback plan for authentication flow. Mitigate the potential effects of a disruption of Azure AD B2C authentication service.
 - [Interfaces with external processes](resilient-external-processes.md): Build resilience in your applications and interfaces. Recover effectively from errors.  
 - [Developer best practices](resilience-b2c-developer-best-practices.md): Avoid fragility due to common custom policy issues and improve error handling in claims verifiers, third-party applications, and REST APIs.
 - [Monitoring and analytics](resilience-with-monitoring-alerting.md): Assess service health by monitoring key indicators. Detect failures and performance disruptions with alerting.
-- [Build resilience in your authentication infrastructure](resilience-in-infrastructure.md)
-- [Increase resilience of authentication and authorization in your applications](resilience-app-development-overview.md)
+- [Resilience in authentication infrastructure](resilience-in-infrastructure.md)
+- [Increase resilience of authentication and authorization in applications](resilience-app-development-overview.md)
 
 In the following video, see how to [build resilience and scalable flows with Azure AD B2C](https://www.youtube.com/embed/8f_Ozpw9yTs).
