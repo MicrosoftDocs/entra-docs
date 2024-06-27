@@ -84,7 +84,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     `https://<ENTERPRISE>.ghe.com/login`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [GitHub Enterprise Managed User - ghe.com support team](https://support.github.com/) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
+	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [GitHub Enterprise Managed User - ghe.com support team](https://support.github.com/early-access/data-residency) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 
@@ -122,11 +122,11 @@ In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by 
 
 ## Configure GitHub Enterprise Managed User - ghe.com SSO
 
-To configure single sign-on on **GitHub Enterprise Managed User - ghe.com** side, you need to send the downloaded **Federation Metadata XML** and appropriate copied URLs from Microsoft Entra admin center to [GitHub Enterprise Managed User - ghe.com support team](https://support.github.com/). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **GitHub Enterprise Managed User - ghe.com** side, you need to send the downloaded **Federation Metadata XML** and appropriate copied URLs from Microsoft Entra admin center to [GitHub Enterprise Managed User - ghe.com support team](https://support.github.com/early-access/data-residency). They set this setting to have the SAML SSO connection set properly on both sides.
 
 ### Create GitHub Enterprise Managed User - ghe.com test user
 
-In this section, you create a user called B.Simon in GitHub Enterprise Managed User - ghe.com. Work with [GitHub Enterprise Managed User - ghe.com support team](https://support.github.com/) to add the users in the GitHub Enterprise Managed User - ghe.com platform. Users must be created and activated before you use single sign-on.
+In this section, you create a user called B.Simon in GitHub Enterprise Managed User - ghe.com. Work with [GitHub Enterprise Managed User - ghe.com support team](https://support.github.com/early-access/data-residency) to add the users in the GitHub Enterprise Managed User - ghe.com platform. Users must be created and activated before you use single sign-on.
 
 ## Test SSO 
 
