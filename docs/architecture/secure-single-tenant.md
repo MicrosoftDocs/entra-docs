@@ -11,29 +11,29 @@ ms.author: gasinh
 ms.reviewer: ajburnle, ignite-2022
 ---
 
-# Resource isolation in a single tenant in Microsoft Entra ID
+# Secure resource isolation in a single tenant in Microsoft Entra ID
 
 Many separation scenarios can be achieved in a single tenant. If possible, we recommend you delegate administration to separate environments in a single tenant for the best productivity and collaboration experience.
 
 ## Outcomes
 
-**Resource separation** - To restrict resource access to users, groups, and Service Principals, use Microsoft Entra directory roles, security groups, Conditional Access policies, Azure resource groups, Azure management groups, administrative units (AUs), and other controls. Enable esources to be managed by separate administrators. Use separate users, permissions, and access requirements.
+**Resource separation** - To restrict resource access to users, groups, and Service Principals, use Microsoft Entra directory roles, security groups, Conditional Access policies, Azure resource groups, Azure management groups, administrative units (AUs), and other controls. Enable separate administrators to manage resources. Use separate users, permissions, and access requirements.
 
-Use isolation in multiple tenants if: 
+Use isolation in multiple tenants if there's: 
 
-* A resource set requires tenant-wide settings
-* There's minimal risk tolerance for unauthorized access by tenant members
+* Resource sets that require tenant-wide settings
+* Minimal risk tolerance for unauthorized access by tenant members
 * Configuration changes cause unwanted effects
 
 **Configuration separation** - In some cases, resources such as applications have dependencies on tenant-wide configurations like authentication methods or named locations. Consider dependencies when isolating resources. Global Administrators can configure the resource settings and tenant-wide settings that affect resources.
 
-If a set of resources require unique tenant-wide settings, or tenant settings are administered by a different entity, use isolation with multiple tenants.
+If a set of resources require unique tenant-wide settings, or a different entity administers tenant settings, use isolation with multiple tenants.
 
 **Administrative separation** - With Microsoft Entra ID delegated administration, segregate resource administration such as applications and APIs, users and groups, resource groups, and Conditional Access policies.
 
-Global Administrators can discover and obtain access to trusting resources. Set up auditing and alerts for administrator changes to a resource, if they're authenticated.
+Global Administrators can discover and obtain access to trusting resources. Set up auditing and alerts for authenticated administrator changes to a resource.
 
-Use administrative units (AU) in Microsoft Entra ID for administrative separation. AUs restrict permissions in a role to a portion of your organization you define. Use AUs to delegate the [Helpdesk Administrator](~/identity/role-based-access-control/permissions-reference.md) role to regional support specialists. Then they can manage users in the region they support.
+Use administrative units (AUs) in Microsoft Entra ID for administrative separation. AUs restrict permissions in a role to a portion of your organization you define. Use AUs to delegate the [Helpdesk Administrator](~/identity/role-based-access-control/permissions-reference.md) role to regional support specialists. Then they can manage users in the region they support.
 
    ![Diagram of administrative units.](media/secure-single-tenant/administrative-units.png)
 
@@ -71,16 +71,13 @@ Use Azure RBAC to design an administration model with granular scopes and surfac
    ![Diagram of resource isolation in a tenant.](media/secure-single-tenant/resource-hierarchy.png)
 
 * **Management group** - Assign roles to management groups so they don't affect other management groups. In the previous scenario, the HR team defines an Azure policy to audit regions where resources are deployed across HR subscriptions.
-
 * **Subscription** - Assign roles to a subscription to prevent it from affecting other resource groups. In the previous scenario, the HR team assigns the Reader role for the Benefits subscription, without reading other HR subscriptions, or a subscription from another team.
-
-* **Resource group** - Assign roles to resource groups so that they don't affect other resource groups. A Benefits engineering team assigns the Contributor role to the test lead to manage the test DB and the test web app, or to add more resources.
-
+* **Resource group** - Assign roles to resource groups so that they don't affect other resource groups. A Benefits engineering team assigns the Contributor role to someone to manage the test database and the test web app, or to add more resources.
 * **Individual resources** - Assign roles to resources so they don't affect other resources. The Benefits engineering team assigns a data analyst the Cosmos DB Account Reader role for the test instance of the Azure Cosmos DB database. This work doesn't interfere with the test web app or production resource.
 
 For more information, see [Azure built-in roles](/azure/role-based-access-control/built-in-roles) and [What is Azure RBAC?](/azure/role-based-access-control/overview).
 
-This is a hierarchical structure. Therefore, the higher up in the hierarchy, the wider the scope, visibility, and effect on lower levels. Top-level scopes affect Azure resources in the Microsoft Entra tenant boundary. You can apply permissions at multiple levels. This action introduces risk. Assigning roles higher up the hierarchy can provide more access lower down the scope than you intend. [Microsoft Entra](https://www.microsoft.com/security/business/identity-access/microsoft-entra-permissions-management) provides visibility and remediation to help reduce the risk. 
+The structure is hierarchical. Therefore, the higher up in the hierarchy, the wider the scope, visibility, and effect on lower levels. Top-level scopes affect Azure resources in the Microsoft Entra tenant boundary. You can apply permissions at multiple levels. This action introduces risk. Assigning roles higher up the hierarchy can provide more access lower down the scope than you intend. [Microsoft Entra](https://www.microsoft.com/security/business/identity-access/microsoft-entra-permissions-management) provides visibility and remediation to help reduce the risk. 
 
 * The root management group defines Azure policies and RBAC role assignments applied to subscriptions and resources
 * Global Administrators can [elevate access](https://aka.ms/AzureADSecuredAzure/12a) to subscriptions and management groups
@@ -95,7 +92,7 @@ Consider isolating sensitive or test resources according to [Azure landing zone 
 
 The following section illustrates the pattern to scope management of Microsoft Entra ID trusting applications. 
 
-Microsoft Entra ID supports configuring multiple instances of custom and SaaS apps, but not most Microsoft services, against the same directory with [independent user assignments](~/identity/enterprise-apps/assign-user-or-group-access-portal.md). The previous example has a production and test version of the travel app. Deploy preproduction versions against the corporate tenant to achieve app-specific configuration and policy separation. This action enables workload owners to perform testing with their corporate credentials. Nonproduction directory objects, such as test users and test groups, are associated with the nonproduction application with separate [ownership](https://aka.ms/AzureADSecuredAzure/14a) of those objects.
+Microsoft Entra ID supports configuring multiple instances of custom and SaaS apps, but not most Microsoft services, against the same directory with [independent user assignments](~/identity/enterprise-apps/assign-user-or-group-access-portal.md). The previous example has a production and test version of the travel app. To achieve app-specific configuration and policy separation, deploy preproduction versions against the corporate tenant. This action enables workload owners to perform testing with their corporate credentials. Nonproduction directory objects, such as test users and test groups, are associated with the nonproduction application with separate [ownership](https://aka.ms/AzureADSecuredAzure/14a) of those objects.
 
 There are tenant-wide aspects that affect trusting applications in the Microsoft Entra tenant boundary:
 
