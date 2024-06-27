@@ -2,8 +2,8 @@
 title: 'Tutorial: Configure Salesforce for automatic user provisioning with Microsoft Entra ID| Microsoft Docs'
 description: Learn the steps required to perform in Salesforce and Microsoft Entra ID to automatically provision and de-provision user accounts from Microsoft Entra ID to Salesforce.
 
-author: jeevansd
-manager: CelesteDG
+author: thomasakelo
+manager: jeedes
 ms.service: entra-id
 ms.subservice: saas-apps
 
