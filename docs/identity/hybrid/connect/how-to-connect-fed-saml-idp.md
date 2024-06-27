@@ -98,7 +98,7 @@ The following is a sample request message that is sent from Microsoft Entra ID t
 If isSignedAuthenticationRequestRequired is enabled as explained in [internaldomainfederation-update](/graph/api/internaldomainfederation-update), then the request would look like this example:
 
 ```xml
-  <samlp:AuthnRequest ID="_1868c6f2-1fdd-40b9-818f-b4b44efb92c5" Version="2.0" IssueInstant="2024-03-11T16:51:17.120Z" Destination="https://fs.contoso.com/adfs/ls/" xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol"><Issuer xmlns="urn:oasis:names:tc:SAML:2.0:assertion">urn:federation:MicrosoftOnline</Issuer><Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><Reference URI="#_1868c6f2-1fdd-40b9-818f-b4b44efb92c5"><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><DigestValue>FPM404CTAfI458trTryNB7mVS4Q=</DigestValue></Reference></SignedInfo><SignatureValue>CuCSgua...24v1AnSu1Z7lTkYNlydV536epaYYb4Q==</SignatureValue><KeyInfo><ds:X509Data xmlns:ds="http://www.w3.org/2000/09/xmldsig#"><ds:X509SKI>bwzmkdKETWhixlS99FL36FH37EI=</ds:X509SKI></ds:X509Data><ds:KeyName xmlns:ds="http://www.w3.org/2000/09/xmldsig#">MicrosoftOnline</ds:KeyName></KeyInfo></Signature><samlp:NameIDPolicy Format="urn:oasis:names:tc:SAML:2.0:nameid-format:persistent"/></samlp:AuthnRequest>
+  <samlp:AuthnRequest ID="_1868c6f2-1fdd-40b9-818f-b4b44efb92c5" Version="2.0" IssueInstant="2024-03-11T16:51:17.120Z" Destination="https://fs.contoso.com/adfs/ls/" xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol"><Issuer xmlns="urn:oasis:names:tc:SAML:2.0:assertion">urn:federation:MicrosoftOnline</Issuer><Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><Reference URI="#_1868c6f2-1fdd-40b9-818f-b4b44efb92c5"><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><DigestValue>aB1cD2eF3gH4iJ5kL6-mN7oP8qR=</DigestValue></Reference></SignedInfo><SignatureValue>cD2eF3gH4iJ5k...L6mN7-oP8qR9sT==</SignatureValue><KeyInfo><ds:X509Data xmlns:ds="http://www.w3.org/2000/09/xmldsig#"><ds:X509SKI>eF3gH4iJ5kL6mN7oP8-qR9sT0uV=</ds:X509SKI></ds:X509Data><ds:KeyName xmlns:ds="http://www.w3.org/2000/09/xmldsig#">MicrosoftOnline</ds:KeyName></KeyInfo></Signature><samlp:NameIDPolicy Format="urn:oasis:names:tc:SAML:2.0:nameid-format:persistent"/></samlp:AuthnRequest>
 ```
 
 The following is a sample response message that is sent from the sample SAML 2.0 compliant identity provider to Microsoft Entra ID / Microsoft 365.
@@ -121,13 +121,13 @@ The following is a sample response message that is sent from the sample SAML 2.0
             <ds:Transform Algorithm="https://www.w3.org/2001/10/xml-exc-c14n#" />
           </ds:Transforms>
           <ds:DigestMethod Algorithm="https://www.w3.org/2000/09/xmldsig#sha1" />
-          <ds:DigestValue>CBn/5YqbheaJP425c0pHva9PhNY=</ds:DigestValue>
+          <ds:DigestValue>CBn/aB1cD2eF3gH4iJ5kL6-mN7oP8qR=</ds:DigestValue>
         </ds:Reference>
       </ds:SignedInfo>
-      <ds:SignatureValue>TciWMyHW2...Wph6dA==</ds:SignatureValue>
+      <ds:SignatureValue>cD2eF3gH4iJ5kL6mN7-oP8qR9sT==</ds:SignatureValue>
       <KeyInfo xmlns="https://www.w3.org/2000/09/xmldsig#">
         <ds:X509Data>
-          <ds:X509Certificate>MIIC7j...QcX3dDg9A==</ds:X509Certificate>
+          <ds:X509Certificate>eF3gH4iJ5kL6mN7oP8-qR9sT0uV=</ds:X509Certificate>
         </ds:X509Data>
       </KeyInfo>
     </ds:Signature>
@@ -236,7 +236,7 @@ The following procedure walks you through converting an existing standard domain
      <KeyDescriptor use="signing">
        <KeyInfo xmlns="https://www.w3.org/2000/09/xmldsig#">
         <X509Data>
-          <X509Certificate> MIIC5jCCA...3NEXJrwwUZk=</X509Certificate>
+          <X509Certificate> eF3gH4iJ5kL6mN7oP8-qR9sT0uV=</X509Certificate>
          </X509Data>
        </KeyInfo>
      </KeyDescriptor>

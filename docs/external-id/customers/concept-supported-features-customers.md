@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: concept-article
-ms.date: 05/21/2024
+ms.date: 06/26/2024
 ms.author: mimart
 ms.custom: it-pro
 
@@ -103,7 +103,7 @@ The following table compares the features available for OAuth 2.0 and OpenID Con
 |[OpenID Connect](../../identity-platform/v2-protocols-oidc.md)| Yes| Yes|
 |[Authorization code](../../identity-platform/v2-oauth2-auth-code-flow.md)| Yes| Yes|
 |[Authorization code with Code Exchange (PKCE)](../../identity-platform/v2-oauth2-auth-code-flow.md)|Yes| Yes|
-|[Client credentials](../../identity-platform/v2-oauth2-client-creds-grant-flow.md)|Yes| [v2.0 applications](../../identity-platform/reference-app-manifest.md)|
+|[Client credentials](../../identity-platform/v2-oauth2-client-creds-grant-flow.md)|Yes| [v2.0 applications](../../identity-platform/reference-app-manifest.md) (preview)|
 |[Device authorization](../../identity-platform/v2-oauth2-device-code.md)| Yes| No |
 |[On-Behalf-Of flow](../../identity-platform/v2-oauth2-on-behalf-of-flow.md)| Yes| Yes|
 |[Implicit grant](../../identity-platform/v2-oauth2-implicit-grant-flow.md)| Yes| Yes|
