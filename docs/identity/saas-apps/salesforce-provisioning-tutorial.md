@@ -21,8 +21,20 @@ The objective of this tutorial is to show the steps required to perform in Sales
 
 The scenario outlined in this tutorial assumes that you already have the following items:
 
-* A Microsoft Entra tenant
-* A Salesforce.com tenant
+* A Microsoft Entra tenant.
+* A Salesforce.com tenant.
+* A Salesforce account username and password and the token. In future, if you reset the account password, Salesforce provides you with a new token and you'll need to edit the Salesforce provisioning settings.
+* A custom user profile in Salesforce. Once you have created a custom profile in the Salesforce portal, edit the profile's Administrative Permissions to enable the following:
+
+    * API Enabled.
+
+    * Manage Users: Enabling this option automatically enables the following: 
+    Assign Permission Sets, Manage Internal UsersManage IP Addresses, Manage Login Access Policies, Manage Password Policies, Manage Profiles and Permission Sets, Manage Roles, Manage Sharing, Reset User Passwords and Unlock Users, View All Users, View Roles and Hierarchy, View Setup and Configuration.
+
+See also Salesforce [Create or Clone Profiles](https://help.salesforce.com/s/articleView?id=sf.users_profiles_cloning.htm&type=5) documentation.
+
+> [!Note]
+> Assign the permissions directly to the profile. Don't add the permissions through permission sets.
 
 > [!Note]
 > Roles should not be manually edited in Microsoft Entra ID when doing role imports.
