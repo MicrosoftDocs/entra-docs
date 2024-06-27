@@ -35,75 +35,6 @@ This page updates monthly, so revisit it regularly. If you're looking for items 
 
 ## June 2024
 
-### General Availability - Granular Certificate-Based Authentication Configuration in Conditional Access
-
-**Type:** New feature    
-**Service category:** Conditional Access    
-**Product capability:** Identity Security & Protection    
-
-With the authentication strength capability in Conditional Access, you can create a custom authentication strength policy with advanced certificate-based authentication (CBA) options to allow access based on certificate issuer or policy OIDs. For external users whose MFA is trusted from partners' Microsoft Entra ID tenant, access can also be restricted based on these properties. For more information, see: [Custom Conditional Access authentication strengths](../identity/authentication/concept-authentication-strength-advanced-options.md).
-
----
-
-
-### General Availability - CBA Affinity Binding that allows admins to set affinity binding at the tenant level, and create CBA Authentication policy custom rules to use high affinity or low affinity mapping for covering many potential scenarios our customers have in use
-
-**Type:** New feature    
-**Service category:** Authentications (Logins)    
-**Product capability:** User Authentication    
-
-**CBA Affinity Binding** allows admins to set affinity binding at the tenant level, and create custom rules to use high or low affinity mapping for covering many potential scenarios our customers have in use today. For more information, see: [CBA Affinity Bindings](../identity/authentication/concept-certificate-based-authentication-technical-deep-dive.md#understanding-the-username-binding-policy).     
-
-**CBA Authentication policy** rules help determine the strength of authentication as either single-factor or multifactor. Multiple custom authentication binding rules can be created to assign default protection level for certificates based on the certificate attributes (Issuer or Policy Object Identifiers (OID), or by combining the Issuer and OID). For more information, see: [Configure authentication binding policy](../identity/authentication/how-to-certificate-based-authentication.md#step-3-configure-authentication-binding-policy).
-
-
----
-
-### General Availability - Microsoft Entra CBA adds support for three remaining username bindings IssuerAndSerialNumber, IssuerAndSubject, and Subject. 
-
-**Type:** New feature    
-**Service category:** Authentications (Logins)    
-**Product capability:** User Authentication    
-
-**CBA username bindings** adds support for three remaining username bindings, and is now at parity with on-premises Active Directory. The three bindings that are being added are: *IssuerAndSerialNumber*, *IssuerAndSubject*, and *Subject*. MFor more information, see: [Configure Username binding policy](../identity/authentication/how-to-certificate-based-authentication.md#step-4-configure-username-binding-policy).
-
----
-
-### Public Preview - The Issuer hints feature improves user experience by showing filtered certificate picker helping users to easily identify the correct certificate for authentication
-
-**Type:** New feature    
-**Service category:** Authentications (Logins)    
-**Product capability:** User Authentication    
-
-The issuer hints feature improves user experience by helping users easily identify the right certificate for authentication. When enabled by a tenant admin, Microsoft Entra sends back [Trusted CA Indication](https://www.rfc-editor.org/rfc/rfc6066#page-12) as part of the TLS handshake. The trusted Certificate Authority (CA) list is set to subject of the Certificate Authorities (CAs) uploaded by the tenant in the [Microsoft Entra trust store](../identity/authentication/how-to-certificate-based-authentication.md#step-1-configure-the-certification-authorities). The client or native application client uses the hints sent back by server to filter the certificates shown in certificate picker, and shows only the client authentication certificates issued by the CAs in the trust store.
-
----
-
-### General Availability - Upcoming Improvements to Microsoft Entra ID Device Code Flow 
-
-**Type:** Changed feature    
-**Service category:** Authentications (Logins)    
-**Product capability:** User Authentication    
-
-**No action is required**
-
-As part of our ongoing commitment to security, we're announcing upcoming enhancements to the Microsoft Entra ID device code flow. These improvements aim to provide a more secure and efficient authentication experience. 
-
-We've refined the messaging and included app details within the device code flow to ensure a more secure and precise user experience. Specifically, we've adjusted headers and calls to action to help your users recognize and respond to security threats more effectively. We've also added details, such as location and app name, to provide users with more context to enhance security and prevent unauthorized access. These changes are designed to help your users make more informed decisions, and prevent phishing attacks. 
-
-These changes will be gradually introduced starting in July 2024, and are expected to be fully implemented by August 30, 2024. No action required from you.
-
----
-
-### General Availability - Support for PIM enabled Groups in Microsoft Entra Permissions Management
-
-**Type:** New feature    
-**Service category:** Other    
-**Product capability:** Permissions Management    
-
-Privileged Identity Management (PIM) for Groups in Microsoft Entra ID allows admins to grant users just-in-time membership and ownership of a security group or a Microsoft 365 group. Nested groups are also supported by PIM. For example, if a user is an active member of Group A, and Group A is an eligible member of Group B, the user can activate their membership in Group B. PIM provides a powerful mechanism to manage access and enhance security by granting just-in-time access to critical resources.
-
----
 
 ### General Availability - Security Improvements to Microsoft Entra Connect Sync and Connect Health
 
@@ -162,16 +93,6 @@ In July, enhancements for the Microsoft Authenticator app UX will roll out. The 
 
 ---
 
-### Public preview - Microsoft Entra PowerShell Module 
-
-**Type:** New feature
-**Service category:** MS Graph
-**Product capability:** Developer Experience
-
-The Microsoft Entra PowerShell module is a new high-quality and scenario-focused command-line tool that allows administrators to manage and automate Microsoft Entra product family resources programmatically. This includes efficiently managing users, groups, applications, service principals, policies, and more. The module builds upon and is part of the Microsoft Graph PowerShell SDK and is fully interoperable with all cmdlets in the Microsoft Graph PowerShell SDK, enabling you to perform complex operations with simple, well documented commands. The module also offers a backward compatibility option with the deprecated AzureAD Module to accelerate migration. Entra PowerShell supports PowerShell version 5.1 and version 7+. For more information, see: [Microsoft Entra PowerShell documentation](https://review.learn.microsoft.com/powershell/entra-powershell/?view=entra-powershell&branch=main).
-
----
-
 ### General Availability - SLA Attainment Report at the Tenant Level
 
 **Type:** New feature    
@@ -181,41 +102,6 @@ The Microsoft Entra PowerShell module is a new high-quality and scenario-focused
 In addition to providing global SLA performance, Microsoft Entra ID reports tenant-level SLA performance for organizations with at least 5,000 monthly active users. This feature entered general availability in May 2024. The Service Level Agreement (SLA) sets a minimum bar of 99.99% for the availability of Microsoft Entra ID user authentication, reported on a monthly basis in the Microsoft Entra admin center. For more information, see: [What is Microsoft Entra Health?](../identity/monitoring-health/concept-microsoft-entra-health.md).
 
 ---
-
-### General Availability - Sponsors support in EM
-
-**Type:** New feature    
-**Service category:** Entitlement Management    
-**Product capability:** Entitlement Management    
-
-As we continue to design governance features to help our customers stay ahead of the evolving threat landscape, today we're thrilled to announce the general availability of B2B Sponsors support in Entitlement Management! Sponsors as approvers in Entitlement Management is our first experience in using this attribute where access requests made by guests can be directed to Sponsors for approval. This capability is a part of the Microsoft Entra ID Governance license. For more information, see: [Single-stage approval](../id-governance/entitlement-management-access-package-create.md#single-stage-approval).
-
----
-
-### General Availability - B2B Sponsors as an Attribute and Approvers in Entitlement Management!
-
-**Type:** New feature    
-**Service category:** B2B    
-**Product capability:** B2B/B2C    
-
-As we continue to design governance features to help our customers stay ahead of the evolving threat landscape, today we're thrilled to announce the general availability of B2B Sponsors!
-
-Sponsors are responsible to manage and monitor the lifecycle of users and ensure they have access to the right resources driving accountability of guest users. Setting Sponsors as an attribute is a part of B2B offering. Sponsors as approvers in Entitlement Management is our first experience in using this attribute where access requests made by guests can be directed to Sponsors for approval. This capability is a part of Microsoft Entra ID Governance license. Sponsors are a building block to many such exciting enablements that we're working towards. Learn more about B2B Sponsors feature here: [Sponsors field for B2B users](../external-id/b2b-sponsors.md).
-
----
-
-### Public Preview - Traffic Forwarding Profiles - User Assignment Support
-
-**Type:** New feature    
-**Service category:** Other    
-**Product capability:** Network Access    
-
-With the traffic forwarding profiles in Global Secure Access (preview), you can apply policies to the network traffic that your organization needs to secure and manage. Network traffic is evaluated against the traffic forwarding rules you configure. The rules are applied, and the traffic goes through the service to the appropriate apps and resources.
-
-Today, when a traffic profile is enabled, all users in the tenant with the Global Secure Access client start receiving the policies, making it risky to enable new profiles. With this latest improvement, you'll now be able to scope any traffic profile (Microsoft 365, Private Access or Internet Access) to a set of users, and gradually roll it out to more users. For more information, see: [How to assign users and groups to traffic forwarding profiles](../global-secure-access/how-to-manage-users-groups-assignment.md).
-
----
-
 
 ## May 2024
 
