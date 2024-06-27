@@ -14,11 +14,10 @@ Microsoft Entra is available in several licensing options that allow you to choo
 - **Microsoft Entra ID P2** - Microsoft Entra ID P2 is available as a standalone product or included with Microsoft 365 E5 for enterprise customers.
 - **Microsoft Entra ID Governance** - Microsoft Entra ID Governance is an advanced set of identity governance capabilities available for Microsoft Entra ID P1 and P2 customers, as two products Microsoft Entra ID Governance and Microsoft Entra ID Governance Step Up for Microsoft Entra ID P2. These products contain the basic identity governance capabilities that were in Microsoft Entra ID P2, and additional advanced identity governance capabilities.
 - **Microsoft Entra Suite** - The suite combines Microsoft Entra products to protect and verify any identity. The suite provides secure access from anywhere to any app or resource (cloud or on-premises), keep users and organizations safe, and ensuring that only the right identities have the right access at the right time. It is available for Microsoft Entra ID P1 and P2 customers. The Microsoft Entra Suite includes 5 products. They are:
-    
-   - Microsoft Entra ID Protection
-   - Microsoft Entra Verified ID: Face Check
-   - Microsoft Entra ID Governance
-   - Microsoft Entra Private Access
-   - Microsoft Entra Internet Access
+  - Microsoft Entra ID Protection
+  - Microsoft Entra Verified ID: Face Check
+  - Microsoft Entra ID Governance
+  - Microsoft Entra Private Access
+  - Microsoft Entra Internet Access
 
   :::image type="content" source="media/entra-offerings/entra-suite.png" alt-text="Image Description":::  
