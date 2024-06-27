@@ -11,7 +11,7 @@ ms.author: jricketts
 
 # Microsoft's Security Service Edge Solution Deployment Guide for Microsoft Entra Private Access Proof of Concept
 
-[Microsoft's identity-centric Security Service Edge solution](../global-secure-access/overview-what-is-global-secure-access.md) converges network, identity, and endpoint access controls so that you can secure access to any app or resource, from any location, device, or identity. It enables and orchestrates access policy management for employees, business partners, and digital workloads. You can continuously monitor and adjust user access in real time if permissions or risk level changes to your private apps, SaaS apps, and Microsoft 365 endpoints.
+[Microsoft's identity-centric Security Service Edge solution](../global-secure-access/overview-what-is-global-secure-access.md) converges network, identity, and endpoint access controls so that you can secure access to any app or resource, from any location, device, or identity. It enables and orchestrates access policy management for employees, business partners, and digital workloads. You can continuously monitor and adjust user access in real time if permissions or risk level changes to your private apps, SaaS apps, and Microsoft endpoints.
 
 This guidance helps you deploy [Microsoft Entra Private Access](../global-secure-access/concept-private-access.md) as a Proof of Concept in your production or test environment, including Conditional Access policies and application assignments. You can scope your configuration to specific test users and groups. See [Microsoft's Security Service Edge Solution Deployment Guide Introduction](sse-deployment-guide-intro.md) for prerequisites.
 
@@ -127,5 +127,5 @@ You can monitor applications accessed via Microsoft Entra Private Access via the
 
 ## Next steps
 
-[Deploy and verify Microsoft Entra Internet Access for Microsoft 365](sse-deployment-guide-m365.md)
+[Deploy and verify Microsoft Entra Internet Access for Microsoft Traffic](sse-deployment-guide-microsoft-traffic.md)
 [Deploy and verify Microsoft Entra Internet Access](sse-deployment-guide-internet-access.md)
