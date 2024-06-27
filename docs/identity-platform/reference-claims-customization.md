@@ -1,23 +1,34 @@
 ---
-title: Claims mapping policy type
-description: Learn about the claims mapping policy type, which is used to modify the claims emitted in tokens in the Microsoft identity platform.
+title: Claims customization
+description: Learn about the custom claims policy and claims mapping policy types, which are used to modify the claims emitted in tokens in the Microsoft identity platform.
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: curation-claims
 ms.date: 06/02/2023
-ms.reviewer: ludwignick, jeedes
+ms.reviewer: ludwignick, jeedes, rahulnagraj
 ms.service: identity-platform
-
 ms.topic: reference
-#Customer intent: As an admin managing policies for enterprise apps, I want to understand how claims mapping policies work and different claim sets, so that I can customize the claims included in token..
+#Customer intent: As an admin managing policies for enterprise apps, I want to understand how claims managment works using policies and the different claim sets which are available, so that I can customize the claims included in token.
 ---
 
-# Claims mapping policy type
+# Claims customization using a policy
 
 A policy object represents a set of rules enforced on individual applications or on all applications in an organization. Each type of policy has a unique structure, with a set of properties that are then applied to objects to which they're assigned.
 
-A claims mapping policy is a type of policy object that modifies the claims included in tokens. For more information, see [Customize claims issued in the SAML token for enterprise applications](saml-claims-customization.md).
+Microsoft Entra ID supports two ways to customize claims using Microsoft Graph/PowerShell for your applications:
+1.	Using [Custom Claims Policy (Preview)](claims-customization-custom-claims-policy.md)
+2.	Using [Claims Mapping Policy](claims-customization-powershell.md)
+
+Custom claims policy and claims mapping policy are two different types of policy objects that modify the claims included in tokens.
+
+[Custom Claims Policy(Preview)](/graph/api/resources/customclaimspolicy) allows admins to customize additional claims for their applications. It can be used interchangeably with the [claims customization](saml-claims-customization.md) offered through the Microsoft Entra admin center allowing admins to manage claims either though the Microsoft Entra admin center or MS Graph/PowerShell. Both Custom Claims Policy and [claims customization](saml-claims-customization.md) offered through Microsoft Entra admin center use the same underlying policy to configure additional claims for the service principals. However, admins can only configure one [Custom Claims Policy(Preview)](/graph/api/resources/customclaimspolicy) per service principal. The `PUT` method allows admins to create or replace an existing a policy object with the values passed in the request body while `PATCH` method allows admins to update the policy object with the values which are passed in the request body. Learn [how to configure and manage](claims-customization-custom-claims-policy.md) additional claims using Custom Claims Policy here.
+
+[Claims Mapping Policy](/graph/api/resources/claimsmappingpolicy) also allows admins to customize additional claims for their applications. Admins can configure one Claims Mapping Policy and assign it to multiple applications in their tenant. If an admin chooses to use Claims Mapping Policy to manage additional claims for their applications, they won't be able to edit or update the claims in the [claims customization](saml-claims-customization.md) blade in Microsoft Entra admin center for those applications. Learn [how to configure and manage](claims-customization-powershell.md) additional claims using Claims Mapping Policy here.
+
+> [!NOTE]
+> Claims Mapping Policy supersedes both Custom Claims policy and the [claims customization](saml-claims-customization.md) offered through the Microsoft Entra admin center. Customizing claims for an application using the Claims Mapping Policy means that tokens issued for that application will ignore the configuration in Custom Claims Policy or the configuration in [claims customization](saml-claims-customization.md) blade on Microsoft Entra admin center. 
+For more information on claims customization, see [Customize claims issued in the token for enterprise applications](saml-claims-customization.md).
 
 ## Claim sets
 
@@ -26,7 +37,7 @@ The following table lists the sets of claims that define how and when they're us
 | Claim set | Description |
 |-----------|-------------|
 | Core claim set | Present in every token regardless of the policy. These claims are also considered restricted, and can't be modified. |
-| Basic claim set | Includes the claims that are included by default for tokens in addition to the core claim set. You can omit or modify basic claims by using the claims mapping policies. |
+| Basic claim set | Includes the claims that are included by default for tokens in addition to the core claim set. You can omit or modify basic claims by using the custom claims policies and claims mapping policies. |
 | Restricted claim set | Can't be modified using a policy. The data source can't be changed, and no transformation is applied when generating these claims. |
 
 ### JSON Web Token (JWT) restricted claim set
@@ -287,9 +298,9 @@ These claims are restricted by default, but aren't restricted if you have a [cus
  - `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/upn`
  - `http://schemas.microsoft.com/ws/2008/06/identity/claims/role`
  
-## Claims mapping policy properties
+## Properties of the policy used for claims customization 
 
-To control the claims that are included and where the data comes from, use the properties of a claims mapping policy. Without a policy, the system issues tokens with the following claims:
+To control the claims that are included and where the data comes from, use the properties of the policy for claims customization. Without a policy, the system issues tokens with the following claims:
 - The core claim set.
 - The basic claim set.
 - Any [optional claims](./optional-claims.md) that the application has chosen to receive.
@@ -300,7 +311,7 @@ To control the claims that are included and where the data comes from, use the p
 | String | Data type | Summary |
 | ------ | --------- | ------- |
 | **IncludeBasicClaimSet** | Boolean (True or False) | Determines whether the basic claim set is included in tokens affected by this policy. If set to True, all claims in the basic claim set are emitted in tokens affected by the policy. If set to False, claims in the basic claim set aren't in the tokens, unless they're individually added in the claims schema property of the same policy. |
-| **ClaimsSchema** | JSON blob with one or more claim schema entries | Defines which claims are present in the tokens affected by the policy, in addition to the basic claim set and the core claim set. For each claim schema entry defined in this property, certain information is required. Specify where the data is coming from (**Value**, **Source/ID pair**, or **Source/ExtensionID pair**), and **Claim Type**, which is emitted as (**JWTClaimType** or **SamlClaimType**).
+| **ClaimsSchema** | JSON blob with one or more claim schema entries | Defines which claims are present in the tokens affected by the policy, in addition to the basic claim set and the core claim set. For each claim schema entry defined in this property, certain information is required. Specify where the data is coming from (**Value**, **Source/ID pair**, or **Source/ExtensionID pair**), and **Claim Type**, which is emitted as (**JWTClaimType** or **SamlClaimType**).|
 
 ### Claim schema entry elements
 
@@ -466,8 +477,8 @@ The transformation methods listed in the following table are allowed for SAML Na
 
 | TransformationMethod | Restrictions |
 | -------------------- | ------------ |
-| ExtractMailPrefix | None |
-| Join | The suffix being joined must be a verified domain of the resource tenant. |
+| **ExtractMailPrefix** | None |
+| **Join** | The suffix being joined must be a verified domain of the resource tenant. |
 
 ### Issuer With Application ID 
 

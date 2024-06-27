@@ -495,8 +495,10 @@
               href: jwt-claims-customization.md
             - name: Customize SAML claims using admin center
               href: saml-claims-customization.md
-            - name: Customize claims using PowerShell
+            - name: Customize claims using Claims Mapping Policy
               href: claims-customization-powershell.md
+            - name: Customize claims using Custom Claims Policy
+              href: claims-customization-custom-claims-policy.md
             - name: Set an access token lifetime policy
               href: configure-token-lifetimes.yml    
             - name: Configure app multi-instancing
