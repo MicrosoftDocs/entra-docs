@@ -20,10 +20,10 @@ Microsoft Entra is available in several licensing options that allow you to choo
 
 The Microsoft Entra Suite includes 5 products. They are:
 
-- Microsoft Entra ID Protection
-- Microsoft Entra ID Governance
-- Microsoft Entra Internet Access
-- Microsoft Entra Private Access
-- Microsoft Entra Verified ID: Face Check
-
+    - Microsoft Entra ID Protection
+    - Microsoft Entra ID Governance
+    - Microsoft Entra Internet Access
+    - Microsoft Entra Private Access
+    - Microsoft Entra Verified ID: Face Check
+    
  
