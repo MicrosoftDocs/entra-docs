@@ -7,14 +7,12 @@ ms.topic: how-to
 author: gargi-sinha
 ms.author: gasinh
 manager: martinco
-ms.date: 06/18/2024
+ms.date: 06/27/2024
 ---
 
 # Resilience through developer best practices
 
 In this article, discover learnings based on our experience from working with large customers. You can consider these recommendations for the design and implementation of your services.
-
-   ![Diagram of developer experience components](media/resilience-b2c-developer-best-practices/developer-best-practices-architecture.png)
 
 ## Microsoft Authentication Library
 
