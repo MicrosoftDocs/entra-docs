@@ -627,7 +627,7 @@
         - name: Access token
           href: access-token-claims-reference.md
         - name: Claims mapping policy type
-          href: reference-claims-mapping-policy-type.md
+          href: reference-claims-customization.md
         - name: ID token
           href: id-token-claims-reference.md 
         - name: Optional claims
