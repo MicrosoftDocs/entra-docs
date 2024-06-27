@@ -26,7 +26,7 @@ After you make the changes to your *Configuration.swift* file, if your custom do
 
     @objcMembers
     class Configuration {
-        static let kTenantSubdomain = "Enter_the_Tenant_Subdomain_Here"
+        static let kTenantSubdomain = "login.contoso.com"
         
         // Update the below to your client ID you received in the portal.
         static let kClientID = "Enter_the_Application_Id_Here"
@@ -34,7 +34,7 @@ After you make the changes to your *Configuration.swift* file, if your custom do
         static let kProtectedAPIEndpoint = "Enter_the_Protected_API_Full_URL_Here"
         static let kScopes = ["Enter_the_Protected_API_Scopes_Here"]
         
-        static let kAuthority = "https://login.contoso.com/aaaabbbb-0000-cccc-1111-dddd2222eeee"
+        static let kAuthority = "https://\(kTenantSubdomain)/aaaabbbb-0000-cccc-1111-dddd2222eeee"
     
     }
 ```
