@@ -5,16 +5,16 @@ description: Create Conditional Access policies using signals from Adaptive prot
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 03/12/2024
+ms.date: 06/20/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: poulomib
 ---
-# Common Conditional Access policy: Block access for users with insider risk (Preview)
+# Common Conditional Access policy: Block access for users with insider risk
 
-Most users have a normal behavior that can be tracked, when they fall outside of this norm it could be risky to allow them to just sign in. You may want to block that user or maybe just ask them to review a [terms of use policy](terms-of-use.md). Microsoft Purview can provide an [insider risk signal](concept-conditional-access-conditions.md#insider-risk-preview) to Conditional Access to refine access control decisions. Insider risk management is part of [Microsoft Purview](/purview/insider-risk-management-adaptive-protection). You must enable it before you can use the signal in Conditional Access.
+Most users have a normal behavior that can be tracked, when they fall outside of this norm it could be risky to allow them to just sign in. You may want to block that user or maybe just ask them to review a [terms of use policy](terms-of-use.md). Microsoft Purview can provide an [insider risk signal](concept-conditional-access-conditions.md#insider-risk) to Conditional Access to refine access control decisions. Insider risk management is part of [Microsoft Purview](/purview/insider-risk-management-adaptive-protection). You must enable it before you can use the signal in Conditional Access.
 
 :::image type="content" source="media/how-to-policy-insider-risk/insider-risk-based-conditional-access-policy.png" alt-text="Screenshot of an example Conditional Access policy using insider risk as a condition." lightbox="media/how-to-policy-insider-risk/insider-risk-based-conditional-access-policy.png":::
 
@@ -54,6 +54,6 @@ After administrators confirm the settings using [report-only mode](howto-conditi
 ## Next steps
 
 - [Dynamically mitigate risks with adaptive protection](/purview/insider-risk-management-adaptive-protection)
-- [Insider risk as a condition](concept-conditional-access-conditions.md#insider-risk-preview)
+- [Insider risk as a condition](concept-conditional-access-conditions.md#insider-risk)
 - [Determine effect using Conditional Access report-only mode](howto-conditional-access-insights-reporting.md)
 - [Use report-only mode for Conditional Access to determine the results of new policy decisions.](concept-conditional-access-report-only.md)

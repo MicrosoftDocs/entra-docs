@@ -521,6 +521,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity-platform/reference-claims-mapping-policy-type.md",
+      "redirect_url": "/entra/identity-platform/reference-claims-customization",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity-platform/test-throttle-service-limits.md",
       "redirect_url": "/entra/identity-platform/test-setup-environment",
       "redirect_document_id": false
@@ -879,6 +884,11 @@
     {            
       "source_path_from_root": "/docs/global-secure-access/how-to-manage-microsoft-365-profile.md",
       "redirect_url": "/entra/global-secure-access/how-to-manage-microsoft-profile",
+      "redirect_document_id": false
+    },
+    {            
+      "source_path_from_root": "/docs/architecture/sse-deployment-guide-m365.md",
+      "redirect_url": "/entra/architecture/sse-deployment-guide-microsoft-traffic",
       "redirect_document_id": false
     }
   ]

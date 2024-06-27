@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: conceptual
-ms.date: 05/31/2024
+ms.date: 06/27/2024
 ms.author: barclayn
 ms.reviewer: vincesm
 ---
@@ -95,6 +95,8 @@ When a user creates a group, they're automatically added as an owner for that gr
 An owner can also add or remove other owners. Unlike those assigned at least the [Groups Administrator](../identity/role-based-access-control/permissions-reference.md#groups-administrator) role, owners can manage only the groups that they own and they can add or remove group members only if the group's membership type is **Assigned**. 
 
 To assign a group owner, see [Managing owners for a group](./how-to-manage-groups.yml).
+
+To use Privileged Access Management (PIM) to make a group eligible for a role assignment, see [Use Microsoft Entra groups to manage role assignments](~/identity/role-based-access-control/groups-concept.md).
 
 ### Ownership permissions
 
