@@ -114,6 +114,8 @@ Use these steps to create configuration file:
     - *ENTER_YOUR_PROJECT_PACKAGE_NAME_HERE* and replace it with your Android's project package name.
     - *ENTER_YOUR_SIGNATURE_HASH_HERE* and replace it with the Signature Hash that you generated earlier when you added the platform redirect URL.
 
+[!INCLUDE [external-id-custom-domain](./includes/use-custom-domain-url-android.md)]
+
 ## Create MSAL SDK instance
 
 To initialize MSAL SDK instance, use the following code:
