@@ -10,6 +10,13 @@ items:
     href: how-to-get-started-with-global-secure-access.md
   - name: Global Secure Access dashboard
     href: concept-traffic-dashboard.md
+- name: Samples
+  expanded: false
+  items: 
+  - name: Overview of Global Secure Access samples
+    href: powershell-samples.md
+  - name: Get token for connector
+    href: ./scripts/powershell-get-token.md
 - name: Concepts
   expanded: true
   items: 
