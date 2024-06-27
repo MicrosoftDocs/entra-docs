@@ -56,7 +56,7 @@ With user flows, there are two methods to build resilience:
 
 - **Change user flow configuration**: During disruption in phone-based OTP delivery, change the OTP delivery method to email. Redeploy the user flow.
 
-   ![screenshot of sign-in sign-up](media/resilient-end-user-experiences/create-sign-in.png)
+   ![Screenshot of user sign-in and sign-up.](media/resilient-end-user-experiences/create-sign-in.png)
 
 - **Change applications**: For identity tasks, such as sign-up and sign-in, define two sets of user flows. Configure the first set to use phone-based OTP, and the second to email OTP. During a disruption in phone-based OTP delivery, switch from the first set of user flows to the second, leaving the user flows unchanged.  
 
@@ -69,7 +69,7 @@ If you use custom policies, there are four methods to build resilience. The list
    >[!Note]
    >Users configure Authenticator integration during sign-up.
 
-- **Security questions**: If none of the previous methods are applicable, use security questions. These questions are for users during onboarding, or profile edit. Answers are stored in a separate database. This method doesn't meet the MFA requirement of *something you have* for example, a phone, but is *something that you know*.
+- **Security questions**: If none of the previous methods are applicable, use security questions. These questions are for users during onboarding, or profile edit. Answers are stored in a separate database. This method doesn't meet the MFA requirement of *something you have*, for example, a phone, but is *something that you know*.
 
 ## Content delivery network
 
