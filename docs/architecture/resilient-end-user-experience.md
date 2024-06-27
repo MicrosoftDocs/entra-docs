@@ -20,11 +20,11 @@ The sign-up and sign-in end-user experience is made up of the following elements
 
 ## User flow and custom policy  
 
-To help you set up the most common identity tasks, Azure AD B2C provides built-in configurable [user flows](/azure/active-directory-b2c/user-flow-overview). You can also build your own [custom policies](/azure/active-directory-b2c/custom-policy-overview) that offer you maximum flexibility. However, it's recommended to use custom policies only to address complex scenarios.
+To help you set up the most common identity tasks, Azure AD B2C provides built-in configurable [user flows](/azure/active-directory-b2c/user-flow-overview). You can also build your own [custom policies](/azure/active-directory-b2c/custom-policy-overview) that offer you maximum flexibility. However, we recommended use of custom policies to address complex scenarios.
 
 ### Select user flow or custom policy
 
-Choose built-in user flows if your business requirements are met by them. Built-in flows are tested by Microsoft, therefore you can minimize testing for validating policy-level functional, performance, or scale. However, test applications for functionality, performance, and scale.
+Choose built-in user flows that meet your business requirements. Microsoft tests built-in flows, therefore you can minimize testing for validating policy-level functional, performance, or scale. However, test applications for functionality, performance, and scale.
 
 With [custom policies](/azure/active-directory-b2c/user-flow-overview) ensure policy-level testing for functional, performance, or scale. Conduct application-level testing.
 
@@ -40,7 +40,7 @@ In the external IdP registration process, include a verified identity claim, suc
 
 You can [build alternate authentication paths](https://github.com/azure-ad-b2c/samples/tree/master/policies/idps-filter):
 
- 1. Configure sign-up policy to allow sign up by local account and external IDPs.
+ 1. Configure sign-up policy to allow sign-up by local account and external IDPs.
  2. Configure a profile policy to allow users to [link the other identity to their account](https://github.com/Azure-Samples/active-directory-b2c-advanced-policies/tree/master/account-linking) after they sign in.
  3. Notify and allow users to [switch to an alternate IDP](/azure/active-directory-b2c/customize-ui-with-html#configure-dynamic-custom-page-content-uri) during an outage.
 
@@ -50,7 +50,7 @@ If you use a [phone service for multifactor authentication](/azure/active-direct
 
 ### Select alternate multifactor authentication 
 
-The Azure AD B2C service has a phone-based MFA provider to deliver time-based, one-time passcodes (OTPs). It's a voice call and text message to user pre-registered phone numbers.
+The Azure AD B2C service has a phone-based MFA provider to deliver time-based, one-time passcodes (OTPs). It's a voice call and text message to user preregistered phone numbers.
 
 With user flows, there are two methods to build resilience:
 
@@ -60,7 +60,7 @@ With user flows, there are two methods to build resilience:
 
 - **Change applications**: For identity tasks, such as sign-up and sign-in, define two sets of user flows. Configure the first set to use phone-based OTP, and the second to email OTP. During a disruption in phone-based OTP delivery, switch from the first set of user flows to the second, leaving the user flows unchanged.  
 
-When using custom policies, there are four methods to build resilience. The list is on order of complexity. Redeploy updated policies.
+If you use custom policies, there are four methods to build resilience. The list is on order of complexity. Redeploy updated policies.
 
 - **Enable user selection of phone OTP or email OTP**: Expose both options to enable users to self-select. Don't changes policies or applications.
 - **Dynamically switch between phone OTP and email OTP**:  Collect phone and email information at sign-up. Define custom policy to switch conditionally, during phone disruption, to email OTP. Don't change policies or applications.
@@ -69,7 +69,7 @@ When using custom policies, there are four methods to build resilience. The list
    >[!Note]
    >Users configure Authenticator integration during sign-up.
 
-- **Security questions**: If none of the previous methods are applicable, use security questions. These questions are for users during onboarding, or profile edit. Answers are stored in a separate database. This method doesn't meet the MFA requirement of *something you have* for example a phone, but is *something that you know*.
+- **Security questions**: If none of the previous methods are applicable, use security questions. These questions are for users during onboarding, or profile edit. Answers are stored in a separate database. This method doesn't meet the MFA requirement of *something you have* for example, a phone, but is *something that you know*.
 
 ## Content delivery network
 
