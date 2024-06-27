@@ -2859,5 +2859,15 @@
   "Configuration partition in Active Directory GUID" : "62a0ff2e-97b9-4513-943f-0d221bd30080",
   "Group.Unified TemplateId" : "62375ab9-6b52-47ed-826b-58e47e0e304b",
   "Group.Unified.Guest TemplateId" : "08d542b9-071f-4e16-94b0-74abb372e3d9",
-  "SharePoint Embedded Administrator" : "1a7d78b6-429f-476b-b8eb-35fb715fffd4"
+  "SharePoint Embedded Administrator" : "1a7d78b6-429f-476b-b8eb-35fb715fffd4",
+  "Cosmos DB Built-in Data Reader" : "00000000-0000-0000-0000-000000000001",
+  "Cosmos DB Built-in Data Contributor" : "00000000-0000-0000-0000-000000000002",
+  "HealthMonitoringAlert.Read.All - Application" : "5183ed5d-b7f8-4e9a-915e-dafb46b9cb62",
+  "HealthMonitoringAlert.Read.All - Delegated" : "74b4ff32-4917-4536-a66d-38a4861e6220",
+  "HealthMonitoringAlert.ReadWrite.All - Application" : "ac29eb50-f2f9-4518-a117-4bef18e84c7d",
+  "HealthMonitoringAlert.ReadWrite.All - Delegated" : "b7c60f27-2195-4d5f-96a7-6b98bdfd9664",
+  "HealthMonitoringAlertConfig.Read.All - Application" : "bb424d73-e898-4c97-9d42-688c32810003",
+  "HealthMonitoringAlertConfig.Read.All - Delegated" : "fb873030-8626-47e6-96ff-8a5bff3b725f",
+  "HealthMonitoringAlertConfig.ReadWrite.All - Application" : "432e76f0-8af6-4315-a853-66ab9538f480",
+  "HealthMonitoringAlertConfig.ReadWrite.All - Delegated" : "b3e5ebc6-1c23-4337-8286-3f27165addb4"
 }
