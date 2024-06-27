@@ -32,7 +32,7 @@ To integrate LOB applications with Microsoft Entra B2B, follow this pattern:
 2. The application sends a POST to the Microsoft Graph API on behalf of the user. It provides the redirect URL and external user's email that is defined in [Confirm the external user is in the directory](#confirm-the-external-user-is-in-the-directory).
 3. Microsoft Graph API provisions the guest user in Microsoft Entra ID.
 4. Microsoft Graph API returns the success ir failure status of the API call. If successful, the response includes the Microsoft Entra user object ID and the invitation link sent to the invited user email. You can suppress the Microsoft email and send your own custom email.
-5. (Optional) To write more attributes to the invited user, or add the invited user to a group, the application makes an extra API call to the Microsoft Graph API.
+5. (Optional) To write more attributes to the invited user, or add the invited user to a group. The application makes an extra API call to the Microsoft Graph API.
 6. (Optional) Microsoft Graph API makes the updates to Microsoft Entra ID.
 7. (Optional) Microsoft Graph API returns the success or failure status to the application.
 8. The application provisions the user to its database or backend user directory using the user object ID attribute as the immutable ID.
@@ -52,7 +52,7 @@ Application Permission: User.read.all
 GET https://graph.microsoft.com/v1.0/users?$filter=othermails/any(id:id eq 'userEmail@contoso.com')  
 ```
 
-If you receive user details in the response, the user is in the directory. Present the users returned to the inviting user. Allow users to select the external user that gets access. Make API calls, or trigger other processes to grant user access to the application.
+If you receive user details in the response, the user is in the directory. Present the users returned to the inviting user. Allow users to select the external user that gets access. To grant user access to the application, make API calls, or trigger other processes.
 
 ## Create and send the invitation
 
@@ -99,7 +99,7 @@ Application developers can onboard external users using Microsoft Entra self-ser
    >[!IMPORTANT]
    > Granting an application permission to update users in your directory is a highly privileged action. If you grant the application these highly privileged permissions, secure and monitor your LOB app.
 
-Your organization or the LOB application might require information stored for future use, such as claims emittance in tokens or granular authorization policies. Your application can make another API call to update the external user after they've been invited or created in Microsoft Entra ID. The application must have extra API permissions and an extra call to the Microsoft Graph API.
+Your organization or the LOB application might require information stored for future use, such as claims emittance in tokens or granular authorization policies. Your application can make another API call to update the external user after they're invited or created in Microsoft Entra ID. The application must have extra API permissions and an extra call to the Microsoft Graph API.
 
 To update the user, use the object ID of the created guest user from the invitation API call, the ID value in the API response from the existence check or invitation. You can write to any standard attribute or custom extension attributes.
 
@@ -130,7 +130,7 @@ For more information, see [Update user in Microsoft Graph v1.0](/graph/api/user-
 
 If user assignment is required in Microsoft Entra ID for application access or role assignment, the user is assigned to the application. Otherwise, the user can't gain access regardless of authentication. To add the invited external user to a group, make another API call. The group is assigned to the application and mapped to an application role.
 
-A permissions example: Assign the Group Updater role, or a custom rol,e to the enterprise application. Scope the role assignment to the groups this application updates. Or assign the `group.readwrite.all` permission in Microsoft Graph API.
+A permissions example: Assign the Group Updater role, or a custom role, to the enterprise application. Scope the role assignment to the groups this application updates. Or assign the `group.readwrite.all` permission in Microsoft Graph API.
 
 ```
 POST https://graph.microsoft.com/v1.0/groups/<insert group id>/members/$ref 
@@ -157,4 +157,4 @@ With the external user provisioned in Microsoft Entra ID and the application, th
 
 Ensure error handling is done in the LOB application. The application validates each API call. If unsuccessful, extra attempts or error messages are useful.
 
-For LOB applications to update external users after they're invited, grant a custom role that allows the application to update users and assign scope to a dynamic administrative unit. For example, create a dynamic administrative unit with users where usertype = guest. After the external user is onboarded to Microsoft Entra ID, they're added to the administrative unit. The LOB application needs to attempt to update the user and it might take more than one attempt if there are delays. Despite delays, this is the best approach to enable the LOB application to update external users without granting it permission to update any user in the directory.
+For LOB applications to update external users after they're invited, grant a custom role that allows the application to update users and assign scope to a dynamic administrative unit. For example, create a dynamic administrative unit with users where usertype = guest. External users are added to the administrative unit after they're onboarded to Microsoft Entra ID. The LOB application needs to attempt to update the user and it might take more than one attempt if there are delays. Despite delays, the approach enables the LOB application to update external users without granting it permission to update any user in the directory.
