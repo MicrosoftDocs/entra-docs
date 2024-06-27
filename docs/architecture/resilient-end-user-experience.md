@@ -20,8 +20,6 @@ The sign-up and sign-in end-user experience is made up of the following elements
 
 - The identity providers (IDPs) for your application – such as local account username/password, Outlook, Facebook, and Google
 
-![Image shows end-user experience components](media/resilient-end-user-experiences/end-user-experience-architecture.png)
-
 ## Choose between user flow and custom policy  
 
 To help you set up the most common identity tasks, Azure AD B2C provides built-in configurable [user flows](/azure/active-directory-b2c/user-flow-overview). You can also build your own [custom policies](/azure/active-directory-b2c/custom-policy-overview) that offer you maximum flexibility. However, it's recommended to use custom policies only to address complex scenarios.
