@@ -53,7 +53,7 @@ A common use for multiple environments in a single tenant is segregation of prod
 Use nonproduction Azure resources and nonproduction instances of Microsoft Entra integrated applications with equivalent nonproduction directory objects. The nonproduction resources in the directory are for testing.
 
    >[!NOTE]
-  >Avoid more than one Microsoft 365 environment in a Microsoft Entra tenant. However, you can have multiple Dynamics 365 environments in a Microsoft Entra tenant.
+   >Avoid more than one Microsoft 365 environment in a Microsoft Entra tenant. However, you can have multiple Dynamics 365 environments in a Microsoft Entra tenant.
 
 Another scenario for isolation in a single tenant is a separation between locations, subsidiary, or tiered administration. See the [enterprise access model](/security/privileged-access-workstations/privileged-access-access-model).
 
