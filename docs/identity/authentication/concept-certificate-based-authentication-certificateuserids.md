@@ -37,9 +37,9 @@ The values stored in certificateUserIds should be in the format described in the
 |RFC822Name	| `X509:<RFC822>user@woodgrove.com` |
 |IssuerAndSubject | `X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<S>DC=com,DC=contoso,OU=UserAccounts,CN=mfatest` |
 |Subject | `X509:<S>DC=com,DC=contoso,OU=UserAccounts,CN=mfatest`  |
-|SKI | `X509:<SKI>123456789abcdef` |
-|SHA1PublicKey |`X509:<SHA1-PUKEY>123456789abcdef` |
-|IssuerAndSerialNumber | `X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<SR>b24134139f069b49997212a86ba0ef48` <br> To get the correct value for serial number, run this command and store the value shown in certificateUserIds:<br> **Syntax**:<br> `Certutil –dump –v [~certificate path~] >> [~dumpFile path~]` <br> **Example**: <br> `certutil -dump -v firstusercert.cer >> firstCertDump.txt` |
+|SKI | `X509:<SKI>aB1cD2eF3gH4iJ5kL6mN7oP8qR` |
+|SHA1PublicKey |`X509:<SHA1-PUKEY>cD2eF3gH4iJ5kL6mN7oP8qR9sT` |
+|IssuerAndSerialNumber | `X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<SR>eF3gH4iJ5kL6mN7oP8qR9sT0uV` <br> To get the correct value for serial number, run this command and store the value shown in certificateUserIds:<br> **Syntax**:<br> `Certutil –dump –v [~certificate path~] >> [~dumpFile path~]` <br> **Example**: <br> `certutil -dump -v firstusercert.cer >> firstCertDump.txt` |
 
 ## Roles to update certificateUserIds
 
@@ -156,7 +156,7 @@ For this configuration, you can use [Microsoft Graph PowerShell](/powershell/mic
      $params = @{
            authorizationInfo = @{
                  certificateUserIds = @(
-                 "X509:<SKI>eec6b88788d2770a01e01775ce71f1125cd6ad0f", 
+                 "X509:<SKI>gH4iJ5kL6mN7oP8qR9sT0uV1wX", 
                  "X509:<PN>user@contoso.com"
                  )
            }
@@ -180,7 +180,7 @@ For this configuration, you can use [Microsoft Graph PowerShell](/powershell/mic
 1. Update the certificateUserIds attribute of the user object.
 
    ```powershell
-      $user.AuthorizationInfo.certificateUserIds = @("X509:<SKI>eec6b88788d2770a01e01775ce71f1125cd6ad0f", "X509:<PN>user1@contoso.com") 
+      $user.AuthorizationInfo.certificateUserIds = @("X509:<SKI>iJ5kL6mN7oP8qR9sT0uV1wX2yZ", "X509:<PN>user1@contoso.com") 
       Update-MgUser -UserId $userObjectId -AuthorizationInfo $user.AuthorizationInfo
    ```
    

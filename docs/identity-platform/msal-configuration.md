@@ -204,7 +204,7 @@ This configuration is supplemented by values that you provide. The values you pr
     {
       "browser_package_name": "com.android.chrome",
       "browser_signature_hashes": [
-        "7fmdu...2NDJg=="
+        "aB1cD2eF3gH4iJ5kL6-mN7oP8qR=="
       ],
       "browser_use_customTab" : true,
       "browser_version_lower_bound": "45"
@@ -212,21 +212,21 @@ This configuration is supplemented by values that you provide. The values you pr
     {
       "browser_package_name": "com.android.chrome",
       "browser_signature_hashes": [
-        "7fmdu...2NDJg=="
+        "cD2eF3gH4iJ5kL6mN7-oP8qR9sT=="
       ],
       "browser_use_customTab" : false
     },
     {
       "browser_package_name": "org.mozilla.firefox",
       "browser_signature_hashes": [
-        "2gCe...idpVQ=="
+        "eF3gH4iJ5kL6mN7oP8-qR9sT0uV=="
       ],
       "browser_use_customTab" : false
     },
     {
       "browser_package_name": "org.mozilla.firefox",
       "browser_signature_hashes": [
-        "2gCe6...idpVQ=="
+        "gH4iJ5kL6mN7oP8qR9-sT0uV1wX=="
       ],
       "browser_use_customTab" : true,
       "browser_version_lower_bound": "57"
@@ -234,7 +234,7 @@ This configuration is supplemented by values that you provide. The values you pr
     {
       "browser_package_name": "com.sec.android.app.sbrowser",
       "browser_signature_hashes": [
-        "ABi2f...O1Xgg=="
+        "iJ5kL6mN7oP8qR9sT0-uV1wX2yZ=="
       ],
       "browser_use_customTab" : true,
       "browser_version_lower_bound": "4.0"
@@ -242,14 +242,14 @@ This configuration is supplemented by values that you provide. The values you pr
     {
       "browser_package_name": "com.sec.android.app.sbrowser",
       "browser_signature_hashes": [
-        "ABi2f...O1Xgg=="
+        "kL6mN7oP8qR9sT0uV1-wX2yZ3aB=="
       ],
       "browser_use_customTab" : false
     },
     {
       "browser_package_name": "com.cloudmosa.puffinFree",
       "browser_signature_hashes": [
-        "1WqG8...Mn8Ag=="
+        "mN7oP8qR9sT0uV1wX2-yZ3aB4dE="
       ],
       "browser_use_customTab" : false
     },
@@ -303,7 +303,7 @@ This configuration is supplemented by values that you provide. The values you pr
     {
       "browser_package_name": "mobi.mgeek.TunnyBrowser",
       "browser_signature_hashes": [
-        "RMVoX...bkyyQ=="
+        "RMVoXgjjgyjjmbj4578fcbkyyQ=="
       ],
       "browser_use_customTab" : false
     },
