@@ -10,7 +10,7 @@ ms.service: entra-external-id
 ms.subservice: customers
 ms.custom: devx-track-dotnet
 ms.topic: tutorial
-ms.date: 05/23/2023
+ms.date: 06/27/2024
 #Customer intent: As a dev, DevOps, I want to learn about how to enable authentication in my own ASP.NET web app with an external tenant.
 ---
 

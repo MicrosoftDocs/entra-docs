@@ -10,7 +10,7 @@ ms.service: entra-external-id
 
 ms.subservice: customers
 ms.topic: tutorial
-ms.date: 07/27/2023
+ms.date: 06/27/2024
 ms.custom: developer, devx-track-dotnet
 #Customer intent: As a dev, I want to secure my ASP.NET Core web API registered in the external tenant.
 ---

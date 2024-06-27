@@ -9,7 +9,7 @@ ms.service: entra-external-id
 ms.topic: tutorial
 ms.subservice: customers
 ms.custom: devx-track-dotnet
-ms.date: 06/05/2023
+ms.date: 06/27/2024
 ---
 
 # Tutorial: Sign in users in .NET MAUI shell app using an external tenant
