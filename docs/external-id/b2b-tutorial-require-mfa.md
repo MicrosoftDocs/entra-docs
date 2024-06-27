@@ -5,7 +5,7 @@ description: In this tutorial, learn how to require multifactor authentication w
  
 ms.service: entra-external-id
 ms.topic: tutorial
-ms.date: 07/28/2023
+ms.date: 06/27/2024
 
 ms.author: cmulligan
 author: csmulligan
@@ -153,6 +153,6 @@ When no longer needed, remove the test user and the test Conditional Access poli
 1. Under **Protect**, select **Conditional Access**.
 1. In the **Policy Name** list, select the context menu (…) for your test policy, and then select **Delete**. Select **Yes** to confirm.
 
-## Next steps
+## Next step
 
-In this tutorial, you created a Conditional Access policy that requires guest users to use MFA when signing in to one of your cloud apps. To learn more about adding guest users for collaboration, see [Add Microsoft Entra B2B collaboration users in the Azure portal](add-users-administrator.yml).
+In this tutorial, you created a Conditional Access policy that requires guest users to use MFA when signing in to one of your cloud apps. To learn more about adding guest users for collaboration, see [Add Microsoft Entra B2B collaboration users in the Microsoft Entra admin center](add-users-administrator.yml).
