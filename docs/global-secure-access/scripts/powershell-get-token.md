@@ -63,6 +63,13 @@ cd "C:\temp"
 #Wait 60 seconds
 Start-Sleep -Seconds 60
 
+$folderPath = "C:\Program Files\Microsoft Entra private network connector\Modules\MicrosoftEntraPrivateNetworkConnectorPSModule"
+
+# Check if the Module exists
+if (Test-Path -Path $folderPath) {
+    Write-Host "The Module is successfully made available at path: $folderPath"
+   
+
 # Set the prompt path to C:\Program Files\Microsoft Entra private network connector\Modules\MicrosoftEntraPrivateNetworkConnectorPSModule
 cd "C:\Program Files\Microsoft Entra private network connector\Modules\MicrosoftEntraPrivateNetworkConnectorPSModule"
 
@@ -124,7 +131,7 @@ Write-Output "---------------------------------------"
 Write-Output "$accessToken "
 Write-Output "---------------------------------------"
 
-# Set the prompt path to C:\temp
+# Set the prompt path to C:\
 cd "C:\"
 
 # Uninstall the Connector from your machine.
@@ -163,6 +170,14 @@ Remove-Item C:\temp\*.*
 Remove-Item -Path "C:\temp"
 Remove-Item -Path "C:\Program Files\Microsoft Entra private network connector" -Recurse
 Remove-Item -Path "C:\Program Files\Microsoft Entra private network connector updater" -Recurse
+
+} else {
+    Write-Host "The required module is not made available at path: $folderPath"
+	Write-Host "This could be related to left over state from previous installation of connector on this machine."
+	Write-Host "You can try to go to c:\temp\ and double click the MicrosoftEntraPrivateNetworkConnectorInstaller.exe file. Click Uninstall if visible. This can clean the state. "
+    Write-Host "Try Again after the state is clean"
+    return
+}
 ```
 
 ## Next steps
