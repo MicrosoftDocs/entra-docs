@@ -11,24 +11,24 @@ ms.date: 06/13/2024
 
 #CustomerIntent: As a Microsoft Entra customer, I want replace existing VPN with a cloud-based solution so that we can move towards Secure Access Service Edge (SASE).
 ---
-# [Microsoft Entra deployment Scenario 2 - Modernize remote access to on-premises apps with MFA per app](deployment-scenario-remote-access.md)
+# [Microsoft Entra deployment Scenario - Modernize remote access to on-premises apps with MFA per app](deployment-scenario-remote-access.md)
 
-The Microsoft Entra deployment scenarios article series provides guidance regarding the Microsoft Entra Suite that bundles these products:
+The Microsoft Entra Suite deployment series provides organizations with a detailed guidance on how to combine and test the following products in the suite:
 
 - [Microsoft Entra ID Protection](../id-protection/overview-identity-protection.md)
 - [Microsoft Entra ID Governance](../id-governance/identity-governance-overview.md)
-- [Microsoft Entra Verified ID](../verified-id/decentralized-identifier-overview.md)
+- [Microsoft Entra Verified ID: Face Check](../verified-id/decentralized-identifier-overview.md)
 - [Microsoft Entra Internet Access](../global-secure-access/concept-internet-access.md) (Preview)
 - [Microsoft Entra Private Access](../global-secure-access/concept-private-access.md) (Preview)
 
-In these articles, we describe scenarios that articulate the value of the Microsoft Entra Suite and how its capabilities work together.
+In these guides, we describe scenarios that show the value of the Microsoft Entra Suite and how its capabilities work together.
 
 - [Microsoft Entra deployment Scenarios Introduction](deployment-scenario-intro.md)
-- [Microsoft Entra deployment Scenario 1 - Workforce and guest onboarding, identity, and access lifecycle governance across all your apps](deployment-scenario-workforce-guest.md)
-- Microsoft Entra deployment Scenario 2 - Modernize remote access to on-premises apps with MFA per app (this article)
-- [Microsoft Entra deployment Scenario 3 - Secure internet access based on business needs](deployment-scenario-internet-access.md)
+- [Microsoft Entra deployment Scenario - Workforce and guest onboarding, identity, and access lifecycle governance across all your apps](deployment-scenario-workforce-guest.md)
+- Microsoft Entra deployment Scenario - Modernize remote access to on-premises apps with MFA per app (this article)
+- [Microsoft Entra deployment Scenario - Secure internet access based on business needs](deployment-scenario-internet-access.md)
 
-## Scenario 2a: Modernize remote access
+## Scenario: Modernize remote access
 
 In this section, we describe how to configure Microsoft Entra Suite products for a scenario in which the fictional organization, Contoso, is upgrading their existing VPN solution. The new, scalable cloud-based solution helps them to move towards Secure Access Service Edge (SASE). To accomplish this objective, they deploy [Microsoft Entra Internet Access](../global-secure-access/concept-internet-access.md), [Microsoft Entra Private Access](../global-secure-access/concept-private-access.md), and [Microsoft Entra ID Protection](../id-protection/overview-identity-protection.md).
 
@@ -49,17 +49,11 @@ You can replicate these high-level steps for the Contoso solution as described i
 Microsoft Entra solutions offer these advantages over VPN:
 
 - Easier and consolidated management
-- Lower expenses
+- Lower VPN costs
 - Better security and visibility
 - Smoother user experience and efficiency
 - Preparedness for SASE
 
-Benefits of using these three solutions together include the following:
-
-- **Simplified and unified management.** To reduce the complexity and cost of maintaining multiple solutions and appliances, manage all network and security functions from a single cloud-based console.
-- **Enhanced security and visibility.** Enforce granular and adaptive access policies based on identity and context of users and devices as well as application and data sensitivity and location. Use enriched logs and analytics to gain insights into network and security posture to detect and more quickly respond to threats.
-- **Improved user experience and productivity.** Provide users with fast and seamless access to necessary apps and resources without compromising security or performance. Support hybrid and remote work scenarios with cloud-delivered solutions that scale on demand and adapt to changing network conditions.
-- **Reduced costs and network complexity**. Reduce operational costs by eliminating the need to operate and monitor world-wide complex VPN gateway infrastructures. Apply simplified access policies by using compliant network check with Conditional Access.
 
 ### Requirements for modernize remote access scenario
 
@@ -75,7 +69,7 @@ Conditional Access (CA) policy configuration requires the Conditional Access Adm
 
 To successfully deploy and test this scenario, configure these prerequisites:
 
-1. Microsoft Entra tenant with Microsoft Entra ID P1 license. Configure Microsoft Entra ID P2 to test Identity Protection. [Purchase licenses or obtain trial licenses](https://www.microsoft.com/security/business/microsoft-entra-pricing).
+1. Microsoft Entra tenant with Microsoft Entra ID P1 license. Configure Microsoft Entra ID to test Identity Protection. [Purchase licenses or obtain trial licenses](https://www.microsoft.com/security/business/microsoft-entra-pricing).
    - One user with at least Global Secure Access Administrator and Application Administrator roles to configure Microsoft's Security Service Edge
    - At least one user as client test user in your tenant
 1. One Windows client device with this configuration:
@@ -184,7 +178,7 @@ In this section, we validate that the user can access the file server while ther
 1. Try accessing the file server to confirm that access is blocked. You might need to wait up to one hour for block enforcement.
 1. Validate that the Conditional Access policy (that you created earlier using sign in logs) blocks access. Open non-interactive sign in logs from *ZTNA Network Access Client -- Private* application. View logs from the Private Access application name that you previously created as the **Resource name**.
 
-## Scenario 2b: Internet and Private Access scenario
+## Scenario: Internet and Private Access scenario
 
 In this section, we describe how to configure Microsoft Entra Suite products for a scenario in which the fictional organization, Contoso, is transforming their cybersecurity practice. They adopt zero trust principles that verify explicitly, use least privilege, and assume breach across all applications and resources. In their discovery process, they identified multiple business applications that don't use modern authentication and rely on connectivity to the corporate network (either from their branch offices or remotely with VPN).
 
@@ -211,7 +205,7 @@ Identity Governance configuration requires at least the Identity Governance Admi
 
 #### Licenses for Internet and Private Access scenario
 
-To implement all the steps in this scenario, you need Microsoft Entra ID P1 for Global Secure Access (while the product is in Public Preview) and Microsoft Entra Governance licenses. You can [purchase licenses or obtain trial licenses](https://www.microsoft.com/security/business/microsoft-entra-pricing).
+To implement all the steps in this scenario, you need Microsoft Entra ID P1 for Global Secure Access (while the product is in Public Preview) and Microsoft Entra ID Governance licenses. You can [purchase licenses or obtain trial licenses](https://www.microsoft.com/security/business/microsoft-entra-pricing).
 
 #### Users for Internet and Private Access scenario
 

@@ -11,22 +11,22 @@ ms.date: 06/13/2024
 
 #CustomerIntent: As a Microsoft Entra customer, I want to provide remote employees with secure access to apps and resources so that we prevent unauthorized access.
 ---
-# Microsoft Entra deployment scenario 1 - Workforce and guest onboarding, identity, and access lifecycle governance across all your apps
+# Microsoft Entra deployment scenario - Workforce and guest onboarding, identity, and access lifecycle governance across all your apps
 
-The Microsoft Entra deployment scenarios article series provides guidance regarding the Microsoft Entra Suite that bundles these products:
+The Microsoft Entra Suite deployment series provides organizations with a detailed guidance on how to combine and test the following products in the suite:
 
 - [Microsoft Entra ID Protection](../id-protection/overview-identity-protection.md)
 - [Microsoft Entra ID Governance](../id-governance/identity-governance-overview.md)
-- [Microsoft Entra Verified ID](../verified-id/decentralized-identifier-overview.md)
+- [Microsoft Entra Verified ID: Face Check](../verified-id/decentralized-identifier-overview.md)
 - [Microsoft Entra Internet Access](../global-secure-access/concept-internet-access.md) (Preview)
 - [Microsoft Entra Private Access](../global-secure-access/concept-private-access.md) (Preview)
 
-In these articles, we describe scenarios that articulate the value of the Microsoft Entra Suite and how its capabilities work together.
+In these guides, we describe scenarios that show the value of the Microsoft Entra Suite and how its capabilities work together.
 
 - [Microsoft Entra deployment Scenarios Introduction](deployment-scenario-intro.md)
-- Microsoft Entra deployment Scenario 1 - Workforce and guest onboarding, identity, and access lifecycle governance across all your apps (this article)
-- [Microsoft Entra deployment Scenario 2 - Modernize remote access to on-premises apps with MFA per app](deployment-scenario-remote-access.md)
-- [Microsoft Entra deployment Scenario 3 - Secure internet access based on business needs](deployment-scenario-internet-access.md)
+- Microsoft Entra deployment Scenario - Workforce and guest onboarding, identity, and access lifecycle governance across all your apps (this article)
+- [Microsoft Entra deployment Scenario - Modernize remote access to on-premises apps with MFA per app](deployment-scenario-remote-access.md)
+- [Microsoft Entra deployment Scenario - Secure internet access based on business needs](deployment-scenario-internet-access.md)
 
 ## Scenario overview
 

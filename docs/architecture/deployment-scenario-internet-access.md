@@ -11,28 +11,28 @@ ms.date: 06/13/2024
 
 #CustomerIntent: As a Microsoft Entra customer, I want configure strict access policies so that we can control access according to business requirements.
 ---
-# Microsoft Entra deployment scenario 3 - Secure internet access based on business needs
+# Microsoft Entra deployment scenario - Secure internet access based on business needs
 
-The Microsoft Entra deployment scenarios article series provides guidance regarding the Microsoft Entra Suite that bundles these products:
+The Microsoft Entra Suite deployment series provides organizations with a detailed guidance on how to combine and test the following products in the suite:
 
 - [Microsoft Entra ID Protection](../id-protection/overview-identity-protection.md)
 - [Microsoft Entra ID Governance](../id-governance/identity-governance-overview.md)
-- [Microsoft Entra Verified ID](../verified-id/decentralized-identifier-overview.md)
+- [Microsoft Entra Verified ID: Face Check](../verified-id/decentralized-identifier-overview.md)
 - [Microsoft Entra Internet Access](../global-secure-access/concept-internet-access.md) (Preview)
 - [Microsoft Entra Private Access](../global-secure-access/concept-private-access.md) (Preview)
 
-In these articles, we describe scenarios that articulate the value of the Microsoft Entra Suite and how its capabilities work together.
+In these guides, we describe scenarios that show the value of the Microsoft Entra Suite and how its capabilities work together.
 
 - [Microsoft Entra deployment Scenarios Introduction](deployment-scenario-intro.md)
-- [Microsoft Entra deployment Scenario 1 - Workforce and guest onboarding, identity, and access lifecycle governance across all your apps](deployment-scenario-workforce-guest.md)
-- [Microsoft Entra deployment Scenario 2 - Modernize remote access to on-premises apps with MFA per app](deployment-scenario-remote-access.md)
-- Microsoft Entra deployment Scenario 3 - Secure internet access based on business needs
+- [Microsoft Entra deployment Scenario - Workforce and guest onboarding, identity, and access lifecycle governance across all your apps](deployment-scenario-workforce-guest.md)
+- [Microsoft Entra deployment Scenario - Modernize remote access to on-premises apps with MFA per app](deployment-scenario-remote-access.md)
+- Microsoft Entra deployment Scenario - Secure internet access based on business needs
 
 ## Scenario overview
 
 In this article, we describe how to configure Microsoft Entra Suite products for a scenario in which the fictional organization, Contoso has strict default internet access policies and wants to control internet access according to business requirements.
 
-In an example scenario for which we describe how to configure its solution in this scenario, a Marketing department user requires access to social networking sites that Contoso prohibits for all users. Users can request access in [My Access](../id-governance/my-access-portal-overview.md). Upon approval, they become a member of a group that grants them access to social networking sites.
+In an example scenario for which we describe how to configure its solution, a Marketing department user requires access to social networking sites that Contoso prohibits for all users. Users can request access in [My Access](../id-governance/my-access-portal-overview.md). Upon approval, they become a member of a group that grants them access to social networking sites.
 
 In another example scenario and corresponding solution, a SOC analyst needs to access a group of high-risk internet destinations for a specific time to investigate an incident. The SOC analyst can make that request in My Access. Upon approval, they become a member of a group that grants them access to high-risk internet destinations.
 
@@ -70,13 +70,13 @@ Identity Governance configuration requires at least the Identity Governance Admi
 
 ### Licenses
 
-To implement all the steps in this scenario, you need Microsoft Entra ID P1 for Global Secure Access (while the product is in Public Preview) and Microsoft Entra Governance licenses. You can [purchase licenses or obtain trial licenses](https://www.microsoft.com/security/business/microsoft-entra-pricing).
+To implement all the steps in this scenario, you need Microsoft Entra ID P1 for Global Secure Access (while the product is in Public Preview) and Microsoft Entra ID Governance licenses. You can [purchase licenses or obtain trial licenses](https://www.microsoft.com/security/business/microsoft-entra-pricing).
 
 ### Users and devices prerequisites
 
 To successfully deploy and test this scenario, configure for these prerequisites:
 
-1. Microsoft Entra tenant with Microsoft Entra ID P1 license. Configure Microsoft Entra ID P2 to test Identity Protection. [Purchase licenses or obtain trial licenses](https://www.microsoft.com/security/business/microsoft-entra-pricing).
+1. Microsoft Entra tenant with Microsoft Entra ID P1 license. Configure Microsoft Entra ID to test Identity Protection. [Purchase licenses or obtain trial licenses](https://www.microsoft.com/security/business/microsoft-entra-pricing).
    - One user with at least Global Secure Access Administrator and Application Administrator roles to configure Microsoft's Security Service Edge
    - At least one user as client test user in your tenant
 1. One Windows client device with this configuration:
