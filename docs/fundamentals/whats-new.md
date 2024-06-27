@@ -44,7 +44,7 @@ This page updates monthly, so revisit it regularly. If you're looking for items 
 
 **Action Recommended: Security Improvements to Microsoft Entra Connect Sync and Connect Health**
 
-Since September 2023, we have been auto-upgrading Microsoft Entra Connect Sync and Microsoft Entra Connect Health customers to an updated build as part of a precautionary security-related service change. For customers who previously opted out of auto-upgrade, or for whom auto-upgrade failed, **we strongly recommend** that you upgrade to the latest versions by **September 23, 2024**.
+Since September 2023, we have been autoupgrading Microsoft Entra Connect Sync and Microsoft Entra Connect Health customers to an updated build as part of a precautionary security-related service change. For customers who previously opted out of autoupgrade, or for whom autoupgrade failed, **we strongly recommend** that you upgrade to the latest versions by **September 23, 2024**.
 
 When you upgrade to the latest versions, you ensure that when the service change takes effect, you avoid service disruptions for:
 
@@ -53,7 +53,7 @@ When you upgrade to the latest versions, you ensure that when the service change
 - Microsoft Entra Connect Health agent for ADDS
 - Microsoft Entra Connect Health agent for ADFS
 
-See documentation here: [Security improvements to the auto-upgrade process](/entra/identity/hybrid/connect/security-updates-pks) for upgrade-related guidance, versioning information, and further details on the expected impacts of the service change.
+See documentation here: [Security improvements to the autoupgrade process](/entra/identity/hybrid/connect/security-updates-pks) for upgrade-related guidance, versioning information, and further details on the expected impacts of the service change.
 
 ---
 
@@ -103,6 +103,22 @@ In addition to providing global SLA performance, Microsoft Entra ID reports tena
 
 ---
 
+### Private Preview – QR code sign-in, a new authentication method for Frontline Workers 
+
+**Type:** New feature    
+**Service category:** Authentications (Logins)    
+**Product capability:** User Authentication    
+
+We're introducing a new simple way for Frontline Workers to authenticate in Microsoft Entra ID with a QR code and PIN, eliminating the need to enter long UPNs and alphanumeric passwords multiple times during their shift. 
+
+With the private preview release of this feature in August 2024, all users in your tenant see a new link ‘Sign in with QR code’ on navigating to https://login.microsoftonline.com > ‘*Sign-in options*’ > ‘*Sign in to an organization*’ page. This new link, ‘Sign in with QR code’, will be visible only on mobile devices (Android/iOS/iPadOS). If you are not participating in the private preview, users from your tenant won't be able to sign-in through this method while we're still in private preview. They'll receive an error message if they try to sign-in. 
+
+The feature will have a ‘preview’ tag until it's generally available. Your organization needs to be enabled to test this feature. Broad testing will be available in public preview, which we'll announce later.   
+
+While the feature is in private preview, no technical support is provided. Learn more about support during previews here: [Microsoft Entra ID preview program information](../fundamentals/licensing-preview-info.md).
+
+---
+
 ## May 2024
 
 ### General Availability - Azure China now supports My sign-ins and MFA/SSPR Combined Registration
@@ -125,7 +141,7 @@ The long-awaited `$select` has been implemented into the signIn API. Utilize the
 
 ---
 
-### General Availability - Multiple Passwordless Phone Sign-in for Android Devices
+### General Availability - Multiple Passwordless Phone Sign-ins for Android Devices
 
 **Type:** New feature    
 **Service category:** Authentications (Logins)    
@@ -176,7 +192,7 @@ Customers can now monitor workflow health, and get insights throughout all their
 **Service category:** Lifecycle Workflows    
 **Product capability:** Identity Lifecycle Management   
 
-Customers can now leverage their confidential HR data stored in custom security attributes in addition to other attributes to define the scope of their workflows in Lifecycle Workflows for automating joiner, mover, and leaver scenarios. For more information, see: [Use custom security attributes to scope a workflow](../id-governance/lifecycle-workflow-insights.md).
+Customers can now apply their confidential HR data stored in custom security attributes in addition to other attributes to define the scope of their workflows in Lifecycle Workflows for automating joiner, mover, and leaver scenarios. For more information, see: [Use custom security attributes to scope a workflow](../id-governance/lifecycle-workflow-insights.md).
 
 ---
 
@@ -208,7 +224,7 @@ External authentication methods enable you to use your preferred multifactor aut
 **Service category:** MS Graph    
 **Product capability:** Monitoring & Reporting    
 
-Due to popular demand and increased confidence in the stability of the properties, we have now brought LastSuccessfulSignIn & LastSuccessfulSigninDateTime into V1. Feel free to take dependencies on these properties in your production environments now. For more information, see: [signInActivity resource type](/graph/api/resources/signinactivity).
+Due to popular demand and increased confidence in the stability of the properties, we've added LastSuccessfulSignIn & LastSuccessfulSigninDateTime into V1. Feel free to take dependencies on these properties in your production environments now. For more information, see: [signInActivity resource type](/graph/api/resources/signinactivity).
 
 ---
 
@@ -228,7 +244,7 @@ Starting August 2024, new Microsoft Entra applications created using any interfa
 **Service category:** Authentications (Logins)    
 **Product capability:** SSO    
 
-The Windows Account extension is now the [Microsoft Single Sign On](https://chromewebstore.google.com/detail/microsoft-single-sign-on/ppnbnpeolgkicgegkbkbjmhlideopiji) extension in docs and Chrome store. The Windows Account extension has been updated to represent the new macOS compatibility. It's now known as the Microsoft Single Sign On extension for Chrome, offering single sign-on and device identity features with the Enterprise SSO plug-in for Apple devices. This is just a name change for the extension, there are no software changes to the extension itself.
+The Windows Account extension is now the [Microsoft Single Sign On](https://chromewebstore.google.com/detail/microsoft-single-sign-on/ppnbnpeolgkicgegkbkbjmhlideopiji) extension in docs and Chrome store. The Windows Account extension is updated to represent the new macOS compatibility. It's now known as the Microsoft Single Sign On extension for Chrome, offering single sign-on and device identity features with the Enterprise SSO plug-in for Apple devices. This is just a name change for the extension, there are no software changes to the extension itself.
 
 ---
 
@@ -326,7 +342,7 @@ Custom authentication extensions allow you to customize the Microsoft Entra auth
 
 Microsoft Entra organizations could previously have a maximum of 5,000 dynamic groups and dynamic administrative units combined. 
 
-We have increased this quota to 15000. For example, you can now have 5,000 dynamic groups and 10,000 dynamic AUs (or any other combination that adds up to 15k). You don't need to do anything to take advantage of this change - its available right now. For more information, see: [Microsoft Entra service limits and restrictions](../identity/users/directory-service-limits-restrictions.md).
+We have increased this quota to 15000. For example, you can now have 5,000 dynamic groups and 10,000 dynamic AUs (or any other combination that adds up to 15k). You don't need to do anything to take advantage of this change - it's available right now. For more information, see: [Microsoft Entra service limits and restrictions](../identity/users/directory-service-limits-restrictions.md).
 
 ---
 
@@ -485,7 +501,7 @@ Customer Lockbox for Microsoft Azure is launching a new feature that enables cus
 **Service category:** Conditional Access    
 **Product capability:** Identity Security & Protection    
 
-Starting mid-April 2024, the Conditional Access *‘Locations’* condition is moving up. Locations becomes the '*Network*' assignment, with the new Global Secure Access assignment - '*All compliant network locations*'.
+Starting mid-April 2024, the Conditional Access *‘Locations’* condition is moving up. Locations become the '*Network*' assignment, with the new Global Secure Access assignment - '*All compliant network locations*'.
 
 This change will occur automatically, and admins won’t need to take any action. Here's more details:
 
@@ -545,7 +561,7 @@ For more information about how to better secure your organization by using autom
 **Service category:** Other    
 **Product capability:** Platform        
 
-We're excited to announce that Microsoft Entra, is rolling out support for Transport Layer Security (TLS) 1.3 for its endpoints to align with security best practices ([NIST - SP 800-52 Rev. 2](https://csrc.nist.gov/pubs/sp/800/52/r2/final)). With this change, the Microsoft Entra ID related endpoints will support both TLS 1.2 and TLS 1.3 protocols. For more information, see: [TLS 1.3 support for Microsoft Entra services](/troubleshoot/azure/active-directory/enable-support-tls-environment?tabs=azure-monitor#tls-13-support-for-microsoft-entra-services).
+We're excited to announce that Microsoft Entra, is rolling out support for Transport Layer Security (TLS) 1.3 for its endpoints to align with security best practices ([NIST - SP 800-52 Rev. 2](https://csrc.nist.gov/pubs/sp/800/52/r2/final)). With this change, the Microsoft Entra ID related endpoints support both TLS 1.2 and TLS 1.3 protocols. For more information, see: [TLS 1.3 support for Microsoft Entra services](/troubleshoot/azure/active-directory/enable-support-tls-environment?tabs=azure-monitor#tls-13-support-for-microsoft-entra-services).
 
 ---
 
