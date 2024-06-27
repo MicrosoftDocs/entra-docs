@@ -14,7 +14,7 @@ ms.topic: reference
 
 # Redirect URI (reply URL) outline and restrictions
 
-To sign in a user, your application must send a login request to the Microsoft Entra authorization endpoint, with a redirect URI specified as a parameter. The redirect URI is a critical security feature that ensures authorization codes and access tokens are sent only by the Microsoft Entra authentication server to the intended recipient. This article outlines the features and restrictions of redirect URIs in the Microsoft identity platform.
+To sign in a user, your application must send a login request to the Microsoft Entra authorization endpoint, with a redirect URI specified as a parameter. The redirect URI is a critical security feature that ensures the Microsoft Entra authentication server only sends authorization codes and access tokens to the intended recipient. This article outlines the features and restrictions of redirect URIs in the Microsoft identity platform.
 
 ## What is a redirect URI?
 
@@ -22,7 +22,9 @@ A redirect URI, or reply URL, is the location where the Microsoft Entra authenti
 
 ## Why do redirect URI(s) need to be added to an app registration?
 
-For security reasons, the authentication server will not redirect users or send tokens to a URI that is not added to the app registration. Microsoft Entra login servers only redirect users and send tokens to redirect URIs that have been added to an app registration. If the redirect URI specified in the login request doesn’t match any of the redirect URIs you have added in your application, you'll receive an error message such as `AADSTS50011: The reply URL specified in the request does not match the reply URLs configured for the application`. For more information on error codes, see [Microsoft Entra authentication and authorization error codes](reference-error-codes.md).
+For security reasons, the authentication server will not redirect users or send tokens to a URI that is not added to the app registration. Microsoft Entra login servers only redirect users and send tokens to redirect URIs that have been added to an app registration. If the redirect URI specified in the login request doesn’t match any of the redirect URIs you have added in your application, you'll receive an error message such as `AADSTS50011: The reply URL specified in the request does not match the reply URLs configured for the application`. 
+
+For more information on error codes, see [Microsoft Entra authentication and authorization error codes](reference-error-codes.md).
 
 ## Should I add a redirect URIs to an app registration?
 
