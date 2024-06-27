@@ -28,8 +28,8 @@ To integrate LOB applications with Microsoft Entra B2B, follow this pattern:
 
    ![Screenshot shows the integration of LOB applications.](media/onboard-external-user/integration-flow.png)
 
-1. The end user triggers the **invitation** within the LOB application and provides the email address of the external user. The application checks if the user already exists, and if they don't, proceeds to [step #2](#step-2-create-and-send-invitation)|
-2. The application sends a POST to the Microsoft Graph API on behalf of the user. It provides the redirect URL and external user's email that is defined in [Step #1](#step-1-check-if-the-external-user-already-exists).
+1. The end user triggers the **invitation** within the LOB application and provides the email address of the external user. The application checks if the user already exists, and if they don't, proceeds to [Create and send the invitation](#create-and-send-the-invitation)|
+2. The application sends a POST to the Microsoft Graph API on behalf of the user. It provides the redirect URL and external user's email that is defined in [Confirm the external user is in the directory](#confirm-the-external-user-is-in-the-directory).
 3. Microsoft Graph API provisions the guest user in Microsoft Entra ID.
 4. Microsoft Graph API returns the success ir failure status of the API call. If successful, the response includes the Microsoft Entra user object ID and the invitation link sent to the invited user email. You can suppress the Microsoft email and send your own custom email.
 5. (Optional) To write more attributes to the invited user, or add the invited user to a group, the application makes an extra API call to the Microsoft Graph API.
