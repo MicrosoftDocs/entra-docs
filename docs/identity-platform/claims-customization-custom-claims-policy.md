@@ -1,6 +1,6 @@
 ---
 title: Customize claims using Microsoft Graph Custom Claims Policy (preview)
-description: This article demonstrates how to customize claims in Microsoft Entra ID using the Custom Claims Policy
+description: This article demonstrates how to customize claims in Microsoft Entra ID using the Custom Claims Policy.
 services: entra-id
 documentationcenter: .net
 author: cilwerner
@@ -17,9 +17,9 @@ ms.custom:
 
 A claim is information that an identity provider states about a user inside the token they issue for that user. Claims customization is used by tenant admins to customize the claims emitted in tokens for a specific application in their tenant. Claims customization supports configuring claims for applications using SAML, OAuth, and OpenID Connect protocols. You can use claims customization to:
 
-- select which claims are included in tokens.
-- create claim types that don't already exist.
-- choose or change the source of data emitted in specific claims.
+- Select which claims are included in tokens.
+- Create claim types that don't already exist.
+- Choose or change the source of data emitted in specific claims.
 
 In this how-to guide, we cover a few common scenarios that can help you understand how to use the [Custom Claims policy](/graph/api/resources/customclaimspolicy). 
 
@@ -32,8 +32,8 @@ In this how-to guide, we cover a few common scenarios that can help you understa
 ## Claims customization in Microsoft Entra ID
 
 Microsoft Entra ID supports two ways to customize claims using Microsoft Graph/PowerShell for your applications:
-1. Using [Custom Claims Policy (Preview)](/graph/api/resources/customclaimspolicy)
-1. Using [Claims Mapping Policy](/graph/api/resources/claimsmappingpolicy)
+- Using [Custom Claims Policy (Preview)](/graph/api/resources/customclaimspolicy)
+- Using [Claims Mapping Policy](/graph/api/resources/claimsmappingpolicy)
 
 In the following examples, you create, update, and replace policies for service principals. Custom claims policies are always linked to [service principal](/graph/api/resources/serviceprincipal) objects. Be sure that you've configured your Enterprise Application as part of the prerequisites before creating a Custom Claims policy for the application/service principal.
 
@@ -226,8 +226,8 @@ In this example, you update a policy to emit a custom claim "JoinedData" to JWTs
     }
     ```
 
-> [!NOTE]
-> Custom Claims Policy is a strongly typed policy and each transformation uses a different `@odata.type` value.
+    > [!NOTE]
+    > Custom Claims Policy is a strongly typed policy and each transformation uses a different `@odata.type` value.
 
 1.	To see your new policy, and to get the policy `ObjectId`, run the following command:
 
