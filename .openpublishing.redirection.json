@@ -886,6 +886,11 @@
       "redirect_url": "/entra/global-secure-access/how-to-manage-microsoft-profile",
       "redirect_document_id": false
     },
+    {
+      "source_path_from_root": "/docs/identity/enterprise-apps/configure-app-management-policy.md",
+      "redirect_url": "/entra/identity/enterprise-apps/what-is-application-management",
+      "redirect_document_id": false
+    },
     {            
       "source_path_from_root": "/docs/architecture/sse-deployment-guide-m365.md",
       "redirect_url": "/entra/architecture/sse-deployment-guide-microsoft-traffic",
