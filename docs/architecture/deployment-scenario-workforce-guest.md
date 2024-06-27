@@ -32,14 +32,14 @@ In these guides, we describe scenarios that show the value of the Microsoft Entr
 
 In this article, we describe how to configure Microsoft Entra Suite products for a scenario in which the fictional organization, Contoso, wants to hire new remote employees and provide them with secure and seamless access to necessary apps and resources. They want to invite and collaborate with external users (such as partners, vendors, or customers) and provide them with access to relevant apps and resources.
 
-Contoso uses Microsoft Entra Verified ID to issue and verify digital proofs of identity and status for new remote employees (based on human resources data) and external users (based on email invitations). Digital wallets store identity proof and status to allow access to apps and resources. As an extra security measure, Contoso might verify identity with FaceCheck facial recognition based on the picture that the credential stores.
+Contoso uses [Microsoft Entra Verified ID](../verified-id/decentralized-identifier-overview.md) to issue and verify digital proofs of identity and status for new remote employees (based on human resources data) and external users (based on email invitations). Digital wallets store identity proof and status to allow access to apps and resources. As an extra security measure, Contoso might verify identity with FaceCheck facial recognition based on the picture that the credential stores.
 
 They use Microsoft Entra ID Governance to create and grant access packages for employees and external users based on verifiable credentials.
 
 - For employees, they base access packages on job function and department. Access packages include cloud and on-premises apps and resources to which employees need access.
-- For external collaborators, they base access packages on based on invitation to define external user roles and permissions. The access packages include only apps and resources to which external users need access.
+- For external collaborators, they base access packages on invitation to define external user roles and permissions. The access packages include only apps and resources to which external users need access.
 
-Employees and external users can request access packages through a self-service portal and provide their digital proofs as identity verification. With single sign-on and multifactor authentication, employees and external users use Microsoft Entra accounts to access apps and resources that their access packages include. Contoso verifies credentials and grants access packages without requiring manual approvals or provisioning.
+Employees and external users can request access packages through a self-service portal and provide their digital proofs as identity verification. With single sign-on and multifactor authentication, employees and external users to use Microsoft Entra accounts to access apps and resources that their access packages include. Contoso verifies credentials and grants access packages without requiring manual approvals or provisioning.
 
 Contoso uses Microsoft Entra Identity Protection and Conditional Access (CA) to monitor and protect accounts from risky sign-ins and user behavior. They enforce appropriate access controls based on location, device, and risk level.
 

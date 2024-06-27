@@ -44,7 +44,7 @@ You can replicate these high-level steps for the Contoso solution as described i
 1. Deploy [Microsoft Global Secure Access client](../global-secure-access/how-to-install-windows-client.md) on user devices and [Microsoft Entra Private Access connectors](sse-deployment-guide-private-access.md) on private networks. Include multicloud IaaS based virtual networks to access apps and resources on Contoso networks.
 1. Set up private apps as [Global Secure Access apps](../global-secure-access/how-to-configure-per-app-access.md). Assign appropriate users and groups. Set up [Conditional Access policies](../identity/conditional-access/plan-conditional-access.md) for those apps and users. With this setup, you can achieve minimum access by allowing access only to users and groups that require access.
 1. Enable [Microsoft Entra ID Protection](../id-protection/overview-identity-protection.md) for users to allow administrators to investigate and remediate risks to keep organizations safe and secure. Risks can be fed into tools like Conditional Access to make access decisions and fed back to a security information and event management (SIEM) tool for investigation.
-1. Use enhanced logs and analytics from Microsoft Entra Internet Access, Microsoft Entra Private Access, and Microsoft Entra ID Identity Protection to track and evaluate network and security status. This configuration helps your Security Operations Center (SOC) team to promptly detect and examine threats to prevent escalation.
+1. Use enhanced logs and analytics from Microsoft Entra Internet Access, Microsoft Entra Private Access, and Microsoft Entra Identity Protection to track and evaluate network and security status. This configuration helps your Security Operations Center (SOC) team to promptly detect and examine threats to prevent escalation.
 
 Microsoft Entra solutions offer these advantages over VPN:
 
@@ -69,7 +69,7 @@ Conditional Access (CA) policy configuration requires the Conditional Access Adm
 
 To successfully deploy and test this scenario, configure these prerequisites:
 
-1. Microsoft Entra tenant with Microsoft Entra ID P1 license. Configure Microsoft Entra ID to test Identity Protection. [Purchase licenses or obtain trial licenses](https://www.microsoft.com/security/business/microsoft-entra-pricing).
+1. Microsoft Entra tenant with Microsoft Entra ID P1 license. Configure Microsoft Entra ID to test Microsoft Entra Identity Protection. [Purchase licenses or obtain trial licenses](https://www.microsoft.com/security/business/microsoft-entra-pricing).
    - One user with at least Global Secure Access Administrator and Application Administrator roles to configure Microsoft's Security Service Edge
    - At least one user as client test user in your tenant
 1. One Windows client device with this configuration:
@@ -126,7 +126,7 @@ The connector server communicates with Microsoft's Security Service Edge Solutio
 1. Follow the installation wizard to install the connector service on the connector server. When prompted, enter tenant credentials to complete installation.
 1. The connector server is installed when it appears in **Connectors**.
 
-In this scenario, we use the default connector group with one connector server. In a production environment, create connector groups with multiple connector servers. See detailed guidance for publishing apps on separate networks by using connector groups.
+In this scenario, we use the default connector group with one connector server. In a production environment, create connector groups with multiple connector servers. See detailed guidance for [publishing apps on separate networks by using connector groups](../identity/app-proxy/application-proxy-connector-groups.md).
 
 ### Create security group for modernize remote access scenario
 
@@ -323,7 +323,7 @@ Follow these steps to create an Entitlement management catalog:
 
 #### Provision groups to Active Directory
 
-We recommend group provisioning to Active Directory with [Microsoft Entra Cloud Sync](../identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md). If you use Connect Sync, switch your configuration to Cloud Sync. The [Prerequisites for Microsoft Entra Cloud Sync in Microsoft Entra ID](../identity/hybrid/cloud-sync/how-to-prerequisites.md?tabs=public-cloud) and [How to install the Microsoft Entra provisioning agent](../identity/hybrid/cloud-sync/how-to-install.md) articles provide detailed instructions. Group writeback with Microsoft Entra Connect Public Preview availability ends June 30, 2021.
+We recommend group provisioning to Active Directory with [Microsoft Entra Cloud Sync](../identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md). If you use Connect Sync, switch your configuration to Cloud Sync. The [Prerequisites for Microsoft Entra Cloud Sync in Microsoft Entra ID](../identity/hybrid/cloud-sync/how-to-prerequisites.md?tabs=public-cloud) and [How to install the Microsoft Entra provisioning agent](../identity/hybrid/cloud-sync/how-to-install.md) articles provide detailed instructions. Group Writeback v2 in Microsoft Entra Connect Sync will no longer be available after June 30, 2024.
 
 Follow these steps to configure Microsoft Entra Cloud sync:
 
