@@ -53,7 +53,7 @@ When you upgrade to the latest versions, you ensure that when the service change
 - Microsoft Entra Connect Health agent for ADDS
 - Microsoft Entra Connect Health agent for ADFS
 
-See documentation here: [Security improvements to the auto-upgrade process](https://review.learn.microsoft.com/en-us/entra/identity/hybrid/connect/security-updates-pks?branch=pr-en-us-3827) for upgrade-related guidance, versioning information, and further details on the expected impacts of the service change.
+See documentation here: [Security improvements to the auto-upgrade process](/entra/identity/hybrid/connect/security-updates-pks) for upgrade-related guidance, versioning information, and further details on the expected impacts of the service change.
 
 ---
 
