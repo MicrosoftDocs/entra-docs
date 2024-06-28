@@ -425,8 +425,8 @@ When troubleshooting, consider the following information:
 * Confirm element tags are consistent, or SSO fails
 * Complex forms generated dynamically might require dev tool analysis to understand the sign in form
 * Client initiation is better for sign in pages with multiple forms
-  * You can specify form name and customize the JavaScript form handler logic
-* FBA SSO methods optimize user experience and security by hiding form interactions:
+  * You can select the form name and customize the JavaScript form handler logic
+* FBA SSO methods hide form interactions to optimize user experience and security:
   * You can validate if the credentials are injected 
   * In client-initiated mode, disable form auto submission in your SSO profile
   * Use dev tools to disable the two style properties that prevent the sign in page from appearing
