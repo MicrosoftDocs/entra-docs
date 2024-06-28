@@ -86,7 +86,7 @@ This tutorial covers Guided Configuration 16.1 with an Easy Button template. Wit
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-Before a client or service can access Microsoft Graph, [Microsoft identity platform.](~/identity-platform/quickstart-register-app.md) trusts it. This action creates a tenant app registration to authorize Easy Button access to Graph. Through these permissions, the BIG-IP pushes the configurations to establish a trust between a SAML SP instance for published application, and Microsoft Entra ID as the SAML IdP.
+[Microsoft identity platform.](~/identity-platform/quickstart-register-app.md) trusts a service or client, and then either can acess Microsoft Graph. This action creates a tenant app registration to authorize Easy Button access to Graph. Through these permissions, the BIG-IP pushes the configurations to establish a trust between a SAML SP instance for published application, and Microsoft Entra ID as the SAML IdP.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 2. Browse to **Identity** > **Applications** > **App registrations > New registration**.
@@ -378,7 +378,7 @@ For more information, see [Kerberos Constrained Delegation across domains](/prev
 
 ## App view
 
-From a browser, connect to the application external URL or select the **application** icon in the [Microsoft MyApps portal](https://myapps.microsoft.com/). After authenticating to Microsoft Entra ID, redirection takes you to the BIG-IP virtual server for the application and signed in through SSO.
+From a browser, connect to the application external URL or select the **application** icon in the [Microsoft MyApps portal](https://myapps.microsoft.com/). After you authenticate to Microsoft Entra ID, redirection takes you to the BIG-IP virtual server for the application and signed in with SSO.
 
    ![Screenshot of the application's external URL](./media/f5-big-ip-kerberos-easy-button/app-view.png)
 
