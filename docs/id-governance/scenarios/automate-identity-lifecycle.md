@@ -19,9 +19,9 @@ The following document provides an overview of how you can automate identity lif
 ## Automatic inbound provisioning from Active Directory
 Provisioning from active directory to Microsoft Entra ID can be accomplished in several different ways using any of the following:
 
- - [Microsoft Entra Cloud Sync](provision-ad-to-entra-cloud-sync.md)
+ - [Microsoft Entra Cloud Sync](~/identity/hybrid/cloud-sync/what-is-cloud-sync.md)
 
- - [Microsoft Entra Connect Sync](provision-ad-to-entra-connect-sync.md)
+ - [Microsoft Entra Connect Sync](~/identity/hybrid/connect/whatis-azure-ad-connect-v2.md)
 
  - [Microsoft Identity Manager](/microsoft-identity-manager/microsoft-identity-manager-2016) to trigger provisioning when a new identity is created in these HR systems. 
 
