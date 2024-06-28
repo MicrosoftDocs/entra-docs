@@ -6,7 +6,7 @@ manager: martinco
 ms.service: entra
 ms.subservice: architecture
 ms.topic: conceptual
-ms.date: 06/27/2024
+ms.date: 06/28/2024
 ms.author: gasinh
 ms.reviewer: ajburnle
 ---
@@ -17,7 +17,7 @@ A Microsoft Entra single-tenant architecture with delegated administration often
 
 For this article, it's important to understand:
 
-* Single tenant opration and function
+* Single tenant operation and function
 * Administrative units (AUs) in Microsoft Entra ID
 * Relationships between Azure resources and Microsoft Entra tenants
 * Requirements that drive isolation
@@ -116,7 +116,7 @@ Configuration settings in Microsoft Entra ID can affect resources in the Microso
   * Bypass security requirements
 * **Self-service options**: Administrators set self-service-password reset and create Microsoft 365 groups at the tenant level
 
-Some tenant-wide configurations can be scoped if they're not overridden by global policies:
+If not overridden by global policies, you can scope some tenant-wide configurations:
 
 * Tenant configuration allows external identities. A resource administrator can exclude those identities from access.
 * Tenant configuration allows personal device registration. A resource administrator can exclude devices from access.
@@ -190,12 +190,13 @@ Given the interdependence between a Microsoft Entra tenant and its resources, it
 
 * **Identity compromise**: In the tenant boundary, identities are assigned any role, if the administrator providing access has sufficient privileges. While the effect of compromised nonprivileged identities is largely contained, compromised administrators can cause broad problems. For example, if a Microsoft Entra Global Administrator account is compromised, Azure resources can become compromised. To mitigate risk of identity compromise, or bad actors, implement [tiered administration](/security/privileged-access-workstations/privileged-access-access-model) and follow principles of least privilege for [Microsoft Entra administrator roles](../identity/role-based-access-control/delegate-by-task.md). Create Conditional Access policies that exclude test accounts and test Service Principals from accessing resources outside the test applications. For more information on privileged access strategy, see [privileged access: strategy](/security/privileged-access-workstations/privileged-access-strategy).
 * **Federated environment compromise**
-* **Trusting resource compromise**: Any compromised component of a Microsoft Entra tenant affects trusting resources, based on permissions at the tenant and resource level. The effect of a compromised component of a Microsoft Entra ID trusting resource is determined by the resource privileges. Resources integrated to perform write operations affect the entire tenant. Following [Zero Trust guidance](/azure/architecture/guide/security/conditional-access-zero-trust) can help limit the effects of compromise.
+* **Trusting resource compromise**: Any compromised component of a Microsoft Entra tenant affects trusting resources, based on permissions at the tenant and resource level. A resource's privileges determine the effect of a compromised component. Resources integrated to perform write operations can affect the entire tenant. Following [Zero Trust guidance](/azure/architecture/guide/security/conditional-access-zero-trust) can help limit the effects of compromise.
 * **Application development**: There's risk in the early stages of application development lifecycle with writing privileges to Microsoft Entra ID. Bugs can write changes unintentionally to Microsoft Entra objects. To learn more, see [Microsoft identity platform best practices](~/identity-platform/identity-platform-integration-checklist.md).
-* **Operational error**: A security incident is caused by bad actors, and because of operational errors by tenant administrators or resource owners. These risks occur in any architecture. Use separation of duties, tiered administration, principles of least privilege, and following best practices. Avoid using a seprate tenant.
+* **Operational error**: Bad actors, and operational errors by tenant administrators or resource owners help cause security incidents. These risks occur in any architecture. Use separation of duties, tiered administration, principles of least privilege, and following best practices. Avoid using a separate tenant.
 
 ### Zero Trust principles
-Incorporate zero-trust principles into your Microsoft Entra ID design strategy to guide secure design. You can [embrace proactive security with Zero Trust](https://www.microsoft.com/security/business/zero-trust).
+
+Incorporate Zero Trust principles into your Microsoft Entra ID design strategy to guide secure design. You can [embrace proactive security with Zero Trust](https://www.microsoft.com/security/business/zero-trust).
 
 ## Next steps
 
