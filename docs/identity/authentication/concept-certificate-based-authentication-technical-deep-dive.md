@@ -117,8 +117,7 @@ If the CBA-enabled user can't use an MF cert, such as on mobile device without s
    1. Use password and MF cert (when user can use MF cert).
    1. Authentication Policy Administrator adds a phone number and allows voice/text message authentication for the user account.
 
-
-## MFA with single-factor certificate-based authentication (Preview)
+## MFA with single-factor certificate-based authentication
 
 Microsoft Entra CBA can be used as a second factor to meet MFA requirements with single-factor certificates. 
 Some of the supported combinations are:
@@ -126,7 +125,6 @@ Some of the supported combinations are:
 1. CBA (first factor) and [passkeys](../authentication/how-to-enable-authenticator-passkey.md) (second factor)
 1. CBA (first factor) and [passwordless phone sign-in](../authentication/howto-authentication-passwordless-phone.md#enable-passwordless-phone-sign-in-authentication-methods) (second factor)
 1. CBA (first factor) and [FIDO2 security keys](../authentication/howto-authentication-passwordless-security-key-windows.md) (second factor) 
-1. Password (first factor) and CBA (second factor) 
 
 Users need to have another way to get MFA and register passwordless sign-in or FIDO2 in advance to signing in with Microsoft Entra CBA.
 
@@ -184,6 +182,13 @@ Let's look at an example of a user who has single-factor certificate, and is con
    :::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/number.png" alt-text="Screenshot of number match.":::
 
 1. Select **Yes** and user can authenticate and sign in.
+
+## MFA with Certificate-based authentication as second factor (Preview)
+CBA can be used as a second factor like Password (first factor) and CBA (second factor) to get MFA.
+
+>[!NOTE]
+On iOS, users with certificate-based authentication will see a "double prompt", where they must click the option to use certificate-based authentication twice.
+On iOS, users with Microsoft Authenticator App will also see hourly login prompt to authenticate with CBA if there's an Authentication Strength policy enforcing CBA, or if they use CBA as the second factor or step-up authentication.
 
 ## Understanding the authentication binding policy
 
