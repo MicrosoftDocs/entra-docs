@@ -136,84 +136,71 @@ Configurations controlled by administrators affect resources. While some tenant-
 
 ## Tenant administration
 
-Identities with privileged roles in the Microsoft Entra tenant have the visibility and permissions to execute the configuration tasks described in the previous sections. 
+Identities with privileged roles in a Microsoft Entra tenant have the visibility and permissions to execute the configuration tasks described in the previous sections. Administration includes ownership of identity objects such as users, groups, and devices. It also includes the scoped implementation of tenant-wide configurations for authentication, authorization, and so on.
 
-Administration includes ownership of identity objects such as users, groups, and devices. It also includes the scoped implementation of tenant-wide configurations for authentication, authorization, and so on.
+### Directory objects administration
 
-### Administration of directory objects
+Administrators manage how identity objects access resources, and under what circumstances. They also disable, delete, or modify directory objects, based on their privileges. Identity objects include:
 
-Administrators manage how identity objects can access resources, and under what circumstances. They also can disable, delete, or modify directory objects based on their privileges. Identity objects include:
-
-* **Organizational identities**, such as the following, are represented by user objects:
+* **Organizational identities** such as the following, are represented by user objects:
   * Administrators
   * Organizational users
   * Organizational developers
   * Service Accounts
   * Test users
-* **External identities** represent users from outside the organization such as:
-  * Partners, suppliers, or vendors that are provisioned with accounts local to the organization environment
-  * Partners, suppliers, or vendors that are provisioned via Azure B2B collaboration
-* **Groups** are represented by objects such as:
+* **External identities** represent users from outside the organization:
+  * Partners, suppliers, or vendors provisioned with accounts in the organization environment
+  * Partners, suppliers, or vendors provisioned with Azure B2B collaboration
+* **Groups** are represented by objects:
   * Security groups
   * [Microsoft 365 groups](/microsoft-365/community/all-about-groups)
-  * Dynamic Groups
-  * Administrative Units
-* **Devices** are represented by objects such as:
-  * Microsoft Entra hybrid joined devices (On-premises computers synchronized from on-premises Active Directory)
+  * Dynamic groups
+  * Administrative units
+* **Devices** are represented by objects:
+  * Microsoft Entra hybrid joined devices. On-premises computers synchronized from on-premises.
   * Microsoft Entra joined devices
-  * Microsoft Entra registered mobile devices used by employees to access their workplace applications.
+  * Microsoft Entra registered mobile devices used by employees to access workplace application
   * Microsoft Entra registered down-level devices (legacy). For example, Windows 2012 R2.
 * **Workload Identities**
   * Managed identities
   * Service Principals
   * Applications
 
-In a hybrid environment, identities are typically synchronized from the on-premises Active Directory environment using [Microsoft Entra Connect](~/identity/hybrid/connect/whatis-azure-ad-connect.md).
+In a hybrid environment, identities are synchronized typically from the on-premises environment using [Microsoft Entra Connect](~/identity/hybrid/connect/whatis-azure-ad-connect.md).
 
-### Administration of identity services
+### Identity services administration
 
-Administrators with appropriate permissions can also manage how tenant-wide policies are implemented at the level of resource groups, security groups, or applications. When considering administration of resources, consider the following reasons to group resources, or to isolate them.
+Administrators with certain permissions manage how tenant-wide policies are implemented for resource groups, security groups, or applications. When considering resource administration, keep in mind the following reasons to group resources, or to isolate them.
 
-* A **Global Administrator** can take control of any Azure subscription linked to the Tenant.
-
-* An **identity assigned an Authentication Administrator role** can require nonadministrators to reregister for MFA or FIDO authentication.
-
-* A **Conditional Access Administrator** can create Conditional Access policies that require users signing-in to specific apps to do so only from organization-owned devices. They can also scope configurations. For example, even if external identities are allowed in the tenant, they can exclude those identities from accessing a resource.
-
-* A **Cloud Application Administrator** can consent to application permissions on behalf of all users.
+* **Global Administrators** control Azure subscriptions linked to the tenant
+* **Identities assigned an Authentication Administrator role** require nonadministrators to reregister for multifactor authentication or Fast IDentity Online (FIDO) authentication.
+* **Conditional Access Administrators** create Conditional Access policies for user sign-in to apps, from organization-owned devices. These administrators scope configurations. For example, if external identities are allowed in the tenant, they can exclude access to resources.
+* **Cloud Application Administrators** consent to application permissions on behalf of users
 
 ### Common reasons for administrative isolation
 
-Who should have the ability to administer the environment and its resources? There are times when administrators of one environment must not have access to another environment. Examples include:
+Who should administer the environment and its resources? Sometimes, administrators of one environment don't have access to another environment:
 
-* Separation of tenant-wide administrative responsibilities to further mitigate the risk of security and operational errors affecting critical resources.
-
-* Regulations that constrain who can administer the environment based on conditions such as citizenship, residency, clearance level, and so on. 
+* Separation of tenant-wide administrative responsibilities to mitigate risk of security and operational errors affecting critical resources
+* Regulations that constrain who can administer the environment, based on conditions such as citizenship, residency, clearance level, and so on 
 
 ## Security and operational considerations
 
-Given the interdependence between a Microsoft Entra tenant and its resources, it's critical to understand the security and operational risks of compromise or error. If you're operating in a federated environment with synchronized accounts, an on-premises compromise can lead to a Microsoft Entra ID compromise.
+Given the interdependence between a Microsoft Entra tenant and its resources, it's important to understand the security and operational risks of compromise or error. If you operate in a federated environment with synchronized accounts, an on-premises compromise can lead to a Microsoft Entra ID compromise.
 
-* **Identity compromise** - In the boundary of a tenant, any identity can be assigned any role, given the one providing access has sufficient privileges. While the effect of compromised nonprivileged identities is largely contained, compromised administrators can have broad implications. For example, if a Microsoft Entra Global Administrator account is compromised, Azure resources can become compromised. To mitigate risk of identity compromise, or bad actors, implement [tiered administration](/security/privileged-access-workstations/privileged-access-access-model) and ensure that you follow principles of least privilege for [Microsoft Entra Administrator Roles](../identity/role-based-access-control/delegate-by-task.md). Similarly, ensure that you create Conditional Access policies that specifically exclude test accounts and test service principals from accessing resources outside of the test applications. For more information on privileged access strategy, see [Privileged access: Strategy](/security/privileged-access-workstations/privileged-access-strategy).
-
+* **Identity compromise**: In the tenant boundary, identities are assigned any role, if the administrator providing access has sufficient privileges. While the effect of compromised nonprivileged identities is largely contained, compromised administrators can cause broad problems. For example, if a Microsoft Entra Global Administrator account is compromised, Azure resources can become compromised. To mitigate risk of identity compromise, or bad actors, implement [tiered administration](/security/privileged-access-workstations/privileged-access-access-model) and follow principles of least privilege for [Microsoft Entra administrator roles](../identity/role-based-access-control/delegate-by-task.md). Create Conditional Access policies that exclude test accounts and test Service Principals from accessing resources outside the test applications. For more information on privileged access strategy, see [privileged access: strategy](/security/privileged-access-workstations/privileged-access-strategy).
 * **Federated environment compromise**
+* **Trusting resource compromise**: Any compromised component of a Microsoft Entra tenant affects trusting resources, based on permissions at the tenant and resource level. The effect of a compromised component of a Microsoft Entra ID trusting resource is determined by the resource privileges. Resources integrated to perform write operations affect the entire tenant. Following [Zero Trust guidance](/azure/architecture/guide/security/conditional-access-zero-trust) can help limit the effects of compromise.
+* **Application development**: There's risk in the early stages of application development lifecycle with writing privileges to Microsoft Entra ID. Bugs can write changes unintentionally to Microsoft Entra objects. To learn more, see [Microsoft identity platform best practices](~/identity-platform/identity-platform-integration-checklist.md).
+* **Operational error**: A security incident is caused by bad actors, and because of operational errors by tenant administrators or resource owners. These risks occur in any architecture. Use separation of duties, tiered administration, principles of least privilege, and following best practices. Avoid using a seprate tenant.
 
-* **Trusting resource compromise** - Human identities aren't the only security consideration. Any compromised component of the Microsoft Entra tenant can affect trusting resources based on its level of permissions at the tenant and resource level. The effect of a compromised component of a Microsoft Entra ID trusting resource is determined by the privileges of the resource. Resources deeply integrated to perform write operations can affect the entire tenant. Following [guidance for zero trust](/azure/architecture/guide/security/conditional-access-zero-trust) can help limit the impact of compromise.
-
-* **Application development** - Early stages of the development lifecycle for applications with writing privileges to Microsoft Entra ID, where bugs can unintentionally write changes to the Microsoft Entra objects, present a risk. To help mitigate risks, see [Microsoft identity platform best practices](~/identity-platform/identity-platform-integration-checklist.md) during development.
-
-* **Operational error** - A security incident can occur not only due to bad actors, but also because of an operational error by tenant administrators or the resource owners. These risks occur in any architecture. Mitigate these risks with separation of duties, tiered administration, following principles of least privilege, and following best practices before trying to mitigate by using a separate tenant.
-
-Incorporating zero-trust principles into your Microsoft Entra ID design strategy can help guide your design to mitigate these considerations. For more information, visit [Embrace proactive security with Zero Trust](https://www.microsoft.com/security/business/zero-trust).
+### Zero Trust principles
+Incorporate zero-trust principles into your Microsoft Entra ID design strategy to guide secure design. You can [embrace proactive security with Zero Trust](https://www.microsoft.com/security/business/zero-trust).
 
 ## Next steps
 
 * [Microsoft Entra fundamentals](./secure-fundamentals.md)
-
 * [Azure resource management fundamentals](secure-resource-management.md)
-
 * [Resource isolation in a single tenant](secure-single-tenant.md)
-
 * [Resource isolation with multiple tenants](secure-multiple-tenants.md)
-
 * [Best practices](secure-best-practices.md)
