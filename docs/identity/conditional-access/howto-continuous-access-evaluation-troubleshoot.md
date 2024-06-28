@@ -5,7 +5,7 @@ description: Troubleshoot and respond to changes in user state faster with conti
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: troubleshooting
-ms.date: 04/03/2023
+ms.date: 06/27/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo

@@ -1,11 +1,11 @@
 ---
 title: Block unsupported platforms with Conditional Access
-description: Create a custom Conditional Access policy to block unsupported platforms
+description: Create a custom Conditional Access policy blocking unsupported platforms.
 
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 09/05/2023
+ms.date: 06/27/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
