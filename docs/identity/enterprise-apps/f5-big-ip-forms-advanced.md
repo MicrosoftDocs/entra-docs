@@ -40,8 +40,8 @@ With a BIG-IP in front of the application, you can overlay the service with Micr
 The SHA solution has the following components:
 
 * **Application** - BIG-IP published service protected by SHA. 
-  * The application validates user credentials against Active Directory
-  * Use any directory, including Active Directory Lightweight Directory Services, open source, and so on
+  * The application validates user credentials
+  * Use any directory, open source, and so on
 * **Microsoft Entra ID** - Security Assertion Markup Language (SAML) identity provider (IdP) that verifies user credentials, Conditional Access, and SSO to the BIG-IP. 
   * With SSO, Microsoft Entra ID provides attributes to the BIG-IP, including user identifiers
 * **BIG-IP** - reverse-proxy and SAML service provider (SP) to the application. 
@@ -475,7 +475,7 @@ To learn more, go to techdocs.f5.com for [Manual Chapter: Session Variables](htt
 
 ## Resources
 
-* Go to techdocs.f5.com for [Manual Chapter: Active Directory Authentication](https://techdocs.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-authentication-single-sign-on-11-5-0/2.html)
+* Go to techdocs.f5.com for [Manual Chapter: Authentication](https://techdocs.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-authentication-single-sign-on-11-5-0/2.html)
 * [Passwordless authentication](https://www.microsoft.com/security/business/identity/passwordless)
 * [What is Conditional Access?](~/identity/conditional-access/overview.md)
 * [Zero Trust framework to enable remote work](https://www.microsoft.com/security/blog/2020/04/02/announcing-microsoft-zero-trust-assessment-tool/)
