@@ -168,14 +168,14 @@ Learn more: [Grant B2B users in Microsoft Entra ID access to your on-premises ap
 
 ## Next steps
 
-You can conduct a proof-of-concept for SHA using your BIG-IP infrastructure, or by [Deploying a BIG-IP Virtual Edition virtual machine into Azure](f5-bigip-deployment-guide.md). To deploy a VM in Azure takes approximately 30 minutes. The result is:
+You can conduct a proof-of-concept (POC) for SHA using your BIG-IP infrastructure, or by [Deploying a BIG-IP Virtual Edition virtual machine into Azure](f5-bigip-deployment-guide.md). To deploy a VM in Azure takes approximately 30 minutes. The result is:
 
 - A secured platform to model a pilot for SHA
-- A preproduction instance for testing new BIG-IP system updates and hotfixes
+- A preproduction instance to test new BIG-IP system updates and hotfixes
 
 Identify one or two applications to be published with BIG-IP and protected with SHA.
 
-Our recommendation is to start with an application that isn't published via a BIG-IP. This action avoids potential disruption to production services. The guidelines in this article can help you learn about the procedure to create BIG-IP configuration objects and setting up SHA. You can then convert BIG-IP published services to SHA with minimal effort.
+Our recommendation is to start with an application that isn't published via a BIG-IP. This action avoids potential disruption to production services. The guidelines in this article can help you learn about the procedure to create BIG-IP configuration objects and setting up SHA. You can then convert BIG-IP published services to SHA.
 
 ## Resources
 
