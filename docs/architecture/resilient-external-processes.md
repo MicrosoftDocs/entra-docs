@@ -7,7 +7,7 @@ ms.topic: how-to
 author: gargi-sinha
 ms.author: gasinh
 manager: martinco
-ms.date: 06/27/2024
+ms.date: 06/28/2024
 ---
 
 # Resilient interfaces with external processes using Azure AD B2C
@@ -16,7 +16,7 @@ In this article, find guidance on how to plan for and implement the RESTful APIs
 
 ## Ensure correct API placement
 
-Use identity experience framework (IEF) policies to call an external system using a [RESTful API technical profile](/azure/active-directory-b2c/restful-technical-profile). External systems aren't controlled by the IEF runtime environment and are a potential failure point.
+Use identity experience framework (IEF) policies to call an external system using a [RESTful API technical profile](/azure/active-directory-b2c/restful-technical-profile). The IEF runtime environment doesn't control external systems, which is a potential failure point.
 
 ### Manage external systems using APIs
 
@@ -24,17 +24,17 @@ While calling an interface to access certain data, confirm the data drives the a
 
 If the data for authentication is relatively static and small, and shouldn't be externalized, put it in the directory.
 
-When possible, remove API calls from the preauthenticated path. If you can't, then enable protections for Denial of Service (DoS) and Distributed Denial of Service (DDoS) attacks for APIs. Attackers can load the sign-in page and try to flood your API with DoS attacks to disable your application. For example, use Completely Automated Public Turing Test To Tell Computers and Humans Apart (CAPTCHA) in your sign in and sign-up flow.
+When possible, remove API calls from the preauthenticated path. If you can't, then enable protections for Denial of Service (DoS) and Distributed Denial of Service (DDoS) attacks for APIs. Attackers can load the sign-in page and try to flood your API with DoS attacks to disable your application. For example, use Completely Automated Public Turing Test To Tell Computers and Humans Apart (CAPTCHA) in your sign in and sign up flow.
 
 Use [API connectors of sign-up user flows](/azure/active-directory-b2c/api-connectors-overview) to integrate with web APIs after federating with an identity provider, during sign-up, or before you create the user. Because user flows are tested, you don't have to perform user flow-level functional, performance, or scale testing. Test your applications for functionality, performance, and scale.
 
 Azure AD B2C RESTful API [technical profiles](/azure/active-directory-b2c/restful-technical-profile) don't provide any caching behavior. Instead, RESTful API profile implements a retry logic and a timeout built into the policy.
 
-For APIs that need writing data, use a task to have these actions executed by a background worker. Use services like [Azure queues](/azure/storage/queues/storage-queues-introduction). This practice makes the API return efficiently and increases the policy execution performance.  
+For APIs that need to write data, use a task to have these actions executed by a background worker. Use services like [Azure queues](/azure/storage/queues/storage-queues-introduction). This practice makes the API return efficiently and increases the policy execution performance.  
 
 ## API errors
 
-Because the APIs live outside the Azure AD B2C system, enable error handling in the technical profile. Esure users are informed and the application can deal with failure gracefully.
+Because the APIs live outside the Azure AD B2C system, enable error handling in the technical profile. Ensure users are informed and the application can deal with failure gracefully.
 
 ### Handle API errors
 
