@@ -47,4 +47,3 @@ It's a best practice to use the least privileged role to perform administrative 
 >The least privileged role for Entitlement management has changed from the User Administrator role to the Identity Governance Administrator role.
 
 
-## Next Steps
