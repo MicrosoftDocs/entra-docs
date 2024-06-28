@@ -5,7 +5,7 @@ description: Learn how Microsoft Entra certificate-based authentication works
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 06/27/2024
+ms.date: 06/28/2024
 
 
 ms.author: justinha
@@ -92,7 +92,7 @@ To enable click on the check box **Issuer Hints**. [Authentication Policy Admini
 
 ### CA trust store update propagation
 
-After you enable issuer hints and add, update, or delete CAs from the trust stote, there's a delay of up to 10 minutes to propagate the issuer hints back to client. Users can't authenticate with certificates issued by the new CAs until the hints are propagated. 
+After you enable issuer hints and add, update, or delete CAs from the trust state, there's a delay of up to 10 minutes to propagate the issuer hints back to client. Users can't authenticate with certificates issued by the new CAs until the hints are propagated. 
 
 Authentication Policy Administrators should sign in with a certificate after they enable issuer hints to initiate the propagation. Users will see the error message below when CA trust store updates are in propagation.
 
