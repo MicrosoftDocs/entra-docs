@@ -79,7 +79,7 @@ You need the following components:
   * See [Microsoft Entra Connect Sync: Understand and customize synchronization](~/identity/hybrid/connect/how-to-connect-sync-whatis.md)
 * An SSL certificate to publish services over HTTPS, or use default certificates while testing
   * See [SSL profile](./f5-bigip-deployment-guide.md#ssl-profile)
-* A form-based authentication application, or set up an IIS FBA app for testing
+* A form-based authentication application, or set up an Internet Information Services (IIS) form-based authentication (FBA) app for testing
   * See [Forms-based authentication](/troubleshoot/developer/webapps/aspnet/development/forms-based-authentication)
 
 ## BIG-IP configuration
@@ -164,7 +164,7 @@ SAML SP settings define the SAML SP properties that the APM uses to overlay the 
 
    ![Screenshot of the Create option on the SAML Service Provider tab.](./media/f5-big-ip-forms-advanced/f5-forms-configuration.png)
 
-4. On the **Create New SAML SP Service** pane, for **Name** and **Entity ID**, enter the defined name and entity ID.
+4. On **Create New SAML SP Service**, for **Name** and **Entity ID**, enter the defined name and entity ID.
 
    ![Screenshot of the Name and Entity ID fields under Create New SAML SP Service.](./media/f5-big-ip-forms-advanced/saml-sp-service.png)
 
@@ -403,16 +403,16 @@ For increased security, block direct access to the application, enforcing a path
 
 ## Test
 
-1. With a browser, connect to the application external URL, or in My Apps, select the application icon. 
-2. Authenticate to Microsoft Entra ID.
-3. You’re redirected to the BIG-IP endpoint for the application.
+1. The user connects to the application external URL, or in My Apps, and selects the application icon. 
+2. The user authenticates to Microsoft Entra ID.
+3. The user is redirected to the BIG-IP endpoint for the application.
 4. The password prompt appears. 
 5. The APM fills the username with the UPN from Microsoft Entra ID. The username is read-only for session consistency. Hide this field, if needed.
 
    ![Screenshot of the sign in page.](./media/f5-big-ip-forms-advanced/secured-sso.png)
 
 6. The information is submitted.
-7. You're signed in to the application.
+7. The user is signed in to the application.
 
    ![Screenshot of Welcome page.](./media/f5-big-ip-forms-advanced/welcome-message.png)
 
@@ -428,7 +428,7 @@ When troubleshooting, consider the following information:
   * You can specify form name and customize the JavaScript form handler logic
 * FBA SSO methods optimize user experience and security by hiding form interactions:
   * You can validate if the credentials are injected 
-  * In client-initiated mode, disable form autosubmission in your SSO profile
+  * In client-initiated mode, disable form auto submission in your SSO profile
   * Use dev tools to disable the two style properties that prevent the sign in page from appearing
 
   ![Screenshot of the Properties page.](./media/f5-big-ip-forms-advanced/properties.png)
