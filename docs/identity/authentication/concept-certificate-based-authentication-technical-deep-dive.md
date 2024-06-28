@@ -201,7 +201,7 @@ When a user has a multifactor certificate, they can perform multifactor authenti
 
 ### How Microsoft Entra ID resolves multiple authentication policy binding rules
 
-Because multiple custom authentication binding policy rules can be created with different certificate fields like using issuer + policy OID, or just Policy OID or just issuer. below are the steps used to determine the authentication protection level when custom rules overlap. They are as follows:
+Because multiple custom authentication binding policy rules can be created with different certificate fields like using issuer + policy OID, or just Policy OID or just issuer. Below are the steps used to determine the authentication protection level when custom rules overlap. They are as follows:
 
 1. Issuer + policy OID rules take precedence over Policy OID rules. Policy OID rules take precedence over certificate issuer rules. 
 1. Issuer + policy OID rules are evaluated first. If you have a custom rule with issuer CA1 and policy OID **1.2.3.4.5** with MFA, only certificate A satisfies both issuer value and policy OID will be given MFA.
@@ -462,7 +462,7 @@ The user certificate should be configured like this screenshot:
 :::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/user-certificate.png" alt-text="Screenshot of the user certificate." :::  
 
 ### Troubleshooting sign-in issues with dynamic variables in sign-in logs
-Although sign-in logs provide all the information to debug a user's sign-in issues, there are times when specific values are required and since sign-in logs does not support dynamic variables, the sign-in logs would have missing information.
+Although sign-in logs provide all the information to debug a user's sign-in issues, there are times when specific values are required and since sign-in logs do not support dynamic variables, the sign-in logs would have missing information.
 For ex: The failure reason in sign-in log would show something like "The Certificate Revocation List (CRL) failed signature validation. Expected Subject Key Identifier {expectedSKI} does not match CRL Authority Key {crlAK}. Please request your tenant administrator to check the CRL configuration." where {expectedSKI} and {crlAKI} are not populated with correct values.
 
 When users sign-in with CBA fails, please copy the log details from 'More Details' link in the error page. For more detailed info, look at [understanding CBA error page](./concept-certificate-based-authentication-technical-deep-dive.md#understanding-the-certificate-based-authentication-error-page)
