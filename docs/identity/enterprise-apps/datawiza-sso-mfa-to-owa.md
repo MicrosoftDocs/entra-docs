@@ -59,14 +59,14 @@ The following diagram illustrates the user flow from user browser to OWA.
 
    ![Screenshot of the user flow from user browser to owa.](media/datawiza-access-proxy/datawiza-flow-diagram.png)
 
-1. User browser requests access to DAP-protected OWA.
+1. The user browser requests access to DAP-protected OWA.
 2. The user browser is directed to Microsoft Entra ID.
 3. The Microsoft Entra sign-in page appears.
 4. The user enters credentials.
 5. Upon authentication, the user browser is directed to DAP.
 6. DAP and Microsoft Entra ID exchange tokens.
 7. Microsoft Entra ID issues the username and relevant information to DAP.
-8. DAP accesses the KDC with credentials. DAP requests a Kerberos ticket.
+8. DAP accesses the key distribution center (KDC) with credentials. DAP requests a Kerberos ticket.
 9. KDC returns a Kerberos ticket.
 10. DAP redirects the user browser to OWA.
 11. The OWA resource appears.|
@@ -243,7 +243,7 @@ Use the following instructions to integrate OWA with Microsoft Entra ID.
 
 2.  For **App name**, enter the app name. We recommend a meaningful naming convention.
 
-3.  For **Public Domain**, enter the app's external-facing URL. For example, `https://external.example.com`. Use localhost DNS for testing.
+3.  For **Public Domain**, enter the app's external-facing URL. For example, `https://external.example.com`. Use localhost domain name server (DNS) for testing.
 
 4.  For **Listen Port**, enter the port DAP listens on. If DAP isn't deployed behind a load balancer, you can use port indicated in Public Domain.
 
@@ -333,8 +333,6 @@ To provide more sign-in security, you can enforce Microsoft Entra multifactor au
 
 ## Next steps
 
--   [Video: Enable SSO and MFA for Oracle JD Edwards with Microsoft Entra ID via Datawiza](https://www.youtube.com/watch?v=_gUGWHT5m90)
-
--   [Tutorial: Configure Secure Hybrid Access with Microsoft Entra ID and Datawiza](./datawiza-configure-sha.md)
-
+-   [Enable SSO and MFA for Oracle JD Edwards with Microsoft Entra ID via Datawiza](https://www.youtube.com/watch?v=_gUGWHT5m90)
+-   [Configure Secure Hybrid Access with Microsoft Entra ID and Datawiza](./datawiza-configure-sha.md)
 -   Go to docs.datawiza.com for [Datawiza user guides](https://docs.datawiza.com/)
