@@ -154,11 +154,11 @@ Tutorials for using Easy Button templates, F5 BIG-IP Easy Button for SSO to:
 
 - [Kerberos applications](f5-big-ip-kerberos-easy-button.md)
 - [Header-based applications](f5-big-ip-headers-easy-button.md)
-- [Header-based and LDAP applications](f5-big-ip-ldap-header-easybutton.md)
-- [Oracle EBS (Enterprise Business Suite)](f5-big-ip-oracle-enterprise-business-suite-easy-button.md)
+- [Header-based and Lightweight Directory Access Protocol (LDAP) applications](f5-big-ip-ldap-header-easybutton.md)
+- [Oracle Enterprise Business Suite (EBS)](f5-big-ip-oracle-enterprise-business-suite-easy-button.md)
 - [Oracle JD Edwards](f5-big-ip-oracle-jde-easy-button.md)
 - [Oracle PeopleSoft](f5-big-ip-oracle-peoplesoft-easy-button.md)
-- [SAP ERP](f5-big-ip-sap-erp-easy-button.md)
+- [SAP Enterprise Resource Planning (ERP)](f5-big-ip-sap-erp-easy-button.md)
 
 ## Microsoft Entra B2B guest access
 
@@ -168,7 +168,7 @@ Learn more: [Grant B2B users in Microsoft Entra ID access to your on-premises ap
 
 ## Next steps
 
-You can conduct a proof-of-concept (POC) for SHA using your BIG-IP infrastructure, or by [Deploying a BIG-IP Virtual Edition virtual machine into Azure](f5-bigip-deployment-guide.md). To deploy a VM in Azure takes approximately 30 minutes. The result is:
+You can conduct a proof-of-concept (POC) for SHA using your BIG-IP infrastructure, or by [Deploying a BIG-IP Virtual Edition virtual machine into Azure](f5-bigip-deployment-guide.md). It takes approximately 30 minutes to deploy a virtual machine (VM) in Azure. The result is:
 
 - A secured platform to model a pilot for SHA
 - A preproduction instance to test new BIG-IP system updates and hotfixes
