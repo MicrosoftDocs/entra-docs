@@ -18,9 +18,9 @@ One concept that needs to be addressed before under taking an identity governanc
 
 In regards to Microsoft Entra ID Governance, applying the principle of least privilege helps enhance security and mitigate risks. This approach ensures that users and groups are granted access only to the resources, data, and actions that are relevant to their roles and responsibilities, and nothing beyond that.
 
-## Key concepts of the principle of least privileged include:
+## Key concepts of the principle of least privileged
 
-- **Access to only required resources** Users are given access to information and resources only if they have a genuine need for them to perform their tasks. This prevents unauthorized access to sensitive data and minimizes the potential impact of a security breach. Automating user provisioning helps reduce unnecessary granting of access rights. [Lifecycle workflows](../what-are-lifecycle-workflows.md) is an identity governance feature that enables organizations to manage Microsoft Entra users by automating basic lifecycle processes.
+- **Access to only required resources:** Users are given access to information and resources only if they have a genuine need for them to perform their tasks. This prevents unauthorized access to sensitive data and minimizes the potential impact of a security breach. Automating user provisioning helps reduce unnecessary granting of access rights. [Lifecycle workflows](../what-are-lifecycle-workflows.md) is an identity governance feature that enables organizations to manage Microsoft Entra users by automating basic lifecycle processes.
 
 - **Role-Based Access Control (RBAC):** Access rights are determined based on the specific roles or job functions of users. Each role is assigned the minimum permissions necessary to fulfill its responsibilities. [Microsoft Entra role-based access control](../../identity/role-based-access-control/custom-overview.md) manages access to Microsoft Entra resources.
 

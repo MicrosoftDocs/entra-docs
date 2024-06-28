@@ -46,27 +46,6 @@
         href: /microsoft-identity-manager/migrate-entra-id
       - name: Migrate from the FIM connector
         href: /microsoft-identity-manager/migrate-from-the-fim-connector-for-azure-active-directory
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 - name: Tutorials
   expanded: true
   items:
