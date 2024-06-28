@@ -59,7 +59,7 @@ SHA supports SP and IdP initiated flows. The following image illustrates the SP-
 ## Prerequisites
 
 * A Microsoft Entra ID Free account, or higher
-  * If you don't have one, get an [Azure free account](https://azure.microsoft.com/free/active-directory/)
+  * If you don't have one, get an [Azure free account](https://azure.microsoft.com/free/)
 * A BIG-IP or a BIG-IP Virtual Edition (VE) in Azure
   * See, [Deploy F5 BIG-IP Virtual Edition VM in Azure](./f5-bigip-deployment-guide.md)
 * Any of the following F5 BIG-IP licenses:
@@ -170,8 +170,6 @@ Use the Service Provider settings to define SAML SP instance properties of the a
 11. If you enabled encryption, from the **Assertion Decryption Certificate** list, select the certificate BIG-IP uploads to Microsoft Entra ID to encrypt the issued SAML assertions.
 
    ![Screenshot of options and selections for Service Provider.](./media/f5-big-ip-easy-button-ldap/service-provider-security-settings.png)
-
-<a name='azure-active-directory'></a>
 
 ### Microsoft Entra ID
 
