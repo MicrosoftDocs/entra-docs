@@ -13,7 +13,7 @@ ms.custom: not-enterprise-apps
 #customer intent: I'm an IT admin, and I want to configure Datawiza Access Proxy (DAP) to enable single sign-on (SSO) and Microsoft Entra multifactor authentication (MFA) for Outlook Web Access (OWA). My goal is to enhance application security and solve issues with legacy-app and modern-SSO integration.
 ---
 
-# Configure Datawiza Access Proxy for Microsoft Entra single sign-on and multifactor authentication for Outlook Web Access
+# Configure Datawiza Access Proxy for Microsoft Entra SSO and MFA for Outlook Web Access
 
 In this tutorial, learn how to configure Datawiza Access Proxy (DAP) to enable Microsoft Entra single sign-on (SSO) and Microsoft Entra multifactor authentication for Outlook Web Access (OWA). Help solve issues when modern identity providers (IdPs) integrate with legacy OWA, which supports Kerberos token authentication to identify users.
 
