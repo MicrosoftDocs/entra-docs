@@ -1,13 +1,13 @@
 ---
 title: Microsoft Entra ID Governance
 description: Microsoft Entra ID Governance enables you to balance your organization's need for security and end user productivity with the right processes and visibility.
-author: owinfreyATL
+author: billmath
 manager: amycolannino
 editor: markwahl-msft
 ms.service: entra-id-governance
 ms.topic: overview
 ms.date: 12/15/2023
-ms.author: owinfrey
+ms.author: billmath
 ms.reviewer: markwahl-msft
 ---
 
@@ -51,7 +51,7 @@ In Microsoft Entra ID Governance, you can enable business groups to determine wh
 - [entitlement management](entitlement-management-overview.md) in which you can specify the other organizations whose users are allowed to request access to your organization's resources. When one of those users's request is approved, they're automatically added by entitlement management as a [B2B](../external-id/what-is-b2b.md) guest to your organization's directory, and assigned appropriate access. And entitlement management automatically removes the B2B guest user from your organization's directory when their access rights expire or are revoked.
 - [access reviews](access-reviews-overview.md) that automates recurring reviews of existing guests already in your organization's directory, and removes those users from your organization's directory when they no longer need access.
 
-For more information, see [What is identity lifecycle management](what-is-identity-lifecycle-management.md).
+For more information, see [Govern the employee and guest lifecycle](scenarios/govern-the-employee-lifecycle.md).
 
 ## Access lifecycle
 
@@ -115,24 +115,11 @@ Once you've started using these identity governance features, you can easily aut
 | Provisioning users into on-premises and cloud applications that have their own directories or databases | [Configure automatic user provisioning](../identity/app-provisioning/user-provisioning.md) with user assignments or [scoping filters](../identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md) |
 | Other scheduled tasks | [Automate identity governance tasks with Azure Automation](identity-governance-automation.md) and Microsoft Graph via the [Microsoft.Graph.Identity.Governance](https://www.powershellgallery.com/packages/Microsoft.Graph.Identity.Governance/) PowerShell module|
 
-## Appendix - least privileged roles for managing in Identity Governance features
-
-It's a best practice to use the least privileged role to perform administrative tasks in Identity Governance. We recommend that you use Microsoft Entra PIM to activate a role as needed to perform these tasks. The following are the least privileged [directory roles](../identity/role-based-access-control/permissions-reference.md) to configure Identity Governance features:
-
-| Feature | Least privileged role |
-| ------- | --------------------- |
-| Entitlement management | Identity Governance Administrator |
-| Access reviews | User Administrator (except for access reviews of Azure or Microsoft Entra roles, which require Privileged Role Administrator) |
-| Privileged Identity Management | Privileged Role Administrator |
-| Terms of use | Security Administrator or Conditional Access Administrator |
-
->[!NOTE]
->The least privileged role for Entitlement management has changed from the User Administrator role to the Identity Governance Administrator role.
 
 ## Next steps
 
-- [What are Lifecycle Workflows?](what-are-lifecycle-workflows.md)
-- [What is Microsoft Entra entitlement management?](entitlement-management-overview.md)
-- [What are Microsoft Entra access reviews?](access-reviews-overview.md)
-- [What is Microsoft Entra Privileged Identity Management?](../id-governance/privileged-identity-management/pim-configure.md)
-- [What can I do with Terms of use?](../identity/conditional-access/terms-of-use.md)
+
+- [What are identity governance use cases?](scenarios/identity-governance-use-cases.md)
+- [Understanding least privileged](scenarios/least-privileged.md)
+- [Govern the employee and guest lifecycle](scenarios/govern-the-employee-lifecycle.md)
+- [Govern access for applications in your environment](identity-governance-applications-prepare.md)
