@@ -6,7 +6,7 @@ manager: martinco
 ms.service: entra
 ms.subservice: architecture
 ms.topic: conceptual
-ms.date: 06/27/2024
+ms.date: 06/28/2024
 ms.author: gasinh
 ms.reviewer: ajburnle
 ---
@@ -99,7 +99,7 @@ Application developers can onboard external users using Microsoft Entra self-ser
    >[!IMPORTANT]
    > Granting an application permission to update users in your directory is a highly privileged action. If you grant the application these highly privileged permissions, secure and monitor your LOB app.
 
-Your organization or the LOB application might require information stored for future use, such as claims emittance in tokens or granular authorization policies. Your application can make another API call to update the external user after they're invited or created in Microsoft Entra ID. The application must have extra API permissions and an extra call to the Microsoft Graph API.
+Your organization or the LOB application might require information stored for future use, such as claims emittance in tokens or granular authorization policies. When external users are invited or created in Microsoft Entra ID, an application can make another API call to update them. The application must have extra API permissions and an extra call to the Microsoft Graph API.
 
 To update the user, use the object ID of the created guest user from the invitation API call, the ID value in the API response from the existence check or invitation. You can write to any standard attribute or custom extension attributes.
 
@@ -157,4 +157,4 @@ With the external user provisioned in Microsoft Entra ID and the application, th
 
 Ensure error handling is done in the LOB application. The application validates each API call. If unsuccessful, extra attempts or error messages are useful.
 
-For LOB applications to update external users after they're invited, grant a custom role that allows the application to update users and assign scope to a dynamic administrative unit. For example, create a dynamic administrative unit with users where usertype = guest. External users are added to the administrative unit after they're onboarded to Microsoft Entra ID. The LOB application needs to attempt to update the user and it might take more than one attempt if there are delays. Despite delays, the approach enables the LOB application to update external users without granting it permission to update any user in the directory.
+For LOB applications to update invited external users, grant a custom role that allows the application to update users and assign scope to a dynamic administrative unit. For example, create a dynamic administrative unit with users where usertype = guest. When external users are onboarded to Microsoft Entra ID, they're added to the administrative unit. The LOB application needs to attempt to update the user and it might take more than one attempt if there are delays. Despite delays, the approach enables the LOB application to update external users without granting it permission to update any user in the directory.
