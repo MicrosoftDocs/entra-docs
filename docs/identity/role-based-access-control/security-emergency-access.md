@@ -85,7 +85,7 @@ However, at least one of your emergency access accounts shouldn't have the same 
 During an emergency, you don't want a policy to potentially block your access to fix an issue. If you use Conditional Access, at least one emergency access account needs to be excluded from all Conditional Access policies.
 
 >[!NOTE]
->Starting this July, Azure teams will begin rolling out additional tenant-level security measures to require multi-factor authentication (MFA) for [all Users](https://techcommunity.microsoft.com/t5/core-infrastructure-and-security/microsoft-will-require-mfa-for-all-azure-users/ba-p/4140391). As already documented use strong authentication for your emergency access accounts. We recommend updating these accounts to use FIDO2 or certificate-based authentication (when configured as MFA) instead of relying only on a long password. Both methods will satisfy the MFA requirements.
+>Starting July 2024, Azure teams will begin rolling out additional tenant-level security measures to require multi-factor authentication (MFA) for [all Users](https://techcommunity.microsoft.com/t5/core-infrastructure-and-security/microsoft-will-require-mfa-for-all-azure-users/ba-p/4140391). As already documented use strong authentication for your emergency access accounts. We recommend updating these accounts to use FIDO2 or certificate-based authentication (when configured as MFA) instead of relying only on a long password. Both methods will satisfy the MFA requirements.
 
 ## Federation guidance
 
