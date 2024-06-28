@@ -164,13 +164,13 @@ DAP requires known Windows credentials that are used by the instance to configur
 
 Before you create the service principal name (SPN), you can list SPNs and confirm the http SPN is among them.
 
-1.  Use the following syntax on the Windows command line to list SPNs.
+1.  To list SPNs, use the following syntax on the Windows command line.
 
     `setspn -Q \*/\<**domain.com**`
 
 2.  Confirm the http SPN is among them.
 
-3.  Use the following syntax on the Windows command line to register the host SPN for the account.
+3.  To register the host SPN for the account, use the following syntax on the Windows command line.
 
     `setspn -A host/dap.datawizatest.com dap`
 
