@@ -52,7 +52,7 @@ SHA for this scenario supports SP- and IdP-initiated flows. The following image 
    ![Diagram of the scenario service provider flow.](./media/f5-big-ip-kerberos-easy-button/scenario-architecture.png)
 
 1. User connects to application endpoint (BIG-IP)
-2. BIG-IP APM access policy redirects user to Microsoft Entra ID (SAML IdP)
+2. BIG-IP Access Policy Manager (APM) access policy redirects user to Microsoft Entra ID (SAML IdP)
 3. Microsoft Entra ID preauthenticates user and applies any enforced Conditional Access policies
 4. User is redirected to BIG-IP (SAML SP) and SSO is performed using issued SAML token
 5. BIG-IP requests Kerberos ticket from KDC
@@ -73,7 +73,7 @@ Prior BIG-IP experience isn't necessary, but you need:
 * User identities [synchronized](~/identity/hybrid/connect/how-to-connect-sync-whatis.md) from an on-premises directory to Microsoft Entra ID, or created in Microsoft Entra ID and flowed back to your on-premises directory
 * One of the following roles: Cloud Application Administrator, or Application Administrator.
 * An [SSL Web certificate](./f5-bigip-deployment-guide.md) for publishing services over HTTPS, or use the default BIG-IP certificates while testing
-* A Kerberos application, or learn to configure [SSO with IIS on Windows](https://active-directory-wp.com/docs/Networking/Single_Sign_On/SSO_with_IIS_on_Windows.html).
+* A Kerberos application, or learn to configure [SSO with Internet Information Services (IIS) on Windows](https://active-directory-wp.com/docs/Networking/Single_Sign_On/SSO_with_IIS_on_Windows.html).
 
 ## BIG-IP configuration methods
 
@@ -86,7 +86,7 @@ This tutorial covers Guided Configuration 16.1 with an Easy Button template. Wit
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-Before a client or service can access Microsoft Graph, it's trusted by the [Microsoft identity platform.](~/identity-platform/quickstart-register-app.md). This action creates a tenant app registration to authorize Easy Button access to Graph. Through these permissions, the BIG-IP pushes the configurations to establish a trust between a SAML SP instance for published application, and Microsoft Entra ID as the SAML IdP.
+Before a client or service can access Microsoft Graph, [Microsoft identity platform.](~/identity-platform/quickstart-register-app.md) trusts it. This action creates a tenant app registration to authorize Easy Button access to Graph. Through these permissions, the BIG-IP pushes the configurations to establish a trust between a SAML SP instance for published application, and Microsoft Entra ID as the SAML IdP.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 2. Browse to **Identity** > **Applications** > **App registrations > New registration**.
@@ -164,7 +164,7 @@ The optional **Security Settings** specify whether Microsoft Entra ID encrypts i
 
 ### Microsoft Entra ID
 
-This section defines properties to manually configure a new BIG-IP SAML application in your Microsoft Entra tenant. Easy Button has application templates for Oracle PeopleSoft, Oracle E-business Suite, Oracle JD Edwards, SAP ERP, and an SHA template for other apps. 
+This section defines properties to manually configure a new BIG-IP SAML application in your Microsoft Entra tenant. Easy Button has application templates for Oracle PeopleSoft, Oracle E-business Suite, Oracle JD Edwards, SAP Enterprise Resource Planning (ERP), and an SHA template for other apps. 
 
 For this scenario, select **F5 BIG-IP APM Microsoft Entra ID Integration > Add.**
 
@@ -203,7 +203,7 @@ Conditional Access policies are enforced after Microsoft Entra preauthentication
 
 The **Available Policies** view shows Conditional Access policies without user-based actions.
 
-The **Selected Policies** view shows policies targeting cloud apps. You can't deselect policies or move them to the Available Policies list because they're enforced at a tenant level.
+The **Selected Policies** view shows policies targeting cloud apps. You can't deselect policies enforced at the tenant level, nor move them to the Available Policies list.
 
 To select a policy to apply to the application being published:
 
@@ -266,7 +266,7 @@ What isn't covered is Single Log Out (SLO) functionality, which ensures sessions
 
 The SAML federation metadata for the published application is imported from your tenant, providing the APM with the SAML sign-out endpoint for Microsoft Entra ID. This action ensures an SP-initiated sign out terminates the session between a client and Microsoft Entra ID. The APM needs to know when a user signs out of the application.
 
-If the BIG-IP webtop portal accesses published applications, then a sign out is processed by the APM to call the Microsoft Entra sign-out endpoint. But consider a scenario when the BIG-IP webtop portal isn't used, then the user can't instruct the APM to sign out. Even if the user signs out of the application, the BIG-IP is oblivious. Therefore, consider SP-initiated sign out to ensure sessions terminate securely. You can add an SLO function to your application Sign-out button, so it redirects your client to the Microsoft Entra SAML, or the BIG-IP sign out endpoint. 
+If the BIG-IP webtop portal accesses published applications, then APM processes a sign-out to call the Microsoft Entra sign-out endpoint. But consider a scenario when the BIG-IP webtop portal isn't used, then the user can't instruct the APM to sign out. Even if the user signs out of the application, the BIG-IP is oblivious. Therefore, consider SP-initiated sign out to ensure sessions terminate securely. You can add an SLO function to your application Sign-out button, so it redirects your client to the Microsoft Entra SAML, or the BIG-IP sign out endpoint. 
 
 The URL for SAML sign-out endpoint for your tenant is found in **App Registrations > Endpoints**.
 
@@ -339,7 +339,7 @@ With SPNs defined, establish trust for the APM service account delegate to that 
 
     `Get-User -Identity f5-big-ip | Set-AccountControl -TrustedToAuthForDelegation $true`
 
-2. The APM service account needs to know the target SPN it's trusted to delegate to. Set the target SPN to the service account running your web application:
+2. The APM service account needs to know the target SPN to delegate to. Set the target SPN to the service account running your web application:
 
     `Set-User -Identity f5-big-ip -Add @{ 'msDS-AllowedToDelegateTo'=@('HTTP/myexpenses.contoso.com') }`
 
@@ -378,7 +378,7 @@ For more information, see [Kerberos Constrained Delegation across domains](/prev
 
 ## App view
 
-From a browser, connect to the application external URL or select the **application** icon in the [Microsoft MyApps portal](https://myapps.microsoft.com/). After authenticating to Microsoft Entra ID, you're redirected to the BIG-IP virtual server for the application and signed in through SSO.
+From a browser, connect to the application external URL or select the **application** icon in the [Microsoft MyApps portal](https://myapps.microsoft.com/). After authenticating to Microsoft Entra ID, redirection takes you to the BIG-IP virtual server for the application and signed in through SSO.
 
    ![Screenshot of the application's external URL](./media/f5-big-ip-kerberos-easy-button/app-view.png)
 
