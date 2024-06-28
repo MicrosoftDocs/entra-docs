@@ -1,0 +1,12 @@
+{
+    "thumb|thumbprint|thumbprints|hash|certHash|signingCertThumbprint|certThumbprint|certificateIssuerThumbprint|certificateIssuerThumbprints|certificateFindValue|certificateFindValueBySecondary|clientCertificateThumbprint|certificateThumbprint|serverCertThumbprint|certificateRemoteThumbprints|remoteCertThumbprints|findByThumbprint": [
+        "AA11BB22CC33DD44EE55FF66AA77BB88CC99DD00",
+        "BB22CC33DD44EE55FF66AA77BB88CC99DD00EE11",
+        "CC33DD44EE55FF66AA77BB88CC99DD00EE11FF22",
+        "DD44EE55FF66AA77BB88CC99DD00EE11FF22AA33",
+        "EE55FF66AA77BB88CC99DD00EE11FF22AA33BB44",
+        "FF66AA77BB88CC99DD00EE11FF22AA33BB44CC55",
+        "AA77BB88CC99DD00EE11FF22AA33BB44CC55DD66",
+        "BB88CC99DD00EE11FF22AA33BB44CC55DD66EE77"
+      ]
+}

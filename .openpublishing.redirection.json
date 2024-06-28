@@ -521,6 +521,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity-platform/reference-claims-mapping-policy-type.md",
+      "redirect_url": "/entra/identity-platform/reference-claims-customization",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity-platform/test-throttle-service-limits.md",
       "redirect_url": "/entra/identity-platform/test-setup-environment",
       "redirect_document_id": false
@@ -876,9 +881,25 @@
       "redirect_url": "/entra/global-secure-access/how-to-target-resource-microsoft-profile",
       "redirect_document_id": false
     },
+    {
+
+      "source_path_from_root": "/docs/id-governance/what-is-identity-lifecycle-management.md",
+      "redirect_url": "/entra/id-governance/scenarios/govern-the-employee-lifecycle",
+      "redirect_document_id": false
+    },
     {            
       "source_path_from_root": "/docs/global-secure-access/how-to-manage-microsoft-365-profile.md",
       "redirect_url": "/entra/global-secure-access/how-to-manage-microsoft-profile",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/enterprise-apps/configure-app-management-policy.md",
+      "redirect_url": "/entra/identity/enterprise-apps/what-is-application-management",
+      "redirect_document_id": false
+    },
+    {            
+      "source_path_from_root": "/docs/architecture/sse-deployment-guide-m365.md",
+      "redirect_url": "/entra/architecture/sse-deployment-guide-microsoft-traffic",
       "redirect_document_id": false
     }
   ]
