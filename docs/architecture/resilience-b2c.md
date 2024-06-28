@@ -1,6 +1,6 @@
 ---
 title: Build resilience in customer identity and access management with Azure AD B2C
-description: Learn methods to build resilience in customer identity and access nanagement (CIAM) using Azure AD B2C.
+description: Learn methods to build resilience in customer identity and access management (CIAM) using Azure AD B2C.
 ms.service: entra
 ms.subservice: architecture
 ms.topic: how-to
@@ -10,7 +10,7 @@ manager: martinco
 ms.date: 06/28/2024
 ---
 
-# uild resilience in customer identity and access management with Azure AD B2C
+# Build resilience in customer identity and access management with Azure AD B2C
 
 [Azure AD B2C](/azure/active-directory-b2c/overview) is a customer identity and access management (CIAM) platform that is designed to help you launch your critical customer facing applications. We have built-in features for [resilience](https://azure.microsoft.com/blog/advancing-azure-active-directory-availability/) to help our service scale to your needs and improve resilience in the face of potential outage situations. In addition, when launching a mission critical application, it's important to consider various design and configuration elements in your application. Consider how the application is configured in Azure AD B2C to ensure you see resilient behavior in response to outage or failure scenarios. In this article, we discuss some of the best practices to help you increase resilience.
 
@@ -18,7 +18,7 @@ A resilient service continues to function despite disruptions. To improve resili
 
 - Understand all the components
 - Eliminate single points of failures
-- Isolate failing components to limit their effects
+- Limit effects by isolating failing components
 - Provide redundancy with fast failover mechanisms and recovery paths
 
 As you develop your application, we recommend you consider how to [increase resilience of authentication and authorization in your applications](resilience-app-development-overview.md) with the identity components of your solution. This article attempts to address enhancements for resilience for Azure AD B2C applications. We group our recommendations by CIAM functions.
