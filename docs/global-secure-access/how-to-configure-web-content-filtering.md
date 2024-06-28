@@ -110,13 +110,15 @@ Use a Windows device with the Global Secure Access client installed. Sign in as 
 
 1. Navigate to an allowed site and check if it loads properly.
 
-1. Navigate to a blocked site and confirm the site is blocked.
+1. Navigate to a blocked site and confirm the site is blocked. The current blocking experience for all browsers includes a plaintext browser error for HTTP traffic and a "Connection Reset" browser error for HTTPS traffic.
+
+![Plaintext browser error for HTTP traffic](media/how-to-configure-web-content-filtering/http-block-error.png)
+!["Connection Reset" browser error for HTTPS traffic](media/how-to-configure-web-content-filtering/https-block-error.png)
 
 1. Browse to **Global Secure Access** > **Monitor** > **Traffic logs** to confirm traffic if blocked or allowed appropriately. It takes approximately 15 minutes for new entries to appear.
 
 > [!NOTE]
 > Configuration changes in the Global Secure Access experience related to web content filtering typically take effect in less than 5 minutes. Configuration changes in Conditional Access related to web content filtering take effect in approximately one hour.
-> Additionally, the current blocking experience for all browsers and processes includes a "Connection Reset" browser error for HTTPS traffic and a "DeniedTraffic" browser error for HTTP traffic.
 
 ## Known limitations
 
