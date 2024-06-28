@@ -269,8 +269,6 @@ DCMC integration features help complete Microsoft Entra configuration. Instead, 
 
 6.  Select **Create**.
 
-    ![Screenshot shows the configure idp screen.](media/datawiza-access-proxy/configure-idp.png)
-
 7.  A page appears with deployment steps for DAP and the application.
 
 8.  See the deployment's Docker Compose file, which includes an image of the DAP, also **PROVISIONING_KEY** and **PROVISIONING_SECRET.** DAP uses the keys to pull the latest DCMC configuration and policies.
