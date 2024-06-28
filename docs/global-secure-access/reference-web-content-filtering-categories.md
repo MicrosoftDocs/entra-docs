@@ -37,7 +37,7 @@ When you set up rules to filter web content, you can select based on a category.
 |Tasteless     |Sites with offensive or tasteless content, including profanity.          |
 |Violence   | Sites that contain images or text depicting or advocating physical assault against humans, animals, or institutions. Sites of gruesome nature.         |
 |Weapons      |Sites that depict, sell, review, or describe guns and weapons, including for sport.         |
-|Artificial Intelligence	|Sites that leverage GenerativeAI.	|
+|Artificial Intelligence	|Sites that use GenerativeAI.	|
 
 ## High bandwidth
 
