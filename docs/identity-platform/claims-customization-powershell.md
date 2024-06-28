@@ -14,7 +14,7 @@ ms.custom: aaddev
 #Customer intent: As a developer, I want to customize the claims emitted in tokens for a specific app in my tenant using PowerShell.
 ---
 
-# Customize claims emitted in tokens for a specific app in a tenant using PowerShell and Claims Mapping Policy
+# Claims customization using PowerShell and Claims Mapping Policy
 
 A claim is information that an identity provider states about a user inside the token they issue for that user. Claims customization is used by tenant admins to customize the claims emitted in tokens for a specific application in their tenant. You can use claims-mapping policies to:
 
