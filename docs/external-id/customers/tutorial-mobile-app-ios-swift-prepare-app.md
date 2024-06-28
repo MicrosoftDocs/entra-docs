@@ -10,7 +10,7 @@ ms.service: entra-external-id
 
 ms.subservice: customers
 ms.topic: sample
-ms.date: 05/09/2024
+ms.date: 06/27/2024
 ms.custom: developer
 #Customer intent: As a developer, I want to prepare iOS (Swift) app for authentication using Microsoft Entra External ID.
 ---
@@ -138,6 +138,8 @@ To create MSAL instance in your project, follow these steps:
     - `Enter_the_Redirect_URI_Here` and replace it with the value of *kRedirectUri* in the MSAL configuration file you downloaded earlier when you added the platform redirect URL.
     - `Enter_the_Protected_API_Scopes_Here` and replace it with the scopes recorded earlier. If you haven't recorded any scopes, you can leave this scope list empty.
     - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't know your tenant subdomain, learn how to [read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
+
+[!INCLUDE [external-id-custom-domain](./includes/use-custom-domain-url-ios.md)]
 
 ## Next steps
 
