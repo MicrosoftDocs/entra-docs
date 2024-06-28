@@ -50,9 +50,9 @@ SHA supports SP and IdP initiated flows. The following image illustrates the SP-
 
 1. User connects to application endpoint (BIG-IP).
 2. BIG-IP Access Policy Manager (APM) access policy redirects user to Microsoft Entra ID (SAML IdP).
-3. Microsoft Entra ID pre-authenticates user and applies enforced Conditional Access policies.
+3. Microsoft Entra ID preauthenticates user and applies enforced Conditional Access policies.
 4. User is redirected to BIG-IP (SAML SP) and SSO occurs with issued SAML token.
-5. BIG-IP requests Kerberos ticket from the key distrubution center (KDC).
+5. BIG-IP requests Kerberos ticket from the key distribution center (KDC).
 6. BIG-IP sends request to back-end application, with the Kerberos ticket for SSO.
 7. Application authorizes request and returns payload.
 
@@ -226,7 +226,7 @@ Conditional Access policies are enforced after Microsoft Entra preauthentication
 
 The **Available Policies** view lists Conditional Access policies without user-based actions.
 
-The **Selected Policies** view lists policies targeting cloud apps. You can't deselect these policies, nor move them to the Available Policies list because they're enforced at the tenant level.
+The **Selected Policies** view lists policies targeting cloud apps. You can't deselect policies enforced at the tenant level, nor move them to the Available Policies list.
 
 To select a policy for the application being published:
 
@@ -298,9 +298,9 @@ During deployment, the published-application SAML federation metadata is importe
 2. Verify the application is in the tenant **Enterprise applications** list.
 3. With a browser, connect to the application external URL or select the application **icon** in [My Apps](https://myapps.microsoft.com/). 
 4. Authenticate to Microsoft Entra ID.
-5. You're redirected to the BIG-IP virtual server and signed in through SSO.
+5. Redirection takes you to the BIG-IP virtual server and signed in through SSO.
 
-For increased security, you can block direct access to the application, thereby enforcing a path through the BIG-IP.
+For increased security, you can block direct access to the application and enforce a path through the BIG-IP.
 
 ## Advanced deployment
 
@@ -333,7 +333,7 @@ If you're unable to access the SHA-secured application, see the following troubl
 
 To validate an Internet Information Services (IIS) application KCD configuration, see [Troubleshoot KCD configurations for Application Proxy](~/identity/app-proxy/application-proxy-back-end-kerberos-constrained-delegation-how-to.md) 
 
-Go to techdocs.f5.com for [Kerberos Single Sign-On Method](https://techdocs.f5.com/en-us/bigip-15-1-0/big-ip-access-policy-manager-single-sign-on-concepts-configuration/kerberos-single-sign-on-method.html)
+Go to techdocs.f5.com for [Kerberos single sign-on method](https://techdocs.f5.com/en-us/bigip-15-1-0/big-ip-access-policy-manager-single-sign-on-concepts-configuration/kerberos-single-sign-on-method.html)
 
 ### Log analysis
 
