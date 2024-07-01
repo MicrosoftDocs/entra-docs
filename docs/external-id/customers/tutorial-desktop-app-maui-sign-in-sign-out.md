@@ -9,7 +9,7 @@ ms.service: entra-external-id
 ms.topic: tutorial
 ms.subservice: customers
 ms.custom: devx-track-dotnet
-ms.date: 06/05/2023
+ms.date: 06/27/2024
 ---
 
 # Tutorial: Sign in users in .NET MAUI app using an external tenant
@@ -151,6 +151,8 @@ To create `appsettings.json`, follow these steps:
 
    1. `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
    1. `Enter_the_Application_Id_Here` and replace it with the Application (client) ID of the app you registered earlier.
+
+[!INCLUDE [external-id-custom-domain](./includes/use-custom-domain-url-dot-net.md)]
 
 ## Run and test .NET MAUI desktop app
 

@@ -4,7 +4,7 @@ description: Learn how to use token protection in Conditional Access policies.
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 08/14/2023
+ms.date: 06/27/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
