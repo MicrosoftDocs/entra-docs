@@ -1,5 +1,5 @@
 ---
-title: Prepare a Node.js web application for profile editing
+title: Set up a Node.js web application for profile editing
 description: Learn how to prepare your Node.js web application for profile editing with multifactor authentication protection in your external tenant
 author: kengaderdus
 manager: mwongerapz
@@ -25,7 +25,7 @@ This article is part 2 of a series that demonstrates profile editing in an Node.
 
 ## Add new project files
 
-To your Node.js web app that signs in users, add the following new files: 
+Add the following new files to your Node.js web app that signs in users: 
 - In the *views* folder, create *gatedUpdateProfile.hbs* and *updateProfile.hbs*.
 - In the root folder of your app, create *fetch.js*. The root folder is one that contains the *package.json* file.
 

@@ -16,7 +16,7 @@ ms.custom: developer
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
-This article is part 3 of a series that demonstrates how to add the profile editing logic in an Node.js web app. In [part 2 of this series](how-to-web-app-node-edit-profile-prepare-app.md), you prepared your app for profile editing by adding the required user interface components.
+This article is part 3 of a series that demonstrates how to add the profile editing logic in a Node.js web app. In [part 2 of this series](how-to-web-app-node-edit-profile-prepare-app.md), you set up your app for profile editing by adding the required user interface components.
 
 In this how-to guide, you learn how to call Microsoft Graph API for profile editing.
 
