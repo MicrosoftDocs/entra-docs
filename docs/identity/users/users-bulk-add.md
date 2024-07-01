@@ -5,7 +5,7 @@ description: Add users in bulk in Microsoft Entra ID
 author: barclayn
 ms.author: barclayn
 manager: amycolannino
-ms.date: 09/08/2023
+ms.date: 07/01/2024
 ms.topic: how-to
 ms.service: entra-id
 ms.subservice: users
@@ -80,6 +80,8 @@ You can see the status of all of your pending bulk requests in the **Bulk operat
 
 Next, you can check to see that the users you created exist in the Microsoft Entra organization either in the Azure portal or by using PowerShell.
 
+If you experience errors, you can download and view the results file on the **Bulk operation results** page. The file contains the reason for each error. The file submission must match the provided template and include the exact column names. For more information about bulk operations limitations, see [Bulk import service limits](#bulk-import-service-limits).
+
 ## Verify users
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
@@ -99,7 +101,7 @@ You should see that the users that you created are listed.
 
 ## Bulk import service limits
 
-Each bulk activity to create users can run for up to one hour. This enables bulk creation of at least 50,000 users.
+[!INCLUDE [Bulk operations limitations](~/includes/bulk-operations-limitations.md)]
 
 ## Next steps
 
