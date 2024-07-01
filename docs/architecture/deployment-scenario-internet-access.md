@@ -126,7 +126,7 @@ In this section, we block access to inappropriate sites for all users in the org
 ### Create baseline web filtering policy
 
 1. Sign in to the Microsoft Entra admin center. Go to **Global Secure Access (Preview)** \> **Secure** \> **Web content filtering policies** \> **Create policy** \> [**Configure Global Secure Access content filtering**](../global-secure-access/how-to-configure-web-content-filtering.md).
-   [ ![Example of Web content filtering policies with a red box highlighting the Create policy control to create baseline web filtering policy.](media/deployment-scenario-internet-access/web-content-filtering-policies-baseline-inline.png)](media//web-content-filtering-policies-baseline-expanded.png#lightbox)
+   [ ![Example of Web content filtering policies with a red box highlighting the Create policy control to create baseline web filtering policy.](media/deployment-scenario-internet-access/web-content-filtering-policies-baseline-inline.png)](media/deployment-scenario-internet-access/web-content-filtering-policies-baseline-expanded.png#lightbox)
 1. On **Create a web content filtering policy** \> **Basics**, complete these fields:
    - **Name**: Baseline Internet Access Block Rule
    - **Description**: Add a description

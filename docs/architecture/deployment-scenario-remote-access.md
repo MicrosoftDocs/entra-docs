@@ -147,7 +147,7 @@ Microsoft Entra Private Access supports transmission control protocol (TCP) appl
 
 1. From the connector server, verify that you can access a file share on the file server.
 1. Sign in to the Microsoft Entra admin center. Go to **Global Secure Access (preview)** \> **Applications** \> **Enterprise applications** \> **+ New Application**.
-   :::image type="content" source="media/deployment-scenario-remote-access/new-enterprise-app" alt-text="Example of Enterprise applications showing New application control.":::
+   :::image type="content" source="media/deployment-scenario-remote-access/new-enterprise-app.png" alt-text="Example of Enterprise applications showing New application control.":::
 1. Enter a **Name** (such as *FileServer1*). Select the default connector group. Select **+Add application segment**. Enter the **IP address** of the application server and port 441.
    :::image type="content" source="media/deployment-scenario-remote-access/application-segment.png" alt-text="Example of Create Global Secure Access application, Create application segment.":::
 1. Select **Apply** \> **Save**. Verify that the application is in **Enterprise applications**.
@@ -294,7 +294,7 @@ Microsoft Entra Private Access supports transmission control protocol (TCP) appl
 
 1. From the connector server, verify that you can access a file share on the file server.
 1. Sign in to the Microsoft Entra admin center. Go to **Global Secure Access (preview)** \> **Applications** \> **Enterprise applications** \> **+ New Application**.
-   :::image type="content" source="media/deployment-scenario-remote-access/new-enterprise-app" alt-text="Example of Enterprise applications showing New application control.":::
+   :::image type="content" source="media/deployment-scenario-remote-access/new-enterprise-app.png" alt-text="Example of Enterprise applications showing New application control.":::
 1. Enter a **Name** (such as *FileServer1*). Select the default connector group. Select **+Add application segment**. Enter the **IP address** of the application server and port 441.
    :::image type="content" source="media/deployment-scenario-remote-access/application-segment.png" alt-text="Example of Create Global Secure Access application, Create application segment.":::
 1. Select **Apply** \> **Save**. Verify that the application is in **Enterprise applications**.
