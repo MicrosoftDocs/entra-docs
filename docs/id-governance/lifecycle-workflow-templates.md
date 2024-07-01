@@ -36,6 +36,9 @@ The list of templates are as follows:
 
 For a complete guide on creating a new workflow from a template, see: [Tutorial: On-boarding users to your organization using Lifecycle workflows with the Microsoft Entra admin center](tutorial-onboard-custom-workflow-portal.md).
 
+> [!NOTE]
+> Lifecycle workflow's built-in templates work for users who exist within Microsoft Entra ID. Ideally these users are imported using an [HR-driven provisioning source](..//identity/app-provisioning/what-is-hr-driven-provisioning.md).
+
 ### Onboard pre-hire employee
 
  The **Onboard pre-hire employee** template is designed to configure tasks that must be completed before an employee's start date.
