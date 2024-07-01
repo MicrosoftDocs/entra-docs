@@ -36,7 +36,7 @@ In Microsoft Entra, you enable the Microsoft 365 traffic forwarding profile and 
 
 Enable the Microsoft 365 traffic forwarding profile for your Microsoft Entra tenant. For more information about enabling and disabling profiles, see [Global Secure Access (preview) traffic forwarding profiles](concept-traffic-forwarding.md).
 
-Install and configure the Global Secure Access Client on end-user devices. For more information about clients, see [Global Secure Access clients](concept-clients.md). To learn how to install the Windows client, see [Global Secure Access client for Windows](how-to-install-windows-client.md).
+Install and configure the Global Secure Access Client on end-user devices. Download the Global Secure Access Client from https://aka.ms/gsawithnetskope for coexistence with Netskope. For more information about clients, see [Global Secure Access clients](concept-clients.md). To learn how to install the Windows client, see [Global Secure Access client for Windows](how-to-install-windows-client.md).
 
 ## Netskope configuration
 
