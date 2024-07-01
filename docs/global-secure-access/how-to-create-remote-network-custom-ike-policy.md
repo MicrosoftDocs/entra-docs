@@ -20,7 +20,7 @@ To create a remote network with a custom IKE policy, you must have:
 
 - A **Global Secure Access Administrator** role in Microsoft Entra ID.
 - Received the connectivity information from Global Secure Access onboarding.
-- The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
+- The product requires licensing. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 
 ## How to create a remote network with a custom IKE policy
 

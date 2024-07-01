@@ -17,7 +17,7 @@ This article explains the prerequisites and how to deploy the client onto Androi
 
 ## Prerequisites
 
-- Global Secure Access Preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
+- The product requires licensing. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 - You must enable at least one Global Secure Access [traffic forwarding profile](concept-traffic-forwarding.md).
 - Device installation permissions on the device are required for installation.
 - Android devices must be running Android 10.0 or later.

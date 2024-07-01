@@ -117,7 +117,7 @@ Event logs related to the Global Secure Access client can be found in the Event 
 
 ### Disable IPv6 and secure DNS
 
-If you need assistance disabling IPv6 or secure DNS on Windows devices you're trying the preview with, the following script provides assistance.
+If you need assistance disabling IPv6 or secure DNS on Windows devices, the following script provides assistance.
 
 ```powershell
 function CreateIfNotExists
