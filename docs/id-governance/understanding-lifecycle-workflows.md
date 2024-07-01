@@ -15,6 +15,9 @@ The following document provides an overview of a workflow created using Lifecycl
 
   [![Diagram of a lifecycle workflow.](media/understanding-lifecycle-workflows/workflow-2.png)](media/understanding-lifecycle-workflows/workflow-2.png#lightbox)
 
+> [!NOTE]
+> Lifecycle Workflows work for users who exist within Microsoft Entra ID. Ideally these users are imported using an [HR-driven provisioning source](..//identity/app-provisioning/what-is-hr-driven-provisioning.md).
+
 ## License requirements 
 
 
