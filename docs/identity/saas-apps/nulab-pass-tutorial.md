@@ -33,7 +33,7 @@ To get started, you need:
 
 ## Scenario description
 
-In this tutorial, you’ll configure and test Microsoft Entra SSO in a test environment. Nulab Pass supports **SP and IDP**-initiated SSO.
+In this tutorial, you’ll configure and test Microsoft Entra SSO in a test environment. Nulab Pass supports both **SP and IDP**-initiated SSO.
 
 ## Add Nulab Pass from the gallery
 
@@ -74,24 +74,21 @@ To enable Microsoft Entra SSO:
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
-1. If you want to configure the application in **IDP** initiated mode, complete the following in the **Basic SAML Configuration** section:
+1. In the **Basic SAML Configuration** section, perform the following steps:
 
     a. In the **Identifier** text box, type a URL using the following pattern:
-   
-    `https://apps.nulab.com/signin/spaces/<Space_Key>/saml`
+   `https://apps.nulab.com/signin/spaces/<Space_Key>/saml`
 
     b. In the **Reply URL** text box, type a URL using the following pattern:
-   
     `https://apps.nulab.com/signin/spaces/<Space_Key>/saml/callback`
 
-1. Perform the following to configure the application in **SP** initiated mode:
+1. Perform the following step to configure the application in **SP** initiated mode:
 
-    In the **Sign-on URL** text box, type the URL:
-   
-    `https://apps.nulab.com/signin`
+    In the **Sign on URL** text box, type the URL:
+   `https://apps.nulab.com/signin`
 
 	> [!NOTE]
-	> These values are not real and should be updated with the actual Identifier, Reply URL, and Sign-on URL found in your Nulab Pass organization settings. In your organization settings:
+	> These values are not real and should be updated with the actual Identifier, Reply URL, and Sign on URL found in your Nulab Pass organization settings. In your organization settings:
 	>  1. Select **Single Sign-On** from the menu on the left.
  	>  2. Press the **Manage** button to display the **Manage SAML authentication** dialog.
 	>  3. Copy **SP Entity ID** and **SP Endpoint URL (ACS)** values and paste in the Entra side configuration.
@@ -101,7 +98,7 @@ To enable Microsoft Entra SSO:
 
 	![image](common/default-attributes.png)
 
-1. On the **Set up single sign-on with SAML** page in the **SAML Signing Certificate** section, you’ll find the **Certificate (Base64)**. Select **Download** to download the certificate and save it on your computer.
+1. On the **Set up single sign-on with SAML** page in the **SAML Signing Certificate** section, you will find the **Certificate (Base64)**. Select **Download** to download the certificate and save it on your computer.
 
 	![The Certificate download link](common/certificatebase64.png)
 
