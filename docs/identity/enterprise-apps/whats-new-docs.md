@@ -1,11 +1,10 @@
 ---
 title: "What's new in Microsoft Entra application management"
 description: "New and updated documentation for the Microsoft Entra application management."
-ms.date: 06/03/2024
+ms.date: 07/01/2024
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: whats-new
-
 ms.author: jomondi
 author: omondiatieno
 manager: CelesteDG
@@ -16,6 +15,12 @@ manager: CelesteDG
 # Microsoft Entra application management: What's new
 
 Welcome to what's new in Microsoft Entra application management documentation. This article lists new docs that have been added and those that have had significant updates in the last three months. To learn what's new with the application management service, see [What's new in Azure AD](~/fundamentals/whats-new.md).
+
+## June 2024
+
+### Updated articles
+
+- [Manage consent to applications and evaluate consent requests](manage-consent-requests.md) - Review to improve technical accuracy and clarity
 
 ## May 2024
 
@@ -52,7 +57,3 @@ Reviewed the following articles to improve technical accuracy and clarity:
 - [Create an enterprise application from a multitenant application in Microsoft Entra ID](create-service-principal-cross-tenant.md)
 - [Tutorial: Migrate Okta sync provisioning to Microsoft Entra Connect synchronization](migrate-okta-sync-provisioning.md)
 - [Tutorial: Configure Secure Hybrid Access with Microsoft Entra ID and Silverfort](silverfort-integration.md)
-
-## March 2024
-
-No new or updated articles.
