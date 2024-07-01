@@ -1,6 +1,6 @@
 ---
 title: How to create a remote network with a custom IKE policy
-description: Learn how to set up the bidirectional communication tunnel between Global Secure Access (preview) and your router.
+description: Learn how to set up the bidirectional communication tunnel between Global Secure Access and your router.
 author: kenwith
 ms.author: kenwith
 manager: amycolannino
@@ -10,7 +10,7 @@ ms.service: global-secure-access
 
 # Customer intent: As an IT admin, I need to be able to create a custom IKE policy to set up the communication tunnel with Global Secure Access.
 ---
-# Create a remote network with a custom IKE policy for Global Secure Access (preview)
+# Create a remote network with a custom IKE policy for Global Secure Access
 
 IPSec tunnel is a bidirectional communication. This article provides the steps to set up the communication channel in Microsoft Entra admin center and the Microsoft Graph API. The other side of the communication is configured on your customer premises equipment (CPE).
 
@@ -32,7 +32,7 @@ To create a remote network with a custom IKE policy in the Microsoft Entra admin
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
 
-1. Browse to **Global Secure Access (preview)** > **Devices** > **Remote network**.
+1. Browse to **Global Secure Access** > **Devices** > **Remote network**.
 
 1. Select the **Create remote network** button.
 

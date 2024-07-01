@@ -1,6 +1,6 @@
 ---
-title: Global Secure Access (preview) logs and monitoring
-description: Learn about the available Global Secure Access (preview) logs and monitoring options.
+title: Global Secure Access logs and monitoring
+description: Learn about the available Global Secure Access logs and monitoring options.
 author: kenwith
 ms.author: kenwith
 manager: amycolannino
@@ -9,9 +9,9 @@ ms.date: 04/18/2024
 ms.service: global-secure-access
 ---
 
-# Global Secure Access (preview) logs and monitoring
+# Global Secure Access logs and monitoring
 
-As an IT administrator, you need to monitor the performance, experience, and availability of the traffic flowing through your networks. Within the Global Secure Access (preview) logs there are many data points that you can review to gain insights into your network traffic. This article describes the logs and dashboards that are available to you and some common monitoring scenarios.
+As an IT administrator, you need to monitor the performance, experience, and availability of the traffic flowing through your networks. Within the Global Secure Access logs there are many data points that you can review to gain insights into your network traffic. This article describes the logs and dashboards that are available to you and some common monitoring scenarios.
 
 ## Dashboard
 

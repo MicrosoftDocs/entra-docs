@@ -1,6 +1,6 @@
 ---
-title: Learn about the Global Secure Access (preview) dashboard
-description: Monitor the health and status of your network traffic with the Global Secure Access (preview) dashboard.
+title: Learn about the Global Secure Access dashboard
+description: Monitor the health and status of your network traffic with the Global Secure Access dashboard.
 author: kenwith
 ms.author: kenwith
 manager: amycolannino
@@ -9,9 +9,9 @@ ms.date: 06/18/2024
 ms.service: global-secure-access
 ---
 
-# Global Secure Access (preview) dashboard
+# Global Secure Access dashboard
 
-The Global Secure Access (preview) dashboard provides you with visualizations of the network traffic acquired by the Microsoft Entra Private and Microsoft Entra Internet Access services. The dashboard compiles the data from your network configurations, including devices, users, and tenants into several widgets that provide you with answers to the following questions:
+The Global Secure Access dashboard provides you with visualizations of the network traffic acquired by the Microsoft Entra Private and Microsoft Entra Internet Access services. The dashboard compiles the data from your network configurations, including devices, users, and tenants into several widgets that provide you with answers to the following questions:
 
 - How many devices using the Global Secure Access client are active in my network?
 - Was there a recent change to the number of active devices?
@@ -39,7 +39,7 @@ To view the Global Secure Access dashboard, you must have:
 To access the dashboard:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
-1. Browse to **Global Secure Access (preview)** > **Dashboard**.
+1. Browse to **Global Secure Access** > **Dashboard**.
 
     :::image type="content" source="media/concept-traffic-dashboard/traffic-dashboard.png" alt-text="Screenshot of the Private access profile, with the view applications link highlighted." lightbox="media/concept-traffic-dashboard/traffic-dashboard-expanded.png":::
 

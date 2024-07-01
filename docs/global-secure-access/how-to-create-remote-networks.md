@@ -1,6 +1,6 @@
 ---
 title: How to create remote networks
-description: Learn how to create remote networks, such as branch office locations, for Global Secure Access (preview).
+description: Learn how to create remote networks, such as branch office locations, for Global Secure Access.
 author: kenwith
 ms.author: kenwith
 manager: amycolannino
@@ -9,13 +9,13 @@ ms.date: 03/22/2024
 ms.service: global-secure-access
 # Customer intent: As an IT admin, I need to be able to create a remote network for a remote office so that my organization can connect to the Global Secure Access service.
 ---
-# How to create a remote network with Global Secure Access (preview)
+# How to create a remote network with Global Secure Access
 
-Remote networks are remote locations, such as a branch office, or networks that require internet connectivity. Setting up remote networks connects your users in remote locations to Global Secure Access (preview). Once a remote network is configured, you can assign a traffic forwarding profile to manage your corporate network traffic. Global Secure Access provides remote network connectivity so you can apply network security policies to your outbound traffic. 
+Remote networks are remote locations, such as a branch office, or networks that require internet connectivity. Setting up remote networks connects your users in remote locations to Global Secure Access. Once a remote network is configured, you can assign a traffic forwarding profile to manage your corporate network traffic. Global Secure Access provides remote network connectivity so you can apply network security policies to your outbound traffic. 
 
 There are multiple ways to connect remote networks to Global Secure Access. In a nutshell, you're creating an Internet Protocol Security (IPSec) tunnel between a core router, known as the customer premises equipment (CPE), at your remote network and the nearest Global Secure Access endpoint. All internet-bound traffic is routed through the core router of the remote network for security policy evaluation in the cloud. Installation of a client isn't required on individual devices.
 
-This article explains how to create a remote network for Global Secure Access (preview).
+This article explains how to create a remote network for Global Secure Access.
 
 ## Prerequisites
 
@@ -63,7 +63,7 @@ Remote networks are configured on three tabs. You must complete each tab in orde
 The first step is to provide the name and location of your remote network. Completing this tab is required.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
-1. Browse to **Global Secure Access (preview)** > **Connect** > **Remote networks**.
+1. Browse to **Global Secure Access** > **Connect** > **Remote networks**.
 1. Select the **Create remote network** button and provide the details.
     - **Name**
     - **Region**

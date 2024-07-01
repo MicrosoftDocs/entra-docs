@@ -1,6 +1,6 @@
 ---
-title: Global Secure Access (preview) and universal tenant restrictions
-description: Learn about how Global Secure Access (preview) secures access to your corporate network by restricting access to external tenants.
+title: Global Secure Access and universal tenant restrictions
+description: Learn about how Global Secure Access secures access to your corporate network by restricting access to external tenants.
 ms.service: global-secure-access
 ms.topic: how-to
 ms.date: 05/09/2024
@@ -11,7 +11,7 @@ ms.reviewer: alexpav
 ---
 # Universal tenant restrictions
 
-Universal tenant restrictions enhance the functionality of [tenant restriction v2](https://aka.ms/tenant-restrictions-enforcement) using Global Secure Access (preview) to tag all traffic no matter the operating system, browser, or device form factor. It allows support for both client and remote network connectivity. Administrators no longer have to manage proxy server configurations or complex network configurations.
+Universal tenant restrictions enhance the functionality of [tenant restriction v2](https://aka.ms/tenant-restrictions-enforcement) using Global Secure Access to tag all traffic no matter the operating system, browser, or device form factor. It allows support for both client and remote network connectivity. Administrators no longer have to manage proxy server configurations or complex network configurations.
 
 Universal Tenant Restrictions does this enforcement using Global Secure Access based policy signaling for both the authentication and data plane. Tenant restrictions v2 enables enterprises to prevent data exfiltration by users using external tenant identities for Microsoft Entra integrated applications like Microsoft Graph, SharePoint Online, and Exchange Online. These technologies work together to prevent data exfiltration universally across all devices and networks.
 
@@ -34,10 +34,10 @@ Universal tenant restrictions help to prevent data exfiltration across browsers,
 
 ## Prerequisites
 
-* Administrators who interact with **Global Secure Access preview** features must have one or more of the following role assignments depending on the tasks they're performing.
-   * The [Global Secure Access Administrator role](/azure/active-directory/roles/permissions-reference) role to manage the Global Secure Access preview features.
+* Administrators who interact with **Global Secure Access** features must have one or more of the following role assignments depending on the tasks they're performing.
+   * The [Global Secure Access Administrator role](/azure/active-directory/roles/permissions-reference) role to manage the Global Secure Access features.
    * The [Conditional Access Administrator](/azure/active-directory/roles/permissions-reference#conditional-access-administrator) to create and interact with Conditional Access policies.
-* The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
+* The product requires licensing. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 
 ### Known limitations
 
@@ -50,7 +50,7 @@ Universal tenant restrictions help to prevent data exfiltration across browsers,
 
 Before an organization can use universal tenant restrictions, they must configure both the default tenant restrictions and tenant restrictions for any specific partners.
 
-For more information to configure these policies, see the article [Set up tenant restrictions V2 (Preview)](/azure/active-directory/external-identities/tenant-restrictions-v2).
+For more information to configure these policies, see the article [Set up tenant restrictions V2](/azure/active-directory/external-identities/tenant-restrictions-v2).
 
 :::image type="content" source="media/how-to-universal-tenant-restrictions/sample-tenant-restrictions-policy-blocking-access.png" alt-text="Screenshot showing a sample tenant restriction policy in the portal." lightbox="media/how-to-universal-tenant-restrictions/sample-tenant-restrictions-policy-blocking-access.png":::
 
@@ -105,8 +105,8 @@ This capability works the same for Exchange Online and Microsoft Graph in the fo
 
 The next step for getting started with Microsoft Entra Internet Access is to [Enable enhanced Global Secure Access signaling](how-to-source-ip-restoration.md#enable-global-secure-access-signaling-for-conditional-access).
 
-For more information on Conditional Access policies for Global Secure Access (preview), see the following articles:
+For more information on Conditional Access policies for Global Secure Access, see the following articles:
 
-- [Set up tenant restrictions V2 (Preview)](/azure/active-directory/external-identities/tenant-restrictions-v2)
+- [Set up tenant restrictions V2](/azure/active-directory/external-identities/tenant-restrictions-v2)
 - [Source IP restoration](how-to-source-ip-restoration.md)
 - [Enable compliant network check with Conditional Access](how-to-compliant-network.md)

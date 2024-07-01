@@ -1,6 +1,6 @@
 ---
-title: How to configure Global Secure Access (preview) web content filtering
-description: Learn how to configure web content filtering in Microsoft Entra Internet Access (preview).
+title: How to configure Global Secure Access web content filtering
+description: Learn how to configure web content filtering in Microsoft Entra Internet Access.
 author: kenwith    
 ms.author: kenwith
 manager: amycolannino
@@ -11,7 +11,7 @@ ms.subservice: entra-internet-access
 ms.reviewer: frankgomulka
 ---
 
-# How to configure Global Secure Access (preview) web content filtering
+# How to configure Global Secure Access web content filtering
 
 Web content filtering empowers you to implement granular Internet access controls for your organization based on website categorization.
 
@@ -21,8 +21,8 @@ The web filtering feature is currently limited to user- and context-aware Fully 
 
 ## Prerequisites
 
-- Administrators who interact with **Global Secure Access (preview)** features must have one or more of the following role assignments depending on the tasks they're performing.
-   - The [Global Secure Access Administrator role](/azure/active-directory/roles/permissions-reference) role to manage the Global Secure Access preview features.
+- Administrators who interact with **Global Secure Access** features must have one or more of the following role assignments depending on the tasks they're performing.
+   - The [Global Secure Access Administrator role](/azure/active-directory/roles/permissions-reference) role to manage the Global Secure Access features.
    - The [Conditional Access Administrator](/azure/active-directory/roles/permissions-reference#conditional-access-administrator) to create and interact with Conditional Access policies.
 - Complete the [Get started with Global Secure Access](how-to-get-started-with-global-secure-access.md) guide. 
 - [Install the Global Secure Access client](how-to-install-windows-client.md) on end user devices.
@@ -92,7 +92,7 @@ Create a Conditional Access policy for end users or groups and deliver your secu
 1. Browse to **Identity** > **Protection** > **Conditional Access**.
 1. Select **Create new policy**.
 1. Enter a name and assign a user or group.
-1. Select **Target resources** and **Global Secure Access (Preview)** from the drop-down menu to set what the policy applies to.
+1. Select **Target resources** and **Global Secure Access** from the drop-down menu to set what the policy applies to.
 1. Select **Internet traffic** from the drop-down menu to set the traffic profile this policy applies to.
 1. Select **Session** > **Use Global Secure Access security profile** and choose a security profile.
 1. Select **Select**.

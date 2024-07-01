@@ -1,6 +1,6 @@
 ---
-title: Global Secure Access (preview) network traffic logs
-description: Learn how to use Global Secure Access (preview) traffic logs to monitor connections to the service, the type of traffic, and who's connecting.
+title: Global Secure Access network traffic logs
+description: Learn how to use Global Secure Access traffic logs to monitor connections to the service, the type of traffic, and who's connecting.
 author: kenwith
 ms.author: kenwith
 manager: amycolannino
@@ -12,16 +12,16 @@ ms.service: global-secure-access
 
 ---
 
-# How to use the Global Secure Access (preview) traffic logs
+# How to use the Global Secure Access traffic logs
 
-Monitoring the traffic for Global Secure Access (preview) is an important activity for ensuring your tenant is configured correctly and that your users are getting the best experience possible. The Global Secure Access traffic logs provide insight into who is accessing what resources, where they're accessing them from, and what action took place.
+Monitoring the traffic for Global Secure Access is an important activity for ensuring your tenant is configured correctly and that your users are getting the best experience possible. The Global Secure Access traffic logs provide insight into who is accessing what resources, where they're accessing them from, and what action took place.
 
 This article describes how to use the traffic logs for Global Secure Access.
 
 ## Prerequisites 
 
 - A **Global Secure Access Administrator** role in Microsoft Entra ID.
-- The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
+- The product requires licensing. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 
 ## How the traffic logs work
 
@@ -38,7 +38,7 @@ Within each log instance, you can see the connection ID and transaction ID in th
 ## How to view the traffic logs
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](/azure/active-directory/roles/permissions-reference#reports-reader).
-1. **Global Secure Access (Preview)** > **Monitor** > **Traffic logs**.
+1. **Global Secure Access** > **Monitor** > **Traffic logs**.
 
 The top of the page displays a summary of all transactions as well as a breakdown for each type of traffic. Select the **Microsoft 365** or **Private access** buttons to filter the logs to each traffic type.
 

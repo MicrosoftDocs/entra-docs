@@ -1,5 +1,5 @@
 ---
-title: Get started with Global Secure Access (preview)
+title: Get started with Global Secure Access
 description: Configure the main components of Microsoft Entra Internet Access and Microsoft Entra Private Access, which make up Global Secure Access, Microsoft's Security Service Edge solution.
 author: kenwith
 ms.author: kenwith
@@ -10,7 +10,7 @@ ms.service: global-secure-access
 ---
 # Get started with Global Secure Access
 
-Global Secure Access (preview), Microsoft's Security Service Edge, is the centralized location in the Microsoft Entra admin center where you can configure and manage the features. Many features and settings apply to both Microsoft Entra Private Access and Microsoft Entra Internet Access. Some features are specific to one or the other.
+Global Secure Access, Microsoft's Security Service Edge, is the centralized location in the Microsoft Entra admin center where you can configure and manage the features. Many features and settings apply to both Microsoft Entra Private Access and Microsoft Entra Internet Access. Some features are specific to one or the other.
 
 This guide helps you get started configuring both services for the first time.
 
@@ -20,13 +20,13 @@ Administrators who interact with **Global Secure Access preview** features must 
 
 To follow the [Zero Trust principle of least privilege](/security/zero-trust/), consider using [Privileged Identity Management (PIM)](/azure/active-directory/privileged-identity-management/pim-configure) to activate just-in-time privileged role assignments.
 
-The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense). To use the Microsoft traffic forwarding profile, a Microsoft 365 E3 license is recommended. After general availability, Microsoft Entra Private Access and Microsoft Entra Internet Access might require different licenses.
+The product requires licensing. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense). To use the Microsoft traffic forwarding profile, a Microsoft 365 E3 license is recommended. After general availability, Microsoft Entra Private Access and Microsoft Entra Internet Access might require different licenses.
 
-There might be limitations with some features of the Global Secure Access preview, which are defined in the associated articles.
+There might be limitations with some features of the Global Secure Access, which are defined in the associated articles.
 
 ## Access the Microsoft Entra admin center
 
-Global Secure Access (preview) is the area in the Microsoft Entra admin center where you configure and manage Microsoft Entra Internet Access and Microsoft Entra Private Access.
+Global Secure Access is the area in the Microsoft Entra admin center where you configure and manage Microsoft Entra Internet Access and Microsoft Entra Private Access.
 
 - Go to [**https://entra.microsoft.com**](https://entra.microsoft.com/).
 

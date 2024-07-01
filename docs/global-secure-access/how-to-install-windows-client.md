@@ -1,5 +1,5 @@
 ---
-title: The Global Secure Access client for Windows (preview)
+title: The Global Secure Access client for Windows
 description: Install the Global Secure Access client for Windows.
 ms.service: global-secure-access
 ms.topic: how-to
@@ -9,7 +9,7 @@ author: kenwith
 manager: amycolannino
 ms.reviewer: lirazb
 ---
-# Global Secure Access client for Windows (preview)
+# Global Secure Access client for Windows
 
 Learn how to install the Global Secure Access client for Windows.
 
@@ -22,7 +22,7 @@ Learn how to install the Global Secure Access client for Windows.
 - Devices must be either Microsoft Entra joined or Microsoft Entra hybrid joined. 
    - Microsoft Entra registered devices aren't supported.
 - Local administrator credentials are required for installation.
-- The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
+- The product requires licensing. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 
 ### Known limitations
 
@@ -47,7 +47,7 @@ There are several other limitations based on the traffic forwarding profile in u
 The most current version of the Global Secure Access client can be downloaded from the Microsoft Entra admin center.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
-1. Browse to **Global Secure Access (Preview)** > **Connect** > **Client download**.
+1. Browse to **Global Secure Access** > **Connect** > **Client download**.
 1. Select **Download Client**.
 
     ![Screenshot of the download Windows client button.](media/how-to-install-windows-client/client-download-screen.png)

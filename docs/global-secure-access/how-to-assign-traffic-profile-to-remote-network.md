@@ -1,6 +1,6 @@
 ---
-title: How to assign a remote network to a traffic forwarding profile for Global Secure Access (preview)
-description: Learn how to assign a remote network to a traffic forwarding profile for Global Secure Access (preview).
+title: How to assign a remote network to a traffic forwarding profile for Global Secure Access
+description: Learn how to assign a remote network to a traffic forwarding profile for Global Secure Access.
 author: kenwith
 ms.author: kenwith
 manager: amycolannino
@@ -9,7 +9,7 @@ ms.date: 02/29/2024
 ms.service: global-secure-access
 
 ---
-# Assign a remote network to a traffic forwarding profile for Global Secure Access (preview)
+# Assign a remote network to a traffic forwarding profile for Global Secure Access
 
 If you're tunneling your Microsoft traffic through the Global Secure Access service, you can assign remote networks to the traffic forwarding profile. Your end users can access Microsoft resources by connecting to the service from a remote network, such as a branch office location.
 
@@ -24,8 +24,8 @@ There are multiple ways to assign a remote network to the traffic forwarding pro
 To assign a remote network to a traffic forwarding profile to, you must have:
 
 - A **Global Secure Access Administrator** role in Microsoft Entra ID. 
-- The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
-- To use the Microsoft traffic forwarding profile (preview), a Microsoft 365 E3 license is recommended.
+- The product requires licensing. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
+- To use the Microsoft traffic forwarding profile, a Microsoft 365 E3 license is recommended.
 
 ### Known limitations
 
@@ -34,7 +34,7 @@ To assign a remote network to a traffic forwarding profile to, you must have:
 ## Assign the Microsoft traffic profile to a remote network
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
-1. Browse to **Global Secure Access (preview)** > **Devices** > **Remote network**.
+1. Browse to **Global Secure Access** > **Devices** > **Remote network**.
 1. Select a remote network. 
 1. Select **Traffic profiles**. 
 1. Select (or unselect) the checkbox for **Microsoft traffic forwarding profile**. 
@@ -44,7 +44,7 @@ To assign a remote network to a traffic forwarding profile to, you must have:
 
 ## Assign a remote network to the Microsoft traffic forwarding profile
 
-1. Browse to **Global Secure Access (preview)** > **Connect** > **Traffic forwarding**.
+1. Browse to **Global Secure Access** > **Connect** > **Traffic forwarding**.
 1. Select the **Add/edit assignments** button for **Microsoft traffic profile**. 
 
 ![Screenshot of the add/edit assignment button on the Microsoft traffic profile.](media/how-to-assign-traffic-profile-to-remote-network/microsoft-traffic-profile-remote-network-button.png)

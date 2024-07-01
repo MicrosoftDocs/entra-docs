@@ -9,7 +9,7 @@ ms.date: 03/04/2024
 ms.service: global-secure-access
 ms.subservice: entra-internet-access
 ---
-# Global Secure Access (preview) Web content filtering categories
+# Global Secure Access Web content filtering categories
 
 When you set up rules to filter web content, you can select based on a category. This article provides a list of categories along with explanations.
 

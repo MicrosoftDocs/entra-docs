@@ -1,5 +1,5 @@
 ---
-title: The Global Secure Access client for Android (preview)
+title: The Global Secure Access client for Android
 description: Install the Global Secure Access Android client.
 ms.service: global-secure-access
 ms.topic: how-to
@@ -9,7 +9,7 @@ author: kenwith
 manager: amycolannino
 ms.reviewer: dhruvinshah
 ---
-# Global Secure Access client for Android (preview)
+# Global Secure Access client for Android
 
 The Global Secure Access client can be deployed to compliant Android devices using Microsoft Intune and Microsoft Defender for Endpoint on Android. The Android client is built into the Defender for Endpoint Android app, which streamlines how your end users connect to Global Secure Access. The Global Secure Access Android client makes it easier for your end users to connect to the resources they need without having to manually configure VPN settings on their devices.
 

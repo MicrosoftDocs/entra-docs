@@ -143,7 +143,7 @@ To create a remote network in the Microsoft Entra admin center, you need to view
 In this step, use the network information from the VPN gateway to create a remote network in the Microsoft Entra admin center. The first step is to provide the name and location of your remote network.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator).
-1. Navigate to **Global Secure Access (preview)** > **Connect** > **Remote networks**.
+1. Navigate to **Global Secure Access** > **Connect** > **Remote networks**.
 1. Select the **Create remote network** button and provide the details.
     - **Name**: For this example, use Azure_vWAN.
     - **Region**: For this example, select **South Central US**.
@@ -280,7 +280,7 @@ The following image shows the traffic profile **Policies & rules** for the Micro
 
 ### Check connectivity in Microsoft Entra admin center
 View the Remote network health logs to validate connectivity in the Microsoft Entra admin center.
-1. In Microsoft Entra admin center, navigate to **Global Secure Access (Preview)** > **Monitor** > **Remote network health logs**.
+1. In Microsoft Entra admin center, navigate to **Global Secure Access** > **Monitor** > **Remote network health logs**.
 1. Select **Add Filter**. 
 1. Select **Source IP** and type the source IP address for the VPN gateway's *Instance0* or *Instance1* IP address. Select **Apply**.
 1. The connectivity should be **"Remote network alive"**.
@@ -361,7 +361,7 @@ In this step, we use the AVD to test access restrictions to the virtual network.
 
 ### Test the tenant restriction
 Before testing, enable tenant restrictions on the virtual network.
-1. In Microsoft Entra admin center, navigate to **Global Secure Access (Preview)** > **Global settings** > **Session management**.
+1. In Microsoft Entra admin center, navigate to **Global Secure Access** > **Global settings** > **Session management**.
 1. Set the **Enable tagging to enforce tenant restrictions on your network** toggle to on.
 1. Select **Save**.
 1. You can modify the cross-tenant access policy by navigating to **Identity** > **External identities** > **Cross-tenant access settings**. For more information, see the article, [Cross-tenant access overview](../external-id/cross-tenant-access-overview.md).
@@ -375,7 +375,7 @@ To test:
 
 ### Test source IP restoration
 Before testing, enable conditional access.
-1. In Microsoft Entra admin center, navigate to **Global Secure Access (Preview)** > **Global settings** > **Session management**.
+1. In Microsoft Entra admin center, navigate to **Global Secure Access** > **Global settings** > **Session management**.
 1. Select the **Adaptive Access** tab.
 1. Set the **Enable Global Secure Access signaling in Conditional Access** toggle to on.
 1. Select **Save**. For more information, see the article, [Source IP restoration](how-to-source-ip-restoration.md).
@@ -388,7 +388,7 @@ Repeat the tenant restriction test from the previous section:
 :::image type="content" source="media/how-to-create-remote-network-vwan/access-blocked-troubleshooting-details-with-highlight.png" alt-text="Screenshot of the 'Access is blocked' message with the IP address highlighted.":::
 
 To test (option 2):
-1. In Microsoft Entra admin center, navigate to **Global Secure Access (Preview)** > **Monitor** > **Remote network health logs**.
+1. In Microsoft Entra admin center, navigate to **Global Secure Access** > **Monitor** > **Remote network health logs**.
 1. Select **Add Filter**. 
 1. Select **Source IP** and type the VPN gateway public IP address. Select **Apply**.
 :::image type="content" source="media/how-to-create-remote-network-vwan/remote-network-health-logs-filter.png" alt-text="Screenshot of the Remote network health logs page with the Add filter menu open ready to type the Source IP.":::
