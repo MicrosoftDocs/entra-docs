@@ -8,7 +8,7 @@ items:
     href: overview-what-is-global-secure-access.md
   - name: Get started with Global Secure Access
     href: how-to-get-started-with-global-secure-access.md
-  - name: Global Secure Access dashboard
+  - name: Global Secure Access dashboard (preview)
     href: concept-traffic-dashboard.md
 - name: Concepts
   expanded: true

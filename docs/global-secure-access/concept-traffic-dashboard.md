@@ -1,6 +1,6 @@
 ---
-title: Learn about the Global Secure Access dashboard
-description: Monitor the health and status of your network traffic with the Global Secure Access dashboard.
+title: Learn about the Global Secure Access dashboard (preview)
+description: Monitor the health and status of your network traffic with the Global Secure Access dashboard (preview).
 author: kenwith
 ms.author: kenwith
 manager: amycolannino
@@ -9,9 +9,9 @@ ms.date: 06/18/2024
 ms.service: global-secure-access
 ---
 
-# Global Secure Access dashboard
+# Global Secure Access dashboard (preview)
 
-The Global Secure Access dashboard provides you with visualizations of the network traffic acquired by the Microsoft Entra Private and Microsoft Entra Internet Access services. The dashboard compiles the data from your network configurations, including devices, users, and tenants into several widgets that provide you with answers to the following questions:
+The Global Secure Access dashboard (preview) provides you with visualizations of the network traffic acquired by the Microsoft Entra Private and Microsoft Entra Internet Access services. The dashboard compiles the data from your network configurations, including devices, users, and tenants into several widgets that provide you with answers to the following questions:
 
 - How many devices using the Global Secure Access client are active in my network?
 - Was there a recent change to the number of active devices?
@@ -28,7 +28,7 @@ This article describes each of the dashboard widgets and how you can use the dat
 
 ## Prerequisites
 
-To view the Global Secure Access dashboard, you must have:
+To view the Global Secure Access dashboard (preview), you must have:
 
 - A **Global Secure Access Administrator** role in Microsoft Entra ID.
 - A Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
