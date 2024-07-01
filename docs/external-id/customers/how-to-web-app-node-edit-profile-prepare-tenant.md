@@ -1,5 +1,5 @@
 ---
-title: Prepare external tenant for profile editing with MFA in a Node.js web application
+title: Set up an external tenant for profile editing with MFA in a Node.js web application
 description: Learn how to prepare external tenant to edit profile with multifactor authentication protection in your external-facing Node.js web app
 manager: mwongerapz
 author: kengaderdus
