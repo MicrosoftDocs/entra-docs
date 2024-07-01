@@ -26,9 +26,6 @@ The Global Secure Access dashboard provides you with visualizations of the netwo
 
 This article describes each of the dashboard widgets and how you can use the data on the dashboard to monitor and improve your network configurations.
 
-> [!NOTE]
-> The profile usage widget and the alerts and insights widget are in preview.
-
 ## Prerequisites
 
 To view the Global Secure Access dashboard, you must have:
@@ -60,7 +57,7 @@ The **Global Secure Access snapshot** defaults to showing all types of traffic, 
 
 ![Screenshot of the Global Secure Access snapshot widget with the filter open.](media/concept-traffic-dashboard/snapshot-filter.png)
 
-## Alerts and notifications
+## Alerts and notifications (preview)
 
 This widget shows what is happening in the network and helps identify suspicious activities or trends identified by the network data.
 
@@ -75,7 +72,7 @@ This widget provides the following alerts:
 
 Select the link next to the alert name to navigate to a related page with additional information.
 
-## Usage profiling
+## Usage profiling (preview)
 
 The **Usage profiling** widget displays usage patterns over a selected period of time.
 
