@@ -5,7 +5,7 @@ author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
 ms.custom: has-adal-ref
-ms.date: 06/03/2024
+ms.date: 07/01/2024
 ms.service: identity-platform
 
 ms.topic: whats-new
