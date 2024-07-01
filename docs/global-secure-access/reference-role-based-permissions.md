@@ -21,7 +21,7 @@ The available administrator roles are Global, Security, Global Secure Access (GS
 
 | Permissions | [Global Admin](#global-administrator-and-security-administrator) | [Security Admin](#global-administrator-and-security-administrator) | [GSA Admin](#global-secure-access-administrator) | [CA Admin](#conditional-access-administrator) | [Apps Admin](#application-administrator) | [Global Reader](#security-reader-and-global-reader) | [Security Reader](#security-reader-and-global-reader) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Configure Private Access (Quick access, Private Network connectors, app segments, Enterprise apps) | ✅ |  |  |  | ✅ |  |  |
+| Configure Private Access (Quick Access, Private Network connectors, app segments, Enterprise apps) | ✅ |  |  |  | ✅ |  |  |
 | Create and interact with Conditional Access policies | ✅ | ✅ |  | ✅ |  |  |  |
 | Manage traffic forwarding profiles | ✅ | ✅ | ✅ |  |  |  |  |
 | User and Group assignments | ✅ |  |  |  | ✅ |  |  |
