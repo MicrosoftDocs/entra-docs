@@ -102,7 +102,7 @@ In this section, we activate Global Secure Access through the Microsoft Entra ad
    - The **Microsoft 365 access profile** is for Microsoft Entra Internet Access for Microsoft 365.
    - The **Private access profile** is for Microsoft Entra Private Access.
    - The **Internet access profile** is for Microsoft Entra Internet Access. Microsoft's Security Service Edge solution only captures traffic on client devices with Global Secure Access Client installation.
-     :::image type="content" source="media/deployment-scenario-remote-access/traffic-forwarding.png" alt-text="Example of Traffic forwarding showing enabled Private access profile control.":::
+     :::image type="content" source="media/deployment-scenario-internet-access/private-access-traffic-profile.png" alt-text="Example of traffic forwarding showing enabled Private Access profile control." lightbox="media/deployment-scenario-internet-access/private-access-traffic-profile-expanded.png":::
 
 #### Install Global Secure Access client for modernize remote access scenario
 
@@ -147,7 +147,7 @@ Microsoft Entra Private Access supports transmission control protocol (TCP) appl
 
 1. From the connector server, verify that you can access a file share on the file server.
 1. Sign in to the Microsoft Entra admin center. Go to **Global Secure Access (preview)** \> **Applications** \> **Enterprise applications** \> **+ New Application**.
-   :::image type="content" source="media/deployment-scenario-remote-access/enterprise-applications.png" alt-text="Example of Enterprise applications showing New application control.":::
+   :::image type="content" source="media/deployment-scenario-remote-access/new-enterprise-app" alt-text="Example of Enterprise applications showing New application control.":::
 1. Enter a **Name** (such as *FileServer1*). Select the default connector group. Select **+Add application segment**. Enter the **IP address** of the application server and port 441.
    :::image type="content" source="media/deployment-scenario-remote-access/application-segment.png" alt-text="Example of Create Global Secure Access application, Create application segment.":::
 1. Select **Apply** \> **Save**. Verify that the application is in **Enterprise applications**.
@@ -255,7 +255,7 @@ Activate Global Secure Access through the Microsoft Entra admin center and make 
    - The **Microsoft 365 access profile** is for Microsoft Entra Internet Access for Microsoft 365.
    - The **Private access profile** is for Microsoft Entra Private Access.
    - The **Internet access profile** is for Microsoft Entra Internet Access. Microsoft's Security Service Edge solution only captures traffic on client devices with Global Secure Access Client installation.
-     :::image type="content" source="media/deployment-scenario-remote-access/traffic-forwarding.png" alt-text="Example of Traffic forwarding showing enabled Private access profile control.":::
+     :::image type="content" source="media/deployment-scenario-internet-access/private-access-traffic-profile.png" alt-text="Example of traffic forwarding showing enabled Private Access profile control." lightbox="media/deployment-scenario-internet-access/private-access-traffic-profile-expanded.png":::
 
 #### Install Global Secure Access client for Internet and Private Access scenario
 
@@ -294,7 +294,7 @@ Microsoft Entra Private Access supports transmission control protocol (TCP) appl
 
 1. From the connector server, verify that you can access a file share on the file server.
 1. Sign in to the Microsoft Entra admin center. Go to **Global Secure Access (preview)** \> **Applications** \> **Enterprise applications** \> **+ New Application**.
-   :::image type="content" source="media/deployment-scenario-remote-access/enterprise-applications.png" alt-text="Example of Enterprise applications showing New application control.":::
+   :::image type="content" source="media/deployment-scenario-remote-access/new-enterprise-app" alt-text="Example of Enterprise applications showing New application control.":::
 1. Enter a **Name** (such as *FileServer1*). Select the default connector group. Select **+Add application segment**. Enter the **IP address** of the application server and port 441.
    :::image type="content" source="media/deployment-scenario-remote-access/application-segment.png" alt-text="Example of Create Global Secure Access application, Create application segment.":::
 1. Select **Apply** \> **Save**. Verify that the application is in **Enterprise applications**.

@@ -96,7 +96,7 @@ In this section, we activate Global Secure Access through the Microsoft Entra ad
    - The **Microsoft 365 access profile** is for Microsoft Entra Internet Access for Microsoft 365.
    - The **Private access profile** is for Microsoft Entra Private Access.
    - The **Internet access profile** is for Microsoft Entra Internet Access. Microsoft's Security Service Edge solution only captures traffic on client devices with Global Secure Access Client installation.
-     :::image type="content" source="media/deployment-scenario-internet-access/traffic-forwarding.png" alt-text="Example of Traffic forwarding showing enabled Private access profile control.":::
+     :::image type="content" source="media/deployment-scenario-internet-access/private-access-traffic-profile.png" alt-text="Example of traffic forwarding showing enabled Private Access profile control." lightbox="media/deployment-scenario-internet-access/private-access-traffic-profile-expanded.png":::
 
 ### Install Global Secure Access client
 
@@ -126,15 +126,15 @@ In this section, we block access to inappropriate sites for all users in the org
 ### Create baseline web filtering policy
 
 1. Sign in to the Microsoft Entra admin center. Go to **Global Secure Access (Preview)** \> **Secure** \> **Web content filtering policies** \> **Create policy** \> [**Configure Global Secure Access content filtering**](../global-secure-access/how-to-configure-web-content-filtering.md).
-   :::image type="content" source="media/deployment-scenario-internet-access/baseline-policy-creation.png" alt-text="Example of Web content filtering policies with a red box highlighting the Create policy control to create baseline web filtering policy.":::
+   [ ![Example of Web content filtering policies with a red box highlighting the Create policy control to create baseline web filtering policy.](media/deployment-scenario-internet-access/web-content-filtering-policies-baseline-inline.png)](media//web-content-filtering-policies-baseline-expanded.png#lightbox)
 1. On **Create a web content filtering policy** \> **Basics**, complete these fields:
    - **Name**: Baseline Internet Access Block Rule
    - **Description**: Add a description
    - **Action**: Block
-     :::image type="content" source="media/deployment-scenario-internet-access/baseline-policy-basics.png" alt-text="Example of Enterprise applications, Create Global Secure Access application, Web content filtering policies, Create a web content filtering policy.":::
+     [ ![Example of Enterprise applications, Create Global Secure Access application, Web content filtering policies, Create a web content filtering policy.](media/deployment-scenario-internet-access/create-web-content-filtering-policy-basics-baseline-inline.png)](media/deployment-scenario-internet-access/create-web-content-filtering-policy-basics-baseline-expanded.png#lightbox)
 1. Select **Next**.
 1. On **Create a web content filtering policy** \> **Policy Rules**, select **Add Rule**.
-   :::image type="content" source="media/deployment-scenario-internet-access/baseline-policy-rule-add.png" alt-text="Example of Web content filtering policies, Create a web content filtering policy, Policy Rules with a red box highlighting the Add Rule control.":::
+   :::image type="content" source="media/deployment-scenario-internet-access/create-web-content-filtering-policy-rules-baseline.png" alt-text="Example of Web content filtering policies, Create a web content filtering policy, Policy Rules with a red box highlighting the Add Rule control.":::
 1. In **Add Rule**, complete these fields:
    - **Name**: Baseline blocked web categories
    - **Destination type:** webCategory
@@ -145,14 +145,14 @@ In this section, we block access to inappropriate sites for all users in the org
    - **Hacking**
    - **Illegal Software**
    - **Social Networking**
-     :::image type="content" source="media/deployment-scenario-internet-access/baseline-policy-rule-update.png" alt-text="Example of Update rule, Add a rule to your policy, with Baseline blocked web categories in Name text box.":::
+     :::image type="content" source="media/deployment-scenario-internet-access/create-web-content-filtering-policy-add-rule-baseline.png" alt-text="Example of Update rule, Add a rule to your policy, with Baseline blocked web categories in Name text box.":::
 1. Select **Add**.
 1. On **Create a web content filtering policy** \> **Policy Rules**, confirm your selections.
-   :::image type="content" source="media/deployment-scenario-internet-access/baseline-policy-rule-confirm.png" alt-text="Example of Enterprise applications, Create Global Secure Access application, Web content filtering policies, Create a web content filtering policy, Policy Rules.":::
+   [ ![Example of Enterprise applications, Create Global Secure Access application, Web content filtering policies, Create a web content filtering policy, Policy Rules.](media/deployment-scenario-internet-access/create-web-content-filtering-policy-review-baseline-inline.png)](media/deployment-scenario-internet-access/create-web-content-filtering-policy-review-baseline-expanded.png#lightbox)
 1. Select **Next**.
 1. On **Create a web content filtering policy** \> **Review**, confirm your policy configuration.
 1. Select **Create policy**.
-   :::image type="content" source="media/deployment-scenario-internet-access/baseline-policy-rule-review.png" alt-text="Example of Enterprise applications, Create Global Secure Access application, Web content filtering policies, Create a web content filtering policy, Review.":::
+   [ ![Screenshot of Global Secure Access, Security profiles, Review tab for baseline policy.](media/deployment-scenario-internet-access/security-profiles-create-policy-review-baseline-inline.png)](media/deployment-scenario-internet-access/security-profiles-create-policy-review-baseline-expanded.png#lightbox)
 1. To confirm policy creation, view it in **Manage web content filtering policies**.
 
 ### Configure baseline security profile
@@ -176,7 +176,7 @@ In this section, we create a security profile that allows access to social netwo
 ### Create social networking web filtering policy
 
 1. Sign in to the Microsoft Entra admin center. Go to **Global Secure Access (Preview)** \> **Secure** \> **Web content filtering policies** \> **Create policy** \> [**Configure Global Secure Access content filtering**](../global-secure-access/how-to-configure-web-content-filtering.md).
-   :::image type="content" source="media/deployment-scenario-internet-access/social-networking-policy-create.png" alt-text="Example of Web content filtering policies with a red box highlighting the Create policy control to create social networking web filtering policy.":::
+   [ ![Example of Enterprise applications, Create Global Secure Access application, Web content filtering policies, Create a web content filtering policy.](media/deployment-scenario-internet-access/create-web-content-filtering-policy-basics-baseline-inline.png)](media/deployment-scenario-internet-access/create-web-content-filtering-policy-basics-baseline-expanded.png#lightbox)
 1. On **Create a web content filtering policy** \> **Basics**, complete these fields:
    - **Name**: Allow Social Networking sites
    - **Description:** Add a description
@@ -198,7 +198,7 @@ In this section, we create a security profile that allows access to social netwo
 ### Create social networking security policy profile
 
 1. Sign in to the Microsoft Entra admin center. Go to **Global Secure Access (Preview)** \> **Secure** \> **Security profiles**. Select **Create profile**.
-   :::image type="content" source="media/deployment-scenario-internet-access/security-profile-create.png" alt-text="Example of Security profiles with a red box highlighting the Create profile control.":::
+   [ ![Example of Security profiles with a red box highlighting the Create profile control.](media/deployment-scenario-internet-access/security-profiles-inline.png)](media/deployment-scenario-internet-access/security-profiles-expanded.png#lightbox)
 1. On **Create a profile** \> **Basics**, complete these fields:
    - **Profile name**: Allow Social Networking sites
    - **Description:** Add a description
@@ -245,7 +245,7 @@ In this section, we create a new security profile that allows access to hacking 
 ### Create hacking web filtering policy
 
 1. Sign in to the Microsoft Entra admin center. Go to **Global Secure Access (Preview)** \> **Secure** \> **Web content filtering policies** \> **Create policy** \> [**Configure Global Secure Access content filtering**](../global-secure-access/how-to-configure-web-content-filtering.md).
-   :::image type="content" source="media/deployment-scenario-internet-access/hacking-policy-create.png" alt-text="Example of Web content filtering policies with a red box highlighting the Create policy control to create hacking web filtering policy.":::
+   [ ![Example of Security profiles with a red box highlighting the Create profile control.](media/deployment-scenario-internet-access/security-profiles-inline.png)](media/deployment-scenario-internet-access/security-profiles-expanded.png#lightbox)
 1. On **Create a web content filtering policy** \> **Basics**, complete these fields:
    - **Name**: Allow Hacking sites
    - **Description:** Add a description
@@ -267,7 +267,7 @@ In this section, we create a new security profile that allows access to hacking 
 ### Create hacking security policy profile
 
 1. Sign in to the Microsoft Entra admin center. Go to **Global Secure Access (Preview)** \> **Secure** \> **Security profiles**. Select **Create profile**.
-   :::image type="content" source="media/deployment-scenario-internet-access/security-profile-create.png" alt-text="Example of Security profiles with a red box highlighting the Create profile control.":::
+   [ ![Example of Security profiles with a red box highlighting the Create profile control.](media/deployment-scenario-internet-access/security-profiles-inline.png)](media/deployment-scenario-internet-access/security-profiles-expanded.png#lightbox)
 1. On **Create a profile** \> **Basics**, complete these fields:
    - **Profile name**: Allow Hacking sites
    - **Description:** Add a description
