@@ -20,7 +20,7 @@ Welcome to what's new in the Microsoft identity platform documentation. This art
 
 ### Updated articles
 
-- [Microsoft identity platform code samples](sample-v2-code.md) - [DevEx] Removed archived samples from code sample page and articles
+- [Microsoft identity platform code samples](sample-v2-code.md) - Removed archived samples from code sample page and articles
 - [Quickstart: Configure a client application to access a web API](quickstart-configure-app-access-web-apis.md) - Added clarity to the content
 - [Quickstart: Configure an application to expose a web API](quickstart-configure-app-expose-web-apis.md) - Added clarity to the content
 - [Quickstart: Sign in users and call Microsoft Graph from an Android app](quickstart-mobile-app-android-sign-in.md) - Added clarity to the content
