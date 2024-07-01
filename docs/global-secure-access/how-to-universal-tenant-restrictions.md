@@ -13,22 +13,22 @@ ms.reviewer: alexpav
 
 Universal tenant restrictions enhance the functionality of [tenant restriction v2](https://aka.ms/tenant-restrictions-enforcement) using Global Secure Access to tag all traffic no matter the operating system, browser, or device form factor. It allows support for both client and remote network connectivity. Administrators no longer have to manage proxy server configurations or complex network configurations.
 
-Universal Tenant Restrictions does this enforcement using Global Secure Access based policy signaling for both the authentication and data plane. tenant restrictions v2 (preview) enables enterprises to prevent data exfiltration by users using external tenant identities for Microsoft Entra integrated applications like Microsoft Graph, SharePoint Online, and Exchange Online. These technologies work together to prevent data exfiltration universally across all devices and networks.
+Universal Tenant Restrictions does this enforcement using Global Secure Access based policy signaling for both the authentication and data plane. Tenant restrictions v2 enables enterprises to prevent data exfiltration by users using external tenant identities for Microsoft Entra integrated applications like Microsoft Graph, SharePoint Online, and Exchange Online. These technologies work together to prevent data exfiltration universally across all devices and networks.
 
-:::image type="content" source="media/how-to-universal-tenant-restrictions/tenant-restrictions-v-2-universal-tenant-restrictions-flow.png" alt-text="Diagram showing how tenant restrictions v2 (preview) protects against malicious users." lightbox="media/how-to-universal-tenant-restrictions/tenant-restrictions-v-2-universal-tenant-restrictions-flow.png":::
+:::image type="content" source="media/how-to-universal-tenant-restrictions/tenant-restrictions-v-2-universal-tenant-restrictions-flow.png" alt-text="Diagram showing how tenant restrictions v2 protects against malicious users." lightbox="media/how-to-universal-tenant-restrictions/tenant-restrictions-v-2-universal-tenant-restrictions-flow.png":::
 
 The following table explains the steps taken at each point in the previous diagram.
 
 | Step | Description |
 | --- | --- |
-| **1** | Contoso configures a **tenant restrictions v2 (preview)** policy in their cross-tenant access settings to block all external accounts and external apps. Contoso enforces the policy using Global Secure Access universal tenant restrictions. |
+| **1** | Contoso configures a **tenant restrictions v2 ** policy in their cross-tenant access settings to block all external accounts and external apps. Contoso enforces the policy using Global Secure Access universal tenant restrictions. |
 | **2** | A user with a Contoso-managed device tries to access a Microsoft Entra integrated app with an unsanctioned external identity. |
 | **3** | *Authentication plane protection:* Using Microsoft Entra ID, Contoso's policy blocks unsanctioned external accounts from accessing external tenants. | 
 | **4** | *Data plane protection:* If the user again tries to access an external unsanctioned application by copying an authentication response token they obtained outside of Contoso's network and pasting it into the device, they're blocked. The token mismatch triggers reauthentication and blocks access. For SharePoint Online, any attempt at anonymously accessing resources will be blocked. | 
 
 Universal tenant restrictions help to prevent data exfiltration across browsers, devices, and networks in the following ways:
 
-- It enables Microsoft Entra ID, Microsoft Accounts, and Microsoft applications to look up and enforce the associated tenant restrictions v2 (preview) policy. This lookup enables consistent policy application. 
+- It enables Microsoft Entra ID, Microsoft Accounts, and Microsoft applications to look up and enforce the associated tenant restrictions v2 policy. This lookup enables consistent policy application. 
 - Works with all Microsoft Entra integrated third-party apps at the auth plane during sign in.
 - Works with Exchange, SharePoint, and Microsoft Graph for data plane protection.
 
@@ -46,24 +46,20 @@ Universal tenant restrictions help to prevent data exfiltration across browsers,
     - For example, you work for Contoso and you have allow listed Fabrikam as a partner tenant. You may see the error message for the Fabrikam tenant's Microsoft Entra admin center.
         - If you received the "access denied" error message for this URL: `https://entra.microsoft.com/` then add the feature flag as follows: `https://entra.microsoft.com/?feature.msaljs%253Dtrue%2526exp.msaljsexp%253Dtrue#home`
 
-## Configure tenant restrictions v2 (preview) policy 
+## Configure tenant restrictions v2 policy 
 
 Before an organization can use universal tenant restrictions, they must configure both the default tenant restrictions and tenant restrictions for any specific partners.
 
-For more information to configure these policies, see the article [Set up tenant restrictions v2 (preview)](/azure/active-directory/external-identities/tenant-restrictions-v2).
+For more information to configure these policies, see the article [Set up tenant restrictions v2](/azure/active-directory/external-identities/tenant-restrictions-v2).
 
-:::image type="content" source="media/how-to-universal-tenant-restrictions/sample-tenant-restrictions-policy-blocking-access.png" alt-text="Screenshot showing a sample tenant restriction policy in the portal." lightbox="media/how-to-universal-tenant-restrictions/sample-tenant-restrictions-policy-blocking-access.png":::
+## Enable tagging for tenant restrictions v2
 
-## Enable tagging for tenant restrictions v2 (preview)
-
-Once you have created the tenant restriction v2 policies, you can utilize Global Secure Access to apply tagging for tenant restrictions v2 (preview). An administrator with both the [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference) and [Security Administrator](/azure/active-directory/roles/permissions-reference#security-administrator) roles must take the following steps to enable enforcement with Global Secure Access.
+Once you have created the tenant restriction v2 policies, you can utilize Global Secure Access to apply tagging for tenant restrictions v2. An administrator with both the [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference) and [Security Administrator](/azure/active-directory/roles/permissions-reference#security-administrator) roles must take the following steps to enable enforcement with Global Secure Access.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
 1. Browse to **Global Secure Access** > **Global Settings** > **Session Management** > **Tenant Restrictions**.
 1. Select the toggle to **Enable tagging to enforce tenant restrictions on your network**.
 1. Select **Save**.
-
-:::image type="content" source="media/how-to-universal-tenant-restrictions/toggle-enable-tagging-to-enforce-tenant-restrictions.png" alt-text="Screenshot showing the toggle to enable tagging.":::
 
 ## Try Universal tenant restrictions with SharePoint Online.
 
@@ -72,7 +68,7 @@ This capability works the same for Exchange Online and Microsoft Graph in the fo
 ### Try the authentication path:
 
 1. With universal tenant restrictions turned off in Global Secure Access global settings.
-1. Go to SharePoint Online, `https://yourcompanyname.sharepoint.com/`, with an external identity that isn't allow-listed in a tenant restrictions v2 (preview) policy. 
+1. Go to SharePoint Online, `https://yourcompanyname.sharepoint.com/`, with an external identity that isn't allow-listed in a tenant restrictions v2 policy. 
    1. For example, a Fabrikam user in the Fabrikam tenant. 
    1. The Fabrikam user should be able to access SharePoint Online.
 1. Turn on universal tenant restrictions.
@@ -84,7 +80,7 @@ This capability works the same for Exchange Online and Microsoft Graph in the fo
 ### Try the data path  
 
 1. With universal tenant restrictions turned off in Global Secure Access global settings.
-1. Go to SharePoint Online, `https://yourcompanyname.sharepoint.com/`, with an external identity that isn't allow-listed in a tenant restrictions v2 (preview) policy. 
+1. Go to SharePoint Online, `https://yourcompanyname.sharepoint.com/`, with an external identity that isn't allow-listed in a tenant restrictions v2 policy. 
    1. For example, a Fabrikam user in the Fabrikam tenant. 
    1. The Fabrikam user should be able to access SharePoint Online.
 1. In the same browser with SharePoint Online open, go to Developer Tools, or press F12 on the keyboard. Start capturing the network logs. You should see Status 200, when everything is working as expected. 
@@ -107,6 +103,6 @@ The next step for getting started with Microsoft Entra Internet Access is to [En
 
 For more information on Conditional Access policies for Global Secure Access, see the following articles:
 
-- [Set up tenant restrictions v2 (preview)](/azure/active-directory/external-identities/tenant-restrictions-v2)
+- [Set up tenant restrictions v2](/azure/active-directory/external-identities/tenant-restrictions-v2)
 - [Source IP restoration](how-to-source-ip-restoration.md)
 - [Enable compliant network check with Conditional Access](how-to-compliant-network.md)
