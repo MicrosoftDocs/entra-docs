@@ -100,7 +100,7 @@ To troubleshoot the Global Secure Access client, right-click the client icon in 
       - **Flow** active provides a status of whether the connection is still open.
       - **Sent data** provides the number of bytes sent by the end-user device over the connection. 
       - **Received data** provides the number of bytes received by the end-user device over the connection. 
-      - **Correlation ID** is provided to each connection tunneled by the client. This ID allows tracing of the connection in the client logs. The client logs consist of event viewer, event trace (ETL), and the [Global Secure Access traffic logs](how-to-view-traffic-logs.md).
+      - **Correlation ID** is provided to each connection tunneled by the client. This ID allows tracing of the connection in the client logs. The client logs consist of event viewer, event trace (ETL), and the [Global Secure Access traffic logs (preview)](how-to-view-traffic-logs.md).
       - **Flow ID** is the internal ID of the connection used by the client shown in the ETL file.
       - **Channel name** identifies the traffic forwarding profile to which the connection is tunneled. This decision is taken according to the rules in the forwarding profile. 
    - **HostNameAcquisition** provides a list of hostnames that the client acquired based on the FQDN rules in the forwarding profile. Each hostname is shown in a new row. Future acquisition of the same hostname creates another row if DNS resolves the hostname (FQDN) to a different IP address.

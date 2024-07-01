@@ -27,9 +27,9 @@ For more information, see [Global Secure Access audit logs](how-to-access-audit-
 
 ## Traffic logs
 
-The Global Secure Access traffic logs provide a summary of the network connections and transactions that are occurring in your environment. These logs look at *who* accessed *what* traffic from *where* to *where* and with what *result*. The traffic logs provide a snapshot of all connections in your environment and breaks that down into traffic that applies to your traffic forwarding profiles. The logs details provide the traffic type destination, source IP, and more.
+The Global Secure Access traffic logs (preview) provide a summary of the network connections and transactions that are occurring in your environment. These logs look at *who* accessed *what* traffic from *where* to *where* and with what *result*. The traffic logs provide a snapshot of all connections in your environment and breaks that down into traffic that applies to your traffic forwarding profiles. The logs details provide the traffic type destination, source IP, and more.
 
-For more information, see [Global Secure Access traffic logs](how-to-view-traffic-logs.md).
+For more information, see [Global Secure Access traffic logs (preview)](how-to-view-traffic-logs.md).
 
 ## Enriched Office 365 logs
 

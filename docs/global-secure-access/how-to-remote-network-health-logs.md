@@ -184,4 +184,4 @@ The following table describes each of the fields in the Remote network health lo
 ## Next steps
 
 - [Enable enriched Microsoft 365 logs](how-to-view-enriched-logs.md)
-- [Explore Global Secure Access traffic logs](how-to-view-traffic-logs.md)
+- [Explore Global Secure Access traffic logs (preview)](how-to-view-traffic-logs.md)
