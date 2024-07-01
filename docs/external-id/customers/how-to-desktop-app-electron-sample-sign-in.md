@@ -10,7 +10,7 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: how-to
-ms.date: 05/22/2023
+ms.date: 06/27/2024
 ms.custom: developer
 
 #Customer intent: As a dev, devops, I want to learn about how to configure a sample Electron desktop app to sign in and sign out users with my external tenant.
@@ -52,10 +52,6 @@ In this article, you do the following tasks:
 
 [!INCLUDE [active-directory-b2c-grant-delegated-permissions](./includes/register-app/grant-api-permission-sign-in.md)] 
 
-## Configure optional claims
-
-[!INCLUDE [active-directory-configure-optional-claims](./includes/register-app/add-optional-claims-id.md)] 
- 
 ## Create a user flow
 
 [!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/configure-user-flow/create-sign-in-sign-out-user-flow.md)] 

@@ -10,7 +10,7 @@ ms.service: entra-external-id
 
 ms.subservice: customers
 ms.topic: tutorial
-ms.date: 07/27/2023
+ms.date: 06/27/2024
 ms.custom: developer, devx-track-dotnet
 #Customer intent: As a dev, I want to secure my ASP.NET Core web API registered in the external tenant.
 ---
@@ -83,6 +83,9 @@ Replace the following placeholders as shown:
 - Replace `Enter_the_Application_Id_Here` with your application (client) ID.
 - Replace `Enter_the_Tenant_Id_Here` with your Directory (tenant) ID.
 - Replace `Enter_the_Tenant_Subdomain_Here` with your Directory (tenant) subdomain.
+
+[!INCLUDE [external-id-custom-domain](./includes/use-custom-domain-url-dot-net-core.md)]
+
 
 ## Add app role and scope
 

@@ -68,13 +68,13 @@ This is a sample of a typical SAML token.
                             <ds:Transform Algorithm="https://www.w3.org/2001/10/xml-exc-c14n#" />
                         </ds:Transforms>
                         <ds:DigestMethod Algorithm="https://www.w3.org/2001/04/xmlenc#sha256" />
-                        <ds:DigestValue>cV1J580U1pD24hEyGuAxrbtgROVyghCqI32UkER/nDY=</ds:DigestValue>
+                        <ds:DigestValue>E3fH4iJ5kL6mN7oP8qR9sT0uV1wX2y/nDY=</ds:DigestValue>
                     </ds:Reference>
                 </ds:SignedInfo>
-                <ds:SignatureValue>j+zPf6mti8Rq4Kyw2NU2nnu0pb{lots of characters}ut93UTyTAIGOs5fvP9ZfK2vNeMVJW7Xg==</ds:SignatureValue>
+                <ds:SignatureValue>aB1cD2eF3gH4i...J5kL6-mN7oP8qR==</ds:SignatureValue>
                 <KeyInfo xmlns="https://www.w3.org/2000/09/xmldsig#">
                     <X509Data>
-                        <X509Certificate>MIIDPjCCAabcAwIBAgIQsRiM0jheFZhKk49YD0SK1TAJBgUrDg{lots of characters}OBcXWLAIarZ</X509Certificate>
+                        <X509Certificate>C2dE3fH4iJ5kL6mN7oP8qR9sT0uV1w</X509Certificate>
                     </X509Data>
                 </KeyInfo>
             </ds:Signature>
