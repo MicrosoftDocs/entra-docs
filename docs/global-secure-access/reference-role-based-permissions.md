@@ -17,11 +17,11 @@ This article lists the Global Secure Access built-in roles you can assign to all
 
 ## Role-based permissions
 
-The available administrator roles are Global, Security, Global Secure Access (GSA), Conditional Access (CA), Application (Apps), Security, Reader and Global Reader. 
+The available administrator roles are Global, Security, Global Secure Access (GSA), Conditional Access (CA), Application (Apps), Global Reader, and Security Reader. 
 
 | Permissions | [Global Admin](#global-administrator-and-security-administrator) | [Security Admin](#global-administrator-and-security-administrator) | [GSA Admin](#global-secure-access-administrator) | [CA Admin](#conditional-access-administrator) | [Apps Admin](#application-administrator) | [Global Reader](#security-reader-and-global-reader) | [Security Reader](#security-reader-and-global-reader) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Configure Private Access (Quick Access, Private Network connectors, app segments, Enterprise apps) | ✅ |  |  |  | ✅ |  |  |
+| Configure Private Access (Quick Access, Private Network connectors, application segments, Enterprise apps) | ✅ |  |  |  | ✅ |  |  |
 | Create and interact with Conditional Access policies | ✅ | ✅ |  | ✅ |  |  |  |
 | Manage traffic forwarding profiles | ✅ | ✅ | ✅ |  |  |  |  |
 | User and Group assignments | ✅ |  |  |  | ✅ |  |  |
@@ -36,7 +36,7 @@ The available administrator roles are Global, Security, Global Secure Access (GS
 
 ### Global Administrator and Security Administrator 
 
-**Full Access**: This role gives administrators full permissions within Global Secure Access. They can manage policies, settings, and view logs, including scenarios that involve Conditional Access, configurations required for Private Access, write operations on app segments, and management of user assignments for traffic profiles. 
+**Full Access**: This role gives administrators full permissions within Global Secure Access. They can manage policies, settings, and view logs, including scenarios that involve Conditional Access, configurations required for Private Access, write operations on application segments, and management of user assignments for traffic profiles. 
 
 ### Security Administrator 
 
@@ -52,7 +52,7 @@ The available administrator roles are Global, Security, Global Secure Access (GS
 
 ### Application Administrator 
 
-**Private Access Configuration**: This role can configure Private Access, including Quick Access, Private Network connectors, app segments, and enterprise applications. 
+**Private Access Configuration**: This role can configure Private Access, including Quick Access, Private Network connectors, application segments, and enterprise applications. 
 
 ### Security Reader and Global Reader
 
