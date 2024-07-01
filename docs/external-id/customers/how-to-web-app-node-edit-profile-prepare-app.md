@@ -26,7 +26,7 @@ This article is part 2 of a series that demonstrates profile editing in an Node.
 ## Add new project files
 
 Add the following new files to your Node.js web app that signs in users: 
-- In the *views* folder, create *gatedUpdateProfile.hbs* and *updateProfile.hbs*.
+- Create *views/gatedUpdateProfile.hbs* and *views/updateProfile.hbs*.
 - In the root folder of your app, create *fetch.js*. The root folder is one that contains the *package.json* file.
 
 ## Update app UI components
