@@ -106,7 +106,7 @@ items:
     items:
       - name: About logs and monitoring
         href: concept-global-secure-access-logs-monitoring.md
-      - name: Global Secure Access audit logs (preview)
+      - name: Global Secure Access audit logs
         href: how-to-access-audit-logs.md
       - name: Enriched Microsoft 365 audit logs
         href: how-to-view-enriched-logs.md
