@@ -12,7 +12,10 @@ ms.author: barclayn
 
 # Microsoft Entra licensing
 
-This article discusses Microsoft Entra services' licensing. It is intended for IT decision makers, IT administrators, and IT professionals who are considering Microsoft Entra services for their organizations. This article isn't intended for end users.
+This article discusses licensing options for the Microsoft Entra product family. It is intended for security decision makers, identity and network access administrators, and IT professionals who are considering Microsoft Entra solutions for their organizations.
+
+>[!NOTE]
+>This article isn't intended for end users.
 
 ## Entra licensing options
 
