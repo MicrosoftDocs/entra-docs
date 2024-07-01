@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to
 
-ms.date: 04/24/2024
+ms.date: 07/01/2024
 ms.author: jomondi
 ms.reviewer: ergreenl
 ms.custom: kr2b-contr-experiment, enterprise-apps-article
@@ -75,6 +75,9 @@ After you've tested that your application works with Microsoft Entra ID, submit 
 - If you see a "Request Access" page, then fill in the business justification and select **Request Access**.
 
 After your account is added, you can sign in to the Microsoft Application Network portal and submit the request by selecting the **Submit Request (ISV)** tile on the home page. If you see the "Your sign-in was blocked" error while logging in, see [Troubleshoot sign-in to the Microsoft Application Network portal](troubleshoot-app-publishing.md).
+
+> [!NOTE]
+> Currently we are not onboarding new application listing in FY25 due to SFI (Security Future Initiatives). Only the update listing requests can be submitted.
 
 ### Implementation-specific options
 
