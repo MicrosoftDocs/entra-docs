@@ -23,7 +23,7 @@ For more information, see [Global Secure Access dashboard (preview)](concept-tra
 
 The Microsoft Entra audit log is a valuable source of information when researching or troubleshooting changes to your Microsoft Entra environment. Changes related to Global Secure Access are captured in the audit logs in several categories, such as filtering policy, forwarding profiles, remote network management, and more.
 
-For more information, see [Global Secure Access audit logs](how-to-access-audit-logs.md).
+For more information, see [Global Secure Access audit logs (preview)](how-to-access-audit-logs.md).
 
 ## Traffic logs
 

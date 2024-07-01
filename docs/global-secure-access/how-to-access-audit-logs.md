@@ -1,5 +1,5 @@
 ---
-title: How to access Global Secure Access audit logs
+title: How to access Global Secure Access audit logs (preview)
 description: Learn how to access, archive, and analyze the audit logs for Microsoft's Security Service Edge solution.
 author: kenwith
 ms.author: kenwith
@@ -12,7 +12,7 @@ ms.service: global-secure-access
 
 ---
 
-# How to access the Global Secure Access audit logs
+# How to access the Global Secure Access audit logs (preview)
 
 The Microsoft Entra audit logs are a valuable source of information when investigating or troubleshooting changes to your Microsoft Entra environment. Changes related to Global Secure Access are captured in the audit logs in several categories, such as traffic forwarding profiles, remote network management, and more. This article describes how to use the audit log to track changes to your Global Secure Access environment.
 
