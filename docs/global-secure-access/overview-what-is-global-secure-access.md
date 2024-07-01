@@ -57,7 +57,6 @@ Remote users connect to private apps across hybrid and multicloud environments, 
 ## Licensing overview 
 Microsoft Entra Internet Access and Microsoft Entra Private Access are now generally available. Use of internet access features requires Microsoft Entra Internet Access licenses and use of private access features require Microsoft Entra Internet Access Private Access licenses. Use of the Microsoft traffic profile is included with the Secure Access Essentials license.  
 
-Starting on July 1st, 2024, there will be a 90-day grace period for Microsoft Entra Private Access, Microsoft Entra Internet Access and Secure Access Essentials license. Once the grace period has passed, licensing will be enforced. Trial licenses will be available for anyone needing additional time.  
 
 Use of Microsoft Entra Private Access, Microsoft Entra Internet Access and Secure Access Essentials also require Microsoft Entra ID P1 or Microsoft Entra ID P2.  
 
