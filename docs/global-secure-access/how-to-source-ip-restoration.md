@@ -69,6 +69,6 @@ Sign-in log data might take some time to appear this delay is normal as there's 
 
 ## Related content
 
-- [Set up tenant restrictions V2](/azure/active-directory/external-identities/tenant-restrictions-v2)
+- [Set up tenant restrictions v2 (preview)](/azure/active-directory/external-identities/tenant-restrictions-v2)
 - [Enable compliant network check with Conditional Access](how-to-compliant-network.md)
 - [Strictly enforce location policies using continuous access evaluation](../identity/conditional-access/concept-continuous-access-evaluation-strict-enforcement.md)
