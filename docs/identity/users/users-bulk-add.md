@@ -97,8 +97,6 @@ You should see that the users that you created are listed.
 
 ## Bulk import service limits
 
-You should be aware that each bulk operations activity to create users can run for up to one hour.
-
 [!INCLUDE [Bulk operations limitations](~/includes/bulk-operations-limitations.md)]
 
 ## Next steps

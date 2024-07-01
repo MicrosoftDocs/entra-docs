@@ -5,10 +5,12 @@ author: barclayn
 manager: amycolannino
 ms.service: entra-id
 ms.topic: include
-ms.date: 06/26/2024
+ms.date: 07/01/2024
 ms.author: barclayn
 ms.custom: include file
 ---
+
+You should be aware that each bulk operations activity can run for up to one hour.
 
 Bulk operations in the Microsoft Entra admin portal could time out and fail on very large tenants. This limitation is a known issue due to scaling limitations. The Microsoft engineering team is working on a new service that will eventually address this limitation.
 
