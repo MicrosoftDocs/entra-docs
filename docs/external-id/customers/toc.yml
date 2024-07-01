@@ -344,9 +344,9 @@ items:
                 items:
                   - name:  Edit profile with MFA
                     items:
-                      - name: Prepare tenant 
+                      - name: Set-up external tenant 
                         href: how-to-web-app-node-edit-profile-prepare-tenant.md    
-                      - name: Prepare app 
+                      - name: Set-up app 
                         href: how-to-web-app-node-edit-profile-prepare-app.md 
                       - name: Update profile
                         href: how-to-web-app-node-edit-profile-update-profile.md  
