@@ -3278,10 +3278,6 @@
         href: amazon-business-provisioning-tutorial.md
       - name: Appaegis Isolation Access Cloud
         href: appaegis-isolation-access-cloud-provisioning-tutorial.md
-      - name: Apple School Manager
-        href: apple-school-manager-provision-tutorial.md
-      - name: Apple Business Manager
-        href: apple-business-manager-provision-tutorial.md
       - name: Ardoq
         href: ardoq-provisioning-tutorial.md       
       - name: Asana
