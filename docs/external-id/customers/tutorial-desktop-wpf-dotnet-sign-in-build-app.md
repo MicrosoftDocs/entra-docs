@@ -10,7 +10,7 @@ ms.service: entra-external-id
 ms.subservice: customers
 ms.custom: devx-track-dotnet
 ms.topic: tutorial
-ms.date: 07/26/2023
+ms.date: 06/27/2024
 ---
 
 # Tutorial: Authenticate users to your WPF desktop application
@@ -87,6 +87,8 @@ dotnet add package Microsoft.Identity.Client.Broker
         }
     }
     ```
+
+[!INCLUDE [external-id-custom-domain](./includes/use-custom-domain-url-dot-net-wpf.md)]
 
 ## Modify the project file
 

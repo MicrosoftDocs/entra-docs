@@ -181,7 +181,7 @@ Example to include email address into the access_token that PingAccess consumes:
 
 ### Use of claims mapping policy (optional)
 
-Claims mapping lets you migrate old on-premises apps to the cloud by adding more custom claims that back your Active Directory Federation Services (ADFS) or user objects. For more information, see [Claims Mapping Policy (preview)](~/identity-platform/reference-claims-mapping-policy-type.md#claims-mapping-policy-properties).
+Claims mapping lets you migrate old on-premises apps to the cloud by adding more custom claims that back your Active Directory Federation Services (ADFS) or user objects. For more information, see [Claims Customization](/entra/identity-platform/reference-claims-mapping-policy-type#claims-customization-using-a-policy).
 
 To use a custom claim and include more fields in your application. [Created a custom claims mapping policy and assigned it to the application](~/identity-platform/saml-claims-customization.md).
 

@@ -10,7 +10,7 @@ ms.service: entra-external-id
 ms.subservice: customers
 ms.custom: devx-track-dotnet
 ms.topic: tutorial
-ms.date: 05/23/2023
+ms.date: 06/27/2024
 #Customer intent: As a dev, DevOps, I want to learn about how to enable authentication in my own ASP.NET web app with an external tenant.
 ---
 
@@ -90,6 +90,8 @@ Identity related NuGet packages must be installed in the project to authenticate
 1. Open the *Properties/launchSettings.json* file.
 1. In the `https` section of `profiles`, change the `https` URL in `applicationUrl` so that it reads `https://localhost:7274`. You used this URL to define the **Redirect URI**.
 1. Save the changes to your file.
+
+[!INCLUDE [external-id-custom-domain](./includes/use-custom-domain-url-dot-net-aspnet-core.md)]
 
 ## Add authorization to *HomeController.cs*
 
