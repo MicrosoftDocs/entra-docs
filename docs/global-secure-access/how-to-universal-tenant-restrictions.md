@@ -61,7 +61,7 @@ Once you have created the tenant restriction v2 policies, you can utilize Global
 1. Select the toggle to **Enable tagging to enforce tenant restrictions on your network**.
 1. Select **Save**.
 
-## Try Universal tenant restrictions with SharePoint Online.
+## Try Universal tenant restrictions with SharePoint Online (preview).
 
 This capability works the same for Exchange Online and Microsoft Graph in the following examples we explain how to see it in action in your own environment.
 
