@@ -12,7 +12,7 @@ ms.custom: developer
 #Customer intent: As a developer, or IT admin, I want to learn how to configure my external tenant for profile editing with multifactor authentication protection, so that my customer users can edit their profile in external-facing app. 
 ---
 
-# Prepare external tenant for profile editing with MFA in a Node.js web application
+# Set up an external tenant for profile editing with MFA in a Node.js web application
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
