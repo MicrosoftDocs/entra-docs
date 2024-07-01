@@ -77,7 +77,7 @@ After you've tested that your application works with Microsoft Entra ID, submit 
 After your account is added, you can sign in to the Microsoft Application Network portal and submit the request by selecting the **Submit Request (ISV)** tile on the home page. If you see the "Your sign-in was blocked" error while logging in, see [Troubleshoot sign-in to the Microsoft Application Network portal](troubleshoot-app-publishing.md).
 
 > [!NOTE]
-> Currently we are not onboarding new application listing in FY25 due to SFI (Security Future Initiatives). Only the update listing requests can be submitted.
+> Currently we are not onboarding new applications in FY25 due to SFI (Security Future Initiatives). Only the update listing requests can be submitted.
 
 ### Implementation-specific options
 
