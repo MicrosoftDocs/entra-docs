@@ -78,8 +78,6 @@ You can see the status of all of your pending bulk requests in the **Bulk operat
 
 Next, you can check to see that the users you created exist in the Microsoft Entra organization either in the Azure portal or by using PowerShell.
 
-If you experience errors, you can download and view the results file on the **Bulk operation results** page. The file contains the reason for each error. The file submission must match the provided template and include the exact column names. For more information about bulk operations limitations, see [Bulk import service limits](#bulk-import-service-limits).
-
 ## Verify users
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
