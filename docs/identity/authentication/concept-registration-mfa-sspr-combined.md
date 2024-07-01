@@ -21,7 +21,7 @@ Before combined registration, users registered authentication methods for Micros
 
 Before enabling the new experience, review this administrator-focused documentation and the user-focused documentation to ensure you understand the functionality and effect of this feature. Base your training on the [user documentation](https://support.microsoft.com/account-billing/set-up-your-security-info-from-a-sign-in-prompt-28180870-c256-4ebf-8bd7-5335571bf9a8) to prepare your users for the new experience and help to ensure a successful rollout.
 
-Microsoft Entra ID combined security information registration is available for Azure US Government but not Microsoft Azure operated by 21Vianet.
+Microsoft Entra ID combined security information registration is available for Azure US Government but not Microsoft Azure operated by 21Vianet. Combined registration has been rolling out to all customers in Public / US gov clouds. As a result the UX control for legacy vs combined registration experience is being removed once a customer's organization has been migrated to the modern registration experience. 
 
 *My Account* pages are localized based on the language settings of the computer accessing the page. Microsoft stores the most recent language used in the browser cache, so subsequent attempts to access the pages continue to render in the last language used. If you clear the cache, the pages re-render.
 
