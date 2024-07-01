@@ -5,7 +5,7 @@ description: Add users in bulk in Microsoft Entra ID
 author: barclayn
 ms.author: barclayn
 manager: amycolannino
-ms.date: 06/26/2024
+ms.date: 07/01/2024
 ms.topic: how-to
 ms.service: entra-id
 ms.subservice: users
