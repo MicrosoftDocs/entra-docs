@@ -12,7 +12,7 @@ ms.custom: developer
 #Customer intent: As a developer, I want to prepare my Node.js web app for profile editing so that customer users can update their profile after a successful sign-in.
 ---
 
-# Prepare a Node.js web application for profile editing
+# Set up a Node.js web application for profile editing
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 

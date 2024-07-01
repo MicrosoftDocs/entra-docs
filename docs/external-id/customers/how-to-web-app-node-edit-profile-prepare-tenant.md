@@ -28,7 +28,7 @@ To customize the fields your customer users can edit in their profile, choose fr
 
 ## Prerequisites
 
-- Complete the steps in [Tutorial: Prepare your external tenant to sign in users in a Node.js web app](tutorial-web-app-node-sign-in-prepare-tenant.md) tutorial series. After you complete this tutorial, you register an app in your external tenant, and build a web app that signs in users. We refer to this web application as the client web app.
+- Complete the steps in [Tutorial: Prepare your external tenant to sign in users in a Node.js web app](tutorial-web-app-node-sign-in-prepare-tenant.md) tutorial series. The tutorial shows you how to register an app in your external tenant, and build a web app that signs in users. We refer to this web application as the client web app.
 
 ## Register MFA web API
 
