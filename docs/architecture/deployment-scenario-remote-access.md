@@ -407,7 +407,7 @@ To create a joiner workflow, follow these steps.
 1. Go to **Identity governance** \> **Lifecycle workflows** \> **Create a workflow**.
 1. For **Choose a workflow**, select **Onboard new hire employee**.
 
-   [![Understanding workflow template diagram.](media/deployment-scenario-remote-access/workflow-joiner.png)](media/deployment-scenario-remote-access/workflow-joiner.png#lightbox)
+   [![Screenshot of Identity governance, Lifecycle workflows, Create a workflow, Choose a workflow.](media/deployment-scenario-remote-access/workflow-joiner.png)](media/deployment-scenario-remote-access/workflow-joiner.png#lightbox)
 
 1. For **Basics**, enter *Onboard New hire employee -- Finance* for the workflow display name and description. Select **Next**.
 1. For **Configure scope** \> **Rule**, enter values for **Property**, **Operator**, and **Value**. Change the expression of the scope to only users where **Property** \> **department** has a **Value** of **Finance**. Ensure that your test user populates **Property** with the *Finance* string so that it's in the workflow scope.
