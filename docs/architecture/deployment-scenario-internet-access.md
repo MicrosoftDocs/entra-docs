@@ -107,7 +107,7 @@ Microsoft Entra Internet Access for Microsoft 365 and Microsoft Entra Private Ac
 1. Sign in to the Microsoft Entra admin center with at least a Global Administrator role.
 1. Go to **Global Secure Access (preview)** \> **Connect** \> **Client Download**. Select **Download client**. Complete the installation.
 
-   :::image type="content" source="media/deployment-scenario-internet-access/client-download.png" alt-text="Screenshot of Client download showing the Windows Download Client control.":::
+   :::image type="content" source="media/deployment-scenario-internet-access/client-download-inline.png" alt-text="Screenshot of Client download showing the Windows Download Client control." lightbox="media/deployment-scenario-internet-access/client-download-expanded.png":::
 
 1. In the Window taskbar, the Global Secure Access Client first appears as disconnected. After a few seconds, when prompted for credentials, enter test user's credentials.
 1. In the Window taskbar, hover over the Global Secure Access Client icon and verify **Connected** status.

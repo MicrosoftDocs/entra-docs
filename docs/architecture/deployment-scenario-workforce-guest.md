@@ -112,7 +112,7 @@ Follow these steps to create an access package in entitlement management with Ve
 1. For **Resource roles**, select a resource type (for example: Groups and Teams, Applications, SharePoint sites). Select one or more resources.
 1. In **Role**, select the role to which you want users assigned for each resource.
 
-   :::image type="content" source="media/deployment-scenario-workforce-guest/resource-roles-inline.png" alt-text="Screenshot of Resources roles with a red box highlighting the Role column." lightbox="media/resource-roles.png":::
+   :::image type="content" source="media/deployment-scenario-workforce-guest/resource-roles-inline.png" alt-text="Screenshot of Resources roles with a red box highlighting the Role column." lightbox="media/deployment-scenario-workforce-guest/resource-roles.png":::
 
 1. For **Requests**, select **For users in your directory**.
 1. In **Select users and groups**, select **For Users in your directory**. Select **+ Add users and groups**. Select an existing group entitled to request the access package.
@@ -135,7 +135,7 @@ Follow these steps to create an access package in entitlement management with Ve
 1. For **Resource roles**, select a resource type (for example: Groups and Teams, Applications, SharePoint sites). Select one or more resources.
 1. In **Role**, select the role to which you want users assigned for each resource.
 
-   :::image type="content" source="media/deployment-scenario-workforce-guest/resource-roles-inline.png" alt-text="Screenshot of Resources roles with a red box highlighting the Role column." lightbox="media/resource-roles.png":::
+   :::image type="content" source="media/deployment-scenario-workforce-guest/resource-roles-inline.png" alt-text="Screenshot of Resources roles with a red box highlighting the Role column." lightbox="media/deployment-scenario-workforce-guest/resource-roles.png":::
 
 1. For **Requests**, select **For users not in your directory**.
 1. Select **Specific connected organizations**. To select from a list of connected organizations that you previously added, select **Add directory**.
