@@ -7,8 +7,7 @@ ms.author: barclayn
 ms.custom: Identity-Managed-Definition
 ---
 
-Microsoft Entra is available in several licensing options that allow you to choose the package best suited to your needs. 
-
+Microsoft Entra is available in several licensing options that allow you to choose the package best suited to your needs.
 
 >[!NOTE]
 >The licensing options on this page are not comprehensive. You can get detailed information about the various options at the [Microsoft Entra pricing page.](https://www.microsoft.com/security/business/microsoft-entra-pricing) and at the [Compare Microsoft 365 Enterprise plans and pricing page](https://www.microsoft.com/microsoft-365/enterprise/microsoft365-plans-and-pricing)
