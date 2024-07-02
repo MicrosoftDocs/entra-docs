@@ -42,23 +42,25 @@ The following prerequisites are required to implement this scenario.
 ## Naming convention for groups written back
 By default, Microsoft Entra Connect Sync uses the following format when naming groups that are written back.
 
-- Default format: CN=Group_&lt;guid&gt;,OU=&lt;container&gt;,DC=&lt;domain component&gt;,DC=&lt;domain component&gt; 
+- Default format: CN=Group_&lt;guid&gt;,OU=&lt;container&gt;,DC=&lt;domain component&gt;,DC=<domain component>
+
  - Example: CN=Group_3a5c3221-c465-48c0-95b8-e9305786a271,OU=WritebackContainer,DC=contoso,DC=com 
 
-To make it easier to find groups being written back from Microsoft Entra ID to Active Directory, Microsoft Entra Connect Sync added an option to write back the group distinguished name by using the cloud display name.  This is done by selecting the **Writeback Group Distinguished Name with cloud Display Name** during initial setup of group writeback v2. If the **Writeback Group Distinguished Name with cloud Display Name** feature is enabled, Microsoft Entra Connect will use the following new format, instead of the default format:
+To make it easier to find groups being written back from Microsoft Entra ID to Active Directory, Microsoft Entra Connect Sync added an option to write back the group name by using the cloud display name. This is done by selecting the **Writeback Group Distinguished Name with cloud Display Name** during initial setup of group writeback v2. If this feature is enabled, Microsoft Entra Connect will use the following new format, instead of the default format:
 
-- New format: CN=&lt;display name&gt;_&lt;last 12 digits of object ID&gt;,OU=&lt;container&gt;,DC=&lt;domain component&gt;,DC=&lt;domain component&gt; 
+- New format: CN=&lt;display name&gt;_&lt;last 12 digits of object ID&gt;,OU=&lt;container&gt;,DC=&lt;domain component&gt;,DC=<domain component>
+
  - Example: CN=Sales_e9305786a271,OU=WritebackContainer,DC=contoso,DC=com 
 
 > [!IMPORTANT]
-> By default, Microsoft Entra cloud sync uses the new format, it does not matter if **Writeback Group Distinguished Name with cloud Display Name** feature is not enabled in Microsoft Entra Connect Sync. If you are using the default Microsoft Entra Connect naming and then migrate the group so that it is managed by Microsoft Entra cloud sync, the group is renamed to the new format. Use the section below to allow Microsoft Entra cloud sync to use the default format from Microsoft Entra Connect.
+> By default, Microsoft Entra cloud sync uses the new format, even if **Writeback Group Distinguished Name with cloud Display Name** feature is not enabled in Microsoft Entra Connect Sync. If you are using the default Microsoft Entra Connect Sync naming and then migrate the group so that it is managed by Microsoft Entra cloud sync, the group is renamed to the new format. Use the section below to allow Microsoft Entra cloud sync to use the default format from Microsoft Entra Connect.
 ### Using the default format
-If you want cloud sync to use the same default format as Microsoft Entra Connect Sync, you need to modify the attribute flow expression for the CN attribute. The default the mapping is:
+If you want cloud sync to use the same default format as Microsoft Entra Connect Sync, you need to modify the attribute flow expression for the CN attribute. The two possible mappings are:
 
 |Expression|Syntax|Description|
 |-----|-----|-----|
-|Cloud sync default expression|Append(Append(Left(Trim([displayName]), 51), "_"), Mid([objectId], 25, 12))|The default expression used by Microsoft Entra cloud sync (i.e., new format)|
-|Cloud sync new expression|Append("Group_", [objectId])|The new expression to use the default format from Microsoft Entra Connect Sync.|
+|Default expression|Append(Append(Left(Trim([displayName]), 51), "_"), Mid([objectId], 25, 12))|The default expression used by Microsoft Entra cloud sync.|
+|New expression|Append("Group_", [objectId])|This is the new expression you can use the default format used by Microsoft Entra Connect.|
 
 For more information see [Add an attribute mapping - Microsoft Entra ID to Active Directory](how-to-attribute-mapping.md#add-an-attribute-mapping---microsoft-entra-id-to-active-directory)
 
