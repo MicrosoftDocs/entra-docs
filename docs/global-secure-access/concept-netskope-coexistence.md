@@ -86,7 +86,6 @@ Netskope SSE configuration: Internet Access traffic is captured. The Microsoft 3
 ## Known issues
 If the Netskope client starts up (or enabled by the user) first and Global Secure Access client second, sign in popup doesn’t appear for Global Secure Access client and `tunneling succeeded` health check-in advanced diagnostic fails. As a workaround, disable the Netskope client, sign in to Global Secure Access client, and then re-enable Netskope client.
 
-After an hour or more, Global Secure Access client might disconnect and `tunneling succeeded` health check-in advanced diagnostic isn’t successful. As a workaround, disable the Netskope client, sign in to Global Secure Access client, and then re-enable Netskope client.
 
 ## Next steps
 
