@@ -3,7 +3,7 @@ title: Simulate remote network connectivity using Azure vWAN
 description: Use Global Secure Access to configure Azure and Entra resources to create a virtual wide area network to connect to your resources in Azure.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 06/24/2024
+ms.date: 07/01/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
