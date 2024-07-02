@@ -52,6 +52,7 @@ Role-assignable groups are designed to help prevent potential breaches by having
 - For Microsoft Graph, the *RoleManagement.ReadWrite.Directory* permission is required to be able to manage the membership of role-assignable groups. The *Group.ReadWrite.All* permission won't work.
 - To prevent elevation of privilege, you must be assigned at least the Privileged Authentication Administrator role to change the credentials or reset MFA or modify sensitive attributes for members and owners of a role-assignable group.
 - Group nesting isn't supported. A group can't be added as a member of a role-assignable group.
+- These groups are protected even when no role is assigned, you must be assigned at least the Privileged Authentication Administrator role to make any changes.
 
 ## Use PIM to make a group eligible for a role assignment
 
