@@ -7,7 +7,7 @@ ms.topic: how-to
 author: gargi-sinha
 ms.author: gasinh
 manager: martinco
-ms.date: 06/27/2024
+ms.date: 06/28/2024
 ---
 
 # Resilient end-user experience using Azure AD B2C
@@ -80,7 +80,6 @@ Periodically, test CDN availability and the performance of content distribution 
 ## Next steps
 
 - [Resilience resources for Azure AD B2C developers](resilience-b2c.md)
-  
   - [Resilient interfaces with external processes](resilient-external-processes.md)
   - [Resilience through developer best practices](resilience-b2c-developer-best-practices.md)
   - [Resilience through monitoring and analytics](resilience-with-monitoring-alerting.md)
