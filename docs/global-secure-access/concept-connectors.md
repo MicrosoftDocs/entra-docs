@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: conceptual
-ms.date: 04/15/2024
+ms.date: 07/02/2024
 ms.service: global-secure-access
 ---
 
@@ -82,26 +82,6 @@ Connector groups enable you to assign specific connectors to serve specific appl
 Connector groups make it easier to manage large deployments. They also improve latency for tenants that have resources and applications hosted in different regions, because you can create location-based connector groups to serve only local applications.
 
 To learn more about connector groups, see [Understand Microsoft Entra private network connector groups](concept-connector-groups.md).
-
-## Capacity planning
-
-Plan for enough capacity between connectors to handle the expected traffic volume. At least two connectors in a connector group provide high availability and scale. But three connectors are optimal.
-
-The table provides volume and expected latency for different machine specifications. The data is based on expected Transactions Per Second (TPS) rather than by user because usage patterns vary and can't be used to predict load. There are some differences based on the size of the responses and the backend application response time - larger response sizes and slower response times result in a lower Max TPS. More machines distribute load and provide ample buffer. Extra capacity ensures high availability and resiliency.
-
-|Cores|RAM|Expected Latency (MS)-P99|Max TPS|
-| ----- | ----- | ----- | ----- |
-|2|8|325|586|
-|4|16|320|1150|
-|8|32|270|1190|
-|16|64|245|1200*|
-
-\* The machine used a custom setting to raise some of the default connection limits beyond .NET recommended settings. We recommend running a test with the default settings before contacting support to get this limit changed for your tenant.
-
-> [!NOTE]
-> There's not much difference in the maximum TPS between 4, 8, and 16 core machines. The main difference is the expected latency.
->
-> The table focuses on the expected performance of a connector based on the type of machine it's installed on. This is separate from the service's throttling limits, see [service limits and restrictions](~/identity/users/directory-service-limits-restrictions.md).
 
 ## Security and networking
 
