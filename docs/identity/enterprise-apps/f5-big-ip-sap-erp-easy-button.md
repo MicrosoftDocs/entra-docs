@@ -273,7 +273,7 @@ Use SSO to enable access BIG-IP published services without entering credentials.
 3. For **Username Source**, enter a session variable as the user ID source. `session.saml.last.identity` holds the Microsoft Entra claim with the signed-in user ID.
 4. The **User Realm Source** option is required if the user domain differs from the BIG-IP kerberos realm. Thus, the APM session variable contains the signed in user domain. For example, `session.saml.last.attr.name.domain`. 
 
-   ![Screenshot of options and selections for Single Sign-On & HTTP Headers.](./media/f5-big-ip-kerberos-easy-button/sso-headers.png)
+   ![Screenshot of options and selections for single sign-on and HTTP Headers.](./media/f5-big-ip-kerberos-easy-button/sso-headers.png)
 
 5. For **KDC**, enter a domain controller IP, or FQDN if the DNS is configured.
 6. For **UPN Support**, check the box. The APM uses the User Principal Name (UPN) for kerberos ticketing.
