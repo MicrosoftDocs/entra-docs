@@ -60,7 +60,7 @@ If you want cloud sync to use the same default format as Microsoft Entra Connect
 |Expression|Syntax|Description|
 |-----|-----|-----|
 |Cloud sync default expression using DisplayName|Append(Append(Left(Trim([displayName]), 51), "_"), Mid([objectId], 25, 12))|The default expression used by Microsoft Entra cloud sync (i.e., new format)|
-|Cloud sync expression not using DisplayName (i.e., Microsoft Entra Connect sync default)|Append("Group_", [objectId])|The new expression to use the default format from Microsoft Entra Connect Sync.|
+|Cloud sync new expression without using DisplayName|Append("Group_", [objectId])|The new expression to use the default format from Microsoft Entra Connect Sync.|
 
 For more information see [Add an attribute mapping - Microsoft Entra ID to Active Directory](how-to-attribute-mapping.md#add-an-attribute-mapping---microsoft-entra-id-to-active-directory)
 
