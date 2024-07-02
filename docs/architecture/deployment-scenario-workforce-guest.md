@@ -23,10 +23,10 @@ The Microsoft Entra Suite deployment series provides organizations with a detail
 
 In these guides, we describe scenarios that show the value of the Microsoft Entra Suite and how its capabilities work together.
 
-- [Microsoft Entra deployment Scenarios Introduction](deployment-scenario-intro.md)
-- Microsoft Entra deployment Scenario - Workforce and guest onboarding, identity, and access lifecycle governance across all your apps (this article)
-- [Microsoft Entra deployment Scenario - Modernize remote access to on-premises apps with MFA per app](deployment-scenario-remote-access.md)
-- [Microsoft Entra deployment Scenario - Secure internet access based on business needs](deployment-scenario-internet-access.md)
+- [Microsoft Entra deployment scenarios introduction](deployment-scenario-intro.md)
+- Microsoft Entra deployment scenario - Workforce and guest onboarding, identity, and access lifecycle governance across all your apps (this article)
+- [Microsoft Entra deployment scenario - Modernize remote access to on-premises apps with MFA per app](deployment-scenario-remote-access.md)
+- [Microsoft Entra deployment scenario - Secure internet access based on business needs](deployment-scenario-internet-access.md)
 
 ## Scenario overview
 
@@ -58,9 +58,12 @@ For this scenario, complete these prerequisite steps to configure Microsoft Entr
    - Select **Get started**.
 1. If you have multiple domains registered for your Microsoft Entra tenant, select the one that you would like to use for Verified ID.
 1. After the setup process is complete, you see a default workplace credential available to edit and offer to employees of your tenant on their **My Account** page.
-   :::image type="content" source="media/deployment-scenario-workforce-guest/verified-id-overview.png" alt-text="Example of Verified ID, Overview.":::
+
+   :::image type="content" source="media/deployment-scenario-workforce-guest/verifiable-credentials-setup-complete-inline.png" alt-text="Screenshot of Verified ID, Overview." lightbox="media/deployment-scenario-workforce-guest/verifiable-credentials-setup-complete-expanded.png":::
+
 1. Sign in to the test user's **My Account** with their Microsoft Entra credentials. Select **Get my Verified ID** to issue a verified workplace credential.
-   :::image type="content" source="media/deployment-scenario-workforce-guest/my-verified-id.png" alt-text="Example of My Account, Overview with a red ellipse highlighting the Get my Verified ID control.":::
+
+   :::image type="content" source="media/deployment-scenario-workforce-guest/verifiable-credentials-my-account-issue-inline.png" alt-text="Screenshot of My Account, Overview with a red ellipse highlighting the Get my Verified ID control." lightbox="media/deployment-scenario-workforce-guest/verifiable-credentials-my-account-issue-expanded.png":::
 
 ### Add trusted external organization (B2B)
 
@@ -72,7 +75,8 @@ Follow these prerequisite steps to add a trusted external organization (B2B) for
 1. Enter the organization's full domain name (or tenant ID).
 1. Select the organization in the search results. Select **Add**.
 1. Confirm the new organization (that inherits its access settings from default settings) in **Organizational settings**.
-   :::image type="content" source="media/deployment-scenario-workforce-guest/organizational-settings-inherited.png" alt-text="Example of Organizational settings with red boxes highlighting Inherited from default in the Inbound access and Outbound access columns.":::
+
+   :::image type="content" source="media/deployment-scenario-workforce-guest/org-specific-settings-inherited-inline.png" alt-text="Screenshot of Organizational settings with red boxes highlighting Inherited from default in the Inbound access and Outbound access columns." lightbox="media/deployment-scenario-workforce-guest/org-specific-settings-inherited-expanded.png":::
 
 ### Create catalog
 
@@ -81,10 +85,14 @@ Follow these prerequisite steps to create an Entitlement management catalog for 
 1. Sign in to the Microsoft Entra admin center with at least an Identity Governance Administrator role.
 1. Go to **Identity governance** \> **Entitlement management** \> **Catalogs**.
 1. Select **+New catalog**.
-   :::image type="content" source="media/deployment-scenario-workforce-guest/identity-governance-catalogs-inline.png" alt-text="Example of New access review, Enterprise applications, All applications, Identity Governance, New catalog." lightbox="media/deployment-scenario-workforce-guest/identity-governance-catalogs-expanded.png":::
+
+   :::image type="content" source="media/deployment-scenario-workforce-guest/identity-governance-catalogs-inline.png" alt-text="Screenshot of New access review, Enterprise applications, All applications, Identity Governance, New catalog." lightbox="media/deployment-scenario-workforce-guest/identity-governance-catalogs-expanded.png":::
+
 1. Enter a unique name for the catalog and provide a description. Requestors see this information in an access package's details.
 1. To create access packages in this catalog for internal users, select **Enabled for external users** \> **No**.
-   :::image type="content" source="media/deployment-scenario-workforce-guest/identity-governance-new-catalog.png" alt-text="Example of New catalog with No selected for the Enabled for external users control.":::
+
+   :::image type="content" source="media/deployment-scenario-workforce-guest/identity-governance-new-catalog.png" alt-text="Screenshot of New catalog with No selected for the Enabled for external users control.":::
+
 1. On **Catalog**, open the catalog to which you want to add resources. Select **Resources** \> **+Add resources**.
 1. Select **Type**, then **Groups and Teams**, **Applications**, or **SharePoint sites**.
 1. Select one or more resources of the type that you want to add to the catalog. Select **Add**.
@@ -103,7 +111,9 @@ Follow these steps to create an access package in entitlement management with Ve
 1. For **Basics**, give the access package a name (such as *Finance Apps for Remote Users*). Specify the catalog that you previously created.
 1. For **Resource roles**, select a resource type (for example: Groups and Teams, Applications, SharePoint sites). Select one or more resources.
 1. In **Role**, select the role to which you want users assigned for each resource.
-   :::image type="content" source="media/deployment-scenario-workforce-guest/resource-roles.png" alt-text="Example of Resources roles with a red box highlighting the Role column.":::
+
+   :::image type="content" source="media/deployment-scenario-workforce-guest/resource-roles-inline.png" alt-text="Screenshot of Resources roles with a red box highlighting the Role column." lightbox="media/resource-roles.png":::
+
 1. For **Requests**, select **For users in your directory**.
 1. In **Select users and groups**, select **For Users in your directory**. Select **+ Add users and groups**. Select an existing group entitled to request the access package.
 1. Scroll to **Required Verified Ids**.
@@ -124,7 +134,9 @@ Follow these steps to create an access package in entitlement management with Ve
 1. For **Basics**, give the access package a name (such as *Finance Apps for Remote Users*). Specify the catalog that you previously created.
 1. For **Resource roles**, select a resource type (for example: Groups and Teams, Applications, SharePoint sites). Select one or more resources.
 1. In **Role**, select the role to which you want users assigned for each resource.
-   :::image type="content" source="media/deployment-scenario-workforce-guest/resource-roles.png" alt-text="Example of Resources roles with a red box highlighting the Role column.":::
+
+   :::image type="content" source="media/deployment-scenario-workforce-guest/resource-roles-inline.png" alt-text="Screenshot of Resources roles with a red box highlighting the Role column." lightbox="media/resource-roles.png":::
+
 1. For **Requests**, select **For users not in your directory**.
 1. Select **Specific connected organizations**. To select from a list of connected organizations that you previously added, select **Add directory**.
 1. Enter the name or domain name to search for a previously connected organization.
@@ -136,7 +148,8 @@ Follow these steps to create an access package in entitlement management with Ve
 1. In **Access Reviews**, select **Yes**.
 1. In **Starting on**, select the current date. Set **Review Frequency** to **Quarterly**. Set **Duration (in Days)** to 21.
 1. Select **Specific reviewers**. Select **Self Review**.
-   :::image type="content" source="media/deployment-scenario-workforce-guest/new-access-package.png" alt-text="Example of New access package.":::
+
+   :::image type="content" source="media/deployment-scenario-workforce-guest/new-access-package.png" alt-text="Screenshot of New access package.":::
 
 ## Create a sign-in risk-based CA policy
 
@@ -155,7 +168,8 @@ Follow these steps to create an access package in entitlement management with Ve
 1. Select **Grant access** \> **Require multifactor authentication**.
 1. For **Session**, select **Sign-in frequency**. Select **Every time**.
 1. Confirm settings. Select **Enable policy**.
-   :::image type="content" source="media/deployment-scenario-workforce-guest/conditional-access-policies-new-inline.png" alt-text="Example of Conditional Access Policies, New, Sign-in risk. A red box emphasizes User risk and Sign-in risk." lightbox="media/deployment-scenario-workforce-guest/conditional-access-policies-new-expanded.png":::
+
+   :::image type="content" source="media/deployment-scenario-workforce-guest/conditional-access-policies-new-inline.png" alt-text="Screenshot of Conditional Access Policies, New, Sign-in risk. A red box emphasizes User risk and Sign-in risk." lightbox="media/deployment-scenario-workforce-guest/conditional-access-policies-new-expanded.png":::
 
 ## Request access package
 
@@ -164,7 +178,9 @@ After you configure an access package with a Verified ID requirement, end-users 
 1. As a remote user or guest, sign in to `myaccess.microsoft.com`.
 1. Search for the access package that you previously created (such as *Finance Apps for Remote Users*). You can browse the listed packages or use the search bar. Select **Request**.
 1. The system displays an information banner with a message such as, *To request access to this access package you need to present your Verifiable Credentials*. Select **Request Access**. To launch Microsoft Authenticator, scan the QR Code with your phone. Share your credentials.
-   :::image type="content" source="media/deployment-scenario-workforce-guest/present-verified-id.png" alt-text="Example of My Access, Available, Access packages, Present Verified ID, QR Code.":::
+
+   :::image type="content" source="media/deployment-scenario-workforce-guest/present-verified-id.png" alt-text="Screenshot of My Access, Available, Access packages, Present Verified ID, QR Code.":::
+
 1. After you share your credentials, continue with the approval workflow.
 1. **Optional:** Simulate user risk by following these instructions: [Simulating risk detections in Microsoft Entra ID Protection](../id-protection/howto-identity-protection-simulate-risk.md). You might need to try multiple times to raise the user risk to medium or high.
 1. Try accessing the application that you previously created for the scenario to confirm blocked access. You might need to wait up to one hour for block enforcement.

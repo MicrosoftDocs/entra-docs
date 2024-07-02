@@ -11,7 +11,7 @@ ms.date: 06/13/2024
 
 #CustomerIntent: As a Microsoft Entra customer, I want replace existing VPN with a cloud-based solution so that we can move towards Secure Access Service Edge (SASE).
 ---
-# [Microsoft Entra deployment Scenario - Modernize remote access to on-premises apps with MFA per app](deployment-scenario-remote-access.md)
+# Microsoft Entra deployment scenario - Modernize remote access to on-premises apps with MFA per app
 
 The Microsoft Entra Suite deployment series provides organizations with a detailed guidance on how to combine and test the following products in the suite:
 
@@ -23,10 +23,10 @@ The Microsoft Entra Suite deployment series provides organizations with a detail
 
 In these guides, we describe scenarios that show the value of the Microsoft Entra Suite and how its capabilities work together.
 
-- [Microsoft Entra deployment Scenarios Introduction](deployment-scenario-intro.md)
-- [Microsoft Entra deployment Scenario - Workforce and guest onboarding, identity, and access lifecycle governance across all your apps](deployment-scenario-workforce-guest.md)
-- Microsoft Entra deployment Scenario - Modernize remote access to on-premises apps with MFA per app (this article)
-- [Microsoft Entra deployment Scenario - Secure internet access based on business needs](deployment-scenario-internet-access.md)
+- [Microsoft Entra deployment scenarios introduction](deployment-scenario-intro.md)
+- [Microsoft Entra deployment scenario - Workforce and guest onboarding, identity, and access lifecycle governance across all your apps](deployment-scenario-workforce-guest.md)
+- Microsoft Entra deployment scenario - Modernize remote access to on-premises apps with MFA per app (this article)
+- [Microsoft Entra deployment scenario - Secure internet access based on business needs](deployment-scenario-internet-access.md)
 
 ## Scenario: Modernize remote access
 
@@ -97,12 +97,12 @@ In this section, we activate Global Secure Access through the Microsoft Entra ad
 
 1. Sign in to the Microsoft Entra admin center with at least a Global Administrator role.
 1. Go to **Global Secure Access (preview)** \> **Get started** \> **Activate Global Secure Access in your tenant**. Select **Activate** to enable SSE features.
-   :::image type="content" source="media/deployment-scenario-remote-access/global-secure-access-get-started.png" alt-text="Example of Get started, Welcome to Global Secure Access.":::
 1. Go to **Global Secure Access (preview)** \> **Connect** \> **Traffic forwarding**. Toggle on **Private access profile**. Traffic forwarding enables you to configure the type of network traffic to tunnel through Microsoft's Security Service Edge Solution services. Set up [traffic forwarding profiles](../global-secure-access/concept-traffic-forwarding.md) to manage traffic types.
    - The **Microsoft 365 access profile** is for Microsoft Entra Internet Access for Microsoft 365.
    - The **Private access profile** is for Microsoft Entra Private Access.
    - The **Internet access profile** is for Microsoft Entra Internet Access. Microsoft's Security Service Edge solution only captures traffic on client devices with Global Secure Access Client installation.
-     :::image type="content" source="media/deployment-scenario-internet-access/private-access-traffic-profile.png" alt-text="Example of traffic forwarding showing enabled Private Access profile control." lightbox="media/deployment-scenario-internet-access/private-access-traffic-profile-expanded.png":::
+
+     :::image type="content" source="media/deployment-scenario-remote-access/private-access-traffic-profile.png" alt-text="Screenshot of traffic forwarding showing enabled Private Access profile control." lightbox="media/deployment-scenario-remote-access/private-access-traffic-profile-expanded.png":::
 
 #### Install Global Secure Access client for modernize remote access scenario
 
@@ -112,7 +112,9 @@ Microsoft Entra Internet Access for Microsoft 365 and Microsoft Entra Private Ac
 1. Sign in to the Windows device with a Microsoft Entra user role with local admin privileges.
 1. Sign in to the Microsoft Entra admin center with at least a Global Administrator role.
 1. Go to **Global Secure Access (preview)** \> **Connect** \> **Client Download**. Select **Download client**. Complete the installation.
-   :::image type="content" source="media/deployment-scenario-remote-access/client-download.png" alt-text="Example of Client download showing the Windows Download Client control.":::
+
+   :::image type="content" source="media/deployment-scenario-remote-access/client-download-inline.png" alt-text="Screenshot of Client download showing the Windows Download Client control." lightbox="media/deployment-scenario-remote-access/client-download-expanded.png":::
+
 1. In the Window taskbar, the Global Secure Access Client first appears as disconnected. After a few seconds, when prompted for credentials, enter test user's credentials.
 1. In the Window taskbar, hover over the Global Secure Access Client icon and verify **Connected** status.
 
@@ -121,7 +123,9 @@ Microsoft Entra Internet Access for Microsoft 365 and Microsoft Entra Private Ac
 The connector server communicates with Microsoft's Security Service Edge Solution as the gateway to the corporate network. It uses outbound connections through 80 and 443 and doesn't require inbound ports. Learn [How to configure connectors for Microsoft Entra Private Access](../global-secure-access/how-to-configure-connectors.md#open-ports). Complete these configuration steps:
 
 1. On the connector server, sign in to the Microsoft Entra admin center. Go to **Global Secure Access (Preview)** \> **Connect** \> **Connectors**. Select **Enable Private Network connectors**.
-   :::image type="content" source="media/deployment-scenario-remote-access/private-network-connectors.png" alt-text="Example of Private Network connectors with a red box highlighting the Enable Private Network connectors control.":::
+
+   :::image type="content" source="media/deployment-scenario-remote-access/private-network-connectors.png" alt-text="Screenshot of Private Network connectors with a red box highlighting the Enable Private Network connectors control.":::
+
 1. Select **Download connector service**.
 1. Follow the installation wizard to install the connector service on the connector server. When prompted, enter tenant credentials to complete installation.
 1. The connector server is installed when it appears in **Connectors**.
@@ -147,9 +151,13 @@ Microsoft Entra Private Access supports transmission control protocol (TCP) appl
 
 1. From the connector server, verify that you can access a file share on the file server.
 1. Sign in to the Microsoft Entra admin center. Go to **Global Secure Access (preview)** \> **Applications** \> **Enterprise applications** \> **+ New Application**.
-   :::image type="content" source="media/deployment-scenario-remote-access/new-enterprise-app.png" alt-text="Example of Enterprise applications showing New application control.":::
+
+   :::image type="content" source="media/deployment-scenario-remote-access/new-enterprise-app.png" alt-text="Screenshot of Enterprise applications showing New application control.":::
+
 1. Enter a **Name** (such as *FileServer1*). Select the default connector group. Select **+Add application segment**. Enter the **IP address** of the application server and port 441.
-   :::image type="content" source="media/deployment-scenario-remote-access/application-segment.png" alt-text="Example of Create Global Secure Access application, Create application segment.":::
+
+   :::image type="content" source="media/deployment-scenario-remote-access/application-segment.png" alt-text="Screenshot of Create Global Secure Access application, Create application segment.":::
+
 1. Select **Apply** \> **Save**. Verify that the application is in **Enterprise applications**.
 1. Go to **Identity** \> **Applications** \> **Enterprise applications**. Select the new application.
 1. Select **Users and groups**. Add the security group that you created earlier with test users that access this file share from the internet.
@@ -173,7 +181,9 @@ In this section, we validate that the user can access the file server while ther
 
 1. Sign in to the device where you previously installed the Global Secure Access client.
 1. Try to access the file server by running \\`\\IP_address` and validate that you can browse the file share.
-   :::image type="content" source="media/deployment-scenario-remote-access/remote-access-verification.png" alt-text="Example of Windows Explorer showing connection to file share.":::
+
+   :::image type="content" source="media/deployment-scenario-remote-access/remote-access-verification.png" alt-text="Screenshot of Windows Explorer showing connection to file share.":::
+
 1. If desired, simulate user risk by following instructions in [Simulating risk detections in Microsoft Entra ID Protection](../id-protection/howto-identity-protection-simulate-risk.md). You might need to try multiple times to raise user risk to medium or high.
 1. Try accessing the file server to confirm that access is blocked. You might need to wait up to one hour for block enforcement.
 1. Validate that the Conditional Access policy (that you created earlier using sign in logs) blocks access. Open non-interactive sign in logs from *ZTNA Network Access Client -- Private* application. View logs from the Private Access application name that you previously created as the **Resource name**.
@@ -187,7 +197,7 @@ You can replicate these high-level steps for the Contoso solution as described i
 1. To verify explicitly, configure [Microsoft Entra ID Private Access](../global-secure-access/concept-private-access.md) to access the corporate network on a per-application basis. Use the unified set of access controls provided by Conditional Access and [Microsoft Entra Identity Protection](../id-protection/overview-identity-protection.md) to grant access to the corporate network based on identity, endpoint, and risk signal that they use with Microsoft 365 and other cloud applications.
 1. To enforce least privilege, use [Microsoft Entra ID Governance](../id-governance/identity-governance-overview.md) to create access packages to include per-app network access alongside the applications that require it. This approach grants corporate network access to employees aligned with their job functions across their joiner/mover/leaver lifecycle.
 
-As part of this transformation, SecOps teams achieve richer and more cohesive security analytics to better identify security threats. The benefits of using these solutions together include the following:
+As part of this transformation, SecOps teams achieve richer and more cohesive security analytics to better identify security threats. These are the benefits of using the solutions together:
 
 - **Enhanced security and visibility.** Enforce granular and adaptive access policies based on identity and context of users and devices as well as application and data sensitivity and location. Use enriched logs and analytics to gain insights into network and security posture to detect and more quickly respond to threats.
 - **Least privilege access to on premises applications.** Reduce access to corporate network only to what the applications require. Assign and govern access aligned with job function evolves through joiners/movers/leavers cycle. This approach reduces the risk of lateral movement attack vectors.
@@ -250,12 +260,12 @@ Activate Global Secure Access through the Microsoft Entra admin center and make 
 
 1. Sign in to the Microsoft Entra admin center with at least a Global Administrator role.
 1. Go to **Global Secure Access (preview)** \> **Get started** \> **Activate Global Secure Access in your tenant**. Select **Activate** to enable SSE features in your tenant.
-   :::image type="content" source="media/deployment-scenario-remote-access/global-secure-access-get-started.png" alt-text="Example of Get started, Welcome to Global Secure Access.":::
 1. Go to **Global Secure Access (preview)** \> **Connect** \> **Traffic forwarding**. Toggle on **Private access profile**. Traffic forwarding enables you to configure the type of network traffic to tunnel through Microsoft's Security Service Edge Solution services. Set up [traffic forwarding profiles](../global-secure-access/concept-traffic-forwarding.md) to manage traffic types.
    - The **Microsoft 365 access profile** is for Microsoft Entra Internet Access for Microsoft 365.
    - The **Private access profile** is for Microsoft Entra Private Access.
    - The **Internet access profile** is for Microsoft Entra Internet Access. Microsoft's Security Service Edge solution only captures traffic on client devices with Global Secure Access Client installation.
-     :::image type="content" source="media/deployment-scenario-internet-access/private-access-traffic-profile.png" alt-text="Example of traffic forwarding showing enabled Private Access profile control." lightbox="media/deployment-scenario-internet-access/private-access-traffic-profile-expanded.png":::
+
+     :::image type="content" source="media/deployment-scenario-remote-access/private-access-traffic-profile.png" alt-text="Screenshot of traffic forwarding showing enabled Private Access profile control." lightbox="media/deployment-scenario-remote-access/private-access-traffic-profile-expanded.png":::
 
 #### Install Global Secure Access client for Internet and Private Access scenario
 
@@ -265,7 +275,9 @@ Microsoft Entra Internet Access for Microsoft 365 and Microsoft Entra Private Ac
 1. Sign in to the Windows device with a Microsoft Entra ID user role with local admin privileges.
 1. Sign in to the Microsoft Entra ID admin center with at least a Global Administrator role.
 1. Go to **Global Secure Access (preview)** \> **Connect** \> **Client Download**. Select **Download client**. Complete the installation.
-   :::image type="content" source="media/deployment-scenario-remote-access/client-download.png" alt-text="Example of Client download showing the Windows Download Client control.":::
+
+   :::image type="content" source="media/deployment-scenario-remote-access/client-download-inline.png" alt-text="Screenshot of Client download showing the Windows Download Client control." lightbox="media/deployment-scenario-remote-access/client-download-expanded.png":::
+
 1. In the Window taskbar, the Global Secure Access Client first appears as disconnected. After a few seconds, when prompted for credentials, enter test user's credentials.
 1. In the Window taskbar, hover over the Global Secure Access Client icon and verify **Connected** status.
 
@@ -274,7 +286,9 @@ Microsoft Entra Internet Access for Microsoft 365 and Microsoft Entra Private Ac
 The connector server communicates with Microsoft's Security Service Edge solution as the gateway to the corporate network. It uses outbound connections through 80 and 443 and doesn't require inbound ports. Learn [how to configure connectors for Microsoft Entra Private Access](../global-secure-access/how-to-configure-connectors.md#open-ports). Complete these configuration steps:
 
 1. On the connector server, sign in to the Microsoft Entra admin center. Go to **Global Secure Access (Preview)** \> **Connect** \> **Connectors**. Select **Enable Private Network connectors**.
-   :::image type="content" source="media/deployment-scenario-remote-access/private-network-connectors.png" alt-text="Example of Private Network connectors with a red box highlighting the Enable Private Network connectors control.":::
+
+   :::image type="content" source="media/deployment-scenario-remote-access/private-network-connectors.png" alt-text="Screenshot of Private Network connectors with a red box highlighting the Enable Private Network connectors control.":::
+
 1. Select **Download connector service**.
 1. Follow the installation wizard to install the connector service on the connector server. When prompted, enter tenant credentials to complete installation.
 1. The connector server is installed when it appears in **Connectors**.
@@ -294,9 +308,13 @@ Microsoft Entra Private Access supports transmission control protocol (TCP) appl
 
 1. From the connector server, verify that you can access a file share on the file server.
 1. Sign in to the Microsoft Entra admin center. Go to **Global Secure Access (preview)** \> **Applications** \> **Enterprise applications** \> **+ New Application**.
-   :::image type="content" source="media/deployment-scenario-remote-access/new-enterprise-app.png" alt-text="Example of Enterprise applications showing New application control.":::
+
+   :::image type="content" source="media/deployment-scenario-remote-access/new-enterprise-app.png" alt-text="Screenshot of Enterprise applications showing New application control.":::
+
 1. Enter a **Name** (such as *FileServer1*). Select the default connector group. Select **+Add application segment**. Enter the **IP address** of the application server and port 441.
-   :::image type="content" source="media/deployment-scenario-remote-access/application-segment.png" alt-text="Example of Create Global Secure Access application, Create application segment.":::
+
+   :::image type="content" source="media/deployment-scenario-remote-access/application-segment.png" alt-text="Screenshot of Create Global Secure Access application, Create application segment.":::
+
 1. Select **Apply** \> **Save**. Verify that the application is in **Enterprise applications**.
 1. Go to **Identity** \> **Applications** \> **Enterprise applications**. Select the new application.
 1. Select **Users and groups**. Add the security group that you created earlier with test users that access this file share from the internet.
@@ -312,12 +330,18 @@ Follow these steps to create an Entitlement management catalog:
 1. Sign in to the Microsoft Entra admin center with at least an Identity Governance Administrator role.
 1. Go to **Identity governance** \> **Entitlement management** \> **Catalogs**.
 1. Select **+New catalog**.
-   :::image type="content" source="media/deployment-scenario-remote-access/identity-governance-catalogs-inline.png" alt-text="Example of New access review, Enterprise applications, All applications, Identity Governance, New catalog." lightbox="media/deployment-scenario-remote-access/identity-governance-catalogs-expanded.png":::
+
+   :::image type="content" source="media/deployment-scenario-remote-access/identity-governance-catalogs-inline.png" alt-text="Screenshot of New access review, Enterprise applications, All applications, Identity Governance, New catalog." lightbox="media/deployment-scenario-remote-access/identity-governance-catalogs-expanded.png":::
+
 1. Enter a unique name for the catalog and provide a description. Requestors see this information in the access package's details.
 1. To create access packages in this catalog for internal users, select **Enabled for external users** \> **No**.
-   :::image type="content" source="media/deployment-scenario-remote-access/identity-governance-new-catalog.png" alt-text="Example of New catalog with No selected for the Enabled for external users control.":::
+
+   :::image type="content" source="media/deployment-scenario-remote-access/identity-governance-new-catalog.png" alt-text="Screenshot of New catalog with No selected for the Enabled for external users control.":::
+
 1. On **Catalog**, open the catalog to which you want to add resources. Select **Resources** \> **+Add resources**.
-   :::image type="content" source="media/deployment-scenario-remote-access/catalog-resources-inline.png" alt-text="Example of App catalog, Resources list showing Add resources control." lightbox="media/deployment-scenario-remote-access/catalog-resources-expanded.png":::
+
+   :::image type="content" source="media/deployment-scenario-remote-access/catalog-resources-inline.png" alt-text="Screenshot of App catalog, Resources list showing Add resources control." lightbox="media/deployment-scenario-remote-access/catalog-resources-expanded.png":::
+
 1. Select **Type**, then **Groups and Teams**, **Applications**, or **SharePoint sites**.
 1. Select and add the application (such as *FileServer1*) and security group (such as *Finance Team File Share*) that you previously created. Select **Add**.
 
@@ -331,13 +355,18 @@ Follow these steps to configure Microsoft Entra Cloud sync:
 1. Go to **Identity** \> **Hybrid management** \> **Microsoft Entra Connect** \> **Cloud sync**.
 1. Select **New configuration**.
 1. Select **Microsoft Entra ID to AD sync**.
-   :::image type="content" source="media/deployment-scenario-remote-access/cloud-sync-new-configuration-inline.png" alt-text="Example of New configuration, Microsoft Entra ID to AD Sync." lightbox="media/deployment-scenario-remote-access/cloud-sync-new-configuration-expanded.png":::
+
+   :::image type="content" source="media/deployment-scenario-remote-access/cloud-sync-new-configuration-inline.png" alt-text="Screenshot of New configuration, Microsoft Entra ID to AD Sync." lightbox="media/deployment-scenario-remote-access/cloud-sync-new-configuration-expanded.png":::
+
 1. On **Configurations**, select your domain. Optionally, select **Enable password hash sync**.
 1. Select **Create**.
-   :::image type="content" source="media/deployment-scenario-remote-access/new-cloud-sync-configuration-inline.png" alt-text="Example of Microsoft Entra Connect, Cloud Sync, Configurations, New cloud sync configuration." lightbox="media/deployment-scenario-remote-access/new-cloud-sync-configuration-expanded.png":::
+
+   :::image type="content" source="media/deployment-scenario-remote-access/new-cloud-sync-configuration-inline.png" alt-text="Screenshot of Microsoft Entra Connect, Cloud Sync, Configurations, New cloud sync configuration." lightbox="media/deployment-scenario-remote-access/new-cloud-sync-configuration-expanded.png":::
+
 1. For **Getting started** configuration, select **Add scoping filters** (next to the **Add scoping filters** icon) or **Scoping filters** (under **Manage**).
 1. Select **Selected security groups** in the **Select group(s)** option. Select **Edit Objects**. Add the Microsoft Entra ID security group that you previously created (such as *Finance Team File Share*). We use this group to manage access to on-premises applications using lifecycle workflows and access packages in later steps.
-   :::image type="content" source="media/deployment-scenario-remote-access/groups-scope.png" alt-text="Example of Groups scope with finance in the Search text box, one result found, and group in Selected.":::
+
+   :::image type="content" source="media/deployment-scenario-remote-access/groups-scope.png" alt-text="Screenshot of Groups scope with finance in the Search text box, one result found, and group in Selected.":::
 
 #### Assign access to on-premises file server
 
@@ -354,7 +383,9 @@ Follow these steps to create an access package in Entitlement management:
 1. For **Basics**, give the access package a name (such as *Finance Apps Access Package*). Specify the catalog that you previously created.
 1. For **Resource roles**, select the resources that you previously added (such as *FileServer1 app* and *Finance Team File Share* security group).
 1. In **Role**, select **Member** for *Finance Team File Share* and **User** for *FileServer1* app.
-   :::image type="content" source="media/deployment-scenario-remote-access/resource-roles-inline.png" alt-text="Example of Resource list. A red box emphasizes the Role column." lightbox="media/deployment-scenario-remote-access/resource-roles-expanded.png":::
+
+   :::image type="content" source="media/deployment-scenario-remote-access/resource-roles-inline.png" alt-text="Screenshot of Resource list. A red box emphasizes the Role column." lightbox="media/deployment-scenario-remote-access/resource-roles-expanded.png":::
+
 1. For **Requests**, select **For users in your directory**. Alternatively, enable the access package for **Guest Users** (to be discussed on a separate scenario).
 1. If you selected **Specific users and groups**, select **Add users and groups**.
 1. Don't select a user on **Select users and groups**. We test a user requesting access later.
@@ -362,7 +393,8 @@ Follow these steps to create an access package in Entitlement management:
 1. **Optional:** In **Requestor information**, select **Questions**. Enter a question that you want to ask the requestor. This question is known as the display string. To add localization options, select **Add localization**.
 1. For **Lifecycle**, specify when a user's assignment to the access package expires. Specify whether users can extend their assignments. For **Expiration,** set **Access package assignments** expiration to **On date**, **Number of days**, **Number of hours**, or **Never**.
 1. Select **Create**.
-   :::image type="content" source="media/deployment-scenario-remote-access/new-access-package-review.png" alt-text="Example of New access package, Review create, with a red box highlighting the Create control.":::
+
+   :::image type="content" source="media/deployment-scenario-remote-access/new-access-package-review.png" alt-text="Screenshot of New access package, Review create, with a red box highlighting the Create control.":::
 
 ### Create lifecycle workflows
 
@@ -375,10 +407,14 @@ To create a joiner workflow, follow these steps.
 1. Sign in to the Microsoft Entra admin center with at least a Lifecycle Workflows Administrator role.
 1. Go to **Identity governance** \> **Lifecycle workflows** \> **Create a workflow**.
 1. For **Choose a workflow**, select **Onboard new hire employee**.
-   :::image type="content" source="media/deployment-scenario-remote-access/workflow-joiner.png" alt-text="Example of Choose a workflow with a red box highlighting the Joiner card.":::
+
+   [![Understanding workflow template diagram.](media/deployment-scenario-remote-access/workflow-joiner.png)](media/deployment-scenario-remote-access/workflow-joiner.png#lightbox)
+
 1. For **Basics**, enter *Onboard New hire employee -- Finance* for the workflow display name and description. Select **Next**.
 1. For **Configure scope** \> **Rule**, enter values for **Property**, **Operator**, and **Value**. Change the expression of the scope to only users where **Property** \> **department** has a **Value** of **Finance**. Ensure that your test user populates **Property** with the *Finance* string so that it's in the workflow scope.
-   :::image type="content" source="media/deployment-scenario-remote-access/scope-rule.png" alt-text="Example of Rule view with a red box highlighting the Value control.":::
+
+   :::image type="content" source="media/deployment-scenario-remote-access/scope-rule.png" alt-text="Screenshot of Rule view with a red box highlighting the Value control.":::
+
 1. On **Review tasks**, select **Add task** to add a task to the template. For this scenario, we add **Request user access package assignment**.
 1. For **Basics**, select **Request user access package assignment**. Assign a name to this task (such as *Assign Finance Access Package*). Select a policy.
 1. In **Configure**, select the access package that you previously created.
@@ -388,7 +424,9 @@ To create a joiner workflow, follow these steps.
    - Send Welcome Email
    - Generate TAP and Send Email
 1. Select **Enable Schedule**.
-   :::image type="content" source="media/deployment-scenario-remote-access/workflow-joiner-schedule.png" alt-text="Example of Review create for the new item in the Joiner category with a red box highlighting the Review tasks section.":::
+
+   :::image type="content" source="media/deployment-scenario-remote-access/workflow-joiner-schedule.png" alt-text="Screenshot of Review create for the new item in the Joiner category with a red box highlighting the Review tasks section.":::
+
 1. Select **Review + create**.
 
 #### Create leaver workflow
@@ -398,17 +436,23 @@ To create a leaver workflow, follow these steps.
 1. Sign in to the Microsoft Entra admin center with at least a Lifecycle Workflows Administrator role.
 1. Go to **Identity governance** \> **Lifecycle workflows** \> **Create a workflow**.
 1. On **Choose a workflow**, select **Offboard an employee**.
-   :::image type="content" source="media/deployment-scenario-remote-access/workflow-leaver.png" alt-text="Example of Choose a workflow with a red box highlighting the Leaver card.":::
+
+   :::image type="content" source="media/deployment-scenario-remote-access/workflow-leaver.png" alt-text="Screenshot of Choose a workflow with a red box highlighting the Leaver card.":::
+
 1. On **Basics**, enter *Offboard an employee -- Finance* as display name and description for the workflow. Select **Next**.
 1. On **Configure scope** \> **Rule**, enter values for **Property**, **Operator**, and **Value**. Change the expression of the scope to only users where **Property** \> **department** has a **Value** of **Finance**. Ensure that your test user populates **Property** with the *Finance* string so that it's in the workflow scope.
-   :::image type="content" source="media/deployment-scenario-remote-access/scope-rule.png" alt-text="Example of Rule view with a red box highlighting the Value control.":::
+
+   :::image type="content" source="media/deployment-scenario-remote-access/scope-rule.png" alt-text="Screenshot of Rule view with a red box highlighting the Value control.":::
+
 1. On **Review tasks**, select **Add task** to add a task to the template. For this scenario, we add **Request user access package assignment**.
 1. **Optional:** Add other leaver tasks such as:
    - Disable User Account
    - Remove user from all groups
    - Remove user from all Teams
 1. Toggle on **Enable schedule**.
-   :::image type="content" source="media/deployment-scenario-remote-access/workflow-leaver-schedule.png" alt-text="Example of Review create for the new item in the Leaver category with a red box highlighting the Review tasks section.":::
+
+   :::image type="content" source="media/deployment-scenario-remote-access/workflow-leaver-schedule.png" alt-text="Screenshot of Review create for the new item in the Leaver category with a red box highlighting the Review tasks section.":::
+
 1. Select **Review + Create**.
 
 > [!NOTE]
@@ -428,7 +472,9 @@ To test this scenario without waiting for the automated schedule, run on-demand 
 1. Select **Add**.
 1. Confirm your choices. Select **Run workflow**.
 1. Select **Workflow history** to verify task status.
-   :::image type="content" source="media/deployment-scenario-remote-access/workflow-history-leaver-inline.png" alt-text="Example of Workflow history, Users summary showing task status." lightbox="media/deployment-scenario-remote-access/workflow-history-leaver-expanded.png":::
+
+   :::image type="content" source="media/deployment-scenario-remote-access/workflow-history-leaver-inline.png" alt-text="Screenshot of Workflow history, Users summary showing task status." lightbox="media/deployment-scenario-remote-access/workflow-history-leaver-expanded.png":::
+
 1. After all tasks are completed, verify that the user has access to the applications that you selected in the access package. This step completes the joiner scenario for the user to access necessary apps on day one.
 
 ### Validate access for Internet and Private Access scenario
@@ -443,7 +489,8 @@ To verify access package assignment status, follow these steps:
 
 1. As the user, sign in to `myaccess.microsoft.com`.
 1. Select **Access packages**, **Active** to see the access package (such as *Finance Access Package*) that you previously requested.
-   :::image type="content" source="media/deployment-scenario-remote-access/access-packages.png" alt-text="Example of My Access, Access packages, Active.":::
+
+   :::image type="content" source="media/deployment-scenario-remote-access/access-packages.png" alt-text="Screenshot of My Access, Access packages, Active.":::
 
 #### Verify app access
 
@@ -451,7 +498,8 @@ To verify app access, follow these steps:
 
 1. As the user, sign in to `myaccess.microsoft.com`.
 1. In the list of apps, find and access the app that you previously created (such as *Finance App*).
-   :::image type="content" source="media/deployment-scenario-remote-access/my-apps.png" alt-text="Example of My Apps, Finance Apps.":::
+
+   :::image type="content" source="media/deployment-scenario-remote-access/my-apps.png" alt-text="Screenshot of My Apps, Finance Apps.":::
 
 #### Verify group membership
 
@@ -459,7 +507,8 @@ To verify group membership, follow these steps:
 
 1. As the user, sign in to `myaccess.microsoft.com`.
 1. Select **Groups I am in**. Verify membership in the group that you previously created (such as *Finance Accounting*).
-   :::image type="content" source="media/deployment-scenario-remote-access/groups-i-am-in.png" alt-text="Example of My Groups, Groups I am in, with finance entered in the Filters text box, Showing 2 of 131.":::
+
+   :::image type="content" source="media/deployment-scenario-remote-access/groups-i-am-in.png" alt-text="Screenshot of My Groups, Groups I am in, with finance entered in the Filters text box, Showing 2 of 131.":::
 
 #### Verify Teams membership
 
@@ -467,7 +516,8 @@ To verify Teams membership, follow these steps:
 
 1. As the user, sign in to **Teams**.
 1. Verify membership in the Team that you previously created (such as *Finance Accounting*).
-   :::image type="content" source="media/deployment-scenario-remote-access/membership-verification.png" alt-text="Example of Teams showing Finance Accounting in Your teams.":::
+
+   :::image type="content" source="media/deployment-scenario-remote-access/membership-verification.png" alt-text="Screenshot of Teams showing Finance Accounting in Your teams.":::
 
 #### Verify remote access
 
@@ -475,7 +525,8 @@ To verify user access to the file server, follow these steps:
 
 1. Sign in to the device where you installed the Global Secure Access client.
 1. Run \\`\\IP_address` and validate access to the file share.
-   :::image type="content" source="media/deployment-scenario-remote-access/remote-access-verification.png" alt-text="Example of Windows Explorer showing connection to file share.":::
+
+   :::image type="content" source="media/deployment-scenario-remote-access/remote-access-verification.png" alt-text="Screenshot of Windows Explorer showing connection to file share.":::
 
 ### Run leaver workflow on-demand
 
@@ -488,7 +539,9 @@ To verify user access to the file server, follow these steps:
 1. Select **Add**.
 1. Confirm your choices and select **Run workflow**.
 1. Select **Workflow history** to verify task status.
-   :::image type="content" source="media/deployment-scenario-remote-access/task-status-verification.png" alt-text="Example of Offboard an employee, Activity, with a red box highlighting the Workflow history control that displays the Users summary.":::
+
+   :::image type="content" source="media/deployment-scenario-remote-access/task-status-verification.png" alt-text="Screenshot of Offboard an employee, Activity, with a red box highlighting the Workflow history control that displays the Users summary.":::
+
 1. After all tasks are complete, validate that the user is removed from all access to the applications selected in the access package.
 
 ### Validate access removal
