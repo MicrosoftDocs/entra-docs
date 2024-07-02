@@ -116,23 +116,24 @@ Configure the BIG-IP registration to fulfill SAML tokens that BIG-IP APM request
 2. The **Single sign-on** pane appears.
 3. On the **Select a single sign-on method** page, select **SAML**.
 4. Select **No, I'll save later**.
-5. On the **Set up single sign-on with SAML** pane, select the **pen** icon. 
+5. On the **Set up single sign-on with SAML** pane, select the **pen** icon.
 6. For **Identifier**, replace the value with the BIG-IP published application URL.
-7. For **Reply URL**, replace the value, but retain the path for the application SAML SP endpoint. With this configuration, SAML flow operates in IdP-initiated mode. Microsoft Entra ID issues a SAML assertion, then the user is redirected to the BIG-IP endpoint. 
+7. For **Reply URL**, replace the value, but retain the path for the application SAML SP endpoint. With this configuration, SAML flow operates in IdP-initiated mode.
+8. Microsoft Entra ID issues a SAML assertion, then the user is redirected to the BIG-IP endpoint.
 9. For SP-initiated mode, for **Sign on URL**, enter the application URL.
-10. For **Logout Url**, enter the BIG-IP APM single logout (SLO) endpoint prepended by the service host header. Then, BIG-IP APM user sessions end when they sign out of Microsoft Entra ID. 
+10. For **Logout Url**, enter the BIG-IP APM single logout (SLO) endpoint prepended by the service host header.
+11. Then, BIG-IP APM user sessions end when users sign out of Microsoft Entra ID.
+12. Select **Save**.
+13. Close the SAML configuration pane.
+14. Skip the SSO test prompt.
+15. Make a note of the **User Attributes & Claims** section properties. Microsoft Entra ID issues the properties for BIG-IP APM authentication, and SSO to the back-end application.
+16. On the **SAML Signing Certificate** pane, select **Download**.
+17. The **Federation Metadata XML** file is saved to your computer.
 
    ![Screenshot of URLs in the SAML configuration.](./media/f5-big-ip-forms-advanced/basic-saml-configuration.png)
 
    > [!NOTE]
    > From Traffic Management Operating System (TMOS) v16 onward, the SAML SLO endpoint is `/saml/sp/profile/redirect/slo`.
-
-11. Select **Save**.
-12. Close the SAML configuration pane.
-13. Skip the SSO test prompt.
-14. Make a note of the **User Attributes & Claims** section properties. Microsoft Entra ID issues the properties for BIG-IP APM authentication, and SSO to the back-end application.
-15. On the **SAML Signing Certificate** pane, select **Download**.
-16. The **Federation Metadata XML** file is saved to your computer.
 
    ![Screenshot a Download option under SAML Signing Certificate.](./media/f5-big-ip-forms-advanced/saml-certificate.png)
 
