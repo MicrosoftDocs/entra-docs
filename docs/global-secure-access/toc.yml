@@ -143,6 +143,11 @@ items:
     items:
       - name: Troubleshoot connectors
         href: troubleshoot-connectors.md
+  - name: Partner ecosystem
+    expanded: false
+    items:
+      - name: Find a Microsoft services partner
+        href: how-to-find-microsoft-services-partners.md
 - name: Reference
   expanded: false
   items:
