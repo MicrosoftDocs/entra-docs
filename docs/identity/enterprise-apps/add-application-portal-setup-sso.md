@@ -57,7 +57,7 @@ To configure SSO in Microsoft Entra ID:
 1. In the Microsoft Entra admin center, select **Edit** in the **Basic SAML Configuration** section on the **Set up Single Sign-On with SAML** pane.
 1. For **Reply URL (Assertion Consumer Service URL)**, enter `https://samltoolkit.azurewebsites.net/SAML/Consume`.
 1. For **Sign on URL**, enter `https://samltoolkit.azurewebsites.net/`.
-   The **Identifier (Entity ID)** is typically a URL specific to the application you're integrating with. For the **Microsoft Entra SAML Toolkit 1** application in this example, the value is automatically generated once you input the **Sign on** URL and **Reply URL** values.
+   The **Identifier (Entity ID)** is typically a URL specific to the application you're integrating with. For the **Microsoft Entra SAML Toolkit 1** application in this example, the value is automatically generated once you input the **Sign on** URL and **Reply URL** values. Follow the specific configuration guide for the application you're integrating with to determine the correct value.
 1. Select **Save**.
 1. In the **SAML Certificates** section, select **Download** for **Certificate (Raw)** to download the SAML signing certificate and save it to be used later.
 
