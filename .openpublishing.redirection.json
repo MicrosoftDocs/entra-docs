@@ -907,6 +907,11 @@
       "redirect_url": "/entra/identity/enterprise-apps/what-is-application-management",
       "redirect_document_id": false
     },
+    {
+      "source_path_from_root": "/docs/identity/app-provisioning/migrate-from-sap-idm.md",
+      "redirect_url": "/entra/id-governance/scenarios/migrate-from-sap-idm",
+      "redirect_document_id": false
+    },
     {            
       "source_path_from_root": "/docs/architecture/sse-deployment-guide-m365.md",
       "redirect_url": "/entra/architecture/sse-deployment-guide-microsoft-traffic",

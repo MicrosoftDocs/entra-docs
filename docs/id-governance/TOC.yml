@@ -51,7 +51,7 @@
     - name: Migrate from SAP IDM
       items:
       - name: Migrate from SAP IDM
-        href: ../identity/app-provisioning/migrate-from-sap-idm.md
+        href: ../scenarios/migrate-from-sap-idm.md
 - name: Tutorials
   expanded: true
   items:
