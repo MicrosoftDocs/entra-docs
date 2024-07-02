@@ -23,7 +23,6 @@ The Microsoft Entra Suite deployment series provides organizations with a detail
 
 In these guides, we describe scenarios that show the value of the Microsoft Entra Suite and how its capabilities work together.
 
-- Microsoft Entra deployment scenarios introduction (this article)
 - [Microsoft Entra deployment scenario - Workforce and guest onboarding, identity, and access lifecycle governance across all your apps](deployment-scenario-workforce-guest.md)
 - [Microsoft Entra deployment scenario - Modernize remote access to on-premises apps with MFA per app](deployment-scenario-remote-access.md)
 - [Microsoft Entra deployment scenario - Secure internet access based on business needs](deployment-scenario-internet-access.md)

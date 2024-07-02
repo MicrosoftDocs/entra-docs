@@ -25,7 +25,6 @@ In these guides, we describe scenarios that show the value of the Microsoft Entr
 
 - [Microsoft Entra deployment scenarios introduction](deployment-scenario-intro.md)
 - [Microsoft Entra deployment scenario - Workforce and guest onboarding, identity, and access lifecycle governance across all your apps](deployment-scenario-workforce-guest.md)
-- Microsoft Entra deployment scenario - Modernize remote access to on-premises apps with MFA per app (this article)
 - [Microsoft Entra deployment scenario - Secure internet access based on business needs](deployment-scenario-internet-access.md)
 
 ## Scenario: Modernize remote access
