@@ -92,7 +92,7 @@ Add the following new files to your Node.js web app that signs in users:
     ```
 
     - This file contains an HTML form that represents the [editable user details](reference-user-permissions.md#microsoft-graph-apis-and-permissions). 
-    - This form's display name is disabled, and you use it to demonstrate how to require MFA for a customer use to complete an edit profile operation. 
+    - This form's display name is disabled, and you use it to demonstrate how to require MFA for a customer user to complete an edit profile operation. 
     - The user needs to select the **Edit** button to update their display name, but the user must complete an MFA challenge if they've not already done so. 
     - The user can edit the rest of their details without requiring MFA.
 
@@ -128,7 +128,7 @@ Add the following new files to your Node.js web app that signs in users:
     <a href="/">Go back</a>
     ```
 
-This file contains an HTML form that represents the [editable user details](reference-user-permissions.md#microsoft-graph-apis-and-permissions), but only visible after the user has completes MFA.
+This file contains an HTML form that represents the [editable user details](reference-user-permissions.md#microsoft-graph-apis-and-permissions), but only visible after the customer user completes MFA challenge.
 
 ## Install app dependencies
 

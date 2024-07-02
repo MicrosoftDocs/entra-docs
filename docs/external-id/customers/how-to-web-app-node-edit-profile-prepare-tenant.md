@@ -71,7 +71,7 @@ At this point, you've assigned the permissions correctly. However, since the ten
 
 Your MFA web API app that you registered earlier is the resource that you protect with MFA. 
 
-Use the steps in [Add multifactor authentication to an app](how-to-multifactor-authentication-customers.md) to create an MFA CA policy and chooses your MFA method, such as email or SMS. Use the following settings when you create your policy:
+Use the steps in [Add multifactor authentication to an app](how-to-multifactor-authentication-customers.md) to create an MFA CA policy and choose your MFA method, such as email or SMS. Use the following settings when you create your policy:
 - For the **Name**, use *MFA policy*.
 - For the **Target resources**, select the MFA web API app that you registered earlier, such as *mfa-api-app*.
 
