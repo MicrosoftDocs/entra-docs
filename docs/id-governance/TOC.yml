@@ -36,16 +36,22 @@
     items:
     - name: Transform your cloud posture
       href: ../architecture/road-to-the-cloud-posture.md
+    - name: Migrate an organizational role model
+      href: identity-governance-organizational-roles.md
     - name: Microsoft Entra Connect sync to cloud sync migrations
       items:
       - name: Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync
         href: ~/identity/hybrid/cloud-sync/migrate-group-writeback.md
-    - name: Microsoft identity manager migrations
+    - name: Microsoft Identity Manager migrations
       items:
       - name: Migrate IAM scenarios to Microsoft Entra ID
         href: /microsoft-identity-manager/migrate-entra-id
       - name: Migrate from the FIM connector
         href: /microsoft-identity-manager/migrate-from-the-fim-connector-for-azure-active-directory
+    - name: Migrate from SAP IDM
+      items:
+      - name: Migrate from SAP IDM
+        href: scenarios/migrate-from-sap-idm.md
 - name: Tutorials
   expanded: true
   items:
@@ -75,8 +81,6 @@
         href: entitlement-management-onboard-external-user.md
       - name: Create an access package for an application - PowerShell
         href: entitlement-management-access-package-create-app.md
-      - name: Migrate an organizational role model
-        href: identity-governance-organizational-roles.md
       - name: Automated ServiceNow Ticket Creation Integration
         href: entitlement-management-ticketed-provisioning.md
       - name: Automated Teams Messaging Integration

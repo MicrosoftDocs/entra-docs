@@ -72,6 +72,32 @@ Furthermore, KloudIdentity provides a Software Development Kit (SDK) to customiz
 #### Popular applications supported
 KloudIdentity provides a universal connector platform; Hence any LOB application can be integrated with REST or SOAP APIs, PowerShell scripts, and SDK approach.
 
+### Traxion SCIM Gateway
+#### Description
+At Traxion, we believe that industry-wide standardization plays a big role in the future of Identity and Access Management (IAM). We are determined to help our customers achieve their security goals through the use of best practices and common standards. System for Cross-domain Identity Management (SCIM) is such a standard.
+
+Companies deploying an IGA system are challenged with how hard it can be to connect applications for synchronizing users, groups and other data entities.
+The process of connecting and maintaining application integrations has proven to be a challenging, time-consuming, and costly process; not only for the companies deploying an IAM system but also for application vendors and integrators.
+It is especially tough when connecting an application that does not support a common standard such as SCIM 2.0.
+By using our SCIM Gateway we enable our customers to leverage the benefits of a standardized integration by reducing lead times and overall costs.
+
+Our SCIM Gateway is an easy, secure and standardized solution, that will enable you to synchronize all identity and access information with any non-natively SCIM supporting application.
+
+Integrations include:
+
+- AFAS Profit
+- Splunk
+- ATS
+- Oracle ERP
+- SAP SuccessFactors
+- Tempus Resources
+- Generic connectors (CSV, SQL)
+- Develop your own connector using our [public SDK](https://www.nuget.org/packages/Traxion.Scim.Gateway.Connectors.Sdk)
+
+#### Contact information
+* Company website: https://www.traxion.com/products/iam-integration/scim-gateway/
+* Contact information: https://www.traxion.com/contact/
+
 ### UNIFY Solutions
 #### Description
 

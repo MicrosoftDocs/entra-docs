@@ -27,7 +27,7 @@ Microsoft Entra provides user interfaces, including the Microsoft Entra Admin Ce
 
 The following diagram illustrates an example topology for user provisioning and single sign-on. In this topology, workers are represented in SuccessFactors, and need to have accounts in a Windows Server Active Directory domain, in Microsoft Entra, SAP ECC, and SAP cloud applications. This example illustrates an organization that has a Windows Server AD domain; however, Windows Server AD isn't required.
 
-:::image type="content" source="media/plan-sap-user-source-and-target/end-to-end-integrations.png" alt-text="Diagram showing end-to-end breadth of relevant Microsoft and SAP technologies and their integrations." lightbox="media/plan-sap-user-source-and-target/end-to-end-integrations.png":::
+:::image type="content" source="~/identity/app-provisioning/media/plan-sap-user-source-and-target/end-to-end-integrations.png" alt-text="Diagram showing end-to-end breadth of relevant Microsoft and SAP technologies and their integrations." lightbox="~/identity/app-provisioning/media/plan-sap-user-source-and-target/end-to-end-integrations.png":::
 
 ## Planning a migration of identity management scenarios to Microsoft Entra
 
@@ -40,7 +40,7 @@ To begin planning your migration,
  * Determine timeframes and stakeholders for implementation of new Microsoft Entra capabilities to support migration.
  * Determine the cutover process for your applications to move the single sign-on, identity lifecycle, and access lifecycle controls to Microsoft Entra.
 
-As a SAP IDM migration will likely involve integrations with existing SAP applications, review the [integrations with SAP sources and targets](plan-sap-user-source-and-target.md#plan-the-integrations-with-sap-sources-and-targets) guidance for how to determine the sequence of application onboarding and how applications will integrate with Microsoft Entra.
+As a SAP IDM migration will likely involve integrations with existing SAP applications, review the [integrations with SAP sources and targets](~/identity/app-provisioning/plan-sap-user-source-and-target.md#plan-the-integrations-with-sap-sources-and-targets) guidance for how to determine the sequence of application onboarding and how applications will integrate with Microsoft Entra.
 
 ## Services and integration partners for deploying Microsoft Entra with SAP applications
 
@@ -89,8 +89,8 @@ Organizations that have Microsoft 365, Microsoft Azure, or other Microsoft Onlin
 
 Before migrating scenarios to a Microsoft Entra tenant, you should review the step-by-step guidance to:
 
-* [Define the organization's policy with user prerequisites and other constraints for access to an application](plan-sap-user-source-and-target.md#define-the-organizations-policy-with-user-prerequisites-and-other-constraints-for-access-to-an-application)
-* [Decide on the provisioning and authentication topology](plan-sap-user-source-and-target.md#decide-on-the-provisioning-and-authentication-topology). Similar to SAP IDM [identity lifecycle management](https://help.sap.com/docs/SAP_IDENTITY_MANAGEMENT/4773a9ae1296411a9d5c24873a8d418c/687dff86043f49e2982ba7942808e0f6.html), a single Microsoft Entra ID tenant can connect to multiple cloud and on-premises applications for provisioning and single sign-on.
+* [Define the organization's policy with user prerequisites and other constraints for access to an application](~/identity/app-provisioning/plan-sap-user-source-and-target.md#define-the-organizations-policy-with-user-prerequisites-and-other-constraints-for-access-to-an-application)
+* [Decide on the provisioning and authentication topology](~/identity/app-provisioning/plan-sap-user-source-and-target.md#decide-on-the-provisioning-and-authentication-topology). Similar to SAP IDM [identity lifecycle management](https://help.sap.com/docs/SAP_IDENTITY_MANAGEMENT/4773a9ae1296411a9d5c24873a8d418c/687dff86043f49e2982ba7942808e0f6.html), a single Microsoft Entra ID tenant can connect to multiple cloud and on-premises applications for provisioning and single sign-on.
 * Ensure organizational prerequisites are met in that tenant, including having the appropriate [Microsoft Entra licenses](~/id-governance/licensing-fundamentals.md#features-by-license) in that tenant for the features you will be using.
 
 ### Migrate existing IAM data into a Microsoft Entra ID tenant
@@ -139,9 +139,9 @@ Organizations that have SAP SuccessFactors could use SAP IDM to [bring in employ
 
 You can also [write back from Microsoft Entra ID to SAP SuccessFactors](~/identity/saas-apps/sap-successfactors-writeback-tutorial.md).
 
-  :::image type="content" source="media/plan-sap-user-source-and-target/inbound-data-preparation.png" alt-text="Diagram showing Microsoft and SAP technologies relevant to bringing in data about workers to Microsoft Entra ID." lightbox="media/plan-sap-user-source-and-target/inbound-data-preparation.png":::
+  :::image type="content" source="~/identity/app-provisioning/media/plan-sap-user-source-and-target/inbound-data-preparation.png" alt-text="Diagram showing Microsoft and SAP technologies relevant to bringing in data about workers to Microsoft Entra ID." lightbox="~/identity/app-provisioning/media/plan-sap-user-source-and-target/inbound-data-preparation.png":::
 
-For step-by-step guidance on the identity lifecycle with SAP SuccessFactors as a source, including setting up new users with appropriate credentials in Windows Server AD or Microsoft Entra ID, see [Plan deploying Microsoft Entra for user provisioning with SAP source and target applications](plan-sap-user-source-and-target.md).
+For step-by-step guidance on the identity lifecycle with SAP SuccessFactors as a source, including setting up new users with appropriate credentials in Windows Server AD or Microsoft Entra ID, see [Plan deploying Microsoft Entra for user provisioning with SAP source and target applications](~/identity/app-provisioning/plan-sap-user-source-and-target.md).
 
 Some organizations also used SAP IDM to read from [SAP Human Capital Management (HCM)](https://help.sap.com/docs/SAP_IDENTITY_MANAGEMENT/d376345fb4e94928a70036ddf91d690b/490d22699aff42519eb6b328c7f44e24.html). Organizations who still use SAP Human Capital Management (HCM) can also bring identities into Microsoft Entra ID. By using SAP Integration Suite, you can synchronize lists of workers between SAP HCM and SAP SuccessFactors. From there, you can bring identities directly into Microsoft Entra ID or provision them into Active Directory Domain Services by using the native provisioning integrations mentioned earlier.
 
@@ -149,20 +149,20 @@ Some organizations also used SAP IDM to read from [SAP Human Capital Management 
 
 If you have other systems of record sources besides SuccessFactors or SAP HCM, you can use the Microsoft Entra [inbound provisioning API](~/identity/app-provisioning/inbound-provisioning-api-concepts.md) to bring in workers from that system of record as users in Windows Server or Microsoft Entra ID.
 
-  :::image type="content" source="media/inbound-provisioning-api-concepts/api-workflow-scenarios.png" alt-text="Diagram showing API workflow scenarios." lightbox="media/inbound-provisioning-api-concepts/api-workflow-scenarios.png":::
+  :::image type="content" source="~/identity/app-provisioning/media/inbound-provisioning-api-concepts/api-workflow-scenarios.png" alt-text="Diagram showing API workflow scenarios." lightbox="~/identity/app-provisioning/media/inbound-provisioning-api-concepts/api-workflow-scenarios.png":::
 
 ### Provision to SAP systems
 
 Most organizations with SAP IDM will have used it to provision users into SAP ECC, SAP IAS, SAP S/4HANA, or other SAP applications. Microsoft Entra has connectors to SAP ECC, SAP Cloud Identity Services, and SAP SuccessFactors. Provisioning into SAP S/4HANA or other applications requires the users to first be present in Microsoft Entra ID. Once you have users in Microsoft Entra ID, you can provision those users from Microsoft Entra ID to SAP Cloud Identity Services or SAP ECC, to enable them to sign in to SAP applications. SAP Cloud Identity Services then provisions the users originating from Microsoft Entra ID that are in the SAP Cloud Identity Directory into the downstream SAP applications, including [`SAP S/4HANA Cloud`](https://help.sap.com/docs/identity-provisioning/identity-provisioning/target-sap-s-4hana-cloud) and [`SAP S/4HANA On-premise`](https://help.sap.com/docs/identity-provisioning/identity-provisioning/target-sap-s-4hana-on-premise) through the SAP cloud connector.
 
-  :::image type="content" source="media/plan-sap-user-source-and-target/outbound-provisioning-and-sso.png" alt-text="Diagram showing Microsoft and SAP technologies relevant to provisioning identities from Microsoft Entra ID." lightbox="media/plan-sap-user-source-and-target/outbound-provisioning-and-sso.png":::
+  :::image type="content" source="~/identity/app-provisioning/media/plan-sap-user-source-and-target/outbound-provisioning-and-sso.png" alt-text="Diagram showing Microsoft and SAP technologies relevant to provisioning identities from Microsoft Entra ID." lightbox="~/identity/app-provisioning/media/plan-sap-user-source-and-target/outbound-provisioning-and-sso.png":::
 
 
-For step-by-step guidance on the identity lifecycle with SAP applications as the target, see [Plan deploying Microsoft Entra for user provisioning with SAP source and target applications](plan-sap-user-source-and-target.md).
+For step-by-step guidance on the identity lifecycle with SAP applications as the target, see [Plan deploying Microsoft Entra for user provisioning with SAP source and target applications](~/identity/app-provisioning/plan-sap-user-source-and-target.md).
 
-* To prepare for provisioning users into SAP applications integrated with SAP Cloud Identity Services, confirm the SAP Cloud Identity Services have the necessary schema mappings for those applications, and [provision the users from Microsoft Entra ID to SAP Cloud Identity Services](plan-sap-user-source-and-target.md#provision-users-to-sap-cloud-identity-services). SAP Cloud Identity Services will subsequently provision users into the downstream SAP applications as necessary. You can then use HR inbound from SuccessFactors to keep the list of users in Microsoft Entra ID up to date as employees join, move, and leave. If your tenant has a license for Microsoft Entra ID Governance, you can also [automate changes to the application role assignments](plan-sap-user-source-and-target.md#assign-users-the-necessary-application-access-rights-in-microsoft-entra) in Microsoft Entra ID for SAP Cloud Identity Services. For more information on performing separation of duties and other compliance checks prior to provisioning, see [migrate access lifecycle management scenarios](#migrate-access-lifecycle-management-scenarios).
+* To prepare for provisioning users into SAP applications integrated with SAP Cloud Identity Services, confirm the SAP Cloud Identity Services have the necessary schema mappings for those applications, and [provision the users from Microsoft Entra ID to SAP Cloud Identity Services](~/identity/app-provisioning/plan-sap-user-source-and-target.md#provision-users-to-sap-cloud-identity-services). SAP Cloud Identity Services will subsequently provision users into the downstream SAP applications as necessary. You can then use HR inbound from SuccessFactors to keep the list of users in Microsoft Entra ID up to date as employees join, move, and leave. If your tenant has a license for Microsoft Entra ID Governance, you can also [automate changes to the application role assignments](~/identity/app-provisioning/plan-sap-user-source-and-target.md#assign-users-the-necessary-application-access-rights-in-microsoft-entra) in Microsoft Entra ID for SAP Cloud Identity Services. For more information on performing separation of duties and other compliance checks prior to provisioning, see [migrate access lifecycle management scenarios](#migrate-access-lifecycle-management-scenarios).
 
-* For guidance on how to provision users into SAP ECC, confirm that the necessary Business APIs (BAPIs) [for SAP ECC are ready](plan-sap-user-source-and-target.md#confirm-that-necessary-bapis-for-sap-ecc-are-ready-for-use-by-microsoft-entra) for Microsoft Entra to use for identity management, then [provision the users from Microsoft Entra ID to SAP ECC](plan-sap-user-source-and-target.md#provision-users-to-sap-ecc).
+* For guidance on how to provision users into SAP ECC, confirm that the necessary Business APIs (BAPIs) [for SAP ECC are ready](~/identity/app-provisioning/plan-sap-user-source-and-target.md#confirm-that-necessary-bapis-for-sap-ecc-are-ready-for-use-by-microsoft-entra) for Microsoft Entra to use for identity management, then [provision the users from Microsoft Entra ID to SAP ECC](~/identity/app-provisioning/plan-sap-user-source-and-target.md#provision-users-to-sap-ecc).
 
 * For guidance on how to update the SAP SuccessFactor worker record, see [write back from Microsoft Entra ID to SAP SuccessFactors](~/identity/saas-apps/sap-successfactors-writeback-tutorial.md).
 
@@ -256,7 +256,7 @@ For applications that still require an LDAP interface to read users or groups, M
 
 * If you are using Microsoft Entra to populate workers [from SuccessFactors into on-premises Active Directory](~/identity/saas-apps/sap-successfactors-inbound-provisioning-tutorial.md), then the applications can read users from that Windows Server Active Directory. If your applications also require group memberships, then you can populate Windows Server AD groups from corresponding groups in Microsoft Entra. For more information, see [Group writeback with Microsoft Entra Cloud Sync](~/identity/hybrid/group-writeback-cloud-sync.md).
 
-* If your organization has been using another LDAP directory, then you can [configure Microsoft Entra ID to provision users into that LDAP directory](../app-provisioning/on-premises-ldap-connector-configure.md).
+* If your organization has been using another LDAP directory, then you can [configure Microsoft Entra ID to provision users into that LDAP directory](~/identity/app-provisioning/on-premises-ldap-connector-configure.md).
 
 ### Extend Microsoft Entra through integration interfaces
 
