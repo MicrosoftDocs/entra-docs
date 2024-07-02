@@ -1,4 +1,4 @@
----
+F---
 title: Configure F5 BIG-IP Easy Button for Kerberos single sign-on
 description: Learn to implement secure hybrid access (SHA) with single sign-on (SSO) to Kerberos applications using F5 BIG-IP Easy Button guided configuration.
 author: gargi-sinha
@@ -86,7 +86,7 @@ This tutorial covers Guided Configuration 16.1 with an Easy Button template. Wit
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-[Microsoft identity platform.](~/identity-platform/quickstart-register-app.md) trusts a service or client, and then either can acess Microsoft Graph. This action creates a tenant app registration to authorize Easy Button access to Graph. Through these permissions, the BIG-IP pushes the configurations to establish a trust between a SAML SP instance for published application, and Microsoft Entra ID as the SAML IdP.
+[Microsoft identity platform.](~/identity-platform/quickstart-register-app.md) trusts a service or client, and then either can access Microsoft Graph. This action creates a tenant app registration to authorize Easy Button access to Graph. Through these permissions, the BIG-IP pushes the configurations to establish a trust between a SAML SP instance for published application, and Microsoft Entra ID as the SAML IdP.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 2. Browse to **Identity** > **Applications** > **App registrations > New registration**.
