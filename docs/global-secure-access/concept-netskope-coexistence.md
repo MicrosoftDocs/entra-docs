@@ -83,7 +83,6 @@ Netskope SSE configuration: Internet Access traffic is captured. The Microsoft 3
 1. In the network traffic dialog box, confirm that the Global Secure Access client **only** handles the Microsoft 365 traffic.
 1. Validate traffic related to Outlook Online and SharePoint Online is missing from Netskope logs in **Skope IT** > **Events** > **Page Events**. 
 
-If the Netskope client starts up (or enabled by the user) first and Global Secure Access client second, sign in popup doesn’t appear for Global Secure Access client and `tunneling succeeded` health check-in advanced diagnostic fails. As a workaround, disable the Netskope client, sign in to Global Secure Access client, and then re-enable Netskope client.
 
 
 ## Next steps
