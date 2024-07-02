@@ -6,7 +6,7 @@ manager: martinco
 ms.service: entra
 ms.subservice: architecture
 ms.topic: conceptual
-ms.date: 06/27/2024
+ms.date: 07/02/2024
 ms.author: gasinh
 ms.reviewer: ajburnle, ignite-2022
 ---
