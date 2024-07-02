@@ -31,12 +31,13 @@ Add the following new files to your Node.js web app that signs in users:
 
 ## Update app UI components
 
-1. In your code editor, open *views/index.hbs* file, then add an Edit profile* link, which shows the customer user the edit profile UI:
+1. In your code editor, open *views/index.hbs* file, then add an **Edit profile** link by using the follow code snippet:
 
     ```html
     <a href="/users/gatedUpdateProfile">Edit profile</a>
     ```
-    Your *views/index.hbs* file now looks similar to the following file:
+    
+    After you make the update, your *views/index.hbs* file should look similar to the following file:
 
     ```html
     <h1>{{title}}</h1>

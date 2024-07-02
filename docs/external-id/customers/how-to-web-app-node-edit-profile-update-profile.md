@@ -193,11 +193,11 @@ In your code editor, open the *routes/users.js* file, add the following routes:
 ```
 
 - You trigger the `/gatedUpdateProfile` route when the customer user selects the **Edit profile** link. The app:
-    1. Acquires an access token with the *User.ReadWriter* permission.
+    1. Acquires an access token with the *User.ReadWrite* permission.
     1. Makes a call to Microsoft Graph API to read the signed-in user's profile.
     1. Displays the user details in the *gatedUpdateProfile.hbs* UI.
 
-- You trigger the `/updateProfile` route when the user wants to update their display name, that's, they select the *Edit* button. The app:
+- You trigger the `/updateProfile` route when the user wants to update their display name, that's, they select the **Edit** button. The app:
     1. Acquires an access token with the *User.ReadWrite* and *mfaProtectedResourceScope* permissions. By including the *mfaProtectedResourceScope* permission, the user must complete an MFA challenge if they've not already done so.
     1. Makes a call to Microsoft Graph API to read the signed-in user's profile.
     1. Displays the user details in the *updateProfile.hbs* UI.

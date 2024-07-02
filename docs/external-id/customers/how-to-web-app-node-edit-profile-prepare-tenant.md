@@ -18,7 +18,7 @@ ms.custom: developer
 
 After customer users successfully sign in into your external-facing app, you can enable them to edit their profiles. You enable the customer users to manage their profiles by using [Microsoft Graph API's](/graph/api/user-get) `/me` endpoint. Calling the `/me` endpoint requires a signed-in user and therefore a delegated permission.
 
-In this how-to guide, you learn how to prepare your external tenant to support edit their profile with multifactor authentication (MFA) protection. The MFA requirement is enables by a Conditional Access (CA) policy.
+In this how-to guide, you learn how to prepare your external tenant to support edit their profile with multifactor authentication (MFA) protection. The MFA requirement is enabled by a Conditional Access (CA) policy.
 
 This article is the first part of a three-part guide.
 
