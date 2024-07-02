@@ -40,7 +40,7 @@ To begin planning your migration,
  * Determine timeframes and stakeholders for implementation of new Microsoft Entra capabilities to support migration.
  * Determine the cutover process for your applications to move the single sign-on, identity lifecycle, and access lifecycle controls to Microsoft Entra.
 
-As a SAP IDM migration will likely involve integrations with existing SAP applications, review the [integrations with SAP sources and targets](~/identity/app-provisioning/~/identity/app-provisioning/plan-sap-user-source-and-target.mdd#plan-the-integrations-with-sap-sources-and-targets) guidance for how to determine the sequence of application onboarding and how applications will integrate with Microsoft Entra.
+As a SAP IDM migration will likely involve integrations with existing SAP applications, review the [integrations with SAP sources and targets](~/identity/app-provisioning/plan-sap-user-source-and-target.md#plan-the-integrations-with-sap-sources-and-targets) guidance for how to determine the sequence of application onboarding and how applications will integrate with Microsoft Entra.
 
 ## Services and integration partners for deploying Microsoft Entra with SAP applications
 
@@ -89,15 +89,15 @@ Organizations that have Microsoft 365, Microsoft Azure, or other Microsoft Onlin
 
 Before migrating scenarios to a Microsoft Entra tenant, you should review the step-by-step guidance to:
 
-* [Define the organization's policy with user prerequisites and other constraints for access to an application](~/identity/app-provisioning/~/identity/app-provisioning/plan-sap-user-source-and-target.mdd#define-the-organizations-policy-with-user-prerequisites-and-other-constraints-for-access-to-an-application)
-* [Decide on the provisioning and authentication topology](~/identity/app-provisioning/~/identity/app-provisioning/plan-sap-user-source-and-target.md#decide-on-the-provisioning-and-authentication-topology). Similar to SAP IDM [identity lifecycle management](https://help.sap.com/docs/SAP_IDENTITY_MANAGEMENT/4773a9ae1296411a9d5c24873a8d418c/687dff86043f49e2982ba7942808e0f6.html), a single Microsoft Entra ID tenant can connect to multiple cloud and on-premises applications for provisioning and single sign-on.
+* [Define the organization's policy with user prerequisites and other constraints for access to an application](~/identity/app-provisioning/plan-sap-user-source-and-target.md#define-the-organizations-policy-with-user-prerequisites-and-other-constraints-for-access-to-an-application)
+* [Decide on the provisioning and authentication topology](~/identity/app-provisioning/plan-sap-user-source-and-target.md#decide-on-the-provisioning-and-authentication-topology). Similar to SAP IDM [identity lifecycle management](https://help.sap.com/docs/SAP_IDENTITY_MANAGEMENT/4773a9ae1296411a9d5c24873a8d418c/687dff86043f49e2982ba7942808e0f6.html), a single Microsoft Entra ID tenant can connect to multiple cloud and on-premises applications for provisioning and single sign-on.
 * Ensure organizational prerequisites are met in that tenant, including having the appropriate [Microsoft Entra licenses](~/id-governance/licensing-fundamentals.md#features-by-license) in that tenant for the features you will be using.
 
 ### Migrate existing IAM data into a Microsoft Entra ID tenant
 
 In SAP IDM, the Identity Store represents identity data through entry types such as `MX_PERSON`, `MX_ROLE`, or `MX_PRIVILEGE`.
 
-* A person is represented in a Microsoft Entra ID tenant as a [User](~/fundamentals/how-to-create-delete-users.yml). If you have existing users who are not yet in Microsoft Entra ID, you can [extend the Microsoft Entra user schema with extension attributes](~/identity/app-provisioning/~/identity/app-provisioning/~/identity/app-provisioning/plan-sap-user-source-and-target.md#update-the-microsoft-entra-id-user-schema) if needed, [bulk create users in Microsoft Entra ID](~/identity/users/users-bulk-add.md) from a CSV file, and then [issue credentials to those new users](~/identity/app-provisioning/~/identity/app-provisioning/~/identity/app-provisioning/plan-sap-user-source-and-target.md#distribute-credentials-to-newly-created-microsoft-entra-users-or-windows-server-ad-users) so they can authenticate to Microsoft Entra ID.
+* A person is represented in a Microsoft Entra ID tenant as a [User](~/fundamentals/how-to-create-delete-users.yml). If you have existing users who are not yet in Microsoft Entra ID, you can [extend the Microsoft Entra user schema with extension attributes](~/identity/app-provisioning/plan-sap-user-source-and-target.md#update-the-microsoft-entra-id-user-schema) if needed, [bulk create users in Microsoft Entra ID](~/identity/users/users-bulk-add.md) from a CSV file, and then [issue credentials to those new users](~/identity/app-provisioning/plan-sap-user-source-and-target.md#distribute-credentials-to-newly-created-microsoft-entra-users-or-windows-server-ad-users) so they can authenticate to Microsoft Entra ID.
 
 * A business role can be represented in Microsoft Entra ID Governance as an [Entitlement Management access package](~/id-governance/entitlement-management-access-package-create.md). You can [govern access to applications by migrating an organizational role model to Microsoft Entra ID Governance](~/id-governance/identity-governance-organizational-roles.md), which results in an access package for each business role.
 
@@ -149,7 +149,7 @@ Some organizations also used SAP IDM to read from [SAP Human Capital Management 
 
 If you have other systems of record sources besides SuccessFactors or SAP HCM, you can use the Microsoft Entra [inbound provisioning API](~/identity/app-provisioning/inbound-provisioning-api-concepts.md) to bring in workers from that system of record as users in Windows Server or Microsoft Entra ID.
 
-  :::image type="content" source="media/inbound-provisioning-api-concepts/api-workflow-scenarios.png" alt-text="Diagram showing API workflow scenarios." lightbox="media/inbound-provisioning-api-concepts/api-workflow-scenarios.png":::
+  :::image type="content" source="~/identity/app-provisioning/media/inbound-provisioning-api-concepts/api-workflow-scenarios.png" alt-text="Diagram showing API workflow scenarios." lightbox="~/identity/app-provisioning/media/inbound-provisioning-api-concepts/api-workflow-scenarios.png":::
 
 ### Provision to SAP systems
 
@@ -256,7 +256,7 @@ For applications that still require an LDAP interface to read users or groups, M
 
 * If you are using Microsoft Entra to populate workers [from SuccessFactors into on-premises Active Directory](~/identity/saas-apps/sap-successfactors-inbound-provisioning-tutorial.md), then the applications can read users from that Windows Server Active Directory. If your applications also require group memberships, then you can populate Windows Server AD groups from corresponding groups in Microsoft Entra. For more information, see [Group writeback with Microsoft Entra Cloud Sync](~/identity/hybrid/group-writeback-cloud-sync.md).
 
-* If your organization has been using another LDAP directory, then you can [configure Microsoft Entra ID to provision users into that LDAP directory](../app-provisioning/on-premises-ldap-connector-configure.md).
+* If your organization has been using another LDAP directory, then you can [configure Microsoft Entra ID to provision users into that LDAP directory](~/identity/app-provisioning/on-premises-ldap-connector-configure.md).
 
 ### Extend Microsoft Entra through integration interfaces
 
@@ -269,7 +269,7 @@ Microsoft Entra includes multiple interfaces for integration and extension acros
 
 ## Next steps
 
-* [Plan deploying Microsoft Entra for user identity provisioning with SAP source and target applications](~/identity/app-provisioning/~/identity/app-provisioning/plan-sap-user-source-and-target.md)
+* [Plan deploying Microsoft Entra for user identity provisioning with SAP source and target applications](~/identity/app-provisioning/plan-sap-user-source-and-target.md)
 * [Manage access to your SAP applications](~/id-governance/sap.md)
 * Guidance for [migrating from ADFS](~/identity/enterprise-apps/migrate-ad-fs-application-howto.md)
 * Guidance for [migrating from MIM](/microsoft-identity-manager/migrate-entra-id)
