@@ -19,7 +19,7 @@ Our Microsoft services partners offerings include advisory, implementation, inte
 
 Engage with skilled Microsoft services partners to help your organization effectively adopt Microsoft's SSE solution, which is comprised of **Microsoft Entra Internet Access** and **Microsoft Entra Private Access**. The unifying term used when referring to both Microsoft Entra Internet Access and Microsoft Entra Private Access product is **Global Secure Access**.
 
-Review the curated list of services partners below to find a partner who may fit your needs. You can also find additional partners in the [Microsoft Solution Partner finder](https://partner.microsoft.com/en-us/partnership/find-a-partner) website.
+Review the curated list of services partners below to find a partner who may fit your needs. You can also find additional partners in the [Microsoft Solution Partner finder](https://partner.microsoft.com/partnership/find-a-partner) website.
 
 | Partner | Description |
 | -------- | ----------------------- |
