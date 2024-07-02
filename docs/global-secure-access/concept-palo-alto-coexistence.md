@@ -49,7 +49,7 @@ Bypass Microsoft Entra service Fully Qualified Domain Name (FQDN) and Internet P
 
 Install the Palo Alto Networks Global Protect client. For more information on installing the Palo Alto Networks Global Protect client, see [https://docs.paloaltonetworks.com/globalprotect/6-2/globalprotect-app-user-guide/globalprotect-app-for-windows](https://docs.paloaltonetworks.com/globalprotect/6-2/globalprotect-app-user-guide/globalprotect-app-for-windows).
 
-To set up the Global Protect client there are a lot of options like tying in Entra ID to create your accounts. To learn more about the options, see [Tutorial: Microsoft Entra single sign-on (SSO) integration with Palo Alto Networks - GlobalProtect](..//identity/saas-apps/palo-alto-networks-globalprotect-tutorial.md).
+To set up the Global Protect client there are a lot of options like tying in Microsoft Entra ID to create your accounts. To learn more about the options, see [Tutorial: Microsoft Entra single sign-on (SSO) integration with Palo Alto Networks - GlobalProtect](..//identity/saas-apps/palo-alto-networks-globalprotect-tutorial.md).
 
 For the most basic setup, add a local user to the Global Protect from Palo Alto Networks’ Strata Cloud Manager. 
 
