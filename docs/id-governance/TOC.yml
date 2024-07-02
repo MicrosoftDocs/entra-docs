@@ -5,18 +5,53 @@
   items:
   - name: What is Identity Governance?
     href: identity-governance-overview.md
-  - name: What is entitlement management?
-    href: entitlement-management-overview.md
-  - name: What are access reviews?
-    href: access-reviews-overview.md
-  - name: What is identity lifecycle management?
-    href: what-is-identity-lifecycle-management.md
-  - name: What is provisioning?
-    href: what-is-provisioning.md
-  - name: What are Lifecycle Workflows? 
-    href: what-are-lifecycle-workflows.md  
-  - name: What is the My Access portal? 
-    href: my-access-portal-overview.md  
+
+
+- name: Scenarios
+  expanded: true
+  items:
+  - name: What are identity governance use cases? 
+    href: scenarios/identity-governance-use-cases.md 
+  - name: Understanding least privileged
+    href: scenarios/least-privileged.md 
+  - name: Govern the employee and guest lifecycle
+    items:
+    - name: Govern the employee and guest lifecycle
+      href: scenarios/govern-the-employee-lifecycle.md
+    - name: Identity lifecycle management provisioning
+      href: what-is-provisioning.md
+    - name: Automate identity lifecycle management
+      href: scenarios/automate-identity-lifecycle.md
+  - name: Govern access to applications
+    items:
+    - name: Govern access for applications in your environment
+      href: identity-governance-applications-prepare.md
+    - name: Define organizational policies for governing access
+      href: identity-governance-applications-define.md
+    - name: Integrating applications with Microsoft Entra ID
+      href: identity-governance-applications-integrate.md
+    - name: Deploying organizational policies for governing access
+      href: identity-governance-applications-deploy.md
+  - name: Migrations
+    items:
+    - name: Transform your cloud posture
+      href: ../architecture/road-to-the-cloud-posture.md
+    - name: Migrate an organizational role model
+      href: identity-governance-organizational-roles.md
+    - name: Microsoft Entra Connect sync to cloud sync migrations
+      items:
+      - name: Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync
+        href: ~/identity/hybrid/cloud-sync/migrate-group-writeback.md
+    - name: Microsoft Identity Manager migrations
+      items:
+      - name: Migrate IAM scenarios to Microsoft Entra ID
+        href: /microsoft-identity-manager/migrate-entra-id
+      - name: Migrate from the FIM connector
+        href: /microsoft-identity-manager/migrate-from-the-fim-connector-for-azure-active-directory
+    - name: Migrate from SAP IDM
+      items:
+      - name: Migrate from SAP IDM
+        href: scenarios/migrate-from-sap-idm.md
 - name: Tutorials
   expanded: true
   items:
@@ -46,8 +81,6 @@
         href: entitlement-management-onboard-external-user.md
       - name: Create an access package for an application - PowerShell
         href: entitlement-management-access-package-create-app.md
-      - name: Migrate an organizational role model
-        href: identity-governance-organizational-roles.md
       - name: Automated ServiceNow Ticket Creation Integration
         href: entitlement-management-ticketed-provisioning.md
       - name: Automated Teams Messaging Integration
@@ -85,6 +118,8 @@
   items:
   - name: Entitlement management
     items:
+    - name: What is entitlement management?
+      href: entitlement-management-overview.md
     - name: Delegation and roles
       href: entitlement-management-delegate.md
     - name: Request process and emails
@@ -93,6 +128,10 @@
       href: entitlement-management-onboard.md  
   - name: Access reviews
     items:
+    - name: What are access reviews?
+      href: access-reviews-overview.md
+    - name: What is the My Access portal? 
+      href: my-access-portal-overview.md  
     - name: Enable multi-stage reviews
       href: using-multi-stage-reviews.md
     - name: Manage access with reviews
@@ -105,6 +144,8 @@
       href: access-reviews-external-users.md
   - name: Lifecycle Workflows
     items:
+    - name: What are Lifecycle Workflows? 
+      href: what-are-lifecycle-workflows.md  
     - name: Understanding Lifecycle Workflows
       href: understanding-lifecycle-workflows.md
     - name: Templates

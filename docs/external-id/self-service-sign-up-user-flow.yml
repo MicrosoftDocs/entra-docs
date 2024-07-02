@@ -6,7 +6,7 @@ metadata:
   author: msmimart
   ms.author: mimart
   manager: CelesteDG
-  ms.date: 05/15/2024
+  ms.date: 06/28/2024
   ms.service: entra-external-id
   ms.topic: how-to
   ms.collection: M365-identity-device-management
@@ -76,10 +76,6 @@ procedureSection:
         Browse to **Identity** > **External Identities** > **User flows**, and then select **New user flow**.
 
           :::image type="content" source="media/self-service-sign-up-user-flow/new-user-flow.png" alt-text="Screenshot of the new user flow button.":::
-      - |
-        Select the user flow type (for example, **Sign up and sign in**).
-      - |  
-        Select the version (**Recommended** or **Preview**), and then select **Create**.
       - |  
         On the **Create** page, enter a **Name** for the user flow. The name is automatically prefixed with **B2X_1_**.
       - |  

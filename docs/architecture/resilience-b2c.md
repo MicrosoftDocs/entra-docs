@@ -33,4 +33,3 @@ In the subsequent sections, we guide you to build resilience in the following ar
 - [Increase resilience of authentication and authorization in applications](resilience-app-development-overview.md): Use Microsoft identity platform to build apps your users and customers sign in to with Microsoft identities or social accounts. 
 
 Watch the following video to [build resilient and scalable flows](https://www.youtube.com/embed/8f_Ozpw9yTs). Learn how to design and configure resilient and scalable services using Azure AD B2C.
-

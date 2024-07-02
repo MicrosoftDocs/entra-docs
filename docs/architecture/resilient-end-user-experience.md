@@ -1,6 +1,6 @@
 ---
 title: Resilient end-user experience using Azure AD B2C
-description: Methods to build resilience in end-user experience using Azure AD B2C
+description: Learn methods to build resilience in end-user experience with Azure AD B2C
 ms.service: entra
 ms.subservice: architecture
 ms.topic: how-to
@@ -10,74 +10,72 @@ manager: martinco
 ms.date: 06/28/2024
 ---
 
-# Resilient end-user experience
+# Resilient end-user experience using Azure AD B2C
 
 The sign-up and sign-in end-user experience is made up of the following elements:
 
 - Interfaces the user interacts with, such as CSS, HTML, and JavaScript
-- User flows and custom policies you create, such as sign-up, sign-in, and profile edit
-- Identity providers (IDPs) for your application, for instance local account username/password, Outlook, Facebook, and Google
+- User flows and custom policies you create, for example sign-up, sign-in, and profile edit
+- Identity providers (IDPs) for your application, such as local account username or password, Microsoft Outlook, Facebook, and Google
 
 ## User flow and custom policy  
 
-To help set up common identity tasks, use Azure AD B2C configurable [user flows](/azure/active-directory-b2c/user-flow-overview). Build your own [custom policies](/azure/active-directory-b2c/custom-policy-overview) for maximum flexibility. However, we recommend you use custom policies only to address complex scenarios.
+To help you set up the most common identity tasks, Azure AD B2C provides built-in configurable [user flows](/azure/active-directory-b2c/user-flow-overview). You can also build your own [custom policies](/azure/active-directory-b2c/custom-policy-overview) that offer you maximum flexibility. However, we recommended use of custom policies to address complex scenarios.
 
-### User flow or custom policy?
+### Select user flow or custom policy
 
-Choose built-in user flows, tested by Microsoft, for needed business requirements. Minimize testing to validate policy-level functional, performance, or scale of the flows. Test applications for functionality, performance, and scale.
+Choose built-in user flows that meet your business requirements. Microsoft tests built-in flows, therefore you can minimize testing for validating policy-level functional, performance, or scale. However, test applications for functionality, performance, and scale.
 
-If you [use custom policies](/azure/active-directory-b2c/user-flow-overview), perform policy-level testing for functional, performance, or scale. Include application-level testing.
+With [custom policies](/azure/active-directory-b2c/user-flow-overview) ensure policy-level testing for functional, performance, or scale. Conduct application-level testing.
 
-To help you decide, see an article to [compare user flows and custom polices](/azure/active-directory-b2c/user-flow-overview#comparing-user-flows-and-custom-policies).
+To learn more, you can [compare user flows and custom polices](/azure/active-directory-b2c/user-flow-overview#comparing-user-flows-and-custom-policies).
 
-## Multiple IdPs
+## Choose multiple IdPs
 
-If you use an [external identity provider](/azure/active-directory-b2c/add-identity-provider) such as Facebook, have a fallback plan in case the external provider is unavailable.
+When using an [external IdP](/azure/active-directory-b2c/add-identity-provider) such as Facebook, create a fallback plan if the external IdP is unavailable.
 
 ### Set up multiple IdPs
 
-As part of the external identity provider registration process, include a verified identity claim such user mobile number or email address. Commit the verified claims to the underlying Azure AD B2C directory instance. If the external provider is unavailable, revert to the verified identity claim, and fall back to the mobile number as an authentication method. Another option is to send the user a one-time passcode (OTP) to allow sign-in.
+In the external IdP registration process, include a verified identity claim, such as user mobile number or email address. Commit the verified claims to the underlying Azure AD B2C directory instance. If an external IdP is unavailable, revert to the verified identity claim, and fall back to the phone number as an authentication method. Another option is to send the user a one-time passcode (OTP) for sign-in.
 
 You can [build alternate authentication paths](https://github.com/azure-ad-b2c/samples/tree/master/policies/idps-filter):
 
- 1. Configure your sign-up policy for sign-up by local accounts and external IdPs.
- 2. Configure a profile policy for users to [link the other identity to their account](https://github.com/Azure-Samples/active-directory-b2c-advanced-policies/tree/master/account-linking).
- 3. Notify and allow users to [switch to an alternate IdP](/azure/active-directory-b2c/customize-ui-with-html#configure-dynamic-custom-page-content-uri) during an outage.
+ 1. Configure sign-up policy to allow sign-up by local account and external IDPs.
+ 2. Configure a profile policy to allow users to [link the other identity to their account](https://github.com/Azure-Samples/active-directory-b2c-advanced-policies/tree/master/account-linking) after they sign in.
+ 3. Notify and allow users to [switch to an alternate IDP](/azure/active-directory-b2c/customize-ui-with-html#configure-dynamic-custom-page-content-uri) during an outage.
 
 ## Availability of multifactor authentication
 
-When using a [phone service for multifactor authentication (MFA)](/azure/active-directory-b2c/phone-authentication-user-flows), consider an alternative service provider. The current service provider might experience service disruptions.
+If you use a [phone service for multifactor authentication](/azure/active-directory-b2c/phone-authentication-user-flows), consider an alternative service provider. The local phone service provider might experience service disruptions.
 
-### Choose an alternate MFA  
+### Select alternate multifactor authentication 
 
-The Azure AD B2C service uses a phone-based MFA provider to deliver time-based OTPs. It's a voice call and text message to a user's preregistered phone number. There are alternative methods:
+The Azure AD B2C service has a phone-based MFA provider to deliver time-based, one-time passcodes (OTPs). It's a voice call and text message to user preregistered phone numbers.
 
-When you use user flows, there are two methods to build resilience:
+With user flows, there are two methods to build resilience:
 
-- **Change user flow configuration**: During a disruption in the phone-based OTP delivery, change the delivery method to email. Redeploy the user flow, and leave the applications unchanged.
+- **Change user flow configuration**: During disruption in phone-based OTP delivery, change the OTP delivery method to email. Redeploy the user flow.
 
-   ![Screenshot of sign-in sign-up](media/resilient-end-user-experiences/create-sign-in.png)
+   ![Screenshot of user sign-in and sign-up.](media/resilient-end-user-experiences/create-sign-in.png)
 
-- **Change applications**: For each identity task, such as sign-up and sign-in, define two sets of user flows. Configure the first set to use phone-based OTP and the second to use email-based OTP. During a disruption in the phone OTP, change and redeploy the applications to the second flow. Leave the user flows unchanged.  
+- **Change applications**: For identity tasks, such as sign-up and sign-in, define two sets of user flows. Configure the first set to use phone-based OTP, and the second to email OTP. During a disruption in phone-based OTP delivery, switch from the first set of user flows to the second, leaving the user flows unchanged.  
 
-For custom policies, there are four methods to build resilience. The following list is in order of complexity. Ensure you redeploy updated policies.
+If you use custom policies, there are four methods to build resilience. The list is on order of complexity. Redeploy updated policies.
 
-- **Enable user selection of phone or email OTP**: Expose both options to users and enable self-select. Don't change the policies or applications.
-
-- **Dynamically switch between phone and email OTP**: Collect phone and email at sign-up. Define custom policy to switch conditionally during a phone disruption to email OTP. Don't change the policies or applications.
-
-- **Use an authenticator app**: Update custom policy to use an [authenticator app](https://github.com/azure-ad-b2c/samples/tree/master/policies/custom-mfa-totp). If your MFA is phone or email OTP, redeploy custom policies to use an authenticator app.
+- **Enable user selection of phone OTP or email OTP**: Expose both options to enable users to self-select. Don't changes policies or applications.
+- **Dynamically switch between phone OTP and email OTP**:  Collect phone and email information at sign-up. Define custom policy to switch conditionally, during phone disruption, to email OTP. Don't change policies or applications.
+- **Use an authentication app**: Update custom policy to use an authentication app. If your MFA is phone or email OTP, redeploy custom policies and use an authentication app.
 
    >[!Note]
-   >Users configure authenticator app integration during sign-up.
+   >Users configure Authenticator integration during sign-up.
 
-- **Use security questions**: If no previous method applies, implement security questions as backup. Set up security questions during onboarding or profile edit. Store the answers in a separate database. This security method doesn't meet the MFA requirement of *something you have*. Instead it's *something that you know*.
+- **Security questions**: If none of the previous methods are applicable, use security questions. These questions are for users during onboarding, or profile edit. Answers are stored in a separate database. This method doesn't meet the MFA requirement of *something you have*, for example, a phone, but is *something that you know*.
 
 ## Content delivery network
 
-To store custom user flow UI, content delivery networks (CDNs) are better performing and less expensive than blob stores. The web page content goes faster from a geographically distributed network of highly available servers.  
+Content delivery networks (CDNs) perform better and are less expensive than blob stores for storing custom user flow UI. The web page content goes from a geographically distributed network of highly available servers.  
 
-Periodically test your CDN availability and content distribution performance by using end-to-end scenario and load testing. For surges from a promotion or holiday traffic, revise estimates for load testing.
+Periodically, test CDN availability and the performance of content distribution through end-to-end scenario and load testing. For surges due to promotions or holiday traffic, revise estimates for load testing.
   
 ## Next steps
 
