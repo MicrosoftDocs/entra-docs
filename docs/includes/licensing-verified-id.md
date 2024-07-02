@@ -19,5 +19,5 @@ Microsoft Entra Verified ID also provides
 
 There are two options to enable Face Check in your tenant: 
 
-- 1. Start a Microsoft Entra Suite free trial, which includes eight Face Check verifications per user per month. Transactions after the eight included ones are charged at $0.25 USD per transaction. 
-- 2. Enable the Face Check add-on for pay-as-you-go. Your organization is charged $0.25 USD for individual Face Check verifications performed
+- Either start a Microsoft Entra Suite free trial, which includes eight Face Check verifications per user per month. Transactions after the eight included ones are charged at $0.25 USD per transaction. 
+- Or enable the Face Check add-on for pay-as-you-go. Your organization is charged $0.25 USD for individual Face Check verifications performed
