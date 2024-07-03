@@ -24,9 +24,12 @@ To enable the Internet Access forwarding profile for your tenant, you must have:
 - A [Global Secure Access Administrator](../identity/role-based-access-control/permissions-reference.md#global-secure-access-administrator) role in Microsoft Entra ID.
 - The product requires licensing. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 
-## Internet Access policies
+## Internet Access traffic forwarding profile policies
 
-View the policies that relate to the Internet Access traffic forwarding profile. There are three policies by default. To view them, select the **View** link in the Internet Access policies section.
+View the policies that relate to the Internet Access traffic forwarding profile. There are three policies by default. To view them:
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
+1. Browse to **Global Secure Access** > **Connect** > **Traffic forwarding**.
+1. Select the **View** link in the Internet Access policies section.
 
 The default Internet Access policies include:
 - **Custom Bypass** Contains user-defined traffic/endpoints that are **excluded** from the Internet traffic profile. In other words, you define the traffic that the profile shouldn't acquire.
@@ -34,7 +37,9 @@ The default Internet Access policies include:
 - **Default Acquire** Defines traffic that gets acquired by the Internet traffic profile. Currently, it’s all internet traffic on ports 80, 443 over Tranmission Control Protocol (TCP). The policy takes lowest precedence after all bypass rules are evaluated. You can't change rules in this policy.
 
 Example of adding a custom bypass policy:
-1. In the Internet Access traffic forwarding profile section, select the **View** link.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
+1. Browse to **Global Secure Access** > **Connect** > **Traffic forwarding**.
+1. In the Internet Access traffic forwarding profile area, in the **Internet Access policies** section, select the **View** link 
 1. Expand the **Custom Bypass** policy.
 1. Select **Add rule**.
 1. Choose a destination type, such as Fully Qualified Domain Name (FQDN). You can add multiple comma-separated destination values. Don't add whitespace. For example, `contoso.com,fabrikam.com` or `10.0.0.1/32,10.0.0.2/32`. Ports, protocol, and action are always fixed and can't be changed.
