@@ -16,7 +16,7 @@ ms.custom: developer
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
-This article is part 2 of a series that demonstrates profile editing in an Node.js web app. In [part 1 of this series](how-to-web-app-node-edit-profile-prepare-tenant.md), you prepared your external tenant for profile editing.  
+This article is part 2 of a series that demonstrates profile editing in a Node.js web app. In [part 1 of this series](how-to-web-app-node-edit-profile-prepare-tenant.md), you prepared your external tenant for profile editing.  
 
 ## Prerequisites
 
