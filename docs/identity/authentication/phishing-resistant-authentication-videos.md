@@ -16,7 +16,7 @@ ms.reviewer: gasinh
 In this video series, we will guide you through the basics of phishing-resistant authentication methods by fully implementing phishing-resistant authentication methods with Microsoft Entra ID. Multifactor authentication is one of the most effective controls to prevent an adversary from gaining access to sensitive information.  
 
 Watch the following videos for guidance on how to configure phishing-resistant multi-factor authentication methods.  
-See [Windows Hello for Business](../windows/security/identity-protection/hello-for-business.md), certificate-based, and passkeys formally FIDO2 security keys. In addition, learn about Conditional Access. 
+See [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/), certificate-based, and passkeys formally FIDO2 security keys. In addition, learn about Conditional Access. 
 
 |Titles and descriptions|Presenters|
 |---|---|
