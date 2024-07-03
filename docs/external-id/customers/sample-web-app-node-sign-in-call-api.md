@@ -21,10 +21,6 @@ In this article, you complete the following tasks:
 
 - Register and configure a web API in the Microsoft Entra admin center.
 
-- Register and configure a client web application in the Microsoft Entra admin center. 
-
-- Create a sign-up and sign-in user flow in the Microsoft Entra admin center, and then associate a client web app with it.
-
 - Update a sample Node web application and ASP.NET web API to use your external tenant details.
 
 - Run and test the sample web application and API.
