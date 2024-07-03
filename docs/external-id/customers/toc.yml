@@ -39,6 +39,8 @@ items:
             href: sample-web-app-node-sign-in.md
           - name: Sign in users and call an API
             href: sample-web-app-node-sign-in-call-api.md
+          - name: Sign in users and edit profile
+            href: sample-web-app-node-sign-in-edit-profile.md
       - name: ASP.NET Core
         items:
           - name: Sign in users
@@ -340,6 +342,16 @@ items:
             items:
               - name: Node.js
                 items:
+                  - name:  Edit profile with MFA
+                    items:
+                      - name: Set-up external tenant 
+                        href: how-to-web-app-node-edit-profile-prepare-tenant.md   
+                        displayName: Conditional Access, CA 
+                      - name: Set-up app 
+                        href: how-to-web-app-node-edit-profile-prepare-app.md 
+                      - name: Update profile
+                        href: how-to-web-app-node-edit-profile-update-profile.md  
+                        displayName: protect with MFA, multifactor authentication, MFA            
                   - name: Call API
                     items:
                       - name: Prepare tenant 
