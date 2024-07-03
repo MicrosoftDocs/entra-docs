@@ -78,9 +78,6 @@ To validate the traffic forwarding profile, traffic forwarding policies, and rul
 [!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
 
 ## Next steps
-
-The next step for getting started with Microsoft Entra Internet Access is to [install and configure the Global Secure Access Client on end-user devices](how-to-install-windows-client.md).
-
-For more information about Private Access, see the following articles:
 - [Learn about traffic forwarding](concept-traffic-forwarding.md)
-- [Configure Quick Access](how-to-configure-quick-access.md)
+- [Configure Global Secure Access web content filtering](how-to-configure-web-content-filtering.md)
+- [Install and configure the Global Secure Access Client on end-user devices](how-to-install-windows-client.md)
