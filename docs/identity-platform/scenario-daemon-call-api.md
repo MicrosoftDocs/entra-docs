@@ -129,29 +129,6 @@ For daemon apps, the web APIs that you call need to be preapproved. There's no i
 
 ## Next steps
 
-# [.NET](#tab/idweb)
+- Learn more by building a React Single-page application (SPA) that signs in users in the following multi-part [tutorial series](tutorial-single-page-app-react-register-app.md).
 
-Move on to the next article in this scenario,
-[Move to production](./scenario-daemon-production.md?tabs=idweb).
-
-# [Java](#tab/java)
-
-Move on to the next article in this scenario,
-[Move to production](./scenario-daemon-production.md?tabs=java).
-
-# [Node.js](#tab/nodejs)
-
-Move on to the next article in this scenario,
-[Move to production](./scenario-daemon-production.md?tabs=nodejs).
-
-# [Python](#tab/python)
-
-Move on to the next article in this scenario,
-[Move to production](./scenario-daemon-production.md?tabs=python).
-
-# [.NET low level](#tab/dotnet)
-
-Move on to the next article in this scenario,
-[Move to production](./scenario-daemon-production.md?tabs=dotnet).
-
----
+- Explore Microsoft identity platform [service / daemon  code samples](sample-v2-code.md) 
