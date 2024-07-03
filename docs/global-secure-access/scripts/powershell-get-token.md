@@ -45,7 +45,13 @@ The sample requires the [Microsoft Graph Beta PowerShell module](/powershell/mic
 Set-ExecutionPolicy UnRestricted -Force
 
 # The script will use a temp folder on C Drive. First it will remove the folder and create a new folder to ensure its empty.
+$tempPath = "C:\temp"
+# Check if the folder exists
+if (Test-Path -Path $tempPath) {
+Write-Host "Your C Drive has existing temp folder that is being deleted"
 Remove-Item -Path C:\temp -Recurse
+} 
+Write-Host "Creating C:\temp folder"
 New-Item -ItemType Directory c:\temp
 
 
