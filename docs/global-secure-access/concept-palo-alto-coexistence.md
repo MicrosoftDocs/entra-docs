@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: conceptual
-ms.date: 04/29/2024
+ms.date: 07/02/2024
 ms.service: global-secure-access
 ms.subservice: entra-private-access 
 ms.reviewer: shkhalid
@@ -34,7 +34,7 @@ In Microsoft Entra, you enable the Microsoft 365 traffic forwarding profile and 
 
 ## Microsoft Entra Internet Access for Microsoft 365 configuration
 
-Enable the Microsoft 365 traffic forwarding profile for your Microsoft Entra tenant. For more information about enabling and disabling profiles, see [Global Secure Access (preview) traffic forwarding profiles](concept-traffic-forwarding.md).
+Enable the Microsoft 365 traffic forwarding profile for your Microsoft Entra tenant. For more information about enabling and disabling profiles, see [Global Secure Access traffic forwarding profiles](concept-traffic-forwarding.md).
 
 Install and configure the Global Secure Access client on end-user devices. For more information about clients, see [Global Secure Access clients](concept-clients.md). To learn how to install the Windows client, see [Global Secure Access client for Windows](how-to-install-windows-client.md).
 
@@ -71,7 +71,7 @@ Microsoft’s SSE configuration: Enable Microsoft 365 traffic forwarding profile
 Palo Alto Networks’ SSE configuration: Internet Access traffic is captured. The Microsoft 365 traffic is excluded. 
 1. In the system tray, right-click **Global Secure Access Client** and then select **Advanced Diagnostics**. Select the **Traffic** tab and select **Start collecting**. 
 1. Access these websites from the browsers: `salesforce.com`, `Instagram.com`.
-1. Sign in to Microsoft Entra admin center and browse to **Global Secure Access (Preview)** > **Monitor** > **Traffic logs**. Validate traffic related to these sites is missing from the Global Secure Access traffic logs. 
+1. Sign in to Microsoft Entra admin center and browse to **Global Secure Access** > **Monitor** > **Traffic logs**. Validate traffic related to these sites is missing from the Global Secure Access traffic logs. 
 1. Sign in to Palo Alto Networks’ Strata Cloud Manager and browse to **Incidents & Alerts** > **Log Viewer**. Validate traffic related to these sites is present in the logs. 
 1. Access Outlook Online (`outlook.com`, `outlook.office.com`, `outlook.office365.com`), SharePoint Online (`<yourtenantdomain>.sharepoint.com`) and verify that the Microsoft Entra Internet Access Microsoft 365 access profile is capturing the traffic. Validate traffic in the Global Secure Access traffic logs. 
 1. In the system tray, right-click **Global Secure Access Client** and then select **Advanced Diagnostics**. In the network traffic dialog box, select **Stop collecting**.
