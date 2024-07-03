@@ -1,6 +1,6 @@
 ---
 title: Set up an external tenant for profile editing with MFA in a Node.js web application
-description: Learn how to set-up external tenant to edit profile with multifactor authentication protection in your external-facing Node.js web app
+description: Learn how to set up external tenant to edit profile with multifactor authentication protection in your external-facing Node.js web app
 manager: mwongerapz
 author: kengaderdus
 ms.author: kengaderdus
@@ -18,7 +18,7 @@ ms.custom: developer
 
 After customer users successfully sign in into your external-facing app, you can enable them to edit their profiles. You enable the customer users to manage their profiles by using [Microsoft Graph API's](/graph/api/user-get) `/me` endpoint. Calling the `/me` endpoint requires a signed-in user and therefore a delegated permission.
 
-In this how-to guide, you learn how to set-up your external tenant to support edit their profile with multifactor authentication (MFA) protection. The MFA requirement is enabled by a Conditional Access (CA) policy.
+In this how-to guide, you learn how to set up your external tenant to support editing their profile with multifactor authentication (MFA) protection. The MFA requirement is enabled by a Conditional Access (CA) policy.
 
 This article is the first part of a three-part guide.
 
@@ -28,7 +28,7 @@ To customize the fields your customer users can edit in their profile, choose fr
 
 ## Prerequisites
 
-- Complete the steps in [Tutorial: Set-up your external tenant to sign in users in a Node.js web app](tutorial-web-app-node-sign-in-prepare-tenant.md) tutorial series. The tutorial shows you how to register an app in your external tenant, and build a web app that signs in users. We refer to this web application as the client web app.
+- Complete the steps in [Tutorial: Set up your external tenant to sign in users in a Node.js web app](tutorial-web-app-node-sign-in-prepare-tenant.md) tutorial series. The tutorial shows you how to register an app in your external tenant, and build a web app that signs in users. We refer to this web application as the client web app.
 
 ## Register MFA web API
 
@@ -78,4 +78,4 @@ Use the steps in [Add multifactor authentication to an app](how-to-multifactor-a
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Set-up your Node.js web application for profile editing](how-to-web-app-node-edit-profile-prepare-app.md)
+> [Set up your Node.js web application for profile editing](how-to-web-app-node-edit-profile-prepare-app.md)
