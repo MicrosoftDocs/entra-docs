@@ -1,6 +1,6 @@
 ---
 title: Set up a Node.js web application for profile editing
-description: Learn how to prepare your Node.js web application for profile editing with multifactor authentication protection in your external tenant
+description: Learn how to set-up your Node.js web application for profile editing with multifactor authentication protection in your external tenant
 author: kengaderdus
 manager: mwongerapz
 ms.author: kengaderdus
@@ -9,18 +9,18 @@ ms.subservice: customers
 ms.topic: how-to
 ms.date: 07/01/2024
 ms.custom: developer
-#Customer intent: As a developer, I want to prepare my Node.js web app for profile editing so that customer users can update their profile after a successful sign-in.
+#Customer intent: As a developer, I want to set-up my Node.js web app for profile editing so that customer users can update their profile after a successful sign-in.
 ---
 
 # Set up a Node.js web application for profile editing
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
-This article is part 2 of a series that demonstrates profile editing in an Node.js web app. In [part 1 of this series](how-to-web-app-node-edit-profile-prepare-tenant.md), you prepared your external tenant for profile editing.  
+This article is part 2 of a series that demonstrates profile editing in an Node.js web app. In [part 1 of this series](how-to-web-app-node-edit-profile-prepare-tenant.md), you set-up your external tenant for profile editing.  
 
 ## Prerequisites
 
-- Complete the steps in the first part of this guide series, [Prepare external tenant to for profile editing](how-to-web-app-node-edit-profile-prepare-tenant.md). 
+- Complete the steps in the first part of this guide series, [Set-up external tenant to for profile editing](how-to-web-app-node-edit-profile-prepare-tenant.md). 
 
 
 ## Add new project files
