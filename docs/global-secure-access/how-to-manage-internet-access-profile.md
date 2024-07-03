@@ -29,9 +29,9 @@ To enable the Internet Access forwarding profile for your tenant, you must have:
 View the policies that relate to the Internet Access traffic forwarding profile. There are three policies by default. To view them, select the **View** link in the Internet Access policies section.
 
 The default Internet Access policies include:
-- **Custom Bypass** Contains user-defined traffic/endpoints that are **excluded** from the Internet traffic profile. In other words, you define the traffic which shouldn't be acquired by the profile.
-- **Default Bypass** Contains pre-defined traffic that should never be acquired by Internet traffic profile, such as private IP ranges. You can't change rules in this policy.
-- **Default Acquire** Defines traffic that gets acquired by the Internet traffic profile. Currently, it’s all internet traffic on ports 80, 443 over TCP. This takes lowest precedence after all bypass rules have been evaluated. You can't change rules in this policy.
+- **Custom Bypass** Contains user-defined traffic/endpoints that are **excluded** from the Internet traffic profile. In other words, you define the traffic that the profile shouldn't acquire.
+- **Default Bypass** Contains predefined traffic that the Internet traffic profile shouldn't acquire. For example, private IP ranges. You can't change rules in this policy.
+- **Default Acquire** Defines traffic that gets acquired by the Internet traffic profile. Currently, it’s all internet traffic on ports 80, 443 over Tranmission Control Protocol (TCP). The policy takes lowest precedence after all bypass rules are evaluated. You can't change rules in this policy.
 
 Example of adding a custom bypass policy:
 1. In the Internet Access traffic forwarding profile section, select the **View** link.
@@ -61,13 +61,13 @@ You can scope the Internet Access profile to specific users and groups.
 To learn more about user and group assignment, see [How to assign and manage users and groups with traffic forwarding profiles](how-to-manage-users-groups-assignment.md).
 
 ## Validate the Internet Access traffic forwarding profile
-A newly added rule can take 10-20 minutes to appear in the client on a users computer. If the rule does not appear after this time, disable and then re-enable the Internet Access traffic forwarding profile. 
+A newly added rule can take 10-20 minutes to appear in the client on a user's computer. If the rule doesn'    t appear after this time, disable and then re-enable the Internet Access traffic forwarding profile. 
 
 To validate the traffic forwarding profile:
 1. In the system tray, right click the Global Secure Access client and select **Advanced diagnostics**.
-1. Open a web browser and navigate to a destination on the internal network. Confirm that traffic is not being captured.
-1. Open a web browser and navigate to a destination that should be bypassed. Confirm that traffic is not being captured.
-1. Open a web browser and navigate to a public destination that should be acquired by the profile. Confirm the traffic is being acquired under the **Internet channel**.
+1. Open a web browser and navigate to a destination on the internal network. Confirm that traffic isn't being captured.
+1. Open a web browser and navigate to a destination that is bypassed. Confirm that traffic isn't being captured.
+1. Open a web browser and navigate to a public destination that is acquired by the profile. Confirm the traffic is being acquired under the **Internet channel**.
 
 
 [!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
