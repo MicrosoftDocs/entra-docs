@@ -114,7 +114,7 @@ var result = await app.AcquireTokenInteractive(scopes)
 
 #### WithExtraScopeToConsent
 
-This modifier is for advanced scenarios where you want the user to consent to several resources up front and you don't want to use incremental consent. Developers normally use incremental consent with MSAL.NET and the Microsoft identity platform. For more information, see [Have the user consent up front for several resources](scenario-desktop-production.md#have-the-user-consent-upfront-for-several-resources).
+This modifier is for advanced scenarios where you want the user to consent to several resources up front and you don't want to use incremental consent. Developers normally use incremental consent with MSAL.NET and the Microsoft identity platform.
 
 ```csharp
 var result = await app.AcquireTokenInteractive(scopesForCustomerApi)
