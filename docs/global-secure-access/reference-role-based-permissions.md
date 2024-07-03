@@ -11,7 +11,7 @@ ms.service: global-secure-access
 
 # Microsoft Global Secure Access built-in roles
 
-Global Secure Access supports Role-Based Access Control (RBAC), allowing you to manage administrative access effectively. By default, the following Microsoft Entra ID admin roles have access to Global Secure Access.
+Global Secure Access supports Role-Based Access Control (RBAC), allowing you to manage administrative access effectively. By default, the following Microsoft Entra ID administrator roles have access to Global Secure Access.
 
 This article lists the Global Secure Access built-in roles you can assign to allow management of Microsoft Entra resources.
 
@@ -45,6 +45,9 @@ The available administrator roles are Global, Security, Global Secure Access (GS
 ### Global Secure Access Administrator
 
 **Limited Access**: This role grants permissions to configure remote networks, security profiles, manage traffic forwarding profiles, and view traffic logs and alerts. However, GSA admins can't configure Private Access, create or interact with Conditional Access policies, manage user and group assignments, or configure Office 365 logging. 
+
+> [!NOTE]
+> To remove the *Limited access* role and add the ability to perform additional tasks, you need to be both a GSA administrator *and* have at least one other administrator role assigned to you.
 
 ### Conditional Access Administrator 
 
