@@ -93,9 +93,11 @@ Add the following new files to your Node.js web app that signs in users:
     ```
 
     - This file contains an HTML form that represents the [editable user details](reference-user-permissions.md#microsoft-graph-apis-and-permissions). 
-    - This form's display name is disabled, and you use it to demonstrate how to require MFA for a customer user to complete an edit profile operation. 
+    - This form's display name is disabled to demonstrate that the customer can't edit it until they complete an MFA challenge. You can customize the form so that other any field is protected with MFA.
     - The user needs to select the **Edit** button to update their display name, but the user must complete an MFA challenge if they've not already done so. 
     - The user can edit the rest of their details without requiring MFA.
+    
+
 
 1. In your code editor, open *views/updateProfile.hbs* file, then add the following code:
 
