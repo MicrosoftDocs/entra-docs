@@ -244,4 +244,4 @@ To provide a recommendation, go to the [User Voice page](https://feedback.azure.
 Learn more about building daemon apps that use the Microsoft identity platform to access protected web APIs:
 
 > [!div class="nextstepaction"]
-> [Scenario: Daemon application that calls web APIs](scenario-daemon-overview.md)
+> [Scenario: Daemon application that calls web APIs](scenario-daemon-app-registration.md)
