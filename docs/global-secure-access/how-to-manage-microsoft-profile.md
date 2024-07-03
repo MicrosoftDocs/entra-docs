@@ -36,6 +36,7 @@ To enable the Microsoft traffic forwarding profile for your tenant, you must hav
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
 1. Browse to **Global Secure Access** > **Connect** > **Traffic forwarding**.
 1. Enable the **Microsoft traffic profile**.
+    Microsoft traffic starts forwarding from all client devices to Microsoft's Security Service Edge (SSE) proxy, where you can configure advanced security features specific to Microsoft traffic.
 
     :::image type="content" source="media/how-to-manage-microsoft-profile/microsoft-traffic-profile.png" alt-text="Screenshot of the traffic forwarding page with the Microsoft access profile enabled." lightbox="media/how-to-manage-microsoft-profile/microsoft-traffic-profile-expanded.png":::
 
