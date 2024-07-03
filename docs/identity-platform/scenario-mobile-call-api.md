@@ -131,7 +131,7 @@ result = await app.AcquireTokenSilent("scopeApi2")
 Interaction is required when:
 
 - The user consented for the first API but now needs to consent for more scopes. In this case, you use incremental consent.
-- The first API doesn't require [multi-factor authentication](~/identity/authentication/concept-mfa-howitworks.md), but the next API does.
+- The first API doesn't require [multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md), but the next API does.
 
 ```csharp
 var result = await app.AcquireTokenXX("scopeApi1")
