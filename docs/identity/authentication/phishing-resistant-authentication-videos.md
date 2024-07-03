@@ -13,12 +13,13 @@ ms.reviewer: gasinh
 
 # Phishing-resistant authentication in Microsoft Entra ID
 
-In this video series, we will guide you through the basics of phishing-resistant authentication methods by fully implementing phishing-resistant authentication methods with Microsoft Entra ID. Multifactor authentication is one of the most effective controls to prevent an adversary from gaining access to sensitive information.  
+In this video series, we guide you through the basics of phishing-resistant authentication methods by fully implementing phishing-resistant authentication methods with Microsoft Entra ID. Multifactor authentication is one of the most effective controls to prevent an adversary from gaining access to sensitive information.  
 
 Watch the following videos for guidance on how to configure phishing-resistant multi-factor authentication methods.  
-See [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/), certificate-based, and passkeys formally FIDO2 security keys. In addition, learn about Conditional Access. 
 
-|Titles and descriptions|Presenters|
+See [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/), certificate-based, and passkeys formally FIDO2 security keys. In addition, learn about Microsoft Entra Conditional Access. 
+
+|Video title|Video|
 |---|---|
 |**[Why is phishing-resistant multifactor authentication important?]()**<br/>Join **Alex Weinert**, VP Identity Security, in his discussion of the current threat landscape and why implementing phishing-resistant authentication should be a priority for your organization. (12:40) |[:::image type="icon" source="./media/phishing-resistant-authentication-videos/alex-weinert.png" border="false":::](YouTube link)|
 |**[Get started with phishing-resistant multifactor authentication](https://www.youtube.com/watch?v=fSIM_Zrlv70)**<br/>Join **Ehud Itshaki**, Principal Product Manager, for a technical deep dive on how Microsoft Entra ID authentication methods achieve their phishing-resistant properties by implementing open standards Learn about the meaning of phishing and real-time phishing-flows. (10:24)|[:::image type="icon" source="./media/phishing-resistant-authentication-videos/ehud-itshaki.png" border="false":::](https://www.youtube.com/watch?v=fSIM_Zrlv70)|
