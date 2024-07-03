@@ -66,9 +66,9 @@ You can scope the Internet Access profile to specific users and groups.
 To learn more about user and group assignment, see [How to assign and manage users and groups with traffic forwarding profiles](how-to-manage-users-groups-assignment.md).
 
 ## Validate the Internet Access traffic forwarding profile
-A newly added rule can take 10-20 minutes to appear in the client on a user's computer. If the rule doesn'    t appear after this time, disable and then re-enable the Internet Access traffic forwarding profile. 
+A rule added to a policy takes 10-20 minutes to appear in the client on a user's computer. If the rule doesn't appear after this time, disable and then re-enable the Internet Access traffic forwarding profile. 
 
-To validate the traffic forwarding profile:
+To validate the traffic forwarding profile, traffic forwarding policies, and rules:
 1. In the system tray, right click the Global Secure Access client and select **Advanced diagnostics**.
 1. Open a web browser and navigate to a destination on the internal network. Confirm that traffic isn't being captured.
 1. Open a web browser and navigate to a destination that is bypassed. Confirm that traffic isn't being captured.
