@@ -80,19 +80,24 @@ To validate group membership references, Microsoft Entra Cloud Sync must query t
 
 The following PowerShell script can be used to help automate this step.  This script will take all of the groups in the **OU=Groups,DC=Contoso,DC=com** container and copy the adminDescription attribute value to the msDS-ExternalDirectoryObjectID attribute value.
 
-   ```powershell
+```powershell
 
-       Import-module ActiveDirectory
+# Provide your Group Writeback target OU's DistinguishedName
+$gwbOU = 'OU=Groups,DC=Contoso,DC=com'
 
-      $groups = Get-ADGroup -Filter * -SearchBase "OU=Groups,DC=Contoso,DC=com" -Properties * | Where-Object {$_.adminDescription -ne $null} |
-         Select-Object Samaccountname, adminDescription, msDS-ExternalDirectoryObjectID
+# Get all groups written back to Active Directory
+Import-module ActiveDirectory
+$properties = @('Samaccountname', 'adminDescription', 'msDS-ExternalDirectoryObjectID')
+$groups = Get-ADGroup -Filter * -SearchBase $gwbOU -Properties $properties | 
+    Where-Object {$_.adminDescription -ne $null} |
+        Select-Object $properties
 
-      foreach ($group in $groups) 
-       {
-       Set-ADGroup -Identity $group.Samaccountname -Add @{('msDS-ExternalDirectoryObjectID') = $group.adminDescription}
-       } 
+# Set msDS-ExternalDirectoryObjectID for all groups written back to Active Directory 
+foreach ($group in $groups) {
+    Set-ADGroup -Identity $group.Samaccountname -Add @{('msDS-ExternalDirectoryObjectID') = $group.adminDescription}
+} 
 
-   ```
+```
 
 ## Step 2 - Place the Microsoft Entra Connect Sync server in staging mode and disable the sync scheduler
 
