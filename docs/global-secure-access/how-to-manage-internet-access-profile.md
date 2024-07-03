@@ -32,9 +32,9 @@ View the policies that relate to the Internet Access traffic forwarding profile.
 1. Select the **View** link in the Internet Access policies section.
 
 The default Internet Access policies include:
-- **Custom Bypass** Contains user-defined traffic/endpoints that are **excluded** from the Internet traffic profile. In other words, you define the traffic that the profile shouldn't acquire.
-- **Default Bypass** Contains predefined traffic that the Internet traffic profile shouldn't acquire. For example, private IP ranges. You can't change rules in this policy.
-- **Default Acquire** Defines traffic that gets acquired by the Internet traffic profile. Currently, it’s all internet traffic on ports 80, 443 over Tranmission Control Protocol (TCP). The policy takes lowest precedence after all bypass rules are evaluated. You can't change rules in this policy.
+- **Custom Bypass** Contains user-defined traffic/endpoints that are *excluded* from the Internet traffic profile. In other words, you define the traffic that the profile shouldn't acquire.
+- **Default Bypass** Contains predefined traffic that the Internet traffic profile doesn't acquire. For example, private IP ranges. You can't change rules in this policy.
+- **Default Acquire** Defines traffic that gets acquired by the Internet traffic profile. Currently, it’s all internet traffic on ports 80, 443 over Transmission Control Protocol (TCP). The policy takes lowest precedence after all bypass rules are evaluated. You can't change rules in this policy.
 
 Example of adding a custom bypass policy:
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
