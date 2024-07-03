@@ -47,9 +47,9 @@ Choose your preferred [application scenario](authentication-flows-app-scenarios.
 - [React Single-page app (SPA)](quickstart-single-page-app-react-sign-in.md)
 - [ASP.NET Core Web app](quickstart-web-app-dotnet-core-sign-in.md)
 - [ASP.NET Core API](quickstart-web-api-aspnet-core-protect-api.md)
-- [Desktop app](scenario-desktop-overview.md)
-- [Daemon app](scenario-daemon-overview.md)
-- [Mobile app](scenario-mobile-overview.md)
+- [Desktop app](scenario-desktop-app-registration.md)
+- [Daemon app](scenario-daemon-app-registration.md)
+- [Mobile app](scenario-mobile-app-registration.md)
 
 For a more in-depth look at building applications using the Microsoft identity platform, see our multipart tutorial series for the following applications:
 

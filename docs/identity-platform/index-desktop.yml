@@ -30,18 +30,18 @@ landingContent:
     linkLists:
       - linkListType: tutorial
         links:
+          - text: Node.js - Electron
+            url: tutorial-v2-nodejs-desktop.md
           - text: Universal Windows Platform (UWP)
             url: tutorial-v2-windows-uwp.md
           - text: Windows Presentation Foundation (WPF)
             url: tutorial-v2-windows-desktop.md
-          - text: Node.js - Electron
-            url: tutorial-v2-nodejs-desktop.md
   - title: "Scenario in depth"
     linkLists:
       - linkListType: how-to-guide
         links:
           - text: Desktop app that calls a web API
-            url: scenario-desktop-overview.md
+            url: scenario-desktop-app-registration.md
 ## ROW 2 ################################################### ROW 2 ##
   # - title: $CARD_TITLE
   #   linkLists:
