@@ -66,6 +66,8 @@ For more information see [Add an attribute mapping - Microsoft Entra ID to Activ
 
 ## Step 1 - Copy adminDescription to msDS-ExternalDirectoryObjectID
 
+To validate group membership references, Microsoft Entra Cloud Sync must query the Active Directory Global Catalog for the msDS-ExternalDirectoryObjectID, which is an indexed attribute that is replicated across all Global Catalogs within the Active Directory Forest.
+
 1. In your on-premises environment, open ADSI Edit.
 
 2. Copy the value that it in the group's adminDescription attribute
