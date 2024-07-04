@@ -86,9 +86,13 @@ MSAL native authentication SDK supports multiple access token, so you can specif
                     //Handle GetAccountError 
                 }
             }
-        }
-    
-    
+        }   
+
+    ```
+
+    Define the `getAccessToken()` function as shown in the following code:
+
+    ```kotlin    
         private suspend fun getAccessToken(accountState: AccountState, scopes: List<String>): String {
             val accessTokenState = accountState.getAccessToken(false, scopes)
             return if (accessTokenState is GetAccessTokenResult.Complete) {
