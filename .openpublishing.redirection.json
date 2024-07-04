@@ -916,6 +916,16 @@
       "source_path_from_root": "/docs/architecture/sse-deployment-guide-m365.md",
       "redirect_url": "/entra/architecture/sse-deployment-guide-microsoft-traffic",
       "redirect_document_id": false
+    },
+    {            
+      "source_path_from_root": "/docs/identity-platform/msal-net-migration-android-broker.md",
+      "redirect_url": "/entra/identity-platform/quickstart-mobile-app-android-sign-in",
+      "redirect_document_id": false
+    },
+    {            
+      "source_path_from_root": "/docs/identity-platform/msal-net-migration-ios-broker.md",
+      "redirect_url": "/entra/identity-platform/quickstart-mobile-app-android-sign-in",
+      "redirect_document_id": false
     }
   ]
 }
