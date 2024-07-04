@@ -55,7 +55,7 @@ Remote users connect to private apps across hybrid and multicloud environments, 
 - Provide a seamless end-user experience by acquiring network traffic from the desktop client and deploying side-by-side with your existing non-Microsoft SSE solutions.
 
 ## Licensing overview 
-Microsoft Entra Internet Access and Microsoft Entra Private Access are now generally available. Use of internet access features requires Microsoft Entra Internet Access licenses and use of private access features require Microsoft Entra Internet Access Private Access licenses. Use of the Microsoft traffic profile is included with the Secure Access Essentials license.  
+Microsoft Entra Internet Access and Microsoft Entra Private Access are now generally available. Use of internet access features requires Microsoft Entra Internet Access licenses and use of private access features require Microsoft Entra Private Access licenses. Use of the Microsoft traffic profile is included with the Secure Access Essentials license.  
 
 
 Use of Microsoft Entra Private Access, Microsoft Entra Internet Access and Secure Access Essentials also require Microsoft Entra ID P1 or Microsoft Entra ID P2.  
