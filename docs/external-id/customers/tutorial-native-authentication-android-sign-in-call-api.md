@@ -1,6 +1,6 @@
 ---
 title: Call an API in Android app by using native authentication
-description: Learn how to acquire multiple access token and call an API in Android app by using native authentication.
+description: Learn how to acquire multiple access tokens and call an API in Android app by using native authentication.
 
 author: kengaderdus
 manager: mwongerapk
@@ -10,18 +10,18 @@ ms.subservice: customers
 ms.topic: tutorial
 ms.date: 07/07/2024
 ms.custom: developer
-#Customer intent: As a dev, devops, I want to acquire multiple access token so that I call a web API in an Android mobile app by using native authentication
+#Customer intent: As a dev, devops, I want to acquire multiple access tokens so that I call a web API in an Android mobile app by using native authentication
 ---
 
 # Tutorial: Call an API in Android app by using native authentication
 
-In this tutorial you learn how to acquire an access token and call an API in your Android mobile app. Microsoft Authentication Library (MSAL) native authentication SDK for Android allows you to acquire multiple access token without requiring a user to reauthenticate. This capability allows you to acquire one or more access tokens with a single sign-in.
+In this tutorial, you learn how to acquire an access token and call an API in your Android mobile app. Microsoft Authentication Library (MSAL) native authentication SDK for Android allows you to acquire multiple access tokens without requiring a user to reauthenticate. This capability allows you to acquire one or more access tokens with a single sign-in.
 
 In this tutorial, you learn how to: 
 
 > [!div class="checklist"]
 > 
-> - Acquire one or multiple access token.
+> - Acquire one or multiple access tokens.
 > - Call an API
 
 ## Prerequisites
@@ -32,7 +32,7 @@ In this tutorial, you learn how to:
 
 Once the user signs in, you acquire an access token by specifying the scopes for which the access token is valid. 
 
-MSAL native authentication SDK supports multiple access token, so you can specify multiple sets of scopes, then request access token for each set of scopes:
+MSAL native authentication SDK supports multiple access tokens, so you can specify multiple sets of scopes, then request access token for each set of scopes:
 
 1. Declare and set values for a set of API scopes by using the following code snippet:
 
