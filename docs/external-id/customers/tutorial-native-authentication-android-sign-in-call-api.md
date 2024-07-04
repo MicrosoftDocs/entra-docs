@@ -56,10 +56,11 @@ MSAL native authentication SDK supports multiple access tokens, so you can speci
                 password = password
             )
             if (actionResult is SignInResult.Complete) -> {
-                // Handle sign in success
+                // Perform operations after successful sign-in
             } else if (actionResult is SignInError) {
-                // Handle sign in errors
+                // Handle sign-in errors
             }
+        }
     ```
 
 1. Acquire one or multiple access tokens by using the following code snippet:
