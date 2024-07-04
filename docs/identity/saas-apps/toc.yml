@@ -1143,6 +1143,8 @@
         href: ftapi-tutorial.md
       - name: Fulcrum
         href: fulcrum-tutorial.md
+      - name: Fullstory SAML
+        href: fullstory-saml-tutorial.md
       - name: Fuse
         href: fuse-tutorial.md
       - name: Fuze
