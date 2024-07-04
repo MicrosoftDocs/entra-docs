@@ -83,7 +83,7 @@ There are two methods you can use to register the connector:
       /// <summary>
       /// The application ID of the connector in AAD
       /// </summary>
-      static readonly string ConnectorAppId = "00001111-aaaa-2222-bbbb-3333cccc4444";
+      static readonly string ConnectorAppId = "55747057-9b5d-4bd4-b387-abf52a8bd489";
    
       /// <summary>
       /// The AppIdUri of the registration service in AAD
@@ -144,7 +144,7 @@ There are two methods you can use to register the connector:
 
    #The application ID of the connector in AAD
 
-   $connectorAppId = "00001111-aaaa-2222-bbbb-3333cccc4444";
+   $connectorAppId = "55747057-9b5d-4bd4-b387-abf52a8bd489";
 
    #The AppIdUri of the registration service in AAD
    $registrationServiceAppIdUri = "https://proxy.cloudwebappproxy.net/registerapp/user_impersonation"
