@@ -57,8 +57,8 @@ To configure and test Microsoft Entra SSO with Fullstory SAML, perform the follo
 1. **[Configure Microsoft Entra SSO](#configure-microsoft-entra-sso)** - to enable your users to use this feature.
     1. **[Create a Microsoft Entra test user](#create-a-microsoft-entra-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
     1. **[Assign the Microsoft Entra test user](#assign-the-microsoft-entra-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
-1. **[Configure Fullstory SAML SSO](#configure-[third-link]-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Fullstory SAML test user](#create-[third-link]-test-user)** - to have a counterpart of B.Simon in Fullstory SAML that is linked to the Microsoft Entra ID representation of user.
+1. **[Configure Fullstory SAML SSO](#configure-fullstory-saml-sso)** - to configure the single sign-on settings on application side.
+    1. **[Create Fullstory SAML test user](#create-fullstory-saml-test-user)** - to have a counterpart of B.Simon in Fullstory SAML that is linked to the Microsoft Entra ID representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 ## Configure Microsoft Entra SSO
