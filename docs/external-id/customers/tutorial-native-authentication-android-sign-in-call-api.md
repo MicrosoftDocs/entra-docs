@@ -37,71 +37,70 @@ MSAL native authentication SDK supports multiple access tokens, so you can speci
 1. Declare and set values for a set of API scopes by using the following code snippet:
 
     ```kotlin
-        companion object {
-            // Set values for respective API scopes for their web API resources here, for example: ["api://<Resource_App_ID>/ToDoList.Read", "api://<Resource_App_ID>/ToDoList.ReadWrite"]
-            //A list of scope for API 1
-            private val scopesForAPI1 = listOf<String>()
-            //A list of scope for API 2
-            private val scopesForAPI2 = listOf<String>()
-        }
+    companion object {
+        // Set values for respective API scopes for their web API resources here, for example: ["api://<Resource_App_ID>/ToDoList.Read", "api://<Resource_App_ID>/ToDoList.ReadWrite"]
+        //A list of scope for API 1
+        private val scopesForAPI1 = listOf<String>()
+        //A list of scope for API 2
+        private val scopesForAPI2 = listOf<String>()
+    }
     ```
 
 1. Signs in user by using the following code snippet:
 
-    ```kotlin
-        
-        CoroutineScope(Dispatchers.Main).launch {
-            val actionResult = authClient.signIn(
-                username = emailAddress,
-                password = password
-            )
-            if (actionResult is SignInResult.Complete) -> {
-                // Perform operations after successful sign-in
-            } else if (actionResult is SignInError) {
-                // Handle sign-in errors
-            }
+    ```kotlin    
+    CoroutineScope(Dispatchers.Main).launch {
+        val actionResult = authClient.signIn(
+            username = emailAddress,
+            password = password
+        )
+        if (actionResult is SignInResult.Complete) -> {
+            // Perform operations after successful sign-in
+        } else if (actionResult is SignInError) {
+            // Handle sign-in errors
         }
+    }
     ```
 
 1. Acquire one or multiple access tokens by using the following code snippet:
 
     ```kotlin
-        CoroutineScope(Dispatchers.Main).launch {
-            val accountResult = authClient.getCurrentAccount()
-            when (accountResult) {
-                is GetAccountResult.AccountFound -> {
-                    try {
-                        //Access token for API 1
-                        val accessTokenOne = getAccessToken(accountResult.resultValue, scopesForAPI1)
-                        //Access token for API 2
-                        val accessTokenTwo = getAccessToken(accountResult.resultValue, scopesForAPI2)
-                        // proceed to make a call to an API
-                    } catch (e: Exception) {
-                        //Handle Exception
-                    }
-                }
-                is GetAccountResult.NoAccountFound -> {
-                    //Handle etAccountResult.NoAccountFound
-                }
-                is GetAccountError -> {
-                    //Handle GetAccountError 
+    CoroutineScope(Dispatchers.Main).launch {
+        val accountResult = authClient.getCurrentAccount()
+        when (accountResult) {
+            is GetAccountResult.AccountFound -> {
+                try {
+                    //Access token for API 1
+                    val accessTokenOne = getAccessToken(accountResult.resultValue, scopesForAPI1)
+                    //Access token for API 2
+                    val accessTokenTwo = getAccessToken(accountResult.resultValue, scopesForAPI2)
+                    // proceed to make a call to an API
+                } catch (e: Exception) {
+                    //Handle Exception
                 }
             }
-        }   
+            is GetAccountResult.NoAccountFound -> {
+                //Handle etAccountResult.NoAccountFound
+            }
+            is GetAccountError -> {
+                //Handle GetAccountError 
+            }
+        }
+    }   
 
     ```
 
     Define the `getAccessToken()` function as shown in the following code:
 
     ```kotlin    
-        private suspend fun getAccessToken(accountState: AccountState, scopes: List<String>): String {
-            val accessTokenState = accountState.getAccessToken(false, scopes)
-            return if (accessTokenState is GetAccessTokenResult.Complete) {
-                accessTokenState.resultValue.accessToken
-            } else {
-                throw Exception("Failed to get access token")
-            }
+    private suspend fun getAccessToken(accountState: AccountState, scopes: List<String>): String {
+        val accessTokenState = accountState.getAccessToken(false, scopes)
+        return if (accessTokenState is GetAccessTokenResult.Complete) {
+            accessTokenState.resultValue.accessToken
+        } else {
+            throw Exception("Failed to get access token")
         }
+    }
     ```
 
 <!--The first parameter of the `getAccessToken(boolean,scopes)` indicates whether the SDK should refresh the access token. The default values is *false* and. Unless you have good reason to, you should not use this parameter.-->
@@ -113,17 +112,17 @@ To make an API call, use the access token you acquired in [Acquire an access tok
 1. Declare and set values for the API URLs by using the following code snippet:
 
     ```kotlin
-        companion object {
-            // Set values for respective API scopes for web API resources here, for example: ["api://<Resource_App_ID>/ToDoList.Read", "api://<Resource_App_ID>/ToDoList.ReadWrite"]
-            //A list of scope for API 1
-            private val scopesForAPI1 = listOf<String>()
-            //A list of scope for API 2
-            private val scopesForAPI2 = listOf<String>()
-            // set the URL of first web API resource here
-            private const val WEB_API_URL_1 = "Enter_URL_Of_First_Web_API" 
-            // Set the URL of second web API resource here
-            private const val WEB_API_URL_2 = "Enter_URL_Of_Second_Web_API" 
-        }
+    companion object {
+        // Set values for respective API scopes for web API resources here, for example: ["api://<Resource_App_ID>/ToDoList.Read", "api://<Resource_App_ID>/ToDoList.ReadWrite"]
+        //A list of scope for API 1
+        private val scopesForAPI1 = listOf<String>()
+        //A list of scope for API 2
+        private val scopesForAPI2 = listOf<String>()
+        // set the URL of first web API resource here
+        private const val WEB_API_URL_1 = "Enter_URL_Of_First_Web_API" 
+        // Set the URL of second web API resource here
+        private const val WEB_API_URL_2 = "Enter_URL_Of_Second_Web_API" 
+    }
     ``` 
     
     Replace the:
@@ -134,36 +133,36 @@ To make an API call, use the access token you acquired in [Acquire an access tok
 1. Use the following code snippets to call an API:
 
     ```kotlin
-        //After you acquire an access token, use it to call an API
-    
-        val firstApiResponse = useAccessToken(WEB_API_URL_1, accessTokenOne)
-        val secondApiResponse = useAccessToken(WEB_API_URL_2, accessTokenTwo)
-    
-    
-        private suspend fun useAccessToken(WEB_API_URL: String, accessToken: String): Response {
-            return withContext(Dispatchers.IO) {
-                ApiClient.performGetApiRequest(WEB_API_URL, accessToken)
-            }
+    //After you acquire an access token, use it to call an API
+
+    val firstApiResponse = useAccessToken(WEB_API_URL_1, accessTokenOne)
+    val secondApiResponse = useAccessToken(WEB_API_URL_2, accessTokenTwo)
+
+
+    private suspend fun useAccessToken(WEB_API_URL: String, accessToken: String): Response {
+        return withContext(Dispatchers.IO) {
+            ApiClient.performGetApiRequest(WEB_API_URL, accessToken)
         }
+    }
     ```
     
     Define the `performGetApiRequest()` function as shown in the following code:
     
     ```kotlin
-        object ApiClient {
-            private val client = OkHttpClient()
-        
-            fun performGetApiRequest(WEB_API_URL: String, accessToken: String): Response {    
-                val requestBuilder = Request.Builder()
-                        .url(WEB_API_URL)
-                        .addHeader("Authorization", "Bearer $accessToken")
-                        .get()
-        
-                val request = requestBuilder.build()
-        
-                client.newCall(request).execute().use { response -> return response }
-            }
+    object ApiClient {
+        private val client = OkHttpClient()
+    
+        fun performGetApiRequest(WEB_API_URL: String, accessToken: String): Response {    
+            val requestBuilder = Request.Builder()
+                    .url(WEB_API_URL)
+                    .addHeader("Authorization", "Bearer $accessToken")
+                    .get()
+    
+            val request = requestBuilder.build()
+    
+            client.newCall(request).execute().use { response -> return response }
         }
+    }
     ```
 
 ## Related content
