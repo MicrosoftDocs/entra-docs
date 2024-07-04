@@ -47,7 +47,7 @@ The available administrator roles are Global, Security, Global Secure Access (GS
 **Limited Access**: This role grants permissions to configure remote networks, security profiles, manage traffic forwarding profiles, and view traffic logs and alerts. However, GSA admins can't configure Private Access, create or interact with Conditional Access policies, manage user and group assignments, or configure Office 365 logging. 
 
 > [!NOTE]
-> To remove the *Limited access* role and add the ability to perform additional tasks, you need to be both a GSA administrator *and* have at least one other administrator role assigned to you.
+> To perform additional Microsoft Entra tasks, such as editing Conditional Access policies, you need to be both a GSA administrator and have at least one other administrator role assigned to you. Consult the Role-based permissions table above.
 
 ### Conditional Access Administrator 
 
