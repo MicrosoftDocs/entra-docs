@@ -69,8 +69,6 @@ Write-Host "User data exported to $outputCsvPath"
 
 ### Bulk create users 
 
-Sample csv file: 
-
 ```azurepowershell 
 # Import the Microsoft Graph module 
 Import-Module Microsoft.Graph 
@@ -222,8 +220,6 @@ Disconnect-MgGraph
 
 ### Add members in bulk 
 
-A screenshot of a computer
-
 ```azurepowershell
 Import-Module Microsoft.Graph.Groups 
 
@@ -252,8 +248,6 @@ Disconnect-MgGraph
 ```
  
 ### Remove members in bulk 
-
-A screenshot of a computer
 
 ```azurepowershell 
 Import-Module Microsoft.Graph.Groups 
