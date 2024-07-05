@@ -1,7 +1,7 @@
 ---
 title: Azure Single Sign-On (SSO) Integration
-author: YourGitHubID
-ms.author: YourMicrosoftAlias
+author: MuhammadSufyan-humfoc
+ms.author: MuhammadSufyan-humfoc
 ms.topic: tutorial
 description: Learn how to integrate Azure SSO with your application.
 ---
