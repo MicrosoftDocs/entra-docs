@@ -13,7 +13,7 @@ ms.service: global-secure-access
 
 Global Secure Access uses Role-Based Access Control (RBAC) to effectively manage administrative access. By default, Microsoft Entra ID requires specific administrator roles for accessing Global Secure Access.
 
-This article details the built-in Microsft Entra roles you can assign for managing Global Secure Access.
+This article details the built-in Microsoft Entra roles you can assign for managing Global Secure Access.
 
 ## Role-based permissions
 
