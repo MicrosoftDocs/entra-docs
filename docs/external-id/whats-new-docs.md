@@ -19,7 +19,7 @@ Welcome to what's new in Microsoft Entra External ID documentation. This article
 
 ### Updated articles
 
-- [Federation with SAML/WS-Fed identity providers for guest users](direct-federation.md) - Verified domain update
+- [Federation with SAML/WS-Fed identity providers for guest users](direct-federation.md) - Updated verified domain information and steps for adding new identity providers
 - [The elements of the B2B collaboration invitation email](invitation-email-elements.md) - Editorial updates
 - [How users in your organization can invite guest users to an app](add-users-information-worker.md) - Editorial updates
 
