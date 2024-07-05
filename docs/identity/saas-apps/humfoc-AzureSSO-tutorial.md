@@ -2,7 +2,7 @@
 title: Azure Single Sign-On (SSO) Integration
 author: MuhammadSufyan-humfoc
 ms.topic: tutorial
-ms.author: NO VALUE SET
+ms.author: MuhammadSufyan-humfoc
 description: Learn how to integrate Azure SSO with your application.
 ---
 
