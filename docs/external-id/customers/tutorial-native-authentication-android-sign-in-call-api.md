@@ -15,7 +15,7 @@ ms.custom: developer
 
 # Tutorial: Call an API in Android app by using native authentication
 
-In this tutorial, you learn how to acquire an access token and call an API in your Android mobile app. Microsoft Authentication Library (MSAL) native authentication SDK for Android allows you to acquire multiple access tokens without requiring a user to reauthenticate. This capability allows you to acquire one or more access tokens with a single sign-in.
+In this tutorial, you learn how to acquire an access token and call an API in your Android mobile app. Microsoft Authentication Library (MSAL) native authentication SDK for Android allows you to acquire multiple access tokens with a single sign-in. This capability allows you to acquire one or more access tokens without requiring a user to reauthenticate. 
 
 In this tutorial, you learn how to: 
 
@@ -74,7 +74,7 @@ MSAL native authentication SDK supports multiple access tokens, so you can speci
                     val accessTokenOne = getAccessToken(accountResult.resultValue, scopesForAPI1)
                     //Access token for API 2
                     val accessTokenTwo = getAccessToken(accountResult.resultValue, scopesForAPI2)
-                    // proceed to make a call to an API
+                    // Proceed to make a call to an API
                 } catch (e: Exception) {
                     //Handle Exception
                 }
@@ -118,7 +118,7 @@ To make an API call, use the access token you acquired in [Acquire an access tok
         private val scopesForAPI1 = listOf<String>()
         //A list of scope for API 2
         private val scopesForAPI2 = listOf<String>()
-        // set the URL of first web API resource here
+        // Set the URL of first web API resource here
         private const val WEB_API_URL_1 = "Enter_URL_Of_First_Web_API" 
         // Set the URL of second web API resource here
         private const val WEB_API_URL_2 = "Enter_URL_Of_Second_Web_API" 
