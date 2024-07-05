@@ -86,7 +86,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 4. Set the **Provisioning Mode** to **Automatic**.
 
-	![Zscaler One Provisioning Mode](./media/zscaler-one-provisioning-tutorial/provisioning-credentials.png)
+	![Zscaler One Provisioning Mode](common/provisioning-automatic.png)
 
 5. Under the **Admin Credentials** section, fill in the **Tenant URL** and **Secret Token** boxes with the settings for your Zscaler One account as described in Step 6.
 
@@ -102,7 +102,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 7. After you fill in the boxes shown in Step 5, select **Test Connection** to make sure that Microsoft Entra ID can connect to Zscaler One. If the connection fails, make sure your Zscaler One account has admin permissions and try again.
 
-	![Zscaler One Test Connection](./media/zscaler-one-provisioning-tutorial/test-connection.png)
+	![Zscaler One Test Connection](common/provisioning-testconnection-tenanturltoken.png)
 
 8. In the **Notification Email** box, enter the email address of the person or group to receive the provisioning error notifications. Select the **Send an email notification when a failure occurs** check box.
 
@@ -112,19 +112,27 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 10. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Zscaler One**.
 
-	![Zscaler One user synchronization](./media/zscaler-one-provisioning-tutorial/user-mappings.png)
-
 11. Review the user attributes that are synchronized from Microsoft Entra ID to Zscaler One in the **Attribute Mappings** section. The attributes selected as **Matching** properties are used to match the user accounts in Zscaler One for update operations. To save any changes, select **Save**.
 
-	![Zscaler One matching user attributes](./media/zscaler-one-provisioning-tutorial/user-attribute-mappings.png)
+  	 |Attribute|Type|Supported for filtering|Required by Zscaler One|
+  	 |---|---|---|---|
+  	 |userName|String|&check;|&check;
+     |active|Boolean||&check;
+     |displayName|String||&check;
+     |externalId|String||&check;
+     |name.givenName|String||
+     |name.familyName|String||
+     |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String||&check;
 
 12. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Zscaler One**.
 
-	![Zscaler One group synchronization](./media/zscaler-one-provisioning-tutorial/group-mappings.png)
-
 13. Review the group attributes that are synchronized from Microsoft Entra ID to Zscaler One in the **Attribute Mappings** section. The attributes selected as **Matching** properties are used to match the groups in Zscaler One for update operations. To save any changes, select **Save**.
 
-	![Zscaler One matching group attributes](./media/zscaler-one-provisioning-tutorial/group-attribute-mappings.png)
+    |Attribute|Type|Supported for filtering|Required by Zscaler One|
+    |---|---|---|---|
+    |displayName|String|&check;|&check;
+    |externalId|String||&check;
+    |members|Reference|
 
 14. To configure scoping filters, follow the instructions in the [scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
