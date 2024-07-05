@@ -65,7 +65,7 @@ $userData | Export-Csv -Path $outputCsvPath -NoTypeInformation
 Disconnect-MgGraph 
 
 Write-Host "User data exported to $outputCsvPath" 
-```azurepowershell
+```
 
 ### Bulk create users 
 
@@ -107,8 +107,7 @@ foreach ($userRow in $usersData) {
 Disconnect-MgGraph 
 
 Write-Host "Bulk user creation completed." 
-```azurepowershell
- 
+```
 
 > [!NOTE] 
 > Make sure your CSV file contains the necessary columns (for example; `DisplayName`, `UserPrincipalName`, and so on). Also, adjust the script to match the actual column names in your CSV file. 
@@ -143,7 +142,7 @@ foreach ($userRow in $usersData) {
 Disconnect-MgGraph 
 
 Write-Host "Bulk user deletion completed." 
-```azurepowershell
+```
 
 > [!NOTE]
 > Make sure your CSV file contains the necessary columns (for example, `UserPrincipalName`). Also, adjust the script to match the actual column names in your CSV file. 
@@ -186,7 +185,7 @@ foreach ($group in $groups) {
  $groupData| Export-Csv -Path $outputCsvPath -NoTypeInformation 
  
  Write-Host "Group members exported to $outputCsvPath" 
-```azurepowershell
+```
 
 ### Bulk download members of a group
 
@@ -219,7 +218,7 @@ Import-Module Microsoft.Graph.Groups
 Disconnect-MgGraph 
 
  Write-Host "Group members exported to $outputCsvPath"  
-```azurepowershell
+```
 
 ### Add members in bulk 
 
@@ -250,7 +249,7 @@ foreach ($member in $members) {
 
 # Disconnect from Microsoft Graph 
 Disconnect-MgGraph 
-```azurepowershell
+```
  
 ### Remove members in bulk 
 
@@ -281,7 +280,7 @@ foreach ($member in $members) {
 
 # Disconnect from Microsoft Graph 
 Disconnect-MgGraph 
-```azurepowershell
+```
 
 ## Devices 
 
@@ -302,4 +301,4 @@ Import-Module Microsoft.Graph
  $devices| Export-Csv -Path $outputCsvPath -NoTypeInformation 
 
  Write-Host "Devices exported to $outputCsvPath"  
-```azurepowershell
+```
