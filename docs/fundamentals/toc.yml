@@ -4,6 +4,8 @@ items:
 - name: Overview
   expanded: true
   items:
+  - name: What is Microsoft Entra?
+    href: what-is-entra.md
   - name: What is Microsoft Entra ID?
     href: whatis.md
   - name: New name for Azure AD

@@ -1,0 +1,136 @@
+---
+title: What is Microsoft Entra?
+description: Introduction to the Microsoft Entra product family including links to get started.
+author: jason-nydegger
+manager: CelesteDG
+ms.service: entra
+ms.subservice: fundamentals
+ms.topic: overview
+ms.date: 07/04/2024
+ms.author: janydegger
+
+# Customer intent: As a new customer, I want an overview of all Microsoft Entra products including links to get started.
+---
+
+# What is Microsoft Entra?
+
+Microsoft Entra is a family of identity and network access products. It enables organizations to implement a [Zero Trust](/security/zero-trust/zero-trust-overview) security strategy and create a [trust fabric](https://www.microsoft.com/security/blog/2024/05/08/how-implementing-a-trust-fabric-strengthens-identity-and-network/) that verifies identities, validates access conditions, checks permissions, encrypts connection channels, and monitors for compromise.
+
+## Microsoft Entra family of products
+
+### Microsoft Entra ID
+
+[Microsoft Entra ID](./whatis.md) is the foundational product of Microsoft Entra. It provides the essential identity, authentication, policy, and protection to secure employees, devices, and enterprise apps and resources.
+
+To start using Microsoft Entra ID, see [Create a new tenant](./create-new-tenant.md).
+
+### Microsoft Entra External ID
+
+[Microsoft Entra External ID](~/external-id/external-identities-overview.md) enables external identities, such as customers and business guests, to securely access consumer apps and business resources. 
+
+**For example**, organizations can set up self-service registration for customers to sign-in to a web application using methods such as one-time passcodes, or social accounts from Google or Facebook.
+
+To start using External ID, see the [Planning guide](~/external-id/customers/concept-planning-your-solution.md).
+
+### Microsoft Entra Workload ID
+
+In addition to human and device identities, workload identities such as applications, services, and containers require authentication and authorization policies. 
+
+[Microsoft Entra Workload ID](~/workload-id/workload-identities-overview.md) is the identity and access management solution for workload identities. It enables organizations to secure access to resources using adaptive policies and custom security attributes for apps.
+
+**For example**, GitHub Actions need a workload identity to access Azure subscriptions to automate, customize, and execute software development workflows.
+
+To start using Workload ID, see [Configure an app to trust an external identity provider](~/workload-id/workload-identity-federation-create-trust.md).
+
+### Microsoft Entra Verified ID
+
+In addition to identities that are used for authentication, there are decentralized identities (DIDs) that are used for information verification.
+
+[Microsoft Entra Verified ID](~/verified-id/decentralized-identifier-overview.md) is a credential verification service based on open [DID standards](~/verified-id/verifiable-credentials-standards.md). It enables organizations to issue a verifiable credential (digital signature proving the validity of information) to a user who stores the credential on their personal device. After they receive the verifiable credential, the user can present it to a company or organization that wants to verify something about their identity.
+
+**For example**, a recent college graduate can ask the university to issue a digital copy of their diploma to their DID. They can then choose to present the diploma to a potential employer who can independently verify the issuer of the diploma, the time of issuance, and its status.
+
+To start using Microsoft Entra Verified ID, see [Quick setup](~/verified-id/verifiable-credentials-configure-tenant-quick.md).
+
+### Microsoft Entra ID Protection
+
+[Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md) detects and reports identity-based risks. It enables administrators to investigate and automatically remediate risks using tools like [Conditional Access](~/identity/conditional-access/overview.md).
+
+**For example**, organizations can create risk-based Conditional Access policies that require multifactor authentication when the sign-in risk level is reported as medium or high.
+
+To start using ID Protection, see [Plan an Identity Protection deployment](~/id-protection/how-to-deploy-identity-protection.md).
+
+### Microsoft Entra ID Governance
+
+[Microsoft Entra ID Governance](~/id-governance/identity-governance-overview.md) makes identity and permissions easier to manage by automating access requests, assignments, and reviews. Additionally, it helps protect critical assets through identity lifecycle management.
+
+**For example**, administrators can automatically assign user accounts and Microsoft 365 licenses to new employees, and remove those assignments from employees that are no longer with the company.
+
+To start using ID Governance, see [Govern access for applications in your environment](~/id-governance/identity-governance-applications-prepare.md).
+
+### Microsoft Entra Permissions Management
+
+[Microsoft Entra Permissions Management](~/permissions-management/overview.md) provides comprehensive visibility into permissions assigned to all identities managed by Microsoft Entra ID and other identity providers. It enables organizations to detect, automatically right-size, and continuously monitor unused and excessive permissions across Microsoft Azure, Amazon Web Services (AWS), and Google Cloud Platform (GCP).
+
+**For example**, administrators can see the users that have high-risk permissions but aren't using them, and automatically remove those unused permissions across authorization systems.
+
+To start using Permissions Management, see the [Quickstart guide](~/permissions-management/permissions-management-quickstart-guide.md)
+
+### Microsoft Entra Domain Services
+
+[Microsoft Entra Domain Services](~/identity/domain-services/overview.md) provides managed domain services such as group policy, lightweight directory access protocol (LDAP), and Kerberos/NTLM authentication. It enables organizations to run legacy applications in the cloud that can't use modern authentication methods.
+
+**For example**, organizations with services that require access to Kerberos authentication can create a managed domain where the core service components are deployed and maintained by Microsoft as a managed domain experience. 
+
+To start using Domain Services, see [Create a managed domain](~/identity/domain-services/tutorial-create-instance.md).
+
+### Microsoft Entra Private Access
+
+[Microsoft Entra Private Access](~/global-secure-access/overview-what-is-global-secure-access.md#microsoft-entra-private-access) secures access to all private apps and resources, including corporate networks and multicloud environments. It enables remote users to connect to internal resources from any device and network without a virtual private network (VPN).
+
+**For example**, an employee can securely access a corporate network printer while working from home or even a cafe.
+
+To start using Private Access, see [Get started with Global Secure Access](~/global-secure-access/how-to-get-started-with-global-secure-access.md).
+
+### Microsoft Entra Internet Access
+
+[Microsoft Entra Internet Access](~/global-secure-access/overview-what-is-global-secure-access.md#microsoft-entra-internet-access) secures access to all internet resources including software as a service (SaaS) apps, and Microsoft 365 apps and resources. It enables organizations to continuously monitor and adjust user access in real time if permissions or risk levels change.
+
+**For example**, organizations can enable web content filtering to regulate access to websites based on content categories and domain names.
+
+To start using Internet Access, see [Get started with Global Secure Access](~/global-secure-access/how-to-get-started-with-global-secure-access.md).
+
+## Getting ready for Microsoft Entra
+
+Before organizations deploy Microsoft Entra, they should configure their infrastructure and processes according to security best practices and standards. The following articles provide the architectural, deployment, and operational guidance to successfully integrate Microsoft Entra.
+
+* [Architecture](~/architecture/architecture.md)
+* [Deployment plans](~/architecture/deployment-plans.md)
+* [Operations reference](~/architecture/ops-guide-intro.md)
+* [Operations guide](~/architecture/security-operations-introduction.md)
+
+## Working with Microsoft Entra
+
+After organizations deploy Microsoft Entra, administrators can manage resources using the **Microsoft Entra admin center** and **Microsoft Graph API**, and developers can build applications using the **Microsoft identity platform**.
+
+### Microsoft Entra admin center
+
+The [Microsoft Entra admin center](https://entra.microsoft.com/) is a web-based portal for administrators to configure and manage Microsoft Entra products using a single user interface.
+
+To learn more, see [Overview of Microsoft Entra admin center](./entra-admin-center.md).
+
+### Microsoft Graph API
+
+In addition to the Microsoft Entra admin center, the [Microsoft Graph API](~graph/api/resources/identity-network-access-overview?view=graph-rest-1.0) can be used to automate administrative tasks, including license deployments, and user lifecycle management.
+
+To learn more, see [Manage Microsoft Entra using Microsoft Graph](~graph/api/resources/identity-network-access-overview?view=graph-rest-1.0)
+
+### Microsoft identity platform
+
+The [Microsoft identity platform](~/identity-platform/v2-overview.md) enables developers to build authentication experiences for web, desktop, and mobile applications using open-source libraries and standard-compliant authentication services.
+
+To start developing, see [Getting started](~/identity-platform/v2-overview.md#getting-started).
+
+## Next steps
+
+* [Licensing](./licensing.md)
