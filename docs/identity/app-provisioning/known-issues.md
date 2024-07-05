@@ -108,12 +108,17 @@ The otherMails property is automatically computed in the target tenant. Changes 
 
 Multivalue directory extensions can't be used in attribute mappings or scoping filters. 
 
+#### Attribute targetAddress not available to select
+
+Attribute **targetAddress** (which maps to the ExternalEmailAddress property in Microsoft Exchange Online) isn't available as an attribute you can choose. If you need to change this attribute, you have to do it manually over the required object.  
+
+
 ## Service issues 
 
 #### Unsupported scenarios
 
 - Provisioning passwords isn't supported. 
-- Provisioning nested groups isn't supported. 
+- Provisioning nested groups beyond the first level is not supported. 
 - Provisioning to B2C tenants isn't supported because of the size of the tenants.
 - Not all provisioning apps are available in all clouds. For example, Atlassian isn't yet available in the Government cloud. We're working with app developers to onboard their apps to all clouds.
 

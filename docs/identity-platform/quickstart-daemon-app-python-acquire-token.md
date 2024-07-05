@@ -81,7 +81,7 @@ If you're a global tenant administrator, go to **API Permissions** page in **App
 
 ##### Standard user
 
-If you're a standard user of your tenant, ask a global administrator to grant admin consent for your application. To do this, give the following URL to your administrator:
+If you're a standard user of your tenant, ask a Global Administrator to grant admin consent for your application. To do this, give the following URL to your administrator:
 
 ```url
 https://login.microsoftonline.com/Enter_the_Tenant_Id_Here/adminconsent?client_id=Enter_the_Application_Id_Here
@@ -115,7 +115,7 @@ You should see on the console output some JSON fragment representing a list of u
 
 ### MSAL Python
 
-[MSAL Python](https://github.com/AzureAD/microsoft-authentication-library-for-python) is the library used to sign in users and request tokens used to access an API protected by Microsoft identity platform. As described, this quickstart requests tokens by using the application own identity instead of delegated permissions. The authentication flow used in this case is known as *[client credentials oauth flow](v2-oauth2-client-creds-grant-flow.md)*. For more information on how to use MSAL Python with daemon apps, see [this article](scenario-daemon-overview.md).
+[MSAL Python](https://github.com/AzureAD/microsoft-authentication-library-for-python) is the library used to sign in users and request tokens used to access an API protected by Microsoft identity platform. As described, this quickstart requests tokens by using the application own identity instead of delegated permissions. The authentication flow used in this case is known as *[client credentials oauth flow](v2-oauth2-client-creds-grant-flow.md)*. For more information on how to use MSAL Python with daemon apps, see [this article](scenario-daemon-app-registration.md).
 
  You can install MSAL Python by running the following pip command.
 
@@ -173,4 +173,4 @@ For more information, please see the [reference documentation for `AcquireTokenF
 To learn more about daemon applications, see the scenario landing page.
 
 > [!div class="nextstepaction"]
-> [Daemon application that calls web APIs](scenario-daemon-overview.md)
+> [Daemon application that calls web APIs](scenario-daemon-app-registration.md)

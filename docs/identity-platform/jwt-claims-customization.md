@@ -4,7 +4,7 @@ description: Learn how to customize the claims issued by Microsoft identity plat
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.custom: curation-claims, devx-track-dotnet
+ms.custom: curation-claims
 ms.date: 05/30/2024
 ms.reviewer: rahulnagraj, alamaral
 ms.service: identity-platform
@@ -220,30 +220,30 @@ Authorization: Bearer {token}
 {
     "keyCredentials":[
         {
-            "customKeyIdentifier": "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u=", 
+            "customKeyIdentifier": "aB1cD2eF3gH4iJ5kL6-mN7oP8qR=", 
             "endDateTime": "2021-04-22T22:10:13Z",
             "keyId": "aaaaaaaa-0b0b-1c1c-2d2d-333333333333",
             "startDateTime": "2020-04-22T21:50:13Z",
             "type": "X509CertAndPassword",
             "usage": "Sign",
-            "key":"MIIKIAIBAz.....BRFVNXeZmAAgIH0A==",
+            "key":"cD2eF3gH4iJ5kL6mN7-oP8qR9sT==",
             "displayName": "CN=contoso"
         },
         {
-            "customKeyIdentifier": "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u=",
+            "customKeyIdentifier": "aB1cD2eF3gH4iJ5kL6-mN7oP8qR=",
             "endDateTime": "2021-04-22T22:10:13Z",
             "keyId": "bbbbbbbb-1c1c-2d2d-3e3e-444444444444",
             "startDateTime": "2020-04-22T21:50:13Z",
             "type": "AsymmetricX509Cert",
             "usage": "Verify",
-            "key": "MIIDJzCCAg+gAw......N3bafeesMSueR83hlCSyg==",
+            "key": "cD2eF3gH4iJ5kL6mN7-oP8qR9sT==",
             "displayName": "CN=contoso"
         }
 
     ],
     "passwordCredentials": [
         {
-            "customKeyIdentifier": "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u=",
+            "customKeyIdentifier": "aB1cD2eF3gH4iJ5kL6-mN7oP8qR=",
             "keyId": "cccccccc-2d2d-3e3e-4f4f-555555555555",
             "endDateTime": "2022-01-27T19:40:33Z",
             "startDateTime": "2020-04-20T19:40:33Z",
@@ -266,7 +266,6 @@ To run this script, you need:
 - A user who logs in to get the Microsoft Graph access token. The user should be one of the following Microsoft Entra administrative roles (required to update the service principal):
   - Cloud Application Administrator
   - Application Administrator
-  - Global Administrator
 - A certificate to configure as a custom signing key for our application. You can either create a self-signed certificate or obtain one from your trusted certificate authority. The following certificate components are used in the script:
   - public key (typically a *.cer* file)
   - private key in PKCS#12 format (in *.pfx* file)

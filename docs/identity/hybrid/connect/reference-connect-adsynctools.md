@@ -389,7 +389,7 @@ Export-ADSyncToolsAadPublicFolders -Credential $(Get-Credential) -Path <file_nam
 ```
 ### PARAMETERS
 #### -Credential
-Microsoft Entra Global Admin Credential
+Microsoft Entra Global Administrator Credential
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
@@ -1209,7 +1209,7 @@ Remove-ADSyncToolsAadPublicFolders [-Credential] <PSCredential> [-SourceAnchor] 
 ```
 ### PARAMETERS
 #### -Credential
-Microsoft Entra Global Admin Credential
+Microsoft Entra Global Administrator Credential
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)

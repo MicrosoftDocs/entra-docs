@@ -7,7 +7,7 @@ manager: amycolannino
 ms.assetid: 16100caa-f209-4cb0-86d3-9e218aeb51c6
 ms.service: entra-id
 ms.subservice: domain-services
-ms.custom: devx-track-linux
+ms.custom: devx-track-linux, linux-related-content
 ms.topic: how-to
 ms.date: 09/23/2023
 ms.author: justinha

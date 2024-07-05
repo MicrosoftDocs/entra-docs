@@ -26,6 +26,16 @@ Here's a list of related resources:
 | Understand Microsoft Entra private network connectors | Find out more about [connector management](../identity/app-proxy/application-proxy-connectors.md) and how connectors [autoupgrade](../identity/app-proxy/application-proxy-connectors.md#automatic-updates). |
 | Microsoft Entra private network connector Download    | [Download the latest connector](https://download.msappproxy.net/subscription/d3c8b69d-6bf7-42be-a529-3fe9c2e70c90/connector/download). |
 
+## Version 1.5.3925.0
+
+### Release status
+
+July 3, 2024: Released for download. This version is only available for install via the download page in the Microsoft Entra admin center.
+
+### New features and improvements
+
+- Bug fixes and minor improvements
+
 ## Version 1.5.3890.0
 
 ### Release status
@@ -98,7 +108,6 @@ June 20, 2023: Released for download. This version is only available for install
 
 ### New features and improvements
 
-- Support for Microsoft Entra Private Access.
 - Updated partner notices.
 
 ### Fixed issues

@@ -131,7 +131,7 @@ result = await app.AcquireTokenSilent("scopeApi2")
 Interaction is required when:
 
 - The user consented for the first API but now needs to consent for more scopes. In this case, you use incremental consent.
-- The first API doesn't require [multi-factor authentication](~/identity/authentication/concept-mfa-howitworks.md), but the next API does.
+- The first API doesn't require [multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md), but the next API does.
 
 ```csharp
 var result = await app.AcquireTokenXX("scopeApi1")
@@ -152,5 +152,6 @@ catch(MsalUiRequiredException ex)
 
 ## Next steps
 
-Move on to the next article in this scenario,
-[Move to production](scenario-mobile-production.md).
+- Learn more by building a React Single-page application (SPA) that signs in users in the following multi-part [tutorial series](tutorial-single-page-app-react-register-app.md).
+
+- Explore Microsoft identity platform [mobile code samples](sample-v2-code.md#mobile) 

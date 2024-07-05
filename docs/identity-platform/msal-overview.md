@@ -33,8 +33,8 @@ MSAL provides multiple ways to get security tokens, with a consistent API for ma
 | Single-page apps (JavaScript) | [Tutorial: Sign-in users to a React Single-page application (SPA)](tutorial-single-page-app-react-register-app.md) |
 | Web applications | [Tutorial: Sign-in users to a ASP.NET Core Web application](tutorial-web-app-dotnet-register-app.md) |
 | Web APIs | [Tutorial: Implement a protected endpoint a ASP.NET Core API](tutorial-web-api-dotnet-register-app.md) |
-| Mobile and native applications | [Mobile application calling a web API on behalf of the user who's signed-in interactively](scenario-mobile-overview.md). |
-| Daemons and server-side applications | [Desktop/service daemon application calling web API on behalf of itself](scenario-daemon-overview.md) |
+| Mobile and native applications | [Mobile application calling a web API on behalf of the user who's signed-in interactively](scenario-mobile-app-registration.md). |
+| Daemons and server-side applications | [Desktop/service daemon application calling web API on behalf of itself](scenario-daemon-app-registration.md) |
 
 ## MSAL Languages and Frameworks
 
@@ -42,7 +42,7 @@ You can refer to the following documentation to learn more about the different M
 
 | MSAL Documentation | MSAL Library | Supported platforms and frameworks |
 | --- | --- | --- |
-| [MSAL.NET](/entra/msal/dotnet/) | [MSAL.NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet)| .NET Framework, .NET, Xamarin Android, Xamarin iOS, Universal Windows Platform|
+| [MSAL.NET](/entra/msal/dotnet/) | [MSAL.NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet)| .NET Framework, .NET, .NET MAUI, WINUI,Xamarin Android, Xamarin iOS, Universal Windows Platform|
 | [MSAL for Android](https://github.com/AzureAD/microsoft-authentication-library-for-android/tree/dev/docs) | [MSAL for Android](https://github.com/AzureAD/microsoft-authentication-library-for-android)|Android|
 | [MSAL Angular](/javascript/api/@azure/msal-angular/) | [MSAL Angular](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-angular)| Single-page apps with Angular and Angular.js frameworks|
 | [MSAL for iOS and macOS](https://github.com/AzureAD/microsoft-authentication-library-for-objc/tree/dev/docs) | [MSAL for iOS and macOS](https://github.com/AzureAD/microsoft-authentication-library-for-objc)|iOS and macOS|

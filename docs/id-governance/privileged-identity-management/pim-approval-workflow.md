@@ -165,7 +165,7 @@ Here's some information about workflow notifications:
 - Approvers are notified by email when a request for a role is pending their review. Email notifications include a direct link to the request, where the approver can approve or deny.
 - Requests are resolved by the first approver who approves or denies.
 - When an approver responds to the request, all approvers are notified of the action.
-- Global admins and Privileged role admins are notified when an approved user becomes active in their role.
+- Global Administrators and Privileged Role Administrators are notified when an approved user becomes active in their role.
 
 >[!NOTE]
 >A Global Administrator or Privileged role admin who believes that an approved user should not be active can remove the active role assignment in Privileged Identity Management. Although administrators are not notified of pending requests unless they are an approver, they can view and cancel any pending requests for all users by viewing pending requests in Privileged Identity Management.

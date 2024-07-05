@@ -1,7 +1,7 @@
 ---
 title: Secure group managed service accounts
 description: A guide to securing group managed service accounts (gMSAs)
-author: jricketts
+author: janicericketts
 manager: martinco
 ms.service: entra
 ms.subservice: architecture
@@ -48,24 +48,10 @@ gMSAs are more secure than standard user accounts, which require ongoing passwor
 
 ## Find gMSAs
 
-Your organization might have gMSAs. To retrieve these accounts, run the following PowerShell cmdlets:
-
-```powershell
-Get-ADServiceAccount 
-Install-ADServiceAccount 
-New-ADServiceAccount 
-Remove-ADServiceAccount 
-Set-ADServiceAccount 
-Test-ADServiceAccount 
-Uninstall-ADServiceAccount
-```
-
 ### Managed Service Accounts container
   
-To work effectively, gMSAs must be in the Managed Service Accounts container.
+To work effectively, gMSAs must be in the Managed Service Accounts container in Active Directory Users and Computers.
   
-![Screenshot of a gMSA in the Managed Service Accounts container.](./media/govern-service-accounts/secure-gmsa-image-1.png)
-
 To find service MSAs not in the list, run the following commands:
 
 ```powershell

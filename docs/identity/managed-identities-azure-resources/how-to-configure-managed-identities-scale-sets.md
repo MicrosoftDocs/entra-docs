@@ -1,5 +1,5 @@
 ---
-title: Configure managed identities for Azure resources on virtual machine scale set 
+title: Configure managed identities for Azure resources on virtual machine scale set
 description: Step-by-step instructions for configuring managed identities for Azure resources on a virtual machine scale set using the Azure portal.
 author: barclayn
 manager: amycolannino
@@ -8,8 +8,7 @@ ms.subservice: managed-identities
 ms.topic: quickstart
 ms.date: 05/27/2024
 ms.author: barclayn
-
-ms.custom: mode-api, devx-track-azurecli, devx-track-linux
+ms.custom: mode-api, devx-track-azurecli, devx-track-linux, devx-track-arm-template, devx-track-azurepowershell
 ms.devlang: azurecli
 
 appliesto:
@@ -21,6 +20,8 @@ zone_pivot_groups: identity-mi-scaled-sets
 [!INCLUDE [preview-notice](~/includes/entra-msi-preview-notice.md)]
 
 Managed identities for Azure resources provide Azure services with an automatically managed identity in Microsoft Entra ID. You can use this identity to authenticate to any service that supports Microsoft Entra authentication, without having credentials in your code. 
+
+For information about Azure Policy definition and details, see [Use Azure Policy to assign managed identities (preview)](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F516187d4-ef64-4a1b-ad6b-a7348502976c).
 
 ::: zone pivot="identity-mi-methods-azp"
 [!INCLUDE [qs-configure-portal-windows-vmss](includes/qs-configure-portal-windows-vmss.md)]

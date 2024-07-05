@@ -27,6 +27,28 @@ The What's new in Microsoft Entra ID? Release notes provide information about:
 
 ---
 
+## December 2023
+
+### Public Preview - Configurable redemption order for B2B collaboration
+
+**Type:** New feature   
+**Service category:** B2B                     
+**Product capability:**  B2B/B2C             
+
+With configurable redemption, you can customize the order of identity providers that your guest users can sign in with when they accept your invitation. This lets your override the default configuration order set by Microsoft and use your own. This can be used to help with scenarios like prioritizing a SAML/WS-fed federation above a Microsoft Entra ID verified domain, disabling certain identity providers as an option during redemption, or even only using something like email one-time pass-code as a redemption option. For more information, see: [Configurable redemption (Preview)](../external-id/cross-tenant-access-overview.md#configurable-redemption).
+
+---
+
+### General Availability - Edits to Dynamic Group Rule Builder
+
+**Type:** Changed feature   
+**Service category:** Group Management                     
+**Product capability:**  Directory             
+
+The dynamic group rule builder is updated to no longer include the '*contains*' and '*notContains*' operators, as they're less performant. If needed, you can still create dynamic group rules with those operators by typing directly into the text box. For more information, see: [Rule builder in the Azure portal](../identity/users/groups-dynamic-membership.md#rule-builder-in-the-azure-portal).
+
+---
+
 ## November 2023
 
 ### Decommissioning of Group Writeback V2 (Public Preview) in Entra Connect Sync

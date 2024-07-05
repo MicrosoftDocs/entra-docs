@@ -1,6 +1,6 @@
 ---
 title: Support web fallback
-description: Learn how to support web fallback.
+description: Learn how to implement web fallback in an iOS application by using native authentication to ensure stability in authentication flow.
 
 author: henrymbuguakiarie
 manager: mwongerapk
@@ -11,18 +11,20 @@ ms.service: entra-external-id
 ms.subservice: customers
 ms.topic: tutorial
 ms.date: 02/29/2024
-ms.custom: developer, devx-track-dotnet
-#Customer intent: As a dev, devops, I want to learn how to support web fallback.
+ms.custom: developer
+#Customer intent: As a developer, I want to support web fallback in my iOS app's native authentication flow so that I can ensure stability of my app's authentication flow.
 ---
 
 # Tutorial: Support web fallback 
 
 This tutorial demonstrates how to acquire a token through a browser where native authentication isn't sufficient to complete the user flow. 
 
-In this tutorial, you learn how to: 
+In this tutorial, you learn how to:
 
-- Check BrowserRequired error. 
-- Handle BrowserRequired error. 
+> [!div class="checklist"]
+>
+> - Check BrowserRequired error. 
+> - Handle BrowserRequired error. 
 
 ## Prerequisites
 
@@ -97,4 +99,3 @@ The tokens and account that are returned are identical to the ones that would be
 
 - [How to run the Android sample app](how-to-run-native-authentication-sample-android-app.md).
 - [Overview of native authentication API reference](../../identity-platform/reference-native-authentication-overview.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json) 
-

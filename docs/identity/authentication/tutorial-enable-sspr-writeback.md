@@ -76,11 +76,11 @@ To set up the appropriate permissions for password writeback to occur, complete 
 1. Under *Permissions*, select the box for the following option:
     * **Reset password**
 1. Under *Properties*, select the boxes for the following options. Scroll through the list to find these options, which may already be set by default:
-    * **Write lockoutTime**
-    * **Write pwdLastSet**
+* **Write lockoutTime**
+ * **Write pwdLastSet**
 
     [ ![Set the appropriate permissions in Active Users and Computers for the account that is used by Microsoft Entra Connect](media/tutorial-enable-sspr-writeback/set-ad-ds-permissions-cropped.png) ](media/tutorial-enable-sspr-writeback/set-ad-ds-permissions.png#lightbox)
-
+   
 1. When ready, select **Apply / OK** to apply the changes.
 1. From the **Permissions** tab, select **Add**.
 1. For **Principal**, select the account that permissions should be applied to (the account used by Microsoft Entra Connect).
@@ -115,6 +115,9 @@ To enable SSPR writeback, first enable the writeback option in Microsoft Entra C
 1. On the **Directory extensions** page, select **Next**.
 1. On the **Ready to configure** page, select **Configure** and wait for the process to finish.
 1. When you see the configuration finish, select **Exit**.
+
+> [!Note]
+> Updating `PasswordWritebackEnabled` from [OnPremDirectorySynchronization service features](~/identity/hybrid/connect/how-to-connect-syncservice-features.md) is not supported as this feature flag is not in use.
 
 ## Enable password writeback for SSPR
 
@@ -153,7 +156,7 @@ If you no longer want to use any password functionality, complete the following 
 1. Sign in to your Microsoft Entra Connect server and start the **Microsoft Entra Connect** configuration wizard.
 1. On the **Welcome** page, select **Configure**.
 1. On the **Additional tasks** page, select **Customize synchronization options**, and then select **Next**.
-1. On the **Connect to Microsoft Entra ID** page, enter a global administrator credential for your Azure tenant, and then select **Next**.
+1. On the **Connect to Microsoft Entra ID** page, enter a Global Administrator credential, and then select **Next**.
 1. On the **Connect directories** and **Domain/OU** filtering pages, select **Next**.
 1. On the **Optional features** page, deselect the box next to **Password writeback** and select **Next**.
 1. On the **Ready to configure** page, select **Configure** and wait for the process to finish.

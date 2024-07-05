@@ -12,7 +12,7 @@ ms.author: jricketts
 
 # Microsoft's Security Service Edge Solution Deployment Guide for Microsoft Entra Internet Access Proof of Concept
 
-The [Microsoft identity-centric Security Service Edge solution](../global-secure-access/overview-what-is-global-secure-access.md) converges network and identity access controls so you can secure access to any app or resource from any location, device, or identity. It enables and orchestrates access policy management for employees, business partners, and digital workloads. You can monitor and adjust user access continuously in real time if permissions or risk levels change for private apps, SaaS apps, and Microsoft 365 endpoints.
+The [Microsoft identity-centric Security Service Edge solution](../global-secure-access/overview-what-is-global-secure-access.md) converges network and identity access controls so you can secure access to any app or resource from any location, device, or identity. It enables and orchestrates access policy management for employees, business partners, and digital workloads. You can monitor and adjust user access continuously in real time if permissions or risk levels change for private apps, SaaS apps, and Microsoft endpoints.
 
 Protecting enterprise users and managed devices from malicious internet traffic and malware infection concerns all companies. Use [Microsoft Entra Internet Access](../global-secure-access/concept-internet-access.md) Secure Web Gateway functionality to block traffic based on web categories, and a fully qualified domain name (FQDN), by integrating with Microsoft Entra Conditional Access.
 
@@ -499,4 +499,4 @@ In some cases, you might have users that require access to blocked sites for gro
 
 - [Introduction to Microsoft's Security Service Edge Solution Deployment Guide for Proof of Concept](sse-deployment-guide-intro.md)
 - [Deploy and verify Microsoft Entra Private Access](sse-deployment-guide-private-access.md)
-- [Deploy and verify Microsoft Entra Internet Access for Microsoft 365](sse-deployment-guide-m365.md)
+- [Deploy and verify Microsoft Entra Internet Access for Microsoft Traffic](sse-deployment-guide-microsoft-traffic.md)

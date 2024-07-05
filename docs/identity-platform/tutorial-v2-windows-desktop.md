@@ -5,7 +5,7 @@ author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
 ms.custom:
-ms.date: 02/21/2023
+ms.date: 06/27/2024
 ms.reviewer: jmprieur
 ms.service: identity-platform
 
@@ -15,7 +15,7 @@ ms.topic: tutorial
 
 # Tutorial: Sign in users and call Microsoft Graph in Windows Presentation Foundation (WPF) desktop app
 
-In this tutorial, you'll build a native Windows Desktop .NET (XAML) app that signs in users and gets an access token to call the Microsoft Graph API.
+In this tutorial, you build a native Windows Desktop .NET (XAML) app that signs in users and gets an access token to call the Microsoft Graph API.
 
 When you've completed the guide, your application will able to call a protected API that uses personal accounts (including outlook.com, live.com, and others). The application will also use work and school accounts from any company or organization that uses Microsoft Entra ID.
 
@@ -59,9 +59,9 @@ This guide uses the following NuGet packages:
 
 ## Set up your project
 
-In this section you'll create a new project to demonstrate how to integrate a Windows Desktop .NET application (XAML) with *Sign-In with Microsoft* so that the application can query web APIs that require a token.
+In this section, you create a new project to demonstrate how to integrate a Windows Desktop .NET application (XAML) with *Sign-In with Microsoft* so that the application can query web APIs that require a token.
 
-The application that you'll create displays a button that'll call the Microsoft Graph API, an area to display the results, and a sign-out button.
+The application that you create displays a button that will call the Microsoft Graph API, an area to display the results, and a sign-out button.
 
 > [!NOTE]
 > Prefer to download this sample's Visual Studio project instead? [Download a project](https://github.com/Azure-Samples/active-directory-dotnet-desktop-msgraph-v2/archive/msal3x.zip), and skip to the [Configuration step](#register-your-application) to configure the code sample before you execute it.
@@ -362,9 +362,9 @@ In addition to the access token that's used to call the Microsoft Graph API, aft
 
 [!INCLUDE [5. Test and Validate](./includes/guidedsetup-windesktop-test.md)]
 
-## Next steps
+## Next step
 
 Learn more about building desktop apps that call protected web APIs in our multi-part scenario series:
 
 > [!div class="nextstepaction"]
-> [Scenario: Desktop app that calls web APIs](scenario-desktop-overview.md)
+> [Scenario: Desktop app that calls web APIs](scenario-desktop-app-registration.md)

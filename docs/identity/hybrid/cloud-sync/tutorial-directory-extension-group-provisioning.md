@@ -34,7 +34,7 @@ To begin, create two groups in Microsoft Entra ID. One group is Sales and the Ot
 
 To create two groups, follow these steps.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
 2. Browse to **Identity** > **Groups** > **All groups**.
 3. At the top, click **New group**.
 4. Make sure the **Group type** is set to **security**.
@@ -45,7 +45,7 @@ To create two groups, follow these steps.
 
 
 ## Add users to the newly created groups
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
 2. Browse to **Identity** > **Groups** > **All groups**.
 3. At the top, in the search box, enter **Sales**.
 4. Click on the new **Sales** group.
@@ -60,7 +60,7 @@ To create two groups, follow these steps.
 > When adding users to the Marketing group, make note of the group ID on the overview page. This ID is used later to add our newly created property to the group.
 
 ## Get your tenant ID
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
 2. Browse to **Identity** > **Overview**.
 3. Note your tenant ID and copy it down for use later.
 
@@ -117,7 +117,7 @@ To create two groups, follow these steps.
   :::image type="content" source="media/tutorial-directory-extension-group-provision/directory-extension-group-provision-3.png" alt-text="Screenshot of PowerShell New-MgApplicationExtensionProperty." lightbox="media/tutorial-directory-extension-group-provision/directory-extension-group-provision-3.png":::
  
  3. This cmdlet creates an attribute that looks like extension_&lt;guid&gt;_SynchGroup. You need this to associate it with a group, however the graph PowerShell cmdlet doesn't return this. 
- 4. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
+ 4. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
  5. Browse to **Identity** > **Hybrid Management** > **Microsoft Entra Connect** > **Cloud sync**.
  6. Select **New configuration**.
  7. Select **Microsoft Entra ID to AD sync**.
@@ -141,7 +141,7 @@ To create two groups, follow these steps.
 For this portion, we're going to be adding our newly created property to one of our existing groups, Marketing. To do this, we use Microsoft Graph Explorer.  You need to make sure that you have consented to Group.ReadWrite.All. You can do this by selecting **Modify permissions**.
 
 1. Navigate to https://developer.microsoft.com/graph/graph-explorer
-2. Sign-in using your tenant administrator account. This may need to be a global admin account. A global admin account was used in creating this scenario. A hybrid administrator account may be sufficient.
+2. Sign-in using your tenant administrator account. This may need to be a Global Administrator account. A Global Administrator account was used in creating this scenario. A Hybrid Identity Administrator account may be sufficient.
 3. At the top, change the **GET** to **PATCH**
 4. In the address box enter: https://graph.microsoft.com/v1.0/groups/&lt;group id&gt;
 5. In the Request body enter:

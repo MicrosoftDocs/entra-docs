@@ -154,7 +154,7 @@ In the following sections are recommendations for Azure solutions. For general g
 
 Below are some identity governance principles to consider across all the tenant configurations for isolation.
 
-* **No standing access** - No human identities should have standing access to perform privileged operations in isolated environments. Azure Role-based access control (RBAC) integrates with [Microsoft Entra Privileged Identity Management](~/id-governance/privileged-identity-management/pim-configure.md) (PIM). PIM provides just-in-time activation determined by security gates such as multifactor authentication, approval workflow, and limited duration.
+* **No standing access** - No human identities should have standing access to perform privileged operations in isolated environments. Azure Role-based access control (RBAC) integrates with [Microsoft Entra Privileged Identity Management (PIM)](~/id-governance/privileged-identity-management/pim-configure.md). PIM provides just-in-time activation determined by security gates such as multifactor authentication, approval workflow, and limited duration.
 
 * **Number of admins** - Organizations should define minimum and maximum number of humans holding a privileged role to mitigate business continuity risks. With too few privileged roles, there may not be enough time-zone coverage. Mitigate security risks by having as few administrators as possible, following the least-privilege principle.
 
@@ -250,7 +250,7 @@ Below are some considerations when designing a governed subscription lifecycle p
 
 * The Azure EA Enterprise portal doesn't provide an audit log. To mitigate this, consider an automated governed process to provision subscriptions with the considerations described above and use dedicated EA accounts and audit the authentication logs.
 
-* [Microsoft Customer Agreement](/azure/cost-management-billing/understand/mca-overview) (MCA) roles don't integrate natively with PIM. To mitigate this, use dedicated MCA accounts and monitor usage of these accounts.
+* [Microsoft Customer Agreement (MCA)](/azure/cost-management-billing/understand/mca-overview) roles don't integrate natively with PIM. To mitigate this, use dedicated MCA accounts and monitor usage of these accounts.
 
 ### Azure AD B2C tenants
 

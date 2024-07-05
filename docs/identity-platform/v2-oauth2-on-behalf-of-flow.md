@@ -82,7 +82,7 @@ Host: login.microsoftonline.com/<tenant>
 Content-Type: application/x-www-form-urlencoded
     
 grant_type=urn:ietf:params:oauth:grant-type:jwt-bearer
-client_id=00001111-aaaa-2222-bbbb-3333cccc4444
+&client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &client_secret=sampleCredentia1s
 &assertion=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6InowMzl6ZHNGdWl6cEJmQlZLMVRuMjVRSFlPMCJ9.eyJhdWQiOiIyO{a lot of characters here}
 &scope=https://graph.microsoft.com/user.read+offline_access

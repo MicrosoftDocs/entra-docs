@@ -5,7 +5,7 @@ description: Block legacy authentication using Microsoft Entra Conditional Acces
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 07/18/2023
+ms.date: 06/27/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -25,7 +25,7 @@ Alex Weinert, Director of Identity Security at Microsoft, in his March 12, 2020 
 
 This article explains how you can configure Conditional Access policies that block legacy authentication for all workloads within your tenant. 
 
-While rolling out legacy authentication blocking protection, we recommend a phased approach, rather than disabling it for all users all at once. Customers may choose to first begin disabling basic authentication on a per-protocol basis, by applying Exchange Online authentication policies, then (optionally) also blocking legacy authentication via Conditional Access policies when ready.
+While rolling out legacy authentication blocking protection, we recommend a phased approach, rather than disabling it for all users all at once. Customers might begin disabling basic authentication on a per-protocol basis, by applying Exchange Online authentication policies, then (optionally) also blocking legacy authentication via Conditional Access policies when ready.
 
 Customers without licenses that include Conditional Access can make use of [security defaults](~/fundamentals/security-defaults.md) to block legacy authentication.
 
@@ -38,7 +38,7 @@ This article assumes that you're familiar with the [basic concepts](overview.md)
 
 ## Scenario description
 
-Microsoft Entra ID supports the most widely used authentication and authorization protocols including legacy authentication. Legacy authentication can't prompt users for second factor authentication or other authentication requirements needed to satisfy Conditional Access policies, directly. This authentication pattern includes basic authentication, a widely used industry-standard method for collecting user name and password information.  Examples of applications that commonly or only use legacy authentication are:
+Microsoft Entra ID supports the most widely used authentication and authorization protocols including legacy authentication. Legacy authentication can't prompt users for second factor authentication or other authentication requirements needed to satisfy Conditional Access policies, directly. This authentication pattern includes basic authentication, a widely used industry-standard method for collecting user name and password information. Examples of applications that commonly or only use legacy authentication are:
 
 - Microsoft Office 2013 or older.
 - Apps using mail protocols like POP, IMAP, and SMTP AUTH.
@@ -61,7 +61,7 @@ The following messaging protocols support legacy authentication:
 - Autodiscover - Used by Outlook and EAS clients to find and connect to mailboxes in Exchange Online.
 - Exchange ActiveSync (EAS) - Used to connect to mailboxes in Exchange Online.
 - Exchange Online PowerShell - Used to connect to Exchange Online with remote PowerShell. If you block Basic authentication for Exchange Online PowerShell, you need to use the Exchange Online PowerShell Module to connect. For instructions, see [Connect to Exchange Online PowerShell using multifactor authentication](/powershell/exchange/connect-to-exchange-online-powershell).
-- Exchange Web Services (EWS) - A programming interface that's used by Outlook, Outlook for Mac, and third-party apps.
+- Exchange Web Services (EWS) - A programming interface that's used by Outlook, Outlook for Mac, and non-Microsoft apps.
 - IMAP4 - Used by IMAP email clients.
 - MAPI over HTTP (MAPI/HTTP) - Primary mailbox access protocol used by Outlook 2010 SP2 and later.
 - Offline Address Book (OAB) - A copy of address list collections that are downloaded and used by Outlook.
@@ -79,11 +79,11 @@ Before you can block legacy authentication in your directory, you need to first 
 
 #### Sign-in log indicators
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
 1. Browse to **Identity** > **Monitoring & health** > **Sign-in logs**.
 1. Add the **Client App** column if it isn't shown by clicking on **Columns** > **Client App**.
 1. Select **Add filters** > **Client App** > choose all of the legacy authentication protocols and select **Apply**.
-1. If you've activated the [new sign-in activity reports preview](~/identity/monitoring-health/concept-sign-ins.md), repeat the above steps also on the **User sign-ins (non-interactive)** tab.
+1. Also perform these steps on the **User sign-ins (non-interactive)** tab.
 
 Filtering shows you sign-in attempts made by legacy authentication protocols. Clicking on each individual sign-in attempt shows you more details. The **Client App** field under the **Basic Info** tab indicates which legacy authentication protocol was used.
 
@@ -97,7 +97,7 @@ To determine if a client is using legacy or modern authentication based on the d
 
 ## Important considerations
 
-Many clients that previously only supported legacy authentication now support modern authentication. Clients that support both legacy and modern authentication may require configuration update to move from legacy to modern authentication. If you see **modern mobile**, **desktop client** or **browser** for a client in the Sign-in logs, it's using modern authentication. If it has a specific client or protocol name, such as **Exchange ActiveSync**, it's using legacy authentication. The client types in Conditional Access, Sign-in logs, and the legacy authentication workbook distinguish between modern and legacy authentication clients for you.
+Clients that support both legacy and modern authentication might require a configuration update to move from legacy to modern authentication. If you see **modern mobile**, **desktop client** or **browser** for a client in the Sign-in logs, it's using modern authentication. If it has a specific client or protocol name, such as **Exchange ActiveSync**, it's using legacy authentication. The client types in Conditional Access, Sign-in logs, and the legacy authentication workbook distinguish between modern and legacy authentication clients for you.
 
 - Clients that support modern authentication but aren't configured to use modern authentication should be updated or reconfigured to use modern authentication.
 - All clients that don't support modern authentication should be replaced.
@@ -141,10 +141,7 @@ You can select all available grant controls for the **Other clients** condition;
 ## Next steps
 
 - [Determine effect using Conditional Access report-only mode](howto-conditional-access-insights-reporting.md)
-- If you aren't familiar with configuring Conditional Access policies yet, see [require MFA for specific apps with Microsoft Entra Conditional Access](~/identity/authentication/tutorial-enable-azure-mfa.md) for an example.
 - For more information about modern authentication support, see [How modern authentication works for Office client apps](/microsoft-365/enterprise/modern-auth-for-office-2013-and-2016) 
 - [How to set up a multifunction device or application to send email using Microsoft 365](/exchange/mail-flow-best-practices/how-to-set-up-a-multifunction-device-or-application-to-send-email-using-microsoft-365-or-office-365)
 - [Enable modern authentication in Exchange Online](/exchange/clients-and-mobile-in-exchange-online/enable-or-disable-modern-authentication-in-exchange-online)
-- [Enable Modern Authentication for Office 2013 on Windows devices](/microsoft-365/admin/)
 - [How to configure Exchange Server on-premises to use Hybrid Modern Authentication](/microsoft-365/enterprise/configure-exchange-server-for-hybrid-modern-authentication)
-- [How to use Modern Authentication with Skype for Business](/microsoft-365/enterprise/hybrid-modern-auth-overview)

@@ -38,7 +38,7 @@ You can configure each Microsoft Entra organization independently to get data sy
 
 ## Add a Microsoft Entra organization
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 1. Select Microsoft Entra ID.
 1. Select **Manage tenants**.
 1. Choose **Create**.
