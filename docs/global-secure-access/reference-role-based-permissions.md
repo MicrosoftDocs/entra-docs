@@ -11,16 +11,16 @@ ms.service: global-secure-access
 
 # Microsoft Global Secure Access built-in roles
 
-Global Secure Access uses Role-Based Access Control (RBAC) to effectively manage administrative access. By default, certain Microsoft Entra ID administrator roles have access to Global Secure Access.
+Global Secure Access uses Role-Based Access Control (RBAC) to effectively manage administrative access. By default, Microsoft Entra ID requires specific administrator roles for accessing Global Secure Access.
 
-This article details the built-in Global Secure Access roles you can assign for managing Microsoft Entra resources.
+This article details the built-in Microsft Entra roles you can assign for managing Global Secure Access.
 
 ## Role-based permissions
-By default, the following Microsoft Entra ID admin roles have access to Global Secure Access:
+The following Microsoft Entra ID admin roles have access to Global Secure Access:
 
 ### Global Administrator 
 
-**Full Access**: This role gives administrators full permissions within Global Secure Access. It can manage policies, settings, and view logs, including scenarios that involve Conditional Access, configurations required for Private Access, write operations on application segments, and management of user assignments for traffic profiles. 
+**Full Access**: This role grants administrators full permissions within Global Secure Access. They can manage policies, settings, and view logs, including Conditional Access scenarios, configurations for Private Access, write operations on application segments, and management of user assignments for traffic profiles 
 
 ### Security Administrator 
 
@@ -28,26 +28,26 @@ By default, the following Microsoft Entra ID admin roles have access to Global S
 
 ### Global Secure Access Administrator
 
-**Limited Access**: This role grants permissions to perform tasks such as configuring remote networks, setting up security profiles, managing traffic forwarding profiles, and viewing traffic logs and alerts.. However, GSA admins can't configure Private Access, create or interact with Conditional Access policies, manage user and group assignments, or configure Office 365 logging. 
+**Limited Access**: This role grants permissions to configure remote networks, set up security profiles, manage traffic forwarding profiles, and view traffic logs and alerts. However, GSA admins cannot configure Private Access, create or manage Conditional Access policies, manage user and group assignments, or configure Office 365 logging
 
 > [!NOTE]
-> To perform additional Entra tasks, you need to be both a Global Secure Access Administrator administrator and have at least one other administrator role assigned to you.
+> To perform additional Microsoft Entra tasks, you need both the Global Secure Access Administrator role and at least one other Microsoft Entra administrator role
 
 ### Conditional Access Administrator 
 
-**Conditional Access Management**: This role can create and interact with Conditional Access policies for Global Secure Access, such as All Compliant Network locations and use Global Secure Access security profiles. 
+**Conditional Access Management**: This role can create and manage Conditional Access policies for Global Secure Access, such as All Compliant Network locations, and utilize Global Secure Access security profiles.
 
 ### Application Administrator 
 
-**Private Access Configuration**: This role can configure Private Access, including Quick Access, Private Network connectors, application segments, and enterprise applications. 
+**Private Access Configuration**: This role can configure Private Access, including Quick Access, Private Network connectors, application segments, and enterprise applications.
 
 ### Security Reader and Global Reader
 
-**Read-Only Access**: These roles have full read-only access to all aspects of Global Secure Access, except access to traffic logs. They can't change any settings or take any actions. 
+**Read-Only Access**: These roles have full read-only access to all aspects of Global Secure Access, except traffic logs. They cannot change any settings or perform any actions.
 
 
 
-| Permissions | [Global Admin](#global-administrator-and-security-administrator) | [Security Admin](#global-administrator-and-security-administrator) | [GSA Admin](#global-secure-access-administrator) | [CA Admin](#conditional-access-administrator) | [Apps Admin](#application-administrator) | [Global Reader](#security-reader-and-global-reader) | [Security Reader](#security-reader-and-global-reader) |
+| Permissions | [Global Admin](#global-administrator) | [Security Admin](#security-administrator) | [GSA Admin](#global-secure-access-administrator) | [CA Admin](#conditional-access-administrator) | [Apps Admin](#application-administrator) | [Global Reader](#security-reader-and-global-reader) | [Security Reader](#security-reader-and-global-reader) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | Manage Private Access (Quick Access, Private Network connectors, application segments, Enterprise apps) | ✅ |  |  |  | ✅ |  |  |
 | Manage Conditional Access policies | ✅ | ✅ |  | ✅ |  |  |  |
