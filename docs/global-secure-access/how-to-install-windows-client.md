@@ -1,5 +1,5 @@
 ---
-title: The Global Secure Access client for Windows (preview)
+title: The Global Secure Access client for Windows
 description: Install the Global Secure Access client for Windows.
 ms.service: global-secure-access
 ms.topic: how-to
@@ -9,7 +9,7 @@ author: kenwith
 manager: amycolannino
 ms.reviewer: lirazb
 ---
-# Global Secure Access client for Windows (preview)
+# Global Secure Access client for Windows
 
 Learn how to install the Global Secure Access client for Windows.
 
@@ -22,7 +22,7 @@ Learn how to install the Global Secure Access client for Windows.
 - Devices must be either Microsoft Entra joined or Microsoft Entra hybrid joined. 
    - Microsoft Entra registered devices aren't supported.
 - Local administrator credentials are required for installation.
-- The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
+- The product requires licensing. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 
 ### Known limitations
 
@@ -47,7 +47,7 @@ There are several other limitations based on the traffic forwarding profile in u
 The most current version of the Global Secure Access client can be downloaded from the Microsoft Entra admin center.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
-1. Browse to **Global Secure Access (Preview)** > **Connect** > **Client download**.
+1. Browse to **Global Secure Access** > **Connect** > **Client download**.
 1. Select **Download Client**.
 
     ![Screenshot of the download Windows client button.](media/how-to-install-windows-client/client-download-screen.png)
@@ -100,7 +100,7 @@ To troubleshoot the Global Secure Access client, right-click the client icon in 
       - **Flow** active provides a status of whether the connection is still open.
       - **Sent data** provides the number of bytes sent by the end-user device over the connection. 
       - **Received data** provides the number of bytes received by the end-user device over the connection. 
-      - **Correlation ID** is provided to each connection tunneled by the client. This ID allows tracing of the connection in the client logs. The client logs consist of event viewer, event trace (ETL), and the [Global Secure Access traffic logs](how-to-view-traffic-logs.md).
+      - **Correlation ID** is provided to each connection tunneled by the client. This ID allows tracing of the connection in the client logs. The client logs consist of event viewer, event trace (ETL), and the [Global Secure Access traffic logs (preview)](how-to-view-traffic-logs.md).
       - **Flow ID** is the internal ID of the connection used by the client shown in the ETL file.
       - **Channel name** identifies the traffic forwarding profile to which the connection is tunneled. This decision is taken according to the rules in the forwarding profile. 
    - **HostNameAcquisition** provides a list of hostnames that the client acquired based on the FQDN rules in the forwarding profile. Each hostname is shown in a new row. Future acquisition of the same hostname creates another row if DNS resolves the hostname (FQDN) to a different IP address.
@@ -117,7 +117,7 @@ Event logs related to the Global Secure Access client can be found in the Event 
 
 ### Disable IPv6 and secure DNS
 
-If you need assistance disabling IPv6 or secure DNS on Windows devices you're trying the preview with, the following script provides assistance.
+If you need assistance disabling IPv6 or secure DNS on Windows devices, the following script provides assistance.
 
 ```powershell
 function CreateIfNotExists

@@ -38,8 +38,6 @@ The web API that you want to call needs to define *Application permissions (app 
 
 Daemon applications require that a tenant admin pre-consent to the application calling the web API. Tenant admins provide this consent on the same **API permission** page by selecting **Grant admin consent to *our organization***
 
-If you're an ISV building a multitenant application, you should read the section [Deployment - case of multitenant daemon apps](scenario-daemon-production.md#deployment---multitenant-daemon-apps).
-
 [!INCLUDE [Pre-requisites](./includes/scenarios/scenarios-prerequisites.md)]
 
 ## Next steps
