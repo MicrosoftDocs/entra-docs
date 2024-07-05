@@ -74,7 +74,7 @@ To start using ID Governance, see [Govern access for applications in your enviro
 
 **For example**, administrators can see the users that have high-risk permissions but aren't using them, and automatically remove those unused permissions across authorization systems.
 
-To start using Permissions Management, see the [Quickstart guide](~/permissions-management/permissions-management-quickstart-guide.md)
+To start using Permissions Management, see the [Quickstart guide](~/permissions-management/permissions-management-quickstart-guide.md).
 
 ### Microsoft Entra Domain Services
 
@@ -121,9 +121,9 @@ To learn more, see [Overview of Microsoft Entra admin center](./entra-admin-cent
 
 ### Microsoft Graph API
 
-In addition to the Microsoft Entra admin center, the [Microsoft Graph API](~graph/api/resources/identity-network-access-overview?view=graph-rest-1.0) can be used to automate administrative tasks, including license deployments, and user lifecycle management.
+In addition to the Microsoft Entra admin center, the [Microsoft Graph API](/graph/api/overview) can be used to automate administrative tasks, including license deployments, and user lifecycle management.
 
-To learn more, see [Manage Microsoft Entra using Microsoft Graph](~graph/api/resources/identity-network-access-overview?view=graph-rest-1.0)
+To learn more, see [Manage Microsoft Entra using Microsoft Graph](/graph/api/resources/identity-network-access-overview).
 
 ### Microsoft identity platform
 
