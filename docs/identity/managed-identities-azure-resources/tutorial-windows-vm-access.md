@@ -1,6 +1,6 @@
 ---
 title: "Tutorial: Use a managed identity on a virtual machine (VM) to access Azure Resource Manager"
-description: A tutorial that walks you through the process of using a user-assigned managed identity on a virtual machine (VM) to access Azure Resource Manager.
+description: A tutorial that walks you through the process of using a system-assigned managed identity on a virtual machine (VM) to access Azure Resource Manager.
 author: barclayn
 manager: amycolannino
 ms.service: entra-id
@@ -15,7 +15,7 @@ appliesto:
 zone_pivot_groups: identity-windows-vm-access
 ---
 
-# Tutorial: Use a user-assigned managed identity on a VM to access Azure Resource Manager
+# Tutorial: Use a system-assigned managed identity on a VM to access Azure Resource Manager
 
 This quickstart shows you how to use a system-assigned managed identity as a virtual machine (VM)'s identity to access the Azure Resource Manager API. Managed identities for Azure resources are automatically managed by Azure and enable you to authenticate to services that support Microsoft Entra authentication without needing to insert credentials into your code. 
 

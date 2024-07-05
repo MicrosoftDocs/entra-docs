@@ -1,6 +1,6 @@
 ---
 title: Microsoft traffic Conditional Access policies
-description: Learn how to apply Conditional Access policies to the Microsoft traffic profile with Global Secure Access (preview).
+description: Learn how to apply Conditional Access policies to the Microsoft traffic profile with Global Secure Access.
 ms.service: global-secure-access
 ms.subservice: entra-internet-access
 ms.topic: how-to
@@ -18,10 +18,10 @@ This article describes how to apply Conditional Access policies to your Microsof
 
 ## Prerequisites
 
-* Administrators who interact with **Global Secure Access preview** features must have one or more of the following role assignments depending on the tasks they're performing.
-   * The [Global Secure Access Administrator role](../identity/role-based-access-control/permissions-reference.md#global-secure-access-administrator) role to manage the Global Secure Access preview features.
+* Administrators who interact with **Global Secure Access** features must have one or more of the following role assignments depending on the tasks they're performing.
+   * The [Global Secure Access Administrator role](../identity/role-based-access-control/permissions-reference.md#global-secure-access-administrator) role to manage the Global Secure Access features.
    * The [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) role to create and interact with Conditional Access policies.
-* The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
+* The product requires licensing. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 * To use the Microsoft traffic forwarding profile, a Microsoft 365 E3 license is recommended.
 
 ## Create a Conditional Access policy targeting the Microsoft traffic profile
@@ -39,7 +39,7 @@ The following example policy targets all users except for your break-glass accou
    1. Under **Exclude**:
       1. Select **Users and groups** and choose your organization's [emergency access or break-glass accounts](#user-exclusions).
       1. Select **Guest or external users** and select all checkboxes.
-1. Under **Target resources** > **Global Secure Access (Preview)***.
+1. Under **Target resources** > **Global Secure Access***.
    1. Choose **Microsoft traffic**.
 1. Under **Access controls** > **Grant**.
    1. Select **Require multifactor authentication**, **Require device to be marked as compliant**, and **Require Microsoft Entra hybrid joined device**

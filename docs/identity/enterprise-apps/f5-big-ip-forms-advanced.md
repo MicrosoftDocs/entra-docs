@@ -5,7 +5,7 @@ author: gargi-sinha
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to
-ms.date: 04/18/2024
+ms.date: 06/28/2024
 ms.author: gasinh
 ms.collection: M365-identity-device-management
 ms.custom: not-enterprise-apps
@@ -40,8 +40,8 @@ With a BIG-IP in front of the application, you can overlay the service with Micr
 The SHA solution has the following components:
 
 * **Application** - BIG-IP published service protected by SHA. 
-  * The application validates user credentials against Active Directory
-  * Use any directory, including Active Directory Lightweight Directory Services, open source, and so on
+  * The application validates user credentials
+  * Use any directory, open source, and so on
 * **Microsoft Entra ID** - Security Assertion Markup Language (SAML) identity provider (IdP) that verifies user credentials, Conditional Access, and SSO to the BIG-IP. 
   * With SSO, Microsoft Entra ID provides attributes to the BIG-IP, including user identifiers
 * **BIG-IP** - reverse-proxy and SAML service provider (SP) to the application. 
@@ -79,7 +79,7 @@ You need the following components:
   * See [Microsoft Entra Connect Sync: Understand and customize synchronization](~/identity/hybrid/connect/how-to-connect-sync-whatis.md)
 * An SSL certificate to publish services over HTTPS, or use default certificates while testing
   * See [SSL profile](./f5-bigip-deployment-guide.md#ssl-profile)
-* A form-based authentication application, or set up an IIS FBA app for testing
+* A form-based authentication application, or set up an Internet Information Services (IIS) form-based authentication (FBA) app for testing
   * See [Forms-based authentication](/troubleshoot/developer/webapps/aspnet/development/forms-based-authentication)
 
 ## BIG-IP configuration
@@ -116,23 +116,24 @@ Configure the BIG-IP registration to fulfill SAML tokens that BIG-IP APM request
 2. The **Single sign-on** pane appears.
 3. On the **Select a single sign-on method** page, select **SAML**.
 4. Select **No, I'll save later**.
-5. On the **Set up single sign-on with SAML** pane, select the **pen** icon. 
+5. On the **Set up single sign-on with SAML** pane, select the **pen** icon.
 6. For **Identifier**, replace the value with the BIG-IP published application URL.
-7. For **Reply URL**, replace the value, but retain the path for the application SAML SP endpoint. With this configuration, SAML flow operates in IdP-initiated mode. Microsoft Entra ID issues a SAML assertion, then the user is redirected to the BIG-IP endpoint. 
+7. For **Reply URL**, replace the value, but retain the path for the application SAML SP endpoint. With this configuration, SAML flow operates in IdP-initiated mode.
+8. Microsoft Entra ID issues a SAML assertion, then the user is redirected to the BIG-IP endpoint.
 9. For SP-initiated mode, for **Sign on URL**, enter the application URL.
-10. For **Logout Url**, enter the BIG-IP APM single logout (SLO) endpoint prepended by the service host header. Then, BIG-IP APM user sessions end when they sign out of Microsoft Entra ID. 
+10. For **Logout Url**, enter the BIG-IP APM single logout (SLO) endpoint prepended by the service host header.
+11. Then, BIG-IP APM user sessions end when users sign out of Microsoft Entra ID.
+12. Select **Save**.
+13. Close the SAML configuration pane.
+14. Skip the SSO test prompt.
+15. Make a note of the **User Attributes & Claims** section properties. Microsoft Entra ID issues the properties for BIG-IP APM authentication, and SSO to the back-end application.
+16. On the **SAML Signing Certificate** pane, select **Download**.
+17. The **Federation Metadata XML** file is saved to your computer.
 
    ![Screenshot of URLs in the SAML configuration.](./media/f5-big-ip-forms-advanced/basic-saml-configuration.png)
 
    > [!NOTE]
    > From Traffic Management Operating System (TMOS) v16 onward, the SAML SLO endpoint is `/saml/sp/profile/redirect/slo`.
-
-11. Select **Save**.
-12. Close the SAML configuration pane.
-13. Skip the SSO test prompt.
-14. Make a note of the **User Attributes & Claims** section properties. Microsoft Entra ID issues the properties for BIG-IP APM authentication, and SSO to the back-end application.
-15. On the **SAML Signing Certificate** pane, select **Download**.
-16. The **Federation Metadata XML** file is saved to your computer.
 
    ![Screenshot a Download option under SAML Signing Certificate.](./media/f5-big-ip-forms-advanced/saml-certificate.png)
 
@@ -164,7 +165,7 @@ SAML SP settings define the SAML SP properties that the APM uses to overlay the 
 
    ![Screenshot of the Create option on the SAML Service Provider tab.](./media/f5-big-ip-forms-advanced/f5-forms-configuration.png)
 
-4. On the **Create New SAML SP Service** pane, for **Name** and **Entity ID**, enter the defined name and entity ID.
+4. On **Create New SAML SP Service**, for **Name** and **Entity ID**, enter the defined name and entity ID.
 
    ![Screenshot of the Name and Entity ID fields under Create New SAML SP Service.](./media/f5-big-ip-forms-advanced/saml-sp-service.png)
 
@@ -403,16 +404,16 @@ For increased security, block direct access to the application, enforcing a path
 
 ## Test
 
-1. With a browser, connect to the application external URL, or in My Apps, select the application icon. 
-2. Authenticate to Microsoft Entra ID.
-3. You’re redirected to the BIG-IP endpoint for the application.
+1. The user connects to the application external URL, or in My Apps, and selects the application icon. 
+2. The user authenticates to Microsoft Entra ID.
+3. The user is redirected to the BIG-IP endpoint for the application.
 4. The password prompt appears. 
 5. The APM fills the username with the UPN from Microsoft Entra ID. The username is read-only for session consistency. Hide this field, if needed.
 
    ![Screenshot of the sign in page.](./media/f5-big-ip-forms-advanced/secured-sso.png)
 
 6. The information is submitted.
-7. You're signed in to the application.
+7. The user is signed in to the application.
 
    ![Screenshot of Welcome page.](./media/f5-big-ip-forms-advanced/welcome-message.png)
 
@@ -425,10 +426,10 @@ When troubleshooting, consider the following information:
 * Confirm element tags are consistent, or SSO fails
 * Complex forms generated dynamically might require dev tool analysis to understand the sign in form
 * Client initiation is better for sign in pages with multiple forms
-  * You can specify form name and customize the JavaScript form handler logic
-* FBA SSO methods optimize user experience and security by hiding form interactions:
+  * You can select the form name and customize the JavaScript form handler logic
+* FBA SSO methods hide form interactions to optimize user experience and security:
   * You can validate if the credentials are injected 
-  * In client-initiated mode, disable form autosubmission in your SSO profile
+  * In client-initiated mode, disable form auto submission in your SSO profile
   * Use dev tools to disable the two style properties that prevent the sign in page from appearing
 
   ![Screenshot of the Properties page.](./media/f5-big-ip-forms-advanced/properties.png)
@@ -475,7 +476,7 @@ To learn more, go to techdocs.f5.com for [Manual Chapter: Session Variables](htt
 
 ## Resources
 
-* Go to techdocs.f5.com for [Manual Chapter: Active Directory Authentication](https://techdocs.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-authentication-single-sign-on-11-5-0/2.html)
+* Go to techdocs.f5.com for [Manual Chapter: Authentication](https://techdocs.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-authentication-single-sign-on-11-5-0/2.html)
 * [Passwordless authentication](https://www.microsoft.com/security/business/identity/passwordless)
 * [What is Conditional Access?](~/identity/conditional-access/overview.md)
 * [Zero Trust framework to enable remote work](https://www.microsoft.com/security/blog/2020/04/02/announcing-microsoft-zero-trust-assessment-tool/)
