@@ -1,6 +1,6 @@
 ---
-title: Global Secure Access (preview) logs and monitoring
-description: Learn about the available Global Secure Access (preview) logs and monitoring options.
+title: Global Secure Access logs and monitoring
+description: Learn about the available Global Secure Access logs and monitoring options.
 author: kenwith
 ms.author: kenwith
 manager: amycolannino
@@ -9,9 +9,9 @@ ms.date: 04/18/2024
 ms.service: global-secure-access
 ---
 
-# Global Secure Access (preview) logs and monitoring
+# Global Secure Access logs and monitoring
 
-As an IT administrator, you need to monitor the performance, experience, and availability of the traffic flowing through your networks. Within the Global Secure Access (preview) logs there are many data points that you can review to gain insights into your network traffic. This article describes the logs and dashboards that are available to you and some common monitoring scenarios.
+As an IT administrator, you need to monitor the performance, experience, and availability of the traffic flowing through your networks. Within the Global Secure Access logs there are many data points that you can review to gain insights into your network traffic. This article describes the logs and dashboards that are available to you and some common monitoring scenarios.
 
 ## Dashboard
 
@@ -23,13 +23,13 @@ For more information, see [Global Secure Access dashboard](concept-traffic-dashb
 
 The Microsoft Entra audit log is a valuable source of information when researching or troubleshooting changes to your Microsoft Entra environment. Changes related to Global Secure Access are captured in the audit logs in several categories, such as filtering policy, forwarding profiles, remote network management, and more.
 
-For more information, see [Global Secure Access audit logs](how-to-access-audit-logs.md).
+For more information, see [Global Secure Access audit logs (preview)](how-to-access-audit-logs.md).
 
 ## Traffic logs
 
-The Global Secure Access traffic logs provide a summary of the network connections and transactions that are occurring in your environment. These logs look at *who* accessed *what* traffic from *where* to *where* and with what *result*. The traffic logs provide a snapshot of all connections in your environment and breaks that down into traffic that applies to your traffic forwarding profiles. The logs details provide the traffic type destination, source IP, and more.
+The Global Secure Access traffic logs (preview) provide a summary of the network connections and transactions that are occurring in your environment. These logs look at *who* accessed *what* traffic from *where* to *where* and with what *result*. The traffic logs provide a snapshot of all connections in your environment and breaks that down into traffic that applies to your traffic forwarding profiles. The logs details provide the traffic type destination, source IP, and more.
 
-For more information, see [Global Secure Access traffic logs](how-to-view-traffic-logs.md).
+For more information, see [Global Secure Access traffic logs (preview)](how-to-view-traffic-logs.md).
 
 ## Enriched Office 365 logs
 

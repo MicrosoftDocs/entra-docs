@@ -1,14 +1,12 @@
 ---
 title: Configure F5 BIG-IP Easy Button for SSO to SAP ERP
-description: Learn to secure SAP ERP using Microsoft Entra ID with F5 BIG-IP Easy Button Guided Configuration.
-
+description: Learn to secure SAP Enterprise Resource Planning (ERP) using Microsoft Entra ID with F5 BIG-IP Easy Button Guided Configuration.
 author: gargi-sinha
 manager: martinco
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to
-
-ms.date: 05/02/2023
+ms.date: 06/28/2024
 ms.author: gasinh
 ms.collection: M365-identity-device-management
 ms.custom: not-enterprise-apps
@@ -18,7 +16,7 @@ ms.custom: not-enterprise-apps
 
 # Tutorial: Configure F5 BIG-IP Easy Button for SSO to SAP ERP
 
-In this article, learn to secure SAP ERP using Microsoft Entra ID, with F5 BIG-IP Easy Button Guided Configuration 16.1. Integrating a BIG-IP with Microsoft Entra ID has many benefits:
+In this article, learn to secure SAP Enterprise Resource Planning (ERP) using Microsoft Entra ID, with F5 BIG-IP Easy Button Guided Configuration 16.1. Integrating a BIG-IP with Microsoft Entra ID has many benefits:
 
 * [Zero Trust framework to enable remote work](https://www.microsoft.com/security/blog/2020/04/02/announcing-microsoft-zero-trust-assessment-tool/) 
 * [What is Conditional Access?](~/identity/conditional-access/overview.md)
@@ -50,20 +48,20 @@ SHA supports SP and IdP initiated flows. The following image illustrates the SP-
 
    ![Diagram of secure hybrid access, the SP initiated flow.](./media/f5-big-ip-easy-button-sap-erp/sp-initiated-flow.png)
 
-1. User connects to application endpoint (BIG-IP)
-2. BIG-IP APM access policy redirects user to Microsoft Entra ID (SAML IdP)
-3. Microsoft Entra ID pre-authenticates user and applies enforced Conditional Access policies
-4. User is redirected to BIG-IP (SAML SP) and SSO occurs with issued SAML token 
-5. BIG-IP requests Kerberos ticket from KDC
-6. BIG-IP sends request to back-end application, with the Kerberos ticket for SSO
-7. Application authorizes request and returns payload
+1. User connects to application endpoint (BIG-IP).
+2. BIG-IP Access Policy Manager (APM) access policy redirects user to Microsoft Entra ID (SAML IdP).
+3. Microsoft Entra ID preauthenticates user and applies enforced Conditional Access policies.
+4. User is redirected to BIG-IP (SAML SP) and SSO occurs with issued SAML token.
+5. BIG-IP requests Kerberos ticket from the key distribution center (KDC).
+6. BIG-IP sends request to back-end application, with the Kerberos ticket for SSO.
+7. Application authorizes request and returns payload.
 
 ## Prerequisites
 
 * A Microsoft Entra ID Free account, or higher
-  * If you don't have one, get an [Azure free account](https://azure.microsoft.com/free/active-directory/)
+  * If you don't have one, get an [Azure free account](https://azure.microsoft.com/free/)
 * A BIG-IP or a BIG-IP Virtual Edition (VE) in Azure
-  * See, [Deploy F5 BIG-IP Virtual Edition VM in Azure](./f5-bigip-deployment-guide.md)
+  * See, [Deploy F5 BIG-IP Virtual Edition virtual machine (VM) in Azure](./f5-bigip-deployment-guide.md)
 * Any of the following F5 BIG-IP licenses:
     * F5 BIG-IP® Best bundle
     * F5 BIG-IP APM standalone license
@@ -91,7 +89,7 @@ Before a client or service accesses Microsoft Graph, the Microsoft identity plat
 
 See, [Quickstart: Register an application with the Microsoft identity platform](~/identity-platform/quickstart-register-app.md)
 
-Register the Easy Button client in Microsoft Entra ID, then it's allowed to establish a trust between SAML SP instances of a BIG-IP published application, and Microsoft Entra ID as the SAML IdP.
+Register the Easy Button client in Microsoft Entra ID, then establishes a trust between SAML SP instances of a BIG-IP published application, and Microsoft Entra ID as the SAML IdP.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 2. Browse to **Identity** > **Applications** > **App registrations** > **New registration**.
@@ -114,7 +112,7 @@ Register the Easy Button client in Microsoft Entra ID, then it's allowed to esta
 
 9. Grant admin consent for your organization.
 10. On **Certificates & Secrets**, generate a new **client secret**.
-11. Note the secret to use later.
+11. Note the secret.
 12. From **Overview**, note the **Client ID** and **Tenant ID**.
 
 ## Configure the Easy Button
@@ -173,8 +171,6 @@ Use the Service Provider settings to define SAML SP instance properties of the a
 
    ![Screenshot of options and selections for Service Provider.](./media/f5-big-ip-easy-button-ldap/service-provider-security-settings.png)
 
-<a name='azure-active-directory'></a>
-
 ### Microsoft Entra ID
 
 Easy Button has application templates for Oracle PeopleSoft, Oracle E-Business Suite, Oracle JD Edwards, SAP ERP, and a generic SHA template. 
@@ -219,7 +215,7 @@ Learn more: [Tutorial: Configure F5 BIG-IP Access Policy Manager for Kerberos au
 
 #### Additional User Attributes
 
-The **Additional User Attributes** tab supports distributed systems requiring attributes stored in other directories, for session augmentation. Thus, attributes from an LDAP source are injected as more SSO headers to control role-based access, Partner IDs, and so on.
+The **Additional User Attributes** tab supports distributed systems requiring attributes stored in other directories, for session augmentation. Thus, attributes from a Lightweight Directory Access Protocol (LDAP) source are injected as more SSO headers to control role-based access, Partner IDs, and so on.
 
    >[!NOTE] 
    >This feature has no correlation to Microsoft Entra ID but is another attribute source.
@@ -230,7 +226,7 @@ Conditional Access policies are enforced after Microsoft Entra preauthentication
 
 The **Available Policies** view lists Conditional Access policies without user-based actions.
 
-The **Selected Policies** view lists policies targeting cloud apps. You can't deselect these policies, nor move them to the Available Policies list because they're enforced at the tenant level.
+The **Selected Policies** view lists policies targeting cloud apps. You can't deselect policies enforced at the tenant level, nor move them to the Available Policies list.
 
 To select a policy for the application being published:
 
@@ -249,12 +245,12 @@ Selected policies have an **Include** or **Exclude** option checked. If both opt
 
 A virtual server is a BIG-IP data plane object represented by a virtual IP address. This server listens for client requests to the application. Received traffic is processed and evaluated against the APM profile associated with the virtual server. Traffic is then directed according to policy.
 
-1. Enter a **Destination Address**. Use the IPv4/IPv6 address BIG-IP uses to receive client traffic. A corresponding record is in DNS, which enables clients to resolve the external URL of BIG-IP published application to this IP. You can use a test computer localhost DNS for testing.
+1. Enter a **Destination Address**. Use the IPv4/IPv6 address BIG-IP uses to receive client traffic. A corresponding record is in the domain name server (DNS), which enables clients to resolve the external URL of BIG-IP published application to this IP. You can use a test computer localhost DNS for testing.
 2. For **Service Port**, enter **443**.
 3. Select **HTTPS**.
 4. For **Enable Redirect Port**, check the box.
 5. For **Redirect Port**, enter a number and select **HTTP**. This option redirects incoming HTTP client traffic to HTTPS.
-6. Select the **Client SSL Profile** you created. Or, leave the default for testing. The Client SSL Profile enables the virtual server for HTTPS, so client connections are encrypted over TLS. 
+6. Select the **Client SSL Profile** you created. Or, leave the default for testing. The Client SSL Profile enables the virtual server for HTTPS, so client connections are encrypted over Transport Layer Security (TLS). 
 
   ![Screenshot of options and selections for Virtual Server Properties.](./media/f5-big-ip-easy-button-ldap/virtual-server.png)
 
@@ -277,11 +273,11 @@ Use SSO to enable access BIG-IP published services without entering credentials.
 3. For **Username Source**, enter a session variable as the user ID source. `session.saml.last.identity` holds the Microsoft Entra claim with the signed-in user ID.
 4. The **User Realm Source** option is required if the user domain differs from the BIG-IP kerberos realm. Thus, the APM session variable contains the signed in user domain. For example, `session.saml.last.attr.name.domain`. 
 
-   ![Screenshot of options and selections for Single Sign-On & HTTP Headers.](./media/f5-big-ip-kerberos-easy-button/sso-headers.png)
+   ![Screenshot of options and selections for single sign-on and HTTP Headers.](./media/f5-big-ip-kerberos-easy-button/sso-headers.png)
 
 5. For **KDC**, enter a domain controller IP, or FQDN if the DNS is configured.
-6. For **UPN Support**, check the box. The APM uses the UPN for kerberos ticketing.
-7. For **SPN Pattern**, enter **HTTP/%h**. This action informs the APM to use the client-request host header and build the SPN for which it's requesting a kerberos token.
+6. For **UPN Support**, check the box. The APM uses the User Principal Name (UPN) for kerberos ticketing.
+7. For **SPN Pattern**, enter **HTTP/%h**. This action informs the APM to use the client-request host header and build the Service Principal Name (SPN) for which it's requesting a kerberos token.
 8. For **Send Authorization,** disable the option for applications that negotiate authentication. For example, **Tomcat**.
 
    ![Screenshot of options and selections for SSO Method Configuration.](./media/f5-big-ip-kerberos-easy-button/sso-method-config.png)
@@ -302,9 +298,9 @@ During deployment, the published-application SAML federation metadata is importe
 2. Verify the application is in the tenant **Enterprise applications** list.
 3. With a browser, connect to the application external URL or select the application **icon** in [My Apps](https://myapps.microsoft.com/). 
 4. Authenticate to Microsoft Entra ID.
-5. You're redirected to the BIG-IP virtual server and signed in through SSO.
+5. Redirection takes you to the BIG-IP virtual server and signed in through SSO.
 
-For increased security, you can block direct access to the application, thereby enforcing a path through the BIG-IP.
+For increased security, you can block direct access to the application and enforce a path through the BIG-IP.
 
 ## Advanced deployment
 
@@ -335,9 +331,9 @@ If you're unable to access the SHA-secured application, see the following troubl
 * Confirm no duplicate SPNs in the environment. 
   * On a domain computer, at the command line, use the query: `setspn -q HTTP/my_target_SPN`
 
-To validate an IIS application KCD configuration, see [Troubleshoot KCD configurations for Application Proxy](~/identity/app-proxy/application-proxy-back-end-kerberos-constrained-delegation-how-to.md) 
+To validate an Internet Information Services (IIS) application KCD configuration, see [Troubleshoot KCD configurations for Application Proxy](~/identity/app-proxy/application-proxy-back-end-kerberos-constrained-delegation-how-to.md) 
 
-Go to techdocs.f5.com for [Kerberos Single Sign-On Method](https://techdocs.f5.com/en-us/bigip-15-1-0/big-ip-access-policy-manager-single-sign-on-concepts-configuration/kerberos-single-sign-on-method.html)
+Go to techdocs.f5.com for [Kerberos single sign-on method](https://techdocs.f5.com/en-us/bigip-15-1-0/big-ip-access-policy-manager-single-sign-on-concepts-configuration/kerberos-single-sign-on-method.html)
 
 ### Log analysis
 
