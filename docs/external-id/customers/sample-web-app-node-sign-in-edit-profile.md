@@ -95,7 +95,7 @@ git clone https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial.
     npm install
     ```
 
-## Configure the sample web app and API
+## Configure the sample web app
 
 To use your MFA web API app registration in the app sample:
 
