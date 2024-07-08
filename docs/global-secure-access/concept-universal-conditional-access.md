@@ -25,7 +25,13 @@ This functionality allows administrators to consistently enforce Conditional Acc
 * The product requires licensing. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 * To use the Microsoft traffic forwarding profile, a Microsoft 365 E3 license is recommended.
 
-### Known limitations
+### Known tunnel authorization limitations
+
+Both the Microsoft and Internet access forwarding profiles use Microsoft Entra ID Conditional Access policies to authorize access to their tunnels in the Global Secure Access Client. This means that you can Grant or Block access to the Microsoft traffic and Internet access forwarding profiles in Conditional Access. In some cases when authorization to a tunnel isn't granted, the recovery path to regain access to resources requires accessing destinations on either the Microsoft traffic or Internet access forwarding profile, locking a user out from accessing anything on their machine.
+
+One example is if you block access to the Internet access target resource on noncompliant devices, you leave Microsoft Entra Internet Access users unable to bring their devices back to compliance. The way to mitigate this issue is bypassing [Network endpoints for Microsoft Intune](/mem/intune/fundamentals/intune-endpoints) and any other destinations accessed in [Custom compliance discovery scripts for Microsoft Intune](/mem/intune/protect/compliance-custom-script). You can perform this operation as part of custom bypass in the [Internet access forwarding profile](concept-traffic-forwarding.md).
+
+### Other known limitations
 
 - Continuous access evaluation is not currently supported for Universal Conditional Access for Microsoft traffic.
 - Applying Conditional Access policies to Private Access traffic is not currently supported. To model this behavior, you can apply a Conditional Access policy at the application level for Quick Access and Global Secure Access apps. For more information, see [Apply Conditional Access to Private Access apps](how-to-target-resource-private-access-apps.md).
