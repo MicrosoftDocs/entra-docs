@@ -13,13 +13,13 @@ ms.date: 06/13/2024
 ---
 # Microsoft Entra deployment scenario - Workforce and guest onboarding, identity, and access lifecycle governance across all your apps
 
-The Microsoft Entra Suite deployment series provides organizations with a detailed guidance on how to combine and test the following products in the suite:
+The Microsoft Entra deployment scenarios provide you with detailed guidance on how to combine and test these Microsoft Entra Suite products:
 
 - [Microsoft Entra ID Protection](../id-protection/overview-identity-protection.md)
 - [Microsoft Entra ID Governance](../id-governance/identity-governance-overview.md)
 - [Microsoft Entra Verified ID: Face Check](../verified-id/decentralized-identifier-overview.md)
-- [Microsoft Entra Internet Access](../global-secure-access/concept-internet-access.md) (Preview)
-- [Microsoft Entra Private Access](../global-secure-access/concept-private-access.md) (Preview)
+- [Microsoft Entra Internet Access](../global-secure-access/concept-internet-access.md)
+- [Microsoft Entra Private Access](../global-secure-access/concept-private-access.md)
 
 In these guides, we describe scenarios that show the value of the Microsoft Entra Suite and how its capabilities work together.
 
@@ -29,18 +29,18 @@ In these guides, we describe scenarios that show the value of the Microsoft Entr
 
 ## Scenario overview
 
-In this article, we describe how to configure Microsoft Entra Suite products for a scenario in which the fictional organization, Contoso, wants to hire new remote employees and provide them with secure and seamless access to necessary apps and resources. They want to invite and collaborate with external users (such as partners, vendors, or customers) and provide them with access to relevant apps and resources.
+In this guide, we describe how to configure Microsoft Entra Suite products for a scenario in which the fictional organization, Contoso, wants to hire new remote employees and provide them with secure and seamless access to necessary apps and resources. They want to invite and collaborate with external users (such as partners, vendors, or customers) and provide them with access to relevant apps and resources.
 
-Contoso uses [Microsoft Entra Verified ID](../verified-id/decentralized-identifier-overview.md) to issue and verify digital proofs of identity and status for new remote employees (based on human resources data) and external users (based on email invitations). Digital wallets store identity proof and status to allow access to apps and resources. As an extra security measure, Contoso might verify identity with FaceCheck facial recognition based on the picture that the credential stores.
+Contoso uses [Microsoft Entra Verified ID](../verified-id/decentralized-identifier-overview.md) to issue and verify digital proofs of identity and status for new remote employees (based on human resources data) and external users (based on email invitations). Digital wallets store identity proof and status to allow access to apps and resources. As an extra security measure, Contoso might verify identity with Face Check facial recognition based on the picture that the credential stores.
 
 They use Microsoft Entra ID Governance to create and grant access packages for employees and external users based on verifiable credentials.
 
 - For employees, they base access packages on job function and department. Access packages include cloud and on-premises apps and resources to which employees need access.
 - For external collaborators, they base access packages on invitation to define external user roles and permissions. The access packages include only apps and resources to which external users need access.
 
-Employees and external users can request access packages through a self-service portal and provide their digital proofs as identity verification. With single sign-on and multifactor authentication, employees and external users to use Microsoft Entra accounts to access apps and resources that their access packages include. Contoso verifies credentials and grants access packages without requiring manual approvals or provisioning.
+Employees and external users can request access packages through a self-service portal where they provide digital proofs as identity verification. With single sign-on and multifactor authentication, employee and external user Microsoft Entra accounts provide access to apps and resources that their access packages include. Contoso verifies credentials and grants access packages without requiring manual approvals or provisioning.
 
-Contoso uses Microsoft Entra Identity Protection and Conditional Access (CA) to monitor and protect accounts from risky sign-ins and user behavior. They enforce appropriate access controls based on location, device, and risk level.
+Contoso uses Microsoft Entra ID Protection and Conditional Access (CA) to monitor and protect accounts from risky sign-ins and user behavior. They enforce appropriate access controls based on location, device, and risk level.
 
 ## Configure prerequisites
 
@@ -79,7 +79,7 @@ Follow these prerequisite steps to add a trusted external organization (B2B) for
 
 ### Create catalog
 
-Follow these prerequisite steps to create an Entitlement management catalog for the scenario.
+Follow these steps to create an Entitlement management catalog for the scenario.
 
 1. Sign in to the Microsoft Entra admin center with at least an Identity Governance Administrator role.
 1. Go to **Identity governance** \> **Entitlement management** \> **Catalogs**.
@@ -87,8 +87,8 @@ Follow these prerequisite steps to create an Entitlement management catalog for 
 
    :::image type="content" source="media/deployment-scenario-workforce-guest/identity-governance-catalogs-inline.png" alt-text="Screenshot of New access review, Enterprise applications, All applications, Identity Governance, New catalog." lightbox="media/deployment-scenario-workforce-guest/identity-governance-catalogs-expanded.png":::
 
-1. Enter a unique name for the catalog and provide a description. Requestors see this information in an access package's details.
-1. To create access packages in this catalog for internal users, select **Enabled for external users** \> **No**.
+1. Enter a unique name and description for the catalog               . Requestors see this information in an access package's details.
+1. To create access packages in this catalog only for internal users, select **Enabled for external users** \> **No**.
 
    :::image type="content" source="media/deployment-scenario-workforce-guest/identity-governance-new-catalog.png" alt-text="Screenshot of New catalog with No selected for the Enabled for external users control.":::
 
@@ -118,8 +118,8 @@ Follow these steps to create an access package in entitlement management with Ve
 1. Scroll to **Required Verified Ids**.
 1. Select **+ Add issuer**. Select an issuer from the Microsoft Entra Verified ID network. Ensure that you select an issuer from an existing verified identity in the guest wallet.
 1. **Optional:** In **Approval**, specify whether users require approval when they request the access package.
-1. **Optional:** In **Requestor information**, select **Questions**. Enter a question that you want to ask the requestor. This question is known as the display string. To add localization options, select **Add localization**.
-1. For **Lifecycle**, specify when a user's assignment to the access package expires. Specify whether users can extend their assignments. For **Expiration,** set **Access package assignments** expiration to **On date**, **Number of days**, **Number of hours**, or **Never**.
+1. **Optional:** In **Requestor information**, select **Questions**. Enter a question (known as the display string) that you want to ask the requestor. To add localization options, select **Add localization**.
+1. For **Lifecycle**, specify when a user's assignment to the access package expires. Specify whether users can extend their assignments. For **Expiration**, set **Access package assignments** expiration to **On date**, **Number of days**, **Number of hours**, or **Never**.
 1. In **Access Reviews**, select **Yes**.
 1. In **Starting on**, select the current date. Set **Review Frequency** to **Quarterly**. Set **Duration (in Days)** to 21.
 
@@ -142,7 +142,7 @@ Follow these steps to create an access package in entitlement management with Ve
 1. Scroll to **Required Verified Ids**.
 1. Select **+ Add issuer**. Select an issuer from the Microsoft Entra Verified ID network. Ensure that you select an issuer from an existing verified identity in the guest wallet.
 1. **Optional:** In **Approval**, specify whether users require approval when they request the access package.
-1. **Optional:** In **Requestor information**, select **Questions**. Enter a question that you want to ask the requestor. This question is known as the display string. To add localization options, select **Add localization**.
+1. **Optional:** In **Requestor information**, select **Questions**. Enter a question (known as the display string) that you want to ask the requestor. To add localization options, select **Add localization**.
 1. For **Lifecycle**, specify when a user's assignment to the access package expires. Specify whether users can extend their assignments. For **Expiration,** set **Access package assignments** expiration to **On date**, **Number of days**, **Number of hours**, or **Never**.
 1. In **Access Reviews**, select **Yes**.
 1. In **Starting on**, select the current date. Set **Review Frequency** to **Quarterly**. Set **Duration (in Days)** to 21.
@@ -181,13 +181,13 @@ After you configure an access package with a Verified ID requirement, end-users 
    :::image type="content" source="media/deployment-scenario-workforce-guest/present-verified-id.png" alt-text="Screenshot of My Access, Available, Access packages, Present Verified ID, QR Code.":::
 
 1. After you share your credentials, continue with the approval workflow.
-1. **Optional:** Simulate user risk by following these instructions: [Simulating risk detections in Microsoft Entra ID Protection](../id-protection/howto-identity-protection-simulate-risk.md). You might need to try multiple times to raise the user risk to medium or high.
+1. **Optional:** Follow the [Simulating risk detections in Microsoft Entra ID Protection](../id-protection/howto-identity-protection-simulate-risk.md) instructions. You might need to try multiple times to raise the user risk to medium or high.
 1. Try accessing the application that you previously created for the scenario to confirm blocked access. You might need to wait up to one hour for block enforcement.
-1. Validate blocked access by the Conditional Access (CA) policy that you created earlier using sign-in logs. Open non-interactive sign in logs from the *ZTNA Network Access Client -- Private* application. View logs from the Private Access application name that you previously created as the **Resource name**.
+1. Use sign in logs to validate blocked access by the Conditional Access (CA) policy that you created earlier. Open non-interactive sign in logs from the *ZTNA Network Access Client -- Private* application. View logs from the Private Access application name that you previously created as the **Resource name**.
 
 ## Related content
 
-- [Microsoft Entra Verified ID \| Microsoft Security](https://www.microsoft.com/security/business/identity-access/microsoft-entra-verified-id)
+- [Microsoft Entra Verified ID](https://www.microsoft.com/security/business/identity-access/microsoft-entra-verified-id)
 - [Plan your Microsoft Entra Verified ID verification solution](../verified-id/plan-verification-solution.md)
 - [What is Microsoft Entra ID Protection?](../id-protection/overview-identity-protection.md)
 - [Microsoft Entra ID Governance](../id-governance/identity-governance-overview.md)

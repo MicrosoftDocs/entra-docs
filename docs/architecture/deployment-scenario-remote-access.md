@@ -13,7 +13,7 @@ ms.date: 06/13/2024
 ---
 # Microsoft Entra deployment scenario - Modernize remote access to on-premises apps with MFA per app
 
-The Microsoft Entra Suite deployment series provides organizations with a detailed guidance on how to combine and test the following products in the suite:
+The Microsoft Entra deployment scenarios provide you with detailed guidance on how to combine and test these Microsoft Entra Suite products:
 
 - [Microsoft Entra ID Protection](../id-protection/overview-identity-protection.md)
 - [Microsoft Entra ID Governance](../id-governance/identity-governance-overview.md)
@@ -35,17 +35,17 @@ Microsoft Entra Private Access provides users (whether in an office or working r
 
 Remote users can connect to private apps across hybrid and multicloud environments, private networks, and data centers from any device and network without requiring a VPN solution. The service offers per-app adaptive access based on Conditional Access (CA) policies for more granular security than a traditional VPN solution.
 
-Microsoft Entra ID Protection cloud-based identity and access management (IAM) solution helps protect user identities and credentials from compromise.
+Microsoft Entra ID Protection cloud-based identity and access management (IAM) helps protect user identities and credentials from compromise.
 
 You can replicate these high-level steps for the Contoso solution as described in this scenario.
 
 1. Sign up for Microsoft Entra Suite. Enable and configure Microsoft Entra Internet and Private Access to desired network and security settings.
-1. Deploy [Microsoft Global Secure Access client](../global-secure-access/how-to-install-windows-client.md) on user devices and [Microsoft Entra Private Access connectors](sse-deployment-guide-private-access.md) on private networks. Include multicloud IaaS based virtual networks to access apps and resources on Contoso networks.
+1. Deploy [Microsoft Global Secure Access client](../global-secure-access/how-to-install-windows-client.md) on user devices and [Microsoft Entra Private Access connectors](sse-deployment-guide-private-access.md) on private networks. Include multicloud Internet-as-a-Service (IaaS)-based virtual networks to access apps and resources on Contoso networks.
 1. Set up private apps as [Global Secure Access apps](../global-secure-access/how-to-configure-per-app-access.md). Assign appropriate users and groups. Set up [Conditional Access policies](../identity/conditional-access/plan-conditional-access.md) for those apps and users. With this setup, you can achieve minimum access by allowing access only to users and groups that require access.
-1. Enable [Microsoft Entra ID Protection](../id-protection/overview-identity-protection.md) for users to allow administrators to investigate and remediate risks to keep organizations safe and secure. Risks can be fed into tools like Conditional Access to make access decisions and fed back to a security information and event management (SIEM) tool for investigation.
-1. Use enhanced logs and analytics from Microsoft Entra Internet Access, Microsoft Entra Private Access, and Microsoft Entra Identity Protection to track and evaluate network and security status. This configuration helps your Security Operations Center (SOC) team to promptly detect and examine threats to prevent escalation.
+1. Enable [Microsoft Entra ID Protection](../id-protection/overview-identity-protection.md) to allow administrators to investigate and remediate risks to keep organizations safe and secure. Risks can be fed into tools like Conditional Access to make access decisions and fed back to a security information and event management (SIEM) tool for investigation.
+1. Use enhanced logs and analytics from Microsoft Entra Internet Access, Microsoft Entra Private Access, and Microsoft Entra ID Protection to track and evaluate network and security status. This configuration helps your Security Operations Center (SOC) team to promptly detect and examine threats to prevent escalation.
 
-Microsoft Entra solutions offer these advantages over VPN:
+Microsoft Entra Suite solutions offer these advantages over VPN:
 
 - Easier and consolidated management
 - Lower VPN costs
@@ -54,27 +54,27 @@ Microsoft Entra solutions offer these advantages over VPN:
 - Preparedness for SASE
 
 
-### Requirements for modernize remote access scenario
+## Requirements for remote access scenario
 
 This section defines the requirements for the scenario's solution.
 
-#### Permissions for modernize remote access scenario
+### Permissions for remote access scenario
 
 Administrators who interact with Global Secure Access preview features require the Global Secure Access Administrator and Application Administrator roles.
 
 Conditional Access (CA) policy configuration requires the Conditional Access Administrator or Security Administrator role. Some features might require more roles.
 
-#### Prerequisites for modernize remote access scenario
+### Prerequisites for remote access scenario
 
 To successfully deploy and test this scenario, configure these prerequisites:
 
-1. Microsoft Entra tenant with Microsoft Entra ID P1 license. Configure Microsoft Entra ID to test Microsoft Entra Identity Protection. [Purchase licenses or obtain trial licenses](https://www.microsoft.com/security/business/microsoft-entra-pricing).
+1. Microsoft Entra tenant with Microsoft Entra ID P1 license. Configure Microsoft Entra ID to test Microsoft Entra ID Protection. [Purchase licenses or obtain trial licenses](https://www.microsoft.com/security/business/microsoft-entra-pricing).
    - One user with at least Global Secure Access Administrator and Application Administrator roles to configure Microsoft's Security Service Edge
-   - At least one user as client test user in your tenant
+   - At least one client test user in your tenant
 1. One Windows client device with this configuration:
    - Windows 10/11 64-bit version
    - Microsoft Entra joined or hybrid joined
-   - Internet connected and no corpnet access or VPN
+   - Internet connected and no corporate network access or VPN
 1. Download and install Global Secure Access Client on client device. The [Global Secure Access Client for Windows](../global-secure-access/how-to-install-windows-client.md) article describes prerequisites and installation.
 1. To test Microsoft Entra Private Access, configure a Windows server to function as the resource server:
    - Windows Server 2012 R2 or later
@@ -90,7 +90,7 @@ This diagram illustrates the minimum architecture requirements to deploy and tes
 
 :::image type="content" source="media/deployment-scenario-remote-access/private-access-requirements.png" alt-text="Diagram shows requirements that include Microsoft Entra ID Tenant with P1 license.":::
 
-### Configure Global Secure Access for modernize remote access scenario
+### Configure Global Secure Access for remote access scenario
 
 In this section, we activate Global Secure Access through the Microsoft Entra admin center. We then set up initial configurations that this scenario requires.
 
@@ -103,7 +103,7 @@ In this section, we activate Global Secure Access through the Microsoft Entra ad
 
      :::image type="content" source="media/deployment-scenario-remote-access/private-access-traffic-profile.png" alt-text="Screenshot of traffic forwarding showing enabled Private Access profile control." lightbox="media/deployment-scenario-remote-access/private-access-traffic-profile-expanded.png":::
 
-#### Install Global Secure Access client for modernize remote access scenario
+### Install Global Secure Access client for remote access scenario
 
 Microsoft Entra Internet Access for Microsoft 365 and Microsoft Entra Private Access use the Global Secure Access client on Windows devices. This client acquires and forwards network traffic to Microsoft's Security Service Edge Solution. Complete these installation and configuration steps:
 
@@ -117,7 +117,7 @@ Microsoft Entra Internet Access for Microsoft 365 and Microsoft Entra Private Ac
 1. In the Window taskbar, the Global Secure Access Client first appears as disconnected. After a few seconds, when prompted for credentials, enter test user's credentials.
 1. In the Window taskbar, hover over the Global Secure Access Client icon and verify **Connected** status.
 
-### Set up connector server for modernize remote access scenario
+### Set up connector server for remote access scenario
 
 The connector server communicates with Microsoft's Security Service Edge Solution as the gateway to the corporate network. It uses outbound connections through 80 and 443 and doesn't require inbound ports. Learn [How to configure connectors for Microsoft Entra Private Access](../global-secure-access/how-to-configure-connectors.md#open-ports). Complete these configuration steps:
 
@@ -131,20 +131,20 @@ The connector server communicates with Microsoft's Security Service Edge Solutio
 
 In this scenario, we use the default connector group with one connector server. In a production environment, create connector groups with multiple connector servers. See detailed guidance for [publishing apps on separate networks by using connector groups](../identity/app-proxy/application-proxy-connector-groups.md).
 
-### Create security group for modernize remote access scenario
+### Create security group for remote access scenario
 
 In this scenario, we use a security group to assign permissions to the Private Access application and to target Conditional Access policies.
 
 1. In the Microsoft Entra admin center, create a new cloud-only security group.
 1. Add test user as a member.
 
-### Determine private resource for modernize remote access scenario
+### Determine private resource for remote access scenario
 
 In this scenario, we use file share services as a sample resource. You can use any private application or resource. You need to know which ports and protocols the application uses to publish it with Microsoft Entra Private Access.
 
 Identify a server with a file share to publish and note its IP address. File share services use port 445/TCP.
 
-### Publish application for modernize remote access scenario
+### Publish application for remote access scenario
 
 Microsoft Entra Private Access supports transmission control protocol (TCP) applications using any port. To connect to the file server (TCP port 445) over the internet, complete these steps:
 
@@ -161,7 +161,7 @@ Microsoft Entra Private Access supports transmission control protocol (TCP) appl
 1. Go to **Identity** \> **Applications** \> **Enterprise applications**. Select the new application.
 1. Select **Users and groups**. Add the security group that you created earlier with test users that access this file share from the internet.
 
-### Secure published application for modernize remote access scenario
+### Secure published application for remote access scenario
 
 In this section, we create a Conditional Access (CA) policy that blocks access to the new application when a user's risk is elevated.
 
@@ -174,7 +174,7 @@ In this section, we create a Conditional Access (CA) policy that blocks access t
 1. Review your settings.
 1. Select **Create**.
 
-### Validate access for modernize remote access scenario
+### Validate access for remote access scenario
 
 In this section, we validate that the user can access the file server while there's no risk. Confirm that access is blocked when risk is detected.
 
@@ -193,7 +193,7 @@ In this section, we describe how to configure Microsoft Entra Suite products for
 
 You can replicate these high-level steps for the Contoso solution as described in this scenario.
 
-1. To verify explicitly, configure [Microsoft Entra ID Private Access](../global-secure-access/concept-private-access.md) to access the corporate network on a per-application basis. Use the unified set of access controls provided by Conditional Access and [Microsoft Entra Identity Protection](../id-protection/overview-identity-protection.md) to grant access to the corporate network based on identity, endpoint, and risk signal that they use with Microsoft 365 and other cloud applications.
+1. To verify explicitly, configure [Microsoft Entra ID Private Access](../global-secure-access/concept-private-access.md) to access the corporate network on a per-application basis. Use the unified set of access controls provided by Conditional Access and [Microsoft Entra ID Protection](../id-protection/overview-identity-protection.md) to grant access to the corporate network based on identity, endpoint, and risk signal that they use with Microsoft 365 and other cloud applications.
 1. To enforce least privilege, use [Microsoft Entra ID Governance](../id-governance/identity-governance-overview.md) to create access packages to include per-app network access alongside the applications that require it. This approach grants corporate network access to employees aligned with their job functions across their joiner/mover/leaver lifecycle.
 
 As part of this transformation, SecOps teams achieve richer and more cohesive security analytics to better identify security threats. These are the benefits of using the solutions together:
@@ -231,7 +231,7 @@ To successfully deploy and test this scenario, configure these prerequisites.
 1. One Windows client device with this configuration:
    - Windows 10/11 64-bit version
    - Microsoft Entra joined or hybrid joined
-   - Internet connected and no corpnet access or VPN
+   - Internet connected and no corporate network access or VPN
 1. Download and install the Global Secure Access Client on the client device. The [Global Secure Access Client for Windows](../global-secure-access/how-to-install-windows-client.md) article describes prerequisites and installation.
 1. To test Microsoft Entra Private Access, configure a Windows server to function as the resource server:
    - Windows Server 2012 R2 or later
@@ -527,7 +527,7 @@ To verify user access to the file server, follow these steps:
 
    :::image type="content" source="media/deployment-scenario-remote-access/remote-access-verification.png" alt-text="Screenshot of Windows Explorer showing connection to file share.":::
 
-### Run leaver workflow on-demand
+### Run leaver workflow on demand
 
 1. Sign in to the Microsoft Entra admin center as at least a Lifecycle Workflows Administrator role.
 1. Go to **Identity governance** \> **Lifecycle workflows** \> **Workflows**.

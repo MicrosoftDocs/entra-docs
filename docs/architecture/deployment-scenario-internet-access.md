@@ -13,13 +13,13 @@ ms.date: 06/13/2024
 ---
 # Microsoft Entra deployment scenario - Secure internet access based on business needs
 
-The Microsoft Entra Suite deployment series provides organizations with a detailed guidance on how to combine and test the following products in the suite:
+The Microsoft Entra deployment scenarios provide you with detailed guidance on how to combine and test these Microsoft Entra Suite products:
 
 - [Microsoft Entra ID Protection](../id-protection/overview-identity-protection.md)
 - [Microsoft Entra ID Governance](../id-governance/identity-governance-overview.md)
 - [Microsoft Entra Verified ID: Face Check](../verified-id/decentralized-identifier-overview.md)
-- [Microsoft Entra Internet Access](../global-secure-access/concept-internet-access.md) (Preview)
-- [Microsoft Entra Private Access](../global-secure-access/concept-private-access.md) (Preview)
+- [Microsoft Entra Internet Access](../global-secure-access/concept-internet-access.md)
+- [Microsoft Entra Private Access](../global-secure-access/concept-private-access.md)
 
 In these guides, we describe scenarios that show the value of the Microsoft Entra Suite and how its capabilities work together.
 
@@ -29,7 +29,7 @@ In these guides, we describe scenarios that show the value of the Microsoft Entr
 
 ## Scenario overview
 
-In this article, we describe how to configure Microsoft Entra Suite products for a scenario in which the fictional organization, Contoso has strict default internet access policies and wants to control internet access according to business requirements.
+In this guide, we describe how to configure Microsoft Entra Suite products for a scenario in which the fictional organization, Contoso, has strict default internet access policies and wants to control internet access according to business requirements.
 
 In an example scenario for which we describe how to configure its solution, a Marketing department user requires access to social networking sites that Contoso prohibits for all users. Users can request access in [My Access](../id-governance/my-access-portal-overview.md). Upon approval, they become a member of a group that grants them access to social networking sites.
 
@@ -37,7 +37,7 @@ In another example scenario and corresponding solution, a SOC analyst needs to a
 
 You can replicate these high-level steps for the Contoso solution as described in this scenario.
 
-1. Sign up for Microsoft Entra Suite. Enable and configure Microsoft [Entra Internet Access](../global-secure-access/concept-internet-access.md) for desired network and security settings.
+1. Sign up for Microsoft Entra Suite. Enable and configure [Microsoft Entra Internet Access](../global-secure-access/concept-internet-access.md) for desired network and security settings.
 1. Deploy [Microsoft Global Secure Access clients](../global-secure-access/concept-clients.md) on users' devices. Enable Microsoft Entra Internet Access.
 1. Create a security profile and web content filtering policies with a restrictive baseline policy that blocks specific web categories and web destinations for all users.
 1. Create a security profile and web content filtering policies that allow access to social networking sites.
@@ -339,7 +339,7 @@ In this section, we create a Conditional Access (CA) policy that enforces the **
 
 ## Configure access governance
 
-Follow these steps to create an Entitlement management catalog:
+Follow these steps to create an entitlement management catalog:
 
 1. Sign in to the **Microsoft Entra admin center** as at least an **Identity Governance Administrator**.
 1. Browse to **Identity governance \> Entitlement management \> Catalogs**.
