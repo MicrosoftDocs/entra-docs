@@ -73,8 +73,6 @@ Use the following values from your Microsoft Entra application registration for 
 
     ![Screenshot that demonstrates how to copy the application ID and tenant ID from Microsoft Entra admin center.](./media/workload-identity-federation-create-trust/copy-client-id.png)
 
-- `AZURE_SUBSCRIPTION_ID` your subscription ID. To get the subscription ID, open **Subscriptions** in [Azure portal](https://portal.azure.com) and find your subscription. Then, copy the **Subscription ID**.
-
 #### Entity type examples
 
 ##### Branch example
