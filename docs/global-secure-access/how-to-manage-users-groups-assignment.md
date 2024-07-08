@@ -1,14 +1,14 @@
 ---
-title: Assign users and groups to traffic forwarding profiles (preview)
+title: Assign users and groups to traffic forwarding profiles
 description: Learn how to roll out traffic forwarding profiles to users and groups with Global Secure Access
 author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: how-to
-ms.date: 05/20/2024
+ms.date: 07/03/2024
 ms.service: global-secure-access
 ---
-# How to assign users and groups to traffic forwarding profiles (preview)
+# How to assign users and groups to traffic forwarding profiles
 
 With the Global Secure Access traffic forwarding features, you can assign specific users and groups to a traffic forwarding profile. User or group assignment limits the scope of the traffic forwarding profile so you have a mechanism to roll out the profile safely and at a controlled pace.
 
