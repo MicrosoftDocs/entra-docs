@@ -42,7 +42,7 @@ If you set the **Provisioning Status** to be **On** in the **Enterprise applicat
 >
 
 
-## Provisioning logs say users are skipped and not provisioned even though they're assigned
+## Provisioning logs say users are skipped and not provisioned even though they are assigned
 
 When a user shows up as “skipped” in the provisioning logs, it's important to review the **Steps** tab of the log to determine the reason. Below are common reasons and resolutions:
 
