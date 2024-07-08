@@ -30,13 +30,14 @@ This article shows you how to use Microsoft Entra Private Access to access an Az
 ## Create a Global Secure Access application for the Azure storage account
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
 1. Browse to **Global Secure Access** > **Applications** > **Enterprise applications**.
-1. Select **Create**. 
+1. Select **New application**. 
 1. Choose the right connector group with the connector deployed in the private virtual network.
-1. Add an app segment:
+1. Select **Add application segment**:
     - Destination type: `FQDN` 
     - Fully Qualified Domain Name (FQDN): `<fqdn of the storage account>`. For example, `storage1.blob.core.windows.net`.
     - Ports: `443`
     - Protocol: `TCP`
+1. Select **Apply**.
 1. Assign users to the application. 
 
 ## Validate the configuration
