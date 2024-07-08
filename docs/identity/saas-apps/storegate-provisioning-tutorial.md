@@ -87,7 +87,7 @@ To configure Storegate for automatic user provisioning with Microsoft Entra ID, 
 	![Storegate sso](media/storegate-provisioning-tutorial/sso.png)
 
 
-1. As Storegate is an OpenIDConnect app, choose to login to Storegate using your Microsoft work account.
+1. As Storegate is an OpenIDConnect app, choose to log in to Storegate using your Microsoft work account.
 
 	![Storegate OIDC login](media/storegate-provisioning-tutorial/login.png)
 
