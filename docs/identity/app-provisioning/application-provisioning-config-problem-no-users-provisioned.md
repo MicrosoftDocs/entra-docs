@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.date: 09/15/2023
+ms.date: 07/08/2024
 ms.author: kenwith
 ms.reviewer: arvinh
 ---
@@ -22,9 +22,9 @@ After automatic provisioning has been configured for an application (including v
 -   Whether or not **attribute mappings** are enabled, and configured to sync valid attributes from Microsoft Entra ID to the app. For more information on attribute mappings, see [Customizing User Provisioning Attribute Mappings for SaaS Applications in Microsoft Entra ID](customize-application-attributes.md).
 -   Whether or not there is a **scoping filter** present that is filtering users based on specific attribute values. For more information on scoping filters, see [Attribute-based application provisioning with scoping filters](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-If you observe that users are not being provisioned, consult the [Provisioning logs (preview)](~/identity/monitoring-health/concept-provisioning-logs.md?context=azure/active-directory/manage-apps/context/manage-apps-context) in Microsoft Entra ID. Search for log entries for a specific user.
+If you observe that users are not being provisioned, consult the [Provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md?context=azure/active-directory/manage-apps/context/manage-apps-context) in Microsoft Entra ID. Search for log entries for a specific user.
 
-You can access the provisioning logs in the Microsoft Entra admin center by browsing to **Identity** > **Applications** > **Enterprise applications** > **Provisioning logs**. You can also select a specific application and then select **Provisioning logs** in the **Activity** section. You can search the provisioning data based on the name of the user or the identifier in either the source system or the target system. For details, see [Provisioning logs (preview)](~/identity/monitoring-health/concept-provisioning-logs.md?context=azure/active-directory/manage-apps/context/manage-apps-context). 
+You can access the provisioning logs in the Microsoft Entra admin center by browsing to **Identity** > **Applications** > **Enterprise applications** > **Provisioning logs**. You can also select a specific application and then select **Provisioning logs** in the **Activity** section. You can search the provisioning data based on the name of the user or the identifier in either the source system or the target system. For details, see [Provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md?context=azure/active-directory/manage-apps/context/manage-apps-context). 
 
 The provisioning logs record all the operations performed by the provisioning service, including querying Microsoft Entra ID for assigned users that are in scope for provisioning, querying the target app for the existence of those users, comparing the user objects between the system. Then add, update, or disable the user account in the target system based on the comparison.
 
@@ -35,7 +35,7 @@ Below is a list of the general problem areas that you can drill into if you have
 - [Provisioning logs say users are skipped and not provisioned, even though they are assigned](#provisioning-logs-say-users-are-skipped-and-not-provisioned-even-though-they-are-assigned)
 
 ## Provisioning service does not appear to start
-If you set the **Provisioning Status** to be **On** in the **Enterprise applications &gt; \[Application Name\] &gt;Provisioning** section of the Microsoft Entra admin center. However no other status details are shown on that page after subsequent reloads, it is likely that the service is running but has not completed an initial cycle yet. Check the **Provisioning logs (preview)** described above to determine what operations the service is performing, and if there are any errors.
+If you set the **Provisioning Status** to be **On** in the **Enterprise applications &gt; \[Application Name\] &gt;Provisioning** section of the Microsoft Entra admin center. However no other status details are shown on that page after subsequent reloads, it is likely that the service is running but has not completed an initial cycle yet. Check the **Provisioning logs** described above to determine what operations the service is performing, and if there are any errors.
 
 >[!NOTE]
 >An initial cycle can take anywhere from 20 minutes to several hours, depending on the size of the Microsoft Entra directory and the number of users in scope for provisioning. Subsequent syncs after the initial cycle are faster, as the provisioning service stores watermarks that represent the state of both systems after the initial cycle. The initial cycle improves performance of subsequent syncs.
