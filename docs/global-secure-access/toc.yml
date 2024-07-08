@@ -98,6 +98,8 @@ items:
         href: how-to-configure-quick-access.md 
       - name: Configure Per-app Access
         href: how-to-configure-per-app-access.md
+      - name: Use with Azure Private Link
+        href: how-to-use-private-link-with-private-access.md
   - name: Internet Access
     expanded: true
     items:
