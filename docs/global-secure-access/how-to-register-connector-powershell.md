@@ -39,10 +39,7 @@ Use the following steps to install the connector without registering it:
    ```
 
 ## Register the connector with Microsoft Entra ID
-There are two methods you can use to register the connector:
-
-- Register the connector using a Windows PowerShell credential object.
-- Register the connector using a token created offline.
+Register the connector using a token created offline.
 
 ### Register the connector using a token created offline
 1. Create an offline token using the `AuthenticationContext` class using the values in this code snippet or PowerShell cmdlets:
