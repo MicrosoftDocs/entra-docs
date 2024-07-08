@@ -1,7 +1,7 @@
 ---
 title: "HF Single Sign-On (SSO) Setup for Azure AD"
 description: "Step-by-step guide to set up Single Sign-On (SSO) for Human Focus using Azure AD."
-author: Naveed Hanif
+author: Muhammadsufyan-humfoc
 ms.author: your-valid-microsoft-alias
 ms.date: 11/02/2022
 ms.topic: article
@@ -50,7 +50,7 @@ Follow these steps to set up Single Sign-On (SSO) for Human Focus using Azure AD
     ![Edit Attributes](common/HF-manageClaim.png)
 
 3. Delete any default attributes under the **Additional claims** section.
-    ![Edit Attributes](common/HF-attribute.png)
+    ![default attributes](common/HF-attribute.png)
 
 4. Add the following attributes:
 
@@ -60,7 +60,7 @@ Follow these steps to set up Single Sign-On (SSO) for Human Focus using Azure AD
     - **roles**: `user.assignedroles`
 
     If you want to enable Role Mapping in Contentstack, ensure you add the `roles` attribute for IdP Role Mapping.
-    ![Edit Attributes](common/HF-managesave.png)
+    ![Role Mapping](common/HF-managesave.png)
 
 ## Step 6: Download SAML Signing Certificate
 
@@ -69,7 +69,7 @@ Follow these steps to set up Single Sign-On (SSO) for Human Focus using Azure AD
    ![Download Certificate](common/HF-samlcert.png)
 3. If needed, edit the Notification Email Addresses section, change the notification
 email, and click on Save.
-   ![Download Certificate](common/HF-signcert.png)
+   ![Notification Email](common/HF-signcert.png)
 
 ## Step 7: Provide Configuration Details
 
