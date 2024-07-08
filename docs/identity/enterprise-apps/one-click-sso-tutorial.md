@@ -7,7 +7,7 @@ manager: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: concept-article
-ms.date: 02/26/2024
+ms.date: 07/04/2024
 ms.author: jomondi
 ms.reviewer: alamaral
 ms.collection: M365-identity-device-management
@@ -32,7 +32,7 @@ The one-click SSO feature is designed to configure single sign-on for Azure Mark
 
 ## Prerequisites
 
-- An active subscription of the application to configure with SSO. You also need admin credentials.
+- An active subscription of the application to configure with SSO.
 - The **My Apps Secure Sign-in extension** from Microsoft installed in the browser. For more information, see [Access and use apps on the My Apps portal](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## One-click SSO configuration steps
@@ -54,22 +54,14 @@ The one-click SSO feature is designed to configure single sign-on for Azure Mark
 
 6. After you add the extension to the browser, select **Setup \<Application Name\>**. After you're redirected to the application admin portal, sign in as an administrator.
 
-   ![Setup application name](./media/one-click-sso-tutorial/setup-sso.png)
-
 7. The browser extension automatically configures SSO on the application. Confirm by selecting **Yes**.
-
-   ![Saving the auto-populated data](./media/one-click-sso-tutorial/save-autopopulate.png)
 
    > [!NOTE]
    > If SSO configuration for your application requires additional steps, following the prompts to perform the steps.
 
 8. After the configuration is completed, select **OK** to save the changes.
 
-   ![Save the auto-populated data](./media/one-click-sso-tutorial/save-data.png)
-
 9. A confirmation window displays to let you know that the SSO settings are successfully configured.
-
-   ![SSO configured](./media/one-click-sso-tutorial/sso-configured.png)
 
 10. After the configuration is successful, you're signed out of the application and returned to the [Microsoft Entra admin center](https://entra.microsoft.com).
 

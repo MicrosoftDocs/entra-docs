@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: multitenant-organizations
 ms.topic: troubleshooting
-ms.date: 05/30/2024
+ms.date: 07/05/2024
 ms.author: rolyon
 ms.custom: it-pro
 #Customer intent: As a dev, devops, or it admin, I want to
@@ -128,6 +128,8 @@ The limitations described in this article have the following scope.
 - The at-scale provisioning of B2B users might collide with contact objects. The handling or conversion of contact objects is currently not supported.
 
 - Using cross-tenant synchronization to target hybrid identities that have been converted to B2B users hasn't been tested in source of authority conflicts and isn't supported.
+
+- Signed-in users are able to read basic attributes of a multitenant organization, and of the multitenant organization member tenants, without being assigned roles, such as [Security Reader](../role-based-access-control/permissions-reference.md#security-reader) or [Global Reader](../role-based-access-control/permissions-reference.md#global-reader).
 
 ## Cross-tenant synchronization deprovisioning
 

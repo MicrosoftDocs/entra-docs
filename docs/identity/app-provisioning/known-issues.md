@@ -118,7 +118,7 @@ Attribute **targetAddress** (which maps to the ExternalEmailAddress property in 
 #### Unsupported scenarios
 
 - Provisioning passwords isn't supported. 
-- Provisioning nested groups isn't supported. 
+- Provisioning nested groups beyond the first level is not supported. 
 - Provisioning to B2C tenants isn't supported because of the size of the tenants.
 - Not all provisioning apps are available in all clouds. For example, Atlassian isn't yet available in the Government cloud. We're working with app developers to onboard their apps to all clouds.
 
