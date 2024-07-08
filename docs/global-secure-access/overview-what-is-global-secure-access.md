@@ -59,6 +59,8 @@ Microsoft Entra Internet Access and Microsoft Entra Private Access are now gener
 
 Prerequisite to use Microsoft Entra Private Access, Microsoft Entra Internet Access and Secure Access Essentials is Microsoft Entra ID P1 or Microsoft Entra ID P2. 
 
+**Remote Network licensing**
+
 While we are still determining the licensing model for remote networks, we want to provide you with the most up-to-date guidance and recommendations to ensure optimal performance for your Microsoft traffic deployment. Microsoft recommends a 250 Mbps bandwidth for Microsoft traffic of 1250 users. In cases of usage exceeding the recommended limits, additional charges may apply. To learn more about remote networks, see [How to create a remote network with Global Secure Access](how-to-create-remote-networks.md).
 
 [!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
