@@ -34,7 +34,7 @@ This article shows you how to use Microsoft Entra Private Access to access an Az
 1. Choose the right connector group with the connector deployed in the private virtual network.
 1. Add an app segment:
     - Destination type: `FQDN` 
-    - Fully Qualified Domain Name (FQDN): `<fqdn of the storage account. Eg- storage1.blob.core.windows.net>`
+    - Fully Qualified Domain Name (FQDN): `<fqdn of the storage account>`. For example, `storage1.blob.core.windows.net`.
     - Ports: `443`
     - Protocol: `TCP`
 1. Assign users to the application. 
