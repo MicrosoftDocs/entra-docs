@@ -19,7 +19,7 @@ items:
 - name: First steps
   expanded: true
   items:
-  - name: Create a Directory
+  - name: Create a tenant
     href: create-new-tenant.md
   - name: Add a custom domain name
     href: add-custom-domain.yml
