@@ -12,9 +12,9 @@ ms.reviewer: katabish
 ---
 
 # How to access an Azure Storage account behind Azure Private Link using Microsoft Entra Private Access
-Microsoft Entra Private Access lets you extend the security features of Azure Private Link to remote as well as on-premises users. Extending the security features brings modern authentication features, such as Conditional Access, to the front of Azure Platform as a Service (PaaS) resources.
+Microsoft Entra Private Access lets you extend the security features of Azure Private Link to remote and on-premises users. Extending the security features brings modern authentication features, such as Conditional Access, to the front of Azure Platform as a Service (PaaS) resources.
 
-Azure Private Link lets you access Azure PaaS Services such as Azure Storage and Azure SQL Database. Azure Private Link also lets you access your Azure hosted services and partner services over a private endpoint in your virtual network (vNet). The result is that resources like virtual machines (VMs) can privately and securely communicate with Private Link resources.
+Azure Private Link lets you access Azure PaaS Services such as Azure Storage and Azure SQL Database. Azure Private Link also lets you access your Azure hosted services and partner services over a private endpoint in your virtual network. The result is that resources like virtual machines (VMs) can privately and securely communicate with Private Link resources.
 
 To learn more about Azure Private Link, see [What is Azure Private Link?](/azure/private-link/private-link-overview.md).
 
@@ -25,24 +25,24 @@ This article shows you how to use Microsoft Entra Private Access to access an Az
    - The [Global Secure Access Administrator role](/azure/active-directory/roles/permissions-reference) role to manage the Global Secure Access features.
    - The [Conditional Access Administrator](/azure/active-directory/roles/permissions-reference#conditional-access-administrator) to create and interact with Conditional Access policies.
 - Set up a storage account behind Azure Private Link. To learn how to set up Azure Private Links, see [Tutorial: Connect to a storage account using an Azure Private Endpoint](/azure/private-link/tutorial-private-endpoint-storage-portal.md). To learn more about private endpoints in Azure Private Link, see [What is a private endpoint?](/azure/private-link/private-endpoint-overview.md).
-- Deploy a Microsoft Entra private network connector in a private virtual network (vNet). To learn how to deploy a connector, see [How to configure private network connectors for Microsoft Entra Private Access and Microsoft Entra application proxy](how-to-configure-connectors.md). To learn more about connectors, see [Understand the Microsoft Entra private network connector](concept-connectors.md). To learn more about connector groups, see [Understand Microsoft Entra private network connector groups](concept-connector-groups.md).
+- Deploy a Microsoft Entra private network connector in a private virtual network. To learn how to deploy a connector, see [How to configure private network connectors for Microsoft Entra Private Access and Microsoft Entra application proxy](how-to-configure-connectors.md). To learn more about connectors, see [Understand the Microsoft Entra private network connector](concept-connectors.md). To learn more about connector groups, see [Understand Microsoft Entra private network connector groups](concept-connector-groups.md).
  
 ## Create a Global Secure Access application for the Azure storage account
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
 1. Browse to **Global Secure Access** > **Applications** > **Enterprise applications**.
 1. Select **Create**. 
-1. Choose the right connector group with the connector deployed in the private vNet.
+1. Choose the right connector group with the connector deployed in the private virtual network.
 1. Add an app segment:
     - Destination type: `FQDN` 
-    - FQDN: `<fqdn of the storage account. Eg- storage1.blob.core.windows.net>`
+    - Fully Qualified Domain Name (FQDN): `<fqdn of the storage account. Eg- storage1.blob.core.windows.net>`
     - Ports: `443`
     - Protocol: `TCP`
 1. Assign users to the application. 
 
 ## Validate the configuration
-Ensure connectivity to the storage account works from the connector machine. The connector is deployed on the same private vNet.
+Ensure connectivity to the storage account works from the connector machine. The connector is deployed on the same private virtual network.
 
-Check connections to the storage account from outside the private vNet. Computers that don't have the Global Secure Access client installed should fail. Computers that have the Global Secure Access client installed should succeed. 
+Check connections to the storage account from outside the private virtual network. Computers that don't have the Global Secure Access client installed should fail. Computers that have the Global Secure Access client installed should succeed. 
 
 ## Next steps
 - [Learn about Microsoft Entra Private Access](concept-private-access.md)
