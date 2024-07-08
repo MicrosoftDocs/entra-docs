@@ -16,7 +16,7 @@ Microsoft Entra Private Access lets you extend the security features of Azure Pr
 
 Azure Private Link lets you access Azure PaaS Services such as Azure Storage and Azure SQL Database. Azure Private Link also lets you access your Azure hosted services and partner services over a private endpoint in your virtual network. The result is that resources like virtual machines (VMs) can privately and securely communicate with Private Link resources.
 
-To learn more about Azure Private Link, see [What is Azure Private Link?](/azure/private-link/private-link-overview.md).
+To learn more about Azure Private Link, see [What is Azure Private Link?](/azure/private-link/private-link-overview).
 
 This article shows you how to use Microsoft Entra Private Access to access an Azure Storage account behind Azure Private Link.
 
@@ -24,7 +24,7 @@ This article shows you how to use Microsoft Entra Private Access to access an Az
 - Administrators who interact with **Global Secure Access** features must have one or more of the following role assignments depending on the tasks they're performing.
    - The [Global Secure Access Administrator role](/azure/active-directory/roles/permissions-reference) role to manage the Global Secure Access features.
    - The [Conditional Access Administrator](/azure/active-directory/roles/permissions-reference#conditional-access-administrator) to create and interact with Conditional Access policies.
-- Set up a storage account behind Azure Private Link. To learn how to set up Azure Private Links, see [Tutorial: Connect to a storage account using an Azure Private Endpoint](/azure/private-link/tutorial-private-endpoint-storage-portal.md). To learn more about private endpoints in Azure Private Link, see [What is a private endpoint?](/azure/private-link/private-endpoint-overview.md).
+- Set up a storage account behind Azure Private Link. To learn how to set up Azure Private Links, see [Tutorial: Connect to a storage account using an Azure Private Endpoint](/azure/private-link/tutorial-private-endpoint-storage-portal). To learn more about private endpoints in Azure Private Link, see [What is a private endpoint?](/azure/private-link/private-endpoint-overview).
 - Deploy a Microsoft Entra private network connector in a private virtual network. To learn how to deploy a connector, see [How to configure private network connectors for Microsoft Entra Private Access and Microsoft Entra application proxy](how-to-configure-connectors.md). To learn more about connectors, see [Understand the Microsoft Entra private network connector](concept-connectors.md). To learn more about connector groups, see [Understand Microsoft Entra private network connector groups](concept-connector-groups.md).
  
 ## Create a Global Secure Access application for the Azure storage account
