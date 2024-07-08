@@ -88,7 +88,7 @@ Body
 {
     "@odata.type": "#microsoft.graph.unifiedRoleAssignment",
     "principalId": "aaaaaaaa-bbbb-cccc-1111-2222222222229",
-    "roleDefinitionId": "e9b2b976-1dea-4229-a078-b08abd6c4f84",    //role template ID of a custom role
+    "roleDefinitionId": "00000000-0000-0000-0000-000000000000",    //role template ID of a custom role
     "directoryScopeId": "/13ff0c50-18e7-4071-8b52-a6f08e17c8cc"  //object ID of an application
 }
 ```
@@ -227,7 +227,7 @@ HTTP/1.1 200 OK
             {
                 "id": "C2dE3fH4iJ5kL6mN7oP8qR9sT0uV1wIiSDKQoTVJrLE9etXyrY0-1"
                 "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
-                "roleDefinitionId": "3671d40a-1aac-426c-a0c1-a3821ebd8218",
+                "roleDefinitionId": "00000000-0000-0000-0000-000000000000",
                 "directoryScopeId": "/d23998b1-8853-4c87-b95f-be97d6c6b610"
             }
         ]
