@@ -81,7 +81,7 @@ It's a not nullable and read-only attribute.
 Example:
 
 ```json
-"appId": "601790de-b632-4f57-9523-ee7cb6ceba95",
+"appId": "00001111-aaaa-2222-bbbb-3333cccc4444",
 ```
 
 ### addIns attribute
@@ -127,7 +127,7 @@ Example:
            ],
            "description": "Read-only access to device information",
            "displayName": "Read Only",
-           "id": "601790de-b632-4f57-9523-ee7cb6ceba95",
+           "id": "00001111-aaaa-2222-bbbb-3333cccc4444",
            "isEnabled": true,
            "value": "ReadOnly"
         }
