@@ -14,11 +14,11 @@ ms.reviewer: arvinh
 
 # No users are being provisioned 
 >[!NOTE]
->Starting 04/16/2020 we have changed the behavior for users assigned the default access role. Please see the section below for details. 
+>Starting 04/16/2020 we have changed the behavior for users assigned the default access role. See the section below for details. 
 >
 After automatic provisioning has been configured for an application (including verifying that the app credentials provided to Microsoft Entra ID to connect to the app are valid), then users and/or groups are provisioned to the app. Provisioning is determined by the following things:
 
--   Which users and groups have been **assigned** to the application. Note that provisioning nested groups aren't supported. For more information on assignment, see [Assign a user or group to an enterprise app in Microsoft Entra ID](~/identity/enterprise-apps/assign-user-or-group-access-portal.md).
+-   Which users and groups have been **assigned** to the application. Provisioning nested groups isn't supported. For more information on assignment, see [Assign a user or group to an enterprise app in Microsoft Entra ID](~/identity/enterprise-apps/assign-user-or-group-access-portal.md).
 -   Whether or not **attribute mappings** are enabled, and configured to sync valid attributes from Microsoft Entra ID to the app. For more information on attribute mappings, see [Customizing User Provisioning Attribute Mappings for SaaS Applications in Microsoft Entra ID](customize-application-attributes.md).
 -   Whether or not there's a **scoping filter** present that is filtering users based on specific attribute values. For more information on scoping filters, see [Attribute-based application provisioning with scoping filters](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
@@ -35,7 +35,7 @@ Below is a list of the general problem areas that you can drill into if you have
 - [Provisioning logs say users are skipped and not provisioned, even though they are assigned](#provisioning-logs-say-users-are-skipped-and-not-provisioned-even-though-they-are-assigned)
 
 ## Provisioning service does not appear to start
-If you set the **Provisioning Status** to be **On** in the **Enterprise applications &gt; \[Application Name\] &gt;Provisioning** section of the Microsoft Entra admin center. However no other status details are shown on that page after subsequent reloads, it's likely that the service is running but has not completed an initial cycle yet. Check the **Provisioning logs** described above to determine what operations the service is performing, and if there are any errors.
+If you set the **Provisioning Status** to be **On** in the **Enterprise applications &gt; \[Application Name\] &gt;Provisioning** section of the Microsoft Entra admin center. However no other status details are shown on that page after subsequent reloads, it's likely that the service is running but hasn't completed an initial cycle yet. Check the **Provisioning logs** described above to determine what operations the service is performing, and if there are any errors.
 
 >[!NOTE]
 >An initial cycle can take anywhere from 20 minutes to several hours, depending on the size of the Microsoft Entra directory and the number of users in scope for provisioning. Subsequent syncs after the initial cycle are faster, as the provisioning service stores watermarks that represent the state of both systems after the initial cycle. The initial cycle improves performance of subsequent syncs.
@@ -57,9 +57,8 @@ The default role on an application from the gallery is called the "default acces
 Users assigned to the default access role will be evaluated the same as all other roles. A user that is assigned the default access won't be skipped as "not effectively entitled." 
 
 **Behavior for provisioning configurations created before 04/16/2020:**
-For the next 3 months, the behavior will continue as it's today. Users with the default access role will be skipped as not effectively entitled. After July 2020, the behavior will be uniform for all applications. We won't skip provisioning users with the default access role due to being "not effectively entitled." This change will be made by Microsoft, with no customer action required. If you would like to ensure that these users continue to be skipped, even after this change, please apply the appropriate scoping filters or unassign the user from the application to ensure they're out of scope.  
+For the next 3 months, the behavior will continue as it's today. Users with the default access role will be skipped as not effectively entitled. After July 2020, the behavior will be uniform for all applications. We won't skip provisioning users with the default access role due to being "not effectively entitled." This change will be made by Microsoft, with no customer action required. If you would like to ensure that these users continue to be skipped, even after this change,  apply the appropriate scoping filters or unassign the user from the application to ensure they're out of scope.  
 
-For questions about these changes, please reach out to provisioningfeedback@microsoft.com
 ## Next steps
 
 [Microsoft Entra Connect Sync: Understanding Declarative Provisioning](~/identity/hybrid/connect/concept-azure-ad-connect-sync-declarative-provisioning.md)
