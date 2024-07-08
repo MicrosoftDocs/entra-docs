@@ -1,7 +1,7 @@
 ---
 title: What's new in Microsoft Entra External ID
 description: New and updated documentation for the Microsoft Entra External ID.
-ms.date: 06/05/2024
+ms.date: 07/01/2024
 ms.service: entra-external-id
 ms.topic: whats-new
 
@@ -13,11 +13,20 @@ manager: CelesteDG
 
 # Microsoft Entra External ID: What's new
 
-Welcome to what's new in Microsoft Entra External ID documentation. This article lists new docs that have been added and those that have had significant updates in the last three months. To learn what's new with the Microsoft Entra ID service, see [What's new in Microsoft Entra ID](~/fundamentals/whats-new.md).
+Welcome to what's new in Microsoft Entra External ID documentation. This article lists new docs that were added and docs that were significantly updated in the last three months. To learn what's new with the Microsoft Entra ID service, see [What's new in Microsoft Entra ID](~/fundamentals/whats-new.md).
+
+## June 2024
+
+### Updated articles
+
+- [Federation with SAML/WS-Fed identity providers for guest users](direct-federation.md) - Updated verified domain information and steps for adding new identity providers
+- [The elements of the B2B collaboration invitation email](invitation-email-elements.md) - Editorial updates
+- [How users in your organization can invite guest users to an app](add-users-information-worker.md) - Editorial updates
+- [Overview: Cross-tenant access with Microsoft Entra External ID](cross-tenant-access-overview.md) - Removed the [configurable redemption](cross-tenant-access-overview.md#configurable-redemption) SharePoint limitation for guest users who redeem invites with email one-time passcode
 
 ## May 2024
 
-This month we’ve added “Applies to” tags to many of our articles to help navigation within the documentation.
+This month, we added “Applies to” tags to many of our articles to help navigation within the documentation.
 
 - [Sponsors field for B2B users](/entra/external-id/b2b-sponsors) - Added a known issue
 - [Configure Microsoft cloud settings for B2B collaboration](/entra/external-id/cross-cloud-settings) - Highlighted cloud collaboration references
@@ -25,7 +34,7 @@ This month we’ve added “Applies to” tags to many of our articles to help n
 
 ## April 2024
 
-This month, we have made updates to our table of contents to make navigation easier for you.
+This month, we made updates to our table of contents to make navigation easier for you.
 
 ### New article
 
@@ -38,22 +47,4 @@ This month, we have made updates to our table of contents to make navigation eas
 - [Microsoft Entra B2B collaboration FAQs](/entra/external-id/faq) - Conditional Access policy updates
 - [Overview: Cross-tenant access with Microsoft Entra External ID](/entra/external-id/cross-tenant-access-overview) - Email one-time passcode updates
 - [Add a self-service sign-up user flow to an app](/entra/external-id/self-service-sign-up-user-flow) -Editorial updates
-
-## March 2024
-
-### Updated articles
-
-- [Add Facebook as an identity provider for External ID](facebook-federation.md) - App creation steps updated
-- [Troubleshooting Microsoft Entra B2B collaboration](troubleshoot.md) - Microsoft Graph PowerShell updates
-- [B2B direct connect overview](b2b-direct-connect-overview.md) - Updated diagrams
-- [Overview: Cross-tenant access with Microsoft Entra External ID](cross-tenant-access-overview.md) - Updated for configurable redemption order general availability
-- [Configure cross-tenant access settings for B2B collaboration](cross-tenant-access-settings-b2b-collaboration.yml) – Updated for configurable redemption order general availability
-- [Federation with SAML/WS-Fed identity providers for guest users](direct-federation.md) - Updated for configurable redemption order general availability
-- [Overview of Microsoft Entra External ID](external-identities-overview.md) - Updated screenshots
-- [Add Microsoft account (MSA.md) as an identity provider for External ID](microsoft-account.md) - Updated screenshots
-- [Email one-time passcode authentication](one-time-passcode.md) - Updated screenshots that have old references
-- [Microsoft Entra B2B collaboration invitation redemption](redemption-experience.md) - Updated content for configurable redemption order general availability
-- [Set up tenant restrictions v2](tenant-restrictions-v2.md) - Updated screenshots
-- [Language customization in Microsoft Entra External ID](user-flow-customize-language.md) - Updated screenshots
-- [B2B collaboration overview](what-is-b2b.md) - Updated screenshots
 

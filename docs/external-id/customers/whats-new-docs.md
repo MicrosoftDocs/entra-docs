@@ -1,7 +1,7 @@
 ---
 title: "What's new in Microsoft Entra External ID in external tenants"
 description: "New and updated documentation for Microsoft Entra External ID in external tenants."
-ms.date: 06/05/2024
+ms.date: 07/01/2024
 ms.service: entra-external-id
 ms.subservice: customers
 ms.topic: whats-new
@@ -14,6 +14,15 @@ manager: CelesteDG
 # Microsoft Entra External ID in external tenants: What's new
 
 Welcome to what's new in documentation for Microsoft Entra External ID in external tenants. This article lists new docs that have been added and those that have had significant updates in the last three months. 
+
+## June 2024
+
+### Updated articles
+
+- [Add multifactor authentication (MFA) to an app](how-to-multifactor-authentication-customers.md) - Screenshots and instructions updated
+- [Sign in users and call a web API in sample Node.js web application](sample-web-app-node-sign-in-call-api.md) - Editorial updates
+- [Tutorial: Add sign-in in Android app by using native authentication](tutorial-native-authentication-android-sign-in-sign-out.md) - Updated sign in instructions
+
 
 ## May 2024
 
@@ -59,26 +68,4 @@ This month, we made updates to our table of contents to make navigation easier f
 - [Overview: Secure your apps using External ID in an external tenant](/entra/external-id/customers/overview-customers-ciam) - Image and terminology updates
 - [Microsoft Entra External ID frequently asked questions](/entra/external-id/customers/faq-customers) - Updated pricing information
 - [Default user permissions in external tenants](/entra/external-id/customers/reference-user-permissions) - Updated user types
-
-## March 2024
-
-### New articles
-
-- [Native authentication ](concept-native-authentication.md)
-- [Get started guide features](concept-guide-explained.md)
-
-### Updated articles
-
-- [Add Facebook as an identity provider](how-to-facebook-federation-customers.md) - App creation steps updated
-- [Supported features in Microsoft Entra External ID](concept-supported-features-customers.md) - Updated user types and identity providers for clarity, removed device code flow samples
-- [Add user attributes to token claims](how-to-add-attributes-to-token.md) - Updated screenshots
-- [Collect custom user attributes during sign-up](how-to-define-custom-attributes.md) - Updated screenshots
-- [Add multifactor authentication (MFA) to an app](how-to-multifactor-authentication-customers.md) - Updated screenshots
-- [Add your application to the user flow](how-to-user-flow-add-application.md) - Updated screenshots
-- [Create a sign-up and sign-in user flow for customers](how-to-user-flow-sign-up-sign-in-customers.md) - Updated screenshots
-- [Get started with Microsoft Entra External ID](quickstart-trial-setup.md) - Updated screenshots
-- [Samples for customer identity and access management (CIAM)](samples-ciam-all.md) - Added links to native authentication public preview articles
-
-
-
 

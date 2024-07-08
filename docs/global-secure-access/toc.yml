@@ -10,6 +10,8 @@ items:
     href: how-to-get-started-with-global-secure-access.md
   - name: Global Secure Access dashboard
     href: concept-traffic-dashboard.md
+  - name: Role-based administrator roles
+    href: reference-role-based-permissions.md
 - name: Concepts
   expanded: true
   items: 
@@ -106,7 +108,7 @@ items:
     items:
       - name: About logs and monitoring
         href: concept-global-secure-access-logs-monitoring.md
-      - name: Global Secure Access Audit logs
+      - name: Global Secure Access audit logs
         href: how-to-access-audit-logs.md
       - name: Enriched Microsoft 365 audit logs
         href: how-to-view-enriched-logs.md
@@ -127,11 +129,27 @@ items:
         href: ~/architecture/sse-deployment-guide-m365.md?toc=/entra/global-secure-access/toc.json&bc=/entra/global-secure-access/breadcrumb/toc.json
       - name: Deploying Microsoft Entra Private Access
         href: ~/architecture/sse-deployment-guide-private-access.md?toc=/entra/global-secure-access/toc.json&bc=/entra/global-secure-access/breadcrumb/toc.json
+  - name: Secure access with Microsoft Entra and partners
+    expanded: true
+    items:
+    - name: Coexistence with Cisco
+      href: concept-cisco-coexistence.md
+    - name: Coexistence with Palo Alto Networks
+      href: concept-palo-alto-coexistence.md
+    - name: Coexistence with Zscaler
+      href: concept-zscaler-coexistence.md
+    - name: Coexistence with Netskope
+      href: concept-netskope-coexistence.md
   - name: Troubleshoot
     expanded: false
     items:
       - name: Troubleshoot connectors
         href: troubleshoot-connectors.md
+  - name: Partner ecosystem
+    expanded: false
+    items:
+      - name: Find a Microsoft services partner
+        href: how-to-find-microsoft-services-partners.md
 - name: Reference
   expanded: false
   items:
