@@ -89,8 +89,10 @@ To ensure people outside of your organization can request access packages and ge
 
     [![Microsoft Entra external collaboration settings](./media/entitlement-management-external-users/collaboration-settings.png)](./media/entitlement-management-external-users/collaboration-settings.png#lightbox)
     
-    > [!NOTE]
-    > If you create a connected organization for a Microsoft Entra tenant from a different Microsoft cloud, you also need to configure cross-tenant access settings appropriately. For more information on how to configure these settings, see [Configure cross-tenant access settings](~/external-id/cross-cloud-settings.md).
+### Review your cross-tenant access settings
+
+- Ensure your cross-tenant access settings for inbound B2B collaboration allow access to be requested and assigned. You should check that the settings allow tenants that are part of your current or future connected organizations, and that the users from those tenants are not blocked from being invited.  In addition, check that those users will be permitted by the cross-tenant access settings to be able to authenticate to the applications for which you want to enable collaboration scenarios. For more information, see [Configure cross-tenant access settings](../external-id/cross-tenant-access-settings-b2b-collaboration.yml).
+- If you create a connected organization for a Microsoft Entra tenant from a different Microsoft cloud, you also need to configure cross-tenant access settings appropriately. For more information, see [Configure Microsoft cloud settings](../external-id/cross-cloud-settings.md).
 
 ### Review your Conditional Access policies
 
