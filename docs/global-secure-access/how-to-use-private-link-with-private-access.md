@@ -37,7 +37,8 @@ This article shows you how to use Microsoft Entra Private Access to access an Az
     - Fully Qualified Domain Name (FQDN): `<fqdn of the storage account>`. For example, `storage1.blob.core.windows.net`.
     - Ports: `443`
     - Protocol: `TCP`
-1. Select **Apply**.
+1. Select **Apply** to add the application segment.
+1. Select **Save** to save the application.
 1. Assign users to the application. 
 
 ## Validate the configuration
