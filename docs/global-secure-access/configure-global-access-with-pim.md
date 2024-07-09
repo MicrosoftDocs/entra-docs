@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: conceptual
-ms.date: 06/25/2024
+ms.date: 07/09/2024
 ms.author: kenwith
 ms.reviewer: katabish
 ---
@@ -39,7 +39,7 @@ Customers should consider configuring PIM using Global Secure Access to enable:
 To successfully implement secure private access, you must complete these three steps:
 - Step 1: [Configure and assign groups](#step-1-configure-and-assign-groups)
 - Step 2: [Activate privileged access](#step-2-activate-privileged-access)
-- Step 3: [Tracking and logging compliance](#step-3-tracking-and-logging-compliance)
+- Step 3: [Follow compliance guidance](#step-3-follow-compliance-guidance)
 
 ## Step 1: Configure and assign groups
 
@@ -148,8 +148,8 @@ If the work is completed ahead of the time you allocated, you can choose to deac
 
 1. A confirmation is sent to you once the role is deactivated.  
 
-## Step 3: Tracking and logging compliance
+## Step 3: Follow compliance guidance
 
-This final step enables you to successfully maintain a history of access requests and activations. The standard log format helps to meet the compliance guidance and provide an audit trail. 
+This final step enables you to successfully maintain a history of access requests and activations. The standard log format helps to meet tracking and logging compliance guidance and provide an audit trail. 
 
 :::image type="content" border="true" source="./media/pim-global-secure-access/audit-log-details.png" alt-text="Screenshot of the Audit log details screen.":::
