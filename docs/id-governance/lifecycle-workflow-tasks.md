@@ -621,7 +621,6 @@ For Microsoft Graph, the parameters for the **Remove user from selected groups**
 Allows users to be removed from every Microsoft 365 and cloud-only security group they're a member of. Mail-enabled, distribution, dynamic and role-assignable groups aren't supported. To control access to on-premises AD-group-based applications and resources, you need to enable group writeback. For more information, see [Microsoft Entra Cloud Sync group writeback](../identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md).
 
 
-
 You're able to customize the task name and description for this task in the Microsoft Entra admin center.
 
  :::image type="content" source="media/lifecycle-workflow-task/remove-all-groups-task.png" alt-text="Screenshot of Workflows task: remove user from all groups.":::
