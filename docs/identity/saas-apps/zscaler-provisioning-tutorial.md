@@ -1,6 +1,6 @@
 ---
 title: 'Tutorial: Configure Zscaler for automatic user provisioning with Microsoft Entra ID'
-description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Zscaler.
+description: Learn how to configure Microsoft Entra ID to automatically provision and deprovision user accounts to Zscaler.
 
 author: thomasakelo
 manager: CelesteDG
@@ -68,7 +68,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 > Open a [support ticket](https://help.zscaler.com/) to create a domain on Zscaler.
 
 > [!TIP]
-> You may also choose to enable SAML-based single sign-on for Zscaler, following the instructions provided in the [Zscaler single sign-on tutorial](zscaler-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features compliment each other.
+> You may also choose to enable SAML-based single sign-on for Zscaler, following the instructions provided in the [Zscaler single sign-on tutorial](zscaler-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features complement each other.
 
 > [!NOTE]
 > When users and groups are provisioned or de-provisioned we recommend to periodically restart provisioning to ensure that group memberships are properly updated. Doing a restart will force our service to re-evaluate all the groups and update the memberships. Please be aware that the restart can take time if you are syncing all users and groups in your tenant or have assigned large groups with 50K+ members. 
