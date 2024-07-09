@@ -44,6 +44,12 @@ In addition to identities that are used for authentication, there are decentrali
 
 **For example**, a recent college graduate can ask the university to issue a digital copy of their diploma to their DID. They can then choose to present the diploma to a potential employer who can independently verify the issuer of the diploma, the time of issuance, and its status.
 
+### Microsoft Entra Domain Services
+
+[Microsoft Entra Domain Services](~/identity/domain-services/overview.md) provides managed domain services such as group policy, lightweight directory access protocol (LDAP), and Kerberos/NTLM authentication. It enables organizations to run legacy applications in the cloud that can't use modern authentication methods.
+
+**For example**, organizations with services that require access to Kerberos authentication can create a managed domain where the core service components are deployed and maintained by Microsoft as a managed domain experience. 
+
 ### Microsoft Entra ID Protection
 
 [Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md) detects and reports identity-based risks. It enables administrators to investigate and automatically remediate risks using tools like [Conditional Access](~/identity/conditional-access/overview.md).
@@ -61,12 +67,6 @@ In addition to identities that are used for authentication, there are decentrali
 [Microsoft Entra Permissions Management](~/permissions-management/overview.md) provides comprehensive visibility into permissions assigned to all identities managed by Microsoft Entra ID and other identity providers. It enables organizations to detect, automatically right-size, and continuously monitor unused and excessive permissions across Microsoft Azure, Amazon Web Services (AWS), and Google Cloud Platform (GCP).
 
 **For example**, administrators can see the users that have high-risk permissions but aren't using them, and automatically remove those unused permissions across authorization systems.
-
-### Microsoft Entra Domain Services
-
-[Microsoft Entra Domain Services](~/identity/domain-services/overview.md) provides managed domain services such as group policy, lightweight directory access protocol (LDAP), and Kerberos/NTLM authentication. It enables organizations to run legacy applications in the cloud that can't use modern authentication methods.
-
-**For example**, organizations with services that require access to Kerberos authentication can create a managed domain where the core service components are deployed and maintained by Microsoft as a managed domain experience. 
 
 ### Microsoft Entra Private Access
 
