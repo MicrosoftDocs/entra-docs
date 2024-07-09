@@ -13,7 +13,7 @@ ms.reviewer: katabish
 
 # How to access Azure SQL with a service endpoint using Microsoft Entra Private Access
 
-Use Microsoft Entra Private Access with a virtual network service endpoint to access Azure services. The combination provides direct connectivity using an optimal network route. A virtual network service endpoint lets you limit network access to Azure service resources and remove access from the internet. Service endpoints provide a direct connection between your virtual network and supported Azure services. You use your virtual networks private address space to access the Azure services.
+Access Azure services using Microsoft Entra Private Access with a virtual network service endpoint. The combination provides direct connectivity using an optimal network route. A virtual network service endpoint lets you limit network access to Azure service resources and remove access from the internet. Service endpoints provide a direct connection between your virtual network and supported Azure services. You use your virtual networks private address space to access the Azure services.
 
 To learn more about virtual networks, see [What is Azure Virtual Network?](/azure/virtual-network/virtual-networks-overview).
 
@@ -27,10 +27,10 @@ This article shows you how to access Azure SQL with a service endpoint using Mic
 - Microsoft Entra private network connector deployed in the service endpoint subnet. To learn how to deploy a connector, see [How to configure private network connectors for Microsoft Entra Private Access and Microsoft Entra application proxy](how-to-configure-connectors.md). To learn more about connectors, see [Understand the Microsoft Entra private network connector](concept-connectors.md). To learn more about connector groups, see [Understand Microsoft Entra private network connector groups](concept-connector-groups.md).
 
 ## Change Azure SQL Server connection policy to proxy 
-Since users are connecting from outside Azure, your Azure SQL server should have a connection policy of `proxy`. The `proxy` policy establishes the TCP session via the Azure SQL Database gateway and all subsequent packets flow via the gateway. 
+Since users are connecting from outside Azure, your Azure SQL server should have a connection policy of `proxy`. The `proxy` policy establishes the Transmission Control Protocol (TCP) session via the Azure SQL Database gateway and all subsequent packets flow via the gateway. 
 
 To set the policy to `proxy`: 
-1. Log into the Azure portal and navigate to your SQL server.
+1. Sign in to the Azure portal and navigate to your SQL server.
 1. In the left hand navigation under **Security**, select **Networking**. 
 1. On the **Connectivity** tab, set **Connection Policy** to `Proxy`.
 1. Select **Save**. 
