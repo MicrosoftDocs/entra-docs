@@ -46,7 +46,7 @@ All Lifecycle workflow tasks work for both cloud, and synchronized from Active D
 
 ### Tasks to govern group memberships
 
-The Lifecycle Workflows tasks to govern group memberships can't be used for groups that are synchronized from on-premises Active Directory to Microsoft Entra. However, Microsoft Entra ID Governance can be used to [govern on-premises Active Directory (Kerberos) application access](../identity/hybrid/cloud-sync/govern-on-premises-groups.md) with groups from the cloud, which are supported within Lifecycle Workflows. For example, you can create a representation within Microsoft Entra of an Active Directory group...
+The Lifecycle Workflows tasks to govern group memberships can't be used for groups that are synchronized from on-premises Active Directory to Microsoft Entra. However, Microsoft Entra ID Governance can be used to [govern on-premises Active Directory (Kerberos) application access](../identity/hybrid/cloud-sync/govern-on-premises-groups.md) with groups from the cloud, which are supported within Lifecycle Workflows.
 
 ## User account tasks (preview)
 
