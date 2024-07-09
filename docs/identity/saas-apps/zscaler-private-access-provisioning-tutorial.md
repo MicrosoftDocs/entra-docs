@@ -49,11 +49,11 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 	![Zscaler Private Access (ZPA) Admin Console](media/zscaler-private-access-provisioning-tutorial/idpconfig.png)
 
-2.	Verify to make sure that an IdP for **Single sign-on** is configured. If no IdP is setup, then add one by clicking the plus icon at the top right corner of the screen.
+2.	Verify to make sure that an IdP for **Single sign-on** is configured. If no IdP is set up, then add one by clicking the plus icon at the top right corner of the screen.
 
 	![Zscaler Private Access (ZPA) Add SCIM](media/zscaler-private-access-provisioning-tutorial/plusicon.png)
 
-3. Follow through the **Add IdP Configuration** wizard to add an IdP. Leave the **Single sign-on** field set to **User**. Provide a **Name** and select the **Domains** from the drop down list. Click on **Next** to navigate to the next window.
+3. Follow through the **Add IdP Configuration** wizard to add an IdP. Leave the **Single sign-on** field set to **User**. Provide a **Name** and select the **Domains** from the drop-down list. Click on **Next** to navigate to the next window.
 
 	![Zscaler Private Access (ZPA) Add IdP](media/zscaler-private-access-provisioning-tutorial/addidp.png)
 
