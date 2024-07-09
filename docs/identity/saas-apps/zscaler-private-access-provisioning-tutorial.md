@@ -136,19 +136,28 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Zscaler Private Access (ZPA)**.
 
-	![Zscaler Private Access (ZPA) User Mappings](media/zscaler-private-access-provisioning-tutorial/usermappings.png)
-
 1. Review the user attributes that are synchronized from Microsoft Entra ID to Zscaler Private Access (ZPA) in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Zscaler Private Access (ZPA) for update operations. Select the **Save** button to commit any changes.
 
-	![Zscaler Private Access (ZPA) User Attributes](media/zscaler-private-access-provisioning-tutorial/userattributes.png)
+   |Attribute|Type|Supported for filtering|Required by Zscaler Private Access|
+   |---|---|---|---|
+   |userName|String|&check;|&check;
+   |externalId|String||
+   |active|Boolean||
+   |emails[type eq "work"].value|String||  
+   |name.givenName|String||
+   |name.familyName|String||
+   |displayName|String||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String||
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Zscaler Private Access (ZPA)**.
 
-	![Zscaler Private Access (ZPA) Group Mappings](media/zscaler-private-access-provisioning-tutorial/groupmappings.png)
-
 1. Review the group attributes that are synchronized from Microsoft Entra ID to Zscaler Private Access (ZPA) in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Zscaler Private Access (ZPA) for update operations. Select the **Save** button to commit any changes.
 
-	![Zscaler Private Access (ZPA) Group Attributes](media/zscaler-private-access-provisioning-tutorial/groupattributes.png)
+   |Attribute|Type|Supported for filtering|Required by Zscaler Private Access|
+   |---|---|---|---|
+   |displayName|String|&check;|&check;
+   |members|Reference||
+   |externalId|String||
 
 1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
