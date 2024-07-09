@@ -78,7 +78,7 @@ Use the following steps to add approvers after selecting how many stages you req
     
     ![Access package - Requests - For users out of directory - First Approver](./media/entitlement-management-access-package-approval-policy/out-directory-first-approver.png)
     
-1. If you selected **Manager** as the first approver, select **Add fallback to select one, or more users or groups in your directory to be a fallback approver. Fallback approvers receive the request if entitlement management can't find the manager for the user requesting access.
+1. If you selected **Manager** as the first approver, select **Add fallback** to select one, or more users or groups in your directory to be a fallback approver. Fallback approvers receive the request if entitlement management can't find the manager for the user requesting access.
 
     The manager is found by entitlement management using the **Manager** attribute. The attribute is in the user's profile in Microsoft Entra ID. For more information, see [Add or update a user's profile information using Microsoft Entra ID](~/fundamentals/how-to-manage-user-profile-info.yml).
 
