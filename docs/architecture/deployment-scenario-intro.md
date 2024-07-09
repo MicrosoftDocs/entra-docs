@@ -25,7 +25,7 @@ In each guide, we describe scenarios that show the value of the Microsoft Entra 
 
 ## Workforce and guest onboarding, identity, and access lifecycle governance across all your apps
 
-The [workforce and guest onboarding, identity, and access lifecycle governance scenario](deployment-scenario-workforce-guest.md) describes these goals:
+The [Workforce and guest onboarding, identity, and access lifecycle governance](deployment-scenario-workforce-guest.md) scenario describes these goals:
 
 - Provide remote employees with secure and seamless access to necessary apps and resources.
 - Collaborate with external users by providing them with access to relevant apps and resources.
@@ -38,7 +38,7 @@ The step-by-step solution focuses on Microsoft Entra Verified ID, Microsoft Entr
 
 ## Modernize remote access to on-premises apps with MFA per app
 
-The [Modernize remote access to on-premises apps with MFA per app scenarios](deployment-scenario-remote-access.md) describe these goals:
+The [Modernize remote access to on-premises apps with MFA per app](deployment-scenario-remote-access.md) scenarios describe these goals:
 
 - Upgrade existing VPN to a scalable cloud-based solution that helps to move towards Secure Access Service Edge (SASE).
 - Resolve issues where business application access relies on corporate network connectivity.
@@ -51,7 +51,7 @@ The step-by-step solution focuses on Microsoft Entra Private Access, Microsoft E
 
 ## Secure internet access based on business needs
 
-The [secure internet access based on business needs scenario](deployment-scenario-internet-access.md) describes these goals:
+The [Secure internet access based on business needs](deployment-scenario-internet-access.md) scenario describes these goals:
 
 - Augment existing strict default internet access policies with more internet access control.
 - Allow users to request access to prohibited sites in [My Access](../id-governance/my-access-portal-overview.md). The approval process adds users to a group that grants them access. Examples include marketing department access to social networking sites and security department access to high-risk internet destinations while investigating incidents.
