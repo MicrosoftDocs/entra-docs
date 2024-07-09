@@ -6,7 +6,7 @@ description: Learn how to configure settings for Microsoft Entra multifactor aut
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 06/11/2024
+ms.date: 07/09/2024
 
 ms.author: justinha
 author: justinha
