@@ -110,6 +110,8 @@ When deploying non-persistent VDI, Microsoft recommends organizations implement 
 > - `%localappdata%\Packages\Microsoft.Windows.CloudExperienceHost_cw5n1h2txyewy`
 > - `%localappdata%\Packages\<any app package>\AC\TokenBroker`
 > - `%localappdata%\Microsoft\TokenBroker`
+> - `%localappdata%\Microsoft\OneAuth`
+> - `%localappdata%\Microsoft\IdentityCache`
 > - `HKEY_CURRENT_USER\SOFTWARE\Microsoft\IdentityCRL`
 > - `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\AAD`
 > - `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows NT\CurrentVersion\WorkplaceJoin`
