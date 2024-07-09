@@ -100,7 +100,7 @@ Tenants are set to either Pre-migration or Migration in Progress by default, dep
 
 ## Known issues and limitations
 - In recent updates, we removed the ability to target individual users. Previously targeted users will remain in the policy, but we recommend moving them to a targeted group.
-- Registration of an authentication method can fail if Authentication method policy is targeted for too many groups. For each authentication method, we recommend consolidating multiple users and groups into a single group for each authentication method. To maintain registration for users when you consolidate, make sure you add the newly consolidated group and remove users and groups who are currently registered in the same operation. 
+- Registration of an authentication method can fail if the Authentication method policy is targeted to include many groups. We recommend consolidating multiple groups into a single group for each authentication method. To maintain registration for users during consolidation, add the new group and remove current groups in the same operation. 
 
 ## Next steps
 
