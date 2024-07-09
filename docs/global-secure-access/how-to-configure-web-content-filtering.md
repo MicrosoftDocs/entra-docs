@@ -44,18 +44,7 @@ There are several steps to configuring web content filtering. Take note of where
 1. [Assign users or groups to the traffic forwarding profile.](#user-and-group-assignments)
 
 ## Enable internet traffic forwarding
-
-To enable the Microsoft Entra Internet Access forwarding profile to forward user traffic:
-
-> [!NOTE]
-> When you enable the Internet Access forwarding profile, you should also enable the Microsoft traffic forwarding profile for optimal routing of Microsoft traffic.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
-1. Browse to **Global Secure Access** > **Connect** > **Traffic forwarding**.
-1. Enable the **Internet access profile**. Internet traffic starts forwarding from all client devices to Microsoft's Security Service Edge (SSE) proxy, where you configure granular security policies.
-1. Enable the **Microsoft traffic profile**. Microsoft traffic starts forwarding from all client devices to Microsoft's Security Service Edge (SSE) proxy, where you can configure advanced security features specific to Microsoft traffic.
-
-
+The first step is to enable the Internet Access traffic forwarding profile. To learn more about the profile and how to enable it, see [How to manage the Internet Access traffic forwarding profile](how-to-manage-internet-access-profile.md).
 
 ## Create a web content filtering policy
 
