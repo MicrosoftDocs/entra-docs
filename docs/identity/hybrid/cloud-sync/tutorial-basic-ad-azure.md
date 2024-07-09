@@ -16,7 +16,7 @@ ms.author: billmath
 
 This tutorial walks you through creating a basic Active Directory environment. 
 
-![Diagram that shows a basic Microsoft Entra environment.](media/tutorial-single-forest/diagram-2.png)
+![Diagram that shows a basic Microsoft Entra environment.](~/includes/governance/media/tutorial-single-forest/diagram-2.png)
 
 You can use the environment you create in the tutorial to test various aspects of hybrid identity scenarios and will be a prerequisite for some of the tutorials.  If you already have an existing Active Directory environment you can use that as a substitute.  This information is provided for individuals who may be starting from nothing.
 
@@ -209,10 +209,10 @@ Now you need to create a Microsoft Entra tenant so that you can synchronize our 
 Now that you have a Microsoft Entra tenant, you'll create a Global Administrator account.  To create the Global Administrator account do the following.
 
 1.  Under **Manage**, select **Users**.</br>
-![Screenshot that shows the "Overview" menu with "Users" selected.](media/tutorial-single-forest/administrator-1.png)</br>
+![Screenshot that shows the "Overview" menu with "Users" selected.](~/includes/governance/media/tutorial-single-forest/administrator-1.png)</br>
 2.  Select **All users** and then select **+ New user**.
 3.  Provide a name and username for this user. This will be your Global Administrator for the tenant. You'll also want to change the **Directory role** to **Global administrator.** You can also show the temporary password. When you're done, select **Create**.</br>
-![Create](media/tutorial-single-forest/administrator-2.png)</br>
+![Create](~/includes/governance/media/tutorial-single-forest/administrator-2.png)</br>
 4. Once this has completed, open a new web browser and sign-in to myapps.microsoft.com using the new Global Administrator account and the temporary password.
 5. Change the password for the Global Administrator to something that you'll remember.
 
