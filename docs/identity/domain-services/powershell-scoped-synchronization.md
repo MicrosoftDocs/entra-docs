@@ -94,7 +94,7 @@ foreach ($assignment in $currentAssignments)
 {
     Write-Output "Assignment-ObjectId: $($assignment.PrincipalId)"
 
-    if ($newGroupIds.Contains($assignment.PrincipalId) -eq $true)
+    if ($newGroupIds.Contains($assignment.PrincipalId) -eq $false)
     {
         Write-Output "This assignment is not needed anymore. Removing it! Assignment-ObjectId: $($assignment.PrincipalId)"
         Remove-MgServicePrincipalAppRoleAssignment -ServicePrincipalId $sp.Id -AppRoleAssignmentId $assignment.Id
