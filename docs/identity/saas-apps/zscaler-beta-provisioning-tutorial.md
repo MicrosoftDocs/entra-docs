@@ -65,7 +65,7 @@ Before configuring and enabling automatic user provisioning, you should decide w
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users and/or groups in Zscaler Beta based on user and/or group assignments in Microsoft Entra ID.
 
 > [!TIP]
-> You may also choose to enable SAML-based single sign-on for Zscaler Beta, following the instructions provided in the [Zscaler Beta single sign-on tutorial](zscaler-beta-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features compliment each other.
+> You may also choose to enable SAML-based single sign-on for Zscaler Beta, following the instructions provided in the [Zscaler Beta single sign-on tutorial](zscaler-beta-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features complement each other.
 
 > [!NOTE]
 > When users and groups are provisioned or de-provisioned we recommend to periodically restart provisioning to ensure that group memberships are properly updated. Doing a restart will force our service to re-evaluate all the groups and update the memberships.  
