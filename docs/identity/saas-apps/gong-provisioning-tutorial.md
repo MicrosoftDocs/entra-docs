@@ -6,7 +6,6 @@ documentationcenter: ''
 author: thomasakelo
 manager: jeedes
 
-ms.assetid: 6c8285d3-4f35-4325-9adb-d1a44668a03a
 ms.service: entra-id
 ms.subservice: saas-apps
 

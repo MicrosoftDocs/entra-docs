@@ -1,13 +1,10 @@
 ---
 title: 'Tutorial: Configure Torii for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Torii.
-
 author: thomasakelo
 manager: jeedes
-ms.assetid: e6cfe864-b106-4d24-9070-03864e5dfb83
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: tutorial
 ms.date: 03/25/2024
 ms.author: thomasakelo

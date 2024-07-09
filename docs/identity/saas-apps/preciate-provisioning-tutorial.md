@@ -1,13 +1,10 @@
 ---
 title: 'Tutorial: Configure Preciate for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Preciate.
-
 author: thomasakelo
 manager: jeedes
-ms.assetid: fa640971-87e7-49f2-933b-bc7c95fe51e2
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: tutorial
 ms.date: 03/25/2024
 ms.author: thomasakelo

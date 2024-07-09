@@ -1,13 +1,10 @@
 ---
 title: 'Tutorial: Configure Netsparker Enterprise for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Netsparker Enterprise.
-
 author: thomasakelo
 manager: jeedes
-ms.assetid: 6e951318-213e-40d1-9947-88242059f877
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: tutorial
 ms.date: 03/25/2024
 ms.author: thomasakelo
