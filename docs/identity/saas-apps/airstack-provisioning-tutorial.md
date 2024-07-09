@@ -28,7 +28,7 @@ The objective of this tutorial is to demonstrate the steps to be performed in Ai
 The scenario outlined in this tutorial assumes that you already have the following prerequisites:
 
 * A Microsoft Entra tenant
-* [An Airstack tenant](https://airstack.com/pricing/)
+* An Airstack tenant.
 * A user account in Airstack with Admin permissions.
 
 ## Assigning users to Airstack
