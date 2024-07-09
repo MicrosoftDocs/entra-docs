@@ -58,9 +58,9 @@ To view and manage user states, complete the following steps:
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
 1. Select **Per-user MFA**. 
-   :::image type="content" border="true" source="media/howto-mfa-userstates/selectmfa-cropped.png" alt-text="Screenshot of select multifactor authentication from the Users window in Azure AD.":::
+   :::image type="content" border="true" source="./media/howto-mfa-userstates/selectmfa-cropped.png" alt-text="Screenshot of select per-user multifactor authentication.":::
 1. A new page opens that displays the user state, as shown in the following example.
-   ![Screenshot that shows example user state information for Microsoft Entra multifactor authentication](./media/howto-mfa-userstates/userstate1.png)
+      :::image type="content" border="true" source="./media/howto-mfa-userstates/user-state.png" alt-text="Screenshot that shows example user state information for Microsoft Entra multifactor authentication.":::
 
 ## Change the status for a user
 
