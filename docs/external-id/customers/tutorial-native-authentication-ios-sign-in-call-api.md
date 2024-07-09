@@ -47,7 +47,7 @@ MSAL native authentication SDK supports multiple access tokens, so you can speci
 
     - Initialize `protectedAPIUrl1` with the URL of your first web API.
     - Initialize `protectedAPIUrl2` with the URL of your second web API.
-    - Define `protectedAPIScopes1` with scopes for your first API, like ["api://<Resource_App_ID>/ToDoList.Read", "api://<Resource_App_ID>/ToDoList.ReadWrite"].
+    - Define `protectedAPIScopes1` with scopes for your first API, like `["api://<Resource_App_ID>/ToDoList.Read", "api://<Resource_App_ID>/ToDoList.ReadWrite"]`.
     - Define `protectedAPIScopes2` with scopes for your second API, similar to `protectedAPIScopes1`.
     
 
