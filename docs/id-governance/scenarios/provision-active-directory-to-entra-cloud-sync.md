@@ -10,7 +10,7 @@ ms.subservice: hybrid-cloud-sync
 ms.author: billmath
 ---
 
-# Govern cloud users and groups that are provisioned from Active Directory using Microsoft Entra ID Governance (Preview)
+# Govern cloud users and groups that are provisioned from Active Directory using Microsoft Entra ID Governance
 
 **Scenario:** Manage cloud users and groups that are provisioned from Active Directory using Microsoft Entra cloud sync.
 
