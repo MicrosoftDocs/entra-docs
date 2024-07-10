@@ -121,11 +121,13 @@ The following are the minimum browser version requirements on Windows.
 | Edge    |  &#x2705;  | &#x2705; | N/A | 
 | Chrome  |  &#x2705;  | &#x2705; | N/A |
 | Firefox |  &#x2705;  | &#x2705; | N/A |
-| Safari  |  &#x2705;  | &#x2705; | N/A |
+| Safari<sup>3</sup>  |  &#x2705;  | &#x2705; | N/A |
 
 <sup>1</sup>New security key registration doesn't work on iOS browsers because they don't prompt to set up biometrics or PIN.
 
 <sup>2</sup>BLE security keys aren't supported on iOS by Apple.
+
+<sup>3</sup>Authentication with a security key in iOS browsers doesn't work properly if three or more passkeys are registered to the user. As a workaround, users can click **Sign-in options** and sign without entering their username.
 
 ### Android
 
