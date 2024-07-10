@@ -2,16 +2,11 @@
 title: 'Tutorial: Configure Adobe Identity Management (OIDC) for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Adobe Identity Management (OIDC).
 
-documentationcenter: ''
 author: twimmers
-writer: twimmers
 manager: jeedes
-
-ms.assetid: baa54168-d23a-49d8-94d1-28476138cd90
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 03/25/2024
 ms.author: thwimmer

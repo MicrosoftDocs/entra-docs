@@ -1,15 +1,14 @@
 ---
 title: 'Tutorial: Configure GitHub Enterprise Managed User for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to GitHub Enterprise Managed User.
-documentationcenter: ''
+
 author: thomasakelo
 manager: jeedes
 
-ms.assetid: 6aee39c7-08a1-4110-b936-4c85d129743b
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.tgt_pltfrm: na
+
 ms.topic: tutorial
 ms.date: 03/25/2024
 ms.author: thomasakelo
