@@ -169,4 +169,3 @@ Write-Output "---------------------------------------"
 ## Next steps
 
 - [Microsoft Graph PowerShell overview](/powershell/microsoftgraph/overview)
-- [Global Secure Access PowerShell examples](../powershell-samples.md)
