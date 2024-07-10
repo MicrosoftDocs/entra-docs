@@ -10,7 +10,7 @@ ms.author: kenwith
 ms.reviewer: sumi
 ---
 
-# Get the Auth Token for registering your Microsoft Entra private network connector through Azure Marketplace. 
+# Get the Auth Token for registering your Microsoft Entra private network connector through Azure Marketplace
 
 The PowerShell script helps you get the Auth Token for registering your Microsoft Entra private network connector through Azure Marketplace. 
 
