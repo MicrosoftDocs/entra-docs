@@ -17,7 +17,7 @@ The Microsoft Entra deployment scenarios provide you with detailed guidance on h
 
 - [Microsoft Entra ID Protection](../id-protection/overview-identity-protection.md)
 - [Microsoft Entra ID Governance](../id-governance/identity-governance-overview.md)
-- [Microsoft Entra Verified ID: Premium](../verified-id/decentralized-identifier-overview.md)
+- [Microsoft Entra Verified ID (premium capabilities)](../verified-id/decentralized-identifier-overview.md)
 - [Microsoft Entra Internet Access](../global-secure-access/concept-internet-access.md)
 - [Microsoft Entra Private Access](../global-secure-access/concept-private-access.md)
 
