@@ -76,18 +76,18 @@ To create two groups, follow these steps.
    Connect-MgGraph -Scopes "Directory.ReadWrite.All", "Application.ReadWrite.All", "User.ReadWrite.All, Group.ReadWrite.All"
    ```
 
-## Create the CloudSyncCustomExtensionApp and service principal
+## Create our CloudSyncCustomExtensionApp application and service principal
 
 >[!Important]
 > Directory extension for Microsoft Entra Cloud Sync is only supported for applications with the identifier URI “api://&LT;tenantId&GT;/CloudSyncCustomExtensionsApp” and the [Tenant Schema Extension App](../connect/how-to-connect-sync-feature-directory-extensions.md#configuration-changes-in-azure-ad-made-by-the-wizard) created by Microsoft Entra Connect. 
 
-1. Get your Tenant ID :
+1. Get the Tenant ID:
 
    ```powershell
    $tenantId = (Get-MgOrganization).Id
    $tenantId
    ```
-> Note: This will output you current Tenant ID. You can confirm this Tenant ID by navigating to [Microsoft Entra admin center](https://entra.microsoft.com/) > Identity > Overview.
+> Note: This will output our current Tenant ID. You can confirm this Tenant ID by navigating to [Microsoft Entra admin center](https://entra.microsoft.com/) > Identity > Overview.
 
 1. Using the `$tenantId` variable from the previous step, check to see if the CloudSyncCustomExtensionApp exists.
 
@@ -114,7 +114,7 @@ To create two groups, follow these steps.
    New-MgServicePrincipal -AppId $cloudSyncCustomExtApp.AppId
    ```
    
-## Create our extension and cloud sync configuration
+## Create our custom extension attribute
 
 1. Get the CloudSyncCustomExtensionsApp application:
 
@@ -127,9 +127,11 @@ To create two groups, follow these steps.
    ```powershell
    New-MgApplicationExtensionProperty -Id $cloudSyncCustomExtApp.Id -ApplicationId $cloudSyncCustomExtApp.Id -Name 'WritebackEnabled' -DataType 'Boolean' -TargetObjects 'Group'
    ```
-   :::image type="content" source="media/tutorial-directory-extension-group-provision/directory-extension-group-provision-3.png" alt-text="Screenshot of PowerShell New-MgApplicationExtensionProperty." lightbox="media/tutorial-directory-extension-group-provision/directory-extension-group-provision-3.png":::
  
-1. This cmdlet creates an attribute that looks like extension_&lt;guid&gt;_SynchGroup. You need this to associate it with a group, however the graph PowerShell cmdlet doesn't return this. 
+1. This cmdlet creates an extension attribute that looks like extension_&lt;guid&gt;_WritebackEnabled.
+
+## Create our cloud sync configuration
+
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
 1. Browse to **Identity** > **Hybrid Management** > **Microsoft Entra Connect** > **Cloud sync**.
 1. Select **New configuration**.
