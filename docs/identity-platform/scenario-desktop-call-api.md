@@ -156,5 +156,6 @@ data = requests.get(endpoint, headers=http_headers, stream=False).json()
 
 ## Next steps
 
-Move on to the next article in this scenario,
-[Move to production](scenario-desktop-production.md).
+- Learn more by building a React Single-page application (SPA) that signs in users in the following multi-part [tutorial series](tutorial-single-page-app-react-register-app.md).
+
+- Explore Microsoft identity platform [desktop  code samples](sample-v2-code.md#desktop) 

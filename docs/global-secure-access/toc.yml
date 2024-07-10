@@ -10,6 +10,8 @@ items:
     href: how-to-get-started-with-global-secure-access.md
   - name: Global Secure Access dashboard
     href: concept-traffic-dashboard.md
+  - name: Role-based administrator roles
+    href: reference-role-based-permissions.md
 - name: Concepts
   expanded: true
   items: 

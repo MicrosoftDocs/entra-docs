@@ -917,6 +917,36 @@
       "redirect_url": "/entra/architecture/sse-deployment-guide-microsoft-traffic",
       "redirect_document_id": false
     },
+    {
+      "source_path_from_root": "/docs/identity-platform/scenario-daemon-overview.md",
+      "redirect_url": "/entra/identity-platform/scenario-daemon-app-registration",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/scenario-daemon-production.md",
+      "redirect_url": "/entra/identity-platform/scenario-daemon-app-registration",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/scenario-mobile-overview.md",
+      "redirect_url": "/entra/identity-platform/scenario-mobile-app-registration",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/scenario-mobile-production.md",
+      "redirect_url": "/entra/identity-platform/scenario-mobile-app-registration",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/scenario-desktop-overview.md",
+      "redirect_url": "/entra/identity-platform/scenario-desktop-app-registration",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/scenario-desktop-production.md",
+      "redirect_url": "/entra/identity-platform/scenario-desktop-app-registration",
+      "redirect_document_id": false
+    },
     {            
       "source_path_from_root": "/docs/identity-platform/msal-net-migration-android-broker.md",
       "redirect_url": "/entra/identity-platform/quickstart-mobile-app-android-sign-in",
