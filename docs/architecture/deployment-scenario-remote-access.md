@@ -94,9 +94,9 @@ This diagram illustrates the minimum architecture requirements to deploy and tes
 
 In this section, we activate Global Secure Access through the Microsoft Entra admin center. We then set up initial configurations that this scenario requires.
 
-1. Sign in to the Microsoft Entra admin center with at least a Global Administrator role.
-1. Go to **Global Secure Access (preview)** \> **Get started** \> **Activate Global Secure Access in your tenant**. Select **Activate** to enable SSE features.
-1. Go to **Global Secure Access (preview)** \> **Connect** \> **Traffic forwarding**. Toggle on **Private access profile**. Traffic forwarding enables you to configure the type of network traffic to tunnel through Microsoft's Security Service Edge Solution services. Set up [traffic forwarding profiles](../global-secure-access/concept-traffic-forwarding.md) to manage traffic types.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](/entra/identity/role-based-access-control/permissions-reference#global-administrator).
+1. Browse to **Global Secure Access (preview)** > **Get started** > **Activate Global Secure Access in your tenant**. Select **Activate** to enable SSE features.
+1. Browse to **Global Secure Access (preview)** > **Connect** > **Traffic forwarding**. Toggle on **Private access profile**. Traffic forwarding enables you to configure the type of network traffic to tunnel through Microsoft's Security Service Edge Solution services. Set up [traffic forwarding profiles](../global-secure-access/concept-traffic-forwarding.md) to manage traffic types.
    - The **Microsoft 365 access profile** is for Microsoft Entra Internet Access for Microsoft 365.
    - The **Private access profile** is for Microsoft Entra Private Access.
    - The **Internet access profile** is for Microsoft Entra Internet Access. Microsoft's Security Service Edge solution only captures traffic on client devices with Global Secure Access Client installation.
@@ -109,8 +109,8 @@ Microsoft Entra Internet Access for Microsoft 365 and Microsoft Entra Private Ac
 
 1. Ensure that the Windows device is Microsoft Entra joined or hybrid joined.
 1. Sign in to the Windows device with a Microsoft Entra user role with local admin privileges.
-1. Sign in to the Microsoft Entra admin center with at least a Global Administrator role.
-1. Go to **Global Secure Access (preview)** \> **Connect** \> **Client Download**. Select **Download client**. Complete the installation.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Secure Access Administrator](/entra/identity/role-based-access-control/permissions-reference#global-secure-access-administrator)
+1. Browse to **Global Secure Access (preview)** > **Connect** > **Client Download**. Select **Download client**. Complete the installation.
 
    :::image type="content" source="media/deployment-scenario-remote-access/client-download-inline.png" alt-text="Screenshot of Client download showing the Windows Download Client control." lightbox="media/deployment-scenario-remote-access/client-download-expanded.png":::
 
@@ -121,7 +121,8 @@ Microsoft Entra Internet Access for Microsoft 365 and Microsoft Entra Private Ac
 
 The connector server communicates with Microsoft's Security Service Edge Solution as the gateway to the corporate network. It uses outbound connections through 80 and 443 and doesn't require inbound ports. Learn [How to configure connectors for Microsoft Entra Private Access](../global-secure-access/how-to-configure-connectors.md#open-ports). Complete these configuration steps:
 
-1. On the connector server, sign in to the Microsoft Entra admin center. Go to **Global Secure Access (Preview)** \> **Connect** \> **Connectors**. Select **Enable Private Network connectors**.
+1. On the connector server, sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Secure Access Administrator](/entra/identity/role-based-access-control/permissions-reference#global-secure-access-administrator).
+1. Browse to **Global Secure Access (Preview)** > **Connect** > **Connectors**. Select **Enable Private Network connectors**.
 
    :::image type="content" source="media/deployment-scenario-remote-access/private-network-connectors.png" alt-text="Screenshot of Private Network connectors with a red box highlighting the Enable Private Network connectors control.":::
 
@@ -149,7 +150,8 @@ Identify a server with a file share to publish and note its IP address. File sha
 Microsoft Entra Private Access supports transmission control protocol (TCP) applications using any port. To connect to the file server (TCP port 445) over the internet, complete these steps:
 
 1. From the connector server, verify that you can access a file share on the file server.
-1. Sign in to the Microsoft Entra admin center. Go to **Global Secure Access (preview)** \> **Applications** \> **Enterprise applications** \> **+ New Application**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Secure Access Administrator](/entra/identity/role-based-access-control/permissions-reference#global-secure-access-administrator)
+1. Browse to **Global Secure Access (preview)** > **Applications** > **Enterprise applications** > **+ New Application**.
 
    :::image type="content" source="media/deployment-scenario-remote-access/new-enterprise-app.png" alt-text="Screenshot of Enterprise applications showing New application control.":::
 
@@ -157,19 +159,21 @@ Microsoft Entra Private Access supports transmission control protocol (TCP) appl
 
    :::image type="content" source="media/deployment-scenario-remote-access/application-segment.png" alt-text="Screenshot of Create Global Secure Access application, Create application segment.":::
 
-1. Select **Apply** \> **Save**. Verify that the application is in **Enterprise applications**.
-1. Go to **Identity** \> **Applications** \> **Enterprise applications**. Select the new application.
+1. Select **Apply** > **Save**. Verify that the application is in **Enterprise applications**.
+1. Go to **Identity** > **Applications** > **Enterprise applications**. Select the new application.
 1. Select **Users and groups**. Add the security group that you created earlier with test users that access this file share from the internet.
 
 ### Secure published application for remote access with quick access
 
 In this section, we create a Conditional Access (CA) policy that blocks access to the new application when a user's risk is elevated.
 
-1. Sign in to the Microsoft Entra admin center. Go to **Identity** **Protection** \> **Conditional Access** \> **+ Create new policy**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](/entra/identity/role-based-access-control/permissions-reference#conditional-access-administrator).
+1. Browse to **Protection** > **Conditional Access** > **Policies**.
+1. Select **New policy**.
 1. Enter a name and select users. Select users and groups. Select the security group that you created earlier.
-1. Select **Target resources** \> **Apps** and the **application** that you created earlier (such as *FileServer1*).
-1. Select **Conditions** \> **User risk** \> **Configure** \> **Yes**. Select **High** and **Medium** risk levels. Select **Done**.
-1. Select **Grant** \> **Block** **access** \> **Select**.
+1. Select **Target resources** > **Apps** and the **application** that you created earlier (such as *FileServer1*).
+1. Select **Conditions** > **User risk** > **Configure** > **Yes**. Select **High** and **Medium** risk levels. Select **Done**.
+1. Select **Grant** > **Block** **access** > **Select**.
 1. Toggle on **Enable Policy**.
 1. Review your settings.
 1. Select **Create**.
@@ -257,9 +261,9 @@ Identify a server with a file share that you wish to publish and note its IP add
 
 Activate Global Secure Access through the Microsoft Entra admin center and make required initial configurations for this scenario.
 
-1. Sign in to the Microsoft Entra admin center with at least a Global Administrator role.
-1. Go to **Global Secure Access (preview)** \> **Get started** \> **Activate Global Secure Access in your tenant**. Select **Activate** to enable SSE features in your tenant.
-1. Go to **Global Secure Access (preview)** \> **Connect** \> **Traffic forwarding**. Toggle on **Private access profile**. Traffic forwarding enables you to configure the type of network traffic to tunnel through Microsoft's Security Service Edge Solution services. Set up [traffic forwarding profiles](../global-secure-access/concept-traffic-forwarding.md) to manage traffic types.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](/entra/identity/role-based-access-control/permissions-reference#global-administrator).
+1. Browse to **Global Secure Access (preview)** > **Get started** > **Activate Global Secure Access in your tenant**. Select **Activate** to enable SSE features in your tenant.
+1. Go to **Global Secure Access (preview)** > **Connect** > **Traffic forwarding**. Toggle on **Private access profile**. Traffic forwarding enables you to configure the type of network traffic to tunnel through Microsoft's Security Service Edge Solution services. Set up [traffic forwarding profiles](../global-secure-access/concept-traffic-forwarding.md) to manage traffic types.
    - The **Microsoft 365 access profile** is for Microsoft Entra Internet Access for Microsoft 365.
    - The **Private access profile** is for Microsoft Entra Private Access.
    - The **Internet access profile** is for Microsoft Entra Internet Access. Microsoft's Security Service Edge solution only captures traffic on client devices with Global Secure Access Client installation.
@@ -272,8 +276,8 @@ Microsoft Entra Internet Access for Microsoft 365 and Microsoft Entra Private Ac
 
 1. Ensure that the Windows device is Microsoft Entra ID joined or hybrid joined.
 1. Sign in to the Windows device with a Microsoft Entra ID user role with local admin privileges.
-1. Sign in to the Microsoft Entra ID admin center with at least a Global Administrator role.
-1. Go to **Global Secure Access (preview)** \> **Connect** \> **Client Download**. Select **Download client**. Complete the installation.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Secure Access Administrator](/entra/identity/role-based-access-control/permissions-reference#global-secure-access-administrator)
+1. Browse to **Global Secure Access (preview)** > **Connect** > **Client Download**. Select **Download client**. Complete the installation.
 
    :::image type="content" source="media/deployment-scenario-remote-access/client-download-inline.png" alt-text="Screenshot of Client download showing the Windows Download Client control." lightbox="media/deployment-scenario-remote-access/client-download-expanded.png":::
 
@@ -284,7 +288,8 @@ Microsoft Entra Internet Access for Microsoft 365 and Microsoft Entra Private Ac
 
 The connector server communicates with Microsoft's Security Service Edge solution as the gateway to the corporate network. It uses outbound connections through 80 and 443 and doesn't require inbound ports. Learn [how to configure connectors for Microsoft Entra Private Access](../global-secure-access/how-to-configure-connectors.md#open-ports). Complete these configuration steps:
 
-1. On the connector server, sign in to the Microsoft Entra admin center. Go to **Global Secure Access (Preview)** \> **Connect** \> **Connectors**. Select **Enable Private Network connectors**.
+1. On the connector server, sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Secure Access Administrator](/entra/identity/role-based-access-control/permissions-reference#global-secure-access-administrator).
+1. Browse to **Global Secure Access (Preview)** > **Connect** > **Connectors**. Select **Enable Private Network connectors**.
 
    :::image type="content" source="media/deployment-scenario-remote-access/private-network-connectors.png" alt-text="Screenshot of Private Network connectors with a red box highlighting the Enable Private Network connectors control.":::
 
@@ -306,7 +311,8 @@ In this scenario, we use a security group to assign permissions to the Private A
 Microsoft Entra Private Access supports transmission control protocol (TCP) applications using any port. To connect to the file server (TCP port 445) over the internet, complete these steps:
 
 1. From the connector server, verify that you can access a file share on the file server.
-1. Sign in to the Microsoft Entra admin center. Go to **Global Secure Access (preview)** \> **Applications** \> **Enterprise applications** \> **+ New Application**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Secure Access Administrator](/entra/identity/role-based-access-control/permissions-reference#global-secure-access-administrator).
+1. Browse to **Global Secure Access (preview)** > **Applications** > **Enterprise applications** > **+ New Application**.
 
    :::image type="content" source="media/deployment-scenario-remote-access/new-enterprise-app.png" alt-text="Screenshot of Enterprise applications showing New application control.":::
 
@@ -314,8 +320,8 @@ Microsoft Entra Private Access supports transmission control protocol (TCP) appl
 
    :::image type="content" source="media/deployment-scenario-remote-access/application-segment.png" alt-text="Screenshot of Create Global Secure Access application, Create application segment.":::
 
-1. Select **Apply** \> **Save**. Verify that the application is in **Enterprise applications**.
-1. Go to **Identity** \> **Applications** \> **Enterprise applications**. Select the new application.
+1. Select **Apply** > **Save**. Verify that the application is in **Enterprise applications**.
+1. Go to **Identity** > **Applications** > **Enterprise applications**. Select the new application.
 1. Select **Users and groups**. Add the security group that you created earlier with test users that access this file share from the internet.
 
 ### Configure access governance for remote access per app
@@ -326,18 +332,18 @@ In this section, we describe the configuration steps for this solution.
 
 Follow these steps to create an Entitlement management catalog:
 
-1. Sign in to the Microsoft Entra admin center with at least an Identity Governance Administrator role.
-1. Go to **Identity governance** \> **Entitlement management** \> **Catalogs**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](/entra/identity/role-based-access-control/permissions-reference#identity-governance-administrator).
+1. Browse to **Identity governance** > **Entitlement management** > **Catalogs**.
 1. Select **+New catalog**.
 
    :::image type="content" source="media/deployment-scenario-remote-access/identity-governance-catalogs-inline.png" alt-text="Screenshot of New access review, Enterprise applications, All applications, Identity Governance, New catalog." lightbox="media/deployment-scenario-remote-access/identity-governance-catalogs-expanded.png":::
 
 1. Enter a unique name for the catalog and provide a description. Requestors see this information in the access package's details.
-1. To create access packages in this catalog for internal users, select **Enabled for external users** \> **No**.
+1. To create access packages in this catalog for internal users, select **Enabled for external users** > **No**.
 
    :::image type="content" source="media/deployment-scenario-remote-access/identity-governance-new-catalog.png" alt-text="Screenshot of New catalog with No selected for the Enabled for external users control.":::
 
-1. On **Catalog**, open the catalog to which you want to add resources. Select **Resources** \> **+Add resources**.
+1. On **Catalog**, open the catalog to which you want to add resources. Select **Resources** > **+Add resources**.
 
    :::image type="content" source="media/deployment-scenario-remote-access/catalog-resources-inline.png" alt-text="Screenshot of App catalog, Resources list showing Add resources control." lightbox="media/deployment-scenario-remote-access/catalog-resources-expanded.png":::
 
@@ -350,8 +356,8 @@ We recommend group provisioning to Active Directory with [Microsoft Entra Cloud 
 
 Follow these steps to configure Microsoft Entra Cloud sync:
 
-1. Sign in to the Microsoft Entra admin center with at least a Hybrid Administrator role.
-1. Go to **Identity** \> **Hybrid management** \> **Microsoft Entra Connect** \> **Cloud sync**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](/entra/identity/role-based-access-control/permissions-reference#hybrid-identity-administrator).
+1. Browse to **Identity** > **Hybrid management** > **Microsoft Entra Connect** > **Cloud sync**.
 1. Select **New configuration**.
 1. Select **Microsoft Entra ID to AD sync**.
 
@@ -376,8 +382,8 @@ Follow these steps to configure Microsoft Entra Cloud sync:
 
 Follow these steps to create an access package in Entitlement management:
 
-1. Sign in to the Microsoft Entra admin center with at least an Identity Governance Administrator role.
-1. Go to **Identity governance** \> **Entitlement management** \> **Access package**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](/entra/identity/role-based-access-control/permissions-reference#identity-governance-administrator).
+1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
 1. Select **New access package**.
 1. For **Basics**, give the access package a name (such as *Finance Apps Access Package*). Specify the catalog that you previously created.
 1. For **Resource roles**, select the resources that you previously added (such as *FileServer1 app* and *Finance Team File Share* security group).
@@ -403,14 +409,14 @@ In this section, we describe how to create joiner and leaver workflows and run w
 
 To create a joiner workflow, follow these steps.
 
-1. Sign in to the Microsoft Entra admin center with at least a Lifecycle Workflows Administrator role.
-1. Go to **Identity governance** \> **Lifecycle workflows** \> **Create a workflow**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](/entra/identity/role-based-access-control/permissions-reference#lifecycle-workflows-administrator).
+1. Browse to **Identity governance** > **Lifecycle workflows** > **Create a workflow**.
 1. For **Choose a workflow**, select **Onboard new hire employee**.
 
    [![Screenshot of Identity governance, Lifecycle workflows, Create a workflow, Choose a workflow.](media/deployment-scenario-remote-access/workflow-joiner.png)](media/deployment-scenario-remote-access/workflow-joiner.png#lightbox)
 
 1. For **Basics**, enter *Onboard New hire employee -- Finance* for the workflow display name and description. Select **Next**.
-1. For **Configure scope** \> **Rule**, enter values for **Property**, **Operator**, and **Value**. Change the expression of the scope to only users where **Property** \> **department** has a **Value** of **Finance**. Ensure that your test user populates **Property** with the *Finance* string so that it's in the workflow scope.
+1. For **Configure scope** > **Rule**, enter values for **Property**, **Operator**, and **Value**. Change the expression of the scope to only users where **Property** > **department** has a **Value** of **Finance**. Ensure that your test user populates **Property** with the *Finance* string so that it's in the workflow scope.
 
    :::image type="content" source="media/deployment-scenario-remote-access/scope-rule.png" alt-text="Screenshot of Rule view with a red box highlighting the Value control.":::
 
@@ -432,14 +438,14 @@ To create a joiner workflow, follow these steps.
 
 To create a leaver workflow, follow these steps.
 
-1. Sign in to the Microsoft Entra admin center with at least a Lifecycle Workflows Administrator role.
-1. Go to **Identity governance** \> **Lifecycle workflows** \> **Create a workflow**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](/entra/identity/role-based-access-control/permissions-reference#lifecycle-workflows-administrator).
+1. Browse to **Identity governance** > **Lifecycle workflows** > **Create a workflow**.
 1. On **Choose a workflow**, select **Offboard an employee**.
 
    :::image type="content" source="media/deployment-scenario-remote-access/workflow-leaver.png" alt-text="Screenshot of Choose a workflow with a red box highlighting the Leaver card.":::
 
 1. On **Basics**, enter *Offboard an employee -- Finance* as display name and description for the workflow. Select **Next**.
-1. On **Configure scope** \> **Rule**, enter values for **Property**, **Operator**, and **Value**. Change the expression of the scope to only users where **Property** \> **department** has a **Value** of **Finance**. Ensure that your test user populates **Property** with the *Finance* string so that it's in the workflow scope.
+1. On **Configure scope** > **Rule**, enter values for **Property**, **Operator**, and **Value**. Change the expression of the scope to only users where **Property** > **department** has a **Value** of **Finance**. Ensure that your test user populates **Property** with the *Finance* string so that it's in the workflow scope.
 
    :::image type="content" source="media/deployment-scenario-remote-access/scope-rule.png" alt-text="Screenshot of Rule view with a red box highlighting the Value control.":::
 
@@ -462,8 +468,8 @@ To create a leaver workflow, follow these steps.
 To test this scenario without waiting for the automated schedule, run on-demand lifecycle workflows.
 
 1. Initiate the previously created joiner workflow.
-1. Sign in to the Microsoft Entra admin center with at least a Lifecycle Workflows Administrator role.
-1. Go to **Identity governance** \> **Lifecycle workflows** \> **Workflows**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](/entra/identity/role-based-access-control/permissions-reference#lifecycle-workflows-administrator).
+1. Browse to **Identity governance** > **Lifecycle workflows** > **Workflows**.
 1. On **Workflow**, select *Onboard New hire employee -- Finance* that you previously created.
 1. Select **Run on-demand**.
 1. On **Select users**, select **Add users**.
@@ -529,8 +535,8 @@ To verify user access to the file server, follow these steps:
 
 ### Run leaver workflow on demand
 
-1. Sign in to the Microsoft Entra admin center as at least a Lifecycle Workflows Administrator role.
-1. Go to **Identity governance** \> **Lifecycle workflows** \> **Workflows**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](/entra/identity/role-based-access-control/permissions-reference#lifecycle-workflows-administrator).
+1. Browse to **Identity governance** > **Lifecycle workflows** > **Workflows**.
 1. On Workflows, select the *Offboard an employee - Finance* workflow that you created in the leaver steps.
 1. Select **Run on-demand**.
 1. On **Select users**, select **Add users**.

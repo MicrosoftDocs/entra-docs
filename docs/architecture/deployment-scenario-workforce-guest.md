@@ -40,7 +40,7 @@ They use Microsoft Entra ID Governance to create and grant access packages for e
 
 Employees and external users can request access packages through a self-service portal where they provide digital proofs as identity verification. With single sign-on and multifactor authentication, employee and external user Microsoft Entra accounts provide access to apps and resources that their access packages include. Contoso verifies credentials and grants access packages without requiring manual approvals or provisioning.
 
-Contoso uses Microsoft Entra ID Protection and Conditional Access (CA) to monitor and protect accounts from risky sign-ins and user behavior. They enforce appropriate access controls based on location, device, and risk level.
+Contoso uses Microsoft Entra ID Protection and Conditional Access to monitor and protect accounts from risky sign-ins and user behavior. They enforce appropriate access controls based on location, device, and risk level.
 
 ## Configure prerequisites
 
@@ -51,7 +51,7 @@ To successfully deploy and test the solution, configure the prerequisites that w
 For this scenario, complete these prerequisite steps to configure Microsoft Entra Verified ID with Quick setup (Preview):
 
 1. Register a custom domain (required for Quick setup) by following the steps in the [Add your custom domain](../fundamentals/add-custom-domain.yml) article.
-1. Sign in to the Microsoft Entra admin center with at least a Global Administrator role.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](/entra/identity/role-based-access-control/permissions-reference#global-administrator).
    - Select **Verified ID**.
    - Select **Setup**.
    - Select **Get started**.
@@ -68,8 +68,8 @@ For this scenario, complete these prerequisite steps to configure Microsoft Entr
 
 Follow these prerequisite steps to add a trusted external organization (B2B) for the scenario.
 
-1. Sign in to the Microsoft Entra admin center with at least a Security Administrator role.
-1. Go to **Identity** \> **External Identities** \> **Cross-tenant access settings**. Select **Organizational settings**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator).
+1. Browse to **Identity** > **External Identities** > **Cross-tenant access settings**. Select **Organizational settings**.
 1. Select **Add organization**.
 1. Enter the organization's full domain name (or tenant ID).
 1. Select the organization in the search results. Select **Add**.
@@ -81,18 +81,18 @@ Follow these prerequisite steps to add a trusted external organization (B2B) for
 
 Follow these steps to create an Entitlement management catalog for the scenario.
 
-1. Sign in to the Microsoft Entra admin center with at least an Identity Governance Administrator role.
-1. Go to **Identity governance** \> **Entitlement management** \> **Catalogs**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](/entra/identity/role-based-access-control/permissions-reference#identity-governance-administrator).
+1. Browse to **Identity governance** > **Entitlement management** > **Catalogs**.
 1. Select **+New catalog**.
 
    :::image type="content" source="media/deployment-scenario-workforce-guest/identity-governance-catalogs-inline.png" alt-text="Screenshot of New access review, Enterprise applications, All applications, Identity Governance, New catalog." lightbox="media/deployment-scenario-workforce-guest/identity-governance-catalogs-expanded.png":::
 
 1. Enter a unique name and description for the catalog               . Requestors see this information in an access package's details.
-1. To create access packages in this catalog only for internal users, select **Enabled for external users** \> **No**.
+1. To create access packages in this catalog only for internal users, select **Enabled for external users** > **No**.
 
    :::image type="content" source="media/deployment-scenario-workforce-guest/identity-governance-new-catalog.png" alt-text="Screenshot of New catalog with No selected for the Enabled for external users control.":::
 
-1. On **Catalog**, open the catalog to which you want to add resources. Select **Resources** \> **+Add resources**.
+1. On **Catalog**, open the catalog to which you want to add resources. Select **Resources** > **+Add resources**.
 1. Select **Type**, then **Groups and Teams**, **Applications**, or **SharePoint sites**.
 1. Select one or more resources of the type that you want to add to the catalog. Select **Add**.
 
@@ -104,8 +104,8 @@ To successfully deploy and test the solution, configure the access packages that
 
 Follow these steps to create an access package in entitlement management with Verified ID for remote (internal) users.
 
-1. Sign in to the Microsoft Entra admin center with at least an Identity Governance Administrator role.
-1. Go to **Identity governance** \> **Entitlement management** \> **Access package**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](/entra/identity/role-based-access-control/permissions-reference#identity-governance-administrator).
+1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
 1. Select **New access package**.
 1. For **Basics**, give the access package a name (such as *Finance Apps for Remote Users*). Specify the catalog that you previously created.
 1. For **Resource roles**, select a resource type (for example: Groups and Teams, Applications, SharePoint sites). Select one or more resources.
@@ -127,8 +127,8 @@ Follow these steps to create an access package in entitlement management with Ve
 
 Follow these steps to create an access package in entitlement management with Verified ID for guests (B2B).
 
-1. Sign in to the Microsoft Entra admin center with at least an Identity Governance Administrator role.
-1. Go to **Identity governance** \> **Entitlement management** \> **Access package**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](/entra/identity/role-based-access-control/permissions-reference#identity-governance-administrator).
+1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
 1. Select **New access package**.
 1. For **Basics**, give the access package a name (such as *Finance Apps for Remote Users*). Specify the catalog that you previously created.
 1. For **Resource roles**, select a resource type (for example: Groups and Teams, Applications, SharePoint sites). Select one or more resources.
@@ -150,21 +150,21 @@ Follow these steps to create an access package in entitlement management with Ve
 
    :::image type="content" source="media/deployment-scenario-workforce-guest/new-access-package.png" alt-text="Screenshot of New access package.":::
 
-## Create a sign-in risk-based CA policy
+## Create a sign-in risk-based Conditional Access policy
 
-1. Sign in to the Microsoft Entra admin center with at least a Conditional Access (CA) Administrator role.
-1. Go to **Protection** \> **Conditional Access**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Conditional Access Administrator](/entra/identity/role-based-access-control/permissions-reference#conditional-access-administrator).
+1. Browse to **Protection** > **Conditional Access** > **Policies**.
 1. Select **New policy**.
 1. Enter a policy name such as *Protect applications for remote high-risk sign-in users*.
 1. For **Assignments**, select **Users**.
-1. For **Include**, select a remote user group or select all users.
-1. For **Exclude**, select **Users and groups**. Select your organization's emergency access or break-glass accounts.
-1. Select **Done**.
-1. For **Cloud apps or actions** \> **Include**, select the applications to target this policy.
-1. For **Conditions** \> **Sign-in risk**, set **Configure** to **Yes**. For **Select the sign-in risk level this policy will apply to**, select **High** and **Medium**.
-1. Select **Done**.
-1. For **Access controls** \> **Grant**.
-1. Select **Grant access** \> **Require multifactor authentication**.
+   1. For **Include**, select a remote user group or select all users.
+   1. For **Exclude**, select **Users and groups**. Select your organization's emergency access or break-glass accounts.
+   1. Select **Done**.
+1. For **Cloud apps or actions** > **Include**, select the applications to target this policy.
+1. For **Conditions** > **Sign-in risk**, set **Configure** to **Yes**. For **Select the sign-in risk level this policy will apply to**, select **High** and **Medium**.
+   1. Select **Done**.
+1. For **Access controls** > **Grant**.
+   1. Select **Grant access** > **Require multifactor authentication**.
 1. For **Session**, select **Sign-in frequency**. Select **Every time**.
 1. Confirm settings. Select **Enable policy**.
 
@@ -183,7 +183,7 @@ After you configure an access package with a Verified ID requirement, end-users 
 1. After you share your credentials, continue with the approval workflow.
 1. **Optional:** Follow the [Simulating risk detections in Microsoft Entra ID Protection](../id-protection/howto-identity-protection-simulate-risk.md) instructions. You might need to try multiple times to raise the user risk to medium or high.
 1. Try accessing the application that you previously created for the scenario to confirm blocked access. You might need to wait up to one hour for block enforcement.
-1. Use sign in logs to validate blocked access by the Conditional Access (CA) policy that you created earlier. Open non-interactive sign in logs from the *ZTNA Network Access Client -- Private* application. View logs from the Private Access application name that you previously created as the **Resource name**.
+1. Use sign in logs to validate blocked access by the Conditional Access policy that you created earlier. Open non-interactive sign in logs from the *ZTNA Network Access Client -- Private* application. View logs from the Private Access application name that you previously created as the **Resource name**.
 
 ## Related content
 
