@@ -54,7 +54,7 @@ Microsoft Entra [Domain Services](../identity/domain-services/overview.md) usage
 
 ## Microsoft External ID
 
-Microsoft Entra [External ID](../external-id/external-identities-overview.md) core features are free for your first 50,000 monthly active users. Additional licensing information is available at the [External ID FAQ](https://aka.ms/ExternalIDPricing)
+Microsoft Entra [External ID](../external-id/external-identities-overview.md) core features are free for your first 50,000 monthly active users. More licensing information is available at the [External ID FAQ](https://aka.ms/ExternalIDPricing)
 
 ## Microsoft Entra ID Protection
 
@@ -79,8 +79,6 @@ Permissions Management supports all resources across Amazon Web Services (AWS), 
 ## Microsoft Entra Privileged Identity Management
 
 [!INCLUDE [Microsoft Entra Privileged Identity](../includes/licensing-pim.md)]
-
-
 
 ## Microsoft Entra Verified ID
 
