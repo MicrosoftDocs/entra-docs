@@ -94,41 +94,49 @@ To create two groups, follow these steps.
       ```powershell
    $cloudSyncCustomExtApp = Get-MgApplication -Filter "identifierUris/any(uri:uri eq 'api://$tenantId/CloudSyncCustomExtensionsApp')"
    $cloudSyncCustomExtApp
-   ```
+      ```
 1. If a CloudSyncCustomExtensionApp exists, skip to the next step. Otherwise, create the new CloudSyncCustomExtensionApp app:
 
    ```powershell
    $cloudSyncCustomExtApp = New-MgApplication -DisplayName "CloudSyncCustomExtensionsApp" -IdentifierUris "api://$tenantId/CloudSyncCustomExtensionsApp"
    $cloudSyncCustomExtApp 
    ```
-
-1. Check if CloudSyncCustomExtensionsApp application has a security principal associated. If you just created a new app, skip to the next step.
    
+1. Check if CloudSyncCustomExtensionsApp application has a security principal associated. If you just created a new app, skip to the next step.
+
    ```powershell
    Get-MgServicePrincipal -Filter "AppId eq '$($cloudSyncCustomExtApp.AppId)'"
    ```
-
+   
 1. If you just created a new app or a security principal is not returned, create a security principal for CloudSyncCustomExtensionsApp:
 
-      ```powershell
+   ```powershell
    New-MgServicePrincipal -AppId $cloudSyncCustomExtApp.AppId
    ```
-
+   
 ## Create our extension and cloud sync configuration
 
-1. Now we create our custom attribute and assign it to the CloudSyncCustomExtensionApp. Replace &lt;id&gt; with your ID. Use the object ID of the application.
-  
+1. Get the CloudSyncCustomExtensionsApp application:
+
    ```powershell
-   New-MgApplicationExtensionProperty -Id <id> -Name “SynchGroup” -DataType “Boolean” -TargetObjects “Group”
+   $cloudSyncCustomExtApp = Get-MgApplication -Filter "identifierUris/any(uri:uri eq 'api://$tenantId/CloudSyncCustomExtensionsApp')"
    ```
-2. You may be prompted again to enter the ID.
+
+1. Now, under the CloudSyncCustomExtensionApp, create the custom extension attribute called "WritebackEnabled" and assign it to Group objects:
+
+   ```powershell
+   New-MgApplicationExtensionProperty -Id $cloudSyncCustomExtApp.Id -ApplicationId $cloudSyncCustomExtApp.Id -Name 'WritebackEnabled' -DataType 'Boolean' -TargetObjects 'Group'
+   ```
+
+   > Note: The -ApplicationId parameter is the application's `Id`, not the application's `ApplicationId`, so both parameters have the same value
+
   :::image type="content" source="media/tutorial-directory-extension-group-provision/directory-extension-group-provision-3.png" alt-text="Screenshot of PowerShell New-MgApplicationExtensionProperty." lightbox="media/tutorial-directory-extension-group-provision/directory-extension-group-provision-3.png":::
  
-3. This cmdlet creates an attribute that looks like extension_&lt;guid&gt;_SynchGroup. You need this to associate it with a group, however the graph PowerShell cmdlet doesn't return this. 
- 4. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
- 5. Browse to **Identity** > **Hybrid Management** > **Microsoft Entra Connect** > **Cloud sync**.
- 6. Select **New configuration**.
- 7. Select **Microsoft Entra ID to AD sync**.
+1. This cmdlet creates an attribute that looks like extension_&lt;guid&gt;_SynchGroup. You need this to associate it with a group, however the graph PowerShell cmdlet doesn't return this. 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
+1. Browse to **Identity** > **Hybrid Management** > **Microsoft Entra Connect** > **Cloud sync**.
+1. Select **New configuration**.
+1. Select **Microsoft Entra ID to AD sync**.
   :::image type="content" source="media/how-to-configure-entra-to-active-directory/entra-to-ad-1.png" alt-text="Screenshot of configuration selection." lightbox="media/how-to-configure-entra-to-active-directory/entra-to-ad-1.png":::
 
 8. On the configuration screen, select your domain and whether to enable password hash sync. Click **Create**. 
