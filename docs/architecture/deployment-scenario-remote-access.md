@@ -167,7 +167,7 @@ Microsoft Entra Private Access supports transmission control protocol (TCP) appl
 
 In this section, we create a Conditional Access (CA) policy that blocks access to the new application when a user's risk is elevated.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](/entra/identity/role-based-access-control/permissions-reference#conditional-access-administrator).
 1. Browse to **Protection** > **Conditional Access** > **Policies**.
 1. Select **New policy**.
 1. Enter a name and select users. Select users and groups. Select the security group that you created earlier.

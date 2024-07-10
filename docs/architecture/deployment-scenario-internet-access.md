@@ -247,7 +247,7 @@ In this section, we create a security profile that allows access to social netwo
 
 In this section, we create a Conditional Access (CA) policy that enforces the **Allow Social Networking** security profile for users that request access.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](/entra/identity/role-based-access-control/permissions-reference#conditional-access-administrator).
 1. Browse to **Protection** > **Conditional Access** > **Policies**.
 1. Select **New policy**.
 1. In **New Conditional Access Policy**, complete these fields:
@@ -329,7 +329,7 @@ In this section, we create a new security profile that allows access to hacking 
 
 In this section, we create a Conditional Access policy that enforces the **Allow Hacking sites** security profile for the users that request access.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](/entra/identity/role-based-access-control/permissions-reference#conditional-access-administrator).
 1. Browse to **Protection** > **Conditional Access** > **Policies**.
 1. Select **New policy**.
 1. In the **New Conditional Access Policy** dialog box, complete these fields:
