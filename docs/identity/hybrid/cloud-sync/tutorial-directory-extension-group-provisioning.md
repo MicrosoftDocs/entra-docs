@@ -61,7 +61,7 @@ To create two groups, follow these steps.
 
 ## Install and connect Microsoft Graph PowerShell SDK
 
-1. If not yet installed, follow [Microsoft Graph PowerShell SDK](https://learn.microsoft.com/powershell/microsoftgraph/installation) documentation to install the main modules of Microsoft Graph PowerShell SDK:  `Microsoft.Graph` and `Microsoft.Graph.Beta`.
+1. If not yet installed, follow [Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/installation) documentation to install the main modules of Microsoft Graph PowerShell SDK:  `Microsoft.Graph` and `Microsoft.Graph.Beta`.
 
 1. Open PowerShell with Administrative privileges
 
