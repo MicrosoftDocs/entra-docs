@@ -16,7 +16,7 @@ Organizations who use Conditional Access along with the Global Secure Access, ca
 
 The Global Secure Access Client installed on devices or users behind configured remote networks allows administrators to secure resources behind a compliant network with advanced Conditional Access controls. This compliant network feature makes it easier for administrators to manage access policies, without having to maintain a list of egress IP addresses. This removes the requirement to hairpin traffic through organization's VPN.
 
-# Compliant network check enforcement
+## Compliant network check enforcement
 Compliant network enforcement happens at authentication plane (generally available) and at the data plane (preview). Authentication plane enforcement is performed by Microsoft Entra ID at the time of user authentication. Data plane enforcement works with services that support Continuous Access Evaluation (CAE) - currently, Exchange Online and SharePoint Online. With CAE, you can enforce defense-in-depth with token theft replay protection.
 
 This compliant network check is specific to each tenant.
