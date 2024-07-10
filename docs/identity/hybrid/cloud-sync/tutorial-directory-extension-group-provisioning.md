@@ -116,6 +116,10 @@ To create two groups, follow these steps.
    
 ## Create our custom extension attribute
 
+
+Microsoft Entra Connect Filter groups with Writeback Enabled = Yes
+
+
 1. Get the CloudSyncCustomExtensionsApp application:
 
    ```powershell
@@ -144,23 +148,25 @@ To create two groups, follow these steps.
 
 5. On the configuration screen, select your domain and whether to enable password hash sync. Click **Create**. 
 
-  :::image type="content" source="media/how-to-configure/new-ux-configure-2.png" alt-text="Screenshot of a new configuration." lightbox="media/how-to-configure/new-ux-configure-2.png":::6. The **Get started** screen opens. From here, you can continue configuring cloud sync
+  :::image type="content" source="media/how-to-configure/new-ux-configure-2.png" alt-text="Screenshot of a new configuration." lightbox="media/how-to-configure/new-ux-configure-2.png":::
 
 6. The **Get started** screen opens. From here, you can continue configuring cloud sync
 
 7. On the left, click **Scoping filters** select **Group scope** - **All groups**
 
-8. Click **Edit attribute mapping** and change the **Target Contaniner** to OU=Groups,DC=contoso,DC=com. Click **Save**.
+8. Click **Edit attribute mapping** and change the **Target Container** to `OU=Groups,DC=Contoso,DC=com`. Click **Save**.
 
 9. Click **Add Attribute scoping filter**
 
-10. Under **Target Attribute** select the newly created attribute that looks like extension_&lt;guid&gt;_SynchGroup. Also, **write this down** because we need to use this in order to add this attribute to one of our groups.
+10. Type a name for this scoping filter: `Filter groups with Writeback Enabled`
+
+11. Under **Target Attribute** select the newly created attribute that looks like extension_&lt;guid&gt;_WritebackEnabled.
 
   :::image type="content" source="media/tutorial-directory-extension-group-provision/directory-extension-group-provision-4.png" alt-text="Screenshot of available attributes." lightbox="media/tutorial-directory-extension-group-provision/directory-extension-group-provision-4.png":::
  
-11. Under **Operator** select **PRESENT**
-12. Click **Save**. And click **Save**.
-13. Leave the configuration disabled and come back to it.
+13. Under **Operator** select **IS TRUE**
+14. Click **Save**. And click **Save**.
+15. Leave the configuration disabled and come back to it.
 
 ## Add new extension property to one of our groups
 For this portion, we're going to be adding our newly created property to one of our existing groups, Marketing. To do this, we use Microsoft Graph Explorer.  You need to make sure that you have consented to Group.ReadWrite.All. You can do this by selecting **Modify permissions**.
