@@ -104,10 +104,6 @@ let task = URLSession.shared.dataTask(with: urlRequest as URLRequest) { (data: D
 task.resume()
 ```
 
-### Xamarin
-
-[!INCLUDE [Call web API in .NET](./includes/scenarios/scenarios-call-apis-dotnet.md)]
-
 ## Make several API requests
 
 To call the same API several times, or call multiple APIs, then consider the following subjects when you build your app:

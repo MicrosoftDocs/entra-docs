@@ -5,7 +5,7 @@ description: Learn about the authentication methods policy and different ways to
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 09/24/2023
+ms.date: 07/09/2024
 
 ms.author: justinha
 author: justinha
@@ -99,8 +99,8 @@ Tenants are set to either Pre-migration or Migration in Progress by default, dep
 > In the future, both of these features will be integrated with the Authentication methods policy.
 
 ## Known issues and limitations
-- In recent updates we removed the ability to target individual users. Previously targeted users will remain in the policy but we recommend moving them to a targeted group.
-- Registration of FIDO2 security keys may fail for some users if the FIDO2 Authentication method policy is targeted for a group and the overall Authentication methods policy has more than 20 groups configured. We're working on increasing the policy size limit and in the mean time recommend limiting the number of group targets to no more than 20.
+- In recent updates, we removed the ability to target individual users. Previously targeted users will remain in the policy, but we recommend moving them to a targeted group.
+- Registration of an authentication method can fail if many groups are included in the Authentication methods policy or a registration campaign. We recommend consolidating multiple groups into a single group for each authentication method. To maintain registration for users during consolidation, add the new group and remove current groups in the same operation. 
 
 ## Next steps
 

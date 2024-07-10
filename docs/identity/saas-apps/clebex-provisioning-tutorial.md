@@ -2,15 +2,14 @@
 title: 'Tutorial: Configure Clebex for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Clebex.
 
-documentationcenter: ''
+
 author: thomasakelo
 manager: jeedes
 
-ms.assetid: 4746fd14-114c-4e6e-bee4-34a7a34a6237
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.tgt_pltfrm: na
+
 ms.topic: tutorial
 ms.date: 03/25/2024
 ms.author: thomasakelo
