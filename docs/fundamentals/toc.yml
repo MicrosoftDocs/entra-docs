@@ -4,6 +4,8 @@ items:
 - name: Overview
   expanded: true
   items:
+  - name: What is Microsoft Entra?
+    href: what-is-entra.md
   - name: What is Microsoft Entra ID?
     href: whatis.md
   - name: New name for Azure AD
@@ -17,7 +19,7 @@ items:
 - name: First steps
   expanded: true
   items:
-  - name: Create a Directory
+  - name: Create a tenant
     href: create-new-tenant.md
   - name: Add a custom domain name
     href: add-custom-domain.yml
