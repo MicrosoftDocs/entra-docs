@@ -148,7 +148,7 @@ Some scenarios, like those that involve Conditional Access related to a device I
 For more information, see [Mobile app that calls web APIs](scenario-mobile-overview.md).
 
 > [!NOTE]
-> A mobile app that uses MSAL.iOS, MSAL.Android can have app protection policies applied to it. For instance, the policies might prevent a user from copying protected text. The mobile app is managed by Intune and is recognized by Intune as a managed app. For more information, see [Microsoft Intune App SDK overview](/mem/intune/developer/app-sdk).
+> A mobile app that uses MSAL iOS or MSAL Android can have app protection policies applied to it. For instance, the policies might prevent a user from copying protected text. The mobile app is managed by Intune and is recognized by Intune as a managed app. For more information, see [Microsoft Intune App SDK overview](/mem/intune/developer/app-sdk).
 >
 > The [Intune App SDK](/mem/intune/developer/app-sdk-get-started) is separate from MSAL libraries and interacts with Microsoft Entra ID on its own.
 
