@@ -128,8 +128,6 @@ To create two groups, follow these steps.
    New-MgApplicationExtensionProperty -Id $cloudSyncCustomExtApp.Id -ApplicationId $cloudSyncCustomExtApp.Id -Name 'WritebackEnabled' -DataType 'Boolean' -TargetObjects 'Group'
    ```
 
-   > Note: The -ApplicationId parameter is the application's `Id`, not the application's `ApplicationId`, so both parameters have the same value
-
   :::image type="content" source="media/tutorial-directory-extension-group-provision/directory-extension-group-provision-3.png" alt-text="Screenshot of PowerShell New-MgApplicationExtensionProperty." lightbox="media/tutorial-directory-extension-group-provision/directory-extension-group-provision-3.png":::
  
 1. This cmdlet creates an attribute that looks like extension_&lt;guid&gt;_SynchGroup. You need this to associate it with a group, however the graph PowerShell cmdlet doesn't return this. 
