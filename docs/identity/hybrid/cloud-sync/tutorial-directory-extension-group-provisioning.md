@@ -168,7 +168,14 @@ To create two groups, follow these steps.
 15. Leave the configuration disabled and come back to it.
 
 ## Add new extension property to one of our groups
-For this portion, we're going to be adding our newly created property to one of our existing groups, Marketing. To do this, we use Microsoft Graph Explorer.  You need to make sure that you have consented to Group.ReadWrite.All. You can do this by selecting **Modify permissions**.
+For this portion, we're going add a value on our newly created property to one of our existing groups, Marketing.
+
+### Set the extension property value using Microsoft Graph PowerShell SDK
+
+
+### Set the extension property value using Microsoft Graph Explorer
+
+You need to make sure that you have consented to Group.ReadWrite.All. You can do this by selecting **Modify permissions**.
 
 1. Navigate to https://developer.microsoft.com/graph/graph-explorer
 2. Sign-in using your tenant administrator account. This may need to be a Global Administrator account. A Global Administrator account was used in creating this scenario. A Hybrid Identity Administrator account may be sufficient.
@@ -205,8 +212,10 @@ For this portion, we're going to be adding our newly created property to one of 
 8. Now try with the **Sales** group and add **Britta Simon** and **Anna Ringdahl**. This shouldn't provision.
     :::image type="content" source="media/tutorial-directory-extension-group-provision/directory-extension-group-provision-6.png" alt-text="Screenshot of provisioning being blocked." lightbox="media/tutorial-directory-extension-group-provision/directory-extension-group-provision-6.png":::
  
- 9. In Active Directory, you should see the newly created Marketing group.
-    :::image type="content" source="media/tutorial-directory-extension-group-provision/directory-extension-group-provision-7.png" alt-text="Screenshot of new group in active directory users and computers." lightbox="media/tutorial-directory-extension-group-provision/directory-extension-group-provision-7.png":::
+1. In Active Directory, you should see the newly created Marketing group.
+   :::image type="content" source="media/tutorial-directory-extension-group-provision/directory-extension-group-provision-7.png" alt-text="Screenshot of new group in active directory users and computers." lightbox="media/tutorial-directory-extension-group-provision/directory-extension-group-provision-7.png":::
+   
+1. You can now browse to **Identity** > **Hybrid Management** > **Microsoft Entra Connect** > **Cloud sync > Overview** page to Review and Enabled our configuration.
 
 ## Next steps 
 - [Use Group writeback with Microsoft Entra Cloud Sync ](../group-writeback-cloud-sync.md)
