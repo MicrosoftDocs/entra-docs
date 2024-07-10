@@ -61,7 +61,7 @@ To create two groups, follow these steps.
 
 ## Install and connect Microsoft Graph PowerShell SDK
 
-1. If not yet installed, follow [Microsoft Graph PowerShell SDK](./powershell/microsoftgraph/installation.md) documentation to install the main modules of Microsoft Graph PowerShell SDK:  `Microsoft.Graph` and `Microsoft.Graph.Beta`.
+1. If not yet installed, follow [Microsoft Graph PowerShell SDK](https://learn.microsoft.com/powershell/microsoftgraph/installation) documentation to install the main modules of Microsoft Graph PowerShell SDK:  `Microsoft.Graph` and `Microsoft.Graph.Beta`.
 
 1. Open PowerShell with Administrative privileges
 
@@ -116,10 +116,8 @@ To create two groups, follow these steps.
    
 ## Create our custom extension attribute
 
-
 > [!TIP] 
-> In this scenario you are going to create a custom extension attribute called `WritebackEnabled` to be used in Microsoft Entra Cloud Sync scoping filter, so that only groups with WritebackEnabled set to True are written back to On-premises Active Directory, similarly to the Writeback enabled flag in Microsoft Entra admin center.
-
+> In this scenario you are going to create a custom extension attribute called `WritebackEnabled` to be used in Microsoft Entra Cloud Sync scoping filter, so that only groups with WritebackEnabled set to True are written back to On-premises Active Directory, similarly to the [Writeback enabled flag in Microsoft Entra admin center](./users/groups-write-back-portal.md).
 
 1. Get the CloudSyncCustomExtensionsApp application:
 
