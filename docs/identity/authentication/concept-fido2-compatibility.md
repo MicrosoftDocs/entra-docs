@@ -127,7 +127,7 @@ The following are the minimum browser version requirements on Windows.
 
 <sup>2</sup>BLE security keys aren't supported on iOS by Apple.
 
-<sup>3</sup>Authentication with a security key in iOS browsers doesn't work properly if three or more passkeys are registered to the user. As a workaround, users can click **Sign-in options** and sign without entering their username.
+<sup>3</sup>Authentication with a security key in iOS browsers doesn't work properly if three or more passkeys are registered to the user. As a workaround, users can click **Sign-in options** and sign in without entering their username.
 
 ### Android
 
