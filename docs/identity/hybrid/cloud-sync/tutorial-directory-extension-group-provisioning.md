@@ -233,13 +233,13 @@ You need to make sure that you have consented to `Group.ReadWrite.All`. You can 
 >[!NOTE]
 >When using on-demand provisioning, members aren't automatically provisioned. You need to select which members you wish to test on and there's a 5 member limit.
 
- [!INCLUDE [sign in](../../../includes/cloud-sync-sign-in.md)]
+[!INCLUDE [sign in](../../../includes/cloud-sync-sign-in.md)]
 
 3. Under **Configuration**, select your configuration.
- 4. On the left, select **Provision on demand**.
- 5. Enter **Marketing** in the **Selected group** box
- 6. From the **Selected users** section, select some users to test. Select **Lola Jacobson** and **John Smith**.
- 7. Click **Provision**. It should successfully provision.
+4. On the left, select **Provision on demand**.
+5. Enter **Marketing** in the **Selected group** box
+6. From the **Selected users** section, select some users to test. Select **Lola Jacobson** and **John Smith**.
+7. Click **Provision**. It should successfully provision.
    :::image type="content" source="media/tutorial-directory-extension-group-provision/directory-extension-group-provision-5.png" alt-text="Screenshot of successful provision." lightbox="media/tutorial-directory-extension-group-provision/directory-extension-group-provision-5.png":::
 8. Now try with the **Sales** group and add **Britta Simon** and **Anna Ringdahl**. This shouldn't provision.
     :::image type="content" source="media/tutorial-directory-extension-group-provision/directory-extension-group-provision-6.png" alt-text="Screenshot of provisioning being blocked." lightbox="media/tutorial-directory-extension-group-provision/directory-extension-group-provision-6.png":::
@@ -252,5 +252,4 @@ You need to make sure that you have consented to `Group.ReadWrite.All`. You can 
 ## Next steps 
 - [Use Group writeback with Microsoft Entra Cloud Sync ](../group-writeback-cloud-sync.md)
 - [Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance](govern-on-premises-groups.md)
-
 - [Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync](migrate-group-writeback.md)
