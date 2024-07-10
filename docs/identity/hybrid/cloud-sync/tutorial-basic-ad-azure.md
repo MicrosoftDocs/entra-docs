@@ -79,7 +79,7 @@ In order to finish building the virtual machine, you need to finish the operatin
 7. Check **I accept the license terms and click **Next**.
 8. Select **Custom: Install Windows Only (Advanced)**
 9. Click **Next**
-10. Once the installation has completed, restart the virtual machine, sign-in and run Windows updates to ensure the VM is the most up-to-date. Install the latest updates.
+10. Once the installation has completed, restart the virtual machine, sign-in, and run Windows updates to ensure the VM is the most up-to-date. Install the latest updates.
 
 ## Install Active Directory prerequisites
 Now that you have a virtual machine up, you need to do a few things prior to installing Active Directory. That is, you need to rename the virtual machine, set a static IP address and DNS information, and install the Remote Server Administration tools.  Do the following:
@@ -216,10 +216,10 @@ Now that you have a Microsoft Entra tenant, you'll create a Global Administrator
 4. Once this has completed, open a new web browser and sign-in to myapps.microsoft.com using the new Global Administrator account and the temporary password.
 5. Change the password for the Global Administrator to something that you'll remember.
 
-## Optional: Additional server and forest
-The following is an optional section that provides steps to creating an additional server and or forest. This can be used in some of the more advanced tutorials such as [Pilot for Microsoft Entra Connect to cloud sync](tutorial-pilot-aadc-aadccp.md).
+## Optional: Another server and forest
+The following is an optional section that provides steps to creating another server and or forest. This can be used in some of the more advanced tutorials such as [Pilot for Microsoft Entra Connect to cloud sync](tutorial-pilot-aadc-aadccp.md).
 
-If you only need an additional server, you can stop after the - **Create the virtual machine** step and join the server to the existing domain that was created above. 
+If you only need an another server, you can stop after the - **Create the virtual machine** step and join the server to the existing domain that was created above. 
 
 ### Create a virtual machine
 
@@ -272,7 +272,7 @@ In order to finish building the virtual machine, you need to finish the operatin
 7. Check **I accept the license terms and click **Next**.
 8. Select **Custom: Install Windows Only (Advanced)**
 9. Click **Next**
-10. Once the installation has completed, restart the virtual machine, sign-in and run Windows updates to ensure the VM is the most up-to-date. Install the latest updates.
+10. Once the installation has completed, restart the virtual machine, sign-in, and run Windows updates to ensure the VM is the most up-to-date. Install the latest updates.
 
 ### Install Active Directory prerequisites
 Now that you have a virtual machine up, you need to do a few things prior to installing Active Directory. That is, you need to rename the virtual machine, set a static IP address and DNS information, and install the Remote Server Administration tools.  Do the following:
@@ -410,7 +410,7 @@ Now that you have our Active Directory environment, you need to a test account. 
   ```
 
 ## Conclusion
-Now you have an environment that can be used for existing tutorials and to test additional features cloud sync provides.
+Now you have an environment that can be used for existing tutorials and to test other features cloud sync provides.
 
 ## Next steps 
 
