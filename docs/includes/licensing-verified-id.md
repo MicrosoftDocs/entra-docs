@@ -15,5 +15,3 @@ Microsoft Entra Verified ID is included with any Microsoft Entra ID subscription
 - Create user-centric, serverless apps that use Verified ID credentials.
 
 Microsoft Entra Verified ID also provides Face Check as a premium feature available as an add-on and included in the Microsoft Entra Suite (limited to 8 Face Checks per user per month).
-
- 
