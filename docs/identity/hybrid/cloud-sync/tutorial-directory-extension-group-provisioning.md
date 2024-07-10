@@ -127,8 +127,7 @@ To create two groups, follow these steps.
    ```powershell
    New-MgApplicationExtensionProperty -Id $cloudSyncCustomExtApp.Id -ApplicationId $cloudSyncCustomExtApp.Id -Name 'WritebackEnabled' -DataType 'Boolean' -TargetObjects 'Group'
    ```
-
-  :::image type="content" source="media/tutorial-directory-extension-group-provision/directory-extension-group-provision-3.png" alt-text="Screenshot of PowerShell New-MgApplicationExtensionProperty." lightbox="media/tutorial-directory-extension-group-provision/directory-extension-group-provision-3.png":::
+   :::image type="content" source="media/tutorial-directory-extension-group-provision/directory-extension-group-provision-3.png" alt-text="Screenshot of PowerShell New-MgApplicationExtensionProperty." lightbox="media/tutorial-directory-extension-group-provision/directory-extension-group-provision-3.png":::
  
 1. This cmdlet creates an attribute that looks like extension_&lt;guid&gt;_SynchGroup. You need this to associate it with a group, however the graph PowerShell cmdlet doesn't return this. 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
