@@ -14,10 +14,6 @@ Microsoft Entra Verified ID is included with any Microsoft Entra ID subscription
 - Reduce organizational risk and simplify the audit process
 - Create user-centric, serverless apps that use Verified ID credentials.
 
-Microsoft Entra Verified ID also provides 
-[Face Check](~/verified-id/using-facecheck.md) as a premium feature available as an add-on. Premium features don't have a free tier.
+Microsoft Entra Verified ID also provides Face Check as a premium feature available as an add-on and included in the Microsoft Entra Suite (limited to 8 Face Checks per user per month).
 
-There are two options to enable Face Check in your tenant: 
-
-- Either start a Microsoft Entra Suite free trial, which includes eight Face Check verifications per user per month. Transactions after the eight included ones are charged at $0.25 USD per transaction. 
-- Or enable the Face Check add-on for pay-as-you-go. Your organization is charged $0.25 USD for individual Face Check verifications performed
+ 
