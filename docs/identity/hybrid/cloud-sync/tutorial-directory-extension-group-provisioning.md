@@ -117,7 +117,8 @@ To create two groups, follow these steps.
 ## Create our custom extension attribute
 
 
-Microsoft Entra Connect Filter groups with Writeback Enabled = Yes
+> [!TIP] 
+> In this scenario you are going to create a custom extension attribute called `WritebackEnabled` to be used in Microsoft Entra Cloud Sync scoping filter, so that only groups with WritebackEnabled set to True are written back to On-premises Active Directory, similarly to the Writeback enabled flag in Microsoft Entra admin center.
 
 
 1. Get the CloudSyncCustomExtensionsApp application:
@@ -158,12 +159,12 @@ Microsoft Entra Connect Filter groups with Writeback Enabled = Yes
 
 9. Click **Add Attribute scoping filter**
 
-10. Type a name for this scoping filter: `Filter groups with Writeback Enabled`
+10. Type a name for the scoping filter: `Filter groups with Writeback Enabled`
 
 11. Under **Target Attribute** select the newly created attribute that looks like extension_&lt;guid&gt;_WritebackEnabled.
 
   :::image type="content" source="media/tutorial-directory-extension-group-provision/directory-extension-group-provision-4.png" alt-text="Screenshot of available attributes." lightbox="media/tutorial-directory-extension-group-provision/directory-extension-group-provision-4.png":::
- 
+
 13. Under **Operator** select **IS TRUE**
 14. Click **Save**. And click **Save**.
 15. Leave the configuration disabled and come back to it.
