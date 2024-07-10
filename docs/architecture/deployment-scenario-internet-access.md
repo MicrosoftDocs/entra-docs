@@ -88,9 +88,9 @@ To successfully deploy and test this scenario, configure for these prerequisites
 
 In this section, we activate Global Secure Access through the Microsoft Entra admin center. We then set up the required initial configurations for the scenario.
 
-1. Sign in to the Microsoft Entra admin center with at least a Global Administrator role.
-1. Go to **Global Secure Access (preview)** \> **Get started** \> **Activate Global Secure Access in your tenant**. Select **Activate** to enable SSE features.
-1. Go to **Global Secure Access (preview)** \> **Connect** \> **Traffic forwarding**. Toggle on **Private access profile**. Traffic forwarding enables you to configure the type of network traffic to tunnel through Microsoft's Security Service Edge Solution services. Set up [traffic forwarding profiles](../global-secure-access/concept-traffic-forwarding.md) to manage traffic types.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](/entra/identity/role-based-access-control/permissions-reference#global-administrator).
+1. Browse to **Global Secure Access (preview)** > **Get started** > **Activate Global Secure Access in your tenant**. Select **Activate** to enable SSE features.
+1. Browse to **Global Secure Access (preview)** > **Connect** > **Traffic forwarding**. Toggle on **Private access profile**. Traffic forwarding enables you to configure the type of network traffic to tunnel through Microsoft's Security Service Edge Solution services. Set up [traffic forwarding profiles](../global-secure-access/concept-traffic-forwarding.md) to manage traffic types.
    - The **Microsoft 365 access profile** is for Microsoft Entra Internet Access for Microsoft 365.
    - The **Private access profile** is for Microsoft Entra Private Access.
    - The **Internet access profile** is for Microsoft Entra Internet Access. Microsoft's Security Service Edge solution only captures traffic on client devices with Global Secure Access Client installation.
@@ -102,9 +102,9 @@ In this section, we activate Global Secure Access through the Microsoft Entra ad
 Microsoft Entra Internet Access for Microsoft 365 and Microsoft Entra Private Access use the Global Secure Access client on Windows devices. This client acquires and forwards network traffic to Microsoft's Security Service Edge solution. Perform these installation and configuration steps:
 
 1. Ensure that the Windows device is Microsoft Entra joined or hybrid joined.
-1. Sign in to the Windows device with a Microsoft Entra user role with local admin privileges.
-1. Sign in to the Microsoft Entra admin center with at least a Global Administrator role.
-1. Go to **Global Secure Access (preview)** \> **Connect** \> **Client Download**. Select **Download client**. Complete the installation.
+1. Sign in to the Windows device with a Microsoft Entra user with local admin privileges.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Secure Access Administrator](/entra/identity/role-based-access-control/permissions-reference#global-secure-access-administrator)
+1. Browse to **Global Secure Access (preview)** > **Connect** > **Client Download**. Select **Download client**. Complete the installation.
 
    :::image type="content" source="media/deployment-scenario-internet-access/client-download-inline.png" alt-text="Screenshot of Client download showing the Windows Download Client control." lightbox="media/deployment-scenario-internet-access/client-download-expanded.png":::
 
@@ -126,11 +126,12 @@ In this section, we block access to inappropriate sites for all users in the org
 
 ### Create baseline web filtering policy
 
-1. Sign in to the Microsoft Entra admin center. Go to **Global Secure Access (Preview)** \> **Secure** \> **Web content filtering policies** \> **Create policy** \> [**Configure Global Secure Access content filtering**](../global-secure-access/how-to-configure-web-content-filtering.md).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Secure Access Administrator](/entra/identity/role-based-access-control/permissions-reference#global-secure-access-administrator)
+1. Browse to **Global Secure Access (Preview)** > **Secure** > **Web content filtering policies** > **Create policy** > [**Configure Global Secure Access content filtering**](../global-secure-access/how-to-configure-web-content-filtering.md).
 
    [ ![Screenshot of Web content filtering policies with a red box highlighting the Create policy control to create baseline web filtering policy.](media/deployment-scenario-internet-access/web-content-filtering-policies-baseline-inline.png)](media/deployment-scenario-internet-access/web-content-filtering-policies-baseline-expanded.png#lightbox)
 
-1. On **Create a web content filtering policy** \> **Basics**, complete these fields:
+1. On **Create a web content filtering policy** > **Basics**, complete these fields:
    - **Name**: Baseline Internet Access Block Rule
    - **Description**: Add a description
    - **Action**: Block
@@ -138,7 +139,7 @@ In this section, we block access to inappropriate sites for all users in the org
      [ ![Screenshot of Enterprise applications, Create Global Secure Access application, Web content filtering policies, Create a web content filtering policy.](media/deployment-scenario-internet-access/create-web-content-filtering-policy-basics-baseline-inline.png)](media/deployment-scenario-internet-access/create-web-content-filtering-policy-basics-baseline-expanded.png#lightbox)
 
 1. Select **Next**.
-1. On **Create a web content filtering policy** \> **Policy Rules**, select **Add Rule**.
+1. On **Create a web content filtering policy** > **Policy Rules**, select **Add Rule**.
 
    :::image type="content" source="media/deployment-scenario-internet-access/create-web-content-filtering-policy-rules-baseline.png" alt-text="Screenshot of Web content filtering policies, Create a web content filtering policy, Policy Rules with a red box highlighting the Add Rule control.":::
 
@@ -156,12 +157,12 @@ In this section, we block access to inappropriate sites for all users in the org
      :::image type="content" source="media/deployment-scenario-internet-access/create-web-content-filtering-policy-add-rule-baseline.png" alt-text="Screenshot of Update rule, Add a rule to your policy, with Baseline blocked web categories in Name text box.":::
 
 1. Select **Add**.
-1. On **Create a web content filtering policy** \> **Policy Rules**, confirm your selections.
+1. On **Create a web content filtering policy** > **Policy Rules**, confirm your selections.
 
    [ ![Screenshot of Enterprise applications, Create Global Secure Access application, Web content filtering policies, Create a web content filtering policy, Policy Rules.](media/deployment-scenario-internet-access/create-web-content-filtering-policy-review-baseline-inline.png)](media/deployment-scenario-internet-access/create-web-content-filtering-policy-review-baseline-expanded.png#lightbox)
 
 1. Select **Next**.
-1. On **Create a web content filtering policy** \> **Review**, confirm your policy configuration.
+1. On **Create a web content filtering policy** > **Review**, confirm your policy configuration.
 1. Select **Create policy**.
 
    [ ![Screenshot of Global Secure Access, Security profiles, Review tab for baseline policy.](media/deployment-scenario-internet-access/security-profiles-create-policy-review-baseline-inline.png)](media/deployment-scenario-internet-access/security-profiles-create-policy-review-baseline-expanded.png#lightbox)
@@ -170,7 +171,8 @@ In this section, we block access to inappropriate sites for all users in the org
 
 ### Configure baseline security profile
 
-1. Sign in to the Microsoft Entra admin center. Go to **Global Secure Access (Preview)** \> **Secure** \> **Security profiles**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Secure Access Administrator](/entra/identity/role-based-access-control/permissions-reference#global-secure-access-administrator)
+1. Browse to **Global Secure Access (Preview)** > **Secure** > **Security profiles**.
 1. Select **Baseline Profile**.
 1. On **Basics**, set **State** to enabled.
 1. Select **Save**.
@@ -179,7 +181,7 @@ In this section, we block access to inappropriate sites for all users in the org
    - **Priority**: 100
    - **State**: Enabled
 1. Select **Add**.
-1. On **Create a profile** \> **Link policies**, confirm **Baseline Internet Access Block Rule** is listed.
+1. On **Create a profile** > **Link policies**, confirm **Baseline Internet Access Block Rule** is listed.
 1. Close the baseline security profile.
 
 ## Allow access to social networking sites
@@ -188,24 +190,25 @@ In this section, we create a security profile that allows access to social netwo
 
 ### Create social networking web filtering policy
 
-1. Sign in to the Microsoft Entra admin center. Go to **Global Secure Access (Preview)** \> **Secure** \> **Web content filtering policies** \> **Create policy** \> [**Configure Global Secure Access content filtering**](../global-secure-access/how-to-configure-web-content-filtering.md).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Secure Access Administrator](/entra/identity/role-based-access-control/permissions-reference#global-secure-access-administrator)
+1. Browse to **Global Secure Access (Preview)** > **Secure** > **Web content filtering policies** > **Create policy** > [**Configure Global Secure Access content filtering**](../global-secure-access/how-to-configure-web-content-filtering.md).
 
    [ ![Screenshot of Enterprise applications, Create Global Secure Access application, Web content filtering policies, Create a web content filtering policy.](media/deployment-scenario-internet-access/create-web-content-filtering-policy-basics-baseline-inline.png)](media/deployment-scenario-internet-access/create-web-content-filtering-policy-basics-baseline-expanded.png#lightbox)
 
-1. On **Create a web content filtering policy** \> **Basics**, complete these fields:
+1. On **Create a web content filtering policy** > **Basics**, complete these fields:
    - **Name**: Allow Social Networking sites
    - **Description:** Add a description
    - **Action**: Allow
 1. Select **Next**.
-1. On **Create a web content filtering policy** \> **Policy Rules**, select **Add Rule**.
+1. On **Create a web content filtering policy** > **Policy Rules**, select **Add Rule**.
 1. In **Add Rule**, complete these fields:
    - **Name**: Social networking
    - **Destination type**: webCategory
    - **Search**: Social
 1. Select **Social Networking**
 1. Select **Add**.
-1. On **Create a web content filtering policy** \> **Policy Rules**, select **Next**.
-1. On **Create a web content filtering policy** \> **Review**, confirm your policy configuration.
+1. On **Create a web content filtering policy** > **Policy Rules**, select **Next**.
+1. On **Create a web content filtering policy** > **Review**, confirm your policy configuration.
 
    :::image type="content" source="media/deployment-scenario-internet-access/social-networking-policy-review.png" alt-text="Screenshot of Security profiles, Edit Block on risk, Basics, Security profiles, Edit Baseline profile, Create a web content filtering policy.":::
 
@@ -214,26 +217,27 @@ In this section, we create a security profile that allows access to social netwo
 
 ### Create social networking security policy profile
 
-1. Sign in to the Microsoft Entra admin center. Go to **Global Secure Access (Preview)** \> **Secure** \> **Security profiles**. Select **Create profile**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Secure Access Administrator](/entra/identity/role-based-access-control/permissions-reference#global-secure-access-administrator)
+1. Browse to **Global Secure Access (Preview)** > **Secure** > **Security profiles**. Select **Create profile**.
 
    [ ![Screenshot of Security profiles with a red box highlighting the Create profile control.](media/deployment-scenario-internet-access/security-profiles-inline.png)](media/deployment-scenario-internet-access/security-profiles-expanded.png#lightbox)
 
-1. On **Create a profile** \> **Basics**, complete these fields:
+1. On **Create a profile** > **Basics**, complete these fields:
    - **Profile name**: Allow Social Networking sites
    - **Description:** Add a description
    - **State**: Enabled
    - **Priority:** 1000
 1. Select **Next**.
-1. On **Create a profile** \> **Link policies**, select **Link a policy**.
+1. On **Create a profile** > **Link policies**, select **Link a policy**.
 1. Select **Existing policy**.
 1. In **Link a policy**, complete these fields:
    - **Policy name**: Allow Social Networking
    - **Priority:** 1000
    - **State**: Enabled
 1. Select **Add**.
-1. On **Create a profile** \> **Link policies**, confirm **Allow Social Networking** is listed.
+1. On **Create a profile** > **Link policies**, confirm **Allow Social Networking** is listed.
 1. Select **Next**.
-1. On **Create a profile** \> **Review**, confirm your profile configuration.
+1. On **Create a profile** > **Review**, confirm your profile configuration.
 
    :::image type="content" source="media/deployment-scenario-internet-access/security-profile-review.png" alt-text="Screenshot of Security profiles, Edit Block on risk, Basics, Security profiles, Edit Baseline profile, Create a profile.":::
 
@@ -243,20 +247,22 @@ In this section, we create a security profile that allows access to social netwo
 
 In this section, we create a Conditional Access (CA) policy that enforces the **Allow Social Networking** security profile for users that request access.
 
-1. Sign in to the Microsoft Entra admin center. Go to **Protection** \> **Conditional Access**. Select **Create new policy**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
+1. Browse to **Protection** > **Conditional Access** > **Policies**.
+1. Select **New policy**.
 1. In **New Conditional Access Policy**, complete these fields:
    - **Name**: Internet Access -- Allow Social Networking sites
    - **Users or workload identities:** Specific users included
    - **What does this policy apply to?** Users and groups
-   - **Include** \> **Select users and groups** \> Users and groups
+   - **Include** > **Select users and groups** > Users and groups
 1. Select your test group (such as *Internet Access -- Allow Social Networking sites*). Select **Select**.
 1. **Target resources**
-   - **Select what this policy applies to** \> Global Secure Access (Preview)
-   - **Select the traffic profiles this policy applies to** \> Internet traffic
+   - **Select what this policy applies to** > Global Secure Access (Preview)
+   - **Select the traffic profiles this policy applies to** > Internet traffic
 1. Leave **Grant** at its default settings to grant access so that your defined security profile defines block functionality.
 1. In **Session**, select **Use Global Secure Access security profile**.
 1. Select **Allow Social Networking sites**.
-1. In **Conditional Access Overview** \> **Enable policy**, select **On**.
+1. In **Conditional Access Overview** > **Enable policy**, select **On**.
 1. Select **Create**.
 
 ## Allow access to hacking sites
@@ -265,23 +271,24 @@ In this section, we create a new security profile that allows access to hacking 
 
 ### Create hacking web filtering policy
 
-1. Sign in to the Microsoft Entra admin center. Go to **Global Secure Access (Preview)** \> **Secure** \> **Web content filtering policies** \> **Create policy** \> [**Configure Global Secure Access content filtering**](../global-secure-access/how-to-configure-web-content-filtering.md).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Secure Access Administrator](/entra/identity/role-based-access-control/permissions-reference#global-secure-access-administrator)
+1. Browse to **Global Secure Access (Preview)** > **Secure** > **Web content filtering policies** > **Create policy** > [**Configure Global Secure Access content filtering**](../global-secure-access/how-to-configure-web-content-filtering.md).
 
    [ ![Screenshot of Security profiles with a red box highlighting the Create profile control.](media/deployment-scenario-internet-access/security-profiles-inline.png)](media/deployment-scenario-internet-access/security-profiles-expanded.png#lightbox)
 
-1. On **Create a web content filtering policy** \> **Basics**, complete these fields:
+1. On **Create a web content filtering policy** > **Basics**, complete these fields:
    - **Name**: Allow Hacking sites
    - **Description:** Add a description
    - **Action**: Allow
 1. Select **Next**.
-1. On **Create a web content filtering policy** \> **Policy Rules**, select **Add Rule**.
+1. On **Create a web content filtering policy** > **Policy Rules**, select **Add Rule**.
 1. In **Add Rule**, complete these fields:
    - **Name**: Hacking
    - **Destination type**: webCategory
    - **Search**: Hacking, select **Hacking**
 1. Select **Add**.
-1. On **Create a web content filtering policy** \> **Policy Rules**, select **Next**.
-1. On **Create a web content filtering policy** \> **Review**, confirm your policy configuration.
+1. On **Create a web content filtering policy** > **Policy Rules**, select **Next**.
+1. On **Create a web content filtering policy** > **Review**, confirm your policy configuration.
 
    :::image type="content" source="media/deployment-scenario-internet-access/hacking-policy-rule-add.png" alt-text="Screenshot of Add Rule with Hacking in Selected items.":::
 
@@ -292,26 +299,27 @@ In this section, we create a new security profile that allows access to hacking 
 
 ### Create hacking security policy profile
 
-1. Sign in to the Microsoft Entra admin center. Go to **Global Secure Access (Preview)** \> **Secure** \> **Security profiles**. Select **Create profile**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Secure Access Administrator](/entra/identity/role-based-access-control/permissions-reference#global-secure-access-administrator).
+1. Browse to **Global Secure Access (Preview)** > **Secure** > **Security profiles**. Select **Create profile**.
 
    [ ![Screenshot of Security profiles with a red box highlighting the Create profile control.](media/deployment-scenario-internet-access/security-profiles-inline.png)](media/deployment-scenario-internet-access/security-profiles-expanded.png#lightbox)
 
-1. On **Create a profile** \> **Basics**, complete these fields:
+1. On **Create a profile** > **Basics**, complete these fields:
    - **Profile name**: Allow Hacking sites
    - **Description:** Add a description
    - **State**: Enabled
    - **Priority:** 2000
 1. Select **Next**.
-1. On **Create a profile** \> **Link policies**, select **Link a policy**.
+1. On **Create a profile** > **Link policies**, select **Link a policy**.
 1. Select **Existing policy**.
 1. In the **Link a policy** dialog box, complete these fields:
    - **Policy name**: Allow Hacking
    - **Priority:** 2000
    - **State**: Enabled
 1. Select **Add**.
-1. On **Create a profile** \> **Link policies**, confirm **Allow Hacking** is listed.
+1. On **Create a profile** > **Link policies**, confirm **Allow Hacking** is listed.
 1. Select **Next**.
-1. On **Create a profile** \> **Review**, confirm your profile configuration.
+1. On **Create a profile** > **Review**, confirm your profile configuration.
 
    :::image type="content" source="media/deployment-scenario-internet-access/security-profile-review.png" alt-text="Screenshot of Security profiles, Edit Block on risk, Basics, Security profiles, Edit Baseline profile, Create a profile.":::
 
@@ -319,30 +327,32 @@ In this section, we create a new security profile that allows access to hacking 
 
 ### Create hacking Conditional Access policy
 
-In this section, we create a Conditional Access (CA) policy that enforces the **Allow Hacking sites** security profile for the users that request access.
+In this section, we create a Conditional Access policy that enforces the **Allow Hacking sites** security profile for the users that request access.
 
-1. Sign in to the Microsoft Entra admin center. Go to **Protection** \> **Conditional Access**. Select **Create new policy**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
+1. Browse to **Protection** > **Conditional Access** > **Policies**.
+1. Select **New policy**.
 1. In the **New Conditional Access Policy** dialog box, complete these fields:
    - **Name**: Internet Access -- Allow Hacking sites
    - **Users or workload identities:** Specific users included
    - **What does this policy apply to?** Users and groups
-1. **Include** \> **Select users and groups** \> Users and groups
-1. Select your test group (such as *Internet Access -- Allow Hacking sites*) \> select **Select**.
+1. **Include** > **Select users and groups** > Users and groups
+1. Select your test group (such as *Internet Access -- Allow Hacking sites*) > select **Select**.
 1. **Target resources**
-   - **Select what this policy applies to** \> Global Secure Access (Preview)
-   - **Select the traffic profiles this policy applies to** \> Internet traffic
+   - **Select what this policy applies to** > Global Secure Access (Preview)
+   - **Select the traffic profiles this policy applies to** > Internet traffic
 1. Leave **Grant** at its default settings to grant access so that your defined security profile defines block functionality.
 1. In the **Session** dialog box, select **Use Global Secure Access security profile**.
 1. Select **Allow Hacking sites**.
-1. In **Conditional Access Overview** \> **Enable policy**, select **On**.
+1. In **Conditional Access Overview** > **Enable policy**, select **On**.
 1. Select **Create**.
 
 ## Configure access governance
 
 Follow these steps to create an entitlement management catalog:
 
-1. Sign in to the **Microsoft Entra admin center** as at least an **Identity Governance Administrator**.
-1. Browse to **Identity governance \> Entitlement management \> Catalogs**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](/entra/identity/role-based-access-control/permissions-reference#identity-governance-administrator).
+1. Browse to **Identity governance > Entitlement management > Catalogs**.
 1. Select **New catalog**
 
    :::image type="content" source="media/deployment-scenario-internet-access/identity-governance-catalogs-inline.png" alt-text="Screenshot of New access review, Enterprise applications, All applications, Identity Governance, New catalog." lightbox="media/deployment-scenario-internet-access/identity-governance-catalogs-expanded.png":::
@@ -361,8 +371,8 @@ Follow these steps to create an entitlement management catalog:
 
 In this section, we create access packages that allow users to request access to the internet site categories that each security profile defines. Follow these steps to create an access package in Entitlement management:
 
-1. Sign in to the Microsoft Entra admin center with at least an Identity Governance Administrator role.
-1. Go to **Identity governance** \> **Entitlement management** \> **Access package**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](/entra/identity/role-based-access-control/permissions-reference#identity-governance-administrator).
+1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
 1. Select **New access package**.
 1. For **Basics**, give the access package a name (such as *Internet Access -- Allow Social Networking sites*). Specify the catalog that you previously created.
 1. For **Resource roles**, select the security that you previously added (such as *Internet Access -- Allow Social Networking sites*).
@@ -430,7 +440,7 @@ In this section, we validate that a SOC team user can request access to hacking 
 
    :::image type="content" source="media/deployment-scenario-internet-access/test-hacking-access.png" alt-text="Screenshot of browser window showing access to test site.":::
 
-1. If you configured hacking site access with **Lifecycle** \> **Number of hours** set to 8 in previous steps, after eight hours elapses, verify blocked access to hacking sites.
+1. If you configured hacking site access with **Lifecycle** > **Number of hours** set to 8 in previous steps, after eight hours elapses, verify blocked access to hacking sites.
 
 ## Related content
 
