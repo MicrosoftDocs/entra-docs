@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: conceptual
-ms.date: 07/01/2024
+ms.date: 07/10/2024
 ---
 
 # Lifecycle Workflow built-in tasks
@@ -19,9 +19,8 @@ Lifecycle Workflows come with many pre-configured tasks that are designed to aut
  
 Lifecycle Workflow's built-in tasks each include an identifier, known as **taskDefinitionID**, and can be used to create either new workflows from scratch, or inserted into workflow templates so that they fit the needs of your organization. For more information on templates available for use with Lifecycle Workflows, see: [Lifecycle Workflow Templates](lifecycle-workflow-templates.md).
 
-
 > [!NOTE]
-> Lifecycle workflow's supported tasks work for users who exist within Microsoft Entra ID. Ideally these users are imported using an [HR-driven provisioning source](..//identity/app-provisioning/what-is-hr-driven-provisioning.md).
+> Lifecycle workflows enhances Microsoft Entra ID Governance's [HR-driven provisioning]((../identity/app-provisioning/what-is-hr-driven-provisioning.md)) by automating routine processes. While HR provisioning manages the creation and attribute updates of user accounts, lifecycle workflows provide additional automation of tasks.
 
 [!INCLUDE [Lifecylce Workflows tasks table](../includes/lifecycle-workflows-tasks-table.md)]
 
@@ -188,7 +187,7 @@ Example of usage within the workflow:
 
 ### Generate Temporary Access Pass and send via email to user's manager
 
-Microsoft Entra allows you to use a [Temporary Access Pass (TAP)](..//identity/authentication/howto-authentication-temporary-access-pass.md) to setup password-less credentials for users. You can also use [SSPR](..//identity/authentication/concept-sspr-howitworks.md) to set a regular password. With this task, Lifecycle workflows allow you to automatically generate a Temporary Access Pass (TAP), and have it sent to the new user's manager. You're also able to customize the email that is sent to the user's manager.
+Microsoft Entra allows you to use a [Temporary Access Pass (TAP)](..//identity/authentication/howto-authentication-temporary-access-pass.md) to setup password-less credentials for users. You can also use [Microsoft Entra self-service password reset](../identity/authentication/concept-sspr-howitworks.md) to set a regular password. With this task, Lifecycle workflows allow you to automatically generate a Temporary Access Pass (TAP), and have it sent to the new user's manager. You're also able to customize the email that is sent to the user's manager.
 
 > [!NOTE]
 > The user's employee hire date is used as the start time for the Temporary Access Pass. Please make sure that the TAP lifetime task setting and the [time portion of your user's hire date](how-to-lifecycle-workflow-sync-attributes.md#importance-of-time) are set appropriately so that the TAP is still valid when the user starts their first day. If the hire date at the time of workflow execution is already in the past, the current time is used as the start time.
