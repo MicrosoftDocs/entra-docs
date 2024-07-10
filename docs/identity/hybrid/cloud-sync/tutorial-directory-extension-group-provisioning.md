@@ -87,7 +87,9 @@ To create two groups, follow these steps.
    $tenantId = (Get-MgOrganization).Id
    $tenantId
    ```
-> Note: This will output our current Tenant ID. You can confirm this Tenant ID by navigating to [Microsoft Entra admin center](https://entra.microsoft.com/) > Identity > Overview.
+
+> [!NOTE] 
+> This will output our current Tenant ID. You can confirm this Tenant ID by navigating to [Microsoft Entra admin center](https://entra.microsoft.com/) > Identity > Overview.
 
 1. Using the `$tenantId` variable from the previous step, check to see if the CloudSyncCustomExtensionApp exists.
 
@@ -117,7 +119,7 @@ To create two groups, follow these steps.
 ## Create our custom extension attribute
 
 > [!TIP] 
-> In this scenario you are going to create a custom extension attribute called `WritebackEnabled` to be used in Microsoft Entra Cloud Sync scoping filter, so that only groups with WritebackEnabled set to True are written back to On-premises Active Directory, similarly to the [Writeback enabled flag in Microsoft Entra admin center](./users/groups-write-back-portal.md).
+> In this scenario you are going to create a custom extension attribute called `WritebackEnabled` to be used in Microsoft Entra Cloud Sync scoping filter, so that only groups with WritebackEnabled set to True are written back to On-premises Active Directory, similarly to the [Writeback enabled flag in Microsoft Entra admin center](../users/groups-write-back-portal.md).
 
 1. Get the CloudSyncCustomExtensionsApp application:
 
