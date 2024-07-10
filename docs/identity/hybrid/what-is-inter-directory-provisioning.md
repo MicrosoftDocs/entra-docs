@@ -47,7 +47,7 @@ This capability of inter-directory provisioning offers the following significant
 For a list of common hybrid synchronization scenarios, see [Common scenarios](#common-scenarios).
 
 ## Next steps 
-- [What is identity lifecycle management](~/id-governance/what-is-identity-lifecycle-management.md)
+- [What is identity lifecycle management](~/id-governance/scenarios/govern-the-employee-lifecycle.md)
 - [What is provisioning?](what-is-provisioning.md)
 - [What is HR driven provisioning?](~/identity/app-provisioning/what-is-hr-driven-provisioning.md)
 - [What is app provisioning?](~/identity/app-provisioning/user-provisioning.md)

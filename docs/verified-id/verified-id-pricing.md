@@ -1,6 +1,6 @@
 ---
-title: Verified ID Face Check pricing
-description: Learn about Microsoft Entra Verified ID consumptive billing model for Face Check transactions. Learn how to link your Microsoft Entra tenant to an Azure subscription.
+title: Face Check (Preview) with Microsoft Entra Verified ID pricing
+description: Learn about Face Check with Microsoft Entra Verified ID billing model. Learn how to enable the Face Check add-on in your tenant by linking your Microsoft Azure subscription.
 ms.service: entra-verified-id
 
 author: barclayn
@@ -8,13 +8,22 @@ manager: amycolannino
 ms.author: barclayn
 ms.topic: concept-article
 ms.date: 06/19/2024
-# Customer intent: As a Microsoft Entra tenant administrator, I want to link my tenant to an Azure subscription, so that I can take advantage of Verified ID Face Check.
+# Customer intent: As a Microsoft Entra tenant administrator, I want to enable the Face Check add-on in my tenant, so that I can enable the developers in my organization to use Face Check with Entra Verified ID.
 
 ---
 
-# Billing model for Microsoft Entra Verified ID Face Check
+# Billing model for Face Check (Preview) with Microsoft Entra Verified ID
 
-Microsoft Entra Verified ID pricing is based on the unique Face Check verification count within a calendar month by a verifier authority. Consumption based billing helps you manage costs by only paying the Face Check transactions used. In this article, learn about consumptive billing and linking your Verified ID authority to an Azure subscription.
+> [!IMPORTANT]
+> Face Check with Microsoft Verified ID is free to use during the preview period. Billing enforcement will start when the preview period ends.
+
+Face Check with Microsoft Entra Verified ID pricing is based on unique Face Check verifications performed by the verifying authority during the billing cycle. There are two options to enable Face Check add-on on a workforce tenant:
+
+- Enable as an Entra Suite trial or paid subscriber. The Entra Suite license includes eight Face Check verifications per license per month.
+
+- Or enable in pay-as-you-go where your Azure subscription received charges per each individual Face Check verification performed from your tenant.
+
+In this article, learn about the Face Check billing model and linking your Verified ID authority to an Azure subscription.
 
 > [!IMPORTANT]
 > This article does not contain pricing details. For the latest information about usage billing and pricing, see [Microsoft Entra pricing](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
@@ -26,7 +35,7 @@ To take advantage of the consumptive billing, your Verified ID authority must be
 |If your Verified ID authority is:  |You need to:  |
 |---------|---------|
 | A Verified ID authority not yet linked to a subscription     | [Link your Verified ID authority to an Azure subscription](#link-your-verified-id-authority-to-a-subscription) to activate consumptive billing.        |
-| A Verified ID authority linked to a subscription     | Do nothing. When you use Face Check, you're automatically billed monthly for Face Check verifications.        |
+| A Verified ID authority linked to a subscription     | Do nothing. You're automatically billed monthly for Face Check verifications.        |
 
 ## About monthly Face Check verifications billing
 

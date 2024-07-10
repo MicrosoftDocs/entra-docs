@@ -3,7 +3,7 @@ title: Simulate remote network connectivity using Azure VNG
 description: Configure Azure resources to simulate remote network connectivity to Microsoft's Security Edge Solutions with Global Secure Access.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 06/24/2024
+ms.date: 07/01/2024
 ms.author: kenwith
 author: kenwith
 manager: amycolannino
@@ -150,7 +150,7 @@ For this article, we choose the zone redundancy path.
 >Refer to the [**valid BGP addresses**](reference-remote-network-configurations.md#valid-bgp-addresses) list for reserved values that can't be used.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
-1. Browse to **Global Secure Access (preview)** > **Connect** > **Remote networks**.
+1. Browse to **Global Secure Access** > **Connect** > **Remote networks**.
 1. Select the **Create remote network** button and provide the following details on the **Basics** tab:
     - **Name**
     - **Region**
@@ -183,7 +183,7 @@ For this article, we choose the zone redundancy path.
 
 After you create a remote network and add a device link, the configuration details are available in the Microsoft Entra admin center. You need several details from this configuration to complete the next step.
 
-1. Browse to **Global Secure Access (Preview)** > **Connect** > **Remote networks**.
+1. Browse to **Global Secure Access** > **Connect** > **Remote networks**.
 1. In the last column on the right in the table, select **View configuration** for the remote network you created. The configuration is shown as a JSON blob.
 1. Locate and save Microsoft's public IP address `endpoint`, `asn`, and `bgpAddress` from the pane that opens.
   

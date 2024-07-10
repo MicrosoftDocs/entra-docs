@@ -1,6 +1,6 @@
 ---
 title: How to enable and manage the Microsoft profile
-description: Learn how to enable and manage the Microsoft traffic forwarding profile for Global Secure Access (preview).
+description: Learn how to enable and manage the Microsoft traffic forwarding profile for Global Secure Access.
 author: kenwith
 ms.author: kenwith
 manager: amycolannino
@@ -14,7 +14,7 @@ ms.subservie: entra-internet-access
 With the Microsoft profile enabled, Microsoft Entra Internet Access acquires the traffic going to Microsoft services. The **Microsoft** profile manages the following policy groups:
 
 - Exchange Online
-- SharePoint Online and OneDrive for Business
+- SharePoint Online and Microsoft OneDrive. 
 - Microsoft 365 Common and Office Online (only Microsoft Entra ID and Microsoft Graph)
 
 ## Prerequisites
@@ -23,7 +23,7 @@ To enable the Microsoft traffic forwarding profile for your tenant, you must hav
 
 - A [Global Secure Access Administrator](../identity/role-based-access-control/permissions-reference.md#global-secure-access-administrator) role in Microsoft Entra ID to enable traffic profiles.
 - A [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator)  role to create and interact with Conditional Access policies.
-- The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
+- The product requires licensing. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 - To use the Microsoft traffic forwarding profile, a Microsoft 365 E3 license is recommended.
 
 ### Known limitations
@@ -34,8 +34,9 @@ To enable the Microsoft traffic forwarding profile for your tenant, you must hav
 ## Enable the Microsoft traffic profile
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
-1. Browse to **Global Secure Access (preview)** > **Connect** > **Traffic forwarding**.
+1. Browse to **Global Secure Access** > **Connect** > **Traffic forwarding**.
 1. Enable the **Microsoft traffic profile**.
+    Microsoft traffic starts forwarding from all client devices to Microsoft's Security Service Edge (SSE) proxy, where you can configure advanced security features specific to Microsoft traffic.
 
     :::image type="content" source="media/how-to-manage-microsoft-profile/microsoft-traffic-profile.png" alt-text="Screenshot of the traffic forwarding page with the Microsoft access profile enabled." lightbox="media/how-to-manage-microsoft-profile/microsoft-traffic-profile-expanded.png":::
 
@@ -90,7 +91,7 @@ Traffic profiles can be assigned to remote networks, so that the network traffic
 **To assign a remote network to the Microsoft profile**:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
-1. Browse to **Global Secure Access (preview)** > **Connect** > **Traffic forwarding**.
+1. Browse to **Global Secure Access** > **Connect** > **Traffic forwarding**.
 1. From the **Remove network assignments** section, select the **View** link for the profile.
 1. Select a remote network from the list and select **Add**.
 

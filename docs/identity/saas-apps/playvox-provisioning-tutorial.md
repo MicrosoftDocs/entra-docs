@@ -2,15 +2,11 @@
 title: 'Tutorial: Configure Playvox for automatic user provisioning by using Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Playvox.
 
-documentationcenter: ''
 author: thomasakelo
 manager: jeedes
-
-ms.assetid: c31c20ab-f6cd-40e1-90ad-fa253ecbc0f8
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 03/25/2024
 ms.author: thomasakelo

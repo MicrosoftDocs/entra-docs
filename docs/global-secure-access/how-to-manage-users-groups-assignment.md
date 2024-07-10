@@ -1,11 +1,11 @@
 ---
 title: Assign users and groups to traffic forwarding profiles
-description: Learn how to roll out traffic forwarding profiles to users and groups with Global Secure Access (preview)
+description: Learn how to roll out traffic forwarding profiles to users and groups with Global Secure Access
 author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: how-to
-ms.date: 05/20/2024
+ms.date: 07/03/2024
 ms.service: global-secure-access
 ---
 # How to assign users and groups to traffic forwarding profiles
@@ -20,7 +20,7 @@ To assign a traffic forwarding profile to specific users and groups, you must ha
 
 - A [Global Secure Access Administrator](../identity/role-based-access-control/permissions-reference.md#global-secure-access-administrator) role in Microsoft Entra ID to view the traffic forwarding profile.
 - An [Application Administrator](../identity/role-based-access-control/permissions-reference.md#application-administrator) role to assign the traffic profile to the selected users and groups.
-- The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
+- The product requires licensing. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 - The minimum required Global Secure Access client version is 1.7.376.0. Clients below this version won't receive the traffic forwarding profile when assigned to the user.
 
 ## Assign a traffic forwarding profile to specific users and groups

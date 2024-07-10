@@ -50,10 +50,8 @@ gMSAs are more secure than standard user accounts, which require ongoing passwor
 
 ### Managed Service Accounts container
   
-To work effectively, gMSAs must be in the Managed Service Accounts container.
+To work effectively, gMSAs must be in the Managed Service Accounts container in Active Directory Users and Computers.
   
-![Screenshot of a gMSA in the Managed Service Accounts container.](./media/govern-service-accounts/secure-gmsa-image-1.png)
-
 To find service MSAs not in the list, run the following commands:
 
 ```powershell

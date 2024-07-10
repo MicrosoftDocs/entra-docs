@@ -792,10 +792,10 @@ Logs captured in the Core Directory service cover a wide variety of scenarios. C
 |MultiTenantOrg|Create a MultiTenantOrg|
 |MultiTenantOrg|Hard Delete MultiTenantOrg|
 |MultiTenantOrg|Update a MultiTenantOrg|
-|MultiTenantOrgIdentitySyncPolicyUpdate|Reset a multitenant org identity sync policy template|
-|MultiTenantOrgIdentitySyncPolicyUpdate|Update a multitenant org identity sync policy template|
-|MultiTenantOrgPartnerConfigurationTemplate|Reset a multitenant org partner configuration template|
-|MultiTenantOrgPartnerConfigurationTemplate|Update a multitenant org partner configuration template|
+|MultiTenantOrgIdentitySyncPolicyUpdate|Reset a multi tenant org identity sync policy template|
+|MultiTenantOrgIdentitySyncPolicyUpdate|Update a multi tenant org identity sync policy template|
+|MultiTenantOrgPartnerConfigurationTemplate|Reset a multi tenant org partner configuration template|
+|MultiTenantOrgPartnerConfigurationTemplate|Update a multi tenant org partner configuration template|
 |MultiTenantOrgTenant|Add MultiTenantOrg tenant|
 |MultiTenantOrgTenant|Delete MultiTenantOrg tenant|
 |MultiTenantOrgTenant|Hard Delete MultiTenantOrg tenant|
