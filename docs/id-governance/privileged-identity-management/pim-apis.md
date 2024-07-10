@@ -53,9 +53,9 @@ Under the `/beta/privilegedAccess` endpoint, Microsoft supported both `/aadRoles
 This is the final iteration of the PIM API. It includes:
   - PIM for Microsoft Entra roles in Microsoft Graph API - Generally available. 
   - PIM for Azure resources in ARM API - Generally available. 
-  - PIM for groups in Microsoft Graph API - Preview. 
-  - PIM Alerts for Microsoft Entra roles in Microsoft Graph API - Preview.
-  - PIM Alerts for Azure Resources in ARM API - Preview.
+  - PIM for groups in Microsoft Graph API - Generally available. 
+  - PIM alerts for Microsoft Entra roles in Microsoft Graph API - Preview.
+  - PIM alerts for Azure Resources in ARM API - Preview.
 
 Having PIM for Microsoft Entra roles in Microsoft Graph API and PIM for Azure Resources in ARM API provide a few benefits including:
   - Alignment of the PIM API for regular role assignment API for both Microsoft Entra roles and Azure Resource roles. 
