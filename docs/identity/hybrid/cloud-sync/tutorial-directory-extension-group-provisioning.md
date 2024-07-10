@@ -59,7 +59,7 @@ To create two groups, follow these steps.
 >[!NOTE]
 > When adding users to the Marketing group, make note of the group ID on the overview page. This ID is used later to add our newly created property to the group.
 
-## Connect Microsoft Graph PowerShell SDK and get your Tenant ID
+## Install and connect Microsoft Graph PowerShell SDK
 
 1. If not yet installed, follow [Microsoft Graph PowerShell SDK](~/powershell/microsoftgraph/installation.md) documentation to install the main modules of Microsoft Graph PowerShell SDK:  `Microsoft.Graph` and `Microsoft.Graph.Beta`.
 
@@ -75,27 +75,27 @@ To create two groups, follow these steps.
    ```powershell
    Connect-MgGraph -Scopes "Directory.ReadWrite.All", "Application.ReadWrite.All", "User.ReadWrite.All, Group.ReadWrite.All"
    ```
-1. Get your Tenant ID :
-
-      ```powershell
-   $tenantId = (Get-MgOrganization).Id
-   $tenantId
-   ```
-
-> Note: This will output you current Tenant ID, you can confirm this Tenant ID by navigating to [Microsoft Entra admin center](https://entra.microsoft.com/) > Identity > Overview.
 
 ## Create the CloudSyncCustomExtensionApp and service principal
 
 >[!Important]
 > Directory extension for Microsoft Entra Cloud Sync is only supported for applications with the identifier URI “api://&LT;tenantId&GT;/CloudSyncCustomExtensionsApp” and the [Tenant Schema Extension App](../connect/how-to-connect-sync-feature-directory-extensions.md#configuration-changes-in-azure-ad-made-by-the-wizard) created by Microsoft Entra Connect. 
 
-1. Using the Tenant ID from the previous step, check to see if the CloudSyncCustomExtensionApp exists.
-   
+1. Get your Tenant ID :
+
    ```powershell
+   $tenantId = (Get-MgOrganization).Id
+   $tenantId
+   ```
+> Note: This will output you current Tenant ID. You can confirm this Tenant ID by navigating to [Microsoft Entra admin center](https://entra.microsoft.com/) > Identity > Overview.
+
+1. Using the `$tenantId` variable from the previous step, check to see if the CloudSyncCustomExtensionApp exists.
+
+      ```powershell
    $cloudSyncCustomExtApp = Get-MgApplication -Filter "identifierUris/any(uri:uri eq 'api://$tenantId/CloudSyncCustomExtensionsApp')"
    $cloudSyncCustomExtApp
    ```
-1. If CloudSyncCustomExtensionApp already exists, skip to the next step. Otherwise, create the new CloudSyncCustomExtensionApp app:
+1. If a CloudSyncCustomExtensionApp exists, skip to the next step. Otherwise, create the new CloudSyncCustomExtensionApp app:
 
    ```powershell
    $cloudSyncCustomExtApp = New-MgApplication -DisplayName "CloudSyncCustomExtensionsApp" -IdentifierUris "api://$tenantId/CloudSyncCustomExtensionsApp"
@@ -108,9 +108,9 @@ To create two groups, follow these steps.
    Get-MgServicePrincipal -Filter "AppId eq '$($cloudSyncCustomExtApp.AppId)'"
    ```
 
-9. If a security principal is not returned, create a new security principal:
-  
-   ```powershell
+1. If you just created a new app or a security principal is not returned, create a security principal for CloudSyncCustomExtensionsApp:
+
+      ```powershell
    New-MgServicePrincipal -AppId $cloudSyncCustomExtApp.AppId
    ```
 
