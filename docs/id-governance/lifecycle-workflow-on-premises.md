@@ -20,7 +20,7 @@ Lifecycle Workflows supports governing the identity lifecycle for user accounts 
 
 The following table lists common automation scenarios for synchronized users from Active Directory Domain Services using Microsoft Entra ID Governance:
 
-|Scenario to automate  |Guide  |
+|Scenario to automate  |Microsoft Entra ID Governance solution  |
 |---------|---------|
 |Creating the user account in Active Directory Domain Services    |   [HR driven provisioning](../identity/app-provisioning/what-is-hr-driven-provisioning.md)      |
 |Providing initial credentials or password for user accounts  |  The [Generate Temporary Access Pass and send via email to user's manager](../id-governance/lifecycle-workflow-tasks.md#generate-temporary-access-pass-and-send-via-email-to-users-manager) task can be used to set up password-less credentials. For setting up a regular Active Directory password, you can use [Microsoft Entra self-service password reset](../identity/authentication/concept-sspr-howitworks.md).      |
