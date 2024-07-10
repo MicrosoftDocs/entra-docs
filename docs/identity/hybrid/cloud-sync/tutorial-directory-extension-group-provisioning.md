@@ -170,23 +170,53 @@ To create two groups, follow these steps.
 15. Leave the configuration disabled and come back to it.
 
 ## Add new extension property to one of our groups
+
 For this portion, we're going add a value on our newly created property to one of our existing groups, Marketing.
 
 ### Set the extension property value using Microsoft Graph PowerShell SDK
 
+1. Use the `$cloudSyncCustomExtApp` variable from the previous step to get our extension property:
+
+   ```powershell
+   $gwbEnabledExtAttrib = Get-MgBetaApplicationExtensionProperty -ApplicationId $cloudSyncCustomExtApp.Id | 
+       Where-Object {$_.Name -Like '*WritebackEnabled'} | Select-Object -First 1
+   $gwbEnabledExtAttrib 
+   $gwbEnabledExtName = $gwbEnabledExtAttrib.Name
+   ```
+
+
+2. Now, grt the `Marketing` group:
+
+   ```powershell
+   $marketingGrp = Get-MgGroup -ConsistencyLevel eventual -Filter "DisplayName eq 'Marketing'"
+   $marketingGrp 
+   ```
+
+3. Then, with the variable `$gwbEnabledExtName` containing `extension_<guid>_WritebackEnabled`, set the value `True` for the Marketing group:
+
+   ```powershell
+   Update-MgGroup -GroupId $marketingGrp.Id -AdditionalProperties @{$gwbEnabledExtName = $true}
+   ```
+
+4. To confirm, you can read the `extension_<guid>_WritebackEnabled` property value with:
+
+   ```powershell
+   $marketingGrp = Get-MgGroup -ConsistencyLevel eventual -Filter "DisplayName eq 'Marketing'" -Property Id,$gwbEnabledExtName
+   $marketingGrp.AdditionalProperties.$gwbEnabledExtName
+   ```
 
 ### Set the extension property value using Microsoft Graph Explorer
 
-You need to make sure that you have consented to Group.ReadWrite.All. You can do this by selecting **Modify permissions**.
+You need to make sure that you have consented to `Group.ReadWrite.All`. You can do this by selecting **Modify permissions**.
 
-1. Navigate to https://developer.microsoft.com/graph/graph-explorer
+1. Navigate to [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer)
 2. Sign-in using your tenant administrator account. This may need to be a Global Administrator account. A Global Administrator account was used in creating this scenario. A Hybrid Identity Administrator account may be sufficient.
 3. At the top, change the **GET** to **PATCH**
 4. In the address box enter: https://graph.microsoft.com/v1.0/groups/&lt;group id&gt;
 5. In the Request body enter:
    ```
    {
-    extension_<guid>_SynchGroup: true
+    extension_<guid>_WritebackEnabled: true
    }
   
    ```
