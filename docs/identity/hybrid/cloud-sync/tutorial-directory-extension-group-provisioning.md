@@ -184,7 +184,6 @@ For this portion, we're going add a value on our newly created property to one o
    $gwbEnabledExtName = $gwbEnabledExtAttrib.Name
    ```
 
-
 2. Now, grt the `Marketing` group:
 
    ```powershell
@@ -233,21 +232,19 @@ You need to make sure that you have consented to `Group.ReadWrite.All`. You can 
 >[!NOTE]
 >When using on-demand provisioning, members aren't automatically provisioned. You need to select which members you wish to test on and there's a 5 member limit.
 
-[!INCLUDE [sign in](../../../includes/cloud-sync-sign-in.md)]
+  [!INCLUDE [sign in](../../../includes/cloud-sync-sign-in.md)]
 
 3. Under **Configuration**, select your configuration.
 4. On the left, select **Provision on demand**.
 5. Enter **Marketing** in the **Selected group** box
 6. From the **Selected users** section, select some users to test. Select **Lola Jacobson** and **John Smith**.
 7. Click **Provision**. It should successfully provision.
-   :::image type="content" source="media/tutorial-directory-extension-group-provision/directory-extension-group-provision-5.png" alt-text="Screenshot of successful provision." lightbox="media/tutorial-directory-extension-group-provision/directory-extension-group-provision-5.png":::
+  :::image type="content" source="media/tutorial-directory-extension-group-provision/directory-extension-group-provision-5.png" alt-text="Screenshot of successful provision." lightbox="media/tutorial-directory-extension-group-provision/directory-extension-group-provision-5.png":::
 8. Now try with the **Sales** group and add **Britta Simon** and **Anna Ringdahl**. This shouldn't provision.
-    :::image type="content" source="media/tutorial-directory-extension-group-provision/directory-extension-group-provision-6.png" alt-text="Screenshot of provisioning being blocked." lightbox="media/tutorial-directory-extension-group-provision/directory-extension-group-provision-6.png":::
- 
-1. In Active Directory, you should see the newly created Marketing group.
-   :::image type="content" source="media/tutorial-directory-extension-group-provision/directory-extension-group-provision-7.png" alt-text="Screenshot of new group in active directory users and computers." lightbox="media/tutorial-directory-extension-group-provision/directory-extension-group-provision-7.png":::
-   
-1. You can now browse to **Identity** > **Hybrid Management** > **Microsoft Entra Connect** > **Cloud sync > Overview** page to Review and Enabled our configuration.
+  :::image type="content" source="media/tutorial-directory-extension-group-provision/directory-extension-group-provision-6.png" alt-text="Screenshot of provisioning being blocked." lightbox="media/tutorial-directory-extension-group-provision/directory-extension-group-provision-6.png":::
+9. In Active Directory, you should see the newly created Marketing group.
+  :::image type="content" source="media/tutorial-directory-extension-group-provision/directory-extension-group-provision-7.png" alt-text="Screenshot of new group in active directory users and computers." lightbox="media/tutorial-directory-extension-group-provision/directory-extension-group-provision-7.png":::
+10. You can now browse to **Identity** > **Hybrid Management** > **Microsoft Entra Connect** > **Cloud sync > Overview** page to Review and Enabled our configuration.
 
 ## Next steps 
 - [Use Group writeback with Microsoft Entra Cloud Sync ](../group-writeback-cloud-sync.md)
