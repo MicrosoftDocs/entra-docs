@@ -101,7 +101,7 @@ The following sections describe steps for configuring user provisioning from Wor
      > [!NOTE]
      > If no version information is specified in the URL, the app uses Workday Web Services (WWS) v21.1 and no changes are required to the default XPATH API expressions shipped with the app. To use a specific WWS API version, specify version number in the URL <br>
      > Example: `https://wd3-impl-services1.workday.com/ccx/service/contoso4/Human_Resources/v34.0` <br>
-     > <br> If you are using a WWS API v30.0+, before turning on the provisioning job, please update the **XPATH API expressions** under **Attribute Mapping -> Advanced Options -> Edit attribute list for Workday** referring to the section [Managing your configuration](~/identity/saas-apps/workday-inbound-tutorial.md#managing-your-configuration) and [Workday attribute reference](~/identity/app-provisioning/workday-attribute-reference.md#xpath-values-for-workday-web-services-wws-api-v30).  
+     > <br> If you're using a WWS API v30.0+, before turning on the provisioning job, please update the **XPATH API expressions** under **Attribute Mapping -> Advanced Options -> Edit attribute list for Workday** referring to the section [Managing your configuration](~/identity/saas-apps/workday-inbound-tutorial.md#managing-your-configuration) and [Workday attribute reference](~/identity/app-provisioning/workday-attribute-reference.md#xpath-values-for-workday-web-services-wws-api-v30).  
 
    * **Notification Email –** Enter your email address, and check the  "send email if failure occurs" checkbox.
 
@@ -148,7 +148,7 @@ In this section, you'll configure how user data flows from Workday to Microsoft 
 
       * **Expression** – Allows you to write a custom value to the AD attribute, based on one or more Workday attributes. [For more info, see this article on expressions](~/identity/app-provisioning/functions-for-customizing-application-data.md).
 
-   * **Source attribute** - The user attribute from Workday. If the attribute you are looking for isn't present, see [Customizing the list of Workday user attributes](~/identity/saas-apps/workday-inbound-tutorial.md#customizing-the-list-of-workday-user-attributes).
+   * **Source attribute** - The user attribute from Workday. If the attribute you're looking for isn't present, see [Customizing the list of Workday user attributes](~/identity/saas-apps/workday-inbound-tutorial.md#customizing-the-list-of-workday-user-attributes).
 
    * **Default value** – Optional. If the source attribute has an empty value, the mapping will write this value instead.
             Most common configuration is to leave this blank.
@@ -181,7 +181,7 @@ Once the Workday provisioning app configurations have been completed, you can tu
 
 3. This operation starts the initial sync, which can take a variable number of hours depending on how many users are in the Workday tenant. You can check the progress bar to the track the progress of the sync cycle. 
 
-4. At any time, check the **Provisioning** tab in the Entra admin center to see what actions the provisioning service has performed. The provisioning logs lists all individual sync events performed by the provisioning service, such as which users are being read out of Workday and then subsequently added or updated to Microsoft Entra ID. 
+4. At any time, check the **Provisioning** tab in the Microsoft Entra admin center to see what actions the provisioning service has performed. The provisioning logs lists all individual sync events performed by the provisioning service, such as which users are being read out of Workday and then subsequently added or updated to Microsoft Entra ID. 
 
 5. Once the initial sync is completed, it will write an audit summary report in the **Provisioning** tab, as shown below.
 
