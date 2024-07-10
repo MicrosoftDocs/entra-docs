@@ -36,7 +36,7 @@ This Workday to Microsoft Entra user provisioning solution is ideally suited for
 This section describes the end-to-end user provisioning solution architecture for cloud-only users. There are two related flows:
 
 * **Authoritative HR data flow – from Workday to Microsoft Entra ID:** In this flow worker events (such as New Hires, Transfers, Terminations) first occur in Workday and then the event data flows into Microsoft Entra ID. Depending on the event, it may lead to create/update/enable/disable operations in Microsoft Entra ID.
-* **Writeback flow – from on-premises Active Directory to Workday:** Once the account creation is complete in Active Directory, it is synced with Microsoft Entra ID through Microsoft Entra Connect and information such as email, username and phone number  can be written back to Workday.
+* **Writeback flow – from on-premises Active Directory to Workday:** Once the account creation is complete in Active Directory, it's synced with Microsoft Entra ID through Microsoft Entra Connect and information such as email, username and phone number  can be written back to Workday.
 
   ![Overview](~/identity/saas-apps/media/workday-inbound-tutorial/workday-cloud-only-provisioning.png)
 
@@ -113,7 +113,7 @@ The following sections describe steps for configuring user provisioning from Wor
 
 ### Part 2: Configure Workday and Microsoft Entra attribute mappings
 
-In this section, you will configure how user data flows from Workday to Microsoft Entra ID for cloud-only users.
+In this section, you'll configure how user data flows from Workday to Microsoft Entra ID for cloud-only users.
 
 1. On the Provisioning tab under **Mappings**, click **Synchronize Workers to Microsoft Entra ID**.
 
@@ -148,7 +148,7 @@ In this section, you will configure how user data flows from Workday to Microsof
 
       * **Expression** – Allows you to write a custom value to the AD attribute, based on one or more Workday attributes. [For more info, see this article on expressions](~/identity/app-provisioning/functions-for-customizing-application-data.md).
 
-   * **Source attribute** - The user attribute from Workday. If the attribute you are looking for is not present, see [Customizing the list of Workday user attributes](~/identity/saas-apps/workday-inbound-tutorial.md#customizing-the-list-of-workday-user-attributes).
+   * **Source attribute** - The user attribute from Workday. If the attribute you are looking for isn't present, see [Customizing the list of Workday user attributes](~/identity/saas-apps/workday-inbound-tutorial.md#customizing-the-list-of-workday-user-attributes).
 
    * **Default value** – Optional. If the source attribute has an empty value, the mapping will write this value instead.
             Most common configuration is to leave this blank.
@@ -157,7 +157,7 @@ In this section, you will configure how user data flows from Workday to Microsof
 
    * **Match objects using this attribute** – Whether or not this attribute should be used to uniquely identify users between Workday and Microsoft Entra ID. This value is typically set on the Worker ID field for Workday, which is typically mapped to the Employee ID attribute (new) or an extension attribute in Microsoft Entra ID.
 
-   * **Matching precedence** – Multiple matching attributes can be set. When there are multiple, they are evaluated in the order defined by this field. As soon as a match is found, no further matching attributes are evaluated.
+   * **Matching precedence** – Multiple matching attributes can be set. When there are multiple, they're evaluated in the order defined by this field. As soon as a match is found, no further matching attributes are evaluated.
 
    * **Apply this mapping**
 
