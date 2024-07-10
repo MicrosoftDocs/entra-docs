@@ -1,13 +1,10 @@
 ---
 title: 'Tutorial: Configure Rhombus Systems for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Rhombus Systems.
-
 author: thomasakelo
 manager: jeedes
-ms.assetid: e5e53362-065c-4546-85f3-9454b8c0d4b1
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: tutorial
 ms.date: 03/25/2024
 ms.author: thomasakelo

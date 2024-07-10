@@ -1,13 +1,10 @@
 ---
 title: 'Tutorial: Configure Templafy SAML2 for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Templafy SAML2.
-
 author: thomasakelo
 manager: CelesteDG
-ms.assetid: 8a966ef5-e364-435b-9e29-3caf27ffb498
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: tutorial
 ms.date: 03/25/2024
 ms.author: thomasakelo

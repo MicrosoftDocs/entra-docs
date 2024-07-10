@@ -44,12 +44,13 @@ After verification, users are issued a reusable identity credential, which exped
 
 To configure IDEMIA as your identity verification proofing solution, follow these steps:
 
-1. Go to Quickstart in the Azure portal and select **Verified ID**.
-2. Choose select issuer.
-3. Look for IDEMIA in the search/select issuers drop down.
-4. Select VerifiedCredentialExpert as the credential type.
-5. Select **Add** and then select review.
-6. Download the request body and copy/paste the POST API request URL
+1. In the Entra portal, locate **Verified ID** in the left hand menu and select `Overview`.
+1. Select `Explore` and click `Verification request`.
+1. Choose `Select issuer(s)` and click `Select first issuer`.
+1. Look for `IDEMIA` in the search/select issuers drop down.
+1. Select `VerifiedIdentity` as the credential type.
+1. Select **Add** and then select review.
+1. Download the request body and copy/paste the POST API request URL
 
 ## Developer steps
 

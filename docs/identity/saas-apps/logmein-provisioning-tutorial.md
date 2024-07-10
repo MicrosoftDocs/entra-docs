@@ -2,15 +2,11 @@
 title: 'Tutorial: Configure LogMeIn for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to LogMeIn.
 
-documentationcenter: ''
 author: thomasakelo
 manager: jeedes
-
-ms.assetid: cf38e6ad-6391-4e5d-98f7-fbdaf3de54f5
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 03/25/2024
 ms.author: thomasakelo

@@ -65,5 +65,5 @@ httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("
 // Call the web API.
 HttpResponseMessage response = await _httpClient.GetAsync(apiUri);
 ...
-}
+
 ```
