@@ -123,7 +123,7 @@ Identities can authenticate in different ways, which may be relevant to the appl
 | `otp` | One-time passcode using an email or a text message. |
 | `fed` | Indicates the use of a federated authentication assertion (such as JWT or SAML). |
 | `wia` | Windows Integrated Authentication |
-| `mfa` | Indicates the use of [Multi-factor authentication](~/identity/authentication/concept-mfa-howitworks.md). Includes the other authentication methods when this claim is present. |
+| `mfa` | Indicates the use of [Multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md). Includes the other authentication methods when this claim is present. |
 | `ngcmfa` | Equivalent to `mfa`, used for provisioning of certain advanced credential types. |
 | `wiaormfa`| The user used Windows or an MFA credential to authenticate. |
 | `none` | Indicates no completed authentication. |
