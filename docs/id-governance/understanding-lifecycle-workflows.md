@@ -16,7 +16,7 @@ The following document provides an overview of a workflow created using Lifecycl
   [![Diagram of a lifecycle workflow.](media/understanding-lifecycle-workflows/workflow-2.png)](media/understanding-lifecycle-workflows/workflow-2.png#lightbox)
 
 > [!NOTE]
-> Lifecycle workflows enhances Microsoft Entra ID Governance's [HR-driven provisioning]((../identity/app-provisioning/what-is-hr-driven-provisioning.md)) by automating routine processes. While HR provisioning manages the creation and attribute updates of user accounts, lifecycle workflows provide additional automation of tasks.
+> Lifecycle workflows enhances Microsoft Entra ID Governance's [HR-driven provisioning](../identity/app-provisioning/what-is-hr-driven-provisioning.md) by automating routine processes. While HR provisioning manages the creation and attribute updates of user accounts, lifecycle workflows provide additional automation of tasks.
 
 ## License requirements 
 

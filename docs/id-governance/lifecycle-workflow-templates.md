@@ -37,7 +37,7 @@ The list of templates are as follows:
 For a complete guide on creating a new workflow from a template, see: [Tutorial: On-boarding users to your organization using Lifecycle workflows with the Microsoft Entra admin center](tutorial-onboard-custom-workflow-portal.md).
 
 > [!NOTE]
-> Lifecycle workflows enhances Microsoft Entra ID Governance's [HR-driven provisioning]((../identity/app-provisioning/what-is-hr-driven-provisioning.md)) by automating routine processes. While HR provisioning manages the creation and attribute updates of user accounts, lifecycle workflows provide additional automation of tasks.
+> Lifecycle workflows enhances Microsoft Entra ID Governance's [HR-driven provisioning](../identity/app-provisioning/what-is-hr-driven-provisioning.md) by automating routine processes. While HR provisioning manages the creation and attribute updates of user accounts, lifecycle workflows provide additional automation of tasks.
 
 ### Onboard pre-hire employee
 
