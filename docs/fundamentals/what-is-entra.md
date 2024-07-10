@@ -18,7 +18,7 @@ Microsoft Entra is a family of identity and network access products. It enables 
 
 ## Microsoft Entra product family
 
-The Microsoft Entra product family covers four maturity stages of secure end-to-end access for any trustworthy identity. These stages include establishing Zero Trust access controls, and securing access for employees, customers, partners, and cloud environments.
+The Microsoft Entra product family covers four maturity stages of secure end-to-end access for any trustworthy identity. These stages include establishing Zero Trust access controls, and securing access for employees, customers, partners, and any cloud environment.
 
 :::image type="content" source="./media/what-is-entra/entra-product-family.png" alt-text="Diagram of Microsoft Entra products across four maturity stages.":::
 
