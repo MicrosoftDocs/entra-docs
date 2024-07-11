@@ -20,7 +20,6 @@ This tutorial walks you through creating a basic Active Directory environment.
 
 You can use the environment you create in the tutorial to test various aspects of hybrid identity scenarios and will be a prerequisite for some of the tutorials. If you already have an existing Active Directory environment you can use that as a substitute. This information is provided for individuals who may be starting from nothing.
 
-This tutorial consists of
 ## Prerequisites
 The following are prerequisites required for completing this tutorial
 - A computer with [Hyper-V](/windows-server/virtualization/hyper-v/hyper-v-technology-overview) installed. It's suggested to do this on either a [Windows 10](/virtualization/hyper-v-on-windows/about/supported-guest-os) or a [Windows Server 2016](/windows-server/virtualization/hyper-v/supported-windows-guest-operating-systems-for-hyper-v-on-windows) computer.
