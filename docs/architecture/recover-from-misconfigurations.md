@@ -23,19 +23,19 @@ You need to understand the configuration items that are important to your organi
 
 ### Tenant-wide configurations
 
-* **External identities**: Global administrators for the tenant identify and control the external identities that can be provisioned in the tenant. They determine:
+* **External identities**: Global Administrators for the tenant identify and control the external identities that can be provisioned in the tenant. They determine:
 
   * Whether to allow external identities in the tenant.
   * From which domains external identities can be added.
   * Whether users can invite users from other tenants.
 
-* **Named locations**: Global administrators can create named locations, which can then be used to:
+* **Named locations**: Global Administrators can create named locations, which can then be used to:
 
   * Block sign-ins from specific locations.
   * Trigger Conditional Access policies like multifactor authentication.
 
-* **Allowed authentication methods**: Global administrators set the authentication methods allowed for the tenant.
-* **Self-service options**: Global administrators set self-service options like self-service password reset and create Office 365 groups at the tenant level.
+* **Allowed authentication methods**: Global Administrators set the authentication methods allowed for the tenant.
+* **Self-service options**: Global Administrators set self-service options like self-service password reset and create Office 365 groups at the tenant level.
 
 The implementation of some tenant-wide configurations can be scoped, provided they aren't overridden by global administration policies. For example:
 
