@@ -12,6 +12,10 @@ ms.custom: references_regions
 
 # What is Global Secure Access?
 
+> [!IMPORTANT]
+> Some features of Global Secure Access are currently in PREVIEW.
+> See the [Product Terms](https://aka.ms/EntraPreviewsTermsOfUse) for legal terms that apply to features that are in beta, preview, or otherwise not yet released into general availability.
+
 The way people work changed. Instead of working in traditional offices, people now work from nearly anywhere. With applications and data moving to the cloud, an identity-aware, cloud-delivered network perimeter for the modern workforce is needed. This new network security category is called Security Service Edge (SSE).
 
 Microsoft Entra Internet Access and Microsoft Entra Private Access comprise Microsoft's Security Service Edge (SSE) solution. Global Secure Access is the unifying term used for both Microsoft Entra Internet Access and Microsoft Entra Private Access. Global Secure Access is the unified location in the Microsoft Entra admin center. Global Secure Access is built upon the core principles of Zero Trust to use least privilege, verify explicitly, and assume breach.
@@ -64,7 +68,7 @@ Prerequisite to use Microsoft Entra Private Access, Microsoft Entra Internet Acc
 While we are still determining the licensing model for remote networks, we want to provide you with the most up-to-date guidance and recommendations to ensure optimal performance for your Microsoft traffic deployment. Microsoft recommends a 250 Mbps bandwidth for Microsoft traffic of 1250 users. In cases of usage exceeding the recommended limits, additional charges may apply. To learn more about remote networks, see [How to create a remote network with Global Secure Access](how-to-create-remote-networks.md).
 
 
-[!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
+
 
 ## Next steps
 
