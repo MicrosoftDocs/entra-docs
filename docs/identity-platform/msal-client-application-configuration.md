@@ -30,12 +30,12 @@ The authority is a URL that indicates a directory that MSAL can request tokens f
 
 Common authorities are:
 
-| Common authority URLs                              | When to use                                                                                                                                                               |
-| -------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Common authority URLs | When to use |
+| ------------------ | ------------------ |
 | `https://login.microsoftonline.com/<tenant>/`      | Sign in users of a specific organization only. The `<tenant>` in the URL is the tenant ID of the Microsoft Entra tenant (a GUID), or its tenant domain. |
-| `https://login.microsoftonline.com/common/`        | Sign in users with work and school accounts or personal Microsoft accounts.                                                                                               |
-| `https://login.microsoftonline.com/organizations/` | Sign in users with work and school accounts.                                                                                                                              |
-| `https://login.microsoftonline.com/consumers/`     | Sign in users with personal Microsoft accounts (MSA) only.                                                                                                                |
+| `https://login.microsoftonline.com/common/`        | Sign in users with work and school accounts or personal Microsoft accounts. |
+| `https://login.microsoftonline.com/organizations/` | Sign in users with work and school accounts. |
+| `https://login.microsoftonline.com/consumers/`     | Sign in users with personal Microsoft accounts (MSA) only. |
 
 The authority you specify in your code needs to be consistent with the **Supported account types** you specified for the app in **App registrations** in the Azure portal.
 
@@ -109,20 +109,17 @@ If you're a public client app developer who's using MSAL:
 
 - You'd want to use `.WithDefaultRedirectUri()` in desktop or Universal Windows Platform (UWP) applications (MSAL.NET 4.1+). The `.WithDefaultRedirectUri()` method will set the public client application's redirect URI property to the default recommended redirect URI for public client applications.
 
-  | Platform              | Redirect URI                                                                                                                                                                                                                                           |
-  | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-  | Desktop app (.NET Framework) | `https://login.microsoftonline.com/common/oauth2/nativeclient`                                                                                                                                                                                         |
-  | UWP                   | value of `WebAuthenticationBroker.GetCurrentApplicationCallbackUri()`. This enables single sign-on (SSO) with the browser by setting the value to the result of WebAuthenticationBroker.GetCurrentApplicationCallbackUri(), which you need to register |
-  | .NET             | `https://localhost` enables the user to use the system browser for interactive authentication since .NET doesn't have a UI for the embedded web view at the moment.                                                                               |
-
-You don't need to add a redirect URI if you're building a Xamarin Android and iOS application that doesn't support the broker redirect URI. It's automatically set to `msal{ClientId}://auth` for Xamarin Android and iOS.
+  | Platform | Redirect URI |
+  | ---------------- | ---------------- |
+  | Desktop app (.NET Framework) | `https://login.microsoftonline.com/common/oauth2/nativeclient` |
+  | UWP | value of `WebAuthenticationBroker.GetCurrentApplicationCallbackUri()`. This enables single sign-on (SSO) with the browser by setting the value to the result of WebAuthenticationBroker.GetCurrentApplicationCallbackUri(), which you need to register |
+  | .NET | `https://localhost` enables the user to use the system browser for interactive authentication since .NET doesn't have a UI for the embedded web view at the moment. |
 
 You can override the redirect URI by using the `RedirectUri` property (for example, if you use brokers). Here are some examples of redirect URIs for that scenario:
 
 - `RedirectUriOnAndroid` = "msauth-5a434691-ccb2-4fd1-b97b-b64bcfbc03fc://com.microsoft.identity.client.sample";
 - `RedirectUriOnIos` = $"msauth.{Bundle.ID}://auth";
 
-For more iOS details, see [Migrate iOS applications that use Microsoft Authenticator from ADAL.NET to MSAL.NET](msal-net-migration-ios-broker.md) and [Leveraging the broker on iOS](msal-net-use-brokers-with-xamarin-apps.md).
 For more Android details, see [Brokered auth in Android](msal-android-single-sign-on.md).
 
 - When building an app using MSAL Android, you can configure the `redirect_uri` during the initial [App registration](https://aka.ms/appregistrations) step or add it afterward. 

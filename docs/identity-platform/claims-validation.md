@@ -54,9 +54,9 @@ You can either check for specific `sub` or `oid` claims.
 
 Or,
 
-You can check that the subject belongs to an appropriate role or group with the `roles`, `groups`, `wids` claims. For example, use the immutable claim values `tid` and `oid` as a combined key for application data and determining whether a user should be granted access.
+You can check that the subject belongs to an appropriate role or group with the `roles`, `scp`, `groups`, `wids` claims. For example, use the immutable claim values `tid` and `oid` as a combined key for application data and determining whether a user should be granted access.
 
-The `roles`, `groups` or `wids` claims can also be used to determine if the subject has authorization to perform an operation. For example, an administrator may have permission to write to an API, but not a normal user, or the user may be in a group allowed to do some action. The `wid` claim represents the tenant-wide roles assigned to the user from the roles present in the Microsoft Entra built-in roles. For more information, see [Microsoft Entra built-in roles](~/identity/role-based-access-control/permissions-reference.md).
+The `roles`, `groups` or `wids` claims can also be used to determine if the subject has authorization to perform an operation, although they are not an exhaustive list of all of the ways a subject can be granted permissions. For example, an administrator may have permission to write to an API, but not a normal user, or the user may be in a group allowed to do some action. The `wid` claim represents the tenant-wide roles assigned to the user from the roles present in the Microsoft Entra built-in roles. For more information, see [Microsoft Entra built-in roles](~/identity/role-based-access-control/permissions-reference.md). 
 
 > [!WARNING]
 > Never use claims like `email`, `preferred_username` or `unique_name` to store or determine whether the user in an access token should have access to data. These claims are not unique and can be controllable by tenant administrators or sometimes users, which makes them unsuitable for authorization decisions. They are only usable for display purposes. Also don't use the `upn` claim for authorization. While the UPN is unique, it often changes over the lifetime of a user principal, which makes it unreliable for authorization.
