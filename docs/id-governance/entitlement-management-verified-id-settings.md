@@ -38,10 +38,10 @@ Before you begin, you must set up your tenant to use the [Microsoft Entra Verifi
 To add a verified ID requirement to an access package, you must start from the access package’s requests tab. Follow these steps to add a verified ID requirement to a new access package.
 
 
-**Prerequisite role**: Global administrator
+**Prerequisite role**: Global Administrator
 
 > [!NOTE]
-> Identity Governance administrator, User administrator, Catalog owner, or Access package manager will be able to add verified ID requirements to access packages soon.
+> Identity Governance Administrator, User Administrator, Catalog owner, or Access package manager will be able to add verified ID requirements to access packages soon.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 

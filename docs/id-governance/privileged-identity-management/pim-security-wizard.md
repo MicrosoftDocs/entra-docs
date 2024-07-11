@@ -51,7 +51,7 @@ Also, keep role assignments permanent if a user has a Microsoft account (in othe
 
 1. You can also require all Global Administrators to review their own access.
 
-    :::image type="content" source="./media/pim-security-wizard/new-global-administrator-access-review.png" alt-text="Screenshot showing the Global administrators page showing the access reviews section.":::
+    :::image type="content" source="./media/pim-security-wizard/new-global-administrator-access-review.png" alt-text="Screenshot showing the Global Administrators page showing the access reviews section.":::
 
 1. After you select any of these changes, you'll see an Azure notification.
 

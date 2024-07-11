@@ -54,11 +54,11 @@ Archiving Microsoft Entra audit logs requires you to have Azure Monitor in an Az
 
 To view events for an access package, you must have access to the underlying Azure monitor workspace (see [Manage access to log data and workspaces in Azure Monitor](/azure/azure-monitor/logs/manage-access#azure-rbac) for information) and in one of the following roles: 
 
-- Global administrator  
-- Security administrator  
-- Security reader  
-- Reports reader  
-- Application administrator  
+- Global Administrator  
+- Security Administrator  
+- Security Reader  
+- Reports Reader  
+- Application Administrator  
 
 Use the following procedure to view events: 
 
