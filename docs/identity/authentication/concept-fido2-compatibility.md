@@ -21,6 +21,8 @@ Microsoft Entra ID allows passkeys to be used for passwordless authentication. T
 
 ## Native application support
 
+The following sections cover support for Microsoft and third-party applications. 
+
 ### Native application support with authentication broker (preview)
 
 Microsoft applications provide native support for FIDO2 authentication in preview for all users who have an authentication broker installed for their operating system. FIDO2 authentication is also supported in preview for third-party applications using the authentication broker.
@@ -40,7 +42,8 @@ The following tables lists which authentication brokers are supported for differ
 If a user installed an authentication broker, they can choose to sign in with a security key when they access an application such as Outlook. They're redirected to sign in with FIDO2, and redirected back to Outlook as a signed in user after successful authentication.
 
 ### Microsoft application support without authentication broker
-Signing into Microsoft native applications with FIDO2 authentication when the user doesn't have an authentication broker on iOS, macOS, and Android isn't supported at this time.
+
+Remote Desktop support for passkey (FIDO2) is in preview for brokered and unbrokered scenarios for macOS and iOS.
 
 ### Third-party application support without authentication broker
 If the user has yet to install an authentication broker, they can still sign in with a security key when they access MSAL-enabled applications. For more information about requirements for MSAL-enabled applications, see [Support passwordless authentication with FIDO2 keys in apps you develop](~/identity-platform/support-fido2-authentication.md).
