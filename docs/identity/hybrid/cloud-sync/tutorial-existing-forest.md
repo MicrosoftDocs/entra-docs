@@ -87,7 +87,7 @@ You'll now verify that the users that you had in our on-premises directory have 
 1. Browse to [https://myapps.microsoft.com](https://myapps.microsoft.com)
 2. Sign in with a user account that was created in our new tenant.  You'll need to sign in using the following format: (user@domain.onmicrosoft.com). Use the same password that the user uses to sign in on-premises.
 
-   ![Screenshot that shows the my apps portal with a signed in users.](media/tutorial-single-forest/verify-1.png)
+   ![Screenshot that shows the my apps portal with a signed in users.](~/includes/governance/media/tutorial-single-forest/verify-1.png)
 
 You have now successfully set up a hybrid identity environment that you can use to test and familiarize yourself with what Azure has to offer.
 

@@ -2,15 +2,10 @@
 title: 'Tutorial: Configure LawVu for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to LawVu.
 
-documentationcenter: ''
 author: thomasakelo
 manager: jeedes
-
-ms.assetid: 37a258fe-b435-4bd8-88a8-8e93bb6f6b6b
 ms.service: entra-id
 ms.subservice: saas-apps
-
-
 ms.topic: tutorial
 ms.date: 03/25/2024
 ms.author: thomasakelo
@@ -21,7 +16,6 @@ ms.author: thomasakelo
 # Tutorial: Configure LawVu for automatic user provisioning
 
 This tutorial describes the steps you need to perform in both LawVu and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users to [LawVu](https://lawvu.com/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
-
 
 ## Capabilities supported
 > [!div class="checklist"]

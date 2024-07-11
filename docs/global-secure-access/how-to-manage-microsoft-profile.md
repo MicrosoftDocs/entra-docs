@@ -98,7 +98,7 @@ Traffic profiles can be assigned to remote networks, so that the network traffic
 ## User and group assignments
 You can scope the Microsoft profile to specific users and groups instead of applying the traffic profile to all users. To learn more about user and group assignment, see [How to assign and manage users and groups with traffic forwarding profiles](how-to-manage-users-groups-assignment.md).
 
-[!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
+
 
 ## Next steps
 

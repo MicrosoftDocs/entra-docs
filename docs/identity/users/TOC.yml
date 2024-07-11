@@ -190,7 +190,5 @@
     href: /graph/api/resources/azure-ad-overview
   - name: Microsoft Entra CLI    
     href: /cli/azure/ad
-  - name:  Azure AD PowerShell for Graph
-    href: /powershell/azure/active-directory/install-adv2
   - name: Microsoft Entra service limits
     href: directory-service-limits-restrictions.md

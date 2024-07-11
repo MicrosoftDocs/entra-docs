@@ -92,7 +92,7 @@ Optionally:
 - [Secure Quick Access applications with Conditional Access policies](how-to-target-resource-private-access-apps.md).
 - [Review the Global Secure Access logs](concept-global-secure-access-logs-monitoring.md).
 
-[!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
+
 
 ## Next steps
 

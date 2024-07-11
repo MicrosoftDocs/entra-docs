@@ -1,13 +1,10 @@
 ---
 title: 'Tutorial: Configure Moqups for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Moqups.
-
 author: thomasakelo
 manager: jeedes
-ms.assetid: 2e6e8499-9c49-4082-ac6d-64890330042a
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: tutorial
 ms.date: 03/25/2024
 ms.author: thomasakelo

@@ -1,13 +1,10 @@
 ---
 title: 'Tutorial: Configure Personify Inc for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Personify Inc.
-
 author: thomasakelo
 manager: jeedes
-ms.assetid: 99921da0-e7e2-4f30-90c1-d84722d2afbd
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: tutorial
 ms.date: 03/25/2024
 ms.author: thomasakelo

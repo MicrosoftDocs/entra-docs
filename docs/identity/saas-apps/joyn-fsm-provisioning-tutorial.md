@@ -2,11 +2,10 @@
 title: 'Tutorial: Configure Joyn FSM for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Joyn FSM.
 
-documentationcenter: ''
+
 author: thomasakelo
 manager: jeedes
 
-ms.assetid: e778e26b-c998-4432-85b7-5a0d0047ccae
 ms.service: entra-id
 ms.subservice: saas-apps
 

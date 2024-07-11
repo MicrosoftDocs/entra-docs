@@ -109,23 +109,6 @@ The current blocking experience for all browsers includes a plaintext browser er
 > [!NOTE]
 > Configuration changes in the Global Secure Access experience related to web content filtering typically take effect in less than 5 minutes. Configuration changes in Conditional Access related to web content filtering take effect in approximately one hour.
 
-## Known limitations
-
-- End-user notification on blocks, either from the client or the browser, aren't provided.
-- Internet traffic acquisition profiles for the client can't be configured.
-- The client traffic acquisition policy includes Transmission Control Protocol (TCP) ports 80/443.
-- Standard ports for HTTP/S traffic (ports 80 and 443).
-- *microsoft.com is currently acquired by the Microsoft access profile.
-- IPv6 isn't supported on this platform.
-- Hyper-V isn't supported on this platform.
-- Remote network connectivity for Internet Access is in development.
-- Open Systems Intercommunication (OSI) network layer 3 and 4 filtering isn't supported.
-- No captive portal support. Connecting to public WiFi via captive portal access fails because these endpoints are currently acquired by the client.
-- Transport Layer Security (TLS) termination is in development.
-- No URL path based filtering or URL categorization for HTTP and HTTPS traffic.
-- Currently, an admin can create up to 100 web content filtering policies and up to 1,000 rules based on up to 8,000 total FQDNs. Admins can also create up to 256 security profiles.
-  - These initial limits are placeholders until more features are added to this platform.
-
 ## Next steps
 
 - [Learn about the traffic dashboard](concept-traffic-dashboard.md)

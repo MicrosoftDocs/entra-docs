@@ -2,15 +2,10 @@
 title: 'Tutorial: Configure TAP App Security for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to TAP App Security.
 
-documentationcenter: ''
 author: thomasakelo
 manager: jeedes
-
-ms.assetid: affd297c-2b6f-4dc2-b4c3-d29458cf4b1b
 ms.service: entra-id
 ms.subservice: saas-apps
-
-
 ms.topic: article
 ms.date: 03/25/2024
 ms.author: thomasakelo
