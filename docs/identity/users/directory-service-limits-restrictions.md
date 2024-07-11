@@ -19,6 +19,10 @@ ms.reviewer: vincesm
 This article contains the usage constraints and other service limits for the Microsoft Entra ID, part of Microsoft Entra, service. If you’re looking for the full set of Microsoft Azure service limits, see [Azure Subscription and Service Limits, Quotas, and Constraints](/azure/azure-resource-manager/management/azure-subscription-service-limits).
 
 [!INCLUDE [AAD-service-limits](~/includes/entra-service-limits-include.md)]
+- In the Service limits document, specifically the application section. The following service limits are suggested to be added as CSS engineers have received some cases on this in the past 6 months. This is internally noted but not publicly
+- The application section needs to add the follow:
+There is a maximum of 400 API permissions that can be added to an app registration
+There is a maximum of 40 API resources that can be added to an app registration
 
 ## Related content
 
