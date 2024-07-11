@@ -112,7 +112,12 @@ sections:
           How does Enterprise State Roaming support virtual desktop infrastructure (VDI)?
         answer: |
           Enterprise State Roaming is supported on Windows 10 or newer client SKUs, but not on server SKUs. If a client VM is hosted on a hypervisor machine and you remotely sign in to the virtual machine, your data will roam. If multiple users share the same OS and users remotely sign in to a server for a full desktop experience, roaming might not work. The latter session-based scenario isn't officially supported.
-         
+ 
+      - question: |
+          What happened to the per-user device sync status report?
+        answer: |
+          The per-user device sync status report was removed from the Microsoft Entra admin center. The report was removed because it only provided details for unsupported versions of Windows. Enterprise state roaming requires Windows 11 or Windows 10 version 21H2 or newer.
+        
 additionalContent: |
 
   ## Next steps 

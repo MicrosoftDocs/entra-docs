@@ -26,7 +26,7 @@ Enterprise State Roaming provides users with a unified experience across their W
 1. Browse to **Identity** > **Devices** > **Overview** > **Enterprise State Roaming**.
 1. Select **Users may sync settings and app data across devices**. For more information, see [how to configure device settings](./manage-device-identities.md).
 
-For a Windows 10, version 21H2 or newer device to use the Enterprise State Roaming service, the device must authenticate using a Microsoft Entra identity. For devices that are joined to Microsoft Entra ID, the user’s primary sign-in identity is their Microsoft Entra identity, so no other configuration is required. For devices that use on-premises Active Directory, the IT admin must [Configure Microsoft Entra hybrid joined devices](./hybrid-join-plan.md).
+For a Windows 11 or Windows 10, version 21H2 or newer device to use the Enterprise State Roaming service, the device must authenticate using a Microsoft Entra identity. For devices that are joined to Microsoft Entra ID, the user’s primary sign-in identity is their Microsoft Entra identity, so no other configuration is required. For devices that use on-premises Active Directory, the IT admin must [Configure Microsoft Entra hybrid joined devices](./hybrid-join-plan.md).
 
 ## Data storage
 
