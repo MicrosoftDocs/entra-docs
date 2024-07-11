@@ -302,7 +302,7 @@ $pfxpath = $pfxFile # path to pfx file
 $cerpath = $cerFile # path to cer file
 $password = $pwd  # password for the pfx file
  
-# Check PowerShell version 5.1 (.Net) or PowerShell Core (.Net Core) and read the certificate file accordingly
+# Check PowerShell version (minimum 5.1) (.Net) or PowerShell Core (.Net Core) and read the certificate file accordingly
  
 if ($PSVersionTable.PSVersion.Major -gt 5)
     { 
