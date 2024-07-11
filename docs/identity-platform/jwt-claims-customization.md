@@ -280,8 +280,8 @@ To run this script, you need:
 
 $fqdn="yourDomainHere" # This is used for the 'issued to' and 'issued by' field of the certificate
 $pwd="password" # password for exporting the certificate private key
-$tenantId   = "franciscogom.es" # Replace with Tenant ID
-$appObjId = "384bd956-daaa-4ac3-b558-a1e5ceb15bd2" # Replace with the Object ID of the App Registration
+$tenantId   = "aaaabbbb-0000-cccc-1111-dddd2222eeee" # Replace with your Tenant ID
+$appObjId = "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb" # Replace with the Object ID of the App Registration
 
 ##########################################################
 
