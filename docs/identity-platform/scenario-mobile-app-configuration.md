@@ -99,17 +99,6 @@ For a list of all methods that are available on `PublicClientApplicationBuilder`
 
 For a description of all options that are exposed in `PublicClientApplicationOptions`, see the [reference documentation](/dotnet/api/microsoft.identity.client.publicclientapplicationoptions).
 
-## Tasks for Xamarin iOS
-
-If you use MSAL.NET on Xamarin iOS, do the following tasks.
-
-* [Override and implement the `OpenUrl` function in `AppDelegate`](msal-net-xamarin-ios-considerations.md#implement-openurl)
-* [Enable keychain groups](msal-net-xamarin-ios-considerations.md#enable-keychain-access)
-* [Enable token cache sharing](msal-net-xamarin-ios-considerations.md#enable-token-cache-sharing-across-ios-applications)
-* [Enable keychain access](msal-net-xamarin-ios-considerations.md#enable-keychain-access)
-
-For more information, see [Xamarin iOS considerations](msal-net-xamarin-ios-considerations.md).
-
 ## Tasks for MSAL for iOS and macOS
 
 These tasks are necessary when you use MSAL for iOS and macOS:

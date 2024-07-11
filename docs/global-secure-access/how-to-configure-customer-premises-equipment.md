@@ -1,6 +1,6 @@
 ---
 title: How to configure routers for remote networks
-description: Learn how to configure the connectivity between your customer premises equipment and the Global Secure Access (preview) network.
+description: Learn how to configure the connectivity between your customer premises equipment and the Global Secure Access network.
 author: kenwith
 ms.author: kenwith
 manager: amycolannino
@@ -10,9 +10,9 @@ ms.service: global-secure-access
 
 # Customer Intent: As a Global Secure Access administrator, I need to know how to configure the connection between my customer premises equipment and Microsoft's network so that I can create a tunnel from my remote network to the Global Secure Access network.
 ---
-# Configure customer premises equipment for Global Secure Access (preview)
+# Configure customer premises equipment for Global Secure Access
 
-IPSec tunnel is a bidirectional communication. One side of the communication is established when [adding a device link to a remote network](how-to-manage-remote-network-device-links.md) in Global Secure Access (preview). During that process, you enter your public IP address and border gateway protocol (BGP) addresses in the Microsoft Entra admin center to tell us about your network configurations.
+IPSec tunnel is a bidirectional communication. One side of the communication is established when [adding a device link to a remote network](how-to-manage-remote-network-device-links.md) in Global Secure Access. During that process, you enter your public IP address and border gateway protocol (BGP) addresses in the Microsoft Entra admin center to tell us about your network configurations.
 
 This article provides the steps to set up the other side of the communication channel.
 
@@ -21,7 +21,7 @@ This article provides the steps to set up the other side of the communication ch
 To configure your customer premises equipment (CPE), you must have:
 
 - A **Global Secure Access Administrator** role in Microsoft Entra ID.
-- The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
+- The product requires licensing. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 - To configure your CPE, you must have completed the Global Secure Access onboarding process.
 
 ## How to configure your customer premises equipment
@@ -78,7 +78,7 @@ The details in the response are similar to the device configuration details foun
 
 ---
 
-[!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
+
 
 ## Next steps
 

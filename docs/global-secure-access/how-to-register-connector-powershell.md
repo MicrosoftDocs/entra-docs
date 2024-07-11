@@ -5,7 +5,7 @@ author: kenwith
 manager: amycolannino
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 04/24/2024
+ms.date: 07/08/2024
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
@@ -39,27 +39,7 @@ Use the following steps to install the connector without registering it:
    ```
 
 ## Register the connector with Microsoft Entra ID
-There are two methods you can use to register the connector:
-
-- Register the connector using a Windows PowerShell credential object.
-- Register the connector using a token created offline.
-
-### Register the connector using a Windows PowerShell credential object
-1. Create a Windows PowerShell Credentials object `$cred` that contains an administrative username and password for your directory. Run the following command, replacing `<username>`, `<password>`, and `<tenantid>`:
-
-   ```powershell
-   $User = "<username>"
-   $PlainPassword = '<password>'
-   $TenantId = '<tenantid>'
-   $SecurePassword = $PlainPassword | ConvertTo-SecureString -AsPlainText -Force
-   $cred = New-Object –TypeName System.Management.Automation.PSCredential –ArgumentList $User, $SecurePassword
-   ```
-1. Go to `C:\Program Files\Microsoft Entra private network connector` and run the following script using the `$cred` object that you created:
-
-   ```powershell
-   .\RegisterConnector.ps1 -modulePath "C:\Program Files\Microsoft Entra private network connector\Modules\" -moduleName "MicrosoftEntraPrivateNetworkConnectorPSModule" -Authenticationmode Credentials -Usercredentials $cred -Feature ApplicationProxy -TenantId $TenantId
-   ```
-1. The script contains sensitive credential information. Store the script in a secure location.
+Register the connector using a token created offline.
 
 ### Register the connector using a token created offline
 1. Create an offline token using the `AuthenticationContext` class using the values in this code snippet or PowerShell cmdlets:
@@ -83,7 +63,7 @@ There are two methods you can use to register the connector:
       /// <summary>
       /// The application ID of the connector in AAD
       /// </summary>
-      static readonly string ConnectorAppId = "00001111-aaaa-2222-bbbb-3333cccc4444";
+      static readonly string ConnectorAppId = "55747057-9b5d-4bd4-b387-abf52a8bd489";
    
       /// <summary>
       /// The AppIdUri of the registration service in AAD
@@ -144,7 +124,7 @@ There are two methods you can use to register the connector:
 
    #The application ID of the connector in AAD
 
-   $connectorAppId = "00001111-aaaa-2222-bbbb-3333cccc4444";
+   $connectorAppId = "55747057-9b5d-4bd4-b387-abf52a8bd489";
 
    #The AppIdUri of the registration service in AAD
    $registrationServiceAppIdUri = "https://proxy.cloudwebappproxy.net/registerapp/user_impersonation"

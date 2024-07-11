@@ -1,6 +1,6 @@
 ---
 title: How to add device links to remote networks
-description: Learn how to add and delete customer premises equipment device links to remote networks for Global Secure Access (preview).
+description: Learn how to add and delete customer premises equipment device links to remote networks for Global Secure Access.
 author: kenwith
 ms.author: kenwith
 manager: amycolannino
@@ -21,7 +21,7 @@ To configure remote networks, you must have:
 
 - A **Global Secure Access Administrator** role in Microsoft Entra ID.
 - Created a remote network.
-- The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
+- The product requires licensing. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 
 ## Add a device link
 
@@ -33,7 +33,7 @@ You can add a device link to a remote network at any time.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
 
-1. Browse to **Global Secure Access (preview)** > **Devices** > **Remote network**.
+1. Browse to **Global Secure Access** > **Devices** > **Remote network**.
 
 1. Select a remote network from the list.
 
@@ -141,7 +141,7 @@ You can delete device links through the Microsoft Entra admin center and using t
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
 
-1. Browse to **Global Secure Access (preview)** > **Devices** > **Remote network**. Device links appear in the **Links** column on the list of remote networks.
+1. Browse to **Global Secure Access** > **Devices** > **Remote network**. Device links appear in the **Links** column on the list of remote networks.
 
 1. Select the device link from the **Links** column to access the device link details page.
 
@@ -163,4 +163,4 @@ You can delete device links through the Microsoft Entra admin center and using t
 
 ---
 
-[!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
+

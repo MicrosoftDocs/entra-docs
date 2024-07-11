@@ -11,11 +11,10 @@ ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.date: 06/04/2024
 ms.author: barclayn
+ms.custom: devx-track-azurecli, devx-track-azurepowershell
 
-ms.custom: devx-track-azurecli
-
-appliesto: 
-zone_pivot_groups: identity-mi-service-principals 
+appliesto:
+zone_pivot_groups: identity-mi-service-principals
 ---
 
 # View the service principal of a managed identity

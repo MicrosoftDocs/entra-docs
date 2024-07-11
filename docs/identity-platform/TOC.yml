@@ -321,16 +321,12 @@
       items:
         - name: Desktop app that calls an API
           items:
-            - name: Overview
-              href: scenario-desktop-overview.md
             - name: App registration
               href: scenario-desktop-app-registration.md
             - name: Code configuration
               href: scenario-desktop-app-configuration.md
             - name: Acquire token
               items:
-                - name: Overview
-                  href: scenario-desktop-acquire-token.md
                 - name: Interactively
                   href: scenario-desktop-acquire-token-interactive.md
                 - name: Interactive with WAM
@@ -343,8 +339,6 @@
                   href: scenario-desktop-acquire-token-device-code-flow.md
             - name: Call a web API
               href: scenario-desktop-call-api.md
-            - name: Move to production
-              href: scenario-desktop-production.md
 - name: Mobile
   items:
     - name: Mobile app authentication
@@ -370,8 +364,6 @@
       items:
         - name: Mobile app that calls an API
           items:
-            - name: Overview
-              href: scenario-mobile-overview.md
             - name: App registration
               href: scenario-mobile-app-registration.md
             - name: Code configuration
@@ -382,16 +374,12 @@
                   items:
                     - name: System browser on Android
                       href: msal-net-system-browser-android-considerations.md
-                    - name: Xamarin Android
-                      href: msal-net-xamarin-android-considerations.md
                     - name: Shared device mode for Android devices
                       href: msal-android-shared-devices.md
                 - name: iOS
                   items:
                     - name: Microsoft Enterprise SSO plug-in for Apple devices
                       href: apple-sso-plugin.md
-                    - name: Xamarin iOS
-                      href: msal-net-xamarin-ios-considerations.md
                     - name: Shared device mode for iOS devices
                       href: msal-ios-shared-devices.md
             - name: Acquire token
@@ -401,8 +389,6 @@
               href: msal-net-use-brokers-with-xamarin-apps.md
             - name: Calling a web API
               href: scenario-mobile-call-api.md
-            - name: Move to production
-              href: scenario-mobile-production.md
         - name: Migrate broker-enabled Xamarin Android app MSAL.NET
           href: msal-net-migration-android-broker.md
         - name: Migrate broker-enabled Xamarin iOS app MSAL.NET
@@ -433,8 +419,6 @@
       items:
         - name: Non-interactive app that calls a web API
           items:
-            - name: Overview
-              href: scenario-daemon-overview.md
             - name: App registration
               href: scenario-daemon-app-registration.md
             - name: Code configuration
@@ -443,8 +427,6 @@
               href: scenario-daemon-acquire-token.md
             - name: Call a web API
               href: scenario-daemon-call-api.md
-            - name: Move to production
-              href: scenario-daemon-production.md
 - name: Scenarios
   items:
     - name: Build
@@ -495,8 +477,10 @@
               href: jwt-claims-customization.md
             - name: Customize SAML claims using admin center
               href: saml-claims-customization.md
-            - name: Customize claims using PowerShell
+            - name: Customize claims using Claims Mapping Policy
               href: claims-customization-powershell.md
+            - name: Customize claims using Custom Claims Policy
+              href: claims-customization-custom-claims-policy.md
             - name: Set an access token lifetime policy
               href: configure-token-lifetimes.yml    
             - name: Configure app multi-instancing
@@ -625,7 +609,7 @@
         - name: Access token
           href: access-token-claims-reference.md
         - name: Claims mapping policy type
-          href: reference-claims-mapping-policy-type.md
+          href: reference-claims-customization.md
         - name: ID token
           href: id-token-claims-reference.md 
         - name: Optional claims

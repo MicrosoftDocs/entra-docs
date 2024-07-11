@@ -5,7 +5,7 @@ description: Create a custom Conditional Access policy to block legacy authentic
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 07/18/2023
+ms.date: 06/27/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -23,7 +23,7 @@ Due to the increased risk associated with legacy authentication protocols, Micro
 
 ## Create a Conditional Access policy
 
-The following steps help create a Conditional Access policy to block legacy authentication requests. This policy is put in to [Report-only mode](howto-conditional-access-insights-reporting.md) to start so administrators can determine the impact they'll have on existing users. When administrators are comfortable that the policy applies as they intend, they can switch to **On** or stage the deployment by adding specific groups and excluding others.
+The following steps help create a Conditional Access policy to block legacy authentication requests. This policy is put in to [Report-only mode](howto-conditional-access-insights-reporting.md) to start so administrators can determine the impact they have on existing users. When administrators are comfortable that the policy applies as they intend, they can switch to **On** or stage the deployment by adding specific groups and excluding others.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Protection** > **Conditional Access** > **Policies**.

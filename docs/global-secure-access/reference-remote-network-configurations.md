@@ -11,7 +11,7 @@ ms.service: global-secure-access
 
 # Valid remote network configurations for custom and default configurations
 
-Device links are the physical routers that connect your remote networks, such as branch locations, to Global Secure Access (preview). There's a specific set of combinations you must use if you choose the **Custom** option when adding device links. If you choose the **Default** option, you must enter a specific combination of properties on the customer premises equipment (CPE).
+Device links are the physical routers that connect your remote networks, such as branch locations, to Global Secure Access. There's a specific set of combinations you must use if you choose the **Custom** option when adding device links. If you choose the **Default** option, you must enter a specific combination of properties on the customer premises equipment (CPE).
 
 ## Custom and default details
 
@@ -180,4 +180,4 @@ The following values can be used for the IKE, IPSec, DH group, and PFS group pro
 | PFS24 | 7 |
 | PFS14 | 8 |
 
-[!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
+

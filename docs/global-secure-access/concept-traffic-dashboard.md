@@ -1,6 +1,6 @@
 ---
-title: Learn about the Global Secure Access (preview) dashboard
-description: Monitor the health and status of your network traffic with the Global Secure Access (preview) dashboard.
+title: Learn about the Global Secure Access dashboard
+description: Monitor the health and status of your network traffic with the Global Secure Access dashboard.
 author: kenwith
 ms.author: kenwith
 manager: amycolannino
@@ -9,9 +9,9 @@ ms.date: 06/18/2024
 ms.service: global-secure-access
 ---
 
-# Global Secure Access (preview) dashboard
+# Global Secure Access dashboard
 
-The Global Secure Access (preview) dashboard provides you with visualizations of the network traffic acquired by the Microsoft Entra Private and Microsoft Entra Internet Access services. The dashboard compiles the data from your network configurations, including devices, users, and tenants into several widgets that provide you with answers to the following questions:
+The Global Secure Access dashboard provides you with visualizations of the network traffic acquired by the Microsoft Entra Private and Microsoft Entra Internet Access services. The dashboard compiles the data from your network configurations, including devices, users, and tenants into several widgets that provide you with answers to the following questions:
 
 - How many devices using the Global Secure Access client are active in my network?
 - Was there a recent change to the number of active devices?
@@ -39,7 +39,7 @@ To view the Global Secure Access dashboard, you must have:
 To access the dashboard:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
-1. Browse to **Global Secure Access (preview)** > **Dashboard**.
+1. Browse to **Global Secure Access** > **Dashboard**.
 
     :::image type="content" source="media/concept-traffic-dashboard/traffic-dashboard.png" alt-text="Screenshot of the Private access profile, with the view applications link highlighted." lightbox="media/concept-traffic-dashboard/traffic-dashboard-expanded.png":::
 
@@ -53,11 +53,11 @@ This widget provides a summary of how many users and devices are using the servi
 
 ![Screenshot of the Global Secure Access snapshot widget.](media/concept-traffic-dashboard/snapshot.png)
 
-The **Global Secure Access snapshot** defaults to showing all types of traffic, but you can change the filter to show Internet Access, Private Access, or Microsoft 365 traffic.
+The **Global Secure Access snapshot** defaults to showing all types of traffic, but you can change the filter to show Internet Access, Private Access, or Microsoft traffic.
 
 ![Screenshot of the Global Secure Access snapshot widget with the filter open.](media/concept-traffic-dashboard/snapshot-filter.png)
 
-## Alerts and notifications
+## Alerts and notifications (preview)
 
 This widget shows what is happening in the network and helps identify suspicious activities or trends identified by the network data.
 
@@ -72,7 +72,7 @@ This widget provides the following alerts:
 
 Select the link next to the alert name to navigate to a related page with additional information.
 
-## Usage profiling
+## Usage profiling (preview)
 
 The **Usage profiling** widget displays usage patterns over a selected period of time.
 
@@ -102,7 +102,7 @@ The top-visited destinations defaults to all types of traffic and sorts by the n
 
 ![Screenshot of the top destinations widget with the number of transactions field highlighted.](media/concept-traffic-dashboard/top-destinations.png)
 
-Change the results to show all traffic or filter by Internet Access, Private Access, or Microsoft 365 traffic.
+Change the results to show all traffic or filter by Internet Access, Private Access, or Microsoft traffic.
 
 Select the **View all destinations** button to see more details about the destinations.
 
@@ -110,7 +110,7 @@ Select the **View all destinations** button to see more details about the destin
 
 Global Secure Access provides visibility into the number of users and devices that are accessing other tenants. This widget displays the following information:
 
-- **Sign-ins**: The number of sign-ins through Microsoft Entra ID to Microsoft 365 in the last 24 hours. This widget provides you with information about the activity in your tenant. 
+- **Sign-ins**: The number of sign-ins through Microsoft Entra ID to Microsoft services in the last 24 hours. This widget provides you with information about the activity in your tenant. 
 - **Total distinct tenants**: The number of distinct tenant IDs seen in the last 24 hours.
 - **Unseen tenants**: The number of distinct tenant IDs that were seen in the last 24 hours, but not in the previous seven days.
 - **Users**: The number of distinct user sign-ins to other tenants in the last 24 hours. 
@@ -149,7 +149,7 @@ If your dashboard contains the **No data available** message, you need to onboar
 
 ![Screenshot of a widget with no data available.](media/concept-traffic-dashboard/no-data-available.png)
 
-[!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
+
 
 ## Next steps
 

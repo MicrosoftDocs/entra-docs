@@ -1,5 +1,5 @@
 ---
-title: Tutorial - Use a Windows VM/VMSS to access Azure resources 
+title: Tutorial - Use a Windows VM/VMSS to access Azure resources
 description: A tutorial that shows you how to use a Windows VM/VMSS to access Azure resources.
 author: barclayn
 manager: amycolannino
@@ -8,8 +8,7 @@ ms.subservice: managed-identities
 ms.topic: tutorial
 ms.date: 06/06/2024
 ms.author: barclayn
-
-ms.custom: mode-api, devx-track-azurecli, devx-track-linux
+ms.custom: mode-api, devx-track-linux, devx-track-arm-template, devx-track-azurepowershell
 ms.devlang: azurecli
 
 appliesto:

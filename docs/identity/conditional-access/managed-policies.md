@@ -66,6 +66,9 @@ This policy covers all users and requires MFA and reauthentication when we detec
 
 This policy targets Microsoft Entra ID P2 tenants where security defaults aren't enabled and there are enough licenses for each user. Microsoft doesn't allow risky users to register for MFA. To avoid locking out users, this policy is only available to organizations where every user is already registered for MFA. 
 
+## Security defaults policies
+The following policies are available for when you upgrade from using security defaults.
+
 ### Block legacy authentication
 
 This policy blocks legacy authentication protocols from accessing applications. Legacy authentication refers to an authentication request made by:

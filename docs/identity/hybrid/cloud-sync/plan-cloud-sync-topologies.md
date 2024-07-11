@@ -37,7 +37,7 @@ The information below should be kept in mind, when selecting a solution.
 The following topologies are supported for provisioning from Active Directory to Microsoft Entra ID.
 
 ### Single forest, single Microsoft Entra tenant
-![Diagram that shows the topology for a single forest and a single tenant.](media/tutorial-single-forest/diagram-2.png)
+![Diagram that shows the topology for a single forest and a single tenant.](~/includes/governance/media/tutorial-single-forest/diagram-2.png)
 
 The simplest topology is a single on-premises forest, with one or multiple domains, and a single Microsoft Entra tenant.  For an example of this scenario see [Tutorial: A single forest with a single Microsoft Entra tenant](tutorial-single-forest.md)
 

@@ -5,7 +5,7 @@ description: Learn how to troubleshoot common problems and resolution steps for 
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: troubleshooting
-ms.date: 05/31/2024
+ms.date: 06/21/2024
 
 ms.author: justinha
 author: justinha
@@ -23,6 +23,8 @@ If you have problems with SSPR writeback, the following troubleshooting steps an
 If you have problems with password writeback for Microsoft Entra Connect, review the following steps that may help resolve the problem. To recover your service, we recommend that you follow these steps in order:
 
 * [Confirm network connectivity](#confirm-network-connectivity)
+* Check TLS 1.2
+* Update Microsoft .NET 4.8
 * [Restart the Microsoft Entra Connect Sync service](#restart-the-azure-ad-connect-sync-service)
 * [Disable and re-enable the password writeback feature](#disable-and-re-enable-the-password-writeback-feature)
 * [Install the latest Microsoft Entra Connect release](#install-the-latest-azure-ad-connect-release)
@@ -53,19 +55,47 @@ For Azure for US Government, see the [list of Microsoft Azure IP Ranges and Serv
 
 These files are updated weekly.
 
-To determine if access to a URL and port are restricted in an environment such as public Azure cloud, run the following cmdlet:
+To determine if access to a URL and port is restricted in an environment such as public Azure cloud, follow these steps:
 
-```powershell
-Test-NetConnection -ComputerName ssprdedicatedsbprodscu.servicebus.windows.net -Port 443
-```
+1. On the Entra connect server, open the event viewer logs (Windows logs, application) and locate one of these event IDs: 31034 or 31019.
+1. From these Event IDs, identify the name of the service bus listener:
 
-Or run the following:
+   :::image type="content" source="./media/troubleshoot-sspr-writeback/heartbeat-event-viewer-log.png" alt-text="Screenshot of Event ID 31019 in the Application log of Event Viewer." lightbox="./media/troubleshoot-sspr-writeback/heartbeat-event-viewer-log.png":::
 
-```powershell
-Invoke-WebRequest -Uri https://ssprdedicatedsbprodscu.servicebus.windows.net -Verbose
-```
+1. Run the following cmdlet:
+
+   ```powershell
+   Test-NetConnection -ComputerName <namespace>.servicebus.windows.net -Port 443
+   ```
+
+   Or run the following:
+
+   ```powershell
+   Invoke-WebRequest -Uri https://<namespace>.servicebus.windows.net -Verbose
+   ```
+
+   Replace the \<namespace\> with the same you extracted from the event IDs above. For example, in the preceding case, the command is:
+
+   ```powershell
+   Test-NetConnection -ComputerName ssprdedicatedsbprodfra-1.servicebus.windows.net -Port 443
+   ```
 
 For more information, see the [connectivity prerequisites for Microsoft Entra Connect](~/identity/hybrid/connect/how-to-connect-install-prerequisites.md).
+
+### Check if TLS 1.2 is enabled
+ 
+An additional troubleshooting step is to check that TLS 1.2 is enabled correctly on the Sync Server.
+Run [PowerShell Script to check TLS 1.2 on Entra Connect Server](/entra/identity/hybrid/connect/reference-connect-tls-enforcement#powershell-script-to-check-tls-12). Make sure to run the script in Admin Mode.
+ 
+Output from check script that must look like the following image (the path, name and value columns) to be enabled correctly. If it doesn't, run the [PowerShell Script to enable TLS 1.2 on Entra Connect Server](/entra/identity/hybrid/connect/reference-connect-tls-enforcement#powershell-script-to-enable-tls-12)/ Then reboot the server, and run script to check TLS 1.2 again.
+ 
+ 
+### Make sure Microsoft .NET Framework 4.8 or higher is enabled (Sync Server)
+Make sure Microsoft .NET Framework 4.8 or higher is enabled on the Sync Server.
+ 
+- [How to check that .NET is already installed](/dotnet/core/install/how-to-detect-installed-versions)
+- [Query the registry using PowerShell](/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed#query-the-registry-using-powershell)
+- [Download .NET framework](https://dotnet.microsoft.com/download/dotnet-framework/net48)
 
 <a name='restart-the-azure-ad-connect-sync-service'></a>
 
@@ -169,7 +199,7 @@ The following more specific issues may occur with password writeback. If you hav
 | Federated, pass-through authentication, or password-hash-synchronized users who attempt to reset their passwords, see an error after they submit their password. The error indicates that there was a service problem. <br> <br> In addition to this problem, during password reset operations, you might see an error in your event logs from the Microsoft Entra Connect service indicating an "Object could not be found" error. | This error usually indicates that the sync engine is unable to find either the user object in the Microsoft Entra connector space or the linked metaverse (MV) or Microsoft Entra connector space object. <br> <br> To troubleshoot this problem, make sure that the user is indeed synchronized from on-premises to Microsoft Entra ID via the current instance of Microsoft Entra Connect and inspect the state of the objects in the connector spaces and MV. Confirm that the Active Directory Certificate Services (AD CS) object is connected to the MV object via the "Microsoft.InfromADUserAccountEnabled.xxx" rule.|
 | Federated, pass-through authentication, or password-hash-synchronized users who attempt to reset their passwords see an error after they submit their password. The error indicates that there was a service problem. <br> <br> In addition to this problem, during password reset operations, you might see an error in your event logs from the Microsoft Entra Connect service that indicates that there's a "Multiple matches found" error. | This indicates that the sync engine detected that the MV object is connected to more than one AD CS object via "Microsoft.InfromADUserAccountEnabled.xxx". This means that the user has an enabled account in more than one forest. This scenario isn't supported for password writeback. |
 | Password operations fail with a configuration error. The application event log contains Microsoft Entra Connect error 6329 with the text "0x8023061f (The operation failed because password synchronization is not enabled on this Management Agent)". | This error occurs if the Microsoft Entra Connect configuration is changed to add a new Active Directory forest (or to remove and readd an existing forest) after the password writeback feature has already been enabled. Password operations for users in these recently added forests fail. To fix the problem, disable and then re-enable the password writeback feature after the forest configuration changes have been completed.
-| SSPR_0029: We are unable to reset your password due to an error in your on-premises configuration. Please contact your admin and ask them to investigate. | Problem: Password writeback has been enabled following all of the required steps, but when attempting to change a password you receive "SSPR_0029: Your organization hasn’t properly set up the on-premises configuration for password reset." Checking the event logs on the Microsoft Entra Connect system shows that the management agent credential was denied access.Possible Solution: Use RSOP on the Microsoft Entra Connect system and your domain controllers to see if the policy "Network access: Restrict clients allowed to make remote calls to SAM" found under Computer Configuration > Windows Settings > Security Settings > Local Policies > Security Options is enabled. Edit the policy to include the MSOL_XXXXXXX management account as an allowed user. For more information, see [Troubleshoot error SSPR_0029: Your organization hasn't properly set up the on-premises configuration for password reset](/troubleshoot/azure/active-directory/password-writeback-error-code-sspr-0029).|
+| SSPR_0029: We are unable to reset your password due to an error in your on-premises configuration. Please contact your admin and ask them to investigate. | Problem: Password writeback has been enabled following all of the required steps, but when attempting to change a password you receive "SSPR_0029: Your organization hasn’t properly set up the on-premises configuration for password reset." Checking the event logs on the Microsoft Entra Connect system shows that the management agent credential was denied access. Possible Solution: Use RSOP on the Microsoft Entra Connect system and your domain controllers to see if the policy "Network access: Restrict clients allowed to make remote calls to SAM" found under Computer Configuration > Windows Settings > Security Settings > Local Policies > Security Options is enabled. Edit the policy to include the MSOL_XXXXXXX management account as an allowed user. For more information, see [Troubleshoot error SSPR_0029: Your organization hasn't properly set up the on-premises configuration for password reset](/troubleshoot/azure/active-directory/password-writeback-error-code-sspr-0029).|
 
 ## Password writeback event log error codes
 
@@ -234,7 +264,7 @@ A best practice when you troubleshoot problems with password writeback is to ins
 
 ## Organizational unit characters reserved from password writeback
 
-The following table lists reserved characters that prevent password writeback. If these characters appear in your on-premises organizational unit (OU) strucure, password writeback may fail with event ID 33001.
+The following table lists reserved characters that prevent password writeback. If these characters appear in your on-premises organizational unit (OU) structure, password writeback may fail with event ID 33001.
 
 | Reserved character  | Description | Hex value |
 |---------------------|-------------|-----------|

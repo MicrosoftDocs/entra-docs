@@ -1,6 +1,6 @@
 ---
-title: Global Secure Access (preview) network traffic logs
-description: Learn how to use Global Secure Access (preview) traffic logs to monitor connections to the service, the type of traffic, and who's connecting.
+title: Global Secure Access network traffic logs
+description: Learn how to use Global Secure Access traffic logs (preview) to monitor connections to the service, the type of traffic, and who's connecting.
 author: kenwith
 ms.author: kenwith
 manager: amycolannino
@@ -8,20 +8,20 @@ ms.topic: how-to
 ms.date: 03/06/2024
 ms.service: global-secure-access
 
-#Customer intent: As an IT admin, I want to understand what information the Global Secure Access traffic logs capture so I can better monitor traffic and connections to our services.
+#Customer intent: As an IT admin, I want to understand what information the Global Secure Access traffic logs (preview) capture so I can better monitor traffic and connections to our services.
 
 ---
 
-# How to use the Global Secure Access (preview) traffic logs
+# How to use the Global Secure Access traffic logs (preview)
 
-Monitoring the traffic for Global Secure Access (preview) is an important activity for ensuring your tenant is configured correctly and that your users are getting the best experience possible. The Global Secure Access traffic logs provide insight into who is accessing what resources, where they're accessing them from, and what action took place.
+Monitoring the traffic for Global Secure Access is an important activity for ensuring your tenant is configured correctly and that your users are getting the best experience possible. The Global Secure Access traffic logs (preview) provide insight into who is accessing what resources, where they're accessing them from, and what action took place.
 
 This article describes how to use the traffic logs for Global Secure Access.
 
 ## Prerequisites 
 
 - A **Global Secure Access Administrator** role in Microsoft Entra ID.
-- The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
+- The product requires licensing. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 
 ## How the traffic logs work
 
@@ -38,7 +38,7 @@ Within each log instance, you can see the connection ID and transaction ID in th
 ## How to view the traffic logs
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](/azure/active-directory/roles/permissions-reference#reports-reader).
-1. **Global Secure Access (Preview)** > **Monitor** > **Traffic logs**.
+1. **Global Secure Access** > **Monitor** > **Traffic logs**.
 
 The top of the page displays a summary of all transactions as well as a breakdown for each type of traffic. Select the **Microsoft 365** or **Private access** buttons to filter the logs to each traffic type.
 
@@ -86,7 +86,7 @@ The log details provide valuable information about your network traffic. Not all
 
 ## Configure diagnostic settings to export logs
 
-You can export the Global Secure Access traffic logs to an endpoint for further analysis and alerting. This integration is configured in Microsoft Entra diagnostic settings.
+You can export the Global Secure Access traffic logs (preview) to an endpoint for further analysis and alerting. This integration is configured in Microsoft Entra diagnostic settings.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](/azure/active-directory/roles/permissions-reference#security-administrator).
 1. Browse to **Identity** > **Monitoring & health** > **Diagnostic settings**.
@@ -100,7 +100,7 @@ You can export the Global Secure Access traffic logs to an endpoint for further 
     * **Stream to an event hub:** Select the appropriate details from the menus that appear.
     * **Send to partner solution:** Select the appropriate details from the menus that appear.
 
-[!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
+
 
 ## Next steps
 

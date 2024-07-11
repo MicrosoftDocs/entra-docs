@@ -1143,6 +1143,8 @@
         href: ftapi-tutorial.md
       - name: Fulcrum
         href: fulcrum-tutorial.md
+      - name: Fullstory SAML
+        href: fullstory-saml-tutorial.md
       - name: Fuse
         href: fuse-tutorial.md
       - name: Fuze
@@ -1949,7 +1951,7 @@
         href: nuclino-tutorial.md
       - name: NumlyEngage™
         href: numlyengage-tutorial.md
-      - name: Nulab Pass (Backlog,Cacoo,Typetalk)
+      - name: Nulab Pass (Backlog, Cacoo, and Typetalk)
         href: nulab-pass-tutorial.md  
       - name: ObservePoint Web Assurance
         href: observepoint-web-assurance-tutorial.md
@@ -2207,8 +2209,8 @@
         href: projectplace-tutorial.md
       - name: Prolorus
         href: prolorus-tutorial.md
-      - name: ProMaster (by Inlogik)
-        href: promaster-tutorial.md
+      - name: ExpenseMe Pro (by Inlogik)
+        href: expensemepro-tutorial.md
       - name: ProNovos Ops Manager
         href: pronovos-ops-manager-tutorial.md
       - name: Proofpoint on Demand
@@ -3278,10 +3280,6 @@
         href: amazon-business-provisioning-tutorial.md
       - name: Appaegis Isolation Access Cloud
         href: appaegis-isolation-access-cloud-provisioning-tutorial.md
-      - name: Apple School Manager
-        href: apple-school-manager-provision-tutorial.md
-      - name: Apple Business Manager
-        href: apple-business-manager-provision-tutorial.md
       - name: Ardoq
         href: ardoq-provisioning-tutorial.md       
       - name: Asana

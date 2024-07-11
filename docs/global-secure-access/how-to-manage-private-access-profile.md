@@ -19,11 +19,11 @@ The Private Access traffic forwarding profile routes traffic to your private net
 
 ## Prerequisites
 
-To enable the Microsoft 365 traffic forwarding profile for your tenant, you must have:
+To enable the Private Access forwarding profile for your tenant, you must have:
 
 - A [Global Secure Access Administrator](../identity/role-based-access-control/permissions-reference.md#global-secure-access-administrator) role in Microsoft Entra ID.
    - A [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator)  role to create and interact with Conditional Access policies.
-- The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
+- The product requires licensing. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 
 ### Known limitations
 
@@ -34,7 +34,7 @@ To enable the Microsoft 365 traffic forwarding profile for your tenant, you must
 ## Enable the Private Access traffic forwarding profile
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](../identity/role-based-access-control/permissions-reference.md#global-secure-access-administrator).
-1. Browse to **Global Secure Access (preview)** > **Connect** > **Traffic forwarding**.
+1. Browse to **Global Secure Access** > **Connect** > **Traffic forwarding**.
 1. Select the checkbox for **Private Access profile**.
 
 :::image type="content" source="media/how-to-manage-private-access-profile/private-access-traffic-profile.png" alt-text="Screenshot of the traffic forwarding page with the Private Access profile enabled." lightbox="media/how-to-manage-private-access-profile/private-access-traffic-profile-expanded.png":::
@@ -58,7 +58,7 @@ Details of your Quick Access and enterprise apps for Private Access are displaye
 
 Conditional Access policies for Private Access are configured at the application level for each app. Conditional Access policies can be created and applied to the application from two places:
 
-- Go to **Global Secure Access (preview)** > **Applications** > **Enterprise applications**. Select an application and then select **Conditional Access** from the side menu.
+- Go to **Global Secure Access** > **Applications** > **Enterprise applications**. Select an application and then select **Conditional Access** from the side menu.
 - Go to **Protection** > **Conditional Access** > **Policies**. Select **+ Create new policy**.
 
 For more information, see [Apply Conditional Access policies to Private Access apps](how-to-target-resource-private-access-apps.md).
@@ -68,7 +68,7 @@ You can scope the Private Access profile to specific users and groups. The users
 
 To learn more about user and group assignment, see [How to assign and manage users and groups with traffic forwarding profiles](how-to-manage-users-groups-assignment.md).
 
-[!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
+
 
 ## Next steps
 
