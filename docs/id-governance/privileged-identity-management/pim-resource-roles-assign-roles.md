@@ -22,7 +22,7 @@ With Microsoft Entra Privileged Identity Management (PIM), you can manage the bu
 - Security Manager
 
 > [!NOTE]
-> Users or members of a group assigned to the Owner or User Access Administrator subscription roles, and Microsoft Entra Global administrators that enable subscription management in Microsoft Entra ID have Resource administrator permissions by default. These administrators can assign roles, configure role settings, and review access using Privileged Identity Management for Azure resources. A user can't manage Privileged Identity Management for Resources without Resource administrator permissions. View the list of [Azure built-in roles](/azure/role-based-access-control/built-in-roles).
+> Users or members of a group assigned to the Owner or User Access Administrator subscription roles, and Microsoft Entra Global Administrators that enable subscription management in Microsoft Entra ID have Resource administrator permissions by default. These administrators can assign roles, configure role settings, and review access using Privileged Identity Management for Azure resources. A user can't manage Privileged Identity Management for Resources without Resource administrator permissions. View the list of [Azure built-in roles](/azure/role-based-access-control/built-in-roles).
 
 Privileged Identity Management support both built-in and custom Azure roles. For more information on Azure custom roles, see [Azure custom roles](/azure/role-based-access-control/custom-roles).
 
