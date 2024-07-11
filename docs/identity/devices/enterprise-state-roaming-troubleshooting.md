@@ -31,18 +31,6 @@ Before you start troubleshooting, verify that the user and device are configured
 1. The user is assigned a Microsoft Entra ID P1 or P2 license.  
 1. The device must be restarted and the user must sign in again to access Enterprise State Roaming features.
 
-## Information to include when you need help
-
-If you can't solve your issue with the guidance that follows, you can contact our support engineers. When you contact them, include the following information:
-
-* **General description of the error**: Are there error messages seen by the user? If there was no error message, describe the unexpected behavior you noticed, in detail. What features are enabled for sync and what is the user expecting to sync? Are multiple features not syncing or is it isolated to one?
-* **Users affected** – Is sync working/failing for one user or multiple users? How many devices are involved per user? Are all of them not syncing or are some of them syncing and some not syncing?
-* **Information about the user** – What identity is the user using to sign in to the device? How is the user signing in to the device? Are they part of a selected security group allowed to sync?
-* **Information about the device** – Is this device Microsoft Entra joined or domain-joined? What build is the device on? What are the most recent updates?
-* **Date / Time / Timezone** – What was the precise date and time you saw the error (include the timezone)?
-
-Including this information helps us solve your problem as quickly as possible.
-
 ## Troubleshooting and diagnosing issues
 
 This section gives suggestions on how to troubleshoot and diagnose problems related to Enterprise State Roaming.

@@ -41,16 +41,6 @@ Enterprise State Roaming data is hosted in one or more [Azure regions](https://a
 
 The country/region value is set as part of the Microsoft Entra directory creation process and can’t be modified later. If you need more details on your data storage location, file a ticket with [Azure support](https://azure.microsoft.com/support/options/).
 
-## View per-user device sync status
-
-Follow these steps to view a per-user device sync status report.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Reader](../role-based-access-control/permissions-reference.md#global-reader).
-1. Browse to **Identity** > **Users** > **All users**.
-1. Select the user, and then select **Devices**.
-1. Select **View devices syncing settings and app data** to show sync status.
-1. Devices syncing for the user are shown and can be downloaded.
-
 ## Data retention
 
 Data synced to the Microsoft cloud using Enterprise State Roaming is retained until manually deleted or the data is determined to be stale.
