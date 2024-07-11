@@ -30,7 +30,7 @@
         - name:  Govern HR provisioning to Microsoft Entra ID
           href:  scenarios/provision-workday-to-entra.md
         - name:  Govern provisioning to Microsoft Entra ID using MIM
-          href:  scenarios/provision-mim-to-entra.md     
+          href:  scenarios/provision-microsoft-identity-manager-to-entra.md     
     - name: Automate identity lifecycle management
       href: scenarios/automate-identity-lifecycle.md
   - name: Govern access to applications

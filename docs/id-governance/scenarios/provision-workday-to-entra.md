@@ -10,7 +10,7 @@ ms.subservice: hybrid-cloud-sync
 ms.author: billmath
 ---
 
-# Govern cloud users that are provisioned from and managed in Workday.
+# Govern cloud users that are provisioned from and managed in Workday
 
 **Scenario:** Scenario: Manage cloud users that are provisioned from and managed in Workday. 
 

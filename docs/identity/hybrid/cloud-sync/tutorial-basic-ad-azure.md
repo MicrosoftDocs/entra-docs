@@ -219,7 +219,7 @@ Now that you have a Microsoft Entra tenant, you'll create a Global Administrator
 ## Optional: Another server and forest
 The following is an optional section that provides steps to creating another server and or forest. This can be used in some of the more advanced tutorials such as [Pilot for Microsoft Entra Connect to cloud sync](tutorial-pilot-aadc-aadccp.md).
 
-If you only need an another server, you can stop after the - **Create the virtual machine** step and join the server to the existing domain that was created above. 
+If you only need another server, you can stop after the - **Create the virtual machine** step and join the server to the existing domain that was created above. 
 
 ### Create a virtual machine
 
