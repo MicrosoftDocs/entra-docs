@@ -28,8 +28,8 @@ The following table lists common automation scenarios for synchronized users fro
 |Give user access to Active Directory group-based applications     |  [Govern on-premises Active Directory (Kerberos) application access](../identity/hybrid/cloud-sync/govern-on-premises-groups.md)       |
 |Update user attributes in Active Directory as they move organizations     |  [Plan scoping filters and attribute mapping](../identity/app-provisioning/plan-cloud-hr-provision.md#plan-scoping-filters-and-attribute-mapping)       |
 |Move the user to different OUs as they move organizations     | [Configure Active Directory OU container assignment](../identity/app-provisioning/plan-cloud-hr-provision.md#configure-active-directory-ou-container-assignment)        |
-|Disable users on last day     |   The [Disable user account](../id-governance/lifecycle-workflow-tasks.md#disable-user-account) task can be used to disable a user account on their last day.     |
-|Deleting users some days after termination     |   The [Delete User](../id-governance/lifecycle-workflow-tasks.md#delete-user) task can be used within a workflow template to delete users a set number of days after their termination.      |
+|Disable users on last day     |   The [Disable user account](../id-governance/lifecycle-workflow-tasks.md#disable-user-account) lifecycle workflow task can be used to disable a user account on their last day.     |
+|Deleting users some days after termination     |   The [Delete User](../id-governance/lifecycle-workflow-tasks.md#delete-user) lifecycle workflow task can be used within a workflow template to delete users a set number of days after their termination.      |
 
 In this article, you learn what needs to be considered if you want to use Lifecycle Workflows for user accounts that are synchronized from AD DS to Microsoft Entra.
 
