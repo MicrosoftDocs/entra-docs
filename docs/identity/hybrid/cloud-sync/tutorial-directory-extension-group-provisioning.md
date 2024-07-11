@@ -29,6 +29,9 @@ You can use the environment you create in this scenario for testing or for getti
 - The Lola Jacobson and John Smith user accounts reside in the Marketing OU.
 - The Groups OU is where our groups from Microsoft Entra ID are provisioned.
 
+> [!TIP]
+> For a better experience executing Microsoft Graph PowerShell SDK cmdlets, use Visual Studio Code with `ms-vscode.powershell` extension in [ISE Mode](/powershell/scripting/dev-cross-plat/vscode/how-to-replicate-the-ise-experience-in-vscode).
+
 ## Create two groups in Microsoft Entra ID
 To begin, create two groups in Microsoft Entra ID. One group is Sales and the Other is Marketing.
 
@@ -61,7 +64,7 @@ To create two groups, follow these steps.
 
 ## Install and connect Microsoft Graph PowerShell SDK
 
-1. If not yet installed, follow [Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/installation) documentation to install the main modules of Microsoft Graph PowerShell SDK:  `Microsoft.Graph` and `Microsoft.Graph.Beta`.
+1. If not yet installed, follow [Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/installation) documentation to install the main modules of Microsoft Graph PowerShell SDK:  `Microsoft.Graph`.
 
 1. Open PowerShell with Administrative privileges
 
@@ -118,9 +121,8 @@ To create two groups, follow these steps.
    
 ## Create our custom extension attribute
 
-> [!TIP] 
-> In this scenario you are going to create a custom extension attribute called `WritebackEnabled` to be used in Microsoft Entra Cloud Sync scoping filter, so that only groups with WritebackEnabled set to True are written back to On-premises Active Directory, similarly to the [Writeback enabled flag in Microsoft Entra admin center](../../users/groups-write-back-portal.md).
-
+> [!TIP]
+> In this scenario we are going to create a custom extension attribute called `WritebackEnabled` to be used in Microsoft Entra Cloud Sync scoping filter, so that only groups with WritebackEnabled set to True are written back to On-premises Active Directory, similarly to the [Writeback enabled flag in Microsoft Entra admin center](../../users/groups-write-back-portal.md).
 1. Get the CloudSyncCustomExtensionsApp application:
 
    ```powershell
@@ -163,7 +165,9 @@ To create two groups, follow these steps.
 
 11. Under **Target Attribute** select the newly created attribute that looks like extension_&lt;guid&gt;_WritebackEnabled.
 
-  :::image type="content" source="media/tutorial-directory-extension-group-provision/directory-extension-group-provision-4.png" alt-text="Screenshot of available attributes." lightbox="media/tutorial-directory-extension-group-provision/directory-extension-group-provision-4.png":::
+> [!IMPORTANT]
+> Some of the target attributes displayed in the dropdown list might not be usable as a scoping filter because not all properties can be managed in Entra ID, for example extensionAttribute[1-15], hence the recommendation is to create a custom extension property for this specific purpose.
+:::image type="content" source="media/tutorial-directory-extension-group-provision/directory-extension-group-provision-4.png" alt-text="Screenshot of available attributes." lightbox="media/tutorial-directory-extension-group-provision/directory-extension-group-provision-4.png":::
 
 13. Under **Operator** select **IS TRUE**
 14. Click **Save**. And click **Save**.
@@ -178,7 +182,7 @@ For this portion, we're going add a value on our newly created property to one o
 1. Use the `$cloudSyncCustomExtApp` variable from the previous step to get our extension property:
 
    ```powershell
-   $gwbEnabledExtAttrib = Get-MgBetaApplicationExtensionProperty -ApplicationId $cloudSyncCustomExtApp.Id | 
+   $gwbEnabledExtAttrib = Get-MgApplicationExtensionProperty -ApplicationId $cloudSyncCustomExtApp.Id | 
        Where-Object {$_.Name -Like '*WritebackEnabled'} | Select-Object -First 1
    $gwbEnabledExtAttrib 
    $gwbEnabledExtName = $gwbEnabledExtAttrib.Name
@@ -244,9 +248,10 @@ You need to make sure that you have consented to `Group.ReadWrite.All`. You can 
   :::image type="content" source="media/tutorial-directory-extension-group-provision/directory-extension-group-provision-6.png" alt-text="Screenshot of provisioning being blocked." lightbox="media/tutorial-directory-extension-group-provision/directory-extension-group-provision-6.png":::
 9. In Active Directory, you should see the newly created Marketing group.
   :::image type="content" source="media/tutorial-directory-extension-group-provision/directory-extension-group-provision-7.png" alt-text="Screenshot of new group in active directory users and computers." lightbox="media/tutorial-directory-extension-group-provision/directory-extension-group-provision-7.png":::
-10. You can now browse to **Identity** > **Hybrid Management** > **Microsoft Entra Connect** > **Cloud sync > Overview** page to Review and Enabled our configuration.
+1. You can now browse to **Identity** > **Hybrid Management** > **Microsoft Entra Connect** > **Cloud sync > Overview** page to Review and Enable our configuration to start synchronizing.
 
 ## Next steps 
 - [Use Group writeback with Microsoft Entra Cloud Sync ](../group-writeback-cloud-sync.md)
 - [Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance](govern-on-premises-groups.md)
+
 - [Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync](migrate-group-writeback.md)

@@ -161,6 +161,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity/saas-apps/promaster-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/expensemepro-tutorial",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity/saas-apps/zscaler-tutorial.md",
       "redirect_url": "/entra/identity/saas-apps/zscaler-internet-access-zsnet-tutorial",
       "redirect_document_id": false
@@ -765,7 +770,7 @@
       "source_path_from_root": "/docs/identity/managed-identities-azure-resources/howto-assign-access-portal.md",
       "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-assign-azure-resource",
       "redirect_document_id": false
-    }, 
+    },
     {
       "source_path_from_root": "/docs/identity/managed-identities-azure-resources/howto-assign-access-cli.md",
       "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-assign-azure-resource",
@@ -780,7 +785,7 @@
       "source_path_from_root": "/docs/identity/managed-identities-azure-resources/how-to-view-managed-identity-service-principal-portal.md",
       "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-view-managed-identity-service-principal",
       "redirect_document_id": false
-    }, 
+    },
     {
       "source_path_from_root": "/docs/identity/managed-identities-azure-resources/how-to-view-managed-identity-service-principal-cli.md",
       "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-view-managed-identity-service-principal",
@@ -876,17 +881,17 @@
       "redirect_url": "/entra/identity/managed-identities-azure-resources/tutorial-linux-managed-identities-vm-access",
       "redirect_document_id": false
     },
-    {            
+    {
       "source_path_from_root": "/docs/identity-platform/quickstart-v2-javascript.md",
       "redirect_url": "/entra/identity-platform/quickstart-single-page-app-javascript-sign-in",
       "redirect_document_id": false
     },
-    {            
+    {
       "source_path_from_root": "/docs/identity-platform/tutorial-v2-javascript-auth-code.md",
       "redirect_url": "/entra/identity-platform/quickstart-single-page-app-javascript-sign-in",
       "redirect_document_id": false
-    } ,
-    {            
+    },
+    {
       "source_path_from_root": "/docs/global-secure-access/how-to-target-resource-microsoft-365-profile.md",
       "redirect_url": "/entra/global-secure-access/how-to-target-resource-microsoft-profile",
       "redirect_document_id": false
@@ -897,7 +902,7 @@
       "redirect_url": "/entra/id-governance/scenarios/govern-the-employee-lifecycle",
       "redirect_document_id": false
     },
-    {            
+    {
       "source_path_from_root": "/docs/global-secure-access/how-to-manage-microsoft-365-profile.md",
       "redirect_url": "/entra/global-secure-access/how-to-manage-microsoft-profile",
       "redirect_document_id": false
@@ -912,7 +917,7 @@
       "redirect_url": "/entra/id-governance/scenarios/migrate-from-sap-idm",
       "redirect_document_id": false
     },
-    {            
+    {
       "source_path_from_root": "/docs/architecture/sse-deployment-guide-m365.md",
       "redirect_url": "/entra/architecture/sse-deployment-guide-microsoft-traffic",
       "redirect_document_id": false
@@ -947,12 +952,12 @@
       "redirect_url": "/entra/identity-platform/scenario-desktop-app-registration",
       "redirect_document_id": false
     },
-    {            
+    {
       "source_path_from_root": "/docs/identity-platform/msal-net-migration-android-broker.md",
       "redirect_url": "/entra/identity-platform/quickstart-mobile-app-android-sign-in",
       "redirect_document_id": false
     },
-    {            
+    {
       "source_path_from_root": "/docs/identity-platform/msal-net-migration-ios-broker.md",
       "redirect_url": "/entra/identity-platform/quickstart-mobile-app-android-sign-in",
       "redirect_document_id": false
