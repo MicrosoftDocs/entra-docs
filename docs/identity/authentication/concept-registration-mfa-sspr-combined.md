@@ -36,14 +36,14 @@ Combined registration supports the authentication methods and actions in the fol
 | Microsoft Authenticator | Yes (maximum of 5) | No | Yes |
 | Other authenticator app | Yes (maximum of 5) | No | Yes |
 | Hardware token | No | No | Yes |
-| Phone | Yes | Yes | Yes |
+| Phone | Yes (maximum of 2) | Yes | Yes |
 | Alternate phone | Yes | Yes | Yes |
 | Office phone* | Yes | Yes | Yes |
 | Email | Yes | Yes | Yes |
 | Security questions | Yes | No | Yes |
 | Passwords | No | Yes | No |
 | App passwords* | Yes | No | Yes |
-| Passkey (FIDO2)*| Yes | No | Yes |
+| Passkey (FIDO2)*| Yes (maximum of 10)  | No | Yes |
 
 > [!NOTE]
 > If you enable Microsoft Authenticator for passwordless authentication mode in the Authentication methods policy, users need to also enable passwordless sign-in in the Authenticator app.
