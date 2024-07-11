@@ -54,7 +54,7 @@ For more information, see [Enriched Office 365 logs](how-to-view-enriched-logs.m
 **Exporting and Storing Logs for Longer Durations:** As a customer, you have the flexibility to export these logs through the diagnostic settings feature. Exporting logs allows you to maintain records for more extended periods beyond the default retention times. This can be crucial for compliance, auditing, and in-depth analysis purposes. 
 
 
-[!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
+
 
 
 ## Next steps

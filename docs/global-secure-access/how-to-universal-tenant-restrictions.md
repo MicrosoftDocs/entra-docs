@@ -103,7 +103,7 @@ Tenant restrictions are not enforced when a user (or a guest user) in tries to a
       1. `Restrict-Access-Confirm: 1`
       1. `x-ms-diagnostics: 2000020;reason="xms_trpid claim was not present but sec-tenant-restriction-access-policy header was in requres";error_category="insufficiant_claims"`
 
-[!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
+
 
 ## Next steps
 

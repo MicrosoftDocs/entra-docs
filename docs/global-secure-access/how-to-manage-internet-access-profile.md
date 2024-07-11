@@ -75,7 +75,7 @@ To validate the traffic forwarding profile, traffic forwarding policies, and rul
 1. Open a web browser and navigate to a public destination that is acquired by the profile. Confirm the traffic is being acquired under the **Internet channel**.
 
 
-[!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
+
 
 ## Next steps
 - [Learn about traffic forwarding](concept-traffic-forwarding.md)

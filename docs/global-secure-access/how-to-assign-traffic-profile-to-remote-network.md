@@ -78,7 +78,7 @@ A traffic forwarding profile can be assigned using Microsoft Graph on the `/beta
     ```
 1. Select **Run query** to update the branch. 
 
-[!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
+
 
 ## Next steps
 - [List remote networks](how-to-list-remote-networks.md)

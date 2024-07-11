@@ -199,7 +199,7 @@ To create as many connector groups as you want:
 
 To learn more about connector groups, see [Understand Microsoft Entra private network connector groups](concept-connector-groups.md).
 
-[!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
+
 
 ## Next steps
 
