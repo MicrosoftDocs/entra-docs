@@ -34,7 +34,7 @@
       - name: Provision to Active Directory 
         items: 
         - name: Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance
-          href: ~/identity/hybrid/cloud-sync/govern-on-premises-groups.md
+          href: scenarios/provision-entra-to-active-directory-groups.md
         - name: Govern provisioning to AD using Workday
           href: scenarios/provision-workday-to-active-directory.md
         - name: Govern provisioning to AD using MIM
