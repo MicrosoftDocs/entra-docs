@@ -14,6 +14,8 @@ ms.author: billmath
 
 **Scenario:** Manage on-premises applications with Active Directory groups that are provisioned from and managed in the cloud. Microsoft Entra Cloud Sync allows you to fully govern application assignments in AD while taking advantage of Microsoft Entra ID Governance features to control and remediate any access related requests.
 
+[!INCLUDE [deprecation](~/includes/gwb-v2-deprecation.md)]
+
 [!INCLUDE [governance-on-premises-active-directory-apps.md](~/includes/governance-on-premises-active-directory-apps.md)]
 
 ## Next steps 
