@@ -30,7 +30,7 @@ For example, suppose a user in your organization has created a separate account 
 
 | Steps  | Description  |
 |---------|---------|
-|**1**     | Contoso configures **Tenant restrictions** in their cross-tenant access settings to block all external accounts and external apps. Contoso adds TRv2 enforcement signaling with TRv2 header either via [Universal TRv2](#option-1-universal-tenant-restrictions-v2-as-part-of-microsoft-entra-global-secure-access-preview) or a [corporate proxy](#option-2-set-up-tenant-restrictions-v2-on-your-corporate-proxy) and Microsoft Entra ID will enforce TRv2 policy when the header is present on the request.      |
+|**1**     | Contoso configures **Tenant restrictions** in their cross-tenant access settings to block all external accounts and external apps. Contoso adds TRv2 enforcement signaling with TRv2 header either via [Universal TRv2](#option-1-universal-tenant-restrictions-v2-as-part-of-microsoft-entra-global-secure-access) or a [corporate proxy](#option-2-set-up-tenant-restrictions-v2-on-your-corporate-proxy) and Microsoft Entra ID will enforce TRv2 policy when the header is present on the request.      |
 |**2**     |  A user using a Contoso-managed device tries to sign in to an external app using an account from an unknown tenant. The TRv2 HTTP header with Contoso's tenant ID and the tenant restrictions policy ID is added to the authentication request.        |
 |**3**     | *Authentication plane protection:* Microsoft Entra ID will enforce Contoso's TRv2 policy and block external accounts from accessing external tenants during the authentication as per the Contoso TRv2 policy.        |
 |**4**     | *Data plane protection (preview):* Microsoft Entra ID will block any anonymous access to SharePoint file or anonymous teams meeting join as well as block user access to the resource with an infiltrated token.       |
@@ -96,7 +96,7 @@ The following table compares the features in each version.
 
 Migrating tenant restriction policies from v1 to v2 is a one-time operation. After migration, no client-side changes are required. You can make any subsequent server side policy changes via the Microsoft Entra admin center. 
 
-When enabling TRv2 on proxy, you will be able to enforce TRv2 only on authentication plane. To enable TRv2 on both authentication and data plane you should enable TRv2 client side signaling using [Universal TRv2](#option-1-universal-tenant-restrictions-v2-as-part-of-microsoft-entra-global-secure-access-preview)
+When enabling TRv2 on proxy, you will be able to enforce TRv2 only on authentication plane. To enable TRv2 on both authentication and data plane you should enable TRv2 client side signaling using [Universal TRv2](#option-1-universal-tenant-restrictions-v2-as-part-of-microsoft-entra-global-secure-access)
 
 Step 1: **Configuring allowed list of partner tenants**
 
@@ -324,7 +324,7 @@ Suppose you use tenant restrictions to block access by default, but you want to 
 
 There are three options for enforcing tenant restrictions v2 for clients:
 
-- [Option 1](#option-1-universal-tenant-restrictions-v2-as-part-of-microsoft-entra-global-secure-access-preview): Universal tenant restrictions v2 as part of Microsoft Entra Global Secure Access
+- [Option 1](#option-1-universal-tenant-restrictions-v2-as-part-of-microsoft-entra-global-secure-access): Universal tenant restrictions v2 as part of Microsoft Entra Global Secure Access
 - [Option 2](#option-2-set-up-tenant-restrictions-v2-on-your-corporate-proxy): Set up tenant restrictions v2 on your corporate proxy
 - [Option 3](#option-3-enable-tenant-restrictions-on-windows-managed-devices-preview): Enable tenant restrictions on Windows managed devices (preview)
 

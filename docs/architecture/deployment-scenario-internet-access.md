@@ -69,7 +69,7 @@ Identity Governance configuration requires at least the Identity Governance Admi
 
 ### Licenses
 
-To implement all the steps in this scenario, you need Global Secure Access and Microsoft Entra ID Governance licenses. You can [purchase licenses or obtain trial licenses](https://www.microsoft.com/security/business/microsoft-entra-pricing). To learn more about GLobal Secure Access licensing, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md).
+To implement all the steps in this scenario, you need Global Secure Access and Microsoft Entra ID Governance licenses. You can [purchase licenses or obtain trial licenses](https://www.microsoft.com/security/business/microsoft-entra-pricing). To learn more about GLobal Secure Access licensing, see the licensing section of [What is Global Secure Access](../global-secure-access/overview-what-is-global-secure-access.md).
 
 ### Users and devices prerequisites
 
