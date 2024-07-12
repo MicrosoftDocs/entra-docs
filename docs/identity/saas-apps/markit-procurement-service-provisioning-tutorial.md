@@ -1,13 +1,10 @@
 ---
 title: 'Tutorial: Configure Markit Procurement Service for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Markit Procurement Service.
-
 author: thomasakelo
 manager: jeedes
-ms.assetid: 4ed2955b-3060-4530-b8c1-9e355dedf13e
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: tutorial
 ms.date: 03/25/2024
 ms.author: thomasakelo

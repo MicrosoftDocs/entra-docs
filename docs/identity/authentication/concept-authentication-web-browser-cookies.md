@@ -20,6 +20,8 @@ During authentication against Microsoft Entra ID through a web browser, multiple
 
 Persistent session tokens are stored as persistent cookies on the web browser's cookie jar. Non-persistent session tokens are stored as session cookies on the web browser, and are destroyed when the browser session is closed. 
 
+<!--Cookie name "buid" in the table that follows is correct do not replace with "build"-->
+ 
 |  Cookie Name | Type | Comments |
 |--|--|--|
 | ESTSAUTH | Common | Contains user's session information to facilitate SSO. Transient. |
@@ -27,7 +29,7 @@ Persistent session tokens are stored as persistent cookies on the web browser's 
 | ESTSAUTHLIGHT | Common  | Contains Session GUID Information. Lite session state cookie used exclusively by client-side JavaScript in order to facilitate OIDC sign-out. Security feature. |
 | SignInStateCookie | Common | Contains list of services accessed to facilitate sign-out. No user information. Security feature. |
 | CCState | Common | Contains session information state to be used between Microsoft Entra ID and the [Microsoft Entra Backup Authentication Service](~/identity/conditional-access/resilience-defaults.md). |
-| build | Common | Tracks browser related information. Used for service telemetry and protection mechanisms. |
+| buid | Common | Tracks browser related information. Used for service telemetry and protection mechanisms. |
 | fpc | Common | Tracks browser related information. Used for tracking requests and throttling. |
 | esctx | Common | Session context cookie information. For CSRF protection. Binds a request to a specific browser instance so the request can't be replayed outside the browser. No user information. |
 | ch | Common | ProofOfPossessionCookie. Stores the Proof of Possession cookie hash to the user agent. |

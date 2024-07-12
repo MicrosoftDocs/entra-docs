@@ -67,7 +67,7 @@ You can identify the resource the user is attempting to access using the followi
 
 Sign-in logs also contain several unique identifiers that provide further insight into the sign-in attempt.
 
-- **Correlation ID:** The correlation ID groups sign-ins from the same sign-in session. The value is based on parameters passed by a client, so might Microsoft Entra ID can't guarantee its accuracy.
+- **Correlation ID:** The correlation ID groups sign-ins from the same sign-in session. The value is based on parameters passed by a client, so Microsoft Entra ID can't guarantee its accuracy.
 - **Request ID:** An identifier that corresponds to an issued token. If you're looking for sign-ins with a specific token, you need to extract the request ID from the token, first.
 - **Unique token identifier:** A unique identifier for the token passed during the sign-in. This identifier is used to correlate the sign-in with the token request.
 

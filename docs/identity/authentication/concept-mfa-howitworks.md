@@ -45,7 +45,8 @@ The following additional forms of verification can be used with Microsoft Entra 
 * Microsoft Authenticator 
 * Authenticator Lite (in Outlook)
 * Windows Hello for Business
-* Passkey (FIDO2) (preview)
+* Passkey (FIDO2) 
+* Passkey in Microsoft Authenticator (preview)
 * Certificate-based authentication (when configured for multifactor authentication)
 * External authentication methods (preview)
 * OATH hardware token (preview)

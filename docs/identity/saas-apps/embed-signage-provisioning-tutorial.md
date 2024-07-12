@@ -2,11 +2,10 @@
 title: 'Tutorial: Configure embed signage for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to embed signage.
 
-documentationcenter: ''
+
 author: thomasakelo
 manager: jeedes
 
-ms.assetid: 92edbf22-3f7b-43ca-9a9e-0209ac9a12ec
 ms.service: entra-id
 ms.subservice: saas-apps
 

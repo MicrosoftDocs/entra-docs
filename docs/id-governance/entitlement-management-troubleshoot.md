@@ -18,7 +18,7 @@ This article describes some items you should check to help you troubleshoot enti
 
 ## Administration
 
-* If you get an access denied message when configuring entitlement management, and you're a Global administrator, ensure that your directory has an [Microsoft Entra ID P2 or Microsoft Entra ID Governance (or EMS E5) license](entitlement-management-overview.md#license-requirements).  If you've recently renewed an expired Microsoft Entra ID P2 or Microsoft Entra ID Governance subscription, then it may take 8 hours for this license renewal to be visible.
+* If you get an access denied message when configuring entitlement management, and you're a Global Administrator, ensure that your directory has an [Microsoft Entra ID P2 or Microsoft Entra ID Governance (or EMS E5) license](entitlement-management-overview.md#license-requirements).  If you've recently renewed an expired Microsoft Entra ID P2 or Microsoft Entra ID Governance subscription, then it may take 8 hours for this license renewal to be visible.
 
 * If your tenant's Microsoft Entra ID P2 or Microsoft Entra ID Governance license has expired, then you won't be able to process new access requests or perform access reviews.  
 

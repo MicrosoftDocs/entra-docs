@@ -110,7 +110,7 @@ You can delete remote networks in the Microsoft Entra admin center or using the 
 
 ---
 
-[!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
+
 
 ## Next steps
 

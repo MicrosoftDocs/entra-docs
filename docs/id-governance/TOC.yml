@@ -20,6 +20,17 @@
       href: scenarios/govern-the-employee-lifecycle.md
     - name: Identity lifecycle management provisioning
       href: what-is-provisioning.md
+      items: 
+      - name: Provision to Microsoft Entra ID
+        items: 
+        - name:  Govern provisioning to Microsoft Entra ID using cloud sync
+          href:  scenarios/provision-active-directory-to-entra-cloud-sync.md
+        - name:  Govern provisioning to Microsoft Entra ID using connect sync
+          href:  scenarios/provision-active-directory-to-entra-connect-sync.md
+        - name:  Govern HR provisioning to Microsoft Entra ID
+          href:  scenarios/provision-workday-to-entra.md
+        - name:  Govern provisioning to Microsoft Entra ID using MIM
+          href:  scenarios/provision-microsoft-identity-manager-to-entra.md     
     - name: Automate identity lifecycle management
       href: scenarios/automate-identity-lifecycle.md
   - name: Govern access to applications

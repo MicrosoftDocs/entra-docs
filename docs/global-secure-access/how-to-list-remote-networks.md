@@ -35,7 +35,7 @@ Reviewing your remote networks is an important part of managing your Global Secu
     ```
 1. Select the **Run query** button to list the remote networks.  
 
-[!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
+
 
 ## Next steps
 - [Create remote networks](how-to-manage-remote-networks.md)

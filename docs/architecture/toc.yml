@@ -177,6 +177,16 @@ items:
       href: deployment-plans.md
     - name: Azure Active Directory B2C deployment plans
       href: b2c-deployment-plans.md
+    - name: Microsoft Entra deployment scenarios
+      items:
+      - name: Introduction
+        href: deployment-scenario-intro.md
+      - name: Scenario - Workforce and guests
+        href: deployment-scenario-workforce-guest.md
+      - name: Scenario - Remote access
+        href: deployment-scenario-remote-access.md
+      - name: Scenario - Internet access
+        href: deployment-scenario-internet-access.md
     - name: Microsoft's Security Service Edge Solution deployment plans
       items:
       - name: Introduction

@@ -12,6 +12,13 @@ items:
     href: concept-traffic-dashboard.md
   - name: Role-based administrator roles
     href: reference-role-based-permissions.md
+- name: Samples
+  expanded: false
+  items: 
+  - name: Overview of Global Secure Access samples
+    href: powershell-samples.md
+  - name: Get token for connector
+    href: ./scripts/powershell-get-token.md
 - name: Concepts
   expanded: true
   items: 
