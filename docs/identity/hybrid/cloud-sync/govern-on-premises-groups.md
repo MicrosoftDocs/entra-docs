@@ -26,7 +26,7 @@ For a great overview of cloud sync group provisioning to Active directory and wh
 
 > [!VIDEO https://www.youtube.com/embed/C6XXlSVaIeo]
 
-[!INCLUDE [governance-on-premises-active-directory-apps.md](~/includes/governance-on-premises-active-directory-apps.md)]
+[!INCLUDE [governance-on-premises-active-directory-apps.md](~/includes/governance/governance-on-premises-active-directory-apps.md)]
 
 
 

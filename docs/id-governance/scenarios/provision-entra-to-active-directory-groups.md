@@ -16,7 +16,7 @@ ms.author: billmath
 
 [!INCLUDE [deprecation](~/includes/gwb-v2-deprecation.md)]
 
-[!INCLUDE [governance-on-premises-active-directory-apps.md](~/includes/governance-on-premises-active-directory-apps.md)]
+[!INCLUDE [governance-on-premises-active-directory-apps.md](~/includes/governance/governance-on-premises-active-directory-apps.md)]
 
 ## Next steps 
 - [What is identity lifecycle management](~/id-governance/what-is-identity-lifecycle-management.md)
