@@ -69,4 +69,4 @@ Follow these steps to configure the Traffic Manager:
 
 ## Next steps
 
-- [What is Global Secure Access (preview)?](../../global-secure-access/overview-what-is-global-secure-access.md)
+- [What is Global Secure Access?](../../global-secure-access/overview-what-is-global-secure-access.md)
