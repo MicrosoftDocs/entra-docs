@@ -48,7 +48,7 @@ While [tenant restrictions v1](~/identity/enterprise-apps/tenant-restrictions.md
 
 In your organization's [cross-tenant access settings](cross-tenant-access-overview.md), you can configure a tenant restrictions v2 policy. After you create the policy, there are three ways to apply the policy in your organization.
 
-- **Universal tenant restrictions v2**. This option provides both authentication plane and data plane protection without a corporate proxy. [Universal tenant restrictions](/entra/global-secure-access/how-to-universal-tenant-restrictions) use Global Secure Access (preview) to tag all traffic no matter the operating system, browser, or device form factor. It allows support for both client and remote network connectivity.
+- **Universal tenant restrictions v2**. This option provides both authentication plane and data plane protection without a corporate proxy. [Universal tenant restrictions](/entra/global-secure-access/how-to-universal-tenant-restrictions) use Global Secure Access to tag all traffic no matter the operating system, browser, or device form factor. It allows support for both client and remote network connectivity.
 - **Authentication plane tenant restrictions v2**. You can deploy a corporate proxy in your organization and [configure the proxy to set tenant restrictions v2 signals](#option-2-set-up-tenant-restrictions-v2-on-your-corporate-proxy) on all traffic to Microsoft Entra ID and Microsoft Accounts (MSA).
 - **Windows tenant restrictions v2**. For your corporate-owned Windows devices, you can enforce both authentication plane and data plane protection by enforcing tenant restrictions directly on devices. Tenant restrictions are enforced upon resource access, providing data path coverage and protection against token infiltration. A corporate proxy isn't required for policy enforcement. Devices can be Microsoft Entra ID managed or domain-joined devices that are managed via Group Policy.
 
@@ -65,7 +65,7 @@ Tenant restrictions v2 can be scoped to specific users, groups, organizations, o
 - Data plane protection for SharePoint Online and Exchange Online.
 - Anonymous access protection for SharePoint Online, OneDrive, and Teams (with Federation Controls configured).
 - Authentication and Data plane protection for Microsoft tenant or Consumer accounts.
-- When using Universal tenant restrictions in Global Secure Access (preview), all browsers and platforms.
+- When using Universal tenant restrictions in Global Secure Access, all browsers and platforms.
 - When using Windows Group Policy, Microsoft Edge and all websites in Microsoft Edge.
 ### Unsupported scenarios
 
