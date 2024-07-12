@@ -1,5 +1,5 @@
 ---
-title: 'Govern on-premises users that are provisioned to Active Directory with Microsoft Identity Manager'
+title: 'Govern on-premises users provisioned to Active Directory with Microsoft Identity Manager'
 description: This article a tutorial on how to provision users and groups to Active Directory using MIM.
 author: billmath
 manager: amycolannino
@@ -10,7 +10,7 @@ ms.subservice: hybrid-cloud-sync
 ms.author: billmath
 ---
 
-# on-premises users that are provisioned to Active Directory with Microsoft Identity Manager.
+# Govern on-premises users provisioned to Active Directory with Microsoft Identity Manager.
 
 **Scenario:** Manage on-premises users that are provisioned to Active Directory with Microsoft Identity Manager.
 
