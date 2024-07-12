@@ -38,7 +38,7 @@ This section describes the end-to-end user provisioning solution architecture fo
 * **Authoritative HR data flow – from Workday to Microsoft Entra ID:** In this flow worker events (such as New Hires, Transfers, Terminations) first occur in Workday and then the event data flows into Microsoft Entra ID. Depending on the event, it may lead to create/update/enable/disable operations in Microsoft Entra ID.
 * **Writeback flow – from on-premises Active Directory to Workday:** Once the account creation is complete in Active Directory, it's synced with Microsoft Entra ID through Microsoft Entra Connect and information such as email, username and phone number  can be written back to Workday.
 
-  ![Conceputal diagram of workday provisioning](~/identity/saas-apps/media/workday-inbound-tutorial/workday-cloud-only-provisioning.png)
+  ![Conceputal diagram of workday provisioning](~/includes/governance/media/workday-inbound-tutorial/workday-cloud-only-provisioning.png)
 
 ### End-to-end user data flow
 

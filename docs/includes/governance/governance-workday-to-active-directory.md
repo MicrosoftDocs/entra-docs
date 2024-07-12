@@ -25,7 +25,7 @@ This section captures recent Workday integration enhancements. For a list of com
 
 * **Oct 2020 - Enabled provision on demand for Workday:** Using [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) you can now test end-to-end provisioning for a specific user profile in Workday to verify your attribute mapping and expression logic.   
 
-* **May 2020 - Ability to writeback phone numbers to Workday:** In addition to email and username, you can now writeback work phone number and mobile phone number from Microsoft Entra ID to Workday. For more details, refer to the [writeback app tutorial](workday-writeback-tutorial.md).
+* **May 2020 - Ability to writeback phone numbers to Workday:** In addition to email and username, you can now writeback work phone number and mobile phone number from Microsoft Entra ID to Workday. For more details, refer to the [writeback app tutorial](~/identity/saas-apps/workday-writeback-tutorial.md).
 
 * **April 2020 - Support for the latest version of Workday Web Services (WWS) API:** Twice a year in March and September, Workday delivers feature-rich updates that help you meet your business goals and changing workforce demands. To keep up with the new features delivered by Workday, you can directly specify the WWS API version that you would like to use in the connection URL. For details on how to specify the Workday API version, refer to the section on [configuring Workday connectivity](#part-3-in-the-provisioning-app-configure-connectivity-to-workday-and-active-directory). 
 
@@ -60,7 +60,7 @@ This section describes the end-to-end user provisioning solution architecture fo
 4. The Microsoft Entra Connect Provisioning Agent uses a service account to add/update AD account data.
 5. The Microsoft Entra Connect / AD Sync engine runs delta sync to pull updates in AD.
 6. The Active Directory updates are synced with Microsoft Entra ID.
-7. If the [Workday Writeback](workday-writeback-tutorial.md) app is configured, it writes back attributes such as email, username and phone number to Workday.
+7. If the [Workday Writeback](~/identity/saas-apps/workday-writeback-tutorial.md) app is configured, it writes back attributes such as email, username and phone number to Workday.
 
 ## Planning your deployment
 
@@ -403,7 +403,7 @@ Once the Workday provisioning app configurations have been completed and you hav
 
 1. Once the initial sync is completed, it writes an audit summary report in the **Provisioning** tab, as shown below.
    > [!div class="mx-imgBorder"]
-   > ![Provisioning progress bar](./media/sap-successfactors-inbound-provisioning/workday-sync.png)
+   > ![Provisioning progress bar](~/identity/saas-apps/media/sap-successfactors-inbound-provisioning/workday-sync.png)
 
 ## Frequently Asked Questions (FAQ)
 
