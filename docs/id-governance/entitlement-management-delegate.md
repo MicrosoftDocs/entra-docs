@@ -63,7 +63,7 @@ After delegation, the marketing department might have roles similar to the follo
 
 | User | Organizational role | Microsoft Entra role | Entitlement management role |
 | --- | --- | --- | --- |
-| Hana | IT administrator | Global administrator or Identity Governance administrator  |  |
+| Hana | IT administrator | Global Administrator or Identity Governance Administrator  |  |
 | Mamta | Marketing manager | User | Catalog creator and Catalog owner |
 | Bob | Marketing lead | User | Catalog owner |
 | Jessica | Marketing project manager | User | Access package manager |
@@ -74,7 +74,7 @@ Entitlement management has the following roles, with permissions for administeri
 
 | Entitlement management role | Role definition ID | Description |
 | --- | --- | -- |
-| Catalog creator | `ba92d953-d8e0-4e39-a797-0cbedb0a89e8` | Create and manage catalogs. Typically an IT administrator who isn't a Global administrator, or a resource owner for a collection of resources. The person that creates a catalog automatically becomes the catalog's first catalog owner, and can add more catalog owners. A catalog creator can’t manage or see catalogs that they don’t own and can’t add resources they don’t own to a catalog. If the catalog creator needs to manage another catalog or add resources they don’t own, they can request to be a co-owner of that catalog or resource. |
+| Catalog creator | `ba92d953-d8e0-4e39-a797-0cbedb0a89e8` | Create and manage catalogs. Typically an IT administrator who isn't a Global Administrator, or a resource owner for a collection of resources. The person that creates a catalog automatically becomes the catalog's first catalog owner, and can add more catalog owners. A catalog creator can’t manage or see catalogs that they don’t own and can’t add resources they don’t own to a catalog. If the catalog creator needs to manage another catalog or add resources they don’t own, they can request to be a co-owner of that catalog or resource. |
 
 Entitlement management has the following roles that are defined for each particular catalog, for administering access packages and other configuration within a catalog. An administrator or a catalog owner can add users, groups of users, or service principals to these roles.
 
@@ -122,7 +122,7 @@ To determine the least privileged role for a task, you can also reference [Admin
 
 ## Required roles to add resources to a catalog
 
-A Global administrator can add or remove any group (cloud-created security groups or cloud-created Microsoft 365 Groups), application, or SharePoint Online site in a catalog.
+A Global Administrator can add or remove any group (cloud-created security groups or cloud-created Microsoft 365 Groups), application, or SharePoint Online site in a catalog.
 
 > [!NOTE]
 > Users that have been assigned the User administrator role will no longer be able to create catalogs or manage access packages in a catalog they do not own.  A User administrator who is a catalog owner can add or remove any group or application in the catalog they own, except for a group configured as assignable to a directory role.  For more information on role-assignable groups, reference [Create a role-assignable group in Microsoft Entra ID](~/identity/role-based-access-control/groups-create-eligible.md). If users in your organization have been assigned the User administrator role to configure catalogs, access packages, or policies in entitlement management, you should instead assign these users the **Identity Governance administrator** role.
