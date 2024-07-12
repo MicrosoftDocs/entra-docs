@@ -60,7 +60,7 @@ This section defines the requirements for the scenario's solution.
 
 ### Permissions for remote access with quick access
 
-Administrators who interact with Global Secure Access preview features require the Global Secure Access Administrator and Application Administrator roles.
+Administrators who interact with Global Secure Access features require the Global Secure Access Administrator and Application Administrator roles.
 
 Conditional Access (CA) policy configuration requires the Conditional Access Administrator or Security Administrator role. Some features might require more roles.
 
@@ -95,8 +95,8 @@ This diagram illustrates the minimum architecture requirements to deploy and tes
 In this section, we activate Global Secure Access through the Microsoft Entra admin center. We then set up initial configurations that this scenario requires.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](/entra/identity/role-based-access-control/permissions-reference#global-administrator).
-1. Browse to **Global Secure Access (preview)** > **Get started** > **Activate Global Secure Access in your tenant**. Select **Activate** to enable SSE features.
-1. Browse to **Global Secure Access (preview)** > **Connect** > **Traffic forwarding**. Toggle on **Private access profile**. Traffic forwarding enables you to configure the type of network traffic to tunnel through Microsoft's Security Service Edge Solution services. Set up [traffic forwarding profiles](../global-secure-access/concept-traffic-forwarding.md) to manage traffic types.
+1. Browse to **Global Secure Access** > **Get started** > **Activate Global Secure Access in your tenant**. Select **Activate** to enable SSE features.
+1. Browse to **Global Secure Access** > **Connect** > **Traffic forwarding**. Toggle on **Private access profile**. Traffic forwarding enables you to configure the type of network traffic to tunnel through Microsoft's Security Service Edge Solution services. Set up [traffic forwarding profiles](../global-secure-access/concept-traffic-forwarding.md) to manage traffic types.
    - The **Microsoft 365 access profile** is for Microsoft Entra Internet Access for Microsoft 365.
    - The **Private access profile** is for Microsoft Entra Private Access.
    - The **Internet access profile** is for Microsoft Entra Internet Access. Microsoft's Security Service Edge solution only captures traffic on client devices with Global Secure Access Client installation.
@@ -110,7 +110,7 @@ Microsoft Entra Internet Access for Microsoft 365 and Microsoft Entra Private Ac
 1. Ensure that the Windows device is Microsoft Entra joined or hybrid joined.
 1. Sign in to the Windows device with a Microsoft Entra user role with local admin privileges.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Secure Access Administrator](/entra/identity/role-based-access-control/permissions-reference#global-secure-access-administrator)
-1. Browse to **Global Secure Access (preview)** > **Connect** > **Client Download**. Select **Download client**. Complete the installation.
+1. Browse to **Global Secure Access** > **Connect** > **Client Download**. Select **Download client**. Complete the installation.
 
    :::image type="content" source="media/deployment-scenario-remote-access/client-download-inline.png" alt-text="Screenshot of Client download showing the Windows Download Client control." lightbox="media/deployment-scenario-remote-access/client-download-expanded.png":::
 
@@ -122,7 +122,7 @@ Microsoft Entra Internet Access for Microsoft 365 and Microsoft Entra Private Ac
 The connector server communicates with Microsoft's Security Service Edge Solution as the gateway to the corporate network. It uses outbound connections through 80 and 443 and doesn't require inbound ports. Learn [How to configure connectors for Microsoft Entra Private Access](../global-secure-access/how-to-configure-connectors.md#open-ports). Complete these configuration steps:
 
 1. On the connector server, sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Secure Access Administrator](/entra/identity/role-based-access-control/permissions-reference#global-secure-access-administrator).
-1. Browse to **Global Secure Access (Preview)** > **Connect** > **Connectors**. Select **Enable Private Network connectors**.
+1. Browse to **Global Secure Access** > **Connect** > **Connectors**. Select **Enable Private Network connectors**.
 
    :::image type="content" source="media/deployment-scenario-remote-access/private-network-connectors.png" alt-text="Screenshot of Private Network connectors with a red box highlighting the Enable Private Network connectors control.":::
 
@@ -151,7 +151,7 @@ Microsoft Entra Private Access supports transmission control protocol (TCP) appl
 
 1. From the connector server, verify that you can access a file share on the file server.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Secure Access Administrator](/entra/identity/role-based-access-control/permissions-reference#global-secure-access-administrator)
-1. Browse to **Global Secure Access (preview)** > **Applications** > **Enterprise applications** > **+ New Application**.
+1. Browse to **Global Secure Access** > **Applications** > **Enterprise applications** > **+ New Application**.
 
    :::image type="content" source="media/deployment-scenario-remote-access/new-enterprise-app.png" alt-text="Screenshot of Enterprise applications showing New application control.":::
 
@@ -212,13 +212,13 @@ This section defines the requirements for the scenario's solution.
 
 #### Permissions for remote access per app
 
-Administrators who interact with Global Secure Access preview features require the Global Secure Access Administrator and Application Administrator roles.
+Administrators who interact with Global Secure Access features require the Global Secure Access Administrator and Application Administrator roles.
 
 Identity Governance configuration requires at least the Identity Governance Administrator role.
 
 #### Licenses for remote access per app
 
-To implement all the steps in this scenario, you need Microsoft Entra ID P1 for Global Secure Access (while the product is in Public Preview) and Microsoft Entra ID Governance licenses. You can [purchase licenses or obtain trial licenses](https://www.microsoft.com/security/business/microsoft-entra-pricing).
+To implement all the steps in this scenario, you need Global Secure Access and Microsoft Entra ID Governance licenses. You can [purchase licenses or obtain trial licenses](https://www.microsoft.com/security/business/microsoft-entra-pricing). To learn more about Global Secure Access licensing, see the licensing section of [What is Global Secure Access?](../global-secure-access/overview-what-is-global-secure-access.md).
 
 #### Users for remote access per app
 
@@ -262,8 +262,8 @@ Identify a server with a file share that you wish to publish and note its IP add
 Activate Global Secure Access through the Microsoft Entra admin center and make required initial configurations for this scenario.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](/entra/identity/role-based-access-control/permissions-reference#global-administrator).
-1. Browse to **Global Secure Access (preview)** > **Get started** > **Activate Global Secure Access in your tenant**. Select **Activate** to enable SSE features in your tenant.
-1. Go to **Global Secure Access (preview)** > **Connect** > **Traffic forwarding**. Toggle on **Private access profile**. Traffic forwarding enables you to configure the type of network traffic to tunnel through Microsoft's Security Service Edge Solution services. Set up [traffic forwarding profiles](../global-secure-access/concept-traffic-forwarding.md) to manage traffic types.
+1. Browse to **Global Secure Access** > **Get started** > **Activate Global Secure Access in your tenant**. Select **Activate** to enable SSE features in your tenant.
+1. Go to **Global Secure Access** > **Connect** > **Traffic forwarding**. Toggle on **Private access profile**. Traffic forwarding enables you to configure the type of network traffic to tunnel through Microsoft's Security Service Edge Solution services. Set up [traffic forwarding profiles](../global-secure-access/concept-traffic-forwarding.md) to manage traffic types.
    - The **Microsoft 365 access profile** is for Microsoft Entra Internet Access for Microsoft 365.
    - The **Private access profile** is for Microsoft Entra Private Access.
    - The **Internet access profile** is for Microsoft Entra Internet Access. Microsoft's Security Service Edge solution only captures traffic on client devices with Global Secure Access Client installation.
@@ -277,7 +277,7 @@ Microsoft Entra Internet Access for Microsoft 365 and Microsoft Entra Private Ac
 1. Ensure that the Windows device is Microsoft Entra ID joined or hybrid joined.
 1. Sign in to the Windows device with a Microsoft Entra ID user role with local admin privileges.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Secure Access Administrator](/entra/identity/role-based-access-control/permissions-reference#global-secure-access-administrator)
-1. Browse to **Global Secure Access (preview)** > **Connect** > **Client Download**. Select **Download client**. Complete the installation.
+1. Browse to **Global Secure Access** > **Connect** > **Client Download**. Select **Download client**. Complete the installation.
 
    :::image type="content" source="media/deployment-scenario-remote-access/client-download-inline.png" alt-text="Screenshot of Client download showing the Windows Download Client control." lightbox="media/deployment-scenario-remote-access/client-download-expanded.png":::
 
@@ -289,7 +289,7 @@ Microsoft Entra Internet Access for Microsoft 365 and Microsoft Entra Private Ac
 The connector server communicates with Microsoft's Security Service Edge solution as the gateway to the corporate network. It uses outbound connections through 80 and 443 and doesn't require inbound ports. Learn [how to configure connectors for Microsoft Entra Private Access](../global-secure-access/how-to-configure-connectors.md#open-ports). Complete these configuration steps:
 
 1. On the connector server, sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Secure Access Administrator](/entra/identity/role-based-access-control/permissions-reference#global-secure-access-administrator).
-1. Browse to **Global Secure Access (Preview)** > **Connect** > **Connectors**. Select **Enable Private Network connectors**.
+1. Browse to **Global Secure Access** > **Connect** > **Connectors**. Select **Enable Private Network connectors**.
 
    :::image type="content" source="media/deployment-scenario-remote-access/private-network-connectors.png" alt-text="Screenshot of Private Network connectors with a red box highlighting the Enable Private Network connectors control.":::
 
@@ -312,7 +312,7 @@ Microsoft Entra Private Access supports transmission control protocol (TCP) appl
 
 1. From the connector server, verify that you can access a file share on the file server.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Secure Access Administrator](/entra/identity/role-based-access-control/permissions-reference#global-secure-access-administrator).
-1. Browse to **Global Secure Access (preview)** > **Applications** > **Enterprise applications** > **+ New Application**.
+1. Browse to **Global Secure Access** > **Applications** > **Enterprise applications** > **+ New Application**.
 
    :::image type="content" source="media/deployment-scenario-remote-access/new-enterprise-app.png" alt-text="Screenshot of Enterprise applications showing New application control.":::
 
@@ -558,7 +558,7 @@ After executing the leaver workflow, confirm the removal of user access to finan
 - [Learn about Microsoft Entra ID Governance](../id-governance/identity-governance-overview.md)
 - [What is Microsoft Entra ID Protection?](../id-protection/overview-identity-protection.md)
 - [Plan a Microsoft Entra ID Protection deployment](../id-protection/how-to-deploy-identity-protection.md)
-- [Get started with Global Secure Access (preview)](../global-secure-access/how-to-get-started-with-global-secure-access.md)
+- [Get started with Global Secure Access](../global-secure-access/how-to-get-started-with-global-secure-access.md)
 - [Learn about the Global Secure Access clients for Microsoft Entra Private Access and Microsoft Entra Internet Access](../global-secure-access/concept-clients.md)
 - [Learn about Microsoft Entra Private Access](../global-secure-access/concept-private-access.md)
 - [Learn about Microsoft Entra Internet Access](../global-secure-access/concept-internet-access.md)
