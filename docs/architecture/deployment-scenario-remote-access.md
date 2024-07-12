@@ -218,7 +218,7 @@ Identity Governance configuration requires at least the Identity Governance Admi
 
 #### Licenses for remote access per app
 
-To implement all the steps in this scenario, you need Microsoft Entra ID P1 for Global Secure Access (while the product is in Public Preview) and Microsoft Entra ID Governance licenses. You can [purchase licenses or obtain trial licenses](https://www.microsoft.com/security/business/microsoft-entra-pricing).
+To implement all the steps in this scenario, you need Global Secure Access and Microsoft Entra ID Governance licenses. You can [purchase licenses or obtain trial licenses](https://www.microsoft.com/security/business/microsoft-entra-pricing). To learn more about Global Secure Access licensing, see the licensing section of [What is Global Secure Access?](../global-secure-access/overview-what-is-global-secure-access.md).
 
 #### Users for remote access per app
 

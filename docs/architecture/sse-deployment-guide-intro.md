@@ -99,7 +99,7 @@ For the Proof of Concept in this guide, you need about six hours. Plan across th
 
 ### Obtain permissions
 
-Administrators who interact with [Global Secure Access](../global-secure-access/overview-what-is-global-secure-access.md)  preview features require the Global Secure Access Administrator and Application Administrator [roles](~/identity/role-based-access-control/permissions-reference.md).
+Administrators who interact with [Global Secure Access](../global-secure-access/overview-what-is-global-secure-access.md) features require the Global Secure Access Administrator and Application Administrator [roles](~/identity/role-based-access-control/permissions-reference.md).
 
 Universal tenant restrictions require the Conditional Access Administrator or Security Administrator role to create and interact with Conditional Access policies and named locations. Some features may also require other roles. 
 
