@@ -75,11 +75,6 @@ The following additional verification methods can be used in certain scenarios:
 * [Email address](concept-sspr-howitworks.md#authentication-methods) - only used for SSPR
 
 
-## Authentication method strength and security
-
-You can control which combinations of authentication methods can be used to access a resource by creating a [Conditional Access authentication strength policy](entra/identity/authentication/concept-authentication-strengths).
-
-
 ## Usable and non-usable methods
 
 Administrators can view user authentication methods in the Microsoft Entra admin center. Usable methods are listed first, followed by non-usable methods. 
