@@ -11,7 +11,7 @@ ms.author: billmath
 ## Prerequisites
 The following prerequisites are required to implement this scenario.
 
- - Microsoft Entra account with at least a [Hybrid Identity Administrator](../../role-based-access-control/permissions-reference.md#hybrid-identity-administrator) role.
+ - Microsoft Entra account with at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator) role.
  - On-premises Active Directory Domain Services environment with Windows Server 2016 operating system or later. 
    - Required for AD Schema attribute - msDS-ExternalDirectoryObjectId. 
  - Provisioning agent with build version [1.1.1367.0](reference-version-history.md#1113700) or later.
@@ -28,17 +28,17 @@ The following prerequisites are required to implement this scenario.
  >
  >These permissions aren't applied to AdminSDHolder objects by default
 
- [Microsoft Entra provisioning agent gMSA PowerShell cmdlets](how-to-gmsa-cmdlets.md#grant-permissions-to-a-specific-domain) 
+ [Microsoft Entra provisioning agent gMSA PowerShell cmdlets](~/identity/cloud-sync/how-to-gmsa-cmdlets.md#grant-permissions-to-a-specific-domain) 
 
  - The provisioning agent must be able to communicate with one or more domain controllers on ports TCP/389 (LDAP) and TCP/3268 (Global Catalog).
      - Required for global catalog lookup to filter out invalid membership references.
- - Microsoft Entra Connect with build version [2.2.8.0](../connect/reference-connect-version-history.md#2280) or later.
+ - Microsoft Entra Connect with build version [2.2.8.0](~/identity/connect/reference-connect-version-history.md#2280) or later.
      - Required to support on-premises user membership synchronized using Microsoft Entra Connect.
      - Required to synchronize AD:user:objectGUID to Microsoft Entra ID:user:onPremisesObjectIdentifier.
 
 ## Supported groups
 For this scenario, only the following groups are supported:
-  - only cloud created [Security groups](../../../fundamentals/concept-learn-about-groups.md#group-types) are supported
+  - only cloud created [Security groups](~/fundamentals/concept-learn-about-groups.md#group-types) are supported
   - these groups can have assigned or dynamic membership
   - these groups can only contain on-premises synchronized users and / or cloud created security groups
   - the on-premises user accounts that are synchronized and are members of this cloud created security group, can be from the same domain or cross-domain, but they all must be from the same forest
@@ -77,15 +77,15 @@ Use the following steps for applications to use new groups.
  1. Using the Microsoft Entra admin center, create an application in Microsoft Entra ID representing the AD-based application, and configure the application to require user assignment.
  2. If you're using application proxy to enable users to connect to the application, then configure the application proxy.
  3.	Create a new security group in Microsoft Entra ID.
- 4.	Use [Group Provisioning to AD](how-to-configure-entra-to-active-directory.md) to provision this group to AD. 
+ 4.	Use [Group Provisioning to AD](~/identity/cloud-sync/how-to-configure-entra-to-active-directory.md) to provision this group to AD. 
  5. Launch Active Directory Users and Computers, and wait for the resulting new AD group to be created in the AD domain. When it's present, record the distinguished name, domain, account name and SID of the new AD group.
 
  #### Configure application to use new group
  1. If the application uses AD via LDAP, configure the application with the distinguished name of the new AD group. If the application uses AD via Kerberos, configure the application with the SID, or the domain and account name, of the new AD group.
- 2.	Create an [access package](../../../id-governance/entitlement-management-access-package-create.md). Add the application from #1, the security group from #3, as resources in the Access Package. Configure a direct assignment policy in the access package.
- 3.	In [Entitlement Management](../../../id-governance/entitlement-management-overview.md), assign the synced users who need access to the AD based app to the access package.
+ 2.	Create an [access package](~/identity/id-governance/entitlement-management-access-package-create.md). Add the application from #1, the security group from #3, as resources in the Access Package. Configure a direct assignment policy in the access package.
+ 3.	In [Entitlement Management](~/identity/id-governance/entitlement-management-overview.md), assign the synced users who need access to the AD based app to the access package.
  4. Wait for the new AD group to be updated with the new members. Using Active Directory Users and Computers, confirm that the correct users are present as members of the group.
- 5. In your AD domain monitoring, allow only the [gMSA account](how-to-prerequisites.md#group-managed-service-accounts) that runs the provisioning agent, [authorization to change the membership](/windows/security/threat-protection/auditing/audit-security-group-management) in the new AD group.
+ 5. In your AD domain monitoring, allow only the [gMSA account](~/identity/cloud-sync/how-to-prerequisites.md#group-managed-service-accounts) that runs the provisioning agent, [authorization to change the membership](/windows/security/threat-protection/auditing/audit-security-group-management) in the new AD group.
 
 You can now govern access to the AD application through this new access package.
 
@@ -107,16 +107,16 @@ Nesting that group into the applications existing AD group will allow:
  1. In the Microsoft Entra admin center, create an application in Microsoft Entra ID representing the AD-based application, and configure the application to require user assignment.
  2. If application proxy will be used to enable users to connect to the application, then configure the application proxy.
  3.	Create a new security group in Microsoft Entra ID.
- 4.	Use [Group Provisioning to AD](how-to-configure-entra-to-active-directory.md) to provision this group to AD. 
+ 4.	Use [Group Provisioning to AD](~/identity/cloud-sync/how-to-configure-entra-to-active-directory.md) to provision this group to AD. 
  5. Launch Active Directory Users and Computers, and wait for the resulting new AD group to be created in the AD domain, When it's present, record the distinguished name, domain, account name and SID of the new AD group.
 
 #### Configure application to use new group
  1. Using Active Directory Users and Computers, add the new AD group as a member of the existing AD group.
- 2.	Create an [access package](../../../id-governance/entitlement-management-access-package-create.md). Add the application from #1, the security group from #3, as resources in the Access Package. Configure a direct assignment policy in the access package.
- 3.	In [Entitlement Management](../../../id-governance/entitlement-management-overview.md), assign the synced users who need access to the AD based app to the access package. This includes any user members of the existing AD group who will continue to need access.
+ 2.	Create an [access package](~/identity/id-governance/entitlement-management-access-package-create.md). Add the application from #1, the security group from #3, as resources in the Access Package. Configure a direct assignment policy in the access package.
+ 3.	In [Entitlement Management](~/identity/id-governance/entitlement-management-overview.md), assign the synced users who need access to the AD based app to the access package. This includes any user members of the existing AD group who will continue to need access.
  4. Wait for the new AD group to be updated with the new members. Using Active Directory Users and Computers, confirm that the correct users are present as members of the group.
  5. Using Active Directory Users and Computers, remove the existing members, apart from the new AD group, of the existing AD group.
- 6. In your AD domain monitoring, allow only the [gMSA account](how-to-prerequisites.md#group-managed-service-accounts) that runs the provisioning agent, [authorization to change the membership](/windows/security/threat-protection/auditing/audit-security-group-management) in the new AD group.
+ 6. In your AD domain monitoring, allow only the [gMSA account](~/identity/cloud-sync/how-to-prerequisites.md#group-managed-service-accounts) that runs the provisioning agent, [authorization to change the membership](/windows/security/threat-protection/auditing/audit-security-group-management) in the new AD group.
 
 
 You'll then be able to govern access to the AD application through this new access package.
@@ -129,5 +129,5 @@ A user who is a member of the new AD group, and is on a Windows PC already logge
 <a name='existing-azure-ad-connect-group-writeback-v2-customers'></a>
 
 ## Existing Microsoft Entra Connect group writeback v2 customers
-If you're using Microsoft Entra Connect group writeback v2, you'll need to move to cloud sync provisioning to AD before you can take advantage of cloud sync group provisioning. See [Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync](migrate-group-writeback.md)
+If you're using Microsoft Entra Connect group writeback v2, you'll need to move to cloud sync provisioning to AD before you can take advantage of cloud sync group provisioning. See [Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync](~/identity/cloud-sync/migrate-group-writeback.md)
 

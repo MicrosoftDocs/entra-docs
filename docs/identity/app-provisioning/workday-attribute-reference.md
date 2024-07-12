@@ -1,6 +1,6 @@
 ---
 title: Workday attribute reference for Microsoft Entra ID
-description: Learn which which attributes that you can fetch from Workday using XPATH queries in Microsoft Entra ID.
+description: Learn which attributes that you can fetch from Workday using XPATH queries in Microsoft Entra ID.
 
 author: kenwith
 manager: amycolannino
