@@ -91,7 +91,7 @@ The following are the minimum browser version requirements on Windows.
 | Edge    | &#x2705; | N/A | N/A |
 | Chrome   | &#x2705; | N/A | N/A |
 | Firefox<sup>2</sup>   | &#x2705; | N/A | N/A |
-| Safari<sup>2</sup>,<sup>3</sup>   | &#x2705; | N/A | N/A |
+| Safari<sup>2</sup><sup>,</sup><sup>3</sup>   | &#x2705; | N/A | N/A |
 
 <sup>1</sup>NFC and BLE security keys aren't supported on macOS by Apple.
 
@@ -118,7 +118,7 @@ The following are the minimum browser version requirements on Windows.
 
 ### iOS
 
-| Browser<sup>1</sup>,<sup>2</sup> | Lightning  | NFC | BLE<sup>3</sup> |
+| Browser<sup>1</sup><sup>,</sup><sup>2</sup> | Lightning  | NFC | BLE<sup>3</sup> |
 |---------|------------|-----|-----|
 | Edge    |  &#x2705;  | &#x2705; | N/A | 
 | Chrome  |  &#x2705;  | &#x2705; | N/A |
