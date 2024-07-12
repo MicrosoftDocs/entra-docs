@@ -14,7 +14,7 @@ ms.custom: template-concept
 #CustomerIntent: As an IT administrator, I want to learn about managing users with Lifecycle workflows so that I can use workflows to manage these users in my environment.
 ---
 
-# Managing Users synchronized from Active Directory Domain Services to Microsoft Entra with lifecycle workflows
+# Managing Users synchronized from Active Directory Domain Services to Microsoft Entra with Lifecycle Workflows
 
 Lifecycle Workflows supports governing the identity lifecycle for user accounts that are synchronized from Active Directory Domain Services (AD DS) to Microsoft Entra. For Lifecycle Workflows, it's essential that a user account exists in Microsoft Entra, but how the account was created or how lifecycle relevant changes are being made to the account plays a minor role when it comes to processing workflows and associated tasks for the user account. The support includes accounts and changes made via paths such as [HR driven provisioning](../identity/app-provisioning/what-is-hr-driven-provisioning.md), Microsoft Graph APIs, the Microsoft Entra Admin Portal as well as changes synchronized by Microsoft Entra Connect and MicrosoftCloud Sync.
 
