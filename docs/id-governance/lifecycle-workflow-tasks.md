@@ -22,7 +22,7 @@ Lifecycle Workflow's built-in tasks each include an identifier, known as **taskD
 > [!NOTE]
 > Lifecycle workflows enhances Microsoft Entra ID Governance's [HR-driven provisioning](../identity/app-provisioning/what-is-hr-driven-provisioning.md) by automating routine processes. While HR provisioning manages the creation and attribute updates of user accounts, Lifecycle Workflows provide additional automation of tasks.
 
-[!INCLUDE [Lifecylce Workflows tasks table](../includes/lifecycle-workflows-tasks-table.md)]
+[!INCLUDE [Lifecycle Workflows tasks table](../includes/lifecycle-workflows-tasks-table.md)]
 
 ## Common task parameters
 
