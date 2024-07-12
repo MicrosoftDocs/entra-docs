@@ -48,7 +48,7 @@ This Workday user provisioning solution is ideally suited for:
 This section describes the end-to-end user provisioning solution architecture for common hybrid environments. There are two related flows:
 
 * **Authoritative HR data flow – from Workday to on-premises Active Directory:** In this flow, worker events such as New Hires, Transfers, Terminations first occur in the cloud Workday HR tenant and then the event data flows into on-premises Active Directory through Microsoft Entra ID and the Provisioning Agent. Depending on the event, it may lead to create/update/enable/disable operations in AD.
-* **Writeback flow – from on-premises Active Directory to Workday:** Once the account creation is complete in Active Directory, it is synced with Microsoft Entra ID through Microsoft Entra Connect and information such as email, username and phone number  can be written back to Workday.
+* **Writeback flow – from on-premises Active Directory to Workday:** Once the account creation is complete in Active Directory, it's synced with Microsoft Entra ID through Microsoft Entra Connect and information such as email, username and phone number  can be written back to Workday.
 
 ![Overview](./media/workday-inbound-tutorial/wd_overview.png)
 
@@ -82,7 +82,7 @@ A common requirement of all the Workday provisioning connectors is that they req
 * [Activating security policy changes](#activating-security-policy-changes)
 
 > [!NOTE]
-> It is possible to bypass this procedure and instead use a Workday administrator account as the system integration account. This may work fine for demos, but is not recommended for production deployments.
+> it's possible to bypass this procedure and instead use a Workday administrator account as the system integration account. This may work fine for demos, but is not recommended for production deployments.
 
 ### Creating an integration system user
 
@@ -122,7 +122,7 @@ In this step, you'll create an unconstrained or constrained integration system s
      > [!div class="mx-imgBorder"]
      >![CreateSecurity Group](./media/workday-inbound-tutorial/wd_isu_04.png "CreateSecurity Group")
 
-3. After the Security Group creation is successful, you'll see a page where you can assign members to the Security Group. Add the new integration system user created in the previous step to this security group. If you are using *constrained* security group, you'll need to select the appropriate organization scope.
+3. After the Security Group creation is successful, you'll see a page where you can assign members to the Security Group. Add the new integration system user created in the previous step to this security group. If you're using *constrained* security group, you'll need to select the appropriate organization scope.
 
    >[!div class="mx-imgBorder"]
    >![Edit Security Group](./media/workday-inbound-tutorial/wd_isu_05.png "Edit Security Group")
@@ -265,7 +265,7 @@ In this step, we establish connectivity with Workday and Active Directory.
       > [!NOTE]
      > If no version information is specified in the URL, the app uses Workday Web Services (WWS) v21.1 and no changes are required to the default XPATH API expressions shipped with the app. To use a specific WWS API version, specify version number in the URL <br>
      > Example: `https://wd3-impl-services1.workday.com/ccx/service/contoso4/Human_Resources/v34.0` <br>
-     > <br> If you are using a WWS API v30.0+, before turning on the provisioning job, please update the **XPATH API expressions** under **Attribute Mapping -> Advanced Options -> Edit attribute list for Workday** referring to the section [Managing your configuration](#managing-your-configuration) and [Workday attribute reference](~/identity/app-provisioning/workday-attribute-reference.md#xpath-values-for-workday-web-services-wws-api-v30).  
+     > <br> If you're using a WWS API v30.0+, before turning on the provisioning job, please update the **XPATH API expressions** under **Attribute Mapping -> Advanced Options -> Edit attribute list for Workday** referring to the section [Managing your configuration](#managing-your-configuration) and [Workday attribute reference](~/identity/app-provisioning/workday-attribute-reference.md#xpath-values-for-workday-web-services-wws-api-v30).  
 
    * **Active Directory Forest -** The "Name" of your Active Directory domain, as registered with the agent. Use the dropdown to select the target domain for provisioning. This value is typically a string like: *contoso.com*
 
@@ -311,7 +311,7 @@ In this section, you configure how user data flows from Workday to Active Direct
       * Operator: IS NOT NULL
 
    > [!TIP]
-   > When you are configuring the provisioning app for the first time, you need to test and verify your attribute mappings and expressions to make sure that it is giving you the desired result. Microsoft recommends using [scoping filters](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md) under **Source Object Scope** and [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to test your mappings with a few test users from Workday. Once you have verified that the mappings work, then you can either remove the filter or gradually expand it to include more users.
+   > When you're configuring the provisioning app for the first time, you need to test and verify your attribute mappings and expressions to make sure that it's giving you the desired result. Microsoft recommends using [scoping filters](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md) under **Source Object Scope** and [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to test your mappings with a few test users from Workday. Once you have verified that the mappings work, then you can either remove the filter or gradually expand it to include more users.
 
    > [!CAUTION] 
    > The default behavior of the provisioning engine is to disable/delete users that go out of scope. This may not be desirable in your Workday to AD integration. To override this default behavior refer to the article [Skip deletion of user accounts that go out of scope](~/identity/app-provisioning/skip-out-of-scope-deletions.md)
@@ -330,7 +330,7 @@ In this section, you configure how user data flows from Workday to Active Direct
 
          * **Expression** – Allows you to write a custom value to the AD attribute, based on one or more Workday attributes. [For more info, see this article on expressions](~/identity/app-provisioning/functions-for-customizing-application-data.md).
 
-      * **Source attribute** - The user attribute from Workday. If the attribute you are looking for is not present, see [Customizing the list of Workday user attributes](#customizing-the-list-of-workday-user-attributes).
+      * **Source attribute** - The user attribute from Workday. If the attribute you're looking for is not present, see [Customizing the list of Workday user attributes](#customizing-the-list-of-workday-user-attributes).
 
       * **Default value** – Optional. If the source attribute has an empty value, the mapping writes this value instead.
             Most common configuration is to leave this blank.
@@ -355,9 +355,9 @@ In this section, you configure how user data flows from Workday to Active Direct
 
 * The expression that maps to the *parentDistinguishedName* attribute is used to provision a user to different OUs based on one or more Workday source attributes. This example here places users in different OUs based on what city they are in.
 
-* The *userPrincipalName* attribute in Active Directory is generated using the de-duplication function [SelectUniqueValue](~/identity/app-provisioning/functions-for-customizing-application-data.md#selectuniquevalue) that checks for existence of a generated value in the target AD domain and only sets it if it is unique.  
+* The *userPrincipalName* attribute in Active Directory is generated using the de-duplication function [SelectUniqueValue](~/identity/app-provisioning/functions-for-customizing-application-data.md#selectuniquevalue) that checks for existence of a generated value in the target AD domain and only sets it if it's unique.  
 
-* [There is documentation on writing expressions here](~/identity/app-provisioning/functions-for-customizing-application-data.md). This section includes examples on how to remove special characters.
+* [there's documentation on writing expressions here](~/identity/app-provisioning/functions-for-customizing-application-data.md). This section includes examples on how to remove special characters.
 
 | WORKDAY ATTRIBUTE | ACTIVE DIRECTORY ATTRIBUTE |  MATCHING ID? | CREATE / UPDATE |
 | ---------- | ---------- | ---------- | ---------- |
@@ -462,7 +462,7 @@ The solution currently uses the following Workday APIs:
 * The **Workday Web Services API URL** format used in the **Admin Credentials** section, determines the API version used for Get_Workers
   * If the URL format is: https://\#\#\#\#\.workday\.com/ccx/service/tenantName , then API v21.1 is used. 
   * If the URL format is: https://\#\#\#\#\.workday\.com/ccx/service/tenantName/Human\_Resources , then API v21.1 is used 
-  * If the URL format is: https://\#\#\#\#\.workday\.com/ccx/service/tenantName/Human\_Resources/v\#\#\.\# , then the specified API version is used. (Example: if v34.0 is specified, then it is used.)  
+  * If the URL format is: https://\#\#\#\#\.workday\.com/ccx/service/tenantName/Human\_Resources/v\#\#\.\# , then the specified API version is used. (Example: if v34.0 is specified, then it's used.)  
 
 * Workday Email Writeback feature uses Change_Work_Contact_Information (v30.0) 
 * Workday Username Writeback feature uses Update_Workday_Account (v31.2) 
@@ -634,7 +634,7 @@ The solution currently doesn't support setting binary attributes such as *thumbn
 
 #### How do I format display names in AD based on the user's department/country/city attributes and handle regional variances?
 
-It is a common requirement to configure the *displayName* attribute in AD so that it also provides information about the user's department and country/region. For example, if John Smith works in the Marketing Department in US, you might want his *displayName* to show up as *Smith, John (Marketing-US)*.
+it's a common requirement to configure the *displayName* attribute in AD so that it also provides information about the user's department and country/region. For example, if John Smith works in the Marketing Department in US, you might want his *displayName* to show up as *Smith, John (Marketing-US)*.
 
 Here is how you can handle such requirements for constructing *CN* or *displayName* to include attributes such as company, business unit, city, or country/region.
 
@@ -800,11 +800,11 @@ When you click on any of the provisioning log records, the **Activity Details** 
   SourceAnchor : a071861412de4c2486eb10e5ae0834c3 // set to the WorkdayID (WID) associated with the record
   ```
 
-* **AD Import** record: This log record displays information of the account fetched from AD. As during initial user creation there is no AD account, the *Activity Status Reason* indicates that no account with the Matching ID attribute value was found in Active Directory. Use information in the *Additional Details* section of the log record to troubleshoot issues with fetching data from Workday. An example record is shown below along with pointers on how to interpret each field.
+* **AD Import** record: This log record displays information of the account fetched from AD. As during initial user creation there's no AD account, the *Activity Status Reason* indicates that no account with the Matching ID attribute value was found in Active Directory. Use information in the *Additional Details* section of the log record to troubleshoot issues with fetching data from Workday. An example record is shown below along with pointers on how to interpret each field.
 
   ```JSON
   ErrorCode : None // Use the error code captured here to troubleshoot Workday issues
-  EventName : EntryImportObjectNotFound // Implies that object was not found in AD
+  EventName : EntryImportObjectNotFound // Implies that object wasn't found in AD
   JoiningProperty : 21023 // Value of the Workday attribute that serves as the Matching ID
   ```
 
@@ -847,7 +847,7 @@ When you click on any of the provisioning log records, the **Activity Details** 
 
   :::image type="content" source="media/workday-inbound-tutorial/wd_event_viewer_05.png" alt-text="Screenshot that shows the 'HTTP POST' record in the 'Provisioning Agent' log." lightbox="media/workday-inbound-tutorial/wd_event_viewer_05.png":::
 
-  Immediately following the above event, there should be another event that captures the response of the create AD account operation. This event returns the new objectGuid created in AD and it is set as the TargetAnchor attribute in the provisioning service.
+  Immediately following the above event, there should be another event that captures the response of the create AD account operation. This event returns the new objectGuid created in AD and it's set as the TargetAnchor attribute in the provisioning service.
 
   :::image type="content" source="media/workday-inbound-tutorial/wd_event_viewer_06.png" alt-text="Screenshot that shows the 'Provisioning Agent' log with the objectGuid created in AD highlighted." lightbox="media/workday-inbound-tutorial/wd_event_viewer_06.png":::
 
@@ -886,9 +886,9 @@ This section covers commonly seen errors with Workday user provisioning and how 
 
 |#|Error Scenario |Probable Causes|Recommended Resolution|
 |--|---|---|---|
-|1.| Error installing the provisioning agent with error message:  *Service 'Microsoft Entra Connect Provisioning Agent' (AADConnectProvisioningAgent) failed to start. Verify that you have sufficient privileges to start the system.* | This error usually shows up if you are trying to install the provisioning agent on a domain controller and group policy prevents the service from starting.  It is also seen if you have a previous version of the agent running and  you have not uninstalled it before starting a new installation.| Install the provisioning agent on a non-DC server. Ensure that previous versions of the agent are uninstalled before installing the new agent.|
+|1.| Error installing the provisioning agent with error message:  *Service 'Microsoft Entra Connect Provisioning Agent' (AADConnectProvisioningAgent) failed to start. Verify that you have sufficient privileges to start the system.* | This error usually shows up if you're trying to install the provisioning agent on a domain controller and group policy prevents the service from starting.  it's also seen if you have a previous version of the agent running and  you have not uninstalled it before starting a new installation.| Install the provisioning agent on a non-DC server. Ensure that previous versions of the agent are uninstalled before installing the new agent.|
 |2.| The Windows Service 'Microsoft Entra Connect Provisioning Agent' is in *Starting* state and doesn't switch to *Running* state. | As part of the installation, the agent wizard creates a local account (**NT Service\\AADConnectProvisioningAgent**) on the server and this is the logon account used for starting the service. If a security policy on your Windows server prevents local accounts from running the services, you'll encounter this error. | Open the *Services console*. Right click on the Windows Service 'Microsoft Entra Connect Provisioning Agent' and in the logon tab specify the account of a domain administrator to run the service. Restart the service. |
-|3.| When configuring the provisioning agent with your AD domain in the step *Connect Active Directory*, the wizard takes a long time trying to load the AD schema and eventually times out. | This error usually shows up if the wizard is unable to contact the AD domain controller server due to firewall issues. | On the *Connect Active Directory* wizard screen, while providing the credentials for your AD domain, there is an option called *Select domain controller priority*. Use this option to select a domain controller that is in the same site as the agent server and ensure that there are no firewall rules blocking the communication. |
+|3.| When configuring the provisioning agent with your AD domain in the step *Connect Active Directory*, the wizard takes a long time trying to load the AD schema and eventually times out. | This error usually shows up if the wizard is unable to contact the AD domain controller server due to firewall issues. | On the *Connect Active Directory* wizard screen, while providing the credentials for your AD domain, there's an option called *Select domain controller priority*. Use this option to select a domain controller that is in the same site as the agent server and ensure that there are no firewall rules blocking the communication. |
 
 #### Connectivity errors
 
@@ -896,24 +896,24 @@ If the provisioning service is unable to connect to Workday or Active Directory,
 
 |#|Error Scenario |Probable Causes|Recommended Resolution|
 |--|---|---|---|
-|1.| When you click on **Test Connection**, you get the error message: *There was an error connecting to Active Directory. Please ensure that the on-premises Provisioning Agent is running and it is configured with the correct Active Directory domain.* | This error usually shows up if the provisioning agent is not running or there is a firewall blocking communication between Microsoft Entra ID and the provisioning agent. You may also see this error, if the domain is not configured in the Agent Wizard. | Open the *Services* console on the Windows server to confirm that the agent is running. Open the provisioning agent wizard and confirm that the right domain is registered with the agent.  |
-|2.| The provisioning job goes into quarantine state over the weekends (Fri-Sat) and we get an email notification that there is an error with the synchronization. | One of the common causes for this error is the planned Workday downtime. If you are using a Workday implementation tenant, please note that Workday has scheduled down time for its implementation tenants over weekends (usually from Friday evening to Saturday morning) and during that period the Workday provisioning apps may go into quarantine state as it is not able to connect to Workday. It gets back to normal state once the Workday implementation tenant is back online. In rare cases, you may also see this error, if the password of the Integration System User changed due to tenant refresh or if the account is in locked or expired state. | Check with your Workday administrator or integration partner to see when Workday schedules downtime to ignore alert messages during the downtime period and confirm availability once Workday instance is back online.  |
+|1.| When you click on **Test Connection**, you get the error message: *There was an error connecting to Active Directory. Please ensure that the on-premises Provisioning Agent is running and it's configured with the correct Active Directory domain.* | This error usually shows up if the provisioning agent is not running or there's a firewall blocking communication between Microsoft Entra ID and the provisioning agent. You may also see this error, if the domain is not configured in the Agent Wizard. | Open the *Services* console on the Windows server to confirm that the agent is running. Open the provisioning agent wizard and confirm that the right domain is registered with the agent.  |
+|2.| The provisioning job goes into quarantine state over the weekends (Fri-Sat) and we get an email notification that there's an error with the synchronization. | One of the common causes for this error is the planned Workday downtime. If you're using a Workday implementation tenant, please note that Workday has scheduled down time for its implementation tenants over weekends (usually from Friday evening to Saturday morning) and during that period the Workday provisioning apps may go into quarantine state as it's not able to connect to Workday. It gets back to normal state once the Workday implementation tenant is back online. In rare cases, you may also see this error, if the password of the Integration System User changed due to tenant refresh or if the account is in locked or expired state. | Check with your Workday administrator or integration partner to see when Workday schedules downtime to ignore alert messages during the downtime period and confirm availability once Workday instance is back online.  |
 
 #### AD user account creation errors
 
 |#|Error Scenario |Probable Causes|Recommended Resolution|
 |--|---|---|---|
-|1.| Export operation failures in the provisioning log with the message *Error: OperationsError-SvcErr: An operation error occurred. No superior reference has been configured for the directory service. The directory service is therefore unable to issue referrals to objects outside this forest.* | This error usually shows up if the *Active Directory Container* OU is not set correctly or if there are issues with the Expression Mapping used for *parentDistinguishedName*. | Check the *Active Directory Container* OU parameter for typos. If you are using *parentDistinguishedName* in the attribute mapping ensure that it always evaluates to a known container within the AD domain. Check the *Export* event in the provisioning logs to see the generated value. |
-|2.| Export operation failures in the provisioning log with error code: *SystemForCrossDomainIdentityManagementBadResponse* and message *Error: ConstraintViolation-AtrErr: A value in the request is invalid. A value for the attribute was not in the acceptable range of values. \nError Details: CONSTRAINT_ATT_TYPE - company*. | While this error is specific to the *company* attribute, you may see this error for other attributes like *CN* as well. This error appears due to AD enforced schema constraint. By default, the attributes like *company* and *CN* in AD have an upper limit of 64 characters. If the value coming from Workday is more than 64 characters, then you see this error message. | Check the *Export* event in the provisioning logs to see the value for the attribute reported in the error message. Consider truncating the value coming from Workday using the [Mid](~/identity/app-provisioning/functions-for-customizing-application-data.md#mid) function or changing the mappings to an AD attribute that doesn't have similar length constraints.  |
+|1.| Export operation failures in the provisioning log with the message *Error: OperationsError-SvcErr: An operation error occurred. No superior reference has been configured for the directory service. The directory service is therefore unable to issue referrals to objects outside this forest.* | This error usually shows up if the *Active Directory Container* OU is not set correctly or if there are issues with the Expression Mapping used for *parentDistinguishedName*. | Check the *Active Directory Container* OU parameter for typos. If you're using *parentDistinguishedName* in the attribute mapping ensure that it always evaluates to a known container within the AD domain. Check the *Export* event in the provisioning logs to see the generated value. |
+|2.| Export operation failures in the provisioning log with error code: *SystemForCrossDomainIdentityManagementBadResponse* and message *Error: ConstraintViolation-AtrErr: A value in the request is invalid. A value for the attribute wasn't in the acceptable range of values. \nError Details: CONSTRAINT_ATT_TYPE - company*. | While this error is specific to the *company* attribute, you may see this error for other attributes like *CN* as well. This error appears due to AD enforced schema constraint. By default, the attributes like *company* and *CN* in AD have an upper limit of 64 characters. If the value coming from Workday is more than 64 characters, then you see this error message. | Check the *Export* event in the provisioning logs to see the value for the attribute reported in the error message. Consider truncating the value coming from Workday using the [Mid](~/identity/app-provisioning/functions-for-customizing-application-data.md#mid) function or changing the mappings to an AD attribute that doesn't have similar length constraints.  |
 
 #### AD user account update errors
 
-During the AD user account update process, the provisioning service reads information from both Workday and AD, runs the attribute mapping rules and determines if any change needs to take effect. Accordingly an update event is triggered. If any of these steps encounters a failure, it is logged in the provisioning logs. Use the table below to troubleshoot common update errors.
+During the AD user account update process, the provisioning service reads information from both Workday and AD, runs the attribute mapping rules and determines if any change needs to take effect. Accordingly an update event is triggered. If any of these steps encounters a failure, it's logged in the provisioning logs. Use the table below to troubleshoot common update errors.
 
 |#|Error Scenario |Probable Causes|Recommended Resolution|
 |--|---|---|---|
 |1.| Synchronization rule action failures in the provisioning log with the message *EventName = EntrySynchronizationError and ErrorCode = EndpointUnavailable*. | This error shows up if the provisioning service is unable to retrieve user profile data from Active Directory due to a processing error encountered by the on-premises provisioning agent. | Check the Provisioning Agent Event Viewer logs for error events that indicate issues with the read operation (Filter by Event ID #2). |
-|2.| The manager attribute in AD doesn't get updated for certain users in AD. | The most likely cause of this error is if you are using scoping rules and the user's manager is not part of the scope. You may also run into this issue if the manager's matching ID attribute (such as EmployeeID) is not found in the target AD domain or not set to the correct value. | Review the scoping filter and add the manager user in scope. Check the manager's profile in AD to make sure that there is a value for the matching ID attribute. |
+|2.| The manager attribute in AD doesn't get updated for certain users in AD. | The most likely cause of this error is if you're using scoping rules and the user's manager is not part of the scope. You may also run into this issue if the manager's matching ID attribute (such as EmployeeID) is not found in the target AD domain or not set to the correct value. | Review the scoping filter and add the manager user in scope. Check the manager's profile in AD to make sure that there's a value for the matching ID attribute. |
 
 ## Managing your configuration
 
@@ -924,7 +924,7 @@ This section describes how you can further extend, customize and manage your Wor
 
 ### Customizing the list of Workday user attributes
 
-The Workday provisioning apps for Active Directory and Microsoft Entra ID both include a default list of Workday user attributes you can select from. However, these lists are not comprehensive. Workday supports many hundreds of possible user attributes, which can either be standard or unique to your Workday tenant.
+The Workday provisioning apps for Active Directory and Microsoft Entra ID both include a default list of Workday user attributes you can select from. However, these lists aren't comprehensive. Workday supports many hundreds of possible user attributes, which can either be standard or unique to your Workday tenant.
 
 The Microsoft Entra provisioning service supports the ability to customize your list or Workday attribute to include any attributes exposed in the [Get_Workers](https://community.workday.com/sites/default/files/file-hosting/productionapi/Human_Resources/v21.1/Get_Workers.html) operation of the Human Resources API.
 
@@ -1006,7 +1006,7 @@ To do this change, you must use [Workday Studio](https://community.workday.com/s
 
 1. Launch the [Microsoft Entra admin center](https://entra.microsoft.com), and navigate to the Provisioning section of your Workday provisioning application, as described earlier in this tutorial.
 
-2. Set **Provisioning Status** to **Off**, and select **Save**. This step helps ensure your changes take effect only when you are ready.
+2. Set **Provisioning Status** to **Off**, and select **Save**. This step helps ensure your changes take effect only when you're ready.
 
 3. Under **Mappings**, select **Synchronize Workday Workers to On Premises Active Directory** (or **Synchronize Workday Workers to Microsoft Entra ID**).
 
@@ -1028,7 +1028,7 @@ To do this change, you must use [Workday Studio](https://community.workday.com/s
 
     ![Workday Studio](./media/workday-inbound-tutorial/wdstudio_aad2.png)
 
-11. Select **Save** above, and then **Yes** to the dialog. Close the Attribute-Mapping screen if it is still open.
+11. Select **Save** above, and then **Yes** to the dialog. Close the Attribute-Mapping screen if it's still open.
 
 12. Back on the main **Provisioning** tab, select **Synchronize Workday Workers to On Premises Active Directory** (or **Synchronize Workers to Microsoft Entra ID**) again.
 
@@ -1048,7 +1048,7 @@ Refer to the article [Exporting and importing provisioning configuration](~/iden
 
 The Workday provisioning solution for Active Directory requires a provisioning agent to be installed on an on-premises Windows server, and this agent creates logs in the Windows Event log which may contain personal data depending on your Workday to AD attribute mappings. To comply with user privacy obligations, you can ensure that no data is retained in the Event logs beyond 48 hours by setting up a Windows scheduled task to clear the event log.
 
-The Microsoft Entra provisioning service falls into the **data processor** category of GDPR classification. As a data processor pipeline, the service provides data processing services to key partners and end consumers. Microsoft Entra provisioning service doesn't generate user data and has no independent control over what personal data is collected and how it is used. Data retrieval, aggregation, analysis, and reporting in Microsoft Entra provisioning service are based on existing enterprise data.
+The Microsoft Entra provisioning service falls into the **data processor** category of GDPR classification. As a data processor pipeline, the service provides data processing services to key partners and end consumers. Microsoft Entra provisioning service doesn't generate user data and has no independent control over what personal data is collected and how it's used. Data retrieval, aggregation, analysis, and reporting in Microsoft Entra provisioning service are based on existing enterprise data.
 
 [!INCLUDE [GDPR-related guidance](~/includes/azure-docs-pr/gdpr-hybrid-note.md)]
 
