@@ -53,7 +53,7 @@ The user profile page is now organized into three tabs: **Overview**, **Monitori
 The overview tab contains key properties and insights about a user, such as: 
 
 - Properties like user principal name, object ID, created date/time and user type 
-- Selectable aggregate values such as the number of groups that the user is a member of, the number of apps to which they have access, and the number of licenses that are are assigned to them 
+- Selectable aggregate values such as the number of groups that the user is a member of, the number of apps to which they have access, and the number of licenses that are assigned to them 
 - Quick alerts and insights about a user such as their current account enabled status, the last time they signed in, whether they can use multifactor authentication, and B2B collaboration options
 
 :::image type="content" source="./media/users-search-enhanced/user-profile-overview.png" alt-text="Screenshot of new user profile displaying the Overview tab contents.":::
