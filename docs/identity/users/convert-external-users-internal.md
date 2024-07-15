@@ -61,10 +61,10 @@ When testing external user conversions, we recommend that you use test accounts 
 
 - Converting external users to internal users requires an account with at least the [user administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator) role assigned.
 - Only users configured with an authentication method external to the host organization are eligible for conversion. 
-z
+
 ### Converting an external user
 
-You can convert external users to internal users using the Microsoft Entra admin center. 
+You can convert external users, such as cloud-only and synced users, to internal users using the Microsoft Entra admin center. 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 
