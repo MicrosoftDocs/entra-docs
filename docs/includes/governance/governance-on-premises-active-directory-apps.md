@@ -39,7 +39,7 @@ The following prerequisites are required to implement this scenario.
 ## Supported groups
 For this scenario, only the following groups are supported:
   - only cloud created [Security groups](~/fundamentals/concept-learn-about-groups.md#group-types) are supported
-  - these groups can have assigned or dynamic membership
+  - these groups must have, assigned or dynamic membership
   - these groups can only contain on-premises synchronized users and / or cloud created security groups
   - the on-premises user accounts that are synchronized and are members of this cloud created security group, can be from the same domain or cross-domain, but they all must be from the same forest
   - these groups are written back with the AD groups scope of [universal](/windows-server/identity/ad-ds/manage/understand-security-groups#group-scope). Your on-premises environment must support the universal group scope
@@ -53,7 +53,7 @@ The following sections discuss the scenarios that are supported with cloud sync 
 ## Configuring supported scenarios
 
 If you want to control whether a user is able to connect to an Active Directory application that uses Windows authentication, you can use the application proxy and a Microsoft Entra security group.
-If an application checks a user's AD group memberships, via Kerberos or LDAP, then you can use cloud sync group provisioning to ensure an AD user has those group memberships prior to the user accessing the applications. 
+If an application checks a user's AD group memberships, via Kerberos or LDAP, then you can use cloud sync group provisioning to ensure an AD user has those group memberships before the user accesses the applications. 
 
 
 The following sections discuss two scenario options that are supported with cloud sync group provisioning. The scenario options are meant to ensure users assigned to the application have group memberships when they authenticate to the application.
@@ -69,7 +69,7 @@ In this scenario option, you update the application to check for the SID, name o
  - deployments for new applications being connected to AD DS for the first time.
  - new cohorts of users accessing the application.
  - for application modernization, to reduce the dependency on existing AD DS groups.
-Applications which currently check for membership of the `Domain Admins` group will need to be updated to also check for a newly created AD group as well.
+Applications, which currently check for membership of the `Domain Admins` group, need to be updated to also check for a newly created AD group also.
 
 Use the following steps for applications to use new groups.
 
@@ -94,7 +94,7 @@ You can now govern access to the AD application through this new access package.
 In this scenario option, you add a new AD security group as a nested group member of an existing group. This scenario is applicable to deployments for applications that have a hardcoded dependency on a particular group account name, SID, or distinguished name.
 
 Nesting that group into the applications existing AD group will allow:
- - Microsoft Entra users, who are assigned by a governance feature, and subsequently access the app, to have an appropriate Kerberos ticket. This ticket will contain the existing groups SID. This nesting is allowed by AD group nesting rules. 
+ - Microsoft Entra users, who are assigned by a governance feature, and then access the app, to have the appropriate Kerberos ticket. This ticket contains the existing groups SID. The nesting is allowed by AD group nesting rules. 
 
  If the app uses LDAP and follows nested group membership, the app will see the Microsoft Entra users as having the existing group as one of their memberships.
 
@@ -105,7 +105,7 @@ Nesting that group into the applications existing AD group will allow:
 
 #### Create application and group
  1. In the Microsoft Entra admin center, create an application in Microsoft Entra ID representing the AD-based application, and configure the application to require user assignment.
- 2. If application proxy will be used to enable users to connect to the application, then configure the application proxy.
+ 2. If application proxy is used to enable users to connect to the application, then configure the application proxy.
  3.	Create a new security group in Microsoft Entra ID.
  4.	Use [Group Provisioning to AD](~/identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md) to provision this group to AD. 
  5. Launch Active Directory Users and Computers, and wait for the resulting new AD group to be created in the AD domain, When it's present, record the distinguished name, domain, account name and SID of the new AD group.
@@ -113,7 +113,7 @@ Nesting that group into the applications existing AD group will allow:
 #### Configure application to use new group
  1. Using Active Directory Users and Computers, add the new AD group as a member of the existing AD group.
  2.	Create an [access package](~/id-governance/entitlement-management-access-package-create.md). Add the application from #1, the security group from #3, as resources in the Access Package. Configure a direct assignment policy in the access package.
- 3.	In [Entitlement Management](~/id-governance/entitlement-management-overview.md), assign the synced users who need access to the AD based app to the access package. This includes any user members of the existing AD group who will continue to need access.
+ 3.	In [Entitlement Management](~/id-governance/entitlement-management-overview.md), assign the synced users who need access to the AD based app to the access package, including any user members of the existing AD group who still need access.
  4. Wait for the new AD group to be updated with the new members. Using Active Directory Users and Computers, confirm that the correct users are present as members of the group.
  5. Using Active Directory Users and Computers, remove the existing members, apart from the new AD group, of the existing AD group.
  6. In your AD domain monitoring, allow only the [gMSA account](~/identity/hybrid/cloud-sync/how-to-prerequisites.md#group-managed-service-accounts) that runs the provisioning agent, [authorization to change the membership](/windows/security/threat-protection/auditing/audit-security-group-management) in the new AD group.
