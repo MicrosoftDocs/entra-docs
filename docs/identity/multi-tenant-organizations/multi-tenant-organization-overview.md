@@ -114,7 +114,7 @@ To facilitate the management of a multitenant organization, any given multitenan
 
 | Tenant state | Description |
 | --- | --- |
-| Pending | A pending tenant has yet to join a multitenant organization. While listed in an administrator’s view of the multitenant organization, a pending tenant isn't yet part of the multitenant organization, and as such is hidden from an end user’s view of a multitenant organization. |
+| Pending | A pending tenant has yet to join a multitenant organization. While listed in an administrator's view of the multitenant organization, a pending tenant isn't yet part of the multitenant organization, and as such is hidden from an end user's view of a multitenant organization. |
 | Active | Following the addition of pending tenants to the multitenant organization, pending tenants need to join the multitenant organization to turn their state from pending to active. Joined tenants typically start in the member role. Any member tenant has the privilege to leave the multitenant organization. |
 
 ## Cross-tenant access settings
@@ -123,11 +123,11 @@ Administrators staying in control of their resources is a guiding principle for 
 
 - Cross-tenant access partner configurations
 
-    For more information, see [Configure cross-tenant access settings for B2B collaboration](~/external-id/cross-tenant-access-settings-b2b-collaboration.yml) and [crossTenantAccessPolicyConfigurationPartner resource type](/graph/api/resources/crosstenantaccesspolicyconfigurationpartner?view=graph-rest-beta&preserve-view=true).
+    For more information, see [Configure cross-tenant access settings for B2B collaboration](~/external-id/cross-tenant-access-settings-b2b-collaboration.yml) and [CrossTenantAccessPolicyConfigurationPartner resource type](/graph/api/resources/crosstenantaccesspolicyconfigurationpartner?view=graph-rest-beta&preserve-view=true).
 
 - Cross-tenant access identity synchronization
 
-    For more information, see [Configure cross-tenant synchronization](cross-tenant-synchronization-configure.md) and [crossTenantIdentitySyncPolicyPartner resource type](/graph/api/resources/crosstenantidentitysyncpolicypartner).
+    For more information, see [Configure cross-tenant synchronization](cross-tenant-synchronization-configure.md) and [CrossTenantIdentitySyncPolicyPartner resource type](/graph/api/resources/crosstenantidentitysyncpolicypartner).
 
 ## Templates for cross-tenant access settings
 
