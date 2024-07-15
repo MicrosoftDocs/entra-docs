@@ -66,9 +66,9 @@ Before you begin, ensure that you're a domain administrator in the domain where 
 ### Configuring the new groups option
 
 In this scenario option, you update the application to check for the SID, name or distinguished name of new groups created by cloud sync group provisioning. This scenario is applicable to:
- - deployments for new applications being connected to AD DS for the first time.
- - new cohorts of users accessing the application.
- - for application modernization, to reduce the dependency on existing AD DS groups.
+ - Deployments for new applications being connected to AD DS for the first time.
+ - New cohorts of users accessing the application.
+ - For application modernization, to reduce the dependency on existing AD DS groups.
 Applications, which currently check for membership of the `Domain Admins` group, need to be updated to also check for a newly created AD group also.
 
 Use the following steps for applications to use new groups.
