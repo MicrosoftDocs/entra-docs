@@ -688,7 +688,7 @@ You can minimize the number of persistent administrators in applications such as
 **Service category:** Privileged Identity Management                            
 **Product capability:** Privileged Identity Management                 
 
-Announcing API support (beta) for managing PIM security alerts for Azure AD roles. [Azure Privileged Identity Management (PIM)](~/id-governance/privileged-identity-management/index.yml) generates alerts when there's suspicious or unsafe activity in your organization in Azure Active Directory (Azure AD), part of Microsoft Entra. You can now manage these alerts using REST APIs. These alerts can also be [managed through the Azure portal](~/id-governance/privileged-identity-management/pim-resource-roles-configure-alerts.md). For more information, see:  [`unifiedRoleManagementAlert` resource type](/graph/api/resources/unifiedrolemanagementalert).
+Announcing API support (beta) for managing PIM security alerts for Azure Active Directory roles. [Azure Privileged Identity Management (PIM)](~/id-governance/privileged-identity-management/index.yml) generates alerts when there's suspicious or unsafe activity in your organization in Azure Active Directory, part of Microsoft Entra. You can now manage these alerts using REST APIs. These alerts can also be [managed through the Azure portal](~/id-governance/privileged-identity-management/pim-resource-roles-configure-alerts.md). For more information, see:  [`unifiedRoleManagementAlert` resource type](/graph/api/resources/unifiedrolemanagementalert).
 
 ---
 
@@ -886,7 +886,7 @@ Starting today the modernized experience for viewing previously accepted terms o
 **Service category:** Privileged Identity Management                               
 **Product capability:** Privileged Identity Management                 
 
-Privileged Identity Management for Groups is now generally available. With this feature, you have the ability to grant users just-in-time membership in a group, which in turn provides access to Azure Active Directory roles, Azure roles, Azure SQL, Azure Key Vault, Intune, other application roles, and third-party applications. Through one activation, you can conveniently assign a combination of permissions across different applications and RBAC systems.
+Privileged Identity Management for Groups is now generally available. With this feature, you have the ability to grant users just-in-time membership in a group, which in turn provides access to Azure Active Directory roles, Azure roles, Azure SQL, Azure Key Vault, Intune, other application roles, and third-party applications. Through one activation, you can conveniently assign a combination of permissions across different applications and Role-Based Access Control systems.
 
 PIM for Groups offers can also be used for just-in-time ownership. As the owner of the group, you can manage group properties, including membership. For more information, see: [Privileged Identity Management (PIM) for Groups](~/id-governance/privileged-identity-management/concept-pim-for-groups.md).
 
