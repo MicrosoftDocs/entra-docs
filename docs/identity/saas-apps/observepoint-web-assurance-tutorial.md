@@ -137,7 +137,7 @@ To configure single sign-on on **ObservePoint** side, you need to send the downl
 
 ### Create ObservePoint test user
 
-In this section, you create a user called B.Simon in ObservePoint . Work with [ObservePoint support team](mailto:support@observepoint.com) to add the users in the ObservePoint platform. Users must be created and activated before you use single sign-on.
+In this section, you create a user called B.Simon in ObservePoint. Work with [ObservePoint support team](mailto:support@observepoint.com) to add the users in the ObservePoint platform. Users must be created and activated before you use single sign-on.
 
 ## Test SSO 
 
