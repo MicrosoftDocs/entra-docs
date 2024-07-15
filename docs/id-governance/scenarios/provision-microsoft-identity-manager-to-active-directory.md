@@ -10,7 +10,7 @@ ms.subservice: hybrid-cloud-sync
 ms.author: billmath
 ---
 
-# on-premises users that are provisioned to Active Directory with Microsoft Identity Manager.
+# Govern on-premises users that are provisioned to Active Directory with Microsoft Identity Manager.
 
 **Scenario:** Manage on-premises users that are provisioned to Active Directory with Microsoft Identity Manager.
 

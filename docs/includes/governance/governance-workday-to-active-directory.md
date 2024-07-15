@@ -43,14 +43,14 @@ This Workday user provisioning solution is ideally suited for:
 
 * Organizations using Microsoft 365 for email
 
-## Solution Architecture
+## Solution architecture
 
 This section describes the end-to-end user provisioning solution architecture for common hybrid environments. There are two related flows:
 
 * **Authoritative HR data flow – from Workday to on-premises Active Directory:** In this flow, worker events such as New Hires, Transfers, Terminations first occur in the cloud Workday HR tenant and then the event data flows into on-premises Active Directory through Microsoft Entra ID and the Provisioning Agent. Depending on the event, it may lead to create/update/enable/disable operations in AD.
 * **Writeback flow – from on-premises Active Directory to Workday:** Once the account creation is complete in Active Directory, it's synced with Microsoft Entra ID through Microsoft Entra Connect and information such as email, username and phone number  can be written back to Workday.
 
-![Overview](./media/workday-inbound-tutorial/wd_overview.png)
+![Conceptual diagram of overview.](./media/workday-inbound-tutorial/wd_overview.png)
 
 ### End-to-end user data flow
 
@@ -91,7 +91,7 @@ A common requirement of all the Workday provisioning connectors is that they req
 1. Sign in to your Workday tenant using an administrator account. In the **Workday Application**, enter create user in the search box, and then click **Create Integration System User**.
 
    >[!div class="mx-imgBorder"] 
-   >![Create user](./media/workday-inbound-tutorial/wd_isu_01.png "Create user")
+   >![Screenshot of create user.](./media/workday-inbound-tutorial/wd_isu_01.png "Create user")
 2. Complete the **Create Integration System User** task by supplying a user name and password for a new Integration System User.  
 
    * Leave the **Require New Password at Next Sign In** option unchecked, because this user is logging on programmatically.
@@ -99,7 +99,7 @@ A common requirement of all the Workday provisioning connectors is that they req
    * Select the option **Do Not Allow UI Sessions** as it provides an added layer of security that prevents a user with the password of the integration system from logging into Workday.
 
    > [!div class="mx-imgBorder"]
-   > ![Create Integration System User](./media/workday-inbound-tutorial/wd_isu_02.png "Create Integration System User")
+   > ![Screenshot of Create Integration System User.](./media/workday-inbound-tutorial/wd_isu_02.png "Create Integration System User")
 
 ### Creating an integration security group
 
@@ -120,12 +120,12 @@ In this step, you'll create an unconstrained or constrained integration system s
    * Once you know the group type, select **Integration System Security Group (Unconstrained)** or **Integration System Security Group (Constrained)** from the **Type of Tenanted Security Group** dropdown.
 
      > [!div class="mx-imgBorder"]
-     >![CreateSecurity Group](./media/workday-inbound-tutorial/wd_isu_04.png "CreateSecurity Group")
+     >![Screenshot of CreateSecurity Group.](./media/workday-inbound-tutorial/wd_isu_04.png "CreateSecurity Group")
 
 3. After the Security Group creation is successful, you'll see a page where you can assign members to the Security Group. Add the new integration system user created in the previous step to this security group. If you're using *constrained* security group, you'll need to select the appropriate organization scope.
 
    >[!div class="mx-imgBorder"]
-   >![Edit Security Group](./media/workday-inbound-tutorial/wd_isu_05.png "Edit Security Group")
+   >![Screenshot of Edit Security Group.](./media/workday-inbound-tutorial/wd_isu_05.png "Edit Security Group")
 
 ### Configuring domain security policy permissions
 
@@ -135,15 +135,15 @@ In this step, you'll grant *domain security* policy permissions for the worker d
 
 1. Enter **Security Group Membership and Access** in the search box and click on the report link.
    >[!div class="mx-imgBorder"]
-   >![Search Security Group Membership](./media/workday-inbound-tutorial/security-group-membership-access.png)
+   >![Screenshot of Search Security Group Membership.](./media/workday-inbound-tutorial/security-group-membership-access.png)
 
 1. Search and select the security group created in the previous step. 
    >[!div class="mx-imgBorder"]
-   >![Select Security Group](./media/workday-inbound-tutorial/select-security-group-workday.png)
+   >![Screenshot of Select Security Group.](./media/workday-inbound-tutorial/select-security-group-workday.png)
 
 1. Click on the ellipsis (`...`) next to the group name and from the menu, select **Security Group > Maintain Domain Permissions for Security Group**
    >[!div class="mx-imgBorder"]
-   >![Select Maintain Domain Permissions](./media/workday-inbound-tutorial/select-maintain-domain-permissions.png)
+   >![Screenshot of Select Maintain Domain Permissions.](./media/workday-inbound-tutorial/select-maintain-domain-permissions.png)
 
 1. Under **Integration Permissions**, add the following domains to the list **Domain Security Policies permitting Put access**
    * *External Account Provisioning*
@@ -161,7 +161,7 @@ In this step, you'll grant *domain security* policy permissions for the worker d
 
 1. After completing the above steps, the permissions screen appears as shown below:
    >[!div class="mx-imgBorder"]
-   >![All Domain Security Permissions](./media/workday-inbound-tutorial/all-domain-security-permissions.png)
+   >![Screenshot of All Domain Security Permissions.](./media/workday-inbound-tutorial/all-domain-security-permissions.png)
 
 1. Click **OK** and **Done** on the next screen to complete the configuration. 
 
@@ -190,7 +190,7 @@ In this step, you'll grant "business process security" policy permissions for th
 4. Select and add the new integration system security group to the list of security groups that can initiate the web services request. 
 
    >[!div class="mx-imgBorder"]
-   >![Business Process Security Policies](./media/workday-inbound-tutorial/wd_isu_15.png "Business Process Security Policies")  
+   >![Screenshot of Business Process Security Policies.](./media/workday-inbound-tutorial/wd_isu_15.png "Business Process Security Policies")  
 
 5. Click on **Done**. 
 
@@ -200,13 +200,13 @@ In this step, you'll grant "business process security" policy permissions for th
 
 1. Enter activate in the search box, and then click on the link **Activate Pending Security Policy Changes**.
    >[!div class="mx-imgBorder"]
-   >![Activate](./media/workday-inbound-tutorial/wd_isu_16.png "Activate")
+   >![Screenshot of Activate.](./media/workday-inbound-tutorial/wd_isu_16.png "Activate")
 
 1. Begin the Activate Pending Security Policy Changes task by entering a comment for auditing purposes, and then click **OK**.
 1. Complete the task on the next screen by checking the checkbox **Confirm**, and then click **OK**.
 
    >[!div class="mx-imgBorder"]
-   >![Activate Pending Security](./media/workday-inbound-tutorial/wd_isu_18.png "Activate Pending Security")  
+   >![Screenshot of Activate Pending Security.](./media/workday-inbound-tutorial/wd_isu_18.png "Activate Pending Security")  
 
 ## Provisioning Agent installation prerequisites
 
@@ -234,7 +234,7 @@ This section provides steps for user account provisioning from Workday to each A
 1. Click on the information banner displayed to download the Provisioning Agent. 
 
    >[!div class="mx-imgBorder"]
-   >![Download Agent](./media/workday-inbound-tutorial/pa-download-agent.png "Download Agent Screen")
+   >![Screenshot of Download Agent.](./media/workday-inbound-tutorial/pa-download-agent.png "Download Agent Screen")
 
 ### Part 2: Install and configure on-premises Provisioning Agent(s)
 
@@ -403,7 +403,7 @@ Once the Workday provisioning app configurations have been completed and you hav
 
 1. Once the initial sync is completed, it writes an audit summary report in the **Provisioning** tab, as shown below.
    > [!div class="mx-imgBorder"]
-   > ![Provisioning progress bar](~/identity/saas-apps/media/sap-successfactors-inbound-provisioning/workday-sync.png)
+   > ![Screenshot of Provisioning progress bar](~/identity/saas-apps/media/sap-successfactors-inbound-provisioning/workday-sync.png)
 
 ## Frequently Asked Questions (FAQ)
 
@@ -485,10 +485,10 @@ Yes, this configuration is supported. Here are the high level steps to configure
 Your feedback is highly valued as it helps us set the direction for the future releases and enhancements. We welcome all feedback and encourage you to submit your idea or improvement suggestion in the [feedback forum of Microsoft Entra ID](https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789). For specific feedback related to the Workday integration, select the category *SaaS Applications* and search using the keywords *Workday* to find existing feedback related to the Workday.
 
 > [!div class="mx-imgBorder"]
-> ![UserVoice SaaS Apps](media/workday-inbound-tutorial/uservoice_saas_apps.png)
+> ![Screenshot of UserVoice SaaS Apps.](media/workday-inbound-tutorial/uservoice_saas_apps.png)
 
 > [!div class="mx-imgBorder"]
-> ![UserVoice Workday](media/workday-inbound-tutorial/uservoice_workday_feedback.png)
+> ![Screenshot of UserVoice Workday.](media/workday-inbound-tutorial/uservoice_workday_feedback.png)
 
 When suggesting a new idea, please check to see if someone else has already suggested a similar feature. In that case, you can up vote the feature or enhancement request. You can also leave a comment regarding your specific use case to show your support for the idea and demonstrate how the feature is valuable for you too.
 
@@ -505,7 +505,7 @@ Refer to [Microsoft Entra Connect Provisioning Agent: Version release history](~
 * Look for the version corresponding to the entry **Microsoft Entra Connect Provisioning Agent**
 
   >[!div class="mx-imgBorder"]
-  >![Microsoft Entra admin center](./media/workday-inbound-tutorial/pa_version.png)
+  >![Screenshot of Microsoft Entra admin center.](./media/workday-inbound-tutorial/pa_version.png)
 
 #### Does Microsoft automatically push Provisioning Agent updates?
 
@@ -593,7 +593,7 @@ You can use Microsoft Graph API to export your Workday User Provisioning configu
 
 The solution supports custom Workday and Active Directory attributes. To add your custom attributes to the mapping schema, open the **Attribute Mapping** blade and scroll down to expand the section **Show advanced options**. 
 
-![Edit Attribute List](./media/workday-inbound-tutorial/wd_edit_attr_list.png)
+![Screenshot of Edit Attribute List.](./media/workday-inbound-tutorial/wd_edit_attr_list.png)
 
 To add your custom Workday attributes, select the option *Edit attribute list for Workday* and to add your custom AD attributes, select the option *Edit attribute list for On Premises Active Directory*.
 
@@ -605,7 +605,7 @@ See also:
 
 This configuration can be achieved by setting the **Target Object Actions** in the **Attribute Mappings** blade as shown below:
 
-![Update action](./media/workday-inbound-tutorial/wd_target_update_only.png)
+![Screenshot of Update action.](./media/workday-inbound-tutorial/wd_target_update_only.png)
 
 Select the checkbox "Update" for only update operations to flow from Workday to AD. 
 
@@ -620,7 +620,7 @@ The solution currently doesn't support setting binary attributes such as *thumbn
 * Under **Mappings**, select **Synchronize Workday Workers to On Premises Active Directory** (or **Synchronize Workday Workers to Microsoft Entra ID**).
 * On the Attribute Mappings page, scroll down and check the box "Show Advanced Options".  Click on **Edit attribute list for Workday**
 * In the blade that opens up, locate the "Mobile" attribute and click on the row so you can edit the **API Expression**
-     ![Mobile GDPR](./media/workday-inbound-tutorial/mobile_gdpr.png)
+     ![Screenshot of Mobile GDPR.](./media/workday-inbound-tutorial/mobile_gdpr.png)
 
 * Replace the **API Expression** with the following new expression, which retrieves the work mobile number only if the "Public Usage Flag" is set to "True" in Workday.
 
@@ -669,7 +669,7 @@ Here's how you can handle such requirements for constructing *CN* or *displayNam
      Append(Join(", ",[PreferredLastName],[PreferredFirstName]), Join(""," (",[SupervisoryOrganization],"-",[CountryReferenceTwoLetter],")"))
     ```
     Once you have the right expression, edit the Attribute Mappings table and modify the *displayName* attribute mapping as shown below: 
-    ![DisplayName Mapping](./media/workday-inbound-tutorial/wd_displayname_map.png)
+    ![Screenshot of DisplayName Mapping.](./media/workday-inbound-tutorial/wd_displayname_map.png)
 
 * Extending the above example, let's say you would like to convert city names coming from Workday into shorthand values and then use it to build display names such as *Smith, John (CHI)* or *Doe, Jane (NYC)*, then this result can be achieved using a Switch expression with the Workday *Municipality* attribute as the determinant variable.
 
@@ -766,7 +766,7 @@ This section covers the following aspects of troubleshooting:
    > [!NOTE]
    > Event ID 5 captures agent bootstrap messages to the Microsoft Entra cloud service and hence we filter it while analyzing the log files. 
 
-   ![Windows Event Viewer](media/workday-inbound-tutorial/wd_event_viewer_01.png)
+   ![Screenshot of Windows Event Viewer.](media/workday-inbound-tutorial/wd_event_viewer_01.png)
 
 1. Click **OK** and sort the result view by **Date and Time** column.
 
@@ -775,19 +775,19 @@ This section covers the following aspects of troubleshooting:
 1. Launch the [Microsoft Entra admin center](https://entra.microsoft.com), and navigate to the **Provisioning** section of your Workday provisioning application.
 1. Use the **Columns** button on the Provisioning Logs page to display only the following columns in the view (Date, Activity, Status, Status Reason). This configuration ensures that you focus only on data that is relevant for troubleshooting.
 
-   ![Provisioning log columns](media/workday-inbound-tutorial/wd_audit_logs_00.png)
+   ![Screenshot of Provisioning log columns.](media/workday-inbound-tutorial/wd_audit_logs_00.png)
 
 1. Use the **Target** and **Date Range** query parameters to filter the view. 
    * Set the **Target** query parameter to the "Worker ID" or "Employee ID" of the Workday worker object.
    * Set the **Date Range** to an appropriate time period over which you want to investigate for errors or issues with the provisioning.
 
-   ![Provisioning log filters](media/workday-inbound-tutorial/wd_audit_logs_01.png)
+   ![Screenshot of Provisioning log filters.](media/workday-inbound-tutorial/wd_audit_logs_01.png)
 
 ### Understanding logs for AD User Account create operations
 
 When a new hire in Workday is detected (let's say with Employee ID *21023*), the Microsoft Entra provisioning service attempts to create a new AD user account for the worker and in the process creates 4 provisioning log records as described below:
 
-  [![Provisioning log create ops](media/workday-inbound-tutorial/wd_audit_logs_02.png)](media/workday-inbound-tutorial/wd_audit_logs_02.png#lightbox)
+  [![Screenshot of Provisioning log create ops.](media/workday-inbound-tutorial/wd_audit_logs_02.png)](media/workday-inbound-tutorial/wd_audit_logs_02.png#lightbox)
 
 When you click on any of the provisioning log records, the **Activity Details** page opens up. Here's what the **Activity Details** page displays for each log record type.
 
@@ -810,15 +810,15 @@ When you click on any of the provisioning log records, the **Activity Details** 
 
   To find Provisioning Agent log records corresponding to this AD import operation, open the Windows Event Viewer logs and use the **Find…** menu option to find log entries containing the Matching ID/Joining Property attribute value (in this case *21023*).
 
-  ![Find](media/workday-inbound-tutorial/wd_event_viewer_02.png)
+  ![Screenshot of Find.](media/workday-inbound-tutorial/wd_event_viewer_02.png)
 
   Look for the entry with *Event ID = 9*, which provides you with the LDAP search filter used by the agent to retrieve the AD account. You can verify if this is the right search filter to retrieve unique user entries.
 
-  ![LDAP Search](media/workday-inbound-tutorial/wd_event_viewer_03.png)
+  ![Screenshot of LDAP Search.](media/workday-inbound-tutorial/wd_event_viewer_03.png)
 
   The record that immediately follows it with *Event ID = 2* captures the result of the search operation and if it returned any results.
 
-  ![LDAP Results](media/workday-inbound-tutorial/wd_event_viewer_04.png)
+  ![Screenshot of LDAP Results.](media/workday-inbound-tutorial/wd_event_viewer_04.png)
 
 * **Synchronization rule action** record: This log record displays the results of the attribute mapping rules and configured scoping filters along with the provisioning action that is taken to process the incoming Workday event. Use information in the *Additional Details* section of the log record to troubleshoot issues with the synchronization action. An example record is shown below along with pointers on how to interpret each field.
 
@@ -855,7 +855,7 @@ When you click on any of the provisioning log records, the **Activity Details** 
 
 The manager attribute is a reference attribute in AD. The provisioning service doesn't set the manager attribute as part of the user creation operation. Rather the manager attribute is set as part of an *update* operation after AD account is created for the user. Expanding the example above, let's say a new hire with Employee ID "21451" is activated in Workday and the new hire's manager (*21023*) already has an AD account. In this scenario, searching the Provisioning logs for user 21451 shows up 5 entries.
 
-  [![Manager Update](media/workday-inbound-tutorial/wd_audit_logs_03.png)](media/workday-inbound-tutorial/wd_audit_logs_03.png#lightbox)
+  [![Screenshot of Manager Update.](media/workday-inbound-tutorial/wd_audit_logs_03.png)](media/workday-inbound-tutorial/wd_audit_logs_03.png#lightbox)
 
 The first 4 records are like the ones we explored as part of the user create operation. The 5th record is the export associated with manager attribute update. The log record displays the result of AD account manager update operation, which is performed using the manager's *objectGuid* attribute.
 
@@ -1026,7 +1026,7 @@ To do this change, you must use [Workday Studio](https://community.workday.com/s
 
 10. Select **Add Attribute**.
 
-    ![Workday Studio](./media/workday-inbound-tutorial/wdstudio_aad2.png)
+    ![Screenshot of Workday Studio.](./media/workday-inbound-tutorial/wdstudio_aad2.png)
 
 11. Select **Save** above, and then **Yes** to the dialog. Close the Attribute-Mapping screen if it's still open.
 

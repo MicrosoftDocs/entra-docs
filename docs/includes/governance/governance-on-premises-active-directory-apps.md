@@ -38,13 +38,13 @@ The following prerequisites are required to implement this scenario.
 
 ## Supported groups
 For this scenario, only the following groups are supported:
-  - only cloud created [Security groups](~/fundamentals/concept-learn-about-groups.md#group-types) are supported
-  - these groups must have, assigned or dynamic membership
-  - these groups can only contain on-premises synchronized users and / or cloud created security groups
-  - the on-premises user accounts that are synchronized and are members of this cloud created security group, can be from the same domain or cross-domain, but they all must be from the same forest
-  - these groups are written back with the AD groups scope of [universal](/windows-server/identity/ad-ds/manage/understand-security-groups#group-scope). Your on-premises environment must support the universal group scope
-  - groups that are larger than 50,000 members aren't supported
-  - each direct child nested group counts as one member in the referencing group
+  - Only cloud created [Security groups](~/fundamentals/concept-learn-about-groups.md#group-types) are supported
+  - These groups must have, assigned or dynamic membership
+  - These groups can only contain on-premises synchronized users and / or cloud created security groups
+  - The on-premises user accounts that are synchronized and are members of this cloud created security group, can be from the same domain or cross-domain, but they all must be from the same forest
+  - These groups are written back with the AD groups scope of [universal](/windows-server/identity/ad-ds/manage/understand-security-groups#group-scope). Your on-premises environment must support the universal group scope
+  - Groups that are larger than 50,000 members aren't supported
+  - Each direct child nested group counts as one member in the referencing group
 
 
 ## Supported scenarios
