@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: how-to
-ms.date: 04/09/2024
+ms.date: 07/15/2024
 ms.author: owinfrey
 ms.reviewer: markwahl-msft
 #Customer intent: As an IT admin, I want to ensure access to resources is appropriate and governed.
