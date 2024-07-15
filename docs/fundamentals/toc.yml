@@ -40,6 +40,8 @@ items:
     href: how-to-create-delete-users.yml
   - name: Apply licenses to users
     href: license-users-groups.yml
+  - name: Bulk operations limitations
+    href: bulk-operations-service-limitations.md  
   - name: Users
     expanded: false
     items: 
