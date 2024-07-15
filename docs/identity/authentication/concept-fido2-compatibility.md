@@ -43,13 +43,14 @@ If a user installed an authentication broker, they can choose to sign in with a 
 
 ### Microsoft application support without authentication broker
 
-The following table lists application support for passkey (FIDO2) without an authentication broker.
+The following table lists Microsoft application support for passkey (FIDO2) without an authentication broker.
 
 | Application    | macOS    | iOS      | Android  |
 |----------------|----------|----------|----------|
-| Remote Desktop | &#x2705; | &#x2705; | &#x2705; |
+| Remote Desktop | &#x2705; | &#x2705; | &#10060; |
 
 ### Third-party application support without authentication broker
+
 If the user has yet to install an authentication broker, they can still sign in with a security key when they access MSAL-enabled applications. For more information about requirements for MSAL-enabled applications, see [Support passwordless authentication with FIDO2 keys in apps you develop](~/identity-platform/support-fido2-authentication.md).
 
 ## Web browser support
