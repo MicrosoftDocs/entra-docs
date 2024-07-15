@@ -3,9 +3,9 @@ title: The Global Secure Access client for Windows
 description: Install the Global Secure Access client for Windows.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 04/08/2024
-ms.author: kenwith
-author: kenwith
+ms.date: 07/15/2024
+ms.author: jayrusso
+author: HULKsmashGithub
 manager: amycolannino
 ms.reviewer: lirazb
 ---
