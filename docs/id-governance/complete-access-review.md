@@ -21,17 +21,17 @@ As an administrator, you [create an access review of groups or applications](cre
 ## Prerequisites
  
 - Microsoft Entra ID P2 or Microsoft Entra ID Governance
-- Global Administrator, User Administrator, or Identity Governance Administrator to manage access of reviews on groups and applications. Users who have the Global Administrator role or the Privileged Role Administrator role can manage reviews of role-assignable groups, see [Use Microsoft Entra groups to manage role assignments](../identity/role-based-access-control/groups-concept.md)
+- Global Administrator, User Administrator, or Identity Governance Administrator to manage access of reviews on groups and applications. Users who have the Global Administrator role or the Privileged Role Administrator role can manage reviews of role-assignable groups, see: [Use Microsoft Entra groups to manage role assignments](../identity/role-based-access-control/groups-concept.md)
 - Security readers have read access.
  
-For more information, see [License requirements](access-reviews-overview.md#license-requirements).
+For more information, see: [License requirements](access-reviews-overview.md#license-requirements).
 
  
 ## View the status of an access review
  
 [!INCLUDE [portal updates](../includes/portal-update.md)]
 
-You can track the progress of access reviews as they're completed.
+Do the following steps to track the progress of access reviews as they're completed.
  
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
@@ -91,11 +91,11 @@ To retrieve the results of an access review, both in-progress or completed, sele
 
 You can also retrieve the results of an access review using Microsoft Graph or PowerShell.
 
-You'll first need to locate the [instance](/graph/api/resources/accessreviewinstance) of the access review.  If the [accessReviewScheduleDefinition](/graph/api/resources/accessReviewScheduleDefinition) is a recurring access review, instances represent each recurrence. A review that doesn't recur has exactly one instance. Instances also represent each unique group being reviewed in the schedule definition. If a schedule definition reviews multiple groups, each group has a unique instance for each recurrence.  Every instance contains a list of decisions that reviewers can take action on, with one decision per identity being reviewed.
+You'll first need to locate the [instance](/graph/api/resources/accessreviewinstance) of the access review. If the [accessReviewScheduleDefinition](/graph/api/resources/accessReviewScheduleDefinition) is a recurring access review, instances represent each recurrence. A review that doesn't recur has exactly one instance. Instances also represent each unique group being reviewed in the schedule definition. If a schedule definition reviews multiple groups, each group has a unique instance for each recurrence. Every instance contains a list of decisions that reviewers can take action on, with one decision per identity being reviewed.
 
- Once you have identified the instance, to retrieve the decisions using Graph, call the Graph API to [list decisions from an instance](/graph/api/accessreviewinstance-list-decisions).  If this is a multi-stage review, call the Graph API to [list decisions from a multi-stage access review](/graph/api/accessreviewstage-list-decisions). The caller must either be a user in an appropriate role with an application that has the delegated `AccessReview.Read.All` or `AccessReview.ReadWrite.All` permission, or an application with the `AccessReview.Read.All` or `AccessReview.ReadWrite.All` application permission.  For more information, see the tutorial for how to [review a security group](/graph/tutorial-accessreviews-securitygroup).
+ Once you identify the instance, to retrieve the decisions using Graph, call the Graph API to [list decisions from an instance](/graph/api/accessreviewinstance-list-decisions). If the instance is a multi-stage review, call the Graph API to [list decisions from a multi-stage access review](/graph/api/accessreviewstage-list-decisions). The caller must either be a user in an appropriate role with an application that has the delegated `AccessReview.Read.All` or `AccessReview.ReadWrite.All` permission, or an application with the `AccessReview.Read.All` or `AccessReview.ReadWrite.All` application permission. For more information, see the tutorial for how to [review a security group](/graph/tutorial-accessreviews-securitygroup).
 
-You can also retrieve the decisions In PowerShell with the `Get-MgIdentityGovernanceAccessReviewDefinitionInstanceDecision` cmdlet from the [Microsoft Graph PowerShell cmdlets for Identity Governance](https://www.powershellgallery.com/packages/Microsoft.Graph.Identity.Governance/) module.  The default page size of this API is 100 decision items.
+You can also retrieve the decisions In PowerShell with the `Get-MgIdentityGovernanceAccessReviewDefinitionInstanceDecision` cmdlet from the [Microsoft Graph PowerShell cmdlets for Identity Governance](https://www.powershellgallery.com/packages/Microsoft.Graph.Identity.Governance/) module. The default page size of this API is 100 decision items.
 
 ## Apply the changes
  
@@ -125,7 +125,7 @@ Manually or automatically applying results doesn't have an effect on a group tha
  
 On review creation, the creator can choose between two options for denied guest users in an access review. 
  - Denied guest users can have their access to the resource removed. This is the default.
- - The denied guest user can be blocked from signing in for 30 days, then deleted from the tenant. During the 30-day period the guest user is able to be restored access to the tenant by an administrator. After the 30-day period is completed, if the guest user hasn't had access to the resource granted to them again, they'll be removed from the tenant permanently. In addition, using the Microsoft Entra admin center, a Global Administrator can explicitly [permanently delete a recently deleted user](~/fundamentals/users-restore.yml) before that time period is reached. Once a user has been permanently deleted, the data about that guest user will be removed from active access reviews. Audit information about deleted users remains in the audit log.
+ - The denied guest user can be blocked from signing in for 30 days, then deleted from the tenant. During the 30-day period the guest user is able to be restored access to the tenant by an administrator. After the 30-day period is completed, if the guest user hasn't had access to the resource granted to them again, they'll be removed from the tenant permanently. In addition, using the Microsoft Entra admin center, a Global Administrator can explicitly [permanently delete a recently deleted user](~/fundamentals/users-restore.yml) before that time period is reached. Once a user is permanently deleted, the data about that guest user is removed from active access reviews. Audit information about deleted users remains in the audit log.
  
 ### Actions taken on denied B2B direct connect users
 
