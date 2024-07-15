@@ -51,7 +51,7 @@ This section describes how to enforce compliant network access to Microsoft traf
 1. Create a second Conditional Access policy that requires controls to allow the Global Secure Access Client to connect to the SSE solution (such as MFA, compliant device, TOU). Configure your Conditional Access policy as follows:
    1. **Users**: Select your test user or a pilot group.
    1. **Target resources**:
-     1. For **Select what this policy applies to**, select **Global Secure Access (Preview)**.
+     1. For **Select what this policy applies to**, select **Global Secure Access**.
      1. For **Select the traffic profiles this policy applies to**, select **Microsoft traffic**.
 
         :::image type="content" source="media/sse-deployment-guide-microsoft-traffic/conditional-access-policy-options.png" alt-text="Screenshot of Conditional Access policy options.":::

@@ -26,9 +26,7 @@ Before you use the Azure Monitor workbooks, you must configure Microsoft Entra I
 
 Archiving Microsoft Entra audit logs requires you to have Azure Monitor in an Azure subscription. You can read more about the prerequisites and estimated costs of using Azure Monitor in [Microsoft Entra activity logs in Azure Monitor](~/identity/monitoring-health/concept-log-monitoring-integration-options-considerations.md).
 
-**Prerequisite role**: Global Administrator
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a Global Administrator. Make sure you have access to the resource group containing the Azure Monitor workspace.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator). Make sure you have access to the resource group containing the Azure Monitor workspace.
  
 1. Browse to **Identity** > **Monitoring & health** > **Diagnostic settings**.
 

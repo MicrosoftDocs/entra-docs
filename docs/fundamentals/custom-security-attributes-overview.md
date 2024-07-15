@@ -186,7 +186,7 @@ Microsoft Entra ID provides built-in roles to work with custom security attribut
 
 You can manage custom security attributes programmatically using Microsoft Graph API. For more information, see [Overview of custom security attributes using the Microsoft Graph API](/graph/api/resources/custom-security-attributes-overview).
 
-You can use an API client such as [Graph Explorer](/graph/graph-explorer/graph-explorer-overview) or Postman to more easily try the Microsoft Graph API for custom security attributes.
+You can use an API client such as [Graph Explorer](/graph/graph-explorer/graph-explorer-overview) to more easily try the Microsoft Graph API for custom security attributes.
 
 ![Screenshot that shows a Microsoft Graph API call for custom security attributes.](./media/custom-security-attributes-overview/graph-explorer-success.png)
 
