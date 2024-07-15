@@ -32,7 +32,7 @@ You can customize the default attribute-mappings according to your business need
 
 Follow these steps to access the **Mappings** feature of user provisioning:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 1. A list of all configured apps is shown, including apps that were added from the gallery.
 1. Select any app to load its app management pane, where you can view reports and manage app settings.
@@ -146,7 +146,7 @@ When you're editing the list of supported attributes, the following properties a
 #### Provisioning a custom extension attribute to a SCIM compliant application
 
 The SCIM Request for Comments (RFC) defines a core user and group schema, while also allowing for extensions to the schema to meet your application's needs. To add a custom attribute to a SCIM application:
-   1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
+   1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
    1. Browse to **Identity** > **Applications** > **Enterprise applications**.
    1. Select your application, and then select **Provisioning**.
    1. Under **Mappings**, select the object (user or group) for which you'd like to add a custom attribute.
