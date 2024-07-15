@@ -4,7 +4,7 @@ description: Use this video series to learn about phishing-resistant authenticat
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 07/03/2024
+ms.date: 07/15/2024
 ms.author: gasinh
 author: gargi-sinha
 manager: martinco
