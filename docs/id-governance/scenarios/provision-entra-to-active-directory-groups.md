@@ -1,6 +1,6 @@
 ---
 title: 'Govern on-premises Active Directory based apps (Kerberos) with Microsoft Entra Cloud Sync'
-description: This article a tutorial on how to provision users and groups from and managed in Workday.
+description: This article a tutorial on how to provision users and groups from and managed in Microsft Entra ID to Active Directory.
 author: billmath
 manager: amycolannino
 ms.service: entra-id
