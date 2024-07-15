@@ -79,7 +79,7 @@ To validate group membership references, Microsoft Entra Cloud Sync must query t
 
    :::image type="content" source="media/migrate-group-writeback/migrate-2.png" alt-text="Screenshot of the msDS-ExternalDirectoryObjectID attribute." lightbox="media/migrate-group-writeback/migrate-2.png":::
 
-The following PowerShell script can be used to help automate this step. This script takes all of the groups in the **OU=Groups,DC=Contoso,DC=com** container and copy the adminDescription attribute value to the msDS-ExternalDirectoryObjectID attribute value. Before using this script, update the the variable `$gwbOU` with the DistinguishedName of your group writeback's target organizational unit (OU).
+The following PowerShell script can be used to help automate this step. This script takes all of the groups in the **OU=Groups,DC=Contoso,DC=com** container and copy the adminDescription attribute value to the msDS-ExternalDirectoryObjectID attribute value. Before using this script, update the variable `$gwbOU` with the DistinguishedName of your group writeback's target organizational unit (OU).
 
 ```powershell
 

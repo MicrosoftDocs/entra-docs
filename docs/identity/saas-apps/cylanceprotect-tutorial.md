@@ -100,7 +100,7 @@ Follow these steps to enable Microsoft Entra SSO.
 	| North America|`https://login.cylance.com/EnterpriseLogin/ConsumeSaml`|
 	| South America (SAE1)|`https://login-sae1.cylance.com/EnterpriseLogin/ConsumeSaml`|
 
-1. CylancePROTECT application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes, where as **nameidentifier** is mapped with **user.userprincipalname**. CylancePROTECT application expects **nameidentifier** to be mapped with **user.mail** and remove all other remaining claims, so you need to edit the attribute mapping by clicking on **Edit** icon and change the attribute mapping.
+1. CylancePROTECT application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes, whereas **nameidentifier** is mapped with **user.userprincipalname**. CylancePROTECT application expects **nameidentifier** to be mapped with **user.mail** and remove all other remaining claims, so you need to edit the attribute mapping by clicking on **Edit** icon and change the attribute mapping.
 
 	![image](common/edit-attribute.png)
 
