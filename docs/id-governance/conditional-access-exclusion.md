@@ -102,7 +102,7 @@ Let's say you have a Conditional Access policy that blocks access from certain c
 
 1. The review happens every week.
 
-1. The review never end in order to make sure you're keeping this exclusion group most up to date.
+1. The review never ends in order to make sure you're keeping this exclusion group most up to date.
 
 1. All members of this group are in scope for the review.
 

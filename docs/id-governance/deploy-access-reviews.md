@@ -33,7 +33,7 @@ Access reviews are an [Microsoft Entra ID Governance](identity-governance-overvi
 
 Planning your access reviews deployment is essential to make sure you achieve your desired governance strategy for users in your organization.
 
-### Key benefits
+## Key benefits
 
 The key benefits of enabling access reviews are:
 

@@ -72,8 +72,7 @@ You can enable access reviews when [creating a new access package](entitlement-m
 
 1. Specify the date the reviews start next to **Starting on**.
 
-1. Next, set the **Review frequency** to **Annually**, **Bi-annually**, **Quarterly** or **Monthly**.
-This setting determines how often access reviews occurs.
+1. Next, set the **Review frequency** to **Annually**, **Bi-annually**, **Quarterly** or **Monthly**. This setting determines how often access reviews occur.
 
 1. Set the **Duration** to define how many days each review of the recurring series is open for input from reviewers. For example, you might schedule an annual review that starts on January 1 and is open for review for 30 days so that reviewers have until the end of the month to respond.
 
