@@ -76,13 +76,13 @@ You can convert external users, such as cloud-only and synced users, to internal
     :::image type="content" source="media/convert-external-users-internal/user-properties.png" alt-text="Screenshot showing the user properties with a red box around the Convert to Internal user option.":::
 
 1. In the **Convert to internal user** section, you need to finalize a couple of steps:
-    1. A **user principal name (UPN)**. This value is the new UPN value for the user. For cloud-only users, the UPN domain must be one that is nonfederated. For on-premises synced users, you don't need to provide a UPN. The user continues to use the on-premises credentials.
-    1. Choose whether you would like an auto-generated password.
+    1. Provide a **user principal name (UPN)**. This value is the new UPN value for the user. For cloud-only users, the UPN domain must be one that is nonfederated. For on-premises synced users, you don't need to provide a UPN. The user continues to use the on-premises credentials.
+    1. Check the box if you would like an auto-generated password.
     1. Check the box for **Change email address** to specify an optional new email address for cloud users.
-1. After reviewing the options and making your selected choices, choose **Convert**.
 
     :::image type="content" source="media/convert-external-users-internal/convert.png" alt-text="Screenshot showing the last set of options that must be chosen prior to converting an external user to an internal user.":::
 
+1. After reviewing the options and making your selected choices, choose **Convert**.
 
 ## Related content
 
