@@ -103,7 +103,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	b. In the **Name** textbox, type the attribute name shown for that row.
 
-	c. Leave the **Namespace** blank.
+	c. In the **Namespace** textbox, type `https://zivver.com/SAML/Attributes`.
 
 	d. Select Source as **Attribute**.
 
