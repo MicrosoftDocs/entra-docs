@@ -82,7 +82,7 @@ In this section, you configure how writeback attributes flow from Microsoft Entr
 4. Typically you map the Microsoft Entra ID *userPrincipalName* attribute to Workday *UserID* attribute and map the Microsoft Entra ID *mail* attribute to the Workday *EmailAddress* attribute. 
 
      >[!div class="mx-imgBorder"]
-     >![Entra admin center](./media/workday-inbound-tutorial/workday-writeback-mapping.png)
+     >![Screenshot of the Microsoft Entra admin center.](~/includes/governance/media/workday-inbound-tutorial/workday-writeback-mapping.png)
 
 5. Use the following guidance to map phone number attribute values from Microsoft Entra ID to Workday. See [Writeback expression mapping examples](#writeback-expression-mapping-examples) to configure the right expression mapping for each attribute. 
 
