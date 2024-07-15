@@ -45,7 +45,7 @@ To manage user lifecycle, you'd follow these steps:
 
 ## Manage guest user lifecycle programmatically
 
-To manage user lifecycle programatically using Microsoft Graph, see: [`accessPackageSubject` resource type](/graph/api/resources/accesspackagesubject).
+To manage user lifecycle programmatically using Microsoft Graph, see: [`accessPackageSubject` resource type](/graph/api/resources/accesspackagesubject).
 
 ## Next steps
 
