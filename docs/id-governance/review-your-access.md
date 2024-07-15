@@ -107,7 +107,7 @@ You can try the new experience with the updated user interface in My Access a co
 3. Continue in the section **Perform the access review**.
 
 >[!NOTE]
->If clicking start review takes you to **My Apps** follow the steps listed in the section above titled **My Apps Portal**.
+>If clicking start review takes you to **My Apps** follow the steps listed in the section titled **My Apps Portal**.
 
 ### Directly at My Access
 
@@ -148,7 +148,7 @@ You can also view your pending access reviews by using your browser to open My A
 
     Your selection is submitted and you're returned to the My Access page.
 
-    If you want to change your response, reopen the access reviews page and update your response. You can change your response at any time until the access review has ended.
+    If you want to change your response, reopen the access reviews page and update your response. You can change your response at any time until the access review ends.
 
     > [!NOTE]
     > If you indicated that you no longer need access, you aren't removed immediately. You are removed when the review has ended or when an administrator stops the review.
