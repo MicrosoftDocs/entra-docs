@@ -22,7 +22,7 @@ External user conversion handles the conversion of external users into internal 
 - **Internal users** are users who authenticate with the local tenant.
 - **External users** are users who authenticate via a method not managed by the host organization, such as another organization's Microsoft Entra ID, Google federation, or Microsoft account. Many external users have a *userType* of `guest`, but there's no formal relation between *userType* and how a user signs in. External users who have a *userType* of `member`, could also be eligible for conversion.
 
-External user conversion can be performed using [Microsoft Graph API](https://learn.microsoft.com/graph/use-the-api) or the Microsoft Entra ID Portal.
+External user conversion can be performed using [Microsoft Graph API](https://graph.microsoft.com) or the Microsoft Entra ID Portal.
 
 ## Converting external users
 
