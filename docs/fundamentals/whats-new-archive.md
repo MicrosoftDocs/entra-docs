@@ -241,7 +241,7 @@ For more information, see: [Require an app protection policy on Windows devices]
 
 ---
 
-### General Availability - Microsoft Security email update and Resources for Azure AD rename to Microsoft Entra ID 
+### General Availability - Microsoft Security email update and Resources for Azure Active Directory rename to Microsoft Entra ID 
 
 **Type:** Plan for change   
 **Service category:** Other                     
@@ -467,7 +467,7 @@ You can also now protect privileged actions inside of cross-tenant access settin
 
 ---
 
-### General Availability - Additional settings in Entitlement Management auto-assignment policy
+### General Availability - Additional settings in Entitlement Management autoassignment policy
  
 **Type:** Changed feature    
 **Service category**: Entitlement Management    
@@ -493,7 +493,7 @@ An administrator can configure that when a guest brought in through entitlement 
 **Service category:** Continuous Access Evaluation                              
 **Product capability:** Access Control                    
 
-Strictly enforce Conditional Access policies in real-time using Continuous Access Evaluation.  Enable services like Microsoft Graph, Exchange Online, and SharePoint Online to block access requests from disallowed locations as part of a layered defense against token replay and other unauthorized access. For more information, see blog: [Public Preview: Strictly Enforce Location Policies with Continuous Access Evaluation](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/public-preview-strictly-enforce-location-policies-with/ba-p/3773133) and documentation:
+Strictly enforce Conditional Access policies in real-time using Continuous Access Evaluation. Enable services like Microsoft Graph, Exchange Online, and SharePoint Online to block access requests from disallowed locations as part of a layered defense against token replay and other unauthorized access. For more information, see blog: [Public Preview: Strictly Enforce Location Policies with Continuous Access Evaluation](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/public-preview-strictly-enforce-location-policies-with/ba-p/3773133) and documentation:
 [Strictly enforce location policies using continuous access evaluation (preview)](~/identity/conditional-access/concept-continuous-access-evaluation-strict-enforcement.md).
 
 ---
@@ -601,7 +601,7 @@ Microsoft Entra ID Governance includes the ability for a customer to configure a
 **Service category:** Entitlement Management                          
 **Product capability:** Entitlement Management                
 
-Custom extensions in Entitlement Management are now generally available, and allow you to extend the access lifecycle with your organization-specific processes and business logic when access is requested or about to expire. With custom extensions you can create tickets for manual access provisioning in disconnected systems, send custom notifications to additional stakeholders, or automate additional access-related configuration in your business applications such as assigning the correct sales region in Salesforce. You can also leverage custom extensions to embed external governance, risk, and compliance (GRC) checks in the access request.
+Custom extensions in Entitlement Management are now generally available, and allow you to extend the access lifecycle with your organization-specific processes and business logic when access is requested or about to expire. With custom extensions you can create tickets for manual access provisioning in disconnected systems, send custom notifications to other stakeholders, or automate other access-related configuration in your business applications such as assigning the correct sales region in Salesforce. You can also use custom extensions to embed external governance, risk, and compliance (GRC) checks in the access request.
 
 For more information, see:
 
@@ -626,7 +626,7 @@ Conditional Access templates are predefined set of conditions and controls that 
 **Service category:** Lifecycle Workflows                            
 **Product capability:** Identity Governance                  
 
-User identity lifecycle is a critical part of an organization’s security posture, and when managed correctly, can have a positive impact on their users’ productivity for Joiners, Movers, and Leavers. The ongoing digital transformation is accelerating the need for good identity lifecycle management. However, IT and security teams face enormous challenges managing the complex, time-consuming, and error-prone manual processes necessary to execute the required onboarding and offboarding tasks for hundreds of employees at once. This is an ever present and complex issue IT admins continue to face with digital transformation across security, governance, and compliance.
+User identity lifecycle is a critical part of an organization’s security posture, and when managed correctly, can have a positive affect on their users’ productivity for Joiners, Movers, and Leavers. The ongoing digital transformation is accelerating the need for good identity lifecycle management. However, IT and security teams face enormous challenges managing the complex, time-consuming, and error-prone manual processes necessary to execute the required onboarding and offboarding tasks for hundreds of employees at once. This is an ever present and complex issue IT admins continue to face with digital transformation across security, governance, and compliance.
 
 Lifecycle Workflows, one of our newest Microsoft Entra ID Governance capabilities is now generally available to help organizations further optimize their user identity lifecycle. For more information, see: [Lifecycle Workflows is now generally available!](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/lifecycle-workflows-is-now-generally-available/ba-p/2466931)
 
@@ -642,7 +642,7 @@ Update the Microsoft Entra ID and Microsoft 365 sign in experience with new Comp
 
 ---
 
-### General Availability - Enabling customization capabilities for the Self-Service Password Reset (SSPR) hyperlinks, footer hyperlinks and browser icons in Company Branding.
+### General Availability - Enabling customization capabilities for the Self-Service Password Reset (SSPR) hyperlinks, footer hyperlinks, and browser icons in Company Branding.
 
 **Type:** Changed feature       
 **Service category:** User Experience and Management                            
@@ -658,7 +658,7 @@ Update the Company Branding functionality on the Microsoft Entra ID/Microsoft 36
 **Service category:** Access Reviews                            
 **Product capability:** Identity Governance                  
 
-This feature provides Machine Learning based recommendations to the reviewers of Azure AD Access Reviews to make the review experience easier and more accurate. The recommendation leverages machine learning based scoring mechanism and compares users’ relative affiliation with other users in the group, based on the organization’s reporting structure. For more information, see:  [Review recommendations for Access reviews](~/id-governance/review-recommendations-access-reviews.md) and [Introducing Machine Learning based recommendations in Azure AD Access reviews](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/introducing-machine-learning-based-recommendations-in-azure-ad/ba-p/2466923)
+This feature provides Machine Learning based recommendations to the reviewers of Access Reviews to make the review experience easier and more accurate. The recommendation uses machine learning based scoring mechanism and compares users’ relative affiliation with other users in the group, based on the organization’s reporting structure. For more information, see:  [Review recommendations for Access reviews](~/id-governance/review-recommendations-access-reviews.md) and [Introducing Machine Learning based recommendations in Access reviews](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/introducing-machine-learning-based-recommendations-in-azure-ad/ba-p/2466923)
 
 ---
 
@@ -682,13 +682,13 @@ You can minimize the number of persistent administrators in applications such as
 
 ---
 
-### Public Preview - Graph beta API for PIM security alerts on Azure AD roles
+### Public Preview - Graph beta API for PIM security alerts on Azure Active Directory roles
 
 **Type:** New feature       
 **Service category:** Privileged Identity Management                            
 **Product capability:** Privileged Identity Management                 
 
-Announcing API support (beta) for managing PIM security alerts for Azure AD roles. [Azure Privileged Identity Management (PIM)](~/id-governance/privileged-identity-management/index.yml) generates alerts when there's suspicious or unsafe activity in your organization in Azure Active Directory (Azure AD), part of Microsoft Entra. You can now manage these alerts using REST APIs. These alerts can also be [managed through the Azure portal](~/id-governance/privileged-identity-management/pim-resource-roles-configure-alerts.md). For more information, see:  [`unifiedRoleManagementAlert` resource type](/graph/api/resources/unifiedrolemanagementalert).
+Announcing API support (beta) for managing PIM security alerts for Azure Active Directory roles. [Azure Privileged Identity Management (PIM)](~/id-governance/privileged-identity-management/index.yml) generates alerts when there's suspicious or unsafe activity in your organization in Azure Active Directory, part of Microsoft Entra. You can now manage these alerts using REST APIs. These alerts can also be [managed through the Azure portal](~/id-governance/privileged-identity-management/pim-resource-roles-configure-alerts.md). For more information, see:  [`unifiedRoleManagementAlert` resource type](/graph/api/resources/unifiedrolemanagementalert).
 
 ---
 
@@ -886,7 +886,7 @@ Starting today the modernized experience for viewing previously accepted terms o
 **Service category:** Privileged Identity Management                               
 **Product capability:** Privileged Identity Management                 
 
-Privileged Identity Management for Groups is now generally available. With this feature, you have the ability to grant users just-in-time membership in a group, which in turn provides access to Azure Active Directory roles, Azure roles, Azure SQL, Azure Key Vault, Intune, other application roles, and third-party applications. Through one activation, you can conveniently assign a combination of permissions across different applications and RBAC systems.
+Privileged Identity Management for Groups is now generally available. With this feature, you have the ability to grant users just-in-time membership in a group, which in turn provides access to Azure Active Directory roles, Azure roles, Azure SQL, Azure Key Vault, Intune, other application roles, and third-party applications. Through one activation, you can conveniently assign a combination of permissions across different applications and Role-Based Access Control systems.
 
 PIM for Groups offers can also be used for just-in-time ownership. As the owner of the group, you can manage group properties, including membership. For more information, see: [Privileged Identity Management (PIM) for Groups](~/id-governance/privileged-identity-management/concept-pim-for-groups.md).
 
