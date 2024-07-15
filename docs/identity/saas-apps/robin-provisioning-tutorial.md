@@ -74,7 +74,7 @@ Before configuring Robin for automatic user provisioning with Microsoft Entra ID
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users and/or groups in Robin based on user and/or group assignments in Microsoft Entra ID.
 
 > [!TIP]
-> You may also choose to enable SAML-based single sign-on for Robin, following the instructions provided in the [Robin Single sign-on tutorial](./robin-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features compliment each other
+> You may also choose to enable SAML-based single sign-on for Robin, following the instructions provided in the [Robin Single sign-on tutorial](./robin-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features complement each other
 
 <a name='to-configure-automatic-user-provisioning-for-robin-in-azure-ad'></a>
 

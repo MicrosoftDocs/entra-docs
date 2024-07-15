@@ -75,7 +75,7 @@ Starting June 2024, we're releasing the capability to manage user status (Enforc
 **Service category:** B2C - Consumer Identity Management    
 **Product capability:** B2B/B2C    
 
-We've improved the experience when using Microsoft Entra External ID as an identity provider for Azure App Service’s built-in authentication, simplifying the process of configuring authentication and authorization for external-facing apps. You can complete initial configuration directly from the App Service authentication setup without switching into the external tenant. For more information, see: [Quickstart: Add app authentication to your web app running on Azure App Service](/azure/app-service/scenario-secure-app-authentication-app-service?toc=%2fentra%2fexternal-id%2ftoc.json&bc=%2fentra%2fexternal-id%2fbreadcrumb%2ftoc.json&tabs=external-configuration)
+We improved the experience when using Microsoft Entra External ID as an identity provider for Azure App Service’s built-in authentication, simplifying the process of configuring authentication and authorization for external-facing apps. You can complete initial configuration directly from the App Service authentication setup without switching into the external tenant. For more information, see: [Quickstart: Add app authentication to your web app running on Azure App Service](/azure/app-service/scenario-secure-app-authentication-app-service?toc=%2fentra%2fexternal-id%2ftoc.json&bc=%2fentra%2fexternal-id%2fbreadcrumb%2ftoc.json&tabs=external-configuration)
 
 ---
 
@@ -85,7 +85,7 @@ We've improved the experience when using Microsoft Entra External ID as an ident
 **Service category:** Microsoft Authenticator App    
 **Product capability:** User Authentication    
 
-In July, enhancements for the Microsoft Authenticator app UX will roll out. The account details page of a user account will be reorganized to help users better understand, and interact with, the information and buttons on the screen. Key actions that a user can do today will still be available in the refactored page, but they'll be organized in three sections or categories that will help better communicate to users:
+In July, enhancements for the Microsoft Authenticator app UX roll-out. The account details page of a user account will be reorganized to help users better understand, and interact with, the information and buttons on the screen. Key actions that a user can do today will still be available in the refactored page, but they're organized in three sections or categories that help better communicate to users:
 
 - Credentials configured in the app
 - Additional sign in methods they can configure
@@ -111,9 +111,9 @@ In addition to providing global SLA performance, Microsoft Entra ID reports tena
 
 We're introducing a new simple way for Frontline Workers to authenticate in Microsoft Entra ID with a QR code and PIN, eliminating the need to enter long UPNs and alphanumeric passwords multiple times during their shift. 
 
-With the private preview release of this feature in August 2024, all users in your tenant see a new link ‘Sign in with QR code’ on navigating to https://login.microsoftonline.com > ‘*Sign-in options*’ > ‘*Sign in to an organization*’ page. This new link, ‘Sign in with QR code’, will be visible only on mobile devices (Android/iOS/iPadOS). If you are not participating in the private preview, users from your tenant won't be able to sign-in through this method while we're still in private preview. They'll receive an error message if they try to sign-in. 
+With the private preview release of this feature in August 2024, all users in your tenant see a new link ‘Sign in with QR code’ on navigating to https://login.microsoftonline.com > ‘*Sign-in options*’ > ‘*Sign in to an organization*’ page. This new link, ‘Sign in with QR code’, will be visible only on mobile devices (Android/iOS/iPadOS). If you aren't participating in the private preview, users from your tenant won't be able to sign-in through this method while we're still in private preview. They receive an error message if they try to sign-in. 
 
-The feature will have a ‘preview’ tag until it's generally available. Your organization needs to be enabled to test this feature. Broad testing will be available in public preview, which we'll announce later.   
+The feature has a ‘preview’ tag until it's generally available. Your organization needs to be enabled to test this feature. Broad testing will be available in public preview, which we'll announce later.   
 
 While the feature is in private preview, no technical support is provided. Learn more about support during previews here: [Microsoft Entra ID preview program information](../fundamentals/licensing-preview-info.md).
 
@@ -121,13 +121,13 @@ While the feature is in private preview, no technical support is provided. Learn
 
 ## May 2024
 
-### General Availability - Azure China now supports My sign-ins and MFA/SSPR Combined Registration
+### General Availability - Azure China 21Vianet now supports My sign-ins and MFA/SSPR Combined Registration
 
 **Type:** Changed feature    
 **Service category:** MFA        
 **Product capability:** Identity Security & Protection        
 
-Starting end of June 2024, all organizations utilizing Microsoft Azure in China (operated by 21Vianet) will now have access to My Sign-ins activity reporting, and will be required to use the combined security information registration end-user experience for MFA and SSPR. As result of enablement users will now see a unified SSPR and MFA registration experience when prompted to register for SSPR or MFA. For more information, see: [Combined security information registration for Microsoft Entra overview](../identity/authentication/concept-registration-mfa-sspr-combined.md). 
+Starting end of June 2024, all organizations utilizing Microsoft Azure China 21Vianet will now have access to My Sign-ins activity reporting, and will be required to use the combined security information registration end-user experience for MFA and SSPR. As result of enablement users will now see a unified SSPR and MFA registration experience when prompted to register for SSPR or MFA. For more information, see: [Combined security information registration for Microsoft Entra overview](../identity/authentication/concept-registration-mfa-sspr-combined.md). 
 
 ---
 
@@ -234,7 +234,7 @@ Due to popular demand and increased confidence in the stability of the propertie
 **Service category:** Other    
 **Product capability:** Developer Experience    
 
-Starting August 2024, new Microsoft Entra applications created using any interface (including the Microsoft Entra admin center, Azure portal, Powershell/CLI, or the Microsoft Graph application API) will have the default value of the 'requestedAccessTokenVersion' property in the app registration set to '2'; this is a change from the previous default of 'null' (meaning '1').  This means that new resource applications receive v2 access tokens instead of v1 by default.  This improves the security of apps. For more information on differences between token versions, see: [Access tokens in the Microsoft identity platform](../identity-platform/access-tokens.md) and [Access token claims reference](../identity-platform/access-token-claims-reference.md).
+Starting August 2024, new Microsoft Entra applications created using any interface (including the Microsoft Entra admin center, Azure portal, Powershell/CLI, or the Microsoft Graph application API) will have the default value of the 'requestedAccessTokenVersion' property in the app registration set to '2'; this is a change from the previous default of 'null' (meaning '1'). This means that new resource applications receive v2 access tokens instead of v1 by default. This improves the security of apps. For more information on differences between token versions, see: [Access tokens in the Microsoft identity platform](../identity-platform/access-tokens.md) and [Access token claims reference](../identity-platform/access-token-claims-reference.md).
 
 ---
 
@@ -581,7 +581,7 @@ With API-driven inbound provisioning, Microsoft Entra ID provisioning service no
 **Service category:** My Security Info    
 **Product capability:** End User Experiences        
 
-Now Generally Available, My Sign Ins [(My Sign-Ins (microsoft.com))](https://mysignins.microsoft.com/) supports end users changing their passwords inline. When a user authenticates with a password and an MFA credential, they're able to are able to change their password without entering their existing password. Beginning April 1, through a phased rollout, traffic from the [Change password (windowsazure.com)](https://account.activedirectory.windowsazure.com/ChangePassword.aspx) portal will redirect to the new My Sign Ins change experience. The [Change password (windowsazure.com)](https://account.activedirectory.windowsazure.com/ChangePassword.aspx) will no longer be available after June 2024, but will continue to redirect to the new experience.
+Now Generally Available, My Sign Ins [(My sign-ins (microsoft.com))](https://mysignins.microsoft.com/) supports end users changing their passwords inline. When a user authenticates with a password and an MFA credential, they're able to are able to change their password without entering their existing password. Beginning April 1, through a phased rollout, traffic from the [Change password (windowsazure.com)](https://account.activedirectory.windowsazure.com/ChangePassword.aspx) portal will redirect to the new My Sign Ins change experience. The [Change password (windowsazure.com)](https://account.activedirectory.windowsazure.com/ChangePassword.aspx) will no longer be available after June 2024, but will continue to redirect to the new experience.
 
 
 For more information, see: 
@@ -689,106 +689,6 @@ For more information about how to better secure your organization by using autom
 In February 2024 we added the following 10 new applications in our App gallery with Federation support:
 
 [Presswise](../identity/saas-apps/presswise-tutorial.md), [Stonebranch Universal Automation Center (SaaS Cloud)](../identity/saas-apps/stonebranch-universal-automation-center-saas-cloud-tutorial.md), [ProductPlan](../identity/saas-apps/productplan-tutorial.md), [Bigtincan for Outlook](https://www.bigtincan.com/content/), [Blinktime](https://www.blinktime.io/), [Stargo](http://www.stargo.co/), [Garage Hive BC v2](https://garagehive.co.uk/), [Avochato](https://www.avochato.com/), [Luscii](https://vitals.luscii.com/), [LEVR](https://levr.work/), [XM Discover](../identity/saas-apps/xm-discover-tutorial.md), [Sailsdock](https://www.sailsdock.no/), [Mercado Eletronico SAML](../identity/saas-apps/mercado-eletronico-saml-tutorial.md), [Moveworks](../identity/saas-apps/moveworks-tutorial.md), [Silbo](https://app.ambuliz.com/), [Alation Data Catalog](../identity/saas-apps/alation-data-catalog-tutorial.md), [Papirfly SSO](../identity/saas-apps/papirfly-sso-tutorial.md), [Secure Cloud User Integration](https://opentextcybersecurity.com/), [AlbertStudio](https://sandbox.albertinvent.com/), [Automatic Email Manager](https://www.automatic-email-manager.com/?utm_source=azuregallery), [Streamboxy](https://en.streamboxy.com/), [NewHotel PMS](http://www.newhotelcloud.com/), [Ving Room](https://www.letsving.com/), [Trevanna Tracks](../identity/saas-apps/trevanna-tracks-tutorial.md), [Alteryx Server](../identity/saas-apps/alteryx-server-tutorial.md), [RICOH Smart Integration](https://www.ricoh.com/), [Genius](), [Othership Workplace Scheduler](), [GitHub Enterprise Managed User - ghe.com](../identity/saas-apps/github-enterprise-managed-user-tutorial.md),[Thumb Technologies](https://www.thumb.is/), [Freightender SSO for TRP (Tender Response Platform)](../identity/saas-apps/freightender-sso-for-trp-tender-response-platform-tutorial.md), [BeWhere Portal (UPS Access)](http://www.bewhere.com/), [Flexiroute](https://www.flexiroute.net/), [SEEDL](https://www.seedlgroup.com/), [Isolocity](https://www.isolocity.com/), [SpotDraft](../identity/saas-apps/spotdraft-tutorial.md), [Blinq](../identity/saas-apps/blinq-tutorial.md), [Cisco Phone OBTJ](https://www.cisco.com/), [Applitools Eyes](../identity/saas-apps/applitools-eyes-tutorial.md).
-
-You can also find the documentation of all the applications from here https://aka.ms/AppsTutorial.
-
-For listing your application in the Microsoft Entra ID app gallery, read the details here https://aka.ms/AzureADAppRequest.
-
----
-
-## January 2024
-
-### Generally Availability - New Microsoft Entra Home page
-
-**Type:** Changed feature    
-**Service category:** N/A    
-**Product capability:** Directory    
-
-We redesigned the Microsoft Entra admin center's homepage to help you do the following: 
-
-- Learn about the product suite 
-- Identify opportunities to maximize feature value 
-- Stay up to date with recent announcements, new features, and more!
-
-See the new experience here: https://entra.microsoft.com/
-
----
-
-### Public Preview - Granular Certificate-Based Authentication Configuration in Conditional Access
-
-**Type:** New feature    
-**Service category:** Conditional Access    
-**Product capability:** Identity Security & Protection    
-
-With the authentication strength capability in Conditional Access, you can now create a custom authentication strength policy, with advanced certificate-based authentication (CBA) options to allow access based on certificate issuer or policy OIDs. For external users whose MFA is trusted from partners' Microsoft Entra ID tenant, access can also be restricted based on these properties. For more information, see: [Custom Conditional Access authentication strengths](../identity/authentication/concept-authentication-strength-advanced-options.md).
-
----
-
-### Generally Availability - Conditional Access filters for apps
-
-**Type:** New feature    
-**Service category:** Conditional Access    
-**Product capability:** Identity Security & Protection    
-
-Filters for apps in Conditional Access simplify policy management by allowing admins to tag applications with custom security, and target them in Conditional Access policies, instead of using direct assignments. With this feature, customers can scale up their policies, and protect any number of apps. For more information, see: [Conditional Access: Filter for applications](../identity/conditional-access/concept-filter-for-applications.md)
-
----
-
-### Public preview - Cross-tenant manager synchronization
-
-**Type:** New feature    
-**Service category:** Provisioning    
-**Product capability:** Identity Governance    
-
-Cross-tenant synchronization now supports synchronizing the manager attribute across tenants. For more information, see: [Attributes](../identity/multi-tenant-organizations/cross-tenant-synchronization-overview.md#attributes).
-
----
-
-### General Availability- Microsoft Defender for Office alerts in Identity Protection
-
-**Type:** New feature    
-**Service category:** Identity Protection        
-**Product capability:** Identity Security & Protection        
-
-The *Suspicious sending patterns* risk detection type is discovered using information provided by Microsoft Defender for Office (MDO). This alert is generated when someone in your organization has sent suspicious email, and is either at risk of being restricted from sending email, or has already been restricted from sending email. This detection moves users to medium risk, and only fires in organizations that have deployed MDO. For more information, see: [What are risk detections?](../id-protection/concept-identity-protection-risks.md).
-
----
-
-### Public preview - New Microsoft Entra recommendation to migrate off MFA Server
-
-**Type:** New feature    
-**Service category:** MFA        
-**Product capability:** User Authentication        
-
-We've released a new recommendation in the Microsoft Entra admin center for customers to move off MFA Server to Microsoft Entra multifactor authentication. MFA Server will be retired on September 30, 2024. Any customers with MFA Server activity in the last seven days see the recommendation that includes details about their current usage, and steps on how to move to Microsoft Entra multifactor authentication. For more information, see:  [Migrate from MFA Server to Microsoft Entra multifactor authentication](../identity/authentication/how-to-migrate-mfa-server-to-azure-mfa.md).
-
----
-
-### Public Preview - New provisioning connectors in the Microsoft Entra Application Gallery - January 2024
-
-**Type:** New feature   
-**Service category:** App Provisioning               
-**Product capability:** 3rd Party Integration    
-
-We added the following new applications in our App gallery with Provisioning support. You can now automate creating, updating, and deleting of user accounts for these newly integrated apps:
-
-- [Personify Inc](../identity/saas-apps/personify-inc-provisioning-tutorial.md)
-- [Screensteps](../identity/saas-apps/screensteps-provisioning-tutorial.md)
-- [WiggleDesk](../identity/saas-apps/wiggledesk-provisioning-tutorial.md)
-
-For more information about how to better secure your organization by using automated user account provisioning, see: [What is app provisioning in Microsoft Entra ID?](~/identity/app-provisioning/user-provisioning.md).
-
----
-
-### General Availability - New Federated Apps available in Microsoft Entra Application gallery - January 2024
-
-**Type:** New feature   
-**Service category:** Enterprise Apps                
-**Product capability:** 3rd Party Integration          
-
-In January 2024 we added the following new applications in our App gallery with Federation support:
-
-[Boeing ToolBox](https://www.boeing.com/), [Kloud Connect Practice Management](https://www.kloudconnect.com.au/), [トーニチ・ネクスタ・メイシ ( Tonichi Nexta Meishi )](../identity/saas-apps/tonicdm-tutorial.md), [Vinkey](https://vinkey.app/), [Cognito Forms](https://www.cognitoforms.com/), [Ocurus](../identity/saas-apps/ocurus-tutorial.md), [Magister](https://www.magister.nl/), [eFlok](../identity/saas-apps/eflok-tutorial.md), [GoSkills](https://www.goskills.com/), [FortifyData](https://fortifydata.com/), [Toolsfactory platform, Briq](https://toolsfactory.nl/en/ogsm-tool/), [Mailosaur](../identity/saas-apps/mailosaur-tutorial.md), [Astro](../identity/saas-apps/astro-tutorial.md), [JobDiva / Teams VOIP Integration](https://www.jobdiva.com/), [Colossyan SAML](../identity/saas-apps/colossyan-saml-tutorial.md), [CallTower Connect](https://www.calltower.com/calltower-connect/), [Jellyfish](https://cogitogroup.net/jellyfish/), [MetLife Legal Plans Member App](../identity/saas-apps/metlife-legal-plans-member-app-tutorial.md), [Navigo Cloud SAML](../identity/saas-apps/navigo-cloud-saml-tutorial.md), [Delivery Scheduling Tool](../identity/saas-apps/delivery-scheduling-tool-tutorial.md), [Highspot for MS Teams](https://app.highspot.com/signin), [Reach 360](../identity/saas-apps/reach-360-tutorial.md), [Fareharbor SAML SSO](../identity/saas-apps/fareharbor-saml-sso-tutorial.md), [HPE Aruba Networking EdgeConnect Orchestrator](../identity/saas-apps/hpe-aruba-networking-edgeconnect-orchestrator-tutorial.md), [Terranova Security Awareness Platform](../identity/saas-apps/terranova-security-awareness-platform-tutorial.md).
 
 You can also find the documentation of all the applications from here https://aka.ms/AppsTutorial.
 

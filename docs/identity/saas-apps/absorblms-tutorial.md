@@ -101,7 +101,7 @@ Follow these steps to enable Microsoft Entra SSO.
     > [!NOTE]
     > These values are not real. Update these values with the actual Identifier and Reply URL. Contact [Absorb LMS Client support team](https://support.absorblms.com/hc/) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-1. The following screenshot shows the list of default attributes, where as **nameidentifier** is mapped with **user.userprincipalname**.
+1. The following screenshot shows the list of default attributes, whereas **nameidentifier** is mapped with **user.userprincipalname**.
 
     ![image](common/edit-attribute.png)
 

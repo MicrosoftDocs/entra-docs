@@ -75,7 +75,7 @@ Before configuring Airstack for automatic user provisioning with Microsoft Entra
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users and/or groups in Airstack based on user and/or group assignments in Microsoft Entra ID.
 
 > [!TIP]
-> You may also choose to enable SAML-based single sign-on for Airstack, following the instructions provided in the [Airstack Single sign-on tutorial](./airstack-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features compliment each other
+> You may also choose to enable SAML-based single sign-on for Airstack, following the instructions provided in the [Airstack Single sign-on tutorial](./airstack-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features complement each other
 
 <a name='to-configure-automatic-user-provisioning-for-airstack-in-azure-ad'></a>
 
