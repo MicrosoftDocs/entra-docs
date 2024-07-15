@@ -75,7 +75,7 @@ Starting June 2024, we're releasing the capability to manage user status (Enforc
 **Service category:** B2C - Consumer Identity Management    
 **Product capability:** B2B/B2C    
 
-We've improved the experience when using Microsoft Entra External ID as an identity provider for Azure App Service’s built-in authentication, simplifying the process of configuring authentication and authorization for external-facing apps. You can complete initial configuration directly from the App Service authentication setup without switching into the external tenant. For more information, see: [Quickstart: Add app authentication to your web app running on Azure App Service](/azure/app-service/scenario-secure-app-authentication-app-service?toc=%2fentra%2fexternal-id%2ftoc.json&bc=%2fentra%2fexternal-id%2fbreadcrumb%2ftoc.json&tabs=external-configuration)
+We improved the experience when using Microsoft Entra External ID as an identity provider for Azure App Service’s built-in authentication, simplifying the process of configuring authentication and authorization for external-facing apps. You can complete initial configuration directly from the App Service authentication setup without switching into the external tenant. For more information, see: [Quickstart: Add app authentication to your web app running on Azure App Service](/azure/app-service/scenario-secure-app-authentication-app-service?toc=%2fentra%2fexternal-id%2ftoc.json&bc=%2fentra%2fexternal-id%2fbreadcrumb%2ftoc.json&tabs=external-configuration)
 
 ---
 
@@ -85,7 +85,7 @@ We've improved the experience when using Microsoft Entra External ID as an ident
 **Service category:** Microsoft Authenticator App    
 **Product capability:** User Authentication    
 
-In July, enhancements for the Microsoft Authenticator app UX rolls out. The account details page of a user account will be reorganized to help users better understand, and interact with, the information and buttons on the screen. Key actions that a user can do today will still be available in the refactored page, but they are organized in three sections or categories that help better communicate to users:
+In July, enhancements for the Microsoft Authenticator app UX roll-out. The account details page of a user account will be reorganized to help users better understand, and interact with, the information and buttons on the screen. Key actions that a user can do today will still be available in the refactored page, but they're organized in three sections or categories that help better communicate to users:
 
 - Credentials configured in the app
 - Additional sign in methods they can configure
@@ -121,13 +121,13 @@ While the feature is in private preview, no technical support is provided. Learn
 
 ## May 2024
 
-### General Availability - Azure China now supports My sign-ins and MFA/SSPR Combined Registration
+### General Availability - Azure China 21Vianet now supports My sign-ins and MFA/SSPR Combined Registration
 
 **Type:** Changed feature    
 **Service category:** MFA        
 **Product capability:** Identity Security & Protection        
 
-Starting end of June 2024, all organizations utilizing Microsoft Azure in China (operated by 21Vianet) will now have access to My Sign-ins activity reporting, and will be required to use the combined security information registration end-user experience for MFA and SSPR. As result of enablement users will now see a unified SSPR and MFA registration experience when prompted to register for SSPR or MFA. For more information, see: [Combined security information registration for Microsoft Entra overview](../identity/authentication/concept-registration-mfa-sspr-combined.md). 
+Starting end of June 2024, all organizations utilizing Microsoft Azure China 21Vianet will now have access to My Sign-ins activity reporting, and will be required to use the combined security information registration end-user experience for MFA and SSPR. As result of enablement users will now see a unified SSPR and MFA registration experience when prompted to register for SSPR or MFA. For more information, see: [Combined security information registration for Microsoft Entra overview](../identity/authentication/concept-registration-mfa-sspr-combined.md). 
 
 ---
 
@@ -342,7 +342,7 @@ Custom authentication extensions allow you to customize the Microsoft Entra auth
 
 Microsoft Entra organizations could previously have a maximum of 5,000 dynamic groups and dynamic administrative units combined. 
 
-We have increased this quota to 15000. For example, you can now have 5,000 dynamic groups and 10,000 dynamic AUs (or any other combination that adds up to 15k). You don't need to do anything to take advantage of this change - its available right now. For more information, see: [Microsoft Entra service limits and restrictions](../identity/users/directory-service-limits-restrictions.md).
+We have increased this quota to 15000. For example, you can now have 5,000 dynamic groups and 10,000 dynamic AUs (or any other combination that adds up to 15k). You don't need to do anything to take advantage of this change - it's available right now. For more information, see: [Microsoft Entra service limits and restrictions](../identity/users/directory-service-limits-restrictions.md).
 
 ---
 
@@ -581,7 +581,7 @@ With API-driven inbound provisioning, Microsoft Entra ID provisioning service no
 **Service category:** My Security Info    
 **Product capability:** End User Experiences        
 
-Now Generally Available, My Sign Ins [(My Sign-Ins (microsoft.com))](https://mysignins.microsoft.com/) supports end users changing their passwords inline. When a user authenticates with a password and an MFA credential, they're able to are able to change their password without entering their existing password. Beginning April 1, through a phased rollout, traffic from the [Change password (windowsazure.com)](https://account.activedirectory.windowsazure.com/ChangePassword.aspx) portal will redirect to the new My Sign Ins change experience. The [Change password (windowsazure.com)](https://account.activedirectory.windowsazure.com/ChangePassword.aspx) will no longer be available after June 2024, but will continue to redirect to the new experience.
+Now Generally Available, My Sign Ins [(My sign-ins (microsoft.com))](https://mysignins.microsoft.com/) supports end users changing their passwords inline. When a user authenticates with a password and an MFA credential, they're able to are able to change their password without entering their existing password. Beginning April 1, through a phased rollout, traffic from the [Change password (windowsazure.com)](https://account.activedirectory.windowsazure.com/ChangePassword.aspx) portal will redirect to the new My Sign Ins change experience. The [Change password (windowsazure.com)](https://account.activedirectory.windowsazure.com/ChangePassword.aspx) will no longer be available after June 2024, but will continue to redirect to the new experience.
 
 
 For more information, see: 
