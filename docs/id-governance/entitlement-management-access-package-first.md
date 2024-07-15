@@ -7,7 +7,7 @@ editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: tutorial
-ms.date: 03/11/2024
+ms.date: 07/15/2024
 ms.author: owinfrey
 ms.reviewer: markwahl-msft
 #Customer intent: As a IT admin, I want step-by-step instructions of the entire workflow for how to use entitlement management so that I can start to use in my organization.
@@ -75,7 +75,7 @@ An *access package* is a bundle of resources that a team or project needs and is
     > Other least privilege roles that can complete this task include the Catalog owner and the Access package manager.
 1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
 
-1. On the **Access packages** page open an access package.
+1. On the Access packages page, open an access package.
 
 1. When opening the access package if you see **Access denied**, ensure that a Microsoft Entra ID P2 or Microsoft Entra ID Governance license is present in your directory.
 
@@ -135,7 +135,7 @@ An *access package* is a bundle of resources that a team or project needs and is
 
 1. For **Enable requests**, select **Yes** to enable this access package to be requested as soon as it's created.
 
-1. If your organization is set up to receive verified IDs, there's an option to configure an access package to require requestors to provide a verified ID.  To learn more, see: [Configure verified ID settings for an access package in entitlement management (Preview)](entitlement-management-verified-id-settings.md)
+1. If your organization is set up to receive verified IDs, there's an option to configure an access package to require requestors to provide a verified ID. To learn more, see: [Configure verified ID settings for an access package in entitlement management (Preview)](entitlement-management-verified-id-settings.md)
 
     :::image type="content" source="media/entitlement-management-access-package-first/verified-id-picker.png" alt-text="Screenshot of the Verified ID picker selection.":::
 
