@@ -49,7 +49,7 @@ To begin, we configure and assign groups by creating a Microsoft Entra ID group,
 
 1. Select **New group**.
 1. In the **Group type**, select **Security**.
-1. Provide a group name; for example, `HighRiskAssetAccess`.
+1. Provide a group name; for example, `FinReport-SeniorAnalyst-SecureAccess`.
 1. In the **Membership type** option, select **Assigned**.
 1. Select **Create**. 
 
@@ -62,7 +62,7 @@ To begin, we configure and assign groups by creating a Microsoft Entra ID group,
 
    :::image type="content" border="true" source="./media/pim-global-secure-access/discover-groups.png" alt-text="Screenshot of the Groups screen with Discover groups selected.":::
 
-1. Select the group that you created; for example, `HighRiskAssetAccess`, then select **Manage groups**. 
+1. Select the group that you created; for example, `FinReport-SeniorAnalyst-SecureAccess`, then select **Manage groups**. 
 1. When prompted for onboarding, select **OK**. 
 
     :::image type="content" border="true" source="./media/pim-global-secure-access/manage-groups.png" alt-text="Screenshot of the Managed groups screen with a group selected.":::
