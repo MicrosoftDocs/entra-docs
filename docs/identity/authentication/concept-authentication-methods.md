@@ -5,7 +5,7 @@ description: Learn about the different authentication methods and features avail
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 07/10/2023
+ms.date: 07/16/2023
 
 ms.author: justinha
 author: justinha
@@ -38,7 +38,7 @@ The following table outlines when an authentication method can be used during a 
 | Certificate-based authentication | Yes                  | MFA                        |
 | OATH hardware tokens (preview) | No                     | MFA and SSPR              |
 | OATH software tokens           | No                     | MFA and SSPR              |
-| External authentication methods (preview)| No           | MFA and SSPR              |
+| External authentication methods (preview)| No           | MFA                       |
 | Temporary Access Pass (TAP)    | Yes                    | MFA                       |
 | SMS                            | Yes                    | MFA and SSPR              |
 | Voice call                     | No                     | MFA and SSPR              |

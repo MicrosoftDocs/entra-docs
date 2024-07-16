@@ -48,7 +48,7 @@ The compliant network is different than [IPv4, IPv6, or geographic locations](..
 To enable the required setting to allow the compliant network check, an administrator must take the following steps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](../identity/role-based-access-control/permissions-reference.md#global-secure-access-administrator).
-1. Browse to **Global Secure Access** > **Global settings** > **Session management** **Adaptive access**.
+1. Browse to **Global Secure Access** > **Settings** > **Session management** **Adaptive access**.
 1. Select the toggle to **Enable CA Signaling for Entra ID (covering all cloud apps)**. This will automatically enable CAE signaling for Office 365 (preview).
 1. Browse to **Protection** > **Conditional Access** > **Named locations**.
    1. Confirm you have a location called **All Compliant Network locations** with location type **Network Access**. Organizations can optionally mark this location as trusted.

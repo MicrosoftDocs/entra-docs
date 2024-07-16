@@ -128,6 +128,8 @@ items:
     href: faq.yml
   - name: Company branding CSS template reference guide
     href: reference-company-branding-css-template.md
+  - name: Bulk operations
+    href: bulk-operations-service-limitations.md
   - name: Compliance
     expanded: false
     items:
