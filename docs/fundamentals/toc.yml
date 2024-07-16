@@ -40,8 +40,6 @@ items:
     href: how-to-create-delete-users.yml
   - name: Apply licenses to users
     href: license-users-groups.yml
-  - name: Bulk operations limitations
-    href: bulk-operations-service-limitations.md  
   - name: Users
     expanded: false
     items: 
@@ -130,6 +128,8 @@ items:
     href: faq.yml
   - name: Company branding CSS template reference guide
     href: reference-company-branding-css-template.md
+  - name: Bulk operations limitations
+    href: bulk-operations-service-limitations.md
   - name: Compliance
     expanded: false
     items:

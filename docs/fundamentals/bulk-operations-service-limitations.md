@@ -1,5 +1,5 @@
 ---
-title: Bulk operations service limitations
+title: Bulk operations
 description: Learn about Microsoft Entra bulk operations related to users, groups, and devices in the Microsoft Entra admin portal could time out and fail on very large tenants.
 keywords: Azure AD licensing
 author: barclayn
@@ -16,16 +16,18 @@ ms.custom: it-pro
 # Customer intent: As an IT admin, I want to understand bulk operations, so that I can effectively understand what some of the service limitations are and apply a workaround if possible.
 ---
 
-# Bulk operations service limitations
+# Bulk operations
 
-Bulk operations related to users, groups, and devices in the Microsoft Entra admin portal could time out and fail on very large tenants. This limitation is a known issue due to scaling limitations. The Microsoft engineering team is working on a new service that will eventually address this limitation.
+Bulk operations related to users, groups, and devices in the Microsoft Entra admin portal could time out and fail on very large tenants. This limitation is a known issue due to scaling limitations. The Microsoft engineering team is working on a new service that will eventually address this limitation.\
 
 > [!NOTE]
 > When performing bulk operations, such as import or create, you may encounter a problem if the bulk operation does not complete within the hour. To work around this issue, we recommend splitting the number of records processed per batch. For example, before starting an export you could limit the result set by filtering on a group type or user name to reduce the size of the results. By refining your filters, essentially you are limiting the data returned by the bulk operation. 
 
-Another workaround for this issue is to use PowerShell to make direct Microsoft Graph API calls. For bulk download users and groups failure, we recommend using the PowerShell cmdlets `GET-MgGroup -All` and `GET-MgUser -All`.
+## Bulk operations workaround
 
-The following PowerShell code examples are for bulk operations related to:
+A workaround for this issue is to use PowerShell to make direct Microsoft Graph API calls. For bulk download users and groups failure, we recommend using the PowerShell cmdlets `GET-MgGroup -All` and `GET-MgUser -All`.
+
+74\The following PowerShell code examples are for bulk operations related to:
 - [Users](#users)
 - [Groups](#groups)
 - [Devices](#devices)
