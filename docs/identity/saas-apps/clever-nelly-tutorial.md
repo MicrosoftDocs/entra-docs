@@ -88,7 +88,7 @@ Follow these steps to enable Microsoft Entra SSO.
     | Production | `https://secure.elephantsdontforget.com/plato` |
     | | |
 
-    b. In the **Reply URL** text box, type type one of the following URLs:
+    b. In the **Reply URL** text box, type one of the following URLs:
 
     | Environment | URL Pattern |
     | - | - |
