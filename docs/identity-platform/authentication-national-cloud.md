@@ -45,7 +45,7 @@ The following table lists the base URLs for the Microsoft Entra endpoints used t
 
 You can find the authentication endpoints for your application.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **App registrations**.
 1. Select **Endpoints** in the top menu.
 

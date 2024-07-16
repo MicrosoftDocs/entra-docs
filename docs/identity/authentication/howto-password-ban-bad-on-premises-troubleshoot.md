@@ -153,7 +153,7 @@ As the deadline approaches, all time-limited DC agent versions will emit a 10021
 ```text
 The password filter dll has successfully loaded and initialized.
 
-The allowable trial period is nearing expiration. Once the trial period has expired, the password filter dll will no longer process passwords. Please contact Microsoft for an newer supported version of the software.
+The allowable trial period is nearing expiration. Once the trial period has expired, the password filter dll will no longer process passwords. Please contact Microsoft for a newer supported version of the software.
 
 Expiration date:  9/01/2019 0:00:00 AM
 

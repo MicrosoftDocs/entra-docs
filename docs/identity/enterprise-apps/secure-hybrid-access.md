@@ -50,7 +50,7 @@ Learn more:
 
 ### Application publishing and access management
 
-Use Application Proxy remote access as a service to publish applications to users outside the corporate network. Help improve your cloud access management without requiring modification to your on-premises applications. Plan an [Microsoft Entra application proxy deployment](~/identity/app-proxy/conceptual-deployment-plan.md).
+Use Application Proxy remote access as a service to publish applications to users outside the corporate network. Help improve your cloud access management without requiring modification to your on-premises applications. Plan a [Microsoft Entra application proxy deployment](~/identity/app-proxy/conceptual-deployment-plan.md).
 
 ## Partner integrations for apps: on-premises and legacy authentication
 
