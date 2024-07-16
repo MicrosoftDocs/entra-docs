@@ -105,7 +105,7 @@ The following are the minimum browser version requirements on Windows.
 
 <sup>2</sup>New security key registration doesn't work on these macOS browsers because they don't prompt to set up biometrics or PIN.
 
-<sup>3</sup>Authentication with a security key doesn't work properly if more than passkeys are registered to the user. If a user has more than three passkeys, as a workaround, they can click **Sign-in options** and sign in without entering their username.
+<sup>3</sup>See [Sign in when more than three passkeys are registered](#sign-in-when-more-than-three-passkeys-are-registered).
 
 :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-ios/sign-in-microsoft.png" alt-text="Screenshot of sign-in options.":::
 
@@ -139,9 +139,7 @@ The following are the minimum browser version requirements on Windows.
 
 <sup>2</sup>BLE security keys aren't supported on iOS by Apple.
 
-<sup>3</sup>Authentication with a security key doesn't work properly if more than passkeys are registered to the user. If a user has more than three passkeys, as a workaround, they can click **Sign-in options** and sign in without entering their username.
-
-:::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-ios/sign-in-microsoft.png" alt-text="Screenshot of sign-in options.":::
+<sup>3</sup>See [Sign in when more than three passkeys are registered](#sign-in-when-more-than-three-passkeys-are-registered).
 
 
 ### Android
@@ -157,6 +155,12 @@ The following are the minimum browser version requirements on Windows.
 <sup>2</sup>BLE security keys aren't supported on Android by Google.
 
 ## Known issues
+
+### Sign in when more than three passkeys are registered
+
+If you registered more than three passkeys, sign in with a passkey might not work. If you have more than three passkeys, as a workaround, click **Sign-in options** and sign in without entering a username.
+
+:::image type="content" border="true" source="media/fido2-compatibility/sign-in-microsoft.png" alt-text="Screenshot of sign-in options.":::
 
 ### PowerShell support
 
