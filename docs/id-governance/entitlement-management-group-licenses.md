@@ -5,7 +5,7 @@ author: owinfreyATL
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: tutorial
-ms.date: 05/25/2023
+ms.date: 07/15/2024
 ms.author: owinfrey
 #Customer intent: As an IT admin, I want step-by-step instructions for creating an access package for managing the lifecycle of group-based licenses.
 ---
@@ -91,7 +91,7 @@ For more information, see [License requirements](entitlement-management-overview
     1. Under **Require access reviews**, select **Yes**.
     1. You can leave **Starting on** set to the current date. This date is when the access review starts. After you create an access review, you can't update its start date.
     1. Under **Review frequency**, select **Annually**, because the review occurs once per year. The **Review frequency** box is where you determine how often the access review runs.
-    1. Specify a **Duration (in days)**.  The duration box is where you indicate how many days each occurrence of the access review series runs.
+    1. Specify a **Duration (in days)**. The duration box is where you indicate how many days each occurrence of the access review series runs.
     1. Under **Reviewers**, select **Manager**.
 
 ## Step 6: Review and create your access package
@@ -102,7 +102,7 @@ For more information, see [License requirements](entitlement-management-overview
 
 1. When you're happy with your configuration, select **Create**. After a moment, you should see a notification stating that the access package is created.
 
-1. After the access package is created, you'll see the **Overview** page for the package. You'll find the **My Access portal link** here. Copy the link and share it with your team so your team members can request the access package to be assigned licenses for Office.
+1. After the access package is created, you'll see the **Overview** page for the package. You find the **My Access portal link** here. Copy the link and share it with your team so your team members can request the access package to be assigned licenses for Office.
 
 ## Step 7: Clean up resources
 

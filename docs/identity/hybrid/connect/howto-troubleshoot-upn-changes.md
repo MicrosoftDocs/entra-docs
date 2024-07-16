@@ -253,7 +253,7 @@ Authenticator registers the device in Microsoft Entra ID, which allows the devic
 
 **Known issues: New account appears**
 
-If you change UPN, a new account with the new UPN appears on the Authenticator. The account with the previous UPN remains. Also, the previous UPN appears on Device Registration in app settings. There's no change in functionality of Device Registration or dependant scenarios.
+If you change UPN, a new account with the new UPN appears on the Authenticator. The account with the previous UPN remains. Also, the previous UPN appears on Device Registration in app settings. There's no change in functionality of Device Registration or dependent scenarios.
 
 **Workaround**
 

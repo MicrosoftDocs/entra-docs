@@ -7,7 +7,7 @@ editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: conceptual
-ms.date: 05/31/2023
+ms.date: 07/15/2024
 ms.author: owinfrey
 ms.reviewer: mwahl
 #Customer intent: As an administrator, I want to delegate access governance from IT administrators to department managers and project managers so that they can manage access themselves.
@@ -18,8 +18,8 @@ ms.reviewer: mwahl
 In Microsoft Entra ID, you can use role models to manage access at scale through identity governance.
 
  * You can use access packages to represent [organizational roles](identity-governance-organizational-roles.md) in your organization, such as "sales representative". An access package representing that organizational role would include all the access rights that a sales representative might typically need, across multiple resources.
- * Applications [can define their own roles](~/identity-platform/howto-add-app-roles-in-apps.md). For example, if you had a sales application, and that application included the app role "salesperson" in its manifest, you could then [include that role from the app manifest in an access package](entitlement-management-access-package-resources.md).  Applications can also use security groups in scenarios where a user could have multiple application-specific roles simultaneously.
- * You can use roles for delegating administrative access.  If you have a catalog for all the access packages needed by sales, you could assign someone to be responsible for that catalog, by assigning them a catalog-specific role.
+ * Applications [can define their own roles](~/identity-platform/howto-add-app-roles-in-apps.md). For example, if you had a sales application, and that application included the app role "salesperson" in its manifest, you could then [include that role from the app manifest in an access package](entitlement-management-access-package-resources.md). Applications can also use security groups in scenarios where a user could have multiple application-specific roles simultaneously.
+ * You can use roles for delegating administrative access. If you have a catalog for all the access packages needed by sales, you could assign someone to be responsible for that catalog, by assigning them a catalog-specific role.
 
 This article discusses how to use roles to manage aspects within Microsoft Entra entitlement management, for controlling access to the entitlement management resources.
 
@@ -157,7 +157,7 @@ Typically, a user in a role with Guest Inviter privileges can invite individual 
 For managing external collaboration, where the individual external users for a collaboration project might not be known in advance, assigning users who are working with external organizations into  entitlement management roles can allow them to configure catalogs, access packages and policies for their external collaboration. These configurations allow the external users they're collaborating with to request and be added to your organization's directory and access packages.
 
 * To allow users in external directories from connected organizations to be able to request access packages in a catalog, the catalog setting of **Enabled for external users** needs to be set to **Yes**. Changing this setting can be done by an administrator or a catalog owner of the catalog.
-* The access package must also have a policy set [for users not in your directory](entitlement-management-access-package-request-policy.md#for-users-not-in-your-directory).  This policy can be created by an administrator, catalog owner or access package manager of the catalog.
+* The access package must also have a policy set [for users not in your directory](entitlement-management-access-package-request-policy.md#for-users-not-in-your-directory). This policy can be created by an administrator, catalog owner or access package manager of the catalog.
 * An access package with that policy allows users in scope to be able to request access, including users not already in your directory. If their request is approved, or doesn't require approval, then the user is automatically added to your directory.
 * If the policy setting was for **All users**, and the user wasn't part of an existing connected organization, then a new proposed connected organization is automatically created. You can [view the list of connected organizations](entitlement-management-organization.md#view-the-list-of-connected-organizations) and remove organizations that are no longer needed.
 
@@ -184,7 +184,7 @@ You can view the list of catalogs currently enabled for external users in the Mi
 
 You can also view and update catalog creators and entitlement management catalog-specific role assignments using Microsoft Graph. A user in an appropriate role with an application that has the delegated `EntitlementManagement.ReadWrite.All` permission can call the Graph API to [list the role definitions](/graph/api/rbacapplication-list-roledefinitions) of entitlement management, and [list role assignments](/graph/api/rbacapplication-list-roleassignments) to those role definitions.
 
-For example, to view the entitlement management-specific roles that a particular user or group has been assigned, use the Graph query to list role assignments, and provide the user or group's ID as the value of the `principalId` query filter, as in
+For example, to view the entitlement management-specific roles that a particular user or group is assigned to, use the Graph query to list role assignments, and provide the user or group's ID as the value of the `principalId` query filter, as in
 
 ```http
 GET https://graph.microsoft.com/v1.0/roleManagement/entitlementManagement/roleAssignments?$filter=principalId eq 'aaaaaaaa-bbbb-cccc-1111-222222222222'&$expand=roleDefinition&$select=id,appScopeId,roleDefinition
