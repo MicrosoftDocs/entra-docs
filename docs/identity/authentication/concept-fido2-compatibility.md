@@ -107,8 +107,6 @@ The following are the minimum browser version requirements on Windows.
 
 <sup>3</sup>See [Sign in when more than three passkeys are registered](#sign-in-when-more-than-three-passkeys-are-registered).
 
-:::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-ios/sign-in-microsoft.png" alt-text="Screenshot of sign-in options.":::
-
 ### ChromeOS
 
 | Browser<sup>1</sup> | USB  | NFC | BLE |
@@ -160,7 +158,7 @@ The following are the minimum browser version requirements on Windows.
 
 If you registered more than three passkeys, sign in with a passkey might not work. If you have more than three passkeys, as a workaround, click **Sign-in options** and sign in without entering a username.
 
-:::image type="content" border="true" source="media/fido2-compatibility/sign-in-microsoft.png" alt-text="Screenshot of sign-in options.":::
+:::image type="content" border="true" source="media/fido2-compatibility/sign-in-options.png" alt-text="Screenshot of sign-in options.":::
 
 ### PowerShell support
 
