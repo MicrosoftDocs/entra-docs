@@ -16,7 +16,7 @@ ms.reviewer: jhenders, tracyyu, chuqiaoshi
 
 Microsoft Entra ID Protection detects identity-based risks, reports them, and allows administrators to investigate and remediate these risks to keep organizations safe and secure. The risks can be further fed into tools like Conditional Access to make access decisions or fed back to a security information and event management (SIEM) tool for further investigation. 
 
-:::image type="content" source="media/how-to-deploy-identity-protection/identity-protection-overview.png" alt-text="Screenshot showing the Identity Protection Overview page showing some risky users and sign-ins." lightbox="media/how-to-deploy-identity-protection/identity-protection-overview.png":::
+> [!VIDEO https://www.youtube.com/embed/SFkrjA48J5E?si=QMjm83V151vxZx7W]
 
 This deployment plan extends concepts introduced in the [Conditional Access deployment plan](~/identity/conditional-access/plan-conditional-access.md).
 
