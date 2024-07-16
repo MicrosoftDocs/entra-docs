@@ -176,7 +176,7 @@ This section provides steps for user account provisioning from SuccessFactors to
 
 8. Click on the information banner displayed to download the Provisioning Agent. 
    >[!div class="mx-imgBorder"]
-   >![Download Agent](./media/workday-inbound-tutorial/pa-download-agent.png "Download Agent Screen")
+   >![Screenshot of provisioning agent informational.](~/includes/governance/media/workday-inbound-tutorial/pa-download-agent.png "Download Agent Screen")
 
 ### Part 2: Install and configure on-premises Provisioning Agent(s)
 

@@ -6,13 +6,13 @@ manager: amycolannino
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
-ms.date: 05/31/2023
+ms.date: 07/15/2024
 ms.author: owinfrey
 #Customer intent: As an administrator, I want detailed information about how I can edit an access package so that requestors have the resources they need to perform their job.
 ---
 # Share link to request an access package in entitlement management
 
-Most users in your directory can sign in to the My Access portal and automatically see a list of access packages they are in scope of a policy and can request. In addition, users from outside of your directory that are in scope, can also see access packages they are in scope of a policy and can request.  However, if you have sensitive access packages or external business partner users that aren't yet in your directory but aren't part of an existing connected organization, those access packages should be hidden.  Even though the user can request a hidden access package, they won't see it in the My access portal if they don't have the link. Instead, you need to send them a link that they can use to request that access package.
+Most users in your directory can sign in to the My Access portal and automatically see a list of access packages they are in scope of a policy and can request. In addition, users from outside of your directory that are in scope, can also see access packages they are in scope of a policy and can request. However, if you have sensitive access packages or external business partner users that aren't yet in your directory but aren't part of an existing connected organization, those access packages should be hidden. Even though the user can request a hidden access package, they won't see it in the My access portal if they don't have the link. Instead, you need to send them a link that they can use to request that access package.
 
 For the external user from another directory to use the My Access portal link to request the access package, the catalog for the access package must be [enabled for external users](entitlement-management-catalog-create.md) and there must be a [policy for the external user's directory](entitlement-management-access-package-request-policy.md) in the access package.
 
@@ -27,13 +27,13 @@ For the external user from another directory to use the My Access portal link to
 
 1. On the **Access packages** page, open the access package you want to share a link to request an access package for.
 
-1. On the Overview page, check the **Hidden** setting.  If the **Hidden** setting is **Yes**, then even users who don't have the My Access portal link can browse and request the access package. If you don't wish to have them browse for the access package, then change the setting to **No**.
+1. On the Overview page, check the **Hidden** setting. If the **Hidden** setting is **Yes**, then even users who don't have the My Access portal link can browse and request the access package. If you don't wish to have them browse for the access package, then change the setting to **No**.
 
 1. On the Overview page, copy the **My Access portal link**.
 
     ![Access package overview - My Access portal link](./media/entitlement-management-shared/my-access-portal-link.png)
 
-    It's important that you copy the entire My Access portal link when sending it to an internal business partner. This ensures that the partner gets access to your directory's portal to make their request. The link starts with `myaccess`, includes a directory hint, and ends with an access package ID.  (For US Government, the domain in the My Access portal link will be `myaccess.microsoft.us`.)
+    It's important that you copy the entire My Access portal link when sending it to an internal business partner. This ensures that the partner gets access to your directory's portal to make their request. The link starts with `myaccess`, includes a directory hint, and ends with an access package ID. For US Government, the domain in the My Access portal link will be `myaccess.microsoft.us`.
 
     `https://myaccess.microsoft.com/@<directory_hint>#/access-packages/<access_package_id>`
 

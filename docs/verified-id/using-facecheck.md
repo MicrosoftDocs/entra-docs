@@ -1,5 +1,5 @@
 ---
-title: Tutorial - Using Face Check with Entra Verified ID and unlocking high assurance verifications at scale
+title: Tutorial - Using Face Check (Preview) with Entra Verified ID and unlocking high assurance verifications at scale
 description: In this tutorial, you learn how to use Face Check with Entra Verified ID
 ms.service: entra-verified-id
 
@@ -12,7 +12,7 @@ ms.date: 10/06/2023
 
 ---
 
-# Using Face Check with Entra Verified ID and unlocking high assurance verifications at scale
+# Using Face Check (Preview) with Entra Verified ID and unlocking high assurance verifications at scale
 
 
 Face Check is a privacy-respecting facial matching. It allows enterprises to perform high-assurance verifications securely, simply, and at scale. Face Check adds a critical layer of trust by performing facial matching between a user’s real-time selfie and a photo. The facial matching is powered by Azure AI services. By sharing only the match results and not any sensitive identity data, Face Check protects user privacy while allowing organizations to be sure the person claiming an identity is really them.
@@ -21,6 +21,10 @@ Face Check is a privacy-respecting facial matching. It allows enterprises to per
 
 ## Prerequisites
 Face Check is a premium feature within Verified ID. You need to enable the Face Check Add-on in your Entra Verified ID setup before doing Face Check verifications.
+
+> [!IMPORTANT]
+> The Face Check Add-on can only be enable from the Entra portal. Admin API support for this feature. 
+
 - If this is the first time using Entra Verified ID, [set up your tenant](./verifiable-credentials-configure-tenant-quick.md).
 - [Associate or add an Azure subscription to your Microsoft Entra tenant](/entra/fundamentals/how-subscriptions-associated-directory)
 - Make sure the user setting up Face Check has [Contributor role for the Azure subscription](/azure/role-based-access-control/built-in-roles/general#contributor)

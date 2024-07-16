@@ -86,7 +86,7 @@ Follow these steps to enable Microsoft Entra SSO.
 	> [!NOTE]
 	> These values are not real. Update these values with the actual Sign on URL and Identifier. Contact [Learning at Work Client support team](https://www.learninga-z.com/site/contact/support) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-5. Learning at Work application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes, where as **nameidentifier** is mapped with **user.userprincipalname**.
+5. Learning at Work application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes, whereas **nameidentifier** is mapped with **user.userprincipalname**.
 
 	You can update the **nameidentifier** value in Microsoft Entra ID based on your Organization setup and this value needs to match with the **User ID** in the SABA cloud, for that you need to edit the attribute mapping by clicking on **pencil** icon and change the attribute mapping.
 

@@ -7,7 +7,7 @@ editor: mamtakumar
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
-ms.date: 10/23/2023
+ms.date: 07/15/2024
 ms.author: owinfrey
 ms.reviewer: mamkumar
 #Customer intent: As a requestor, I want simple steps for how to request resources I need so that I can start using the resources to perform my job.
@@ -24,7 +24,7 @@ The first step is to sign in to the My Access portal where you can request acces
 
 **Prerequisite role:** Requestor
 
-1. Look for an email or a message from the project or business manager you're working with. The email should include a link to the access package you need access to. The link starts with `myaccess`, includes a directory hint, and ends with an access package ID.  (For US Government, the domain might be `https://myaccess.microsoft.us` instead.)
+1. Look for an email or a message from the project or business manager you're working with. The email should include a link to the access package you need access to. The link starts with `myaccess`, includes a directory hint, and ends with an access package ID. For US Government, the domain might be `https://myaccess.microsoft.us` instead.
  
     `https://myaccess.microsoft.com/@<directory_hint>#/access-packages/<access_package_id>`
     > [!NOTE]
@@ -38,7 +38,7 @@ The first step is to sign in to the My Access portal where you can request acces
 
 ## Request an access package
 
-Once you have found the access package in the My Access portal, you can submit a request.
+Once you find the access package in the My Access portal, you can submit a request.
 
 **Prerequisite role:** Requestor
 
@@ -74,7 +74,7 @@ If you request access to an access package that has multiple policies that apply
 
 ### Fill out requestor information
 
-You can request access to an access package that requires business justification and additional requestor information before granting you access to the access package. Fill out all the requestor information required to access the access package.
+You can request access to an access package that requires business justification and extra requestor information before granting you access to the access package. Fill out all the requestor information required to access the access package.
 
 ![My Access portal - Request access - Fill out requestor information](./media/entitlement-management-request-access/my-access-requestor-information.png)
 

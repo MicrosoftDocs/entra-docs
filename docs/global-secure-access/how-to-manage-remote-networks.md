@@ -58,7 +58,7 @@ From this page, you can enable or disable the available traffic forwarding profi
 
 ![Screenshot of the traffic profiles options on the remote networks.](./media/how-to-manage-remote-networks/remote-network-traffic-profile.png)
 
-You can also assign a remote network to the Microsoft traffic forwarding profile from **Traffic forwarding** area of Global Secure Access. Browse to **Connect** > **Traffic forwarding** and select the **Add/edit assignments** button for the traffic profile. For more information, see [Global Secure Access traffic forwarding (preview)](concept-traffic-forwarding.md).
+You can also assign a remote network to the Microsoft traffic forwarding profile from **Traffic forwarding** area of Global Secure Access. Browse to **Connect** > **Traffic forwarding** and select the **Add/edit assignments** button for the traffic profile. For more information, see [Global Secure Access traffic forwarding](concept-traffic-forwarding.md).
 
 ### [Microsoft Graph API](#tab/microsoft-graph-api)
 
@@ -110,7 +110,7 @@ You can delete remote networks in the Microsoft Entra admin center or using the 
 
 ---
 
-[!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
+
 
 ## Next steps
 

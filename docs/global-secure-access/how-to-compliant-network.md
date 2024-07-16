@@ -38,7 +38,7 @@ The compliant network is different than [IPv4, IPv6, or geographic locations](..
 ### Known limitations
 
 - Compliant network check data plane enforcement (preview) with Continuous Access Evaluation is supported for SharePoint Online and Exchange Online.
-- Enabling Global Secure Access CA signaling enables signaling for both authentication plane (Microsoft Entra ID) and data plane signaling (preview). It is not currently possible to enable these settings separately.
+- Enabling Global Secure Access Conditional Access signaling enables signaling for both authentication plane (Microsoft Entra ID) and data plane signaling (preview). It is not currently possible to enable these settings separately.
 - Compliant network check is currently not supported for Private Access applications.
 - The compliant network location condition isn't supported for devices that aren't enrolled in mobile device management (MDM). If you configure a Conditional Access policy using the compliant network location condition, users with devices that aren't yet MDM-enrolled might be affected. Users on these devices might fail the Conditional Access policy check, and be blocked. 
    - Ensure that you exclude the affected users or devices when using the compliant network location condition.     
@@ -110,7 +110,7 @@ Verify the new named location was automatically created using [Microsoft Graph](
 
 :::image type="content" source="media/how-to-compliant-network/graph-explorer-expected-result-location-creation.png" alt-text="Screenshot showing Graph Explorer results of query":::
 
-[!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
+
 
 ## Next steps
 

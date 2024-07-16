@@ -7,7 +7,7 @@ editor: jocastel-MSFT
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
-ms.date: 05/31/2023
+ms.date: 07/15/2024
 ms.author: owinfrey
 ms.reviewer: jocastel
 #Customer intent: As an administrator, I want view resources a user has access to and view request logs for auditing purposes.
@@ -15,7 +15,7 @@ ms.reviewer: jocastel
 
 # View reports and logs in entitlement management
 
-The entitlement management reports and Microsoft Entra audit log provide additional details about what resources users have access to. As an administrator, you can view the access packages and resource assignments for a user and view request logs for auditing purposes or  determining the status of a user's request. This article describes how to use the entitlement management reports and Microsoft Entra audit logs.
+The entitlement management reports and Microsoft Entra audit log provide more details about what resources users have access to. As an administrator, you can view the access packages and resource assignments for a user and view request logs for auditing purposes or  determining the status of a user's request. This article describes how to use the entitlement management reports and Microsoft Entra audit logs.
 
 Watch the following video to learn how to view what resources users have access to in entitlement management:
 
@@ -31,11 +31,11 @@ This report enables you to list all of the users who are assigned to an access p
 
 1. Browse to **Identity governance** > **Entitlement management** > **Access packages**.
 
-1. On the **Access packages** page select the access package of interest.
+1. On the Access packages page, select the access package of interest.
 
 1. In the left menu, select **Assignments**, then select **Download**.
 
-1. Confirm the file name and then click **Download**.
+1. Confirm the file name and then select **Download**.
 
 ## View access packages for a user
 
@@ -81,7 +81,7 @@ This report enables you to list the resources currently assigned to a user in en
 
 ## Determine the status of a user's request
 
-To get additional details on how a user requested and received access to an access package, you can use the Microsoft Entra audit log. In particular, you can use the log records in the `EntitlementManagement` and `UserManagement` categories to get additional details on the processing steps for each request.  
+To get extra details on how a user requested and received access to an access package, you can use the Microsoft Entra audit log. In particular, you can use the log records in the `EntitlementManagement` and `UserManagement` categories to get more details on the processing steps for each request.  
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
@@ -93,9 +93,9 @@ To get additional details on how a user requested and received access to an acce
 
 1. To download the logs, select **Download**.
 
-When Microsoft Entra ID receives a new request, it writes an audit record, in which the **Category** is `EntitlementManagement` and the **Activity** is typically `User requests access package assignment`.  In the case of a direct assignment created in the Microsoft Entra admin center, the **Activity** field of the audit record is `Administrator directly assigns user to access package`, and the user performing the assignment is identified by the **ActorUserPrincipalName**.
+When Microsoft Entra ID receives a new request, it writes an audit record, in which the **Category** is `EntitlementManagement` and the **Activity** is typically `User requests access package assignment`. If a direct assignment created in the Microsoft Entra admin center, the **Activity** field of the audit record is `Administrator directly assigns user to access package`, and the user performing the assignment is identified by the **ActorUserPrincipalName**.
 
-Microsoft Entra ID writes additional audit records while the request is in progress, including:
+Microsoft Entra ID writes extra audit records while the request is in progress, including:
 
 | Category | Activity | Request status |
 | :---- | :------------ | :------------ |
@@ -105,7 +105,7 @@ Microsoft Entra ID writes additional audit records while the request is in progr
 | `EntitlementManagement` | `Approve access package assignment request` | Request approved |
 | `EntitlementManagement` | `Ready to fulfill access package assignment request` |Request approved, or doesn't require approval |
 
-When a user is assigned access, Microsoft Entra ID writes an audit record for the `EntitlementManagement` category with **Activity** `Fulfill access package assignment`.  The user who received the access is identified by **ActorUserPrincipalName** field.
+When a user is assigned access, Microsoft Entra ID writes an audit record for the `EntitlementManagement` category with **Activity** `Fulfill access package assignment`. The user who received the access is identified by **ActorUserPrincipalName** field.
 
 If access wasn't assigned, then Microsoft Entra ID writes an audit record for the `EntitlementManagement` category with **Activity** either `Deny access package assignment request`, if the request was denied by an approver, or `Access package assignment request timed out (no approver action taken)`, if the request timed out before an approver could approve.
 
@@ -117,7 +117,7 @@ When the user's access package assignment expires, is canceled by the user, or r
 
 1. Browse to **Identity governance** > **Entitlement management** > **Connected organizations**.
 
-1. On the **Connected organizations** page select **Download**.
+1. On the Connected organizations page, select **Download**.
 
 ## View events for an access package  
 
@@ -125,11 +125,11 @@ If you have configured to send audit log events to [Azure Monitor](entitlement-m
 
 To view events for an access package, you must have access to the underlying Azure monitor workspace (see [Manage access to log data and workspaces in Azure Monitor](/azure/azure-monitor/logs/manage-access#azure-rbac) for information) and in one of the following roles: 
 
-- Global administrator  
-- Security administrator  
-- Security reader  
-- Reports reader  
-- Application administrator  
+- Global Administrator  
+- Security Administrator  
+- Security Reader  
+- Reports Reader  
+- Application Administrator  
 
 1. In the Microsoft Entra admin center, select **Identity** then select **Workbooks** under **Monitoring & health**. If you only have one subscription, move on to step 3. 
 
@@ -141,7 +141,7 @@ To view events for an access package, you must have access to the underlying Azu
 
     [ ![View access package events](./media/entitlement-management-logs-and-reporting/view-events-access-package-sml.png) ](./media/entitlement-management-logs-and-reporting/view-events-access-package-lrg.png#lightbox)
 
-    Each row includes the time, access package ID, the name of the operation, the object ID, UPN, and the display name of the user who started the operation.  Additional details are included in JSON.
+    Each row includes the time, access package ID, the name of the operation, the object ID, UPN, and the display name of the user who started the operation. More details are included in JSON.
 
 1. If you would like to see if there have been changes to application role assignments for an application that weren't due to access package assignments, such as by a Global Administrator directly assigning a user to an application role, then you can select the workbook named *Application role assignment activity*.
 

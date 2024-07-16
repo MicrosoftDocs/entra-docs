@@ -7,7 +7,7 @@ editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: how-to
-ms.date: 04/16/2024
+ms.date: 07/15/2024
 ms.author: owinfrey
 ms.reviewer: mwahl
 ---
@@ -33,7 +33,7 @@ This article describes how to create one or more access reviews for group member
 - Microsoft Entra ID P2 or Microsoft Entra ID Governance licenses.  
 - Creating a review on inactive users, or with [user-to-group affiliation](review-recommendations-access-reviews.md#user-to-group-affiliation) recommendations, requires a Microsoft Entra ID Governance license.
 - Global Administrator or Identity Governance Administrator to create reviews on groups or applications.
-- Users must be in the Global administrator role or the Privileged Role administrator role to create reviews on role-assignable groups. For more information, see [Use Microsoft Entra groups to manage role assignments](../identity/role-based-access-control/groups-concept.md).
+- Users must be at least a Privileged Role Administrator to create reviews on role-assignable groups. For more information, see [Use Microsoft Entra groups to manage role assignments](../identity/role-based-access-control/groups-concept.md).
 - Microsoft 365 and Security group owner.
 
 For more information, see [License requirements](access-reviews-overview.md#license-requirements).
@@ -205,7 +205,7 @@ A multi-stage review allows the administrator to define two or three sets of rev
  
 1. By default, you see two stages when you create a multi-stage review. However, you can add up to three stages. If you want to add a third stage, select **+ Add a stage** and complete the required fields.  
 
-1. You can decide to allow 2nd and 3rd stage reviewers to the see decisions made in the previous stage(s). If you want to allow them to see the decisions made prior, select the box next to **Show previous stage(s) decisions to later stage reviewers** under **Reveal review results**. Leave the box unchecked to disable this setting if you’d like your reviewers to review independently. 
+1. You can decide to allow 2nd and 3rd stage reviewers to see decisions made in the previous stage(s). If you want to allow them to see the decisions made prior, select the box next to **Show previous stage(s) decisions to later stage reviewers** under **Reveal review results**. Leave the box unchecked to disable this setting if you’d like your reviewers to review independently. 
 
     ![Screenshot that shows duration and show previous stages setting enabled for multi-stage review.](./media/create-access-review/reveal-multi-stage-results-and-duration.png)
 

@@ -19,7 +19,7 @@ Single sign-on (SSO) allows your users to access an application without authenti
 ## How to configure single-sign on
 To configure SSO, first make sure that your application is configured for Pre-Authentication through Microsoft Entra ID.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Select your username in the upper-right corner. Verify you're signed in to a directory that uses application proxy. If you need to change directories, select **Switch directory** and choose a directory that uses application proxy.
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Application proxy**.
 
