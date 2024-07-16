@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: conceptual
-ms.date: 07/09/2024
+ms.date: 07/16/2024
 ms.author: kenwith
 ms.reviewer: katabish
 ---
@@ -15,7 +15,7 @@ ms.reviewer: katabish
 
 Microsoft Entra Private Access provides secure access to private applications. Private Access includes built-in capabilities for maintaining a secure environment. Microsoft Entra Private Access does this by controlling access to private apps and preventing unauthorized or compromised devices from accessing critical resources. For general corporate access, see [Microsoft Entra Private Access](/entra/global-secure-access).
 
-For the scenario where you need to control access to specific *critical* resources, such as highly valued servers and applications, Microsoft recommends that you add an extra security layer by enforcing privileged access on top of their already secured private access. 
+For the scenario where you need to control access to specific *critical* resources, such as highly valued servers and applications, Microsoft recommends that you add an extra security layer by enforcing just-in-time privileged access on top of their already secured private access. 
 
 This article discusses how to use Microsoft Entra Private Access to enable Privileged Identity Management (PIM) with Global Secure Access. For details about enabling (PIM), see [What is Microsoft Entra Privileged Identity Management?](/entra/id-governance/privileged-identity-management/pim-configure) 
 
@@ -25,14 +25,12 @@ Customers should consider configuring PIM using Global Secure Access to enable:
 
 **Enhanced Security:** PIM allows for just-in-time privileged access, reducing the risk of excessive, unnecessary, or misused access permissions within your environment. This enhanced security aligns with the [Zero Trust](https://www.microsoft.com/security/business/zero-trust) principle, ensuring that users have access only when they need it.
 
-**Efficient Management**: Microsoft Global Secure Access offers Role-Based Access Control (RBAC) to manage administrative access efficiently. Admin roles like Global Administrator, Security Administrator, and others have varying levels of access, from full permissions to read-only access. This feature helps in delegating access effectively based on administrative responsibilities.
-
-**Compliance and Auditing**: Using PIM with Microsoft Global Secure Access can help ensure that your organization meets compliance requirements by providing detailed tracking and logging of privileged access requests and activations.
+**Compliance and Auditing**: Using PIM with Microsoft Global Secure Access can help ensure that your organization meets compliance requirements by providing detailed tracking and logging of privileged access requests. For details about PIM licensing, see [What are the Microsoft Entra ID licenses?](~/fundamentals/whatis.md)
 
 ## Prerequisites 
 
 - Microsoft Entra ID SKU support Privileged Identity Management (P2 or E5) 
-- Microsoft Entra Private Access
+- [Microsoft Entra Private Access](concept-private-access.md)
 
 ## Secure private access 
 
@@ -69,7 +67,7 @@ To begin, we configure and assign groups by creating a Microsoft Entra ID group,
 
     :::image type="content" border="true" source="./media/pim-global-secure-access/manage-groups.png" alt-text="Screenshot of the Managed groups screen with a group selected.":::
 
-### Configure customer role (optional step)
+### Update PIM policy role settings (optional step)
 
 1. Select **Setting**, then select **Member**. 
 
@@ -100,7 +98,7 @@ To begin, we configure and assign groups by creating a Microsoft Entra ID group,
 ### Quick Access assignment
 
 1. Navigate to [Microsoft Entra](https://entra.microsoft.com/) > **Global Secure Access** > **Quick Access** > **Users and groups**. 
-1. Select **Add user/group**, then specify the group that you created; for example, `HighRiskAssetAccess`.  
+1. Select **Add user/group**, then specify the group that you created; for example, `FinReport-SeniorAnalyst-SecureAccess`.  
 
    :::image type="content" border="true" source="./media/pim-global-secure-access/quick-access.png" alt-text="Screenshot of the Quick Access screen.":::
 
@@ -117,7 +115,7 @@ Even if a user and their device meet security requirements, attempting to access
 
 Next, we activate the PIM role using the Microsoft Entra admin center, and then attempt to connect with the new role activated.
 
-1. With at least a privileged user role, navigate to [Microsoft Entra](https://entra.microsoft.com/)  >  **Identity Governance**  > **Privileged Identity Management**. 
+1. With at least User Administrator privilege, navigate to [Microsoft Entra](https://entra.microsoft.com/)  >  **Identity Governance**  > **Privileged Identity Management**. 
 1. Select **My roles** > **Groups** to see all eligible assignments.
 
    :::image type="content" border="true" source="./media/pim-global-secure-access/my-roles-groups.png" alt-text="Screenshot of My role groups screen.":::
