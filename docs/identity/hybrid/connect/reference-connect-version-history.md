@@ -93,7 +93,7 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 >For more information on enabling TLS 1.2, see [how to enable TLS 1.2](/mem/configmgr/core/plan-design/security/enable-tls-1-2-server)
 
 ### Release status
-7/xx/2024: Released for download
+7/15/2024: Released for download
 
 ### Functional changes
 
