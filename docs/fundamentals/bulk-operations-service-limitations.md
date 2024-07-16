@@ -29,7 +29,7 @@ Bulk operations in the Microsoft Entra admin portal could time out and fail on v
 
 A workaround for this issue is to use PowerShell to make direct Microsoft Graph API calls. For bulk download users and groups failure, we recommend using the PowerShell cmdlets `GET-MgGroup -All` and `GET-MgUser -All`.
 
-74\The following PowerShell code examples are for bulk operations related to:
+The following PowerShell code examples are for bulk operations related to:
 - [Users](#users)
 - [Groups](#groups)
 - [Devices](#devices)
