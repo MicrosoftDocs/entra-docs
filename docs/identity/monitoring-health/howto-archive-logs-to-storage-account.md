@@ -11,7 +11,6 @@ ms.author: sarahlipsey
 ms.reviewer: egreenberg
 
 # Customer intent: As an IT administrator, I want to learn how to archive Microsoft Entra logs to an Azure storage account so I can retain it for longer than the default retention period.
-
 ---
 # How to archive Microsoft Entra activity logs to an Azure storage account
 
