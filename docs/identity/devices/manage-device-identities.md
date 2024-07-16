@@ -186,6 +186,9 @@ Device activities are visible in the activity logs. These logs include activitie
 - Device creation and adding owners/users on the device
 - Changes to device settings
 - Device operations like deleting or updating a device
+- Bulk operations like downloading all devices 
+
+[!INCLUDE [Bulk operations limitations](~/includes/bulk-operations-limitations.md)]
 
 The entry point to the auditing data is **Audit logs** in the **Activity** section of the **Devices** page.
 
