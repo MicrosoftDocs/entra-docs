@@ -361,7 +361,7 @@ In this step, we use the AVD to test access restrictions to the virtual network.
 
 ### Test the tenant restriction
 Before testing, enable tenant restrictions on the virtual network.
-1. In Microsoft Entra admin center, navigate to **Global Secure Access** > **Global settings** > **Session management**.
+1. In Microsoft Entra admin center, navigate to **Global Secure Access** > **Settings** > **Session management**.
 1. Set the **Enable tagging to enforce tenant restrictions on your network** toggle to on.
 1. Select **Save**.
 1. You can modify the cross-tenant access policy by navigating to **Identity** > **External identities** > **Cross-tenant access settings**. For more information, see the article, [Cross-tenant access overview](../external-id/cross-tenant-access-overview.md).
@@ -375,7 +375,7 @@ To test:
 
 ### Test source IP restoration
 Before testing, enable conditional access.
-1. In Microsoft Entra admin center, navigate to **Global Secure Access** > **Global settings** > **Session management**.
+1. In Microsoft Entra admin center, navigate to **Global Secure Access** > **Settings** > **Session management**.
 1. Select the **Adaptive Access** tab.
 1. Set the **Enable Global Secure Access signaling in Conditional Access** toggle to on.
 1. Select **Save**. For more information, see the article, [Source IP restoration](how-to-source-ip-restoration.md).

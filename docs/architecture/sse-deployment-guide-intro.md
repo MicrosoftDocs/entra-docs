@@ -151,7 +151,7 @@ Traffic forwarding enables you to configure the type of network traffic to tunne
 
    :::image type="content" source="media/sse-deployment-guide-intro/traffic-forwarding-profile-enabled.png" alt-text="Diagram that shows how to enable Microsoft Traffic and Private access profiles." lightbox="media/sse-deployment-guide-intro/traffic-forwarding-profile-enabled-expanded.png"::: 
 
-1. To enable source IP restoration, go to **Global Secure Access** > **Connect** > **Global settings** > **Session management** > **Adaptive Access** and turn on **Enable Global Secure Access signaling in Conditional Access**. Source IP restoration is required to for Conditional Access policies that you will configure as part of this proof of concept.
+1. To enable source IP restoration, go to **Global Secure Access** > **Connect** > **Settings** > **Session management** > **Adaptive Access** and turn on **Enable Global Secure Access signaling in Conditional Access**. Source IP restoration is required to for Conditional Access policies that you will configure as part of this proof of concept.
 
    :::image type="content" source="media/sse-deployment-guide-intro/session-management-adaptive-access-inline.png" alt-text="Diagram that shows how to enable Conditional Access policies for Microsoft's Security Service Edge Solution." lightbox="media/sse-deployment-guide-intro/session-management-adaptive-access-expanded.png":::
 
