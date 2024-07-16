@@ -18,7 +18,9 @@ ms.custom: it-pro
 
 # Bulk operations
 
-Bulk operations related to users, groups, and devices in the Microsoft Entra admin portal could time out and fail on very large tenants. This limitation is a known issue due to scaling limitations. The Microsoft engineering team is working on a new service that will eventually address this limitation.\
+Bulk operations in Microsoft Entra ID enable you to perform actions on multiple entities, such as users, groups, and devices, at once. This can include creating, deleting, or updating multiple records in a single operation, which can greatly streamline administrative tasks and improve efficiency.
+
+Bulk operations in the Microsoft Entra admin portal could time out and fail on very large tenants. This limitation is a known issue due to scaling limitations. The Microsoft engineering team is working on a new service that will eventually address this limitation.
 
 > [!NOTE]
 > When performing bulk operations, such as import or create, you may encounter a problem if the bulk operation does not complete within the hour. To work around this issue, we recommend splitting the number of records processed per batch. For example, before starting an export you could limit the result set by filtering on a group type or user name to reduce the size of the results. By refining your filters, essentially you are limiting the data returned by the bulk operation. 
