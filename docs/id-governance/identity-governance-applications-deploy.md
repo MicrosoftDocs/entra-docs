@@ -38,7 +38,7 @@ Conditional Access is only possible for applications that rely upon Microsoft En
 In this section, you configure Microsoft Entra entitlement management so users can request access to your application's roles or to groups used by the application.  In order to perform these tasks, you need to be in the *Global Administrator*, *Identity Governance Administrator* role, or be [delegated as a catalog creator](entitlement-management-delegate-catalog.md) and the owner of the application.
 
 > [!NOTE]
-> Following least privilege access, we recommend using thr Identity Governance administrator role here.
+> Following least privilege access, we recommend using the Identity Governance administrator role here.
 
 1. **Access packages for governed applications should be in a designated catalog.** If you don't already have a catalog for your application governance scenario, [create a catalog](~/id-governance/entitlement-management-catalog-create.md) in Microsoft Entra entitlement management.  If you have multiple catalogs to create, you can use a PowerShell script to [create each catalog](entitlement-management-catalog-create.md#create-a-catalog-with-powershell).
 1. **Populate the catalog with necessary resources.** Add the application, and any Microsoft Entra groups that the application relies upon, [as resources in that catalog](~/id-governance/entitlement-management-catalog-create.md#add-resources-to-a-catalog).  If you have many resources, you can use a PowerShell script to [add each resource to a catalog](entitlement-management-catalog-create.md#add-a-resource-to-a-catalog-with-powershell).
