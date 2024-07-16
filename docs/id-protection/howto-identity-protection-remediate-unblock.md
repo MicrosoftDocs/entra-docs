@@ -124,7 +124,7 @@ If after investigation, an account is confirmed compromised:
    1. [Disable any devices](~/identity/devices/manage-device-identities.md) that are considered compromised.
    1. If using [continuous access evaluation](~/identity/conditional-access/concept-continuous-access-evaluation.md), revoke all access tokens.
 
-For more information about what happens when confirming compromise, see the section [How should I give risk feedback and what happens under the hood?](howto-identity-protection-risk-feedback.md#how-should-i-give-risk-feedback-and-what-happens-under-the-hood).
+For more information about what happens when confirming compromise, see the section [How to give risk feedback on risks](howto-identity-protection-risk-feedback.md#how-to-give-risk-feedback-in-microsoft-entra-id-protection).
 
 ### Deleted users
 
