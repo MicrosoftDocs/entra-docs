@@ -11,7 +11,7 @@ author: csmulligan
 manager: CelesteDG
 ---
 
-# What's new in docs for External ID in external tenants
+# What's new in docs: External ID in external tenants
 
 Welcome to what's new in documentation for Microsoft Entra External ID in external tenants. This article lists new docs that were added and docs that were significantly updated in the last three months.
 
