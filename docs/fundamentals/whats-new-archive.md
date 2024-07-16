@@ -1211,7 +1211,7 @@ The Azure Active Directory Insights tab in Microsoft Entra Permissions Managemen
 **Service category:** MFA                           
 **Product capability:** Identity Security & Protection              
 
-The in portal guide to configure multifactor authentication helps you get started with Azure Active Directory's MFA capabilities. You can find this guide under the Tutorials tab in the Azure AD Overview. 
+The in portal guide for configuring multifactor authentication helps you get started with Azure Active Directory's MFA capabilities. You can find this guide under the Tutorials tab in the Azure AD Overview. 
 
 ---
 
@@ -1221,9 +1221,9 @@ The in portal guide to configure multifactor authentication helps you get starte
 **Service category:** Microsoft Authenticator App                           
 **Product capability:** User Authentication                
 
-Authenticator Lite (in Outlook) is an authentication solution for users that haven't yet downloaded the Microsoft Authenticator app. Users are prompted in Outlook on their mobile device to register for multifactor authentication. After they enter their password at sign-in, they'll have the option to send a push notification to their Android or iOS device.
+Authenticator Lite (in Outlook) is an authentication solution for users who haven't downloaded the Microsoft Authenticator app. Users are prompted in Outlook on their mobile device to register for multifactor authentication. After they enter their password at sign-in, they'll be able to send a push notification to their Android or iOS device.
 
-Due to the security enhancement this feature provides users, the Microsoft managed value of this feature will be changed from ‘*disabled*’ to ‘*enabled*’ on June 9. We’ve made some changes to the feature configuration, so if you made an update before GA, May 17, please validate that the feature is in the correct state for your tenant prior to June 9. If you don't wish for this feature to be enabled on June 9, move the state to ‘*disabled*’, or set users to include and exclude groups.  
+Due to the security enhancement this feature provides users, the Microsoft managed value of this feature will be changed from ‘*disabled*’ to ‘*enabled*’ on June 9. We made some changes to the feature configuration, so if you made an update before GA, May 17, validate that the feature is in the correct state for your tenant before June 9. If you don't wish for this feature to be enabled on June 9, move the state to ‘*disabled*’, or set users to include and exclude groups.  
 
 
 For more information, see: [How to enable Microsoft Authenticator Lite for Outlook mobile (preview)](~/identity/authentication/how-to-mfa-authenticator-lite.md).
@@ -1274,7 +1274,7 @@ In May 2023 we added the following 51 new applications in our App gallery with F
  
 You can also find the documentation of all the applications from here https://aka.ms/AppsTutorial,
 
-For listing your application in the Azure AD app gallery, please read the details here https://aka.ms/AzureADAppRequest
+For listing your application in the Azure AD app gallery, read the details here https://aka.ms/AzureADAppRequest
 
 ---
 
@@ -1284,7 +1284,7 @@ For listing your application in the Azure AD app gallery, please read the detail
 **Service category:** MFA                        
 **Product capability:** Identity Security & Protection               
 
-We have improved My Sign-ins and My Security-Info to give you more clarity on the types of Microsoft Authenticator or other Authenticator apps a user has registered. Users will now see Microsoft Authenticator registrations with additional information showing the app as being registered as Push-based MFA or Password-less phone sign-in (PSI) and for other Authenticator apps (Software OATH) we now indicate they're registered as a Time-based One-time password method.  For more information, see: [Set up the Microsoft Authenticator app as your verification method](https://support.microsoft.com/account-billing/set-up-the-microsoft-authenticator-app-as-your-verification-method-33452159-6af9-438f-8f82-63ce94cf3d29).
+We've improved My Sign-ins and My Security-Info to give you more clarity on the types of Microsoft Authenticator or other Authenticator apps a user has registered. Users will now see Microsoft Authenticator registrations with additional information showing the app as being registered as Push-based MFA or Password-less phone sign-in (PSI) and for other Authenticator apps (Software OATH) we now indicate they're registered as a Time-based One-time password method.  For more information, see: [Set up the Microsoft Authenticator app as your verification method](https://support.microsoft.com/account-billing/set-up-the-microsoft-authenticator-app-as-your-verification-method-33452159-6af9-438f-8f82-63ce94cf3d29).
 
 ---
 
