@@ -31,6 +31,11 @@
       "redirect_document_id": true
     },
     {
+      "source_path_from_root": "/docs/id-protection/troubleshooting-identity-protection-faq.yml",
+      "redirect_url": "/entra/id-protection/overview-identity-protection",
+      "redirect_document_id": true
+    },
+    {
       "source_path_from_root": "/docs/fundamentals/licensing-preview-terms.md",
       "redirect_url": "/entra/fundamentals/licensing-preview-info",
       "redirect_document_id": false
