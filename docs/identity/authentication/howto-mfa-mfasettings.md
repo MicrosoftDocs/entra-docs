@@ -6,7 +6,7 @@ description: Learn how to configure settings for Microsoft Entra multifactor aut
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 06/11/2024
+ms.date: 07/15/2024
 
 ms.author: justinha
 author: justinha
@@ -200,6 +200,7 @@ The following table lists more numbers for different countries.
 |:---------------------|:----------------|
 | Austria              | +43 6703062076  |
 | Bangladesh           | +880 9604606026 |
+| China                | +44 1235619418, +44 1235619536, +44 1235619537, +44 1235619538, +44 1235619539, +44 1235619535, +44 7897087681, +44 7897087690, +44 7897087692, +66 977832930|
 | Croatia              | +385 15507766   |
 | Ecuador              | +593 964256042  |
 | Estonia              | +372 6712726    |
@@ -213,7 +214,7 @@ The following table lists more numbers for different countries.
 | Kenya                | +254 709605276  |
 | Netherlands          | +31 202490048   |
 | Nigeria              | +234 7080627886 |
-| Pakistan             | +92 4232618686  |
+| Pakistan             | +92 4232618686, +44 7897087681, +44 7897087690, +44 7897087692, +66 977832930  |
 | Poland               | +48 699740036   |
 | Saudi Arabia         | +966 115122726  |
 | South Africa         | +27 872405062   |
