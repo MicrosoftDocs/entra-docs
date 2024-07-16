@@ -19,6 +19,9 @@ This article details the built-in Microsoft Entra roles you can assign for manag
 
 **Full access**: This role grants administrators full permissions within Global Secure Access. They can manage policies, configure settings, and view logs; including Conditional Access scenarios, configurations for Private Access, write operations on application segments, and management of user assignments for traffic profiles.
 
+> [!IMPORTANT]
+> It is highly recommended to use a least privelege approach for security reasons. The Global Administrator role is only required for configuring Office 365 logging as outlined in the table. For all other scnearios, use the least priveledge role required to administer the service. To learn more about least priveledge
+
 ### Security Administrator 
 
 **Limited access**: This role grants permissions to perform specific tasks, such as configuring remote networks, setting up security profiles, managing traffic forwarding profiles, and viewing traffic logs and alerts. However, security admins can't configure Private Access or enable Office 365 logging.
