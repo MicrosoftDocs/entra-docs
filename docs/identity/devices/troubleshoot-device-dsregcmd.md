@@ -155,7 +155,7 @@ This section lists the statuses of various attributes for users who are currentl
 +----------------------------------------------------------------------+
 
                     NgcSet : YES
-                  NgcKeyId : {FA0DB076-A5D7-4844-82D8-50A2FB42EC7B}
+                  NgcKeyId : {aaaaaaaa-0b0b-1c1c-2d2d-333333333333}
                   CanReset : DestructiveAndNonDestructive
            WorkplaceJoined : NO
              WamDefaultSet : YES

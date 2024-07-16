@@ -74,7 +74,7 @@ This article assumes that you have [Microsoft Entra hybrid joined devices](hybri
 +----------------------------------------------------------------------+
 
              NgcSet: YES
-           NgcKeyId: {C7A9AEDC-780E-4FDA-B200-1AE15561A46B}
+           NgcKeyId: {aaaaaaaa-0b0b-1c1c-2d2d-333333333333}
     WorkplaceJoined: NO
       WamDefaultSet: YES
 WamDefaultAuthority: organizations

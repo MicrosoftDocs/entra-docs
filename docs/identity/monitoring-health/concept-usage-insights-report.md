@@ -197,7 +197,7 @@ Example response:
 {
  "@odata.type": "#microsoft.graph.appCredentialSignInActivity",
  "id": "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u",
- "keyId": "83f45296-fb8f-4aaa-a399-ac51084e02b7",
+ "keyId": "aaaaaaaa-0b0b-1c1c-2d2d-333333333333",
  "keyType": "certificate",
  "keyUsage": "sign",
  "appId": "11112222-bbbb-3333-cccc-4444dddd5555",
