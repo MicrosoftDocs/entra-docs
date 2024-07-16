@@ -5,7 +5,7 @@ description: Learn about options for passwordless sign-in to Microsoft Entra ID 
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/22/2024
+ms.date: 07/16/2024
 
 ms.author: justinha
 author: justinha
@@ -21,7 +21,7 @@ Features like multifactor authentication (MFA) are a great way to secure your or
 | --- | --- | --- |
 | Passwordless | Windows 10 Device, phone, or security key | Biometric or PIN |
 
-Each organization has different needs when it comes to authentication. Microsoft Azure and Azure Government offer the following five passwordless authentication options that integrate with Microsoft Entra ID:
+Each organization has different needs when it comes to authentication. Microsoft Entra ID and Azure Government integrate the following passwordless authentication options:
 
 - Windows Hello for Business
 - Platform Credential for macOS
@@ -116,15 +116,15 @@ To get started with passwordless sign-in, complete the following how-to:
 
 ## Passkeys (FIDO2) 
 
-The FIDO (Fast IDentity Online) Alliance helps to promote open authentication standards and reduce the use of passwords as a form of authentication. FIDO2 is the latest standard that incorporates the web authentication (WebAuthn) standard.
+Users can register a passkey (FIDO2) and choose it as their primary sign-in method. With a hardware device that handles the authentication, the security of an account is increased as there's no password that could be exposed or guessed. Currently in preview, an Authentication Policy Administrator can also [provision a FIDO2 security](https://aka.ms/passkeyprovision) on behalf of a user by using Microsoft Graph. Only using Graph to provision FIDO2 security keys on behalf of users is currently supported. 
 
-FIDO2 security keys are an unphishable standards-based passwordless authentication method that can come in any form factor. Fast Identity Online (FIDO) is an open standard for passwordless authentication. FIDO allows users and organizations to apply the standard to sign in to their resources without a username or password using an external security key or a platform key built into a device.
+The FIDO (Fast IDentity Online) Alliance helps to promote open authentication standards and reduce the use of passwords as a form of authentication. FIDO2 is the latest standard that incorporates the web authentication (WebAuthn) standard. FIDO allows organizations to apply the WebAuthn standard by using an external security key, or a platform key built into a device, to sign in without a username or password.
 
-Users can register and then select a FIDO2 security key at the sign-in interface as their main means of authentication. These FIDO2 security keys are typically USB devices, but could also use Bluetooth or NFC. With a hardware device that handles the authentication, the security of an account is increased as there's no password that could be exposed or guessed.
+FIDO2 security keys are an unphishable standards-based passwordless authentication method that can come in any form factor. They're commonly USB devices, but they can also use Bluetooth or NFC. Passkeys (FIDO2) are based on the same WebAuthn standard and can be saved in Authenticator, or on mobile devices, tablets, or computers.
 
 FIDO2 security keys can be used to sign in to their Microsoft Entra ID or Microsoft Entra hybrid joined Windows 10 devices and get single-sign on to their cloud and on-premises resources. Users can also sign in to supported browsers. FIDO2 security keys are a great option for enterprises who are very security sensitive or have scenarios or employees who aren't willing or able to use their phone as a second factor.
 
-See the reference document here: [Support for FIDO2 authentication with Microsoft Entra ID](fido2-compatibility.md). For developer best practices, see [Support FIDO2 auth in the applications they develop](~/identity-platform/support-fido2-authentication.md).
+For more information about passkey (FIDO2) support, see [Support for passkey (FIDO2) authentication with Microsoft Entra ID](fido2-compatibility.md). For developer best practices, see [Support FIDO2 auth in the applications they develop](~/identity-platform/support-fido2-authentication.md).
 
 ![Sign in to Microsoft Edge with a security key](./media/concept-authentication-passwordless/concept-web-sign-in-security-key.png)
 
