@@ -21,7 +21,7 @@ ms.author: owinfrey
 - **Reduce** or remove manual tasks that were done in the past with automated Lifecycle Workflows
 - **Apply** logic apps to extend workflows for more complex scenarios using your existing Logic apps
 
-Lifecycle Workflows are an [Microsoft Entra ID Governance](identity-governance-overview.md) capability. The other capabilities are [entitlement management](entitlement-management-overview.md), [access reviews](access-reviews-overview.md),[Privileged Identity Management (PIM)](~/id-governance/privileged-identity-management/pim-configure.md), and [terms of use](~/identity/conditional-access/terms-of-use.md). Together, they help you address these questions:
+Lifecycle Workflows are a [Microsoft Entra ID Governance](identity-governance-overview.md) capability. The other capabilities are [entitlement management](entitlement-management-overview.md), [access reviews](access-reviews-overview.md),[Privileged Identity Management (PIM)](~/id-governance/privileged-identity-management/pim-configure.md), and [terms of use](~/identity/conditional-access/terms-of-use.md). Together, they help you address these questions:
 
  - Which users should have access to which resources?
  - What are those users doing with that access?

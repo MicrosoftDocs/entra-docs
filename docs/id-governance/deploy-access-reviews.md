@@ -24,7 +24,7 @@ ms.reviewer: markwahl-msft
 
   ![Diagram that shows the access reviews flow.](./media/deploy-access-review/1-planning-review.png)
 
-Access reviews are an [Microsoft Entra ID Governance](identity-governance-overview.md) capability. The other capabilities are [entitlement management](entitlement-management-overview.md), [Privileged Identity Management (PIM)](../id-governance/privileged-identity-management/pim-configure.md), lifecycle workflows, provisioning, and [terms of use](../identity/conditional-access/terms-of-use.md). Together, they help you address these four questions:
+Access reviews are a [Microsoft Entra ID Governance](identity-governance-overview.md) capability. The other capabilities are [entitlement management](entitlement-management-overview.md), [Privileged Identity Management (PIM)](../id-governance/privileged-identity-management/pim-configure.md), lifecycle workflows, provisioning, and [terms of use](../identity/conditional-access/terms-of-use.md). Together, they help you address these four questions:
 
 * Which users should have access to which resources?
 * What are those users doing with that access?

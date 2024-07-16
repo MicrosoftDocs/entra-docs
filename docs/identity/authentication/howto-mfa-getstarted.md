@@ -15,7 +15,7 @@ ms.reviewer: jpettere
 
 Microsoft Entra multifactor authentication helps safeguard access to data and applications, providing another layer of security by using a second form of authentication. Organizations can enable multifactor authentication with [Conditional Access](~/identity/conditional-access/overview.md) to make the solution fit their specific needs.
 
-This deployment guide shows you how to plan and implement an [Microsoft Entra multifactor authentication](concept-mfa-howitworks.md) roll-out.
+This deployment guide shows you how to plan and implement a [Microsoft Entra multifactor authentication](concept-mfa-howitworks.md) roll-out.
 
 <a name='prerequisites-for-deploying-azure-ad-multi-factor-authentication'></a>
 

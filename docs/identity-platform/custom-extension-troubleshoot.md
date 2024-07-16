@@ -42,7 +42,7 @@ Microsoft Entra sign-in logs also integrate with [Azure Monitor](/azure/azure-mo
 
 To access the Microsoft Entra sign-in logs:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 1. Select **Sign-in logs**, and then select the latest sign-in log.
 1. For more details, select the **Authentication Events** tab. Information related to the custom authentication extension REST API call is displayed, including any [error codes](#error-codes-reference).
@@ -193,7 +193,7 @@ Your REST API is protected by a Microsoft Entra access token. You can test your 
 
 After you acquire an access token, pass it the HTTP `Authorization` header. To obtain an access token, follow these steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Application registrations**.
 1. Select the *Azure Functions authentication events API* app registration, previously configured in [configure a custom claim provider for a token issuance event](custom-extension-tokenissuancestart-configuration.md#step-1-register-a-custom-authentication-extension).
 1. Copy the [application ID](custom-extension-tokenissuancestart-configuration.md#12-grant-admin-consent).
