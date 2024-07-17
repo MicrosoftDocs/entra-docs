@@ -181,3 +181,4 @@ The following scenarios are important to consider when you're reviewing sign-in 
     - The **Primary authentication** row isn't initially logged.
   - If you're unsure of a detail in the logs, gather the **Request ID** and **Correlation ID** to use for further analyzing or troubleshooting.
   - If Conditional Access policies for authentication or session lifetime are applied, they're listed above the sign-in attempts. If you don't see either of those options, those policies aren't currently applied. For more information, see [Conditional Access session controls](~/identity/conditional-access/concept-conditional-access-session.md).
+  
