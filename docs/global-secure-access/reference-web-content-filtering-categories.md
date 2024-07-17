@@ -9,9 +9,12 @@ ms.date: 03/04/2024
 ms.service: global-secure-access
 ms.subservice: entra-internet-access
 ---
-# Global Secure Access (preview) Web content filtering categories
+# Global Secure Access Web content filtering categories
 
 When you set up rules to filter web content, you can select based on a category. This article provides a list of categories along with explanations.
+
+> [!NOTE]
+> You can check a website's web category using the Web Category column in Global Secure Access [Traffic Logs](how-to-view-traffic-logs.md). If you would like to dispute a site's categorization, you can make a request via email using [this template](mailto:gsawebcatdispute@service.microsoft.com?subject=%5BCustomer%20Dispute%5D%20Miscategorized%20%3CFQDN%3E%20as%20%3CCategory%20Returned%3E&body=Dispute%20Type%3A%20Miscategorization%0AFQDN%20%3A%20%3C%3E%0ACategory%20Returned%20%3A%20%3C%3E%0ACategory%20Expected%20%3A%20%3C%3E%0AJustification%3A%20%3C%3E).
 
 ## Liability
 
@@ -32,11 +35,12 @@ When you set up rules to filter web content, you can select based on a category.
 |Nudity    | Sites that contain full or partial nudity that aren't necessarily overtly sexual in intent.|
 |Pornography/sexually explicit    |Sites that contain explicit sexual content. Includes adult products such as sex toys, CD-ROMs, and videos, adult services such as videoconferencing, escort services, and strip clubs, erotic stories, and textual descriptions of sexual acts.  |
 |School cheating    | Sites that promote unethical practices such as cheating or plagiarism by providing test answers, written essays, research papers, or term papers.        |
-|Self-harm      |Sites that promote actions that are relating to harming oneself, such as suicide, anorexia, bulimia, etc.          |
+|Self-harm      |Sites that promote actions that are relating to harming oneself, such as suicide, anorexia, bulimia, and so on.          |
 |Sex education     |  Sites relating to sex education, including subjects such as respect for partner, abortion, contraceptives, sexually transmitted diseases, and pregnancy.       |
 |Tasteless     |Sites with offensive or tasteless content, including profanity.          |
 |Violence   | Sites that contain images or text depicting or advocating physical assault against humans, animals, or institutions. Sites of gruesome nature.         |
 |Weapons      |Sites that depict, sell, review, or describe guns and weapons, including for sport.         |
+|Artificial Intelligence	|Sites that use GenerativeAI.	|
 
 ## High bandwidth
 
@@ -47,7 +51,6 @@ When you set up rules to filter web content, you can select based on a category.
 |Streaming media + downloads    |  Sites that deliver streaming content, such as Internet radio, Internet TV, or MP3 and live or archived media download sites. Includes fan sites, or official sites run by musicians, bands, or record labels.        |
 |Download sites      | Sites that contain downloadable software, whether shareware, freeware, or for a charge.         |
 |Entertainment     |  Sites containing programming guides to television, movies, music and video (including video on demand), celebrity sites, and entertainment news.        |
-|    |         |
 
 ## Business use
 
@@ -59,19 +62,18 @@ When you set up rules to filter web content, you can select based on a category.
 |Finance    | Sites related to banking, finance, payment or investment, including banks, brokerages, online stock trading, stock quotes, fund management, insurance companies, credit unions, credit card companies, and so on.         |
 |Forums + newsgroups     | Sites for sharing information in the form of newsgroups, forums, bulletin boards. Doesn't include personal blogs.         |
 |Government      |  Sites run by governmental or military organizations, departments, or agencies, including police departments, fire departments, customs bureaus, emergency services, civil defense, and counterterrorism organizations.        |
-|Health + medicine      |   Sites containing information pertaining to health, healthcare services, fitness, and well-being, including information about medical equipment, hospitals, drugstores, nursing, medicine, procedures, prescription medications, etc.       |
+|Health + medicine      |   Sites containing information pertaining to health, healthcare services, fitness, and well-being, including information about medical equipment, hospitals, drugstores, nursing, medicine, procedures, prescription medications, and so on.       |
 |Information security     |   Sites that provide legitimate information about data protection, including newly discovered vulnerabilities and how to block them.       |
-|Job search    |  Sites containing job listings, career information, assistance with job searches (such as resume writing, interviewing tips, etc.), employment agencies, or head hunters.        |
+|Job search    |  Sites containing job listings, career information, assistance with job searches (such as resume writing, interviewing tips, and so on), employment agencies, or head hunters.        |
 |News  |    Sites covering news and current events such as newspapers, newswire services, personalized news services, broadcasting sites, and magazines.      |
 |Nonprofits + NGOs     |   Sites devoted to clubs, communities, unions, and non-profit organizations. Many of these groups exist for educational or charitable purposes.       |
-|Personal sites     |    Sites about or hosted by personal individuals, including those hosted on commercial sites such as Blogger, AOL, etc.      |
+|Personal sites     |    Sites about or hosted by personal individuals, including those hosted on commercial sites such as Blogger, AOL, and so on.      |
 |Private IP addresses      |  Sites that are private IP addresses as defined in RFC 1918, that is, hosts that don't require access to hosts in other enterprises (or require limited access) and whose IP address might be ambiguous between enterprises but are well-defined within a certain enterprise.        |
 |Professional networking   | Sites that enable professional networking for online communities.   |
 |Search engines + portals   |Sites enabling the searching of the Web, newsgroups, images, directories, and other online content. Includes portal and directory sites such as white/yellow pages.    |
 |Translators     |   Sites that translate Web pages or phrases from one language to another. These sites bypass the proxy server, presenting the risk that unauthorized content might be accessed, similar to using an anonymizer.       |
 |Web repository + storage   |  Web pages including collections of shareware, freeware, open source, and other software downloads.        |
 |Web-based email     | Sites that enable users to send and receive email through a web accessible email account.         |
-|     |         |
 
 ## Productivity loss
 
@@ -84,7 +86,6 @@ When you set up rules to filter web content, you can select based on a category.
 |Instant messaging    | Sites that enable logging in to instant messaging services such as ICQ, AOL Instant Messenger, IRC, MSN, Jabber, Yahoo Messenger, and the like.         |
 |Shopping    |  Sites for online shopping, catalogs, online ordering, auctions, classified ads. Excludes shopping for products and services exclusively covered by another category such as health & medicine.       |
 |Social networking   |  Sites that enable social networking for online communities of various topics, for friendship, or/and dating.        |
-|   |         |
 
 ## General surfing
 
@@ -94,30 +95,21 @@ When you set up rules to filter web content, you can select based on a category.
 |Fashion + Beauty    | Sites concerning fashion, jewelry, glamour, beauty, modeling, cosmetics, or related products or services. Includes product reviews, comparisons, and general consumer information.   |
 |General    | Sites that don't clearly fall into other categories, for example, blank web pages.   |
 |Greeting cards    |Sites that allow people to send and receive greeting cards and postcards.    |
-|Leisure + recreation     | Sites relating to recreational activities and hobbies including zoos, public recreation centers, pools, amusement parks, and hobbies such as gardening, literature, arts & crafts, home improvement, home décor, family, etc. |
+|Leisure + recreation     | Sites relating to recreational activities and hobbies including zoos, public recreation centers, pools, amusement parks, and hobbies such as gardening, literature, arts & crafts, home improvement, home décor, family, and so on. |
 |Nature + conservation     | Sites with information related to environmental issues, sustainable living, ecology, nature, and the environment.        |
 |Politics     | Sites that promote political parties or political advocacy, or provide information about political parties, interest groups, elections, legislation, or lobbying. Also includes sites that offer legal information and advice.       |
-|Real estate  |Sites relating to commercial or residential real estate services, including renting, purchasing, selling, or financing homes, offices, etc.    |
+|Real estate  |Sites relating to commercial or residential real estate services, including renting, purchasing, selling, or financing homes, offices, and so on.    |
 |Religion    | Sites that deal with faith, human spirituality or religious beliefs, including sites of churches, synagogues, mosques, and other houses of worship.         |
 |Restaurants + dining  |Sites that list, review, promote or advertise food, dining or catering services. Includes sites for recipes sites, cooking instruction and tips, food products, and wine advisors.          |
 |Sports   | Sites relating to sports teams, fan clubs, scores, and sports news. Relates to all sports, whether professional or recreational.        |
-|Transportation   | Sites that include information about motor vehicles such as cars, motorcycles, boats, trucks, RVs and the like, including online purchase sites. Includes manufacturer sites, dealerships, review sites, pricing, enthusiast’s clubs, and public transportation etc.    |
+|Transportation   | Sites that include information about motor vehicles such as cars, motorcycles, boats, trucks, RVs and the like, including online purchase sites. Includes manufacturer sites, dealerships, review sites, pricing, enthusiast’s clubs, and public transportation, and so on.    |
 |Travel    | Sites that provide travel and tourism information or online booking or travel services such as airlines, accommodations, car rentals. Includes regional or city information sites.         |
 |Uncategorized     |Sites that haven't been categorized, such as new websites, personal sites, and so on.          |
-|    |         |
 
-## Security
+## Ungrouped
 
 |Category   |Description  |
 |---------|---------|
-|Remote Access     | Sites used for remote computer control.  |
-|Malware  | Sites used by key loggers, mobile malware, bots, malware, and spyware.  |
 |Cryptocurrency Mining | Sites that relate to crypto currency and crypto currency mining. |
-|Anonymizers | Sites that are used for remote proxy connections to make activity on the Internet untraceable. |
 |Web Phone | Sites that can be used for Internet voice communications. |
 |Web Meetings | Sites for conducting web conferences. |
-|Phishing And Fraud | Sites that are used to steal information through phishing attacks. |
-|Compromised | Sites that have been compromised. |
-|Parked Domains | Sites that aren't in active use. |
-|Botnets | Sites used by botnets. |
-|Spam Sites | Sites known to produce SPAM email. |

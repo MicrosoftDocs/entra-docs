@@ -66,7 +66,7 @@ Get-Command -Module AdSyncConfig
 
 Each cmdlet has the same parameters to input the AD DS Connector Account and an AdminSDHolder switch. To specify your AD DS Connector Account, you can provide the account name and domain, or just the account Distinguished Name (DN),
 
-e.g.:
+ e.g., :
 
 ```powershell
 Set-ADSyncPasswordHashSyncPermissions -ADConnectorAccountName <ADAccountName> -ADConnectorAccountDomain <ADDomainName>

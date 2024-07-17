@@ -23,12 +23,17 @@
     {
       "source_path_from_root": "/docs/id-protection/reference-identity-protection-glossary.md",
       "redirect_url": "/entra/id-protection/overview-identity-protection",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/id-protection/concept-identity-protection-security-overview.md",
       "redirect_url": "/entra/id-protection/id-protection-dashboard",
       "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/id-protection/troubleshooting-identity-protection-faq.yml",
+      "redirect_url": "/entra/id-protection/overview-identity-protection",
+      "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/fundamentals/licensing-preview-terms.md",
@@ -37,7 +42,17 @@
     },
     {
       "source_path_from_root": "/docs/fundamentals/whats-new-sovereign-clouds-archive.md",
-      "redirect_url": "/entra/fundamentals/whats-new-sovereign-clouds",
+      "redirect_url": "/entra/fundamentals/whats-new",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/fundamentals/whats-new-sovereign-clouds.md",
+      "redirect_url": "/entra/fundamentals/whats-new",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/fundamentals/what-is-deprecated.md",
+      "redirect_url": "/entra/fundamentals/whats-new",
       "redirect_document_id": false
     },
     {
@@ -62,6 +77,16 @@
     },
     {
       "source_path_from_root": "/docs/identity/saas-apps/aws-multi-accounts-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/apple-business-manager-provision-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/apple-school-manager-provision-tutorial.md",
       "redirect_url": "/entra/identity/saas-apps/tutorial-list",
       "redirect_document_id": false
     },
@@ -111,8 +136,23 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity/saas-apps/karlsgate-identity-exchange-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/karlsgate-identity-exchange-kie-sso-add-on-tutorial",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity/saas-apps/axiad-cloud-tutorial.md",
       "redirect_url": "/entra/identity/saas-apps/axiad-cloud-connector-tutorial",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/kanbanize-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/businessmap-tutorial",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/cisco-anyconnect.md",
+      "redirect_url": "/entra/identity/saas-apps/cisco-secure-firewall-secure-client",
       "redirect_document_id": false
     },
     {
@@ -123,6 +163,41 @@
     {
       "source_path_from_root": "/docs/identity/saas-apps/querylayer-tutorial.md",
       "redirect_url": "/entra/identity/saas-apps/trustworks-tutorial",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/promaster-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/expensemepro-tutorial",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/zscaler-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/zscaler-internet-access-zsnet-tutorial",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/zscaler-zscloud-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/zscaler-internet-access-zscloud-tutorial",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/zscaler-one-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/zscaler-internet-access-zsone-tutorial",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/zscaler-two-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/zscaler-internet-access-zstwo-tutorial",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/zscaler-three-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/zscaler-internet-access-zsthree-tutorial",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/imanage-work-saml-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/cloud-imanage-tutorial",
       "redirect_document_id": false
     },
     {
@@ -158,6 +233,36 @@
     {
       "source_path_from_root": "/docs/identity/app-proxy/whats-new-docs.md",
       "redirect_url": "/entra/identity",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/app-proxy/application-proxy-release-version-history.md",
+      "redirect_url": "/entra/global-secure-access/reference-version-history",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/app-proxy/application-proxy-connectors.md",
+      "redirect_url": "/entra/global-secure-access/concept-connectors",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/app-proxy/application-proxy-connector-groups.md",
+      "redirect_url": "/entra/global-secure-access/concept-connector-groups",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/app-proxy/application-proxy-connector-installation-problem.md",
+      "redirect_url": "/entra/global-secure-access/troubleshoot-connectors",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/app-proxy/application-proxy-debug-connectors.md",
+      "redirect_url": "/entra/global-secure-access/troubleshoot-connectors",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/app-proxy/application-proxy-register-connector-powershell.md",
+      "redirect_url": "/entra/global-secure-access/how-to-register-connector-powershell",
       "redirect_document_id": false
     },
     {
@@ -211,8 +316,33 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity/devices/enroll-macos-admin.md",
+      "redirect_url": "/mem/intune/configuration/platform-sso-macos",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity-platform/msal-v1-app-scopes.md",
       "redirect_url": "/entra/identity-platform/msal-acquire-cache-tokens",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/tutorial-blazor-server.md",
+      "redirect_url": "/entra/identity-platform/quickstart-single-page-app-blazor-wasm-sign-in",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/reference-native-authentication-overview.md",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/reference-native-authentication-email-otp.md",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/reference-native-authentication-email-password.md",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api",
       "redirect_document_id": false
     },
     {
@@ -261,13 +391,118 @@
       "redirect_document_id": false
     },
     {
-      "source_path_from_root": "/docs/identity/authentication/multi-factor-authentication-wizard.md",
+      "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-android-sign-up-user-with-username-password-user-attributes.md",
+      "redirect_url": "/entra/external-id/customers/tutorial-native-authentication-android-sign-up",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-android-sign-up-user-with-username-password.md",
+      "redirect_url": "/entra/external-id/customers/tutorial-native-authentication-android-sign-up",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-android-sign-up-user-with-username-user-attributes.md",
+      "redirect_url": "/entra/external-id/customers/tutorial-native-authentication-android-sign-up",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-ios-sign-up-with-email-one-time-passcode.md",
+      "redirect_url": "/entra/external-id/customers/tutorial-native-authentication-ios-sign-up",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-ios-sign-up-with-username-password-user-attributes.md",
+      "redirect_url": "/entra/external-id/customers/tutorial-native-authentication-ios-sign-up",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-ios-sign-up-with-username-password.md",
+      "redirect_url": "/entra/external-id/customers/tutorial-native-authentication-ios-sign-up",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/conditional-access/location-condition.md",
+      "redirect_url": "/entra/identity/conditional-access/concept-assignment-network",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/identity/conditional-access/howto-conditional-access-apis.md",
       "redirect_url": "/entra/identity/conditional-access/howto-conditional-access-policy-all-users-mfa",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/authentication/multi-factor-authentication-wizard.md",
+      "redirect_url": "/graph/api/resources/conditionalaccessroot",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/identity/authentication/concept-authentication-operator-assistance.md",
       "redirect_url": "/entra/identity/authentication/concept-mfa-howitworks",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/config-authority.md",
+      "redirect_url": "/entra/msal/objc/configure-authority",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/customize-webviews.md",
+      "redirect_url": "/entra/msal/objc/customize-webviews",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/howto-v2-keychain-objc.md",
+      "redirect_url": "/entra/msal/objc/howto-v2-keychain-objc",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/migrate-objc-adal-msal.md",
+      "redirect_url": "/entra/msal/objc/migrate-objc-adal-msal",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/msal-error-handling-ios.md",
+      "redirect_url": "/entra/msal/objc/error-handling-ios",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/msal-ios-shared-devices.md",
+      "redirect_url": "/entra/msal/objc/shared-devices-ios",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/redirect-uris-ios.md",
+      "redirect_url": "/entra/msal/objc/redirect-uris-ios",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/msal-logging-ios.md",
+      "redirect_url": "/entra/msal/objc/logging-ios",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/request-custom-claims.md",
+      "redirect_url": "/entra/msal/objc/request-custom-claims",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/single-sign-on-macos-ios.md",
+      "redirect_url": "/entra/msal/objc/single-sign-on-macos-ios",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/ssl-issues.md",
+      "redirect_url": "/entra/msal/objc/ssl-issues",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/msal-differences-ios-macos.md",
+      "redirect_url": "/entra/msal/objc/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/sso-between-adal-msal-apps-macos-ios.md",
+      "redirect_url": "/entra/msal/objc/sso-between-adal-msal-apps",
       "redirect_document_id": false
     },
     {
@@ -278,6 +513,11 @@
     {
       "source_path_from_root": "/docs/identity-platform/howto-call-a-web-api-with-postman.md",
       "redirect_url": "/entra/identity-platform/howto-call-a-web-api-with-curl",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/quickstart-web-app-python-sign-in.md",
+      "redirect_url": "/entra/identity-platform/quickstart-web-app-python-flask",
       "redirect_document_id": false
     },
     {
@@ -298,6 +538,11 @@
     {
       "source_path_from_root": "/docs/identity-platform/web-app-tutorial-04-call-web-api.md",
       "redirect_url": "/entra/identity-platform/tutorial-web-app-dotnet-call-api",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/reference-claims-mapping-policy-type.md",
+      "redirect_url": "/entra/identity-platform/reference-claims-customization",
       "redirect_document_id": false
     },
     {
@@ -387,6 +632,16 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity/authentication/fido2-compatibility.md",
+      "redirect_url": "/entra/identity/authentication/concept-fido2-compatibility",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/authentication/howto-authentication-passwordless-security-key.md",
+      "redirect_url": "/entra/identity/authentication/how-to-enable-passkey-fido2",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity/hybrid/connect/how-to-connect-group-writeback-v2.md",
       "redirect_url": "/entra/identity/hybrid/group-writeback-cloud-sync",
       "redirect_document_id": false
@@ -420,8 +675,297 @@
       "source_path_from_root": "/docs/identity/managed-identities-azure-resources/tutorial-linux-vm-access-cosmos-db.md",
       "redirect_url": "/entra/identity/managed-identities-azure-resources/tutorial-vm-managed-identities-cosmos",
       "redirect_document_id": false
-    }
+    },
+    {
+      "source_path_from_root": "/docs/identity/authentication/concept-authentication-windows-hello-for-business.md",
+      "redirect_url": "/windows/security/identity-protection/hello-for-business",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/how-to-create-customer-tenant-portal.md",
+      "redirect_url": "/entra/external-id/customers/how-to-create-external-tenant-portal",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/microsoft-graph-operations.md",
+      "redirect_url": "/entra/external-id/customers/concept-supported-features-customers",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-android-sign-in-user-with-username-password.md",
+      "redirect_url": "/entra/external-id/customers/tutorial-native-authentication-android-sign-in-sign-out",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-ios-sign-in-with-username-password.md",
+      "redirect_url": "/entra/external-id/customers/tutorial-native-authentication-ios-sign-in-sign-out",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/qs-configure-portal-windows-vm.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-configure-managed-identities",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/qs-configure-cli-windows-vm.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-configure-managed-identities",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/qs-configure-powershell-windows-vm.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-configure-managed-identities",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/qs-configure-template-windows-vm.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-configure-managed-identities",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/qs-configure-rest-vm.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-configure-managed-identities",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/qs-configure-sdk-windows-vm.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-configure-managed-identities",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/domain-services/join-centos-linux-vm.md",
+      "redirect_url": "/entra/identity/domain-services/join-ubuntu-linux-vm",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/domain-services/ad-auth-no-join-linux-vm.md",
+      "redirect_url": "/entra/identity/domain-services/join-ubuntu-linux-vm",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/enterprise-apps/app-management-videos.md",
+      "redirect_url": "/entra/identity/enterprise-apps/what-is-application-management",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/qs-configure-cli-windows-vmss.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-configure-managed-identities-scale-sets",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/qs-configure-portal-windows-vmss.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-configure-managed-identities-scale-sets",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/qs-configure-powershell-windows-vmss.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-configure-managed-identities-scale-sets",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/qs-configure-rest-vmss.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-configure-managed-identities-scale-sets",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/qs-configure-template-windows-vmss.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-configure-managed-identities-scale-sets",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/howto-assign-access-portal.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-assign-azure-resource",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/howto-assign-access-cli.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-assign-azure-resource",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/howto-assign-access-powershell.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-assign-azure-resource",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/how-to-view-managed-identity-service-principal-portal.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-view-managed-identity-service-principal",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/how-to-view-managed-identity-service-principal-cli.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-view-managed-identity-service-principal",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/how-to-view-managed-identity-service-principal-powershell.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-view-managed-identity-service-principal",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/how-to-assign-app-role-managed-identity-powershell.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-assign-app-role-managed-identity",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/how-to-assign-app-role-managed-identity-cli.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-assign-app-role-managed-identity",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/tutorial-windows-vm-access-datalake.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/tutorial-windows-managed-identities-vm-access",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/tutorial-windows-vm-access-storage-sas.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/tutorial-windows-managed-identities-vm-access",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/tutorial-windows-vm-access-nonaad.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/tutorial-windows-managed-identities-vm-access",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/tutorial-windows-vm-access-sql.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/tutorial-windows-managed-identities-vm-access",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/tutorial-windows-vm-ua-arm.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/tutorial-windows-managed-identities-vm-access",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/enterprise-apps/migrate-adfs-application-activity.md",
+      "redirect_url": "/entra/identity/enterprise-apps/migrate-ad-fs-application-howto",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/tutorial-vm-windows-access-storage.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/tutorial-windows-managed-identities-vm-access",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/tutorial-windows-vm-access-arm.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/tutorial-windows-managed-identities-vm-access",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/tutorial-linux-vm-access-datalake.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/tutorial-linux-managed-identities-vm-access",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/tutorial-linux-vm-access-storage.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/tutorial-linux-managed-identities-vm-access",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/tutorial-linux-vm-access-storage-sas.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/tutorial-linux-managed-identities-vm-access",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/tutorial-linux-vm-access-arm.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/tutorial-linux-managed-identities-vm-access",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/tutorial-linux-vm-access-storage-access-key.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/tutorial-linux-managed-identities-vm-access",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/tutorial-linux-vm-access-nonaad.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/tutorial-linux-managed-identities-vm-access",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/msi-tutorial-linux-vm-access-arm.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/tutorial-linux-managed-identities-vm-access",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/quickstart-v2-javascript.md",
+      "redirect_url": "/entra/identity-platform/quickstart-single-page-app-javascript-sign-in",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/tutorial-v2-javascript-auth-code.md",
+      "redirect_url": "/entra/identity-platform/quickstart-single-page-app-javascript-sign-in",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/global-secure-access/how-to-target-resource-microsoft-365-profile.md",
+      "redirect_url": "/entra/global-secure-access/how-to-target-resource-microsoft-profile",
+      "redirect_document_id": false
+    },
+    {
 
+      "source_path_from_root": "/docs/id-governance/what-is-identity-lifecycle-management.md",
+      "redirect_url": "/entra/id-governance/scenarios/govern-the-employee-lifecycle",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/global-secure-access/how-to-manage-microsoft-365-profile.md",
+      "redirect_url": "/entra/global-secure-access/how-to-manage-microsoft-profile",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/enterprise-apps/configure-app-management-policy.md",
+      "redirect_url": "/entra/identity/enterprise-apps/what-is-application-management",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/app-provisioning/migrate-from-sap-idm.md",
+      "redirect_url": "/entra/id-governance/scenarios/migrate-from-sap-idm",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/architecture/sse-deployment-guide-m365.md",
+      "redirect_url": "/entra/architecture/sse-deployment-guide-microsoft-traffic",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/scenario-daemon-overview.md",
+      "redirect_url": "/entra/identity-platform/scenario-daemon-app-registration",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/scenario-daemon-production.md",
+      "redirect_url": "/entra/identity-platform/scenario-daemon-app-registration",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/scenario-mobile-overview.md",
+      "redirect_url": "/entra/identity-platform/scenario-mobile-app-registration",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/scenario-mobile-production.md",
+      "redirect_url": "/entra/identity-platform/scenario-mobile-app-registration",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/scenario-desktop-overview.md",
+      "redirect_url": "/entra/identity-platform/scenario-desktop-app-registration",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/scenario-desktop-production.md",
+      "redirect_url": "/entra/identity-platform/scenario-desktop-app-registration",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/msal-net-migration-android-broker.md",
+      "redirect_url": "/entra/identity-platform/quickstart-mobile-app-android-sign-in",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/msal-net-migration-ios-broker.md",
+      "redirect_url": "/entra/identity-platform/quickstart-mobile-app-android-sign-in",
+      "redirect_document_id": false
+    }
   ]
 }
-

@@ -1,6 +1,6 @@
 ---
-title: "Tutorial: Prepare your customer tenant to sign in users in a Node.js CLI app"
-description: Learn how to register and configure a Node.js CLI application to signs in users in a Microsoft Entra ID for customers tenant
+title: "Tutorial: Prepare your external tenant to sign in users in a Node.js CLI app"
+description: Learn how to register and configure a Node.js CLI application to signs in users in an external tenant
  
 author: Dickson-Mwendia
 manager: mwongerapk
@@ -13,12 +13,12 @@ ms.topic: tutorial
 ms.date: 08/04/2023
 ms.custom: developer, devx-track-js
 
-#Customer intent: As a dev, devops, I want to learn how to register and configure a Node.js CLI application to signs in users in a Microsoft Entra ID for customers tenant
+#Customer intent: As a dev, devops, I want to learn how to register and configure a Node.js CLI application to signs in users in an external tenant
 ---
 
-# Tutorial: Prepare your customer tenant to sign in users in a Node.js CLI app
+# Tutorial: Prepare your external tenant to sign in users in a Node.js CLI app
 
-This tutorial series demonstrates how to build a Node.js command line interface (CLI) app and prepare it for authentication using the Microsoft Entra admin center. You'll use the [Microsoft Authentication Library for Node](/javascript/api/%40azure/msal-node) (MSAL Node) library to authenticate your app with your Microsoft Entra ID for customers tenant. Finally, you'll run the application and test the sign-in and sign-out experiences.
+This tutorial series demonstrates how to build a Node.js command line interface (CLI) app and prepare it for authentication using the Microsoft Entra admin center. You'll use the [Microsoft Authentication Library for Node](/javascript/api/%40azure/msal-node) (MSAL Node) library to authenticate your app with your external tenant. Finally, you'll run the application and test the sign-in and sign-out experiences.
 
 In this tutorial;
 
@@ -32,7 +32,7 @@ In this tutorial;
 
 ## Prerequisites
 
-* A Microsoft Entra ID for customer tenant. If you don't have one, [create a trial tenant](https://aka.ms/ciam-free-trial) or a [tenant with a subscription](./quickstart-tenant-setup.md) before you begin.
+* A Microsoft Entra ID for external tenant. If you don't have one, [create a trial tenant](https://aka.ms/ciam-free-trial) or a [tenant with a subscription](./quickstart-tenant-setup.md) before you begin.
 * This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
     * Application Administrator
     * Application Developer
@@ -49,9 +49,7 @@ In this tutorial;
 
 [!INCLUDE [active-directory-b2c-enable-public-client-flow](./includes/register-app/enable-public-client-flow.md)]  
 
-## Grant API permissions
-
-Since this app signs in users, add delegated permissions. These permissions allow the app to act on behalf of a signed-in user and access resources that the user has permissions to access. 
+## Grant admin consent 
 
 [!INCLUDE [active-directory-b2c-grant-delegated-permissions](./includes/register-app/grant-api-permission-sign-in.md)] 
 
@@ -66,7 +64,7 @@ Since this app signs in users, add delegated permissions. These permissions allo
 
 ## Next step
 
-Prepare your app to sign in users in a Microsoft Entra ID for customers tenant:
+Prepare your app to sign in users in an external tenant:
 
 > [!div class="nextstepaction"]
 > [Part 2: Prepare a Node.js CLI application for authentication](tutorial-cli-app-node-sign-in-prepare-app.md)

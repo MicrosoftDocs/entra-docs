@@ -1,11 +1,11 @@
 ---
 title: Conditional Access insights and reporting workbook
-description: Using the Microsoft Entra Conditional Access insights and reporting workbook to troubleshoot policies
+description: Using the Microsoft Entra Conditional Access insights and reporting workbook to troubleshoot policies.
 
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 03/28/2023
+ms.date: 06/27/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -32,7 +32,7 @@ Users must have at least the Security Reader role assigned and Log Analytics wor
 If you haven't integrated Microsoft Entra logs with Azure Monitor logs, you need to take the following steps before the workbook loads:
 
 1. [Create a Log Analytics workspace in Azure Monitor](/azure/azure-monitor/logs/quick-create-workspace).
-1. [Integrate Microsoft Entra logs with Azure Monitor logs](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.md).
+1. [Integrate Microsoft Entra logs with Azure Monitor logs](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.yml).
 
 ## How it works
 
@@ -92,8 +92,8 @@ You can also investigate the sign-ins of a specific user by searching for sign-i
 
 To configure a Conditional Access policy in report-only mode:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Protection** > **Conditional Access**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
+1. Browse to **Protection** > **Conditional Access** > **Policies**.
 1. Select an existing policy or create a new policy.
 1. Under **Enable policy** set the toggle to **Report-only** mode.
 1. Select **Save**
@@ -114,7 +114,7 @@ In order to access the workbook, you need the proper permissions in Microsoft En
 
 ![Screenshot showing how to troubleshoot failing queries.](./media/howto-conditional-access-insights-reporting/query-troubleshoot-sign-in-logs.png)
 
-For more information about how to stream Microsoft Entra sign-in logs to a Log Analytics workspace, see the article [Integrate Microsoft Entra logs with Azure Monitor logs](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.md).
+For more information about how to stream Microsoft Entra sign-in logs to a Log Analytics workspace, see the article [Integrate Microsoft Entra logs with Azure Monitor logs](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.yml).
 
 ### Why are the queries in the workbook failing?
 

@@ -417,6 +417,8 @@ Follows these steps to delete a configuration on the **Configurations** page.
 
     :::image type="content" source="./media/cross-tenant-synchronization-configure/configurations-delete.png" alt-text="Screenshot of the Configurations page showing how to delete a configuration." lightbox="./media/cross-tenant-synchronization-configure/configurations-delete.png":::
 
+## Common scenarios and solutions
+
 #### Symptom - Test connection fails with AzureDirectoryB2BManagementPolicyCheckFailure
 
 When configuring cross-tenant synchronization in the source tenant and you test the connection, it fails with the following error message:
@@ -461,7 +463,7 @@ Restoring a previously soft-deleted user in the target tenant isn't supported.
 
 **Solution**
 
-Manually restore the soft-deleted user in the target tenant. For more information, see [Restore or remove a recently deleted user using Microsoft Entra ID](../../fundamentals/users-restore.md).
+Manually restore the soft-deleted user in the target tenant. For more information, see [Restore or remove a recently deleted user using Microsoft Entra ID](../../fundamentals/users-restore.yml).
 
 #### Symptom - Users are skipped because SMS sign-in is enabled on the user
 Users are skipped from synchronization. The scoping step includes the following filter with status false: "Filter external users.alternativeSecurityIds EQUALS 'None'"
@@ -490,7 +492,7 @@ $phoneAuthenticationMethodId = "3179e48a-750b-4051-897c-87b9720928f7"
 
 #### Get the User Details
 
-$userId = "objectid_of_the_user_in_Azure_AD"
+$userId = "objectid_of_the_user_in_Entra_ID"
 
 #### validate the value for SmsSignInState
 
@@ -512,7 +514,7 @@ $smssignin = Get-MgUserAuthenticationPhoneMethod -UserId $userId
 ##### End the script
 ```
 
-#### Symptom - Users fail to provision with error "AzureActiveDirectoryForbidden"
+#### Symptom - Users fail to provision with error AzureActiveDirectoryForbidden
 
 Users in scope fail to provision. The provisioning logs details include the following error message:
 
@@ -527,6 +529,33 @@ This error indicates the Guest invite settings in the target tenant are configur
 **Solution**
 
 Change the Guest invite settings in the target tenant to a less restrictive setting. For more information, see [Configure external collaboration settings](../../external-id/external-collaboration-settings-configure.md).
+
+#### Symptom - User Principal Name does not update for existing B2B users in pending acceptance state
+
+When a user is first invited through manual B2B invitation, the invitation is sent to the source user mail address. As a result the guest user in the target tenant is created with a UPN prefix using the source mail value property. There are environments where the source user object properties, UPN and Mail, have different values, for example Mail == user.mail@domain.com and UPN == user.upn@otherdomain.com. In this case the guest user in the target tenant will be created with the UPN as  *user.mail_domain.com#EXT#@contoso.onmicrosoft.com.*
+
+The issue raises when then the source object is put in scope for cross-tenant sync and the expectation is that besides other properties, the UPN prefix of the target guest user **would be updated to match the UPN of the source user** (using the example above the value would be: *user.upn_otherdomain.com#EXT#@contoso.onmicrosoft.com*). However, that's not happening during incremental sync cycles, and the change is ignored.
+
+**Cause**
+
+This issue happens when the **B2B user which was manually invited into the target tenant didn't accept or redeem the invitation**, so its state is in pending acceptance. When a user is invited through an email, an object is created with a set of attributes that are populated from the mail, one of them is the UPN, which is pointing to the mail value of the source user. If later you decide to add the user to the scope for cross-tenant sync, the system will try to join the source user with a B2B user in target tenant based on the alternativeSecurityIdentifier attribute, but the previously created user does not have a alternativeSecurityIdentifier property populated because the invitation was not redeemed. So, the system won't consider this to be a new user object and will not update the UPN value. The user principal name is not updated in the following scenarios: 
+
+1.	The UPN and mail are different for a user when was manually invited. 
+1.	The user was invited prior to enabling cross-tenant sync.
+1.	The user never accepted the invitation, so they are in “pending acceptance state”. 
+1.	The user is brought into scope for cross-tenant sync. 
+
+**Solution**
+
+To resolve the issue, run on-demand provisioning for the impacted user(s) to update the UPN. You can also restart provisioning to update the UPN for all impacted users. Please note that this triggers an initial cycle, which can take a long time for large tenants. To get a list of manual invited users in pending acceptance state, you can use a script, please see the below sample.
+
+```powershell
+Connect-MgGraph -Scopes "User.Read.All"
+$users = Get-MgUser -Filter "userType eq 'Guest' and externalUserState eq 'PendingAcceptance'" 
+$users | Select-Object DisplayName, UserPrincipalName | Export-Csv "C:\Temp\GuestUsersPending.csv"
+```
+
+Then you can use [provisionOnDemand with PowerShell](/graph/api/synchronization-synchronizationjob-provisionondemand?tabs=powershell#request) for each user. The rate limit for this API is 5 requests per 10 seconds. For more information, see [known limitations for on-demand provisioning](/entra/identity/app-provisioning/provision-on-demand?pivots=cross-tenant-synchronization#known-limitations).
 
 ## Next steps
 

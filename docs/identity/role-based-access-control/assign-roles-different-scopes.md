@@ -18,7 +18,7 @@ In Microsoft Entra ID, you typically assign Microsoft Entra roles so that they a
 
 ## Prerequisites
 
-- Privileged Role Administrator or Global Administrator.
+- Privileged Role Administrator.
 - Microsoft Graph PowerShell SDK installed when using PowerShell.
 - Admin consent when using Graph Explorer for Microsoft Graph API.
 
@@ -348,5 +348,5 @@ Follow these instructions to assign a role at application scope using the Micros
 ## Next steps
 
 - [List Microsoft Entra role assignments](view-assignments.md).
-- [Assign Microsoft Entra roles to users](manage-roles-portal.md).
+- [Assign Microsoft Entra roles to users](manage-roles-portal.yml).
 - [Assign Microsoft Entra roles to groups](groups-assign-role.md)

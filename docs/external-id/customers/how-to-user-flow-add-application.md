@@ -16,18 +16,20 @@ ms.custom: it-pro
 
 # Add your application to the user flow
 
-A user flow defines the authentication methods a customer can use to sign in to your application and the information they need to provide during sign-up. After you [create a user flow](how-to-user-flow-sign-up-sign-in-customers.md), you can associate it with one or more of the applications registered in your customer tenant.
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
-Because you might want the same sign-in experience for all of your customer-facing apps, you can add multiple apps to the same user flow. But only one sign-in experience is needed for an application, so you can add each application to just one user flow.
+A user flow defines the authentication methods a customer can use to sign in to your application and the information they need to provide during sign-up. After you [create a user flow](how-to-user-flow-sign-up-sign-in-customers.md), you can associate it with one or more of the applications registered in your external tenant.
+
+Because you might want the same sign-in experience for all of your apps, you can add multiple apps to the same user flow. But only one sign-in experience is needed for an application, so you can add each application to just one user flow.
 
 ## Prerequisites
 
 - **A sign-up and sign-in user flow**: Before you begin, [create the user flow](how-to-user-flow-sign-up-sign-in-customers.md) that you want to associate with your application.
-- **Application registration**: In your customer tenant, [register your application](how-to-register-ciam-app.md).
+- **Application registration**: In your external tenant, [register your application](how-to-register-ciam-app.md).
 
 ## Add the application to the user flow
 
-If you already registered your application in your customer tenant, you can add it to the new user flow. This step activates the sign-up and sign-in experience for users who visit your application. An application can have only one user flow, but a user flow can be used by multiple applications.
+If you already registered your application in your external tenant, you can add it to the new user flow. This step activates the sign-up and sign-in experience for users who visit your application. An application can have only one user flow, but a user flow can be used by multiple applications.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
@@ -47,12 +49,12 @@ If you already registered your application in your customer tenant, you can add 
 
 ## Extension app 
 
-You might find an app named **b2c-extensions-app** in the application list. This app is created automatically inside the new directory, and it contains all extension attributes for your customer tenant.
-If you want to collect information beyond the built-in attributes, you can create [custom user attributes](how-to-define-custom-attributes.md) and add them to your sign-up user flow. Custom attributes are also known as directory extension attributes, as they extend the user profile information stored in your customer directory. All extension attributes for your customer tenant are stored in the **b2c-extensions-app**. Do not delete this app.
+You might find an app named **b2c-extensions-app** in the application list. This app is created automatically inside the new directory, and it contains all extension attributes for your external tenant.
+If you want to collect information beyond the built-in attributes, you can create [custom user attributes](how-to-define-custom-attributes.md) and add them to your sign-up user flow. Custom attributes are also known as directory extension attributes, as they extend the user profile information stored in your customer directory. All extension attributes for your external tenant are stored in the **b2c-extensions-app**. Do not delete this app.
 You can learn more about this app [here](/azure/active-directory-b2c/extensions-app). 
 
 ## Next steps
 
 - If you selected email with password sign-in, [enable password reset](how-to-enable-password-reset-customers.md).
 - Add [Google](how-to-google-federation-customers.md) or [Facebook](how-to-facebook-federation-customers.md) federation.
-- [Add multifactor authentication (MFA) to a customer-facing app](how-to-multifactor-authentication-customers.md).
+- [Add multifactor authentication (MFA) to an app](how-to-multifactor-authentication-customers.md).

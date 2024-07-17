@@ -5,7 +5,7 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: curation-claims
-ms.date: 05/01/2023
+ms.date: 05/30/2024
 ms.reviewer: rahulnagraj, alamaral, jeedes
 ms.service: identity-platform
 
@@ -33,7 +33,7 @@ You might need to edit the claims issued in the SAML token for the following rea
 * The application requires the `NameIdentifier` or `nameID` claim to be something other than the username (or user principal name).
 * The application has been written to require a different set of claim URIs or claim values.
 
-## Edit nameID
+## Edit `nameID`
 
 To edit the name identifier value claim:
 
@@ -209,9 +209,9 @@ When the following conditions occur after **Add** or **Run test** is selected, a
 
 ## Add the UPN claim to SAML tokens
 
-The `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/upn` claim is part of the [SAML restricted claim set](reference-claims-mapping-policy-type.md#saml-restricted-claim-set). If you have custom signing key configured, you can add it in the **Attributes & Claims** section.  
+The `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/upn` claim is part of the [SAML restricted claim set](reference-claims-customization.md#saml-restricted-claim-set). If you have custom signing key configured, you can add it in the **Attributes & Claims** section.  
 
-In case there is no custom signing key configured, please refer to [SAML Restricted claim set](reference-claims-mapping-policy-type.md#saml-restricted-claim-set). You can add it as an [optional claim](./optional-claims.md) through **App registrations** in the Azure portal.
+In case there is no custom signing key configured, please refer to [SAML Restricted claim set](reference-claims-customization.md#saml-restricted-claim-set). You can add it as an [optional claim](./optional-claims.md) through **App registrations** in the Azure portal.
  
 Open the application in **App registrations**, select **Token configuration**, and then select **Add optional claim**. Select the **SAML** token type, choose **upn** from the list, and then click **Add** to add the claim to the token.
 
@@ -260,8 +260,8 @@ The following table lists other advanced options that can be configured for an a
 |--------|-------------|
 | Append application ID to issuer | Automatically adds the application ID to the issuer claim. This option ensures a unique claim value for each instance when there are multiple instances of the same application. This setting is ignored if a custom signing key isn't configured for the application. |
 | Override audience claim | Allows for the overriding of the audience claim sent to the application. The value provided must be a valid absolute URI. This setting is ignored if a custom signing key isn't configured for the application. |
-| Include attribute name format | If selected, Microsoft Entra ID adds an attribute called `NameFormat` that describes the format of the name to restricted, core, and optional claims for the application.  For more information, see, [Claims mapping policy type](reference-claims-mapping-policy-type.md#claim-sets) |
+| Include attribute name format | If selected, Microsoft Entra ID adds an attribute called `NameFormat` that describes the format of the name to restricted, core, and optional claims for the application.  For more information, see, [Claims mapping policy type](reference-claims-customization.md#claim-sets) |
 
-## Next steps
+## Related content
 
 * [Configure single sign-on for applications that aren't in the Microsoft Entra application gallery](./single-sign-on-saml-protocol.md)

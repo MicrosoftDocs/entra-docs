@@ -70,8 +70,7 @@ There are currently two methods to identify objects that have these errors due t
 For the PowerShell cmdlets in this topic, the following is true:
 
 * All of the following cmdlets are case sensitive.
-* The **–ErrorCategory PropertyConflict** must always be included. There are currently no other types of
-  **ErrorCategory**, but this may be extended in the future.
+* The **–ErrorCategory PropertyConflict** must always be included. There are currently no other types of **ErrorCategory**, but this may be extended in the future.
 
 First, get started by running **Connect-MsolService** and entering credentials for a tenant administrator.
 

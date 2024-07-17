@@ -115,11 +115,7 @@ Before deploying SSPR, you may opt to determine the number and the average cost 
 
 ### Combined registration for SSPR and Microsoft Entra multifactor authentication
 
-> [!NOTE]
-> Starting on August 15th 2020, all new Microsoft Entra tenants will be automatically enabled for combined registration. Tenants created after this date will be unable to utilize the legacy registration workflows.
-> After Sept. 30th, 2022, all existing Microsoft Entra tenants will be automatically enabled for combined registration.
-
-We recommend that organizations use the [combined registration experience for Microsoft Entra multifactor authentication and self-service password reset (SSPR)](howto-registration-mfa-sspr-combined.md). SSPR allows users to reset their password in a secure way using the same methods they use for Microsoft Entra multifactor authentication. Combined registration is a single step for end users. To make sure you understand the functionality and end-user experience, see the [Combined security information registration concepts](concept-registration-mfa-sspr-combined.md).
+SSPR allows users to reset their password in a secure way using the same methods they use for Microsoft Entra multifactor authentication. [Combined registration](howto-registration-mfa-sspr-combined.md) is a single registration step for end users which enables registration of both MFA and SSPR methods at the same time. To make sure you understand the functionality and end-user experience, see the [Combined security information registration concepts](concept-registration-mfa-sspr-combined.md).
 
 It's critical to inform users about upcoming changes, registration requirements, and any necessary user actions. We provide [communication templates](https://aka.ms/mfatemplates) and [user documentation](https://support.microsoft.com/account-billing/set-up-security-info-from-a-sign-in-page-28180870-c256-4ebf-8bd7-5335571bf9a8) to prepare your users for the new experience and help to ensure a successful rollout. Send users to https://myprofile.microsoft.com to register by selecting the **Security Info** link on that page.
 
@@ -136,15 +132,15 @@ When technology projects fail, they typically do so due to mismatched expectatio
 
 | Business Role/Persona| Microsoft Entra role (if necessary) |
 | - | - |
-| Level 1 helpdesk| Password administrator |
-| Level 2 helpdesk| User administrator |
-| SSPR administrator| Global administrator |
+| Level 1 helpdesk| Password Administrator |
+| Level 2 helpdesk| User Administrator |
+| SSPR administrator| Global Administrator |
 
 ### Plan a pilot
 
 We recommend that the initial configuration of SSPR is in a test environment. Start with a pilot group by enabling SSPR for a subset of users in your organization. See [Best practices for a pilot](~/architecture/deployment-plans.md).
 
-To create a group, see how to [create a group and add members in Microsoft Entra ID](~/fundamentals/how-to-manage-groups.md). 
+To create a group, see how to [create a group and add members in Microsoft Entra ID](~/fundamentals/how-to-manage-groups.yml). 
 
 ## Plan configuration
 
@@ -173,7 +169,7 @@ When enabling SSPR, choose an appropriate security group in the pilot environmen
 
 ### Authentication methods
 
-When SSPR is enabled, users can only reset their password if they have data present in the authentication methods that the administrator has enabled. Methods include phone, Authenticator app notification, security questions, etc. For more information, see [What are authentication methods?](./concept-authentication-methods.md).
+When SSPR is enabled, users can only reset their password if they have data present in the authentication methods that the administrator has enabled. Methods include phone, Authenticator app notification, security questions, and so on. For more information, see [What are authentication methods?](./concept-authentication-methods.md).
 
 We recommend the following authentication method settings:
 
@@ -318,7 +314,7 @@ Microsoft Entra ID can provide additional information on your SSPR performance t
 You can use pre-built reports on Microsoft Entra admin center to measure the SSPR performance. If you're appropriately licensed, you can also create custom queries. For more information, see [Reporting options for Microsoft Entra password management](./howto-sspr-reporting.md)
 
 > [!NOTE]
->  You must be [a global administrator](~/identity/role-based-access-control/permissions-reference.md), and you must opt-in for this data to be gathered for your organization. To opt in, you must visit the Reporting tab or the audit logs on the Microsoft Entra admin center at least once. Until then, the data doesn't collect for your organization.
+> You must be a [Global Administrator](../role-based-access-control/permissions-reference.md#global-administrator), and you must opt-in for this data to be gathered for your organization. To opt in, you must visit the Reporting tab or the audit logs on the Microsoft Entra admin center at least once. Until then, the data doesn't collect for your organization.
 
 Audit logs for registration and password reset are available for 30 days. If security auditing within your corporation requires longer retention, the logs need to be exported and consumed into a SIEM tool such as [Microsoft Sentinel](/azure/sentinel/connect-azure-active-directory), Splunk, or ArcSight.
 

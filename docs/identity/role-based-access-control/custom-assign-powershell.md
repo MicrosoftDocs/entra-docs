@@ -15,14 +15,14 @@ ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 
 # Assign custom roles with resource scope using PowerShell in Microsoft Entra ID
 
-This article describes how to create a role assignment at organization-wide scope in Microsoft Entra ID. Assigning a role at organization-wide scope grants access across the Microsoft Entra organization. To create a role assignment with a scope of a single Microsoft Entra resource, see [Create and assign a custom role in Microsoft Entra ID](custom-create.md). This article uses the [Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/installation) module.
+This article describes how to create a role assignment at organization-wide scope in Microsoft Entra ID. Assigning a role at organization-wide scope grants access across the Microsoft Entra organization. To create a role assignment with a scope of a single Microsoft Entra resource, see [Create and assign a custom role in Microsoft Entra ID](custom-create.yml). This article uses the [Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/installation) module.
 
 For more information about Microsoft Entra roles, see [Microsoft Entra built-in roles](permissions-reference.md).
 
 ## Prerequisites
 
 - Microsoft Entra ID P1 or P2 license
-- Privileged Role Administrator or Global Administrator
+- Privileged Role Administrator
 - Microsoft Graph PowerShell module when using PowerShell
 
 For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
@@ -82,7 +82,7 @@ $customAdmin = New-MgRoleManagementDirectoryRoleDefinition -RolePermissions $rol
 Get-MgRoleManagementDirectoryRoleDefinition
 
 # Get single role definition by ID
-Get-MgRoleManagementDirectoryRoleDefinition -UnifiedRoleDefinitionId 86593cfc-114b-4a15-9954-97c3494ef49b
+Get-MgRoleManagementDirectoryRoleDefinition -UnifiedRoleDefinitionId 00000000-0000-0000-0000-000000000000
 
 # Get single role definition by templateId
 Get-MgRoleManagementDirectoryRoleDefinition -Filter "TemplateId eq 'c4e39bd9-1100-46d3-8c65-fb160da0071f'"
@@ -129,17 +129,17 @@ $roleAssignment = New-MgRoleManagementDirectoryRoleAssignment -DirectoryScopeId 
 
 ```powershell
 # Get role assignments for a given principal
-Get-MgRoleManagementDirectoryRoleAssignment -Filter "PrincipalId eq '27c8ca78-ab1c-40ae-bd1b-eaeebd6f68ac'"
+Get-MgRoleManagementDirectoryRoleAssignment -Filter "PrincipalId eq 'aaaaaaaa-bbbb-cccc-1111-222222222222'"
 
 # Get role assignments for a given role definition 
-Get-MgRoleManagementDirectoryRoleAssignment -Filter "RoleDefinitionId eq '355aed8a-864b-4e2b-b225-ea95482e7570'"
+Get-MgRoleManagementDirectoryRoleAssignment -Filter "RoleDefinitionId eq '00000000-0000-0000-0000-000000000000'"
 ```
 
 ### Remove a role assignment
 
 ```powershell
 # Remove role assignment
-Remove-MgRoleManagementDirectoryRoleAssignment -UnifiedRoleAssignmentId 'qiho4WOb9UKKgng_LbPV7tvKaKRCD61PkJeKMh7Y458-1'
+Remove-MgRoleManagementDirectoryRoleAssignment -UnifiedRoleAssignmentId 'aB1cD2eF3gH4iJ5kL6-mN7oP8qR-1'
 ```
 
 ## Next steps

@@ -75,7 +75,7 @@ To add a missing security rule, complete the following steps:
 1. In the [Microsoft Entra admin center](https://entra.microsoft.com), search for and select **Network security groups**.
 1. Choose the network security group associated with your managed domain, such as *AADDS-contoso.com-NSG*.
 1. Under **Settings** in the left-hand panel, click *Inbound security rules* or *Outbound security rules* depending on which rule you need to add.
-1. Select **Add**, then create the required rule based on the port, protocol, direction, etc. When ready, select **OK**.
+1. Select **Add**, then create the required rule based on the port, protocol, direction, and so on. When ready, select **OK**.
 
 It takes a few moments for the security rule to be added and show in the list.
 

@@ -32,8 +32,8 @@ Administrators can choose to enforce one or more controls when granting access. 
 - [Require authentication strength](#require-authentication-strength)
 - [Require device to be marked as compliant (Microsoft Intune)](/mem/intune/protect/device-compliance-get-started)
 - [Require Microsoft Entra hybrid joined device](~/identity/devices/concept-hybrid-join.md)
-- [Require approved client app](./howto-policy-approved-app-or-app-protection.md)
-- [Require app protection policy](./howto-policy-approved-app-or-app-protection.md)
+- [Require approved client app](./howto-policy-approved-app-or-app-protection.yml)
+- [Require app protection policy](./howto-policy-approved-app-or-app-protection.yml)
 - [Require password change](#require-password-change)
 
 When administrators choose to combine these options, they can use the following methods:
@@ -63,7 +63,7 @@ Devices must be registered in Microsoft Entra ID before they can be marked as co
 
 The **Require device to be marked as compliant** control:
 
-- Only supports Windows 10+, iOS, Android, and macOS devices registered with Microsoft Entra ID and enrolled with Intune.
+- Only supports Windows 10+, iOS, Android, macOS, and Linux Ubuntu devices registered with Microsoft Entra ID and enrolled with Intune.
 - Microsoft Edge in InPrivate mode on Windows is considered a noncompliant device.
 
 > [!NOTE]
@@ -89,7 +89,7 @@ The **Require Microsoft Entra hybrid joined device** control:
 Organizations can require that an approved client app is used to access selected cloud apps. These approved client apps support [Intune app protection policies](/mem/intune/apps/app-protection-policy) independent of any mobile device management solution.
 
 > [!WARNING]
-> The approved client app grant is retiring in early March 2026. Organizations must transition all current Conditional Access policies that use only the Require Approved Client App grant to Require Approved Client App or Application Protection Policy by March 2026. Additionally, for any new Conditional Access policy, only apply the Require application protection policy grant. For more inforamtion, see the article [Migrate approved client app to application protection policy in Conditional Access](migrate-approved-client-app.md).
+> The approved client app grant is retiring in early March 2026. Organizations must transition all current Conditional Access policies that use only the Require Approved Client App grant to Require Approved Client App or Application Protection Policy by March 2026. Additionally, for any new Conditional Access policy, only apply the Require application protection policy grant. For more information, see the article [Migrate approved client app to application protection policy in Conditional Access](migrate-approved-client-app.md).
 
 To apply this grant control, the device must be registered in Microsoft Entra ID, which requires using a broker app. The broker app can be Microsoft Authenticator for iOS, or either Microsoft Authenticator or Microsoft Company Portal for Android devices. If a broker app isn't installed on the device when the user attempts to authenticate, the user is redirected to the appropriate app store to install the required broker app.
 
@@ -134,7 +134,7 @@ The following client apps support this setting. This list isn't exhaustive and i
 - Conditional Access policies that require Microsoft Power BI as an approved client app don't support using Microsoft Entra application proxy to connect the Power BI mobile app to the on-premises Power BI Report Server.
 - WebViews hosted outside of Microsoft Edge don't satisfy the approved client app policy. For example: If an app is trying to load SharePoint in a webview, app protection policies fail.
 
-See [Require approved client apps for cloud app access with Conditional Access](./howto-policy-approved-app-or-app-protection.md) for configuration examples.
+See [Require approved client apps for cloud app access with Conditional Access](./howto-policy-approved-app-or-app-protection.yml) for configuration examples.
 
 ### Require app protection policy
 
@@ -156,6 +156,7 @@ The following client apps support this setting. This list isn't exhaustive and i
 - Microsoft Power Automate
 - Microsoft Launcher
 - Microsoft Lists
+- Microsoft Loop
 - Microsoft Office
 - Microsoft OneDrive
 - Microsoft OneNote
@@ -179,7 +180,7 @@ The following client apps support this setting. This list isn't exhaustive and i
 > [!NOTE]
 > Kaizala, Skype for Business, and Visio don't support the **Require app protection policy** grant. If you require these apps to work, use the **Require approved apps** grant exclusively. Using the "or" clause between the two grants will not work for these three applications.
 
-See [Require app protection policy and an approved client app for cloud app access with Conditional Access](./howto-policy-approved-app-or-app-protection.md) for configuration examples.
+See [Require app protection policy and an approved client app for cloud app access with Conditional Access](./howto-policy-approved-app-or-app-protection.yml) for configuration examples.
 
 ### Require password change
 

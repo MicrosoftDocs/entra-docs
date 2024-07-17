@@ -32,11 +32,7 @@ Microsoft Entra provisioning service uses basic authentication to connect to Wor
 To further secure the connectivity between Microsoft Entra provisioning service and Workday, you can restrict access so that the designated integration system user only accesses the Workday APIs from allowed Microsoft Entra IP ranges. Engage your Workday administrator to complete the following configuration in your Workday tenant. 
 
 1. Download the [latest IP Ranges](https://www.microsoft.com/download/details.aspx?id=56519) for the Azure Public Cloud. 
-1. Open the file and search for tag **Microsoft Entra ID** 
-
-   >[!div class="mx-imgBorder"] 
-   >![Microsoft Entra IP range](media/sap-successfactors-integration-reference/azure-entra-ip-range.png)
-
+1. Open the file and search for tag **Microsoft Entra ID**
 1. Copy all IP address ranges listed within the element *addressPrefixes* and use the range to build your IP address list.
 1. Sign in to Workday admin portal. 
 1. Access the **Maintain IP Ranges** task to create a new IP range for Azure data centers. Specify the IP ranges (using CIDR notation) as a comma-separated list.  
@@ -421,7 +417,7 @@ Let's say you want to retrieve the following data sets from Workday and use them
 The above data sets aren't included by default. 
 To retrieve these data sets:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 1. Select your Workday to Active Directory / Microsoft Entra user provisioning application.
 1. Select **Provisioning**.

@@ -5,7 +5,7 @@ author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
 ms.custom: 
-ms.date: 09/13/2023
+ms.date: 04/08/2024
 ms.reviewer: ludwignick
 ms.service: identity-platform
 
@@ -69,7 +69,7 @@ The value of `{tenant}` varies based on the application's sign-in audience as sh
 | `common` |Users with both a personal Microsoft account and a work or school account from Microsoft Entra ID can sign in to the application. |
 | `organizations` |Only users with work or school accounts from Microsoft Entra ID can sign in to the application. |
 | `consumers` |Only users with a personal Microsoft account can sign in to the application. |
-| `8eaef023-2b34-4da1-9baa-8bc8c9d6a490` or `contoso.onmicrosoft.com` | Only users from a specific Microsoft Entra tenant (directory members with a work or school account or directory guests with a personal Microsoft account) can sign in to the application. <br/><br/>The value can be the domain name of the Microsoft Entra tenant or the tenant ID in GUID format. You can also use the consumer tenant GUID, `9188040d-6c67-4c5b-b112-36a304b66dad`, in place of `consumers`.  |
+| `Directory (tenant) ID` or `contoso.onmicrosoft.com` | Only users from a specific Microsoft Entra tenant (directory members with a work or school account or directory guests with a personal Microsoft account) can sign in to the application. <br/><br/>The value can be the domain name of the Microsoft Entra tenant or the tenant ID in GUID format. |
 
 > [!TIP]
 > Note that when using the `common` or `consumers` authority for personal Microsoft accounts, the consuming resource application must be configured to support such type of accounts in accordance with [signInAudience](./supported-accounts-validation.md).
@@ -83,7 +83,7 @@ To find the OIDC configuration document in the Microsoft Entra admin center, sig
 
 The following request gets the OpenID configuration metadata from the `common` authority's OpenID configuration document endpoint on the Azure public cloud:
 
-```http
+```https
 GET /common/v2.0/.well-known/openid-configuration
 Host: login.microsoftonline.com
 ```
@@ -95,7 +95,7 @@ Host: login.microsoftonline.com
 
 The configuration metadata is returned in JSON format as shown in the following example (truncated for brevity). The metadata returned in the JSON response is described in detail in the [OpenID Connect 1.0 discovery specification](https://openid.net/specs/openid-connect-discovery-1_0.html#rfc.section.4.2).
 
-```json
+```JSON
 {
   "authorization_endpoint": "https://login.microsoftonline.com/{tenant}/oauth2/v2.0/authorize",
   "token_endpoint": "https://login.microsoftonline.com/{tenant}/oauth2/v2.0/token",
@@ -111,9 +111,10 @@ The configuration metadata is returned in JSON format as shown in the following 
   ...
 }
 ```
+
 ## Send the sign-in request
 
-To authenticate a user and request an ID token for use in your application, direct their user-agent to the Microsoft identity platform's _/authorize_ endpoint. The request is similar to the first leg of the [OAuth 2.0 authorization code flow](v2-oauth2-auth-code-flow.md) but with these distinctions:
+To authenticate a user and request an ID token for use in your application, direct their user-agent to the Microsoft identity platform's */authorize* endpoint. The request is similar to the first leg of the [OAuth 2.0 authorization code flow](v2-oauth2-auth-code-flow.md) but with these distinctions:
 
 * Include the `openid` scope in the `scope` parameter.
 * Specify `id_token` in the `response_type` parameter.
@@ -121,9 +122,9 @@ To authenticate a user and request an ID token for use in your application, dire
 
 Example sign-in request (line breaks included only for readability):
 
-```HTTP
+```https
 GET https://login.microsoftonline.com/{tenant}/oauth2/v2.0/authorize?
-client_id=535fb089-9ff3-47b6-9bfb-4f1264799865
+client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &response_type=id_token
 &redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
 &response_mode=form_post
@@ -143,10 +144,10 @@ client_id=535fb089-9ff3-47b6-9bfb-4f1264799865
 | `response_mode` | Recommended | Specifies the method that should be used to send the resulting authorization code back to your app. Can be `form_post` or `fragment`. For web applications, we recommend using `response_mode=form_post`, to ensure the most secure transfer of tokens to your application. |
 | `state` | Recommended | A value included in the request that also will be returned in the token response. It can be a string of any content you want. A randomly generated unique value typically is used to [prevent cross-site request forgery attacks](https://tools.ietf.org/html/rfc6749#section-10.12). The state also is used to encode information about the user's state in the app before the authentication request occurred, such as the page or view the user was on. |
 | `prompt` | Optional | Indicates the type of user interaction that is required. The only valid values at this time are `login`, `none`, `consent`, and `select_account`. The `prompt=login` claim forces the user to enter their credentials on that request, which negates single sign-on. The `prompt=none` parameter is the opposite, and should be paired with a `login_hint` to indicate which user must be signed in. These parameters ensure that the user isn't presented with any interactive prompt at all. If the request can't be completed silently via single sign-on, the Microsoft identity platform returns an error. Causes include no signed-in user, the hinted user isn't signed in, or multiple users are signed in but no hint was provided. The `prompt=consent` claim triggers the OAuth consent dialog after the user signs in. The dialog asks the user to grant permissions to the app. Finally, `select_account` shows the user an account selector, negating silent SSO but allowing the user to pick which account they intend to sign in with, without requiring credential entry. You can't use both `login_hint` and `select_account`.|
-| `login_hint` | Optional | You can use this parameter to pre-fill the username and email address field of the sign-in page for the user, if you know the username ahead of time. Often, apps use this parameter during reauthentication, after already extracting the `login_hint` [optional claim](./optional-claims.md) from an earlier sign-in. |
+| `login_hint` | Optional | You can use this parameter to prefill the username and email address field of the sign-in page for the user, if you know the username ahead of time. Often, apps use this parameter during reauthentication, after already extracting the `login_hint` [optional claim](./optional-claims.md) from an earlier sign-in. |
 | `domain_hint` | Optional | The realm of the user in a federated directory.  This skips the email-based discovery process that the user goes through on the sign-in page, for a slightly more streamlined user experience. For tenants that are federated through an on-premises directory like AD FS, this often results in a seamless sign-in because of the existing login session. |
 
-At this point, the user is prompted to enter their credentials and complete the authentication. The Microsoft identity platform verifies that the user has consented to the permissions indicated in the `scope` query parameter. If the user hasn't consented to any of those permissions, the Microsoft identity platform prompts the user to consent to the required permissions. You can read more about [permissions, consent, and multi-tenant apps](./permissions-consent-overview.md).
+At this point, the user is prompted to enter their credentials and complete the authentication. The Microsoft identity platform verifies that the user has consented to the permissions indicated in the `scope` query parameter. If the user hasn't consented to any of those permissions, the Microsoft identity platform prompts the user to consent to the required permissions. You can read more about [permissions, consent, and multitenant apps](./permissions-consent-overview.md).
 
 After the user authenticates and grants consent, the Microsoft identity platform returns a response to your app at the indicated redirect URI by using the method specified in the `response_mode` parameter.
 
@@ -154,7 +155,7 @@ After the user authenticates and grants consent, the Microsoft identity platform
 
 A successful response when you use `response_mode=form_post` is similar to:
 
-```HTTP
+```https
 POST /myapp/ HTTP/1.1
 Host: localhost
 Content-Type: application/x-www-form-urlencoded
@@ -171,7 +172,7 @@ id_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik1uQ19WWmNB...&state=12345
 
 Error responses might also be sent to the redirect URI so the app can handle them, for example:
 
-```HTTP
+```https
 POST /myapp/ HTTP/1.1
 Host: localhost
 Content-Type: application/x-www-form-urlencoded
@@ -219,7 +220,7 @@ Several other validations are common and vary by application scenario, including
 
 * Ensuring the user/organization has signed up for the app.
 * Ensuring the user has proper authorization/privileges
-* Ensuring a certain strength of authentication has occurred, such as [multi-factor authentication](~/identity/authentication/concept-mfa-howitworks.md).
+* Ensuring a certain strength of authentication has occurred, such as [multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md).
 
 Once you've validated the ID token, you can begin a session with the user and use the information in the token's claims for app personalization, display, or for storing their data.
 
@@ -237,11 +238,11 @@ In addition to the ID token, the authenticated user's information is also made a
 
 To get an access token for the OIDC UserInfo endpoint, modify the sign-in request as described here:
 
-```HTTP
+```https
 // Line breaks are for legibility only.
 
 GET https://login.microsoftonline.com/{tenant}/oauth2/v2.0/authorize?
-client_id=535fb089-9ff3-47b6-9bfb-4f1264799865        // Your app registration's Application (client) ID
+client_id=00001111-aaaa-2222-bbbb-3333cccc4444        // Your app registration's Application (client) ID
 &response_type=id_token%20token                       // Requests both an ID token and access token
 &redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F       // Your application's redirect URI (URL-encoded)
 &response_mode=form_post                              // 'form_post' or 'fragment'
@@ -252,18 +253,11 @@ client_id=535fb089-9ff3-47b6-9bfb-4f1264799865        // Your app registration's
 
 You can use the [authorization code flow](v2-oauth2-auth-code-flow.md), the [device code flow](v2-oauth2-device-code.md), or a [refresh token](v2-oauth2-auth-code-flow.md#refresh-the-access-token) in place of `response_type=token` to get an access token for your app.
 
-<!-- UNCOMMENT WHEN/IF THE TEST APP REGISTRATION IS RE-ENABLED -->
-<!--
-> [!TIP]
-> Click the following link to execute this request. After you sign in, your browser is redirected to `https://localhost/myapp/`, with an ID token and a token in the address bar. Note that this request uses `response_mode=fragment` for demonstration purposes only - for a webapp we recommend using `form_post` for additional security where possible. 
-> <a href="https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=535fb089-9ff3-47b6-9bfb-4f1264799865&response_type=id_token%20token&redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F&response_mode=fragment&scope=openid+profile+email&state=12345&nonce=678910" target="_blank">https://login.microsoftonline.com/common/oauth2/v2.0/authorize...</a>
--->
-
 ### Successful token response
 
 A successful response from using `response_mode=form_post`:
 
-```HTTP
+```https
 POST /myapp/ HTTP/1.1
 Host: localhost
 Content-Type: application/x-www-form-urlencoded
@@ -292,7 +286,7 @@ Response parameters mean the same thing regardless of the flow used to acquire t
 
 Error responses might also be sent to the redirect URI so that the app can handle them appropriately:
 
-```HTTP
+```https
 POST /myapp/ HTTP/1.1
 Host: localhost
 Content-Type: application/x-www-form-urlencoded
@@ -315,16 +309,16 @@ Review the [UserInfo documentation](userinfo.md#calling-the-api) to look over ho
 
 ## Send a sign-out request
 
-To sign out a user, perform both of these operations:
+To sign out a user, perform both of the following operations:
 
-* Redirect the user's user-agent to the Microsoft identity platform's logout URI
-* Clear your app's cookies or otherwise end the user's session in your application.
+1. Redirect the user's user-agent to the Microsoft identity platform's logout URI.
+1. Clear your app's cookies or end the user's session in your application.
 
-If you fail to perform either operation, the user may remain authenticated and not be prompted to sign-in the next time they use your app.
+If you fail to perform either of these operations, the user may remain authenticated and not be prompted to sign-in the next time they use your app.
 
 Redirect the user-agent to the `end_session_endpoint` as shown in the OpenID Connect configuration document. The `end_session_endpoint` supports both HTTP GET and POST requests.
 
-```HTTP
+```https
 GET https://login.microsoftonline.com/common/oauth2/v2.0/logout?
 post_logout_redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
 ```
@@ -340,6 +334,22 @@ post_logout_redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
 ## Single sign-out
 
 When you redirect the user to the `end_session_endpoint`, the Microsoft identity platform clears the user's session from the browser. However, the user may still be signed in to other applications that use Microsoft accounts for authentication. To enable those applications to sign the user out simultaneously, the Microsoft identity platform sends an HTTP GET request to the registered `LogoutUrl` of all the applications that the user is currently signed in to. Applications must respond to this request by clearing any session that identifies the user and returning a `200` response. If you wish to support single sign-out in your application, you must implement such a `LogoutUrl` in your application's code. You can set the `LogoutUrl` from the app registration portal.
+
+### What is a front channel logout URL?
+
+A front channel logout URL is where your web or SPA application receives the sign out request from the Entra authentication server and performs SSO functionality. Each application has one front channel logout URL.
+
+### When should you set a front channel logout URL?
+
+If a user can use the same credential (usually an email and password) to sign into multiple web or SPA applications registered in this directory (also called a tenant), and you would like to set up SSO for the web or SPA application linked to this app registration, then you should set a front channel logout URL in this app registration.
+
+### What is SSO?
+
+When a user has signed into multiple web or SPA applications registered in this directory (also called a tenant), SSO allows this user to sign out of all applications instantly by signing out in either one of the applications.
+
+### How to set up SSO
+
+Aside from setting a front channel logout URL in this app registration, you or your developer also needs to add functionality in the application codebase to accomplish the SSO. You can learn more about how to add SSO to your application [here](single-sign-out-saml-protocol.md).
 
 ## Next steps
 

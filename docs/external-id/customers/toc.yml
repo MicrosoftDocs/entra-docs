@@ -1,107 +1,110 @@
-items:  
-- name: Microsoft Entra ID for customers documentation  
-  href: index.yml  
-- name: Overview  
-  expanded: true  
-  items:   
-    - name: What is Microsoft Entra ID for customers?  
-      href: overview-customers-ciam.md 
-    - name: Demo overview
-      href: overview-solutions-customers.md
-    - name: What's new in docs?
-      href: whats-new-docs.md
+items:
+- name: Overview of External ID in external tenants
+  href: overview-customers-ciam.md
 - name: Quickstarts
-  expanded: true
+  expanded: false
   items: 
-    - name: Start a free trial without an Azure subscription
-      href: quickstart-trial-setup.md 
     - name: Create a tenant with an Azure subscription
       href: quickstart-tenant-setup.md
     - name: Get started guide walkthrough
       href: quickstart-get-started-guide.md
     - name: Use the Visual Studio Code extension
       href: visual-studio-code-extension.md
+    - name: Use Azure App Service built-in authentication
+      href: /azure/app-service/scenario-secure-app-authentication-app-service?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-configuration
 - name: Samples
-  expanded: true
-  items: 
-    - name: Overview of CIAM samples
-      href: samples-ciam-all.md
-    - name: Explore code samples
-      items: 
-        - name: Single-page app
+  expanded: false
+  items:
+  - name: List of guides for samples
+    href: samples-ciam-all.md
+  - name: Single-page app
+    items:
+      - name: JavaScript
+        items:
+          - name: Sign in users
+            href: sample-single-page-app-vanillajs-sign-in.md
+      - name: Angular
+        items:
+          - name: Sign in users
+            href: sample-single-page-app-angular-sign-in.md
+      - name: React
+        items:
+          - name: Sign in users
+            href: sample-single-page-app-react-sign-in.md
+  - name: Web app
+    items:
+      - name: Node.js
+        items:
+          - name: Sign in users
+            href: sample-web-app-node-sign-in.md
+          - name: Sign in users and call an API
+            href: sample-web-app-node-sign-in-call-api.md
+          - name: Sign in users and edit profile
+            href: sample-web-app-node-sign-in-edit-profile.md
+      - name: ASP.NET Core
+        items:
+          - name: Sign in users
+            href: sample-web-app-dotnet-sign-in.md
+      - name: Python
+        items:
+          - name: Django - Sign in users 
+            href: sample-web-app-python-django-sign-in.md
+          - name: Flask - Sign in users 
+            href: sample-web-app-python-flask-sign-in.md
+  - name: Daemon, service
+    items:
+      - name: Node.js - call an API
+        href: sample-daemon-node-call-api.md
+        displayName: client credentials grant
+      - name: .NET - call an API
+        href: sample-daemon-dotnet-call-api.md
+  - name: Desktop app
+    items:
+      - name: Electron - sign in users
+        href: how-to-desktop-app-electron-sample-sign-in.md
+      - name: .NET MAUI - sign in users
+        href: how-to-desktop-app-maui-sample-sign-in.md
+      - name: .NET WPF - sign in users
+        href: sample-desktop-wpf-dotnet-sign-in.md
+  - name: Mobile app
+    items:
+        - name: Browser-delegated authentication
           items:
-            - name: JavaScript
-              items:
-                - name: Sign in users
-                  href: sample-single-page-app-vanillajs-sign-in.md
-            - name: Angular
-              items:
-                - name: Sign in users
-                  href: sample-single-page-app-angular-sign-in.md
-            - name: React
-              items:
-                - name: Sign in users
-                  href: sample-single-page-app-react-sign-in.md
-        - name: Web app
+              - name: Android (.NET MAUI) - sign in users
+                href: how-to-mobile-app-maui-sample-sign-in.md
+              - name: Android (Kotlin)
+                items:
+                  - name: Sign in users
+                    href: sample-mobile-app-android-kotlin-sign-in.md
+                  - name: Sign in users and call an API
+                    href: sample-mobile-app-android-kotlin-sign-in-call-api.md
+              - name: iOS (Swift)
+                items:
+                  - name: Sign in users
+                    href: sample-mobile-app-ios-swift-sign-in.md
+                  - name: Sign in users and call an API
+                    href: sample-mobile-app-ios-swift-sign-in-call-api.md
+        - name: Native authentication
           items:
-            - name: Node.js
+            - name: Android (Kotlin)
               items:
                 - name: Sign in users
-                  href: sample-web-app-node-sign-in.md
+                  href: how-to-run-native-authentication-sample-android-app.md
                 - name: Sign in users and call an API
-                  href: sample-web-app-node-sign-in-call-api.md
-            - name: ASP.NET
+                  href: sample-native-authentication-android-sample-app-call-web-api.md
+            - name: iOS (Swift)
               items:
                 - name: Sign in users
-                  href: sample-web-app-dotnet-sign-in.md
-            - name: Python
-              items:
-                - name: Django - Sign in users 
-                  href: sample-web-app-python-django-sign-in.md
-                - name: Flask - Sign in users 
-                  href: sample-web-app-python-flask-sign-in.md
-        - name: Daemon, service
-          items:
-            - name: Node.js - call an API
-              href: sample-daemon-node-call-api.md
-              displayName: client credentials grant
-            - name: .NET - call an API
-              href: sample-daemon-dotnet-call-api.md
-        - name: Desktop app
-          items:
-            - name: Electron - sign in users
-              href: how-to-desktop-app-electron-sample-sign-in.md
-            - name: .NET MAUI - sign in users
-              href: how-to-desktop-app-maui-sample-sign-in.md
-            - name: .NET WPF - sign in users
-              href: sample-desktop-wpf-dotnet-sign-in.md
-        - name: Mobile app
-          items:
-              - name: Browser delegated
-                items:
-                  - name: Android (.NET MAUI) - sign in users
-                    href: how-to-mobile-app-maui-sample-sign-in.md
-              - name: Native authentication
-                items:
-                  - name: Android (Kotlin)
-                    items:
-                      - name: Sign in users
-                        href: how-to-run-native-authentication-sample-android-app.md
-                      - name: Sign in users and call an API
-                        href: sample-native-authentication-android-sample-app-call-web-api.md
-                  - name: iOS (Swift)
-                    items:
-                      - name: Sign in users
-                        href: how-to-run-native-authentication-sample-ios-app.md
-                      - name: Sign in users and call an API
-                        href: sample-native-authentication-ios-sample-app-call-web-api.md
-        - name: Command-line interface (CLI) app
-          items:
-            - name: Node.js - sign in users
-              href: sample-cli-app-node-sign-in-users.md
+                  href: how-to-run-native-authentication-sample-ios-app.md
+                - name: Sign in users and call an API
+                  href: sample-native-authentication-ios-sample-app-call-web-api.md
+  - name: Command-line interface (CLI) app
+    items:
+      - name: Node.js - sign in users
+        href: sample-cli-app-node-sign-in-users.md
 - name: Tutorials
-  expanded: true
-  items:  
+  expanded: false
+  items: 
     - name: Single-page app (SPA)
       items: 
         - name: JavaScript 
@@ -144,11 +147,11 @@ items:
                   href: tutorial-web-app-node-sign-in-prepare-app.md
                 - name: Add sign-in and sign-out
                   href: tutorial-web-app-node-sign-in-sign-out.md
-        - name: ASP.NET
+        - name: ASP.NET Core
           items:
               - name: Prepare tenant
                 href: tutorial-web-app-dotnet-sign-in-prepare-tenant.md
-              - name: Create ASP.NET app
+              - name: Create ASP.NET Core app
                 href: tutorial-web-app-dotnet-sign-in-prepare-app.md
               - name: Sign in and sign out
                 href: tutorial-web-app-dotnet-sign-in-sign-out.md
@@ -160,7 +163,7 @@ items:
                 href: tutorial-web-app-python-flask-sign-in-sign-out.md
     - name: Web API
       items: 
-        - name: Protect ASP.NET API
+        - name: Protect ASP.NET Core API
           items:
             - name: Build a protected API 
               href: tutorial-protect-web-api-dotnet-core-build-app.md
@@ -202,7 +205,7 @@ items:
               displayName: Windows Presentation Form
     - name: Mobile
       items:
-        - name: Browser delegated
+        - name: Browser-delegated authentication
           items:
             - name: .NET MAUI
               items:
@@ -214,33 +217,48 @@ items:
                   href: tutorial-mobile-app-maui-sign-in-sign-out.md
                 - name: Use role-based access control
                   href: tutorial-mobile-maui-role-based-access-control.md
+            - name: Android
+              items:
+                - name: Prepare tenant
+                  href: tutorial-mobile-app-android-kotlin-prepare-tenant.md
+                - name: Prepare app
+                  href: tutorial-mobile-app-android-kotlin-prepare-app.md
+                - name: Sign in users
+                  href: tutorial-mobile-app-android-kotlin-sign-in.md
+                - name: Call an API
+                  href: tutorial-mobile-app-android-kotlin-sign-in-call-api.md
+            - name: iOS
+              items:
+                - name: Prepare tenant
+                  href: tutorial-mobile-app-ios-swift-prepare-tenant.md
+                - name: Prepare app
+                  href: tutorial-mobile-app-ios-swift-prepare-app.md
+                - name: Sign in users
+                  href: tutorial-mobile-app-ios-swift-sign-in.md
+                - name: Call an API
+                  href: tutorial-mobile-app-ios-swift-sign-in-call-api.md
         - name: Native authentication
           items:
-            - name: Android app
+            - name: Android (Kotlin)
               items:
                 - name: Prepare Android app
                   href: tutorial-native-authentication-prepare-android-app.md
                 - name: Sign up
                   href: tutorial-native-authentication-android-sign-up.md
+                  displayName: email OTP, email one-time passcode, email and password
                 - name: Sign in and sign out
                   href: tutorial-native-authentication-android-sign-in-sign-out.md
-                - name: Additional scenarios
-                  items:
-                    - name: Register user with username and attributes
-                      href: tutorial-native-authentication-android-sign-up-user-with-username-user-attributes.md
-                    - name: Register user with username, password and attributes
-                      href: tutorial-native-authentication-android-sign-up-user-with-username-password-user-attributes.md
-                    - name: Register user with username and password
-                      href: tutorial-native-authentication-android-sign-up-user-with-username-password.md
-                    - name: Sign in user with username and password
-                      href: tutorial-native-authentication-android-sign-in-user-with-username-password.md
-                    - name: Self-service password reset
-                      href: tutorial-native-authentication-android-self-service-password-reset.md
-                    - name: Sign in after sign-up
-                      href: tutorial-native-authentication-android-sign-in-after-sign-up.md
-                    - name: Support web fallback
-                      href: tutorial-native-authentication-android-support-web-fallback.md
-            - name: iOS app
+                  displayName: email OTP, email one-time passcode, email and password
+                - name: Auto-sign in after sign-up
+                  href: tutorial-native-authentication-android-sign-in-after-sign-up.md
+                - name: Self-service password reset
+                  href: tutorial-native-authentication-android-self-service-password-reset.md
+                - name: Support web fallback
+                  href: tutorial-native-authentication-android-support-web-fallback.md
+                - name: Call an API
+                  href: tutorial-native-authentication-android-sign-in-call-api.md
+                  displayName: multiple access token 
+            - name: iOS (Swift)
               items:
                 - name: Prepare iOS app
                   href: tutorial-native-authentication-prepare-ios-app.md
@@ -248,22 +266,12 @@ items:
                   href: tutorial-native-authentication-ios-sign-up.md
                 - name: Sign in and sign out
                   href: tutorial-native-authentication-ios-sign-in-sign-out.md
-                - name: Additional scenarios
-                  items:
-                    - name: Sign up with user attributes
-                      href: tutorial-native-authentication-ios-sign-up-with-email-one-time-passcode.md
-                    - name: Sign up with username, password and user attributes
-                      href: tutorial-native-authentication-ios-sign-up-with-username-password-user-attributes.md
-                    - name: Sign up with username and password
-                      href: tutorial-native-authentication-ios-sign-up-with-username-password.md
-                    - name: Sign in with username and password
-                      href: tutorial-native-authentication-ios-sign-in-with-username-password.md
-                    - name: Sign in user after sign up
-                      href: tutorial-native-authentication-ios-sign-in-user-after-sign-up.md
-                    - name: Self-service password reset
-                      href: tutorial-native-authentication-ios-self-service-password-reset.md
-                    - name: Support web fallback
-                      href: tutorial-native-authentication-ios-support-web-fallback.md
+                - name: Auto-sign in after sign-up
+                  href: tutorial-native-authentication-ios-sign-in-user-after-sign-up.md
+                - name: Self-service password reset
+                  href: tutorial-native-authentication-ios-self-service-password-reset.md
+                - name: Support web fallback
+                  href: tutorial-native-authentication-ios-support-web-fallback.md
     - name: Command-line interface (CLI) app
       items:
         - name: Node.js
@@ -276,31 +284,43 @@ items:
               href: tutorial-cli-app-node-sign-in-sign-out.md
 - name: Concepts
   items: 
-    - name: Planning for customer identity and access
+    - name: Planning guide
       href: concept-planning-your-solution.md
-    - name: Supported features in customer tenants
-      href: concept-supported-features-customers.md
+    - name: Woodgrove demo overview
+      href: overview-solutions-customers.md
     - name: User profile attributes
       href: concept-user-attributes.md
     - name: Authentication methods and identity providers
       href: concept-authentication-methods-customers.md
     - name: Native authentication
-      href: concept-native-authentication.md
+      items:
+        - name: Native authentication
+          href: concept-native-authentication.md
+        - name: Native authentication challenge types
+          href: concept-native-authentication-challenge-types.md
+        - name: Native authentication web fallback
+          href: concept-native-authentication-web-fallback.md
+        - name: Native authentication user attribute builder
+          href: concept-native-authentication-user-attribute-builder.md
     - name: Customizing the sign-in look and feel
       href: concept-branding-customers.md
+    - name: Custom URL domains
+      href: concept-custom-url-domain.md
     - name: Get started guide features explained
       href: concept-guide-explained.md
-    - name: Add your own business logic
+    - name: Adding your own business logic
       href: concept-custom-extensions.md
     - name: Security and governance
       href: concept-security-customers.md
+    - name: Frequently asked questions (FAQ)
+      href: faq-customers.md
 - name: How-to guides
-  expanded: true
+  expanded: false
   items:
     - name: Authenticate and authorize
       items:
-      - name: Create a customer tenant
-        href: how-to-create-customer-tenant-portal.md
+      - name: Create an external tenant
+        href: how-to-create-external-tenant-portal.md
       - name: Register an app
         href: how-to-register-ciam-app.md
       - name: Add a sign-up and sign-in flow
@@ -318,8 +338,6 @@ items:
             href: how-to-google-federation-customers.md
           - name: Facebook federation
             href: how-to-facebook-federation-customers.md
-      - name: Use application roles to manage access
-        href: how-to-use-app-roles-customers.md
         displayName: rbac, roles claim, groups claim
       - name: Integrate apps 
         items:
@@ -327,6 +345,16 @@ items:
             items:
               - name: Node.js
                 items:
+                  - name:  Edit profile with MFA
+                    items:
+                      - name: Set-up external tenant 
+                        href: how-to-web-app-node-edit-profile-prepare-tenant.md   
+                        displayName: Conditional Access, CA 
+                      - name: Set-up app 
+                        href: how-to-web-app-node-edit-profile-prepare-app.md 
+                      - name: Update profile
+                        href: how-to-web-app-node-edit-profile-update-profile.md  
+                        displayName: protect with MFA, multifactor authentication, MFA            
                   - name: Call API
                     items:
                       - name: Prepare tenant 
@@ -342,6 +370,8 @@ items:
                   - name: Use role-based access control
                     href: how-to-web-app-role-based-access-control.md 
                     displayName: rbac, roles, roles claim, groups claim
+      - name: Delete an external tenant
+        href: how-to-delete-external-tenant-portal.md
     - name: Customize
       items:
         - name: Customize branding
@@ -357,30 +387,36 @@ items:
               displayName: custom attributes
             - name: Add attributes to the token
               href: how-to-add-attributes-to-token.md
+        - name: Use custom URL domains
+          href: how-to-custom-url-domain.md
+        - name: Configure optional claims
+          href: /entra/identity-platform/optional-claims?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json 
         - name: Advanced extensions
           items:
             - name: Add logic to attribute collection
               items:
                 - name: Create attribute collection start and submit events
-                  href: ~/identity-platform/custom-extension-attribute-collection.md?context=/entra/external-id/customers/context/customers-context
+                  href: ~/identity-platform/custom-extension-attribute-collection.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: OnAttributeCollectionStart event reference
-                  href: ~/identity-platform/custom-extension-OnAttributeCollectionStart-reference.md?context=/entra/external-id/customers/context/customers-context
+                  href: ~/identity-platform/custom-extension-OnAttributeCollectionStart-reference.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: OnAttributeCollectionSubmit event reference
-                  href: ~/identity-platform/custom-extension-OnAttributeCollectionSubmit-reference.md?context=/entra/external-id/customers/context/customers-context
+                  href: ~/identity-platform/custom-extension-OnAttributeCollectionSubmit-reference.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
             - name: Add claims from external systems
               items:
                 - name: About custom authentication extensions
-                  href: ~/identity-platform/custom-extension-overview.md?context=/entra/external-id/customers/context/customers-context
+                  href: ~/identity-platform/custom-extension-overview.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Token issuance start event
-                  href: ~/identity-platform/custom-extension-get-started.md?context=/entra/external-id/customers/context/customers-context
+                  href: ~/identity-platform/custom-extension-tokenissuancestart-configuration.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Troubleshoot your custom claims provider API
-                  href: ~/identity-platform/custom-extension-troubleshoot.md?context=/entra/external-id/customers/context/customers-context
+                  href: ~/identity-platform/custom-extension-troubleshoot.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
     - name: Secure
       items:
       - name: Multifactor authentication
         href: how-to-multifactor-authentication-customers.md
       - name: Identity Protection
         href: how-to-identity-protection-customers.md
+      - name: Use application roles to manage access
+        href: how-to-use-app-roles-customers.md
     - name: Manage users
       items:
         - name: Manage admin accounts
@@ -395,32 +431,25 @@ items:
           href: troubleshooting-known-issues.md
     - name: Management APIs
       items:
-        - name: Microsoft Graph
-          href: microsoft-graph-operations.md
         - name: Tenant management operations
           href: azure-rest-api-operations-tenant-management.md 
 - name: Reference
   items:
     - name: Default user permissions
       href: reference-user-permissions.md
+    - name: Service limits and restrictions
+      href: reference-service-limits.md
     - name: Group and application roles support
       href: reference-group-app-roles-support.md
+    - name: Data residency
+      href: ~/fundamentals/data-residency.md
     - name: Company branding CSS template reference guide
       href: ~/fundamentals/reference-company-branding-css-template.md
-    - name: Help and support options
-      href: ~/identity-platform/developer-support-help-options.md?context=/entra/external-id/customers/context/customers-context
     - name: Native authentication
       items:
         - name: API reference
-          items: 
-           - name: Native authentication APIs
-             displayName: Native authentication, Native authentication API   
-             href: /entra/identity-platform/reference-native-authentication-overview?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json
-           - name: Native authentication with email OTP
-             displayName: Native authentication with email and one-time password or passcode          
-             href: /entra/identity-platform/reference-native-authentication-email-otp?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json
-           - name: Native authentication with email & password
-             href: /entra/identity-platform/reference-native-authentication-email-password?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json
+          href: /entra/identity-platform/reference-native-authentication-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+          displayName: Native authentication, Native authentication API, native auth                
         - name: SDK reference
           items: 
            - name: MSAL iOS and macOS
@@ -445,7 +474,5 @@ items:
             href: /javascript/api/@azure/msal-react/
           - name: MSAL-node
             href: /javascript/api/@azure/msal-node/
-- name: Resources
-  items:
-    - name: Frequently asked questions (FAQ)
-      href: faq-customers.md
+    - name: Start a free trial without an Azure subscription
+      href: quickstart-trial-setup.md

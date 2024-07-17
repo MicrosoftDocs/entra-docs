@@ -99,7 +99,7 @@ POST https://graph.microsoft.com/v1.0/roleManagement/directory/roleAssignmentSch
     "justification": "TEST",
     "roleDefinitionId": "31392ffb-586c-42d1-9346-e59415a2cc4e",
     "directoryScopeId": "/",
-    "principalId": "071cc716-8147-4397-a5ba-b2105951cc0b",
+    "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
     "scheduleInfo": {
         "startDateTime": "2022-04-10T00:00:00Z",
         "expiration": {
@@ -122,7 +122,7 @@ POST https://graph.microsoft.com/v1.0/roleManagement/directory/roleAssignmentSch
     "approvalId": null,
     "customData": null,
     "action": "adminExtend",
-    "principalId": "071cc716-8147-4397-a5ba-b2105951cc0b",
+    "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
     "roleDefinitionId": "31392ffb-586c-42d1-9346-e59415a2cc4e",
     "directoryScopeId": "/",
     "appScopeId": null,
@@ -134,7 +134,7 @@ POST https://graph.microsoft.com/v1.0/roleManagement/directory/roleAssignmentSch
         "device": null,
         "user": {
             "displayName": null,
-            "id": "3fbd929d-8c56-4462-851e-0eb9a7b3a2a5"
+            "id": "aaaaaaaa-bbbb-cccc-1111-222222222222"
         }
     },
     "scheduleInfo": {

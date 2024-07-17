@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: dhivyag
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Application proxy configuration for Confluence SAML SSO so that I can control who has access to Application proxy configuration for Confluence SAML SSO, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -52,7 +52,7 @@ As of now, following versions of Confluence are supported:
 ## Scenario description
 
 In this tutorial, you configure and test Microsoft Entra SSO for on-premises confluence setup using application proxy mode.
-1. Download and Install Microsoft Entra application proxy connector.
+1. Download and Install Microsoft Entra private network connector.
 1. Add Application Proxy in Microsoft Entra ID.
 1. Add a Confluence SAML SSO app in Microsoft Entra ID.
 1. Configure SSO for SAML SSO Confluence Application in Microsoft Entra ID.
@@ -62,9 +62,9 @@ In this tutorial, you configure and test Microsoft Entra SSO for on-premises con
 1. Assigning the test user for the Microsoft Confluence plugin in your Confluence Server.
 1. Test the SSO.
 
-## Download and Install the application proxy Connector Service
+## Download and Install the private network connector Service
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Application proxy**.
 1. Select **Download connector service**.
 
@@ -78,7 +78,7 @@ In this tutorial, you configure and test Microsoft Entra SSO for on-premises con
 
 To add an Application proxy, we need to create an enterprise application.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
 1. Choose **Add an on-premises application**.
 
@@ -103,7 +103,7 @@ To add an Application proxy, we need to create an enterprise application.
 
 Now that you've prepared your environment and installed a connector, you're ready to add confluence applications to Microsoft Entra ID.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
 1.	Select **Confluence SAML SSO by Microsoft** widget from the Microsoft Entra Gallery.
 
@@ -112,7 +112,7 @@ Now that you've prepared your environment and installed a connector, you're read
 
 ## Configure SSO for Confluence SAML SSO Application in Microsoft Entra ID
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 1. Open the **Confluence SAML SSO by Microsoft** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.

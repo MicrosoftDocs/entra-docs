@@ -8,7 +8,7 @@ ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: how-to
-ms.date: 12/12/2023
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SAS Viya SSO so that I can control who has access to SAS Viya SSO, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -34,6 +34,7 @@ To integrate Microsoft Entra ID with SAS Viya SSO, you need:
 In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
 
 * SAS Viya SSO supports both **SP and IDP** initiated SSO.
+* SAS Viya SSO supports [Automated user provisioning](sas-viya-sso-provisioning-tutorial.md).
 
 ## Add SAS Viya SSO from the gallery
 
@@ -122,11 +123,13 @@ In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by 
 
 ## Configure SAS Viya SSO
 
-To configure single sign-on on **SAS Viya SSO** side, you need to send the **App Federation Metadata Url** to [SAS Viya SSO support team](mailto:support@sas.com). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure SAS Viya SSO to support single sign-on with Microsoft Entra ID, please refer [this](https://go.documentation.sas.com/doc/en/sasadmincdc/default/calauthmdl/n1iyx40th7exrqn1ej8t12gfhm88.htm#n1mj93glryngkgn1e2mam2uy2dt8) link in SAS Viya Platform Administration.
 
 ### Create SAS Viya SSO test user
 
 In this section, you create a user called B.Simon in SAS Viya SSO. Work with [SAS Viya SSO support team](mailto:support@sas.com) to add the users in the SAS Viya SSO platform. Users must be created and activated before you use single sign-on.
+
+SAS Viya SSO also supports automatic user provisioning, you can find more details [here](./sas-viya-sso-provisioning-tutorial.md) on how to configure automatic user provisioning.
 
 ## Test SSO 
 

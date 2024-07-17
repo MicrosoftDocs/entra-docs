@@ -48,5 +48,5 @@ To use this feature, you need:
 
 * [Learn about other ways to access activity logs](howto-access-activity-logs.md)
 * [Manually download activity logs](howto-download-logs.md)
-* [Integrate activity logs with Azure Monitor logs](howto-integrate-activity-logs-with-azure-monitor-logs.md)
+* [Integrate activity logs with Azure Monitor logs](howto-integrate-activity-logs-with-azure-monitor-logs.yml)
 * [Stream logs to an event hub](howto-stream-logs-to-event-hub.md)

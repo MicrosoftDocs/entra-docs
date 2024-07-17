@@ -5,7 +5,6 @@ description: Describes overview of identity provisioning.
 author: billmath
 manager: amycolannino
 ms.service: entra-id
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: overview
 ms.date: 11/06/2023
 ms.subservice: hybrid
@@ -31,7 +30,7 @@ With regard to Microsoft Entra ID, provisioning can be broken down in to the fol
 
 ![Diagram that shows HR-driven provisioning with Cloud HR, On-premises HR, and Microsoft Entra ID.](media/what-is-provisioning/cloud-2.png)
 
-Provisioning from HR to the cloud involves the creation of objects (users, roles, groups, etc.) based on the information that is in your HR system.  
+Provisioning from HR to the cloud involves the creation of objects (users, roles, groups, and so on) based on the information that is in your HR system.  
 
 The most common scenario would be, when a new employee joins your company, they're entered into the HR system. Once that occurs, they're provisioned to the cloud. In this case, Microsoft Entra ID. Provisioning from HR can cover the following scenarios. 
 

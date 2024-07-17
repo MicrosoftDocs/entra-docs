@@ -1,7 +1,7 @@
 ---
 title: Sign in users in a sample WPF desktop application 
 description: Learn how to configure a sample WPF desktop to sign in and sign out users.
- 
+
 author: SHERMANOUKO
 manager: mwongerapk
 
@@ -12,20 +12,18 @@ ms.subservice: customers
 ms.topic: sample
 ms.date: 07/26/2023
 ms.custom: developer, devx-track-dotnet
-#Customer intent: As a dev, devops, I want to learn about how to configure a sample WPF desktop app to sign in and sign out users with my Microsoft Entra ID for customers tenant
+#Customer intent: As a dev, devops, I want to learn about how to configure a sample WPF desktop app to sign in and sign out users with my external tenant.
 ---
 
 # Sign in users in a sample WPF desktop application 
 
-This article uses a sample Windows Presentation Foundation (WPF) application to show you how to add authentication to a WPF desktop application. The sample application enables users to sign in and sign out. The sample desktop application uses [Microsoft Authentication Library for .NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet) for .NET to handle authentication.
+This guide uses a sample Windows Presentation Foundation (WPF) application to show you how to add authentication to a WPF desktop application. The sample application enables users to sign in and sign out. The sample desktop application uses [Microsoft Authentication Library for .NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet) for .NET to handle authentication.
 
 ## Prerequisites
 
-- [.NET 7.0](https://dotnet.microsoft.com/download/dotnet/7.0) or later. 
-
-- [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
-
-- Microsoft Entra ID for customers tenant. If you don't already have one, [sign up for a free trial](https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl).
+* [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
+* [.NET 7.0](https://dotnet.microsoft.com/download/dotnet/7.0) or later. 
+* An external tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
 
 ## Register the desktop app
 
@@ -35,9 +33,7 @@ This article uses a sample Windows Presentation Foundation (WPF) application to 
 
 [!INCLUDE [active-directory-b2c-wpf-app-platform](./includes/register-app/add-platform-redirect-url-wpf.md)]  
 
-## Grant API permissions
-
-Since this app signs-in users, add delegated permissions:
+## Grant admin consent
 
 [!INCLUDE [active-directory-b2c-grant-delegated-permissions](./includes/register-app/grant-api-permission-sign-in.md)] 
 
@@ -51,15 +47,15 @@ Since this app signs-in users, add delegated permissions:
 
 ## Clone or download sample WPF application
 
-To get the WPF desktop app sample code, you can do either of the following tasks:
+To obtain the sample application, you can either clone it from GitHub or download it as a .zip file.
 
-- [Download the .zip file](https://github.com/Azure-Samples/ms-identity-ciam-dotnet-tutorial/archive/refs/heads/main.zip) or clone the sample desktop application from GitHub by running the following command:
+- To clone the sample, open a command prompt and navigate to where you wish to create the project, and enter the following command:
 
     ```console
-        git clone https://github.com/Azure-Samples/ms-identity-ciam-dotnet-tutorial.git
+    git clone https://github.com/Azure-Samples/ms-identity-ciam-dotnet-tutorial.git
     ```
 
-If you choose to download the *.zip* file, extract the sample app file to a folder where the total length of the path is 260 or fewer characters.
+- [Download the .zip file](https://github.com/Azure-Samples/ms-identity-ciam-dotnet-tutorial/archive/refs/heads/main.zip). Extract it to a file path where the length of the name is fewer than 260 characters.
 
 ## Configure the sample WPF app
 
@@ -69,7 +65,7 @@ If you choose to download the *.zip* file, extract the sample app file to a fold
 
 1. Replace `Enter_the_Application_Id_Here` with the Application (client) ID of the app you registered earlier.
  
-1. Replace `Enter_the_Tenant_Subdomain_Here` with the Directory (tenant) subdomain. For example, if your primary domain is *contoso.onmicrosoft.com*, replace `Enter_the_Tenant_Subdomain_Here` with *contoso*. If you don't have your primary domain, learn how to [read tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
+1. Replace `Enter_the_Tenant_Subdomain_Here` with the Directory (tenant) subdomain. For example, if your primary domain is *contoso.onmicrosoft.com*, replace `Enter_the_Tenant_Subdomain_Here` with *contoso*. If you don't have your primary domain, learn how to [read tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
 
 ## Run and test sample WPF desktop app 
 
@@ -85,7 +81,7 @@ If you choose to download the *.zip* file, extract the sample app file to a fold
     dotnet run
     ```
 
-1. After you launch the sample you should see a window with a **Sign-In** button. Select the **Sign-In** button.
+1. After you launch the sample, you should see a window with a **Sign-In** button. Select the **Sign-In** button.
 
     :::image type="content" source="./media/sample-wpf-dotnet-sign-in/wpf-sign-in-screen.png" alt-text="Screenshot of sign-in screen for a WPF desktop application.":::
 
@@ -98,6 +94,10 @@ If you choose to download the *.zip* file, extract the sample app file to a fold
 
 The main configuration for the public client application is handled within the *App.xaml.cs* file. A `PublicClientApplication` is initialized along with a cache for storing access tokens. The application will first check whether there's a cached token that can be used to sign the user in. If there's no cached token, the user will be prompted to provide credentials and sign-in. Upon signing-out, the cache is cleared of all accounts and all corresponding access tokens.
 
-## Next steps
+## Related content
 
-See the tutorial on how to [build your own WPF desktop app that authenticates users](tutorial-desktop-wpf-dotnet-sign-in-prepare-tenant.md)
+- [Use our multi-part tutorial series to build this WPF desktop app from scratch](tutorial-desktop-wpf-dotnet-sign-in-prepare-tenant.md)
+- [Enable password reset](how-to-enable-password-reset-customers.md).
+- [Customize the default branding](how-to-customize-branding-customers.md).
+- [Configure sign-in with Google](how-to-google-federation-customers.md).
+

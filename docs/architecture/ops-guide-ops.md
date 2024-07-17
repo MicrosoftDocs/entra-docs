@@ -31,7 +31,7 @@ Managing Microsoft Entra ID requires the continuous execution of key operational
 | Triage Microsoft Entra Connect Health Alerts for Sync and AD FS | IAM Operations Team |
 | If not using Microsoft Entra Connect Health, then customer has equivalent process and tools to monitor custom infrastructure | IAM Operations Team |
 | If not using AD FS, then customer has equivalent process and tools to monitor custom infrastructure | IAM Operations Team |
-| Monitor Hybrid Logs: Microsoft Entra application proxy Connectors | IAM Operations Team |
+| Monitor Hybrid Logs: Microsoft Entra private network connectors | IAM Operations Team |
 | Monitor Hybrid Logs: Passthrough Authentication Agents | IAM Operations Team |
 | Monitor Hybrid Logs: Password Writeback Service | IAM Operations Team |
 | Monitor Hybrid Logs: On-premises password protection gateway | IAM Operations Team |
@@ -52,7 +52,7 @@ Having the most up-to-date versions of on-premises components provides the custo
 These components include:
 
 - Microsoft Entra Connect
-- Microsoft Entra application proxy Connectors
+- Microsoft Entra private network connectors
 - Microsoft Entra pass-through authentication agents
 - Microsoft Entra Connect Health Agents
 
@@ -61,7 +61,7 @@ Unless one has been established, you should define a process to upgrade these co
 #### Hybrid management recommended reading
 
 - [Microsoft Entra Connect: Automatic upgrade](~/identity/hybrid/connect/how-to-connect-install-automatic-upgrade.md)
-- [Understand Microsoft Entra application proxy connectors | Automatic updates](~/identity/app-proxy/application-proxy-connectors.md#automatic-updates)
+- [Understand Microsoft Entra private network connectors | Automatic updates](~/identity/app-proxy/application-proxy-connectors.md#automatic-updates)
 
 <a name='azure-ad-connect-health-alert-baseline'></a>
 
@@ -87,7 +87,7 @@ Some identity and access management services require on-premises agents to enabl
 
 - [Troubleshoot Application Proxy](~/identity/app-proxy/application-proxy-troubleshoot.md)
 - [Self-service password reset troubleshooting](~/identity/authentication/troubleshoot-sspr.md)
-- [Understand Microsoft Entra application proxy connectors](~/identity/app-proxy/application-proxy-connectors.md)
+- [Understand Microsoft Entra private network connectors](~/identity/app-proxy/application-proxy-connectors.md)
 - [Microsoft Entra Connect: Troubleshoot Pass-through Authentication](~/identity/hybrid/connect/tshoot-connect-pass-through-authentication.md#collecting-pass-through-authentication-agent-logs)
 - [Troubleshoot error codes for the Microsoft Entra multifactor authentication NPS extension](~/identity/authentication/howto-mfa-nps-extension-errors.md)
 
@@ -95,13 +95,13 @@ Some identity and access management services require on-premises agents to enabl
 
 Adopting best practices can help the optimal operation of on-premises agents. Consider the following best practices:
 
-- Multiple Microsoft Entra application proxy connectors per connector group are recommended to provide seamless load balancing and high availability by avoiding single points of failure when accessing the proxy applications. If you presently have only one connector in a connector group that handles applications in production, you should deploy at least two connectors for redundancy.
-- Creating and using an app proxy connector group for debugging purposes can be useful for troubleshooting scenarios and when onboarding new on-premises applications. We also recommend installing networking tools such as Message Analyzer and Fiddler in the connector machines.
+- Multiple Microsoft Entra private network connectors per connector group are recommended to provide seamless load balancing and high availability by avoiding single points of failure when accessing the proxy applications. If you presently have only one connector in a connector group that handles applications in production, you should deploy at least two connectors for redundancy.
+- Creating and using a private network connector group for debugging purposes can be useful for troubleshooting scenarios and when onboarding new on-premises applications. We also recommend installing networking tools such as Message Analyzer and Fiddler in the connector machines.
 - Multiple pass-through authentication agents are recommended to provide seamless load balancing and high availability by avoiding single point of failure during the authentication flow. Be sure to deploy at least two pass-through authentication agents for redundancy.
 
 #### On-premises agents management recommended reading
 
-- [Understand Microsoft Entra application proxy connectors](~/identity/app-proxy/application-proxy-connectors.md)
+- [Understand Microsoft Entra private network connectors](~/identity/app-proxy/application-proxy-connectors.md)
 - [Microsoft Entra pass-through authentication - quickstart](~/identity/hybrid/connect/how-to-connect-pta-quick-start.md#step-4-ensure-high-availability)
 
 ## Management at scale

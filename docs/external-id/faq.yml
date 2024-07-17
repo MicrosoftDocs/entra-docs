@@ -4,7 +4,7 @@ metadata:
   description: Get answers to frequently asked questions about Microsoft Entra B2B collaboration.
   ms.service: entra-external-id
   ms.topic: faq
-  ms.date: 11/28/2022
+  ms.date: 04/24/2024
   ms.author: mimart
   author: msmimart
   manager: celestedg
@@ -12,10 +12,13 @@ metadata:
   ms.collection: M365-identity-device-management
 title: Microsoft Entra B2B collaboration FAQs
 summary: |
+
+  [!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
+
   These frequently asked questions (FAQs) about Microsoft Entra business-to-business (B2B) collaboration are periodically updated to include new topics.
   
   > [!IMPORTANT]
-  > - **Starting January 4, 2021**, Google is [deprecating WebView sign-in support](https://developers.googleblog.com/2020/08/guidance-for-our-effort-to-block-less-secure-browser-and-apps.html). If you're using Google federation or self-service sign-up with Gmail, you should [test your line-of-business native applications for compatibility](google-federation.md#deprecation-of-web-view-sign-in-support).
+  > - **Starting January 4, 2021**, Google [deprecated WebView sign-in support](https://developers.googleblog.com/2020/08/guidance-for-our-effort-to-block-less-secure-browser-and-apps.html). If you're using Google federation or self-service sign-up with Gmail, you should [test your line-of-business native applications for compatibility](google-federation.md#deprecation-of-web-view-sign-in-support).
   > - The [email one-time passcode](one-time-passcode.md) feature is now turned on by default for all new tenants and for any existing tenants where you haven't explicitly turned it off. When this feature is turned off, the fallback authentication method is to prompt invitees to create a Microsoft account.
 
 sections:
@@ -74,12 +77,12 @@ sections:
       - question: |
           Can I make guest users visible in the Exchange Global Address List?
         answer: |
-          Yes. By default, guest objects aren't visible in your organization's global address list, but you can make them visible. For details, see "Add guests to the global address list" in the [Microsoft 365 per-group guest access article](/microsoft-365/solutions/per-group-guest-access).
+          Yes. By default, guest objects aren't visible in your organization's global address list, but you can make them visible. For details, see [Add guests to the global address list](/microsoft-365/solutions/per-group-guest-access#add-guests-to-the-global-address-list) in the Microsoft 365 per-group guest access article.
           
       - question: |
           Can I make a guest user a limited administrator?
         answer: |
-          Absolutely. For more information, see [Adding guest users to a role](./add-users-administrator.md).
+          Absolutely. For more information, see [Adding guest users to a role](./add-users-administrator.yml).
           
       - question: |
           Does Microsoft Entra B2B collaboration allow B2B users to access the Microsoft Entra admin center?
@@ -89,20 +92,8 @@ sections:
       - question: |
           Can I block access to the Microsoft Entra admin center for guest users?
         answer: |
-          Yes, you can create a Conditional Access policy that blocks all guest and external users from accessing the Microsoft Entra admin center. When you configure this policy, be careful to avoid accidentally blocking access to members and admins.
-          
-          1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) as a Security Administrator or a Conditional Access Administrator.
-          2. In the Microsoft Entra admin center, under **Protection**, select **Security Center**. 
-          4. Under **Protect**, select **Conditional Access**. Select **New policy**.
-          5. On the **New** page, in the **Name** textbox, enter a name for the policy (for example "Block guests from accessing the portal").
-          6. Under **Assignments**, select **Users and groups**.
-          7. On the **Include** tab, choose **Select users and groups**, and then select **All guest and external users (Preview)**.
-          9. Select **Done**.
-          10. On the **New** page, in the **Assignments** section, select **Cloud apps or actions**.
-          11. On the **Cloud apps or actions** page, choose **Select apps**, and then choose **Select**.
-          12. On the **Select** page, choose **Windows Azure Service Management API**, and then choose **Select**.
-          13. On the **Cloud apps or actions** page, select **Done**.
-          
+          Yes, you can create a Conditional Access policy that blocks guest user access to the admin center or portal. When configuring the Conditional Access policy, you have granular control over the types of external users you want to apply the policy to. When you configure this policy, be careful to avoid accidentally blocking access to members and admins. Learn more about [Conditional Access for external users](authentication-conditional-access.md#conditional-access-for-external-users).
+              
       - question: |
           Does Microsoft Entra B2B collaboration support multifactor authentication and consumer email accounts?
         answer: |
@@ -111,7 +102,7 @@ sections:
       - question: |
           Do you support password reset for Microsoft Entra B2B collaboration users?
         answer: |
-          If your Microsoft Entra tenant is the home directory for a user, you can [reset the user's password](~/fundamentals/users-reset-password-azure-portal.md) from the Microsoft Entra admin center. But you can't directly reset a password for a guest user who signs in with an account that's managed by another Microsoft Entra directory or external identity provider. Only the guest user or an administrator in the user’s home directory can reset the password. Here are some examples of how password reset works for guest users:
+          If your Microsoft Entra tenant is the home directory for a user, you can [reset the user's password](~/fundamentals/users-reset-password-azure-portal.yml) from the Microsoft Entra admin center. But you can't directly reset a password for a guest user who signs in with an account that's managed by another Microsoft Entra directory or external identity provider. Only the guest user or an administrator in the user’s home directory can reset the password. Here are some examples of how password reset works for guest users:
            
           * Guest users in a Microsoft Entra tenant that are marked "Guest" (UserType==Guest) can't register for SSPR through [https://aka.ms/ssprsetup](https://aka.ms/ssprsetup). These type of guest user can only perform SSPR through [https://aka.ms/sspr](https://aka.ms/sspr). 
           * Guest users who sign in with a Microsoft account (for example guestuser@live.com) can reset their own passwords using Microsoft account self-service password reset (SSPR). See [How to reset your Microsoft account password](https://support.microsoft.com/help/4026971/microsoft-account-how-to-reset-your-password).
@@ -157,12 +148,7 @@ sections:
           How does B2B collaboration work when the invited partner is using federation to add their own on-premises authentication?
         answer: |
           If the partner has a Microsoft Entra tenant that is federated to the on-premises authentication infrastructure, on-premises single sign-on (SSO) is automatically achieved. If the partner doesn't have a Microsoft Entra tenant, a Microsoft Entra account is created for new users. 
-
-      - question: |
-          I thought Microsoft Entra B2B didn't accept gmail.com and outlook.com email addresses, and that B2C was used for those kinds of accounts?
-        answer: |
-          We are removing the differences between B2B and business-to-consumer (B2C) collaboration in terms of which identities are supported. The identity used isn't a good reason to choose between using B2B or using B2C. For information about choosing your collaboration option, see [Compare B2B collaboration and B2C in Microsoft Entra ID](external-identities-overview.md).
-          
+        
       - question: |
           Can an Azure AD B2C local account be invited to a Microsoft Entra tenant for B2B collaboration?
         answer: |
@@ -186,7 +172,7 @@ sections:
       - question: |
           What licenses do we need to use Microsoft Entra B2B?
         answer: |
-          For information about what licenses your organization needs to use Microsoft Entra B2B, see [External Identities pricing](external-identities-pricing.md).
+          For information about what licenses your organization needs to use Microsoft Entra B2B, see [External ID pricing](external-identities-pricing.md).
 
       - question: |
           What happens if I invite a user whose email and UPN don’t match?

@@ -8,7 +8,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
-ms.date: 06/24/2022
+ms.date: 05/20/2024
 ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro, has-azure-ad-ps-ref
@@ -16,7 +16,7 @@ ms.custom: it-pro, has-azure-ad-ps-ref
 # Microsoft Entra version 2 cmdlets for group management
 
 > [!div class="op_single_selector"]
-> - [Azure portal](~/fundamentals/how-to-manage-groups.md?context=azure/active-directory/users-groups-roles/context/ugr-context)
+> - [Azure portal](~/fundamentals/how-to-manage-groups.yml?context=azure/active-directory/users-groups-roles/context/ugr-context)
 > - [PowerShell](~/identity/users/groups-settings-v2-cmdlets.md)
 >
 >
@@ -118,7 +118,7 @@ You can search for a specific group using the -filter parameter. This parameter 
 
 
     DeletionTimeStamp            :
-    ObjectId                     : 31f1ff6c-d48c-4f8a-b2e1-abca7fd399df
+    ObjectId                     : aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb
     ObjectType                   : Group
     Description                  : Intune Administrators
     DirSyncEnabled               :
@@ -135,6 +135,26 @@ You can search for a specific group using the -filter parameter. This parameter 
 
 > [!NOTE]
 > The MgGroup PowerShell cmdlets implement the OData query standard. For more information, see **$filter** in [OData system query options using the OData endpoint](/previous-versions/dynamicscrm-2015/developers-guide/gg309461(v=crm.7)#BKMK_filter).
+
+Here you have an example that shows how to pull all groups that don't have an expiration policy applied
+
+```powershell
+Connect-MgGraph -Scopes 'Group.Read.All'
+Get-MgGroup -ConsistencyLevel eventual -Count groupCount -Filter "NOT (expirationDateTime+ge+1900-01-01T00:00:00Z)" | Format-List Id
+```
+
+This example does the same as the previous one, but the script also exports the results to CSV.
+
+```powershell
+Connect-MgGraph -Scopes 'Group.Read.All'
+Get-MgGroup -ConsistencyLevel eventual -Count groupCount -Filter "NOT (expirationDateTime+ge+1900-01-01T00:00:00Z)" | Format-List Id |Export-Csv -Path {path} -NoTypeInformation
+```
+
+This last example shows you how to retrieve only groups that belong to Teams
+
+```powershell
+Get-MgGroup -ConsistencyLevel eventual -Count groupCount -Filter "NOT (expirationDateTime+ge+1900-01-01T00:00:00Z) and resourceProvisioningOptions/any(p:p eq 'Team')" | Format-List Id, expirationDateTime, resourceProvisioningOptions
+```
 
 ## Create groups
 
@@ -161,7 +181,7 @@ To update an existing group, use the Update-MgGroup cmdlet. In this example, we�
 
 
     DeletionTimeStamp            :
-    ObjectId                     : 31f1ff6c-d48c-4f8a-b2e1-abca7fd399df
+    ObjectId                     : aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb
     ObjectType                   : Group
     Description                  : Intune Administrators
     DirSyncEnabled               :
@@ -204,7 +224,7 @@ To delete groups from your directory, use the Remove-MgGroup cmdlet as follows:
 
 ### Add members
 
-To add new members to a group, use the Add-MgGroupMember cmdlet. This command adds a member to the Intune Administrators group we used in the previous example:
+To add new members to a group, use the New-MgGroupMember cmdlet. This command adds a member to the Intune Administrators group we used in the previous example:
 
 ```powershell
     PS C:\Windows\system32> New-MgGroupMember -GroupId f76cbbb8-0581-4e01-a0d4-133d3ce9197f -DirectoryObjectId a88762b7-ce17-40e9-b417-0add1848eb68
@@ -221,8 +241,8 @@ To get the existing members of a group, use the Get-MgGroupMember cmdlet, as in 
 
 Id                                   DeletedDateTime
 --                                   ---------------
-71b3857d-2a23-416d-bd22-a471854ddada
-fd2d57c7-22ad-42cd-961a-7340fb2eb6b4
+aaaaaaaa-bbbb-cccc-1111-222222222222
+bbbbbbbb-cccc-dddd-2222-333333333333
 ```
 
 ### Remove members
@@ -230,7 +250,7 @@ fd2d57c7-22ad-42cd-961a-7340fb2eb6b4
 To remove the member we previously added to the group, use the Remove-MgGroupMember cmdlet, as is shown here:
 
 ```powershell
-    PS C:\Windows\system32> Remove-MgGroupMemberByRef -DirectoryObjectId 053a6a7e-4a75-48bc-8324-d70f50ec0d91 -GroupId 2c52c779-8587-48c5-9d4a-c474f2a66cf4
+    PS C:\Windows\system32> Remove-MgGroupMemberByRef -DirectoryObjectId 00aa00aa-bb11-cc22-dd33-44ee44ee44ee -GroupId 2c52c779-8587-48c5-9d4a-c474f2a66cf4
 ```
 
 ### Verify members
@@ -238,7 +258,7 @@ To remove the member we previously added to the group, use the Remove-MgGroupMem
 To verify the group memberships of a user, use the Select-MgGroupIdsUserIsMemberOf cmdlet. This cmdlet takes as its parameters the ObjectId of the user for which to check the group memberships, and a list of groups for which to check the memberships. The list of groups must be provided in the form of a complex variable of type “Microsoft.Open.AzureAD.Model.GroupIdsForMembershipCheck”, so we first must create a variable with that type:
 
 ```powershell
-Get-MgUserMemberOf -UserId 053a6a7e-4a75-48bc-8324-d70f50ec0d91
+Get-MgUserMemberOf -UserId 00aa00aa-bb11-cc22-dd33-44ee44ee44ee
 
 Id                                   DisplayName Description GroupTypes AccessType
 --                                   ----------- ----------- ---------- ----------
@@ -344,15 +364,15 @@ When a group is created, certain endpoints allow the end user to specify a mailN
 * ssl-admin
 * webmaster
 
-## Group writeback to on-premises (preview)
+## Group writeback to on-premises
 
-Today, many groups are still managed in on-premises Active Directory. To answer requests to sync cloud groups back to on-premises, Microsoft 365 groups writeback feature for Microsoft Entra ID is now available for preview.
 
-Microsoft 365 groups are created and managed in the cloud. The writeback capability allows you to write back Microsoft 365 groups as distribution groups to an Active Directory forest with Exchange installed. Users with on-premises Exchange mailboxes can then send and receive emails from these groups. The group writeback feature doesn't support Microsoft Entra security groups or distribution groups.
+Today, many groups are still managed in on-premises Active Directory. To answer requests to sync cloud groups back to on-premises, the groups writeback feature for Microsoft Entra ID using Microsoft Entra cloud sync is now available.
 
-For more details, please refer to documentation for the [Microsoft Entra Connect Sync service](~/identity/hybrid/connect/how-to-connect-syncservice-features.md).
 
-Microsoft 365 group writeback is a public preview feature of Microsoft Entra ID and is available with any paid Microsoft Entra ID license plan. For more information about previews, see [Universal License Terms For Online Services](https://www.microsoft.com/licensing/terms/product/ForOnlineServices/all).
+[!INCLUDE [deprecation](~/includes/gwb-v2-deprecation.md)]
+
+
 
 ## Next steps
 

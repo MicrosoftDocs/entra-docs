@@ -80,7 +80,7 @@ To re-enable monitoring in Microsoft Entra Connect Health for a previously delet
 
 ### Re-enable data collection and monitoring for all monitored services
 
-For tenants, data collection can be resumed in Microsoft Entra Connect Health. We recommend careful consideration and full acknowledgment of all global administrators before you take this action.
+For tenants, data collection can be resumed in Microsoft Entra Connect Health. We recommend careful consideration and full acknowledgment of all Global Administrators before you take this action.
 
 > [!IMPORTANT]
 > The following steps are available beginning 24 hours after a disable action. After you enable data collection, the presented insight and monitoring data in Microsoft Entra Connect Health won't show any data that was collected before the disable action.

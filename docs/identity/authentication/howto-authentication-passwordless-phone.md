@@ -7,7 +7,7 @@ ms.service: entra-id
 ms.subservice: authentication
 ms.custom: has-azure-ad-ps-ref
 ms.topic: how-to
-ms.date: 10/05/2023
+ms.date: 04/05/2024
 
 
 ms.author: justinha
@@ -30,9 +30,9 @@ People who enabled phone sign-in from Microsoft Authenticator see a message that
 1. Choose **Approve**.
 1. Provide their PIN or biometric.
 
-## Multiple accounts on iOS 
+## Multiple accounts
 
-You can enable passwordless phone sign-in for multiple accounts in Microsoft Authenticator on any supported iOS device. Consultants, students, and others with multiple accounts in Microsoft Entra ID can add each account to Microsoft Authenticator and use passwordless phone sign-in for all of them from the same iOS device. 
+You can enable passwordless phone sign-in for multiple accounts in Microsoft Authenticator on any supported Android or iOS device. Consultants, students, and others with multiple accounts in Microsoft Entra ID can add each account to Microsoft Authenticator and use passwordless phone sign-in for all of them from the same device. 
 
 Previously, admins might not require passwordless sign-in for users with multiple accounts because it requires them to carry more devices for sign-in. By removing the limitation of one user sign-in from a device, admins can more confidently encourage users to register passwordless phone sign-in and use it as their default sign-in method.
 
@@ -44,8 +44,7 @@ To use passwordless phone sign-in with Microsoft Authenticator, the following pr
 
 - Recommended: Microsoft Entra multifactor authentication, with push notifications allowed as a verification method. Push notifications to your smartphone or tablet help the Authenticator app to prevent unauthorized access to accounts and stop fraudulent transactions. The Authenticator app automatically generates codes when set up to do push notifications. A user has a backup sign-in method even if their device doesn't have connectivity. 
 - Latest version of Microsoft Authenticator installed on devices running iOS or Android.
-- For Android, the device that runs Microsoft Authenticator must be registered to an individual user. We're actively working to enable multiple accounts on Android. 
-- For iOS, the device must be registered with each tenant where it's used to sign in. For example, the following device must be registered with Contoso and Wingtiptoys to allow all accounts to sign in:
+- The device must be registered with each tenant where it's used to sign in. For example, the following device must be registered with Contoso and Wingtiptoys to allow all accounts to sign in:
   - balas@contoso.com
   - balas@wingtiptoys.com and bsandhu@wingtiptoys
 
@@ -130,6 +129,12 @@ After the user has utilized passwordless phone sign-in, the app continues to gui
 
 :::image type="content" border="true" source="./media/howto-authentication-passwordless-phone/number.png" alt-text="Screenshot that shows an example of a browser sign-in using the Microsoft Authenticator app.":::
 
+#### Temporary Access Pass
+If the tenant administrator has enabled Self-Service Password Reset (SSPR) and a user is setting up passwordless sign-in with the Authenticator app for the first time using a Temporary Access Password, the following steps should be followed:
+
+1. The user should open a browser on a mobile device or desktop and navigate to the [mySecurity](https://aka.ms/mysecurityinfo) info page.
+2. The user must register the Authenticator App as their sign-in method. This action links the user's account to the app.
+3. The user should then return to their mobile device and activate passwordless sign-in through the Authenticator App.
 
 ## Management
 

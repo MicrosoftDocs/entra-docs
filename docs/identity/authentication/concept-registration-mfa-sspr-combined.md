@@ -21,8 +21,6 @@ Before combined registration, users registered authentication methods for Micros
 
 Before enabling the new experience, review this administrator-focused documentation and the user-focused documentation to ensure you understand the functionality and effect of this feature. Base your training on the [user documentation](https://support.microsoft.com/account-billing/set-up-your-security-info-from-a-sign-in-prompt-28180870-c256-4ebf-8bd7-5335571bf9a8) to prepare your users for the new experience and help to ensure a successful rollout.
 
-Microsoft Entra ID combined security information registration is available for Azure US Government but not Microsoft Azure operated by 21Vianet.
-
 *My Account* pages are localized based on the language settings of the computer accessing the page. Microsoft stores the most recent language used in the browser cache, so subsequent attempts to access the pages continue to render in the last language used. If you clear the cache, the pages re-render.
 
 If you want to force a specific language, you can add `?lng=<language>` to the end of the URL, where `<language>` is the code of the language you want to render.
@@ -38,14 +36,14 @@ Combined registration supports the authentication methods and actions in the fol
 | Microsoft Authenticator | Yes (maximum of 5) | No | Yes |
 | Other authenticator app | Yes (maximum of 5) | No | Yes |
 | Hardware token | No | No | Yes |
-| Phone | Yes | Yes | Yes |
+| Phone | Yes (maximum of 2) | Yes | Yes |
 | Alternate phone | Yes | Yes | Yes |
 | Office phone* | Yes | Yes | Yes |
 | Email | Yes | Yes | Yes |
 | Security questions | Yes | No | Yes |
 | Passwords | No | Yes | No |
 | App passwords* | Yes | No | Yes |
-| FIDO2 security keys*| Yes | No | Yes |
+| Passkey (FIDO2)*| Yes (maximum of 10)  | No | Yes |
 
 > [!NOTE]
 > If you enable Microsoft Authenticator for passwordless authentication mode in the Authentication methods policy, users need to also enable passwordless sign-in in the Authenticator app.
@@ -56,7 +54,7 @@ Combined registration supports the authentication methods and actions in the fol
 >
 > App passwords are available only to users who have been enforced for per-user MFA. App passwords aren't available to users who are enabled for Microsoft Entra multifactor authentication by a Conditional Access policy.
 >
-> FIDO2 security keys, can only be added in *Manage mode* on [https://aka.ms/mysecurityinfo](https://aka.ms/mysecurityinfo).
+> Passkey (FIDO2), can only be added in *Manage mode* on [https://aka.ms/mysecurityinfo](https://aka.ms/mysecurityinfo).
 
 Users can set one of the following options as the default multifactor authentication method. 
 
@@ -93,7 +91,7 @@ The following are sample scenarios where users might be prompted to register or 
 - *SSPR registration enforced:* Users are asked to register during sign-in. They register only SSPR methods.
 - *SSPR refresh enforced:* Users are required to review their security info at an interval set by the admin. Users are shown their info and can confirm the current info or make changes if needed.
 
-When registration is enforced, users are shown the minimum number of methods needed to be compliant with both multifactor authentication and SSPR policies, from most to least secure. Users going through combined registration where both MFA and SSPR registration are enforced and the SSPR policy requires two methods will first be required to register an MFA method as the first method and can select another MFA or SSPR specific method as the second registered method (e.g. email, security questions etc.)
+When registration is enforced, users are shown the minimum number of methods needed to be compliant with both multifactor authentication and SSPR policies, from most to least secure. Users going through combined registration where both MFA and SSPR registration are enforced and the SSPR policy requires two methods will first be required to register an MFA method as the first method and can select another MFA or SSPR specific method as the second registered method (such as email, security questions, and so on)
 
 Consider the following example scenario:
 
@@ -177,12 +175,12 @@ Or, you can specify a tenant by URL to access security information.
 > 
 > IE11 is not officially supported for creating a webview or browser in applications as it will not work as expected in all scenarios.
 > 
-> Applications that have not been updated and are still using Azure AD Authentication Library (ADAL) that rely on legacy webviews can fallback to older versions of IE. In these scenarios, users will experience a blank page when directed to the My Sign-ins page. To resolve this issue, switch to a modern browser.
+> Applications that have not been updated and are still using Azure AD Authentication Library (ADAL) that rely on legacy webviews can fallback to older versions of Internet Explorer. In these scenarios, users will experience a blank page when directed to the My Sign-ins page. To resolve this issue, switch to a modern browser.
 
 ## Next steps
 
 To get started, see the tutorials to [enable self-service password reset](tutorial-enable-sspr.md) and [enable Microsoft Entra multifactor authentication](tutorial-enable-azure-mfa.md).
 
-Learn how to [enable combined registration in your tenant](howto-registration-mfa-sspr-combined.md) or [force users to re-register authentication methods](howto-mfa-userdevicesettings.md#manage-user-authentication-options).
+Learn how to [enable combined registration in your tenant](howto-registration-mfa-sspr-combined.md) or [force users to re-register authentication methods](howto-mfa-userdevicesettings.yml).
 
 You can also review the [available methods for Microsoft Entra multifactor authentication and SSPR](concept-authentication-methods.md).

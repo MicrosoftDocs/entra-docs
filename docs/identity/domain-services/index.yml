@@ -63,7 +63,7 @@ landingContent:
       - linkListType: how-to-guide
         links:
           - text: Administer group policy
-            url: manage-group-policy.md
+            url: manage-group-policy.yml
           - text: Manage DNS
             url: manage-dns.md
           - text: Check health status

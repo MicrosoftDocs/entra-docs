@@ -8,16 +8,21 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: how-to
-ms.date: 03/08/2024
+ms.date: 05/15/2024
 ms.author: mimart
 ms.custom: it-pro
 
 #Customer intent: As a developer, devops, IT admin, I want to create custom attributes in my tenant and add them to my sign-up user flow so that I can collect then during sign-up.
 ---
 
-# Collect custom user attributes during sign-up  
+# Collect custom user attributes during sign-up
 
-If your customer-facing app requires more information than the built-in user attributes provide, you can add your own attributes. We refer to these attributes as *custom user attributes*.
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
+> [!TIP]
+> This article applies to user flows in external tenants. For information about workforce tenants, see [Define custom attributes for user flows](../user-flow-add-custom-attributes.md).
+
+If your app requires more information than the built-in user attributes provide, you can add your own attributes. We refer to these attributes as *custom user attributes*.
 
 To define a custom user attribute, you first create the attribute at the tenant level so it can be used in any user flow in the tenant. Then you assign the attribute to your sign-up user flow and configure how you want it to appear on the sign-up page.
 
@@ -27,7 +32,7 @@ Learn more about custom user attributes in [User profile attributes](concept-use
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
-1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your customer tenant from the **Directories + subscriptions** menu.
+1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your external tenant from the **Directories + subscriptions** menu.
 
 1. Browse to **Identity** > **External Identities** > **Overview**.
 
@@ -49,7 +54,7 @@ Follow these steps to add custom user attributes to a user flow you've already c
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
-1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your customer tenant from the **Directories + subscriptions** menu.
+1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your external tenant from the **Directories + subscriptions** menu.
 
 1. Browse to **Identity** > **External Identities** > **User flows**.
 

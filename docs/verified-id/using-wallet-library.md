@@ -14,41 +14,45 @@ ms.date: 06/28/2022
 
 # Using the Microsoft Entra Wallet Library with Verified ID
 
-  
 In this tutorial, you learn how a mobile app can use the Microsoft Entra Wallet Library with Verified ID to issue and present verifiable credentials.
 
 ## Prerequisites
 
 - [Android Studio](https://developer.android.com/studio) installed on Mac/Windows and an Android test device. You need to enable [developer mode](https://developer.android.com/studio/debug/dev-options) on your Android test device.
-- An [Apple developer account](https://developer.apple.com/account/), Mac with [Xcode](https://developer.apple.com/xcode/) and an iOS test device with [developer mode](https://developer.apple.com/documentation/xcode/enabling-developer-mode-on-a-device) enabled. The iOS version needs to be 16 and above.
-
-[//]: # (BROKEN LINK HttpLinkUnauthorized ABOVE: https://developer.apple.com/account/)
+- An [Apple developer account](https://developer.apple.com/), Mac with [Xcode](https://developer.apple.com/xcode/) and an iOS test device with [developer mode](https://developer.apple.com/documentation/xcode/enabling-developer-mode-on-a-device) enabled. The iOS version needs to be 16 and above.
 - Install the [QR Code Reader](https://apps.apple.com/us/app/qr-code-reader/id1200318119) app on your test device. The WalletLibraryDemo app doesn't come with the ability to scan QR codes, so you need the QR Code Reader app to scan the QR codes with.
 
 You don't need to be a mobile developer to follow this tutorial and get the demo app up and running. The tools and a test device and the courage to try is all you need. You also don't need a Microsoft Entra Verified ID tenant onboarded as you can test the demo app with our public end to end demo website.
 
+> [!NOTE]
+> Use the latest Wallet Library available to get support for NIST compliant P-256 curve used by Verified ID since February 2024.
+
 ## What is the Microsoft Entra Wallet Library?
+
 The Microsoft Entra Wallet Library for iOS and Android gives your mobile app the ability to begin using the Microsoft Entra Verified ID platform. Using the Wallet Library, your mobile app can issue and present verifiable credentials in accordance with industry standards.
 
 ## When should I use the Microsoft Entra Wallet Library?
-Microsoft Authenticator has all the functionality to act as the wallet for Microsoft Entra Verified ID. But in cases where you can’t use the Microsoft Authenticator, the Wallet Library is your alternative. An example could be when you already have a mobile app that your users are familiar with and where it makes more sense to include verifiable credentials technology into this app. 
 
-You can use the Microsoft Authenticator and a mobile app using the Wallet Library side-by-side on the same mobile device. The Authenticator, if installed, will be the app that has registered the protocol handler for openid://, so your app needs to make sure that the issuance and presentation requests find your app. Use of embedded deep links in HTML-pages that relies on the openid:// protocol will result in the Microsoft Authenticator being launched. 
+Microsoft Authenticator has all the functionality to act as the wallet for Microsoft Entra Verified ID. But in cases where you can’t use the Microsoft Authenticator, the Wallet Library is your alternative. An example could be when you already have a mobile app that your users are familiar with and where it makes more sense to include verifiable credentials technology into this app.
+
+You can use the Microsoft Authenticator and a mobile app using the Wallet Library side-by-side on the same mobile device. The Authenticator, if installed, will be the app that has registered the protocol handler for openid://, so your app needs to make sure that the issuance and presentation requests find your app. Use of embedded deep links in HTML-pages that relies on the openid:// protocol will result in the Microsoft Authenticator being launched.
 
 ## Does Microsoft use the Microsoft Entra Wallet Library?
+
 Yes, the Wallet Library is used by the Microsoft Authenticator. Some features may appear in the Authenticator first, but it is our ambition to make them available in the Wallet Library.
 
 ## What is the effort of adding the Microsoft Entra Wallet Library to my app?
-You add the Wallet Library to your mobile app project via adding a maven dependency for Android and adding a cocoapod dependency for iOS. 
+
+You add the Wallet Library to your mobile app project via adding a maven dependency for Android and adding a cocoapod dependency for iOS.
 
 ### [iOS](#tab/ios)
 
-For iOS, add the WalletLibrary pod to your Podfile. 
+For iOS, add the WalletLibrary pod to your Podfile.
 
 ```Swift
 target "YourApp" do
   use_frameworks!
-  pod "WalletLibrary", "~> 0.0.1"
+  pod "WalletLibrary", "~> 1.0.1"
 end
 ```
 
@@ -57,9 +61,10 @@ For Android, add to your app's build.gradle to add Wallet Library as a dependenc
 
 ```kotlin
 dependencies {
-    implementation 'com.microsoft.entra.verifiedid:walletlibrary:0.0.1'
+    implementation 'com.microsoft.entra.verifiedid:walletlibrary:1.0.1'
 }
 ```
+
 ---
 
 Then you need to add some code to process the requests. For details, please see the WalletLibraryDemo sample code.
@@ -107,33 +112,36 @@ if (verifiedIdRequestResult.isSuccess) {
     val exception = verifiedIdRequestResult.exceptionOrNull()
 }
 ```
+
 ---
 
 Then, you have to handle the following major tasks in your app.
 
 - Getting the request URLs. The Wallet Library doesn't come with any functionality to scan a QR code or similar. Obtaining the request URL via methods like scanning a QR code must be added by you. 
 - Storing the credentials. The Wallet Library creates the private and public key used for signing responses and stores this on the device, but it doesn't come with any functionality for storing credentials. You have to manage credential storage for your mobile app.
-- User Interface. Any visual representation of stored credentials and the UI for driving the issuance and presentation process must be implemented by you. 
+- User Interface. Any visual representation of stored credentials and the UI for driving the issuance and presentation process must be implemented by you.
 
 ## Wallet Library Demo app
+
 The Wallet Library comes with a demo app in the GitHub repo that is ready to use without any modifications. You just have to build and deploy it. The demo app is a lightweight and simple implementation that illustrates issuance and presentation at its minimum. To quickly get going, you can use the QR Code Reader app to scan the QR code, and then copy and paste it into the demo app.
 
 In order to test the demo app, you need a webapp that issues credentials and makes presentation requests for credentials. The [Woodgrove public demo webapp](https://aka.ms/vcdemo) is used for this purpose in this tutorial.
 
 ## Building the Android sample
+
 On your developer machine with Android Studio, do the following:
 
-1. Download or clone the Android Wallet Library [GitHub repo](https://github.com/microsoft/entra-verifiedid-wallet-library-android/archive/refs/heads/dev.zip). 
-You don’t need the walletlibrary folder and you can delete it if you like.
+1. Download or clone the Android Wallet Library [GitHub repo](https://github.com/microsoft/entra-verifiedid-wallet-library-android/tree/dev). You don’t need the walletlibrary folder and you can delete it if you like.
 1. Start Android Studio and open the parent folder of walletlibrarydemo
 
     :::image type="content" source="media/using-wallet-library/androidstudio-screenshot.png" alt-text="Screenshot of Android Studio.":::
 
-1. Select **Build** menu and then **Make Project**. This step takes some time. 
+1. Select **Build** menu and then **Make Project**. This step takes some time.
 1. Connect your Android test device via USB cable to your laptop
 1. Select your test device in Android Studio and click **run** button (green triangle)
 
 ## Issuing credentials using the Android sample
+
 1. Start the WalletLibraryDemo app
 
     :::image type="content" source="media/using-wallet-library/android-create-request.png" alt-text="Screenshot of Create Request on Android.":::
@@ -141,7 +149,7 @@ You don’t need the walletlibrary folder and you can delete it if you like.
 1. On your laptop, launch the public demo website [https://aka.ms/vcdemo](https://aka.ms/vcdemo) and do the following
     1. Enter your First Name and Last Name and press **Next**
     1. Select **Verify with True Identity**
-    1. Click **Take a selfie** and **Upload government issued ID**. The demo uses simulated data and you don't need to provide a real selfie or an ID. 
+    1. Click **Take a selfie** and **Upload government issued ID**. The demo uses simulated data and you don't need to provide a real selfie or an ID.
     1. Click **Next** and **OK**
 
 1. Scan the QR code with your QR Code Reader app on your test device, then copy the full URL displayed in the QR Code Reader app. Remember the pin code.
@@ -153,10 +161,12 @@ You don’t need the walletlibrary folder and you can delete it if you like.
 
 1. Once issuance completes, the demo app displays the claims in the credential
 
-    :::image type="content" source="media/using-wallet-library/android-issuance-complete.png" alt-text="Screenshot of Issuance Complete on Android.":::   
+    :::image type="content" source="media/using-wallet-library/android-issuance-complete.png" alt-text="Screenshot of Issuance Complete on Android.":::
 
 ## Presenting credentials using the Android sample
+
 The sample app holds the issued credential in memory, so after issuance, you can use it for presentation.
+
 1. The WalletLibraryDemo app should display some credential details on the home screen if you have successfully issued a credential.
 
     :::image type="content" source="media/using-wallet-library/android-have-credential.png" alt-text="Screenshot of app with credential on Android.":::
@@ -166,11 +176,12 @@ The sample app holds the issued credential in memory, so after issuance, you can
 1. Switch back to the WalletLibraryDemo app and paste in the URL and click **CREATE REQUEST** button
 1. The app retrieves the presentation request and display the matching credentials you have in memory. In this case you only have one. **Click on it** so that the little check mark appears, then click the **COMPLETE** button to submit the presentation response
 
-    :::image type="content" source="media/using-wallet-library/android-present-credential.png" alt-text="Screenshot of presenting credential on Android.":::   
+    :::image type="content" source="media/using-wallet-library/android-present-credential.png" alt-text="Screenshot of presenting credential on Android.":::
  
 ## Building the iOS sample
+
 On your Mac developer machine with Xcode, do the following:
-1. Download or clone the iOS Wallet Library [GitHub repo](https://github.com/microsoft/entra-verifiedid-wallet-library-ios/archive/refs/heads/dev.zip). 
+1. Download or clone the iOS Wallet Library [GitHub repo](https://github.com/microsoft/entra-verifiedid-wallet-library-ios/tree/dev). 
 1. Start Xcode and open the top level folder for the WalletLibrary
 1. Set focus on WalletLibraryDemo project
 
@@ -183,9 +194,10 @@ On your Mac developer machine with Xcode, do the following:
 1. Select Product menu and then **Run** or click on run triangle
  
 ## Issuing credentials using the iOS sample
-1. Start the WalletLibraryDemo app 
 
-    :::image type="content" source="media/using-wallet-library/ios-create-request.png" alt-text="Screenshot of Create Request on iOS."::: 
+1. Start the WalletLibraryDemo app
+
+    :::image type="content" source="media/using-wallet-library/ios-create-request.png" alt-text="Screenshot of Create Request on iOS.":::
  
 1. On your laptop, launch the public demo website [https://aka.ms/vcdemo](https://aka.ms/vcdemo) and do the following
     1. Enter your First Name and Last Name and press **Next**
@@ -202,10 +214,12 @@ On your Mac developer machine with Xcode, do the following:
    
 1. Once issuance completes, the demo app displays the claims in the credential.
 
-    :::image type="content" source="media/using-wallet-library/ios-issuance-complete.png" alt-text="Screenshot of Issuance Complete on iOS.":::   
+    :::image type="content" source="media/using-wallet-library/ios-issuance-complete.png" alt-text="Screenshot of Issuance Complete on iOS.":::
 
 ## Presenting credentials using the iOS sample
+
 The sample app holds the issued credential in memory, so after issuance, you can use it for presentation.
+
 1. The WalletLibraryDemo app should display credential type name on the home screen if you have successfully issued a credential.
 
     :::image type="content" source="media/using-wallet-library/ios-have-credential.png" alt-text="Screenshot of app with credential on iOS.":::
@@ -215,7 +229,7 @@ The sample app holds the issued credential in memory, so after issuance, you can
 1. Switch back to the WalletLibraryDemo app, ***clear the previous request*** from the textbox, paste in the URL and click **Create Request** button
 1. The app retrieves the presentation request and display the matching credentials you have in memory. In this case you only have one. **Click on it** so that the little check mark switches from blue to green, then click the **Complete** button to submit the presentation response
 
-    :::image type="content" source="media/using-wallet-library/ios-present-credential.png" alt-text="Screenshot of presenting credential on iOS.":::   
+    :::image type="content" source="media/using-wallet-library/ios-present-credential.png" alt-text="Screenshot of presenting credential on iOS.":::
  
 ## Next steps
 

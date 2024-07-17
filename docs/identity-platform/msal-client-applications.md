@@ -27,7 +27,7 @@ The Microsoft Authentication Library (MSAL) defines two types of clients; public
 
 When examining the public or confidential nature of a given client, we're evaluating the ability of that client to prove its identity to the authorization server. This is important because the authorization server must be able to trust the identity of the client in order to issue access tokens.
 
-- **Public client applications** run on devices, such as desktop, browserless APIs, mobile or client-side browser apps. They can't be trusted to safely keep application secrets, as they can only access web APIs on behalf of the user. Anytime the source or compiled bytecode of a given app is transmitted anywhere it can be read, disassembled, or otherwise inspected by untrusted parties, it's a public client. As they also only support public client flows and can't hold configuration-time secrets, they can't have client secrets.
+- **Public client applications** run on devices, such as desktop, browserless APIs, mobile or client-side browser apps. They can't be trusted to safely keep application secrets, so they can only access web APIs on behalf of the user. Anytime the source or compiled bytecode of a given app is transmitted anywhere it can be read, disassembled, or otherwise inspected by untrusted parties, it's a public client. As they also only support public client flows and can't hold configuration-time secrets, they can't have client secrets.
 
 - **Confidential client applications** run on servers, such as web apps, web API apps, or service/daemon apps. They're considered difficult to access by users or attackers, and therefore can adequately hold configuration-time secrets to assert proof of its identity. The client ID is exposed through the web browser, but the secret is passed only in the back channel and never directly exposed.
 
@@ -44,9 +44,9 @@ The following are some examples of how a client can prove its identity to the au
 
 Proving client identity matters when there's a need to verify both the authenticity and authorization of a client application before granting access to sensitive data or resources. Some examples include:
 
-- **Controlling API access** – If you have an API that is metered (e.g. for billing), or exposes sensitive data or resources, you'll verify the identity of the client before granting access. For example, this is important when ensuring that only authorized applications have access to the API, and that the correct customer is billed for their metered API usage.
-- **Protecting users from app impersonation** – If you have a service-deployed, user-facing application (e.g. a backend-driven web app) that accesses sensitive data or services, using client secrets to protect the resources used by that application may prevent bad actors from impersonating a legitimate client to phish users and exfiltrate data or abuse access.
-- **S2S communication** – If you have multiple backend services (e.g. downstream APIs) that need to communicate with each other, you can verify the identity of each service to ensure they're authorized to access only necessary resources to perform their function.
+- **Controlling API access** – If you have an API that is metered (such as for billing), or exposes sensitive data or resources, you'll verify the identity of the client before granting access. For example, this is important when ensuring that only authorized applications have access to the API, and that the correct customer is billed for their metered API usage.
+- **Protecting users from app impersonation** – If you have a service-deployed, user-facing application (such as a backend-driven web app) that accesses sensitive data or services, using client secrets to protect the resources used by that application may prevent bad actors from impersonating a legitimate client to phish users and exfiltrate data or abuse access.
+- **S2S communication** – If you have multiple backend services (such as downstream APIs) that need to communicate with each other, you can verify the identity of each service to ensure they're authorized to access only necessary resources to perform their function.
 
 In general, proving client identity matters when there's a need to authenticate and authorize a client independent of or in addition to a user.
 

@@ -26,7 +26,7 @@ Microsoft 365 groups settings are configured using a Settings object and a Setti
 
 The cmdlets are part of the [Microsoft Graph PowerShell](/powershell/microsoftgraph/) module. For instructions how to download and install the module on your computer, see [Install the Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/installation).
 
-[!INCLUDE [Azure AD PowerShell migration](../../includes/aad-powershell-migration-include.md)]
+[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
 
 >[!Note]
 >With the settings in place to restrict the addition of guests to Microsoft 365 Groups, administrators will still add guest users to Microsoft 365 Groups. The setting will restrict non-admin users from adding guest users to Microsoft 365 groups.

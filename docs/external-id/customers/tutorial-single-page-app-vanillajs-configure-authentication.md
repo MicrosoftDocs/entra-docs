@@ -1,6 +1,6 @@
 ---
 title: Tutorial - Handle authentication flows in a Vanilla JavaScript single-page app
-description: Learn how to configure authentication for a Vanilla JavaScript single-page app (SPA) with your Microsoft Entra ID for customers tenant.
+description: Learn how to configure authentication for a Vanilla JavaScript single-page app (SPA) with your external tenant.
  
 author: OwenRichards1
 manager: CelesteDG
@@ -11,12 +11,12 @@ ms.subservice: customers
 ms.custom: devx-track-js
 ms.topic: tutorial
 ms.date: 08/17/2023
-#Customer intent: As a developer, I want to learn how to configure Vanilla JavaScript single-page app (SPA) to sign in and sign out users with my Microsoft Entra ID for customers tenant.
+#Customer intent: As a developer, I want to learn how to configure Vanilla JavaScript single-page app (SPA) to sign in and sign out users with my external tenant.
 ---
 
 # Tutorial: Handle authentication flows in a Vanilla JavaScript SPA
 
-This tutorial is part 3 of a series that demonstrates building a Vanilla JavaScript (JS) single-page application (SPA) and preparing it for authentication. In [part 2 of this series](./tutorial-single-page-app-vanillajs-prepare-app.md), you created a Vanilla JS SPA and prepared it for authentication with your Microsoft Entra ID for customers tenant. In this tutorial, you'll learn how to handle authentication flows in your app by adding Microsoft Authentication Library (MSAL) components.
+This tutorial is part 3 of a series that demonstrates building a Vanilla JavaScript (JS) single-page application (SPA) and preparing it for authentication. In [part 2 of this series](./tutorial-single-page-app-vanillajs-prepare-app.md), you created a Vanilla JS SPA and prepared it for authentication with your external tenant. In this tutorial, you learn how to handle authentication flows in your app by adding Microsoft Authentication Library (MSAL) components.
 
 In this tutorial;
 
@@ -27,7 +27,7 @@ In this tutorial;
 
 ## Prerequisites
 
-* [Tutorial: Prepare your customer tenant to authenticate users in a Vanilla JavaScript SPA](tutorial-single-page-app-vanillajs-prepare-tenant.md).
+* [Tutorial: Prepare your external tenant to authenticate users in a Vanilla JavaScript SPA](tutorial-single-page-app-vanillajs-prepare-tenant.md).
 
 ## Edit the authentication configuration file
 
@@ -96,12 +96,14 @@ The application uses the [Implicit Grant Flow](~/identity-platform/v2-oauth2-imp
 
 1. Replace the following values with the values from the Azure portal:
     - Find the `Enter_the_Application_Id_Here` value and replace it with the **Application ID (clientId)** of the app you registered in the Microsoft Entra admin center.
-      - In **Authority**, find `Enter_the_Tenant_Subdomain_Here` and replace it with the subdomain of your tenant. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, [learn how to read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
+      - In **Authority**, find `Enter_the_Tenant_Subdomain_Here` and replace it with the subdomain of your tenant. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, [learn how to read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
 2. Save the file.
+
+[!INCLUDE [external-id-custom-domain](./includes/use-custom-domain-url.md)]
 
 ## Adding code to the redirection file
 
-A redirection file is required to handle the response from the sign-in page. It is used to extract the access token from the URL fragment and use it to call the protected API. It is also used to handle errors that occur during the authentication process.
+A redirection file is required to handle the response from the sign-in page. It's used to extract the access token from the URL fragment and use it to call the protected API. It's also used to handle errors that occur during the authentication process.
 
 1. Open *public/authRedirect.js* and add the following code snippet:
 

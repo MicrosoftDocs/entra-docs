@@ -22,11 +22,11 @@ Enterprise State Roaming provides users with a unified experience across their W
 
 ## To enable Enterprise State Roaming
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](../role-based-access-control/permissions-reference.md#global-administrator).
 1. Browse to **Identity** > **Devices** > **Overview** > **Enterprise State Roaming**.
 1. Select **Users may sync settings and app data across devices**. For more information, see [how to configure device settings](./manage-device-identities.md).
 
-For a Windows 10 or newer device to use the Enterprise State Roaming service, the device must authenticate using a Microsoft Entra identity. For devices that are joined to Microsoft Entra ID, the user’s primary sign-in identity is their Microsoft Entra identity, so no other configuration is required. For devices that use on-premises Active Directory, the IT admin must [Configure Microsoft Entra hybrid joined devices](./hybrid-join-plan.md).
+For a Windows 11 or Windows 10, version 21H2 or newer device to use the Enterprise State Roaming service, the device must authenticate using a Microsoft Entra identity. For devices that are joined to Microsoft Entra ID, the user’s primary sign-in identity is their Microsoft Entra identity, so no other configuration is required. For devices that use on-premises Active Directory, the IT admin must [Configure Microsoft Entra hybrid joined devices](./hybrid-join-plan.md).
 
 ## Data storage
 
@@ -40,16 +40,6 @@ Enterprise State Roaming data is hosted in one or more [Azure regions](https://a
 | South American and Antarctica regions | One or more Azure regions within the US |
 
 The country/region value is set as part of the Microsoft Entra directory creation process and can’t be modified later. If you need more details on your data storage location, file a ticket with [Azure support](https://azure.microsoft.com/support/options/).
-
-## View per-user device sync status
-
-Follow these steps to view a per-user device sync status report.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
-1. Select the user, and then select **Devices**.
-1. Select **View devices syncing settings and app data** to show sync status.
-1. Devices syncing for the user are shown and can be downloaded.
 
 ## Data retention
 

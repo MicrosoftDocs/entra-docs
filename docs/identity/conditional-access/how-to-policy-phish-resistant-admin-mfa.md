@@ -5,7 +5,7 @@ description: Create a Conditional Access policy requiring stronger authenticatio
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 07/18/2023
+ms.date: 05/29/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -21,20 +21,7 @@ Accounts that are assigned highly privileged administrative rights are frequent 
 
 Microsoft recommends you require phishing-resistant multifactor authentication on the following roles at a minimum:
 
-- Global Administrator
-- Application Administrator
-- Authentication Administrator
-- Billing Administrator
-- Cloud Application Administrator
-- Conditional Access Administrator
-- Exchange Administrator
-- Helpdesk Administrator
-- Password Administrator
-- Privileged Authentication Administrator
-- Privileged Role Administrator
-- Security Administrator
-- SharePoint Administrator
-- User Administrator
+[!INCLUDE [conditional-access-admin-roles](../../includes/conditional-access-admin-roles.md)]
 
 Organizations can choose to include or exclude roles as they see fit.
 
@@ -45,30 +32,15 @@ Organizations can choose to include or exclude roles as they see fit.
 
 ## Create a Conditional Access policy
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Protection** > **Conditional Access**.
-1. Select **Create new policy**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
+1. Browse to **Protection** > **Conditional Access** > **Policies**.
+1. Select **New policy**.
 1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
 1. Under **Assignments**, select **Users or workload identities**.
-   1. Under **Include**, select **Directory roles** and choose built-in roles like:
-
-      - Global Administrator
-      - Application Administrator
-      - Authentication Administrator
-      - Billing Administrator
-      - Cloud Application Administrator
-      - Conditional Access Administrator
-      - Exchange Administrator
-      - Helpdesk Administrator
-      - Password Administrator
-      - Privileged Authentication Administrator
-      - Privileged Role Administrator
-      - Security Administrator
-      - SharePoint Administrator
-      - User Administrator
+   1. Under **Include**, select **Directory roles** and choose at least the previously listed roles.
    
       > [!WARNING]
-      > Conditional Access policies support built-in roles. Conditional Access policies are not enforced for other role types including [administrative unit-scoped](~/identity/role-based-access-control/admin-units-assign-roles.md) or [custom roles](~/identity/role-based-access-control/custom-create.md).
+      > Conditional Access policies support built-in roles. Conditional Access policies are not enforced for other role types including [administrative unit-scoped](~/identity/role-based-access-control/admin-units-assign-roles.md) or [custom roles](~/identity/role-based-access-control/custom-create.yml).
 
    1. Under **Exclude**, select **Users and groups** and choose your organization's emergency access or break-glass accounts.
 1. Under **Target resources** > **Cloud apps** > **Include**, select **All cloud apps**.
@@ -78,8 +50,7 @@ Organizations can choose to include or exclude roles as they see fit.
 
 After administrators confirm the settings using [report-only mode](howto-conditional-access-insights-reporting.md), they can move the **Enable policy** toggle from **Report-only** to **On**.
 
-## Next steps
+## Related content
 
-[Conditional Access templates](concept-conditional-access-policy-common.md)
-
-[Use report-only mode for Conditional Access to determine the results of new policy decisions.](concept-conditional-access-report-only.md)
+- [Microsoft Entra built-in roles](../role-based-access-control/permissions-reference.md)
+- [Conditional Access templates](concept-conditional-access-policy-common.md)

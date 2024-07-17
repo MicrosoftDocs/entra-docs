@@ -4,7 +4,7 @@ description: In this quickstart, learn how a JavaScript Angular single-page appl
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.custom: scenarios:getting-started, languages:JavaScript, devx-track-js, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom: scenarios:getting-started, languages:JavaScript, devx-track-js
 ms.date: 01/31/2024
 ms.reviewer: j-mantu
 ms.service: identity-platform

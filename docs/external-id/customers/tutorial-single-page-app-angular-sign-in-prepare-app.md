@@ -1,6 +1,6 @@
 ---
-title: "Tutorial: Prepare an Angular SPA for authentication in a customer tenant"
-description: Learn how to prepare an Angular single-page app (SPA) for authentication with your Microsoft Entra External ID for customers tenant.
+title: "Tutorial: Prepare an Angular SPA for authentication in an external tenant"
+description: Learn how to prepare an Angular single-page app (SPA) for authentication with your external tenant.
 author: garrodonnell
 manager: celestedg
 ms.service: entra-external-id
@@ -8,33 +8,33 @@ ms.subservice: customers
 ms.topic: tutorial
 ms.date: 10/27/2023
 ms.author: godonnell
-#Customer intent: As a dev, devops, or IT admin, I want to learn how to create an Angular single-page app and define basic components and UI elements
+#Customer intent: As a dev, DevOps, or IT admin, I want to learn how to create an Angular single-page app and define basic components and UI elements
 ---
 
-# Tutorial: Prepare an Angular SPA for authentication in a customer tenant
+# Tutorial: Prepare an Angular SPA for authentication in an external tenant
 
-This tutorial is part 2 of a series that demonstrates building an Angular single-page application (SPA) and preparing it for authentication using the Microsoft Entra admin center. In [part 1 of this series](./tutorial-single-page-app-angular-sign-in-prepare-tenant.md), you registered an application and configured user flows in your Microsoft Entra ID for customers tenant. This tutorial demonstrates how to create an Angular SPA using `npm` and create files needed for authentication and authorization.
+This tutorial is part 2 of a series that demonstrates building an Angular single-page application (securing privileged access (SPA)) and preparing it for authentication using the Microsoft Entra admin center. In [Part 1 of this series](./tutorial-single-page-app-angular-sign-in-prepare-tenant.md), you registered an application and configured user flows in your external tenant. This tutorial demonstrates how to create an Angular SPA using `npm` and create files needed for authentication and authorization.
 
 In this tutorial;
 
 > [!div class="checklist"]
-> * Create an Angular project in Visual Studio Code
-> * Configure the user interface for the application
-> * Configure the home and guarded components
+> - Create an Angular project in Visual Studio Code
+> - Configure the user interface for the application
+> - Configure the home and guarded components
 
 ## Prerequisites
 
-* [Tutorial: Prepare your customer tenant to authenticate users in an Angular SPA](./tutorial-single-page-app-angular-sign-in-prepare-tenant.md).
-* Although any integrated development environment (IDE) that supports React applications can be used, this tutorial uses [Visual Studio Code](https://visualstudio.microsoft.com/downloads/).
-* [Node.js](https://nodejs.org/en/download/).
+- [Tutorial: Prepare your external tenant to authenticate users in an Angular SPA](./tutorial-single-page-app-angular-sign-in-prepare-tenant.md).
+- Although any integrated development environment (IDE) that supports React applications can be used, this tutorial uses [Visual Studio Code](https://visualstudio.microsoft.com/downloads/).
+- [Node.js](https://nodejs.org/en/download/).
 
 ## Create an Angular project
 
-In this section we will create a new Angular project using the Angular CLI in Visual Studio Code.   
+In this section we will create a new Angular project using the Angular CLI in Visual Studio Code.
 
 1. Open Visual Studio Code, select **File** > **Open Folder...**. Navigate to and select the location in which you want to create your project.
 1. Open a new terminal by selecting **Terminal** > **New Terminal**.
-1. Run the following commands to create a new Angular project with the name `angularspalocal`, install Angular Material component libraries, MSAL Browser, MSAL Angular and generate home and guarded components. 
+1. Run the following commands to create a new Angular project with the name `angularspalocal`, install Angular Material component libraries, MSAL Browser, MSAL Angular and generate home and guarded components.
 
     ```powershell
     npm install -g @angular/cli@14.2.0
@@ -50,16 +50,17 @@ In this section we will create a new Angular project using the Angular CLI in Vi
 
 The following steps configure the UI elements of the application. CSS styling is added to the application to define the colors and fonts. The application header and footer are defined in the HTML file and CSS styling is added to the home page of the application.
 
-1. Open _src/styles.css_ and replace the existing code with the following code snippet. 
+1. Open *src/styles.css* and replace the existing code with the following code snippet.
 
     ```css
     @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
     html, body { height: 100%; }
     body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     ```
-1. Open _src/app/app.component.html_ and replace the existing code with the following code snippet.
 
-    ```HTML
+1. Open *src/app/app.component.html* and replace the existing code with the following code snippet.
+
+    ```html
       <mat-toolbar color="primary">
           <a class="title" href="/">{{ title }}</a>
           <div class="toolbar-spacer"></div>
@@ -80,17 +81,18 @@ The following steps configure the UI elements of the application. CSS styling is
           </mat-toolbar>
         </footer>
     ```
-1. Open _src/app/app.component.css_ and replace the code with the following snippet.
-    
+
+1. Open *src/app/app.component.css* and replace the code with the following snippet.
+
     ```css
     .toolbar-spacer {
       flex: 1 1 auto;
     }
-    
+
     a.title {
       color: white;
     }
-    
+
     footer {
       position: fixed;
       left: 0;
@@ -99,7 +101,7 @@ The following steps configure the UI elements of the application. CSS styling is
       color: white;
       text-align: center;
     }
-    
+
     .footer-text {
       font-size: small;
       text-align: center;
@@ -111,18 +113,18 @@ The following steps configure the UI elements of the application. CSS styling is
 
 In this section you'll configure the home and guarded components of the application. The home component is the landing page of the application and the guarded component is the page that is only accessible to authenticated users.
 
-1. Open _src/app/home/home.component.ts_ and replace the existing code with the following code snippet.
-    
-    ```JavaScript
+1. Open *src/app/home/home.component.ts* and replace the existing code with the following code snippet.
+
+    ```javascript
     import { Component, Inject, OnInit } from '@angular/core';
     import { Subject } from 'rxjs';
     import { filter } from 'rxjs/operators';
-    
+
     import { MsalBroadcastService, MsalGuardConfiguration, MsalService, MSAL_GUARD_CONFIG } from '@azure/msal-angular';
     import { AuthenticationResult, InteractionStatus, InteractionType } from '@azure/msal-browser';
-    
+
     import { createClaimsTable } from '../claim-utils';
-    
+
     @Component({
       selector: 'app-home',
       templateUrl: './home.component.html',
@@ -132,18 +134,18 @@ In this section you'll configure the home and guarded components of the applicat
       loginDisplay = false;
       dataSource: any = [];
       displayedColumns: string[] = ['claim', 'value', 'description'];
-    
+
       private readonly _destroying$ = new Subject<void>();
-    
+
       constructor(
         @Inject(MSAL_GUARD_CONFIG)
         private msalGuardConfig: MsalGuardConfiguration,
         private authService: MsalService,
         private msalBroadcastService: MsalBroadcastService
       ) { }
-    
+
       ngOnInit(): void {
-    
+
         this.msalBroadcastService.inProgress$
           .pipe(
             filter((status: InteractionStatus) => status === InteractionStatus.None)
@@ -155,18 +157,18 @@ In this section you'll configure the home and guarded components of the applicat
             );
           });
       }
-    
+
       setLoginDisplay() {
         this.loginDisplay = this.authService.instance.getAllAccounts().length > 0;
       }
-    
+
       getClaims(claims: any) {
         if (claims) {
           const claimsTable = createClaimsTable(claims);
           this.dataSource = [...claimsTable];
         }
       }
-    
+
       signUp() {
         if (this.msalGuardConfig.interactionType === InteractionType.Popup) {
           this.authService.loginPopup({
@@ -182,9 +184,9 @@ In this section you'll configure the home and guarded components of the applicat
             prompt: 'create',
           });
         }
-    
+
       }
-    
+
       // unsubscribe to events when component is destroyed
       ngOnDestroy(): void {
         this._destroying$.next(undefined);
@@ -193,13 +195,13 @@ In this section you'll configure the home and guarded components of the applicat
     }
     ```
 
-1. Open _src/app/home/home.component.html_ and replace the existing code with the following code snippet. This code defines the HTML elements of the home page of the application.
-    
-    ```HTML
+1. Open *src/app/home/home.component.html* and replace the existing code with the following code snippet. This code defines the HTML elements of the home page of the application.
+
+    ```html
     <mat-card class="card-section" *ngIf="!loginDisplay">
       <mat-card-title>Angular single-page application built with MSAL Angular</mat-card-title>
-      <mat-card-subtitle>Sign in with Microsoft Entra External ID for customers</mat-card-subtitle>
-      <mat-card-content>This sample demonstrates how to configure MSAL Angular to sign up, sign in and sign out with Microsoft Entra External ID for customers</mat-card-content>
+      <mat-card-subtitle>Sign in with Microsoft Entra External ID</mat-card-subtitle>
+      <mat-card-content>This sample demonstrates how to configure MSAL Angular to sign up, sign in and sign out with Microsoft Entra External ID</mat-card-content>
       <button mat-raised-button color="primary" (click)="signUp()">Sign up</button>
     </mat-card>
     <br>
@@ -231,60 +233,61 @@ In this section you'll configure the home and guarded components of the applicat
       </table>
     </div>
     ```
-1. Open _src/app/home/home.component.css_. Replace any existing code with the following code snippet.
-    
+
+1. Open *src/app/home/home.component.css*. Replace any existing code with the following code snippet.
+
     ```css
     #table-container {
       height: '100vh';
       overflow: auto;
     }
-    
+
     table {
       margin: 3% auto 1% auto;
       width: 70%;
     }
-    
+
     .mat-row {
       height: auto;
     }
-    
+
     .mat-cell {
       padding: 8px 8px 8px 0;
     }
-    
+
     p {
       text-align: center;
     }
-    
+
     .card-section {
       margin: 10%;
       padding: 5%;
     }
     ```
 
-1. Open _src/app/guarded/guarded.component.ts_ and replace the existing code with the following code snippet.
-    
-    ```JavaScript
+1. Open *src/app/guarded/guarded.component.ts* and replace the existing code with the following code snippet.
+
+    ```javascript
     import { Component, OnInit } from '@angular/core';
-    
+
     @Component({
       selector: 'app-guarded',
       templateUrl: './guarded.component.html',
       styleUrls: ['./guarded.component.css']
     })
     export class GuardedComponent implements OnInit {
-    
+
       constructor() { }
-    
+
       ngOnInit(): void {
       }
-    
+
     }
     ```
 
-1. Create a file called _claim-utils.ts_ in the _src/app/_ folder and paste the following code snippet into it.
+1. Create a file called *claim-utils.ts* in the *src/app/* folder and paste the following code snippet into it.
 
-    ```JavaScript
+    ```javascript
     /**
      * Populate claims table with appropriate description
      * @param {Record} claims ID token claims
@@ -292,7 +295,7 @@ In this section you'll configure the home and guarded components of the applicat
      */
     export const createClaimsTable = (claims: Record<string, string>): any[] => {
       const claimsTable: any[] = [];
-    
+
       Object.keys(claims).map((key) => {
         switch (key) {
           case 'aud':
@@ -395,7 +398,7 @@ In this section you'll configure the home and guarded components of the applicat
             populateClaim(
               key,
               claims[key],
-              'Available as an optional claim, it lets you know what the type of user (homed, guest) is. For example, for an individual’s access to their data you might not care for this claim, but you would use this along with tenant id (tid) to control access to say a company-wide dashboard to just employees (homed users) and not contractors (guest users).',
+              'Available as an optional claim, it lets you know what the type of user (homed, guest) is. For example, for an individual's access to their data you might not care for this claim, but you would use this along with tenant id (tid) to control access to say a company-wide dashboard to just employees (homed users) and not contractors (guest users).',
               claimsTable
             );
             break;
@@ -446,10 +449,10 @@ In this section you'll configure the home and guarded components of the applicat
             populateClaim(key, claims[key], '', claimsTable);
         }
       });
-    
+
       return claimsTable;
     };
-    
+
     /**
      * Populates claim, description, and value into an claimsObject
      * @param {String} claim
@@ -469,7 +472,7 @@ In this section you'll configure the home and guarded components of the applicat
         description: description,
       });
     };
-    
+
     /**
      * Transforms Unix timestamp to date and returns a string value of that date
      * @param {number} date Unix timestamp
@@ -481,9 +484,9 @@ In this section you'll configure the home and guarded components of the applicat
     };
     ```
 
-1. Open _src/index.html_ and replace the code with the following snippet. 
+1. Open *src/index.html* and replace the code with the following snippet.
 
-    ```HTML
+    ```html
     <!doctype html>
     <html lang="en">
     <head>
@@ -501,8 +504,8 @@ In this section you'll configure the home and guarded components of the applicat
       <app-redirect></app-redirect>
     </body>
     </html>
-    ``` 
-    
+    ```
+
 ## Next step
 
 > [!div class="nextstepaction"]

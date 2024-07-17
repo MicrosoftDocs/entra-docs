@@ -30,9 +30,10 @@
         // "docs/identity/authentication/",
         // "docs/identity/domain-services/",
         // "docs/identity/conditional-access/",
-        "docs/identity/devices/"
+        // "docs/identity/devices/",
         // "docs/identity/hybrid/",
         // "docs/identity/monitoring-health/",
+        "docs/identity/multi-tenant-organizations/"
         // "docs/identity/role-based-access-control/",
         // "docs/identity-platform/",
         // "docs/id-governance/"

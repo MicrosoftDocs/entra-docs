@@ -5,7 +5,7 @@ author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
 ms.custom:
-ms.date: 08/11/2023
+ms.date: 04/08/2024
 ms.reviewer: ludwignick
 ms.service: identity-platform
 
@@ -23,15 +23,27 @@ The Microsoft identity platform supports the OAuth 2.0 implicit grant flow as de
 
 With the plans for [removing third party cookies from browsers](reference-third-party-cookies-spas.md), the **implicit grant flow is no longer a suitable authentication method**.  The [silent single sign-on (SSO) features](#acquire-access-tokens-silently) of the implicit flow do not work without third party cookies, causing applications to break when they attempt to get a new token. We strongly recommend that all new applications use the [authorization code flow](v2-oauth2-auth-code-flow.md) that now supports single-page apps in place of the implicit flow. Existing single-page apps should also [migrate to the authorization code flow](migrate-spa-implicit-to-auth-code.md).
 
-## Suitable scenarios for the OAuth2 implicit grant
-
-The implicit grant is only reliable for the initial, interactive portion of your sign-in flow, where the lack of [third party cookies](reference-third-party-cookies-spas.md) doesn't impact your application. This limitation means you should use it exclusively as part of the hybrid flow, where your application requests a code as well as a token from the authorization endpoint. In a hybrid flow, your application receives a code that can be redeemed for a refresh token, thus ensuring your app's login session remains valid over time.
-
 ## Protocol diagram
 
 The following diagram shows what the entire implicit sign-in flow looks like and the sections that follow describe each step in detail.
 
-![Diagram showing the implicit sign-in flow](./media/v2-oauth2-implicit-grant-flow/convergence-scenarios-implicit.svg)
+![Diagram showing the implicit sign-in flow.](./media/v2-oauth2-implicit-grant-flow/convergence-scenarios-implicit.svg)
+
+## Suitable scenarios for the OAuth2 implicit grant
+
+The implicit grant is only reliable for the initial, interactive portion of your sign-in flow, where the lack of [third party cookies](reference-third-party-cookies-spas.md) doesn't impact your application. This limitation means you should use it exclusively as part of the hybrid flow, where your application requests a code as well as a token from the authorization endpoint. In a hybrid flow, your application receives a code that can be redeemed for a refresh token, thus ensuring your app's login session remains valid over time.
+
+### When should you allow an access token or ID token to be issued when requested using implicit grant or hybrid flow?
+
+The implicit grant and hybrid flow are not as secure as other OAuth flows. Unless absolutely required, you shouldn’t allow an access or ID token to be issued when requested using implicit grant or hybrid flow in your app registration. If you (or your developers) are using MSAL (Microsoft Authentication Library) in your application to implement authentication and authorization, then neither field needs to be enabled.
+
+However, if you (or your developers) are not using MSAL in your application, then please view the following table to understand when access token or ID token should be enabled.
+
+| Type of application you are building | Tokens you should enable in App Registration |
+| ------------------------------------ | -------------------------------------------- |
+| A SPA (single-page application) that doesn't use the authorization code flow with PKCE | Access tokens & ID tokens |
+| A web or SPA application that calls a web API via JavaScript using implicit flow | Access tokens & ID tokens |
+| An ASP.NET Core web app and other web apps that use hybrid authentication | ID tokens |
 
 ## Send the sign-in request
 
@@ -42,11 +54,11 @@ To initially sign the user into your app, you can send an [OpenID Connect](v2-pr
 >
 > `The provided value for the input parameter 'response_type' is not allowed for this client. Expected value is 'code'`
 
-```
+```https
 // Line breaks for legibility only
 
 https://login.microsoftonline.com/{tenant}/oauth2/v2.0/authorize?
-client_id=535fb089-9ff3-47b6-9bfb-4f1264799865
+client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &response_type=id_token
 &redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
 &scope=openid
@@ -69,7 +81,7 @@ client_id=535fb089-9ff3-47b6-9bfb-4f1264799865
 | `login_hint` | optional | You can use this parameter to pre-fill the username and email address field of the sign-in page for the user, if you know the username ahead of time. Often, apps use this parameter during reauthentication, after already extracting the `login_hint` [optional claim](./optional-claims.md) from an earlier sign-in. |
 | `domain_hint` | optional |If included, it will skip the email-based discovery process that user goes through on the sign-in page, leading to a slightly more streamlined user experience. This parameter is commonly used for Line of Business apps that operate in a single tenant, where they'll provide a domain name within a given tenant, forwarding the user to the federation provider for that tenant.  This hint prevents guests from signing into this application, and limits the use of cloud credentials like FIDO.  |
 
-At this point, the user will be asked to enter their credentials and complete the authentication. The Microsoft identity platform will also ensure that the user has consented to the permissions indicated in the `scope` query parameter. If the user has consented to **none** of those permissions, it will ask the user to consent to the required permissions. For more info, see [permissions, consent, and multi-tenant apps](./permissions-consent-overview.md).
+At this point, the user will be asked to enter their credentials and complete the authentication. The Microsoft identity platform will also ensure that the user has consented to the permissions indicated in the `scope` query parameter. If the user has consented to **none** of those permissions, it will ask the user to consent to the required permissions. For more info, see [permissions, consent, and multitenant apps](./permissions-consent-overview.md).
 
 Once the user authenticates and grants consent, the Microsoft identity platform will return a response to your app at the indicated `redirect_uri`, using the method specified in the `response_mode` parameter.
 
@@ -77,7 +89,7 @@ Once the user authenticates and grants consent, the Microsoft identity platform 
 
 A successful response using `response_mode=fragment` and `response_type=id_token+code` looks like the following (with line breaks for legibility):
 
-```HTTP
+```https
 GET https://localhost/myapp/#
 code=0.AgAAktYV-sfpYESnQynylW_UKZmH-C9y_G1A
 &id_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik5HVEZ2ZEstZnl0aEV1Q...
@@ -96,11 +108,11 @@ code=0.AgAAktYV-sfpYESnQynylW_UKZmH-C9y_G1A
 
 [!INCLUDE [remind-not-to-validate-access-tokens](includes/remind-not-to-validate-access-tokens.md)]
 
-#### Error response
+### Error response
 
 Error responses may also be sent to the `redirect_uri` so the app can handle them appropriately:
 
-```HTTP
+```https
 GET https://localhost/myapp/#
 error=access_denied
 &error_description=the+user+canceled+the+authentication
@@ -113,19 +125,18 @@ error=access_denied
 
 ## Acquire access tokens silently
 
+Now that you've signed the user into your single-page app, you can silently get access tokens for calling web APIs secured by Microsoft identity platform, such as the [Microsoft Graph](https://developer.microsoft.com/graph). Even if you already received a token using the `token` response_type, you can use this method to acquire tokens to additional resources without redirecting the user to sign in again.
+
 > [!Important]
 > This part of the implicit flow is unlikely to work for your application as it's used across different browsers due to the [removal of third party cookies by default](reference-third-party-cookies-spas.md).  While this still currently works in Chromium-based browsers that are not in Incognito, developers should reconsider using this part of the flow. In browsers that do not support third party cookies, you will receive an error indicating that no users are signed in, as the login page's session cookies were removed by the browser. 
 
-Now that you've signed the user into your single-page app, you can silently get access tokens for calling web APIs secured by Microsoft identity platform, such as the [Microsoft Graph](https://developer.microsoft.com/graph). Even if you already received a token using the `token` response_type, you can use this method to acquire tokens to additional resources without redirecting the user to sign in again.
-
 In the normal OpenID Connect/OAuth flow, you would do this by making a request to the Microsoft identity platform `/token` endpoint. You can make the request in a hidden iframe to get new tokens for other web APIs:
 
-```
+```https
 // Line breaks for legibility only
 
 https://login.microsoftonline.com/{tenant}/oauth2/v2.0/authorize?
-client_id=535fb089-9ff3-47b6-9bfb-4f1264799865
-&response_type=token
+client_id=00001111-aaaa-2222-bbbb-3333cccc4444&response_type=token
 &redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
 &scope=https%3A%2F%2Fgraph.microsoft.com%2Fuser.read
 &response_mode=fragment
@@ -140,19 +151,19 @@ For details on the query parameters in the URL, see [send the sign in request](#
 > [!TIP]
 > Try copy & pasting the request below into a browser tab! (Don't forget to replace the `login_hint` values with the correct value for your user)
 >
-> ```
-> https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=535fb089-9ff3-47b6-9bfb-4f1264799865&response_type=token&redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F&scope=https%3A%2F%2Fgraph.microsoft.com%2Fuser.read&response_mode=fragment&state=12345&nonce=678910&prompt=none&login_hint={your-username}
+> ```https
+> https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=00001111-aaaa-2222-bbbb-3333cccc4444&response_type=token&redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F&scope=https%3A%2F%2Fgraph.microsoft.com%2Fuser.read&response_mode=fragment&state=12345&nonce=678910&prompt=none&login_hint={your-username}
 > ```
 >
 > Note that this will work even in browsers without third party cookie support, since you're entering this directly into a browser bar as opposed to opening it within an iframe. 
 
 Thanks to the `prompt=none` parameter, this request will either succeed or fail immediately and return to your application. The response will be sent to your app at the indicated `redirect_uri`, using the method specified in the `response_mode` parameter.
 
-#### Successful response
+### Successful response
 
 A successful response using `response_mode=fragment` looks like:
 
-```HTTP
+```https
 GET https://localhost/myapp/#
 access_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik5HVEZ2ZEstZnl0aEV1Q...
 &state=12345
@@ -174,7 +185,7 @@ access_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik5HVEZ2ZEstZnl0aEV1Q..
 
 Error responses may also be sent to the `redirect_uri` so the app can handle them appropriately. In the case of `prompt=none`, an expected error will be:
 
-```HTTP
+```https
 GET https://localhost/myapp/#
 error=user_authentication_required
 &error_description=the+request+could+not+be+completed+silently
@@ -197,7 +208,7 @@ In browsers that do not support third party cookies, this will result in an erro
 
 The OpenID Connect `end_session_endpoint` allows your app to send a request to the Microsoft identity platform to end a user's session and clear cookies set by the Microsoft identity platform. To fully sign a user out of a web application, your app should end its own session with the user (usually by clearing a token cache or dropping cookies), and then redirect the browser to:
 
-```
+```https
 https://login.microsoftonline.com/{tenant}/oauth2/v2.0/logout?post_logout_redirect_uri=https://localhost/myapp/
 ```
 
@@ -206,7 +217,7 @@ https://login.microsoftonline.com/{tenant}/oauth2/v2.0/logout?post_logout_redire
 | `tenant` |required |The `{tenant}` value in the path of the request can be used to control who can sign into the application. The allowed values are `common`, `organizations`, `consumers`, and tenant identifiers. For more detail, see [protocol basics](./v2-protocols.md#endpoints). |
 | `post_logout_redirect_uri` | recommended | The URL that the user should be returned to after logout completes. This value must match one of the redirect URIs registered for the application. If not included, the user will be shown a generic message by the Microsoft identity platform. |
 
-## Next steps
+## See also
 
-* Go over the [MSAL JS samples](sample-v2-code.md) to get started coding.
-* Review the [authorization code flow](v2-oauth2-auth-code-flow.md) as a newer, better alternative to the implicit grant. 
+- Go over the [MSAL JS samples](sample-v2-code.md) to get started coding.
+- Review the [authorization code flow](v2-oauth2-auth-code-flow.md) as a newer, better alternative to the implicit grant. 

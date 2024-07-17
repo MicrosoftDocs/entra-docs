@@ -90,7 +90,7 @@ ms.topic: quickstart
 > 
 > ## Next steps
 > 
-> Next, try a step-by-step tutorial to learn how to build a React SPA from scratch that signs in users and calls the > Microsoft Graph API to get user profile data:
+> For a detailed step-by-step guide on building the auth code flow application using React, see the following tutorial:
 > 
 > > [!div class="nextstepaction"]
-> > [Tutorial: Sign in users and call Microsoft Graph](./tutorial-single-page-app-react-register-app.md)
+> > [Tutorial: React single-page app (SPA) sign in users](./tutorial-single-page-app-react-register-app.md)

@@ -43,8 +43,8 @@ If you can't move your user authentication, see the step-by-step guidance for [M
 - AD FS environment (required if you aren't migrating all your apps to Microsoft Entra prior to migrating MFA Server)
   - Upgrade to AD FS for Windows Server 2019, Farm behavior level (FBL) 4. This upgrade enables you to select authentication provider based on group membership for a more seamless user transition. While it's possible to migrate while on AD FS for Windows Server 2016 FBL 3, it isn't as seamless for users. During the migration, users are prompted to select an authentication provider (MFA Server or Microsoft Entra multifactor authentication) until the migration is complete. 
 - Permissions
-  - Enterprise administrator role in Active Directory to configure AD FS farm for Microsoft Entra multifactor authentication
-  - Global administrator role in Microsoft Entra ID to configure Microsoft Entra ID by using PowerShell
+  - Enterprise Administrator role in Active Directory to configure AD FS farm for Microsoft Entra multifactor authentication
+  - Global Administrator role in Microsoft Entra ID to configure Microsoft Entra ID by using PowerShell
 
 
 ## Considerations for all migration paths
@@ -143,7 +143,7 @@ Others might include:
 - Citrix Gateway
   - [Citrix Gateway](https://docs.citrix.com/en-us/citrix-gateway) supports both RADIUS and NPS extension integration, and a SAML integration.
 - Cisco VPN
-  - The Cisco VPN supports both RADIUS and [SAML authentication for SSO](~/identity/saas-apps/cisco-anyconnect.md).
+  - The Cisco VPN supports both RADIUS and [SAML authentication for SSO](~/identity/saas-apps/cisco-secure-firewall-secure-client.md).
   - By moving from RADIUS authentication to SAML, you can integrate the Cisco VPN without deploying the NPS extension.
 - All VPNs
   - We recommend federating your VPN as a SAML app if possible. This federation will allow you to use Conditional Access. For more information, see a [list of VPN vendors that are integrated into the Microsoft Entra ID](~/identity/enterprise-apps/secure-hybrid-access.md#secure-hybrid-access-through-azure-ad-partner-integrations) App gallery.

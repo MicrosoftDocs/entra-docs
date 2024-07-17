@@ -144,7 +144,9 @@ The first time your organization uses these cmdlets for this scenario, you need 
 
    For example, someone's email address and userPrincipalName might have been changed in Microsoft Entra ID without their corresponding `mail` property being updated in the application's data source. Or, the user might have already left the organization but is still in the application's data source. Or there might be a vendor or super-admin account in the application's data source that does not correspond to any specific person in Microsoft Entra ID.
 
-1. If there were users who couldn't be located in Microsoft Entra ID, or weren't active and able to sign in, but you want to have their access reviewed or their attributes updated in SAP Cloud Identity Services, the database, or directory, you need to update or create Microsoft Entra users for them. You can create users in bulk by using either:
+1. If there were users who couldn't be located in Microsoft Entra ID, or weren't active and able to sign in, but you want to have their access reviewed or their attributes updated in SAP Cloud Identity Services, the database, or directory, you'll need to update the application, the matching rule, or update or create Microsoft Entra users for them. For more information on which change to make, see [manage mappings and user accounts in applications that did not match to users in Microsoft Entra ID](~/identity/app-provisioning/application-provisioning-application-unmatched-users.md).
+
+   If you choose the option of creating users in Microsoft Entra ID, you can create users in bulk by using either:
 
    - A CSV file, as described in [Bulk create users in the Microsoft Entra admin center](~/identity/users/users-bulk-add.md)
    - The [New-MgUser](/powershell/module/microsoft.graph.users/new-mguser?view=graph-powershell-1.0#examples&preserve-view=true) cmdlet  
@@ -186,7 +188,7 @@ The first time your organization uses these cmdlets for this scenario, you need 
    }
    ```
 
-1. After you add any missing users to Microsoft Entra ID, run the script from step 6 again. Then run the script from step 7. Check that no errors are reported.
+1. After you add any missing users to Microsoft Entra ID, run the script from step 7 again. Then run the script from step 8. Check that no errors are reported.
 
    ```powershell
    $dbu_not_queried_list = @()

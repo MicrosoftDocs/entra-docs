@@ -56,7 +56,7 @@ To get started, you need:
 
 ## Configure Datawiza Cloud Management Console
 
-1. Sign in to [Datawiza Cloud Management Console](https://console.datawiza.com/) (DCMC).
+1. Sign in to [Datawiza Cloud Management Console (DCMC)](https://console.datawiza.com/).
 2. Create an application on DCMC and generate a key pair for the app: `PROVISIONING_KEY` and `PROVISIONING_SECRET`. 
 3. To create the app and generate the key pair, follow the instructions in [Datawiza Cloud Management Console](https://docs.datawiza.com/step-by-step/step2.html).
 4. Register your application in Microsoft Entra ID with [One Click Integration With Microsoft Entra ID](https://docs.datawiza.com/tutorial/web-app-azure-one-click.html).

@@ -67,7 +67,7 @@ You can identify the resource the user is attempting to access using the followi
 
 Sign-in logs also contain several unique identifiers that provide further insight into the sign-in attempt.
 
-- **Correlation ID:** The correlation ID groups sign-ins from the same sign-in session. The value is based on parameters passed by a client, so might Microsoft Entra ID can't guarantee its accuracy.
+- **Correlation ID:** The correlation ID groups sign-ins from the same sign-in session. The value is based on parameters passed by a client, so Microsoft Entra ID can't guarantee its accuracy.
 - **Request ID:** An identifier that corresponds to an issued token. If you're looking for sign-ins with a specific token, you need to extract the request ID from the token, first.
 - **Unique token identifier:** A unique identifier for the token passed during the sign-in. This identifier is used to correlate the sign-in with the token request.
 
@@ -143,7 +143,7 @@ The following scenarios are important to consider when you're reviewing sign-in 
   - `none` - A sign-in event that didn't cross a Microsoft Entra tenant's boundaries.
   - `b2bCollaboration`- A cross tenant sign-in performed by a guest user using B2B Collaboration.
   - `b2bDirectConnect` - A cross tenant sign-in performed by a B2B.
-  - `microsoftSupport`- A cross tenant sign-in performed by a Microsoft support agent in a Microsoft customer tenant.
+  - `microsoftSupport`- A cross tenant sign-in performed by a Microsoft support agent in a Microsoft external tenant.
   - `serviceProvider` - A cross-tenant sign-in performed by a Cloud Service Provider (CSP) or similar admin on behalf of that CSP's customer in a tenant.
   - `unknownFutureValue` - A sentinel value used by MS Graph to help clients handle changes in enum lists. For more information, see [Best practices for working with Microsoft Graph](/graph/best-practices-concept).
 

@@ -19,7 +19,7 @@ ms.collection: M365-identity-device-management
 
 # Advanced certificate signing options in a SAML token
 
-Today Microsoft Entra ID supports thousands of preintegrated applications in the Microsoft Entra App Gallery. Over 500 of the applications support single sign-on by using the [Security Assertion Markup Language](https://wikipedia.org/wiki/Security_Assertion_Markup_Language) (SAML) 2.0 protocol, such as the [NetSuite](https://azuremarketplace.microsoft.com/marketplace/apps/aad.netsuite) application. When a customer authenticates to an application through Microsoft Entra ID by using SAML, Microsoft Entra ID sends a token to the application (via an HTTP POST). The application then validates and uses the token to sign in the customer instead of prompting for a username and password. These SAML tokens are signed with the unique certificate that's generated in Microsoft Entra ID and by specific standard algorithms.
+Today Microsoft Entra ID supports thousands of preintegrated applications in the Microsoft Entra App Gallery. Over 500 of the applications support single sign-on by using the [Security Assertion Markup Language (SAML)](https://wikipedia.org/wiki/Security_Assertion_Markup_Language) 2.0 protocol, such as the [NetSuite](https://azuremarketplace.microsoft.com/marketplace/apps/aad.netsuite) application. When a customer authenticates to an application through Microsoft Entra ID by using SAML, Microsoft Entra ID sends a token to the application (via an HTTP POST). The application then validates and uses the token to sign in the customer instead of prompting for a username and password. These SAML tokens are signed with the unique certificate that's generated in Microsoft Entra ID and by specific standard algorithms.
 
 Microsoft Entra ID uses some of the default settings for the gallery applications. The default values are set up based on the application's requirements.
 
@@ -48,7 +48,7 @@ Microsoft Entra ID supports two signing algorithms, or secure hash algorithms (S
 To change an application's SAML certificate signing options and the certificate signing algorithm, you need:
 
 - A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- One of the following roles: Global Administrator, Cloud Application Administrator, Application Administrator, or owner of the service principal.
+- One of the following roles: Cloud Application Administrator, Application Administrator, or owner of the service principal.
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 

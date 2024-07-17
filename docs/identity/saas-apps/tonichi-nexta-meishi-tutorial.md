@@ -8,7 +8,7 @@ ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: how-to
-ms.date: 01/18/2024
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Tonichi Nexta Meishi so that I can control who has access to Tonichi Nexta Meishi, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.

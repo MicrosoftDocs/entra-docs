@@ -7,7 +7,6 @@ ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 02/10/2024
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 
 ms.author: justinha
 author: justinha
@@ -330,7 +329,7 @@ After you install and configure the NPS extension, all RADIUS-based client authe
 
 * Create a registry entry that allows challenged users to provide a second authentication factor if they are enrolled in Microsoft Entra multifactor authentication.
 
-Create a new string value named _REQUIRE_USER_MATCH in HKLM\SOFTWARE\Microsoft\AzureMfa_, and set the value to *TRUE* or *FALSE*.
+Create a new string value named *REQUIRE_USER_MATCH in HKLM\SOFTWARE\Microsoft\AzureMfa*, and set the value to *TRUE* or *FALSE*.
 
 ![The "Require User Match" setting](./media/howto-mfa-nps-extension-vpn/image34.png)
 
@@ -342,7 +341,7 @@ If the value is set to *TRUE* or is blank, all authentication requests are subje
 
 As part of the configuration of the NPS extension, you must supply administrator credentials and the ID of your Microsoft Entra tenant. To get the tenant ID, complete the following steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 1. Browse to **Identity** > **Settings**.
 
    ![Getting the Tenant ID from the Microsoft Entra admin center](./media/howto-mfa-nps-extension-vpn/tenant-id.png)
@@ -443,7 +442,7 @@ A related event from the Microsoft Entra multifactor authentication log is shown
 
 ![Microsoft Entra multifactor authentication logs](./media/howto-mfa-nps-extension-vpn/image48.png)
 
-To do advanced troubleshooting, consult the NPS database format log files where the NPS service is installed. The log files are created in the _%SystemRoot%\System32\Logs_ folder as comma-delimited text files. For a description of the log files, see [Interpret NPS Database Format Log Files](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771748(v=ws.10)).
+To do advanced troubleshooting, consult the NPS database format log files where the NPS service is installed. The log files are created in the *%SystemRoot%\System32\Logs* folder as comma-delimited text files. For a description of the log files, see [Interpret NPS Database Format Log Files](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771748(v=ws.10)).
 
 The entries in these log files are difficult to interpret unless you export them to a spreadsheet or a database. You can find many Internet Authentication Service (IAS) parsing tools online to assist you in interpreting the log files. The output of one such downloadable [shareware application](https://www.deepsoftware.com/iasviewer) is shown here:
 

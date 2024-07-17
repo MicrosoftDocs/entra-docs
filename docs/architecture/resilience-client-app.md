@@ -199,7 +199,7 @@ See, [What is a Primary Refresh Token?](~/identity/devices/concept-primary-refre
 
 MSAL supports broker authentication. Learn more:
 
-* [SSO through Authentication broker on iOS](~/identity-platform/single-sign-on-macos-ios.md#sso-through-authentication-broker-on-ios)
+* [SSO through Authentication broker on iOS](/entra/msal/objc/single-sign-on-macos-ios#sso-through-authentication-broker-on-ios)
 * [Enable cross-app SSO on Android using MSAL](~/identity-platform/msal-android-single-sign-on.md)
 
 ## Continuous Access Evaluation

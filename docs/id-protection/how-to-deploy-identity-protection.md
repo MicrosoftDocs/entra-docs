@@ -1,7 +1,6 @@
 ---
 title: Plan a Microsoft Entra ID Protection deployment
-description: Deploy Microsoft Entra ID Protection
-
+description: Create a plan to deploy Microsoft Entra ID Protection.
 
 ms.service: entra-id-protection
 
@@ -12,21 +11,18 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: jhenders, tracyyu, chuqiaoshi
-
-
 ---
-# Plan an Identity Protection deployment
+# Plan an ID Protection deployment
 
 Microsoft Entra ID Protection detects identity-based risks, reports them, and allows administrators to investigate and remediate these risks to keep organizations safe and secure. The risks can be further fed into tools like Conditional Access to make access decisions or fed back to a security information and event management (SIEM) tool for further investigation. 
 
-:::image type="content" source="media/how-to-deploy-identity-protection/identity-protection-overview.png" alt-text="Screenshot showing the Identity Protection Overview page showing some risky users and sign-ins." lightbox="media/how-to-deploy-identity-protection/identity-protection-overview.png":::
+> [!VIDEO https://www.youtube.com/embed/SFkrjA48J5E?si=QMjm83V151vxZx7W]
 
 This deployment plan extends concepts introduced in the [Conditional Access deployment plan](~/identity/conditional-access/plan-conditional-access.md).
 
 ## Prerequisites
 
 * A working Microsoft Entra tenant with Microsoft Entra ID P2, or trial license enabled. If needed, [create one for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-   * Microsoft Entra ID P2 is required to include Identity Protection risk in Conditional Access policies.
 * Administrators who interact with Identity Protection must have one or more of the following role assignments depending on the tasks they're performing. To follow the [Zero Trust principle of least privilege](/security/zero-trust/), consider using [Privileged Identity Management (PIM)](~/id-governance/privileged-identity-management/pim-configure.md) to just-in-time activate privileged role assignments.
    * Read Identity Protection and Conditional Access policies and configurations 
       * [Security Reader](~/identity/role-based-access-control/permissions-reference.md#security-reader)
@@ -37,8 +33,8 @@ This deployment plan extends concepts introduced in the [Conditional Access depl
    * Create or modify Conditional Access policies 
       * [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator)
       * [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator)
-* A test user (non-administrator) that allows you to verify policies work as expected before deploying to real users. If you need to create a user, see [Quickstart: Add new users to Microsoft Entra ID](~/fundamentals/add-users.md).
-* A group that the non-administrator user is a member of. If you need to create a group, see [Create a group and add members in Microsoft Entra ID](~/fundamentals/how-to-manage-groups.md).
+* A test user who isn't an administrator to verify policies work as expected before deploying to real users. If you need to create a user, see [Quickstart: Add new users to Microsoft Entra ID](~/fundamentals/add-users.md).
+* A group that the user is a member of. If you need to create a group, see [Create a group and add members in Microsoft Entra ID](~/fundamentals/how-to-manage-groups.yml).
 
 ### Engage the right stakeholders
 
@@ -50,7 +46,7 @@ Communication is critical to the success of any new functionality. You should pr
 
 ## Step 1: Review existing reports
 
-It's important to review the [Identity Protection reports](howto-identity-protection-investigate-risk.md) before deploying risk-based Conditional Access policies. This review gives an opportunity to investigate existing suspicious behavior you may have missed and to dismiss or confirm these users as safe if you've determined they aren't at risk. 
+It's important to review the [Identity Protection reports](howto-identity-protection-investigate-risk.md) before deploying risk-based Conditional Access policies. This review gives an opportunity to investigate any existing suspicious behavior. You might choose to dismiss the risk or confirm these users as safe if you determine they aren't at risk. 
 
 - [Investigate risk detections](howto-identity-protection-investigate-risk.md)
 - [Remediate risks and unblock users](howto-identity-protection-remediate-unblock.md)
@@ -60,7 +56,7 @@ For efficiency, we recommend allowing users to self-remediate through policies t
 
 ## Step 2: Plan for Conditional Access risk policies
 
-Identity Protection sends risk signals to Conditional Access, to make decisions and enforce organizational policies like requiring multifactor authentication or password change. There are several items organizations should plan for prior to creating their policies.
+Identity Protection sends risk signals to Conditional Access, to make decisions and enforce organizational policies like requiring multifactor authentication or password change. There are several items organizations should plan for before creating their policies.
 
 ### Policy exclusions
 
@@ -86,7 +82,7 @@ Use the Identity Protection multifactor authentication registration policy to he
 
 ### Conditional Access policies
 
-**Sign-in risk** - Most users have a normal behavior that can be tracked, when they fall outside of this norm it could be risky to allow them to just sign in. You may want to block that user or maybe just ask them to perform multifactor authentication to prove that they're really who they say they are. You may want to start by scoping these policies to admins only. 
+**Sign-in risk** - Most users have a normal behavior that can be tracked, when they fall outside of this norm it could be risky to allow them to just sign in. You might want to block that user or ask them to perform multifactor authentication to prove that they're really who they say they are. You start by scoping these policies to a subset of your users. 
 
 **User risk** - Microsoft works with researchers, law enforcement, various security teams at Microsoft, and other trusted sources to find leaked username and password pairs. When these vulnerable users are detected, we recommend requiring users perform multifactor authentication then reset their password.
 

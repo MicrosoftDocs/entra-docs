@@ -1,6 +1,6 @@
 ---
 title: Signing Key Rollover in Microsoft identity platform
-description: This article discusses the signing key rollover best practices for Microsoft Entra ID
+description: This article discusses the best practices for signing key rollover in Microsoft Entra ID.
 author: rwike77
 manager: CelesteDG
 ms.author: ryanwi
@@ -14,12 +14,12 @@ ms.topic: concept-article
 ---
 
 # Signing key rollover in the Microsoft identity platform
-This article discusses what you need to know about the public keys that are used by the Microsoft identity platform to sign security tokens. It's important to note that these keys roll over on a periodic basis and, in an emergency, could be rolled over immediately. All applications that use the Microsoft identity platform should be able to programmatically handle the key rollover process. Continue reading to understand how the keys work, how to assess the impact of the rollover to your application and how to update your application or establish a periodic manual rollover process to handle key rollover if necessary.
+This article discusses what you need to know about the public keys that are used by the Microsoft identity platform to sign security tokens. It's important to note that these keys roll over on a periodic basis and, in an emergency, could be rolled over immediately. All applications that use the Microsoft identity platform should be able to programmatically handle the key rollover process. You'll understand how the keys work, how to assess the impact of the rollover to your application and how to update your application or establish a periodic manual rollover process to handle key rollover if necessary.
 
 ## Overview of signing keys in the Microsoft identity platform
 The Microsoft identity platform uses public-key cryptography built on industry standards to establish trust between itself and the applications that use it. In practical terms, this works in the following way: The Microsoft identity platform uses a signing key that consists of a public and private key pair. When a user signs in to an application that uses the Microsoft identity platform for authentication, the Microsoft identity platform creates a security token that contains information about the user. This token is signed by the Microsoft identity platform using its private key before it's sent back to the application. To verify that the token is valid and originated from Microsoft identity platform, the application must validate the token’s signature using the public keys exposed by the Microsoft identity platform that is contained in the tenant’s [OpenID Connect discovery document](https://openid.net/specs/openid-connect-discovery-1_0.html) or SAML/WS-Fed [federation metadata document](federation-metadata.md).
 
-For security purposes, the Microsoft identity platform’s signing key rolls on a periodic basis and, in the case of an emergency, could be rolled over immediately. There's no set or guaranteed time between these key rolls - any application that integrates with the Microsoft identity platform should be prepared to handle a key rollover event no matter how frequently it may occur. If your application doesn't handle sudden refreshes, and attempts to use an expired key to verify the signature on a token, your application will incorrectly reject the token.  Checking every 24 hours for updates is a best practice, with throttled (once every five minutes at most) immediate refreshes of the key document if a token is encountered that doesn't validate with the keys in your application's cache. 
+For security purposes, the Microsoft identity platform’s signing key rolls on a periodic basis and, in the case of an emergency, could be rolled over immediately. There's no set or guaranteed time between these key rolls - any application that integrates with the Microsoft identity platform should be prepared to handle a key rollover event no matter how frequently it may occur. If your application doesn't handle sudden refreshes, and attempts to use an expired key to verify the signature on a token, your application incorrectly rejects the token.  Checking every 24 hours for updates is a best practice, with throttled (once every five minutes at most) immediate refreshes of the key document if a token is encountered that doesn't validate with the keys in your application's cache. 
 
 There's always more than one valid key available in the OpenID Connect discovery document and the federation metadata document. Your application should be prepared to use any and all of the keys specified in the document, since one key may be rolled soon, another may be its replacement, and so forth.  The number of keys present can change over time based on the internal architecture of the Microsoft identity platform as we support new platforms, new clouds, or new authentication protocols. Neither the order of the keys in the JSON response nor the order in which they were exposed should be considered meaningful to your app. 
 
@@ -31,7 +31,7 @@ How your application handles key rollover depends on variables such as the type 
 * [Native client applications accessing resources](#nativeclient)
 * [Web applications / APIs accessing resources](#webclient)
 * [Web applications / APIs protecting resources and built using Azure App Services](#appservices)
-* [Web applications / APIs protecting resources using ASP.NET OWIN OpenID Connect, WS-Fed or WindowsAzureActiveDirectoryBearerAuthentication middleware](#owin)
+* [Web applications / APIs protecting resources using ASP.NET OWIN OpenID Connect, WS-Fed, or WindowsAzureActiveDirectoryBearerAuthentication middleware](#owin)
 * [Web applications / APIs protecting resources using ASP.NET Core OpenID Connect or  JwtBearerAuthentication middleware](#owincore)
 * [Web applications / APIs protecting resources using Node.js `passport-azure-ad` module](#passport)
 * [Web applications / APIs protecting resources and created with Visual Studio 2015 or later](#vs2015)
@@ -42,7 +42,7 @@ How your application handles key rollover depends on variables such as the type 
 
 This guidance is **not** applicable for:
 
-* Applications added from Microsoft Entra Application Gallery (including Custom) have separate guidance with regard to signing keys. [More information.](~/identity/enterprise-apps/tutorial-manage-certificates-for-federated-single-sign-on.md)
+* Applications added from Microsoft Entra Application Gallery (including Custom) have separate guidance regarding signing keys. [More information.](~/identity/enterprise-apps/tutorial-manage-certificates-for-federated-single-sign-on.md)
 * On-premises applications published via application proxy don't have to worry about signing keys.
 
 ### <a name="nativeclient"></a>Native client applications accessing resources
@@ -58,7 +58,7 @@ Web applications and web APIs that are using the app-only flow (client credentia
 ### <a name="appservices"></a>Web applications / APIs protecting resources and built using Azure App Services
 Azure App Services' Authentication / Authorization (EasyAuth) functionality already has the necessary logic to handle key rollover automatically.
 
-### <a name="owin"></a>Web applications / APIs protecting resources using ASP.NET OWIN OpenID Connect, WS-Fed or WindowsAzureActiveDirectoryBearerAuthentication middleware
+### <a name="owin"></a>Web applications / APIs protecting resources using ASP.NET OWIN OpenID Connect, WS-Fed, or WindowsAzureActiveDirectoryBearerAuthentication middleware
 If your application is using the ASP.NET OWIN OpenID Connect, WS-Fed or WindowsAzureActiveDirectoryBearerAuthentication middleware, it already has the necessary logic to handle key rollover automatically.
 
 You can confirm that your application is using any of these by looking for any of the following snippets in your application's Startup.cs or Startup.Auth.cs files.
@@ -122,9 +122,9 @@ passport.use(new OIDCStrategy({
 ```
 
 ### <a name="vs2015"></a>Web applications / APIs protecting resources and created with Visual Studio 2015 or later
-If your application was built using a web application template in Visual Studio 2015 or later and you selected **Work Or School Accounts** from the **Change Authentication** menu, it already has the necessary logic to handle key rollover automatically. This logic, embedded in the OWIN OpenID Connect middleware, retrieves and caches the keys from the OpenID Connect discovery document and periodically refreshes them.
+If your application was built using a web application template in Visual Studio 2015 or later and you selected **Work Or School Accounts** from the **Change Authentication** menu, it already has the necessary logic to handle key rollover automatically. This logic, embedded in the OWIN OpenID Connect middleware, retrieves, and caches the keys from the OpenID Connect discovery document and periodically refreshes them.
 
-If you added authentication to your solution manually, your application might not have the necessary key rollover logic. You'll need to write it yourself, or follow the steps in [Web applications / APIs using any other libraries or manually implementing any of the supported protocols](#other).
+If you added authentication to your solution manually, your application might not have the necessary key rollover logic. You can write it yourself, or follow the steps in [Web applications / APIs using any other libraries or manually implementing any of the supported protocols](#other).
 
 ### <a name="vs2013"></a>Web applications protecting resources and created with Visual Studio 2013
 If your application was built using a web application template in Visual Studio 2013 and you selected **Organizational Accounts** from the **Change Authentication** menu, it already has the necessary logic to handle key rollover automatically. This logic stores your organization’s unique identifier and the signing key information in two database tables associated with the project. You can find the connection string for the database in the project’s Web.config file.
@@ -136,8 +136,8 @@ The following steps help you verify that the logic is working properly in your a
 1. In Visual Studio 2013, open the solution, and then select on the **Server Explorer** tab on the right window.
 2. Expand **Data Connections**, **DefaultConnection**, and then **Tables**. Locate the **IssuingAuthorityKeys** table, right-click it, and then select **Show Table Data**.
 3. In the **IssuingAuthorityKeys** table, there will be at least one row, which corresponds to the thumbprint value for the key. Delete any rows in the table.
-4. Right-click the **Tenants** table, and then click **Show Table Data**.
-5. In the **Tenants** table, there will be at least one row, which corresponds to a unique directory tenant identifier. Delete any rows in the table. If you don't delete the rows in both the **Tenants** table and **IssuingAuthorityKeys** table, you will get an error at runtime.
+4. Right-click the **Tenants** table, and then select **Show Table Data**.
+5. In the **Tenants** table, there will be at least one row, which corresponds to a unique directory tenant identifier. Delete any rows in the table. If you don't delete the rows in both the **Tenants** table and **IssuingAuthorityKeys** table, you'll get an error at runtime.
 6. Build and run the application. After you have logged in to your account, you can stop the application.
 7. Return to the **Server Explorer** and look at the values in the **IssuingAuthorityKeys** and **Tenants** table. You’ll notice that they have been automatically repopulated with the appropriate information from the federation metadata document.
 
@@ -146,7 +146,7 @@ If you created a web API application in Visual Studio 2013 using the Web API tem
 
 If you manually configured authentication, follow the instructions below to learn how to configure your web API to automatically update its key information.
 
-The following code snippet demonstrates how to get the latest keys from the federation metadata document, and then use the [JWT Token Handler](/previous-versions/dotnet/framework/windows-identity-foundation/json-web-token-handler) to validate the token. The code snippet assumes that you will use your own caching mechanism for persisting the key to validate future tokens from Microsoft identity platform, whether it be in a database, configuration file, or elsewhere.
+The following code snippet demonstrates how to get the latest keys from the federation metadata document, and then uses the [JWT Token Handler](/previous-versions/dotnet/framework/windows-identity-foundation/json-web-token-handler) to validate the token. The code snippet assumes that you'll use your own caching mechanism for persisting the key to validate future tokens from Microsoft identity platform, whether it be in a database, configuration file, or elsewhere.
 
 ```
 using System;
@@ -180,7 +180,7 @@ namespace JWTValidation
             TokenValidationParameters validationParams = new TokenValidationParameters()
             {
                 AllowedAudience = "[Your App ID URI goes here]",
-                ValidIssuer = "[The issuer for the token goes here, such as https://sts.windows.net/68b98905-130e-4d7c-b6e1-a158a9ed8449/]",
+                ValidIssuer = "[The issuer for the token goes here, such as https://sts.windows.net/aaaabbbb-0000-cccc-1111-dddd2222eeee/]",
                 SigningTokens = GetSigningCertificates(MetadataAddress)
 
                 // Cache the signing tokens by your desired mechanism
@@ -274,9 +274,9 @@ Follow the steps below to verify that the key rollover logic is working.
 1. After you have verified that your application is using the code above, open the **Web.config** file and navigate to the **\<issuerNameRegistry>** block, specifically looking for the following few lines:
    ```
    <issuerNameRegistry type="System.IdentityModel.Tokens.ValidatingIssuerNameRegistry, System.IdentityModel.Tokens.ValidatingIssuerNameRegistry">
-        <authority name="https://sts.windows.net/ec4187af-07da-4f01-b18f-64c2f5abecea/">
+        <authority name="https://sts.windows.net/aaaabbbb-0000-cccc-1111-dddd2222eeee/">
           <keys>
-            <add thumbprint="3A38FA984E8560F19AADC9F86FE9594BB6AD049B" />
+            <add thumbprint="AA11BB22CC33DD44EE55FF66AA77BB88CC99DD00" />
           </keys>
    ```
 2. In the **\<add thumbprint="">** setting, change the thumbprint value by replacing any character with a different one. Save the **Web.config** file.

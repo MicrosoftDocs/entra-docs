@@ -5,25 +5,88 @@
   items:
   - name: What is Identity Governance?
     href: identity-governance-overview.md
-  - name: What is entitlement management?
-    href: entitlement-management-overview.md
-  - name: What are access reviews?
-    href: access-reviews-overview.md
-  - name: What is identity lifecycle management?
-    href: what-is-identity-lifecycle-management.md
-  - name: What is provisioning?
-    href: what-is-provisioning.md
-  - name: What are Lifecycle Workflows? 
-    href: what-are-lifecycle-workflows.md  
-  - name: What is the My Access portal? 
-    href: my-access-portal-overview.md  
-- name: Tutorials
+
+
+- name: Scenarios
   expanded: true
   items:
-    - name: Govern access to applications
+  - name: What are identity governance use cases? 
+    href: scenarios/identity-governance-use-cases.md 
+  - name: Understanding least privileged
+    href: scenarios/least-privileged.md 
+  - name: Govern the employee and guest lifecycle
+    items:
+    - name: Govern the employee and guest lifecycle
+      href: scenarios/govern-the-employee-lifecycle.md
+    - name: Identity lifecycle management provisioning
+      href: what-is-provisioning.md
+      items: 
+      - name: Provision to Microsoft Entra ID
+        items: 
+        - name:  Govern provisioning to Microsoft Entra ID using cloud sync
+          href:  scenarios/provision-active-directory-to-entra-cloud-sync.md
+        - name:  Govern provisioning to Microsoft Entra ID using connect sync
+          href:  scenarios/provision-active-directory-to-entra-connect-sync.md
+        - name:  Govern HR provisioning to Microsoft Entra ID
+          href:  scenarios/provision-workday-to-entra.md
+        - name:  Govern provisioning to Microsoft Entra ID using MIM
+          href:  scenarios/provision-microsoft-identity-manager-to-entra.md    
+      - name: Provision to Active Directory 
+        items: 
+        - name: Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance
+          href: scenarios/provision-entra-to-active-directory-groups.md
+        - name: Govern provisioning to AD using Workday
+          href: scenarios/provision-workday-to-active-directory.md
+        - name: Govern provisioning to AD using MIM
+          href: scenarios/provision-microsoft-identity-manager-to-active-directory.md
+      - name: Provision to other directories and apps
+        items: 
+        - name: Govern provisioning to LDAP based apps
+          href: scenarios/provision-ldap.md
+        - name: Govern provisioning to LDAP for Linux auth
+          href: ~/identity/app-provisioning/on-premises-ldap-connector-linux.md
+        - name: Govern provisioning to SQL based apps
+          href: scenarios/provision-sql.md     
+        - name: Govern provisioning to SAP ECC
+          href: scenarios/provision-sap.md    
+        - name: Govern provisioning to PowerShell based apps
+          href: ~/identity/app-provisioning/on-premises-powershell-connector.md
+    - name: Automate identity lifecycle management
+      href: scenarios/automate-identity-lifecycle.md
       items:
+      - name: Automate workflow processes
+        items: 
+        - name: Govern employee and guest on-boarding
+          href: tutorial-onboard-custom-workflow-portal.md
+        - name: Govern employee and guest off-boarding
+          href: tutorial-scheduled-leaver-portal.md
+      - name: Automate assignment policies
+        items: 
+        - name: Govern external users through an approval process
+          href: entitlement-management-onboard-external-user.md
+      - name: Automate the review process
+        items: 
+        - name: Govern auditing and access reviews for guest users
+          href: /graph/tutorial-accessreviews-m365group?toc=/entra/id-governance/toc.json&bc=/entra/id-governance/breadcrumb/toc.json
+ 
+ 
+ 
+  - name: Govern access to applications
+    items:
+    - name: Get started with governing application access
+      items:
+      - name: Govern access for applications in your environment
+        href: identity-governance-applications-prepare.md
+      - name: Define organizational policies for governing access
+        href: identity-governance-applications-define.md
+      - name: Integrating applications with Microsoft Entra ID
+        href: identity-governance-applications-integrate.md
+      - name: Deploying organizational policies for governing access
+        href: identity-governance-applications-deploy.md
       - name: Connected applications
         href: apps.md
+    - name: Govern application access
+      items: 
       - name: Automate identity governance tasks - PowerShell
         href: identity-governance-automation.md
       - name: Governing an application's existing users - PowerShell
@@ -32,6 +95,29 @@
         href: identity-governance-applications-not-provisioned-users.md
       - name: Manage access to SAP applications
         href: sap.md
+  - name: Migrations
+    items:
+    - name: Transform your cloud posture
+      href: ../architecture/road-to-the-cloud-posture.md
+    - name: Migrate an organizational role model
+      href: identity-governance-organizational-roles.md
+    - name: Microsoft Entra Connect sync to cloud sync migrations
+      items:
+      - name: Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync
+        href: ~/identity/hybrid/cloud-sync/migrate-group-writeback.md
+    - name: Microsoft Identity Manager migrations
+      items:
+      - name: Migrate IAM scenarios to Microsoft Entra ID
+        href: /microsoft-identity-manager/migrate-entra-id
+      - name: Migrate from the FIM connector
+        href: /microsoft-identity-manager/migrate-from-the-fim-connector-for-azure-active-directory
+    - name: Migrate from SAP IDM
+      items:
+      - name: Migrate from SAP IDM
+        href: scenarios/migrate-from-sap-idm.md
+- name: Tutorials
+  expanded: true
+  items:
     - name: Entitlement Management
       items:
       - name: Manage access to resources
@@ -42,14 +128,14 @@
         href: /powershell/microsoftgraph/tutorial-entitlement-management
       - name: Manage the lifecycle of your group-based licenses in Microsoft Entra ID
         href: entitlement-management-group-licenses.md
-      - name: Onboard external users to Microsoft Entra ID through an approval process
-        href: entitlement-management-onboard-external-user.md
-      - name: Migrate an organizational role model
-        href: identity-governance-organizational-roles.md
+      - name: Create an access package for an application - PowerShell
+        href: entitlement-management-access-package-create-app.md
       - name: Automated ServiceNow Ticket Creation Integration
         href: entitlement-management-ticketed-provisioning.md
       - name: Automated Teams Messaging Integration
         href: entitlement-management-custom-teams-extension.md      
+      - name: Customized entitlement reports in Azure Data Explorer
+        href: custom-entitlement-report-with-adx-and-entra-id.md      
     - name: Access Reviews
       items:
       - name: Review access to Microsoft 365 groups - Microsoft Graph
@@ -62,23 +148,23 @@
         href: /graph/tutorial-accessreviews-roleassignments?toc=/entra/id-governance/toc.json&bc=/entra/id-governance/breadcrumb/toc.json
     - name: Lifecycle Workflows
       items:
-      - name: Automate employee onboarding tasks - Microsoft Entra admin center
-        href: tutorial-onboard-custom-workflow-portal.md 
       - name: Automate employee onboarding tasks - Microsoft Graph
         href: /graph/tutorial-lifecycle-workflows-onboard-custom-workflow?toc=/azure/active-directory/governance/toc.json&bc=/azure/active-directory/governance/breadcrumb/toc.json
       - name: Offboarding employees in real-time - Microsoft Entra admin center
         href: tutorial-offboard-custom-workflow-portal.md
       - name: Offboarding employees in real-time - Microsoft Graph
         href: /graph/tutorial-lifecycle-workflows-offboard-custom-workflow?toc=/entra/id-governance/toc.json&bc=/entra/id-governance/breadcrumb/toc.json
-      - name: Automate employee offboarding tasks - Microsoft Entra admin center
-        href: tutorial-scheduled-leaver-portal.md  
       - name: Automate employee offboarding tasks - Microsoft Graph
         href: /graph/tutorial-lifecycle-workflows-scheduled-leaver?toc=/entra/id-governance/toc.json&bc=/entra/id-governance/breadcrumb/toc.json
+      - name: Automate employee mover tasks - Microsoft Entra admin center
+        href: tutorial-mover-custom-workflow-portal.md   
 - name: Concepts
   expanded: true
   items:
   - name: Entitlement management
     items:
+    - name: What is entitlement management?
+      href: entitlement-management-overview.md
     - name: Delegation and roles
       href: entitlement-management-delegate.md
     - name: Request process and emails
@@ -87,6 +173,10 @@
       href: entitlement-management-onboard.md  
   - name: Access reviews
     items:
+    - name: What are access reviews?
+      href: access-reviews-overview.md
+    - name: What is the My Access portal? 
+      href: my-access-portal-overview.md  
     - name: Enable multi-stage reviews
       href: using-multi-stage-reviews.md
     - name: Manage access with reviews
@@ -99,6 +189,8 @@
       href: access-reviews-external-users.md
   - name: Lifecycle Workflows
     items:
+    - name: What are Lifecycle Workflows? 
+      href: what-are-lifecycle-workflows.md  
     - name: Understanding Lifecycle Workflows
       href: understanding-lifecycle-workflows.md
     - name: Templates
@@ -112,7 +204,11 @@
     - name: Workflow Audit logs
       href: lifecycle-workflow-audits.md
     - name: Workflow History
-      href: lifecycle-workflow-history.md     
+      href: lifecycle-workflow-history.md
+    - name: Synced on-premises users (Preview)
+      href: lifecycle-workflow-on-premises.md         
+    - name: Workflow Insights (preview)
+      href: lifecycle-workflow-insights.md        
 - name: How-to guides
   expanded: true
   items:
@@ -186,6 +282,8 @@
         href: entitlement-management-reprocess-access-package-assignments.md
       - name: Hide or delete
         href: entitlement-management-access-package-edit.md
+      - name: Assign Microsoft Entra Roles (Preview)
+        href: entitlement-management-roles.md  
     - name: Approvers
       items:
       - name: Approve requests
@@ -254,18 +352,24 @@
           href: manage-workflow-properties.md
         - name: Manage workflow versions
           href: manage-workflow-tasks.md
+        - name: Using custom security attributes
+          href: manage-workflow-custom-security-attribute.md  
         - name: Run a workflow on-demand
           href: on-demand-workflow.md
         - name: Customize emails
           href: customize-workflow-email.md
         - name: Check the status of a workflow
           href: check-status-workflow.md
-        - name: Download workflow history reports (Preview)
+        - name: Download workflow history reports
           href: download-workflow-history.md  
         - name: Check execution user scope
           href: check-workflow-execution-scope.md  
         - name: Customize the schedule of workflows
-          href: customize-workflow-schedule.md         
+          href: customize-workflow-schedule.md
+        - name: Manage synced on-premises users (Preview)
+          href: manage-workflow-on-premises.md              
+        - name: Check Workflow Insights (preview)
+          href: manage-workflow-insights.md            
       - name: Delete
         items: 
         - name: Delete a Lifecycle workflow

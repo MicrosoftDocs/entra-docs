@@ -24,7 +24,7 @@ This article shows you how to use the Microsoft 365 license center to assign lic
 
 ## Assign a license
 
-1. Sign in to the [Microsoft 365 admin center](https://admin.microsoft.com/) with a license administrator account. To manage licenses, the account must be a License Administrator, User Administrator, or Global Administrator.
+1. Sign in to the [Microsoft 365 admin center](https://admin.microsoft.com/) as at least a [License Administrator](/entra/identity/role-based-access-control/permissions-reference#license-administrator).
    
       :::image type="content" source="./media/licensing-admin-center/admin-center.png" alt-text="Screenshot of the Microsoft admin Center landing page.":::
 

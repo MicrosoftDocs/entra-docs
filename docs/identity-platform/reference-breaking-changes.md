@@ -5,7 +5,7 @@ author: rwike77
 manager: CelesteDG
 ms.author: ryanwi
 ms.custom: has-adal-ref
-ms.date: 06/03/2023
+ms.date: 04/10/2024
 ms.reviewer: ludwignick
 ms.service: identity-platform
 
@@ -27,6 +27,27 @@ Check this article regularly to learn about:
 
 > [!TIP]
 > To be notified of updates to this page, add this URL to your RSS feed reader:<br/>`https://learn.microsoft.com/api/search/rss?search=%22Azure+Active+Directory+breaking+changes+reference%22&locale=en-us`
+
+## June 2024
+
+### Applications must be registered in a directory
+
+**Effective date**: June 2024
+
+**Endpoints impacted**: v2.0 and v1.0
+
+**Protocol impacted**: All flows
+
+**Change**
+
+Previously, when registering an application using the [Entra app registrations experience](https://aka.ms/ra/prod), if the user was signed in with their personal Microsoft account (MSA), they could choose to only associate the application with their personal account.  That means the application would not be associated with or contained in any directory (also referred to as 'tenant' or 'organization').  However, starting June 2024, all applications must be registered in a directory.   This could be an existing directory, or a new one that the personal Microsoft account user creates to house their Entra applications and other Microsoft resources.  Users can easily create a new directory to use for this purpose by [joining the M365 Developer Program](https://aka.ms/joinM365DeveloperProgram) or [signing up for Azure](https://aka.ms/signUpForAzure).
+
+Registering an application in a directory, instead of only associating it with a personal account, has a variety of benefits.  These include:
+- Applications registered in a directory have additional features available to them, such as the ability to add more than one owner to the app, and the ability to [publisher verify](publisher-verification-overview.md) the app.
+- The application will be located in the same place as other Microsoft resources the developer uses, such as Azure resources.
+- The application will receive improved resiliency benefits.
+
+This will not affect any existing applications, including existing applications that are only associated with a personal account.  Only the ability to register new applications will be affected.
 
 ## October 2023
 
@@ -138,7 +159,7 @@ You can review the current text of the 50105 error and more on the error lookup 
 **Change**
 
 For single tenant applications, adding or updating the AppId URI validates that the domain in the HTTPS scheme URI is listed in the verified domain list in the customer tenant or that the value uses the default scheme (`api://{appId}`) provided by Microsoft Entra ID. This could prevent applications from adding an AppId URI if the domain isn't in the verified domain list or the value doesn't use the default scheme.
-To find more information on verified domains, refer to the [custom domains documentation](~/fundamentals/add-custom-domain.md).
+To find more information on verified domains, refer to the [custom domains documentation](~/fundamentals/add-custom-domain.yml).
 
 The change doesn't affect existing applications using unverified domains in their AppID URI. It validates only new applications or when an existing application updates an identifier URI or adds a new one to the identifierUri collection. The new restrictions apply only to URIs added to an app's identifierUris collection after October 15, 2021. AppId URIs already in an application's identifierUris collection when the restriction takes effect on October 15, 2021 will continue to function even if you add new URIs to that collection.
 
@@ -161,7 +182,7 @@ If a request fails the validation check, the application API for create/update w
 
 Applications using dynamic consent today are given all the permissions they have consent for, even if they weren't requested by name in the `scope` parameter. An app requesting only `user.read` but with consent to `files.read` can be forced to pass the Conditional Access requirement assigned for `files.read`, for example.
 
-To reduce the number of unnecessary Conditional Access prompts, Microsoft Entra ID is changing the way scopes are provided to applications so only explicitly requested scopes trigger Conditional Access. Applications relying on Microsoft Entra ID's previous behavior of including _all_ scopes in the token--whether requested or not--may break due to missing scopes.
+To reduce the number of unnecessary Conditional Access prompts, Microsoft Entra ID is changing the way scopes are provided to applications so only explicitly requested scopes trigger Conditional Access. Applications relying on Microsoft Entra ID's previous behavior of including *all* scopes in the token--whether requested or not--may break due to missing scopes.
 
 Apps will now receive access tokens with a mix of permissions: requested tokens and those they have consent for that don't require Conditional Access prompts. The scope of access for the token is reflected in the token response's `scope` parameter.
 
@@ -236,7 +257,7 @@ For more details, please see the [Azure Government blog post on this migration](
 
 Users with passwords longer than 256 characters who sign in directly to Microsoft Entra ID (not a federated IDP, like AD FS) will be asked to change their passwords before they can sign in. Admins may receive requests to help reset the user's password.
 
-The error in the sign-in logs will be similar to _AADSTS 50052: InvalidPasswordExceedsMaxLength_.
+The error in the sign-in logs will be similar to *AADSTS 50052: InvalidPasswordExceedsMaxLength*.
 
 Message: `The password entered exceeds the maximum length of 256. Please reach out to your admin to reset the password.`
 
@@ -254,7 +275,7 @@ The user is unable to log in because their password exceeds the permitted maximu
 
 **Protocol impacted**: OAuth and OIDC flows that use `response_type=query` - this covers the [authorization code flow](v2-oauth2-auth-code-flow.md) in some cases, and the [implicit flow](v2-oauth2-implicit-grant-flow.md).
 
-When an authentication response is sent from _login.microsoftonline.com_ to an application via HTTP redirect, the service will append an empty fragment to the reply URL. This prevents a class of redirect attacks by ensuring that the browser wipes out any existing fragment in the authentication request. No apps should have a dependency on this behavior.
+When an authentication response is sent from *login.microsoftonline.com* to an application via HTTP redirect, the service will append an empty fragment to the reply URL. This prevents a class of redirect attacks by ensuring that the browser wipes out any existing fragment in the authentication request. No apps should have a dependency on this behavior.
 
 
 ## August 2019
@@ -294,8 +315,8 @@ To remedy this issue, use the Admin Consent experience to create the client appl
 
 #### Example request
 
-`https://login.microsoftonline.com/contoso.com/oauth2/authorize?resource=https://gateway.contoso.com/api&response_type=token&client_id=14c88eee-b3e2-4bb0-9233-f5e3053b3a28&...`
-In this example, the resource tenant (authority) is contoso.com, the resource app is a single-tenant app called `gateway.contoso.com/api` for the Contoso tenant, and the client app is `14c88eee-b3e2-4bb0-9233-f5e3053b3a28`. If the client app has a service principal within Contoso.com, this request can continue. If it doesn't, however, then the request will fail with the error above.
+`https://login.microsoftonline.com/contoso.com/oauth2/authorize?resource=https://gateway.contoso.com/api&response_type=token&client_id=00001111-aaaa-2222-bbbb-3333cccc4444&...`
+In this example, the resource tenant (authority) is contoso.com, the resource app is a single-tenant app called `gateway.contoso.com/api` for the Contoso tenant, and the client app is `00001111-aaaa-2222-bbbb-3333cccc4444`. If the client app has a service principal within Contoso.com, this request can continue. If it doesn't, however, then the request will fail with the error above.
 
 If the Contoso gateway app were a multitenant application, however, then the request would continue regardless of the client app having a service principal within Contoso.com.
 

@@ -108,7 +108,7 @@ dirSyncEnabled |true false |user.dirSyncEnabled -eq true
 | mailNickName |Any string value (mail alias of the user) | user.mailNickName -eq "value" |
 | memberOf | Any string value (valid group object ID) | user.memberof -any (group.objectId -in ['value']) |
 | mobile |Any string value or *null* | user.mobile -eq "value" |
-| objectId |GUID of the user object | user.objectId -eq "11111111-1111-1111-1111-111111111111" |
+| objectId |GUID of the user object | user.objectId -eq "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb" |
 | onPremisesDistinguishedName | Any string value or *null* | user.onPremisesDistinguishedName -eq "value" |
 | onPremisesSecurityIdentifier | On-premises security identifier (SID) for users who were synchronized from on-premises to the cloud. | user.onPremisesSecurityIdentifier -eq "S-1-1-11-1111111111-1111111111-1111111111-1111111" |
 | passwordPolicies |None<br>DisableStrongPassword<br>DisablePasswordExpiration<br>DisablePasswordExpiration, DisableStrongPassword | user.passwordPolicies -eq "DisableStrongPassword" |
@@ -264,7 +264,7 @@ Multi-value properties are collections of objects of the same type. They can be 
 
 | Properties | Values | Usage |
 | --- | --- | --- |
-| assignedPlans | Each object in the collection exposes the following string properties: capabilityStatus, service, servicePlanId |user.assignedPlans -any (assignedPlan.servicePlanId -eq "efb87545-963c-4e0d-99df-69c6916d9eb0" -and assignedPlan.capabilityStatus -eq "Enabled") |
+| assignedPlans | Each object in the collection exposes the following string properties: capabilityStatus, service, servicePlanId |user.assignedPlans -any (assignedPlan.servicePlanId -eq "aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e" -and assignedPlan.capabilityStatus -eq "Enabled") |
 | proxyAddresses| SMTP: alias@domain smtp: alias@domain | (user.proxyAddresses -any (\_ -startsWith "contoso")) |
 
 ### Using the -any and -all operators
@@ -297,7 +297,7 @@ user.assignedPlans -any (assignedPlan.service -eq "SCO" -and assignedPlan.capabi
 The following expression selects all users who have no assigned service plan:
 
 ```
-user.assignedPlans -all (assignedPlan.servicePlanId -ne null)
+user.assignedPlans -all (assignedPlan.servicePlanId -eq null)
 ```
 
 ### Using the underscore (\_) syntax
@@ -322,10 +322,10 @@ The direct reports rule is constructed using the following syntax:
 Direct Reports for "{objectID_of_manager}"
 ```
 
-Here's an example of a valid rule, where "62e19b97-8b3d-4d4a-a106-4ce66896a863" is the objectID of the manager:
+Here's an example of a valid rule, where "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb" is the objectID of the manager:
 
 ```
-Direct Reports for "62e19b97-8b3d-4d4a-a106-4ce66896a863"
+Direct Reports for "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb"
 ```
 
 The following tips can help you use the rule properly.
@@ -437,7 +437,7 @@ The following device attributes can be used.
  isRooted | true false | device.isRooted -eq true
  managementType | MDM (for mobile devices) | device.managementType -eq "MDM"
  memberOf | Any string value (valid group object ID) | device.memberof -any (group.objectId -in ['value']) 
- objectId | a valid Microsoft Entra object ID | device.objectId -eq "76ad43c9-32c5-45e8-a272-7b58b58f596d"
+ objectId | a valid Microsoft Entra object ID | device.objectId -eq "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb"
  profileType | a valid [profile type](/graph/api/resources/device?view=graph-rest-1.0&preserve-view=true#properties) in Microsoft Entra ID | device.profileType -eq "RegisteredDevice"
  systemLabels | any string matching the Intune device property for tagging Modern Workplace devices | device.systemLabels -startsWith "M365Managed"
 
@@ -453,7 +453,7 @@ The following device attributes can be used.
 These articles provide additional information on groups in Microsoft Entra ID.
 
 - [See existing groups](~/fundamentals/groups-view-azure-portal.md)
-- [Create a new group and adding members](~/fundamentals/how-to-manage-groups.md)
-- [Manage settings of a group](~/fundamentals/how-to-manage-groups.md)
-- [Manage memberships of a group](~/fundamentals/how-to-manage-groups.md)
+- [Create a new group and adding members](~/fundamentals/how-to-manage-groups.yml)
+- [Manage settings of a group](~/fundamentals/how-to-manage-groups.yml)
+- [Manage memberships of a group](~/fundamentals/how-to-manage-groups.yml)
 - [Manage dynamic rules for users in a group](groups-create-rule.md)

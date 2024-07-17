@@ -1,7 +1,7 @@
 ---
-title: "What's new in Microsoft Entra ID for customers"
-description: "New and updated documentation for the Microsoft Entra ID for customers documentation."
-ms.date: 03/01/2024
+title: "What's new in Microsoft Entra External ID in external tenants"
+description: "New and updated documentation for Microsoft Entra External ID in external tenants."
+ms.date: 07/01/2024
 ms.service: entra-external-id
 ms.subservice: customers
 ms.topic: whats-new
@@ -11,66 +11,61 @@ author: csmulligan
 manager: CelesteDG
 ---
 
-# Microsoft Entra ID for customers: What's new
+# What's new in docs: External ID in external tenants
 
-Welcome to what's new in Microsoft Entra ID for customers documentation. This article lists new docs that have been added and those that have had significant updates in the last three months. 
+Welcome to what's new in documentation for Microsoft Entra External ID in external tenants. This article lists new docs that were added and docs that were significantly updated in the last three months.
 
-## February 2024
+## June 2024
+
+### Updated articles
+
+- [Add multifactor authentication (MFA) to an app](how-to-multifactor-authentication-customers.md) - Screenshots and instructions updated
+- [Sign in users and call a web API in sample Node.js web application](sample-web-app-node-sign-in-call-api.md) - Editorial updates
+- [Tutorial: Add sign-in in Android app by using native authentication](tutorial-native-authentication-android-sign-in-sign-out.md) - Updated sign in instructions
+
+
+## May 2024
+
+This month, we announced the general availability of Microsoft Entra External ID. Additionally, we’ve added “Applies to” tags to many of our articles to help navigation within the documentation.
 
 ### New articles
 
-- [Test your sign-up and sign-in user flow](how-to-test-user-flows.md) - Describes the Run user flow feature
-- [Get started with the Microsoft Entra External ID extension for Visual Studio Code](visual-studio-code-extension.md)
+- [Tutorial: Prepare your Android (Kotlin) app for authentication](tutorial-mobile-app-android-kotlin-prepare-app.md)
+- [Tutorial: Register and configure Android (Kotlin) mobile app](tutorial-mobile-app-android-kotlin-prepare-tenant.md)
+- [Tutorial: Call a protected web API in Android (Kotlin) app](tutorial-mobile-app-android-kotlin-sign-in-call-api.md)
+- [Tutorial: Sign in users in Android (Kotlin) mobile app](tutorial-mobile-app-android-kotlin-sign-in.md)
+- [Custom URL domains in Microsoft Entra External ID (Preview)](concept-custom-url-domain.md)
+- [Enable custom URL domains for Microsoft Entra External ID (Preview)](how-to-custom-url-domain.md)
+- [Tutorial: Prepare your iOS (Swift) app for authentication](tutorial-mobile-app-ios-swift-prepare-app.md)
+- [Tutorial: Register and configure iOS (Swift) mobile app](tutorial-mobile-app-ios-swift-prepare-tenant.md)
+- [Tutorial: Call a protected web API in iOS (Swift) app](tutorial-mobile-app-ios-swift-sign-in-call-api.md)
+- [Tutorial: Sign in users in iOS (Swift) mobile app](tutorial-mobile-app-ios-swift-sign-in.md)
+- [Delete an external tenant](how-to-delete-external-tenant-portal.md)
 
 ### Updated articles
 
-- [Supported features in Microsoft Entra ID for customers (preview)](concept-supported-features-customers.md) - OpenID Connect and OAuth2 updates
-- [Create a customer identity and access management (CIAM) tenant (preview)](how-to-create-customer-tenant-portal.md) - Built-in role update
+- [Tutorial: Add sign-in in Android app by using native authentication](tutorial-native-authentication-android-sign-in-sign-out.md) - Merged sign-in native authentication Android articles
+- [Supported features in workforce and external tenants](concept-supported-features-customers.md) - Added new supported features
+- [Samples for External ID developers](samples-ciam-all.md) - Updated the list of guides and tutorials for samples
+- [Tutorial: Add sign-up in an Android mobile app using native authentication](tutorial-native-authentication-android-sign-up.md) - Merged sign-in native authentication Android articles
+- [Tutorial: Prepare your Android mobile app for native authentication](tutorial-native-authentication-prepare-android-app.md) - Merged sign-in native authentication Android articles
+- [Authentication methods and identity providers in external tenants](concept-authentication-methods-customers.md) - Clarified authentication methods, identity providers, and MFA in external tenants
+- [Add and manage admin accounts](how-to-manage-admin-accounts.md) - Updated the least privileged role
+- [Microsoft Entra External ID frequently asked questions](faq-customers.md) - Updates some FAQs
 
+## April 2024
 
-## January 2024
-
-### Updated articles
-
-- [Tutorial: Prepare your customer tenant to authenticate users in a .NET browserless app](tutorial-browserless-app-dotnet-sign-in-prepare-tenant.md) - Minor updates
-- [Tutorial: Prepare your customer tenant to sign in user in .NET WPF application](tutorial-desktop-wpf-dotnet-sign-in-prepare-tenant.md) - Minor updates
-- [Tutorial: Prepare an ASP.NET Core web app for authentication in a customer tenant](tutorial-web-app-dotnet-sign-in-prepare-app.md) - Minor updates
-- [Tutorial: Add sign-in and sign-out to an ASP.NET Core web application for a customer tenant](tutorial-web-app-dotnet-sign-in-sign-out.md) - Minor updates
-- [Security and governance in Microsoft Entra ID for customers](concept-security-customers.md) - Added intro to Conditional Access
-- [Using role-based access control for applications](how-to-use-app-roles-customers.md) - Added link to the Woodgrove live demo
-- [Overview of the Woodgrove Groceries demo](overview-solutions-customers.md) - Added link to the Woodgrove live demo
-- [Call a web API in a Node.js web application](how-to-web-app-node-sign-in-call-api-call-api.md) - Rewrote the call an API section
-- [Create a Node.js web app to call an API](how-to-web-app-node-sign-in-call-api-prepare-app.md) - Rewrote the call an API section
-- [Prepare customer tenant for calling an API in a Node.js web application](how-to-web-app-node-sign-in-call-api-prepare-tenant.md) - Rewrote the call an API section
-- [Acquire an access token in your Node.js web app](how-to-web-app-node-sign-in-call-api-sign-in-acquire-access-token.md) - Rewrote the call an API section
-- [Tutorial: Prepare a Node.js CLI application for authentication](tutorial-cli-app-node-sign-in-prepare-app.md) - Minor tutorial clarifications
-- [Tutorial: Prepare your customer tenant to sign in users in a Node.js CLI app](tutorial-cli-app-node-sign-in-prepare-tenant.md) - Minor tutorial clarifications
-- [Tutorial: Call a protected web API from your .NET daemon app](tutorial-daemon-dotnet-call-api-build-app.md) - Minor tutorial clarifications
-- [Tutorial: Prepare your customer tenant to authorize a .NET daemon application](tutorial-daemon-dotnet-call-api-prepare-tenant.md) - Minor tutorial clarifications
-- [Tutorial: Call a web API from your Node.js daemon application](tutorial-daemon-node-call-api-build-app.md) - Minor tutorial clarifications
-- [Tutorial: Prepare your customer tenant to authenticate users in a React SPA](tutorial-single-page-app-react-sign-in-prepare-tenant.md) - Minor tutorial clarifications
-- [Tutorial: Add sign-in and sign-out to a React SPA for a customer tenant](tutorial-single-page-app-react-sign-in-sign-out.md) - Minor tutorial clarifications
-
-## December 2023
-
-### Updated articles
-
-- [Collect user attributes during sign-up](how-to-define-custom-attributes.md) - Updated the examples
-- [Quickstart: Get started with Microsoft Entra ID for customers (preview)](quickstart-trial-setup.md) - Added subscription options
-
-## November 2023
+This month, we made updates to our table of contents to make navigation easier for you. Additionally, we revised the terminology used to describe the external tenant in Microsoft Entra External ID.
 
 ### New articles
 
-- [Gain insights into your app users’ activity](how-to-user-insights.md)
-- [Tutorial: Handle authentication flows in an Angular single-page app](tutorial-single-page-app-angular-sign-in-configure-authentication.md)
-- [Tutorial: Prepare an Angular single-page app for authentication in a customer tenant](tutorial-single-page-app-angular-sign-in-prepare-app.md)
-- [Tutorial: Prepare your customer tenant to authenticate users in an Angular single-page app](tutorial-single-page-app-angular-sign-in-prepare-tenant.md)
-- [Tutorial: Add sign-in and sign-out to an Angular single-page app (SPA) for a customer tenant](tutorial-single-page-app-angular-sign-in-sign-out.md)
+- [Microsoft Entra ID and data residency](/entra/fundamentals/data-residency)
+- [Workforce and external tenant configurations in Microsoft Entra External ID](/entra/external-id/tenant-configurations)
 
 ### Updated articles
 
-- [Collect user attributes during sign-up](how-to-define-custom-attributes.md) - Editorial updates
-- [Tutorial: Handle authentication flows in a React single-page app](tutorial-single-page-app-react-sign-in-configure-authentication.md) - Fixed the React SPA tutorial
-- [Sign in users in a sample Node.js web application](sample-web-app-node-sign-in.md) - Updated Platform Redirect URI
-- [Create a sign-up and sign-in user flow for customers](how-to-user-flow-sign-up-sign-in-customers.md) - Improved MS Graph API call formatting
+- [Supported features in workforce and external tenants](/entra/external-id/customers/concept-supported-features-customers) - Supported features for external tenants updated
+- [Overview: Secure your apps using External ID in an external tenant](/entra/external-id/customers/overview-customers-ciam) - Image and terminology updates
+- [Microsoft Entra External ID frequently asked questions](/entra/external-id/customers/faq-customers) - Updated pricing information
+- [Default user permissions in external tenants](/entra/external-id/customers/reference-user-permissions) - Updated user types
+

@@ -1,7 +1,7 @@
 ---
 title: "Tutorial: Authenticate users to your WPF desktop application"
-description: Learn how to sign in and sign out user to your WPF desktop app. 
- 
+description: Learn how to sign in and sign out user to your WPF desktop app.
+
 author: SHERMANOUKO
 manager: mwongerapk
 
@@ -10,12 +10,12 @@ ms.service: entra-external-id
 ms.subservice: customers
 ms.custom: devx-track-dotnet
 ms.topic: tutorial
-ms.date: 07/26/2023
+ms.date: 06/27/2024
 ---
 
 # Tutorial: Authenticate users to your WPF desktop application
 
-This tutorial is the final part of a series that demonstrates building a Windows Presentation Form (WPF) desktop app and preparing it for authentication using the Microsoft Entra admin center. In [part 1 of this series](./tutorial-desktop-wpf-dotnet-sign-in-prepare-tenant.md), you registered an application and configured user flows in your Microsoft Entra ID for customers tenant. This tutorial demonstrates how to build your .NET WPF desktop app and sign in and sign out a user using Microsoft Entra ID for customers.
+This tutorial is the final part of a series that demonstrates building a Windows Presentation Form (WPF) desktop app and preparing it for authentication using the Microsoft Entra admin center. In [Part 1 of this series](./tutorial-desktop-wpf-dotnet-sign-in-prepare-tenant.md), you registered an application and configured user flows in your external tenant. This tutorial demonstrates how to build your .NET WPF desktop app and sign in and sign out a user using Microsoft Entra External ID.
 
 In this tutorial, you'll:
 
@@ -26,7 +26,7 @@ In this tutorial, you'll:
 
 ## Prerequisites
 
-- [Tutorial: Prepare your customer tenant to sign in user in .NET WPF application](./tutorial-desktop-wpf-dotnet-sign-in-prepare-tenant.md).
+- [Tutorial: Prepare your external tenant to sign in user in .NET WPF application](./tutorial-desktop-wpf-dotnet-sign-in-prepare-tenant.md).
 - [.NET 7.0 SDK](https://dotnet.microsoft.com/download/dotnet/7.0) or later.
 - Although any integrated development environment (IDE) that supports React applications can be used, this tutorial uses [Visual Studio Code](https://visualstudio.microsoft.com/downloads/).
 
@@ -71,7 +71,7 @@ dotnet add package Microsoft.Identity.Client.Broker
     }
     ```
 
-    - Replace `Enter_the_Tenant_Subdomain_Here` with the Directory (tenant) subdomain. 
+    - Replace `Enter_the_Tenant_Subdomain_Here` with the Directory (tenant) subdomain.
     - Replace `Enter_the_Application_Id_Here` with the Application (client) ID of the app you registered earlier.
 
 1. After creating the app settings file, we'll create another file called *AzureAdConfig.cs* that will help you read the configs from the app settings file. Create the *AzureAdConfig.cs* file in the root folder of the app.
@@ -88,11 +88,13 @@ dotnet add package Microsoft.Identity.Client.Broker
     }
     ```
 
+[!INCLUDE [external-id-custom-domain](./includes/use-custom-domain-url-dot-net-wpf.md)]
+
 ## Modify the project file
 
 1. Navigate to the *sign-in-dotnet-wpf.csproj* file in the root folder of the app.
 1. In this file, take the following two steps:
-    
+
     1. Modify the *sign-in-dotnet-wpf.csproj* file to instruct your app to copy the *appsettings.json* file to the output directory when the project is compiled. Add the following piece of code to the *sign-in-dotnet-wpf.csproj* file:
     1. Set the target framework to target *windows10.0.19041.0* build to help with reading cached token from the token cache as you'll see in the token cache helper class.
 
@@ -114,7 +116,7 @@ dotnet add package Microsoft.Identity.Client.Broker
         <ItemGroup>
             <None Remove="appsettings.json" />
         </ItemGroup>
-    
+
         <ItemGroup>
             <EmbeddedResource Include="appsettings.json">
                 <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -163,7 +165,7 @@ Create a token cache helper class that initializes a token cache. The applicatio
             private static readonly object FileLock = new object();
         }
     }
-    
+
     ```
 
 1. Add code to handle token cache serialization. The `ITokenCache` interface implements the public access to cache operations. `ITokenCache` interface contains the methods to subscribe to the cache serialization events, while the interface `ITokenCacheSerializer` exposes the methods that you need to use in the cache serialization events, in order to serialize/deserialize the cache. `TokenCacheNotificationArgs` contains parameters used by`Microsoft.Identity.Client` (MSAL) call accessing the cache. `ITokenCacheSerializer` interface is available in `TokenCacheNotificationArgs` callback.
@@ -212,12 +214,12 @@ Create a token cache helper class that initializes a token cache. The applicatio
             tokenCache.SetAfterAccess(AfterAccessNotification);
         }
     ```
-    
+
     In the `BeforeAccessNotification` method, you read the cache from the file system, and if the cache isn't empty, you deserialize it and load it. The `AfterAccessNotification` method is called after `Microsoft.Identity.Client` (MSAL) accesses the cache. If the cache has changed, you serialize it and persist the changes to the cache.
 
-    The `EnableSerialization` contains the `ITokenCache.SetBeforeAccess()` and `ITokenCache.SetAfterAccess()` methods: 
-    
-      - `ITokenCache.SetBeforeAccess()` sets a delegate to be notified before any library method accesses the cache. This gives an option to the delegate to deserialize a cache entry for the application and accounts specified in the `TokenCacheNotificationArgs`. 
+    The `EnableSerialization` contains the `ITokenCache.SetBeforeAccess()` and `ITokenCache.SetAfterAccess()` methods:
+
+      - `ITokenCache.SetBeforeAccess()` sets a delegate to be notified before any library method accesses the cache. This gives an option to the delegate to deserialize a cache entry for the application and accounts specified in the `TokenCacheNotificationArgs`.
       - `ITokenCache.SetAfterAccess()` sets a delegate to be notified after any library method accesses the cache. This gives an option to the delegate to serialize a cache entry for the application and accounts specified in the `TokenCacheNotificationArgs`.
 
 ## Create the WPF desktop app UI
@@ -239,14 +241,14 @@ Modify the *MainWindow.xaml* file to add the UI elements for the app. Open the *
 
 This code adds key UI elements. The methods and objects that handle the functionality of the UI elements are defined in the *MainWindow.xaml.cs* file that we create in the next step.
 
-- A button that signs in the user. `SignInButton_Click` method is called when the user selects this button. 
-- A button that signs out the user. `SignOutButton_Click`  method is called when the user selects this button. 
+- A button that signs in the user. `SignInButton_Click` method is called when the user selects this button.
+- A button that signs out the user. `SignOutButton_Click`  method is called when the user selects this button.
 - A text box that displays the authentication result details after the user attempts to sign in. Information displayed here's returned by the `ResultText` object.
-- A text box that displays the token details after the user successfully signs in. Information displayed here's returned by the `TokenInfoText` object. 
+- A text box that displays the token details after the user successfully signs in. Information displayed here's returned by the `TokenInfoText` object.
 
 ## Add code to the MainWindow.xaml.cs file
 
-The *MainWindow.xaml.cs* file contains the code that provides th runtime logic for the behavior of the UI elements in the *MainWindow.xaml* file. 
+The *MainWindow.xaml.cs* file contains the code that provides th runtime logic for the behavior of the UI elements in the *MainWindow.xaml* file.
 
 1. Open the *MainWindow.xaml.cs* file in the root folder of the app.
 1. Add the following code in the file to import the packages, and define placeholders for the methods we create.
@@ -257,13 +259,13 @@ The *MainWindow.xaml.cs* file contains the code that provides th runtime logic f
     using System.Linq;
     using System.Windows;
     using System.Windows.Interop;
-    
+
     namespace sign_in_dotnet_wpf
     {
         public partial class MainWindow : Window
         {
             string[] scopes = new string[] { };
-    
+
             public MainWindow()
             {
                 InitializeComponent();
@@ -290,7 +292,7 @@ The *MainWindow.xaml.cs* file contains the code that provides th runtime logic f
         TokenInfoText.Text = string.Empty;
 
         IAccount firstAccount;
-            
+
         var accounts = await app.GetAccountsAsync();
         firstAccount = accounts.FirstOrDefault();
 
@@ -332,10 +334,10 @@ The *MainWindow.xaml.cs* file contains the code that provides th runtime logic f
 
     `GetAccountsAsync()` returns all the available accounts in the user token cache for the app. The `IAccount` interface represents information about a single account.
 
-    To acquire tokens, the app attempts to acquire the token silently using the `AcquireTokenSilent` method to verify if an acceptable token is in the cache. The `AcquireTokenSilent` method may fail, for example,  because the user signed out. When MSAL detects that the issue can be resolved by requiring an interactive action, it throws an `MsalUiRequiredException` exception. This exception causes the app to acquire a token interactively.
+    To acquire tokens, the app attempts to acquire the token silently using the `AcquireTokenSilent` method to verify if an acceptable token is in the cache. The `AcquireTokenSilent` method might fail, for example,  because the user signed out. When MSAL detects that the issue can be resolved by requiring an interactive action, it throws an `MsalUiRequiredException` exception. This exception causes the app to acquire a token interactively.
 
-    Calling the `AcquireTokenInteractive` method results in a window that prompts users to sign in. Apps usually require users to sign in interactively the first time they need to authenticate. They might also need to sign in when a silent operation to acquire a token. After `AcquireTokenInteractive` is executed for the first time, `AcquireTokenSilent` becomes the usual method to use to obtain tokens 
-    
+    Calling the `AcquireTokenInteractive` method results in a window that prompts users to sign in. Apps usually require users to sign in interactively the first time they need to authenticate. They might also need to sign in when a silent operation to acquire a token. After `AcquireTokenInteractive` is executed for the first time, `AcquireTokenSilent` becomes the usual method to use to obtain tokens
+
 1. Add the following code to the `SignOutButton_Click` method. This method is called when the user selects the **Sign-Out** button.
 
     ```csharp
@@ -359,7 +361,7 @@ The *MainWindow.xaml.cs* file contains the code that provides th runtime logic f
         }
     }
     ```
-     
+
     The `SignOutButton_Click` method clears the cache of all accounts and all corresponding access tokens. The next time the user attempts to sign in, they'll have to do so interactively.
 
 1. Add the following code to the `DisplayBasicTokenInfo` method. This method displays basic information about the token.
@@ -378,7 +380,7 @@ The *MainWindow.xaml.cs* file contains the code that provides th runtime logic f
 
 ## Add code to the App.xaml.cs file
 
-*App.xaml* is where you declare resources that are used across the app. It's the entry point for your app. *App.xaml.cs* is the code behind file for *App.xaml*. *App.xaml.cs* also defines the start window for your application. 
+*App.xaml* is where you declare resources that are used across the app. It's the entry point for your app. *App.xaml.cs* is the code behind file for *App.xaml*. *App.xaml.cs* also defines the start window for your application.
 
 Open the *App.xaml.cs* file in the root folder of the app, then add the following code into it.
 
@@ -416,7 +418,7 @@ namespace sign_in_dotnet_wpf
             _clientApp = builder.Build();
             TokenCacheHelper.EnableSerialization(_clientApp.UserTokenCache);
         }
-        
+
         private static IPublicClientApplication _clientApp;
         private static IConfiguration AppConfiguration;
         public static IPublicClientApplication PublicClientApp { get { return _clientApp; } }
@@ -442,6 +444,6 @@ Run your app and sign in to test the application
 
 ## See also
 
-- [Sign in users in a sample Electron desktop application by using Microsoft Entra ID for customers](./how-to-desktop-app-electron-sample-sign-in.md)
-- [Sign in users in a sample .NET MAUI desktop application by using Microsoft Entra ID for customers](./how-to-desktop-app-maui-sample-sign-in.md)
+- [Sign in users in a sample Electron desktop application by using Microsoft Entra External ID](./how-to-desktop-app-electron-sample-sign-in.md)
+- [Sign in users in a sample .NET MAUI desktop application by using Microsoft Entra External ID](./how-to-desktop-app-maui-sample-sign-in.md)
 - [Customize branding for your sign-in experience](./how-to-customize-branding-customers.md)

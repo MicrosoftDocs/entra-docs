@@ -2,19 +2,17 @@
 title: 'Tutorial: Configure directprint.io for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to directprint.io.
 
-documentationcenter: ''
-author: twimmers
-writer: Thwimmer
+
+author: thomasakelo
 manager: jeedes
 
-ms.assetid: 0a79e880-bbdf-45e4-ae1e-2c74aec9f51e
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.tgt_pltfrm: na
+
 ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: Thwimmer
+ms.date: 03/25/2024
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to directprint.io so that I can streamline the user management process and ensure that users have the appropriate access to directprint.io.
 ---
@@ -37,7 +35,7 @@ This tutorial describes the steps you need to perform in both directprint.io and
 The scenario outlined in this tutorial assumes that you already have the following prerequisites:
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md). 
-* A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (for example, Application administrator, Cloud Application administrator, Application Owner, or Global administrator). 
+* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications). 
 * Single sign-on with Microsoft Entra ID is completed.
 * A licensed or 30 days free trial account with directprint.io.
 

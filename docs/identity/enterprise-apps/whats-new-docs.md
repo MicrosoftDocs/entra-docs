@@ -1,11 +1,10 @@
 ---
 title: "What's new in Microsoft Entra application management"
 description: "New and updated documentation for the Microsoft Entra application management."
-ms.date: 03/05/2024
+ms.date: 07/01/2024
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: whats-new
-
 ms.author: jomondi
 author: omondiatieno
 manager: CelesteDG
@@ -15,41 +14,46 @@ manager: CelesteDG
 
 # Microsoft Entra application management: What's new
 
-Welcome to what's new in Microsoft Entra application management documentation. This article lists new docs that have been added and those that have had significant updates in the last three months. To learn what's new with the application management service, see [What's new in Azure AD](~/fundamentals/whats-new.md).
+Welcome to what's new in Microsoft Entra application management documentation. This article lists new docs that have been added and those articles that have had significant updates in the last three months. To learn what's new with the application management service, see [What's new in Microsoft Entra ID](~/fundamentals/whats-new.md).
 
-## February 2024
-
-### Updated articles
-
-- [Manage certificates for federated single sign-on](tutorial-manage-certificates-for-federated-single-sign-on.md) - Update to enhance the article's technical accuracy
-- [Troubleshoot SAML-based single sign-on](troubleshoot-saml-based-sso.md) - Update to enhance the article's technical accuracy
-
-## January 2024
+## June 2024
 
 ### Updated articles
 
-- [Configure Datawiza Access Proxy for Microsoft Entra single sign-on and multifactor authentication for Outlook Web Access](datawiza-sso-mfa-to-owa.md) - Update to enhance the article's technical accuracy
-- [Enable self-service application assignment](manage-self-service-access.md) - Update to enhance the article's technical accuracy
-- [Home Realm Discovery for an application](home-realm-discovery-policy.md) - Add updated domain confirmation information
+- [Manage consent to applications and evaluate consent requests](manage-consent-requests.md) - Review to improve technical accuracy and clarity
 
-## December 2023
+## May 2024
 
 ### Updated articles
 
-- [Configure permission classifications](configure-permission-classifications.md) - Add least privilege role for PowerShell and Microsoft Graph content
-- [Configure group and team owner consent to applications](configure-user-consent-groups.md) - Add least privilege role for PowerShell and Microsoft Graph content
-- [Manage custom security attributes for an application](custom-security-attributes-apps.md) - Add least privilege role for PowerShell and Microsoft Graph content
-- [Delete an enterprise application](delete-application-portal.md) - Add least privilege role for PowerShell and Microsoft Graph content
-- [Disable user sign-in for an application](disable-user-sign-in-portal.md) - Add least privilege role for PowerShell and Microsoft Graph content
-- [Restore an enterprise application in Microsoft Entra ID](restore-application.md) - Add least privilege role for PowerShell and Microsoft Graph content
-- [Grant consent on behalf of a single user by using PowerShell](grant-consent-single-user.md) - Update to enhance the article's technical accuracy
-- [Grant tenant-wide admin consent to an application](grant-admin-consent.md) - Update to enhance the article's technical accuracy
-- [Represent AD FS security policies in Microsoft Entra ID: Mappings and examples](migrate-adfs-represent-security-policies.md) - Update to enhance the article's technical accuracy
-- [Plan application migration to Microsoft Entra ID](migrate-adfs-apps-phases-overview.md) - Update to enhance the article's technical accuracy
-- [Phase 2: Classify apps and plan pilot](migrate-adfs-classify-apps-plan-pilot.md) - Update to enhance the article's technical accuracy
-- [What is application management in Microsoft Entra ID?](what-is-application-management.md) - Update to enhance the article's technical accuracy
-- [Restrict access to a tenant](tenant-restrictions.md) - Update to enhance the article's technical accuracy
-- [Manage users and groups assignment to an application](assign-user-or-group-access-portal.md) - Update to enhance the article's technical accuracy
-- [Overview of admin consent workflow](admin-consent-workflow-overview.md) - Update to enhance the article's technical accuracy
-- [Overview of the Microsoft Entra application gallery](overview-application-gallery.md) - Update to enhance the article's technical accuracy
-- [Protect against consent phishing](protect-against-consent-phishing.md) - Update to enhance the article's technical accuracy
+- [Overview of the Microsoft Entra application gallery](overview-application-gallery.md) - Add information on provisioning agent and ZTNA alongside app proxy
+
+Reviewed the following articles to improve technical accuracy and clarity:
+
+- [Configure Datawiza Access Proxy for Microsoft Entra single sign-on and multifactor authentication for Outlook Web Access](datawiza-sso-mfa-to-owa.md).
+- [User and admin consent in Microsoft Entra ID](user-admin-consent-overview.md).
+- [View activity logs for application permissions](app-perms-audit-logs.md).
+
+## April 2024
+
+### New articles
+
+-  [View activity logs for application permissions](app-perms-audit-logs.md) - A new article on how to view the activity logs of what permissions are being granted for applications in your directory.
+
+### Updated articles
+
+Reviewed the following articles to improve technical accuracy and clarity:
+
+- [Configure sign-in behavior using Home Realm Discovery](configure-authentication-for-federated-users-portal.md)
+- [Home Realm Discovery for an application](home-realm-discovery-policy.md)
+- [Configure F5 BIG-IP Access Policy Manager for form-based SSO](f5-big-ip-forms-advanced.md)
+- [Tutorial: Configure F5 BIG-IP Access Policy Manager for header-based single sign-on](f5-big-ip-header-advanced.md)
+- [Tutorial: Configure F5 BIG-IP Easy Button for header-based SSO](f5-big-ip-headers-easy-button.md)
+- [Tutorial: Configure F5 BIG-IP Access Policy Manager for Kerberos authentication](f5-big-ip-kerberos-advanced.md)
+- [Tutorial: Configure F5 BIG-IP Easy Button for Kerberos single sign-on](f5-big-ip-kerberos-easy-button.md)
+- [Tutorial: Configure F5 BIG-IP Easy Button for header-based and LDAP single sign-on](f5-big-ip-ldap-header-easybutton.md)
+- [Integrate F5 BIG-IP with Microsoft Entra ID](f5-integration.md)
+- [Tutorial: Configure F5 BIG-IP SSL-VPN for Microsoft Entra SSO](f5-passwordless-vpn.md)
+- [Create an enterprise application from a multitenant application in Microsoft Entra ID](create-service-principal-cross-tenant.md)
+- [Tutorial: Migrate Okta sync provisioning to Microsoft Entra Connect synchronization](migrate-okta-sync-provisioning.md)
+- [Tutorial: Configure Secure Hybrid Access with Microsoft Entra ID and Silverfort](silverfort-integration.md)

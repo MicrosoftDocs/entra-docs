@@ -63,7 +63,7 @@ landingContent:
       - linkListType: how-to-guide
         links:
           - text: Assign roles to users
-            url: manage-roles-portal.md
+            url: manage-roles-portal.yml
           - text: Assign roles at different scopes
             url: assign-roles-different-scopes.md
 
@@ -83,7 +83,7 @@ landingContent:
       - linkListType: how-to-guide
         links:
           - text: Create a custom role
-            url: custom-create.md
+            url: custom-create.yml
           - text: Create custom roles for enterprise apps
             url: custom-enterprise-apps.md
 

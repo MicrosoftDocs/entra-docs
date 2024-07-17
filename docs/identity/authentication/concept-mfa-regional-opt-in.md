@@ -1,5 +1,5 @@
 ---
-title: Regions that need to opt in for Microsoft Entra multifactor authentication telephony verification | Microsoft Entra ID
+title: Regions that need to opt in for Microsoft Entra multifactor authentication telephony verification
 description: To protect customers, some regions require a support ticket to request to opt in to receive MFA telephony verification Microsoft Entra ID
 
 ms.service: entra-id

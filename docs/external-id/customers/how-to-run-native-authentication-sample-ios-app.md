@@ -1,6 +1,6 @@
 ---
 title: Sign in users in sample iOS (Swift) mobile app by using native authentication
-description: Learn how to configure iOS sample app to sign up, sign in, sign out and reset password scenarios using Microsoft Entra External ID for customers.
+description: Learn how to configure iOS sample app to sign up, sign in, sign out and reset password scenarios using Microsoft Entra External ID.
 
 author: henrymbuguakiarie
 manager: mwongerapk
@@ -12,26 +12,26 @@ ms.subservice: customers
 ms.topic: how-to
 ms.date: 02/23/2024
 ms.custom: developer
-#Customer intent: As a dev, devops, I want to learn about how to configure native authentication iOS sample app to sign up, sign in, sign out and reset password scenarios using Microsoft Entra External ID for customers.
+#Customer intent: As a dev, devops, I want to learn about how to configure native authentication iOS sample app to sign up, sign in, sign out and reset password scenarios using Microsoft Entra External ID.
 ---
 
 # Sign in users in sample iOS (Swift) mobile app by using native authentication
 
-This guide shows how to run an iOS sample application that demonstrates sign-up, sign in, sign out, and reset password scenarios using Microsoft Entra External ID for customers. 
+This guide shows how to run an iOS sample application that demonstrates sign-up, sign in, sign out, and reset password scenarios using Microsoft Entra External ID. 
 
 In this article, you learn how to: 
 
-- Register application in the Microsoft Entra External ID for customers. 
+- Register application in the external tenant. 
 - Enable public client and native authentication flows. 
-- Create user flow in the Microsoft Entra External ID for customers. 
+- Create user flow in the external tenant. 
 - Associate your application with the user flow. 
-- Update a sample native iOS mobile application to use your own Microsoft Entra External ID for customers tenant details. 
+- Update a sample native iOS mobile application to use your own external tenant details. 
 - Run and test the sample native iOS mobile application. 
 
 ## Prerequisites 
 
 - <a href="https://developer.apple.com/xcode/resources/" target="_blank">Xcode</a> 
-- Microsoft Entra External ID for customers tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a> 
+- An external tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a> 
 
 ## Register an application 
 
@@ -41,9 +41,9 @@ In this article, you learn how to:
 
 [!INCLUDE [Enable public client and native authentication](../customers/includes/native-auth/enable-native-authentication.md)]
 
-## Grant API permissions 
+## Grant admin consent 
 
-[!INCLUDE [Grant API permissions](../customers/includes/register-app/grant-native-authentication-api-permission.md)]
+[!INCLUDE [Grant API permissions](../customers/includes/register-app/grant-api-permission-sign-in.md)]
 
 ## Create a user flow 
 
@@ -70,12 +70,12 @@ In this article, you learn how to:
 
 ## Configure the sample iOS mobile application 
 
-1. In Xcode, open _NativeAuthSampleApp.xcodeproj_ project. 
-1. Open _NativeAuthSampleApp/Configuration.swift_ file. 
+1. In Xcode, open *NativeAuthSampleApp.xcodeproj* project. 
+1. Open *NativeAuthSampleApp/Configuration.swift* file. 
 1. Find the placeholder:
 
    - `Enter_the_Application_Id_Here` and replace it with the **Application (client) ID** of the app you registered earlier. 
-   - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use contoso. If you don't have your tenant subdomain, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details). 
+   - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use contoso. If you don't have your tenant subdomain, learn how to [read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details). 
 
 > [!NOTE]
 > Remember to select a scheme to build and destination where you run the built products. Each scheme contains a list of real or simulated devices that represent the available destinations. 
@@ -121,4 +121,3 @@ Use the steps in [Call a protected web API in a sample iOS mobile app by using n
 ## Next steps 
 
 - [Tutorial: Prepare your iOS app for native authentication](tutorial-native-authentication-prepare-ios-app.md). 
-

@@ -22,7 +22,11 @@ Within a Conditional Access policy, an administrator can make use of session con
 
 Organizations can use this control to require Microsoft Entra ID to pass device information to the selected cloud apps. The device information allows cloud apps to know if a connection is from a compliant or domain-joined device and update the session experience.  When selected, the cloud app uses the device information to provide users with a limited or full experience. Limited when the device isn't managed or compliant and full when the device is managed and compliant.
 
-For a list of supported applications and how to configure policies, see the article [Idle session timeout for Microsoft 365](/microsoft-365/admin/manage/idle-session-timeout-web-apps#details-about-idle-session-timeout).
+For a list of supported applications and how to configure policies, see the following articles: 
+
+- [Idle session timeout for Microsoft 365](/microsoft-365/admin/manage/idle-session-timeout-web-apps#details-about-idle-session-timeout).
+- [Enabling limited access with SharePoint Online](/sharepoint/control-access-from-unmanaged-devices)
+- [Enabling limited access with Exchange Online](/microsoft-365/security/office-365-security/secure-email-recommended-policies#limit-access-to-exchange-online-from-outlook-on-the-web)
 
 ## Conditional Access application control
 
@@ -83,7 +87,7 @@ Token protection (sometimes referred to as token binding in the industry) attemp
 
 The preview works for specific scenarios only. For more information, see the article [Conditional Access: Token protection (preview)](concept-token-protection.md).
 
-## Use Global Secure Access security profile (preview)
+## Use Global Secure Access security profile
 
 Using a security profile with Conditional Access unifies identity controls with network security in Microsoft's Security Service Edge (SSE) product, [Microsoft Entra Internet Access](../../global-secure-access/concept-internet-access.md#security-profiles). Selecting this Session control allows you to bring identity and context awareness to security profiles, which are groupings of various policies created and managed in Global Secure Access. 
 

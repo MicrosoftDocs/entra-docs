@@ -61,39 +61,48 @@ By default, administrator accounts are enabled for self-service password reset, 
 
 The two-gate policy requires two pieces of authentication data, such as an email address, authenticator app, or a phone number, and it prohibits security questions. Office and mobile voice calls are also prohibited for trial or free versions of Microsoft Entra ID. 
 
+The SSPR administrator policy doesn't depend upon the Authentications method policy. For example, if you disable third party software tokens in the Authentication methods policy, administrator accounts can still register third party software token applications and use them, but only for SSPR. 
+
 A two-gate policy applies in the following circumstances:
 
 * All the following Azure administrator roles are affected:
-  * Application administrator
-  * Application proxy service administrator
-  * Authentication administrator
-  * Billing administrator
-  * Compliance administrator
-  * Device administrators
-  * Directory synchronization accounts
-  * Directory writers
-  * Dynamics 365 administrator
-  * Exchange administrator
-  * Global administrator or company administrator
-  * Helpdesk administrator
-  * Intune administrator
-  * Mailbox Administrator
+  * Application Administrator
+  * Authentication Administrator
+  * Billing Administrator
+  * Compliance Administrator
+  * Cloud Device Administrator
+  * Directory Synchronization Accounts
+  * Directory Writers
+  * Dynamics 365 Administrator
+  * Exchange Administrator
+  * Global Administrator
+  * Helpdesk Administrator
+  * Intune Administrator
   * Microsoft Entra Joined Device Local Administrator
   * Partner Tier1 Support
   * Partner Tier2 Support
-  * Password administrator
-  * Power BI service administrator
-  * Privileged Authentication administrator
-  * Privileged role administrator
-  * Security administrator
-  * Service support administrator
-  * SharePoint administrator
-  * Skype for Business administrator
-  * User administrator
+  * Password Administrator
+  * Power Platform Administrator
+  * Privileged Authentication Administrator
+  * Privileged Role Administrator
+  * Security Administrator
+  * Service Support Administrator
+  * SharePoint Administrator
+  * Skype for Business Administrator
+  * Teams Administrator
+  * Teams Communications Administrator
+  * Teams Devices Administrator
+  * User Administrator
 
-* If 30 days have elapsed in a trial subscription; or
-* A custom domain has been configured for your Microsoft Entra tenant, such as *contoso.com*; or
-* Microsoft Entra Connect is synchronizing identities from your on-premises directory
+* If 30 days elapsed in a trial subscription 
+
+  -Or-
+  
+* A custom domain is configured for your Microsoft Entra tenant, such as *contoso.com*
+
+  -Or-
+
+* Microsoft Entra Connect synchronizes identities from your on-premises directory
 
 You can disable the use of SSPR for administrator accounts using the [Update-MgPolicyAuthorizationPolicy](/powershell/module/microsoft.graph.identity.signins/update-mgpolicyauthorizationpolicy) PowerShell cmdlet. The `-AllowedToUseSspr:$true|$false ` parameter enables/disables SSPR for administrators. Policy changes to enable or disable SSPR for administrator accounts can take up to 60 minutes to take effect. 
 
@@ -109,7 +118,7 @@ A one-gate policy requires one piece of authentication data, such as an email ad
 
 ## Password expiration policies
 
-A *Global Administrator* or *User Administrator* can use the [Microsoft Graph](/powershell/microsoftgraph/) to set user passwords not to expire.
+Those assigned at least the [User Administrator](../role-based-access-control/permissions-reference.md#user-administrator) role can use the [Microsoft Graph](/powershell/microsoftgraph/) to set user passwords not to expire.
 
 You can also use PowerShell cmdlets to remove the never-expires configuration or to see which user passwords are set to never expire.
 
@@ -126,7 +135,7 @@ After the module is installed, use the following steps to complete each task as 
 
 ### Check the expiration policy for a password
 
-1. Open a PowerShell prompt and [connect to your Microsoft Entra tenant](/powershell/microsoftgraph/authentication-commands#using-connect-mggraph) using a *Global Administrator* or *User Administrator* account.
+1. Open a PowerShell prompt and [connect to your Microsoft Entra tenant](/powershell/microsoftgraph/authentication-commands#using-connect-mggraph) as at least a [User Administrator](../role-based-access-control/permissions-reference.md#user-administrator).
 
 1. Run one of the following commands for either an individual user or for all users:
 
@@ -144,7 +153,7 @@ After the module is installed, use the following steps to complete each task as 
 
 ### Set a password to expire
 
-1. Open a PowerShell prompt and [connect to your Microsoft Entra tenant](/powershell/microsoftgraph/authentication-commands#using-connect-mggraph) using a *Global Administrator* or *User Administrator* account.
+1. Open a PowerShell prompt and [connect to your Microsoft Entra tenant](/powershell/microsoftgraph/authentication-commands#using-connect-mggraph) as at least a [User Administrator](../role-based-access-control/permissions-reference.md#user-administrator).
 
 1. Run one of the following commands for either an individual user or for all users:
 
@@ -162,7 +171,7 @@ After the module is installed, use the following steps to complete each task as 
 
 ### Set a password to never expire
 
-1. Open a PowerShell prompt and [connect to your Microsoft Entra tenant](/powershell/microsoftgraph/authentication-commands#using-connect-mggraph) using a *Global Administrator* or *User Administrator* account.
+1. Open a PowerShell prompt and [connect to your Microsoft Entra tenant](/powershell/microsoftgraph/authentication-commands#using-connect-mggraph) as at least a [User Administrator](../role-based-access-control/permissions-reference.md#user-administrator).
 1. Run one of the following commands for either an individual user or for all users:
 
    * To set the password of one user to never expire, run the following cmdlet. Replace `<user ID>` with the user ID of the user you want to check:

@@ -44,7 +44,7 @@ sections:
       - question: |
           Does password hash synchronization act as a fallback to Pass-through Authentication?
         answer: |
-          No. Pass-through Authentication _does not_ automatically failover to password hash synchronization. To avoid user sign-in failures, you should configure Pass-through Authentication for [high availability](how-to-connect-pta-quick-start.md#step-4-ensure-high-availability).
+          No. Pass-through Authentication *does not* automatically failover to password hash synchronization. To avoid user sign-in failures, you should configure Pass-through Authentication for [high availability](how-to-connect-pta-quick-start.md#step-4-ensure-high-availability).
           
       - question: |
           What happens when I switch from password hash synchronization to Pass-through Authentication?
@@ -52,7 +52,7 @@ sections:
           When you use Microsoft Entra Connect to switch the sign-in method from password hash synchronization to Pass-through Authentication, Pass-through Authentication becomes the primary sign-in method for your users in managed domains. All users' password hashes that are previously synchronized by password hash synchronization remain stored on Microsoft Entra ID.
 
       - question: |
-          Can I install a Microsoft Entra application proxy connector on the same server as a Pass-through Authentication Agent?
+          Can I install a Microsoft Entra private network connector on the same server as a Pass-through Authentication Agent?
         answer: |
           Yes. The rebranded versions of the Pass-through Authentication Agent, version 1.5.193.0 or later, support this configuration.
 
@@ -144,7 +144,7 @@ sections:
         answer: |
           As long as a Pass-through Authentication Agent is running, it remains active and continually handles user sign-in requests. If you want to uninstall an Authentication Agent, go to **Control Panel -> Programs -> Programs and Features** and uninstall both the **Microsoft Entra Connect Authentication Agent** and the **Microsoft Entra Connect Agent Updater** programs.
           
-          If you check the Pass-through Authentication blade on the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator). after completing the preceding step, you'll see the Authentication Agent showing as **Inactive**. This is _expected_. The Authentication Agent is automatically dropped from the list after 10 days.
+          If you check the Pass-through Authentication blade on the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator). after completing the preceding step, you'll see the Authentication Agent showing as **Inactive**. This is *expected*. The Authentication Agent is automatically dropped from the list after 10 days.
           
       - question: |
           I already use AD FS to sign in to Microsoft Entra ID. How do I switch it to Pass-through Authentication?
@@ -216,7 +216,7 @@ sections:
           To validate which local server or authentication agent was used for a specific sign-in event:
 
           1. In the [Microsoft Entra admin center](https://entra.microsoft.com), go to the sign-in event.
-          2. Select **Authentication Details**. In the **Authentication Method Detail** column, Agent ID details are shown in the format "Pass-through Authentication; PTA AgentId: XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX".
+          2. Select **Authentication Details**. In the **Authentication Method Detail** column, Agent ID details are shown in the format "Pass-through Authentication; PTA AgentId: 00001111-aaaa-2222-bbbb-3333cccc4444".
           3. To get Agent ID details for the agent that's installed on your local server, log in to your local server and run following cmdlet: 
           
               `Get-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\Azure AD Connect Agents\Azure AD Connect Authentication Agent' | Select *Instance*`

@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: quickstart
-ms.date: 02/04/2022
+ms.date: 06/16/2024
 ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro, mode-other, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
@@ -22,7 +22,7 @@ If you don't have an Azure subscription, [create a free account](https://azure.m
 ## Prerequisites
 
 - Microsoft Entra ID P1 or P2 license
-- Privileged Role Administrator or Global Administrator
+- Privileged Role Administrator
 - Microsoft Graph PowerShell module when using PowerShell
 - Admin consent when using Graph explorer for Microsoft Graph API
 
@@ -42,7 +42,7 @@ For more information, see [Prerequisites to use PowerShell or Graph Explorer](pr
 
     ![Create or edit roles from the Roles and administrators page](./media/quickstart-app-registration-limits/new-custom-role.png)
 
-1. On the **Basics** tab, provide "Application Registration Creator" for the name of the role and "Can create an unlimited number of application registrations" for the role description, and then select **Next**.
+1. On the **Basics** tab, enter "Application Registration Creator" for the name of the role and "Can create an unlimited number of application registrations" for the role description, and then select **Next**.
 
     ![provide a name and description for a custom role on the Basics tab](./media/quickstart-app-registration-limits/basics-tab.png)
 

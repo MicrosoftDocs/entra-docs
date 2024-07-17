@@ -9,26 +9,26 @@ ms.service: entra-external-id
 ms.subservice: customers
 ms.custom: devx-track-js
 ms.topic: sample
-ms.date: 08/17/2023
-#Customer intent: As a dev, devops, I want to learn about how to configure a sample vanilla JS SPA to sign in and sign out users with my Microsoft Entra ID for customers tenant
+ms.date: 04/10/2024
+#Customer intent: As a dev, devops, I want to learn about how to configure a sample vanilla JS SPA to sign in and sign out users with my external tenant. .
 ---
 
 # Sign in users in a sample vanilla JavaScript single-page application
 
-This how-to guide uses a sample vanilla JavaScript single-page Application (SPA) to demonstrate how to add authentication to a SPA. The SPA enables users to sign in and sign out by using their own Microsoft Entra ID for customers tenant. The sample uses the [Microsoft Authentication Library for JavaScript (MSAL.js)](https://github.com/AzureAD/microsoft-authentication-library-for-js) to handle authentication.
+This guide uses a sample vanilla JavaScript (JS) single-page Application (SPA) to demonstrate how to add authentication to a SPA. The SPA enables users to sign in and sign out by using your external tenant. The sample uses the [Microsoft Authentication Library for JavaScript (MSAL.js)](https://github.com/AzureAD/microsoft-authentication-library-for-js) to handle authentication.
 
 ## Prerequisites
 
-* Although any IDE that supports vanilla JS applications can be used, **Visual Studio Code** is recommended for this guide. It can be downloaded from the [Downloads](https://visualstudio.microsoft.com/downloads) page.
+* [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 * [Node.js](https://nodejs.org/en/download/).
-* Microsoft Entra ID for customers tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
+* An external tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
 
 ## Register the SPA in the Microsoft Entra admin center
 
 [!INCLUDE [active-directory-b2c-register-app](./includes/register-app/register-client-app-common.md)]
 [!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/register-app/add-platform-redirect-url-vanilla-js.md)]
 
-## Grant API permissions
+## Grant admin consent
 
 [!INCLUDE [active-directory-b2c-grant-delegated-permissions](./includes/register-app/grant-api-permission-sign-in.md)]
 
@@ -42,49 +42,49 @@ This how-to guide uses a sample vanilla JavaScript single-page Application (SPA)
 
 ## Clone or download sample SPA
 
-To get the sample SPA, you can choose one of the following options:
+To obtain the sample application, you can either clone it from GitHub or download it as a .zip file.
 
-* Clone the repository using Git:
+- To clone the sample, open a command prompt and navigate to where you wish to create the project, and enter the following command:
 
-    ```powershell
-        git clone https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial.git
+    ```console
+    git clone https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial.git
     ```
 
-* [Download the sample](https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial/archive/refs/heads/main.zip)
-
-If you choose to download the `.zip` file, extract the sample app file to a folder where the total length of the path is 260 or fewer characters.
+- [Download the sample](https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial/archive/refs/heads/main.zip). Extract it to a file path where the length of the name is fewer than 260 characters. 
 
 ## Install project dependencies
 
 1. Open a terminal window in the root directory of the sample project, and enter the following snippet to navigate to the project folder:
 
-    ```powershell
-        cd 1-Authentication\0-sign-in-vanillajs\App
+    ```console
+    cd 1-Authentication\0-sign-in-vanillajs\App
     ```
 
 1. Install the project dependencies:
 
-    ```powershell
-        npm install
+    ```console
+    npm install
     ```
 
 ## Configure the sample SPA
 
-1. Open `authConfig.js`.
-1. Find `Enter_the_Tenant_Name_Here` and replace it with the name of your tenant.
-1. In **Authority**, find `Enter_the_Tenant_Subdomain_Here` and replace it with the subdomain of your tenant. For example, if your tenant primary domain is *caseyjensen@onmicrosoft.com*, the value you should enter is *casyjensen*.
+1. Open `App/public/authConfig.js` and replace the following with the values obtained from the Microsoft Entra admin center:
+
+     * `Enter_the_Application_Id_Here` and replace it with the Application (client) ID of the app you registered earlier.
+     * `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
+
 1. Save the file.
 
 ## Run your project and sign in
 
 1. Open a new terminal and run the following command to start your express web server.
 
-    ```powershell
+    ```console
     npm start
     ```
 
 1. Open a web browser and navigate to `http://localhost:3000/`.
-1. Sign-in with an account registered to the customer tenant.
+1. Sign-in with an account registered to the external tenant.
 1. Once signed in the display name is shown next to the **Sign out** button as shown in the following screenshot.
 1. The SPA will now display a button saying **Request Profile Information**. Select it to display profile data.
 
@@ -96,7 +96,9 @@ If you choose to download the `.zip` file, extract the sample app file to a fold
 1. A window appears asking which account to sign out of.
 1. Upon successful sign out, a final window appears advising you to close all browser windows.
 
-## Next steps
+## Related content
 
-> [!div class="nextstepaction"]
-> [Enable self-service password reset](./how-to-enable-password-reset-customers.md)
+- [Use our multi-part tutorial series to build this Vanilla JS SPA from scratch](tutorial-single-page-app-vanillajs-prepare-app.md).
+- [Enable password reset](how-to-enable-password-reset-customers.md).
+- [Customize the default branding](how-to-customize-branding-customers.md).
+- [Configure sign-in with Google](how-to-google-federation-customers.md).

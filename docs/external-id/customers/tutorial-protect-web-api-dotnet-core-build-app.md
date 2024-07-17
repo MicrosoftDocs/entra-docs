@@ -1,41 +1,41 @@
 ---
-title: "Tutorial: Secure an ASP.NET web API registered in a customer tenant"
-description: Learn how to secure a ASP.NET web API registered in the Microsoft Entra External ID for customers tenant
- 
+title: "Tutorial: Secure an ASP.NET web API registered in an external tenant"
+description: Learn how to secure a ASP.NET web API registered in the external tenant
+
 author: SHERMANOUKO
 manager: mwongerapk
 
 ms.author: shermanouko
 ms.service: entra-external-id
- 
+
 ms.subservice: customers
 ms.topic: tutorial
-ms.date: 07/27/2023
+ms.date: 06/27/2024
 ms.custom: developer, devx-track-dotnet
-#Customer intent: As a dev, I want to secure my ASP.NET Core web API registered in the Microsoft Entra ID for customers tenant.
+#Customer intent: As a dev, I want to secure my ASP.NET Core web API registered in the external tenant.
 ---
 
-# Tutorial: Secure an ASP.NET Core web API registered in a customer tenant
+# Tutorial: Secure an ASP.NET Core web API registered in an external tenant
 
-This tutorial series demonstrates how to secure a registered web API in the Microsoft Entra External ID for customers tenant. In this tutorial, you'll build an ASP.NET Core web API that publishes both delegated permissions (scopes) and application permissions (app roles).
+This tutorial series demonstrates how to secure a registered web API in the external tenant. In this tutorial, you'll build an ASP.NET Core web API that publishes both delegated permissions (scopes) and application permissions (app roles).
 
 In this tutorial;
 
 > [!div class="checklist"]
-> * Configure your web API to use its app registration details
-> * Configure your web API to use delegated and application permissions registered in the app registration
-> * Protect your web API endpoints
+> - Configure your web API to use its app registration details
+> - Configure your web API to use delegated and application permissions registered in the app registration
+> - Protect your web API endpoints
 
 ## Prerequisites
 
 - An API registration that exposes at least one scope (delegated permissions) and one app role (application permission) such as *ToDoList.Read*. If you haven't already, [register an API in the Microsoft Entra admin center](how-to-register-ciam-app.md?tabs=webapi&preserve-view=true) by following the registration steps. Ensure you have the following:
     - Application (client) ID of the Web API
     - Directory (tenant) ID of the Web API is registered
-    - Directory (tenant) subdomain of where the Web API is registered. For example, if your [primary domain](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details) is *contoso.onmicrosoft.com*, your Directory (tenant) subdomain is *contoso*.
-    - *ToDoList.Read* and *ToDoList.ReadWrite* as the [delegated permissions (scopes) exposed by the Web API](./how-to-register-ciam-app.md?tabs=webapi&preserve-view=true#expose-permissions). 
+    - Directory (tenant) subdomain of where the Web API is registered. For example, if your [primary domain](how-to-create-external-tenant-portal.md#get-the-external-tenant-details) is *contoso.onmicrosoft.com*, your Directory (tenant) subdomain is *contoso*.
+    - *ToDoList.Read* and *ToDoList.ReadWrite* as the [delegated permissions (scopes) exposed by the Web API](./how-to-register-ciam-app.md?tabs=webapi&preserve-view=true#expose-permissions).
     - *ToDoList.Read.All* and *ToDoList.ReadWrite.All* as the [application permissions (app roles) exposed by the Web API](how-to-register-ciam-app.md?tabs=webapi&preserve-view=true#add-app-roles).
 
-- [.NET 7.0 SDK](https://dotnet.microsoft.com/download/dotnet/7.0) or later. 
+- [.NET 7.0 SDK](https://dotnet.microsoft.com/download/dotnet/7.0) or later.
 - [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 
 ## Create an ASP.NET Core web API
@@ -83,6 +83,9 @@ Replace the following placeholders as shown:
 - Replace `Enter_the_Application_Id_Here` with your application (client) ID.
 - Replace `Enter_the_Tenant_Id_Here` with your Directory (tenant) ID.
 - Replace `Enter_the_Tenant_Subdomain_Here` with your Directory (tenant) subdomain.
+
+[!INCLUDE [external-id-custom-domain](./includes/use-custom-domain-url-dot-net-core.md)]
+
 
 ## Add app role and scope
 
@@ -141,25 +144,25 @@ public class ToDo
 }
 ```
 
-##  Add a database context
+## Add a database context
 
 The database context is the main class that coordinates Entity Framework functionality for a data model. This class is created by deriving from the *Microsoft.EntityFrameworkCore.DbContext* class. In this tutorial, we use an in-memory database for testing purposes.
 
-1. Create a folder called *DbContext* in the root folder of the project. 
+1. Create a folder called *DbContext* in the root folder of the project.
 1. Navigate into that folder and create a file called *ToDoContext.cs* then add the following contents to that file:
 
     ```csharp
     using Microsoft.EntityFrameworkCore;
     using ToDoListAPI.Models;
-    
+
     namespace ToDoListAPI.Context;
-    
+
     public class ToDoContext : DbContext
     {
         public ToDoContext(DbContextOptions<ToDoContext> options) : base(options)
         {
         }
-    
+
         public DbSet<ToDo> ToDos { get; set; }
     }
     ```
@@ -170,16 +173,16 @@ The database context is the main class that coordinates Entity Framework functio
     // Add the following to your imports
     using ToDoListAPI.Context;
     using Microsoft.EntityFrameworkCore;
-    
+
     builder.Services.AddDbContext<ToDoContext>(opt =>
         opt.UseInMemoryDatabase("ToDos"));
     ```
 
 ## Add controllers
 
-In most cases, a controller would have more than one action. Typically *Create*, *Read*, *Update*, and *Delete* (CRUD) actions. In this tutorial, we create only two action items. A read all action item and a create action item to demonstrate how to protect your endpoints. 
+In most cases, a controller would have more than one action. Typically *Create*, *Read*, *Update*, and *Delete* (CRUD) actions. In this tutorial, we create only two action items. A read all action item and a create action item to demonstrate how to protect your endpoints.
 
-1. Navigate to the *Controllers* folder in the root folder of your project. 
+1. Navigate to the *Controllers* folder in the root folder of your project.
 1. Create a file called *ToDoListController.cs* inside this folder. Open the file then add the following boiler plate code:
 
     ```csharp
@@ -190,38 +193,38 @@ In most cases, a controller would have more than one action. Typically *Create*,
     using Microsoft.Identity.Web.Resource;
     using ToDoListAPI.Models;
     using ToDoListAPI.Context;
-    
+
     namespace ToDoListAPI.Controllers;
-    
+
     [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class ToDoListController : ControllerBase
     {
         private readonly ToDoContext _toDoContext;
-    
+
         public ToDoListController(ToDoContext toDoContext)
         {
             _toDoContext = toDoContext;
         }
-    
+
         [HttpGet()]
         [RequiredScopeOrAppPermission()]
         public async Task<IActionResult> GetAsync(){...}
-        
+
         [HttpPost]
         [RequiredScopeOrAppPermission()]
         public async Task<IActionResult> PostAsync([FromBody] ToDo toDo){...}
-    
+
         private bool RequestCanAccessToDo(Guid userId){...}
-    
+
         private Guid GetUserId(){...}
-    
+
         private bool IsAppMakingRequest(){...}
     }
     ```
 
-## Add code to the controller 
+## Add code to the controller
 
 In this section, we add code to the placeholders we created. The focus here isn't on building the API, but rather protecting it.
 
@@ -315,7 +318,7 @@ In this section, we add code to the placeholders we created. The focus here isn'
 
 ## Run your API
 
-Run your API to ensure that it's running well without any errors using the command `dotnet run`. If you intend to use https protocol even during testing, you need to [trust .NET's development certificate](/aspnet/core/tutorials/first-web-api#test-the-project). 
+Run your API to ensure that it's running well without any errors using the command `dotnet run`. If you intend to use HTTPS protocol even during testing, you need to [trust .NET's development certificate](/aspnet/core/tutorials/first-web-api#test-the-project).
 
 For a full example of this API code, see the [samples file](https://github.com/Azure-Samples/ms-identity-ciam-dotnet-tutorial/tree/main/2-Authorization/3-call-own-api-dotnet-core-daemon/ToDoListAPI).
 

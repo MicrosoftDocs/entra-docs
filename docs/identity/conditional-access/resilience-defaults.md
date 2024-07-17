@@ -57,13 +57,13 @@ When active, the Backup Authentication Service doesn't evaluate authentication m
 
 When resilience defaults are enabled, the Backup Authentication Service uses data collected at the beginning of the session to evaluate whether the policy should apply in the absence of real-time data. By default, all policies have resilience defaults enabled. The setting might be disabled for individual policies when real-time policy evaluation is required for access to sensitive applications during an outage.
 
-**Example**: A policy with resilience defaults enabled requires all global admins accessing the Azure portal to do MFA. Before an outage, if a user who isn't a Global Administrator accesses the Azure portal, the policy wouldn't apply, and the user would be granted access without being prompted for MFA. During an outage, the Backup Authentication Service would reevaluate the policy to determine whether the user should be prompted for MFA. **Since the Backup Authentication Service cannot evaluate role membership in real-time, it would use data collected at the beginning of the user’s session to determine that the policy should still not apply. As a result, the user would be granted access without being prompted for MFA.**
+**Example**: A policy with resilience defaults enabled requires all users assigned a [privileged role](../role-based-access-control/permissions-reference.md) accessing Microsoft Admin portals to do MFA. Before an outage, if a user who isn't assigned an administrator role accesses the Azure portal, the policy wouldn't apply, and the user would be granted access without being prompted for MFA. During an outage, the Backup Authentication Service would reevaluate the policy to determine whether the user should be prompted for MFA. **Since the Backup Authentication Service cannot evaluate role membership in real-time, it would use data collected at the beginning of the user’s session to determine that the policy should still not apply. As a result, the user would be granted access without being prompted for MFA.**
 
 ## Resilience defaults disabled
 
 When resilience defaults are disabled, the Backup Authentication Service won't use data collected at the beginning of the session to evaluate conditions. During an outage, if a policy condition can’t be evaluated in real-time, access is denied.
 
-**Example**: A policy with resilience defaults disabled requires all global admins accessing the Azure portal to do MFA. Before an outage, if a user who isn't a Global Administrator accesses the Azure portal, the policy wouldn't apply, and the user would be granted access without being prompted for MFA. During an outage, the Backup Authentication Service would reevaluate the policy to determine whether the user should be prompted for MFA. **Since the Backup Authentication Service cannot evaluate role membership in real-time, it would block the user from accessing the Azure Portal.**
+**Example**: A policy with resilience defaults disabled requires all users assigned a [privileged role](../role-based-access-control/permissions-reference.md) accessing Microsoft Admin portals to do MFA. Before an outage, if a user who isn't assigned an administrator role accesses the Azure portal, the policy wouldn't apply, and the user would be granted access without being prompted for MFA. During an outage, the Backup Authentication Service would reevaluate the policy to determine whether the user should be prompted for MFA. **Since the Backup Authentication Service cannot evaluate role membership in real-time, it would block the user from accessing the Azure Portal.**
 
 > [!WARNING]
 > Disabling resilience defaults for a policy that applies to a group or role will reduce the resilience for all users in your tenant. Since group and role membership cannot be evaluated in real-time during an outage, even users who do not belong to the group or role in the policy assignment will be denied access to the application in scope of the policy. To avoid reducing resilience for all users not in scope of the policy, consider applying the policy to individual users instead of groups or roles.
@@ -78,8 +78,8 @@ You can configure Conditional Access resilience defaults from the Microsoft Entr
 
 ### Microsoft Entra admin center
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Protection** > **Conditional Access**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
+1. Browse to **Protection** > **Conditional Access** > **Policies**.
 1. Create a new policy or select an existing policy
 1. Open the Session control settings
 1. Select Disable resilience defaults to disable the setting for this policy. Sign-ins in scope of the policy are blocked during a Microsoft Entra outage

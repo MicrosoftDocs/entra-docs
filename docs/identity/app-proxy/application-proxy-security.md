@@ -56,9 +56,9 @@ Because Microsoft Entra application proxy is a reverse-proxy, all traffic to bac
 
 You don't need to open inbound connections to the corporate network.
 
-Application proxy connectors only use outbound connections to the Microsoft Entra application proxy service. There's no need to open firewall ports for incoming connections. Traditional proxies require a perimeter network (also known as *DMZ*, *demilitarized zone*, or *screened subnet*) and allow access to unauthenticated connections at the network edge. With application proxy, you don't need a perimeter network because all connections are outbound and take place over a secure channel.
+private network connectors only use outbound connections to the Microsoft Entra application proxy service. There's no need to open firewall ports for incoming connections. Traditional proxies require a perimeter network (also known as *DMZ*, *demilitarized zone*, or *screened subnet*) and allow access to unauthenticated connections at the network edge. With application proxy, you don't need a perimeter network because all connections are outbound and take place over a secure channel.
 
-For more information about connectors, see [Understand Microsoft Entra application proxy connectors](application-proxy-connectors.md).
+For more information about connectors, see [Understand Microsoft Entra private network connectors](application-proxy-connectors.md).
 
 ### Cloud-scale analytics and machine learning 
 
@@ -119,7 +119,7 @@ Whenever the application proxy service updates the configuration settings, the f
 
 ### Accessing published applications
 
-When users access a published application, the following events take place between the application proxy service and the application proxy connector:
+When users access a published application, the following events take place between the application proxy service and the private network connector:
 
 1. The service authenticates the user for the app
 2. The service places a request in the connector queue
@@ -171,4 +171,4 @@ Some processing of the application occurs at this time. For example, application
 
 ## Next steps
 - [Application proxy network topology](application-proxy-network-topology.md)
-- [Application proxy connectors](application-proxy-connectors.md)
+- [private network connectors](application-proxy-connectors.md)

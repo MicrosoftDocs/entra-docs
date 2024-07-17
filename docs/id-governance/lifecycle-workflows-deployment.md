@@ -21,7 +21,7 @@ ms.author: owinfrey
 - **Reduce** or remove manual tasks that were done in the past with automated Lifecycle Workflows
 - **Apply** logic apps to extend workflows for more complex scenarios using your existing Logic apps
 
-Lifecycle Workflows are an [Microsoft Entra ID Governance](identity-governance-overview.md) capability. The other capabilities are [entitlement management](entitlement-management-overview.md), [access reviews](access-reviews-overview.md),[Privileged Identity Management (PIM)](~/id-governance/privileged-identity-management/pim-configure.md), and [terms of use](~/identity/conditional-access/terms-of-use.md). Together, they help you address these questions:
+Lifecycle Workflows are a [Microsoft Entra ID Governance](identity-governance-overview.md) capability. The other capabilities are [entitlement management](entitlement-management-overview.md), [access reviews](access-reviews-overview.md),[Privileged Identity Management (PIM)](~/id-governance/privileged-identity-management/pim-configure.md), and [terms of use](~/identity/conditional-access/terms-of-use.md). Together, they help you address these questions:
 
  - Which users should have access to which resources?
  - What are those users doing with that access?
@@ -31,7 +31,7 @@ Lifecycle Workflows are an [Microsoft Entra ID Governance](identity-governance-o
  
 Planning your Lifecycle Workflow deployment is essential to make sure you achieve your desired governance strategy for users in your organization.
 
-For more information on deployment plans, see [Microsoft Entra deployment plans](~/architecture/deployment-plans.md)
+For more information on deployment plans, see [Microsoft Entra deployment plans](~/architecture/deployment-plans.md).
 
 ## License requirements
 
@@ -92,12 +92,12 @@ This section introduces Lifecycle Workflow concepts you should know before you p
 
 ## Prerequisites to deploying Lifecycle Workflows
 
-The following information is important information about your organization and the technologies that need to be in place prior to deploying Lifecycle Workflows.  Ensure that you can answer yes to each of the items before attempting to deploy Lifecycle Workflows.
+The following information is important information about your organization and the technologies that need to be in place before deploying Lifecycle Workflows.  Ensure that you can answer yes to each of the items before attempting to deploy Lifecycle Workflows.
 
 |Item|Description|Documentation|
 |-----|-----|-----|
 |Inbound Provisioning|You have a process to create user accounts for employees in Microsoft Entra such as HR inbound from Workday or SuccessFactors, or MIM.<br><br> Alternatively you have a process to create user accounts in Active Directory and those accounts are provisioned to Microsoft Entra ID.|[Workday to Active Directory](~/identity/saas-apps/workday-inbound-tutorial.md)<br><br>[Workday to Microsoft Entra ID](~/identity/saas-apps/workday-inbound-tutorial.md)<br><br>[SuccessFactors to Active Directory](~/identity/saas-apps/sap-successfactors-inbound-provisioning-tutorial.md)</br></br>[SuccessFactors to Microsoft Entra ID](~/identity/saas-apps/sap-successfactors-inbound-provisioning-cloud-only-tutorial.md)<br><br>[Microsoft Entra Connect](~/identity/hybrid/connect/whatis-azure-ad-connect-v2.md)<br><br>[Microsoft Entra Connect cloud sync](~/identity/hybrid/cloud-sync/what-is-cloud-sync.md)<br><br>[API-driven inbound provisioning (Public preview)](~/identity/app-provisioning/inbound-provisioning-api-configure-app.md)|
-|Attribute synchronization|The accounts in Microsoft Entra ID have the employeeHireDate and employeeLeaveDateTime attributes populated.  The values may be populated when the accounts are created from an HR system or synchronized from AD using Microsoft Entra Connect or cloud sync. You have extra attributes that are used to determine the scope such as department, populated or the ability to populate, with data.|[How to synchronize attributes for Lifecycle Workflows](how-to-lifecycle-workflow-sync-attributes.md)
+|Attribute synchronization|The accounts in Microsoft Entra ID have the employeeHireDate and employeeLeaveDateTime attributes populated.  The values might be populated when the accounts are created from an HR system or synchronized from AD using Microsoft Entra Connect or cloud sync. You have extra attributes that are used to determine the scope such as department, populated or the ability to populate, with data.|[How to synchronize attributes for Lifecycle Workflows](how-to-lifecycle-workflow-sync-attributes.md)
 
 ## Understanding parts of a workflow
 
@@ -105,7 +105,7 @@ Before you begin planning a Lifecycle Workflow deployment, you should become fam
 
 The [Understanding Lifecycle Workflows](understanding-lifecycle-workflows.md) document uses the portal to explain the parts of a workflow. The [Developer API reference Lifecycle Workflows](/graph/api/resources/identitygovernance-workflow) document uses a Graph example to explain the parts of a workflow. 
 
-You can use this document to become familiar with the parts of workflow prior to deploying them.
+You can use this document to become familiar with the parts of workflow before deploying them.
 
 ## Limitations and constraints
 
@@ -151,7 +151,11 @@ Before building a Lifecycle Workflow in the portal, you should determine which s
 |Offboard an employee|Disable User Account</br>Remove user from all groups</br>Remove user from all Teams|
 |Post-Offboarding of an employee|Remove all licenses for user</br>Remove user from all Teams</br>Delete User Account|
 |Real-time employee change|Run a Custom Task Extension|
-|Real-time employee termination|Remove users from all Groups and Teams and delete the user account|
+|Employee group membership changes| Remove access package assignment for user</br> Remove user from selected Teams</br> Send email to notify manager of user move  |
+|Employee job profile change| Send email to notify manager of user move</br> Remove user from selected groups</br> Remove user from selected Teams</br> Request user access package assignment |
+
+[Employee group membership changes](lifecycle-workflow-templates.md#employee-group-membership-changes)
+- [Employee job profile change](lifecycle-workflow-templates.md#employee-job-profile-change)
 
 For more information on the built-in templates, see [Lifecycle Workflow templates.](lifecycle-workflow-templates.md)
 
@@ -161,9 +165,9 @@ Now that you've determined your scenarios, you need to look at what users in you
 
 An Execution condition is the part of a workflow that defines the scope of **who** and the trigger of **when** a workflow will be performed.
 
-The [scope](understanding-lifecycle-workflows.md#configure-scope) determines who the workflow runs against.  This is defined by a rule that will filter users based on a condition.  For example, the rule, `"rule": "(department eq 'sales')"` runs the task only on users who are members of the sales department.
+The scope determines who the workflow runs against.  This is defined by a rule that will filter users based on a condition.  For example, the rule, `"rule": "(department eq 'sales')"` runs the task only on users who are members of the sales department.
 
-The [trigger](understanding-lifecycle-workflows.md#trigger-details) determines when the workflow runs.  This can either be, on-demand, which is immediate, or time based.  Most of the predefined templates in the portal are time based.  
+The trigger determines when the workflow runs.  This can either be, on-demand, which is immediate, or run on a schedule.  Most of the predefined templates in the portal are based to run on a schedule when their trigger is met.  
 
 ### Attribute information
 The scope of a workflow uses attributes under the rule section.  You can add the following extra conditionals to further refine **who** the tasks are applied to.
@@ -184,9 +188,9 @@ Not all of these attributes are populated by default so you should verify with y
 The following is some important information regarding time zones that you should be aware of when designing workflows.
 - Workday and SAP SF will always send the time in Coordinated Universal Time or UTC.
 -  if you're in a single time zone it's recommended that you hardcode the time portion to something that works for you.  An example would be 5am for new hire scenarios and 10pm for last day of work scenarios.
-- It's recommended, that if you're using temporary access pass (TAP), that you set the maximum lifetime to 24 hours.  Doing this will help ensure that the TAP hasn't expired after being sent to an employee who may be in a different timezone.  For more information, see [Configure Temporary Access Pass in Microsoft Entra ID to register Passwordless authentication methods.](~/identity/authentication/howto-authentication-temporary-access-pass.md#enable-the-temporary-access-pass-policy)
+- It's recommended, that if you're using temporary access pass (TAP), that you set the maximum lifetime to 24 hours.  Doing this will help ensure that the TAP hasn't expired after being sent to an employee who could be in a different timezone.  For more information, see [Configure Temporary Access Pass in Microsoft Entra ID to register Passwordless authentication methods.](~/identity/authentication/howto-authentication-temporary-access-pass.md#enable-the-temporary-access-pass-policy)
 
-For more information, see [How to synchronize attributes for Lifecycle Workflows](~/id-governance/how-to-lifecycle-workflow-sync-attributes.md)
+For more information, see [How to synchronize attributes for Lifecycle Workflows](~/id-governance/how-to-lifecycle-workflow-sync-attributes.md).
 
 ## Review the tasks
 Now that we've determined the scenario and the who and when, you should consider whether the predefined tasks are sufficient or are you going to need extra tasks.  The following table has a list of the predefined tasks that are currently in the portal.  Use this table to determine if you want to add more tasks.
@@ -195,6 +199,7 @@ Now that we've determined the scenario and the who and when, you should consider
 |-----|-----|-----|
 |Add user to groups|Add user to selected groups| Joiner - Leaver - Mover|
 |Add user to selected teams| Add user to Teams| Joiner - Leaver - Mover|
+|Assign licenses to users| Assign licenses to user| Joiner - Mover|
 |Delete User Account| Delete user account in Microsoft Entra ID| Leaver|
 |Disable User Account| Disable user account in the directory| Joiner - Leaver|
 |Enable User Account| Enable user account in the directory| Joiner - Leaver|
@@ -210,9 +215,10 @@ Now that we've determined the scenario and the who and when, you should consider
 |Send email on user's last day| Send offboarding email to user's manager on the last day of work| Leaver|
 |Send Welcome Email| Send welcome email to new hire| Joiner|
 |Send onboarding reminder email|Send onboarding reminder email to user’s manager| Joiner|
-|Request user access package assignment|Request user assignment to selected access packages|Joiner-Mover|
-|Remove access package assignment for user|Remove user assignment from selected access packages| Leaver=Mover|
+|Request user access package assignment|Request user assignment to selected access packages|Joiner - Mover|
+|Remove access package assignment for user|Remove user assignment from selected access packages| Leaver - Mover|
 |Remove all access package assignments for user|Remove all access packages assigned to the user|Leaver|
+|Remove selected license assignments from user|Remove select license assignment from user|Leaver - Mover| 
 |Cancel all pending access package assignment requests for users|Cancel all pending access package assignment requests for users|Leaver|
 
 
@@ -223,12 +229,12 @@ If you're using a group or team task, the workflow needs you to specify the grou
 
  [![Screenshot of onboard new hire.](media/lifecycle-workflows-deployment/group-1.png)](media/lifecycle-workflows-deployment/group-1.png#lightbox)
 
-By clicking on the task, you are presented with a navigation bar to add or remove groups.  Select the "x groups selected" link to add groups.
+By selecting the task, you're presented with a navigation bar to add or remove groups.  Select the "x groups selected" link to add groups.
 
  [![Screenshot of add groups.](media/lifecycle-workflows-deployment/group-2.png)](media/lifecycle-workflows-deployment/group-2.png#lightbox)
 
 ### Custom task extensions
-Lifecycle Workflows allow you to create workflows that can be triggered based on joiner, mover, or leaver scenarios. While Lifecycle Workflows provide several built-in tasks to automate common scenarios throughout the lifecycle of users, eventually you may reach the limits of these built-in tasks. With the extensibility feature, you are able to utilize the concept of custom task extensions to call-out to external systems as part of a Lifecycle Workflow. 
+Lifecycle Workflows allow you to create workflows that can be triggered based on joiner, mover, or leaver scenarios. While Lifecycle Workflows provide several built-in tasks to automate common scenarios throughout the lifecycle of users, eventually you could reach the limits of these built-in tasks. With the extensibility feature, you're able to utilize the concept of custom task extensions to call-out to external systems as part of a Lifecycle Workflow. 
 
 The scenarios for how a custom task extension interacts with Lifecycle Workflows can be one of three ways:
 
@@ -255,7 +261,7 @@ For more information, see [Best practices for a pilot.](~/architecture/deploymen
 
 
 #### Test and run the workflow
-Once you've created a workflow, you should test it by running the workflow [on-demand](on-demand-workflow.md)
+Once you've created a workflow, you should test it by running the workflow [on-demand](on-demand-workflow.md).
 
 Using the on-demand feature allows you to test and evaluate whether the Lifecycle Workflow is working as intended.
 

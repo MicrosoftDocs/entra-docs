@@ -1,5 +1,4 @@
 ---
-
 title: Microsoft Entra audit log activity reference
 description: Get an overview of the audit activities that can be logged in your audit logs in Microsoft Entra ID.
 
@@ -8,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: reference
 ms.subservice: monitoring-health
-ms.date: 09/14/2023
+ms.date: 05/09/2024
 ms.author: sarahlipsey
 ms.reviewer: dhanyahk
 ---
@@ -16,14 +15,14 @@ ms.reviewer: dhanyahk
 
 Microsoft Entra audit logs collect all traceable activities within your Microsoft Entra tenant. Audit logs can be used to determine who made a change to service, user, group, or other item.
 
-This article provides a comprehensive list of the audit categories and their related activities. Use the "In this article" section to jump to a specific audit category. 
+This article provides a comprehensive list of the audit categories and their related activities. To jump to a specific audit category, use the "In this article" section. 
 
 Audit log activities and categories change periodically. The tables are updated regularly, but might not be in sync with what is available in Microsoft Entra ID. Provide us with feedback if you think there's a missing audit category or activity.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](~/identity/role-based-access-control/permissions-reference.md#reports-reader).
 1. Browse to **Identity** > **Monitoring & health** > **Audit logs**.
 1. Adjust the filters accordingly.
-1. Select a row from the resulting table to view the details.
+1. To view the details, select a row from the resulting table.
 
 <a name='aad-management-ux'></a>
 
@@ -62,7 +61,6 @@ Audit log activities and categories change periodically. The tables are updated 
 |UserManagement|Bulk invite users - finished (bulk)|
 |UserManagement|Bulk restore deleted users - finished (bulk)|
 |UserManagement|Download users - finished (bulk)|
-|UserManagement|Bulk create users - finished (bulk)|
 |UserManagement|started (bulk)|
 
 
@@ -112,24 +110,24 @@ With [Microsoft Entra ID Governance access reviews](~/id-governance/manage-user-
 
 ## Account provisioning
 
-Each time an account is provisioned in your Microsoft Entra tenant, a log for that account is captured. Automated provisioning, such as with [Microsoft Entra Connect cloud sync](~/identity/hybrid/cloud-sync/what-is-cloud-sync.md), is found in this log. The Account provisioning service only has one audit category in the logs.
+Configuration changes for application provisioning, HR provisioning, cross-tenant synchronization, and [Microsoft Entra Connect cloud sync](~/identity/hybrid/cloud-sync/what-is-cloud-sync.md), are found in this log. The provisioning service only has one audit category in the logs. For actions that the provisioning service performs such as creating users, updating users, and deleting users we recommend using the [provisioning logs](~/identity/monitoring-health/howto-analyze-provisioning-logs.md). For monitoring changes to your provisioning configuration, we recommend using the [audit logs](~/identity/monitoring-health/concept-audit-logs.md).
 
-|Audit Category|Activity|
-|---|---|
-|ProvisioningManagement|Add provisioning configuration|
-|ProvisioningManagement|Delete provisioning configuration|
-|ProvisioningManagement|Disable/pause provisioning configuration|
-|ProvisioningManagement|Enable/restart provisioning configuration|
-|ProvisioningManagement|Enable/start provisioning configuration|
-|ProvisioningManagement|Export|
-|ProvisioningManagement|Import|
-|ProvisioningManagement|Other|
-|ProvisioningManagement|Process escrow|
-|ProvisioningManagement|Quarantine|
-|ProvisioningManagement|Synchronization rule action|
-|ProvisioningManagement|Update attribute mappings or scope|
-|ProvisioningManagement|Update provisioning setting or credentials|
-|ProvisioningManagement|User Provisioning|
+|Audit Category|Activity|Description| 
+|---|---|---|
+|ProvisioningManagement|Add provisioning configuration|A new provisioning configuration has been created.|
+|ProvisioningManagement|Delete provisioning configuration|The provisioning configuration has been deleted.|
+|ProvisioningManagement|Disable/pause provisioning configuration|The provisioning job has been disabled / paused.|
+|ProvisioningManagement|Enable/restart provisioning configuration|The provisioning job as been restarted.|
+|ProvisioningManagement|Enable/start provisioning configuration|The provisioning job has been started.|
+|ProvisioningManagement|Export|The provisioning job has exported a change to the target system (ex: create a user).|
+|ProvisioningManagement|Import|The provisioning job imported the object from the source system (ex: import the user properties in Entra before provisioning the account into Salesforce).|
+|ProvisioningManagement|Other||
+|ProvisioningManagement|Process escrow|The provisioning service was unable to export a change to the target application and is retrying the operation.|
+|ProvisioningManagement|Quarantine|The provisioning job is executing at a reduced frequency due to issues such as a lack of connectivity to the target application. [Learn more](~/identity/app-provisioning/application-provisioning-quarantine-status.md)|
+|ProvisioningManagement|Synchronization rule action|The provisioning service evaluated the object and did not export a change to the target system. This even is most often emitted when a user is skipped due to being out of scope for provisioning.|
+|ProvisioningManagement|Update attribute mappings or scope|The attribute mappings or scoping rules for the provisioning job have been updated.|
+|ProvisioningManagement|Update provisioning setting or credentials|The settings on your provisioning job (ex: notification email change, sync all vs. sync assigned users and groups, accidental deletions prevention) have been updated. The credentials for your provisioning job (ex: add a new bearer token) have been updated.|
+|ProvisioningManagement|User Provisioning|The schema for the provisioning job has been restored to the default.|
 
 ## Application proxy
 
@@ -293,7 +291,7 @@ Audit events related to GDPR and data protection are also found in this service 
 
 <a name='azure-ad-mfa-azure-mfa'></a>
 
-## Microsoft Entra multifactor authentication (Azure MFA)
+## Microsoft Entra multifactor authentication
 
 The Microsoft Entra multifactor authentication audit logs can help you track trends in suspicious activity or when fraud was reported. Use the [Microsoft Entra sign-in logs](https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/SignIns) to see each time a user signs in when MFA is required.
 
@@ -360,7 +358,6 @@ This set of audit logs is related to [B2C](/azure/active-directory-b2c/overview)
 |Authorization|Create custom identity provider|
 |Authorization|Create custom policy|
 |Authorization|Create customAuthenticationExtension|
-|Authorization|Create identity provider|
 |Authorization|Create or update a B2C directory resource|
 |Authorization|Create or update a B2C directory tenant and resource|
 |Authorization|Create or update a CIAM directory tenant and resource|
@@ -381,7 +378,6 @@ This set of audit logs is related to [B2C](/azure/active-directory-b2c/overview)
 |Authorization|Delete authenticationEventsFlow|
 |Authorization|Delete custom policy|
 |Authorization|Delete customAuthenticationExtension|
-|Authorization|Delete identity provider|
 |Authorization|Delete localized resource|
 |Authorization|Delete policy key|
 |Authorization|Delete user attribute|
@@ -422,9 +418,7 @@ This set of audit logs is related to [B2C](/azure/active-directory-b2c/overview)
 |Authorization|Get custom policy metadata|
 |Authorization|Get customAuthenticationExtension|
 |Authorization|Get customAuthenticationExtensions|
-|Authorization|Get identity provider|
 |Authorization|Get identity provider types|
-|Authorization|Get identity providers|
 |Authorization|Get list of tenants|
 |Authorization|Get localized resource|
 |Authorization|Get operation status for an async operation|
@@ -530,7 +524,6 @@ This set of audit logs is related to [B2C](/azure/active-directory-b2c/overview)
 |ResourceManagement|Create Identity Provider|
 |ResourceManagement|Create custom identity provider|
 |ResourceManagement|Create custom policy|
-|ResourceManagement|Create identity provider|
 |ResourceManagement|Create or update a B2C directory resource|
 |ResourceManagement|Create or update a B2C directory tenant and resource|
 |ResourceManagement|Create or update a CIAM directory tenant and resource|
@@ -546,7 +539,6 @@ This set of audit logs is related to [B2C](/azure/active-directory-b2c/overview)
 |ResourceManagement|Delete Guest Usages resource|
 |ResourceManagement|Delete Identity Provider|
 |ResourceManagement|Delete custom policy|
-|ResourceManagement|Delete identity provider|
 |ResourceManagement|Delete localized resource|
 |ResourceManagement|Delete policy key|
 |ResourceManagement|Delete user attribute|
@@ -647,7 +639,6 @@ Logs captured in the Core Directory service cover a wide variety of scenarios. C
 |Agreement|Delete agreement|
 |Agreement|Hard delete agreement|
 |Agreement|Update agreement|
-|ApplicationManagement|Add a deletion-marked app role assignment grant to service principal as part of link removal|
 |ApplicationManagement|Add app role assignment to service principal|
 |ApplicationManagement|Add application|
 |ApplicationManagement|Add delegated permission grant|
@@ -722,7 +713,6 @@ Logs captured in the Core Directory service cover a wide variety of scenarios. C
 |DirectoryManagement|Add unverified domain|
 |DirectoryManagement|Add verified domain|
 |DirectoryManagement|Create Company|
-|DirectoryManagement|Create company|
 |DirectoryManagement|Create company settings|
 |DirectoryManagement|Delete company allowed data location|
 |DirectoryManagement|Delete company settings|
@@ -763,7 +753,6 @@ Logs captured in the Core Directory service cover a wide variety of scenarios. C
 |ExternalUserProfile|Hard Delete ExternalUserProfile|
 |ExternalUserProfile|Restore ExternalUserProfile|
 |ExternalUserProfile|Update ExternalUserProfile|
-|GroupManagement|Add a deletion-marked app role assignment grant to group as part of link removal|
 |GroupManagement|Add app role assignment to group|
 |GroupManagement|Add group|
 |GroupManagement|Add member to group|
@@ -803,10 +792,10 @@ Logs captured in the Core Directory service cover a wide variety of scenarios. C
 |MultiTenantOrg|Create a MultiTenantOrg|
 |MultiTenantOrg|Hard Delete MultiTenantOrg|
 |MultiTenantOrg|Update a MultiTenantOrg|
-|MultiTenantOrgIdentitySyncPolicyUpdate|Reset a multitenant org identity sync policy template|
-|MultiTenantOrgIdentitySyncPolicyUpdate|Update a multitenant org identity sync policy template|
-|MultiTenantOrgPartnerConfigurationTemplate|Reset a multitenant org partner configuration template|
-|MultiTenantOrgPartnerConfigurationTemplate|Update a multitenant org partner configuration template|
+|MultiTenantOrgIdentitySyncPolicyUpdate|Reset a multi tenant org identity sync policy template|
+|MultiTenantOrgIdentitySyncPolicyUpdate|Update a multi tenant org identity sync policy template|
+|MultiTenantOrgPartnerConfigurationTemplate|Reset a multi tenant org partner configuration template|
+|MultiTenantOrgPartnerConfigurationTemplate|Update a multi tenant org partner configuration template|
 |MultiTenantOrgTenant|Add MultiTenantOrg tenant|
 |MultiTenantOrgTenant|Delete MultiTenantOrg tenant|
 |MultiTenantOrgTenant|Hard Delete MultiTenantOrg tenant|
@@ -848,7 +837,6 @@ Logs captured in the Core Directory service cover a wide variety of scenarios. C
 |RoleManagement|Update role|
 |RoleManagement|Update role definition|
 |SourceOfAuthorityPolicy|Add SOA policy|
-|UserManagement|Add a deletion-marked app role assignment grant to group as part of link removal|
 |UserManagement|Add app role assignment to group|
 |UserManagement|Add user|
 |UserManagement|Add users strong authentication phone app detail|
@@ -901,7 +889,7 @@ If you need to manage [Microsoft Entra ID and Microsoft Entra hybrid joined devi
 
 ## Entitlement Management
 
-If you're using Entitlement Management to streamline how you assign members of Microsoft Entra security groups, grant licenses for Microsoft 365, or provide access to applications, you can use these logs to monitor changes to those settings. [Access reviews](#access-reviews) and [Lifecycle workflows](#lifecycle-workflows) have separate logs.
+Use these logs to monitor changes to Entitlement Management settings. Entitlement Management can be used to streamline how you assign members of Microsoft Entra security groups, grant licenses for Microsoft 365, or provide access to applications. [Access reviews](#access-reviews) and [Lifecycle workflows](#lifecycle-workflows) have separate logs.
 
 |Audit Category|Activity|
 |---|---|
@@ -963,7 +951,7 @@ If you're using Entitlement Management to streamline how you assign members of M
 |EntitlementManagement|User requests to extend access package assignment|
 |EntitlementManagement|User requests to remove access package assignment|
 
-## Global Secure Access (preview)
+## Global Secure Access
 
 If you're using Microsoft Entra Internet Access or Microsoft Entra Private Access to acquire and secure network traffic to your corporate resources, these logs can help identify when changes were made to your network policies. These logs capture changes to traffic forwarding policies and remote networks, such as branch office locations. For more information, see [What is Global Secure Access](/entra/global-secure-access/overview-what-is-global-secure-access).
 
@@ -1005,8 +993,6 @@ If you're using Microsoft Entra Internet Access or Microsoft Entra Private Acces
 |Other|ConfirmServicePrincipalCompromised|
 |Other|DismissServicePrincipal|
 |Other|DismissUser|
-|Other|confirmServicePrincipalCompromised|
-|Other|dismissServicePrincipal|
 
 ## Invited users
 
@@ -1298,10 +1284,11 @@ Many of the activities captured in the PIM audit logs are similar, so take note 
 
 Users in your tenant can manage many aspects of their group memberships on their own. Use the Self-service group management logs to help troubleshoot issues with these scenarios.
 
+Many of the activities in this group are associated with background processes related to a user's activity. For example, you might see multiple `Features_GetFeaturesAsync` instances in your logs when a user accesses the MyApps or MyGroups portal. This activity doesn't indicate if the user made any changes. Other activities such as `GroupsODataV4_Get` often occur in groups for similar user actions.
+
 |Audit Category|Activity|
 |---|---|
-|GroupManagement|ApprovalNotification_Create
-|
+|GroupManagement|ApprovalNotification_Create|
 |GroupManagement|Autorenew group|
 |GroupManagement|Approval_Act|
 |GroupManagement|Approval_Get|
@@ -1309,7 +1296,6 @@ Users in your tenant can manage many aspects of their group memberships on their
 |GroupManagement|Approvals_ActOnApproval|
 |GroupManagement|Approvals_Post|
 |GroupManagement|Approve a pending request to join a group|
-|GroupManagement|Autorenew group|
 |GroupManagement|Cancel a pending request to join a group|
 |GroupManagement|Create lifecycle management policy|
 |GroupManagement|Delete a pending request to join a group|

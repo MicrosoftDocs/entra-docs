@@ -1,5 +1,5 @@
 ---
-title: "Tutorial: Sign in users in .NET MAUI shell app using a customer tenant"
+title: "Tutorial: Sign in users in .NET MAUI shell app using an external tenant"
 description: This tutorial demonstrates how to add sign-in and sign-out code in .NET Multi-platform App UI (.NET MAUI) and how to run the app on the Android platform.
 author: henrymbuguakiarie
 manager: mwongerapk
@@ -9,12 +9,12 @@ ms.service: entra-external-id
 ms.topic: tutorial
 ms.subservice: customers
 ms.custom: devx-track-dotnet
-ms.date: 06/05/2023
+ms.date: 06/27/2024
 ---
 
-# Tutorial: Sign in users in .NET MAUI shell app using a customer tenant
+# Tutorial: Sign in users in .NET MAUI shell app using an external tenant
 
-This tutorial is the final part of a series that demonstrates how to create a .NET Multi-platform App UI (.NET MAUI) shell app and prepare it for authentication using the Microsoft Entra admin center. In [part 2 of this series](./tutorial-mobile-app-maui-sign-in-prepare-app.md) you added a custom Microsoft Authentication Library (MSAL) client helper to initialize the MSAL SDK, install required libraries and include an image resource. This final step demonstrates how to add sign-in and sign-out code in the .NET Multi-platform App UI (.NET MAUI) and run the shell app on the Android platform.
+This tutorial is the final part of a series that demonstrates how to create a .NET Multi-platform App UI (.NET MAUI) shell app and prepare it for authentication using the Microsoft Entra admin center. In [Part 2 of this series](./tutorial-mobile-app-maui-sign-in-prepare-app.md) you added a custom Microsoft Authentication Library (MSAL) client helper to initialize the MSAL SDK, install required libraries and include an image resource. This final step demonstrates how to add sign-in and sign-out code in .NET MAUI and run the shell app on the Android platform.
 
 In this tutorial, you'll:
 
@@ -28,7 +28,7 @@ In this tutorial, you'll:
 
 ## Prerequisites
 
-- [Tutorial: Register and configure .NET MAUI mobile app in a customer tenant](tutorial-mobile-app-maui-sign-in-prepare-tenant.md)
+- [Tutorial: Register and configure .NET MAUI mobile app in an external tenant](tutorial-mobile-app-maui-sign-in-prepare-tenant.md)
 
 ## Add sign-in and sign-out code
 
@@ -38,14 +38,14 @@ The user interface (UI) of a .NET MAUI app is constructed of objects that map to
 
 The next steps will organize our code so that the `main view` is defined.
 
-1. Delete _MainPage.xaml_ and _MainPage.xaml.cs_ from your project, they're no longer needed. In the **Solution Explorer** pane, find the entry for **MainPage.xaml**, right-click it and select **Delete**.
+1. Delete *MainPage.xaml* and *MainPage.xaml.cs* from your project, they're no longer needed. In the **Solution Explorer** pane, find the entry for **MainPage.xaml**, right-click it and select **Delete**.
 1. Right-click on the **SignInMaui** project and select **Add** > **New Folder**. Name the folder **Views**.
 1. Right-click on the **Views**.
 1. Select **Add** > **New Item...**.
 1. Select **.NET MAUI** in the template list.
 1. Select the **.NET MAUI ContentPage (XAML)** template. Name the file **MainView.xaml**.
 1. Select **Add**.
-1. The _MainView.xaml_ file will open in a new document tab, displaying all of the XAML markup that represents the UI of the page. Replace the XAML markup with the following markup:
+1. The *MainView.xaml* file will open in a new document tab, displaying all of the XAML markup that represents the UI of the page. Replace the XAML markup with the following markup:
 
    :::code language="xaml" source="~/../ms-identity-ciam-dotnet-tutorial/1-Authentication/2-sign-in-maui/Views/MainView.xaml" :::
 
@@ -55,7 +55,7 @@ The next steps will organize our code so that the `main view` is defined.
 
    - `<ContentPage>` is the root object for the MainView class.
    - `<VerticalStackLayout>` is the child object of the ContentPage. This layout control arranges its children vertically, one after the other.
-   - `<Image>` displays an image, in this case it's using the _azure_active_directory.png_ that you downloaded earlier.
+   - `<Image>` displays an image, in this case it's using the *azure*active_directory.png_ that you downloaded earlier.
    - `<Label>` controls display text.
    - `<Button>` can be pressed by the user, which raises the `Clicked` event. You can run code in response to the `Clicked` event.
    - `Clicked="OnSignInClicked"` the `Clicked` event of the button is assigned to the `OnSignInClicked` event handler, which will be defined in the code-behind file. You'll create this code in the next step.
@@ -81,7 +81,7 @@ The next steps will organize the code so that `ClaimsView` page is defined. The 
 1. Select **.NET MAUI** in the template list.
 1. Select the **.NET MAUI ContentPage (XAML)** template. Name the file **ClaimsView.xaml**.
 1. Select **Add**.
-1. The _ClaimsView.xaml_ file will open in a new document tab, displaying all of the XAML markup that represents the UI of the page. Replace the XAML markup with the following markup:
+1. The *ClaimsView.xaml* file will open in a new document tab, displaying all of the XAML markup that represents the UI of the page. Replace the XAML markup with the following markup:
 
    :::code language="xaml" source="~/../ms-identity-ciam-dotnet-tutorial/1-Authentication/2-sign-in-maui/Views/ClaimsView.xaml" :::
 
@@ -99,7 +99,7 @@ The next step is to add the code to handle `ClaimsView` data.
 
    :::code language="csharp" source="~/../ms-identity-ciam-dotnet-tutorial/1-Authentication/2-sign-in-maui/Views/ClaimsView.xaml.cs" :::
 
-   The _ClaimsView.xaml.cs_ code represents the code-behind for a claim view in a .NET MAUI app. It starts by importing the necessary namespaces and defining the `ClaimsView` class, which extends `ContentPage`. The `IdTokenClaims` property is an enumerable of strings, initially set to a single string indicating no claims found.
+   The *ClaimsView.xaml.cs* code represents the code-behind for a claim view in a .NET MAUI app. It starts by importing the necessary namespaces and defining the `ClaimsView` class, which extends `ContentPage`. The `IdTokenClaims` property is an enumerable of strings, initially set to a single string indicating no claims found.
 
    The `ClaimsView` constructor sets the binding context to the current instance, initializes the view components, and calls the `SetViewDataAsync` method asynchronously. The `SetViewDataAsync` method attempts to acquire a token silently, retrieves the claims from the authentication result, and sets the `IdTokenClaims` property to display them in the `ListView` named `Claims`. If a `MsalUiRequiredException` occurs, indicating that user interaction is needed for authentication, the app navigates to the claims view.
 
@@ -125,11 +125,11 @@ The `AppShell` class defines an app's visual hierarchy, the XAML markup used in 
 
 A .NET MAUI app project contains a Platforms folder, with each child folder representing a platform that .NET MAUI can target. To provide Android application-specific behavior to supplement the default application class, you follow these steps:
 
-1. Double-click `Platforms/Android/AndroidManifest.xml` file in the **Solution Explorer** pane to open the xml editor. Update the following properties:
+1. Double-click `Platforms/Android/AndroidManifest.xml` file in the **Solution Explorer** pane to open the XML editor. Update the following properties:
 
-   - Set **Application name** to _MAUI CIAM_.
-   - Set **Package name** to _SignInMaui.Droid_.
-   - Set **Minimum Android version** to _Android 5.0 (API level 21)_.
+   - Set **Application name** to *MAUI CIAM*.
+   - Set **Package name** to *SignInMaui.Droid*.
+   - Set **Minimum Android version** to *Android 5.0 (API level 21)*.
 
 1. Double-click `Platforms/Android/MainActivity.cs` file in the **Solution Explorer** pane to open the csharp editor. Replace the content of the file with following code:
 
@@ -142,7 +142,7 @@ A .NET MAUI app project contains a Platforms folder, with each child folder repr
    - The [Activity] attribute is applied to the `MainActivity` class, specifying various settings for the Android activity.
      - `Theme = "@style/Maui.SplashTheme"` sets the splash theme for the activity.
      - `MainLauncher = true` designates this activity as the main entry point of the application.
-     - `ConfigurationChanges` specifies the configuration changes that the activity can handle, such as _screen size_, _orientation_, _UI mode_, _screen layout_, _smallest screen size_, and _density_.
+     - `ConfigurationChanges` specifies the configuration changes that the activity can handle, such as *screen size*, *orientation*, *UI mode*, *screen layout*, *smallest screen size*, and *density*.
    - `OnCreate` method is overridden to provide custom logic when the activity is being created.
      - `base.OnCreate(savedInstanceState)` calls the base implementation of the method.
      - `PlatformConfig.Instance.RedirectUri` is set to a dynamically generated value based on `PublicClientSingleton.Instance.MSALClientHelper.AzureAdConfig.ClientId`. It configures the redirect URI for the MSAL client.
@@ -184,20 +184,22 @@ To create `appsettings.json`, follow these steps:
 
 1. In the `appsettings.json`, find the placeholder:
 
-   1. `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
+   1. `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
    1. `Enter_the_Application_Id_Here` and replace it with the Application (client) ID of the app you registered earlier.
+
+[!INCLUDE [external-id-custom-domain](./includes/use-custom-domain-url-dot-net.md)]
 
 ## Run and test .NET MAUI mobile app
 
 .NET MAUI apps are designed to run on multiple operating systems and devices. You'll need to select which target you want to test and debug your app with.
 
-Set the **Debug Target** in the Visual Studio toolbar to the device you want to debug and test with. The following steps demonstrate setting the **Debug Target** to _Android_:
+Set the **Debug Target** in the Visual Studio toolbar to the device you want to debug and test with. The following steps demonstrate setting the **Debug Target** to *Android*:
 
-1. Select **Debug Target** drop-down.
+1. Select **Debug Target** dropdown list.
 1. Select **Android Emulators**.
 1. Select emulator device.
 
-Run the app by pressing _F5_ or select the _play button_ at the top of Visual Studio.
+Run the app by pressing *F5* or select the *play button* at the top of Visual Studio.
 
 1. You can now test the sample .NET MAUI Android app. After you run the app, the Android app window appears in an emulator:
 

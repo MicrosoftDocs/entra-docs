@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and DocuSign so that I can control who has access to DocuSign, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -53,8 +53,6 @@ To configure the integration of DocuSign into Microsoft Entra ID, you must add D
 1. In the **Add from the gallery** section, type **DocuSign** in the search box.
 1. Select **DocuSign** from the results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
-
 Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. You can learn more about O365 wizards [here](/microsoft-365/admin/misc/azure-ad-setup-guides?view=o365-worldwide&preserve-view=true).
 
 <a name='configure-and-test-azure-ad-sso-for-docusign'></a>
@@ -95,10 +93,10 @@ To enable Microsoft Entra SSO in the Azure portal, follow these steps:
     
     | Reply URL |
     |-------------|
-    | Production : |
+    | Production: |
     | `https://<subdomain>.docusign.com/organizations/<OrganizationID>/saml2/login/<IDPID>` |
     | `https://<subdomain>.docusign.net/SAML/` |
-    | QA Instance :|
+    | QA Instance:|
     | `https://<SUBDOMAIN>.docusign.com/organizations/saml2` |
 
     c. In the **Sign on URL** textbox, type a URL using the following pattern:
@@ -178,20 +176,22 @@ In this section, you'll grant B.Simon access to DocuSign so that this user can u
 10. Configure your DNS provider with the **TXT Token** by following these steps:
 
 	a. Navigate to your domain's DNS record management page.
+
 	b. Add a new TXT record.
-	c. Name: @ or *
+
+	c. Name: @ or *.
+
 	d. Text: paste the **TXT Token** value, which you copied from the earlier step.
-	e. TTL: Default or 1 hour / 3600 seconds
 
+	e. TTL: Default or 1 hour / 3,600 seconds.
 
-11. On the domain solutions page, select **Identity Providers**.
+11. In the left navigation, click **Identity Providers** in **ACCESS MANAGEMENT**.
   
     ![Screenshot of Identity Providers option.](media/docusign-tutorial/identity-providers.png)
 
 12. In the **Identity Providers** section, select **ADD IDENTITY PROVIDER**.
 
     ![Screenshot of Add Identity Provider option.](media/docusign-tutorial/add-identity-provider-option.png)
-
 
 13. On the **Identity Provider Settings** page, follow these steps:
 

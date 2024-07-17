@@ -18,8 +18,10 @@ ms.collection: M365-identity-device-management
 
 # Create dynamic groups in Microsoft Entra B2B collaboration
 
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
+
 ## What are dynamic groups?
-A dynamic group is a dynamic configuration of security group membership for Microsoft Entra available in the [Microsoft Entra admin center](https://entra.microsoft.com). Administrators can set rules to populate groups that are created in Microsoft Entra ID based on user attributes (such as [userType](user-properties.md), department, or country/region). Members can be automatically added to or removed from a security group based on their attributes. These groups can provide access to applications or cloud resources (SharePoint sites, documents) and to assign licenses to members. Learn more about [dedicated groups in Microsoft Entra ID](~/fundamentals/how-to-manage-groups.md).
+A dynamic group is a dynamic configuration of security group membership for Microsoft Entra available in the [Microsoft Entra admin center](https://entra.microsoft.com). Administrators can set rules to populate groups that are created in Microsoft Entra ID based on user attributes (such as [userType](user-properties.md), department, or country/region). Members can be automatically added to or removed from a security group based on their attributes. These groups can provide access to applications or cloud resources (SharePoint sites, documents) and to assign licenses to members. Learn more about [dedicated groups in Microsoft Entra ID](~/fundamentals/how-to-manage-groups.yml).
 
 ## Prerequisites
 [Microsoft Entra ID P1 or P2 licensing](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing) is required to create and use dynamic groups. Learn more in [Create attribute-based rules for dynamic group membership in Microsoft Entra ID](~/identity/users/groups-dynamic-membership.md).

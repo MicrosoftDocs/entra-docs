@@ -12,30 +12,32 @@ ms.date: 03/26/2024
 ms.author: cmulligan
 ms.custom: it-pro
 
-#Customer intent: As a dev, devops, or IT admin, I want to personalize the customer tenant.
+#Customer intent: As a dev, devops, or IT admin, I want to personalize the external tenant.
 ---
-# Quickstart: Get started with our guide to run a sample app and sign in your users (preview)
+# Quickstart: Get started with our guide to run a sample app and sign in your users 
 
-In this quickstart, we'll guide you through customizing the look and feel of your apps in the  customer tenant, setting up a user and configuring a sample app in only a few minutes. With these built-in customer configuration features, Microsoft Entra ID for customers can serve as the identity provider and access management service for your customers.
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
+In this quickstart, we'll guide you through customizing the look and feel of your apps in the external tenant, setting up a user and configuring a sample app in only a few minutes. With these built-in external configuration features, Microsoft Entra External ID can serve as the identity provider and access management service for your customers.
 
 ## Prerequisites
 
-- External ID for customers tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a> or [create a tenant with customer configurations in the Microsoft Entra admin center](quickstart-tenant-setup.md). 
+- An external tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a> or [create a tenant with external configurations in the Microsoft Entra admin center](quickstart-tenant-setup.md). 
 
 ## Customize your sign-in experience
 
-When you set up a customer tenant free trial, the guide will start automatically as part of the configuration of your new customer tenant. If you created your customer tenant with an Azure subscription, you can start the guide manually by following the steps below.
+When you set up an external tenant free trial, the guide will start automatically as part of the configuration of your new external tenant. If you created your external tenant with an Azure subscription, you can start the guide manually by following the steps below.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com). 
-1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your customer tenant from the **Directories + subscriptions** menu.
+1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your external tenant from the **Directories + subscriptions** menu.
 1. Browse to **Home** > **Tenant overview**.
 1. On the **Get started** tab, select **Start the guide**.
 
-    :::image type="content" source="media/how-to-create-customer-tenant-portal/guide-link.png" alt-text="Screenshot that shows how to start the guide.":::
+    :::image type="content" source="media/how-to-create-external-tenant-portal/guide-link.png" alt-text="Screenshot that shows how to start the guide.":::
 
-You can customize your customer's sign-in and sign-up experience in the External ID for customers tenant. Follow the guide that will help you set up the tenant in three easy steps. First you must specify how would you like your customer to sign in. At this step you can choose between two options: **Email and password** or **Email and one-time passcode**. You can configure social accounts later, which would allow your customers to sign in using their [Google](how-to-google-federation-customers.md) or [Facebook](how-to-facebook-federation-customers.md) account. You can also [define custom attributes](how-to-define-custom-attributes.md) to collect from the user during sign-up.
+You can customize your customer's sign-in and sign-up experience in the external tenant. Follow the guide that will help you set up the tenant in three easy steps. First you must specify how would you like your customer to sign in. At this step you can choose between two options: **Email and password** or **Email and one-time passcode**. You can configure social accounts later, which would allow your customers to sign in using their [Google](how-to-google-federation-customers.md) or [Facebook](how-to-facebook-federation-customers.md) account. You can also [define custom attributes](how-to-define-custom-attributes.md) to collect from the user during sign-up.
 
-If you prefer, you can add your company logo, change the background color or adjust the sign-in layout. These optional changes will apply to the look and feel of all your apps in this tenant with customer configurations. After you have the created tenant, additional branding options are available. You can [customize the default branding](how-to-customize-branding-customers.md) and [add languages](how-to-customize-languages-customers.md). Once you're finished with the customization, select **Continue**.
+If you prefer, you can add your company logo, change the background color or adjust the sign-in layout. These optional changes will apply to the look and feel of all your apps in this tenant with external configurations. After you have the created tenant, additional branding options are available. You can [customize the default branding](how-to-customize-branding-customers.md) and [add languages](how-to-customize-languages-customers.md). Once you're finished with the customization, select **Continue**.
 
 :::image type="content" source="media/quickstart-trial-setup/customize-branding-in-trial-wizard.png" alt-text="Screenshot of customizing the sign-in experience in the guide.":::
 
@@ -74,10 +76,10 @@ Follow the steps below, to download and run the sample app.
 
 <a name='explore-azure-ad-for-customers'></a>
 
-## Explore Microsoft Entra ID for customers
+## Explore Microsoft Entra External ID
 
 Explore the features set up by the get started guide in the detailed article on the [get started guide features](/entra/external-id/customers/concept-guide-explained). You can always come back to the [admin center](https://entra.microsoft.com/) to customize your tenant and try the full range of configuration options for your tenant.
-For the latest developer content and resources, see the [External ID for customers developer center](https://aka.ms/ciam/dev).
+For the latest developer content and resources, see the [External ID developer center](https://aka.ms/ciam/dev).
 
 ## Related content
  - [Register an app in CIAM](how-to-register-ciam-app.md) 

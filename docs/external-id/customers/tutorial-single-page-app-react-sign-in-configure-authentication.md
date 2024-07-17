@@ -1,7 +1,7 @@
 ---
 title: "Tutorial: Handle authentication flows in a React SPA"
-description: Learn how to configure authentication for a React single-page app (SPA) with your Microsoft Entra ID for customers tenant.
- 
+description: Learn how to configure authentication for a React single-page app (SPA) with your external tenant.
+
 author: garrodonnell
 manager: CelesteDG
 
@@ -11,25 +11,25 @@ ms.subservice: customers
 ms.topic: tutorial
 ms.date: 06/09/2023
 
-#Customer intent: As a developer, I want to learn how to configure a React single-page app (SPA) to sign in and sign out users with my Microsoft Entra ID for customers tenant.
+#Customer intent: As a developer, I want to learn how to configure a React single-page app (SPA) to sign in and sign out users with my external tenant.
 ---
 
 # Tutorial: Handle authentication flows in a React SPA
 
-This tutorial is part 3 of a series that demonstrates building a React single-page application (SPA) and preparing it for authentication. In [part 2 of this series](./tutorial-single-page-app-react-sign-in-prepare-app.md), you created a React SPA and prepared it for authentication with your Microsoft Entra ID for customers tenant. In this tutorial, you'll learn how to handle authentication flows in your app by adding Microsoft Authentication Library (MSAL) components.
+This tutorial is part 3 of a series that demonstrates building a React single-page application (SPA) and preparing it for authentication. In [Part 2 of this series](./tutorial-single-page-app-react-sign-in-prepare-app.md), you created a React SPA and prepared it for authentication with your external tenant. In this tutorial, you'll learn how to handle authentication flows in your app by adding Microsoft Authentication Library (MSAL) components.
 
 In this tutorial;
 
 > [!div class="checklist"]
 >
-> * Add a *DataDisplay* component to the app
-> * Add a *ProfileContent* component to the app
-> * Add a *PageLayout* component to the app
-> * Add a *claimUtils* file to the app
+> - Add a *DataDisplay* component to the app
+> - Add a *ProfileContent* component to the app
+> - Add a *PageLayout* component to the app
+> - Add a *claimUtils* file to the app
 
 ## Prerequisites
 
-* [Tutorial: Prepare your customer tenant to authenticate users in a React SPA](./tutorial-single-page-app-react-sign-in-prepare-tenant.md).
+- [Tutorial: Prepare your external tenant to authenticate users in a React SPA](./tutorial-single-page-app-react-sign-in-prepare-tenant.md).
 
 ## Add components to the application
 
@@ -42,12 +42,12 @@ Functional components are the building blocks of React apps, and are used to bui
     ```jsx
     import { Table } from 'react-bootstrap';
     import { createClaimsTable } from '../utils/claimUtils';
-    
+
     import '../styles/App.css';
-    
+
     export const IdTokenData = (props) => {
         const tokenClaims = createClaimsTable(props.idTokenClaims);
-    
+
         const tableRow = Object.keys(tokenClaims).map((key, index) => {
             return (
                 <tr key={key}>
@@ -96,18 +96,18 @@ Functional components are the building blocks of React apps, and are used to bui
     import { AuthenticatedTemplate, UnauthenticatedTemplate, useMsal } from '@azure/msal-react';
     import { Navbar, Button } from 'react-bootstrap';
     import { loginRequest } from '../authConfig';
-    
+
     export const NavigationBar = () => {
         const { instance } = useMsal();
-        
+
         const handleLoginRedirect = () => {
             instance.loginRedirect(loginRequest).catch((error) => console.log(error));
         };
-    
+
         const handleLogoutRedirect = () => {
             instance.logoutRedirect().catch((error) => console.log(error));
         };
-    
+
         /**
          * Most applications will need to conditionally render certain components based on whether a user is signed in or not.
          * msal-react provides 2 easy ways to do this. AuthenticatedTemplate and UnauthenticatedTemplate components will
@@ -145,9 +145,9 @@ Functional components are the building blocks of React apps, and are used to bui
 
     ```jsx
     import { AuthenticatedTemplate } from '@azure/msal-react';
-    
+
     import { NavigationBar } from './NavigationBar.jsx';
-    
+
     export const PageLayout = (props) => {
         /**
          * Most applications will need to conditionally render certain components based on whether a user is signed in or not.
@@ -190,7 +190,7 @@ Functional components are the building blocks of React apps, and are used to bui
 
 1. Open *src/utils/claimUtils.js* and add the following code snippet:
 
-    ```JavaScript
+    ```javascript
     /**
      * Populate claims table with appropriate description
      * @param {Object} claims ID token claims
@@ -199,7 +199,7 @@ Functional components are the building blocks of React apps, and are used to bui
     export const createClaimsTable = (claims) => {
         let claimsObj = {};
         let index = 0;
-    
+
         Object.keys(claims).forEach((key) => {
             if (typeof claims[key] !== 'string' && typeof claims[key] !== 'number') return;
             switch (key) {
@@ -287,7 +287,7 @@ Functional components are the building blocks of React apps, and are used to bui
                     populateClaim(
                         key,
                         claims[key],
-                        'The oid (user’s object id) is the only claim that should be used to uniquely identify a user in an Azure AD tenant. The token might have one or more of the following claim, that might seem like a unique identifier, but is not and should not be used as such.',
+                        "The oid (user's object id) is the only claim that should be used to uniquely identify a user in an Azure AD tenant. The token might have one or more of the following claim, that might seem like a unique identifier, but is not and should not be used as such.",
                         index,
                         claimsObj
                     );
@@ -327,7 +327,7 @@ Functional components are the building blocks of React apps, and are used to bui
                     populateClaim(
                         key,
                         claims[key],
-                        'Available as an optional claim, it lets you know what the type of user (homed, guest) is. For example, for an individual’s access to their data you might not care for this claim, but you would use this along with tenant id (tid) to control access to say a company-wide dashboard to just employees (homed users) and not contractors (guest users).',
+                        "Available as an optional claim, it lets you know what the type of user (homed, guest) is. For example, for an individual's access to their data you might not care for this claim, but you would use this along with tenant id (tid) to control access to say a company-wide dashboard to just employees (homed users) and not contractors (guest users).",
                         index,
                         claimsObj
                     );
@@ -368,10 +368,10 @@ Functional components are the building blocks of React apps, and are used to bui
                     index++;
             }
         });
-    
+
         return claimsObj;
     };
-    
+
     /**
      * Populates claim, description, and value into an claimsObject
      * @param {String} claim
@@ -387,7 +387,7 @@ Functional components are the building blocks of React apps, and are used to bui
         claimsArray[2] = description;
         claimsObject[index] = claimsArray;
     };
-    
+
     /**
      * Transforms Unix timestamp to date and returns a string value of that date
      * @param {String} date Unix timestamp

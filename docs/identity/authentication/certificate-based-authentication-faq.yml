@@ -77,10 +77,10 @@ sections:
       - question: |
           How do I validate the Certificate Authority configuration?
         answer: |
-          It's important to ensure that the Certificate Authority configuration in the trust store result is Microsoft Entra ID ability to both validate the certificate authority trust chain and successfully acquire the certificate 
+          It's important to ensure that the Certificate Authority configuration in the trust store result is Microsoft Entra ability to both validate the certificate authority trust chain and successfully acquire the certificate 
           revocation list (CRL) from the configured certificate authority CRL distribution point (CDP). To assist with this task, it's recommended to install the 
           [MSIdentity Tools](https://aka.ms/msid) PowerShell module and run [Test-MsIdCBATrustStoreConfiguration](https://github.com/AzureAD/MSIdentityTools/wiki/Test-MsIdCBATrustStoreConfiguration). 
-          This PowerShell cmdlet will review the Entra tenant certificate authority configuration and surface errors/warnings for common mis-configuration issues. 
+          This PowerShell cmdlet will review the Microsoft Entra tenant certificate authority configuration and surface errors/warnings for common mis-configuration issues. 
           
       - question: |
           How do I turn certificate revocation checking on or off for a particular CA?

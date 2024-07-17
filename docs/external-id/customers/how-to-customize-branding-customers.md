@@ -8,16 +8,18 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: how-to
-ms.date: 03/22/2024
+ms.date: 04/10/2024
 ms.author: cmulligan
 ms.custom: it-pro
 
-#Customer intent: As an it admin, I want to learn about the options for customizing the look and feel of the customer sign-in and sing-up experience.
+#Customer intent: As an it admin, I want to learn about the options for customizing the look and feel of the customer sign-in and sign-up experience.
 ---
 
-# Customize the neutral branding in your customer tenant (preview)
+# Customize the neutral branding in your external tenant 
 
-After creating a new customer tenant, you can customize the end-user experience. Create a custom look and feel for users signing in to your apps by configuring **Company branding** settings for your tenant. With these settings, you can add your own background images, colors, company logos, and text to customize the sign-in experiences across your apps.  
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
+After creating a new external tenant, you can customize the end-user experience. Create a custom look and feel for users signing in to your apps by configuring **Company branding** settings for your tenant. With these settings, you can add your own background images, colors, company logos, and text to customize the sign-in experiences across your apps.  
 You can also create user flows programmatically using the Company Branding Graph API.
 
 > [!TIP]
@@ -27,14 +29,14 @@ You can also create user flows programmatically using the Company Branding Graph
 
 ## Prerequisites
 
-- If you haven't already created your own Microsoft Entra customer tenant, create one now.
+- If you haven't already created your own Microsoft Entra external tenant, create one now.
 - [Register an application](how-to-register-ciam-app.md).  
 - [Create a user flow](how-to-user-flow-sign-up-sign-in-customers.md)
 - Review the file size requirements for each image you want to add. You may need to use a photo editor to create the right-sized images. The preferred image type for all images is PNG, but JPG is accepted.
 
-[!INCLUDE [preview-alert](../customers/includes/preview-alert/preview-alert-ciam.md)]
 
-<a name='comparing-the-default-sign-in-experiences-between-the-customer-tenant-and-the-azure-ad-tenant'></a>
+
+<a name='comparing-the-default-sign-in-experiences-between-the-external-tenant-and-the-azure-ad-tenant'></a>
 
 ## Branding elements
 
@@ -43,7 +45,7 @@ By default, Microsoft offers a neutral branding for your tenant that can be pers
 You can customize this neutral branding with a custom background image or color, favicon, layout, header, and footer. You can also customize the sign-in form and add custom text to different instances or upload [custom CSS](~/fundamentals/reference-company-branding-css-template.md). 
 The following image displays the neutral default branding of the tenant. You can find the numbered branding elements and their corresponding descriptions after the image.
 
-   :::image type="content" source="media/how-to-customize-branding-customers/ciam-neutral-branding.png" alt-text="Screenshot of the CIAM neutral branding." lightbox="media/how-to-customize-branding-customers/ciam-neutral-branding.png":::
+   :::image type="content" source="media/how-to-customize-branding-customers/ciam-neutral-branding.png" alt-text="Screenshot of the neutral branding." lightbox="media/how-to-customize-branding-customers/ciam-neutral-branding.png":::
 
 1. Neutral background.
 2. Favicon.
@@ -53,10 +55,10 @@ The following image displays the neutral default branding of the tenant. You can
 
 ## How to customize the default sign-in experience
 
-Before you customize any settings, the neutral default branding will appear in your sign-in and sign-up pages. You can customize this default experience with a custom background image or color, favicon, layout, header, and footer. You can also upload a [custom CSS](~/fundamentals/reference-company-branding-css-template.md). 
+Before you customize any settings, the neutral default branding appears in your sign-in, sign-up and sign-out pages. You can customize this default experience with a custom background image or color, favicon, layout, header, and footer. You can also upload a [custom CSS](~/fundamentals/reference-company-branding-css-template.md). 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Organizational Branding Administrator](~/identity/role-based-access-control/permissions-reference.md#organizational-branding-administrator).
-1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the customer tenant you created earlier from the **Directories + subscriptions** menu.
+1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the external tenant you created earlier from the **Directories + subscriptions** menu.
 1. Browse to **Company Branding** either by using the search bar or by navigating to **Home** > **Tenant overview** > **Customize branding**.
 
    :::image type="content" source="media/how-to-customize-branding-customers/browse-to-company-branding.png" alt-text="Screenshot of the company branding option.":::
@@ -71,7 +73,7 @@ Before you customize any settings, the neutral default branding will appear in y
 
    - **Favicon** – The icon that displays in the web browser tab.
 
-   - **Background image** – The large image that displays on the sign-in page. If you upload an image, it will scale and crop to fill the browser window.
+   - **Background image** – The large image that displays on the sign-in page. If you upload an image, it scales and crop to fill the browser window.
 
    - **Page background color** – The color that replaces the background image whenever the image can’t be loaded, for example due to connection latency.
 
@@ -103,9 +105,9 @@ Before you customize any settings, the neutral default branding will appear in y
 
 1. On the **Footer** tab, you can customize the URLs and link text for the privacy and terms of use hyperlinks that appear in the footer of the sign-in page.  
 
-   - **Privacy & Cookies** – Select the checkbox next to Privacy & Cookies to display this hyperlink in the footer. The Microsoft default privacy link will display unless you enter your own hyperlink Display text and URL. 
+   - **Privacy & Cookies** – Select the checkbox next to Privacy & Cookies to display this hyperlink in the footer. The Microsoft default privacy link displays unless you enter your own hyperlink Display text and URL. 
 
-   - **Terms of Use** – Select the checkbox next to Terms of Use to display this hyperlink in the footer. The Microsoft terms of use link will display unless you enter your own hyperlink Display text and URL. 
+   - **Terms of Use** – Select the checkbox next to Terms of Use to display this hyperlink in the footer. The Microsoft terms of use link displays unless you enter your own hyperlink Display text and URL. 
 
    :::image type="content" source="media/how-to-customize-branding-customers/company-branding-footer-tab.png" alt-text="Screenshot of the company branding footer tab." lightbox="media/how-to-customize-branding-customers/company-branding-footer-tab.png":::
 
@@ -129,7 +131,7 @@ Before you customize any settings, the neutral default branding will appear in y
 
    - **Sign-in page text** – Appears at the bottom of the sign-in and sign-up pages. Guidelines:
 
-      - 1024 characters maximum
+      - 1,024 characters maximum
       - Don't include sensitive information
       - Use this syntax to format text:  
          - Hyperlink: `[text](link)`
@@ -143,8 +145,8 @@ Before you customize any settings, the neutral default branding will appear in y
 
       - **Show self-service password reset** – Select this checkbox to display the self-service password link. 
       - **Common URL** – Enter a password reset URL to use in place of the default Microsoft link. 
-      - **Account collection display text** – Enter link text to display in place of the Microsoft default text “Can’t access your account” text. 
-      - **Password collection display text** – Enter link text to display in place of the Microsoft default “Forgot password” text. 
+      - **Account collection display text** – Enter link text to display in place of the Microsoft default text "Can’t access your account" text. 
+      - **Password collection display text** – Enter link text to display in place of the Microsoft default "Forgot password" text. 
  
       :::image type="content" source="media/how-to-customize-branding-customers/company-branding-self-service-password-reset.png" alt-text="Screenshot of the company branding Self-service password reset. " lightbox="media/how-to-customize-branding-customers/company-branding-self-service-password-reset.png":::
 
@@ -168,7 +170,11 @@ For your tenant, you might have different requirements for the information you w
 1. Select **Next: Review** to review all your modifications. Then select **Save** if you'd like to save your changes or **Previous** if you want to continue customizing.
 
 > [!IMPORTANT] 
-> In the customer tenant, we have two options to add custom text to the sign-up and sign-in experience.  The function is available under each user flow during language customization and also under Company branding. Although we have two ways to customize strings (via Company Branding and via User Flows), both ways modify the same JSON file. The most recent change made either via User flows or via Company branding  will always override the previous one.
+> In the external tenant, we have two options to add custom text to the sign-up and sign-in experience.  The function is available under each user flow during language customization and also under Company branding. Although we have two ways to customize strings (via Company Branding and via User Flows), both ways modify the same JSON file. The most recent change made either via User flows or via Company branding  will always override the previous one.
+
+## Customize the sign-out experience
+
+You don’t need to customize the sign-out experience for your external tenant. If you’ve customized your branding for the sign-in experience, the sign-out experience will automatically match the sign-in experience. If you haven’t customized the sign-in experience, the sign-out experience will match the default neutral branding in your external tenant.
 
 ## How to customize the tenant name
 
@@ -177,7 +183,7 @@ You can customize your tenant name in the Microsoft Entra admin center to replac
 :::image type="content" source="media/how-to-customize-branding-customers/tenant-name.png" alt-text="Screenshot of the tenant name." lightbox="media/how-to-customize-branding-customers/tenant-name.png":::
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) as at least a [Organizational Branding Administrator](~/identity/role-based-access-control/permissions-reference.md#organizational-branding-administrator).
-1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the customer tenant you created earlier from the **Directories + subscriptions** menu.
+1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the external tenant you created earlier from the **Directories + subscriptions** menu.
 1. In the search bar, type and select **Tenant properties**.
 1. Edit the **Name** field. 
 
@@ -187,9 +193,9 @@ You can customize your tenant name in the Microsoft Entra admin center to replac
 
 ## Customize your branding with the Microsoft Graph API
 
-You can use the Microsoft Graph API to customize a few items programmatically. For example, you can use the API to upload a custom background image, change the color of the sign-in page, and add a custom logo.For more information, see the [update default branding](/graph/api/organizationalbranding-update) article. 
+You can use the Microsoft Graph API to customize a few items programmatically. For example, you can use the API to upload a custom background image, change the color of the sign-in page, and add a custom logo. For more information, see the [update default branding](/graph/api/organizationalbranding-update) article. 
 
 ## Next steps
 
-In this article we learned how to customize the look and feel of the customer sign-in and sing-up experience. To learn more about customizing the language of the tenant, see the [Language customization](how-to-customize-languages-customers.md) article.
+In this article we learned how to customize the look and feel of the customer sign-in and sign-up experience. To learn more about customizing the language of the tenant, see the [Language customization](how-to-customize-languages-customers.md) article.
 For an understanding of the differences in workforce tenant branding, see the article [How to customize branding for your workforce](~/fundamentals/how-to-customize-branding.md).

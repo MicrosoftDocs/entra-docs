@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 01/19/2024
+ms.date: 03/25/2024
 ms.author: jeedes
 
 
@@ -92,7 +92,7 @@ Follow these steps to enable Microsoft Entra SSO.
 	> If the **Identifier** and **Reply URL** values are not getting auto populated, then fill in the values manually according to your requirement.
 
     > [!Note]
-    > When changing identity provider in AWS (i.e. from AD to external provider such as Microsoft Entra ID) the AWS metadata will change and need to be reuploaded to Azure for SSO to function correctly.
+    > When changing identity provider in AWS (that is, from AD to external provider such as Microsoft Entra ID) the AWS metadata will change and need to be reuploaded to Azure for SSO to function correctly.
 
 1. If you don't have **Service Provider metadata file**, perform the following steps on the **Basic SAML Configuration** section, if you wish to configure the application in **IDP** initiated mode, perform the following steps:
 
@@ -216,15 +216,11 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
     > Make sure the username and email address entered in AWS IAM Identity Center  matches the user’s Microsoft Entra sign-in name. This will you help avoid any authentication problems.
 
 5. Choose **Add user**.
-6. Next, you will assign the user to your AWS account. To do so, in the left navigation pane of the
-AWS IAM Identity Center console, choose **AWS accounts**.
-7. On the AWS Accounts page, select the AWS organization tab, check the box next to the AWS
-account you want to assign to the user. Then choose **Assign users**.
+6. Next, you will assign the user to your AWS account. To do so, in the left navigation pane of the AWS IAM Identity Center console, choose **AWS accounts**.
+7. On the AWS Accounts page, select the AWS organization tab, check the box next to the AWS account you want to assign to the user. Then choose **Assign users**.
 8. On the Assign Users page, find and check the box next to the user B.Simon. Then choose **Next:
 Permission sets**.
-9. Under the select permission sets section, check the box next to the permission set you want to
-assign to the user B.Simon. If you don’t have an existing permission set, choose **Create new
-permission set**.
+9. Under the select permission sets section, check the box next to the permission set you want to assign to the user B.Simon. If you don’t have an existing permission set, choose **Create new permission set**.
 
     > [!NOTE]
     > Permission sets define the level of access that users and groups have to an AWS account. To learn more

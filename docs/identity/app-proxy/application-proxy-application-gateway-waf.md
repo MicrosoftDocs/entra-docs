@@ -59,7 +59,7 @@ A backend setting determines how requests reach the backend pool servers.
  
 Both connector VMs, the Application Gateway, and the backend servers are deployed in the same virtual network in Azure. The setup also applies to applications and connectors deployed on-premises. 
 
-For a detailed guide on how to add your application to application proxy in Microsoft Entra ID, see [Tutorial: Add an on-premises application for remote access through application proxy in Microsoft Entra ID][appproxy-add-app]. For more information about performance considerations concerning the application proxy connectors, see [Optimize traffic flow with Microsoft Entra application proxy][appproxy-optimize]. 
+For a detailed guide on how to add your application to application proxy in Microsoft Entra ID, see [Tutorial: Add an on-premises application for remote access through application proxy in Microsoft Entra ID][appproxy-add-app]. For more information about performance considerations concerning the private network connectors, see [Optimize traffic flow with Microsoft Entra application proxy][appproxy-optimize]. 
  
 ![Screenshot of application proxy configuration.](./media/application-proxy-waf/application-proxy-configuration.png)
 

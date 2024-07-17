@@ -2,13 +2,13 @@
 title: Plan an automatic user provisioning deployment for Microsoft Entra ID
 description: Guidance for planning and executing automatic user provisioning in Microsoft Entra ID
 
-author: kenwith
+author: jenniferf-skc
 manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: conceptual
-ms.date: 09/15/2023
-ms.author: kenwith
+ms.date: 05/06/2024
+ms.author: jfields
 ms.reviewer: arvinh
 ---
 
@@ -19,6 +19,8 @@ Many organizations rely on software as a service (SaaS) applications such as Ser
 Microsoft Entra automatic user provisioning simplifies this process by securely automating the creation, maintenance, and removal of user identities in SaaS applications based on business rules. This automation allows you to effectively scale your identity management systems on both cloud-only and hybrid environments as you expand their dependency on cloud-based solutions.
 
 See [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md) to better understand the functionality.
+
+In addition to provisioning into SaaS applications, Microsoft Entra automatic user provisioning also supports provisioning into many on-premises and private cloud applications.  For more information, see [Microsoft Entra on-premises application identity provisioning architecture](on-premises-application-provisioning-architecture.md).
 
 ## Learn
 
@@ -32,9 +34,9 @@ The key benefits of enabling automatic user provisioning are:
 
 * **Manage risk**. You can increase security by automating changes based on employee status or group memberships that define roles and/or access.
 
-* **Address compliance and governance**. Microsoft Entra ID supports native audit logs for every user provisioning request. Requests are executed in both the source and target systems. Audit logs let you track who has access to applications from a single screen.
+* **Address compliance and governance**. Microsoft Entra ID supports native provisioning logs for every user provisioning request. Requests are executed in both the source and target systems. Provisioning logs let you track who has access to applications from a single screen.
 
-* **Reduce cost**. Automatic user provisioning reduces costs by avoiding inefficiencies and human error associated with manual provisioning. It reduces the need for custom-developed user provisioning solutions, scripts, and audit logs.
+* **Reduce cost**. Automatic user provisioning reduces costs by avoiding inefficiencies and human error associated with manual provisioning. It reduces the need for custom-developed user provisioning solutions, scripts, and provisioning logs.
 
 ### Licensing
 
@@ -238,7 +240,7 @@ If the automatic user provisioning implementation fails to work as desired in th
 
 1. Review the [provisioning logs](~/identity/app-provisioning/check-status-user-account-provisioning.md) to determine what incorrect operations occurred on the affected users and/or groups.
 
-1. Use provisioning audit logs to determine the last known good state of the users and/or groups affected. Also review the source systems (Microsoft Entra ID or AD).
+1. Use provisioning logs to determine the last known good state of the users and/or groups affected. Also review the source systems (Microsoft Entra ID or AD).
 
 1. Work with the application owner to update the users and/or groups affected directly in the application using the last known good state values.
 
@@ -280,9 +282,9 @@ To understand how long the provisioning cycles take and monitor the progress of 
 
 ### Gain insights from reports
 
-Microsoft Entra ID can provide more insights into your organization’s user provisioning usage and operational health through audit logs and reports. To learn more about user insights, see [Check the status of user provisioning](application-provisioning-when-will-provisioning-finish-specific-user.md).
+Microsoft Entra ID can provide more insights into your organization’s user provisioning usage and operational health through provisioning logs and reports. To learn more about user insights, see [Check the status of user provisioning](application-provisioning-when-will-provisioning-finish-specific-user.md).
 
-Admins should check the  provisioning summary report to monitor the operational health of the provisioning job. All activities performed by the provisioning service are recorded in the Microsoft Entra audit logs. See [Tutorial: Reporting on automatic user account provisioning](~/identity/app-provisioning/check-status-user-account-provisioning.md).
+Admins should check the  provisioning summary report to monitor the operational health of the provisioning job. All activities performed by the provisioning service are recorded in the Microsoft Entra provisioning logs. See [Tutorial: Reporting on automatic user account provisioning](~/identity/app-provisioning/check-status-user-account-provisioning.md).
 
 We recommend that you assume ownership of and consume these reports on a cadence that meets your organization’s requirements. Microsoft Entra ID retains most audit data for 30 days.
 

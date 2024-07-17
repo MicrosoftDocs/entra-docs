@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Verkada Command so that I can control who has access to Verkada Command, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -101,7 +101,7 @@ Follow these steps to enable Microsoft Entra SSO.
 	> [!NOTE]
     > The Sign-on URL value is not real. Update this value with the actual Sign-on URL. Contact [Verkada Command Client support team](mailto:support@verkada.com) to get this value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-1. Verkada Command application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes, where as **nameidentifier** is mapped with **user.userprincipalname**. Verkada Command application expects **nameidentifier** to be mapped with **user.mail**, so you need to edit the attribute mapping by clicking on **Edit** icon and change the attribute mapping.
+1. Verkada Command application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes, whereas **nameidentifier** is mapped with **user.userprincipalname**. Verkada Command application expects **nameidentifier** to be mapped with **user.mail**, so you need to edit the attribute mapping by clicking on **Edit** icon and change the attribute mapping.
 
 	![Screenshot shows Set additional U R Ls where you can enter a Sign on U R L.](common/default-attributes.png)
 

@@ -324,7 +324,7 @@ app = ConfidentialClientApplicationBuilder.Create(config.ClientId)
            .Build();
 ```
 
-The `Authority` is a concatenation of the cloud instance and the tenant ID, for example `https://login.microsoftonline.com/contoso.onmicrosoft.com` or `https://login.microsoftonline.com/eb1ed152-0000-0000-0000-32401f3f9abd`. In the *appsettings.json* file shown in the [Configuration file](#configuration-file) section, instance and tenant are represented by the `Instance` and `Tenant` values, respectively.
+The `Authority` is a concatenation of the cloud instance and the tenant ID, for example `https://login.microsoftonline.com/contoso.onmicrosoft.com` or `https://login.microsoftonline.com/aaaabbbb-0000-cccc-1111-dddd2222eeee`. In the *appsettings.json* file shown in the [Configuration file](#configuration-file) section, instance and tenant are represented by the `Instance` and `Tenant` values, respectively.
 
 In the code sample the previous snippet was taken from, `Authority` is a property on the  [AuthenticationConfig](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/blob/ffc4a9f5d9bdba5303e98a1af34232b434075ac7/1-Call-MSGraph/daemon-console/AuthenticationConfig.cs#L61-L70) class, and is defined as such:
 

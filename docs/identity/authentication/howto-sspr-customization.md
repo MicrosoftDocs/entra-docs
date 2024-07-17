@@ -4,7 +4,6 @@ description: Learn how to customize user display and experience options for Micr
 
 ms.service: entra-id
 ms.subservice: authentication
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: how-to
 ms.date: 09/14/2023
 
@@ -39,9 +38,9 @@ To help users reach out for assistance with self-service password reset, a "Cont
 
 The default contact email is sent to recipients in the following order:
 
-1. If the *helpdesk administrator* role or *password administrator* role is assigned, administrators with these roles are notified.
-1. If no helpdesk administrator or password administrator is assigned, then administrators with the *user administrator* role are notified.
-1. If none of the previous roles are assigned, then the *global administrators* are notified.
+1. If the Helpdesk Administrator role or Password Administrator role is assigned, administrators with these roles are notified.
+1. If no Helpdesk Administrator or Password Administrator is assigned, then administrators with the User Administrator role are notified.
+1. If none of the previous roles are assigned, then the Global Administrators are notified.
 
 In all cases, a maximum of 100 recipients are notified.
 

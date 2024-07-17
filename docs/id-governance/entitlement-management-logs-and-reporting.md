@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
-ms.date: 05/31/2023
+ms.date: 07/15/2024
 ms.author: owinfrey
 ms.custom: devx-track-azurepowershell
 #Customer intent: As an administrator, I want to extend data retention in entitlement management past the default period by using Azure Monitor.
@@ -26,23 +26,21 @@ Before you use the Azure Monitor workbooks, you must configure Microsoft Entra I
 
 Archiving Microsoft Entra audit logs requires you to have Azure Monitor in an Azure subscription. You can read more about the prerequisites and estimated costs of using Azure Monitor in [Microsoft Entra activity logs in Azure Monitor](~/identity/monitoring-health/concept-log-monitoring-integration-options-considerations.md).
 
-**Prerequisite role**: Global Administrator
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a Global Administrator. Make sure you have access to the resource group containing the Azure Monitor workspace.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator). Make sure you have access to the resource group containing the Azure Monitor workspace.
  
 1. Browse to **Identity** > **Monitoring & health** > **Diagnostic settings**.
 
 1. Check if there's already a setting to send the audit logs to that workspace.
 
-1. If there isn't already a setting, select **Add diagnostic setting**. Use the instructions in [Integrate Microsoft Entra logs with Azure Monitor logs](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.md) to send the Microsoft Entra audit log to the Azure Monitor workspace.
+1. If there isn't already a setting, select **Add diagnostic setting**. Use the instructions in [Integrate Microsoft Entra logs with Azure Monitor logs](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.yml) to send the Microsoft Entra audit log to the Azure Monitor workspace.
 
-    ![Diagnostics settings pane](./media/entitlement-management-logs-and-reporting/audit-log-diagnostics-settings.png)
+    :::image type="content" source="./media/entitlement-management-logs-and-reporting/audit-log-diagnostics-settings.png" alt-text="Diagnostics settings pane.":::
 
 1. After the log is sent to Azure Monitor, select **Log Analytics workspaces**, and select the workspace that contains the Microsoft Entra audit logs.
 
 1. Select **Usage and estimated costs** and select **Data Retention**. Change the slider to the number of days you want to keep the data to meet your auditing requirements.
 
-    ![Log Analytics workspaces pane](./media/entitlement-management-logs-and-reporting/log-analytics-workspaces.png)
+    :::image type="content" source="./media/entitlement-management-logs-and-reporting/log-analytics-workspaces.png" alt-text="Log Analytics workspaces pane.":::
 
 1. Later, to see the range of dates held in your workspace, you can use the *Archived Log Date Range* workbook:  
     
@@ -54,11 +52,11 @@ Archiving Microsoft Entra audit logs requires you to have Azure Monitor in an Az
 
 To view events for an access package, you must have access to the underlying Azure monitor workspace (see [Manage access to log data and workspaces in Azure Monitor](/azure/azure-monitor/logs/manage-access#azure-rbac) for information) and in one of the following roles: 
 
-- Global administrator  
-- Security administrator  
-- Security reader  
-- Reports reader  
-- Application administrator  
+- Global Administrator  
+- Security Administrator  
+- Security Reader  
+- Reports Reader  
+- Application Administrator  
 
 Use the following procedure to view events: 
 
@@ -68,15 +66,15 @@ Use the following procedure to view events:
 
 1. Select the workbook named *Access Package Activity*. 
 
-1. In that workbook, select a time range (change to **All** if not sure), and select an access package ID from the drop-down list of all access packages that had activity during that time range. The events related to the access package that occurred during the selected time range will be displayed.
+1. In that workbook, select a time range (change to **All** if not sure), and select an access package ID from the drop-down list of all access packages that had activity during that time range. The events related to the access package that occurred during the selected time range is displayed.
 
-    ![View access package events](./media/entitlement-management-logs-and-reporting/view-events-access-package.png) 
+    :::image type="content" source="./media/entitlement-management-logs-and-reporting/view-events-access-package.png" alt-text="View access package events.":::
 
-    Each row includes the time, access package ID, the name of the operation, the object ID, UPN, and the display name of the user who started the operation.  Additional details are included in JSON.
+    Each row includes the time, access package ID, the name of the operation, the object ID, UPN, and the display name of the user who started the operation. More details are included in JSON.
 
-1. If you would like to see if there have been changes to application role assignments for an application that weren't due to access package assignments, such as by a global administrator directly assigning a user to an application role, then you can select the workbook named *Application role assignment activity*.
+1. If you would like to see if there have been changes to application role assignments for an application that weren't due to access package assignments, such as by a Global Administrator directly assigning a user to an application role, then you can select the workbook named *Application role assignment activity*.
 
-    ![View app role assignments](./media/entitlement-management-access-package-incompatible/workbook-ara.png)
+    :::image type="content" source="./media/entitlement-management-access-package-incompatible/workbook-ara.png" alt-text="View app role assignments.":::
 
 ## Create custom Azure Monitor queries using the Microsoft Entra admin center
 You can create your own queries on Microsoft Entra audit events, including entitlement management events.  
@@ -93,7 +91,7 @@ You can create your own queries on Microsoft Entra audit events, including entit
 
 1. Then select **Run**. 
 
-    ![Click Run to start query](./media/entitlement-management-logs-and-reporting/run-query.png)
+    :::image type="content" source="./media/entitlement-management-logs-and-reporting/run-query.png" alt-text="select Run to start query.":::
 
 The table shows the Audit log events for entitlement management from the last hour by default. You can change the "Time range" setting to view older events. However, changing this setting will only show events that occurred after Microsoft Entra ID was configured to send events to Azure Monitor.
 
@@ -107,11 +105,11 @@ For more information on the columns that are stored for audit events in Azure Mo
 
 ## Create custom Azure Monitor queries using Azure PowerShell
 
-You can access logs through PowerShell after you've configured Microsoft Entra ID to send logs to Azure Monitor. Then, send queries from scripts or the PowerShell command line, without needing to be a Global Administrator in the tenant. 
+You can access logs through PowerShell after you configure Microsoft Entra ID to send logs to Azure Monitor. Then, send queries from scripts or the PowerShell command line, without needing to be a Global Administrator in the tenant. 
 
 ### Ensure the user or service principal has the correct role assignment
 
-Make sure you, the user or service principal that will authenticate to Microsoft Entra ID, are in the appropriate Azure role in the Log Analytics workspace. The role options are either Log Analytics Reader or the Log Analytics Contributor. If you're already in one of those roles, then skip to [Retrieve Log Analytics ID with one Azure subscription](#retrieve-log-analytics-id-with-one-azure-subscription).
+Make sure you, the user or service principal that authenticates to Microsoft Entra ID, are in the appropriate Azure role in the Log Analytics workspace. The role options are either Log Analytics Reader or the Log Analytics Contributor. If you're already in one of those roles, then skip to [Retrieve Log Analytics ID with one Azure subscription](#retrieve-log-analytics-id-with-one-azure-subscription).
 
 To set the role assignment and create a query, do the following steps:
 
@@ -121,7 +119,7 @@ To set the role assignment and create a query, do the following steps:
 
 1. Then select **Add** to add a role assignment.
 
-    ![Add a role assignment](./media/entitlement-management-logs-and-reporting/workspace-set-role-assignment.png)
+    :::image type="content" source="./media/entitlement-management-logs-and-reporting/workspace-set-role-assignment.png" alt-text="Add a role assignment.":::
 
 ### Install Azure PowerShell module
 
@@ -191,7 +189,7 @@ where TimeGenerated > ago(90d) and Category == "EntitlementManagement" and Resul
 project ActivityDateTime,OperationName, InitiatedBy, AdditionalDetails, TargetResources
 ```
 
-For audit events of some services such as entitlement management, you can also expand and filter on the affected properties of the resources being changed.  For example, you can view just those audit log records for access package assignment policies being created or updated, that do not require approval for users to have an assignment added.
+For audit events of some services such as entitlement management, you can also expand and filter on the affected properties of the resources being changed. For example, you can view just those audit log records for access package assignment policies being created or updated, that don't require approval for users to have an assignment added.
 
 ```
 AuditLogs | 

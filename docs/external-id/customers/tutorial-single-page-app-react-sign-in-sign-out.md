@@ -1,20 +1,18 @@
 ---
-title: "Tutorial: Add sign-in and sign-out to a React SPA for a customer tenant"
-description: Learn how to configure a React single-page app (SPA) to sign in and sign out users with your Microsoft Entra ID for customers tenant.
- 
+title: "Tutorial: Add sign-in and sign-out to a React SPA for an external tenant"
+description: Learn how to configure a React single-page app (SPA) to sign in and sign out users with your external tenant.
 author: godonnell
 manager: celestedg
-
 ms.service: entra-external-id
 ms.subservice: customers
 ms.topic: tutorial
-ms.date: 05/23/2023
+ms.date: 07/03/2024
 ms.author: godonnell
 
 #Customer intent: As a developer I want to add sign-in and sign-out functionality to my React single-page app
 ---
 
-# Tutorial: Add sign-in and sign-out to a React SPA for a customer tenant
+# Tutorial: Add sign-in and sign-out to a React SPA for an external tenant
 
 This tutorial is the final part of a series that demonstrates building a React single-page application (SPA) and preparing it for authentication using the Microsoft Entra admin center. In [part 3 of this series](./tutorial-single-page-app-react-sign-in-configure-authentication.md), you created a React SPA in Visual Studio Code and configured it for authentication. This final step shows you how to add sign-in and sign-out functionality to the app.
 
@@ -28,7 +26,7 @@ In this tutorial;
 
 ## Prerequisites
 
-* [Tutorial: Prepare your customer tenant to authenticate users in a React SPA](./tutorial-single-page-app-react-sign-in-prepare-tenant.md).
+* [Tutorial: Prepare your external tenant to authenticate users in a React SPA](./tutorial-single-page-app-react-sign-in-prepare-tenant.md).
 
 ## Change filename and add function to render authenticated information
 
@@ -133,4 +131,6 @@ All the required code snippets have been added, so the application can now be te
 
 ## See also
 
-> [Enable self-service password reset](./how-to-enable-password-reset-customers.md)
+> - [Enable self-service password reset](./how-to-enable-password-reset-customers.md)
+> - [Customize the default branding](/entra/external-id/customers/how-to-customize-branding-customers)
+> - [Configure sign-in with Google](/entra/external-id/customers/how-to-google-federation-customers)

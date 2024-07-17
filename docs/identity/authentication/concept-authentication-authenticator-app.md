@@ -1,11 +1,11 @@
 ---
 title: Microsoft Authenticator authentication method
-description: Learn about using the Microsoft Authenticator in Microsoft Entra ID to help secure your sign-ins
+description: Learn about using the Microsoft Authenticator in Microsoft Entra ID to help secure your sign-ins.
 
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 02/29/2024
+ms.date: 04/25/2024
 
 ms.author: justinha
 author: justinha
@@ -16,22 +16,45 @@ ms.reviewer: calui
 ---
 # Authentication methods in Microsoft Entra ID - Microsoft Authenticator app
 
-The Microsoft Authenticator app provides an additional level of security to your Microsoft Entra work or school account or your Microsoft account and is available for [Android](https://go.microsoft.com/fwlink/?linkid=866594) and [iOS](https://go.microsoft.com/fwlink/?linkid=866594). With the Microsoft Authenticator app, users can authenticate in a passwordless way during sign-in, or as an additional verification option during self-service password reset (SSPR) or multifactor authentication events.
+The Microsoft Authenticator app provides another level of security to your Microsoft Entra work or school account or your Microsoft account and is available for [Android](https://go.microsoft.com/fwlink/?linkid=866594) and [iOS](https://go.microsoft.com/fwlink/?linkid=866594). With the Microsoft Authenticator app, users can authenticate in a passwordless way during sign-in, or another verification option during self-service password reset (SSPR) or multifactor authentication events.
 
-Users may receive a notification through the mobile app for them to approve or deny, or use the Authenticator app to generate an OATH verification code that can be entered in a sign-in interface. If you enable both a notification and verification code, users who register the Authenticator app can use either method to verify their identity.
+You can now apply passkeys for user authentication. Users can then receive a notification through their mobile app for approving or denying the Authenticator app to generate an OATH verification code. This code can then be entered in a sign-in interface. If you enable both a notification and verification code, users who register the Authenticator app can use either method to verify their identity using passkeys.
 
 > [!NOTE]
-> In preparation of passkey support in Microsoft Authenticator, users may see Authenticator as a passkey provider on iOS and Android devices. Passkeys aren't currently supported in Authenticator, but they will be supported in an upcoming release.
+> In preparation of passkey support in Microsoft Authenticator, users may see Authenticator as a passkey provider on iOS and Android devices. For more information, see [Passkey sign-in (preview)](#passkey-sign-in-preview).
 
 To use the Authenticator app at a sign-in prompt rather than a username and password combination, see [Enable passwordless sign-in with the Microsoft Authenticator](howto-authentication-passwordless-phone.md).
 
 > [!NOTE]
 > - Users don't have the option to register their mobile app when they enable SSPR. Instead, users can register their mobile app at [https://aka.ms/mfasetup](https://aka.ms/mfasetup) or as part of the combined security info registration at [https://aka.ms/setupsecurityinfo](https://aka.ms/setupsecurityinfo).
-> - The Authenticator app may not be supported on beta versions of iOS and Android. In addition, starting October 20th, 2023 the Authenticator app on Android no longer supports older verisons of the Android Company Portal. Android users with Company Portal versions below 2111 (5.0.5333.0) can't re-register or register new instances of Authenticator until they update their Company Portal application to a newer version.
+> - The Authenticator app may not be supported on beta versions of iOS and Android. In addition, starting October 20th, 2023 the Authenticator app on Android no longer supports older versions of the Android Company Portal. Android users with Company Portal versions below 2111 (5.0.5333.0) can't re-register or register new instances of Authenticator until they update their Company Portal application to a newer version.
+
+## Passkey sign-in (preview)
+
+Authenticator is a free passkey solution that lets users do passwordless phishing-resistant authentications from their own phones. Some key benefits to using passkeys in the Authenticator app:
+
+- Passkeys can be easily deployed at scale. Then passkeys are available on a user’s phone for both mobile device management (MDM) and bring your own device (BYOD) scenarios.
+- Passkeys in Authenticator come at no more cost and travel with the user wherever they go.
+- Passkeys in Authenticator are device-bound which ensures the passkey doesn’t leave the device on which it was created.
+- Users stay up-to-date with latest passkey innovation based upon open WebAuthn standards.
+- Enterprises can layer other capabilities on top of authentication flows such as [FIPS 140 compliance](#fips-140-compliant-for-microsoft-entra-authentication).
+
+
+### Device-bound passkey
+
+Passkeys in the Authenticator app are device-bound to ensure that they never leave the device they were created on. On an iOS device, Authenticator uses the Secure Enclave to create the passkey. On Android, we create the passkey in the Secure Element on devices that support it, or fall back to the Trusted Execution Environment (TEE).
+
+### How passkey attestation works with Authenticator
+
+For now, passkeys in Authenticator are unattested. Attestation support for passkeys in Authenticator is planned for a future release.
+
+### Back up and restore passkeys in Authenticator
+
+Passkeys in Authenticator aren't backed up and can't be restored on a new device. To create passkeys on a new device, use the passkey on an older device, or use another authentication method to re-create the passkey.
 
 ## Passwordless sign-in
 
-Instead of seeing a prompt for a password after entering a username, a user that has enabled phone sign-in from the Authenticator app sees a message to enter a number in their app. When the correct number is selected, the sign-in process is complete.
+Instead of seeing a prompt for a password after entering a username, users who enable phone sign-in from the Authenticator app sees a message to enter a number in their app. When the correct number is selected, the sign-in process is complete.
 
 ![Example of a browser sign-in asking for user to approve the sign-in.](./media/howto-authentication-passwordless-phone/phone-sign-in-microsoft-authenticator-app.png)
 
@@ -57,15 +80,15 @@ The Authenticator app can be used as a software token to generate an OATH verifi
 > [!NOTE]
 > OATH verification codes generated by Authenticator aren't supported for certificate-based authentication.
 
-Users may have a combination of up to five OATH hardware tokens or authenticator applications, such as the Authenticator app, configured for use at any time.
+Users can have a combination of up to five OATH hardware tokens or authenticator applications, such as the Authenticator app, configured for use at any time.
 
 <a name='fips-140-compliant-for-azure-ad-authentication'></a>
 
 ## FIPS 140 compliant for Microsoft Entra authentication
 
-Consistent with the guidelines outlined in [NIST SP 800-63B](https://pages.nist.gov/800-63-3/sp800-63b.html?azure-portal=true), authenticators used by US government agencies are required to use FIPS 140 validated cryptography. This helps US government agencies meet the requirements of [Executive Order (EO) 14028](https://www.whitehouse.gov/briefing-room/presidential-actions/2021/05/12/executive-order-on-improving-the-nations-cybersecurity/?azure-portal=true). Additionally, this helps other regulated industries such as healthcare organizations working with [Electronic Prescriptions for Controlled Substances (EPCS)](/azure/compliance/offerings/offering-epcs-us) meet their regulatory requirements.
+Consistent with the guidelines outlined in [NIST SP 800-63B](https://pages.nist.gov/800-63-3/sp800-63b.html?azure-portal=true), authenticators used by US government agencies are required to use FIPS 140 validated cryptography. This guideline helps US government agencies meet the requirements of [Executive Order (EO) 14028](https://www.whitehouse.gov/briefing-room/presidential-actions/2021/05/12/executive-order-on-improving-the-nations-cybersecurity/?azure-portal=true). Additionally, this guideline helps other regulated industries such as healthcare organizations working with [Electronic Prescriptions for Controlled Substances (EPCS)](/azure/compliance/offerings/offering-epcs-us) meet their regulatory requirements.
 
-FIPS 140 is a US government standard that defines minimum security requirements for cryptographic modules in information technology products and systems. Testing against the FIPS 140 standard is maintained by the [Cryptographic Module Validation Program (CMVP)](https://csrc.nist.gov/Projects/cryptographic-module-validation-program?azure-portal=true).
+FIPS 140 is a US government standard that defines minimum security requirements for cryptographic modules in information technology products and systems. The [Cryptographic Module Validation Program (CMVP)](https://csrc.nist.gov/Projects/cryptographic-module-validation-program?azure-portal=true) maintains the testing against the FIPS 140 standard.
 
 ### Microsoft Authenticator for iOS
 
@@ -75,11 +98,11 @@ For more information about the FIPS 140 validated cryptographic modules being us
 
 
 >[!NOTE]
->In new updates from the previous version of this article: Microsoft Authenticator is not yet FIPS 140 compliant on Android. Microsoft Authenticator on Android is currently pending FIPS compliance certification to support our customers that may require FIPS validated cryptography.
+>In new updates from the previous version of this article: Microsoft Authenticator isn't yet FIPS 140 compliant on Android. Microsoft Authenticator on Android is currently pending FIPS compliance certification to support our customers that may require FIPS validated cryptography.
 
 
-## Determining Microsoft Authenticator registration type in My Security-Info 
-Managining and adding additional Microsoft Authenticator registrations can be performed by users by accessing [MySecurityInfo](https://aka.ms/mysecurityinfo) (see the URLs in the next section) or by selecting Security info from MyAccount. Specific icons are used to differentiate whether the Microsoft Authenticator registration is passwordless phone sign-in or MFA. 
+## Determining Microsoft Authenticator registration type in Security info 
+Users can access [My Security info](https://aka.ms/mysecurityinfo) (see the URLs in the next section) or by selecting Security info from MyAccount to manage and add more Microsoft Authenticator registrations. Specific icons are used to differentiate whether the Microsoft Authenticator registration is passwordless phone sign-in or MFA. 
 
 Authenticator registration type | Icon
 ------ | ------
@@ -94,9 +117,16 @@ Cloud | MySecurityInfo URL |
 Azure commercial (includes GCC)   | https://aka.ms/MySecurityInfo 
 Azure for US Government (includes GCC High and DoD) | https://aka.ms/MySecurityInfo-us 
 
+## Updates to Authenticator
+
+Microsoft continuously updates Authenticator to maintain a high level of security. To ensure that your users are getting the best experience possible, we recommend having them continuously update their Authenticator App. In the case of critical security updates, app versions that aren't up to date may cease to work and may block users from completing their authentications. If a user is using a version of the app that is not supported, they will be prompted to upgrade to the latest version before being able to proceed with authentications.
+
+Microsoft will also periodically retire older versions of the Authenticator App to maintain a high security bar for your organization. If a user’s device doesn't support modern versions of the Microsoft Authenticator App, they can't sign with the app. We recommend having these users use an OATH verification code in the Microsoft Authenticator App to complete two-factor authentication.
 
 ## Next steps
 
-- To get started with passwordless sign-in, see [Enable passwordless sign-in with the Microsoft Authenticator](howto-authentication-passwordless-phone.md).
+- To get started with passkeys, see [Enable passkeys in Microsoft Authenticator sign in (preview)](how-to-enable-authenticator-passkey.md).
+
+- For more information about passwordless sign-in, see [Enable passwordless sign-in with the Microsoft Authenticator](howto-authentication-passwordless-phone.md).
 
 - Learn more about configuring authentication methods using the [Microsoft Graph REST API](/graph/api/resources/authenticationmethods-overview).

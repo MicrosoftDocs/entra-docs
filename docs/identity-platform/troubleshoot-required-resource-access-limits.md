@@ -5,7 +5,7 @@ author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
 ms.custom: 
-ms.date: 12/08/2022
+ms.date: 04/10/2024
 ms.reviewer: phsignor, jawoods
 ms.service: identity-platform
 
@@ -76,7 +76,7 @@ Use the following PowerShell script to remove any duplicate permissions from you
     This script ensures all API permissions listed in a Microsoft identity platform's app registration are only listed once,
     removing any duplicates it finds. This script requires the Microsoft.Graph.Applications PowerShell module.
 .EXAMPLE
-     Get-MgApplication -Filter "appId eq '46c22aca-bcdd-467d-a837-bd544c09b8b4'" | .\Deduplicate_RequiredResourceAccess.ps1"
+     Get-MgApplication -Filter "appId eq '00001111-aaaa-2222-bbbb-3333cccc4444'" | .\Deduplicate_RequiredResourceAccess.ps1"
 .EXAMPLE
      $apps = Get-MgApplication -Filter "startswith(displayName,'Test_app')"
      $apps | .\Deduplicate_RequiredResourceAccess.ps1

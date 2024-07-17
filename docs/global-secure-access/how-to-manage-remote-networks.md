@@ -1,6 +1,6 @@
 ---
-title: How to update and delete remote networks for Global Secure Access (preview)
-description: Learn how to update and delete remote networks for Global Secure Access (preview).
+title: How to update and delete remote networks for Global Secure Access
+description: Learn how to update and delete remote networks for Global Secure Access.
 author: kenwith
 ms.author: kenwith
 manager: amycolannino
@@ -10,19 +10,19 @@ ms.service: global-secure-access
 ---
 # Manage remote networks
 
-Remote networks connect your users in remote locations to Global Secure Access (preview). Adding, updating, and removing remote networks from your environment are likely common tasks for many organizations. 
+Remote networks connect your users in remote locations to Global Secure Access. Adding, updating, and removing remote networks from your environment are likely common tasks for many organizations. 
 
 This article explains how to manage your existing remote networks for Global Secure Access.
 
 ## Prerequisites
 
 - A **Global Secure Access Administrator** role in Microsoft Entra ID.
-- The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
-- To use the Microsoft 365 traffic forwarding profile, a Microsoft 365 E3 license is recommended.
+- The product requires licensing. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
+- To use the Microsoft traffic forwarding profile, a Microsoft 365 E3 license is recommended.
 
 ### Known limitations
 
-- At this time, remote networks can only be assigned to the Microsoft 365 traffic forwarding profile.
+- At this time, remote networks can only be assigned to the Microsoft traffic forwarding profile.
 
 ## Update remote networks
 
@@ -33,7 +33,7 @@ You can update remote networks in the Microsoft Entra admin center or using the 
 To update the details of your remote networks:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
-1. Browse to **Global Secure Access (preview)** > **Devices** > **Remote networks**.
+1. Browse to **Global Secure Access** > **Devices** > **Remote networks**.
 1. Select the remote network you need to update.
 
     ![Screenshot of the remote networks list.](./media/how-to-manage-remote-networks/remote-network-list.png)
@@ -54,11 +54,11 @@ Add a new device link or delete an existing device link from this page. You can'
 
 #### Traffic profiles
 
-From this page, you can enable or disable the available traffic forwarding profile. At this time, only the Microsoft 365 access profile can be applied to remote networks.
+From this page, you can enable or disable the available traffic forwarding profile. At this time, only the Microsoft access profile can be applied to remote networks.
 
 ![Screenshot of the traffic profiles options on the remote networks.](./media/how-to-manage-remote-networks/remote-network-traffic-profile.png)
 
-You can also assign a remote network to the Microsoft 365 traffic forwarding profile from **Traffic forwarding** area of Global Secure Access. Browse to **Connect** > **Traffic forwarding** and select the **Add/edit assignments** button for the traffic profile. For more information, see [Global Secure Access traffic forwarding](concept-traffic-forwarding.md).
+You can also assign a remote network to the Microsoft traffic forwarding profile from **Traffic forwarding** area of Global Secure Access. Browse to **Connect** > **Traffic forwarding** and select the **Add/edit assignments** button for the traffic profile. For more information, see [Global Secure Access traffic forwarding](concept-traffic-forwarding.md).
 
 ### [Microsoft Graph API](#tab/microsoft-graph-api)
 
@@ -88,7 +88,7 @@ You can delete remote networks in the Microsoft Entra admin center or using the 
 ### [Microsoft Entra admin center](#tab/microsoft-entra-admin-center)
 
 1. Sign in to the Microsoft Entra admin center at [https://entra.microsoft.com](https://entra.microsoft.com).
-1. Browse to **Global Secure Access (preview)** > **Devices** > **Remote networks**.
+1. Browse to **Global Secure Access** > **Devices** > **Remote networks**.
 1. Select the remote network you need to delete.
 1. Select the **Delete** button.
 1. Select **Delete** from the confirmation message.
@@ -110,7 +110,7 @@ You can delete remote networks in the Microsoft Entra admin center or using the 
 
 ---
 
-[!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
+
 
 ## Next steps
 

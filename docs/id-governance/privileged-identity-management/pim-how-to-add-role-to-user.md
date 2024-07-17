@@ -16,7 +16,7 @@ ms.custom: subject-rbac-steps
 
 # Assign Microsoft Entra roles in Privileged Identity Management
 
-With Microsoft Entra ID, a Global administrator can make **permanent** Microsoft Entra admin role assignments. These role assignments can be created using the [Microsoft Entra admin center](~/identity/role-based-access-control/permissions-reference.md) or using [PowerShell commands](/powershell/module/azuread/#directory_roles).
+With Microsoft Entra ID, a Global Administrator can make **permanent** Microsoft Entra admin role assignments. These role assignments can be created using the [Microsoft Entra admin center](~/identity/role-based-access-control/permissions-reference.md) or using [PowerShell commands](/powershell/module/azuread/#directory_roles).
 
 The Microsoft Entra Privileged Identity Management (PIM) service also allows Privileged role administrators to make permanent admin role assignments. Additionally, Privileged role administrators can make users **eligible** for Microsoft Entra admin roles. An eligible administrator can activate the role when they need it, and then their permissions expire once they're done.
 
@@ -112,7 +112,7 @@ Content-Type: application/json
     "justification": "Permanently assign the Global Reader to the auditor",
     "roleDefinitionId": "f2ef992c-3afb-46b9-b7cf-a126ee74c451",
     "directoryScopeId": "/",
-    "principalId": "071cc716-8147-4397-a5ba-b2105951cc0b",
+    "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
     "scheduleInfo": {
         "startDateTime": "2022-04-10T00:00:00Z",
         "expiration": {
@@ -139,7 +139,7 @@ Content-Type: application/json
     "approvalId": null,
     "customData": null,
     "action": "adminAssign",
-    "principalId": "071cc716-8147-4397-a5ba-b2105951cc0b",
+    "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
     "roleDefinitionId": "f2ef992c-3afb-46b9-b7cf-a126ee74c451",
     "directoryScopeId": "/",
     "appScopeId": null,
@@ -151,7 +151,7 @@ Content-Type: application/json
         "device": null,
         "user": {
             "displayName": null,
-            "id": "3fbd929d-8c56-4462-851e-0eb9a7b3a2a5"
+            "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee"
         }
     },
     "scheduleInfo": {
@@ -184,7 +184,7 @@ POST https://graph.microsoft.com/v1.0/roleManagement/directory/roleAssignmentSch
     "justification": "Assign the Exchange Recipient Administrator to the mail admin",
     "roleDefinitionId": "31392ffb-586c-42d1-9346-e59415a2cc4e",
     "directoryScopeId": "/",
-    "principalId": "071cc716-8147-4397-a5ba-b2105951cc0b",
+    "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
     "scheduleInfo": {
         "startDateTime": "2022-04-10T00:00:00Z",
         "expiration": {
@@ -209,7 +209,7 @@ The following is an example of the response. The response object shown here migh
     "approvalId": null,
     "customData": null,
     "action": "adminAssign",
-    "principalId": "071cc716-8147-4397-a5ba-b2105951cc0b",
+    "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
     "roleDefinitionId": "31392ffb-586c-42d1-9346-e59415a2cc4e",
     "directoryScopeId": "/",
     "appScopeId": null,
@@ -221,7 +221,7 @@ The following is an example of the response. The response object shown here migh
         "device": null,
         "user": {
             "displayName": null,
-            "id": "3fbd929d-8c56-4462-851e-0eb9a7b3a2a5"
+            "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee"
         }
     },
     "scheduleInfo": {
@@ -271,7 +271,7 @@ POST https://graph.microsoft.com/v1.0/roleManagement/directory/roleEligibilitySc
     "action": "AdminRemove", 
     "justification": "abcde", 
     "directoryScopeId": "/", 
-    "principalId": "d96ea738-3b95-4ae7-9e19-78a083066d5b", 
+    "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222", 
     "roleDefinitionId": "88d8e3e3-8f55-4a1e-953a-9b9898b8876b" 
 } 
 ````
@@ -288,7 +288,7 @@ POST https://graph.microsoft.com/v1.0/roleManagement/directory/roleEligibilitySc
     "approvalId": null, 
     "customData": null, 
     "action": "AdminRemove", 
-    "principalId": "d96ea738-3b95-4ae7-9e19-78a083066d5b", 
+    "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222", 
     "roleDefinitionId": "88d8e3e3-8f55-4a1e-953a-9b9898b8876b", 
     "directoryScopeId": "/", 
     "appScopeId": null, 

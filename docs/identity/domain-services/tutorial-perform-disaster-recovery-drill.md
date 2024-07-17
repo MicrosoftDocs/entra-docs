@@ -14,7 +14,7 @@ ms.author: justinha
 
 # Tutorial: Perform a disaster recovery drill using replica sets in Microsoft Entra Domain Services
 
-This topic shows how to perform a disaster recovery (DR) drill for Microsoft Entra Domain Services using replica sets.  This excercise simulates one of the replica sets going offline by making changes to the network virtual network properties to block client access to it. It's not a true DR drill in that the replica set isn't taken offline. 
+This topic shows how to perform a disaster recovery (DR) drill for Microsoft Entra Domain Services using replica sets.  This exercise simulates one of the replica sets going offline by making changes to the network virtual network properties to block client access to it. It's not a true DR drill in that the replica set isn't taken offline. 
 
 The DR drill covers: 
 

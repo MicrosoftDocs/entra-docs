@@ -4,7 +4,7 @@ description: Learn how to build a daemon app that calls web APIs (acquiring toke
 author: Dickson-Mwendia
 manager: CelesteDG
 ms.author: dmwendia
-ms.date: 03/28/2024
+ms.date: 04/09/2024
 ms.reviewer: jmprieur
 ms.service: identity-platform
 
@@ -220,8 +220,7 @@ catch (MsalServiceException ex) when (ex.Message.Contains("AADSTS70011"))
 
 ### AcquireTokenForClient uses the application token cache
 
-In MSAL.NET, `AcquireTokenForClient` uses the application token cache. (All the other AcquireToken*XX* methods use the user token cache.)
-Don't call `AcquireTokenSilent` before you call `AcquireTokenForClient`, because `AcquireTokenSilent` uses the *user* token cache. `AcquireTokenForClient` checks the *application* token cache itself and updates it.
+In MSAL.NET, `AcquireTokenForClient` uses the application token cache. (All the other AcquireToken*XX* methods use the user token cache.) Don't call `AcquireTokenSilent` before you call `AcquireTokenForClient`, because `AcquireTokenSilent` uses the *user* token cache. `AcquireTokenForClient` checks the *application* token cache itself and updates it.
 
 ---
 
@@ -236,9 +235,9 @@ POST /{tenant}/oauth2/v2.0/token HTTP/1.1           //Line breaks for clarity.
 Host: login.microsoftonline.com
 Content-Type: application/x-www-form-urlencoded
 
-client_id=535fb089-9ff3-47b6-9bfb-4f1264799865
+client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &scope=https%3A%2F%2Fgraph.microsoft.com%2F.default
-&client_secret=qWgdYAmab0YSkuL1qKv5bPX
+&client_secret=A1b-C2d_E3f.H4i,J5k?L6m!N7o-P8q_R9s.T0u
 &grant_type=client_credentials
 ```
 
@@ -250,9 +249,9 @@ Host: login.microsoftonline.com
 Content-Type: application/x-www-form-urlencoded
 
 scope=https%3A%2F%2Fgraph.microsoft.com%2F.default
-&client_id=97e0a5b7-d745-40b6-94fe-5f77d35c6e05
+&client_id=11112222-bbbb-3333-cccc-4444dddd5555
 &client_assertion_type=urn%3Aietf%3Aparams%3Aoauth%3Aclient-assertion-type%3Ajwt-bearer
-&client_assertion=eyJhbGciOiJSUzI1NiIsIng1dCI6Imd4OHRHeXN5amNScUtqRlBuZDdSRnd2d1pJMCJ9.eyJ{a lot of characters here}M8U3bSUKKJDEg
+&client_assertion=aaaaaaaa-0b0b-...
 &grant_type=client_credentials
 ```
 
@@ -286,13 +285,13 @@ Content: {
 
 Select one of the following options, depending on the role.
 
-##### Global tenant administrator
+##### Cloud Application Administrator
 
-For a global tenant administrator, go to **Enterprise applications** in the Microsoft Entra admin center. Select the app registration, and select **Permissions** from the **Security** section of the left pane. Then select the large button labeled **Grant admin consent for {Tenant Name}** (where **{Tenant Name}** is the name of the directory).
+For a Cloud Application Administrator, go to **Enterprise applications** in the Microsoft Entra admin center. Select the app registration, and select **Permissions** from the **Security** section of the left pane. Then select the large button labeled **Grant admin consent for {Tenant Name}** (where **{Tenant Name}** is the name of the directory).
 
 ##### Standard user
 
-For a standard user of your tenant, ask a Global Administrator to grant admin consent to the application. To do this, provide the following URL to the administrator:
+For a standard user of your tenant, ask a Cloud Application Administrator to grant admin consent to the application. To do this, provide the following URL to the administrator:
 
 ```url
 https://login.microsoftonline.com/Enter_the_Tenant_Id_Here/adminconsent?client_id=Enter_the_Application_Id_Here
