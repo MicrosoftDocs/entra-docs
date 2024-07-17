@@ -255,6 +255,9 @@ items:
                   href: tutorial-native-authentication-android-self-service-password-reset.md
                 - name: Support web fallback
                   href: tutorial-native-authentication-android-support-web-fallback.md
+                - name: Call an API
+                  href: tutorial-native-authentication-android-sign-in-call-api.md
+                  displayName: multiple access token 
             - name: iOS (Swift)
               items:
                 - name: Prepare iOS app

@@ -188,7 +188,7 @@ Once you have your app configured, your private resources added, users assigned 
 
 ![Screenshot of the traffic forwarding page with the Private access profile enabled.](media/how-to-configure-per-app-access/private-access-traffic-profile.png)
 
-[!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
+
 
 ## Next steps
 

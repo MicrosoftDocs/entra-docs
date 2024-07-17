@@ -21,6 +21,11 @@ This article helps you keep track of the versions that have been released and un
 
 ## Looking for the latest versions?
 
+>[!IMPORTANT]
+>Version 2.3.20.0 is a security update. With this update, Microsoft Entra Connect requires TLS 1.2.  Ensure that you have TLS 1.2 enabled before updating to this version.
+>For more information about TLS 1.2, see [Microsoft Security Advisory 2960358](/security-updates/SecurityAdvisories/2015/2960358).
+>For more information on enabling TLS 1.2, see [how to enable TLS 1.2](/mem/configmgr/core/plan-design/security/enable-tls-1-2-server)
+
 You can upgrade your Microsoft Entra Connect server from all supported versions with the latest versions:
 
 You can download the latest version of Microsoft Entra Connect 2.x from the [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=47594). See the [release notes for the latest release](reference-connect-version-history.md#21200).
@@ -51,12 +56,12 @@ Required permissions | For permissions required to apply an update, see [Microso
 
 |Version|End of support date|
 |-----|-----|
-|[2.1.20.0](#21200)|retired on 19 Jun 2024 (12 months after release of 2.2.1.0)|
 |[2.2.1.0](#2210)|11 Oct 2024 (12 months after release of 2.2.8.0)|
 |[2.2.8.0](#2280)|12 Dec 2024 (12 months after release of 2.3.2.0)|
 |[2.3.2.0](#2320)|21 Feb 2025(12 months after release of 2.3.6.0)|
-|[2.3.6.0](#2360)|1 Apr 2025 (12 months after release of 2.3.8.0|
-|[2.3.8.0](#2380)|TBD|
+|[2.3.6.0](#2360)|1 Apr 2025 (12 months after release of 2.3.8.0)|
+|[2.3.8.0](#2380)|x Jul 2025 (12 months after release of 2.3.20.0)|
+|[2.3.20.0](#23200)|TBD|
 
 **All other versions are not supported**
 
@@ -79,6 +84,31 @@ Auto-upgrade is meant to push all important updates and critical fixes to you. I
 If you want all the latest features and updates, check this page and install what you need.
 
 To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade](how-to-connect-install-automatic-upgrade.md).
+
+## 2.3.20.0
+
+>[!IMPORTANT]
+>Version 2.3.20.0 is a security update. With this update, Microsoft Entra Connect requires TLS 1.2.  Ensure that you have TLS 1.2 enabled before updating to this version.
+>For more information about TLS 1.2, see [Microsoft Security Advisory 2960358](/security-updates/SecurityAdvisories/2015/2960358).
+>For more information on enabling TLS 1.2, see [how to enable TLS 1.2](/mem/configmgr/core/plan-design/security/enable-tls-1-2-server)
+
+### Release status
+7/15/2024: Released for download
+
+### Functional changes
+
+- TLS 1.2 or greater is required for Microsoft Entra Connect. Please see the prerequisites for guidance: [Microsoft Entra Connect: Prerequisites and hardware - Microsoft Entra ID](how-to-connect-install-prerequisites.md#enable-tls-12-for-microsoft-entra-connect) | Microsoft Learn
+- TLS 1.3 is supported by Microsoft Entra Connect.
+
+### Other Changes
+
+- SQL related drivers shipped with Microsoft Entra Connect have been updated. ODBC to 17.10.6, OLE DB to 18.7.2.
+- Changes to SSPR handling to reduce SQL deadlocks during sync cycles.
+- Changes to what elements in the Wizard that Narrator will read to improve Accessibility.
+- Microsoft Entra Connect icon branding
+
+
+
 
 ## 2.3.8.0
 

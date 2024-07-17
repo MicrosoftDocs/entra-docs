@@ -78,7 +78,7 @@ The details in the response are similar to the device configuration details foun
 
 ---
 
-[!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
+
 
 ## Next steps
 

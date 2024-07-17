@@ -7,7 +7,7 @@ editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
-ms.date: 05/31/2023
+ms.date: 07/15/2024
 ms.author: owinfrey
 ms.reviewer: mwahl
 #Customer intent: As an administrator, I want to delegate access governance from IT administrators to department managers and project managers so that they can manage access themselves.
@@ -15,7 +15,7 @@ ms.reviewer: mwahl
 
 # Delegate access governance to access package managers in entitlement management
 
-To delegate the creation and management of access packages in a catalog, you add users to the access package manager role. Access package managers must be familiar with the need for users to request access to resources in a catalog. For example, if a catalog is used for a project, then a project lead might be an access package manager for that catalog.  Access package managers can't add resources to a catalog, but they can manage the access packages and policies in a catalog.  When delegating to an access package manager, that person can then be responsible for:
+To delegate the creation and management of access packages in a catalog, you add users to the access package manager role. Access package managers must be familiar with the need for users to request access to resources in a catalog. For example, if a catalog is used for a project, then a project lead might be an access package manager for that catalog. Access package managers can't add resources to a catalog, but they can manage the access packages and policies in a catalog. When delegating to an access package manager, that person can then be responsible for:
 
 - What roles a user has to the resources in a catalog
 - Who will need access
@@ -41,7 +41,7 @@ Follow these steps to assign a user to the access package manager role:
     > Other least privilege roles that can complete this task include the Catalog owner.    
 1. Browse to **Identity governance** > **Entitlement management** > **Catalogs**.
 
-1. On the **Catalogs** page open the catalog you want to add administrators to.
+1. On the Catalogs page, open the catalog you want to add administrators to.
 
 1. In the left menu, select **Roles and administrators**.
 
@@ -60,7 +60,7 @@ Follow these steps to remove a user from the access package manager role:
     > Other least privilege roles that can complete this task include the Catalog owner.
 1. Browse to **Identity governance** > **Entitlement management** > **Catalogs**.
 
-1. On the **Catalogs** page open the catalog you want to add administrators to.
+1. On the Catalogs page, open the catalog you want to add administrators to.
 
 1. In the left menu, select **Roles and administrators**.
 

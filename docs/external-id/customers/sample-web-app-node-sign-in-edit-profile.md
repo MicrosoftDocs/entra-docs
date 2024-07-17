@@ -95,6 +95,16 @@ git clone https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial.
     npm install
     ```
 
+## Configure the sample web app
+
+To use your MFA web API app registration in the app sample:
+
+1. In your code editor, open `App\authConfig.js` file.
+
+1. Find the placeholder:
+    - `graph_end_point` and replace it with the Microsoft Graph API endpoint, that's *https://graph.microsoft.com/*.
+    - `Add_your_protected_scope_here` and replace it with the MFA web API scope. The values looks similar to *api://{clientId}/User.MFA*. `{clientId}` is the Application (client) ID value of the MFA web API.
+
 ## Run and test web app
 
 1. In your terminal, run the following command::

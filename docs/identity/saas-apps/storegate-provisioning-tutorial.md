@@ -72,29 +72,27 @@ To configure Storegate for automatic user provisioning with Microsoft Entra ID, 
 
 	![Storegate in the results list](common/search-new-app.png)
 
-5. Select the **Sign-up for Storegate** button which will redirect you to Storegate's login page. 
+1. Select the **Sign-up for Storegate** button which will redirect you to Storegate's login page. 
 
 	![Storegate OIDC Add](media/storegate-provisioning-tutorial/signup.png)
 
-6.  Sign in to your [Storegate Admin Console](https://ws1.storegate.com/identity/core/login?signin=c71fb8fe18243c571da5b333d5437367) and navigate to the settings by clicking on the user icon in the upper right corner and select **Account Settings**.
+1. Sign in to your [Storegate Admin Console](https://ws1.storegate.com/identity/core/login?signin=c71fb8fe18243c571da5b333d5437367) and navigate to the settings by clicking on the user icon in the upper right corner and select **Account Settings**.
 
 	![Storegate login](media/storegate-provisioning-tutorial/admin.png)
 
-7. Within settings navigate to **Team > Settings** and click on toggle switch in the Single sign-on section, this will start the consent-flow. Click on **Activate**.
+1. Within settings navigate to **Team > Settings** and click on toggle switch in the Single sign-on section, this will start the consent-flow. Click on **Activate**.
 
 	![Storegate team](media/storegate-provisioning-tutorial/team.png)
 
 	![Storegate sso](media/storegate-provisioning-tutorial/sso.png)
 
-	![Storegate activate](media/storegate-provisioning-tutorial/activate.png)
 
-8. As Storegate is an OpenIDConnect app, choose to login to Storegate using your Microsoft work account.
+1. As Storegate is an OpenIDConnect app, choose to log in to Storegate using your Microsoft work account.
 
 	![Storegate OIDC login](media/storegate-provisioning-tutorial/login.png)
 
-9. After a successful authentication, accept the consent prompt for the consent page. The application will then be automatically added to your tenant and you will be redirected to your Storegate account.
+1. After a successful authentication, accept the consent prompt for the consent page. The application will then be automatically added to your tenant and you will be redirected to your Storegate account.
 
-	![Storegate OIDc Consent](media/storegate-provisioning-tutorial/accept.png)
 
 ## Configure automatic user provisioning to Storegate 
 
@@ -116,43 +114,48 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![The Storegate link in the Applications list](common/all-applications.png)
 
-3. Select the **Provisioning** tab.
+1. Select the **Provisioning** tab.
 
 	![Screenshot of the Manage options with the Provisioning option called out.](common/provisioning.png)
 
-4. Set the **Provisioning Mode** to **Automatic**.
+1. Set the **Provisioning Mode** to **Automatic**.
 
 	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
 
-5. Under the **Admin Credentials** section, input `https://dialpad.com/scim` in **Tenant URL**. Input the value that you retrieved and saved earlier from Storegate in **Secret Token**. Click **Test Connection** to ensure Microsoft Entra ID can connect to Storegate. If the connection fails, ensure your Storegate account has Admin permissions and try again.
+1.  Under the **Admin Credentials** section, input `https://dialpad.com/scim` in **Tenant URL**. Input the value that you retrieved and saved earlier from Storegate in **Secret Token**. Click **Test Connection** to ensure Microsoft Entra ID can connect to Storegate. If the connection fails, ensure your Storegate account has Admin permissions and try again.
 
 	![Tenant URL + Token](common/provisioning-testconnection-tenanturltoken.png)
 
-6. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and check the checkbox - **Send an email notification when a failure occurs**.
+1. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and check the checkbox - **Send an email notification when a failure occurs**.
 
 	![Notification Email](common/provisioning-notification-email.png)
 
-7. Click **Save**.
+1. Click **Save**.
 
-8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Storegate**.
+1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Storegate**.
 
-	![Storegate User Mappings](media/storegate-provisioning-tutorial/usermappings.png)
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Storegate in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Storegate for update operations. Select the **Save** button to commit any changes.
 
-9. Review the user attributes that are synchronized from Microsoft Entra ID to Storegate in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Storegate for update operations. Select the **Save** button to commit any changes.
 
-	![Storegate User Attributes](media/storegate-provisioning-tutorial/userattributes.png)
+   |Attribute|Type|Supported for filtering|Required by Storegate|
+   |---|---|---|---|
+   |userName|String|&check;|&check; 
+   |active|Boolean||
+   |preferredLanguage|String||
+   |name.givenName|String||
+   |name.familyName|String||
 
-10. To configure scoping filters, refer to the following instructions provided in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-11. To enable the Microsoft Entra provisioning service for Storegate, change the **Provisioning Status** to **On** in the **Settings** section.
+1. To enable the Microsoft Entra provisioning service for Storegate, change the **Provisioning Status** to **On** in the **Settings** section.
 
 	![Provisioning Status Toggled On](common/provisioning-toggle-on.png)
 
-12. Define the users and/or groups that you would like to provision to Storegate by choosing the desired values in **Scope** in the **Settings** section.
+1. Define the users and/or groups that you would like to provision to Storegate by choosing the desired values in **Scope** in the **Settings** section.
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-13. When you are ready to provision, click **Save**.
+1. When you are ready to provision, click **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 

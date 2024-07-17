@@ -1,13 +1,10 @@
 ---
 title: 'Tutorial: Configure Notion for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Notion.
-
 author: thomasakelo
 manager: jeedes
-ms.assetid: 9a015494-4ca0-4a08-87e6-e234fb529c72
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: tutorial
 ms.date: 03/25/2024
 ms.author: thomasakelo

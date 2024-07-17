@@ -144,7 +144,7 @@ Remote networks with a custom IKE policy can be created using Microsoft Graph on
 
 ---
 
-[!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
+
 
 ## Next steps
 

@@ -204,7 +204,7 @@ There are a few things to consider and verify when creating remote networks. You
     - As a result, phase 1 of IKE negotiation fails and the tunnel isn't established.
     - To remediate this failure, complete the port forwarding on your device, which tells the ISP router to not change the port and forward it as-is.
 
-[!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
+
 
 ## Next steps
 

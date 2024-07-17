@@ -196,7 +196,7 @@ The *.env* file should never be checked into source control, since it contains s
 
 ## Initialization code
 
-The initialization code differences are platform dependant. For ASP.NET Core and ASP.NET, signing in users is delegated to the OpenID Connect middleware. The ASP.NET or ASP.NET Core template generates web applications for the Azure AD v1.0 endpoint. Some configuration is required to adapt them to the Microsoft identity platform. 
+The initialization code differences are platform dependent. For ASP.NET Core and ASP.NET, signing in users is delegated to the OpenID Connect middleware. The ASP.NET or ASP.NET Core template generates web applications for the Azure AD v1.0 endpoint. Some configuration is required to adapt them to the Microsoft identity platform. 
 
 # [ASP.NET Core](#tab/aspnetcore)
 

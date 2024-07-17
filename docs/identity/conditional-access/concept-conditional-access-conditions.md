@@ -132,7 +132,7 @@ These browsers support device authentication, allowing the device to be identifi
 > [!NOTE]
 > Edge 85+ requires the user to be signed in to the browser to properly pass device identity. Otherwise, it behaves like Chrome without the [Microsoft Single Sign On extension](https://chromewebstore.google.com/detail/windows-accounts/ppnbnpeolgkicgegkbkbjmhlideopiji). This sign-in might not occur automatically in a hybrid device join scenario.
 >  
-> Safari is supported for device-based Conditional Access on a managed device, but it can not satisfy the **Require approved client app** or **Require app protection policy** conditions. A managed browser like Microsoft Edge will satisfy approved client app and app protection policy requirements.
+> Safari is supported for device-based Conditional Access on a managed device, but it can't satisfy the **Require approved client app** or **Require app protection policy** conditions. A managed browser like Microsoft Edge will satisfy approved client app and app protection policy requirements.
 > On iOS with 3rd party MDM solution only Microsoft Edge browser supports device policy.
 > 
 > [Firefox 91+](https://support.mozilla.org/kb/windows-sso) is supported for device-based Conditional Access, but "Allow Windows single sign-on for Microsoft, work, and school accounts" needs to be enabled.
@@ -163,7 +163,7 @@ To automatically deploy the Microsoft Single Sign On extension to Chrome browser
 - Path: `HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome\ExtensionInstallForcelist`
 - Name: `1`
 - Type: `REG_SZ (String)`
-- Data: `ppnbnpeolgkicgegkbkbjmhlideopiji;https\://clients2.google.com/service/update2/crx`
+- Data: `ppnbnpeolgkicgegkbkbjmhlideopiji;https://clients2.google.com/service/update2/crx`
 
 For Chrome support in **Windows 8.1 and 7**, create the following registry key:
 

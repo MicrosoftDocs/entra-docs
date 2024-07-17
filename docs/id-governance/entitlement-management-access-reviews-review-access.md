@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
-ms.date: 06/28/2023
+ms.date: 07/15/2024
 ms.author: owinfrey
 #Customer intent: As an administrator, I want to review the active assignments of my users to ensure everyone has the appropriate access.
 ---
@@ -33,7 +33,7 @@ For more information, see [License requirements](entitlement-management-overview
 
 Use the following steps to find and open the access review:
 
-1. You may receive an email from Microsoft that asks you to review access. Locate the email to open the access review. Here's an example email to review access:
+1. You could receive an email from Microsoft that asks you to review access. Locate the email to open the access review. Here's an example email to review access:
     
     ![Access review reviewer email](./media/entitlement-management-access-reviews-review-access/review-access-reviewer-email.png)
 
@@ -51,7 +51,7 @@ Use the following steps to find and open the access review:
 
 ## Perform the access review
 
-Once you open the access review, you'll see the names of users for which you need to review. There are two ways that you can approve or deny access:
+Once you open the access review, you see the names of users for which you need to review. There are two ways that you can approve or deny access:
 - You can manually approve or deny access for one or more users
 - You can accept the system recommendations
 
@@ -70,7 +70,7 @@ Once you open the access review, you'll see the names of users for which you nee
 
     If you make this selection, the user maintains access, and this selection goes in the audit logs. The log shows any other reviewers that you still completed the review.
 
-1. You may be required to provide a reason for your decision. Type in a reason and select **Submit**.
+1. You could be required to provide a reason for your decision. Type in a reason and select **Submit**.
 
     ![Approve or deny access](./media/entitlement-management-access-reviews-review-access/review-access-decision-approve.png)
 

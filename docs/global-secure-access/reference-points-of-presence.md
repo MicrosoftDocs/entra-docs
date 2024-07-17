@@ -50,9 +50,8 @@ The Global Secure Access service receives traffic on these FQDNs and IP addresse
 - `150.171.18.0/24`
 - `151.206.0.0/16`
  
-### IP addresses where the Global Secure Access service sends traffic from
-Network traffic leaves the Global Secure Access service for Microsoft Entra Internet Access (including Microsoft 365) towards the internet and Software as a Service (SaaS) endpoints. The traffic carries a unique `Src IP` signature. Use the signature to set up location-based access controls for your applications and resources.
- 
-The Global Secure Access service sends traffic on these IP addresses:
+### Global Secure Access egress IP ranges
+Outbound Internet traffic that is acquired by Global Secure Access, including traffic to Microsoft services, will egress from Global Secure Access instances. If the target service uses IP restrictions and access controls, you may need to configure the target service to allow IP connections from Global Secure Access subnets:
+
 - `128.94.0.0/19`
 - `151.206.0.0/16`

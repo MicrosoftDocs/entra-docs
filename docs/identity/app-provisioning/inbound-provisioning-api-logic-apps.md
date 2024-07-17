@@ -72,7 +72,7 @@ The Logic Apps deployment template published in the [Microsoft Entra inbound pro
 ## Step 1: Create an Azure Storage account to host the CSV file
 The steps documented in this section are optional. If you already have an existing storage account or would like to read the CSV file from another source like SharePoint site or Blob storage, update the Logic App to use your connector of choice.
 
-1. Sign in to the [Azure portal](https://portal.azure.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
+1. Sign in to the [Azure portal](https://portal.azure.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Search for "Storage accounts" and create a new storage account. 
      :::image type="content" source="media/inbound-provisioning-api-logic-apps/storage-accounts.png" alt-text="Screenshot of creating new storage account." lightbox="media/inbound-provisioning-api-logic-apps/storage-accounts.png"::: 
 1. Assign a resource group and give it a name. 

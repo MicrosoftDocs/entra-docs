@@ -20,8 +20,57 @@
       href: scenarios/govern-the-employee-lifecycle.md
     - name: Identity lifecycle management provisioning
       href: what-is-provisioning.md
+      items: 
+      - name: Provision to Microsoft Entra ID
+        items: 
+        - name:  Govern provisioning to Microsoft Entra ID using cloud sync
+          href:  scenarios/provision-active-directory-to-entra-cloud-sync.md
+        - name:  Govern provisioning to Microsoft Entra ID using connect sync
+          href:  scenarios/provision-active-directory-to-entra-connect-sync.md
+        - name:  Govern HR provisioning to Microsoft Entra ID
+          href:  scenarios/provision-workday-to-entra.md
+        - name:  Govern provisioning to Microsoft Entra ID using MIM
+          href:  scenarios/provision-microsoft-identity-manager-to-entra.md    
+      - name: Provision to Active Directory 
+        items: 
+        - name: Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance
+          href: scenarios/provision-entra-to-active-directory-groups.md
+        - name: Govern provisioning to AD using Workday
+          href: scenarios/provision-workday-to-active-directory.md
+        - name: Govern provisioning to AD using MIM
+          href: scenarios/provision-microsoft-identity-manager-to-active-directory.md
+      - name: Provision to other directories and apps
+        items: 
+        - name: Govern provisioning to LDAP based apps
+          href: scenarios/provision-ldap.md
+        - name: Govern provisioning to LDAP for Linux auth
+          href: ~/identity/app-provisioning/on-premises-ldap-connector-linux.md
+        - name: Govern provisioning to SQL based apps
+          href: scenarios/provision-sql.md     
+        - name: Govern provisioning to SAP ECC
+          href: scenarios/provision-sap.md    
+        - name: Govern provisioning to PowerShell based apps
+          href: ~/identity/app-provisioning/on-premises-powershell-connector.md
     - name: Automate identity lifecycle management
       href: scenarios/automate-identity-lifecycle.md
+      items:
+      - name: Automate workflow processes
+        items: 
+        - name: Govern employee and guest on-boarding
+          href: tutorial-onboard-custom-workflow-portal.md
+        - name: Govern employee and guest off-boarding
+          href: tutorial-scheduled-leaver-portal.md
+      - name: Automate assignment policies
+        items: 
+        - name: Govern external users through an approval process
+          href: entitlement-management-onboard-external-user.md
+      - name: Automate the review process
+        items: 
+        - name: Govern auditing and access reviews for guest users
+          href: /graph/tutorial-accessreviews-m365group?toc=/entra/id-governance/toc.json&bc=/entra/id-governance/breadcrumb/toc.json
+ 
+ 
+ 
   - name: Govern access to applications
     items:
     - name: Govern access for applications in your environment
@@ -77,8 +126,6 @@
         href: /powershell/microsoftgraph/tutorial-entitlement-management
       - name: Manage the lifecycle of your group-based licenses in Microsoft Entra ID
         href: entitlement-management-group-licenses.md
-      - name: Onboard external users to Microsoft Entra ID through an approval process
-        href: entitlement-management-onboard-external-user.md
       - name: Create an access package for an application - PowerShell
         href: entitlement-management-access-package-create-app.md
       - name: Automated ServiceNow Ticket Creation Integration
@@ -99,16 +146,12 @@
         href: /graph/tutorial-accessreviews-roleassignments?toc=/entra/id-governance/toc.json&bc=/entra/id-governance/breadcrumb/toc.json
     - name: Lifecycle Workflows
       items:
-      - name: Automate employee onboarding tasks - Microsoft Entra admin center
-        href: tutorial-onboard-custom-workflow-portal.md 
       - name: Automate employee onboarding tasks - Microsoft Graph
         href: /graph/tutorial-lifecycle-workflows-onboard-custom-workflow?toc=/azure/active-directory/governance/toc.json&bc=/azure/active-directory/governance/breadcrumb/toc.json
       - name: Offboarding employees in real-time - Microsoft Entra admin center
         href: tutorial-offboard-custom-workflow-portal.md
       - name: Offboarding employees in real-time - Microsoft Graph
         href: /graph/tutorial-lifecycle-workflows-offboard-custom-workflow?toc=/entra/id-governance/toc.json&bc=/entra/id-governance/breadcrumb/toc.json
-      - name: Automate employee offboarding tasks - Microsoft Entra admin center
-        href: tutorial-scheduled-leaver-portal.md  
       - name: Automate employee offboarding tasks - Microsoft Graph
         href: /graph/tutorial-lifecycle-workflows-scheduled-leaver?toc=/entra/id-governance/toc.json&bc=/entra/id-governance/breadcrumb/toc.json
       - name: Automate employee mover tasks - Microsoft Entra admin center

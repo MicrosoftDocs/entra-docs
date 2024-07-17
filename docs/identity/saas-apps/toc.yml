@@ -1143,6 +1143,8 @@
         href: ftapi-tutorial.md
       - name: Fulcrum
         href: fulcrum-tutorial.md
+      - name: Fullstory SAML
+        href: fullstory-saml-tutorial.md
       - name: Fuse
         href: fuse-tutorial.md
       - name: Fuze
@@ -1949,9 +1951,9 @@
         href: nuclino-tutorial.md
       - name: NumlyEngage™
         href: numlyengage-tutorial.md
-      - name: Nulab Pass (Backlog,Cacoo,Typetalk)
+      - name: Nulab Pass (Backlog, Cacoo, and Typetalk)
         href: nulab-pass-tutorial.md  
-      - name: ObservePoint Web Assurance
+      - name: ObservePoint
         href: observepoint-web-assurance-tutorial.md
       - name: O.C. Tanner - AppreciateHub
         href: oc-tanner-tutorial.md
@@ -2207,8 +2209,8 @@
         href: projectplace-tutorial.md
       - name: Prolorus
         href: prolorus-tutorial.md
-      - name: ProMaster (by Inlogik)
-        href: promaster-tutorial.md
+      - name: ExpenseMe Pro (by Inlogik)
+        href: expensemepro-tutorial.md
       - name: ProNovos Ops Manager
         href: pronovos-ops-manager-tutorial.md
       - name: Proofpoint on Demand

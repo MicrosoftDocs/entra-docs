@@ -542,7 +542,7 @@ This example illustrates how to make a change to the join and leave event workfl
 
 Once the access packages, policies, and initial assignments have been created, then users are assigned access to the application's role.
 
-Later, you can monitor for changes to the assignments, or programatically add or remove assignments.
+Later, you can monitor for changes to the assignments, or programmatically add or remove assignments.
 
 ### Retrieve existing assignments
 

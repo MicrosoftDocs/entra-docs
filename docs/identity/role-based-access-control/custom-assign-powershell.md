@@ -82,7 +82,7 @@ $customAdmin = New-MgRoleManagementDirectoryRoleDefinition -RolePermissions $rol
 Get-MgRoleManagementDirectoryRoleDefinition
 
 # Get single role definition by ID
-Get-MgRoleManagementDirectoryRoleDefinition -UnifiedRoleDefinitionId 86593cfc-114b-4a15-9954-97c3494ef49b
+Get-MgRoleManagementDirectoryRoleDefinition -UnifiedRoleDefinitionId 00000000-0000-0000-0000-000000000000
 
 # Get single role definition by templateId
 Get-MgRoleManagementDirectoryRoleDefinition -Filter "TemplateId eq 'c4e39bd9-1100-46d3-8c65-fb160da0071f'"
@@ -132,14 +132,14 @@ $roleAssignment = New-MgRoleManagementDirectoryRoleAssignment -DirectoryScopeId 
 Get-MgRoleManagementDirectoryRoleAssignment -Filter "PrincipalId eq 'aaaaaaaa-bbbb-cccc-1111-222222222222'"
 
 # Get role assignments for a given role definition 
-Get-MgRoleManagementDirectoryRoleAssignment -Filter "RoleDefinitionId eq '355aed8a-864b-4e2b-b225-ea95482e7570'"
+Get-MgRoleManagementDirectoryRoleAssignment -Filter "RoleDefinitionId eq '00000000-0000-0000-0000-000000000000'"
 ```
 
 ### Remove a role assignment
 
 ```powershell
 # Remove role assignment
-Remove-MgRoleManagementDirectoryRoleAssignment -UnifiedRoleAssignmentId 'qiho4WOb9UKKgng_LbPV7tvKaKRCD61PkJeKMh7Y458-1'
+Remove-MgRoleManagementDirectoryRoleAssignment -UnifiedRoleAssignmentId 'aB1cD2eF3gH4iJ5kL6-mN7oP8qR-1'
 ```
 
 ## Next steps

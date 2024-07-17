@@ -173,6 +173,8 @@ Prior to version 1.1.614.0, Microsoft Entra Connect by default uses TLS 1.0 for 
     ```
 1. If you also want to enable TLS 1.2 between the sync engine server and a remote SQL Server, make sure you have the required versions installed for [TLS 1.2 support for Microsoft SQL Server](https://support.microsoft.com/kb/3135244).
 
+For more information, see [how to enable TLS 1.2](/mem/configmgr/core/plan-design/security/enable-tls-1-2-server)
+
 ### DCOM prerequisites on the synchronization server
 During the installation of the synchronization service, Microsoft Entra Connect checks for the presence of the following registry key:
 

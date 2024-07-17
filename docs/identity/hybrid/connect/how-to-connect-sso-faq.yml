@@ -149,7 +149,10 @@ sections:
           
              >[!IMPORTANT]
              >Disabling Seamless SSO using PowerShell won't change the state in Microsoft Entra Connect. Seamless SSO shows as enabled in the **Change user sign-in** page.
-          
+
+             > [!NOTE]
+             >If you don’t have a Microsoft Entra Connect Sync server, you can download one and run the initial installation. This will not set up the server but it will unpack the necessary files required to disable SSO. Once the MSI installation completes, close the Microsoft Entra Connect wizard and run the steps to disable Seamless SSO using PowerShell.
+             
              **Step 2. Get list of AD forests where Seamless SSO has been enabled**
           
              Follow tasks 1 through 4 if you have disabled Seamless SSO using Microsoft Entra Connect. If you have disabled Seamless SSO using PowerShell instead, jump ahead to task 5.

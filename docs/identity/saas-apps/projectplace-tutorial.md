@@ -131,7 +131,7 @@ To configure single sign-on on the **ProjectPlace** side, you need to send the c
 ### Create ProjectPlace test user
 
 >[!NOTE]
->You can skip this step if you have provisioning enabled in ProjectPlace. You can ask the [ProjectPlace support team](https://success.planview.com/Projectplace/Support) to enable provisoning, once done users will be created in ProjectPlace during the first login.
+>You can skip this step if you have provisioning enabled in ProjectPlace. You can ask the [ProjectPlace support team](https://success.planview.com/Projectplace/Support) to enable provisioning, once done users will be created in ProjectPlace during the first login.
 
 To enable Microsoft Entra users to sign in to ProjectPlace, you need to add them to ProjectPlace. You need to add them manually.
 

@@ -1,13 +1,10 @@
 ---
 title: Configure ServiceNow for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to ServiceNow.
-
 author: thomasakelo
 manager: jeedes
-ms.assetid: 5f03d8b7-c3a0-443e-91af-99cc3956fa18
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: tutorial
 ms.date: 03/25/2024
 ms.author: thomasakelo

@@ -133,7 +133,7 @@ MS Graph APIs can be used to configure certificate authorities. Please follow th
 
 ### Validate Certificate Authority configuration
 
-It is important to ensure that the above configuration steps result is Microsoft Entra ability to both validate the certificate authority trust chain and succsessfully aquire the certificate revocation list (CRL) from the configured certificate authority CRL distribution point (CDP) . To assist with this task, it is recommended to install the [MSIdentity Tools](https://aka.ms/msid) PowerShell module and run [Test-MsIdCBATrustStoreConfiguration](https://github.com/AzureAD/MSIdentityTools/wiki/Test-MsIdCBATrustStoreConfiguration). This PowerShell cmdlet will review the Microsoft Entra tenant certificate authority configuration and surface errors/warnings for common mis-configuration issues. 
+It is important to ensure that the above configuration steps result is Microsoft Entra ability to both validate the certificate authority trust chain and succsessfully acquire the certificate revocation list (CRL) from the configured certificate authority CRL distribution point (CDP) . To assist with this task, it is recommended to install the [MSIdentity Tools](https://aka.ms/msid) PowerShell module and run [Test-MsIdCBATrustStoreConfiguration](https://github.com/AzureAD/MSIdentityTools/wiki/Test-MsIdCBATrustStoreConfiguration). This PowerShell cmdlet will review the Microsoft Entra tenant certificate authority configuration and surface errors/warnings for common mis-configuration issues. 
 
 ## Step 2: Enable CBA on the tenant
 

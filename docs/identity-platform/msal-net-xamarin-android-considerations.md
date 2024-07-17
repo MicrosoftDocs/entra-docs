@@ -253,13 +253,4 @@ This example contains a correct file path:
 
 ## Next steps
 
-For more information, see the sample of a [Xamarin mobile application that uses Microsoft identity platform](https://github.com/azure-samples/active-directory-xamarin-native-v2#android-specific-considerations). The following table summarizes the relevant information in the README file.
-
-| Sample | Platform | Description |
-| ------ | -------- | ----------- |
-|[https://github.com/Azure-Samples/active-directory-xamarin-native-v2](https://github.com/azure-samples/active-directory-xamarin-native-v2) | Xamarin.iOS, Android, UWP | A Xamarin mobile application that shows how to use MSAL.NET to authenticate work or school and Microsoft personal accounts with the Microsoft identity platform, and access the Microsoft Graph API with the resulting token. <br>![Diagram of authentication flow](media/msal-net-xamarin-android-considerations/topology.png) |
-
-<!-- REF LINKS -->
-[PublicClientApplication]: /dotnet/api/microsoft.identity.client.publicclientapplication
-[OnActivityResult]: /dotnet/api/android.app.activity.onactivityresult
-[Activity]: /dotnet/api/android.app.activity
+To try out additional samples, [Mobile public client applications](sample-v2-code.md#mobile).

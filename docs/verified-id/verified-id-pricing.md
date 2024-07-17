@@ -1,5 +1,5 @@
 ---
-title: Face Check with Microsoft Entra Verified ID pricing
+title: Face Check (Preview) with Microsoft Entra Verified ID pricing
 description: Learn about Face Check with Microsoft Entra Verified ID billing model. Learn how to enable the Face Check add-on in your tenant by linking your Microsoft Azure subscription.
 ms.service: entra-verified-id
 
@@ -12,7 +12,10 @@ ms.date: 06/19/2024
 
 ---
 
-# Billing model for Face Check with Microsoft Entra Verified ID
+# Billing model for Face Check (Preview) with Microsoft Entra Verified ID
+
+> [!IMPORTANT]
+> Face Check with Microsoft Verified ID is free to use during the preview period. Billing enforcement will start when the preview period ends.
 
 Face Check with Microsoft Entra Verified ID pricing is based on unique Face Check verifications performed by the verifying authority during the billing cycle. There are two options to enable Face Check add-on on a workforce tenant:
 

@@ -10,20 +10,20 @@ metadata:
   ms.topic: hub-page
   author: CelesteDG
   ms.author: celested
-  ms.date: 05/16/2024
+  ms.date: 07/10/2024
 
 ## BAND 1 - HIGHLIGHTED CONTENT ##############################################
 highlightedContent:
   items:
+    - title: What is Microsoft Entra?
+      itemType: overview
+      url: /entra/fundamentals/what-is-entra
     - title: What is Microsoft Entra ID?
       itemType: overview
       url: /entra/fundamentals/whatis
     - title: Identity fundamentals
       url: /entra/fundamentals/identity-fundamental-concepts
       itemType: concept
-    - title: Create a new tenant
-      url: /entra/fundamentals/create-new-tenant
-      itemType: quickstart
     - title: What is Microsoft Entra External ID?
       url: /entra/external-id/external-identities-overview
       itemType: overview
@@ -80,15 +80,15 @@ conceptualContent:
         - text: New name for Azure AD
           url: /entra/fundamentals/new-name
           itemType: concept
+        - text: Create a new tenant
+          url: /entra/fundamentals/create-new-tenant
+          itemType: quickstart
         - text: Access the admin center and create a tenant
           url: /entra/fundamentals/create-new-tenant
           itemType: quickstart
         - text: Create a group and add members 
           url: /entra/fundamentals/groups-view-azure-portal
           itemType: quickstart
-        - text: Add your custom domain name 
-          url: /entra/fundamentals/add-custom-domain
-          itemType: how-to-guide
     ## CARD 2 ######################
     - title: Architecture
       links:
@@ -145,9 +145,9 @@ additionalContent:
         - title: "New name for Azure Active Directory"
           summary: "Learn more about the new name, what the change means, and how it affects you."
           url: https://aka.ms/AzureADNewName
-        - title: "Introducing Security Service Edge (SSE)"
-          summary: "Read the blog on expanded capabilities for securing access with Microsoft Entra."
-          url: https://aka.ms/EntraMomentSecurityblog
+        - title: "Introducing Microsoft Entra Suite"
+          summary: "Learn how the Microsoft Entra Suite simplifies your Zero Trust security model with a complete cloud-based solution for workforce access."
+          url: https://aka.ms/EntraSuiteTechCommunity
         - title: "Microsoft Security documentation"
           summary: "Technical guidance to help security professionals build and implement cybersecurity strategy, architecture, and prioritized roadmaps."
           url: /security/

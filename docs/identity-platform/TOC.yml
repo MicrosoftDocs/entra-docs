@@ -374,16 +374,12 @@
                   items:
                     - name: System browser on Android
                       href: msal-net-system-browser-android-considerations.md
-                    - name: Xamarin Android
-                      href: msal-net-xamarin-android-considerations.md
                     - name: Shared device mode for Android devices
                       href: msal-android-shared-devices.md
                 - name: iOS
                   items:
                     - name: Microsoft Enterprise SSO plug-in for Apple devices
                       href: apple-sso-plugin.md
-                    - name: Xamarin iOS
-                      href: msal-net-xamarin-ios-considerations.md
                     - name: Shared device mode for iOS devices
                       href: msal-ios-shared-devices.md
             - name: Acquire token

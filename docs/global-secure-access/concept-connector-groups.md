@@ -94,7 +94,7 @@ In the example, the company has two datacenters, A, and B, with two connectors t
 
 ![Example of company with 2 datacenters and 2 connectors](./media/concept-connector-groups/application-proxy-sample-config-3.png)
 
-[!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
+
 
 ## Next steps
 

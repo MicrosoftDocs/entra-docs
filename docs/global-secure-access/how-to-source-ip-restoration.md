@@ -42,7 +42,7 @@ If you're using CAE’s [strict location enforcement](../identity/conditional-ac
 To enable the required setting to allow source IP restoration, an administrator must take the following steps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
-1. Browse to **Global Secure Access** > **Global settings** > **Session management** > **Adaptive Access**.
+1. Browse to **Global Secure Access** > **Settings** > **Session management** > **Adaptive Access**.
 1. Select the toggle to **Enable Global Secure Access signaling in Conditional Access**.
 
 This functionality allows services like Microsoft Graph, Microsoft Entra ID, SharePoint Online, and Exchange Online to see the actual source IP address.
@@ -65,7 +65,7 @@ Sign-in log data might take some time to appear this delay is normal as there's 
 
 :::image type="content" source="media/how-to-source-ip-restoration/sign-in-logs-enabled-disabled.png" alt-text="Screenshot of the sign-in logs showing events with source IP restoration on, then off, then on again." lightbox="media/how-to-source-ip-restoration/sign-in-logs-enabled-disabled.png":::
 
-[!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
+
 
 ## Related content
 

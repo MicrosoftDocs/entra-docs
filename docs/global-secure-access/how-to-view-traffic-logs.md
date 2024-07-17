@@ -100,7 +100,7 @@ You can export the Global Secure Access traffic logs (preview) to an endpoint fo
     * **Stream to an event hub:** Select the appropriate details from the menus that appear.
     * **Send to partner solution:** Select the appropriate details from the menus that appear.
 
-[!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
+
 
 ## Next steps
 

@@ -113,19 +113,27 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Oracle Fusion ERP**.
 
-	:::image type="content" source="media/oracle-fusion-erp-provisioning-tutorial/user-mapping.png" alt-text="Screenshot of the Mappings section. Under Name, Synchronize Microsoft Entra users to Oracle Fusion E R P is visible." border="false":::
-
 9. Review the user attributes that are synchronized from Microsoft Entra ID to Oracle Fusion ERP in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Oracle Fusion ERP for update operations. Select the **Save** button to commit any changes.
 
-	:::image type="content" source="media/oracle-fusion-erp-provisioning-tutorial/user-attribute.png" alt-text="Screenshot of the Attribute Mappings page. A table lists Microsoft Entra ID and Oracle Fusion E R P attributes and the matching precedence." border="false":::
+	|Attribute|Type|Supported for filtering|Required by Oracle Fusion ERP|
+   	|---|---|---|---|
+   	|userName|String|&check;|&check;
+   	|externalId|String||
+   	|displayName|String||
+   	|preferredLanguage|String||
+	|name.givenName|String||
+   	|name.familyName|String||
+	|emails[type eq "work"].value|String||
+   	|active|Boolean||
 
 10. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Oracle Fusion ERP**.
 
-	![Oracle Fusion ERP Group Mappings](media/oracle-fusion-erp-provisioning-tutorial/groupmappings.png)
-
 11. Review the group attributes that are synchronized from Microsoft Entra ID to Oracle Fusion ERP in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Oracle Fusion ERP for update operations. Select the **Save** button to commit any changes.
 
-	![Oracle Fusion ERP Group Attributes](media/oracle-fusion-erp-provisioning-tutorial/groupattributes.png)
+	|Attribute|Type|Supported for filtering|Required by Oracle Fusion ERP|
+   	|---|---|---|---|
+   	|displayName|String|&check;|&check;
+   	|members|Reference||
 
 12. To configure scoping filters, refer to the following instructions provided in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 

@@ -145,7 +145,7 @@ BSub0kaAukSHWB4mGC_PMgzOWSgXj8FHusA4iaaTyaI-1 ffffffff-aaaa-bbbb-6666-7777777777
 
 This section describes how to list role assignments with organization-wide scope. To list single-application scope role assignments using Graph API, you can use the operations in [Assign custom roles with Graph API](custom-assign-graph.md).
 
-Use the [List unifiedRoleAssignments](/graph/api/rbacapplication-list-roleassignments) API to get the role assignments for a specific role definition. The following example shows how to list the role assignments for a specific role definition with the ID `3671d40a-1aac-426c-a0c1-a3821ebd8218`.
+Use the [List unifiedRoleAssignments](/graph/api/rbacapplication-list-roleassignments) API to get the role assignments for a specific role definition. The following example shows how to list the role assignments for a specific role definition with the ID `00000000-0000-0000-0000-000000000000`.
 
 ```http
 GET https://graph.microsoft.com/v1.0/roleManagement/directory/roleAssignments?$filter=roleDefinitionId eq ‘<template-id-of-role-definition>’
@@ -158,7 +158,7 @@ HTTP/1.1 200 OK
 {
     "id": "C2dE3fH4iJ5kL6mN7oP8qR9sT0uV1wIiSDKQoTVJrLE9etXyrY0-1",
     "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
-    "roleDefinitionId": "3671d40a-1aac-426c-a0c1-a3821ebd8218",
+    "roleDefinitionId": "00000000-0000-0000-0000-000000000000",
     "directoryScopeId": "/"
 }
 ```

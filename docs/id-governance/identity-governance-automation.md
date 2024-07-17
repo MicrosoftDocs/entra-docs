@@ -193,7 +193,7 @@ Once you [configure runbook input parameters](/azure/automation/runbook-input-pa
 
 ## Parse the output of an Azure Automation account in Logic Apps (optional)
 
-Once your runbook is published, your can create a schedule in Azure Automation, and link your runbook to that schedule to run automatically.  Scheduling runbooks from Azure Automation is suitable for runbooks that don't need to interact with other Azure or Office 365 services that don't have PowerShell interfaces.
+Once your runbook is published, you can create a schedule in Azure Automation, and link your runbook to that schedule to run automatically.  Scheduling runbooks from Azure Automation is suitable for runbooks that don't need to interact with other Azure or Office 365 services that don't have PowerShell interfaces.
 
 If you wish to send the output of your runbook to another service, then you might wish to consider using [Azure Logic Apps](/azure/logic-apps/logic-apps-overview) to start your Azure Automation runbook, as Logic Apps can also parse the results.
 

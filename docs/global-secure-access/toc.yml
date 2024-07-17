@@ -12,6 +12,13 @@ items:
     href: concept-traffic-dashboard.md
   - name: Role-based administrator roles
     href: reference-role-based-permissions.md
+- name: Samples
+  expanded: false
+  items: 
+  - name: Overview of Global Secure Access samples
+    href: powershell-samples.md
+  - name: Get token for connector
+    href: ./scripts/powershell-get-token.md
 - name: Concepts
   expanded: true
   items: 
@@ -81,6 +88,8 @@ items:
         href: how-to-manage-microsoft-profile.md
       - name: Manage the Private Access profile
         href: how-to-manage-private-access-profile.md
+      - name: Manage the Internet Access profile
+        href: how-to-manage-internet-access-profile.md
       - name: Assign users and groups to a profile
         href: how-to-manage-users-groups-assignment.md
   - name: Private Access

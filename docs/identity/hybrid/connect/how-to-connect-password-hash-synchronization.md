@@ -42,7 +42,7 @@ A user must enter their corporate credentials a second time to authenticate to M
 - Password hash synchronization can also be enabled in addition to federation. It may be used as a fallback if your federation service experiences an outage.
 
 > [!NOTE]
-> Password sync is only supported for the object type user in Active Directory. It'sn't supported for the iNetOrgPerson object type.
+> Password sync is only supported for the object type user in Active Directory. It isn't supported for the iNetOrgPerson object type.
 
 ### Detailed description of how password hash synchronization works
 

@@ -2,15 +2,14 @@
 title: 'Tutorial: Configure Global Relay Identity Sync for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Global Relay Identity Sync.
 
-documentationcenter: ''
+
 author: thomasakelo
 manager: jeedes
 
-ms.assetid: 0c4a3bf0-d0a6-4eab-909b-6cf9f9234e4c
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.tgt_pltfrm: na
+
 ms.topic: tutorial
 ms.date: 03/25/2024
 ms.author: thomasakelo
