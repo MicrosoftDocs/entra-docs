@@ -17,8 +17,8 @@ Global Secure Access is available in specific points of presence, with new locat
 The tables list the locations that Global Secure Access is deployed. The tables also list the locations that Virtual Private Network (VPN) and Microsoft Entra Private Access connectors are deployed.
 
 
-**Asia Pacific (APAC)**
-
+### Asia Pacific (APAC)
+The table lists the deployment status for the APAC region.
 |Location                    | Global Secure Access deployed | VPN deployed | Private Access connectors deployed |
 | ---                        | --- | --- | --- |
 |Busan, South Korea          | ✅ | ✅ | ✅ |
@@ -33,8 +33,8 @@ The tables list the locations that Global Secure Access is deployed. The tables 
 |Tokyo, Japan                | ✅ | ✅ | ✅ |
 
 
-**Europe Middle East Africa (EMEA)**
-
+### Europe Middle East Africa (EMEA)
+The table lists the deployment status for the EMEA region.
 | Location                   | Global Secure Access deployed | VPN deployed | Private Access connectors deployed |
 | ---                        | --- | --- | --- |
 |Amsterdam, Netherlands      | ✅ | ✅ | ✅ |
@@ -55,16 +55,16 @@ The tables list the locations that Global Secure Access is deployed. The tables 
 |Zurich, Switzerland         | ✅ | ✅ |    |
 
 
-**Latin America (LATAM)**
-
+### Latin America (LATAM)
+The table lists the deployment status for the LATAM region.
 | Location                   | Global Secure Access deployed | VPN deployed | Private Access connectors deployed |
 | ---                        | --- | --- | --- |
 |Campinas, Brazil            | ✅ |   | ✅ |
 |Rio de Janeiro, Brazil      | ✅ |   | ✅ |
 
 
-**North America (NA)**
-
+### North America (NA)
+The table lists the deployment status for the NA region.
 | Location                   | Global Secure Access deployed | VPN deployed | Private Access connectors deployed |
 | ---                        | --- | --- | --- |
 |Boydton, Virginia, USA      | ✅ | ✅ |     |
