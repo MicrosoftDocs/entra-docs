@@ -102,14 +102,14 @@ Run the `nltest` command.
 
 Verify the DC locator returns a Domain Controller that is a participant of cloud Kerberos trust operations. The returned DC should have the `klist` flag.
 
-## How to avoid Kerberos Negative Caching on Windows Machines
+### How to avoid Kerberos Negative Caching on Windows Machines
 Kerberos is the preferred authentication method for services in Windows that is used to verify users or host identities. Kerberos negative caching hinders users to accurately get/fetch Kerberos tickets at the time of users attempting to reach on-premises resources that use Kerberos for authentication. These Kerberos tickets are necessary for SSO to work for users, who are trying to access their on-premises resources.  
 
 The scenario of Kerberos negative caching occurs to Windows devices that have the Global Secure Access client installed as the GSA client tries to connect to the closest Domain Controller for the Kerberos ticket, but the request fails because the GSA client is still not connected, or the Domain Controller is not reachable in that moment. Once the request fails, the client does not try to connect to the Domain Controller again, immediately, because the default `FarKdcTimeout` time on the registry is set to 10 minutes. Even though the GSA client may be connected before this default time of 10 minutes, the GSA client holds on to the negative cache entry and believes that the Domain Controller locate process is a failure. Once the default time of 10 minutes is completed, the GSA client queries for the Domain Controller once again for the Kerberos ticket and then the connection of Kerberos SSO becomes successful.  
 
 To mitigate this issue, end users can either change the default `FarKdcTimeout` time on the registry or manually instantaneously flush the Kerberos cache every time the GSA client is restarted.   
 
-### Option 1: Change the default FarKdcTimeout time on the registry
+#### Option 1: Change the default FarKdcTimeout time on the registry
 
 If you're running Windows, you can modify the Kerberos parameters to help troubleshoot Kerberos authentication issues, or to test the Kerberos protocol. To do so, add or modify the registry entries that are listed in the sections. 
 
@@ -132,7 +132,7 @@ The registry entries that are listed in this section must be added to the follow
 
 It's the time-out value that's used to invalidate a domain controller from a different site in the domain controller cache. 
 
-### Option 2: Manual Kerberos Cache Purging 
+#### Option 2: Manual Kerberos Cache Purging 
 
 If you choose to manually purge the Kerberos cache, this step will have to be completed every time the GSA client is restarted.  
 
