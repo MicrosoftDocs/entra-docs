@@ -48,13 +48,13 @@ Combined registration supports the authentication methods and actions in the fol
 > [!NOTE]
 > If you enable Microsoft Authenticator for passwordless authentication mode in the Authentication methods policy, users need to also enable passwordless sign-in in the Authenticator app.
 >
-> Alternate phone can only be registered in *Wizard mode* on [Security info](https://aka.ms/mysecurityinfo) and requires Voice calls to be enabled in the Authentication methods policy.
+> Alternate phone can only be registered in *manage mode* on [Security info](https://aka.ms/mysecurityinfo) and requires Voice calls to be enabled in the Authentication methods policy.
 >
-> Office phone can only be registered in *Interrupt mode* if the users *Business phone* property has been set. Office phone can be added by users in *Wizard mode* from [Security info](https://aka.ms/mysecurityinfo) without this requirement.
+> Office phone can only be registered in *Interrupt mode* if the users *Business phone* property has been set. Office phone can be added by users in *Manage mode* from [Security info](https://aka.ms/mysecurityinfo) without this requirement.
 >
 > App passwords are available only to users who have been enforced for per-user MFA. App passwords aren't available to users who are enabled for Microsoft Entra multifactor authentication by a Conditional Access policy.
 >
-> Passkeys (FIDO2) can also be provisioned by using a custom client and partner integrations with Microsoft Graph. For more information, see our [APIs](https://aka.ms/passkeyprovision).
+> Passkeys (FIDO2) can also be provisioned by using a custom client or partner integration with Microsoft Graph. For more information, see our [APIs](https://aka.ms/passkeyprovision).
 
 Users can set one of the following options as the default multifactor authentication method. 
 
@@ -73,7 +73,7 @@ Third party authenticator apps don't provide push notification. As we continue t
 There are two modes of combined registration: 
 
 - **Interrupt mode** is a wizard-like experience, presented to users when they register or refresh their security info at sign-in.
-- **Wizard mode** is part of the user profile and allows users to manage their security info.
+- **Manage mode** is part of the user profile and allows users to manage their security info.
 
 For both modes, users who have previously registered a method that can be used for Microsoft Entra multifactor authentication need to perform multifactor authentication before they can access their security info. Users must confirm their information before continuing to use their previously registered methods. 
 
@@ -112,7 +112,7 @@ If you have both multifactor authentication and SSPR enabled, we recommend that 
 
 If the SSPR policy requires users to review their security info at regular intervals, users are interrupted during sign-in and shown all their registered methods. They can confirm the current info if it's up to date, or they can make changes if they need to. Users must perform multifactor authentication to access this page.
 
-### Wizard mode
+### Manage mode
 
 Users can go to [Security info](https://aka.ms/mysecurityinfo), or they can select **Security info** from My Account. From there, users can add methods, delete or change existing methods, change the default method, and more.
 

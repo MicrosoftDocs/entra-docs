@@ -80,5 +80,6 @@ This article shows how to register a passkey as an authentication method.
 ## Next steps
 
 - [Choosing authentication methods for your organization](concept-authentication-methods.md)
+- [Register security keys on behalf of users](how-to-enable-passkey-fido2.md)
 
 

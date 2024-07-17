@@ -85,17 +85,16 @@ There are two ways to get your AAGUID. You can either ask your security key or p
 
 ## Provision FIDO2 security keys using Microsoft Graph API (preview)
 
-Currently in preview, administrators can use Microsoft Graph API to provision FIDO2 security keys on behalf of users. Provisioning requires the [Authentication Administrator role](/entra/identity/role-based-access-control/permissions-reference#authentication-administrator) or a client application with UserAuthenticationMethod.ReadWrite.All permission. The provisioning improvements include:
+Currently in preview, administrators can use Microsoft Graph and custom clients to provision FIDO2 security keys on behalf of users. Provisioning requires the [Authentication Administrator role](/entra/identity/role-based-access-control/permissions-reference#authentication-administrator) or a client application with UserAuthenticationMethod.ReadWrite.All permission. The provisioning improvements include:
 
-- The ability to request **creation Options** from Entra ID
-- The necessary data required to create the public key credential on a security key
-- The ability to register the provisioned passkey (FIDO2) credentials directly with Entra ID
+- The ability to request WebAuthn **creation Options** from Entra ID
+- The ability to register the provisioned security key directly with Entra ID
 
-With these new API capabilities, organizations can build their own clients to provision passkey (FIDO2) credentials on security keys. To simplify this process, three main steps are required. 
+With these new APIs, organizations can build their own clients to provision passkey (FIDO2) credentials on security keys on behalf of a user. To simplify this process, three main steps are required. 
 
-1. **Request** creationOptions for a user: Entra returns the necessary data for your client to provision a passkey (FIDO2) credential. This includes information such as user information, relying party, credential policy requirements, algorithms, and more. 
-1. **Provision** the passkey (FIDO2) credential with the creation Options: Use the `creationOptions` and a client or script that supports the Client to Authenticator Protocol (CTAP) to provision the credential. During this step, you need to insert a security key and set a PIN.
-1. **Register** the provisioned credential with Entra ID: Use the output from the provisioning process to provide Entra ID the necessary data to register the passkey (FIDO2) credential for the targeted user. 
+1. **Request** creationOptions for a user: Entra ID returns the necessary data for your client to provision a passkey (FIDO2) credential. This includes information such as user information, relying party ID, credential policy requirements, algorithms, registration challenge and more. 
+2. **Provision** the passkey (FIDO2) credential with the creation Options: Use the `creationOptions` and a client that supports the Client to Authenticator Protocol (CTAP) to provision the credential. During this step, you need to insert you will need to insert the security key and set a PIN.
+3. **Register** the provisioned credential with Entra ID: Use the formatted output from the provisioning process to provide Entra ID the necessary data to register the passkey (FIDO2) credential for the targeted user. 
 
 :::image type="content" border="true" source="media/how-to-enable-passkey-fido2/provision.png" alt-text="Conceptual diagram that shows the steps required to provision passkeys (FIDO2)." :::
 
