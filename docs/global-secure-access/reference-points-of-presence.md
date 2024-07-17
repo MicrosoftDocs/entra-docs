@@ -15,39 +15,40 @@ Global Secure Access is available in specific points of presence, with new locat
 
 ## Microsoft Entra Internet Access and Microsoft Entra Private Access locations
 The tables list the locations that Global Secure Access is deployed. The tables also list the locations that Virtual Private Network (VPN) and Microsoft Entra Private Access connectors are deployed.
+
 ### Asia Pacific (APAC)
-|Location | Global Secure Access deployed|VPN deployed|Private Access connectors deployed|
-|         ---                      |      ---               |         ---             |       ---          |
-|Busan, South Korea          |          ✅                    |       ✅                               |                                  |
-|Chennai, India              |          ✅                  |         ✅                             |                                  |
-|Melbourne, Australia        |          ✅                |           ✅                           |                                  |
-|Osaka, Japan                |          ✅              |             ✅                         |                                  |
-|Pune, India                 |          ✅            |                                      |                                  |
-|Seoul, South Korea          |          ✅          |               ✅                       |                                  |
-|Singapore, Singapore        |          ✅        |                                      |                                  |
-|Sydney, Australia           |          ✅                          |                 ✅                     |                                  |
-|Taipei, Taiwan              |          ✅                        |                                      |                                  |
-|Tokyo, Japan                |          ✅                      |                   ✅                   |                                  |
+|Location                    | Global Secure Access deployed | VPN deployed | Private Access connectors deployed |
+| ---                        | --- | --- | --- |
+|Busan, South Korea          | ✅ | ✅ | ✅ |
+|Chennai, India              | ✅ | ✅ | ✅ |
+|Melbourne, Australia        | ✅ | ✅ | ✅ |
+|Osaka, Japan                | ✅ | ✅ | ✅ |
+|Pune, India                 | ✅ |    | ✅ |
+|Seoul, South Korea          | ✅ | ✅ |   |
+|Singapore, Singapore        | ✅ |    | ✅ |
+|Sydney, Australia           | ✅ | ✅ | ✅ |
+|Taipei, Taiwan              | ✅ |    |   |
+|Tokyo, Japan                | ✅ | ✅ | ✅ |
 
 ### Europe Middle East Africa (EMEA)
-| Location| Global Secure Access deployed|VPN deployed|Private Access connectors deployed|
-|         ---                      |      ---               |         ---             |       ---          |
-|Amsterdam, Netherlands                |✅                              |    ✅                                  |                                  |
-|Berlin, Germany                       |  ✅                            |                                      |                                  |
-|Cape Town, South Africa               |    ✅                          |      ✅                                |                                  |
-|Dubai, UAE                            |      ✅                        |        ✅                              |                                  |
-|Dublin, Ireland                       |        ✅                      |          ✅                            |                                  |
-|Frankfurt, Germany                    |          ✅                    |            ✅                          |                                  |
-|Gavle, Sweden                         |            ✅                  |              ✅                        |                                  |
-|Johannesburg, South Africa            |              ✅                |                ✅                      |                                  |
-|London, UK                            |                ✅              |                  ✅                    |                                  |
-|Madrid, Spain                         |                  ✅            |                                      |                                  |
-|Milan, Italy                          |                    ✅          |                    ✅                  |                                  |
-|Marseille, France                     |                      ✅        |      ✅                                |                                  |
-|Paris, France                         |                        ✅      |        ✅                              |                                  |
-|Tel Aviv, Israel                      |                          ✅    |          ✅                            |                                  |
-|Warsaw, Poland                        |                            ✅  |            ✅                          |                                  |
-|Zurich, Switzerland                   |                  ✅            |              ✅                        |                                  |
+| Location                   | Global Secure Access deployed | VPN deployed | Private Access connectors deployed |
+| ---                        | --- | --- | --- |
+|Amsterdam, Netherlands      | ✅ | ✅ | ✅ |
+|Berlin, Germany             | ✅ |    |     |
+|Cape Town, South Africa     | ✅ | ✅ |    |
+|Dubai, UAE                  | ✅ | ✅ | ✅ |
+|Dublin, Ireland             | ✅ | ✅ | ✅ |
+|Frankfurt, Germany          | ✅ | ✅ | ✅ |
+|Gavle, Sweden               | ✅ | ✅ |    |
+|Johannesburg, South Africa  | ✅ | ✅ |    |
+|London, UK                  | ✅ | ✅ | ✅ |
+|Madrid, Spain               | ✅ |    |     |
+|Milan, Italy                | ✅ | ✅ |    |
+|Marseille, France           | ✅ | ✅ |    |
+|Paris, France               | ✅ | ✅ | ✅ |
+|Tel Aviv, Israel            | ✅ | ✅ | ✅ |
+|Warsaw, Poland              | ✅ | ✅ |    |
+|Zurich, Switzerland         | ✅ | ✅ |    |
 
 ### Latin America (LATAM)
 | Location | Global Secure Access deployed|VPN deployed|Private Access connectors deployed|
