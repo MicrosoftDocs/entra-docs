@@ -14,9 +14,9 @@ ms.custom: references_regions
 Global Secure Access is available in specific points of presence, with new locations added periodically. The service routes traffic through one of the following nearby locations, so even if you're not in a listed location, you can still access the service. At this time, both Microsoft Entra Internet Access and Microsoft Entra Private Access are available in the same locations. These locations are Microsoft data centers.
 
 ## Microsoft Entra Internet Access and Microsoft Entra Private Access locations
-
+The tables list the locations that Global Secure Access is deployed. The tables also list the locations that Virtual Private Network (VPN) and Microsoft Entra Private Access connectors are deployed.
 ### Asia Pacific (APAC)
-|Location | Global Secure Access deployed|Virtual Private Network (VPN) deployed|Private Access connectors deployed|
+|Location | Global Secure Access deployed|VPN deployed|Private Access connectors deployed|
 |         ---                      |      ---               |         ---             |       ---          |
 |Busan, South Korea          |          ✅                    |       ✅                               |                                  |
 |Chennai, India              |          ✅                  |         ✅                             |                                  |
@@ -30,7 +30,7 @@ Global Secure Access is available in specific points of presence, with new locat
 |Tokyo, Japan                |          ✅                      |                   ✅                   |                                  |
 
 ### Europe Middle East Africa (EMEA)
-| Location| Global Secure Access deployed|Virtual Private Network (VPN) deployed|Private Access connectors deployed|
+| Location| Global Secure Access deployed|VPN deployed|Private Access connectors deployed|
 |         ---                      |      ---               |         ---             |       ---          |
 |Amsterdam, Netherlands                |✅                              |    ✅                                  |                                  |
 |Berlin, Germany                       |  ✅                            |                                      |                                  |
@@ -50,13 +50,13 @@ Global Secure Access is available in specific points of presence, with new locat
 |Zurich, Switzerland                   |                  ✅            |              ✅                        |                                  |
 
 ### Latin America (LATAM)
-| Location | Global Secure Access deployed|Virtual Private Network (VPN) deployed|Private Access connectors deployed|
+| Location | Global Secure Access deployed|VPN deployed|Private Access connectors deployed|
 |         ---                      |      ---               |         ---             |       ---          |
 |Campinas, Brazil             |  ✅                            |                                      |                                  |
 |Rio de Janeiro, Brazil       |    ✅                          |                                      |                                  |
 
 ### North America (NA)
-| Location| Global Secure Access deployed|Virtual Private Network (VPN) deployed|Private Access connectors deployed|
+| Location| Global Secure Access deployed|VPN deployed|Private Access connectors deployed|
 |         ---                      |      ---               |         ---             |       ---          |
 |Boydton, Virginia, USA      |       ✅                       |         ✅                             |                                  |
 |Cheyenne, Wyoming, USA      |         ✅                     |        ✅                              |                                  |
