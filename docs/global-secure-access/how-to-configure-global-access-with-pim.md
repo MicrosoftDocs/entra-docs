@@ -25,11 +25,11 @@ Customers should consider configuring PIM using Global Secure Access to enable:
 
 **Enhanced Security:** PIM allows for just-in-time privileged access, reducing the risk of excessive, unnecessary, or misused access permissions within your environment. This enhanced security aligns with the [Zero Trust](https://www.microsoft.com/security/business/zero-trust) principle, ensuring that users have access only when they need it.
 
-**Compliance and Auditing**: Using PIM with Microsoft Global Secure Access can help ensure that your organization meets compliance requirements by providing detailed tracking and logging of privileged access requests. For details about PIM licensing, see [What are the Microsoft Entra ID licenses?](~/fundamentals/whatis.md)
+**Compliance and Auditing**: Using PIM with Microsoft Global Secure Access can help ensure that your organization meets compliance requirements by providing detailed tracking and logging of privileged access requests. For details about PIM licensing, see [Microsoft Entra ID Governance licensing fundamentals](~/id-governance/licensing-fundamentals.md)
 
 ## Prerequisites 
 
-- Microsoft Entra ID SKU support Privileged Identity Management (P2 or E5) 
+- [Microsoft Entra ID license that includes Privileged Identity Management (PIM)](~/fundamentals/whatis.md)
 - [Microsoft Entra Private Access](concept-private-access.md)
 
 ## Secure private access 
@@ -50,6 +50,7 @@ To begin, we configure and assign groups by creating a Microsoft Entra ID group,
 1. Select **New group**.
 1. In the **Group type**, select **Security**.
 1. Provide a group name; for example, `FinReport-SeniorAnalyst-SecureAccess`.
+   - This group name example indicates the application (FinReport), the role (SeniorAnalyst), and the nature of the group (SecureAccess), We recommend choosing a name that reflects the group's function or the assets it protects.
 1. In the **Membership type** option, select **Assigned**.
 1. Select **Create**. 
 
@@ -113,9 +114,9 @@ Even if a user and their device meet security requirements, attempting to access
 
 ## Step 2: Activate privileged access
 
-Next, we activate the PIM role using the Microsoft Entra admin center, and then attempt to connect with the new role activated.
+Next, we activate group membership using the Microsoft Entra admin center, and then attempt to connect with the new role activated.
 
-1. With at least User Administrator privilege, navigate to [Microsoft Entra](https://entra.microsoft.com/)  >  **Identity Governance**  > **Privileged Identity Management**. 
+1. Navigate to [Microsoft Entra](https://entra.microsoft.com/)  >  **Identity Governance**  > **Privileged Identity Management**. 
 1. Select **My roles** > **Groups** to see all eligible assignments.
 
    :::image type="content" border="true" source="./media/pim-global-secure-access/my-roles-groups.png" alt-text="Screenshot of My role groups screen." lightbox="./media/pim-global-secure-access/my-roles-groups.png":::
