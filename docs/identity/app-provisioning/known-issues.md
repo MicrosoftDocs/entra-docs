@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: troubleshooting
-ms.date: 05/23/2024
+ms.date: 07/17/2024
 ms.reviewer: arvinh
 zone_pivot_groups: app-provisioning-cross-tenant-synchronization
 ---
@@ -119,8 +119,9 @@ Attribute **targetAddress** (which maps to the ExternalEmailAddress property in 
 
 - Provisioning passwords isn't supported. 
 - Provisioning nested groups beyond the first level is not supported. 
-- Provisioning to B2C tenants isn't supported because of the size of the tenants.
-- Not all provisioning apps are available in all clouds. For example, Atlassian isn't yet available in the Government cloud. We're working with app developers to onboard their apps to all clouds.
+- Provisioning is not supported for B2C tenants, including into or out of the tenant.
+- Provisioning is not supported for External ID tenants, including into or out of the tenant.
+- Not all provisioning apps are available in all clouds. 
 
 ::: zone pivot="app-provisioning"
 #### Automatic provisioning isn't available on my OIDC-based application
