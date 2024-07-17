@@ -389,10 +389,6 @@
               href: msal-net-use-brokers-with-xamarin-apps.md
             - name: Calling a web API
               href: scenario-mobile-call-api.md
-        - name: Migrate broker-enabled Xamarin Android app MSAL.NET
-          href: msal-net-migration-android-broker.md
-        - name: Migrate broker-enabled Xamarin iOS app MSAL.NET
-          href: msal-net-migration-ios-broker.md
 - name: Service, daemon, script
   items:
     - name: Service/daemon authentication
