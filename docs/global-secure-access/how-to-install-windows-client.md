@@ -3,7 +3,7 @@ title: The Global Secure Access client for Windows
 description: Install the Global Secure Access client for Windows.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 07/15/2024
+ms.date: 07/16/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -26,6 +26,7 @@ Learn how to install the Global Secure Access client for Windows.
 
 ### Known limitations
 
+- **Secure DNS**: Secure DNS in its different versions (DNS over HTTPS, DNS over TLS, DNSSEC) is currently not supported. For the client to work correctly and acquire network traffic, Secure DNS must be disabled. To disable DNS, see [Disable DNS over HTTPS](troubleshoot-global-secure-access-client-advanced-diagnostics-health-check.md#disable-dns-over-https).
 - Multiple user sessions on the same device, like those from a Remote Desktop Server (RDP), aren't supported.
 - Networks that use a captive portal, like some guest wireless network solutions, might cause the client connection to fail. As a workaround you can [pause the Global Secure Access client](#troubleshooting).
 - Virtual machines where both the host and guest Operating Systems have the Global Secure Access client installed aren't supported. Individual virtual machines with the client installed are supported.
@@ -89,13 +90,13 @@ To troubleshoot the Global Secure Access client, right-click the client icon in 
    - Runs a script to test client components ensuring the client is configured and working as expected. 
 - **Connection Diagnostics** provides a live display of client status and connections tunneled by the client to the Global Secure Access service
    - **Summary** tab shows general information about the client configuration including: policy version in use, last policy update date and time, and the ID of the tenant the client is configured to work with.
-      - Hostname acquisition state changes to green when new traffic acquired by FQDN is tunneled successfully based on a match of the destination FQDN in a traffic forwarding profile.
+      - The hostname acquisition state changes to green when new traffic acquired by FQDN is tunneled successfully, based on a match of the destination FQDN in a traffic forwarding profile.
    - **Flows** show a live list of connections initiated by the end-user device and tunneled by the client to the Global Secure Access edge. Each connection is new row.
       - **Timestamp** is the time when the connection was first established.
       - **Fully Qualified Domain Name (FQDN)** of the destination of the connection. If the decision to tunnel the connection was made based on an IP rule in the forwarding policy not by an FQDN rule, the FQDN column shows N/A.
       - **Source** port of the end-user device for this connection. 
       - **Destination IP** is the destination of the connection.
-      - **Protocol** only TCP is supported currently.
+      - **Protocol** only Transmission Control Protocol (TCP) is supported currently.
       - **Process** name that initiated the connection. 
       - **Flow** active provides a status of whether the connection is still open.
       - **Sent data** provides the number of bytes sent by the end-user device over the connection. 
