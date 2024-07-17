@@ -19,6 +19,7 @@ The tables list the locations that Global Secure Access is deployed. The tables 
 
 ### Asia Pacific (APAC)
 The table lists the deployment status for the APAC region.
+
 |Location                    | Global Secure Access deployed | VPN deployed | Private Access connectors deployed |
 | ---                        | --- | --- | --- |
 |Busan, South Korea          | ✅ | ✅ | ✅ |
@@ -35,6 +36,7 @@ The table lists the deployment status for the APAC region.
 
 ### Europe Middle East Africa (EMEA)
 The table lists the deployment status for the EMEA region.
+
 | Location                   | Global Secure Access deployed | VPN deployed | Private Access connectors deployed |
 | ---                        | --- | --- | --- |
 |Amsterdam, Netherlands      | ✅ | ✅ | ✅ |
@@ -57,6 +59,7 @@ The table lists the deployment status for the EMEA region.
 
 ### Latin America (LATAM)
 The table lists the deployment status for the LATAM region.
+
 | Location                   | Global Secure Access deployed | VPN deployed | Private Access connectors deployed |
 | ---                        | --- | --- | --- |
 |Campinas, Brazil            | ✅ |   | ✅ |
@@ -65,6 +68,7 @@ The table lists the deployment status for the LATAM region.
 
 ### North America (NA)
 The table lists the deployment status for the NA region.
+
 | Location                   | Global Secure Access deployed | VPN deployed | Private Access connectors deployed |
 | ---                        | --- | --- | --- |
 |Boydton, Virginia, USA      | ✅ | ✅ |     |
