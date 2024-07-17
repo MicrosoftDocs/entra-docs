@@ -22,7 +22,6 @@ List of settings that can be configured to sync in recent Windows versions.
 
 | Settings | Windows 10 (21H1 or newer) |
 | --- | --- |
-| Keyboard: turn on toggle keys (off by default) | sync |
 | Date, Time, and Region: country/region | sync |
 | Date, Time, and Region: region format (locale) | sync |
 | Inking & typing: Custom dictionary | sync (Windows 11 only) |
