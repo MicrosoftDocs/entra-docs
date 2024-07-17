@@ -13,26 +13,64 @@ ms.custom: references_regions
 
 Global Secure Access is available in specific points of presence, with new locations added periodically. The service routes traffic through one of the following nearby locations, so even if you're not in a listed location, you can still access the service. At this time, both Microsoft Entra Internet Access and Microsoft Entra Private Access are available in the same locations. These locations are Microsoft data centers.
 
-## Microsoft Entra Internet Access and Microsoft Entra Private Access
+## Microsoft Entra Internet Access and Microsoft Entra Private Access locations
 
-| Europe Middle East Africa (EMEA) | Asia Pacific (APAC)    | Latin America (LATAM)   | North America (NA) |
+### Asia Pacific (APAC)
+| | Global Secure Access deployed|Virtual Private Network (VPN) deployed|Private Access connectors deployed|
 |         ---                      |      ---               |         ---             |       ---          |
-| Amsterdam, Netherlands           | Busan, South Korea     | Campinas, Brazil        | Boydton, Virginia, USA |
-| Berlin, Germany                  | Chennai, India         | Rio de Janeiro, Brazil  | Cheyenne, Wyoming, USA |
-| Cape Town, South Africa          | Melbourne, Australia   |                         | Chicago, Illinois, USA |
-| Dubai, UAE                       | Osaka, Japan           |                         | Des Moines, Iowa, USA |
-| Dublin, Ireland                  | Pune, India            |                         | Manassas, Virginia, USA |
-| Frankfurt, Germany               | Seoul, South Korea     |                         | Montreal, Quebec, Canada |
-| Gavle, Sweden                    | Singapore, Singapore   |                         | Phoenix, Arizona, USA |
-| Johannesburg, South Africa       | Sydney, Australia      |                         | Queretaro, Mexico |
-| London, UK                       | Taipei, Taiwan         |                         | Quincy, Washington, USA |
-| Madrid, Spain                    | Tokyo, Japan           |                         | San Antonio, Texas, USA |
-| Milan, Italy                     |                        |                         | San Jose, California, USA |
-| Marseille, France                |                        |                         | Toronto, Ontario, Canada |
-| Paris, France                    |                        |                         |                          |
-| Tel Aviv, Israel                 |                        |                         |                          |
-| Warsaw, Poland                   |                        |                         |                          |
-| Zurich, Switzerland              |                        |                         |                          |
+|Busan, South Korea          |          ✅                    |       ✅                               |                                  |
+|Chennai, India              |            ✅                  |         ✅                             |                                  |
+|Melbourne, Australia        |              ✅                |           ✅                           |                                  |
+|Osaka, Japan                |                ✅              |             ✅                         |                                  |
+|Pune, India                 |                  ✅            |                                      |                                  |
+|Seoul, South Korea          |                    ✅          |               ✅                       |                                  |
+|Singapore, Singapore        |                      ✅        |                                      |                                  |
+|Sydney, Australia           |    ✅                          |                 ✅                     |                                  |
+|Taipei, Taiwan              |      ✅                        |                                      |                                  |
+|Tokyo, Japan                |        ✅                      |                   ✅                   |                                  |
+
+### Europe Middle East Africa (EMEA)
+| | Global Secure Access deployed|Virtual Private Network (VPN) deployed|Private Access connectors deployed|
+|         ---                      |      ---               |         ---             |       ---          |
+|Amsterdam, Netherlands                |✅                              |    ✅                                  |                                  |
+|Berlin, Germany                       |  ✅                            |                                      |                                  |
+|Cape Town, South Africa               |    ✅                          |      ✅                                |                                  |
+|Dubai, UAE                            |      ✅                        |        ✅                              |                                  |
+|Dublin, Ireland                       |        ✅                      |          ✅                            |                                  |
+|Frankfurt, Germany                    |          ✅                    |            ✅                          |                                  |
+|Gavle, Sweden                         |            ✅                  |              ✅                        |                                  |
+|Johannesburg, South Africa            |              ✅                |                ✅                      |                                  |
+|London, UK                            |                ✅              |                  ✅                    |                                  |
+|Madrid, Spain                         |                  ✅            |                                      |                                  |
+|Milan, Italy                          |                    ✅          |                    ✅                  |                                  |
+|Marseille, France                     |                      ✅        |      ✅                                |                                  |
+|Paris, France                         |                        ✅      |        ✅                              |                                  |
+|Tel Aviv, Israel                      |                          ✅    |          ✅                            |                                  |
+|Warsaw, Poland                        |                            ✅  |            ✅                          |                                  |
+|Zurich, Switzerland                   |                  ✅            |              ✅                        |                                  |
+
+### Latin America (LATAM)
+| | Global Secure Access deployed|Virtual Private Network (VPN) deployed|Private Access connectors deployed|
+|         ---                      |      ---               |         ---             |       ---          |
+|Campinas, Brazil             |  ✅                            |                                      |                                  |
+|Rio de Janeiro, Brazil       |    ✅                          |                                      |                                  |
+
+### North America (NA)
+| | Global Secure Access deployed|Virtual Private Network (VPN) deployed|Private Access connectors deployed|
+|         ---                      |      ---               |         ---             |       ---          |
+|Boydton, Virginia, USA      |       ✅                       |         ✅                             |                                  |
+|Cheyenne, Wyoming, USA      |         ✅                     |        ✅                              |                                  |
+|Chicago, Illinois, USA      |           ✅                   |          ✅                            |                                  |
+|Des Moines, Iowa, USA      |              ✅                |             ✅                         |                                  |
+|Manassas, Virginia, USA      |      ✅                        |             ✅                         |                                  |
+|Montreal, Quebec, Canada      |       ✅                       |              ✅                        |                                  |
+|Phoenix, Arizona, USA      |            ✅                  |                   ✅                   |                                  |
+|Queretaro, Mexico      |                  ✅            |                                      |                                  |
+|Quincy, Washington, USA      |              ✅                |                   ✅                   |                                  |
+|San Antonio, Texas, USA      |                ✅              |                     ✅                 |                                  |
+|San Jose, California, USA      |                ✅              |                     ✅                 |                                  |
+|Toronto, Ontario, Canada      |                   ✅           |                        ✅              |                                  |
+
 
 ## IP addresses and Fully Qualified Domain Names (FQDNs) for Global Secure Access service
 The Global Secure Access service is accessed from the Global Secure Access client and is used for Microsoft Entra Internet Access (including Microsoft 365) and Microsoft Entra Private Access traffic. The Internet Protocol (IP) addresses are listed.
