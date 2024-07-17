@@ -109,6 +109,8 @@ items:
         href: how-to-configure-quick-access.md 
       - name: Configure Private Access with PIM
         href: how-to-configure-global-access-with-pim.md
+      - name: Kerberos single sign-on (SSO)
+        href: how-to-configure-kerberos-sso.md
   - name: Internet Access
     expanded: true
     items:
@@ -116,11 +118,6 @@ items:
         href: concept-internet-access.md
       - name: Configure web content filtering
         href: how-to-configure-web-content-filtering.md
-  - name: Single sign-on
-    expanded: true
-    items:
-      - name: Kerberos single sign-on
-        href: how-to-configure-kerberos-sso.md
   - name: Logs and monitoring
     expanded: false
     items:
