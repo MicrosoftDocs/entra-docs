@@ -54,7 +54,7 @@ Remote users connect to private apps across hybrid and multicloud environments, 
 ### Key features
 
 - Zero Trust based access to a range of IP addresses and/or Fully Qualified Domain Names (FQDNs) without requiring a legacy VPN. This feature is known as Quick Access.
-- Per-app access for Transmission Control Protocol (TCP) applications.
+- Per-app access for Transmission Control Protocol (TCP) and User Datagram Protocol (UDP) applications.
 - Modernize legacy app authentication with deep Conditional Access integration.
 - Provide a seamless end-user experience by acquiring network traffic from the desktop client and deploying side-by-side with your existing non-Microsoft SSE solutions.
 
