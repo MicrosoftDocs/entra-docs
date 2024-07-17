@@ -23,7 +23,7 @@ Face Check is a privacy-respecting facial matching. It allows enterprises to per
 Face Check is a premium feature within Verified ID. You need to enable the Face Check Add-on in your Entra Verified ID setup before doing Face Check verifications.
 
 > [!IMPORTANT]
-> The Face Check Add-on can only be enable from the Entra portal. Admin API support for this feature. 
+> The Face Check Add-on can only be enabled from the Entra portal. Admin API support for this feature. 
 
 - If this is the first time using Entra Verified ID, [set up your tenant](./verifiable-credentials-configure-tenant-quick.md).
 - [Associate or add an Azure subscription to your Microsoft Entra tenant](/entra/fundamentals/how-subscriptions-associated-directory)
@@ -107,7 +107,7 @@ The claim containing the photo must be named and you may optionally specify your
 
 #### Successful Face Check presentation_verified callback event
 
-The JSON payload for the `presentation_verified` has more data when a Face Check was successfully during a Verified ID credential presentation. The faceCheck section is added which contains a matchConfidenceScore. Note, that it isn't possible to request and receive the presentation receipt when the request includes faceCheck.
+The JSON payload for the `presentation_verified` has more data when a Face Check was successfully during a Verified ID credential presentation. The FaceCheck section is added which contains a matchConfidenceScore. Note, that it isn't possible to request and receive the presentation receipt when the request includes faceCheck.
 
 ```json
   "verifiedCredentialsData": [ 
@@ -180,7 +180,7 @@ For the latest information about usage billing and pricing, see [Microsoft Entra
 ## Frequently asked questions for Face Check Developers 
 ### Does Face Check Require MS Authenticator?
 
-Yes. Face Check is limited to Verified ID usage with MS Authenticator. This limitation is in place to prevent injection attack on Face Check. For non-Face Check scenarios, a Wallet SDK is available other Verified ID solutions. More info [here](using-wallet-library.md)
+Yes. Face Check is limited to Verified ID usage with MS Authenticator. This limitation is in place to prevent injection attack on Face Check. For non-Face Check scenarios, a Wallet SDK is available for other Verified ID solutions. More info [here](using-wallet-library.md)
 
 ### What is the confidence percentage match and what does confidence mean?
 
