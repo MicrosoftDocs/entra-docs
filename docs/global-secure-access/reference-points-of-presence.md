@@ -51,26 +51,26 @@ The tables list the locations that Global Secure Access is deployed. The tables 
 |Zurich, Switzerland         | ✅ | ✅ |    |
 
 ### Latin America (LATAM)
-| Location | Global Secure Access deployed|VPN deployed|Private Access connectors deployed|
-|         ---                      |      ---               |         ---             |       ---          |
-|Campinas, Brazil             |  ✅                            |                                      |                                  |
-|Rio de Janeiro, Brazil       |    ✅                          |                                      |                                  |
+| Location                   | Global Secure Access deployed | VPN deployed | Private Access connectors deployed |
+| ---                        | --- | --- | --- |
+|Campinas, Brazil            | ✅ |   | ✅ |
+|Rio de Janeiro, Brazil      | ✅ |   | ✅ |
 
 ### North America (NA)
-| Location| Global Secure Access deployed|VPN deployed|Private Access connectors deployed|
-|         ---                      |      ---               |         ---             |       ---          |
-|Boydton, Virginia, USA      |       ✅                       |         ✅                             |                                  |
-|Cheyenne, Wyoming, USA      |         ✅                     |        ✅                              |                                  |
-|Chicago, Illinois, USA      |           ✅                   |          ✅                            |                                  |
-|Des Moines, Iowa, USA      |              ✅                |             ✅                         |                                  |
-|Manassas, Virginia, USA      |      ✅                        |             ✅                         |                                  |
-|Montreal, Quebec, Canada      |       ✅                       |              ✅                        |                                  |
-|Phoenix, Arizona, USA      |            ✅                  |                   ✅                   |                                  |
-|Queretaro, Mexico      |                  ✅            |                                      |                                  |
-|Quincy, Washington, USA      |              ✅                |                   ✅                   |                                  |
-|San Antonio, Texas, USA      |                ✅              |                     ✅                 |                                  |
-|San Jose, California, USA      |                ✅              |                     ✅                 |                                  |
-|Toronto, Ontario, Canada      |                   ✅           |                        ✅              |                                  |
+| Location                   | Global Secure Access deployed | VPN deployed | Private Access connectors deployed |
+| ---                        | --- | --- | --- |
+|Boydton, Virginia, USA      | ✅ | ✅ |     |
+|Cheyenne, Wyoming, USA      | ✅ | ✅ |     |
+|Chicago, Illinois, USA      | ✅ | ✅ |     |
+|Des Moines, Iowa, USA       | ✅ | ✅ | ✅ |
+|Manassas, Virginia, USA     | ✅ | ✅ | ✅ |
+|Montreal, Quebec, Canada    | ✅ | ✅ |     |
+|Phoenix, Arizona, USA       | ✅ | ✅ |     |
+|Queretaro, Mexico           | ✅ |    |     |
+|Quincy, Washington, USA     | ✅ | ✅ |     |
+|San Antonio, Texas, USA     | ✅ | ✅ | ✅ |
+|San Jose, California, USA   | ✅ | ✅ | ✅ |
+|Toronto, Ontario, Canada    | ✅ | ✅ |     |
 
 
 ## IP addresses and Fully Qualified Domain Names (FQDNs) for Global Secure Access service
