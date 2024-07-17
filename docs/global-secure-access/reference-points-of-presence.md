@@ -16,21 +16,21 @@ Global Secure Access is available in specific points of presence, with new locat
 ## Microsoft Entra Internet Access and Microsoft Entra Private Access locations
 
 ### Asia Pacific (APAC)
-| | Global Secure Access deployed|Virtual Private Network (VPN) deployed|Private Access connectors deployed|
+|Location | Global Secure Access deployed|Virtual Private Network (VPN) deployed|Private Access connectors deployed|
 |         ---                      |      ---               |         ---             |       ---          |
 |Busan, South Korea          |          ✅                    |       ✅                               |                                  |
-|Chennai, India              |            ✅                  |         ✅                             |                                  |
-|Melbourne, Australia        |              ✅                |           ✅                           |                                  |
-|Osaka, Japan                |                ✅              |             ✅                         |                                  |
-|Pune, India                 |                  ✅            |                                      |                                  |
-|Seoul, South Korea          |                    ✅          |               ✅                       |                                  |
-|Singapore, Singapore        |                      ✅        |                                      |                                  |
-|Sydney, Australia           |    ✅                          |                 ✅                     |                                  |
-|Taipei, Taiwan              |      ✅                        |                                      |                                  |
-|Tokyo, Japan                |        ✅                      |                   ✅                   |                                  |
+|Chennai, India              |          ✅                  |         ✅                             |                                  |
+|Melbourne, Australia        |          ✅                |           ✅                           |                                  |
+|Osaka, Japan                |          ✅              |             ✅                         |                                  |
+|Pune, India                 |          ✅            |                                      |                                  |
+|Seoul, South Korea          |          ✅          |               ✅                       |                                  |
+|Singapore, Singapore        |          ✅        |                                      |                                  |
+|Sydney, Australia           |          ✅                          |                 ✅                     |                                  |
+|Taipei, Taiwan              |          ✅                        |                                      |                                  |
+|Tokyo, Japan                |          ✅                      |                   ✅                   |                                  |
 
 ### Europe Middle East Africa (EMEA)
-| | Global Secure Access deployed|Virtual Private Network (VPN) deployed|Private Access connectors deployed|
+| Location| Global Secure Access deployed|Virtual Private Network (VPN) deployed|Private Access connectors deployed|
 |         ---                      |      ---               |         ---             |       ---          |
 |Amsterdam, Netherlands                |✅                              |    ✅                                  |                                  |
 |Berlin, Germany                       |  ✅                            |                                      |                                  |
@@ -50,13 +50,13 @@ Global Secure Access is available in specific points of presence, with new locat
 |Zurich, Switzerland                   |                  ✅            |              ✅                        |                                  |
 
 ### Latin America (LATAM)
-| | Global Secure Access deployed|Virtual Private Network (VPN) deployed|Private Access connectors deployed|
+| Location | Global Secure Access deployed|Virtual Private Network (VPN) deployed|Private Access connectors deployed|
 |         ---                      |      ---               |         ---             |       ---          |
 |Campinas, Brazil             |  ✅                            |                                      |                                  |
 |Rio de Janeiro, Brazil       |    ✅                          |                                      |                                  |
 
 ### North America (NA)
-| | Global Secure Access deployed|Virtual Private Network (VPN) deployed|Private Access connectors deployed|
+| Location| Global Secure Access deployed|Virtual Private Network (VPN) deployed|Private Access connectors deployed|
 |         ---                      |      ---               |         ---             |       ---          |
 |Boydton, Virginia, USA      |       ✅                       |         ✅                             |                                  |
 |Cheyenne, Wyoming, USA      |         ✅                     |        ✅                              |                                  |
