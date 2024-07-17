@@ -35,9 +35,9 @@ Customers should consider configuring PIM using Global Secure Access to enable:
 ## Secure private access 
 
 To successfully implement secure private access, you must complete these three steps:
-- Step 1: [Configure and assign groups](#step-1-configure-and-assign-groups)
-- Step 2: [Activate privileged access](#step-2-activate-privileged-access)
-- Step 3: [Follow compliance guidance](#step-3-follow-compliance-guidance)
+1.  [Configure and assign groups](#step-1-configure-and-assign-groups)
+1.  [Activate privileged access](#step-2-activate-privileged-access)
+1.  [Follow compliance guidance](#step-3-follow-compliance-guidance)
 
 ## Step 1: Configure and assign groups
 
@@ -45,7 +45,7 @@ To begin, we configure and assign groups by creating a Microsoft Entra ID group,
 
 1. Navigate to [Microsoft Entra](https://entra.microsoft.com/) > **Identity** > **Groups** > **All groups**.
  
-   :::image type="content" border="true" source="./media/pim-global-secure-access/all-groups.png" alt-text="Screenshot of the All groups screen.":::
+   :::image type="content" border="true" source="./media/pim-global-secure-access/all-groups.png" alt-text="Screenshot of the All groups screen." lightbox="./media/pim-global-secure-access/all-groups.png":::
 
 1. Select **New group**.
 1. In the **Group type**, select **Security**.
@@ -53,54 +53,54 @@ To begin, we configure and assign groups by creating a Microsoft Entra ID group,
 1. In the **Membership type** option, select **Assigned**.
 1. Select **Create**. 
 
-   :::image type="content" border="true" source="./media/pim-global-secure-access/new-group.png" alt-text="Screenshot of the New group screen.":::
+   :::image type="content" border="true" source="./media/pim-global-secure-access/new-group.png" alt-text="Screenshot of the New group screen." lightbox="./media/pim-global-secure-access/new-group.png":::
 
 ### Onboard the group to PIM 
 
 1. Navigate to [Microsoft Entra](https://entra.microsoft.com/) >  **Identity Governance**  > **Privileged Identity Management**.
 1. Select **Groups**, then **Discover groups**. 
 
-   :::image type="content" border="true" source="./media/pim-global-secure-access/discover-groups.png" alt-text="Screenshot of the Groups screen with Discover groups selected.":::
+   :::image type="content" border="true" source="./media/pim-global-secure-access/discover-groups.png" alt-text="Screenshot of the Groups screen with Discover groups selected." lightbox="./media/pim-global-secure-access/discover-groups.png":::
 
 1. Select the group that you created; for example, `FinReport-SeniorAnalyst-SecureAccess`, then select **Manage groups**. 
 1. When prompted for onboarding, select **OK**. 
 
-    :::image type="content" border="true" source="./media/pim-global-secure-access/manage-groups.png" alt-text="Screenshot of the Managed groups screen with a group selected.":::
+    :::image type="content" border="true" source="./media/pim-global-secure-access/manage-groups.png" alt-text="Screenshot of the Managed groups screen with a group selected." lightbox="./media/pim-global-secure-access/manage-groups.png":::
 
 ### Update PIM policy role settings (optional step)
 
 1. Select **Setting**, then select **Member**. 
 
-   :::image type="content" border="true" source="./media/pim-global-secure-access/choose-member-role.png" alt-text="Screenshot of Member Role screen.":::
+   :::image type="content" border="true" source="./media/pim-global-secure-access/choose-member-role.png" alt-text="Screenshot of Member Role screen." lightbox="./media/pim-global-secure-access/choose-member-role.png":::
 
 1. Adjust any other settings you want in the **Activation** tab.
 
 1. Set the **Activation Max Duration**; for example, 0.5 hours. 
 1. In the **On activation** option, require **Azure MFA**, and select **Update**.
 
-   :::image type="content" border="true" source="./media/pim-global-secure-access/activation-tab.png" alt-text="Screenshot of the Activation tab options.":::
+   :::image type="content" border="true" source="./media/pim-global-secure-access/activation-tab.png" alt-text="Screenshot of the Activation tab options." lightbox="./media/pim-global-secure-access/activation-tab.png":::
 
 ### Assign eligible membership
 
 1. Select **Assignments**, then **Add assignments**. 
 
-   :::image type="content" border="true" source="./media/pim-global-secure-access/add-assignments.png" alt-text="Screenshot of the Add assignments option.":::
+   :::image type="content" border="true" source="./media/pim-global-secure-access/add-assignments.png" alt-text="Screenshot of the Add assignments option." lightbox="./media/pim-global-secure-access/add-assignments.png":::
 
 1. In the **Role** option, select **Member**, then select **Next**.
 1. Add the selected members that you would like to include for the role.
  
-   :::image type="content" border="true" source="./media/pim-global-secure-access/eligible-assignment.png" alt-text="Screenshot of the eligible member.":::
+   :::image type="content" border="true" source="./media/pim-global-secure-access/eligible-assignment.png" alt-text="Screenshot of the eligible member." lightbox="./media/pim-global-secure-access/eligible-assignment.png":::
 
 1. In the **Assignment Type** option, select **Eligible**, then select **Assign**.
 
-   :::image type="content" border="true" source="./media/pim-global-secure-access/eligible-member.png" alt-text="Screenshot of the Eligible member screen.":::
+   :::image type="content" border="true" source="./media/pim-global-secure-access/eligible-member.png" alt-text="Screenshot of the Eligible member screen." lightbox="./media/pim-global-secure-access/eligible-member.png":::
 
 ### Quick Access assignment
 
 1. Navigate to [Microsoft Entra](https://entra.microsoft.com/) > **Global Secure Access** > **Quick Access** > **Users and groups**. 
 1. Select **Add user/group**, then specify the group that you created; for example, `FinReport-SeniorAnalyst-SecureAccess`.  
 
-   :::image type="content" border="true" source="./media/pim-global-secure-access/quick-access.png" alt-text="Screenshot of the Quick Access screen.":::
+   :::image type="content" border="true" source="./media/pim-global-secure-access/quick-access.png" alt-text="Screenshot of the Quick Access screen." lightbox="./media/pim-global-secure-access/quick-access.png":::
 
 > [!NOTE]  
 > This scenario is most effective when you choose **Per-app Access**, as **Quick Access** is used here for reference only. Apply the same steps if you choose **Enterprise Applications**.
@@ -109,7 +109,7 @@ To begin, we configure and assign groups by creating a Microsoft Entra ID group,
 
 Even if a user and their device meet security requirements, attempting to access a privileged resource results in an error. This error occurs because Microsoft Entra Private Access recognizes that the user hasn't been assigned access to the application. 
 
-:::image type="content" border="true" source="./media/pim-global-secure-access/client-experience.png" alt-text="Screenshot of the client experience error message.":::
+:::image type="content" border="true" source="./media/pim-global-secure-access/client-experience.png" alt-text="Screenshot of the client experience error message." lightbox="./media/pim-global-secure-access/client-experience.png":::
 
 ## Step 2: Activate privileged access
 
@@ -118,21 +118,21 @@ Next, we activate the PIM role using the Microsoft Entra admin center, and then 
 1. With at least User Administrator privilege, navigate to [Microsoft Entra](https://entra.microsoft.com/)  >  **Identity Governance**  > **Privileged Identity Management**. 
 1. Select **My roles** > **Groups** to see all eligible assignments.
 
-   :::image type="content" border="true" source="./media/pim-global-secure-access/my-roles-groups.png" alt-text="Screenshot of My role groups screen.":::
+   :::image type="content" border="true" source="./media/pim-global-secure-access/my-roles-groups.png" alt-text="Screenshot of My role groups screen." lightbox="./media/pim-global-secure-access/my-roles-groups.png":::
 
 1. Select **Activate**, then type the reason in the **Reason** box. You can also choose to adjust the parameters of the session, then select **Activate**.
 
-   :::image type="content" border="true" source="./media/pim-global-secure-access/activate-member.png" alt-text="Screenshot of the Activate member screen.":::
+   :::image type="content" border="true" source="./media/pim-global-secure-access/activate-member.png" alt-text="Screenshot of the Activate member screen." lightbox="./media/pim-global-secure-access/activate-member.png":::
 
 1. Once the role is activated, you receive a confirmation from the portal.
 
-   :::image type="content" border="true" source="./media/pim-global-secure-access/member-activated.png" alt-text="Screenshot of the member being activated in the portal.":::
+   :::image type="content" border="true" source="./media/pim-global-secure-access/member-activated.png" alt-text="Screenshot of the member being activated in the portal." lightbox="./media/pim-global-secure-access/member-activated.png":::
 
 ### Reattempt to connect with role activated 
 
-- Browse any of the published resources, as you should be able to successfully connect to them. 
+Browse any of the published resources, as you should be able to successfully connect to them. 
 
-   :::image type="content" border="true" source="./media/pim-global-secure-access/identify-remote-computer.png" alt-text="Screenshot of connecting to published resource.":::
+:::image type="content" border="true" source="./media/pim-global-secure-access/identify-remote-computer.png" alt-text="Screenshot of connecting to published resource." lightbox="./media/pim-global-secure-access/identify-remote-computer.png":::
 
 ### Deactivate the role 
 
@@ -142,7 +142,7 @@ If the work is completed ahead of the time you allocated, you can choose to deac
 1. Select **My roles**, then **Groups**. 
 1. Select **Deactivate**. 
 
-   :::image type="content" border="true" source="./media/pim-global-secure-access/deactivate-member.png" alt-text="Screenshot of Deactiviate member screen.":::
+   :::image type="content" border="true" source="./media/pim-global-secure-access/deactivate-member.png" alt-text="Screenshot of Deactivate member screen." lightbox="./media/pim-global-secure-access/deactivate-member.png":::
 
 1. A confirmation is sent to you once the role is deactivated.  
 
@@ -150,4 +150,4 @@ If the work is completed ahead of the time you allocated, you can choose to deac
 
 This final step enables you to successfully maintain a history of access requests and activations. The standard log format helps to meet tracking and logging compliance guidance and provide an audit trail. 
 
-:::image type="content" border="true" source="./media/pim-global-secure-access/audit-log-details.png" alt-text="Screenshot of the Audit log details screen.":::
+:::image type="content" border="true" source="./media/pim-global-secure-access/audit-log-details.png" alt-text="Screenshot of the Audit log details screen." lightbox="./media/pim-global-secure-access/audit-log-details.png":::
