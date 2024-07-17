@@ -38,7 +38,7 @@ At this time, Private access traffic can only be acquired with the Global Secure
 
 Configuring your Quick Access settings is a major component to utilizing Microsoft Entra Private Access. When you configure Quick Access for the first time, Private Access creates a new enterprise application. The properties of this new app are automatically configured to work with Private Access.
 
-To configure Quick Access, you need to have a connector group with at least one active [Microsoft Entra application proxy](/azure/active-directory/app-proxy/application-proxy) connector. The connector group handles the traffic to this new application. Once you have Quick Access and an private network connector group configured, you need to grant access to the app.
+To configure Quick Access, you need to have a connector group with at least one active [Microsoft Entra application proxy](/azure/active-directory/app-proxy/application-proxy) connector. The connector group handles the traffic to this new application. Once you have Quick Access and a private network connector group configured, you need to grant access to the app.
 
 To summarize, the overall process is as follows:
 
@@ -77,7 +77,7 @@ On the Quick Access page, you provide a name for the Quick Access app, select a 
 
     ![Screenshot of the Quick Access app name.](media/how-to-configure-quick-access/new-quick-access-name.png)
 
-1. Select the **Save** button at the bottom of the page to create your "Quick Access" app without FQDNs and IP addresses.
+1. Select the **Save** button at the bottom of the page to create your "Quick Access" app without FQDNs, IP addresses, and private DNS suffixes.
 
 ### Add Quick Access application segment
 
@@ -89,7 +89,7 @@ You can add fully qualified domain names (FQDN), IP addresses, and IP address ra
 1. Browse to **Global Secure Access** > **Applications** > **Quick Access**.
 1. Select **Add Quick Access application segment**.
 
-    ![Screenshot of the Add Quick Access application segment button.](media/how-to-configure-quick-access/add-quick-access-application-segment.png)
+    ![Screenshot of the Added Quick Access application segment button.](media/how-to-configure-quick-access/add-quick-access-application-segment.png)
 
 1. In the **Create application segment** panel that opens, select a **Destination type**.
 
@@ -135,6 +135,14 @@ You can add fully qualified domain names (FQDN), IP addresses, and IP address ra
 > You can add up to 500 application segments to your Quick Access app.
 >
 > Do not overlap FQDNs, IP addresses, and IP ranges between your Quick Access app and any Private Access apps.
+
+### Add private DNS suffixes
+Add a DNS suffix to use for private DNS.
+
+1. Select **Private DNS** tab.
+1. Select the checkbox to **enable private DNS**.
+1. Select **Add DNS suffix**.
+1. Enter the DNS suffix and then select **Add**.
 
 ### Update Quick Access application segments
 

@@ -3,7 +3,7 @@ title: Global Secure Access and universal tenant restrictions
 description: Learn about how Global Secure Access secures access to your corporate network by restricting access to external tenants.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 05/09/2024
+ms.date: 07/17/2024
 ms.author: kenwith
 author: kenwith
 manager: amycolannino
@@ -102,8 +102,6 @@ Tenant restrictions are not enforced when a user (or a guest user) in tries to a
    1. In the same response, check the headers for the following information identifying that universal tenant restrictions were applied:
       1. `Restrict-Access-Confirm: 1`
       1. `x-ms-diagnostics: 2000020;reason="xms_trpid claim was not present but sec-tenant-restriction-access-policy header was in requres";error_category="insufficiant_claims"`
-
-
 
 ## Next steps
 

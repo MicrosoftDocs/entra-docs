@@ -43,9 +43,11 @@ items:
   - name: Remote networks
     expanded: false
     items:
+      - name: Understand remote network connectivity
+        href: concept-remote-network-connectivity.md
       - name: Create a remote network
         href: how-to-create-remote-networks.md
-      - name: Create remote network with custom IKE policy
+      - name: Create remote network with custom Internet Key Exchange (IKE) policy
         href: how-to-create-remote-network-custom-ike-policy.md
       - name: Configure customer premises equipment
         href: how-to-configure-customer-premises-equipment.md
@@ -67,7 +69,7 @@ items:
       - name: Universal Conditional Access
         expanded: false
         items:
-          - name: About Universal Conditional Access 
+          - name: Understand Universal Conditional Access 
             href: concept-universal-conditional-access.md
           - name: Microsoft traffic
             href: how-to-target-resource-microsoft-profile.md
@@ -82,7 +84,7 @@ items:
   - name: Traffic forwarding profiles
     expanded: false
     items:
-      - name: About traffic forwarding profiles
+      - name: Understand traffic forwarding profiles
         href: concept-traffic-forwarding.md
       - name: Manage the Microsoft profile
         href: how-to-manage-microsoft-profile.md
@@ -95,27 +97,31 @@ items:
   - name: Private Access
     expanded: false
     items:
-      - name: About Private Access
+      - name: Understand Private Access
         href: concept-private-access.md
       - name: Configure connectors
         href: how-to-configure-connectors.md
       - name: Register connector - silent Install
         href: how-to-register-connector-powershell.md
-      - name: Configure Quick Access
-        href: how-to-configure-quick-access.md 
       - name: Configure Per-app Access
         href: how-to-configure-per-app-access.md
+      - name: Configure Quick Access
+        href: how-to-configure-quick-access.md 
+      - name: Configure Private Access with PIM
+        href: how-to-configure-global-access-with-pim.md
+      - name: Kerberos single sign-on (SSO)
+        href: how-to-configure-kerberos-sso.md
   - name: Internet Access
     expanded: true
     items:
-      - name: About Internet Access
+      - name: Understand Internet Access
         href: concept-internet-access.md
       - name: Configure web content filtering
         href: how-to-configure-web-content-filtering.md
   - name: Logs and monitoring
     expanded: false
     items:
-      - name: About logs and monitoring
+      - name: Understand logs and monitoring
         href: concept-global-secure-access-logs-monitoring.md
       - name: Global Secure Access audit logs
         href: how-to-access-audit-logs.md
