@@ -129,7 +129,7 @@ The following scenarios are important to consider when you're reviewing sign-in 
 
 - **IP address and location:** There's no definitive connection between an IP address and where the computer with that address is physically located. Mobile providers and VPNs issue IP addresses from central pools that are often far from where the client device is used. Currently, converting IP address to a physical location is a best effort based on traces, registry data, reverse lookups, and other information.
 
-- **Date and time:** The date and time of a sign-in attempt appear the time zone for the person signed into the Microsoft Entra admin center.
+- **Date and time:** The date and time of a sign-in attempt is localized to the time zone for the person signed into the Microsoft Entra admin center, not the user who attempted the sign-in.
  
 - **Conditional Access:**
   - `Not applied`: No policy applied to the user and application during sign-in.
