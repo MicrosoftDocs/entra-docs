@@ -26,7 +26,7 @@ Before you get started with single sign-on, make sure your environment is ready.
 ### Publish resources for use with single sign-on
 To test single sign-on, create a new enterprise application that publishes a file share. Using an enterprise application to publish your file share lets you assign a Conditional Access policy to the resource and enforce extra security controls, such as multifactor authentication.
 
-1. In the Microsoft Entra admin center, select **Global Secure Access (Preview)** > **Applications** > **Enterprise Applications**.
+1. In the Microsoft Entra admin center, select **Global Secure Access** > **Applications** > **Enterprise Applications**.
 1. Select **New Application**. 
 1. Add a new app segment with the IP of your file server using port `445/TCP` and then select **Save**. The Server Message Block (SMB) protocol uses the port.
 1. Open the enterprise application you created and select **Users and Groups** to assign access to the resource.
@@ -61,7 +61,7 @@ The Domain Controller ports are required to enable SSO to on-premises resources.
 > [!NOTE]
 > The guide focuses on enabling SSO to on-premises resources and excludes configuration required for Windows domain-joined clients to perform domain operations (password change, Group Policy, etc.).
 
-1. Select **Global Secure Access (Preview)** > **Applications** > **Enterprise Applications** and then select **New Application** to create a new application to publish your Domain Controllers.
+1. Select **Global Secure Access** > **Applications** > **Enterprise Applications** and then select **New Application** to create a new application to publish your Domain Controllers.
 1. Select **Add application segment** and then add all of your Domain Controllers’ IPs or Fully Qualified Domain Names (FQDNs) and ports as per the table. Don't add both IPs and FQDNs. Only the Domain Controllers in the Active Directory site where the private access connectors are located should be published.
 
 > [!NOTE]
@@ -101,6 +101,42 @@ Run the `nltest` command.
 `nltest /dsgetdc:contoso /keylist /kdc`
 
 Verify the DC locator returns a Domain Controller that is a participant of cloud Kerberos trust operations. The returned DC should have the `klist` flag.
+
+## How to avoid Kerberos Negative Caching on Windows Machines
+Kerberos is the preferred authentication method for services in Windows that is used to verify users or host identities. Kerberos negative caching hinders users to accurately get/fetch Kerberos tickets at the time of users attempting to reach on-premises resources that use Kerberos for authentication. These Kerberos tickets are necessary for SSO to work for users, who are trying to access their on-premises resources.  
+
+The scenario of Kerberos negative caching occurs to Windows devices that have the Global Secure Access client installed as the GSA client tries to connect to the closest Domain Controller for the Kerberos ticket, but the request fails because the GSA client is still not connected, or the Domain Controller is not reachable in that moment. Once the request fails, the client does not try to connect to the Domain Controller again, immediately, because the default `FarKdcTimeout` time on the registry is set to 10 minutes. Even though the GSA client may be connected before this default time of 10 minutes, the GSA client holds on to the negative cache entry and believes that the Domain Controller locate process is a failure. Once the default time of 10 minutes is completed, the GSA client queries for the Domain Controller once again for the Kerberos ticket and then the connection of Kerberos SSO becomes successful.  
+
+To mitigate this issue, end users can either change the default `FarKdcTimeout` time on the registry or manually instantaneously flush the Kerberos cache every time the GSA client is restarted.   
+
+### Option 1: Change the default FarKdcTimeout time on the registry
+
+If you're running Windows, you can modify the Kerberos parameters to help troubleshoot Kerberos authentication issues, or to test the Kerberos protocol. To do so, add or modify the registry entries that are listed in the sections. 
+
+> [!IMPORTANT]
+> This section, method, or task contains steps that tell you how to modify the registry. However, serious problems might occur if you modify the registry incorrectly. Therefore, make sure that you follow these steps carefully. For added protection, back up the registry before you modify it. Then, you can restore the registry if a problem occurs. For more information about how to back up and restore the registry, see [How to back up and restore the registry in Windows](https://support.microsoft.com/help/322756).
+ 
+**Registry entries and values under the Parameters key**
+
+The registry entries that are listed in this section must be added to the following registry subkey: 
+
+`HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa\Kerberos\Parameters`
+
+> [!NOTE]
+> If the Parameters key isn't listed under Kerberos, you must create the key. 
+
+**Modify the following FarKdcTimeout registry entry**
+- Entry: `FarKdcTimeout`
+- Type: `REG_DWORD` 
+- Default value: `0 (minutes)` 
+
+It's the time-out value that's used to invalidate a domain controller from a different site in the domain controller cache. 
+
+### Option 2: Manual Kerberos Cache Purging 
+
+If you choose to manually purge the Kerberos cache, this step will have to be completed every time the GSA client is restarted.  
+
+Open a command prompt as an administrator and run the following command: `KLIST PURGE_BIND`
 
 ## Next steps
 - [Global Secure Access clients](concept-clients.md)
