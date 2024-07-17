@@ -101,10 +101,12 @@ items:
         href: how-to-configure-connectors.md
       - name: Register connector - silent Install
         href: how-to-register-connector-powershell.md
-      - name: Configure Quick Access
-        href: how-to-configure-quick-access.md 
       - name: Configure Per-app Access
         href: how-to-configure-per-app-access.md
+      - name: Configure Quick Access
+        href: how-to-configure-quick-access.md 
+      - name: Configure Private Access with PIM
+        href: how-to-configure-global-access-with-pim.md
   - name: Internet Access
     expanded: true
     items:
