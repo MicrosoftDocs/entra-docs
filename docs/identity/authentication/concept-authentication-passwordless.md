@@ -116,7 +116,7 @@ To get started with passwordless sign-in, complete the following how-to:
 
 ## Passkeys (FIDO2) 
 
-Users can register a passkey (FIDO2) and choose it as their primary sign-in method. With a hardware device that handles the authentication, the security of an account is increased as there's no password that could be exposed or guessed. Currently in preview, an Authentication Policy Administrator can also [provision a FIDO2 security](https://aka.ms/passkeyprovision) on behalf of a user by using Microsoft Graph. Only using Graph to provision FIDO2 security keys on behalf of users is currently supported. 
+Users can register a passkey (FIDO2) and choose it as their primary sign-in method. With a hardware device that handles the authentication, the security of an account is increased as there's no password that could be exposed or guessed. Currently in preview, an Authentication Policy Administrator can also [provision a FIDO2 security](https://aka.ms/passkeyprovision) on behalf of a user by using Microsoft Graph API. Only using Microsoft Graph to provision FIDO2 security keys is currently supported. 
 
 The FIDO (Fast IDentity Online) Alliance helps to promote open authentication standards and reduce the use of passwords as a form of authentication. FIDO2 is the latest standard that incorporates the web authentication (WebAuthn) standard. FIDO allows organizations to apply the WebAuthn standard by using an external security key, or a platform key built into a device, to sign in without a username or password.
 

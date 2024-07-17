@@ -5,7 +5,7 @@ description: Enable passwordless sign-in to Microsoft Entra ID using passkeys (F
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 04/28/2024
+ms.date: 07/16/2024
 
 ms.author: justinha
 author: justinha
@@ -82,7 +82,25 @@ There are two ways to get your AAGUID. You can either ask your security key or p
 
 ![Screenshot of View AAGUID for passkey.](media/howto-authentication-passwordless-deployment/security-key-aaguid-details.png)
 
-### Enable passkeys using Microsoft Graph API
+
+## Provision FIDO2 security keys using Microsoft Graph API
+
+Currently in preview, administrators can use Microsoft Graph API to provision FIDO2 security keys on behalf of users. Provisioning requires the [Authentication Administrator role](/entra/identity/role-based-access-control/permissions-reference#authentication-administrator) or a client application with UserAuthenticationMethod.ReadWrite.All permission. The provisioning improvements include:
+
+- The ability to request **creation Options** from Entra ID
+- The necessary data required to create the public key credential on a security key
+- The ability to register the provisioned passkey (FIDO2) credentials directly with Entra ID
+
+With these new API capabilities, organizations can build their own clients to provision passkey (FIDO2) credentials on security keys. To simplify this process, three main steps are required. 
+
+1. **Request** creationOptions for a user: Entra returns the necessary data for your client to provision a passkey (FIDO2) credential. This includes information such as user information, relying party, credential policy requirements, algorithms, and more. 
+1. **Provision** the passkey (FIDO2) credential with the creation Options: Use the `creationOptions` and a client or script that supports the Client to Authenticator Protocol (CTAP) to provision the credential. During this step, you need to insert a security key and set a PIN.
+1. **Register** the provisioned credential with Entra ID: Use the output from the provisioning process to provide Entra ID the necessary data to register the passkey (FIDO2) credential for the targeted user. 
+
+:::image type="content" border="true" source="media/how-to-enable-passkey-fido2/provision.png" alt-text="Conceptual diagram that shows the steps required to provision passkeys (FIDO2)." :::
+
+
+## Enable passkeys using Microsoft Graph API
 
 In addition to using the Microsoft Entra admin center, you can also enable passkeys by using the Microsoft Graph API. To enable passkeys, you need to update the Authentication methods policy as at least an [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator). 
 
