@@ -5,7 +5,7 @@ description: Learn about options for passwordless sign-in to Microsoft Entra ID 
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 07/16/2024
+ms.date: 07/17/2024
 
 ms.author: justinha
 author: justinha

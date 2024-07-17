@@ -6,7 +6,7 @@ services: active-directory
 ms.service: entra-id 
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 04/25/2024
+ms.date: 07/17/2024
 
 ms.author: justinha
 author: justinha
@@ -20,6 +20,9 @@ ms.collection: M365-identity-device-management
 # Register a passkey (preview)
 
 This article shows how users can register a security key using the **Passkey (preview)** flow. For registration on a mobile device, see [Register a passkey using a mobile device](how-to-register-passkey-mobile.md).
+
+>[!NOTE]
+>Looking to provide passkeys (FIDO2) on behalf of users? Use our [APIs](https://aka.ms/passkeyprovision).
 
 For more information about enabling passkeys in Microsoft Authenticator, see [How to enable passkeys in Microsoft Authenticator](how-to-enable-authenticator-passkey.md).
 
