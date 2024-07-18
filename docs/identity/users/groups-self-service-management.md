@@ -21,7 +21,7 @@ You can enable users to create and manage their own security groups or Microsoft
 
 You can allow users to create security groups, which are used to manage access to shared resources. Users can create security groups in the Azure portal by using Azure Active Directory (Azure AD) PowerShell or from the [My Groups access panel](https://myaccount.microsoft.com/groups).  
 
-:::image type="content" source="./media/groups-self-service-management/my-groups.png" alt-text="Screenshot that shows Microsoft Entra groups General settings." lightbox="./media/groups-self-service-management/my-groups.png":::
+:::image type="content" source="./media/groups-self-service-management/my-groups.png" alt-text="Screenshot that shows the My Groups access panel." lightbox="./media/groups-self-service-management/my-groups.png":::
 
 [!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
 
