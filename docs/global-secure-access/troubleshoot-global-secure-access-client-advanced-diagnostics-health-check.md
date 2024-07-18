@@ -1,34 +1,38 @@
 ---
-title: Troubleshoot the Global Secure Access client with the advanced diagnostics health check tab
-description: Troubleshoot the Global Secure Access client using the health check tab in the advanced diagnostics utility.
+title: Troubleshoot the Global Secure Access client with the advanced diagnostics Health check tab
+description: Troubleshoot the Global Secure Access client using the **Health check** tab in the Advanced diagnostics utility.
 ms.service: global-secure-access
 ms.topic: troubleshooting
-ms.date: 07/17/2024
+ms.date: 07/18/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
 ms.reviewer: lirazb
 ---
-# Troubleshoot the Global Secure Access client with the advanced diagnostics health check tab
-This document provides troubleshooting guidance for the Global Secure Access client using the health check tab in the advanced diagnostics utility.
+# Troubleshoot the Global Secure Access client with the advanced diagnostics Health check tab
+This document provides troubleshooting guidance for the Global Secure Access client using the **Health check** tab in the Advanced diagnostics utility.
 
 ## Introduction
-The health check tab executes common tests to verify that the client works correctly and that its components are running.
-This article is intended to help troubleshooting and resolving common issues detected by the health check.
+The Advanced diagnostics Health check executes tests to verify that the Global Secure Access client is working correctly and that its components are running.
 
-## Using the health check
-To run the client health check, right-click the Global Secure Access client system tray icon, choose Advanced Diagnostics, and select the Health check tab.
-The tests will start running.
-Most of the tests depend on one another. If some tests fail, start by solving the first test that failed and then refresh the health check for an updated tests status.
+## Verify the health of the Global Secure Access client
+To run the client health check:
+1. Right-click the Global Secure Access client system tray icon and select **Advanced Diagnostics**.
+1. A User Account Control dialog box opens. Select **Yes** to allow the client app to make changes to your device.
+1. In the **Global Secure Access Client - Advanced diagnostics** dialog box, select the **Health check** tab. Switching tabs runs the health tests.
+
+## Resolution process
+Most of the tests depend on one another. If there are failed tests:
+1. Resolve the first failed test that failed and then 
+1. Select **Refresh** to view the updated test status.
+1. Repeat until you have resolved all failed tests.
 image.png
 
+As part of the troubleshooting process, it can be useful to review the event log for the Global Secure Access client. The event log contains valuable events regarding errors and their cause.
 image.png
 
-As indicated in this document, as part of troubleshooting process, it could be useful to look at the event log of the Global Secure Access client. It contains valuable events regrading errors and their cause.
-image.png
-
-## Things to test
-Run the following checks to test the Global Secure Access client.
+## Health check tests
+The following checks verify the health of the Global Secure Access client.
 
 ### Device is Microsoft Entra joined
 The Windows client authenticates the user and the device to Global Secure Access services. The device authentication (based on device token) requires that the device is either Microsoft Entra joined or Microsoft Entra hybrid joined. Microsoft Entra registered devices are currently not supported.
@@ -37,7 +41,7 @@ image.png
 
 To join your device to a Microsoft Entra tenant, follow this article
 
-### Connected to the Internet
+### Can Connect to the internet
 Indicates whether the device is connected to the Internet or not. An Internet connection is obligatory to connect to Global Secure Access.
 This test is based on the Network Connectivity Status Indicator 
 
@@ -91,7 +95,7 @@ Restart the service Global Secure Access Policy Retriever Service
 Check if the registry keys above were created.
 If not, look for errors in the event viewer.
 
-### Forwarding profile matches the expected schema
+### Forwarding profile matches expected schema
 This test verifies that the forwarding profile in the registry has a valid format that can be read by the client.
 
 If this test fails, make sure you're using the most updated forwarding profile of your tenant by following these steps:
@@ -119,50 +123,12 @@ After the change in the portal, the updated forwarding profile should be receive
 This test is conducted for each channel activated in the forwarding profile, checking that the configuration contains a URI for probing the service's health. The health status can be viewed by double-clicking on the system tray icon.
 If this test fails, it's usually an internal problem in Global Secure Access and Microsoft support team needs to be contacted.
 
-### Authentication certificate exists
-This test verifies that a certificate exists on the device for mTLS connection to the Global Secure Access cloud service.
-Note: If this test doesn't appear, mTLS wasn't enabled for your tenant yet.
+### Secure DNS disabled in OS
+To disable DNS over HTTPS in Windows, refer to [Secure DNS Client over HTTPS (DoH)](/windows-server/networking/dns/doh-client-support#configure-the-dns-client-to-support-doh.md).
+> [!IMPORTANT]
+> You must disable DNS over HTTPS to successfully run the client Health check.
 
-If this test fails, try enrolling a new certificate by the following steps:
-
-Run the command certlm.msc
-Go to personal -> Certificates
-image.png
-Delete the certificate that has "issued to" field that ends with "gsa.client"
-image.png
-Delete the following registry key:
-Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Global Secure Access Client\CertCommonName
-Restart the Global Secure Access Management Service in the services MMC
-Refresh the certificates MMC to verify that a new certificate was created (this might take few minutes)
-Check the Global Secure Access client event log for errors
-Run the health check tests again
-
-### Authentication certificate is valid
-This test verifies that the Global Secure Access certificate (used for mTLS connection to the Global Secure Access cloud service) is valid.
-Note: If this test doesn't appear, mTLS wasn't enabled for your tenant yet.
-
-If this test fails, try enrolling a new certificate by the following steps:
-
-1. Run the command ``certlm.msc``
-1. Go to personal -> Certificates
-image.png
-1. Delete the certificate that has "issued to" field that ends with "gsa.client"
-image.png
-1. Delete the following registry key:
-``Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Global Secure Access Client\CertCommonName``
-1. Restart the Global Secure Access Management Service in the services MMC
-1. Refresh the certificates MMC to verify that a new certificate was created (this might take few minutes)
-1. Check the Global Secure Access client event log for errors
-1. Run the health check tests again.
-
-### Disable DNS over HTTPS
-For the client to acquire network traffic by FQDN destination (as opposed to IP destination), the client needs to read the DNS requests sent by the device to the DNS server. Hence, DNS over HTTPS needs to be disabled, if the forwarding profile contains FQDNs rules.
-
-Secure DNS disabled in OS
-To disable DNS over HTTPS in Windows refer to this article.
-Note: this is a must for the health status of the client to work.
-
-DNS disabled in browsers (Microsoft Edge, Chrome, Firefox)
+### Secure DNS disabled in browsers (Microsoft Edge, Chrome, Firefox)
 Secure DNS disabled in Microsoft Edge
 To disable DNS over HTTPS in Microsoft Edge:
 
@@ -333,3 +299,42 @@ To disable QUIC in Mozilla Firefox:
 Open Firefox
 Access to: about:config
 Turn off network.http.http3.enable
+
+### Authentication certificate exists
+This test verifies that a certificate exists on the device for mTLS connection to the Global Secure Access cloud service.
+Note: If this test doesn't appear, mTLS wasn't enabled for your tenant yet.
+
+If this test fails, try enrolling a new certificate by the following steps:
+
+Run the command certlm.msc
+Go to personal -> Certificates
+image.png
+Delete the certificate that has "issued to" field that ends with "gsa.client"
+image.png
+Delete the following registry key:
+Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Global Secure Access Client\CertCommonName
+Restart the Global Secure Access Management Service in the services MMC
+Refresh the certificates MMC to verify that a new certificate was created (this might take few minutes)
+Check the Global Secure Access client event log for errors
+Run the **Health check** tests again
+
+### Authentication certificate is valid
+This test verifies that the Global Secure Access certificate (used for mTLS connection to the Global Secure Access cloud service) is valid.
+Note: If this test doesn't appear, mTLS wasn't enabled for your tenant yet.
+
+If this test fails, try enrolling a new certificate by the following steps:
+
+1. Run the command ``certlm.msc``
+1. Go to personal -> Certificates
+image.png
+1. Delete the certificate that has "issued to" field that ends with "gsa.client"
+image.png
+1. Delete the following registry key:
+``Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Global Secure Access Client\CertCommonName``
+1. Restart the Global Secure Access Management Service in the services MMC
+1. Refresh the certificates MMC to verify that a new certificate was created (this might take few minutes)
+1. Check the Global Secure Access client event log for errors
+1. Run the **Health check** tests again.
+
+### Disable DNS over HTTPS
+For the client to acquire network traffic by FQDN destination (as opposed to IP destination), the client needs to read the DNS requests sent by the device to the DNS server. Hence, DNS over HTTPS needs to be disabled, if the forwarding profile contains FQDNs rules.
