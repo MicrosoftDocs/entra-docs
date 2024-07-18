@@ -47,7 +47,7 @@ Most browser-based applications use session tokens instead of access and refresh
 
 ## Revoke access for a user in the hybrid environment
 
-For a hybrid environment with on-premises Active Directory synchronized with Microsoft Entra ID, Microsoft recommends IT admins to take the following actions. If you have an **Microsoft Entra-only environment**, skip to the [Microsoft Entra environment](#azure-active-directory-environment) section.
+For a hybrid environment with on-premises Active Directory synchronized with Microsoft Entra ID, Microsoft recommends IT admins to take the following actions. If you have a **Microsoft Entra-only environment**, skip to the [Microsoft Entra environment](#azure-active-directory-environment) section.
 
 
 ### On-premises Active Directory environment

@@ -27,7 +27,7 @@ To complete this article, you need the following resources and privileges:
     * If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * A Microsoft Entra tenant associated with your subscription, either synchronized with an on-premises directory or a cloud-only directory.
     * If needed, [create a Microsoft Entra tenant][create-azure-ad-tenant] or [associate an Azure subscription with your account][associate-azure-ad-tenant].
-    * An **Microsoft Entra ID P1 or P2 license** is required to use the Microsoft Entra application proxy.
+    * A **Microsoft Entra ID P1 or P2 license** is required to use the Microsoft Entra application proxy.
 * A Microsoft Entra Domain Services managed domain enabled and configured in your Microsoft Entra tenant.
     * If needed, [create and configure a Microsoft Entra Domain Services managed domain][create-azure-ad-ds-instance].
 

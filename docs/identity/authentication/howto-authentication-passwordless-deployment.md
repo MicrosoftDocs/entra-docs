@@ -191,7 +191,7 @@ The following are sample test cases for passwordless authentication with the Aut
 | - |-|
 | User cannot perform combined registration.| Ensure [combined registration](concept-registration-mfa-sspr-combined.md) is enabled. |
 | User cannot enable phone sign-in authenticator app.| Ensure user is in scope for deployment. |
-| User is NOT in scope for passwordless authentication, but is presented with passwordless sign-in option, which they cannot complete.| Occurs when user has enabled phone sign in in the application prior to the policy being created. To enable sign in, add the user to a group of users enabled for passwordless sign-in. To block sign in: have the user remove their credential from that application. |
+| User is NOT in scope for passwordless authentication, but is presented with passwordless sign-in option, which they cannot complete.| Occurs when user has enabled phone sign-in in the application prior to the policy being created. To enable sign in, add the user to a group of users enabled for passwordless sign-in. To block sign in: have the user remove their credential from that application. |
 
 
 ## Plan for and deploy FIDO2-compliant security keys
