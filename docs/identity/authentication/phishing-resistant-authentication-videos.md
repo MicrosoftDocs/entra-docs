@@ -4,7 +4,7 @@ description: Use this video series to learn about phishing-resistant authenticat
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 07/16/2024
+ms.date: 07/18/2024
 ms.author: gasinh
 author: gargi-sinha
 manager: martinco
@@ -21,7 +21,7 @@ See [Windows Hello for Business](/windows/security/identity-protection/hello-for
 
 |Video title|Video|
 |---|---|
-|**[Why is phishing-resistant multifactor authentication important?]()**<br/>Join **Alex Weinert**, VP Identity Security, in a discussion about the current threat landscape and why implementing phishing-resistant authentication should be a priority for your organization. (12:40) |[:::image type="icon" source="./media/phishing-resistant-authentication-videos/alex-weinert.png" border="false":::](Pending YouTube link)|
+|**[Why is phishing-resistant multifactor authentication important?]()**<br/>Join **Alex Weinert**, VP Identity Security, in a discussion about the current threat landscape and why implementing phishing-resistant authentication should be a priority for your organization. (12:40) |[:::image type="icon" source="./media/phishing-resistant-authentication-videos/alex-weinert.png" border="false":::](https://www.youtube.com/watch?v=YcqfXvU6xhw)|
 |**[Get started with phishing-resistant multifactor authentication](https://www.youtube.com/watch?v=fSIM_Zrlv70)**<br/>Join **Ehud Itshaki**, Principal Product Manager, for a technical deep dive on how Microsoft Entra ID authentication methods achieve their phishing-resistant properties by implementing open standards. Learn about the meaning of phishing and real-time phishing-flows. (10:24)|[:::image type="icon" source="./media/phishing-resistant-authentication-videos/ehud-itshaki.png" border="false":::](https://www.youtube.com/watch?v=fSIM_Zrlv70)|
 |**[Phishing-resistant multifactor authentication methods available in Microsoft Entra ID]()**<br/>Join **Keith Brewer**, Principal Product Manager, for an overview of the four phishing-resistant authentication methods available in Microsoft Entra ID. (5:13)|[:::image type="icon" source="./media/phishing-resistant-authentication-videos/keith-brewer.png" border="false":::](https://www.youtube.com/watch?v=73UwC5qRjtE)|
 |**[Windows Hello for Business and cloud Kerberos trust provisioning](https://www.youtube.com/watch?v=Cqn3INyjg5s)** <br/>Join **Bailey Bercik**, Senior Product Manager and **Merill Fernando**, Principal Product Manager to learn about Windows Hello for Business and how deployment is easier with the cloud Kerberos deployment model. (8:08)<br/><br/>**[Configure Windows Hello for Business for passwordless authentication](https://www.youtube.com/watch?v=5LJIv4-034E)**<br/>Join **Merill Fernando**, Principal Product Manager, and **Bailey Bercik**, Senior Product Manager for a discussion about deploying the Windows Hello for Business cloud Kerberos model. (8:48) |[:::image type="icon" source="./media/phishing-resistant-authentication-videos/bailey-bercik.png" border="false":::](https://www.youtube.com/watch?v=Cqn3INyjg5s)<br/><br/>[:::image type="icon" source="./media/phishing-resistant-authentication-videos/merill-fernando.png" border="false":::](https://www.youtube.com/watch?v=5LJIv4-034E)|
