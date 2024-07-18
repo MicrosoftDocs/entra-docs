@@ -9,7 +9,7 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: how-to
-ms.date: 06/19/2024
+ms.date: 07/18/2024
 
 ms.custom: it-pro
 
@@ -88,6 +88,32 @@ The **Authentications** dashboard gives you a summary of daily and monthly authe
 - Monthly authentications over a period of 12 months summarized by location.
 
     :::image type="content" source="media/how-to-user-insights/authentications-dashboard.png" alt-text="Screenshot of the Authentications dashboard.":::
+
+
+## Customize the data view
+
+Application user activity dashboards provide easy-to-digest graphs and charts but have limited customization options. Microsoft Graph APIs enable you to build powerful, customized dashboards with data tailored to your specific needs and preferences. This has some advantages: 
+•	Flexibility: you can integrate with other data sources to present your data in a way that aligns more with your business objectives. 
+•	Enhanced visualization: you can have richer and more interactive visual representations of your data. 
+•	Complex query handling: you can apply advanced filters, aggregations, and calculations to your user insights data and get more granular and accurate results. 
+
+### Set up External ID 
+To build your own user insights dashboard, you'll need to configure API permissions for Microsoft Graph.  
+
+
+
+### Create a Power BI report 
+To visualize your custom built user insights dashboard we can use Power BI to visualize the data. You can use Power BI desktop or Power BI service. Alternatively, you can choose any other analytical tool you prefer. 
+
+https://learn.microsoft.com/en-us/power-bi/connect-data/desktop-connect-to-data
+
+Power BI comes with Power Query Editor that can help you clean and shape your data: 
+https://learn.microsoft.com/en-us/power-bi/transform-model/desktop-query-overview
+
+
+
+
+
 
 ## Related content
 
