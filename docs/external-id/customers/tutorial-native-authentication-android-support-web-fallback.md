@@ -99,9 +99,9 @@ To do so, use the following steps:
 
 <!--We'll update these instructions once we author the Android tutorials for the browser-delegated authentication flow --> 
 
-1. To add a redirect URI to the app that you registered earlier, use the steps in [Register a redirect URI in Microsoft Entra admin center](../../identity-platform/tutorial-v2-android.md#register-your-application-with-microsoft-entra-id).
+1. To add a redirect URI to the app that you registered earlier, use the steps in [Add a platform redirect URL](sample-mobile-app-android-kotlin-sign-in.md#add-a-platform-redirect-url).
 
-1. To update your client app's configuration file, use the steps in [Configure the redirect URI in SDK's configuration](../../identity-platform/tutorial-v2-android.md#configure-your-application).
+1. To update your client app's configuration file, use the steps in [Configure the redirect URI in SDK's configuration](sample-mobile-app-android-kotlin-sign-in.md#configure-the-sample-android-mobile-application).
   
 1. Use the following code snippet to acquire a token by using the `acquireToken()` method:
 

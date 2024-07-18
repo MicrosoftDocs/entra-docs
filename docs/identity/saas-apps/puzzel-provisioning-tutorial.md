@@ -1,17 +1,13 @@
 ---
 title: 'Tutorial: Configure Puzzel for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Puzzel.
-
-author: twimmers
-writer: twimmers
+author: thomasakelo
 manager: jeedes
-ms.assetid: f666af23-f97f-4df8-8580-6124f47ea840
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: tutorial
-ms.date: 12/18/2023
-ms.author: thwimmer
+ms.date: 03/25/2024
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Puzzel so that I can streamline the user management process and ensure that users have the appropriate access to Puzzel.
 ---

@@ -5,7 +5,7 @@ description: Microsoft Entra B2B collaboration invitation email template
  
 ms.service: entra-external-id
 ms.topic: concept-article
-ms.date: 10/06/2023
+ms.date: 06/07/2024
 
 ms.author: cmulligan
 author: csmulligan
@@ -21,7 +21,7 @@ ms.collection: M365-identity-device-management
 
 Invitation emails play a key role in welcoming partners as Microsoft Entra B2B collaboration users. While [not mandatory](redemption-experience.md#redemption-process-through-a-direct-link), these emails provide essential information to help recipients make an informed decision about accepting your invitation. They also include a link for easy future access to your resources.
 
-![Screenshot showing the B2B invitation email](media/invitation-email-elements/invitation-email.png)
+:::image type="content" source="media/invitation-email-elements/invitation-email.png" alt-text="Screenshot showing the B2B invitation email.":::
 
 ## Explaining the email
 
@@ -49,39 +49,25 @@ The reply-to email is set to the inviter's email when available, so that replyin
 
 The email starts with a brief warning to the user about phishing, alerting them that they should only accept invitations they're expecting. It’s good practice to let partners know in advance to expect your invitation.
 
-![Image of the phishing warning in the email](media/invitation-email-elements/phishing-warning.png)
+![Screenshot of the phishing warning in the email.](media/invitation-email-elements/phishing-warning.png)
 
 ### Inviter's information and invitation message
 
 The email includes the name and primary domain associated with the organization sending the invitation. This information should help the invitee make an informed decision about accepting the invitation. The inviter can include a message as part of their invitation to the [directory, group, or app](add-users-administrator.yml), or when they [use the invitation API](customize-invitation-api.md). The message is highlighted in the main section of the email. The inviter’s name and profile image are also included if they have one. The message itself is a text area, so for security reasons, it doesn't process HTML tags.
 
-![Image of the invitation message in the email](media/invitation-email-elements/invitation-message-inviters-info.png)
+![Screenshot of the invitation message in the email.](media/invitation-email-elements/invitation-message-inviters-info.png)
 
 ### Accept invitation button or link and redirect URL
 
 The next section of the email contains information about where the invitee will be taken after they accept the invitation, and a button or link to do so. In the future, the invitee can always use this link to return to your resources directly.
 
-![Image of the accept button and redirect URL in the email](media/invitation-email-elements/accept-button.png)
+![Screenshot of the accept button and redirect URL in the email.](media/invitation-email-elements/accept-button.png)
 
 ### Footer section
 
-The footer contains more information about the invitation being sent. There's always an option for the invitee to block future invitations. If the organization [configured a privacy statement](~/fundamentals/properties-area.yml), the link to the statement is displayed here. Otherwise, a note indicates the organization's privacy statement isn't available.
+The footer contains more information about the invitation being sent. If the organization [configured a privacy statement](~/fundamentals/properties-area.yml), the link to the statement is displayed here. Otherwise, a note indicates the organization's privacy statement isn't available.
 
-![Image of the footer section in the email](media/invitation-email-elements/footer-section.png)
-
-### Blocking an organization (unsubscribing)
-
-In the invitation from an organization, the footer contains an option to **Block future invitations**. A guest user can select this link to block any future invitations from the organization. This action also adds the organization to the user's unsubscribed list at [https://invitations.microsoft.com/unsubscribe/manage](https://invitations.microsoft.com/unsubscribe/manage).
-
-### Viewing organizations you blocked
-
-A guest user can follow these steps to view or export the organizations they blocked:
-
-1. Go to [https://invitations.microsoft.com/unsubscribe/manage](https://invitations.microsoft.com/unsubscribe/manage).
-2. Enter your email and follow the sign-in steps for email one-time passcode authentication.
-3. View the organizations you blocked, or export the names using copy and paste.
-   > [!NOTE]
-   > If you want to allow an organization you’ve blocked to invite you again, you can choose the organization and select **Next**.
+:::image type="content" source="media/invitation-email-elements/footer-section.png" alt-text="Screenshot showing the footer section in the email.":::
 
 ## How the language is determined
 

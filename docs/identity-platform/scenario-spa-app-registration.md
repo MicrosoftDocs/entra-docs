@@ -46,8 +46,6 @@ Follow these steps to add a redirect URI for an app that uses MSAL.js 2.0 or lat
 
 Your SPA is now registered with a redirect URI. By configuring your redirect URI using the **Single-page application** tile in the **Add a platform** pane, your application registration supports the authorization code flow with PKCE and CORS.
 
-Follow the [tutorial](tutorial-v2-javascript-auth-code.md) for further guidance.
-
 ## Redirect URI: [MSAL.js 1.0 with implicit flow](/javascript/api/overview/msal-overview)
 
 Follow these steps to add a redirect URI for a SPA that uses MSAL.js 1.3 or earlier and the implicit grant flow. Applications that use MSAL.js 1.3 or earlier don't support the authorization code flow.

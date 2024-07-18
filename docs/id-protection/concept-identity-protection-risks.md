@@ -50,6 +50,10 @@ Detections triggered in real-time take 5-10 minutes to surface details in the re
 > 
 > Our system will dismiss the risk state and a risk detail of **AI confirmed sign-in safe** will show and no longer contribute to the user’s overall risk.
 
+On risk-detailed data, **Time Detection** records the exact moment a risk is identified during a user's sign-in, which allows for real-time risk assessment and immediate policy application to safeguard the user and organization. **Detection last updated** shows the latest update to a risk detection, which could be due to new information, risk level changes, or administrative actions, and ensures up-to-date risk management.
+
+These fields are essential for real-time monitoring, threat response, and maintaining secure access to organizational resources.
+
 ## Risk detections mapped to riskEventType 
 
 | Risk detection | Detection type | Type | riskEventType |

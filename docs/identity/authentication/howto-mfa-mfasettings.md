@@ -6,7 +6,7 @@ description: Learn how to configure settings for Microsoft Entra multifactor aut
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 05/03/2024
+ms.date: 07/15/2024
 
 ms.author: justinha
 author: justinha
@@ -84,7 +84,7 @@ Microsoft recommends using [Report suspicious activity](#report-suspicious-activ
 
 The following fraud alert configuration options are available:
 
-* **Automatically block users who report fraud**. If a user reports fraud, the Azure AD Multifactor Authentication attempts for the user  account are blocked for 90 days or until an administrator unblocks the account. An administrator can review sign-ins by using the sign-in report, and take appropriate action to prevent future fraud. An administrator can then [unblock](#unblock-a-user) the user's account.
+* **Automatically block users who report fraud**. If a user reports fraud, the Microsoft Entra multifactor authentication attempts for the user  account are blocked for 90 days or until an administrator unblocks the account. An administrator can review sign-ins by using the sign-in report, and take appropriate action to prevent future fraud. An administrator can then [unblock](#unblock-a-user) the user's account.
 * **Code to report fraud during initial greeting**. When users receive a phone call to perform multifactor authentication, they normally press **#** to confirm their sign-in. To report fraud, the user enters a code before pressing **#**. This code is **0** by default, but you can customize it. If automatic blocking is enabled, after the user presses **0#** to report fraud, they need to press **1** to confirm the account blocking.
 
    > [!NOTE]
@@ -200,6 +200,7 @@ The following table lists more numbers for different countries.
 |:---------------------|:----------------|
 | Austria              | +43 6703062076  |
 | Bangladesh           | +880 9604606026 |
+| China                | +44 1235619418, +44 1235619536, +44 1235619537, +44 1235619538, +44 1235619539, +44 1235619535, +44 7897087681, +44 7897087690, +44 7897087692, +66 977832930|
 | Croatia              | +385 15507766   |
 | Ecuador              | +593 964256042  |
 | Estonia              | +372 6712726    |
@@ -213,7 +214,7 @@ The following table lists more numbers for different countries.
 | Kenya                | +254 709605276  |
 | Netherlands          | +31 202490048   |
 | Nigeria              | +234 7080627886 |
-| Pakistan             | +92 4232618686  |
+| Pakistan             | +92 4232618686, +44 7897087681, +44 7897087690, +44 7897087692, +66 977832930  |
 | Poland               | +48 699740036   |
 | Saudi Arabia         | +966 115122726  |
 | South Africa         | +27 872405062   |
@@ -395,6 +396,9 @@ If you don't want to use Conditional Access policies to enable trusted IPs, you 
 ### Verification methods
 
 You can choose the verification methods that are available for your users in the service settings portal. When your users enroll their accounts for Microsoft Entra multifactor authentication, they choose their preferred verification method from the options that you've enabled. Guidance for the user enrollment process is provided in [Set up my account for multifactor authentication](https://support.microsoft.com/account-billing/how-to-use-the-microsoft-authenticator-app-9783c865-0308-42fb-a519-8cf666fe0acc).
+
+>[!IMPORTANT]
+>In March 2023, we announced the deprecation of managing authentication methods in the legacy multifactor authentication and self-service password reset (SSPR) policies. Beginning September 30, 2025, authentication methods can't be managed in these legacy MFA and SSPR policies. We recommend customers use the manual migration control to migrate to the Authentication methods policy by the deprecation date. For help with the migration control, see [How to migrate MFA and SSPR policy settings to the Authentication methods policy for Microsoft Entra ID](/entra/identity/authentication/how-to-authentication-methods-manage).
 
 The following verification methods are available:
 

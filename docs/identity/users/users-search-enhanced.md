@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
-ms.date: 11/21/2023
+ms.date: 07/15/2024
 ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro
@@ -53,7 +53,7 @@ The user profile page is now organized into three tabs: **Overview**, **Monitori
 The overview tab contains key properties and insights about a user, such as: 
 
 - Properties like user principal name, object ID, created date/time and user type 
-- Selectable aggregate values such as the number of groups that the user is a member of, the number of apps to which they have access, and the number of licenses that are are assigned to them 
+- Selectable aggregate values such as the number of groups that the user is a member of, the number of apps to which they have access, and the number of licenses that are assigned to them 
 - Quick alerts and insights about a user such as their current account enabled status, the last time they signed in, whether they can use multifactor authentication, and B2B collaboration options
 
 :::image type="content" source="./media/users-search-enhanced/user-profile-overview.png" alt-text="Screenshot of new user profile displaying the Overview tab contents.":::
@@ -80,13 +80,14 @@ You can edit properties by selecting the pencil icon next to any category, which
 
 ## Next steps
 
-User operations
+**User operations**
 
 - [Add or change profile information](~/fundamentals/how-to-manage-user-profile-info.yml)
 - [Add or delete users](~/fundamentals/add-users.md)
 
-Bulk operations
+**Bulk operations**
 
+- [Bulk operations service limitations](~/fundamentals/bulk-operations-service-limitations.md)
 - [Download list of users](users-bulk-download.md)
 - [Bulk add users](users-bulk-add.md)
 - [Bulk delete users](users-bulk-delete.md)

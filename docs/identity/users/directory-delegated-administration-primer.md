@@ -27,7 +27,7 @@ There are two types of delegated administration relationships that are visible i
 
 ## Granular delegated admin permission
 
-When a Microsoft CSP creates a GDAP relationship request for your tenant a global administrator needs to approve the request. The GDAP relationship request specifies:
+When a Microsoft CSP creates a GDAP relationship request for your tenant a Global Administrator needs to approve the request. The GDAP relationship request specifies:
 
 * The CSP partner tenant
 * The roles that the partner needs to delegate to their technicians
@@ -37,7 +37,7 @@ If you have GDAP relationships in your tenant, you will see a notification banne
 
 ## Delegated admin permission
 
-All DAP relationships enable the CSP to delegate Global administrator and Helpdesk administrator roles to their technicians. Unlike a GDAP relationship, a DAP relationship persists until they are revoked either by you or by your CSP.
+All DAP relationships enable the CSP to delegate Global Administrator and Helpdesk Administrator roles to their technicians. Unlike a GDAP relationship, a DAP relationship persists until they are revoked either by you or by your CSP.
 
 If you have any DAP relationships in your tenant, you will see them in the list on the Delegated Administration page in the Azure portal. To remove a DAP relationship for a CSP, follow the link to the Partners page in the Microsoft Admin Center.
 

@@ -4,7 +4,7 @@ description: Get an overview of cross-tenant access in Microsoft Entra External 
  
 ms.service: entra-external-id
 ms.topic: overview
-ms.date: 04/29/2024
+ms.date: 06/20/2024
 
 ms.author: cmulligan
 author: csmulligan
@@ -94,8 +94,6 @@ Fallback identity providers can be either Microsoft account (MSA), email one-tim
 When using this feature, consider the following known limitations:
 
 - If a Microsoft Entra ID user who has an existing single sign-on (SSO) session is authenticating using email one-time passcode (OTP), they need to choose **Use another account** and reenter their username to trigger the OTP flow. Otherwise the user gets an error indicating their account doesn’t exist in the resource tenant.
-
-- If your guest users can only use email one time passcode to redeem an invite, they're currently blocked from using SharePoint. This limitation is specific to Microsoft Entra ID users redeeming via OTP. All other users are unaffected.
 
 - When a user has the same email in both their Microsoft Entra ID and Microsoft accounts, they're prompted to choose between using their Microsoft Entra ID or their Microsoft account even after the admin disables the Microsoft account as a redemption method. Choosing Microsoft account as a redemption option is allowed, even if the method is disabled.
 

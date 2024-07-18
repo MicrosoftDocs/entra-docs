@@ -31,6 +31,8 @@ The following table lists partners who are Microsoft-compatible FIDO2 security k
 
 | Provider | Biometric | USB | NFC | BLE |
 |:-|:-:|:-:|:-:|:-:|
+| Allthenticate | ![n] | ![y] | ![n] | ![y] |
+| Authenton | ![n] | ![y] | ![y] | ![n] |
 | AuthenTrend | ![y] | ![y]| ![y]| ![y]|
 | ACS | ![n] | ![y]| ![y]| ![n]|
 | ATOS| ![n] | ![y]| ![y]| ![n]|
@@ -38,6 +40,7 @@ The following table lists partners who are Microsoft-compatible FIDO2 security k
 | Composecure | ![n] | ![n]| ![y]| ![n]|
 | Crayonic | ![y] | ![n]| ![y]| ![y]|
 | Cryptnox | ![n] | ![y]| ![y]| ![n]|
+| CryptoTrust | ![n] | ![y] | ![n] | ![n] |
 | Ensurity | ![y] | ![y]| ![n]| ![n]|
 | Excelsecu | ![y] | ![y]| ![y]| ![y]|
 | Feitian | ![y] | ![y]| ![y]| ![y]|
@@ -52,22 +55,25 @@ The following table lists partners who are Microsoft-compatible FIDO2 security k
 | Identiv | ![n] | ![y]| ![y]| ![n]|
 | IDmelon Technologies Inc. | ![y] | ![y]| ![y]| ![y]|
 | Kensington | ![y] | ![y]| ![n]| ![n]|
+| Keyxentic | ![n] | ![y]| ![y]| ![n]|
 | KONA I | ![y] | ![n]| ![y]| ![y]|
 | NeoWave | ![n] | ![y]| ![y]| ![n]|
 | Nymi | ![y] | ![n]| ![y]| ![n]|
 | Octatco | ![y] | ![y]| ![n]| ![n]|
-| OneSpan Inc. | ![n] | ![y]| ![n]| ![y]|
+| OneSpan Inc. | ![n] | ![y]| ![y]| ![y]|
 | PONE Biometrics | ![y] | ![n]| ![n]| ![y]|
 | Precision Biometric| ![y] | ![y]| ![y] | ![n]|
 | RSA | ![n] | ![y]| ![n]| ![n]|
 | Sentry | ![n] | ![n]| ![y]| ![n]|
 | SmartDisplayer | ![y] | ![y]| ![y]| ![y]|
+| SpearID | ![n] | ![y]| ![y]| ![y]|
 | Swissbit | ![n] | ![y]| ![y]| ![n]|
 | Thales Group | ![n] | ![y]| ![y]| ![n]|
 | Thetis | ![y] | ![y]| ![y]| ![y]|
 | Token2 Switzerland | ![y] | ![y]| ![y]| ![n]|
 | Token Ring | ![y] | ![n]| ![y]| ![n]|
 | TrustKey Solutions | ![y] | ![y]| ![n]| ![n]|
+| Valmido | ![n] | ![n]| ![y]| ![y]|
 | VinCSS | ![n] | ![y]| ![n]| ![n]|
 | WiSECURE Technologies | ![n] | ![y]| ![n]| ![n]|
 | Yubico | ![y] | ![y]| ![y]| ![n]|

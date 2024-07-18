@@ -33,7 +33,7 @@ A TAP policy defines settings, such as the lifetime of passes created in the ten
 
 Before users can sign-in with a TAP, you need to enable this method in the authentication method policy and choose which users and groups can sign in by using a TAP.
 
-Although you can create a TAP for any user, only users included in the policy can sign-in with it. Only Global Admin and Authentication Policy Admin roles can update the TAP authentication method policy.
+Although you can create a TAP for any user, only users included in the policy can sign-in with it. Those with at least the [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator) role can update the TAP authentication method policy.
 
 To configure the TAP authentication method policy:
 
@@ -72,7 +72,7 @@ After you enable a TAP policy, you can create TAPs for users in Microsoft Entra 
 - Authentication Administrators can create, delete, and view a TAP for members (except themselves).
 - Global Readers can view TAP details for the user (without reading the code itself).
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
 1. Browse to **Identity** > **Users**.
 1. Select the user you would like to create a TAP for. 
 1. Select **Authentication methods** and click **Add authentication method**. 
@@ -183,7 +183,7 @@ The token lifetime (session token, refresh token, access token, and so on) obtai
 
 Under the **Authentication methods** for a user, the **Detail** column shows when the TAP expired. You can delete an expired TAP using the following steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
 1. Browse to **Identity** > **Users**, select a user, such as *Tap User*, then choose **Authentication methods**.
 1. On the right-hand side of the **Temporary Access Pass** authentication method shown in the list, select **Delete**.
 

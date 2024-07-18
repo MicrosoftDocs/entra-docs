@@ -1,11 +1,11 @@
 ---
-title: Understanding the Microsoft Entra app manifest
-description: Detailed coverage of the Microsoft Entra app manifest, which represents an application's identity configuration in a Microsoft Entra tenant, and is used to facilitate OAuth authorization, consent experience, and more.
+title: Understanding the app manifest (Azure AD Graph format)
+description: Describes the Microsoft Entra app manifest, which represents an application's identity configuration in a Microsoft Entra tenant.
 author: rwike77
 manager: CelesteDG
 ms.author: ryanwi
 ms.custom: 
-ms.date: 04/10/2024
+ms.date: 06/13/2024
 ms.reviewer: sureshja
 ms.service: identity-platform
 
@@ -13,13 +13,13 @@ ms.topic: reference
 #Customer intent: As an application developer, I want to configure the attributes of an application in the Microsoft Entra admin center or programmatically, so that I can update the application object and define permissions and roles for the app.
 ---
 
-# Microsoft Entra app manifest
+# Microsoft Entra app manifest (Azure AD Graph format)
 
 The application manifest contains a definition of all the attributes of an application object in the Microsoft identity platform. It also serves as a mechanism for updating the application object. For more info on the Application entity and its schema, see the [Graph API Application entity documentation](/graph/api/resources/application).
 
 You can configure an app's attributes through the Microsoft Entra admin center or programmatically using [Microsoft Graph API](/graph/api/resources/application) or [Microsoft Graph PowerShell SDK](/powershell/module/microsoft.graph.applications/?view=graph-powershell-1.0&preserve-view=true). However, there are some scenarios where you need to edit the app manifest to configure an app's attribute. These scenarios include:
 
-* If you registered the app as Microsoft Entra multi-tenant and personal Microsoft accounts, you can't change the supported Microsoft accounts in the UI. Instead, you must use the application manifest editor to change the supported account type.
+* If you registered the app as Microsoft Entra multitenant and personal Microsoft accounts, you can't change the supported Microsoft accounts in the UI. Instead, you must use the application manifest editor to change the supported account type.
 * To define permissions and roles that your app supports, you must modify the application manifest.
 
 ## Configure the app manifest
@@ -184,7 +184,7 @@ Configures the `groups` claim issued in a user or OAuth 2.0 access token that th
 - `"SecurityGroup"` (for security groups and Microsoft Entra roles)
 - `"ApplicationGroup"` (this option includes only groups that are assigned to the application)
 - `"DirectoryRole"` (gets the Microsoft Entra directory roles the user is a member of)
-- `"All"` (this will get all of the security groups, distribution groups, and Microsoft Entra directory roles that the signed-in user is a member of).
+- `"All"` (this gets all of the security groups, distribution groups, and Microsoft Entra directory roles that the signed-in user is a member of).
 
 Example:
 
@@ -200,7 +200,7 @@ Example:
 
 The optional claims returned in the token by the security token service for this specific app.
 
-Apps that support both personal accounts and Microsoft Entra ID cannot use optional claims. However, apps registered for just Microsoft Entra ID using the v2.0 endpoint can get the optional claims they requested in the manifest. For more info, see [Optional claims](./optional-claims.md).
+Apps that support both personal accounts and Microsoft Entra ID can't use optional claims. However, apps registered for just Microsoft Entra ID using the v2.0 endpoint can get the optional claims they requested in the manifest. For more info, see [Optional claims](./optional-claims.md).
 
 Example:
 
@@ -304,7 +304,7 @@ Example:
 | :--- | :--- |
 | logoutUrl | String |
 
-The URL to log out of the app.
+The URL to sign out of the app.
 
 Example:
 
@@ -476,7 +476,7 @@ Example:
 | :--- | :--- |
 | replyUrlsWithType | Collection |
 
-This multi-value property holds the list of registered redirect_uri values that Microsoft Entra ID will accept as destinations when returning tokens. Each URI value should contain an associated app type value. Supported type values are:
+This multi-value property holds the list of registered redirect_uri values that Microsoft Entra ID accepts as destinations when returning tokens. Each URI value should contain an associated app type value. Supported type values are:
 
 - `Web`
 - `InstalledClient`
@@ -558,7 +558,7 @@ Example:
 
 Specifies what Microsoft accounts are supported for the current application. Supported values are:
 - `AzureADMyOrg` - Users with a Microsoft work or school account in my organization's Microsoft Entra tenant (for example, single tenant)
-- `AzureADMultipleOrgs` - Users with a Microsoft work or school account in any organization's Microsoft Entra tenant (for example, multi-tenant)
+- `AzureADMultipleOrgs` - Users with a Microsoft work or school account in any organization's Microsoft Entra tenant (for example, multitenant)
 - `AzureADandPersonalMicrosoftAccount` - Users with a personal Microsoft account, or a work or school account in any organization's Microsoft Entra tenant
 - `PersonalMicrosoftAccount` - Personal accounts that are used to sign in to services like Xbox and Skype.
 
@@ -588,14 +588,14 @@ Example:
 
 ### Manifest limits
 
-An application manifest has multiple attributes that are referred to as collections; for example, appRoles, keyCredentials, knownClientApplications, identifierUris, redirectUris, requiredResourceAccess, and oauth2Permissions. Within the complete application manifest for any application, the total number of entries in all the collections combined has been capped at 1200. If you previously specify 100 redirect URIs in the application manifest, then you're only left with 1100 remaining entries to use across all other collections combined that make up the manifest.
+An application manifest has multiple attributes that are referred to as collections; for example, appRoles, keyCredentials, knownClientApplications, identifierUris, redirectUris, requiredResourceAccess, and oauth2Permissions. Within the complete application manifest for any application, the total number of entries in all the collections combined has been capped at 1200. If you previously specify 100 redirect URIs in the application manifest, then you're only left with 1,100 remaining entries to use across all other collections combined that make up the manifest.
 
 > [!NOTE]
 > In case you try to add more than 1200 entries in the application manifest, you may see an error **"Failed to update application xxxxxx. Error details: The size of the manifest has exceeded its limit. Please reduce the number of values and retry your request."**
 
 ### Unsupported attributes
 
-The application manifest represents the schema of the underlying application model in Microsoft Entra ID. As the underlying schema evolves, the manifest editor will be updated to reflect the new schema from time to time. As a result, you may notice new attributes showing up in the application manifest. In rare occasions, you may notice a syntactic or semantic change in the existing attributes or you may find an attribute that existed previously are not supported anymore. For example, you will see new attributes in the [App registrations](https://go.microsoft.com/fwlink/?linkid=2083908), which are known with a different name in the App registrations (Legacy) experience.
+The application manifest represents the schema of the underlying application model in Microsoft Entra ID. As the underlying schema evolves, the manifest editor is updated to reflect the new schema from time to time. As a result, you may notice new attributes showing up in the application manifest. In rare occasions, you may notice a syntactic or semantic change in the existing attributes or you may find an attribute that existed previously aren't supported anymore. For example, you'll see new attributes in the [App registrations](https://go.microsoft.com/fwlink/?linkid=2083908), which are known with a different name in the App registrations (Legacy) experience.
 
 | App registrations (Legacy)| App registrations           |
 |---------------------------|-----------------------------|
@@ -624,7 +624,7 @@ When you see one of these errors, we recommend the following actions:
 
 ## Next steps
 
-* For more info on the relationship between an app's application and service principal object(s), see [Application and service principal objects in Microsoft Entra ID](app-objects-and-service-principals.md).
+* For more information on the relationship between an app's application and service principal objects, see [Application and service principal objects in Microsoft Entra ID](app-objects-and-service-principals.md).
 * See the [Microsoft identity platform developer glossary](developer-glossary.md) for definitions of some core Microsoft identity platform developer concepts.
 
 Use the following comments section to provide feedback that helps refine and shape our content.

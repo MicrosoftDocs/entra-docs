@@ -46,7 +46,7 @@ Use the Microsoft Graph Explorer to add roles to an enterprise application.
 1. Open [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) in another window and sign in using the administrator credentials for your tenant.
 
     > [!NOTE]
-    > The Cloud App Administrator and App Administrator role won't work in this scenario. The Global Admin permissions are needed for directory read and write.
+    > The Cloud Application Administrator and Application Administrator role won't work in this scenario, use the Privileged Role Administrator.
 
 1. Select **modify permissions**, select **Consent** for the `Application.ReadWrite.All` and the `Directory.ReadWrite.All` permissions in the list.
 1. Replace `<objectID>` in the following request with the object ID that was previously recorded and then run the query:
@@ -134,7 +134,7 @@ After the service principal is patched with more roles, you can assign users to 
 To update an existing role, perform the following steps:
 
 1. Open [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer).
-1. Sign in to the Graph Explorer site by using the global admin or coadmin credentials for your tenant.
+1. Sign in to the Graph Explorer site as a Privileged Role Administrator.
 1. Using the object ID for the application from the overview pane, replace `<objectID>` in the following request with it and then run the query:
 
     `https://graph.microsoft.com/v1.0/servicePrincipals/<objectID>`
@@ -148,7 +148,7 @@ To update an existing role, perform the following steps:
 To delete an existing role, perform the following steps:
 
 1. Open [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer).
-1. Sign in to the Graph Explorer site by using the global admin or coadmin credentials for your tenant.
+1. Sign in to the Graph Explorer site as a Privileged Role Administrator.
 1. Using the object ID for the application from the overview pane in the Azure portal, replace `<objectID>` in the following request with it and then run the query:
 
     `https://graph.microsoft.com/v1.0/servicePrincipals/<objectID>`

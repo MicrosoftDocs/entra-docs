@@ -161,7 +161,7 @@ By specifying a web API's scopes in the web app registration, the web app can ob
 
 Follow these steps to configure the web app permissions to the web API:  
 
-1. From the **Overview** pane of your web application (*web-app-that-calls-web-api*), under **Manage**, select **API permissions** > **Add a permission** > **My APIs**.  
+1. From the **Overview** pane of your web application (*web-app-that-calls-web-api*), under **Manage**, select **API permissions** > **Add a permission** > **APIs my organization uses**.  
 1. Select **NewWebAPI1** or the API that you wish to add permissions to. 
 1. Under **Select permissions**, check the box next to **Forecast.Read**. You may need to expand the **Permission** list. This selects the permissions the client app should have on behalf of the signed-in user.  
 1. Select **Add permissions** to complete the process.  

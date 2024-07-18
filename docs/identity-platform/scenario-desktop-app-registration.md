@@ -51,7 +51,7 @@ Specify the redirect URI for your app by [configuring the platform settings](qui
 - If you build a native Objective-C or Swift app for macOS, register the redirect URI based on your application's bundle identifier in the following format: `msauth.<your.app.bundle.id>://auth`. Replace `<your.app.bundle.id>` with your application's bundle identifier.
 - If you build a Node.js Electron app, use a custom string protocol instead of a regular web (https://) redirect URI in order to handle the redirection step of the authorization flow, for instance `msal{Your_Application/Client_Id}://auth` (such as  *msal00001111-aaaa-2222-bbbb-3333cccc4444://auth*). The custom string protocol name shouldn't be obvious to guess and should follow the suggestions in the [OAuth2.0 specification for Native Apps](https://tools.ietf.org/html/rfc8252#section-7.1).
 - If your app uses only integrated Windows authentication or a username and a password, you don't need to register a redirect URI for your application. These flows do a round trip to the Microsoft identity platform v2.0 endpoint. Your application won't be called back on any specific URI.
-- To distinguish [device code flow](scenario-desktop-acquire-token-device-code-flow.md), [integrated Windows authentication](scenario-desktop-acquire-token-integrated-windows-authentication.md), and a [username and a password](scenario-desktop-acquire-token-username-password.md) from a confidential client application using a client credential flow used in [daemon applications](scenario-daemon-overview.md), none of which requires a redirect URI, configure it as a public client application. To achieve this configuration:
+- To distinguish [device code flow](scenario-desktop-acquire-token-device-code-flow.md), [integrated Windows authentication](scenario-desktop-acquire-token-integrated-windows-authentication.md), and a [username and a password](scenario-desktop-acquire-token-username-password.md) from a confidential client application using a client credential flow used in [daemon applications](scenario-daemon-app-registration.md), none of which requires a redirect URI, configure it as a public client application. To achieve this configuration:
 
     1. In the <a href="https://entra.microsoft.com/" target="_blank">Microsoft Entra admin center</a>, select your app in **App registrations**, and then select **Authentication**.
     1. In **Advanced settings** > **Allow public client flows** > **Enable the following mobile and desktop flows:**, select **Yes**.
@@ -60,7 +60,7 @@ Specify the redirect URI for your app by [configuring the platform settings](qui
 
 ## API permissions
 
-Desktop applications call APIs for the signed-in user. They need to request delegated permissions. They can't request application permissions, which are handled only in [daemon applications](scenario-daemon-overview.md).
+Desktop applications call APIs for the signed-in user. They need to request delegated permissions. They can't request application permissions, which are handled only in [daemon applications](scenario-daemon-app-registration.md).
 
 ## Next steps
 

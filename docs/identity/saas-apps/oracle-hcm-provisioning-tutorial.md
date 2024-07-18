@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 03/20/2024
+ms.date: 03/25/2024
 ms.author: jfields
 ---
 
@@ -42,7 +42,7 @@ In this tutorial, we guide you through the steps and best practices for integrat
 
 Before you start integrating Oracle HCM with Microsoft Entra ID using the Inbound Provisioning API, you need to ensure that you have the following prerequisites:
 
-- An [Oracle HCM (oracle.com)](https://docs.oracle.com/en/cloud/saas/human-resources/23c/oawpm/Human_Capital_Management_Integration_Specialist_job_roles.html#Human_Capital_Management_Integration_Specialist_job_roles) account with privileges to:
+- An [Oracle HCM (oracle.com)](https://docs.oracle.com/en/cloud/saas/human-resources/23d/faohb/Human-Capital-Management-Integration-Specialist-JR-16.html#Human_Capital_Management_Integration_Specialist_JR_16_d1e51970) account with privileges to:
 
   - View and export HCM data.
   - Access the Oracle HCM REST APIs. For this tutorial, we referenced [Human Resources 24A (oracle.com)](https://docs.oracle.com/en/cloud/saas/human-resources/24a/farws/rest-endpoints.html).
@@ -126,7 +126,7 @@ Share the list of Oracle HCM worker attributes you wish to export with your Orac
   - Define data elements in an HCM extract using fast formula database items and rules
 
 > [!NOTE]
-> To get started with creating HCM Extracts, refer to [Define Extracts (oracle.com)](https://docs.oracle.com/en/cloud/saas/human-resources/23c/fahex/define-extracts.html).
+> To get started with creating HCM Extracts, refer to [Define Extracts (oracle.com)](https://www.oracle.com/webfolder/technetwork/tutorials/obe/hcm_extract/extract_obe_ptrtrn/extract_index.html).
 
 - **Oracle BI Publisher**: Supports both scheduled and unplanned reporting, based on either predefined Oracle Transactional Business Intelligence analysis structures or your own data models.
     You can generate reports in various formats. To use Oracle BI Publisher for outbound integrations, you generate reports in a format suitable for automatic downstream processing, such as XML or CSV. To get started with creating your BI Publisher report, refer to [Define the BI Publisher Template in HCM Extracts (oracle.com)](https://docs.oracle.com/en/cloud/saas/human-resources/24a/fahex/define-the-bi-publisher-template-in-hcm-extracts.html#s20043805).

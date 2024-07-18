@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: how-to
-ms.date: 05/07/2024
+ms.date: 07/17/2024
 ms.service: global-secure-access
 ms.subservice: entra-private-access
 ms.reviewer: katabish
@@ -18,8 +18,8 @@ Connectors are lightweight agents that sit on a server in a private network and 
 
 To add private resources and applications to Microsoft Entra ID you need:
 
-* The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
-* An application administrator account.
+* The product requires a license. To learn more about licensing, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense). 
+* An Application Administrator account.
 
 User identities must be synchronized from an on-premises directory or created directly within your Microsoft Entra tenants. Identity synchronization allows Microsoft Entra ID to pre-authenticate users before granting them access to application proxy published applications and to have the necessary user identifier information to perform single sign-on (SSO).
 
@@ -129,17 +129,17 @@ To use Private Access, install a connector on each Windows server you're using f
 
 **To install the connector**:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a Global Administrator of the directory that uses Application Proxy.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an Application Administrator of the directory that uses Application Proxy.
 
     * For example, if the tenant domain is contoso.com, the admin should be `admin@contoso.com` or any other admin alias on that domain.
 1. Select your username in the upper-right corner. Verify you're signed in to a directory that uses Application Proxy. If you need to change directories, select **Switch directory** and choose a directory that uses Application Proxy.
-1. Browse to **Global Secure Access (preview)** > **Connect** > **Connectors**.
+1. Browse to **Global Secure Access** > **Connect** > **Connectors**.
 1. Select **Download connector service**.
 
     ![Screenshot of the Download connector service button in the App proxy page.](media/how-to-configure-connectors/app-proxy-download-connector-service.png)
 1. Read the Terms of Service. When you're ready, select **Accept terms & Download**.
 1. At the bottom of the window, select **Run** to install the connector. An install wizard opens.
-1. Follow the instructions in the wizard to install the service. When you're prompted to register the connector with the Application Proxy for your Microsoft Entra tenant, provide your Global Administrator credentials.
+1. Follow the instructions in the wizard to install the service. When you're prompted to register the connector with the Application Proxy for your Microsoft Entra tenant, provide your Application Administrator credentials.
     * For Internet Explorer (IE): If IE Enhanced Security Configuration is set to On, you may not see the registration screen. To get access, follow the instructions in the error message. Make sure that Internet Explorer Enhanced Security Configuration is set to Off.
 
 ## Things to know
@@ -163,8 +163,8 @@ For information about troubleshooting application proxy issues, see [Debug appli
 
 To confirm the connector installed and registered correctly:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a Global Administrator of the directory that uses Application Proxy.
-1. Browse to **Global Secure Access (preview)** > **Connect** > **Connectors**
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an Application Administrator of the directory that uses Application Proxy.
+1. Browse to **Global Secure Access** > **Connect** > **Connectors**
     * All of your connectors and connector groups appear on this page.
 1. View a connector to verify its details.
     * Expand the connector to view the details if it's not already expanded.
@@ -192,14 +192,14 @@ To confirm the connector installed and registered correctly:
 
 To create as many connector groups as you want:
 
-1. Browse to **Global Secure Access (preview)** > **Connect** > **Connectors**.
+1. Browse to **Global Secure Access** > **Connect** > **Connectors**.
 1. Select **New connector group**.
 1. Give your new connector group a name, then use the dropdown menu to select which connectors belong in this group.
 1. Select **Save**.
 
 To learn more about connector groups, see [Understand Microsoft Entra private network connector groups](concept-connector-groups.md).
 
-[!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
+
 
 ## Next steps
 

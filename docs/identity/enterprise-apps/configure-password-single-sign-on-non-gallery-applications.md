@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: concept-article
 
-ms.date: 04/25/2023
+ms.date: 06/27/2024
 ms.author: jomondi
 ms.reviewer: alamaral
 ms.custom: enterprise-apps
@@ -17,12 +17,12 @@ ms.custom: enterprise-apps
 
 # Add password-based single sign-on to an application
 
-This article shows you how to set up password-based single sign-on (SSO) in Microsoft Entra ID. With password-based SSO, a user signs in to the application with a username and password the first time it's accessed. After the first sign-on, Microsoft Entra ID sends the username and password to the application. 
+This article shows you how to set up password-based single sign-on (SSO) in Microsoft Entra ID. With password-based SSO, a user signs in to the application with a username and password the first time they sign in to it. After the first sign-on, Microsoft Entra ID sends the username and password to the application. 
 
 Password-based SSO uses the existing authentication process provided by the application. When you enable password-based SSO for an application, Microsoft Entra ID collects and securely stores usernames and passwords for the application. User credentials are stored in an encrypted state in the directory. Password-based SSO is supported for any cloud-based application that has an HTML-based sign-in page.
 
 Choose password-based SSO when:
-- An application doesn't support the SAML SSO protocol.
+- An application doesn't support the Security Assertion Markup Language (SAML) SSO protocol.
 - An application authenticates with a username and password instead of access tokens and headers.
 
 The configuration page for password-based SSO is simple. It includes only the URL of the sign-on page that the application uses. This string must be the page that includes the username input field.
@@ -45,9 +45,9 @@ To configure password-based SSO in your Microsoft Entra tenant, you need:
 1. Enter the URL for the sign-in page of the application.
 1. Select **Save**. 
 
-Microsoft Entra ID parses the HTML of the sign-in page for username and password input fields. If the attempt succeeds, you're done. Your next step is to [Assign users or groups](add-application-portal-assign-users.md) to the application. 
+Microsoft Entra ID parses the HTML of the sign-in page for username and password input fields. If the attempt succeeds, you're signed in. Your next step is to [Assign users or groups](add-application-portal-assign-users.md) to the application. 
 
-After you've assigned users and groups, you can provide credentials to be used for a user when they sign in to the application. 
+After assigning users and groups, you can provide credentials to be used for a user when they sign in to the application. 
 
 1. Select **Users and groups**, select the checkbox for the user's or group's row, and then select **Update Credentials**. 
 1. Enter the username and password to be used for the user or group. If you don't, users are prompted to enter the credentials themselves upon launch.
@@ -69,9 +69,9 @@ If the parsing attempt by Microsoft Entra ID fails, you can configure sign-on ma
 
 For password-based SSO, the end user’s browsers can be:
 
-- Internet Explorer 8, 9, 10, 11 -- on Windows 7 or later (limited support)
-- Edge on Windows 10 Anniversary Edition or later
-- Chrome -- on Windows 7 or later, and on macOS X or later
+- Internet Explorer 8, 9, 10, 11--on Windows 7 or later (limited support)
+- Microsoft Edge on Windows 10 Anniversary Edition or later
+- Chrome--on Windows 7 or later, and on macOS X or later
 
 ## Next steps
 

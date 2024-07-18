@@ -5,7 +5,7 @@ description: Remove group members in bulk operations by using a comma-separated 
 author: barclayn
 ms.author: barclayn
 manager: amycolannino
-ms.date: 11/10/2023
+ms.date: 07/01/2024
 ms.topic: how-to
 ms.service: entra-id
 ms.subservice: users
@@ -60,6 +60,8 @@ The rows in a downloaded CSV template are:
 1. When your file passes validation, select **Submit** to start the bulk operation that removes the group members from the group.
 1. When the removal operation finishes, a notification states that the bulk operation succeeded.
 
+If you experience errors, you can download and view the results file on the **Bulk operation results** page. The file contains the reason for each error. The file submission must match the provided template and include the exact column names. For more information about bulk operations limitations, see [Bulk removal service limits](#bulk-removal-service-limits).
+
 ## Check removal status
 
 You can see the status of all your pending bulk requests on the **Bulk operation results** page.
@@ -70,7 +72,7 @@ For details about each line item within the bulk operation, select the values un
 
 ## Bulk removal service limits
 
-Each bulk activity to remove a list of group members from can run for up to one hour. This time frame enables removal of a list of at least 40,000 members.
+[!INCLUDE [Bulk operations limitations](~/includes/bulk-operations-limitations.md)]
 
 ## Next steps
 

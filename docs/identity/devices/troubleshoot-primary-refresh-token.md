@@ -15,7 +15,7 @@ ms.reviewer: gudlapreethi, bemey, filuz, robgarcia, v-leedennis
 ---
 # Troubleshoot primary refresh token issues on Windows devices
 
-This article discusses how to troubleshoot issues that involve the [primary refresh token](./concept-primary-refresh-token.md) (PRT) when you authenticate on a Microsoft Entra joined Windows device by using your Microsoft Entra credentials.
+This article discusses how to troubleshoot issues that involve the [primary refresh token (PRT)](./concept-primary-refresh-token.md) when you authenticate on a Microsoft Entra joined Windows device by using your Microsoft Entra credentials.
 
 <!-- docutune:ignore AAD -->
 
@@ -432,7 +432,7 @@ Common general network-related issues.
 
 #### Time travel traces
 
-The following procedure describes how to capture traces by using the [Time Travel Debugging](/windows-hardware/drivers/debugger/time-travel-debugging-overview) (TTD) feature.
+The following procedure describes how to capture traces by using the [Time Travel Debugging (TTD)](/windows-hardware/drivers/debugger/time-travel-debugging-overview) feature.
 
 > [!WARNING]  
 > Time travel traces contain personal data. In addition, Local Security Authority Subsystem Service (LSASS or *lsass.exe*) traces contain extremely sensitive information. When you handle these traces, make sure that you use best practices for the storage and sharing of this type of information.

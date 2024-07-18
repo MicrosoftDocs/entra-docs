@@ -1,17 +1,14 @@
 ---
 title: Default user permissions
-description: Learn about the user permissions available in Microsoft Entra ID.
+description: Compare the default user permissions available in Microsoft Entra ID and learn how to restrict access.
 author: barclayn
 manager: amycolannino
-
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: conceptual
-ms.date: 02/17/2023
+ms.date: 06/27/2024
 ms.author: barclayn
 ms.reviewer: vincesm
-ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
-ms.collection: M365-identity-device-management
 ---
 # What are the default user permissions in Microsoft Entra ID?
 
@@ -48,21 +45,20 @@ It's possible to add restrictions to users' default permissions.
 You can restrict default permissions for member users in the following ways:
 
 > [!CAUTION]
-> Using the **Restrict access to Microsoft Entra administration portal** switch **is NOT a security measure**. For more information on the functionality, see the table below.
+> Using the **Restrict access to Microsoft Entra administration portal** switch **is NOT a security measure**. For more information on the functionality, see the following table.
 
 | Permission | Setting explanation |
 | ---------- | ------------ |
 | **Register applications** | Setting this option to **No** prevents users from creating application registrations. You can then grant the ability back to specific individuals, by adding them to the application developer role. |
 | **Allow users to connect work or school account with LinkedIn** | Setting this option to **No** prevents users from connecting their work or school account with their LinkedIn account. For more information, see [LinkedIn account connections data sharing and consent](~/identity/users/linkedin-user-consent.md). |
 | **Create security groups** | Setting this option to **No** prevents users from creating security groups. Those assigned at least the User Administrators role can still create security groups. To learn how, see [Microsoft Entra cmdlets for configuring group settings](~/identity/users/groups-settings-cmdlets.md). |
-| **Create Microsoft 365 groups** | Setting this option to **No** prevents users from creating Microsoft 365 groups. Setting this option to **Some** allows a set of users to create Microsoft 365 groups. Those assigned at least the [User Administrator](../identity/role-based-access-control/permissions-reference.md#user-administrator) role can still create Microsoft 365 groups. To learn how, see [Microsoft Entra cmdlets for configuring group settings](~/identity/users/groups-settings-cmdlets.md). |
+| **Create Microsoft 365 groups** | Setting this option to **No** prevents users from creating Microsoft 365 groups. Setting this option to **Some** allows a set of users to create Microsoft 365 groups. Anyone assigned at least the [User Administrator](../identity/role-based-access-control/permissions-reference.md#user-administrator) role can still create Microsoft 365 groups. To learn how, see [Microsoft Entra cmdlets for configuring group settings](~/identity/users/groups-settings-cmdlets.md). |
 | **Restrict access to Microsoft Entra administration portal** | **What does this switch do?** <br>**No** lets non-administrators browse the Microsoft Entra administration portal. <br>**Yes** Restricts non-administrators from browsing the Microsoft Entra administration portal. Non-administrators who are owners of groups or applications are unable to use the Azure portal to manage their owned resources. </p><p></p><p>**What does it not do?** <br> It doesn't restrict access to Microsoft Entra data using PowerShell, Microsoft GraphAPI, or other clients such as Visual Studio. <br>It doesn't restrict access as long as a user is assigned a custom role (or any role). </p><p></p><p>**When should I use this switch?** <br>Use this option to prevent users from misconfiguring the resources that they own. </p><p></p><p>**When should I not use this switch?** <br>Don't use this switch as a security measure. Instead, create a Conditional Access policy that targets Windows Azure classic deployment model that blocks non-administrators access to [Windows Azure classic deployment model](~/identity/conditional-access/concept-conditional-access-cloud-apps.md#windows-azure-service-management-api). </p><p></p><p> **How do I grant only a specific non-administrator users the ability to use the Microsoft Entra administration portal?** <br> Set this option to **Yes**, then assign them a role like global reader. </p><p></p><p>**Restrict access to the Microsoft Entra administration portal** <br>A Conditional Access policy that targets Windows Azure classic deployment model targets access to all Azure management. |
-| **Restrict non-admin users from creating tenants** | Users can create tenants in the Microsoft Entra ID and Microsoft Entra administration portal under Manage tenant. The creation of a tenant is recorded in the Audit log as category DirectoryManagement and activity Create Company. Anyone who creates a tenant becomes the Global Administrator of that tenant. The newly created tenant doesn't inherit any settings or configurations. </p><p></p><p>**What does this switch do?** <br> Setting this option to **Yes** restricts creation of Microsoft Entra tenants to those assigned at least the [Tenant Creator](../identity/role-based-access-control/permissions-reference.md#tenant-creator) role. Setting this option to **No** allows non-admin users to create Microsoft Entra tenants. Tenant create will continue to be recorded in the Audit log. </p><p></p><p>**How do I grant only a specific non-administrator users the ability to create new tenants?** <br> Set this option to Yes, then assign them the [Tenant Creator](../identity/role-based-access-control/permissions-reference.md#tenant-creator) role.|
-| **Restrict users from recovering the BitLocker key(s) for their owned devices** | This setting can be found in the Microsoft Entra admin center in the Device Settings. Setting this option to **Yes** restricts users from being able to self-service recover BitLocker key(s) for their owned devices. Users will have to contact their organization's helpdesk to retrieve their BitLocker keys. Setting this option to **No** allows users to recover their BitLocker key(s). |
-| **Read other users** | This setting is available in Microsoft Graph and PowerShell only. Setting this flag to `$false` prevents all non-admins from reading user information from the directory. This flag may prevent reading user information in other Microsoft services like Microsoft Teams.</p><p>This setting is meant for special circumstances, so we don't recommend setting the flag to `$false`. |
+| **Restrict non-admin users from creating tenants** | Users can create tenants in the Microsoft Entra ID and Microsoft Entra administration portal under Manage tenant. The creation of a tenant is recorded in the Audit log as category DirectoryManagement and activity Create Company. Anyone who creates a tenant becomes the Global Administrator of that tenant. The newly created tenant doesn't inherit any settings or configurations. </p><p></p><p>**What does this switch do?** <br> Setting this option to **Yes** restricts creation of Microsoft Entra tenants to anyone assigned at least the [Tenant Creator](../identity/role-based-access-control/permissions-reference.md#tenant-creator) role. Setting this option to **No** allows non-admin users to create Microsoft Entra tenants. Tenant create continues to be recorded in the Audit log. </p><p></p><p>**How do I grant only a specific non-administrator users the ability to create new tenants?** <br> Set this option to Yes, then assign them the [Tenant Creator](../identity/role-based-access-control/permissions-reference.md#tenant-creator) role.|
+| **Restrict users from recovering the BitLocker key(s) for their owned devices** | This setting can be found in the Microsoft Entra admin center in the Device Settings. Setting this option to **Yes** restricts users from being able to self-service recover BitLocker key(s) for their owned devices. Users must contact their organization's helpdesk to retrieve their BitLocker keys. Setting this option to **No** allows users to recover their BitLocker key(s). |
+| **Read other users** | This setting is available in Microsoft Graph and PowerShell only. Setting this flag to `$false` prevents all non-admins from reading user information from the directory. This flag might prevent reading user information in other Microsoft services like Microsoft Teams.</p><p>This setting is meant for special circumstances, so we don't recommend setting the flag to `$false`. |
 
-The **Restrict non-admin users from creating tenants** option is shown [below](https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/UserSettings)
-
+The **Restrict non-admin users from creating tenants** option is shown in the following screenshot.
 
 :::image type="content" source="media/user-default-permissions/tenant-creation-restriction.png" alt-text="Screenshot showing the option to Restrict non-admins from creating tenants." lightbox="media/user-default-permissions/tenant-creation-restriction.png":::
 
@@ -99,6 +95,8 @@ When a user creates a group, they're automatically added as an owner for that gr
 An owner can also add or remove other owners. Unlike those assigned at least the [Groups Administrator](../identity/role-based-access-control/permissions-reference.md#groups-administrator) role, owners can manage only the groups that they own and they can add or remove group members only if the group's membership type is **Assigned**. 
 
 To assign a group owner, see [Managing owners for a group](./how-to-manage-groups.yml).
+
+To use Privileged Access Management (PIM) to make a group eligible for a role assignment, see [Use Microsoft Entra groups to manage role assignments](~/identity/role-based-access-control/groups-concept.md).
 
 ### Ownership permissions
 

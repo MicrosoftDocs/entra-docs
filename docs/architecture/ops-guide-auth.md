@@ -53,12 +53,12 @@ Use the following table to find the recommended solution for mitigating the issu
 | Issue | Recommendation |
 | :- | :- |
 | No mechanism to protect against weak passwords | Enable Microsoft Entra ID [self-service password reset (SSPR)](~/identity/authentication/concept-sspr-howitworks.md) and [password protection](~/identity/authentication/concept-password-ban-bad-on-premises.md) |
-| No mechanism to detect leaked passwords | Enable [password hash sync](~/identity/hybrid/connect/how-to-connect-password-hash-synchronization.md) (PHS) to gain insights |
+| No mechanism to detect leaked passwords | Enable [password hash sync (PHS)](~/identity/hybrid/connect/how-to-connect-password-hash-synchronization.md) to gain insights |
 | Using AD FS and unable to move to managed authentication | Enable [AD FS Extranet Smart Lockout](/windows-server/identity/ad-fs/operations/configure-ad-fs-extranet-smart-lockout-protection) and / or [Microsoft Entra Smart Lockout](~/identity/authentication/howto-password-smart-lockout.md) |
 | Password policy uses complexity-based rules such as length, multiple character sets, or expiration | Reconsider in favor of [Microsoft Recommended Practices](https://www.microsoft.com/research/publication/password-guidance/?from=http%3A%2F%2Fresearch.microsoft.com%2Fpubs%2F265143%2Fmicrosoft_password_guidance.pdf) and switch your approach to password management and deploy [Microsoft Entra password protection](~/identity/authentication/concept-password-ban-bad.md). |
 | Users aren't registered to use multifactor authentication | [Register all user's security information](~/id-protection/howto-identity-protection-configure-mfa-policy.md) so it can be used as a mechanism to verify the user's identity along with their password |
 | There is no revocation of passwords based on user risk | Deploy Microsoft Entra [Identity Protection user risk policies](~/id-protection/howto-identity-protection-configure-risk-policies.md) to force password changes on leaked credentials using SSPR |
-| There's no smart lockout mechanism to protect malicious authentication from bad actors coming from identified IP addresses | Deploy cloud-managed authentication with either password hash sync or [pass-through authentication](~/identity/hybrid/connect/how-to-connect-pta-quick-start.md) (PTA) |
+| There's no smart lockout mechanism to protect malicious authentication from bad actors coming from identified IP addresses | Deploy cloud-managed authentication with either password hash sync or [pass-through authentication (PTA)](~/identity/hybrid/connect/how-to-connect-pta-quick-start.md) |
 
 #### Password policies recommended reading
 
@@ -68,7 +68,7 @@ Use the following table to find the recommended solution for mitigating the issu
 
 Users needing to change or reset their passwords is one of the biggest sources of volume and cost of help desk calls. In addition to cost, changing the password as a tool to mitigate a user risk is a fundamental step in improving the security posture of your organization.
 
-At a minimum, it's recommended you deploy Microsoft Entra ID [self-service password reset](~/identity/authentication/concept-sspr-howitworks.md) (SSPR) and on-premises [password protection](~/identity/authentication/howto-password-ban-bad-on-premises-deploy.md) to accomplish:
+At a minimum, it's recommended you deploy Microsoft Entra ID [self-service password reset (SSPR)](~/identity/authentication/concept-sspr-howitworks.md) and on-premises [password protection](~/identity/authentication/howto-password-ban-bad-on-premises-deploy.md) to accomplish:
 
 - Deflect help desk calls.
 - Replace the use of temporary passwords.

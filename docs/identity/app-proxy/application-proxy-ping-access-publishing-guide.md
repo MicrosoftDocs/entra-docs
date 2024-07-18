@@ -38,7 +38,7 @@ This article outlines the steps to publish an application for the first time. Th
 
 The private network connector is a Windows Server service that directs traffic from your remote employees to your published applications. For more detailed installation instructions, see [Tutorial: Add an on-premises application for remote access through application proxy in Microsoft Entra ID](application-proxy-add-on-premises-application.md).
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Application proxy**.
 1. Select **Download connector service**.
 1. Follow the installation instructions.
@@ -93,7 +93,7 @@ Now assign a user for application testing and choose header-based single sign-on
 1. From the application sidebar, select **Single sign-on** > **Header-based**.
 
    > [!TIP]
-   > If this is your first time using header-based single sign-on, you need to install PingAccess. To make sure your Microsoft Entra ID subscription is automatically associated with your PingAccess installation, use the link on this single sign-on page to download PingAccess. You can open the download site now, or come back to this page later.
+   > If this is your first time using header-based single sign-on, you need to install PingAccess. To make sure your Microsoft Entra subscription is automatically associated with your PingAccess installation, use the link on this single sign-on page to download PingAccess. You can open the download site now, or come back to this page later.
 
    ![Shows header-based sign-on screen and PingAccess](./media/application-proxy-configure-single-sign-on-with-ping-access/sso-header.png)
 
@@ -125,7 +125,7 @@ Finally, set up the on-premises application so that users have `read` access and
 
 Collect three Globally Unique Identifiers (GUIDs). Use the GUIDs to set up your application with PingAccess. 
 
-| Name of Microsoft Entra ID field | Name of PingAccess field | Data format |
+| Name of Microsoft Entra field | Name of PingAccess field | Data format |
 | --- | --- | --- |
 | **Application (client) ID** | **Client ID** | GUID |
 | **Directory (tenant) ID** | **Issuer** | GUID |
@@ -150,7 +150,7 @@ To collect this information:
 
 **Update the `acceptMappedClaims` field:**
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Select your username in the upper-right corner. Verify you're signed in to a directory that uses application proxy. If you need to change directories, select **Switch directory** and choose a directory that uses application proxy.
 1. Browse to **Identity** > **Applications** > **App registrations** and select your application.
 1. From the sidebar of the **App registrations** page for your application, select **Manifest**. The manifest JSON code for your application's registration appears.
@@ -181,7 +181,7 @@ Example to include email address into the access_token that PingAccess consumes:
 
 ### Use of claims mapping policy (optional)
 
-Claims mapping lets you migrate old on-premises apps to the cloud by adding more custom claims that back your Active Directory Federation Services (ADFS) or user objects. For more information, see [Claims Mapping Policy (preview)](~/identity-platform/reference-claims-mapping-policy-type.md#claims-mapping-policy-properties).
+Claims mapping lets you migrate old on-premises apps to the cloud by adding more custom claims that back your Active Directory Federation Services (ADFS) or user objects. For more information, see [Claims Customization](/entra/identity-platform/reference-claims-mapping-policy-type#claims-customization-using-a-policy).
 
 To use a custom claim and include more fields in your application. [Created a custom claims mapping policy and assigned it to the application](~/identity-platform/saml-claims-customization.md).
 

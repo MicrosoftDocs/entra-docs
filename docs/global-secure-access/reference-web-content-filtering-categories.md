@@ -9,9 +9,12 @@ ms.date: 03/04/2024
 ms.service: global-secure-access
 ms.subservice: entra-internet-access
 ---
-# Global Secure Access (preview) Web content filtering categories
+# Global Secure Access Web content filtering categories
 
 When you set up rules to filter web content, you can select based on a category. This article provides a list of categories along with explanations.
+
+> [!NOTE]
+> You can check a website's web category using the Web Category column in Global Secure Access [Traffic Logs](how-to-view-traffic-logs.md). If you would like to dispute a site's categorization, you can make a request via email using [this template](mailto:gsawebcatdispute@service.microsoft.com?subject=%5BCustomer%20Dispute%5D%20Miscategorized%20%3CFQDN%3E%20as%20%3CCategory%20Returned%3E&body=Dispute%20Type%3A%20Miscategorization%0AFQDN%20%3A%20%3C%3E%0ACategory%20Returned%20%3A%20%3C%3E%0ACategory%20Expected%20%3A%20%3C%3E%0AJustification%3A%20%3C%3E).
 
 ## Liability
 
@@ -37,6 +40,7 @@ When you set up rules to filter web content, you can select based on a category.
 |Tasteless     |Sites with offensive or tasteless content, including profanity.          |
 |Violence   | Sites that contain images or text depicting or advocating physical assault against humans, animals, or institutions. Sites of gruesome nature.         |
 |Weapons      |Sites that depict, sell, review, or describe guns and weapons, including for sport.         |
+|Artificial Intelligence	|Sites that use GenerativeAI.	|
 
 ## High bandwidth
 
@@ -47,7 +51,6 @@ When you set up rules to filter web content, you can select based on a category.
 |Streaming media + downloads    |  Sites that deliver streaming content, such as Internet radio, Internet TV, or MP3 and live or archived media download sites. Includes fan sites, or official sites run by musicians, bands, or record labels.        |
 |Download sites      | Sites that contain downloadable software, whether shareware, freeware, or for a charge.         |
 |Entertainment     |  Sites containing programming guides to television, movies, music and video (including video on demand), celebrity sites, and entertainment news.        |
-|    |         |
 
 ## Business use
 
@@ -71,7 +74,6 @@ When you set up rules to filter web content, you can select based on a category.
 |Translators     |   Sites that translate Web pages or phrases from one language to another. These sites bypass the proxy server, presenting the risk that unauthorized content might be accessed, similar to using an anonymizer.       |
 |Web repository + storage   |  Web pages including collections of shareware, freeware, open source, and other software downloads.        |
 |Web-based email     | Sites that enable users to send and receive email through a web accessible email account.         |
-|     |         |
 
 ## Productivity loss
 
@@ -84,7 +86,6 @@ When you set up rules to filter web content, you can select based on a category.
 |Instant messaging    | Sites that enable logging in to instant messaging services such as ICQ, AOL Instant Messenger, IRC, MSN, Jabber, Yahoo Messenger, and the like.         |
 |Shopping    |  Sites for online shopping, catalogs, online ordering, auctions, classified ads. Excludes shopping for products and services exclusively covered by another category such as health & medicine.       |
 |Social networking   |  Sites that enable social networking for online communities of various topics, for friendship, or/and dating.        |
-|   |         |
 
 ## General surfing
 
@@ -104,20 +105,11 @@ When you set up rules to filter web content, you can select based on a category.
 |Transportation   | Sites that include information about motor vehicles such as cars, motorcycles, boats, trucks, RVs and the like, including online purchase sites. Includes manufacturer sites, dealerships, review sites, pricing, enthusiast’s clubs, and public transportation, and so on.    |
 |Travel    | Sites that provide travel and tourism information or online booking or travel services such as airlines, accommodations, car rentals. Includes regional or city information sites.         |
 |Uncategorized     |Sites that haven't been categorized, such as new websites, personal sites, and so on.          |
-|    |         |
 
-## Security
+## Ungrouped
 
 |Category   |Description  |
 |---------|---------|
-|Remote Access     | Sites used for remote computer control.  |
-|Malware  | Sites used by key loggers, mobile malware, bots, malware, and spyware.  |
 |Cryptocurrency Mining | Sites that relate to crypto currency and crypto currency mining. |
-|Anonymizers | Sites that are used for remote proxy connections to make activity on the Internet untraceable. |
 |Web Phone | Sites that can be used for Internet voice communications. |
 |Web Meetings | Sites for conducting web conferences. |
-|Phishing And Fraud | Sites that are used to steal information through phishing attacks. |
-|Compromised | Sites that have been compromised. |
-|Parked Domains | Sites that aren't in active use. |
-|Botnets | Sites used by botnets. |
-|Spam Sites | Sites known to produce SPAM email. |

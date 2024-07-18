@@ -16,9 +16,9 @@ ms.topic: how-to
 
 # Enable cross-app SSO on Android using MSAL
 
-Single sign-on (SSO) allows users to only enter their credentials once and have those credentials automatically work across applications.
+Single sign-on (SSO) allows users to only enter their credentials once and have those credentials automatically work across applications.It enhances user experience and improves security by reducing the number of passwords users need to manage, lowering the risk of password fatigue and associated vulnerabilities.
 
-The [Microsoft identity platform](./index.yml) and the Microsoft Authentication Library (MSAL) help you enable SSO across your own suite of apps. With the broker capability and Authenticator applications, you can extend SSO across the entire device.
+The [Microsoft identity platform](./index.yml) and the Microsoft Authentication Library (MSAL) help you enable SSO across your suite of applications. By enabling Broker capability you can extend SSO across the entire device.
 
 In this how-to, you'll learn how to configure the SDKs used by your application to provide SSO to your customers.
 
@@ -51,7 +51,7 @@ We recommend that you use one of Microsoft's authentication brokers to participa
   - via Android AccountManager & Account Settings
   - "Work Account" - custom account type
 
-On Android, the Microsoft Authentication Broker is a component that's included in the [Microsoft Authenticator](https://play.google.com/store/apps/details?id=com.azure.authenticator) and [Intune Company Portal](https://play.google.com/store/apps/details?id=com.microsoft.windowsintune.companyportal) apps.
+On Android, the Microsoft Authentication Broker is a component that's included in the [Microsoft Authenticator](https://play.google.com/store/apps/details?id=com.azure.authenticator), [Intune Company Portal](https://play.google.com/store/apps/details?id=com.microsoft.windowsintune.companyportal) and [Link to Windows](https://play.google.com/store/apps/details?id=com.microsoft.appmanager) apps.
 
 The following diagram illustrates the relationship between your app, the MSAL, and Microsoft's authentication brokers.
 
@@ -65,7 +65,7 @@ Broker-hosting apps can be installed by the device owner from their app store (t
 - Enrolled in Device Management or
 - Enrolled in Intune App Protection
 
-If a device doesn't already have a broker app installed, MSAL instructs the user to install one as soon as the app attempts to get a token interactively. The app will then need to lead the user through the steps to make the device compliant with the required policy.
+If the device with above mentioned requirements doesn't already have a broker app installed, MSAL instructs the user to install one as soon as the app attempts to get a token interactively. The app will then lead the user through the steps to make the device compliant with the required policy. If there is no policy requirement, or the user is signing in with Microsoft account, then Broker app installation isn't required. 
 
 ### Effects of installing and uninstalling a broker
 
@@ -79,13 +79,13 @@ Installing a broker doesn't require the user to sign in again. Only when the use
 - The user's account no longer meets a Conditional Access policy.
 - The user revoked their consent for the app to be associated with their account.
 
-**Multiple brokers** - If multiple brokers are installed on a device, the broker that was installed first is always the active broker. Only a single broker can be active on a device.
+**Multiple brokers** - If multiple brokers are installed on a device, MSAL will identify the active broker on its own to complete the authentication process
 
 #### When a broker is uninstalled
 
 If there's only one broker hosting app installed, and it's removed, then the user needs to sign in again. Uninstalling the active broker removes the account and associated tokens from the device.
 
-If Intune Company Portal is installed and is operating as the active broker, and Microsoft Authenticator is also installed, then if the Intune Company Portal (active broker) is uninstalled the user will need to sign in again. Once they sign in again, the Microsoft Authenticator app becomes the active broker.
+If Microsoft Authenticator, Intune Company Portal, or Link to Windows is uninstalled, the user *might* be asked to sign in again.
 
 ### Integrating with a broker
 
@@ -113,7 +113,7 @@ keytool -exportcert -alias androiddebugkey -keystore %HOMEPATH%\.android\debug.k
 
 Once you've generated a signature hash with *keytool*, use the Azure portal to generate the redirect URI:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the tenant containing the app registration from the **Directories + subscriptions** menu.
 1. Browse to **Identity** > **Applications** > **App registrations**.
 1. Select your application, and then select **Authentication** > **Add a platform** > **Android**.
@@ -175,7 +175,7 @@ If the application uses a `WEBVIEW` strategy without integrating with brokered a
 
 Appplications can be integrated with MSAL to use the `BROWSER` to authorize. Unlike WEBVIEW, `BROWSER` share a cookie jar with the default system browser enabling fewer sign-ins with web or other native apps that have integrated with Custom Tabs.
 
-If the application uses MSAL with a broker like Microsoft Authenticator or Intune Company Portal, then users can have SSO experience across applications if they have an active sign-in with one of the apps.
+If the application uses MSAL with a broker like Microsoft Authenticator, Intune Company Portal, or Link to Windows, then users can have SSO experience across applications if they have an active sign-in with one of the apps.
 
 > [!NOTE]
 > MSAL with broker utilizes WebView and provides Single Sign-On (SSO) for all the applications consuming MSAL library and participating in brokered auth. The SSO state from broker is not extended to other apps which do not use MSAL.
@@ -188,7 +188,7 @@ To use the in-app WebView, put the following line in the app configuration JSON 
 "authorization_user_agent" : "WEBVIEW"
 ```
 
-When using the in-app `WEBVIEW`, the user signs in directly to the app. The tokens are kept inside the sandbox of the app and aren't available outside the app's cookie jar. As a result, the user can't have SSO experience across applications unless the apps integrate with the Authenticator or Company Portal.
+When using the in-app `WEBVIEW`, the user signs in directly to the app. The tokens are kept inside the sandbox of the app and aren't available outside the app's cookie jar. As a result, the user can't have SSO experience across applications unless the apps integrate with the Microsoft Authenticator app, Intune Company Portal or Link to Windows.
 
 However, `WEBVIEW` does provide the capability to customize the look and feel for sign-in UI. See [Android WebViews](https://developer.android.com/reference/android/webkit/WebView) for more about how to do this customization.
 
@@ -231,3 +231,8 @@ The following browsers have been tested to see if they correctly redirect to the
 ## Next steps
 
 [Shared device mode for Android devices](msal-android-shared-devices.md) allows you to configure an Android device so that it can be easily shared by multiple employees.
+
+For more information on broker applications go to following pages:
+- [Microsoft Authenticator](https://support.microsoft.com/account-billing/how-to-use-the-microsoft-authenticator-app-9783c865-0308-42fb-a519-8cf666fe0acc)
+- [Intune Company Portal](/mem/intune/user-help/sign-in-to-the-company-portal)
+- [Link to Windows](https://aka.ms/LTWBroker)

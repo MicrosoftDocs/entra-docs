@@ -5,7 +5,7 @@ author: Dickson-Mwendia
 manager: CelesteDG
 ms.author: dmwendia
 ms.custom: devx-track-csharp,  has-adal-ref, devx-track-dotnet
-ms.date: 09/08/2019
+ms.date: 06/05/2024
 ms.reviewer: jmprieur, saeeda
 ms.service: identity-platform
 
@@ -27,6 +27,10 @@ The setup of brokered authentication in the Microsoft Authentication Library for
 
 * [iOS applications](#brokered-authentication-for-ios)
 * [Android applications](#brokered-authentication-for-android)
+
+> [!NOTE]
+> MSAL.NET versions 4.61.0 and above do not provide support for Universal Windows Platform (UWP), Xamarin Android, and Xamarin iOS. We recommend you migrate your Xamarin applications to modern frameworks like MAUI. Read more about the deprecation in [Announcing the Upcoming Deprecation of MSAL.NET for Xamarin and UWP](https://devblogs.microsoft.com/identity/uwp-xamarin-msal-net-deprecation/).
+
 
 ## Brokered authentication for iOS
 
@@ -179,7 +183,7 @@ Add the redirect URI to the app's registration. To generate a properly formatted
 
 **To generate the redirect URI:**
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **App registrations**.
 1. Search for and select the application.
 1. Select **Authentication** > **Add a platform** > **iOS / macOS**

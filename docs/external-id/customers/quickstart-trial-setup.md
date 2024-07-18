@@ -68,7 +68,7 @@ You can upgrade your 30 days free trial of a tenant with external configurations
 
 If you don't have any Azure subscriptions, follow the steps below.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com). <!-- Should we add a role here? The user who signs up is a Global Administrator by default.-->
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com). 
 1. Browse to **Home** > **Tenant overview**. 
 1. Select **Upgrade**.
 
@@ -97,7 +97,7 @@ If you don't have any Azure subscriptions, follow the steps below.
 
 If your free trial belongs to an account with an existing Azure subscription, you can upgrade your free trial with the existing subscription. To associate your free trial with an existing tenant to unlock the full set of features follow the steps below.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com). <!-- Should we add a role here? The user who signs up is a Global Administrator by default.-->
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com). 
 1. Browse to **Home** > **Tenant overview**. 
 1. Select **Add Subscription**.
 1. Select a tenant from the menu and select **Switch**.

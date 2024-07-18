@@ -3,6 +3,8 @@ author: barclayn
 ms.author: barclayn
 ms.date: 05/27/2024
 ms.topic: include
+ms.custom:
+  - devx-track-azurecli
 ---
 
 In this article, you learn how to perform the following managed identities for Azure resources operations on an Azure virtual machine scale set, using the Azure CLI:

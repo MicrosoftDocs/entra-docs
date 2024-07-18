@@ -92,7 +92,8 @@ To solve this problem, remove users from unsupported locations from the licensed
 **PowerShell:** PowerShell cmdlets report this error as *ProhibitedInUsageLocationViolation*.
 
 > [!NOTE]
-> When Microsoft Entra ID assigns group licenses, any users without a specified usage location inherit the location of the directory. Microsoft recommends that administrators set the correct usage location values on users before using group-based licensing to comply with local laws and regulations.
+> - When Microsoft Entra ID assigns group licenses, any users without a specified usage location inherit the location of the directory. Microsoft recommends that administrators set the correct usage location values on users before using group-based licensing to comply with local laws and regulations.
+> - The attributes of First name, Last name, Other email address, and User type are not mandatory for license assignment.
 
 ## Duplicate proxy addresses
 

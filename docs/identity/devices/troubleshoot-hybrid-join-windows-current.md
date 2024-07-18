@@ -46,7 +46,7 @@ This article assumes that you have [Microsoft Entra hybrid joined devices](hybri
     AzureAdJoined: YES
  EnterpriseJoined: NO
          DeviceId: 5820fbe9-60c8-43b0-bb11-44aee233e4e7
-       Thumbprint: B753A6679CE720451921302CA873794D94C6204A
+       Thumbprint: AA11BB22CC33DD44EE55FF66AA77BB88CC99DD00
    KeyContainerId: bae6a60b-1d2f-4d2a-a298-33385f6d05e9
       KeyProvider: Microsoft Platform Crypto Provider
      TpmProtected: YES
@@ -74,7 +74,7 @@ This article assumes that you have [Microsoft Entra hybrid joined devices](hybri
 +----------------------------------------------------------------------+
 
              NgcSet: YES
-           NgcKeyId: {C7A9AEDC-780E-4FDA-B200-1AE15561A46B}
+           NgcKeyId: {aaaaaaaa-0b0b-1c1c-2d2d-333333333333}
     WorkplaceJoined: NO
       WamDefaultSet: YES
 WamDefaultAuthority: organizations
@@ -278,7 +278,7 @@ The "Registration Type" field denotes the type of join.
                Error Phase : join
           Client ErrorCode : 0x801c03f2
           Server ErrorCode : DirectoryError
-            Server Message : The device object by the given id (e92325d0-7ac4-4714-88a1-94ae875d5245) is not found.
+            Server Message : The device object by the given id (aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb) is not found.
               Https Status : 400
                 Request Id : 6bff0bd9-820b-484b-ab20-2a4f7b76c58e
 +----------------------------------------------------------------------+
@@ -374,7 +374,7 @@ Use Event Viewer logs to locate the phase and error code for the join failures.
                 AzureAdPrt : YES
       AzureAdPrtUpdateTime : 2020-07-12 22:57:53.000 UTC
       AzureAdPrtExpiryTime : 2019-07-26 22:58:35.000 UTC
-       AzureAdPrtAuthority : https://login.microsoftonline.com/96fa76d0-xxxx-xxxx-xxxx-eb60cc22xxxx
+       AzureAdPrtAuthority : https://login.microsoftonline.com/aaaabbbb-0000-cccc-1111-dddd2222eeee
              EnterprisePrt : YES
    EnterprisePrtUpdateTime : 2020-07-12 22:57:54.000 UTC
    EnterprisePrtExpiryTime : 2020-07-26 22:57:54.000 UTC

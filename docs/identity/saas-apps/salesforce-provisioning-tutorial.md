@@ -2,14 +2,14 @@
 title: 'Tutorial: Configure Salesforce for automatic user provisioning with Microsoft Entra ID| Microsoft Docs'
 description: Learn the steps required to perform in Salesforce and Microsoft Entra ID to automatically provision and de-provision user accounts from Microsoft Entra ID to Salesforce.
 
-author: jeevansd
-manager: CelesteDG
+author: thomasakelo
+manager: jeedes
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: jeedes
+ms.date: 03/25/2024
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Salesforce so that I can streamline the user management process and ensure that users have the appropriate access to Salesforce.
 ---
@@ -21,8 +21,20 @@ The objective of this tutorial is to show the steps required to perform in Sales
 
 The scenario outlined in this tutorial assumes that you already have the following items:
 
-* A Microsoft Entra tenant
-* A Salesforce.com tenant
+* A Microsoft Entra tenant.
+* A Salesforce.com tenant.
+* A Salesforce account username and password and the token. In future, if you reset the account password, Salesforce provides you with a new token and you'll need to edit the Salesforce provisioning settings.
+* A custom user profile in Salesforce. Once you have created a custom profile in the Salesforce portal, edit the profile's Administrative Permissions to enable the following:
+
+    * API Enabled.
+
+    * Manage Users: Enabling this option automatically enables the following: 
+    Assign Permission Sets, Manage Internal UsersManage IP Addresses, Manage Login Access Policies, Manage Password Policies, Manage Profiles and Permission Sets, Manage Roles, Manage Sharing, Reset User Passwords and Unlock Users, View All Users, View Roles and Hierarchy, View Setup and Configuration.
+
+See also Salesforce [Create or Clone Profiles](https://help.salesforce.com/s/articleView?id=sf.users_profiles_cloning.htm&type=5) documentation.
+
+> [!Note]
+> Assign the permissions directly to the profile. Don't add the permissions through permission sets.
 
 > [!Note]
 > Roles should not be manually edited in Microsoft Entra ID when doing role imports.
@@ -52,7 +64,7 @@ Before configuring and enabling the provisioning service, you need to decide whi
 This section guides you through connecting your Microsoft Entra ID to [Salesforce's user account provisioning API - v40](https://developer.salesforce.com/docs/atlas.en-us.208.0.api.meta/api/implementation_considerations.htm)
 
 > [!Tip]
-> You may also choose to enabled SAML-based Single Sign-On for Salesforce, following the instructions provided in the [Azure portal](https://portal.azure.com). Single sign-on can be configured independently of automatic provisioning, though these two features compliment each other.
+> You may also choose to enabled SAML-based Single Sign-On for Salesforce, following the instructions provided in the [Azure portal](https://portal.azure.com). Single sign-on can be configured independently of automatic provisioning, though these two features complement each other.
 
 ### Configure automatic user account provisioning
 

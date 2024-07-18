@@ -183,7 +183,7 @@ Authorization: Required with a valid Bearer token
 Method: PATCH
 Content-type: servicePrincipal/json
 
-https://graph.microsoft.com/v1.0/servicePrincipals/3161ab85-8f57-4ae0-82d3-7a1f71680b27
+https://graph.microsoft.com/v1.0/servicePrincipals/aaaaaaaa-bbbb-cccc-1111-222222222222
 {
     "preferredSingleSignOnMode":"saml",
     "loginURL": "https://www.salesforce.com"
@@ -229,7 +229,7 @@ Authorization: Required with a valid Bearer token
 Method: PATCH
 Content-type: servicePrincipal/json
 
-https://graph.microsoft.com/v1.0/servicePrincipals/3161ab85-8f57-4ae0-82d3-7a1f71680b27
+https://graph.microsoft.com/v1.0/servicePrincipals/aaaaaaaa-bbbb-cccc-1111-222222222222
 {
     "preferredSingleSignOnMode":"saml",
     "loginURL": "https://www.samlapp.com"
@@ -292,7 +292,7 @@ Authorization: Required with a valid Bearer token
 Method: PATCH
 Content-type: servicePrincipal/json
 
-https://graph.microsoft.com/v1.0/servicePrincipals/3161ab85-8f57-4ae0-82d3-7a1f71680b27
+https://graph.microsoft.com/v1.0/servicePrincipals/aaaaaaaa-bbbb-cccc-1111-222222222222
 {
     "preferredSingleSignOnMode":"saml",
     "loginURL": "https://www.samlapp.com"
@@ -554,7 +554,7 @@ Get `AppRole` instances the application might have associated with it. It's comm
 Authorization: Required with a valid Bearer token
 Method:GET
 
-https://graph.microsoft.com/v1.0/servicePrincipals/3161ab85-8f57-4ae0-82d3-7a1f71680b27
+https://graph.microsoft.com/v1.0/servicePrincipals/aaaaaaaa-bbbb-cccc-1111-222222222222
 ```
 
 From Microsoft Entra ID, get the user or group object ID that you want to assign to the application. Take the app role ID from the previous API call and submit it with the patch body on the service principal:
@@ -564,7 +564,7 @@ Authorization: Required with a valid Bearer token
 Method: PATCH
 Content-type: servicePrincipal/json
 
-https://graph.microsoft.com/v1.0/servicePrincipals/3161ab85-8f57-4ae0-82d3-7a1f71680b27
+https://graph.microsoft.com/v1.0/servicePrincipals/aaaaaaaa-bbbb-cccc-1111-222222222222
 {
     "principalId":"{Principal Object ID of User -or- Group}",
     "resourceId":"{Service Principal Object ID}",

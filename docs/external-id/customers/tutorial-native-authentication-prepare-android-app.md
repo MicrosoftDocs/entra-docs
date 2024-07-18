@@ -107,7 +107,7 @@ Use these steps to create configuration file:
     - For self-service password reset (SSPR), use `["oob"]`.
   
 
-    Learn more [challenge types](concept-native-authentication-challenge-types.md).  
+    Learn more [challenge types](concept-native-authentication-challenge-types.md). 
 
 ### Optional: Logging configuration 
 

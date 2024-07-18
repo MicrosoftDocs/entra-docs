@@ -1,17 +1,13 @@
 ---
 title: 'Tutorial: Configure Lexonis TalentScape for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Lexonis TalentScape.
-
-author: twimmers
-writer: twimmers
+author: thomasakelo
 manager: jeedes
-ms.assetid: 61de7261-5be6-4228-9cf3-f7b67d7d6a6c
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: tutorial
 ms.date: 05/09/2024
-ms.author: thwimmer
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Lexonis TalentScape so that I can streamline the user management process and ensure that users have the appropriate access to Lexonis TalentScape.
 ---

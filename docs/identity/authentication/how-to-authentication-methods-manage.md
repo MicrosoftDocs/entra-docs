@@ -122,6 +122,8 @@ If **Verification code from mobile app or hardware token** is enabled in the leg
 
 :::image type="content" border="true" source="./media/how-to-authentication-methods-manage/one-time-password.png" alt-text="Screenshot of Microsoft Authenticator OTP.":::
 
+> [!NOTE]
+> If users register the Microsoft Authenticator App only for OTP code using the "**I want to use a different authenticator app**" wizard, it will be needed to enable **Third-party software OATH tokens** policy.
 ### SMS and voice calls
 
 The legacy MFA policy has separate controls for **SMS** and **Phone calls**. But there's also a **Mobile phone** control that enables mobile phones for both SMS and voice calls. And another control for **Office phone** enables an office phone only for voice call.

@@ -102,7 +102,7 @@ The following JSON payload shows an example SCIM schema:
      "lastModified": "2011-05-13T04:42:34Z",
      "version": "W\/\"3694e05e9dff591\"",
      "location":
- "https://example.com/v2/Users/2819c223-7f76-453a-919d-413861904646"
+ "https://example.com/v2/Users/00aa00aa-bb11-cc22-dd33-44ee44ee44ee"
    }
 }   
 ```
@@ -289,12 +289,12 @@ This article provides example SCIM requests emitted by the Microsoft Entra provi
         "urn:ietf:params:scim:schemas:core:2.0:User",
         "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"],
     "externalId": "0a21f0f2-8d2a-4f8e-bf98-7363c4aed4ef",
-    "userName": "Test_User_ab6490ee-1e48-479e-a20b-2d77186b5dd1",
+    "userName": "Test_User_00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
     "active": true,
     "emails": [{
         "primary": true,
         "type": "work",
-        "value": "Test_User_fd0ea19b-0777-472c-9f96-4f70d2226f2e@testuser.com"
+        "value": "Test_User_11bb11bb-cc22-dd33-ee44-55ff55ff55ff@testuser.com"
     }],
     "meta": {
         "resourceType": "User"
@@ -321,7 +321,7 @@ This article provides example SCIM requests emitted by the Microsoft Entra provi
         "created": "2018-03-27T19:59:26.000Z",
         "lastModified": "2018-03-27T19:59:26.000Z"
     },
-    "userName": "Test_User_ab6490ee-1e48-479e-a20b-2d77186b5dd1",
+    "userName": "Test_User_00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
     "name": {
         "formatted": "givenName familyName",
         "familyName": "familyName",
@@ -329,7 +329,7 @@ This article provides example SCIM requests emitted by the Microsoft Entra provi
     },
     "active": true,
     "emails": [{
-        "value": "Test_User_fd0ea19b-0777-472c-9f96-4f70d2226f2e@testuser.com",
+        "value": "Test_User_11bb11bb-cc22-dd33-ee44-55ff55ff55ff@testuser.com",
         "type": "work",
         "primary": true
     }]
@@ -353,7 +353,7 @@ This article provides example SCIM requests emitted by the Microsoft Entra provi
         "created": "2018-03-27T19:59:26.000Z",
         "lastModified": "2018-03-27T19:59:26.000Z"
     },
-    "userName": "Test_User_feed3ace-693c-4e5a-82e2-694be1b39934",
+    "userName": "Test_User_00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
     "name": {
         "formatted": "givenName familyName",
         "familyName": "familyName",
@@ -361,7 +361,7 @@ This article provides example SCIM requests emitted by the Microsoft Entra provi
     },
     "active": true,
     "emails": [{
-        "value": "Test_User_22370c1a-9012-42b2-bf64-86099c2a1c22@testuser.com",
+        "value": "Test_User_11bb11bb-cc22-dd33-ee44-55ff55ff55ff@testuser.com",
         "type": "work",
         "primary": true
     }]
@@ -390,7 +390,7 @@ This article provides example SCIM requests emitted by the Microsoft Entra provi
 
 ##### <a name="request-2"></a>Request
 
-*GET /Users?filter=userName eq "Test_User_dfeef4c5-5681-4387-b016-bdf221e82081"*
+*GET /Users?filter=userName eq "Test_User_00aa00aa-bb11-cc22-dd33-44ee44ee44ee"*
 
 ##### <a name="response-2"></a>Response
 
@@ -409,14 +409,14 @@ This article provides example SCIM requests emitted by the Microsoft Entra provi
             "lastModified": "2018-03-27T19:59:26.000Z"
             
         },
-        "userName": "Test_User_dfeef4c5-5681-4387-b016-bdf221e82081",
+        "userName": "Test_User_00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
         "name": {
             "familyName": "familyName",
             "givenName": "givenName"
         },
         "active": true,
         "emails": [{
-            "value": "Test_User_91b67701-697b-46de-b864-bd0bbe4f99c1@testuser.com",
+            "value": "Test_User_11bb11bb-cc22-dd33-ee44-55ff55ff55ff@testuser.com",
             "type": "work",
             "primary": true
         }]
@@ -481,7 +481,7 @@ This article provides example SCIM requests emitted by the Microsoft Entra provi
         "created": "2018-03-27T19:59:26.000Z",
         "lastModified": "2018-03-27T19:59:26.000Z"
     },
-    "userName": "Test_User_fbb9dda4-fcde-4f98-a68b-6c5599e17c27",
+    "userName": "Test_User_00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
     "name": {
         "formatted": "givenName updatedFamilyName",
         "familyName": "updatedFamilyName",
@@ -534,7 +534,7 @@ This article provides example SCIM requests emitted by the Microsoft Entra provi
     },
     "active": true,
     "emails": [{
-        "value": "Test_User_49dc1090-aada-4657-8434-4995c25a00f7@testuser.com",
+        "value": "Test_User_11bb11bb-cc22-dd33-ee44-55ff55ff55ff@testuser.com",
         "type": "work",
         "primary": true
     }]
@@ -1214,7 +1214,7 @@ In the sample code, the request is translated into a call to the QueryAsync meth
 * parameters.AlternateFilter.ElementAt(x).ComparisonValue: "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1"
 * parameters.AlternateFilters.ElementAt(y).AttributePath: "manager"
 * parameters.AlternateFilters.ElementAt(y).ComparisonOperator: ComparisonOperator.Equals
-* parameters.AlternateFilter.ElementAt(y).ComparisonValue: "2819c223-7f76-453a-919d-413861904646"
+* parameters.AlternateFilter.ElementAt(y).ComparisonValue: "00aa00aa-bb11-cc22-dd33-44ee44ee44ee"
 * parameters.RequestedAttributePaths.ElementAt(0): "ID"
 * parameters.SchemaIdentifier: `urn:ietf:params:scim:schemas:extension:enterprise:2.0:User`
 
@@ -1240,8 +1240,8 @@ Content-type: application/scim+json
         "value":
           [
             {
-              "$ref":"http://.../scim/Users/2819c223-7f76-453a-919d-413861904646",
-              "value":"2819c223-7f76-453a-919d-413861904646"}]}]}
+              "$ref":"http://.../scim/Users/00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
+              "value":"00aa00aa-bb11-cc22-dd33-44ee44ee44ee"}]}]}
 ```
 
 In the sample code, the request is translated into a call to the UpdateAsync method of the service's provider. Here's the signature of that method: 
@@ -1267,8 +1267,8 @@ In the example of a request, to update a user, the object provided as the value 
 |`(PatchRequest as PatchRequest2).Operations.ElementAt(0).OperationName`| `OperationName.Add`|
 |`(PatchRequest as PatchRequest2).Operations.ElementAt(0).Path.AttributePath`| Manager|
 |`(PatchRequest as PatchRequest2).Operations.ElementAt(0).Value.Count`|1|
-|`(PatchRequest as PatchRequest2).Operations.ElementAt(0).Value.ElementAt(0).Reference`|`http://.../scim/Users/2819c223-7f76-453a-919d-413861904646`|
-|`(PatchRequest as PatchRequest2).Operations.ElementAt(0).Value.ElementAt(0).Value`| 2819c223-7f76-453a-919d-413861904646|
+|`(PatchRequest as PatchRequest2).Operations.ElementAt(0).Value.ElementAt(0).Reference`|`http://.../scim/Users/00aa00aa-bb11-cc22-dd33-44ee44ee44ee`|
+|`(PatchRequest as PatchRequest2).Operations.ElementAt(0).Value.ElementAt(0).Value`| 00aa00aa-bb11-cc22-dd33-44ee44ee44ee|
 
 ***Example 6. Deprovision a user***
 
@@ -1315,7 +1315,7 @@ Applications that support the SCIM profile described in this article can be conn
 
 **To connect an application that supports SCIM:**
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 1. A list of all configured apps is shown, including apps that were added from the gallery.
 1. Select **+ New application** > **+ Create your own application**.
@@ -1408,16 +1408,14 @@ The provisioning service supports the [authorization code grant](https://tools.i
 > [!NOTE]
 > OAuth v1 is not supported due to exposure of the client secret. OAuth v2 is supported.  
 
-When using the OAuth Code Grant flow, it's required that you support either of the below, 
-1. Single client ID and Client Secret pair with support for secrets rotation: Multiple secrets are supported at the same time for easy renewal/rotation without downtime.
-2. If secret rotation is not supported then each customer will have to submit their own client ID and Client Secret when setting up a provisioning instance. A single app wide client ID/Client Secret pair is not supported.
+When using the OAuth Code Grant flow, it's required that you support a model where each customer will submit their own client ID and Client Secret when setting up a provisioning instance. A single app wide client ID/Client Secret pair is not supported.
 
 
 #### How to set up OAuth code grant flow
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Application** > **Provisioning** and select **Authorize**.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 1. Select your application and go to **Provisioning**.
 1. Select **Authorize**.

@@ -33,11 +33,6 @@ String[] SCOPES = {"https://graph.microsoft.com/.default"};
 let scopes = ["https://graph.microsoft.com/.default"]
 ```
 
-### Xamarin
-```csharp
-var scopes = new [] {"https://graph.microsoft.com/.default"};
-```
-
 ## Get tokens
 
 ### Acquire tokens via MSAL
@@ -177,27 +172,6 @@ MSAL for iOS and macOS supports various modifiers to get a token interactively o
 * [Parameters for getting an interactive token](https://azuread.github.io/microsoft-authentication-library-for-objc/Classes/MSALInteractiveTokenParameters.html#/Configuring%20MSALInteractiveTokenParameters)
 * [Parameters for getting a silent token](https://azuread.github.io/microsoft-authentication-library-for-objc/Classes/MSALSilentTokenParameters.html)
 
-#### Xamarin
-
-The following example shows the minimal code to get a token interactively. The example uses Microsoft Graph to read the user's profile.
-
-```csharp
-string[] scopes = new string[] {"user.read"};
-var app = PublicClientApplicationBuilder.Create(clientId).Build();
-var accounts = await app.GetAccountsAsync();
-AuthenticationResult result;
-try
-{
- result = await app.AcquireTokenSilent(scopes, accounts.FirstOrDefault())
-             .ExecuteAsync();
-}
-catch(MsalUiRequiredException)
-{
- result = await app.AcquireTokenInteractive(scopes)
-             .ExecuteAsync();
-}
-```
-
 #### Mandatory parameters in MSAL.NET
 
 `AcquireTokenInteractive` has only one mandatory parameter: `scopes`. The `scopes` parameter enumerates strings that define the scopes for which a token is required. If the token is for Microsoft Graph, you can find the required scopes in the API reference of each Microsoft Graph API. In the reference, go to the "Permissions" section.
@@ -287,5 +261,6 @@ client_id=<CLIENT_ID>
 
 ## Next steps
 
-Move on to the next article in this scenario,
-[Calling a web API](scenario-mobile-call-api.md).
+- Learn more by building a React Single-page application (SPA) that signs in users in the following multi-part [tutorial series](tutorial-single-page-app-react-register-app.md).
+
+- Explore Microsoft identity platform [mobile code samples](sample-v2-code.md#mobile) 

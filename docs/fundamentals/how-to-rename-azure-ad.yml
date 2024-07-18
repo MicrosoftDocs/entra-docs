@@ -7,7 +7,7 @@ metadata:
   ms.author: celested
   manager: CelesteDG
   ms.reviewer: nicholepet
-  ms.date: 03/08/2023
+  ms.date: 05/31/2024
   ms.service: entra
   ms.subservice: fundamentals
   ms.topic: how-to
@@ -30,8 +30,8 @@ introduction: |
 prerequisites: 
   summary: |
     Before changing instances of Azure AD to Microsoft Entra ID in your
-    documentation or content, familiarize yourself with the guidance in
-    [New name for Azure AD](new-name.md) to:
+    documentation or content, familiarize yourself with the guidance in the
+    [New name for Azure AD](new-name.md) article to:
   dependencies:
     - |
       Understand the product name and why we made the change
@@ -185,7 +185,7 @@ procedureSection:
         you need to update. You may need to account for edge cases and modify
         the script according to how you've defined the messages in your source
         files. The script is not fully automated. If you use the script as-is,
-        you must review the outputs and may need to make additional adjustments
+        you must review the outputs and might need to make more adjustments
         to follow the guidance in [New name for Azure AD](new-name.md).
     code: |
       ```powershell

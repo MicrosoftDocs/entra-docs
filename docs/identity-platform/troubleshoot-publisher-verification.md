@@ -31,7 +31,7 @@ Below are some common issues that may occur during the process.
     1. Navigate to the [partner profile page](https://partner.microsoft.com/pcv/accountsettings/connectedpartnerprofile) where the Partner One ID and primary account contact will be listed.
 
 - **I don’t know who my Microsoft Entra Global Administrator (also known as company admin or tenant admin) is, how do I find them? What about the Application Administrator or Cloud Application Administrator?**
-    1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Cloud Application Adminstrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
+    1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Adminstrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
     1. Browse to **Identity** > **Roles & admins** > **Roles & admins**.
     1. Select the desired admin role.
     1. The list of users assigned that role will be displayed.
@@ -147,7 +147,7 @@ Most commonly caused by the signed-in user not being a member of the proper role
 
     - The Partner One ID is correct. 
     - There are no errors or "pending actions" shown, and the verification status under Legal business profile and Partner info both say "authorized" or "success".
-1. Go to the [CPP tenant management page](https://partner.microsoft.com/dashboard/account/v3/tenantmanagement) and confirm that the tenant the app is registered in and that you're signing with a user account from is on the list of associated tenants. To add another tenant, follow the [multi-tenant-account instructions](/partner-center/multi-tenant-account). All Global Admins of any tenant you add will be granted Global Administrator privileges on your Partner Center account.
+1. Go to the [CPP tenant management page](https://partner.microsoft.com/dashboard/account/v3/tenantmanagement) and confirm that the tenant the app is registered in and that you're signing with a user account from is on the list of associated tenants. To add another tenant, follow the [multi-tenant-account instructions](/partner-center/multi-tenant-account). All Global Administrators of any tenant you add will be granted Global Administrator privileges on your Partner Center account.
 1. Go to the [CPP User Management page](https://partner.microsoft.com/pcv/users) and confirm the user you're signing in as is either a Global Administrator, MPN Admin, or Accounts Admin. To add a user to a role in Partner Center, follow the instructions for [creating user accounts and setting permissions](/partner-center/create-user-accounts-and-set-permissions).
 
 ### MPNGlobalAccountNotFound
@@ -208,7 +208,7 @@ Most commonly caused when verification is being performed via Graph API, and the
 
 **Remediation Steps**
 1. The Object ID of the application must be provided, not the AppId/ClientId. See **id** on the list of application properties [here](/graph/api/resources/application).
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Application registrations**.
 1. Find your app's registration to view the Object ID.
 
@@ -221,7 +221,7 @@ Most commonly caused when the verification is being performed via Graph API, and
 
 **Remediation Steps**
 1. The Object ID of the application must be provided, not the AppId/ClientId. See **id** on the list of application properties [here](/graph/api/resources/application).
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Application registrations**.
 1. Find your app's registration to view the Object ID.
 
@@ -254,7 +254,7 @@ See [requirements](publisher-verification-overview.md) for a list of allowed dom
 **Remediation Steps**
 1. Navigate to your [partner profile](https://partner.microsoft.com/pcv/accountsettings/connectedpartnerprofile), and view the email listed as Primary Contact
 1. The domain used to perform email verification in Partner Center is the portion after the "@" in the Primary Contact's email
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Application registrations** > **Branding and Properties**.
 1. Select **Update Publisher Domain** and follow the instructions to **Verify a New Domain**.
 1. Add the domain used to perform email verification in Partner Center as a New Domain.
@@ -267,7 +267,7 @@ You aren't authorized to set the verified publisher property on application (<`A
 Most commonly caused by the signed-in user not being a member of the proper role for the CPP account in Microsoft Entra ID - see [requirements](publisher-verification-overview.md#requirements) for a list of eligible roles and see [common issues](#common-issues) for more information.
 
 **Remediation Steps**
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Roles & admins** > **Roles & admins**.
 1. Select the desired admin role and select **Add Assignment** if you have sufficient permissions.
 1. If you do not have sufficient permissions, contact an admin role for assistance.

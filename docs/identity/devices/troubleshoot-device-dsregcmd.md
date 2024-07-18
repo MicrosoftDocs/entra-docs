@@ -80,10 +80,10 @@ The state is displayed only when the device is Microsoft Entra joined or Microso
 | Device Details                                                       |
 +----------------------------------------------------------------------+
 
-                  DeviceId : e92325d0-xxxx-xxxx-xxxx-94ae875dxxxx
-                Thumbprint : D293213EF327483560EED8410CAE36BB67208179
+                  DeviceId : 00aa00aa-bb11-cc22-dd33-44ee44ee44ee
+                Thumbprint : AA11BB22CC33DD44EE55FF66AA77BB88CC99DD00
  DeviceCertificateValidity : [ 2019-01-11 21:02:50.000 UTC -- 2029-01-11 21:32:50.000 UTC ]
-            KeyContainerId : 13e68a58-xxxx-xxxx-xxxx-a20a2411xxxx
+            KeyContainerId : 00aa00aa-bb11-cc22-dd33-44ee44ee44ee
                KeyProvider : Microsoft Software Key Storage Provider
               TpmProtected : NO
           DeviceAuthStatus : SUCCESS
@@ -155,7 +155,7 @@ This section lists the statuses of various attributes for users who are currentl
 +----------------------------------------------------------------------+
 
                     NgcSet : YES
-                  NgcKeyId : {FA0DB076-A5D7-4844-82D8-50A2FB42EC7B}
+                  NgcKeyId : {aaaaaaaa-0b0b-1c1c-2d2d-333333333333}
                   CanReset : DestructiveAndNonDestructive
            WorkplaceJoined : NO
              WamDefaultSet : YES
@@ -331,7 +331,7 @@ The following example shows that diagnostics tests are passing but the registrat
                Error Phase : join
           Client ErrorCode : 0x801c03f2
           Server ErrorCode : DirectoryError
-            Server Message : The device object by the given id (e92325d0-7ac4-4714-88a1-94ae875d5245) isn't found.
+            Server Message : The device object by the given id (aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb) isn't found.
               Https Status : 400
                 Request Id : 6bff0bd9-820b-484b-ab20-2a4f7b76c58e
 

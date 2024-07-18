@@ -2,16 +2,14 @@
 title: 'Tutorial: Configure Hypervault for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Hypervault.
 
-author: twimmers
-writer: twimmers
+author: thomasakelo
 manager: jeedes
-ms.assetid: eca2ff9e-a09d-4bb4-88f6-6021a93d2c9d
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 08/16/2023
-ms.author: thwimmer
+ms.date: 03/25/2024
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Hypervault so that I can streamline the user management process and ensure that users have the appropriate access to Hypervault.
 ---

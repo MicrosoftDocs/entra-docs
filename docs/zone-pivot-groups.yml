@@ -229,6 +229,75 @@ groups:
     title: Windows
   - id: windows-vm-access-lvm
     title: Linux
+# Owner: barclayn
+- id: identity-mi-azure-resource
+  title: Managed identities Azure resource
+  prompt: Choose an option
+  pivots:
+  - id: identity-mi-access-portal
+    title: Portal
+  - id: identity-mi-access-cli
+    title: CLI
+  - id: identity-mi-access-powershell
+    title: PowerShell
+# Owner: barclayn
+- id: identity-mi-service-principals
+  title: Managed identity service principals
+  prompt: Choose an option
+  pivots:
+  - id: identity-mi-service-principal-portal
+    title: Portal
+  - id: identity-mi-service-principal-cli
+    title: CLI
+  - id: identity-mi-service-principal-powershell
+    title: PowerShell
+# Owner: barclayn
+- id: identity-windows-mi-vm-access
+  title: Use managed identity on a Windows VM/VMSS
+  prompt: Choose an Azure service
+  pivots:
+  - id: identity-windows-mi-vm-access-data-lake
+    title: Data Lake
+  - id: identity-windows-mi-vm-access-storage
+    title: Storage
+  - id: identity-windows-mi-vm-access-storage-sas
+    title: SAS
+  - id: identity-windows-mi-vm-access-sql-db
+    title: SQL DB
+  - id: identity-windows-mi-vm-access-key-vault
+    title: Key Vault
+  - id: identity-windows-mi-vm-access-arm
+    title: System ARM
+  - id: identity-windows-mi-vm-ua-arm
+    title: User ARM
+# Owner: barclayn
+- id: identity-linux-vm-access
+  title: Use managed identity on a Linux VM/VMSS
+  prompt: Choose an Azure service
+  pivots:
+  - id: identity-linux-mi-vm-access-data-lake
+    title: Data Lake
+  - id: identity-linux-mi-vm-access-storage
+    title: Storage
+  - id: identity-linux-mi-vm-access-sas-key
+    title: SAS
+  - id: identity-linux-mi-vm-access-key
+    title: Access Key
+  - id: identity-linux-mi-vm-access-key-vault
+    title: Key Vault
+  - id: identity-linux-mi-vm-access-arm
+    title: System ARM
+  - id: identity-linux-mi-vm-user-arm
+    title: User ARM
+# Owner: barclayn
+- id: identity-mi-app-role
+  title: Managed identity application roles
+  prompt: Choose an option
+  pivots:
+  - id: identity-mi-app-role-powershell
+    title: PowerShell
+  - id: identity-mi-app-role-cli
+    title: CLI
 # Owner: ryanwi
 - id: identity-wif-mi-methods
   title: Workload identity federation for managed identities methods

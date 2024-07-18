@@ -676,6 +676,8 @@
         href: convene-tutorial.md
       - name: Convercent
         href: convercent-tutorial.md
+      - name: Convi.BASE
+        href: convi-base-tutorial.md
       - name: Coralogix
         href: coralogix-tutorial.md
       - name: Cornerstone Single Sign-On
@@ -1141,6 +1143,8 @@
         href: ftapi-tutorial.md
       - name: Fulcrum
         href: fulcrum-tutorial.md
+      - name: Fullstory SAML
+        href: fullstory-saml-tutorial.md
       - name: Fuse
         href: fuse-tutorial.md
       - name: Fuze
@@ -1225,6 +1229,8 @@
         href: gtnexus-sso-module-tutorial.md  
       - name: Guardium Data Protection
         href: guardium-data-protection-tutorial.md
+      - name: gulfHR SSO
+        href: gulfhr-sso-tutorial.md
       - name: Guru
         href: guru-tutorial.md
     - name: H - I
@@ -1945,9 +1951,9 @@
         href: nuclino-tutorial.md
       - name: NumlyEngage™
         href: numlyengage-tutorial.md
-      - name: Nulab Pass (Backlog,Cacoo,Typetalk)
+      - name: Nulab Pass (Backlog, Cacoo, and Typetalk)
         href: nulab-pass-tutorial.md  
-      - name: ObservePoint Web Assurance
+      - name: ObservePoint
         href: observepoint-web-assurance-tutorial.md
       - name: O.C. Tanner - AppreciateHub
         href: oc-tanner-tutorial.md
@@ -2203,8 +2209,8 @@
         href: projectplace-tutorial.md
       - name: Prolorus
         href: prolorus-tutorial.md
-      - name: ProMaster (by Inlogik)
-        href: promaster-tutorial.md
+      - name: ExpenseMe Pro (by Inlogik)
+        href: expensemepro-tutorial.md
       - name: ProNovos Ops Manager
         href: pronovos-ops-manager-tutorial.md
       - name: Proofpoint on Demand
@@ -2377,6 +2383,8 @@
         href: intacct-tutorial.md
       - name: SailPoint IdentityNow
         href: sailpoint-identitynow-tutorial.md
+      - name: Sakon Device Platform
+        href: sakon-device-platform-tutorial.md
       - name: Salesforce
         href: salesforce-tutorial.md
       - name: Salesforce Sandbox
@@ -2781,6 +2789,8 @@
         href: teamviewer-tutorial.md
       - name: Teamwork.com
         href: teamwork-tutorial.md
+      - name: TechSafe Entra ID SSO
+        href: techsafe-tutorial.md
       - name: Templafy SAML2
         href: templafy-tutorial.md
       - name: TencentCloud IDaaS
@@ -3270,10 +3280,6 @@
         href: amazon-business-provisioning-tutorial.md
       - name: Appaegis Isolation Access Cloud
         href: appaegis-isolation-access-cloud-provisioning-tutorial.md
-      - name: Apple School Manager
-        href: apple-school-manager-provision-tutorial.md
-      - name: Apple Business Manager
-        href: apple-business-manager-provision-tutorial.md
       - name: Ardoq
         href: ardoq-provisioning-tutorial.md       
       - name: Asana

@@ -291,7 +291,7 @@ ErrorType 114
 ErrorCode 0x8023134a
 ErrorLiteral This synchronization operation, Delete, is not valid. Contact Technical Support. Tracking Id: 09fb1e9b-3ff7-4163-9731-581785e347e5
 ServerErrorDetail N/A
-CsObjectIdentifier {2819A5C8-BE27-EC11-A970-000D3A1B4EEE}
+CsObjectIdentifier {aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb}
 Dn CN={783456306961654236304B58786A66746377643748773D3D}
 ```
 

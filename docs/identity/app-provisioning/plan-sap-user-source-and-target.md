@@ -45,6 +45,8 @@ This tutorial focuses on the identity lifecycle for users who represent employee
 
 In this section, you define the requirements for identities and access for applications in your organization. This section highlights the key decisions needed for integration with SAP applications. For non-SAP applications, you can also [define organizational policies for governing access to those applications](~/id-governance/identity-governance-applications-define.md).
 
+If you've been using SAP IDM, then you can migrate your identity management scenarios from SAP IDM to Microsoft Entra. For more information, see [Migrate identity management scenarios from SAP IDM to Microsoft Entra](~/identity/app-provisioning/migrate-from-sap-idm.md).
+
 ### Determine the sequence of application onboarding and how applications integrate with Microsoft Entra
 
 Maybe your organization already integrated some applications with Microsoft Entra for a subset of the available integration scenarios. For example, perhaps you integrated SAP Cloud Identity Services with Microsoft Entra for SSO to gain the benefit of conditional access, but you're still relying on manual provisioning and deprovisioning. Or, you might have applications such as SAP ECC in your organization that you haven't yet integrated with Microsoft Entra.

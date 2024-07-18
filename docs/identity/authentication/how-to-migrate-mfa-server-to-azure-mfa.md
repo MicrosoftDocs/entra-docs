@@ -43,8 +43,8 @@ If you can't move your user authentication, see the step-by-step guidance for [M
 - AD FS environment (required if you aren't migrating all your apps to Microsoft Entra prior to migrating MFA Server)
   - Upgrade to AD FS for Windows Server 2019, Farm behavior level (FBL) 4. This upgrade enables you to select authentication provider based on group membership for a more seamless user transition. While it's possible to migrate while on AD FS for Windows Server 2016 FBL 3, it isn't as seamless for users. During the migration, users are prompted to select an authentication provider (MFA Server or Microsoft Entra multifactor authentication) until the migration is complete. 
 - Permissions
-  - Enterprise administrator role in Active Directory to configure AD FS farm for Microsoft Entra multifactor authentication
-  - Global administrator role in Microsoft Entra ID to configure Microsoft Entra ID by using PowerShell
+  - Enterprise Administrator role in Active Directory to configure AD FS farm for Microsoft Entra multifactor authentication
+  - Global Administrator role in Microsoft Entra ID to configure Microsoft Entra ID by using PowerShell
 
 
 ## Considerations for all migration paths

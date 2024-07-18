@@ -137,7 +137,7 @@ Example response:
 ```json
 {
      "@odata.context": "https://graph.microsoft.com/beta/$metadata#reports/servicePrincipalSignInActivities",
-     "id": "ODNmNDUyOTYtZmI4Zi00YWFhLWEzOTktYWM1MTA4NGUwMmI3",
+     "id": "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u",
      "appId": "00001111-aaaa-2222-bbbb-3333cccc4444",    
      "delegatedClientSignInActivity": {
           "lastSignInDateTime": "2021-01-01T00:00:00Z",
@@ -196,8 +196,8 @@ Example response:
 ```json
 {
  "@odata.type": "#microsoft.graph.appCredentialSignInActivity",
- "id": "ODNmNDUyOTYtZmI4Zi00YWFhLWEzOTktYWM1MTA4NGUwMmI3fGFwcGxpY2F0aW9u",
- "keyId": "83f45296-fb8f-4aaa-a399-ac51084e02b7",
+ "id": "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u",
+ "keyId": "aaaaaaaa-0b0b-1c1c-2d2d-333333333333",
  "keyType": "certificate",
  "keyUsage": "sign",
  "appId": "11112222-bbbb-3333-cccc-4444dddd5555",

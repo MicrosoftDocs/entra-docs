@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: enterprise-apps
 
 ms.topic: how-to
-ms.date: 09/04/2023
+ms.date: 05/04/2024
 ms.author: jawoods
 ms.reviewer: phsignor
 zone_pivot_groups: enterprise-apps-all
@@ -191,7 +191,7 @@ Run the following queries to review delegated permissions granted to an applicat
    Example:
 
     ```http
-    GET https://graph.microsoft.com/v1.0/servicePrincipals/00063ffc-54e9-405d-b8f3-56124728e051
+    GET https://graph.microsoft.com/v1.0/servicePrincipals/00001111-aaaa-2222-bbbb-3333cccc4444
     ```
 
 1. Get all delegated permissions for the service principal
@@ -232,7 +232,7 @@ Run the following queries to remove appRoleAssignments of users or groups to the
    Example:
 
     ```http
-    GET https://graph.microsoft.com/v1.0/servicePrincipals/57443554-98f5-4435-9002-852986eea510
+    GET https://graph.microsoft.com/v1.0/servicePrincipals/aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb
     ```
 1. Get Microsoft Entra App role assignments using objectID of the Service Principal.
 
@@ -248,6 +248,10 @@ Run the following queries to remove appRoleAssignments of users or groups to the
 
 > [!NOTE]
 > Revoking the current granted permission won't stop users from re-consenting to the application. If you want to block users from consenting, read [Configure how users consent to applications](configure-user-consent.md).
+
+## Other authorization to consider
+
+Delegated and application permissions are not the only ways to grant applications and users access to protected resources. Admins should be aware of other authorization systems that may grant access to sensitive information. Examples of various authorization systems at Microsoft include [Entra built-in roles](/entra/identity/role-based-access-control/permissions-reference), [Exchange RBAC](/exchange/permissions-exo/application-rbac), and [Teams resource-specific consent](/microsoftteams/platform/graph-api/rsc/resource-specific-consent).
 
 ## Next steps
 

@@ -3,6 +3,8 @@ author: barclayn
 ms.author: barclayn
 ms.date: 04/24/2024
 ms.topic: include
+ms.custom:
+  - devx-track-azurecli
 ---
 
 In this article, using the Azure CLI, you learn how to perform the following managed identities for Azure resources operations on an Azure VM:

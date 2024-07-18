@@ -50,7 +50,7 @@ There are two ways in which you can use Domain Services with an Azure CSP subscr
 
 In this deployment model, Domain Services is enabled within a virtual network that belongs to the Azure CSP subscription. The CSP partner's admin agents have the following privileges:
 
-* *Global administrator* privileges in the customer's Microsoft Entra tenant.
+* *Global Administrator* privileges in the customer's Microsoft Entra tenant.
 * *Subscription owner* privileges on the Azure CSP subscription.
 
 ![Direct deployment model](./media/csp/csp_direct_deployment_model.png)
@@ -67,7 +67,7 @@ With this deployment, the workloads or applications deployed by the CSP partner 
 
 ![Peered deployment model](./media/csp/csp_peered_deployment_model.png)
 
-This deployment model provides a separation of privileges and enables the CSP partner's helpdesk agents to administer the Azure subscription and deploy and manage resources within it. However, the CSP partner's helpdesk agents don't need to have global administrator privileges on the customer's Microsoft Entra directory. The customer's identity administrators can continue to manage identities for their organization.
+This deployment model provides a separation of privileges and enables the CSP partner's helpdesk agents to administer the Azure subscription and deploy and manage resources within it. However, the CSP partner's helpdesk agents don't need to have Global Administrator privileges on the customer's Microsoft Entra directory. The customer's identity administrators can continue to manage identities for their organization.
 
 This deployment model may be suited to scenarios where an ISV provides a hosted version of their on-premises application, which also needs to connect to the customer's Microsoft Entra ID.
 

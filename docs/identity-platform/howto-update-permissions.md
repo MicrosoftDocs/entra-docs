@@ -84,7 +84,7 @@ You can add permissions to static consent in two different ways in the Microsoft
 
 To complete the following steps of adding permissions, you need the following resources and privileges:
 
-- Run the HTTP requests in a tool of your choice, for example, in your app, through Graph Explorer, or Postman.
+- Run the HTTP requests in a tool of your choice, for example, in your app, or through Graph Explorer.
 - Run the APIs as a user with at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator), or as an owner of the target app registration.
 - The app used to make these changes must be granted the `Application.ReadWrite.All` permission.
 
@@ -197,7 +197,7 @@ You can remove permissions from static consent in two different ways in the Micr
 
 To complete the following steps of removing permissions, you need the following resources and privileges:
 
-- Run the HTTP requests in a tool of your choice, for example, in your app, through Graph Explorer, or Postman.
+- Run the HTTP requests in a tool of your choice, for example, in your app, or through Graph Explorer.
 - Call the APIs as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator), or as an owner of the target app registration.
 - The app used to make these changes must be granted the `Application.ReadWrite.All` permission.
 

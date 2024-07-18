@@ -6,7 +6,7 @@ description: In this tutorial, you learn how to send bulk invitations using a CS
  
 ms.service: entra-external-id
 ms.topic: tutorial
-ms.date: 07/31/2023
+ms.date: 06/27/2024
 
 ms.author: cmulligan
 author: csmulligan
@@ -121,7 +121,7 @@ You should see the users that you invited listed, with a user principal name (UP
 
 ## Clean up resources
 
-When no longer needed, you can delete the test user accounts in the directory in the Azure portal on the Users page by selecting the checkbox next to the guest user and then selecting **Delete**.
+When no longer needed, you can delete the test user accounts in the directory in the Microsoft Entra admin center on the Users page by selecting the checkbox next to the guest user and then selecting **Delete**.
 
 Or you can run the following PowerShell command to delete a user account:
 
@@ -131,7 +131,7 @@ Or you can run the following PowerShell command to delete a user account:
 
 For example: `Remove-MgUser -UserId "lstokes_fabrikam.com#EXT#@contoso.onmicrosoft.com"`
 
-## Next steps
+## Related content
 
 - [Bulk invite guest users via PowerShell](bulk-invite-powershell.md)
 - [Learn about the Microsoft Entra B2B collaboration invitation redemption process](redemption-experience.md)

@@ -1,6 +1,6 @@
 ---
 title: Microsoft's Security Service Edge Solution Deployment Guide Introduction
-description: Introduction to Microsoft Entra Private Access and Microsoft Entra Internet Access for Microsoft 365 deployments
+description: Introduction to Microsoft Entra Private Access and Microsoft Entra Internet Access for Microsoft Traffic deployments
 author: jricketts
 manager: martinco
 ms.service: global-secure-access
@@ -12,11 +12,11 @@ ms.author: jricketts
 
 # Introduction to Microsoft's Security Service Edge Solution Deployment Guide for Proof of Concept
 
-This Proof of Concept (PoC) Deployment Guide helps you to deploy Microsoft's Security Service Edge (SSE) solution that features [Microsoft Entra Internet Access](../global-secure-access/concept-internet-access.md), [Microsoft Entra Internet Access for Microsoft 365](../global-secure-access/how-to-manage-microsoft-365-profile.md) and [Microsoft Entra Private Access](../global-secure-access/concept-private-access.md). Note that this solution is in Public Preview.
+This Proof of Concept (PoC) Deployment Guide helps you to deploy Microsoft's Security Service Edge (SSE) solution that features [Microsoft Entra Internet Access](../global-secure-access/concept-internet-access.md), [Microsoft Entra Internet Access for Microsoft Traffic](../global-secure-access/how-to-manage-microsoft-profile.md) and [Microsoft Entra Private Access](../global-secure-access/concept-private-access.md).
 
 ## Overview
 
-[Microsoft's identity-centric Security Service Edge solution](../global-secure-access/overview-what-is-global-secure-access.md) converges network, identity, and endpoint access controls so that you can secure access to any app or resource, from any location, device, or identity. It enables and orchestrates access policy management for employees, business partners, and digital workloads. You can continuously monitor and adjust user access in real time if permissions or risk level changes to your private apps, SaaS apps, and Microsoft 365 endpoints.
+[Microsoft's identity-centric Security Service Edge solution](../global-secure-access/overview-what-is-global-secure-access.md) converges network, identity, and endpoint access controls so that you can secure access to any app or resource, from any location, device, or identity. It enables and orchestrates access policy management for employees, business partners, and digital workloads. You can continuously monitor and adjust user access in real time if permissions or risk level changes to your private apps, SaaS apps, and Microsoft endpoints.
 
 ### Business value
 
@@ -33,21 +33,21 @@ Built on Zero Trust principles, this easy-to-deploy SSE solution protects agains
 
 The unified Zero Trust architecture and policy engine simplifies access control and technology management for directory, single sign-on (SSO), federation, role-based access control (RBAC), proxy. To enforce access to your data, consistently apply a centralized policy across corporate resources such as identity, data, network plus infrastructure, and apps across cloud, on-premises, Internet of Things (IoT), and operational technology (OT).
 
-- **Enforce unified adaptive access controls.** Eliminate gaps in your defenses and protect access end-to-end by extending [Microsoft Entra Conditional Access](../identity/conditional-access/overview.md) and [continuous access evaluation](../identity/conditional-access/concept-continuous-access-evaluation.md) (CAE) to any application, resource, or other network destination. ​
+- **Enforce unified adaptive access controls.** Eliminate gaps in your defenses and protect access end-to-end by extending [Microsoft Entra Conditional Access](../identity/conditional-access/overview.md) and [continuous access evaluation (CAE)](../identity/conditional-access/concept-continuous-access-evaluation.md) to any application, resource, or other network destination. ​
 - **Simplify network access security​.** Minimize risk from threats and escape the complexity and cost of traditional stand-alone network security tools with comprehensive, simple to deploy, cloud-delivered security services.
 - **Deliver a great user experience anywhere and boost hybrid work productivity.** Provide fast and seamless access through a globally distributed secure network edge with Points of Presence (PoP) closest to the user. Eliminate extra hops to optimize traffic routing to apps and resources on-premises, across clouds, and anywhere in between.
 - **Integrated fabric**. Converged identity and network access controls secure access to all apps and resources. ​
 
 ### Microsoft's Security Service Edge solution features
 
-**Microsoft Entra Internet Access** helps you to secure access to all internet, SaaS, and Microsoft 365 apps and resources while protecting your organization against internet threats, malicious network traffic, and unsafe or noncompliant content. Microsoft Entra Internet Access unifies access controls in a single policy to close security gaps and minimize cyberthreat risk. It simplifies and modernizes traditional network security to protect users, apps, and resources. Advanced capabilities include universal access controls, universal tenant restriction, token protection, web content filtering, cloud firewall, threat protection, and Transport Layer Security (TLS) inspection.
+**Microsoft Entra Internet Access** helps you to secure access to all internet, SaaS, and Microsoft apps and resources while protecting your organization against internet threats, malicious network traffic, and unsafe or noncompliant content. Microsoft Entra Internet Access unifies access controls in a single policy to close security gaps and minimize cyberthreat risk. It simplifies and modernizes traditional network security to protect users, apps, and resources. Advanced capabilities include universal access controls, universal tenant restriction, token protection, web content filtering, cloud firewall, threat protection, and Transport Layer Security (TLS) inspection.
 
-​**Microsoft Entra Internet Access for ​Microsoft 365** features adaptive access, robust data exfiltration controls, and token theft protection. Resiliency through redundant tunnels provides best-in-class security and granular visibility for Microsoft 365, the world's most widely adopted productivity app. ​Choose what works best for your organization with flexible deployment options: a complete SSE solution by Microsoft or a side-by-side deployment with other SSE solutions. For example, you can deploy Microsoft Entra Internet Access for Microsoft 365 to gain unique security, visibility, and optimized access for Microsoft 365 apps while keeping your existing SSE solution for other resources. Microsoft Entra Internet Access for Microsoft 365 offers scenarios that enhance security and improve your Zero Trust architecture and end user experience.
+​**Microsoft Entra Internet Access for ​Microsoft traffic** features adaptive access, robust data exfiltration controls, and token theft protection. Resiliency through redundant tunnels provides best-in-class security and granular visibility for Microsoft services, the world's most widely adopted productivity app. ​Choose what works best for your organization with flexible deployment options: a complete SSE solution by Microsoft or a side-by-side deployment with other SSE solutions. For example, you can deploy Microsoft Entra Internet Access for Microsoft traffic to gain unique security, visibility, and optimized access for Microsoft apps while keeping your existing SSE solution for other resources. Microsoft Entra Internet Access for Microsoft traffic offers scenarios that enhance security and improve your Zero Trust architecture and end user experience.
 
 - Protect against data exfiltration by deploying tenant restrictions v2 and enforcing compliant network location with Conditional Access (see Sample PoC scenario: protect against data exfiltration).
 - Restore source IP address from original egress IP to enhance security logs, maintain compatibility with configured named locations in Conditional Access, and retain identity protection location-related risk detections (see Sample PoC scenario: source IP address restoration).
 
-**Microsoft Entra Private Access** helps you to secure access to private apps and resources for users anywhere with ZTN1. ​Built on Zero Trust principles, Microsoft Entra Private Access removes the risk and operational complexity of legacy virtual private networks (VPN) while boosting user productivity. Replace legacy VPNs with ZTNA to minimize the risk of implicit trust and lateral movement. Quickly and securely connect remote users from any device and any network to private apps: on-premises, across clouds, and in between. Eliminate excessive access and stop lateral threat movement with automatic app discovery, easy onboarding, adaptive per-app access control, granular app segmentation, and intelligent local access.
+**Microsoft Entra Private Access** helps you to secure access to private apps and resources for users anywhere with ZTNA. ​Built on Zero Trust principles, Microsoft Entra Private Access removes the risk and operational complexity of legacy virtual private networks (VPN) while boosting user productivity. Replace legacy VPNs with ZTNA to minimize the risk of implicit trust and lateral movement. Quickly and securely connect remote users from any device and any network to private apps: on-premises, across clouds, and in between. Eliminate excessive access and stop lateral threat movement with automatic app discovery, easy onboarding, adaptive per-app access control, granular app segmentation, and intelligent local access.
 
 ## Prepare for your Proof of Concept project
 
@@ -92,14 +92,14 @@ For the Proof of Concept in this guide, you need about six hours. Plan across th
 - Configure prerequisites: 1 hour
 - Configure initial product: 20 minutes
 - Configure remote network: 1 to 2 hours
-- Deploy and test Microsoft Entra Internet Access for Microsoft 365: 1 hour
+- Deploy and test Microsoft Entra Internet Access for Microsoft Traffic: 1 hour
 - Deploy and test Microsoft Entra Private Access: 1 hour
 - Close PoC: 30 minutes
 - Share your feedback with Microsoft: 30 minutes
 
 ### Obtain permissions
 
-Administrators who interact with [Global Secure Access](../global-secure-access/overview-what-is-global-secure-access.md)  preview features require the Global Secure Access Administrator and Application Administrator [roles](~/identity/role-based-access-control/permissions-reference.md).
+Administrators who interact with [Global Secure Access](../global-secure-access/overview-what-is-global-secure-access.md) features require the Global Secure Access Administrator and Application Administrator [roles](~/identity/role-based-access-control/permissions-reference.md).
 
 Universal tenant restrictions require the Conditional Access Administrator or Security Administrator role to create and interact with Conditional Access policies and named locations. Some features may also require other roles. 
 
@@ -140,26 +140,29 @@ Follow the steps in this section to configure SSE through the Microsoft Entra ad
 Activate Microsoft SSE through the Microsoft Entra admin center and make initial configurations that are requirements for this PoC.
 
 1. Open the [Microsoft Entra admin center](https://entra.microsoft.com) using an identity assigned the [Global Secure Access Administrator](../identity/role-based-access-control/permissions-reference.md#global-secure-access-administrator) role.
-1. Go to **Global Secure Access (preview)** > **Get started** > **Activate Global Secure Access in your tenant**. Select **Activate** to enable SSE features in your tenant.
+1. Go to **Global Secure Access** > **Get started** > **Activate Global Secure Access in your tenant**. Select **Activate** to enable SSE features in your tenant.
 
    :::image type="content" source="media/sse-deployment-guide-intro/global-secure-access-main-inline.png" alt-text="Diagram that shows initial activation page for Microsoft's Security Service Edge Solution." lightbox="media/sse-deployment-guide-intro/global-secure-access-main-expanded.png"::: 
-1. Go to **Global Secure Access (preview)** > **Connect** > **Traffic forwarding**. Turn on **Microsoft 365 profile**, **Private access profile**, and **Internet access profile**.
-Traffic forwarding enables you to configure the type of network traffic to tunnel through the Microsoft's Security Service Edge Solution services. You set up [traffic forwarding profiles](../global-secure-access/concept-traffic-forwarding.md) to manage types of traffic. The **Microsoft 365 access profile** is for Microsoft Entra Internet Access for Microsoft 365. The **Private access profile** is for Microsoft Entra Private Access, and the **Internet access profile** is for Microsoft Entra Internet Access. Microsoft's Security Service Edge solution only captures traffic on client devices that have Global Secure Access Client installed.
+1. Go to **Global Secure Access** > **Connect** > **Traffic forwarding**. Turn on **Microsoft profile**, **Private access profile**, and **Internet access profile**.
+Traffic forwarding enables you to configure the type of network traffic to tunnel through the Microsoft's Security Service Edge Solution services. You set up [traffic forwarding profiles](../global-secure-access/concept-traffic-forwarding.md) to manage types of traffic. The **Microsoft traffic profile** is for Microsoft Entra Internet Access for Microsoft Traffic. The **Private access profile** is for Microsoft Entra Private Access, and the **Internet access profile** is for Microsoft Entra Internet Access. Microsoft's Security Service Edge solution only captures traffic on client devices that have Global Secure Access Client installed.
 
-   :::image type="content" source="media/sse-deployment-guide-intro/traffic-forwarding-profile-enabled.png" alt-text="Diagram that shows how to enable Microsoft 365 and Private access profiles." lightbox="media/sse-deployment-guide-intro/traffic-forwarding-profile-enabled-expanded.png"::: 
+   > [!NOTE]
+   > When you enable the Internet Access forwarding profile, you should also enable the Microsoft traffic forwarding profile for optimal routing of Microsoft traffic.
 
-1. To enable source IP restoration, go to **Global Secure Access (preview)** > **Connect** > **Global settings** > **Session management** > **Adaptive Access** and turn on **Enable Global Secure Access signaling in Conditional Access**. Source IP restoration is required to for Conditional Access policies that you will configure as part of this proof of concept.
+   :::image type="content" source="media/sse-deployment-guide-intro/traffic-forwarding-profile-enabled.png" alt-text="Diagram that shows how to enable Microsoft Traffic and Private access profiles." lightbox="media/sse-deployment-guide-intro/traffic-forwarding-profile-enabled-expanded.png"::: 
+
+1. To enable source IP restoration, go to **Global Secure Access** > **Connect** > **Settings** > **Session management** > **Adaptive Access** and turn on **Enable Global Secure Access signaling in Conditional Access**. Source IP restoration is required to for Conditional Access policies that you will configure as part of this proof of concept.
 
    :::image type="content" source="media/sse-deployment-guide-intro/session-management-adaptive-access-inline.png" alt-text="Diagram that shows how to enable Conditional Access policies for Microsoft's Security Service Edge Solution." lightbox="media/sse-deployment-guide-intro/session-management-adaptive-access-expanded.png":::
 
 ### Install Global Secure Access Client on your Windows 10/11 client device
 
-Microsoft Entra Internet Access for Microsoft 365 and Microsoft Entra Private Access use the Global Secure Access Client on Windows devices. This client acquires and forwards network traffic to Microsoft's Security Service Edge Solution.
+Microsoft Entra Internet Access for Microsoft Traffic and Microsoft Entra Private Access use the Global Secure Access Client on Windows devices. This client acquires and forwards network traffic to Microsoft's Security Service Edge Solution.
 
 1. Make sure your Windows device is Microsoft Entra joined or hybrid joined.
 1. Sign in to the Windows device with a Microsoft Entra user role that has local admin privileges.
 1. Open the [Microsoft Entra admin center](https://entra.microsoft.com) using an identity assigned the [Global Secure Access Administrator](../identity/role-based-access-control/permissions-reference.md#global-secure-access-administrator) role.
-1. Go to **Global Secure Access (preview)** > **Connect** > **Client Download**. Select **Download client** and complete the installation.
+1. Go to **Global Secure Access** > **Connect** > **Client Download**. Select **Download client** and complete the installation.
 
    :::image type="content" source="media/sse-deployment-guide-intro/global-secure-access-clients-inline.png" alt-text="Diagram that shows where to download the Global Secure Access client software." lightbox="media/sse-deployment-guide-intro/global-secure-access-clients-expanded.png":::
 
@@ -171,10 +174,8 @@ Microsoft Entra Internet Access for Microsoft 365 and Microsoft Entra Private Ac
 
 1. Select **Advanced Diagnostics** to view **Global Secure Access Client Connection Diagnostics**. Click **Health check** and verify that all checks show **Yes** status.
 
-[!INCLUDE [Public preview important note](../global-secure-access/includes/public-preview-important-note.md)]
-
 ## Next steps
 
-- Deploy and verify [Microsoft Entra Internet Access for Microsoft 365](sse-deployment-guide-m365.md)
+- Deploy and verify [Microsoft Entra Internet Access for Microsoft Traffic](sse-deployment-guide-microsoft-traffic.md)
 - Deploy and verify [Microsoft Entra Internet Access](sse-deployment-guide-internet-access.md)
 - Deploy and verify [Microsoft Entra Private Access](sse-deployment-guide-private-access.md)

@@ -441,7 +441,7 @@ And you get the response:
     "api://AzureADTokenExchange"
   ],
   "description": "Testing",
-  "id": "1aa3e6a7-464c-4cd2-88d3-90db98132755",
+  "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
   "issuer": "https://token.actions.githubusercontent.com",
   "name": "Testing",
   "subject": "repo:octo-org/octo-repo:environment:Production"
@@ -535,7 +535,7 @@ And you get a response similar to:
         "api://AzureADTokenExchange"
       ],
       "description": "Testing",
-      "id": "1aa3e6a7-464c-4cd2-88d3-90db98132755",
+      "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
       "issuer": "https://token.actions.githubusercontent.com/",
       "name": "Testing",
       "subject": "repo:octo-org/octo-repo:environment:Production"
@@ -549,7 +549,7 @@ And you get a response similar to:
 Run the following method to [get a federated identity credential](/graph/api/federatedidentitycredential-get) for an app (specified by the object ID of the app):
 
 ```azurecli
-az rest -m GET -u 'https://graph.microsoft.com/applications/00001111-aaaa-2222-bbbb-3333cccc4444//federatedIdentityCredentials/1aa3e6a7-464c-4cd2-88d3-90db98132755'
+az rest -m GET -u 'https://graph.microsoft.com/applications/00001111-aaaa-2222-bbbb-3333cccc4444//federatedIdentityCredentials/00aa00aa-bb11-cc22-dd33-44ee44ee44ee'
 ```
 
 And you get a response similar to:
@@ -564,7 +564,7 @@ And you get a response similar to:
         "api://AzureADTokenExchange"
       ],
       "description": "Testing",
-      "id": "1aa3e6a7-464c-4cd2-88d3-90db98132755",
+      "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
       "issuer": "https://token.actions.githubusercontent.com/",
       "name": "Testing",
       "subject": "repo:octo-org/octo-repo:environment:Production"
@@ -577,7 +577,7 @@ And you get a response similar to:
 Run the following method to [delete a federated identity credential](/graph/api/federatedidentitycredential-delete) from an app (specified by the object ID of the app):
 
 ```azurecli
-az rest -m DELETE  -u 'https://graph.microsoft.com/applications/00001111-aaaa-2222-bbbb-3333cccc4444/federatedIdentityCredentials/1aa3e6a7-464c-4cd2-88d3-90db98132755'
+az rest -m DELETE  -u 'https://graph.microsoft.com/applications/00001111-aaaa-2222-bbbb-3333cccc4444/federatedIdentityCredentials/00aa00aa-bb11-cc22-dd33-44ee44ee44ee'
 ```
 
 ::: zone-end

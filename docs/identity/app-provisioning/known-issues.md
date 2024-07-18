@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: troubleshooting
-ms.date: 05/23/2024
+ms.date: 07/17/2024
 ms.reviewer: arvinh
 zone_pivot_groups: app-provisioning-cross-tenant-synchronization
 ---
@@ -108,14 +108,20 @@ The otherMails property is automatically computed in the target tenant. Changes 
 
 Multivalue directory extensions can't be used in attribute mappings or scoping filters. 
 
+#### Attribute targetAddress not available to select
+
+Attribute **targetAddress** (which maps to the ExternalEmailAddress property in Microsoft Exchange Online) isn't available as an attribute you can choose. If you need to change this attribute, you have to do it manually over the required object.  
+
+
 ## Service issues 
 
 #### Unsupported scenarios
 
 - Provisioning passwords isn't supported. 
-- Provisioning nested groups isn't supported. 
-- Provisioning to B2C tenants isn't supported because of the size of the tenants.
-- Not all provisioning apps are available in all clouds. For example, Atlassian isn't yet available in the Government cloud. We're working with app developers to onboard their apps to all clouds.
+- Provisioning nested groups beyond the first level is not supported. 
+- Provisioning is not supported for B2C tenants, including into or out of the tenant.
+- Provisioning is not supported for External ID tenants, including into or out of the tenant.
+- Not all provisioning apps are available in all clouds. 
 
 ::: zone pivot="app-provisioning"
 #### Automatic provisioning isn't available on my OIDC-based application

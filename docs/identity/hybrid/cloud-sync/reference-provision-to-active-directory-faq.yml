@@ -33,7 +33,10 @@ sections:
           Can I continue to use the "Group writeback" field through MS Graph and Microsoft Entra admin center for setting groups in scope for provisioning to AD using Microsoft Entra Cloud Sync?
         answer:
           No, this field isn't currently used for determining the scope of groups being provisioned to AD using Cloud Sync. You have to use the Microsoft Entra Cloud Sync configuration experience in the portal to set scope. 
-
+      - question:
+          If I am following the steps outlined in Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync, will this impact my synchronization from Active Directory to Microsoft Entra ID with Microsoft Entra Connect?
+        answer:
+          No, following the migration steps for moving from group writeback V2 to Microsoft Entra cloud sync will not affect synchronization between AD and Microsoft Entra ID.
 
 additionalContent: |
 

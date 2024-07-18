@@ -101,7 +101,7 @@ An administrator can manually provide this contact information, or users can go 
 
 ## Set up notifications and customizations
 
-To keep users informed about account activity, you can set up Microsoft Entra ID to send email notifications when an SSPR event happens. These notifications can cover both regular user accounts and admin accounts. For admin accounts, this notification provides another layer of awareness when a privileged administrator account password is reset using SSPR. Microsoft Entra ID will notify all global admins when someone uses SSPR on an admin account.
+To keep users informed about account activity, you can set up Microsoft Entra ID to send email notifications when an SSPR event happens. These notifications can cover both regular user accounts and admin accounts. For admin accounts, this notification provides another layer of awareness when a privileged administrator account password is reset using SSPR. Microsoft Entra ID will notify all Global Administrators when someone uses SSPR on an admin account.
 
 1. From the menu on the left side of the **Notifications** page, set up the following options:
 

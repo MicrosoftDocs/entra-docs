@@ -1324,5 +1324,5 @@ To explore more complex scenarios, see a completed [working code sample](https:/
 
 For more information about building mobile apps that call protected web APIs in our multi-part scenario series, see:
 
-- [Scenario: Mobile application that calls web APIs](scenario-mobile-overview.md)
+- [Scenario: Mobile application that calls web APIs](scenario-mobile-app-registration.md)
 - [Code sample for complex scenarios](https://github.com/Azure-Samples/ms-identity-android-java/)

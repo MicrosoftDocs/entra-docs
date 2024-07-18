@@ -35,7 +35,7 @@ In this tutorial, you learn how to:
 
 To sign in a user using the one-time passcode, collect the email and send an email containing a one-time passcode for the user to verify their email. When the user enters a valid one-time passcode, the app signs them in. 
 
-To sign in a user using username (email) and password, collect the email and password from the user. If the username and password are valid, the app signs in the user. If you [enable multifactor authentication (MFA) for your external tenant](how-to-multifactor-authentication-customers.md), then the user need to enter a valid one-time passcode sent to their email before the app signs then in.
+To sign in a user using username (email) and password, collect the email and password from the user. If the username and password are valid, the app signs in the user.
 
 To sign in a user, you need to: 
 
@@ -43,8 +43,8 @@ To sign in a user, you need to:
 
     - Collect an email from the user. Add validation to your inputs to make sure the user enters a valid emails address.
     - Collect a password if you sign in with username (email) and password.
-    - Collect an email one-time passcode from the user. For username (email) and password sign-in, you collect email one-time passcode only if you enable [MFA for your external tenant](how-to-multifactor-authentication-customers.md).
-    - Resend one-time passcode (recommended).
+    - Collect an email one-time passcode from the user if you sign in with email one-time passcode.
+    - Resend one-time passcode (recommended) if you sign in with email one-time passcode.
 
 1. In your UI, add a button, whose select event starts a sign-in as shown in the following code snippet: 
 
@@ -72,7 +72,7 @@ To sign in a user, you need to:
     }
    ```
 
-    If the user isn't required to submit a passcode, such as where a user signs in with email and password without MFA enabled, use the following code snippet:
+    If the user isn't required to submit a passcode, such as where a user signs in with email and password, use the following code snippet:
 
     ```kotlin
         CoroutineScope(Dispatchers.Main).launch {

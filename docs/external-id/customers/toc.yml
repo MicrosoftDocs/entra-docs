@@ -39,6 +39,8 @@ items:
             href: sample-web-app-node-sign-in.md
           - name: Sign in users and call an API
             href: sample-web-app-node-sign-in-call-api.md
+          - name: Sign in users and edit profile
+            href: sample-web-app-node-sign-in-edit-profile.md
       - name: ASP.NET Core
         items:
           - name: Sign in users
@@ -253,6 +255,9 @@ items:
                   href: tutorial-native-authentication-android-self-service-password-reset.md
                 - name: Support web fallback
                   href: tutorial-native-authentication-android-support-web-fallback.md
+                - name: Call an API
+                  href: tutorial-native-authentication-android-sign-in-call-api.md
+                  displayName: multiple access token 
             - name: iOS (Swift)
               items:
                 - name: Prepare iOS app
@@ -261,22 +266,12 @@ items:
                   href: tutorial-native-authentication-ios-sign-up.md
                 - name: Sign in and sign out
                   href: tutorial-native-authentication-ios-sign-in-sign-out.md
-                - name: Additional scenarios
-                  items:
-                    - name: Sign up with user attributes
-                      href: tutorial-native-authentication-ios-sign-up-with-email-one-time-passcode.md
-                    - name: Sign up with username, password and user attributes
-                      href: tutorial-native-authentication-ios-sign-up-with-username-password-user-attributes.md
-                    - name: Sign up with username and password
-                      href: tutorial-native-authentication-ios-sign-up-with-username-password.md
-                    - name: Sign in with username and password
-                      href: tutorial-native-authentication-ios-sign-in-with-username-password.md
-                    - name: Sign in user after sign-up
-                      href: tutorial-native-authentication-ios-sign-in-user-after-sign-up.md
-                    - name: Self-service password reset
-                      href: tutorial-native-authentication-ios-self-service-password-reset.md
-                    - name: Support web fallback
-                      href: tutorial-native-authentication-ios-support-web-fallback.md
+                - name: Auto-sign in after sign-up
+                  href: tutorial-native-authentication-ios-sign-in-user-after-sign-up.md
+                - name: Self-service password reset
+                  href: tutorial-native-authentication-ios-self-service-password-reset.md
+                - name: Support web fallback
+                  href: tutorial-native-authentication-ios-support-web-fallback.md
     - name: Command-line interface (CLI) app
       items:
         - name: Node.js
@@ -343,8 +338,6 @@ items:
             href: how-to-google-federation-customers.md
           - name: Facebook federation
             href: how-to-facebook-federation-customers.md
-      - name: Use application roles to manage access
-        href: how-to-use-app-roles-customers.md
         displayName: rbac, roles claim, groups claim
       - name: Integrate apps 
         items:
@@ -352,6 +345,16 @@ items:
             items:
               - name: Node.js
                 items:
+                  - name:  Edit profile with MFA
+                    items:
+                      - name: Set-up external tenant 
+                        href: how-to-web-app-node-edit-profile-prepare-tenant.md   
+                        displayName: Conditional Access, CA 
+                      - name: Set-up app 
+                        href: how-to-web-app-node-edit-profile-prepare-app.md 
+                      - name: Update profile
+                        href: how-to-web-app-node-edit-profile-update-profile.md  
+                        displayName: protect with MFA, multifactor authentication, MFA            
                   - name: Call API
                     items:
                       - name: Prepare tenant 
@@ -386,6 +389,8 @@ items:
               href: how-to-add-attributes-to-token.md
         - name: Use custom URL domains
           href: how-to-custom-url-domain.md
+        - name: Configure optional claims
+          href: /entra/identity-platform/optional-claims?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json 
         - name: Advanced extensions
           items:
             - name: Add logic to attribute collection
@@ -410,6 +415,8 @@ items:
         href: how-to-multifactor-authentication-customers.md
       - name: Identity Protection
         href: how-to-identity-protection-customers.md
+      - name: Use application roles to manage access
+        href: how-to-use-app-roles-customers.md
     - name: Manage users
       items:
         - name: Manage admin accounts
@@ -441,15 +448,8 @@ items:
     - name: Native authentication
       items:
         - name: API reference
-          items: 
-           - name: Native authentication APIs
-             displayName: Native authentication, Native authentication API   
-             href: /entra/identity-platform/reference-native-authentication-overview?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
-           - name: Native authentication with email OTP
-             displayName: Native authentication with email and one-time password or passcode          
-             href: /entra/identity-platform/reference-native-authentication-email-otp?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
-           - name: Native authentication with email and password
-             href: /entra/identity-platform/reference-native-authentication-email-password?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+          href: /entra/identity-platform/reference-native-authentication-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+          displayName: Native authentication, Native authentication API, native auth                
         - name: SDK reference
           items: 
            - name: MSAL iOS and macOS

@@ -1,17 +1,13 @@
 ---
 title: Configure O'Reilly learning platform for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to O'Reilly learning platform.
-
-author: twimmers
-writer: twimmers
+author: thomasakelo
 manager: jeedes
-ms.assetid: ba350af3-896c-4a0d-93f3-f91d8eccd5a5
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: tutorial
-ms.date: 07/26/2023
-ms.author: thwimmer
+ms.date: 03/25/2024
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to O'Reilly learning platform so that I can streamline the user management process and ensure that users have the appropriate access to O'Reilly learning platform.
 ---

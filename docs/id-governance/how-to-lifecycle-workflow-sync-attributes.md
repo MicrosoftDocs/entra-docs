@@ -157,7 +157,7 @@ Once you have set up your provisioning application, you're able to edit its attr
 
 To update this mapping, you'd do the following:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator).
 
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 
@@ -165,7 +165,7 @@ To update this mapping, you'd do the following:
 
 1. Select Provisioning  and then select **Edit attribute Mapping**.
 
-1.  Select **Show advanced options**, and then select edit Attribute list for On Premise Active Directory.
+1.  Select **Show advanced options**, and then select **Edit Attribute list for On-Premises Active Directory**.
     :::image type="content" source="media/how-to-lifecycle-workflow-sync-attributes/edit-on-prem-attribute.png" alt-text="Screenshot of editing on-premises attribute.":::
 1.  Add your source attribute or attributes created as Type String, and select on the CheckBox for required.
     :::image type="content" source="media/how-to-lifecycle-workflow-sync-attributes/edit-attribute-list.png" alt-text="Screenshot of source API list.":::

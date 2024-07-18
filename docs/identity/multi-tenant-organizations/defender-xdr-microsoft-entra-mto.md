@@ -117,7 +117,7 @@ If a user needs access to several tenants at one time, topology 1 makes it easy 
 
 Actions performed by a SOC analyst in Microsoft Entra are audited in the Microsoft Entra tenant that they're working in. Organizations can maintain an audit trail of actions performed, generate alerts when specific actions are performed, and analyze actions performed by pushing audit logs into Azure Monitor.
 
-[Learn more](https://learn.microsoft.com/entra/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs)
+[Learn more](../monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.yml)
 
 Actions performed by a SOC analyst in Microsoft Defender are also audited.  
 

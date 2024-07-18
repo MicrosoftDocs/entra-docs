@@ -792,10 +792,10 @@ Logs captured in the Core Directory service cover a wide variety of scenarios. C
 |MultiTenantOrg|Create a MultiTenantOrg|
 |MultiTenantOrg|Hard Delete MultiTenantOrg|
 |MultiTenantOrg|Update a MultiTenantOrg|
-|MultiTenantOrgIdentitySyncPolicyUpdate|Reset a multitenant org identity sync policy template|
-|MultiTenantOrgIdentitySyncPolicyUpdate|Update a multitenant org identity sync policy template|
-|MultiTenantOrgPartnerConfigurationTemplate|Reset a multitenant org partner configuration template|
-|MultiTenantOrgPartnerConfigurationTemplate|Update a multitenant org partner configuration template|
+|MultiTenantOrgIdentitySyncPolicyUpdate|Reset a multi tenant org identity sync policy template|
+|MultiTenantOrgIdentitySyncPolicyUpdate|Update a multi tenant org identity sync policy template|
+|MultiTenantOrgPartnerConfigurationTemplate|Reset a multi tenant org partner configuration template|
+|MultiTenantOrgPartnerConfigurationTemplate|Update a multi tenant org partner configuration template|
 |MultiTenantOrgTenant|Add MultiTenantOrg tenant|
 |MultiTenantOrgTenant|Delete MultiTenantOrg tenant|
 |MultiTenantOrgTenant|Hard Delete MultiTenantOrg tenant|
@@ -951,7 +951,7 @@ Use these logs to monitor changes to Entitlement Management settings. Entitlemen
 |EntitlementManagement|User requests to extend access package assignment|
 |EntitlementManagement|User requests to remove access package assignment|
 
-## Global Secure Access (preview)
+## Global Secure Access
 
 If you're using Microsoft Entra Internet Access or Microsoft Entra Private Access to acquire and secure network traffic to your corporate resources, these logs can help identify when changes were made to your network policies. These logs capture changes to traffic forwarding policies and remote networks, such as branch office locations. For more information, see [What is Global Secure Access](/entra/global-secure-access/overview-what-is-global-secure-access).
 

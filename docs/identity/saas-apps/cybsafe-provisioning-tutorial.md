@@ -2,16 +2,14 @@
 title: 'Tutorial: Configure CybSafe for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to CybSafe.
 
-author: twimmers
-writer: twimmers
+author: thomasakelo
 manager: jeedes
-ms.assetid: 7255fe44-1662-4ae4-9ff3-9492911b7ce0
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: thwimmer
+ms.date: 03/25/2024
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to CybSafe so that I can streamline the user management process and ensure that users have the appropriate access to CybSafe.
 ---

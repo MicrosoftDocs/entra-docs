@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: conceptual
-ms.date: 09/15/2023
+ms.date: 07/08/2024
 ms.author: kenwith
 ms.reviewer: arvinh
 ---
@@ -181,7 +181,7 @@ Performance depends on whether your provisioning job is running an initial provi
 
 ### How to tell if users are being provisioned properly
 
-All operations run by the user provisioning service are recorded in the Microsoft Entra [Provisioning logs (preview)](~/identity/monitoring-health/concept-provisioning-logs.md?context=azure/active-directory/manage-apps/context/manage-apps-context). The logs include all read and write operations made to the source and target systems, and the user data that was read or written during each operation. For information on how to read the provisioning logs in the Microsoft Entra admin center, see the [provisioning reporting guide](./check-status-user-account-provisioning.md).
+All operations run by the user provisioning service are recorded in the Microsoft Entra [Provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md?context=azure/active-directory/manage-apps/context/manage-apps-context). The logs include all read and write operations made to the source and target systems, and the user data that was read or written during each operation. For information on how to read the provisioning logs in the Microsoft Entra admin center, see the [provisioning reporting guide](./check-status-user-account-provisioning.md).
 
 ## Deprovisioning
 The Microsoft Entra provisioning service keeps source and target systems in sync by deprovisioning accounts when user access is removed.

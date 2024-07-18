@@ -4,12 +4,13 @@ description: Remedies for common problems with Microsoft Entra B2B collaboration
  
 ms.service: entra-external-id
 ms.topic: troubleshooting
-ms.date: 03/26/2024
+ms.date: 06/19/2024
 tags: active-directory
 ms.author: cmulligan
 author: csmulligan
 ms.custom: it-pro, has-azure-ad-ps-ref
 ms.collection: M365-identity-device-management
+
 # Customer intent: As an IT admin troubleshooting Microsoft Entra B2B collaboration, I want to find remedies for common problems, so that I can resolve issues and ensure smooth collaboration between organizations.
 ---
 
@@ -182,7 +183,7 @@ When you're using self-service sign-up features, like custom user attributes or 
 If you accidentally deleted the `aad-extensions-app`, you have 30 days to recover it. You can restore the app using the Microsoft Graph PowerShell module.
 
 1. Launch the Microsoft Graph PowerShell module and run `Connect-MgGraph`.
-1. Sign in as a Global Administrator for the Microsoft Entra tenant that you want to recover the deleted app for.
+1. Sign in as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) to the Microsoft Entra tenant for which you want to recover the deleted app.
 1. Run the PowerShell command `Get-MgDirectoryDeletedItem -DirectoryObjectId {id}`. As an example:
 
 ```powershell
@@ -201,7 +202,7 @@ You should now see the restored app in the Microsoft Entra admin center.
 Let's say you inadvertently invite a guest user with an email address that matches a user object already in your directory. The guest user object is created, but the email address is added to the `otherMail` property instead of to the `mail` or `proxyAddresses` properties. To avoid this issue, you can search for conflicting user objects in your Microsoft Entra directory by using these PowerShell steps:
 
 1. Open the Microsoft Graph PowerShell module and run `Connect-MgGraph`.
-1. Sign in as a Global Administrator for the Microsoft Entra tenant that you want to check for duplicate contact objects in.
+1. Sign in as at least a [Directory Reader](/entra/identity/role-based-access-control/permissions-reference?branch=main#directory-readers) to the Microsoft Entra tenant for which you want to check for duplicate contact objects.
 1. Run the PowerShell command `Get-MgContact -All | ? {$_.Mail -match 'user@domain.com'}`.
 
 ## External access blocked by policy error on the login screen

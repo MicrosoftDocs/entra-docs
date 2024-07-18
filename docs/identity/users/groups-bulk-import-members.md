@@ -5,7 +5,7 @@ description: Add group members in bulk by using a comma-separated values (CSV) f
 author: barclayn
 ms.author: barclayn
 manager: amycolannino
-ms.date: 11/10/2023
+ms.date: 07/01/2024
 ms.topic: how-to
 ms.service: entra-id
 ms.subservice: users
@@ -63,6 +63,8 @@ The rows in a downloaded CSV template are:
 1. When your file passes validation, select **Submit** to start the bulk operation that imports the group members to the group.
 1. When the import operation finishes, a notification states that the bulk operation succeeded.
 
+If you experience errors, you can download and view the results file on the **Bulk operation results** page. The file contains the reason for each error. The file submission must match the provided template and include the exact column names. For more information about bulk operations limitations, see [Bulk import service limits](#bulk-import-service-limits).
+
 ## Check import status
 
 You can see the status of all your pending bulk requests on the **Bulk operation results** page.
@@ -73,7 +75,7 @@ For details about each line item within the bulk operation, select the values un
 
 ## Bulk import service limits
 
-Each bulk activity to import a list of group members can run for up to one hour. This time frame enables importation of a list of at most 40,000 members.
+[!INCLUDE [Bulk operations limitations](~/includes/bulk-operations-limitations.md)]
 
 ## Next steps
 
