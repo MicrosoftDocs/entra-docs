@@ -39,7 +39,7 @@ You can use the user insights feature for the following scenarios:
 
 To access and view data from application user activity, you must have:
 - A Microsoft Entra ID for [customers tenant](quickstart-tenant-setup.md).
-- A [registered application(s)](how-to-register-ciam-app.md) with some sign-in and sign-up data.
+- [Registered application(s)](how-to-register-ciam-app.md) with some sign-in and sign-up data.
 
 <!-- Link here later how to access the application user activity reports in two ways. -->
 
@@ -89,13 +89,17 @@ The **Authentications** dashboard gives you a summary of daily and monthly authe
 
     :::image type="content" source="media/how-to-user-insights/authentications-dashboard.png" alt-text="Screenshot of the Authentications dashboard.":::
 
+<!---New content --->
+## Customize your dashboards
 
-## Customize the data view
+The Application user activity dashboards provide easy-to-digest graphs and charts but have limited customization options. Microsoft Graph APIs enable you to build powerful, customized dashboards with data tailored to your specific needs and preferences. This has some advantages: 
 
-Application user activity dashboards provide easy-to-digest graphs and charts but have limited customization options. Microsoft Graph APIs enable you to build powerful, customized dashboards with data tailored to your specific needs and preferences. This has some advantages: 
-•	Flexibility: you can integrate with other data sources to present your data in a way that aligns more with your business objectives. 
-•	Enhanced visualization: you can have richer and more interactive visual representations of your data. 
-•	Complex query handling: you can apply advanced filters, aggregations, and calculations to your user insights data and get more granular and accurate results. 
+- **Flexibility**: You can integrate with other data sources to present your data in a way that aligns more with your business objectives.
+- **Enhanced visualization**: You can have richer and more interactive visual representations of your data.
+- **Complex query handling**: You can apply advanced filters, aggregations, and calculations to your user insights data and get more granular and accurate results.
+
+To build your own user insights dashboard, you need to configure API permissions for Microsoft Graph. You can then use the Microsoft Graph API to access the data and build custom reports in your preferred analytics tool. We recommend using Power BI to visualize the data, but you can choose any other analytical tool you prefer.
+
 
 ### Set up External ID 
 To build your own user insights dashboard, you'll need to configure API permissions for Microsoft Graph.  
