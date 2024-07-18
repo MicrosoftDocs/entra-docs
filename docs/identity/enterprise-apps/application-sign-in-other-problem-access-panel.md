@@ -99,7 +99,7 @@ To reset a user’s password, follow these steps:
 1. Select the **Reset password** button at the top of the user pane.
 1. Select the **Reset password** button on the **Reset password** pane that appears.
 1. Copy the **temporary password** or **enter a new password** for the user.
-1. Communicate this new password to the user, they may be required to change this password during their next sign-in to Microsoft Entra ID.
+1. Communicate this new password to the user. They might be required to change this password during their next sign-in to Microsoft Entra ID.
 
 ### Enable self-service password reset
 
