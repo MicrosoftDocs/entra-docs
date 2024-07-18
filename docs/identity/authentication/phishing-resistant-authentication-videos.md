@@ -11,7 +11,7 @@ manager: martinco
 ms.reviewer: gasinh
 ---
 
-# Phishing-resistant authentication in Microsoft Entra ID
+# Phishing-resistant authentication in Microsoft Entra ID 
 
 In this video series, we guide you through the basics of phishing-resistant authentication methods in Microsoft Entra ID. Multifactor authentication is one of the most effective controls to prevent an adversary from gaining access to sensitive information.  
 
