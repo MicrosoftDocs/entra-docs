@@ -1,9 +1,9 @@
 ---
 title: Troubleshoot the Global Secure Access client with the advanced diagnostics health check tab
-description: Troubleshoot the Global Secure Access client using the health check tab in the advanced diagnostics ustility.
+description: Troubleshoot the Global Secure Access client using the health check tab in the advanced diagnostics utility.
 ms.service: global-secure-access
 ms.topic: troubleshooting
-ms.date: 07/16/2024
+ms.date: 07/17/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -17,7 +17,7 @@ The health check tab executes common tests to verify that the client works corre
 This article is intended to help troubleshooting and resolving common issues detected by the health check.
 
 ## Using the health check
-To run the client health check, right click on the Global Secure Access client system tray icon, choose Advanced Diagnostics and select the Health check tab.
+To run the client health check, right-click the Global Secure Access client system tray icon, choose Advanced Diagnostics, and select the Health check tab.
 The tests will start running.
 Most of the tests depend on one another. If some tests fail, start by solving the first test that failed and then refresh the health check for an updated tests status.
 image.png
@@ -31,7 +31,7 @@ image.png
 Run the following checks to test the Global Secure Access client.
 
 ### Device is Microsoft Entra joined
-The Windows client authenticates the user and the device to Global Secure Access services. The device authentication (based on device token) requires that the device will be either Microsoft Entra joined or Microsoft Entra hybrid joined. Microsoft Entra registered devices are currently not supported.
+The Windows client authenticates the user and the device to Global Secure Access services. The device authentication (based on device token) requires that the device is either Microsoft Entra joined or Microsoft Entra hybrid joined. Microsoft Entra registered devices are currently not supported.
 To check the status of your device, run the following command in an elevated cmd : dsregcmd.exe /status
 image.png
 
@@ -46,7 +46,7 @@ Global Secure Access Tunneling service must be running.
 
 You can verify that this service is running by the following command:
 sc query GlobalSecureAccessTunnelingService
-If the Global Secure Access Tunneling Service is not running, start it from the services.msc.
+If the Global Secure Access Tunneling Service isn't running, start it from the services.msc.
 If the service fails to start, look for errors in the event viewer.
 
 ### Management service running
@@ -54,7 +54,7 @@ Global Secure Access Management service must be running.
 
 You can verify that this service is running by the following command:
 sc query GlobalSecureAccessManagementService
-If the Global Secure Access Management Service is not running, start it from the services.msc.
+If the Global Secure Access Management Service isn't running, start it from the services.msc.
 If the service fails to start, look for errors in the event viewer.
 
 ### Policy Retriever service running
@@ -62,31 +62,31 @@ Global Secure Access Policy Retriever service must be running.
 
 You can verify if this service is running by the following command:
 sc query GlobalSecureAccessPolicyRetrieverService
-If the Global Secure Access Policy Retriever Service is not running, start it from the services.msc.
+If the Global Secure Access Policy Retriever Service isn't running, start it from the services.msc.
 If the service fails to start, look for errors in the event viewer.
 
 ### Driver running
 You can verify that the driver is running by using the following command:
 sc query GlobalSecureAccessDriver
-If the driver is not running:
+If the driver isn't running:
 
 Search for event 304 in the Global Secure Access client in the event log.
-If the driver is not running, reboot the machine.
+If the driver isn't running, reboot the machine.
 Run sc query GlobalSecureAccessDriver again.
-If the issue is not resolved, re-install the client.
+If the issue isn't resolved, reinstall the client.
 
 ### Client tray application running
 The GlobalSecureAccessClient.exe process runs the client UX (the system tray icon).
-If you cannot see the Global Secure Access icon in the system tray, you can run it from the following path:
+If you can't see the Global Secure Access icon in the system tray, you can run it from the following path:
 C:\Program Files\Global Secure Access Client\GlobalSecureAccessClient.exe
 
 ### Forwarding profile registry exists
 This test verifies that the following registry key exists:
 Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Global Secure Access Client\ForwardingProfile
 
-If the key does not exist, try to force forwarding policy retrieval:
+If the key doesn't exist, try to force forwarding policy retrieval:
 
-Delete the Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Global Secure Access Client\ForwardingProfileVersion registry key, if exists.
+Delete the Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Global Secure Access Client\ForwardingProfileVersion registry key, if it exists.
 Restart the service Global Secure Access Policy Retriever Service
 Check if the registry keys above were created.
 If not, look for errors in the event viewer.
@@ -94,34 +94,34 @@ If not, look for errors in the event viewer.
 ### Forwarding profile matches the expected schema
 This test verifies that the forwarding profile in the registry has a valid format that can be read by the client.
 
-If this test fails, make sure you are using the most updated forwarding profile of your tenant by following these steps:
+If this test fails, make sure you're using the most updated forwarding profile of your tenant by following these steps:
 
 Delete the Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Global Secure Access Client\ForwardingProfile registry key.
 Delete the Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Global Secure Access Client\ForwardingProfileVersion registry key.
 Restart the service Global Secure Access Policy Retriever Service
 Restart the client
 Run the client checker again
-If the steps above did not solve the problem, upgrade the client to the latest version.
+If the steps above don't solve the problem, upgrade the client to the latest version.
 
 If the problem still exists, contact Microsoft support.
 
 ### Breakglass mode disabled
-Break-glass mode allows the IT admin to stop the client from tunneling any network traffic to the Global Secure Access cloud service. This is done by unchecking all the traffic profiles in Global Secure Access portal, which results in a forwarding profile that does not contain rules to tunnel any traffic.
+Break-glass mode allows the IT admin to stop the client from tunneling any network traffic to the Global Secure Access cloud service. This is done by unchecking all the traffic profiles in Global Secure Access portal, which results in a forwarding profile that doesn't contain rules to tunnel any traffic.
 
-If break-glass mode is enabled, the client is not expected to tunnel any traffic.
+If break-glass mode is enabled, the client isn't expected to tunnel any traffic.
 
 If you would like the client to acquire traffic and send it to Global Secure Access service, enable at least one of the traffic profile according to your organization's needs.
-This setting can be modified by the tenant admin in the Entra portal, under Global Secure Access, Connect, Traffic forwarding .
+This setting can be modified by the tenant admin in the Entra portal, under Global Secure Access, Connect, Traffic forwarding.
 
 After the change in the portal, the updated forwarding profile should be received by the clients within 1 hour.
 
 ### Diagnostic URLs in forwarding profile
 This test is conducted for each channel activated in the forwarding profile, checking that the configuration contains a URI for probing the service's health. The health status can be viewed by double-clicking on the system tray icon.
-If this test fails, it is usually an internal problem in Global Secure Access and Microsoft support team needs to be contacted.
+If this test fails, it's usually an internal problem in Global Secure Access and Microsoft support team needs to be contacted.
 
 ### Authentication certificate exists
 This test verifies that a certificate exists on the device for mTLS connection to the Global Secure Access cloud service.
-Note: If this test doesn't appear, mTLS was not enabled for your tenant yet.
+Note: If this test doesn't appear, mTLS wasn't enabled for your tenant yet.
 
 If this test fails, try enrolling a new certificate by the following steps:
 
@@ -139,7 +139,7 @@ Run the health check tests again
 
 ### Authentication certificate is valid
 This test verifies that the Global Secure Access certificate (used for mTLS connection to the Global Secure Access cloud service) is valid.
-Note: If this test doesn't appear, mTLS was not enabled for your tenant yet.
+Note: If this test doesn't appear, mTLS wasn't enabled for your tenant yet.
 
 If this test fails, try enrolling a new certificate by the following steps:
 
@@ -159,18 +159,18 @@ image.png
 For the client to acquire network traffic by FQDN destination (as opposed to IP destination), the client needs to read the DNS requests sent by the device to the DNS server. Hence, DNS over HTTPS needs to be disabled, if the forwarding profile contains FQDNs rules.
 
 Secure DNS disabled in OS
-To disable DNS over HTTPS in Windows refer to this article .
+To disable DNS over HTTPS in Windows refer to this article.
 Note: this is a must for the health status of the client to work.
 
-DNS disabled in browsers (Edge, Chrome, Firefox)
-Secure DNS disabled in Edge
+DNS disabled in browsers (Microsoft Edge, Chrome, Firefox)
+Secure DNS disabled in Microsoft Edge
 To disable DNS over HTTPS in Microsoft Edge:
 
 Open Microsoft Edge
 At the top right, open the menu (…) and click Settings
 Click Privacy, search and services
 Scroll down to the Security section
-Turn off "Use secure DNS to specify how to lookup the network address for website"
+Turn off "Use secure DNS to specify how to look up the network address for website"
 Secure DNS disabled in Chrome
 To disable DNS over HTTPS in Google Chrome use the following instructions as described in this Google’s article  in the "Use a secure connection to look up sites' IP addresses" section.
 
@@ -180,7 +180,7 @@ Click Privacy and security
 Click Security.
 Turn off "Use Secure DNS".
 Secure DNS disabled in Firefox
-To disable DNS over HTTPS in Mozilla Firefox use the following instructions as described in this Mozilla's article .
+To disable DNS over HTTPS in Mozilla Firefox use the following instructions as described in this Mozilla article.
 
 Open Firefox.
 Click the menu button image.png at the top right of the screen.
@@ -188,17 +188,19 @@ Click Settings.
 Click Privacy & Security on the left.
 Scroll down to the DNS over HTTPS section.
 Click "Off"
-DNS Responsive
-A test that checks whether the DNS server that the OS is configured to work with is responsive, i.e. returns a DNS response.
+
+### DNS Responsive
+A test that checks whether the DNS server that the OS is configured to work with, returns a DNS response.
 
 If this test fails
 
 Pause the client.
 Check if the DNS server Windows is configured to work with is reachable. For example, try resolving "microsoft.com " using nslookup.
-Check that a firewall does not block traffic to the DNS server.
+Check that a firewall doesn't block traffic to the DNS server.
 Try to configure a different DNS server and test again.
 Resume the client.
-Magic IP received for FQDN
+
+### Magic IP received for FQDN
 This check verifies that the client is able to acquire traffic by FQDN.
 If the test fails:
 
@@ -206,19 +208,20 @@ Restart the client and test again.
 Restart Windows, this might be needed in some rare cases to delete volatile cache.
 (INTERNAL ONLY DOCUMENTATION: - a restart might be needed if magic IP range is exhausted or if the magic IP range changes)
 
-IPv4 preferred
-Global Secure Access does not support yet traffic acquisition for destinations with IPv6 address. It is recommended to configure prefer IPv4 over IPv6, if:
+### IPv4 preferred
+Global Secure Access doesn't yet support traffic acquisition for destinations with IPv6 addresses. We recommend that you configure the client to prefer IPv4 over IPv6, if:
+1. The forwarding profile is set to acquire traffic by IPv4 (as opposed to by FQDN).
+1. The FQDN that is resolved to this IP, is also resolved to an IPv6 address.
 
-The forwarding profile is set to acquire traffic by IPv4 (as opposed to by FQDN).
-The FQDN that is resolved to this IP, is also resolved to an IPv6 address.
-To configure prefer IPv4 over IPv6, set the following registry key.
+To configure the client to prefer IPv4 over IPv6, set the following registry key.
 
-HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip6\Parameters\
+``HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip6\Parameters\
 Name: DisabledComponents
 Type: REG_DWORD
-Value: 0x20 (Hex)
-Note: Changes of the registry value above require computer restart.
-More information can be found in this article .
+Value: 0x20 (Hex)``
+
+> [!IMPORTANT]
+> Changes of the registry value above require computer restart. For information, see [Guidance for configuring IPv6 in Windows for advanced users](https://learn.microsoft.com/troubleshoot/windows-server/networking/configure-ipv6-in-windows).
 
 Cached token
 This test verifies that the client authenticated successfully to Microsoft Entra.
@@ -233,14 +236,14 @@ If the sign-in notification doesn't appear, check if it is in the notification c
 image.png
 Then complete the sign in with Entra user of the same tenant that the device is joined to.
 image.png
-Make sure you are connected to the network.
-Hover the system tray icon and verify that the client is not disabled by your organization.
+Make sure you're connected to the network.
+Hover the system tray icon and verify that the client isn't disabled by your organization.
 image.png
 Restart the client and wait for few seconds.
 Look for errors in the event viewer.
-Edge hostnames are resolved by DNS
-If this test fails, the hostnames of the Global Secure Access cloud service cannot be resolved by the DNS and therefore the service is not reachable. This could be a problem of Internet connectivity or a DNS server that does not resolve public Internet hostnames.
-This test is conducted for all the different traffic types active for the user: M365, Private Access and Internet Access.
+Microsoft Edge hostnames are resolved by DNS
+If this test fails, the hostnames of the Global Secure Access cloud service can't be resolved by the DNS and therefore the service isn't reachable. This could be a problem of Internet connectivity or a DNS server that doesn't resolve public Internet hostnames.
+This test is conducted for all the different traffic types active for the user: Microsoft 365, Private Access, and Internet Access.
 
 To verify that the name resolution works correctly:
 
@@ -250,13 +253,13 @@ If the name resolution fails, try running: Resolve-DnsName -Name microsoft.com
 Verify the DNS servers configured for this machine ipconfig /all
 Consider setting another public DNS server.
 Edges are reachable
-If this test fails, the device does not have network connection to the Global Secure Access cloud service.
-This test is conducted for all the different traffic types active for the user: M365, Private Access and Internet Access.
+If this test fails, the device doesn't have network connection to the Global Secure Access cloud service.
+This test is conducted for all the different traffic types active for the user: Microsoft 365, Private Access, and Internet Access.
 
 If the test fails, possible reasons could be:
 
 Verify that the device has internet connection.
-Verify that the firewall or proxy does not block your connection to the edge.
+Verify that the firewall or proxy doesn't block your connection to the edge.
 Make sure IPv4 is active on the device. Currently the edge works only with an IPv4 address.
 Stop the client and retry Test-NetConnection -ComputerName <edge's fqdn> -Port 443.
 Try the PowerShell command from another device connected to the internet from a public network.
@@ -292,7 +295,7 @@ In case of a failure:
 
 Check the event viewer for errors.
 Restart the client and try again.
-GlobalSecureAccess Processes are healthy and not crashing in the last 24h
+GlobalSecureAccess Processes are healthy and not crashing in the last 24 hours.
 This indicates that at least one process of the client crashed in the last 24 hours.
 If all other tests pass, the client should be currently functioning but investigating the dump file of the process should be helpful to gain more stability in the future and to better understand why the process crashed.
 First, we need to ask Windows to generate dump files when a process crashes.
@@ -308,14 +311,14 @@ image.png
  Save filtered log as file (add it to the logs attached to the ticket)
 image.png
 QUIC not supported for Internet Access
-Since QUIC is not yet supported for Internet Access, traffic to ports 80 UDP and 443 UDP cannot be tunneled (note: It is supported in Private Access and M365 workloads).
+Since QUIC isn't yet supported for Internet Access, traffic to ports 80 UDP and 443 UDP can't be tunneled (note: It's supported in Private Access and Microsoft 365 workloads).
 
 Administrators can disable QUIC protocol triggering clients to fall back to HTTPS over TCP which is fully supported in Internet Access.
 
-QUIC disabled in Edge
+QUIC disabled in Microsoft Edge
 To disable QUIC in Microsoft Edge:
 
-Open Edge
+Open Microsoft Edge
 Access to: edge://flags/#enable-quic
 Choose Disable
 QUIC disabled in Chrome
