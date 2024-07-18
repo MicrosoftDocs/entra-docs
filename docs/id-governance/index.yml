@@ -39,7 +39,7 @@ landingContent:
           - text: Identity Governance service limits
             url: governance-service-limits.md                
   # Card
-  - title: Scenarois
+  - title: Scenarios
     linkLists:
       - linkListType: overview
         links:
