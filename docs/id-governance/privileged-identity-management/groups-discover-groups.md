@@ -49,7 +49,7 @@ You need appropriate permissions to bring groups in Microsoft Entra PIM. For rol
 
 Or, you can use the Groups pane to bring group under Privileged Identity Management.
 
-:::image type="content" source="media/pim-for-groups/enable-pim-group.png" alt-text="Screenshot of the Groups pane, so you can select a group to bring under management with PIM." lightbox="media/pim-for-groups/enable-pim-group":::
+:::image type="content" source="media/pim-for-groups/enable-pim-group.png" alt-text="Screenshot of the Groups pane, so you can select a group to bring under management with PIM." lightbox="media/pim-for-groups/enable-pim-group.png":::
 
 > [!IMPORTANT]
 > Once a group is managed, it can't be taken out of management. This prevents another resource administrator from removing PIM settings. If a group is deleted from Microsoft Entra ID, it may take up to 24 hours for the group to be removed from the **PIM for Groups** option.
