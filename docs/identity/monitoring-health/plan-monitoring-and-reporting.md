@@ -36,6 +36,7 @@ With Microsoft Entra monitoring, you can route logs to:
 
 * an Azure storage account for archival purposes.
 * Azure Monitor logs, where you can analyze the data, create dashboards, and alert on specific events.
+* [Microsoft Sentinel](/azure/sentinel/connect-azure-active-directory).
 * an Azure event hub where you can integrate with your existing SIEM tools such as Splunk, Sumologic, or QRadar.
 
 ### Prerequisites
