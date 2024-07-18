@@ -176,7 +176,7 @@ Validate that the issue has been resolved by checking for the **existence of thi
 ls ~/Library/Application\ Support/Google/Chrome/NativeMessagingHosts/com.microsoft.browsercore.json
 ```
 
-Alternatively, you can deploy the following script via your MDM or other automation tools to copy the JSON file to the correct location. This script should be run in the the user's context for each user who experiences the Chrome SSO issue:
+Alternatively, you can deploy the following script via your MDM or other automation tools to copy the JSON file to the correct location. This script should be run in the user's context for each user who experiences the Chrome SSO issue:
 
 ```zsh
 #!/usr/bin/env zsh

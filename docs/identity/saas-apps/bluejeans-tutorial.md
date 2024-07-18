@@ -203,7 +203,7 @@ The objective of this section is to create a user called B.Simon in BlueJeans fo
 	![Screenshot shows part of a browser window with the Admin tab selected, with Manage Users and Add Users selected.](./media/bluejeans-tutorial/add-user.png "Admin")
 
 	> [!IMPORTANT]
-	> The **ADD USER** tab is only available if, in the **SECUTIRY tab**, **Enable automatic provisioning** is unchecked.
+	> The **ADD USER** tab is only available if, in the **SECURITY tab**, **Enable automatic provisioning** is unchecked.
 
 3. In the **ADD USER** section, perform the following steps:
 
