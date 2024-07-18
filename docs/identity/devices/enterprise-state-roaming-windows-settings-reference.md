@@ -27,7 +27,7 @@ List of settings that can be configured to sync in recent Windows versions.
 | Inking & typing: Custom dictionary | sync (Windows 11 only) |
 | Keyboard: turn on toggle keys | sync|
 | Language: language profile | sync |
-| Language: Windows Display language | sync |
+| Language: Windows Display language <br> Allows other Microsoft products to be more personalized. | sync <br> (to account only) |
 | Mouse: Primary Mouse Button | sync |
 | Passwords: Web Credentials | sync |
 | Pen: Choose which hand you write with | sync |
