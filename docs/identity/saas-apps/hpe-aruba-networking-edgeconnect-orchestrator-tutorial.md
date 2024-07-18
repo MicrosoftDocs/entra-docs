@@ -81,7 +81,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
    c. Select **SAML** from the **Type** field.
 
-   d. In the **Name** field, enter a name for your your SAML configuration.
+   d. In the **Name** field, enter a name for your SAML configuration.
 
    e. Click the copy icon next to the **ACS URL** field.
 
