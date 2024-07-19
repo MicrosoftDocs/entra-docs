@@ -128,21 +128,22 @@ You can check the current PSSO state on your machine at any time by opening the 
 ### Contact us
 
 We'd love to hear your feedback. You should include the following information:
+- Sysdiagnose and diagnostic logs
+- Steps to reproduce the issue
+- Where applicable, include relevant screenshots and/or recordings
 
-- Apple logs
+#### Capturing Sysdiagnose and diagnostic logs
+1. Enable debug logs persistance by running the following command in Terminal.
 
     ```console
     sudo log config --mode "level:debug,persist:debug" --subsystem com.apple.AppSSO"
     ```
-
-- Diagnostic data
+2. Reproduce the issue, such that new logs are generated for the affected scenario. Please provide relevant timestamps in your issue report to assist in log investigation.
+3. Capture diagnostic data by running the following command in Terminal.
 
     ```console
     sudo sysdiagnose
     ```
-
-- Steps to reproduce the issue
-- Where applicable, include relevant screenshots and/or recordings
 
 ## Troubleshooting guide
 
