@@ -23,7 +23,7 @@ The following document describes how to migrate group writeback using Microsoft 
 > 
 > Also, this scenario is only supported for:
 > - cloud created [Security groups](../../../fundamentals/concept-learn-about-groups.md#group-types)
-> - these groups are written back with the AD groups scope of [universal](/windows-server/identity/ad-ds/manage/understand-security-groups#group-scope).
+> - groups written back to AD with scope of [universal](/windows-server/identity/ad-ds/manage/understand-security-groups#group-scope).
 >
 > Mail-enabled groups and DLs written back to AD continue to work with Microsoft Entra Connect group writeback but will revert to the behavior of group writeback V1, so in this scenario, after disabling group writeback V2 all M365 groups will be written back to AD independently of the Writeback Enabled setting in Entra admin center. For more information, see the [Provisioning to Active Directory with Microsoft Entra Cloud Sync FAQ](reference-provision-to-active-directory-faq.yml).
 
