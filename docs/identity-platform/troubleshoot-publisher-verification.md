@@ -12,27 +12,29 @@ ms.topic: troubleshooting
 ---
 
 # Troubleshoot publisher verification
-If you're unable to complete the process or are experiencing unexpected behavior with [publisher verification](publisher-verification-overview.md), you should start by doing the following if you're receiving errors or seeing unexpected behavior: 
+
+If you're unable to complete the process, see error messages, or experience unexpected behavior with [publisher verification](publisher-verification-overview.md), follow these steps to troubleshoot the issue: 
 
 1. Review the [requirements](publisher-verification-overview.md#requirements) and ensure they've all been met.
 1. Review the instructions to [mark an app as publisher verified](mark-app-as-publisher-verified.md) and ensure all steps have been performed successfully.
 1. Review the list of [common issues](#common-issues).
 1. Reproduce the request using [Graph Explorer](#making-microsoft-graph-api-calls) to gather more info and rule out any issues in the UI.
 
-## Common Issues
-Below are some common issues that may occur during the process. 
+## Common issues
 
-- **I don’t know my Cloud Partner Program ID (Partner One ID) or I don’t know who the primary contact for the account is.** 
+Here are some common issues that may occur during the process of publisher verification: 
+
+- **I don't know my Cloud Partner Program ID (Partner One ID) or I don't know who the primary contact for the account is.** 
     1. Navigate to the [Cloud Partner Program enrollment page](https://partner.microsoft.com/dashboard/account/v3/enrollment/joinnow/basicpartnernetwork/new).
     1. Sign in with a user account in the org's primary Microsoft Entra tenant. 
-    1. If a Cloud Partner Program account already exists, this is recognized and you are added to the account. 
-    1. Navigate to the [partner profile page](https://partner.microsoft.com/pcv/accountsettings/connectedpartnerprofile) where the Partner One ID and primary account contact will be listed.
+    1. If a Cloud Partner Program account already exists, this account is recognized and you are added to the account. 
+    1. Navigate to the [partner profile page](https://partner.microsoft.com/pcv/accountsettings/connectedpartnerprofile) where the Partner One ID and primary account contact are listed.
 
-- **I don’t know who my Microsoft Entra Global Administrator (also known as company admin or tenant admin) is, how do I find them? What about the Application Administrator or Cloud Application Administrator?**
+- **I don't know who my Microsoft Entra Global Administrator (also known as company admin or tenant admin) is, how do I find them? What about the Application Administrator or Cloud Application Administrator?**
     1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Adminstrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
     1. Browse to **Identity** > **Roles & admins** > **Roles & admins**.
     1. Select the desired admin role.
-    1. The list of users assigned that role will be displayed.
+    1. The list of users assigned that role are displayed.
 
 - **I don't know who the admin(s) for my CPP account are**
     Go to the [CPP User Management page](https://partner.microsoft.com/pcv/users) and filter the user list to see what users are in various admin roles.
@@ -132,20 +134,20 @@ HTTP/1.1 200 OK
 
 ## Error Reference 
 
-The following is a list of the potential error codes you may receive, either when troubleshooting with Microsoft Graph or going through the process in the app registration portal.
+The following list shows the potential error codes you may receive, either when troubleshooting with Microsoft Graph or going through the process in the app registration portal.
 
 ### MPNAccountNotFoundOrNoAccess
 
-The Partner One ID you provided (`MPNID`) doesn't exist, or you don't have access to it. Provide a valid Partner One ID and try again.
+The Partner One ID you provided (`MPNID`) doesn't exist or you don't have access to it. Provide a valid Partner One ID and try again.
     
-Most commonly caused by the signed-in user not being a member of the proper role for the CPP account in Partner Center- see [requirements](publisher-verification-overview.md#requirements) for a list of eligible roles and see [common issues](#common-issues) for more information. Can also be caused by the tenant the app is registered in not being added to the CPP account, or an invalid Partner One ID.
+Most commonly caused by the signed-in user not being a member of the proper role for the CPP account in Partner Center. See [requirements](publisher-verification-overview.md#requirements) for a list of eligible roles and see [common issues](#common-issues) for more info. This error may also be due to the tenant (where the app is registered in) not being added to the CPP account, or an invalid Partner One ID.
 
 **Remediation Steps**
 1. Go to your [partner profile](https://partner.microsoft.com/pcv/accountsettings/connectedpartnerprofile) and verify that: 
 
     - The Partner One ID is correct. 
     - There are no errors or "pending actions" shown, and the verification status under Legal business profile and Partner info both say "authorized" or "success".
-1. Go to the [CPP tenant management page](https://partner.microsoft.com/dashboard/account/v3/tenantmanagement) and confirm that the tenant the app is registered in and that you're signing with a user account from is on the list of associated tenants. To add another tenant, follow the [multi-tenant-account instructions](/partner-center/multi-tenant-account). All Global Administrators of any tenant you add will be granted Global Administrator privileges on your Partner Center account.
+1. Go to the [CPP tenant management page](https://partner.microsoft.com/dashboard/account/v3/tenantmanagement) and confirm that the tenant the app is registered in and that you're signing with a user account from is on the list of associated tenants. To add another tenant, follow the [multi-tenant-account instructions](/partner-center/multi-tenant-account). All Global Administrators of any tenant you add are granted Global Administrator privileges on your Partner Center account.
 1. Go to the [CPP User Management page](https://partner.microsoft.com/pcv/users) and confirm the user you're signing in as is either a Global Administrator, MPN Admin, or Accounts Admin. To add a user to a role in Partner Center, follow the instructions for [creating user accounts and setting permissions](/partner-center/create-user-accounts-and-set-permissions).
 
 ### MPNGlobalAccountNotFound
@@ -291,7 +293,7 @@ Occurs when a consumer account is used for app registration (Hotmail, Messenger,
 
 Occurs when multifactor authentication (MFA) hasn't been enabled and performed before attempting to add a verified publisher to the app. See [common issues](#common-issues) for more information. Note: MFA must be performed in the same session when attempting to add a verified publisher. If MFA is enabled but not required to be performed in the session, the request fails. 
 
-The error message displayed will be: "Due to a configuration change made by your administrator, or because you moved to a new location, you must use multifactor authentication to proceed."
+The error message displayed is: "Due to a configuration change made by your administrator, or because you moved to a new location, you must use multifactor authentication to proceed."
 
 **Remediation Steps**
 1. Ensure [multifactor authentication](~/identity/authentication/concept-mfa-licensing.md) is enabled and **required** for the user you're signing in with and for this scenario
@@ -301,7 +303,7 @@ The error message displayed will be: "Due to a configuration change made by your
 
 Error: "You're unable to add a verified publisher to this application. Contact your administrator for assistance." 
 
-When a request to add a verified publisher is made, many signals are used to make a security risk assessment. If the user risk state is determined to be ‘AtRisk’, the above error will be returned. Investigate the user risk and take the appropriate steps to remediate the risk (guidance below): 
+When a request to add a verified publisher is made, many signals are used to make a security risk assessment. If the user risk state is determined to be ‘AtRisk’, the above error is returned. Investigate the user risk and take the appropriate steps to remediate the risk (guidance below): 
 
 **Remediation Steps**
 > [Investigate risk](~/id-protection/howto-identity-protection-investigate-risk.md#risky-users)
@@ -319,7 +321,7 @@ When a request to add a verified publisher is made, many signals are used to mak
 
 Error: "A verified publisher cannot be added to this application. Please contact your administrator for assistance."
 
-When a request to add a verified publisher is made, many signals are used to make a security risk assessment. If a request is determined to be risky, the above error will be returned. For security reasons, Microsoft doesn't disclose the specific criteria used to determine whether a request is risky or not.
+When a request to add a verified publisher is made, many signals are used to make a security risk assessment. If a request is determined to be risky, the above error is returned. For security reasons, Microsoft doesn't disclose the specific criteria used to determine whether a request is risky or not.
 
 **Remediation Steps**
 > If you believe the "risky" assessment is incorrect, try resubmitting the verification request the next day. It may take some time for the risk state to update.
