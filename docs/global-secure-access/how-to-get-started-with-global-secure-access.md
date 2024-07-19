@@ -20,7 +20,7 @@ Administrators who interact with **Global Secure Access** features must have the
 
 To follow the [Zero Trust principle of least privilege](/security/zero-trust/), consider using [Privileged Identity Management (PIM)](/azure/active-directory/privileged-identity-management/pim-configure) to activate just-in-time privileged role assignments.
 
-The product requires licensing. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense). To use the Microsoft traffic forwarding profile, a Microsoft 365 E3 license is recommended. After general availability, Microsoft Entra Private Access and Microsoft Entra Internet Access might require different licenses.
+The product requires licensing. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense). To use the Microsoft traffic forwarding profile, a Microsoft 365 E3 license is recommended.
 
 There might be limitations with some features of the Global Secure Access, which are defined in the associated articles.
 
@@ -80,7 +80,7 @@ Create specific private apps for granular segmented access to private access res
 
 ![Diagram of the Global Secure Access app traffic flow for private resources.](media/how-to-get-started-with-global-secure-access/private-access-diagram-global-secure-access.png)
 
-1. [Configure an private network connector and connector group](how-to-configure-connectors.md).
+1. [Configure a private network connector and connector group](how-to-configure-connectors.md).
 1. [Create a private Global Secure Access application](how-to-configure-per-app-access.md).
 1. [Enable the Private Access traffic forwarding profile](how-to-manage-private-access-profile.md).
 1. [Install and configure the Global Secure Access Client on end-user devices](how-to-install-windows-client.md).
@@ -98,4 +98,4 @@ Optionally:
 
 To get started with Microsoft Entra Internet Access, start by [enabling the Microsoft traffic forwarding profile](how-to-manage-microsoft-profile.md).
 
-To get started with Microsoft Entra Private Access, start by [configuring an private network connector group for the Quick Access app](how-to-configure-connectors.md).
+To get started with Microsoft Entra Private Access, start by [configuring a private network connector group for the Quick Access app](how-to-configure-connectors.md).

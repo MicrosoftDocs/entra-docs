@@ -3,7 +3,7 @@ title: Global Secure Access and universal tenant restrictions
 description: Learn about how Global Secure Access secures access to your corporate network by restricting access to external tenants.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 05/09/2024
+ms.date: 07/17/2024
 ms.author: kenwith
 author: kenwith
 manager: amycolannino
@@ -58,7 +58,7 @@ For more information to configure these policies, see the article [Set up tenant
 Once you have created the tenant restriction v2 policies, you can utilize Global Secure Access to apply tagging for tenant restrictions v2. An administrator with both the [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference) and [Security Administrator](/azure/active-directory/roles/permissions-reference#security-administrator) roles must take the following steps to enable enforcement with Global Secure Access.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
-1. Browse to **Global Secure Access** > **Global Settings** > **Session Management** > **Tenant Restrictions**.
+1. Browse to **Global Secure Access** > **Settings** > **Session Management** > **Tenant Restrictions**.
 1. Select the toggle to **Enable tagging to enforce tenant restrictions on your network**.
 1. Select **Save**.
 
@@ -75,7 +75,7 @@ Tenant restrictions are not enforced when a user (or a guest user) in tries to a
 
 ### Validate the authentication plane protection
 
-1. Ensure that Universal Tenant Restrictions signaling is turned off in Global Secure Access global settings.
+1. Ensure that Universal Tenant Restrictions signaling is turned off in Global Secure Access settings.
 1. Use your browser to navigate to `https://myapps.microsoft.com/` and sign in with the identity from a tenant different than yours that isn't allow-listed in a tenant restrictions v2 policy. Note that you may need to use a private browser window and/or log out of your primary account to perform this step.
    1. For example, if your tenant is Contoso, sign in as a Fabrikam user in the Fabrikam tenant. 
    1. The Fabrikam user should be able to access the MyApps portal, since Tenant Restrictions signaling is disabled in Global Secure Access.
@@ -87,7 +87,7 @@ Tenant restrictions are not enforced when a user (or a guest user) in tries to a
 
 ### Validate the data plane protection
 
-1. Ensure that the Universal Tenant Restrictions signaling is turned off in Global Secure Access global settings.
+1. Ensure that the Universal Tenant Restrictions signaling is turned off in Global Secure Access settings.
 1. Use your browser to navigate to `https://yourcompany.sharepoint.com/` and sign in with the identity from a tenant different than yours that isn't allow-listed in a tenant restrictions v2 policy. Note that you may need to use a private browser window and/or log out of your primary account to perform this step.
    1. For example, if your tenant is Contoso, sign in as a Fabrikam user in the Fabrikam tenant. 
    1. The Fabrikam user should be able to access SharePoint, since Tenant Restrictions signaling is disabled in Global Secure Access.
@@ -102,8 +102,6 @@ Tenant restrictions are not enforced when a user (or a guest user) in tries to a
    1. In the same response, check the headers for the following information identifying that universal tenant restrictions were applied:
       1. `Restrict-Access-Confirm: 1`
       1. `x-ms-diagnostics: 2000020;reason="xms_trpid claim was not present but sec-tenant-restriction-access-policy header was in requres";error_category="insufficiant_claims"`
-
-
 
 ## Next steps
 

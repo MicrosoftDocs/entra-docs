@@ -23,12 +23,17 @@
     {
       "source_path_from_root": "/docs/id-protection/reference-identity-protection-glossary.md",
       "redirect_url": "/entra/id-protection/overview-identity-protection",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/id-protection/concept-identity-protection-security-overview.md",
       "redirect_url": "/entra/id-protection/id-protection-dashboard",
       "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/id-protection/troubleshooting-identity-protection-faq.yml",
+      "redirect_url": "/entra/id-protection/overview-identity-protection",
+      "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/fundamentals/licensing-preview-terms.md",

@@ -35,10 +35,6 @@ sections:
           Can I manage Global Secure Access with Microsoft Graph APIs?
         answer: |
           Yes, there's a set of Microsoft Graph APIs available to manage aspects of Microsoft Entra Internet Access and Microsoft Entra Private Access. For more information about these APIs, see the article [Secure access to cloud, public, and private apps using Microsoft Graph network access APIs](/graph/api/resources/networkaccess-global-secure-access-api-overview).
-      - question: | 
-          Does Global Secure Access support Transmission Control Protocol (TCP) and User Datagram Protocol (UDP)?
-        answer: |
-          At this time, only TCP is supported. UDP support is under development.
   - name: Private Access
     questions:
         - question: |

@@ -240,6 +240,8 @@ New-MgEntitlementManagementAssignmentPolicy -BodyParameter $pparams
 
 ```
 
+For more information, see [Create an access package in entitlement management for an application with a single role using PowerShell](entitlement-management-access-package-create-app.md).
+
 ## Next steps
 
 - [Share a link to request an access package](entitlement-management-access-package-settings.md)

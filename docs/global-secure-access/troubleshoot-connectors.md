@@ -185,7 +185,7 @@ Yes, this scenario is supported starting from the connector version 1.5.1526.0. 
     
 **Should I create a dedicated account to register the connector with Microsoft Entra application proxy?**
 
-There's no reason to. Any Global Administrator or application administrator account works. The credentials entered during installation aren't used after the registration process. Instead, a certificate is issued to the connector, which is used for authentication from that point on.
+There's no reason to create a dedicated account. Any account with the Application Administrator role works. The credentials entered during installation aren't used after the registration process. Instead, a certificate is issued to the connector, which is used for authentication from that point on.
 
 **How can I monitor the performance of the Microsoft Entra private network connector?**
 
