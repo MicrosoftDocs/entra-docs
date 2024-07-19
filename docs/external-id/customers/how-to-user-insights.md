@@ -81,7 +81,7 @@ The **Requests** dashboard gives you a summary of monthly requests for all your 
 
 ### Authentications dashboard
 
-The **Authentications** dashboard gives you a summary of daily and monthly authentications in your tenant. For this dataset, you'll be able to view the following trends
+The **Authentications** dashboard gives you a summary of daily and monthly authentications in your tenant. For this dataset, you'll be able to view the following trends.
 
 - Daily authentications over a period of 30 days.
 - Daily authentications breakdown by operating system.
@@ -92,7 +92,9 @@ The **Authentications** dashboard gives you a summary of daily and monthly authe
 <!---New content --->
 ## Customize your dashboards
 
-The Application user activity dashboards provide easy-to-digest graphs and charts but have limited customization options. Microsoft Graph APIs enable you to build powerful, customized dashboards with data tailored to your specific needs and preferences. This has some advantages: 
+The Application user activity dashboards provide easy-to-digest graphs and charts but have limited customization options. These dashboards are available in the Microsoft Entra admin center and accessible via Microsoft Graph APIs, which are currently in beta.
+
+Microsoft Graph APIs enable you to build powerful, customized dashboards that you can tailor to your specific needs and preferences. This has some advantages:
 
 - **Flexibility**: You can integrate with other data sources to present your data in a way that aligns more with your business objectives.
 - **Enhanced visualization**: You can have richer and more interactive visual representations of your data.
@@ -100,23 +102,29 @@ The Application user activity dashboards provide easy-to-digest graphs and chart
 
 To build your own user insights dashboard, you need to configure API permissions for Microsoft Graph. You can then use the Microsoft Graph API to access the data and build custom reports in your preferred analytics tool. We recommend using Power BI to visualize the data, but you can choose any other analytical tool you prefer.
 
+### Configure API permissions
 
-### Set up External ID 
-To build your own user insights dashboard, you'll need to configure API permissions for Microsoft Graph.  
+To build your own user insights dashboard, you need to [configure API permissions for Microsoft Graph](/graph/auth-v2-service) and add the `Insights-UserMetric.Read.All` permission to your registered app.
 
+    :::image type="content" source="media/how-to-user-insights/insights-permission.png" alt-text="Screenshot of requesting API permissions.":::
 
+You also have to [generate a client secret](/entra/identity-platform/howto-create-service-principal-portal#option-3-create-a-new-client-secret) and get an [access token](/graph/auth-v2-service?tabs=http#4-request-an-access-token) to interact with Microsoft Graph.  
 
-### Create a Power BI report 
-To visualize your custom built user insights dashboard we can use Power BI to visualize the data. You can use Power BI desktop or Power BI service. Alternatively, you can choose any other analytical tool you prefer. 
+Once you have successfully created your access token, you can use the Microsoft Graph API to access the data and build custom reports.
 
-https://learn.microsoft.com/en-us/power-bi/connect-data/desktop-connect-to-data
+### Create a custom Power BI report 
 
-Power BI comes with Power Query Editor that can help you clean and shape your data: 
-https://learn.microsoft.com/en-us/power-bi/transform-model/desktop-query-overview
+To fetch the user insights data you can create a Power BI report using [custom connectors](/power-bi/connect-data/desktop-connect-to-data). Here's how you can do it:
 
+1. Create a new blank Power BI report.
+1. Create a [custom connector](/power-bi/connect-data/desktop-connect-to-data) and enter the URL for the Microsoft Graph API endpoint you want to query. For example: https://graph.microsoft.com/beta/reports/userinsights/monthly/activeUsers for monthly active users data. 
+1. Add your access token by selecting **Advanced**. 
+1. In the **HTTP request header parameters (optional)** section, select Authorization in the drop-down list and enter your access token.
+1. Select **OK** to connect Power BI to the Microsoft Graph API and load the data. 
 
+    :::image type="content" source="media/how-to-user-insights/add-token.png" alt-text="Screenshot of adding a token.":::
 
-
+Power BI comes with Power Query Editor that can help you clean and shape your data. You can remove unnecessary columns, handle missing values, and apply transformations such as merging, grouping, filtering, and many more. For more information, see the [Query Editor overview](/power-bi/transform-model/desktop-query-overview).
 
 
 ## Related content
