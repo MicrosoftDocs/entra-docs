@@ -79,7 +79,7 @@ items:
         href: how-to-target-resource-private-access-apps.md
       - name: Source IP restoration
         href: how-to-source-ip-restoration.md
-      - name: Universal tenant restrictions
+      - name: Universal Tenant Restrictions
         href: how-to-universal-tenant-restrictions.md
   - name: Traffic forwarding profiles
     expanded: false

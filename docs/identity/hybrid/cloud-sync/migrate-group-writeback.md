@@ -18,15 +18,13 @@ ms.author: billmath
 
 The following document describes how to migrate group writeback using Microsoft Entra Connect Sync (formerly Azure AD Connect) to Microsoft Entra Cloud Sync. This scenario is **only** for customers who are currently using Microsoft Entra Connect group writeback v2. The process outlined in this document pertains only to cloud-created security groups that are written back with a universal scope.
 
->[!IMPORTANT]
->This scenario is **only** for customers who are currently using Microsoft Entra Connect group writeback v2
->
->Also, this scenario is only supported for:
->   - cloud created [Security groups](../../../fundamentals/concept-learn-about-groups.md#group-types)
->   - these groups are written back with the AD groups scope of [universal](/windows-server/identity/ad-ds/manage/understand-security-groups#group-scope).
->
->Mail-enabled groups and DLs written back using Microsoft Entra Connect group writeback V1 or V2 aren't applicable for this scenario and are not affected by this migration. For more information, see the [Provisioning to Active Directory with Microsoft Entra Cloud Sync FAQ](reference-provision-to-active-directory-faq.yml).
+> [!IMPORTANT]
+> This scenario is **only** for customers who are currently using Microsoft Entra Connect group writeback v2
+> > Also, this scenario is only supported for:
+- cloud created [Security groups](../../../fundamentals/concept-learn-about-groups.md#group-types)
+  - these groups are written back with the AD groups scope of [universal](/windows-server/identity/ad-ds/manage/understand-security-groups#group-scope).
 
+> Mail-enabled groups and DLs written back to AD continue to work with Microsoft Entra Connect group writeback but will revert to the behavior of group writeback V1, so in this scenario, after disabling group writeback V2 all M365 groups will be written back to AD independently of the Writeback Enabled setting in Entra admin center. For more information, see the [Provisioning to Active Directory with Microsoft Entra Cloud Sync FAQ](reference-provision-to-active-directory-faq.yml).
 ## Prerequisites
 The following prerequisites are required to implement this scenario.
 
@@ -202,12 +200,14 @@ You also need an outbound sync rule with a link type of JoinNoFlow and the scopi
    Start-ADSyncSyncCycle -PolicyType Initial
    ``` 
 
-4. Disable the group writeback feature for the tenant: 
+1. Disable the group writeback feature for the tenant: 
 
+   > [!WARNING]
+   > This operation is irreversible. After disabling group writeback V2, all Microsoft 365 groups will be written back to AD, independently of the Writeback Enabled setting in Entra admin center.
    ``` PowerShell 
    Set-ADSyncAADCompanyFeature -GroupWritebackV2 $false 
-   ``` 
-
+   ```
+   
 5. Run a full sync cycle (yes again):
 
    ``` PowerShell 
