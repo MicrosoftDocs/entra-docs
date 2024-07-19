@@ -52,7 +52,7 @@ This workbook doesn't require that you create any Conditional Access policies, e
 1. Browse to **Identity** > **Monitoring & health** > **Workbooks**.
 1. Select the **Impact analysis of risk-based access policies** workbook under **Identity Protection**.
 
-### Navigating the workbook
+### Navigate the workbook
 
 Once you are in the workbook, there are a couple of parameters on the top right corner. You can set from which workspace the workbook is populated, and turn the guide on or off. 
 
@@ -78,7 +78,7 @@ User risk scenarios three and four are going to help you if you already have som
 
 #### Sign-in risk scenarios
 
-:::image type="content" source="media/workbook-risk-based-policy-impact/workbook-risk-based-impact-sign-in.png" alt-text="Screenshot showing the sign-in risk sections of the workbook" lightbox="media/workbook-risk-based-policy-impact/workbook-risk-based-impact-sign-in.png":::
+:::image type="content" source="media/workbook-risk-based-policy-impact/workbook-risk-based-impact-sign-in.png" alt-text="Screenshot showing the sign-in risk sections of the workbook." lightbox="media/workbook-risk-based-policy-impact/workbook-risk-based-impact-sign-in.png":::
 
 Next, let us look at sign-in risk scenarios three and four. If you use MFA, you'll likely have activity here even if you don't have any risk-based access policies enabled. Sign-in risks are automatically remediated when MFA is performed successfully. Scenario four looks at the high-risk sign-ins that weren't successful due to risk-based access policies. If you have policies enabled, but are still seeing sign-ins you expect to be blocked or remediated with MFA, you might have gaps in your policies. If that is the case, we recommend reviewing your policies and using the details section of this workbook to help investigate any gaps. 
 
