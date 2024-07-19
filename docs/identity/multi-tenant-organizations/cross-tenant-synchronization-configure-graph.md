@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: multitenant-organizations
 ms.topic: how-to
-ms.date: 04/23/2024
+ms.date: 07/19/2024
 ms.author: rolyon
 ms.custom: it-pro
 
@@ -63,7 +63,7 @@ This article describes the key steps to configure cross-tenant synchronization u
 
 # [Microsoft Graph](#tab/ms-graph)
 
-These steps describe how to use Microsoft Graph Explorer, but you can also use Postman, or another REST API client.
+These steps describe how to use Microsoft Graph Explorer, but you can also use another REST API client.
 
 1. Start [Microsoft Graph Explorer tool](https://aka.ms/ge).
 
