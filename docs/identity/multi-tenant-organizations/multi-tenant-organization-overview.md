@@ -127,7 +127,7 @@ Administrators staying in control of their resources is a guiding principle for 
 
 - Cross-tenant access identity synchronization
 
-    For more information, see [Configure cross-tenant synchronization](cross-tenant-synchronization-configure.md) and [CrossTenantIdentitySyncPolicyPartner resource type](/graph/api/resources/crosstenantidentitysyncpolicypartner).
+    For more information, see [Configure cross-tenant synchronization](cross-tenant-synchronization-configure.md) and [crossTenantIdentitySyncPolicyPartner resource type](/graph/api/resources/crosstenantidentitysyncpolicypartner).
 
 ## Templates for cross-tenant access settings
 
