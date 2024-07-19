@@ -21,7 +21,7 @@ Microsoft Entra ID allows passkeys to be used for passwordless authentication. T
 
 ## Native application support
 
-The following sections cover support for Microsoft and third-party applications. 
+The following sections cover support for Microsoft and third-party applications. Passkey (FIDO2) authentication with a third-party Identity Provider (IDP) isn't supported in third-party applications using authentication broker, or Microsoft applications on macOS, iOS, or Android at this time.
 
 ### Native application support with authentication broker (preview)
 
@@ -43,7 +43,7 @@ If a user installed an authentication broker, they can choose to sign in with a 
 
 ### Microsoft application support without authentication broker (preview)
 
-The following table lists Microsoft application support for passkey (FIDO2) without an authentication broker. Passkey (FIDO2) authentication with a third-party Identity Provider (IDP) isn't supported in Microsoft applications on macOS, iOS, or Android at this time.
+The following table lists Microsoft application support for passkey (FIDO2) without an authentication broker. 
 
 | Application    | macOS    | iOS      | Android  |
 |----------------|----------|----------|----------|
@@ -51,7 +51,7 @@ The following table lists Microsoft application support for passkey (FIDO2) with
 
 ### Third-party application support without authentication broker
 
-If the user has yet to install an authentication broker, they can still sign in with a security key when they access MSAL-enabled applications. For more information about requirements for MSAL-enabled applications, see [Support passwordless authentication with FIDO2 keys in apps you develop](~/identity-platform/support-fido2-authentication.md).
+If the user has yet to install an authentication broker, they can still sign in with a passkey when they access MSAL-enabled applications. For more information about requirements for MSAL-enabled applications, see [Support passwordless authentication with FIDO2 keys in apps you develop](~/identity-platform/support-fido2-authentication.md).
 
 ## Web browser support
 
