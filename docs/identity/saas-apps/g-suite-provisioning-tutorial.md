@@ -291,7 +291,8 @@ With PIM for Groups, you can provide just-in-time access to groups in Google Clo
 1. Use on-demand provisioning to create the group in Google Cloud / Google Workspace.
 1. Sign-in to Google Cloud / Google Workspace and assign the second group the necessary permissions to perform admin tasks.  
 
-Now any end user that was made eligible for the group in PIM can get JIT access to the group in Google Cloud / Google Workspace by [activating their group membership](/azure/active-directory/privileged-identity-management/groups-activate-roles#activate-a-role). When their assignment expires, the user will be removed from the group in Google Cloud / Google Workspace. Note that during the next incremental cycle, the provisioning service will attempt to remove the user from the group again. This may result in a failure in the provisioning logs. This failure is expected and can be ignored.
+Now any end user that was made eligible for the group in PIM can get JIT access to the group in Google Cloud / Google Workspace by [activating their group membership](/azure/active-directory/privileged-identity-management/groups-activate-roles#activate-a-role). When their assignment expires, the user will be removed from the group in Google Cloud / Google Workspace. Note that during the next incremental cycle, the provisioning service will attempt to remove the user from the group again. This may result in an error in the provisioning logs. This failure is expected because the group membership 
+was already removed. The error message can be ignored. 
 
 * How long does it take to have a user provisioned to the application? 
   * When a user is added to a group in Microsoft Entra ID outside of activating their group membership using Microsoft Entra ID Privileged Identity Management (PIM):
