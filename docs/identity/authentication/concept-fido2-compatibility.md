@@ -47,7 +47,7 @@ The following table lists Microsoft application support for passkey (FIDO2) with
 
 | Application    | macOS    | iOS      | Android  |
 |----------------|----------|----------|----------|
-| [Remote Desktop](/azure/virtual-desktop/compare-remote-desktop-clients#cloud-service-authentication) | &#x2705; | &#x2705; | &#10060; |
+| [Remote Desktop](https://learn.microsoft.com/azure/virtual-desktop/compare-remote-desktop-clients?pivots=azure-virtual-desktop#cloud-service-authentication) | &#x2705; | &#x2705; | &#10060; |
 
 ### Third-party application support without authentication broker
 
