@@ -4,12 +4,10 @@ description: Describes how to troubleshoot publisher verification for the Micros
 author: rwike77
 manager: CelesteDG
 ms.author: ryanwi
-ms.custom: 
-ms.date: 04/10/2024
-ms.reviewer:
+ms.date: 07/19/2024
 ms.service: identity-platform
-
 ms.topic: troubleshooting
+
 #Customer intent: As a developer troubleshooting publisher verification, I want to understand the common issues and potential error codes related to the process, so that I can resolve any issues and successfully complete the verification for my application.
 ---
 
@@ -55,7 +53,7 @@ Below are some common issues that may occur during the process.
 
 If you're having an issue but unable to understand why based on what you are seeing in the UI, it may be helpful to perform further troubleshooting by using Microsoft Graph calls to perform the same operations you can perform in the App Registration portal.
 
-The easiest way to make these requests is to use [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer). You may also consider other options like using [Postman](https://www.postman.com/), or using PowerShell to [invoke a web request](/powershell/module/microsoft.powershell.utility/invoke-webrequest).  
+The easiest way to make these requests is to use [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer). You may also consider other options like PowerShell to [invoke a web request](/powershell/module/microsoft.powershell.utility/invoke-webrequest).  
 
 You can use Microsoft Graph to both set and unset your app’s verified publisher and check the result after performing one of these operations. The result can be seen on both the [application](/graph/api/resources/application) object corresponding to your app registration and any [service principals](/graph/api/resources/serviceprincipal) that have been instantiated from that app. For more information on the relationship between those objects, see: [Application and service principal objects in Microsoft Entra ID](app-objects-and-service-principals.md).  
 
