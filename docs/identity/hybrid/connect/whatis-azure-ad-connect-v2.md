@@ -49,6 +49,17 @@ SQL Server 2019 requires the Visual C++ Redist 14 runtime, so we're updating the
 
 ### TLS 1.2 
 
+>[!IMPORTANT]
+>Version 2.3.20.0 is a security update. With this update, Microsoft Entra Connect requires TLS 1.2.  Ensure that you have TLS 1.2 enabled before updating to this version.
+> 
+> All versions of Windows Server that are supported for Microsoft Entra Connect V2.0 already default to TLS 1.2. If TLS 1.2 is not enabled on your server you will need to enable this before you can deploy Microsoft Entra Connect V2.0.
+>
+>For a PowerShell script to check whether TLS 1.2 is enabled, see [PowerShell script to check TLS](reference-connect-tls-enforcement.md#powershell-script-to-check-tls-12)
+>
+>For more information about TLS 1.2, see [Microsoft Security Advisory 2960358](/security-updates/SecurityAdvisories/2015/2960358).
+>For more information on enabling TLS 1.2, see [how to enable TLS 1.2](reference-connect-tls-enforcement.md)
+
+
 TLS1.0 and TLS 1.1 are protocols that are deemed unsafe. Microsoft is deprecating them. This release of Microsoft Entra Connect only supports TLS 1.2. 
 All versions of Windows Server that are supported for Microsoft Entra Connect V2 already default to TLS 1.2. If your server doesn't support TLS 1.2 you'll need to enable this before you can deploy Microsoft Entra Connect V2. For more information, see [TLS 1.2 enforcement for Microsoft Entra Connect](reference-connect-tls-enforcement.md).
 
