@@ -18,6 +18,10 @@ ms.author: billmath
 
 Transport Layer Security (TLS) protocol version 1.2 is a cryptography protocol that is designed to provide  secure communications. The TLS protocol aims primarily to provide privacy and data integrity. TLS has gone through many iterations, with version 1.2 being defined in [RFC 5246](https://tools.ietf.org/html/rfc5246). Microsoft Entra Connect version 1.2.65.0 and later now fully support using only TLS 1.2 for communications with Azure. This article provides information about how to force your Microsoft Entra Connect server to use only TLS 1.2.
 
+>[!IMPORTANT]
+>Version 2.3.20.0 requires TLS 1.2.  Ensure that you have TLS 1.2 enabled before updating to this version.
+
+
 > [!NOTE]
 > All versions of Windows Server that are supported for Microsoft Entra Connect V2.0 already default to TLS 1.2. If TLS 1.2 is not enabled on your server you will need to enable this before you can deploy Microsoft Entra Connect V2.0.
 
