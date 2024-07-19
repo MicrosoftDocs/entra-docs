@@ -106,7 +106,7 @@ To build your own user insights dashboard, you need to configure API permissions
 
 To build your own user insights dashboard, you need to [configure API permissions for Microsoft Graph](/graph/auth-v2-service) and add the `Insights-UserMetric.Read.All` permission to your registered app.
 
-    :::image type="content" source="media/how-to-user-insights/insights-permission.png" alt-text="Screenshot of requesting API permissions.":::
+:::image type="content" source="media/how-to-user-insights/insights-permission.png" alt-text="Screenshot of requesting API permissions.":::
 
 You also have to [generate a client secret](/entra/identity-platform/howto-create-service-principal-portal#option-3-create-a-new-client-secret) and get an [access token](/graph/auth-v2-service?tabs=http#4-request-an-access-token) to interact with Microsoft Graph.  
 
@@ -114,15 +114,15 @@ Once you have successfully created your access token, you can use the Microsoft 
 
 ### Create a custom Power BI report 
 
-To fetch the user insights data you can create a Power BI report using [custom connectors](/power-bi/connect-data/desktop-connect-to-data). Here's how you can do it:
+To fetch the user insights data you can create a Power BI report using custom connectors. Here's how you can do it:
 
 1. Create a new blank Power BI report.
-1. Create a [custom connector](/power-bi/connect-data/desktop-connect-to-data) and enter the URL for the Microsoft Graph API endpoint you want to query. For example: https://graph.microsoft.com/beta/reports/userinsights/monthly/activeUsers for monthly active users data. 
+1. Create a [custom connector](/power-bi/connect-data/desktop-connect-to-data) and enter the URL for the Microsoft Graph API endpoint you want to query. For example: `https://graph.microsoft.com/beta/reports/userinsights/monthly/activeUsers` for monthly active users data. 
 1. Add your access token by selecting **Advanced**. 
 1. In the **HTTP request header parameters (optional)** section, select Authorization in the drop-down list and enter your access token.
 1. Select **OK** to connect Power BI to the Microsoft Graph API and load the data. 
 
-    :::image type="content" source="media/how-to-user-insights/add-token.png" alt-text="Screenshot of adding a token.":::
+:::image type="content" source="media/how-to-user-insights/add-token.png" alt-text="Screenshot of adding a token.":::
 
 Power BI comes with Power Query Editor that can help you clean and shape your data. You can remove unnecessary columns, handle missing values, and apply transformations such as merging, grouping, filtering, and many more. For more information, see the [Query Editor overview](/power-bi/transform-model/desktop-query-overview).
 
