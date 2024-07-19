@@ -5,7 +5,7 @@ description: Web browser and native app support for FIDO2 passwordless authentic
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 07/15/2024
+ms.date: 07/19/2024
 
 author: justinha
 ms.author: justinha
@@ -41,13 +41,13 @@ The following tables lists which authentication brokers are supported for differ
 
 If a user installed an authentication broker, they can choose to sign in with a security key when they access an application such as Outlook. They're redirected to sign in with FIDO2, and redirected back to Outlook as a signed in user after successful authentication.
 
-### Microsoft application support without authentication broker
+### Microsoft application support without authentication broker (preview)
 
-The following table lists Microsoft application support for passkey (FIDO2) without an authentication broker.
+The following table lists Microsoft application support for passkey (FIDO2) without an authentication broker. Passkey (FIDO2) authentication with a third-party Identity Provider (IDP) isn't supported in Microsoft applications on macOS, iOS, or Android at this time.
 
 | Application    | macOS    | iOS      | Android  |
 |----------------|----------|----------|----------|
-| Remote Desktop | &#x2705; | &#x2705; | &#10060; |
+| [Remote Desktop](/azure/virtual-desktop/compare-remote-desktop-clients?pivots=azure-virtual-desktop#cloud-service-authentication) | &#x2705; | &#x2705; | &#10060; |
 
 ### Third-party application support without authentication broker
 
