@@ -29,6 +29,10 @@ To view or edit the claims issued in the JWT to the application:
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
 1. Select the application, select **Single sign-on** in the left-hand menu, and then select **Edit** in the **Attributes & Claims** section.
 
+> [!NOTE]
+>
+> You can also set up claims in the enterprise application.
+
 An application may need claims customization for various reasons. For example, when an application requires a different set of claim URIs or claim values. Using the **Attributes & Claims** section, you can add or remove a claim for your application. You can also create a custom claim that is specific for an application based on the use case.
 
 The following steps describe how to assign a constant value:
