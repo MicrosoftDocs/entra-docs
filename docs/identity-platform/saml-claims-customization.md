@@ -109,6 +109,15 @@ To add application-specific claims:
 1. Enter the **name** of the claims. The value doesn't strictly need to follow a URI pattern, per the SAML spec. If you need a URI pattern, you can put that in the **Namespace** field.
 1. Select the **Source** where the claim is going to retrieve its value. You can select a user attribute from the source attribute dropdown or apply a transformation to the user attribute before emitting it as a claim.
 
+## Add a group claim
+
+Group claims are used to make authorization decisions to access a resource by an app or a service provider. To add group claims;
+
+1. Navigate to **App registrations** and select the app you wish to add a group claim to.
+1. Select **Add groups claim**.
+1. Select the group types to include in your token. You can add security groups, directory groups, or groups assigned to a particular application.
+1. Choose the values you wish to include in your groups claim, then select **Add**.
+
 ### Claim transformations
 
 To apply a transformation to a user attribute:
