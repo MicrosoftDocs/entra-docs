@@ -108,7 +108,7 @@ This section provides a detailed list of those IP addresses that aren't consider
 
 ### What if I don’t use Microsoft Entra for multifactor authentication? 
 
-If you don’t use Microsoft Entra multifactor authentication, you might still see sign-in risk remediated in your environment if you use a non-Microsoft MFA provider. External Authentication Methods make it possible to remediate risk when using external authentication methods. 
+If you don’t use Microsoft Entra multifactor authentication, you might still see sign-in risk remediated in your environment if you use a non-Microsoft MFA provider. [External authentication methods](/entra/identity/authentication/how-to-authentication-external-method-manage) make it possible to remediate risk when using external authentication methods. 
 
 ### What if I am in a hybrid environment? 
 
