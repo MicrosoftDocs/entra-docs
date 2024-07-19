@@ -94,7 +94,7 @@ For customers using multiple identity providers, the next section will be useful
 
 #### Legacy Identity Protection policies
 
-The next section tracks how many legacy user and sign-in policies are still in your environment and must migrate by October 2026. It's important to be aware of this timeline and start migrating policies to the Conditional Access portal as soon as possible. You want enough time to test the new policies, clean any unneeded or duplicated policies, and verify there are no gaps in coverage. You can read more about migrating legacy policies by following this link, Migrate risk policies. 
+The next section tracks how many legacy user and sign-in policies are still in your environment and must [migrate by October 2026](howto-identity-protection-configure-risk-policies.md#migrate-risk-policies-to-conditional-access). It's important to be aware of this timeline and start migrating policies to the Conditional Access portal as soon as possible. You want enough time to test the new policies, clean any unneeded or duplicated policies, and verify there are no gaps in coverage. You can read more about migrating legacy policies by following this link, Migrate risk policies. 
 
 :::image type="content" source="media/workbook-risk-based-policy-impact/workbook-risk-based-impact-legacy.png" alt-text="Screenshot showing the legacy Identity Protection policy section of the workbook." lightbox="media/workbook-risk-based-policy-impact/workbook-risk-based-impact-legacy.png":::
 
