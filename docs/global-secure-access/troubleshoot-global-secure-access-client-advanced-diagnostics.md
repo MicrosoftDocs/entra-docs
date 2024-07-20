@@ -1,13 +1,16 @@
 ---
-title: Troubleshoot the Global Secure Access client with advanced diagnostics
+title: Troubleshoot the Global Secure Access client: advanced diagnostics
 description: Troubleshoot the Global Secure Access client using the health check tab in the advanced diagnostics utility.
 ms.service: global-secure-access
 ms.topic: troubleshooting
-ms.date: 07/18/2024
+ms.date: 07/19/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
 ms.reviewer: lirazb
+
+# Customer intent: As an IT administrator, I want to troubleshoot the Global Secure Access client using the Advanced diagnostics utility.
+
 ---
 # Troubleshoot the Global Secure Access client with advanced diagnostics
 This document provides troubleshooting guidance for the Global Secure Access client using the advanced diagnostics utility.
