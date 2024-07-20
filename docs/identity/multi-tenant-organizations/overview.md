@@ -62,7 +62,7 @@ The following set of multitenant capabilities support the needs of multitenant o
 
 - **Cross-tenant synchronization** - Provides a synchronization service that automates creating, updating, and deleting B2B collaboration users across your organization of multiple tenants. The service can be used to scope Microsoft 365 people search in target tenants. The service is governed by cross-tenant synchronization settings under cross-tenant access settings.
 
-- **Microsoft 365 multitenant people search** - Collaboration with B2B collaboration users. If shown in address list, B2B collaboration users are available as contacts in Outlook. If elevated to user type Member, B2B collaboration member users are available in most Microsoft 365 applications. 
+- **Microsoft 365 multitenant people search** - Collaboration with B2B collaboration users. If shown in address list, B2B collaboration users are available as contacts in Outlook. If elevated to user type Member, B2B collaboration member users are available in most Microsoft 365 applications.
 
 - **Multitenant organization** - Defines a boundary around the Microsoft Entra tenants that your organization owns, facilitated by an invite-and-accept flow. In conjunction with B2B member provisioning, enables seamless collaboration experiences in Microsoft Teams and Microsoft 365 applications like Microsoft Viva Engage. Cross-tenant access settings provide a flag for your multitenant organization tenants.
 
@@ -78,7 +78,7 @@ The following diagram shows the basic cross-tenant access inbound and outbound s
 
 :::image type="content" source="../../external-id/media/cross-tenant-access-overview/cross-tenant-access-settings-overview.png" alt-text="Overview diagram of cross-tenant access settings.":::
 
-For more information, see [cross-tenant access overview](../../external-id/cross-tenant-access-overview.md).
+For more information, see [Cross-tenant access overview](../../external-id/cross-tenant-access-overview.md).
 
 ### B2B direct connect
 
@@ -129,17 +129,17 @@ For more information, see [What is cross-tenant synchronization?](./cross-tenant
 
 B2B collaboration users can now be enabled for collaboration in Microsoft 365, beyond the well-known [B2B collaboration guest user](../../external-id/what-is-b2b.md) experience.
 
-Multitenant organization people search is a collaboration feature that enables search and discovery of people across multiple tenants.  If shown in address list, B2B collaboration users are available as contacts in Outlook. In addition to being shown in address list, if further elevated to user type Member, B2B collaboration member users are available in most Microsoft 365 applications.
+Multitenant organization people search is a collaboration feature that enables search and discovery of people across multiple tenants. If shown in address list, B2B collaboration users are available as contacts in Outlook. In addition to being shown in address list, if further elevated to user type Member, B2B collaboration member users are available in most Microsoft 365 applications.
 
 Here are the primary benefits of using Microsoft 365 people search across multiple tenants:
 
-- B2B collaboration users can be made available for collaboration in Outlook. This can be enabled using the [showInAddressList](/graph/api/resources/user#properties) property set to true for Exchange Online mail users in the host tenant, or using [cross-tenant synchronization](#cross-tenant-synchronization) from the source tenant. 
+- B2B collaboration users can be made available for collaboration in Outlook. This can be enabled using the [showInAddressList](/graph/api/resources/user#properties) property set to true for Exchange Online mail users in the host tenant, or using [cross-tenant synchronization](#cross-tenant-synchronization) from the source tenant.
 - B2B collaboration users already shown in address lists can be made available for collaboration in most Microsoft 365 applications using the [userType](/graph/api/resources/user#properties) property set to Member, managed in [Microsoft Entra admin center](../../fundamentals/how-to-manage-user-profile-info.yml) of the host tenant, or using [cross-tenant synchronization](#cross-tenant-synchronization) from the source tenant.
 
 Here are the primary constraints of using Microsoft 365 people search across multiple tenants:
 
 - For collaboration in most Microsoft 365 applications, a B2B collaboration user should be shown in address lists as well as be set to user type Member.
-- For additional address list constraints, see [global address list limitations in multitenant organizations](multi-tenant-organization-known-issues.md#global-address-list-managed-in-the-host-tenant).
+- For additional address list constraints, see [Global address list limitations in multitenant organizations](multi-tenant-organization-known-issues.md#global-address-list-managed-in-the-host-tenant).
 
 For more information, see [Microsoft 365 multitenant people search](/microsoft-365/enterprise/multi-tenant-people-search).
 
@@ -158,7 +158,7 @@ Here are the primary constraints with using a multitenant organization:
 - If you already have B2B collaboration member users in tenants that are part of the multitenant organization, those users will immediately become multitenant organization members upon multitenant organization creation. Therefore, applications with multitenant organization experiences will recognize existing B2B collaboration member users as multitenant organization users.
 - Improved Microsoft Teams collaboration relies on reciprocal provisioning of B2B collaboration member users.
 - Improved Viva Engage collaboration relies on centralized provisioning of B2B collaboration members.
-- For additional constraints, see [limitations in multitenant organizations](./multi-tenant-organization-known-issues.md).
+- For additional constraints, see [Limitations in multitenant organizations](./multi-tenant-organization-known-issues.md).
 
 :::image type="content" source="./media/common/multi-tenant-organization-topology.png" alt-text="Diagram that shows a multitenant organization topology and cross-tenant access settings." lightbox="./media/common/multi-tenant-organization-topology.png":::
 
@@ -170,8 +170,8 @@ For more information, see [What is a multitenant organization in Microsoft Entra
 
 - [Create a multitenant organization](/microsoft-365/enterprise/set-up-multi-tenant-org) in Microsoft 365 admin center.
 
-Following the creation of a multitenant organization, Microsoft offers two methods to provision employees into neighboring multitenant organization tenants at scale. 
- 
+Following the creation of a multitenant organization, Microsoft offers two methods to provision employees into neighboring multitenant organization tenants at scale.
+
 - For enterprise organizations with complex identity topologies, we recommend using [cross-tenant synchronization in Microsoft Entra ID](./cross-tenant-synchronization-overview.md). Cross-tenant synchronization is highly configurable and allows the provisioning of any multi-hub multi-spoke identity topology.
 - For smaller multitenant organizations where employees are to be provisioned into all tenants, we recommend staying in Microsoft 365 admin center to [simultaneously synchronize users into multiple tenants](/microsoft-365/enterprise/sync-users-multi-tenant-orgs) of your multitenant organization.
 
@@ -184,7 +184,7 @@ Here are the primary benefits of using Microsoft 365 admin center to create your
 - Microsoft 365 admin center will pre-configure your tenants for inbound user synchronization, though usage of cross-tenant synchronization remains optional.
 - Microsoft 365 admin center allows easy provisioning of employees into multiple tenants of your multitenant organization.
 
-Here are the primary constraints with using Microsoft 365 admin center to create your multitenant organization and/or provision employees:
+Here are the primary constraints with using Microsoft 365 admin center to create your multitenant organization or provision employees:
 
 - Microsoft 365 admin center will pre-configure but not start cross-tenant synchronization jobs, even if you intend to use cross-tenant synchronization in Microsoft Entra admin center.
 - Complex identity topologies, such as multi-hub, multi-spoke systems, are better provisioned using cross-tenant synchronization in Microsoft Entra admin portal.
@@ -220,7 +220,7 @@ To better understand multitenant organization scenario related Microsoft Entra c
 | organization | The top level of a business hierarchy. |
 | multitenant organization | An organization that has more than one instance of Microsoft Entra ID, as well as a capability to group those instances in Microsoft Entra ID. |
 | creator tenant | The tenant that created the multitenant organization. |
-| owner tenant | A tenant with the owner role. Initially, the creator tenant. |
+| owner tenant | A tenant with the Owner role. Initially, the creator tenant. |
 | added tenant | A tenant that was added by an owner tenant. |
 | joiner tenant | A tenant that is joining the multitenant organization. |
 | join request | A joiner or added tenant submits a join request to join the multitenant organization. |
