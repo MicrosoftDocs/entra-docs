@@ -5,7 +5,7 @@ description: Web browser and native app support for FIDO2 passwordless authentic
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 07/15/2024
+ms.date: 07/19/2024
 
 author: justinha
 ms.author: justinha
@@ -21,7 +21,7 @@ Microsoft Entra ID allows passkeys to be used for passwordless authentication. T
 
 ## Native application support
 
-The following sections cover support for Microsoft and third-party applications. 
+The following sections cover support for Microsoft and third-party applications. Passkey (FIDO2) authentication with a third-party Identity Provider (IDP) isn't supported in third-party applications using authentication broker, or Microsoft applications on macOS, iOS, or Android at this time.
 
 ### Native application support with authentication broker (preview)
 
@@ -41,17 +41,17 @@ The following tables lists which authentication brokers are supported for differ
 
 If a user installed an authentication broker, they can choose to sign in with a security key when they access an application such as Outlook. They're redirected to sign in with FIDO2, and redirected back to Outlook as a signed in user after successful authentication.
 
-### Microsoft application support without authentication broker
+### Microsoft application support without authentication broker (preview)
 
-The following table lists Microsoft application support for passkey (FIDO2) without an authentication broker.
+The following table lists Microsoft application support for passkey (FIDO2) without an authentication broker. 
 
 | Application    | macOS    | iOS      | Android  |
 |----------------|----------|----------|----------|
-| Remote Desktop | &#x2705; | &#x2705; | &#10060; |
+| [Remote Desktop](/azure/virtual-desktop/compare-remote-desktop-clients) | &#x2705; | &#x2705; | &#10060; |
 
 ### Third-party application support without authentication broker
 
-If the user has yet to install an authentication broker, they can still sign in with a security key when they access MSAL-enabled applications. For more information about requirements for MSAL-enabled applications, see [Support passwordless authentication with FIDO2 keys in apps you develop](~/identity-platform/support-fido2-authentication.md).
+If the user has yet to install an authentication broker, they can still sign in with a passkey when they access MSAL-enabled applications. For more information about requirements for MSAL-enabled applications, see [Support passwordless authentication with FIDO2 keys in apps you develop](~/identity-platform/support-fido2-authentication.md).
 
 ## Web browser support
 
