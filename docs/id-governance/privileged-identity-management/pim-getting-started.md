@@ -32,9 +32,9 @@ To use Privileged Identity Management, you must have one of the following licens
 
 Here are the tasks we recommend for you to prepare Privileged Identity Management to manage Microsoft Entra roles:
 
-1. [Configure Microsoft Entra role settings](pim-how-to-change-default-settings.md).
-1. [Give eligible assignments](pim-how-to-add-role-to-user.md).
-1. [Allow eligible users to activate their Microsoft Entra role just-in-time](pim-how-to-activate-role.yml).
+1. [Configure Microsoft Entra role settings](pim-how-to-change-default-settings.md)
+1. [Give eligible assignments](pim-how-to-add-role-to-user.md)
+1. [Allow eligible users to activate their Microsoft Entra role just-in-time](pim-how-to-activate-role.yml)
 
 > [!NOTE]
 > When a Microsoft Entra tenant that has Microsoft Entra ID P2 or Microsoft Entra ID Governance license, a user with active assignment for Microsoft Entra role does one of the following:
@@ -55,9 +55,9 @@ Here are the tasks we recommend for you to prepare Privileged Identity Managemen
 Here are the tasks we recommend for you to prepare Privileged Identity Management to manage Azure roles for a subscription:
 
 1. [Discover Azure resources](pim-resource-roles-discover-resources.md)
-1. [Configure Azure role settings](pim-resource-roles-configure-role-settings.md).
-1. [Give eligible assignments](pim-resource-roles-assign-roles.md).
-1. [Allow eligible users to activate their Azure roles just-in-time](pim-resource-roles-activate-your-roles.yml).
+1. [Configure Azure role settings](pim-resource-roles-configure-role-settings.md)
+1. [Give eligible assignments](pim-resource-roles-assign-roles.md)
+1. [Allow eligible users to activate their Azure roles just-in-time](pim-resource-roles-activate-your-roles.yml)
 
 ## Navigate to your tasks
 
@@ -68,12 +68,13 @@ Once Privileged Identity Management is set up, you can learn your way around.
 | Task + Manage | Description |
 | --- | --- |
 | **My roles**  | Displays a list of eligible and active roles assigned to you. This is where you can activate any assigned eligible roles. |
-| **Pending requests** | Displays your pending requests to activate eligible role assignments. |
+| **My requests** | Displays your pending requests to activate eligible role assignments. |
 | **Approve requests** | Displays a list of requests to activate eligible roles by users in your directory that you are designated to approve. |
 | **Review access** | Lists active access reviews you are assigned to complete, whether you're reviewing access for yourself or someone else. |
 | **Microsoft Entra roles** | Displays a dashboard and settings for Privileged role administrators to manage Microsoft Entra role assignments. This dashboard is disabled for anyone who isn't a privileged role administrator. These users have access to a special dashboard titled My view. The My view dashboard only displays information about the user accessing the dashboard, not the entire organization. |
-| **Azure resources** | Displays a dashboard and settings for Privileged role administrators to manage Azure resource role assignments. This dashboard is disabled for anyone who isn't a privileged role administrator. These users have access to a special dashboard titled My view. The My view dashboard only displays information about the user accessing the dashboard, not the entire organization. |
-
+| **Groups** | Manage just-in-time membership in the group or just-in-time ownership of the group. Groups can be used to provide access to Microsoft Entra roles, Azure roles, and various other scenarios. To manage a Microsoft Entra group in PIM, you must bring it under management in PIM. |
+| **Azure resources** | Displays a dashboard and settings for Privileged role administrators to manage Azure resource role assignments. This dashboard is disabled for anyone who isn't a privileged role administrator. These users have access to a special dashboard titled My view. The My view dashboard only displays information about the user accessing the dashboard, not the entire organization.|
+| **General settings** | Select applications that are allowed to make app-only calls to Microsoft Graph API for PIM. |
 
 ## Next steps
 
