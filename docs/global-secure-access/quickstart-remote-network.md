@@ -37,4 +37,4 @@ The product requires licensing. For details, see the licensing section of [What 
 After you complete these optional steps, users can connect to Microsoft services without the Global Secure Access client if they're connecting through the remote network you created *and* if they meet the conditions you added to the Conditional Access policy.
 
 ## Next step
-- [Related article title](link.md)
+- [Quickstart: Configure Quick Access to your primary private resources](quickstart-quick-access.md)
