@@ -18,7 +18,7 @@ items:
   - name: Install the Windows client to acquire Microsoft traffic
     href: quickstart-install-client.md
   - name: Create a remote network to acquire Microsoft traffic
-    href: quickstart-install-client.md
+    href: quickstart-remote-network.md
   - name: Configure Quick Access to private resources
     href: quickstart-quick-access.md
   - name: Configure per-app access to private resources
