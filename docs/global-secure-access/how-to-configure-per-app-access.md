@@ -32,7 +32,7 @@ To manage Microsoft Entra private network connector groups, which is required fo
 
 - Avoid overlapping app segments between Quick Access and Global Secure Access apps.
 - Tunneling traffic to Private Access destinations by IP address is supported only for IP ranges outside of the end-user device local subnet.
-- At this time, Private Access traffic can only be acquired with the Global Secure Access Client. Remote networks can't be assigned to the Private access traffic forwarding profile.
+- At this time, Private Access traffic can only be acquired with the Global Secure Access client. Remote networks can't be assigned to the Private access traffic forwarding profile.
 
 ## High level steps
 
@@ -107,8 +107,8 @@ You can add fully qualified domain names (FQDN), IP addresses, and IP address ra
         - Provide the ports that you want to include.
         - NetBIOS is not supported. For example, use `contoso.local/app1` instead of `contoso/app1.`
     - **IP address range (CIDR)**:
-        - Classless Inter-Domain Routing is a way of representing a range of IP addresses in which an IP address is followed by a suffix indicating the number of network bits in the subnet mask.
-        - For example 192.0.2.0/24 indicates that the first 24 bits of the IP address represent the network address, while the remaining 8 bits represents the host address.
+        - Classless Inter-Domain Routing (CIDR) represents a range of IP addresses where an IP address is followed by a suffix that indicates the number of network bits in the subnet mask.
+        - For example, 192.0.2.0/24 indicates that the first 24 bits of the IP address represent the network address, while the remaining 8 bits represents the host address.
         - Provide the starting address, network mask, and ports.
     - **IP address range (IP to IP)**:
         - Range of IP addresses from start IP (such as 192.0.2.1) to end IP (such as 192.0.2.10).
