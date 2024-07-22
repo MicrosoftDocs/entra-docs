@@ -132,7 +132,7 @@ You can add fully qualified domain names (FQDN), IP addresses, and IP address ra
     | 445 | Server Message Block (SMB) file sharing |
     | 3389 | Remote Desktop Protocol (RDP) |
 
-1. Select the **Save** button when you're finished.
+1. Select **Save**.
 
 > [!NOTE]
 > You can add up to 500 application segments to your app.
