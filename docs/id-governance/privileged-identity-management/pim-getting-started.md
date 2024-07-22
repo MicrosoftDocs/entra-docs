@@ -35,7 +35,7 @@ Here are the tasks we recommend for you to prepare Privileged Identity Managemen
 1. [Allow eligible users to activate their Microsoft Entra role just-in-time](pim-how-to-activate-role.yml)
 
 > [!NOTE]
-> When a Microsoft Entra tenant has a Microsoft Entra ID P2 or Microsoft Entra ID Governance license, users with active role assignments can do one of the following:
+> When a Microsoft Entra tenant has a Microsoft Entra ID P2 or Microsoft Entra ID Governance license, users with active role assignments can do the following:
 > - Open the **Roles and administrators** page in Microsoft Entra ID and select a role;
 > - Open the **Privileged Identity Management** page;
 > - Make calls to PIM using the [Microsoft Entra roles API](/graph/identity-network-access-overview/).
