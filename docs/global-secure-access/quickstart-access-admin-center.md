@@ -32,7 +32,7 @@ The product requires licensing. For details, see the licensing section of [What 
 1. Browse to **Global Secure Access**.
 1. The features of Microsoft Entra Internet Access and Microsoft Entra Private Access are found throughout the Global Secure Access area. Many features and settings apply to both Microsoft Entra Private Access and Microsoft Entra Internet Access. Some features are specific to one or the other.
 
-:::image type="content" source="media/quickstart-access-admin-center/admin-center.png" alt-text="The Global Secure Access area of the Microsoft Entra admin center." lightbox="media/quickstart-access-admin-center/admin-center.png":::
+:::image type="content" source="media/quickstart-access-admin-center/admin-center.png" alt-text="Screenshot of the Global Secure Access area of the Microsoft Entra admin center." lightbox="media/quickstart-access-admin-center/admin-center.png":::
 
 If you encounter access issues, refer to this [FAQ regarding tenant restrictions](resource-faq.yml).
 
