@@ -114,7 +114,7 @@ items:
         href: how-to-configure-connectors.md
       - name: Register connector - silent Install
         href: how-to-register-connector-powershell.md
-      - name: Configure per-app Access
+      - name: Configure per-app access
         href: how-to-configure-per-app-access.md
       - name: Configure Quick Access
         href: how-to-configure-quick-access.md 
