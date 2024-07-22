@@ -22,9 +22,7 @@ Use Privileged Identity Management (PIM) to manage, control, and monitor access 
 
 ## Prerequisites
 
-To use Privileged Identity Management, you must have one of the following licenses:
-
-- [!INCLUDE [entra-id-license-pim.md](~/includes/entra-id-license-pim.md)]
+To use Privileged Identity Management, you must have a Microsoft Entra ID P2 or Microsoft Entra ID Governance license. For more information on licensing, see [Microsoft Entra ID Governance licensing fundamentals](~/id-governance/licensing-fundamentals.md).
 
 <a name='prepare-pim-for-azure-ad-roles'></a>
 
