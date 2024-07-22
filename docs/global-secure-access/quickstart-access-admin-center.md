@@ -37,4 +37,4 @@ The product requires licensing. For details, see the licensing section of [What 
 If you encounter access issues, refer to this [FAQ regarding tenant restrictions](resource-faq.yml).
 
 ## Next step
-- [Related article title](link.md)
+- [Quickstart: Install the Windows client to acquire Microsoft traffic](quickstart-install-client.md)

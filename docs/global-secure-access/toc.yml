@@ -15,6 +15,8 @@ items:
   items:
   - name: Access Global Secure Access in the admin center
     href: quickstart-access-admin-center.md
+  - name: Install the Windows client to acquire Microsoft traffic
+    href: quickstart-install-client.md
 - name: Samples
   expanded: false
   items: 
