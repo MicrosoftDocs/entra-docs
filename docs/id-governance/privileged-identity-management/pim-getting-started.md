@@ -8,7 +8,7 @@ manager: amycolannino
 ms.service: entra-id-governance
 ms.subservice: privileged-identity-management
 ms.topic: how-to
-ms.date: 09/13/2023
+ms.date: 07/22/2024
 ms.author: barclayn
 ms.reviewer: shaunliu
 ms.custom: pim
@@ -26,17 +26,6 @@ To use Privileged Identity Management, you must have one of the following licens
 
 - [!INCLUDE [entra-id-license-pim.md](~/includes/entra-id-license-pim.md)]
 
-
-For more information, see [License requirements to use Privileged Identity Management](~/id-governance/licensing-fundamentals.md).
-
-> [!Note]
-> When a user who is active in a privileged role in a Microsoft Entra organization with a Premium P2 license goes to **Roles and administrators** in Microsoft Entra ID and selects a role (or even just visits Privileged Identity Management):
->
-> - We automatically enable PIM for the organization
-> - Their experience is now that they can either assign a "regular" role assignment or an eligible role assignment
->
-> When PIM is enabled it doesn't have any other effect on your organization that you need to worry about. It gives you additional assignment options such as active vs eligible with start and end time. PIM also enables you to define scope for role assignments using Administrative Units and custom roles. If you are a Global Administrator or Privileged Role Administrator, you might start getting a few additional emails like the PIM weekly digest. You might also see MS-PIM service principal in the audit log related to role assignment. This is an expected change that should have no effect on your workflow.
-
 <a name='prepare-pim-for-azure-ad-roles'></a>
 
 ## Prepare PIM for Microsoft Entra roles
@@ -46,6 +35,20 @@ Here are the tasks we recommend for you to prepare Privileged Identity Managemen
 1. [Configure Microsoft Entra role settings](pim-how-to-change-default-settings.md).
 1. [Give eligible assignments](pim-how-to-add-role-to-user.md).
 1. [Allow eligible users to activate their Microsoft Entra role just-in-time](pim-how-to-activate-role.yml).
+
+> [!NOTE]
+> When a Microsoft Entra tenant that has Microsoft Entra ID P2 or Microsoft Entra ID Governance license, a user with active assignment for Microsoft Entra role does one of the following:
+>
+> - Opens the **Roles and administrators** page in Microsoft Entra ID and selects a role;
+> - Opens the **Privileged Identity Management** page;
+> - Calls PIM for the [Microsoft Entra roles API](graph/identity-network-access-overview/).
+>
+> We enable PIM for Microsoft Entra roles for the tenant:
+> - Starting immediately, you can create eligible or time-bound assignments for Microsoft Entra roles; 
+> - Global Administrators or Privileged Role Administrators may start receiving additional emails, such as the PIM weekly digest; 
+> - The PIM service principal name (MS–PIM) may get mentioned in the audit log events related to role assignment management. 
+>
+> These behaviors are expected and should have no impact on your workflows.
 
 ## Prepare PIM for Azure roles
 
