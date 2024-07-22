@@ -33,6 +33,96 @@ Microsoft Entra ID (previously known as Azure Active Directory) receives improve
 
 This page updates monthly, so revisit it regularly. If you're looking for items older than six months, you can find them in [Archive for What's new in Microsoft Entra ID?](whats-new-archive.md).
 
+## July 2024
+
+### General Availability - Insider Risk condition in Conditional Access is GA
+
+**Type:** New feature    
+**Service category:** Conditional Access    
+**Product capability:** Identity Security & Protection    
+
+**Insider Risk condition in Conditional Access is now GA**
+
+Insider Risk condition, in Conditional Access, is a new feature that leverages signals from Microsoft Purview's Adaptive Protection capability to enhance the detection and automatic mitigation of Insider threats. This integration allows organizations to more effectively manage, and respond, to potential insider risks by using advanced analytics and real-time data.
+
+For example, if Purview detects unusual activity from a user, Conditional Access can enforce additional security measures such as requiring multifactor authentication (MFA) or blocking access. This is a premium feature and requires a P2 license. For more information, see: [Common Conditional Access policy: Block access for users with insider risk](../identity/conditional-access/how-to-policy-insider-risk.md).
+
+---
+
+### General Availability - Device based conditional access to Microsoft 365/Azure resources on Red Hat Enterprise Linux
+
+**Type:** New feature    
+**Service category:** Conditional Access    
+**Product capability:** SSO    
+
+Since October 2022, users on Ubuntu Desktop 20.04 LTS & Ubuntu 22.04 LTS with Microsoft Edge browser could register their devices with Microsoft Entra ID, enroll into Intune management, and securely access corporate resources using device-based Conditional Access policies.
+
+This release extends support to Red Hat Enterprise Linux 8.x and 9.x (LTS) which makes these capabilities possible:
+
+- Microsoft Entra ID registration & enrollment of RedHat LTS (8/9) desktops.
+- Conditional Access policies protecting web applications via Microsoft Edge.
+- Provides SSO for native & web applications (ex: Azure CLI, Microsoft Edge Browser, Teams PWA, etc.) to access M365/Azure protected resources.
+- Standard Intune compliance policies.
+- Support for Bash scripts with custom compliance policies.
+- Package Manager now supports RHEL "RPM" packages in addition to Debian "DEB" packages.
+
+For more information, see: [Microsoft Entra registered devices](../identity/devices/concept-device-registration.md).
+
+---
+
+### General Availability - Active Directory Federation Services (AD FS) Application Migration Wizard
+
+**Type:** New feature    
+**Service category:** AD FS Application Migration    
+**Product capability:** Platform    
+
+The Active Directory Federation Services (AD FS) application migration wizard allows the user to quickly identify which AD FS relying party applications are compatible with being migrated to Microsoft Entra ID. The tool shows the migration readiness of each application, highlights issues and the suggested actions to remediate, guides the user through preparing an individual application for migration, and configuring their new Microsoft Entra application. For more information on how to use this feature, see: [Use AD FS application migration to move AD FS apps to Microsoft Entra ID](../identity/enterprise-apps/migrate-ad-fs-application-howto.md).
+
+---
+
+### Public Preview - Passkey authentication in brokered Microsoft apps on Android
+
+**Type:** New feature    
+**Service category:** Authentications (Logins)    
+**Product capability:** User Authentication    
+
+Microsoft Entra ID users can now use a passkey to sign into Microsoft apps on Android devices, where an authentication broker like Microsoft Authenticator or Microsoft Intune Company Portal, is installed. For more information, see: [Support for FIDO2 authentication with Microsoft Entra ID](../identity/authentication/concept-fido2-compatibility.md).
+
+---
+
+### General Availability - Easy authentication with Azure App Service and Microsoft Entra External ID
+
+**Type:** Changed feature    
+**Service category:** B2C - Consumer Identity Management    
+**Product capability:** B2B/B2C    
+
+An improved experience when using Microsoft Entra External ID as an identity provider for Azure App Service’s built-in authentication, simplifying the process of configuring authentication and authorization for external-facing apps. You can complete initial configuration directly from the App Service authentication setup without switching into the external tenant. For more information, see: [Quickstart: Add app authentication to your web app running on Azure App Service](/azure/app-service/scenario-secure-app-authentication-app-service?toc=%2Fentra%2Fexternal-id%2Ftoc.json&bc=%2Fentra%2Fexternal-id%2Fbreadcrumb%2Ftoc.json&tabs=external-configuration).
+
+---
+
+### General Availability - Enabling public publishing of custom credentials via the Admin portal UI
+
+**Type:** New feature    
+**Service category:** Verified ID    
+**Product capability:** Decentralized Identities    
+
+The Verified ID Admin portal now supports public publishing of custom credentials, in addition to VerifiedEmployee, to the VC network via the Admin portal UI. For any given Verifiable Credential, the Admin can now select the "*Publish credential to Verified ID network*" checkbox from the "*Issue a credential*" page to enable this. 
+
+Once enabled, customers using Entitlement Management with Verified ID can use Access Packages to ask for identity verification by selecting the required custom VC using the VCNetwork picker. For more information, see: [Verify credentials by using the Microsoft Entra Verified ID Network](../verified-id/how-use-vcnetwork.md).
+
+---
+
+### General Availability - Microsoft Entra Private Access
+
+**Type:** New feature    
+**Service category:** Private Access    
+**Product capability:** Network Access    
+
+Microsoft Entra Private Access is an identity-centric ZTNA solution that helps you secure access to all private apps and resources for your users—located anywhere. Private Access allows you to replace your legacy VPN with ZTNA to securely connect your users to any private resource and application—without providing full network access to all private resources. This solution embraces Zero Trust principles to protect against cyber threats and to mitigate lateral movement, while enforcing advanced app segmentation and adaptive least-privilege access policies. Using Microsoft’s global private network, you can give your users a fast, seamless access experience that balances security with productivity. For more information, see: [Learn about Microsoft Entra Private Access](../global-secure-access/concept-private-access.md).
+
+---
+
+
 ## June 2024
 
 
