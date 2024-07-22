@@ -38,4 +38,4 @@ The product requires licensing. For details, see the licensing section of [What 
 After you complete these four steps, users with the Global Secure Access client installed on their Windows device can securely access Microsoft resources from anywhere. Conditional Access policy requires users to use the Global Secure Access client or a configured remote network, when they access Exchange Online and SharePoint Online.
 
 ## Next step
-- [Related article title](link.md)
+- [Quickstart: Create a remote network, apply Conditional Access, and review the logs](quickstart-remote-network.md)
