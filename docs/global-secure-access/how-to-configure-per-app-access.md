@@ -1,5 +1,5 @@
 ---
-title: How to configure per-app Access using Global Secure Access applications
+title: How to configure per-app access using Global Secure Access applications
 description: Learn how to configure per-app access to your private, internal resources using Global Secure Access applications for Microsoft Entra Private Access.
 author: kenwith
 ms.author: kenwith
@@ -10,11 +10,11 @@ ms.service: global-secure-access
 ms.subservice: entra-private-access
 ms.reviewer: katabish
 ---
-# How to configure per-app Access using Global Secure Access applications
+# How to configure per-app access using Global Secure Access applications
 
 Microsoft Entra Private Access provides secure access to your organization's internal resources. You create a Global Secure Access application and specify the internal, private resources that you want to secure. By configuring a Global Secure Access application, you're creating per-app access to your internal resources. Global Secure Access application provides a more detailed ability to manage how the resources are accessed on a per-app basis.
 
-This article describes how to configure per-app Access using Global Secure Access applications.
+This article describes how to configure per-app access using Global Secure Access applications.
 
 ## Prerequisites
 
@@ -171,7 +171,7 @@ You can enable or disable access to the Global Secure Access app using the Globa
 
 ## Assign Conditional Access policies
 
-Conditional Access policies for per-app Access are configured at the application level for each app. Conditional Access policies can be created and applied to the application from two places:
+Conditional Access policies for per-app access are configured at the application level for each app. Conditional Access policies can be created and applied to the application from two places:
 
 - Go to **Global Secure Access** > **Applications** > **Enterprise applications**. Select an application and then select **Conditional Access** from the side menu.
 - Go to **Protection** > **Conditional Access** > **Policies**. Select **+ Create new policy**.
