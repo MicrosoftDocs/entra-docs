@@ -26,7 +26,7 @@ To follow the [Zero Trust principle of least privilege](/security/zero-trust/), 
 
 The product requires licensing. For details, see the licensing section of [What is Global Secure Access?](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense). To use the Microsoft traffic forwarding profile, a Microsoft 365 E3 license is recommended.
 
-### Create a remote network, apply Conditional Access, and review the logs
+## Create a remote network, apply Conditional Access, and review the logs
 
 :::image type="content" source="media/quickstart-remote-network/internet-access-remote-networks-option.png" alt-text="Diagram of the Microsoft Entra Internet Access traffic flow with remote networks and Conditional Access." lightbox="media/quickstart-remote-network/internet-access-remote-networks-option.png":::
 

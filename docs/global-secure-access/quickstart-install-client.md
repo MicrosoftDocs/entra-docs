@@ -26,7 +26,7 @@ To follow the [Zero Trust principle of least privilege](/security/zero-trust/), 
 
 The product requires licensing. For details, see the licensing section of [What is Global Secure Access?](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense). To use the Microsoft traffic forwarding profile, a Microsoft 365 E3 license is recommended.
 
-### Install the client to acquire Microsoft traffic
+## Install the client to acquire Microsoft traffic
 
 :::image type="content" source="media/quickstart-install-client/internet-access-basic-option.png" alt-text="Diagram of the basic Microsoft Entra Internet Access traffic flow." lightbox="media/quickstart-install-client/internet-access-basic-option.png":::
 

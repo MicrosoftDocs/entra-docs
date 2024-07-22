@@ -24,7 +24,7 @@ To follow the [Zero Trust principle of least privilege](/security/zero-trust/), 
 
 The product requires licensing. For details, see the licensing section of [What is Global Secure Access?](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense). To use the Microsoft traffic forwarding profile, a Microsoft 365 E3 license is recommended.
 
-### Configure per-app access to private resources
+## Configure per-app access to private resources
 
 Create specific private apps for granular segmented access to private access resources using Microsoft Entra Private Access.
 
