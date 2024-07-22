@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: reference
-ms.date: 05/23/2024
+ms.date: 07/22/2024
 ms.service: global-secure-access
 ms.custom: references_regions
 ---
@@ -51,7 +51,7 @@ The table lists the deployment status for the EMEA region.
 |Frankfurt, Germany          | ✅ | ✅ | ✅ |
 |Gavle, Sweden               | ✅ | ✅ |    |
 |Johannesburg, South Africa  | ✅ | ✅ |    |
-|London, UK                  | ✅ | ✅ | ✅ |
+|London, UK                  | ✅ | ✅ |    |
 |Madrid, Spain               | ✅ |    |     |
 |Milan, Italy                | ✅ | ✅ |    |
 |Marseille, France           | ✅ | ✅ |    |
