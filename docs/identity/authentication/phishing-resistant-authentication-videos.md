@@ -4,7 +4,7 @@ description: Use this video series to learn about phishing-resistant authenticat
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 07/18/2024
+ms.date: 07/22/2024
 ms.author: gasinh
 author: gargi-sinha
 manager: martinco
@@ -17,7 +17,7 @@ In this video series, we guide you through the basics of phishing-resistant auth
 
 Watch the following videos, or visit the [Phishing Resistant Authentication in Microsoft Entra ID](https://www.youtube.com/playlist?list=PL3ZTgFEc7LysTnItcN7SJnJ6wpPJif2-k) video series, for guidance on how to configure phishing-resistant multifactor authentication methods.  
 
-To learn more, see [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/), [certificate-based authentication](../authentication/concept-certificate-based-authentication.md), and passkeys formally [FIDO2](../authentication/how-to-enable-passkey-fido2.md) security keys. In addition, learn about [Microsoft Entra Conditional Access](../conditional-access/overview.md). 
+To learn more, see [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/), [certificate-based authentication](../authentication/concept-certificate-based-authentication.md), and passkeys formally [FIDO2](../authentication/how-to-enable-passkey-fido2.md) security keys. In addition, learn about [Microsoft Entra Conditional Access](../conditional-access/overview.md), which brings signals together to inform decision making, and enforces organizational policies. 
 
 |Video title|Video|
 |---|---|
