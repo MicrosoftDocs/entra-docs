@@ -6,12 +6,15 @@ items:
   items:
   - name: What is Global Secure Access?
     href: overview-what-is-global-secure-access.md
-  - name: Get started with Global Secure Access
-    href: how-to-get-started-with-global-secure-access.md
   - name: Global Secure Access dashboard
     href: concept-traffic-dashboard.md
   - name: Role-based administrator roles
     href: reference-role-based-permissions.md
+- name: Quickstarts
+  expanded: true
+  items:
+  - name: Access Global Secure Access in the admin center
+    href: quickstart-access-admin-center.md
 - name: Samples
   expanded: false
   items: 
