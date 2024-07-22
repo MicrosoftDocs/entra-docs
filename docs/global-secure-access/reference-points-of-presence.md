@@ -14,13 +14,17 @@ ms.custom: references_regions
 Global Secure Access is available in specific points of presence, with new locations added periodically. The service routes traffic through one of the following nearby locations, so even if you're not in a listed location, you can still access the service. At this time, both Microsoft Entra Internet Access and Microsoft Entra Private Access are available in the same locations. These locations are Microsoft data centers.
 
 ## Microsoft Entra Internet Access and Microsoft Entra Private Access locations
-The tables list the locations that Global Secure Access is deployed. The tables also list the locations that Virtual Private Network (VPN) and Microsoft Entra Private Access connectors are deployed.
+The tables list information about deployment status.
+
+- The locations the Global Secure Access service is deployed. 
+- The locations that Remote Network connectivity gateways are active. 
+- The locations that the Private Access service is deployed.
 
 
 ### Asia Pacific (APAC)
 The table lists the deployment status for the APAC region.
 
-|Location                    | Global Secure Access deployed | VPN deployed | Private Access connectors deployed |
+|Location                    | Global Secure Access service deployed | Remote network connectivity gateways | Private Access service deployed |
 | ---                        | --- | --- | --- |
 |Busan, South Korea          | ✅ | ✅ | ✅ |
 |Chennai, India              | ✅ | ✅ | ✅ |
@@ -37,7 +41,7 @@ The table lists the deployment status for the APAC region.
 ### Europe Middle East Africa (EMEA)
 The table lists the deployment status for the EMEA region.
 
-| Location                   | Global Secure Access deployed | VPN deployed | Private Access connectors deployed |
+|Location                    | Global Secure Access service deployed | Remote network connectivity gateways | Private Access service deployed |
 | ---                        | --- | --- | --- |
 |Amsterdam, Netherlands      | ✅ | ✅ | ✅ |
 |Berlin, Germany             | ✅ |    |     |
@@ -60,7 +64,7 @@ The table lists the deployment status for the EMEA region.
 ### Latin America (LATAM)
 The table lists the deployment status for the LATAM region.
 
-| Location                   | Global Secure Access deployed | VPN deployed | Private Access connectors deployed |
+|Location                    | Global Secure Access service deployed | Remote network connectivity gateways | Private Access service deployed |
 | ---                        | --- | --- | --- |
 |Campinas, Brazil            | ✅ |   | ✅ |
 |Rio de Janeiro, Brazil      | ✅ |   | ✅ |
@@ -69,7 +73,7 @@ The table lists the deployment status for the LATAM region.
 ### North America (NA)
 The table lists the deployment status for the NA region.
 
-| Location                   | Global Secure Access deployed | VPN deployed | Private Access connectors deployed |
+|Location                    | Global Secure Access service deployed | Remote network connectivity gateways | Private Access service deployed |
 | ---                        | --- | --- | --- |
 |Boydton, Virginia, USA      | ✅ | ✅ |     |
 |Cheyenne, Wyoming, USA      | ✅ | ✅ |     |
