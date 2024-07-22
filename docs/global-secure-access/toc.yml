@@ -31,7 +31,7 @@ items:
     href: concept-connectors.md
   - name: Private network connector groups
     href: concept-connector-groups.md
-  - name: About remote network connectivity
+  - name: Understand remote network connectivity
     href: concept-remote-network-connectivity.md
 - name: How-to guides
   expanded: true
