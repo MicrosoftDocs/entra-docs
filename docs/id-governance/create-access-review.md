@@ -12,7 +12,7 @@ ms.author: owinfrey
 ms.reviewer: mwahl
 ---
  
-# Create an access review of groups and applications in Microsoft Entra ID
+# Create an access review of groups and applications in Microsoft Entra ID 
 
 Access to groups and applications for employees and guests changes over time. To reduce the risk associated with stale access assignments, administrators can use Microsoft Entra ID to create access reviews for group members or application access.
 
