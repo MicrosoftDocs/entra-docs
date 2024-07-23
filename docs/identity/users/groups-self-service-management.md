@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
-ms.date: 07/18/2024
+ms.date: 07/23/2024
 ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
@@ -44,6 +44,9 @@ Two scenarios help to explain self-service group management.
 In this example scenario, an administrator manages access to a software as a service (SaaS) application that the company is using. Managing the access rights is cumbersome, so the administrator asks the business owner to create a new group. The administrator assigns access for the application to the new group and adds to the group all people already accessing the application. The business owner then can add more users, and those users are automatically provisioned to the application.
 
 The business owner doesn't need to wait for the administrator to manage access for users. If the administrator grants the same permission to a manager in a different business group, that person can also manage access for their own group members. The business owner and the manager can't view or manage each other's group memberships. The administrator can still see all users who have access to the application and block access rights, if needed.
+
+> [!NOTE]
+For delegated scenarios, the administrator needs to have at least a [Privileged Role Administrator Microsoft Entra](~/identity/role-based-access-control/permissions-reference.md) role.
 
 ### Self-service group management
 
