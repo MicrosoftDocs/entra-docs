@@ -15,7 +15,7 @@ ms.author: billmath
 
 # Get started with single sign-on
 
-Setting up single sign-on, depends on which synchronization tool you are using and what your business goals are.  Use the tables to determine which features you would
+Setting up single sign-on, depends on which synchronization tool you are using and what your business goals are.  Use the tables below to determine which features meet your target objectives.
 
 ## Cloud sync
 
