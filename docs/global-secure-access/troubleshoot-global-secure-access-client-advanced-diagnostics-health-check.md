@@ -1,16 +1,16 @@
 ---
 title: Troubleshoot the Global Secure Access client: Health check tab
-description: Troubleshoot the Global Secure Access client using the **Health check** tab in the Advanced diagnostics utility.
+description: Troubleshoot the Global Secure Access client using the **Health check** tab in the Advanced diagnostics utility.\
 ms.service: global-secure-access
 ms.topic: troubleshooting
-ms.date: 07/19/2024
+ms.date: 07/22/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
 ms.reviewer: lirazb
 
-# Customer intent: As an IT administrator, I want to troubleshoot the Global Secure Access client using the Health check tab in the Advanced diagnostics utility.
 
+# Customer intent: I want to troubleshoot the Global Secure Access client using the Health check tab in the Advanced diagnostics utility.
 ---
 # Troubleshoot the Global Secure Access client with the advanced diagnostics Health check tab
 This document provides troubleshooting guidance for the Global Secure Access client using the **Health check** tab in the Advanced diagnostics utility.
@@ -29,76 +29,72 @@ Most of the Health check tests depend on one another. If tests fail:
 1. Resolve the first failed test.
 1. Select **Refresh** to view the updated test status.
 1. Repeat until you have resolved all failed tests.
+:::image type="content" source="media/troubleshoot-global-secure-access-client-advanced-diagnostics-health-check/troubleshoot-health-check-refresh.png" alt-text="Screenshot of the Global Secure Access Health check tab with the Refresh button highlighted.":::
 
 ### Check the Event Viewer
 As part of the troubleshooting process, it can be useful to check the Event Viewer for the Global Secure Access client. The log contains valuable events regarding errors and their cause.
 1. Navigate to **Control Panel** > **System and Security** > **Windows Tools**.
 1. Launch **Event Viewer**.
-1. Navigate to **Applications and Services Logs** > **Microsoft** > **Windows** > **Clobal Secure Access Client**.
+1. Navigate to **Applications and Services Logs** > **Microsoft** > **Windows** > **Global Secure Access Client**.
 1. Select **Operational**.
 
 ## Health check tests
 The following checks verify the health of the Global Secure Access client.
 
 ### Device is Microsoft Entra joined
-The Windows client authenticates the user and the device to Global Secure Access services. The device authentication (based on device token) requires that the device is either Microsoft Entra joined or Microsoft Entra hybrid joined. Microsoft Entra registered devices are currently not supported.
-To check the status of your device, run the following command in an elevated cmd : `dsregcmd.exe /status`.
+The Windows client authenticates the user and the device to Global Secure Access services. The device authentication, based on a device token, requires that the device is either Microsoft Entra joined or Microsoft Entra hybrid joined. Microsoft Entra registered devices are currently not supported.
+To check the status of your device, enter the following command in the Command Prompt: `dsregcmd.exe /status`.
+:::image type="content" source="media/troubleshoot-global-secure-access-client-advanced-diagnostics-health-check/troubleshoot-health-entra-joined.png" alt-text="Screenshot of the Command Prompt with the Device State, AzureAdJoined : Yes, highlighted.":::
 
 To join your device to a Microsoft Entra tenant, see [Join your Windows machine to Azure Active Directory](https://identitydivision.visualstudio.com/IdentityWiki/_wiki/wikis/IdentityWiki.wiki/44817/Join-your-windows-machine-to-AAD).
+> [!WARNING]
+> The above link goes to a wiki page, NOT a public article. **Guidance needed**: Which public article should I replace this URL with? Or should I remove mention of the reference? Also, old branding: **the image shows "Azure AD" instead of Entra ID.**
 
 ### Can Connect to the internet
-Indicates whether the device is connected to the Internet or not. An Internet connection is obligatory to connect to Global Secure Access.
-This test is based on the Network Connectivity Status Indicator 
+This check indicates whether or not the device is connected to the internet. An Internet connection is obligatory to connect to Global Secure Access.
+This test is based on the [Network Connectivity Status Indicator (NCSI)](/windows-server/networking/ncsi/ncsi-overview) feature. 
 
 ### Tunneling service running
 Global Secure Access Tunneling service must be running.
-
-You can verify that this service is running by the following command:
-sc query GlobalSecureAccessTunnelingService
-If the Global Secure Access Tunneling Service isn't running, start it from the services.msc.
-If the service fails to start, look for errors in the Event Viewer.
+1. To verify that this service running, enter the following command in the Command Prompt: `sc query GlobalSecureAccessTunnelingService`.
+1. If the Global Secure Access Tunneling service isn't running, start it from the `services.msc`.
+1. If the service fails to start, look for errors in the Event Viewer.
 
 ### Management service running
 Global Secure Access Management service must be running.
-
-You can verify that this service is running by the following command:
-sc query GlobalSecureAccessManagementService
-If the Global Secure Access Management Service isn't running, start it from the services.msc.
-If the service fails to start, look for errors in the Event Viewer.
+1. To verify that this service running, enter the following command in the Command Prompt: `sc query GlobalSecureAccessManagementService`.
+1. If the Global Secure Access Management Service isn't running, start it from the `services.msc`.
+1. If the service fails to start, look for errors in the Event Viewer.
 
 ### Policy Retriever service running
 Global Secure Access Policy Retriever service must be running.
-
-You can verify if this service is running by the following command:
-sc query GlobalSecureAccessPolicyRetrieverService
-If the Global Secure Access Policy Retriever Service isn't running, start it from the services.msc.
-If the service fails to start, look for errors in the Event Viewer.
+1. To verify that this service running, enter the following command in the Command Prompt: `sc query GlobalSecureAccessPolicyRetrieverService`.
+1. If the Global Secure Access Policy Retriever service isn't running, start it from the `services.msc`.
+1. If the service fails to start, look for errors in the Event Viewer.
 
 ### Driver running
-You can verify that the driver is running by using the following command:
-sc query GlobalSecureAccessDriver
-If the driver isn't running:
+The Global Secure Access driver must be running.
+To verify that this service running, enter the following command in the Command Prompt: `sc query GlobalSecureAccessDriver`.
 
-Search for event 304 in the Global Secure Access client in the event log.
-If the driver isn't running, reboot the machine.
-Run sc query GlobalSecureAccessDriver again.
-If the issue isn't resolved, reinstall the client.
+If the driver isn't running:
+1. Open the Event Viewer and search the Global Secure Access client log for **event 304**.
+1. If the driver isn't running, reboot the machine.
+1. Run the `sc query GlobalSecureAccessDriver` command again.
+1. If the issue remains unresolved, reinstall the Global Secure Access client.
 
 ### Client tray application running
-The GlobalSecureAccessClient.exe process runs the client UX (the system tray icon).
-If you can't see the Global Secure Access icon in the system tray, you can run it from the following path:
-C:\Program Files\Global Secure Access Client\GlobalSecureAccessClient.exe
+The GlobalSecureAccessClient.exe process runs the client UX in the system tray.
+If you can't see the Global Secure Access icon in the system tray, you can run it from the following path: `C:\Program Files\Global Secure Access Client\GlobalSecureAccessClient.exe`.
 
 ### Forwarding profile registry exists
 This test verifies that the following registry key exists:
-Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Global Secure Access Client\ForwardingProfile
+`Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Global Secure Access Client\ForwardingProfile`.
 
 If the key doesn't exist, try to force forwarding policy retrieval:
-
-Delete the Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Global Secure Access Client\ForwardingProfileVersion registry key, if it exists.
-Restart the service Global Secure Access Policy Retriever Service
-Check if the registry keys above were created.
-If not, look for errors in the Event Viewer.
+1. Delete the `Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Global Secure Access Client\ForwardingProfileVersion` registry key, if it exists.
+1. Restart the service, `Global Secure Access Policy Retriever Service`.
+1. Check if the two registry keys are created.
+1. If not, look for errors in the Event Viewer.
 
 ### Forwarding profile matches expected schema
 This test verifies that the forwarding profile in the registry has a valid format that can be read by the client.
@@ -127,6 +123,43 @@ After the change in the portal, the updated forwarding profile should be receive
 ### Diagnostic URLs in forwarding profile
 This test is conducted for each channel activated in the forwarding profile, checking that the configuration contains a URI for probing the service's health. The health status can be viewed by double-clicking on the system tray icon.
 If this test fails, it's usually an internal problem in Global Secure Access and Microsoft support team needs to be contacted.
+
+### Authentication certificate exists
+This test verifies that a certificate exists on the device for mTLS connection to the Global Secure Access cloud service.
+> [!TIP]
+> This test doesn't appear if mTLS isn't enabled for your tenant yet.
+
+If this test fails, try enrolling a new certificate by the following steps:
+
+Run the command certlm.msc
+Go to personal -> Certificates
+image.png
+Delete the certificate that has "issued to" field that ends with "gsa.client"
+image.png
+Delete the following registry key:
+Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Global Secure Access Client\CertCommonName
+Restart the Global Secure Access Management Service in the services MMC
+Refresh the certificates MMC to verify that a new certificate was created (this might take few minutes)
+Check the Global Secure Access client event log for errors
+Run the **Health check** tests again
+
+### Authentication certificate is valid
+This test verifies that the Global Secure Access certificate (used for mTLS connection to the Global Secure Access cloud service) is valid.
+> [!TIP]
+> This test doesn't appear if mTLS isn't enabled for your tenant yet.
+
+If this test fails, try enrolling a new certificate by the following steps:
+1. Run the command ``certlm.msc``
+1. Go to personal -> Certificates
+image.png
+1. Delete the certificate that has "issued to" field that ends with "gsa.client"
+image.png
+1. Delete the following registry key:
+``Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Global Secure Access Client\CertCommonName``
+1. Restart the Global Secure Access Management Service in the services MMC
+1. Refresh the certificates MMC to verify that a new certificate was created (this might take few minutes)
+1. Check the Global Secure Access client event log for errors
+1. Run the **Health check** tests again.
 
 ### DNS over HTTPS not supported
 For the client to acquire network traffic by FQDN destination (as opposed to IP destination), the client needs to read the DNS requests sent by the device to the DNS server. Hence, DNS over HTTPS needs to be disabled, if the forwarding profile contains FQDNs rules.
@@ -228,6 +261,18 @@ If the name resolution fails, try running: Resolve-DnsName -Name microsoft.com
 Verify the DNS servers configured for this machine ipconfig /all
 Consider setting another public DNS server.
 
+### Private access edge is reachable
+If this test fails, the device doesn't have network connection to the Global Secure Access cloud service.
+This test is conducted for all the different traffic types active for the user: Microsoft 365, Private Access, and Internet Access.
+
+If the test fails, possible reasons could be:
+
+Verify that the device has internet connection.
+Verify that the firewall or proxy doesn't block your connection to the edge.
+Make sure IPv4 is active on the device. Currently the edge works only with an IPv4 address.
+Stop the client and retry ``Test-NetConnection -ComputerName <edge's fqdn> -Port 443``.
+Try the PowerShell command from another device connected to the internet from a public network.
+
 ### Proxy disabled
 This test checks whether the proxy is configured on the device. If the end-user device is configured to use a proxy for outgoing traffic to the internet, the destination IPs/FQDNs acquired by the client need to be excluded by a Proxy Auto-Configuration (PAC) file or with the Web Proxy Auto-Discovery (WPAD) protocol.
 
@@ -302,51 +347,3 @@ To disable QUIC in Mozilla Firefox:
 Open Firefox
 Access to: about:config
 Turn off network.http.http3.enable
-
-### Authentication certificate exists
-This test verifies that a certificate exists on the device for mTLS connection to the Global Secure Access cloud service.
-Note: If this test doesn't appear, mTLS wasn't enabled for your tenant yet.
-
-If this test fails, try enrolling a new certificate by the following steps:
-
-Run the command certlm.msc
-Go to personal -> Certificates
-image.png
-Delete the certificate that has "issued to" field that ends with "gsa.client"
-image.png
-Delete the following registry key:
-Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Global Secure Access Client\CertCommonName
-Restart the Global Secure Access Management Service in the services MMC
-Refresh the certificates MMC to verify that a new certificate was created (this might take few minutes)
-Check the Global Secure Access client event log for errors
-Run the **Health check** tests again
-
-### Authentication certificate is valid
-This test verifies that the Global Secure Access certificate (used for mTLS connection to the Global Secure Access cloud service) is valid.
-> [!TIP]
-> This test doesn't appear if mTLS isn't enabled for your tenant yet.
-
-If this test fails, try enrolling a new certificate by the following steps:
-1. Run the command ``certlm.msc``
-1. Go to personal -> Certificates
-image.png
-1. Delete the certificate that has "issued to" field that ends with "gsa.client"
-image.png
-1. Delete the following registry key:
-``Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Global Secure Access Client\CertCommonName``
-1. Restart the Global Secure Access Management Service in the services MMC
-1. Refresh the certificates MMC to verify that a new certificate was created (this might take few minutes)
-1. Check the Global Secure Access client event log for errors
-1. Run the **Health check** tests again.
-
-### Edges are reachable
-If this test fails, the device doesn't have network connection to the Global Secure Access cloud service.
-This test is conducted for all the different traffic types active for the user: Microsoft 365, Private Access, and Internet Access.
-
-If the test fails, possible reasons could be:
-
-Verify that the device has internet connection.
-Verify that the firewall or proxy doesn't block your connection to the edge.
-Make sure IPv4 is active on the device. Currently the edge works only with an IPv4 address.
-Stop the client and retry ``Test-NetConnection -ComputerName <edge's fqdn> -Port 443``.
-Try the PowerShell command from another device connected to the internet from a public network.

@@ -1,20 +1,20 @@
 ---
 title: The Global Secure Access client for Windows
-description: Install the Global Secure Access client for Windows.
+description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the windows client.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 07/19/2024
+ms.date: 07/22/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
 ms.reviewer: lirazb
 
-# Customer intent: As an IT administrator, I want to download and install the Global Secure Access client.
 
+# Customer intent: Windows users, I want to download and install the Global Secure Access client.
 ---
 # Global Secure Access client for Windows
 
-The Global Secure Access client is an essential component of Global Secure Access and is intended to run on end-user devices. The client's main role is to route traffic that needs to be secured by Global Secure Access to the cloud service. All other traffic goes directly to the network. The [Forwarding Profiles](/global-secure-access/concept-traffic-forwarding.md), configured in the portal, determine which traffic is routed to the cloud service.
+The Global Secure Access client, an essential component of Global Secure Access, helps organizations manage and secure network traffic on end-user devices. The client's main role is to route traffic that needs to be secured by Global Secure Access to the cloud service. All other traffic goes directly to the network. The [Forwarding Profiles](/entra/global-secure-access/concept-traffic-forwarding.md), configured in the portal, determine which traffic is routed to the cloud service.
 
 This article describes how to download and install the Global Secure Access client for Windows.
 
@@ -23,7 +23,7 @@ This article describes how to download and install the Global Secure Access clie
 - An Entra tenant onboarded to Global Secure Access.
 - A managed device joined to the tenant above. The device must be either Microsoft Entra joined or Microsoft Entra hybrid joined. 
    - Microsoft Entra registered devices aren't supported.
-- The Global Secure Access client requres a 64-bit versions of Windows 10 or Windows 11.
+- The Global Secure Access client requires a 64-bit versions of Windows 10 or Windows 11.
    - Azure Virtual Desktop single-session is supported.
    - Azure Virtual Desktop multi-session isn't supported.
    - Windows 365 is supported.
@@ -33,8 +33,8 @@ This article describes how to download and install the Global Secure Access clie
 ### Known limitations
 This is a list of the known limitations of the current version of the Global Secure Access client.
 
-- **Secure DNS**: Secure DNS in its different versions (DNS over HTTPS, DNS over TLS, DNSSEC) is currently not supported. For the client to work correctly and acquire network traffic, Secure DNS must be disabled. To disable DNS, see [Disable DNS over HTTPS](/global-secure-access/troubleshoot-global-secure-access-client-advanced-diagnostics-health-check.md#disable-dns-over-https).
-- **DNS over TCP**: DNS uses port 53 UDP for name resolution. Some browsers have their own DNS client that also supports port 53 TCP. Currently the client doesn't support DNS port 53 TCP. As a mitigation disable the browser's DNS client by setting the following registry values:
+- **Secure DNS**: Secure DNS in its different versions (DNS over HTTPS, DNS over TLS, DNSSEC) is currently not supported. For the client to work correctly and acquire network traffic, Secure DNS must be disabled. To disable DNS, see [Disable DNS over HTTPS](/entra/global-secure-access/troubleshoot-global-secure-access-client-advanced-diagnostics-health-check.md#disable-dns-over-https).
+- **DNS over TCP**: DNS uses port 53 UDP for name resolution. Some browsers have their own DNS client that also supports port 53 TCP. Currently the client doesn't support DNS port 53 TCP. As a mitigation, disable the browser's DNS client by setting the following registry values:
     - **Edge**
     ``[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge]
       "BuiltInDnsClientEnabled"=dword:00000000``
@@ -42,10 +42,10 @@ This is a list of the known limitations of the current version of the Global Sec
     ``[HKEY_CURRENT_USER\Software\Policies\Google\Chrome]
       "BuiltInDnsClientEnabled"=dword:00000000``
 - **IPv6 is not supported**: The client tunnels only IPv4 traffic. IPv6 traffic is not acquired by the client and therefore transferred directly to the network. To prefer IPv4 over IPV6, so all relevant traffic will be tunneled, set network adapter properties, see [IPv4 preferred](troubleshoot-global-secure-access-client-advanced-diagnostics-health-check.md#ipv4-preferred).
-- **Connection fallback**: If there is a connection error to the cloud service, the client falls back to either direct Internet connection or blocking the connection, based on the ***hardening*** value of the matching rule in the forwarding profile.
+- **Connection fallback**: If there's a connection error to the cloud service, the client falls back to either direct Internet connection or blocking the connection, based on the ***hardening*** value of the matching rule in the forwarding profile.
 - **Geolocation**: For network traffic that is tunneled to the cloud service, the application server (website) detects the connection's source IP as the edge's IP address (and not as the user-device's IP address). This might affect services that rely on geolocation.
 > [!TIP]
-> For Office 365 and Entra to detect the device's true source IP, consider enabling [Source IP restoration](/global-secure-access/how-to-source-ip-restoration.md) .
+> For Office 365 and Entra to detect the device's true source IP, consider enabling [Source IP restoration](/entra/global-secure-access/how-to-source-ip-restoration.md) .
 
 Virtualization support
 Installing the client on a device that hosts virtual machine is currently not supported.
