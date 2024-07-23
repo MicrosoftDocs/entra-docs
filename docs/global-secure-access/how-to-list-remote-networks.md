@@ -21,7 +21,7 @@ Reviewing your remote networks is an important part of managing your Global Secu
 ## List all remote networks using the Microsoft Entra admin center
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
-1. Browse to **Global Secure Access** > **Devices** > **Remote network**. All remote networks are listed.
+1. Browse to **Global Secure Access** > **Connect** > **Remote networks**. All remote networks are listed.
 1. To view the details, select a remote network.
 
 ## List all remote networks using the Microsoft Graph API 
