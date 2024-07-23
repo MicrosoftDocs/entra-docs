@@ -77,7 +77,7 @@ On the Quick Access page, you provide a name for the Quick Access app, select a 
 
     ![Screenshot of the Quick Access app name.](media/how-to-configure-quick-access/new-quick-access-name.png)
 
-1. Select the **Save** button at the bottom of the page to create your "Quick Access" app without FQDNs, IP addresses, and private DNS suffixes.
+1. Select **Save** at the bottom of the page to create your "Quick Access" app without FQDNs, IP addresses, and private DNS suffixes.
 
 ### Add Quick Access application segment
 
@@ -89,7 +89,7 @@ You can add fully qualified domain names (FQDN), IP addresses, and IP address ra
 1. Browse to **Global Secure Access** > **Applications** > **Quick Access**.
 1. Select **Add Quick Access application segment**.
 
-    ![Screenshot of the Added Quick Access application segment button.](media/how-to-configure-quick-access/add-quick-access-application-segment.png)
+    ![Screenshot of the Added Quick Access application segment.](media/how-to-configure-quick-access/add-quick-access-application-segment.png)
 
 1. In the **Create application segment** panel that opens, select a **Destination type**.
 
@@ -111,7 +111,7 @@ You can add fully qualified domain names (FQDN), IP addresses, and IP address ra
         - Range of IP addresses from start IP (such as 192.0.2.1) to end IP (such as 192.0.2.10).
         - Provide the IP address start, end, and ports.
 
-1. Enter the ports and select the **Apply** button.
+1. Enter the ports and select **Apply**.
     - Separate multiple ports with a comma.
     - Specify port ranges with a hyphen.
     - Spaces between values are removed when you apply the changes.
@@ -129,7 +129,7 @@ You can add fully qualified domain names (FQDN), IP addresses, and IP address ra
     | 445 | Server Message Block (SMB) file sharing |
     | 3389 | Remote Desktop Protocol (RDP) |
 
-1. Select the **Save** button when you're finished.
+1. Select **Save** when you're finished.
 
 > [!NOTE]
 > You can add up to 500 application segments to your Quick Access app.
@@ -159,9 +159,9 @@ When you configure Quick Access, a new enterprise app is created on your behalf.
 
 You can view the properties from **Quick Access** or navigate to **Enterprise applications** and search for your Quick Access app.
 
-1. Select the **Edit application settings** button from Quick Access. 
+1. Select **Edit application settings** from Quick Access. 
 
-    ![Screenshot of the edit application settings button.](media/how-to-configure-quick-access/edit-application-settings.png)
+    ![Screenshot of edit application settings.](media/how-to-configure-quick-access/edit-application-settings.png)
 
 1. Select **Users and groups** from the side menu.
 
@@ -183,11 +183,7 @@ Once you have your Quick Access app configured, your private resources added, us
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 1. Browse to **Global Secure Access** > **Connect** > **Traffic forwarding**.
-1. Select the checkbox for **Private access profile**.
-
-![Screenshot of the traffic forwarding page with the Private access profile enabled.](media/how-to-configure-quick-access/private-access-traffic-profile.png)
-
-
+1. Select the toggle for **Private access profile**.
 
 ## Next steps
 
