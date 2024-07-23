@@ -226,4 +226,5 @@ You have completed all the necessary steps to successfully sign out a user on yo
 ## Related content
 
 - [Tutorial: Sign up user with username and user attributes](tutorial-native-authentication-android-sign-up-user-with-username-user-attributes.md). 
+- [Configure a custom claim provider](/identity-platform/custom-extension-tokenissuancestart-configuration.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json).
 - [Add user attributes as token claims](how-to-add-attributes-to-token.md).

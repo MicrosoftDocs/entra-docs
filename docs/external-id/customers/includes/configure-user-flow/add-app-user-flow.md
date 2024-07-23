@@ -17,4 +17,4 @@ Although many applications can be associated with your user flow, a single appli
    <!--[Screenshot the shows how to associate an application to a user flow.](media/20-create-user-flow-add-application.png)-->
 1. Select the application from the list such as *ciam-client-app* or use the search box to find the application, and then select it.
 
-1. Choose **Select**. 
+1. Choose **Select**.

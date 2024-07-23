@@ -259,7 +259,6 @@ To sign out a user, use the reference to the `MSALNativeAuthUserAccountResult` t
 
 You have successfully completed all the necessary steps to sign out a user on your app. Build and run your application. If all good, you should be able to select sign out button to successfully sign out. 
 
-## Next step
+## Related content
 
-> [!div class="nextstepaction"]
-> [Tutorial: Self-service password reset in iOS app](tutorial-native-authentication-ios-self-service-password-reset.md).
+- [Configure a custom claim provider](/identity-platform/custom-extension-tokenissuancestart-configuration.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json).
