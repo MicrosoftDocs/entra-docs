@@ -314,7 +314,7 @@ At this stage, you create your web app endpoints and add the business logic to y
 [!INCLUDE [python-flask-web-app-run-app](./includes/run-app/flask-web-app.md)]
 
 
-### Use custom URL domain (Optional)
+## Use custom URL domain (Optional)
 
 [!INCLUDE [external-id-custom-domain](./includes/use-custom-domain-url-python.md)]
 
