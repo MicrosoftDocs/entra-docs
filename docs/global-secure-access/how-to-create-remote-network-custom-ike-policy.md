@@ -32,17 +32,13 @@ To create a remote network with a custom IKE policy in the Microsoft Entra admin
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
 
-1. Browse to **Global Secure Access** > **Devices** > **Remote network**.
+1. Browse to **Global Secure Access** > **Connect** > **Remote networks**.
 
-1. Select the **Create remote network** button.
+1. Select **Create remote network**.
 
-    ![Screenshot of the remote network page with the crete new remote network button highlighted.](./media/how-to-create-remote-network-custom-ike-policy/create-new-remote-network.png)
+1. Provide a name and region for your remote network and select **Next: Connectivity**.
 
-1. Provide a name and region for your remote network and select the **Next** button.
-
-1. Select the **+ Add a link** button to add the connectivity details of your CPE.
-
-    ![Screenshot of the create remote network page with the add a link button highlighted.](./media/how-to-create-remote-network-custom-ike-policy/add-a-link.png)
+1. Select **+ Add a link** to add the connectivity details of your CPE.
 
 ### Add a link - General tab
 
@@ -53,21 +49,22 @@ There are several details to enter on the General tab. Pay close attention to th
 1. Enter the following details:
     - **Link name**: Name of your CPE.
     - **Device type**: Choose a device option from the dropdown list.
-    - **IP address**: Public IP address of your device.
-    - **Peer BGP address**: Enter the BGP IP address of your CPE.
+    - **Device IP address**: Public IP address of your device.
+    - **Device BGP address**:: Enter the BGP IP address of your CPE.
         - This address is entered as the *local* BGP IP address on the CPE.
-    - **Local BGP address**: Enter a BGP IP address that is *not* part of your on-premises network where your CPE resides.
-        - For example, if your on-premises network is 10.1.0.0/16, then you can use 10.2.0.4 as your Local BGP address.
-        - This address is entered as the *peer* BGP​​ IP address on your CPE.
-        - Refer to the [valid BGP addresses](reference-remote-network-configurations.md#valid-bgp-addresses) list for reserved values that can't be used.
-    - **Link ASN**: Provide the autonomous system number (ASN) of the CPE.
+    - **Device ASN**: Provide the autonomous system number (ASN) of the CPE.
         - A BGP-enabled connection between two network gateways requires that they have different ASNs.
-    - Refer to the [valid ASN values](reference-remote-network-configurations.md#valid-asn) list for reserved values that can't be used.
+        - Refer to the [valid ASN values](reference-remote-network-configurations.md#valid-asn) list for reserved values that can't be used.
     - **Redundancy**: Select either *No redundancy* or *Zone redundancy* for your IPSec tunnel.
     - **Zone redundant local BGP address**: This optional field shows up only when you select **Zone redundancy**.
         - Enter a BGP IP address that is *not* part of your on-premises network where your CPE resides *and* is different from **Local BGP address**.
     - **Bandwidth capacity (Mbps)**: Specify tunnel bandwidth. Available options are 250, 500, 750, and 1000 Mbps.
-1. Select the **Next** button.
+    - **Local BGP address**: Enter a BGP IP address that is *not* part of your on-premises network where your CPE resides.
+        - For example, if your on-premises network is 10.1.0.0/16, then you can use 10.2.0.4 as your Local BGP address.
+        - This address is entered as the *peer* BGP​​ IP address on your CPE.
+        - Refer to the [valid BGP addresses](reference-remote-network-configurations.md#valid-bgp-addresses) list for reserved values that can't be used.
+    
+1. Select the **Next**.
 
 ### Add a link - Details tab
 
@@ -92,7 +89,7 @@ There are several details to enter on the General tab. Pay close attention to th
 
 ### Add a link Security tab
 
-1. Enter the Pre-shared key (PSK). The same secret key must be used on your CPE.
+1. Enter the Pre-shared key (PSK) and Zone Redundancy Pre-shared key (PSK). The same secret key must be used on your respective CPE.
 1. Select the **Save** button.
 
 ![Screenshot of the Security tab for adding a device link.](./media/how-to-create-remote-network-custom-ike-policy/pre-shared-key.png)
