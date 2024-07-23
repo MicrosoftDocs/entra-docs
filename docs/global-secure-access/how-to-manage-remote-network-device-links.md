@@ -78,14 +78,14 @@ The **Details** tab is where you establish the bidirectional communication chann
 
 ### Add a link - Security tab
 
-1. Enter the Pre-shared key (PSK) and Zone Redundancy Pre-shared key (PSK). The same secret key must be used on your respective CPE. Note that the Zone Redundancy Pre-shared key (PSK) field only appears if you setup redundancy on the first page in creating the link.
+1. Enter the Pre-shared key (PSK) and Zone Redundancy Pre-shared key (PSK). The same secret key must be used on your respective CPE. Note that the Zone Redundancy Pre-shared key (PSK) field only appears if you set up redundancy on the first page in creating the link.
 1. Select the **Save** button.
 
 ### [Microsoft Graph API](#tab/microsoft-graph-api)
 
 Remote networks with a custom IKE policy can be created using Microsoft Graph on the `/beta` endpoint.
 
-1. Sign in to the [Graph Explorer](https://aka.ms/ge).
+1. Sign in to [Graph Explorer](https://aka.ms/ge).
 1. Select `POST` as the HTTP method from the dropdown.
 1. Set the API version to beta.
 1. Run the following query to get a list of your remote networks and their details.
@@ -138,7 +138,7 @@ You can delete device links through the Microsoft Entra admin center and using t
 
 1. Select the device link from the **Links** column to access the device link details page.
 
-1. Select the **Delete** icon for the device link you need to delete. A confirmation dialog appears. Select **Delete** to confirm the deletion.
+1. Select **Delete** for the device link you want to delete. A confirmation dialog appears. Select **Delete** to confirm the deletion.
 
     ![Screenshot of the delete icon for remote network device links.](media/how-to-manage-remote-network-device-links/delete-device-link.png)
 
