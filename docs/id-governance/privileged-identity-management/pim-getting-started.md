@@ -63,7 +63,6 @@ Once Privileged Identity Management is set up, you can learn your way around.
 
 :::image type="content" source="./media/pim-getting-started/pim-quickstart-tasks.png" alt-text="Screenshot showing the navigation window in Privileged Identity Management showing Tasks and Manage options." lightbox="./media/pim-getting-started/pim-quickstart-tasks.png":::
 
-
 | Task + Manage | Description |
 | --- | --- |
 | **My roles**  | Displays a list of eligible and active roles assigned to you. This is where you can activate any assigned eligible roles. |
