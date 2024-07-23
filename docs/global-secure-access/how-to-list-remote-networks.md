@@ -26,7 +26,7 @@ Reviewing your remote networks is an important part of managing your Global Secu
 
 ## List all remote networks using the Microsoft Graph API 
 
-1. Sign in to the [Graph Explorer](https://aka.ms/ge). 
+1. Sign in to [Graph Explorer](https://aka.ms/ge). 
 1. Select `GET` as the HTTP method from the dropdown. 
 1. Set the API version to beta. 
 1. Enter the following query.
