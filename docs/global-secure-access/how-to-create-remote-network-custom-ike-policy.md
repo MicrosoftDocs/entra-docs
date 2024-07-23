@@ -83,14 +83,14 @@ There are several details to enter on the General tab. Pay close attention to th
 
 1. Whether you choose Default or Custom, the IPSec/IKE policy you specify must match the crypto policy on your CPE.
 
-1. Select the **Next** button.
+1. Select **Next**.
 
     ![Screenshot of the custom details for the device link.](media/how-to-create-remote-network-custom-ike-policy/device-link-details.png)
 
 ### Add a link Security tab
 
 1. Enter the Pre-shared key (PSK) and Zone Redundancy Pre-shared key (PSK). The same secret key must be used on your respective CPE.
-1. Select the **Save** button.
+1. Select **Save**.
 
 ![Screenshot of the Security tab for adding a device link.](./media/how-to-create-remote-network-custom-ike-policy/pre-shared-key.png)
 
@@ -101,7 +101,7 @@ Remote networks with a custom IKE policy can be created using Microsoft Graph on
 1. Sign in to [Graph Explorer](https://aka.ms/ge).
 1. Select **POST** as the HTTP method from the dropdown.
 1. Set the API version to **beta**.
-1. Add the following query, then select the **Run query** button.
+1. Add the following query, then select **Run query**.
 
 ```http
     POST https://graph.microsoft.com/beta/networkaccess/connectivity/branches
