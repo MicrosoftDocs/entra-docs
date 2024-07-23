@@ -261,4 +261,4 @@ You have successfully completed all the necessary steps to sign out a user on yo
 
 ## Related content
 
-- [Configure a custom claim provider](/identity-platform/custom-extension-tokenissuancestart-configuration.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json).
+- [Configure a custom claim provider](/identity-platform/custom-extension-tokenissuancestart-configuration?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json).
