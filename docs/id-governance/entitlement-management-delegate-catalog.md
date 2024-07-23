@@ -22,7 +22,7 @@ A catalog is a container of resources and access packages. You create a catalog 
 
 There are three ways an organization can delegate with catalogs:
 
-- When getting started in a pilot project, identity governance administrators can [create](entitlement-management-catalog-create.md) and manage the catalog. Later, when moving from pilot to production, they could delegate a catalog by [assigning nonadministrators as owners to the catalog](entitlement-management-catalog-create.md#add-more-catalog-owners), so that those users could maintain the policies going forward.
+- When getting started in a pilot project, Identity Governance Administrators can [create](entitlement-management-catalog-create.md) and manage the catalog. Later, when moving from pilot to production, they could delegate a catalog by [assigning nonadministrators as owners to the catalog](entitlement-management-catalog-create.md#add-more-catalog-owners), so that those users could maintain the policies going forward.
 - If there are resources that don't have owners, then administrators can create catalogs, add those resources to each catalog, and then [assign nonadministrators as owners to a catalog](entitlement-management-catalog-create.md#add-more-catalog-owners). This allows users who aren't administrators and aren't resource owners to manage their own access policies for those resources.
 - If resources have owners, then administrators can assign a collection of users, such as an `All Employees` dynamic group, to the catalog creators role, so a user who are in that group and own resources can create a catalog for their own resources.
 

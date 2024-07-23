@@ -20,7 +20,7 @@ Microsoft Entra Privileged Identity Management (PIM) provides controls to manage
 
 ## Who can extend and renew?
 
-Only Global Administrators or Privileged Role administrators can extend or renew Microsoft Entra role assignments. The affected user or group can ask to extend roles that are about to expire and request to renew roles that are already expired.
+Only Global Administrators or Privileged Role Administrators can extend or renew Microsoft Entra role assignments. The affected user or group can ask to extend roles that are about to expire and request to renew roles that are already expired.
 
 ## When are notifications sent?
 

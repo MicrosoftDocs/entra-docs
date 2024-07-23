@@ -47,7 +47,7 @@ You need to edit the POST and replace the &lt;your tenant name here&gt; portion 
 First we create our employee, Melva Prince.
 
  1. Now navigate to [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer).
- 2. Sign-in to Graph Explorer with the user administrator account for your tenant.
+ 2. Sign-in to Graph Explorer with the User Administrator account for your tenant.
  3. At the top, change **GET** to **POST** and add `https://graph.microsoft.com/v1.0/users/` to the box. 
  4. Copy the following code in to the **Request body** 
  5. Replace `<your tenant here>` in the following code with the value of your Microsoft Entra tenant.
