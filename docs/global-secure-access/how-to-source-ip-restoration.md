@@ -63,7 +63,7 @@ To see source IP restoration in action, administrators can take the following st
 
 Sign-in log data might take some time to appear this delay is normal as there's some processing that must take place.
 
-:::image type="content" source="media/how-to-source-ip-restoration/sign-in-logs-enabled-disabled.png" alt-text="Screenshot of the sign-in logs showing events with different IP addresses highlighting both the restored and proxied IP address" lightbox="media/how-to-source-ip-restoration/sign-in-logs-enabled-disabled.png":::
+:::image type="content" source="media/how-to-source-ip-restoration/sign-inLogExample.png" alt-text="Screenshot of the sign-in logs showing events with different IP addresses highlighting both the restored and proxied IP address" lightbox="media/how-to-source-ip-restoration/sign-in-logs-enabled-disabled.png":::
 
 
 
