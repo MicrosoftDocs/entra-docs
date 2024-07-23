@@ -222,7 +222,7 @@ After creating the project, you'll need to install the required NuGet packages a
 
 ### Add the sample code
 
-The function API is the source of extra claims for your token. For the purposes of this article, we're hardcoding the values for the sample app. In production, you can fetch information about the user from external data store. Refer to the [WebJobsAuthenticationEventsContext Class](/dotnet/api/microsoft.azure.webjobs.extensions.authenticationevents.tokenissuancestart.webjobsauthenticationeventscontext?view=azure-dotnet-preview#properties) for existing properties.
+The function API is the source of extra claims for your token. For the purposes of this article, we're hardcoding the values for the sample app. In production, you can fetch information about the user from external data store. Refer to the [WebJobsAuthenticationEventsContext Class](/dotnet/api/microsoft.azure.webjobs.extensions.authenticationevents.tokenissuancestart.webjobsauthenticationeventscontext#properties) for existing properties.
 
 In your *AuthEventsTrigger.cs* file, replace the entire contents of the file with the following code:
 
