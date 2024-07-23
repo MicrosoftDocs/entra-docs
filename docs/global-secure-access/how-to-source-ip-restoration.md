@@ -58,12 +58,12 @@ To see source IP restoration in action, administrators can take the following st
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Reader](/azure/active-directory/roles/permissions-reference#security-reader).
 1. Browse to **Identity** > **Users** > **All users** > select one of your test users > **Sign-in logs**.
-1. With source IP restoration enabled, you see IP addresses that include their actual IP address. 
-   - If source IP restoration is disabled, you can't see their actual IP address.
+1. Click **Columns** and check the box for **Global Secure Access IP address**.
+1. You can now compare the columns **IP address** and **Global Secure Access IP address**. **IP Address** indicates the restored egress IP and **Global Secure Access IP address** indicates the proxied IP address through the Microsoft SSE solution.
 
 Sign-in log data might take some time to appear this delay is normal as there's some processing that must take place.
 
-:::image type="content" source="media/how-to-source-ip-restoration/sign-in-logs-enabled-disabled.png" alt-text="Screenshot of the sign-in logs showing events with source IP restoration on, then off, then on again." lightbox="media/how-to-source-ip-restoration/sign-in-logs-enabled-disabled.png":::
+:::image type="content" source="media/how-to-source-ip-restoration/sign-in-logs-enabled-disabled.png" alt-text="Screenshot of the sign-in logs showing events with different IP addresses highlighting both the restored and proxied IP address" lightbox="media/how-to-source-ip-restoration/sign-in-logs-enabled-disabled.png":::
 
 
 
