@@ -29,7 +29,7 @@ Also, keep role assignments permanent if a user has a Microsoft account (in othe
 
 ## Open Discovery and insights (preview)
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged role administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
 1. Browse to **Identity governance** > **Privileged Identity Management** > **Microsoft Entra roles** >**Discovery and insights (Preview)**.
 

@@ -53,7 +53,7 @@ Alert | Severity | Trigger | Recommendation
 
 Follow these steps to configure security alerts for Azure roles in Privileged Identity Management:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged role administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
 1. Browse to **Identity governance** > **Privileged Identity Management** > **Azure resources** Select your subscription > **Alerts** > **Setting**. For information about how to add the Privileged Identity Management tile to your dashboard, see [Start using Privileged Identity Management](pim-getting-started.md).
 
