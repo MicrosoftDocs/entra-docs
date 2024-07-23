@@ -81,7 +81,7 @@ On the Quick Access page, you provide a name for the Quick Access app, select a 
 
 ### Add Quick Access application segment
 
-The **Add Quick Access application segment** portion of this process is where you define the FQDNs and IP addresses that you want to include in the traffic for Microsoft Entra Private Access. You can add these resources when you create the Quick Access app or return to add more or edit them later.
+You define the FQDNs and IP addresses to include when you **Add Quick Access application segment**.  You add these resources when you create or update the Quick Access app.
 
 You can add fully qualified domain names (FQDN), IP addresses, and IP address ranges. Within each application segment, you can add multiple ports and port ranges.
 
