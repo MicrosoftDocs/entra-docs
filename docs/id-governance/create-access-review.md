@@ -20,12 +20,12 @@ Microsoft 365 and Security group owners can also use Microsoft Entra ID to creat
 
 Watch a short video that talks about enabling access reviews.
 
-   >[!VIDEO https://youtu.be/VSl1TVITcQ8]
+   >[!VIDEO https://www.youtube.com/watch?v=VSl1TVITcQ8]
 
 This article describes how to create one or more access reviews for group members or application access.
 
 - To review access package assignments, see [configure an access review in entitlement management](entitlement-management-access-reviews-create.md).
-- To review Azure resource or Microsoft Entra roles, see [Create an access review of Azure resource and Microsoft Entra roles in PIM](privileged-identity-management/pim-create-roles-and-resource-roles-review.md). 
+- To review Azure resource or Microsoft Entra roles, see [Create an access review of Azure resource and Microsoft Entra roles in Privileged Identity Management](privileged-identity-management/pim-create-roles-and-resource-roles-review.md). 
 - For reviews of PIM for Groups, see [create an access review of PIM for Groups](create-access-review-pim-for-groups.md).
 
 ## Prerequisites
