@@ -50,7 +50,7 @@ There are several details to enter on the General tab. Pay close attention to th
     - **Link name**: Name of your CPE.
     - **Device type**: Choose a device option from the dropdown list.
     - **Device IP address**: Public IP address of your device.
-    - **Device BGP address**:: Enter the BGP IP address of your CPE.
+    - **Device BGP address**: Enter the BGP IP address of your CPE.
         - This address is entered as the *local* BGP IP address on the CPE.
     - **Device ASN**: Provide the autonomous system number (ASN) of the CPE.
         - A BGP-enabled connection between two network gateways requires that they have different ASNs.
@@ -89,7 +89,7 @@ There are several details to enter on the General tab. Pay close attention to th
 
 ### Add a link Security tab
 
-1. Enter the Pre-shared key (PSK) and Zone Redundancy Pre-shared key (PSK). The same secret key must be used on your respective CPE. Note that the Zone Redundancy Pre-shared key (PSK) field only appears if you setup redundancy on the first page in creating the link.
+1. Enter the Pre-shared key (PSK) and Zone Redundancy Pre-shared key (PSK). The same secret key must be used on your respective CPE. The Zone Redundancy Pre-shared key (PSK) field only appears if redundancy is set on the first page in creating the link.
 1. Select **Save**.
 
 ![Screenshot of the Security tab for adding a device link.](./media/how-to-create-remote-network-custom-ike-policy/pre-shared-key.png)
