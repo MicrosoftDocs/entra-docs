@@ -55,7 +55,7 @@ Associating a traffic profile to your remote network using the Microsoft Graph A
 
 A traffic forwarding profile can be assigned using Microsoft Graph on the `/beta` endpoint.
  
-1. Open a web browser and navigate to the Graph Explorer at https://aka.ms/ge.
+1. Open a web browser and navigate to **Graph Explorer** at https://aka.ms/ge.
 1. Select **GET** as the HTTP method from the dropdown. 
 1. Select the API version to **beta**. 
 1. Enter the query.
