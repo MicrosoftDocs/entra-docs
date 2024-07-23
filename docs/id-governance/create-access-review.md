@@ -41,7 +41,7 @@ For more information, see [License requirements](access-reviews-overview.md#lice
 > [!NOTE]
 > Following least privilege access, we recommend using the Identity Governance Administrator role.
 
-If you're reviewing access to an application, then before creating the review, see the article on how to [prepare for an access review of users' access to an application](access-reviews-application-preparation.md) to ensure the application is integrated with Microsoft Entra ID in your tenant.
+If you're reviewing access to an application, then before you create the review, see the article on how to [prepare for an access review of users' access to an application](access-reviews-application-preparation.md) to ensure the application is integrated with Microsoft Entra ID in your tenant.
 
 > [!NOTE]
 > Access reviews capture a snapshot of access at the beginning of each review instance. Any changes made during the review process will be reflected in the subsequent review cycle. Essentially, with the commencement of each new recurrence, pertinent data regarding the users, resources under review, and their respective reviewers is retrieved.
