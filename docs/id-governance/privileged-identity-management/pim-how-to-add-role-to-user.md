@@ -18,7 +18,7 @@ ms.custom: subject-rbac-steps
 
 With Microsoft Entra ID, a Global Administrator can make **permanent** Microsoft Entra admin role assignments. These role assignments can be created using the [Microsoft Entra admin center](~/identity/role-based-access-control/permissions-reference.md) or using [PowerShell commands](/powershell/module/azuread/#directory_roles).
 
-The Microsoft Entra Privileged Identity Management (PIM) service also allows Privileged role administrators to make permanent admin role assignments. Additionally, Privileged role administrators can make users **eligible** for Microsoft Entra admin roles. An eligible administrator can activate the role when they need it, and then their permissions expire once they're done.
+The Microsoft Entra Privileged Identity Management (PIM) service also allows Privileged Role Administrators to make permanent admin role assignments. Additionally, Privileged Role Administrators can make users **eligible** for Microsoft Entra admin roles. An eligible administrator can activate the role when they need it, and then their permissions expire once they're done.
 
 Privileged Identity Management support both built-in and custom Microsoft Entra roles. For more information on Microsoft Entra custom roles, see [Role-based access control in Microsoft Entra ID](~/identity/role-based-access-control/custom-overview.md).
 
