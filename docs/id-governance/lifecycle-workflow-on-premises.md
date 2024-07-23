@@ -1,5 +1,5 @@
 ---
-title: Managing Users synchronized from Active Directory Domain Services to Microsoft Entra with Lifecycle Workflows
+title: Managing Users synchronized from Active Directory Domain Services to Microsoft Entra ID with Lifecycle Workflows
 description: Conceptual article discussing managing Users synchronized from Active Directory Domain Services (AD DS) to Microsoft Entra with Lifecycle Workflows.
 author: owinfreyATL
 ms.author: owinfrey
@@ -14,9 +14,9 @@ ms.custom: template-concept
 #CustomerIntent: As an IT administrator, I want to learn about managing users with Lifecycle workflows so that I can use workflows to manage these users in my environment.
 ---
 
-# Managing Users synchronized from Active Directory Domain Services to Microsoft Entra with Lifecycle Workflows
+# Managing Users synchronized from Active Directory Domain Services to Microsoft Entra ID with Lifecycle Workflows
 
-Lifecycle Workflows supports governing the identity lifecycle for user accounts that are synchronized from Active Directory Domain Services (AD DS) to Microsoft Entra. For Lifecycle Workflows, it's essential that a user account exists in Microsoft Entra, but how the account was created or how lifecycle relevant changes are being made to the account plays a minor role when it comes to processing workflows and associated tasks for the user account. The support includes accounts and changes made via paths such as [HR driven provisioning](../identity/app-provisioning/what-is-hr-driven-provisioning.md), Microsoft Graph APIs, the Microsoft Entra Admin Portal as well as changes synchronized by Microsoft Entra Connect and MicrosoftCloud Sync.
+Lifecycle Workflows supports governing the identity lifecycle for user accounts that are synchronized from Active Directory Domain Services (AD DS) to Microsoft Entra ID. For Lifecycle Workflows, it's essential that a user account exists in Microsoft Entra ID, but how the account was created or how lifecycle relevant changes are being made to the account plays a minor role when it comes to processing workflows and associated tasks for the user account. The support includes accounts and changes made via paths such as [HR driven provisioning](../identity/app-provisioning/what-is-hr-driven-provisioning.md), Microsoft Graph APIs, the Microsoft Entra Admin Portal as well as changes synchronized by Microsoft Entra Connect and MicrosoftCloud Sync.
 
 The following table lists common automation scenarios for synchronized users from Active Directory Domain Services using Microsoft Entra ID Governance:
 
@@ -31,9 +31,9 @@ The following table lists common automation scenarios for synchronized users fro
 |Disable users on last day     |   The [Disable user account](../id-governance/lifecycle-workflow-tasks.md#disable-user-account) Lifecycle Workflow task can be used to disable a user account on their last day.     |
 |Deleting users some days after termination     |   The [Delete User](../id-governance/lifecycle-workflow-tasks.md#delete-user) Lifecycle Workflow task can be used within a workflow template to delete users a set number of days after their termination.      |
 
-In this article, you learn what needs to be considered if you want to use Lifecycle Workflows for user accounts that are synchronized from AD DS to Microsoft Entra.
+In this article, you learn what needs to be considered if you want to use Lifecycle Workflows for user accounts that are synchronized from AD DS to Microsoft Entra ID.
 
-## Workflow execution conditions with Users synchronized from Active Directory Domain Services (AD DS) to Microsoft Entra
+## Workflow execution conditions with Users synchronized from Active Directory Domain Services (AD DS) to Microsoft Entra ID
 
 Lifecycle Workflows are processed for user accounts when they meet the workflows execution conditions. Executing conditions are composed of a trigger and scope. The trigger describes the event that occurs for a user account. The scope allows you to further define for whom the workflow starts when the event occurs.
 
@@ -53,7 +53,7 @@ The following table shows what should be considered for each workflow trigger wh
 For user attributes used within the workflow scoping capabilities, no further configuration is needed if the selected attributes are already synchronized. For information on synchronized attributes, see: [Attribute mapping in Microsoft Entra Cloud Sync](../identity/hybrid/cloud-sync/how-to-attribute-mapping.md) and [Microsoft Entra Connect Sync: Directory extensions](../identity/hybrid/connect/how-to-connect-sync-feature-directory-extensions.md). When a change is made in Active Directory, the synchronization via Microsoft Entra Cloud Sync or Microsoft Entra Connect Sync needs to occur before changes can be picked up from Lifecycle Workflows.
 
 
-## Workflow tasks for users synchronized from Active Directory Domain Services to Microsoft Entra
+## Workflow tasks for users synchronized from Active Directory Domain Services to Microsoft Entra ID
 
 All Lifecycle workflow tasks work for both cloud, and synchronized from Active Directory, users out of the box except for limitations listed on specific tasks further in this article. For more information on all Lifecycle Workflow tasks, see:  [Lifecycle Workflow built-in tasks](lifecycle-workflow-tasks.md).
 
