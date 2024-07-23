@@ -7,7 +7,7 @@ editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: how-to
-ms.date: 07/15/2024
+ms.date: 07/23/2024
 ms.author: owinfrey
 ms.reviewer: mwahl
 ---
@@ -20,7 +20,7 @@ Microsoft 365 and Security group owners can also use Microsoft Entra ID to creat
 
 Watch a short video that talks about enabling access reviews.
 
->[!VIDEO https://www.youtube.com/embed/X1SL2uubx9M]
+   >[!VIDEO https://youtu.be/VSl1TVITcQ8]
 
 This article describes how to create one or more access reviews for group members or application access.
 
