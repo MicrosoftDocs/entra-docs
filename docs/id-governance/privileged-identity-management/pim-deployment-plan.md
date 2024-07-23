@@ -157,7 +157,7 @@ You can use [Microsoft Entra roles access reviews](./pim-create-roles-and-resour
 
 Prioritize protecting Microsoft Entra roles that have the most permissions. It’s also important to consider what data and permission are most sensitive for your organization. 
 
-First, ensure that all Global and Security admin roles are managed using PIM because they’re the users who can do the most harm when compromised. Then consider more roles that should be managed that could be vulnerable to attack.
+First, ensure that all Global Administrator and Security Administrator roles are managed using PIM because they’re the users who can do the most harm when compromised. Then consider more roles that should be managed that could be vulnerable to attack.
 
 <a name='configure-pim-settings-for-azure-ad-roles'></a>
 
@@ -203,7 +203,7 @@ A delegated approver receives an email notification when a request is pending fo
 
 ### View audit history for Microsoft Entra roles
 
-[View audit history for all role assignments and activations](pim-how-to-use-audit-log.md) within past 30 days for Microsoft Entra roles. You can access the audit logs if you are a Global Administrator or a privileged role administrator. 
+[View audit history for all role assignments and activations](pim-how-to-use-audit-log.md) within past 30 days for Microsoft Entra roles. You can access the audit logs if you are a Global Administrator or a Privileged Role Administrator. 
 
 **We recommend** you have at least one administrator read through all audit events on a weekly basis and export your audit events on a monthly basis.
 
@@ -250,7 +250,7 @@ The following table shows example settings:
 
 ### Assign and activate Azure Resource role
 
-For Azure resource roles in PIM, only an owner or User Access administrator can manage assignments for other administrators. Users who are Privileged Role Administrators, Security Administrators, or Security Readers do not by default have access to view assignments to Azure resource roles.
+For Azure resource roles in PIM, only an owner or User Access Administrator can manage assignments for other administrators. Users who are Privileged Role Administrators, Security Administrators, or Security Readers do not by default have access to view assignments to Azure resource roles.
 
 Follow the instructions in the links below:
 
@@ -258,7 +258,7 @@ Follow the instructions in the links below:
 
 2.[Allow eligible users to activate their Azure roles just-in-time](pim-resource-roles-activate-your-roles.yml)
 
-When privileged role assignment nears its expiration, [use PIM to extend or renew the roles](pim-resource-roles-renew-extend.md). Both user-initiated actions require an approval from the resource owner or User Access administrator. 
+When privileged role assignment nears its expiration, [use PIM to extend or renew the roles](pim-resource-roles-renew-extend.md). Both user-initiated actions require an approval from the resource owner or User Access Administrator. 
 
 When these important events occur in Azure resource roles, PIM sends [email notifications](pim-email-notifications.md) to Owners and Users Access Administrators. These emails might also include links to relevant tasks, such activating or renewing a role.
 
@@ -314,7 +314,7 @@ When group assignment nears its expiration, use [PIM to extend or renew the grou
 
 ### Approve or deny PIM activation request
 
-Configure PIM for Groups members and owners to require approval for activation and choose users or groups from your Microsoft Entra organization as delegated approvers. We recommend selecting two or more approvers for each group to reduce workload for the privileged role administrator. 
+Configure PIM for Groups members and owners to require approval for activation and choose users or groups from your Microsoft Entra organization as delegated approvers. We recommend selecting two or more approvers for each group to reduce workload for the Privileged Role Administrator. 
 
 [Approve or deny role activation requests for PIM for Groups](groups-approval-workflow.md). As a delegated approver, you'll receive an email notification when a request is pending for your approval.
 

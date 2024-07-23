@@ -580,6 +580,9 @@ Use Microsoft Graph to get policy information:
 }
 ```
 
+## Known limitation
+Tenant Restrictions v2 will not be enforced with request going across cross clouds. 
+
 ## Next steps
 
 See [Configure external collaboration settings](external-collaboration-settings-configure.md) for B2B collaboration with non-Azure AD identities, social identities, and non-IT managed external accounts.
