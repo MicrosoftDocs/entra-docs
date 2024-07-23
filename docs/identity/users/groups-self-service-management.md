@@ -46,7 +46,7 @@ In this example scenario, an administrator manages access to a software as a ser
 The business owner doesn't need to wait for the administrator to manage access for users. If the administrator grants the same permission to a manager in a different business group, that person can also manage access for their own group members. The business owner and the manager can't view or manage each other's group memberships. The administrator can still see all users who have access to the application and block access rights, if needed.
 
 > [!NOTE]
-For delegated scenarios, the administrator needs to have at least a [Privileged Role Administrator Microsoft Entra](~/identity/role-based-access-control/permissions-reference.md) role.
+> For delegated scenarios, the administrator needs to have at least a [Privileged Role Administrator Microsoft Entra](~/identity/role-based-access-control/permissions-reference.md) role.
 
 ### Self-service group management
 
