@@ -7,7 +7,7 @@ ms.date: 07/23/2024
 ms.author: kengaderdus
 ms.manager: mwongerapk
 ---
-For the customer users to see the sign-up or sign-in experience when they user your app, you need to associate your app with a user flow. Although many applications can be associated with your user flow, a single application can only be associated with one user flow.
+For the customer users to see the sign-up or sign-in experience when they use your app, you need to associate your app with a user flow. Although many applications can be associated with your user flow, a single application can only be associated with one user flow.
 
 1. On the sidebar menu, select **Identity**.
 
