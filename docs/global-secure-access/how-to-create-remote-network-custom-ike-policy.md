@@ -59,7 +59,7 @@ There are several details to enter on the General tab. Pay close attention to th
     - **Zone redundant local BGP address**: This optional field shows up only when you select **Zone redundancy**.
         - Enter a BGP IP address that is *not* part of your on-premises network where your CPE resides *and* is different from **Local BGP address**.
     - **Bandwidth capacity (Mbps)**: Specify tunnel bandwidth. Available options are 250, 500, 750, and 1000 Mbps.
-    - **Local BGP address**: Enter a BGP IP address that is *not* part of your on-premises network where your CPE resides.
+    - **Local BGP address**: Enter a BGP IP address that *isn't* part of your on-premises network where your CPE resides.
         - For example, if your on-premises network is 10.1.0.0/16, then you can use 10.2.0.4 as your Local BGP address.
         - This address is entered as the *peer* BGP​​ IP address on your CPE.
         - Refer to the [valid BGP addresses](reference-remote-network-configurations.md#valid-bgp-addresses) list for reserved values that can't be used.
@@ -89,7 +89,7 @@ There are several details to enter on the General tab. Pay close attention to th
 
 ### Add a link Security tab
 
-1. Enter the Pre-shared key (PSK) and Zone Redundancy Pre-shared key (PSK). The same secret key must be used on your respective CPE.
+1. Enter the Pre-shared key (PSK) and Zone Redundancy Pre-shared key (PSK). The same secret key must be used on your respective CPE. Note that the Zone Redundancy Pre-shared key (PSK) field only appears if you setup redundancy on the first page in creating the link.
 1. Select **Save**.
 
 ![Screenshot of the Security tab for adding a device link.](./media/how-to-create-remote-network-custom-ike-policy/pre-shared-key.png)
