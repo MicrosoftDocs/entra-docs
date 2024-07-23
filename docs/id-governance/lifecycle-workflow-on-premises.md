@@ -8,7 +8,7 @@ ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.workload: identity
 ms.topic: conceptual 
-ms.date: 07/10/2024
+ms.date: 07/23/2024
 ms.custom: template-concept 
 
 #CustomerIntent: As an IT administrator, I want to learn about managing users with Lifecycle workflows so that I can use workflows to manage these users in my environment.
