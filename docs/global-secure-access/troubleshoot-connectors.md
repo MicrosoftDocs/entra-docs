@@ -153,7 +153,7 @@ The updater service is healthy if it’s running and there are no errors recorde
 
 To manually upgrade a connector:
 
-- Download the latest version of the connector. (You can find it under application proxy on the Microsoft Entra admin center.
+- Download the latest version of the connector. (Find it in the Microsoft Entra admin center at **Global Secure Access** > **Connect** > **Connectors**)
 - The installer restarts the Microsoft Entra private network connector services. In some cases, a reboot of the server might be required if the installer cannot replace all files. Therefore we recommend closing all applications (that is, Event Viewer) before you start the upgrade.
 - Run the installer. The upgrade process is quick and does not require providing any credentials and the connector is not re-registered.
     

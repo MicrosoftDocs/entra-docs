@@ -184,11 +184,7 @@ Once you have your app configured, your private resources added, users assigned 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 1. Browse to **Global Secure Access** > **Connect** > **Traffic forwarding**.
-1. Select the checkbox for **Private access profile**.
-
-![Screenshot of the traffic forwarding page with the Private access profile enabled.](media/how-to-configure-per-app-access/private-access-traffic-profile.png)
-
-
+1. Select the toggle for **Private access profile**.
 
 ## Next steps
 
