@@ -43,8 +43,6 @@ Most SaaS applications can be configured in Microsoft Entra ID. Microsoft has ma
 
 Apps that use OAuth 2.0 or OpenID Connect can be similarly integrated with Microsoft Entra ID as [app registrations](~/identity-platform/quickstart-register-app.md). Apps that use legacy protocols can use [Microsoft Entra application proxy](/entra/identity/app-proxy) to authenticate with Microsoft Entra ID.
 
-For any issues with onboarding your SaaS apps, you can contact the [SaaS Application Integration support alias](mailto:SaaSApplicationIntegrations@service.microsoft.com).
-
 ## SAML signing certificates for SSO
 
 Signing certificates are an important part of any SSO deployment. Microsoft Entra ID creates the signing certificates to establish SAML-based federated SSO to your SaaS applications. Once you add either gallery or non-gallery applications, you'll configure the added application using the federated SSO option. See [Manage certificates for federated single sign-on in Microsoft Entra ID](./tutorial-manage-certificates-for-federated-single-sign-on.md).
