@@ -203,7 +203,7 @@ The following table describes error codes that can be returned in the `error` pa
 
 Receiving an ID token in your app might not always be sufficient to fully authenticate the user. You might also need to validate the ID token's signature and verify its claims per your app's requirements. Like all OpenID providers, the Microsoft identity platform's ID tokens are [JSON Web Tokens (JWTs)](https://tools.ietf.org/html/rfc7519) signed by using public key cryptography.
 
-Web apps and web APIs that use ID tokens for authorization must validate them because such applications get access to data. Other types of application might not benefit from ID token validation, however. Native and single-page apps (SPAs), for example, rarely benefit from ID token validation because any entity with physical access to the device or browser can potentially bypass the validation.
+Web apps and web APIs that use ID tokens for authorization must validate them because such applications get access to data. Other types of application might not benefit from ID token validation, however. Native and single-page applications (SPA), for example, rarely benefit from ID token validation because any entity with physical access to the device or browser can potentially bypass the validation.
 
 Two examples of token validation bypass are:
 
@@ -333,7 +333,12 @@ post_logout_redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
 
 ## Single sign-out
 
-When you redirect the user to the `end_session_endpoint`, the Microsoft identity platform clears the user's session from the browser. However, the user may still be signed in to other applications that use Microsoft accounts for authentication. To enable those applications to sign the user out simultaneously, the Microsoft identity platform sends an HTTP GET request to the registered `LogoutUrl` of all the applications that the user is currently signed in to. Applications must respond to this request by clearing any session that identifies the user and returning a `200` response. If you wish to support single sign-out in your application, you must implement such a `LogoutUrl` in your application's code. You can set the `LogoutUrl` from the app registration portal.
+When you redirect the user to the `end_session_endpoint` in an application, the Microsoft identity platform will end the user session for this application. However, the user may still be signed in to other applications that use the same Microsoft accounts for authentication. When a user has signed into multiple web or SPA applications registered in this directory (also known as a tenant) single sign-out allows this user to sign out of all applications instantly by signing out in either one of the applications.
+
+To enable SSO for your Entra application, you should use the OpenID Connect front channel logout feature. This feature allows an application to notify other applications that the user has logged out. When the user logs out of one application, the Microsoft identity platform will send an HTTP GET request to the front-channel logout URL of every application that the user is currently signed in to. These applications must respond to this request by performing the following two actions for the sign sign-out to be successful:
+
+1. Clear any session that identifies the user.
+1. Applications must respond to this request by clearing any session that identifies the user and returning a `200` response.
 
 ### What is a front channel logout URL?
 
@@ -341,15 +346,23 @@ A front channel logout URL is where your web or SPA application receives the sig
 
 ### When should you set a front channel logout URL?
 
-If a user can use the same credential (usually an email and password) to sign into multiple web or SPA applications registered in this directory (also called a tenant), and you would like to set up SSO for the web or SPA application linked to this app registration, then you should set a front channel logout URL in this app registration.
+If you or your developer has determined single sign-on is required for an application, you must set the front channel logout URL for this application’s app registration. Once the front channel logout URL is set for this application’s app registration, the Microsoft identity platform will send an HTTP GET request to the front-channel logout URL of this application when the signed in user has signed out of another application.
 
-### What is SSO?
+## How to set up single sign out using front channel logout feature
 
-When a user has signed into multiple web or SPA applications registered in this directory (also called a tenant), SSO allows this user to sign out of all applications instantly by signing out in either one of the applications.
+To use the front channel logout feature for a set of applications, you must complete the following two tasks:
 
-### How to set up SSO
+-	Set the front channel logout URL in the [Microsoft entra admin center](https://entra.microsoft.com) for all the applications that should be signed out simultaneously. Each application typically has its own dedicated front channel logout URL.
+-	Edit the applications code so that they listen for an HTTP GET request sent by the Microsoft identity platform to the front channel logout URL, and respond to this request by clearing any session that identifies the user and returning a 200 response.
 
-Aside from setting a front channel logout URL in this app registration, you or your developer also needs to add functionality in the application codebase to accomplish the SSO. You can learn more about how to add SSO to your application [here](single-sign-out-saml-protocol.md).
+### How to choose a front channel logout URL
+
+The front channel logout URL should be a URL that is capable of receiving and responding to HTTP GET requests and should be able to clear any session that identifies the user. Examples of a front channel logout URL could be, but are not limited to, the following:
+
+* https://example.com/frontchannel_loout
+* https://example.com/signout
+* https://example.com/logout
+
 
 ## Next steps
 
