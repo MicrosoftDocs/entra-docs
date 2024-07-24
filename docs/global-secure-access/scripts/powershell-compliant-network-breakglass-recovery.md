@@ -10,15 +10,15 @@ ms.author: kenwith
 ms.reviewer: frankgomulka
 ---
 
-# Restore network compliance after a breakglass recovery
+# Restore compliant network requirement after a break glass operation
 
-After an outage is resolved, you need to make a fast and accurate recovery from a [Break Glass](./powershell-compliant-network-breakglass.md#step-2-switch-listed-policies-into-report-only-mode) operation.
+After an outage is resolved, you need to make a fast and accurate recovery from a [break glass](./powershell-compliant-network-breakglass.md#step-2-switch-listed-policies-into-report-only-mode) operation.
 
 Below you can view a script that can help you quickly regain the security value of [Compliant Network](../how-to-compliant-network.md) for your users.
 
-## Recover from Break Glass
+## Implement break glass recovery
 
-The PowerShell script enables any Conditional Access policies using the Compliant Network condition that were disabled in the [Break Glass](./powershell-compliant-network-breakglass.md#step-2-switch-listed-policies-into-report-only-mode) script. 
+The PowerShell script enables any Conditional Access policies using the Compliant Network condition that were disabled in the [break glass](./powershell-compliant-network-breakglass.md#step-2-switch-listed-policies-into-report-only-mode) script. 
 
 The sample requires the [Microsoft Graph Beta PowerShell module](/powershell/microsoftgraph/installation) 2.10 or newer.
 
