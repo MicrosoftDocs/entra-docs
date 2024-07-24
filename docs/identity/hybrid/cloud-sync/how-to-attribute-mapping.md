@@ -66,7 +66,7 @@ The following are the attributes supported by a direct mapping:
 
 - **Source attribute**: The user attribute from the source system (example: Active Directory).
 - **Target attribute**: The user attribute in the target system (example: Microsoft Entra ID).
-- **Default value if null (optional)**: The value that is passed to the target system if the source attribute is null. This value  are provisioned only when a user is created. It won't be provisioned when you're updating an existing user.  
+- **Default value if null (optional)**: The value that is passed to the target system if the source attribute is null. This value is provisioned only when a user is created. It won't be provisioned when you're updating an existing user.  
 - **Apply this mapping**:
   - **Always**: Apply this mapping on both user-creation and update actions.
   - **Only during creation**: Apply this mapping only on user-creation actions.
@@ -86,7 +86,7 @@ The following are the attributes supported by a constant mapping:
 The following are the attributes supported by an expression mapping:
 
 - **Expression**: This expression is the expression that is going to be applied to the target attribute.  For more information, see [Expression Builder](how-to-expression-builder.md) and [Writing expressions for attribute mappings in Microsoft Entra ID](reference-expressions.md).
--  **Default value if null (optional)**: The value that is passed to the target system if the source attribute is null. This value  are provisioned only when a user is created. It won't be provisioned when you're updating an existing user. 
+-  **Default value if null (optional)**: The value that is passed to the target system if the source attribute is null. This value is provisioned only when a user is created. It won't be provisioned when you're updating an existing user. 
 - **Target attribute**: The user attribute in the target system (example: Microsoft Entra ID).
  
 - **Apply this mapping**:
