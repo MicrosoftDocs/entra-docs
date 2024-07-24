@@ -71,7 +71,7 @@ These steps describe how to use Microsoft Graph Explorer, but you can also use a
 
 1. Select your profile and then select **Consent to permissions**.
 
-    :::image type="content" source="./media/cross-tenant-synchronization-configure-graph/graph-explorer-profile.png" alt-text="Screenshot of Graph Explorer profile with Consent to permissions link." lightbox="./media/cross-tenant-synchronization-configure-graph/graph-explorer-profile.png":::
+    :::image type="content" source="./media/cross-tenant-synchronization-configure-graph/graph-explorer-profile.png" alt-text="Screenshot of Microsoft Graph Explorer profile with Consent to permissions link." lightbox="./media/cross-tenant-synchronization-configure-graph/graph-explorer-profile.png":::
 
 1. Consent to the following required permissions.
 
@@ -137,7 +137,7 @@ These steps describe how to use Microsoft Graph Explorer, but you can also use a
     ```powershell
     (Get-MgPolicyCrossTenantAccessPolicyPartnerIdentitySynchronization -CrossTenantAccessPolicyConfigurationPartnerTenantId $SourceTenantId).UserSyncInbound
     ```
-    
+
     ```Output
     IsSyncAllowed
     -------------
@@ -155,18 +155,18 @@ These steps describe how to use Microsoft Graph Explorer, but you can also use a
     ```http
     POST https://graph.microsoft.com/v1.0/policies/crossTenantAccessPolicy/partners
     Content-Type: application/json
-    
+
     {
       "tenantId": "{sourceTenantId}"
     }
     ```
-    
+
     **Response**
-    
+
     ```http
     HTTP/1.1 201 Created
     Content-Type: application/json
-    
+
     {
       "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#policies/crossTenantAccessPolicy/partners/$entity",
       "tenantId": "{sourceTenantId}",
@@ -195,11 +195,11 @@ These steps describe how to use Microsoft Graph Explorer, but you can also use a
     If you get an `Request_MultipleObjectsWithSameKeyValue` error, you might already have an existing policy. For more information, see [Symptom - Request_MultipleObjectsWithSameKeyValue error](#symptom---request_multipleobjectswithsamekeyvalue-error).
 
     **Request**
-    
+
     ```http
     PUT https://graph.microsoft.com/v1.0/policies/crossTenantAccessPolicy/partners/{sourceTenantId}/identitySynchronization
     Content-type: application/json
-    
+
     {
        "displayName": "Fabrikam",
        "userSyncInbound": 
@@ -208,9 +208,9 @@ These steps describe how to use Microsoft Graph Explorer, but you can also use a
         }
     }
     ```
-    
+
     **Response**
-    
+
     ```http
     HTTP/1.1 204 No Content
     ```
@@ -237,11 +237,11 @@ These steps describe how to use Microsoft Graph Explorer, but you can also use a
 1. In the target tenant, use the [Update crossTenantAccessPolicyConfigurationPartner](/graph/api/crosstenantaccesspolicyconfigurationpartner-update) API to automatically redeem invitations and suppress consent prompts for inbound access.
 
     **Request**
-    
+
     ```http
     PATCH https://graph.microsoft.com/v1.0/policies/crossTenantAccessPolicy/partners/{sourceTenantId}
     Content-Type: application/json
-    
+
     {
         "inboundTrust": null,
         "automaticUserConsentSettings":
@@ -250,9 +250,9 @@ These steps describe how to use Microsoft Graph Explorer, but you can also use a
         }
     }
     ```
-    
+
     **Response**
-    
+
     ```http
     HTTP/1.1 204 No Content
     ```
@@ -336,7 +336,7 @@ These steps describe how to use Microsoft Graph Explorer, but you can also use a
                                    [crossCloudMeetingConfiguration,
                                    System.Collections.Generic.Dictionary`2[System.String,System.Object]], [protectedContentSharing,
                                    System.Collections.Generic.Dictionary`2[System.String,System.Object]]}
-    
+
     ```
 
 1. Use the [Update-MgPolicyCrossTenantAccessPolicyPartner](/powershell/module/microsoft.graph.identity.signins/update-mgpolicycrosstenantaccesspolicypartner) command to automatically redeem invitations and suppress consent prompts for outbound access.
@@ -359,18 +359,18 @@ These steps describe how to use Microsoft Graph Explorer, but you can also use a
     ```http
     POST https://graph.microsoft.com/v1.0/policies/crossTenantAccessPolicy/partners
     Content-Type: application/json
-    
+
     {
       "tenantId": "{targetTenantId}"
     }
     ```
-    
+
     **Response**
-    
+
     ```http
     HTTP/1.1 201 Created
     Content-Type: application/json
-    
+
     {
       "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#policies/crossTenantAccessPolicy/partners/$entity",
       "tenantId": "{targetTenantId}",
@@ -397,11 +397,11 @@ These steps describe how to use Microsoft Graph Explorer, but you can also use a
 1. Use the [Update crossTenantAccessPolicyConfigurationPartner](/graph/api/crosstenantaccesspolicyconfigurationpartner-update) API to automatically redeem invitations and suppress consent prompts for outbound access.
 
     **Request**
-    
+
     ```http
     PATCH https://graph.microsoft.com/v1.0/policies/crossTenantAccessPolicy/partners/{targetTenantId}
     Content-Type: application/json
-    
+
     {
         "automaticUserConsentSettings":
         {
@@ -409,9 +409,9 @@ These steps describe how to use Microsoft Graph Explorer, but you can also use a
         }
     }
     ```
-    
+
     **Response**
-    
+
     ```http
     HTTP/1.1 204 No Content
     ```
@@ -467,7 +467,7 @@ These steps describe how to use Microsoft Graph Explorer, but you can also use a
     Info                                : Microsoft.Graph.PowerShell.Models.MicrosoftGraphInformationalUrl
     KeyCredentials                      : {}
     LicenseDetails                      :
-    
+
     ...
     ```
 
@@ -488,24 +488,24 @@ These steps describe how to use Microsoft Graph Explorer, but you can also use a
 # [Microsoft Graph](#tab/ms-graph)
 
 1. In the source tenant, use the [applicationTemplate: instantiate](/graph/api/applicationtemplate-instantiate) API to add an instance of a configuration application from the Microsoft Entra application gallery into your tenant.
-    
+
     **Request**
-    
+
     ```http
     POST https://graph.microsoft.com/v1.0/applicationTemplates/518e5f48-1fc8-4c48-9387-9fdf28b0dfe7/instantiate
     Content-type: application/json
-    
+
     {
       "displayName": "Fabrikam"
     }
     ```
-    
+
     **Response**
-    
+
     ```http
     HTTP/1.1 201 Created
     Content-type: application/json
-    
+
     {
         "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#microsoft.graph.applicationServicePrincipal",
         "application": {
@@ -654,7 +654,7 @@ These steps describe how to use Microsoft Graph Explorer, but you can also use a
         }
     }
     ```
-    
+
 1. Save the servicePrincipalId.
 
     Be sure to use the service principal ID instead of the application ID.
@@ -694,11 +694,11 @@ These steps describe how to use Microsoft Graph Explorer, but you can also use a
 1. In the source tenant, use the [synchronizationJob: validateCredentials](/graph/api/synchronization-synchronizationjob-validatecredentials) API to test the connection to the target tenant and validate the credentials.
 
     **Request**
-    
+
     ```http
     POST https://graph.microsoft.com/v1.0/servicePrincipals/{servicePrincipalId}/synchronization/jobs/validateCredentials
     Content-Type: application/json
-    
+
     {
         "useSavedCredentials": false,
         "templateId": "Azure2Azure",
@@ -716,7 +716,7 @@ These steps describe how to use Microsoft Graph Explorer, but you can also use a
     ```
 
     **Response**
-    
+
     ```http
     HTTP/1.1 204 No Content
     ```
@@ -733,7 +733,7 @@ In the source tenant, to enable provisioning, create a provisioning job.
 
 1. Determine the synchronization template to use, such as `Azure2Azure`.
 
-    A template has pre-configured synchronization settings. 
+    A template has pre-configured synchronization settings.
 
 1. In the source tenant, use the [New-MgServicePrincipalSynchronizationJob](/powershell/module/microsoft.graph.applications/new-mgserviceprincipalsynchronizationjob) command to create a provisioning job based on a template.
 
@@ -762,27 +762,27 @@ In the source tenant, to enable provisioning, create a provisioning job.
 
 1. Determine the [synchronization template](/graph/api/resources/synchronization-synchronizationtemplate) to use, such as `Azure2Azure`.
 
-    A template has pre-configured synchronization settings. 
-    
+    A template has pre-configured synchronization settings.
+
 1. In the source tenant, use the [Create synchronizationJob](/graph/api/synchronization-synchronization-post-jobs) API to create a provisioning job based on a template.
 
     **Request**
-    
+
     ```http
     POST https://graph.microsoft.com/v1.0/servicePrincipals/{servicePrincipalId}/synchronization/jobs
     Content-type: application/json
-    
+
     {
         "templateId": "Azure2Azure"
     }
     ```
-    
+
     **Response**
-    
+
     ```http
     HTTP/1.1 201 Created
     Content-type: application/json
-    
+
     {
         "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#servicePrincipals('{servicePrincipalId}')/synchronization/jobs/$entity",
         "id": "{jobId}",
@@ -852,11 +852,11 @@ In the source tenant, to enable provisioning, create a provisioning job.
 1. In the source tenant, use the [Add synchronization secrets](/graph/api/synchronization-serviceprincipal-put-synchronization) API to save your credentials.
 
     **Request**
-    
+
     ```http
     PUT https://graph.microsoft.com/v1.0/servicePrincipals/{servicePrincipalId}/synchronization/secrets 
     Content-Type: application/json
-    
+
     {
         "value": [
             {
@@ -878,9 +878,9 @@ In the source tenant, to enable provisioning, create a provisioning job.
         ]
     }
     ```
-    
+
     **Response**
-    
+
     ```http
     HTTP/1.1 204 No Content
     ```
@@ -924,11 +924,11 @@ For cross-tenant synchronization to work, at least one internal user must be ass
 1. In the source tenant, use the [Grant an appRoleAssignment for a service principal](/graph/api/serviceprincipal-post-approleassignedto) API to assign an internal user to the configuration.
 
     **Request**
-    
+
     ```http
     POST https://graph.microsoft.com/v1.0/servicePrincipals/{servicePrincipalId}/appRoleAssignedTo
     Content-type: application/json
-    
+
     {
         "appRoleId": "{appRoleId}",
         "resourceId": "{servicePrincipalId}",
@@ -937,7 +937,7 @@ For cross-tenant synchronization to work, at least one internal user must be ass
     ```
 
     **Response**
-    
+
     ```http
     HTTP/1.1 201 Created
     Content-Type: application/json
@@ -979,7 +979,7 @@ Now that you have a configuration, you can test on-demand provisioning with one 
     Id                   : <RuleId>
     Metadata             : {defaultSourceObjectMappings, supportsProvisionOnDemand}
     Name                 : USER_INBOUND_USER
-    ObjectMappings       : {Provision Azure Active Directory Users, , , …}
+    ObjectMappings       : {Provision Azure Active Directory Users, , , ...}
     Priority             : 1
     SourceDirectoryName  : Azure Active Directory
     TargetDirectoryName  : Azure Active Directory (target tenant)
@@ -1029,7 +1029,7 @@ Now that you have a configuration, you can test on-demand provisioning with one 
     ```http
     GET https://graph.microsoft.com/v1.0/servicePrincipals/{servicePrincipalId}/synchronization/jobs/{jobId}/schema
     ```
-    
+
     **Response**
 
     ```http
@@ -1048,14 +1048,14 @@ Now that you have a configuration, you can test on-demand provisioning with one 
                 "sourceDirectoryName": "Azure Active Directory",
                 "targetDirectoryName": "Azure Active Directory (target tenant)",
                 "metadata": [
-    
+
                 ...
     ```
-    
+
 1. In the source tenant, use the [synchronizationJob: provisionOnDemand](/graph/api/synchronization-synchronizationjob-provisionondemand) API to provision a test user on demand.
 
     **Request**
-    
+
     ```http
     POST https://graph.microsoft.com/v1.0/servicePrincipals/{servicePrincipalId}/synchronization/jobs/{jobId}/provisionOnDemand
     Content-Type: application/json
@@ -1082,7 +1082,7 @@ Now that you have a configuration, you can test on-demand provisioning with one 
         "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#microsoft.graph.stringKeyStringValuePair",
         "key": "Microsoft.Identity.Health.CPP.Common.DataContracts.SyncFabric.StatusInfo",
         "value": "[{\"provisioningSteps\":[{\"name\":\"EntryImport\",\"type\":\"Import\",\"status\":\"Success\",\"description\":\"Retrieved User 'user1@fabrikam.com' from Azure Active Directory\",\"timestamp\":\"2023-07-31T00:00:16.7866324Z\",\"details\":{\"objectId\":\"{userObjectId}\",\"accountEnabled\":\"True\",\"displayName\":\"User1\",\"mailNickname\":\"user1\",\"userPrincipalName\":\"user1@fabrikam.com\",}
-    
+
         ...
     ```
 
@@ -1105,14 +1105,13 @@ Now that you have a configuration, you can test on-demand provisioning with one 
 1. Now that the provisioning job is configured, in the source tenant, use the [Start synchronizationJob](/graph/api/synchronization-synchronizationjob-start) API to start the provisioning job.
 
     **Request**
-    
+
     ```http
     POST https://graph.microsoft.com/v1.0/servicePrincipals/{servicePrincipalId}/synchronization/jobs/{jobId}/start
     ```
-    
-    
+
     **Response**
-    
+
     ```http
     HTTP/1.1 204 No Content
     ```
@@ -1162,7 +1161,7 @@ Now that you have a configuration, you can test on-demand provisioning with one 
     ResultReason         : User 'user2@fabrikam.com' was created in Azure Active Directory (target tenant)
     TargetResources      : {<ServicePrincipalId>, }
     AdditionalProperties : {}
-    
+
     ActivityDateTime     : 7/31/2023 12:08:17 AM
     ActivityDisplayName  : Export
     AdditionalDetails    : {Details, ErrorCode, EventName, ipaddr...}
@@ -1176,7 +1175,7 @@ Now that you have a configuration, you can test on-demand provisioning with one 
     ResultReason         : User 'user2@fabrikam.com' was updated in Azure Active Directory (target tenant)
     TargetResources      : {<ServicePrincipalId>, }
     AdditionalProperties : {}
-    
+
     ActivityDateTime     : 7/31/2023 12:08:14 AM
     ActivityDisplayName  : Synchronization rule action
     AdditionalDetails    : {Details, ErrorCode, EventName, ipaddr...}
@@ -1198,17 +1197,17 @@ Now that you have a configuration, you can test on-demand provisioning with one 
 1. Now that the provisioning job is running, in the source tenant, use the [Get synchronizationJob](/graph/api/synchronization-synchronizationjob-get) API to monitor the progress of the current provisioning cycle as well as statistics to date such as the number of users and groups that have been created in the target system.
 
     **Request**
-    
+
     ```http
     GET https://graph.microsoft.com/v1.0/servicePrincipals/{servicePrincipalId}/synchronization/jobs/{jobId}
     ```
-    
+
     **Response**
-    
+
     ```http
     HTTP/1.1 200 OK
     Content-type: application/json
-    
+
     {
         "id": "{jobId}",
         "templateId": "Azure2Azure",
@@ -1266,19 +1265,19 @@ Now that you have a configuration, you can test on-demand provisioning with one 
 1. In addition to monitoring the status of the provisioning job, use the [List provisioningObjectSummary](/graph/api/provisioningobjectsummary-list) API to retrieve the provisioning logs and get all the provisioning events that occur. For example, query for a particular user and determine if they were successfully provisioned.
 
     **Request**
-    
+
     ```http
     GET https://graph.microsoft.com/v1.0/auditLogs/provisioning?$filter=((contains(tolower(servicePrincipal/id), '{servicePrincipalId}') or contains(tolower(servicePrincipal/displayName), '{servicePrincipalId}')) and activityDateTime gt 2023-07-30 and activityDateTime lt 2023-07-31)&$top=500&$orderby=activityDateTime desc
     ```
-    
+
     **Response**
 
-    The response object shown here has been shortened for readability.   
+    The response object shown here has been shortened for readability.
 
     ```http
     HTTP/1.1 200 OK
     Content-type: application/json
-    
+
     {
         "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#auditLogs/provisioning",
         "value": [
@@ -1368,9 +1367,9 @@ Now that you have a configuration, you can test on-demand provisioning with one 
                         "ScopeEvaluationResult": "{\"Marketing department filter.department EQUALS 'Marketing'\":true}"
                     }
                 },
-    
+
                 ...
-    
+
             }
         ]
     }
@@ -1405,9 +1404,7 @@ Either the signed-in user doesn't have sufficient privileges, or you need to con
 
 When you try to create a new partner configuration, you receive an error message similar to the following:
 
-```
-New-MgPolicyCrossTenantAccessPolicyPartner_Create: Another object with the same value for property tenantId already exists.
-```
+`New-MgPolicyCrossTenantAccessPolicyPartner_Create: Another object with the same value for property tenantId already exists.`
 
 **Cause**
 
@@ -1480,7 +1477,7 @@ Either the signed-in user doesn't have sufficient privileges, or you need to con
 
 #### Symptom - Request_MultipleObjectsWithSameKeyValue error
 
-When you try to make a Graph API call, you receive an error message similar to the following:
+When you try to make a Microsoft Graph API call, you receive an error message similar to the following:
 
 ```
 code: Request_MultipleObjectsWithSameKeyValue
@@ -1505,7 +1502,7 @@ You are likely trying to create a configuration or object that already exists, p
 
 #### Symptom - Directory_ObjectNotFound error
 
-When you try to make a Graph API call, you receive an error message similar to the following:
+When you try to make a Microsoft Graph API call, you receive an error message similar to the following:
 
 ```
 code: Directory_ObjectNotFound
