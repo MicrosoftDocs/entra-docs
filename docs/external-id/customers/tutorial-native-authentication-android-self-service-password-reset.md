@@ -274,7 +274,8 @@ private fun handleSubmitPasswordError(error: ResetPasswordSubmitPasswordError) {
     }
 }
 ```
- 
+[!INCLUDE [Custom claims provider](../customers/includes/native-auth/support-custom-claims-provider.md)]
+
 ## Next steps
  
 [Tutorial: Support web fallback in Android app](tutorial-native-authentication-android-support-web-fallback.md) 

@@ -62,7 +62,7 @@ The following table shows the availability of features for browser-delegated and
 | **Sign-up and sign-in with email one-time passcode (OTP)** | :heavy_check_mark:  | :heavy_check_mark:  |
 | **Sign-up and sign-in with email and password** | :heavy_check_mark:  | :heavy_check_mark:  |
 | **Self-service password reset (SSPR)** | :heavy_check_mark:  | :heavy_check_mark:  |
-| **Custom claims provider** | :heavy_check_mark:  | :heavy_check_mark:  |
+| **Custom authentication extensions** | :heavy_check_mark:  | :heavy_check_mark:  |
 | **Social identity provider sign-in** | :heavy_check_mark:  | :x: |
 | **Multifactor authentication with email one-time passcode (OTP)**| :heavy_check_mark:  | :x:  |
 | **Single sign-on (SSO)** | :heavy_check_mark:  | :x:  |

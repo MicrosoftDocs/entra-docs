@@ -103,7 +103,8 @@ private fun displayAccount(accountState: AccountState) {
     }
 }
 ``` 
- 
+[!INCLUDE [Custom claims provider](../customers/includes/native-auth/support-custom-claims-provider.md)]
+
 ## Next steps
 
 - [Tutorial: Self-service password reset](tutorial-native-authentication-android-self-service-password-reset.md)

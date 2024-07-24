@@ -223,6 +223,8 @@ Make sure you include the import statements. Android Studio should include the i
 
 You have completed all the necessary steps to successfully sign out a user on your app. Build and run your application. If all good, you should be able to select sign out button to successfully sign out. 
 
+[!INCLUDE [Custom claims provider](../customers/includes/native-auth/support-custom-claims-provider.md)]
+
 ## Related content
 
 - [Tutorial: Sign up user with username and user attributes](tutorial-native-authentication-android-sign-up-user-with-username-user-attributes.md). 
