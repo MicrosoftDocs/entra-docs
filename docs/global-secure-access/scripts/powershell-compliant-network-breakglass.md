@@ -168,12 +168,12 @@ if ($action -eq "all")
     }
 
 } elseif ($action -eq "ids") {
-    $policyIds = Read-Host "Enter the IDs of the policies you want to put in Report-Only mode (separated by commas):"
+    $policyIds = Read-Host "Enter the IDs of the policies you want to put in Report-Only mode (separated by commas)"
     $policyIds = $policyIds -split ","
    
     foreach ($id in $policyIds) 
     {
-        $policy = $allCompliantNetworkPolicies | Where-Object { $_.id -eq $policy.id }
+        $policy = $allCompliantNetworkCAPolicies | Where-Object { $_.id -eq $id }
         if ($policy) 
         {
             if ($policy.state -eq "enabled")
@@ -197,11 +197,12 @@ if ($action -eq "all")
                     $policyContent = "{0},{1},{2},{3},{4},{5}" -f $policy.displayName, $policy.id, $policy.CreatedDateTime, $policy.ModifiedDateTime, "Before BreakGlass: $($currentState) at $($currentTime)", "After BreakGlass: $($updatedState) at $($updatedTime)"
                     $result += $policyContent
                     $count++
+                    Write-Host "Policy with ID $($policy.id) is now in Report-Only mode."
                 } else {
                     Write-Host "Policy with ID $($policy.id) could not be put in Report-Only mode"
                 }
             } else {
-                Write-Host "Policy with ID $($policy.id) is not already enabled."
+                Write-Host "Policy with ID $($policy.id) is already Disabled or Report-Only."
             }
         } else {
             Write-Host "Policy with ID $id not found."
