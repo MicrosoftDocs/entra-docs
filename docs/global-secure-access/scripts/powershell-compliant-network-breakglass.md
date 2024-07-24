@@ -12,11 +12,11 @@ ms.reviewer: frankgomulka
 
 # What is a Break Glass scenario?
 
-In the event of an outage or connectivity failure to Microsoft Entra Internet Access, your users remain protected. However, you may want to perform a "break glass" operation: Temporarily disabling the Compliant Network condtion policies can help your users regain access to their Microsoft apps in favor of productivity.
+In the event of an outage or connectivity failure to Microsoft Entra Internet Access, your users remain protected. However, you may want to perform a "break glass" operation: Temporarily disabling the Compliant Network condition policies can help your users regain access to their Microsoft apps in favor of productivity.
 
 Below you can view sample scripts that can help you quickly switch your Conditional Access policies using the [Compliant Network](../how-to-compliant-network.md) condition into Report-Only mode.
 
-## Step 1: List the Compliant Network Conditional Acceess policies
+## Step 1: List the Compliant Network Conditional Access policies
 
 The PowerShell script is the prerequisite for running the break glass script in the event of an outage. It lists Conditional Access policies using the Compliant Network condition and stores the list on the local device.
 
@@ -226,5 +226,5 @@ Write-Host "Results have been exported to C:\BreakGlass\ReportOnlyCompliantNetwo
 
 ## Next steps
 
-- [Recover from Breakglass scenario](./powershell-compliant-network-breakglass-recovery.md)
+- [Recover from Break glass scenario](./powershell-compliant-network-breakglass-recovery.md)
 - [Microsoft Graph PowerShell overview](/powershell/microsoftgraph/overview)
