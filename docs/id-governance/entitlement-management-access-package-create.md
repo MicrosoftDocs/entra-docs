@@ -154,7 +154,7 @@ if ($catalog -eq $null) { throw "catalog not found" }
 $rsc = Get-MgEntitlementManagementCatalogResource -AccessPackageCatalogId $catalog.id -Filter "originSystem eq 'AadApplication'" -ExpandProperty scopes
 if ($rsc -eq $null) { throw "resource not found" }
 $filt = "(id eq '" + $rsc.Id + "')"
-$rrs = Get-MgEntitlementManagementCatalogResource -AccessPackageCatalogId $catalog.id -Filter $filt -ExpandProperty roles,scopes
+$rrs = Get-MgEntitlementManagementCatalogResourceRole -AccessPackageCatalogId $catalog.id -Filter $filt -ExpandProperty roles,scopes
 ```
 
 Then, create the access package:
