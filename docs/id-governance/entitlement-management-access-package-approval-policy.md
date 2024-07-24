@@ -88,7 +88,7 @@ Use the following steps to add approvers after selecting how many stages you req
 
 1. In the box under **Decision must be made in how many days?**, specify the number of days that an approver has to review a request for this access package.
 
-    If a request isn't approved within this time period, it is automatically denied. The user has to submit another request for the access package.
+    If a request isn't approved within this time period, it's automatically denied. The user has to submit another request for the access package.
 
 1. To require approvers to provide a justification for their decision, set Require approver justification to **Yes**.
 
