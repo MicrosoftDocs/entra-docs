@@ -5,7 +5,7 @@ author: jricketts
 manager: martinco
 ms.service: entra
 ms.topic: conceptual
-ms.date: 10/23/2023
+ms.date: 07/24/2024
 ms.author: jricketts
 ---
 
@@ -63,7 +63,7 @@ Review inactive identities to determine remediation:
 
 **Overprovisioned identities**
 
-Overprovisioned identities, or overpermissioned identities, don’t use many of their granted permissions.
+Overprovisioned identities, or overpermissioned identities, haven't used many of their permissions for 90 days.
 
 **Best practice**: Regularly right-size permissions of these identities to reduce the risk of permissions misuse, either accidental or malicious. This action decreases the potential blast radius during a security incident.
 
