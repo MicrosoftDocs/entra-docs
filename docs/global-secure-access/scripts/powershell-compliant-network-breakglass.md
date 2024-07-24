@@ -10,7 +10,7 @@ ms.author: kenwith
 ms.reviewer: frankgomulka
 ---
 
-# What is a Break Glass scenario?
+# List and Disable Conditional access policies using the Compliant Network condition in a break glass scenario
 
 In the event of an outage or connectivity failure to Microsoft Entra Internet Access, your users remain protected. However, you may want to perform a "break glass" operation: Temporarily disabling the Compliant Network condition policies can help your users regain access to their Microsoft apps in favor of productivity.
 
