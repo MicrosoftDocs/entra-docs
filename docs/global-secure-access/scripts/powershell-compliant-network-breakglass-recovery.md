@@ -18,12 +18,12 @@ Below you can view a script that can help you quickly regain the security value 
 
 ## Recover from Break Glass
 
-The PowerShell script enables any CA policies using the Compliant Network condition that were disabled in the [Break Glass](./powershell-compliant-network-breakglass.md#step-2-switch-listed-policies-into-report-only-mode) script. 
+The PowerShell script enables any Conditional Access policies using the Compliant Network condition that were disabled in the [Break Glass](./powershell-compliant-network-breakglass.md#step-2-switch-listed-policies-into-report-only-mode) script. 
 
 The sample requires the [Microsoft Graph Beta PowerShell module](/powershell/microsoftgraph/installation) 2.10 or newer.
 
 ```powershell
-# recoveryscript.ps1 enables any CA policies using the Compliant Network condition that were disabled in a breakglass scenario. 
+# recoveryscript.ps1 enables any Conditional Access policies using the Compliant Network condition that were disabled in a breakglass scenario. 
 # This script is the recovery method once the GSA service is back up after running .\breakglass.ps1
 #
 # Version 1.0
@@ -49,7 +49,7 @@ $count = 0
 
 $reportOnlyOutput = Get-Content -Path "C:\BreakGlass\ReportOnlyCompliantNetworkCAPolicies.txt"
 $policiesToRecover = $reportOnlyOutput[2..($reportOnlyOutput.Count - 2)]
-$result += "Total count of Compliant Network CA policies to recover: $($policiesToRecover.Count)"
+$result += "Total count of Compliant Network Conditional Access policies to recover: $($policiesToRecover.Count)"
 
 # Based on admin input, either view or recover the list of policies disabled in the breakglass scenario.
 $action = Read-Host "Do you want to recover all affected policies (type 'recover') or just view them (type 'view')?"
