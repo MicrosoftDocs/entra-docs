@@ -12,13 +12,13 @@ ms.reviewer: frankgomulka
 
 # Swift Recovery is Critical
 
-After an outage is resolved, you need to recover from a [Breakglass](./powershell-compliant-network-breakglass.md) operation fast and with accuracy.
+After an outage is resolved, you need to recover from a [Breakglass](./powershell-compliant-network-breakglass.md#step-2-switch-listed-policies-into-report-only-mode) operation fast and with accuracy.
 
 Below you will find a sample script that can help you quickly regain the security value of [Compliant Network](../how-to-compliant-network.md) for your users.
 
 ## Recover from Breakglass
 
-The PowerShell script enables any CA policies leveraging the Compliant Network condition that were disabled in the [Breakglass](./powershell-compliant-network-breakglass.md#) script. 
+The PowerShell script enables any CA policies leveraging the Compliant Network condition that were disabled in the [Breakglass](./powershell-compliant-network-breakglass.md#step-2-switch-listed-policies-into-report-only-mode) script. 
 
 The sample requires the [Microsoft Graph Beta PowerShell module](/powershell/microsoftgraph/installation) 2.10 or newer.
 
