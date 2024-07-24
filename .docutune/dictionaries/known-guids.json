@@ -1,3 +1,4 @@
+// List of all the known GUIDs in Learn content. If any of these is found next to a sensitive term, DocuTune will ignore these values.
 {
   "AccessReview.Read.All - Application": "d07a8cc0-3d51-4b77-b3b0-32704d1f69fa",
   "AccessReview.ReadWrite.All - Application": "ef5f7d5c-338f-44b0-86c3-351f46c8bb5f",

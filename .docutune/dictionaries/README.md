@@ -6,7 +6,9 @@ The DocuTune security package released in v1.5.2 contains three different dictio
 
 The dictionary file in DocuTune, *Dictionary-Security-{VALUE}.ps1* uses an `Invoke-WebRequest` to extract the information contained in the "dummy" and "known" files in this directory. The dummy files, *dummy-{ID}.json* provides a list of dummy values to be used for each defined sensitive term. The known files, *known-{ID}.json* provides a list of known values that DocuTune will ignore.
 
-DocuTune checks the *known-{VALUE}.json* files to determine if a value is known and should be ignored, and stores it. It then adds the dummy values to the dictionary
+DocuTune checks the *known-{VALUE}.json* files to determine if a value is known and should be ignored, and stores it. It then adds the dummy values to the dictionary.
+
+For any questions, contact [contentsecurityexperts@service.microsoft.com](mailto:contentsecurityexperts@service.microsoft.com)
 
 ## GUID files
 
