@@ -31,7 +31,7 @@ Here are some common issues that may occur during the process of publisher verif
     1. Navigate to the [partner profile page](https://partner.microsoft.com/pcv/accountsettings/connectedpartnerprofile) where the Partner One ID and primary account contact are listed.
 
 - **I don't know who my Microsoft Entra Global Administrator (also known as company admin or tenant admin) is, how do I find them? What about the Application Administrator or Cloud Application Administrator?**
-    1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Adminstrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
+    1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
     1. Browse to **Identity** > **Roles & admins** > **Roles & admins**.
     1. Select the desired admin role.
     1. The list of users assigned that role are displayed.

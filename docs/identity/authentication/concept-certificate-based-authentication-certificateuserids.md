@@ -198,7 +198,7 @@ To prevent synchronization errors, make sure the values being synchronized follo
 Before you begin, make sure all user accounts that are synchronized from on-premises Active Directory have:
 
 - 5 or fewer values in their altSecurityIdentities attributes 
-- No value with more then 1024 characters
+- No value with more than 1024 characters
 - No duplicate values
   
   Carefully consider if a duplicate value is meant to map a single certificate to multiple on-premises Active Directory accounts. For more information, see [Multiple username bindings](~/identity/authentication/concept-certificate-based-authentication-technical-deep-dive.md#securing-microsoft-entra-configuration-with-multiple-username-bindings).
@@ -210,7 +210,7 @@ Before you begin, make sure all user accounts that are synchronized from on-prem
 
 - Ensure that the provisioning process for populating the values in on-premises Active Directory implements proper hygiene. Only values associated with current valid certificates are populated.
 - Values are removed when the corresponding certificate is expired or revoked.
-- Values larger then 1024 characters aren't populated.
+- Values larger than 1024 characters aren't populated.
 - Duplicate values aren't provisioned.
 - Use Microsoft Entra Connect Health to monitor synchronization.
 
@@ -259,7 +259,7 @@ To synchronize X509:\<RFC822>RFC822Name, create an outbound synchronization rule
 1. Click **OK** to confirm. 
 
 >[!IMPORTANT]
-> The preceding examples use userPrincipalName atribute as a source attribute in the transform rule. You can use any available attribute with the appropriate value. For example, some organizations use the mail attribute. For more complex transform rules, see [Microsoft Entra Connect Sync: Understanding Declarative Provisioning Expressions](~/identity/hybrid/connect/concept-azure-ad-connect-sync-declarative-provisioning-expressions.md)
+> The preceding examples use userPrincipalName attribute as a source attribute in the transform rule. You can use any available attribute with the appropriate value. For example, some organizations use the mail attribute. For more complex transform rules, see [Microsoft Entra Connect Sync: Understanding Declarative Provisioning Expressions](~/identity/hybrid/connect/concept-azure-ad-connect-sync-declarative-provisioning-expressions.md)
 
 
 For more information about declarative provisioning expressions, see [Microsoft Entra Connect: Declarative Provisioning Expressions](~/identity/hybrid/connect/concept-azure-ad-connect-sync-declarative-provisioning-expressions.md).

@@ -234,7 +234,7 @@ Risk detections like leaked credentials require the presence of password hashes 
 
 ### Why are risk detections generated for disabled accounts? 
 
-User accounts in a disabled state can be re-enabled. If the credentials of a disabled account are compromised, and the account gets re-enabled, bad actors might use those credentials to gain access. ID Protection generates risk detections for suspicious activities against these disabled accounts to alert customers about potential account compromise. If an account is no longer in use and wont be re-enabled, customers should consider deleting it to prevent compromise. No risk detections are generated for deleted accounts. 
+User accounts in a disabled state can be re-enabled. If the credentials of a disabled account are compromised, and the account gets re-enabled, bad actors might use those credentials to gain access. ID Protection generates risk detections for suspicious activities against these disabled accounts to alert customers about potential account compromise. If an account is no longer in use and won't be re-enabled, customers should consider deleting it to prevent compromise. No risk detections are generated for deleted accounts. 
 
 ### Common leaked credentials questions
 
