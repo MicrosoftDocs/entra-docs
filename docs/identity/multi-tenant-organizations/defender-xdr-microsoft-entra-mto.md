@@ -14,7 +14,7 @@ ms.custom: it-pro
 
 # Govern access for security operations center (SOC) teams in a multitenant environment
 
-Managing multitenant environments can add another layer of complexity when it comes to keeping up with the ever-evolving security threats facing your enterprise. Navigating across multiple tenants can be time consuming and reduce the overall efficiency of security operation center (security operations center (SOC)) teams.
+Managing multitenant environments can add another layer of complexity when it comes to keeping up with the ever-evolving security threats facing your enterprise. Navigating across multiple tenants can be time consuming and reduce the overall efficiency of security operations center (SOC) teams.
 Multitenant management in [Microsoft Defender XDR](/microsoft-365/security/defender/mto-overview) provides security operation teams with a single, unified view of all the tenants they manage. This view enables teams to quickly investigate incidents and perform advanced hunting across data from multiple tenants, improving their security operations.
 
 [Microsoft Entra ID Governance](../../id-governance/identity-governance-overview.md) enables you to govern the access and lifecycle of the users who are members of the SOC teams and threat hunter teams. This document explores:
