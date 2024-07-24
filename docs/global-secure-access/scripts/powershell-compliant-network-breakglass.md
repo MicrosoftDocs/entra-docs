@@ -1,6 +1,6 @@
 ---
-title: PowerShell sample - List and Disable Conditional Access policies using the Compliant Network condition in a breakglass scenario.
-description: PowerShell examples that list and change state to Report-Only for any Conditional Access policies using the Compliant Network Condition in the event of an outage or breakglass scenario. 
+title: PowerShell sample - List and Disable Conditional Access policies using the Compliant Network condition in a break glass scenario.
+description: PowerShell examples for use in a Microsoft Entra Internet Access break glass scenario. 
 author: kenwith
 manager: amycolannino
 ms.service: global-secure-access
@@ -10,15 +10,15 @@ ms.author: kenwith
 ms.reviewer: frankgomulka
 ---
 
-# What is a Breakglass scenario?
+# What is a Break Glass scenario?
 
-In the event of an outage or connectivity failure to Microsoft Entra Internet Access, your users will remain protected. However, you may want to perform a "breakglass" operation: This can help your users temporarily regain access to their Microsoft apps in favor of productivity.
+In the event of an outage or connectivity failure to Microsoft Entra Internet Access, your users remain protected. However, you may want to perform a "break glass" operation: Temporarily disabling the Compliant Network condtion policies can help your users regain access to their Microsoft apps in favor of productivity.
 
-Below you will find two sample scripts that can help you quickly switch your Conditional Access policies using the [Compliant Network](../how-to-compliant-network.md) condition into Report-Only mode.
+Below you can view sample scripts that can help you quickly switch your Conditional Access policies using the [Compliant Network](../how-to-compliant-network.md) condition into Report-Only mode.
 
 ## Step 1: List the Compliant Network Conditional Acceess policies
 
-The PowerShell script is the prerequisite for running the breakglass script in the event of an outage. It lists Conditional Access policies using the Compliant Network condition and stores the list on the local device.
+The PowerShell script is the prerequisite for running the break glass script in the event of an outage. It lists Conditional Access policies using the Compliant Network condition and stores the list on the local device.
 
 The sample requires the [Microsoft Graph Beta PowerShell module](/powershell/microsoftgraph/installation) 2.10 or newer.
 
@@ -82,7 +82,7 @@ Write-Host "Results have been exported to C:\BreakGlass\ListCompliantNetworkCAPo
 
 ## Step 2: Switch listed policies into Report-Only mode
 
-The PowerShell script effectively disables any Conditional Access policies that leverage the Compliant Network condition. In an emergency situation, this can be used to temporarily regain access for your users.
+The PowerShell script effectively disables any Conditional Access policies that use the Compliant Network condition. In an emergency situation, this script can be used to temporarily regain access for your users.
 
 The sample requires the [Microsoft Graph Beta PowerShell module](/powershell/microsoftgraph/installation) 2.10 or newer.
 
@@ -226,5 +226,5 @@ Write-Host "Results have been exported to C:\BreakGlass\ReportOnlyCompliantNetwo
 
 ## Next steps
 
-- [Recover from Breakglass scenario](
+- [Recover from Breakglass scenario](./powershell-compliant-network-breakglass-recovery.md)
 - [Microsoft Graph PowerShell overview](/powershell/microsoftgraph/overview)
