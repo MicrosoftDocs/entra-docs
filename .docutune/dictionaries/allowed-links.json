@@ -1,4 +1,4 @@
-// List of allowed links for use in DocuTune. These links will be ignored if DocuTune encounters them in the documentation.
+// List of allowed links for use in DocuTune. These links will be ignored if DocuTune encounters them in written documentation.
 {
   "allowed_links": [
         "https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510",

@@ -1,4 +1,5 @@
-// DO NOT EDIT: JSON file used as lookup for dummy hashes - NOT USED in v1.5.2
+// DO NOT EDIT: JSON file used as lookup for dummy hashes. The file name is intentionally misspelled to fit in with existing DocuTune workflows in other in-use dictionaries.
+// NOT IN USE: No corresponding dictionary in v1.5.2
 {
     "signatureHash|customKeyIdentifier|ImmutableId|browserSignatureHashes": [
         "aB1cD2eF3gH4iJ5kL6-mN7oP8qR=",

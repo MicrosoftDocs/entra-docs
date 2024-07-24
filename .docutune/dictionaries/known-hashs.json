@@ -1,4 +1,5 @@
-// DO NOT EDIT: JSON file used as lookup for hash values - NOT USED in v1.5.2 as there is no corresponding dictionary
+// DO NOT EDIT: JSON file used as lookup for hash values. The file name is intentionally misspelled to fit in with existing DocuTune workflows in other in-use dictionaries.
+// NOT IN USE: No corresponding dictionary in v1.5.2
 {
   "" : ""
 }
