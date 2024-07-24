@@ -37,7 +37,18 @@ landingContent:
           - text: Identity Governance dashboard (Preview)
             url: governance-dashboard.md 
           - text: Identity Governance service limits
-            url: governance-service-limits.md                 
+            url: governance-service-limits.md                
+  # Card
+  - title: Scenarios
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: What are identity governance use cases?
+            url:  scenarios/identity-governance-use-cases.md  
+          - text: Govern the employee and guest lifecycle
+            url:  scenarios/govern-the-employee-lifecycle.md  
+          - text: Govern access for applications in your environment
+            url:  identity-governance-applications-prepare.md  
   
   # Card
   - title: Govern the lifecycle of access to groups, apps, and sites

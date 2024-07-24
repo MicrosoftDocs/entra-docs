@@ -12,7 +12,7 @@ ms.author: jricketts
 
 # Introduction to Microsoft's Security Service Edge Solution Deployment Guide for Proof of Concept
 
-This Proof of Concept (PoC) Deployment Guide helps you to deploy Microsoft's Security Service Edge (SSE) solution that features [Microsoft Entra Internet Access](../global-secure-access/concept-internet-access.md), [Microsoft Entra Internet Access for Microsoft Traffic](../global-secure-access/how-to-manage-microsoft-profile.md) and [Microsoft Entra Private Access](../global-secure-access/concept-private-access.md). Note that this solution is in Public Preview.
+This Proof of Concept (PoC) Deployment Guide helps you to deploy Microsoft's Security Service Edge (SSE) solution that features [Microsoft Entra Internet Access](../global-secure-access/concept-internet-access.md), [Microsoft Entra Internet Access for Microsoft Traffic](../global-secure-access/how-to-manage-microsoft-profile.md) and [Microsoft Entra Private Access](../global-secure-access/concept-private-access.md).
 
 ## Overview
 
@@ -151,7 +151,7 @@ Traffic forwarding enables you to configure the type of network traffic to tunne
 
    :::image type="content" source="media/sse-deployment-guide-intro/traffic-forwarding-profile-enabled.png" alt-text="Diagram that shows how to enable Microsoft Traffic and Private access profiles." lightbox="media/sse-deployment-guide-intro/traffic-forwarding-profile-enabled-expanded.png"::: 
 
-1. To enable source IP restoration, go to **Global Secure Access** > **Connect** > **Global settings** > **Session management** > **Adaptive Access** and turn on **Enable Global Secure Access signaling in Conditional Access**. Source IP restoration is required to for Conditional Access policies that you will configure as part of this proof of concept.
+1. To enable source IP restoration, go to **Global Secure Access** > **Connect** > **Settings** > **Session management** > **Adaptive Access** and turn on **Enable Global Secure Access signaling in Conditional Access**. Source IP restoration is required to for Conditional Access policies that you will configure as part of this proof of concept.
 
    :::image type="content" source="media/sse-deployment-guide-intro/session-management-adaptive-access-inline.png" alt-text="Diagram that shows how to enable Conditional Access policies for Microsoft's Security Service Edge Solution." lightbox="media/sse-deployment-guide-intro/session-management-adaptive-access-expanded.png":::
 
@@ -173,8 +173,6 @@ Microsoft Entra Internet Access for Microsoft Traffic and Microsoft Entra Privat
 1. In the Window taskbar, right-click the Global Secure Access Client.
 
 1. Select **Advanced Diagnostics** to view **Global Secure Access Client Connection Diagnostics**. Click **Health check** and verify that all checks show **Yes** status.
-
-[!INCLUDE [Public preview important note](../global-secure-access/includes/public-preview-important-note.md)]
 
 ## Next steps
 

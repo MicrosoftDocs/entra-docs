@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: enterprise-apps 
  
 ms.topic: concept-article 
-ms.date: 07/18/2023
+ms.date: 07/19/2024
 ms.author: jomondi
 ms.reviewer: alamaral
 ms.collection: M365-identity-device-management
@@ -18,7 +18,7 @@ ms.custom: enterprise-apps
 --- 
 
 
-# SAML Request Signature Verification  
+# Enforce signed SAML authentication requests  
 
 SAML Request Signature Verification is a functionality that validates the signature of signed authentication requests. An App Admin now can enable and disable the enforcement of signed requests and upload the public keys that should be used to do the validation.  
 
@@ -61,7 +61,7 @@ To configure SAML request signature verification, you need:
     
 1. Select **Edit.**  
 
-1. In the new blade, you're able to enable the verification of signed requests and opt-in for weak algorithm verification in case your application still uses RSA-SHA1 to sign the authentication requests.   
+1. In the new pane, you're able to enable the verification of signed requests and opt-in for weak algorithm verification in case your application still uses RSA-SHA1 to sign the authentication requests.   
 
 1. To enable the verification of signed requests, select **Require verification certificates** and upload a verification public key that matches with the private key used to sign the request. 
     
@@ -69,7 +69,7 @@ To configure SAML request signature verification, you need:
 
 1. Once you have your verification certificate uploaded, select **Save**. 
 
-1. When the verification of signed requests is enabled, the test experience is disabled as the requests requires to be signed by the service provider.  
+1. When the verification of signed requests is enabled, the test experience is disabled as the service provider has to sign the request.  
     
     ![Screenshot of testing disabled warning when signed requests enabled in Enterprise Application page.](./media/howto-enforce-signed-saml-authentication/samlsignaturevalidation9.png) 
     

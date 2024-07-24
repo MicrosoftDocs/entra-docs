@@ -20,6 +20,8 @@ Organizations can take advantage of the Microsoft Graph API integrations to aggr
 
 The three reports are found in the [Microsoft Entra admin center](https://entra.microsoft.com) > **Protection** > **Identity Protection**.
 
+> [!VIDEO https://www.youtube.com/embed/5mf72Vf40WU?si=RrM-CUEQPSQb8m5l]
+
 ## Navigating the reports
 
 Each report launches with a list of all detections for the period shown at the top of the report. Each report allows for the addition or removal of columns based on administrator preference. Administrators can choose to download the data in .CSV or .JSON format. Reports can be filtered using the filters across the top of the report.

@@ -43,7 +43,7 @@ For more information, see [Enriched Office 365 logs](how-to-view-enriched-logs.m
 
 **Traffic Logs and Remote Network Health Logs:** These logs are retained within the system for 30 days. This duration allows for ample time to review and analyze recent activities and network health status.
 
-**Audit Logs:** The retention period for Audit Logs varies depending on your Microsoft Entra ID license. The table provides e breakdown:
+**Audit Logs:** The retention period for Audit Logs varies depending on your Microsoft Entra ID license. The table provides a breakdown:
 
 |Report Type	| Microsoft Entra ID Free	| Microsoft Entra ID P1	| Microsoft Entra ID P2 |
 |----------|-----------|------------|------------|
