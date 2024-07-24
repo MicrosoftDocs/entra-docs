@@ -35,6 +35,8 @@ For a demonstration of how to add a multi-stage approval to a request policy, wa
 
 >[!VIDEO https://www.microsoft.com/videoplayer/embed/RE4d1Jw]
 
+> [!NOTE]
+> Approvers are not able to approve their own access package requests.
 
 ## Change approval settings of an existing access package assignment policy
 
