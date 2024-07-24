@@ -197,9 +197,9 @@ The values used in an expression can consist of several types, including:
 When specifying a value within an expression, it's important to use the correct syntax to avoid errors. Some syntax tips are:
 
 - Double quotes are optional unless the value is a string.
-- Regex operations are not case sensitive.
+- Regex operations and string values are not case sensitive.
 - When a string value contains double quotes, both quotes should be escaped using the \` character, for example, user.department -eq \`"Sales\`" is the proper syntax when "Sales" is the value. Single quotes should be escaped by using two single quotes instead of one each time.
-- Ensure that property names and values are correctly formatted, as they are case sensitive.
+- Ensure that property names are correctly formatted as shown, as they're case sensitive.
 - You can also perform Null checks, using null as a value, for example, `user.department -eq null`.
 
 ### Use of Null values
