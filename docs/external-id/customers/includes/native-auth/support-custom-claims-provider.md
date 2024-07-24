@@ -8,7 +8,7 @@ ms.author: kengaderdus
 ms.manager: mwongerapk
 ---
 
-## Configure custom claim provider
+## Configure custom claims provider
 
 If you want to add claims from an external system into the token that is issued to your app, use a custom claims provider. A custom claims provider is made up of a custom authentication extension that calls an external REST API to fetch claims from external systems. 
 
