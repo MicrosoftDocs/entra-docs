@@ -16,7 +16,7 @@ In the event of an outage or connectivity failure to Microsoft Entra Internet Ac
 
 Below you will find two sample scripts that can help you quickly switch your Conditional Access policies using the [Compliant Network](../how-to-compliant-network.md) condition into Report-Only mode.
 
-## Step 1: List the Conditional Access policies using the Compliant Network condition in a breakglass scenario
+## Step 1: List the Compliant Network Conditional Acceess policies
 
 The PowerShell script is the prerequisite for running the breakglass script in the event of an outage. It lists Conditional Access policies using the Compliant Network condition and stores the list on the local device.
 
@@ -80,7 +80,7 @@ if (Test-Path $path)
 Write-Host "Results have been exported to C:\BreakGlass\ListCompliantNetworkCAPolicies.txt"
 ```
 
-## Step 2: Switch the listed Conditional Access policies into Report-Only Mode.
+## Step 2: Switch listed policies into Report-Only mode
 
 The PowerShell script effectively disables any Conditional Access policies that leverage the Compliant Network condition. In an emergency situation, this can be used to temporarily regain access for your users.
 
