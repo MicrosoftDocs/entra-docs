@@ -5,7 +5,7 @@ author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
 ms.custom: has-adal-ref
-ms.date: 03/20/2024
+ms.date: 07/24/2024
 ms.reviewer: iambmelt
 ms.service: identity-platform
 

@@ -5,7 +5,7 @@ author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
 ms.custom: 
-ms.date: 04/08/2024
+ms.date: 07/24/2024
 ms.reviewer: ludwignick
 ms.service: identity-platform
 
@@ -333,9 +333,13 @@ post_logout_redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
 
 ## Single sign-out
 
-When you redirect the user to the `end_session_endpoint` in an application, the Microsoft identity platform will end the user session for this application. However, the user may still be signed in to other applications that use the same Microsoft accounts for authentication. When a user has signed into multiple web or SPA applications registered in this directory (also known as a tenant) single sign-out allows this user to sign out of all applications instantly by signing out in either one of the applications.
+When you redirect the user to the `end_session_endpoint` in an application, the Microsoft identity platform will end the user session for this application. However, the user may still be signed in to other applications that use the same Microsoft accounts for authentication. 
 
-To enable SSO for your Entra application, you should use the OpenID Connect front channel logout feature. This feature allows an application to notify other applications that the user has logged out. When the user logs out of one application, the Microsoft identity platform will send an HTTP GET request to the front-channel logout URL of every application that the user is currently signed in to. These applications must respond to this request by performing the following two actions for the sign sign-out to be successful:
+When a user has signed into multiple web or SPA applications registered in this directory (also known as a tenant) SSO allows this user to sign out of all applications instantly by signing out in either one of the applications.
+
+To enable SSO for your Entra application, you should use the OpenID Connect front channel logout feature. This feature allows an application to notify other applications that the user has logged out. When the user logs out of one application, the Microsoft identity platform will send an HTTP GET request to the front-channel logout URL of every application that the user is currently signed in to. 
+
+These applications must respond to this request by performing the following two actions for SSO to be successful:
 
 1. Clear any session that identifies the user.
 1. Applications must respond to this request by clearing any session that identifies the user and returning a `200` response.
@@ -346,7 +350,7 @@ A front channel logout URL is where your web or SPA application receives the sig
 
 ### When should you set a front channel logout URL?
 
-If you or your developer has determined single sign-on is required for an application, you must set the front channel logout URL for this application’s app registration. Once the front channel logout URL is set for this application’s app registration, the Microsoft identity platform will send an HTTP GET request to the front-channel logout URL of this application when the signed in user has signed out of another application.
+If you or your developer has determined SSO is required for an application, you must set the front channel logout URL for this application’s app registration. Once the front channel logout URL is set for this application’s app registration, the Microsoft identity platform will send an HTTP GET request to the front-channel logout URL of this application when the signed in user has signed out of another application.
 
 ## How to set up single sign out using front channel logout feature
 
