@@ -84,7 +84,7 @@ if ($action -eq "view") {
         }
 
         $preRecovery = Get-MgBetaIdentityConditionalAccessPolicy -ConditionalAccessPolicyId $policyId
-        $preRecoveryState = $current.state
+        $preRecoveryState = $preRecovery.state
         $preRecoveryTime = Get-Date
 
         Update-MgBetaIdentityConditionalAccessPolicy -ConditionalAccessPolicyId $policyId -BodyParameter $params
