@@ -10,7 +10,7 @@ ms.author: kenwith
 ms.reviewer: frankgomulka
 ---
 
-# Swift Recovery is Critical
+# Restore network compliance after a breakglass recovery
 
 After an outage is resolved, you need to recover from a [Break Glass](./powershell-compliant-network-breakglass.md#step-2-switch-listed-policies-into-report-only-mode) operation fast and with accuracy.
 
