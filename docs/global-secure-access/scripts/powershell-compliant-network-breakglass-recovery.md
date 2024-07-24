@@ -1,6 +1,6 @@
 ---
-title: PowerShell sample - Recover from Global Secure Access Breakglass scenario
-description: PowerShell examples that re-enableany Conditional Access policies that were disabled in a breakglass scenario. 
+title: PowerShell sample - Recover from Global Secure Access Break glass scenario
+description: PowerShell examples that re-enableany Conditional Access policies that were disabled in a break glass scenario. 
 author: kenwith
 manager: amycolannino
 ms.service: global-secure-access
@@ -12,18 +12,18 @@ ms.reviewer: frankgomulka
 
 # Swift Recovery is Critical
 
-After an outage is resolved, you need to recover from a [Breakglass](./powershell-compliant-network-breakglass.md#step-2-switch-listed-policies-into-report-only-mode) operation fast and with accuracy.
+After an outage is resolved, you need to recover from a [Break Glass](./powershell-compliant-network-breakglass.md#step-2-switch-listed-policies-into-report-only-mode) operation fast and with accuracy.
 
-Below you will find a sample script that can help you quickly regain the security value of [Compliant Network](../how-to-compliant-network.md) for your users.
+Below you can view a script that can help you quickly regain the security value of [Compliant Network](../how-to-compliant-network.md) for your users.
 
-## Recover from Breakglass
+## Recover from Break Glass
 
-The PowerShell script enables any CA policies leveraging the Compliant Network condition that were disabled in the [Breakglass](./powershell-compliant-network-breakglass.md#step-2-switch-listed-policies-into-report-only-mode) script. 
+The PowerShell script enables any CA policies using the Compliant Network condition that were disabled in the [Break Glass](./powershell-compliant-network-breakglass.md#step-2-switch-listed-policies-into-report-only-mode) script. 
 
 The sample requires the [Microsoft Graph Beta PowerShell module](/powershell/microsoftgraph/installation) 2.10 or newer.
 
 ```powershell
-# recoveryscript.ps1 enables any CA policies leveraging the Compliant Network condition that were disabled in a breakglass scenario. 
+# recoveryscript.ps1 enables any CA policies using the Compliant Network condition that were disabled in a breakglass scenario. 
 # This script is the recovery method once the GSA service is back up after running .\breakglass.ps1
 #
 # Version 1.0
@@ -117,3 +117,7 @@ if ($action -eq "view") {
     Write-Host "Results have been exported to C:\BreakGlass\RecoveredCompliantNetworkCAPolicies.txt"
 }
 ```
+
+## Next steps
+
+- [Microsoft Graph PowerShell overview](/powershell/microsoftgraph/overview)
