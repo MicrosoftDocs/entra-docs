@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: global-secure-access
 ms.subservice: entra-private-access
 ms.topic: how-to
-ms.date: 03/27/2024
+ms.date: 07/21/2024
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
@@ -20,13 +20,14 @@ Before you get started with single sign-on, make sure your environment is ready.
 - An Active Directory forest. The guide uses a forest domain name that can be publicly resolved. However, a publicly resolved domain isn't a requirement.
 - Your Microsoft Entra ID tenant is set up with the private Domain Name System (DNS) feature of Microsoft Entra Private Access.
 - You enabled the Microsoft Entra Private Access forwarding profile.
-- The latest version of the Microsoft Entra private access connector is installed on a Windows server that has access to your domain controllers.
+- The latest version of the Microsoft Entra Private Access connector is installed on a Windows server that has access to your domain controllers.
 - The latest version of the Global Secure Access client. For more information on the client, see [Global Secure Access clients](concept-clients.md).
 
 ### Publish resources for use with single sign-on
 To test single sign-on, create a new enterprise application that publishes a file share. Using an enterprise application to publish your file share lets you assign a Conditional Access policy to the resource and enforce extra security controls, such as multifactor authentication.
 
-1. In the Microsoft Entra admin center, select **Global Secure Access** > **Applications** > **Enterprise Applications**.
+1. Sign in to [Microsoft Entra](https://entra.microsoft.com/) as at least a [Application administrator](reference-role-based-permissions.md#application-administrator). 
+1. Browse to **Global Secure Access** > **Applications** > **Enterprise Applications**.
 1. Select **New Application**. 
 1. Add a new app segment with the IP of your file server using port `445/TCP` and then select **Save**. The Server Message Block (SMB) protocol uses the port.
 1. Open the enterprise application you created and select **Users and Groups** to assign access to the resource.
@@ -61,8 +62,10 @@ The Domain Controller ports are required to enable SSO to on-premises resources.
 > [!NOTE]
 > The guide focuses on enabling SSO to on-premises resources and excludes configuration required for Windows domain-joined clients to perform domain operations (password change, Group Policy, etc.).
 
-1. Select **Global Secure Access** > **Applications** > **Enterprise Applications** and then select **New Application** to create a new application to publish your Domain Controllers.
-1. Select **Add application segment** and then add all of your Domain Controllers’ IPs or Fully Qualified Domain Names (FQDNs) and ports as per the table. Don't add both IPs and FQDNs. Only the Domain Controllers in the Active Directory site where the private access connectors are located should be published.
+1. Sign in to [Microsoft Entra](https://entra.microsoft.com/) as at least a [Application administrator](reference-role-based-permissions.md#application-administrator).
+1. Browse to **Global Secure Access** > **Applications** > **Enterprise Applications**.
+1. Select **New Application** to create a new application to publish your Domain Controllers.
+1. Select **Add application segment** and then add all of your Domain Controllers’ IPs or Fully Qualified Domain Names (FQDNs) and ports as per the table. Don't add both IPs and FQDNs. Only the Domain Controllers in the Active Directory site where the Private Access connectors are located should be published.
 
 > [!NOTE]
 > Make sure you don’t use wildcard FQDNs to publish your domain controllers, instead add their specific IPs or FQDNs.

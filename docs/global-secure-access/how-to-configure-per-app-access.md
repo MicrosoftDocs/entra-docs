@@ -1,20 +1,20 @@
 ---
-title: How to configure Per-app Access using Global Secure Access applications
+title: How to configure per-app access using Global Secure Access applications
 description: Learn how to configure per-app access to your private, internal resources using Global Secure Access applications for Microsoft Entra Private Access.
 author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: how-to
-ms.date: 02/13/2024
+ms.date: 07/22/2024
 ms.service: global-secure-access
 ms.subservice: entra-private-access
 ms.reviewer: katabish
 ---
-# How to configure Per-app Access using Global Secure Access applications
+# How to configure per-app access using Global Secure Access applications
 
 Microsoft Entra Private Access provides secure access to your organization's internal resources. You create a Global Secure Access application and specify the internal, private resources that you want to secure. By configuring a Global Secure Access application, you're creating per-app access to your internal resources. Global Secure Access application provides a more detailed ability to manage how the resources are accessed on a per-app basis.
 
-This article describes how to configure Per-app Access using Global Secure Access applications.
+This article describes how to configure per-app access using Global Secure Access applications.
 
 ## Prerequisites
 
@@ -32,7 +32,7 @@ To manage Microsoft Entra private network connector groups, which is required fo
 
 - Avoid overlapping app segments between Quick Access and Global Secure Access apps.
 - Tunneling traffic to Private Access destinations by IP address is supported only for IP ranges outside of the end-user device local subnet.
-- At this time, Private Access traffic can only be acquired with the Global Secure Access Client. Remote networks can't be assigned to the Private access traffic forwarding profile.
+- At this time, Private Access traffic can only be acquired with the Global Secure Access client. Remote networks can't be assigned to the Private access traffic forwarding profile.
 
 ## High level steps
 
@@ -105,10 +105,10 @@ You can add fully qualified domain names (FQDN), IP addresses, and IP address ra
     - **Fully qualified domain name** (including wildcard FQDNs):
         - Domain name that specifies the exact location of a computer or a host in the Domain Name System (DNS).
         - Provide the ports that you want to include.
-        - NetBIOS is not supported. For example, use `contoso.local/app1` instead of `contoso/app1.`
+        - NetBIOS isn't supported. For example, use `contoso.local/app1` instead of `contoso/app1.`
     - **IP address range (CIDR)**:
-        - Classless Inter-Domain Routing is a way of representing a range of IP addresses in which an IP address is followed by a suffix indicating the number of network bits in the subnet mask.
-        - For example 192.0.2.0/24 indicates that the first 24 bits of the IP address represent the network address, while the remaining 8 bits represents the host address.
+        - Classless Inter-Domain Routing (CIDR) represents a range of IP addresses where an IP address is followed by a suffix that indicates the number of network bits in the subnet mask.
+        - For example, 192.0.2.0/24 indicates that the first 24 bits of the IP address represent the network address, while the remaining 8 bits represents the host address.
         - Provide the starting address, network mask, and ports.
     - **IP address range (IP to IP)**:
         - Range of IP addresses from start IP (such as 192.0.2.1) to end IP (such as 192.0.2.10).
@@ -126,13 +126,13 @@ You can add fully qualified domain names (FQDN), IP addresses, and IP address ra
 
     | Port | Protocol |
     | --- | --- |
-    | 22 | Secure Shell (SSH) |
-    | 80 | Hypertext Transfer Protocol (HTTP) |
-    | 443 | Hypertext Transfer Protocol Secure (HTTPS) |
-    | 445 | Server Message Block (SMB) file sharing |
-    | 3389 | Remote Desktop Protocol (RDP) |
+    | `22` | `Secure Shell (SSH)` |
+    | `80` | `Hypertext Transfer Protocol (HTTP)` |
+    | `443` | `Hypertext Transfer Protocol Secure (HTTPS)` |
+    | `445` | `Server Message Block (SMB) file sharing` |
+    | `3389` | `Remote Desktop Protocol (RDP)` |
 
-1. Select the **Save** button when you're finished.
+1. Select **Save**.
 
 > [!NOTE]
 > You can add up to 500 application segments to your app.
@@ -171,7 +171,7 @@ You can enable or disable access to the Global Secure Access app using the Globa
 
 ## Assign Conditional Access policies
 
-Conditional Access policies for Per-app Access are configured at the application level for each app. Conditional Access policies can be created and applied to the application from two places:
+Conditional Access policies for per-app access are configured at the application level for each app. Conditional Access policies can be created and applied to the application from two places:
 
 - Go to **Global Secure Access** > **Applications** > **Enterprise applications**. Select an application and then select **Conditional Access** from the side menu.
 - Go to **Protection** > **Conditional Access** > **Policies**. Select **+ Create new policy**.
@@ -184,11 +184,7 @@ Once you have your app configured, your private resources added, users assigned 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 1. Browse to **Global Secure Access** > **Connect** > **Traffic forwarding**.
-1. Select the checkbox for **Private access profile**.
-
-![Screenshot of the traffic forwarding page with the Private access profile enabled.](media/how-to-configure-per-app-access/private-access-traffic-profile.png)
-
-
+1. Select the toggle for **Private access profile**.
 
 ## Next steps
 

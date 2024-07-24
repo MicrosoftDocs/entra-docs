@@ -25,7 +25,7 @@ In this article, you complete the following tasks:
 
 ## Prerequisites
 
-- Complete the steps in [Tutorial: Prepare your external tenant to sign in users in a Node.js web application](tutorial-web-app-node-sign-in-prepare-tenant.md) tutorial series. The tutorial teaches you how to register an application in your external tenant, associate the app with a user flow, and tests a sample app that signs in user. We refer to this web application as the client web application.
+- Complete the steps in [Sign in users and call an API in sample Node.js web application](sample-web-app-node-sign-in.md) article. This article shows you how to sign in users by using a sample Node.js web app. 
 
 ## Register MFA web API
 

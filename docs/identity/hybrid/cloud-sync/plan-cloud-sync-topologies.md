@@ -53,7 +53,7 @@ Multiple AD forests are a common topology, with one or multiple domains, and a s
 ### Existing forest with Microsoft Entra Connect, new forest with cloud Provisioning
 ![Diagram that shows the topology for an existing forest and a new forest.](media/tutorial-existing-forest/existing-forest-new-forest-2.png)
 
-This scenario is topology is similar to the multi-forest scenario, however this one involves an existing Microsoft Entra Connect environment and then bringing on a new forest using Microsoft Entra Cloud Sync.  For an example of this scenario see [Tutorial: An existing forest with a single Microsoft Entra tenant](tutorial-existing-forest.md)
+This scenario topology is similar to the multi-forest scenario, however this one involves an existing Microsoft Entra Connect environment and then bringing on a new forest using Microsoft Entra Cloud Sync.  For an example of this scenario see [Tutorial: An existing forest with a single Microsoft Entra tenant](tutorial-existing-forest.md)
 
 
 

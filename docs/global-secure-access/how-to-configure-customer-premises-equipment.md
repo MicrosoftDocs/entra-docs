@@ -31,10 +31,10 @@ You can set up the CPE using the Microsoft Entra admin center or using the Micro
 ## [Microsoft Entra admin center](#tab/microsoft-entra-admin-center)
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a **Global Secure Access Administrator**.
-1. Browse to **Global Secure Access** > **Devices** > **Remote network**.
+1. Browse to **Global Secure Access** > **Connect** > **Remote networks**.
 1. Select **View configuration** for the remote network you need to configure.
 
-    :::image type="content" source="media/how-to-configure-customer-premises-equipment/remote-network-view-configuration.png" alt-text="Screenshot of the configuration details with the Microsoft information highlighted." lightbox="media/how-to-configure-customer-premises-equipment/remote-network-view-configuration-expanded.png":::
+    :::image type="content" source="media/how-to-configure-customer-premises-equipment/remote-network-view-configuration.png" alt-text="Screenshot of the configuration details with the Microsoft information highlighted." lightbox="media/how-to-configure-customer-premises-equipment/remote-network-view-configuration.png":::
 
 1. Locate and save Microsoft's public IP address `endpoint` from the panel that opens.
 

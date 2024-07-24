@@ -43,7 +43,8 @@ To successfully implement secure private access, you must complete these three s
 
 To begin, we configure and assign groups by creating a Microsoft Entra ID group, onboard it as a PIM managed group, update group assignments with eligible membership, and specify access for user and devices.
 
-1. Navigate to [Microsoft Entra](https://entra.microsoft.com/) > **Identity** > **Groups** > **All groups** with at least [Privileged Role Administrator](~/id-governance/privileged-identity-management/pim-configure.md) permissions.
+1. Sign in to [Microsoft Entra](https://entra.microsoft.com/) as at least a [Privileged Role Administrator](~/id-governance/privileged-identity-management/pim-configure.md).
+1. Browse to **Identity** > **Groups** > **All groups**. 
  
    :::image type="content" border="true" source="./media/pim-global-secure-access/all-groups.png" alt-text="Screenshot of the All groups screen." lightbox="./media/pim-global-secure-access/all-groups.png":::
 
@@ -58,7 +59,8 @@ To begin, we configure and assign groups by creating a Microsoft Entra ID group,
 
 ### Onboard the group to PIM 
 
-1. Navigate to [Microsoft Entra](https://entra.microsoft.com/) >  **Identity Governance**  > **Privileged Identity Management** with at least [Privileged Role Administrator](~/id-governance/privileged-identity-management/pim-configure.md) permissions.
+1. Sign in to [Microsoft Entra](https://entra.microsoft.com/) as at least a [Privileged Role Administrator](~/id-governance/privileged-identity-management/pim-configure.md).
+1. Browse to **Identity Governance**  > **Privileged Identity Management**.
 1. Select **Groups**, then **Discover groups**. 
 
    :::image type="content" border="true" source="./media/pim-global-secure-access/discover-groups.png" alt-text="Screenshot of the Groups screen with Discover groups selected." lightbox="./media/pim-global-secure-access/discover-groups.png":::
@@ -98,7 +100,8 @@ To begin, we configure and assign groups by creating a Microsoft Entra ID group,
 
 ### Quick Access assignment
 
-1. Navigate to [Microsoft Entra](https://entra.microsoft.com/) > **Global Secure Access** > **Quick Access** > **Users and groups** with at least [Privileged Role Administrator](~/id-governance/privileged-identity-management/pim-configure.md) permissions. 
+1. Sign in to [Microsoft Entra](https://entra.microsoft.com/) as at least a [Privileged Role Administrator](~/id-governance/privileged-identity-management/pim-configure.md).
+1. Browse to **Global Secure Access** > **Quick Access** > **Users and groups**. 
 1. Select **Add user/group**, then specify the group that you created; for example, `FinReport-SeniorAnalyst-SecureAccess`.  
 
    :::image type="content" border="true" source="./media/pim-global-secure-access/quick-access.png" alt-text="Screenshot of the Quick Access screen." lightbox="./media/pim-global-secure-access/quick-access.png":::
@@ -116,7 +119,8 @@ Even if a user and their device meet security requirements, attempting to access
 
 Next, we activate group membership using the Microsoft Entra admin center, and then attempt to connect with the new role activated.
 
-1. Navigate to [Microsoft Entra](https://entra.microsoft.com/)  >  **Identity Governance**  > **Privileged Identity Management** with at least [Privileged Role Administrator](~/id-governance/privileged-identity-management/pim-configure.md) permissions. 
+1. Sign in to [Microsoft Entra](https://entra.microsoft.com/) as at least a [Privileged Role Administrator](~/id-governance/privileged-identity-management/pim-configure.md).
+1. Browse to  **Identity Governance**  > **Privileged Identity Management**. 
 1. Select **My roles** > **Groups** to see all eligible assignments.
 
    :::image type="content" border="true" source="./media/pim-global-secure-access/my-roles-groups.png" alt-text="Screenshot of My role groups screen." lightbox="./media/pim-global-secure-access/my-roles-groups.png":::
@@ -139,7 +143,8 @@ Browse any of the published resources, as you should be able to successfully con
 
 If the work is completed ahead of the time you allocated, you can choose to deactivate the role. This action terminates the role membership. 
 
-1. Navigate to [Microsoft Entra](https://entra.microsoft.com/) >  **Identity Governance**  > **Privileged Identity Management** with at least [Privileged Role Administrator](~/id-governance/privileged-identity-management/pim-configure.md) permissions.
+1. Sign in to [Microsoft Entra](https://entra.microsoft.com/) as at least a [Privileged Role Administrator](~/id-governance/privileged-identity-management/pim-configure.md).
+1. Browse to  **Identity Governance**  > **Privileged Identity Management**.
 1. Select **My roles**, then **Groups**. 
 1. Select **Deactivate**. 
 
