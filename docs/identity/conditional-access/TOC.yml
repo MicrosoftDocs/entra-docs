@@ -7,7 +7,7 @@
 - name: Tutorials
   items:
   - name: Require multifactor authentication
-    href: ../authentication/tutorial-conditional-access-howto-mfa.md?toc=/entra/identity/conditional-access/toc.json&bc=/entra/identity/conditional-access/breadcrumb/toc.json
+    href: ../authentication/tutorial-enable-azure-mfa.md?toc=/entra/identity/conditional-access/toc.json&bc=/entra/identity/conditional-access/breadcrumb/toc.json
 - name: Concepts
   expanded: false
   items:
