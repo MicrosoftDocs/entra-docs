@@ -95,7 +95,7 @@ if ($action -eq "view") {
         
         if ($postRecoveryState -eq "enabled") 
         {
-            $policyContent = "{0},{1},{2},{3},{4},{5},{6}" -f $policyFields[0], $policyId, $policyFields[2], $policyFields[3], "State Before BreakGlass: $($policyFields[4])", "State During Breakglass: $($preRecoveryState) at $($preRecoveryTime)", "State After Recovery: $($postRecoveryState) at $($postRecoveryTime)"
+            $policyContent = "{0},{1},{2},{3},{4},{5},{6}" -f $policyFields[0], $policyId, $policyFields[2], $policyFields[3], "State $($policyFields[4])", "State During Breakglass: $($preRecoveryState) at $($preRecoveryTime)", "State After Recovery: $($postRecoveryState) at $($postRecoveryTime)"
             $result += $policyContent
             $count++
         } else {
