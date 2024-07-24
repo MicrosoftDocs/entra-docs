@@ -58,9 +58,9 @@ foreach ($policy in $allCAPolicies)
     }
 }
 $compliantNetworkCount = $allCompliantNetworkCAPolicies.Count
-$result += "Total count of Compliant Network CA policies: $($compliantNetworkCount)"
+$result += "Total count of Compliant Network Conditional Access policies: $($compliantNetworkCount)"
 
-# Save the list of Compliant Network CA policies to the C:\BreakGlass folder for use in .\breakglass.ps1
+# Save the list of Compliant Network Conditional Access policies to the C:\BreakGlass folder for use in .\breakglass.ps1
 foreach ($policy in $allCompliantNetworkCAPolicies)
 {
     $current = Get-MgBetaIdentityConditionalAccessPolicy -ConditionalAccessPolicyId $policy.id
@@ -114,7 +114,7 @@ $count = 0
 $allCAPolicies = Get-MgBetaIdentityConditionalAccessPolicy
 $allCompliantNetworkCAPolicies = @()
 
-# Sort out only CA policies affected by Compliant Network
+# Sort out only Conditional Access policies affected by Compliant Network
 foreach ($policy in $allCAPolicies) 
 {
     if ($policy.conditions.locations.excludeLocations -Contains "3d46dbda-8382-466a-856d-eb00cbc6b910" -or $policy.conditions.locations.includeLocations -Contains "3d46dbda-8382-466a-856d-eb00cbc6b910") 
@@ -123,10 +123,10 @@ foreach ($policy in $allCAPolicies)
     }
 }
 $compliantNetworkCount = $allCompliantNetworkCAPolicies.Count
-$result += "Total count of Compliant Network CA policies: $($compliantNetworkCount)"
+$result += "Total count of Compliant Network Conditional Access policies: $($compliantNetworkCount)"
 
 # Based on admin input, disable either all or some Conditional Access policies leveraging the Compliant Network Condition.
-$action = Read-Host "Do you want to put all enabled compliant network CA policies in Report-Only mode (type 'all') or just specific policy IDs (type 'ids')?"
+$action = Read-Host "Do you want to put all enabled compliant network Conditional Access policies in Report-Only mode (type 'all') or just specific policy IDs (type 'ids')?"
 if ($action -eq "all") 
 {
     foreach ($policy in $allCompliantNetworkCAPolicies) 
@@ -211,7 +211,7 @@ if ($action -eq "all")
     Write-Host "Invalid action. Please type 'all' or 'ids'."
 }
 
-# Save the list of Compliant Network CA policies that were moved to Report-Only mode to the C:\BreakGlass folder for use in .\breakglass.ps1
+# Save the list of Compliant Network Conditional Access policies that were moved to Report-Only mode to the C:\BreakGlass folder for use in .\breakglass.ps1
 $result += "Number of policies placed in Report-Only mode: $($count)"
 $path = "C:\BreakGlass\ReportOnlyCompliantNetworkCAPolicies.txt"
 if (Test-Path $path)
