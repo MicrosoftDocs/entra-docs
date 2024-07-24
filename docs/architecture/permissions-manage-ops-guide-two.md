@@ -63,7 +63,7 @@ Review inactive identities to determine remediation:
 
 **Overprovisioned identities**
 
-Overprovisioned identities, or overpermissioned identities, haven't used many of their granted permissions for 90 days.
+Overprovisioned identities, or overpermissioned identities, haven't used many of their permissions for 90 days.
 
 **Best practice**: Regularly right-size permissions of these identities to reduce the risk of permissions misuse, either accidental or malicious. This action decreases the potential blast radius during a security incident.
 
