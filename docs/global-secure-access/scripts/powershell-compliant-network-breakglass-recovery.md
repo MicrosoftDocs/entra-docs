@@ -12,7 +12,7 @@ ms.reviewer: frankgomulka
 
 # Restore network compliance after a breakglass recovery
 
-After an outage is resolved, you need to recover from a [Break Glass](./powershell-compliant-network-breakglass.md#step-2-switch-listed-policies-into-report-only-mode) operation fast and with accuracy.
+After an outage is resolved, you need to make a fast and accurate recovery from a [Break Glass](./powershell-compliant-network-breakglass.md#step-2-switch-listed-policies-into-report-only-mode) operation.
 
 Below you can view a script that can help you quickly regain the security value of [Compliant Network](../how-to-compliant-network.md) for your users.
 
