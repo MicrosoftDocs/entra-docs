@@ -188,7 +188,7 @@ For this portion, we're going add a value on our newly created property to one o
    $gwbEnabledExtName = $gwbEnabledExtAttrib.Name
    ```
 
-2. Now, grt the `Marketing` group:
+2. Now, get the `Marketing` group:
 
    ```powershell
    $marketingGrp = Get-MgGroup -ConsistencyLevel eventual -Filter "DisplayName eq 'Marketing'"
