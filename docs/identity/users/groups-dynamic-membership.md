@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: users
 ms.topic: conceptual
-ms.date: 07/23/2024
+ms.date: 07/24/2024
 ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro
@@ -106,7 +106,7 @@ dirSyncEnabled |true false |user.dirSyncEnabled -eq true
 | jobTitle |Any string value or *null* | user.jobTitle -eq "value" |
 | mail |Any string value or *null* (SMTP address of the user) | user.mail -eq "value" |
 | mailNickName |Any string value (mail alias of the user) | user.mailNickName -eq "value" |
-| memberOf | Any string value (valid group object ID) | user.memberof -any (group.objectId -in ['value']) |
+| memberOf | Any string value (valid group object ID) | user.memberOf -any (group.objectId -in ['value']) |
 | mobile |Any string value or *null* | user.mobile -eq "value" |
 | objectId |GUID of the user object | user.objectId -eq "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb" |
 | onPremisesDistinguishedName | Any string value or *null* | user.onPremisesDistinguishedName -eq "value" |
@@ -197,8 +197,9 @@ The values used in an expression can consist of several types, including:
 When specifying a value within an expression, it's important to use the correct syntax to avoid errors. Some syntax tips are:
 
 - Double quotes are optional unless the value is a string.
-- String and regex operations aren't case sensitive.
+- Regex operations are not case sensitive.
 - When a string value contains double quotes, both quotes should be escaped using the \` character, for example, user.department -eq \`"Sales\`" is the proper syntax when "Sales" is the value. Single quotes should be escaped by using two single quotes instead of one each time.
+- Ensure that property names and values are correctly formatted, as they are case sensitive.
 - You can also perform Null checks, using null as a value, for example, `user.department -eq null`.
 
 ### Use of Null values
@@ -436,7 +437,7 @@ The following device attributes can be used.
  extensionAttribute15 | any string value | device.extensionAttribute15 -eq "some string value"
  isRooted | true false | device.isRooted -eq true
  managementType | MDM (for mobile devices) | device.managementType -eq "MDM"
- memberOf | Any string value (valid group object ID) | device.memberof -any (group.objectId -in ['value']) 
+ memberOf | Any string value (valid group object ID) | device.memberOf -any (group.objectId -in ['value']) 
  objectId | a valid Microsoft Entra object ID | device.objectId -eq "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb"
  profileType | a valid [profile type](/graph/api/resources/device?view=graph-rest-1.0&preserve-view=true#properties) in Microsoft Entra ID | device.profileType -eq "RegisteredDevice"
  systemLabels | a read-only string matching the Intune device property for tagging Modern Workplace devices | device.systemLabels -startsWith "M365Managed" SystemLabels
