@@ -91,7 +91,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://parliament.preview.Learningpool.com/auth/shibboleth/index.php`
 
 	> [!Note]
-	> If the **Identifier** value does not get auto polulated, then please fill in the value manually according to your requirement.
+	> If the **Identifier** value does not get auto populated, then please fill in the value manually according to your requirement.
 
 5. You must send over at least one attribute which is used to match your Azure Users with the users on Learning Pool LMS. Normally, the default attributes are enough, but in some cases you may need to send over some custom attributes. The following screenshot shows the list of default attributes. Click the **Edit** icon to open the User Attributes dialog and add more attributes if required.
 
