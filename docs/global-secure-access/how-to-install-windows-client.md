@@ -1,6 +1,6 @@
 ---
 title: The Global Secure Access client for Windows
-description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the windows client.
+description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the Windows client.
 ms.service: global-secure-access
 ms.topic: how-to
 ms.date: 07/24/2024
@@ -33,7 +33,7 @@ This article describes how to download and install the Global Secure Access clie
 ### Known limitations
 This is a list of the known limitations of the current version of the Global Secure Access client.
 
-- **Secure DNS**: Secure DNS in its different versions (DNS over HTTPS, DNS over TLS, DNSSEC) is currently not supported. For the client to work correctly and acquire network traffic, Secure DNS must be disabled. To disable DNS, see [Disable DNS over HTTPS](troubleshoot-global-secure-access-client-advanced-diagnostics-health-check.md#disable-dns-over-https).
+- **Secure DNS**: Secure DNS in its different versions (DNS over HTTPS, DNS over TLS, DNSSEC) is currently not supported. For the client to work correctly and acquire network traffic, Secure DNS must be disabled. To disable DNS, see [DNS over HTTPS not supported](troubleshoot-global-secure-access-client-advanced-diagnostics-health-check.md#dns-over-https-not-supported).
 - **DNS over TCP**: DNS uses port 53 UDP for name resolution. Some browsers have their own DNS client that also supports port 53 TCP. Currently the client doesn't support DNS port 53 TCP. As a mitigation, disable the browser's DNS client by setting the following registry values:
     - **Edge**
     ``[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge]
@@ -69,7 +69,7 @@ There are several other limitations based on the traffic forwarding profile in u
 | Traffic forwarding profile | Limitation |
 | --- | --- |
 | [Microsoft traffic profile](how-to-manage-microsoft-profile.md) | Tunneling [IPv6 traffic isn't currently supported](#disable-ipv6-and-secure-dns). |
-| [Microsoft traffic profile ](how-to-manage-microsoft-profile.md) and [Private access](how-to-manage-private-access-profile.md) | To tunnel network traffic based on rules of FQDNs (in the forwarding profile), [Domain Name System (DNS) over HTTPS (Secure DNS) needs to be disabled](#disable-ipv6-and-secure-dns). |
+| [Microsoft traffic profile](how-to-manage-microsoft-profile.md) and [Private access](how-to-manage-private-access-profile.md) | To tunnel network traffic based on rules of FQDNs (in the forwarding profile), [Domain Name System (DNS) over HTTPS (Secure DNS) needs to be disabled](#disable-ipv6-and-secure-dns). |
 | [Microsoft](how-to-manage-microsoft-profile.md) and [Private access](how-to-manage-private-access-profile.md) | If the end-user device is configured to use a proxy server, locations that you wish to tunnel using the Global Secure Access client must be excluded from that configuration. For examples, see [Proxy configuration example](#proxy-configuration-example). |
 | [Private access](how-to-manage-private-access-profile.md) | Single label domains, like `https://contosohome` for private apps aren't supported. Instead use a fully qualified domain name (FQDN), like `https://contosohome.contoso.com`. Administrators can also choose to append DNS suffixes via Windows. |
 

@@ -82,29 +82,28 @@ The traffic tab allows for the collection of a live list of connections opened b
 - **Columns**: Select to choose the columns to display in the table.
 
 For each connection, the available columns include:
-- Timestamp start - the time when the connection was opened by the operating system.
-- timestamp end - the time when the connection was closed by the operating system.
-- Connection status - whether the connection is still active or was already closed.
-- Protocol - the network protocol for the connection, TCP or UDP.
-- Destination FQDN - the destination FQDN of the connection.
-- Source Port - the source port of the connection.
-- Destination IP - the destination IP of the connection.
-Destination port - the destination port of the connection.
-Correlation vector ID - a unique ID attributed to each connection that can be correlated with Global Secure Access traffic logs in the portal. This ID can also be used by Microsoft's support to investigate internal logs related for a specific connection.
-Process name - The name of the process that opened the connection.
-Process ID - the PID of the process that opened the connection.
-Bytes sent - the number of bytes sent from the device to the destination.
-Bytes received - the number of bytes received by the device from the destination.
-Channel - the channel to which the connection was tunneled: M365, Private Access, Internet Access.
-Flow ID - internal ID for the connection.
-Rule ID - The rule ID in the forwarding profile that was used to determine the action taken for this connection.
-Action - The action that was taken for this connection:
-tunnel - the connection is tunneled by the client the Global Secure Access service in the cloud.
-bypass - the connection goes directly to the destination through the device's network with no intervention of the client.
-block - the connection is blocked by the client - possible only in hardening mode.
-Hardening - Yes/No - whether hardening was applied on this connection. Hardening applies when the Global Secure Access service is not reachable from the device.
-Tunnel ID - The ID of the tunnel that was used in order to tunnel the connection to Global Secure Access.
-image.png
+- **Timestamp begin**: The time when the operating system opened the connection.
+- **Timestamp end**: The time when the operating system closed the connection.
+- **Connection status**: Indication if the connection is still active or is already closed.
+- **Protocol**: The network protocol for the connection; either TCP or UDP.
+- **Destination FQDN**: The destination FQDN for the connection.
+- **Source port**: The source port for the connection.
+- **Destination IP**: The destination IP for the connection.
+- **Destination port**: The destination port for the connection.
+- Correlation vector ID - a unique ID attributed to each connection that can be correlated with Global Secure Access traffic logs in the portal. This ID can also be used by Microsoft's support to investigate internal logs related for a specific connection.
+- Process name - The name of the process that opened the connection.
+- Process ID - the PID of the process that opened the connection.
+- Bytes sent - the number of bytes sent from the device to the destination.
+- Bytes received - the number of bytes received by the device from the destination.
+- Channel - the channel to which the connection was tunneled: M365, Private Access, Internet Access.
+- Flow ID - internal ID for the connection.
+- Rule ID - The rule ID in the forwarding profile that was used to determine the action taken for this connection.
+- Action - The action that was taken for this connection:
+- tunnel - the connection is tunneled by the client the Global Secure Access service in the cloud.
+- bypass - the connection goes directly to the destination through the device's network with no intervention of the client.
+- block - the connection is blocked by the client - possible only in hardening mode.
+- Hardening - Yes/No - whether hardening was applied on this connection. Hardening applies when the Global Secure Access service is not reachable from the device.
+- Tunnel ID - The ID of the tunnel that was used in order to tunnel the connection to Global Secure Access.
 
 ## Advanced log collection tab
 The advanced log collection tab allows to collect verbose logs of the client, the operating systems and the network traffic during a specific period. The logs collected are archived in a ZIP file that can be sent to the administrator or Microsoft Support for investigation.
