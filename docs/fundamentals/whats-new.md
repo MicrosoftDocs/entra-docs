@@ -80,16 +80,6 @@ The Active Directory Federation Services (AD FS) application migration wizard al
 
 ---
 
-### Public Preview - Passkey authentication in brokered Microsoft apps on Android
-
-**Type:** New feature    
-**Service category:** Authentications (Logins)    
-**Product capability:** User Authentication    
-
-Microsoft Entra ID users can now use a passkey to sign into Microsoft apps on Android devices, where an authentication broker like Microsoft Authenticator or Microsoft Intune Company Portal, is installed. For more information, see: [Support for FIDO2 authentication with Microsoft Entra ID](../identity/authentication/concept-fido2-compatibility.md).
-
----
-
 ### General Availability - Easy authentication with Azure App Service and Microsoft Entra External ID
 
 **Type:** Changed feature    
