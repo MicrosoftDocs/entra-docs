@@ -132,6 +132,7 @@ Write-Output "Please ensure no additional spaces are introduced when copying tok
 Write-Output "---------------------------------------"
 
 # Set the prompt path to C:\
+
 cd "C:\"
 
 # Uninstall the Connector from your machine.
