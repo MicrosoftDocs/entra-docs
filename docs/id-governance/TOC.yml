@@ -119,7 +119,7 @@
       href: lifecycle-workflow-audits.md
     - name: Workflow History
       href: lifecycle-workflow-history.md
-    - name: Synced AD-FS users (Preview)
+    - name: Synced AD FS users (Preview)
       href: lifecycle-workflow-on-premises.md         
     - name: Workflow Insights (preview)
       href: lifecycle-workflow-insights.md        
