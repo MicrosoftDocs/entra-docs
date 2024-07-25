@@ -49,7 +49,7 @@ To apply published labels to groups, you must first enable the feature. These st
     If no group settings were created for this Microsoft Entra organization, you get an empty screen. In this case, you must first create the settings. Follow the steps in [Microsoft Entra cmdlets for configuring group settings](~/identity/users/groups-settings-cmdlets.md) to create group settings for this Microsoft Entra organization.
     
     > [!NOTE]
-    > If the sensitivity label was enabled previously, you see `EnableMIPLabels` = **True**. In this case, you don't need to do anything. Also make sure that `EnableGroupCreation` = **False** if you don't want non-admin users to be able to create groups. See [Template settings](~/identity/users/groups-settings-cmdlets#template-settings) for details.
+    > If the sensitivity label was enabled previously, you see `EnableMIPLabels` = **True**. In this case, you don't need to do anything. Also make sure that `EnableGroupCreation` = **False** if you don't want non-admin users to be able to create groups. See [Template settings](~/identity/users/groups-settings-cmdlets#template-settings.md) for details.
 
 1. Apply the new settings.
 
