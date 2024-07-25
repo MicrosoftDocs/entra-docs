@@ -31,7 +31,7 @@ These rules also apply to the iNetOrgPerson object type.
 A user object must satisfy the following to be synchronized:
 
 * Must have a sourceAnchor.
-* After the object has been created in Microsoft Entra ID, then sourceAnchor cannot change. If the value is changed on-premises, the object stops synchronizing until the sourceAnchor is changed back to its previous value.
+* After the object has been created in Microsoft Entra ID, the sourceAnchor cannot change. If the value is changed on-premises, the object stops synchronizing until the sourceAnchor is changed back to its previous value.
 * Must have the accountEnabled (userAccountControl) attribute populated. With an on-premises Active Directory, this attribute is always present and populated.
 
 The following user objects are **not** synchronized to Microsoft Entra ID:
@@ -91,7 +91,7 @@ A group object must satisfy the following to be synchronized:
   * If it has more members before synchronization starts the first time, the group is not synchronized.
   * If the number of members grow from when it was initially created, then when it reaches 250,000 members it stops synchronizing until the membership count is lower than 250,000 again.
   * Note: The 250,000 membership count is also enforced by Microsoft Entra ID. You are not able to synchronize groups with more members even if you modify or remove this rule.
-* If the group is a **Distribution Group**, then it must also be mail enabled. See [Contact out-of-box rules](#contact-out-of-box-rules) for this rule is enforced.
+* If the group is a **Distribution Group**, then it must also be mail enabled. See [Contact out-of-box rules](#contact-out-of-box-rules) for how this rule is enforced.
 
 The following group objects are **not** synchronized to Microsoft Entra ID:
 
@@ -148,7 +148,7 @@ The first section provides basic information such as a name and description.
 
 ![Description tab in Sync rule editor](./media/concept-azure-ad-connect-sync-default-configuration/syncruledescription.png)
 
-You also find information about which connected system this rule is related to, which object type in the connected system it applies to, and the metaverse object type. The metaverse object type is always person regardless when the source object type is a user, iNetOrgPerson, or contact. The metaverse object type should never change so it is created as a generic type. The Link Type can be set to Join, StickyJoin, or Provision. This setting works together with the Join Rules section and is covered later.
+You also find information about which connected system this rule is related to, which object type in the connected system it applies to, and the metaverse object type. The metaverse object type is always person regardless of whether the source object type is a user, iNetOrgPerson, or contact. The metaverse object type should never change so it is created as a generic type. The Link Type can be set to Join, StickyJoin, or Provision. This setting works together with the Join Rules section and is covered later.
 
 You can also see that this sync rule is used for password sync. If a user is in scope for this sync rule, the password is synchronized from on-premises to cloud (assuming you have enabled the password sync feature).
 
@@ -172,7 +172,7 @@ The content of the join rule depends on the matching option selected in the inst
 
 The join rules are only evaluated once. When a connector space object and a metaverse object are joined, they remain joined as long as the scope of the Synchronization Rule is still satisfied.
 
-When evaluating Synchronization Rules, only one Synchronization Rule with join rules defined must be in scope. If multiple Synchronization Rules with join rules are found for one object, an error is thrown. For this reason, the best practice is to have only one Synchronization Rule with join defined when multiple Synchronization Rules are in scope for an object. In the out-of-box configuration for Microsoft Entra Connect Sync, these rules can be found by looking at the name and find those with the word **Join** at the end of the name. A Synchronization Rule without any join rules defined applies the attribute flows when another Synchronization Rule joined the objects together or provisioned a new object in the target.
+When evaluating Synchronization Rules, only one Synchronization Rule with join rules defined must be in scope. If multiple Synchronization Rules with join rules are found for one object, an error is thrown. For this reason, the best practice is to have only one Synchronization Rule with join defined when multiple Synchronization Rules are in scope for an object. In the out-of-box configuration for Microsoft Entra Connect Sync, these rules can be found by looking at the name and finding those with the word **Join** at the end of the name. A Synchronization Rule without any join rules defined applies the attribute flows when another Synchronization Rule joined the objects together or provisioned a new object in the target.
 
 If you look at the picture above, you can see that the rule is trying to join **objectSID** with **msExchMasterAccountSid** (Exchange) and **msRTCSIP-OriginatorSid** (Lync), which is what we expect in an account-resource forest topology. You find the same rule on all forests. The assumption is that every forest could be either an account or resource forest. This configuration also works if you have accounts that live in a single forest and do not have to be joined.
 
