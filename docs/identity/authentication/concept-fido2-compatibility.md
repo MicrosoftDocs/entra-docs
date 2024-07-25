@@ -99,11 +99,13 @@ The following are the minimum browser version requirements on Windows.
 | Edge    | &#x2705; | N/A | N/A |
 | Chrome   | &#x2705; | N/A | N/A |
 | Firefox<sup>2</sup>   | &#x2705; | N/A | N/A |
-| Safari<sup>2</sup>   | &#x2705; | N/A | N/A |
+| Safari<sup>2</sup><sup>,</sup><sup>3</sup>   | &#x2705; | N/A | N/A |
 
 <sup>1</sup>NFC and BLE security keys aren't supported on macOS by Apple.
 
 <sup>2</sup>New security key registration doesn't work on these macOS browsers because they don't prompt to set up biometrics or PIN.
+
+<sup>3</sup>See [Sign in when more than three passkeys are registered](#sign-in-when-more-than-three-passkeys-are-registered).
 
 ### ChromeOS
 
@@ -124,7 +126,7 @@ The following are the minimum browser version requirements on Windows.
 
 ### iOS
 
-| Browser<sup>1</sup> | Lightning  | NFC | BLE<sup>2</sup> |
+| Browser<sup>1</sup><sup>,</sup><sup>3</sup> | Lightning  | NFC | BLE<sup>2</sup> |
 |---------|------------|-----|-----|
 | Edge    |  &#x2705;  | &#x2705; | N/A | 
 | Chrome  |  &#x2705;  | &#x2705; | N/A |
@@ -134,6 +136,9 @@ The following are the minimum browser version requirements on Windows.
 <sup>1</sup>New security key registration doesn't work on iOS browsers because they don't prompt to set up biometrics or PIN.
 
 <sup>2</sup>BLE security keys aren't supported on iOS by Apple.
+
+<sup>3</sup>See [Sign in when more than three passkeys are registered](#sign-in-when-more-than-three-passkeys-are-registered).
+
 
 ### Android
 
@@ -148,6 +153,12 @@ The following are the minimum browser version requirements on Windows.
 <sup>2</sup>BLE security keys aren't supported on Android by Google.
 
 ## Known issues
+
+### Sign in when more than three passkeys are registered
+
+If you registered more than three passkeys, sign in with a passkey might not work. If you have more than three passkeys, as a workaround, click **Sign-in options** and sign in without entering a username.
+
+:::image type="content" border="true" source="media/fido2-compatibility/sign-in-options.png" alt-text="Screenshot of sign-in options.":::
 
 ### PowerShell support
 

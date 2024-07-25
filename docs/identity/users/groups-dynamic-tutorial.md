@@ -65,7 +65,7 @@ First, you'll create a group for your guest users who all are from a single part
    * In the **Property** field, select **companyName**.
    * Verify that the **Operator** field has **Equals** selected.
    * In the **Value** field, enter **Contoso**.
-   * Click **Get custom extention properties** to enter an application ID to retrieve all available custom extension properties for creating a rule. 
+   * Click **Get custom extension properties** to enter an application ID to retrieve all available custom extension properties for creating a rule. 
    * When you're done, click **Save** to close **Dynamic membership rules**.
    
 8. To finish and create the group, select **Create** on the **Group** pane.
