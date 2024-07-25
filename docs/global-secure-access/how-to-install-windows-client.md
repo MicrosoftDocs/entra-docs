@@ -3,7 +3,7 @@ title: The Global Secure Access client for Windows
 description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the windows client.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 07/22/2024
+ms.date: 07/24/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -14,7 +14,7 @@ ms.reviewer: lirazb
 ---
 # Global Secure Access client for Windows
 
-The Global Secure Access client, an essential component of Global Secure Access, helps organizations manage and secure network traffic on end-user devices. The client's main role is to route traffic that needs to be secured by Global Secure Access to the cloud service. All other traffic goes directly to the network. The [Forwarding Profiles](/entra/global-secure-access/concept-traffic-forwarding.md), configured in the portal, determine which traffic is routed to the cloud service.
+The Global Secure Access client, an essential component of Global Secure Access, helps organizations manage and secure network traffic on end-user devices. The client's main role is to route traffic that needs to be secured by Global Secure Access to the cloud service. All other traffic goes directly to the network. The [Forwarding Profiles](concept-traffic-forwarding.md), configured in the portal, determine which traffic is routed to the cloud service.
 
 This article describes how to download and install the Global Secure Access client for Windows.
 
@@ -33,7 +33,7 @@ This article describes how to download and install the Global Secure Access clie
 ### Known limitations
 This is a list of the known limitations of the current version of the Global Secure Access client.
 
-- **Secure DNS**: Secure DNS in its different versions (DNS over HTTPS, DNS over TLS, DNSSEC) is currently not supported. For the client to work correctly and acquire network traffic, Secure DNS must be disabled. To disable DNS, see [Disable DNS over HTTPS](/entra/global-secure-access/troubleshoot-global-secure-access-client-advanced-diagnostics-health-check.md#disable-dns-over-https).
+- **Secure DNS**: Secure DNS in its different versions (DNS over HTTPS, DNS over TLS, DNSSEC) is currently not supported. For the client to work correctly and acquire network traffic, Secure DNS must be disabled. To disable DNS, see [Disable DNS over HTTPS](troubleshoot-global-secure-access-client-advanced-diagnostics-health-check.md#disable-dns-over-https).
 - **DNS over TCP**: DNS uses port 53 UDP for name resolution. Some browsers have their own DNS client that also supports port 53 TCP. Currently the client doesn't support DNS port 53 TCP. As a mitigation, disable the browser's DNS client by setting the following registry values:
     - **Edge**
     ``[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge]
@@ -45,14 +45,15 @@ This is a list of the known limitations of the current version of the Global Sec
 - **Connection fallback**: If there's a connection error to the cloud service, the client falls back to either direct Internet connection or blocking the connection, based on the ***hardening*** value of the matching rule in the forwarding profile.
 - **Geolocation**: For network traffic that is tunneled to the cloud service, the application server (website) detects the connection's source IP as the edge's IP address (and not as the user-device's IP address). This might affect services that rely on geolocation.
 > [!TIP]
-> For Office 365 and Entra to detect the device's true source IP, consider enabling [Source IP restoration](/entra/global-secure-access/how-to-source-ip-restoration.md) .
+> For Office 365 and Entra to detect the device's true source IP, consider enabling [Source IP restoration](how-to-source-ip-restoration.md) .
 
-Virtualization support
-Installing the client on a device that hosts virtual machine is currently not supported.
-You can install the client in virtual machines as long as it is not installed on the host.
-For the same reason, traffic from WSL (Windows Subsystem for Linux) is not acquired by a client installed on the host machine.
-Proxy
-If a proxy
+- **Virtualization support**:
+    - Installing the client on a device that hosts virtual machine is currently not supported.
+    - You can install the client in virtual machines as long as it is not installed on the host.
+    - For the same reason, traffic from WSL (Windows Subsystem for Linux) is not acquired by a client installed on the host machine.
+
+- **Proxy**: If a proxy is configured at the application level (ex. browser) or at the OS level, a PAC file should be configured to allow correct functioning of the client. The PAC file should be configured to exclude all FQDNs and IPs that are expected to be tunneled by the client.
+
 - 
 - 
 - 
@@ -79,8 +80,7 @@ The most current version of the Global Secure Access client can be downloaded fr
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
 1. Browse to **Global Secure Access** > **Connect** > **Client download**.
 1. Select **Download Client**.
-
-    ![Screenshot of the download Windows client button.](media/how-to-install-windows-client/client-download-screen.png)
+:::image type="content" source="media/how-to-install-windows-client/client-download-screen.png" alt-text="Screenshot of the Client download screen with the Download Client button hilighted.":::
     
 ## Install the client
 
@@ -88,13 +88,10 @@ Organizations can install the client interactively, silently with the `/quiet` s
 
 1. Copy the Global Secure Access client setup file to your client machine.
 1. Run the *GlobalSecureAccessClient.exe* setup file. Accept the software license terms.
-1. The client is installed and users are prompted to sign in with their Microsoft Entra credentials.
-
-    ![Screenshot showing the sign-in box appears after client installation completes.](media/how-to-install-windows-client/client-install-first-sign-in.png)
-
-1. Users sign in and the connection icon turns green. Double-clicking on the connection icon opens a notification with client information showing a connected state.
-
-    :::image type="content" source="media/how-to-install-windows-client/client-install-connected.png" alt-text="Screenshot showing the client is connected.":::
+1. The client is installed and you are prompted to sign in with your Microsoft Entra credentials.
+1. Sign in and the connection icon turns green. 
+1. Double-click the connection icon to open a notification with client information showing a connected state.
+:::image type="content" source="media/how-to-install-windows-client/install-windows-client-client-status.png" alt-text="Screenshot showing the client is connected.":::
 
 
 ## Troubleshooting
